@@ -1141,7 +1141,7 @@ public class Siege implements Siegable
 			}
 			default:
 			{
-				players = Collections.<PlayerInstance> emptyList();
+				players = Collections.emptyList();
 			}
 		}
 		

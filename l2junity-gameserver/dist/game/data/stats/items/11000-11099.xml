@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="11000" type="Weapon" name="Kaim Vanul's Bones - Earth - Conversion">
+	<item id="11000" name="Kaim Vanul's Bones - Earth" name_additional="Conversion" type="Weapon">
 		<set name="icon" val="icon.weapon_bone_of_kaim_vanul_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -19,18 +19,21 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3891-1;3048-1" />
+		<skills>
+			<skill id="3891" level="1" />
+			<skill id="3048" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="155" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11001" type="Weapon" name="Colichemarde - Earth">
+	<item id="11001" name="Colichemarde - Earth" type="Weapon">
 		<set name="icon" val="icon.weapon_colichemarde_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -48,9 +51,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3831-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3831" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -60,11 +65,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11002" type="Weapon" name="Colichemarde - Earth">
+	<item id="11002" name="Colichemarde - Earth" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_colichemarde_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -82,9 +87,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3831-1;3010-6" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3831" level="1" />
+			<skill id="3010" level="6" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -94,11 +102,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11003" type="Weapon" name="Colichemarde - Earth">
+	<item id="11003" name="Colichemarde - Earth" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_colichemarde_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -116,9 +124,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3831-1;3023-6" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3831" level="1" />
+			<skill id="3023" level="6" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -128,11 +139,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11004" type="Weapon" name="Colichemarde - Earth">
+	<item id="11004" name="Colichemarde - Earth" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_colichemarde_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -150,9 +161,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3831-1;3036-6" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3831" level="1" />
+			<skill id="3036" level="6" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -162,11 +176,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11005" type="Weapon" name="Wizard's Tear - Cleverness">
+	<item id="11005" name="Wizard's Tear - Cleverness" type="Weapon">
 		<set name="icon" val="icon.weapon_tears_of_wizard_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -185,17 +199,19 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3853-1" />
+		<skills>
+			<skill id="3853" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="155" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11006" type="Weapon" name="Wizard's Tear - Cleverness - Acumen">
+	<item id="11006" name="Wizard's Tear - Cleverness" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_tears_of_wizard_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -214,17 +230,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3853-1;3047-1" />
+		<skills>
+			<skill id="3853" level="1" />
+			<skill id="3047" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="155" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11007" type="Weapon" name="Wizard's Tear - Cleverness - M. Atk.">
+	<item id="11007" name="Wizard's Tear - Cleverness" name_additional="M. Atk." type="Weapon">
 		<set name="icon" val="icon.weapon_tears_of_wizard_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -243,17 +262,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3853-1;3077-6" />
+		<skills>
+			<skill id="3853" level="1" />
+			<skill id="3077" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="155" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11008" type="Weapon" name="Wizard's Tear - Cleverness - Conversion">
+	<item id="11008" name="Wizard's Tear - Cleverness" name_additional="Conversion" type="Weapon">
 		<set name="icon" val="icon.weapon_tears_of_wizard_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -272,17 +294,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3853-1;3048-1" />
+		<skills>
+			<skill id="3853" level="1" />
+			<skill id="3048" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="155" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11009" type="Weapon" name="Bow of Peril - Earth">
+	<item id="11009" name="Bow of Peril - Earth" type="Weapon">
 		<set name="icon" val="icon.weapon_hazard_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -303,18 +328,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3867-1" />
+		<skills>
+			<skill id="3867" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="400" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11010" type="Weapon" name="Bow of Peril - Earth">
+	<item id="11010" name="Bow of Peril - Earth" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_hazard_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -335,18 +362,21 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3867-1;3008-6" />
+		<skills>
+			<skill id="3867" level="1" />
+			<skill id="3008" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="400" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11011" type="Weapon" name="Bow of Peril - Earth">
+	<item id="11011" name="Bow of Peril - Earth" name_additional="Quick Recovery" type="Weapon">
 		<set name="icon" val="icon.weapon_hazard_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -367,18 +397,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1310" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3867-1" />
+		<skills>
+			<skill id="3867" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="400" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11012" type="Weapon" name="Bow of Peril - Earth">
+	<item id="11012" name="Bow of Peril - Earth" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_hazard_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -398,20 +430,22 @@
 		<set name="mp_consume" val="4" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
-		<set name="item_skill" val="3867-1" />
 		<set name="is_freightable" val="false" />
 		<set name="reduced_mp_consume" val="42,2" />
+		<skills>
+			<skill id="3867" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="400" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11013" type="Weapon" name="Hell Hound - Earth">
+	<item id="11013" name="Hell Hound - Earth" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_hound_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -431,7 +465,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3872-1" />
+		<skills>
+			<skill id="3872" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -441,11 +477,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11014" type="Weapon" name="Hell Hound - Earth">
+	<item id="11014" name="Hell Hound - Earth" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_hound_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -465,7 +501,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3872-1;3008-6" />
+		<skills>
+			<skill id="3872" level="1" />
+			<skill id="3008" level="6" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -475,11 +514,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11015" type="Weapon" name="Hell Hound - Earth">
+	<item id="11015" name="Hell Hound - Earth" name_additional="Quick Recovery" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_hound_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -499,7 +538,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3872-1" />
+		<skills>
+			<skill id="3872" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -509,11 +550,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11016" type="Weapon" name="Hell Hound - Earth">
+	<item id="11016" name="Hell Hound - Earth" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_hound_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -533,7 +574,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3872-1;3360-1" />
+		<skills>
+			<skill id="3872" level="1" />
+			<skill id="3360" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -543,11 +587,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11017" type="Weapon" name="Dasparion's Staff - Hail">
+	<item id="11017" name="Dasparion's Staff - Hail" type="Weapon">
 		<set name="icon" val="icon.weapon_dasparions_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -566,18 +610,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3899-2" />
+		<skills>
+			<skill id="3899" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="207" />
 			<set stat="mAtk" val="157" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11018" type="Weapon" name="Dasparion's Staff - Hail - Mana Up">
+	<item id="11018" name="Dasparion's Staff - Hail" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_dasparions_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -596,18 +642,21 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3899-2;3014-2" />
+		<skills>
+			<skill id="3899" level="2" />
+			<skill id="3014" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="207" />
 			<set stat="mAtk" val="157" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11019" type="Weapon" name="Dasparion's Staff - Hail - Conversion">
+	<item id="11019" name="Dasparion's Staff - Hail" name_additional="Conversion" type="Weapon">
 		<set name="icon" val="icon.weapon_dasparions_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -626,18 +675,21 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3899-2;3048-2" />
+		<skills>
+			<skill id="3899" level="2" />
+			<skill id="3048" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="207" />
 			<set stat="mAtk" val="157" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11020" type="Weapon" name="Dasparion's Staff - Hail - Acumen">
+	<item id="11020" name="Dasparion's Staff - Hail" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_dasparions_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -656,18 +708,21 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3899-2;3047-2" />
+		<skills>
+			<skill id="3899" level="2" />
+			<skill id="3047" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="207" />
 			<set stat="mAtk" val="157" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11021" type="Weapon" name="Doomchanter - Concentration">
+	<item id="11021" name="Doomchanter - Concentration" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_singer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -687,7 +742,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3868-2" />
+		<skills>
+			<skill id="3868" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -697,11 +754,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11022" type="Weapon" name="Doomchanter - Concentration">
+	<item id="11022" name="Doomchanter - Concentration" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_singer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -721,7 +778,11 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3868-2;3552-1;3498-1" />
+		<skills>
+			<skill id="3868" level="2" />
+			<skill id="3552" level="1" />
+			<skill id="3498" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -731,11 +792,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11023" type="Weapon" name="Doomchanter - Concentration">
+	<item id="11023" name="Doomchanter - Concentration" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_singer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -754,10 +815,12 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
-		<set name="oncrit_chance" val="35" />
 		<set name="oncrit_skill" val="3053-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3868-2;3552-1" />
+		<skills>
+			<skill id="3868" level="2" />
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -767,11 +830,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11024" type="Weapon" name="Doomchanter - Concentration">
+	<item id="11024" name="Doomchanter - Concentration" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_singer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -791,7 +854,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3868-2;3014-2" />
+		<skills>
+			<skill id="3868" level="2" />
+			<skill id="3014" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -801,11 +867,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11025" type="Weapon" name="White Lightning - Destruction">
+	<item id="11025" name="White Lightning - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_lightning_blaze_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -823,9 +889,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3830-2" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3830" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -835,11 +903,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11026" type="Weapon" name="White Lightning - Destruction">
+	<item id="11026" name="White Lightning - Destruction" name_additional="Critical Poison" type="Weapon">
 		<set name="icon" val="icon.weapon_lightning_blaze_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -857,11 +925,14 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="oncrit_chance" val="10" />
-		<set name="oncrit_skill" val="3061-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3830-2;3552-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3061" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3830" level="2" />
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -871,11 +942,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11027" type="Weapon" name="White Lightning - Destruction">
+	<item id="11027" name="White Lightning - Destruction" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_lightning_blaze_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -893,9 +964,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3830-2;3068-2" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3830" level="2" />
+			<skill id="3068" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -905,11 +979,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11028" type="Weapon" name="White Lightning - Destruction">
+	<item id="11028" name="White Lightning - Destruction" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_lightning_blaze_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -927,9 +1001,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3830-2;3057-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3830" level="2" />
+			<skill id="3057" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -939,11 +1016,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11029" type="Weapon" name="Meteor Shower - Earth">
+	<item id="11029" name="Meteor Shower - Earth" type="Weapon">
 		<set name="icon" val="icon.weapon_meteor_shower_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -961,18 +1038,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3884-2" />
+		<skills>
+			<skill id="3884" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11030" type="Weapon" name="Meteor Shower - Earth">
+	<item id="11030" name="Meteor Shower - Earth" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_meteor_shower_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -990,18 +1069,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3884-2;3050-1" />
+		<skills>
+			<skill id="3884" level="2" />
+			<skill id="3050" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11031" type="Weapon" name="Meteor Shower - Earth">
+	<item id="11031" name="Meteor Shower - Earth" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_meteor_shower_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1018,21 +1100,23 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="42" />
 		<set name="oncrit_skill" val="3052-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3884-2;3552-1" />
+		<skills>
+			<skill id="3884" level="2" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11032" type="Weapon" name="Meteor Shower - Earth - Rsk. Haste">
+	<item id="11032" name="Meteor Shower - Earth" name_additional="Rsk. Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_meteor_shower_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1050,18 +1134,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3884-2;3056-2" />
+		<skills>
+			<skill id="3884" level="2" />
+			<skill id="3056" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11033" type="Weapon" name="Blood Tornado - Destruction">
+	<item id="11033" name="Blood Tornado - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_blood_tornado_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -1079,18 +1166,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3879-2" />
+		<skills>
+			<skill id="3879" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11034" type="Weapon" name="Blood Tornado - Destruction">
+	<item id="11034" name="Blood Tornado - Destruction" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_blood_tornado_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -1108,18 +1197,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3879-2;3068-2" />
+		<skills>
+			<skill id="3879" level="2" />
+			<skill id="3068" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11035" type="Weapon" name="Blood Tornado - Destruction">
+	<item id="11035" name="Blood Tornado - Destruction" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_blood_tornado_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -1137,18 +1229,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3879-2;3050-1" />
+		<skills>
+			<skill id="3879" level="2" />
+			<skill id="3050" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11036" type="Weapon" name="Blood Tornado - Destruction">
+	<item id="11036" name="Blood Tornado - Destruction" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_blood_tornado_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -1166,18 +1261,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3879-2;3058-1" />
+		<skills>
+			<skill id="3879" level="2" />
+			<skill id="3058" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11037" type="Weapon" name="Bloody Orchid - Confusion">
+	<item id="11037" name="Bloody Orchid - Confusion" type="Weapon">
 		<set name="icon" val="icon.weapon_bloody_orchid_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1195,18 +1293,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3858-2" />
+		<skills>
+			<skill id="3858" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11038" type="Weapon" name="Bloody Orchid - Confusion">
+	<item id="11038" name="Bloody Orchid - Confusion" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_bloody_orchid_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1224,18 +1324,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3858-2;3051-1" />
+		<skills>
+			<skill id="3858" level="2" />
+			<skill id="3051" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11039" type="Weapon" name="Bloody Orchid - Confusion">
+	<item id="11039" name="Bloody Orchid - Confusion" name_additional="Back Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_bloody_orchid_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1253,18 +1356,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3858-2;3063-1" />
+		<skills>
+			<skill id="3858" level="2" />
+			<skill id="3063" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11040" type="Weapon" name="Bloody Orchid - Confusion">
+	<item id="11040" name="Bloody Orchid - Confusion" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_bloody_orchid_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1281,21 +1387,23 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="12" />
 		<set name="oncrit_skill" val="3054-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3858-2;3552-1" />
+		<skills>
+			<skill id="3858" level="2" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11041" type="Weapon" name="Elemental Sword - Hail">
+	<item id="11041" name="Elemental Sword - Hail" type="Weapon">
 		<set name="icon" val="icon.weapon_elemental_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1314,17 +1422,19 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3854-1" />
+		<skills>
+			<skill id="3854" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="143" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11042" type="Weapon" name="Elemental Sword - Hail - M. Atk.">
+	<item id="11042" name="Elemental Sword - Hail" name_additional="M. Atk." type="Weapon">
 		<set name="icon" val="icon.weapon_elemental_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1343,17 +1453,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3854-1;3073-1" />
+		<skills>
+			<skill id="3854" level="1" />
+			<skill id="3073" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="143" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11043" type="Weapon" name="Elemental Sword - Hail">
+	<item id="11043" name="Elemental Sword - Hail" name_additional="Magic Paralyze" type="Weapon">
 		<set name="icon" val="icon.weapon_elemental_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1371,20 +1484,22 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="5" />
 		<set name="onmagic_skill" val="3075-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3854-1;3552-1" />
+		<skills>
+			<skill id="3854" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="143" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11044" type="Weapon" name="Elemental Sword - Hail">
+	<item id="11044" name="Elemental Sword - Hail" name_additional="Empower" type="Weapon">
 		<set name="icon" val="icon.weapon_elemental_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1403,17 +1518,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3854-1;3072-1" />
+		<skills>
+			<skill id="3854" level="1" />
+			<skill id="3072" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="143" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11045" type="Weapon" name="Spiritual Eye - Hail">
+	<item id="11045" name="Spiritual Eye - Hail" type="Weapon">
 		<set name="icon" val="icon.weapon_eye_of_soul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1432,18 +1550,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3889-2" />
+		<skills>
+			<skill id="3889" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="143" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11046" type="Weapon" name="Spiritual Eye - Hail">
+	<item id="11046" name="Spiritual Eye - Hail" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_eye_of_soul_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1462,18 +1582,21 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3889-2;3014-2" />
+		<skills>
+			<skill id="3889" level="2" />
+			<skill id="3014" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="143" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11047" type="Weapon" name="Spiritual Eye - Hail">
+	<item id="11047" name="Spiritual Eye - Hail" name_additional="Magic Poison" type="Weapon">
 		<set name="icon" val="icon.weapon_eye_of_soul_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1491,21 +1614,23 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="8" />
 		<set name="onmagic_skill" val="1168-6" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3889-2;3552-1" />
+		<skills>
+			<skill id="3889" level="2" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="143" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11048" type="Weapon" name="Spiritual Eye - Hail">
+	<item id="11048" name="Spiritual Eye - Hail" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_eye_of_soul_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1524,18 +1649,21 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3889-2;3047-2" />
+		<skills>
+			<skill id="3889" level="2" />
+			<skill id="3047" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="143" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11049" type="Weapon" name="Infernal Master - Concentration">
+	<item id="11049" name="Infernal Master - Concentration" type="Weapon">
 		<set name="icon" val="icon.weapon_inferno_master_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1554,17 +1682,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3841-1" />
+		<skills>
+			<skill id="3841" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11050" type="Weapon" name="Infernal Master - Concentration">
+	<item id="11050" name="Infernal Master - Concentration" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_inferno_master_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1583,17 +1713,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3841-1;3068-2" />
+		<skills>
+			<skill id="3841" level="1" />
+			<skill id="3068" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11051" type="Weapon" name="Infernal Master - Concentration">
+	<item id="11051" name="Infernal Master - Concentration" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_inferno_master_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1612,17 +1745,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3841-1;3067-1" />
+		<skills>
+			<skill id="3841" level="1" />
+			<skill id="3067" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11052" type="Weapon" name="Infernal Master - Concentration">
+	<item id="11052" name="Infernal Master - Concentration" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_inferno_master_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1641,17 +1777,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3841-1;3050-1" />
+		<skills>
+			<skill id="3841" level="1" />
+			<skill id="3050" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11053" type="Weapon" name="Carnage Bow - Concentration">
+	<item id="11053" name="Carnage Bow - Concentration" type="Weapon">
 		<set name="icon" val="icon.weapon_carnium_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -1672,18 +1811,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3863-2" />
+		<skills>
+			<skill id="3863" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="440" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11054" type="Weapon" name="Carnage Bow - Concentration">
+	<item id="11054" name="Carnage Bow - Concentration" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_carnium_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -1704,18 +1845,22 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1;3498-1;3863-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3498" level="1" />
+			<skill id="3863" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="440" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11055" type="Weapon" name="Carnage Bow - Concentration">
+	<item id="11055" name="Carnage Bow - Concentration" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_carnium_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -1735,21 +1880,23 @@
 		<set name="mp_consume" val="4" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
-		<set name="oncrit_chance" val="35" />
 		<set name="oncrit_skill" val="3053-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3863-2;3552-1" />
+		<skills>
+			<skill id="3863" level="2" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="440" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11056" type="Weapon" name="Carnage Bow - Concentration">
+	<item id="11056" name="Carnage Bow - Concentration" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_carnium_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -1770,18 +1917,21 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3863-2;3014-2" />
+		<skills>
+			<skill id="3863" level="2" />
+			<skill id="3014" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="440" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11057" type="Weapon" name="Keshanberk*Keshanberk - Destruction">
+	<item id="11057" name="Keshanberk*Keshanberk - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1798,19 +1948,21 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3045-17" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3835-2" />
+		<skills>
+			<skill id="3045" level="17" type="ON_ENCHANT" type_value="4" />
+			<skill id="3835" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11058" type="Weapon" name="Tallum Blade - Destruction">
+	<item id="11058" name="Tallum Blade - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_blade_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1829,17 +1981,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3825-2" />
+		<skills>
+			<skill id="3825" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11059" type="Weapon" name="Tallum Blade - Destruction">
+	<item id="11059" name="Tallum Blade - Destruction" name_additional="Critical Poison" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1857,20 +2011,22 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="10" />
 		<set name="oncrit_skill" val="3061-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3825-2;3552-1" />
+		<skills>
+			<skill id="3825" level="2" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11060" type="Weapon" name="Tallum Blade - Destruction">
+	<item id="11060" name="Tallum Blade - Destruction" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1889,17 +2045,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3825-2;3068-2" />
+		<skills>
+			<skill id="3825" level="2" />
+			<skill id="3068" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11061" type="Weapon" name="Tallum Blade - Destruction">
+	<item id="11061" name="Tallum Blade - Destruction" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1918,17 +2077,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3825-2;3057-1" />
+		<skills>
+			<skill id="3825" level="2" />
+			<skill id="3057" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11062" type="Weapon" name="Destroyer Hammer - Lightning">
+	<item id="11062" name="Destroyer Hammer - Lightning" type="Weapon">
 		<set name="icon" val="icon.weapon_hammer_of_destroyer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1946,18 +2108,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3895-2" />
+		<skills>
+			<skill id="3895" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11063" type="Weapon" name="Destroyer Hammer - Lightning">
+	<item id="11063" name="Destroyer Hammer - Lightning" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_hammer_of_destroyer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1975,18 +2139,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3895-2;3013-3" />
+		<skills>
+			<skill id="3895" level="2" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11064" type="Weapon" name="Destroyer Hammer - Lightning">
+	<item id="11064" name="Destroyer Hammer - Lightning" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_hammer_of_destroyer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2004,18 +2171,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3895-2;3068-2" />
+		<skills>
+			<skill id="3895" level="2" />
+			<skill id="3068" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11065" type="Weapon" name="Destroyer Hammer - Lightning">
+	<item id="11065" name="Destroyer Hammer - Lightning" name_additional="Critical Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_hammer_of_destroyer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2032,21 +2202,23 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="24" />
 		<set name="oncrit_skill" val="3059-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3895-2;3552-1" />
+		<skills>
+			<skill id="3895" level="2" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11066" type="Weapon" name="Divine Pain - Concentration">
+	<item id="11066" name="Divine Pain - Concentration" type="Weapon">
 		<set name="icon" val="icon.weapon_pain_of_godness_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2065,7 +2237,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3847-1" />
+		<skills>
+			<skill id="3847" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2075,11 +2249,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11067" type="Weapon" name="Divine Pain - Concentration">
+	<item id="11067" name="Divine Pain - Concentration" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_pain_of_godness_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2098,7 +2272,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3847-1;3068-2" />
+		<skills>
+			<skill id="3847" level="1" />
+			<skill id="3068" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2108,11 +2285,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11068" type="Weapon" name="Divine Pain - Concentration">
+	<item id="11068" name="Divine Pain - Concentration" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_pain_of_godness_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2131,7 +2308,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3847-1;3067-1" />
+		<skills>
+			<skill id="3847" level="1" />
+			<skill id="3067" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2141,11 +2321,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11069" type="Weapon" name="Divine Pain - Concentration">
+	<item id="11069" name="Divine Pain - Concentration" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_pain_of_godness_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2164,7 +2344,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3847-1;3050-1" />
+		<skills>
+			<skill id="3847" level="1" />
+			<skill id="3050" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2174,11 +2357,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11070" type="Weapon" name="Halberd - Lightning">
+	<item id="11070" name="Halberd - Lightning" type="Weapon">
 		<set name="icon" val="icon.weapon_halbard_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -2196,18 +2379,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3874-1;3599-1" />
+		<skills>
+			<skill id="3874" level="1" />
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11071" type="Weapon" name="Halberd - Lightning">
+	<item id="11071" name="Halberd - Lightning" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_halbard_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -2225,18 +2411,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3874-1;3601-7" />
+		<skills>
+			<skill id="3874" level="1" />
+			<skill id="3601" level="7" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11072" type="Weapon" name="Halberd - Lightning">
+	<item id="11072" name="Halberd - Lightning" name_additional="Critical Stun" type="Weapon">
 		<set name="icon" val="icon.weapon_halbard_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -2253,21 +2442,23 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="25" />
 		<set name="oncrit_skill" val="3070-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3874-1;3552-2" />
+		<skills>
+			<skill id="3874" level="1" />
+			<skill id="3552" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11073" type="Weapon" name="Halberd - Lightning">
+	<item id="11073" name="Halberd - Lightning" name_additional="Wide Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_halbard_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -2285,18 +2476,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3874-1;3552-2" />
+		<skills>
+			<skill id="3874" level="1" />
+			<skill id="3552" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11074" type="Weapon" name="Keshanberk*Damascus - Destruction">
+	<item id="11074" name="Keshanberk*Damascus - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2313,19 +2507,21 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3013-3" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3835-2" />
+		<skills>
+			<skill id="3013" level="3" type="ON_ENCHANT" type_value="4" />
+			<skill id="3835" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="275" />
 			<set stat="mAtk" val="112" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11075" type="Weapon" name="Lacerator - Thunder">
+	<item id="11075" name="Lacerator - Thunder" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -2343,9 +2539,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3832-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3832" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2355,11 +2553,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11076" type="Weapon" name="Lacerator - Thunder">
+	<item id="11076" name="Lacerator - Thunder" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -2377,9 +2575,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3832-1;3067-2" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3832" level="1" />
+			<skill id="3067" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2389,11 +2590,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11077" type="Weapon" name="Lacerator - Thunder">
+	<item id="11077" name="Lacerator - Thunder" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -2411,9 +2612,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3832-1;3013-3" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3832" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2423,11 +2627,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11078" type="Weapon" name="Lacerator - Thunder - Rsk. Focus">
+	<item id="11078" name="Lacerator - Thunder" name_additional="Rsk. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -2445,9 +2649,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3832-1;3071-2" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3832" level="1" />
+			<skill id="3071" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2457,11 +2664,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11079" type="Weapon" name="Damascus*Damascus - Thunder">
+	<item id="11079" name="Damascus*Damascus - Thunder" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2478,19 +2685,21 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3046-20" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3837-1" />
+		<skills>
+			<skill id="3046" level="20" type="ON_ENCHANT" type_value="4" />
+			<skill id="3837" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11080" type="Weapon" name="Dark Legion's Edge - Thunder">
+	<item id="11080" name="Dark Legion's Edge - Thunder" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_legions_edge_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2509,17 +2718,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3827-1" />
+		<skills>
+			<skill id="3827" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11081" type="Weapon" name="Dark Legion's Edge - Thunder - Critical Damage">
+	<item id="11081" name="Dark Legion's Edge - Thunder" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_legions_edge_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2538,17 +2749,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3827-1;3067-2" />
+		<skills>
+			<skill id="3827" level="1" />
+			<skill id="3067" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11082" type="Weapon" name="Dark Legion's Edge - Thunder - Health">
+	<item id="11082" name="Dark Legion's Edge - Thunder" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_legions_edge_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2567,17 +2781,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3827-1;3013-3" />
+		<skills>
+			<skill id="3827" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11083" type="Weapon" name="Dark Legion's Edge - Thunder - Rsk. Focus">
+	<item id="11083" name="Dark Legion's Edge - Thunder" name_additional="Rsk. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_legions_edge_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2596,17 +2813,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3827-1;3071-2" />
+		<skills>
+			<skill id="3827" level="1" />
+			<skill id="3071" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11084" type="Weapon" name="Undertaker - Evil Spirit">
+	<item id="11084" name="Undertaker - Evil Spirit" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2625,7 +2845,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3848-1" />
+		<skills>
+			<skill id="3848" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2635,11 +2857,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11085" type="Weapon" name="Undertaker - Evil Spirit">
+	<item id="11085" name="Undertaker - Evil Spirit" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2658,7 +2880,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3848-1;3013-3" />
+		<skills>
+			<skill id="3848" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2668,11 +2893,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11086" type="Weapon" name="Undertaker - Evil Spirit">
+	<item id="11086" name="Undertaker - Evil Spirit" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2690,10 +2915,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="24" />
 		<set name="oncrit_skill" val="3055-2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3848-1;3552-1" />
+		<skills>
+			<skill id="3848" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2703,11 +2930,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11087" type="Weapon" name="Undertaker - Evil Spirit">
+	<item id="11087" name="Undertaker - Evil Spirit" name_additional="Critical Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2725,10 +2952,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="24" />
 		<set name="oncrit_skill" val="3060-2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3848-1;3552-1" />
+		<skills>
+			<skill id="3848" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2738,11 +2967,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11088" type="Weapon" name="Doom Crusher - Thunder">
+	<item id="11088" name="Doom Crusher - Thunder" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_crusher_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2760,18 +2989,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3894-1" />
+		<skills>
+			<skill id="3894" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11089" type="Weapon" name="Doom Crusher - Thunder">
+	<item id="11089" name="Doom Crusher - Thunder" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_crusher_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2789,18 +3020,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3894-1;3013-3" />
+		<skills>
+			<skill id="3894" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11090" type="Weapon" name="Doom Crusher - Thunder">
+	<item id="11090" name="Doom Crusher - Thunder" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_crusher_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2818,18 +3052,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3894-1;3057-2" />
+		<skills>
+			<skill id="3894" level="1" />
+			<skill id="3057" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11091" type="Weapon" name="Doom Crusher - Thunder - Rsk. Haste">
+	<item id="11091" name="Doom Crusher - Thunder" name_additional="Rsk. Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_crusher_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2847,18 +3084,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3894-1;3056-2" />
+		<skills>
+			<skill id="3894" level="1" />
+			<skill id="3056" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11092" type="Weapon" name="Dragon Grinder - Earth">
+	<item id="11092" name="Dragon Grinder - Earth" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_grinder_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -2876,18 +3116,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3881-1" />
+		<skills>
+			<skill id="3881" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11093" type="Weapon" name="Dragon Grinder - Earth - Rsk. Evasion">
+	<item id="11093" name="Dragon Grinder - Earth" name_additional="Rsk. Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_grinder_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -2905,18 +3147,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3881-1;3069-1" />
+		<skills>
+			<skill id="3881" level="1" />
+			<skill id="3069" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11094" type="Weapon" name="Dragon Grinder - Earth">
+	<item id="11094" name="Dragon Grinder - Earth" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_grinder_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -2934,18 +3179,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3881-1;3065-1" />
+		<skills>
+			<skill id="3881" level="1" />
+			<skill id="3065" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11095" type="Weapon" name="Dragon Grinder - Earth">
+	<item id="11095" name="Dragon Grinder - Earth" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_grinder_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -2963,18 +3211,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3881-1;3013-3" />
+		<skills>
+			<skill id="3881" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11096" type="Weapon" name="Dragon Slayer - Evil Spirit">
+	<item id="11096" name="Dragon Slayer - Evil Spirit" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_slayer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2993,17 +3244,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3842-1" />
+		<skills>
+			<skill id="3842" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11097" type="Weapon" name="Dragon Slayer - Evil Spirit">
+	<item id="11097" name="Dragon Slayer - Evil Spirit" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_slayer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -3022,17 +3275,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3842-1;3013-3" />
+		<skills>
+			<skill id="3842" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11098" type="Weapon" name="Dragon Slayer - Evil Spirit">
+	<item id="11098" name="Dragon Slayer - Evil Spirit" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_slayer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -3050,20 +3306,22 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="24" />
 		<set name="oncrit_skill" val="3055-2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3842-1;3552-1" />
+		<skills>
+			<skill id="3842" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="11099" type="Weapon" name="Dragon Slayer - Evil Spirit">
+	<item id="11099" name="Dragon Slayer - Evil Spirit" name_additional="Critical Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_slayer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -3081,17 +3339,19 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="24" />
 		<set name="oncrit_skill" val="3060-2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3842-1;3552-1" />
+		<skills>
+			<skill id="3842" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
 </list>

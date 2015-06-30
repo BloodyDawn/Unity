@@ -20,6 +20,7 @@ package org.l2junity.gameserver.network.client.recv;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.EnchantItemData;
+import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -184,8 +185,7 @@ public final class RequestEnchantItem implements IClientIncomingPacket
 				}
 				case SUCCESS:
 				{
-					Skill enchant4Skill = null;
-					L2Item it = item.getItem();
+					final L2Item it = item.getItem();
 					// Increase enchant level only if scroll's base template has chance, some armors can success over +20 but they shouldn't have increased.
 					if (scrollTemplate.getChance(activeChar, item) > 0)
 					{
@@ -238,15 +238,17 @@ public final class RequestEnchantItem implements IClientIncomingPacket
 						}
 					}
 					
-					if ((item.isArmor()) && (item.getEnchantLevel() == 4) && item.isEquipped())
+					if (item.isArmor() && item.isEquipped())
 					{
-						enchant4Skill = it.getEnchant4Skill();
-						if (enchant4Skill != null)
+						it.forEachSkill(ItemSkillType.ON_ENCHANT, holder ->
 						{
 							// add skills bestowed from +4 armor
-							activeChar.addSkill(enchant4Skill, false);
-							activeChar.sendSkillList();
-						}
+							if (item.getEnchantLevel() >= holder.getValue())
+							{
+								activeChar.addSkill(holder.getSkill(), false);
+								activeChar.sendSkillList();
+							}
+						});
 					}
 					break;
 				}

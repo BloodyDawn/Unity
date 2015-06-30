@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="30700" name="Bound Karmian Stockings" additionalName="" type="Armor">
+	<item id="30700" name="Bound Karmian Stockings" type="Armor">
 		<!-- Bound Karmian Stockings. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t53_l_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -21,7 +21,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30701" name="Bound Karmian Tunic" additionalName="" type="Armor">
+	<item id="30701" name="Bound Karmian Tunic" type="Armor">
 		<!-- Bound Karmian Tunic. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t53_u_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -42,7 +42,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30702" name="Bound Karmian Boots" additionalName="" type="Armor">
+	<item id="30702" name="Bound Karmian Boots" type="Armor">
 		<!-- Bound Karmian Boots. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t53_b_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -63,7 +63,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30703" name="Bound Karmian Gloves" additionalName="" type="Armor">
+	<item id="30703" name="Bound Karmian Gloves" type="Armor">
 		<!-- Bound Karmian Gloves. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t53_g_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -84,7 +84,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30704" name="Bound Carnage Bow" additionalName="" type="Weapon">
+	<item id="30704" name="Bound Carnage Bow" type="Weapon">
 		<!-- Bound Item.\nBestows one of the following functions: Light, Critical Bleed, or Mana Up. -->
 		<set name="icon" val="icon.weapon_carnium_bow_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -110,7 +110,7 @@
 			<set stat="rCrit" val="12.0" />
 		</for>
 	</item>
-	<item id="30705" name="Bound Carnage Bow" additionalName="Light Armor" type="Weapon">
+	<item id="30705" name="Bound Carnage Bow" name_additional="Light Armor" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Weight Gauge by 20%. Increases damage inflicted during PvP. -->
 		<set name="icon" val="icon.weapon_carnium_bow_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -136,7 +136,7 @@
 			<set stat="rCrit" val="12.0" />
 		</for>
 	</item>
-	<item id="30706" name="Bound Carnage Bow" additionalName="Critical Bleed" type="Weapon">
+	<item id="30706" name="Bound Carnage Bow" name_additional="Critical Bleed" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nHas a 35% chance of casting Bleed on the target during a standard Critical Attack. Increases damage inflicted during PvP. -->
 		<set name="icon" val="icon.weapon_carnium_bow_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -162,7 +162,7 @@
 			<set stat="rCrit" val="12.0" />
 		</for>
 	</item>
-	<item id="30707" name="Bound Carnage Bow" additionalName="Mana Up" type="Weapon">
+	<item id="30707" name="Bound Carnage Bow" name_additional="Mana Up" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Max MP by 30%. Increases damage inflicted during PvP. -->
 		<set name="icon" val="icon.weapon_carnium_bow_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -188,7 +188,7 @@
 			<set stat="rCrit" val="12.0" />
 		</for>
 	</item>
-	<item id="30708" name="Bound Tsurugi" additionalName="" type="Weapon">
+	<item id="30708" name="Bound Tsurugi" type="Weapon">
 		<!-- Bound Tsurugi. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_tsurugi_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -214,7 +214,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30709" name="Bound Tsurugi" additionalName="Focus" type="Weapon">
+	<item id="30709" name="Bound Tsurugi" name_additional="Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 77. -->
 		<set name="icon" val="icon.weapon_tsurugi_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -240,7 +240,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30710" name="Bound Tsurugi" additionalName="Critical Damage" type="Weapon">
+	<item id="30710" name="Bound Tsurugi" name_additional="Critical Damage" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 213 during a Critical Attack. -->
 		<set name="icon" val="icon.weapon_tsurugi_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -266,7 +266,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30711" name="Bound Tsurugi" additionalName="Haste" type="Weapon">
+	<item id="30711" name="Bound Tsurugi" name_additional="Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 7%. -->
 		<set name="icon" val="icon.weapon_tsurugi_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -292,7 +292,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30712" name="Bound Chain Shield" additionalName="" type="Weapon">
+	<item id="30712" name="Bound Chain Shield" type="Weapon">
 		<!-- Bound Chain Shield. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.shield_chain_shield_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -313,7 +313,7 @@
 			<add stat="rShld" val="20.0" />
 		</for>
 	</item>
-	<item id="30713" name="Bound Chain Mail Shirt" additionalName="" type="Armor">
+	<item id="30713" name="Bound Chain Mail Shirt" type="Armor">
 		<!-- Bound Chain Mail Shirt. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t48_u_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -334,7 +334,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30714" name="Bound Chain Gaiters" additionalName="" type="Armor">
+	<item id="30714" name="Bound Chain Gaiters" type="Armor">
 		<!-- Bound Chain Gaiters. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t48_l_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -355,7 +355,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30715" name="Bound Chain Boots" additionalName="" type="Armor">
+	<item id="30715" name="Bound Chain Boots" type="Armor">
 		<!-- Bound chain Boots. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t48_b_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -376,7 +376,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30716" name="Bound Chain Gloves" additionalName="" type="Armor">
+	<item id="30716" name="Bound Chain Gloves" type="Armor">
 		<!-- Bound Chain Gloves. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t48_g_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -397,7 +397,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30717" name="Bound Bronze Helmet" additionalName="" type="Armor">
+	<item id="30717" name="Bound Bronze Helmet" type="Armor">
 		<!-- Bound bronze Helmet. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -418,7 +418,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30718" name="Bound Bronze Shield" additionalName="" type="Weapon">
+	<item id="30718" name="Bound Bronze Shield" type="Weapon">
 		<!-- Bound bronze Shield. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.shield_bronze_shield_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -439,7 +439,7 @@
 			<add stat="rShld" val="20.0" />
 		</for>
 	</item>
-	<item id="30719" name="Bound Iron Plate Gaiters" additionalName="" type="Armor">
+	<item id="30719" name="Bound Iron Plate Gaiters" type="Armor">
 		<!-- Bound Iron Plate Gaiters. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t12_l_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -460,7 +460,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30720" name="Bound Chakram" additionalName="" type="Weapon">
+	<item id="30720" name="Bound Chakram" type="Weapon">
 		<!-- Bound Chakram. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_chakram_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -487,7 +487,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30721" name="Bound Chakram" additionalName="Critical Drain" type="Weapon">
+	<item id="30721" name="Bound Chakram" name_additional="Critical Drain" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nAbsorbs 6 HP from the target during a Critical Attack. -->
 		<set name="icon" val="icon.weapon_chakram_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -514,7 +514,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30722" name="Bound Chakram" additionalName="Critical Poison" type="Weapon">
+	<item id="30722" name="Bound Chakram" name_additional="Critical Poison" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 17% chance of casting Poison on the target during a standard Critical Attack. -->
 		<set name="icon" val="icon.weapon_chakram_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -541,7 +541,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30723" name="Bound Chakram" additionalName="Rsk. Haste" type="Weapon">
+	<item id="30723" name="Bound Chakram" name_additional="Rsk. Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by 13% when HP drops to 60% or below. -->
 		<set name="icon" val="icon.weapon_chakram_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -568,7 +568,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30724" name="Bound Crimson Boots" additionalName="" type="Armor">
+	<item id="30724" name="Bound Crimson Boots" type="Armor">
 		<!-- Bound crimson Boots. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t57_b_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -589,7 +589,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30725" name="Bound Rip Gauntlets" additionalName="" type="Armor">
+	<item id="30725" name="Bound Rip Gauntlets" type="Armor">
 		<!-- Bound Rip Gauntlets. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t40_g_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -610,7 +610,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30726" name="Bound Scroll of Wisdom" additionalName="" type="Weapon">
+	<item id="30726" name="Bound Scroll of Wisdom" type="Weapon">
 		<!-- Bound Scroll of Wisdom. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_scroll_of_wisdom_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -635,7 +635,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30727" name="Bound Stockings of Knowledge" additionalName="" type="Armor">
+	<item id="30727" name="Bound Stockings of Knowledge" type="Armor">
 		<!-- Bound Stockings of Knowledge. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t41_l_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -656,7 +656,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30728" name="Bound Tunic of Knowledge" additionalName="" type="Armor">
+	<item id="30728" name="Bound Tunic of Knowledge" type="Armor">
 		<!-- Bound Tunic of Knowledge. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t41_u_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -677,7 +677,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30729" name="Bound Gloves of Knowledge" additionalName="" type="Armor">
+	<item id="30729" name="Bound Gloves of Knowledge" type="Armor">
 		<!-- Bound Gloves of Knowledge. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t41_g_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -698,7 +698,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30730" name="Bound Boots of Knowledge" additionalName="" type="Armor">
+	<item id="30730" name="Bound Boots of Knowledge" type="Armor">
 		<!-- Bound Boots of knowledge. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t41_b_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -719,7 +719,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30731" name="Bound Striped Silk Shirt" additionalName="" type="Armor">
+	<item id="30731" name="Bound Striped Silk Shirt" type="Armor">
 		<!-- Bound Striped Silk Shirt. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.etc_stripe_shirts_c_i02" />
 		<set name="default_action" val="EQUIP" />
@@ -740,7 +740,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30732" name="Bound Striped Linen Shirt" additionalName="" type="Armor">
+	<item id="30732" name="Bound Striped Linen Shirt" type="Armor">
 		<!-- Bound Striped Linen Shirt. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.etc_stripe_shirts_d_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -761,7 +761,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30733" name="Bound General's Katzbalger" additionalName="" type="Weapon">
+	<item id="30733" name="Bound General's Katzbalger" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Claymore conversion, Bound general's katzbalger. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_tulwar_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -788,7 +788,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30734" name="Bound Ghost Staff" additionalName="" type="Weapon">
+	<item id="30734" name="Bound Ghost Staff" type="Weapon">
 		<!-- Bound Item.\nBestows one of the following functions: Magic Regeneration, Magic Mental Shield or Magic Hold. -->
 		<set name="icon" val="icon.weapon_sprites_staff_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -815,7 +815,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30735" name="Bound Ghost Staff" additionalName="Magic Regeneration" type="Weapon">
+	<item id="30735" name="Bound Ghost Staff" name_additional="Magic Regeneration" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nHas a 30% chance of casting Regeneration on the target during magic use. -->
 		<set name="icon" val="icon.weapon_sprites_staff_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -842,7 +842,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30736" name="Bound Ghost Staff" additionalName="Magic Mental Shield" type="Weapon">
+	<item id="30736" name="Bound Ghost Staff" name_additional="Magic Mental Shield" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nHas a 50% chance of casting Mental Shield on the target during magic use. -->
 		<set name="icon" val="icon.weapon_sprites_staff_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -869,7 +869,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30737" name="Bound Ghost Staff" additionalName="Magic Hold" type="Weapon">
+	<item id="30737" name="Bound Ghost Staff" name_additional="Magic Hold" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nHas a 10% chance of casting Dryad Root on the target during magic use. -->
 		<set name="icon" val="icon.weapon_sprites_staff_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -896,7 +896,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30738" name="Bound Cursed Maingauche" additionalName="" type="Weapon">
+	<item id="30738" name="Bound Cursed Maingauche" type="Weapon">
 		<!-- Bound Cursed Maingauche. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_maingauche_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -922,7 +922,7 @@
 			<set stat="rCrit" val="12.0" />
 		</for>
 	</item>
-	<item id="30739" name="Bound Cursed Dagger" additionalName="" type="Weapon">
+	<item id="30739" name="Bound Cursed Dagger" type="Weapon">
 		<!-- Bound Cursed Dagger. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_cursed_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -948,7 +948,7 @@
 			<set stat="rCrit" val="12.0" />
 		</for>
 	</item>
-	<item id="30740" name="Bound Cursed Dagger" additionalName="Critical Bleed" type="Weapon">
+	<item id="30740" name="Bound Cursed Dagger" name_additional="Critical Bleed" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 17% chance of casting Bleed on the target during a standard Critical Attack. -->
 		<set name="icon" val="icon.weapon_cursed_dagger_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -974,7 +974,7 @@
 			<set stat="rCrit" val="12.0" />
 		</for>
 	</item>
-	<item id="30741" name="Bound Cursed Dagger" additionalName="Critical Poison" type="Weapon">
+	<item id="30741" name="Bound Cursed Dagger" name_additional="Critical Poison" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 9% chance of casting Poison on the target during a standard Critical Attack. -->
 		<set name="icon" val="icon.weapon_cursed_dagger_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1000,7 +1000,7 @@
 			<set stat="rCrit" val="12.0" />
 		</for>
 	</item>
-	<item id="30742" name="Bound Cursed Dagger" additionalName="Rsk. Haste" type="Weapon">
+	<item id="30742" name="Bound Cursed Dagger" name_additional="Rsk. Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by 13% when HP drops to 60% or below. -->
 		<set name="icon" val="icon.weapon_cursed_dagger_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1026,7 +1026,7 @@
 			<set stat="rCrit" val="12.0" />
 		</for>
 	</item>
-	<item id="30743" name="Bound Cursed Stockings" additionalName="" type="Armor">
+	<item id="30743" name="Bound Cursed Stockings" type="Armor">
 		<!-- Bound Cursed Stockings. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t14_l_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1047,7 +1047,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30744" name="Bound Cursed Tunic" additionalName="" type="Armor">
+	<item id="30744" name="Bound Cursed Tunic" type="Armor">
 		<!-- Bound Cursed Tunic. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t14_u_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1068,7 +1068,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30745" name="Bound Cursed Staff" additionalName="" type="Weapon">
+	<item id="30745" name="Bound Cursed Staff" type="Weapon">
 		<!-- Bound Cursed Staff. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_cursed_staff_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1095,7 +1095,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30746" name="Bound Cursed Staff" additionalName="Magic Hold" type="Weapon">
+	<item id="30746" name="Bound Cursed Staff" name_additional="Magic Hold" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 6% chance of casting Dryad Root on the target during magic use. -->
 		<set name="icon" val="icon.weapon_cursed_staff_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1122,7 +1122,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30747" name="Bound Cursed Staff" additionalName="Magic Poison" type="Weapon">
+	<item id="30747" name="Bound Cursed Staff" name_additional="Magic Poison" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas an 8% chance of casting Curse Poison on the target during magic use. -->
 		<set name="icon" val="icon.weapon_cursed_staff_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1149,7 +1149,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30748" name="Bound Cursed Staff" additionalName="Magic Weakness" type="Weapon">
+	<item id="30748" name="Bound Cursed Staff" name_additional="Magic Weakness" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas an 8% chance of casting Curse Weakness on the target during magic use. -->
 		<set name="icon" val="icon.weapon_cursed_staff_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1176,7 +1176,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30749" name="Bound Artisan's Sword*Sword of Revolution" additionalName="" type="Weapon">
+	<item id="30749" name="Bound Artisan's Sword*Sword of Revolution" type="Weapon">
 		<!-- Bound Artisan's Sword*Sword of Revolution. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1202,7 +1202,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30750" name="Bound Artisan's Sword*Crimson Sword" additionalName="" type="Weapon">
+	<item id="30750" name="Bound Artisan's Sword*Crimson Sword" type="Weapon">
 		<!-- Bound Artisan's Sword*Crimson Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1228,7 +1228,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30751" name="Bound Artisan's Sword*Artisan's Sword" additionalName="" type="Weapon">
+	<item id="30751" name="Bound Artisan's Sword*Artisan's Sword" type="Weapon">
 		<!-- Bound Artisan's Sword*Artisan's Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1254,7 +1254,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30752" name="Bound Artisan's Sword*Elven Sword" additionalName="" type="Weapon">
+	<item id="30752" name="Bound Artisan's Sword*Elven Sword" type="Weapon">
 		<!-- Bound Artisan's Sword*Elven Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1280,7 +1280,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30753" name="Bound Artisan's Sword*Elven Long Sword" additionalName="" type="Weapon">
+	<item id="30753" name="Bound Artisan's Sword*Elven Long Sword" type="Weapon">
 		<!-- Bound Artisan's Sword*Elven Long Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1306,7 +1306,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30754" name="Bound Artisan's Sword*Knight's Sword" additionalName="" type="Weapon">
+	<item id="30754" name="Bound Artisan's Sword*Knight's Sword" type="Weapon">
 		<!-- Bound Artisan's Sword*Knight's Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1332,7 +1332,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30755" name="Bound Artisan's Sword" additionalName="" type="Weapon">
+	<item id="30755" name="Bound Artisan's Sword" type="Weapon">
 		<!-- Bound Artisan's Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_artisans_sword_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1358,7 +1358,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30756" name="Bound Work Hammer" additionalName="" type="Weapon">
+	<item id="30756" name="Bound Work Hammer" type="Weapon">
 		<!-- Bound Work Hammer. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_work_hammer_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1385,7 +1385,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30757" name="Bound Imperial Crusader Breastplate" additionalName="" type="Armor">
+	<item id="30757" name="Bound Imperial Crusader Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t88_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
@@ -1405,7 +1405,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30758" name="Bound Imperial Crusader Helmet" additionalName="" type="Armor">
+	<item id="30758" name="Bound Imperial Crusader Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -1425,7 +1425,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30759" name="Bound Imperial Crusader Shield" additionalName="" type="Weapon">
+	<item id="30759" name="Bound Imperial Crusader Shield" type="Weapon">
 		<set name="icon" val="icon.shield_imperial_crusader_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1445,7 +1445,7 @@
 			<add stat="rShld" val="20.0" />
 		</for>
 	</item>
-	<item id="30760" name="Bound Imperial Crusader Boots" additionalName="" type="Armor">
+	<item id="30760" name="Bound Imperial Crusader Boots" type="Armor">
 		<set name="icon" val="icon.armor_t88_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1465,7 +1465,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30761" name="Bound Imperial Crusader Gauntlets" additionalName="" type="Armor">
+	<item id="30761" name="Bound Imperial Crusader Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t88_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1485,7 +1485,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30762" name="Bound Imperial Crusader Gaiters" additionalName="" type="Armor">
+	<item id="30762" name="Bound Imperial Crusader Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t88_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
@@ -1505,7 +1505,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30763" name="Bound Imperial Staff" additionalName="" type="Weapon">
+	<item id="30763" name="Bound Imperial Staff" type="Weapon">
 		<!-- Bound Item.\nBestows one of the following functions: Empower, MP Regeneration or Magic Hold. -->
 		<set name="icon" val="icon.weapon_imperial_staff_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1532,7 +1532,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30764" name="Bound Imperial Staff" additionalName="Empower" type="Weapon">
+	<item id="30764" name="Bound Imperial Staff" name_additional="Empower" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nM. Atk. + 60. Increases damage inflicted during PvP. -->
 		<set name="icon" val="icon.weapon_imperial_staff_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1559,7 +1559,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30765" name="Bound Imperial Staff" additionalName="MP Regeneration" type="Weapon">
+	<item id="30765" name="Bound Imperial Staff" name_additional="MP Regeneration" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases MP Recovery Rate. Increases damage inflicted during PvP. -->
 		<set name="icon" val="icon.weapon_imperial_staff_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1586,7 +1586,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30766" name="Bound Imperial Staff" additionalName="Magic Hold" type="Weapon">
+	<item id="30766" name="Bound Imperial Staff" name_additional="Magic Hold" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nHas a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. -->
 		<set name="icon" val="icon.weapon_imperial_staff_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1613,7 +1613,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30767" name="Bound Inferno Staff" additionalName="" type="Weapon">
+	<item id="30767" name="Bound Inferno Staff" type="Weapon">
 		<!-- Bound Inferno Staff. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_inferno_staff_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1640,7 +1640,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30768" name="Bound Inferno Staff" additionalName="Acumen" type="Weapon">
+	<item id="30768" name="Bound Inferno Staff" name_additional="Acumen" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. -->
 		<set name="icon" val="icon.weapon_inferno_staff_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1667,7 +1667,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30769" name="Bound Inferno Staff" additionalName="Magic Silence" type="Weapon">
+	<item id="30769" name="Bound Inferno Staff" name_additional="Magic Silence" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 10% chance of casting Silence on the target during magic use. -->
 		<set name="icon" val="icon.weapon_inferno_staff_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1694,7 +1694,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30770" name="Bound Inferno Staff" additionalName="Magic Paralyze" type="Weapon">
+	<item id="30770" name="Bound Inferno Staff" name_additional="Magic Paralyze" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 5% chance of casting Paralysis on the target during magic use. -->
 		<set name="icon" val="icon.weapon_inferno_staff_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1721,7 +1721,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30771" name="Bound Infernal Master" additionalName="" type="Weapon">
+	<item id="30771" name="Bound Infernal Master" type="Weapon">
 		<!-- Bound Item.\nBestows one of the following functions: Haste, Critical Damage or Focus. -->
 		<set name="icon" val="icon.weapon_inferno_master_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1747,7 +1747,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30772" name="Bound Infernal Master" additionalName="Haste" type="Weapon">
+	<item id="30772" name="Bound Infernal Master" name_additional="Haste" type="Weapon">
 		<!-- Bound Item. Cannot be exchanged or dropped\n(Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 6%. Increases damage inflicted during PvP. -->
 		<set name="icon" val="icon.weapon_inferno_master_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1773,7 +1773,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30773" name="Bound Infernal Master" additionalName="Critical Damage" type="Weapon">
+	<item id="30773" name="Bound Infernal Master" name_additional="Critical Damage" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nP. Atk. + 297 during a Critical Attack. Increases damage inflicted during PvP. -->
 		<set name="icon" val="icon.weapon_inferno_master_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1799,7 +1799,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30774" name="Bound Infernal Master" additionalName="Focus" type="Weapon">
+	<item id="30774" name="Bound Infernal Master" name_additional="Focus" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Critical by 61. Increases damage inflicted during PvP. -->
 		<set name="icon" val="icon.weapon_inferno_master_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1825,7 +1825,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30775" name="Bound Necklace of Mermaid" additionalName="" type="Armor">
+	<item id="30775" name="Bound Necklace of Mermaid" type="Armor">
 		<!-- Bound Necklace of Mermaid. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.accessary_necklace_of_mermaid_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1846,7 +1846,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="30776" name="Bound Necklace of Mermaid" additionalName="" type="Armor">
+	<item id="30776" name="Bound Necklace of Mermaid" type="Armor">
 		<set name="icon" val="icon.accessary_necklace_of_mermaid_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1866,7 +1866,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="30777" name="Bound Immortal Edge" additionalName="" type="Weapon">
+	<item id="30777" name="Bound Immortal Edge" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Pa'agrian Sword conversion, Bound immortal edge. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_invincible_blade_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1893,7 +1893,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30778" name="Bound Immortal Edge" additionalName="Focus" type="Weapon">
+	<item id="30778" name="Bound Immortal Edge" name_additional="Focus" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Pa'agrian Sword\n(Soul Crystal Enhancement)\nIncreases Critical by 77. -->
 		<set name="icon" val="icon.weapon_invincible_blade_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1920,7 +1920,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30779" name="Bound Immortal Edge" additionalName="Health" type="Weapon">
+	<item id="30779" name="Bound Immortal Edge" name_additional="Health" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Pa'agrian Sword\n(Soul Crystal Enhancement)\nIncreases Max HP by 25%. -->
 		<set name="icon" val="icon.weapon_invincible_blade_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1947,7 +1947,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30780" name="Bound Immortal Edge" additionalName="Critical Drain" type="Weapon">
+	<item id="30780" name="Bound Immortal Edge" name_additional="Critical Drain" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Pa'agrian Sword\n(Soul Crystal Enhancement)\nAbsorbs 9 HP from the target during a Critical Attack. -->
 		<set name="icon" val="icon.weapon_invincible_blade_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1974,7 +1974,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30781" name="Bound Ecliptic Axe" additionalName="" type="Weapon">
+	<item id="30781" name="Bound Ecliptic Axe" type="Weapon">
 		<!-- Bound Ecliptic Axe. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_eclipse_axe_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -2001,7 +2001,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30782" name="Bound Ecliptic Axe" additionalName="Conversion" type="Weapon">
+	<item id="30782" name="Bound Ecliptic Axe" name_additional="Conversion" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max MP by 60% and decreases Max HP by 40%. -->
 		<set name="icon" val="icon.weapon_eclipse_axe_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -2028,7 +2028,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30783" name="Bound Ecliptic Axe" additionalName="M. Atk." type="Weapon">
+	<item id="30783" name="Bound Ecliptic Axe" name_additional="M. Atk." type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases MP consumption by 15% and M. Atk. by 112 during magic use. -->
 		<set name="icon" val="icon.weapon_eclipse_axe_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -2055,7 +2055,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30784" name="Bound Ecliptic Axe" additionalName="Magic Hold" type="Weapon">
+	<item id="30784" name="Bound Ecliptic Axe" name_additional="Magic Hold" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 6% chance of casting Dryad Root on the target during magic use. -->
 		<set name="icon" val="icon.weapon_eclipse_axe_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -2082,7 +2082,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30785" name="Bound Icarus Dualsword" additionalName="" type="Weapon">
+	<item id="30785" name="Bound Icarus Dualsword" type="Weapon">
 		<!-- Bound Item.\nWhen enchanted, P. Atk. of a dualsword increases more significantly than that of a one-handed or fist weapon. When enchanted to 4 or more, Critical increases by 109 and Max HP increases by 10%. Inflicts additional damage to target during PvP. -->
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -2108,7 +2108,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30786" name="Bound Icarus Dual Daggers" additionalName="" type="Weapon">
+	<item id="30786" name="Bound Icarus Dual Daggers" type="Weapon">
 		<!-- Bound Item.\nWhen enchanted, P. Atk. of a Dual Dagger increases more significantly than that of a one-handed or fist weapon. When enchanted to 4 or more, Critical increases by 109 and Atk. Spd. Increases by 8%. Inflicts additional damage to target during PvP. Can be equipped by Dagger Masters above level 81. -->
 		<set name="icon" val="icon.dual_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -2134,7 +2134,7 @@
 			<set stat="rCrit" val="12.0" />
 		</for>
 	</item>
-	<item id="30787" name="Bound Heathen's Book" additionalName="" type="Weapon">
+	<item id="30787" name="Bound Heathen's Book" type="Weapon">
 		<!-- Bound Heathen's Book. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_heathens_book_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -2159,7 +2159,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30788" name="Bound Winged Spear" additionalName="" type="Weapon">
+	<item id="30788" name="Bound Winged Spear" type="Weapon">
 		<!-- Bound Winged Spear. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_winged_spear_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -2185,7 +2185,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30789" name="Bound Widow Maker" additionalName="" type="Weapon">
+	<item id="30789" name="Bound Widow Maker" type="Weapon">
 		<!-- Bound Widow Maker. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_widow_maker_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -2211,7 +2211,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30790" name="Bound Widow Maker" additionalName="Critical Stun" type="Weapon">
+	<item id="30790" name="Bound Widow Maker" name_additional="Critical Stun" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas about a 31% chance of casting Stun on the target during a Critical Attack. -->
 		<set name="icon" val="icon.weapon_widow_maker_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -2237,7 +2237,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30791" name="Bound Widow Maker" additionalName="Long Blow" type="Weapon">
+	<item id="30791" name="Bound Widow Maker" name_additional="Long Blow" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases the attack range. -->
 		<set name="icon" val="icon.weapon_widow_maker_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -2263,7 +2263,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30792" name="Bound Widow Maker" additionalName="Wide Blow" type="Weapon">
+	<item id="30792" name="Bound Widow Maker" name_additional="Wide Blow" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nBroadens the angle of attack. -->
 		<set name="icon" val="icon.weapon_widow_maker_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -2289,7 +2289,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30793" name="Bound Silver Axe" additionalName="" type="Weapon">
+	<item id="30793" name="Bound Silver Axe" type="Weapon">
 		<!-- Bound Silver Axe. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_war_pick_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -2316,7 +2316,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30794" name="Bound Silver Axe" additionalName="Anger" type="Weapon">
+	<item id="30794" name="Bound Silver Axe" name_additional="Anger" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 20 and decreases Max HP by 15%. -->
 		<set name="icon" val="icon.weapon_war_pick_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -2343,7 +2343,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30795" name="Bound Silver Axe" additionalName="Rsk. Focus" type="Weapon">
+	<item id="30795" name="Bound Silver Axe" name_additional="Rsk. Focus" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 138 when HP drops to 60% or below. -->
 		<set name="icon" val="icon.weapon_war_pick_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -2370,7 +2370,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30796" name="Bound Silver Axe" additionalName="Haste" type="Weapon">
+	<item id="30796" name="Bound Silver Axe" name_additional="Haste" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 8%. -->
 		<set name="icon" val="icon.weapon_war_pick_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -2397,7 +2397,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30797" name="Bound War Axe" additionalName="" type="Weapon">
+	<item id="30797" name="Bound War Axe" type="Weapon">
 		<!-- Bound War Axe. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_war_axe_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -2424,7 +2424,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30798" name="Bound War Axe" additionalName="Anger" type="Weapon">
+	<item id="30798" name="Bound War Axe" name_additional="Anger" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 24 and decreases Max HP by 15%. -->
 		<set name="icon" val="icon.weapon_war_axe_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -2451,7 +2451,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30799" name="Bound War Axe" additionalName="Health" type="Weapon">
+	<item id="30799" name="Bound War Axe" name_additional="Health" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max HP by 25%. -->
 		<set name="icon" val="icon.weapon_war_axe_i01" />
 		<set name="default_action" val="EQUIP" />

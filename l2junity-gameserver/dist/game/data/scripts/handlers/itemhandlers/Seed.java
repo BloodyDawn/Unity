@@ -18,7 +18,10 @@
  */
 package handlers.itemhandlers;
 
+import java.util.List;
+
 import org.l2junity.Config;
+import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
@@ -28,7 +31,7 @@ import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2ChestInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -89,13 +92,10 @@ public class Seed implements IItemHandler
 		final PlayerInstance activeChar = playable.getActingPlayer();
 		target.setSeeded(seed, activeChar);
 		
-		final SkillHolder[] skills = item.getItem().getSkills();
+		final List<ItemSkillHolder> skills = item.getItem().getSkills(ItemSkillType.NORMAL);
 		if (skills != null)
 		{
-			for (SkillHolder sk : skills)
-			{
-				activeChar.useMagic(sk.getSkill(), false, false);
-			}
+			skills.forEach(holder -> activeChar.useMagic(holder.getSkill(), false, false));
 		}
 		return true;
 	}

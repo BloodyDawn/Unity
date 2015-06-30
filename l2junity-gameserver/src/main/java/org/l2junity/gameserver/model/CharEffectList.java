@@ -232,7 +232,7 @@ public final class CharEffectList
 	{
 		if (isEmpty())
 		{
-			return Collections.<BuffInfo> emptyList();
+			return Collections.emptyList();
 		}
 		
 		final List<BuffInfo> buffs = new ArrayList<>();

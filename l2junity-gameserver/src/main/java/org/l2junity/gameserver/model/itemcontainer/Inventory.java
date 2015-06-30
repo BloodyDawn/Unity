@@ -34,13 +34,13 @@ import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.data.xml.impl.ArmorSetsData;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.ItemLocation;
+import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.model.ArmorSet;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ArmorsetSkillHolder;
-import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.EtcItemType;
@@ -281,12 +281,11 @@ public abstract class Inventory extends ItemContainer
 			{
 				return;
 			}
-			final PlayerInstance player = (PlayerInstance) inventory.getOwner();
 			
-			Skill enchant4Skill, itemSkill;
-			L2Item it = item.getItem();
-			boolean update = false;
-			boolean updateTimeStamp = false;
+			final PlayerInstance player = (PlayerInstance) inventory.getOwner();
+			final L2Item it = item.getItem();
+			final AtomicBoolean update = new AtomicBoolean();
+			final AtomicBoolean updateTimestamp = new AtomicBoolean();
 			
 			// Remove augmentation bonuses on unequip
 			if (item.isAugmented())
@@ -294,107 +293,87 @@ public abstract class Inventory extends ItemContainer
 				item.getAugmentation().removeBonus(player);
 			}
 			
+			// Remove elemental bonus
 			item.removeElementAttrBonus(player);
 			
-			// Remove skills bestowed from +4 armor
-			if (item.getEnchantLevel() >= 4)
+			it.forEachSkill(ItemSkillType.ON_ENCHANT, holder ->
 			{
-				enchant4Skill = it.getEnchant4Skill();
-				
-				if (enchant4Skill != null)
+				// Remove skills bestowed from +4 armor
+				if (item.getEnchantLevel() >= holder.getValue())
 				{
-					player.removeSkill(enchant4Skill, false, enchant4Skill.isPassive());
-					update = true;
+					player.removeSkill(holder.getSkill(), false, holder.getSkill().isPassive());
+					update.compareAndSet(false, true);
 				}
-			}
+			});
 			
+			// Clear enchant bonus
 			item.clearEnchantStats();
 			
-			final SkillHolder[] skills = it.getSkills();
-			
-			if (skills != null)
+			it.forEachSkill(ItemSkillType.NORMAL, holder ->
 			{
-				for (SkillHolder skillInfo : skills)
+				final Skill Skill = holder.getSkill();
+				
+				if (Skill != null)
 				{
-					if (skillInfo == null)
-					{
-						continue;
-					}
-					
-					itemSkill = skillInfo.getSkill();
-					
-					if (itemSkill != null)
-					{
-						player.removeSkill(itemSkill, false, itemSkill.isPassive());
-						update = true;
-					}
-					else
-					{
-						_log.warn("Inventory.ItemSkillsListener.Weapon: Incorrect skill: {}", skillInfo);
-					}
+					player.removeSkill(Skill, false, Skill.isPassive());
+					update.compareAndSet(false, true);
 				}
-			}
+				else
+				{
+					_log.warn("Inventory.ItemSkillsListener.Weapon: Incorrect skill: {}", holder);
+				}
+			});
 			
 			if (item.isArmor())
 			{
 				for (ItemInstance itm : inventory.getItems())
 				{
-					if (!itm.isEquipped() || (itm.getItem().getSkills() == null) || itm.equals(item))
+					if (!itm.isEquipped() || (itm.getItem().getSkills(ItemSkillType.NORMAL) == null) || itm.equals(item))
 					{
 						continue;
 					}
-					for (SkillHolder sk : itm.getItem().getSkills())
+					
+					itm.getItem().forEachSkill(ItemSkillType.NORMAL, holder ->
 					{
-						if (player.getSkillLevel(sk.getSkillId()) != -1)
+						if (player.getSkillLevel(holder.getSkillId()) != -1)
 						{
-							continue;
+							return;
 						}
 						
-						itemSkill = sk.getSkill();
-						
-						if (itemSkill != null)
+						final Skill skill = holder.getSkill();
+						if (skill != null)
 						{
-							player.addSkill(itemSkill, false);
+							player.addSkill(skill, false);
 							
-							if (itemSkill.isActive())
+							if (skill.isActive())
 							{
-								if (!player.hasSkillReuse(itemSkill.getReuseHashCode()))
+								if (!player.hasSkillReuse(skill.getReuseHashCode()))
 								{
 									int equipDelay = item.getEquipReuseDelay();
 									if (equipDelay > 0)
 									{
-										player.addTimeStamp(itemSkill, equipDelay);
-										player.disableSkill(itemSkill, equipDelay);
+										player.addTimeStamp(skill, equipDelay);
+										player.disableSkill(skill, equipDelay);
 									}
+									updateTimestamp.compareAndSet(false, true);
 								}
-								updateTimeStamp = true;
 							}
-							update = true;
+							update.compareAndSet(false, true);
 						}
-					}
+					});
 				}
 			}
 			
 			// Apply skill, if weapon have "skills on unequip"
-			Skill unequipSkill = it.getUnequipSkill();
-			if (unequipSkill != null)
-			{
-				PlayerInstance[] targets =
-				{
-					player
-				};
-				
-				unequipSkill.activateSkill(player, targets);
-			}
+			it.forEachSkill(ItemSkillType.ON_UNEQUIP, holder -> holder.getSkill().activateSkill(player, player));
 			
-			if (update)
+			if (update.get())
 			{
 				player.sendSkillList();
-				
-				if (updateTimeStamp)
-				{
-					player.sendPacket(new SkillCoolTime(player));
-				}
+			}
+			if (updateTimestamp.get())
+			{
+				player.sendPacket(new SkillCoolTime(player));
 			}
 		}
 		
@@ -407,11 +386,8 @@ public abstract class Inventory extends ItemContainer
 			}
 			
 			final PlayerInstance player = (PlayerInstance) inventory.getOwner();
-			
-			Skill enchant4Skill, itemSkill;
-			L2Item it = item.getItem();
-			boolean update = false;
-			boolean updateTimeStamp = false;
+			final AtomicBoolean update = new AtomicBoolean();
+			final AtomicBoolean updateTimestamp = new AtomicBoolean();
 			
 			// Apply augmentation bonuses on equip
 			if (item.isAugmented())
@@ -419,69 +395,57 @@ public abstract class Inventory extends ItemContainer
 				item.getAugmentation().applyBonus(player);
 			}
 			
+			// Update item elemental bonus
 			item.updateElementAttrBonus(player);
 			
-			// Add skills bestowed from +4 armor
-			if (item.getEnchantLevel() >= 4)
+			item.getItem().forEachSkill(ItemSkillType.ON_ENCHANT, holder ->
 			{
-				enchant4Skill = it.getEnchant4Skill();
-				
-				if (enchant4Skill != null)
+				// Add skills bestowed from +4 armor
+				if (item.getEnchantLevel() >= holder.getValue())
 				{
-					player.addSkill(enchant4Skill, false);
-					update = true;
+					player.addSkill(holder.getSkill(), false);
+					update.compareAndSet(false, true);
 				}
-			}
+			});
 			
+			// Apply enchant stats
 			item.applyEnchantStats();
 			
-			final SkillHolder[] skills = it.getSkills();
-			
-			if (skills != null)
+			item.getItem().forEachSkill(ItemSkillType.NORMAL, holder ->
 			{
-				for (SkillHolder skillInfo : skills)
+				final Skill skill = holder.getSkill();
+				if (skill != null)
 				{
-					if (skillInfo == null)
-					{
-						continue;
-					}
+					player.addSkill(skill, false);
 					
-					itemSkill = skillInfo.getSkill();
-					
-					if (itemSkill != null)
+					if (skill.isActive())
 					{
-						player.addSkill(itemSkill, false);
-						
-						if (itemSkill.isActive())
+						if (!player.hasSkillReuse(skill.getReuseHashCode()))
 						{
-							if (!player.hasSkillReuse(itemSkill.getReuseHashCode()))
+							int equipDelay = item.getEquipReuseDelay();
+							if (equipDelay > 0)
 							{
-								int equipDelay = item.getEquipReuseDelay();
-								if (equipDelay > 0)
-								{
-									player.addTimeStamp(itemSkill, equipDelay);
-									player.disableSkill(itemSkill, equipDelay);
-								}
+								player.addTimeStamp(skill, equipDelay);
+								player.disableSkill(skill, equipDelay);
 							}
-							updateTimeStamp = true;
+							updateTimestamp.compareAndSet(false, true);
 						}
-						update = true;
 					}
-					else
-					{
-						_log.warn("Inventory.ItemSkillsListener.Weapon: Incorrect skill: {}", skillInfo);
-					}
+					update.compareAndSet(false, true);
 				}
-			}
+				else
+				{
+					_log.warn("Inventory.ItemSkillsListener.Weapon: Incorrect skill: {}", holder);
+				}
+			});
 			
-			if (update)
+			if (update.get())
 			{
 				player.sendSkillList();
-				
-				if (updateTimeStamp)
-				{
-					player.sendPacket(new SkillCoolTime(player));
-				}
+			}
+			if (updateTimestamp.get())
+			{
+				player.sendPacket(new SkillCoolTime(player));
 			}
 		}
 	}
@@ -1018,7 +982,7 @@ public abstract class Inventory extends ItemContainer
 	 */
 	public synchronized ItemInstance setPaperdollItem(int slot, ItemInstance item)
 	{
-		ItemInstance old = _paperdoll[slot];
+		final ItemInstance old = _paperdoll[slot];
 		if (old != item)
 		{
 			if (old != null)

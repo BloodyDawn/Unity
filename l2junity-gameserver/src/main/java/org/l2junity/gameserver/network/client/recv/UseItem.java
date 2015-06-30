@@ -18,11 +18,14 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
+import java.util.List;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.ai.NextAction;
+import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.handler.IItemHandler;
@@ -33,7 +36,7 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.EtcItem;
 import org.l2junity.gameserver.model.items.L2Item;
@@ -41,7 +44,6 @@ import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.ArmorType;
 import org.l2junity.gameserver.model.items.type.WeaponType;
-import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.ExUseSharedGroupItem;
@@ -123,12 +125,11 @@ public final class UseItem implements IClientIncomingPacket
 			// gm can use other player item
 			if (activeChar.isGM())
 			{
-				WorldObject obj = World.getInstance().findObject(_objectId);
+				final WorldObject obj = World.getInstance().findObject(_objectId);
 				if (obj instanceof ItemInstance)
 				{
 					activeChar.useAdminCommand("admin_use_item " + _objectId);
 				}
-				
 			}
 			return;
 		}
@@ -169,17 +170,10 @@ public final class UseItem implements IClientIncomingPacket
 		
 		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && (activeChar.getReputation() < 0))
 		{
-			SkillHolder[] skills = item.getItem().getSkills();
-			if (skills != null)
+			final List<ItemSkillHolder> skills = item.getItem().getSkills(ItemSkillType.NORMAL);
+			if ((skills != null) && skills.stream().anyMatch(holder -> holder.getSkill().hasEffectType(L2EffectType.TELEPORT)))
 			{
-				for (SkillHolder sHolder : skills)
-				{
-					Skill skill = sHolder.getSkill();
-					if ((skill != null) && skill.hasEffectType(L2EffectType.TELEPORT))
-					{
-						return;
-					}
-				}
+				return;
 			}
 		}
 		
@@ -350,11 +344,8 @@ public final class UseItem implements IClientIncomingPacket
 			
 			if (activeChar.isCastingNow() || activeChar.isCastingSimultaneouslyNow())
 			{
-				// Creating next action class.
-				final NextAction nextAction = new NextAction(CtrlEvent.EVT_FINISH_CASTING, CtrlIntention.AI_INTENTION_CAST, () -> activeChar.useEquippableItem(item, true));
-				
-				// Binding next action to AI.
-				activeChar.getAI().setNextAction(nextAction);
+				// Create and Bind the next action to the AI
+				activeChar.getAI().setNextAction(new NextAction(CtrlEvent.EVT_FINISH_CASTING, CtrlIntention.AI_INTENTION_CAST, () -> activeChar.useEquippableItem(item, true)));
 			}
 			else if (activeChar.isAttackingNow())
 			{

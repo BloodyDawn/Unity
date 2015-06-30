@@ -18,9 +18,13 @@
  */
 package handlers.itemhandlers;
 
+import java.util.List;
+
 import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
+import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -54,7 +58,7 @@ public class ItemSkillsTemplate implements IItemHandler
 			return false;
 		}
 		
-		final SkillHolder[] skills = item.getEtcItem().getSkills();
+		final List<ItemSkillHolder> skills = item.getItem().getSkills(ItemSkillType.NORMAL);
 		if (skills == null)
 		{
 			_log.info("Item " + item + " does not have registered any skill for handler.");

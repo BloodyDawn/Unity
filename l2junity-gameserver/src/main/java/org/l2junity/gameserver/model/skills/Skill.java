@@ -1253,24 +1253,24 @@ public final class Skill implements IIdentifiable
 	{
 		if (_funcTemplates == null)
 		{
-			return Collections.<AbstractFunction> emptyList();
+			return Collections.emptyList();
 		}
 		
 		if (!(player instanceof Playable) && !(player instanceof Attackable))
 		{
-			return Collections.<AbstractFunction> emptyList();
+			return Collections.emptyList();
 		}
 		
-		final List<AbstractFunction> funcs = new ArrayList<>(_funcTemplates.size());
-		for (FuncTemplate t : _funcTemplates)
+		final List<AbstractFunction> functions = new ArrayList<>(_funcTemplates.size());
+		for (FuncTemplate template : _funcTemplates)
 		{
-			AbstractFunction f = t.getFunc(player, null, this, this); // skill is owner
-			if (f != null)
+			final AbstractFunction function = template.getFunc(player, null, this, this); // skill is owner
+			if (function != null)
 			{
-				funcs.add(f);
+				functions.add(function);
 			}
 		}
-		return funcs;
+		return functions;
 	}
 	
 	/**
@@ -1458,11 +1458,12 @@ public final class Skill implements IIdentifiable
 	 * @param caster the caster
 	 * @param targets the targets
 	 */
-	public void activateSkill(Creature caster, WorldObject[] targets)
+	@SafeVarargs
+	public final void activateSkill(Creature caster, WorldObject... targets)
 	{
+		// TODO: replace with AI
 		switch (getId())
 		{
-		// TODO: replace with AI
 			case 5852:
 			case 5853:
 			{

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="300" type="Weapon" name="Great Axe">
+	<item id="300" name="Great Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_great_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -18,18 +18,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="301" type="Weapon" name="Scorpion">
+	<item id="301" name="Scorpion" type="Weapon">
 		<set name="icon" val="icon.weapon_scorpion_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -47,18 +49,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="144" />
 			<set stat="mAtk" val="78" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="302" type="Weapon" name="Body Slasher">
+	<item id="302" name="Body Slasher" type="Weapon">
 		<set name="icon" val="icon.weapon_body_slasher_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -76,18 +80,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="303" type="Weapon" name="Widow Maker">
+	<item id="303" name="Widow Maker" type="Weapon">
 		<set name="icon" val="icon.weapon_widow_maker_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -105,18 +111,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="144" />
 			<set stat="mAtk" val="78" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="304" type="Weapon" name="Corroded Orcish Halberd">
+	<item id="304" name="Corroded Orcish Halberd" type="Weapon">
 		<set name="icon" val="icon.weapon_orcish_halbard_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -134,18 +142,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="219" />
 			<set stat="mAtk" val="109" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="305" type="Weapon" name="Tallum Glaive">
+	<item id="305" name="Tallum Glaive" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_glaive_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -163,18 +173,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="306" type="Weapon" name="Corroded Dragon Claw Axe">
+	<item id="306" name="Corroded Dragon Claw Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_hunter_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -192,18 +204,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="251" />
 			<set stat="mAtk" val="121" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="307" type="Weapon" name="Aurakyria Lance">
+	<item id="307" name="Aurakyria Lance" type="Weapon">
 		<set name="icon" val="icon.weapon_saint_spear_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -227,18 +241,20 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="269" />
 			<set stat="mAtk" val="128" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="308" type="Weapon" name="Buffalo's Horn">
+	<item id="308" name="Buffalo's Horn" type="Weapon">
 		<set name="icon" val="icon.weapon_buffalo_horn_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -261,7 +277,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="309" type="Weapon" name="Tears of Eva">
+	<item id="309" name="Tears of Eva" type="Weapon">
 		<set name="icon" val="icon.weapon_tears_of_eva_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -284,7 +300,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="310" type="Weapon" name="Relic of the Saints">
+	<item id="310" name="Relic of the Saints" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -307,7 +323,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="311" type="Weapon" name="Crucifix of Blessing">
+	<item id="311" name="Crucifix of Blessing" type="Weapon">
 		<set name="icon" val="icon.weapon_crucifix_of_blessing_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -330,7 +346,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="312" type="Weapon" name="Branch of Life">
+	<item id="312" name="Branch of Life" type="Weapon">
 		<set name="icon" val="icon.weapon_branch_of_life_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -354,11 +370,11 @@
 			<set stat="mAtk" val="35" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="313" type="Weapon" name="Temptation of Abyss">
+	<item id="313" name="Temptation of Abyss" type="Weapon">
 		<set name="icon" val="icon.weapon_temptation_of_abyss_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -382,11 +398,11 @@
 			<set stat="mAtk" val="35" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="314" type="Weapon" name="Proof of Revenge">
+	<item id="314" name="Proof of Revenge" type="Weapon">
 		<set name="icon" val="icon.weapon_proof_of_revenge_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -410,11 +426,11 @@
 			<set stat="mAtk" val="35" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="315" type="Weapon" name="Divine Tome">
+	<item id="315" name="Divine Tome" type="Weapon">
 		<set name="icon" val="icon.weapon_divine_tome_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -438,11 +454,11 @@
 			<set stat="mAtk" val="43" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="316" type="Weapon" name="Sage's Blood">
+	<item id="316" name="Sage's Blood" type="Weapon">
 		<set name="icon" val="icon.weapon_blood_of_saints_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -466,11 +482,11 @@
 			<set stat="mAtk" val="52" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="317" type="Weapon" name="Tome of Blood">
+	<item id="317" name="Tome of Blood" type="Weapon">
 		<set name="icon" val="icon.weapon_tome_of_blood_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -494,11 +510,11 @@
 			<set stat="mAtk" val="52" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="318" type="Weapon" name="Crucifix of Blood">
+	<item id="318" name="Crucifix of Blood" type="Weapon">
 		<set name="icon" val="icon.weapon_crucifix_of_blood_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -522,11 +538,11 @@
 			<set stat="mAtk" val="63" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="319" type="Weapon" name="Eye of Infinity">
+	<item id="319" name="Eye of Infinity" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -550,11 +566,11 @@
 			<set stat="mAtk" val="63" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="320" type="Weapon" name="Blue Crystal Skull">
+	<item id="320" name="Blue Crystal Skull" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -578,11 +594,11 @@
 			<set stat="mAtk" val="66" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="321" type="Weapon" name="Demon's Fangs">
+	<item id="321" name="Demon's Fangs" type="Weapon">
 		<set name="icon" val="icon.weapon_demon_fangs_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -606,11 +622,11 @@
 			<set stat="mAtk" val="66" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="322" type="Weapon" name="Vajra Wand">
+	<item id="322" name="Vajra Wand" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -634,11 +650,11 @@
 			<set stat="mAtk" val="72" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="323" type="Weapon" name="Ancient Reagent">
+	<item id="323" name="Ancient Reagent" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -662,11 +678,11 @@
 			<set stat="mAtk" val="72" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="324" type="Weapon" name="Tears of Fairy">
+	<item id="324" name="Tears of Fairy" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -690,11 +706,11 @@
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="325" type="Weapon" name="Horn of Glory">
+	<item id="325" name="Horn of Glory" type="Weapon">
 		<set name="icon" val="icon.weapon_horn_of_glory_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -718,11 +734,11 @@
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="326" type="Weapon" name="Heathen's Book">
+	<item id="326" name="Heathen's Book" type="Weapon">
 		<set name="icon" val="icon.weapon_heathens_book_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -746,11 +762,11 @@
 			<set stat="mAtk" val="101" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="327" type="Weapon" name="Hex Doll">
+	<item id="327" name="Hex Doll" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -774,11 +790,11 @@
 			<set stat="mAtk" val="101" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="328" type="Weapon" name="Candle of Wisdom">
+	<item id="328" name="Candle of Wisdom" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -802,11 +818,11 @@
 			<set stat="mAtk" val="111" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="329" type="Weapon" name="Blessed Branch">
+	<item id="329" name="Blessed Branch" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -830,11 +846,11 @@
 			<set stat="mAtk" val="111" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="330" type="Weapon" name="Phoenix Feather">
+	<item id="330" name="Phoenix Feather" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -858,11 +874,11 @@
 			<set stat="mAtk" val="111" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="331" type="Weapon" name="Cerberus Eye">
+	<item id="331" name="Cerberus Eye" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -886,11 +902,11 @@
 			<set stat="mAtk" val="111" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="332" type="Weapon" name="Scroll of Destruction">
+	<item id="332" name="Scroll of Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -914,11 +930,11 @@
 			<set stat="mAtk" val="111" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="333" type="Weapon" name="Black Dragon Claw">
+	<item id="333" name="Black Dragon Claw" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -942,11 +958,11 @@
 			<set stat="mAtk" val="111" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="334" type="Weapon" name="Three Eyed Crow's Feather">
+	<item id="334" name="Three Eyed Crow's Feather" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -970,11 +986,11 @@
 			<set stat="mAtk" val="111" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="335" type="Weapon" name="Soul Crystal">
+	<item id="335" name="Soul Crystal" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -998,11 +1014,11 @@
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="336" type="Weapon" name="Scroll of Mana">
+	<item id="336" name="Scroll of Mana" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -1026,11 +1042,11 @@
 			<set stat="mAtk" val="143" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="337" type="Weapon" name="Hit List">
+	<item id="337" name="Hit List" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -1054,11 +1070,11 @@
 			<set stat="mAtk" val="143" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="338" type="Weapon" name="Wyvern's Skull">
+	<item id="338" name="Wyvern's Skull" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -1082,11 +1098,11 @@
 			<set stat="mAtk" val="143" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="339" type="Weapon" name="Blood Crystal">
+	<item id="339" name="Blood Crystal" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -1110,11 +1126,11 @@
 			<set stat="mAtk" val="143" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="340" type="Weapon" name="Unicorn's Horn">
+	<item id="340" name="Unicorn's Horn" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -1138,11 +1154,11 @@
 			<set stat="mAtk" val="143" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="341" type="Weapon" name="Forgotten Tome">
+	<item id="341" name="Forgotten Tome" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -1166,11 +1182,11 @@
 			<set stat="mAtk" val="152" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="342" type="Weapon" name="Enchanted Flute">
+	<item id="342" name="Enchanted Flute" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -1194,11 +1210,11 @@
 			<set stat="mAtk" val="152" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="343" type="Weapon" name="Headless Arrow">
+	<item id="343" name="Headless Arrow" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -1222,11 +1238,11 @@
 			<set stat="mAtk" val="152" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="344" type="Weapon" name="Proof of Overlord">
+	<item id="344" name="Proof of Overlord" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -1250,11 +1266,11 @@
 			<set stat="mAtk" val="152" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="345" type="Weapon" name="Deathbringer Sword">
+	<item id="345" name="Deathbringer Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -1278,11 +1294,11 @@
 			<set stat="mAtk" val="152" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="346" type="Weapon" name="Tears of Fallen Angel">
+	<item id="346" name="Tears of Fallen Angel" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -1306,11 +1322,11 @@
 			<set stat="mAtk" val="162" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="347" type="Armor" name="Ring Breastplate">
+	<item id="347" name="Ring Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t12_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1331,7 +1347,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="348" type="Armor" name="Scale Mail">
+	<item id="348" name="Scale Mail" type="Armor">
 		<set name="icon" val="icon.armor_t08_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1352,7 +1368,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="349" type="Armor" name="Compound Scale Mail">
+	<item id="349" name="Compound Scale Mail" type="Armor">
 		<set name="icon" val="icon.armor_t20_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1373,7 +1389,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="350" type="Armor" name="Dwarven Scale Mail">
+	<item id="350" name="Dwarven Scale Mail" type="Armor">
 		<set name="icon" val="icon.armor_t15_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1394,7 +1410,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="351" type="Armor" name="Breastplate">
+	<item id="351" name="Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t40_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1415,7 +1431,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="352" type="Armor" name="Brigandine">
+	<item id="352" name="Brigandine" type="Armor">
 		<set name="icon" val="icon.armor_t43_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1436,7 +1452,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="353" type="Armor" name="Half Plate Armor">
+	<item id="353" name="Half Plate Armor" type="Armor">
 		<set name="icon" val="icon.armor_t46_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1457,7 +1473,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="354" type="Armor" name="Chain Mail Shirt">
+	<item id="354" name="Chain Mail Shirt" type="Armor">
 		<set name="icon" val="icon.armor_t48_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1478,7 +1494,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="355" type="Armor" name="Dwarven Chain Mail Shirt">
+	<item id="355" name="Dwarven Chain Mail Shirt" type="Armor">
 		<set name="icon" val="icon.armor_t60_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1499,7 +1515,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="356" type="Armor" name="Full Plate Armor">
+	<item id="356" name="Full Plate Armor" type="Armor">
 		<set name="icon" val="icon.armor_t62_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1520,7 +1536,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="357" type="Armor" name="Zubei's Breastplate">
+	<item id="357" name="Zubei's Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t64_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1542,7 +1558,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="358" type="Armor" name="Blue Wolf Breastplate">
+	<item id="358" name="Blue Wolf Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t68_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1564,7 +1580,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="359" type="Armor" name="Shining Dragon Armor">
+	<item id="359" name="Shining Dragon Armor" type="Armor">
 		<set name="icon" val="icon.armor_composite_armor_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1582,7 +1598,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="360" type="Armor" name="Corroded Armor of Victory">
+	<item id="360" name="Corroded Armor of Victory" type="Armor">
 		<set name="icon" val="icon.armor_dwarven_scale_mail_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1600,7 +1616,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="361" type="Armor" name="Breastplate of Valor">
+	<item id="361" name="Breastplate of Valor" type="Armor">
 		<set name="icon" val="icon.armor_dwarven_scale_mail_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1618,7 +1634,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="362" type="Armor" name="Glorious Armor">
+	<item id="362" name="Glorious Armor" type="Armor">
 		<set name="icon" val="icon.armor_composite_armor_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1636,7 +1652,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="363" type="Armor" name="Red Flame Armor">
+	<item id="363" name="Red Flame Armor" type="Armor">
 		<set name="icon" val="icon.armor_composite_armor_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1654,7 +1670,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="364" type="Armor" name="Corroded Elven Crystal Breastplate">
+	<item id="364" name="Corroded Elven Crystal Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_dwarven_scale_mail_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1672,7 +1688,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="365" type="Armor" name="Dark Crystal Breastplate">
+	<item id="365" name="Dark Crystal Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t74_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1694,7 +1710,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="366" type="Armor" name="Implosion Armor">
+	<item id="366" name="Implosion Armor" type="Armor">
 		<set name="icon" val="icon.armor_composite_armor_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1712,7 +1728,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="367" type="Armor" name="Dark Dragon Armor">
+	<item id="367" name="Dark Dragon Armor" type="Armor">
 		<set name="icon" val="icon.armor_composite_armor_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1730,7 +1746,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="368" type="Armor" name="Elven Vagian Armor">
+	<item id="368" name="Elven Vagian Armor" type="Armor">
 		<set name="icon" val="icon.armor_composite_armor_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1748,7 +1764,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="369" type="Armor" name="Dark Vagian Armor">
+	<item id="369" name="Dark Vagian Armor" type="Armor">
 		<set name="icon" val="icon.armor_composite_armor_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1766,7 +1782,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="370" type="Armor" name="Complete Set of Plate Armor">
+	<item id="370" name="Complete Set of Plate Armor" type="Armor">
 		<set name="icon" val="icon.armor_composite_armor_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1784,7 +1800,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="371" type="Armor" name="Twilight Plate">
+	<item id="371" name="Twilight Plate" type="Armor">
 		<set name="icon" val="icon.armor_composite_armor_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1802,7 +1818,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="372" type="Armor" name="Art of Plate">
+	<item id="372" name="Art of Plate" type="Armor">
 		<set name="icon" val="icon.armor_composite_armor_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1820,7 +1836,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="373" type="Armor" name="Masterpiece Armor">
+	<item id="373" name="Masterpiece Armor" type="Armor">
 		<set name="icon" val="icon.armor_composite_armor_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1838,7 +1854,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="374" type="Armor" name="Armor of Nightmare">
+	<item id="374" name="Armor of Nightmare" type="Armor">
 		<set name="icon" val="icon.armor_t80_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1859,7 +1875,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="375" type="Armor" name="Dragon Scale Mail">
+	<item id="375" name="Dragon Scale Mail" type="Armor">
 		<set name="icon" val="icon.armor_t15_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1884,7 +1900,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="376" type="Armor" name="Iron Plate Gaiters">
+	<item id="376" name="Iron Plate Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t12_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1905,7 +1921,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="377" type="Armor" name="Scale Gaiters">
+	<item id="377" name="Scale Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t08_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1926,7 +1942,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="378" type="Armor" name="Compound Scale Gaiters">
+	<item id="378" name="Compound Scale Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t20_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1947,7 +1963,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="379" type="Armor" name="Dwarven Scale Gaiters">
+	<item id="379" name="Dwarven Scale Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t15_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1968,7 +1984,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="380" type="Armor" name="Plate Gaiters">
+	<item id="380" name="Plate Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t46_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1989,7 +2005,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="381" type="Armor" name="Chain Gaiters">
+	<item id="381" name="Chain Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t48_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -2010,7 +2026,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="382" type="Armor" name="Dwarven Chain Gaiters">
+	<item id="382" name="Dwarven Chain Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t60_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -2031,7 +2047,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="383" type="Armor" name="Zubei's Gaiters">
+	<item id="383" name="Zubei's Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t64_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -2052,7 +2068,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="384" type="Armor" name="Wolf Gaiters">
+	<item id="384" name="Wolf Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_plate_gaiters_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -2070,7 +2086,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="385" type="Armor" name="Corroded Gaiters of Victory">
+	<item id="385" name="Corroded Gaiters of Victory" type="Armor">
 		<set name="icon" val="icon.armor_plate_gaiters_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -2088,7 +2104,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="386" type="Armor" name="Gaiters of Valor">
+	<item id="386" name="Gaiters of Valor" type="Armor">
 		<set name="icon" val="icon.armor_plate_gaiters_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -2106,7 +2122,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="387" type="Armor" name="Corroded Elven Crystal Gaiters">
+	<item id="387" name="Corroded Elven Crystal Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_plate_gaiters_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -2124,7 +2140,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="388" type="Armor" name="Dark Crystal Gaiters">
+	<item id="388" name="Dark Crystal Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t74_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -2146,7 +2162,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="389" type="Armor" name="Dragon Scale Gaiters">
+	<item id="389" name="Dragon Scale Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t15_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -2171,7 +2187,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="390" type="Armor" name="Cotton Shirt">
+	<item id="390" name="Cotton Shirt" type="Armor">
 		<set name="icon" val="icon.armor_t07_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -2185,7 +2201,7 @@
 			<add order="0" stat="pDef" val="50" />
 		</for>
 	</item>
-	<item id="391" type="Armor" name="Puma Skin Shirt">
+	<item id="391" name="Puma Skin Shirt" type="Armor">
 		<set name="icon" val="icon.armor_t09_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -2203,7 +2219,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="392" type="Armor" name="Lion Skin Shirt">
+	<item id="392" name="Lion Skin Shirt" type="Armor">
 		<set name="icon" val="icon.armor_t18_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -2221,7 +2237,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="393" type="Armor" name="Mithril Banded Mail">
+	<item id="393" name="Mithril Banded Mail" type="Armor">
 		<set name="icon" val="icon.armor_t10_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -2239,7 +2255,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="394" type="Armor" name="Reinforced Leather Shirt">
+	<item id="394" name="Reinforced Leather Shirt" type="Armor">
 		<set name="icon" val="icon.armor_t13_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -2257,7 +2273,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="395" type="Armor" name="Manticore Skin Shirt">
+	<item id="395" name="Manticore Skin Shirt" type="Armor">
 		<set name="icon" val="icon.armor_t42_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -2275,7 +2291,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="396" type="Armor" name="Salamander Skin Mail">
+	<item id="396" name="Salamander Skin Mail" type="Armor">
 		<set name="icon" val="icon.armor_t45_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -2293,7 +2309,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="397" type="Armor" name="Reinforced Mithril Shirt">
+	<item id="397" name="Reinforced Mithril Shirt" type="Armor">
 		<set name="icon" val="icon.armor_t47_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -2311,7 +2327,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="398" type="Armor" name="Plated Leather Armor">
+	<item id="398" name="Plated Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t47_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -2330,7 +2346,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="399" type="Armor" name="Rind Leather Armor">
+	<item id="399" name="Rind Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t49_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="9300" type="Weapon" name="Sharpshooter">
+	<item id="9300" name="Sharpshooter" type="Weapon">
 		<set name="icon" val="icon.weapon_taslam_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -29,11 +29,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9301" type="Weapon" name="Sharpshooter">
+	<item id="9301" name="Sharpshooter" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_taslam_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -52,9 +52,11 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
-		<set name="item_skill" val="3008-4" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="CROSSBOW" />
+		<skills>
+			<skill id="3008" level="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -64,11 +66,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9302" type="Weapon" name="Sharpshooter">
+	<item id="9302" name="Sharpshooter" name_additional="Miser" type="Weapon">
 		<set name="icon" val="icon.weapon_taslam_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -98,11 +100,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9303" type="Weapon" name="Sharpshooter">
+	<item id="9303" name="Sharpshooter" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_taslam_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -122,7 +124,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3360-1" />
+		<skills>
+			<skill id="3360" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -132,11 +136,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9304" type="Weapon" name="Military Fleuret">
+	<item id="9304" name="Military Fleuret" type="Weapon">
 		<set name="icon" val="icon.weapon_assult_fleuret_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -155,7 +159,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -165,11 +171,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9305" type="Weapon" name="Military Fleuret">
+	<item id="9305" name="Military Fleuret" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_assult_fleuret_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -187,9 +193,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3007-5" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3007" level="5" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -199,11 +207,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9306" type="Weapon" name="Military Fleuret">
+	<item id="9306" name="Military Fleuret" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_assult_fleuret_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -221,9 +229,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3010-5" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3010" level="5" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -233,11 +243,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9307" type="Weapon" name="Military Fleuret">
+	<item id="9307" name="Military Fleuret" name_additional="Back Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_assult_fleuret_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -255,9 +265,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3018-5" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3018" level="5" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -267,11 +279,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9308" type="Weapon" name="Innominate Victory">
+	<item id="9308" name="Innominate Victory" type="Weapon">
 		<set name="icon" val="icon.weapon_nameless_victory_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -299,11 +311,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9309" type="Weapon" name="Innominate Victory">
+	<item id="9309" name="Innominate Victory" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_nameless_victory_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -322,7 +334,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -332,11 +346,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9310" type="Weapon" name="Innominate Victory">
+	<item id="9310" name="Innominate Victory" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_nameless_victory_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -355,7 +369,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3023-5" />
+		<skills>
+			<skill id="3023" level="5" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -365,11 +381,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9311" type="Weapon" name="Innominate Victory">
+	<item id="9311" name="Innominate Victory" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_nameless_victory_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -388,7 +404,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3010-5" />
+		<skills>
+			<skill id="3010" level="5" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -398,11 +416,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9312" type="Weapon" name="Peacemaker">
+	<item id="9312" name="Peacemaker" type="Weapon">
 		<set name="icon" val="icon.weapon_peace_maker_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -431,11 +449,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9313" type="Weapon" name="Peacemaker">
+	<item id="9313" name="Peacemaker" name_additional="Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_peace_maker_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -455,7 +473,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3009-5" />
+		<skills>
+			<skill id="3009" level="5" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -465,11 +485,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9314" type="Weapon" name="Peacemaker">
+	<item id="9314" name="Peacemaker" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_peace_maker_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -488,9 +508,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
-		<set name="oncrit_chance" val="41" />
 		<set name="is_freightable" val="false" />
-		<set name="oncrit_skill" val="3021-5" />
+		<skills>
+			<skill id="3021" level="5" type="ON_CRITICAL_SKILL" type_chance="41" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -500,11 +521,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9315" type="Weapon" name="Peacemaker">
+	<item id="9315" name="Peacemaker" name_additional="Miser" type="Weapon">
 		<set name="icon" val="icon.weapon_peace_maker_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -534,11 +555,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9316" type="Weapon" name="Colichemarde">
+	<item id="9316" name="Colichemarde" type="Weapon">
 		<set name="icon" val="icon.weapon_colichemarde_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -557,7 +578,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -567,11 +590,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9317" type="Weapon" name="Colichemarde">
+	<item id="9317" name="Colichemarde" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_colichemarde_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -589,9 +612,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3010-6" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3010" level="6" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -601,11 +626,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9318" type="Weapon" name="Colichemarde">
+	<item id="9318" name="Colichemarde" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_colichemarde_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -623,9 +648,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3023-6" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3023" level="6" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -635,11 +662,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9319" type="Weapon" name="Colichemarde">
+	<item id="9319" name="Colichemarde" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_colichemarde_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -657,9 +684,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3036-6" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3036" level="6" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -669,11 +698,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9320" type="Weapon" name="Dismantler">
+	<item id="9320" name="Dismantler" type="Weapon">
 		<set name="icon" val="icon.weapon_dismantler_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -701,11 +730,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9321" type="Weapon" name="Dismantler">
+	<item id="9321" name="Dismantler" name_additional="Critical Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_dismantler_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -723,9 +752,10 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="35" />
 		<set name="is_freightable" val="false" />
-		<set name="oncrit_skill" val="3022-6" />
+		<skills>
+			<skill id="3022" level="6" type="ON_CRITICAL_SKILL" type_chance="35" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -735,11 +765,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9322" type="Weapon" name="Dismantler">
+	<item id="9322" name="Dismantler" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dismantler_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -758,7 +788,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -768,11 +800,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9323" type="Weapon" name="Dismantler">
+	<item id="9323" name="Dismantler" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_dismantler_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -790,9 +822,10 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="24" />
 		<set name="is_freightable" val="false" />
-		<set name="oncrit_skill" val="3055-1" />
+		<skills>
+			<skill id="3055" level="1" type="ON_CRITICAL_SKILL" type_chance="24" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -802,11 +835,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9324" type="Weapon" name="Hell Hound">
+	<item id="9324" name="Hell Hound" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_hound_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -835,11 +868,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9325" type="Weapon" name="Hell Hound">
+	<item id="9325" name="Hell Hound" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_hound_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -859,7 +892,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3008-6" />
+		<skills>
+			<skill id="3008" level="6" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -869,11 +904,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9326" type="Weapon" name="Hell Hound">
+	<item id="9326" name="Hell Hound" name_additional="Quick Recovery" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_hound_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -902,11 +937,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9327" type="Weapon" name="Hell Hound">
+	<item id="9327" name="Hell Hound" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_hound_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -926,7 +961,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3360-1" />
+		<skills>
+			<skill id="3360" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -936,11 +973,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9328" type="Weapon" name="White Lightning">
+	<item id="9328" name="White Lightning" type="Weapon">
 		<set name="icon" val="icon.weapon_lightning_blaze_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -959,7 +996,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -969,11 +1008,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9329" type="Weapon" name="White Lightning">
+	<item id="9329" name="White Lightning" name_additional="Critical Poison" type="Weapon">
 		<set name="icon" val="icon.weapon_lightning_blaze_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -991,11 +1030,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="oncrit_chance" val="10" />
-		<set name="oncrit_skill" val="3061-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3061" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1005,11 +1046,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9330" type="Weapon" name="White Lightning">
+	<item id="9330" name="White Lightning" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_lightning_blaze_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1027,9 +1068,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3068-2" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3068" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1039,11 +1082,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9331" type="Weapon" name="White Lightning">
+	<item id="9331" name="White Lightning" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_lightning_blaze_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1061,9 +1104,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3057-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3057" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1073,11 +1118,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9332" type="Weapon" name="Divine Pain">
+	<item id="9332" name="Divine Pain" type="Weapon">
 		<set name="icon" val="icon.weapon_pain_of_godness_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1105,11 +1150,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9333" type="Weapon" name="Divine Pain">
+	<item id="9333" name="Divine Pain" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_pain_of_godness_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1128,7 +1173,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3068-2" />
+		<skills>
+			<skill id="3068" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1138,11 +1185,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9334" type="Weapon" name="Divine Pain">
+	<item id="9334" name="Divine Pain" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_pain_of_godness_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1161,7 +1208,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3067-1" />
+		<skills>
+			<skill id="3067" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1171,11 +1220,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9335" type="Weapon" name="Divine Pain">
+	<item id="9335" name="Divine Pain" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_pain_of_godness_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1194,7 +1243,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3050-1" />
+		<skills>
+			<skill id="3050" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1204,11 +1255,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9336" type="Weapon" name="Doomchanter">
+	<item id="9336" name="Doomchanter" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_singer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1237,11 +1288,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9337" type="Weapon" name="Doomchanter">
+	<item id="9337" name="Doomchanter" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_singer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1261,7 +1312,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1;3498-1" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3498" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1271,11 +1325,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9338" type="Weapon" name="Doomchanter">
+	<item id="9338" name="Doomchanter" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_singer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1294,10 +1348,11 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
-		<set name="oncrit_chance" val="35" />
 		<set name="oncrit_skill" val="3053-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1307,11 +1362,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9339" type="Weapon" name="Doomchanter">
+	<item id="9339" name="Doomchanter" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_singer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1331,7 +1386,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3014-2" />
+		<skills>
+			<skill id="3014" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1341,11 +1398,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9340" type="Weapon" name="Lacerator">
+	<item id="9340" name="Lacerator" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1364,7 +1421,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1374,11 +1433,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9341" type="Weapon" name="Lacerator">
+	<item id="9341" name="Lacerator" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1396,9 +1455,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3067-2" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3067" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1408,11 +1469,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9342" type="Weapon" name="Lacerator">
+	<item id="9342" name="Lacerator" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1430,9 +1491,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-3" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3013" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1442,11 +1505,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9343" type="Weapon" name="Lacerator - Rsk. Focus">
+	<item id="9343" name="Lacerator" name_additional="Rsk. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1464,9 +1527,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3071-2" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3071" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1476,11 +1541,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9344" type="Weapon" name="Undertaker">
+	<item id="9344" name="Undertaker" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1508,11 +1573,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9345" type="Weapon" name="Undertaker">
+	<item id="9345" name="Undertaker" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1531,7 +1596,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-3" />
+		<skills>
+			<skill id="3013" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1541,11 +1608,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9346" type="Weapon" name="Undertaker">
+	<item id="9346" name="Undertaker" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1563,10 +1630,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="24" />
 		<set name="oncrit_skill" val="3055-2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1576,11 +1644,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9347" type="Weapon" name="Undertaker">
+	<item id="9347" name="Undertaker" name_additional="Critical Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1598,10 +1666,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="24" />
 		<set name="oncrit_skill" val="3060-2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1611,11 +1680,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9348" type="Weapon" name="Reaper">
+	<item id="9348" name="Reaper" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_shooter_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1644,11 +1713,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9349" type="Weapon" name="Reaper">
+	<item id="9349" name="Reaper" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_shooter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1668,7 +1737,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1;3360-1" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3360" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1678,11 +1750,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9350" type="Weapon" name="Reaper">
+	<item id="9350" name="Reaper" name_additional="Quick Recovery" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_shooter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1702,7 +1774,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="340" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1712,11 +1786,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9351" type="Weapon" name="Reaper">
+	<item id="9351" name="Reaper" name_additional="Critical Poison" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_shooter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1735,10 +1809,11 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
-		<set name="oncrit_chance" val="18" />
 		<set name="oncrit_skill" val="3062-2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1748,11 +1823,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9352" type="Weapon" name="Éclair Bijou">
+	<item id="9352" name="Éclair Bijou" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1771,7 +1846,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1781,11 +1858,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9353" type="Weapon" name="Éclair Bijou">
+	<item id="9353" name="Éclair Bijou" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1803,9 +1880,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3068-3" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3068" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1815,11 +1894,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9354" type="Weapon" name="Éclair Bijou">
+	<item id="9354" name="Éclair Bijou" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1837,9 +1916,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-5" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3013" level="5" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1849,11 +1930,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9355" type="Weapon" name="Éclair Bijou">
+	<item id="9355" name="Éclair Bijou" name_additional="Critical Poison" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1871,11 +1952,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="oncrit_chance" val="10" />
-		<set name="oncrit_skill" val="3061-3" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3061" level="3" type="ON_CRITICAL_SKILL" />
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1885,11 +1968,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9356" type="Weapon" name="Durendal">
+	<item id="9356" name="Durendal" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1917,11 +2000,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9357" type="Weapon" name="Durendal">
+	<item id="9357" name="Durendal" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1940,7 +2023,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3050-2" />
+		<skills>
+			<skill id="3050" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1950,11 +2035,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9358" type="Weapon" name="Durendal">
+	<item id="9358" name="Durendal" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1973,7 +2058,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3068-3" />
+		<skills>
+			<skill id="3068" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1983,11 +2070,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9359" type="Weapon" name="Durendal">
+	<item id="9359" name="Durendal" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2006,7 +2093,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-5" />
+		<skills>
+			<skill id="3013" level="5" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2016,11 +2105,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9360" type="Weapon" name="Screaming Vengeance">
+	<item id="9360" name="Screaming Vengeance" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_shooter_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2049,11 +2138,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9361" type="Weapon" name="Screaming Vengeance">
+	<item id="9361" name="Screaming Vengeance" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_shooter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2073,7 +2162,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1;3360-1" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3360" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2083,11 +2175,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9362" type="Weapon" name="Screaming Vengeance">
+	<item id="9362" name="Screaming Vengeance" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_shooter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2107,7 +2199,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3050-2" />
+		<skills>
+			<skill id="3050" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2117,11 +2211,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9363" type="Weapon" name="Screaming Vengeance">
+	<item id="9363" name="Screaming Vengeance" name_additional="Quick Recovery" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_shooter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2141,7 +2235,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="332" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2151,11 +2247,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9364" type="Weapon" name="Laevateinn">
+	<item id="9364" name="Laevateinn" type="Weapon">
 		<set name="icon" val="icon.weapon_leavatein_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -2175,7 +2271,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2185,11 +2283,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9365" type="Weapon" name="Laevateinn">
+	<item id="9365" name="Laevateinn" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_leavatein_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -2208,9 +2306,11 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3564-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3564" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2220,11 +2320,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9366" type="Weapon" name="Laevateinn">
+	<item id="9366" name="Laevateinn" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_leavatein_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -2243,9 +2343,11 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-3" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3013" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2255,11 +2357,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9367" type="Weapon" name="Laevateinn">
+	<item id="9367" name="Laevateinn" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_leavatein_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -2278,9 +2380,11 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3566-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3566" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2290,11 +2394,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9368" type="Weapon" name="Gram">
+	<item id="9368" name="Gram" type="Weapon">
 		<set name="icon" val="icon.weapon_gram_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2323,11 +2427,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9369" type="Weapon" name="Gram">
+	<item id="9369" name="Gram" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_gram_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2347,7 +2451,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3564-1" />
+		<skills>
+			<skill id="3564" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2357,11 +2463,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9370" type="Weapon" name="Gram">
+	<item id="9370" name="Gram" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_gram_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2381,7 +2487,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-3" />
+		<skills>
+			<skill id="3013" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2391,11 +2499,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9371" type="Weapon" name="Gram">
+	<item id="9371" name="Gram" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_gram_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2415,7 +2523,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3566-1" />
+		<skills>
+			<skill id="3566" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2425,11 +2535,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9372" type="Weapon" name="Sarunga">
+	<item id="9372" name="Sarunga" type="Weapon">
 		<set name="icon" val="icon.weapon_sarnga_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2459,11 +2569,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9373" type="Weapon" name="Sarunga">
+	<item id="9373" name="Sarunga" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_sarnga_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2484,7 +2594,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1;3360-1" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3360" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2494,11 +2607,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9374" type="Weapon" name="Sarunga">
+	<item id="9374" name="Sarunga" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_sarnga_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2519,7 +2632,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3567-1" />
+		<skills>
+			<skill id="3567" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2529,11 +2644,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9375" type="Weapon" name="Sarunga">
+	<item id="9375" name="Sarunga" name_additional="Critical Slow" type="Weapon">
 		<set name="icon" val="icon.weapon_sarnga_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2553,10 +2668,11 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
-		<set name="oncrit_chance" val="16" />
 		<set name="oncrit_skill" val="3574-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2566,11 +2682,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9376" type="Weapon" name="Dynasty Rapier">
+	<item id="9376" name="Dynasty Rapier" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_rapier_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -2590,7 +2706,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2600,11 +2718,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9377" type="Weapon" name="Dynasty Rapier">
+	<item id="9377" name="Dynasty Rapier" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_rapier_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -2623,9 +2741,11 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3566-2" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3566" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2635,11 +2755,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9378" type="Weapon" name="Dynasty Rapier">
+	<item id="9378" name="Dynasty Rapier" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_rapier_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -2658,9 +2778,11 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-3" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3013" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2670,11 +2792,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9379" type="Weapon" name="Dynasty Rapier">
+	<item id="9379" name="Dynasty Rapier" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_rapier_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -2693,9 +2815,12 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1;3498-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3552" level="1" />
+			<skill id="3498" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2705,11 +2830,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9380" type="Weapon" name="Dynasty Ancient Sword">
+	<item id="9380" name="Dynasty Ancient Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2738,11 +2863,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9381" type="Weapon" name="Dynasty Ancient Sword">
+	<item id="9381" name="Dynasty Ancient Sword" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2762,7 +2887,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3566-2" />
+		<skills>
+			<skill id="3566" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2772,11 +2899,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9382" type="Weapon" name="Dynasty Ancient Sword">
+	<item id="9382" name="Dynasty Ancient Sword" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2796,7 +2923,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-3" />
+		<skills>
+			<skill id="3013" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2806,11 +2935,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9383" type="Weapon" name="Dynasty Ancient Sword">
+	<item id="9383" name="Dynasty Ancient Sword" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2830,7 +2959,10 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1;3498-1" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3498" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2840,11 +2972,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9384" type="Weapon" name="Dynasty Crossbow">
+	<item id="9384" name="Dynasty Crossbow" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_crossbow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2874,11 +3006,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9385" type="Weapon" name="Dynasty Crossbow">
+	<item id="9385" name="Dynasty Crossbow" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_crossbow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2899,7 +3031,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1;3360-1" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3360" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2909,11 +3044,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9386" type="Weapon" name="Dynasty Crossbow">
+	<item id="9386" name="Dynasty Crossbow" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_crossbow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2934,7 +3069,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3573-2" />
+		<skills>
+			<skill id="3573" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2944,11 +3081,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9387" type="Weapon" name="Dynasty Crossbow">
+	<item id="9387" name="Dynasty Crossbow" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_crossbow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2969,7 +3106,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3567-2" />
+		<skills>
+			<skill id="3567" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2979,11 +3118,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="9388" type="Weapon" name="Infinity Rapier">
+	<item id="9388" name="Infinity Rapier" type="Weapon">
 		<set name="icon" val="icon.weapon_infinity_rapier_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -3003,12 +3142,14 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="oncrit_skill" val="3579-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3427-1" />
+		<skills>
+			<skill id="3579" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3427" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<and>
 				<player races="KAMAEL" />
@@ -3024,7 +3165,7 @@
 			<add stat="holyPower" val="250" />
 		</for>
 	</item>
-	<item id="9389" type="Weapon" name="Infinity Sword">
+	<item id="9389" name="Infinity Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_infinity_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -3048,7 +3189,9 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3634-1" />
+		<skills>
+			<skill id="3634" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<and>
 				<player races="KAMAEL" />
@@ -3064,7 +3207,7 @@
 			<add stat="holyPower" val="250" />
 		</for>
 	</item>
-	<item id="9390" type="Weapon" name="Infinity Shooter">
+	<item id="9390" name="Infinity Shooter" type="Weapon">
 		<set name="icon" val="icon.weapon_infinity_shooter_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -3085,12 +3228,15 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="oncrit_skill" val="3594-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3635-1;3360-1" />
+		<skills>
+			<skill id="3594" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3635" level="1" />
+			<skill id="3360" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<and>
 				<player races="KAMAEL" />
@@ -3106,7 +3252,7 @@
 			<add stat="holyPower" val="250" />
 		</for>
 	</item>
-	<item id="9391" type="Armor" name="Human Circlet">
+	<item id="9391" name="Human Circlet" type="Armor">
 		<set name="icon" val="icon.accessary_human_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -3118,7 +3264,7 @@
 			<player races="HUMAN" />
 		</cond>
 	</item>
-	<item id="9392" type="Armor" name="Elven Circlet">
+	<item id="9392" name="Elven Circlet" type="Armor">
 		<set name="icon" val="icon.accessary_elf_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -3131,7 +3277,7 @@
 			<player races="ELF" />
 		</cond>
 	</item>
-	<item id="9393" type="Armor" name="Dark Elven Circlet">
+	<item id="9393" name="Dark Elven Circlet" type="Armor">
 		<set name="icon" val="icon.accessary_darkelf_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -3143,7 +3289,7 @@
 			<player races="DARK_ELF" />
 		</cond>
 	</item>
-	<item id="9394" type="Armor" name="Orc Circlet">
+	<item id="9394" name="Orc Circlet" type="Armor">
 		<set name="icon" val="icon.accessary_orc_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -3155,7 +3301,7 @@
 			<player races="ORC" />
 		</cond>
 	</item>
-	<item id="9395" type="Armor" name="Dwarven Circlet">
+	<item id="9395" name="Dwarven Circlet" type="Armor">
 		<set name="icon" val="icon.accessary_dwarf_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -3167,7 +3313,7 @@
 			<player races="DWARF" />
 		</cond>
 	</item>
-	<item id="9396" type="Armor" name="Kamaelic Circlet">
+	<item id="9396" name="Kamaelic Circlet" type="Armor">
 		<set name="icon" val="icon.accessary_kamael_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -3179,7 +3325,7 @@
 			<player races="KAMAEL" />
 		</cond>
 	</item>
-	<item id="9397" type="Armor" name="Shield Master Circlet">
+	<item id="9397" name="Shield Master Circlet" type="Armor">
 		<set name="icon" val="icon.accessary_knight_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -3195,7 +3341,7 @@
 			</and>
 		</cond>
 	</item>
-	<item id="9398" type="Armor" name="Bard Circlet">
+	<item id="9398" name="Bard Circlet" type="Armor">
 		<set name="icon" val="icon.accessary_enchant_knight_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -3211,7 +3357,7 @@
 			</and>
 		</cond>
 	</item>
-	<item id="9399" type="Armor" name="Force Master Circlet">
+	<item id="9399" name="Force Master Circlet" type="Armor">
 		<set name="icon" val="icon.accessary_force_master_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />

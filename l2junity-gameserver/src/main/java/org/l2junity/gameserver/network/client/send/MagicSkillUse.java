@@ -63,7 +63,7 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 				skillWorldPos = player.getCurrentSkillWorldPosition();
 			}
 		}
-		_groundLocations = skillWorldPos != null ? Arrays.asList(skillWorldPos) : Collections.<Location> emptyList();
+		_groundLocations = skillWorldPos != null ? Arrays.asList(skillWorldPos) : Collections.emptyList();
 	}
 	
 	public MagicSkillUse(Creature cha, Creature target, int skillId, int skillLevel, int hitTime, int reuseDelay)

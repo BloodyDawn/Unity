@@ -18,6 +18,7 @@
  */
 package handlers.itemhandlers;
 
+import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;
 import org.l2junity.gameserver.model.ArenaParticipantsHolder;
@@ -71,7 +72,7 @@ public class EventItem implements IItemHandler
 			return false;
 		}
 		
-		final Skill sk = item.getEtcItem().getSkills()[0].getSkill();
+		final Skill sk = item.getEtcItem().getSkills(ItemSkillType.NORMAL).get(0).getSkill();
 		if (sk == null)
 		{
 			return false;

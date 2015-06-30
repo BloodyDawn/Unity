@@ -66,18 +66,18 @@ public class Options
 	{
 		if (_funcs.isEmpty())
 		{
-			return Collections.<AbstractFunction> emptyList();
+			return Collections.emptyList();
 		}
 		
 		final List<AbstractFunction> funcs = new ArrayList<>(_funcs.size());
-		for (FuncTemplate fuctionTemplate : _funcs)
+		for (FuncTemplate template : _funcs)
 		{
-			AbstractFunction fuction = fuctionTemplate.getFunc(player, player, item, this);
+			final AbstractFunction fuction = template.getFunc(player, player, item, this);
 			if (fuction != null)
 			{
 				funcs.add(fuction);
 			}
-			player.sendDebugMessage("Adding stats: " + fuctionTemplate.getStat() + " val: " + fuctionTemplate.getValue());
+			player.sendDebugMessage("Adding stats: " + template.getStat() + " val: " + template.getValue());
 		}
 		return funcs;
 	}

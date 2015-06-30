@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="16837" type="Armor" name="Vesper Noble Helmet">
+	<item id="16837" name="Vesper Noble Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -13,7 +13,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8481-1" />
+		<skills>
+			<skill id="8481" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -22,7 +24,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="16838" type="Armor" name="Vesper Noble Leather Helmet">
+	<item id="16838" name="Vesper Noble Leather Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -35,13 +37,15 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8485-1" />
+		<skills>
+			<skill id="8485" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="101" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="16839" type="Armor" name="Vesper Noble Circlet">
+	<item id="16839" name="Vesper Noble Circlet" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -54,7 +58,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8489-1" />
+		<skills>
+			<skill id="8489" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -63,7 +69,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="16840" type="Armor" name="Vesper Noble Breastplate">
+	<item id="16840" name="Vesper Noble Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t94_u_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -77,7 +83,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8436-1" />
+		<skills>
+			<skill id="8436" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -86,7 +94,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="16841" type="Armor" name="Vesper Noble Leather Breastplate">
+	<item id="16841" name="Vesper Noble Leather Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t95_u_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -100,13 +108,15 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8442-1" />
+		<skills>
+			<skill id="8442" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="187" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="16842" type="Armor" name="Vesper Noble Tunic">
+	<item id="16842" name="Vesper Noble Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t96_u_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -120,7 +130,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8447-1" />
+		<skills>
+			<skill id="8447" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -130,7 +142,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="16843" type="Armor" name="Vesper Noble Gaiters">
+	<item id="16843" name="Vesper Noble Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t94_l_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -144,7 +156,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8482-1" />
+		<skills>
+			<skill id="8482" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -153,7 +167,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="16844" type="Armor" name="Vesper Noble Leather Leggings">
+	<item id="16844" name="Vesper Noble Leather Leggings" type="Armor">
 		<set name="icon" val="icon.armor_t95_l_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -167,13 +181,15 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8486-1" />
+		<skills>
+			<skill id="8486" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="117" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="16845" type="Armor" name="Vesper Noble Stockings">
+	<item id="16845" name="Vesper Noble Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t96_l_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -187,7 +203,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8490-1" />
+		<skills>
+			<skill id="8490" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -197,7 +215,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="16846" type="Armor" name="Vesper Noble Gauntlets">
+	<item id="16846" name="Vesper Noble Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t94_g_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -210,7 +228,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8483-1" />
+		<skills>
+			<skill id="8483" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -219,7 +239,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="16847" type="Armor" name="Vesper Noble Leather Gloves">
+	<item id="16847" name="Vesper Noble Leather Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t95_g_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -232,13 +252,15 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8487-1" />
+		<skills>
+			<skill id="8487" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="68" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="16848" type="Armor" name="Vesper Noble Gloves">
+	<item id="16848" name="Vesper Noble Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t96_g_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -251,7 +273,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8491-1" />
+		<skills>
+			<skill id="8491" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -260,7 +284,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="16849" type="Armor" name="Vesper Noble Boots">
+	<item id="16849" name="Vesper Noble Boots" type="Armor">
 		<set name="icon" val="icon.armor_t94_b_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -273,7 +297,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8484-1" />
+		<skills>
+			<skill id="8484" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -282,7 +308,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="16850" type="Armor" name="Vesper Noble Leather Boots">
+	<item id="16850" name="Vesper Noble Leather Boots" type="Armor">
 		<set name="icon" val="icon.armor_t95_b_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -295,13 +321,15 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8488-1" />
+		<skills>
+			<skill id="8488" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="68" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="16851" type="Armor" name="Vesper Noble Shoes">
+	<item id="16851" name="Vesper Noble Shoes" type="Armor">
 		<set name="icon" val="icon.armor_t96_b_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -314,7 +342,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8492-1" />
+		<skills>
+			<skill id="8492" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -323,26 +353,27 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="16852" type="EtcItem" name="Hero's Treasure Chest - 90-day limited period">
+	<item id="16852" name="Hero's Treasure Chest" type="EtcItem">
 		<set name="icon" val="icon.event_hero_treasure_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-
 		<set name="is_sellable" val="false" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="16853,1,1,100;13273,1,1,100;15426,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="16853" max="1" min="1" />
+			<item chance="100.0" id="13273" max="1" min="1" />
+			<item chance="100.0" id="15426" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="16853" type="EtcItem" name="Equipment Set Pack (90-day)">
+	<item id="16853" name="Equipment Set Pack (90-day)" name_additional="90-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i01" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -351,9 +382,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2914-3" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -361,8 +390,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
+		<skills>
+			<skill id="2914" level="3" />
+		</skills>
 	</item>
-	<item id="16854" type="Armor" name="Majestic Earring of Fortune">
+	<item id="16854" name="Majestic Earring of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -384,7 +416,7 @@
 			<add stat="maxMp" val="25" />
 		</for>
 	</item>
-	<item id="16855" type="Armor" name="Majestic Necklace of Fortune">
+	<item id="16855" name="Majestic Necklace of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -406,7 +438,7 @@
 			<add stat="maxMp" val="33" />
 		</for>
 	</item>
-	<item id="16856" type="Armor" name="Majestic Ring of Fortune">
+	<item id="16856" name="Majestic Ring of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -428,7 +460,7 @@
 			<add stat="maxMp" val="17" />
 		</for>
 	</item>
-	<item id="16857" type="Armor" name="Black Ore Earring of Fortune">
+	<item id="16857" name="Black Ore Earring of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.accessary_earing_of_black_ore_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -449,7 +481,7 @@
 			<add order="0" stat="mDef" val="54" />
 		</for>
 	</item>
-	<item id="16858" type="Armor" name="Black Ore Necklace of Fortune">
+	<item id="16858" name="Black Ore Necklace of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.accessary_necklace_of_black_ore_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -470,7 +502,7 @@
 			<add order="0" stat="mDef" val="72" />
 		</for>
 	</item>
-	<item id="16859" type="Armor" name="Black Ore Ring of Fortune">
+	<item id="16859" name="Black Ore Ring of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.accessary_ring_of_black_ore_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -491,7 +523,7 @@
 			<add order="0" stat="mDef" val="36" />
 		</for>
 	</item>
-	<item id="16860" type="Armor" name="Sealed Earring of Fortune">
+	<item id="16860" name="Sealed Earring of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.accessary_earing_of_binding_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -512,7 +544,7 @@
 			<add order="0" stat="mDef" val="45" />
 		</for>
 	</item>
-	<item id="16861" type="Armor" name="Sealed Necklace of Fortune">
+	<item id="16861" name="Sealed Necklace of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.accessary_necklace_of_binding_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -533,7 +565,7 @@
 			<add order="0" stat="mDef" val="64" />
 		</for>
 	</item>
-	<item id="16862" type="Armor" name="Sealed Ring of Fortune">
+	<item id="16862" name="Sealed Ring of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.accessary_ring_of_binding_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -554,7 +586,7 @@
 			<add order="0" stat="mDef" val="32" />
 		</for>
 	</item>
-	<item id="16863" type="Armor" name="Elven Earring of Fortune">
+	<item id="16863" name="Elven Earring of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.accessary_elven_earing_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -575,7 +607,7 @@
 			<add order="0" stat="mDef" val="34" />
 		</for>
 	</item>
-	<item id="16864" type="Armor" name="Elven Necklace of Fortune">
+	<item id="16864" name="Elven Necklace of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.accessary_elven_necklace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -596,7 +628,7 @@
 			<add order="0" stat="mDef" val="45" />
 		</for>
 	</item>
-	<item id="16865" type="Armor" name="Elven Ring of Fortune">
+	<item id="16865" name="Elven Ring of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.accessary_elven_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -617,7 +649,7 @@
 			<add order="0" stat="mDef" val="22" />
 		</for>
 	</item>
-	<item id="16866" type="Armor" name="Dark Crystal Robe of Fortune">
+	<item id="16866" name="Dark Crystal Robe of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t76_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -643,7 +675,7 @@
 			<add stat="maxMp" val="665" />
 		</for>
 	</item>
-	<item id="16867" type="Armor" name="Dark Crystal Helmet of Fortune">
+	<item id="16867" name="Dark Crystal Helmet of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -664,7 +696,7 @@
 			<add order="0" stat="pDef" val="69" />
 		</for>
 	</item>
-	<item id="16868" type="Armor" name="Dark Crystal Gloves of Fortune - Robe">
+	<item id="16868" name="Dark Crystal Gloves of Fortune - Robe" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t76_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -688,7 +720,7 @@
 			<add order="0" stat="pDef" val="46" />
 		</for>
 	</item>
-	<item id="16869" type="Armor" name="Dark Crystal Boots of Fortune - Robe">
+	<item id="16869" name="Dark Crystal Boots of Fortune - Robe" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t76_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -712,7 +744,7 @@
 			<add order="0" stat="pDef" val="46" />
 		</for>
 	</item>
-	<item id="16870" type="Armor" name="Dark Crystal Shield of Fortune">
+	<item id="16870" name="Dark Crystal Shield of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.shield_dark_crystal_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -723,7 +755,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -739,7 +770,7 @@
 			<set stat="sDef" val="243" />
 		</for>
 	</item>
-	<item id="16871" type="Armor" name="Avadon Robe of Fortune">
+	<item id="16871" name="Avadon Robe of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t59_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -765,7 +796,7 @@
 			<add stat="maxMp" val="561" />
 		</for>
 	</item>
-	<item id="16872" type="Armor" name="Avadon Circlet of Fortune">
+	<item id="16872" name="Avadon Circlet of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -786,7 +817,7 @@
 			<add order="0" stat="pDef" val="62" />
 		</for>
 	</item>
-	<item id="16873" type="Armor" name="Avadon Gloves of Fortune - Robe">
+	<item id="16873" name="Avadon Gloves of Fortune - Robe" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t59_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -810,7 +841,7 @@
 			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
-	<item id="16874" type="Armor" name="Avadon Boots of Fortune - Robe">
+	<item id="16874" name="Avadon Boots of Fortune - Robe" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t59_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -834,7 +865,7 @@
 			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
-	<item id="16875" type="Armor" name="Avadon Shield of Fortune">
+	<item id="16875" name="Avadon Shield of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.shield_avadon_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -845,7 +876,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -861,7 +891,7 @@
 			<set stat="sDef" val="216" />
 		</for>
 	</item>
-	<item id="16876" type="Armor" name="Karmian Tunic of Fortune">
+	<item id="16876" name="Karmian Tunic of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t53_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -887,7 +917,7 @@
 			<add stat="maxMp" val="225" />
 		</for>
 	</item>
-	<item id="16877" type="Armor" name="Karmian Stockings of Fortune">
+	<item id="16877" name="Karmian Stockings of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t53_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -913,7 +943,7 @@
 			<add stat="maxMp" val="141" />
 		</for>
 	</item>
-	<item id="16878" type="Armor" name="Karmian Gloves of Fortune">
+	<item id="16878" name="Karmian Gloves of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t53_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -934,7 +964,7 @@
 			<add order="0" stat="pDef" val="32" />
 		</for>
 	</item>
-	<item id="16879" type="Armor" name="Karmian Boots of Fortune">
+	<item id="16879" name="Karmian Boots of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t53_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -955,7 +985,7 @@
 			<add order="0" stat="pDef" val="32" />
 		</for>
 	</item>
-	<item id="16880" type="Armor" name="Mithril Tunic of Fortune">
+	<item id="16880" name="Mithril Tunic of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t51_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -981,7 +1011,7 @@
 			<add stat="maxMp" val="169" />
 		</for>
 	</item>
-	<item id="16881" type="Armor" name="Mithril Stockings of Fortune">
+	<item id="16881" name="Mithril Stockings of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t51_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -1007,7 +1037,7 @@
 			<add stat="maxMp" val="105" />
 		</for>
 	</item>
-	<item id="16882" type="Armor" name="Elven Mithril Gloves of Fortune">
+	<item id="16882" name="Elven Mithril Gloves of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t51_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1028,7 +1058,7 @@
 			<add order="0" stat="pDef" val="27" />
 		</for>
 	</item>
-	<item id="16883" type="Armor" name="Elven Mithril Boots of Fortune">
+	<item id="16883" name="Elven Mithril Boots of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t51_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1049,7 +1079,7 @@
 			<add order="0" stat="pDef" val="27" />
 		</for>
 	</item>
-	<item id="16884" type="Armor" name="Dark Crystal Leather Armor of Fortune">
+	<item id="16884" name="Dark Crystal Leather Armor of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t75_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1071,7 +1101,7 @@
 			<add order="0" stat="pDef" val="128" />
 		</for>
 	</item>
-	<item id="16885" type="Armor" name="Dark Crystal Leggings of Fortune">
+	<item id="16885" name="Dark Crystal Leggings of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t75_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1093,7 +1123,7 @@
 			<add order="0" stat="pDef" val="80" />
 		</for>
 	</item>
-	<item id="16886" type="Armor" name="Dark Crystal Gloves of Fortune - Light Armor">
+	<item id="16886" name="Dark Crystal Gloves of Fortune - Light Armor" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t75_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1114,7 +1144,7 @@
 			<add order="0" stat="pDef" val="46" />
 		</for>
 	</item>
-	<item id="16887" type="Armor" name="Dark Crystal Boots of Fortune - Light Armor">
+	<item id="16887" name="Dark Crystal Boots of Fortune - Light Armor" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t75_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1135,7 +1165,7 @@
 			<add order="0" stat="pDef" val="46" />
 		</for>
 	</item>
-	<item id="16888" type="Armor" name="Leather Armor of Doom of Fortune">
+	<item id="16888" name="Leather Armor of Doom of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t72_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1157,7 +1187,7 @@
 			<add order="0" stat="pDef" val="202" />
 		</for>
 	</item>
-	<item id="16889" type="Armor" name="Doom Helmet of Fortune">
+	<item id="16889" name="Doom Helmet of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -1178,7 +1208,7 @@
 			<add order="0" stat="pDef" val="66" />
 		</for>
 	</item>
-	<item id="16890" type="Armor" name="Doom Gloves of Fortune - Heavy Armor">
+	<item id="16890" name="Doom Gloves of Fortune - Heavy Armor" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t71_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1202,7 +1232,7 @@
 			<add order="0" stat="pDef" val="44" />
 		</for>
 	</item>
-	<item id="16891" type="Armor" name="Doom Gloves of Fortune - Light Armor">
+	<item id="16891" name="Doom Gloves of Fortune - Light Armor" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t72_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1223,7 +1253,7 @@
 			<add order="0" stat="pDef" val="44" />
 		</for>
 	</item>
-	<item id="16892" type="Armor" name="Doom Boots of Fortune - Heavy Armor">
+	<item id="16892" name="Doom Boots of Fortune - Heavy Armor" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t71_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1247,7 +1277,7 @@
 			<add order="0" stat="pDef" val="44" />
 		</for>
 	</item>
-	<item id="16893" type="Armor" name="Doom Boots of Fortune - Light Armor">
+	<item id="16893" name="Doom Boots of Fortune - Light Armor" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t72_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1268,7 +1298,7 @@
 			<add order="0" stat="pDef" val="44" />
 		</for>
 	</item>
-	<item id="16894" type="Armor" name="Doom Plate Armor of Fortune">
+	<item id="16894" name="Doom Plate Armor of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t71_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1293,7 +1323,7 @@
 			<add order="0" stat="pDef" val="270" />
 		</for>
 	</item>
-	<item id="16895" type="Armor" name="Doom Shield of Fortune">
+	<item id="16895" name="Doom Shield of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.shield_doom_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1304,7 +1334,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1320,7 +1349,7 @@
 			<set stat="sDef" val="230" />
 		</for>
 	</item>
-	<item id="16896" type="Armor" name="Plated Leather Armor of Fortune">
+	<item id="16896" name="Plated Leather Armor of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t47_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1342,7 +1371,7 @@
 			<add order="0" stat="pDef" val="94" />
 		</for>
 	</item>
-	<item id="16897" type="Armor" name="Plated Leather Gaiters of Fortune">
+	<item id="16897" name="Plated Leather Gaiters of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t47_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1364,7 +1393,7 @@
 			<add order="0" stat="pDef" val="59" />
 		</for>
 	</item>
-	<item id="16898" type="Armor" name="Plated Leather Boots of Fortune">
+	<item id="16898" name="Plated Leather Boots of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t47_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1385,7 +1414,7 @@
 			<add order="0" stat="pDef" val="32" />
 		</for>
 	</item>
-	<item id="16899" type="Armor" name="Plated Leather Gloves of Fortune">
+	<item id="16899" name="Plated Leather Gloves of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.armor_t47_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />

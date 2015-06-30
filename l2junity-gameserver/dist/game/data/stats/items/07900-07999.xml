@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="7900" type="Weapon" name="Ice Storm Hammer">
+	<item id="7900" name="Ice Storm Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_ice_storm_hammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -25,11 +25,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7901" type="Weapon" name="Star Buster">
+	<item id="7901" name="Star Buster" type="Weapon">
 		<set name="icon" val="icon.weapon_star_buster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -54,11 +54,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7902" type="Weapon" name="Doom Crusher">
+	<item id="7902" name="Doom Crusher" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_crusher_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -82,11 +82,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7903" type="Weapon" name="Frintezza's Sword">
+	<item id="7903" name="Frintezza's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -109,27 +109,25 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="7904" type="EtcItem" name="Boat Ticket: Rune to Gludin">
+	<item id="7904" name="Boat Ticket: Rune to Gludin" type="EtcItem">
 		<set name="icon" val="icon.etc_ticket_red_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="20" />
 		<set name="price" val="5000" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="7905" type="EtcItem" name="Boat Ticket: Gludin to Rune">
+	<item id="7905" name="Boat Ticket: Gludin to Rune" type="EtcItem">
 		<set name="icon" val="icon.etc_ticket_red_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="20" />
 		<set name="price" val="5000" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="7906" type="EtcItem" name="Blessing of Fire">
+	<item id="7906" name="Blessing of Fire" type="EtcItem">
 		<set name="icon" val="icon.etc_fire_crystal_1_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="LIQUID" />
@@ -138,11 +136,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2248-1" />
+		<skills>
+			<skill id="2248" level="1" />
+		</skills>
 	</item>
-	<item id="7907" type="EtcItem" name="Blessing of Water">
+	<item id="7907" name="Blessing of Water" type="EtcItem">
 		<set name="icon" val="icon.etc_water_crystal_1_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="LIQUID" />
@@ -151,11 +150,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2249-1" />
+		<skills>
+			<skill id="2249" level="1" />
+		</skills>
 	</item>
-	<item id="7908" type="EtcItem" name="Blessing of Wind">
+	<item id="7908" name="Blessing of Wind" type="EtcItem">
 		<set name="icon" val="icon.etc_wind_crystal_1_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="LIQUID" />
@@ -164,11 +164,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2250-1" />
+		<skills>
+			<skill id="2250" level="1" />
+		</skills>
 	</item>
-	<item id="7909" type="EtcItem" name="Blessing of Earth">
+	<item id="7909" name="Blessing of Earth" type="EtcItem">
 		<set name="icon" val="icon.etc_earth_crystal_1_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="LIQUID" />
@@ -177,11 +178,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2251-1" />
+		<skills>
+			<skill id="2251" level="1" />
+		</skills>
 	</item>
-	<item id="7910" type="EtcItem" name="Blessing of Dark">
+	<item id="7910" name="Blessing of Dark" type="EtcItem">
 		<set name="icon" val="icon.etc_unholy_crystal_1_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="LIQUID" />
@@ -190,11 +192,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2252-1" />
+		<skills>
+			<skill id="2252" level="1" />
+		</skills>
 	</item>
-	<item id="7911" type="EtcItem" name="Holy Blessing">
+	<item id="7911" name="Holy Blessing" type="EtcItem">
 		<set name="icon" val="icon.etc_holy_crystal_1_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="LIQUID" />
@@ -203,11 +206,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2253-1" />
+		<skills>
+			<skill id="2253" level="1" />
+		</skills>
 	</item>
-	<item id="7912" type="EtcItem" name="Fire Crystal">
+	<item id="7912" name="Fire Crystal" type="EtcItem">
 		<set name="icon" val="icon.etc_fire_crystal_1_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="LIQUID" />
@@ -216,11 +220,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2254-3" />
+		<skills>
+			<skill id="2254" level="3" />
+		</skills>
 	</item>
-	<item id="7913" type="EtcItem" name="Water Crystal">
+	<item id="7913" name="Water Crystal" type="EtcItem">
 		<set name="icon" val="icon.etc_water_crystal_1_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="LIQUID" />
@@ -229,11 +234,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2255-3" />
+		<skills>
+			<skill id="2255" level="3" />
+		</skills>
 	</item>
-	<item id="7914" type="EtcItem" name="Wind Crystal">
+	<item id="7914" name="Wind Crystal" type="EtcItem">
 		<set name="icon" val="icon.etc_wind_crystal_1_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="LIQUID" />
@@ -242,11 +248,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2256-3" />
+		<skills>
+			<skill id="2256" level="3" />
+		</skills>
 	</item>
-	<item id="7915" type="EtcItem" name="Earth Crystal">
+	<item id="7915" name="Earth Crystal" type="EtcItem">
 		<set name="icon" val="icon.etc_earth_crystal_1_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="LIQUID" />
@@ -255,11 +262,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2257-3" />
+		<skills>
+			<skill id="2257" level="3" />
+		</skills>
 	</item>
-	<item id="7916" type="EtcItem" name="Dark Shard">
+	<item id="7916" name="Dark Shard" type="EtcItem">
 		<set name="icon" val="icon.etc_unholy_crystal_1_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="LIQUID" />
@@ -268,11 +276,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2258-3" />
+		<skills>
+			<skill id="2258" level="3" />
+		</skills>
 	</item>
-	<item id="7917" type="EtcItem" name="Holy Crystal">
+	<item id="7917" name="Holy Crystal" type="EtcItem">
 		<set name="icon" val="icon.etc_holy_crystal_1_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="LIQUID" />
@@ -281,909 +290,828 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2259-3" />
+		<skills>
+			<skill id="2259" level="3" />
+		</skills>
 	</item>
-	<item id="7918" type="EtcItem" name="Mercenary Posting Ticket (Sword/Stationary)">
+	<item id="7918" name="Mercenary Posting Ticket (Sword/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="50000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7919" type="EtcItem" name="Mercenary Posting Ticket (Spear/Stationary)">
+	<item id="7919" name="Mercenary Posting Ticket (Spear/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_pole_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="60000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7920" type="EtcItem" name="Mercenary Posting Ticket (Bow/Stationary)">
+	<item id="7920" name="Mercenary Posting Ticket (Bow/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_bow_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="70000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7921" type="EtcItem" name="Mercenary Posting Ticket (Cleric/Stationary)">
+	<item id="7921" name="Mercenary Posting Ticket (Cleric/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_cleric_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7922" type="EtcItem" name="Mercenary Posting Ticket (Wizard/Stationary)">
+	<item id="7922" name="Mercenary Posting Ticket (Wizard/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_wizard_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7923" type="EtcItem" name="Mercenary Posting Ticket (Sword/Mobile)">
+	<item id="7923" name="Mercenary Posting Ticket (Sword/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="50000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7924" type="EtcItem" name="Mercenary Posting Ticket (Spear/Mobile)">
+	<item id="7924" name="Mercenary Posting Ticket (Spear/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_pole_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="60000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7925" type="EtcItem" name="Mercenary Posting Ticket (Bow/Mobile)">
+	<item id="7925" name="Mercenary Posting Ticket (Bow/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_bow_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="70000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7926" type="EtcItem" name="Mercenary Posting Ticket (Cleric/Mobile)">
+	<item id="7926" name="Mercenary Posting Ticket (Cleric/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_cleric_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7927" type="EtcItem" name="Mercenary Posting Ticket (Wizard/Mobile)">
+	<item id="7927" name="Mercenary Posting Ticket (Wizard/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_wizard_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7928" type="EtcItem" name="Mercenary Posting Ticket (Teleporter1)">
+	<item id="7928" name="Mercenary Posting Ticket (Teleporter1)" type="EtcItem">
 		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7929" type="EtcItem" name="Mercenary Posting Ticket (Teleporter2)">
+	<item id="7929" name="Mercenary Posting Ticket (Teleporter2)" type="EtcItem">
 		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7930" type="EtcItem" name="Mercenary Posting Ticket (Teleporter3)">
+	<item id="7930" name="Mercenary Posting Ticket (Teleporter3)" type="EtcItem">
 		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7931" type="EtcItem" name="Greater Mercenary Posting Ticket (Sword/Stationary)">
+	<item id="7931" name="Greater Mercenary Posting Ticket (Sword/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="80000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7932" type="EtcItem" name="Greater Mercenary Posting Ticket (Spear/Stationary)">
+	<item id="7932" name="Greater Mercenary Posting Ticket (Spear/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_pole_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7933" type="EtcItem" name="Greater Mercenary Posting Ticket (Bow/Stationary)">
+	<item id="7933" name="Greater Mercenary Posting Ticket (Bow/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_bow_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="120000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7934" type="EtcItem" name="Greater Mercenary Posting Ticket (Cleric/Stationary)">
+	<item id="7934" name="Greater Mercenary Posting Ticket (Cleric/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_cleric_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="250000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7935" type="EtcItem" name="Greater Mercenary Posting Ticket (Wizard/Stationary)">
+	<item id="7935" name="Greater Mercenary Posting Ticket (Wizard/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_wizard_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="250000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7936" type="EtcItem" name="Greater Mercenary Posting Ticket (Sword/Mobile)">
+	<item id="7936" name="Greater Mercenary Posting Ticket (Sword/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="80000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7937" type="EtcItem" name="Greater Mercenary Posting Ticket (Spear/Mobile)">
+	<item id="7937" name="Greater Mercenary Posting Ticket (Spear/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_pole_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7938" type="EtcItem" name="Greater Mercenary Posting Ticket (Bow/Mobile)">
+	<item id="7938" name="Greater Mercenary Posting Ticket (Bow/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_bow_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="120000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7939" type="EtcItem" name="Greater Mercenary Posting Ticket (Cleric/Mobile)">
+	<item id="7939" name="Greater Mercenary Posting Ticket (Cleric/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_cleric_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="250000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7940" type="EtcItem" name="Greater Mercenary Posting Ticket (Wizard/Mobile)">
+	<item id="7940" name="Greater Mercenary Posting Ticket (Wizard/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_wizard_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="250000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7941" type="EtcItem" name="Dawn Mercenary Posting Ticket (Sword/Stationary)">
+	<item id="7941" name="Dawn Mercenary Posting Ticket (Sword/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="140000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7942" type="EtcItem" name="Dawn Mercenary Posting Ticket (Spear/Stationary)">
+	<item id="7942" name="Dawn Mercenary Posting Ticket (Spear/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_pole_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7943" type="EtcItem" name="Dawn Mercenary Posting Ticket (Bow/Stationary)">
+	<item id="7943" name="Dawn Mercenary Posting Ticket (Bow/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_bow_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="200000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7944" type="EtcItem" name="Dawn Mercenary Posting Ticket (Cleric/Stationary)">
+	<item id="7944" name="Dawn Mercenary Posting Ticket (Cleric/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_cleric_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="350000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7945" type="EtcItem" name="Dawn Mercenary Posting Ticket (Wizard/Stationary)">
+	<item id="7945" name="Dawn Mercenary Posting Ticket (Wizard/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_wizard_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="350000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7946" type="EtcItem" name="Dawn Mercenary Posting Ticket (Sword/Mobile)">
+	<item id="7946" name="Dawn Mercenary Posting Ticket (Sword/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="140000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7947" type="EtcItem" name="Dawn Mercenary Posting Ticket (Spear/Mobile)">
+	<item id="7947" name="Dawn Mercenary Posting Ticket (Spear/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_pole_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7948" type="EtcItem" name="Dawn Mercenary Posting Ticket (Bow/Mobile)">
+	<item id="7948" name="Dawn Mercenary Posting Ticket (Bow/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_bow_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="200000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7949" type="EtcItem" name="Dawn Mercenary Posting Ticket (Cleric/Mobile)">
+	<item id="7949" name="Dawn Mercenary Posting Ticket (Cleric/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_cleric_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="350000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7950" type="EtcItem" name="Dawn Mercenary Posting Ticket (Wizard/Mobile)">
+	<item id="7950" name="Dawn Mercenary Posting Ticket (Wizard/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_wizard_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="350000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7951" type="EtcItem" name="Greater Recruit Posting Ticket (Sword/Stationary)">
+	<item id="7951" name="Greater Recruit Posting Ticket (Sword/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="70000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7952" type="EtcItem" name="Greater Recruit Posting Ticket (Spear/Stationary)">
+	<item id="7952" name="Greater Recruit Posting Ticket (Spear/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_pole_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="90000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7953" type="EtcItem" name="Greater Recruit Posting Ticket (Bow/Stationary)">
+	<item id="7953" name="Greater Recruit Posting Ticket (Bow/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_bow_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="110000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7954" type="EtcItem" name="Greater Recruit Posting Ticket (Cleric/Stationary)">
+	<item id="7954" name="Greater Recruit Posting Ticket (Cleric/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_cleric_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="230000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7955" type="EtcItem" name="Greater Recruit Posting Ticket (Wizard/Stationary)">
+	<item id="7955" name="Greater Recruit Posting Ticket (Wizard/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_wizard_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="230000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7956" type="EtcItem" name="Greater Recruit Posting Ticket (Sword/Mobile)">
+	<item id="7956" name="Greater Recruit Posting Ticket (Sword/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="70000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7957" type="EtcItem" name="Greater Recruit Posting Ticket (Spear/Mobile)">
+	<item id="7957" name="Greater Recruit Posting Ticket (Spear/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_pole_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="90000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7958" type="EtcItem" name="Greater Recruit Posting Ticket (Bow/Mobile)">
+	<item id="7958" name="Greater Recruit Posting Ticket (Bow/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_bow_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="110000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7959" type="EtcItem" name="Greater Recruit Posting Ticket (Cleric/Mobile)">
+	<item id="7959" name="Greater Recruit Posting Ticket (Cleric/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_cleric_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="230000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7960" type="EtcItem" name="Greater Recruit Posting Ticket (Wizard/Mobile)">
+	<item id="7960" name="Greater Recruit Posting Ticket (Wizard/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_wizard_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="230000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7961" type="EtcItem" name="Recruit Posting Ticket (Sword/Stationary)">
+	<item id="7961" name="Recruit Posting Ticket (Sword/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="40000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7962" type="EtcItem" name="Recruit Posting Ticket (Spear/Stationary)">
+	<item id="7962" name="Recruit Posting Ticket (Spear/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_pole_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="50000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7963" type="EtcItem" name="Recruit Posting Ticket (Bow/Stationary)">
+	<item id="7963" name="Recruit Posting Ticket (Bow/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_bow_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="60000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7964" type="EtcItem" name="Recruit Posting Ticket (Cleric/Stationary)">
+	<item id="7964" name="Recruit Posting Ticket (Cleric/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_cleric_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="150000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7965" type="EtcItem" name="Recruit Posting Ticket (Wizard/Stationary)">
+	<item id="7965" name="Recruit Posting Ticket (Wizard/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_wizard_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="150000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7966" type="EtcItem" name="Recruit Posting Ticket (Sword/Mobile)">
+	<item id="7966" name="Recruit Posting Ticket (Sword/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="40000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7967" type="EtcItem" name="Recruit Posting Ticket (Spear/Mobile)">
+	<item id="7967" name="Recruit Posting Ticket (Spear/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_pole_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="50000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7968" type="EtcItem" name="Recruit Posting Ticket (Bow/Mobile)">
+	<item id="7968" name="Recruit Posting Ticket (Bow/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_bow_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="60000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7969" type="EtcItem" name="Recruit Posting Ticket (Cleric/Mobile)">
+	<item id="7969" name="Recruit Posting Ticket (Cleric/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_cleric_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="150000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7970" type="EtcItem" name="Recruit Posting Ticket (Wizard/Mobile)">
+	<item id="7970" name="Recruit Posting Ticket (Wizard/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_wizard_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="150000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7971" type="EtcItem" name="Nephilim Warrior Posting Ticket">
+	<item id="7971" name="Nephilim Warrior Posting Ticket" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="2500000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7972" type="EtcItem" name="Nephilim Shaman Posting Ticket">
+	<item id="7972" name="Nephilim Shaman Posting Ticket" type="EtcItem">
 		<set name="icon" val="icon.mticket_wizard_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="5000000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7973" type="EtcItem" name="Mercenary Posting Ticket (Sword/Stationary)">
+	<item id="7973" name="Mercenary Posting Ticket (Sword/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="50000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7974" type="EtcItem" name="Mercenary Posting Ticket (Spear/Stationary)">
+	<item id="7974" name="Mercenary Posting Ticket (Spear/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_pole_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="60000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7975" type="EtcItem" name="Mercenary Posting Ticket (Bow/Stationary)">
+	<item id="7975" name="Mercenary Posting Ticket (Bow/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_bow_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="70000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7976" type="EtcItem" name="Mercenary Posting Ticket (Cleric/Stationary)">
+	<item id="7976" name="Mercenary Posting Ticket (Cleric/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_cleric_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7977" type="EtcItem" name="Mercenary Posting Ticket (Wizard/Stationary)">
+	<item id="7977" name="Mercenary Posting Ticket (Wizard/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_wizard_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7978" type="EtcItem" name="Mercenary Posting Ticket (Sword/Mobile)">
+	<item id="7978" name="Mercenary Posting Ticket (Sword/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="50000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7979" type="EtcItem" name="Mercenary Posting Ticket (Spear/Mobile)">
+	<item id="7979" name="Mercenary Posting Ticket (Spear/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_pole_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="60000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7980" type="EtcItem" name="Mercenary Posting Ticket (Bow/Mobile)">
+	<item id="7980" name="Mercenary Posting Ticket (Bow/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_bow_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="70000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7981" type="EtcItem" name="Mercenary Posting Ticket (Cleric/Mobile)">
+	<item id="7981" name="Mercenary Posting Ticket (Cleric/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_cleric_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7982" type="EtcItem" name="Mercenary Posting Ticket (Wizard/Mobile)">
+	<item id="7982" name="Mercenary Posting Ticket (Wizard/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_wizard_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7983" type="EtcItem" name="Mercenary Posting Ticket (Teleporter1)">
+	<item id="7983" name="Mercenary Posting Ticket (Teleporter1)" type="EtcItem">
 		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7984" type="EtcItem" name="Mercenary Posting Ticket (Teleporter2)">
+	<item id="7984" name="Mercenary Posting Ticket (Teleporter2)" type="EtcItem">
 		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7985" type="EtcItem" name="Mercenary Posting Ticket (Teleporter3)">
+	<item id="7985" name="Mercenary Posting Ticket (Teleporter3)" type="EtcItem">
 		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7986" type="EtcItem" name="Mercenary Posting Ticket (Teleporter4)">
+	<item id="7986" name="Mercenary Posting Ticket (Teleporter4)" type="EtcItem">
 		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7987" type="EtcItem" name="Mercenary Posting Ticket (Teleporter5)">
+	<item id="7987" name="Mercenary Posting Ticket (Teleporter5)" type="EtcItem">
 		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7988" type="EtcItem" name="Greater Mercenary Posting Ticket (Sword/Stationary)">
+	<item id="7988" name="Greater Mercenary Posting Ticket (Sword/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="120000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7989" type="EtcItem" name="Greater Mercenary Posting Ticket (Spear/Stationary)">
+	<item id="7989" name="Greater Mercenary Posting Ticket (Spear/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_pole_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="250000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7990" type="EtcItem" name="Greater Mercenary Posting Ticket (Bow/Stationary)">
+	<item id="7990" name="Greater Mercenary Posting Ticket (Bow/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_bow_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="250000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7991" type="EtcItem" name="Greater Mercenary Posting Ticket (Cleric/Stationary)">
+	<item id="7991" name="Greater Mercenary Posting Ticket (Cleric/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_cleric_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="80000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7992" type="EtcItem" name="Greater Mercenary Posting Ticket (Wizard/Stationary)">
+	<item id="7992" name="Greater Mercenary Posting Ticket (Wizard/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_wizard_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="100000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7993" type="EtcItem" name="Greater Mercenary Posting Ticket (Sword/Mobile)">
+	<item id="7993" name="Greater Mercenary Posting Ticket (Sword/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="120000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7994" type="EtcItem" name="Greater Mercenary Posting Ticket (Spear/Mobile)">
+	<item id="7994" name="Greater Mercenary Posting Ticket (Spear/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_pole_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="250000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7995" type="EtcItem" name="Greater Mercenary Posting Ticket (Bow/Mobile)">
+	<item id="7995" name="Greater Mercenary Posting Ticket (Bow/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_bow_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="250000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7996" type="EtcItem" name="Greater Mercenary Posting Ticket (Cleric/Mobile)">
+	<item id="7996" name="Greater Mercenary Posting Ticket (Cleric/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_cleric_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="140000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7997" type="EtcItem" name="Greater Mercenary Posting Ticket (Wizard/Mobile)">
+	<item id="7997" name="Greater Mercenary Posting Ticket (Wizard/Mobile)" type="EtcItem">
 		<set name="icon" val="icon.mticket_wizard_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="170000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7998" type="EtcItem" name="Dawn Mercenary Posting Ticket (Sword/Stationary)">
+	<item id="7998" name="Dawn Mercenary Posting Ticket (Sword/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="200000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7999" type="EtcItem" name="Dawn Mercenary Posting Ticket (Spear/Stationary)">
+	<item id="7999" name="Dawn Mercenary Posting Ticket (Spear/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_pole_fix_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="350000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="MercTicket" />
 	</item>

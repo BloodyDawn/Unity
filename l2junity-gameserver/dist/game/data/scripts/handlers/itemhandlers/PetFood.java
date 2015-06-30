@@ -23,11 +23,12 @@ import java.util.List;
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.PetDataTable;
 import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
@@ -48,13 +49,10 @@ public class PetFood implements IItemHandler
 			return false;
 		}
 		
-		final SkillHolder[] skills = item.getItem().getSkills();
+		final List<ItemSkillHolder> skills = item.getItem().getSkills(ItemSkillType.NORMAL);
 		if (skills != null)
 		{
-			for (SkillHolder sk : skills)
-			{
-				useFood(playable, sk.getSkillId(), sk.getSkillLvl(), item);
-			}
+			skills.forEach(holder -> useFood(playable, holder.getSkillId(), holder.getSkillLvl(), item));
 		}
 		return true;
 	}

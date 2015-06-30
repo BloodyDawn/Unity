@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="4700" type="Weapon" name="Sword of Delusion">
+	<item id="4700" name="Sword of Delusion" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_delusion_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -19,17 +19,19 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4701" type="Weapon" name="Sword of Delusion - Rsk. Haste">
+	<item id="4701" name="Sword of Delusion" name_additional="Rsk. Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_delusion_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -48,17 +50,19 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3032-3" />
+		<skills>
+			<skill id="3032" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4702" type="Weapon" name="Tsurugi">
+	<item id="4702" name="Tsurugi" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_tsurugi_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -77,17 +81,19 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3010-3" />
+		<skills>
+			<skill id="3010" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4703" type="Weapon" name="Tsurugi">
+	<item id="4703" name="Tsurugi" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_tsurugi_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -106,17 +112,19 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3023-3" />
+		<skills>
+			<skill id="3023" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4704" type="Weapon" name="Tsurugi">
+	<item id="4704" name="Tsurugi" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_tsurugi_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -135,17 +143,19 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3036-3" />
+		<skills>
+			<skill id="3036" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4705" type="Weapon" name="Sword of Nightmare">
+	<item id="4705" name="Sword of Nightmare" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_nightmare_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -164,17 +174,19 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4706" type="Weapon" name="Sword of Nightmare">
+	<item id="4706" name="Sword of Nightmare" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_nightmare_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -193,17 +205,19 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3010-3" />
+		<skills>
+			<skill id="3010" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4707" type="Weapon" name="Sword of Nightmare">
+	<item id="4707" name="Sword of Nightmare" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_nightmare_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -222,17 +236,19 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3498-1" />
+		<skills>
+			<skill id="3498" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4708" type="Weapon" name="Samurai Long Sword">
+	<item id="4708" name="Samurai Long Sword" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_samurai_longsword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -251,17 +267,19 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3010-4" />
+		<skills>
+			<skill id="3010" level="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="156" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4709" type="Weapon" name="Samurai Long Sword">
+	<item id="4709" name="Samurai Long Sword" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_samurai_longsword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -279,19 +297,21 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
-		<set name="item_skill" val="3023-4" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
+		<skills>
+			<skill id="3023" level="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="156" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4710" type="Weapon" name="Samurai Long Sword">
+	<item id="4710" name="Samurai Long Sword" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_samurai_longsword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -310,17 +330,19 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3036-4" />
+		<skills>
+			<skill id="3036" level="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="156" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4711" type="Weapon" name="Flamberge">
+	<item id="4711" name="Flamberge" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_flamberge_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -339,17 +361,19 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3023-1" />
+		<skills>
+			<skill id="3023" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="130" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4712" type="Weapon" name="Flamberge">
+	<item id="4712" name="Flamberge" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_flamberge_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -367,19 +391,21 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
-		<set name="item_skill" val="3010-1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
+		<skills>
+			<skill id="3010" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="130" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4713" type="Weapon" name="Flamberge">
+	<item id="4713" name="Flamberge" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_flamberge_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -398,17 +424,19 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3498-1" />
+		<skills>
+			<skill id="3498" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="130" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4714" type="Weapon" name="Keshanberk">
+	<item id="4714" name="Keshanberk" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_kshanberk_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -427,17 +455,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3007-5" />
+		<skills>
+			<skill id="3007" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4715" type="Weapon" name="Keshanberk">
+	<item id="4715" name="Keshanberk" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_kshanberk_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -456,17 +486,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3010-5" />
+		<skills>
+			<skill id="3010" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4716" type="Weapon" name="Keshanberk">
+	<item id="4716" name="Keshanberk" name_additional="Back Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_kshanberk_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -485,17 +517,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3018-5" />
+		<skills>
+			<skill id="3018" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4717" type="Weapon" name="Damascus Sword">
+	<item id="4717" name="Damascus Sword" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_damascus_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -513,19 +547,21 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="item_skill" val="3010-6" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
+		<skills>
+			<skill id="3010" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4718" type="Weapon" name="Damascus Sword">
+	<item id="4718" name="Damascus Sword" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_damascus_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -543,19 +579,21 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="item_skill" val="3023-6" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
+		<skills>
+			<skill id="3023" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4719" type="Weapon" name="Damascus Sword">
+	<item id="4719" name="Damascus Sword" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_damascus_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -574,17 +612,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3036-6" />
+		<skills>
+			<skill id="3036" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4720" type="Weapon" name="Tallum Blade">
+	<item id="4720" name="Tallum Blade" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -607,11 +647,11 @@
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4721" type="Weapon" name="Tallum Blade - Rsk. Evasion">
+	<item id="4721" name="Tallum Blade" name_additional="Rsk. Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -634,11 +674,11 @@
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4722" type="Weapon" name="Tallum Blade - Rsk. Haste">
+	<item id="4722" name="Tallum Blade" name_additional="Rsk. Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -661,11 +701,11 @@
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4723" type="Weapon" name="Great Sword">
+	<item id="4723" name="Great Sword" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_great_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -683,19 +723,21 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="item_skill" val="3013-1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
+		<skills>
+			<skill id="3013" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4724" type="Weapon" name="Great Sword">
+	<item id="4724" name="Great Sword" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_great_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -714,17 +756,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3023-5" />
+		<skills>
+			<skill id="3023" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4725" type="Weapon" name="Great Sword">
+	<item id="4725" name="Great Sword" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_great_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -743,17 +787,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3010-5" />
+		<skills>
+			<skill id="3010" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4726" type="Weapon" name="Big Hammer">
+	<item id="4726" name="Big Hammer" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_big_hammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -771,18 +817,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4727" type="Weapon" name="Big Hammer - Rsk. Focus">
+	<item id="4727" name="Big Hammer" name_additional="Rsk. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_big_hammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -800,18 +848,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3027-1" />
+		<skills>
+			<skill id="3027" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4728" type="Weapon" name="Big Hammer">
+	<item id="4728" name="Big Hammer" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_big_hammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -829,18 +879,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3036-1" />
+		<skills>
+			<skill id="3036" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4729" type="Weapon" name="Battle Axe">
+	<item id="4729" name="Battle Axe" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_battle_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -858,18 +910,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3012-1" />
+		<skills>
+			<skill id="3012" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4730" type="Weapon" name="Battle Axe - Rsk. Focus">
+	<item id="4730" name="Battle Axe" name_additional="Rsk. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_battle_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -887,18 +941,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3027-1" />
+		<skills>
+			<skill id="3027" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4731" type="Weapon" name="Battle Axe">
+	<item id="4731" name="Battle Axe" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_battle_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -916,18 +972,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3036-1" />
+		<skills>
+			<skill id="3036" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4732" type="Weapon" name="Silver Axe">
+	<item id="4732" name="Silver Axe" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_war_pick_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -945,18 +1003,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3012-1" />
+		<skills>
+			<skill id="3012" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4733" type="Weapon" name="Silver Axe - Rsk. Focus">
+	<item id="4733" name="Silver Axe" name_additional="Rsk. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_war_pick_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -974,18 +1034,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3027-1" />
+		<skills>
+			<skill id="3027" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4734" type="Weapon" name="Silver Axe">
+	<item id="4734" name="Silver Axe" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_war_pick_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1003,18 +1065,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3036-1" />
+		<skills>
+			<skill id="3036" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4735" type="Weapon" name="Skull Graver">
+	<item id="4735" name="Skull Graver" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_skull_graver_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1032,18 +1096,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3012-1" />
+		<skills>
+			<skill id="3012" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4736" type="Weapon" name="Skull Graver">
+	<item id="4736" name="Skull Graver" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_skull_graver_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1060,20 +1126,22 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
-		<set name="item_skill" val="3013-1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
+		<skills>
+			<skill id="3013" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4737" type="Weapon" name="Skull Graver - Rsk. Focus">
+	<item id="4737" name="Skull Graver" name_additional="Rsk. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_skull_graver_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1091,18 +1159,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3027-1" />
+		<skills>
+			<skill id="3027" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4738" type="Weapon" name="Dwarven War Hammer">
+	<item id="4738" name="Dwarven War Hammer" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_dwarven_warhammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1120,18 +1190,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3012-2" />
+		<skills>
+			<skill id="3012" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4739" type="Weapon" name="Dwarven War Hammer">
+	<item id="4739" name="Dwarven War Hammer" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dwarven_warhammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1149,18 +1221,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4740" type="Weapon" name="Dwarven War Hammer">
+	<item id="4740" name="Dwarven War Hammer" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_dwarven_warhammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1178,18 +1252,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3036-2" />
+		<skills>
+			<skill id="3036" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="68" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4741" type="Weapon" name="War Axe">
+	<item id="4741" name="War Axe" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_war_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1207,18 +1283,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3012-3" />
+		<skills>
+			<skill id="3012" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4742" type="Weapon" name="War Axe">
+	<item id="4742" name="War Axe" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_war_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1236,18 +1314,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4743" type="Weapon" name="War Axe">
+	<item id="4743" name="War Axe" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_war_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1265,18 +1345,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3036-3" />
+		<skills>
+			<skill id="3036" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4744" type="Weapon" name="Yaksa Mace">
+	<item id="4744" name="Yaksa Mace" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_yaksa_mace_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1294,18 +1376,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3012-4" />
+		<skills>
+			<skill id="3012" level="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="156" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4745" type="Weapon" name="Yaksa Mace">
+	<item id="4745" name="Yaksa Mace" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_yaksa_mace_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1323,18 +1407,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="156" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4746" type="Weapon" name="Yaksa Mace - Rsk. Focus">
+	<item id="4746" name="Yaksa Mace" name_additional="Rsk. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_yaksa_mace_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1352,18 +1438,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3027-4" />
+		<skills>
+			<skill id="3027" level="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="156" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4747" type="Weapon" name="Heavy War Axe">
+	<item id="4747" name="Heavy War Axe" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_heavy_war_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1381,18 +1469,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3012-5" />
+		<skills>
+			<skill id="3012" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4748" type="Weapon" name="Heavy War Axe">
+	<item id="4748" name="Heavy War Axe" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_heavy_war_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1410,18 +1500,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4749" type="Weapon" name="Heavy War Axe - Rsk. Focus">
+	<item id="4749" name="Heavy War Axe" name_additional="Rsk. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_heavy_war_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1439,18 +1531,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3027-5" />
+		<skills>
+			<skill id="3027" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4750" type="Weapon" name="Deadman's Glory - Anger">
+	<item id="4750" name="Deadman's Glory" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_deadmans_glory_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1468,18 +1562,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3012-6" />
+		<skills>
+			<skill id="3012" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4751" type="Weapon" name="Deadman's Glory - Health">
+	<item id="4751" name="Deadman's Glory" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_deadmans_glory_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1497,18 +1593,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4752" type="Weapon" name="Deadman's Glory - Haste">
+	<item id="4752" name="Deadman's Glory" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_deadmans_glory_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1526,18 +1624,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3036-6" />
+		<skills>
+			<skill id="3036" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4753" type="Weapon" name="Art of Battle Axe">
+	<item id="4753" name="Art of Battle Axe" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_art_of_battle_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1555,18 +1655,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4754" type="Weapon" name="Art of Battle Axe - Rsk. Focus">
+	<item id="4754" name="Art of Battle Axe" name_additional="Rsk. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_art_of_battle_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1584,18 +1686,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3027-6" />
+		<skills>
+			<skill id="3027" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4755" type="Weapon" name="Art of Battle Axe">
+	<item id="4755" name="Art of Battle Axe" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_art_of_battle_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1612,20 +1716,22 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="item_skill" val="3036-6" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
+		<skills>
+			<skill id="3036" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4756" type="Weapon" name="Meteor Shower">
+	<item id="4756" name="Meteor Shower" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_meteor_shower_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1649,11 +1755,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4757" type="Weapon" name="Meteor Shower">
+	<item id="4757" name="Meteor Shower" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_meteor_shower_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1677,11 +1783,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4758" type="Weapon" name="Meteor Shower - P.Focus">
+	<item id="4758" name="Meteor Shower" name_additional="P. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_meteor_shower_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1705,71 +1811,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4759" type="Weapon" name="Cursed Dagger">
-		<set name="icon" val="icon.weapon_cursed_dagger_i01" />
-		<set name="default_action" val="EQUIP" />
-		<set name="weapon_type" val="DAGGER" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="94" />
-		<set name="crystal_type" val="C" />
-		<set name="material" val="MITHRIL" />
-		<set name="weight" val="1040" />
-		<set name="price" val="352580" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="17" />
-		<set name="is_freightable" val="false" />
-		<set name="oncrit_skill" val="3020-1" />
-		<for>
-			<set stat="pAtk" val="94" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
-		</for>
-	</item>
-	<item id="4760" type="Weapon" name="Cursed Dagger">
-		<set name="icon" val="icon.weapon_cursed_dagger_i01" />
-		<set name="default_action" val="EQUIP" />
-		<set name="weapon_type" val="DAGGER" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="94" />
-		<set name="crystal_type" val="C" />
-		<set name="material" val="MITHRIL" />
-		<set name="weight" val="1040" />
-		<set name="price" val="352580" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="9" />
-		<set name="is_freightable" val="false" />
-		<set name="oncrit_skill" val="3041-1" />
-		<for>
-			<set stat="pAtk" val="94" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
-		</for>
-	</item>
-	<item id="4761" type="Weapon" name="Cursed Dagger - Rsk. Haste">
+	<item id="4759" name="Cursed Dagger" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_cursed_dagger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1787,18 +1833,82 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3033-1" />
+		<skills>
+			<skill id="3020" level="1" type="ON_CRITICAL_SKILL" type_chance="17" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="94" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4762" type="Weapon" name="Dark Elven Dagger">
+	<item id="4760" name="Cursed Dagger" name_additional="Critical Poison" type="Weapon">
+		<set name="icon" val="icon.weapon_cursed_dagger_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="94" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="1040" />
+		<set name="price" val="352580" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3041" level="1" type="ON_CRITICAL_SKILL" type_chance="9" />
+		</skills>
+		<for>
+			<set stat="pAtk" val="94" />
+			<set stat="mAtk" val="61" />
+			<set stat="rCrit" val="12" />
+			<add stat="accCombat" val="-3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="4761" name="Cursed Dagger" name_additional="Rsk. Haste" type="Weapon">
+		<set name="icon" val="icon.weapon_cursed_dagger_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="94" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="MITHRIL" />
+		<set name="weight" val="1040" />
+		<set name="price" val="352580" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3033" level="1" />
+		</skills>
+		<for>
+			<set stat="pAtk" val="94" />
+			<set stat="mAtk" val="61" />
+			<set stat="rCrit" val="12" />
+			<add stat="accCombat" val="-3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="4762" name="Dark Elven Dagger" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_darkelven_dagger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1816,18 +1926,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3011-1" />
+		<skills>
+			<skill id="3011" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="94" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4763" type="Weapon" name="Dark Elven Dagger">
+	<item id="4763" name="Dark Elven Dagger" name_additional="Back Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_darkelven_dagger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1845,18 +1957,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3019-1" />
+		<skills>
+			<skill id="3019" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="94" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4764" type="Weapon" name="Dark Elven Dagger">
+	<item id="4764" name="Dark Elven Dagger" name_additional="Mortal Strike" type="Weapon">
 		<set name="icon" val="icon.weapon_darkelven_dagger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1874,78 +1988,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3035-1" />
+		<skills>
+			<skill id="3035" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="94" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4765" type="Weapon" name="Stiletto">
-		<set name="icon" val="icon.weapon_stiletto_i01" />
-		<set name="default_action" val="EQUIP" />
-		<set name="weapon_type" val="DAGGER" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="118" />
-		<set name="crystal_type" val="C" />
-		<set name="material" val="FINE_STEEL" />
-		<set name="weight" val="1030" />
-		<set name="price" val="441940" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="17" />
-		<set name="is_freightable" val="false" />
-		<set name="oncrit_skill" val="3020-2" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
-		</for>
-	</item>
-	<item id="4766" type="Weapon" name="Stiletto">
-		<set name="icon" val="icon.weapon_stiletto_i01" />
-		<set name="default_action" val="EQUIP" />
-		<set name="weapon_type" val="DAGGER" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="118" />
-		<set name="crystal_type" val="C" />
-		<set name="material" val="FINE_STEEL" />
-		<set name="weight" val="1030" />
-		<set name="price" val="441940" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="9" />
-		<set name="is_freightable" val="false" />
-		<set name="oncrit_skill" val="3041-2" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
-		</for>
-	</item>
-	<item id="4767" type="Weapon" name="Stiletto">
+	<item id="4765" name="Stiletto" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_stiletto_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1963,18 +2019,82 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3035-2" />
+		<skills>
+			<skill id="3020" level="2" type="ON_CRITICAL_SKILL" type_chance="17" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="107" />
 			<set stat="mAtk" val="68" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4768" type="Weapon" name="Grace Dagger">
+	<item id="4766" name="Stiletto" name_additional="Critical Poison" type="Weapon">
+		<set name="icon" val="icon.weapon_stiletto_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="118" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1030" />
+		<set name="price" val="441940" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3041" level="2" type="ON_CRITICAL_SKILL" type_chance="9" />
+		</skills>
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="68" />
+			<set stat="rCrit" val="12" />
+			<add stat="accCombat" val="-3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="4767" name="Stiletto" name_additional="Mortal Strike" type="Weapon">
+		<set name="icon" val="icon.weapon_stiletto_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="118" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1030" />
+		<set name="price" val="441940" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3035" level="2" />
+		</skills>
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="68" />
+			<set stat="rCrit" val="12" />
+			<add stat="accCombat" val="-3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="4768" name="Grace Dagger" name_additional="Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_grace_dagger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1992,18 +2112,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3009-3" />
+		<skills>
+			<skill id="3009" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4769" type="Weapon" name="Grace Dagger">
+	<item id="4769" name="Grace Dagger" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_grace_dagger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2021,18 +2143,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3011-3" />
+		<skills>
+			<skill id="3011" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4770" type="Weapon" name="Grace Dagger">
+	<item id="4770" name="Grace Dagger" name_additional="Back Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_grace_dagger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2050,18 +2174,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3019-3" />
+		<skills>
+			<skill id="3019" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4771" type="Weapon" name="Dark Screamer">
+	<item id="4771" name="Dark Screamer" name_additional="Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_screamer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2079,18 +2205,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3009-3" />
+		<skills>
+			<skill id="3009" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4772" type="Weapon" name="Dark Screamer">
+	<item id="4772" name="Dark Screamer" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_screamer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2108,18 +2236,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3011-3" />
+		<skills>
+			<skill id="3011" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4773" type="Weapon" name="Dark Screamer">
+	<item id="4773" name="Dark Screamer" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_screamer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2136,80 +2266,21 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="14" />
 		<set name="is_freightable" val="false" />
-		<set name="oncrit_skill" val="3020-3" />
+		<skills>
+			<skill id="3020" level="3" type="ON_CRITICAL_SKILL" type_chance="14" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4774" type="Weapon" name="Crystal Dagger">
-		<set name="icon" val="icon.weapon_crystal_dagger_i01" />
-		<set name="default_action" val="EQUIP" />
-		<set name="weapon_type" val="DAGGER" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="252" />
-		<set name="crystal_type" val="C" />
-		<set name="material" val="CRYSTAL" />
-		<set name="weight" val="1000" />
-		<set name="price" val="942700" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="14" />
-		<set name="is_freightable" val="false" />
-		<set name="oncrit_skill" val="3020-4" />
-		<for>
-			<set stat="pAtk" val="136" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
-		</for>
-	</item>
-	<item id="4775" type="Weapon" name="Crystal Dagger">
-		<set name="icon" val="icon.weapon_crystal_dagger_i01" />
-		<set name="default_action" val="EQUIP" />
-		<set name="weapon_type" val="DAGGER" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="252" />
-		<set name="crystal_type" val="C" />
-		<set name="material" val="CRYSTAL" />
-		<set name="weight" val="1000" />
-		<set name="price" val="942700" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="7" />
-		<set name="is_freightable" val="false" />
-		<set name="oncrit_skill" val="3041-4" />
-		<for>
-			<set stat="pAtk" val="136" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
-		</for>
-	</item>
-	<item id="4776" type="Weapon" name="Crystal Dagger">
+	<item id="4774" name="Crystal Dagger" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_crystal_dagger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2227,18 +2298,82 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3035-4" />
+		<skills>
+			<skill id="3020" level="4" type="ON_CRITICAL_SKILL" type_chance="14" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="136" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4777" type="Weapon" name="Kris">
+	<item id="4775" name="Crystal Dagger" name_additional="Critical Poison" type="Weapon">
+		<set name="icon" val="icon.weapon_crystal_dagger_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="252" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="1000" />
+		<set name="price" val="942700" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3041" level="4" type="ON_CRITICAL_SKILL" type_chance="7" />
+		</skills>
+		<for>
+			<set stat="pAtk" val="136" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="12" />
+			<add stat="accCombat" val="-3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="4776" name="Crystal Dagger" name_additional="Mortal Strike" type="Weapon">
+		<set name="icon" val="icon.weapon_crystal_dagger_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="252" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="CRYSTAL" />
+		<set name="weight" val="1000" />
+		<set name="price" val="942700" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3035" level="4" />
+		</skills>
+		<for>
+			<set stat="pAtk" val="136" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="12" />
+			<add stat="accCombat" val="-3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="4777" name="Kris" name_additional="Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_kris_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2256,18 +2391,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3009-5" />
+		<skills>
+			<skill id="3009" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="153" />
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4778" type="Weapon" name="Kris">
+	<item id="4778" name="Kris" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_kris_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2284,20 +2421,22 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="item_skill" val="3011-5" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DAGGER" />
+		<skills>
+			<skill id="3011" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="153" />
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4779" type="Weapon" name="Kris">
+	<item id="4779" name="Kris" name_additional="Back Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_kris_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2315,78 +2454,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3019-5" />
+		<skills>
+			<skill id="3019" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="153" />
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4780" type="Weapon" name="Demon's Dagger - Critical Bleed">
-		<set name="icon" val="icon.weapon_demons_sword_i01" />
-		<set name="default_action" val="EQUIP" />
-		<set name="weapon_type" val="DAGGER" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="180" />
-		<set name="crystal_type" val="B" />
-		<set name="material" val="BLOOD_STEEL" />
-		<set name="weight" val="970" />
-		<set name="price" val="2018280" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="12" />
-		<set name="is_freightable" val="false" />
-		<set name="oncrit_skill" val="3020-6" />
-		<for>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
-		</for>
-	</item>
-	<item id="4781" type="Weapon" name="Demon's Dagger - Critical Poison">
-		<set name="icon" val="icon.weapon_demons_sword_i01" />
-		<set name="default_action" val="EQUIP" />
-		<set name="weapon_type" val="DAGGER" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="180" />
-		<set name="crystal_type" val="B" />
-		<set name="material" val="BLOOD_STEEL" />
-		<set name="weight" val="970" />
-		<set name="price" val="2018280" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="6" />
-		<set name="is_freightable" val="false" />
-		<set name="oncrit_skill" val="3041-6" />
-		<for>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
-		</for>
-	</item>
-	<item id="4782" type="Weapon" name="Demon's Dagger - Mortal Strike">
+	<item id="4780" name="Demon's Dagger" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_demons_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2404,18 +2485,82 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3035-6" />
+		<skills>
+			<skill id="3020" level="6" type="ON_CRITICAL_SKILL" type_chance="12" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4783" type="Weapon" name="Bloody Orchid">
+	<item id="4781" name="Demon's Dagger" name_additional="Critical Poison" type="Weapon">
+		<set name="icon" val="icon.weapon_demons_sword_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="180" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="970" />
+		<set name="price" val="2018280" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3041" level="6" type="ON_CRITICAL_SKILL" type_chance="6" />
+		</skills>
+		<for>
+			<set stat="pAtk" val="170" />
+			<set stat="mAtk" val="99" />
+			<set stat="rCrit" val="12" />
+			<add stat="accCombat" val="-3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="4782" name="Demon's Dagger" name_additional="Mortal Strike" type="Weapon">
+		<set name="icon" val="icon.weapon_demons_sword_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DAGGER" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="180" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="BLOOD_STEEL" />
+		<set name="weight" val="970" />
+		<set name="price" val="2018280" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3035" level="6" />
+		</skills>
+		<for>
+			<set stat="pAtk" val="170" />
+			<set stat="mAtk" val="99" />
+			<set stat="rCrit" val="12" />
+			<add stat="accCombat" val="-3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="4783" name="Bloody Orchid" name_additional="Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_bloody_orchid_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2439,11 +2584,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4784" type="Weapon" name="Bloody Orchid">
+	<item id="4784" name="Bloody Orchid" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_bloody_orchid_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2467,11 +2612,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4785" type="Weapon" name="Bloody Orchid">
+	<item id="4785" name="Bloody Orchid" name_additional="Back Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_bloody_orchid_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2495,11 +2640,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4786" type="Weapon" name="Twilight Knife">
+	<item id="4786" name="Twilight Knife" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_knife_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2518,18 +2663,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3011-5" />
+		<skills>
+			<skill id="3011" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="122" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4787" type="Weapon" name="Twilight Knife">
+	<item id="4787" name="Twilight Knife" name_additional="Back Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_knife_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2548,18 +2695,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3019-5" />
+		<skills>
+			<skill id="3019" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="122" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4788" type="Weapon" name="Twilight Knife">
+	<item id="4788" name="Twilight Knife" name_additional="Mortal Strike" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_knife_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2578,78 +2727,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3035-5" />
+		<skills>
+			<skill id="3035" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="122" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4789" type="Weapon" name="Chakram">
-		<set name="icon" val="icon.weapon_chakram_i01" />
-		<set name="default_action" val="EQUIP" />
-		<set name="weapon_type" val="DUALFIST" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;32;120" />
-		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="94" />
-		<set name="crystal_type" val="C" />
-		<set name="material" val="FINE_STEEL" />
-		<set name="weight" val="1490" />
-		<set name="price" val="352580" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="10" />
-		<set name="is_freightable" val="false" />
-		<set name="oncrit_skill" val="3039-1" />
-		<for>
-			<set stat="pAtk" val="130" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
-		</for>
-	</item>
-	<item id="4790" type="Weapon" name="Chakram">
-		<set name="icon" val="icon.weapon_chakram_i01" />
-		<set name="default_action" val="EQUIP" />
-		<set name="weapon_type" val="DUALFIST" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;32;120" />
-		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="94" />
-		<set name="crystal_type" val="C" />
-		<set name="material" val="FINE_STEEL" />
-		<set name="weight" val="1490" />
-		<set name="price" val="352580" />
-		<set name="soulshots" val="2" />
-		<set name="spiritshots" val="2" />
-		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="17" />
-		<set name="is_freightable" val="false" />
-		<set name="oncrit_skill" val="3040-1" />
-		<for>
-			<set stat="pAtk" val="130" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
-		</for>
-	</item>
-	<item id="4791" type="Weapon" name="Chakram - Rsk. Haste">
+	<item id="4789" name="Chakram" name_additional="Critical Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_chakram_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -2667,18 +2758,82 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3034-1" />
+		<skills>
+			<skill id="3039" level="1" type="ON_CRITICAL_SKILL" type_chance="10" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="130" />
 			<set stat="mAtk" val="61" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4792" type="Weapon" name="Fisted Blade - Rsk. Evasion">
+	<item id="4790" name="Chakram" name_additional="Critical Poison" type="Weapon">
+		<set name="icon" val="icon.weapon_chakram_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUALFIST" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;32;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="94" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1490" />
+		<set name="price" val="352580" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3040" level="1" type="ON_CRITICAL_SKILL" type_chance="17" />
+		</skills>
+		<for>
+			<set stat="pAtk" val="130" />
+			<set stat="mAtk" val="61" />
+			<set stat="rCrit" val="4" />
+			<add stat="accCombat" val="4.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="4791" name="Chakram" name_additional="Rsk. Haste" type="Weapon">
+		<set name="icon" val="icon.weapon_chakram_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUALFIST" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;32;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="94" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1490" />
+		<set name="price" val="352580" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3034" level="1" />
+		</skills>
+		<for>
+			<set stat="pAtk" val="130" />
+			<set stat="mAtk" val="61" />
+			<set stat="rCrit" val="4" />
+			<add stat="accCombat" val="4.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="4792" name="Fisted Blade" name_additional="Rsk. Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_fist_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -2696,18 +2851,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3030-3" />
+		<skills>
+			<skill id="3030" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="169" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4793" type="Weapon" name="Fisted Blade - Rsk. Haste">
+	<item id="4793" name="Fisted Blade" name_additional="Rsk. Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_fist_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -2725,18 +2882,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3034-3" />
+		<skills>
+			<skill id="3034" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="169" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4794" type="Weapon" name="Fisted Blade">
+	<item id="4794" name="Fisted Blade" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_fist_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -2754,78 +2913,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3037-3" />
+		<skills>
+			<skill id="3037" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="169" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4795" type="Weapon" name="Great Pata">
-		<set name="icon" val="icon.weapon_great_pata_i01" />
-		<set name="default_action" val="EQUIP" />
-		<set name="weapon_type" val="DUALFIST" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;46;90" />
-		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="252" />
-		<set name="crystal_type" val="C" />
-		<set name="material" val="CHRYSOLITE" />
-		<set name="weight" val="1460" />
-		<set name="price" val="942700" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="10" />
-		<set name="is_freightable" val="false" />
-		<set name="oncrit_skill" val="3039-4" />
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
-		</for>
-	</item>
-	<item id="4796" type="Weapon" name="Great Pata">
-		<set name="icon" val="icon.weapon_great_pata_i01" />
-		<set name="default_action" val="EQUIP" />
-		<set name="weapon_type" val="DUALFIST" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;46;90" />
-		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="252" />
-		<set name="crystal_type" val="C" />
-		<set name="material" val="CHRYSOLITE" />
-		<set name="weight" val="1460" />
-		<set name="price" val="942700" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="14" />
-		<set name="is_freightable" val="false" />
-		<set name="oncrit_skill" val="3040-4" />
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
-		</for>
-	</item>
-	<item id="4797" type="Weapon" name="Great Pata - Rsk. Haste">
+	<item id="4795" name="Great Pata" name_additional="Critical Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_great_pata_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -2843,18 +2944,82 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3034-4" />
+		<skills>
+			<skill id="3039" level="4" type="ON_CRITICAL_SKILL" type_chance="10" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="190" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4798" type="Weapon" name="Knuckle Duster - Rsk. Evasion">
+	<item id="4796" name="Great Pata" name_additional="Critical Poison" type="Weapon">
+		<set name="icon" val="icon.weapon_great_pata_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUALFIST" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;46;90" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="252" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="CHRYSOLITE" />
+		<set name="weight" val="1460" />
+		<set name="price" val="942700" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3040" level="4" type="ON_CRITICAL_SKILL" type_chance="14" />
+		</skills>
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="4" />
+			<add stat="accCombat" val="4.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="4797" name="Great Pata" name_additional="Rsk. Haste" type="Weapon">
+		<set name="icon" val="icon.weapon_great_pata_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="DUALFIST" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;46;90" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="252" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="CHRYSOLITE" />
+		<set name="weight" val="1460" />
+		<set name="price" val="942700" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3034" level="4" />
+		</skills>
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="4" />
+			<add stat="accCombat" val="4.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="4798" name="Knuckle Duster" name_additional="Rsk. Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_knuckle_dust_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -2872,18 +3037,20 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3030-2" />
+		<skills>
+			<skill id="3030" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="148" />
 			<set stat="mAtk" val="68" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="4799" type="Weapon" name="Knuckle Duster - Rsk. Haste">
+	<item id="4799" name="Knuckle Duster" name_additional="Rsk. Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_knuckle_dust_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -2901,15 +3068,17 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3034-2" />
+		<skills>
+			<skill id="3034" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="148" />
 			<set stat="mAtk" val="68" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
 </list>

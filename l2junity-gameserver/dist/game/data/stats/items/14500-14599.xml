@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="14500" type="Weapon" name="Vesper Retributer {PvP} - Health">
+	<item id="14500" name="Vesper Retributer {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_retributer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -24,18 +24,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3653-1;3013-3" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="482" />
 			<set stat="mAtk" val="176" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14501" type="Weapon" name="Vesper Retributer {PvP} - HP Drain">
+	<item id="14501" name="Vesper Retributer {PvP}" name_additional="HP Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_retributer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -59,18 +63,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3653-1;3568-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3568" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="482" />
 			<set stat="mAtk" val="176" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14502" type="Weapon" name="Vesper Caster {PvP} - Acumen">
+	<item id="14502" name="Vesper Caster {PvP}" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_caster_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -95,18 +103,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3654-1;3047-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3047" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="317" />
 			<set stat="mAtk" val="234" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14503" type="Weapon" name="Vesper Caster {PvP} - MP Regeneration">
+	<item id="14503" name="Vesper Caster {PvP}" name_additional="MP Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_caster_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -131,18 +143,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3654-1;3576-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3576" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="317" />
 			<set stat="mAtk" val="234" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14504" type="Weapon" name="Vesper Caster {PvP} - Mana Up">
+	<item id="14504" name="Vesper Caster {PvP}" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_caster_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -167,18 +183,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3654-1;3014-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3014" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="317" />
 			<set stat="mAtk" val="234" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14505" type="Weapon" name="Vesper Singer {PvP} - Empower">
+	<item id="14505" name="Vesper Singer {PvP}" name_additional="Empower" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_singer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -203,18 +223,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3654-1;3575-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3575" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="386" />
 			<set stat="mAtk" val="257" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14506" type="Weapon" name="Vesper Singer {PvP} - MP Regeneration">
+	<item id="14506" name="Vesper Singer {PvP}" name_additional="MP Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_singer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -239,18 +263,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3654-1;3576-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3576" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="386" />
 			<set stat="mAtk" val="257" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14507" type="Weapon" name="Vesper Singer {PvP} - Magic Hold">
+	<item id="14507" name="Vesper Singer {PvP}" name_additional="Magic Hold" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_singer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -270,25 +298,27 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="20" />
 		<set name="onmagic_skill" val="3577-2" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3654-1" />
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3654" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="386" />
 			<set stat="mAtk" val="257" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14508" type="Weapon" name="Vesper Thrower {PvP} - Cheap Shot">
+	<item id="14508" name="Vesper Thrower {PvP}" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_thrower_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -314,18 +344,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3655-1;8312-2" />
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3655" level="1" />
+			<skill id="8312" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="724" />
 			<set stat="mAtk" val="176" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14509" type="Weapon" name="Vesper Thrower {PvP} - Focus">
+	<item id="14509" name="Vesper Thrower {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_thrower_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -351,18 +385,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3655-1;3567-3" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="3567" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="724" />
 			<set stat="mAtk" val="176" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14510" type="Weapon" name="Vesper Thrower {PvP} - Critical Slow">
+	<item id="14510" name="Vesper Thrower {PvP}" name_additional="Critical Slow" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_thrower_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -383,24 +421,27 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="oncrit_skill" val="3574-3" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3655-1" />
+		<skills>
+			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" />
+			<skill id="3552" level="3" />
+			<skill id="3655" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="724" />
 			<set stat="mAtk" val="176" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14511" type="Weapon" name="Vesper Pincer {PvP} - Haste">
+	<item id="14511" name="Vesper Pincer {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_pincer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -416,7 +457,6 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -425,7 +465,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3650-1;3564-3" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3552" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3564" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -435,11 +480,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14512" type="Weapon" name="Vesper Pincer {PvP} - Health">
+	<item id="14512" name="Vesper Pincer {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_pincer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -455,7 +500,6 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -464,7 +508,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3650-1;3013-3" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3552" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -474,11 +523,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14513" type="Weapon" name="Vesper Pincer {PvP} - Focus">
+	<item id="14513" name="Vesper Pincer {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_pincer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -494,7 +543,6 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -503,7 +551,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3650-1;8289-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3552" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="8289" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -513,11 +566,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14514" type="Weapon" name="Vesper Shooter {PvP} - Cheap Shot">
+	<item id="14514" name="Vesper Shooter {PvP}" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_schutze_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -542,7 +595,11 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3360-1;3552-3;3655-1" />
+		<skills>
+			<skill id="3360" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3655" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -552,11 +609,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14515" type="Weapon" name="Vesper Shooter {PvP} - Focus">
+	<item id="14515" name="Vesper Shooter {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_schutze_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -581,7 +638,11 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3655-1;8289-1" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="8289" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -591,11 +652,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14516" type="Weapon" name="Vesper Shooter {PvP} - Critical Slow">
+	<item id="14516" name="Vesper Shooter {PvP}" name_additional="Critical Slow" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_schutze_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -615,13 +676,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="oncrit_skill" val="3574-2" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3655-1" />
+		<skills>
+			<skill id="3574" level="2" type="ON_CRITICAL_SKILL" />
+			<skill id="3552" level="3" />
+			<skill id="3655" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -631,11 +695,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14517" type="Weapon" name="Vesper Nagan {PvP} - Haste">
+	<item id="14517" name="Vesper Nagan {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_nagen_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -659,7 +723,11 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3653-1;3564-3" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3564" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -669,11 +737,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14518" type="Weapon" name="Vesper Nagan {PvP} - Health">
+	<item id="14518" name="Vesper Nagan {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_nagen_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -697,7 +765,11 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3653-1;3013-3" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -707,11 +779,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14519" type="Weapon" name="Vesper Nagan {PvP} - Focus">
+	<item id="14519" name="Vesper Nagan {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_nagen_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -735,7 +807,11 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3653-1;3566-3" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3566" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -745,11 +821,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14520" type="Armor" name="Vesper Breastplate {PvP}">
+	<item id="14520" name="Vesper Breastplate {PvP}" type="Armor">
 		<set name="icon" val="icon.armor_t94_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -775,7 +851,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="14521" type="Armor" name="Vesper Leather Breastplate {PvP}">
+	<item id="14521" name="Vesper Leather Breastplate {PvP}" type="Armor">
 		<set name="icon" val="icon.armor_t95_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -798,7 +874,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="14522" type="Armor" name="Vesper Tunic {PvP}">
+	<item id="14522" name="Vesper Tunic {PvP}" type="Armor">
 		<set name="icon" val="icon.armor_t96_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -825,7 +901,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="14523" type="Armor" name="Vesper Noble Breastplate {PvP}">
+	<item id="14523" name="Vesper Noble Breastplate {PvP}" type="Armor">
 		<set name="icon" val="icon.armor_t94_u_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -851,7 +927,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="14524" type="Armor" name="Vesper Noble Leather Breastplate {PvP}">
+	<item id="14524" name="Vesper Noble Leather Breastplate {PvP}" type="Armor">
 		<set name="icon" val="icon.armor_t95_u_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -874,7 +950,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="14525" type="Armor" name="Vesper Noble Tunic {PvP}">
+	<item id="14525" name="Vesper Noble Tunic {PvP}" type="Armor">
 		<set name="icon" val="icon.armor_t96_u_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -901,7 +977,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="14526" type="Weapon" name="Dynasty Dual Dagger - Great Gale">
+	<item id="14526" name="Dynasty Dual Dagger - Great Gale" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALDAGGER" />
@@ -919,10 +995,12 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="8295-1" />
 		<set name="item_skill" val="3859-2;3552-1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DUAL_DAGGER" />
+		<skills>
+			<skill id="8295" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<and>
 				<player level="81" />
@@ -935,11 +1013,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14527" type="Weapon" name="Icarus Dual Daggers - Confusion">
+	<item id="14527" name="Icarus Dual Daggers - Confusion" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALDAGGER" />
@@ -957,9 +1035,12 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="8296-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3858-3;3552-1" />
+		<skills>
+			<skill id="8296" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3858" level="3" />
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<and>
 				<player level="81" />
@@ -972,11 +1053,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14528" type="Weapon" name="Dynasty Dual Daggers - Great Gale {PvP}">
+	<item id="14528" name="Dynasty Dual Dagger - Great Gale {PvP}" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALDAGGER" />
@@ -992,7 +1073,6 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="8295-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1001,7 +1081,13 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3859-2;3552-3;3651-1;3652-1" />
+		<skills>
+			<skill id="8295" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3859" level="2" />
+			<skill id="3552" level="3" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<and>
 				<player level="81" />
@@ -1014,11 +1100,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14529" type="Weapon" name="Icarus Dual Daggers - Confusion {PvP}">
+	<item id="14529" name="Icarus Dual Daggers - Confusion {PvP}" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALDAGGER" />
@@ -1034,7 +1120,6 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="8296-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1043,7 +1128,13 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3858-3;3552-3;3651-1;3652-1" />
+		<skills>
+			<skill id="8296" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3858" level="3" />
+			<skill id="3552" level="3" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<and>
 				<player level="81" />
@@ -1056,11 +1147,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14530" type="EtcItem" name="Maxwell House Pack">
+	<item id="14530" name="Maxwell House Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1072,15 +1163,19 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="13300,3,3,100;13383,3,3,100;13308,1,1,100;13316,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="13300" max="3" min="3" />
+			<item chance="100.0" id="13383" max="3" min="3" />
+			<item chance="100.0" id="13308" max="1" min="1" />
+			<item chance="100.0" id="13316" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="14531" type="EtcItem" name="Gludio Supply Box - Magic Pin - Grade S, A">
+	<item id="14531" name="Gludio Supply Box - Magic Pin" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1091,15 +1186,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2948-1" />
+		<skills>
+			<skill id="2948" level="1" />
+		</skills>
 	</item>
-	<item id="14532" type="EtcItem" name="Dion Supply Box - Magic Pin - Grade S, A">
+	<item id="14532" name="Dion Supply Box - Magic Pin" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1110,15 +1206,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2949-1" />
+		<skills>
+			<skill id="2949" level="1" />
+		</skills>
 	</item>
-	<item id="14533" type="EtcItem" name="Giran Supply Box - Magic Pin - Grade S, A">
+	<item id="14533" name="Giran Supply Box - Magic Pin" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1129,15 +1226,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2950-1" />
+		<skills>
+			<skill id="2950" level="1" />
+		</skills>
 	</item>
-	<item id="14534" type="EtcItem" name="Oren Supply Box - Magic Pin - Grade S, A">
+	<item id="14534" name="Oren Supply Box - Magic Pin" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1148,15 +1246,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2951-1" />
+		<skills>
+			<skill id="2951" level="1" />
+		</skills>
 	</item>
-	<item id="14535" type="EtcItem" name="Aden Supply Box - Magic Pin - Grade S, A">
+	<item id="14535" name="Aden Supply Box - Magic Pin" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1167,15 +1266,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2952-1" />
+		<skills>
+			<skill id="2952" level="1" />
+		</skills>
 	</item>
-	<item id="14536" type="EtcItem" name="Innadril Supply Box - Magic Pin - Grade S, A">
+	<item id="14536" name="Innadril Supply Box - Magic Pin" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1186,15 +1286,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2953-1" />
+		<skills>
+			<skill id="2953" level="1" />
+		</skills>
 	</item>
-	<item id="14537" type="EtcItem" name="Goddard Supply Box: Magic Pin - Grade S, A">
+	<item id="14537" name="Goddard Supply Box: Magic Pin" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1205,15 +1306,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2954-1" />
+		<skills>
+			<skill id="2954" level="1" />
+		</skills>
 	</item>
-	<item id="14538" type="EtcItem" name="Rune Supply Box - Magic Pin - Grade S, A">
+	<item id="14538" name="Rune Supply Box - Magic Pin" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1224,15 +1326,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2955-1" />
+		<skills>
+			<skill id="2955" level="1" />
+		</skills>
 	</item>
-	<item id="14539" type="EtcItem" name="Schuttgart Supply Box - Magic Pin - Grade S, A">
+	<item id="14539" name="Schuttgart Supply Box - Magic Pin" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1243,15 +1346,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2956-1" />
+		<skills>
+			<skill id="2956" level="1" />
+		</skills>
 	</item>
-	<item id="14540" type="EtcItem" name="Gludio Supply Box - Magic Pouch - Grade S, A">
+	<item id="14540" name="Gludio Supply Box - Magic Pouch" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1262,15 +1366,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2957-1" />
+		<skills>
+			<skill id="2957" level="1" />
+		</skills>
 	</item>
-	<item id="14541" type="EtcItem" name="Dion Supply Box - Magic Pouch - Grade S, A">
+	<item id="14541" name="Dion Supply Box - Magic Pouch" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1281,15 +1386,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2958-1" />
+		<skills>
+			<skill id="2958" level="1" />
+		</skills>
 	</item>
-	<item id="14542" type="EtcItem" name="Giran Supply Box - Magic Pouch - Grade S, A">
+	<item id="14542" name="Giran Supply Box - Magic Pouch" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1300,15 +1406,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2959-1" />
+		<skills>
+			<skill id="2959" level="1" />
+		</skills>
 	</item>
-	<item id="14543" type="EtcItem" name="Oren Supply Box - Magic Pouch - Grade S, A">
+	<item id="14543" name="Oren Supply Box - Magic Pouch" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1319,15 +1426,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2960-1" />
+		<skills>
+			<skill id="2960" level="1" />
+		</skills>
 	</item>
-	<item id="14544" type="EtcItem" name="Aden Supply Box - Magic Pouch - Grade S, A">
+	<item id="14544" name="Aden Supply Box - Magic Pouch" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1338,15 +1446,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2961-1" />
+		<skills>
+			<skill id="2961" level="1" />
+		</skills>
 	</item>
-	<item id="14545" type="EtcItem" name="Innadril Supply Box - Magic Pouch - Grade S, A">
+	<item id="14545" name="Innadril Supply Box - Magic Pouch" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1357,15 +1466,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2962-1" />
+		<skills>
+			<skill id="2962" level="1" />
+		</skills>
 	</item>
-	<item id="14546" type="EtcItem" name="Goddard Supply Box: Magic Pouch - Grade S, A">
+	<item id="14546" name="Goddard Supply Box: Magic Pouch" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1376,15 +1486,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2963-1" />
+		<skills>
+			<skill id="2963" level="1" />
+		</skills>
 	</item>
-	<item id="14547" type="EtcItem" name="Rune Supply Box - Magic Pouch - Grade S, A">
+	<item id="14547" name="Rune Supply Box - Magic Pouch" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1395,15 +1506,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2964-1" />
+		<skills>
+			<skill id="2964" level="1" />
+		</skills>
 	</item>
-	<item id="14548" type="EtcItem" name="Schuttgart Supply Box - Magic Pouch - Grade S, A">
+	<item id="14548" name="Schuttgart Supply Box - Magic Pouch" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1414,15 +1526,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2965-1" />
+		<skills>
+			<skill id="2965" level="1" />
+		</skills>
 	</item>
-	<item id="14549" type="EtcItem" name="Gludio Supply Box - Belt - Grade S, A">
+	<item id="14549" name="Gludio Supply Box - Belt" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_3_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1433,15 +1546,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2966-1" />
+		<skills>
+			<skill id="2966" level="1" />
+		</skills>
 	</item>
-	<item id="14550" type="EtcItem" name="Dion Supply Box - Belt - Grade S, A">
+	<item id="14550" name="Dion Supply Box - Belt" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_3_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1452,15 +1566,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2967-1" />
+		<skills>
+			<skill id="2967" level="1" />
+		</skills>
 	</item>
-	<item id="14551" type="EtcItem" name="Giran Supply Box - Belt - Grade S, A">
+	<item id="14551" name="Giran Supply Box - Belt" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_3_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1471,15 +1586,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2968-1" />
+		<skills>
+			<skill id="2968" level="1" />
+		</skills>
 	</item>
-	<item id="14552" type="EtcItem" name="Oren Supply Box - Belt - Grade S, A">
+	<item id="14552" name="Oren Supply Box - Belt" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_3_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1490,15 +1606,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2969-1" />
+		<skills>
+			<skill id="2969" level="1" />
+		</skills>
 	</item>
-	<item id="14553" type="EtcItem" name="Aden Supply Box - Belt - Grade S, A">
+	<item id="14553" name="Aden Supply Box - Belt" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_3_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1509,15 +1626,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2970-1" />
+		<skills>
+			<skill id="2970" level="1" />
+		</skills>
 	</item>
-	<item id="14554" type="EtcItem" name="Innadril Supply Box - Belt - Grade S, A">
+	<item id="14554" name="Innadril Supply Box - Belt" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_3_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1528,15 +1646,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2971-1" />
+		<skills>
+			<skill id="2971" level="1" />
+		</skills>
 	</item>
-	<item id="14555" type="EtcItem" name="Goddard Supply Box: Belt - Grade S, A">
+	<item id="14555" name="Goddard Supply Box: Belt" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_3_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1547,15 +1666,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2972-1" />
+		<skills>
+			<skill id="2972" level="1" />
+		</skills>
 	</item>
-	<item id="14556" type="EtcItem" name="Rune Supply Box - Belt - Grade S, A">
+	<item id="14556" name="Rune Supply Box - Belt" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_3_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1566,15 +1686,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2973-1" />
+		<skills>
+			<skill id="2973" level="1" />
+		</skills>
 	</item>
-	<item id="14557" type="EtcItem" name="Schuttgart Supply Box - Belt - Grade S, A">
+	<item id="14557" name="Schuttgart Supply Box - Belt" name_additional="S-/A-grade" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_3_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1585,15 +1706,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2974-1" />
+		<skills>
+			<skill id="2974" level="1" />
+		</skills>
 	</item>
-	<item id="14558" type="Weapon" name="Dynasty Dual Daggers {PvP}">
+	<item id="14558" name="Dynasty Dual Dagger {PvP}" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALDAGGER" />
@@ -1609,7 +1731,6 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="8295-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1618,7 +1739,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3651-1;3652-1" />
+		<skills>
+			<skill id="8295" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3552" level="3" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<and>
 				<player level="81" />
@@ -1631,11 +1757,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14559" type="EtcItem" name="Player Commendation Points">
+	<item id="14559" name="Player Commendation Points" type="EtcItem">
 		<set name="icon" val="icon.etc_pccafe_point_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="FISH" />
@@ -1645,15 +1771,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2841-1" />
+		<skills>
+			<skill id="2841" level="1" />
+		</skills>
 	</item>
-	<item id="14560" type="Weapon" name="Dagger of Val Turner Family">
+	<item id="14560" name="Dagger of Val Turner Family" type="Weapon">
 		<set name="icon" val="icon.weapon_angel_slayer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1683,11 +1810,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14561" type="Weapon" name="Slasher of Val Turner Family">
+	<item id="14561" name="Slasher of Val Turner Family" type="Weapon">
 		<set name="icon" val="icon.weapon_heavens_divider_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1717,11 +1844,11 @@
 			<set stat="mAtk" val="119" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14562" type="Weapon" name="Sword of Ashton Family">
+	<item id="14562" name="Sword of Ashton Family" type="Weapon">
 		<set name="icon" val="icon.weapon_forgotten_blade_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1751,11 +1878,11 @@
 			<set stat="mAtk" val="119" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14563" type="Weapon" name="Claw of Ashton Family">
+	<item id="14563" name="Claw of Ashton Family" type="Weapon">
 		<set name="icon" val="icon.weapon_demon_splinter_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -1785,11 +1912,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14564" type="Weapon" name="Slasher of Esthus Family">
+	<item id="14564" name="Slasher of Esthus Family" type="Weapon">
 		<set name="icon" val="icon.weapon_heavens_divider_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1819,11 +1946,11 @@
 			<set stat="mAtk" val="119" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14565" type="Weapon" name="Great Hammer of Esthus Family">
+	<item id="14565" name="Great Hammer of Esthus Family" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_hunter_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1853,11 +1980,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14566" type="Weapon" name="Staff of Dake Family">
+	<item id="14566" name="Staff of Dake Family" type="Weapon">
 		<set name="icon" val="icon.weapon_imperial_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1888,11 +2015,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14567" type="Weapon" name="Hall of Dake Family">
+	<item id="14567" name="Hall of Dake Family" type="Weapon">
 		<set name="icon" val="icon.weapon_arcana_mace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1923,11 +2050,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14568" type="Weapon" name="Bow of Cadmus Family">
+	<item id="14568" name="Bow of Cadmus Family" type="Weapon">
 		<set name="icon" val="icon.weapon_draconic_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -1960,11 +2087,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14569" type="Weapon" name="Mace of Cadmus Family">
+	<item id="14569" name="Mace of Cadmus Family" type="Weapon">
 		<set name="icon" val="icon.weapon_basalt_battlehammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1994,11 +2121,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14570" type="Weapon" name="Dualsword of Hunter Family">
+	<item id="14570" name="Dualsword of Hunter Family" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2027,11 +2154,11 @@
 			<set stat="mAtk" val="119" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14571" type="Weapon" name="Spear of Hunter Family">
+	<item id="14571" name="Spear of Hunter Family" type="Weapon">
 		<set name="icon" val="icon.weapon_saint_spear_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -2055,18 +2182,20 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="310" />
 			<set stat="mAtk" val="119" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14572" type="Weapon" name="Staff of Abygail Family">
+	<item id="14572" name="Staff of Abygail Family" type="Weapon">
 		<set name="icon" val="icon.weapon_imperial_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2097,11 +2226,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14573" type="Weapon" name="Great Hammer of Abygail Family">
+	<item id="14573" name="Great Hammer of Abygail Family" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_hunter_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2131,11 +2260,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14574" type="Weapon" name="Spear of Halter Family">
+	<item id="14574" name="Spear of Halter Family" type="Weapon">
 		<set name="icon" val="icon.weapon_saint_spear_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -2159,18 +2288,20 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="310" />
 			<set stat="mAtk" val="119" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14575" type="Weapon" name="Dagger of Halter Family">
+	<item id="14575" name="Dagger of Halter Family" type="Weapon">
 		<set name="icon" val="icon.weapon_angel_slayer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2200,11 +2331,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14576" type="Weapon" name="Mace of Orwen Family">
+	<item id="14576" name="Mace of Orwen Family" type="Weapon">
 		<set name="icon" val="icon.weapon_basalt_battlehammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2234,11 +2365,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14577" type="Weapon" name="Claw of Orwen Family">
+	<item id="14577" name="Claw of Orwen Family" type="Weapon">
 		<set name="icon" val="icon.weapon_demon_splinter_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -2268,11 +2399,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14578" type="Weapon" name="Slicer of Val Turner Family">
+	<item id="14578" name="Slicer of Val Turner Family" type="Weapon">
 		<set name="icon" val="icon.weapon_gram_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2306,11 +2437,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14579" type="Weapon" name="Épée of Ashton Family">
+	<item id="14579" name="Épée of Ashton Family" type="Weapon">
 		<set name="icon" val="icon.weapon_leavatein_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -2344,11 +2475,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14580" type="Weapon" name="Slicer of Esthus Family">
+	<item id="14580" name="Slicer of Esthus Family" type="Weapon">
 		<set name="icon" val="icon.weapon_gram_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2382,11 +2513,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14581" type="Weapon" name="Estoc of Cadmus Family">
+	<item id="14581" name="Estoc of Cadmus Family" type="Weapon">
 		<set name="icon" val="icon.weapon_sarnga_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2421,11 +2552,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14582" type="Armor" name="Apella Combat Helmet">
+	<item id="14582" name="Apella Combat Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -2443,14 +2574,15 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
-			<player pledgeClass="4" /> <!-- Elder -->
+			<player pledgeClass="4" />
+			<!-- Elder -->
 		</cond>
 		<for>
 			<add order="0" stat="pDef" val="73" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="14583" type="Armor" name="Apella Combat Armor">
+	<item id="14583" name="Apella Combat Armor" type="Armor">
 		<set name="icon" val="icon.armor_t1004_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -2471,7 +2603,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -2479,7 +2612,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="14584" type="Armor" name="Apella Combat Gauntlets">
+	<item id="14584" name="Apella Combat Gauntlets" name_additional="Heavy Armor" type="Armor">
 		<set name="icon" val="icon.armor_t1004_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -2499,7 +2632,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -2507,7 +2641,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="14585" type="Armor" name="Apella Combat Boots">
+	<item id="14585" name="Apella Combat Boots" name_additional="Heavy Armor" type="Armor">
 		<set name="icon" val="icon.armor_t1004_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -2527,7 +2661,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -2535,7 +2670,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="14586" type="Armor" name="Apella Combat Clothes">
+	<item id="14586" name="Apella Combat Clothes" type="Armor">
 		<set name="icon" val="icon.armor_t1005_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -2554,14 +2689,15 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
-			<player pledgeClass="4" /> <!-- Elder -->
+			<player pledgeClass="4" />
+			<!-- Elder -->
 		</cond>
 		<for>
 			<add order="0" stat="pDef" val="220" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="14587" type="Armor" name="Apella Combat Leather Gloves">
+	<item id="14587" name="Apella Combat Leather Gloves" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_t1005_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -2579,14 +2715,15 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
-			<player pledgeClass="4" /> <!-- Elder -->
+			<player pledgeClass="4" />
+			<!-- Elder -->
 		</cond>
 		<for>
 			<add order="0" stat="pDef" val="49" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="14588" type="Armor" name="Apella Combat Shoes">
+	<item id="14588" name="Apella Combat Shoes" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_t1005_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -2604,14 +2741,15 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 		<cond msgId="1518">
-			<player pledgeClass="4" /> <!-- Elder -->
+			<player pledgeClass="4" />
+			<!-- Elder -->
 		</cond>
 		<for>
 			<add order="0" stat="pDef" val="49" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="14589" type="Armor" name="Apella Combat Overcoat">
+	<item id="14589" name="Apella Combat Overcoat" type="Armor">
 		<set name="icon" val="icon.armor_t1006_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -2632,7 +2770,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -2641,7 +2780,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="14590" type="Armor" name="Apella Combat Silk Gloves">
+	<item id="14590" name="Apella Combat Silk Gloves" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_t1006_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -2661,7 +2800,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -2669,7 +2809,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="14591" type="Armor" name="Apella Combat Sandals">
+	<item id="14591" name="Apella Combat Sandals" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_t1006_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -2689,7 +2829,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -2697,7 +2838,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="14592" type="Armor" name="Gludio Earth Resistance Ring">
+	<item id="14592" name="Gludio Earth Resistance Ring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -2714,7 +2855,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8379-1" />
+		<skills>
+			<skill id="8379" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
@@ -2722,7 +2865,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="14593" type="Armor" name="Dion Water Resistance Ring">
+	<item id="14593" name="Dion Water Resistance Ring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -2739,7 +2882,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8380-1" />
+		<skills>
+			<skill id="8380" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
@@ -2747,7 +2892,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="14594" type="Armor" name="Giran Fire Resistance Ring">
+	<item id="14594" name="Giran Fire Resistance Ring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -2764,7 +2909,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8381-1" />
+		<skills>
+			<skill id="8381" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
@@ -2772,7 +2919,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="14595" type="Armor" name="Oren Earth Resistance Ring">
+	<item id="14595" name="Oren Earth Resistance Ring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -2789,7 +2936,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8382-1" />
+		<skills>
+			<skill id="8382" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
@@ -2797,7 +2946,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="14596" type="Armor" name="Aden Holy Resistance Ring">
+	<item id="14596" name="Aden Holy Resistance Ring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -2814,7 +2963,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8383-1" />
+		<skills>
+			<skill id="8383" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
@@ -2822,7 +2973,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="14597" type="Armor" name="Innadril Holy Resistance Ring">
+	<item id="14597" name="Innadril Holy Resistance Ring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -2839,7 +2990,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8384-1" />
+		<skills>
+			<skill id="8384" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
@@ -2847,7 +3000,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="14598" type="Armor" name="Goddard Dark Resistance Ring">
+	<item id="14598" name="Goddard Dark Resistance Ring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -2864,7 +3017,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8385-1" />
+		<skills>
+			<skill id="8385" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
@@ -2872,7 +3027,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="14599" type="Armor" name="Rune Wind Resistance Ring">
+	<item id="14599" name="Rune Wind Resistance Ring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -2889,7 +3044,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8386-1" />
+		<skills>
+			<skill id="8386" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />

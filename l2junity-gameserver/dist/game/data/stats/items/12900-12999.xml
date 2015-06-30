@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="12900" type="Weapon" name="Demon Splinter - Thunder {PvP} - Critical Stun">
+	<item id="12900" name="Demon Splinter - Thunder {PvP}" name_additional="Critical Stun" type="Weapon">
 		<set name="icon" val="icon.weapon_demon_splinter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -19,24 +19,29 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="oncrit_skill" val="3571-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3883-1;3651-1;3652-1;3552-3" />
+		<skills>
+			<skill id="3571" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3883" level="1" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12901" type="Weapon" name="Draconic Bow - Earth {PvP} - Cheap Shot">
+	<item id="12901" name="Draconic Bow - Earth {PvP}" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_draconic_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -57,24 +62,28 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3867-1;3655-1;3552-3" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="reduced_mp_consume" val="26,1" />
+		<skills>
+			<skill id="3867" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="581" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12902" type="Weapon" name="Draconic Bow - Earth {PvP} - Focus">
+	<item id="12902" name="Draconic Bow - Earth {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_draconic_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -100,18 +109,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3867-1;3655-1;3552-1;3567-1" />
+		<skills>
+			<skill id="3867" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3567" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="581" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12903" type="Weapon" name="Draconic Bow - Earth {PvP} - Critical Slow">
+	<item id="12903" name="Draconic Bow - Earth {PvP}" name_additional="Critical Slow" type="Weapon">
 		<set name="icon" val="icon.weapon_draconic_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -132,24 +146,28 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="oncrit_skill" val="3574-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3867-1;3655-1;3552-3" />
+		<skills>
+			<skill id="3574" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3867" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="581" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12904" type="Weapon" name="Dragon Hunter Axe - Thunder {PvP} - HP Regeneration">
+	<item id="12904" name="Dragon Hunter Axe - Thunder {PvP}" name_additional="HP Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_hunter_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -173,18 +191,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3894-1;3653-1;3552-1;3569-1" />
+		<skills>
+			<skill id="3894" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3569" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12905" type="Weapon" name="Dragon Hunter Axe - Thunder {PvP} - Health">
+	<item id="12905" name="Dragon Hunter Axe - Thunder {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_hunter_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -208,18 +231,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3894-1;3653-1;3552-1;3013-3" />
+		<skills>
+			<skill id="3894" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12906" type="Weapon" name="Dragon Hunter Axe - Thunder {PvP} - HP Drain">
+	<item id="12906" name="Dragon Hunter Axe - Thunder {PvP}" name_additional="HP Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_hunter_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -243,18 +271,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3894-1;3653-1;3552-1;3568-1" />
+		<skills>
+			<skill id="3894" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3568" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12907" type="Weapon" name="Laevateinn - Lightning {PvP} - Haste">
+	<item id="12907" name="Laevateinn - Lightning {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_leavatein_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -270,7 +303,6 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -279,7 +311,13 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3833-1;3650-1;3552-1;3564-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3833" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3564" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -289,11 +327,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12908" type="Weapon" name="Laevateinn - Lightning {PvP} - Health">
+	<item id="12908" name="Laevateinn - Lightning {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_leavatein_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -309,7 +347,6 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -318,7 +355,13 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3833-1;3650-1;3552-1;3013-3" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3833" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -328,11 +371,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12909" type="Weapon" name="Laevateinn - Lightning {PvP} - Focus">
+	<item id="12909" name="Laevateinn - Lightning {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_leavatein_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -348,7 +391,6 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -357,7 +399,13 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3833-1;3650-1;3552-1;3566-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3833" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3566" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -367,11 +415,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12910" type="Weapon" name="Basalt Battlehammer - Concentration {PvP} - HP Drain">
+	<item id="12910" name="Basalt Battlehammer - Concentration {PvP}" name_additional="HP Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_basalt_battlehammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -395,18 +443,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3888-1;3650-1;3552-1;3568-1" />
+		<skills>
+			<skill id="3888" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3568" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12911" type="Weapon" name="Basalt Battlehammer - Concentration {PvP} - Health">
+	<item id="12911" name="Basalt Battlehammer - Concentration {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_basalt_battlehammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -430,18 +483,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3888-1;3650-1;3552-1;3013-3" />
+		<skills>
+			<skill id="3888" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12912" type="Weapon" name="Basalt Battlehammer - Concentration {PvP} - HP Regeneration">
+	<item id="12912" name="Basalt Battlehammer - Concentration {PvP}" name_additional="HP Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_basalt_battlehammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -465,18 +523,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3888-1;3650-1;3552-1;3569-1" />
+		<skills>
+			<skill id="3888" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3569" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12913" type="Weapon" name="Sarunga - Earth {PvP} - Cheap Shot">
+	<item id="12913" name="Sarunga - Earth {PvP}" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_sarnga_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -501,7 +564,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3872-1;3552-3;3360-1;3655-1" />
+		<skills>
+			<skill id="3872" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3360" level="1" />
+			<skill id="3655" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -511,11 +579,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12914" type="Weapon" name="Sarunga - Earth {PvP} - Focus">
+	<item id="12914" name="Sarunga - Earth {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_sarnga_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -540,7 +608,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3872-1;3655-1;3552-1;3567-1" />
+		<skills>
+			<skill id="3872" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3567" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -550,11 +623,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12915" type="Weapon" name="Sarunga - Earth {PvP} - Critical Slow">
+	<item id="12915" name="Sarunga - Earth {PvP}" name_additional="Critical Slow" type="Weapon">
 		<set name="icon" val="icon.weapon_sarnga_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -574,13 +647,17 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="oncrit_skill" val="3574-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3872-1;3655-1;3552-3" />
+		<skills>
+			<skill id="3574" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3872" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -590,11 +667,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12916" type="Weapon" name="Saint Spear - Destruction {PvP} - Health">
+	<item id="12916" name="Saint Spear - Destruction {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_saint_spear_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -618,18 +695,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3878-1;3653-1;3552-1;3013-4" />
+		<skills>
+			<skill id="3878" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12917" type="Weapon" name="Saint Spear - Destruction {PvP} - Guidance">
+	<item id="12917" name="Saint Spear - Destruction {PvP}" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_saint_spear_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -653,18 +735,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3878-1;3653-1;3552-1;3602-9" />
+		<skills>
+			<skill id="3878" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3602" level="9" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12918" type="Weapon" name="Saint Spear - Destruction {PvP} - Haste">
+	<item id="12918" name="Saint Spear - Destruction {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_saint_spear_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -688,18 +775,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3878-1;3653-1;3552-1;3601-9" />
+		<skills>
+			<skill id="3878" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3601" level="9" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12919" type="Weapon" name="Arcana Mace - Nature {PvP} - Acumen">
+	<item id="12919" name="Arcana Mace - Nature {PvP}" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_arcana_mace_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -724,18 +816,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3890-1;3654-1;3552-1;3047-2" />
+		<skills>
+			<skill id="3890" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3047" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="225" />
 			<set stat="mAtk" val="175" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12920" type="Weapon" name="Arcana Mace - Nature {PvP} - MP Regeneration">
+	<item id="12920" name="Arcana Mace - Nature {PvP}" name_additional="MP Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_arcana_mace_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -760,18 +857,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3890-1;3654-1;3552-1;3576-1" />
+		<skills>
+			<skill id="3890" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3576" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="225" />
 			<set stat="mAtk" val="175" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12921" type="Weapon" name="Arcana Mace - Nature {PvP} - Mana Up">
+	<item id="12921" name="Arcana Mace - Nature {PvP}" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_arcana_mace_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -796,18 +898,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3890-1;3654-1;3552-1;3014-2" />
+		<skills>
+			<skill id="3890" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3014" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="225" />
 			<set stat="mAtk" val="175" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12922" type="Weapon" name="Angel Slayer - Concentration {PvP} - Critical Damage">
+	<item id="12922" name="Angel Slayer - Concentration {PvP}" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_angel_slayer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -831,18 +938,24 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3862-1;3651-1;3652-1;3552-1;3572-1" />
+		<skills>
+			<skill id="3862" level="1" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3572" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="246" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12923" type="Weapon" name="Angel Slayer - Concentration {PvP} - HP Drain">
+	<item id="12923" name="Angel Slayer - Concentration {PvP}" name_additional="HP Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_angel_slayer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -866,18 +979,24 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3862-1;3651-1;3652-1;3552-1;3568-1" />
+		<skills>
+			<skill id="3862" level="1" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3568" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="246" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12924" type="Weapon" name="Angel Slayer - Concentration {PvP} - Haste">
+	<item id="12924" name="Angel Slayer - Concentration {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_angel_slayer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -901,18 +1020,24 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3862-1;3651-1;3652-1;3552-1;3564-1" />
+		<skills>
+			<skill id="3862" level="1" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3564" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="246" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12925" type="Weapon" name="Imperial Staff - Nature {PvP} - Empower">
+	<item id="12925" name="Imperial Staff - Nature {PvP}" name_additional="Empower" type="Weapon">
 		<set name="icon" val="icon.weapon_imperial_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -937,18 +1062,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3901-2;3654-1;3552-1;3575-1" />
+		<skills>
+			<skill id="3901" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3575" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="274" />
 			<set stat="mAtk" val="193" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12926" type="Weapon" name="Imperial Staff - Nature {PvP} - MP Regeneration">
+	<item id="12926" name="Imperial Staff - Nature {PvP}" name_additional="MP Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_imperial_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -973,18 +1103,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3901-2;3654-1;3552-1;3576-1" />
+		<skills>
+			<skill id="3901" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3576" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="274" />
 			<set stat="mAtk" val="193" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12927" type="Weapon" name="Imperial Staff - Nature {PvP} - Magic Hold">
+	<item id="12927" name="Imperial Staff - Nature {PvP}" name_additional="Magic Hold" type="Weapon">
 		<set name="icon" val="icon.weapon_imperial_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1004,25 +1139,28 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="20" />
 		<set name="onmagic_skill" val="3577-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3901-2;3654-1;3552-3" />
+		<skills>
+			<skill id="3901" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="274" />
 			<set stat="mAtk" val="193" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12928" type="Weapon" name="Tallum Blade*Dark Legion's Edge - Lightning {PvP}">
+	<item id="12928" name="Tallum Blade*Dark Legion's Edge - Lightning {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1038,7 +1176,6 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3570-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1047,17 +1184,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3838-1;3656-1;3552-3" />
+		<skills>
+			<skill id="3570" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3838" level="1" />
+			<skill id="3656" level="1" />
+			<skill id="3552" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12929" type="Weapon" name="Forgotten Blade - Lightning {PvP} - Haste">
+	<item id="12929" name="Forgotten Blade - Lightning {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_forgotten_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1081,17 +1223,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3828-1;3650-1;3552-1;3564-1" />
+		<skills>
+			<skill id="3828" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3564" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12930" type="Weapon" name="Forgotten Blade - Lightning {PvP} - Health">
+	<item id="12930" name="Forgotten Blade - Lightning {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_forgotten_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1115,17 +1262,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3828-1;3650-1;3552-1;3013-3" />
+		<skills>
+			<skill id="3828" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12931" type="Weapon" name="Forgotten Blade - Lightning {PvP} - Focus">
+	<item id="12931" name="Forgotten Blade - Lightning {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_forgotten_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1149,17 +1301,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3828-1;3650-1;3552-1;3566-1" />
+		<skills>
+			<skill id="3828" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3566" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12932" type="Weapon" name="Heavens Divider - Thunder {PvP} - Haste">
+	<item id="12932" name="Heaven's Divider - Thunder {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_heavens_divider_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1183,17 +1340,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3844-1;3653-1;3552-1;3564-1" />
+		<skills>
+			<skill id="3844" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3564" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12933" type="Weapon" name="Heavens Divider - Thunder {PvP} - Health">
+	<item id="12933" name="Heaven's Divider - Thunder {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_heavens_divider_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1217,17 +1379,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3844-1;3653-1;3552-1;3013-3" />
+		<skills>
+			<skill id="3844" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12934" type="Weapon" name="Heavens Divider - Thunder {PvP} - Focus">
+	<item id="12934" name="Heaven's Divider - Thunder {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_heavens_divider_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1251,17 +1418,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3844-1;3653-1;3552-1;3566-1" />
+		<skills>
+			<skill id="3844" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3566" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12935" type="Weapon" name="Dynasty Ancient Sword - Great Gale {PvP} - Focus">
+	<item id="12935" name="Dynasty Ancient Sword - Great Gale {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1285,7 +1457,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3846-2;3653-1;3552-1;3566-2" />
+		<skills>
+			<skill id="3846" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3566" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1295,11 +1472,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12936" type="Weapon" name="Dynasty Ancient Sword - Great Gale {PvP} - Health">
+	<item id="12936" name="Dynasty Ancient Sword - Great Gale {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1323,7 +1500,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3846-2;3653-1;3552-1;3013-3" />
+		<skills>
+			<skill id="3846" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1333,11 +1515,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12937" type="Weapon" name="Dynasty Ancient Sword - Great Gale {PvP} - Light">
+	<item id="12937" name="Dynasty Ancient Sword - Great Gale {PvP}" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1361,7 +1543,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3846-2;3552-3;3498-1;3653-1" />
+		<skills>
+			<skill id="3846" level="2" />
+			<skill id="3552" level="3" />
+			<skill id="3498" level="1" />
+			<skill id="3653" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1371,11 +1558,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12938" type="Weapon" name="Dynasty Knife - Great Gale {PvP} - Focus">
+	<item id="12938" name="Dynasty Knife - Great Gale {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_dagger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1399,18 +1586,24 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3859-2;3651-1;3652-1;3552-1;3567-2" />
+		<skills>
+			<skill id="3859" level="2" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3567" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="291" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12939" type="Weapon" name="Dynasty Knife - Great Gale {PvP} - Evasion">
+	<item id="12939" name="Dynasty Knife - Great Gale {PvP}" name_additional="Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_dagger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1434,18 +1627,24 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3859-2;3009-8;3552-3;3651-1;3652-1" />
+		<skills>
+			<skill id="3859" level="2" />
+			<skill id="3009" level="8" />
+			<skill id="3552" level="3" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="291" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12940" type="Weapon" name="Dynasty Knife - Great Gale {PvP} - Critical Damage">
+	<item id="12940" name="Dynasty Knife - Great Gale {PvP}" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_dagger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1469,18 +1668,24 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3859-2;3651-1;3652-1;3552-1;3066-4" />
+		<skills>
+			<skill id="3859" level="2" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3066" level="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="291" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12941" type="Weapon" name="Dynasty Dual Sword - Earth {PvP}">
+	<item id="12941" name="Dynasty Dualsword - Earth {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1496,7 +1701,6 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3411-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1505,17 +1709,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3836-2;3656-1;3552-3" />
+		<skills>
+			<skill id="3411" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3836" level="2" />
+			<skill id="3656" level="1" />
+			<skill id="3552" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="405" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12942" type="Weapon" name="Dynasty Rapier - Earth {PvP} - Focus">
+	<item id="12942" name="Dynasty Rapier - Earth {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_rapier_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1531,7 +1740,6 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1540,7 +1748,13 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3831-2;3650-1;3552-1;3566-2" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3831" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3566" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1550,11 +1764,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12943" type="Weapon" name="Dynasty Rapier - Earth {PvP} - Health">
+	<item id="12943" name="Dynasty Rapier - Earth {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_rapier_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1570,7 +1784,6 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1579,7 +1792,13 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3831-2;3650-1;3552-1;3013-3" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3831" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1589,11 +1808,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12944" type="Weapon" name="Dynasty Rapier - Earth {PvP} - Light">
+	<item id="12944" name="Dynasty Rapier - Earth {PvP}" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_rapier_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1609,7 +1828,6 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1618,7 +1836,13 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3831-2;3650-1;3552-3;3498-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3831" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3498" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1628,11 +1852,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12945" type="Weapon" name="Dynasty Mace - Earth {PvP} - Mana Up">
+	<item id="12945" name="Dynasty Mace - Earth {PvP}" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1657,18 +1881,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3891-2;3654-1;3552-1;3014-2" />
+		<skills>
+			<skill id="3891" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3014" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="267" />
 			<set stat="mAtk" val="202" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12946" type="Weapon" name="Dynasty Mace - Earth {PvP} - Conversion">
+	<item id="12946" name="Dynasty Mace - Earth {PvP}" name_additional="Conversion" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1693,18 +1922,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3891-2;3654-1;3552-1;3048-2" />
+		<skills>
+			<skill id="3891" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3048" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="267" />
 			<set stat="mAtk" val="202" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12947" type="Weapon" name="Dynasty Mace - Earth {PvP} - Acumen">
+	<item id="12947" name="Dynasty Mace - Earth {PvP}" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1729,18 +1963,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3891-2;3654-1;3552-1;3047-2" />
+		<skills>
+			<skill id="3891" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3047" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="267" />
 			<set stat="mAtk" val="202" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12948" type="Weapon" name="Dynasty Bagh-Nakh - Great Gale {PvP} - Rsk. Evasion">
+	<item id="12948" name="Dynasty Bagh-Nakh - Great Gale {PvP}" name_additional="Rsk. Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_jamadhr_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -1764,18 +2003,24 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3880-2;3069-1;3552-3;3651-1;3652-1" />
+		<skills>
+			<skill id="3880" level="2" />
+			<skill id="3069" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="405" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12949" type="Weapon" name="Dynasty Bagh-Nakh - Great Gale {PvP} - Focus">
+	<item id="12949" name="Dynasty Bagh-Nakh - Great Gale {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_jamadhr_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -1799,18 +2044,24 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3880-2;3651-1;3652-1;3552-1;3565-2" />
+		<skills>
+			<skill id="3880" level="2" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3565" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="405" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12950" type="Weapon" name="Dynasty Bagh-Nakh - Great Gale {PvP} - Haste">
+	<item id="12950" name="Dynasty Bagh-Nakh - Great Gale {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_jamadhr_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -1834,18 +2085,24 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3880-2;3651-1;3652-1;3552-1;3564-2" />
+		<skills>
+			<skill id="3880" level="2" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3564" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="405" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12951" type="Weapon" name="Dynasty Bow - Great Gale {PvP} - Cheap Shot">
+	<item id="12951" name="Dynasty Bow - Great Gale {PvP}" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -1871,18 +2128,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3864-2;3655-1;3552-3;8312-1" />
+		<skills>
+			<skill id="3864" level="2" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="8312" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="654" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12952" type="Weapon" name="Dynasty Bow - Great Gale {PvP} - Guidance">
+	<item id="12952" name="Dynasty Bow - Great Gale {PvP}" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -1908,18 +2170,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3864-2;3655-1;3552-1;3573-2" />
+		<skills>
+			<skill id="3864" level="2" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3573" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="654" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12953" type="Weapon" name="Dynasty Bow - Great Gale {PvP} - Focus">
+	<item id="12953" name="Dynasty Bow - Great Gale {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -1945,18 +2212,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3864-2;3655-1;3552-1;3567-2" />
+		<skills>
+			<skill id="3864" level="2" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3567" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="654" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12954" type="Weapon" name="Dynasty Blade - Great Gale {PvP} - Focus">
+	<item id="12954" name="Dynasty Blade - Great Gale {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_twohand_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1980,17 +2252,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3840-2;3653-1;3552-1;3566-2" />
+		<skills>
+			<skill id="3840" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3566" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="405" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12955" type="Weapon" name="Dynasty Blade - Great Gale {PvP} - Health">
+	<item id="12955" name="Dynasty Blade - Great Gale {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_twohand_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2014,17 +2291,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3840-2;3653-1;3552-1;3013-3" />
+		<skills>
+			<skill id="3840" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="405" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12956" type="Weapon" name="Dynasty Blade - Great Gale {PvP} - Light">
+	<item id="12956" name="Dynasty Blade - Great Gale {PvP}" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_twohand_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2048,17 +2330,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3840-2;3653-1;3552-3;3498-1" />
+		<skills>
+			<skill id="3840" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3498" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="405" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12957" type="Weapon" name="Dynasty Sword - Earth {PvP} - Focus">
+	<item id="12957" name="Dynasty Sword - Earth {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2082,17 +2369,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3826-2;3650-1;3552-1;3566-2" />
+		<skills>
+			<skill id="3826" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3566" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="333" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12958" type="Weapon" name="Dynasty Sword - Earth {PvP} - Health">
+	<item id="12958" name="Dynasty Sword - Earth {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2116,17 +2408,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3826-2;3650-1;3552-1;3013-3" />
+		<skills>
+			<skill id="3826" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="333" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12959" type="Weapon" name="Dynasty Sword - Earth {PvP} - Light">
+	<item id="12959" name="Dynasty Sword - Earth {PvP}" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2150,17 +2447,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3826-2;3650-1;3552-3;3498-1" />
+		<skills>
+			<skill id="3826" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3498" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="333" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12960" type="Weapon" name="Dynasty Staff - Holy Spirit {PvP} - Mana Up">
+	<item id="12960" name="Dynasty Staff - Holy Spirit {PvP}" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_twohand_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2185,18 +2487,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3900-2;3654-1;3552-1;3014-2" />
+		<skills>
+			<skill id="3900" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3014" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="325" />
 			<set stat="mAtk" val="222" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12961" type="Weapon" name="Dynasty Staff - Holy Spirit {PvP} - Conversion">
+	<item id="12961" name="Dynasty Staff - Holy Spirit {PvP}" name_additional="Conversion" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_twohand_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2221,18 +2528,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3900-2;3654-1;3552-1;3048-2" />
+		<skills>
+			<skill id="3900" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3048" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="325" />
 			<set stat="mAtk" val="222" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12962" type="Weapon" name="Dynasty Staff - Holy Spirit {PvP} - Acumen">
+	<item id="12962" name="Dynasty Staff - Holy Spirit {PvP}" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_twohand_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2257,18 +2569,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3900-2;3654-1;3552-1;3047-2" />
+		<skills>
+			<skill id="3900" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3047" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="325" />
 			<set stat="mAtk" val="222" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12963" type="Weapon" name="Dynasty Cudgel - Landslide {PvP} - Anger">
+	<item id="12963" name="Dynasty Cudgel - Landslide {PvP}" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_hammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2292,18 +2609,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3885-2;3650-1;3552-1;3057-4" />
+		<skills>
+			<skill id="3885" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3057" level="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="333" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12964" type="Weapon" name="Dynasty Cudgel - Landslide {PvP} - Health">
+	<item id="12964" name="Dynasty Cudgel - Landslide {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_hammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2327,18 +2649,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3885-2;3650-1;3552-1;3013-3" />
+		<skills>
+			<skill id="3885" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="333" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12965" type="Weapon" name="Dynasty Cudgel - Landslide {PvP} - Rsk. Focus">
+	<item id="12965" name="Dynasty Cudgel - Landslide {PvP}" name_additional="Rsk. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_hammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2362,18 +2689,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3885-2;3650-1;3552-1;3027-7" />
+		<skills>
+			<skill id="3885" level="2" />
+			<skill id="3650" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3027" level="7" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="333" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12966" type="Weapon" name="Dynasty Crusher - Great Gale {PvP} - Anger">
+	<item id="12966" name="Dynasty Crusher - Great Gale {PvP}" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_crusher_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2397,18 +2729,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3896-2;3653-1;3552-1;3057-4" />
+		<skills>
+			<skill id="3896" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3057" level="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="405" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12967" type="Weapon" name="Dynasty Crusher - Great Gale {PvP} - Health">
+	<item id="12967" name="Dynasty Crusher - Great Gale {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_crusher_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2432,18 +2769,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3896-2;3653-1;3552-1;3013-3" />
+		<skills>
+			<skill id="3896" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="405" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12968" type="Weapon" name="Dynasty Crusher - Great Gale {PvP} - Rsk. Focus">
+	<item id="12968" name="Dynasty Crusher - Great Gale {PvP}" name_additional="Rsk. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_crusher_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2467,18 +2809,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3896-2;3653-1;3552-1;3027-7" />
+		<skills>
+			<skill id="3896" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3027" level="7" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="405" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12969" type="Weapon" name="Dynasty Crossbow - Great Gale {PvP} - Cheap Shot">
+	<item id="12969" name="Dynasty Crossbow - Great Gale {PvP}" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_crossbow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2503,7 +2850,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3869-2;3552-3;3360-1;3655-1" />
+		<skills>
+			<skill id="3869" level="2" />
+			<skill id="3552" level="3" />
+			<skill id="3360" level="1" />
+			<skill id="3655" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2513,11 +2865,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12970" type="Weapon" name="Dynasty Crossbow - Great Gale {PvP} - Guidance">
+	<item id="12970" name="Dynasty Crossbow - Great Gale {PvP}" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_crossbow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2542,7 +2894,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3869-2;3655-1;3552-1;3573-2" />
+		<skills>
+			<skill id="3869" level="2" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3573" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2552,11 +2909,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12971" type="Weapon" name="Dynasty Crossbow - Great Gale {PvP} - Focus">
+	<item id="12971" name="Dynasty Crossbow - Great Gale {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_crossbow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2581,7 +2938,12 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3869-2;3655-1;3552-1;3567-2" />
+		<skills>
+			<skill id="3869" level="2" />
+			<skill id="3655" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3567" level="2" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2591,11 +2953,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12972" type="Weapon" name="Dynasty Phantom - Nature {PvP} - Acumen">
+	<item id="12972" name="Dynasty Phantom - Nature {PvP}" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_magic_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2620,17 +2982,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3852-2;3654-1;3552-1;3047-2" />
+		<skills>
+			<skill id="3852" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3047" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="267" />
 			<set stat="mAtk" val="202" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12973" type="Weapon" name="Dynasty Phantom - Nature {PvP} - Mana Up">
+	<item id="12973" name="Dynasty Phantom - Nature {PvP}" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_magic_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2655,17 +3022,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3852-2;3654-1;3552-1;3014-2" />
+		<skills>
+			<skill id="3852" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3014" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="267" />
 			<set stat="mAtk" val="202" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12974" type="Weapon" name="Dynasty Phantom - Nature {PvP} - Conversion">
+	<item id="12974" name="Dynasty Phantom - Nature {PvP}" name_additional="Conversion" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_magic_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2690,17 +3062,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3852-2;3654-1;3552-1;3048-2" />
+		<skills>
+			<skill id="3852" level="2" />
+			<skill id="3654" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3048" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="267" />
 			<set stat="mAtk" val="202" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12975" type="Weapon" name="Dynasty Halberd - Earth {PvP} - Anger">
+	<item id="12975" name="Dynasty Halberd - Earth {PvP}" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_spear_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -2724,54 +3101,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3877-2;3653-1;3552-1;3600-10" />
+		<skills>
+			<skill id="3877" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3600" level="10" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="333" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12976" type="Weapon" name="Dynasty Halberd - Earth {PvP} - Critical Stun">
-		<set name="icon" val="icon.weapon_dynasty_spear_i01" />
-		<set name="default_action" val="EQUIP" />
-		<set name="weapon_type" val="POLE" />
-		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
-		<set name="attack_range" val="80" />
-		<set name="damage_range" val="0;0;66;120" />
-		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="2398" />
-		<set name="crystal_type" val="S" />
-		<set name="material" val="BRONZE" />
-		<set name="weight" val="2010" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="oncrit_skill" val="3070-4" />
-		<set name="is_clan_depositable" val="false" />
-		<set name="is_mailable" val="false" />
-		<set name="is_freightable" val="false" />
-		<set name="is_commissionable" val="false" />
-		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3877-2;3653-1;3552-4" />
-		<for>
-			<set stat="pAtk" val="333" />
-			<set stat="mAtk" val="151" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
-		</for>
-	</item>
-	<item id="12977" type="Weapon" name="Dynasty Halberd - Earth {PvP} - Light">
+	<item id="12976" name="Dynasty Halberd - Earth {PvP}" name_additional="Critical Stun" type="Weapon">
 		<set name="icon" val="icon.weapon_dynasty_spear_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -2795,18 +3141,63 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3877-2;3552-4;3498-1;3653-1" />
+		<skills>
+			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" />
+			<skill id="3877" level="2" />
+			<skill id="3653" level="1" />
+			<skill id="3552" level="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="333" />
 			<set stat="mAtk" val="151" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="12978" type="Armor" name="Zubei's Helmet - Light Armor Use">
+	<item id="12977" name="Dynasty Halberd - Earth {PvP}" name_additional="Light Armor" type="Weapon">
+		<set name="icon" val="icon.weapon_dynasty_spear_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="POLE" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="80" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="2398" />
+		<set name="crystal_type" val="S" />
+		<set name="material" val="BRONZE" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="3877" level="2" />
+			<skill id="3552" level="4" />
+			<skill id="3498" level="1" />
+			<skill id="3653" level="1" />
+		</skills>
+		<for>
+			<set stat="pAtk" val="333" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="8" />
+			<add stat="accCombat" val="-3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="12978" name="Zubei's Helmet" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -2818,13 +3209,15 @@
 		<set name="price" val="119720" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8233-1" />
+		<skills>
+			<skill id="8233" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="62" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12979" type="Armor" name="Zubei's Helmet - Robe">
+	<item id="12979" name="Zubei's Helmet" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -2836,7 +3229,9 @@
 		<set name="price" val="119720" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8234-1" />
+		<skills>
+			<skill id="8234" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -2845,7 +3240,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12980" type="Armor" name="Avadon Circlet">
+	<item id="12980" name="Avadon Circlet" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -2857,13 +3252,15 @@
 		<set name="price" val="119720" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3688-1" />
+		<skills>
+			<skill id="3688" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="62" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12981" type="Armor" name="Avadon Circlet">
+	<item id="12981" name="Avadon Circlet" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -2875,7 +3272,9 @@
 		<set name="price" val="119720" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3692-1" />
+		<skills>
+			<skill id="3692" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -2884,7 +3283,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12982" type="Armor" name="Doom Helmet">
+	<item id="12982" name="Doom Helmet" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -2896,13 +3295,15 @@
 		<set name="price" val="185660" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3704-1" />
+		<skills>
+			<skill id="3704" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="66" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12983" type="Armor" name="Doom Helmet">
+	<item id="12983" name="Doom Helmet" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -2914,7 +3315,9 @@
 		<set name="price" val="185660" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3709-1" />
+		<skills>
+			<skill id="3709" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -2923,7 +3326,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12984" type="Armor" name="Blue Wolf Helmet">
+	<item id="12984" name="Blue Wolf Helmet" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -2935,13 +3338,15 @@
 		<set name="price" val="185660" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3718-1" />
+		<skills>
+			<skill id="3718" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="66" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12985" type="Armor" name="Blue Wolf Helmet">
+	<item id="12985" name="Blue Wolf Helmet" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -2953,7 +3358,9 @@
 		<set name="price" val="185660" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3723-1" />
+		<skills>
+			<skill id="3723" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -2962,7 +3369,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12986" type="Armor" name="Dark Crystal Helmet">
+	<item id="12986" name="Dark Crystal Helmet" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -2974,13 +3381,15 @@
 		<set name="price" val="1336000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3733-1" />
+		<skills>
+			<skill id="3733" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="69" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12987" type="Armor" name="Dark Crystal Helmet">
+	<item id="12987" name="Dark Crystal Helmet" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -2992,7 +3401,9 @@
 		<set name="price" val="1336000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3738-1" />
+		<skills>
+			<skill id="3738" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -3001,7 +3412,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12988" type="Armor" name="Tallum Helmet">
+	<item id="12988" name="Tallum Helmet" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -3013,13 +3424,15 @@
 		<set name="price" val="1336000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3746-1" />
+		<skills>
+			<skill id="3746" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="69" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12989" type="Armor" name="Tallum Helmet">
+	<item id="12989" name="Tallum Helmet" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -3031,7 +3444,9 @@
 		<set name="price" val="1336000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3751-1" />
+		<skills>
+			<skill id="3751" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -3040,7 +3455,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12990" type="Armor" name="Majestic Circlet">
+	<item id="12990" name="Majestic Circlet" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -3052,13 +3467,15 @@
 		<set name="price" val="2032000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3759-1" />
+		<skills>
+			<skill id="3759" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="73" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12991" type="Armor" name="Majestic Circlet">
+	<item id="12991" name="Majestic Circlet" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -3070,7 +3487,9 @@
 		<set name="price" val="2032000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3763-1" />
+		<skills>
+			<skill id="3763" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -3079,7 +3498,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12992" type="Armor" name="Helm of Nightmare">
+	<item id="12992" name="Helm of Nightmare" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -3091,13 +3510,15 @@
 		<set name="price" val="2032000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8235-1" />
+		<skills>
+			<skill id="8235" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="73" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12993" type="Armor" name="Helm of Nightmare">
+	<item id="12993" name="Helm of Nightmare" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -3109,7 +3530,9 @@
 		<set name="price" val="2032000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="8236-1" />
+		<skills>
+			<skill id="8236" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -3118,7 +3541,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12994" type="Armor" name="Sealed Dark Crystal Helmet">
+	<item id="12994" name="Sealed Dark Crystal Helmet" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -3135,7 +3558,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12995" type="Armor" name="Sealed Dark Crystal Helmet">
+	<item id="12995" name="Sealed Dark Crystal Helmet" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -3155,7 +3578,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12996" type="Armor" name="Sealed Tallum Helmet">
+	<item id="12996" name="Sealed Tallum Helmet" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -3172,7 +3595,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12997" type="Armor" name="Sealed Tallum Helmet">
+	<item id="12997" name="Sealed Tallum Helmet" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -3192,7 +3615,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12998" type="Armor" name="Sealed Majestic Circlet">
+	<item id="12998" name="Sealed Majestic Circlet" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -3209,7 +3632,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="12999" type="Armor" name="Sealed Majestic Circlet">
+	<item id="12999" name="Sealed Majestic Circlet" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />

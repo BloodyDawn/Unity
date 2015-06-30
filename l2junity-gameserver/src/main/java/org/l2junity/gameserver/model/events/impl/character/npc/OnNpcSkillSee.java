@@ -36,13 +36,13 @@ public class OnNpcSkillSee implements IBaseEvent
 	private final WorldObject[] _targets;
 	private final boolean _isSummon;
 	
-	public OnNpcSkillSee(Npc npc, PlayerInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public OnNpcSkillSee(Npc npc, PlayerInstance caster, Skill skill, boolean isSummon, WorldObject... targets)
 	{
 		_npc = npc;
 		_caster = caster;
 		_skill = skill;
-		_targets = targets;
 		_isSummon = isSummon;
+		_targets = targets;
 	}
 	
 	public Npc getTarget()

@@ -18,13 +18,16 @@
  */
 package handlers.itemhandlers;
 
+import java.util.List;
+
 import org.l2junity.Config;
+import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -47,7 +50,7 @@ public final class Harvester implements IItemHandler
 			return false;
 		}
 		
-		final SkillHolder[] skills = item.getItem().getSkills();
+		final List<ItemSkillHolder> skills = item.getItem().getSkills(ItemSkillType.NORMAL);
 		if (skills == null)
 		{
 			_log.warn(getClass().getSimpleName() + ": is missing skills!");
@@ -63,10 +66,7 @@ public final class Harvester implements IItemHandler
 			return false;
 		}
 		
-		for (SkillHolder sk : skills)
-		{
-			activeChar.useMagic(sk.getSkill(), false, false);
-		}
+		skills.forEach(holder -> activeChar.useMagic(holder.getSkill(), false, false));
 		return true;
 	}
 }

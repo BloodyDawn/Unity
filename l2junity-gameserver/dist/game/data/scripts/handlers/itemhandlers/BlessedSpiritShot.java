@@ -18,11 +18,14 @@
  */
 package handlers.itemhandlers;
 
+import java.util.List;
+
+import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.ActionType;
@@ -44,7 +47,7 @@ public class BlessedSpiritShot implements IItemHandler
 		PlayerInstance activeChar = (PlayerInstance) playable;
 		ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 		Weapon weaponItem = activeChar.getActiveWeaponItem();
-		final SkillHolder[] skills = item.getItem().getSkills();
+		final List<ItemSkillHolder> skills = item.getItem().getSkills(ItemSkillType.NORMAL);
 		
 		int itemId = item.getId();
 		
@@ -97,7 +100,7 @@ public class BlessedSpiritShot implements IItemHandler
 		activeChar.sendPacket(SystemMessageId.YOUR_SPIRITSHOT_HAS_BEEN_ENABLED);
 		activeChar.setChargedShot(ShotType.BLESSED_SPIRITSHOTS, true);
 		
-		Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, skills[0].getSkillId(), skills[0].getSkillLvl(), 0, 0), 600);
+		skills.forEach(holder -> Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, holder.getSkillId(), holder.getSkillLvl(), 0, 0), 600));
 		return true;
 	}
 }

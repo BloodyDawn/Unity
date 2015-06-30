@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="6400" type="EtcItem" name="Hyena Crest">
+	<item id="6400" name="Hyena Crest" type="EtcItem">
 		<set name="icon" val="icon.etc_paper_red_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
@@ -9,7 +9,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -17,7 +16,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="6401" type="EtcItem" name="Fox Crest">
+	<item id="6401" name="Fox Crest" type="EtcItem">
 		<set name="icon" val="icon.etc_paper_red_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
@@ -26,7 +25,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -34,7 +32,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="6402" type="EtcItem" name="Wolf Crest">
+	<item id="6402" name="Wolf Crest" type="EtcItem">
 		<set name="icon" val="icon.etc_paper_red_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CRYSTAL" />
@@ -43,7 +41,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -51,55 +48,57 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="6403" type="EtcItem" name="Star Shard">
+	<item id="6403" name="Star Shard" type="EtcItem">
 		<set name="icon" val="icon.etc_fairy_fire_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="STEEL" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2023-1" />
+		<skills>
+			<skill id="2023" level="1" />
+		</skills>
 	</item>
-	<item id="6404" type="EtcItem" name="Gunpowder">
+	<item id="6404" name="Gunpowder" type="EtcItem">
 		<set name="icon" val="icon.etc_powder_black_i00" />
 		<set name="material" val="STEEL" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="6405" type="EtcItem" name="Magnesium">
+	<item id="6405" name="Magnesium" type="EtcItem">
 		<set name="icon" val="icon.etc_broken_crystal_silver_i00" />
 		<set name="material" val="STEEL" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="6406" type="EtcItem" name="Firecracker">
+	<item id="6406" name="Firecracker" type="EtcItem">
 		<set name="icon" val="icon.etc_small_ultra_bomb_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2024-1" />
+		<skills>
+			<skill id="2024" level="1" />
+		</skills>
 	</item>
-	<item id="6407" type="EtcItem" name="Large Firecracker">
+	<item id="6407" name="Large Firecracker" type="EtcItem">
 		<set name="icon" val="icon.etc_ultra_bomb_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2025-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<skills>
+			<skill id="2025" level="1" />
+		</skills>
 	</item>
-	<item id="6408" type="Armor" name="Formal Wear">
+	<item id="6408" name="Formal Wear" type="Armor">
 		<set name="icon" val="icon.armor_t2000_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -111,7 +110,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
-	<item id="6409" type="EtcItem" name="2006 Battle Tournament - CP Potion">
+	<item id="6409" name="2006 Battle Tournament - CP Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_cp_potion_i01" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
@@ -122,11 +121,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2166-2" />
+		<skills>
+			<skill id="2166" level="2" />
+		</skills>
 	</item>
-	<item id="6410" type="EtcItem" name="2006 Battle Tournament - Quick Healing Potion">
+	<item id="6410" name="2006 Battle Tournament - Quick Healing Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_potion_gold_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="POTION" />
@@ -137,12 +137,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2038-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="2038" level="1" />
+		</skills>
 	</item>
-	<item id="6411" type="EtcItem" name="Small Green Nimble Fish">
+	<item id="6411" name="Small Green Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -152,11 +154,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2190-1" />
+		<skills>
+			<skill id="2190" level="1" />
+		</skills>
 	</item>
-	<item id="6412" type="EtcItem" name="Small Green Ugly Fish">
+	<item id="6412" name="Small Green Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -166,11 +169,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2190-2" />
+		<skills>
+			<skill id="2190" level="2" />
+		</skills>
 	</item>
-	<item id="6413" type="EtcItem" name="Small Green Fat Fish">
+	<item id="6413" name="Small Green Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -180,11 +184,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2190-3" />
+		<skills>
+			<skill id="2190" level="3" />
+		</skills>
 	</item>
-	<item id="6414" type="EtcItem" name="Green Nimble Fish">
+	<item id="6414" name="Green Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -194,11 +199,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2190-4" />
+		<skills>
+			<skill id="2190" level="4" />
+		</skills>
 	</item>
-	<item id="6415" type="EtcItem" name="Green Ugly Fish">
+	<item id="6415" name="Green Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -208,11 +214,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2190-5" />
+		<skills>
+			<skill id="2190" level="5" />
+		</skills>
 	</item>
-	<item id="6416" type="EtcItem" name="Green Fat Fish">
+	<item id="6416" name="Green Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -222,11 +229,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2190-6" />
+		<skills>
+			<skill id="2190" level="6" />
+		</skills>
 	</item>
-	<item id="6417" type="EtcItem" name="Large Green Nimble Fish">
+	<item id="6417" name="Large Green Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -236,11 +244,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2190-7" />
+		<skills>
+			<skill id="2190" level="7" />
+		</skills>
 	</item>
-	<item id="6418" type="EtcItem" name="Large Green Ugly Fish">
+	<item id="6418" name="Large Green Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -250,11 +259,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2190-8" />
+		<skills>
+			<skill id="2190" level="8" />
+		</skills>
 	</item>
-	<item id="6419" type="EtcItem" name="Large Green Fat Fish">
+	<item id="6419" name="Large Green Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -264,11 +274,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2190-9" />
+		<skills>
+			<skill id="2190" level="9" />
+		</skills>
 	</item>
-	<item id="6420" type="EtcItem" name="Small Jade Nimble Fish">
+	<item id="6420" name="Small Jade Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -278,11 +289,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2191-1" />
+		<skills>
+			<skill id="2191" level="1" />
+		</skills>
 	</item>
-	<item id="6421" type="EtcItem" name="Small Jade Ugly Fish">
+	<item id="6421" name="Small Jade Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -292,11 +304,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2191-2" />
+		<skills>
+			<skill id="2191" level="2" />
+		</skills>
 	</item>
-	<item id="6422" type="EtcItem" name="Small Jade Fat Fish">
+	<item id="6422" name="Small Jade Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -306,11 +319,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2191-3" />
+		<skills>
+			<skill id="2191" level="3" />
+		</skills>
 	</item>
-	<item id="6423" type="EtcItem" name="Jade Nimble Fish">
+	<item id="6423" name="Jade Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -320,11 +334,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2191-4" />
+		<skills>
+			<skill id="2191" level="4" />
+		</skills>
 	</item>
-	<item id="6424" type="EtcItem" name="Jade Ugly Fish">
+	<item id="6424" name="Jade Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -334,11 +349,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2191-5" />
+		<skills>
+			<skill id="2191" level="5" />
+		</skills>
 	</item>
-	<item id="6425" type="EtcItem" name="Jade Fat Fish">
+	<item id="6425" name="Jade Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -348,11 +364,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2191-6" />
+		<skills>
+			<skill id="2191" level="6" />
+		</skills>
 	</item>
-	<item id="6426" type="EtcItem" name="Large Jade Nimble Fish">
+	<item id="6426" name="Large Jade Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -362,11 +379,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2191-7" />
+		<skills>
+			<skill id="2191" level="7" />
+		</skills>
 	</item>
-	<item id="6427" type="EtcItem" name="Large Jade Ugly Fish">
+	<item id="6427" name="Large Jade Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -376,11 +394,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2191-8" />
+		<skills>
+			<skill id="2191" level="8" />
+		</skills>
 	</item>
-	<item id="6428" type="EtcItem" name="Large Jade Fat Fish">
+	<item id="6428" name="Large Jade Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -390,11 +409,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2191-9" />
+		<skills>
+			<skill id="2191" level="9" />
+		</skills>
 	</item>
-	<item id="6429" type="EtcItem" name="Small Blue Nimble Fish">
+	<item id="6429" name="Small Blue Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -404,11 +424,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2192-1" />
+		<skills>
+			<skill id="2192" level="1" />
+		</skills>
 	</item>
-	<item id="6430" type="EtcItem" name="Small Blue Ugly Fish">
+	<item id="6430" name="Small Blue Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -418,11 +439,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2192-2" />
+		<skills>
+			<skill id="2192" level="2" />
+		</skills>
 	</item>
-	<item id="6431" type="EtcItem" name="Small Blue Fat Fish">
+	<item id="6431" name="Small Blue Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -432,11 +454,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2192-3" />
+		<skills>
+			<skill id="2192" level="3" />
+		</skills>
 	</item>
-	<item id="6432" type="EtcItem" name="Blue Nimble Fish">
+	<item id="6432" name="Blue Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -446,11 +469,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2192-4" />
+		<skills>
+			<skill id="2192" level="4" />
+		</skills>
 	</item>
-	<item id="6433" type="EtcItem" name="Blue Ugly Fish">
+	<item id="6433" name="Blue Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -460,11 +484,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2192-5" />
+		<skills>
+			<skill id="2192" level="5" />
+		</skills>
 	</item>
-	<item id="6434" type="EtcItem" name="Blue Fat Fish">
+	<item id="6434" name="Blue Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -474,11 +499,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2192-6" />
+		<skills>
+			<skill id="2192" level="6" />
+		</skills>
 	</item>
-	<item id="6435" type="EtcItem" name="Large Blue Nimble Fish">
+	<item id="6435" name="Large Blue Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -488,11 +514,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2192-7" />
+		<skills>
+			<skill id="2192" level="7" />
+		</skills>
 	</item>
-	<item id="6436" type="EtcItem" name="Large Blue Ugly Fish">
+	<item id="6436" name="Large Blue Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -502,11 +529,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2192-8" />
+		<skills>
+			<skill id="2192" level="8" />
+		</skills>
 	</item>
-	<item id="6437" type="EtcItem" name="Large Blue Fat Fish">
+	<item id="6437" name="Large Blue Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -516,11 +544,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2192-9" />
+		<skills>
+			<skill id="2192" level="9" />
+		</skills>
 	</item>
-	<item id="6438" type="EtcItem" name="Small Yellow Nimble Fish">
+	<item id="6438" name="Small Yellow Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -530,11 +559,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2193-1" />
+		<skills>
+			<skill id="2193" level="1" />
+		</skills>
 	</item>
-	<item id="6439" type="EtcItem" name="Small Yellow Ugly Fish">
+	<item id="6439" name="Small Yellow Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -544,11 +574,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2193-2" />
+		<skills>
+			<skill id="2193" level="2" />
+		</skills>
 	</item>
-	<item id="6440" type="EtcItem" name="Small Yellow Fat Fish">
+	<item id="6440" name="Small Yellow Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -558,11 +589,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2193-3" />
+		<skills>
+			<skill id="2193" level="3" />
+		</skills>
 	</item>
-	<item id="6441" type="EtcItem" name="Yellow Nimble Fish">
+	<item id="6441" name="Yellow Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -572,11 +604,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2193-4" />
+		<skills>
+			<skill id="2193" level="4" />
+		</skills>
 	</item>
-	<item id="6442" type="EtcItem" name="Yellow Ugly Fish">
+	<item id="6442" name="Yellow Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -586,11 +619,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2193-5" />
+		<skills>
+			<skill id="2193" level="5" />
+		</skills>
 	</item>
-	<item id="6443" type="EtcItem" name="Yellow Fat Fish">
+	<item id="6443" name="Yellow Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -600,11 +634,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2193-6" />
+		<skills>
+			<skill id="2193" level="6" />
+		</skills>
 	</item>
-	<item id="6444" type="EtcItem" name="Large Yellow Nimble Fish">
+	<item id="6444" name="Large Yellow Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -614,11 +649,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2193-7" />
+		<skills>
+			<skill id="2193" level="7" />
+		</skills>
 	</item>
-	<item id="6445" type="EtcItem" name="Large Yellow Ugly Fish">
+	<item id="6445" name="Large Yellow Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -628,11 +664,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2193-8" />
+		<skills>
+			<skill id="2193" level="8" />
+		</skills>
 	</item>
-	<item id="6446" type="EtcItem" name="Large Yellow Fat Fish">
+	<item id="6446" name="Large Yellow Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -642,11 +679,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2193-9" />
+		<skills>
+			<skill id="2193" level="9" />
+		</skills>
 	</item>
-	<item id="6447" type="EtcItem" name="Small Orange Nimble Fish">
+	<item id="6447" name="Small Orange Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -656,11 +694,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2194-1" />
+		<skills>
+			<skill id="2194" level="1" />
+		</skills>
 	</item>
-	<item id="6448" type="EtcItem" name="Small Orange Ugly Fish">
+	<item id="6448" name="Small Orange Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -670,11 +709,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2194-2" />
+		<skills>
+			<skill id="2194" level="2" />
+		</skills>
 	</item>
-	<item id="6449" type="EtcItem" name="Small Orange Fat Fish">
+	<item id="6449" name="Small Orange Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -684,11 +724,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2194-3" />
+		<skills>
+			<skill id="2194" level="3" />
+		</skills>
 	</item>
-	<item id="6450" type="EtcItem" name="Orange Nimble Fish">
+	<item id="6450" name="Orange Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -698,11 +739,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2194-4" />
+		<skills>
+			<skill id="2194" level="4" />
+		</skills>
 	</item>
-	<item id="6451" type="EtcItem" name="Orange Ugly Fish">
+	<item id="6451" name="Orange Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -712,11 +754,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2194-5" />
+		<skills>
+			<skill id="2194" level="5" />
+		</skills>
 	</item>
-	<item id="6452" type="EtcItem" name="Orange Fat Fish">
+	<item id="6452" name="Orange Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -726,11 +769,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2194-6" />
+		<skills>
+			<skill id="2194" level="6" />
+		</skills>
 	</item>
-	<item id="6453" type="EtcItem" name="Large Orange Nimble Fish">
+	<item id="6453" name="Large Orange Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -740,11 +784,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2194-7" />
+		<skills>
+			<skill id="2194" level="7" />
+		</skills>
 	</item>
-	<item id="6454" type="EtcItem" name="Large Orange Ugly Fish">
+	<item id="6454" name="Large Orange Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -754,11 +799,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2194-8" />
+		<skills>
+			<skill id="2194" level="8" />
+		</skills>
 	</item>
-	<item id="6455" type="EtcItem" name="Large Orange Fat Fish">
+	<item id="6455" name="Large Orange Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -768,11 +814,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2194-9" />
+		<skills>
+			<skill id="2194" level="9" />
+		</skills>
 	</item>
-	<item id="6456" type="EtcItem" name="Small Purple Nimble Fish">
+	<item id="6456" name="Small Purple Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -782,11 +829,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2195-1" />
+		<skills>
+			<skill id="2195" level="1" />
+		</skills>
 	</item>
-	<item id="6457" type="EtcItem" name="Small Purple Ugly Fish">
+	<item id="6457" name="Small Purple Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -796,11 +844,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2195-2" />
+		<skills>
+			<skill id="2195" level="2" />
+		</skills>
 	</item>
-	<item id="6458" type="EtcItem" name="Small Purple Fat Fish">
+	<item id="6458" name="Small Purple Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -810,11 +859,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2195-3" />
+		<skills>
+			<skill id="2195" level="3" />
+		</skills>
 	</item>
-	<item id="6459" type="EtcItem" name="Purple Nimble Fish">
+	<item id="6459" name="Purple Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -824,11 +874,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2195-4" />
+		<skills>
+			<skill id="2195" level="4" />
+		</skills>
 	</item>
-	<item id="6460" type="EtcItem" name="Purple Ugly Fish">
+	<item id="6460" name="Purple Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -838,11 +889,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2195-5" />
+		<skills>
+			<skill id="2195" level="5" />
+		</skills>
 	</item>
-	<item id="6461" type="EtcItem" name="Purple Fat Fish">
+	<item id="6461" name="Purple Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -852,11 +904,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2195-6" />
+		<skills>
+			<skill id="2195" level="6" />
+		</skills>
 	</item>
-	<item id="6462" type="EtcItem" name="Large Purple Nimble Fish">
+	<item id="6462" name="Large Purple Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -866,11 +919,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2195-7" />
+		<skills>
+			<skill id="2195" level="7" />
+		</skills>
 	</item>
-	<item id="6463" type="EtcItem" name="Large Purple Ugly Fish">
+	<item id="6463" name="Large Purple Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -880,11 +934,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2195-8" />
+		<skills>
+			<skill id="2195" level="8" />
+		</skills>
 	</item>
-	<item id="6464" type="EtcItem" name="Large Purple Fat Fish">
+	<item id="6464" name="Large Purple Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -894,11 +949,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2195-9" />
+		<skills>
+			<skill id="2195" level="9" />
+		</skills>
 	</item>
-	<item id="6465" type="EtcItem" name="Small Red Nimble Fish">
+	<item id="6465" name="Small Red Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -908,11 +964,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2196-1" />
+		<skills>
+			<skill id="2196" level="1" />
+		</skills>
 	</item>
-	<item id="6466" type="EtcItem" name="Small Red Ugly Fish">
+	<item id="6466" name="Small Red Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -922,11 +979,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2196-2" />
+		<skills>
+			<skill id="2196" level="2" />
+		</skills>
 	</item>
-	<item id="6467" type="EtcItem" name="Small Red Fat Fish">
+	<item id="6467" name="Small Red Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -936,11 +994,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2196-3" />
+		<skills>
+			<skill id="2196" level="3" />
+		</skills>
 	</item>
-	<item id="6468" type="EtcItem" name="Red Nimble Fish">
+	<item id="6468" name="Red Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -950,11 +1009,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2196-4" />
+		<skills>
+			<skill id="2196" level="4" />
+		</skills>
 	</item>
-	<item id="6469" type="EtcItem" name="Red Ugly Fish">
+	<item id="6469" name="Red Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -964,11 +1024,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2196-5" />
+		<skills>
+			<skill id="2196" level="5" />
+		</skills>
 	</item>
-	<item id="6470" type="EtcItem" name="Red Fat Fish">
+	<item id="6470" name="Red Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -978,11 +1039,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2196-6" />
+		<skills>
+			<skill id="2196" level="6" />
+		</skills>
 	</item>
-	<item id="6471" type="EtcItem" name="Large Red Nimble Fish">
+	<item id="6471" name="Large Red Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -992,11 +1054,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2196-7" />
+		<skills>
+			<skill id="2196" level="7" />
+		</skills>
 	</item>
-	<item id="6472" type="EtcItem" name="Large Red Ugly Fish">
+	<item id="6472" name="Large Red Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1006,11 +1069,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2196-8" />
+		<skills>
+			<skill id="2196" level="8" />
+		</skills>
 	</item>
-	<item id="6473" type="EtcItem" name="Large Red Fat Fish">
+	<item id="6473" name="Large Red Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1020,11 +1084,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2196-9" />
+		<skills>
+			<skill id="2196" level="9" />
+		</skills>
 	</item>
-	<item id="6474" type="EtcItem" name="Small White Nimble Fish">
+	<item id="6474" name="Small White Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1034,11 +1099,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2197-1" />
+		<skills>
+			<skill id="2197" level="1" />
+		</skills>
 	</item>
-	<item id="6475" type="EtcItem" name="Small White Ugly Fish">
+	<item id="6475" name="Small White Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1048,11 +1114,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2197-2" />
+		<skills>
+			<skill id="2197" level="2" />
+		</skills>
 	</item>
-	<item id="6476" type="EtcItem" name="Small White Fat Fish">
+	<item id="6476" name="Small White Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1062,11 +1129,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2197-3" />
+		<skills>
+			<skill id="2197" level="3" />
+		</skills>
 	</item>
-	<item id="6477" type="EtcItem" name="White Nimble Fish">
+	<item id="6477" name="White Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1076,11 +1144,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2197-4" />
+		<skills>
+			<skill id="2197" level="4" />
+		</skills>
 	</item>
-	<item id="6478" type="EtcItem" name="White Ugly Fish">
+	<item id="6478" name="White Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1090,11 +1159,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2197-5" />
+		<skills>
+			<skill id="2197" level="5" />
+		</skills>
 	</item>
-	<item id="6479" type="EtcItem" name="White Fat Fish">
+	<item id="6479" name="White Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1104,11 +1174,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2197-6" />
+		<skills>
+			<skill id="2197" level="6" />
+		</skills>
 	</item>
-	<item id="6480" type="EtcItem" name="Large White Nimble Fish">
+	<item id="6480" name="Large White Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1118,11 +1189,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2197-7" />
+		<skills>
+			<skill id="2197" level="7" />
+		</skills>
 	</item>
-	<item id="6481" type="EtcItem" name="Large White Ugly Fish">
+	<item id="6481" name="Large White Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1132,11 +1204,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2197-8" />
+		<skills>
+			<skill id="2197" level="8" />
+		</skills>
 	</item>
-	<item id="6482" type="EtcItem" name="Large White Fat Fish">
+	<item id="6482" name="Large White Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1146,12 +1219,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2197-9" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
+		<skills>
+			<skill id="2197" level="9" />
+		</skills>
 	</item>
-	<item id="6483" type="EtcItem" name="Small Black Nimble Fish">
+	<item id="6483" name="Small Black Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1161,11 +1236,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2198-1" />
+		<skills>
+			<skill id="2198" level="1" />
+		</skills>
 	</item>
-	<item id="6484" type="EtcItem" name="Small Black Ugly Fish">
+	<item id="6484" name="Small Black Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1175,11 +1251,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2198-2" />
+		<skills>
+			<skill id="2198" level="2" />
+		</skills>
 	</item>
-	<item id="6485" type="EtcItem" name="Small Black Fat Fish">
+	<item id="6485" name="Small Black Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1189,11 +1266,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2198-3" />
+		<skills>
+			<skill id="2198" level="3" />
+		</skills>
 	</item>
-	<item id="6486" type="EtcItem" name="Black Nimble Fish">
+	<item id="6486" name="Black Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1203,11 +1281,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2198-4" />
+		<skills>
+			<skill id="2198" level="4" />
+		</skills>
 	</item>
-	<item id="6487" type="EtcItem" name="Black Ugly Fish">
+	<item id="6487" name="Black Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1217,11 +1296,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2198-5" />
+		<skills>
+			<skill id="2198" level="5" />
+		</skills>
 	</item>
-	<item id="6488" type="EtcItem" name="Black Fat Fish">
+	<item id="6488" name="Black Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1231,11 +1311,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2198-6" />
+		<skills>
+			<skill id="2198" level="6" />
+		</skills>
 	</item>
-	<item id="6489" type="EtcItem" name="Large Black Nimble Fish">
+	<item id="6489" name="Large Black Nimble Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1245,11 +1326,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2198-7" />
+		<skills>
+			<skill id="2198" level="7" />
+		</skills>
 	</item>
-	<item id="6490" type="EtcItem" name="Large Black Ugly Fish">
+	<item id="6490" name="Large Black Ugly Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1259,11 +1341,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2198-8" />
+		<skills>
+			<skill id="2198" level="8" />
+		</skills>
 	</item>
-	<item id="6491" type="EtcItem" name="Large Black Fat Fish">
+	<item id="6491" name="Large Black Fat Fish" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1273,11 +1356,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2198-9" />
+		<skills>
+			<skill id="2198" level="9" />
+		</skills>
 	</item>
-	<item id="6492" type="EtcItem" name="Small Green Treasure Chest">
+	<item id="6492" name="Small Green Treasure Chest" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_box_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1287,11 +1371,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2199-1" />
+		<skills>
+			<skill id="2199" level="1" />
+		</skills>
 	</item>
-	<item id="6493" type="EtcItem" name="Green Treasure Chest">
+	<item id="6493" name="Green Treasure Chest" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_box_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1301,11 +1386,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2199-2" />
+		<skills>
+			<skill id="2199" level="2" />
+		</skills>
 	</item>
-	<item id="6494" type="EtcItem" name="Large Green Treasure Chest">
+	<item id="6494" name="Large Green Treasure Chest" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_box_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1315,11 +1401,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2199-3" />
+		<skills>
+			<skill id="2199" level="3" />
+		</skills>
 	</item>
-	<item id="6495" type="EtcItem" name="Small Jade Treasure Chest">
+	<item id="6495" name="Small Jade Treasure Chest" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_box_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1329,11 +1416,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2200-1" />
+		<skills>
+			<skill id="2200" level="1" />
+		</skills>
 	</item>
-	<item id="6496" type="EtcItem" name="Jade Treasure Chest">
+	<item id="6496" name="Jade Treasure Chest" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_box_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1343,11 +1431,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2200-2" />
+		<skills>
+			<skill id="2200" level="2" />
+		</skills>
 	</item>
-	<item id="6497" type="EtcItem" name="Large Jade Treasure Chest">
+	<item id="6497" name="Large Jade Treasure Chest" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_box_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1357,11 +1446,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2200-3" />
+		<skills>
+			<skill id="2200" level="3" />
+		</skills>
 	</item>
-	<item id="6498" type="EtcItem" name="Small Blue Treasure Chest">
+	<item id="6498" name="Small Blue Treasure Chest" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_box_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1371,11 +1461,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2201-1" />
+		<skills>
+			<skill id="2201" level="1" />
+		</skills>
 	</item>
-	<item id="6499" type="EtcItem" name="Blue Treasure Chest">
+	<item id="6499" name="Blue Treasure Chest" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_box_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1385,8 +1476,9 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2201-2" />
+		<skills>
+			<skill id="2201" level="2" />
+		</skills>
 	</item>
 </list>

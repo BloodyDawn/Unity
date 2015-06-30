@@ -436,7 +436,7 @@ public final class L2NpcTemplate extends L2CharTemplate implements IIdentifiable
 	public List<Skill> getAISkills(AISkillScope aiSkillScope)
 	{
 		final List<Skill> aiSkills = _aiSkillLists.get(aiSkillScope);
-		return aiSkills != null ? aiSkills : Collections.<Skill> emptyList();
+		return aiSkills != null ? aiSkills : Collections.emptyList();
 	}
 	
 	public void setAISkillLists(Map<AISkillScope, List<Skill>> aiSkillLists)

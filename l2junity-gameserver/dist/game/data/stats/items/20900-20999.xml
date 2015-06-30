@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="20900" type="Armor" name="Santa Hat">
+	<item id="20900" name="Santa Hat" name_additional="14-day" type="Armor">
 		<set name="icon" val="BranchSys.icon.br_xmas_gawibawibo_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -10,7 +10,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -18,7 +17,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="20160" />
 	</item>
-	<item id="20901" type="EtcItem" name="Santa Hat Set">
+	<item id="20901" name="Santa Hat Set" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -27,18 +26,19 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20900,1,1,100;14611,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20900" max="1" min="1" />
+			<item chance="100.0" id="14611" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20902" type="EtcItem" name="Queen Ant's Ring Pack (7-day)">
+	<item id="20902" name="Queen Ant's Ring Pack (7-day)" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -47,19 +47,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20205,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20205" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20903" type="EtcItem" name="Rose Petal">
+	<item id="20903" name="Rose Petal" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_herb_of_baguette_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="ex_immediate_effect" val="true" />
@@ -67,56 +66,49 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="22158-1" />
+		<skills>
+			<skill id="22158" level="1" />
+		</skills>
 	</item>
-	<item id="20904" type="EtcItem" name="Rose Essence">
+	<item id="20904" name="Rose Essence" type="EtcItem">
 		<set name="icon" val="BranchSys2.br_essence_rose_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="2" />
-
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
-	<item id="20905" type="EtcItem" name="One Red Rose Bud">
+	<item id="20905" name="One Red Rose Bud" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_rosalia_rose_red_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="price" val="500" />
-
-		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="20906" type="EtcItem" name="One Blue Rose Bud">
+	<item id="20906" name="One Blue Rose Bud" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_rosalia_rose_blue_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="price" val="500" />
-
-		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="20907" type="EtcItem" name="One White Rose Bud">
+	<item id="20907" name="One White Rose Bud" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_rosalia_rose_white_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="price" val="500" />
-
-		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="20908" type="EtcItem" name="Desheloph Rose Necklace (Event)">
+	<item id="20908" name="Desheloph Rose Necklace (Event)" name_additional="3-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_event" />
 		<set name="default_action" val="SKILL_MAINTAIN" />
 		<set name="etcitem_type" val="PET_COLLAR" />
@@ -127,7 +119,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -135,11 +126,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2046" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="20909" type="EtcItem" name="Hyum Rose Necklace (Event)">
+	<item id="20909" name="Hyum Rose Necklace (Event)" name_additional="3-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_event" />
 		<set name="default_action" val="SKILL_MAINTAIN" />
 		<set name="etcitem_type" val="PET_COLLAR" />
@@ -150,7 +144,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -158,11 +151,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2046" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="20910" type="EtcItem" name="Lekang Rose Necklace (Event)">
+	<item id="20910" name="Lekang Rose Necklace (Event)" name_additional="3-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_event" />
 		<set name="default_action" val="SKILL_MAINTAIN" />
 		<set name="etcitem_type" val="PET_COLLAR" />
@@ -173,7 +169,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -181,11 +176,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2046" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="20911" type="EtcItem" name="Lilias Rose Necklace (Event)">
+	<item id="20911" name="Lilias Rose Necklace (Event)" name_additional="3-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_event" />
 		<set name="default_action" val="SKILL_MAINTAIN" />
 		<set name="etcitem_type" val="PET_COLLAR" />
@@ -196,7 +194,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -204,11 +201,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2046" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="20912" type="EtcItem" name="Lapham Rose Necklace (Event)">
+	<item id="20912" name="Lapham Rose Necklace (Event)" name_additional="3-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_event" />
 		<set name="default_action" val="SKILL_MAINTAIN" />
 		<set name="etcitem_type" val="PET_COLLAR" />
@@ -219,7 +219,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -227,11 +226,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2046" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="20913" type="EtcItem" name="Mafum Rose Necklace (Event)">
+	<item id="20913" name="Mafum Rose Necklace (Event)" name_additional="3-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_event" />
 		<set name="default_action" val="SKILL_MAINTAIN" />
 		<set name="etcitem_type" val="PET_COLLAR" />
@@ -242,7 +244,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -250,11 +251,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2046" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="20914" type="EtcItem" name="Enhanced Rose Spirit Coupon (5-hour)">
+	<item id="20914" name="Enhanced Rose Spirit Coupon (5-hour)" type="EtcItem">
 		<set name="icon" val="icon.etc_ticket_red_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
@@ -262,16 +266,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_mailable" val="false" />
 	</item>
-	<item id="20915" type="EtcItem" name="Enhanced Rose Necklace: Desheloph">
+	<item id="20915" name="Enhanced Rose Necklace: Desheloph" name_additional="5-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_i00" />
 		<set name="default_action" val="SKILL_MAINTAIN" />
 		<set name="etcitem_type" val="PET_COLLAR" />
@@ -284,18 +286,20 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2046" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="20916" type="EtcItem" name="Enhanced Rose Necklace: Hyum">
+	<item id="20916" name="Enhanced Rose Necklace: Hyum" name_additional="5-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_i00" />
 		<set name="default_action" val="SKILL_MAINTAIN" />
 		<set name="etcitem_type" val="PET_COLLAR" />
@@ -308,18 +312,20 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2046" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="20917" type="EtcItem" name="Enhanced Rose Necklace: Lekang">
+	<item id="20917" name="Enhanced Rose Necklace: Lekang" name_additional="5-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_i00" />
 		<set name="default_action" val="SKILL_MAINTAIN" />
 		<set name="etcitem_type" val="PET_COLLAR" />
@@ -332,18 +338,20 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2046" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="20918" type="EtcItem" name="Enhanced Rose Necklace: Lilias">
+	<item id="20918" name="Enhanced Rose Necklace: Lilias" name_additional="5-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_i00" />
 		<set name="default_action" val="SKILL_MAINTAIN" />
 		<set name="etcitem_type" val="PET_COLLAR" />
@@ -356,18 +364,20 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2046" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="20919" type="EtcItem" name="Enhanced Rose Necklace: Lapham">
+	<item id="20919" name="Enhanced Rose Necklace: Lapham" name_additional="5-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_i00" />
 		<set name="default_action" val="SKILL_MAINTAIN" />
 		<set name="etcitem_type" val="PET_COLLAR" />
@@ -380,18 +390,20 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2046" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="20920" type="EtcItem" name="Enhanced Rose Necklace: Mafum">
+	<item id="20920" name="Enhanced Rose Necklace: Mafum" name_additional="5-hour Summon Duration" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_i00" />
 		<set name="default_action" val="SKILL_MAINTAIN" />
 		<set name="etcitem_type" val="PET_COLLAR" />
@@ -404,18 +416,20 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="SummonItems" />
-		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2046" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="20921" type="EtcItem" name="Rose Spirit Test Report">
+	<item id="20921" name="Rose Spirit Test Report" name_additional="24-hour" type="EtcItem">
 		<set name="icon" val="icon.etc_royal_membership_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -426,7 +440,6 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -434,7 +447,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1440" />
 	</item>
-	<item id="20922" type="Armor" name="Adventurer Hat">
+	<item id="20922" name="Adventurer Hat" type="Armor">
 		<set name="icon" val="icon.accessory_explorer_hat_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -442,10 +455,8 @@
 		<set name="material" val="WOOD" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="10" />
-
-
 	</item>
-	<item id="20923" type="EtcItem" name="Vesper Slasher">
+	<item id="20923" name="Vesper Slasher" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_royal_crown_of_vesper_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="ex_immediate_effect" val="true" />
@@ -454,15 +465,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="22159-1" />
+		<skills>
+			<skill id="22159" level="1" />
+		</skills>
 	</item>
-	<item id="20924" type="EtcItem" name="Vesper Caster">
+	<item id="20924" name="Vesper Caster" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_royal_circlet_of_vesper_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="ex_immediate_effect" val="true" />
@@ -471,15 +483,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="22160-1" />
+		<skills>
+			<skill id="22160" level="1" />
+		</skills>
 	</item>
-	<item id="20925" type="EtcItem" name="Vesper Dualsword">
+	<item id="20925" name="Vesper Dualsword" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_noblesse_oblige_of_vesper_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="ex_immediate_effect" val="true" />
@@ -488,69 +501,70 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="22161-1" />
+		<skills>
+			<skill id="22161" level="1" />
+		</skills>
 	</item>
-	<item id="20926" type="EtcItem" name="Mt. Fuji Herb">
+	<item id="20926" name="Mt. Fuji Herb" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_fuji_herb_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="ex_immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="22162-1" />
+		<skills>
+			<skill id="22162" level="1" />
+		</skills>
 	</item>
-	<item id="20927" type="EtcItem" name="Hawk Herb">
+	<item id="20927" name="Hawk Herb" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_hawk_herb_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="ex_immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="22163-1" />
+		<skills>
+			<skill id="22163" level="1" />
+		</skills>
 	</item>
-	<item id="20928" type="EtcItem" name="Eggplant Herb">
+	<item id="20928" name="Eggplant Herb" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_eggplant_herb_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="ex_immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="22164-1" />
+		<skills>
+			<skill id="22164" level="1" />
+		</skills>
 	</item>
-	<item id="20929" type="Armor" name="Vesper Royal Crown">
+	<item id="20929" name="Vesper Royal Crown" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_royal_crown_of_vesper_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -560,7 +574,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_clan_depositable" val="false" />
@@ -568,7 +581,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_mailable" val="false" />
 	</item>
-	<item id="20930" type="Armor" name="Vesper Royal Circlet">
+	<item id="20930" name="Vesper Royal Circlet" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_royal_circlet_of_vesper_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -578,7 +591,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_clan_depositable" val="false" />
@@ -586,7 +598,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_mailable" val="false" />
 	</item>
-	<item id="20931" type="Armor" name="Vesper Noble Mask">
+	<item id="20931" name="Vesper Noble Mask" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_noblesse_oblige_of_vesper_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -596,7 +608,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_clan_depositable" val="false" />
@@ -604,7 +615,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_mailable" val="false" />
 	</item>
-	<item id="20932" type="Armor" name="Vesper Royal Crown">
+	<item id="20932" name="Vesper Royal Crown" name_additional="30-day" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_royal_crown_of_vesper_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -614,7 +625,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_clan_depositable" val="false" />
@@ -624,7 +634,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 	</item>
-	<item id="20933" type="Armor" name="Vesper Royal Circlet">
+	<item id="20933" name="Vesper Royal Circlet" name_additional="30-day" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_royal_circlet_of_vesper_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -634,7 +644,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_clan_depositable" val="false" />
@@ -644,7 +653,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 	</item>
-	<item id="20934" type="Armor" name="Vesper Noble Mask">
+	<item id="20934" name="Vesper Noble Mask" name_additional="30-day" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_noblesse_oblige_of_vesper_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -654,7 +663,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_clan_depositable" val="false" />
@@ -664,46 +672,43 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 	</item>
-	<item id="20935" type="Armor" name="Vesper Royal Crown">
+	<item id="20935" name="Vesper Royal Crown" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_royal_crown_of_vesper_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="10" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 	</item>
-	<item id="20936" type="Armor" name="Vesper Royal Circlet">
+	<item id="20936" name="Vesper Royal Circlet" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_royal_circlet_of_vesper_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="10" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 	</item>
-	<item id="20937" type="Armor" name="Vesper Noble Mask">
+	<item id="20937" name="Vesper Noble Mask" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_noblesse_oblige_of_vesper_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="10" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 	</item>
-	<item id="20938" type="Armor" name="Mount - Jet Bike">
+	<item id="20938" name="Mount - Jet Bike" name_additional="7-day" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_z_bike_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -715,7 +720,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="unequip_skill" val="619-1" />
 		<set name="item_skill" val="21171-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -723,8 +727,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
+		<skills>
+			<skill id="619" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
-	<item id="20939" type="Armor" name="Mount - Jet Bike">
+	<item id="20939" name="Mount - Jet Bike" name_additional="30-day" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_z_bike_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -736,7 +743,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="unequip_skill" val="619-1" />
 		<set name="item_skill" val="21171-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -744,8 +750,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
+		<skills>
+			<skill id="619" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
-	<item id="20940" type="Armor" name="Agathion - Phoenix">
+	<item id="20940" name="Agathion - Phoenix" name_additional="Nirvana Rebirth (7-day)" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_aga_china_phoenix_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -755,10 +764,8 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
 		<set name="item_skill" val="3267-1;21191-1;23171-1;23172-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -766,8 +773,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
+		<skills>
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
-	<item id="20941" type="Armor" name="Agathion - Phoenix">
+	<item id="20941" name="Agathion - Phoenix" name_additional="Mountain Echoes (7-day)" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_aga_china_phoenix_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -777,10 +787,8 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
 		<set name="item_skill" val="3267-1;21191-1;23171-1;23173-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -788,8 +796,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
+		<skills>
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
-	<item id="20942" type="Armor" name="Fox Mask">
+	<item id="20942" name="Fox Mask" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_fox_japan_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -799,7 +810,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_clan_depositable" val="false" />
@@ -807,7 +817,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_mailable" val="false" />
 	</item>
-	<item id="20943" type="Armor" name="Fox Mask">
+	<item id="20943" name="Fox Mask" name_additional="Silent Move (7-day)" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_fox_japan_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -817,18 +827,19 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21192-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
+		<skills>
+			<skill id="21192" level="1" />
+		</skills>
 	</item>
-	<item id="20944" type="Armor" name="Paiwan Hat">
+	<item id="20944" name="Paiwan Hat" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_paiwan_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -838,7 +849,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_clan_depositable" val="false" />
@@ -846,7 +856,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_mailable" val="false" />
 	</item>
-	<item id="20945" type="Armor" name="Paiwan Hat">
+	<item id="20945" name="Paiwan Hat" name_additional="Power of Guardian Deity (7-day)" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_paiwan_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -856,18 +866,19 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21193-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
+		<skills>
+			<skill id="21193" level="1" />
+		</skills>
 	</item>
-	<item id="20946" type="EtcItem" name="Jet Bike Pack (7-day)">
+	<item id="20946" name="Jet Bike Pack (7-day)" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -878,16 +889,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20938,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20938" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20947" type="EtcItem" name="Jet Bike Pack (30-day)">
+	<item id="20947" name="Jet Bike Pack (30-day)" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -898,16 +909,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20939,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20939" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20948" type="EtcItem" name="Agathion - Phoenix Pack (7-day)">
+	<item id="20948" name="Agathion - Phoenix Pack (7-day)" name_additional="Nirvana Rebirth" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -916,19 +927,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20940,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20940" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20949" type="EtcItem" name="Agathion - Phoenix Pack (7-day)">
+	<item id="20949" name="Agathion - Phoenix Pack (7-day)" name_additional="Mountain Echoes" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -937,19 +947,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20941,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20941" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20950" type="EtcItem" name="Fox Mask Pack">
+	<item id="20950" name="Fox Mask Pack" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -958,19 +967,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20942,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20942" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20951" type="EtcItem" name="Fox Mask Pack (7-day)">
+	<item id="20951" name="Fox Mask Pack (7-day)" name_additional="Silent Move" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -979,19 +987,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20943,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20943" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20952" type="EtcItem" name="Paiwan Hat Pack">
+	<item id="20952" name="Paiwan Hat Pack" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1000,19 +1007,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20944,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20944" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20953" type="EtcItem" name="Paiwan Hat Pack (7-day)">
+	<item id="20953" name="Paiwan Hat Pack (7-day)" name_additional="Power of Guardian Deity" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1021,59 +1027,56 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20945,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20945" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20954" type="EtcItem" name="Small Placid">
+	<item id="20954" name="Small Placid" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_shield_bread_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="GOLD" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="22165-1" />
+		<skills>
+			<skill id="22165" level="1" />
+		</skills>
 	</item>
-	<item id="20955" type="EtcItem" name="Medium Placid">
+	<item id="20955" name="Medium Placid" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_shield_bread_i01" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="GOLD" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="22166-1" />
+		<skills>
+			<skill id="22166" level="1" />
+		</skills>
 	</item>
-	<item id="20956" type="Armor" name="Agathion - Zombie">
+	<item id="20956" name="Agathion - Zombie" name_additional="Soul Stealth (7-day)" type="Armor">
 		<set name="icon" val="BranchSys.icon.br_aga_gangsi_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -1083,10 +1086,8 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
 		<set name="item_skill" val="3267-1;21133-1;23117-1;23175-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1094,8 +1095,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
+		<skills>
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
-	<item id="20957" type="EtcItem" name="Agathion - Zombie Pack (7-day)">
+	<item id="20957" name="Agathion - Zombie Pack (7-day)" name_additional="Soul Stealth" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1104,34 +1108,33 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20956,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20956" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20958" type="EtcItem" name="April Fools' Day Special Gift - For Event">
+	<item id="20958" name="April Fools' Day Special Gift (Event)" type="EtcItem">
 		<set name="icon" val="icon.lucky_bag_box_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
-
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="22167-1" />
+		<skills>
+			<skill id="22167" level="1" />
+		</skills>
 	</item>
-	<item id="20959" type="EtcItem" name="Vesper Royal Crown Pack">
+	<item id="20959" name="Vesper Royal Crown Pack" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1140,19 +1143,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20929,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20929" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20960" type="EtcItem" name="Vesper Royal Circlet Pack">
+	<item id="20960" name="Vesper Royal Circlet Pack" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1161,19 +1163,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20930,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20930" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20961" type="EtcItem" name="Vesper Noble Mask Pack">
+	<item id="20961" name="Vesper Noble Mask Pack" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1182,19 +1183,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20931,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20931" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20962" type="EtcItem" name="Vesper Royal Crown Pack (30-day)">
+	<item id="20962" name="Vesper Royal Crown Pack (30-day)" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1203,19 +1203,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20932,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20932" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20963" type="EtcItem" name="Vesper Royal Circlet Pack (30-day)">
+	<item id="20963" name="Vesper Royal Circlet Pack (30-day)" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1224,19 +1223,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20933,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20933" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20964" type="EtcItem" name="Vesper Noble Mask Pack (30-day)">
+	<item id="20964" name="Vesper Noble Mask Pack (30-day)" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1245,19 +1243,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20934,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20934" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20965" type="EtcItem" name="Vesper Royal Crown Pack">
+	<item id="20965" name="Vesper Royal Crown Pack" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1266,19 +1263,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20935,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20935" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20966" type="EtcItem" name="Vesper Royal Circlet Pack">
+	<item id="20966" name="Vesper Royal Circlet Pack" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1287,19 +1283,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20936,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20936" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20967" type="EtcItem" name="Vesper Noble Mask Pack">
+	<item id="20967" name="Vesper Noble Mask Pack" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1308,19 +1303,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20937,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20937" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20968" type="Armor" name="Agathion - Guangong">
+	<item id="20968" name="Agathion - Guangong" type="Armor">
 		<set name="icon" val="BranchSys.icon.br_aga_warriorgod_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -1330,17 +1324,19 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
-		<set name="unequip_skill" val="3267-1" />
-
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3267-1;21142-1;23123-1" />
+		<skills>
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+			<skill id="3267" level="1" />
+			<skill id="21142" level="1" />
+			<skill id="23123" level="1" />
+		</skills>
 	</item>
-	<item id="20969" type="EtcItem" name="Agathion - Guangong Pack">
+	<item id="20969" name="Agathion - Guangong Pack" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1349,19 +1345,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20968,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20968" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20970" type="Armor" name="Agathion - Three-headed Dragon">
+	<item id="20970" name="Agathion - Three-headed Dragon" name_additional="Premium" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_aga_threehead_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -1374,15 +1369,20 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="unequip_skill" val="3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3267-1;21194-1;23181-1;23182-1" />
+		<skills>
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+			<skill id="3267" level="1" />
+			<skill id="21194" level="1" />
+			<skill id="23181" level="1" />
+			<skill id="23182" level="1" />
+		</skills>
 	</item>
-	<item id="20971" type="Weapon" name="Trejuo Transformation Stick">
+	<item id="20971" name="Trejuo Transformation Stick" name_additional="Blessed Child Transformation" type="Weapon">
 		<set name="icon" val="BranchSys2.icon.br_blessed_taiboy_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1395,16 +1395,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
-		<set name="unequip_skill" val="839-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="21195-1" />
+		<skills>
+			<skill id="839" level="1" type="ON_UNEQUIP" />
+			<skill id="21195" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
@@ -1412,7 +1412,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="20972" type="Weapon" name="Sujin Transformation Stick">
+	<item id="20972" name="Sujin Transformation Stick" name_additional="Blessed Child Transformation" type="Weapon">
 		<set name="icon" val="BranchSys2.icon.br_blessed_taigirl_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1425,16 +1425,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
-		<set name="unequip_skill" val="839-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="21196-1" />
+		<skills>
+			<skill id="839" level="1" type="ON_UNEQUIP" />
+			<skill id="21196" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
@@ -1442,7 +1442,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="20973" type="Armor" name="Opera Mask - Liu Bei - Buff of Virtue, Age of the Three Kingdoms">
+	<item id="20973" name="Opera Mask - Liu Bei" name_additional="Buff of Virtue, Age of the Three Kingdoms" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_pekingopera_mask_a_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1452,17 +1452,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="21197-1;21200-1" />
+		<skills>
+			<skill id="21197" level="1" />
+			<skill id="21200" level="1" />
+		</skills>
 	</item>
-	<item id="20974" type="Armor" name="Opera Mask - Guan Yu - Silence of Fidelity, Age of the Three Kingdoms">
+	<item id="20974" name="Opera Mask - Guan Yu" name_additional="Silence of Fidelity, Age of the Three Kingdoms" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_pekingopera_mask_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1472,17 +1473,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="21198-1;21200-1" />
+		<skills>
+			<skill id="21198" level="1" />
+			<skill id="21200" level="1" />
+		</skills>
 	</item>
-	<item id="20975" type="Armor" name="Opera Mask - Zhang Fei - Vitality of Courage, Age of the Three Kingdoms">
+	<item id="20975" name="Opera Mask - Zhang Fei" name_additional="Vitality of Courage, Age of the Three Kingdoms" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_pekingopera_mask_c_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1492,26 +1494,25 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="21199-1;21200-1" />
+		<skills>
+			<skill id="21199" level="1" />
+			<skill id="21200" level="1" />
+		</skills>
 	</item>
-	<item id="20976" type="EtcItem" name="Warrior's Mark">
+	<item id="20976" name="Warrior's Mark" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_pekingopera_symbol_a_i00" />
 		<set name="material" val="GOLD" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1519,23 +1520,21 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 	</item>
-	<item id="20977" type="EtcItem" name="Mark of Affection">
+	<item id="20977" name="Mark of Affection" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_pekingopera_symbol_b_i00" />
 		<set name="material" val="GOLD" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_mailable" val="false" />
 	</item>
-	<item id="20978" type="EtcItem" name="Zhongzi (B-grade)">
+	<item id="20978" name="Zhongzi (B-grade)" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_taiwan_riceball_a_i00" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
 		<set name="immediate_effect" val="true" />
@@ -1544,19 +1543,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2517-1" />
+		<skills>
+			<skill id="2517" level="1" />
+		</skills>
 	</item>
-	<item id="20979" type="EtcItem" name="Zhongzi (A-grade)">
+	<item id="20979" name="Zhongzi (A-grade)" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_taiwan_riceball_b_i00" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
 		<set name="immediate_effect" val="true" />
@@ -1565,19 +1563,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2518-1" />
+		<skills>
+			<skill id="2518" level="1" />
+		</skills>
 	</item>
-	<item id="20980" type="EtcItem" name="Zhongzi (S-grade)">
+	<item id="20980" name="Zhongzi (S-grade)" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_taiwan_riceball_c_i00" />
 		<set name="etcitem_type" val="ENCHT_ATTR_INC_PROP_ENCHT_WP" />
 		<set name="immediate_effect" val="true" />
@@ -1586,19 +1583,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2519-1" />
+		<skills>
+			<skill id="2519" level="1" />
+		</skills>
 	</item>
-	<item id="20981" type="Armor" name="Dragon Boat">
+	<item id="20981" name="Dragon Boat" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_dragonboat_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1608,7 +1604,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_clan_depositable" val="false" />
@@ -1616,7 +1611,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_mailable" val="false" />
 	</item>
-	<item id="20982" type="Armor" name="Dragon Boat">
+	<item id="20982" name="Dragon Boat" name_additional="Haste (7-day)" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_dragonboat_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1626,18 +1621,19 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21201-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
+		<skills>
+			<skill id="21201" level="1" />
+		</skills>
 	</item>
-	<item id="20983" type="Armor" name="Agathion Seal Bracelet - Ball Trapping Gnosian - Soccer Ball of Cheers, Buff of Cheers">
+	<item id="20983" name="Agathion - Ball Trapping Gnosian" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_aga_ball_male_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -1647,18 +1643,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
-		<set name="unequip_skill" val="3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3267-1;21202-1;23201-1;23183-1;23184-1" />
+		<skills>
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+			<skill id="3267" level="1" />
+			<skill id="21202" level="1" />
+			<skill id="23201" level="1" />
+			<skill id="23183" level="1" />
+			<skill id="23184" level="1" />
+		</skills>
 	</item>
-	<item id="20984" type="Armor" name="Agathion Seal Bracelet - Ball Trapping Orodriel - Soccer Ball of Cheers, Buff of Cheers">
+	<item id="20984" name="Agathion - Ball Trapping Orodriel" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_aga_ball_female_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -1668,18 +1668,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
-		<set name="unequip_skill" val="3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3267-1;21203-1;23202-1;23185-1;23186-1" />
+		<skills>
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+			<skill id="3267" level="1" />
+			<skill id="21203" level="1" />
+			<skill id="23202" level="1" />
+			<skill id="23185" level="1" />
+			<skill id="23186" level="1" />
+		</skills>
 	</item>
-	<item id="20985" type="Armor" name="Agathion Seal Bracelet - Penalty Kick - Soccer Ball of Cheers, Buff of Cheers">
+	<item id="20985" name="Agathion - Penalty Kick" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_aga_ball_kick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -1689,18 +1693,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
-		<set name="unequip_skill" val="3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3267-1;21204-1;23203-1;23187-1;23188-1" />
+		<skills>
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+			<skill id="3267" level="1" />
+			<skill id="21204" level="1" />
+			<skill id="23203" level="1" />
+			<skill id="23187" level="1" />
+			<skill id="23188" level="1" />
+		</skills>
 	</item>
-	<item id="20986" type="Armor" name="Agathion Seal Bracelet - Ball Trapping Gnosian - Soccer Ball of Cheers, Buff of Cheers">
+	<item id="20986" name="Agathion - Ball Trapping Gnosian" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_aga_jball_male_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -1710,18 +1718,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
-		<set name="unequip_skill" val="3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3267-1;21205-1;23204-1;23189-1;23190-1" />
+		<skills>
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+			<skill id="3267" level="1" />
+			<skill id="21205" level="1" />
+			<skill id="23204" level="1" />
+			<skill id="23189" level="1" />
+			<skill id="23190" level="1" />
+		</skills>
 	</item>
-	<item id="20987" type="Armor" name="Agathion Seal Bracelet - Ball Trapping Orodriel - Soccer Ball of Cheers, Buff of Cheers">
+	<item id="20987" name="Agathion - Ball Trapping Orodriel" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_aga_jball_female_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -1731,18 +1743,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
-		<set name="unequip_skill" val="3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3267-1;21206-1;23205-1;23191-1;23192-1" />
+		<skills>
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+			<skill id="3267" level="1" />
+			<skill id="21206" level="1" />
+			<skill id="23205" level="1" />
+			<skill id="23191" level="1" />
+			<skill id="23192" level="1" />
+		</skills>
 	</item>
-	<item id="20988" type="Armor" name="Agathion Seal Bracelet - Penalty Kick - Soccer Ball of Cheers, Buff of Cheers">
+	<item id="20988" name="Agathion - Penalty Kick" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_aga_jball_kick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -1752,18 +1768,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
-		<set name="unequip_skill" val="3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3267-1;21207-1;23206-1;23193-1;23194-1" />
+		<skills>
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+			<skill id="3267" level="1" />
+			<skill id="21207" level="1" />
+			<skill id="23206" level="1" />
+			<skill id="23193" level="1" />
+			<skill id="23194" level="1" />
+		</skills>
 	</item>
-	<item id="20989" type="Armor" name="Agathion Seal Bracelet - Ball Trapping Gnosian - Soccer Ball of Cheers, Buff of Cheers">
+	<item id="20989" name="Agathion - Ball Trapping Gnosian" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_aga_kball_male_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -1773,18 +1793,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
-		<set name="unequip_skill" val="3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3267-1;21208-1;23207-1;23195-1;23196-1" />
+		<skills>
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+			<skill id="3267" level="1" />
+			<skill id="21208" level="1" />
+			<skill id="23207" level="1" />
+			<skill id="23195" level="1" />
+			<skill id="23196" level="1" />
+		</skills>
 	</item>
-	<item id="20990" type="Armor" name="Agathion Seal Bracelet - Ball Trapping Orodriel - Soccer Ball of Cheers, Buff of Cheers">
+	<item id="20990" name="Agathion - Ball Trapping Orodriel" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_aga_kball_female_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -1794,18 +1818,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
-		<set name="unequip_skill" val="3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3267-1;21209-1;23208-1;23197-1;23198-1" />
+		<skills>
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+			<skill id="3267" level="1" />
+			<skill id="21209" level="1" />
+			<skill id="23208" level="1" />
+			<skill id="23197" level="1" />
+			<skill id="23198" level="1" />
+		</skills>
 	</item>
-	<item id="20991" type="Armor" name="Agathion Seal Bracelet - Penalty Kick - Soccer Ball of Cheers, Buff of Cheers">
+	<item id="20991" name="Agathion - Penalty Kick" name_additional="Soccer Ball of Cheers, Buff of Cheers" type="Armor">
 		<set name="icon" val="BranchSys2.icon.br_aga_kball_kick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -1815,38 +1843,41 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
-		<set name="unequip_skill" val="3267-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3267-1;21210-1;23209-1;23199-1;23200-1" />
+		<skills>
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+			<skill id="3267" level="1" />
+			<skill id="21210" level="1" />
+			<skill id="23209" level="1" />
+			<skill id="23199" level="1" />
+			<skill id="23200" level="1" />
+		</skills>
 	</item>
-	<item id="20992" type="EtcItem" name="Thirst for Victory Quenching Juice">
+	<item id="20992" name="Thirst for Victory Quenching Juice" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_victory_potion_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="GOLD" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="22168-1" />
+		<skills>
+			<skill id="22168" level="1" />
+		</skills>
 	</item>
-	<item id="20993" type="EtcItem" name="Soccer Ball of Cheers">
+	<item id="20993" name="Soccer Ball of Cheers" type="EtcItem">
 		<set name="icon" val="BranchSys2.icon.br_soccer_ball_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1855,20 +1886,19 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="22169-1" />
+		<skills>
+			<skill id="22169" level="1" />
+		</skills>
 	</item>
-	<item id="20994" type="EtcItem" name="Agathion - Three-headed Dragon Pack">
+	<item id="20994" name="Agathion - Three-headed Dragon Pack" name_additional="Wind Walk" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1877,20 +1907,19 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20970,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20970" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20995" type="EtcItem" name="Liu Bei Opera Mask Pack - Buff of Virtue, Age of the Three Kingdoms">
+	<item id="20995" name="Liu Bei Opera Mask Pack" name_additional="Buff of Virtue, Age of the Three Kingdoms" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1899,19 +1928,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20973,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20973" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20996" type="EtcItem" name="Guan Yu Opera Mask Pack - Silence of Fidelity, Age of the Three Kingdoms">
+	<item id="20996" name="Guan Yu Opera Mask Pack" name_additional="Silence of Fidelity, Age of the Three Kingdoms" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1920,19 +1948,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20974,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20974" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20997" type="EtcItem" name="Zhang Fei Opera Mask Pack - Vitality of Courage, Age of the Three Kingdoms">
+	<item id="20997" name="Zhang Fei Opera Mask Pack" name_additional="Vitality of Courage, Age of the Three Kingdoms" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1941,19 +1968,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20975,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20975" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20998" type="EtcItem" name="Dragon Boat Pack">
+	<item id="20998" name="Dragon Boat Pack" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1962,19 +1988,18 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20981,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20981" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20999" type="EtcItem" name="Dragon Boat Pack (7-day)">
+	<item id="20999" name="Dragon Boat Pack (7-day)" name_additional="Haste" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1983,16 +2008,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20982,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20982" max="1" min="1" />
+		</capsuled_items>
 	</item>
 </list>

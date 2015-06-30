@@ -65,51 +65,6 @@ public final class EtcItem extends L2Item
 		
 		_handler = set.getString("handler", null); // ! null !
 		_isBlessed = set.getBoolean("blessed", false);
-		
-		// Extractable
-		String capsuled_items = set.getString("capsuled_items", null);
-		if (capsuled_items != null)
-		{
-			String[] split = capsuled_items.split(";");
-			_extractableItems = new ArrayList<>(split.length);
-			for (String part : split)
-			{
-				if (part.trim().isEmpty())
-				{
-					continue;
-				}
-				String[] data = part.split(",");
-				if (data.length != 4)
-				{
-					_log.info("> Couldnt parse " + part + " in capsuled_items! item " + this);
-					continue;
-				}
-				int itemId = Integer.parseInt(data[0]);
-				int min = Integer.parseInt(data[1]);
-				int max = Integer.parseInt(data[2]);
-				double chance = Double.parseDouble(data[3]);
-				if (max < min)
-				{
-					_log.info("> Max amount < Min amount in " + part + ", item " + this);
-					continue;
-				}
-				ExtractableProduct product = new ExtractableProduct(itemId, min, max, chance);
-				_extractableItems.add(product);
-			}
-			((ArrayList<?>) _extractableItems).trimToSize();
-			
-			// check for handler
-			if (_handler == null)
-			{
-				_log.warn("Item " + this + " define capsuled_items but missing handler.");
-				_handler = "ExtractableItems";
-			}
-		}
-		else
-		{
-			_extractableItems = null;
-		}
-		
 		_isInfinite = set.getBoolean("is_infinite", false);
 	}
 	
@@ -161,5 +116,18 @@ public final class EtcItem extends L2Item
 	public boolean isInfinite()
 	{
 		return _isInfinite;
+	}
+	
+	/**
+	 * @param extractableProduct
+	 */
+	@Override
+	public void addCapsuledItem(ExtractableProduct extractableProduct)
+	{
+		if (_extractableItems == null)
+		{
+			_extractableItems = new ArrayList<>();
+		}
+		_extractableItems.add(extractableProduct);
 	}
 }

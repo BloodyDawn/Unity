@@ -280,11 +280,11 @@ public abstract class DocumentBase
 		final FuncTemplate ft = new FuncTemplate(attachCond, applayCond, functionName, order, stat, value);
 		if (template instanceof L2Item)
 		{
-			((L2Item) template).attach(ft);
+			((L2Item) template).addFunctionTemplate(ft);
 		}
 		else if (template instanceof AbstractEffect)
 		{
-			((AbstractEffect) template).attach(ft);
+			((AbstractEffect) template).addFunctionTemplate(ft);
 		}
 		else
 		{

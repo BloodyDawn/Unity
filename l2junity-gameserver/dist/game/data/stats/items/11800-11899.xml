@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="11800" type="Weapon" name="Common Item - Grace Dagger">
+	<item id="11800" name="Common Item - Grace Dagger" type="Weapon">
 		<set name="icon" val="icon.weapon_grace_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -25,7 +25,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="11801" type="Weapon" name="Common Item - Ultimate Sword">
+	<item id="11801" name="Common Item - Ultimate Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_limit_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -50,7 +50,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11802" type="Weapon" name="Common Item - Nirvana Axe">
+	<item id="11802" name="Common Item - Nirvana Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_nirvana_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -76,7 +76,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11803" type="Weapon" name="Common Item - Dark Screamer">
+	<item id="11803" name="Common Item - Dark Screamer" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_screamer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -101,7 +101,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="11804" type="Weapon" name="Common Item - Club of Nature">
+	<item id="11804" name="Common Item - Club of Nature" type="Weapon">
 		<set name="icon" val="icon.weapon_club_of_nature_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -127,7 +127,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11805" type="Weapon" name="Common Item - Sword of Whispering Death">
+	<item id="11805" name="Common Item - Sword of Whispering Death" type="Weapon">
 		<set name="icon" val="icon.weapon_deathbreath_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -152,7 +152,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11806" type="Weapon" name="Common Item - Mace of Underworld">
+	<item id="11806" name="Common Item - Mace of Underworld" type="Weapon">
 		<set name="icon" val="icon.weapon_mace_of_underworld_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -178,7 +178,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11807" type="Weapon" name="Common Item - Sword of Delusion">
+	<item id="11807" name="Common Item - Sword of Delusion" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_delusion_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -203,7 +203,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11808" type="Weapon" name="Common Item - Blinzlasher">
+	<item id="11808" name="Common Item - Blinzlasher" type="Weapon">
 		<set name="icon" val="icon.weapon_blink_slasher_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -221,7 +221,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -233,7 +235,7 @@
 			<set stat="pAtkSpd" val="406" />
 		</for>
 	</item>
-	<item id="11809" type="Weapon" name="Common Item - Blinzlasher">
+	<item id="11809" name="Common Item - Blinzlasher" type="Weapon">
 		<set name="icon" val="icon.weapon_blink_slasher_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -251,7 +253,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -263,7 +267,7 @@
 			<set stat="pAtkSpd" val="406" />
 		</for>
 	</item>
-	<item id="11810" type="Weapon" name="Common Item - Blinzlasher">
+	<item id="11810" name="Common Item - Blinzlasher" type="Weapon">
 		<set name="icon" val="icon.weapon_blink_slasher_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -281,7 +285,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -293,7 +299,7 @@
 			<set stat="pAtkSpd" val="406" />
 		</for>
 	</item>
-	<item id="11811" type="Weapon" name="Common Item - Blinzlasher">
+	<item id="11811" name="Common Item - Blinzlasher" type="Weapon">
 		<set name="icon" val="icon.weapon_blink_slasher_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -311,7 +317,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -323,7 +331,7 @@
 			<set stat="pAtkSpd" val="406" />
 		</for>
 	</item>
-	<item id="11812" type="Weapon" name="Common Item - Blinzlasher">
+	<item id="11812" name="Common Item - Blinzlasher" type="Weapon">
 		<set name="icon" val="icon.weapon_blink_slasher_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -341,7 +349,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -353,7 +363,7 @@
 			<set stat="pAtkSpd" val="406" />
 		</for>
 	</item>
-	<item id="11813" type="Weapon" name="Common Item - Pa'agrian Sword">
+	<item id="11813" name="Common Item - Pa'agrian Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_paagrio_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -378,7 +388,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11814" type="Weapon" name="Common Item - Akat Longbow">
+	<item id="11814" name="Common Item - Akat Longbow" type="Weapon">
 		<set name="icon" val="icon.weapon_akat_long_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -406,7 +416,7 @@
 			<set stat="pAtkSpd" val="227" />
 		</for>
 	</item>
-	<item id="11815" type="Weapon" name="Common Item - Sword of Nightmare">
+	<item id="11815" name="Common Item - Sword of Nightmare" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_nightmare_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -431,7 +441,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11816" type="Weapon" name="Common Item - War Axe">
+	<item id="11816" name="Common Item - War Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_war_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -456,7 +466,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11817" type="Weapon" name="Common Item - Heathen's Book">
+	<item id="11817" name="Common Item - Heathen's Book" type="Weapon">
 		<set name="icon" val="icon.weapon_heathens_book_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -481,7 +491,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11818" type="Weapon" name="Common Item - Immortal Edge">
+	<item id="11818" name="Common Item - Immortal Edge" type="Weapon">
 		<set name="icon" val="icon.weapon_invincible_blade_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -510,7 +520,7 @@
 			<set stat="pAtkSpd" val="350" />
 		</for>
 	</item>
-	<item id="11819" type="Weapon" name="Common Item - Inferno Staff">
+	<item id="11819" name="Common Item - Inferno Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_inferno_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -536,7 +546,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11820" type="Weapon" name="Common Item - Tsurugi">
+	<item id="11820" name="Common Item - Tsurugi" type="Weapon">
 		<set name="icon" val="icon.weapon_tsurugi_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -561,7 +571,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11821" type="Weapon" name="Common Item - Caliburs">
+	<item id="11821" name="Common Item - Caliburs" type="Weapon">
 		<set name="icon" val="icon.weapon_caliburs_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -586,7 +596,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11822" type="Weapon" name="Common Item - Karik Horn">
+	<item id="11822" name="Common Item - Karik Horn" type="Weapon">
 		<set name="icon" val="icon.weapon_horn_of_karik_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -611,7 +621,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11823" type="Weapon" name="Common Item - Tathlum">
+	<item id="11823" name="Common Item - Tathlum" type="Weapon">
 		<set name="icon" val="icon.weapon_taslam_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -641,7 +651,7 @@
 			<set stat="pAtkSpd" val="303" />
 		</for>
 	</item>
-	<item id="11824" type="Weapon" name="Common Item - Pa'agrian Hammer">
+	<item id="11824" name="Common Item - Pa'agrio Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_paagrio_hammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -667,7 +677,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11825" type="Weapon" name="Common Item - Paradia Staff">
+	<item id="11825" name="Common Item - Paradia Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_paradia_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -693,7 +703,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11826" type="Weapon" name="Common Item - Poleaxe">
+	<item id="11826" name="Common Item - Poleaxe" type="Weapon">
 		<set name="icon" val="icon.weapon_poleaxe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -710,7 +720,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
@@ -719,7 +731,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11827" type="Weapon" name="Common Item - Fisted Blade">
+	<item id="11827" name="Common Item - Fisted Blade" type="Weapon">
 		<set name="icon" val="icon.weapon_fist_blade_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -744,7 +756,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11828" type="Weapon" name="Common Item - Sage's Staff">
+	<item id="11828" name="Common Item - Sage's Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_sages_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -770,7 +782,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11829" type="Weapon" name="Common Item - Homunkulus's Sword">
+	<item id="11829" name="Common Item - Homunkulus' Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_homunkuluss_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -795,7 +807,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11830" type="Weapon" name="Common Item - Scorpion">
+	<item id="11830" name="Common Item - Scorpion" type="Weapon">
 		<set name="icon" val="icon.weapon_scorpion_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -812,7 +824,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="144" />
 			<set stat="mAtk" val="78" />
@@ -821,7 +835,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11831" type="Weapon" name="Common Item - Stormbringer*Stormbringer">
+	<item id="11831" name="Common Item - Stormbringer*Stormbringer" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -838,7 +852,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3046-6" />
+		<skills>
+			<skill id="3046" level="6" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="78" />
@@ -846,7 +862,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11832" type="Weapon" name="Common Item - Widow Maker">
+	<item id="11832" name="Common Item - Widow Maker" type="Weapon">
 		<set name="icon" val="icon.weapon_widow_maker_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -863,7 +879,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="144" />
 			<set stat="mAtk" val="78" />
@@ -872,7 +890,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11833" type="Weapon" name="Common Item - Pa'agrian Axe">
+	<item id="11833" name="Common Item - Pa'agrio Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_paagrio_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -898,7 +916,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11834" type="Weapon" name="Common Item - Stormbringer*Raid Sword">
+	<item id="11834" name="Common Item - Stormbringer*Raid Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -915,7 +933,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3045-7" />
+		<skills>
+			<skill id="3045" level="7" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="183" />
 			<set stat="mAtk" val="81" />
@@ -923,7 +943,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11835" type="Weapon" name="Common Item - Stormbringer*Shamshir">
+	<item id="11835" name="Common Item - Stormbringer*Shamshir" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -940,7 +960,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3042-7" />
+		<skills>
+			<skill id="3042" level="7" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="183" />
 			<set stat="mAtk" val="81" />
@@ -948,7 +970,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11836" type="Weapon" name="Common Item - Stormbringer*Spirit Sword">
+	<item id="11836" name="Common Item - Stormbringer*Spirit Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -965,7 +987,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3044-7" />
+		<skills>
+			<skill id="3044" level="7" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="183" />
 			<set stat="mAtk" val="81" />
@@ -973,7 +997,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11837" type="Weapon" name="Common Item - Stormbringer*Katana">
+	<item id="11837" name="Common Item - Stormbringer*Katana" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -990,7 +1014,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="183" />
 			<set stat="mAtk" val="81" />
@@ -998,7 +1024,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11838" type="Weapon" name="Common Item - Ghoul's Staff">
+	<item id="11838" name="Common Item - Ghoul's Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_ghouls_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1024,7 +1050,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11839" type="Weapon" name="Common Item - Great Pata">
+	<item id="11839" name="Common Item - Great Pata" type="Weapon">
 		<set name="icon" val="icon.weapon_great_pata_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -1049,7 +1075,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11840" type="Weapon" name="Common Item - Dwarven Hammer">
+	<item id="11840" name="Common Item - Dwarven Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_dwarven_hammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1074,7 +1100,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11841" type="Weapon" name="Common Item - Raid Sword*Raid Sword">
+	<item id="11841" name="Common Item - Raid Sword*Raid Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1091,7 +1117,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3045-8" />
+		<skills>
+			<skill id="3045" level="8" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="190" />
 			<set stat="mAtk" val="83" />
@@ -1099,7 +1127,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11842" type="Weapon" name="Common Item - Deadman's Staff">
+	<item id="11842" name="Common Item - Deadman's Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_deadmans_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1125,7 +1153,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11843" type="Weapon" name="Common Item - Berserker Blade">
+	<item id="11843" name="Common Item - Berserker Blade" type="Weapon">
 		<set name="icon" val="icon.weapon_berserker_blade_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1150,7 +1178,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11844" type="Weapon" name="Common Item - Sharpshooter">
+	<item id="11844" name="Common Item - Sharpshooter" type="Weapon">
 		<set name="icon" val="icon.weapon_taslam_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1180,7 +1208,7 @@
 			<set stat="pAtkSpd" val="303" />
 		</for>
 	</item>
-	<item id="11845" type="Weapon" name="Common Item - Shamshir*Raid Sword">
+	<item id="11845" name="Common Item - Shamshir*Raid Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1197,7 +1225,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3044-8" />
+		<skills>
+			<skill id="3044" level="8" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="190" />
 			<set stat="mAtk" val="83" />
@@ -1205,7 +1235,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11846" type="Weapon" name="Common Item - Shamshir*Shamshir">
+	<item id="11846" name="Common Item - Shamshir*Shamshir" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1222,7 +1252,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3046-8" />
+		<skills>
+			<skill id="3046" level="8" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="190" />
 			<set stat="mAtk" val="83" />
@@ -1230,7 +1262,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11847" type="Weapon" name="Common Item - Shamshir*Spirit Sword">
+	<item id="11847" name="Common Item - Shamshir*Spirit Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1247,7 +1279,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="190" />
 			<set stat="mAtk" val="83" />
@@ -1255,7 +1289,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11848" type="Weapon" name="Common Item - Shamshir*Katana">
+	<item id="11848" name="Common Item - Shamshir*Katana" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1272,7 +1306,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3042-8" />
+		<skills>
+			<skill id="3042" level="8" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="190" />
 			<set stat="mAtk" val="83" />
@@ -1280,7 +1316,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11849" type="Weapon" name="Common Item - Saber Tooth">
+	<item id="11849" name="Common Item - Saber Tooth" type="Weapon">
 		<set name="icon" val="icon.weapon_invincible_blade_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1309,7 +1345,7 @@
 			<set stat="pAtkSpd" val="350" />
 		</for>
 	</item>
-	<item id="11850" type="Weapon" name="Common Item - Ecliptic Sword">
+	<item id="11850" name="Common Item - Ecliptic Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_eclipse_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1334,7 +1370,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11851" type="Weapon" name="Common Item - Spirit Sword*Raid Sword">
+	<item id="11851" name="Common Item - Spirit Sword*Raid Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1351,7 +1387,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3044-8" />
+		<skills>
+			<skill id="3044" level="8" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="190" />
 			<set stat="mAtk" val="83" />
@@ -1359,7 +1397,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11852" type="Weapon" name="Common Item - Spirit Sword*Spirit Sword">
+	<item id="11852" name="Common Item - Spirit Sword*Spirit Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1376,7 +1414,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="190" />
 			<set stat="mAtk" val="83" />
@@ -1384,7 +1424,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11853" type="Weapon" name="Common Item - Samurai Long Sword">
+	<item id="11853" name="Common Item - Samurai Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_samurai_longsword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1409,7 +1449,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11854" type="Weapon" name="Common Item - Admiral's Estoc">
+	<item id="11854" name="Common Item - Admiral's Estoc" type="Weapon">
 		<set name="icon" val="icon.weapon_blink_slasher_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1427,7 +1467,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1439,7 +1481,7 @@
 			<set stat="pAtkSpd" val="406" />
 		</for>
 	</item>
-	<item id="11855" type="Weapon" name="Common Item - Demon's Staff">
+	<item id="11855" name="Common Item - Demon's Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_demons_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1465,7 +1507,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11856" type="Weapon" name="Common Item - Yaksa Mace">
+	<item id="11856" name="Common Item - Yaksa Mace" type="Weapon">
 		<set name="icon" val="icon.weapon_yaksa_mace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1490,7 +1532,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11857" type="Weapon" name="Common Item - Eminence Bow">
+	<item id="11857" name="Common Item - Eminence Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_eminence_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -1518,7 +1560,7 @@
 			<set stat="pAtkSpd" val="293" />
 		</for>
 	</item>
-	<item id="11858" type="Weapon" name="Common Item - Orcish Poleaxe">
+	<item id="11858" name="Common Item - Orcish Poleaxe" type="Weapon">
 		<set name="icon" val="icon.weapon_orcish_poleaxe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -1535,7 +1577,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="156" />
 			<set stat="mAtk" val="83" />
@@ -1544,7 +1588,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11859" type="Weapon" name="Common Item - Ecliptic Axe">
+	<item id="11859" name="Common Item - Ecliptic Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_eclipse_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1570,7 +1614,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11860" type="Weapon" name="Common Item - Katana*Raid Sword">
+	<item id="11860" name="Common Item - Katana*Raid Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1587,7 +1631,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3042-8" />
+		<skills>
+			<skill id="3042" level="8" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="190" />
 			<set stat="mAtk" val="83" />
@@ -1595,7 +1641,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11861" type="Weapon" name="Common Item - Katana*Spirit Sword">
+	<item id="11861" name="Common Item - Katana*Spirit Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1612,7 +1658,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3046-8" />
+		<skills>
+			<skill id="3046" level="8" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="190" />
 			<set stat="mAtk" val="83" />
@@ -1620,7 +1668,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11862" type="Weapon" name="Common Item - Katana*Katana">
+	<item id="11862" name="Common Item - Katana*Katana" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1637,7 +1685,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3045-8" />
+		<skills>
+			<skill id="3045" level="8" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="190" />
 			<set stat="mAtk" val="83" />
@@ -1645,7 +1695,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11863" type="Weapon" name="Common Item - Crystal Dagger">
+	<item id="11863" name="Common Item - Crystal Dagger" type="Weapon">
 		<set name="icon" val="icon.weapon_crystal_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1670,7 +1720,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="11864" type="Weapon" name="Common Item - Stormbringer*Sword of Limit">
+	<item id="11864" name="Common Item - StormBringer*Ultimate Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1687,7 +1737,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3042-9" />
+		<skills>
+			<skill id="3042" level="9" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="197" />
 			<set stat="mAtk" val="86" />
@@ -1695,7 +1747,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11865" type="Weapon" name="Common Item - Stormbringer*Sword of Delusion">
+	<item id="11865" name="Common Item - Stormbringer*Sword of Delusion" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1712,7 +1764,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="197" />
 			<set stat="mAtk" val="86" />
@@ -1720,7 +1774,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11866" type="Weapon" name="Common Item - Stormbringer*Sword of Nightmare">
+	<item id="11866" name="Common Item - Stormbringer*Sword of Nightmare" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1737,7 +1791,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3044-9" />
+		<skills>
+			<skill id="3044" level="9" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="197" />
 			<set stat="mAtk" val="86" />
@@ -1745,7 +1801,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11867" type="Weapon" name="Common Item - Stormbringer*Tsurugi">
+	<item id="11867" name="Common Item - Stormbringer*Tsurugi" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1762,7 +1818,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3045-9" />
+		<skills>
+			<skill id="3045" level="9" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="197" />
 			<set stat="mAtk" val="86" />
@@ -1770,7 +1828,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11868" type="Weapon" name="Common Item - Stormbringer*Caliburs">
+	<item id="11868" name="Common Item - Stormbringer*Caliburs" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1787,7 +1845,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3046-9" />
+		<skills>
+			<skill id="3046" level="9" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="197" />
 			<set stat="mAtk" val="86" />
@@ -1795,7 +1855,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11869" type="Weapon" name="Common Item - Raid Sword*Sword of Limit">
+	<item id="11869" name="Common Item - Raid Sword*Ultimate Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1812,7 +1872,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3042-10" />
+		<skills>
+			<skill id="3042" level="10" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -1820,7 +1882,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11870" type="Weapon" name="Common Item - Raid Sword*Sword of Delusion">
+	<item id="11870" name="Common Item - Raid Sword*Sword of Delusion" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1837,7 +1899,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -1845,7 +1909,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11871" type="Weapon" name="Common Item - Raid Sword*Sword of Nightmare">
+	<item id="11871" name="Common Item - Raid Sword*Sword of Nightmare" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1862,7 +1926,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3044-10" />
+		<skills>
+			<skill id="3044" level="10" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -1870,7 +1936,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11872" type="Weapon" name="Common Item - Raid Sword*Tsurugi">
+	<item id="11872" name="Common Item - Raid Sword*Tsurugi" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1887,7 +1953,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3045-10" />
+		<skills>
+			<skill id="3045" level="10" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -1895,7 +1963,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11873" type="Weapon" name="Common Item - Raid Sword*Caliburs">
+	<item id="11873" name="Common Item - Raid Sword*Caliburs" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1912,7 +1980,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3046-10" />
+		<skills>
+			<skill id="3046" level="10" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -1920,7 +1990,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11874" type="Weapon" name="Common Item - Shamshir*Sword of Limit">
+	<item id="11874" name="Common Item - Shamshir*Ultimate Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1937,7 +2007,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3042-10" />
+		<skills>
+			<skill id="3042" level="10" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -1945,7 +2017,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11875" type="Weapon" name="Common Item - Shamshir*Sword of Delusion">
+	<item id="11875" name="Common Item - Shamshir*Sword of Delusion" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1962,7 +2034,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -1970,7 +2044,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11876" type="Weapon" name="Common Item - Shamshir*Sword of Nightmare">
+	<item id="11876" name="Common Item - Shamshir*Sword of Nightmare" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1987,7 +2061,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3044-10" />
+		<skills>
+			<skill id="3044" level="10" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -1995,7 +2071,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11877" type="Weapon" name="Common Item - Shamshir*Tsurugi">
+	<item id="11877" name="Common Item - Shamshir*Tsurugi" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2012,7 +2088,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3045-10" />
+		<skills>
+			<skill id="3045" level="10" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -2020,7 +2098,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11878" type="Weapon" name="Common Item - Shamshir*Caliburs">
+	<item id="11878" name="Common Item - Shamshir*Caliburs" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2037,7 +2115,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3046-10" />
+		<skills>
+			<skill id="3046" level="10" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -2045,7 +2125,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11879" type="Weapon" name="Common Item - Spirit Sword*Sword of Limit">
+	<item id="11879" name="Common Item - Spirit Sword*Ultimate Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2062,7 +2142,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3042-10" />
+		<skills>
+			<skill id="3042" level="10" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -2070,7 +2152,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11880" type="Weapon" name="Common Item - Spirit Sword*Sword of Delusion">
+	<item id="11880" name="Common Item - Spirit Sword*Sword of Delusion" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2087,7 +2169,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -2095,7 +2179,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11881" type="Weapon" name="Common Item - Spirit Sword*Sword of Nightmare">
+	<item id="11881" name="Common Item - Spirit Sword*Sword of Nightmare" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2112,7 +2196,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3044-10" />
+		<skills>
+			<skill id="3044" level="10" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -2120,7 +2206,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11882" type="Weapon" name="Common Item - Spirit Sword*Tsurugi">
+	<item id="11882" name="Common Item - Spirit Sword*Tsurugi" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2137,7 +2223,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3045-10" />
+		<skills>
+			<skill id="3045" level="10" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -2145,7 +2233,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11883" type="Weapon" name="Common Item - Spirit Sword*Caliburs">
+	<item id="11883" name="Common Item - Spirit Sword*Caliburs" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2162,7 +2250,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3046-10" />
+		<skills>
+			<skill id="3046" level="10" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -2170,7 +2260,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11884" type="Weapon" name="Common Item - Katana*Sword of Limit">
+	<item id="11884" name="Common Item - Katana*Ultimate Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2187,7 +2277,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3042-10" />
+		<skills>
+			<skill id="3042" level="10" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -2195,7 +2287,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11885" type="Weapon" name="Common Item - Katana*Sword of Delusion">
+	<item id="11885" name="Common Item - Katana*Sword of Delusion" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2212,7 +2304,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -2220,7 +2314,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11886" type="Weapon" name="Common Item - Katana*Sword of Nightmare">
+	<item id="11886" name="Common Item - Katana*Sword of Nightmare" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2237,7 +2331,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3044-10" />
+		<skills>
+			<skill id="3044" level="10" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -2245,7 +2341,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11887" type="Weapon" name="Common Item - Katana*Tsurugi">
+	<item id="11887" name="Common Item - Katana*Tsurugi" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2262,7 +2358,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3045-10" />
+		<skills>
+			<skill id="3045" level="10" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -2270,7 +2368,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11888" type="Weapon" name="Common Item - Katana*Caliburs">
+	<item id="11888" name="Common Item - Katana*Caliburs" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2287,7 +2385,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3046-10" />
+		<skills>
+			<skill id="3046" level="10" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="204" />
 			<set stat="mAtk" val="89" />
@@ -2295,7 +2395,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11889" type="Weapon" name="Common Item - Great Sword">
+	<item id="11889" name="Common Item - Great Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_great_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2320,7 +2420,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11890" type="Weapon" name="Common Item - Great Axe">
+	<item id="11890" name="Common Item - Great Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_great_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -2337,7 +2437,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
@@ -2346,7 +2448,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11891" type="Weapon" name="Common Item - Sword of Limit*Sword of Limit">
+	<item id="11891" name="Common Item - Ultimate Sword*Ultimate Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2363,7 +2465,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3042-11" />
+		<skills>
+			<skill id="3042" level="11" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -2371,7 +2475,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11892" type="Weapon" name="Common Item - Sword of Limit*Sword of Delusion">
+	<item id="11892" name="Common Item - Ultimate Sword*Sword of Delusion" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2388,7 +2492,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -2396,7 +2502,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11893" type="Weapon" name="Common Item - Sword of Limit*Sword of Nightmare">
+	<item id="11893" name="Common Item - Ultimate Sword*Sword of Nightmare" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2413,7 +2519,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3044-11" />
+		<skills>
+			<skill id="3044" level="11" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -2421,7 +2529,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11894" type="Weapon" name="Common Item - Sword of Limit*Tsurugi">
+	<item id="11894" name="Common Item - Ultimate Sword*Tsurugi" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2438,7 +2546,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3045-11" />
+		<skills>
+			<skill id="3045" level="11" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -2446,7 +2556,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11895" type="Weapon" name="Common Item - Innominate Victory">
+	<item id="11895" name="Common Item - Innominate Victory" type="Weapon">
 		<set name="icon" val="icon.weapon_nameless_victory_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2475,7 +2585,7 @@
 			<set stat="pAtkSpd" val="350" />
 		</for>
 	</item>
-	<item id="11896" type="Weapon" name="Common Item - Dark Elven Longbow">
+	<item id="11896" name="Common Item - Dark Elven Longbow" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_elven_long_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -2503,7 +2613,7 @@
 			<set stat="pAtkSpd" val="227" />
 		</for>
 	</item>
-	<item id="11897" type="Weapon" name="Common Item - Sword of Delusion*Sword of Delusion">
+	<item id="11897" name="Common Item - Sword of Delusion*Sword of Delusion" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2520,7 +2630,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3046-11" />
+		<skills>
+			<skill id="3046" level="11" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -2528,7 +2640,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11898" type="Weapon" name="Common Item - Sword of Delusion*Sword of Nightmare">
+	<item id="11898" name="Common Item - Sword of Delusion*Sword of Nightmare" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2545,7 +2657,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3042-11" />
+		<skills>
+			<skill id="3042" level="11" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -2553,7 +2667,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11899" type="Weapon" name="Common Item - Sword of Delusion*Tsurugi">
+	<item id="11899" name="Common Item - Sword of Delusion*Tsurugi" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2570,7 +2684,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3013-1" />
+		<skills>
+			<skill id="3013" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />

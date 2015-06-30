@@ -22,11 +22,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.ItemGrade;
+import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.model.Elementals;
+import org.l2junity.gameserver.model.ExtractableProduct;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
@@ -36,7 +41,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.commission.CommissionItemType;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.events.ListenersContainer;
-import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.ActionType;
@@ -44,7 +49,6 @@ import org.l2junity.gameserver.model.items.type.CrystalType;
 import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.items.type.ItemType;
 import org.l2junity.gameserver.model.items.type.MaterialType;
-import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -154,8 +158,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 	protected Elementals[] _elementals = null;
 	protected List<FuncTemplate> _funcTemplates;
 	protected List<Condition> _preConditions;
-	private SkillHolder[] _skillHolder;
-	private SkillHolder _unequipSkill = null;
+	private List<ItemSkillHolder> _skills;
 	
 	private int _useSkillDisTime;
 	private int _reuseDelay;
@@ -217,77 +220,6 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 		_commissionItemType = set.getEnum("commissionItemType", CommissionItemType.class, CommissionItemType.OTHER_ITEM);
 		_compoundItem = set.getInt("compoundItem", 0);
 		_compoundChance = set.getFloat("compoundChance", 0);
-		
-		String skills = set.getString("item_skill", null);
-		if (skills != null)
-		{
-			String[] skillsSplit = skills.split(";");
-			_skillHolder = new SkillHolder[skillsSplit.length];
-			int used = 0;
-			
-			for (String element : skillsSplit)
-			{
-				try
-				{
-					String[] skillSplit = element.split("-");
-					int id = Integer.parseInt(skillSplit[0]);
-					int level = Integer.parseInt(skillSplit[1]);
-					
-					if (id == 0)
-					{
-						_log.info("Ignoring item_skill(" + element + ") for item " + this + ". Skill id is 0!");
-						continue;
-					}
-					
-					if (level == 0)
-					{
-						_log.info("Ignoring item_skill(" + element + ") for item " + this + ". Skill level is 0!");
-						continue;
-					}
-					
-					_skillHolder[used] = new SkillHolder(id, level);
-					++used;
-				}
-				catch (Exception e)
-				{
-					_log.warn("Failed to parse item_skill(" + element + ") for item " + this + "! Format: SkillId0-SkillLevel0[;SkillIdN-SkillLevelN]");
-				}
-			}
-			
-			// this is only loading? just don't leave a null or use a collection?
-			if (used != _skillHolder.length)
-			{
-				SkillHolder[] skillHolder = new SkillHolder[used];
-				System.arraycopy(_skillHolder, 0, skillHolder, 0, used);
-				_skillHolder = skillHolder;
-			}
-		}
-		
-		skills = set.getString("unequip_skill", null);
-		if (skills != null)
-		{
-			String[] info = skills.split("-");
-			if ((info != null) && (info.length == 2))
-			{
-				int id = 0;
-				int level = 0;
-				try
-				{
-					id = Integer.parseInt(info[0]);
-					level = Integer.parseInt(info[1]);
-				}
-				catch (Exception nfe)
-				{
-					// Incorrect syntax, don't add new skill
-					_log.info("Couldnt parse " + skills + " in weapon unequip skills! item " + this);
-				}
-				if ((id > 0) && (level > 0))
-				{
-					_unequipSkill = new SkillHolder(id, level);
-				}
-			}
-		}
-		
 		_common = ((_itemId >= 11605) && (_itemId <= 12361));
 		_heroItem = ((_itemId >= 6611) && (_itemId <= 6621)) || ((_itemId >= 9388) && (_itemId <= 9390)) || (_itemId == 6842);
 		_pvpItem = ((_itemId >= 10667) && (_itemId <= 10835)) || ((_itemId >= 12852) && (_itemId <= 12977)) || ((_itemId >= 14363) && (_itemId <= 14525)) || (_itemId == 14528) || (_itemId == 14529) || (_itemId == 14558) || ((_itemId >= 15913) && (_itemId <= 16024)) || ((_itemId >= 16134) && (_itemId <= 16147)) || (_itemId == 16149) || (_itemId == 16151) || (_itemId == 16153) || (_itemId == 16155) || (_itemId == 16157) || (_itemId == 16159) || ((_itemId >= 16168) && (_itemId <= 16176)) || ((_itemId >= 16179) && (_itemId <= 16220));
@@ -696,94 +628,118 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 	{
 		if ((_funcTemplates == null) || _funcTemplates.isEmpty())
 		{
-			return Collections.<AbstractFunction> emptyList();
+			return Collections.emptyList();
 		}
 		
-		final List<AbstractFunction> funcs = new ArrayList<>(_funcTemplates.size());
-		for (FuncTemplate t : _funcTemplates)
+		final List<AbstractFunction> functions = new ArrayList<>(_funcTemplates.size());
+		for (FuncTemplate template : _funcTemplates)
 		{
-			AbstractFunction f = t.getFunc(player, player, item, item);
-			if (f != null)
+			final AbstractFunction function = template.getFunc(player, player, item, item);
+			if (function != null)
 			{
-				funcs.add(f);
+				functions.add(function);
 			}
 		}
-		return funcs;
+		return functions;
 	}
 	
 	/**
 	 * Add the FuncTemplate f to the list of functions used with the item
-	 * @param f : FuncTemplate to add
+	 * @param template : FuncTemplate to add
 	 */
-	public void attach(FuncTemplate f)
+	public void addFunctionTemplate(FuncTemplate template)
 	{
-		switch (f.getStat())
+		switch (template.getStat())
 		{
 			case FIRE_RES:
 			case FIRE_POWER:
-				setElementals(new Elementals(Elementals.FIRE, (int) f.getValue()));
+				setElementals(new Elementals(Elementals.FIRE, (int) template.getValue()));
 				break;
 			case WATER_RES:
 			case WATER_POWER:
-				setElementals(new Elementals(Elementals.WATER, (int) f.getValue()));
+				setElementals(new Elementals(Elementals.WATER, (int) template.getValue()));
 				break;
 			case WIND_RES:
 			case WIND_POWER:
-				setElementals(new Elementals(Elementals.WIND, (int) f.getValue()));
+				setElementals(new Elementals(Elementals.WIND, (int) template.getValue()));
 				break;
 			case EARTH_RES:
 			case EARTH_POWER:
-				setElementals(new Elementals(Elementals.EARTH, (int) f.getValue()));
+				setElementals(new Elementals(Elementals.EARTH, (int) template.getValue()));
 				break;
 			case HOLY_RES:
 			case HOLY_POWER:
-				setElementals(new Elementals(Elementals.HOLY, (int) f.getValue()));
+				setElementals(new Elementals(Elementals.HOLY, (int) template.getValue()));
 				break;
 			case DARK_RES:
 			case DARK_POWER:
-				setElementals(new Elementals(Elementals.DARK, (int) f.getValue()));
+				setElementals(new Elementals(Elementals.DARK, (int) template.getValue()));
 				break;
 		}
 		
 		if (_funcTemplates == null)
 		{
-			_funcTemplates = new ArrayList<>(1);
+			_funcTemplates = new ArrayList<>();
 		}
-		_funcTemplates.add(f);
+		_funcTemplates.add(template);
 	}
 	
-	public final void attach(Condition c)
+	public final void attachCondition(Condition c)
 	{
 		if (_preConditions == null)
 		{
-			_preConditions = new ArrayList<>(1);
+			_preConditions = new ArrayList<>();
 		}
-		if (!_preConditions.contains(c))
-		{
-			_preConditions.add(c);
-		}
-	}
-	
-	public boolean hasSkills()
-	{
-		return _skillHolder != null;
+		_preConditions.add(c);
 	}
 	
 	/**
 	 * Method to retrieve skills linked to this item armor and weapon: passive skills etcitem: skills used on item use <-- ???
 	 * @return Skills linked to this item as SkillHolder[]
 	 */
-	public final SkillHolder[] getSkills()
+	public final List<ItemSkillHolder> getAllSkills()
 	{
-		return _skillHolder;
+		return _skills;
 	}
 	
 	/**
-	 * @return skill that activates, when player unequip this weapon or armor
+	 * @param condition
+	 * @return {@code List} of {@link ItemSkillHolder} if item has skills and matches the condition, {@code null} otherwise
 	 */
-	public final Skill getUnequipSkill()
+	public final List<ItemSkillHolder> getSkills(Predicate<ItemSkillHolder> condition)
 	{
-		return _unequipSkill == null ? null : _unequipSkill.getSkill();
+		return _skills != null ? _skills.stream().filter(condition).collect(Collectors.toList()) : null;
+	}
+	
+	/**
+	 * @param type
+	 * @return {@code List} of {@link ItemSkillHolder} if item has skills, {@code null} otherwise
+	 */
+	public final List<ItemSkillHolder> getSkills(ItemSkillType type)
+	{
+		return _skills != null ? _skills.stream().filter(sk -> sk.getType() == type).collect(Collectors.toList()) : null;
+	}
+	
+	/**
+	 * Executes the action on each item skill with the specified type (If there are skills at all)
+	 * @param type
+	 * @param action
+	 */
+	public final void forEachSkill(ItemSkillType type, Consumer<ItemSkillHolder> action)
+	{
+		if (_skills != null)
+		{
+			_skills.stream().filter(sk -> sk.getType() == type).forEach(action);
+		}
+	}
+	
+	public void addSkill(ItemSkillHolder holder)
+	{
+		if (_skills == null)
+		{
+			_skills = new ArrayList<>();
+		}
+		_skills.add(holder);
 	}
 	
 	public boolean checkCondition(Creature activeChar, WorldObject object, boolean sendMessage)
@@ -977,8 +933,10 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 		return getItemType() == EtcItemType.PET_COLLAR;
 	}
 	
-	public Skill getEnchant4Skill()
+	/**
+	 * @param extractableProduct
+	 */
+	public void addCapsuledItem(ExtractableProduct extractableProduct)
 	{
-		return null;
 	}
 }

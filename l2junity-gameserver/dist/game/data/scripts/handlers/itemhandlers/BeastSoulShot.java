@@ -21,12 +21,13 @@ package handlers.itemhandlers;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -70,7 +71,7 @@ public class BeastSoulShot implements IItemHandler
 		
 		final int itemId = item.getId();
 		final long shotCount = item.getCount();
-		final SkillHolder[] skills = item.getItem().getSkills();
+		final List<ItemSkillHolder> skills = item.getItem().getSkills(ItemSkillType.NORMAL);
 		short shotConsumption = 0;
 		
 		if (pet != null)
@@ -122,7 +123,7 @@ public class BeastSoulShot implements IItemHandler
 			if (!pet.isChargedShot(ShotType.SOULSHOTS))
 			{
 				pet.setChargedShot(ShotType.SOULSHOTS, true);
-				Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(pet, pet, skills[0].getSkillId(), skills[0].getSkillLvl(), 0, 0), 600);
+				skills.forEach(holder -> Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(pet, pet, holder.getSkillId(), holder.getSkillLvl(), 0, 0), 600));
 			}
 		}
 		
@@ -131,7 +132,7 @@ public class BeastSoulShot implements IItemHandler
 			if (!s.isChargedShot(ShotType.SOULSHOTS))
 			{
 				s.setChargedShot(ShotType.SOULSHOTS, true);
-				Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(s, s, skills[0].getSkillId(), skills[0].getSkillLvl(), 0, 0), 600);
+				skills.forEach(holder -> Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(pet, pet, holder.getSkillId(), holder.getSkillLvl(), 0, 0), 600));
 			}
 		});
 		return true;

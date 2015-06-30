@@ -18,11 +18,14 @@
  */
 package handlers.itemhandlers;
 
+import java.util.List;
+
+import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.ActionType;
@@ -44,15 +47,14 @@ public class SpiritShot implements IItemHandler
 		final PlayerInstance activeChar = (PlayerInstance) playable;
 		final ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 		final Weapon weaponItem = activeChar.getActiveWeaponItem();
-		final SkillHolder[] skills = item.getItem().getSkills();
-		
-		int itemId = item.getId();
-		
+		final List<ItemSkillHolder> skills = item.getItem().getSkills(ItemSkillType.NORMAL);
 		if (skills == null)
 		{
 			_log.warn(getClass().getSimpleName() + ": is missing skills!");
 			return false;
 		}
+		
+		final int itemId = item.getId();
 		
 		// Check if Spirit shot can be used
 		if ((weaponInst == null) || (weaponItem.getSpiritShotCount() == 0))
@@ -97,7 +99,7 @@ public class SpiritShot implements IItemHandler
 		
 		// Send message to client
 		activeChar.sendPacket(SystemMessageId.YOUR_SPIRITSHOT_HAS_BEEN_ENABLED);
-		Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, skills[0].getSkillId(), skills[0].getSkillLvl(), 0, 0), 600);
+		skills.forEach(holder -> Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, holder.getSkillId(), holder.getSkillLvl(), 0, 0), 600));
 		return true;
 	}
 }

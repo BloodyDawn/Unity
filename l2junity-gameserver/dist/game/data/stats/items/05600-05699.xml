@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="5600" type="Weapon" name="Meteor Shower">
+	<item id="5600" name="Meteor Shower" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_meteor_shower_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -17,21 +17,22 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="42" />
 		<set name="oncrit_skill" val="3052-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5601" type="Weapon" name="Meteor Shower - Rsk. Haste">
+	<item id="5601" name="Meteor Shower" name_additional="Rsk. Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_meteor_shower_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -49,18 +50,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3056-2" />
+		<skills>
+			<skill id="3056" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5602" type="Weapon" name="Elysian">
+	<item id="5602" name="Elysian" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_elysian_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -77,20 +80,22 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="item_skill" val="3013-3" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
+		<skills>
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5603" type="Weapon" name="Elysian">
+	<item id="5603" name="Elysian" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_elysian_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -108,18 +113,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3057-2" />
+		<skills>
+			<skill id="3057" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5604" type="Weapon" name="Elysian">
+	<item id="5604" name="Elysian" name_additional="Critical Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_elysian_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -136,21 +143,22 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="24" />
 		<set name="oncrit_skill" val="3059-2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5605" type="Weapon" name="Branch of the Mother Tree">
+	<item id="5605" name="Branch of the Mother Tree" name_additional="Conversion" type="Weapon">
 		<set name="icon" val="icon.weapon_worldtrees_branch_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -169,18 +177,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3048-2" />
+		<skills>
+			<skill id="3048" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="226" />
 			<set stat="mAtk" val="167" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5606" type="Weapon" name="Branch of the Mother Tree">
+	<item id="5606" name="Branch of the Mother Tree" name_additional="Magic Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_worldtrees_branch_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -198,21 +208,22 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="30" />
 		<set name="onmagic_skill" val="3049-2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="226" />
 			<set stat="mAtk" val="167" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5607" type="Weapon" name="Branch of the Mother Tree">
+	<item id="5607" name="Branch of the Mother Tree" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_worldtrees_branch_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -231,18 +242,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3047-2" />
+		<skills>
+			<skill id="3047" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="226" />
 			<set stat="mAtk" val="167" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5608" type="Weapon" name="Carnage Bow">
+	<item id="5608" name="Carnage Bow" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_carnium_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -263,18 +276,21 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1;3498-1" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3498" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="440" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5609" type="Weapon" name="Carnage Bow">
+	<item id="5609" name="Carnage Bow" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_carnium_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -294,21 +310,22 @@
 		<set name="mp_consume" val="4" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
-		<set name="oncrit_chance" val="35" />
 		<set name="oncrit_skill" val="3053-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="440" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5610" type="Weapon" name="Carnage Bow">
+	<item id="5610" name="Carnage Bow" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_carnium_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -329,18 +346,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3014-2" />
+		<skills>
+			<skill id="3014" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="440" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5611" type="Weapon" name="Soul Bow">
+	<item id="5611" name="Soul Bow" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -360,20 +379,22 @@
 		<set name="mp_consume" val="5" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="820" />
-		<set name="item_skill" val="3552-1" />
 		<set name="is_freightable" val="false" />
 		<set name="reduced_mp_consume" val="38,2" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="528" />
 			<set stat="mAtk" val="125" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="227" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5612" type="Weapon" name="Soul Bow">
+	<item id="5612" name="Soul Bow" name_additional="Quick Recovery" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -394,18 +415,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="697" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="528" />
 			<set stat="mAtk" val="125" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="227" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5613" type="Weapon" name="Soul Bow">
+	<item id="5613" name="Soul Bow" name_additional="Critical Poison" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_bow_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -425,21 +448,22 @@
 		<set name="mp_consume" val="5" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="820" />
-		<set name="oncrit_chance" val="18" />
 		<set name="oncrit_skill" val="3062-2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="528" />
 			<set stat="mAtk" val="125" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="227" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5614" type="Weapon" name="Bloody Orchid">
+	<item id="5614" name="Bloody Orchid" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_bloody_orchid_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -457,18 +481,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3051-1" />
+		<skills>
+			<skill id="3051" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5615" type="Weapon" name="Bloody Orchid">
+	<item id="5615" name="Bloody Orchid" name_additional="Back Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_bloody_orchid_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -486,18 +512,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3063-1" />
+		<skills>
+			<skill id="3063" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5616" type="Weapon" name="Bloody Orchid">
+	<item id="5616" name="Bloody Orchid" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_bloody_orchid_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -514,21 +542,22 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="12" />
 		<set name="oncrit_skill" val="3054-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5617" type="Weapon" name="Soul Separator">
+	<item id="5617" name="Soul Separator" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_separator_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -546,18 +575,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3064-1" />
+		<skills>
+			<skill id="3064" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="203" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5618" type="Weapon" name="Soul Separator">
+	<item id="5618" name="Soul Separator" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_separator_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -575,18 +606,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3066-2" />
+		<skills>
+			<skill id="3066" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="203" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5619" type="Weapon" name="Soul Separator - Rsk. Haste">
+	<item id="5619" name="Soul Separator" name_additional="Rsk. Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_separator_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -604,18 +637,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3056-2" />
+		<skills>
+			<skill id="3056" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="203" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5620" type="Weapon" name="Blood Tornado">
+	<item id="5620" name="Blood Tornado" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_blood_tornado_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -633,18 +668,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3068-2" />
+		<skills>
+			<skill id="3068" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5621" type="Weapon" name="Blood Tornado">
+	<item id="5621" name="Blood Tornado" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_blood_tornado_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -662,18 +699,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3050-1" />
+		<skills>
+			<skill id="3050" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5622" type="Weapon" name="Blood Tornado">
+	<item id="5622" name="Blood Tornado" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_blood_tornado_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -691,18 +730,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3058-1" />
+		<skills>
+			<skill id="3058" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5623" type="Weapon" name="Dragon Grinder - Rsk. Evasion">
+	<item id="5623" name="Dragon Grinder" name_additional="Rsk. Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_grinder_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -720,18 +761,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3069-1" />
+		<skills>
+			<skill id="3069" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5624" type="Weapon" name="Dragon Grinder">
+	<item id="5624" name="Dragon Grinder" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_grinder_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -749,18 +792,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3065-1" />
+		<skills>
+			<skill id="3065" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5625" type="Weapon" name="Dragon Grinder">
+	<item id="5625" name="Dragon Grinder" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_grinder_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -777,20 +822,22 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="item_skill" val="3013-3" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FIST_WEAPON" />
+		<skills>
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5626" type="Weapon" name="Halberd">
+	<item id="5626" name="Halberd" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_halbard_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -808,18 +855,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3601-7" />
+		<skills>
+			<skill id="3601" level="7" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5627" type="Weapon" name="Halberd">
+	<item id="5627" name="Halberd" name_additional="Critical Stun" type="Weapon">
 		<set name="icon" val="icon.weapon_halbard_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -836,21 +885,22 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="25" />
 		<set name="oncrit_skill" val="3070-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-2" />
+		<skills>
+			<skill id="3552" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5628" type="Weapon" name="Halberd">
+	<item id="5628" name="Halberd" name_additional="Wide Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_halbard_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -868,18 +918,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-2" />
+		<skills>
+			<skill id="3552" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5629" type="Weapon" name="Orcish Halberd">
+	<item id="5629" name="Orcish Halberd" type="Weapon">
 		<set name="icon" val="icon.weapon_orcish_halbard_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -897,18 +949,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="219" />
 			<set stat="mAtk" val="109" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5630" type="Weapon" name="Orcish Halberd">
+	<item id="5630" name="Orcish Halberd" type="Weapon">
 		<set name="icon" val="icon.weapon_orcish_halbard_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -926,18 +980,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="219" />
 			<set stat="mAtk" val="109" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5631" type="Weapon" name="Orcish Halberd">
+	<item id="5631" name="Orcish Halberd" type="Weapon">
 		<set name="icon" val="icon.weapon_orcish_halbard_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -955,18 +1011,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="219" />
 			<set stat="mAtk" val="109" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5632" type="Weapon" name="Tallum Glaive">
+	<item id="5632" name="Tallum Glaive" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_glaive_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -984,18 +1042,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3602-8" />
+		<skills>
+			<skill id="3602" level="8" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5633" type="Weapon" name="Tallum Glaive">
+	<item id="5633" name="Tallum Glaive" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_glaive_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -1013,18 +1073,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-4" />
+		<skills>
+			<skill id="3013" level="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5634" type="Weapon" name="Tallum Glaive">
+	<item id="5634" name="Tallum Glaive" name_additional="Wide Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_glaive_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -1042,18 +1104,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-2" />
+		<skills>
+			<skill id="3552" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5635" type="Weapon" name="Tallum Blade">
+	<item id="5635" name="Tallum Blade" name_additional="Critical Poison" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1071,20 +1135,21 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="10" />
 		<set name="oncrit_skill" val="3061-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5636" type="Weapon" name="Tallum Blade">
+	<item id="5636" name="Tallum Blade" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1103,17 +1168,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3068-2" />
+		<skills>
+			<skill id="3068" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5637" type="Weapon" name="Tallum Blade">
+	<item id="5637" name="Tallum Blade" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_blade_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1132,17 +1199,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3057-1" />
+		<skills>
+			<skill id="3057" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5638" type="Weapon" name="Elemental Sword - M. Atk.">
+	<item id="5638" name="Elemental Sword" name_additional="M. Atk." type="Weapon">
 		<set name="icon" val="icon.weapon_elemental_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1161,17 +1230,19 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3073-1" />
+		<skills>
+			<skill id="3073" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="143" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5639" type="Weapon" name="Elemental Sword">
+	<item id="5639" name="Elemental Sword" name_additional="Magic Paralyze" type="Weapon">
 		<set name="icon" val="icon.weapon_elemental_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1189,20 +1260,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="5" />
 		<set name="onmagic_skill" val="3075-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="143" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5640" type="Weapon" name="Elemental Sword">
+	<item id="5640" name="Elemental Sword" name_additional="Empower" type="Weapon">
 		<set name="icon" val="icon.weapon_elemental_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1221,17 +1293,19 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3072-1" />
+		<skills>
+			<skill id="3072" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="143" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5641" type="Weapon" name="Sword of Miracles - M. Atk.">
+	<item id="5641" name="Sword of Miracles" name_additional="M. Atk." type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_miracle_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1250,17 +1324,19 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3073-2" />
+		<skills>
+			<skill id="3073" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
 			<set stat="mAtk" val="152" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5642" type="Weapon" name="Sword of Miracles">
+	<item id="5642" name="Sword of Miracles" name_additional="Magic Silence" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_miracle_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1278,20 +1354,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="10" />
 		<set name="onmagic_skill" val="3074-2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
 			<set stat="mAtk" val="152" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5643" type="Weapon" name="Sword of Miracles">
+	<item id="5643" name="Sword of Miracles" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_miracle_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1309,19 +1386,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="item_skill" val="3047-2" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
+		<skills>
+			<skill id="3047" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
 			<set stat="mAtk" val="152" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5644" type="Weapon" name="Dragon Slayer">
+	<item id="5644" name="Dragon Slayer" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_slayer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1340,17 +1419,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3013-3" />
+		<skills>
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5645" type="Weapon" name="Dragon Slayer">
+	<item id="5645" name="Dragon Slayer" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_slayer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1368,20 +1449,21 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="24" />
 		<set name="oncrit_skill" val="3055-2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5646" type="Weapon" name="Dragon Slayer">
+	<item id="5646" name="Dragon Slayer" name_additional="Critical Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_slayer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1399,20 +1481,21 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="24" />
 		<set name="oncrit_skill" val="3060-2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5647" type="Weapon" name="Dark Legion's Edge - Critical Damage">
+	<item id="5647" name="Dark Legion's Edge" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_legions_edge_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1431,17 +1514,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3067-2" />
+		<skills>
+			<skill id="3067" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5648" type="Weapon" name="Dark Legion's Edge - Health">
+	<item id="5648" name="Dark Legion's Edge" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_legions_edge_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1459,19 +1544,21 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="item_skill" val="3013-3" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
+		<skills>
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5649" type="Weapon" name="Dark Legion's Edge - Rsk. Focus">
+	<item id="5649" name="Dark Legion's Edge" name_additional="Rsk. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_legions_edge_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1490,17 +1577,19 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3071-2" />
+		<skills>
+			<skill id="3071" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="5650" type="EtcItem" name="Seed: Alternative Dark Coda">
+	<item id="5650" name="Seed: Alternative Dark Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1509,11 +1598,12 @@
 		<set name="price" val="5" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-1" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
-	<item id="5651" type="EtcItem" name="Seed: Alternative Red Coda">
+	<item id="5651" name="Seed: Alternative Red Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1522,11 +1612,12 @@
 		<set name="price" val="5" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-1" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
-	<item id="5652" type="EtcItem" name="Seed: Alternative Chilly Coda">
+	<item id="5652" name="Seed: Alternative Chilly Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1535,11 +1626,12 @@
 		<set name="price" val="5" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-1" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
-	<item id="5653" type="EtcItem" name="Seed: Alternative Blue Coda">
+	<item id="5653" name="Seed: Alternative Blue Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1548,11 +1640,12 @@
 		<set name="price" val="10" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-1" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
-	<item id="5654" type="EtcItem" name="Seed: Alternative Golden Coda">
+	<item id="5654" name="Seed: Alternative Golden Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1561,11 +1654,12 @@
 		<set name="price" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-1" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
-	<item id="5655" type="EtcItem" name="Seed: Alternative Lute Coda">
+	<item id="5655" name="Seed: Alternative Lute Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1574,11 +1668,12 @@
 		<set name="price" val="30" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-1" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
-	<item id="5656" type="EtcItem" name="Seed: Alternative Desert Coda">
+	<item id="5656" name="Seed: Alternative Desert Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1587,11 +1682,12 @@
 		<set name="price" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-1" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
-	<item id="5657" type="EtcItem" name="Seed: Alternative Blue Cobol">
+	<item id="5657" name="Seed: Alternative Blue Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1600,11 +1696,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5658" type="EtcItem" name="Seed: Alternative Blue Coda">
+	<item id="5658" name="Seed: Alternative Blue Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1613,11 +1710,12 @@
 		<set name="price" val="10" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-1" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
-	<item id="5659" type="EtcItem" name="Seed: Alternative Golden Coda">
+	<item id="5659" name="Seed: Alternative Golden Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1626,11 +1724,12 @@
 		<set name="price" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-1" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
-	<item id="5660" type="EtcItem" name="Seed: Alternative Lute Coda">
+	<item id="5660" name="Seed: Alternative Lute Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1639,11 +1738,12 @@
 		<set name="price" val="30" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-1" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
-	<item id="5661" type="EtcItem" name="Seed: Alternative Desert Coda">
+	<item id="5661" name="Seed: Alternative Desert Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1652,11 +1752,12 @@
 		<set name="price" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-1" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
-	<item id="5662" type="EtcItem" name="Seed: Alternative Red Cobol">
+	<item id="5662" name="Seed: Alternative Red Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1665,11 +1766,12 @@
 		<set name="price" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5663" type="EtcItem" name="Seed: Alternative Chilly Cobol">
+	<item id="5663" name="Seed: Alternative Chilly Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1678,11 +1780,12 @@
 		<set name="price" val="25" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5664" type="EtcItem" name="Seed: Alternative Thorn Cobol">
+	<item id="5664" name="Seed: Alternative Thorn Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1691,11 +1794,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5665" type="EtcItem" name="Seed: Alternative Golden Cobol">
+	<item id="5665" name="Seed: Alternative Golden Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1704,11 +1808,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5666" type="EtcItem" name="Seed: Alternative Great Cobol">
+	<item id="5666" name="Seed: Alternative Great Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1717,11 +1822,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5667" type="EtcItem" name="Seed: Alternative Red Cobol">
+	<item id="5667" name="Seed: Alternative Red Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1730,11 +1836,12 @@
 		<set name="price" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5668" type="EtcItem" name="Seed: Alternative Chilly Cobol">
+	<item id="5668" name="Seed: Alternative Chilly Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1743,11 +1850,12 @@
 		<set name="price" val="25" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5669" type="EtcItem" name="Seed: Alternative Blue Cobol">
+	<item id="5669" name="Seed: Alternative Blue Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1756,11 +1864,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5670" type="EtcItem" name="Seed: Alternative Thorn Cobol">
+	<item id="5670" name="Seed: Alternative Thorn Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1769,11 +1878,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5671" type="EtcItem" name="Seed: Alternative Golden Cobol">
+	<item id="5671" name="Seed: Alternative Golden Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1782,11 +1892,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5672" type="EtcItem" name="Seed: Alternative Great Cobol">
+	<item id="5672" name="Seed: Alternative Great Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1795,11 +1906,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5673" type="EtcItem" name="Seed: Alternative Red Codran">
+	<item id="5673" name="Seed: Alternative Red Codran" type="EtcItem">
 		<set name="icon" val="icon.etc_codran_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1808,11 +1920,12 @@
 		<set name="price" val="40" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-3" />
+		<skills>
+			<skill id="2097" level="3" />
+		</skills>
 	</item>
-	<item id="5674" type="EtcItem" name="Seed: Alternative Twin Codran">
+	<item id="5674" name="Seed: Alternative Twin Codran" type="EtcItem">
 		<set name="icon" val="icon.etc_codran_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1821,11 +1934,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-3" />
+		<skills>
+			<skill id="2097" level="3" />
+		</skills>
 	</item>
-	<item id="5675" type="EtcItem" name="Seed: Alternative Desert Codran">
+	<item id="5675" name="Seed: Alternative Desert Codran" type="EtcItem">
 		<set name="icon" val="icon.etc_codran_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1834,11 +1948,12 @@
 		<set name="price" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-3" />
+		<skills>
+			<skill id="2097" level="3" />
+		</skills>
 	</item>
-	<item id="5676" type="EtcItem" name="Seed: Alternative Dark Coda">
+	<item id="5676" name="Seed: Alternative Dark Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1847,11 +1962,12 @@
 		<set name="price" val="5" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-1" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
-	<item id="5677" type="EtcItem" name="Seed: Alternative Red Coda">
+	<item id="5677" name="Seed: Alternative Red Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1860,11 +1976,12 @@
 		<set name="price" val="5" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-1" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
-	<item id="5678" type="EtcItem" name="Seed: Alternative Blue Coda">
+	<item id="5678" name="Seed: Alternative Blue Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1873,11 +1990,12 @@
 		<set name="price" val="10" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-1" />
+		<skills>
+			<skill id="2097" level="1" />
+		</skills>
 	</item>
-	<item id="5679" type="EtcItem" name="Seed: Alternative Red Cobol">
+	<item id="5679" name="Seed: Alternative Red Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1886,11 +2004,12 @@
 		<set name="price" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5680" type="EtcItem" name="Seed: Alternative Chilly Cobol">
+	<item id="5680" name="Seed: Alternative Chilly Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1899,11 +2018,12 @@
 		<set name="price" val="25" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5681" type="EtcItem" name="Seed: Alternative Blue Cobol">
+	<item id="5681" name="Seed: Alternative Blue Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1912,11 +2032,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5682" type="EtcItem" name="Seed: Alternative Thorn Cobol">
+	<item id="5682" name="Seed: Alternative Thorn Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1925,11 +2046,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5683" type="EtcItem" name="Seed: Alternative Sea Codran">
+	<item id="5683" name="Seed: Alternative Sea Codran" type="EtcItem">
 		<set name="icon" val="icon.etc_codran_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1938,11 +2060,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-3" />
+		<skills>
+			<skill id="2097" level="3" />
+		</skills>
 	</item>
-	<item id="5684" type="EtcItem" name="Seed: Alternative Chilly Codran">
+	<item id="5684" name="Seed: Alternative Chilly Codran" type="EtcItem">
 		<set name="icon" val="icon.etc_codran_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1951,11 +2074,12 @@
 		<set name="price" val="40" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-3" />
+		<skills>
+			<skill id="2097" level="3" />
+		</skills>
 	</item>
-	<item id="5685" type="EtcItem" name="Seed: Alternative Blue Codran">
+	<item id="5685" name="Seed: Alternative Blue Codran" type="EtcItem">
 		<set name="icon" val="icon.etc_codran_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1964,11 +2088,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-3" />
+		<skills>
+			<skill id="2097" level="3" />
+		</skills>
 	</item>
-	<item id="5686" type="EtcItem" name="Seed: Alternative Twin Codran">
+	<item id="5686" name="Seed: Alternative Twin Codran" type="EtcItem">
 		<set name="icon" val="icon.etc_codran_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1977,11 +2102,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-3" />
+		<skills>
+			<skill id="2097" level="3" />
+		</skills>
 	</item>
-	<item id="5687" type="EtcItem" name="Seed: Alternative Thorn Cobol">
+	<item id="5687" name="Seed: Alternative Thorn Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -1990,11 +2116,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5688" type="EtcItem" name="Seed: Alternative Golden Cobol">
+	<item id="5688" name="Seed: Alternative Golden Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -2003,11 +2130,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5689" type="EtcItem" name="Seed: Alternative Great Cobol">
+	<item id="5689" name="Seed: Alternative Great Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -2016,11 +2144,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5690" type="EtcItem" name="Seed: Alternative Red Codran">
+	<item id="5690" name="Seed: Alternative Red Codran" type="EtcItem">
 		<set name="icon" val="icon.etc_codran_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -2029,11 +2158,12 @@
 		<set name="price" val="40" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-3" />
+		<skills>
+			<skill id="2097" level="3" />
+		</skills>
 	</item>
-	<item id="5691" type="EtcItem" name="Seed: Alternative Chilly Codran">
+	<item id="5691" name="Seed: Alternative Chilly Codran" type="EtcItem">
 		<set name="icon" val="icon.etc_codran_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -2042,11 +2172,12 @@
 		<set name="price" val="40" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-3" />
+		<skills>
+			<skill id="2097" level="3" />
+		</skills>
 	</item>
-	<item id="5692" type="EtcItem" name="Seed: Alternative Blue Codran">
+	<item id="5692" name="Seed: Alternative Blue Codran" type="EtcItem">
 		<set name="icon" val="icon.etc_codran_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -2055,11 +2186,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-3" />
+		<skills>
+			<skill id="2097" level="3" />
+		</skills>
 	</item>
-	<item id="5693" type="EtcItem" name="Seed: Alternative Twin Codran">
+	<item id="5693" name="Seed: Alternative Twin Codran" type="EtcItem">
 		<set name="icon" val="icon.etc_codran_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -2068,11 +2200,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-3" />
+		<skills>
+			<skill id="2097" level="3" />
+		</skills>
 	</item>
-	<item id="5694" type="EtcItem" name="Seed: Alternative Great Codran">
+	<item id="5694" name="Seed: Alternative Great Codran" type="EtcItem">
 		<set name="icon" val="icon.etc_codran_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -2081,11 +2214,12 @@
 		<set name="price" val="75" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-3" />
+		<skills>
+			<skill id="2097" level="3" />
+		</skills>
 	</item>
-	<item id="5695" type="EtcItem" name="Seed: Alternative Desert Codran">
+	<item id="5695" name="Seed: Alternative Desert Codran" type="EtcItem">
 		<set name="icon" val="icon.etc_codran_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -2094,11 +2228,12 @@
 		<set name="price" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-3" />
+		<skills>
+			<skill id="2097" level="3" />
+		</skills>
 	</item>
-	<item id="5696" type="EtcItem" name="Seed: Alternative Chilly Cobol">
+	<item id="5696" name="Seed: Alternative Chilly Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -2107,11 +2242,12 @@
 		<set name="price" val="25" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5697" type="EtcItem" name="Seed: Alternative Blue Cobol">
+	<item id="5697" name="Seed: Alternative Blue Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -2120,11 +2256,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5698" type="EtcItem" name="Seed: Alternative Thorn Cobol">
+	<item id="5698" name="Seed: Alternative Thorn Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -2133,11 +2270,12 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
-	<item id="5699" type="EtcItem" name="Seed: Alternative Golden Cobol">
+	<item id="5699" name="Seed: Alternative Golden Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
 		<set name="default_action" val="SEED" />
 		<set name="etcitem_type" val="SEED2" />
@@ -2146,8 +2284,9 @@
 		<set name="price" val="50" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2097-2" />
+		<skills>
+			<skill id="2097" level="2" />
+		</skills>
 	</item>
 </list>

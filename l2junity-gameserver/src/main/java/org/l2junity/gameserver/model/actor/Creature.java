@@ -58,6 +58,7 @@ import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.InstanceType;
+import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.enums.Team;
@@ -2100,28 +2101,25 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		
 		// Check if the caster's weapon is limited to use only its own skills
-		if (getActiveWeaponItem() != null)
+		final Weapon weapon = getActiveWeaponItem();
+		if ((weapon != null) && weapon.useWeaponSkillsOnly() && !isGM() && (weapon.getSkills(ItemSkillType.NORMAL) != null))
 		{
-			Weapon wep = getActiveWeaponItem();
-			if (wep.useWeaponSkillsOnly() && !isGM() && wep.hasSkills())
+			boolean found = false;
+			for (SkillHolder sh : weapon.getSkills(ItemSkillType.NORMAL))
 			{
-				boolean found = false;
-				for (SkillHolder sh : wep.getSkills())
+				if (sh.getSkillId() == skill.getId())
 				{
-					if (sh.getSkillId() == skill.getId())
-					{
-						found = true;
-					}
+					found = true;
 				}
-				
-				if (!found)
+			}
+			
+			if (!found)
+			{
+				if (getActingPlayer() != null)
 				{
-					if (getActingPlayer() != null)
-					{
-						sendPacket(SystemMessageId.THAT_WEAPON_CANNOT_USE_ANY_OTHER_SKILL_EXCEPT_THE_WEAPON_S_SKILL);
-					}
-					return false;
+					sendPacket(SystemMessageId.THAT_WEAPON_CANNOT_USE_ANY_OTHER_SKILL_EXCEPT_THE_WEAPON_S_SKILL);
 				}
+				return false;
 			}
 		}
 		
@@ -4989,7 +4987,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Launch weapon Special ability effect if available
 			if (crit && (weapon != null))
 			{
-				weapon.castOnCriticalSkill(this, target);
+				weapon.applyConditionalSkills(this, target, null, ItemSkillType.ON_CRITICAL_SKILL);
 			}
 		}
 		
@@ -5785,7 +5783,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					// Launch weapon Special ability skill effect if available
 					if ((activeWeapon != null) && !target.isDead())
 					{
-						activeWeapon.castOnMagicSkill(this, target, skill);
+						activeWeapon.applyConditionalSkills(this, target, skill, ItemSkillType.ON_MAGIC_SKILL);
 					}
 					
 					if (_triggerSkills != null)
@@ -5883,7 +5881,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				// Mobs in range 1000 see spell
 				World.getInstance().forEachVisibleObjectInRange(player, Npc.class, 1000, npcMob ->
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee(npcMob, player, skill, targets, isSummon()), npcMob);
+					EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee(npcMob, player, skill, isSummon(), targets), npcMob);
 					
 					// On Skill See logic
 					if (npcMob.isAttackable())
@@ -6843,7 +6841,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public final Collection<Npc> getSummonedNpcs()
 	{
-		return _summonedNpcs != null ? _summonedNpcs.values() : Collections.<Npc> emptyList();
+		return _summonedNpcs != null ? _summonedNpcs.values() : Collections.emptyList();
 	}
 	
 	/**

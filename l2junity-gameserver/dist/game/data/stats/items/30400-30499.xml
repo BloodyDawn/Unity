@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="30400" name="Infinity Buster" additionalName="" type="Weapon">
+	<item id="30400" name="Infinity Buster" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Casting Spd. and M. Atk. Cannot be transferred between servers. -->
 		<set name="icon" val="icon.weapon_infinity_sword_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -27,7 +27,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30401" name="Infinity Caster" additionalName="" type="Weapon">
+	<item id="30401" name="Infinity Caster" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Casting Spd. and M. Atk. Cannot be transferred between servers. -->
 		<set name="icon" val="icon.weapon_the_mace_of_hero_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -55,7 +55,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30402" name="Infinity Retributer" additionalName="" type="Weapon">
+	<item id="30402" name="Infinity Retributer" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Casting Spd. and M. Atk. Cannot be transferred between servers. -->
 		<set name="icon" val="icon.weapon_the_staff_of_hero_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -84,7 +84,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30403" name="Infinity Dualsword" additionalName="" type="Weapon">
+	<item id="30403" name="Infinity Dualsword" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
 		<set name="icon" val="icon.weapon_r_dualsword_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -111,7 +111,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30404" name="Infinity Dual Dagger" additionalName="" type="Weapon">
+	<item id="30404" name="Infinity Dual Dagger" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
 		<set name="icon" val="icon.weapon_r_dualdagger_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -138,7 +138,7 @@
 			<set stat="rCrit" val="12.0" />
 		</for>
 	</item>
-	<item id="30405" name="Infinity Dual Blunt Weapon" additionalName="" type="Weapon">
+	<item id="30405" name="Infinity Dual Blunt Weapon" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
 		<set name="icon" val="icon.weapon_r_dualblunt_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -166,9 +166,8 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30406" name="Internal test type stone Pack" additionalName="" type="EtcItem">
+	<item id="30406" name="Internal test type stone Pack" type="EtcItem">
 		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -180,9 +179,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="30407" name="Internal test type crystal Pack" additionalName="" type="EtcItem">
+	<item id="30407" name="Internal test type crystal Pack" type="EtcItem">
 		<set name="icon" val="icon.event_hero_treasure_box_i00" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -194,35 +192,32 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="30408" name="Dual Weapon Crafting Stamp (R-grade)" additionalName="" type="EtcItem">
+	<item id="30408" name="Dual Weapon Crafting Stamp (R-grade)" type="EtcItem">
 		<!-- Used during R-grade Dual Weapon (Dualswords, Dual Daggers, 2-H Blunt Weapons) crafting. -->
 		<set name="icon" val="icon.etc_letter_blue_i00" />
 		<set name="weight" val="20" />
 		<set name="price" val="3000000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
-	<item id="30409" name="Dual Weapon Crafting Stamp (R95-grade)" additionalName="" type="EtcItem">
+	<item id="30409" name="Dual Weapon Crafting Stamp (R95-grade)" type="EtcItem">
 		<!-- Used during R95-grade Dual Weapon (Dualswords, Dual Daggers, 2-H Blunt Weapons) crafting. -->
 		<set name="icon" val="icon.etc_letter_blue_i00" />
 		<set name="weight" val="20" />
 		<set name="price" val="33539500" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="30410" name="Dual Weapon Crafting Stamp (R99-grade)" additionalName="" type="EtcItem">
+	<item id="30410" name="Dual Weapon Crafting Stamp (R99-grade)" type="EtcItem">
 		<!-- Used during R99-grade Dual Weapon (Dualswords, Dual Daggers, 2-H Blunt Weapons) crafting. -->
 		<set name="icon" val="icon.etc_letter_blue_i00" />
 		<set name="weight" val="20" />
 		<set name="price" val="87400500" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="30411" name="Talisman (R-grade) - Knock Back Resistance (Passive)" additionalName="" type="Armor">
+	<item id="30411" name="Talisman (R-grade) - Knock Back Resistance (Passive)" type="Armor">
 		<!-- Increases Knock Back Resistance when equipped. Shadow item. -->
 		<set name="icon" val="icon.r85_talisman_md_up_passive" />
 		<set name="default_action" val="EQUIP" />
@@ -235,7 +230,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
 	</item>
-	<item id="30412" name="Talisman (R-grade) - Knock Down Resistance (Passive)" additionalName="" type="Armor">
+	<item id="30412" name="Talisman (R-grade) - Knock Down Resistance (Passive)" type="Armor">
 		<!-- Increases Knock Down Resistance when equipped. Shadow item. -->
 		<set name="icon" val="icon.r85_talisman_md_up_passive" />
 		<set name="default_action" val="EQUIP" />
@@ -248,7 +243,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
 	</item>
-	<item id="30413" name="Talisman (R-grade) - Binding Resistance (Passive)" additionalName="" type="Armor">
+	<item id="30413" name="Talisman (R-grade) - Binding Resistance (Passive)" type="Armor">
 		<!-- Increases resistance to binding when equipped. Shadow item. -->
 		<set name="icon" val="icon.r85_talisman_md_up_passive" />
 		<set name="default_action" val="EQUIP" />
@@ -261,7 +256,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
 	</item>
-	<item id="30414" name="Talisman (R-grade) - Pulling Resistance (Passive)" additionalName="" type="Armor">
+	<item id="30414" name="Talisman (R-grade) - Pulling Resistance (Passive)" type="Armor">
 		<!-- Increases resistance to pulling when equipped. Shadow item. -->
 		<set name="icon" val="icon.r85_talisman_md_up_passive" />
 		<set name="default_action" val="EQUIP" />
@@ -274,7 +269,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
 	</item>
-	<item id="30415" name="Talisman (R-grade) - Banishment Resistance (Passive)" additionalName="" type="Armor">
+	<item id="30415" name="Talisman (R-grade) - Banishment Resistance (Passive)" type="Armor">
 		<!-- Increases resistance to banishment when equipped. Shadow item. -->
 		<set name="icon" val="icon.r85_talisman_md_up_passive" />
 		<set name="default_action" val="EQUIP" />
@@ -287,7 +282,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
 	</item>
-	<item id="30416" name="Talisman (R-grade) - Mutation Resistance (Passive)" additionalName="" type="Armor">
+	<item id="30416" name="Talisman (R-grade) - Mutation Resistance (Passive)" type="Armor">
 		<!-- Increases resistance to mutation when equipped. Shadow item. -->
 		<set name="icon" val="icon.r85_talisman_md_up_passive" />
 		<set name="default_action" val="EQUIP" />
@@ -300,7 +295,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
 	</item>
-	<item id="30417" name="Talisman (R-grade) - Knock Back Resistance (Passive)" additionalName="" type="Armor">
+	<item id="30417" name="Talisman (R-grade) - Knock Back Resistance (Passive)" type="Armor">
 		<!-- Increases Knock Back Resistance when equipped. Shadow item. -->
 		<set name="icon" val="icon.r85_talisman_md_up_passive" />
 		<set name="default_action" val="EQUIP" />
@@ -313,7 +308,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
 	</item>
-	<item id="30418" name="Talisman (R-grade) - Knock Down Resistance (Passive)" additionalName="" type="Armor">
+	<item id="30418" name="Talisman (R-grade) - Knock Down Resistance (Passive)" type="Armor">
 		<!-- Increases Knock Down Resistance when equipped. Shadow item. -->
 		<set name="icon" val="icon.r85_talisman_md_up_passive" />
 		<set name="default_action" val="EQUIP" />
@@ -326,7 +321,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
 	</item>
-	<item id="30419" name="Talisman (R-grade) - Binding Resistance (Passive)" additionalName="" type="Armor">
+	<item id="30419" name="Talisman (R-grade) - Binding Resistance (Passive)" type="Armor">
 		<!-- Increases resistance to binding when equipped. Shadow item. -->
 		<set name="icon" val="icon.r85_talisman_md_up_passive" />
 		<set name="default_action" val="EQUIP" />
@@ -339,7 +334,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
 	</item>
-	<item id="30420" name="Talisman (R-grade) - Pulling Resistance (Passive)" additionalName="" type="Armor">
+	<item id="30420" name="Talisman (R-grade) - Pulling Resistance (Passive)" type="Armor">
 		<!-- Increases resistance to pulling when equipped. Shadow item. -->
 		<set name="icon" val="icon.r85_talisman_md_up_passive" />
 		<set name="default_action" val="EQUIP" />
@@ -352,7 +347,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
 	</item>
-	<item id="30421" name="Talisman (R-grade) - Banishment Resistance (Passive)" additionalName="" type="Armor">
+	<item id="30421" name="Talisman (R-grade) - Banishment Resistance (Passive)" type="Armor">
 		<!-- Increases resistance to banishment when equipped. Shadow item. -->
 		<set name="icon" val="icon.r85_talisman_md_up_passive" />
 		<set name="default_action" val="EQUIP" />
@@ -365,7 +360,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
 	</item>
-	<item id="30422" name="Talisman (R-grade) - Mutation Resistance (Passive)" additionalName="" type="Armor">
+	<item id="30422" name="Talisman (R-grade) - Mutation Resistance (Passive)" type="Armor">
 		<!-- Increases resistance to mutation when equipped. Shadow item. -->
 		<set name="icon" val="icon.r85_talisman_md_up_passive" />
 		<set name="default_action" val="EQUIP" />
@@ -378,99 +373,88 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
 	</item>
-	<item id="30423" name="Recipe: Soulshot (R-grade)" additionalName="" type="EtcItem">
+	<item id="30423" name="Recipe: Soulshot (R-grade)" type="EtcItem">
 		<!-- For dwarves only. Recipe for Soulshot (R-grade). Requires Create Item - Skill Lv. 11. Success rate is 100%. -->
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="price" val="900000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="RECIPE" />
 	</item>
-	<item id="30424" name="Recipe: Spiritshot (R-grade)" additionalName="" type="EtcItem">
+	<item id="30424" name="Recipe: Spiritshot (R-grade)" type="EtcItem">
 		<!-- For dwarves only. Recipe for Spiritshot (R-grade). Requires Create Item - Skill Lv. 11. Success rate is 100%. -->
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="price" val="900000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="RECIPE" />
 	</item>
-	<item id="30425" name="Recipe: Blessed Spiritshot (R-grade)" additionalName="" type="EtcItem">
+	<item id="30425" name="Recipe: Blessed Spiritshot (R-grade)" type="EtcItem">
 		<!-- For dwarves only. Recipe for Blessed Spiritshot (R-grade). Requires Create Item - Skill Lv. 11. Success rate is 100%. -->
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="price" val="900000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="RECIPE" />
 	</item>
-	<item id="30426" name="Recipe: Elixir of Life (R-grade)" additionalName="" type="EtcItem">
+	<item id="30426" name="Recipe: Elixir of Life (R-grade)" type="EtcItem">
 		<!-- For those who have completed the fourth class transfer only. Recipe for Elixir of Life (R-grade). Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="price" val="6000" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="RECIPE" />
 	</item>
-	<item id="30427" name="Recipe: Elixir of Mind (R-grade)" additionalName="" type="EtcItem">
+	<item id="30427" name="Recipe: Elixir of Mind (R-grade)" type="EtcItem">
 		<!-- For those who have completed the fourth class transfer only. Recipe for Elixir of Mind (R-grade). Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="price" val="6720" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="RECIPE" />
 	</item>
-	<item id="30428" name="Recipe: Elixir of CP (R-grade)" additionalName="" type="EtcItem">
+	<item id="30428" name="Recipe: Elixir of CP (R-grade)" type="EtcItem">
 		<!-- For those who have completed the fourth class transfer only. Recipe for Elixir of CP (R-grade). Requires Create Common Item Skill Lv. 10. Success rate is 100%. -->
 		<set name="icon" val="icon.etc_recipe_gold_i00" />
 		<set name="weight" val="30" />
 		<set name="price" val="2400" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="RECIPE" />
 	</item>
-	<item id="30429" name="Harnak's Seal Key" additionalName="" type="EtcItem">
+	<item id="30429" name="Harnak's Seal Key" type="EtcItem">
 		<!-- Can release Harnak's soul from the seal. -->
 		<set name="icon" val="icon.etc_key_i00" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="30430" name="Harnak's Prison Key" additionalName="" type="EtcItem">
+	<item id="30430" name="Harnak's Prison Key" type="EtcItem">
 		<!-- Can release Harnak's soul from prison. -->
 		<set name="icon" val="icon.etc_key_i00" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="30431" name="Attribute Pack" additionalName="" type="EtcItem">
+	<item id="30431" name="Attribute Pack" type="EtcItem">
 		<!-- Gift received as a campaign reward. -->
 		<set name="icon" val="icon.etc_box_of_adventure_2_i00" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="30432" name="Wig Box" additionalName="" type="EtcItem">
+	<item id="30432" name="Wig Box" type="EtcItem">
 		<!-- Gift received as a campaign reward by top-performers. -->
 		<set name="icon" val="icon.etc_box_of_adventure_5_i00" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="30433" name="Subclass Change Certificate" additionalName="" type="EtcItem">
+	<item id="30433" name="Subclass Change Certificate" type="EtcItem">
 		<!-- Can change your current subclass while keeping the same level. Bring it to Subclass Master Raina in Talking Island Village. Cannot be applied while in Dual Class. -->
 		<set name="icon" val="icon.etc_charm_of_courage_i00" />
 		<set name="weight" val="2" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -481,7 +465,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="30434" name="Bound Boots of Strength" additionalName="" type="Armor">
+	<item id="30434" name="Bound Boots of Strength" type="Armor">
 		<!-- Bound Boots of strength. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t40_b_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -502,7 +486,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30435" name="Bound Black Pearl Ring" additionalName="" type="Armor">
+	<item id="30435" name="Bound Black Pearl Ring" type="Armor">
 		<!-- Bound black pearl Ring. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.accessary_black_pearl_ring_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -523,7 +507,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="30436" name="Bound Black Pearl Ring" additionalName="" type="Armor">
+	<item id="30436" name="Bound Black Pearl Ring" type="Armor">
 		<set name="icon" val="icon.accessary_black_pearl_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -543,7 +527,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="30437" name="Bound Black Ore Ring" additionalName="" type="Armor">
+	<item id="30437" name="Bound Black Ore Ring" type="Armor">
 		<set name="icon" val="icon.accessary_ring_of_black_ore_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -563,7 +547,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="30438" name="Bound Black Ore Necklace" additionalName="" type="Armor">
+	<item id="30438" name="Bound Black Ore Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_necklace_of_black_ore_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -583,7 +567,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="30439" name="Bound Black Ore Earring" additionalName="" type="Armor">
+	<item id="30439" name="Bound Black Ore Earring" type="Armor">
 		<set name="icon" val="icon.accessary_earing_of_black_ore_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -603,7 +587,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="30440" name="Bound Ghost Staff" additionalName="" type="Weapon">
+	<item id="30440" name="Bound Ghost Staff" type="Weapon">
 		<!-- Bound Ghost Staff. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_ghost_staff_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -630,7 +614,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30441" name="Bound Ghost Staff" additionalName="" type="Weapon">
+	<item id="30441" name="Bound Ghost Staff" type="Weapon">
 		<!-- Bound Ghost Staff. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_ghost_staff_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -655,7 +639,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30442" name="Bound Hoplon" additionalName="" type="Weapon">
+	<item id="30442" name="Bound Hoplon" type="Weapon">
 		<!-- Bound Hoplon. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.shield_hoplon_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -676,7 +660,7 @@
 			<add stat="rShld" val="20.0" />
 		</for>
 	</item>
-	<item id="30443" name="Bound Stockings of Zubei" additionalName="" type="Armor">
+	<item id="30443" name="Bound Stockings of Zubei" type="Armor">
 		<set name="icon" val="icon.armor_t56_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
@@ -696,7 +680,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30444" name="Bound Stockings of Doom" additionalName="" type="Armor">
+	<item id="30444" name="Bound Stockings of Doom" type="Armor">
 		<set name="icon" val="icon.armor_t73_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
@@ -716,7 +700,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30445" name="Bound Homunkulus' Sword" additionalName="" type="Weapon">
+	<item id="30445" name="Bound Homunkulus' Sword" type="Weapon">
 		<!-- Bound Homunkulus' Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_homunkuluss_sword_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -742,7 +726,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30446" name="Bound Homunkulus' Sword" additionalName="Acumen" type="Weapon">
+	<item id="30446" name="Bound Homunkulus' Sword" name_additional="Acumen" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. -->
 		<set name="icon" val="icon.weapon_homunkuluss_sword_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -768,7 +752,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30447" name="Bound Homunkulus' Sword" additionalName="Conversion" type="Weapon">
+	<item id="30447" name="Bound Homunkulus' Sword" name_additional="Conversion" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max MP by 60% and decreases Max HP by 40%. -->
 		<set name="icon" val="icon.weapon_homunkuluss_sword_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -794,7 +778,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30448" name="Bound Homunkulus' Sword" additionalName="Magic Paralyze" type="Weapon">
+	<item id="30448" name="Bound Homunkulus' Sword" name_additional="Magic Paralyze" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 5% chance of casting Paralysis on the target during magic use. -->
 		<set name="icon" val="icon.weapon_homunkuluss_sword_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -820,7 +804,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30449" name="Bound Sage's Blood" additionalName="" type="Weapon">
+	<item id="30449" name="Bound Sage's Blood" type="Weapon">
 		<!-- Bound Sage's Blood. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_blood_of_saints_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -845,7 +829,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30450" name="Bound Sage's Staff" additionalName="" type="Weapon">
+	<item id="30450" name="Bound Sage's Staff" type="Weapon">
 		<!-- Bound Sage's Staff. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_sages_staff_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -872,7 +856,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30451" name="Bound Sage's Staff" additionalName="Magic Hold" type="Weapon">
+	<item id="30451" name="Bound Sage's Staff" name_additional="Magic Hold" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 6% chance of casting Dryad Root on the target during magic use. -->
 		<set name="icon" val="icon.weapon_sages_staff_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -899,7 +883,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30452" name="Bound Sage's Staff" additionalName="Magic Poison" type="Weapon">
+	<item id="30452" name="Bound Sage's Staff" name_additional="Magic Poison" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 7% chance of casting Curse Poison on the target during magic use. -->
 		<set name="icon" val="icon.weapon_sages_staff_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -926,7 +910,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30453" name="Bound Sage's Staff" additionalName="Magic Weakness" type="Weapon">
+	<item id="30453" name="Bound Sage's Staff" name_additional="Magic Weakness" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 7% chance of casting Curse Weakness on the target during magic use. -->
 		<set name="icon" val="icon.weapon_sages_staff_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -953,7 +937,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30454" name="Bound Sage's Ring" additionalName="" type="Armor">
+	<item id="30454" name="Bound Sage's Ring" type="Armor">
 		<set name="icon" val="icon.accessary_sages_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -973,7 +957,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="30455" name="Bound Sage's Necklace" additionalName="" type="Armor">
+	<item id="30455" name="Bound Sage's Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_sages_necklace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -993,7 +977,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="30456" name="Bound Sage's Rags" additionalName="" type="Armor">
+	<item id="30456" name="Bound Sage's Rags" type="Armor">
 		<!-- Rags of the Bound sage. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t44_ul_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1014,7 +998,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30457" name="Bound Sage's Worn Gloves" additionalName="" type="Armor">
+	<item id="30457" name="Bound Sage's Worn Gloves" type="Armor">
 		<!-- Bound Sage's worn Gloves Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_t44_g_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1035,7 +1019,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30458" name="Bound Sage's Earring" additionalName="" type="Armor">
+	<item id="30458" name="Bound Sage's Earring" type="Armor">
 		<set name="icon" val="icon.accessary_sages_earing_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -1055,7 +1039,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="30459" name="Bound Sword of Revolution*Sword of Revolution" additionalName="" type="Weapon">
+	<item id="30459" name="Bound Sword of Revolution*Sword of Revolution" type="Weapon">
 		<!-- Bound Sword of Revolution*Sword of Revolution. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1081,7 +1065,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30460" name="Bound Sword of Revolution*Elven Long Sword" additionalName="" type="Weapon">
+	<item id="30460" name="Bound Sword of Revolution*Elven Long Sword" type="Weapon">
 		<!-- Bound Sword of Revolution*Elven Long Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1107,7 +1091,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30461" name="Bound Sword of Revolution" additionalName="" type="Weapon">
+	<item id="30461" name="Bound Sword of Revolution" type="Weapon">
 		<!-- Bound Sword of Revolution. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_sword_of_revolution_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1133,7 +1117,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30462" name="Bound Helmet" additionalName="" type="Armor">
+	<item id="30462" name="Bound Helmet" type="Armor">
 		<!-- Bound Helmet. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.armor_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1154,7 +1138,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="30463" name="Bound Twilight Knife" additionalName="" type="Weapon">
+	<item id="30463" name="Bound Twilight Knife" type="Weapon">
 		<!-- Bound Item.\nBestows one of the following functions: Magic Mental Shield, Magic Weakness or Magic Regeneration. -->
 		<set name="icon" val="icon.weapon_hell_knife_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1180,7 +1164,7 @@
 			<set stat="rCrit" val="12.0" />
 		</for>
 	</item>
-	<item id="30464" name="Bound Twilight Knife" additionalName="Magic Regeneration" type="Weapon">
+	<item id="30464" name="Bound Twilight Knife" name_additional="Magic Regeneration" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nHas a 30% chance of casting Regeneration on the target during magic use. -->
 		<set name="icon" val="icon.weapon_hell_knife_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1206,7 +1190,7 @@
 			<set stat="rCrit" val="12.0" />
 		</for>
 	</item>
-	<item id="30465" name="Bound Twilight Knife" additionalName="Magic Mental Shield" type="Weapon">
+	<item id="30465" name="Bound Twilight Knife" name_additional="Magic Mental Shield" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nHas a 50% chance of casting Mental Shield on the target during magic use. -->
 		<set name="icon" val="icon.weapon_hell_knife_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1232,7 +1216,7 @@
 			<set stat="rCrit" val="12.0" />
 		</for>
 	</item>
-	<item id="30466" name="Bound Twilight Knife" additionalName="Magic Weakness" type="Weapon">
+	<item id="30466" name="Bound Twilight Knife" name_additional="Magic Weakness" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nHas a 7% chance of casting Curse Weakness on the target during magic use. -->
 		<set name="icon" val="icon.weapon_hell_knife_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1258,7 +1242,7 @@
 			<set stat="rCrit" val="12.0" />
 		</for>
 	</item>
-	<item id="30467" name="Bound Hell Hound" additionalName="" type="Weapon">
+	<item id="30467" name="Bound Hell Hound" type="Weapon">
 		<!-- Bound Item.\nKamael-exclusive Weapon: Bow of Peril Conversion\nBestows one of the following functions: Guidance, Quick Recovery or Cheap Shot. -->
 		<set name="icon" val="icon.weapon_hell_hound_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1284,7 +1268,7 @@
 			<set stat="rCrit" val="10.0" />
 		</for>
 	</item>
-	<item id="30468" name="Bound Hell Hound" additionalName="Guidance" type="Weapon">
+	<item id="30468" name="Bound Hell Hound" name_additional="Guidance" type="Weapon">
 		<!-- Bound Item.\nKamael-exclusive Weapon: Bow of Peril Conversion\n(Soul Crystal Enhancement)\nIncreases Accuracy by 3. -->
 		<set name="icon" val="icon.weapon_hell_hound_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1310,7 +1294,7 @@
 			<set stat="rCrit" val="10.0" />
 		</for>
 	</item>
-	<item id="30469" name="Bound Hell Hound" additionalName="Quick Recovery" type="Weapon">
+	<item id="30469" name="Bound Hell Hound" name_additional="Quick Recovery" type="Weapon">
 		<!-- Bound Item.\nKamael-exclusive Weapon: Bow of Peril Conversion\n(Soul Crystal Enhancement)\nIncreases cooldown by about 13%. -->
 		<set name="icon" val="icon.weapon_hell_hound_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1336,7 +1320,7 @@
 			<set stat="rCrit" val="10.0" />
 		</for>
 	</item>
-	<item id="30470" name="Bound Hell Hound" additionalName="Cheap Shot" type="Weapon">
+	<item id="30470" name="Bound Hell Hound" name_additional="Cheap Shot" type="Weapon">
 		<!-- Bound Item.\nKamael-exclusive Weapon: Bow of Peril Conversion\n(Soul Crystal Enhancement)\nDecreases MP consumption by 12% when using skills. -->
 		<set name="icon" val="icon.weapon_hell_hound_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1362,7 +1346,7 @@
 			<set stat="rCrit" val="10.0" />
 		</for>
 	</item>
-	<item id="30471" name="Bound Heavy Mace" additionalName="" type="Weapon">
+	<item id="30471" name="Bound Heavy Mace" type="Weapon">
 		<!-- Bound Heavy Mace. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_heavy_mace_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1389,7 +1373,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30472" name="Bound Heavy War Axe" additionalName="" type="Weapon">
+	<item id="30472" name="Bound Heavy War Axe" type="Weapon">
 		<!-- Bound Item.\nBestows one of the following functions: Anger, Health or Rsk. Focus. -->
 		<set name="icon" val="icon.weapon_heavy_war_axe_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1416,7 +1400,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30473" name="Bound Heavy War Axe" additionalName="Anger" type="Weapon">
+	<item id="30473" name="Bound Heavy War Axe" name_additional="Anger" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nDecreases Max HP by 15%. P. Atk. + 28. -->
 		<set name="icon" val="icon.weapon_heavy_war_axe_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1443,7 +1427,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30474" name="Bound Heavy War Axe" additionalName="Health" type="Weapon">
+	<item id="30474" name="Bound Heavy War Axe" name_additional="Health" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Max HP by 25%. -->
 		<set name="icon" val="icon.weapon_heavy_war_axe_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1470,7 +1454,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30475" name="Bound Heavy War Axe" additionalName="Rsk. Focus" type="Weapon">
+	<item id="30475" name="Bound Heavy War Axe" name_additional="Rsk. Focus" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Critical by 107 when HP drops to 60% or below. -->
 		<set name="icon" val="icon.weapon_heavy_war_axe_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1497,7 +1481,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30476" name="Bound Heavy Sword" additionalName="" type="Weapon">
+	<item id="30476" name="Bound Heavy Sword" type="Weapon">
 		<!-- Bound Heavy Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_heavy_sword_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1523,7 +1507,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30477" name="Bound Heavy Bone Club" additionalName="" type="Weapon">
+	<item id="30477" name="Bound Heavy Bone Club" type="Weapon">
 		<!-- Bound Heavy Bone Club. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_heavy_bone_club_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1550,7 +1534,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30478" name="Bound Heavy Doom Hammer" additionalName="" type="Weapon">
+	<item id="30478" name="Bound Heavy Doom Hammer" type="Weapon">
 		<!-- Bound Heavy Doom Hammer. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_heavy_doom_hammer_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1577,7 +1561,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30479" name="Bound Heavy Doom Hammer" additionalName="Magic Regeneration" type="Weapon">
+	<item id="30479" name="Bound Heavy Doom Hammer" name_additional="Magic Regeneration" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 30% chance of casting Regeneration on the target during magic use. -->
 		<set name="icon" val="icon.weapon_heavy_doom_hammer_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1604,7 +1588,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30480" name="Bound Heavy Doom Hammer" additionalName="Magic Mental Shield" type="Weapon">
+	<item id="30480" name="Bound Heavy Doom Hammer" name_additional="Magic Mental Shield" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 50% chance of casting Mental Shield on the target during magic use. -->
 		<set name="icon" val="icon.weapon_heavy_doom_hammer_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1631,7 +1615,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30481" name="Bound Heavy Doom Hammer" additionalName="Magic Hold" type="Weapon">
+	<item id="30481" name="Bound Heavy Doom Hammer" name_additional="Magic Hold" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 6% chance of casting Dryad Root on the target during magic use. -->
 		<set name="icon" val="icon.weapon_heavy_doom_hammer_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1658,7 +1642,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30482" name="Bound Heavy Doom Axe" additionalName="" type="Weapon">
+	<item id="30482" name="Bound Heavy Doom Axe" type="Weapon">
 		<!-- Bound Heavy Doom Axe. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_heavy_doom_axe_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1685,7 +1669,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30483" name="Bound Heavy Doom Axe" additionalName="Magic Poison" type="Weapon">
+	<item id="30483" name="Bound Heavy Doom Axe" name_additional="Magic Poison" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas an 8% chance of casting Curse Poison on the target during magic use. -->
 		<set name="icon" val="icon.weapon_heavy_doom_axe_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1712,7 +1696,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30484" name="Bound Heavy Doom Axe" additionalName="Magic Weakness" type="Weapon">
+	<item id="30484" name="Bound Heavy Doom Axe" name_additional="Magic Weakness" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas an 8% chance of casting Curse Weakness on the target during magic use. -->
 		<set name="icon" val="icon.weapon_heavy_doom_axe_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1739,7 +1723,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30485" name="Bound Heavy Doom Axe" additionalName="Magic Chaos" type="Weapon">
+	<item id="30485" name="Bound Heavy Doom Axe" name_additional="Magic Chaos" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas an 8% chance of casting Curse Chaos on the target during magic use. -->
 		<set name="icon" val="icon.weapon_heavy_doom_axe_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1766,7 +1750,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30486" name="Bound Heaven's Divider" additionalName="" type="Weapon">
+	<item id="30486" name="Bound Heaven's Divider" type="Weapon">
 		<!-- Bound Item.\nBestows one of the following functions: Haste, Health or Focus. -->
 		<set name="icon" val="icon.weapon_heavens_divider_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1792,7 +1776,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30487" name="Bound Heaven's Divider" additionalName="Haste" type="Weapon">
+	<item id="30487" name="Bound Heaven's Divider" name_additional="Haste" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Atk. Spd. by about + 7%. Increases damage inflicted during PvP. -->
 		<set name="icon" val="icon.weapon_heavens_divider_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1818,7 +1802,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30488" name="Bound Heaven's Divider" additionalName="Health" type="Weapon">
+	<item id="30488" name="Bound Heaven's Divider" name_additional="Health" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Max HP by 25%. Increases damage inflicted during PvP. -->
 		<set name="icon" val="icon.weapon_heavens_divider_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1844,7 +1828,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30489" name="Bound Heaven's Divider" additionalName="Focus" type="Weapon">
+	<item id="30489" name="Bound Heaven's Divider" name_additional="Focus" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Critical by 84. Increases damage inflicted during PvP. -->
 		<set name="icon" val="icon.weapon_heavens_divider_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1870,7 +1854,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30490" name="Bound Field Gun" additionalName="" type="Weapon">
+	<item id="30490" name="Bound Field Gun" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Reinforced bow conversion, Bound field gun. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_hunting_gun_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1896,7 +1880,7 @@
 			<set stat="rCrit" val="10.0" />
 		</for>
 	</item>
-	<item id="30491" name="Bound Field Sword" additionalName="" type="Weapon">
+	<item id="30491" name="Bound Field Sword" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Two-handed sword conversion, Bound field sword. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_tulwar_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1923,7 +1907,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30492" name="Bound Ring of Devotion" additionalName="" type="Armor">
+	<item id="30492" name="Bound Ring of Devotion" type="Armor">
 		<!-- Bound Ring of devotion. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.accessary_ring_of_devotion_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1944,7 +1928,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="30493" name="Bound Necklace of Devotion" additionalName="" type="Armor">
+	<item id="30493" name="Bound Necklace of Devotion" type="Armor">
 		<!-- Bound Necklace of devotion. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.accessary_necklace_of_devotion_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1965,7 +1949,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="30494" name="Bound Halberd" additionalName="" type="Weapon">
+	<item id="30494" name="Bound Halberd" type="Weapon">
 		<!-- Bound Item.\nBestows one of the following functions: Haste, Critical Stun, or Wide Blow. -->
 		<set name="icon" val="icon.weapon_halbard_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1991,7 +1975,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30495" name="Bound Halberd" additionalName="Haste" type="Weapon">
+	<item id="30495" name="Bound Halberd" name_additional="Haste" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 6%. Increases damage inflicted during PvP. -->
 		<set name="icon" val="icon.weapon_halbard_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -2017,7 +2001,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30496" name="Bound Halberd" additionalName="Critical Stun" type="Weapon">
+	<item id="30496" name="Bound Halberd" name_additional="Critical Stun" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Critical by about 25% and Stun effect. Increases damage inflicted during PvP. -->
 		<set name="icon" val="icon.weapon_halbard_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -2043,7 +2027,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30497" name="Bound Halberd" additionalName="Wide Blow" type="Weapon">
+	<item id="30497" name="Bound Halberd" name_additional="Wide Blow" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nWidened angle of attack. Increases damage inflicted during PvP. -->
 		<set name="icon" val="icon.weapon_halbard_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -2069,7 +2053,7 @@
 			<set stat="rCrit" val="8.0" />
 		</for>
 	</item>
-	<item id="30498" name="Bound Hand Axe" additionalName="" type="Weapon">
+	<item id="30498" name="Bound Hand Axe" type="Weapon">
 		<!-- Bound Hand Axe. Can use an Unbind Scroll to change this item into a Standard item. -->
 		<set name="icon" val="icon.weapon_hand_axe_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -2096,7 +2080,7 @@
 			<set stat="rCrit" val="6.0" />
 		</for>
 	</item>
-	<item id="30499" name="Bound Hand Crossbow" additionalName="" type="Weapon">
+	<item id="30499" name="Bound Hand Crossbow" type="Weapon">
 		<!-- Kamael-exclusive weapon: Longbow Conversion, Bound Hand Crossbow. Use an Unbind Scroll to change to a Standard item. -->
 		<set name="icon" val="icon.weapon_hunting_gun_i00" />
 		<set name="default_action" val="EQUIP" />

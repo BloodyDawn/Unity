@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="14300" type="EtcItem" name="Corroded Yaksa Mace">
+	<item id="14300" name="Corroded Yaksa Mace" type="EtcItem">
 		<set name="icon" val="icon.weapon_yaksa_mace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -26,7 +26,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="14301" type="EtcItem" name="Shamshir*Shamshir">
+	<item id="14301" name="Shamshir*Shamshir" type="EtcItem">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -44,7 +44,9 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3046-8" />
+		<skills>
+			<skill id="3046" level="8" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="190" />
 			<set stat="mAtk" val="83" />
@@ -52,7 +54,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="14302" type="EtcItem" name="Berserker Blade">
+	<item id="14302" name="Berserker Blade" type="EtcItem">
 		<set name="icon" val="icon.weapon_berserker_blade_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -77,7 +79,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="14303" type="EtcItem" name="Crystal Dagger">
+	<item id="14303" name="Crystal Dagger" type="EtcItem">
 		<set name="icon" val="icon.weapon_crystal_dagger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -95,7 +97,9 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3043-4" />
+		<skills>
+			<skill id="3043" level="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="136" />
 			<set stat="mAtk" val="83" />
@@ -104,7 +108,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="14304" type="EtcItem" name="Ecliptic Sword">
+	<item id="14304" name="Ecliptic Sword" type="EtcItem">
 		<set name="icon" val="icon.weapon_sword_of_eclipse_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -130,7 +134,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="14305" type="EtcItem" name="Ecliptic Axe">
+	<item id="14305" name="Ecliptic Axe" type="EtcItem">
 		<set name="icon" val="icon.weapon_eclipse_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -157,7 +161,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="14306" type="EtcItem" name="Dwarven Hammer">
+	<item id="14306" name="Dwarven Hammer" type="EtcItem">
 		<set name="icon" val="icon.weapon_dwarven_hammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -183,7 +187,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="14307" type="EtcItem" name="Admiral's Estoc">
+	<item id="14307" name="Corroded Admiral's Estoc" type="EtcItem">
 		<set name="icon" val="icon.weapon_blink_slasher_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -201,7 +205,9 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -213,7 +219,7 @@
 			<set stat="pAtkSpd" val="406" />
 		</for>
 	</item>
-	<item id="14308" type="EtcItem" name="Saber Tooth">
+	<item id="14308" name="Saber Tooth" type="EtcItem">
 		<set name="icon" val="icon.weapon_invincible_blade_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -242,7 +248,7 @@
 			<set stat="pAtkSpd" val="350" />
 		</for>
 	</item>
-	<item id="14309" type="EtcItem" name="Sharpshooter">
+	<item id="14309" name="Sharpshooter" type="EtcItem">
 		<set name="icon" val="icon.weapon_taslam_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -272,7 +278,7 @@
 			<set stat="pAtkSpd" val="303" />
 		</for>
 	</item>
-	<item id="14310" type="EtcItem" name="Damascus Sword">
+	<item id="14310" name="Damascus Sword" type="EtcItem">
 		<set name="icon" val="icon.weapon_sword_of_damascus_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -297,7 +303,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="14311" type="EtcItem" name="Lance">
+	<item id="14311" name="Lance" type="EtcItem">
 		<set name="icon" val="icon.weapon_lancia_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -315,7 +321,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -324,7 +332,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="14312" type="EtcItem" name="Deadman's Glory">
+	<item id="14312" name="Deadman's Glory" type="EtcItem">
 		<set name="icon" val="icon.weapon_deadmans_glory_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -350,7 +358,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="14313" type="EtcItem" name="Art of Battle Axe">
+	<item id="14313" name="Art of Battle Axe" type="EtcItem">
 		<set name="icon" val="icon.weapon_art_of_battle_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -376,7 +384,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="14314" type="EtcItem" name="Staff of Evil Spirits">
+	<item id="14314" name="Staff of Evil Spirits" type="EtcItem">
 		<set name="icon" val="icon.weapon_staff_of_evil_sprit_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -403,7 +411,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="14315" type="EtcItem" name="Demon's Dagger">
+	<item id="14315" name="Demon's Dagger" type="EtcItem">
 		<set name="icon" val="icon.weapon_demons_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -429,7 +437,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="14316" type="EtcItem" name="Bellion Cestus">
+	<item id="14316" name="Bellion Cestus" type="EtcItem">
 		<set name="icon" val="icon.weapon_bellion_cestus_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -455,7 +463,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="14317" type="EtcItem" name="Bow of Peril">
+	<item id="14317" name="Bow of Peril" type="EtcItem">
 		<set name="icon" val="icon.weapon_hazard_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -483,7 +491,7 @@
 			<set stat="pAtkSpd" val="293" />
 		</for>
 	</item>
-	<item id="14318" type="EtcItem" name="Samurai Long Sword*Samurai Long Sword">
+	<item id="14318" name="Samurai Long Sword*Samurai Long Sword" type="EtcItem">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -501,7 +509,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3045-14" />
+		<skills>
+			<skill id="3045" level="14" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
@@ -509,7 +519,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="14319" type="EtcItem" name="Demon's Dagger">
+	<item id="14319" name="Demon's Dagger" type="EtcItem">
 		<set name="icon" val="icon.weapon_demons_sword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -527,7 +537,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3043-6" />
+		<skills>
+			<skill id="3043" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="99" />
@@ -536,7 +548,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="14320" type="EtcItem" name="Guardian's Sword">
+	<item id="14320" name="Guardian's Sword" type="EtcItem">
 		<set name="icon" val="icon.weapon_guardians_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -561,7 +573,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="14321" type="EtcItem" name="Wizard's Tear">
+	<item id="14321" name="Wizard's Tear" type="EtcItem">
 		<set name="icon" val="icon.weapon_tears_of_wizard_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -587,7 +599,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="14322" type="EtcItem" name="Kaim Vanul's Bones">
+	<item id="14322" name="Kaim Vanul's Bones" type="EtcItem">
 		<set name="icon" val="icon.weapon_bone_of_kaim_vanul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -614,7 +626,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="14323" type="EtcItem" name="Star Buster">
+	<item id="14323" name="Star Buster" type="EtcItem">
 		<set name="icon" val="icon.weapon_star_buster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -640,7 +652,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="14324" type="EtcItem" name="Colichemarde">
+	<item id="14324" name="Colichemarde" type="EtcItem">
 		<set name="icon" val="icon.weapon_colichemarde_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -658,7 +670,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -670,7 +684,7 @@
 			<set stat="pAtkSpd" val="406" />
 		</for>
 	</item>
-	<item id="14325" type="EtcItem" name="Dismantler">
+	<item id="14325" name="Dismantler" type="EtcItem">
 		<set name="icon" val="icon.weapon_dismantler_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -699,7 +713,7 @@
 			<set stat="pAtkSpd" val="350" />
 		</for>
 	</item>
-	<item id="14326" type="EtcItem" name="Hell Hound">
+	<item id="14326" name="Hell Hound" type="EtcItem">
 		<set name="icon" val="icon.weapon_hell_hound_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -729,7 +743,7 @@
 			<set stat="pAtkSpd" val="303" />
 		</for>
 	</item>
-	<item id="14327" type="EtcItem" name="Sirra's Blade">
+	<item id="14327" name="Sirra's Blade" type="EtcItem">
 		<set name="icon" val="icon.weapon_sirr_blade_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -754,7 +768,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="14328" type="EtcItem" name="Sword of Ipos">
+	<item id="14328" name="Sword of Ipos" type="EtcItem">
 		<set name="icon" val="icon.weapon_sword_of_ipos_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -779,7 +793,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="14329" type="EtcItem" name="Barakiel's Axe">
+	<item id="14329" name="Corroded Barakiel's Axe" type="EtcItem">
 		<set name="icon" val="icon.weapon_barakiel_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -805,7 +819,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="14330" type="EtcItem" name="Behemoth's Tuning Fork">
+	<item id="14330" name="Behemoth' Tuning Fork" type="EtcItem">
 		<set name="icon" val="icon.weapon_tuning_fork_of_behemoth_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -831,7 +845,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="14331" type="EtcItem" name="Naga Storm">
+	<item id="14331" name="Naga Storm" type="EtcItem">
 		<set name="icon" val="icon.weapon_naga_storm_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -857,7 +871,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="14332" type="EtcItem" name="Tiphon's Spear">
+	<item id="14332" name="Tiphon's Spear" type="EtcItem">
 		<set name="icon" val="icon.weapon_tiphon_spear_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -875,7 +889,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="251" />
 			<set stat="mAtk" val="121" />
@@ -884,7 +900,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="14333" type="EtcItem" name="Shyeed's Bow">
+	<item id="14333" name="Shyeed's Bow" type="EtcItem">
 		<set name="icon" val="icon.weapon_shyid_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -912,7 +928,7 @@
 			<set stat="pAtkSpd" val="227" />
 		</for>
 	</item>
-	<item id="14334" type="EtcItem" name="Sobekk's Hurricane">
+	<item id="14334" name="Sobekk's Hurricane" type="EtcItem">
 		<set name="icon" val="icon.weapon_sobekk_hurricane_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -938,7 +954,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="14335" type="EtcItem" name="Themis' Tongue">
+	<item id="14335" name="Themis' Tongue" type="EtcItem">
 		<set name="icon" val="icon.weapon_tongue_of_themis_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -964,7 +980,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="14336" type="EtcItem" name="Cabrio's Hand">
+	<item id="14336" name="Cabrio's Hand" type="EtcItem">
 		<set name="icon" val="icon.weapon_hand_of_cabrio_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -991,7 +1007,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="14337" type="EtcItem" name="Corroded Daimon Crystal">
+	<item id="14337" name="Corroded Daimon Crystal" type="EtcItem">
 		<set name="icon" val="icon.weapon_crystal_of_deamon_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1018,7 +1034,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="14338" type="EtcItem" name="Tallum Blade*Damascus">
+	<item id="14338" name="Tallum Blade*Damascus" type="EtcItem">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1036,7 +1052,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3045-17" />
+		<skills>
+			<skill id="3045" level="17" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="305" />
 			<set stat="mAtk" val="121" />
@@ -1044,7 +1062,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="14339" type="EtcItem" name="Éclair Bijou">
+	<item id="14339" name="Éclair Bijou" type="EtcItem">
 		<set name="icon" val="icon.weapon_greed_stinger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1062,7 +1080,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1074,7 +1094,7 @@
 			<set stat="pAtkSpd" val="406" />
 		</for>
 	</item>
-	<item id="14340" type="EtcItem" name="Corroded Durendal">
+	<item id="14340" name="Corroded Durendal" type="EtcItem">
 		<set name="icon" val="icon.weapon_death_bringer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1103,7 +1123,7 @@
 			<set stat="pAtkSpd" val="350" />
 		</for>
 	</item>
-	<item id="14341" type="EtcItem" name="Screaming Vengeance">
+	<item id="14341" name="Screaming Vengeance" type="EtcItem">
 		<set name="icon" val="icon.weapon_soul_shooter_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1133,7 +1153,7 @@
 			<set stat="pAtkSpd" val="303" />
 		</for>
 	</item>
-	<item id="14342" type="EtcItem" name="Necklace of Seal">
+	<item id="14342" name="Necklace of Seal" type="EtcItem">
 		<set name="icon" val="icon.accessary_necklace_of_binding_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1149,7 +1169,7 @@
 			<add order="0" stat="mDef" val="64" />
 		</for>
 	</item>
-	<item id="14343" type="EtcItem" name="Nassen's Earring">
+	<item id="14343" name="Nassen's Earring" type="EtcItem">
 		<set name="icon" val="icon.accessary_nassens_earing_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -1165,7 +1185,7 @@
 			<add order="0" stat="mDef" val="48" />
 		</for>
 	</item>
-	<item id="14344" type="EtcItem" name="Ring of Seal">
+	<item id="14344" name="Ring of Seal" type="EtcItem">
 		<set name="icon" val="icon.accessary_ring_of_binding_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -1181,7 +1201,7 @@
 			<add order="0" stat="mDef" val="32" />
 		</for>
 	</item>
-	<item id="14345" type="EtcItem" name="Black Ore Earring">
+	<item id="14345" name="Black Ore Earring" type="EtcItem">
 		<set name="icon" val="icon.accessary_earing_of_black_ore_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -1197,7 +1217,7 @@
 			<add order="0" stat="mDef" val="54" />
 		</for>
 	</item>
-	<item id="14346" type="EtcItem" name="Black Ore Ring">
+	<item id="14346" name="Black Ore Ring" type="EtcItem">
 		<set name="icon" val="icon.accessary_ring_of_black_ore_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -1213,7 +1233,7 @@
 			<add order="0" stat="mDef" val="36" />
 		</for>
 	</item>
-	<item id="14347" type="EtcItem" name="Black Ore Necklace">
+	<item id="14347" name="Black Ore Necklace" type="EtcItem">
 		<set name="icon" val="icon.accessary_necklace_of_black_ore_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1229,7 +1249,7 @@
 			<add order="0" stat="mDef" val="72" />
 		</for>
 	</item>
-	<item id="14348" type="EtcItem" name="Majestic Earring">
+	<item id="14348" name="Majestic Earring" type="EtcItem">
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -1246,7 +1266,7 @@
 			<add stat="maxMp" val="25" />
 		</for>
 	</item>
-	<item id="14349" type="EtcItem" name="Majestic Ring">
+	<item id="14349" name="Majestic Ring" type="EtcItem">
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -1263,7 +1283,7 @@
 			<add stat="maxMp" val="17" />
 		</for>
 	</item>
-	<item id="14350" type="EtcItem" name="Majestic Necklace">
+	<item id="14350" name="Majestic Necklace" type="EtcItem">
 		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1280,7 +1300,7 @@
 			<add stat="maxMp" val="33" />
 		</for>
 	</item>
-	<item id="14351" type="EtcItem" name="Gracian Anniversary Coins">
+	<item id="14351" name="Gracian Anniversary Coins" type="EtcItem">
 		<set name="icon" val="icon.etc_coins_silver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CLOTH" />
@@ -1288,7 +1308,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1297,7 +1316,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="14352" type="EtcItem" name="Mysterious Sculpture">
+	<item id="14352" name="Mysterious Sculpture" type="EtcItem">
 		<set name="icon" val="icon.etc_statue_of_einhasad_bronze_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -1306,7 +1325,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1314,7 +1332,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="14353" type="EtcItem" name="Mysterious Sculpture">
+	<item id="14353" name="Mysterious Sculpture" type="EtcItem">
 		<set name="icon" val="icon.etc_statue_of_einhasad_bronze_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -1323,7 +1341,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1331,7 +1348,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="14354" type="EtcItem" name="Mysterious Sculpture">
+	<item id="14354" name="Mysterious Sculpture" type="EtcItem">
 		<set name="icon" val="icon.etc_statue_of_einhasad_bronze_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -1340,7 +1357,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1348,7 +1364,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="14355" type="EtcItem" name="Mysterious Sculpture">
+	<item id="14355" name="Mysterious Sculpture" type="EtcItem">
 		<set name="icon" val="icon.etc_statue_of_einhasad_bronze_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -1357,7 +1373,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1365,7 +1380,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="14356" type="EtcItem" name="Mysterious Sculpture">
+	<item id="14356" name="Mysterious Sculpture" type="EtcItem">
 		<set name="icon" val="icon.etc_statue_of_einhasad_bronze_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -1374,7 +1389,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1382,7 +1396,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="14357" type="EtcItem" name="Mysterious Sculpture">
+	<item id="14357" name="Mysterious Sculpture" type="EtcItem">
 		<set name="icon" val="icon.etc_statue_of_einhasad_bronze_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -1391,7 +1405,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1399,7 +1412,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="14358" type="EtcItem" name="Mysterious Sculpture">
+	<item id="14358" name="Mysterious Sculpture" type="EtcItem">
 		<set name="icon" val="icon.etc_statue_of_einhasad_bronze_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -1408,7 +1421,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1416,7 +1428,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="14359" type="EtcItem" name="Mysterious Sculpture">
+	<item id="14359" name="Mysterious Sculpture" type="EtcItem">
 		<set name="icon" val="icon.etc_statue_of_einhasad_bronze_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -1425,7 +1437,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1433,7 +1444,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="14360" type="EtcItem" name="Mysterious Sculpture">
+	<item id="14360" name="Mysterious Sculpture" type="EtcItem">
 		<set name="icon" val="icon.etc_statue_of_einhasad_bronze_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -1442,7 +1453,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1450,7 +1460,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="14361" type="EtcItem" name="Blood-stained Cloth">
+	<item id="14361" name="Blood-stained Cloth" type="EtcItem">
 		<set name="icon" val="icon.etc_piece_of_cloth_red_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -1458,7 +1468,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1467,7 +1476,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="14362" type="EtcItem" name="White Cloth">
+	<item id="14362" name="White Cloth" type="EtcItem">
 		<set name="icon" val="icon.etc_piece_of_cloth_white_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -1475,7 +1484,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1484,7 +1492,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="14363" type="Weapon" name="Icarus Sawsword {PvP}">
+	<item id="14363" name="Icarus Sawsword {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_sowsword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1508,17 +1516,20 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3651-1" />
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3651" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14364" type="Weapon" name="Icarus Disperser {PvP}">
+	<item id="14364" name="Icarus Disperser {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_disperser_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1542,18 +1553,21 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3650-1" />
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3650" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="318" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14365" type="Weapon" name="Icarus Spirit {PvP}">
+	<item id="14365" name="Icarus Spirit {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_spirits_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1578,17 +1592,21 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3651-1;3652-1" />
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="290" />
 			<set stat="mAtk" val="217" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14366" type="Weapon" name="Icarus Heavy Arms {PvP}">
+	<item id="14366" name="Icarus Heavy Arms {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_heavy_arms_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1612,17 +1630,20 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3654-1" />
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3654" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="442" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14367" type="Weapon" name="Icarus Trident {PvP}">
+	<item id="14367" name="Icarus Trident {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_trident_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -1646,18 +1667,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3653-1;3599-1" />
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3653" level="1" />
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14368" type="Weapon" name="Icarus Hammer {PvP}">
+	<item id="14368" name="Icarus Hammer {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_hammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1681,18 +1706,21 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-4;3653-1" />
+		<skills>
+			<skill id="3552" level="4" />
+			<skill id="3653" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14369" type="Weapon" name="Icarus Hand {PvP}">
+	<item id="14369" name="Icarus Hand {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_knuckle_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -1716,18 +1744,21 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3650-1" />
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3650" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="442" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14370" type="Weapon" name="Icarus Hall {PvP}">
+	<item id="14370" name="Icarus Hall {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1752,18 +1783,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3651-1;3652-1" />
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="290" />
 			<set stat="mAtk" val="217" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14371" type="Weapon" name="Icarus Spitter {PvP}">
+	<item id="14371" name="Icarus Spitter {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_spiter_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -1789,18 +1824,21 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3654-1" />
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3654" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="689" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14372" type="Weapon" name="Icarus Stinger {PvP}">
+	<item id="14372" name="Icarus Stinger {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_stinger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1816,7 +1854,6 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1825,7 +1862,11 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3655-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3552" level="3" />
+			<skill id="3655" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1835,11 +1876,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14373" type="Weapon" name="Icarus Wingblade {PvP}">
+	<item id="14373" name="Icarus Wingblade {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_wing_blade_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1863,7 +1904,11 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3656-1;3657-1" />
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3656" level="1" />
+			<skill id="3657" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1873,11 +1918,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14374" type="Weapon" name="Icarus Shooter {PvP}">
+	<item id="14374" name="Icarus Shooter {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_shooter_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1902,7 +1947,10 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3653-1" />
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3653" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1912,11 +1960,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14375" type="Weapon" name="Icarus Dual Sword {PvP}">
+	<item id="14375" name="Icarus Dualsword {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1932,7 +1980,6 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="3411-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -1941,17 +1988,21 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3656-1" />
+		<skills>
+			<skill id="3411" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3552" level="3" />
+			<skill id="3656" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="442" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14376" type="Weapon" name="Icarus Sawsword {PvP} - Focus">
+	<item id="14376" name="Icarus Sawsword {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_sowsword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1975,17 +2026,21 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3650-1;3566-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3566" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14377" type="Weapon" name="Icarus Sawsword {PvP} - Health">
+	<item id="14377" name="Icarus Sawsword {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_sowsword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2009,17 +2064,21 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3650-1;3013-3" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14378" type="Weapon" name="Icarus Sawsword {PvP} - Light">
+	<item id="14378" name="Icarus Sawsword {PvP}" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_sowsword_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2043,17 +2102,21 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3498-1;3552-3;3650-1" />
+		<skills>
+			<skill id="3498" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3650" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14379" type="Weapon" name="Icarus Heavy Arms {PvP} - Focus">
+	<item id="14379" name="Icarus Heavy Arms {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_heavy_arms_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2077,17 +2140,21 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3653-1;3566-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3566" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="442" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14380" type="Weapon" name="Icarus Heavy Arms {PvP} - Health">
+	<item id="14380" name="Icarus Heavy Arms {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_heavy_arms_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2111,17 +2178,21 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3653-1;3013-3" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="442" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14381" type="Weapon" name="Icarus Heavy Arms {PvP} - Light">
+	<item id="14381" name="Icarus Heavy Arms {PvP}" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_heavy_arms_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2145,17 +2216,21 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3498-1;3552-3;3653-1" />
+		<skills>
+			<skill id="3498" level="1" />
+			<skill id="3552" level="3" />
+			<skill id="3653" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="442" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14382" type="Weapon" name="Icarus Spirit {PvP} - Acumen">
+	<item id="14382" name="Icarus Spirit {PvP}" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_spirits_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2180,17 +2255,21 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3654-1;3047-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3047" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="290" />
 			<set stat="mAtk" val="217" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14383" type="Weapon" name="Icarus Spirit {PvP} - Mana Up">
+	<item id="14383" name="Icarus Spirit {PvP}" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_spirits_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2215,17 +2294,21 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3654-1;3014-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3014" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="290" />
 			<set stat="mAtk" val="217" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14384" type="Weapon" name="Icarus Spirit {PvP} - Conversion">
+	<item id="14384" name="Icarus Spirit {PvP}" name_additional="Conversion" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_spirits_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2250,17 +2333,21 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3654-1;3048-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3048" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="290" />
 			<set stat="mAtk" val="217" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14385" type="Weapon" name="Icarus Spitter {PvP} - Cheap Shot">
+	<item id="14385" name="Icarus Spitter {PvP}" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_spiter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -2286,18 +2373,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-3;3655-1;8312-1" />
+		<skills>
+			<skill id="3552" level="3" />
+			<skill id="3655" level="1" />
+			<skill id="8312" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="689" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14386" type="Weapon" name="Icarus Spitter {PvP} - Guidance">
+	<item id="14386" name="Icarus Spitter {PvP}" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_spiter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -2323,18 +2414,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3655-1;3573-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="3573" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="689" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14387" type="Weapon" name="Icarus Spitter {PvP} - Focus">
+	<item id="14387" name="Icarus Spitter {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_spiter_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -2360,18 +2455,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3655-1;3567-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3655" level="1" />
+			<skill id="3567" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="689" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14388" type="Weapon" name="Icarus Disperser {PvP} - Focus">
+	<item id="14388" name="Icarus Disperser {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_disperser_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2395,18 +2494,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3651-1;3652-1;3567-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3567" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="318" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14389" type="Weapon" name="Icarus Disperser {PvP} - Evasion">
+	<item id="14389" name="Icarus Disperser {PvP}" name_additional="Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_disperser_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2430,18 +2534,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3009-8;3552-3;3651-1;3652-1" />
+		<skills>
+			<skill id="3009" level="8" />
+			<skill id="3552" level="3" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="318" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14390" type="Weapon" name="Icarus Disperser {PvP} - Critical Damage">
+	<item id="14390" name="Icarus Disperser {PvP}" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_disperser_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2465,18 +2574,23 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3651-1;3652-1;3066-4" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3651" level="1" />
+			<skill id="3652" level="1" />
+			<skill id="3066" level="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="318" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14391" type="Weapon" name="Icarus Trident {PvP} - Anger">
+	<item id="14391" name="Icarus Trident {PvP}" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_trident_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -2500,18 +2614,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3653-1;3600-10" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3653" level="1" />
+			<skill id="3600" level="10" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14392" type="Weapon" name="Icarus Trident {PvP} - Critical Stun">
+	<item id="14392" name="Icarus Trident {PvP}" name_additional="Critical Stun" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_trident_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -2530,25 +2648,27 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="oncrit_chance" val="48" />
 		<set name="oncrit_skill" val="3070-4" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-4;3653-1" />
+		<skills>
+			<skill id="3552" level="4" />
+			<skill id="3653" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14393" type="Weapon" name="Icarus Trident {PvP} - Light">
+	<item id="14393" name="Icarus Trident {PvP}" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_trident_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -2572,18 +2692,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3498-1;3552-4;3653-1" />
+		<skills>
+			<skill id="3498" level="1" />
+			<skill id="3552" level="4" />
+			<skill id="3653" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14394" type="Weapon" name="Icarus Hammer {PvP} - Anger">
+	<item id="14394" name="Icarus Hammer {PvP}" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_hammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2607,18 +2731,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3650-1;3057-4" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3057" level="4" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14395" type="Weapon" name="Icarus Hammer {PvP} - Health">
+	<item id="14395" name="Icarus Hammer {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_hammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2642,18 +2770,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3650-1;3013-3" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3013" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14396" type="Weapon" name="Icarus Hammer {PvP} - Rsk. Focus">
+	<item id="14396" name="Icarus Hammer {PvP}" name_additional="Rsk. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_hammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2677,18 +2809,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3650-1;3027-7" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3650" level="1" />
+			<skill id="3027" level="7" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
 			<set stat="mAtk" val="163" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14397" type="Weapon" name="Icarus Hall {PvP} - Mana Up">
+	<item id="14397" name="Icarus Hall {PvP}" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_stick_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2713,18 +2849,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3654-1;3014-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3014" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="290" />
 			<set stat="mAtk" val="217" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14398" type="Weapon" name="Icarus Hall {PvP} - Conversion">
+	<item id="14398" name="Icarus Hall {PvP}" name_additional="Conversion" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_stick_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2749,18 +2889,22 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3654-1;3048-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3048" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="290" />
 			<set stat="mAtk" val="217" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="14399" type="Weapon" name="Icarus Hall {PvP} - Acumen">
+	<item id="14399" name="Icarus Hall {PvP}" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_icarus_stick_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2785,15 +2929,19 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3552-1;3654-1;3047-2" />
+		<skills>
+			<skill id="3552" level="1" />
+			<skill id="3654" level="1" />
+			<skill id="3047" level="2" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="290" />
 			<set stat="mAtk" val="217" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
 </list>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="13800" type="EtcItem" name="Transformation Scroll: Frog">
+	<item id="13800" name="Transformation Scroll: Frog" type="EtcItem">
 		<set name="icon" val="icon.etc_q_frog_green_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ELIXIR" />
@@ -10,7 +10,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -18,9 +17,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
-		<set name="item_skill" val="2631-1" />
+		<skills>
+			<skill id="2631" level="1" />
+		</skills>
 	</item>
-	<item id="13801" type="EtcItem" name="Transformation Scroll: Young Child">
+	<item id="13801" name="Transformation Scroll: Young Child" type="EtcItem">
 		<set name="icon" val="icon.weapon_apprentices_rod_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ELIXIR" />
@@ -30,7 +31,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -38,9 +38,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
-		<set name="item_skill" val="2632-1" />
+		<skills>
+			<skill id="2632" level="1" />
+		</skills>
 	</item>
-	<item id="13802" type="Armor" name="Native's Hood">
+	<item id="13802" name="Native's Hood" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -52,7 +54,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="unequip_skill" val="619-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -60,12 +61,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
-		<set name="item_skill" val="8277-1" />
+		<skills>
+			<skill id="619" level="1" type="ON_UNEQUIP" />
+			<skill id="8277" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="33" />
 		</for>
 	</item>
-	<item id="13803" type="Armor" name="Native's Tunic">
+	<item id="13803" name="Native's Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t34_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -77,7 +81,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="unequip_skill" val="619-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -85,12 +88,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
-		<set name="item_skill" val="8277-1" />
+		<skills>
+			<skill id="619" level="1" type="ON_UNEQUIP" />
+			<skill id="8277" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="53" />
 		</for>
 	</item>
-	<item id="13804" type="Armor" name="Native's Trousers">
+	<item id="13804" name="Native's Pants" type="Armor">
 		<set name="icon" val="icon.armor_t34_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -102,7 +108,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="unequip_skill" val="619-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -110,12 +115,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
-		<set name="item_skill" val="8277-1" />
+		<skills>
+			<skill id="619" level="1" type="ON_UNEQUIP" />
+			<skill id="8277" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="29" />
 		</for>
 	</item>
-	<item id="13805" type="Armor" name="Guards of the Dawn Helmet">
+	<item id="13805" name="Guards of the Dawn Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -127,7 +135,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="unequip_skill" val="619-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -135,12 +142,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
-		<set name="item_skill" val="8278-1" />
+		<skills>
+			<skill id="619" level="1" type="ON_UNEQUIP" />
+			<skill id="8278" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="33" />
 		</for>
 	</item>
-	<item id="13806" type="Armor" name="Guards of the Dawn Tunic">
+	<item id="13806" name="Guards of the Dawn Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t08_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -152,7 +162,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="unequip_skill" val="619-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -160,12 +169,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
-		<set name="item_skill" val="8278-1" />
+		<skills>
+			<skill id="619" level="1" type="ON_UNEQUIP" />
+			<skill id="8278" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="53" />
 		</for>
 	</item>
-	<item id="13807" type="Armor" name="Guards of the Dawn Pants">
+	<item id="13807" name="Guards of the Dawn Pants" type="Armor">
 		<set name="icon" val="icon.armor_t08_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -177,7 +189,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="unequip_skill" val="619-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -185,12 +196,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
-		<set name="item_skill" val="8278-1" />
+		<skills>
+			<skill id="619" level="1" type="ON_UNEQUIP" />
+			<skill id="8278" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="29" />
 		</for>
 	</item>
-	<item id="13808" type="EtcItem" name="Elmoreden's Holy Water">
+	<item id="13808" name="Elmoreden's Holy Water" type="EtcItem">
 		<set name="icon" val="icon.etc_holy_water_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ELIXIR" />
@@ -200,7 +214,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -208,9 +221,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
-		<set name="item_skill" val="2633-1" />
+		<skills>
+			<skill id="2633" level="1" />
+		</skills>
 	</item>
-	<item id="13809" type="EtcItem" name="Court Magician's Magic Staff">
+	<item id="13809" name="Court Wizard's Magic Staff" type="EtcItem">
 		<set name="icon" val="icon.weapon_apprentices_rod_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="ELIXIR" />
@@ -220,7 +235,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -228,16 +242,17 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
-		<set name="item_skill" val="2634-1" />
+		<skills>
+			<skill id="2634" level="1" />
+		</skills>
 	</item>
-	<item id="13810" type="EtcItem" name="High Priest Orven's Letter">
+	<item id="13810" name="High Priest Orven's Letter" type="EtcItem">
 		<set name="icon" val="icon.etc_letter_envelope_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -246,14 +261,13 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13811" type="EtcItem" name="Keucereus' Introduction - Seed of Infinity">
+	<item id="13811" name="Keucereus' Introduction - Seed of Infinity" type="EtcItem">
 		<set name="icon" val="icon.etc_letter_white_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -262,14 +276,13 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13812" type="EtcItem" name="Keucereus' Introduction - Seed of Destruction">
+	<item id="13812" name="Keucereus' Introduction - Seed of Destruction" type="EtcItem">
 		<set name="icon" val="icon.etc_letter_white_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -278,7 +291,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13813" type="EtcItem" name="Croop's Introduction">
+	<item id="13813" name="Croop's Introduction" type="EtcItem">
 		<set name="icon" val="icon.etc_letter_red_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -286,7 +299,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -294,7 +306,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13814" type="EtcItem" name="Jacob's Necklace">
+	<item id="13814" name="Jacob's Necklace" type="EtcItem">
 		<set name="icon" val="icon.accessary_necklace_of_protection_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -302,7 +314,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -310,7 +321,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13815" type="EtcItem" name="Croop's Letter Requesting a Memorial Service">
+	<item id="13815" name="Croop's Letter Requesting a Memorial Service" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -318,7 +329,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -326,7 +336,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13816" type="EtcItem" name="Deadman's Herb">
+	<item id="13816" name="Deadman's Herb" type="EtcItem">
 		<set name="icon" val="icon.etc_herb_blue_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -334,7 +344,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -342,7 +351,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13817" type="EtcItem" name="Priest Cain's Investigation Report">
+	<item id="13817" name="Priest Cain's Investigation Report" type="EtcItem">
 		<set name="icon" val="icon.etc_paper_black_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -350,7 +359,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -358,7 +366,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13818" type="EtcItem" name="Athebaldt's Introduction">
+	<item id="13818" name="Athebaldt's Introduction" type="EtcItem">
 		<set name="icon" val="icon.etc_letter_white_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -366,7 +374,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -374,7 +381,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13819" type="EtcItem" name="Native's Glove">
+	<item id="13819" name="Native's Gloves" type="EtcItem">
 		<set name="icon" val="icon.armor_short_leather_gloves_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -382,7 +389,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -390,7 +396,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13820" type="EtcItem" name="Frog King's Bead">
+	<item id="13820" name="Frog King's Bead" type="EtcItem">
 		<set name="icon" val="icon.etc_crystal_ball_blue_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -398,7 +404,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -406,7 +411,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13821" type="EtcItem" name="Grandma Tess' Candy Pouch">
+	<item id="13821" name="Grandma Tess' Candy Pouch" type="EtcItem">
 		<set name="icon" val="icon.etc_pouch_brown_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -414,7 +419,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -422,14 +426,13 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13822" type="EtcItem" name="Guards of the Dawn Identity Card">
+	<item id="13822" name="Guards of the Dawn Identity Card" type="EtcItem">
 		<set name="icon" val="icon.etc_royal_membership_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -438,14 +441,13 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13823" type="EtcItem" name="Emperor Shunaiman's Contract">
+	<item id="13823" name="Emperor Shunaiman's Contract" type="EtcItem">
 		<set name="icon" val="icon.etc_crest_red_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -454,14 +456,13 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13824" type="EtcItem" name="Ancient Seal Stone of Mammon">
+	<item id="13824" name="Ancient Seal Stone of Mammon" type="EtcItem">
 		<set name="icon" val="icon.etc_water_rune_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -470,14 +471,13 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13825" type="EtcItem" name="Einhasad's Grail">
+	<item id="13825" name="Einhasad's Grail" type="EtcItem">
 		<set name="icon" val="icon.etc_holy_grail_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -486,14 +486,13 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13826" type="EtcItem" name="Blood of the Emperor">
+	<item id="13826" name="Blood of the Emperor" type="EtcItem">
 		<set name="icon" val="icon.etc_lesser_potion_red_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -502,14 +501,13 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13827" type="EtcItem" name="Iason's Introduction">
+	<item id="13827" name="Iason's Introduction" type="EtcItem">
 		<set name="icon" val="icon.etc_letter_white_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -518,14 +516,13 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13828" type="EtcItem" name="Prayer: Emperor's Key">
+	<item id="13828" name="Prayer: Emperor's Key" type="EtcItem">
 		<set name="icon" val="icon.etc_spell_books_element_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -534,14 +531,13 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13829" type="EtcItem" name="Mysterious Hand-written Text">
+	<item id="13829" name="Mysterious Hand-written Text" type="EtcItem">
 		<set name="icon" val="icon.weapon_apprentices_spellbook_i01" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -550,7 +546,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13830" type="EtcItem" name="Tomlan Kamos' Cellular Tissue">
+	<item id="13830" name="Tomlan Kamos' Cellular Tissue" type="EtcItem">
 		<set name="icon" val="icon.etc_bodypart_liver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -558,7 +554,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -567,7 +562,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13831" type="EtcItem" name="Ol Ariosh's Cellular Tissue">
+	<item id="13831" name="Ol Ariosh's Cellular Tissue" type="EtcItem">
 		<set name="icon" val="icon.etc_bodypart_liver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -575,7 +570,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -584,7 +578,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13832" type="EtcItem" name="Crimson Hatu Otis' Cellular Tissue">
+	<item id="13832" name="Crimson Hatu Otis' Cellular Tissue" type="EtcItem">
 		<set name="icon" val="icon.etc_bodypart_liver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -592,7 +586,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -601,7 +594,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13833" type="EtcItem" name="Seer Flouros' Cellular Tissue">
+	<item id="13833" name="Seer Flouros' Cellular Tissue" type="EtcItem">
 		<set name="icon" val="icon.etc_bodypart_liver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -609,7 +602,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -618,7 +610,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13834" type="EtcItem" name="Blade Otis' Cellular Tissue">
+	<item id="13834" name="Blade Otis' Cellular Tissue" type="EtcItem">
 		<set name="icon" val="icon.etc_bodypart_liver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -626,7 +618,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -635,7 +626,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13835" type="EtcItem" name="Weird Bunei's Cellular Tissue">
+	<item id="13835" name="Weird Bunei's Cellular Tissue" type="EtcItem">
 		<set name="icon" val="icon.etc_bodypart_liver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -643,7 +634,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -652,7 +642,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13836" type="EtcItem" name="Kaim Abigore's Cellular Tissue">
+	<item id="13836" name="Kaim Abigore's Cellular Tissue" type="EtcItem">
 		<set name="icon" val="icon.etc_bodypart_liver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -660,7 +650,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -669,7 +658,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13837" type="EtcItem" name="Knight Montagnar's Cellular Tissue">
+	<item id="13837" name="Knight Montagnar's Cellular Tissue" type="EtcItem">
 		<set name="icon" val="icon.etc_bodypart_liver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -677,7 +666,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -686,7 +674,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13838" type="EtcItem" name="Venomous Storace's Cellular Tissue">
+	<item id="13838" name="Venomous Storace's Cellular Tissue" type="EtcItem">
 		<set name="icon" val="icon.etc_bodypart_liver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -694,7 +682,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -703,7 +690,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13839" type="EtcItem" name="Kel Bilette's Cellular Tissue">
+	<item id="13839" name="Kel Bilette's Cellular Tissue" type="EtcItem">
 		<set name="icon" val="icon.etc_bodypart_liver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -711,7 +698,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -720,7 +706,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13840" type="EtcItem" name="White Allosce's Cellular Tissue">
+	<item id="13840" name="White Allosce's Cellular Tissue" type="EtcItem">
 		<set name="icon" val="icon.etc_bodypart_liver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -728,7 +714,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -737,15 +722,13 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13841" type="EtcItem" name="Dragonkin Charm">
+	<item id="13841" name="Dragonkin Charm" type="EtcItem">
 		<set name="icon" val="icon.etc_feather_gold_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -753,7 +736,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="13842" type="Weapon" name="Tiat Two-handed Weapon">
+	<item id="13842" name="Tiat Two-handed Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -774,11 +757,11 @@
 			<set stat="mAtk" val="39" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="13843" type="Weapon" name="Draconic Peltast Weapon">
+	<item id="13843" name="Draconic Peltast Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_doomed_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -809,11 +792,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="13844" type="EtcItem" name="Scroll: Extract Star Stone">
+	<item id="13844" name="Scroll: Extract Star Stone" type="EtcItem">
 		<set name="icon" val="icon.scroll_of_verification_i06" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -824,7 +807,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2630-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -832,8 +814,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="2630" level="1" />
+		</skills>
 	</item>
-	<item id="13845" type="Weapon" name="Attribute Master Yin's Sword">
+	<item id="13845" name="Attribute Master Yin's Sword" name_additional="10-minute" type="Weapon">
 		<set name="icon" val="icon.weapon_long_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -863,11 +848,11 @@
 			<set stat="mAtk" val="120" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="13846" type="EtcItem" name="Seal of Binding">
+	<item id="13846" name="Seal of Binding" type="EtcItem">
 		<set name="icon" val="icon.etc_royal_seal_of_lord_i04" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -875,7 +860,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -884,7 +868,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13847" type="EtcItem" name="Mysterious Fragment">
+	<item id="13847" name="Mysterious Fragment" type="EtcItem">
 		<set name="icon" val="icon.etc_statue_of_einhasad_bronze_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -892,7 +876,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -901,7 +884,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13848" type="EtcItem" name="Headless Knight's Armor">
+	<item id="13848" name="Headless Knight's Armor" type="EtcItem">
 		<set name="icon" val="icon.armor_t62_u_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -909,7 +892,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -918,12 +900,11 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13849" type="EtcItem" name="Mandragora Root">
+	<item id="13849" name="Mandragora Root" type="EtcItem">
 		<set name="icon" val="icon.etc_ginseng_red_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_dropable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -931,7 +912,7 @@
 		<set name="is_questitem" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="13850" type="EtcItem" name="Bloody Axe Black Epaulette">
+	<item id="13850" name="Bloody Axe Black Epaulette" type="EtcItem">
 		<set name="icon" val="icon.etc_badge_black_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -939,7 +920,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -948,7 +928,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13851" type="EtcItem" name="Nebulite Orb">
+	<item id="13851" name="Nebulite Orb" type="EtcItem">
 		<set name="icon" val="icon.etc_crystal_ball_red_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -956,7 +936,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -965,7 +944,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13852" type="EtcItem" name="Inspector Medibal's Document">
+	<item id="13852" name="Inspector Medibal's Document" type="EtcItem">
 		<set name="icon" val="icon.etc_roll_of_paper_black_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -973,7 +952,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -982,14 +960,13 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13853" type="EtcItem" name="Shards of Broken Darkness">
+	<item id="13853" name="Shards of Broken Darkness" type="EtcItem">
 		<set name="icon" val="icon.etc_powder_black_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="STEEL" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -999,14 +976,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
-		<set name="item_skill" val="2615-1" />
+		<skills>
+			<skill id="2615" level="1" />
+		</skills>
 	</item>
-	<item id="13854" type="EtcItem" name="Shards of Broken Light">
+	<item id="13854" name="Shards of Broken Light" type="EtcItem">
 		<set name="icon" val="icon.etc_powder_white_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1018,7 +996,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13855" type="EtcItem" name="Sacred Light Fragment">
+	<item id="13855" name="Sacred Light Fragment" type="EtcItem">
 		<set name="icon" val="icon.etc_piece_holy_light" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -1028,16 +1006,17 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
-		<set name="item_skill" val="2839-1" />
+		<skills>
+			<skill id="2839" level="1" />
+		</skills>
 	</item>
-	<item id="13856" type="EtcItem" name="Rider's Mark">
+	<item id="13856" name="Rider's Badge" type="EtcItem">
 		<set name="icon" val="icon.etc_evil_necklace_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1045,7 +1024,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1054,7 +1032,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13857" type="EtcItem" name="Lekon's Certificate">
+	<item id="13857" name="Lekon's Certificate" type="EtcItem">
 		<set name="icon" val="icon.etc_letter_blue_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1063,7 +1041,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1071,7 +1048,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13858" type="EtcItem" name="Extracted Coarse Red Star Stone">
+	<item id="13858" name="Extracted Coarse Red Star Stone" type="EtcItem">
 		<set name="icon" val="icon.low_star_stone_piece_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1079,7 +1056,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1088,7 +1064,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13859" type="EtcItem" name="Extracted Coarse Blue Star Stone">
+	<item id="13859" name="Extracted Coarse Blue Star Stone" type="EtcItem">
 		<set name="icon" val="icon.low_star_stone_piece_i01" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1096,7 +1072,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1105,7 +1080,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13860" type="EtcItem" name="Extracted Coarse Green Star Stone">
+	<item id="13860" name="Extracted Coarse Green Star Stone" type="EtcItem">
 		<set name="icon" val="icon.low_star_stone_piece_i02" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1113,7 +1088,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1122,7 +1096,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13861" type="EtcItem" name="Reckless Soul Piece - Water">
+	<item id="13861" name="Reckless Soul Piece - Water" type="EtcItem">
 		<set name="icon" val="icon.etc_bead_blue_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1130,7 +1104,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1139,7 +1112,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13862" type="EtcItem" name="Reckless Soul Piece - Air">
+	<item id="13862" name="Reckless Soul Piece - Air" type="EtcItem">
 		<set name="icon" val="icon.etc_bead_silver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1147,7 +1120,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1156,7 +1128,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13863" type="EtcItem" name="Freed Soul Fragment">
+	<item id="13863" name="Freed Soul Fragment" type="EtcItem">
 		<set name="icon" val="icon.etc_debris_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1165,7 +1137,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1173,7 +1144,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13864" type="EtcItem" name="Seal of Tiat">
+	<item id="13864" name="Seal of Tiat" type="EtcItem">
 		<set name="icon" val="icon.tiat_seal_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1181,7 +1152,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1190,7 +1160,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13865" type="EtcItem" name="Dragonkin Charm Fragment">
+	<item id="13865" name="Dragonkin Charm Fragment" type="EtcItem">
 		<set name="icon" val="icon.etc_totem_black_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1199,7 +1169,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1207,7 +1176,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13866" type="EtcItem" name="Restless Soul">
+	<item id="13866" name="Restless Soul" type="EtcItem">
 		<set name="icon" val="icon.soul_facet_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1215,7 +1184,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1224,7 +1192,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13867" type="EtcItem" name="Tiat's Breath">
+	<item id="13867" name="Tiat's Breath" type="EtcItem">
 		<set name="icon" val="icon.tiat_breath_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1233,7 +1201,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1241,7 +1208,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13868" type="EtcItem" name="Yehan Klodekus' Badge">
+	<item id="13868" name="Yehan Klodekus' Badge" type="EtcItem">
 		<set name="icon" val="icon.etc_badge_black_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1249,7 +1216,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1258,7 +1224,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13869" type="EtcItem" name="Yehan Klanikus' Badge">
+	<item id="13869" name="Yehan Klanikus' Badge" type="EtcItem">
 		<set name="icon" val="icon.etc_badge_silver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1266,7 +1232,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1275,7 +1240,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13870" type="EtcItem" name="Lich Crystal">
+	<item id="13870" name="Lich Crystal" type="EtcItem">
 		<set name="icon" val="icon.etc_crystal_ball_green_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1283,7 +1248,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1292,7 +1256,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13871" type="EtcItem" name="Vulture's Golden Feather">
+	<item id="13871" name="Vulture's Golden Feather" type="EtcItem">
 		<set name="icon" val="icon.etc_feather_gold_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1300,7 +1264,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1309,7 +1272,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13872" type="EtcItem" name="Swallowed Skull">
+	<item id="13872" name="Swallowed Skull" type="EtcItem">
 		<set name="icon" val="icon.etc_skull_white_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1317,7 +1280,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1326,7 +1288,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13873" type="EtcItem" name="Swallowed Sternum">
+	<item id="13873" name="Swallowed Sternum" type="EtcItem">
 		<set name="icon" val="icon.etc_rib_white_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1334,7 +1296,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1343,7 +1304,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13874" type="EtcItem" name="Swallowed Bones">
+	<item id="13874" name="Swallowed Bones" type="EtcItem">
 		<set name="icon" val="icon.etc_piece_bone_white_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1351,7 +1312,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1360,7 +1320,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13875" type="EtcItem" name="Deadman's Remains">
+	<item id="13875" name="Deadman's Remains" type="EtcItem">
 		<set name="icon" val="icon.etc_piece_bone_black_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1368,7 +1328,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1377,7 +1336,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13876" type="EtcItem" name="Banshee Queen's Eye">
+	<item id="13876" name="Banshee Queen's Eye" type="EtcItem">
 		<set name="icon" val="icon.etc_eyeball_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1385,7 +1344,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1394,7 +1352,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13877" type="EtcItem" name="Drake's Flesh">
+	<item id="13877" name="Drake's Flesh" type="EtcItem">
 		<set name="icon" val="icon.etc_meat_of_monstereye_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1402,7 +1360,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1411,7 +1368,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13878" type="EtcItem" name="Rotten Blood">
+	<item id="13878" name="Rotten Blood" type="EtcItem">
 		<set name="icon" val="icon.etc_potion_scarlet_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1419,7 +1376,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1428,7 +1384,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="13879" type="EtcItem" name="Bait for Drakes">
+	<item id="13879" name="Bait for Drakes" type="EtcItem">
 		<set name="icon" val="icon.drake_wing_lure_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -1438,7 +1394,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="5822-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
@@ -1448,8 +1403,11 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_non_transform}}}" />
+		<skills>
+			<skill id="5822" level="1" />
+		</skills>
 	</item>
-	<item id="13880" type="EtcItem" name="Variant Drake Wing Horns">
+	<item id="13880" name="Variant Drake Wing Horns" type="EtcItem">
 		<set name="icon" val="icon.etc_horn_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1459,16 +1417,17 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="5822-1" />
+		<skills>
+			<skill id="5822" level="1" />
+		</skills>
 	</item>
-	<item id="13881" type="Weapon" name="Attribute Master Yang's Sword">
+	<item id="13881" name="Attribute Master Yang's Sword" name_additional="10-minute" type="Weapon">
 		<set name="icon" val="icon.weapon_long_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1498,11 +1457,11 @@
 			<set stat="mAtk" val="120" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="13882" type="Weapon" name="Dynasty Dual Dagger">
+	<item id="13882" name="Dynasty Dual Dagger" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALDAGGER" />
@@ -1520,9 +1479,11 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="8295-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="8295" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<and>
 				<player level="81" />
@@ -1535,11 +1496,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="13883" type="Weapon" name="Icarus Dual Daggers">
+	<item id="13883" name="Icarus Dual Daggers" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALDAGGER" />
@@ -1557,10 +1518,12 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="8296-1" />
 		<set name="item_skill" val="3552-1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DUAL_DAGGER" />
+		<skills>
+			<skill id="8296" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<and>
 				<player level="81" />
@@ -1573,11 +1536,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="13884" type="Weapon" name="Vesper Dual Daggers">
+	<item id="13884" name="Vesper Dual Daggers" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALDAGGER" />
@@ -1595,9 +1558,11 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<set name="enchant4_skill" val="8298-1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3552-1" />
+		<skills>
+			<skill id="8298" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<and>
 				<player level="81" />
@@ -1610,11 +1575,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="13885" type="Armor" name="Sealed Arcana Sigil">
+	<item id="13885" name="Sealed Arcana Sigil" type="Armor">
 		<set name="icon" val="icon.arcana_sigil_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="SIGIL" />
@@ -1637,7 +1602,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="13886" type="Armor" name="Sealed Dynasty Sigil">
+	<item id="13886" name="Sealed Dynasty Sigil" type="Armor">
 		<set name="icon" val="icon.armor_dynasty_sigil_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="SIGIL" />
@@ -1659,7 +1624,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="13887" type="Armor" name="Sealed Vesper Sigil">
+	<item id="13887" name="Sealed Vesper Sigil" type="Armor">
 		<set name="icon" val="icon.armor_verper_sigil_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="SIGIL" />
@@ -1682,7 +1647,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="13888" type="Armor" name="Sealed Lord's Cloak">
+	<item id="13888" name="Sealed Lord's Cloak" type="Armor">
 		<set name="icon" val="icon.feud_load_cloak_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="back" />
@@ -1700,7 +1665,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="13889" type="Armor" name="Holy Spirit's Cloak - Kamael exclusive">
+	<item id="13889" name="Holy Spirit's Cloak (Kamael)" type="Armor">
 		<set name="icon" val="icon.vesper_cloack_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="back" />
@@ -1721,7 +1686,7 @@
 			<add stat="darkRes" val="30" />
 		</for>
 	</item>
-	<item id="13890" type="Armor" name="Holy Spirit's Cloak">
+	<item id="13890" name="Holy Spirit's Cloak" type="Armor">
 		<set name="icon" val="icon.vesper_cloack_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="back" />
@@ -1740,7 +1705,7 @@
 			<add stat="darkRes" val="30" />
 		</for>
 	</item>
-	<item id="13891" type="Armor" name="Holy Spirit's Cloak - Light Armor exclusive">
+	<item id="13891" name="Holy Spirit's Cloak (Light Armor)" type="Armor">
 		<set name="icon" val="icon.vesper_cloack_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="back" />
@@ -1762,7 +1727,7 @@
 			<add stat="darkRes" val="30" />
 		</for>
 	</item>
-	<item id="13892" type="Armor" name="Holy Spirit's Cloak - Robe exclusive">
+	<item id="13892" name="Holy Spirit's Cloak (Robe)" type="Armor">
 		<set name="icon" val="icon.vesper_cloack_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="back" />
@@ -1784,19 +1749,18 @@
 			<add stat="darkRes" val="30" />
 		</for>
 	</item>
-	<item id="13893" type="EtcItem" name="Sealed Holy Spirit's Cloak">
+	<item id="13893" name="Sealed Holy Spirit's Cloak" type="EtcItem">
 		<set name="icon" val="icon.sealed_vesper_cloack_i01" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="CLOTH" />
 		<set name="weight" val="220" />
-		<set name="crystal_type" val="S80" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="28671000" />
 		<for>
 			<add order="0" stat="pDef" val="20" />
 		</for>
 	</item>
-	<item id="13894" type="Armor" name="Cloth Belt">
+	<item id="13894" name="Cloth Belt" type="Armor">
 		<set name="icon" val="icon.armor_belt_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1815,7 +1779,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="13895" type="Armor" name="Leather Belt">
+	<item id="13895" name="Leather Belt" type="Armor">
 		<set name="icon" val="icon.armor_belt_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1833,7 +1797,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="13896" type="Armor" name="Iron Belt">
+	<item id="13896" name="Iron Belt" type="Armor">
 		<set name="icon" val="icon.armor_belt_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1851,7 +1815,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="13897" type="Armor" name="Mithril Belt">
+	<item id="13897" name="Mithril Belt" type="Armor">
 		<set name="icon" val="icon.armor_belt_i03" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1869,19 +1833,17 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="13898" type="EtcItem" name="Sealed Magic Pin (C-grade)">
+	<item id="13898" name="Sealed Magic Pin (C-grade)" type="EtcItem">
 		<set name="icon" val="icon.pin_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LEATHER" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="weight" val="20" />
 	</item>
-	<item id="13899" type="EtcItem" name="Sealed Magic Pin (B-grade)">
+	<item id="13899" name="Sealed Magic Pin (B-grade)" type="EtcItem">
 		<set name="icon" val="icon.pin_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LEATHER" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="weight" val="20" />
 	</item>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="11600" type="Armor" name="Dynasty Ring">
+	<item id="11600" name="Dynasty Ring" type="Armor">
 		<set name="icon" val="icon.accessary_dynasty_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -12,14 +12,16 @@
 		<set name="price" val="3971000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3823-1" />
+		<skills>
+			<skill id="3823" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="60" />
 			<add stat="maxMp" val="23" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11601" type="Armor" name="Dynasty Earring">
+	<item id="11601" name="Dynasty Earring" type="Armor">
 		<set name="icon" val="icon.accessary_dynasty_earing_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -31,14 +33,16 @@
 		<set name="price" val="5956000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3824-1" />
+		<skills>
+			<skill id="3824" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="79" />
 			<add stat="maxMp" val="35" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11602" type="Armor" name="Sealed Dynasty Necklace">
+	<item id="11602" name="Sealed Dynasty Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_dynasty_necklace_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -55,7 +59,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11603" type="Armor" name="Sealed Dynasty Ring">
+	<item id="11603" name="Sealed Dynasty Ring" type="Armor">
 		<set name="icon" val="icon.accessary_dynasty_ring_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -72,7 +76,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11604" type="Armor" name="Sealed Dynasty Earring">
+	<item id="11604" name="Sealed Dynasty Earring" type="Armor">
 		<set name="icon" val="icon.accessary_dynasty_earing_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -89,7 +93,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11605" type="Weapon" name="Common Item - Steel Sword">
+	<item id="11605" name="Common Item - Steel Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_iron_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -114,7 +118,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11606" type="Weapon" name="Common Item - Reinforced Bow">
+	<item id="11606" name="Common Item - Reinforced Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_strengthening_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -142,7 +146,7 @@
 			<set stat="pAtkSpd" val="293" />
 		</for>
 	</item>
-	<item id="11607" type="Weapon" name="Common Item - Rapier">
+	<item id="11607" name="Common Item - Rapier" type="Weapon">
 		<set name="icon" val="icon.weapon_rapier_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -160,7 +164,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -172,7 +178,7 @@
 			<set stat="pAtkSpd" val="406" />
 		</for>
 	</item>
-	<item id="11608" type="Weapon" name="Common Item - Bagh-Nakh">
+	<item id="11608" name="Common Item - Bagh-Nakh" type="Weapon">
 		<set name="icon" val="icon.weapon_baghnakh_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -197,7 +203,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11609" type="Weapon" name="Common Item - Proof of Revenge">
+	<item id="11609" name="Common Item - Proof of Revenge" type="Weapon">
 		<set name="icon" val="icon.weapon_proof_of_revenge_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -222,7 +228,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11610" type="Weapon" name="Common Item - Bone Staff">
+	<item id="11610" name="Common Item - Bone Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -248,7 +254,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11611" type="Weapon" name="Common Item - Priest Sword">
+	<item id="11611" name="Common Item - Priest Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_priest_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -273,7 +279,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11612" type="Weapon" name="Common Item - Branch of Life">
+	<item id="11612" name="Common Item - Branch of Life" type="Weapon">
 		<set name="icon" val="icon.weapon_branch_of_life_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -298,7 +304,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11613" type="Weapon" name="Common Item - Crafted Dagger">
+	<item id="11613" name="Common Item - Crafted Dagger" type="Weapon">
 		<set name="icon" val="icon.weapon_handiwork_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -323,7 +329,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="11614" type="Weapon" name="Common Item - Saber">
+	<item id="11614" name="Common Item - Saber" type="Weapon">
 		<set name="icon" val="icon.weapon_saber_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -348,7 +354,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11615" type="Weapon" name="Common Item - Scalpel">
+	<item id="11615" name="Common Item - Scalpel" type="Weapon">
 		<set name="icon" val="icon.weapon_scalpel_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -373,7 +379,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11616" type="Weapon" name="Common Item - Temptation of Abyss">
+	<item id="11616" name="Common Item - Temptation of Abyss" type="Weapon">
 		<set name="icon" val="icon.weapon_temptation_of_abyss_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -398,7 +404,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11617" type="Weapon" name="Common Item - Assassin Knife">
+	<item id="11617" name="Common Item - Assassin Knife" type="Weapon">
 		<set name="icon" val="icon.weapon_assassin_knife_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -423,7 +429,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="11618" type="Weapon" name="Common Item - Work Hammer">
+	<item id="11618" name="Common Item - Work Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_work_hammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -448,7 +454,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11619" type="Weapon" name="Common Item - Scroll of Wisdom">
+	<item id="11619" name="Common Item - Scroll of Wisdom" type="Weapon">
 		<set name="icon" val="icon.weapon_scroll_of_wisdom_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -473,7 +479,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11620" type="Weapon" name="Common Item - Talwar">
+	<item id="11620" name="Common Item - Talwar" type="Weapon">
 		<set name="icon" val="icon.weapon_tulwar_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -502,7 +508,7 @@
 			<set stat="pAtkSpd" val="350" />
 		</for>
 	</item>
-	<item id="11621" type="Weapon" name="Common Item - Talwar">
+	<item id="11621" name="Common Item - Talwar" type="Weapon">
 		<set name="icon" val="icon.weapon_tulwar_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -531,7 +537,7 @@
 			<set stat="pAtkSpd" val="350" />
 		</for>
 	</item>
-	<item id="11622" type="Weapon" name="Common Item - Trident">
+	<item id="11622" name="Common Item - Trident" type="Weapon">
 		<set name="icon" val="icon.weapon_trident_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -548,7 +554,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="40" />
 			<set stat="mAtk" val="26" />
@@ -557,7 +565,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11623" type="Weapon" name="Common Item - Hand Axe">
+	<item id="11623" name="Common Item - Hand Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_hand_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -582,7 +590,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11624" type="Weapon" name="Common Item - Field Gun">
+	<item id="11624" name="Common Item - Field Gun" type="Weapon">
 		<set name="icon" val="icon.weapon_hunting_gun_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -612,7 +620,7 @@
 			<set stat="pAtkSpd" val="303" />
 		</for>
 	</item>
-	<item id="11625" type="Weapon" name="Common Item - Heavy Sword">
+	<item id="11625" name="Common Item - Heavy Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_heavy_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -637,7 +645,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11626" type="Weapon" name="Common Item - Heavy Mace">
+	<item id="11626" name="Common Item - Heavy Mace" type="Weapon">
 		<set name="icon" val="icon.weapon_heavy_mace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -662,7 +670,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11627" type="Weapon" name="Common Item - Mace of Prayer">
+	<item id="11627" name="Common Item - Mace of Prayer" type="Weapon">
 		<set name="icon" val="icon.weapon_mace_of_prayer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -688,7 +696,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11628" type="Weapon" name="Common Item - Knight's Sword">
+	<item id="11628" name="Common Item - Knight's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_knights_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -713,7 +721,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11629" type="Weapon" name="Common Item - Dark Elven Bow">
+	<item id="11629" name="Common Item - Dark Elven Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_elven_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -741,7 +749,7 @@
 			<set stat="pAtkSpd" val="293" />
 		</for>
 	</item>
-	<item id="11630" type="Weapon" name="Common Item - Doom Hammer">
+	<item id="11630" name="Common Item - Doom Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_hammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -767,7 +775,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11631" type="Weapon" name="Common Item - Dwarven Trident">
+	<item id="11631" name="Common Item - Dwarven Trident" type="Weapon">
 		<set name="icon" val="icon.weapon_dwarven_trident_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -784,7 +792,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="51" />
 			<set stat="mAtk" val="32" />
@@ -793,7 +803,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11632" type="Weapon" name="Common Item - Longbow">
+	<item id="11632" name="Common Item - Longbow" type="Weapon">
 		<set name="icon" val="icon.weapon_long_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -821,7 +831,7 @@
 			<set stat="pAtkSpd" val="227" />
 		</for>
 	</item>
-	<item id="11633" type="Weapon" name="Common Item - Staff of Mana">
+	<item id="11633" name="Common Item - Staff of Mana" type="Weapon">
 		<set name="icon" val="icon.weapon_staff_of_mana_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -847,7 +857,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11634" type="Weapon" name="Common Item - Mystic Staff">
+	<item id="11634" name="Common Item - Mystic Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_mystic_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -873,7 +883,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11635" type="Weapon" name="Common Item - Bastard Sword">
+	<item id="11635" name="Common Item - Bastard Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_bastard_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -898,7 +908,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11636" type="Weapon" name="Common Item - Spinebone Sword">
+	<item id="11636" name="Common Item - Spinebone Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_spinebone_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -923,7 +933,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11637" type="Weapon" name="Common Item - Divine Tome">
+	<item id="11637" name="Common Item - Divine Tome" type="Weapon">
 		<set name="icon" val="icon.weapon_divine_tome_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -948,7 +958,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11638" type="Weapon" name="Common Item - Mace of Judgment">
+	<item id="11638" name="Common Item - Mace of Judgment" type="Weapon">
 		<set name="icon" val="icon.weapon_mace_of_judgment_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -974,7 +984,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11639" type="Weapon" name="Common Item - Military Talwar">
+	<item id="11639" name="Common Item - Military Talwar" type="Weapon">
 		<set name="icon" val="icon.weapon_tulwar_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1002,7 +1012,7 @@
 			<set stat="pAtkSpd" val="350" />
 		</for>
 	</item>
-	<item id="11640" type="Weapon" name="Common Item - Elven Bow">
+	<item id="11640" name="Common Item - Elven Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_elven_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -1030,7 +1040,7 @@
 			<set stat="pAtkSpd" val="293" />
 		</for>
 	</item>
-	<item id="11641" type="Weapon" name="Common Item - Mace of Miracle">
+	<item id="11641" name="Common Item - Mace of Miracle" type="Weapon">
 		<set name="icon" val="icon.weapon_mace_of_miracle_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1056,7 +1066,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11642" type="Weapon" name="Common Item - Single-Edged Jamadhr">
+	<item id="11642" name="Common Item - Single-Edged Jamadhr" type="Weapon">
 		<set name="icon" val="icon.weapon_single-edged_jamadhr_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -1081,7 +1091,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11643" type="Weapon" name="Common Item - Artisan's Sword">
+	<item id="11643" name="Common Item - Artisan's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_artisans_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1106,7 +1116,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11644" type="Weapon" name="Common Item - Conjuror's Staff">
+	<item id="11644" name="Common Item - Conjuror's Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_conjure_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1132,7 +1142,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11645" type="Weapon" name="Common Item - Tomahawk">
+	<item id="11645" name="Common Item - Tomahawk" type="Weapon">
 		<set name="icon" val="icon.weapon_tomahawk_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1157,7 +1167,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11646" type="Weapon" name="Common Item - Poniard Dagger">
+	<item id="11646" name="Common Item - Poniard Dagger" type="Weapon">
 		<set name="icon" val="icon.weapon_dirk_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1182,7 +1192,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="11647" type="Weapon" name="Common Item - Pike">
+	<item id="11647" name="Common Item - Pike" type="Weapon">
 		<set name="icon" val="icon.weapon_pike_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -1199,7 +1209,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="51" />
 			<set stat="mAtk" val="32" />
@@ -1208,7 +1220,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11648" type="Weapon" name="Common Item - Fleuret">
+	<item id="11648" name="Common Item - Fleuret" type="Weapon">
 		<set name="icon" val="icon.weapon_rapier_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1226,7 +1238,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1238,7 +1252,7 @@
 			<set stat="pAtkSpd" val="406" />
 		</for>
 	</item>
-	<item id="11649" type="Weapon" name="Common Item - Fleuret">
+	<item id="11649" name="Common Item - Fleuret" type="Weapon">
 		<set name="icon" val="icon.weapon_rapier_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1256,7 +1270,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1268,7 +1284,7 @@
 			<set stat="pAtkSpd" val="406" />
 		</for>
 	</item>
-	<item id="11650" type="Weapon" name="Common Item - Fleuret">
+	<item id="11650" name="Common Item - Fleuret" type="Weapon">
 		<set name="icon" val="icon.weapon_rapier_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1286,7 +1302,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1298,7 +1316,7 @@
 			<set stat="pAtkSpd" val="406" />
 		</for>
 	</item>
-	<item id="11651" type="Weapon" name="Common Item - Fleuret">
+	<item id="11651" name="Common Item - Fleuret" type="Weapon">
 		<set name="icon" val="icon.weapon_rapier_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1316,7 +1334,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1328,7 +1348,7 @@
 			<set stat="pAtkSpd" val="406" />
 		</for>
 	</item>
-	<item id="11652" type="Weapon" name="Common Item - Hand Crossbow">
+	<item id="11652" name="Common Item - Hand Crossbow" type="Weapon">
 		<set name="icon" val="icon.weapon_hunting_gun_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1358,7 +1378,7 @@
 			<set stat="pAtkSpd" val="303" />
 		</for>
 	</item>
-	<item id="11653" type="Weapon" name="Common Item - Hand Crossbow">
+	<item id="11653" name="Common Item - Hand Crossbow" type="Weapon">
 		<set name="icon" val="icon.weapon_hunting_gun_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1388,7 +1408,7 @@
 			<set stat="pAtkSpd" val="303" />
 		</for>
 	</item>
-	<item id="11654" type="Weapon" name="Common Item - Hand Crossbow">
+	<item id="11654" name="Common Item - Hand Crossbow" type="Weapon">
 		<set name="icon" val="icon.weapon_hunting_gun_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1418,7 +1438,7 @@
 			<set stat="pAtkSpd" val="303" />
 		</for>
 	</item>
-	<item id="11655" type="Weapon" name="Common Item - Sword of Magic">
+	<item id="11655" name="Common Item - Sword of Magic" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_magic_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1443,7 +1463,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11656" type="Weapon" name="Common Item - Sword of Mystic">
+	<item id="11656" name="Common Item - Sword of Mystic" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_mystic_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1468,7 +1488,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11657" type="Weapon" name="Common Item - Sword of Occult">
+	<item id="11657" name="Common Item - Sword of Occult" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_occult_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1493,7 +1513,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11658" type="Weapon" name="Common Item - Saber*Saber">
+	<item id="11658" name="Common Item - Saber*Saber" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1517,7 +1537,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11659" type="Weapon" name="Common Item - Gastraphetes">
+	<item id="11659" name="Common Item - Gastraphetes" type="Weapon">
 		<set name="icon" val="icon.weapon_gastraphetes_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -1545,7 +1565,7 @@
 			<set stat="pAtkSpd" val="293" />
 		</for>
 	</item>
-	<item id="11660" type="Weapon" name="Common Item - Shilen Knife">
+	<item id="11660" name="Common Item - Shilen Knife" type="Weapon">
 		<set name="icon" val="icon.weapon_knife_o'_silenus_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1571,7 +1591,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="11661" type="Weapon" name="Common Item - Dwarven Pike">
+	<item id="11661" name="Common Item - Dwarven Pike" type="Weapon">
 		<set name="icon" val="icon.weapon_dwarven_pike_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -1588,7 +1608,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="64" />
 			<set stat="mAtk" val="39" />
@@ -1597,7 +1619,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11662" type="Weapon" name="Common Item - Dagger of Mana">
+	<item id="11662" name="Common Item - Dagger of Mana" type="Weapon">
 		<set name="icon" val="icon.weapon_dagger_of_mana_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1623,7 +1645,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="11663" type="Weapon" name="Common Item - Staff of Magic">
+	<item id="11663" name="Common Item - Staff of Magic" type="Weapon">
 		<set name="icon" val="icon.weapon_staff_of_magicpower_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1649,7 +1671,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11664" type="Weapon" name="Common Item - Mystic Knife">
+	<item id="11664" name="Common Item - Mystic Knife" type="Weapon">
 		<set name="icon" val="icon.weapon_mystic_knife_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1675,7 +1697,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="11665" type="Weapon" name="Common Item - Triple-Edged Jamadhr">
+	<item id="11665" name="Common Item - Triple-Edged Jamadhr" type="Weapon">
 		<set name="icon" val="icon.weapon_triple-edged_jamadhr_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -1700,7 +1722,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11666" type="Weapon" name="Common Item - Spiked Club">
+	<item id="11666" name="Common Item - Spiked Club" type="Weapon">
 		<set name="icon" val="icon.weapon_spike_club_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1725,7 +1747,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11667" type="Weapon" name="Common Item - Two-handed Sword">
+	<item id="11667" name="Common Item - Two-handed Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_two_handed_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1750,7 +1772,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11668" type="Weapon" name="Common Item - Estoc">
+	<item id="11668" name="Common Item - Estoc" type="Weapon">
 		<set name="icon" val="icon.weapon_rapier_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1768,7 +1790,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1780,7 +1804,7 @@
 			<set stat="pAtkSpd" val="406" />
 		</for>
 	</item>
-	<item id="11669" type="Weapon" name="Common Item - Estoc">
+	<item id="11669" name="Common Item - Estoc" type="Weapon">
 		<set name="icon" val="icon.weapon_rapier_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1798,7 +1822,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
-		<set name="enchant4_skill" val="3426-1" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1810,7 +1836,7 @@
 			<set stat="pAtkSpd" val="406" />
 		</for>
 	</item>
-	<item id="11670" type="Weapon" name="Common Item - Elven Sword">
+	<item id="11670" name="Common Item - Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_elven_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1835,7 +1861,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11671" type="Weapon" name="Common Item - War Hammer">
+	<item id="11671" name="Common Item - War Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_war_hammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -1852,7 +1878,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="64" />
 			<set stat="mAtk" val="39" />
@@ -1861,7 +1889,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11672" type="Weapon" name="Common Item - Conjuror's Knife">
+	<item id="11672" name="Common Item - Conjuror's Knife" type="Weapon">
 		<set name="icon" val="icon.weapon_conjure_knife_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1887,7 +1915,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="11673" type="Weapon" name="Common Item - Kukuri">
+	<item id="11673" name="Common Item - Kukuri" type="Weapon">
 		<set name="icon" val="icon.weapon_kukuri_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1912,7 +1940,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="11674" type="Weapon" name="Common Item - Crossbow">
+	<item id="11674" name="Common Item - Crossbow" type="Weapon">
 		<set name="icon" val="icon.weapon_hunting_gun_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1942,7 +1970,7 @@
 			<set stat="pAtkSpd" val="303" />
 		</for>
 	</item>
-	<item id="11675" type="Weapon" name="Common Item - Crimson Sword">
+	<item id="11675" name="Common Item - Crimson Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_crimson_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1967,7 +1995,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11676" type="Weapon" name="Common Item - Tome of Blood">
+	<item id="11676" name="Common Item - Tome of Blood" type="Weapon">
 		<set name="icon" val="icon.weapon_tome_of_blood_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -1992,7 +2020,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11677" type="Weapon" name="Common Item - Field Sword">
+	<item id="11677" name="Common Item - Field Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_tulwar_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2021,7 +2049,7 @@
 			<set stat="pAtkSpd" val="350" />
 		</for>
 	</item>
-	<item id="11678" type="Weapon" name="Common Item - Sage's Blood">
+	<item id="11678" name="Common Item - Sage's Blood" type="Weapon">
 		<set name="icon" val="icon.weapon_blood_of_saints_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -2046,7 +2074,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11679" type="Weapon" name="Common Item - Saber*Knight's Sword">
+	<item id="11679" name="Common Item - Saber*Knight's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2070,7 +2098,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11680" type="Weapon" name="Common Item - Saber*Bastard Sword">
+	<item id="11680" name="Common Item - Saber*Bastard Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2094,7 +2122,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11681" type="Weapon" name="Common Item - Saber*Spinebone Sword">
+	<item id="11681" name="Common Item - Saber*Spinebone Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2118,7 +2146,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11682" type="Weapon" name="Common Item - Saber*Artisan's Sword">
+	<item id="11682" name="Common Item - Saber*Artisan's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2142,7 +2170,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11683" type="Weapon" name="Common Item - Reinforced Longbow">
+	<item id="11683" name="Common Item - Reinforced Longbow" type="Weapon">
 		<set name="icon" val="icon.weapon_strengthening_long_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -2170,7 +2198,7 @@
 			<set stat="pAtkSpd" val="227" />
 		</for>
 	</item>
-	<item id="11684" type="Weapon" name="Common Item - Knight's Sword*Knight's Sword">
+	<item id="11684" name="Common Item - Knight's Sword*Knight's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2194,7 +2222,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11685" type="Weapon" name="Common Item - Maingauche">
+	<item id="11685" name="Common Item - Maingauche" type="Weapon">
 		<set name="icon" val="icon.weapon_maingauche_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2219,7 +2247,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="11686" type="Weapon" name="Common Item - Morning Star">
+	<item id="11686" name="Common Item - Morning Star" type="Weapon">
 		<set name="icon" val="icon.weapon_morning_star_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2244,7 +2272,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11687" type="Weapon" name="Common Item - Bastard Sword*Knight's Sword">
+	<item id="11687" name="Common Item - Bastard Sword*Knight's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2268,7 +2296,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11688" type="Weapon" name="Common Item - Bastard Sword*Bastard Sword">
+	<item id="11688" name="Common Item - Bastard Sword*Bastard Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2292,7 +2320,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11689" type="Weapon" name="Common Item - Bastard Sword*Spinebone Sword">
+	<item id="11689" name="Common Item - Bastard Sword*Spinebone Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2316,7 +2344,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11690" type="Weapon" name="Common Item - Bastard Sword*Artisan's Sword">
+	<item id="11690" name="Common Item - Bastard Sword*Artisan's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2340,7 +2368,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11691" type="Weapon" name="Common Item - Bich'Hwa">
+	<item id="11691" name="Common Item - Bich'Hwa" type="Weapon">
 		<set name="icon" val="icon.weapon_bichhwa_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -2365,7 +2393,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11692" type="Weapon" name="Common Item - Priest Mace">
+	<item id="11692" name="Common Item - Priest Mace" type="Weapon">
 		<set name="icon" val="icon.weapon_mace_of_priest_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2391,7 +2419,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11693" type="Weapon" name="Common Item - Goat Head Staff">
+	<item id="11693" name="Common Item - Goat Head Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_goathead_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2417,7 +2445,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11694" type="Weapon" name="Common Item - Saber*Elven Sword">
+	<item id="11694" name="Common Item - Saber*Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2441,7 +2469,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11695" type="Weapon" name="Common Item - Saber*Crimson Sword">
+	<item id="11695" name="Common Item - Saber*Crimson Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2465,7 +2493,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11696" type="Weapon" name="Common Item - Sword of Magic Fog">
+	<item id="11696" name="Common Item - Sword of Magic Fog" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_magic_fog_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2490,7 +2518,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11697" type="Weapon" name="Common Item - Skull Breaker">
+	<item id="11697" name="Common Item - Skull Breaker" type="Weapon">
 		<set name="icon" val="icon.weapon_skull_breaker_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2515,7 +2543,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="11698" type="Weapon" name="Common Item - Spinebone Sword*Knight's Sword">
+	<item id="11698" name="Common Item - Spinebone Sword*Knight's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2539,7 +2567,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="11699" type="Weapon" name="Common Item - Spinebone Sword*Spinebone Sword">
+	<item id="11699" name="Common Item - Spinebone Sword*Spinebone Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />

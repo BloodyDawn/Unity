@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="7700" type="EtcItem" name="Recipe: Daisy Hairpin (100%)">
+	<item id="7700" name="Recipe: Daisy Hairpin" type="EtcItem">
 		<set name="icon" val="icon.etc_recipe_green_i00" />
 		<set name="default_action" val="RECIPE" />
 		<set name="etcitem_type" val="RECIPE" />
@@ -10,11 +10,10 @@
 		<set name="price" val="10000" />
 		<set name="recipe_id" val="782" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="Recipes" />
 	</item>
-	<item id="7701" type="Weapon" name="Stick of Faith">
+	<item id="7701" name="Stick of Faith" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_stick_of_faith_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -33,18 +32,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3014-1" />
+		<skills>
+			<skill id="3014" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="85" />
 			<set stat="mAtk" val="81" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7702" type="Weapon" name="Stick of Faith">
+	<item id="7702" name="Stick of Faith" name_additional="Magic Hold" type="Weapon">
 		<set name="icon" val="icon.weapon_stick_of_faith_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -62,20 +63,21 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="10" />
 		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="1201-16" />
+		<skills>
+			<skill id="1201" level="16" type="ON_MAGIC_SKILL" type_chance="10" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="85" />
 			<set stat="mAtk" val="81" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7703" type="Weapon" name="Stick of Faith">
+	<item id="7703" name="Stick of Faith" name_additional="Magic Mental Shield" type="Weapon">
 		<set name="icon" val="icon.weapon_stick_of_faith_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -93,20 +95,21 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="50" />
 		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="1035-2" />
+		<skills>
+			<skill id="1035" level="2" type="ON_MAGIC_SKILL" type_chance="50" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="85" />
 			<set stat="mAtk" val="81" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7704" type="Weapon" name="Stick of Eternity">
+	<item id="7704" name="Stick of Eternity" name_additional="Empower" type="Weapon">
 		<set name="icon" val="icon.weapon_stick_of_eternity_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -125,18 +128,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3076-3" />
+		<skills>
+			<skill id="3076" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="111" />
 			<set stat="mAtk" val="101" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7705" type="Weapon" name="Stick of Eternity - Rsk. Evasion">
+	<item id="7705" name="Stick of Eternity" name_additional="Rsk. Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_stick_of_eternity_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -155,18 +160,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3030-3" />
+		<skills>
+			<skill id="3030" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="111" />
 			<set stat="mAtk" val="101" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7706" type="Weapon" name="Stick of Eternity">
+	<item id="7706" name="Stick of Eternity" name_additional="Blessed Body" type="Weapon">
 		<set name="icon" val="icon.weapon_stick_of_eternity_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -184,20 +191,21 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="20" />
 		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="1045-3" />
+		<skills>
+			<skill id="1045" level="3" type="ON_MAGIC_SKILL" type_chance="20" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="111" />
 			<set stat="mAtk" val="101" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7707" type="Weapon" name="Nirvana Axe - M. Atk.">
+	<item id="7707" name="Nirvana Axe" name_additional="M. Atk." type="Weapon">
 		<set name="icon" val="icon.weapon_nirvana_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -216,18 +224,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3077-3" />
+		<skills>
+			<skill id="3077" level="3" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="111" />
 			<set stat="mAtk" val="101" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7708" type="Weapon" name="Nirvana Axe">
+	<item id="7708" name="Nirvana Axe" name_additional="Magic Poison" type="Weapon">
 		<set name="icon" val="icon.weapon_nirvana_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -245,20 +255,21 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="7" />
 		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="1168-6" />
+		<skills>
+			<skill id="1168" level="6" type="ON_MAGIC_SKILL" type_chance="7" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="111" />
 			<set stat="mAtk" val="101" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7709" type="Weapon" name="Nirvana Axe">
+	<item id="7709" name="Nirvana Axe" name_additional="Magic Weakness" type="Weapon">
 		<set name="icon" val="icon.weapon_nirvana_axe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -276,20 +287,21 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="7" />
 		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="1164-9" />
+		<skills>
+			<skill id="1164" level="9" type="ON_MAGIC_SKILL" type_chance="7" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="111" />
 			<set stat="mAtk" val="101" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7710" type="Weapon" name="Club of Nature">
+	<item id="7710" name="Club of Nature" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_club_of_nature_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -307,20 +319,22 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="item_skill" val="3047-1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
+		<skills>
+			<skill id="3047" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="111" />
 			<set stat="mAtk" val="101" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7711" type="Weapon" name="Club of Nature">
+	<item id="7711" name="Club of Nature" name_additional="Magic Mental Shield" type="Weapon">
 		<set name="icon" val="icon.weapon_club_of_nature_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -338,20 +352,21 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="50" />
 		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="1035-3" />
+		<skills>
+			<skill id="1035" level="3" type="ON_MAGIC_SKILL" type_chance="50" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="111" />
 			<set stat="mAtk" val="101" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7712" type="Weapon" name="Club of Nature">
+	<item id="7712" name="Club of Nature" name_additional="Magic Hold" type="Weapon">
 		<set name="icon" val="icon.weapon_club_of_nature_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -369,20 +384,21 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="10" />
 		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="1201-21" />
+		<skills>
+			<skill id="1201" level="21" type="ON_MAGIC_SKILL" type_chance="10" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="111" />
 			<set stat="mAtk" val="101" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7713" type="Weapon" name="Mace of Underworld">
+	<item id="7713" name="Mace of Underworld" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_mace_of_underworld_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -401,49 +417,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3014-1" />
+		<skills>
+			<skill id="3014" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="111" />
 			<set stat="mAtk" val="101" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7714" type="Weapon" name="Mace of Underworld">
-		<set name="icon" val="icon.weapon_mace_of_underworld_i01" />
-		<set name="default_action" val="EQUIP" />
-		<set name="weapon_type" val="BLUNT" />
-		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
-		<set name="attack_range" val="40" />
-		<set name="damage_range" val="0;0;40;120" />
-		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="177" />
-		<set name="crystal_type" val="C" />
-		<set name="material" val="FINE_STEEL" />
-		<set name="weight" val="1090" />
-		<set name="price" val="660860" />
-		<set name="soulshots" val="3" />
-		<set name="spiritshots" val="3" />
-		<set name="enchant_enabled" val="1" />
-		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="10" />
-		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="3078-3" />
-		<for>
-			<set stat="pAtk" val="111" />
-			<set stat="mAtk" val="101" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
-		</for>
-	</item>
-	<item id="7715" type="Weapon" name="Mace of Underworld">
+	<item id="7714" name="Mace of Underworld" name_additional="Magic Silence" type="Weapon">
 		<set name="icon" val="icon.weapon_mace_of_underworld_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -462,18 +449,52 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3048-1" />
+		<skills>
+			<skill id="3078" level="3" type="ON_MAGIC_SKILL" type_chance="10" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="111" />
 			<set stat="mAtk" val="101" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7716" type="Weapon" name="Inferno Staff">
+	<item id="7715" name="Mace of Underworld" name_additional="Conversion" type="Weapon">
+		<set name="icon" val="icon.weapon_mace_of_underworld_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="177" />
+		<set name="crystal_type" val="C" />
+		<set name="material" val="FINE_STEEL" />
+		<set name="weight" val="1090" />
+		<set name="price" val="660860" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3048" level="1" />
+		</skills>
+		<for>
+			<set stat="pAtk" val="111" />
+			<set stat="mAtk" val="101" />
+			<set stat="rCrit" val="4" />
+			<add stat="accCombat" val="4.75" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="7716" name="Inferno Staff" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_inferno_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -491,20 +512,22 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="item_skill" val="3047-1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
+		<skills>
+			<skill id="3047" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="135" />
 			<set stat="mAtk" val="111" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7717" type="Weapon" name="Inferno Staff">
+	<item id="7717" name="Inferno Staff" name_additional="Magic Silence" type="Weapon">
 		<set name="icon" val="icon.weapon_inferno_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -522,20 +545,21 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="10" />
 		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="3078-3" />
+		<skills>
+			<skill id="3078" level="3" type="ON_MAGIC_SKILL" type_chance="10" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="135" />
 			<set stat="mAtk" val="111" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7718" type="Weapon" name="Inferno Staff">
+	<item id="7718" name="Inferno Staff" name_additional="Magic Paralyze" type="Weapon">
 		<set name="icon" val="icon.weapon_inferno_staff_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -553,20 +577,21 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="5" />
 		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="3079-3" />
+		<skills>
+			<skill id="3079" level="3" type="ON_MAGIC_SKILL" type_chance="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="135" />
 			<set stat="mAtk" val="111" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7719" type="Weapon" name="Poleaxe">
+	<item id="7719" name="Poleaxe" name_additional="Critical Stun" type="Weapon">
 		<set name="icon" val="icon.weapon_poleaxe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -583,21 +608,22 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
-		<set name="oncrit_chance" val="31" />
 		<set name="oncrit_skill" val="3016-3" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7720" type="Weapon" name="Poleaxe">
+	<item id="7720" name="Poleaxe" name_additional="Long Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_poleaxe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -615,19 +641,21 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<set val="80" stat="pAtkRange" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<set stat="pAtkRange" val="80" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7721" type="Weapon" name="Poleaxe">
+	<item id="7721" name="Poleaxe" name_additional="Wide Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_poleaxe_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -645,18 +673,20 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="139" />
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7722" type="Weapon" name="Sword of Valhalla">
+	<item id="7722" name="Sword of Valhalla" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_valhalla_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -674,19 +704,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="item_skill" val="3047-1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
+		<skills>
+			<skill id="3047" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="140" />
 			<set stat="mAtk" val="122" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7723" type="Weapon" name="Sword of Valhalla">
+	<item id="7723" name="Sword of Valhalla" name_additional="Magic Weakness" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_valhalla_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -704,19 +736,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="7" />
 		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="1164-11" />
+		<skills>
+			<skill id="1164" level="11" type="ON_MAGIC_SKILL" type_chance="7" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="140" />
 			<set stat="mAtk" val="122" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7724" type="Weapon" name="Sword of Valhalla">
+	<item id="7724" name="Sword of Valhalla" name_additional="Magic Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_valhalla_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -734,19 +767,20 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="30" />
 		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="1044-3" />
+		<skills>
+			<skill id="1044" level="3" type="ON_MAGIC_SKILL" type_chance="30" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="140" />
 			<set stat="mAtk" val="122" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7725" type="EtcItem" name="Booty - Grey Pouch">
+	<item id="7725" name="Booty - Grey Pouch" type="EtcItem">
 		<set name="icon" val="icon.etc_pouch_gray_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -754,11 +788,12 @@
 		<set name="weight" val="1" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2218-3" />
+		<skills>
+			<skill id="2218" level="3" />
+		</skills>
 	</item>
-	<item id="7726" type="EtcItem" name="Small Green Nimble Fish (Novice)">
+	<item id="7726" name="Small Green Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -767,11 +802,12 @@
 		<set name="price" val="69" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2220-1" />
+		<skills>
+			<skill id="2220" level="1" />
+		</skills>
 	</item>
-	<item id="7727" type="EtcItem" name="Small Green Ugly Fish (Novice)">
+	<item id="7727" name="Small Green Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -780,11 +816,12 @@
 		<set name="price" val="71" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2220-2" />
+		<skills>
+			<skill id="2220" level="2" />
+		</skills>
 	</item>
-	<item id="7728" type="EtcItem" name="Small Green Fat Fish (Novice)">
+	<item id="7728" name="Small Green Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -793,11 +830,12 @@
 		<set name="price" val="77" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2220-3" />
+		<skills>
+			<skill id="2220" level="3" />
+		</skills>
 	</item>
-	<item id="7729" type="EtcItem" name="Green Nimble Fish (Novice)">
+	<item id="7729" name="Green Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -806,11 +844,12 @@
 		<set name="price" val="84" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2220-4" />
+		<skills>
+			<skill id="2220" level="4" />
+		</skills>
 	</item>
-	<item id="7730" type="EtcItem" name="Green Ugly Fish (Novice)">
+	<item id="7730" name="Green Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -819,11 +858,12 @@
 		<set name="price" val="94" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2220-5" />
+		<skills>
+			<skill id="2220" level="5" />
+		</skills>
 	</item>
-	<item id="7731" type="EtcItem" name="Green Fat Fish (Novice)">
+	<item id="7731" name="Green Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -832,11 +872,12 @@
 		<set name="price" val="104" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2220-6" />
+		<skills>
+			<skill id="2220" level="6" />
+		</skills>
 	</item>
-	<item id="7732" type="EtcItem" name="Large Green Nimble Fish (Novice)">
+	<item id="7732" name="Large Green Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -845,11 +886,12 @@
 		<set name="price" val="113" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2220-7" />
+		<skills>
+			<skill id="2220" level="7" />
+		</skills>
 	</item>
-	<item id="7733" type="EtcItem" name="Large Green Ugly Fish (Novice)">
+	<item id="7733" name="Large Green Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -858,11 +900,12 @@
 		<set name="price" val="124" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2220-8" />
+		<skills>
+			<skill id="2220" level="8" />
+		</skills>
 	</item>
-	<item id="7734" type="EtcItem" name="Large Green Fat Fish (Novice)">
+	<item id="7734" name="Large Green Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i07" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -871,11 +914,12 @@
 		<set name="price" val="133" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2220-9" />
+		<skills>
+			<skill id="2220" level="9" />
+		</skills>
 	</item>
-	<item id="7735" type="EtcItem" name="Small Jade Nimble Fish (Novice)">
+	<item id="7735" name="Small Jade Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -884,11 +928,12 @@
 		<set name="price" val="143" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2221-1" />
+		<skills>
+			<skill id="2221" level="1" />
+		</skills>
 	</item>
-	<item id="7736" type="EtcItem" name="Small Jade Ugly Fish (Novice)">
+	<item id="7736" name="Small Jade Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -897,11 +942,12 @@
 		<set name="price" val="167" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2221-2" />
+		<skills>
+			<skill id="2221" level="2" />
+		</skills>
 	</item>
-	<item id="7737" type="EtcItem" name="Small Jade Fat Fish (Novice)">
+	<item id="7737" name="Small Jade Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -910,11 +956,12 @@
 		<set name="price" val="167" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2221-3" />
+		<skills>
+			<skill id="2221" level="3" />
+		</skills>
 	</item>
-	<item id="7738" type="EtcItem" name="Jade Nimble Fish (Novice)">
+	<item id="7738" name="Jade Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -923,11 +970,12 @@
 		<set name="price" val="166" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2221-4" />
+		<skills>
+			<skill id="2221" level="4" />
+		</skills>
 	</item>
-	<item id="7739" type="EtcItem" name="Jade Ugly Fish (Novice)">
+	<item id="7739" name="Jade Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -936,11 +984,12 @@
 		<set name="price" val="165" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2221-5" />
+		<skills>
+			<skill id="2221" level="5" />
+		</skills>
 	</item>
-	<item id="7740" type="EtcItem" name="Jade Fat Fish (Novice)">
+	<item id="7740" name="Jade Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -949,11 +998,12 @@
 		<set name="price" val="165" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2221-6" />
+		<skills>
+			<skill id="2221" level="6" />
+		</skills>
 	</item>
-	<item id="7741" type="EtcItem" name="Large Jade Nimble Fish (Novice)">
+	<item id="7741" name="Large Jade Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -962,11 +1012,12 @@
 		<set name="price" val="164" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2221-7" />
+		<skills>
+			<skill id="2221" level="7" />
+		</skills>
 	</item>
-	<item id="7742" type="EtcItem" name="Large Jade Ugly Fish (Novice)">
+	<item id="7742" name="Large Jade Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -975,11 +1026,12 @@
 		<set name="price" val="164" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2221-8" />
+		<skills>
+			<skill id="2221" level="8" />
+		</skills>
 	</item>
-	<item id="7743" type="EtcItem" name="Large Jade Fat Fish (Novice)">
+	<item id="7743" name="Large Jade Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i06" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -988,11 +1040,12 @@
 		<set name="price" val="163" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2221-9" />
+		<skills>
+			<skill id="2221" level="9" />
+		</skills>
 	</item>
-	<item id="7744" type="EtcItem" name="Small Blue Nimble Fish (Novice)">
+	<item id="7744" name="Small Blue Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1001,11 +1054,12 @@
 		<set name="price" val="163" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2222-1" />
+		<skills>
+			<skill id="2222" level="1" />
+		</skills>
 	</item>
-	<item id="7745" type="EtcItem" name="Small Blue Ugly Fish (Novice)">
+	<item id="7745" name="Small Blue Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1014,11 +1068,12 @@
 		<set name="price" val="163" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2222-2" />
+		<skills>
+			<skill id="2222" level="2" />
+		</skills>
 	</item>
-	<item id="7746" type="EtcItem" name="Small Blue Fat Fish (Novice)">
+	<item id="7746" name="Small Blue Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1027,11 +1082,12 @@
 		<set name="price" val="198" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2222-3" />
+		<skills>
+			<skill id="2222" level="3" />
+		</skills>
 	</item>
-	<item id="7747" type="EtcItem" name="Blue Nimble Fish (Novice)">
+	<item id="7747" name="Blue Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1040,11 +1096,12 @@
 		<set name="price" val="202" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2222-4" />
+		<skills>
+			<skill id="2222" level="4" />
+		</skills>
 	</item>
-	<item id="7748" type="EtcItem" name="Blue Ugly Fish (Novice)">
+	<item id="7748" name="Blue Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1053,11 +1110,12 @@
 		<set name="price" val="197" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2222-5" />
+		<skills>
+			<skill id="2222" level="5" />
+		</skills>
 	</item>
-	<item id="7749" type="EtcItem" name="Blue Fat Fish (Novice)">
+	<item id="7749" name="Blue Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1066,11 +1124,12 @@
 		<set name="price" val="210" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2222-6" />
+		<skills>
+			<skill id="2222" level="6" />
+		</skills>
 	</item>
-	<item id="7750" type="EtcItem" name="Large Blue Nimble Fish (Novice)">
+	<item id="7750" name="Large Blue Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1079,11 +1138,12 @@
 		<set name="price" val="213" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2222-7" />
+		<skills>
+			<skill id="2222" level="7" />
+		</skills>
 	</item>
-	<item id="7751" type="EtcItem" name="Large Blue Ugly Fish (Novice)">
+	<item id="7751" name="Large Blue Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1092,11 +1152,12 @@
 		<set name="price" val="216" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2222-8" />
+		<skills>
+			<skill id="2222" level="8" />
+		</skills>
 	</item>
-	<item id="7752" type="EtcItem" name="Large Blue Fat Fish (Novice)">
+	<item id="7752" name="Large Blue Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1105,11 +1166,12 @@
 		<set name="price" val="218" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2222-9" />
+		<skills>
+			<skill id="2222" level="9" />
+		</skills>
 	</item>
-	<item id="7753" type="EtcItem" name="Small Yellow Nimble Fish (Novice)">
+	<item id="7753" name="Small Yellow Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1118,11 +1180,12 @@
 		<set name="price" val="221" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2223-1" />
+		<skills>
+			<skill id="2223" level="1" />
+		</skills>
 	</item>
-	<item id="7754" type="EtcItem" name="Small Yellow Ugly Fish (Novice)">
+	<item id="7754" name="Small Yellow Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1131,11 +1194,12 @@
 		<set name="price" val="224" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2223-2" />
+		<skills>
+			<skill id="2223" level="2" />
+		</skills>
 	</item>
-	<item id="7755" type="EtcItem" name="Small Yellow Fat Fish (Novice)">
+	<item id="7755" name="Small Yellow Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1144,11 +1208,12 @@
 		<set name="price" val="226" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2223-3" />
+		<skills>
+			<skill id="2223" level="3" />
+		</skills>
 	</item>
-	<item id="7756" type="EtcItem" name="Yellow Nimble Fish (Novice)">
+	<item id="7756" name="Yellow Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1157,11 +1222,12 @@
 		<set name="price" val="270" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2223-4" />
+		<skills>
+			<skill id="2223" level="4" />
+		</skills>
 	</item>
-	<item id="7757" type="EtcItem" name="Yellow Ugly Fish (Novice)">
+	<item id="7757" name="Yellow Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1170,11 +1236,12 @@
 		<set name="price" val="277" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2223-5" />
+		<skills>
+			<skill id="2223" level="5" />
+		</skills>
 	</item>
-	<item id="7758" type="EtcItem" name="Yellow Fat Fish (Novice)">
+	<item id="7758" name="Yellow Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1183,11 +1250,12 @@
 		<set name="price" val="284" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2223-6" />
+		<skills>
+			<skill id="2223" level="6" />
+		</skills>
 	</item>
-	<item id="7759" type="EtcItem" name="Large Yellow Nimble Fish (Novice)">
+	<item id="7759" name="Large Yellow Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1196,11 +1264,12 @@
 		<set name="price" val="290" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2223-7" />
+		<skills>
+			<skill id="2223" level="7" />
+		</skills>
 	</item>
-	<item id="7760" type="EtcItem" name="Large Yellow Ugly Fish (Novice)">
+	<item id="7760" name="Large Yellow Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1209,11 +1278,12 @@
 		<set name="price" val="297" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2223-8" />
+		<skills>
+			<skill id="2223" level="8" />
+		</skills>
 	</item>
-	<item id="7761" type="EtcItem" name="Large Yellow Fat Fish (Novice)">
+	<item id="7761" name="Large Yellow Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1222,11 +1292,12 @@
 		<set name="price" val="304" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2223-9" />
+		<skills>
+			<skill id="2223" level="9" />
+		</skills>
 	</item>
-	<item id="7762" type="EtcItem" name="Small Orange Nimble Fish (Novice)">
+	<item id="7762" name="Small Orange Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1235,11 +1306,12 @@
 		<set name="price" val="311" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2224-1" />
+		<skills>
+			<skill id="2224" level="1" />
+		</skills>
 	</item>
-	<item id="7763" type="EtcItem" name="Small Orange Ugly Fish (Novice)">
+	<item id="7763" name="Small Orange Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1248,11 +1320,12 @@
 		<set name="price" val="318" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2224-2" />
+		<skills>
+			<skill id="2224" level="2" />
+		</skills>
 	</item>
-	<item id="7764" type="EtcItem" name="Small Orange Fat Fish (Novice)">
+	<item id="7764" name="Small Orange Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1261,11 +1334,12 @@
 		<set name="price" val="325" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2224-3" />
+		<skills>
+			<skill id="2224" level="3" />
+		</skills>
 	</item>
-	<item id="7765" type="EtcItem" name="Orange Nimble Fish (Novice)">
+	<item id="7765" name="Orange Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1274,11 +1348,12 @@
 		<set name="price" val="332" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2224-4" />
+		<skills>
+			<skill id="2224" level="4" />
+		</skills>
 	</item>
-	<item id="7766" type="EtcItem" name="Orange Ugly Fish (Novice)">
+	<item id="7766" name="Orange Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1287,11 +1362,12 @@
 		<set name="price" val="388" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2224-5" />
+		<skills>
+			<skill id="2224" level="5" />
+		</skills>
 	</item>
-	<item id="7767" type="EtcItem" name="Orange Fat Fish (Novice)">
+	<item id="7767" name="Orange Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1300,11 +1376,12 @@
 		<set name="price" val="396" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2224-6" />
+		<skills>
+			<skill id="2224" level="6" />
+		</skills>
 	</item>
-	<item id="7768" type="EtcItem" name="Large Orange Nimble Fish (Novice)">
+	<item id="7768" name="Large Orange Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1313,11 +1390,12 @@
 		<set name="price" val="408" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2224-7" />
+		<skills>
+			<skill id="2224" level="7" />
+		</skills>
 	</item>
-	<item id="7769" type="EtcItem" name="Large Orange Ugly Fish (Novice)">
+	<item id="7769" name="Large Orange Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1326,11 +1404,12 @@
 		<set name="price" val="420" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2224-8" />
+		<skills>
+			<skill id="2224" level="8" />
+		</skills>
 	</item>
-	<item id="7770" type="EtcItem" name="Large Orange Fat Fish (Novice)">
+	<item id="7770" name="Large Orange Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i08" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1339,11 +1418,12 @@
 		<set name="price" val="429" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2224-9" />
+		<skills>
+			<skill id="2224" level="9" />
+		</skills>
 	</item>
-	<item id="7771" type="EtcItem" name="Small Purple Nimble Fish (Novice)">
+	<item id="7771" name="Small Purple Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1352,11 +1432,12 @@
 		<set name="price" val="438" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2225-1" />
+		<skills>
+			<skill id="2225" level="1" />
+		</skills>
 	</item>
-	<item id="7772" type="EtcItem" name="Small Purple Ugly Fish (Novice)">
+	<item id="7772" name="Small Purple Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1365,11 +1446,12 @@
 		<set name="price" val="447" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2225-2" />
+		<skills>
+			<skill id="2225" level="2" />
+		</skills>
 	</item>
-	<item id="7773" type="EtcItem" name="Small Purple Fat Fish (Novice)">
+	<item id="7773" name="Small Purple Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1378,11 +1460,12 @@
 		<set name="price" val="455" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2225-3" />
+		<skills>
+			<skill id="2225" level="3" />
+		</skills>
 	</item>
-	<item id="7774" type="EtcItem" name="Purple Nimble Fish (Novice)">
+	<item id="7774" name="Purple Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1391,11 +1474,12 @@
 		<set name="price" val="465" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2225-4" />
+		<skills>
+			<skill id="2225" level="4" />
+		</skills>
 	</item>
-	<item id="7775" type="EtcItem" name="Purple Ugly Fish (Novice)">
+	<item id="7775" name="Purple Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1404,11 +1488,12 @@
 		<set name="price" val="474" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2225-5" />
+		<skills>
+			<skill id="2225" level="5" />
+		</skills>
 	</item>
-	<item id="7776" type="EtcItem" name="Purple Fat Fish (Novice)">
+	<item id="7776" name="Purple Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1417,11 +1502,12 @@
 		<set name="price" val="545" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2225-6" />
+		<skills>
+			<skill id="2225" level="6" />
+		</skills>
 	</item>
-	<item id="7777" type="EtcItem" name="Large Purple Nimble Fish (Novice)">
+	<item id="7777" name="Large Purple Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1430,11 +1516,12 @@
 		<set name="price" val="556" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2225-7" />
+		<skills>
+			<skill id="2225" level="7" />
+		</skills>
 	</item>
-	<item id="7778" type="EtcItem" name="Large Purple Ugly Fish (Novice)">
+	<item id="7778" name="Large Purple Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1443,11 +1530,12 @@
 		<set name="price" val="567" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2225-8" />
+		<skills>
+			<skill id="2225" level="8" />
+		</skills>
 	</item>
-	<item id="7779" type="EtcItem" name="Large Purple Fat Fish (Novice)">
+	<item id="7779" name="Large Purple Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1456,11 +1544,12 @@
 		<set name="price" val="579" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2225-9" />
+		<skills>
+			<skill id="2225" level="9" />
+		</skills>
 	</item>
-	<item id="7780" type="EtcItem" name="Small Red Nimble Fish (Novice)">
+	<item id="7780" name="Small Red Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1469,11 +1558,12 @@
 		<set name="price" val="639" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2226-1" />
+		<skills>
+			<skill id="2226" level="1" />
+		</skills>
 	</item>
-	<item id="7781" type="EtcItem" name="Small Red Ugly Fish (Novice)">
+	<item id="7781" name="Small Red Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1482,11 +1572,12 @@
 		<set name="price" val="651" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2226-2" />
+		<skills>
+			<skill id="2226" level="2" />
+		</skills>
 	</item>
-	<item id="7782" type="EtcItem" name="Small Red Fat Fish (Novice)">
+	<item id="7782" name="Small Red Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1495,11 +1586,12 @@
 		<set name="price" val="663" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2226-3" />
+		<skills>
+			<skill id="2226" level="3" />
+		</skills>
 	</item>
-	<item id="7783" type="EtcItem" name="Red Nimble Fish (Novice)">
+	<item id="7783" name="Red Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1508,11 +1600,12 @@
 		<set name="price" val="676" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2226-4" />
+		<skills>
+			<skill id="2226" level="4" />
+		</skills>
 	</item>
-	<item id="7784" type="EtcItem" name="Red Ugly Fish (Novice)">
+	<item id="7784" name="Red Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1521,11 +1614,12 @@
 		<set name="price" val="688" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2226-5" />
+		<skills>
+			<skill id="2226" level="5" />
+		</skills>
 	</item>
-	<item id="7785" type="EtcItem" name="Red Fat Fish (Novice)">
+	<item id="7785" name="Red Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1534,11 +1628,12 @@
 		<set name="price" val="701" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2226-6" />
+		<skills>
+			<skill id="2226" level="6" />
+		</skills>
 	</item>
-	<item id="7786" type="EtcItem" name="Large Red Nimble Fish (Novice)">
+	<item id="7786" name="Large Red Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1547,11 +1642,12 @@
 		<set name="price" val="789" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2226-7" />
+		<skills>
+			<skill id="2226" level="7" />
+		</skills>
 	</item>
-	<item id="7787" type="EtcItem" name="Large Red Ugly Fish (Novice)">
+	<item id="7787" name="Large Red Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1560,11 +1656,12 @@
 		<set name="price" val="804" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2226-8" />
+		<skills>
+			<skill id="2226" level="8" />
+		</skills>
 	</item>
-	<item id="7788" type="EtcItem" name="Large Red Fat Fish (Novice)">
+	<item id="7788" name="Large Red Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1573,11 +1670,12 @@
 		<set name="price" val="858" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2226-9" />
+		<skills>
+			<skill id="2226" level="9" />
+		</skills>
 	</item>
-	<item id="7789" type="EtcItem" name="Small White Nimble Fish (Novice)">
+	<item id="7789" name="Small White Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1586,11 +1684,12 @@
 		<set name="price" val="874" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2227-1" />
+		<skills>
+			<skill id="2227" level="1" />
+		</skills>
 	</item>
-	<item id="7790" type="EtcItem" name="Small White Ugly Fish (Novice)">
+	<item id="7790" name="Small White Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1599,11 +1698,12 @@
 		<set name="price" val="891" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2227-2" />
+		<skills>
+			<skill id="2227" level="2" />
+		</skills>
 	</item>
-	<item id="7791" type="EtcItem" name="Small White Fat Fish (Novice)">
+	<item id="7791" name="Small White Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1612,11 +1712,12 @@
 		<set name="price" val="907" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2227-3" />
+		<skills>
+			<skill id="2227" level="3" />
+		</skills>
 	</item>
-	<item id="7792" type="EtcItem" name="White Nimble Fish (Novice)">
+	<item id="7792" name="White Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1625,11 +1726,12 @@
 		<set name="price" val="925" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2227-4" />
+		<skills>
+			<skill id="2227" level="4" />
+		</skills>
 	</item>
-	<item id="7793" type="EtcItem" name="White Ugly Fish (Novice)">
+	<item id="7793" name="White Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1638,11 +1740,12 @@
 		<set name="price" val="944" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2227-5" />
+		<skills>
+			<skill id="2227" level="5" />
+		</skills>
 	</item>
-	<item id="7794" type="EtcItem" name="White Fat Fish (Novice)">
+	<item id="7794" name="White Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1651,11 +1754,12 @@
 		<set name="price" val="962" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2227-6" />
+		<skills>
+			<skill id="2227" level="6" />
+		</skills>
 	</item>
-	<item id="7795" type="EtcItem" name="Large White Nimble Fish (Novice)">
+	<item id="7795" name="Large White Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1664,11 +1768,12 @@
 		<set name="price" val="981" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2227-7" />
+		<skills>
+			<skill id="2227" level="7" />
+		</skills>
 	</item>
-	<item id="7796" type="EtcItem" name="Large White Ugly Fish (Novice)">
+	<item id="7796" name="Large White Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1677,11 +1782,12 @@
 		<set name="price" val="1000" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2227-8" />
+		<skills>
+			<skill id="2227" level="8" />
+		</skills>
 	</item>
-	<item id="7797" type="EtcItem" name="Large White Fat Fish (Novice)">
+	<item id="7797" name="Large White Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1690,11 +1796,12 @@
 		<set name="price" val="1020" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2227-9" />
+		<skills>
+			<skill id="2227" level="9" />
+		</skills>
 	</item>
-	<item id="7798" type="EtcItem" name="Small Black Nimble Fish: For Beginners">
+	<item id="7798" name="Small Black Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1703,11 +1810,12 @@
 		<set name="price" val="1041" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2228-1" />
+		<skills>
+			<skill id="2228" level="1" />
+		</skills>
 	</item>
-	<item id="7799" type="EtcItem" name="Small Black Ugly Fish (Novice)">
+	<item id="7799" name="Small Black Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1716,8 +1824,9 @@
 		<set name="price" val="1062" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2228-2" />
+		<skills>
+			<skill id="2228" level="2" />
+		</skills>
 	</item>
 </list>

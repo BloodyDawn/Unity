@@ -129,7 +129,7 @@ public abstract class AbstractEffect
 	 * Attaches a function template.
 	 * @param f the function
 	 */
-	public void attach(FuncTemplate f)
+	public void addFunctionTemplate(FuncTemplate f)
 	{
 		if (_funcTemplates == null)
 		{
@@ -240,13 +240,13 @@ public abstract class AbstractEffect
 	{
 		if (getFuncTemplates() == null)
 		{
-			return Collections.<AbstractFunction> emptyList();
+			return Collections.emptyList();
 		}
 		
 		final List<AbstractFunction> functions = new ArrayList<>(getFuncTemplates().size());
-		for (FuncTemplate functionTemplate : getFuncTemplates())
+		for (FuncTemplate template : getFuncTemplates())
 		{
-			final AbstractFunction function = functionTemplate.getFunc(caster, target, skill, this);
+			final AbstractFunction function = template.getFunc(caster, target, skill, this);
 			if (function != null)
 			{
 				functions.add(function);

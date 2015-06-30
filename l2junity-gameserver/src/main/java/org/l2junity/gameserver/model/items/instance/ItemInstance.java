@@ -40,6 +40,7 @@ import org.l2junity.gameserver.data.xml.impl.OptionData;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.ItemLocation;
+import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.idfactory.IdFactory;
@@ -63,7 +64,6 @@ import org.l2junity.gameserver.model.events.impl.character.player.inventory.OnPl
 import org.l2junity.gameserver.model.events.impl.character.player.inventory.OnPlayerItemPickup;
 import org.l2junity.gameserver.model.events.impl.item.OnItemBypassEvent;
 import org.l2junity.gameserver.model.events.impl.item.OnItemTalk;
-import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.Armor;
 import org.l2junity.gameserver.model.items.EtcItem;
@@ -74,6 +74,7 @@ import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.items.type.ItemType;
 import org.l2junity.gameserver.model.options.EnchantOptions;
 import org.l2junity.gameserver.model.options.Options;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.variables.ItemVariables;
 import org.l2junity.gameserver.network.client.send.DropItem;
@@ -2026,7 +2027,7 @@ public final class ItemInstance extends WorldObject
 	
 	public boolean hasPassiveSkills()
 	{
-		return (getItemType() == EtcItemType.ENCHT_ATTR_RUNE) && (getItemLocation() == ItemLocation.INVENTORY) && (getOwnerId() > 0) && getItem().hasSkills();
+		return (getItemType() == EtcItemType.ENCHT_ATTR_RUNE) && (getItemLocation() == ItemLocation.INVENTORY) && (getOwnerId() > 0) && (getItem().getSkills(ItemSkillType.NORMAL) != null);
 	}
 	
 	public void giveSkillsToOwner()
@@ -2037,16 +2038,16 @@ public final class ItemInstance extends WorldObject
 		}
 		
 		final PlayerInstance player = getActingPlayer();
-		
 		if (player != null)
 		{
-			for (SkillHolder sh : getItem().getSkills())
+			getItem().forEachSkill(ItemSkillType.NORMAL, holder ->
 			{
-				if (sh.getSkill().isPassive())
+				final Skill skill = holder.getSkill();
+				if (skill.isPassive())
 				{
-					player.addSkill(sh.getSkill(), false);
+					player.addSkill(skill, false);
 				}
-			}
+			});
 		}
 	}
 	
@@ -2058,16 +2059,16 @@ public final class ItemInstance extends WorldObject
 		}
 		
 		final PlayerInstance player = getActingPlayer();
-		
 		if (player != null)
 		{
-			for (SkillHolder sh : getItem().getSkills())
+			getItem().forEachSkill(ItemSkillType.NORMAL, holder ->
 			{
-				if (sh.getSkill().isPassive())
+				final Skill skill = holder.getSkill();
+				if (skill.isPassive())
 				{
-					player.removeSkill(sh.getSkill(), false, true);
+					player.removeSkill(skill, false, skill.isPassive());
 				}
-			}
+			});
 		}
 	}
 	
@@ -2145,7 +2146,7 @@ public final class ItemInstance extends WorldObject
 	 */
 	public int[] getEnchantOptions()
 	{
-		EnchantOptions op = EnchantItemOptionsData.getInstance().getOptions(this);
+		final EnchantOptions op = EnchantItemOptionsData.getInstance().getOptions(this);
 		if (op != null)
 		{
 			return op.getOptions();

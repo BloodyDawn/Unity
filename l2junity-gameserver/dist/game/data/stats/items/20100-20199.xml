@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="20100" type="Armor" name="Rock-Paper-Scissors Santa Hat">
+	<item id="20100" name="Rock-Paper-Scissors Santa Hat" name_additional="24-hour" type="Armor">
 		<set name="icon" val="BranchSys.icon.br_xmas_gawibawibo_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -11,7 +11,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="21014-1;21015-1;21016-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -19,28 +18,41 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1440" />
+		<skills>
+			<skill id="21014" level="1" />
+			<skill id="21015" level="1" />
+			<skill id="21016" level="1" />
+		</skills>
 	</item>
-	<item id="20101" type="EtcItem" name="Santa Claus' Gift Set">
+	<item id="20101" name="Santa's Gift Set" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_xmas_present_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="100" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
-		<set name="capsuled_items" val="20075,1,1,100;20076,1,1,100;20077,1,1,100" />
+
+		<capsuled_items>
+			<item chance="100.0" id="20075" max="1" min="1" />
+			<item chance="100.0" id="20076" max="1" min="1" />
+			<item chance="100.0" id="20077" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20102" type="EtcItem" name="Santa Claus' Gift Set">
+	<item id="20102" name="Santa's Gift Set" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_xmas_present_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="100" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
-		<set name="capsuled_items" val="20075,1,1,100;20076,1,1,100;20078,1,1,100" />
+
+		<capsuled_items>
+			<item chance="100.0" id="20075" max="1" min="1" />
+			<item chance="100.0" id="20076" max="1" min="1" />
+			<item chance="100.0" id="20078" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20103" type="EtcItem" name="Holiday Scroll: Heavy Armor Fighter - 8-hour limited period">
+	<item id="20103" name="Holiday Scroll: Heavy Armor Warrior" name_additional="8-hour" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_xmas_scroll_i00" />
 		<set name="default_action" val="CALL_SKILL" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -51,9 +63,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22013-1" />
 		<set name="time" val="480" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -61,8 +71,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="22013" level="1" />
+		</skills>
 	</item>
-	<item id="20104" type="EtcItem" name="Holiday Scroll: Light Armor Fighter - 8-hour limited period">
+	<item id="20104" name="Holiday Scroll: Light Armor Warrior" name_additional="8-hour" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_xmas_scroll_i00" />
 		<set name="default_action" val="CALL_SKILL" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -73,9 +86,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22014-1" />
 		<set name="time" val="480" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -83,8 +94,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="22014" level="1" />
+		</skills>
 	</item>
-	<item id="20105" type="EtcItem" name="Holiday Scroll: Healer - 8-hour limited period">
+	<item id="20105" name="Holiday Scroll: Healer" name_additional="8-hour" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_xmas_scroll_i00" />
 		<set name="default_action" val="CALL_SKILL" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -95,9 +109,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22015-1" />
 		<set name="time" val="480" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -105,8 +117,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="22015" level="1" />
+		</skills>
 	</item>
-	<item id="20106" type="EtcItem" name="Holiday Scroll: Mage - 8-hour limited period">
+	<item id="20106" name="Holiday Scroll: Mage" name_additional="8-hour" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_xmas_scroll_i00" />
 		<set name="default_action" val="CALL_SKILL" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -117,9 +132,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22016-1" />
 		<set name="time" val="480" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -127,8 +140,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="22016" level="1" />
+		</skills>
 	</item>
-	<item id="20107" type="EtcItem" name="Santa Claus' Weapon Exchange Ticket - 12-hour limited period">
+	<item id="20107" name="Santa's Weapon Coupon" name_additional="12-hour" type="EtcItem">
 		<set name="icon" val="icon.etc_lottery_card_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -136,7 +152,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -145,7 +160,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="720" />
 	</item>
-	<item id="20108" type="EtcItem" name="Santa Claus' Weapon Exchange Ticket - 12-hour limited period">
+	<item id="20108" name="Santa's Weapon Coupon" name_additional="12-hour" type="EtcItem">
 		<set name="icon" val="icon.etc_lottery_card_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -153,7 +168,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -162,7 +176,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="720" />
 	</item>
-	<item id="20109" type="Weapon" name="Sword of Revolution (Event)">
+	<item id="20109" name="Sword of Revolution (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_revolution_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -181,7 +195,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21017-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -189,16 +202,19 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21017" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="79" />
 			<set stat="mAtk" val="47" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20110" type="Weapon" name="Lesser Giant's Sword (Event)">
+	<item id="20110" name="Lesser Giant's Sword (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_giants_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -216,7 +232,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21018-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -224,16 +239,19 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21018" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="96" />
 			<set stat="mAtk" val="47" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20111" type="Weapon" name="Maingauche (Event)">
+	<item id="20111" name="Maingauche (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_maingauche_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -251,7 +269,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21019-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -259,17 +276,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21019" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="69" />
 			<set stat="mAtk" val="47" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20112" type="Weapon" name="Tarbar (Event)">
+	<item id="20112" name="Tarbar (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_tarbar_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -287,7 +307,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21020-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -295,17 +314,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21020" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="79" />
 			<set stat="mAtk" val="47" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20113" type="Weapon" name="Lesser Giant's Hammer (Event)">
+	<item id="20113" name="Lesser Giant's Hammer (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_giants_hammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -323,7 +345,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21021-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -331,17 +352,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21021" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="96" />
 			<set stat="mAtk" val="47" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20114" type="Weapon" name="Priest Mace (Event)">
+	<item id="20114" name="Priest Mace (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_mace_of_priest_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -359,7 +383,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21022-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -367,17 +390,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21022" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="63" />
 			<set stat="mAtk" val="63" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20115" type="Weapon" name="Goat Head Staff (Event)">
+	<item id="20115" name="Goat Head Staff (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_goathead_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -395,7 +421,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21023-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -403,17 +428,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21023" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="77" />
 			<set stat="mAtk" val="63" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20116" type="Weapon" name="Bich'Hwa (Event) - 4-hour limited period">
+	<item id="20116" name="Bich'Hwa (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_bichhwa_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -431,7 +459,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21024-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -439,17 +466,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21024" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="96" />
 			<set stat="mAtk" val="47" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20117" type="Weapon" name="Reinforced Longbow (Event)">
+	<item id="20117" name="Reinforced Longbow (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_strengthening_long_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -469,7 +499,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21025-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -477,17 +506,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21025" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="179" />
 			<set stat="mAtk" val="51" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="227" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20118" type="Weapon" name="Winged Spear (Event)">
+	<item id="20118" name="Winged Spear (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_winged_spear_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -505,7 +537,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21026-1;3599-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -513,17 +544,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21026" level="1" />
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="79" />
 			<set stat="mAtk" val="47" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20119" type="Weapon" name="Artisan's Sword*Artisan's Sword (Event) - 4-hour limited period">
+	<item id="20119" name="Artisan's Sword*Artisan's Sword (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -541,7 +576,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21027-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -549,16 +583,19 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21027" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="96" />
 			<set stat="mAtk" val="47" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20120" type="Weapon" name="Épée (Event)">
+	<item id="20120" name="Épée (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_rapier_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -572,12 +609,10 @@
 		<set name="weight" val="483" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21028-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -585,6 +620,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="21028" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -594,11 +633,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20121" type="Weapon" name="Katzbalger (Event)">
+	<item id="20121" name="Katzbalger (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_tulwar_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -616,7 +655,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21029-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -624,6 +662,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21029" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -633,11 +674,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20122" type="Weapon" name="Arm Breaker (Event)">
+	<item id="20122" name="Arm Breaker (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_hunting_gun_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -656,7 +697,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21030-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -664,6 +704,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21030" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -673,11 +716,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20123" type="Weapon" name="Samurai Long Sword (Event)">
+	<item id="20123" name="Samurai Long Sword (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_samurai_longsword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -695,7 +738,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21017-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -703,16 +745,19 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21017" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="156" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20124" type="Weapon" name="Berserker Blade (Event)">
+	<item id="20124" name="Berserker Blade (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_berserker_blade_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -730,7 +775,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21018-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -738,16 +782,19 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21018" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="190" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20125" type="Weapon" name="Crystal Dagger (Event)">
+	<item id="20125" name="Crystal Dagger (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_crystal_dagger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -765,7 +812,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21019-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -773,17 +819,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21019" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="136" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20126" type="Weapon" name="Yaksa Mace (Event)">
+	<item id="20126" name="Yaksa Mace (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_yaksa_mace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -801,7 +850,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21020-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -809,17 +857,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21020" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="156" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20127" type="Weapon" name="Dwarven Hammer (Event)">
+	<item id="20127" name="Dwarven Hammer (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_dwarven_hammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -837,7 +888,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21021-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -845,17 +895,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21021" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="190" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20128" type="Weapon" name="Ecliptic Axe (Event)">
+	<item id="20128" name="Ecliptic Axe (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_eclipse_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -873,7 +926,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21022-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -881,17 +933,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21022" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="125" />
 			<set stat="mAtk" val="111" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20129" type="Weapon" name="Demon's Staff (Event) - 4-hour limited period">
+	<item id="20129" name="Demon's Staff (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_demons_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -909,7 +964,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21023-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -917,17 +971,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21023" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="152" />
 			<set stat="mAtk" val="111" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20130" type="Weapon" name="Great Pata (Event)">
+	<item id="20130" name="Great Pata (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_great_pata_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -945,7 +1002,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21024-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -953,17 +1009,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21024" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="190" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20131" type="Weapon" name="Eminence Bow (Event)">
+	<item id="20131" name="Eminence Bow (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_eminence_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -983,7 +1042,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21025-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -991,17 +1049,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21025" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="323" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20132" type="Weapon" name="Orcish Poleaxe (Event)">
+	<item id="20132" name="Orcish Poleaxe (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_orcish_poleaxe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -1019,7 +1080,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21026-1;3599-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1027,17 +1087,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21026" level="1" />
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="156" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20133" type="Weapon" name="Katana*Katana (Event) - 4-hour limited period">
+	<item id="20133" name="Katana*Katana (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1051,12 +1115,10 @@
 		<set name="weight" val="757" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
-		<set name="enchant4_skill" val="3045-8" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21027-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1064,16 +1126,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="3045" level="8" type="ON_ENCHANT" type_value="4" />
+			<skill id="21027" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="190" />
 			<set stat="mAtk" val="83" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20134" type="Weapon" name="Admiral's Estoc (Event) - 4-hour limited period">
+	<item id="20134" name="Admiral's Estoc (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_blink_slasher_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1087,12 +1153,10 @@
 		<set name="weight" val="460" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21028-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1100,6 +1164,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="21028" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1109,11 +1177,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20135" type="Weapon" name="Saber Tooth (Event)">
+	<item id="20135" name="Saber Tooth (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_invincible_blade_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1131,7 +1199,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21029-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1139,6 +1206,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21029" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1148,11 +1218,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20136" type="Weapon" name="Sharpshooter (Event)">
+	<item id="20136" name="Sharpshooter (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_taslam_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1171,7 +1241,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21030-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1179,6 +1248,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21030" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1188,11 +1260,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20137" type="Weapon" name="Damascus Sword (Event)">
+	<item id="20137" name="Damascus Sword (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_damascus_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1210,7 +1282,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21017-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1218,16 +1289,19 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21017" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20138" type="Weapon" name="Guardian's Sword (Event)">
+	<item id="20138" name="Guardian's Sword (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_guardians_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1245,7 +1319,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21018-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1253,16 +1326,19 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21018" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20139" type="Weapon" name="Demon's Dagger (Event) - 4-hour limited period">
+	<item id="20139" name="Demon's Dagger (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_demons_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1280,7 +1356,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21019-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1288,17 +1363,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21019" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20140" type="Weapon" name="Art of Battle Axe (Event)">
+	<item id="20140" name="Art of Battle Axe (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_art_of_battle_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1316,7 +1394,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21020-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1324,17 +1401,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21020" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20141" type="Weapon" name="Star Buster (Event)">
+	<item id="20141" name="Star Buster (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_star_buster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1352,7 +1432,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21021-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1360,17 +1439,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21021" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20142" type="Weapon" name="Kaim Vanul's Bones (Event) - 4-hour limited period">
+	<item id="20142" name="Kaim Vanul's Bones (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_bone_of_kaim_vanul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1388,7 +1470,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21022-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1396,17 +1477,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21022" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="155" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20143" type="Weapon" name="Staff of Evil Spirits (Event)">
+	<item id="20143" name="Staff of Evil Spirits (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_staff_of_evil_sprit_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1424,7 +1508,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21023-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1432,17 +1515,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21023" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="189" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20144" type="Weapon" name="Bellion Cestus (Event)">
+	<item id="20144" name="Bellion Cestus (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_bellion_cestus_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -1460,7 +1546,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21024-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1468,17 +1553,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21024" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20145" type="Weapon" name="Bow of Peril (Event)">
+	<item id="20145" name="Bow of Peril (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_hazard_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -1498,7 +1586,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21025-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1506,17 +1593,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21025" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="400" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20146" type="Weapon" name="Lance (Event)">
+	<item id="20146" name="Lance (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_lancia_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -1534,7 +1624,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21026-1;3599-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1542,17 +1631,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21026" level="1" />
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20147" type="Weapon" name="Samurai Long Sword*Samurai Long Sword (Event) - 4-hour limited period">
+	<item id="20147" name="Samurai Long Sword*Samurai Long Sword (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -1566,12 +1659,10 @@
 		<set name="weight" val="693" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="3045-14" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21027-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1579,16 +1670,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="3045" level="14" type="ON_ENCHANT" type_value="4" />
+			<skill id="21027" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20148" type="Weapon" name="Colichemarde (Event)">
+	<item id="20148" name="Colichemarde (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_colichemarde_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -1602,12 +1697,10 @@
 		<set name="weight" val="450" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21028-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1615,6 +1708,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="21028" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1624,11 +1721,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20149" type="Weapon" name="Dismantler (Event)">
+	<item id="20149" name="Dismantler (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_dismantler_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -1646,7 +1743,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21029-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1654,6 +1750,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21029" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1663,11 +1762,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20150" type="Weapon" name="Hell Hound (Event)">
+	<item id="20150" name="Hell Hound (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_hound_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -1686,7 +1785,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21030-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1694,6 +1792,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21030" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1703,11 +1804,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20151" type="Weapon" name="Dark Legion's Edge (Event) - 4-hour limited period">
+	<item id="20151" name="Dark Legion's Edge (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_legions_edge_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1725,7 +1826,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21017-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1733,16 +1833,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21017" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20152" type="Weapon" name="Dragon Slayer (Event)">
+	<item id="20152" name="Dragon Slayer (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_slayer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1760,7 +1864,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21018-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1768,16 +1871,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21018" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20153" type="Weapon" name="Soul Separator (Event)">
+	<item id="20153" name="Soul Separator (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_separator_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -1795,7 +1902,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21019-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1803,17 +1909,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21019" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="203" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20154" type="Weapon" name="Elysian (Event)">
+	<item id="20154" name="Elysian (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_elysian_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1831,7 +1941,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21020-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1839,17 +1948,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21020" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20155" type="Weapon" name="Doom Crusher (Event)">
+	<item id="20155" name="Doom Crusher (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_crusher_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1867,7 +1980,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21021-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1875,17 +1987,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21021" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20156" type="Weapon" name="Flaming Dragon Skull (Event)">
+	<item id="20156" name="Flaming Dragon Skull (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_flame_head_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1903,7 +2019,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21022-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1911,17 +2026,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21022" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
 			<set stat="mAtk" val="152" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20157" type="Weapon" name="Branch of the Mother Tree (Event)">
+	<item id="20157" name="Branch of the Mother Tree (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_worldtrees_branch_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -1939,7 +2058,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21023-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1947,17 +2065,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21023" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="226" />
 			<set stat="mAtk" val="152" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20158" type="Weapon" name="Dragon Grinder (Event)">
+	<item id="20158" name="Dragon Grinder (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_grinder_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -1975,7 +2097,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21024-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1983,17 +2104,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21024" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20159" type="Weapon" name="Soul Bow (Event)">
+	<item id="20159" name="Soul Bow (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -2013,7 +2138,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21025-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2021,17 +2145,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21025" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="528" />
 			<set stat="mAtk" val="125" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="227" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20160" type="Weapon" name="Tallum Glaive (Event)">
+	<item id="20160" name="Tallum Glaive (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_glaive_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -2049,7 +2177,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21026-1;3552-1;3599-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2057,17 +2184,22 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21026" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20161" type="Weapon" name="Damascus*Damascus (Event) - 4-hour limited period">
+	<item id="20161" name="Damascus*Damascus (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2081,12 +2213,10 @@
 		<set name="weight" val="693" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="3046-20" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21027-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2094,16 +2224,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="3046" level="20" type="ON_ENCHANT" type_value="4" />
+			<skill id="21027" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
 			<set stat="mAtk" val="114" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20162" type="Weapon" name="Lacerator (Event)">
+	<item id="20162" name="Lacerator (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -2117,12 +2252,10 @@
 		<set name="weight" val="440" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21028-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2130,6 +2263,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="21028" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2139,11 +2277,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20163" type="Weapon" name="Undertaker (Event)">
+	<item id="20163" name="Undertaker (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2161,7 +2299,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21029-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2169,6 +2306,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21029" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2178,11 +2319,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20164" type="Weapon" name="Reaper (Event)">
+	<item id="20164" name="Reaper (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_shooter_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2201,7 +2342,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21030-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2209,6 +2349,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21030" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2218,11 +2362,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20165" type="Weapon" name="Forgotten Blade (Event)">
+	<item id="20165" name="Forgotten Blade (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_forgotten_blade_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2240,7 +2384,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21017-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2248,16 +2391,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21017" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20166" type="Weapon" name="Heaven's Divider (Event) - 4-hour limited period">
+	<item id="20166" name="Heaven's Divider (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_heavens_divider_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2275,7 +2422,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21018-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2283,16 +2429,20 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21018" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20167" type="Weapon" name="Angel Slayer (Event)">
+	<item id="20167" name="Angel Slayer (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_angel_slayer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -2310,7 +2460,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21019-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2318,17 +2467,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21019" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="246" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20168" type="Weapon" name="Basalt Battlehammer (Event)">
+	<item id="20168" name="Basalt Battlehammer (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_basalt_battlehammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2346,7 +2499,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21020-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2354,17 +2506,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21020" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20169" type="Weapon" name="Dragon Hunter Axe (Event)">
+	<item id="20169" name="Dragon Hunter Axe (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_hunter_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2382,7 +2538,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21021-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2390,17 +2545,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21021" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20170" type="Weapon" name="Arcana Mace (Event)">
+	<item id="20170" name="Arcana Mace (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_arcana_mace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2418,7 +2577,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21022-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2426,17 +2584,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21022" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="225" />
 			<set stat="mAtk" val="175" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20171" type="Weapon" name="Imperial Staff (Event)">
+	<item id="20171" name="Imperial Staff (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_imperial_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2454,7 +2616,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21023-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2462,17 +2623,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21023" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="274" />
 			<set stat="mAtk" val="175" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20172" type="Weapon" name="Demon Splinter (Event)">
+	<item id="20172" name="Demon Splinter (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_demon_splinter_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -2490,7 +2655,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21024-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2498,17 +2662,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21024" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20173" type="Weapon" name="Draconic Bow (Event)">
+	<item id="20173" name="Draconic Bow (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_draconic_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -2528,7 +2696,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21025-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2536,17 +2703,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21025" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="581" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20174" type="Weapon" name="Saint Spear (Event)">
+	<item id="20174" name="Saint Spear (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_saint_spear_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -2564,7 +2735,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21026-1;3552-1;3599-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2572,17 +2742,22 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21026" level="1" />
+			<skill id="3552" level="1" />
+			<skill id="3599" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20175" type="Weapon" name="Tallum Blade*Dark Legion's Edge (Event) - 4-hour limited period">
+	<item id="20175" name="Tallum Blade*Dark Legion's Edge (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
@@ -2596,12 +2771,10 @@
 		<set name="weight" val="693" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="3570-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21027-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2609,16 +2782,21 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="3570" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="21027" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20176" type="Weapon" name="Laevateinn (Event)">
+	<item id="20176" name="Laevateinn (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_leavatein_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
@@ -2632,12 +2810,10 @@
 		<set name="weight" val="433" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
-		<set name="enchant4_skill" val="3426-1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21028-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2645,6 +2821,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="21028" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2654,11 +2835,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="406" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20177" type="Weapon" name="Gram (Event)">
+	<item id="20177" name="Gram (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_gram_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
@@ -2676,7 +2857,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21029-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2684,6 +2864,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21029" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2693,11 +2877,11 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="2" />
 			<set stat="pAtkSpd" val="350" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20178" type="Weapon" name="Sarunga (Event)">
+	<item id="20178" name="Sarunga (Event)" name_additional="4-hour" type="Weapon">
 		<set name="icon" val="icon.weapon_sarnga_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
@@ -2716,7 +2900,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="item_skill" val="21030-1;3552-1" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2724,6 +2907,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="240" />
+		<skills>
+			<skill id="21030" level="1" />
+			<skill id="3552" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -2733,11 +2920,11 @@
 			<set stat="rCrit" val="10" />
 			<add stat="accCombat" val="-1.5" />
 			<set stat="pAtkSpd" val="303" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="20179" type="EtcItem" name="Extra Pass: Near Kamaloka 5-unit Pack">
+	<item id="20179" name="Extra Pass: Near Kamaloka 5-unit Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -2746,10 +2933,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
-		<set name="capsuled_items" val="20027,5,5,100" />
+
+		<capsuled_items>
+			<item chance="100.0" id="20027" max="5" min="5" />
+		</capsuled_items>
 	</item>
-	<item id="20180" type="EtcItem" name="Extra Pass: Near Kamaloka 10-unit Pack">
+	<item id="20180" name="Extra Pass: Near Kamaloka 10-unit Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -2758,10 +2947,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
-		<set name="capsuled_items" val="20027,10,10,100" />
+
+		<capsuled_items>
+			<item chance="100.0" id="20027" max="10" min="10" />
+		</capsuled_items>
 	</item>
-	<item id="20181" type="EtcItem" name="My Teleport Scroll 5-unit Pack">
+	<item id="20181" name="My Teleport Scroll 5-unit Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -2770,10 +2961,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
-		<set name="capsuled_items" val="20025,5,5,100" />
+
+		<capsuled_items>
+			<item chance="100.0" id="20025" max="5" min="5" />
+		</capsuled_items>
 	</item>
-	<item id="20182" type="EtcItem" name="My Teleport Scroll 10-unit Pack">
+	<item id="20182" name="My Teleport Scroll 10-unit Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -2782,10 +2975,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
-		<set name="capsuled_items" val="20025,10,10,100" />
+
+		<capsuled_items>
+			<item chance="100.0" id="20025" max="10" min="10" />
+		</capsuled_items>
 	</item>
-	<item id="20183" type="EtcItem" name="My Teleport Flag 5-unit Pack">
+	<item id="20183" name="My Teleport Flag 5-unit Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -2794,10 +2989,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
-		<set name="capsuled_items" val="20033,5,5,100" />
+
+		<capsuled_items>
+			<item chance="100.0" id="20033" max="5" min="5" />
+		</capsuled_items>
 	</item>
-	<item id="20184" type="EtcItem" name="My Teleport Flag 10-unit Pack">
+	<item id="20184" name="My Teleport Flag 10-unit Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -2806,10 +3003,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
-		<set name="capsuled_items" val="20033,10,10,100" />
+
+		<capsuled_items>
+			<item chance="100.0" id="20033" max="10" min="10" />
+		</capsuled_items>
 	</item>
-	<item id="20185" type="EtcItem" name="Extra Pass: Kamaloka (Hall of the Abyss) 5-unit Pack">
+	<item id="20185" name="Extra Pass: Kamaloka (Hall of the Abyss) 5-unit Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -2818,10 +3017,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
-		<set name="capsuled_items" val="20026,5,5,100" />
+
+		<capsuled_items>
+			<item chance="100.0" id="20026" max="5" min="5" />
+		</capsuled_items>
 	</item>
-	<item id="20186" type="EtcItem" name="Extra Pass: Kamaloka (Labyrinth of the Abyss) 5-unit Pack">
+	<item id="20186" name="Extra Pass: Kamaloka (Labyrinth of the Abyss) 5-unit Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -2830,10 +3031,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
-		<set name="capsuled_items" val="20028,5,5,100" />
+
+		<capsuled_items>
+			<item chance="100.0" id="20028" max="5" min="5" />
+		</capsuled_items>
 	</item>
-	<item id="20187" type="EtcItem" name="Extra Pass: Kamaloka (Hall of the Abyss) 10-unit Pack">
+	<item id="20187" name="Extra Pass: Kamaloka (Hall of the Abyss) 10-unit Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -2842,10 +3045,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
-		<set name="capsuled_items" val="20026,10,10,100" />
+
+		<capsuled_items>
+			<item chance="100.0" id="20026" max="10" min="10" />
+		</capsuled_items>
 	</item>
-	<item id="20188" type="EtcItem" name="Extra Pass: Kamaloka (Labyrinth of the Abyss) 10-unit Pack">
+	<item id="20188" name="Extra Pass: Kamaloka (Labyrinth of the Abyss) 10-unit Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -2854,10 +3059,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
-		<set name="capsuled_items" val="20028,10,10,100" />
+
+		<capsuled_items>
+			<item chance="100.0" id="20028" max="10" min="10" />
+		</capsuled_items>
 	</item>
-	<item id="20189" type="EtcItem" name="Miraculous Valentine Cake: Special Ingredient Pack">
+	<item id="20189" name="Miraculous Valentine Cake: Special Ingredient Pack" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -2868,16 +3075,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="20190,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="20190" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="20190" type="EtcItem" name="Miraculous Valentine Cake: Special Ingredient">
+	<item id="20190" name="Miraculous Valentine Cake: Special Ingredient" name_additional="15-day" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_valentine_deco_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
@@ -2886,7 +3093,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -2894,7 +3100,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
 	</item>
-	<item id="20191" type="EtcItem" name="Valentine Cake Recipe">
+	<item id="20191" name="Valentine Cake Recipe" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_valentine_recipe_i00" />
 		<set name="default_action" val="RECIPE" />
 		<set name="etcitem_type" val="RECIPE" />
@@ -2906,7 +3112,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -2914,28 +3119,25 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="handler" val="Recipes" />
 	</item>
-	<item id="20192" type="EtcItem" name="Valentine Dark Chocolate">
+	<item id="20192" name="Valentine Dark Chocolate" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_valentine_darkchoco_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="20193" type="EtcItem" name="Valentine White Chocolate">
+	<item id="20193" name="Valentine White Chocolate" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_valentine_whitechoco_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="20194" type="EtcItem" name="Valentine Fresh Cream">
+	<item id="20194" name="Valentine Fresh Cream" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_valentine_cream_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="20195" type="EtcItem" name="Simple Valentine Cake">
+	<item id="20195" name="Simple Valentine Cake" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_valentine_cake_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -2943,10 +3145,11 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
-		<set name="item_skill" val="22023-1" />
+		<skills>
+			<skill id="22023" level="1" />
+		</skills>
 	</item>
-	<item id="20196" type="EtcItem" name="Velvety Valentine Cake">
+	<item id="20196" name="Velvety Valentine Cake" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_valentine_cake_2_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -2954,10 +3157,11 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
-		<set name="item_skill" val="22024-1" />
+		<skills>
+			<skill id="22024" level="1" />
+		</skills>
 	</item>
-	<item id="20197" type="EtcItem" name="Delicious Valentine Cake">
+	<item id="20197" name="Delicious Valentine Cake" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_valentine_cake_3_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -2965,10 +3169,11 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
-		<set name="item_skill" val="22025-1" />
+		<skills>
+			<skill id="22025" level="1" />
+		</skills>
 	</item>
-	<item id="20198" type="EtcItem" name="Decadent Valentine Cake">
+	<item id="20198" name="Decadent Valentine Cake" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_valentine_cake_4_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -2976,10 +3181,11 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
-		<set name="item_skill" val="22026-1" />
+		<skills>
+			<skill id="22026" level="1" />
+		</skills>
 	</item>
-	<item id="20199" type="EtcItem" name="Heavenly Valentine Cake">
+	<item id="20199" name="Heavenly Valentine Cake" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_valentine_cake_5_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -2989,7 +3195,6 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22027-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -2997,5 +3202,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
+		<skills>
+			<skill id="22027" level="1" />
+		</skills>
 	</item>
 </list>

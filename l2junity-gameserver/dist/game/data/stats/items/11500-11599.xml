@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="11500" type="Armor" name="Sealed Imperial Crusader Gauntlets">
+	<item id="11500" name="Sealed Imperial Crusader Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t88_g_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -21,7 +21,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11501" type="Armor" name="Sealed Imperial Crusader Boots">
+	<item id="11501" name="Sealed Imperial Crusader Boots" type="Armor">
 		<set name="icon" val="icon.armor_t88_b_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -42,7 +42,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11502" type="Armor" name="Sealed Imperial Crusader Shield">
+	<item id="11502" name="Sealed Imperial Crusader Shield" type="Armor">
 		<set name="icon" val="icon.shield_imperial_crusader_shield_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -61,10 +61,10 @@
 			<sub stat="rEvas" val="8" />
 			<set stat="rShld" val="20" />
 			<set stat="sDef" val="276" />
-			<enchant val="0" stat="sDef" />
+			<enchant stat="sDef" val="0" />
 		</for>
 	</item>
-	<item id="11503" type="Armor" name="Sealed Imperial Crusader Helmet">
+	<item id="11503" name="Sealed Imperial Crusader Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -85,7 +85,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11504" type="Armor" name="Sealed Imperial Crusader Breastplate">
+	<item id="11504" name="Sealed Imperial Crusader Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t88_u_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -107,7 +107,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11505" type="Armor" name="Imperial Crusader Gaiters">
+	<item id="11505" name="Imperial Crusader Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t88_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -121,7 +121,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3783-1" />
+		<skills>
+			<skill id="3783" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -130,7 +132,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11506" type="Armor" name="Imperial Crusader Gauntlets">
+	<item id="11506" name="Imperial Crusader Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t88_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -143,7 +145,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3784-1" />
+		<skills>
+			<skill id="3784" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -152,7 +156,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11507" type="Armor" name="Imperial Crusader Boots">
+	<item id="11507" name="Imperial Crusader Boots" type="Armor">
 		<set name="icon" val="icon.armor_t88_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -165,7 +169,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3785-1" />
+		<skills>
+			<skill id="3785" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -174,7 +180,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11508" type="Armor" name="Imperial Crusader Shield">
+	<item id="11508" name="Imperial Crusader Shield" type="Armor">
 		<set name="icon" val="icon.shield_imperial_crusader_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -186,7 +192,9 @@
 		<set name="price" val="3355000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3786-1" />
+		<skills>
+			<skill id="3786" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -194,10 +202,10 @@
 			<sub stat="rEvas" val="8" />
 			<set stat="rShld" val="20" />
 			<set stat="sDef" val="290" />
-			<enchant val="0" stat="sDef" />
+			<enchant stat="sDef" val="0" />
 		</for>
 	</item>
-	<item id="11509" type="Armor" name="Imperial Crusader Helmet">
+	<item id="11509" name="Imperial Crusader Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -210,7 +218,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3787-1" />
+		<skills>
+			<skill id="3787" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -219,7 +229,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11510" type="Armor" name="Imperial Crusader Breastplate">
+	<item id="11510" name="Imperial Crusader Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t88_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -233,7 +243,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3788-1" />
+		<skills>
+			<skill id="3788" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -242,7 +254,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11511" type="Armor" name="Great Wolf Orichalcum Armor">
+	<item id="11511" name="Great Wolf Orichalcum Armor" type="Armor">
 		<set name="icon" val="icon.etc_wolf_r_a_01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -259,7 +271,7 @@
 			<add order="0" stat="pDef" val="171" />
 		</for>
 	</item>
-	<item id="11512" type="Armor" name="Dynasty Gaiters">
+	<item id="11512" name="Dynasty Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t91_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -273,7 +285,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3790-1" />
+		<skills>
+			<skill id="3790" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -282,7 +296,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11513" type="Armor" name="Dynasty Gauntlets">
+	<item id="11513" name="Dynasty Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t91_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -295,7 +309,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3791-1" />
+		<skills>
+			<skill id="3791" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -304,7 +320,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11514" type="Armor" name="Dynasty Gloves">
+	<item id="11514" name="Dynasty Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t93_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -317,7 +333,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3801-1" />
+		<skills>
+			<skill id="3801" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -326,7 +344,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11515" type="Armor" name="Dynasty Leather Gloves">
+	<item id="11515" name="Dynasty Leather Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t92_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -339,13 +357,15 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3866-1" />
+		<skills>
+			<skill id="3866" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="61" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11516" type="Armor" name="Dynasty Leather Leggings">
+	<item id="11516" name="Dynasty Leather Leggings" type="Armor">
 		<set name="icon" val="icon.armor_t92_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -359,13 +379,15 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3796-1" />
+		<skills>
+			<skill id="3796" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="106" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11517" type="Armor" name="Dynasty Leather Armor">
+	<item id="11517" name="Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -379,13 +401,15 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3795-1" />
+		<skills>
+			<skill id="3795" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11518" type="Armor" name="Dynasty Leather Armor">
+	<item id="11518" name="Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -407,7 +431,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11519" type="Armor" name="Dynasty Leather Armor">
+	<item id="11519" name="Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_ub_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -429,7 +453,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11520" type="Armor" name="Dynasty Leather Armor">
+	<item id="11520" name="Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -454,7 +478,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11521" type="Armor" name="Dynasty Leather Armor">
+	<item id="11521" name="Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_ub_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -479,7 +503,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11522" type="Armor" name="Dynasty Leather Armor">
+	<item id="11522" name="Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -501,7 +525,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11523" type="Armor" name="Dynasty Leather Armor">
+	<item id="11523" name="Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -523,7 +547,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11524" type="Armor" name="Dynasty Leather Boots">
+	<item id="11524" name="Dynasty Leather Boots" type="Armor">
 		<set name="icon" val="icon.armor_t92_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -536,13 +560,15 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3797-1" />
+		<skills>
+			<skill id="3797" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="61" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11525" type="Armor" name="Dynasty Leather Helmet">
+	<item id="11525" name="Dynasty Leather Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -555,13 +581,15 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3798-1" />
+		<skills>
+			<skill id="3798" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="92" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11526" type="Armor" name="Dynasty Boots">
+	<item id="11526" name="Dynasty Boots" type="Armor">
 		<set name="icon" val="icon.armor_t91_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -574,7 +602,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3792-1" />
+		<skills>
+			<skill id="3792" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -583,7 +613,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11527" type="Armor" name="Dynasty Breastplate">
+	<item id="11527" name="Dynasty Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t91_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -597,7 +627,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3789-1" />
+		<skills>
+			<skill id="3789" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -606,7 +638,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11528" type="Armor" name="Dynasty Breastplate">
+	<item id="11528" name="Dynasty Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t91_uk_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -631,7 +663,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11529" type="Armor" name="Dynasty Breastplate">
+	<item id="11529" name="Dynasty Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t91_uw_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -656,7 +688,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11530" type="Armor" name="Dynasty Breastplate">
+	<item id="11530" name="Dynasty Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t91_uf_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -681,7 +713,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11531" type="Armor" name="Dynasty Breastplate">
+	<item id="11531" name="Dynasty Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t91_uke_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -706,7 +738,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11532" type="Armor" name="Dynasty Shield">
+	<item id="11532" name="Dynasty Shield" type="Armor">
 		<set name="icon" val="icon.shield_dynasty_shield_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -718,7 +750,9 @@
 		<set name="price" val="6404000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3793-1" />
+		<skills>
+			<skill id="3793" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -726,10 +760,10 @@
 			<sub stat="rEvas" val="8" />
 			<set stat="rShld" val="20" />
 			<set stat="sDef" val="321" />
-			<enchant val="0" stat="sDef" />
+			<enchant stat="sDef" val="0" />
 		</for>
 	</item>
-	<item id="11533" type="Armor" name="Dynasty Shoes">
+	<item id="11533" name="Dynasty Shoes" type="Armor">
 		<set name="icon" val="icon.armor_t93_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -742,7 +776,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3802-1" />
+		<skills>
+			<skill id="3802" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -751,7 +787,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11534" type="Armor" name="Dynasty Silver Satin Tunic">
+	<item id="11534" name="Dynasty Silver Satin Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -765,7 +801,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3804-1" />
+		<skills>
+			<skill id="3804" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -775,7 +813,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11535" type="Armor" name="Dynasty Silver Satin Tunic">
+	<item id="11535" name="Dynasty Silver Satin Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_uh_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -801,7 +839,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11536" type="Armor" name="Dynasty Silver Satin Tunic">
+	<item id="11536" name="Dynasty Silver Satin Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_ue_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -827,7 +865,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11537" type="Armor" name="Dynasty Silver Satin Tunic">
+	<item id="11537" name="Dynasty Silver Satin Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_us_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -853,7 +891,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11538" type="Armor" name="Dynasty Silver Satin Tunic">
+	<item id="11538" name="Dynasty Silver Satin Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_uw_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -879,7 +917,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11539" type="Armor" name="Dynasty Circlet">
+	<item id="11539" name="Dynasty Circlet" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -892,7 +930,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3803-1" />
+		<skills>
+			<skill id="3803" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -901,7 +941,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11540" type="Armor" name="Dynasty Jewel Leather Armor">
+	<item id="11540" name="Dynasty Jewel Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -915,13 +955,15 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3805-1" />
+		<skills>
+			<skill id="3805" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11541" type="Armor" name="Dynasty Jewel Leather Armor">
+	<item id="11541" name="Dynasty Jewel Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -943,7 +985,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11542" type="Armor" name="Dynasty Jewel Leather Armor">
+	<item id="11542" name="Dynasty Jewel Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_ub_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -965,7 +1007,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11543" type="Armor" name="Dynasty Jewel Leather Armor">
+	<item id="11543" name="Dynasty Jewel Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -987,7 +1029,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11544" type="Armor" name="Dynasty Jewel Leather Armor">
+	<item id="11544" name="Dynasty Jewel Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1009,7 +1051,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11545" type="Armor" name="Dynasty Jewel Leather Armor">
+	<item id="11545" name="Dynasty Jewel Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1031,7 +1073,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11546" type="Armor" name="Dynasty Jewel Leather Armor">
+	<item id="11546" name="Dynasty Jewel Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1053,7 +1095,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11547" type="Armor" name="Dynasty Tunic">
+	<item id="11547" name="Dynasty Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -1067,7 +1109,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3799-1" />
+		<skills>
+			<skill id="3799" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -1077,7 +1121,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11548" type="Armor" name="Dynasty Tunic">
+	<item id="11548" name="Dynasty Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_uh_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -1103,7 +1147,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11549" type="Armor" name="Dynasty Tunic">
+	<item id="11549" name="Dynasty Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_ue_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -1129,7 +1173,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11550" type="Armor" name="Dynasty Tunic">
+	<item id="11550" name="Dynasty Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_us_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -1155,7 +1199,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11551" type="Armor" name="Dynasty Tunic">
+	<item id="11551" name="Dynasty Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_uw_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -1181,7 +1225,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11552" type="Armor" name="Dynasty Platinum Plate">
+	<item id="11552" name="Dynasty Platinum Plate" type="Armor">
 		<set name="icon" val="icon.armor_t91_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1195,7 +1239,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3806-1" />
+		<skills>
+			<skill id="3806" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -1204,7 +1250,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11553" type="Armor" name="Dynasty Platinum Plate">
+	<item id="11553" name="Dynasty Platinum Plate" type="Armor">
 		<set name="icon" val="icon.armor_t91_uk_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1229,7 +1275,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11554" type="Armor" name="Dynasty Platinum Plate">
+	<item id="11554" name="Dynasty Platinum Plate" type="Armor">
 		<set name="icon" val="icon.armor_t91_uw_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1254,7 +1300,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11555" type="Armor" name="Dynasty Platinum Plate">
+	<item id="11555" name="Dynasty Platinum Plate" type="Armor">
 		<set name="icon" val="icon.armor_t91_uf_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1279,7 +1325,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11556" type="Armor" name="Dynasty Platinum Plate">
+	<item id="11556" name="Dynasty Platinum Plate" type="Armor">
 		<set name="icon" val="icon.armor_t91_uke_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1304,7 +1350,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11557" type="Armor" name="Dynasty Helmet">
+	<item id="11557" name="Dynasty Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -1317,7 +1363,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3794-1" />
+		<skills>
+			<skill id="3794" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -1326,7 +1374,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11558" type="Armor" name="Dynasty Stockings">
+	<item id="11558" name="Dynasty Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t93_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -1340,7 +1388,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3800-1" />
+		<skills>
+			<skill id="3800" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -1350,7 +1400,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11559" type="Armor" name="Sealed Dynasty Gaiters">
+	<item id="11559" name="Sealed Dynasty Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t91_l_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1372,7 +1422,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11560" type="Armor" name="Sealed Dynasty Gauntlets">
+	<item id="11560" name="Sealed Dynasty Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t91_g_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1393,7 +1443,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11561" type="Armor" name="Sealed Dynasty Gloves">
+	<item id="11561" name="Sealed Dynasty Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t93_g_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1414,7 +1464,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11562" type="Armor" name="Sealed Dynasty Leather Gloves">
+	<item id="11562" name="Sealed Dynasty Leather Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t92_g_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1432,7 +1482,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11563" type="Armor" name="Sealed Dynasty Leather Leggings">
+	<item id="11563" name="Sealed Dynasty Leather Leggings" type="Armor">
 		<set name="icon" val="icon.armor_t92_l_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1451,7 +1501,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11564" type="Armor" name="Sealed Dynasty Leather Armor">
+	<item id="11564" name="Sealed Dynasty Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1470,7 +1520,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11565" type="Armor" name="Sealed Dynasty Leather Boots">
+	<item id="11565" name="Sealed Dynasty Leather Boots" type="Armor">
 		<set name="icon" val="icon.armor_t92_b_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1488,7 +1538,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11566" type="Armor" name="Sealed Dynasty Leather Helmet">
+	<item id="11566" name="Sealed Dynasty Leather Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -1506,7 +1556,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11567" type="Armor" name="Sealed Dynasty Boots">
+	<item id="11567" name="Sealed Dynasty Boots" type="Armor">
 		<set name="icon" val="icon.armor_t91_b_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1527,7 +1577,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11568" type="Armor" name="Sealed Dynasty Breastplate">
+	<item id="11568" name="Sealed Dynasty Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t91_u_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1549,7 +1599,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11569" type="Armor" name="Sealed Dynasty Shield">
+	<item id="11569" name="Sealed Dynasty Shield" type="Armor">
 		<set name="icon" val="icon.shield_dynasty_shield_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -1568,10 +1618,10 @@
 			<sub stat="rEvas" val="8" />
 			<set stat="rShld" val="20" />
 			<set stat="sDef" val="305" />
-			<enchant val="0" stat="sDef" />
+			<enchant stat="sDef" val="0" />
 		</for>
 	</item>
-	<item id="11570" type="Armor" name="Sealed Dynasty Shoes">
+	<item id="11570" name="Sealed Dynasty Shoes" type="Armor">
 		<set name="icon" val="icon.armor_t93_b_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1592,7 +1642,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11571" type="Armor" name="Sealed Dynasty Circlet">
+	<item id="11571" name="Sealed Dynasty Circlet" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -1613,7 +1663,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11572" type="Armor" name="Sealed Dynasty Tunic">
+	<item id="11572" name="Sealed Dynasty Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t93_u_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -1636,7 +1686,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11573" type="Armor" name="Sealed Dynasty Helmet">
+	<item id="11573" name="Sealed Dynasty Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -1657,7 +1707,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11574" type="Armor" name="Sealed Dynasty Stockings">
+	<item id="11574" name="Sealed Dynasty Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t93_l_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -1680,7 +1730,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="11575" type="Armor" name="Adamantite Earring">
+	<item id="11575" name="Adamantite Earring" type="Armor">
 		<set name="icon" val="icon.accessary_adamantite_earing_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -1692,13 +1742,15 @@
 		<set name="price" val="93180" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3807-1" />
+		<skills>
+			<skill id="3807" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="51" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11576" type="Armor" name="Adamantite Necklace">
+	<item id="11576" name="Adamantite Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_adamantite_necklace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1710,13 +1762,15 @@
 		<set name="price" val="124240" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3808-1" />
+		<skills>
+			<skill id="3808" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="68" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11577" type="Armor" name="Adamantite Ring">
+	<item id="11577" name="Adamantite Ring" type="Armor">
 		<set name="icon" val="icon.accessary_adamantite_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -1728,13 +1782,15 @@
 		<set name="price" val="62120" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3809-1" />
+		<skills>
+			<skill id="3809" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="34" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11578" type="Armor" name="Black Ore Earring">
+	<item id="11578" name="Black Ore Earring" type="Armor">
 		<set name="icon" val="icon.accessary_earing_of_black_ore_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -1746,13 +1802,15 @@
 		<set name="price" val="142200" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3810-1" />
+		<skills>
+			<skill id="3810" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="54" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11579" type="Armor" name="Black Ore Necklace">
+	<item id="11579" name="Black Ore Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_necklace_of_black_ore_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1764,13 +1822,15 @@
 		<set name="price" val="189600" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3811-1" />
+		<skills>
+			<skill id="3811" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="72" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11580" type="Armor" name="Black Ore Ring">
+	<item id="11580" name="Black Ore Ring" type="Armor">
 		<set name="icon" val="icon.accessary_ring_of_black_ore_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -1782,13 +1842,15 @@
 		<set name="price" val="94800" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3812-1" />
+		<skills>
+			<skill id="3812" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="36" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11581" type="Armor" name="Sealed Phoenix Necklace">
+	<item id="11581" name="Sealed Phoenix Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_phoenixs_necklace_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1805,7 +1867,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11582" type="Armor" name="Sealed Phoenix Ring">
+	<item id="11582" name="Sealed Phoenix Ring" type="Armor">
 		<set name="icon" val="icon.accessary_phoenixs_ring_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -1822,7 +1884,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11583" type="Armor" name="Sealed Phoenix Earring">
+	<item id="11583" name="Sealed Phoenix Earring" type="Armor">
 		<set name="icon" val="icon.accessary_phoenixs_earing_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -1839,7 +1901,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11584" type="Armor" name="Phoenix Necklace">
+	<item id="11584" name="Phoenix Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_phoenixs_necklace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1851,14 +1913,16 @@
 		<set name="price" val="1340000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3813-1" />
+		<skills>
+			<skill id="3813" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="80" />
 			<add stat="maxMp" val="26" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11585" type="Armor" name="Phoenix Ring">
+	<item id="11585" name="Phoenix Ring" type="Armor">
 		<set name="icon" val="icon.accessary_phoenixs_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -1870,14 +1934,16 @@
 		<set name="price" val="670000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3814-1" />
+		<skills>
+			<skill id="3814" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="40" />
 			<add stat="maxMp" val="13" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11586" type="Armor" name="Phoenix Earring">
+	<item id="11586" name="Phoenix Earring" type="Armor">
 		<set name="icon" val="icon.accessary_phoenixs_earing_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -1889,14 +1955,16 @@
 		<set name="price" val="1005000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3815-1" />
+		<skills>
+			<skill id="3815" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="60" />
 			<add stat="maxMp" val="20" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11587" type="Armor" name="Majestic Necklace">
+	<item id="11587" name="Majestic Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1908,14 +1976,16 @@
 		<set name="price" val="1998000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3816-1" />
+		<skills>
+			<skill id="3816" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="85" />
 			<add stat="maxMp" val="33" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11588" type="Armor" name="Majestic Ring">
+	<item id="11588" name="Majestic Ring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -1927,14 +1997,16 @@
 		<set name="price" val="999000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3817-1" />
+		<skills>
+			<skill id="3817" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11589" type="Armor" name="Majestic Earring">
+	<item id="11589" name="Majestic Earring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -1946,14 +2018,16 @@
 		<set name="price" val="1498000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3818-1" />
+		<skills>
+			<skill id="3818" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11590" type="Armor" name="Sealed Majestic Necklace">
+	<item id="11590" name="Sealed Majestic Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_necklace_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1970,7 +2044,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11591" type="Armor" name="Sealed Majestic Ring">
+	<item id="11591" name="Sealed Majestic Ring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_ring_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -1987,7 +2061,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11592" type="Armor" name="Sealed Majestic Earring">
+	<item id="11592" name="Sealed Majestic Earring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_earing_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -2004,7 +2078,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11593" type="Armor" name="Sealed Tateossian Necklace">
+	<item id="11593" name="Sealed Tateossian Necklace" type="Armor">
 		<set name="icon" val="icon.accessory_tateossian_necklace_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -2021,7 +2095,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11594" type="Armor" name="Sealed Tateossian Ring">
+	<item id="11594" name="Sealed Tateossian Ring" type="Armor">
 		<set name="icon" val="icon.accessory_tateossian_ring_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -2038,7 +2112,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11595" type="Armor" name="Sealed Tateossian Earring">
+	<item id="11595" name="Sealed Tateossian Earring" type="Armor">
 		<set name="icon" val="icon.accessory_tateossian_earring_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -2055,7 +2129,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11596" type="Armor" name="Tateossian Necklace">
+	<item id="11596" name="Tateossian Necklace" type="Armor">
 		<set name="icon" val="icon.accessory_tateossian_necklace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -2067,14 +2141,16 @@
 		<set name="price" val="4361000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3819-1" />
+		<skills>
+			<skill id="3819" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="95" />
 			<add stat="maxMp" val="42" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11597" type="Armor" name="Tateossian Ring">
+	<item id="11597" name="Tateossian Ring" type="Armor">
 		<set name="icon" val="icon.accessory_tateossian_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -2086,14 +2162,16 @@
 		<set name="price" val="2180000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3820-1" />
+		<skills>
+			<skill id="3820" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11598" type="Armor" name="Tateossian Earring">
+	<item id="11598" name="Tateossian Earring" type="Armor">
 		<set name="icon" val="icon.accessory_tateossian_earring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rear;lear" />
@@ -2105,14 +2183,16 @@
 		<set name="price" val="3270000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3821-1" />
+		<skills>
+			<skill id="3821" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="11599" type="Armor" name="Dynasty Necklace">
+	<item id="11599" name="Dynasty Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_dynasty_necklace_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -2124,7 +2204,9 @@
 		<set name="price" val="7942000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3822-1" />
+		<skills>
+			<skill id="3822" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="106" />
 			<add stat="maxMp" val="46" />

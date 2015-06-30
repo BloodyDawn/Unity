@@ -1,5 +1,48 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:complexType name="skillsType">
+		<xs:sequence>
+			<xs:element name="skill" type="skillType" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="unequipSkillsType">
+		<xs:sequence>
+			<xs:element name="skill" type="skillType" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="capsuledItemsType">
+		<xs:sequence>
+			<xs:element name="item" type="capsuledItemType" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="skillType">
+		<xs:attribute name="id" type="xs:positiveInteger" use="required" />
+		<xs:attribute name="level" type="xs:positiveInteger" use="required" />
+		<xs:attribute name="type">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="NORMAL"></xs:enumeration>
+					<xs:enumeration value="ON_ENCHANT"></xs:enumeration>
+					<xs:enumeration value="ON_UNEQUIP"></xs:enumeration>
+					<xs:enumeration value="ON_CRITICAL_SKILL"></xs:enumeration>
+					<xs:enumeration value="ON_MAGIC_SKILL"></xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="type_chance" type="xs:positiveInteger" />
+		<xs:attribute name="type_value" type="xs:positiveInteger" />
+	</xs:complexType>
+
+	<xs:complexType name="capsuledItemType">
+		<xs:attribute name="id" type="xs:positiveInteger" />
+		<xs:attribute name="min" type="xs:positiveInteger" />
+		<xs:attribute name="max" type="xs:positiveInteger" />
+		<xs:attribute name="chance" type="xs:double" />
+	</xs:complexType>
+
 	<xs:complexType name="setType">
 		<xs:attribute name="name" use="required">
 			<xs:simpleType>
@@ -122,7 +165,7 @@
 		<xs:attribute name="levelRange" type="xs:token" />
 		<xs:attribute name="races" type="xs:token" />
 		<xs:attribute name="sex" type="xs:byte" use="optional" />
-		<xs:attribute name="fort" type="xs:integer" fixed="-1" />
+		<xs:attribute name="fort" type="xs:integer" />
 		<xs:attribute name="chaotic" type="xs:boolean" />
 		<xs:attribute name="subclass" type="xs:boolean" />
 		<xs:attribute name="SiegeZone" type="xs:positiveInteger" />
@@ -143,11 +186,7 @@
 		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="gameType">
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute type="xs:string" name="night" />
-			</xs:extension>
-		</xs:simpleContent>
+		<xs:attribute type="xs:string" name="night" />
 	</xs:complexType>
 	<xs:complexType name="notType">
 		<xs:sequence>
@@ -157,13 +196,9 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="usingType">
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute type="xs:string" name="kind" use="optional" />
-				<xs:attribute type="xs:string" name="slot" use="optional" />
-				<xs:attribute type="xs:string" name="weaponChange" use="optional" />
-			</xs:extension>
-		</xs:simpleContent>
+		<xs:attribute type="xs:string" name="kind" use="optional" />
+		<xs:attribute type="xs:string" name="slot" use="optional" />
+		<xs:attribute type="xs:string" name="weaponChange" use="optional" />
 	</xs:complexType>
 	<xs:complexType name="targetType">
 		<xs:attribute name="levelRange" type="xs:token" />
@@ -238,6 +273,9 @@
 	<xs:complexType name="itemType">
 		<xs:sequence maxOccurs="1" minOccurs="1">
 			<xs:element name="set" maxOccurs="unbounded" minOccurs="1" type="setType" />
+			<xs:element name="skills" minOccurs="0" type="skillsType" />
+			<xs:element name="unequip_skills" minOccurs="0" type="skillsType" />
+			<xs:element name="capsuled_items" minOccurs="0" type="capsuledItemsType" />
 			<xs:element name="cond" maxOccurs="2" minOccurs="0" type="condType" />
 			<xs:element name="for" maxOccurs="1" minOccurs="0" type="forType" />
 		</xs:sequence>
@@ -250,7 +288,7 @@
 			</xs:simpleType>
 		</xs:attribute>
 		<xs:attribute name="name" type="xs:normalizedString" use="required" />
-		<xs:attribute name="additionalName" type="xs:normalizedString" use="optional" />
+		<xs:attribute name="name_additional" type="xs:normalizedString" use="optional" />
 		<xs:attribute name="type" use="required">
 			<xs:simpleType>
 				<xs:restriction base="xs:token">

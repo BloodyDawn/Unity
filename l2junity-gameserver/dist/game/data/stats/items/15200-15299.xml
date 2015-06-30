@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="15200" type="EtcItem" name="Orc Mage Class Equipment Set">
+	<item id="15200" name="Orc Mage Class Equipment Set" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -8,18 +8,31 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15222,1,1,100;15223,1,1,100;15224,1,1,100;15225,1,1,100;15230,1,1,100;15231,1,1,100;15232,1,1,100;15233,1,1,100;15234,1,1,100;15237,1,1,100;15270,1,1,100;15271,1,1,100;15272,1,1,100;15273,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15222" max="1" min="1" />
+			<item chance="100.0" id="15223" max="1" min="1" />
+			<item chance="100.0" id="15224" max="1" min="1" />
+			<item chance="100.0" id="15225" max="1" min="1" />
+			<item chance="100.0" id="15230" max="1" min="1" />
+			<item chance="100.0" id="15231" max="1" min="1" />
+			<item chance="100.0" id="15232" max="1" min="1" />
+			<item chance="100.0" id="15233" max="1" min="1" />
+			<item chance="100.0" id="15234" max="1" min="1" />
+			<item chance="100.0" id="15237" max="1" min="1" />
+			<item chance="100.0" id="15270" max="1" min="1" />
+			<item chance="100.0" id="15271" max="1" min="1" />
+			<item chance="100.0" id="15272" max="1" min="1" />
+			<item chance="100.0" id="15273" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15201" type="EtcItem" name="Knight Class Equipment Set">
+	<item id="15201" name="Knight Class Equipment Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -27,18 +40,28 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15246,1,1,100;15247,1,1,100;15248,1,1,100;15249,1,1,100;15261,1,1,100;15262,1,1,100;15265,1,1,100;15274,1,1,100;15275,1,1,100;15276,1,1,100;15277,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15246" max="1" min="1" />
+			<item chance="100.0" id="15247" max="1" min="1" />
+			<item chance="100.0" id="15248" max="1" min="1" />
+			<item chance="100.0" id="15249" max="1" min="1" />
+			<item chance="100.0" id="15261" max="1" min="1" />
+			<item chance="100.0" id="15262" max="1" min="1" />
+			<item chance="100.0" id="15265" max="1" min="1" />
+			<item chance="100.0" id="15274" max="1" min="1" />
+			<item chance="100.0" id="15275" max="1" min="1" />
+			<item chance="100.0" id="15276" max="1" min="1" />
+			<item chance="100.0" id="15277" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15202" type="EtcItem" name="Mage Class Equipment Set">
+	<item id="15202" name="Mage Class Equipment Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -46,18 +69,26 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15254,1,1,100;15255,1,1,100;15256,1,1,100;15257,1,1,100;15258,1,1,100;15274,1,1,100;15275,1,1,100;15276,1,1,100;15277,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15254" max="1" min="1" />
+			<item chance="100.0" id="15255" max="1" min="1" />
+			<item chance="100.0" id="15256" max="1" min="1" />
+			<item chance="100.0" id="15257" max="1" min="1" />
+			<item chance="100.0" id="15258" max="1" min="1" />
+			<item chance="100.0" id="15274" max="1" min="1" />
+			<item chance="100.0" id="15275" max="1" min="1" />
+			<item chance="100.0" id="15276" max="1" min="1" />
+			<item chance="100.0" id="15277" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15203" type="EtcItem" name="Warrior Class Equipment Set">
+	<item id="15203" name="Warrior Class Equipment Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -65,18 +96,28 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15246,1,1,100;15247,1,1,100;15248,1,1,100;15249,1,1,100;15261,1,1,100;15265,1,1,100;15266,1,1,100;15274,1,1,100;15275,1,1,100;15276,1,1,100;15277,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15246" max="1" min="1" />
+			<item chance="100.0" id="15247" max="1" min="1" />
+			<item chance="100.0" id="15248" max="1" min="1" />
+			<item chance="100.0" id="15249" max="1" min="1" />
+			<item chance="100.0" id="15261" max="1" min="1" />
+			<item chance="100.0" id="15265" max="1" min="1" />
+			<item chance="100.0" id="15266" max="1" min="1" />
+			<item chance="100.0" id="15274" max="1" min="1" />
+			<item chance="100.0" id="15275" max="1" min="1" />
+			<item chance="100.0" id="15276" max="1" min="1" />
+			<item chance="100.0" id="15277" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15204" type="EtcItem" name="Rogue Class Equipment Set">
+	<item id="15204" name="Rogue Class Equipment Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -84,18 +125,27 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15250,1,1,100;15251,1,1,100;15252,1,1,100;15253,1,1,100;15259,1,1,100;15260,1,1,100;15274,1,1,100;15275,1,1,100;15276,1,1,100;15277,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15250" max="1" min="1" />
+			<item chance="100.0" id="15251" max="1" min="1" />
+			<item chance="100.0" id="15252" max="1" min="1" />
+			<item chance="100.0" id="15253" max="1" min="1" />
+			<item chance="100.0" id="15259" max="1" min="1" />
+			<item chance="100.0" id="15260" max="1" min="1" />
+			<item chance="100.0" id="15274" max="1" min="1" />
+			<item chance="100.0" id="15275" max="1" min="1" />
+			<item chance="100.0" id="15276" max="1" min="1" />
+			<item chance="100.0" id="15277" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15205" type="EtcItem" name="Kamael Class Equipment Set">
+	<item id="15205" name="Kamael Class Equipment Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -103,18 +153,28 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15250,1,1,100;15251,1,1,100;15252,1,1,100;15253,1,1,100;15267,1,1,100;15268,1,1,100;15269,1,1,100;15274,1,1,100;15275,1,1,100;15276,1,1,100;15277,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15250" max="1" min="1" />
+			<item chance="100.0" id="15251" max="1" min="1" />
+			<item chance="100.0" id="15252" max="1" min="1" />
+			<item chance="100.0" id="15253" max="1" min="1" />
+			<item chance="100.0" id="15267" max="1" min="1" />
+			<item chance="100.0" id="15268" max="1" min="1" />
+			<item chance="100.0" id="15269" max="1" min="1" />
+			<item chance="100.0" id="15274" max="1" min="1" />
+			<item chance="100.0" id="15275" max="1" min="1" />
+			<item chance="100.0" id="15276" max="1" min="1" />
+			<item chance="100.0" id="15277" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15206" type="EtcItem" name="Orc Fighter Class Equipment Set">
+	<item id="15206" name="Orc Fighter Class Equipment Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -122,18 +182,32 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15246,1,1,100;15247,1,1,100;15248,1,1,100;15249,1,1,100;15250,1,1,100;15251,1,1,100;15252,1,1,100;15253,1,1,100;15263,1,1,100;15264,1,1,100;15266,1,1,100;15274,1,1,100;15275,1,1,100;15276,1,1,100;15277,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15246" max="1" min="1" />
+			<item chance="100.0" id="15247" max="1" min="1" />
+			<item chance="100.0" id="15248" max="1" min="1" />
+			<item chance="100.0" id="15249" max="1" min="1" />
+			<item chance="100.0" id="15250" max="1" min="1" />
+			<item chance="100.0" id="15251" max="1" min="1" />
+			<item chance="100.0" id="15252" max="1" min="1" />
+			<item chance="100.0" id="15253" max="1" min="1" />
+			<item chance="100.0" id="15263" max="1" min="1" />
+			<item chance="100.0" id="15264" max="1" min="1" />
+			<item chance="100.0" id="15266" max="1" min="1" />
+			<item chance="100.0" id="15274" max="1" min="1" />
+			<item chance="100.0" id="15275" max="1" min="1" />
+			<item chance="100.0" id="15276" max="1" min="1" />
+			<item chance="100.0" id="15277" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15207" type="EtcItem" name="Orc Mage Class Equipment Set">
+	<item id="15207" name="Orc Mage Class Equipment Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -141,18 +215,31 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15246,1,1,100;15247,1,1,100;15248,1,1,100;15249,1,1,100;15254,1,1,100;15255,1,1,100;15256,1,1,100;15257,1,1,100;15258,1,1,100;15261,1,1,100;15274,1,1,100;15275,1,1,100;15276,1,1,100;15277,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15246" max="1" min="1" />
+			<item chance="100.0" id="15247" max="1" min="1" />
+			<item chance="100.0" id="15248" max="1" min="1" />
+			<item chance="100.0" id="15249" max="1" min="1" />
+			<item chance="100.0" id="15254" max="1" min="1" />
+			<item chance="100.0" id="15255" max="1" min="1" />
+			<item chance="100.0" id="15256" max="1" min="1" />
+			<item chance="100.0" id="15257" max="1" min="1" />
+			<item chance="100.0" id="15258" max="1" min="1" />
+			<item chance="100.0" id="15261" max="1" min="1" />
+			<item chance="100.0" id="15274" max="1" min="1" />
+			<item chance="100.0" id="15275" max="1" min="1" />
+			<item chance="100.0" id="15276" max="1" min="1" />
+			<item chance="100.0" id="15277" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15208" type="Armor" name="Bracelet of Glory: Friendship">
+	<item id="15208" name="Bracelet of Glory: Friendship" name_additional="30-day" type="Armor">
 		<set name="icon" val="icon.accessory_ring_of_friendship_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -161,16 +248,17 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
-		<set name="item_skill" val="8329-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
+		<skills>
+			<skill id="8329" level="1" />
+		</skills>
 	</item>
-	<item id="15209" type="EtcItem" name="Equipment Set Pack (10-day) Coupon">
+	<item id="15209" name="Equipment Set Pack (10-day) Coupon" type="EtcItem">
 		<set name="icon" val="icon.etc_exchange_ticket_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -178,21 +266,20 @@
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15210,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15210" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15210" type="EtcItem" name="Equipment Set Pack (10-day)">
+	<item id="15210" name="Equipment Set Pack (10-day)" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i01" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -201,9 +288,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2914-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -211,8 +296,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="14400" />
+		<skills>
+			<skill id="2914" level="1" />
+		</skills>
 	</item>
-	<item id="15211" type="EtcItem" name="Equipment Set Pack (30-day)">
+	<item id="15211" name="Equipment Set Pack (30-day)" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i01" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -221,9 +309,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2914-2" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -231,30 +317,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
+		<skills>
+			<skill id="2914" level="2" />
+		</skills>
 	</item>
-	<item id="15212" type="EtcItem" name="Friend Recommend Round 1 Reward Pack Coupon">
-		<set name="icon" val="icon.etc_exchange_ticket_i01" />
-		<set name="default_action" val="PEEL" />
-		<set name="immediate_effect" val="true" />
-		<set name="material" val="FISH" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-
-		<set name="is_sellable" val="false" />
-
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
-		<set name="is_clan_depositable" val="false" />
-		<set name="is_mailable" val="false" />
-		<set name="is_freightable" val="false" />
-		<set name="is_commissionable" val="false" />
-		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15213,1,1,100" />
-	</item>
-	<item id="15213" type="EtcItem" name="Friend Recommend Round 1 Reward Pack">
+	<item id="15212" name="Friend Recommend Round 1 Reward Pack Coupon" name_additional="Recommender" type="EtcItem">
 		<set name="icon" val="icon.etc_exchange_ticket_i01" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -263,82 +330,19 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
-		<set name="time" val="43200" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
-		<set name="is_clan_depositable" val="false" />
-		<set name="is_mailable" val="false" />
-		<set name="is_freightable" val="false" />
-		<set name="is_commissionable" val="false" />
-		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15208,1,1,100;15221,1,1,100;13273,1,1,100" />
-	</item>
-	<item id="15214" type="EtcItem" name="Friend Recommend Round 2 Reward Pack Coupon">
-		<set name="icon" val="icon.etc_exchange_ticket_i02" />
-		<set name="default_action" val="PEEL" />
-		<set name="immediate_effect" val="true" />
-		<set name="material" val="FISH" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-
-		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15215,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15213" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15215" type="EtcItem" name="Friend Recommend Round 2 Reward Pack">
-		<set name="icon" val="icon.etc_exchange_ticket_i02" />
-		<set name="default_action" val="PEEL" />
-		<set name="immediate_effect" val="true" />
-		<set name="material" val="FISH" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-		<set name="is_sellable" val="false" />
-
-		<set name="time" val="43200" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
-		<set name="is_clan_depositable" val="false" />
-		<set name="is_mailable" val="false" />
-		<set name="is_freightable" val="false" />
-		<set name="is_commissionable" val="false" />
-		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15208,1,1,100;15220,1,1,100;14065,1,1,100;15279,10,10,100" />
-	</item>
-	<item id="15216" type="EtcItem" name="Friend Recommend Round 1 Reward Pack Coupon">
-		<set name="icon" val="icon.etc_exchange_ticket_i01" />
-		<set name="default_action" val="PEEL" />
-		<set name="immediate_effect" val="true" />
-		<set name="material" val="FISH" />
-		<set name="reuse_delay" val="3000" />
-		<set name="is_tradable" val="false" />
-		<set name="is_dropable" val="false" />
-
-		<set name="is_sellable" val="false" />
-
-		<set name="is_stackable" val="true" />
-		<set name="is_premium" val="true" />
-		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
-		<set name="is_clan_depositable" val="false" />
-		<set name="is_mailable" val="false" />
-		<set name="is_freightable" val="false" />
-		<set name="is_commissionable" val="false" />
-		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15217,1,1,100" />
-	</item>
-	<item id="15217" type="EtcItem" name="Friend Recommend Round 1 Reward Pack">
+	<item id="15213" name="Friend Recommend Round 1 Reward Pack" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_exchange_ticket_i01" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -347,18 +351,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15208,1,1,100;15221,1,1,100;13273,1,1,100;15211,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15208" max="1" min="1" />
+			<item chance="100.0" id="15221" max="1" min="1" />
+			<item chance="100.0" id="13273" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15218" type="EtcItem" name="Friend Recommend Round 2 Reward Pack Coupon">
+	<item id="15214" name="Friend Recommend Round 2 Reward Pack Coupon" name_additional="Recommender" type="EtcItem">
 		<set name="icon" val="icon.etc_exchange_ticket_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -366,21 +372,20 @@
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-
 		<set name="is_sellable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15219,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15215" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15219" type="EtcItem" name="Friend Recommend Round 2 Reward Pack">
+	<item id="15215" name="Friend Recommend Round 2 Reward Pack" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_exchange_ticket_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -389,18 +394,110 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15208,1,1,100;15220,1,1,100;14065,1,1,100;15211,1,1,100;15279,10,10,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15208" max="1" min="1" />
+			<item chance="100.0" id="15220" max="1" min="1" />
+			<item chance="100.0" id="14065" max="1" min="1" />
+			<item chance="100.0" id="15279" max="10" min="10" />
+		</capsuled_items>
 	</item>
-	<item id="15220" type="Armor" name="Agathion - Oink Oink">
+	<item id="15216" name="Friend Recommend Round 1 Reward Pack Coupon" name_additional="New Dormancy" type="EtcItem">
+		<set name="icon" val="icon.etc_exchange_ticket_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
+		<capsuled_items>
+			<item chance="100.0" id="15217" max="1" min="1" />
+		</capsuled_items>
+	</item>
+	<item id="15217" name="Friend Recommend Round 1 Reward Pack" name_additional="30-day" type="EtcItem">
+		<set name="icon" val="icon.etc_exchange_ticket_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
+		<capsuled_items>
+			<item chance="100.0" id="15208" max="1" min="1" />
+			<item chance="100.0" id="15221" max="1" min="1" />
+			<item chance="100.0" id="13273" max="1" min="1" />
+			<item chance="100.0" id="15211" max="1" min="1" />
+		</capsuled_items>
+	</item>
+	<item id="15218" name="Friend Recommend Round 2 Reward Pack Coupon" name_additional="New Dormancy" type="EtcItem">
+		<set name="icon" val="icon.etc_exchange_ticket_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
+		<capsuled_items>
+			<item chance="100.0" id="15219" max="1" min="1" />
+		</capsuled_items>
+	</item>
+	<item id="15219" name="Friend Recommend Round 2 Reward Pack" name_additional="30-day" type="EtcItem">
+		<set name="icon" val="icon.etc_exchange_ticket_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="FISH" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="43200" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
+		<capsuled_items>
+			<item chance="100.0" id="15208" max="1" min="1" />
+			<item chance="100.0" id="15220" max="1" min="1" />
+			<item chance="100.0" id="14065" max="1" min="1" />
+			<item chance="100.0" id="15211" max="1" min="1" />
+			<item chance="100.0" id="15279" max="10" min="10" />
+		</capsuled_items>
+	</item>
+	<item id="15220" name="Agathion - Oink Oink" name_additional="10-day" type="Armor">
 		<set name="icon" val="icon.accessory_pig_lbracelet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lbracelet" />
@@ -410,8 +507,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
-		<set name="unequip_skill" val="3267-1" />
 		<set name="item_skill" val="6197-1;8328-1;3267-1;6196-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -419,8 +514,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="14400" />
+		<skills>
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
+		</skills>
 	</item>
-	<item id="15221" type="Armor" name="Puffy Hat of Friendship">
+	<item id="15221" name="Puffy Hat of Friendship" type="Armor">
 		<set name="icon" val="icon.accessory_globefish_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -435,9 +533,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-
 	</item>
-	<item id="15222" type="EtcItem" name="Fortune Heavy Armor of Nightmare Set Pack">
+	<item id="15222" name="Fortune Heavy Armor of Nightmare Set Pack" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -446,18 +543,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15141,1,1,100;15142,1,1,100;15143,1,1,100;15144,1,1,100;15145,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15141" max="1" min="1" />
+			<item chance="100.0" id="15142" max="1" min="1" />
+			<item chance="100.0" id="15143" max="1" min="1" />
+			<item chance="100.0" id="15144" max="1" min="1" />
+			<item chance="100.0" id="15145" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15223" type="EtcItem" name="Doom Plate Armor of Fortune Set Pack">
+	<item id="15223" name="Doom Plate Armor of Fortune Set Pack" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -466,18 +567,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15115,1,1,100;15116,1,1,100;15118,1,1,100;15120,1,1,100;15121,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15115" max="1" min="1" />
+			<item chance="100.0" id="15116" max="1" min="1" />
+			<item chance="100.0" id="15118" max="1" min="1" />
+			<item chance="100.0" id="15120" max="1" min="1" />
+			<item chance="100.0" id="15121" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15224" type="EtcItem" name="Full Plate of Fortune Set Pack">
+	<item id="15224" name="Full Plate of Fortune Set Pack" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -486,18 +591,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15126,1,1,100;15127,1,1,100;15128,1,1,100;15129,1,1,100;15130,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15126" max="1" min="1" />
+			<item chance="100.0" id="15127" max="1" min="1" />
+			<item chance="100.0" id="15128" max="1" min="1" />
+			<item chance="100.0" id="15129" max="1" min="1" />
+			<item chance="100.0" id="15130" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15225" type="EtcItem" name="Brigandine of Fortune Set Pack">
+	<item id="15225" name="Brigandine of Fortune Set Pack" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -506,18 +615,23 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15135,1,1,100;15136,1,1,100;15137,1,1,100;15138,1,1,100;15139,1,1,100;15140,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15135" max="1" min="1" />
+			<item chance="100.0" id="15136" max="1" min="1" />
+			<item chance="100.0" id="15137" max="1" min="1" />
+			<item chance="100.0" id="15138" max="1" min="1" />
+			<item chance="100.0" id="15139" max="1" min="1" />
+			<item chance="100.0" id="15140" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15226" type="EtcItem" name="Dark Crystal Light Armor of Fortune Set Pack">
+	<item id="15226" name="Dark Crystal Light Armor of Fortune Set Pack" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -526,18 +640,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15110,1,1,100;15111,1,1,100;15112,1,1,100;15113,1,1,100;15093,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15110" max="1" min="1" />
+			<item chance="100.0" id="15111" max="1" min="1" />
+			<item chance="100.0" id="15112" max="1" min="1" />
+			<item chance="100.0" id="15113" max="1" min="1" />
+			<item chance="100.0" id="15093" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15227" type="EtcItem" name="Leather Armor of Doom of Fortune Set Pack">
+	<item id="15227" name="Leather Armor of Doom of Fortune Set Pack" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -546,18 +664,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15114,1,1,100;15115,1,1,100;15117,1,1,100;15119,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15114" max="1" min="1" />
+			<item chance="100.0" id="15115" max="1" min="1" />
+			<item chance="100.0" id="15117" max="1" min="1" />
+			<item chance="100.0" id="15119" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15228" type="EtcItem" name="Plated Leather of Fortune Set Pack">
+	<item id="15228" name="Plated Leather of Fortune Set Pack" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -566,18 +687,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15122,1,1,100;15123,1,1,100;15124,1,1,100;15125,1,1,100;15126,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15122" max="1" min="1" />
+			<item chance="100.0" id="15123" max="1" min="1" />
+			<item chance="100.0" id="15124" max="1" min="1" />
+			<item chance="100.0" id="15125" max="1" min="1" />
+			<item chance="100.0" id="15126" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15229" type="EtcItem" name="Manticore Leather of Fortune Set Pack">
+	<item id="15229" name="Manticore Leather of Fortune Set Pack" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -586,18 +711,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15131,1,1,100;15132,1,1,100;15133,1,1,100;15134,1,1,100;15137,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15131" max="1" min="1" />
+			<item chance="100.0" id="15132" max="1" min="1" />
+			<item chance="100.0" id="15133" max="1" min="1" />
+			<item chance="100.0" id="15134" max="1" min="1" />
+			<item chance="100.0" id="15137" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15230" type="EtcItem" name="Dark Crystal Robe of Fortune Set Pack">
+	<item id="15230" name="Dark Crystal Robe of Fortune Set Pack" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -606,18 +735,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15092,1,1,100;15093,1,1,100;15094,1,1,100;15095,1,1,100;15096,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15092" max="1" min="1" />
+			<item chance="100.0" id="15093" max="1" min="1" />
+			<item chance="100.0" id="15094" max="1" min="1" />
+			<item chance="100.0" id="15095" max="1" min="1" />
+			<item chance="100.0" id="15096" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15231" type="EtcItem" name="Avadon Robe of Fortune Set Pack">
+	<item id="15231" name="Avadon Robe of Fortune Set Pack" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -626,18 +759,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15097,1,1,100;15098,1,1,100;15099,1,1,100;15100,1,1,100;15101,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15097" max="1" min="1" />
+			<item chance="100.0" id="15098" max="1" min="1" />
+			<item chance="100.0" id="15099" max="1" min="1" />
+			<item chance="100.0" id="15100" max="1" min="1" />
+			<item chance="100.0" id="15101" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15232" type="EtcItem" name="Karmian of Fortune Set Pack">
+	<item id="15232" name="Karmian of Fortune Set Pack" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -646,18 +783,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15102,1,1,100;15103,1,1,100;15104,1,1,100;15105,1,1,100;15126,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15102" max="1" min="1" />
+			<item chance="100.0" id="15103" max="1" min="1" />
+			<item chance="100.0" id="15104" max="1" min="1" />
+			<item chance="100.0" id="15105" max="1" min="1" />
+			<item chance="100.0" id="15126" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15233" type="EtcItem" name="Mithril Tunic of Fortune Set Pack">
+	<item id="15233" name="Mithril Tunic of Fortune Set Pack" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -666,18 +807,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15106,1,1,100;15107,1,1,100;15108,1,1,100;15109,1,1,100;15137,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15106" max="1" min="1" />
+			<item chance="100.0" id="15107" max="1" min="1" />
+			<item chance="100.0" id="15108" max="1" min="1" />
+			<item chance="100.0" id="15109" max="1" min="1" />
+			<item chance="100.0" id="15137" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15234" type="EtcItem" name="Magic Weapon of Fortune Set">
+	<item id="15234" name="Magic Weapon of Fortune Set" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -686,18 +831,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15146,1,1,100;15147,1,1,100;15148,1,1,100;15149,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15146" max="1" min="1" />
+			<item chance="100.0" id="15147" max="1" min="1" />
+			<item chance="100.0" id="15148" max="1" min="1" />
+			<item chance="100.0" id="15149" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15235" type="EtcItem" name="Dagger of Fortune Set">
+	<item id="15235" name="Dagger of Fortune Set" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -706,18 +854,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15150,1,1,100;15151,1,1,100;15152,1,1,100;15153,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15150" max="1" min="1" />
+			<item chance="100.0" id="15151" max="1" min="1" />
+			<item chance="100.0" id="15152" max="1" min="1" />
+			<item chance="100.0" id="15153" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15236" type="EtcItem" name="Bow of Fortune Set">
+	<item id="15236" name="Bow of Fortune Set" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -726,18 +877,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15154,1,1,100;15155,1,1,100;15156,1,1,100;15157,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15154" max="1" min="1" />
+			<item chance="100.0" id="15155" max="1" min="1" />
+			<item chance="100.0" id="15156" max="1" min="1" />
+			<item chance="100.0" id="15157" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15237" type="EtcItem" name="Blunt Weapon of Fortune Set">
+	<item id="15237" name="Blunt Weapon of Fortune Set" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -746,18 +900,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15158,1,1,100;15159,1,1,100;15160,1,1,100;15161,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15158" max="1" min="1" />
+			<item chance="100.0" id="15159" max="1" min="1" />
+			<item chance="100.0" id="15160" max="1" min="1" />
+			<item chance="100.0" id="15161" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15238" type="EtcItem" name="One-handed Sword of Fortune Set">
+	<item id="15238" name="One-handed Sword of Fortune Set" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -766,18 +923,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15162,1,1,100;15163,1,1,100;15164,1,1,100;15165,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15162" max="1" min="1" />
+			<item chance="100.0" id="15163" max="1" min="1" />
+			<item chance="100.0" id="15164" max="1" min="1" />
+			<item chance="100.0" id="15165" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15239" type="EtcItem" name="Two-handed Sword of Fortune Set">
+	<item id="15239" name="Two-handed Sword of Fortune Set" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -786,18 +946,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15166,1,1,100;15167,1,1,100;15168,1,1,100;15169,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15166" max="1" min="1" />
+			<item chance="100.0" id="15167" max="1" min="1" />
+			<item chance="100.0" id="15168" max="1" min="1" />
+			<item chance="100.0" id="15169" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15240" type="EtcItem" name="Fist Weapon of Fortune Set">
+	<item id="15240" name="Fist Weapon of Fortune Set" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -806,18 +969,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15170,1,1,100;15171,1,1,100;15172,1,1,100;15173,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15170" max="1" min="1" />
+			<item chance="100.0" id="15171" max="1" min="1" />
+			<item chance="100.0" id="15172" max="1" min="1" />
+			<item chance="100.0" id="15173" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15241" type="EtcItem" name="Dualsword of Fortune Set">
+	<item id="15241" name="Dualsword of Fortune Set" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -826,18 +992,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15174,1,1,100;15175,1,1,100;15176,1,1,100;15177,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15174" max="1" min="1" />
+			<item chance="100.0" id="15175" max="1" min="1" />
+			<item chance="100.0" id="15176" max="1" min="1" />
+			<item chance="100.0" id="15177" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15242" type="EtcItem" name="Spear of Fortune Set">
+	<item id="15242" name="Spear of Fortune Set" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -846,18 +1015,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15178,1,1,100;15179,1,1,100;15180,1,1,100;15181,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15178" max="1" min="1" />
+			<item chance="100.0" id="15179" max="1" min="1" />
+			<item chance="100.0" id="15180" max="1" min="1" />
+			<item chance="100.0" id="15181" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15243" type="EtcItem" name="Ancient Sword of Fortune Set">
+	<item id="15243" name="Ancient Sword of Fortune Set" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -866,18 +1038,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15182,1,1,100;15183,1,1,100;15184,1,1,100;15185,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15182" max="1" min="1" />
+			<item chance="100.0" id="15183" max="1" min="1" />
+			<item chance="100.0" id="15184" max="1" min="1" />
+			<item chance="100.0" id="15185" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15244" type="EtcItem" name="Rapier of Fortune Set">
+	<item id="15244" name="Rapier of Fortune Set" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -886,18 +1061,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15186,1,1,100;15187,1,1,100;15188,1,1,100;15189,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15186" max="1" min="1" />
+			<item chance="100.0" id="15187" max="1" min="1" />
+			<item chance="100.0" id="15188" max="1" min="1" />
+			<item chance="100.0" id="15189" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15245" type="EtcItem" name="Crossbow of Fortune Set">
+	<item id="15245" name="Crossbow of Fortune Set" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -906,18 +1084,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15190,1,1,100;15191,1,1,100;15192,1,1,100;15193,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15190" max="1" min="1" />
+			<item chance="100.0" id="15191" max="1" min="1" />
+			<item chance="100.0" id="15192" max="1" min="1" />
+			<item chance="100.0" id="15193" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15246" type="EtcItem" name="Fortune Heavy Armor of Nightmare Set Pack">
+	<item id="15246" name="Fortune Heavy Armor of Nightmare Set Pack" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -926,18 +1107,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15027,1,1,100;15028,1,1,100;15029,1,1,100;15030,1,1,100;15031,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15027" max="1" min="1" />
+			<item chance="100.0" id="15028" max="1" min="1" />
+			<item chance="100.0" id="15029" max="1" min="1" />
+			<item chance="100.0" id="15030" max="1" min="1" />
+			<item chance="100.0" id="15031" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15247" type="EtcItem" name="Doom Plate Armor of Fortune Set Pack">
+	<item id="15247" name="Doom Plate Armor of Fortune Set Pack" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -946,18 +1131,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15001,1,1,100;15002,1,1,100;15004,1,1,100;15006,1,1,100;15007,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15001" max="1" min="1" />
+			<item chance="100.0" id="15002" max="1" min="1" />
+			<item chance="100.0" id="15004" max="1" min="1" />
+			<item chance="100.0" id="15006" max="1" min="1" />
+			<item chance="100.0" id="15007" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15248" type="EtcItem" name="Full Plate of Fortune Set Pack">
+	<item id="15248" name="Full Plate of Fortune Set Pack" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -966,18 +1155,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15012,1,1,100;15013,1,1,100;15014,1,1,100;15015,1,1,100;15016,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15012" max="1" min="1" />
+			<item chance="100.0" id="15013" max="1" min="1" />
+			<item chance="100.0" id="15014" max="1" min="1" />
+			<item chance="100.0" id="15015" max="1" min="1" />
+			<item chance="100.0" id="15016" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15249" type="EtcItem" name="Brigandine of Fortune Set Pack">
+	<item id="15249" name="Brigandine of Fortune Set Pack" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -986,18 +1179,23 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15021,1,1,100;15022,1,1,100;15023,1,1,100;15024,1,1,100;15025,1,1,100;15026,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15021" max="1" min="1" />
+			<item chance="100.0" id="15022" max="1" min="1" />
+			<item chance="100.0" id="15023" max="1" min="1" />
+			<item chance="100.0" id="15024" max="1" min="1" />
+			<item chance="100.0" id="15025" max="1" min="1" />
+			<item chance="100.0" id="15026" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15250" type="EtcItem" name="Dark Crystal Light Armor of Fortune Set Pack">
+	<item id="15250" name="Dark Crystal Light Armor of Fortune Set Pack" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1006,18 +1204,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="14996,1,1,100;14997,1,1,100;14998,1,1,100;14999,1,1,100;14979,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="14996" max="1" min="1" />
+			<item chance="100.0" id="14997" max="1" min="1" />
+			<item chance="100.0" id="14998" max="1" min="1" />
+			<item chance="100.0" id="14999" max="1" min="1" />
+			<item chance="100.0" id="14979" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15251" type="EtcItem" name="Leather Armor of Doom of Fortune Set Pack">
+	<item id="15251" name="Leather Armor of Doom of Fortune Set Pack" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1026,18 +1228,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15000,1,1,100;15001,1,1,100;15003,1,1,100;15005,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15000" max="1" min="1" />
+			<item chance="100.0" id="15001" max="1" min="1" />
+			<item chance="100.0" id="15003" max="1" min="1" />
+			<item chance="100.0" id="15005" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15252" type="EtcItem" name="Plated Leather of Fortune Set Pack">
+	<item id="15252" name="Plated Leather of Fortune Set Pack" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1046,18 +1251,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15008,1,1,100;15009,1,1,100;15010,1,1,100;15011,1,1,100;15012,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15008" max="1" min="1" />
+			<item chance="100.0" id="15009" max="1" min="1" />
+			<item chance="100.0" id="15010" max="1" min="1" />
+			<item chance="100.0" id="15011" max="1" min="1" />
+			<item chance="100.0" id="15012" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15253" type="EtcItem" name="Manticore Leather of Fortune Set Pack">
+	<item id="15253" name="Manticore Leather of Fortune Set Pack" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1066,18 +1275,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15017,1,1,100;15018,1,1,100;15019,1,1,100;15020,1,1,100;15023,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15017" max="1" min="1" />
+			<item chance="100.0" id="15018" max="1" min="1" />
+			<item chance="100.0" id="15019" max="1" min="1" />
+			<item chance="100.0" id="15020" max="1" min="1" />
+			<item chance="100.0" id="15023" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15254" type="EtcItem" name="Dark Crystal Robe of Fortune Set Pack">
+	<item id="15254" name="Dark Crystal Robe of Fortune Set Pack" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1086,18 +1299,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="14978,1,1,100;14979,1,1,100;14980,1,1,100;14981,1,1,100;14982,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="14978" max="1" min="1" />
+			<item chance="100.0" id="14979" max="1" min="1" />
+			<item chance="100.0" id="14980" max="1" min="1" />
+			<item chance="100.0" id="14981" max="1" min="1" />
+			<item chance="100.0" id="14982" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15255" type="EtcItem" name="Avadon Robe of Fortune Set Pack">
+	<item id="15255" name="Avadon Robe of Fortune Set Pack" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1106,18 +1323,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="14983,1,1,100;14984,1,1,100;14985,1,1,100;14986,1,1,100;14987,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="14983" max="1" min="1" />
+			<item chance="100.0" id="14984" max="1" min="1" />
+			<item chance="100.0" id="14985" max="1" min="1" />
+			<item chance="100.0" id="14986" max="1" min="1" />
+			<item chance="100.0" id="14987" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15256" type="EtcItem" name="Karmian of Fortune Set Pack">
+	<item id="15256" name="Karmian of Fortune Set Pack" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1126,18 +1347,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="14988,1,1,100;14989,1,1,100;14990,1,1,100;14991,1,1,100;15012,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="14988" max="1" min="1" />
+			<item chance="100.0" id="14989" max="1" min="1" />
+			<item chance="100.0" id="14990" max="1" min="1" />
+			<item chance="100.0" id="14991" max="1" min="1" />
+			<item chance="100.0" id="15012" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15257" type="EtcItem" name="Mithril Tunic of Fortune Set Pack">
+	<item id="15257" name="Mithril Tunic of Fortune Set Pack" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i02" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1146,18 +1371,22 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="14992,1,1,100;14993,1,1,100;14994,1,1,100;14995,1,1,100;15023,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="14992" max="1" min="1" />
+			<item chance="100.0" id="14993" max="1" min="1" />
+			<item chance="100.0" id="14994" max="1" min="1" />
+			<item chance="100.0" id="14995" max="1" min="1" />
+			<item chance="100.0" id="15023" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15258" type="EtcItem" name="Magic Weapon of Fortune Set">
+	<item id="15258" name="Magic Weapon of Fortune Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1166,18 +1395,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15032,1,1,100;15033,1,1,100;15034,1,1,100;15035,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15032" max="1" min="1" />
+			<item chance="100.0" id="15033" max="1" min="1" />
+			<item chance="100.0" id="15034" max="1" min="1" />
+			<item chance="100.0" id="15035" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15259" type="EtcItem" name="Dagger of Fortune Set">
+	<item id="15259" name="Dagger of Fortune Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1186,18 +1418,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15036,1,1,100;15037,1,1,100;15038,1,1,100;15039,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15036" max="1" min="1" />
+			<item chance="100.0" id="15037" max="1" min="1" />
+			<item chance="100.0" id="15038" max="1" min="1" />
+			<item chance="100.0" id="15039" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15260" type="EtcItem" name="Bow of Fortune Set">
+	<item id="15260" name="Bow of Fortune Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1206,18 +1441,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15040,1,1,100;15041,1,1,100;15042,1,1,100;15043,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15040" max="1" min="1" />
+			<item chance="100.0" id="15041" max="1" min="1" />
+			<item chance="100.0" id="15042" max="1" min="1" />
+			<item chance="100.0" id="15043" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15261" type="EtcItem" name="Blunt Weapon of Fortune Set">
+	<item id="15261" name="Blunt Weapon of Fortune Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1226,18 +1464,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15044,1,1,100;15045,1,1,100;15046,1,1,100;15047,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15044" max="1" min="1" />
+			<item chance="100.0" id="15045" max="1" min="1" />
+			<item chance="100.0" id="15046" max="1" min="1" />
+			<item chance="100.0" id="15047" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15262" type="EtcItem" name="One-handed Sword of Fortune Set">
+	<item id="15262" name="One-handed Sword of Fortune Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1246,18 +1487,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15048,1,1,100;15049,1,1,100;15050,1,1,100;15051,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15048" max="1" min="1" />
+			<item chance="100.0" id="15049" max="1" min="1" />
+			<item chance="100.0" id="15050" max="1" min="1" />
+			<item chance="100.0" id="15051" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15263" type="EtcItem" name="Two-handed Sword of Fortune Set">
+	<item id="15263" name="Two-handed Sword of Fortune Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1266,18 +1510,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15052,1,1,100;15053,1,1,100;15054,1,1,100;15055,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15052" max="1" min="1" />
+			<item chance="100.0" id="15053" max="1" min="1" />
+			<item chance="100.0" id="15054" max="1" min="1" />
+			<item chance="100.0" id="15055" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15264" type="EtcItem" name="Fist Weapon of Fortune Set">
+	<item id="15264" name="Fist Weapon of Fortune Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1286,18 +1533,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15056,1,1,100;15057,1,1,100;15058,1,1,100;15059,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15056" max="1" min="1" />
+			<item chance="100.0" id="15057" max="1" min="1" />
+			<item chance="100.0" id="15058" max="1" min="1" />
+			<item chance="100.0" id="15059" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15265" type="EtcItem" name="Dualsword of Fortune Set">
+	<item id="15265" name="Dualsword of Fortune Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1306,18 +1556,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15060,1,1,100;15061,1,1,100;15062,1,1,100;15063,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15060" max="1" min="1" />
+			<item chance="100.0" id="15061" max="1" min="1" />
+			<item chance="100.0" id="15062" max="1" min="1" />
+			<item chance="100.0" id="15063" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15266" type="EtcItem" name="Spear of Fortune Set">
+	<item id="15266" name="Spear of Fortune Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1326,18 +1579,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15064,1,1,100;15065,1,1,100;15066,1,1,100;15067,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15064" max="1" min="1" />
+			<item chance="100.0" id="15065" max="1" min="1" />
+			<item chance="100.0" id="15066" max="1" min="1" />
+			<item chance="100.0" id="15067" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15267" type="EtcItem" name="Ancient Sword of Fortune Set">
+	<item id="15267" name="Ancient Sword of Fortune Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1346,18 +1602,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15068,1,1,100;15069,1,1,100;15070,1,1,100;15071,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15068" max="1" min="1" />
+			<item chance="100.0" id="15069" max="1" min="1" />
+			<item chance="100.0" id="15070" max="1" min="1" />
+			<item chance="100.0" id="15071" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15268" type="EtcItem" name="Short Sword of Fortune Set">
+	<item id="15268" name="Short Sword of Fortune Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1366,18 +1625,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15072,1,1,100;15073,1,1,100;15074,1,1,100;15075,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15072" max="1" min="1" />
+			<item chance="100.0" id="15073" max="1" min="1" />
+			<item chance="100.0" id="15074" max="1" min="1" />
+			<item chance="100.0" id="15075" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15269" type="EtcItem" name="Crossbow of Fortune Set">
+	<item id="15269" name="Crossbow of Fortune Set" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_equip_item_box_i03" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1386,18 +1648,21 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15076,1,1,100;15077,1,1,100;15078,1,1,100;15079,1,1,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15076" max="1" min="1" />
+			<item chance="100.0" id="15077" max="1" min="1" />
+			<item chance="100.0" id="15078" max="1" min="1" />
+			<item chance="100.0" id="15079" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15270" type="EtcItem" name="Jewelry Pack (A-grade)">
+	<item id="15270" name="Jewelry Pack (A-grade)" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1406,18 +1671,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15080,2,2,100;15081,1,1,100;15082,2,2,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15080" max="2" min="2" />
+			<item chance="100.0" id="15081" max="1" min="1" />
+			<item chance="100.0" id="15082" max="2" min="2" />
+		</capsuled_items>
 	</item>
-	<item id="15271" type="EtcItem" name="Jewelry Pack (B-grade)">
+	<item id="15271" name="Jewelry Pack (B-grade)" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1426,18 +1693,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15084,1,1,100;15083,2,2,100;15085,2,2,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15084" max="1" min="1" />
+			<item chance="100.0" id="15083" max="2" min="2" />
+			<item chance="100.0" id="15085" max="2" min="2" />
+		</capsuled_items>
 	</item>
-	<item id="15272" type="EtcItem" name="Jewelry Pack (C-grade)">
+	<item id="15272" name="Jewelry Pack (C-grade)" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1446,18 +1715,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15087,1,1,100;15086,2,2,100;15088,2,2,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15087" max="1" min="1" />
+			<item chance="100.0" id="15086" max="2" min="2" />
+			<item chance="100.0" id="15088" max="2" min="2" />
+		</capsuled_items>
 	</item>
-	<item id="15273" type="EtcItem" name="Jewelry Pack (D-grade)">
+	<item id="15273" name="Jewelry Pack (D-grade)" name_additional="10-day" type="EtcItem">
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1466,18 +1737,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="14400" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="15090,1,1,100;15089,2,2,100;15091,2,2,100" />
+		<capsuled_items>
+			<item chance="100.0" id="15090" max="1" min="1" />
+			<item chance="100.0" id="15089" max="2" min="2" />
+			<item chance="100.0" id="15091" max="2" min="2" />
+		</capsuled_items>
 	</item>
-	<item id="15274" type="EtcItem" name="Jewelry Pack (A-grade)">
+	<item id="15274" name="Jewelry Pack (A-grade)" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1486,18 +1759,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="14966,2,2,100;14967,1,1,100;14968,2,2,100" />
+		<capsuled_items>
+			<item chance="100.0" id="14966" max="2" min="2" />
+			<item chance="100.0" id="14967" max="1" min="1" />
+			<item chance="100.0" id="14968" max="2" min="2" />
+		</capsuled_items>
 	</item>
-	<item id="15275" type="EtcItem" name="Jewelry Pack (B-grade)">
+	<item id="15275" name="Jewelry Pack (B-grade)" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1506,18 +1781,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="14970,1,1,100;14969,2,2,100;14971,2,2,100" />
+		<capsuled_items>
+			<item chance="100.0" id="14970" max="1" min="1" />
+			<item chance="100.0" id="14969" max="2" min="2" />
+			<item chance="100.0" id="14971" max="2" min="2" />
+		</capsuled_items>
 	</item>
-	<item id="15276" type="EtcItem" name="Jewelry Pack (C-grade)">
+	<item id="15276" name="Jewelry Pack (C-grade)" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1526,18 +1803,20 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="14973,1,1,100;14972,2,2,100;14974,2,2,100" />
+		<capsuled_items>
+			<item chance="100.0" id="14973" max="1" min="1" />
+			<item chance="100.0" id="14972" max="2" min="2" />
+			<item chance="100.0" id="14974" max="2" min="2" />
+		</capsuled_items>
 	</item>
-	<item id="15277" type="EtcItem" name="Jewelry Pack (D-grade)">
+	<item id="15277" name="Jewelry Pack (D-grade)" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
@@ -1546,40 +1825,44 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
 		<set name="time" val="43200" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="capsuled_items" val="14976,1,1,100;14975,2,2,100;14977,2,2,100" />
+		<capsuled_items>
+			<item chance="100.0" id="14976" max="1" min="1" />
+			<item chance="100.0" id="14975" max="2" min="2" />
+			<item chance="100.0" id="14977" max="2" min="2" />
+		</capsuled_items>
 	</item>
-	<item id="15278" type="EtcItem" name="Dimensional Merchant's Gift">
+	<item id="15278" name="Dimensional Merchant's Gift" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_box_i05" />
 		<set name="default_action" val="PEEL" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_dropable" val="false" />
-
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="capsuled_items" val="14739,1,1,100;9156,1,1,5;9157,1,1,5;14705,1,1,0.325;14706,1,1,0.025" />
+		<capsuled_items>
+			<item chance="100.0" id="14739" max="1" min="1" />
+			<item chance="5.0" id="9156" max="1" min="1" />
+			<item chance="5.0" id="9157" max="1" min="1" />
+			<item chance="0.325" id="14705" max="1" min="1" />
+			<item chance="0.025" id="14706" max="1" min="1" />
+		</capsuled_items>
 	</item>
-	<item id="15279" type="EtcItem" name="Friend Recommendation Proof">
+	<item id="15279" name="Friend Recommendation Proof" type="EtcItem">
 		<set name="icon" val="icon.etc_exchange_ticket_i03" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1587,7 +1870,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="15280" type="Weapon" name="Transparent 1HS (NPC)">
+	<item id="15280" name="Transparent 1HS (NPC)" type="Weapon">
 		<set name="icon" val="icon.weapon_long_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1602,7 +1885,6 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-
 		<for>
 			<set stat="pAtk" val="24" />
 			<set stat="mAtk" val="17" />
@@ -1610,7 +1892,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="15281" type="Weapon" name="Transparent 2HS (NPC)">
+	<item id="15281" name="Transparent 2HS (NPC)" type="Weapon">
 		<set name="icon" val="icon.weapon_two_handed_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1626,7 +1908,6 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-
 		<for>
 			<set stat="pAtk" val="78" />
 			<set stat="mAtk" val="39" />
@@ -1634,7 +1915,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="15282" type="Armor" name="Gludio Water Royal Guard Necklace">
+	<item id="15282" name="Gludio Water Royal Guard Necklace" type="Armor">
 		<set name="icon" val="icon.accessory_nectklace_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1658,7 +1939,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15283" type="Armor" name="Dion Holy Royal Guard Necklace">
+	<item id="15283" name="Dion Holy Royal Guard Necklace" type="Armor">
 		<set name="icon" val="icon.accessory_nectklace_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1682,7 +1963,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15284" type="Armor" name="Giran Wind Royal Guard Necklace">
+	<item id="15284" name="Giran Wind Royal Guard Necklace" type="Armor">
 		<set name="icon" val="icon.accessory_nectklace_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1706,7 +1987,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15285" type="Armor" name="Oren Dark Royal Guard Necklace">
+	<item id="15285" name="Oren Dark Royal Guard Necklace" type="Armor">
 		<set name="icon" val="icon.accessory_nectklace_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1730,7 +2011,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15286" type="Armor" name="Aden Earth Royal Guard Necklace">
+	<item id="15286" name="Aden Earth Royal Guard Necklace" type="Armor">
 		<set name="icon" val="icon.accessory_nectklace_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1754,7 +2035,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15287" type="Armor" name="Innadril Water Royal Guard Necklace">
+	<item id="15287" name="Innadril Water Royal Guard Necklace" type="Armor">
 		<set name="icon" val="icon.accessory_nectklace_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1778,7 +2059,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15288" type="Armor" name="Goddard Fire Royal Guard Necklace">
+	<item id="15288" name="Goddard Fire Royal Guard Necklace" type="Armor">
 		<set name="icon" val="icon.accessory_nectklace_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1802,7 +2083,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15289" type="Armor" name="Rune Fire Royal Guard Necklace">
+	<item id="15289" name="Rune Fire Royal Guard Necklace" type="Armor">
 		<set name="icon" val="icon.accessory_nectklace_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1826,7 +2107,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15290" type="Armor" name="Schuttgart Wind Royal Guard Necklace">
+	<item id="15290" name="Schuttgart Wind Royal Guard Necklace" type="Armor">
 		<set name="icon" val="icon.accessory_nectklace_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="neck" />
@@ -1850,7 +2131,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15291" type="Armor" name="Gludio Earth Royal Guard Ring">
+	<item id="15291" name="Gludio Earth Royal Guard Ring" type="Armor">
 		<set name="icon" val="icon.accessory_ring_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -1867,7 +2148,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8379-2" />
+		<skills>
+			<skill id="8379" level="2" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="60" />
 			<add stat="maxMp" val="23" />
@@ -1875,7 +2158,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15292" type="Armor" name="Dion Water Royal Guard Ring">
+	<item id="15292" name="Dion Water Royal Guard Ring" type="Armor">
 		<set name="icon" val="icon.accessory_ring_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -1892,7 +2175,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8380-2" />
+		<skills>
+			<skill id="8380" level="2" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="60" />
 			<add stat="maxMp" val="23" />
@@ -1900,7 +2185,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15293" type="Armor" name="Giran Fire Royal Guard Ring">
+	<item id="15293" name="Giran Fire Royal Guard Ring" type="Armor">
 		<set name="icon" val="icon.accessory_ring_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -1917,7 +2202,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8381-2" />
+		<skills>
+			<skill id="8381" level="2" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="60" />
 			<add stat="maxMp" val="23" />
@@ -1925,7 +2212,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15294" type="Armor" name="Oren Earth Royal Guard Ring">
+	<item id="15294" name="Oren Earth Royal Guard Ring" type="Armor">
 		<set name="icon" val="icon.accessory_ring_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -1942,7 +2229,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8382-2" />
+		<skills>
+			<skill id="8382" level="2" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="60" />
 			<add stat="maxMp" val="23" />
@@ -1950,7 +2239,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15295" type="Armor" name="Aden Holy Royal Guard Ring">
+	<item id="15295" name="Aden Holy Royal Guard Ring" type="Armor">
 		<set name="icon" val="icon.accessory_ring_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -1967,7 +2256,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8383-2" />
+		<skills>
+			<skill id="8383" level="2" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="60" />
 			<add stat="maxMp" val="23" />
@@ -1975,7 +2266,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15296" type="Armor" name="Innadril Holy Royal Guard Ring">
+	<item id="15296" name="Innadril Holy Royal Guard Ring" type="Armor">
 		<set name="icon" val="icon.accessory_ring_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -1992,7 +2283,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8384-2" />
+		<skills>
+			<skill id="8384" level="2" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="60" />
 			<add stat="maxMp" val="23" />
@@ -2000,7 +2293,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15297" type="Armor" name="Goddard Dark Royal Guard Ring">
+	<item id="15297" name="Goddard Dark Royal Guard Ring" type="Armor">
 		<set name="icon" val="icon.accessory_ring_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -2017,7 +2310,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8385-2" />
+		<skills>
+			<skill id="8385" level="2" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="60" />
 			<add stat="maxMp" val="23" />
@@ -2025,7 +2320,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15298" type="Armor" name="Rune Wind Royal Guard Ring">
+	<item id="15298" name="Rune Wind Royal Guard Ring" type="Armor">
 		<set name="icon" val="icon.accessory_ring_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -2042,7 +2337,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8386-2" />
+		<skills>
+			<skill id="8386" level="2" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="60" />
 			<add stat="maxMp" val="23" />
@@ -2050,7 +2347,7 @@
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
-	<item id="15299" type="Armor" name="Schuttgart Dark Royal Guard Ring">
+	<item id="15299" name="Schuttgart Dark Royal Guard Ring" type="Armor">
 		<set name="icon" val="icon.accessory_ring_of_domi_protection_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="rfinger;lfinger" />
@@ -2067,7 +2364,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="8387-2" />
+		<skills>
+			<skill id="8387" level="2" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="60" />
 			<add stat="maxMp" val="23" />

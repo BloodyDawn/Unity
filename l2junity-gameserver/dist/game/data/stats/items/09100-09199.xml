@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="9100" type="Armor" name="Shadow Item: Majestic Boots">
+	<item id="9100" name="Shadow Item: Majestic Boots" type="Armor">
 		<set name="icon" val="icon.armor_t84_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -21,7 +21,7 @@
 			<add order="0" stat="pDef" val="49" />
 		</for>
 	</item>
-	<item id="9101" type="Armor" name="Shadow Item: Majestic Robe">
+	<item id="9101" name="Shadow Item: Majestic Robe" type="Armor">
 		<set name="icon" val="icon.armor_t85_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -47,7 +47,7 @@
 			<add stat="maxMp" val="718" />
 		</for>
 	</item>
-	<item id="9102" type="Armor" name="Shadow Item: Majestic Gauntlet">
+	<item id="9102" name="Shadow Item: Majestic Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t85_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -71,7 +71,7 @@
 			<add order="0" stat="pDef" val="49" />
 		</for>
 	</item>
-	<item id="9103" type="Armor" name="Shadow Item: Majestic Boots">
+	<item id="9103" name="Shadow Item: Majestic Boots" type="Armor">
 		<set name="icon" val="icon.armor_t85_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -95,7 +95,7 @@
 			<add order="0" stat="pDef" val="49" />
 		</for>
 	</item>
-	<item id="9104" type="EtcItem" name="Compound Bow and Wooden Arrow">
+	<item id="9104" name="Compound Bow and Wooden Arrow" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -106,15 +106,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-1" />
+		<skills>
+			<skill id="2308" level="1" />
+		</skills>
 	</item>
-	<item id="9105" type="EtcItem" name="Gastraphetes and Bone Arrow">
+	<item id="9105" name="Gastraphetes and Bone Arrow" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -125,15 +126,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-2" />
+		<skills>
+			<skill id="2308" level="2" />
+		</skills>
 	</item>
-	<item id="9106" type="EtcItem" name="Akat Longbow and Steel Arrow">
+	<item id="9106" name="Akat Longbow and Steel Arrow" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -144,15 +146,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-3" />
+		<skills>
+			<skill id="2308" level="3" />
+		</skills>
 	</item>
-	<item id="9107" type="EtcItem" name="Dark Elven Longbow and Silver Arrow">
+	<item id="9107" name="Dark Elven Longbow and Silver Arrow" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -163,15 +166,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-4" />
+		<skills>
+			<skill id="2308" level="4" />
+		</skills>
 	</item>
-	<item id="9108" type="EtcItem" name="Carnage Bow and Mithril Arrow">
+	<item id="9108" name="Carnage Bow and Mithril Arrow" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -182,15 +186,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-5" />
+		<skills>
+			<skill id="2308" level="5" />
+		</skills>
 	</item>
-	<item id="9109" type="EtcItem" name="Soul Bow and Mithril Arrow">
+	<item id="9109" name="Soul Bow and Mithril Arrow" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -201,15 +206,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-6" />
+		<skills>
+			<skill id="2308" level="6" />
+		</skills>
 	</item>
-	<item id="9110" type="EtcItem" name="Shadow Armor Set Pack (No-grade) (Heavy Armor)">
+	<item id="9110" name="Shadow Armor Set Pack (No-grade) (Heavy Armor)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -220,15 +226,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-7" />
+		<skills>
+			<skill id="2308" level="7" />
+		</skills>
 	</item>
-	<item id="9111" type="EtcItem" name="Shadow Armor Set Pack (D-grade) (Heavy Armor)">
+	<item id="9111" name="Shadow Armor Set Pack (D-grade) (Heavy Armor)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -239,15 +246,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-8" />
+		<skills>
+			<skill id="2308" level="8" />
+		</skills>
 	</item>
-	<item id="9112" type="EtcItem" name="Shadow Armor Set Pack (C-grade) (Heavy Armor)">
+	<item id="9112" name="Shadow Armor Set Pack (C-grade) (Heavy Armor)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -258,15 +266,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-9" />
+		<skills>
+			<skill id="2308" level="9" />
+		</skills>
 	</item>
-	<item id="9113" type="EtcItem" name="Shadow Armor Set Pack (B-grade) (Heavy Armor)">
+	<item id="9113" name="Shadow Armor Set Pack (B-grade) (Heavy Armor)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -277,15 +286,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-10" />
+		<skills>
+			<skill id="2308" level="10" />
+		</skills>
 	</item>
-	<item id="9114" type="EtcItem" name="Low-grade Shadow Armor Set Pack (A-grade) (Heavy Armor)">
+	<item id="9114" name="Low-grade Shadow Armor Set Pack (A-grade) (Heavy Armor)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -296,15 +306,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-11" />
+		<skills>
+			<skill id="2308" level="11" />
+		</skills>
 	</item>
-	<item id="9115" type="EtcItem" name="High-grade Shadow Armor Set Pack (A-grade) (Heavy Armor)">
+	<item id="9115" name="High-grade Shadow Armor Set Pack (A-grade) (Heavy Armor)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -315,15 +326,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-12" />
+		<skills>
+			<skill id="2308" level="12" />
+		</skills>
 	</item>
-	<item id="9116" type="EtcItem" name="Shadow Armor Set Pack (No-grade) (Light Armor)">
+	<item id="9116" name="Shadow Armor Set Pack (No-grade) (Light Armor)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -334,15 +346,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-13" />
+		<skills>
+			<skill id="2308" level="13" />
+		</skills>
 	</item>
-	<item id="9117" type="EtcItem" name="Shadow Armor Set Pack (D-grade) (Light Armor)">
+	<item id="9117" name="Shadow Armor Set Pack (D-grade) (Light Armor)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -353,15 +366,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-14" />
+		<skills>
+			<skill id="2308" level="14" />
+		</skills>
 	</item>
-	<item id="9118" type="EtcItem" name="Shadow Armor Set Pack (C-grade) (Light Armor)">
+	<item id="9118" name="Shadow Armor Set Pack (C-grade) (Light Armor)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -372,15 +386,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-15" />
+		<skills>
+			<skill id="2308" level="15" />
+		</skills>
 	</item>
-	<item id="9119" type="EtcItem" name="Shadow Armor Set Pack (B-grade) (Light Armor)">
+	<item id="9119" name="Shadow Armor Set Pack (B-grade) (Light Armor)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -391,15 +406,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-16" />
+		<skills>
+			<skill id="2308" level="16" />
+		</skills>
 	</item>
-	<item id="9120" type="EtcItem" name="Low-grade Shadow Armor Set Pack (A-grade) (Light Armor)">
+	<item id="9120" name="Low-grade Shadow Armor Set Pack (A-grade) (Light Armor)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -410,15 +426,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-17" />
+		<skills>
+			<skill id="2308" level="17" />
+		</skills>
 	</item>
-	<item id="9121" type="EtcItem" name="High-grade Shadow Armor Set Pack (A-grade) (Light Armor)">
+	<item id="9121" name="High-grade Shadow Armor Set Pack (A-grade) (Light Armor)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -429,15 +446,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-18" />
+		<skills>
+			<skill id="2308" level="18" />
+		</skills>
 	</item>
-	<item id="9122" type="EtcItem" name="Shadow Armor Set Pack (No-grade) (Robe)">
+	<item id="9122" name="Shadow Armor Set Pack (No-grade) (Robe)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -448,15 +466,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-19" />
+		<skills>
+			<skill id="2308" level="19" />
+		</skills>
 	</item>
-	<item id="9123" type="EtcItem" name="Shadow Armor Set Pack (D-grade) (Robe)">
+	<item id="9123" name="Shadow Armor Set Pack (D-grade) (Robe)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -467,15 +486,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-20" />
+		<skills>
+			<skill id="2308" level="20" />
+		</skills>
 	</item>
-	<item id="9124" type="EtcItem" name="Shadow Armor Set Pack (C-grade) (Robe)">
+	<item id="9124" name="Shadow Armor Set Pack (C-grade) (Robe)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -486,15 +506,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-21" />
+		<skills>
+			<skill id="2308" level="21" />
+		</skills>
 	</item>
-	<item id="9125" type="EtcItem" name="Shadow Armor Set Pack (B-grade) (Robe)">
+	<item id="9125" name="Shadow Armor Set Pack (B-grade) (Robe)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -505,15 +526,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-22" />
+		<skills>
+			<skill id="2308" level="22" />
+		</skills>
 	</item>
-	<item id="9126" type="EtcItem" name="Low-grade Shadow Armor Set Pack (A-grade) (Robe)">
+	<item id="9126" name="Low-grade Shadow Armor Set Pack (A-grade) (Robe)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -524,15 +546,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-23" />
+		<skills>
+			<skill id="2308" level="23" />
+		</skills>
 	</item>
-	<item id="9127" type="EtcItem" name="High-grade Shadow Armor Set Pack (A-grade) (Robe)">
+	<item id="9127" name="High-grade Shadow Armor Set Pack (A-grade) (Robe)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -543,15 +566,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-24" />
+		<skills>
+			<skill id="2308" level="24" />
+		</skills>
 	</item>
-	<item id="9128" type="Armor" name="Shadow Item: Mithril Gauntlet">
+	<item id="9128" name="Shadow Item: Mithril Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t61_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -572,7 +596,7 @@
 			<add order="0" stat="pDef" val="36" />
 		</for>
 	</item>
-	<item id="9129" type="Armor" name="Shadow Item: Shield of Nightmare">
+	<item id="9129" name="Shadow Item: Shield of Nightmare" type="Armor">
 		<set name="icon" val="icon.shield_shield_of_nightmare_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
@@ -598,7 +622,7 @@
 			<set stat="sDef" val="256" />
 		</for>
 	</item>
-	<item id="9130" type="EtcItem" name="Item Set Pack (No-grade) (Wizard)">
+	<item id="9130" name="Item Set Pack (No-grade) (Wizard)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -609,15 +633,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-31" />
+		<skills>
+			<skill id="2308" level="31" />
+		</skills>
 	</item>
-	<item id="9131" type="EtcItem" name="Item Set Pack (D-grade) (Wizard)">
+	<item id="9131" name="Item Set Pack (D-grade) (Wizard)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -628,15 +653,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-32" />
+		<skills>
+			<skill id="2308" level="32" />
+		</skills>
 	</item>
-	<item id="9132" type="EtcItem" name="Item Set Pack (C-grade) (Wizard)">
+	<item id="9132" name="Item Set Pack (C-grade) (Wizard)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -647,15 +673,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-33" />
+		<skills>
+			<skill id="2308" level="33" />
+		</skills>
 	</item>
-	<item id="9133" type="EtcItem" name="Item Set Pack (B-grade) (Wizard)">
+	<item id="9133" name="Item Set Pack (B-grade) (Wizard)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -666,15 +693,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-34" />
+		<skills>
+			<skill id="2308" level="34" />
+		</skills>
 	</item>
-	<item id="9134" type="EtcItem" name="Item Set Pack (A-grade) (Wizard)">
+	<item id="9134" name="Item Set Pack (A-grade) (Wizard)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -685,15 +713,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-35" />
+		<skills>
+			<skill id="2308" level="35" />
+		</skills>
 	</item>
-	<item id="9135" type="EtcItem" name="A-/ S- Grade Item Set Box (Magic Use)">
+	<item id="9135" name="Item Set Pack (A/S-grade) (Wizard)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -704,15 +733,16 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="2308-36" />
+		<skills>
+			<skill id="2308" level="36" />
+		</skills>
 	</item>
-	<item id="9136" type="Weapon" name="Sword of Valakas (1-handed)">
+	<item id="9136" name="Sword of Valakas (1-handed)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -736,7 +766,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="9137" type="Weapon" name="Sword of Valakas (2-handed)">
+	<item id="9137" name="Sword of Valakas (2-handed)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -760,27 +790,25 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="9138" type="Armor" name="Santa's Hat">
+	<item id="9138" name="Santa Hat" type="Armor">
 		<set name="icon" val="icon.accessory_santas_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
-
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 	</item>
-	<item id="9139" type="EtcItem" name="Santa's Hat">
+	<item id="9139" name="Santa Hat" type="EtcItem">
 		<set name="icon" val="icon.accessory_santas_cap_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_dropable" val="false" />
 	</item>
-	<item id="9140" type="Weapon" name="Salvation Bow">
+	<item id="9140" name="Salvation Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_krono_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -795,9 +823,11 @@
 		<set name="spiritshots" val="1" />
 		<set name="mp_consume" val="1" />
 		<set name="reuse_delay" val="1500" />
-		<set name="item_skill" val="3261-1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BOW" />
+		<skills>
+			<skill id="3261" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
@@ -806,7 +836,7 @@
 			<set stat="pAtkSpd" val="293" />
 		</for>
 	</item>
-	<item id="9141" type="Weapon" name="Redemption Bow">
+	<item id="9141" name="Redemption Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_krono_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -825,7 +855,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3260-1;3262-1" />
 		<set name="duration" val="230" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -833,6 +862,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
+		<skills>
+			<skill id="3260" level="1" />
+			<skill id="3262" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
@@ -841,20 +874,18 @@
 			<set stat="pAtkSpd" val="293" />
 		</for>
 	</item>
-	<item id="9142" type="EtcItem" name="Apiga">
+	<item id="9142" name="Apiga" type="EtcItem">
 		<set name="icon" val="icon.etc_pig_adena_i01" />
 		<set name="material" val="PAPER" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="9143" type="EtcItem" name="Golden Apiga">
+	<item id="9143" name="Golden Apiga" type="EtcItem">
 		<set name="icon" val="icon.etc_pig_adena_i00" />
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -862,7 +893,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="9144" type="EtcItem" name="Pirate's Booty">
+	<item id="9144" name="Pig Chest" type="EtcItem">
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -870,13 +901,14 @@
 		<set name="weight" val="100" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2309-1" />
+		<skills>
+			<skill id="2309" level="1" />
+		</skills>
 	</item>
-	<item id="9145" type="Armor" name="Little Angel Wings (Event)">
+	<item id="9145" name="Little Angel Wings (Event)" type="Armor">
 		<set name="icon" val="icon.accessory_hair_ring_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hair2" />
@@ -892,7 +924,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
-	<item id="9146" type="EtcItem" name="Scroll: Guidance (Event)">
+	<item id="9146" name="Scroll: Guidance (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -901,15 +933,17 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2310-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2310" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="9147" type="EtcItem" name="Scroll: Death Whisper (Event)">
+	<item id="9147" name="Scroll: Death Whisper (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -918,15 +952,17 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2311-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2311" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="9148" type="EtcItem" name="Scroll: Focus (Event)">
+	<item id="9148" name="Scroll: Focus (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -935,15 +971,17 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2312-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2312" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="9149" type="EtcItem" name="Scroll: Acumen (Event)">
+	<item id="9149" name="Scroll: Acumen (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -952,15 +990,17 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2313-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2313" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="9150" type="EtcItem" name="Scroll: Haste (Event)">
+	<item id="9150" name="Scroll: Haste (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -969,15 +1009,17 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2314-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2314" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="9151" type="EtcItem" name="Scroll: Agility (Event)">
+	<item id="9151" name="Scroll: Agility (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -986,15 +1028,17 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2315-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2315" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="9152" type="EtcItem" name="Scroll: Empower (Event)">
+	<item id="9152" name="Scroll: Empower (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -1003,15 +1047,17 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2316-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2316" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="9153" type="EtcItem" name="Scroll: Might (Event)">
+	<item id="9153" name="Scroll: Might (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -1020,15 +1066,17 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2317-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2317" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="9154" type="EtcItem" name="Scroll: Wind Walk (Event)">
+	<item id="9154" name="Scroll: Wind Walk (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -1037,15 +1085,17 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2318-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2318" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="9155" type="EtcItem" name="Scroll: Shield (Event)">
+	<item id="9155" name="Scroll: Shield (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -1054,15 +1104,17 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2319-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<cond msgId="113" addName="1">
+		<skills>
+			<skill id="2319" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
 	</item>
-	<item id="9156" type="EtcItem" name="Blessed Scroll of Escape (Event)">
+	<item id="9156" name="Blessed Scroll of Escape (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_i01" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -1071,12 +1123,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="2320-1" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
+		<skills>
+			<skill id="2320" level="1" />
+		</skills>
 	</item>
-	<item id="9157" type="EtcItem" name="Blessed Scroll of Resurrection (Event)">
+	<item id="9157" name="Blessed Scroll of Resurrection (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_resurrection_i01" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
@@ -1085,11 +1139,12 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2321-1" />
+		<skills>
+			<skill id="2321" level="1" />
+		</skills>
 	</item>
-	<item id="9158" type="Armor" name="Gold Circlet (Event)">
+	<item id="9158" name="Gold Circlet (Event)" type="Armor">
 		<set name="icon" val="icon.Accessary_gold_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1098,7 +1153,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="weight" val="10" />
 	</item>
-	<item id="9159" type="Armor" name="Silver Circlet (Event)">
+	<item id="9159" name="Silver Circlet (Event)" type="Armor">
 		<set name="icon" val="icon.Accessary_gold_circlet_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1108,7 +1163,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HAIR_ACCESSORY" />
 	</item>
-	<item id="9160" type="Armor" name="Pig Wrangler's Cap">
+	<item id="9160" name="Pig Wrangler's Cap" type="Armor">
 		<set name="icon" val="icon.Accessary_middle_ages_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1117,16 +1172,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="weight" val="10" />
 	</item>
-	<item id="9161" type="EtcItem" name="Santa's Antlers">
+	<item id="9161" name="Santa's Antlers" type="EtcItem">
 		<set name="icon" val="icon.accessory_santas_antler_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_dropable" val="false" />
 	</item>
-	<item id="9162" type="EtcItem" name="Red Philosopher's Stone Transmutation Circle">
+	<item id="9162" name="Red Philosopher's Stone Transmutation Circle" type="EtcItem">
 		<set name="icon" val="icon.etc_sign_i00" />
 		<set name="default_action" val="RECIPE" />
 		<set name="etcitem_type" val="RECIPE" />
@@ -1135,11 +1189,10 @@
 		<set name="weight" val="10" />
 		<set name="recipe_id" val="866" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="Recipes" />
 	</item>
-	<item id="9163" type="EtcItem" name="Blue Philosopher's Stone Transmutation Circle">
+	<item id="9163" name="Blue Philosopher's Stone Transmutation Circle" type="EtcItem">
 		<set name="icon" val="icon.etc_sign_i00" />
 		<set name="default_action" val="RECIPE" />
 		<set name="etcitem_type" val="RECIPE" />
@@ -1148,11 +1201,10 @@
 		<set name="weight" val="10" />
 		<set name="recipe_id" val="867" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="Recipes" />
 	</item>
-	<item id="9164" type="EtcItem" name="Orange Philosopher's Stone Transmutation Circle">
+	<item id="9164" name="Orange Philosopher's Stone Transmutation Circle" type="EtcItem">
 		<set name="icon" val="icon.etc_sign_i00" />
 		<set name="default_action" val="RECIPE" />
 		<set name="etcitem_type" val="RECIPE" />
@@ -1161,11 +1213,10 @@
 		<set name="weight" val="10" />
 		<set name="recipe_id" val="868" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="Recipes" />
 	</item>
-	<item id="9165" type="EtcItem" name="Black Philosopher's Stone Transmutation Circle">
+	<item id="9165" name="Black Philosopher's Stone Transmutation Circle" type="EtcItem">
 		<set name="icon" val="icon.etc_sign_i00" />
 		<set name="default_action" val="RECIPE" />
 		<set name="etcitem_type" val="RECIPE" />
@@ -1174,11 +1225,10 @@
 		<set name="weight" val="10" />
 		<set name="recipe_id" val="869" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="Recipes" />
 	</item>
-	<item id="9166" type="EtcItem" name="White Philosopher's Stone Transmutation Circle">
+	<item id="9166" name="White Philosopher's Stone Transmutation Circle" type="EtcItem">
 		<set name="icon" val="icon.etc_sign_i00" />
 		<set name="default_action" val="RECIPE" />
 		<set name="etcitem_type" val="RECIPE" />
@@ -1187,11 +1237,10 @@
 		<set name="weight" val="10" />
 		<set name="recipe_id" val="870" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="Recipes" />
 	</item>
-	<item id="9167" type="EtcItem" name="Green Philosopher's Stone Transmutation Circle">
+	<item id="9167" name="Green Philosopher's Stone Transmutation Circle" type="EtcItem">
 		<set name="icon" val="icon.etc_sign_i00" />
 		<set name="default_action" val="RECIPE" />
 		<set name="etcitem_type" val="RECIPE" />
@@ -1200,41 +1249,37 @@
 		<set name="weight" val="10" />
 		<set name="recipe_id" val="871" />
 		<set name="is_stackable" val="true" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="handler" val="Recipes" />
 	</item>
-	<item id="9168" type="EtcItem" name="Philosopher's Stone Ore">
+	<item id="9168" name="Philosopher's Stone Ore" type="EtcItem">
 		<set name="icon" val="icon.etc_stone_piece_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="2" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="9169" type="EtcItem" name="Philosopher's Stone Conversion Formula">
+	<item id="9169" name="Philosopher's Stone Conversion Formula" type="EtcItem">
 		<set name="icon" val="icon.etc_trans_form_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="2" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="9170" type="EtcItem" name="Magic Reagents">
+	<item id="9170" name="Magic Reagents" type="EtcItem">
 		<set name="icon" val="icon.etc_madicine_bottle_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="2" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="9171" type="EtcItem" name="Red Philosopher's Stone">
+	<item id="9171" name="Red Philosopher's Stone" type="EtcItem">
 		<set name="icon" val="icon.etc_wise_man_stone_i00" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1242,11 +1287,12 @@
 		<set name="weight" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2323-1" />
+		<skills>
+			<skill id="2323" level="1" />
+		</skills>
 	</item>
-	<item id="9172" type="EtcItem" name="Blue Philosopher's Stone">
+	<item id="9172" name="Blue Philosopher's Stone" type="EtcItem">
 		<set name="icon" val="icon.etc_wise_man_stone_i01" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1254,11 +1300,12 @@
 		<set name="weight" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2324-1" />
+		<skills>
+			<skill id="2324" level="1" />
+		</skills>
 	</item>
-	<item id="9173" type="EtcItem" name="Orange Philosopher's Stone">
+	<item id="9173" name="Orange Philosopher's Stone" type="EtcItem">
 		<set name="icon" val="icon.etc_wise_man_stone_i03" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1266,11 +1313,12 @@
 		<set name="weight" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2325-1" />
+		<skills>
+			<skill id="2325" level="1" />
+		</skills>
 	</item>
-	<item id="9174" type="EtcItem" name="Black Philosopher's Stone">
+	<item id="9174" name="Black Philosopher's Stone" type="EtcItem">
 		<set name="icon" val="icon.etc_wise_man_stone_i04" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1278,11 +1326,12 @@
 		<set name="weight" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2326-1" />
+		<skills>
+			<skill id="2326" level="1" />
+		</skills>
 	</item>
-	<item id="9175" type="EtcItem" name="White Philosopher's Stone">
+	<item id="9175" name="White Philosopher's Stone" type="EtcItem">
 		<set name="icon" val="icon.etc_wise_man_stone_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1290,11 +1339,12 @@
 		<set name="weight" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2327-1" />
+		<skills>
+			<skill id="2327" level="1" />
+		</skills>
 	</item>
-	<item id="9176" type="EtcItem" name="Green Philosopher's Stone">
+	<item id="9176" name="Green Philosopher's Stone" type="EtcItem">
 		<set name="icon" val="icon.etc_wise_man_stone_i02" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -1302,11 +1352,12 @@
 		<set name="weight" val="20" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2328-1" />
+		<skills>
+			<skill id="2328" level="1" />
+		</skills>
 	</item>
-	<item id="9177" type="Armor" name="Shadow Item: Teddy Bear Hat">
+	<item id="9177" name="Shadow Item: Teddy Bear Hat" name_additional="Resurrection" type="Armor">
 		<set name="icon" val="icon.accessory_bear_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1317,7 +1368,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3263-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1325,8 +1375,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
+		<skills>
+			<skill id="3263" level="1" />
+		</skills>
 	</item>
-	<item id="9178" type="Armor" name="Shadow Item: Piggy Hat">
+	<item id="9178" name="Shadow Item: Piggy Hat" name_additional="Resurrection" type="Armor">
 		<set name="icon" val="icon.accessory_pig_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1337,7 +1390,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3263-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1345,8 +1397,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
+		<skills>
+			<skill id="3263" level="1" />
+		</skills>
 	</item>
-	<item id="9179" type="Armor" name="Shadow Item: Jester Hat">
+	<item id="9179" name="Shadow Item: Jester Hat" name_additional="Resurrection" type="Armor">
 		<set name="icon" val="icon.accessory_jester_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1357,7 +1412,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3263-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1365,8 +1419,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
+		<skills>
+			<skill id="3263" level="1" />
+		</skills>
 	</item>
-	<item id="9180" type="Armor" name="Shadow Item: Wizard Hat">
+	<item id="9180" name="Shadow Item: Wizard Hat" name_additional="Resurrection" type="Armor">
 		<set name="icon" val="icon.accessory_magic_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1377,7 +1434,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3263-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1385,8 +1441,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
+		<skills>
+			<skill id="3263" level="1" />
+		</skills>
 	</item>
-	<item id="9181" type="Armor" name="Shadow Item: Dapper Cap">
+	<item id="9181" name="Shadow Item: Dapper Cap" name_additional="Resurrection" type="Armor">
 		<set name="icon" val="icon.accessory_dandy_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1397,7 +1456,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3263-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1405,8 +1463,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
+		<skills>
+			<skill id="3263" level="1" />
+		</skills>
 	</item>
-	<item id="9182" type="Armor" name="Shadow Item: Romantic Chapeau">
+	<item id="9182" name="Shadow Item: Romantic Chapeau" name_additional="Resurrection" type="Armor">
 		<set name="icon" val="icon.accessory_romantic_chaperon_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1417,7 +1478,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3263-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1425,8 +1485,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
+		<skills>
+			<skill id="3263" level="1" />
+		</skills>
 	</item>
-	<item id="9183" type="Armor" name="Shadow Item: Iron Circlet">
+	<item id="9183" name="Shadow Item: Iron Circlet" name_additional="Resurrection" type="Armor">
 		<set name="icon" val="icon.accessory_iron_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1437,7 +1500,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3263-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1445,8 +1507,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
+		<skills>
+			<skill id="3263" level="1" />
+		</skills>
 	</item>
-	<item id="9184" type="Armor" name="Shadow Item: Teddy Bear Hat">
+	<item id="9184" name="Shadow Item: Teddy Bear Hat" name_additional="Escape" type="Armor">
 		<set name="icon" val="icon.accessory_bear_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1457,7 +1522,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3264-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1465,8 +1529,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
+		<skills>
+			<skill id="3264" level="1" />
+		</skills>
 	</item>
-	<item id="9185" type="Armor" name="Shadow Item: Piggy Hat">
+	<item id="9185" name="Shadow Item: Piggy Hat" name_additional="Escape" type="Armor">
 		<set name="icon" val="icon.accessory_pig_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1477,7 +1544,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3264-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1485,8 +1551,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
+		<skills>
+			<skill id="3264" level="1" />
+		</skills>
 	</item>
-	<item id="9186" type="Armor" name="Shadow Item: Jester Hat">
+	<item id="9186" name="Shadow Item: Jester Hat" name_additional="Escape" type="Armor">
 		<set name="icon" val="icon.accessory_jester_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1497,7 +1566,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3264-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1505,8 +1573,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
+		<skills>
+			<skill id="3264" level="1" />
+		</skills>
 	</item>
-	<item id="9187" type="Armor" name="Shadow Item: Wizard Hat">
+	<item id="9187" name="Shadow Item: Wizard Hat" name_additional="Escape" type="Armor">
 		<set name="icon" val="icon.accessory_magic_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1517,7 +1588,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3264-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1525,8 +1595,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
+		<skills>
+			<skill id="3264" level="1" />
+		</skills>
 	</item>
-	<item id="9188" type="Armor" name="Shadow Item: Dapper Cap">
+	<item id="9188" name="Shadow Item: Dapper Cap" name_additional="Escape" type="Armor">
 		<set name="icon" val="icon.accessory_dandy_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1537,7 +1610,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3264-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1545,8 +1617,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
+		<skills>
+			<skill id="3264" level="1" />
+		</skills>
 	</item>
-	<item id="9189" type="Armor" name="Shadow Item: Romantic Chapeau">
+	<item id="9189" name="Shadow Item: Romantic Chapeau" name_additional="Escape" type="Armor">
 		<set name="icon" val="icon.accessory_romantic_chaperon_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1557,7 +1632,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3264-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1565,8 +1639,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
+		<skills>
+			<skill id="3264" level="1" />
+		</skills>
 	</item>
-	<item id="9190" type="Armor" name="Shadow Item: Iron Circlet">
+	<item id="9190" name="Shadow Item: Iron Circlet" name_additional="Escape" type="Armor">
 		<set name="icon" val="icon.accessory_iron_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1577,7 +1654,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3264-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1585,8 +1661,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
+		<skills>
+			<skill id="3264" level="1" />
+		</skills>
 	</item>
-	<item id="9191" type="Armor" name="Shadow Item: Teddy Bear Hat">
+	<item id="9191" name="Shadow Item: Teddy Bear Hat" name_additional="Big Head" type="Armor">
 		<set name="icon" val="icon.accessory_bear_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1597,7 +1676,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3265-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1605,8 +1683,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="10" />
+		<skills>
+			<skill id="3265" level="1" />
+		</skills>
 	</item>
-	<item id="9192" type="Armor" name="Shadow Item: Piggy Hat">
+	<item id="9192" name="Shadow Item: Piggy Hat" name_additional="Big Head" type="Armor">
 		<set name="icon" val="icon.accessory_pig_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1617,7 +1698,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3265-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1625,8 +1705,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="10" />
+		<skills>
+			<skill id="3265" level="1" />
+		</skills>
 	</item>
-	<item id="9193" type="Armor" name="Shadow Item: Jester Hat">
+	<item id="9193" name="Shadow Item: Jester Hat" name_additional="Big Head" type="Armor">
 		<set name="icon" val="icon.accessory_jester_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1637,7 +1720,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3265-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1645,8 +1727,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="10" />
+		<skills>
+			<skill id="3265" level="1" />
+		</skills>
 	</item>
-	<item id="9194" type="Armor" name="Shadow Item: Wizard Hat">
+	<item id="9194" name="Shadow Item: Wizard Hat" name_additional="Big Head" type="Armor">
 		<set name="icon" val="icon.accessory_magic_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1657,7 +1742,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3265-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1665,8 +1749,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="10" />
+		<skills>
+			<skill id="3265" level="1" />
+		</skills>
 	</item>
-	<item id="9195" type="Armor" name="Shadow Item: Dapper Cap">
+	<item id="9195" name="Shadow Item: Dapper Cap" name_additional="Big Head" type="Armor">
 		<set name="icon" val="icon.accessory_dandy_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1677,7 +1764,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3265-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1685,8 +1771,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="10" />
+		<skills>
+			<skill id="3265" level="1" />
+		</skills>
 	</item>
-	<item id="9196" type="Armor" name="Shadow Item: Romantic Chapeau">
+	<item id="9196" name="Shadow Item: Romantic Chapeau" name_additional="Big Head" type="Armor">
 		<set name="icon" val="icon.accessory_romantic_chaperon_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1697,7 +1786,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3265-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1705,8 +1793,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="10" />
+		<skills>
+			<skill id="3265" level="1" />
+		</skills>
 	</item>
-	<item id="9197" type="Armor" name="Shadow Item: Iron Circlet">
+	<item id="9197" name="Shadow Item: Iron Circlet" name_additional="Big Head" type="Armor">
 		<set name="icon" val="icon.accessory_iron_circlet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1717,7 +1808,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3265-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1725,8 +1815,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="10" />
+		<skills>
+			<skill id="3265" level="1" />
+		</skills>
 	</item>
-	<item id="9198" type="Armor" name="Shadow Item: Teddy Bear Hat">
+	<item id="9198" name="Shadow Item: Teddy Bear Hat" name_additional="Firework" type="Armor">
 		<set name="icon" val="icon.accessory_bear_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1737,7 +1830,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3266-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1745,8 +1837,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
+		<skills>
+			<skill id="3266" level="1" />
+		</skills>
 	</item>
-	<item id="9199" type="Armor" name="Shadow Item: Piggy Hat">
+	<item id="9199" name="Shadow Item: Piggy Hat" name_additional="Firework" type="Armor">
 		<set name="icon" val="icon.accessory_pig_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -1757,7 +1852,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="item_skill" val="3266-1" />
 		<set name="duration" val="360" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1765,5 +1859,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
+		<skills>
+			<skill id="3266" level="1" />
+		</skills>
 	</item>
 </list>

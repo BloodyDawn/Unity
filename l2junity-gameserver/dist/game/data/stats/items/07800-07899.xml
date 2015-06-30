@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="7800" type="EtcItem" name="Small Black Fat Fish (Novice)">
+	<item id="7800" name="Small Black Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -9,11 +9,12 @@
 		<set name="price" val="1083" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2228-3" />
+		<skills>
+			<skill id="2228" level="3" />
+		</skills>
 	</item>
-	<item id="7801" type="EtcItem" name="Black Nimble Fish (Novice)">
+	<item id="7801" name="Black Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -22,11 +23,12 @@
 		<set name="price" val="1155" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2228-4" />
+		<skills>
+			<skill id="2228" level="4" />
+		</skills>
 	</item>
-	<item id="7802" type="EtcItem" name="Black Ugly Fish (Novice)">
+	<item id="7802" name="Black Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -35,11 +37,12 @@
 		<set name="price" val="1179" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2228-5" />
+		<skills>
+			<skill id="2228" level="5" />
+		</skills>
 	</item>
-	<item id="7803" type="EtcItem" name="Black Fat Fish (Novice)">
+	<item id="7803" name="Black Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -48,11 +51,12 @@
 		<set name="price" val="1202" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2228-6" />
+		<skills>
+			<skill id="2228" level="6" />
+		</skills>
 	</item>
-	<item id="7804" type="EtcItem" name="Large Black Nimble Fish (Novice)">
+	<item id="7804" name="Large Black Nimble Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_tuna_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -61,11 +65,12 @@
 		<set name="price" val="1226" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2228-7" />
+		<skills>
+			<skill id="2228" level="7" />
+		</skills>
 	</item>
-	<item id="7805" type="EtcItem" name="Large Black Ugly Fish (Novice)">
+	<item id="7805" name="Large Black Ugly Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_angler_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -74,11 +79,12 @@
 		<set name="price" val="1251" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2228-8" />
+		<skills>
+			<skill id="2228" level="8" />
+		</skills>
 	</item>
-	<item id="7806" type="EtcItem" name="Large Black Fat Fish (Novice)">
+	<item id="7806" name="Large Black Fat Fish (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bream_i05" />
 		<set name="default_action" val="CAPSULE" />
 		<set name="immediate_effect" val="true" />
@@ -87,11 +93,12 @@
 		<set name="price" val="1276" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="2228-9" />
+		<skills>
+			<skill id="2228" level="9" />
+		</skills>
 	</item>
-	<item id="7807" type="EtcItem" name="Corroded Green Bait (Novice)">
+	<item id="7807" name="Corroded Green Bait (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bait_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="LURE" />
@@ -100,11 +107,10 @@
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="5" />
 		<set name="price" val="50" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="7808" type="EtcItem" name="Corroded Purple Bait (Novice)">
+	<item id="7808" name="Corroded Purple Bait (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bait_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="LURE" />
@@ -113,11 +119,10 @@
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="5" />
 		<set name="price" val="70" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="7809" type="EtcItem" name="Corroded Yellow Bait (Novice)">
+	<item id="7809" name="Corroded Yellow Bait (Novice)" type="EtcItem">
 		<set name="icon" val="icon.etc_bait_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="LURE" />
@@ -126,11 +131,10 @@
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="5" />
 		<set name="price" val="60" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="7810" type="Weapon" name="Soulfire Dirk">
+	<item id="7810" name="Soulfire Dirk" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_dagger_of_magicflame_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -149,18 +153,20 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
-		<set name="item_skill" val="3014-1" />
+		<skills>
+			<skill id="3014" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="86" />
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7811" type="Weapon" name="Soulfire Dirk">
+	<item id="7811" name="Soulfire Dirk" name_additional="Magic Hold" type="Weapon">
 		<set name="icon" val="icon.weapon_dagger_of_magicflame_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -178,20 +184,21 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="10" />
 		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="1201-18" />
+		<skills>
+			<skill id="1201" level="18" type="ON_MAGIC_SKILL" type_chance="10" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="86" />
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7812" type="Weapon" name="Soulfire Dirk">
+	<item id="7812" name="Soulfire Dirk" name_additional="Magic Silence" type="Weapon">
 		<set name="icon" val="icon.weapon_dagger_of_magicflame_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -209,20 +216,21 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="10" />
 		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="3074-2" />
+		<skills>
+			<skill id="3074" level="2" type="ON_MAGIC_SKILL" type_chance="10" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="86" />
 			<set stat="mAtk" val="91" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7813" type="Weapon" name="Twilight Knife">
+	<item id="7813" name="Twilight Knife" name_additional="Magic Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_knife_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -240,20 +248,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="30" />
 		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="1044-3" />
+		<skills>
+			<skill id="1044" level="3" type="ON_MAGIC_SKILL" type_chance="30" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="122" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7814" type="Weapon" name="Twilight Knife">
+	<item id="7814" name="Twilight Knife" name_additional="Magic Mental Shield" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_knife_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -271,20 +280,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="50" />
 		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="1035-4" />
+		<skills>
+			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="122" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7815" type="Weapon" name="Twilight Knife">
+	<item id="7815" name="Twilight Knife" name_additional="Magic Weakness" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_knife_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -302,20 +312,21 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
-		<set name="onmagic_chance" val="7" />
 		<set name="is_freightable" val="false" />
-		<set name="onmagic_skill" val="1164-11" />
+		<skills>
+			<skill id="1164" level="11" type="ON_MAGIC_SKILL" type_chance="7" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="122" />
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7816" type="Weapon" name="Apprentice Adventurer's Staff">
+	<item id="7816" name="Apprentice Adventurer's Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -348,7 +359,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="7817" type="Weapon" name="Apprentice Adventurer's Bone Club">
+	<item id="7817" name="Apprentice Adventurer's Bone Club" type="Weapon">
 		<set name="icon" val="icon.weapon_club_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -380,7 +391,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="7818" type="Weapon" name="Apprentice Adventurer's Knife">
+	<item id="7818" name="Apprentice Adventurer's Knife" type="Weapon">
 		<set name="icon" val="icon.weapon_shining_knife_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -412,7 +423,7 @@
 			<set stat="pAtkSpd" val="433" />
 		</for>
 	</item>
-	<item id="7819" type="Weapon" name="Apprentice Adventurer's Cestus">
+	<item id="7819" name="Apprentice Adventurer's Cestus" type="Weapon">
 		<set name="icon" val="icon.weapon_vipers_canine_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -444,7 +455,7 @@
 			<set stat="pAtkSpd" val="325" />
 		</for>
 	</item>
-	<item id="7820" type="Weapon" name="Apprentice Adventurer's Bow">
+	<item id="7820" name="Apprentice Adventurer's Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_short_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -478,7 +489,7 @@
 			<set stat="pAtkSpd" val="293" />
 		</for>
 	</item>
-	<item id="7821" type="Weapon" name="Apprentice Adventurer's Long Sword">
+	<item id="7821" name="Apprentice Adventurer's Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_long_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -509,7 +520,7 @@
 			<set stat="pAtkSpd" val="379" />
 		</for>
 	</item>
-	<item id="7822" type="Weapon" name="Traveler's Mace">
+	<item id="7822" name="Traveler's Mace" type="Weapon">
 		<set name="icon" val="icon.weapon_mace_of_prayer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -541,11 +552,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7823" type="Weapon" name="Traveler's Dark Elven Bow">
+	<item id="7823" name="Traveler's Dark Elven Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_elven_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -578,11 +589,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7824" type="Weapon" name="Traveler's Long Bow">
+	<item id="7824" name="Traveler's Longbow" type="Weapon">
 		<set name="icon" val="icon.weapon_strengthening_bow_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
@@ -615,11 +626,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="293" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7825" type="Weapon" name="Traveler's Staff">
+	<item id="7825" name="Traveler's Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_staff_of_mana_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -651,11 +662,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7826" type="Weapon" name="Traveler's Bastard Sword">
+	<item id="7826" name="Traveler's Bastard Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_bastard_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -685,11 +696,11 @@
 			<set stat="mAtk" val="32" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7827" type="Weapon" name="Traveler's Wand">
+	<item id="7827" name="Traveler's Scroll" type="Weapon">
 		<set name="icon" val="icon.weapon_divine_tome_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
@@ -720,11 +731,11 @@
 			<set stat="mAtk" val="43" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7828" type="Weapon" name="Traveler's Jamadhr">
+	<item id="7828" name="Traveler's Jamadhr" type="Weapon">
 		<set name="icon" val="icon.weapon_baghnakh_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
@@ -755,11 +766,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7829" type="Weapon" name="Traveler's Tomahawk">
+	<item id="7829" name="Traveler's Tomahawk" type="Weapon">
 		<set name="icon" val="icon.weapon_tomahawk_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -790,11 +801,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7830" type="Weapon" name="Traveler's Poniard Dagger">
+	<item id="7830" name="Traveler's Poniard Dagger" type="Weapon">
 		<set name="icon" val="icon.weapon_dirk_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
@@ -825,11 +836,11 @@
 			<set stat="rCrit" val="12" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="433" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7831" type="Weapon" name="Traveler's Pike">
+	<item id="7831" name="Traveler's Pike" type="Weapon">
 		<set name="icon" val="icon.weapon_pike_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
@@ -851,7 +862,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="item_skill" val="3599-1" />
+		<skills>
+			<skill id="3599" level="1" />
+		</skills>
 		<cond msgId="1685">
 			<player pkCount="0" />
 		</cond>
@@ -861,17 +874,16 @@
 			<set stat="rCrit" val="8" />
 			<add stat="accCombat" val="-3.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7832" type="EtcItem" name="Apprentice Adventurer's Weapon Exchange Coupon">
+	<item id="7832" name="Apprentice Adventurer's Weapon Coupon" type="EtcItem">
 		<set name="icon" val="icon.etc_lottery_card_i00" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -879,13 +891,12 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
-	<item id="7833" type="EtcItem" name="Adventurer's Magic Accessory Exchange Coupon">
+	<item id="7833" name="Adventurer's Magic Accessory Coupon" type="EtcItem">
 		<set name="icon" val="icon.etc_lottery_card_i00" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -893,7 +904,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
-	<item id="7834" type="Weapon" name="Art of Battle Axe">
+	<item id="7834" name="Art of Battle Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -917,21 +928,20 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7835" type="EtcItem" name="Amulet: Seal of Disease">
+	<item id="7835" name="Amulet: Seal of Disease" type="EtcItem">
 		<set name="icon" val="icon.etc_orcish_talisman_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="price" val="11600" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="7836" type="Armor" name="Santa's Hat">
+	<item id="7836" name="Santa Hat" type="Armor">
 		<set name="icon" val="icon.accessory_santas_cap_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hairall" />
@@ -940,7 +950,7 @@
 		<set name="weight" val="10" />
 		<set name="is_freightable" val="false" />
 	</item>
-	<item id="7837" type="Armor" name="Sayha's White Mask">
+	<item id="7837" name="Shyeed's White Mask" type="Armor">
 		<set name="icon" val="icon.accessory_full_mask_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hair" />
@@ -955,16 +965,15 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
-	<item id="7838" type="EtcItem" name="Santa's Hat">
+	<item id="7838" name="Santa Hat" type="EtcItem">
 		<set name="icon" val="icon.accessory_santas_cap_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
-		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="is_dropable" val="false" />
 	</item>
-	<item id="7839" type="Armor" name="Gran Kain's Black Mask">
+	<item id="7839" name="Gran Kain's Black Mask" type="Armor">
 		<set name="icon" val="icon.accessory_full_mask_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hair" />
@@ -980,7 +989,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
-	<item id="7840" type="Armor" name="Rabbit Ears (Event)">
+	<item id="7840" name="Rabbit Ears (Event)" type="Armor">
 		<set name="icon" val="icon.accessory_rabbit_ear_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hair2" />
@@ -996,7 +1005,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
-	<item id="7841" type="Armor" name="Raccoon Ears (Event)">
+	<item id="7841" name="Raccoon Ears (Event)" type="Armor">
 		<set name="icon" val="icon.accessory_racoon_ear_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hair2" />
@@ -1012,7 +1021,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
-	<item id="7842" type="Armor" name="Cat Ears (Event)">
+	<item id="7842" name="Cat Ears (Event)" type="Armor">
 		<set name="icon" val="icon.accessory_cat_ear_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hair2" />
@@ -1028,7 +1037,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
-	<item id="7843" type="Armor" name="Pirate's Eyepatch">
+	<item id="7843" name="Pirate's Eyepatch (Event)" type="Armor">
 		<set name="icon" val="icon.accessory_eye_bandage_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hair" />
@@ -1044,7 +1053,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
-	<item id="7844" type="Armor" name="Monocle (Event)">
+	<item id="7844" name="Monocle (Event)" type="Armor">
 		<set name="icon" val="icon.accessory_glasses_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hair" />
@@ -1060,7 +1069,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
-	<item id="7845" type="Armor" name="Outlaw's Eyepatch">
+	<item id="7845" name="Outlaw's Eyepatch (Event)" type="Armor">
 		<set name="icon" val="icon.accessory_outlaw_eyepatch_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hair" />
@@ -1076,7 +1085,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
-	<item id="7846" type="Armor" name="Maiden's Hairpin">
+	<item id="7846" name="Maiden's Hairpin (Event)" type="Armor">
 		<set name="icon" val="icon.accessory_maidens_hairpin_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hair2" />
@@ -1095,7 +1104,7 @@
 			<player sex="1" />
 		</cond>
 	</item>
-	<item id="7847" type="Armor" name="Lady's Hairpin">
+	<item id="7847" name="Lady's Hairpin (Event)" type="Armor">
 		<set name="icon" val="icon.accessory_hairpin_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hair2" />
@@ -1114,7 +1123,7 @@
 			<player sex="1" />
 		</cond>
 	</item>
-	<item id="7848" type="Armor" name="Forget-me-not Hairpin (Event)">
+	<item id="7848" name="Forget-me-not Hairpin (Event)" type="Armor">
 		<set name="icon" val="icon.accessory_forget_me_not_hairpin_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hair2" />
@@ -1133,7 +1142,7 @@
 			<player sex="1" />
 		</cond>
 	</item>
-	<item id="7849" type="Armor" name="Daisy Hairpin (Event)">
+	<item id="7849" name="Daisy Hairpin (Event)" type="Armor">
 		<set name="icon" val="icon.accessory_daisy_hairpin_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="hair2" />
@@ -1152,7 +1161,7 @@
 			<player sex="1" />
 		</cond>
 	</item>
-	<item id="7850" type="Armor" name="Clan Oath Helm">
+	<item id="7850" name="Clan Oath Helm" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -1166,14 +1175,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
 		<cond msgId="1518">
-			<player pledgeClass="1" /> <!-- Vassal (Academy) -->
+			<player pledgeClass="1" />
+			<!-- Vassal (Academy) -->
 		</cond>
 		<for>
 			<add order="0" stat="pDef" val="37" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7851" type="Armor" name="Clan Oath Armor">
+	<item id="7851" name="Clan Oath Armor" type="Armor">
 		<set name="icon" val="icon.armor_t1001_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1190,7 +1200,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
+				<player pledgeClass="1" />
+				<!-- Vassal (Academy) -->
 			</and>
 		</cond>
 		<for>
@@ -1198,7 +1209,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7852" type="Armor" name="Clan Oath Gauntlets">
+	<item id="7852" name="Clan Oath Gauntlets" name_additional="Heavy Armor" type="Armor">
 		<set name="icon" val="icon.armor_t1001_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1214,7 +1225,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
+				<player pledgeClass="1" />
+				<!-- Vassal (Academy) -->
 			</and>
 		</cond>
 		<for>
@@ -1222,7 +1234,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7853" type="Armor" name="Clan Oath Sabaton">
+	<item id="7853" name="Clan Oath Sabaton" name_additional="Heavy Armor" type="Armor">
 		<set name="icon" val="icon.armor_t1001_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1238,7 +1250,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
+				<player pledgeClass="1" />
+				<!-- Vassal (Academy) -->
 			</and>
 		</cond>
 		<for>
@@ -1246,7 +1259,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7854" type="Armor" name="Clan Oath Brigandine">
+	<item id="7854" name="Clan Oath Brigandine" type="Armor">
 		<set name="icon" val="icon.armor_t1002_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1261,14 +1274,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
 		<cond msgId="1518">
-			<player pledgeClass="1" /> <!-- Vassal (Academy) -->
+			<player pledgeClass="1" />
+			<!-- Vassal (Academy) -->
 		</cond>
 		<for>
 			<add order="0" stat="pDef" val="119" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7855" type="Armor" name="Clan Oath Leather Gloves">
+	<item id="7855" name="Clan Oath Leather Gloves" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_t1002_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1282,14 +1296,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
 		<cond msgId="1518">
-			<player pledgeClass="1" /> <!-- Vassal (Academy) -->
+			<player pledgeClass="1" />
+			<!-- Vassal (Academy) -->
 		</cond>
 		<for>
 			<add order="0" stat="pDef" val="24" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7856" type="Armor" name="Clan Oath Boots">
+	<item id="7856" name="Clan Oath Boots" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_t1002_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1303,14 +1318,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
 		<cond msgId="1518">
-			<player pledgeClass="1" /> <!-- Vassal (Academy) -->
+			<player pledgeClass="1" />
+			<!-- Vassal (Academy) -->
 		</cond>
 		<for>
 			<add order="0" stat="pDef" val="24" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7857" type="Armor" name="Clan Oath Aketon">
+	<item id="7857" name="Clan Oath Aketon" type="Armor">
 		<set name="icon" val="icon.armor_t1003_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -1327,7 +1343,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
+				<player pledgeClass="1" />
+				<!-- Vassal (Academy) -->
 			</and>
 		</cond>
 		<for>
@@ -1336,7 +1353,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7858" type="Armor" name="Clan Oath Padded Gloves">
+	<item id="7858" name="Clan Oath Padded Gloves" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_t1003_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1352,7 +1369,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
+				<player pledgeClass="1" />
+				<!-- Vassal (Academy) -->
 			</and>
 		</cond>
 		<for>
@@ -1360,7 +1378,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7859" type="Armor" name="Clan Oath Sandals">
+	<item id="7859" name="Clan Oath Sandals" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_t1003_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1376,7 +1394,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="1" /> <!-- Vassal (Academy) -->
+				<player pledgeClass="1" />
+				<!-- Vassal (Academy) -->
 			</and>
 		</cond>
 		<for>
@@ -1384,7 +1403,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7860" type="Armor" name="Apella Helm">
+	<item id="7860" name="Apella Helm" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -1396,14 +1415,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
-			<player pledgeClass="4" /> <!-- Elder -->
+			<player pledgeClass="4" />
+			<!-- Elder -->
 		</cond>
 		<for>
 			<add order="0" stat="pDef" val="69" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7861" type="Armor" name="Apella Plate Armor">
+	<item id="7861" name="Apella Plate Armor" type="Armor">
 		<set name="icon" val="icon.armor_t1004_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1418,7 +1438,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -1426,7 +1447,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7862" type="Armor" name="Apella Gauntlets">
+	<item id="7862" name="Apella Gauntlets" name_additional="Heavy Armor" type="Armor">
 		<set name="icon" val="icon.armor_t1004_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1440,7 +1461,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -1448,7 +1470,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7863" type="Armor" name="Apella Solleret">
+	<item id="7863" name="Apella Solleret" name_additional="Heavy Armor" type="Armor">
 		<set name="icon" val="icon.armor_t1004_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1462,7 +1484,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -1470,7 +1493,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7864" type="Armor" name="Apella Brigandine">
+	<item id="7864" name="Apella Brigandine" type="Armor">
 		<set name="icon" val="icon.armor_t1005_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1484,14 +1507,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<cond msgId="1518">
-			<player pledgeClass="4" /> <!-- Elder -->
+			<player pledgeClass="4" />
+			<!-- Elder -->
 		</cond>
 		<for>
 			<add order="0" stat="pDef" val="209" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7865" type="Armor" name="Apella Leather Gloves">
+	<item id="7865" name="Apella Leather Gloves" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_t1005_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1504,14 +1528,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
 		<cond msgId="1518">
-			<player pledgeClass="4" /> <!-- Elder -->
+			<player pledgeClass="4" />
+			<!-- Elder -->
 		</cond>
 		<for>
 			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7866" type="Armor" name="Apella Boots">
+	<item id="7866" name="Apella Boots" name_additional="Light Armor" type="Armor">
 		<set name="icon" val="icon.armor_t1005_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1524,14 +1549,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
 		<cond msgId="1518">
-			<player pledgeClass="4" /> <!-- Elder -->
+			<player pledgeClass="4" />
+			<!-- Elder -->
 		</cond>
 		<for>
 			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7867" type="Armor" name="Apella Doublet">
+	<item id="7867" name="Apella Doublet" type="Armor">
 		<set name="icon" val="icon.armor_t1006_ul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -1546,7 +1572,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -1555,7 +1582,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7868" type="Armor" name="Apella Silk Gloves">
+	<item id="7868" name="Apella Silk Gloves" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_t1006_g_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1569,7 +1596,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -1577,7 +1605,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7869" type="Armor" name="Apella Sandals">
+	<item id="7869" name="Apella Sandals" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_t1006_b_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1591,7 +1619,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -1599,7 +1628,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7870" type="Armor" name="Sealed Apella Helm">
+	<item id="7870" name="Sealed Apella Helm" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
@@ -1611,14 +1640,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
-			<player pledgeClass="4" /> <!-- Elder -->
+			<player pledgeClass="4" />
+			<!-- Elder -->
 		</cond>
 		<for>
 			<add order="0" stat="pDef" val="69" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7871" type="Armor" name="Sealed Apella Plate Armor">
+	<item id="7871" name="Sealed Apella Plate Armor" type="Armor">
 		<set name="icon" val="icon.armor_t1004_ul_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="HEAVY" />
@@ -1633,7 +1663,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -1641,7 +1672,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7872" type="Armor" name="Sealed Apella Gauntlets">
+	<item id="7872" name="Sealed Apella Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t1004_g_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1655,7 +1686,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -1663,7 +1695,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7873" type="Armor" name="Sealed Apella Solleret">
+	<item id="7873" name="Sealed Apella Solleret" type="Armor">
 		<set name="icon" val="icon.armor_t1004_b_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1677,7 +1709,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -1685,7 +1718,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7874" type="Armor" name="Sealed Apella Brigandine">
+	<item id="7874" name="Sealed Apella Brigandine" type="Armor">
 		<set name="icon" val="icon.armor_t1005_ul_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
@@ -1698,14 +1731,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
-			<player pledgeClass="4" /> <!-- Elder -->
+			<player pledgeClass="4" />
+			<!-- Elder -->
 		</cond>
 		<for>
 			<add order="0" stat="pDef" val="209" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7875" type="Armor" name="Sealed Apella Leather Gloves">
+	<item id="7875" name="Sealed Apella Leather Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t1005_g_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1717,14 +1751,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
-			<player pledgeClass="4" /> <!-- Elder -->
+			<player pledgeClass="4" />
+			<!-- Elder -->
 		</cond>
 		<for>
 			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7876" type="Armor" name="Sealed Apella Boots">
+	<item id="7876" name="Sealed Apella Boots" type="Armor">
 		<set name="icon" val="icon.armor_t1005_b_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1736,14 +1771,15 @@
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
-			<player pledgeClass="4" /> <!-- Elder -->
+			<player pledgeClass="4" />
+			<!-- Elder -->
 		</cond>
 		<for>
 			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7877" type="Armor" name="Sealed Apella Doublet">
+	<item id="7877" name="Sealed Apella Doublet" type="Armor">
 		<set name="icon" val="icon.armor_t1006_ul_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -1758,7 +1794,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -1767,7 +1804,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7878" type="Armor" name="Sealed Apella Silk Gloves">
+	<item id="7878" name="Sealed Apella Silk Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t1006_g_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
@@ -1781,7 +1818,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -1789,7 +1827,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7879" type="Armor" name="Sealed Apella Sandals">
+	<item id="7879" name="Sealed Apella Sandals" type="Armor">
 		<set name="icon" val="icon.armor_t1006_b_i02" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
@@ -1803,7 +1841,8 @@
 		<cond msgId="1518">
 			<and>
 				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="4" /> <!-- Elder -->
+				<player pledgeClass="4" />
+				<!-- Elder -->
 			</and>
 		</cond>
 		<for>
@@ -1811,7 +1850,7 @@
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
-	<item id="7880" type="Weapon" name="Steel Sword">
+	<item id="7880" name="Steel Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_iron_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1835,11 +1874,11 @@
 			<set stat="mAtk" val="26" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7881" type="Weapon" name="Lesser Giant's Sword">
+	<item id="7881" name="Lesser Giant's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_giants_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1863,11 +1902,11 @@
 			<set stat="mAtk" val="47" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7882" type="Weapon" name="Pa'agrian Sword">
+	<item id="7882" name="Pa'agrian Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_paagrio_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1891,11 +1930,11 @@
 			<set stat="mAtk" val="76" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7883" type="Weapon" name="Guardian's Sword">
+	<item id="7883" name="Guardian's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_guardians_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1920,11 +1959,11 @@
 			<set stat="mAtk" val="99" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7884" type="Weapon" name="Infernal Master">
+	<item id="7884" name="Infernal Master" type="Weapon">
 		<set name="icon" val="icon.weapon_inferno_master_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1948,11 +1987,11 @@
 			<set stat="mAtk" val="107" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7885" type="Weapon" name="Priest Sword">
+	<item id="7885" name="Priest Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_priest_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1976,11 +2015,11 @@
 			<set stat="mAtk" val="35" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7886" type="Weapon" name="Sword of Magic Fog">
+	<item id="7886" name="Sword of Magic Fog" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_magic_fog_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2004,11 +2043,11 @@
 			<set stat="mAtk" val="63" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7887" type="Weapon" name="Mysterious Sword">
+	<item id="7887" name="Mysterious Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_mystery_sword_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2032,11 +2071,11 @@
 			<set stat="mAtk" val="81" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7888" type="Weapon" name="Ecliptic Sword">
+	<item id="7888" name="Ecliptic Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_eclipse_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2061,11 +2100,11 @@
 			<set stat="mAtk" val="111" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7889" type="Weapon" name="Wizard's Tear">
+	<item id="7889" name="Wizard's Tear" type="Weapon">
 		<set name="icon" val="icon.weapon_tears_of_wizard_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -2090,11 +2129,11 @@
 			<set stat="mAtk" val="132" />
 			<set stat="rCrit" val="8" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7890" type="Weapon" name="Priest Mace">
+	<item id="7890" name="Priest Mace" type="Weapon">
 		<set name="icon" val="icon.weapon_mace_of_priest_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2119,11 +2158,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7891" type="Weapon" name="Ecliptic Axe">
+	<item id="7891" name="Ecliptic Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_eclipse_axe_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2148,11 +2187,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7892" type="Weapon" name="Spell Breaker">
+	<item id="7892" name="Spell Breaker" type="Weapon">
 		<set name="icon" val="icon.weapon_spell_breaker_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2177,11 +2216,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7893" type="Weapon" name="Kaim Vanul's Bones">
+	<item id="7893" name="Kaim Vanul's Bones" type="Weapon">
 		<set name="icon" val="icon.weapon_bone_of_kaim_vanul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2207,11 +2246,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7894" type="Weapon" name="Spiritual Eye">
+	<item id="7894" name="Spiritual Eye" type="Weapon">
 		<set name="icon" val="icon.weapon_eye_of_soul_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2236,11 +2275,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7895" type="Weapon" name="Flaming Dragon Skull">
+	<item id="7895" name="Flaming Dragon Skull" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_flame_head_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2265,11 +2304,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="379" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7896" type="Weapon" name="Lesser Giant's Hammer">
+	<item id="7896" name="Lesser Giant's Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_giants_hammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2293,11 +2332,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7897" type="Weapon" name="Dwarven Hammer">
+	<item id="7897" name="Dwarven Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_dwarven_hammer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2321,11 +2360,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7898" type="Weapon" name="Karik Horn">
+	<item id="7898" name="Karik Horn" type="Weapon">
 		<set name="icon" val="icon.weapon_horn_of_karik_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2349,11 +2388,11 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
-	<item id="7899" type="Weapon" name="Destroyer Hammer">
+	<item id="7899" name="Destroyer Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_hammer_of_destroyer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
@@ -2378,8 +2417,8 @@
 			<set stat="rCrit" val="4" />
 			<add stat="accCombat" val="4.75" />
 			<set stat="pAtkSpd" val="325" />
-			<enchant val="0" stat="pAtk" />
-			<enchant val="0" stat="mAtk" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
 		</for>
 	</item>
 </list>

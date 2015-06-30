@@ -24,9 +24,13 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.engines.DocumentBase;
+import org.l2junity.gameserver.enums.ItemSkillType;
+import org.l2junity.gameserver.model.ExtractableProduct;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -34,7 +38,7 @@ import org.w3c.dom.Node;
 /**
  * @author mkizub, JIV
  */
-public final class DocumentItem extends DocumentBase
+public final class DocumentItem extends DocumentBase implements IXmlReader
 {
 	private Item _currentItem = null;
 	private final List<L2Item> _itemsInFile = new LinkedList<>();
@@ -131,6 +135,37 @@ public final class DocumentItem extends DocumentBase
 				makeItem();
 				parseTemplate(n, _currentItem.item);
 			}
+			else if ("skills".equalsIgnoreCase(n.getNodeName()))
+			{
+				makeItem();
+				for (Node b = n.getFirstChild(); b != null; b = b.getNextSibling())
+				{
+					if ("skill".equalsIgnoreCase(b.getNodeName()))
+					{
+						final int id = parseInteger(b.getAttributes(), "id");
+						final int level = parseInteger(b.getAttributes(), "id");
+						final ItemSkillType type = parseEnum(b.getAttributes(), ItemSkillType.class, "type", ItemSkillType.NORMAL);
+						final int chance = parseInteger(b.getAttributes(), "type_chance", 0);
+						final int value = parseInteger(b.getAttributes(), "type_value", 0);
+						_currentItem.item.addSkill(new ItemSkillHolder(id, level, type, chance, value));
+					}
+				}
+			}
+			else if ("capsuled_items".equalsIgnoreCase(n.getNodeName()))
+			{
+				makeItem();
+				for (Node b = n.getFirstChild(); b != null; b = b.getNextSibling())
+				{
+					if ("item".equals(b.getNodeName()))
+					{
+						final int id = parseInteger(b.getAttributes(), "id");
+						final int min = parseInteger(b.getAttributes(), "min");
+						final int max = parseInteger(b.getAttributes(), "max");
+						final double chance = parseDouble(b.getAttributes(), "chance");
+						_currentItem.item.addCapsuledItem(new ExtractableProduct(id, min, max, chance));
+					}
+				}
+			}
 			else if ("cond".equalsIgnoreCase(n.getNodeName()))
 			{
 				makeItem();
@@ -150,7 +185,7 @@ public final class DocumentItem extends DocumentBase
 						condition.addName();
 					}
 				}
-				_currentItem.item.attach(condition);
+				_currentItem.item.attachCondition(condition);
 			}
 		}
 		// bah! in this point item doesn't have to be still created
@@ -183,5 +218,15 @@ public final class DocumentItem extends DocumentBase
 	public List<L2Item> getItemList()
 	{
 		return _itemsInFile;
+	}
+	
+	@Override
+	public void load()
+	{
+	}
+	
+	@Override
+	public void parseDocument(Document doc, File f)
+	{
 	}
 }
