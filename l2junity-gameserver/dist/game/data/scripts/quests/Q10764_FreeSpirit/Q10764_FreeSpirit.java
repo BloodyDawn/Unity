@@ -138,6 +138,7 @@ public final class Q10764_FreeSpirit extends Quest
 				{
 					qs.setCond(2, true);
 				}
+				htmltext = null;
 			}
 			else
 			{
