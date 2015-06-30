@@ -40,7 +40,6 @@ import org.l2junity.gameserver.model.quest.State;
 import org.l2junity.gameserver.network.client.send.ExShowUsm;
 import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
 import org.l2junity.gameserver.network.client.send.TutorialShowQuestionMark;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.util.Util;
 
 /**
@@ -126,7 +125,6 @@ public final class Q10360_CertificationOfFate extends Quest
 			case "30289-04.htm":
 			{
 				st.startQuest();
-				st.setQuestLocation(NpcStringId.WASTELANDS_LV_35);
 				htmltext = event;
 				break;
 			}
@@ -196,7 +194,6 @@ public final class Q10360_CertificationOfFate extends Quest
 						break;
 				}
 				playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-				st.setQuestLocation(NpcStringId.THE_TOWN_OF_GLUDIO);
 				break;
 			}
 			default:

@@ -95,7 +95,6 @@ public final class Q10397_KekropusLetterASuspiciousBadge extends Quest
 			{
 				if (st.isCond(1))
 				{
-					st.setQuestLocation(NpcStringId.SEA_OF_SPORES_LV_52);
 					giveItems(player, SOE_SEA_OF_SPORES, 1);
 					st.setCond(2, true);
 					htmltext = event;
@@ -189,7 +188,6 @@ public final class Q10397_KekropusLetterASuspiciousBadge extends Quest
 			final QuestState st = getQuestState(player, true);
 			
 			st.startQuest();
-			st.setQuestLocation(NpcStringId.TOWN_OF_OREN);
 			player.sendPacket(new PlaySound(3, "Npcdialog1.kekrops_quest_3", 0, 0, 0, 0, 0));
 			giveItems(player, SOE_TOWN_OF_OREN, 1);
 			player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), "popup.html")));
@@ -240,6 +238,5 @@ public final class Q10397_KekropusLetterASuspiciousBadge extends Quest
 		final QuestState st = getQuestState(player, true);
 		
 		st.startQuest();
-		st.setQuestLocation(NpcStringId.TOWN_OF_OREN);
 	}
 }

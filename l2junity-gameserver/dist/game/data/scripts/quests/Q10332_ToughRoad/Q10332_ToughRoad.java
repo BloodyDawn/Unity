@@ -83,7 +83,6 @@ public final class Q10332_ToughRoad extends Quest
 			case "30565-02.htm":
 			{
 				st.startQuest();
-				st.setQuestLocation(NpcStringId.THE_TOWN_OF_GLUDIO);
 				htmltext = event;
 				break;
 			}

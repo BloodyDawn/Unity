@@ -29,7 +29,6 @@ import org.l2junity.gameserver.model.holders.NpcLogListHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
  * Lucien's Altar (451)
@@ -82,7 +81,6 @@ public final class Q00451_LuciensAltar extends Quest
 		{
 			st.startQuest();
 			giveItems(player, REPLENISHED_BEAD, 5);
-			st.setQuestLocation(NpcStringId.MITHRIL_MINES_LV_81);
 			sendNpcLogList(player);
 			htmltext = event;
 		}
@@ -158,7 +156,6 @@ public final class Q00451_LuciensAltar extends Quest
 				if (getQuestItemsCount(player, DISCHARGED_BEAD) >= 5)
 				{
 					st.setCond(2, true);
-					st.unsetQuestLocation();
 				}
 				htmltext = "recharge.html";
 			}

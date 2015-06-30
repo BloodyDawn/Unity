@@ -24,7 +24,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 import quests.Q10398_ASuspiciousBadge.Q10398_ASuspiciousBadge;
 
@@ -82,7 +81,6 @@ public final class Q10399_TheAlphabetOfTheGiants extends Quest
 			case "33846-03.htm":
 			{
 				st.startQuest();
-				st.setQuestLocation(NpcStringId.SEA_OF_SPORES_LV_52);
 				htmltext = event;
 				break;
 			}

@@ -97,7 +97,6 @@ public final class Q10393_KekropusLetterAClueCompleted extends Quest
 				{
 					st.setCond(2, true);
 					giveItems(player, SOE_OUTLAW_FOREST, 1);
-					st.setQuestLocation(NpcStringId.OUTLAW_FOREST_LV_46);
 					htmltext = event;
 				}
 				break;
@@ -189,7 +188,6 @@ public final class Q10393_KekropusLetterAClueCompleted extends Quest
 			final QuestState st = getQuestState(player, true);
 			
 			st.startQuest();
-			st.setQuestLocation(NpcStringId.TOWN_OF_OREN);
 			player.sendPacket(new PlaySound(3, "Npcdialog1.kekrops_quest_2", 0, 0, 0, 0, 0));
 			giveItems(player, SOE_TOWN_OF_OREN, 1);
 			player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), "popup.html")));
@@ -240,6 +238,5 @@ public final class Q10393_KekropusLetterAClueCompleted extends Quest
 		final QuestState st = getQuestState(player, true);
 		
 		st.startQuest();
-		st.setQuestLocation(NpcStringId.TOWN_OF_OREN);
 	}
 }

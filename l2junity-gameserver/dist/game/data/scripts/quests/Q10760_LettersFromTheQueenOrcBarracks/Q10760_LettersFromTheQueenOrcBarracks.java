@@ -92,7 +92,6 @@ public class Q10760_LettersFromTheQueenOrcBarracks extends Quest
 					qs.setCond(2, true);
 					sendNpcLogList(player);
 					giveItems(player, SOE_ORC_BARRACKS, 1);
-					qs.setQuestLocation(NpcStringId.ORC_BARRACKS_LV_35);
 					showOnScreenMsg(player, NpcStringId.TRY_USING_THE_TELEPORT_SCROLL_LEVIAN_GAVE_YOU_TO_GO_TO_ORC_BARRACKS, ExShowScreenMessage.TOP_CENTER, 5000);
 				}
 				break;
@@ -146,7 +145,6 @@ public class Q10760_LettersFromTheQueenOrcBarracks extends Quest
 			final QuestState st = getQuestState(player, true);
 			
 			st.startQuest();
-			st.setQuestLocation(NpcStringId.THE_VILLAGE_OF_GLUDIN);
 			player.sendPacket(new PlaySound(3, "Npcdialog1.serenia_quest_2", 0, 0, 0, 0, 0));
 			player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), "popup.html")));
 			giveItems(player, SOE_GLUDIN_VILLAGE, 1);
@@ -214,7 +212,6 @@ public class Q10760_LettersFromTheQueenOrcBarracks extends Quest
 		final QuestState st = getQuestState(player, true);
 		
 		st.startQuest();
-		st.setQuestLocation(NpcStringId.THE_VILLAGE_OF_GLUDIN);
 		player.sendPacket(SystemMessageId.THIS_QUEST_CANNOT_BE_DELETED);
 	}
 	

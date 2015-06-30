@@ -29,7 +29,6 @@ import org.l2junity.gameserver.model.holders.NpcLogListHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
  * Disappeared Sakum (10333)
@@ -92,7 +91,6 @@ public final class Q10333_DisappearedSakum extends Quest
 			case "30332-05.htm":
 			{
 				st.startQuest();
-				st.setQuestLocation(NpcStringId.WINDMILL_HILL_LV_20);
 				htmltext = event;
 				break;
 			}

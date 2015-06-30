@@ -134,7 +134,6 @@ public final class Q10390_KekropusLetter extends Quest
 				{
 					takeItems(player, KEKROPUS_LETTER, -1);
 					giveItems(player, HAINE_SOE, 1);
-					st.setQuestLocation(NpcStringId.HEINE);
 					st.setCond(3);
 					htmltext = event;
 				}
@@ -145,7 +144,6 @@ public final class Q10390_KekropusLetter extends Quest
 				if (st.isCond(3))
 				{
 					giveItems(player, ALLIGATOR_ISLAND_SOE, 1);
-					st.setQuestLocation(NpcStringId.ALLIGATOR_ISLAND_LV_40);
 					st.setCond(4);
 					htmltext = event;
 				}

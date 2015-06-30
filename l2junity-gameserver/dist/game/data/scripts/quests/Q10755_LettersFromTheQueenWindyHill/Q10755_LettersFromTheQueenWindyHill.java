@@ -92,7 +92,6 @@ public final class Q10755_LettersFromTheQueenWindyHill extends Quest
 					qs.setCond(2, true);
 					sendNpcLogList(player);
 					giveItems(player, SOE_WINDY_HILL, 1);
-					qs.setQuestLocation(NpcStringId.WINDY_HILL_LV_26);
 					showOnScreenMsg(player, NpcStringId.TRY_USING_THE_TELEPORT_SCROLL_LEVIAN_GAVE_YOU, ExShowScreenMessage.TOP_CENTER, 5000);
 				}
 				break;
@@ -146,7 +145,6 @@ public final class Q10755_LettersFromTheQueenWindyHill extends Quest
 			final QuestState st = getQuestState(player, true);
 			
 			st.startQuest();
-			st.setQuestLocation(NpcStringId.THE_VILLAGE_OF_GLUDIN);
 			player.sendPacket(new PlaySound(3, "Npcdialog1.serenia_quest_1", 0, 0, 0, 0, 0));
 			player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), "popup.html")));
 			giveItems(player, SOE_GLUDIN_VILLAGE, 1);
@@ -214,7 +212,6 @@ public final class Q10755_LettersFromTheQueenWindyHill extends Quest
 		final QuestState st = getQuestState(player, true);
 		
 		st.startQuest();
-		st.setQuestLocation(NpcStringId.THE_VILLAGE_OF_GLUDIN);
 		player.sendPacket(SystemMessageId.THIS_QUEST_CANNOT_BE_DELETED);
 	}
 	

@@ -23,7 +23,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
  * Ominous News (122)
@@ -59,7 +58,6 @@ public final class Q00122_OminousNews extends Quest
 			case "31979-02.htm":
 			{
 				st.startQuest();
-				st.setQuestLocation(NpcStringId.CRYPTS_OF_DISGRACE_LV_80);
 				break;
 			}
 			case "32017-02.html":

@@ -27,7 +27,6 @@ import org.l2junity.gameserver.model.holders.NpcLogListHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 import quests.Q10335_RequestToFindSakum.Q10335_RequestToFindSakum;
 
@@ -81,7 +80,6 @@ public final class Q10336_DividedSakumKanilov extends Quest
 			case "33509-03.htm":
 			{
 				st.startQuest();
-				st.setQuestLocation(NpcStringId.RUINS_OF_AGONY_LV_25);
 				sendNpcLogList(player);
 				htmltext = event;
 				break;
@@ -135,7 +133,6 @@ public final class Q10336_DividedSakumKanilov extends Quest
 						{
 							st.setCond(3);
 							giveItems(player, SAKUM_SKETCH, 1);
-							st.setQuestLocation(NpcStringId.THE_TOWN_OF_GLUDIO);
 							htmltext = "33509-05.htm";
 						}
 						else

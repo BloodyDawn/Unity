@@ -29,7 +29,6 @@ import org.l2junity.gameserver.model.holders.NpcLogListHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
  * Sakum's Impact (10337)
@@ -81,7 +80,6 @@ public final class Q10337_SakumsImpact extends Quest
 			case "31795-03.htm":
 			{
 				st.startQuest();
-				st.setQuestLocation(NpcStringId.RUINS_OF_DESPAIR_LV_30);
 				htmltext = event;
 				break;
 			}

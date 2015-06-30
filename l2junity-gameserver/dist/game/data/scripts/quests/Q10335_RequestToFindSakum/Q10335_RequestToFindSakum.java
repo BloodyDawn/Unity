@@ -29,7 +29,6 @@ import org.l2junity.gameserver.model.holders.NpcLogListHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
  * Request To Find Sakum (10335)
@@ -82,7 +81,6 @@ public final class Q10335_RequestToFindSakum extends Quest
 			case "30332-03.htm":
 			{
 				st.startQuest();
-				st.setQuestLocation(NpcStringId.RUINS_OF_AGONY_LV_25);
 				htmltext = event;
 				break;
 			}

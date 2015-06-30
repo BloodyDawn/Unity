@@ -128,7 +128,6 @@ public final class Q10746_SeeTheWorld extends Quest
 						if (!isSimulated)
 						{
 							qs.setCond(2, true);
-							qs.setQuestLocation(NpcStringId.THE_VILLAGE_OF_GLUDIN);
 							sendNpcLogList(player);
 						}
 						htmltext = "33948-01.html";

@@ -33,7 +33,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.AbstractScript;
 import org.l2junity.gameserver.network.client.send.ExShowQuestMark;
 import org.l2junity.gameserver.network.client.send.QuestList;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -815,34 +814,5 @@ public final class QuestState
 	{
 		final String val = get("restartTime");
 		return (val != null) && (!Util.isDigit(val) || (Long.parseLong(val) <= System.currentTimeMillis()));
-	}
-	
-	/**
-	 * @return returns {@link NpcStringId} that is will order all teleports along the way as first option for player when he is on a quest.
-	 */
-	public NpcStringId getQuestLocation()
-	{
-		return NpcStringId.getNpcStringIdOrDefault(getInt("LOCATION_ID"), null);
-	}
-	
-	/**
-	 * Sets {@link NpcStringId} that is will order all teleports along the way as first option for player when he is on a quest.
-	 * @param id
-	 */
-	public void setQuestLocation(NpcStringId id)
-	{
-		if (id == null)
-		{
-			throw new NullPointerException("Attempting to set null quest location string for quest: " + getQuestName());
-		}
-		set("LOCATION_ID", id.getId());
-	}
-	
-	/**
-	 * Removes the {@link NpcStringId} that is will order all teleports along the way as first option for player when he is on a quest.
-	 */
-	public void unsetQuestLocation()
-	{
-		unset("LOCATION_ID");
 	}
 }

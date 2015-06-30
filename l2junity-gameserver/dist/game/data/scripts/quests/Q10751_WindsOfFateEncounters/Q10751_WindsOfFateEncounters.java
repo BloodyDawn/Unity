@@ -136,7 +136,6 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 			{
 				if (qs.isCond(2))
 				{
-					qs.setQuestLocation(NpcStringId.THE_TOWN_OF_GLUDIO);
 					qs.setCond(4, true);
 					sendNpcLogList(player);
 				}
@@ -146,7 +145,6 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 			{
 				if (qs.isCond(3))
 				{
-					qs.setQuestLocation(NpcStringId.THE_TOWN_OF_GLUDIO);
 					qs.setCond(5, true);
 					sendNpcLogList(player);
 				}
@@ -158,7 +156,6 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 				{
 					giveItems(player, WIND_SPIRIT_REALMS_RELIC, 1);
 					qs.setCond(6, true);
-					qs.unsetQuestLocation();
 					sendNpcLogList(player);
 				}
 				break;
@@ -201,7 +198,6 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 						qs.setCond(9, true);
 						htmltext = "30289-08.html";
 					}
-					qs.setQuestLocation(NpcStringId.FAERON_VILLAGE);
 					sendNpcLogList(player);
 				}
 				break;

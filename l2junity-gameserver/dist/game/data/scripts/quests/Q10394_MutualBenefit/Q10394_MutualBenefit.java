@@ -29,7 +29,6 @@ import org.l2junity.gameserver.model.holders.NpcLogListHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
  * Mutual Benefit (10394)
@@ -81,7 +80,6 @@ public final class Q10394_MutualBenefit extends Quest
 			case "33862-04.htm":
 			{
 				st.startQuest();
-				st.setQuestLocation(NpcStringId.OUTLAW_FOREST_LV_46);
 				sendNpcLogList(player);
 				htmltext = event;
 				break;

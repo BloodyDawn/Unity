@@ -111,7 +111,6 @@ public final class Q10709_TheStolenSeed extends Quest
 			case "33866-04.htm":
 			{
 				st.startQuest();
-				st.setQuestLocation(NpcStringId.FORSAKEN_PLAINS_LV_58);
 				htmltext = event;
 				break;
 			}

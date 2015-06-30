@@ -319,7 +319,7 @@ public enum ExIncomingPackets implements IIncomingPackets<IIncomingPacket<L2Game
 	REQUEST_NEW_ENCHANT_REMOVE_TWO(0xF7, RequestNewEnchantRemoveTwo::new, ConnectionState.IN_GAME),
 	REQUEST_NEW_ENCHANT_CLOSE(0xF8, RequestNewEnchantClose::new, ConnectionState.IN_GAME),
 	REQUEST_NEW_ENCHANT_TRY(0xF9, RequestNewEnchantTry::new, ConnectionState.IN_GAME),
-	EX_SEND_SELECTED_QUEST_ZONE_ID(0xFE, null, ConnectionState.IN_GAME),
+	EX_SEND_SELECTED_QUEST_ZONE_ID(0xFE, ExSendSelectedQuestZoneID::new, ConnectionState.IN_GAME),
 	REQUEST_ALCHEMY_SKILL_LIST(0xFF, RequestAlchemySkillList::new, ConnectionState.IN_GAME),
 	REQUEST_ALCHEMY_TRY_MIX_CUBE(0x100, RequestAlchemyTryMixCube::new, ConnectionState.IN_GAME),
 	REQUEST_ALCHEMY_CONVERSION(0x101, RequestAlchemyConversion::new, ConnectionState.IN_GAME),

@@ -96,7 +96,6 @@ public final class Q10401_KekropusLetterDecodingTheBadge extends Quest
 				if (st.isCond(1))
 				{
 					st.setCond(2, true);
-					st.setQuestLocation(NpcStringId.FORSAKEN_PLAINS_LV_58);
 					giveItems(player, SOE_FORSAKEN_PLAINS, 1);
 					htmltext = event;
 				}
@@ -193,7 +192,6 @@ public final class Q10401_KekropusLetterDecodingTheBadge extends Quest
 			final QuestState st = getQuestState(player, true);
 			
 			st.startQuest();
-			st.setQuestLocation(NpcStringId.TOWN_OF_ADEN);
 			player.sendPacket(new PlaySound(3, "Npcdialog1.kekrops_quest_4", 0, 0, 0, 0, 0));
 			giveItems(player, SOE_TOWN_OF_ADEN, 1);
 			player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), "popup.html")));
@@ -244,6 +242,5 @@ public final class Q10401_KekropusLetterDecodingTheBadge extends Quest
 		final QuestState st = getQuestState(player, true);
 		
 		st.startQuest();
-		st.setQuestLocation(NpcStringId.TOWN_OF_ADEN);
 	}
 }

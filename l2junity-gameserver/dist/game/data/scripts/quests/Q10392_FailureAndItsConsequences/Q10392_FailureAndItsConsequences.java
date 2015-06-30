@@ -24,7 +24,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 import quests.Q10391_ASuspiciousHelper.Q10391_ASuspiciousHelper;
 
@@ -87,7 +86,6 @@ public final class Q10392_FailureAndItsConsequences extends Quest
 			case "33859-04.htm":
 			{
 				st.startQuest();
-				st.setQuestLocation(NpcStringId.ALLIGATOR_ISLAND_LV_40);
 				htmltext = event;
 				break;
 			}

@@ -25,7 +25,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
  * Traces of Evil (10359)
@@ -102,7 +101,6 @@ public final class Q10359_TracesOfEvil extends Quest
 			case "31795-04.htm":
 			{
 				st.startQuest();
-				st.setQuestLocation(NpcStringId.WASTELANDS_LV_35);
 				htmltext = event;
 				break;
 			}
@@ -139,7 +137,7 @@ public final class Q10359_TracesOfEvil extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, PlayerInstance player)
+	public String onTalk(Npc npc, PlayerInstance player, boolean isSimulated)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
@@ -187,33 +185,54 @@ public final class Q10359_TracesOfEvil extends Quest
 								switch (player.getRace())
 								{
 									case HUMAN:
-										st.setCond(player.isMageClass() ? 4 : 5);
+										if (!isSimulated)
+										{
+											st.setCond(player.isMageClass() ? 4 : 5);
+										}
 										htmltext = player.isMageClass() ? "33179-06.htm" : "33179-11.htm";
 										break;
 									case DARK_ELF:
-										st.setCond(6);
+										if (!isSimulated)
+										{
+											st.setCond(6);
+										}
 										htmltext = "33179-05.htm";
 										break;
 									case ORC:
-										st.setCond(7);
+										if (!isSimulated)
+										{
+											st.setCond(7);
+										}
 										htmltext = "33179-07.htm";
 										break;
 									case DWARF:
-										st.setCond(8);
+										if (!isSimulated)
+										{
+											st.setCond(8);
+										}
 										htmltext = "33179-08.htm";
 										break;
 									case KAMAEL:
-										st.setCond(9);
+										if (!isSimulated)
+										{
+											st.setCond(9);
+										}
 										htmltext = "33179-09.htm";
 										break;
 									case ELF:
-										st.setCond(player.isMageClass() ? 11 : 10);
+										if (!isSimulated)
+										{
+											st.setCond(player.isMageClass() ? 11 : 10);
+										}
 										htmltext = player.isMageClass() ? "33179-12.htm" : "33179-10.htm";
 										break;
 								}
-								takeItems(player, FRAGMENT, 20);
-								playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-								st.setQuestLocation(NpcStringId.THE_TOWN_OF_GLUDIO);
+								
+								if (!isSimulated)
+								{
+									takeItems(player, FRAGMENT, 20);
+									playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+								}
 								break;
 							}
 						}

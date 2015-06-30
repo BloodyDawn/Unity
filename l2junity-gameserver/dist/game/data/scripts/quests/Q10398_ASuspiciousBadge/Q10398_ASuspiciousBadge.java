@@ -24,7 +24,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
  * A Suspicious Badge (10398)
@@ -84,7 +83,6 @@ public final class Q10398_ASuspiciousBadge extends Quest
 			case "33845-03.html":
 			{
 				st.startQuest();
-				st.setQuestLocation(NpcStringId.SEA_OF_SPORES_LV_52);
 				htmltext = event;
 				break;
 			}

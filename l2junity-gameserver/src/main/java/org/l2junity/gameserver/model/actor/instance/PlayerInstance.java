@@ -806,6 +806,8 @@ public final class PlayerInstance extends Playable
 	
 	private volatile int _actionMask;
 	
+	private int _questZoneId = -1;
+	
 	public void setPvpFlagLasts(long time)
 	{
 		_pvpFlagLasts = time;
@@ -14668,5 +14670,23 @@ public final class PlayerInstance extends Playable
 			
 			ach.useAdminCommand(fullCommand, this);
 		}
+	}
+	
+	/**
+	 * Set the Quest zone ID.
+	 * @param id the quest zone ID
+	 */
+	public void setQuestZoneId(int id)
+	{
+		_questZoneId = id;
+	}
+	
+	/**
+	 * Gets the Quest zone ID.
+	 * @return int the quest zone ID
+	 */
+	public int getQuestZoneId()
+	{
+		return _questZoneId;
 	}
 }

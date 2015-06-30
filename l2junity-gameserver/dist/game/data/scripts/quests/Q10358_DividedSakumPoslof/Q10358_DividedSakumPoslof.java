@@ -28,7 +28,6 @@ import org.l2junity.gameserver.model.holders.NpcLogListHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 import quests.Q10337_SakumsImpact.Q10337_SakumsImpact;
 
@@ -83,7 +82,6 @@ public final class Q10358_DividedSakumPoslof extends Quest
 			case "33510-03.htm":
 			{
 				st.startQuest();
-				st.setQuestLocation(NpcStringId.RUINS_OF_DESPAIR_LV_30);
 				sendNpcLogList(player);
 				htmltext = event;
 				break;
@@ -208,7 +206,6 @@ public final class Q10358_DividedSakumPoslof extends Quest
 			{
 				st.set("killed_" + POSLOF, 1);
 				st.setCond(4);
-				st.setQuestLocation(NpcStringId.THE_TOWN_OF_GLUDIO);
 				sendNpcLogList(killer);
 			}
 		}

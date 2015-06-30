@@ -18,12 +18,8 @@
  */
 package org.l2junity.gameserver.model.actor.instance;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collection;
-import java.util.List;
 import java.util.StringTokenizer;
-import java.util.stream.Stream;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.TeleportLocationTable;
@@ -39,14 +35,12 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.L2Item;
-import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.teleporter.TeleportHolder;
 import org.l2junity.gameserver.model.teleporter.TeleportLocation;
 import org.l2junity.gameserver.model.teleporter.TeleportType;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 
@@ -100,21 +94,13 @@ public final class L2TeleporterInstance extends Npc
 				final NpcHtmlMessage msg = new NpcHtmlMessage(getObjectId());
 				msg.setFile(player.getHtmlPrefix(), "data/html/teleporter/teleports.htm");
 				final StringBuilder sb = new StringBuilder();
-				final Collection<TeleportLocation> locs = holder.getLocations(type);
-				final List<NpcStringId> questLocations = new ArrayList<>();
-				for (QuestState qs : player.getAllQuestStates())
-				{
-					final NpcStringId npcString = qs.getQuestLocation();
-					if ((npcString != null) && !questLocations.contains(npcString))
-					{
-						questLocations.add(npcString);
-					}
-				}
+				final StringBuilder sb_f = new StringBuilder();
+				final int questZoneId = player.getQuestZoneId();
 				
-				final Stream<TeleportLocation> stream = !questLocations.isEmpty() ? locs.stream().sorted((o2, o1) -> questLocations.contains(o1.getNpcStringId()) ? 1 : questLocations.contains(o2.getNpcStringId()) ? -1 : 0) : locs.stream();
-				stream.forEach(loc ->
+				for (TeleportLocation loc : holder.getLocations(type))
 				{
 					final int id = loc.getId();
+					boolean isQuestTeleport = (questZoneId >= 0) && (loc.getQuestZoneId() == questZoneId);
 					
 					String finalName = loc.getName();
 					String confirmDesc = loc.getName();
@@ -127,9 +113,18 @@ public final class L2TeleporterInstance extends Npc
 					{
 						finalName += " - " + calculateFee(player, type, loc) + " " + getItemName(loc.getFeeId(), true);
 					}
-					sb.append("<button align=left icon=" + (!questLocations.contains(loc.getNpcStringId()) ? "teleport" : "quest") + " action=\"bypass -h npc_" + getObjectId() + "_teleport " + type.ordinal() + " " + id + "\" msg=\"811;" + confirmDesc + "\">" + finalName + "</button>");
-				});
-				msg.replace("%locations%", sb.toString());
+					
+					if (isQuestTeleport)
+					{
+						sb_f.append("<button align=left icon=\"quest\" action=\"bypass -h npc_" + getObjectId() + "_teleport " + type.ordinal() + " " + id + "\" msg=\"811;" + confirmDesc + "\">" + finalName + "</button>");
+					}
+					else
+					{
+						sb.append("<button align=left icon=\"teleport\" action=\"bypass -h npc_" + getObjectId() + "_teleport " + type.ordinal() + " " + id + "\" msg=\"811;" + confirmDesc + "\">" + finalName + "</button>");
+					}
+				}
+				sb_f.append(sb.toString());
+				msg.replace("%locations%", sb_f.toString());
 				player.sendPacket(msg);
 				break;
 			}

@@ -24,7 +24,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
  * Return of the Alligator Hunter (10460)
@@ -86,7 +85,6 @@ public final class Q10460_ReturnOfTheAlligatorHunter extends Quest
 			case "33860-04.htm":
 			{
 				st.startQuest();
-				st.setQuestLocation(NpcStringId.ALLIGATOR_ISLAND_LV_40);
 				htmltext = event;
 				break;
 			}

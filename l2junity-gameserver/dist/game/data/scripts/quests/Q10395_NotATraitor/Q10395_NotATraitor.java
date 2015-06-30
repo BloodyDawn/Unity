@@ -89,7 +89,6 @@ public final class Q10395_NotATraitor extends Quest
 			case "33863-04.htm":
 			{
 				st.startQuest();
-				st.setQuestLocation(NpcStringId.OUTLAW_FOREST_LV_46);
 				htmltext = event;
 				break;
 			}
