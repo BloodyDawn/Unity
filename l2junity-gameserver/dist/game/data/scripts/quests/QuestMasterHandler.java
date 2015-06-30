@@ -259,6 +259,7 @@ import quests.Q10761_AnOrcInLove.Q10761_AnOrcInLove;
 import quests.Q10762_MarionetteSpirit.Q10762_MarionetteSpirit;
 import quests.Q10763_TerrifyingChertuba.Q10763_TerrifyingChertuba;
 import quests.Q10764_FreeSpirit.Q10764_FreeSpirit;
+import quests.Q10769_LettersFromTheQueenCrumaTowerPart1.Q10769_LettersFromTheQueenCrumaTowerPart1;
 
 /**
  * @author NosBit
@@ -506,7 +507,8 @@ public class QuestMasterHandler
 		Q10761_AnOrcInLove.class,
 		Q10762_MarionetteSpirit.class,
 		Q10763_TerrifyingChertuba.class,
-		Q10764_FreeSpirit.class
+		Q10764_FreeSpirit.class,
+		Q10769_LettersFromTheQueenCrumaTowerPart1.class
 	};
 	
 	public static void main(String[] args)
