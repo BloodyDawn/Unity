@@ -95,14 +95,14 @@ public class Crypt implements ICrypt
 	{
 		byte[] data = new byte[buf.writerIndex()];
 		buf.getBytes(0, data);
-		EventDispatcher.getInstance().notifyEventAsync(new OnPacketSent(_client, data));
+		EventDispatcher.getInstance().notifyEvent(new OnPacketSent(_client, data));
 	}
 	
 	private void onPacketReceive(ByteBuf buf)
 	{
 		byte[] data = new byte[buf.writerIndex()];
 		buf.getBytes(0, data);
-		EventDispatcher.getInstance().notifyEventAsync(new OnPacketReceived(_client, data));
+		EventDispatcher.getInstance().notifyEvent(new OnPacketReceived(_client, data));
 	}
 	
 	private void shiftKey(byte[] key, int size)
