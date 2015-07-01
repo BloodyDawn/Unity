@@ -807,7 +807,8 @@ public abstract class Summon extends Playable
 	public void reduceCurrentHp(double damage, Creature attacker, Skill skill)
 	{
 		super.reduceCurrentHp(damage, attacker, skill);
-		if ((getOwner() != null) && (attacker != null))
+		
+		if (!isDead() && !isInvul() && (getOwner() != null) && (attacker != null))
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
 			sm.addNpcName(this);

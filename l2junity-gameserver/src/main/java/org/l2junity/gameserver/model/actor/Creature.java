@@ -2840,6 +2840,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return isAffected(EffectFlag.DISARMED);
 	}
 	
+	public final boolean isDisarmored()
+	{
+		return isAffected(EffectFlag.DISARMORED);
+	}
+	
 	/**
 	 * @return the summon
 	 */

@@ -6241,6 +6241,45 @@ public final class PlayerInstance extends Playable
 		return true;
 	}
 	
+	/**
+	 * Disarm the player's chest/fullbody armor.
+	 * @return {@code true}.
+	 */
+	public boolean disarmArmor()
+	{
+		ItemInstance armor = getInventory().getPaperdollItem(Inventory.PAPERDOLL_CHEST);
+		if (armor != null)
+		{
+			ItemInstance[] unequiped = getInventory().unEquipItemInBodySlotAndRecord(armor.getItem().getBodyPart());
+			InventoryUpdate iu = new InventoryUpdate();
+			for (ItemInstance itm : unequiped)
+			{
+				iu.addModifiedItem(itm);
+			}
+			sendPacket(iu);
+			broadcastUserInfo();
+			
+			// this can be 0 if the user pressed the right mousebutton twice very fast
+			if (unequiped.length > 0)
+			{
+				SystemMessage sm = null;
+				if (unequiped[0].getEnchantLevel() > 0)
+				{
+					sm = SystemMessage.getSystemMessage(SystemMessageId.THE_EQUIPMENT_S1_S2_HAS_BEEN_REMOVED);
+					sm.addInt(unequiped[0].getEnchantLevel());
+					sm.addItemName(unequiped[0]);
+				}
+				else
+				{
+					sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_BEEN_UNEQUIPPED);
+					sm.addItemName(unequiped[0]);
+				}
+				sendPacket(sm);
+			}
+		}
+		return true;
+	}
+	
 	public boolean mount(Summon pet)
 	{
 		if (!disarmWeapons() || !disarmShield() || isTransformed())

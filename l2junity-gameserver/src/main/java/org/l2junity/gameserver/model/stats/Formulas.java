@@ -1883,13 +1883,17 @@ public final class Formulas
 				attacker.sendPacket(sm);
 			}
 			
-			double counterdmg = (((target.getPAtk(attacker) * 10.0) * 70.0) / attacker.getPDef(target));
+			double counterdmg = ((target.getPAtk(attacker) * 873) / attacker.getPDef(target)); // Old: (((target.getPAtk(attacker) * 10.0) * 70.0) / attacker.getPDef(target));
 			counterdmg *= calcWeaponTraitBonus(attacker, target);
 			counterdmg *= calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
 			counterdmg *= calcAttributeBonus(attacker, target, skill);
 			
-			attacker.reduceCurrentHp(counterdmg, target, skill);
-			if (crit) // TODO: It counters multiple times depending on how much effects skill has not on critical, but gotta be verified first!
+			// TODO: It counters multiple times depending on how much attack effects skill has, but gotta be verified which effects are attack effects and do multiple effects of the same type stack!
+			if (skill.hasEffectType(L2EffectType.PHYSICAL_ATTACK, L2EffectType.PHYSICAL_ATTACK_HP_LINK))
+			{
+				attacker.reduceCurrentHp(counterdmg, target, skill);
+			}
+			if (skill.hasEffectType(L2EffectType.LETHAL_ATTACK))
 			{
 				attacker.reduceCurrentHp(counterdmg, target, skill);
 			}

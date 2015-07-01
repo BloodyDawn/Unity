@@ -82,6 +82,7 @@ public final class EffectMasterHandler
 		DetectHiddenObjects.class,
 		Detection.class,
 		Disarm.class,
+		Disarmor.class,
 		DispelAll.class,
 		DispelByCategory.class,
 		DispelBySlot.class,

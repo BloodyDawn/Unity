@@ -305,11 +305,18 @@ public final class UseItem implements IClientIncomingPacket
 					break;
 				}
 				case L2Item.SLOT_CHEST:
+				case L2Item.SLOT_FULL_ARMOR:
+				{
+					if (activeChar.isDisarmored())
+					{
+						activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
+						return;
+					}
+				}
 				case L2Item.SLOT_BACK:
 				case L2Item.SLOT_GLOVES:
 				case L2Item.SLOT_FEET:
 				case L2Item.SLOT_HEAD:
-				case L2Item.SLOT_FULL_ARMOR:
 				case L2Item.SLOT_LEGS:
 				{
 					if ((activeChar.getRace() == Race.KAMAEL) && ((item.getItem().getItemType() == ArmorType.HEAVY) || (item.getItem().getItemType() == ArmorType.MAGIC)))

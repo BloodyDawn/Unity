@@ -119,6 +119,7 @@ public enum AbnormalType
 	DERANGEMENT,
 	DETECT_WEAKNESS,
 	DISARM,
+	DISARMOR,
 	DMG_SHIELD,
 	DOT_ATTR,
 	DOT_MP,
@@ -395,7 +396,8 @@ public enum AbnormalType
 	MARK_OF_WEAKNESS,
 	MARK_OF_VOID,
 	MARK_OF_PLAGUE,
-	MARK_OF_TRICK;
+	MARK_OF_TRICK,
+	SHOOTING_STANCE;
 	
 	/**
 	 * Get the enumerate for the given String.
