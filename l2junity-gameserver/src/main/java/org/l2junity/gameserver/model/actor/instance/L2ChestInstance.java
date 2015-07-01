@@ -35,7 +35,7 @@ public final class L2ChestInstance extends L2MonsterInstance
 	{
 		super(template);
 		setInstanceType(InstanceType.L2ChestInstance);
-		setIsNoRndWalk(true);
+		setRandomWalking(false);
 		_specialDrop = false;
 	}
 	

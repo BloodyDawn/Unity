@@ -79,7 +79,7 @@ public final class DrillSergeant extends AbstractNpcAI
 		{
 			startQuestTimer("SOCIAL_SHOW", 10000, npc, null, true);
 		}
-		npc.setRandomAnimationEnabled(false);
+		npc.setRandomAnimation(false);
 		return super.onSpawn(npc);
 	}
 	

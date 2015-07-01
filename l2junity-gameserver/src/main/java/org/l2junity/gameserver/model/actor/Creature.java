@@ -204,7 +204,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	private boolean _isParalyzed = false;
 	private boolean _isPendingRevive = false;
 	private boolean _isRunning = false;
-	private boolean _isNoRndWalk = false; // Is no random walk
 	protected boolean _showSummonAnimation = false;
 	protected boolean _isTeleporting = false;
 	private boolean _isInvul = false;
@@ -2695,16 +2694,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public void setLastSkillCast(Skill skill)
 	{
 		_lastSkillCast = skill;
-	}
-	
-	public final boolean isNoRndWalk()
-	{
-		return _isNoRndWalk;
-	}
-	
-	public final void setIsNoRndWalk(boolean value)
-	{
-		_isNoRndWalk = value;
 	}
 	
 	public final boolean isAfraid()

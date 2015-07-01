@@ -165,9 +165,9 @@ public final class Q10292_SevenSignsGirlOfDoubt extends Quest
 				{
 					isBusy = true;
 					final Npc creature1 = addSpawn(CREATURE_OF_THE_DUSK1, 89440, -238016, -9632, 335, false, 0, false, player.getInstanceId());
-					creature1.setIsNoRndWalk(true);
+					creature1.setRandomWalking(true);
 					final Npc creature2 = addSpawn(CREATURE_OF_THE_DUSK2, 89524, -238131, -9632, 56, false, 0, false, player.getInstanceId());
-					creature2.setIsNoRndWalk(true);
+					creature2.setRandomWalking(true);
 					ThreadPoolManager.getInstance().scheduleGeneral(() ->
 					{
 						creature1.deleteMe();

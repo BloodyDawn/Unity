@@ -273,7 +273,7 @@ public final class Q10363_RequestOfTheSeeker extends Quest
 	@Override
 	public String onSpawn(Npc npc)
 	{
-		npc.setRandomAnimationEnabled(false);
+		npc.setRandomAnimation(false);
 		return super.onSpawn(npc);
 	}
 }

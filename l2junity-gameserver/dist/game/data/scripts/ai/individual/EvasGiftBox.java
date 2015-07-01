@@ -66,7 +66,7 @@ public final class EvasGiftBox extends AbstractNpcAI
 	@Override
 	public String onSpawn(Npc npc)
 	{
-		npc.setIsNoRndWalk(true);
+		npc.setRandomWalking(false);
 		return super.onSpawn(npc);
 	}
 	

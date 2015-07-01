@@ -695,7 +695,7 @@ public final class Stage1 extends AbstractInstance
 		{
 			world.npcList.put(npc, false);
 		}
-		npc.setIsNoRndWalk(true);
+		npc.setRandomWalking(true);
 		if (npc.isInstanceTypes(InstanceType.L2Attackable))
 		{
 			((Attackable) npc).setSeeThroughSilentMove(true);

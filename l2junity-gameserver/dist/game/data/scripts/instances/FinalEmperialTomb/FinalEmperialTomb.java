@@ -725,7 +725,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		{
 			world.npcList.add(npc);
 		}
-		npc.setIsNoRndWalk(true);
+		npc.setRandomWalking(false);
 		if (npc.isInstanceTypes(InstanceType.L2Attackable))
 		{
 			((Attackable) npc).setSeeThroughSilentMove(true);

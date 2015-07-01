@@ -73,7 +73,7 @@ public class L2GuardInstance extends Attackable
 	@Override
 	public void onSpawn()
 	{
-		setIsNoRndWalk(true);
+		setRandomWalking(false);
 		super.onSpawn();
 		
 		// check the region where this mob is, do not activate the AI if region is inactive.

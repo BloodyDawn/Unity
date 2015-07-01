@@ -234,7 +234,7 @@ public class TarBeetleSpawn implements IXmlReader
 						spawn.setZ(GeoData.getInstance().getSpawnHeight(location));
 						
 						final Npc npc = spawn.doSpawn();
-						npc.setIsNoRndWalk(true);
+						npc.setRandomWalking(true);
 						npc.setIsImmobilized(true);
 						npc.setIsInvul(true);
 						npc.disableCoreAI(true);

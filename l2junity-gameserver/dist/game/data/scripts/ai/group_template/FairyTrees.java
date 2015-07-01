@@ -78,7 +78,7 @@ public class FairyTrees extends AbstractNpcAI
 	@Override
 	public String onSpawn(Npc npc)
 	{
-		npc.setIsNoRndWalk(true);
+		npc.setRandomWalking(false);
 		npc.setIsImmobilized(true);
 		return super.onSpawn(npc);
 	}

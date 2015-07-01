@@ -147,7 +147,7 @@ public final class PrisonGuards extends AbstractNpcAI
 		}
 		else
 		{
-			npc.setIsNoRndWalk(true);
+			npc.setRandomWalking(true);
 			cancelQuestTimer("CHECK_HOME", npc, null);
 			startQuestTimer("CHECK_HOME", 30000, npc, null);
 		}

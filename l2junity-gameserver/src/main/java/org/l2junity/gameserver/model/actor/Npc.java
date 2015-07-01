@@ -123,6 +123,7 @@ public class Npc extends Creature
 	private static final int MINIMUM_SOCIAL_INTERVAL = 6000;
 	/** Support for random animation switching */
 	private boolean _isRandomAnimationEnabled = true;
+	private boolean _isRandomWalkingEnabled = true;
 	private boolean _isTalkable = getTemplate().isTalkable();
 	
 	protected RandomAnimationTask _rAniTask = null;
@@ -428,7 +429,7 @@ public class Npc extends Creature
 	 * Switches random Animation state into val.
 	 * @param val needed state of random animation
 	 */
-	public void setRandomAnimationEnabled(boolean val)
+	public void setRandomAnimation(boolean val)
 	{
 		_isRandomAnimationEnabled = val;
 	}
@@ -439,6 +440,16 @@ public class Npc extends Creature
 	public boolean isRandomAnimationEnabled()
 	{
 		return _isRandomAnimationEnabled;
+	}
+	
+	public void setRandomWalking(boolean enabled)
+	{
+		_isRandomWalkingEnabled = enabled;
+	}
+	
+	public boolean isRandomWalkingEnabled()
+	{
+		return _isRandomWalkingEnabled;
 	}
 	
 	@Override
@@ -1173,6 +1184,8 @@ public class Npc extends Creature
 		_soulshotamount = getTemplate().getSoulShot();
 		_spiritshotamount = getTemplate().getSpiritShot();
 		_killingBlowWeaponId = 0;
+		_isRandomAnimationEnabled = getTemplate().isRandomAnimationEnabled();
+		_isRandomWalkingEnabled = getTemplate().isRandomWalkEnabled();
 		
 		if (isTeleporting())
 		{

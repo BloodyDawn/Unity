@@ -615,11 +615,11 @@ public final class Instance
 									spawnDat.setInstanceId(getId());
 									if (allowRandomWalk == null)
 									{
-										spawnDat.setIsNoRndWalk(!_allowRandomWalk);
+										spawnDat.setRandomWalking(_allowRandomWalk);
 									}
 									else
 									{
-										spawnDat.setIsNoRndWalk(!allowRandomWalk);
+										spawnDat.setRandomWalking(allowRandomWalk);
 									}
 									if (spawnGroup.equals("general"))
 									{

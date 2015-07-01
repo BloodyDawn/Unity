@@ -64,7 +64,7 @@ public final class Oris extends AbstractNpcAI
 	@Override
 	public String onSpawn(Npc npc)
 	{
-		npc.setRandomAnimationEnabled(false);
+		npc.setRandomAnimation(false);
 		startQuestTimer("SOCIAL_ACTION_1", 6500, npc, null, true);
 		startQuestTimer("SPAM_TEXT", 10000, npc, null, true);
 		return super.onSpawn(npc);

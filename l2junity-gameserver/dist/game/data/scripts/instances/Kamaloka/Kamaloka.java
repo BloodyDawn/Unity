@@ -1491,7 +1491,7 @@ public final class Kamaloka extends AbstractInstance
 					spawn.startRespawn();
 					world.firstRoom.add(spawn); // store mobs spawns
 				}
-				npc.setIsNoRndWalk(true);
+				npc.setRandomWalking(false);
 			}
 		}
 		
@@ -1505,7 +1505,7 @@ public final class Kamaloka extends AbstractInstance
 			for (int[] spawn : spawns)
 			{
 				npc = addSpawn(npcs[0], spawn[0], spawn[1], spawn[2], 0, false, 0, false, world.getInstanceId());
-				npc.setIsNoRndWalk(true);
+				npc.setRandomWalking(false);
 				world.secondRoom.add(npc.getObjectId());
 			}
 		}
@@ -1514,7 +1514,7 @@ public final class Kamaloka extends AbstractInstance
 		if (MINIBOSS[index] != null)
 		{
 			npc = addSpawn(MINIBOSS[index][0], MINIBOSS[index][1], MINIBOSS[index][2], MINIBOSS[index][3], 0, false, 0, false, world.getInstanceId());
-			npc.setIsNoRndWalk(true);
+			npc.setRandomWalking(false);
 			world.miniBoss = npc.getObjectId();
 		}
 		

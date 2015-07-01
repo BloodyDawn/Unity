@@ -18,6 +18,8 @@
  */
 package instances.KaraphonHabitat;
 
+import instances.AbstractInstance;
+
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -25,7 +27,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
 
-import instances.AbstractInstance;
 import quests.Q10745_TheSecretIngredients.Q10745_TheSecretIngredients;
 
 /**
@@ -98,7 +99,7 @@ public class KaraphonHabitat extends AbstractInstance
 	@Override
 	public String onSpawn(Npc npc)
 	{
-		npc.setIsNoRndWalk(true);
+		npc.setRandomWalking(false);
 		return super.onSpawn(npc);
 	}
 	

@@ -197,7 +197,7 @@ public final class Wastelands extends AbstractNpcAI
 			case COMMANDER:
 			{
 				startQuestTimer("SOCIAL_SHOW", 13000, npc, null, true);
-				npc.setRandomAnimationEnabled(false);
+				npc.setRandomAnimation(false);
 				break;
 			}
 			case REGENERATED_KANILOV:
@@ -231,7 +231,7 @@ public final class Wastelands extends AbstractNpcAI
 			case GUARD:
 			case DECO_GUARD:
 			{
-				npc.setRandomAnimationEnabled(false);
+				npc.setRandomAnimation(false);
 				break;
 			}
 		}

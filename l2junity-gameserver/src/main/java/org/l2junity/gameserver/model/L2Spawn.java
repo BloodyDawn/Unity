@@ -78,7 +78,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	/** If true then spawn is custom */
 	private static Set<SpawnListener> _spawnListeners = ConcurrentHashMap.newKeySet();
 	private final Deque<Npc> _spawnedNpcs = new ConcurrentLinkedDeque<>();
-	private boolean _isNoRndWalk = false; // Is no random walk
+	private boolean _randomWalk = false; // Is no random walk
 	private NpcSpawnTemplate _spawnTemplate;
 	
 	/** The task launching the function doSpawn() */
@@ -589,7 +589,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		}
 		
 		// Set is not random walk default value
-		npc.setIsNoRndWalk(isNoRndWalk());
+		npc.setRandomWalking(getRandomWalking());
 		
 		// Set the heading of the L2NpcInstance (random heading if not defined)
 		if (getHeading() == -1)
@@ -770,14 +770,14 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		return "L2Spawn ID: " + getId() + " " + getLocation();
 	}
 	
-	public final boolean isNoRndWalk()
+	public final boolean getRandomWalking()
 	{
-		return _isNoRndWalk;
+		return _randomWalk;
 	}
 	
-	public final void setIsNoRndWalk(boolean value)
+	public final void setRandomWalking(boolean value)
 	{
-		_isNoRndWalk = value;
+		_randomWalk = value;
 	}
 	
 	public void setSpawnTemplate(NpcSpawnTemplate npcSpawnTemplate)

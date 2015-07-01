@@ -145,7 +145,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 				npc.setIsRunning(false);
 				npc.setTarget(npc);
 				
-				if (npc.isNoRndWalk())
+				if (!npc.isRandomWalkingEnabled())
 				{
 					npc.doCast(SkillData.getInstance().getSkill(6331, 1));
 					npc.setState(MAHUM_EFFECT_SLEEP);
@@ -236,9 +236,9 @@ public final class SelMahumSquad extends AbstractNpcAI
 			}
 			case "SCE_CAMPFIRE_START":
 			{
-				if (!receiver.isNoRndWalk() && !receiver.isDead() && (receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && CommonUtil.contains(SQUAD_LEADERS, receiver.getId()))
+				if (receiver.isRandomWalkingEnabled() && !receiver.isDead() && (receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && CommonUtil.contains(SQUAD_LEADERS, receiver.getId()))
 				{
-					receiver.setIsNoRndWalk(true); // Moving to fire - i_ai0 = 1
+					receiver.setRandomWalking(false); // Moving to fire - i_ai0 = 1
 					receiver.setIsRunning(true);
 					final Location loc = sender.getPointInRange(100, 200);
 					loc.setHeading(receiver.getHeading());
@@ -257,7 +257,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 				}
 				else if ((receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && CommonUtil.contains(SQUAD_LEADERS, receiver.getId()))
 				{
-					receiver.setIsNoRndWalk(false);
+					receiver.setRandomWalking(true);
 					receiver.getVariables().remove("BUSY_STATE");
 					receiver.setRHandId(THS_Weapon);
 					startQuestTimer("return_from_fire", 3000, receiver, null);
@@ -268,11 +268,11 @@ public final class SelMahumSquad extends AbstractNpcAI
 			{
 				if (!receiver.isDead() && (receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && (receiver.getVariables().getInt("BUSY_STATE", 0) == 0) && CommonUtil.contains(SQUAD_LEADERS, receiver.getId()))
 				{
-					if (receiver.isNoRndWalk()) // i_ai0 == 1
+					if (!receiver.isRandomWalkingEnabled()) // i_ai0 == 1
 					{
 						receiver.setRHandId(THS_Weapon);
 					}
-					receiver.setIsNoRndWalk(true); // Moving to fire - i_ai0 = 1
+					receiver.setRandomWalking(false); // Moving to fire - i_ai0 = 1
 					receiver.getVariables().set("BUSY_STATE", 1); // Eating - i_ai3 = 1
 					receiver.setIsRunning(true);
 					receiver.broadcastSay(ChatType.NPC_GENERAL, (getRandom(3) < 1) ? NpcStringId.LOOKS_DELICIOUS : NpcStringId.LET_S_GO_EAT);
@@ -316,7 +316,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 	public void onMoveFinished(Npc npc)
 	{
 		// Npc moves to fire
-		if (npc.isNoRndWalk() && (npc.getX() == npc.getVariables().getInt("DESTINATION_X")) && (npc.getY() == npc.getVariables().getInt("DESTINATION_Y")))
+		if (!npc.isRandomWalkingEnabled() && (npc.getX() == npc.getVariables().getInt("DESTINATION_X")) && (npc.getY() == npc.getVariables().getInt("DESTINATION_Y")))
 		{
 			npc.setRHandId(OHS_Weapon);
 			startQuestTimer("fire_arrived", 3000, npc, null);
@@ -354,7 +354,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 		else if (CommonUtil.contains(SQUAD_LEADERS, npc.getId()))
 		{
 			npc.setState(3);
-			npc.setIsNoRndWalk(false);
+			npc.setRandomWalking(true);
 		}
 		return super.onSpawn(npc);
 	}
@@ -389,7 +389,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 	{
 		cancelQuestTimer("remove_effects", attacked, null);
 		attacked.getVariables().remove("BUSY_STATE");
-		attacked.setIsNoRndWalk(false);
+		attacked.setRandomWalking(true);
 		attacked.setState(MAHUM_EFFECT_NONE);
 		if (attacked.getRightHandItem() == OHS_Weapon)
 		{

@@ -144,7 +144,7 @@ public final class AncientArcanCity extends AbstractNpcAI
 	{
 		if (npc.getId() == CEREMONIAL_CAT)
 		{
-			npc.setRandomAnimationEnabled(npc.getParameters().getBoolean("disableRandomAnimation", false));
+			npc.setRandomAnimation(npc.getParameters().getBoolean("disableRandomAnimation", false));
 			startQuestTimer("SOCIAL_ACTION", 4500, npc, null, true);
 		}
 	}

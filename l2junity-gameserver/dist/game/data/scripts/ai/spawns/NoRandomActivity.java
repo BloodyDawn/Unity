@@ -37,11 +37,11 @@ public final class NoRandomActivity extends AbstractNpcAI
 	@Override
 	public void onSpawnNpc(SpawnTemplate template, SpawnGroup group, Npc npc)
 	{
-		npc.setRandomAnimationEnabled(npc.getParameters().getBoolean("disableRandomAnimation", false));
-		npc.setIsNoRndWalk(npc.getParameters().getBoolean("disableRandomWalk", false));
+		npc.setRandomAnimation(npc.getParameters().getBoolean("disableRandomAnimation", false));
+		npc.setRandomWalking(npc.getParameters().getBoolean("disableRandomWalk", false));
 		if (npc.getSpawn() != null)
 		{
-			npc.getSpawn().setIsNoRndWalk(npc.getParameters().getBoolean("disableRandomWalk", false));
+			npc.getSpawn().setRandomWalking(!npc.getParameters().getBoolean("disableRandomWalk", false));
 		}
 	}
 	
