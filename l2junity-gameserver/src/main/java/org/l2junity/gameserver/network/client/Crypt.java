@@ -20,6 +20,9 @@ package org.l2junity.gameserver.network.client;
 
 import io.netty.buffer.ByteBuf;
 
+import org.l2junity.gameserver.model.events.EventDispatcher;
+import org.l2junity.gameserver.model.events.impl.server.OnPacketReceived;
+import org.l2junity.gameserver.model.events.impl.server.OnPacketSent;
 import org.l2junity.network.ICrypt;
 
 /**
@@ -27,9 +30,15 @@ import org.l2junity.network.ICrypt;
  */
 public class Crypt implements ICrypt
 {
+	private final L2GameClient _client;
 	private final byte[] _inKey = new byte[16];
 	private final byte[] _outKey = new byte[16];
 	private boolean _isEnabled;
+	
+	public Crypt(L2GameClient client)
+	{
+		_client = client;
+	}
 	
 	public void setKey(byte[] key)
 	{
@@ -43,8 +52,11 @@ public class Crypt implements ICrypt
 		if (!_isEnabled)
 		{
 			_isEnabled = true;
+			onPacketSent(buf);
 			return;
 		}
+		
+		onPacketSent(buf);
 		
 		int a = 0;
 		while (buf.isReadable())
@@ -62,6 +74,7 @@ public class Crypt implements ICrypt
 	{
 		if (!_isEnabled)
 		{
+			onPacketReceive(buf);
 			return;
 		}
 		
@@ -74,6 +87,22 @@ public class Crypt implements ICrypt
 		}
 		
 		shiftKey(_inKey, buf.writerIndex());
+		
+		onPacketReceive(buf);
+	}
+	
+	private void onPacketSent(ByteBuf buf)
+	{
+		byte[] data = new byte[buf.writerIndex()];
+		buf.getBytes(0, data);
+		EventDispatcher.getInstance().notifyEventAsync(new OnPacketSent(_client, data));
+	}
+	
+	private void onPacketReceive(ByteBuf buf)
+	{
+		byte[] data = new byte[buf.writerIndex()];
+		buf.getBytes(0, data);
+		EventDispatcher.getInstance().notifyEventAsync(new OnPacketReceived(_client, data));
 	}
 	
 	private void shiftKey(byte[] key, int size)

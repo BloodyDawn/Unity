@@ -107,6 +107,8 @@ import org.l2junity.gameserver.model.events.impl.item.OnItemBypassEvent;
 import org.l2junity.gameserver.model.events.impl.item.OnItemCreate;
 import org.l2junity.gameserver.model.events.impl.item.OnItemTalk;
 import org.l2junity.gameserver.model.events.impl.olympiad.OnOlympiadMatchResult;
+import org.l2junity.gameserver.model.events.impl.server.OnPacketReceived;
+import org.l2junity.gameserver.model.events.impl.server.OnPacketSent;
 import org.l2junity.gameserver.model.events.impl.sieges.castle.OnCastleSiegeFinish;
 import org.l2junity.gameserver.model.events.impl.sieges.castle.OnCastleSiegeOwnerChange;
 import org.l2junity.gameserver.model.events.impl.sieges.castle.OnCastleSiegeStart;
@@ -241,7 +243,10 @@ public enum EventType
 	// Trap events
 	ON_TRAP_ACTION(OnTrapAction.class, void.class),
 	
-	ON_DAY_NIGHT_CHNAGE(OnDayNightChange.class, void.class);
+	ON_DAY_NIGHT_CHNAGE(OnDayNightChange.class, void.class),
+	
+	ON_PACKET_RECEIVED(OnPacketReceived.class, void.class),
+	ON_PACKET_SENT(OnPacketSent.class, void.class);
 	
 	private final Class<? extends IBaseEvent> _eventClass;
 	private final Class<?>[] _returnClass;

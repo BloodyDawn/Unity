@@ -40,6 +40,7 @@ import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.data.xml.impl.SecondaryAuthData;
 import org.l2junity.gameserver.enums.CharacterDeleteFailType;
+import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
 import org.l2junity.gameserver.instancemanager.CommissionManager;
 import org.l2junity.gameserver.instancemanager.MailManager;
@@ -76,6 +77,8 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 	protected static final Logger _log = LoggerFactory.getLogger(L2GameClient.class);
 	protected static final Logger _logAccounting = LoggerFactory.getLogger("accounting");
 	
+	private final int _objectId;
+	
 	// Info
 	private InetAddress _addr;
 	private Channel _channel;
@@ -97,7 +100,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 	protected ScheduledFuture<?> _cleanupTask = null;
 	
 	// Crypt
-	private final Crypt _crypt = new Crypt();
+	private final Crypt _crypt;
 	
 	private boolean _isDetached = false;
 	
@@ -107,6 +110,8 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 	
 	public L2GameClient()
 	{
+		_objectId = IdFactory.getInstance().getNextId();
+		_crypt = new Crypt(this);
 		if (Config.CHAR_STORE_INTERVAL > 0)
 		{
 			_autoSaveInDB = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new AutoSaveTask(), 300000L, (Config.CHAR_STORE_INTERVAL * 60000L));
@@ -115,6 +120,11 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 		{
 			_autoSaveInDB = null;
 		}
+	}
+	
+	public int getObjectId()
+	{
+		return _objectId;
 	}
 	
 	@Override
@@ -736,6 +746,8 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 			{
 				_log.warn("Error while disconnecting client.", e1);
 			}
+			
+			IdFactory.getInstance().releaseId(getObjectId());
 		}
 	}
 	
@@ -824,14 +836,14 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 						L2Event.savePlayerEventStatus(getActiveChar());
 					}
 					
-					// prevent closing again
-					getActiveChar().setClient(null);
-					
 					if (getActiveChar().isOnline())
 					{
 						getActiveChar().deleteMe();
 						AntiFeedManager.getInstance().onDisconnect(L2GameClient.this);
 					}
+					
+					// prevent closing again
+					getActiveChar().setClient(null);
 				}
 				setActiveChar(null);
 			}
