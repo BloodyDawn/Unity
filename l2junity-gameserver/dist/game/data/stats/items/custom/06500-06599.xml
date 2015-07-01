@@ -90,10 +90,9 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="820" />
-		<set name="oncrit_chance" val="16" />
-		<set name="oncrit_skill" val="3574-1" />
 		<skills>
 			<skill id="3552" level="1" />
+			<skill id="3574" level="1" type="ON_CRITICAL_SKILL" type_chance="16" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="581" />

@@ -18,7 +18,9 @@
  */
 package handlers.admincommandhandlers;
 
+import java.io.File;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.StringTokenizer;
@@ -48,6 +50,7 @@ public class AdminQuest implements IAdminCommandHandler
 		"admin_quest_reload",
 		"admin_script_load",
 		"admin_script_unload",
+		"admin_script_dir",
 		"admin_show_quests",
 		"admin_quest_info"
 	};
@@ -135,6 +138,19 @@ public class AdminQuest implements IAdminCommandHandler
 			
 			quest.unload();
 			activeChar.sendMessage("Script successful unloaded!");
+		}
+		else if (command.startsWith("admin_script_dir"))
+		{
+			String[] parts = command.split(" ");
+			if (parts.length == 1)
+			{
+				showDir(null, activeChar);
+			}
+			else
+			{
+				showDir(parts[1], activeChar);
+			}
+			
 		}
 		else if (command.startsWith("admin_show_quests"))
 		{
@@ -279,6 +295,98 @@ public class AdminQuest implements IAdminCommandHandler
 			activeChar.sendPacket(msg);
 		}
 		return true;
+	}
+	
+	private void showDir(String dir, PlayerInstance activeChar)
+	{
+		String replace = null;
+		File path;
+		String currentPath = "/";
+		if ((dir == null) || dir.trim().isEmpty() || dir.contains(".."))
+		{
+			StringBuilder sb = new StringBuilder(200);
+			path = ScriptEngineManager.SCRIPT_FOLDER.toFile();
+			String[] children = path.list();
+			Arrays.sort(children);
+			for (String c : children)
+			{
+				File n = new File(path, c);
+				if (n.isHidden() || n.getName().startsWith("."))
+				{
+					continue;
+				}
+				else if (n.isDirectory())
+				{
+					sb.append("<a action=\"bypass -h admin_script_dir " + c + "\">" + c + "</a><br1>");
+				}
+				else if (c.endsWith(".java") || c.endsWith(".py"))
+				{
+					sb.append("<a action=\"bypass -h admin_script_load " + c + "\"><font color=\"LEVEL\">" + c + "</font></a><br1>");
+				}
+			}
+			replace = sb.toString();
+		}
+		else
+		{
+			path = new File(ScriptEngineManager.SCRIPT_FOLDER.toFile(), dir);
+			if (!path.isDirectory())
+			{
+				activeChar.sendMessage("Wrong path.");
+				return;
+			}
+			currentPath = dir;
+			boolean questReducedNames = currentPath.equalsIgnoreCase("quests");
+			StringBuilder sb = new StringBuilder(200);
+			sb.append("<a action=\"bypass -h admin_script_dir " + getUpPath(currentPath) + "\">..</a><br1>");
+			String[] children = path.list();
+			Arrays.sort(children);
+			for (String c : children)
+			{
+				File n = new File(path, c);
+				if (n.isHidden() || n.getName().startsWith("."))
+				{
+					continue;
+				}
+				else if (n.isDirectory())
+				{
+					sb.append("<a action=\"bypass -h admin_script_dir " + currentPath + "/" + c + "\">" + (questReducedNames ? getQuestName(c) : c) + "</a><br1>");
+				}
+				else if (c.endsWith(".java") || c.endsWith(".py"))
+				{
+					sb.append("<a action=\"bypass -h admin_script_load " + currentPath + "/" + c + "\"><font color=\"LEVEL\">" + c + "</font></a><br1>");
+				}
+			}
+			replace = sb.toString();
+			if (questReducedNames)
+			{
+				currentPath += " (limited list - HTML too long)";
+			}
+		}
+		
+		if (replace.length() > 17200)
+		{
+			replace = replace.substring(0, 17200); // packetlimit
+		}
+		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
+		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/scriptdirectory.htm");
+		html.replace("%path%", currentPath);
+		html.replace("%list%", replace);
+		activeChar.sendPacket(html);
+	}
+	
+	private String getUpPath(String full)
+	{
+		int index = full.lastIndexOf("/");
+		if (index == -1)
+		{
+			return "";
+		}
+		return full.substring(0, index);
+	}
+	
+	private String getQuestName(String full)
+	{
+		return full.split("_")[0];
 	}
 	
 	@Override
