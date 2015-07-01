@@ -25,13 +25,11 @@ import io.netty.buffer.ByteBuf;
  */
 public final class PacketWriter
 {
-	private final int _readerIndex;
 	private final ByteBuf _buf;
 	
 	public PacketWriter(ByteBuf buf)
 	{
 		_buf = buf;
-		_readerIndex = buf.readerIndex();
 	}
 	
 	/**
@@ -141,20 +139,5 @@ public final class PacketWriter
 	public void writeB(byte[] bytes)
 	{
 		_buf.writeBytes(bytes);
-	}
-	
-	public byte[] getBufferData()
-	{
-		final byte[] data = new byte[_buf.writerIndex()];
-		_buf.getBytes(_readerIndex, data);
-		return data;
-	}
-	
-	/**
-	 * Reset's reader index back to it's original position upon allocation.
-	 */
-	public void reset()
-	{
-		_buf.readerIndex(_readerIndex);
 	}
 }
