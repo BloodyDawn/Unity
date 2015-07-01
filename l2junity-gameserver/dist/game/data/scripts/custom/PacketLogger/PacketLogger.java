@@ -29,6 +29,7 @@ import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
 import org.l2junity.gameserver.model.events.impl.server.OnPacketReceived;
 import org.l2junity.gameserver.model.events.impl.server.OnPacketSent;
+import org.l2junity.gameserver.network.client.IncomingPackets;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -84,7 +85,7 @@ public final class PacketLogger extends AbstractNpcAI
 			if (data.length > 0)
 			{
 				final int opCode = data[0] & 0xFF;
-				if (opCode == 0x0E)
+				if (opCode == IncomingPackets.PROTOCOL_VERSION.getPacketId()) // Create new session only when protocol version arrive!
 				{
 					_logs.put(client.getObjectId(), new YAL2Logger(client));
 					LOGGER.info("Starting log session for: {}", client);

@@ -35,7 +35,7 @@ import org.l2junity.network.IIncomingPackets;
 /**
  * @author UnAfraid
  */
-enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
+public enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 {
 	LOGOUT(0x00, Logout::new, ConnectionState.AUTHENTICATED, ConnectionState.IN_GAME),
 	ATTACK(0x01, Attack::new, ConnectionState.IN_GAME),
