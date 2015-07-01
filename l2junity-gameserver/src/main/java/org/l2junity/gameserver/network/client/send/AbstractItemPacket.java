@@ -90,7 +90,7 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		packet.writeC(mask);
 		packet.writeD(item.getObjectId()); // ObjectId
 		packet.writeD(item.getItem().getDisplayId()); // ItemId
-		packet.writeC(item.getEquipped() == 0 ? item.getLocation() : 0xFF); // T1
+		packet.writeC(item.getItem().isQuestItem() || (item.getEquipped() == 1) ? 0xFF : item.getLocation()); // T1
 		packet.writeQ(item.getCount()); // Quantity
 		packet.writeC(item.getItem().getType2()); // Item Type 2 : 00-weapon, 01-shield/armor, 02-ring/earring/necklace, 03-questitem, 04-adena, 05-item
 		packet.writeC(item.getCustomType1()); // Filler (always 0)
@@ -134,7 +134,7 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		{
 			for (byte i = 0; i < 6; i++)
 			{
-				if (item.getElementDefAttr(i) >= 0)
+				if (item.getElementDefAttr(i) > 0)
 				{
 					mask |= ItemListType.ELEMENTAL_ATTRIBUTE.getMask();
 					break;

@@ -314,7 +314,7 @@ public abstract class Vehicle extends Creature
 					}
 					InventoryUpdate iu = new InventoryUpdate();
 					iu.addModifiedItem(ticket);
-					player.sendPacket(iu);
+					player.sendInventoryUpdate(iu);
 				}
 				addPassenger(player);
 			}

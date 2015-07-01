@@ -175,7 +175,7 @@ public class AdminElement implements IAdminCommandHandler
 			// send packets
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(itemInstance);
-			player.sendPacket(iu);
+			player.sendInventoryUpdate(iu);
 			
 			// informations
 			activeChar.sendMessage("Changed elemental power of " + player.getName() + "'s " + itemInstance.getItem().getName() + " from " + old + " to " + current + ".");

@@ -19,7 +19,6 @@
 package org.l2junity.gameserver.network.client.recv;
 
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.network.PacketReader;
 
 /**
@@ -39,8 +38,7 @@ public final class RequestItemList implements IClientIncomingPacket
 	{
 		if ((client != null) && (client.getActiveChar() != null) && !client.getActiveChar().isInventoryDisabled())
 		{
-			ItemList il = new ItemList(client.getActiveChar(), true);
-			client.sendPacket(il);
+			client.getActiveChar().sendItemList(true);
 		}
 	}
 }

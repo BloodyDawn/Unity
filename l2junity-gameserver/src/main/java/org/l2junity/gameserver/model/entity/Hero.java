@@ -664,7 +664,7 @@ public class Hero
 			
 			if (!iu.getItems().isEmpty())
 			{
-				player.sendPacket(iu);
+				player.sendInventoryUpdate(iu);
 			}
 			
 			player.broadcastUserInfo();

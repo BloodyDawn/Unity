@@ -315,7 +315,7 @@ public class PlayerHandler implements ITelnetHandler
 			// send packets
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(itemInstance);
-			activeChar.sendPacket(iu);
+			activeChar.sendInventoryUpdate(iu);
 			activeChar.broadcastUserInfo();
 			
 			// informations

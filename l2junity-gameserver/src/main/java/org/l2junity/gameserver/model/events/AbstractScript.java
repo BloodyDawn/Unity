@@ -2280,7 +2280,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 			
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(item);
-			player.sendPacket(iu);
+			player.sendInventoryUpdate(iu);
 		}
 		
 		sendItemGetMessage(player, item, count);
@@ -2428,7 +2428,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 			{
 				iu.addModifiedItem(itm);
 			}
-			player.sendPacket(iu);
+			player.sendInventoryUpdate(iu);
 			player.broadcastUserInfo();
 		}
 		return player.destroyItemByItemId("Quest", itemId, amount, player, true);

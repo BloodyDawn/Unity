@@ -34,10 +34,7 @@ import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.EnchantResult;
-import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
-import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
-import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -311,7 +308,7 @@ public final class RequestEnchantItem implements IClientIncomingPacket
 								iu.addModifiedItem(itm);
 							}
 							
-							client.sendPacket(iu);
+							activeChar.sendInventoryUpdate(iu);
 							activeChar.broadcastUserInfo();
 						}
 						
@@ -487,17 +484,15 @@ public final class RequestEnchantItem implements IClientIncomingPacket
 					}
 				}
 				
-				client.sendPacket(iu);
+				activeChar.sendInventoryUpdate(iu);
 			}
 			else
 			{
-				client.sendPacket(new ItemList(activeChar, true));
+				activeChar.sendItemList(true);
 			}
 			
 			request.setProcessing(false);
 			activeChar.broadcastUserInfo(UserInfoType.ENCHANTLEVEL);
-			client.sendPacket(new ExUserInfoInvenWeight(activeChar));
-			client.sendPacket(new ExAdenaInvenCount(activeChar));
 		}
 	}
 }

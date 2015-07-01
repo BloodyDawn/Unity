@@ -24,8 +24,6 @@ import org.l2junity.gameserver.model.actor.request.CompoundRequest;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.recv.IClientIncomingPacket;
-import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
-import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.compound.ExEnchantFail;
 import org.l2junity.gameserver.network.client.send.compound.ExEnchantOneFail;
@@ -133,9 +131,7 @@ public class RequestNewEnchantTry implements IClientIncomingPacket
 			}
 		}
 		
-		client.sendPacket(iu);
-		client.sendPacket(new ExAdenaInvenCount(activeChar));
-		client.sendPacket(new ExUserInfoInvenWeight(activeChar));
+		activeChar.sendInventoryUpdate(iu);
 		activeChar.removeRequest(request.getClass());
 	}
 }

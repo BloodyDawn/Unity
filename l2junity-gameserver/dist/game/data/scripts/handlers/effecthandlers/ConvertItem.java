@@ -93,7 +93,7 @@ public final class ConvertItem extends AbstractEffect
 		{
 			iu.addModifiedItem(item);
 		}
-		player.sendPacket(iu);
+		player.sendInventoryUpdate(iu);
 		
 		if (unequiped.length <= 0)
 		{
@@ -164,7 +164,7 @@ public final class ConvertItem extends AbstractEffect
 		final InventoryUpdate u = new InventoryUpdate();
 		u.addRemovedItem(destroyItem);
 		u.addItem(newItem);
-		player.sendPacket(u);
+		player.sendInventoryUpdate(u);
 		
 		player.broadcastUserInfo();
 	}

@@ -440,7 +440,7 @@ public abstract class AbstractOlympiadGame
 				sm.addLong(holder.getCount());
 				player.sendPacket(sm);
 			});
-			player.sendPacket(iu);
+			player.sendInventoryUpdate(iu);
 		}
 		catch (Exception e)
 		{

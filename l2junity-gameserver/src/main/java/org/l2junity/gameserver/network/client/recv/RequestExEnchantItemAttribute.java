@@ -280,7 +280,7 @@ public class RequestExEnchantItemAttribute implements IClientIncomingPacket
 		player.removeRequest(request.getClass());
 		client.sendPacket(new ExAttributeEnchantResult(result, item.isWeapon(), elementToAdd, elementValue, newValue, successfulAttempts, failedAttempts));
 		client.sendPacket(new UserInfo(player));
-		client.sendPacket(iu);
+		player.sendInventoryUpdate(iu);
 	}
 	
 	private int addElement(final PlayerInstance player, final ItemInstance stone, final ItemInstance item, byte elementToAdd)

@@ -35,9 +35,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ExNoticePostSent;
-import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
-import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
@@ -350,15 +348,12 @@ public final class RequestSendPost implements IClientIncomingPacket
 		// Send updated item list to the player
 		if (playerIU != null)
 		{
-			player.sendPacket(playerIU);
+			player.sendInventoryUpdate(playerIU);
 		}
 		else
 		{
-			player.sendPacket(new ItemList(player, false));
+			player.sendItemList(false);
 		}
-		
-		// Update current load status on player
-		player.sendPacket(new ExUserInfoInvenWeight(player));
 		
 		return true;
 	}

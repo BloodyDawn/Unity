@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 /**
  * @author Nos
  */
-public class ExPacket implements IIncomingPacket<L2GameClient>
+public class ExPacket implements IClientIncomingPacket
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ExPacket.class);
 	

@@ -87,12 +87,13 @@ public final class RequestRestart implements IClientIncomingPacket
 		
 		_logAccounting.info("Logged out, {}", client);
 		
-		// detach the client from the char so that the connection isnt closed in the deleteMe
-		player.setClient(null);
-		
 		player.deleteMe();
 		
 		client.setActiveChar(null);
+		
+		// detach the client from the char so that the connection isnt closed in the deleteMe
+		player.setClient(null);
+		
 		AntiFeedManager.getInstance().onDisconnect(client);
 		
 		// return the client to the authed status

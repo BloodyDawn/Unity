@@ -29,8 +29,6 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.send.InventoryUpdate;
-import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.GMAudit;
 import org.l2junity.gameserver.util.Util;
@@ -198,17 +196,12 @@ public final class RequestDropItem implements IClientIncomingPacket
 		if (item.isEquipped())
 		{
 			ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(item.getLocationSlot());
-			InventoryUpdate iu = new InventoryUpdate();
 			for (ItemInstance itm : unequiped)
 			{
 				itm.unChargeAllShots();
-				iu.addModifiedItem(itm);
 			}
-			activeChar.sendPacket(iu);
 			activeChar.broadcastUserInfo();
-			
-			ItemList il = new ItemList(activeChar, true);
-			activeChar.sendPacket(il);
+			activeChar.sendItemList(true);
 		}
 		
 		ItemInstance dropedItem = activeChar.dropItem("Drop", _objectId, _count, _x, _y, _z, null, false, false);

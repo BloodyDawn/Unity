@@ -80,7 +80,7 @@ public final class RequestHennaEquip implements IClientIncomingPacket
 			activeChar.getInventory().reduceAdena("Henna", henna.getWearFee(), activeChar, activeChar.getLastFolkNPC());
 			final InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(activeChar.getInventory().getAdenaInstance());
-			activeChar.sendPacket(iu);
+			activeChar.sendInventoryUpdate(iu);
 			activeChar.sendPacket(SystemMessageId.THE_SYMBOL_HAS_BEEN_ADDED);
 		}
 		else

@@ -122,7 +122,7 @@ public class RequestUnEquipItem implements IClientIncomingPacket
 			
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addItems(Arrays.asList(unequipped));
-			client.sendPacket(iu);
+			activeChar.sendInventoryUpdate(iu);
 		}
 	}
 }

@@ -181,7 +181,7 @@ public class RequestAlchemyConversion implements IClientIncomingPacket
 		}
 		
 		player.sendPacket(new ExAlchemyConversion(successCount, failureCount));
-		player.sendPacket(ui);
+		player.sendInventoryUpdate(ui);
 		
 	}
 }

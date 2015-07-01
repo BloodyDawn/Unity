@@ -42,7 +42,6 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.Earthquake;
 import org.l2junity.gameserver.network.client.send.ExRedSky;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
-import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.UserInfo;
@@ -126,11 +125,11 @@ public class CursedWeapon implements INamable
 						iu.addModifiedItem(removedItem);
 					}
 					
-					_player.sendPacket(iu);
+					_player.sendInventoryUpdate(iu);
 				}
 				else
 				{
-					_player.sendPacket(new ItemList(_player, true));
+					_player.sendItemList(false);
 				}
 				
 				_player.broadcastUserInfo();
@@ -187,11 +186,11 @@ public class CursedWeapon implements INamable
 						iu.addModifiedItem(removedItem);
 					}
 					
-					_player.sendPacket(iu);
+					_player.sendInventoryUpdate(iu);
 				}
 				else
 				{
-					_player.sendPacket(new ItemList(_player, true));
+					_player.sendItemList(false);
 				}
 				
 				_player.broadcastUserInfo();
@@ -458,12 +457,11 @@ public class CursedWeapon implements INamable
 		{
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addItem(_item);
-			// iu.addItems(Arrays.asList(items));
-			_player.sendPacket(iu);
+			_player.sendInventoryUpdate(iu);
 		}
 		else
 		{
-			_player.sendPacket(new ItemList(_player, false));
+			_player.sendItemList(false);
 		}
 		
 		// Refresh player stats

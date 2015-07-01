@@ -33,10 +33,7 @@ import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.itemcontainer.PcInventory;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
-import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
-import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
@@ -639,28 +636,21 @@ public class TradeList
 			// Send inventory update packet
 			if (ownerIU != null)
 			{
-				_owner.sendPacket(ownerIU);
+				_owner.sendInventoryUpdate(ownerIU);
 			}
 			else
 			{
-				_owner.sendPacket(new ItemList(_owner, false));
+				_owner.sendItemList(false);
 			}
 			
 			if (partnerIU != null)
 			{
-				_partner.sendPacket(partnerIU);
+				_partner.sendInventoryUpdate(partnerIU);
 			}
 			else
 			{
-				_partner.sendPacket(new ItemList(_partner, false));
+				_partner.sendItemList(false);
 			}
-			
-			// Update current load as well
-			_owner.sendPacket(new ExUserInfoInvenWeight(_owner));
-			_owner.sendPacket(new ExAdenaInvenCount(_owner));
-			_partner.sendPacket(new ExUserInfoInvenWeight(_partner));
-			_partner.sendPacket(new ExAdenaInvenCount(_partner));
-			
 			success = true;
 		}
 		// Finish the trade
@@ -882,8 +872,8 @@ public class TradeList
 		}
 		
 		// Send inventory update packet
-		_owner.sendPacket(ownerIU);
-		player.sendPacket(playerIU);
+		_owner.sendInventoryUpdate(ownerIU);
+		player.sendInventoryUpdate(playerIU);
 		if (ok)
 		{
 			return 0;
@@ -1077,8 +1067,8 @@ public class TradeList
 		if (ok)
 		{
 			// Send inventory update packet
-			_owner.sendPacket(ownerIU);
-			player.sendPacket(playerIU);
+			_owner.sendInventoryUpdate(ownerIU);
+			player.sendInventoryUpdate(playerIU);
 		}
 		return ok;
 	}

@@ -44,9 +44,6 @@ public final class ItemList extends AbstractItemPacket
 				_items.add(item);
 			}
 		}
-		
-		activeChar.sendPacket(new ExQuestItemList(activeChar));
-		activeChar.sendPacket(new ExAdenaInvenCount(activeChar));
 	}
 	
 	@Override

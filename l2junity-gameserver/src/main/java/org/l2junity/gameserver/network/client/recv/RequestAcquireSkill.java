@@ -51,7 +51,6 @@ import org.l2junity.gameserver.network.client.send.ExAcquirableSkillListByClass;
 import org.l2junity.gameserver.network.client.send.ExAlchemySkillList;
 import org.l2junity.gameserver.network.client.send.ExBasicActionList;
 import org.l2junity.gameserver.network.client.send.ExStorageMaxCount;
-import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.PledgeSkillList;
 import org.l2junity.gameserver.network.client.send.ShortCutInit;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -684,7 +683,7 @@ public final class RequestAcquireSkill implements IClientIncomingPacket
 		
 		player.addSkill(skill, store);
 		
-		player.sendPacket(new ItemList(player, false));
+		player.sendItemList(false);
 		player.sendPacket(new ShortCutInit(player));
 		player.sendPacket(new ExBasicActionList(ExBasicActionList.DEFAULT_ACTION_LIST));
 		player.sendSkillList(skill.getId());

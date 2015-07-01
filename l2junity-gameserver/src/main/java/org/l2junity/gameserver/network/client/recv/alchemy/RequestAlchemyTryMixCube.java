@@ -212,7 +212,7 @@ public class RequestAlchemyTryMixCube implements IClientIncomingPacket
 			
 			// send packets
 			player.sendPacket(mixCubeResult);
-			player.sendPacket(iu);
+			player.sendInventoryUpdate(iu);
 		}
 		else
 		{

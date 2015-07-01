@@ -63,7 +63,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class InstanceLoader
 {
-	private static final Logger _log = LoggerFactory.getLogger(InstanceLoader.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(InstanceLoader.class);
 	
 	private static final Class<?>[] SCRIPTS =
 	{
@@ -106,7 +106,7 @@ public final class InstanceLoader
 	
 	public static void main(String[] args)
 	{
-		_log.info(InstanceLoader.class.getSimpleName() + ": Loading Instances scripts.");
+		LOGGER.info("Loading Instances scripts.");
 		for (Class<?> script : SCRIPTS)
 		{
 			try
@@ -115,7 +115,7 @@ public final class InstanceLoader
 			}
 			catch (Exception e)
 			{
-				_log.error(InstanceLoader.class.getSimpleName() + ": Failed loading " + script.getSimpleName() + ":", e);
+				LOGGER.error("Failed loading {}", script.getSimpleName(), e);
 			}
 		}
 	}

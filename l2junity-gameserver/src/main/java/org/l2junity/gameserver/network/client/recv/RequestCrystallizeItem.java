@@ -213,7 +213,7 @@ public final class RequestCrystallizeItem implements IClientIncomingPacket
 			{
 				iu.addModifiedItem(item);
 			}
-			client.sendPacket(iu);
+			activeChar.sendInventoryUpdate(iu);
 			
 			if (itemToRemove.getEnchantLevel() > 0)
 			{
@@ -234,7 +234,7 @@ public final class RequestCrystallizeItem implements IClientIncomingPacket
 		
 		final InventoryUpdate iu = new InventoryUpdate();
 		iu.addRemovedItem(removedItem);
-		client.sendPacket(iu);
+		activeChar.sendInventoryUpdate(iu);
 		
 		final int crystalId = itemToRemove.getItem().getCrystalItemId();
 		final int crystalAmount = itemToRemove.getCrystalCount();

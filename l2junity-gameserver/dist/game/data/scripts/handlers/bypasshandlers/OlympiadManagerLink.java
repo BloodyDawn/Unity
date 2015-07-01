@@ -222,7 +222,7 @@ public class OlympiadManagerLink implements IBypassHandler
 							
 							InventoryUpdate iu = new InventoryUpdate();
 							iu.addModifiedItem(item);
-							activeChar.sendPacket(iu);
+							activeChar.sendInventoryUpdate(iu);
 							
 							final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1_S);
 							sm.addLong(passes);

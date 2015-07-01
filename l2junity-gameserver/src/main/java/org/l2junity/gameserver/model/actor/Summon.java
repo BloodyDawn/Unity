@@ -61,6 +61,7 @@ import org.l2junity.gameserver.network.client.send.ExPartyPetWindowDelete;
 import org.l2junity.gameserver.network.client.send.ExPartyPetWindowUpdate;
 import org.l2junity.gameserver.network.client.send.ExPetInfo;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
+import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.PetDelete;
 import org.l2junity.gameserver.network.client.send.PetInfo;
 import org.l2junity.gameserver.network.client.send.PetItemList;
@@ -1223,5 +1224,14 @@ public abstract class Summon extends Playable
 	public int getSummonPoints()
 	{
 		return _summonPoints;
+	}
+	
+	public void sendInventoryUpdate(InventoryUpdate iu)
+	{
+		final PlayerInstance owner = getOwner();
+		if (owner != null)
+		{
+			owner.sendInventoryUpdate(iu);
+		}
 	}
 }

@@ -43,7 +43,6 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
-import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.RecipeBookItemList;
 import org.l2junity.gameserver.network.client.send.RecipeItemMakeInfo;
@@ -439,10 +438,9 @@ public class RecipeController
 			}
 			// update load and mana bar of craft window
 			updateCurMp();
-			updateCurLoad();
 			_activeMakers.remove(_player.getObjectId());
 			_player.isInCraftMode(false);
-			_target.sendPacket(new ItemList(_target, false));
+			_target.sendItemList(false);
 		}
 		
 		private void updateMakeInfo(boolean success)

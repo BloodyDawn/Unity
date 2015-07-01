@@ -23,7 +23,6 @@ import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
-import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -91,11 +90,11 @@ public class CombatFlag
 		{
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addItem(_item);
-			_player.sendPacket(iu);
+			_player.sendInventoryUpdate(iu);
 		}
 		else
 		{
-			_player.sendPacket(new ItemList(_player, false));
+			_player.sendItemList(false);
 		}
 		// Refresh player stats
 		_player.broadcastUserInfo();

@@ -35,8 +35,6 @@ import org.l2junity.gameserver.model.multisell.Entry;
 import org.l2junity.gameserver.model.multisell.Ingredient;
 import org.l2junity.gameserver.model.multisell.PreparedListContainer;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
-import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
@@ -449,8 +447,7 @@ public class MultiSellChoose implements IClientIncomingPacket
 						break;
 					}
 				}
-				player.sendPacket(new ItemList(player, false));
-				player.sendPacket(new ExUserInfoInvenWeight(player));
+				player.sendItemList(false);
 				
 				// finally, give the tax to the castle...
 				if ((npc != null) && (entry.getTaxAmount() > 0))

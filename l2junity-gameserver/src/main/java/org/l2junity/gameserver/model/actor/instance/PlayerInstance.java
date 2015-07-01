@@ -274,6 +274,7 @@ import org.l2junity.gameserver.network.client.send.ExMagicAttackInfo;
 import org.l2junity.gameserver.network.client.send.ExOlympiadMode;
 import org.l2junity.gameserver.network.client.send.ExPledgeCount;
 import org.l2junity.gameserver.network.client.send.ExPrivateStoreSetWholeMsg;
+import org.l2junity.gameserver.network.client.send.ExQuestItemList;
 import org.l2junity.gameserver.network.client.send.ExSetCompassZoneCode;
 import org.l2junity.gameserver.network.client.send.ExStartScenePlayer;
 import org.l2junity.gameserver.network.client.send.ExStopScenePlayer;
@@ -2192,7 +2193,7 @@ public final class PlayerInstance extends Playable
 		
 		InventoryUpdate iu = new InventoryUpdate();
 		iu.addItems(Arrays.asList(items));
-		sendPacket(iu);
+		sendInventoryUpdate(iu);
 		
 		if (abortAttack)
 		{
@@ -2952,14 +2953,12 @@ public final class PlayerInstance extends Playable
 			{
 				InventoryUpdate iu = new InventoryUpdate();
 				iu.addItem(_inventory.getAdenaInstance());
-				sendPacket(iu);
+				sendInventoryUpdate(iu);
 			}
 			else
 			{
-				sendPacket(new ItemList(this, false));
+				sendItemList(false);
 			}
-			
-			sendPacket(new ExAdenaInvenCount(this));
 		}
 	}
 	
@@ -2995,14 +2994,12 @@ public final class PlayerInstance extends Playable
 			{
 				InventoryUpdate iu = new InventoryUpdate();
 				iu.addItem(adenaItem);
-				sendPacket(iu);
+				sendInventoryUpdate(iu);
 			}
 			else
 			{
-				sendPacket(new ItemList(this, false));
+				sendItemList(false);
 			}
-			
-			sendPacket(new ExAdenaInvenCount(this));
 			
 			if (sendMessage)
 			{
@@ -3047,11 +3044,11 @@ public final class PlayerInstance extends Playable
 			{
 				InventoryUpdate iu = new InventoryUpdate();
 				iu.addItem(beautyTickets);
-				sendPacket(iu);
+				sendInventoryUpdate(iu);
 			}
 			else
 			{
-				sendPacket(new ItemList(this, false));
+				sendItemList(false);
 			}
 			
 			if (sendMessage)
@@ -3100,11 +3097,11 @@ public final class PlayerInstance extends Playable
 			{
 				InventoryUpdate iu = new InventoryUpdate();
 				iu.addItem(_inventory.getAncientAdenaInstance());
-				sendPacket(iu);
+				sendInventoryUpdate(iu);
 			}
 			else
 			{
-				sendPacket(new ItemList(this, false));
+				sendItemList(false);
 			}
 		}
 	}
@@ -3141,11 +3138,11 @@ public final class PlayerInstance extends Playable
 			{
 				InventoryUpdate iu = new InventoryUpdate();
 				iu.addItem(ancientAdenaItem);
-				sendPacket(iu);
+				sendInventoryUpdate(iu);
 			}
 			else
 			{
-				sendPacket(new ItemList(this, false));
+				sendItemList(false);
 			}
 			
 			if (sendMessage)
@@ -3213,16 +3210,12 @@ public final class PlayerInstance extends Playable
 			{
 				InventoryUpdate playerIU = new InventoryUpdate();
 				playerIU.addItem(newitem);
-				sendPacket(playerIU);
+				sendInventoryUpdate(playerIU);
 			}
 			else
 			{
-				sendPacket(new ItemList(this, false));
+				sendItemList(false);
 			}
-			
-			// Update current load as well
-			sendPacket(new ExUserInfoInvenWeight(this));
-			sendPacket(new ExAdenaInvenCount(this));
 			
 			// If over capacity, drop the item
 			if (!canOverrideCond(PcCondOverride.ITEM_CONDITIONS) && !_inventory.validateCapacity(0, item.isQuestItem()) && newitem.isDropable() && (!newitem.isStackable() || (newitem.getLastChange() != ItemInstance.MODIFIED)))
@@ -3386,16 +3379,12 @@ public final class PlayerInstance extends Playable
 		{
 			InventoryUpdate playerIU = new InventoryUpdate();
 			playerIU.addItem(item);
-			sendPacket(playerIU);
+			sendInventoryUpdate(playerIU);
 		}
 		else
 		{
-			sendPacket(new ItemList(this, false));
+			sendItemList(false);
 		}
-		
-		// Update current load as well
-		sendPacket(new ExUserInfoInvenWeight(this));
-		sendPacket(new ExAdenaInvenCount(this));
 		
 		// Sends message to client if requested
 		if (sendMessage)
@@ -3504,15 +3493,12 @@ public final class PlayerInstance extends Playable
 		{
 			InventoryUpdate playerIU = new InventoryUpdate();
 			playerIU.addItem(item);
-			sendPacket(playerIU);
+			sendInventoryUpdate(playerIU);
 		}
 		else
 		{
-			sendPacket(new ItemList(this, false));
+			sendItemList(false);
 		}
-		
-		// Update current load as well
-		sendPacket(new ExUserInfoInvenWeight(this));
 		
 		// Sends message to client if requested
 		if (sendMessage)
@@ -3571,16 +3557,12 @@ public final class PlayerInstance extends Playable
 				playerIU.addRemovedItem(oldItem);
 			}
 			
-			sendPacket(playerIU);
+			sendInventoryUpdate(playerIU);
 		}
 		else
 		{
-			sendPacket(new ItemList(this, false));
+			sendItemList(false);
 		}
-		
-		// Update current load as well
-		sendPacket(new ExUserInfoInvenWeight(this));
-		sendPacket(new ExAdenaInvenCount(this));
 		
 		// Send target update packet
 		if (target instanceof PcInventory)
@@ -3604,12 +3586,8 @@ public final class PlayerInstance extends Playable
 			}
 			else
 			{
-				targetPlayer.sendPacket(new ItemList(targetPlayer, false));
+				targetPlayer.sendItemList(false);
 			}
-			
-			// Update current load as well
-			sendPacket(new ExUserInfoInvenWeight(this));
-			sendPacket(new ExAdenaInvenCount(this));
 		}
 		else if (target instanceof PetInventory)
 		{
@@ -3731,16 +3709,12 @@ public final class PlayerInstance extends Playable
 		{
 			InventoryUpdate playerIU = new InventoryUpdate();
 			playerIU.addItem(item);
-			sendPacket(playerIU);
+			sendInventoryUpdate(playerIU);
 		}
 		else
 		{
-			sendPacket(new ItemList(this, false));
+			sendItemList(false);
 		}
-		
-		// Update current load as well
-		sendPacket(new ExUserInfoInvenWeight(this));
-		sendPacket(new ExAdenaInvenCount(this));
 		
 		// Sends message to client if requested
 		if (sendMessage)
@@ -3822,16 +3796,12 @@ public final class PlayerInstance extends Playable
 		{
 			InventoryUpdate playerIU = new InventoryUpdate();
 			playerIU.addItem(invitem);
-			sendPacket(playerIU);
+			sendInventoryUpdate(playerIU);
 		}
 		else
 		{
-			sendPacket(new ItemList(this, false));
+			sendItemList(false);
 		}
-		
-		// Update current load as well
-		sendPacket(new ExUserInfoInvenWeight(this));
-		sendPacket(new ExAdenaInvenCount(this));
 		
 		// Sends message to client if requested
 		if (sendMessage)
@@ -6059,7 +6029,7 @@ public final class PlayerInstance extends Playable
 			{
 				_arrowItem = null;
 			}
-			sendPacket(new ItemList(this, false));
+			sendItemList(false);
 			return;
 		}
 		
@@ -6100,7 +6070,7 @@ public final class PlayerInstance extends Playable
 				_arrowItem = null;
 			}
 			
-			sendPacket(new ItemList(this, false));
+			sendItemList(false);
 			return;
 		}
 		
@@ -6108,11 +6078,11 @@ public final class PlayerInstance extends Playable
 		{
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(arrows);
-			sendPacket(iu);
+			sendInventoryUpdate(iu);
 		}
 		else
 		{
-			sendPacket(new ItemList(this, false));
+			sendItemList(false);
 		}
 	}
 	
@@ -6131,10 +6101,7 @@ public final class PlayerInstance extends Playable
 			{
 				// Equip arrows needed in left hand
 				getInventory().setPaperdollItem(Inventory.PAPERDOLL_LHAND, _arrowItem);
-				
-				// Send a Server->Client packet ItemList to this L2PcINstance to update left hand equipement
-				ItemList il = new ItemList(this, false);
-				sendPacket(il);
+				sendItemList(false);
 			}
 		}
 		else
@@ -6160,10 +6127,7 @@ public final class PlayerInstance extends Playable
 			{
 				// Equip arrows needed in left hand
 				getInventory().setPaperdollItem(Inventory.PAPERDOLL_LHAND, _boltItem);
-				
-				// Send a Server->Client packet ItemList to this L2PcINstance to update left hand equipement
-				ItemList il = new ItemList(this, false);
-				sendPacket(il);
+				sendItemList(false);
 			}
 		}
 		else
@@ -6212,7 +6176,7 @@ public final class PlayerInstance extends Playable
 			iu.addModifiedItem(itm);
 		}
 		
-		sendPacket(iu);
+		sendInventoryUpdate(iu);
 		abortAttack();
 		broadcastUserInfo();
 		
@@ -6251,7 +6215,7 @@ public final class PlayerInstance extends Playable
 			{
 				iu.addModifiedItem(itm);
 			}
-			sendPacket(iu);
+			sendInventoryUpdate(iu);
 			
 			abortAttack();
 			broadcastUserInfo();
@@ -12564,7 +12528,7 @@ public final class PlayerInstance extends Playable
 				
 				InventoryUpdate iu = new InventoryUpdate();
 				iu.addModifiedItem(equippedItem);
-				sendPacket(iu);
+				sendInventoryUpdate(iu);
 				
 				SystemMessage sm = null;
 				if (equippedItem.getItem().getBodyPart() == L2Item.SLOT_BACK)
@@ -14682,5 +14646,26 @@ public final class PlayerInstance extends Playable
 	public int getQuestZoneId()
 	{
 		return _questZoneId;
+	}
+	
+	/**
+	 * @param iu
+	 */
+	public void sendInventoryUpdate(InventoryUpdate iu)
+	{
+		sendPacket(iu);
+		sendPacket(new ExAdenaInvenCount(this));
+		sendPacket(new ExUserInfoInvenWeight(this));
+	}
+	
+	/**
+	 * @param open
+	 */
+	public void sendItemList(boolean open)
+	{
+		sendPacket(new ItemList(this, open));
+		sendPacket(new ExQuestItemList(this));
+		sendPacket(new ExAdenaInvenCount(this));
+		sendPacket(new ExUserInfoInvenWeight(this));
 	}
 }

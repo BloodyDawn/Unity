@@ -32,9 +32,7 @@ import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
-import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
@@ -217,7 +215,7 @@ public final class RequestDestroyItem implements IClientIncomingPacket
 			{
 				iu.addModifiedItem(itm);
 			}
-			client.sendPacket(iu);
+			activeChar.sendInventoryUpdate(iu);
 		}
 		
 		ItemInstance removedItem = activeChar.getInventory().destroyItem("Destroy", itemToRemove, count, activeChar, null);
@@ -238,13 +236,11 @@ public final class RequestDestroyItem implements IClientIncomingPacket
 			{
 				iu.addModifiedItem(removedItem);
 			}
-			client.sendPacket(iu);
+			activeChar.sendInventoryUpdate(iu);
 		}
 		else
 		{
-			client.sendPacket(new ItemList(activeChar, true));
+			activeChar.sendItemList(true);
 		}
-		
-		client.sendPacket(new ExUserInfoInvenWeight(activeChar));
 	}
 }

@@ -69,6 +69,7 @@ import org.l2junity.gameserver.network.client.send.ExNoticePostArrived;
 import org.l2junity.gameserver.network.client.send.ExNotifyPremiumItem;
 import org.l2junity.gameserver.network.client.send.ExPledgeCount;
 import org.l2junity.gameserver.network.client.send.ExPledgeWaitingListAlarm;
+import org.l2junity.gameserver.network.client.send.ExQuestItemList;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.ExShowUsm;
 import org.l2junity.gameserver.network.client.send.ExStorageMaxCount;
@@ -321,6 +322,12 @@ public class EnterWorld implements IClientIncomingPacket
 		
 		// Send Item List
 		client.sendPacket(new ItemList(activeChar, false));
+		
+		// Send Quest Item List
+		client.sendPacket(new ExQuestItemList(activeChar));
+		
+		// Send Adena and Inventory Count
+		client.sendPacket(new ExAdenaInvenCount(activeChar));
 		
 		// Send Shortcuts
 		client.sendPacket(new ShortCutInit(activeChar));

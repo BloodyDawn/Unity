@@ -42,10 +42,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.inventory.OnPl
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.variables.ItemVariables;
-import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
-import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
-import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -465,16 +462,12 @@ public class PcInventory extends Inventory
 				{
 					InventoryUpdate playerIU = new InventoryUpdate();
 					playerIU.addItem(item);
-					actor.sendPacket(playerIU);
+					actor.sendInventoryUpdate(playerIU);
 				}
 				else
 				{
-					actor.sendPacket(new ItemList(actor, false));
+					actor.sendItemList(false);
 				}
-				
-				// Update current load as well
-				actor.sendPacket(new ExUserInfoInvenWeight(actor));
-				actor.sendPacket(new ExAdenaInvenCount(actor));
 				
 				// Notify to scripts
 				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerItemAdd(actor, item), item.getItem());
@@ -520,16 +513,12 @@ public class PcInventory extends Inventory
 			{
 				InventoryUpdate playerIU = new InventoryUpdate();
 				playerIU.addItem(item);
-				actor.sendPacket(playerIU);
+				actor.sendInventoryUpdate(playerIU);
 			}
 			else
 			{
-				actor.sendPacket(new ItemList(actor, false));
+				actor.sendItemList(false);
 			}
-			
-			// Update current load as well
-			actor.sendPacket(new ExUserInfoInvenWeight(actor));
-			actor.sendPacket(new ExAdenaInvenCount(actor));
 			
 			// Notify to scripts
 			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerItemAdd(actor, item), item.getItem());
@@ -575,12 +564,8 @@ public class PcInventory extends Inventory
 		
 		if ((item != null) && (actor != null))
 		{
-			actor.sendPacket(new ItemList(actor, false));
-			
-			// Update current load as well
-			actor.sendPacket(new ExUserInfoInvenWeight(actor));
+			actor.sendItemList(false);
 		}
-		
 		return item;
 	}
 	
@@ -928,7 +913,7 @@ public class PcInventory extends Inventory
 		_blockMode = mode;
 		_blockItems = items;
 		
-		_owner.sendPacket(new ItemList(_owner, false));
+		_owner.sendItemList(false);
 	}
 	
 	/**
@@ -939,7 +924,7 @@ public class PcInventory extends Inventory
 		_blockMode = -1;
 		_blockItems = null;
 		
-		_owner.sendPacket(new ItemList(_owner, false));
+		_owner.sendItemList(false);
 	}
 	
 	/**

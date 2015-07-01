@@ -284,7 +284,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 			player.sendPacket(sms);
 			
 			// Send inventory update packet
-			player.sendPacket(playerIU);
+			player.sendInventoryUpdate(playerIU);
 		}
 	}
 	

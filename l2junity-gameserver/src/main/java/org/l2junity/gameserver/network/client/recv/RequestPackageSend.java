@@ -27,9 +27,7 @@ import org.l2junity.gameserver.model.itemcontainer.ItemContainer;
 import org.l2junity.gameserver.model.itemcontainer.PcFreight;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
-import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 import org.l2junity.network.PacketReader;
@@ -200,10 +198,14 @@ public class RequestPackageSend implements IClientIncomingPacket
 		warehouse.deleteMe();
 		
 		// Send updated item list to the player
-		client.sendPacket(playerIU != null ? playerIU : new ItemList(player, false));
-		
-		// Update current load status on player
-		player.sendPacket(new ExUserInfoInvenWeight(player));
+		if (playerIU != null)
+		{
+			player.sendInventoryUpdate(playerIU);
+		}
+		else
+		{
+			player.sendItemList(false);
+		}
 	}
 	
 }

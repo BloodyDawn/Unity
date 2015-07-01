@@ -33,9 +33,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ExChangePostState;
-import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
-import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
@@ -230,17 +228,14 @@ public final class RequestPostAttachment implements IClientIncomingPacket
 		// Send updated item list to the player
 		if (playerIU != null)
 		{
-			client.sendPacket(playerIU);
+			activeChar.sendInventoryUpdate(playerIU);
 		}
 		else
 		{
-			client.sendPacket(new ItemList(activeChar, false));
+			activeChar.sendItemList(false);
 		}
 		
 		msg.removeAttachments();
-		
-		// Update current load status on player
-		client.sendPacket(new ExUserInfoInvenWeight(activeChar));
 		
 		SystemMessage sm;
 		final PlayerInstance sender = World.getInstance().getPlayer(msg.getSenderId());

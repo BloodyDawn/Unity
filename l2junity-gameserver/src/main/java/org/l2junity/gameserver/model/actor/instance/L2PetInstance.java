@@ -67,7 +67,6 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.ExChangeNpcState;
-import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.PetInventoryUpdate;
 import org.l2junity.gameserver.network.client.send.StopMove;
@@ -734,13 +733,13 @@ public class L2PetInstance extends Summon
 		{
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addNewItem(newItem);
-			sendPacket(iu);
+			sendInventoryUpdate(iu);
 		}
 		else if ((playerOldItem != null) && newItem.isStackable())
 		{
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(newItem);
-			sendPacket(iu);
+			sendInventoryUpdate(iu);
 		}
 		
 		return newItem;
@@ -784,10 +783,7 @@ public class L2PetInstance extends Summon
 				InventoryUpdate iu = new InventoryUpdate();
 				iu.addRemovedItem(removedItem);
 				
-				owner.sendPacket(iu);
-				
-				owner.sendPacket(new ExUserInfoInvenWeight(owner));
-				
+				owner.sendInventoryUpdate(iu);
 				owner.broadcastUserInfo();
 				
 				World.getInstance().removeObject(removedItem);
@@ -1406,7 +1402,7 @@ public class L2PetInstance extends Summon
 				controlItem.updateDatabase();
 				InventoryUpdate iu = new InventoryUpdate();
 				iu.addModifiedItem(controlItem);
-				sendPacket(iu);
+				sendInventoryUpdate(iu);
 			}
 		}
 		else

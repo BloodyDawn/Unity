@@ -78,9 +78,6 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.variables.ItemVariables;
 import org.l2junity.gameserver.network.client.send.DropItem;
-import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
-import org.l2junity.gameserver.network.client.send.ExUserInfoEquipSlot;
-import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.GetItem;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.SpawnItem;
@@ -1338,7 +1335,7 @@ public final class ItemInstance extends WorldObject
 						item.unChargeAllShots();
 						iu.addModifiedItem(item);
 					}
-					player.sendPacket(iu);
+					player.sendInventoryUpdate(iu);
 					player.broadcastUserInfo();
 				}
 				
@@ -1350,11 +1347,7 @@ public final class ItemInstance extends WorldObject
 					// send update
 					InventoryUpdate iu = new InventoryUpdate();
 					iu.addRemovedItem(this);
-					player.sendPacket(iu);
-					
-					player.sendPacket(new ExUserInfoInvenWeight(player));
-					player.sendPacket(new ExAdenaInvenCount(player));
-					
+					player.sendInventoryUpdate(iu);
 				}
 				else
 				{
@@ -1375,7 +1368,7 @@ public final class ItemInstance extends WorldObject
 				{
 					InventoryUpdate iu = new InventoryUpdate();
 					iu.addModifiedItem(this);
-					player.sendPacket(iu);
+					player.sendInventoryUpdate(iu);
 				}
 			}
 		}
@@ -1848,11 +1841,7 @@ public final class ItemInstance extends WorldObject
 				// send update
 				InventoryUpdate iu = new InventoryUpdate();
 				iu.addRemovedItem(this);
-				player.sendPacket(iu);
-				
-				player.sendPacket(new ExUserInfoInvenWeight(player));
-				player.sendPacket(new ExAdenaInvenCount(player));
-				
+				player.sendInventoryUpdate(iu);
 			}
 			else
 			{
@@ -2298,8 +2287,7 @@ public final class ItemInstance extends WorldObject
 			final InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(this);
 			player.broadcastUserInfo(UserInfoType.APPAREANCE);
-			player.sendPacket(new ExUserInfoEquipSlot(player));
-			player.sendPacket(iu);
+			player.sendInventoryUpdate(iu);
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_BEEN_RESTORED_TO_ITS_PREVIOUS_APPEARANCE_AS_ITS_TEMPORARY_MODIFICATION_HAS_EXPIRED).addItemName(this));
 		}
 	}

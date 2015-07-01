@@ -57,7 +57,6 @@ import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.CreatureSay;
 import org.l2junity.gameserver.network.client.send.ExSubPledgeSkillAdd;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
-import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.PledgeReceiveSubPledgeCreated;
 import org.l2junity.gameserver.network.client.send.PledgeShowInfoUpdate;
 import org.l2junity.gameserver.network.client.send.PledgeShowMemberListAll;
@@ -2672,11 +2671,11 @@ public class L2Clan implements IIdentifiable, INamable
 		}
 		
 		// the player should know that he has less sp now :p
-		UserInfo ui = new UserInfo(player, false);
+		final UserInfo ui = new UserInfo(player, false);
 		ui.addComponentType(UserInfoType.CURRENT_HPMPCP_EXP_SP);
 		player.sendPacket(ui);
 		
-		player.sendPacket(new ItemList(player, false));
+		player.sendItemList(false);
 		
 		changeLevel(getLevel() + 1);
 		

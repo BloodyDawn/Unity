@@ -80,7 +80,7 @@ public class RequestExRemoveItemAttribute implements IClientIncomingPacket
 			
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(targetItem);
-			client.sendPacket(iu);
+			activeChar.sendInventoryUpdate(iu);
 			SystemMessage sm;
 			byte realElement = targetItem.isArmor() ? Elementals.getOppositeElement(_element) : _element;
 			if (targetItem.getEnchantLevel() > 0)

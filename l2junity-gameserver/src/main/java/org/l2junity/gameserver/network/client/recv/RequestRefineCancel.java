@@ -149,6 +149,6 @@ public final class RequestRefineCancel implements IClientIncomingPacket
 		// send inventory update
 		InventoryUpdate iu = new InventoryUpdate();
 		iu.addModifiedItem(targetItem);
-		client.sendPacket(iu);
+		activeChar.sendInventoryUpdate(iu);
 	}
 }

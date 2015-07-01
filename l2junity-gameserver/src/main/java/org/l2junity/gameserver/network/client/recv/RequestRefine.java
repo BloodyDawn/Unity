@@ -23,7 +23,6 @@ import org.l2junity.gameserver.model.Augmentation;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.ExVariationResult;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -105,7 +104,7 @@ public final class RequestRefine extends AbstractRefinePacket
 			{
 				iu.addModifiedItem(itm);
 			}
-			activeChar.sendPacket(iu);
+			activeChar.sendInventoryUpdate(iu);
 			activeChar.broadcastUserInfo();
 		}
 		
@@ -130,9 +129,7 @@ public final class RequestRefine extends AbstractRefinePacket
 		
 		InventoryUpdate iu = new InventoryUpdate();
 		iu.addModifiedItem(targetItem);
-		activeChar.sendPacket(iu);
-		
-		activeChar.sendPacket(new ExUserInfoInvenWeight(activeChar));
+		activeChar.sendInventoryUpdate(iu);
 	}
 	
 }

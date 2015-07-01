@@ -34,8 +34,6 @@ import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
-import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.MagicSkillLaunched;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
@@ -239,10 +237,7 @@ public final class Evolve
 		// Inventory update
 		InventoryUpdate iu = new InventoryUpdate();
 		iu.addRemovedItem(removedItem);
-		player.sendPacket(iu);
-		
-		player.sendPacket(new ExUserInfoInvenWeight(player));
-		player.sendPacket(new ExAdenaInvenCount(player));
+		player.sendInventoryUpdate(iu);
 		
 		player.broadcastUserInfo();
 		

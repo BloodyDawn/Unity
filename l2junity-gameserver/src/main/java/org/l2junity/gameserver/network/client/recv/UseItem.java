@@ -47,7 +47,6 @@ import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.ExUseSharedGroupItem;
-import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
@@ -364,7 +363,7 @@ public final class UseItem implements IClientIncomingPacket
 				activeChar.getInventory().setPaperdollItem(Inventory.PAPERDOLL_LHAND, item);
 				activeChar.broadcastUserInfo();
 				// Send a Server->Client packet ItemList to this L2PcINstance to update left hand equipment.
-				client.sendPacket(new ItemList(activeChar, false));
+				activeChar.sendItemList(false);
 				return;
 			}
 			

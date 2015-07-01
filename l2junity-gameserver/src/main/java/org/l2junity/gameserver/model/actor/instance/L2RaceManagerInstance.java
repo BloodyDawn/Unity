@@ -437,7 +437,7 @@ public class L2RaceManagerInstance extends Npc
 			iu.addItem(item);
 			ItemInstance adenaupdate = player.getInventory().getItemByItemId(Inventory.ADENA_ID);
 			iu.addModifiedItem(adenaupdate);
-			player.sendPacket(iu);
+			player.sendInventoryUpdate(iu);
 			return;
 		}
 		html.replace("1race", String.valueOf(_raceNumber));

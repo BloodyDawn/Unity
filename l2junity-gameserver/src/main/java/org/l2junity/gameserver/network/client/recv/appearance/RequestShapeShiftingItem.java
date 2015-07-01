@@ -393,7 +393,7 @@ public class RequestShapeShiftingItem implements IClientIncomingPacket
 		{
 			iu.addModifiedItem(stone);
 		}
-		client.sendPacket(iu);
+		player.sendInventoryUpdate(iu);
 		
 		player.removeRequest(ShapeShiftingItemRequest.class);
 		client.sendPacket(new ExShapeShiftingResult(ExShapeShiftingResult.RESULT_SUCCESS, targetItem.getId(), extracItemId));
