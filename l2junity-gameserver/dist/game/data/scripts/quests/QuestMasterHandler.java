@@ -123,6 +123,7 @@ import quests.Q00457_LostAndFound.Q00457_LostAndFound;
 import quests.Q00458_PerfectForm.Q00458_PerfectForm;
 import quests.Q00463_IMustBeaGenius.Q00463_IMustBeaGenius;
 import quests.Q00464_Oath.Q00464_Oath;
+import quests.Q00481_ShadowHelper.Q00481_ShadowHelper;
 import quests.Q00490_DutyOfTheSurvivor.Q00490_DutyOfTheSurvivor;
 import quests.Q00501_ProofOfClanAlliance.Q00501_ProofOfClanAlliance;
 import quests.Q00504_CompetitionForTheBanditStronghold.Q00504_CompetitionForTheBanditStronghold;
@@ -260,6 +261,9 @@ import quests.Q10762_MarionetteSpirit.Q10762_MarionetteSpirit;
 import quests.Q10763_TerrifyingChertuba.Q10763_TerrifyingChertuba;
 import quests.Q10764_FreeSpirit.Q10764_FreeSpirit;
 import quests.Q10769_LettersFromTheQueenCrumaTowerPart1.Q10769_LettersFromTheQueenCrumaTowerPart1;
+import quests.Q10770_InSearchOfTheGrail.Q10770_InSearchOfTheGrail;
+import quests.Q10771_VolatilePower.Q10771_VolatilePower;
+import quests.Q10772_ReportsFromCrumaTowerPart1.Q10772_ReportsFromCrumaTowerPart1;
 
 /**
  * @author NosBit
@@ -372,6 +376,7 @@ public class QuestMasterHandler
 		Q00458_PerfectForm.class,
 		Q00463_IMustBeaGenius.class,
 		Q00464_Oath.class,
+		Q00481_ShadowHelper.class,
 		Q00490_DutyOfTheSurvivor.class,
 		Q00501_ProofOfClanAlliance.class,
 		Q00504_CompetitionForTheBanditStronghold.class,
@@ -508,7 +513,10 @@ public class QuestMasterHandler
 		Q10762_MarionetteSpirit.class,
 		Q10763_TerrifyingChertuba.class,
 		Q10764_FreeSpirit.class,
-		Q10769_LettersFromTheQueenCrumaTowerPart1.class
+		Q10769_LettersFromTheQueenCrumaTowerPart1.class,
+		Q10770_InSearchOfTheGrail.class,
+		Q10771_VolatilePower.class,
+		Q10772_ReportsFromCrumaTowerPart1.class
 	};
 	
 	public static void main(String[] args)
