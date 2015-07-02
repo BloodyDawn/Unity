@@ -52,14 +52,14 @@ public final class HennaInfo implements IClientOutgoingPacket
 	{
 		OutgoingPackets.HENNA_INFO.writeId(packet);
 		
-		packet.writeC(_activeChar.getHennaStatINT()); // equip INT
-		packet.writeC(_activeChar.getHennaStatSTR()); // equip STR
-		packet.writeC(_activeChar.getHennaStatCON()); // equip CON
-		packet.writeC(_activeChar.getHennaStatMEN()); // equip MEN
-		packet.writeC(_activeChar.getHennaStatDEX()); // equip DEX
-		packet.writeC(_activeChar.getHennaStatWIT()); // equip WIT
-		packet.writeC(_activeChar.getHennaStatLUC()); // equip LUC
-		packet.writeC(_activeChar.getHennaStatCHA()); // equip CHA
+		packet.writeD(_activeChar.getHennaStatINT()); // equip INT
+		packet.writeD(_activeChar.getHennaStatSTR()); // equip STR
+		packet.writeD(_activeChar.getHennaStatCON()); // equip CON
+		packet.writeD(_activeChar.getHennaStatMEN()); // equip MEN
+		packet.writeD(_activeChar.getHennaStatDEX()); // equip DEX
+		packet.writeD(_activeChar.getHennaStatWIT()); // equip WIT
+		packet.writeD(_activeChar.getHennaStatLUC()); // equip LUC
+		packet.writeD(_activeChar.getHennaStatCHA()); // equip CHA
 		packet.writeD(3 - _activeChar.getHennaEmptySlots()); // Slots
 		packet.writeD(_hennas.size()); // Size
 		for (Henna henna : _hennas)
@@ -67,9 +67,9 @@ public final class HennaInfo implements IClientOutgoingPacket
 			packet.writeD(henna.getDyeId());
 			packet.writeD(henna.isAllowedClass(_activeChar.getClassId()) ? 0x01 : 0x00);
 		}
-		packet.writeD(0x00); // Unknown
-		packet.writeD(0x00); // Unknown
-		packet.writeD(0x00); // Unknown
+		packet.writeD(0x00); // Premium Slot Dye ID
+		packet.writeD(0x00); // Premium Slot Dye Time Left
+		packet.writeD(0x00); // Premium Slot Dye ID isValid
 		return true;
 	}
 }

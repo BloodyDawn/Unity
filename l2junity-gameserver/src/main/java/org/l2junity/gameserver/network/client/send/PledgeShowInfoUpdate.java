@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
+import org.l2junity.Config;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
@@ -38,6 +39,7 @@ public class PledgeShowInfoUpdate implements IClientOutgoingPacket
 		
 		// sending empty data so client will ask all the info in response ;)
 		packet.writeD(_clan.getId());
+		packet.writeD(Config.SERVER_ID);
 		packet.writeD(_clan.getCrestId());
 		packet.writeD(_clan.getLevel()); // clan level
 		packet.writeD(_clan.getCastleId());

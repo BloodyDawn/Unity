@@ -87,7 +87,7 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 		packet.writeD(_skillId);
 		packet.writeD(_skillLevel);
 		packet.writeD(_hitTime);
-		packet.writeD(-1); // TODO: Find me!
+		packet.writeD(-1); // TODO: Combo skills ?
 		packet.writeD(_reuseDelay);
 		packet.writeD(_activeChar.getX());
 		packet.writeD(_activeChar.getY());
