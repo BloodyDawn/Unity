@@ -264,6 +264,7 @@ import quests.Q10769_LettersFromTheQueenCrumaTowerPart1.Q10769_LettersFromTheQue
 import quests.Q10770_InSearchOfTheGrail.Q10770_InSearchOfTheGrail;
 import quests.Q10771_VolatilePower.Q10771_VolatilePower;
 import quests.Q10772_ReportsFromCrumaTowerPart1.Q10772_ReportsFromCrumaTowerPart1;
+import quests.Q10774_LettersFromTheQueenCrumaTowerPart2.Q10774_LettersFromTheQueenCrumaTowerPart2;
 
 /**
  * @author NosBit
@@ -516,7 +517,8 @@ public class QuestMasterHandler
 		Q10769_LettersFromTheQueenCrumaTowerPart1.class,
 		Q10770_InSearchOfTheGrail.class,
 		Q10771_VolatilePower.class,
-		Q10772_ReportsFromCrumaTowerPart1.class
+		Q10772_ReportsFromCrumaTowerPart1.class,
+		Q10774_LettersFromTheQueenCrumaTowerPart2.class
 	};
 	
 	public static void main(String[] args)
