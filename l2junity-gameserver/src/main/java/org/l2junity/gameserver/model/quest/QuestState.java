@@ -247,6 +247,7 @@ public final class QuestState
 		{
 			try
 			{
+				getQuest().sendNpcLogList(getPlayer());
 				int previousVal = 0;
 				try
 				{
@@ -680,6 +681,7 @@ public final class QuestState
 			set("cond", "1");
 			setState(State.STARTED);
 			AbstractScript.playSound(getPlayer(), QuestSound.ITEMSOUND_QUEST_ACCEPT);
+			getQuest().sendNpcLogList(getPlayer());
 		}
 		return this;
 	}
