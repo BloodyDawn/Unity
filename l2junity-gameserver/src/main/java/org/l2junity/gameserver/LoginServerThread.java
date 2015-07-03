@@ -248,7 +248,7 @@ public class LoginServerThread extends Thread
 							int serverID = aresp.getServerId();
 							_serverName = aresp.getServerName();
 							Config.saveHexid(serverID, hexToString(_hexID));
-							LOGGER.info("Registered on login as Server {}:{}", serverID, _serverName);
+							LOGGER.info("Registered on login as Server {}: {}", serverID, _serverName);
 							ServerStatus st = new ServerStatus();
 							if (Config.SERVER_LIST_BRACKET)
 							{
