@@ -351,6 +351,8 @@
 	<item id="37029" name="Scroll of Escape: Fields of Massacre" type="EtcItem">
 		<!-- Teleports you to the Fields of Massacre. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -362,6 +364,12 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
 	</item>
 	<item id="37030" name="Scroll of Escape: Swamp of Screams" type="EtcItem">
 		<!-- Teleports you to the Swamp of Screams. -->

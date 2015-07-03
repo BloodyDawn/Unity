@@ -224,6 +224,7 @@ import quests.Q10399_TheAlphabetOfTheGiants.Q10399_TheAlphabetOfTheGiants;
 import quests.Q10401_KekropusLetterDecodingTheBadge.Q10401_KekropusLetterDecodingTheBadge;
 import quests.Q10402_NowhereToTurn.Q10402_NowhereToTurn;
 import quests.Q10403_TheGuardianGiant.Q10403_TheGuardianGiant;
+import quests.Q10404_KekropusLetterAHiddenMeaning.Q10404_KekropusLetterAHiddenMeaning;
 import quests.Q10460_ReturnOfTheAlligatorHunter.Q10460_ReturnOfTheAlligatorHunter;
 import quests.Q10464_BePreparedForAnything.Q10464_BePreparedForAnything;
 import quests.Q10472_WindsOfFateEncroachingShadows.Q10472_WindsOfFateEncroachingShadows;
@@ -479,6 +480,7 @@ public class QuestMasterHandler
 		Q10401_KekropusLetterDecodingTheBadge.class,
 		Q10402_NowhereToTurn.class,
 		Q10403_TheGuardianGiant.class,
+		Q10404_KekropusLetterAHiddenMeaning.class,
 		Q10460_ReturnOfTheAlligatorHunter.class,
 		Q10464_BePreparedForAnything.class,
 		Q10472_WindsOfFateEncroachingShadows.class,

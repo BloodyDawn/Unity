@@ -157,6 +157,8 @@
 	<item id="37116" name="Scroll of Escape: Town of Aden" type="EtcItem">
 		<!-- Teleports you close to Paterson in the town of Aden. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -165,8 +167,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
 		<set name="weight" val="30" />
+		<skills>
+			<skill id="9994" level="1" />
+		</skills>
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
 	</item>
 	<item id="37117" name="Scroll of Escape: Town of Rune" type="EtcItem">
 		<!-- Teleports you close to Captain Mathias in the town of Rune. -->
