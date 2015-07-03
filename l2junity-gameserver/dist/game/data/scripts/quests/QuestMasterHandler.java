@@ -267,6 +267,7 @@ import quests.Q10771_VolatilePower.Q10771_VolatilePower;
 import quests.Q10772_ReportsFromCrumaTowerPart1.Q10772_ReportsFromCrumaTowerPart1;
 import quests.Q10774_LettersFromTheQueenCrumaTowerPart2.Q10774_LettersFromTheQueenCrumaTowerPart2;
 import quests.Q10775_InSearchOfAnAncientGiant.Q10775_InSearchOfAnAncientGiant;
+import quests.Q10776_TheWrathOfTheGiants.Q10776_TheWrathOfTheGiants;
 
 /**
  * @author NosBit
@@ -522,7 +523,8 @@ public class QuestMasterHandler
 		Q10771_VolatilePower.class,
 		Q10772_ReportsFromCrumaTowerPart1.class,
 		Q10774_LettersFromTheQueenCrumaTowerPart2.class,
-		Q10775_InSearchOfAnAncientGiant.class
+		Q10775_InSearchOfAnAncientGiant.class,
+		Q10776_TheWrathOfTheGiants.class
 	};
 	
 	public static void main(String[] args)
