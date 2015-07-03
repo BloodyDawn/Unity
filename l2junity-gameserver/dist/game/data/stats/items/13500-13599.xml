@@ -696,7 +696,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2637" level="1" />
+			<skill id="2637" level="1" /> <!-- Scroll: Enchant Weapon (Event) -->
 		</skills>
 	</item>
 	<item id="13541" name="Yogi's Enchanted Treasure Chest" type="EtcItem">
@@ -745,10 +745,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" />
-			<skill id="5414" level="1" />
-			<skill id="3269" level="1" />
-			<skill id="3267" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="5414" level="1" /> <!-- Agathion Cute Trick - Rainbow Clan Hall -->
+			<skill id="3269" level="1" /> <!-- Release Agathion's Seal - Rainbow Clan Hall -->
+			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="13544" name="Agathion - Teddy Boy" type="Armor">
@@ -768,10 +768,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" />
-			<skill id="8259" level="1" />
-			<skill id="3267" level="1" />
-			<skill id="5958" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="8259" level="1" /> <!-- Release Agathion's Seal - Teddy Boy -->
+			<skill id="3267" level="1" /> <!-- Seal Agathion -->
+			<skill id="5958" level="1" /> <!-- Agathion Cute Trick - Teddy Boy -->
 		</skills>
 	</item>
 	<item id="13545" name="Agathion - Teddy Girl" type="Armor">
@@ -791,10 +791,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" />
-			<skill id="8260" level="1" />
-			<skill id="3267" level="1" />
-			<skill id="5959" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="8260" level="1" /> <!-- Release Agathion's Seal - Teddy Girl -->
+			<skill id="3267" level="1" /> <!-- Seal Agathion -->
+			<skill id="5959" level="1" /> <!-- Agathion Cute Trick - Teddy Girl -->
 		</skills>
 	</item>
 	<item id="13546" name="Mount - Steam Sledge" type="Armor">
@@ -808,7 +808,7 @@
 		<set name="is_premium" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="8261" level="1" />
+			<skill id="8261" level="1" /> <!-- Ride Steam Beetle -->
 		</skills>
 	</item>
 	<item id="13547" name="Mount - Tawny-maned Lion" type="Armor">
@@ -822,7 +822,7 @@
 		<set name="is_premium" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="8262" level="1" />
+			<skill id="8262" level="1" /> <!-- Ride Gold Maned Lion -->
 		</skills>
 	</item>
 	<item id="13548" name="Toy Knight Minion Necklace" type="EtcItem">
@@ -844,7 +844,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<skills>
-			<skill id="2046" level="1" />
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -869,7 +869,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<skills>
-			<skill id="2046" level="1" />
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -894,7 +894,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<skills>
-			<skill id="2046" level="1" />
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -919,7 +919,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<skills>
-			<skill id="2046" level="1" />
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -934,7 +934,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2789" level="1" />
+			<skill id="2789" level="1" /> <!-- Final Flying Form -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player level="75" />
@@ -951,7 +951,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SPELLBOOK" />
 		<skills>
-			<skill id="2790" level="1" />
+			<skill id="2790" level="1" /> <!-- Aura Bird - Falcon -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player level="75" />
@@ -966,7 +966,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2791" level="1" />
+			<skill id="2791" level="1" /> <!-- Aura Bird - Owl -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player level="75" />
@@ -982,7 +982,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2669" level="1" />
+			<skill id="2669" level="1" /> <!-- Spirit of the Unicorn -->
 		</skills>
 	</item>
 	<item id="13556" name="Airship Helm" type="Weapon">
@@ -1083,8 +1083,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
 		<skills>
-			<skill id="847" level="1" />
-			<skill id="846" level="1" />
+			<skill id="847" level="1" /> <!-- Ward Transport -->
+			<skill id="846" level="1" /> <!-- Possess Ward -->
 		</skills>
 		<for>
 			<set stat="pAtkSpd" val="325" />
@@ -1114,8 +1114,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
 		<skills>
-			<skill id="847" level="1" />
-			<skill id="846" level="1" />
+			<skill id="847" level="1" /> <!-- Ward Transport -->
+			<skill id="846" level="1" /> <!-- Possess Ward -->
 		</skills>
 		<for>
 			<set stat="pAtkSpd" val="325" />
@@ -1145,8 +1145,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
 		<skills>
-			<skill id="847" level="1" />
-			<skill id="846" level="1" />
+			<skill id="847" level="1" /> <!-- Ward Transport -->
+			<skill id="846" level="1" /> <!-- Possess Ward -->
 		</skills>
 		<for>
 			<set stat="pAtkSpd" val="325" />
@@ -1176,8 +1176,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
 		<skills>
-			<skill id="847" level="1" />
-			<skill id="846" level="1" />
+			<skill id="847" level="1" /> <!-- Ward Transport -->
+			<skill id="846" level="1" /> <!-- Possess Ward -->
 		</skills>
 		<for>
 			<set stat="pAtkSpd" val="325" />
@@ -1207,8 +1207,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
 		<skills>
-			<skill id="847" level="1" />
-			<skill id="846" level="1" />
+			<skill id="847" level="1" /> <!-- Ward Transport -->
+			<skill id="846" level="1" /> <!-- Possess Ward -->
 		</skills>
 		<for>
 			<set stat="pAtkSpd" val="325" />
@@ -1238,8 +1238,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
 		<skills>
-			<skill id="847" level="1" />
-			<skill id="846" level="1" />
+			<skill id="847" level="1" /> <!-- Ward Transport -->
+			<skill id="846" level="1" /> <!-- Possess Ward -->
 		</skills>
 		<for>
 			<set stat="pAtkSpd" val="325" />
@@ -1269,8 +1269,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
 		<skills>
-			<skill id="847" level="1" />
-			<skill id="846" level="1" />
+			<skill id="847" level="1" /> <!-- Ward Transport -->
+			<skill id="846" level="1" /> <!-- Possess Ward -->
 		</skills>
 		<for>
 			<set stat="pAtkSpd" val="325" />
@@ -1300,8 +1300,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
 		<skills>
-			<skill id="847" level="1" />
-			<skill id="846" level="1" />
+			<skill id="847" level="1" /> <!-- Ward Transport -->
+			<skill id="846" level="1" /> <!-- Possess Ward -->
 		</skills>
 		<for>
 			<set stat="pAtkSpd" val="325" />
@@ -1331,8 +1331,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
 		<skills>
-			<skill id="847" level="1" />
-			<skill id="846" level="1" />
+			<skill id="847" level="1" /> <!-- Ward Transport -->
+			<skill id="846" level="1" /> <!-- Possess Ward -->
 		</skills>
 		<for>
 			<set stat="pAtkSpd" val="325" />
@@ -1353,7 +1353,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2672" level="1" />
+			<skill id="2672" level="1" /> <!-- Gludio Human Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1374,7 +1374,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2673" level="1" />
+			<skill id="2673" level="1" /> <!-- Gludio Elf Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1395,7 +1395,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2674" level="1" />
+			<skill id="2674" level="1" /> <!-- Gludio Dark Elf Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1416,7 +1416,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2675" level="1" />
+			<skill id="2675" level="1" /> <!-- Gludio Orc Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1437,7 +1437,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2676" level="1" />
+			<skill id="2676" level="1" /> <!-- Gludio Dwarf Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1458,7 +1458,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2677" level="1" />
+			<skill id="2677" level="1" /> <!-- Gludio Kamael Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1479,7 +1479,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2678" level="1" />
+			<skill id="2678" level="1" /> <!-- Gludio Royal Guard Captain -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1500,7 +1500,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2679" level="1" />
+			<skill id="2679" level="1" /> <!-- Gludio Archer Captain -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1521,7 +1521,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2680" level="1" />
+			<skill id="2680" level="1" /> <!-- Gludio Wizard Captain -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1542,7 +1542,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2681" level="1" />
+			<skill id="2681" level="1" /> <!-- Gludio Kamael Guard Captain -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1563,7 +1563,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2682" level="1" />
+			<skill id="2682" level="1" /> <!-- Gludio Knight of Dawn -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1584,7 +1584,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2683" level="1" />
+			<skill id="2683" level="1" /> <!-- Gludio Fortress Commander -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1605,7 +1605,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2684" level="1" />
+			<skill id="2684" level="1" /> <!-- Dion Human Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1626,7 +1626,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2685" level="1" />
+			<skill id="2685" level="1" /> <!-- Dion Elf Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1647,7 +1647,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2686" level="1" />
+			<skill id="2686" level="1" /> <!-- Dion Dark Elf Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1668,7 +1668,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2687" level="1" />
+			<skill id="2687" level="1" /> <!-- Dion Orc Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1689,7 +1689,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2688" level="1" />
+			<skill id="2688" level="1" /> <!-- Dion Dwarf Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1710,7 +1710,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2689" level="1" />
+			<skill id="2689" level="1" /> <!-- Dion Kamael Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1731,7 +1731,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2690" level="1" />
+			<skill id="2690" level="1" /> <!-- Dion Royal Guard Captain -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1752,7 +1752,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2691" level="1" />
+			<skill id="2691" level="1" /> <!-- Dion Archer Captain -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1773,7 +1773,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2692" level="1" />
+			<skill id="2692" level="1" /> <!-- Dion Wizard Captain -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1794,7 +1794,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2693" level="1" />
+			<skill id="2693" level="1" /> <!-- Dion Kamael Guard Captain -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1815,7 +1815,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2694" level="1" />
+			<skill id="2694" level="1" /> <!-- Dion Knight of Dawn -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1836,7 +1836,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2695" level="1" />
+			<skill id="2695" level="1" /> <!-- Dion Fortress Commander -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1857,7 +1857,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2696" level="1" />
+			<skill id="2696" level="1" /> <!-- Giran Human Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1878,7 +1878,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2697" level="1" />
+			<skill id="2697" level="1" /> <!-- Giran Elf Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1899,7 +1899,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2698" level="1" />
+			<skill id="2698" level="1" /> <!-- Giran Dark Elf Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1920,7 +1920,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2699" level="1" />
+			<skill id="2699" level="1" /> <!-- Giran Orc Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1941,7 +1941,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2700" level="1" />
+			<skill id="2700" level="1" /> <!-- Giran Dwarf Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1962,7 +1962,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2701" level="1" />
+			<skill id="2701" level="1" /> <!-- Giran Kamael Mercenary -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1983,7 +1983,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2702" level="1" />
+			<skill id="2702" level="1" /> <!-- Giran Royal Guard Captain -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />

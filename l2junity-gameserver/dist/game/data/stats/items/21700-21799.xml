@@ -121,7 +121,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="22248" level="1" />
+			<skill id="22248" level="1" /> <!-- Blessed Scroll: Enchant Power Shirt -->
 		</skills>
 	</item>
 	<item id="21708" name="Honey Rice Cakes" name_additional="Event" type="EtcItem">
@@ -155,9 +155,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" />
-			<skill id="3267" level="1" />
-			<skill id="21245" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="3267" level="1" /> <!-- Seal Agathion -->
+			<skill id="21245" level="1" /> <!-- Release Agathion's Seal - Rudolph -->
 		</skills>
 	</item>
 	<item id="21710" name="Vitality Replenishing Potion" name_additional="Event" type="EtcItem">
@@ -195,7 +195,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="EARRING" />
 		<skills>
-			<skill id="3559" level="2" />
+			<skill id="3559" level="2" /> <!-- Blessed Zaken's Earring -->
 		</skills>
 		<for>
 			<add order="0" stat="mDef" val="94" />
@@ -243,7 +243,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="CLOAK" />
 		<skills>
-			<skill id="21242" level="1" />
+			<skill id="21242" level="1" /> <!-- Zaken's Call -->
 		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
@@ -271,7 +271,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="CLOAK" />
 		<skills>
-			<skill id="21243" level="1" />
+			<skill id="21243" level="1" /> <!-- Freya's Call -->
 		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
@@ -299,7 +299,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="CLOAK" />
 		<skills>
-			<skill id="21244" level="1" />
+			<skill id="21244" level="1" /> <!-- Frintezza's Call -->
 		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
@@ -332,7 +332,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
 		<skills>
-			<skill id="21242" level="1" />
+			<skill id="21242" level="1" /> <!-- Zaken's Call -->
 		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
@@ -365,7 +365,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
 		<skills>
-			<skill id="21243" level="1" />
+			<skill id="21243" level="1" /> <!-- Freya's Call -->
 		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
@@ -398,7 +398,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
 		<skills>
-			<skill id="21244" level="1" />
+			<skill id="21244" level="1" /> <!-- Frintezza's Call -->
 		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
@@ -514,7 +514,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="4320" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="21728" name="Agathion - Zinyanzi (7-day)" name_additional="7-day" type="Armor">
@@ -536,7 +536,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="21729" name="Agathion - Yanzi" name_additional="Permanent" type="Armor">
@@ -554,10 +554,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" />
-			<skill id="21249" level="1" />
-			<skill id="23307" level="1" />
-			<skill id="3267" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="21249" level="1" /> <!-- Release Agathion's Seal - Yanzi -->
+			<skill id="23307" level="1" /> <!-- Yanzi Agathion Cute Trick -->
+			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="21730" name="Letter Collector's Gift" name_additional="Event" type="EtcItem">
@@ -953,7 +953,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="22271" level="1" />
+			<skill id="22271" level="1" /> <!-- Maestro's Key -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<target levelRange="21;85" />
@@ -969,7 +969,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="22272" level="1" />
+			<skill id="22272" level="1" /> <!-- Novice Explorer's Treasure Sack -->
 		</skills>
 	</item>
 	<item id="21748" name="Experienced Adventurer's Treasure Sack" type="EtcItem">
@@ -982,7 +982,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="22273" level="1" />
+			<skill id="22273" level="1" /> <!-- Experienced Adventurer's Treasure Sack -->
 		</skills>
 	</item>
 	<item id="21749" name="Great Adventurer's Treasure Sack" type="EtcItem">
@@ -995,7 +995,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="22274" level="1" />
+			<skill id="22274" level="1" /> <!-- Great Adventurer's Treasure Sack -->
 		</skills>
 	</item>
 	<item id="21750" name="Mark of Challenge" type="EtcItem">

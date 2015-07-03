@@ -70,10 +70,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" />
-			<skill id="5537" level="1" />
-			<skill id="3425" level="1" />
-			<skill id="3267" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="5537" level="1" /> <!-- Rudolph Cuteness Trick -->
+			<skill id="3425" level="1" /> <!-- Release Agathion's Seal - Rudolph -->
+			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 		</skills>
 	</item>
 	<item id="10607" name="Agathion - Rudolph" type="EtcItem">
@@ -100,7 +100,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2505" level="1" />
+			<skill id="2505" level="1" /> <!-- Chant of Combat -->
 		</skills>
 	</item>
 	<item id="10609" name="Forgotten Scroll: Chant of Critical" type="EtcItem">
@@ -113,7 +113,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2506" level="1" />
+			<skill id="2506" level="1" /> <!-- Chant of Critical -->
 		</skills>
 	</item>
 	<item id="10610" name="Forgotten Scroll: Chant of Blood Awakening" type="EtcItem">
@@ -126,7 +126,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2507" level="1" />
+			<skill id="2507" level="1" /> <!-- Chant of Blood Awakening -->
 		</skills>
 	</item>
 	<item id="10611" name="Snow Fenrir Necklace" type="EtcItem">
@@ -148,7 +148,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<skills>
-			<skill id="2046" level="2" />
+			<skill id="2046" level="2" /> <!-- Summon Pet -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -305,7 +305,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="120" />
 		<skills>
-			<skill id="3264" level="1" />
+			<skill id="3264" level="1" /> <!-- Blessed Escape -->
 		</skills>
 	</item>
 	<item id="10621" name="Shadow Item: Ant Hat" name_additional="Blessed Resurrection" type="Armor">
@@ -327,7 +327,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="120" />
 		<skills>
-			<skill id="3263" level="1" />
+			<skill id="3263" level="1" /> <!-- Blessed Resurrection -->
 		</skills>
 	</item>
 	<item id="10622" name="Shadow Item: Ant Hat" name_additional="Firework" type="Armor">
@@ -349,7 +349,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 		<skills>
-			<skill id="3266" level="1" />
+			<skill id="3266" level="1" /> <!-- Large Firecracker's Ability -->
 		</skills>
 	</item>
 	<item id="10623" name="Shadow Item: Ant Hat" name_additional="Big Head" type="Armor">
@@ -371,7 +371,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="10" />
 		<skills>
-			<skill id="3265" level="1" />
+			<skill id="3265" level="1" /> <!-- Mysterious Ability -->
 		</skills>
 	</item>
 	<item id="10624" name="Shadow Item: Ol Mahum Hat" name_additional="Blessed Escape" type="Armor">
@@ -393,7 +393,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="120" />
 		<skills>
-			<skill id="3264" level="1" />
+			<skill id="3264" level="1" /> <!-- Blessed Escape -->
 		</skills>
 	</item>
 	<item id="10625" name="Shadow Item: Ol Mahum Hat" name_additional="Blessed Resurrection" type="Armor">
@@ -415,7 +415,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="120" />
 		<skills>
-			<skill id="3263" level="1" />
+			<skill id="3263" level="1" /> <!-- Blessed Resurrection -->
 		</skills>
 	</item>
 	<item id="10626" name="Shadow Item: Ol Mahum Hat" name_additional="Firework" type="Armor">
@@ -437,7 +437,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 		<skills>
-			<skill id="3266" level="1" />
+			<skill id="3266" level="1" /> <!-- Large Firecracker's Ability -->
 		</skills>
 	</item>
 	<item id="10627" name="Shadow Item: Ol Mahum Hat" name_additional="Big Head" type="Armor">
@@ -459,7 +459,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="10" />
 		<skills>
-			<skill id="3265" level="1" />
+			<skill id="3265" level="1" /> <!-- Mysterious Ability -->
 		</skills>
 	</item>
 	<item id="10628" name="Shadow Item: Wolf Hat" name_additional="Blessed Escape" type="Armor">
@@ -481,7 +481,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="120" />
 		<skills>
-			<skill id="3264" level="1" />
+			<skill id="3264" level="1" /> <!-- Blessed Escape -->
 		</skills>
 	</item>
 	<item id="10629" name="Shadow Item: Wolf Hat" name_additional="Blessed Resurrection" type="Armor">
@@ -503,7 +503,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="120" />
 		<skills>
-			<skill id="3263" level="1" />
+			<skill id="3263" level="1" /> <!-- Blessed Resurrection -->
 		</skills>
 	</item>
 	<item id="10630" name="Shadow Item: Wolf Hat" name_additional="Firework" type="Armor">
@@ -525,7 +525,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 		<skills>
-			<skill id="3266" level="1" />
+			<skill id="3266" level="1" /> <!-- Large Firecracker's Ability -->
 		</skills>
 	</item>
 	<item id="10631" name="Shadow Item: Wolf Hat" name_additional="Big Head" type="Armor">
@@ -547,7 +547,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="10" />
 		<skills>
-			<skill id="3265" level="1" />
+			<skill id="3265" level="1" /> <!-- Mysterious Ability -->
 		</skills>
 	</item>
 	<item id="10632" name="Wondrous Cubic" type="EtcItem">
@@ -568,7 +568,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2510" level="1" />
+			<skill id="2510" level="1" /> <!-- Wondrous Cubic -->
 		</skills>
 	</item>
 	<item id="10633" name="Cube Fragment Armor - D" type="EtcItem">
@@ -638,7 +638,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2508" level="1" />
+			<skill id="2508" level="1" /> <!-- Squash Seed -->
 		</skills>
 	</item>
 	<item id="10641" name="Cloned Large Squash Seed" type="EtcItem">
@@ -657,7 +657,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2509" level="1" />
+			<skill id="2509" level="1" /> <!-- Large Squash Seed -->
 		</skills>
 	</item>
 	<item id="10642" name="Cube Fragment Weapon - D" type="EtcItem">
@@ -749,7 +749,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2531" level="1" />
+			<skill id="2531" level="1" /> <!-- Adventurer's Scroll of Escape -->
 		</skills>
 	</item>
 	<item id="10651" name="Transformation Scroll: Teleporter (Event)" type="EtcItem">
@@ -801,7 +801,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2512" level="1" />
+			<skill id="2512" level="1" /> <!-- Herb of HP Drain -->
 		</skills>
 	</item>
 	<item id="10656" name="Herb of Critical Attack - Power" type="EtcItem">
@@ -817,7 +817,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2514" level="1" />
+			<skill id="2514" level="1" /> <!-- Herb of Critical Attack - Damage -->
 		</skills>
 	</item>
 	<item id="10657" name="Mysterious Herb" type="EtcItem">
@@ -832,7 +832,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2513" level="1" />
+			<skill id="2513" level="1" /> <!-- Mysterious Herb -->
 		</skills>
 	</item>
 	<item id="10658" name="Pet Accessory (Not in Use)" type="Armor">
@@ -869,11 +869,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" />
-			<skill id="8254" level="1" />
-			<skill id="3267" level="1" />
-			<skill id="5951" level="1" />
-			<skill id="5953" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="8254" level="1" /> <!-- Release Agathion's Seal - Monkey -->
+			<skill id="3267" level="1" /> <!-- Seal Agathion -->
+			<skill id="5951" level="1" /> <!-- Agathion's Blessing -->
+			<skill id="5953" level="1" /> <!-- Agathion's Blessing -->
 		</skills>
 	</item>
 	<item id="10660" name="Agathion - Griffin" type="Armor">
@@ -892,11 +892,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" />
-			<skill id="8255" level="1" />
-			<skill id="3267" level="1" />
-			<skill id="5952" level="1" />
-			<skill id="5953" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="8255" level="1" /> <!-- Release Agathion's Seal - Griffin -->
+			<skill id="3267" level="1" /> <!-- Seal Agathion -->
+			<skill id="5952" level="1" /> <!-- Agathion's Blessing -->
+			<skill id="5953" level="1" /> <!-- Agathion's Blessing -->
 		</skills>
 	</item>
 	<item id="10661" name="Pet Summon Item (Warrior)" type="EtcItem">
@@ -910,7 +910,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<skills>
-			<skill id="2046" level="1" />
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -927,7 +927,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<skills>
-			<skill id="2046" level="1" />
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -944,7 +944,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<skills>
-			<skill id="2046" level="1" />
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -961,7 +961,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<skills>
-			<skill id="2046" level="1" />
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -978,7 +978,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<skills>
-			<skill id="2046" level="1" />
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -1020,9 +1020,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3650" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3068" level="3" />
+			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="251" />
@@ -1058,9 +1058,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3650" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3013" level="5" />
+			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="251" />
@@ -1096,9 +1096,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3061" level="3" type="ON_CRITICAL_SKILL" />
-			<skill id="3650" level="1" />
-			<skill id="3552" level="3" />
+			<skill id="3061" level="3" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Poison -->
+			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
+			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="251" />
@@ -1134,9 +1134,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3653" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3050" level="2" />
+			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="305" />
@@ -1172,9 +1172,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3653" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3068" level="3" />
+			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="305" />
@@ -1210,9 +1210,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3653" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3013" level="5" />
+			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="305" />
@@ -1248,9 +1248,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3650" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3013" level="5" />
+			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="251" />
@@ -1287,9 +1287,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3650" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3068" level="3" />
+			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="251" />
@@ -1326,9 +1326,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3650" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3050" level="2" />
+			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="251" />
@@ -1365,9 +1365,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3653" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3050" level="2" />
+			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="305" />
@@ -1404,9 +1404,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3653" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3013" level="5" />
+			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="305" />
@@ -1443,9 +1443,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3653" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3057" level="3" />
+			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3057" level="3" /> <!-- Special Ability: Anger -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="305" />
@@ -1482,10 +1482,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3651" level="1" />
-			<skill id="3652" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3051" level="2" />
+			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
+			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3051" level="2" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="220" />
@@ -1522,10 +1522,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3651" level="1" />
-			<skill id="3652" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3066" level="2" />
+			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
+			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3066" level="2" /> <!-- Special Ability: Critical Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="220" />
@@ -1562,10 +1562,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3651" level="1" />
-			<skill id="3652" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3063" level="1" />
+			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
+			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3063" level="1" /> <!-- Special Ability: Back Blow -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="220" />
@@ -1602,9 +1602,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3070" level="3" type="ON_CRITICAL_SKILL" />
-			<skill id="3653" level="1" />
-			<skill id="3552" level="4" />
+			<skill id="3070" level="3" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
+			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
+			<skill id="3552" level="4" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="251" />
@@ -1641,8 +1641,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3653" level="1" />
-			<skill id="3552" level="4" />
+			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
+			<skill id="3552" level="4" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="251" />
@@ -1680,8 +1680,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3653" level="1" />
-			<skill id="3552" level="4" />
+			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
+			<skill id="3552" level="4" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="251" />
@@ -1721,8 +1721,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="reduced_mp_consume" val="30,1" />
 		<skills>
-			<skill id="3655" level="1" />
-			<skill id="3552" level="3" />
+			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
+			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="571" />
@@ -1761,9 +1761,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3655" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3050" level="2" />
+			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="571" />
@@ -1802,8 +1802,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3655" level="1" />
-			<skill id="3552" level="3" />
+			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
+			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="571" />
@@ -1840,10 +1840,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3651" level="1" />
-			<skill id="3652" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3056" level="3" />
+			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
+			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3056" level="3" /> <!-- Special Ability: Rsk. Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="305" />
@@ -1880,10 +1880,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3651" level="1" />
-			<skill id="3652" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3068" level="3" />
+			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
+			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="305" />
@@ -1920,10 +1920,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3039" level="7" type="ON_CRITICAL_SKILL" />
-			<skill id="3651" level="1" />
-			<skill id="3652" level="1" />
-			<skill id="3552" level="3" />
+			<skill id="3039" level="7" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
+			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
+			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
+			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="305" />
@@ -1961,9 +1961,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3014" level="3" />
+			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="201" />
@@ -2001,8 +2001,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" />
-			<skill id="3552" level="3" />
+			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
+			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="201" />
@@ -2040,8 +2040,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" />
-			<skill id="3552" level="3" />
+			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
+			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="201" />
@@ -2078,9 +2078,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3048" level="3" />
+			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3048" level="3" /> <!-- Special Ability: Conversion -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="201" />
@@ -2118,9 +2118,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3014" level="3" />
+			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="201" />
@@ -2159,8 +2159,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" />
-			<skill id="3552" level="3" />
+			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
+			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="201" />
@@ -2198,9 +2198,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3014" level="3" />
+			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="245" />
@@ -2238,9 +2238,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3047" level="3" />
+			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="245" />
@@ -2279,8 +2279,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3654" level="1" />
-			<skill id="3552" level="3" />
+			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
+			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="245" />

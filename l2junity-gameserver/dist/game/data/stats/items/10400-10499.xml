@@ -90,7 +90,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2504" level="1" />
+			<skill id="2504" level="1" /> <!-- Old Agathion -->
 		</skills>
 	</item>
 	<item id="10409" name="A Bottle of Souls" type="EtcItem">
@@ -112,7 +112,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2498" level="1" />
+			<skill id="2498" level="1" /> <!-- Bottle of Empty Soul -->
 		</skills>
 	</item>
 	<item id="10410" name="Full Bottle of Souls - 5 Souls" type="EtcItem">
@@ -132,7 +132,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2499" level="1" />
+			<skill id="2499" level="1" /> <!-- Full Bottle of Souls -->
 		</skills>
 	</item>
 	<item id="10411" name="Full Bottle of Souls - 5 Souls (Battleground)" type="EtcItem">
@@ -153,7 +153,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2499" level="1" />
+			<skill id="2499" level="1" /> <!-- Full Bottle of Souls -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
@@ -217,8 +217,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3411" level="1" type="ON_ENCHANT" type_value="4" />
-			<skill id="3552" level="1" />
+			<skill id="3411" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Focus -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="442" />
@@ -248,7 +248,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3428" level="1" />
+			<skill id="3428" level="1" /> <!-- Blue Talisman - Explosion -->
 		</skills>
 	</item>
 	<item id="10417" name="Blue Talisman - Magic Explosion" type="Armor">
@@ -270,7 +270,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3437" level="1" />
+			<skill id="3437" level="1" /> <!-- Blue Talisman - Magic Explosion -->
 		</skills>
 	</item>
 	<item id="10418" name="White Talisman - Storm" type="Armor">
@@ -292,7 +292,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3431" level="1" />
+			<skill id="3431" level="1" /> <!-- White Talisman - Storm -->
 		</skills>
 	</item>
 	<item id="10419" name="White Talisman - Darkness" type="Armor">
@@ -314,7 +314,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3430" level="1" />
+			<skill id="3430" level="1" /> <!-- White Talisman - Darkness -->
 		</skills>
 	</item>
 	<item id="10420" name="White Talisman - Water" type="Armor">
@@ -336,7 +336,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3432" level="1" />
+			<skill id="3432" level="1" /> <!-- White Talisman - Water -->
 		</skills>
 	</item>
 	<item id="10421" name="White Talisman - Fire" type="Armor">
@@ -358,7 +358,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3433" level="1" />
+			<skill id="3433" level="1" /> <!-- White Talisman - Fire -->
 		</skills>
 	</item>
 	<item id="10422" name="White Talisman - Light" type="Armor">
@@ -380,7 +380,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3435" level="1" />
+			<skill id="3435" level="1" /> <!-- White Talisman - Light -->
 		</skills>
 	</item>
 	<item id="10423" name="Blue Talisman - Self-destruction" type="Armor">
@@ -401,7 +401,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
 		<skills>
-			<skill id="3436" level="1" />
+			<skill id="3436" level="1" /> <!-- Blue Talisman - Self-destruction -->
 		</skills>
 	</item>
 	<item id="10424" name="Blue Talisman - Greater Healing" type="Armor">
@@ -423,7 +423,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
 		<skills>
-			<skill id="3438" level="1" />
+			<skill id="3438" level="1" /> <!-- Blue Talisman - Greater Healing -->
 		</skills>
 	</item>
 	<item id="10425" name="Improved Baby Pet Food" type="EtcItem">
@@ -441,7 +441,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2361" level="1" />
+			<skill id="2361" level="1" /> <!-- Evolving Wolf Food -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player categoryType="UPGRADE_BABY_PET_GROUP" />
@@ -459,7 +459,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="PET_SUPPLIES" />
 		<skills>
-			<skill id="2046" level="1" />
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -552,7 +552,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2485" level="1" />
+			<skill id="2485" level="1" /> <!-- Herb of Life -->
 		</skills>
 	</item>
 	<item id="10433" name="Kertang's Herb of Mana" type="EtcItem">
@@ -567,7 +567,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2486" level="1" />
+			<skill id="2486" level="1" /> <!-- Herb of Mana -->
 		</skills>
 	</item>
 	<item id="10434" name="Icarus Sawsword" name_additional="Focus" type="Weapon">
@@ -592,7 +592,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
 		<skills>
-			<skill id="3566" level="2" />
+			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
@@ -624,7 +624,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="3" />
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
@@ -656,8 +656,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="1" />
-			<skill id="3498" level="1" />
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
@@ -689,7 +689,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3566" level="2" />
+			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="442" />
@@ -721,7 +721,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="3" />
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="442" />
@@ -753,8 +753,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="1" />
-			<skill id="3498" level="1" />
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="442" />
@@ -786,7 +786,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3047" level="2" />
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="290" />
@@ -818,7 +818,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3014" level="2" />
+			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="290" />
@@ -850,7 +850,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3048" level="2" />
+			<skill id="3048" level="2" /> <!-- Special Ability: Conversion -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="290" />
@@ -884,8 +884,8 @@
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="1" />
-			<skill id="8312" level="1" />
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="689" />
@@ -920,7 +920,7 @@
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3573" level="2" />
+			<skill id="3573" level="2" /> <!-- Special Ability: Guidance -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="689" />
@@ -955,7 +955,7 @@
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3567" level="2" />
+			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="689" />
@@ -988,7 +988,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DAGGER" />
 		<skills>
-			<skill id="3567" level="2" />
+			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="318" />
@@ -1020,8 +1020,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3009" level="8" />
-			<skill id="3552" level="1" />
+			<skill id="3009" level="8" /> <!-- Special Ability: Evasion -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="318" />
@@ -1053,7 +1053,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3066" level="4" />
+			<skill id="3066" level="4" /> <!-- Special Ability: Critical Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="318" />
@@ -1085,7 +1085,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3600" level="10" />
+			<skill id="3600" level="10" /> <!-- Special Ability: Anger -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
@@ -1118,7 +1118,7 @@
 		<set name="oncrit_skill" val="3070-4" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="2" />
+			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
@@ -1150,8 +1150,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="2" />
-			<skill id="3498" level="1" />
+			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
@@ -1183,7 +1183,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3057" level="4" />
+			<skill id="3057" level="4" /> <!-- Special Ability: Anger -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
@@ -1215,7 +1215,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="3" />
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
@@ -1247,7 +1247,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3027" level="7" />
+			<skill id="3027" level="7" /> <!-- Special Ability: Rsk. Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="363" />
@@ -1280,7 +1280,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3014" level="2" />
+			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="290" />
@@ -1313,7 +1313,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3048" level="2" />
+			<skill id="3048" level="2" /> <!-- Special Ability: Conversion -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="290" />
@@ -1347,7 +1347,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
 		<skills>
-			<skill id="3047" level="2" />
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="290" />
@@ -1379,8 +1379,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3069" level="1" />
-			<skill id="3552" level="1" />
+			<skill id="3069" level="1" /> <!-- Special Ability: Rsk. Evasion -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="442" />
@@ -1412,7 +1412,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3565" level="2" />
+			<skill id="3565" level="2" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="442" />
@@ -1444,7 +1444,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3564" level="2" />
+			<skill id="3564" level="2" /> <!-- Special Ability: Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="442" />
@@ -1477,8 +1477,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
-			<skill id="3566" level="2" />
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
+			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1514,8 +1514,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
-			<skill id="3013" level="3" />
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1551,9 +1551,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" />
-			<skill id="3552" level="1" />
-			<skill id="3498" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1589,7 +1589,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3566" level="2" />
+			<skill id="3566" level="2" /> <!-- Special Ability: Focus -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1625,7 +1625,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="3" />
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1661,8 +1661,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="1" />
-			<skill id="3498" level="1" />
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1699,8 +1699,8 @@
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="1" />
-			<skill id="3360" level="1" />
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3360" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1737,7 +1737,7 @@
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3573" level="2" />
+			<skill id="3573" level="2" /> <!-- Special Ability: Guidance -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1774,7 +1774,7 @@
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3567" level="2" />
+			<skill id="3567" level="2" /> <!-- Special Ability: Focus -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1869,7 +1869,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2490" level="1" />
+			<skill id="2490" level="1" /> <!-- M. Def. Toolkit (Novice) -->
 		</skills>
 	</item>
 	<item id="10474" name="Shadow Item: Apprentice's Staff" type="Weapon">
@@ -2085,7 +2085,7 @@
 		<set name="is_questitem" val="true" />
 		<set name="commissionItemType" val="SOUL_CRYSTAL" />
 		<skills>
-			<skill id="2096" level="1" />
+			<skill id="2096" level="1" /> <!-- Soul Crystal -->
 		</skills>
 	</item>
 	<item id="10481" name="Blue Soul Crystal - Stage 15" type="EtcItem">
@@ -2101,7 +2101,7 @@
 		<set name="is_questitem" val="true" />
 		<set name="commissionItemType" val="SOUL_CRYSTAL" />
 		<skills>
-			<skill id="2096" level="1" />
+			<skill id="2096" level="1" /> <!-- Soul Crystal -->
 		</skills>
 	</item>
 	<item id="10482" name="Green Soul Crystal - Stage 15" type="EtcItem">
@@ -2117,7 +2117,7 @@
 		<set name="is_questitem" val="true" />
 		<set name="commissionItemType" val="SOUL_CRYSTAL" />
 		<skills>
-			<skill id="2096" level="1" />
+			<skill id="2096" level="1" /> <!-- Soul Crystal -->
 		</skills>
 	</item>
 	<item id="10483" name="Life Stone - Lv. 82" type="EtcItem">
@@ -2272,7 +2272,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3439" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3439" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Silk Shirt -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="17" />
@@ -2292,7 +2292,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3440" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3440" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Silk Shirt -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="17" />
@@ -2312,7 +2312,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3441" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3441" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Silk Shirt -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="17" />
@@ -2332,7 +2332,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3445" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3445" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Thin Leather Shirt -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="21" />
@@ -2352,7 +2352,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3446" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3446" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Thin Leather Shirt -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="21" />
@@ -2372,7 +2372,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3447" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3447" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Thin Leather Shirt -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="21" />
@@ -2392,7 +2392,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3451" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3451" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Scale Shirt -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="23" />
@@ -2412,7 +2412,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3452" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3452" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Scale Shirt -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="23" />
@@ -2432,7 +2432,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3453" level="1" type="ON_ENCHANT" type_value="4" />
+			<skill id="3453" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Scale Shirt -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="23" />
