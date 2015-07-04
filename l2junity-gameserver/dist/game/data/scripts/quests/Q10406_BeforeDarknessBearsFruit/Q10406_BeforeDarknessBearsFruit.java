@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package quests.Q10402_NowhereToTurn;
+package quests.Q10406_BeforeDarknessBearsFruit;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -29,42 +29,34 @@ import org.l2junity.gameserver.model.holders.NpcLogListHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+
+import quests.Q10405_KartiasSeed.Q10405_KartiasSeed;
 
 /**
- * Nowhere to Turn (10402)
+ * Before Darkness Bears Fruit (10406)
  * @author St3eT
  */
-public final class Q10402_NowhereToTurn extends Quest
+public final class Q10406_BeforeDarknessBearsFruit extends Quest
 {
 	// NPCs
-	private static final int EBLUNE = 33865;
-	private static final int[] MONSTERS =
-	{
-		20679, // Marsh Stalker
-		20680, // Marsh Drake
-		21017, // Fallen Orc
-		21018, // Ancient Gargoyle
-		21019, // Fallen Orc Archer
-		21020, // Fallen Orc Shaman
-		21021, // Sharp Talon Tiger
-		21022, // Fallen Orc Captain
-	};
+	private static final int SHUVANN = 33867;
+	private static final int KARTIAS_FLOWER = 19470;
 	// Items
-	private static final int EAB = 948; // Scroll: Enchant Armor (B-grade)
+	private static final int EAA = 730; // Scroll: Enchant Armor (A-grade)
 	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Misc
-	private static final int MIN_LEVEL = 58;
-	private static final int MAX_LEVEL = 61;
+	private static final int MIN_LEVEL = 61;
+	private static final int MAX_LEVEL = 65;
 	
-	public Q10402_NowhereToTurn()
+	public Q10406_BeforeDarknessBearsFruit()
 	{
-		super(10402, Q10402_NowhereToTurn.class.getSimpleName(), "Nowhere to Turn");
-		addStartNpc(EBLUNE);
-		addTalkId(EBLUNE);
-		addKillId(MONSTERS);
-		addCondNotRace(Race.ERTHEIA, "33865-08.html");
-		addCondLevel(MIN_LEVEL, MAX_LEVEL, "33865-09.htm");
+		super(10406, Q10406_BeforeDarknessBearsFruit.class.getSimpleName(), "Before Darkness Bears Fruit");
+		addStartNpc(SHUVANN);
+		addTalkId(SHUVANN);
+		addKillId(KARTIAS_FLOWER);
+		addCondNotRace(Race.ERTHEIA, "33867-08.html");
+		addCondLevel(MIN_LEVEL, MAX_LEVEL, "33867-09.htm");
+		addCondCompletedQuest(Q10405_KartiasSeed.class.getSimpleName(), "33867-09.htm");
 	}
 	
 	@Override
@@ -80,28 +72,28 @@ public final class Q10402_NowhereToTurn extends Quest
 		String htmltext = null;
 		switch (event)
 		{
-			case "33865-02.htm":
-			case "33865-03.htm":
+			case "33867-02.htm":
+			case "33867-03.htm":
 			{
 				htmltext = event;
 				break;
 			}
-			case "33865-04.htm":
+			case "33867-04.htm":
 			{
 				st.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "33865-07.html":
+			case "33867-07.html":
 			{
 				if (st.isCond(2))
 				{
 					st.exitQuest(false, true);
-					giveItems(player, EAB, 5);
-					giveItems(player, STEEL_COIN, 34);
+					giveItems(player, EAA, 3);
+					giveItems(player, STEEL_COIN, 10);
 					if (player.getLevel() >= MIN_LEVEL)
 					{
-						addExpAndSp(player, 5_482_574, 1_315);
+						addExpAndSp(player, 3_125_586, 750);
 					}
 					htmltext = event;
 				}
@@ -121,12 +113,12 @@ public final class Q10402_NowhereToTurn extends Quest
 		{
 			case State.CREATED:
 			{
-				htmltext = "33865-01.htm";
+				htmltext = "33867-01.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				htmltext = st.isCond(1) ? "33865-05.html" : "33865-06.html";
+				htmltext = st.isCond(1) ? "33867-05.html" : "33867-06.html";
 				break;
 			}
 			case State.COMPLETED:
@@ -147,7 +139,7 @@ public final class Q10402_NowhereToTurn extends Quest
 		{
 			int killCount = st.getInt("KILLED_COUNT");
 			
-			if (killCount < 40)
+			if (killCount < 10)
 			{
 				killCount++;
 				st.set("KILLED_COUNT", killCount);
@@ -155,7 +147,7 @@ public final class Q10402_NowhereToTurn extends Quest
 				sendNpcLogList(killer);
 			}
 			
-			if (killCount == 40)
+			if (killCount == 10)
 			{
 				st.setCond(2, true);
 			}
@@ -170,7 +162,7 @@ public final class Q10402_NowhereToTurn extends Quest
 		if ((st != null) && st.isStarted() && st.isCond(1))
 		{
 			final Set<NpcLogListHolder> npcLogList = new HashSet<>(1);
-			npcLogList.add(new NpcLogListHolder(NpcStringId.ELIMINATE_MONSTERS_IN_THE_FORSAKEN_PLAINS, st.getInt("KILLED_COUNT")));
+			npcLogList.add(new NpcLogListHolder(KARTIAS_FLOWER, false, st.getInt("KILLED_COUNT")));
 			return npcLogList;
 		}
 		return super.getNpcLogList(activeChar);
