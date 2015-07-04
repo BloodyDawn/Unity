@@ -84,7 +84,6 @@ public final class Q10740_NeverForget extends Quest
 			case "33951-03.htm":
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				break;
 			}
 			case "33989-02.html":
@@ -98,7 +97,6 @@ public final class Q10740_NeverForget extends Quest
 					}
 					takeItems(player, UNNAMED_RELICS, -1);
 					qs.setCond(3, true);
-					sendNpcLogList(player);
 				}
 				break;
 			}
@@ -191,7 +189,6 @@ public final class Q10740_NeverForget extends Quest
 		if ((qs != null) && qs.isCond(1) && giveItemRandomly(killer, npc, UNNAMED_RELICS, 1, 20, 1.0, true))
 		{
 			qs.setCond(2);
-			sendNpcLogList(killer);
 		}
 		return super.onKill(npc, killer, isSummon);
 	}

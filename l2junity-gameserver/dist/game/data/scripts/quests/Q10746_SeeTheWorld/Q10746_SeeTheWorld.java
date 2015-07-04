@@ -73,7 +73,6 @@ public final class Q10746_SeeTheWorld extends Quest
 			case "33933-02.htm":
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				break;
 			}
 			case "33948-03.html":
@@ -128,7 +127,6 @@ public final class Q10746_SeeTheWorld extends Quest
 						if (!isSimulated)
 						{
 							qs.setCond(2, true);
-							sendNpcLogList(player);
 						}
 						htmltext = "33948-01.html";
 					}

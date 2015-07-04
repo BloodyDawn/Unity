@@ -83,7 +83,6 @@ public final class Q10764_FreeSpirit extends Quest
 			{
 				qs.startQuest();
 				giveItems(player, MAGIC_CHAIN_KEY_BUNDLE, 10);
-				sendNpcLogList(player);
 				break;
 			}
 			case "33966-06.html":

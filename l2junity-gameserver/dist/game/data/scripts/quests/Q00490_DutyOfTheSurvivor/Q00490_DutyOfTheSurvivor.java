@@ -99,7 +99,6 @@ public final class Q00490_DutyOfTheSurvivor extends Quest
 			case "30137-05.htm":
 			{
 				st.startQuest();
-				sendNpcLogList(player);
 				htmltext = event;
 			}
 		}
@@ -182,7 +181,11 @@ public final class Q00490_DutyOfTheSurvivor extends Quest
 				{
 					st.setCond(2);
 				}
-				sendNpcLogList(player);
+				else
+				{
+					sendNpcLogList(player);
+				}
+				
 			}
 		}
 		return super.onKill(npc, player, isSummon);

@@ -97,7 +97,6 @@ public final class Q00481_ShadowHelper extends Quest
 			case "33302-05.htm":
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				break;
 			}
 			default:
@@ -159,7 +158,10 @@ public final class Q00481_ShadowHelper extends Quest
 			{
 				qs.setCond(2, true);
 			}
-			sendNpcLogList(killer);
+			else
+			{
+				sendNpcLogList(killer);
+			}
 		}
 		return super.onKill(npc, killer, isSummon);
 	}

@@ -72,7 +72,6 @@ public final class Q10738_AnInnerBeauty extends Quest
 			case "33947-04.htm":
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				giveItems(player, GRAKON_S_NOTE, 1);
 				break;
 			}

@@ -77,7 +77,6 @@ public final class Q10745_TheSecretIngredients extends Quest
 			case "33954-02.htm":
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				break;
 			}
 			case "33954-05.html":
@@ -85,7 +84,6 @@ public final class Q10745_TheSecretIngredients extends Quest
 				if (qs.isCond(2))
 				{
 					qs.setCond(3, true);
-					sendNpcLogList(player);
 					takeItem(player, SECRET_INGREDIENTS);
 					giveItems(player, DOLKIN_REPORT);
 				}
@@ -177,7 +175,6 @@ public final class Q10745_TheSecretIngredients extends Quest
 			{
 				giveItems(killer, SECRET_INGREDIENTS);
 				qs.setCond(2, true);
-				sendNpcLogList(killer);
 			}
 			if ((++killedMobs) == 3)
 			{

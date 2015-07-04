@@ -82,7 +82,6 @@ public final class Q10358_DividedSakumPoslof extends Quest
 			case "33510-03.htm":
 			{
 				st.startQuest();
-				sendNpcLogList(player);
 				htmltext = event;
 				break;
 			}
@@ -134,7 +133,6 @@ public final class Q10358_DividedSakumPoslof extends Quest
 						{
 							st.setCond(3);
 							giveItems(player, SAKUM_SKETCH, 1);
-							sendNpcLogList(player);
 							htmltext = "33510-05.htm";
 						}
 						else if (npc.getId() == ADVENTURER_GUIDE)
@@ -206,7 +204,6 @@ public final class Q10358_DividedSakumPoslof extends Quest
 			{
 				st.set("killed_" + POSLOF, 1);
 				st.setCond(4);
-				sendNpcLogList(killer);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);

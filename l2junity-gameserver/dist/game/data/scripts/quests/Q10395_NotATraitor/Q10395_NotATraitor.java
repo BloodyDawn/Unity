@@ -171,7 +171,10 @@ public final class Q10395_NotATraitor extends Quest
 			{
 				st.setCond(2, true);
 			}
-			sendNpcLogList(killer);
+			else
+			{
+				sendNpcLogList(killer);
+			}
 		}
 		return super.onKill(npc, killer, isSummon);
 	}

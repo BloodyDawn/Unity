@@ -93,7 +93,6 @@ public final class Q10774_LettersFromTheQueenCrumaTowerPart2 extends Quest
 					qs.setCond(2, true);
 					giveItems(player, SOE_CRUMA_TOWER, 1);
 					showOnScreenMsg(player, NpcStringId.TRY_USING_THE_TELEPORT_SCROLL_SYLVAIN_GAVE_YOU_TO_GO_TO_CRUMA_TOWER2, ExShowScreenMessage.TOP_CENTER, 8000);
-					sendNpcLogList(player);
 				}
 				break;
 			}
@@ -152,7 +151,6 @@ public final class Q10774_LettersFromTheQueenCrumaTowerPart2 extends Quest
 			player.sendPacket(new PlaySound(3, "Npcdialog1.serenia_quest_4", 0, 0, 0, 0, 0));
 			player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), "popup.html")));
 			giveItems(player, SOE_DION_TOWN, 1);
-			sendNpcLogList(player);
 		}
 	}
 	

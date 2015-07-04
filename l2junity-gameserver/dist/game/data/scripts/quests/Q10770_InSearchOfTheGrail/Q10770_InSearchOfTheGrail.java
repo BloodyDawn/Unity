@@ -83,7 +83,6 @@ public final class Q10770_InSearchOfTheGrail extends Quest
 			case "30673-05.htm":
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				break;
 			}
 			case "30484-02.html":

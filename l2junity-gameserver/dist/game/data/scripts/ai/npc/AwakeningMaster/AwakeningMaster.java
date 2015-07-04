@@ -46,9 +46,9 @@ import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
+import ai.npc.AbstractNpcAI;
 import quests.Q10338_SeizeYourDestiny.Q10338_SeizeYourDestiny;
 import quests.Q10472_WindsOfFateEncroachingShadows.Q10472_WindsOfFateEncroachingShadows;
-import ai.npc.AbstractNpcAI;
 
 /**
  * AwakeningMaster AI.
@@ -68,6 +68,7 @@ public final class AwakeningMaster extends AbstractNpcAI
 	// Items
 	private static final int SCROLL_OF_AFTERLIFE = 17600;
 	private static final Map<CategoryType, Integer> AWAKE_POWER = new HashMap<>();
+	
 	static
 	{
 		AWAKE_POWER.put(CategoryType.SIGEL_GROUP, 32264);
@@ -79,6 +80,7 @@ public final class AwakeningMaster extends AbstractNpcAI
 		AWAKE_POWER.put(CategoryType.WYNN_GROUP, 32270);
 		AWAKE_POWER.put(CategoryType.AEORE_GROUP, 32271);
 	}
+	
 	// Skills
 	private static final SkillHolder WYNN_POWER = new SkillHolder(16390, 1);
 	private static final SkillHolder FEOH_POWER = new SkillHolder(16391, 1);
@@ -248,7 +250,6 @@ public final class AwakeningMaster extends AbstractNpcAI
 		npc.setTarget(qs.getPlayer());
 		npc.doCast(skill.getSkill());
 		qs.setCond(cond, true);
-		qs.getQuest().sendNpcLogList(qs.getPlayer());
 		return npcId + "-01.html";
 	}
 	
@@ -338,7 +339,7 @@ public final class AwakeningMaster extends AbstractNpcAI
 		ThreadPoolManager.getInstance().scheduleGeneral(() ->
 		{
 			player.sendPacket(ExShowUsm.AWAKENING_END);
-		}, 10000);
+		} , 10000);
 	}
 	
 	public static void main(String[] args)

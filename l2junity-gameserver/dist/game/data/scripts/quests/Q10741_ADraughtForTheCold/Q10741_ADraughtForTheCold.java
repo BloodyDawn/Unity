@@ -76,7 +76,6 @@ public final class Q10741_ADraughtForTheCold extends Quest
 			case "33951-03.htm":
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				giveItems(player, EMPTY_HONEY_JAR, 10);
 				break;
 			}
@@ -166,7 +165,6 @@ public final class Q10741_ADraughtForTheCold extends Quest
 			if ((getQuestItemsCount(killer, SWEET_HONEY) >= 10) && (getQuestItemsCount(killer, NUTRITIOUS_MEAT) >= 10))
 			{
 				qs.setCond(2, true);
-				sendNpcLogList(killer);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);

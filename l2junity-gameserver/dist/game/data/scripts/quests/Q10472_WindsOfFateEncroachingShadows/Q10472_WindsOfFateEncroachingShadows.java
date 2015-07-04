@@ -128,20 +128,16 @@ public final class Q10472_WindsOfFateEncroachingShadows extends Quest
 			case "33491-03.html":
 			case "33491-04.html":
 				break;
-			// Navari
-			case "33931-05.htm":
+			case "33931-05.htm": // Navari
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				break;
 			}
-			// Zephyra
-			case "33978-03.html":
+			case "33978-03.html": // Zephyra
 			{
 				if (qs.isCond(1))
 				{
 					qs.setCond(2, true);
-					sendNpcLogList(player);
 				}
 				break;
 			}
@@ -151,22 +147,18 @@ public final class Q10472_WindsOfFateEncroachingShadows extends Quest
 				{
 					// TODO: Here Zephyra should cast some skill to player which recovers CP/HP/MP
 					qs.setCond(18, true);
-					sendNpcLogList(player);
 				}
 				break;
 			}
-			// Momet
-			case "33998-04.html":
+			case "33998-04.html": // Momet
 			{
 				if (qs.isCond(2))
 				{
 					qs.setCond(3, true);
-					sendNpcLogList(player);
 				}
 				break;
 			}
-			// Black Marketeer Mammon
-			case "31092-02.html":
+			case "31092-02.html": // Black Marketeer Mammon
 			{
 				htmltext = getHtm(player.getHtmlPrefix(), event).replace("%playerName%", player.getName());
 				break;
@@ -192,29 +184,24 @@ public final class Q10472_WindsOfFateEncroachingShadows extends Quest
 				{
 					qs.setCond(6, true);
 					qs.setMemoState(0);
-					sendNpcLogList(player);
 					takeItems(player, DARK_FRAGMENT, DARK_FRAGMENT_COUNT);
 				}
 				break;
 			}
-			// Blacksmith Mammon
-			case "31126-08.html":
+			case "31126-08.html": // Blacksmith Mammon
 			{
 				if (qs.isCond(6))
 				{
 					qs.setCond(7, true);
 					giveItems(player, COUNTERFEIT_ATELIA, 1);
-					sendNpcLogList(player);
 				}
 				break;
 			}
-			// Hardin
-			case "33870-05.html":
+			case "33870-05.html": // Hardin
 			{
 				if (qs.isCond(7))
 				{
 					qs.setCond(8, true);
-					sendNpcLogList(player);
 				}
 				break;
 			}
@@ -226,22 +213,18 @@ public final class Q10472_WindsOfFateEncroachingShadows extends Quest
 					npc.setTarget(player);
 					npc.doCast(ATELIA_ENERGY.getSkill()); // TODO: Implement this skill
 					qs.setCond(17, true);
-					sendNpcLogList(player);
 				}
 				break;
 			}
-			// Karla
-			case "33933-03.html":
+			case "33933-03.html": // Karla
 			{
 				if (qs.isCond(18))
 				{
 					qs.setCond(19, true);
-					sendNpcLogList(player);
 				}
 				break;
 			}
-			// Raina
-			case "33491-red":
+			case "33491-red": // Raina
 			case "33491-blue":
 			case "33491-green":
 			{
@@ -445,7 +428,6 @@ public final class Q10472_WindsOfFateEncroachingShadows extends Quest
 		if ((qs != null) && qs.isCond(4) && giveItemRandomly(killer, npc, DARK_FRAGMENT, 1, DARK_FRAGMENT_COUNT, DROP_CHANCE, true))
 		{
 			qs.setCond(5);
-			sendNpcLogList(killer);
 		}
 		return super.onKill(npc, killer, isSummon);
 	}

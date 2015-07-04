@@ -129,7 +129,6 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 					qs.setCond(2, true);
 					htmltext = "33931-03.htm";
 				}
-				sendNpcLogList(player);
 				break;
 			}
 			case "33943-02.html":
@@ -137,7 +136,6 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 				if (qs.isCond(2))
 				{
 					qs.setCond(4, true);
-					sendNpcLogList(player);
 				}
 				break;
 			}
@@ -146,7 +144,6 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 				if (qs.isCond(3))
 				{
 					qs.setCond(5, true);
-					sendNpcLogList(player);
 				}
 				break;
 			}
@@ -156,7 +153,6 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 				{
 					giveItems(player, WIND_SPIRIT_REALMS_RELIC, 1);
 					qs.setCond(6, true);
-					sendNpcLogList(player);
 				}
 				break;
 			}
@@ -181,7 +177,6 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 					giveItems(player, WIND_SPIRIT_REALMS_RELIC, 1);
 					qs.setCond(7, true);
 					showOnScreenMsg(player, NpcStringId.RETURN_TO_RAYMOND_OF_THE_TOWN_OF_GLUDIO, ExShowScreenMessage.TOP_CENTER, 8000);
-					sendNpcLogList(player);
 				}
 				break;
 			}
@@ -198,7 +193,6 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 						qs.setCond(9, true);
 						htmltext = "30289-08.html";
 					}
-					sendNpcLogList(player);
 				}
 				break;
 			}

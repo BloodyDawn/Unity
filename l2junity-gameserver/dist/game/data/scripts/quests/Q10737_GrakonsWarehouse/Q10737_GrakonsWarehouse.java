@@ -80,7 +80,6 @@ public final class Q10737_GrakonsWarehouse extends Quest
 			case "33943-03.htm":
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				giveItems(player, APPRENTICE_SUPPORT_BOX);
 				break;
 			}

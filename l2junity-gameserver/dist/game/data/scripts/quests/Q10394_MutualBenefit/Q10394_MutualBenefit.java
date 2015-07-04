@@ -80,7 +80,6 @@ public final class Q10394_MutualBenefit extends Quest
 			case "33862-04.htm":
 			{
 				st.startQuest();
-				sendNpcLogList(player);
 				htmltext = event;
 				break;
 			}

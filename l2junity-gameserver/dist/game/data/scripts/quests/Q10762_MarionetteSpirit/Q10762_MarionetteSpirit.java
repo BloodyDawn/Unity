@@ -74,7 +74,6 @@ public final class Q10762_MarionetteSpirit extends Quest
 			case "33966-03.htm":
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				break;
 			}
 			case "33966-06.html":

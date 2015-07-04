@@ -83,7 +83,6 @@ public final class Q10757_QuietingTheStorm extends Quest
 			case "33963-05.htm":
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				break;
 			}
 			case "33963-08.html":

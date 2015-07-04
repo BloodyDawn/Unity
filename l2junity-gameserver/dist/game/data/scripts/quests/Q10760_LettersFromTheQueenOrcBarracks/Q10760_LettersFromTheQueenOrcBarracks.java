@@ -90,7 +90,6 @@ public class Q10760_LettersFromTheQueenOrcBarracks extends Quest
 				if (qs.isCond(1))
 				{
 					qs.setCond(2, true);
-					sendNpcLogList(player);
 					giveItems(player, SOE_ORC_BARRACKS, 1);
 					showOnScreenMsg(player, NpcStringId.TRY_USING_THE_TELEPORT_SCROLL_LEVIAN_GAVE_YOU_TO_GO_TO_ORC_BARRACKS, ExShowScreenMessage.TOP_CENTER, 5000);
 				}
@@ -148,7 +147,6 @@ public class Q10760_LettersFromTheQueenOrcBarracks extends Quest
 			player.sendPacket(new PlaySound(3, "Npcdialog1.serenia_quest_2", 0, 0, 0, 0, 0));
 			player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), "popup.html")));
 			giveItems(player, SOE_GLUDIN_VILLAGE, 1);
-			sendNpcLogList(player);
 		}
 	}
 	

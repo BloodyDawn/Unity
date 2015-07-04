@@ -87,7 +87,6 @@ public final class Q10775_InSearchOfAnAncientGiant extends Quest
 			case "30487-05.htm":
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				break;
 			}
 			case "30485-04.html":

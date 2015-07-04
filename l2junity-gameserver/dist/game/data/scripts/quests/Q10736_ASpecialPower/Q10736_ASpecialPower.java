@@ -71,7 +71,6 @@ public final class Q10736_ASpecialPower extends Quest
 		if ((qs != null) && event.equals("33943-02.htm"))
 		{
 			qs.startQuest();
-			sendNpcLogList(player);
 			return event;
 		}
 		return null;

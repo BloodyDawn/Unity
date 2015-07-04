@@ -18,8 +18,6 @@
  */
 package instances.FaeronTrainingGrounds1;
 
-import instances.AbstractInstance;
-
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
@@ -33,6 +31,7 @@ import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
+import instances.AbstractInstance;
 import quests.Q10735_ASpecialPower.Q10735_ASpecialPower;
 
 /**
@@ -131,7 +130,6 @@ public final class FaeronTrainingGrounds1 extends AbstractInstance
 				if (qs.isCond(5))
 				{
 					qs.setCond(6, true);
-					qs.getQuest().sendNpcLogList(player);
 					showOnScreenMsg(player, NpcStringId.FIGHT_USING_SKILLS, ExShowScreenMessage.TOP_CENTER, 10000);
 					spawnMonsters(RATEL, player);
 					htmltext = event;
@@ -159,7 +157,6 @@ public final class FaeronTrainingGrounds1 extends AbstractInstance
 				case 1:
 				{
 					qs.setCond(2, true);
-					qs.getQuest().sendNpcLogList(player);
 					spawnMonsters(FLOATO, player);
 					showOnScreenMsg(player, NpcStringId.ATTACK_THE_MONSTER, ExShowScreenMessage.TOP_CENTER, 10000);
 					htmltext = "33944-01.html";
@@ -179,7 +176,6 @@ public final class FaeronTrainingGrounds1 extends AbstractInstance
 						spawnMonsters(FLOATO2, player);
 						showOnScreenMsg(player, NpcStringId.ATTACK_THE_MONSTER, ExShowScreenMessage.TOP_CENTER, 10000);
 						qs.setCond(4, true);
-						qs.getQuest().sendNpcLogList(player);
 						htmltext = "33944-05.html";
 					}
 					else
@@ -279,7 +275,6 @@ public final class FaeronTrainingGrounds1 extends AbstractInstance
 		{
 			qs.setCond(qs.getCond() + 1, true);
 			qs.setMemoStateEx(Q10735_ASpecialPower.KILL_COUNT_VAR, 0);
-			qs.getQuest().sendNpcLogList(killer);
 			return true;
 		}
 		playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);

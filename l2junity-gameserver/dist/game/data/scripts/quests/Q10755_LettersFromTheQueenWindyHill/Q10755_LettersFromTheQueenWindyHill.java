@@ -90,7 +90,6 @@ public final class Q10755_LettersFromTheQueenWindyHill extends Quest
 				if (qs.isCond(1))
 				{
 					qs.setCond(2, true);
-					sendNpcLogList(player);
 					giveItems(player, SOE_WINDY_HILL, 1);
 					showOnScreenMsg(player, NpcStringId.TRY_USING_THE_TELEPORT_SCROLL_LEVIAN_GAVE_YOU, ExShowScreenMessage.TOP_CENTER, 5000);
 				}
@@ -148,7 +147,6 @@ public final class Q10755_LettersFromTheQueenWindyHill extends Quest
 			player.sendPacket(new PlaySound(3, "Npcdialog1.serenia_quest_1", 0, 0, 0, 0, 0));
 			player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), "popup.html")));
 			giveItems(player, SOE_GLUDIN_VILLAGE, 1);
-			sendNpcLogList(player);
 		}
 	}
 	

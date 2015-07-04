@@ -65,7 +65,6 @@ public final class Q10732_AForeignLand extends Quest
 			{
 				qs.startQuest();
 				player.sendPacket(ExShowUsm.ERTHEIA_FIRST_QUEST);
-				sendNpcLogList(player);
 				break;
 			}
 			case "33932-02.html":

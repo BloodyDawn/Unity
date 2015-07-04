@@ -84,7 +84,6 @@ public final class Q10772_ReportsFromCrumaTowerPart1 extends Quest
 			case "30484-06.htm":
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				break;
 			}
 			case "spawn_owl":

@@ -100,7 +100,6 @@ public final class Q10333_DisappearedSakum extends Quest
 				{
 					htmltext = event;
 					st.setCond(2, true);
-					sendNpcLogList(player);
 				}
 				break;
 			}

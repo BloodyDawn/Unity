@@ -89,7 +89,6 @@ public final class Q10335_RequestToFindSakum extends Quest
 				if (st.isCond(1))
 				{
 					st.setCond(2);
-					sendNpcLogList(player);
 					htmltext = event;
 				}
 				break;

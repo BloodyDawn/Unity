@@ -81,7 +81,6 @@ public final class Q00451_LuciensAltar extends Quest
 		{
 			st.startQuest();
 			giveItems(player, REPLENISHED_BEAD, 5);
-			sendNpcLogList(player);
 			htmltext = event;
 		}
 		return htmltext;

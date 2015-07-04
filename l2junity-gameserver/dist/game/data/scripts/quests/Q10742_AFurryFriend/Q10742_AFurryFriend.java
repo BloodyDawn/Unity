@@ -82,7 +82,6 @@ public final class Q10742_AFurryFriend extends Quest
 			{
 				qs.startQuest();
 				qs.set("cave", getRandom(3));
-				sendNpcLogList(player);
 				showOnScreenMsg(player, NpcStringId.FOLLOW_RICKY, ExShowScreenMessage.TOP_CENTER, 10000);
 				addSpawn(RICKY, RICKY_SPAWN, false, 180000);
 				htmltext = event;
@@ -155,7 +154,6 @@ public final class Q10742_AFurryFriend extends Quest
 						if (leira != null)
 						{
 							qs.setCond(2, true);
-							sendNpcLogList(player);
 							player.sendPacket(new ExSendUIEvent(player, false, false, 0, 0, NpcStringId.REMAINING_TIME));
 							showOnScreenMsg(player, NpcStringId.RICKY_HAS_FOUND_LEIRA, ExShowScreenMessage.MIDDLE_CENTER, 10000);
 							startQuestTimer("DESPAWN_RICKY", 1000, npc, player);

@@ -73,7 +73,6 @@ public final class Q10744_StrongerThanSteel extends Quest
 			case "33953-03.htm":
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				break;
 			}
 			case "33954-03.html":
@@ -81,7 +80,6 @@ public final class Q10744_StrongerThanSteel extends Quest
 				if (qs.isCond(1))
 				{
 					qs.setCond(2, true);
-					sendNpcLogList(player);
 				}
 				break;
 			}
@@ -164,7 +162,6 @@ public final class Q10744_StrongerThanSteel extends Quest
 			if ((getQuestItemsCount(killer, TREANT_LEAF) >= 20) && (getQuestItemsCount(killer, LEAFIE_LEAF) >= 15))
 			{
 				qs.setCond(3, true);
-				sendNpcLogList(killer);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);

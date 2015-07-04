@@ -83,7 +83,6 @@ public final class Q10771_VolatilePower extends Quest
 			{
 				qs.startQuest();
 				giveItems(player, SHINING_MYSTERIOUS_FRAGMENT, 20);
-				sendNpcLogList(player);
 				break;
 			}
 			case "30484-08.html":

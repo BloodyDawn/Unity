@@ -54,8 +54,8 @@ public final class Q10337_SakumsImpact extends Quest
 		addStartNpc(ADVENTURE_GUILDSMAN);
 		addTalkId(ADVENTURE_GUILDSMAN, SILVAN, LEF);
 		addKillId(SKELETON_WARRIOR, RUIN_IMP, BAT, RUIN_BAT);
-		addCondNotRace(Race.ERTHEIA, "31795-05.htm"); // TODO: In retail you can't see this quest in quest list
-		addCondLevel(MIN_LEVEL, MAX_LEVEL, "31795-06.htm"); // TODO: In retail you can't see this quest in quest list
+		addCondNotRace(Race.ERTHEIA, "");
+		addCondLevel(MIN_LEVEL, MAX_LEVEL, "");
 	}
 	
 	@Override
@@ -88,7 +88,6 @@ public final class Q10337_SakumsImpact extends Quest
 				if (st.isCond(1))
 				{
 					st.setCond(2);
-					sendNpcLogList(player);
 					htmltext = event;
 				}
 				break;
@@ -189,7 +188,7 @@ public final class Q10337_SakumsImpact extends Quest
 				switch (npc.getId())
 				{
 					case ADVENTURE_GUILDSMAN:
-						htmltext = "31795-07.htm";
+						htmltext = "31795-05.htm";
 						break;
 					case SILVAN:
 						htmltext = "33178-06.htm";

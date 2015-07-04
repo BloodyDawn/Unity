@@ -151,12 +151,12 @@ public final class Q10402_NowhereToTurn extends Quest
 			{
 				st.set("KILLED_COUNT", killCount + 1);
 				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				sendNpcLogList(killer);
 			}
 			else
 			{
 				st.setCond(2, true);
 			}
-			sendNpcLogList(killer);
 		}
 		return super.onKill(npc, killer, isSummon);
 	}

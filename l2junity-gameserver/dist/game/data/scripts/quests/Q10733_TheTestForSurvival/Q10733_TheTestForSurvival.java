@@ -71,7 +71,6 @@ public final class Q10733_TheTestForSurvival extends Quest
 				qs.startQuest();
 				player.sendPacket(new TutorialShowHtml(npc.getObjectId(), "..\\L2Text\\QT_027_Quest_01.htm", TutorialShowHtml.LARGE_WINDOW));
 				giveItems(player, GERETH_RECOMMENDATION, 1);
-				sendNpcLogList(player);
 				break;
 			}
 			case "34005-03.html":

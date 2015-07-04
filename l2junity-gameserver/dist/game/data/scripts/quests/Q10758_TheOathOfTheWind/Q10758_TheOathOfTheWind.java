@@ -75,7 +75,6 @@ public final class Q10758_TheOathOfTheWind extends Quest
 			case "33963-03.htm":
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				break;
 			}
 			case "SPAWN":

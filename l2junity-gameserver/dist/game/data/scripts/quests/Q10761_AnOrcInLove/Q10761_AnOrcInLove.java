@@ -87,7 +87,6 @@ public class Q10761_AnOrcInLove extends Quest
 			case "33966-05.htm":
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				break;
 			}
 			case "33966-08.html":
@@ -141,7 +140,10 @@ public class Q10761_AnOrcInLove extends Quest
 				{
 					qs.setCond(2, true);
 				}
-				sendNpcLogList(killer);
+				else
+				{
+					sendNpcLogList(killer);
+				}
 			}
 		}
 		return super.onKill(npc, killer, isSummon);

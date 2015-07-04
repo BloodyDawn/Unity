@@ -75,7 +75,6 @@ public final class Q10368_RebellionOfMonsters extends Quest
 			case "33179-03.htm":
 			{
 				st.startQuest();
-				sendNpcLogList(player);
 				htmltext = event;
 				break;
 			}

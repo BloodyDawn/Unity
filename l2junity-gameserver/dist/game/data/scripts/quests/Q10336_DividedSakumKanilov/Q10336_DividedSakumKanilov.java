@@ -80,7 +80,6 @@ public final class Q10336_DividedSakumKanilov extends Quest
 			case "33509-03.htm":
 			{
 				st.startQuest();
-				sendNpcLogList(player);
 				htmltext = event;
 				break;
 			}

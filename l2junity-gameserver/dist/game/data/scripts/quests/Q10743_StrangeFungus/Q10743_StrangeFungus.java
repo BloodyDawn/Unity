@@ -84,7 +84,6 @@ public final class Q10743_StrangeFungus extends Quest
 			case "33952-03.htm":
 			{
 				qs.startQuest();
-				sendNpcLogList(player);
 				break;
 			}
 			case "33953-03.html":
@@ -164,6 +163,7 @@ public final class Q10743_StrangeFungus extends Quest
 						qs.set(EVOLVED_SPAWN_VAR, killCount);
 					}
 					qs.set(KILL_COUNT_VAR, qs.getInt(KILL_COUNT_VAR) + 1);
+					sendNpcLogList(killer);
 					break;
 				}
 				case EVOLVED_GROWLER:
@@ -175,7 +175,6 @@ public final class Q10743_StrangeFungus extends Quest
 					break;
 				}
 			}
-			sendNpcLogList(killer);
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
