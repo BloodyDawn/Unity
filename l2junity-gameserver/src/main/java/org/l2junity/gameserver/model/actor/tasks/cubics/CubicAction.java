@@ -102,7 +102,7 @@ public final class CubicAction implements Runnable
 			{
 				for (BuffInfo info : _cubic.getOwner().getEffectList().getDebuffs().values())
 				{
-					if (info.getSkill().canBeDispeled())
+					if (info.getSkill().canBeDispelled())
 					{
 						useCubicCure = true;
 						info.getEffected().getEffectList().stopSkillEffects(true, info.getSkill());

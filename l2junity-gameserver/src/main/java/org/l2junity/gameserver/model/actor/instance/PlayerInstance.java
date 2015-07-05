@@ -2563,7 +2563,7 @@ public final class PlayerInstance extends Playable
 			}
 			
 			// fix when learning toggle skills
-			if (sk.isToggle() && sk.canBeDispeled() && isAffectedBySkill(sk.getId()))
+			if (sk.isToggle() && sk.canBeDispelled() && isAffectedBySkill(sk.getId()))
 			{
 				stopSkillEffects(true, sk.getId());
 			}

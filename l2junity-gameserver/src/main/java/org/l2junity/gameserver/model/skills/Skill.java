@@ -197,7 +197,7 @@ public final class Skill implements IIdentifiable
 	private final String _attribute;
 	
 	private final boolean _isSuicideAttack;
-	private final boolean _canBeDispeled;
+	private final boolean _canBeDispelled;
 	
 	private final boolean _isClanSkill;
 	private final boolean _excludedFromCheck;
@@ -377,7 +377,7 @@ public final class Skill implements IIdentifiable
 		_flyRadius = set.getInt("flyRadius", 0);
 		_flyCourse = set.getFloat("flyCourse", 0);
 		
-		_canBeDispeled = set.getBoolean("canBeDispeled", true);
+		_canBeDispelled = set.getBoolean("canBeDispelled", true);
 		
 		_excludedFromCheck = set.getBoolean("excludedFromCheck", false);
 		_simultaneousCast = set.getBoolean("simultaneousCast", false);
@@ -1634,9 +1634,9 @@ public final class Skill implements IIdentifiable
 		return _attribute;
 	}
 
-	public boolean canBeDispeled()
+	public boolean canBeDispelled()
 	{
-		return _canBeDispeled;
+		return _canBeDispelled;
 	}
 	
 	/**
@@ -1645,7 +1645,7 @@ public final class Skill implements IIdentifiable
 	 */
 	public boolean canBeStolen()
 	{
-		return !isPassive() && !isToggle() && !isDebuff() && !isHeroSkill() && !isGMSkill() && !(isStatic() && (getId() != CommonSkill.CARAVANS_SECRET_MEDICINE.getId())) && canBeDispeled() && (getId() != CommonSkill.SERVITOR_SHARE.getId());
+		return !isPassive() && !isToggle() && !isDebuff() && !isHeroSkill() && !isGMSkill() && !(isStatic() && (getId() != CommonSkill.CARAVANS_SECRET_MEDICINE.getId())) && canBeDispelled() && (getId() != CommonSkill.SERVITOR_SHARE.getId());
 	}
 	
 	public boolean isClanSkill()

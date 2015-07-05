@@ -908,12 +908,12 @@ public final class CharEffectList
 		{
 			if (!abnormalTypes.isEmpty())
 			{
-				getDebuffs().values().stream().filter(debuff -> debuff.getSkill().canBeDispeled() && abnormalTypes.contains(debuff.getSkill().getAbnormalType())).forEach(info -> info.resetAbnormalTime());
+				getDebuffs().values().stream().filter(debuff -> debuff.getSkill().canBeDispelled() && abnormalTypes.contains(debuff.getSkill().getAbnormalType())).forEach(info -> info.resetAbnormalTime());
 			}
 			else
 			{
 				// Safety check is made when resetting debuffs duration. Since we don't know which debuffs can be reset and which not, lets reset only dispellable debuffs.
-				getDebuffs().values().stream().filter(debuff -> debuff.getSkill().canBeDispeled()).forEach(info -> info.resetAbnormalTime());
+				getDebuffs().values().stream().filter(debuff -> debuff.getSkill().canBeDispelled()).forEach(info -> info.resetAbnormalTime());
 			}
 			
 			// Update effect flags and icons.
