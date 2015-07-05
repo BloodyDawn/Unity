@@ -96,6 +96,7 @@ public final class EffectMasterHandler
 		FakeDeath.class,
 		FatalBlow.class,
 		Fear.class,
+		Feed.class,
 		Fishing.class,
 		Flag.class,
 		FlyMove.class,

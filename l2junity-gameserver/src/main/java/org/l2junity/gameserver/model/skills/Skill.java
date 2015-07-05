@@ -135,7 +135,6 @@ public final class Skill implements IIdentifiable
 	
 	/** Target type of the skill : SELF, PARTY, CLAN, PET... */
 	private final L2TargetType _targetType;
-	private final int _feed;
 	// base success chance
 	private final double _power;
 	private final double _pvpPower;
@@ -173,7 +172,7 @@ public final class Skill implements IIdentifiable
 	private final boolean _isHeroSkill; // If true the skill is a Hero Skill
 	private final boolean _isGMSkill; // True if skill is GM skill
 	private final boolean _isSevenSigns;
-
+	
 	private final boolean _directHpDmg; // If true then damage is being make directly
 	private final boolean _isTriggeredSkill; // If true the skill will take activation buff slot instead of a normal buff slot
 	private final int _effectPoint;
@@ -273,7 +272,6 @@ public final class Skill implements IIdentifiable
 		_coolTime = set.getInt("coolTime", 0);
 		_isDebuff = set.getBoolean("isDebuff", false);
 		_isRecoveryHerb = set.getBoolean("isRecoveryHerb", false);
-		_feed = set.getInt("feed", 0);
 		
 		if (Config.ENABLE_MODIFY_SKILL_REUSE && Config.SKILL_REUSE_LIST.containsKey(_id))
 		{
@@ -362,7 +360,7 @@ public final class Skill implements IIdentifiable
 		_isGMSkill = SkillTreesData.getInstance().isGMSkill(_id, _level);
 		_isSevenSigns = (_id > 4360) && (_id < 4367);
 		_isClanSkill = SkillTreesData.getInstance().isClanSkill(_id, _level);
-
+		
 		_directHpDmg = set.getBoolean("dmgDirectlyToHp", false);
 		_isTriggeredSkill = set.getBoolean("isTriggeredSkill", false);
 		_effectPoint = set.getInt("effectPoint", 0);
@@ -953,7 +951,7 @@ public final class Skill implements IIdentifiable
 	{
 		return _soulMaxConsume;
 	}
-
+	
 	public boolean getDmgDirectlyToHP()
 	{
 		return _directHpDmg;
@@ -1599,14 +1597,6 @@ public final class Skill implements IIdentifiable
 	public String toString()
 	{
 		return "Skill " + _name + "(" + _id + "," + _level + ")";
-	}
-	
-	/**
-	 * @return pet food
-	 */
-	public int getFeed()
-	{
-		return _feed;
 	}
 	
 	/**
