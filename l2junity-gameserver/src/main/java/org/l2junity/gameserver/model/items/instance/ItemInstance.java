@@ -227,7 +227,7 @@ public final class ItemInstance extends WorldObject
 	 */
 	public ItemInstance(ResultSet rs) throws SQLException
 	{
-		this(rs.getInt(1), ItemTable.getInstance().getTemplate(rs.getInt("item_id")));
+		this(rs.getInt("object_id"), ItemTable.getInstance().getTemplate(rs.getInt("item_id")));
 		_count = rs.getLong("count");
 		_ownerId = rs.getInt("owner_id");
 		_loc = ItemLocation.valueOf(rs.getString("loc"));
