@@ -32,7 +32,6 @@ import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.tasks.cubics.CubicAction;
 import org.l2junity.gameserver.model.actor.tasks.cubics.CubicBuff;
@@ -392,7 +391,7 @@ public final class L2CubicInstance implements IIdentifiable
 			{
 				if (_owner.isOlympiadStart())
 				{
-					if (ownerTarget instanceof Playable)
+					if (ownerTarget.isPlayable())
 					{
 						final PlayerInstance targetPlayer = ownerTarget.getActingPlayer();
 						if ((targetPlayer != null) && (targetPlayer.getOlympiadGameId() == _owner.getOlympiadGameId()) && (targetPlayer.getOlympiadSide() != _owner.getOlympiadSide()))
@@ -408,23 +407,24 @@ public final class L2CubicInstance implements IIdentifiable
 			if (ownerTarget.isCreature() && (ownerTarget != pet) && !_owner.hasServitor(ownerTarget.getObjectId()) && (ownerTarget != _owner))
 			{
 				// target mob which has aggro on you or your summon
-				if (ownerTarget instanceof Attackable)
+				if (ownerTarget.isAttackable())
 				{
-					if ((((Attackable) ownerTarget).getAggroList().get(_owner) != null) && !((Attackable) ownerTarget).isDead())
+					final Attackable attackable = (Attackable) ownerTarget;
+					if ((attackable.getAggroList().get(_owner) != null) && !attackable.isDead())
 					{
 						_target = (Creature) ownerTarget;
 						return;
 					}
 					if (_owner.hasSummon())
 					{
-						if ((((Attackable) ownerTarget).getAggroList().get(pet) != null) && !((Attackable) ownerTarget).isDead())
+						if ((attackable.getAggroList().get(pet) != null) && !attackable.isDead())
 						{
 							_target = (Creature) ownerTarget;
 							return;
 						}
 						for (Summon servitor : _owner.getServitors().values())
 						{
-							if ((((Attackable) ownerTarget).getAggroList().get(servitor) != null) && !((Attackable) ownerTarget).isDead())
+							if ((attackable.getAggroList().get(servitor) != null) && !attackable.isDead())
 							{
 								_target = (Creature) ownerTarget;
 								return;
@@ -518,21 +518,21 @@ public final class L2CubicInstance implements IIdentifiable
 			
 			if (skill.isBad())
 			{
-				byte shld = Formulas.calcShldUse(getOwner(), target, skill);
+				byte shld = Formulas.calcShldUse(_owner, target, skill);
 				boolean acted = Formulas.calcCubicSkillSuccess(this, target, skill, shld);
 				if (!acted)
 				{
-					getOwner().sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
+					_owner.sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
 					continue;
 				}
 				
 			}
 			
 			// Apply effects
-			skill.applyEffects(getOwner(), this, target, false, false, true, 0);
+			skill.applyEffects(_owner, target, false, false, true, 0);
 			
 			// If this is a bad skill notify the duel manager, so it can be removed after the duel (player & target must be in the same duel).
-			if (target.isPlayer() && target.getActingPlayer().isInDuel() && skill.isBad() && (getOwner().getDuelId() == target.getActingPlayer().getDuelId()))
+			if (target.isPlayer() && target.getActingPlayer().isInDuel() && skill.isBad() && (_owner.getDuelId() == target.getActingPlayer().getDuelId()))
 			{
 				DuelManager.getInstance().onBuff(target.getActingPlayer(), skill);
 			}
@@ -565,9 +565,9 @@ public final class L2CubicInstance implements IIdentifiable
 				}
 			}
 			
-			boolean mcrit = Formulas.calcMCrit(activeCubic.getOwner().getMCriticalHit(target, skill), skill, target);
-			byte shld = Formulas.calcShldUse(activeCubic.getOwner(), target, skill);
-			int damage = (int) Formulas.calcMagicDam(activeCubic, target, skill, mcrit, shld);
+			boolean mcrit = Formulas.calcMCrit(_owner.getMCriticalHit(target, skill), skill, target);
+			byte shld = Formulas.calcShldUse(_owner, target, skill);
+			int damage = (int) Formulas.calcMagicDam(this, target, skill, mcrit, shld);
 			
 			if (Config.DEBUG)
 			{
@@ -590,8 +590,8 @@ public final class L2CubicInstance implements IIdentifiable
 				}
 				else
 				{
-					activeCubic.getOwner().sendDamageMessage(target, damage, mcrit, false, false);
-					target.reduceCurrentHp(damage, activeCubic.getOwner(), skill);
+					_owner.sendDamageMessage(target, damage, mcrit, false, false);
+					target.reduceCurrentHp(damage, _owner, skill);
 				}
 			}
 		}
@@ -611,10 +611,10 @@ public final class L2CubicInstance implements IIdentifiable
 				continue;
 			}
 			
-			boolean mcrit = Formulas.calcMCrit(activeCubic.getOwner().getMCriticalHit(target, skill), skill, target);
-			byte shld = Formulas.calcShldUse(activeCubic.getOwner(), target, skill);
+			boolean mcrit = Formulas.calcMCrit(_owner.getMCriticalHit(target, skill), skill, target);
+			byte shld = Formulas.calcShldUse(_owner, target, skill);
 			
-			int damage = (int) Formulas.calcMagicDam(activeCubic, target, skill, mcrit, shld);
+			int damage = (int) Formulas.calcMagicDam(this, target, skill, mcrit, shld);
 			if (Config.DEBUG)
 			{
 				_log.info("L2SkillDrain: useCubicSkill() -> damage = " + damage);
@@ -622,15 +622,14 @@ public final class L2CubicInstance implements IIdentifiable
 			
 			// TODO: Unhardcode fixed value
 			double hpAdd = (0.4 * damage);
-			PlayerInstance owner = activeCubic.getOwner();
-			double hp = ((owner.getCurrentHp() + hpAdd) > owner.getMaxHp() ? owner.getMaxHp() : (owner.getCurrentHp() + hpAdd));
+			double hp = ((_owner.getCurrentHp() + hpAdd) > _owner.getMaxHp() ? _owner.getMaxHp() : (_owner.getCurrentHp() + hpAdd));
 			
-			owner.setCurrentHp(hp);
+			_owner.setCurrentHp(hp);
 			
 			// Check to see if we should damage the target
 			if ((damage > 0) && !target.isDead())
 			{
-				target.reduceCurrentHp(damage, activeCubic.getOwner(), skill);
+				target.reduceCurrentHp(damage, _owner, skill);
 				
 				// Manage attack or cast break of the target (calculating rate, sending message...)
 				if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
@@ -638,7 +637,7 @@ public final class L2CubicInstance implements IIdentifiable
 					target.breakAttack();
 					target.breakCast();
 				}
-				owner.sendDamageMessage(target, damage, mcrit, false, false);
+				_owner.sendDamageMessage(target, damage, mcrit, false, false);
 			}
 		}
 	}
@@ -657,17 +656,17 @@ public final class L2CubicInstance implements IIdentifiable
 				continue;
 			}
 			
-			byte shld = Formulas.calcShldUse(getOwner(), target, skill);
+			byte shld = Formulas.calcShldUse(_owner, target, skill);
 			
 			if (skill.hasEffectType(L2EffectType.STUN, L2EffectType.PARALYZE, L2EffectType.ROOT))
 			{
 				if (Formulas.calcCubicSkillSuccess(this, target, skill, shld))
 				{
 					// Apply effects
-					skill.applyEffects(getOwner(), this, target, false, false, true, 0);
+					skill.applyEffects(_owner, target, false, false, true, 0);
 					
 					// If this is a bad skill notify the duel manager, so it can be removed after the duel (player & target must be in the same duel).
-					if (target.isPlayer() && target.getActingPlayer().isInDuel() && skill.isBad() && (getOwner().getDuelId() == target.getActingPlayer().getDuelId()))
+					if (target.isPlayer() && target.getActingPlayer().isInDuel() && skill.isBad() && (_owner.getDuelId() == target.getActingPlayer().getDuelId()))
 					{
 						DuelManager.getInstance().onBuff(target.getActingPlayer(), skill);
 					}
@@ -692,11 +691,11 @@ public final class L2CubicInstance implements IIdentifiable
 				{
 					if (target.isAttackable())
 					{
-						target.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, getOwner(), (int) ((150 * skill.getPower()) / (target.getLevel() + 7)));
+						target.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, _owner, (int) ((150 * skill.getPower()) / (target.getLevel() + 7)));
 					}
 					
 					// Apply effects
-					skill.applyEffects(getOwner(), this, target, false, false, true, 0);
+					skill.applyEffects(_owner, target, false, false, true, 0);
 					
 					if (Config.DEBUG)
 					{

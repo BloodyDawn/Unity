@@ -711,13 +711,13 @@
 	</skill>
 	<skill id="19161" levels="2" name="Noble Protection Armor">
 		<!-- Critical Damage during a normal attack - 2%. -->
-		<table name="#bonus"> 1.02 1.04 </table>
+		<table name="#defCritDamage"> 0.98 0.96 </table>
 		<set name="operateType" val="P" />
 		<set name="icon" val="icon.skill19161" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="#bonus" />
+				<mul stat="defCritDamage" val="#defCritDamage" />
 			</effect>
 		</for>
 	</skill>
