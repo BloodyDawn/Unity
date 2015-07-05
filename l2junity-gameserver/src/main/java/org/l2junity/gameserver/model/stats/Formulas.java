@@ -1687,14 +1687,14 @@ public final class Formulas
 		
 		if (skill != null)
 		{
-			if (skill.getElement() == -1)
+			if (skill.getAttributeType() == -1)
 			{
 				attack_attribute = 0;
 				defence_attribute = target.getDefenseElementValue((byte) -1);
 			}
 			else
 			{
-				if (attacker.getAttackElement() == skill.getElement())
+				if (attacker.getAttackElement() == skill.getAttributeType())
 				{
 					attack_attribute = attacker.getAttackElementValue(attacker.getAttackElement()) + skill.getElementPower();
 					defence_attribute = target.getDefenseElementValue(attacker.getAttackElement());
@@ -1702,7 +1702,7 @@ public final class Formulas
 				else
 				{
 					attack_attribute = skill.getElementPower();
-					defence_attribute = target.getDefenseElementValue(skill.getElement());
+					defence_attribute = target.getDefenseElementValue(skill.getAttributeType());
 				}
 			}
 		}

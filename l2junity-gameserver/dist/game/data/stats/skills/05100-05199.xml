@@ -578,7 +578,7 @@
 	</skill>
 	<skill id="5130" levels="1" name="Volcano">
 		<set name="affectRange" val="300" />
-		<set name="element" val="0" /> <!-- Fire -->
+		<set name="attributeType" val="FIRE" />
 		<set name="elementPower" val="20" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="80" />
@@ -586,7 +586,7 @@
 		<set name="power" val="300" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<set name="element" val="0" /> <!-- Fire -->
+		<set name="attributeType" val="FIRE" />
 		<set name="elementPower" val="20" />
 		<for>
 			<effect name="MagicalAttack" />
@@ -594,7 +594,7 @@
 	</skill>
 	<skill id="5131" levels="1" name="Tsunami">
 		<set name="affectRange" val="300" />
-		<set name="element" val="1" /> <!-- Water -->
+		<set name="attributeType" val="WATER" />
 		<set name="elementPower" val="20" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="80" />
@@ -602,7 +602,7 @@
 		<set name="power" val="300" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<set name="element" val="1" /> <!-- Water -->
+		<set name="attributeType" val="WATER" />
 		<set name="elementPower" val="20" />
 		<for>
 			<effect name="MagicalAttack" />
@@ -610,7 +610,7 @@
 	</skill>
 	<skill id="5132" levels="1" name="Cyclone">
 		<set name="affectRange" val="300" />
-		<set name="element" val="2" /> <!-- Wind -->
+		<set name="attributeType" val="WIND" />
 		<set name="elementPower" val="20" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="80" />
@@ -618,7 +618,7 @@
 		<set name="power" val="300" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<set name="element" val="2" /> <!-- Wind -->
+		<set name="attributeType" val="WIND" />
 		<set name="elementPower" val="20" />
 		<for>
 			<effect name="MagicalAttack" />
@@ -626,7 +626,7 @@
 	</skill>
 	<skill id="5133" levels="1" name="Gehenna">
 		<set name="affectRange" val="300" />
-		<set name="element" val="5" /> <!-- Dark -->
+		<set name="attributeType" val="DARK" />
 		<set name="elementPower" val="20" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="80" />
@@ -634,7 +634,7 @@
 		<set name="power" val="300" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<set name="element" val="5" /> <!-- Dark -->
+		<set name="attributeType" val="DARK" />
 		<set name="elementPower" val="20" />
 		<for>
 			<effect name="MagicalAttack" />
@@ -644,7 +644,7 @@
 		<!-- TODO: Update to H5! -->
 		<set name="abnormalTime" val="15" />
 		<set name="affectRange" val="200" />
-		<set name="element" val="5" />
+		<set name="attributeType" val="DARK" />
 		<set name="elementPower" val="20" />
 		<set name="icon" val="icon.skill1424" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -770,7 +770,7 @@
 		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1000" />
-		<set name="element" val="1" /> <!-- Water -->
+		<set name="attributeType" val="WATER" />
 		<set name="elementPower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -1533,7 +1533,7 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="3" /> <!-- Earth -->
+		<set name="attributeType" val="EARTH" />
 		<set name="elementPower" val="20" />
 		<set name="icon" val="icon.skill3080" />
 		<set name="isDebuff" val="true" />
@@ -1787,7 +1787,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-655" />
 		<set name="effectRange" val="1400" />
-		<set name="element" val="2" /> <!-- Wind -->
+		<set name="attributeType" val="WIND" />
 		<set name="elementPower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="magicLvl" val="75" />

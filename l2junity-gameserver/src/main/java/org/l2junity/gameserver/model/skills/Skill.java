@@ -32,6 +32,7 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.MountType;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
@@ -158,7 +159,7 @@ public final class Skill implements IIdentifiable
 	
 	private final boolean _blockedInOlympiad;
 	
-	private final byte _element;
+	private final AttributeType _attributeType;
 	private final int _elementPower;
 	
 	private final BaseStats _basicProperty;
@@ -338,7 +339,7 @@ public final class Skill implements IIdentifiable
 		
 		_blockedInOlympiad = set.getBoolean("blockedInOlympiad", false);
 		
-		_element = set.getByte("element", (byte) -1);
+		_attributeType = set.getEnum("attributeType", AttributeType.class, AttributeType.NONE);
 		_elementPower = set.getInt("elementPower", 0);
 		
 		_basicProperty = set.getEnum("basicProperty", BaseStats.class, BaseStats.NONE);
@@ -399,9 +400,9 @@ public final class Skill implements IIdentifiable
 		return _traitType;
 	}
 	
-	public byte getElement()
+	public byte getAttributeType()
 	{
-		return _element;
+		return (byte)_attributeType.getClientId();
 	}
 	
 	public int getElementPower()
