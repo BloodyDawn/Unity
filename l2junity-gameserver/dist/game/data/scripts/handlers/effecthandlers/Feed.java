@@ -36,7 +36,7 @@ public class Feed extends AbstractEffect
 	private final int _ride;
 	private final int _wyvern;
 	
-	protected Feed(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public Feed(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
