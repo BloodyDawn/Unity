@@ -114,22 +114,16 @@ public class Mail extends ItemContainer
 	public void restore()
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT object_id, item_id, count, enchant_level, loc, loc_data, custom_type1, custom_type2, mana_left, time FROM items WHERE owner_id=? AND loc=? AND loc_data=?"))
+			PreparedStatement statement = con.prepareStatement("SELECT * FROM items WHERE owner_id=? AND loc=? AND loc_data=?"))
 		{
 			statement.setInt(1, getOwnerId());
 			statement.setString(2, getBaseLocation().name());
 			statement.setInt(3, getMessageId());
 			try (ResultSet inv = statement.executeQuery())
 			{
-				ItemInstance item;
 				while (inv.next())
 				{
-					item = ItemInstance.restoreFromDb(getOwnerId(), inv);
-					if (item == null)
-					{
-						continue;
-					}
-					
+					final ItemInstance item = new ItemInstance(inv);
 					World.getInstance().storeObject(item);
 					
 					// If stackable item is found just add to current quantity

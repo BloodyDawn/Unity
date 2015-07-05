@@ -654,24 +654,18 @@ public abstract class ItemContainer
 	public void restore()
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT object_id, item_id, count, enchant_level, loc, loc_data, custom_type1, custom_type2, mana_left, time FROM items WHERE owner_id=? AND (loc=?)"))
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM items WHERE owner_id=? AND (loc=?)"))
 		{
-			statement.setInt(1, getOwnerId());
-			statement.setString(2, getBaseLocation().name());
-			try (ResultSet inv = statement.executeQuery())
+			ps.setInt(1, getOwnerId());
+			ps.setString(2, getBaseLocation().name());
+			try (ResultSet rs = ps.executeQuery())
 			{
-				ItemInstance item;
-				while (inv.next())
+				while (rs.next())
 				{
-					item = ItemInstance.restoreFromDb(getOwnerId(), inv);
-					if (item == null)
-					{
-						continue;
-					}
-					
+					final ItemInstance item = new ItemInstance(rs);
 					World.getInstance().storeObject(item);
 					
-					PlayerInstance owner = getOwner() == null ? null : getOwner().getActingPlayer();
+					final PlayerInstance owner = getOwner() != null ? getOwner().getActingPlayer() : null;
 					
 					// If stackable item is found in inventory just add to current quantity
 					if (item.isStackable() && (getItemByItemId(item.getId()) != null))

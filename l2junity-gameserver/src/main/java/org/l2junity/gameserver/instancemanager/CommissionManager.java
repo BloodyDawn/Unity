@@ -90,15 +90,7 @@ public final class CommissionManager
 				{
 					while (rs.next())
 					{
-						final int itemOwnerId = rs.getInt("owner_id");
-						final int itemObjectId = rs.getInt("object_id");
-						final ItemInstance itemInstance = ItemInstance.restoreFromDb(itemOwnerId, rs);
-						if (itemInstance == null)
-						{
-							_log.warn(getClass().getSimpleName() + ": Failed loading item instance with item object id " + itemObjectId + " and owner id " + itemOwnerId + ".");
-							continue;
-						}
-						
+						final ItemInstance itemInstance = new ItemInstance(rs);
 						itemInstances.put(itemInstance.getObjectId(), itemInstance);
 					}
 				}
