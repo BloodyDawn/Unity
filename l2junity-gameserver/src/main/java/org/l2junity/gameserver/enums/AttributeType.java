@@ -58,4 +58,38 @@ public enum AttributeType
 	{
 		return _opposite;
 	}
+
+	/**
+	 * Finds an attribute type by its name.
+	 * @param attributeName the attribute name
+	 * @return An {@code AttributeType} if attribute type was found, {@code null} otherwise
+	 */
+	public static AttributeType findByName(String attributeName)
+	{
+		for (AttributeType attributeType : values())
+		{
+			if (attributeType.name().equalsIgnoreCase(attributeName))
+			{
+				return attributeType;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Finds an attribute type by its client id.
+	 * @param clientId the client id
+	 * @return An {@code AttributeType} if attribute type was found, {@code null} otherwise
+	 */
+	public static AttributeType findByClientId(int clientId)
+	{
+		for (AttributeType attributeType : values())
+		{
+			if (attributeType.getClientId() == clientId)
+			{
+				return attributeType;
+			}
+		}
+		return null;
+	}
 }
