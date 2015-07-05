@@ -24,21 +24,31 @@ package org.l2junity.gameserver.enums;
  */
 public enum AttributeType
 {
-	NONE(-1, AttributeType.NONE),
-	FIRE(0, AttributeType.WATER),
-	WATER(1, AttributeType.FIRE),
-	WIND(2, AttributeType.EARTH),
-	EARTH(3, AttributeType.WIND),
-	HOLY(4, AttributeType.DARK),
-	DARK(5, AttributeType.HOLY),;
+	NONE(-1),
+	FIRE(0),
+	WATER(1),
+	WIND(2),
+	EARTH(3),
+	HOLY(4),
+	DARK(5);
+
+	static
+	{
+		NONE._opposite = AttributeType.NONE;
+		FIRE._opposite = AttributeType.WATER;
+		WATER._opposite = AttributeType.FIRE;
+		WIND._opposite = AttributeType.EARTH;
+		EARTH._opposite = AttributeType.WIND;
+		HOLY._opposite = AttributeType.DARK;
+		DARK._opposite = AttributeType.HOLY;
+	}
 
 	private final int _clientId;
-	private final AttributeType _opposite;
+	private AttributeType _opposite;
 
-	AttributeType(int clientId, AttributeType opposite)
+	AttributeType(int clientId)
 	{
 		_clientId = clientId;
-		_opposite = opposite;
 	}
 
 	/**

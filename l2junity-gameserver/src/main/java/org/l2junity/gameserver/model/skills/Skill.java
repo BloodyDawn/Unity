@@ -160,7 +160,7 @@ public final class Skill implements IIdentifiable
 	private final boolean _blockedInOlympiad;
 	
 	private final AttributeType _attributeType;
-	private final int _elementPower;
+	private final int _attributeValue;
 	
 	private final BaseStats _basicProperty;
 	
@@ -340,7 +340,7 @@ public final class Skill implements IIdentifiable
 		_blockedInOlympiad = set.getBoolean("blockedInOlympiad", false);
 		
 		_attributeType = set.getEnum("attributeType", AttributeType.class, AttributeType.NONE);
-		_elementPower = set.getInt("elementPower", 0);
+		_attributeValue = set.getInt("attributeValue", 0);
 		
 		_basicProperty = set.getEnum("basicProperty", BaseStats.class, BaseStats.NONE);
 		
@@ -405,9 +405,9 @@ public final class Skill implements IIdentifiable
 		return (byte)_attributeType.getClientId();
 	}
 	
-	public int getElementPower()
+	public int getAttributeValue()
 	{
-		return _elementPower;
+		return _attributeValue;
 	}
 	
 	/**

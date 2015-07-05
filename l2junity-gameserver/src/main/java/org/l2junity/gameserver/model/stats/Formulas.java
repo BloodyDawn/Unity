@@ -1696,12 +1696,12 @@ public final class Formulas
 			{
 				if (attacker.getAttackElement() == skill.getAttributeType())
 				{
-					attack_attribute = attacker.getAttackElementValue(attacker.getAttackElement()) + skill.getElementPower();
+					attack_attribute = attacker.getAttackElementValue(attacker.getAttackElement()) + skill.getAttributeValue();
 					defence_attribute = target.getDefenseElementValue(attacker.getAttackElement());
 				}
 				else
 				{
-					attack_attribute = skill.getElementPower();
+					attack_attribute = skill.getAttributeValue();
 					defence_attribute = target.getDefenseElementValue(skill.getAttributeType());
 				}
 			}
