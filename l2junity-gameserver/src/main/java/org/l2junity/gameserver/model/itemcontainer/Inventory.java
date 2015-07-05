@@ -277,7 +277,7 @@ public abstract class Inventory extends ItemContainer
 		@Override
 		public void notifyUnequiped(int slot, ItemInstance item, Inventory inventory)
 		{
-			if (!(inventory.getOwner() instanceof PlayerInstance))
+			if (!inventory.getOwner().isPlayer())
 			{
 				return;
 			}

@@ -5255,7 +5255,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			if (newSkill.isPassive())
 			{
-				newSkill.applyEffects(this, null, this, false, true, false, 0);
+				newSkill.applyEffects(this, this, false, true, false, 0);
 			}
 		}
 		return oldSkill;
