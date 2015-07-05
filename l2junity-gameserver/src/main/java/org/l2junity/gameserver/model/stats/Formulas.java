@@ -1201,11 +1201,6 @@ public final class Formulas
 	 */
 	public static byte calcShldUse(Creature attacker, Creature target, Skill skill, boolean sendSysMsg)
 	{
-		if ((skill != null) && skill.ignoreShield())
-		{
-			return 0;
-		}
-		
 		L2Item item = target.getSecondaryWeaponItem();
 		if ((item == null) || !(item instanceof Armor) || (((Armor) item).getItemType() == ArmorType.SIGIL))
 		{

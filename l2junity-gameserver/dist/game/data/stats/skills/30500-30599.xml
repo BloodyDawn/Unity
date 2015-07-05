@@ -105,7 +105,6 @@
 		<set name="effectPoint" val="-687" />
 		<set name="effectRange" val="400" /> <!-- Unconfirmed -->
 		<set name="hitTime" val="2000" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="#magicLevel" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
@@ -118,7 +117,9 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="30504" levels="16" name="Gravity Hit">
@@ -134,7 +135,6 @@
 		<set name="effectPoint" val="-700" />
 		<set name="effectRange" val="400" /> <!-- Unconfirmed -->
 		<set name="hitTime" val="2500" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="#magicLevel" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
@@ -149,6 +149,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param pDefMod="0.5" /> <!-- Ignores 50% of target's P. Def -->
+				<param ignoreShieldDefence="true" />
 			</effect>
 		</for>
 	</skill>

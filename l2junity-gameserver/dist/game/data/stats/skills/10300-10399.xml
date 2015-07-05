@@ -357,7 +357,6 @@
 		<set name="affectRange" val="150" />
 		<set name="baseCritRate" val="15" />
 		<set name="basicProperty" val="CON" />
-		<set name="ignoreShld" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="power" val="#power" />
@@ -375,7 +374,9 @@
 			<using kind="POLE" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -456,7 +457,6 @@
 		<set name="affectRange" val="150" />
 		<set name="baseCritRate" val="15" />
 		<set name="basicProperty" val="CON" />
-		<set name="ignoreShld" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="overHit" val="true" />
@@ -475,7 +475,9 @@
 			<using kind="POLE" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 			<effect name="Stun" />
 			<effect name="TargetCancel" />
 		</for>

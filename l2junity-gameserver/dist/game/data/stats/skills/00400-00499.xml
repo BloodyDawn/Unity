@@ -2439,7 +2439,6 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="2200" />
 		<set name="icon" val="icon.skill0497" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
@@ -2454,7 +2453,9 @@
 			<using kind="ANCIENTSWORD" />
 		</cond>
 		<for>
-			<effect name="PhysicalSoulAttack" />
+			<effect name="PhysicalSoulAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="498" levels="12" name="Contagion">
@@ -2469,7 +2470,6 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill0498" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
@@ -2487,7 +2487,9 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="PhysicalSoulAttack" />
+			<effect name="PhysicalSoulAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="499" levels="3" name="Courage">

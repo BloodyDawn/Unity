@@ -811,7 +811,6 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1080" />
 		<set name="icon" val="icon.skill0260" />
-		<set name="ignoreShld" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -828,7 +827,9 @@
 			<using kind="BLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -845,7 +846,6 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1667" />
 		<set name="icon" val="icon.skill0261" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
@@ -1318,7 +1318,6 @@
 		<set name="elementPower" val="20" />
 		<set name="hitTime" val="1900" />
 		<set name="icon" val="icon.skill0280" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
@@ -1332,7 +1331,9 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="281" levels="37" name="Soul Breaker">
@@ -1355,7 +1356,6 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="#hitTime" />
 		<set name="icon" val="icon.skill0281" />
-		<set name="ignoreShld" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1372,7 +1372,9 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -1449,7 +1451,6 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1360" />
 		<set name="icon" val="icon.skill0284" />
-		<set name="ignoreShld" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />

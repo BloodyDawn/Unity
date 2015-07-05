@@ -36,9 +36,13 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class PhysicalSoulAttack extends AbstractEffect
 {
+	private final boolean _ignoreShieldDefence;
+
 	public PhysicalSoulAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
+
+		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);
 	}
 	
 	@Override
@@ -85,7 +89,7 @@ public final class PhysicalSoulAttack extends AbstractEffect
 		
 		int damage = 0;
 		boolean ss = info.getSkill().isPhysical() && activeChar.isChargedShot(ShotType.SOULSHOTS);
-		final byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
+		final byte shld = !_ignoreShieldDefence ? Formulas.calcShldUse(activeChar, target, info.getSkill()) : 0;
 		// Physical damage critical rate is only affected by STR.
 		boolean crit = false;
 		if (info.getSkill().getBaseCritRate() > 0)
