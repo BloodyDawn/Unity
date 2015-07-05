@@ -109,7 +109,7 @@
 		<!-- For 2 min., HP/MP Recovery Bonus increase, and Speed + 5. You cannot receive the Celestial Aegis, Celestial Protection, or the Celestial Party Protection effect. -->
 		<set name="icon" val="icon.skill11560" />
 		<set name="abnormalLvl" val="99" />
-		<set name="abnormalTime" val="70" /> <!-- Tested -->
+		<set name="abnormalTime" val="70" /> <!-- Tested, PLEASE CONFIRM AGAIN -->
 		<set name="abnormalType" val="CELESTIAL_INVINCIBILITY" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
@@ -121,6 +121,9 @@
 				<add stat="regHp" val="1" /> <!-- 1 Bonus HP/MP regen... what a joke :D -->
 				<add stat="regMp" val="1" />
 				<add stat="runSpd" val="5" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="CELESTIAL_INVINCIBILITY" />
 			</effect>
 		</for>
 	</skill>

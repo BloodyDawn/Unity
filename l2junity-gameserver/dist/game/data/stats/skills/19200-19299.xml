@@ -14,6 +14,7 @@
 		<!-- For 15 sec., all party members' P. Def. + 200%, P. Evastion + 8, Speed + 20. Consumes 5 Soulstones. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
+		<set name="abnormalVisualEffect" val="PALADIN_PROTECTION" />
 		<set name="icon" val="icon.skill19201" />
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
@@ -37,6 +38,7 @@
 		<!-- For 15 sec., all party members' M. Def. + 200%, M. Evastion + 8, Speed + 20. Consumes 5 Soulstones. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
+		<set name="abnormalVisualEffect" val="SENTINEL_PROTECTION" />
 		<set name="icon" val="icon.skill19202" />
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
@@ -49,19 +51,18 @@
 		<set name="reuseDelay" val="900000" />
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="3" />
-				<add stat="rEvas" val="8" />
+				<mul stat="mDef" val="3" />
+				<add stat="mEvas" val="8" />
 				<add stat="runSpd" val="20" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="19203" levels="1" name="Ultimate Bullseye">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreases target's Bow/Crossbow Resistance by 60% for 7 seconds. Does not cancel when striking. Consumes 1 Soulstone. -->
 		<set name="abnormalLvl" val="8" />
 		<set name="abnormalTime" val="7" />
 		<set name="abnormalType" val="REAL_TARGET" /> <!-- TODO confirm -->
-		<set name="abnormalVisualEffect" val="REAL_TARGET" /> <!-- TODO confirm -->
+		<set name="abnormalVisualEffect" val="REAL_TARGET_2" /> <!-- TODO confirm -->
 		<set name="icon" val="icon.skill19203" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
