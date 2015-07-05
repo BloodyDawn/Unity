@@ -214,7 +214,6 @@
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="baseCritRate" val="10" />
 		<set name="effectRange" val="99" />
 		<set name="icon" val="icon.skill10009" />
 		<set name="lvlBonusRate" val="2" />
@@ -235,7 +234,9 @@
 			<using kind="SWORD, BLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 			<effect name="Debuff">
 				<sub stat="runSpd" val="70" />
 			</effect>
@@ -252,7 +253,6 @@
 		<set name="abnormalType" val="SILENCE" />
 		<set name="abnormalVisualEffect" val="SILENCE" /> <!-- Unconfirmed -->
 		<set name="activateRate" val="80" />
-		<set name="baseCritRate" val="10" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="nextActionAttack" val="true" />
 		<set name="power" val="#power" />
@@ -274,7 +274,9 @@
 			<using kind="SWORD, BLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.8" />
 				<mul stat="mDef" val="0.8" />
@@ -362,7 +364,6 @@
 		<table name="#power"> 10314 11026 11738 12450 13162 13874 14586 15298 18045 19013 19981 </table>
 		<set name="affectLimit" val="5-12" /> <!-- Unconfirmed -->
 		<set name="affectRange" val="200" /> <!-- Unconfirmed -->
-		<set name="baseCritRate" val="10" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="overHit" val="true" />
@@ -381,7 +382,9 @@
 			<using kind="SWORD, BLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10014" levels="11" name="Chain Galaxy">

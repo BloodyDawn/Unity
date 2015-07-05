@@ -12,7 +12,6 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="CRITICAL_PROB_DOWN" />
 		<set name="activateRate" val="80" />
-		<set name="baseCritRate" val="10" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="700" />
@@ -37,7 +36,9 @@
 			<using kind="SWORD,BLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="rCrit" val="#rCrit" />
 			</effect>
@@ -67,7 +68,6 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="CRITICAL_DMG_DOWN" />
 		<set name="activateRate" val="80" />
-		<set name="baseCritRate" val="10" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="700" />
@@ -92,7 +92,9 @@
 			<using kind="SWORD,BLUNT,DUAL" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="cAtk" val="#cAtk" />
 			</effect>
@@ -299,7 +301,6 @@
 		<set name="activateRate" val="50" />
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="150" />
-		<set name="baseCritRate" val="10" />
 		<set name="basicProperty" val="MEN" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="3000" />
@@ -315,7 +316,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="#debuff" />
 				<mul stat="pAtkSpd" val="#debuff" />
@@ -337,7 +340,6 @@
 		<set name="activateRate" val="50" />
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="150" />
-		<set name="baseCritRate" val="10" />
 		<set name="basicProperty" val="MEN" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="1500" />
@@ -356,7 +358,9 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="mAtk" val="#debuff" />
 				<mul stat="pAtk" val="#debuff" />
@@ -2146,7 +2150,6 @@
 		<table name="#magicLvl"> 18 19 20 22 23 24 26 27 28 30 31 32 34 35 36 </table>
 		<table name="#mpConsume"> 69 70 71 74 78 81 88 91 95 101 101 104 112 116 120 </table>
 		<table name="#power"> 179 194 210 245 264 285 330 354 381 438 469 502 573 611 651 </table>
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="500" />
 		<set name="coolTime" val="800" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -2166,7 +2169,9 @@
 			<using kind="CROSSBOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalSoulAttack" />
+			<effect name="PhysicalSoulAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="489" levels="1" name="Shift Target">

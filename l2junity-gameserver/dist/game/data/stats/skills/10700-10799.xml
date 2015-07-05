@@ -180,7 +180,6 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pierce through target to inflict a fatal blow. Attacks with 8875 Power added to P. Atk. Over-hit. Half-kill. -->
 		<set name="icon" val="icon.skill1543" />
-		<set name="baseCritRate" val="15" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
 		<set name="power" val="8875" />
@@ -195,6 +194,7 @@
 		<for>
 			<effect name="FatalBlow">
 				<param chance="30" />
+				<param criticalChance="15" />
 			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" /> <!-- Guessed -->
@@ -469,7 +469,6 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="baseCritRate" val="15" /> <!-- FIXME: value unconfirmed -->
 		<set name="overHit" val="true" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2200" />
@@ -483,7 +482,9 @@
 			<using kind="BOW,CROSSBOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
+			</effect>
 		</for>
 	</skill>
 	<skill id="10761" levels="11" name="Bow Strike">
@@ -496,7 +497,6 @@
 		<set name="abnormalTime" val="2" />
 		<set name="abnormalType" val="KNOCK_BACK" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
-		<set name="baseCritRate" val="15" /> <!-- Guessed -->
 		<set name="icon" val="icon.skill10761" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
@@ -515,7 +515,9 @@
 			<using kind="BOW,CROSSBOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" /> <!-- Guessed -->
+			</effect>
 			<effect name="KnockBack">
 				<param speed="400" distance="200" />
 			</effect>
@@ -527,7 +529,6 @@
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 79 82 84 87 90 93 96 99 102 105 108 </table>
 		<table name="#power"> 22183 24401 26619 28837 31055 33273 25491 37709 39249 41163 43077 </table>
-		<set name="baseCritRate" val="15" /> <!-- Guessed -->
 		<set name="effectRange" val="1200" />
 		<set name="icon" val="icon.skill10762" />
 		<set name="operateType" val="A1" />
@@ -548,6 +549,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param pDefMod="0.70" /> <!-- Disregards 30% of the target's P. Def -->
+				<param criticalChance="15" /> <!-- Guessed -->
 			</effect>
 		</for>
 	</skill>
@@ -557,7 +559,6 @@
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 117 119 123 128 132 136 140 144 148 152 156 </table>
 		<table name="#power"> 32463 34086 37332 40578 43824 47070 50316 53562 56259 59003 61747 </table>
-		<set name="baseCritRate" val="15" /> <!-- Guessed -->
 		<set name="icon" val="icon.skill10763" />
 		<set name="operateType" val="A1" />
 		<set name="nextActionAttack" val="true" />
@@ -577,6 +578,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param pDefMod="0.7" />
+				<param criticalChance="15" /> <!-- Guessed -->
 			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" /> <!-- Guessed -->
@@ -672,7 +674,6 @@
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
-		<set name="baseCritRate" val="15" /> <!-- Guessed -->
 		<set name="basicProperty" val="CON" />
 		<set name="nextActionAttack" val="true" />
 		<set name="overHit" val="true" />
@@ -713,7 +714,6 @@
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="300" />
-		<set name="baseCritRate" val="15" /> <!-- FIXME: value unconfirmed -->
 		<set name="overHit" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -728,7 +728,9 @@
 			<using kind="BOW,CROSSBOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
+			</effect>
 		</for>
 	</skill>
 	<skill id="10772" levels="11" name="Heavy Arrow Rain">
@@ -742,7 +744,6 @@
 		<set name="targetType" val="AREA" />
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="150" /> <!-- Guessed -->
-		<set name="baseCritRate" val="15" /> <!-- FIXME: value unconfirmed -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -757,7 +758,9 @@
 			<using kind="BOW,CROSSBOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
+			</effect>
 		</for>
 	</skill>
 	<skill id="10773" levels="1" name="Not in Use">
@@ -905,7 +908,6 @@
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="100" /> <!-- Guessed -->
-		<set name="baseCritRate" val="15" /> <!-- Guessed -->
 		<set name="basicProperty" val="MEN" />
 		<set name="icon" val="icon.skill10780" />
 		<set name="lvlBonusRate" val="1" />
@@ -925,7 +927,9 @@
 			<using kind="BOW,CROSSBOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
+			</effect>
 			<effect name="Debuff">
 				<sub stat="runSpd" val="70" />
 			</effect>

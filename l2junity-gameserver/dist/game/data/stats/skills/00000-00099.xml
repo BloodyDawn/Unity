@@ -5,7 +5,6 @@
 		<table name="#magicLvl"> 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<table name="#mpConsume"> 42 43 45 45 46 47 49 50 52 53 55 56 58 58 59 61 62 64 65 67 68 70 71 71 73 74 75 77 78 79 80 82 83 84 85 86 86 </table>
 		<table name="#power"> 517 549 583 619 656 694 735 777 820 865 912 960 1010 1062 1115 1169 1225 1283 1342 1402 1464 1527 1591 1656 1722 1789 1857 1926 1995 2065 2135 2206 2277 2347 2417 2488 2557 </table>
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="167" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -26,6 +25,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</for>
@@ -492,7 +492,6 @@
 		<table name="#magicLvl"> 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<table name="#mpConsume"> 72 74 76 76 79 81 83 86 88 91 93 96 99 99 101 104 106 109 111 114 116 119 121 122 124 126 129 131 133 135 138 140 142 144 146 148 150 </table>
 		<table name="#power"> 984 1046 1110 1178 1249 1322 1399 1479 1562 1647 1736 1828 1923 2021 2123 2227 2333 2443 2555 2670 2788 2908 3030 3154 3280 3408 3537 3668 3800 3933 4067 4201 4336 4470 4604 4738 4870 </table>
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="900" />
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -511,7 +510,9 @@
 			<using kind="BOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="21" levels="3" name="Poison Recovery">
@@ -709,7 +710,6 @@
 		<table name="#magicLvl"> 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<table name="#mpConsume"> 54 56 57 57 59 61 63 65 66 68 70 72 74 74 76 78 80 82 84 86 87 89 91 91 93 95 97 98 100 102 103 105 106 108 109 111 112 </table>
 		<table name="#power"> 1107 1176 1249 1325 1405 1488 1574 1664 1757 1853 1953 2057 2164 2274 2388 2505 2625 2748 2875 3004 3136 3217 3408 3548 3690 3834 3980 4127 4275 4425 4575 4726 4878 5029 5180 5330 5479 </table>
-		<set name="baseCritRate" val="#baseCritLethal" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="720" />
 		<set name="dmgDirectlyToHp" val="true" />
@@ -732,6 +732,7 @@
 		<for>
 			<effect name="Backstab">
 				<param chance="40" />
+				<param criticalChance="#baseCritLethal" />
 			</effect>
 			<effect name="Lethal">
 				<param halfLethal="#baseCritLethal" />
@@ -827,7 +828,6 @@
 		<table name="#power"> 554 588 625 663 703 744 787 832 879 927 977 1029 1082 1137 1194 1253 1313 1374 1438 1502 1568 1636 1704 1774 1845 1917 1990 2064 2138 2213 2288 2363 2439 2515 2590 2665 2740 </table>
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="150" />
-		<set name="baseCritRate" val="15" />
 		<set name="coolTime" val="733" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="1070" />
@@ -845,6 +845,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
                 <param ignoreShieldDefence="true" />
             </effect>
 		</for>
@@ -954,7 +955,6 @@
 		<set name="activateRate" val="50" />
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="150" />
-		<set name="baseCritRate" val="15" />
 		<set name="basicProperty" val="CON" />
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -976,6 +976,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
                 <param ignoreShieldDefence="true" />
             </effect>
 			<effect name="Stun" />
@@ -1432,7 +1433,6 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="440" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -1454,6 +1454,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
                 <param ignoreShieldDefence="true" />
             </effect>
 		</for>
@@ -1827,7 +1828,6 @@
 		<set name="abnormalType" val="SILENCE" />
 		<set name="abnormalVisualEffect" val="SILENCE" />
 		<set name="activateRate" val="60" />
-		<set name="baseCritRate" val="10" />
 		<set name="basicProperty" val="MEN" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -1847,7 +1847,9 @@
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="Mute" />
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="99" levels="2" name="Rapid Shot">

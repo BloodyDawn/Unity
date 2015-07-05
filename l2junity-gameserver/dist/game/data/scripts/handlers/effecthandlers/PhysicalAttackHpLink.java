@@ -36,9 +36,13 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class PhysicalAttackHpLink extends AbstractEffect
 {
+	private final double _criticalChance;
+
 	public PhysicalAttackHpLink(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
+
+		_criticalChance = params.getDouble("criticalChance", 0);
 	}
 	
 	@Override
@@ -81,9 +85,9 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 		final byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
 		// Physical damage critical rate is only affected by STR.
 		boolean crit = false;
-		if (info.getSkill().getBaseCritRate() > 0)
+		if (_criticalChance > 0)
 		{
-			crit = Formulas.calcCrit(info.getSkill().getBaseCritRate() * 10 * BaseStats.STR.calcBonus(activeChar), true, target);
+			crit = Formulas.calcCrit(_criticalChance * BaseStats.STR.calcBonus(activeChar), true, target);
 		}
 		
 		int damage = 0;

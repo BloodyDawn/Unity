@@ -195,7 +195,6 @@
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="ULTIMATE_DEBUFF" />
 		<set name="activateRate" val="70" />
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="300" />
 		<set name="effectRange" val="400" />
@@ -216,7 +215,9 @@
 			<using kind="SWORD, DUAL, DUALBLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.6" />
 				<mul stat="mDef" val="0.6" />
@@ -234,7 +235,6 @@
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="ALL_ATTACK_DOWN" />
 		<set name="activateRate" val="70" />
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="300" />
 		<set name="effectRange" val="400" />
@@ -255,7 +255,9 @@
 			<using kind="SWORD, DUAL, DUALBLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.60" />
 				<mul stat="mAtk" val="0.60" />
@@ -268,7 +270,6 @@
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 73 74 76 79 82 84 87 90 93 96 99 </table>
 		<table name="#power"> 21642 22507 24237 25967 27697 29427 31157 32887 40673 42657 44641 </table>
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
 		<set name="effectRange" val="400" />
@@ -288,7 +289,9 @@
 			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11513" levels="11" name="Mass Crippling Attack">
@@ -303,7 +306,6 @@
 		<set name="abnormalType" val="ULTIMATE_DEBUFF" />
 		<set name="affectLimit" val="5-12" /> <!-- Custom -->
 		<set name="affectRange" val="150" /> <!-- Custom -->
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="300" />
 		<set name="hitTime" val="910" />
@@ -322,7 +324,9 @@
 			<using kind="SWORD, DUAL, DUALBLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.6" />
 				<mul stat="mDef" val="0.6" />
@@ -341,7 +345,6 @@
 		<set name="abnormalType" val="ALL_ATTACK_DOWN" />
 		<set name="affectLimit" val="5-12" /> <!-- Custom -->
 		<set name="affectRange" val="150" /> <!-- Custom -->
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
 		<set name="hitTime" val="1410" />
@@ -360,7 +363,9 @@
 			<using kind="SWORD, DUAL, DUALBLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.6" />
 				<mul stat="mAtk" val="0.6" />

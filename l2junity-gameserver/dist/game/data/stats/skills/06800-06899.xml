@@ -548,7 +548,6 @@
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
 		<set name="affectLimit" val="5-15" />
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="300" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="500" />
@@ -562,13 +561,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6845" levels="1" name="Power Strike">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
@@ -583,7 +583,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6846" levels="1" name="Vampiric Claw">
@@ -624,7 +626,6 @@
 	<skill id="6849" levels="1" name="Summoner Strike">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="element" val="5" /> <!-- Dark -->
@@ -639,7 +640,9 @@
 		<set name="effectPoint" val="-10000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6850" levels="1" name="Self-destruction">
@@ -660,7 +663,6 @@
 	<skill id="6851" levels="1" name="Power Strike">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
@@ -675,13 +677,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6852" levels="1" name="Magic Strike">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="1100" />
@@ -784,7 +787,6 @@
 	<skill id="6857" levels="1" name="Power Strike">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="80" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
@@ -799,7 +801,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6858" levels="1" name="Summon">
@@ -811,7 +815,6 @@
 	<skill id="6859" levels="1" name="Power Strike">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="80" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
@@ -826,13 +829,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6860" levels="1" name="Power Strike">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="80" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
@@ -847,7 +851,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6861" levels="1" name="Enhance">
@@ -1177,7 +1183,6 @@
 	<skill id="6876" levels="1" name="Power Strike">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="80" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
@@ -1192,13 +1197,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6877" levels="1" name="Power Strike">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="80" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
@@ -1213,7 +1219,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6878" levels="1" name="Paralysis">
@@ -1294,7 +1302,6 @@
 	<skill id="6881" levels="1" name="Critical Strike">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
@@ -1309,7 +1316,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6882" levels="1" name="Petrify">
@@ -1402,7 +1411,6 @@
 	<skill id="6887" levels="1" name="Fatal Strike">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="100" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
@@ -1415,13 +1423,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6888" levels="1" name="Fatal Shot">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="2000" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="2200" />
@@ -1434,13 +1443,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6889" levels="1" name="Range Attack">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1000" />
@@ -1453,7 +1463,9 @@
 		<set name="effectPoint" val="-10000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6890" levels="1" name="Bleed">
@@ -1465,7 +1477,6 @@
 	<skill id="6891" levels="1" name="Power Attack">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="200" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
@@ -1478,13 +1489,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6892" levels="1" name="Power Shot">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="2000" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="2200" />
@@ -1497,13 +1509,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6893" levels="1" name="Power Attack">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="200" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
@@ -1516,13 +1529,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6894" levels="1" name="Power Shot">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="2000" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="2200" />
@@ -1535,13 +1549,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6895" levels="1" name="Power Attack">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="200" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
@@ -1554,13 +1569,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6896" levels="1" name="Power Shot">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="2000" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="2200" />
@@ -1573,7 +1589,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6897" levels="12" name="Stun">

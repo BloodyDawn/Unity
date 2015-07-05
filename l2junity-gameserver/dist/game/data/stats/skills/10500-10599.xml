@@ -183,7 +183,6 @@
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="activateRate" val="100" />
 		<set name="icon" val="icon.skill10508" />
-		<set name="baseCritRate" val="15" />
 		<set name="dmgDirectlyToHp" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
@@ -205,6 +204,7 @@
 		<for>
 			<effect name="Backstab">
 				<param chance="40" />
+				<param criticalChance="15" />
 			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" />
@@ -223,7 +223,6 @@
 		<table name="#power"> 21344 22083 23560 25039 26516 27993 29472 30949 35304 37016 38748 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
-		<set name="baseCritRate" val="15" />
 		<set name="icon" val="icon.skill10509" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
@@ -243,6 +242,7 @@
 		<for>
 			<effect name="FatalBlow">
 				<param chance="30" />
+				<param criticalChance="15" />
 			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" />
@@ -265,7 +265,6 @@
 		<table name="#effectPoint"> -700 -704 -707 -709 -709 -709 -709 -709 -709 -709 -709 </table>
 		<table name="#power"> 22718 24289 25861 27431 29003 30574 32146 33717 37332 39152 40972 </table>
 		<set name="icon" val="icon.skill10510" />
-		<set name="baseCritRate" val="15" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
@@ -283,6 +282,7 @@
 		<for>
 			<effect name="FatalBlow">
 				<param chance="30" />
+				<param criticalChance="15" />
 			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" />
@@ -296,7 +296,6 @@
 		<table name="#effectPoint"> -700 -704 -707 -709 -711 -713 -715 </table>
 		<table name="#power"> 26320 30840 35360 38976 41506 43360 45214 </table>
 		<set name="icon" val="icon.skill10511" />
-		<set name="baseCritRate" val="15" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
@@ -314,6 +313,7 @@
 		<for>
 			<effect name="FatalBlow">
 				<param chance="30" />
+				<param criticalChance="15" />
 			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" />
@@ -328,7 +328,6 @@
 		<table name="#power"> 11903 12313 13135 13957 14779 15601 16423 17244 20954 21976 22998 </table>
 		<set name="icon" val="icon.skill10512" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
-		<set name="baseCritRate" val="15" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
@@ -343,7 +342,9 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10513" levels="10" name="Razor Rain">
@@ -358,7 +359,6 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
-		<set name="baseCritRate" val="15" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
@@ -374,7 +374,9 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 			<effect name="DamOverTime" ticks="3">
 				<param power="233" />
 			</effect>
@@ -1205,7 +1207,6 @@
 		<set name="abnormalTime" val="7" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
-		<set name="baseCritRate" val="15" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
@@ -1219,6 +1220,7 @@
 		<for>
 			<effect name="FatalBlow">
 				<param chance="30" />
+				<param criticalChance="15" />
 			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" /> <!-- Guessed -->

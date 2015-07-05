@@ -527,7 +527,6 @@
 		<table name="#magicLvl"> 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<table name="#mpConsume"> 38 38 40 41 42 43 44 46 47 48 50 50 51 52 53 55 56 57 58 60 61 61 62 63 65 66 67 68 69 70 71 72 73 74 75 76 77 </table>
 		<table name="#power"> 664 706 750 795 843 893 945 998 1054 1112 1172 1234 1298 1365 1433 1503 1575 1649 1725 1803 1882 1963 2045 2129 2214 2301 2388 2476 2565 2655 2745 2836 2927 3018 3108 3198 3288 </table>
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="80" />
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -547,12 +546,13 @@
 			<using kind="POLE" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="921" levels="1" name="Cursed Pierce">
 		<!-- Confirmed CT2.5 -->
-		<set name="baseCritRate" val="30" />
 		<set name="castRange" val="80" />
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-337" />
@@ -573,6 +573,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="30" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</for>
@@ -617,7 +618,6 @@
 	</skill>
 	<skill id="924" levels="1" name="Seven Arrow">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
-		<set name="baseCritRate" val="15" /> <!-- FIXME: value unconfirmed -->
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-1022" />
 		<set name="effectRange" val="1000" />
@@ -635,7 +635,9 @@
 			<using kind="BOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
+			</effect>
 		</for>
 	</skill>
 	<skill id="925" levels="1" name="Sigil Mastery">
@@ -684,7 +686,6 @@
 		<set name="abnormalType" val="DOT_ATTR" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="activateRate" val="50" />
-		<set name="baseCritRate" val="10" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="720" />
@@ -708,7 +709,9 @@
 			<using kind="SWORD,BLUNT,DUAL,DUALFIST,DAGGER,DUALDAGGER,POLE,ANCIENTSWORD,RAPIER" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 			<effect name="DamOverTime" ticks="1">
 				<param power="#dot" />
 			</effect>
@@ -716,7 +719,6 @@
 	</skill>
 	<skill id="928" levels="1" name="Dual Blow">
 		<!-- High Five Skill -->
-		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-337" />
 		<set name="effectRange" val="400" />
@@ -738,6 +740,7 @@
 		<for>
 			<effect name="FatalBlow">
 				<param chance="40" />
+				<param criticalChance="20" />
 			</effect>
 			<effect name="Lethal">
 				<param fullLethal="1" halfLethal="8" /> <!-- FIXME: full lethal rate unconfirmed -->
@@ -986,7 +989,6 @@
 	</skill>
 	<skill id="939" levels="1" name="Soul Rage">
 		<!-- Confirmed CT2.5 -->
-		<set name="baseCritRate" val="10" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-340" />
 		<set name="effectRange" val="1100" />
@@ -1001,7 +1003,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 		</for>
 		<selfEffects>
 			<effect name="FocusSouls">
@@ -1088,7 +1092,6 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="affectLimit" val="3-6" />
 		<set name="affectRange" val="150" />
-		<set name="baseCritRate" val="5" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="100" />
 		<set name="effectPoint" val="-343" />
@@ -1107,7 +1110,9 @@
 			<using kind="SWORD,BLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="5" />
+			</effect>
 			<effect name="Spoil" />
 		</for>
 	</skill>
@@ -1361,7 +1366,6 @@
 		<table name="#magicLvl"> 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </table>
 		<table name="#mpConsume"> 58 59 59 61 62 64 65 67 69 70 71 73 73 75 76 77 79 80 81 83 84 85 86 88 89 90 91 92 93 94 95 96 96 97 98 99 99 </table>
 		<table name="#power"> 2057 2164 2274 2388 2505 2625 2748 2875 3004 3136 3271 3408 3548 3690 3834 3980 4127 4275 4425 4575 4726 4878 5029 5180 5330 5479 5627 5773 5918 6060 6199 6335 6468 6598 6723 6844 6960 </table>
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="1080" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -1385,6 +1389,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</for>
@@ -1396,7 +1401,6 @@
 		<table name="#magicLvl"> 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </table>
 		<table name="#mpConsume"> 58 59 59 61 62 64 65 67 69 70 71 73 73 75 76 77 79 80 81 83 84 85 86 88 89 90 91 92 93 94 95 96 96 97 98 99 99 </table>
 		<table name="#power"> 2057 2164 2274 2388 2505 2625 2748 2875 3004 3136 3271 3408 3548 3690 3834 3980 4127 4275 4425 4575 4726 4878 5029 5180 5330 5479 5627 5773 5918 6060 6199 6335 6468 6598 6723 6844 6960 </table>
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="167" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -1417,6 +1421,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</for>
@@ -2097,7 +2102,6 @@
 		<!-- High Five Skill -->
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="250" />
-		<set name="baseCritRate" val="15" /> <!-- FIXME: value unconfirmed -->
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-686" />
 		<set name="effectRange" val="1400" />
@@ -2115,7 +2119,9 @@
 			<using kind="BOW,CROSSBOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
+			</effect>
 		</for>
 	</skill>
 	<skill id="988" levels="3" name="Battle Whisper">
@@ -2166,7 +2172,6 @@
 	</skill>
 	<skill id="990" levels="1" name="Death Sting">
 		<!-- High Five Skill -->
-		<set name="baseCritRate" val="15" /> <!-- FIXME: value unconfirmed -->
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-1387" />
 		<set name="effectRange" val="1400" />
@@ -2184,7 +2189,9 @@
 			<using kind="BOW,CROSSBOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
+			</effect>
 		</for>
 	</skill>
 	<skill id="991" levels="1" name="Throwing Dagger">

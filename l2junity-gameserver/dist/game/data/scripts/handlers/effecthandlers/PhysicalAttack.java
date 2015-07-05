@@ -45,6 +45,7 @@ public final class PhysicalAttack extends AbstractEffect
 	private final double _pAtkMod;
 	private final double _pDefMod;
 	private final double _stunnedMod;
+	private final double _criticalChance;
 	private final boolean _ignoreShieldDefence;
 
 	public PhysicalAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
@@ -54,6 +55,7 @@ public final class PhysicalAttack extends AbstractEffect
 		_pAtkMod = params.getDouble("pAtkMod", 1.0);
 		_pDefMod = params.getDouble("pDefMod", 1.0);
 		_stunnedMod = params.getDouble("stunnedMod", 1.0);
+		_criticalChance = params.getDouble("criticalChance", 0);
 		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);
 	}
 
@@ -102,9 +104,9 @@ public final class PhysicalAttack extends AbstractEffect
 		double damage = (int) calcPhysDam(info);
 		// Physical damage critical rate is only affected by STR.
 		boolean crit = false;
-		if (info.getSkill().getBaseCritRate() > 0)
+		if (_criticalChance > 0)
 		{
-			crit = Formulas.calcCrit(info.getSkill().getBaseCritRate() * 10 * BaseStats.STR.calcBonus(activeChar), true, target);
+			crit = Formulas.calcCrit(_criticalChance * BaseStats.STR.calcBonus(activeChar), true, target);
 		}
 
 		if (crit)

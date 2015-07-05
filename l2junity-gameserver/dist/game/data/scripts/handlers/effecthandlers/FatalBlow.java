@@ -35,12 +35,14 @@ import org.l2junity.gameserver.model.stats.Formulas;
 public final class FatalBlow extends AbstractEffect
 {
 	private final double _chance;
+	private final double _criticalChance;
 
 	public FatalBlow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 
 		_chance = params.getDouble("chance", 0);
+		_criticalChance = params.getDouble("criticalChance", 0);
 	}
 	
 	@Override
@@ -77,7 +79,7 @@ public final class FatalBlow extends AbstractEffect
 		double damage = Formulas.calcBlowDamage(activeChar, target, info.getSkill(), shld, ss);
 		
 		// Crit rate base crit rate for skill, modified with STR bonus
-		boolean crit = Formulas.calcCrit(info.getSkill().getBaseCritRate() * 10 * BaseStats.STR.calcBonus(activeChar), true, target);
+		boolean crit = Formulas.calcCrit(_criticalChance * BaseStats.STR.calcBonus(activeChar), true, target);
 		if (crit)
 		{
 			damage *= 2;

@@ -282,7 +282,6 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="PD_DOWN" />
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="200" />
 		<set name="hitTime" val="1090" />
@@ -302,6 +301,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 			<effect name="Debuff">
@@ -315,7 +315,6 @@
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 65 66 69 71 73 76 78 80 82 84 86 </table>
 		<table name="#power"> 19893 20581 21956 23332 24707 26082 27458 28833 31628 33090 34552 </table>
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="200" />
 		<set name="hitTime" val="1490" />
@@ -434,7 +433,6 @@
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="200" />
 		<set name="activateRate" val="50" />
-		<set name="baseCritRate" val="15" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="icon" val="icon.skill10265" />
 		<set name="lvlBonusRate" val="1" />
@@ -456,7 +454,9 @@
 			<using kind="POLE, SWORD, BLUNT, DUAL, DUALFIST, DUALBLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -768,7 +768,6 @@
 		<!-- Inflicts a powerful attack on target with 65085 Power added to P. Atk. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. Over-hit. Critical. -->
 		<table name="#magicLvl">00 101 103 105 </table>
 		<table name="#power"> 65085 69414 73352 77290 </table>
-		<set name="baseCritRate" val="10" />
 		<set name="icon" val="icon.skill10275" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
@@ -787,7 +786,9 @@
 			<using kind="SWORD, BLUNT, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="10" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10276" levels="1" name="Force of Nature">
@@ -876,7 +877,6 @@
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="400" />
-		<set name="baseCritRate" val="15" />
 		<set name="icon" val="icon.skill10281" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
@@ -894,7 +894,9 @@
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 			<effect name="KnockDown">
 				<param speed="700" distance="50" />
 			</effect>
@@ -983,7 +985,6 @@
 		<table name="#power"> 11557 11956 12754 13553 14351 15150 15948 16747 20787 21925 23063 </table>
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="200" />
-		<set name="baseCritRate" val="15" />
 		<set name="icon" val="icon.skill10288" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AURA" />
@@ -999,7 +1000,9 @@
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10289" levels="4" name="Boost">

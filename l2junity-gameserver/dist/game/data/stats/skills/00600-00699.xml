@@ -1430,7 +1430,6 @@
 		</for>
 	</skill>
 	<skill id="675" levels="1" name="Divine Warrior Cross Slash">
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="167" />
 		<set name="effectPoint" val="-598" />
@@ -1447,11 +1446,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="676" levels="1" name="Divine Warrior Sonic Blaster">
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-342" />
 		<set name="effectRange" val="1100" />
@@ -1466,7 +1466,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="677" levels="1" name="Divine Warrior Transfixion of Earth">
@@ -1736,7 +1738,6 @@
 		</for>
 	</skill>
 	<skill id="687" levels="1" name="Divine Rogue Double Shot">
-		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="900" />
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-684" />
@@ -1752,7 +1753,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="688" levels="1" name="Divine Rogue Bleed Attack">

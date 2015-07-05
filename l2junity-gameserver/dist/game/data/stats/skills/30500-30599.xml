@@ -8,7 +8,6 @@
 		<table name="#power"> 22 77 141 221 669 856 1073 1323 1602 1913 2256 2629 3034 3879 4149 4434 4733 18990 20811 23098 25950 29500 33928 39478 46478 47966 49514 51032 </table>
 		<set name="icon" val="icon.skill30500" />
 		<set name="abnormalTime" val="10" />
-		<set name="baseCritRate" val="15" /> <!-- Unconfirmed -->
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
@@ -28,6 +27,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param stunnedMod="1.2" /> <!-- 20% more damage if target is Stunned -->
+				<param criticalChance="15" /> <!-- Unconfirmed -->
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="#pDef" />
@@ -41,7 +41,6 @@
 		<table name="#mpConsumes"> 17 23 29 35 39 44 47 52 55 59 63 67 69 70 71 73 73 74 75 75 75 76 76 77 78 79 80 </table>
 		<table name="#power"> 129 235 369 1116 1428 1789 2205 2671 3189 3760 4383 5058 6466 6916 7390 7888 28134 30832 34221 38446 43706 50268 58492 68865 71115 73365 75615 </table>
 		<set name="icon" val="icon.skill30501" />
-		<set name="baseCritRate" val="15" /> <!-- Unconfirmed -->
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
@@ -59,7 +58,9 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" /> <!-- Unconfirmed -->
+			</effect>
 		</for>
 	</skill>
 	<skill id="30502" levels="24" name="Chin Strike">
@@ -99,7 +100,6 @@
 		<table name="#mpConsumes"> 81 81 82 83 83 83 84 84 84 84 84 </table>
 		<table name="#power"> 35167 36755 40540 45273 51165 58506 67683 79217 88893 91705 94517 </table>
 		<set name="icon" val="icon.skill30503" />
-		<set name="baseCritRate" val="15" /> <!-- Unconfirmed -->
 		<set name="castRange" val="60" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
@@ -118,6 +118,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" /> <!-- Unconfirmed -->
 				<param ignoreShieldDefence="true" />
 			</effect>
 		</for>
@@ -129,7 +130,6 @@
 		<table name="#mpConsumes"> 75 77 78 79 80 81 82 82 83 83 84 84 85 86 87 88 </table>
 		<table name="#power"> 10417 11147 11917 12727 13577 35167 38540 42776 48058 54633 62836 73116 86081 88893 91705 94517 </table>
 		<set name="icon" val="icon.skill30504" />
-		<set name="baseCritRate" val="15" /> <!-- Unconfirmed -->
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-700" />
@@ -148,6 +148,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param criticalChance="15" /> <!-- Unconfirmed -->
 				<param pDefMod="0.5" /> <!-- Ignores 50% of target's P. Def -->
 				<param ignoreShieldDefence="true" />
 			</effect>
@@ -164,7 +165,6 @@
 		<set name="abnormalTime" val="1" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="200" />
-		<set name="baseCritRate" val="15" /> <!-- Unconfirmed -->
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="effectRange" val="400" /> <!-- Unconfirmed -->
@@ -181,7 +181,9 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" /> <!-- Unconfirmed -->
+			</effect>
 			<effect name="PullBack">
 				<param type="THROW_UP" speed="333" animationSpeed="333" />
 			</effect>
@@ -199,7 +201,6 @@
 		<set name="abnormalTime" val="2" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="affectRange" val="200" />
-		<set name="baseCritRate" val="15" /> <!-- Unconfirmed -->
 		<set name="castRange" val="80" />
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-687" />
@@ -219,7 +220,9 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" /> <!-- Unconfirmed -->
+			</effect>
 			<effect name="KnockBack">
 				<param type="THROW_UP" distance="200" animationSpeed="333" />
 			</effect>
