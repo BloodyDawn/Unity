@@ -271,6 +271,7 @@ import quests.Q10774_LettersFromTheQueenCrumaTowerPart2.Q10774_LettersFromTheQue
 import quests.Q10775_InSearchOfAnAncientGiant.Q10775_InSearchOfAnAncientGiant;
 import quests.Q10776_TheWrathOfTheGiants.Q10776_TheWrathOfTheGiants;
 import quests.Q10777_ReportsFromCrumaTowerPart2.Q10777_ReportsFromCrumaTowerPart2;
+import quests.Q10779_LettersFromTheQueenSeaOfSpores.Q10779_LettersFromTheQueenSeaOfSpores;
 
 /**
  * @author NosBit
@@ -530,7 +531,8 @@ public class QuestMasterHandler
 		Q10774_LettersFromTheQueenCrumaTowerPart2.class,
 		Q10775_InSearchOfAnAncientGiant.class,
 		Q10776_TheWrathOfTheGiants.class,
-		Q10777_ReportsFromCrumaTowerPart2.class
+		Q10777_ReportsFromCrumaTowerPart2.class,
+		Q10779_LettersFromTheQueenSeaOfSpores.class
 	};
 	
 	public static void main(String[] args)
