@@ -1433,19 +1433,7 @@ public final class SkillTreesData implements IXmlReader
 	 */
 	public boolean isHeroSkill(int skillId, int skillLevel)
 	{
-		if (_heroSkillTree.containsKey(SkillData.getSkillHashCode(skillId, skillLevel)))
-		{
-			return true;
-		}
-		
-		for (SkillLearn skill : _heroSkillTree.values())
-		{
-			if ((skill.getSkillId() == skillId) && (skillLevel == -1))
-			{
-				return true;
-			}
-		}
-		return false;
+		return _heroSkillTree.containsKey(SkillData.getSkillHashCode(skillId, skillLevel));
 	}
 	
 	/**
@@ -1456,22 +1444,8 @@ public final class SkillTreesData implements IXmlReader
 	 */
 	public boolean isGMSkill(int skillId, int skillLevel)
 	{
-		final Map<Integer, SkillLearn> gmSkills = new HashMap<>();
-		gmSkills.putAll(_gameMasterSkillTree);
-		gmSkills.putAll(_gameMasterAuraSkillTree);
-		if (gmSkills.containsKey(SkillData.getSkillHashCode(skillId, skillLevel)))
-		{
-			return true;
-		}
-		
-		for (SkillLearn skill : gmSkills.values())
-		{
-			if ((skill.getSkillId() == skillId) && (skillLevel == -1))
-			{
-				return true;
-			}
-		}
-		return false;
+		final int hashCode = SkillData.getSkillHashCode(skillId, skillLevel);
+		return _gameMasterSkillTree.containsKey(hashCode) || _gameMasterAuraSkillTree.containsKey(hashCode);
 	}
 	
 	/**
@@ -1482,7 +1456,7 @@ public final class SkillTreesData implements IXmlReader
 	 */
 	public boolean isClanSkill(int skillId, int skillLevel)
 	{
-		final int hashCode = SkillData.getSkillHashCode(skillId, skillId);
+		final int hashCode = SkillData.getSkillHashCode(skillId, skillLevel);
 		return _pledgeSkillTree.containsKey(hashCode) || _subPledgeSkillTree.containsKey(hashCode);
 	}
 	

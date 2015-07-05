@@ -169,10 +169,6 @@ public final class Skill implements IIdentifiable
 	private final int _chargeConsume;
 	private final int _soulMaxConsume;
 	
-	private final boolean _isHeroSkill; // If true the skill is a Hero Skill
-	private final boolean _isGMSkill; // True if skill is GM skill
-	private final boolean _isSevenSigns;
-	
 	private final boolean _directHpDmg; // If true then damage is being make directly
 	private final boolean _isTriggeredSkill; // If true the skill will take activation buff slot instead of a normal buff slot
 	private final int _effectPoint;
@@ -194,8 +190,7 @@ public final class Skill implements IIdentifiable
 	
 	private final boolean _isSuicideAttack;
 	private final boolean _canBeDispelled;
-	
-	private final boolean _isClanSkill;
+
 	private final boolean _excludedFromCheck;
 	private final boolean _simultaneousCast;
 	
@@ -355,12 +350,7 @@ public final class Skill implements IIdentifiable
 		_chargeConsume = set.getInt("chargeConsume", 0);
 		
 		_soulMaxConsume = set.getInt("soulMaxConsumeCount", 0);
-		
-		_isHeroSkill = SkillTreesData.getInstance().isHeroSkill(_id, _level);
-		_isGMSkill = SkillTreesData.getInstance().isGMSkill(_id, _level);
-		_isSevenSigns = (_id > 4360) && (_id < 4367);
-		_isClanSkill = SkillTreesData.getInstance().isClanSkill(_id, _level);
-		
+
 		_directHpDmg = set.getBoolean("dmgDirectlyToHp", false);
 		_isTriggeredSkill = set.getBoolean("isTriggeredSkill", false);
 		_effectPoint = set.getInt("effectPoint", 0);
@@ -920,17 +910,17 @@ public final class Skill implements IIdentifiable
 	
 	public boolean isHeroSkill()
 	{
-		return _isHeroSkill;
+		return SkillTreesData.getInstance().isHeroSkill(_id, _level);
 	}
 	
 	public boolean isGMSkill()
 	{
-		return _isGMSkill;
+		return SkillTreesData.getInstance().isGMSkill(_id, _level);
 	}
 	
 	public boolean is7Signs()
 	{
-		return _isSevenSigns;
+		return (_id > 4360) && (_id < 4367);
 	}
 	
 	/**
@@ -1625,7 +1615,7 @@ public final class Skill implements IIdentifiable
 	
 	public boolean isClanSkill()
 	{
-		return _isClanSkill;
+		return SkillTreesData.getInstance().isClanSkill(_id, _level);
 	}
 	
 	public boolean isExcludedFromCheck()
