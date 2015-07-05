@@ -897,7 +897,6 @@
 		<table name="#magicLvl"> 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<table name="#mpConsume"> 33 34 35 35 36 37 38 39 40 41 42 43 45 45 46 47 48 49 50 52 53 54 55 55 56 57 58 59 60 61 62 63 64 65 66 67 68 </table>
 		<table name="#power"> 1107 1176 1249 1325 1405 1488 1574 1664 1757 1853 1953 2057 2164 2274 2388 2505 2625 2748 2875 3004 3136 3271 3408 3548 3690 3834 3980 4127 4275 4425 4575 4726 4878 5029 5180 5330 5479 </table>
-		<set name="blowChance" val="30" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -917,7 +916,9 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param chance="30" />
+			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" />
 			</effect>

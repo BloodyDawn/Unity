@@ -181,7 +181,6 @@
 		<!-- Pierce through target to inflict a fatal blow. Attacks with 8875 Power added to P. Atk. Over-hit. Half-kill. -->
 		<set name="icon" val="icon.skill1543" />
 		<set name="baseCritRate" val="15" />
-		<set name="blowChance" val="30" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
 		<set name="power" val="8875" />
@@ -194,7 +193,9 @@
 		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param chance="30" />
+			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" /> <!-- Guessed -->
 			</effect>

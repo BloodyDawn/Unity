@@ -145,7 +145,6 @@ public final class Skill implements IIdentifiable
 	private final int _activateRate;
 	private final int _minChance;
 	private final int _maxChance;
-	private final int _blowChance;
 	
 	// Effecting area of the skill, in radius.
 	// The radius center varies according to the _targetType:
@@ -363,7 +362,6 @@ public final class Skill implements IIdentifiable
 		_chargeConsume = set.getInt("chargeConsume", 0);
 		
 		_soulMaxConsume = set.getInt("soulMaxConsumeCount", 0);
-		_blowChance = set.getInt("blowChance", 0);
 		
 		_isHeroSkill = SkillTreesData.getInstance().isHeroSkill(_id, _level);
 		_isGMSkill = SkillTreesData.getInstance().isGMSkill(_id, _level);
@@ -1611,14 +1609,6 @@ public final class Skill implements IIdentifiable
 	public String getAttributeName()
 	{
 		return _attribute;
-	}
-	
-	/**
-	 * @return the _blowChance
-	 */
-	public int getBlowChance()
-	{
-		return _blowChance;
 	}
 
 	public boolean canBeDispeled()

@@ -35,15 +35,19 @@ import org.l2junity.gameserver.model.stats.Formulas;
  */
 public final class Backstab extends AbstractEffect
 {
+	private final double _chance;
+
 	public Backstab(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
+
+		_chance = params.getDouble("chance", 0);
 	}
 	
 	@Override
 	public boolean calcSuccess(BuffInfo info)
 	{
-		return info.getEffector().isBehindTarget() && !Formulas.calcPhysicalSkillEvasion(info.getEffector(), info.getEffected(), info.getSkill()) && Formulas.calcBlowSuccess(info.getEffector(), info.getEffected(), info.getSkill());
+		return info.getEffector().isBehindTarget() && !Formulas.calcPhysicalSkillEvasion(info.getEffector(), info.getEffected(), info.getSkill()) && Formulas.calcBlowSuccess(info.getEffector(), info.getEffected(), info.getSkill(), _chance);
 	}
 	
 	@Override

@@ -34,15 +34,19 @@ import org.l2junity.gameserver.model.stats.Formulas;
  */
 public final class FatalBlow extends AbstractEffect
 {
+	private final double _chance;
+
 	public FatalBlow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
+
+		_chance = params.getDouble("chance", 0);
 	}
 	
 	@Override
 	public boolean calcSuccess(BuffInfo info)
 	{
-		return !Formulas.calcPhysicalSkillEvasion(info.getEffector(), info.getEffected(), info.getSkill()) && Formulas.calcBlowSuccess(info.getEffector(), info.getEffected(), info.getSkill());
+		return !Formulas.calcPhysicalSkillEvasion(info.getEffector(), info.getEffected(), info.getSkill()) && Formulas.calcBlowSuccess(info.getEffector(), info.getEffected(), info.getSkill(), _chance);
 	}
 	
 	@Override

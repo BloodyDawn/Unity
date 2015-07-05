@@ -375,7 +375,6 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="MIGHT_MORTAL" />
-		<set name="blowChance" val="25" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="700" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -395,7 +394,9 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param chance="25" />
+			</effect>
 			<effect name="Lethal">
 				<param halfLethal="5" />
 			</effect>

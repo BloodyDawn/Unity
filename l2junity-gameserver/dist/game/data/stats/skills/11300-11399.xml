@@ -1947,7 +1947,6 @@
 		<table name="#mpConsumes"> 86 86 87 </table>
 		<table name="#power"> 45696 47772 49848 </table>
 		<set name="icon" val="icon.skill10511" />
-		<set name="blowChance" val="30" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
@@ -1960,7 +1959,9 @@
 		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="7000" />
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param chance="30" />  <!-- Guessed -->
+			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" /> <!-- Guessed -->
 			</effect>
@@ -1972,7 +1973,6 @@
 		<table name="#mpConsumes"> 86 86 87 </table>
 		<table name="#power"> 51411 56083 56083 </table>
 		<set name="icon" val="icon.skill1171" />
-		<set name="blowChance" val="30" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
@@ -1984,7 +1984,9 @@
 		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="7000" />
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param chance="30" />  <!-- Guessed -->
+			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" /> <!-- Guessed -->
 			</effect>

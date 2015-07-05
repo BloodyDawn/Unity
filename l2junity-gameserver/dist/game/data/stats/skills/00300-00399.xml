@@ -481,7 +481,6 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="SPEED_UP_SPECIAL" />
-		<set name="blowChance" val="25" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -501,7 +500,9 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param chance="25" />
+			</effect>
 			<effect name="Bluff">
 				<param chance="80" />
 			</effect>
@@ -946,7 +947,6 @@
 	<skill id="344" levels="1" name="Lethal Blow">
 		<!-- Confirmed CT2.5 -->
 		<set name="baseCritRate" val="20" />
-		<set name="blowChance" val="30" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="-337" />
 		<set name="effectRange" val="400" />
@@ -966,7 +966,9 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param chance="30" />
+			</effect>
 			<effect name="Lethal">
 				<param halfLethal="15" />
 			</effect>

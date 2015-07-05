@@ -133,7 +133,6 @@
 		<table name="#magicLvl"> 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<table name="#mpConsume"> 37 38 39 40 40 41 42 43 44 45 46 47 48 49 49 50 51 52 53 54 54 55 56 57 58 59 59 60 </table>
 		<table name="#power"> 1853 1953 2057 2164 2274 2388 2505 2625 2748 2875 3004 3136 3271 3408 3548 3690 3834 3980 4127 4275 4425 4575 4726 4878 5029 5180 5330 5479 </table>
-		<set name="blowChance" val="20" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -154,7 +153,9 @@
 			<using kind="RAPIER" />
 		</cond>
 		<for>
-			<effect name="SoulBlow" />
+			<effect name="SoulBlow">
+				<param chance="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="506" levels="4" name="Checkmate">
@@ -2125,7 +2126,6 @@
 		<table name="#magicLvl"> 60 63 66 69 </table>
 		<table name="#mpConsume"> 61 63 67 70 </table>
 		<table name="#power"> 3749 4217 4703 5199 </table>
-		<set name="blowChance" val="20" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -2142,7 +2142,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param chance="20" />
+			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" />
 			</effect>

@@ -806,7 +806,6 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5049" levels="12" name="Mortal Blow">
-		<set name="blowChance" val="20" />
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="40" />
@@ -1267,7 +1266,6 @@
 		<set name="abnormalType" val="SILENCE_PHYSICAL" />
 		<set name="abnormalVisualEffect" val="SILENCE" />
 		<set name="activateRate" val="0" />
-		<set name="blowChance" val="20" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="800" />
 		<set name="effectPoint" val="-100" />
@@ -1282,7 +1280,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param chance="20" />
+			</effect>
 			<effect name="PhysicalMute" />
 		</for>
 	</skill>
@@ -1338,7 +1338,6 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="SPEED_UP_SPECIAL" />
-		<set name="blowChance" val="15" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-100" />
@@ -1352,7 +1351,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="FatalBlow" />
+			<effect name="FatalBlow">
+				<param chance="15" />
+			</effect>
 		</for>
 		<selfEffects>
 			<effect name="Buff">
