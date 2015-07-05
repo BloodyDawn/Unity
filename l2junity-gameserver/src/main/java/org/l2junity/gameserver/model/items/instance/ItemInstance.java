@@ -103,7 +103,7 @@ public final class ItemInstance extends WorldObject
 	private int _dropperObjectId = 0;
 	
 	/** Quantity of the item */
-	private long _count;
+	private long _count = 1;
 	/** Initial Quantity of the item */
 	private long _initCount;
 	/** Remaining time (in miliseconds) */
@@ -190,7 +190,6 @@ public final class ItemInstance extends WorldObject
 			throw new IllegalArgumentException();
 		}
 		super.setName(_item.getName());
-		setCount(1);
 		_loc = ItemLocation.VOID;
 		_type1 = 0;
 		_type2 = 0;
@@ -216,11 +215,35 @@ public final class ItemInstance extends WorldObject
 			throw new IllegalArgumentException();
 		}
 		super.setName(_item.getName());
-		setCount(1);
 		_loc = ItemLocation.VOID;
 		_mana = _item.getDuration();
 		_time = _item.getTime() == -1 ? -1 : System.currentTimeMillis() + ((long) _item.getTime() * 60 * 1000);
 		scheduleLifeTimeTask();
+	}
+	
+	/**
+	 * @param rs
+	 * @throws SQLException
+	 */
+	public ItemInstance(ResultSet rs) throws SQLException
+	{
+		this(rs.getInt(1), ItemTable.getInstance().getTemplate(rs.getInt("item_id")));
+		_count = rs.getLong("count");
+		_ownerId = rs.getInt("owner_id");
+		_loc = ItemLocation.valueOf(rs.getString("loc"));
+		_locData = rs.getInt("loc_data");
+		_enchantLevel = rs.getInt("enchant_level");
+		_type1 = rs.getInt("custom_type1");
+		_type2 = rs.getInt("custom_type2");
+		_mana = rs.getInt("mana_left");
+		_time = rs.getLong("time");
+		_existsInDb = true;
+		_storedInDb = true;
+		
+		if (isEquipable())
+		{
+			restoreAttributes();
+		}
 	}
 	
 	/**
@@ -303,11 +326,11 @@ public final class ItemInstance extends WorldObject
 			{
 				if (getEnchantLevel() > 0)
 				{
-					_logItems.info("SETOWNER:{}, item {}:+{} {}({}), {}, {}", process, getObjectId(), getEnchantLevel(), getItem().getName(), getCount(), creator, reference);
+					_logItems.info("SETOWNER:{}, item {}:+{} {}({}), {}, {}", process, getObjectId(), getEnchantLevel(), getItem().getName(), _count, creator, reference);
 				}
 				else
 				{
-					_logItems.info("SETOWNER:{}, item {}:{}({}), {}, {}", process, getObjectId(), getItem().getName(), getCount(), creator, reference);
+					_logItems.info("SETOWNER:{}, item {}:{}({}), {}, {}", process, getObjectId(), getItem().getName(), _count, creator, reference);
 				}
 			}
 		}
@@ -412,7 +435,7 @@ public final class ItemInstance extends WorldObject
 	 */
 	public void setCount(long count)
 	{
-		if (getCount() == count)
+		if (_count == count)
 		{
 			return;
 		}
@@ -444,19 +467,19 @@ public final class ItemInstance extends WorldObject
 		{
 			return;
 		}
-		long old = getCount();
+		long old = _count;
 		long max = getId() == ADENA_ID ? MAX_ADENA : Integer.MAX_VALUE;
 		
-		if ((count > 0) && (getCount() > (max - count)))
+		if ((count > 0) && (_count > (max - count)))
 		{
 			setCount(max);
 		}
 		else
 		{
-			setCount(getCount() + count);
+			setCount(_count + count);
 		}
 		
-		if (getCount() < 0)
+		if (_count < 0)
 		{
 			setCount(0);
 		}
@@ -469,11 +492,11 @@ public final class ItemInstance extends WorldObject
 			{
 				if (getEnchantLevel() > 0)
 				{
-					_logItems.info("CHANGE:{}, item {}:+{} {}({}), PrevCount({}), {}, {}", process, getObjectId(), getEnchantLevel(), getItem().getName(), getCount(), old, creator, reference);
+					_logItems.info("CHANGE:{}, item {}:+{} {}({}), PrevCount({}), {}, {}", process, getObjectId(), getEnchantLevel(), getItem().getName(), _count, old, creator, reference);
 				}
 				else
 				{
-					_logItems.info("CHANGE:{}, item {}:{}({}), PrevCount({}), {}, {}", process, getObjectId(), getItem().getName(), getCount(), old, creator, reference);
+					_logItems.info("CHANGE:{}, item {}:{}({}), PrevCount({}), {}, {}", process, getObjectId(), getItem().getName(), _count, old, creator, reference);
 				}
 			}
 		}
@@ -1424,7 +1447,7 @@ public final class ItemInstance extends WorldObject
 		{
 			if (_existsInDb)
 			{
-				if ((_ownerId == 0) || (_loc == ItemLocation.VOID) || (_loc == ItemLocation.REFUND) || ((getCount() == 0) && (_loc != ItemLocation.LEASE)))
+				if ((_ownerId == 0) || (_loc == ItemLocation.VOID) || (_loc == ItemLocation.REFUND) || ((_count == 0) && (_loc != ItemLocation.LEASE)))
 				{
 					removeFromDb();
 				}
@@ -1435,7 +1458,7 @@ public final class ItemInstance extends WorldObject
 			}
 			else
 			{
-				if ((_ownerId == 0) || (_loc == ItemLocation.VOID) || (_loc == ItemLocation.REFUND) || ((getCount() == 0) && (_loc != ItemLocation.LEASE)))
+				if ((_ownerId == 0) || (_loc == ItemLocation.VOID) || (_loc == ItemLocation.REFUND) || ((_count == 0) && (_loc != ItemLocation.LEASE)))
 				{
 					return;
 				}
@@ -1446,66 +1469,6 @@ public final class ItemInstance extends WorldObject
 		{
 			_dbLock.unlock();
 		}
-	}
-	
-	/**
-	 * Returns a L2ItemInstance stored in database from its objectID
-	 * @param ownerId
-	 * @param rs
-	 * @return L2ItemInstance
-	 */
-	public static ItemInstance restoreFromDb(int ownerId, ResultSet rs)
-	{
-		ItemInstance inst = null;
-		int objectId, item_id, loc_data, enchant_level, custom_type1, custom_type2, manaLeft;
-		long time, count;
-		ItemLocation loc;
-		try
-		{
-			objectId = rs.getInt("object_id");
-			item_id = rs.getInt("item_id");
-			count = rs.getLong("count");
-			loc = ItemLocation.valueOf(rs.getString("loc"));
-			loc_data = rs.getInt("loc_data");
-			enchant_level = rs.getInt("enchant_level");
-			custom_type1 = rs.getInt("custom_type1");
-			custom_type2 = rs.getInt("custom_type2");
-			manaLeft = rs.getInt("mana_left");
-			time = rs.getLong("time");
-		}
-		catch (Exception e)
-		{
-			_log.error("Could not restore an item owned by " + ownerId + " from DB:", e);
-			return null;
-		}
-		L2Item item = ItemTable.getInstance().getTemplate(item_id);
-		if (item == null)
-		{
-			_log.error("Item item_id=" + item_id + " not known, object_id=" + objectId);
-			return null;
-		}
-		inst = new ItemInstance(objectId, item);
-		inst._ownerId = ownerId;
-		inst.setCount(count);
-		inst._enchantLevel = enchant_level;
-		inst._type1 = custom_type1;
-		inst._type2 = custom_type2;
-		inst._loc = loc;
-		inst._locData = loc_data;
-		inst._existsInDb = true;
-		inst._storedInDb = true;
-		
-		// Setup life time for shadow weapons
-		inst._mana = manaLeft;
-		inst._time = time;
-		
-		// load augmentation and elemental enchant
-		if (inst.isEquipable())
-		{
-			inst.restoreAttributes();
-		}
-		
-		return inst;
 	}
 	
 	/**
@@ -1619,7 +1582,7 @@ public final class ItemInstance extends WorldObject
 			PreparedStatement ps = con.prepareStatement("UPDATE items SET owner_id=?,count=?,loc=?,loc_data=?,enchant_level=?,custom_type1=?,custom_type2=?,mana_left=?,time=? " + "WHERE object_id = ?"))
 		{
 			ps.setInt(1, _ownerId);
-			ps.setLong(2, getCount());
+			ps.setLong(2, _count);
 			ps.setString(3, _loc.name());
 			ps.setInt(4, _locData);
 			ps.setInt(5, getEnchantLevel());
@@ -1655,7 +1618,7 @@ public final class ItemInstance extends WorldObject
 		{
 			ps.setInt(1, _ownerId);
 			ps.setInt(2, _itemId);
-			ps.setLong(3, getCount());
+			ps.setLong(3, _count);
 			ps.setString(4, _loc.name());
 			ps.setInt(5, _locData);
 			ps.setInt(6, getEnchantLevel());
