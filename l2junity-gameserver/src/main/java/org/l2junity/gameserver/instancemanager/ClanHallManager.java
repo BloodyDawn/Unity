@@ -42,7 +42,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class ClanHallManager
 {
-	protected static final Logger _log = LoggerFactory.getLogger(ClanHallManager.class);
+	protected static final Logger LOGGER = LoggerFactory.getLogger(ClanHallManager.class);
 	
 	private final Map<Integer, AuctionableHall> _clanHall = new ConcurrentSkipListMap<>();
 	private final Map<Integer, AuctionableHall> _freeClanHall = new ConcurrentSkipListMap<>();
@@ -102,13 +102,13 @@ public final class ClanHallManager
 					AuctionManager.getInstance().initNPC(id);
 				}
 			}
-			_log.info(getClass().getSimpleName() + ": Loaded: " + getClanHalls().size() + " clan halls");
-			_log.info(getClass().getSimpleName() + ": Loaded: " + getFreeClanHalls().size() + " free clan halls");
+			LOGGER.info("Loaded: {} clan halls", getClanHalls().size());
+			LOGGER.info("Loaded: {} free clan halls", getFreeClanHalls().size());
 			_loaded = true;
 		}
 		catch (Exception e)
 		{
-			_log.warn("Exception: ClanHallManager.load(): " + e.getMessage(), e);
+			LOGGER.warn("Exception: ClanHallManager.load(): ", e);
 		}
 	}
 	
@@ -152,11 +152,7 @@ public final class ClanHallManager
 	 */
 	public final boolean isFree(int chId)
 	{
-		if (_freeClanHall.containsKey(chId))
-		{
-			return true;
-		}
-		return false;
+		return _freeClanHall.containsKey(chId);
 	}
 	
 	/**
@@ -271,11 +267,11 @@ public final class ClanHallManager
 	 */
 	public final AuctionableHall getClanHallByOwner(L2Clan clan)
 	{
-		for (Map.Entry<Integer, AuctionableHall> ch : _clanHall.entrySet())
+		for (AuctionableHall ch : _clanHall.values())
 		{
-			if (clan.getId() == ch.getValue().getOwnerId())
+			if (clan.getId() == ch.getOwnerId())
 			{
-				return ch.getValue();
+				return ch;
 			}
 		}
 		return null;
@@ -284,18 +280,18 @@ public final class ClanHallManager
 	public final ClanHall getAbstractHallByOwner(L2Clan clan)
 	{
 		// Separate loops to avoid iterating over free clan halls
-		for (Map.Entry<Integer, AuctionableHall> ch : _clanHall.entrySet())
+		for (AuctionableHall ch : _clanHall.values())
 		{
-			if (clan.getId() == ch.getValue().getOwnerId())
+			if (clan.getId() == ch.getOwnerId())
 			{
-				return ch.getValue();
+				return ch;
 			}
 		}
-		for (Map.Entry<Integer, SiegableHall> ch : CHSiegeManager.getInstance().getConquerableHalls().entrySet())
+		for (SiegableHall ch : CHSiegeManager.getInstance().getConquerableHalls().values())
 		{
-			if (clan.getId() == ch.getValue().getOwnerId())
+			if (clan.getId() == ch.getOwnerId())
 			{
-				return ch.getValue();
+				return ch;
 			}
 		}
 		return null;

@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class IdFactory
 {
-	protected final Logger _log = LoggerFactory.getLogger(getClass());
+	protected final Logger LOGGER = LoggerFactory.getLogger(getClass());
 	
 	@Deprecated
 	protected static final String[] ID_UPDATES =
@@ -175,11 +175,11 @@ public abstract class IdFactory
 			Statement s = con.createStatement())
 		{
 			s.executeUpdate("UPDATE characters SET online = 0");
-			_log.info("Updated characters online status.");
+			LOGGER.info("Updated characters online status.");
 		}
 		catch (SQLException e)
 		{
-			_log.warn("Could not update characters online status: " + e.getMessage(), e);
+			LOGGER.warn("Could not update characters online status: " + e.getMessage(), e);
 		}
 	}
 	
@@ -290,11 +290,11 @@ public abstract class IdFactory
 			stmt.executeUpdate("UPDATE clanhall SET ownerId=0, paidUntil=0, paid=0 WHERE clanhall.ownerId NOT IN (SELECT clan_id FROM clan_data);");
 			stmt.executeUpdate("UPDATE fort SET owner=0 WHERE owner NOT IN (SELECT clan_id FROM clan_data);");
 			
-			_log.info("Cleaned " + cleanCount + " elements from database in " + ((System.currentTimeMillis() - cleanupStart) / 1000) + " s");
+			LOGGER.info("Cleaned " + cleanCount + " elements from database in " + ((System.currentTimeMillis() - cleanupStart) / 1000) + " s");
 		}
 		catch (SQLException e)
 		{
-			_log.warn("Could not clean up database: " + e.getMessage(), e);
+			LOGGER.warn("Could not clean up database: " + e.getMessage(), e);
 		}
 	}
 	
@@ -311,7 +311,7 @@ public abstract class IdFactory
 					cleanCount += stmt.executeUpdate();
 				}
 			}
-			_log.info("Cleaned " + cleanCount + " expired timestamps from database.");
+			LOGGER.info("Cleaned " + cleanCount + " expired timestamps from database.");
 		}
 		catch (SQLException e)
 		{

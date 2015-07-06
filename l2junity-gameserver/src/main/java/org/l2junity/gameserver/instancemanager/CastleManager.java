@@ -40,7 +40,7 @@ import org.slf4j.LoggerFactory;
 
 public final class CastleManager implements InstanceListManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(CastleManager.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(CastleManager.class);
 	
 	private final Map<Integer, Castle> _castles = new ConcurrentSkipListMap<>();
 	private final Map<Integer, Long> _castleSiegeDate = new ConcurrentHashMap<>();
@@ -148,11 +148,6 @@ public final class CastleManager implements InstanceListManager
 		return hasOwnedCastle;
 	}
 	
-	public int getCirclet()
-	{
-		return getCircletByCastleId(1);
-	}
-	
 	public int getCircletByCastleId(int castleId)
 	{
 		if ((castleId > 0) && (castleId < 10))
@@ -214,7 +209,7 @@ public final class CastleManager implements InstanceListManager
 			}
 			catch (Exception e)
 			{
-				_log.warn("Failed to remove castle circlets offline for player " + member.getName() + ": " + e.getMessage(), e);
+				LOGGER.warn("Failed to remove castle circlets offline for player {}: ", member.getName(), e);
 			}
 		}
 	}
@@ -231,11 +226,11 @@ public final class CastleManager implements InstanceListManager
 				final int castleId = rs.getInt("id");
 				_castles.put(castleId, new Castle(castleId));
 			}
-			_log.info(getClass().getSimpleName() + ": Loaded: " + getCastles().size() + " castles");
+			LOGGER.info("Loaded: {} castles", getCastles().size());
 		}
 		catch (Exception e)
 		{
-			_log.warn("Exception: loadCastleData(): " + e.getMessage(), e);
+			LOGGER.warn("Exception: loadCastleData():", e);
 		}
 	}
 	

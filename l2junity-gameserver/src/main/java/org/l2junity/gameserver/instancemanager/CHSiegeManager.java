@@ -79,11 +79,11 @@ public final class CHSiegeManager
 				_siegableHalls.put(id, hall);
 				ClanHallManager.addClanHall(hall);
 			}
-			_log.info(getClass().getSimpleName() + ": Loaded " + _siegableHalls.size() + " conquerable clan halls.");
+			_log.info("Loaded {} conquerable clan halls.", _siegableHalls.size());
 		}
 		catch (Exception e)
 		{
-			_log.warn("CHSiegeManager: Could not load siegable clan halls!:" + e.getMessage());
+			_log.warn("Could not load siegable clan halls!:", e);
 		}
 	}
 	
@@ -106,12 +106,12 @@ public final class CHSiegeManager
 	{
 		ClanHallZone zone = null;
 		
-		for (Map.Entry<Integer, SiegableHall> ch : _siegableHalls.entrySet())
+		for (SiegableHall ch : _siegableHalls.values())
 		{
-			zone = ch.getValue().getZone();
+			zone = ch.getZone();
 			if ((zone != null) && (zone.getDistanceToZone(x, y) < maxDist))
 			{
-				return ch.getValue();
+				return ch;
 			}
 		}
 		return null;

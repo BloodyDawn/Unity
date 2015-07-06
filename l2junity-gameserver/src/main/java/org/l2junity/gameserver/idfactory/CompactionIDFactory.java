@@ -51,12 +51,12 @@ public class CompactionIDFactory extends IdFactory
 				N = insertUntil(tmp_obj_ids, idx, N, con);
 			}
 			_curOID++;
-			_log.info(getClass().getSimpleName() + ": Next usable Object ID is: " + _curOID);
+			LOGGER.info(getClass().getSimpleName() + ": Next usable Object ID is: " + _curOID);
 			_initialized = true;
 		}
 		catch (Exception e)
 		{
-			_log.error(getClass().getSimpleName() + ": Could not initialize properly: " + e.getMessage());
+			LOGGER.error(getClass().getSimpleName() + ": Could not initialize properly: " + e.getMessage());
 		}
 	}
 	
@@ -82,7 +82,7 @@ public class CompactionIDFactory extends IdFactory
 						while (rs.next())
 						{
 							int badId = rs.getInt(1);
-							_log.error(getClass().getSimpleName() + ": Bad ID " + badId + " in DB found by: " + check);
+							LOGGER.error(getClass().getSimpleName() + ": Bad ID " + badId + " in DB found by: " + check);
 							throw new RuntimeException();
 						}
 					}
@@ -98,7 +98,7 @@ public class CompactionIDFactory extends IdFactory
 		for (int i = 1; i <= hole; i++)
 		{
 			id = tmp_obj_ids[N - i];
-			_log.info(getClass().getSimpleName() + ": Compacting DB object ID=" + id + " into " + (_curOID));
+			LOGGER.info(getClass().getSimpleName() + ": Compacting DB object ID=" + id + " into " + (_curOID));
 			for (String update : ID_UPDATES)
 			{
 				try (PreparedStatement ps = con.prepareStatement(update))

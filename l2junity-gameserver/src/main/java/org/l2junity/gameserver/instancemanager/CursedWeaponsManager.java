@@ -69,7 +69,6 @@ public final class CursedWeaponsManager implements IXmlReader
 	@Override
 	public void load()
 	{
-		
 		if (!Config.ALLOW_CURSED_WEAPONS)
 		{
 			return;
@@ -78,7 +77,7 @@ public final class CursedWeaponsManager implements IXmlReader
 		parseDatapackFile("data/cursedWeapons.xml");
 		restore();
 		controlPlayers();
-		LOGGER.info("Loaded : {} cursed weapon(s).", _cursedWeapons.size());
+		LOGGER.info("Loaded: {} cursed weapon(s).", _cursedWeapons.size());
 	}
 	
 	@Override

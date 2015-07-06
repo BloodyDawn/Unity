@@ -114,13 +114,13 @@ public final class CastleManorManager implements IXmlReader, IStorable
 			// Send debug message
 			if (Config.DEBUG)
 			{
-				LOGGER.info(getClass().getSimpleName() + ": Current mode " + _mode.toString());
+				LOGGER.info("Current mode {}", _mode.toString());
 			}
 		}
 		else
 		{
 			_mode = ManorMode.DISABLED;
-			LOGGER.info(getClass().getSimpleName() + ": Manor system is deactivated.");
+			LOGGER.info("Manor system is deactivated.");
 		}
 	}
 	
@@ -128,7 +128,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 	public final void load()
 	{
 		parseDatapackFile("data/seeds.xml");
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _seeds.size() + " seeds.");
+		LOGGER.info("Loaded {} seeds.", _seeds.size());
 	}
 	
 	@Override
@@ -205,7 +205,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 						}
 						else
 						{
-							LOGGER.warn(getClass().getSimpleName() + ": Unknown seed id: " + seedId + "!");
+							LOGGER.warn("Unknown seed id: {}!", seedId);
 						}
 					}
 				}
@@ -236,18 +236,18 @@ public final class CastleManorManager implements IXmlReader, IStorable
 						}
 						else
 						{
-							LOGGER.warn(getClass().getSimpleName() + ": Unknown crop id: " + cropId + "!");
+							LOGGER.warn("Unknown crop id: {}!, cropId");
 						}
 					}
 				}
 				_procure.put(castleId, current);
 				_procureNext.put(castleId, next);
 			}
-			LOGGER.info(getClass().getSimpleName() + ": Manor data loaded.");
+			LOGGER.info("Manor data loaded.");
 		}
 		catch (Exception e)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Unable to load manor data! " + e.getMessage());
+			LOGGER.warn("Unable to load manor data! ", e);
 		}
 	}
 	
@@ -433,7 +433,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 		scheduleModeChange();
 		if (Config.DEBUG)
 		{
-			LOGGER.info("Manor mode changed to " + _mode.toString() + "!");
+			LOGGER.info("Manor mode changed to {}!", _mode.toString());
 		}
 	}
 	
@@ -468,7 +468,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 			}
 			catch (Exception e)
 			{
-				LOGGER.error(getClass().getSimpleName() + ": Unable to store manor data! " + e.getMessage());
+				LOGGER.error("Unable to store manor data!", e);
 			}
 		}
 	}
@@ -505,7 +505,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 			}
 			catch (Exception e)
 			{
-				LOGGER.error(getClass().getSimpleName() + ": Unable to store manor data! " + e.getMessage());
+				LOGGER.error("Unable to store manor data!", e);
 			}
 		}
 	}
@@ -526,7 +526,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 		}
 		catch (Exception e)
 		{
-			LOGGER.info(getClass().getSimpleName() + ": Unable to store manor data! " + e.getMessage());
+			LOGGER.info("Unable to store manor data!", e);
 		}
 	}
 	
@@ -546,7 +546,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 		}
 		catch (Exception e)
 		{
-			LOGGER.info(getClass().getSimpleName() + ": Unable to store manor data! " + e.getMessage());
+			LOGGER.info("Unable to store manor data!", e);
 		}
 	}
 	
@@ -689,7 +689,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 		}
 		catch (Exception e)
 		{
-			LOGGER.error(getClass().getSimpleName() + ": Unable to store manor data! " + e.getMessage());
+			LOGGER.error("Unable to store manor data! ", e);
 			return false;
 		}
 	}
@@ -717,7 +717,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 			}
 			catch (Exception e)
 			{
-				LOGGER.error(getClass().getSimpleName() + ": Unable to store manor data! " + e.getMessage());
+				LOGGER.error("Unable to store manor data!", e);
 			}
 		}
 	}

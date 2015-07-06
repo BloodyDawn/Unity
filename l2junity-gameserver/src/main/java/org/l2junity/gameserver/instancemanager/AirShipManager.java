@@ -40,7 +40,7 @@ import org.slf4j.LoggerFactory;
 
 public class AirShipManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(AirShipManager.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(AirShipManager.class);
 	
 	private static final String LOAD_DB = "SELECT * FROM airships";
 	private static final String ADD_DB = "INSERT INTO airships (owner_id,fuel) VALUES (?,?)";
@@ -180,11 +180,11 @@ public class AirShipManager
 			}
 			catch (SQLException e)
 			{
-				_log.warn(getClass().getSimpleName() + ": Could not add new airship license: " + e.getMessage(), e);
+				LOGGER.warn("Could not add new airship license: ", e);
 			}
 			catch (Exception e)
 			{
-				_log.warn(getClass().getSimpleName() + ": Error while initializing: " + e.getMessage(), e);
+				LOGGER.warn("Error while initializing: ", e);
 			}
 		}
 	}
@@ -281,13 +281,13 @@ public class AirShipManager
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Could not load airships table: " + e.getMessage(), e);
+			LOGGER.warn("Could not load airships table: ", e);
 		}
 		catch (Exception e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Error while initializing: " + e.getMessage(), e);
+			LOGGER.warn("Error while initializing: ", e);
 		}
-		_log.info(getClass().getSimpleName() + ": Loaded " + _airShipsInfo.size() + " private airships");
+		LOGGER.info("Loaded {} private airships", _airShipsInfo.size());
 	}
 	
 	private void storeInDb(int ownerId)
@@ -307,11 +307,11 @@ public class AirShipManager
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Could not update airships table: " + e.getMessage(), e);
+			LOGGER.warn("Could not update airships table: ", e);
 		}
 		catch (Exception e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Error while save: " + e.getMessage(), e);
+			LOGGER.warn("Error while save: ", e);
 		}
 	}
 	

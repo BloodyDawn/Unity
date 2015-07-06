@@ -77,7 +77,7 @@ public final class WalkingManager implements IXmlReader
 	public final void load()
 	{
 		parseDatapackFile("data/Routes.xml");
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _routes.size() + " walking routes.");
+		LOGGER.info("Loaded {} walking routes.", _routes.size());
 	}
 	
 	@Override
@@ -140,7 +140,7 @@ public final class WalkingManager implements IXmlReader
 								npcString = NpcStringId.getNpcStringId(node.getNodeValue());
 								if (npcString == null)
 								{
-									LOGGER.warn(getClass().getSimpleName() + ": Unknown npcString '" + node.getNodeValue() + "' for route '" + routeName + "'");
+									LOGGER.warn("Unknown npcString '{}' for route '{}'", node.getNodeValue(), routeName);
 									continue;
 								}
 							}
@@ -152,7 +152,7 @@ public final class WalkingManager implements IXmlReader
 									npcString = NpcStringId.getNpcStringId(Integer.parseInt(node.getNodeValue()));
 									if (npcString == null)
 									{
-										LOGGER.warn(getClass().getSimpleName() + ": Unknown npcString '" + node.getNodeValue() + "' for route '" + routeName + "'");
+										LOGGER.warn("Unknown npcString '{}' for route '{}'", node.getNodeValue(), routeName);
 										continue;
 									}
 								}
@@ -177,7 +177,7 @@ public final class WalkingManager implements IXmlReader
 						}
 						catch (Exception e)
 						{
-							LOGGER.warn(getClass().getSimpleName() + ": Error in target definition for route '" + routeName + "'");
+							LOGGER.warn("Error in target definition for route '{}'", routeName);
 						}
 					}
 				}
@@ -276,7 +276,7 @@ public final class WalkingManager implements IXmlReader
 					if (!npc.isInsideRadius(node, 3000, true, false))
 					{
 						final String message = "Route '" + routeName + "': NPC (id=" + npc.getId() + ", x=" + npc.getX() + ", y=" + npc.getY() + ", z=" + npc.getZ() + ") is too far from starting point (node x=" + node.getX() + ", y=" + node.getY() + ", z=" + node.getZ() + ", range=" + npc.calculateDistance(node, true, true) + "), walking will not start";
-						LOGGER.warn(getClass().getSimpleName() + ": " + message);
+						LOGGER.warn(message);
 						npc.sendDebugMessage(message);
 						return;
 					}
