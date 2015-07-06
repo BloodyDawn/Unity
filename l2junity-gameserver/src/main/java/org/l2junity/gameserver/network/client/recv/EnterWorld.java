@@ -149,6 +149,8 @@ public class EnterWorld implements IClientIncomingPacket
 		
 		client.setClientTracert(tracert);
 		
+		activeChar.broadcastUserInfo();
+		
 		// Restore to instanced area if enabled
 		if (Config.RESTORE_PLAYER_INSTANCE)
 		{
@@ -372,8 +374,6 @@ public class EnterWorld implements IClientIncomingPacket
 		{
 			activeChar.sendPacket(ExPledgeWaitingListAlarm.STATIC_PACKET);
 		}
-		
-		activeChar.broadcastUserInfo();
 		
 		// Send SubClass Info
 		activeChar.sendPacket(new ExSubjobInfo(activeChar, SubclassInfoType.NO_CHANGES));
