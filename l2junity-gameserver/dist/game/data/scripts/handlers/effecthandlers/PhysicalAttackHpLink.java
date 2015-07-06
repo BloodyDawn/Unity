@@ -87,7 +87,7 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 		boolean crit = false;
 		if (_criticalChance > 0)
 		{
-			crit = Formulas.calcCrit(_criticalChance * BaseStats.STR.calcBonus(activeChar), true, target);
+			crit = Formulas.calcCrit(_criticalChance * 10 * BaseStats.STR.calcBonus(activeChar), true, target);
 		}
 		
 		int damage = 0;

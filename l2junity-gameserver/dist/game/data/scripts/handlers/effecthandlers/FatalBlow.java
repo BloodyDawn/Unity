@@ -79,7 +79,7 @@ public final class FatalBlow extends AbstractEffect
 		double damage = Formulas.calcBlowDamage(activeChar, target, info.getSkill(), shld, ss);
 		
 		// Crit rate base crit rate for skill, modified with STR bonus
-		boolean crit = Formulas.calcCrit(_criticalChance * BaseStats.STR.calcBonus(activeChar), true, target);
+		boolean crit = Formulas.calcCrit(_criticalChance * 10 * BaseStats.STR.calcBonus(activeChar), true, target);
 		if (crit)
 		{
 			damage *= 2;

@@ -79,7 +79,7 @@ public final class Backstab extends AbstractEffect
 		double damage = Formulas.calcBackstabDamage(activeChar, target, info.getSkill(), shld, ss);
 		
 		// Crit rate base crit rate for skill, modified with STR bonus
-		if (Formulas.calcCrit(_criticalChance * BaseStats.STR.calcBonus(activeChar), true, target))
+		if (Formulas.calcCrit(_criticalChance * 10 * BaseStats.STR.calcBonus(activeChar), true, target))
 		{
 			damage *= 2;
 		}
