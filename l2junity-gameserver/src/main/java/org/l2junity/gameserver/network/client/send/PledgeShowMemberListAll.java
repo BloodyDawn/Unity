@@ -20,6 +20,7 @@ package org.l2junity.gameserver.network.client.send;
 
 import java.util.Collection;
 
+import org.l2junity.Config;
 import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.L2Clan.SubPledge;
@@ -61,7 +62,7 @@ public class PledgeShowMemberListAll implements IClientOutgoingPacket
 		
 		packet.writeD(pledge == null ? 0 : 1);
 		packet.writeD(_clan.getId());
-		packet.writeD(0x00); // pledge db id
+		packet.writeD(Config.SERVER_ID);
 		packet.writeD(pledgeId);
 		packet.writeS(_clan.getName());
 		packet.writeS(_clan.getLeaderName());
