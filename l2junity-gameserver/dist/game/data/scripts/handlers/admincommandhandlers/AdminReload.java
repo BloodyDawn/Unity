@@ -203,7 +203,7 @@ public class AdminReload implements IAdminCommandHandler
 				}
 				case "cw":
 				{
-					CursedWeaponsManager.getInstance().reload();
+					CursedWeaponsManager.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Cursed Weapons.");
 					break;
 				}
