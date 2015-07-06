@@ -69,6 +69,8 @@ public final class ItemAuctionManager implements IXmlReader
 		{
 			LOGGER.error("Failed loading auctions.", e);
 		}
+		
+		load();
 	}
 	
 	@Override
