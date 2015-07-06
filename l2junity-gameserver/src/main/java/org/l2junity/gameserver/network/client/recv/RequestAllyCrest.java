@@ -34,6 +34,8 @@ public final class RequestAllyCrest implements IClientIncomingPacket
 	public boolean read(PacketReader packet)
 	{
 		_crestId = packet.readD();
+		packet.readD(); // Ally ID
+		packet.readD(); // Server ID
 		return true;
 	}
 	
