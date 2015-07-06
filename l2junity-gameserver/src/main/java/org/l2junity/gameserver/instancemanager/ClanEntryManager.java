@@ -47,7 +47,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ClanEntryManager
 {
-	protected static final Logger _log = LoggerFactory.getLogger(ClanEntryManager.class);
+	protected static final Logger LOGGER = LoggerFactory.getLogger(ClanEntryManager.class);
 	
 	private static final Map<Integer, PledgeWaitingInfo> _waitingList = new ConcurrentHashMap<>();
 	private static final Map<Integer, PledgeRecruitInfo> _clanList = new ConcurrentHashMap<>();
@@ -101,11 +101,11 @@ public class ClanEntryManager
 			{
 				_clanList.put(rs.getInt("clan_id"), new PledgeRecruitInfo(rs.getInt("clan_id"), rs.getInt("karma"), rs.getString("information"), rs.getString("detailed_information")));
 			}
-			_log.info(getClass().getSimpleName() + ": Loaded: " + _clanList.size() + " clan entry");
+			LOGGER.info("Loaded: {} clan entry", _clanList.size());
 		}
 		catch (Exception e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Exception: ClanEntryManager.load(): " + e.getMessage());
+			LOGGER.warn("Failed to load: ", e);
 		}
 		
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
@@ -117,11 +117,11 @@ public class ClanEntryManager
 				_waitingList.put(rs.getInt("char_id"), new PledgeWaitingInfo(rs.getInt("char_id"), rs.getInt("level"), rs.getInt("karma"), rs.getInt("base_class"), rs.getString("char_name")));
 			}
 			
-			_log.info(getClass().getSimpleName() + ": Loaded: " + _waitingList.size() + " player in waiting list");
+			LOGGER.info("Loaded:{} player in waiting list", _waitingList.size());
 		}
 		catch (Exception e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Exception: ClanEntryManager.load(): " + e.getMessage());
+			LOGGER.warn("Failed to load: ", e);
 		}
 		
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
@@ -133,11 +133,11 @@ public class ClanEntryManager
 				_applicantList.computeIfAbsent(rs.getInt("clanId"), k -> new ConcurrentHashMap<>()).put(rs.getInt("charId"), new PledgeApplicantInfo(rs.getInt("charId"), rs.getString("char_name"), rs.getInt("level"), rs.getInt("karma"), rs.getInt("clanId"), rs.getString("message")));
 			}
 			
-			_log.info(getClass().getSimpleName() + ": Loaded: " + _applicantList.size() + " player application");
+			LOGGER.info("Loaded: {} player application", _applicantList.size());
 		}
 		catch (Exception e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Exception: ClanEntryManager.load(): " + e.getMessage());
+			LOGGER.warn("Failed to load: ", e);
 		}
 	}
 	
@@ -179,7 +179,7 @@ public class ClanEntryManager
 		}
 		catch (Exception e)
 		{
-			_log.warn(e.getMessage(), e);
+			LOGGER.warn(e.getMessage(), e);
 		}
 		
 		return (clanApplicantList != null) && (clanApplicantList.remove(playerId) != null);
@@ -202,7 +202,7 @@ public class ClanEntryManager
 			}
 			catch (Exception e)
 			{
-				_log.warn(e.getMessage(), e);
+				LOGGER.warn(e.getMessage(), e);
 			}
 			return true;
 		}
@@ -227,7 +227,7 @@ public class ClanEntryManager
 			}
 			catch (Exception e)
 			{
-				_log.warn(e.getMessage(), e);
+				LOGGER.warn(e.getMessage(), e);
 			}
 			
 			return _waitingList.put(playerId, info) != null;
@@ -247,7 +247,7 @@ public class ClanEntryManager
 			}
 			catch (Exception e)
 			{
-				_log.warn(e.getMessage(), e);
+				LOGGER.warn(e.getMessage(), e);
 			}
 			_waitingList.remove(playerId);
 			lockPlayer(playerId);
@@ -271,7 +271,7 @@ public class ClanEntryManager
 			}
 			catch (Exception e)
 			{
-				_log.warn(e.getMessage(), e);
+				LOGGER.warn(e.getMessage(), e);
 			}
 			return _clanList.put(clanId, info) != null;
 		}
@@ -293,7 +293,7 @@ public class ClanEntryManager
 			}
 			catch (Exception e)
 			{
-				_log.warn(e.getMessage(), e);
+				LOGGER.warn(e.getMessage(), e);
 			}
 			return _clanList.replace(clanId, info) != null;
 		}
@@ -312,7 +312,7 @@ public class ClanEntryManager
 			}
 			catch (Exception e)
 			{
-				_log.warn(e.getMessage(), e);
+				LOGGER.warn(e.getMessage(), e);
 			}
 			_clanList.remove(clanId);
 			lockClan(clanId);

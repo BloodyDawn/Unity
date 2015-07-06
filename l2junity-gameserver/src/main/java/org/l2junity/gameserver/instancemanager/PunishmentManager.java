@@ -23,6 +23,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.holders.PunishmentHolder;
 import org.l2junity.gameserver.model.punishment.PunishmentAffect;
@@ -36,7 +37,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class PunishmentManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(PunishmentManager.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(PunishmentManager.class);
 	
 	private final Map<PunishmentAffect, PunishmentHolder> _tasks = new ConcurrentHashMap<>();
 	
@@ -86,10 +87,10 @@ public final class PunishmentManager
 		}
 		catch (Exception e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Error while loading punishments: ", e);
+			LOGGER.warn("Error while loading punishments: ", e);
 		}
 		
-		_log.info(getClass().getSimpleName() + ": Loaded " + initiated + " active and " + expired + " expired punishments.");
+		LOGGER.info("Loaded {} active and {} expired punishments.", initiated, expired);
 	}
 	
 	public void startPunishment(PunishmentTask task)

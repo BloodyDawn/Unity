@@ -28,6 +28,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
@@ -73,7 +74,7 @@ public final class BotReportTable
 	private Map<Integer, ReportedCharData> _reports;
 	private Map<Integer, PunishHolder> _punishments;
 	
-	BotReportTable()
+	protected BotReportTable()
 	{
 		if (Config.BOTREPORT_ENABLE)
 		{
@@ -95,7 +96,7 @@ public final class BotReportTable
 			}
 			catch (Exception e)
 			{
-				LOGGER.warn("BotReportTable: Could not load punishments from /config/botreport_punishments.xml", e);
+				LOGGER.warn("Could not load punishments from /config/botreport_punishments.xml", e);
 			}
 			
 			loadReportedCharData();
@@ -165,7 +166,7 @@ public final class BotReportTable
 				}
 			}
 			
-			LOGGER.info("BotReportTable: Loaded " + _reports.size() + " bot reports");
+			LOGGER.info("Loaded {} bot reports", _reports.size());
 		}
 		catch (Exception e)
 		{
@@ -199,7 +200,7 @@ public final class BotReportTable
 		}
 		catch (Exception e)
 		{
-			LOGGER.error("BotReportTable: Could not update reported char data in database!", e);
+			LOGGER.error("Could not update reported char data in database!", e);
 		}
 	}
 	
@@ -391,7 +392,7 @@ public final class BotReportTable
 		}
 		else
 		{
-			LOGGER.warn("BotReportTable: Could not add punishment for " + neededReports + " report(s): Skill " + skillId + "-" + skillLevel + " does not exist!");
+			LOGGER.warn("Could not add punishment for {} report(s): Skill {}-{} does not exist!", neededReports, skillId, skillLevel);
 		}
 	}
 	
@@ -427,7 +428,7 @@ public final class BotReportTable
 		catch (Exception e)
 		{
 			ThreadPoolManager.getInstance().scheduleGeneral(new ResetPointTask(), 24 * 3600 * 1000);
-			LOGGER.warn("BotReportTable: Could not properly schedule bot report points reset task. Scheduled in 24 hours.", e);
+			LOGGER.warn("Could not properly schedule bot report points reset task. Scheduled in 24 hours.", e);
 		}
 	}
 	
