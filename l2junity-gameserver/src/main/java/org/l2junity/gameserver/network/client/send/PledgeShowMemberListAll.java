@@ -38,7 +38,7 @@ public class PledgeShowMemberListAll implements IClientOutgoingPacket
 	private final Collection<ClanMember> _members;
 	private int _pledgeType;
 	
-	public PledgeShowMemberListAll(L2Clan clan, SubPledge pledge)
+	private PledgeShowMemberListAll(L2Clan clan, SubPledge pledge)
 	{
 		_clan = clan;
 		_pledge = pledge;
