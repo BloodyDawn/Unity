@@ -329,7 +329,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -338,6 +337,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttackHpLink">
+				<param power="#power" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -357,7 +357,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -369,6 +368,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 				<param overHit="true" />
@@ -492,7 +492,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A3" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -501,6 +500,7 @@
 		</cond>
 		<for>
 			<effect name="FatalBlow">
+				<param power="#power" />
 				<param chance="25" />
 				<param overHit="true" />
 			</effect>
@@ -991,7 +991,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
@@ -999,6 +998,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="10" />
 				<param overHit="true" />
 			</effect>
@@ -1024,7 +1024,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
@@ -1032,6 +1031,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="10" />
 				<param overHit="true" />
 			</effect>

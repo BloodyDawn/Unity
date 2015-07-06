@@ -27,7 +27,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -36,6 +35,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="10" />
 				<param overHit="true" />
 			</effect>
@@ -83,7 +83,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -92,6 +91,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="10" />
 				<param overHit="true" />
 			</effect>
@@ -310,12 +310,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="10" />
 				<param overHit="true" />
 			</effect>
@@ -349,7 +349,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -358,6 +357,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="10" />
 				<param overHit="true" />
 			</effect>
@@ -389,7 +389,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A3" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -398,6 +397,7 @@
 		</cond>
 		<for>
 			<effect name="FatalBlow">
+				<param power="#power" />
 				<param chance="25" />
 				<param overHit="true" />
 			</effect>
@@ -1745,7 +1745,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1754,6 +1753,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -1904,7 +1904,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
@@ -1914,6 +1913,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalSoulAttack">
+				<param power="#power" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -1934,7 +1934,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
@@ -1944,6 +1943,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalSoulAttack">
+				<param power="#power" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -1964,7 +1964,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
@@ -1974,6 +1973,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalSoulAttack">
+				<param power="#power" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -2163,7 +2163,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
@@ -2173,6 +2172,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalSoulAttack">
+				<param power="#power" />
 				<param criticalChance="20" />
 				<param overHit="true" />
 			</effect>
@@ -2269,12 +2269,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="4000" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalSoulAttack">
+				<param power="#power" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -2300,7 +2300,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="DA1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="AREA" />
@@ -2312,6 +2311,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalSoulAttack">
+				<param power="#power" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -2428,7 +2428,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
@@ -2438,6 +2437,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalSoulAttack">
+				<param power="#power" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -2458,7 +2458,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
@@ -2468,6 +2467,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalSoulAttack">
+				<param power="#power" />
 				<param ignoreShieldDefence="true" />
 				<param overHit="true" />
 			</effect>
@@ -2489,7 +2489,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
@@ -2502,6 +2501,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalSoulAttack">
+				<param power="#power" />
 				<param ignoreShieldDefence="true" />
 				<param overHit="true" />
 			</effect>

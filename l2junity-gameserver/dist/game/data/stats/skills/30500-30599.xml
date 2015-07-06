@@ -16,7 +16,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="ONE" />
 		<set name="isDebuff" val="true" />
@@ -25,6 +24,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param stunnedMod="1.2" /> <!-- 20% more damage if target is Stunned -->
 				<param criticalChance="15" /> <!-- Unconfirmed -->
 				<param overHit="true" />
@@ -49,7 +49,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="5000" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLevel" />
@@ -58,6 +57,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" /> <!-- Unconfirmed -->
 				<param overHit="true" />
 			</effect>
@@ -109,7 +109,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="5000" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
@@ -117,6 +116,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" /> <!-- Unconfirmed -->
 				<param ignoreShieldDefence="true" />
 				<param overHit="true" />
@@ -139,7 +139,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="9000" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
@@ -147,6 +146,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" /> <!-- Unconfirmed -->
 				<param pDefMod="0.5" /> <!-- Ignores 50% of target's P. Def -->
 				<param ignoreShieldDefence="true" />
@@ -173,7 +173,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="operateType" val="A2" />
 		<set name="trait" val="PULL" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="30000" />
 		<set name="targetType" val="AURA" />
 		<set name="isDebuff" val="true" />
@@ -182,6 +181,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" /> <!-- Unconfirmed -->
 			</effect>
 			<effect name="PullBack">
@@ -211,7 +211,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="30000" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="isDebuff" val="true" />
@@ -221,6 +220,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" /> <!-- Unconfirmed -->
 			</effect>
 			<effect name="KnockBack">
@@ -544,7 +544,6 @@
 		<set name="affectRange" val="300" /> <!-- Unconfirmed -->
 		<set name="effectPoint" val="-687" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="2500" />
@@ -557,7 +556,9 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" /> <!-- TODO: Damage increases with the number of enemies affected. -->
+			<effect name="PhysicalAttack"><!-- TODO: Damage increases with the number of enemies affected. -->
+				<param power="#power" />
+			</effect>
 			<effect name="KnockDown">
 				<param speed="700" distance="50" /> <!-- Unconfirmed -->
 			</effect>
@@ -983,7 +984,6 @@
 		<table name="#power"> 91570 95080 98736 102392 </table>
 		<set name="icon" val="icon.skill30547" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="80" />
@@ -999,6 +999,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param pDefMod="0.5" /> <!-- Ignores 50% of target's P. Def -->
 			</effect>
 		</for>
