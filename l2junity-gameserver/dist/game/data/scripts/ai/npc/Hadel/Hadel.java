@@ -18,6 +18,7 @@
  */
 package ai.npc.Hadel;
 
+import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -64,7 +65,7 @@ public final class Hadel extends AbstractNpcAI
 			}
 			case "teleportToHarnak":
 			{
-				if ((player.getClassId().level() < 4) || (player.getLevel() < 85))
+				if ((!player.isInCategory(CategoryType.AWAKEN_GROUP)) || (player.getLevel() < 85))
 				{
 					htmltext = "33344-noClass.html";
 					break;
