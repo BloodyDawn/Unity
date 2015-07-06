@@ -24,6 +24,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Map.Entry;
+
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.variables.AbstractVariables;
 import org.slf4j.Logger;
@@ -35,7 +36,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class GlobalVariablesManager extends AbstractVariables
 {
-	private static final Logger _log = LoggerFactory.getLogger(GlobalVariablesManager.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(GlobalVariablesManager.class);
 	
 	// SQL Queries.
 	private static final String SELECT_QUERY = "SELECT * FROM global_variables";
@@ -62,14 +63,14 @@ public final class GlobalVariablesManager extends AbstractVariables
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Couldn't restore global variables");
+			LOGGER.warn("Couldn't restore global variables", e);
 			return false;
 		}
 		finally
 		{
 			compareAndSetChanges(true, false);
 		}
-		_log.info(getClass().getSimpleName() + ": Loaded " + getSet().size() + " variables.");
+		LOGGER.info("Loaded {} variables.", getSet().size());
 		return true;
 	}
 	
@@ -100,14 +101,14 @@ public final class GlobalVariablesManager extends AbstractVariables
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Couldn't save global variables to database.", e);
+			LOGGER.warn("Couldn't save global variables to database.", e);
 			return false;
 		}
 		finally
 		{
 			compareAndSetChanges(true, false);
 		}
-		_log.info(getClass().getSimpleName() + ": Stored " + getSet().size() + " variables.");
+		LOGGER.info("Stored {} variables.", getSet().size());
 		return true;
 	}
 	
@@ -121,7 +122,7 @@ public final class GlobalVariablesManager extends AbstractVariables
 		}
 		catch (Exception e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Couldn't delete global variables to database.", e);
+			LOGGER.warn("Couldn't delete global variables to database.", e);
 			return false;
 		}
 		return true;

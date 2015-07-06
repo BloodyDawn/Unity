@@ -48,10 +48,10 @@ public class RaidBossSpawnManager
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(RaidBossSpawnManager.class);
 	
-	protected static final Map<Integer, L2RaidBossInstance> _bosses = new ConcurrentHashMap<>();
-	protected static final Map<Integer, L2Spawn> _spawns = new ConcurrentHashMap<>();
-	protected static final Map<Integer, StatsSet> _storedInfo = new ConcurrentHashMap<>();
-	protected static final Map<Integer, ScheduledFuture<?>> _schedules = new ConcurrentHashMap<>();
+	protected final Map<Integer, L2RaidBossInstance> _bosses = new ConcurrentHashMap<>();
+	protected final Map<Integer, L2Spawn> _spawns = new ConcurrentHashMap<>();
+	protected final Map<Integer, StatsSet> _storedInfo = new ConcurrentHashMap<>();
+	protected final Map<Integer, ScheduledFuture<?>> _schedules = new ConcurrentHashMap<>();
 	
 	public static enum StatusEnum
 	{
@@ -103,26 +103,26 @@ public class RaidBossSpawnManager
 				}
 				else
 				{
-					LOGGER.warn(getClass().getSimpleName() + ": Could not load raidboss #" + rset.getInt("boss_id") + " from DB");
+					LOGGER.warn("Could not load raidboss #{} from DB", rset.getInt("boss_id"));
 				}
 			}
 			
-			LOGGER.info(getClass().getSimpleName() + ": Loaded " + _bosses.size() + " Instances");
-			LOGGER.info(getClass().getSimpleName() + ": Scheduled " + _schedules.size() + " Instances");
+			LOGGER.info("Loaded {} Instances", _bosses.size());
+			LOGGER.info("Scheduled {} Instances", _schedules.size());
 		}
 		catch (SQLException e)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Couldnt load raidboss_spawnlist table");
+			LOGGER.warn("Couldnt load raidboss_spawnlist table", e);
 		}
 		catch (Exception e)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Error while initializing RaidBossSpawnManager: " + e.getMessage(), e);
+			LOGGER.warn("Error while initializing RaidBossSpawnManager: ", e);
 		}
 	}
 	
-	private static class SpawnSchedule implements Runnable
+	private class SpawnSchedule implements Runnable
 	{
-		private static final Logger _log = LoggerFactory.getLogger(SpawnSchedule.class);
+		private final Logger LOGGER = LoggerFactory.getLogger(SpawnSchedule.class);
 		
 		private final int bossId;
 		
@@ -149,10 +149,8 @@ public class RaidBossSpawnManager
 				info.set("respawnTime", 0L);
 				
 				_storedInfo.put(bossId, info);
-				
-				_log.info(getClass().getSimpleName() + ": Spawning Raid Boss " + raidboss.getName());
-				
 				_bosses.put(bossId, raidboss);
+				LOGGER.info("Spawning Raid Boss {}", raidboss.getName());
 			}
 			
 			_schedules.remove(bossId);
@@ -189,7 +187,7 @@ public class RaidBossSpawnManager
 			{
 				final Calendar time = Calendar.getInstance();
 				time.setTimeInMillis(respawnTime);
-				LOGGER.info(getClass().getSimpleName() + ": Updated " + boss.getName() + " respawn time to " + time.getTime());
+				LOGGER.info("Updated {} respawn time to {}", boss.getName(), time.getTime());
 				
 				_schedules.put(boss.getId(), ThreadPoolManager.getInstance().scheduleGeneral(new SpawnSchedule(boss.getId()), respawnDelay));
 				updateDb();
@@ -276,7 +274,7 @@ public class RaidBossSpawnManager
 			catch (Exception e)
 			{
 				// problem with storing spawn
-				LOGGER.warn(getClass().getSimpleName() + ": Could not store raidboss #" + bossId + " in the DB:" + e.getMessage(), e);
+				LOGGER.warn("Could not store raidboss #{} in the DB:", bossId, e);
 			}
 		}
 	}
@@ -329,7 +327,7 @@ public class RaidBossSpawnManager
 			catch (Exception e)
 			{
 				// problem with deleting spawn
-				LOGGER.warn(getClass().getSimpleName() + ": Could not remove raidboss #" + bossId + " from DB: " + e.getMessage(), e);
+				LOGGER.warn("Could not remove raidboss #{} from DB: ", bossId, e);
 			}
 		}
 	}
@@ -379,13 +377,13 @@ public class RaidBossSpawnManager
 				}
 				catch (SQLException e)
 				{
-					LOGGER.warn(getClass().getSimpleName() + ": Couldnt update raidboss_spawnlist table " + e.getMessage(), e);
+					LOGGER.warn("Couldnt update raidboss_spawnlist table ", e);
 				}
 			}
 		}
 		catch (SQLException e)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": SQL error while updating RaidBoss spawn to database: " + e.getMessage(), e);
+			LOGGER.warn("SQL error while updating RaidBoss spawn to database: ", e);
 		}
 	}
 	

@@ -27,10 +27,10 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
-import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
+import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.itemauction.ItemAuctionInstance;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,20 +41,18 @@ import org.w3c.dom.Node;
 /**
  * @author Forsaiken
  */
-public final class ItemAuctionManager
+public final class ItemAuctionManager implements IXmlReader
 {
-	private static final Logger _log = LoggerFactory.getLogger(ItemAuctionManager.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ItemAuctionManager.class);
 	
 	private final Map<Integer, ItemAuctionInstance> _managerInstances = new HashMap<>();
-	private final AtomicInteger _auctionIds;
+	private final AtomicInteger _auctionIds = new AtomicInteger(1);
 	
 	protected ItemAuctionManager()
 	{
-		_auctionIds = new AtomicInteger(1);
-		
 		if (!Config.ALT_ITEM_AUCTION_ENABLED)
 		{
-			_log.info(getClass().getSimpleName() + ": Disabled by config.");
+			LOGGER.info("Disabled by config.");
 			return;
 		}
 		
@@ -69,23 +67,23 @@ public final class ItemAuctionManager
 		}
 		catch (final SQLException e)
 		{
-			_log.error(getClass().getSimpleName() + ": Failed loading auctions.", e);
+			LOGGER.error("Failed loading auctions.", e);
 		}
-		
-		final File file = new File(Config.DATAPACK_ROOT + "/data/ItemAuctions.xml");
-		if (!file.exists())
-		{
-			_log.warn(getClass().getSimpleName() + ": Missing ItemAuctions.xml!");
-			return;
-		}
-		
-		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		factory.setValidating(false);
-		factory.setIgnoringComments(true);
-		
+	}
+	
+	@Override
+	public void load()
+	{
+		_managerInstances.clear();
+		parseDatapackFile("data/ItemAuctions.xml");
+		LOGGER.info("Loaded {} instance(s).", _managerInstances.size());
+	}
+	
+	@Override
+	public void parseDocument(Document doc, File f)
+	{
 		try
 		{
-			final Document doc = factory.newDocumentBuilder().parse(file);
 			for (Node na = doc.getFirstChild(); na != null; na = na.getNextSibling())
 			{
 				if ("list".equalsIgnoreCase(na.getNodeName()))
@@ -108,11 +106,10 @@ public final class ItemAuctionManager
 					}
 				}
 			}
-			_log.info(getClass().getSimpleName() + ": Loaded " + _managerInstances.size() + " instance(s).");
 		}
 		catch (Exception e)
 		{
-			_log.error(getClass().getSimpleName() + ": Failed loading auctions from xml.", e);
+			LOGGER.error("Failed loading auctions from xml.", e);
 		}
 	}
 	
@@ -152,7 +149,7 @@ public final class ItemAuctionManager
 		}
 		catch (SQLException e)
 		{
-			_log.error("L2ItemAuctionManagerInstance: Failed deleting auction: " + auctionId, e);
+			LOGGER.error("L2ItemAuctionManagerInstance: Failed deleting auction: {}", auctionId, e);
 		}
 	}
 	

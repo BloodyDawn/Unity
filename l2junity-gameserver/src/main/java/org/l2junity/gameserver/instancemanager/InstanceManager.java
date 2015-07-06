@@ -44,11 +44,11 @@ public final class InstanceManager implements IXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(InstanceManager.class);
 	
-	private static final Map<Integer, Instance> _instanceList = new ConcurrentHashMap<>();
+	private final Map<Integer, Instance> _instanceList = new ConcurrentHashMap<>();
 	private final Map<Integer, InstanceWorld> _instanceWorlds = new ConcurrentHashMap<>();
 	private int _dynamic = 300000;
 	// InstanceId Names
-	private static final Map<Integer, String> _instanceIdNames = new ConcurrentHashMap<>();
+	private final Map<Integer, String> _instanceIdNames = new ConcurrentHashMap<>();
 	private final Map<Integer, Map<Integer, Long>> _playerInstanceTimes = new ConcurrentHashMap<>();
 	// SQL Queries
 	private static final String ADD_INSTANCE_TIME = "INSERT INTO character_instance_time (charId,instanceId,time) values (?,?,?) ON DUPLICATE KEY UPDATE time=?";
@@ -59,10 +59,10 @@ public final class InstanceManager implements IXmlReader
 	{
 		// Creates the multiverse.
 		_instanceList.put(-1, new Instance(-1, "multiverse"));
-		LOGGER.info(getClass().getSimpleName() + ": Multiverse Instance created.");
+		LOGGER.info("Multiverse Instance created.");
 		// Creates the universe.
 		_instanceList.put(0, new Instance(0, "universe"));
-		LOGGER.info(getClass().getSimpleName() + ": Universe Instance created.");
+		LOGGER.info("Universe Instance created.");
 		load();
 	}
 	
@@ -71,7 +71,7 @@ public final class InstanceManager implements IXmlReader
 	{
 		_instanceIdNames.clear();
 		parseDatapackFile("data/instancenames.xml");
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _instanceIdNames.size() + " instance names.");
+		LOGGER.info("Loaded {} instance names.", _instanceIdNames.size());
 	}
 	
 	/**
@@ -137,7 +137,7 @@ public final class InstanceManager implements IXmlReader
 		}
 		catch (Exception e)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Could not insert character instance time data: " + e.getMessage());
+			LOGGER.warn("Could not insert character instance time data: ", e);
 		}
 	}
 	
@@ -157,7 +157,7 @@ public final class InstanceManager implements IXmlReader
 		}
 		catch (Exception e)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Could not delete character instance time data: " + e.getMessage());
+			LOGGER.warn("Could not delete character instance time data: ", e);
 		}
 	}
 	
@@ -194,7 +194,7 @@ public final class InstanceManager implements IXmlReader
 		}
 		catch (Exception e)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Could not delete character instance time data: " + e.getMessage());
+			LOGGER.warn("Could not delete character instance time data: ", e);
 		}
 	}
 	
@@ -374,7 +374,7 @@ public final class InstanceManager implements IXmlReader
 			_dynamic++;
 			if (_dynamic == Integer.MAX_VALUE)
 			{
-				LOGGER.warn(getClass().getSimpleName() + ": More then " + (Integer.MAX_VALUE - 300000) + " instances created");
+				LOGGER.warn("More then {} instances created", Integer.MAX_VALUE - 300000);
 				_dynamic = 300000;
 			}
 		}

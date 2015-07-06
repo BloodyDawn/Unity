@@ -52,8 +52,8 @@ public final class MapRegionManager implements IXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(MapRegionManager.class);
 	
-	private static final Map<String, MapRegion> _regions = new HashMap<>();
-	private static final String defaultRespawn = "talking_island_town";
+	private final Map<String, MapRegion> _regions = new HashMap<>();
+	private final String defaultRespawn = "talking_island_town";
 	
 	protected MapRegionManager()
 	{
@@ -65,7 +65,7 @@ public final class MapRegionManager implements IXmlReader
 	{
 		_regions.clear();
 		parseDatapackDirectory("data/mapregion", false);
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _regions.size() + " map regions.");
+		LOGGER.info("Loaded {} map regions.", _regions.size());
 	}
 	
 	@Override

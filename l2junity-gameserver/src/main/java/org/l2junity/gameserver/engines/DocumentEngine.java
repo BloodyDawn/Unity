@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  */
 public class DocumentEngine
 {
-	private static final Logger _log = LoggerFactory.getLogger(DocumentEngine.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(DocumentEngine.class);
 	
 	private final List<File> _itemFiles = new LinkedList<>();
 	private final List<File> _skillFiles = new LinkedList<>();
@@ -67,7 +67,7 @@ public class DocumentEngine
 		File dir = new File(Config.DATAPACK_ROOT, dirname);
 		if (!dir.exists())
 		{
-			_log.warn("Dir " + dir.getAbsolutePath() + " not exists");
+			LOGGER.warn("Dir " + dir.getAbsolutePath() + " not exists");
 			return;
 		}
 		File[] files = dir.listFiles(new XMLFilter());
@@ -81,7 +81,7 @@ public class DocumentEngine
 	{
 		if (file == null)
 		{
-			_log.warn("Skill file not found.");
+			LOGGER.warn("Skill file not found.");
 			return null;
 		}
 		DocumentSkill doc = new DocumentSkill(file);
@@ -105,7 +105,7 @@ public class DocumentEngine
 				count++;
 			}
 		}
-		_log.info(getClass().getSimpleName() + ": Loaded " + count + " Skill templates from XML files.");
+		LOGGER.info("Loaded {} Skill templates from XML files.", count);
 	}
 	
 	/**
