@@ -75,7 +75,7 @@ public final class CursedWeaponsManager implements IXmlReader
 			return;
 		}
 		
-		load();
+		parseDatapackFile("data/cursedWeapons.xml");
 		restore();
 		controlPlayers();
 		LOGGER.info("Loaded : {} cursed weapon(s).", _cursedWeapons.size());
