@@ -20,6 +20,7 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -37,12 +38,14 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 public final class PhysicalAttackHpLink extends AbstractEffect
 {
 	private final double _criticalChance;
-
+	private final boolean _overHit;
+	
 	public PhysicalAttackHpLink(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_criticalChance = params.getDouble("criticalChance", 0);
+		_overHit = params.getBoolean("overHit", false);
 	}
 	
 	@Override
@@ -88,6 +91,11 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 		if (_criticalChance > 0)
 		{
 			crit = Formulas.calcCrit(_criticalChance * 10 * BaseStats.STR.calcBonus(activeChar), true, target);
+		}
+		
+		if (_overHit && target.isAttackable())
+		{
+			((Attackable) target).overhitEnabled(true);
 		}
 		
 		int damage = 0;

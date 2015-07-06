@@ -537,7 +537,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
@@ -548,6 +547,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -563,7 +563,6 @@
 		<set name="mpConsume" val="77" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" />
 		<set name="power" val="3849" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
@@ -575,6 +574,7 @@
 			<effect name="PhysicalAttack">
 				<param criticalChance="30" />
 				<param ignoreShieldDefence="true" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -700,7 +700,6 @@
 		<set name="mpConsume" val="19" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
@@ -711,6 +710,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="10" />
+				<param overHit="true" />
 			</effect>
 			<effect name="DamOverTime" ticks="1">
 				<param power="#dot" />
@@ -728,7 +728,6 @@
 		<set name="mpConsume" val="82" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" />
 		<set name="power" val="11234" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
@@ -741,6 +740,7 @@
 			<effect name="FatalBlow">
 				<param chance="40" />
 				<param criticalChance="20" />
+				<param overHit="true" />
 			</effect>
 			<effect name="Lethal">
 				<param fullLethal="1" halfLethal="8" /> <!-- FIXME: full lethal rate unconfirmed -->
@@ -999,12 +999,12 @@
 		<set name="mpConsume" val="5" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="10" />
+				<param overHit="true" />
 			</effect>
 		</for>
 		<selfEffects>
@@ -1158,7 +1158,6 @@
 		<set name="mpConsume" val="35" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="overHit" val="true" />
 		<set name="power" val="4312" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
@@ -1168,7 +1167,9 @@
 			<using kind="BLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param overHit="true" />
+			</effect>
 			<effect name="DamOverTime" ticks="1">
 				<param power="92" />
 			</effect>
@@ -1293,14 +1294,15 @@
 		<set name="mpConsume" val="68" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="overHit" val="true" />
 		<set name="power" val="1649" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param overHit="true" />
+			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="52" />
 			</effect>
@@ -1376,7 +1378,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
@@ -1391,6 +1392,7 @@
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -1411,7 +1413,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
@@ -1423,6 +1424,7 @@
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -1876,7 +1878,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="DA2" />
-		<set name="overHit" val="true" />
 		<set name="power" val="1" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
@@ -1886,7 +1887,9 @@
 			<target mindistance="200" />
 		</cond>
 		<for>
-			<effect name="PhysicalSoulAttack" />
+			<effect name="PhysicalSoulAttack">
+				<param overHit="true" />
+			</effect>
 			<effect name="Stun" />
 			<effect name="EnemyCharge" />
 		</for>
@@ -2084,7 +2087,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
@@ -2095,7 +2097,9 @@
 			</not>
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param overHit="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="987" levels="1" name="Multiple Shot">
@@ -2110,7 +2114,6 @@
 		<set name="magicLvl" val="82" />
 		<set name="mpConsume" val="162" />
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" />
 		<set name="power" val="16667" />
 		<set name="reuseDelay" val="12000" />
 		<set name="rideState" val="NONE" />
@@ -2121,6 +2124,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -2180,7 +2184,6 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="165" />
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" />
 		<set name="power" val="24306" />
 		<set name="reuseDelay" val="12000" />
 		<set name="rideState" val="NONE" />
@@ -2191,6 +2194,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -2388,7 +2392,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
@@ -2397,7 +2400,9 @@
 			<using kind="SWORD,BLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param overHit="true" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.9" />
 				<mul stat="mDef" val="0.9" />

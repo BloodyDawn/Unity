@@ -21,6 +21,7 @@ package handlers.effecthandlers;
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -37,7 +38,6 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 /**
  * Physical Attack effect implementation. <br>
  * <b>Note</b>: Damage formula moved here to allow more params due to Ertheia physical skills' complexity.
- *
  * @author Adry_85, Nik
  */
 public final class PhysicalAttack extends AbstractEffect
@@ -47,47 +47,49 @@ public final class PhysicalAttack extends AbstractEffect
 	private final double _stunnedMod;
 	private final double _criticalChance;
 	private final boolean _ignoreShieldDefence;
-
+	private final boolean _overHit;
+	
 	public PhysicalAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_pAtkMod = params.getDouble("pAtkMod", 1.0);
 		_pDefMod = params.getDouble("pDefMod", 1.0);
 		_stunnedMod = params.getDouble("stunnedMod", 1.0);
 		_criticalChance = params.getDouble("criticalChance", 0);
 		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);
+		_overHit = params.getBoolean("overHit", false);
 	}
-
+	
 	@Override
 	public boolean calcSuccess(BuffInfo info)
 	{
 		return !Formulas.calcPhysicalSkillEvasion(info.getEffector(), info.getEffected(), info.getSkill());
 	}
-
+	
 	@Override
 	public L2EffectType getEffectType()
 	{
 		return L2EffectType.PHYSICAL_ATTACK;
 	}
-
+	
 	@Override
 	public boolean isInstant()
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void onStart(BuffInfo info)
 	{
 		Creature target = info.getEffected();
 		Creature activeChar = info.getEffector();
-
+		
 		if (activeChar.isAlikeDead())
 		{
 			return;
 		}
-
+		
 		if (((info.getSkill().getFlyRadius() > 0) || (info.getSkill().getFlyType() != null)) && activeChar.isMovementDisabled())
 		{
 			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
@@ -95,12 +97,17 @@ public final class PhysicalAttack extends AbstractEffect
 			activeChar.sendPacket(sm);
 			return;
 		}
-
+		
 		if (target.isPlayer() && target.getActingPlayer().isFakeDeath())
 		{
 			target.stopFakeDeath(true);
 		}
-
+		
+		if (_overHit && target.isAttackable())
+		{
+			((Attackable) target).overhitEnabled(true);
+		}
+		
 		double damage = (int) calcPhysDam(info);
 		// Physical damage critical rate is only affected by STR.
 		boolean crit = false;
@@ -108,19 +115,19 @@ public final class PhysicalAttack extends AbstractEffect
 		{
 			crit = Formulas.calcCrit(_criticalChance * 10 * BaseStats.STR.calcBonus(activeChar), true, target);
 		}
-
+		
 		if (crit)
 		{
 			damage = activeChar.calcStat(Stats.CRITICAL_DAMAGE_SKILL, damage, target, info.getSkill());
 			damage *= 2;
 		}
-
+		
 		if (damage > 0)
 		{
 			activeChar.sendDamageMessage(target, (int) damage, false, crit, false);
 			target.reduceCurrentHp(damage, activeChar, info.getSkill());
 			target.notifyDamageReceived(damage, activeChar, info.getSkill(), crit, false, false);
-
+			
 			// Check if damage should be reflected
 			Formulas.calcDamageReflected(activeChar, target, info.getSkill(), crit);
 		}
@@ -128,13 +135,13 @@ public final class PhysicalAttack extends AbstractEffect
 		{
 			activeChar.sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
 		}
-
+		
 		if (info.getSkill().isSuicideAttack())
 		{
 			activeChar.doDie(activeChar);
 		}
 	}
-
+	
 	public final double calcPhysDam(BuffInfo info)
 	{
 		final Creature attacker = info.getEffector();
@@ -147,18 +154,18 @@ public final class PhysicalAttack extends AbstractEffect
 		boolean ss = info.getSkill().isPhysical() && attacker.isChargedShot(ShotType.SOULSHOTS);
 		final byte shld = !_ignoreShieldDefence ? Formulas.calcShldUse(attacker, target, info.getSkill()) : 0;
 		final double distance = attacker.calculateDistance(target, true, false);
-
+		
 		if (distance > target.calcStat(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE, target, skill))
 		{
 			return 0;
 		}
-
+		
 		// Defense bonuses in PvP fight
 		if (isPvP)
 		{
 			defence *= target.calcStat(Stats.PVP_PHYS_SKILL_DEF, 1, null, null);
 		}
-
+		
 		switch (shld)
 		{
 			case Formulas.SHIELD_DEFENSE_SUCCEED:
@@ -174,13 +181,13 @@ public final class PhysicalAttack extends AbstractEffect
 				return 1.;
 			}
 		}
-
+		
 		// Add soulshot boost.
 		int ssBoost = ss ? 2 : 1;
 		damage = (damage * _pAtkMod * ssBoost) + skill.getPower(attacker, target, isPvP, isPvE);
 		damage = (70 * damage) / (defence * _pDefMod); // Calculate defence modifier.
 		damage *= Formulas.calcAttackTraitBonus(attacker, target); // Calculate Weapon resists
-
+		
 		// Weapon random damage
 		damage *= attacker.getRandomDamageMultiplier();
 		if ((shld > 0) && Config.ALT_GAME_SHIELD_BLOCKS)
@@ -191,7 +198,7 @@ public final class PhysicalAttack extends AbstractEffect
 				damage = 0;
 			}
 		}
-
+		
 		if ((damage > 0) && (damage < 1))
 		{
 			damage = 1;
@@ -200,16 +207,16 @@ public final class PhysicalAttack extends AbstractEffect
 		{
 			damage = 0;
 		}
-
+		
 		// Dmg bonuses in PvP fight
 		if (isPvP)
 		{
 			damage *= attacker.calcStat(Stats.PVP_PHYS_SKILL_DMG, 1, null, null);
 		}
-
+		
 		// Physical skill dmg boost
 		damage = attacker.calcStat(Stats.PHYSICAL_SKILL_POWER, damage, null, null);
-
+		
 		damage *= Formulas.calcAttributeBonus(attacker, target, skill);
 		if (target.isAttackable())
 		{
@@ -235,13 +242,13 @@ public final class PhysicalAttack extends AbstractEffect
 				}
 			}
 		}
-
+		
 		// Apply skill damage modifiers on targets that are stunned.
 		if (target.isStunned())
 		{
 			damage *= _stunnedMod;
 		}
-
+		
 		return damage;
 	}
 }

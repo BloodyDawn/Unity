@@ -1041,10 +1041,15 @@
 		<set name="magicLvl" val="64" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A3" />
-		<set name="overHit" val="true" />
 		<set name="reuseDelay" val="120000" />
 		<set name="rideState" val="NONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param ignoreShieldDefence="true" />
+				<param overHit="true" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="5970" levels="1" name="Seduced Knight's Help">
 		<set name="abnormalLvl" val="1" />

@@ -21,6 +21,7 @@ package handlers.effecthandlers;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -42,6 +43,7 @@ public final class EnergyAttack extends AbstractEffect
 	private final double _power;
 	private final int _criticalChance;
 	private final boolean _ignoreShieldDefence;
+	private final boolean _overHit;
 	
 	public EnergyAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
@@ -50,6 +52,7 @@ public final class EnergyAttack extends AbstractEffect
 		_power = params.getDouble("power", 0);
 		_criticalChance = params.getInt("criticalChance", 0);
 		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);
+		_overHit = params.getBoolean("overHit", false);
 	}
 	
 	@Override
@@ -102,6 +105,11 @@ public final class EnergyAttack extends AbstractEffect
 					break;
 				}
 			}
+		}
+		
+		if (_overHit && target.isAttackable())
+		{
+			((Attackable) target).overhitEnabled(true);
 		}
 		
 		double damage = 1;

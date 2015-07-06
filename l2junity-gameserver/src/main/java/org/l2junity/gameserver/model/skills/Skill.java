@@ -164,8 +164,6 @@ public final class Skill implements IIdentifiable
 	
 	private final BaseStats _basicProperty;
 	
-	private final boolean _overhit;
-	
 	private final int _minPledgeClass;
 	private final int _chargeConsume;
 	private final int _soulMaxConsume;
@@ -191,7 +189,7 @@ public final class Skill implements IIdentifiable
 	
 	private final boolean _isSuicideAttack;
 	private final boolean _canBeDispelled;
-
+	
 	private final boolean _excludedFromCheck;
 	private final boolean _simultaneousCast;
 	
@@ -260,7 +258,7 @@ public final class Skill implements IIdentifiable
 		_abnormalTime = abnormalTime;
 		_isAbnormalInstant = set.getBoolean("abnormalInstant", false);
 		parseAbnormalVisualEffect(set.getString("abnormalVisualEffect", null));
-
+		
 		_stayAfterDeath = set.getBoolean("stayAfterDeath", false);
 		_stayOnSubclassChange = set.getBoolean("stayOnSubclassChange", true);
 		
@@ -344,14 +342,13 @@ public final class Skill implements IIdentifiable
 		
 		_basicProperty = set.getEnum("basicProperty", BaseStats.class, BaseStats.NONE);
 		
-		_overhit = set.getBoolean("overHit", false);
 		_isSuicideAttack = set.getBoolean("isSuicideAttack", false);
 		
 		_minPledgeClass = set.getInt("minPledgeClass", 0);
 		_chargeConsume = set.getInt("chargeConsume", 0);
 		
 		_soulMaxConsume = set.getInt("soulMaxConsumeCount", 0);
-
+		
 		_directHpDmg = set.getBoolean("dmgDirectlyToHp", false);
 		_isTriggeredSkill = set.getBoolean("isTriggeredSkill", false);
 		_effectPoint = set.getInt("effectPoint", 0);
@@ -402,7 +399,7 @@ public final class Skill implements IIdentifiable
 	
 	public byte getAttributeType()
 	{
-		return (byte)_attributeType.getClientId();
+		return (byte) _attributeType.getClientId();
 	}
 	
 	public int getAttributeValue()
@@ -439,11 +436,6 @@ public final class Skill implements IIdentifiable
 	public boolean isDamage()
 	{
 		return hasEffectType(L2EffectType.MAGICAL_ATTACK, L2EffectType.HP_DRAIN, L2EffectType.PHYSICAL_ATTACK, L2EffectType.PHYSICAL_ATTACK_HP_LINK);
-	}
-	
-	public boolean isOverhit()
-	{
-		return _overhit;
 	}
 	
 	public boolean isSuicideAttack()
@@ -1598,8 +1590,7 @@ public final class Skill implements IIdentifiable
 	{
 		return _refId;
 	}
-
-
+	
 	public boolean canBeDispelled()
 	{
 		return _canBeDispelled;

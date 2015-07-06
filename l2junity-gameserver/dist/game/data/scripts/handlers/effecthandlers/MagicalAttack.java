@@ -21,6 +21,7 @@ package handlers.effecthandlers;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -35,9 +36,12 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public final class MagicalAttack extends AbstractEffect
 {
+	private final boolean _overHit;
+	
 	public MagicalAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
+		_overHit = params.getBoolean("overHit", false);
 	}
 	
 	@Override
@@ -67,6 +71,11 @@ public final class MagicalAttack extends AbstractEffect
 		if (target.isPlayer() && target.getActingPlayer().isFakeDeath())
 		{
 			target.stopFakeDeath(true);
+		}
+		
+		if (_overHit && target.isAttackable())
+		{
+			((Attackable) target).overhitEnabled(true);
 		}
 		
 		boolean sps = info.getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.SPIRITSHOTS);

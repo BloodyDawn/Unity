@@ -1533,14 +1533,15 @@
 		<set name="mpConsume" val="76" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" />
 		<set name="power" val="704" />
 		<set name="reuseDelay" val="13000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param overHit="true" />
+			</effect>
 			<effect name="Stun" /> <!-- using 1 second due abnormal don't have abnormal time -->
 		</for>
 	</skill>

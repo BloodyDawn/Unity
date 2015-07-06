@@ -388,7 +388,6 @@
 		<table name="#power"> 17438 20033 22717 25700 27419 28665 29911 </table>
 		<set name="icon" val="icon.skill10318new" />
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -405,6 +404,7 @@
 			<effect name="EnergyAttack">
 				<param power="#power" />
 				<param criticalChance="15" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -458,7 +458,6 @@
 		<set name="basicProperty" val="CON" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="trait" val="SHOCK" />
 		<set name="icon" val="icon.skll10321" />
@@ -477,6 +476,7 @@
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
+				<param overHit="true" />
 			</effect>
 			<effect name="Stun" />
 			<effect name="TargetCancel" />
@@ -629,7 +629,6 @@
 		<set name="basicProperty" val="CON" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="trait" val="SHOCK" />
-		<set name="overHit" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10330" />
 		<set name="operateType" val="A2" />
@@ -648,6 +647,7 @@
 			<effect name="PhysicalAttack">
 				<param pDefMod="0.7" />
 				<param criticalChance="15" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>

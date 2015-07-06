@@ -19,7 +19,6 @@
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="85" /> <!-- FIXME: value unconfirmed -->
 		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
-		<set name="overHit" val="true" />
 		<set name="power" val="3420" />
 		<set name="reuseDelay" val="5000" /> <!-- FIXME: value unconfirmed -->
 		<set name="rideState" val="NONE" />
@@ -28,6 +27,7 @@
 		<for>
 			<effect name="FatalBlow">
 				<param chance="20" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -38,14 +38,15 @@
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="85" /> <!-- FIXME: value unconfirmed -->
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" />
 		<set name="power" val="3420" />
 		<set name="reuseDelay" val="5000" /> <!-- FIXME: value unconfirmed -->
 		<set name="rideState" val="NONE" />
 		<set name="effectPoint" val="-348" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param overHit="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="20004" levels="1" name="Dragon Dash">

@@ -20,6 +20,7 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -38,13 +39,15 @@ public final class PhysicalSoulAttack extends AbstractEffect
 {
 	private final double _criticalChance;
 	private final boolean _ignoreShieldDefence;
-
+	private final boolean _overHit;
+	
 	public PhysicalSoulAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_criticalChance = params.getDouble("criticalChance", 0);
 		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);
+		_overHit = params.getBoolean("overHit", false);
 	}
 	
 	@Override
@@ -97,6 +100,11 @@ public final class PhysicalSoulAttack extends AbstractEffect
 		if (_criticalChance > 0)
 		{
 			crit = Formulas.calcCrit(_criticalChance * 10 * BaseStats.STR.calcBonus(activeChar), true, target);
+		}
+		
+		if (_overHit && target.isAttackable())
+		{
+			((Attackable) target).overhitEnabled(true);
 		}
 		
 		damage = (int) Formulas.calcPhysDam(activeChar, target, info.getSkill(), shld, false, ss);

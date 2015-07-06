@@ -52,7 +52,6 @@
 		<table name="#effectPoint"> -709 -711 -714 </table>
 		<table name="#mpConsumes"> 93 96 99 </table>
 		<table name="#power"> 29176 30726 32277 </table>
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
@@ -68,7 +67,9 @@
 			<using kind="BOW,CROSSBOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttackHpLink" />
+			<effect name="PhysicalAttackHpLink">
+				<param overHit="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10950" levels="4" name="Vengeful Sniper">

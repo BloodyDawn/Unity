@@ -5762,15 +5762,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					return;
 				}
 				
-				// Check if over-hit is possible
-				if (skill.isOverhit())
-				{
-					if (target.isAttackable())
-					{
-						((Attackable) target).overhitEnabled(true);
-					}
-				}
-				
 				// Static skills not trigger any chance skills
 				if (!skill.isStatic())
 				{

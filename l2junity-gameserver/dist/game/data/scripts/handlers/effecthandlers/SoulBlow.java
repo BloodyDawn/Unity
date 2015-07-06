@@ -20,6 +20,7 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -35,12 +36,14 @@ import org.l2junity.gameserver.model.stats.Formulas;
 public final class SoulBlow extends AbstractEffect
 {
 	private final double _chance;
-
+	private final boolean _overHit;
+	
 	public SoulBlow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_chance = params.getDouble("chance", 0);
+		_overHit = params.getBoolean("overHit", false);
 	}
 	
 	/**
@@ -73,6 +76,11 @@ public final class SoulBlow extends AbstractEffect
 		if (activeChar.isAlikeDead())
 		{
 			return;
+		}
+		
+		if (_overHit && target.isAttackable())
+		{
+			((Attackable) target).overhitEnabled(true);
 		}
 		
 		boolean ss = info.getSkill().useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);

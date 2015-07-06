@@ -108,7 +108,6 @@
 		<set name="activateRate" val="50" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="nextActionAttack" val="true" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="icon" val="icon.skill10102" />
 		<set name="itemConsumeId" val="1785" />
@@ -127,7 +126,9 @@
 			<using kind="SHIELD" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param overHit="true" />
+			</effect>
 			<effect name="KnockDown">
 				<param speed="700" distance="50" />
 			</effect>

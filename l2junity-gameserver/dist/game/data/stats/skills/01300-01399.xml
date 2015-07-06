@@ -930,13 +930,14 @@
 		<set name="mpConsume" val="84" />
 		<set name="mpInitialConsume" val="21" />
 		<set name="operateType" val="A2" />
-		<set name="overHit" val="true" />
 		<set name="power" val="140" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param overHit="true" />
+			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
 				<param power="12" />
 				<mul stat="runSpd" val="0.9" />
@@ -966,13 +967,14 @@
 		<set name="mpConsume" val="84" />
 		<set name="mpInitialConsume" val="21" />
 		<set name="operateType" val="A2" />
-		<set name="overHit" val="true" />
 		<set name="power" val="140" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param overHit="true" />
+			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
 				<param power="12" />
 				<mul stat="runSpd" val="0.7" />
@@ -1002,13 +1004,14 @@
 		<set name="mpConsume" val="84" />
 		<set name="mpInitialConsume" val="21" />
 		<set name="operateType" val="A2" />
-		<set name="overHit" val="true" />
 		<set name="power" val="140" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param overHit="true" />
+			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
 				<param power="12" />
 				<mul stat="runSpd" val="0.9" />

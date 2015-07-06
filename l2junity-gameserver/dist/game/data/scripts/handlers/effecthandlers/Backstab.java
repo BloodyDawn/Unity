@@ -20,6 +20,7 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -37,13 +38,15 @@ public final class Backstab extends AbstractEffect
 {
 	private final double _chance;
 	private final double _criticalChance;
-
+	private final boolean _overHit;
+	
 	public Backstab(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_chance = params.getDouble("chance", 0);
 		_criticalChance = params.getDouble("criticalChance", 0);
+		_overHit = params.getBoolean("overHit", false);
 	}
 	
 	@Override
@@ -74,6 +77,12 @@ public final class Backstab extends AbstractEffect
 		
 		Creature target = info.getEffected();
 		Creature activeChar = info.getEffector();
+		
+		if (_overHit && target.isAttackable())
+		{
+			((Attackable) target).overhitEnabled(true);
+		}
+		
 		boolean ss = info.getSkill().useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
 		byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
 		double damage = Formulas.calcBackstabDamage(activeChar, target, info.getSkill(), shld, ss);

@@ -204,7 +204,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="operateType" val="A2" />
 		<set name="nextActionAttack" val="true" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
@@ -217,6 +216,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" />
+				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.6" />
@@ -244,7 +244,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="operateType" val="A2" />
 		<set name="nextActionAttack" val="true" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
@@ -257,6 +256,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" />
+				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.60" />
@@ -279,7 +279,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="operateType" val="A1" />
 		<set name="nextActionAttack" val="true" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
@@ -291,6 +290,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -313,7 +313,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="operateType" val="A2" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
@@ -326,6 +325,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" />
+				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.6" />
@@ -352,7 +352,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="operateType" val="A2" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
@@ -365,6 +364,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" />
+				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.6" />

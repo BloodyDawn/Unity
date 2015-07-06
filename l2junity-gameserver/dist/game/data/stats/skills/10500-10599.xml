@@ -185,7 +185,6 @@
 		<set name="icon" val="icon.skill10508" />
 		<set name="dmgDirectlyToHp" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="overHit" val="true" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -205,6 +204,7 @@
 			<effect name="Backstab">
 				<param chance="40" />
 				<param criticalChance="15" />
+				<param overHit="true" />
 			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" />
@@ -229,7 +229,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1030" />
@@ -243,6 +242,7 @@
 			<effect name="FatalBlow">
 				<param chance="30" />
 				<param criticalChance="15" />
+				<param overHit="true" />
 			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" />
@@ -267,7 +267,6 @@
 		<set name="icon" val="icon.skill10510" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -283,6 +282,7 @@
 			<effect name="FatalBlow">
 				<param chance="30" />
 				<param criticalChance="15" />
+				<param overHit="true" />
 			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" />
@@ -298,7 +298,6 @@
 		<set name="icon" val="icon.skill10511" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -314,6 +313,7 @@
 			<effect name="FatalBlow">
 				<param chance="30" />
 				<param criticalChance="15" />
+				<param overHit="true" />
 			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" />
@@ -329,7 +329,6 @@
 		<set name="icon" val="icon.skill10512" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -344,6 +343,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -360,7 +360,6 @@
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="BLEED" />
@@ -376,6 +375,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" />
+				<param overHit="true" />
 			</effect>
 			<effect name="DamOverTime" ticks="3">
 				<param power="233" />
@@ -959,7 +959,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="castRange" val="800" />
 		<set name="hitTime" val="1730" />
@@ -971,7 +970,9 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param overHit="true" />
+			</effect>
 			<effect name="Debuff">
 				<sub stat="runSpd" val="180" />
 			</effect>
@@ -1287,7 +1288,6 @@
 		<set name="icon" val="icon.skill0005" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1296,7 +1296,9 @@
 		<set name="effectPoint" val="-704" />
 		<set name="reuseDelay" val="10000" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param overHit="true" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10554" levels="7" name="Power Bluff">

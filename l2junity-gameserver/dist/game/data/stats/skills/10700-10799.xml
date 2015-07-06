@@ -181,7 +181,6 @@
 		<!-- Pierce through target to inflict a fatal blow. Attacks with 8875 Power added to P. Atk. Over-hit. Half-kill. -->
 		<set name="icon" val="icon.skill1543" />
 		<set name="operateType" val="A2" />
-		<set name="overHit" val="true" />
 		<set name="power" val="8875" />
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="50" />
@@ -195,6 +194,7 @@
 			<effect name="FatalBlow">
 				<param chance="30" />
 				<param criticalChance="15" />
+				<param overHit="true" />
 			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" /> <!-- Guessed -->
@@ -469,7 +469,6 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="overHit" val="true" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2200" />
 		<set name="power" val="#power" />
@@ -484,6 +483,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -502,7 +502,6 @@
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1200" />
@@ -517,6 +516,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" /> <!-- Guessed -->
+				<param overHit="true" />
 			</effect>
 			<effect name="KnockBack">
 				<param speed="400" distance="200" />
@@ -536,7 +536,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="1800" />
@@ -550,6 +549,7 @@
 			<effect name="PhysicalAttack">
 				<param pDefMod="0.70" /> <!-- Disregards 30% of the target's P. Def -->
 				<param criticalChance="15" /> <!-- Guessed -->
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -565,7 +565,6 @@
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2200" />
@@ -579,6 +578,7 @@
 			<effect name="PhysicalAttack">
 				<param pDefMod="0.7" />
 				<param criticalChance="15" /> <!-- Guessed -->
+				<param overHit="true" />
 			</effect>
 			<effect name="Lethal">
 				<param halfLethal="10" /> <!-- Guessed -->
@@ -643,7 +643,6 @@
 		<set name="activateRate" val="85" /> <!-- Guessed -->
 		<set name="basicProperty" val="CON" />
 		<set name="nextActionAttack" val="true" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="lvlBonusRate" val="1" />
@@ -659,7 +658,9 @@
 		<set name="isDebuff" val="true" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param overHit="true" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -676,7 +677,6 @@
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="CON" />
 		<set name="nextActionAttack" val="true" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="lvlBonusRate" val="1" />
@@ -695,6 +695,10 @@
 			<using kind="BOW,CROSSBOW" />
 		</cond>
 		<for>
+			<effect name="PhysicalAttack">
+				<param criticalChance="15" />
+				<param overHit="true" />
+			</effect>
 			<effect name="KnockBack">
 				<param speed="400" distance="200" />
 			</effect>
@@ -714,7 +718,6 @@
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="300" />
-		<set name="overHit" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -730,6 +733,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -747,7 +751,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="hitTime" val="2900" />
 		<set name="coolTime" val="350" />
@@ -760,6 +763,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>

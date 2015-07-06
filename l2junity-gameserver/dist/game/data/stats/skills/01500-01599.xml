@@ -400,14 +400,15 @@
 		<set name="mpConsume" val="68" />
 		<set name="mpInitialConsume" val="17" />
 		<set name="operateType" val="A2" />
-		<set name="overHit" val="true" />
 		<set name="power" val="112" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalSoulAttack" />
+			<effect name="MagicalSoulAttack">
+				<param overHit="true" />
+			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
 				<param power="12" />
 				<mul stat="runSpd" val="0.8" />
@@ -1658,14 +1659,15 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" /> <!-- Inflicts additional non-attribute damage if the target is a monster -->
 		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param overHit="true" />
+			</effect>
 			<effect name="TriggerSkillBySkill">
 				<param castSkillId="1558" /> <!-- Dimension Spiral -->
 				<param chance="5" />
@@ -1708,7 +1710,6 @@
 		<set name="mpConsume" val="82" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" />
 		<set name="power" val="11234" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
@@ -1721,6 +1722,7 @@
 			<effect name="FatalBlow">
 				<param chance="60" />
 				<param criticalChance="30" />
+				<param overHit="true" />
 			</effect>
 			<effect name="Spoil" />
 		</for>

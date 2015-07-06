@@ -16,7 +16,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="overHit" val="true" /> <!-- Unconfirmed -->
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="ONE" />
@@ -28,6 +27,7 @@
 			<effect name="PhysicalAttack">
 				<param stunnedMod="1.2" /> <!-- 20% more damage if target is Stunned -->
 				<param criticalChance="15" /> <!-- Unconfirmed -->
+				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="#pDef" />
@@ -49,7 +49,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" /> <!-- Unconfirmed -->
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="5000" />
 		<set name="targetType" val="ONE" />
@@ -60,6 +59,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" /> <!-- Unconfirmed -->
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -109,7 +109,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" /> <!-- Unconfirmed -->
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="5000" />
 		<set name="targetType" val="ONE" />
@@ -120,6 +119,7 @@
 			<effect name="PhysicalAttack">
 				<param criticalChance="15" /> <!-- Unconfirmed -->
 				<param ignoreShieldDefence="true" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -139,7 +139,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="overHit" val="true" /> <!-- Unconfirmed -->
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="9000" />
 		<set name="targetType" val="ONE" />
@@ -151,6 +150,7 @@
 				<param criticalChance="15" /> <!-- Unconfirmed -->
 				<param pDefMod="0.5" /> <!-- Ignores 50% of target's P. Def -->
 				<param ignoreShieldDefence="true" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>

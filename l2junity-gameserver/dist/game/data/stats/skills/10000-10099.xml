@@ -191,12 +191,13 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isDebuff" val="true" />
 		<set name="effectPoint" val="#effectPoint" />
-		<set name="overHit" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param overHit="true" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.9" />
 				<sub stat="rEvas" val="2" />
@@ -222,7 +223,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1200" />
@@ -236,6 +236,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="10" />
+				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
 				<sub stat="runSpd" val="70" />
@@ -257,7 +258,6 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="power" val="#power" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="overHit" val="true" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="basicProperty" val="MEN" />
 		<set name="icon" val="icon.skill10010" />
@@ -276,6 +276,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="10" />
+				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.8" />
@@ -366,7 +367,6 @@
 		<set name="affectRange" val="200" /> <!-- Unconfirmed -->
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="overHit" val="true" />
 		<set name="nextActionAttack" val="true" />
 		<set name="power" val="#power" />
 		<set name="icon" val="icon.skill10013" />
@@ -384,6 +384,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param criticalChance="10" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
@@ -641,7 +642,6 @@
 		<set name="affectRange" val="150" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="nextActionAttack" val="true" />
-		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="trait" val="KNOCKDOWN" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -657,7 +657,9 @@
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
-		<effect name="PhysicalDamage" />
+		<effect name="PhysicalDamage">
+			<param overHit="true" />
+		</effect>
 		<effect name="KnockDown">
 			<param speed="700" distance="50" />
 		</effect>
