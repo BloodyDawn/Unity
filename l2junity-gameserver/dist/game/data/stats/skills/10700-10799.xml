@@ -77,7 +77,7 @@
 		</for>
 	</skill>
 	<skill id="10703" levels="3" name="Armor Breaker">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Cancels target's armor for 3 seconds. Requires dagger/dual dagger. Consumes 2 Soulstones. -->
 		<table name="#mpConsumes"> 77 79 81 </table>
 		<set name="icon" val="icon.skill10703" />
@@ -106,7 +106,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />		
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="basicProperty" val="MEN" />
@@ -138,7 +138,7 @@
 		</for>
 	</skill>
 	<skill id="10705" levels="1" name="Shadow Walking">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Front Critical Rate - 10%, Side Critical Rate + 10%, Critical Damage + 10%, Rear Critical Rate + 20%, Critical Damage + 20%. -->
 		<set name="icon" val="icon.skill10705" />
 		<set name="operateType" val="T" />
@@ -215,15 +215,20 @@
 	</skill>
 	<skill id="10750" levels="1" name="Heavy Hit">
 		<!-- AUTO GENERATED SKILL -->
+		<!-- Retail: 1128 p.atk vs 2265 p.def = 1883 damage -->
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="50000" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="10000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="10751" levels="10" name="Superior Bow/Crossbow Mastery">
 		<!-- P. Atk. + 10%, Additional P. Atk. + 1663, Atk. Sp.d + 15%, P. Accuracy + 8 when using a bow or crossbow. STR + 2. Depending on your STR, the Cooldown resets or the abnormal status duration increases + 2 times. -->

@@ -122,6 +122,8 @@ public abstract class Inventory extends ItemContainer
 	// used to quickly check for using of items of special type
 	private int _wearedMask;
 	
+	private int _blockedItemSlotsMask;
+	
 	// Recorder of alterations in inventory
 	private static final class ChangeRecorder implements PaperdollListener
 	{
@@ -1795,5 +1797,40 @@ public abstract class Inventory extends ItemContainer
 	{
 		final ItemInstance item = getPaperdollItem(Inventory.PAPERDOLL_RHAND);
 		return item != null ? item.getEnchantLevel() : 0;
+	}
+	
+	/**
+	 * Blocks the given item slot from being equipped.
+	 * @param itemSlot mask from L2Item
+	 */
+	public void blockItemSlot(int itemSlot)
+	{
+		_blockedItemSlotsMask |= itemSlot;
+	}
+	
+	/**
+	 * Unblocks the given item slot so it can be equipped.
+	 * @param itemSlot mask from L2Item
+	 */
+	public void unblockItemSlot(int itemSlot)
+	{
+		_blockedItemSlotsMask &= ~itemSlot;
+	}
+	
+	/**
+	 * @param itemSlot mask from L2Item
+	 * @return if the given item slot is blocked or not.
+	 */
+	public boolean isItemSlotBlocked(int itemSlot)
+	{
+		return (_blockedItemSlotsMask & itemSlot) == itemSlot;
+	}
+	
+	/**
+	 * @param itemSlotsMask use 0 to unset all blocked item slots.
+	 */
+	public void setBlockedItemSlotsMask(int itemSlotsMask)
+	{
+		_blockedItemSlotsMask = itemSlotsMask;
 	}
 }

@@ -81,6 +81,7 @@ public final class EffectMasterHandler
 		DeleteHateOfMe.class,
 		DetectHiddenObjects.class,
 		Detection.class,
+		DisableTargeting.class,
 		Disarm.class,
 		Disarmor.class,
 		DispelAll.class,

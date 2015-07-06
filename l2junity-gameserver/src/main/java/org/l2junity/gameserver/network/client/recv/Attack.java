@@ -105,7 +105,7 @@ public final class Attack implements IClientIncomingPacket
 			return;
 		}
 		
-		if (!target.isTargetable() && !activeChar.canOverrideCond(PcCondOverride.TARGET_ALL))
+		if ((!target.isTargetable() || activeChar.isTargetingDisabled()) && !activeChar.canOverrideCond(PcCondOverride.TARGET_ALL))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

@@ -108,7 +108,7 @@ public final class Action implements IClientIncomingPacket
 			return;
 		}
 		
-		if (!obj.isTargetable() && !activeChar.canOverrideCond(PcCondOverride.TARGET_ALL))
+		if ((!obj.isTargetable() || activeChar.isTargetingDisabled()) && !activeChar.canOverrideCond(PcCondOverride.TARGET_ALL))
 		{
 			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

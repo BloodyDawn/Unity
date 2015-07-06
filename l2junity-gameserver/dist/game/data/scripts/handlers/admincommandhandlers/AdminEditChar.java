@@ -69,6 +69,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		"admin_edit_character",
 		"admin_current_player",
 		"admin_setreputation", // sets reputation of target char to any amount. //setreputation <amout>
+		"admin_nokarma", // sets reputation to 0 if its negative.
 		"admin_setfame", // sets fame of target char to any amount. //setfame <fame>
 		"admin_character_list", // same as character_info, kept for compatibility purposes
 		"admin_character_info", // given a player name, displays an information window
@@ -213,6 +214,19 @@ public class AdminEditChar implements IAdminCommandHandler
 					_log.warn("Set reputation error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setreputation <new_reputation_value>");
+			}
+		}
+		else if (command.startsWith("admin_nokarma"))
+		{
+			if ((activeChar.getTarget() == null) || !activeChar.getTarget().isPlayer())
+			{
+				activeChar.sendMessage("You must target a player.");
+				return false;
+			}
+			
+			if (activeChar.getTarget().getActingPlayer().getReputation() < 0)
+			{
+				setTargetReputation(activeChar, 0);
 			}
 		}
 		else if (command.startsWith("admin_setpk"))

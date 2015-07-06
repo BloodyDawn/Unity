@@ -224,7 +224,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="icon" val="icon.skill10509" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A3" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -259,7 +259,7 @@
 		</selfEffects>
 	</skill>
 	<skill id="10510" levels="11" name="Chain Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts damage with 22718 Power added to P. Atk. Additional Skill Power 20% to damage if used during bleed. Over-hit. Critical hit. Half-kill. Requires a dagger or dual dagger. -->
 		<table name="#mpConsumes"> 71 73 75 78 80 83 86 88 90 92 94 </table>
 		<table name="#effectPoint"> -700 -704 -707 -709 -709 -709 -709 -709 -709 -709 -709 </table>
@@ -279,7 +279,7 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="FatalBlow">
+			<effect name="FatalBlow"> <!-- TODO: 20% power during bleed -->
 				<param chance="30" />
 				<param criticalChance="15" />
 				<param overHit="true" />
@@ -290,7 +290,7 @@
 		</for>
 	</skill>
 	<skill id="10511" levels="7" name="Reverse">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Attempts a vital spot attack with 26320 Power added to P. Atk. Over-hit. Critical. Half-kill. Requires a dagger or dual dagger to be equipped. -->
 		<table name="#mpConsumes"> 90 98 106 112 118 124 130 </table>
 		<table name="#effectPoint"> -700 -704 -707 -709 -711 -713 -715 </table>
@@ -321,7 +321,7 @@
 		</for>
 	</skill>
 	<skill id="10512" levels="11" name="Dagger Explosion">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Detonates a blade to attack nearby enemies with 11903 Power added to P. Atk. Requires a dagger/dual dagger. Over-hit. Critical. -->
 		<table name="#mpConsumes"> 125 128 132 136 141 145 150 154 158 162 166 </table>
 		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -710 -711 -712 </table>
@@ -348,7 +348,7 @@
 		</for>
 	</skill>
 	<skill id="10513" levels="10" name="Razor Rain">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Calls down a rain of blades to attack nearby enemies with 13649 Power added to P. Atk. and inflicts Bleed. Requires a dagger or dual dagger. Over-hit. Critical hit. -->
 		<table name="#mpConsumes"> 138 142 147 152 156 161 166 171 176 181 </table>
 		<table name="#effectPoint"> -704 -707 -709 -710 -710 -710 -710 -710 -710 -710 </table>
@@ -429,7 +429,7 @@
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="abnormalVisualEffect" val="PARALYZE" />
-		<set name="activateRate" val="50" />
+		<set name="activateRate" val="-1" />
 		<set name="basicProperty" val="MEN" />
 		<set name="icon" val="icon.skill1170" />
 		<set name="operateType" val="A2" />
@@ -621,10 +621,12 @@
 		</for>
 	</skill>
 	<skill id="10524" levels="3" name="Evasive Counterstrike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 10 seconds, evades physical skill attacks and reflects part of the damage received. -->
 		<table name="#effectPoint"> 707 709 711 </table>
 		<table name="#mpConsumes"> 42 45 47 </table>
+		<table name="#pSkillEvas"> 80 90 90 </table> <!-- Guessed -->
+		<table name="#vengeancePdam"> 80 80 90 </table> <!-- Guessed -->
 		<set name="icon" val="icon.skill10524" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
@@ -638,8 +640,8 @@
 		<set name="reuseDelay" val="150000" />
 		<for>
 			<effect name="Buff">
-				<add stat="pSkillEvas" val="100" />
-				<add stat="reflectDam" val="30" /> <!-- Guessed -->
+				<add stat="pSkillEvas" val="#pSkillEvas" />
+				<add stat="vengeancePdam" val="#vengeancePdam" />
 			</effect>
 		</for>
 	</skill>
@@ -670,8 +672,8 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10526" levels="6" name="Mischief">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10526" levels="9" name="Mischief">
+		<!-- Updated to IO -->
 		<!-- Inflicts confusion on target to stop him from attacking target with the highest hostility. Speed - 70. -->
 		<table name="#mpConsumes"> 38 39 41 43 45 47 49 51 53 </table>
 		<table name="#effectPoint"> -696 -702 -707 -709 -709 -709 -709 -709 -709 </table>
@@ -700,7 +702,7 @@
 		</for>
 	</skill>
 	<skill id="10527" levels="4" name="Mass Trick">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Cancels target of frontal enemies. Eliminates their aggression and prevent them from targeting anything for 3 seconds. -->
 		<set name="icon" val="icon.skill10527" />
 		<set name="abnormalLvl" val="1" />
@@ -722,13 +724,11 @@
 			<effect name="DeleteHateOfMe">
 				<param chance="100" /> <!-- Guessed -->
 			</effect>
-			<effect name="TargetCancel">
-				<param chance="100" /> <!-- Guessed -->
-			</effect>
-			<!-- TODO Target disable effect -->
+			<effect name="DisableTargeting" />
 		</for>
 	</skill>
 	<skill id="10528" levels="1" name="Shadow Fake Death">
+		<!-- Updated to IO -->
 		<!-- Acts dead to stop monsters from attacking. Cannot be targeted until you get back up. Consumes 300 MP per second. -->
 		<set name="icon" val="icon.skill10528" />
 		<set name="magicLvl" val="93" />
@@ -751,11 +751,11 @@
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="100" /> <!-- Guessed -->
 		<set name="basicProperty" val="CON" />
 		<set name="trait" val="SHOCK" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="71" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1000" />
@@ -1066,6 +1066,7 @@
 		</for>
 	</skill>
 	<skill id="10543" levels="1" name="Silent Step">
+		<!-- Updated to IO -->
 		<!-- Allows you to move unnoticed by most monsters. Decreases P. Def. by 20% and increases Speed by 20%. MP is consumed continuously. -->
 		<set name="abnormalVisualEffect" val="STEALTH" />
 		<set name="icon" val="icon.skill10543" />
@@ -1117,6 +1118,7 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10546" levels="7" name="Uppercut">
+		<!-- Updated to IO -->
 		<!-- Delivers a powerful blow to Knock Down the target for 2 seconds. Requires a dagger or dual dagger to be equipped. -->
 		<table name="#mpConsumes"> 40 43 45 47 49 51 53 </table>
 		<set name="icon" val="icon.skill10546" />
@@ -1164,14 +1166,18 @@
 		<table name="#mpConsumes"> 38 39 40 42 43 45 46 47 </table>
 		<set name="icon" val="icon.skill10548" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="800" />
 		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="10000" />
+		<for>
+			<effect name="Plunder" />
+		</for>
 	</skill>
 	<skill id="10549" levels="8" name="Kick">
+		<!-- Updated to IO -->
 		<!-- Powerfully Knock Back the target with a kick. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -713 -717 -721 </table>
 		<table name="#mpConsumes"> 38 40 42 44 46 48 50 52 </table>
@@ -1254,10 +1260,7 @@
 			<effect name="DeleteHateOfMe">
 				<param chance="100" /> <!-- Guessed -->
 			</effect>
-			<effect name="TargetCancel">
-				<param chance="100" /> <!-- Guessed -->
-			</effect>
-			<!-- TODO Target disable effect -->
+			<effect name="DisableTargeting" />
 		</for>
 	</skill>
 	<skill id="10552" levels="10" name="Superior Resistance">
@@ -1433,9 +1436,9 @@
 		<set name="icon" val="icon.skill11861" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
-		<set name="activateRAte" val="100" />
+		<set name="activateRate" val="80" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="SELF" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
@@ -1448,10 +1451,7 @@
 			<effect name="DeleteHateOfMe">
 				<param chance="100" /> <!-- Guessed -->
 			</effect>
-			<effect name="TargetCancel">
-				<param chance="100" /> <!-- Guessed -->
-			</effect>
-			<!-- TODO Target disable effect -->
+			<effect name="DisableTargeting" />
 		</for>
 	</skill>
 	<skill id="10560" levels="1" name="Maximum Blow">

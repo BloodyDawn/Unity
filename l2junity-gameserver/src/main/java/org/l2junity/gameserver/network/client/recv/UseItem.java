@@ -218,6 +218,12 @@ public final class UseItem implements IClientIncomingPacket
 				return;
 			}
 			
+			if (activeChar.getInventory().isItemSlotBlocked(item.getItem().getBodyPart()))
+			{
+				activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
+				return;
+			}
+			
 			switch (item.getItem().getBodyPart())
 			{
 				case L2Item.SLOT_LR_HAND:
@@ -306,13 +312,6 @@ public final class UseItem implements IClientIncomingPacket
 				}
 				case L2Item.SLOT_CHEST:
 				case L2Item.SLOT_FULL_ARMOR:
-				{
-					if (activeChar.isDisarmored())
-					{
-						activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
-						return;
-					}
-				}
 				case L2Item.SLOT_BACK:
 				case L2Item.SLOT_GLOVES:
 				case L2Item.SLOT_FEET:

@@ -469,7 +469,7 @@ public class Party extends AbstractPlayerGroup
 		}
 		
 		final Creature tacticalTarget = _tacticalSigns.get(tacticalSignId);
-		if ((tacticalTarget != null) && !tacticalTarget.isInvisible() && tacticalTarget.isTargetable())
+		if ((tacticalTarget != null) && !tacticalTarget.isInvisible() && tacticalTarget.isTargetable() && !player.isTargetingDisabled())
 		{
 			player.setTarget(tacticalTarget);
 		}

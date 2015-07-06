@@ -2829,11 +2829,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return isAffected(EffectFlag.DISARMED);
 	}
 	
-	public final boolean isDisarmored()
-	{
-		return isAffected(EffectFlag.DISARMORED);
-	}
-	
 	/**
 	 * @return the summon
 	 */
@@ -7015,6 +7010,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public boolean isTargetable()
 	{
 		return super.isTargetable() && !isAffected(EffectFlag.UNTARGETABLE);
+	}
+	
+	public boolean isTargetingDisabled()
+	{
+		return isAffected(EffectFlag.TARGETING_DISABLED);
 	}
 	
 	public boolean cannotEscape()
