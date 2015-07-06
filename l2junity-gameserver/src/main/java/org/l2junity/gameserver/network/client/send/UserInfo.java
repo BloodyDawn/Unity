@@ -285,8 +285,8 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			packet.writeD(_activeChar.getClanId());
 			packet.writeD(_activeChar.getClanCrestLargeId());
 			packet.writeD(_activeChar.getClanCrestId());
-			packet.writeC(_activeChar.isClanLeader() ? -1 : 0x00);
 			packet.writeD(_activeChar.getClanPrivileges().getBitmask());
+			packet.writeC(_activeChar.isClanLeader() ? 0x01 : 0x00);
 			packet.writeD(_activeChar.getAllyId());
 			packet.writeD(_activeChar.getAllyCrestId());
 			packet.writeC(_activeChar.isInMatchingRoom() ? 0x01 : 0x00);
