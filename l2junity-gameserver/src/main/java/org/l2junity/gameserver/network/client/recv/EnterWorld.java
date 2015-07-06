@@ -364,7 +364,7 @@ public class EnterWorld implements IClientIncomingPacket
 		{
 			final L2Clan clan = activeChar.getClan();
 			clan.broadcastToOnlineMembers(new PledgeShowMemberListUpdate(activeChar));
-			client.sendPacket(new PledgeShowMemberListAll(clan));
+			PledgeShowMemberListAll.sendAllTo(activeChar);
 			clan.broadcastToOnlineMembers(new ExPledgeCount(clan));
 			activeChar.sendPacket(new PledgeSkillList(clan));
 		}

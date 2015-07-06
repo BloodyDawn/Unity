@@ -21,10 +21,10 @@ package org.l2junity.gameserver.network.client.send;
 import java.util.Collection;
 
 import org.l2junity.Config;
+import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.L2Clan.SubPledge;
-import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
@@ -32,40 +32,46 @@ import org.l2junity.network.PacketWriter;
 public class PledgeShowMemberListAll implements IClientOutgoingPacket
 {
 	private final L2Clan _clan;
+	private final SubPledge _pledge;
+	private final String _name;
+	private final String _leaderName;
 	private final Collection<ClanMember> _members;
 	private int _pledgeType;
 	
-	public PledgeShowMemberListAll(L2Clan clan)
+	public PledgeShowMemberListAll(L2Clan clan, SubPledge pledge)
 	{
 		_clan = clan;
+		_pledge = pledge;
+		_leaderName = pledge == null ? clan.getLeaderName() : CharNameTable.getInstance().getNameById(pledge.getLeaderId());
+		_name = pledge == null ? clan.getName() : pledge.getName();
 		_members = _clan.getMembers();
+	}
+	
+	public static void sendAllTo(PlayerInstance player)
+	{
+		final L2Clan clan = player.getClan();
+		if (clan != null)
+		{
+			player.sendPacket(new PledgeShowMemberListAll(clan, null));
+			for (SubPledge subPledge : clan.getAllSubPledges())
+			{
+				player.sendPacket(new PledgeShowMemberListAll(clan, subPledge));
+			}
+		}
 	}
 	
 	@Override
 	public boolean write(PacketWriter packet)
 	{
-		// write main Clan
-		writePledge(packet, null, _clan.getLeaderName());
-		
-		for (SubPledge subPledge : _clan.getAllSubPledges())
-		{
-			PlayerInstance pLeader = World.getInstance().getPlayer(subPledge.getLeaderId());
-			writePledge(packet, subPledge, (pLeader == null ? "" : pLeader.getName()));
-		}
-		return true;
-	}
-	
-	private void writePledge(PacketWriter packet, SubPledge pledge, String name)
-	{
-		final int pledgeId = (pledge == null ? 0x00 : pledge.getId());
+		final int pledgeId = (_pledge == null ? 0x00 : _pledge.getId());
 		OutgoingPackets.PLEDGE_SHOW_MEMBER_LIST_ALL.writeId(packet);
 		
-		packet.writeD(pledge == null ? 0 : 1);
+		packet.writeD(_pledge == null ? 0 : 1);
 		packet.writeD(_clan.getId());
 		packet.writeD(Config.SERVER_ID);
 		packet.writeD(pledgeId);
-		packet.writeS(_clan.getName());
-		packet.writeS(_clan.getLeaderName());
+		packet.writeS(_name);
+		packet.writeS(_leaderName);
 		
 		packet.writeD(_clan.getCrestId()); // crest id .. is used again
 		packet.writeD(_clan.getLevel());
@@ -107,5 +113,6 @@ public class PledgeShowMemberListAll implements IClientOutgoingPacket
 			packet.writeD(m.isOnline() ? m.getObjectId() : 0); // objectId = online 0 = offline
 			packet.writeD(m.getSponsor() != 0 ? 1 : 0);
 		}
+		return true;
 	}
 }

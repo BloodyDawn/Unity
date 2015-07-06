@@ -119,7 +119,7 @@ public final class RequestAnswerJoinPledge implements IClientIncomingPacket
 				clan.broadcastToOnlineMembers(new ExPledgeCount(clan));
 				
 				// this activates the clan tab on the new member
-				activeChar.sendPacket(new PledgeShowMemberListAll(clan));
+				PledgeShowMemberListAll.sendAllTo(activeChar);
 				activeChar.setClanJoinExpiryTime(0);
 				activeChar.broadcastUserInfo();
 			}

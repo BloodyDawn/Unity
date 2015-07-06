@@ -1631,7 +1631,7 @@ public class L2Clan implements IIdentifiable, INamable
 		for (PlayerInstance member : getOnlineMembers(0))
 		{
 			member.sendPacket(PledgeShowMemberListDeleteAll.STATIC_PACKET);
-			member.sendPacket(new PledgeShowMemberListAll(this));
+			PledgeShowMemberListAll.sendAllTo(member);
 		}
 	}
 	
