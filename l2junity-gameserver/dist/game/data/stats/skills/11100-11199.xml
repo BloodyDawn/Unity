@@ -101,7 +101,6 @@
 		<set name="earthStanceSkillId" val="11110" />
 		<set name="allStanceSkillId" val="11111" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AREA" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -117,7 +116,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="mDef" val="0.80" />
 			</effect>
@@ -141,7 +142,6 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AREA" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -157,7 +157,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="mDef" val="0.80" />
 			</effect>
@@ -181,7 +183,6 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AREA" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -197,7 +198,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="mDef" val="0.80" />
 			</effect>
@@ -221,7 +224,6 @@
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AREA" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -237,7 +239,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="mDef" val="0.80" />
 			</effect>
@@ -261,7 +265,6 @@
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AREA" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -277,7 +280,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="mDef" val="0.80" />
 			</effect>
@@ -299,7 +304,6 @@
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="sharedReuseSkillId" val="11106" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AREA" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -315,7 +319,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="mDef" val="0.80" />
 			</effect>
@@ -338,7 +344,6 @@
 		<set name="earthStanceSkillId" val="11116" />
 		<set name="allStanceSkillId" val="11117" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -353,7 +358,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
 			</effect>
@@ -370,7 +377,6 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" /> <!-- Fire -->
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -385,7 +391,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
 			</effect>
@@ -402,7 +410,6 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" /> <!-- Water -->
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -417,7 +424,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
 			</effect>
@@ -434,7 +443,6 @@
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" /> <!-- Wind -->
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -449,7 +457,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
 			</effect>
@@ -466,7 +476,6 @@
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="20" /> <!-- Earth -->
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -481,7 +490,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
 			</effect>
@@ -496,7 +507,6 @@
 		<set name="icon" val="icon.skill11865" />
 		<set name="sharedReuseSkillId" val="11112" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -511,7 +521,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
 			</effect>
@@ -531,7 +543,6 @@
 		<set name="earthStanceSkillId" val="11122" />
 		<set name="allStanceSkillId" val="11123" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -546,7 +557,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
 			</effect>
@@ -563,7 +576,6 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" /> <!-- Fire -->
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -578,7 +590,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
 			</effect>
@@ -595,7 +609,6 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -610,7 +623,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
 			</effect>
@@ -627,7 +642,6 @@
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -642,7 +656,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
 			</effect>
@@ -659,7 +675,6 @@
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -674,7 +689,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
 			</effect>
@@ -689,7 +706,6 @@
 		<set name="icon" val="icon.skill11865" />
 		<set name="sharedReuseSkillId" val="11118" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -704,7 +720,9 @@
 			<target abnormalType="BODY_DESTRUCTION" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="BODY_DESTRUCTION" rate="100" /> <!-- Detonates Elemental Destruction -->
 			</effect>
@@ -757,7 +775,6 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -770,7 +787,9 @@
 		<set name="effectPoint" val="-704" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Fear" />
 		</for>
 	</skill>
@@ -783,7 +802,6 @@
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -794,7 +812,9 @@
 		<set name="effectPoint" val="-704" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11128" levels="3" name="Water Destruction">
@@ -812,7 +832,6 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -824,7 +843,9 @@
 		<set name="effectPoint" val="-704" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Debuff">
 				<sub stat="runSpd" val="130" />
 			</effect>
@@ -845,7 +866,6 @@
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="KNOCKBACK" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -858,7 +878,9 @@
 		<set name="effectPoint" val="-704" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="KnockBack">
 				<param speed="400" distance="100" /> <!-- Guessed -->
 			</effect>
@@ -877,7 +899,6 @@
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="HOLD" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -890,7 +911,9 @@
 		<set name="effectPoint" val="-704" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Root" />
 		</for>
 	</skill>
@@ -1395,7 +1418,6 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1406,7 +1428,9 @@
 		<set name="effectPoint" val="-687" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11178" levels="1" name="Frozen">
@@ -1599,7 +1623,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -1609,7 +1632,9 @@
 		<set name="effectPoint" val="-687" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11190" levels="1" name="Elemental Destruction: Fire">

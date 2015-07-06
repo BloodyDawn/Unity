@@ -237,7 +237,6 @@
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11011" />
 		<set name="fireStanceSkillId" val="11012" />
 		<set name="waterStanceSkillId" val="11013" />
@@ -253,7 +252,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11012" levels="11" name="Elemental Spike (Fire)">
@@ -268,7 +269,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11011" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -279,7 +279,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11013" levels="11" name="Elemental Spike (Water)">
@@ -294,7 +296,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11011" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -305,7 +306,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11014" levels="11" name="Elemental Spike (Wind)">
@@ -320,7 +323,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11011" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -331,7 +333,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11015" levels="11" name="Elemental Spike (Earth)">
@@ -346,7 +350,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11011" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -357,7 +360,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11016" levels="11" name="Elemental Spike (4 Elements)">
@@ -370,7 +375,6 @@
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11011" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -381,7 +385,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11017" levels="11" name="Elemental Crash">
@@ -394,7 +400,6 @@
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11017" />
 		<set name="fireStanceSkillId" val="11018" />
 		<set name="waterStanceSkillId" val="11019" />
@@ -411,7 +416,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11018" levels="11" name="Elemental Crash (Fire)">
@@ -426,7 +433,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11017" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -438,7 +444,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11019" levels="11" name="Elemental Crash (Water)">
@@ -453,7 +461,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11017" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -465,7 +472,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11020" levels="11" name="Elemental Crash (Wind)">
@@ -480,7 +489,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11017" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -492,7 +500,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11021" levels="11" name="Elemental Crash (Earth)">
@@ -507,7 +517,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11017" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -519,7 +528,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11022" levels="11" name="Elemental Crash (4 Elements)">
@@ -532,7 +543,6 @@
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11017" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -544,7 +554,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11023" levels="11" name="Elemental Destruction">
@@ -557,7 +569,6 @@
 		<set name="icon" val="icon.skill11023" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11023" />
 		<set name="fireStanceSkillId" val="11024" />
 		<set name="waterStanceSkillId" val="11025" />
@@ -574,7 +585,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11024" levels="11" name="Elemental Destruction (Fire)">
@@ -589,7 +602,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11023" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -602,7 +614,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11025" levels="11" name="Elemental Destruction (Water)">
@@ -617,7 +631,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11023" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -630,7 +643,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11026" levels="11" name="Elemental Destruction (Wind)">
@@ -645,7 +660,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11023" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -658,7 +672,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11027" levels="11" name="Elemental Destruction (Earth)">
@@ -673,7 +689,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11023" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -686,7 +701,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11028" levels="11" name="Elemental Destruction (4 Elements)">
@@ -699,7 +716,6 @@
 		<set name="icon" val="icon.skill11023" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11023" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -712,7 +728,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11029" levels="5" name="Death Breath">
@@ -792,7 +810,6 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="KNOCKBACK" />
-		<set name="power" val="#power" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="15000" />
@@ -800,7 +817,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="KnockBack">
 				<param speed="600" distance="200" />
 			</effect>
@@ -826,7 +845,6 @@
 		<set name="icon" val="icon.skill11034" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11034" />
 		<set name="fireStanceSkillId" val="11035" />
 		<set name="waterStanceSkillId" val="11036" />
@@ -843,7 +861,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11035" levels="8" name="Elemental Blast (Fire)">
@@ -858,7 +878,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11034" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -871,7 +890,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11036" levels="8" name="Elemental Blast (Water)">
@@ -884,7 +905,6 @@
 		<set name="icon" val="icon.skill11034" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11034" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -897,7 +917,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11037" levels="8" name="Elemental Blast (Wind)">
@@ -912,7 +934,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11034" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -925,7 +946,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11038" levels="8" name="Elemental Blast (Earth)">
@@ -940,7 +963,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11034" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -953,7 +975,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11039" levels="8" name="Elemental Blast (4 Elements)">
@@ -966,7 +990,6 @@
 		<set name="icon" val="icon.skill11034" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11034" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -979,7 +1002,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11040" levels="8" name="Elemental Storm">
@@ -992,7 +1017,6 @@
 		<set name="icon" val="icon.skill11040" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11040" />
 		<set name="fireStanceSkillId" val="11041" />
 		<set name="waterStanceSkillId" val="11042" />
@@ -1009,7 +1033,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11041" levels="8" name="Elemental Storm (Fire)">
@@ -1024,7 +1050,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11040" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1037,7 +1062,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11042" levels="8" name="Elemental Storm (Water)">
@@ -1052,7 +1079,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11040" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1065,7 +1091,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11043" levels="8" name="Elemental Storm (Wind)">
@@ -1080,7 +1108,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11040" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1093,7 +1120,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11044" levels="8" name="Elemental Storm (Earth)">
@@ -1108,30 +1137,6 @@
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
-		<set name="power" val="#power" />
-		<set name="sharedReuseSkillId" val="11040" />
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="1100" />
-		<set name="effectRange" val="1800" /> <!-- Custom -->
-		<set name="hitTime" val="4780" />
-		<set name="coolTime" val="300" />
-		<set name="reuseDelay" val="6700" />
-		<set name="isMagic" val="1" />
-		<set name="effectPoint" val="#effectPoint" />
-		<set name="isDebuff" val="true" />
-	</skill>
-	<skill id="11045" levels="8" name="Elemental Storm (4 Elements)">
-		<!-- Updated to IO -->
-		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
-		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
-		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
-		<set name="icon" val="icon.skill11040" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="AREA" />
-		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11040" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1144,7 +1149,36 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="11045" levels="8" name="Elemental Storm (4 Elements)">
+		<!-- Updated to IO -->
+		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
+		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
+		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
+		<set name="icon" val="icon.skill11040" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="AREA" />
+		<set name="sharedReuseSkillId" val="11040" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsumes" />
+		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
+		<set name="hitTime" val="4780" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="6700" />
+		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11046" levels="2" name="Wizard Spirit">
@@ -1192,7 +1226,6 @@
 		<set name="activateRate" val="100" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -1204,7 +1237,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="mAtk" val="0.7" />
 				<mul stat="mDef" val="0.7" />
@@ -1477,7 +1512,6 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
-		<set name="power" val="#power" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="800" />
@@ -1487,7 +1521,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Stun" />
 			<effect name="TargetCancel">
 				<param chance="40" /> <!-- Custom -->
@@ -1631,7 +1667,6 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<set name="power" val="#power" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -1643,7 +1678,9 @@
 		<set name="effectPoint" val="-704" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Fear">
 				<mul stat="runSpd" val="0.60" />
 			</effect>
@@ -1667,7 +1704,6 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="DERANGEMENT" />
-		<set name="power" val="#power" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -1679,7 +1715,9 @@
 		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Fear">
 				<mul stat="runSpd" val="0.60" />
 			</effect>
@@ -2129,7 +2167,6 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
-		<set name="power" val="#power" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="800" />
@@ -2139,7 +2176,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Stun" />
 			<effect name="TargetCancel">
 				<param chance="40" /> <!-- Custom -->
