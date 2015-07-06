@@ -273,6 +273,7 @@ import quests.Q10776_TheWrathOfTheGiants.Q10776_TheWrathOfTheGiants;
 import quests.Q10777_ReportsFromCrumaTowerPart2.Q10777_ReportsFromCrumaTowerPart2;
 import quests.Q10779_LettersFromTheQueenSeaOfSpores.Q10779_LettersFromTheQueenSeaOfSpores;
 import quests.Q10780_AWeakenedBarrier.Q10780_AWeakenedBarrier;
+import quests.Q10781_IngredientsToEnforcements.Q10781_IngredientsToEnforcements;
 
 /**
  * @author NosBit
@@ -534,7 +535,8 @@ public class QuestMasterHandler
 		Q10776_TheWrathOfTheGiants.class,
 		Q10777_ReportsFromCrumaTowerPart2.class,
 		Q10779_LettersFromTheQueenSeaOfSpores.class,
-		Q10780_AWeakenedBarrier.class
+		Q10780_AWeakenedBarrier.class,
+		Q10781_IngredientsToEnforcements.class
 	};
 	
 	public static void main(String[] args)
