@@ -40,7 +40,7 @@ import org.w3c.dom.Node;
  */
 public class FaenorScriptEngine extends ScriptEngine
 {
-	private static final Logger _log = LoggerFactory.getLogger(FaenorScriptEngine.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(FaenorScriptEngine.class);
 	public static final String PACKAGE_DIRECTORY = "data/faenor/";
 	
 	protected FaenorScriptEngine()
@@ -55,7 +55,7 @@ public class FaenorScriptEngine extends ScriptEngine
 			}
 			catch (IOException e)
 			{
-				_log.warn(e.getMessage(), e);
+				LOGGER.warn(e.getMessage(), e);
 			}
 		}
 	}
@@ -72,23 +72,23 @@ public class FaenorScriptEngine extends ScriptEngine
 		}
 		catch (ParserNotCreatedException e)
 		{
-			_log.warn("ERROR: No parser registered for Script: " + parserClass + ": " + e.getMessage(), e);
+			LOGGER.warn("ERROR: No parser registered for Script: {}: ", parserClass, e);
 		}
 		
 		if (parser == null)
 		{
-			_log.warn("Unknown Script Type: " + script.getName());
+			LOGGER.warn("Unknown Script Type: {}", script.getName());
 			return;
 		}
 		
 		try
 		{
 			parser.parseScript(node, context);
-			_log.info(getClass().getSimpleName() + ": Loaded  " + script.getName() + " successfully.");
+			LOGGER.info("Loaded  {} successfully.", script.getName());
 		}
 		catch (Exception e)
 		{
-			_log.warn("Script Parsing Failed: " + e.getMessage(), e);
+			LOGGER.warn("Script Parsing Failed: ", e);
 		}
 	}
 	

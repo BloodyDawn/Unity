@@ -47,7 +47,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class MailManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(MailManager.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(MailManager.class);
 	
 	private final Map<Integer, Message> _messages = new ConcurrentHashMap<>();
 	
@@ -87,9 +87,9 @@ public final class MailManager
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Error loading from database:" + e.getMessage(), e);
+			LOGGER.warn("Error loading from database:", e);
 		}
-		_log.info(getClass().getSimpleName() + ": Successfully loaded " + count + " messages.");
+		LOGGER.info("Loaded {} messages.", count);
 	}
 	
 	public final Message getMessage(int msgId)
@@ -202,7 +202,7 @@ public final class MailManager
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Error saving message:" + e.getMessage(), e);
+			LOGGER.warn("Error saving message:", e);
 		}
 		
 		final PlayerInstance receiver = World.getInstance().getPlayer(msg.getReceiverId());
@@ -225,7 +225,7 @@ public final class MailManager
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Error marking as read message:" + e.getMessage(), e);
+			LOGGER.warn("Error marking as read message:", e);
 		}
 	}
 	
@@ -239,7 +239,7 @@ public final class MailManager
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Error marking as deleted by sender message:" + e.getMessage(), e);
+			LOGGER.warn("Error marking as deleted by sender message:", e);
 		}
 	}
 	
@@ -253,7 +253,7 @@ public final class MailManager
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Error marking as deleted by receiver message:" + e.getMessage(), e);
+			LOGGER.warn("Error marking as deleted by receiver message:", e);
 		}
 	}
 	
@@ -267,7 +267,7 @@ public final class MailManager
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Error removing attachments in message:" + e.getMessage(), e);
+			LOGGER.warn("Error removing attachments in message:", e);
 		}
 	}
 	
@@ -281,7 +281,7 @@ public final class MailManager
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Error deleting message:" + e.getMessage(), e);
+			LOGGER.warn("Error deleting message:", e);
 		}
 		
 		_messages.remove(msgId);

@@ -57,7 +57,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class TaskManager
 {
-	protected static final Logger _log = LoggerFactory.getLogger(TaskManager.class);
+	protected static final Logger LOGGER = LoggerFactory.getLogger(TaskManager.class);
 	
 	private final Map<Integer, Task> _tasks = new ConcurrentHashMap<>();
 	protected final List<ExecutedTask> _currentTasks = new CopyOnWriteArrayList<>();
@@ -74,7 +74,7 @@ public final class TaskManager
 	{
 		initializate();
 		startAllTasks();
-		_log.info(getClass().getSimpleName() + ": Loaded: " + _tasks.size() + " Tasks");
+		LOGGER.info("Loaded: {} Tasks", _tasks.size());
 	}
 	
 	public class ExecutedTask implements Runnable
@@ -114,7 +114,7 @@ public final class TaskManager
 			}
 			catch (SQLException e)
 			{
-				_log.warn(getClass().getSimpleName() + ": Cannot updated the Global Task " + id + ": " + e.getMessage(), e);
+				LOGGER.warn("Cannot updated the Global Task {}: ", id, e);
 			}
 			
 			if ((type == TYPE_SHEDULED) || (type == TYPE_TIME))
@@ -235,7 +235,7 @@ public final class TaskManager
 		}
 		catch (Exception e)
 		{
-			_log.error(getClass().getSimpleName() + ": Error while loading Global Task table: " + e.getMessage(), e);
+			LOGGER.error("Error while loading Global Task table: ", e);
 		}
 	}
 	
@@ -268,7 +268,7 @@ public final class TaskManager
 						task.scheduled = scheduler.scheduleGeneral(task, diff);
 						return true;
 					}
-					_log.info(getClass().getSimpleName() + ": Task " + task.getId() + " is obsoleted.");
+					LOGGER.info("Task {} is obsoleted.", task.getId());
 				}
 				catch (Exception e)
 				{
@@ -288,7 +288,7 @@ public final class TaskManager
 				
 				if (hour.length != 3)
 				{
-					_log.warn(getClass().getSimpleName() + ": Task " + task.getId() + " has incorrect parameters");
+					LOGGER.warn("Task {} has incorrect parameters", task.getId());
 					return false;
 				}
 				
@@ -304,7 +304,7 @@ public final class TaskManager
 				}
 				catch (Exception e)
 				{
-					_log.warn(getClass().getSimpleName() + ": Bad parameter on task " + task.getId() + ": " + e.getMessage(), e);
+					LOGGER.warn("Bad parameter on task {}: ", task.getId(), e);
 					return false;
 				}
 				
@@ -353,7 +353,7 @@ public final class TaskManager
 		}
 		catch (SQLException e)
 		{
-			_log.warn(TaskManager.class.getSimpleName() + ": Cannot add the unique task: " + e.getMessage(), e);
+			LOGGER.warn("Cannot add the unique task: ", e);
 		}
 		return false;
 	}
@@ -379,7 +379,7 @@ public final class TaskManager
 		}
 		catch (SQLException e)
 		{
-			_log.warn(TaskManager.class.getSimpleName() + ": Cannot add the task:  " + e.getMessage(), e);
+			LOGGER.warn("Cannot add the task: ", e);
 		}
 		return false;
 	}

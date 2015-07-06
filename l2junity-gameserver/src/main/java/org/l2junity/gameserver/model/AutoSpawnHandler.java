@@ -62,7 +62,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AutoSpawnHandler
 {
-	protected static final Logger _log = LoggerFactory.getLogger(AutoSpawnHandler.class);
+	protected static final Logger LOGGER = LoggerFactory.getLogger(AutoSpawnHandler.class);
 	
 	private static final int DEFAULT_INITIAL_SPAWN = 30000; // 30 seconds after registration
 	private static final int DEFAULT_RESPAWN = 3600000; // 1 hour in millisecs
@@ -152,7 +152,7 @@ public class AutoSpawnHandler
 		}
 		catch (Exception e)
 		{
-			_log.warn("AutoSpawnHandler: Could not restore spawn data: " + e.getMessage(), e);
+			LOGGER.warn("Could not restore spawn data: ", e);
 		}
 	}
 	
@@ -239,7 +239,7 @@ public class AutoSpawnHandler
 		}
 		catch (Exception e)
 		{
-			_log.warn("AutoSpawnHandler: Could not auto spawn for NPC ID " + spawnInst._npcId + " (Object ID = " + spawnInst._objectId + "): " + e.getMessage(), e);
+			LOGGER.warn("Could not auto spawn for NPC ID {} (Object ID = {}): ", spawnInst._npcId, spawnInst._objectId, e);
 			return false;
 		}
 		
@@ -439,7 +439,7 @@ public class AutoSpawnHandler
 				// If there are no set co-ordinates, cancel the spawn task.
 				if (locationList.length == 0)
 				{
-					_log.info("AutoSpawnHandler: No location co-ords specified for spawn instance (Object ID = " + _objectId + ").");
+					LOGGER.info("No location co-ords specified for spawn instance (Object ID = {}).", _objectId);
 					return;
 				}
 				
@@ -524,7 +524,7 @@ public class AutoSpawnHandler
 			}
 			catch (Exception e)
 			{
-				_log.warn("AutoSpawnHandler: An error occurred while initializing spawn instance (Object ID = " + _objectId + "): " + e.getMessage(), e);
+				LOGGER.warn("An error occurred while initializing spawn instance (Object ID = {}): ", _objectId, e);
 			}
 		}
 	}
@@ -552,7 +552,7 @@ public class AutoSpawnHandler
 				
 				if (spawnInst == null)
 				{
-					_log.info("AutoSpawnHandler: No spawn registered for object ID = " + _objectId + ".");
+					LOGGER.info("No spawn registered for object ID = {}.", _objectId);
 					return;
 				}
 				
@@ -570,7 +570,7 @@ public class AutoSpawnHandler
 			}
 			catch (Exception e)
 			{
-				_log.warn("AutoSpawnHandler: An error occurred while despawning spawn (Object ID = " + _objectId + "): " + e.getMessage(), e);
+				LOGGER.warn("An error occurred while despawning spawn (Object ID = {}): ", _objectId, e);
 			}
 		}
 	}

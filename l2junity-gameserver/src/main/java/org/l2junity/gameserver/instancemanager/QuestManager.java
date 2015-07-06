@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class QuestManager
 {
-	protected static final Logger _log = LoggerFactory.getLogger(QuestManager.class);
+	protected static final Logger LOGGER = LoggerFactory.getLogger(QuestManager.class);
 	
 	/** Map containing all the quests. */
 	private final Map<String, Quest> _quests = new ConcurrentHashMap<>();
@@ -43,7 +43,6 @@ public final class QuestManager
 	
 	protected QuestManager()
 	{
-		// Prevent initialization.
 	}
 	
 	public boolean reload(String questFolder)
@@ -77,7 +76,7 @@ public final class QuestManager
 	 */
 	public void reloadAllScripts()
 	{
-		_log.info(getClass().getSimpleName() + ": Reloading all server scripts.");
+		LOGGER.info("Reloading all server scripts.");
 		
 		// Unload quests.
 		for (Quest quest : _quests.values())
@@ -104,7 +103,7 @@ public final class QuestManager
 		}
 		catch (Exception e)
 		{
-			_log.error(getClass().getSimpleName() + ": Failed loading scripts.cfg, no script going to be loaded!", e);
+			LOGGER.error("Failed loading scripts.cfg, no script going to be loaded!", e);
 		}
 		
 		QuestManager.getInstance().report();
@@ -115,8 +114,8 @@ public final class QuestManager
 	 */
 	public void report()
 	{
-		_log.info(getClass().getSimpleName() + ": Loaded: " + _quests.size() + " quests.");
-		_log.info(getClass().getSimpleName() + ": Loaded: " + _scripts.size() + " scripts.");
+		LOGGER.info("Loaded: {} quests.", _quests.size());
+		LOGGER.info("Loaded: {} scripts.", _scripts.size());
 	}
 	
 	/**
@@ -193,14 +192,14 @@ public final class QuestManager
 		if (old != null)
 		{
 			old.unload();
-			_log.info(getClass().getSimpleName() + ": Replaced quest " + old.getName() + " (" + old.getId() + ") with a new version!");
+			LOGGER.info("Replaced quest {} ({}) with a new version!", old.getName(), old.getId());
 			
 		}
 		
 		if (Config.ALT_DEV_SHOW_QUESTS_LOAD_IN_LOGS)
 		{
 			final String questName = quest.getName().contains("_") ? quest.getName().substring(quest.getName().indexOf('_') + 1) : quest.getName();
-			_log.info("Loaded quest " + CommonUtil.splitWords(questName) + ".");
+			LOGGER.info("Loaded quest {}.", CommonUtil.splitWords(questName));
 		}
 	}
 	
@@ -254,12 +253,12 @@ public final class QuestManager
 		if (old != null)
 		{
 			old.unload();
-			_log.info(getClass().getSimpleName() + ": Replaced script " + old.getName() + " with a new version!");
+			LOGGER.info("Replaced script {} with a new version!", old.getName());
 		}
 		
 		if (Config.ALT_DEV_SHOW_SCRIPTS_LOAD_IN_LOGS)
 		{
-			_log.info("Loaded script " + CommonUtil.splitWords(script.getClass().getSimpleName()) + ".");
+			LOGGER.info("Loaded script {}.", CommonUtil.splitWords(script.getClass().getSimpleName()));
 		}
 	}
 	

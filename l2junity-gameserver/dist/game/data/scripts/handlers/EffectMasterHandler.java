@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class EffectMasterHandler
 {
-	private static final Logger _log = LoggerFactory.getLogger(EffectMasterHandler.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(EffectMasterHandler.class);
 	
 	private static final Class<?>[] EFFECTS =
 	{
@@ -234,14 +234,6 @@ public final class EffectMasterHandler
 			EffectHandler.getInstance().registerHandler((Class<? extends AbstractEffect>) c);
 		}
 		
-		// And lets try get size
-		try
-		{
-			_log.info(EffectMasterHandler.class.getSimpleName() + ": Loaded " + EffectHandler.getInstance().size() + " effect handlers.");
-		}
-		catch (Exception e)
-		{
-			_log.warn("Failed invoking size method for handler: " + EffectMasterHandler.class.getSimpleName(), e);
-		}
+		LOGGER.info("Loaded {} effect handlers.", EffectHandler.getInstance().size());
 	}
 }
