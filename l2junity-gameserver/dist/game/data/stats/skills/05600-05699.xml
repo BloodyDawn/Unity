@@ -10,11 +10,12 @@
 		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="81" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="47" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="47" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5601" levels="12" name="Melee Attack Resistance">

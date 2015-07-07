@@ -52,7 +52,6 @@
 		<table name="#effectPoint"> -709 -711 -714 </table>
 		<table name="#mpConsumes"> 93 96 99 </table>
 		<table name="#power"> 29176 30726 32277 </table>
-		<set name="power" val="#power" />
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
@@ -68,6 +67,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttackHpLink">
+				<param power="#power" />
 				<param overHit="true" />
 			</effect>
 		</for>

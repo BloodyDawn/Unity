@@ -268,7 +268,6 @@
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="900" /> <!-- Custom -->
 		<set name="targetType" val="ONE" />
-		<set name="power" val="#power" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="2780" />
@@ -278,7 +277,9 @@
 		<set name="isDebuff" val="true" />
 		<set name="trait" val="KNOCKBACK" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="KnockBack">
 				<param speed="500" distance="200" />
 			</effect>
@@ -344,7 +345,6 @@
 		<set name="effectRange" val="1400" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
-		<set name="power" val="#power" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3780" />
@@ -352,7 +352,9 @@
 		<set name="reuseDelay" val="6700" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11818" levels="1" name="Price of Summoning">

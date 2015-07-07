@@ -189,7 +189,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="830" />
 		<set name="coolTime" val="700" />
@@ -202,6 +201,7 @@
 		</cond>
 		<for>
 			<effect name="Backstab">
+				<param power="#power" />
 				<param chance="40" />
 				<param criticalChance="15" />
 				<param overHit="true" />
@@ -229,7 +229,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1030" />
 		<set name="coolTime" val="700" />
@@ -240,6 +239,7 @@
 		</cond>
 		<for>
 			<effect name="FatalBlow">
+				<param power="#power" />
 				<param chance="30" />
 				<param criticalChance="15" />
 				<param overHit="true" />
@@ -267,7 +267,6 @@
 		<set name="icon" val="icon.skill10510" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
@@ -280,6 +279,7 @@
 		</cond>
 		<for>
 			<effect name="FatalBlow"> <!-- TODO: 20% power during bleed -->
+				<param power="#power" />
 				<param chance="30" />
 				<param criticalChance="15" />
 				<param overHit="true" />
@@ -298,7 +298,6 @@
 		<set name="icon" val="icon.skill10511" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
@@ -311,6 +310,7 @@
 		</cond>
 		<for>
 			<effect name="FatalBlow">
+				<param power="#power" />
 				<param chance="30" />
 				<param criticalChance="15" />
 				<param overHit="true" />
@@ -329,7 +329,6 @@
 		<set name="icon" val="icon.skill10512" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
@@ -342,6 +341,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>
@@ -360,7 +360,6 @@
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="BLEED" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -374,6 +373,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>
@@ -959,7 +959,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="castRange" val="800" />
 		<set name="hitTime" val="1730" />
 		<set name="coolTime" val="100" />
@@ -971,6 +970,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
@@ -1215,7 +1215,6 @@
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
@@ -1226,6 +1225,7 @@
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="FatalBlow">
+				<param power="#power" />
 				<param chance="30" />
 				<param criticalChance="15" />
 			</effect>
@@ -1291,7 +1291,6 @@
 		<set name="icon" val="icon.skill0005" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1530" />
@@ -1300,6 +1299,7 @@
 		<set name="reuseDelay" val="10000" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param overHit="true" />
 			</effect>
 		</for>

@@ -1006,7 +1006,6 @@
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="CA1" />
-		<set name="power" val="860" />
 		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="52" />
 		<set name="castRange" val="900" />
@@ -1015,7 +1014,9 @@
 		<set name="effectPoint" val="-676" />
 		<set name="isMagic" val="1" />
 		<channelingEffects>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="860" />
+			</effect>
 			<effect name="CallSkill">
 				<param skillId="11139" skillLevel="1" skillLevelScaleTo="3" /> <!-- Ignite -->
 			</effect>
@@ -1067,7 +1068,6 @@
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="CA1" />
-		<set name="power" val="440" />
 		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="52" />
 		<set name="castRange" val="900" />
@@ -1076,7 +1076,9 @@
 		<set name="effectPoint" val="-676" />
 		<set name="isMagic" val="1" />
 		<channelingEffects>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="440" />
+			</effect>
 			<effect name="CallSkill">
 				<param skillId="11141" skillLevel="1" skillLevelScaleTo="5" /> <!-- Freezing Slow -->
 			</effect>
@@ -1095,7 +1097,6 @@
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="CA1" />
-		<set name="power" val="550" />
 		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="52" />
 		<set name="castRange" val="900" />
@@ -1104,7 +1105,9 @@
 		<set name="effectPoint" val="-676" />
 		<set name="isMagic" val="1" />
 		<channelingEffects>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="550" />
+			</effect>
 			<effect name="CallSkill">
 				<param skillId="11144" skillLevel="1" skillLevelScaleTo="5" /> <!-- Wind Binding -->
 			</effect>
@@ -1121,7 +1124,6 @@
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="CA1" />
-		<set name="power" val="600" />
 		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="52" />
 		<set name="castRange" val="900" />
@@ -1130,7 +1132,9 @@
 		<set name="effectPoint" val="-676" />
 		<set name="isMagic" val="1" />
 		<channelingEffects>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="600" />
+			</effect>
 			<effect name="CallSkill">
 				<param skillId="11145" skillLevel="1" skillLevelScaleTo="5" /> <!-- Soul Weakness -->
 			</effect>

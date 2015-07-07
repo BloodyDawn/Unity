@@ -20,7 +20,6 @@
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
-		<set name="power" val="#power" />
 		<set name="castRange" val="80" />
 		<set name="affectRange" val="160" /> <!-- Unconfirmed -->
 		<set name="effectPoint" val="-692" />
@@ -32,7 +31,9 @@
 			<using kind="SWORD,BLUNT" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="30002" levels="3" name="Storm Sign">
@@ -67,7 +68,6 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="power" val="#power" />
 		<set name="castRange" val="80" />
 		<set name="effectPoint" val="-696" />
 		<set name="hitTime" val="4000" />
@@ -81,7 +81,9 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="STORM_SIGN,3" />
 			</effect>
@@ -102,7 +104,6 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="power" val="#power" />
 		<set name="castRange" val="80" />
 		<set name="effectPoint" val="-696" />
 		<set name="hitTime" val="3000" />
@@ -118,7 +119,9 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="KnockBack">
 				<param distance="60" type="THROW_UP" />
 			</effect>
@@ -160,7 +163,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="60" />
 		<set name="effectPoint" val="-687" />
-		<set name="power" val="#power" />
 		<set name="hitTime" val="1800" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="20000" />
@@ -174,7 +176,9 @@
 			<effect name="KnockBack">
 				<param distance="60" type="THROW_UP" />
 			</effect>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="30007" levels="15" name="Hydro Drain">
@@ -192,7 +196,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="80" />
 		<set name="effectPoint" val="-696" />
-		<set name="power" val="#power" />
 		<set name="hitTime" val="4000" />
 		<set name="coolTime" val="500" />
 		<set name="isMagic" val="1" />
@@ -203,7 +206,9 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="STORM_SIGN,3" />
 			</effect>
@@ -347,7 +352,6 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="500" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
 		<set name="flyRadius" val="900" />
 		<set name="flyType" val="CHARGE" />
@@ -360,7 +364,9 @@
 			<effect name="EnemyCharge">
 				<param animationSpeed="333" />
 			</effect>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="STORM_SIGN,3" />
 			</effect>
@@ -519,7 +525,6 @@
 		<set name="abnormalTime" val="10" />
 		<set name="effectPoint" val="-687" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="80" />
@@ -532,7 +537,9 @@
 			<using kind="SWORD,BLUNT" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.70" />
 				<mul stat="mAtkSpd" val="0.70" />
@@ -616,13 +623,15 @@
 		<set name="affectRange" val="1600" /> <!-- Unconfirmed -->
 		<set name="effectPoint" val="-711" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="1100" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
+			<effect name="Debuff">
 				<sub stat="runSpd" val="20" />
 			</effect>
 		</for>
@@ -634,13 +643,14 @@
 		<set name="affectRange" val="1600" /> <!-- Unconfirmed -->
 		<set name="effectPoint" val="-711" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A1" />
-		<set name="power" val="300" />
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="1100" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="300" />
+			</effect>
 			<effect name="CallSkill">
 				<param skillId="30005" chance="10" /> <!-- Storm Sign Lv. 4 -->
 			</effect>
@@ -656,7 +666,6 @@
 		<set name="affectRange" val="200" /> <!-- Unconfirmed -->
 		<set name="effectPoint" val="-707" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="448" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="1405" />
 		<set name="hitTime" val="2000" />
@@ -668,7 +677,9 @@
 			<using kind="SWORD,BLUNT" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="448" />
+			</effect>
 			<!-- TODO Lock inside storm for 5sec. -->
 		</for>
 	</skill>

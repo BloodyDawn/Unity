@@ -204,7 +204,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="operateType" val="A2" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -215,6 +214,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>
@@ -244,7 +244,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="operateType" val="A2" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -255,6 +254,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>
@@ -279,7 +279,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="operateType" val="A1" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -289,6 +288,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>
@@ -313,7 +313,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -324,6 +323,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>
@@ -352,7 +352,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -363,6 +362,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>

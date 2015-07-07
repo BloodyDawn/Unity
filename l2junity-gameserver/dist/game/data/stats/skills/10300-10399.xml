@@ -7,7 +7,6 @@
 		<table name="#magicLvl"> 90 95 99 101 103 105 </table>
 		<table name="#power"> 52746 59601 65085 69414 73352 77290 </table>
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="power" val="#power" />
 		<set name="icon" val="icon.skill10300" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
@@ -25,7 +24,9 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10301" levels="1" name="Maximum Force Mastery">
@@ -358,7 +359,6 @@
 		<set name="basicProperty" val="CON" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="power" val="#power" />
 		<set name="trait" val="SHOCK" />
 		<set name="icon" val="icon.skill10317new" />
 		<set name="operateType" val="A2" />
@@ -374,6 +374,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
@@ -458,7 +459,6 @@
 		<set name="basicProperty" val="CON" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="power" val="#power" />
 		<set name="trait" val="SHOCK" />
 		<set name="icon" val="icon.skll10321" />
 		<set name="operateType" val="A2" />
@@ -474,6 +474,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 				<param overHit="true" />

@@ -194,11 +194,12 @@
 		<set name="hitTime" val="1300" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="271" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="271" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4018" levels="1" name="Decrease Speed">
@@ -219,11 +220,12 @@
 		<set name="lvlBonusRate" val="3" />
 		<set name="magicLvl" val="40" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="542" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="542" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.7" />
 			</effect>
@@ -354,12 +356,13 @@
 		<set name="magicLvl" val="60" />
 		<set name="mpConsume" val="28" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="43" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="43" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4027" levels="1" name="Gludio Heal">
@@ -765,11 +768,12 @@
 		<set name="magicLvl" val="45" />
 		<set name="mpConsume" val="40" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="60" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="60" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4043" levels="1" name="Partisan Flame">
@@ -785,12 +789,13 @@
 		<set name="magicLvl" val="45" />
 		<set name="mpConsume" val="60" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="30" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4044" levels="1" name="Partisan Heal">
@@ -1160,12 +1165,13 @@
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="50" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="916" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="916" />
+			</effect>
 			<effect name="Paralyze" />
 		</for>
 	</skill>
@@ -1553,12 +1559,13 @@
 		<set name="hitTime" val="4800" />
 		<set name="magicLvl" val="49" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="665060" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="665060" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4080" levels="1" name="Dark Heal">
@@ -1626,11 +1633,12 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="70" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="90000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="90000" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4084" levels="11" name="Physical Attack Resistance">

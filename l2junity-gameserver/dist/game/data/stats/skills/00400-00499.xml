@@ -2342,7 +2342,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="DA2" />
-		<set name="power" val="1" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
@@ -2356,6 +2355,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalSoulAttack">
+				<param power="1" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Stun" />
@@ -2392,7 +2392,6 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="DA2" />
-		<set name="power" val="1" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
@@ -2406,6 +2405,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalSoulAttack">
+				<param power="1" />
 				<param overHit="true" />
 			</effect>
 			<effect name="DamOverTime" ticks="5">

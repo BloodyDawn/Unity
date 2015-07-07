@@ -600,7 +600,6 @@
 		<set name="magicLvl" val="-1" />
 		<set name="mpConsume" val="151" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="15005" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="STRIDER" />
 		<set name="targetType" val="ONE" />
@@ -608,7 +607,9 @@
 			<player SiegeZone="126" /> <!-- TODO: add new condition and ride_state -->
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="15005" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="326" levels="1" name="Build Advanced Headquarters">
@@ -928,7 +929,6 @@
 		<set name="magicLvl" val="76" />
 		<set name="mpConsume" val="153" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="7698" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -938,6 +938,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="7698" />
 				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>
@@ -957,7 +958,6 @@
 		<set name="mpConsume" val="77" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="5773" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -967,6 +967,7 @@
 		</cond>
 		<for>
 			<effect name="FatalBlow">
+				<param power="5773" />
 				<param chance="30" />
 				<param criticalChance="20" />
 				<param overHit="true" />
@@ -1055,7 +1056,6 @@
 		<set name="magicLvl" val="78" />
 		<set name="mpConsume" val="78" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4848" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -1067,6 +1067,7 @@
 				<param chance="60" />
 			</effect>
 			<effect name="PhysicalAttack">
+				<param power="4848" />
 				<param criticalChance="20" />
 				<param ignoreShieldDefence="true" />
 				<param overHit="true" />
@@ -1084,7 +1085,6 @@
 		<set name="mpConsume" val="70" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="5" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1093,6 +1093,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="5" />
 				<param criticalChance="20" />
 				<param overHit="true" />
 			</effect>
@@ -1259,7 +1260,6 @@
 		<set name="magicLvl" val="77" />
 		<set name="mpConsume" val="78" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="1973" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1268,6 +1268,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="1973" />
 				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>
@@ -1472,7 +1473,6 @@
 		<set name="magicLvl" val="77" />
 		<set name="mpConsume" val="53" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="2486" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
@@ -1485,6 +1485,7 @@
 				<param chance="60" />
 			</effect>
 			<effect name="PhysicalAttack">
+				<param power="2486" />
 				<param criticalChance="20" />
 				<param ignoreShieldDefence="true" />
 				<param overHit="true" />
@@ -1515,7 +1516,6 @@
 		<set name="mpConsume" val="35" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="3077" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1525,6 +1525,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="3077" />
 				<param criticalChance="20" />
 				<param ignoreShieldDefence="true" />
 				<param overHit="true" />
@@ -1708,7 +1709,6 @@
 		<set name="magicLvl" val="78" />
 		<set name="mpConsume" val="114" />
 		<set name="operateType" val="A3" />
-		<set name="power" val="2020" />
 		<set name="reuseDelay" val="75000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1717,6 +1717,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="2020" />
 				<param overHit="true" />
 			</effect>
 		</for>

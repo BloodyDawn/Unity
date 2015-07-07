@@ -127,13 +127,13 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="53" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="11205" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="11205" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Stun" />
@@ -148,12 +148,12 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="53" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="6199" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="6199" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -1015,11 +1015,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="60" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="3480" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="3480" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="844" levels="1" name="Outpost Construction">
@@ -1875,7 +1876,6 @@
 		<set name="mpConsume" val="30" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="DA1" />
-		<set name="power" val="1" />
 		<set name="reuseDelay" val="23000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
@@ -1883,7 +1883,9 @@
 			<target mindistance="200" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="1" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="885" levels="1" name="Air Blink">
@@ -1901,13 +1903,14 @@
 		<set name="magicLvl" val="75" />
 		<set name="mpConsume" val="100" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="100" />
 		<set name="reuseDelay" val="23000" />
 		<set name="rideState" val="NONE" />
 		<set name="simultaneousCast" val="true" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="100" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 		<selfEffects>

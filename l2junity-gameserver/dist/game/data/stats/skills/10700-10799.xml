@@ -13,7 +13,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1030" />
@@ -25,7 +24,9 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Plunder" />
 		</for>
 	</skill>
@@ -61,7 +62,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="830" />
@@ -72,7 +72,9 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Plunder" />
 		</for>
 	</skill>
@@ -106,7 +108,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="STUN" />
-		<set name="abnormalVisualEffect" val="STUN" />		
+		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="basicProperty" val="MEN" />
@@ -181,7 +183,6 @@
 		<!-- Pierce through target to inflict a fatal blow. Attacks with 8875 Power added to P. Atk. Over-hit. Half-kill. -->
 		<set name="icon" val="icon.skill1543" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="8875" />
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="50" />
 		<set name="hitTime" val="1200" />
@@ -192,6 +193,7 @@
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="FatalBlow">
+				<param power="8875" />
 				<param chance="30" />
 				<param criticalChance="15" />
 				<param overHit="true" />
@@ -219,7 +221,6 @@
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="50000" />
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1000" />
@@ -227,7 +228,9 @@
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="10000" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="50000" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10751" levels="10" name="Superior Bow/Crossbow Mastery">
@@ -476,7 +479,6 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2200" />
-		<set name="power" val="#power" />
 		<set name="coolTime" val="350" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -487,6 +489,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
 				<param overHit="true" />
 			</effect>
@@ -507,7 +510,6 @@
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="power" val="#power" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="350" />
@@ -520,6 +522,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" /> <!-- Guessed -->
 				<param overHit="true" />
 			</effect>
@@ -541,7 +544,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="1800" />
 		<set name="coolTime" val="250" />
@@ -552,6 +554,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param pDefMod="0.70" /> <!-- Disregards 30% of the target's P. Def -->
 				<param criticalChance="15" /> <!-- Guessed -->
 				<param overHit="true" />
@@ -570,7 +573,6 @@
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="power" val="#power" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="850" />
@@ -581,6 +583,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param pDefMod="0.7" />
 				<param criticalChance="15" /> <!-- Guessed -->
 				<param overHit="true" />
@@ -648,7 +651,6 @@
 		<set name="activateRate" val="85" /> <!-- Guessed -->
 		<set name="basicProperty" val="CON" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="icon" val="icon.skill10769" />
@@ -664,6 +666,7 @@
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Stun" />
@@ -682,7 +685,6 @@
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="CON" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="icon" val="icon.skill10770" />
@@ -701,6 +703,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>
@@ -726,7 +729,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
-		<set name="power" val="#power" />
 		<set name="hitTime" val="2900" />
 		<set name="coolTime" val="350" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -737,6 +739,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
 				<param overHit="true" />
 			</effect>
@@ -756,7 +759,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
-		<set name="power" val="#power" />
 		<set name="hitTime" val="2900" />
 		<set name="coolTime" val="350" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -767,6 +769,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
 				<param overHit="true" />
 			</effect>
@@ -921,7 +924,6 @@
 		<set name="icon" val="icon.skill10780" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -937,6 +939,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
 			</effect>
 			<effect name="Debuff">
@@ -952,7 +955,6 @@
 		<set name="icon" val="icon.skill10781" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="1067" />
 		<set name="castRange" val="1100" />
@@ -964,7 +966,9 @@
 			<using kind="BOW,CROSSBOW" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10782" levels="1" name="Deadly Move 2">
@@ -1257,7 +1261,6 @@
 		<table name="#power"> 5254 5595 5936 6277 6618 6959 7300 7641 </table> <!-- Guessed from Feline Bite / 2 -->
 		<set name="icon" val="icon.skill6044" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
@@ -1266,7 +1269,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="15000" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10798" levels="8" name="Thunder Sharp Claw">

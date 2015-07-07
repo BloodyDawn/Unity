@@ -379,7 +379,7 @@
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 -709 -709 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 54 58 62 66 70 74 78 82 86 90 94 </table>
-		<table name="#power">85 89 93 97 101 105 109 113 117 121 125 </table>
+		<table name="#power"> 85 89 93 97 101 105 109 113 117 121 125 </table>
 		<set name="icon" val="icon.skill11259" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
@@ -515,7 +515,6 @@
 		<table name="#mpConsumes"> 227 236 245 255 265 276 286 296 306 316 </table>
 		<table name="#power"> 147 151 156 160 164 168 172 198 204 210 </table>
 		<set name="icon" val="icon.skill11263" />
-		<set name="power" val="#power" />
 		<set name="operateType" val="A1" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="targetType" val="AREA" />
@@ -528,7 +527,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11264" levels="4" name="Strong Will">
@@ -825,7 +826,6 @@
 		<table name="#power"> 1 1 </table> <!-- TODO -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
@@ -835,7 +835,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11276" levels="6" name="Dimensional Binding">
@@ -894,7 +896,6 @@
 		<set name="abnormalType" val="TARGET_LOCK" />
 		<set name="activateRate" val="100" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="HATE" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -906,7 +907,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
 		</for>
@@ -926,7 +929,6 @@
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="basicProperty" val="CON" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -936,7 +938,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -948,7 +952,6 @@
 		<table name="#power"> 10000 10508 11190 11872 12554 13236 13918 14600 15282 </table> <!-- Guessed from Feline Bite -->
 		<set name="icon" val="icon.skill0121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
@@ -958,7 +961,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="5000" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11281" levels="9" name="Cougar Pounce">
@@ -1030,7 +1035,6 @@
 		<set name="icon" val="icon.skill1171" />
 		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="500" />
@@ -1040,7 +1044,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11284" levels="4" name="Naviarope Smash">
@@ -1051,7 +1057,6 @@
 		<table name="#power"> 1 1 1 1 </table> <!-- TODO -->
 		<set name="icon" val="icon.skill0121" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
@@ -1061,7 +1066,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="10000" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11285" levels="4" name="Naviarope Power">
@@ -1073,7 +1080,6 @@
 		<set name="icon" val="icon.skill0121" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1760" />
@@ -1081,7 +1087,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="15000" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11286" levels="1" name="Forced Summon">
@@ -1192,7 +1200,6 @@
 		<set name="icon" val="icon.skill0028" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="70" />
 		<set name="hitTime" val="1200" />
@@ -1201,7 +1208,9 @@
 		<set name="effectPoint" val="-687" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11292" levels="8" name="Cubic Cleanse">
@@ -1351,7 +1360,6 @@
 		<table name="#power"> 168 170 175 180 185 189 194 199 222 228 234 </table>
 		<set name="icon" val="icon.skill11298" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
@@ -1361,7 +1369,9 @@
 		<set name="effectPoint" val="-500" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11299" levels="1" name="Servitor Balance Life">

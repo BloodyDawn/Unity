@@ -108,9 +108,8 @@
 		<set name="activateRate" val="50" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="icon" val="icon.skill10102" />
-		<set name="itemConsumeId" val="1785" />
+		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
 		<set name="itemConsumeCount" val="6" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AREA" />
@@ -127,6 +126,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param overHit="true" />
 			</effect>
 			<effect name="KnockDown">
@@ -154,7 +154,6 @@
 		<set name="lvlBonusRate" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="400" />
@@ -164,7 +163,9 @@
 		<set name="effectPoint" val="-828" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Debuff">
 				<sub stat="runSpd" val="100" />
 			</effect>

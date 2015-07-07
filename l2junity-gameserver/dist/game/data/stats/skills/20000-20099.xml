@@ -19,13 +19,13 @@
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="85" /> <!-- FIXME: value unconfirmed -->
 		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
-		<set name="power" val="3420" />
 		<set name="reuseDelay" val="5000" /> <!-- FIXME: value unconfirmed -->
 		<set name="rideState" val="NONE" />
 		<set name="effectPoint" val="-347" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="FatalBlow">
+				<param power="3420" />
 				<param chance="20" />
 				<param overHit="true" />
 			</effect>
@@ -38,13 +38,13 @@
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="85" /> <!-- FIXME: value unconfirmed -->
 		<set name="operateType" val="A1" />
-		<set name="power" val="3420" />
 		<set name="reuseDelay" val="5000" /> <!-- FIXME: value unconfirmed -->
 		<set name="rideState" val="NONE" />
 		<set name="effectPoint" val="-348" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="3420" />
 				<param overHit="true" />
 			</effect>
 		</for>
