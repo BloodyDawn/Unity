@@ -284,9 +284,9 @@
 		</for>
 	</skill>
 	<skill id="30010" levels="2" name="Windy Refuge">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- Updated to Ertheia -->
+		<!-- Updated to IO -->
 		<!-- Cancels all debuffs and recovers HP/MP for 10 sec. inside a refuge of wind. Cannot move. -->
+		<table name="#magicLvl"> 88 101 </table>
 		<set name="icon" val="icon.skill30010" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
@@ -295,6 +295,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="40" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
@@ -314,14 +315,16 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="30011" levels="12" name="Threatening Wind">
-		<!-- Updated to Ertheia -->
+	<skill id="30011" levels="15" name="Threatening Wind">
+		<!-- Updated to IO -->
 		<!-- Sends a slashing wind to brand target with Storm Sign Stage 3. Requires a sword or blunt Weapon. -->
-		<table name="#mpConsumes"> 31 31 32 32 33 33 34 34 34 34 34 35 </table>
+		<table name="#magicLvl"> 76 78 80 82 84 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 31 31 32 32 33 33 34 34 34 34 34 35 36 37 38  </table>
 		<set name="icon" val="icon.skill30011" />
 		<set name="affectRange" val="1400" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1200" />
@@ -338,11 +341,11 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="30012" levels="22" name="Air Rush">
-		<!-- Updated to Ertheia -->
+	<skill id="30012" levels="25" name="Air Rush">
+		<!-- Updated to IO -->
 		<!-- Knocks down target and attacks with 57 Power added to M. Atk. 10% more damage if target is debuffed. If target has Storm Sign, eliminates it and inflicts additional damage. Requires a sword or blunt weapon. -->
-		<table name="#mpConsumes"> 31 34 38 41 45 49 53 56 59 62 63 64 65 66 67 67 68 68 69 69 69 70 </table>
-		<table name="#power"> 57 66 74 83 92 101 110 118 127 136 141 145 150 154 376 397 418 438 459 480 501 522 </table>
+		<table name="#mpConsumes"> 31 34 38 41 45 49 53 56 59 62 63 64 65 66 67 67 68 68 69 69 69 70 71 72 73 </table>
+		<table name="#power"> 57 66 74 83 92 101 110 118 127 136 141 145 150 154 376 397 418 438 459 480 501 522 535 545 555 </table>
 		<set name="icon" val="icon.skill30012" />
 		<set name="abnormalTime" val="1" />
 		<set name="operateType" val="DA1" />
@@ -704,14 +707,14 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="30040" levels="11" name="Eminent Blunt Weapon Mastery">
-		<!-- Updated to Ertheia -->
+	<skill id="30040" levels="14" name="Eminent Blunt Weapon Mastery">
+		<!-- Updated to IO -->
 		<!-- When equipped with a blunt weapon, M. Atk. +17% and + 10, Casting Spd. + 5%. -->
-		<table name="#mAtkMul"> 1.17 1.17 1.17 1.17 1.17 1.17 1.17 1.40 1.40 1.40 1.40 </table>
-		<table name="#mAtkAdd"> 10 57 228 436 728 834 942 1050 1252 1454 1727 </table>
-		<table name="#mAtkSpd"> 1.05 1.05 1.10 1.10 1.10 1.15 1.20 1.30 1.30 1.30 1.30 </table>
-		<table name="#mCritRate"> 1 1 1 1 1 1 1 1.10 1.10 1.10 1.10 </table>
-		<table name="#mCritPower"> 1 1 1 1 1 1 1 1.10 1.10 1.10 1.10 </table>
+		<table name="#mAtkMul"> 1.17 1.17 1.17 1.17 1.17 1.17 1.17 1.40 1.40 1.40 1.40 1.40 1.40 1.40 </table>
+		<table name="#mAtkAdd"> 10 57 228 436 728 834 942 1963 2276 2638 2970 3365 3570 3787 </table>
+		<table name="#mAtkSpd"> 1.05 1.05 1.10 1.10 1.10 1.15 1.20 1.30 1.30 1.30 1.30 1.30 1.30 1.30 </table>
+		<table name="#mCritRate"> 1 1 1 1 1 1 1 1.10 1.10 1.10 1.10 1.10 1.10 1.10 </table>
+		<table name="#mCritPower"> 1 1 1 1 1 1 1 1.10 1.10 1.10 1.10 1.10 1.10 1.10 </table>
 		<set name="icon" val="icon.skill30023" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
@@ -751,42 +754,46 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="30041" levels="11" name="Eminent Robe Mastery">
-		<!-- Updated to Ertheia -->
+	<skill id="30041" levels="14" name="Eminent Robe Mastery">
+		<!-- Updated to IO -->
 		<!-- TODO: Block Shield and Sigil equip. -->
 		<!-- When equipped with a robe, P. Def. +7. Shields and Sigils are not worn, as you move with the wind. -->
-		<table name="#pDef"> 7 12 27 39 55 69 77 1238 1347 1456 1601 </table>
-		<table name="#mDefAdd"> 0 0 0 0 0 0 533 1156 1258 1360 1496 </table>
-		<table name="#mDefMul"> 1 1 1 1 1 1 1.03 1.05 1.05 1.05 1.05 </table>
-		<table name="#magicSuccRes"> 0 5 10 15 20 25 30 35 35 35 35 </table>
+		<table name="#pDefAdd"> 7 12 27 39 55 69 77 1333 1464 1608 1734 1943 2017 2093 </table>
+		<table name="#pDefMul"> 1 1 1 1 1 1 1 1.1 1.1 1.1 1.1 1.1 1.1 1.1 </table>
+		<table name="#mDefAdd"> 0 0 0 0 0 0 533 949 1073 1214 1340 1511 1588 1668 </table>
+		<table name="#mDefMul"> 1 1 1 1 1 1 1.03 1.1 1.1 1.1 1.1 1.1 1.1 1.1 </table>
+		<table name="#magicSuccRes"> 1 1.05 1.1 1.15 1.2 1.25 1.3 1.35 1.35 1.35 1.35 1.35 1.35 1.35 </table>
 		<set name="icon" val="icon.skill30024" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
+				<mul stat="pDef" val="#mDefMul">
 					<using kind="MAGIC" />
-				</add>
-				<add stat="mDef" val="#mDefAdd">
+				</mul>
+				<add stat="pDef" val="#pDef">
 					<using kind="MAGIC" />
 				</add>
 				<mul stat="mDef" val="#mDefMul">
 					<using kind="MAGIC" />
 				</mul>
+				<add stat="mDef" val="#mDefAdd">
+					<using kind="MAGIC" />
+				</add>
 				<mul stat="magicSuccRes" val="#magicSuccRes">
 					<using kind="MAGIC" />
 				</mul>
 			</effect>
 		</for>
 	</skill>
-	<skill id="30042" levels="7" name="Eminent Quick Recovery">
-		<!-- Updated to Ertheia -->
+	<skill id="30042" levels="10" name="Eminent Quick Recovery">
+		<!-- Updated to IO -->
 		<!-- Max. MP + 33, MP Recovery Bonus + 1, and M. Skill Cooldown - 10%. -->
-		<table name="#maxHp"> 0 0 0 4891 4891 4891 4891 </table>
-		<table name="#maxMp"> 33 77 223 344 411 478 568 </table>
-		<table name="#regMp"> 1 3 5 7 8 10 11 </table>
-		<table name="#mReuse"> 0.90 0.85 0.80 0.70 0.70 0.70 0.70 </table>
-		<table name="#MagicalMpConsumeRate"> 1 1 0.95 0.93 0.93 0.93 0.93 </table>
+		<table name="#maxHp"> 0 0 0 4891 4891 4891 4891 4891 4891 4891 </table>
+		<table name="#maxMp"> 33 77 223 692 758 827 883 897 925 954 </table>
+		<table name="#regMp"> 1 3 5 12 12 12 12 12 12 12 </table>
+		<table name="#mReuse"> 0.9 0.85 0.8 0.7 0.7 0.7 0.7 0.7 0.7 0.7 </table>
+		<table name="#MagicalMpConsumeRate"> 1 1 0.95 0.93 0.93 0.93 0.93 0.93 0.93 0.93 </table>
 		<table name="#icons"> icon.skill11004 icon.skill10504 icon.skill10504 icon.skill10504 icon.skill10504 icon.skill10504 icon.skill10504 </table>
 		<set name="icon" val="#icons" />
 		<set name="operateType" val="P" />
