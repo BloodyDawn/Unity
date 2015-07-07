@@ -3743,17 +3743,38 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 						}
 						case MAX_CP:
 						{
-							su.addAttribute(StatusUpdate.MAX_CP, getMaxCp());
+							if (isPlayer())
+							{
+								info.addComponentType(UserInfoType.MAX_HPCPMP);
+							}
+							else
+							{
+								su.addAttribute(StatusUpdate.MAX_CP, getMaxCp());
+							}
 							break;
 						}
 						case MAX_HP:
 						{
-							su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
+							if (isPlayer())
+							{
+								info.addComponentType(UserInfoType.MAX_HPCPMP);
+							}
+							else
+							{
+								su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
+							}
 							break;
 						}
 						case MAX_MP:
 						{
-							su.addAttribute(StatusUpdate.MAX_CP, getMaxMp());
+							if (isPlayer())
+							{
+								info.addComponentType(UserInfoType.MAX_HPCPMP);
+							}
+							else
+							{
+								su.addAttribute(StatusUpdate.MAX_CP, getMaxMp());
+							}
 							break;
 						}
 						case STAT_STR:
