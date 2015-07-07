@@ -187,7 +187,6 @@
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="570" />
 		<set name="magicLevel" val="#magicLvl" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isDebuff" val="true" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -196,6 +195,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
@@ -223,7 +223,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="470" />
@@ -235,6 +234,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="10" />
 				<param overHit="true" />
 			</effect>
@@ -256,7 +256,6 @@
 		<set name="activateRate" val="80" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="basicProperty" val="MEN" />
@@ -275,6 +274,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="10" />
 				<param overHit="true" />
 			</effect>
@@ -298,7 +298,6 @@
 		<set name="activateRate" val="50" />
 		<set name="basicProperty" val="CON" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="power" val="#power" />
 		<set name="trait" val="SHOCK" />
 		<set name="icon" val="icon.skill10011" />
 		<set name="operateType" val="A2" />
@@ -315,6 +314,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 			<effect name="Stun" />
@@ -335,7 +335,6 @@
 		<set name="activateRate" val="50" />
 		<set name="basicProperty" val="CON" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="power" val="#power" />
 		<set name="trait" val="SHOCK" />
 		<set name="icon" val="icon.skill10012" />
 		<set name="operateType" val="A2" />
@@ -352,6 +351,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param ignoreShieldDefence="true" />
 			</effect>
 			<effect name="Stun" />
@@ -368,7 +368,6 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="icon" val="icon.skill10013" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
@@ -383,6 +382,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param criticalChance="10" />
 				<param overHit="true" />
 			</effect>
@@ -402,7 +402,6 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="icon" val="icon.skill10014" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
@@ -414,6 +413,9 @@
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="healEffect" val="0.1" />
 			</effect>
 		</for>
@@ -642,7 +644,6 @@
 		<set name="affectRange" val="150" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="trait" val="KNOCKDOWN" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10023" />
@@ -658,6 +659,7 @@
 			<using kind="SHIELD" />
 		</cond>
 		<effect name="PhysicalDamage">
+			<param power="#power" />
 			<param overHit="true" />
 		</effect>
 		<effect name="KnockDown">
@@ -1095,7 +1097,6 @@
 		<set name="affectRange" val="150" />
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="400" />
@@ -1105,7 +1106,9 @@
 		<set name="effectPoint" val="-2" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="PhysicalMute" />
 		</for>
 	</skill>
@@ -1118,7 +1121,6 @@
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="fanRange" val="0,0,200,90" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
@@ -1127,7 +1129,9 @@
 		<set name="effectPoint" val="-2" />
 		<set name="reuseDelay" val="15000" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10053" levels="6" name="Lion Dash">
@@ -1147,7 +1151,6 @@
 		<set name="fanRange" val="0,0,500,60" />
 		<set name="flyType" val="CHARGE" />
 		<set name="operateType" val="DA2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="SHOCK" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1161,7 +1164,9 @@
 			<target mindistance="200" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -1174,7 +1179,6 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
@@ -1184,7 +1188,9 @@
 		<set name="effectPoint" val="-2" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10055" levels="1" name="Cubic Attack">
@@ -1664,7 +1670,6 @@
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="power" val="#power" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -1677,7 +1682,9 @@
 			<using kind="SHIELD" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Paralyze" />
 			<effect name="DefenceTrait">
 				<param PARALYZE="100" />
@@ -1750,7 +1757,6 @@
 		<set name="affectRange" val="150" />
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="PHYSICAL_BLOCKADE" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1760,7 +1766,9 @@
 		<set name="effectPoint" val="-2" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="PhysicalAttackMute" />
 		</for>
 	</skill>
@@ -1781,7 +1789,6 @@
 		<set name="fanRange" val="0,0,600,60" />
 		<set name="flyType" val="CHARGE" />
 		<set name="operateType" val="DA2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="SHOCK" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1795,7 +1802,9 @@
 			<target mindistance="200" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -1895,7 +1904,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
-		<set name="power" val="#power" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -1906,7 +1914,9 @@
 			<using kind="SHIELD" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="Paralyze" />
 			<effect name="DefenceTrait">
 				<param PARALYZE="100" />

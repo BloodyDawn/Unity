@@ -159,7 +159,6 @@
 		<!-- Feoh Storm Screamer Hell Binding (11150) attack -->
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="550" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3700" />
@@ -387,7 +386,6 @@
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -400,6 +398,7 @@
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalDamOverTime" ticks="1">
+				<param power="#power" />
 				<mul stat="pDef" val="0.70" />
 				<mul stat="mDef" val="0.70" />
 			</effect>
@@ -421,7 +420,6 @@
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -433,7 +431,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalDamOverTime" ticks="1" />
+			<effect name="MagicalDamOverTime" ticks="1">
+				<param power="#power" />
+			</effect>
 		</for>
 		<selfEffects>
 			<effect name="Heal">
@@ -489,7 +489,6 @@
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -501,7 +500,9 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="MagicalDamOverTime" ticks="1" />
+			<effect name="MagicalDamOverTime" ticks="1">
+				<param power="#power" />
+			</effect>
 			<effect name="SkillTurningOverTime" ticks="1">
 				<param chance="25" />
 			</effect>
@@ -718,7 +719,6 @@
 		<table name="#power"> 204 214 223 233 242 252 262 271 281 290 300 </table> <!-- TODO Taken from Mark of Weakness x2.4 (because level 2 power calculated in retail seems to be 214) -->
 		<set name="icon" val="icon.skill11271" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
@@ -729,12 +729,15 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAbnormalDispelAttack">
+				<param power="#power" />
 				<param abnormalType="MARK_OF_WEAKNESS" />
 			</effect>
 			<effect name="MagicalAbnormalDispelAttack">
+				<param power="#power" />
 				<param abnormalType="MARK_OF_PLAGUE" />
 			</effect>
 			<effect name="MagicalAbnormalDispelAttack">
+				<param power="#power" />
 				<param abnormalType="MARK_OF_TRICK" />
 			</effect>
 		</for>
