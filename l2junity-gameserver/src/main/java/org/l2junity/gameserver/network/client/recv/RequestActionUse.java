@@ -37,7 +37,6 @@ import org.l2junity.gameserver.instancemanager.AirShipManager;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2BabyPetInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
@@ -668,10 +667,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 				useSkill(activeChar, 6044, false);
 				break;
 			case 1084: // Switch State
-				if (pet instanceof L2BabyPetInstance)
-				{
-					useSkill(activeChar, SWITCH_STANCE_ID, true);
-				}
 				break;
 			case 1086: // Panther Cancel
 				useSkill(activeChar, 6094, false);
@@ -1073,15 +1068,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 			if (!validateSummon(player, summon, pet))
 			{
 				return;
-			}
-			
-			if (summon instanceof L2BabyPetInstance)
-			{
-				if (!((L2BabyPetInstance) summon).isInSupportMode())
-				{
-					player.sendPacket(SystemMessageId.A_PET_ON_AUXILIARY_MODE_CANNOT_USE_SKILLS);
-					return;
-				}
 			}
 			
 			if ((summon.getLevel() - player.getLevel()) > 20)

@@ -860,26 +860,11 @@ public class L2PetInstance extends Summon
 			{
 				if (!rset.next())
 				{
-					if (template.isType("L2BabyPet"))
-					{
-						pet = new L2BabyPetInstance(template, owner, control);
-					}
-					else
-					{
-						pet = new L2PetInstance(template, owner, control);
-					}
-					return pet;
+					return new L2PetInstance(template, owner, control);
 				}
-				
-				if (template.isType("L2BabyPet"))
-				{
-					pet = new L2BabyPetInstance(template, owner, control, rset.getByte("level"));
-				}
-				else
-				{
-					pet = new L2PetInstance(template, owner, control, rset.getByte("level"));
-				}
-				
+
+				pet = new L2PetInstance(template, owner, control, rset.getByte("level"));
+
 				pet._respawned = true;
 				pet.setName(rset.getString("name"));
 				
