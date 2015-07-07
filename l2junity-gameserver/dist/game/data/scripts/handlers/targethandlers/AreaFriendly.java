@@ -68,7 +68,7 @@ public class AreaFriendly implements ITargetTypeHandler
 		if (target != null)
 		{
 			int maxTargets = skill.getAffectLimit();
-			World.getInstance().forEachVisibleObject(target, Creature.class, skill.getAffectRange(), obj ->
+			World.getInstance().forEachVisibleObjectInRange(target, Creature.class, skill.getAffectRange(), obj ->
 			{
 				if (!checkTarget(activeChar, obj) || (obj == activeChar))
 				{

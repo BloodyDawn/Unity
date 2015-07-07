@@ -64,7 +64,7 @@ public class AdminKill implements IAdminCommandHandler
 						try
 						{
 							int radius = Integer.parseInt(st.nextToken());
-							World.getInstance().forEachVisibleObject(plyr, Creature.class, radius, knownChar ->
+							World.getInstance().forEachVisibleObjectInRange(plyr, Creature.class, radius, knownChar ->
 							{
 								if ((knownChar instanceof L2ControllableMobInstance) || (knownChar == activeChar))
 								{

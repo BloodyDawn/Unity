@@ -101,7 +101,7 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 		if (event.equals("fantasy_mushroom") && (npc != null) && (player != null))
 		{
 			npc.doCast(FANTASY_MUSHROOM_SKILL.getSkill());
-			World.getInstance().forEachVisibleObject(npc, Attackable.class, 200, monster ->
+			World.getInstance().forEachVisibleObjectInRange(npc, Attackable.class, 200, monster ->
 			{
 				npc.setTarget(monster);
 				npc.doCast(STUN_EFFECT.getSkill());

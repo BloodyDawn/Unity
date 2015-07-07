@@ -185,7 +185,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 				{
 					if ((damage > 0) && npc.isScriptValue(0))
 					{
-						World.getInstance().forEachVisibleObject(npc, L2MonsterInstance.class, 600, monster ->
+						World.getInstance().forEachVisibleObjectInRange(npc, L2MonsterInstance.class, 600, monster ->
 						{
 							monster.addDamageHate(npc, 0, 999);
 							monster.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, npc);

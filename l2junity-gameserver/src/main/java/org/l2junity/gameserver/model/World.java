@@ -564,7 +564,7 @@ public final class World
 		});
 	}
 	
-	public <T extends WorldObject> void forEachVisibleObject(ILocational locational, Class<T> clazz, int depth, Consumer<T> c)
+	private <T extends WorldObject> void forEachVisibleObject(ILocational locational, Class<T> clazz, int depth, Consumer<T> c)
 	{
 		if (locational == null)
 		{

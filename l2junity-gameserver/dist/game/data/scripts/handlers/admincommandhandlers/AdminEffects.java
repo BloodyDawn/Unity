@@ -402,7 +402,7 @@ public class AdminEffects implements IAdminCommandHandler
 				}
 				Team team = Team.valueOf(val.toUpperCase());
 				
-				World.getInstance().forEachVisibleObject(activeChar, PlayerInstance.class, radius, player -> player.setTeam(team));
+				World.getInstance().forEachVisibleObjectInRange(activeChar, PlayerInstance.class, radius, player -> player.setTeam(team));
 			}
 			catch (Exception e)
 			{

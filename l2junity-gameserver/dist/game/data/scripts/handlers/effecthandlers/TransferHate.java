@@ -63,7 +63,7 @@ public final class TransferHate extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		World.getInstance().forEachVisibleObject(info.getEffector(), Attackable.class, info.getSkill().getAffectRange(), hater ->
+		World.getInstance().forEachVisibleObjectInRange(info.getEffector(), Attackable.class, info.getSkill().getAffectRange(), hater ->
 		{
 			if (hater.isDead())
 			{

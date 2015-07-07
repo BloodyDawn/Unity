@@ -149,7 +149,7 @@ public class AdminRes implements IAdminCommandHandler
 			{
 				radius = Integer.parseInt(radiusStr);
 				
-				World.getInstance().forEachVisibleObject(activeChar, Creature.class, radius, knownChar ->
+				World.getInstance().forEachVisibleObjectInRange(activeChar, Creature.class, radius, knownChar ->
 				{
 					if (!(knownChar instanceof PlayerInstance) && !(knownChar instanceof L2ControllableMobInstance))
 					{

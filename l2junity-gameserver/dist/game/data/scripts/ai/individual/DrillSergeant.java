@@ -52,7 +52,7 @@ public final class DrillSergeant extends AbstractNpcAI
 			final int socialActionId = SOCIAL_ACTIONS[getRandom(SOCIAL_ACTIONS.length)];
 			npc.broadcastSocialAction(socialActionId);
 			
-			World.getInstance().forEachVisibleObject(npc, Npc.class, 500, chars ->
+			World.getInstance().forEachVisibleObjectInRange(npc, Npc.class, 500, chars ->
 			{
 				if (chars.getId() == GUARD)
 				{
