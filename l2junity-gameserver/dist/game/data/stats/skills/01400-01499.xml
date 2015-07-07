@@ -496,12 +496,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="TargetCancel">
 				<param chance="#chance" />
 			</effect>
@@ -550,13 +551,14 @@
 		<set name="mpInitialConsume" val="36" />
 		<set name="mpPerChanneling" val="80" />
 		<set name="operateType" val="CA1" />
-		<set name="power" val="500" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="GROUND" />
 		<channelingEffects>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="500" />
+			</effect>
 		</channelingEffects>
 	</skill>
 	<skill id="1420" levels="1" name="Cyclone">
@@ -579,13 +581,14 @@
 		<set name="mpInitialConsume" val="36" />
 		<set name="mpPerChanneling" val="80" />
 		<set name="operateType" val="CA1" />
-		<set name="power" val="500" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="GROUND" />
 		<channelingEffects>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="500" />
+			</effect>
 		</channelingEffects>
 	</skill>
 	<skill id="1421" levels="1" name="Raging Waves">
@@ -608,13 +611,14 @@
 		<set name="mpInitialConsume" val="36" />
 		<set name="mpPerChanneling" val="80" />
 		<set name="operateType" val="CA1" />
-		<set name="power" val="500" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="GROUND" />
 		<channelingEffects>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="500" />
+			</effect>
 		</channelingEffects>
 	</skill>
 	<skill id="1422" levels="1" name="Day of Doom">
@@ -659,13 +663,14 @@
 		<set name="mpInitialConsume" val="36" />
 		<set name="mpPerChanneling" val="80" />
 		<set name="operateType" val="CA1" />
-		<set name="power" val="500" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="GROUND" />
 		<channelingEffects>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="500" />
+			</effect>
 		</channelingEffects>
 	</skill>
 	<skill id="1424" levels="1" name="Anti-summoning Field">
@@ -680,7 +685,6 @@
 		<set name="mpConsume" val="70" />
 		<set name="mpInitialConsume" val="70" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="200" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
@@ -1398,7 +1402,6 @@
 		<set name="mpConsume" val="50" />
 		<set name="mpInitialConsume" val="50" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="1" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="simultaneousCast" val="true" />
@@ -1406,7 +1409,9 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalSoulAttack" />
+			<effect name="PhysicalSoulAttack">
+				<param power="1" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 		<selfEffects>
@@ -1455,13 +1460,14 @@
 		<set name="mpConsume" val="50" />
 		<set name="mpInitialConsume" val="50" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="200" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalSoulAttack" />
+			<effect name="MagicalSoulAttack">
+				<param power="200" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1451" levels="1" name="Over the Body">
@@ -1477,7 +1483,6 @@
 		<set name="mpConsume" val="80" />
 		<set name="mpInitialConsume" val="28" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="195" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -1485,7 +1490,9 @@
 			<target active_effect_id="1339" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="195" />
+			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="MULTI_DEBUFF_FIRE,9" />
 			</effect>
@@ -1534,7 +1541,6 @@
 		<set name="mpConsume" val="80" />
 		<set name="mpInitialConsume" val="28" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="195" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -1542,7 +1548,9 @@
 			<target active_effect_id="1340" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="195" />
+			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="MULTI_DEBUFF_WATER,9" />
 			</effect>
@@ -1567,12 +1575,13 @@
 		<set name="magicLvl" val="79" />
 		<set name="mpConsume" val="109" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="70" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="70" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.6" />
 			</effect>
@@ -1620,7 +1629,6 @@
 		<set name="mpConsume" val="80" />
 		<set name="mpInitialConsume" val="28" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="195" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
@@ -1628,7 +1636,9 @@
 			<target active_effect_id="1341" />
 		</cond>
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="195" />
+			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="MULTI_DEBUFF_WIND,9" />
 			</effect>
@@ -1783,13 +1793,14 @@
 		<set name="mpConsume" val="87" />
 		<set name="mpInitialConsume" val="22" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="80" />
 		<set name="reuseDelay" val="120000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="PHYSICAL_BLOCKADE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="80" />
+			</effect>
 			<effect name="PhysicalAttackMute" />
 		</for>
 	</skill>
@@ -1914,11 +1925,12 @@
 		<set name="magicLvl" val="81" />
 		<set name="mpInitialConsume" val="72" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="117" />
 		<set name="reuseDelay" val="300000" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="117" />
+			</effect>
 			<effect name="DamOverTime" ticks="3">
 				<param power="111" />
 			</effect>
@@ -1947,11 +1959,12 @@
 		<set name="magicLvl" val="81" />
 		<set name="mpInitialConsume" val="72" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="117" />
 		<set name="reuseDelay" val="300000" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="117" />
+			</effect>
 			<effect name="DamOverTime" ticks="3">
 				<param power="111" />
 			</effect>
@@ -1973,13 +1986,14 @@
 		<set name="mpConsume" val="68" />
 		<set name="mpInitialConsume" val="17" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="224" />
 		<set name="reuseDelay" val="45000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalSoulAttack" />
+			<effect name="MagicalSoulAttack">
+				<param power="224" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1470" levels="1" name="Prahnah">
@@ -2049,13 +2063,14 @@
 		<set name="mpInitialConsume" val="36" />
 		<set name="mpPerChanneling" val="30" />
 		<set name="operateType" val="CA1" />
-		<set name="power" val="30" />
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<channelingEffects>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="30" />
+			</effect>
 		</channelingEffects>
 	</skill>
 	<skill id="1473" levels="1" name="Change Weapon">
@@ -2711,13 +2726,13 @@
 		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="145" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="117" />
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="HpDrain">
+				<param power="117" />
 				<param percentage="20" />
 			</effect>
 			<effect name="Debuff">

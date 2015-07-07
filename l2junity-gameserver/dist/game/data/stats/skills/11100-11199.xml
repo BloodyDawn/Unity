@@ -928,7 +928,6 @@
 		<set name="channelingTickInterval" val="1" />
 		<set name="channelingTickInitialDelay" val="2" />
 		<set name="operateType" val="CA1" />
-		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -940,6 +939,7 @@
 		<set name="isDebuff" val="true" />
 		<channelingEffects>
 			<effect name="HpDrain">
+				<param power="#power" />
 				<param percentage="100" />
 			</effect>
 		</channelingEffects>
@@ -1035,7 +1035,6 @@
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="CA1" />
-		<set name="power" val="550" />
 		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="52" />
 		<set name="castRange" val="900" />
@@ -1045,6 +1044,7 @@
 		<set name="isMagic" val="1" />
 		<channelingEffects>
 			<effect name="HpDrain">
+				<param power="550" />
 				<param percentage="50" />
 			</effect>
 			<effect name="CallSkill">

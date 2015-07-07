@@ -153,7 +153,6 @@
 		<set name="itemConsumeId" val="8872" />
 		<set name="magicLvl" val="70" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="68" />
 		<set name="reuseDelay" val="10500" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
@@ -167,7 +166,9 @@
 			</not>
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="68" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5111" levels="1" name="Big Bang">

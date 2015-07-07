@@ -454,12 +454,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="HpDrain">
+				<param power="#power" />
 				<param percentage="40" />
 			</effect>
 		</for>
@@ -765,12 +765,12 @@
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="88" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="2957" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="2957" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -786,12 +786,12 @@
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="88" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="1774" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="1774" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -840,12 +840,13 @@
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="112" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="162" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="162" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="732" levels="1" name="Ranku Stun Attack">
@@ -868,13 +869,13 @@
 		<set name="mpConsume" val="19" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="1479" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="1479" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Stun" />
@@ -891,12 +892,12 @@
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="88" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="2957" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="2957" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -911,12 +912,12 @@
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="56" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="1812" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="1812" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -934,12 +935,13 @@
 		<set name="mpConsume" val="87" />
 		<set name="mpInitialConsume" val="22" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="162" />
 		<set name="reuseDelay" val="11000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="162" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="736" levels="1" name="Devil Seed">
@@ -1649,7 +1651,6 @@
 		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="8409" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -1662,6 +1663,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="8409" />
 				<param criticalChance="50" />
 				<param ignoreShieldDefence="true" />
 				<param overHit="true" />
@@ -1874,7 +1876,6 @@
 		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="160" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="8049" />
 		<set name="reuseDelay" val="75000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
@@ -1883,6 +1884,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="8049" />
 				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>
@@ -1904,7 +1906,6 @@
 		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="160" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="7043" />
 		<set name="reuseDelay" val="75000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
@@ -1913,6 +1914,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="7043" />
 				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>
@@ -1935,7 +1937,6 @@
 		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="160" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="8452" />
 		<set name="reuseDelay" val="75000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
@@ -1944,6 +1945,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="8452" />
 				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>
@@ -2067,7 +2069,6 @@
 		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="160" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="7475" />
 		<set name="reuseDelay" val="75000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
@@ -2079,6 +2080,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="7475" />
 				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>
@@ -2417,7 +2419,6 @@
 		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="120" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="7475" />
 		<set name="reuseDelay" val="75000" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
@@ -2427,6 +2428,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalSoulAttack">
+				<param power="7475" />
 				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>
@@ -2455,14 +2457,15 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="52" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="69" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="MagicalSoulAttack" />
+			<effect name="MagicalSoulAttack">
+				<param power="69" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="healEffect" val="#healEffect" />
 			</effect>
@@ -2595,12 +2598,12 @@
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="88" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="2322" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="2322" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -2615,12 +2618,13 @@
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="88" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="1900" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="1900" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="797" levels="1" name="Divine Rogue Piercing Attack">
@@ -2636,12 +2640,12 @@
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="88" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="2111" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="2111" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -2665,13 +2669,14 @@
 		<set name="mpConsume" val="88" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="1689" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="POISON" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="1689" />
+			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="69" />
 			</effect>

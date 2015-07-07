@@ -429,7 +429,6 @@
 		<set name="mpConsume" val="68" />
 		<set name="mpInitialConsume" val="17" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="195" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="soulMaxConsumeCount" val="5" />
@@ -438,7 +437,9 @@
 			<target active_effect_id="1512" />
 		</cond>
 		<for>
-			<effect name="MagicalSoulAttack" />
+			<effect name="MagicalSoulAttack">
+				<param power="195" />
+			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="MULTI_DEBUFF_SOUL,9" />
 			</effect>
@@ -905,12 +906,13 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpConsume_Init" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1531" levels="7" name="Blessed Blood">
@@ -1292,12 +1294,13 @@
 		<set name="mpConsume" val="58" />
 		<set name="mpInitialConsume" val="15" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="MagicalSoulAttack" />
+			<effect name="MagicalSoulAttack">
+				<param power="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1545" levels="1" name="Soul Sucking">
@@ -1317,13 +1320,14 @@
 		<set name="mpInitialConsume" val="36" />
 		<set name="mpPerChanneling" val="30" />
 		<set name="operateType" val="CA1" />
-		<set name="power" val="30" />
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<channelingEffects>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="30" />
+			</effect>
 		</channelingEffects>
 	</skill>
 	<skill id="1546" levels="1" name="Strider Fear">

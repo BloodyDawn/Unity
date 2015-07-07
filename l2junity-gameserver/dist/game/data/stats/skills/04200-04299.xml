@@ -440,11 +440,11 @@
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="60" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="57" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="HpDrain">
+				<param power="57" />
 				<param percentage="40" />
 			</effect>
 			<effect name="ManaDamOverTime">
@@ -797,7 +797,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="72" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.7" />
 			</effect>
@@ -1004,11 +1006,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
+				<param power="#power" />
 				<param percentage="20" />
 			</effect>
 		</for>
@@ -1292,12 +1294,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
+				<param power="#power" />
 				<param percentage="20" />
 			</effect>
 		</for>

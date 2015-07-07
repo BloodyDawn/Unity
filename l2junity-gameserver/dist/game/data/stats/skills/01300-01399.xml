@@ -1075,12 +1075,12 @@
 		<set name="mpConsume" val="84" />
 		<set name="mpInitialConsume" val="21" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="139" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
+				<param power="139" />
 				<param percentage="20" />
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">

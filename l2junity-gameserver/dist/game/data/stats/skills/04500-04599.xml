@@ -340,12 +340,13 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="76" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="56" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="56" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4530" levels="1" name="Heal">

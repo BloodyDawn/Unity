@@ -172,13 +172,13 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="#power" />
 				<param overHit="true" />
 			</effect>
 			<effect name="DamOverTime" ticks="5">
@@ -464,11 +464,12 @@
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="18162" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="18162" />
+			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.5" />
 				<mul stat="pAtkSpd" val="0.5" />
@@ -912,12 +913,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="165" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="38976" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="38976" />
+			</effect>
 			<effect name="CallSkill">
 				<param skillId="6662" skillLevel="2" />
 			</effect>
@@ -936,12 +938,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="166" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="45256" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="45256" />
+			</effect>
 			<effect name="CallSkill">
 				<param skillId="6662" skillLevel="2" />
 			</effect>
@@ -991,11 +994,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="168" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="18560" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="18560" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6279" levels="1" name="Attack Nearby Range">
@@ -1010,11 +1014,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="168" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="18560" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="18560" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6280" levels="1" name="Announcement of Death">
@@ -1051,11 +1056,12 @@
 		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="18560" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="18560" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6282" levels="1" name="Reflect Magic">
@@ -1089,11 +1095,12 @@
 		<set name="hitTime" val="3500" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="18560" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="18560" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6284" levels="1" name="Freya's Bless">
@@ -1424,12 +1431,13 @@
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="1547" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="1547" />
+			</effect>
 			<effect name="CallSkill">
 				<param skillId="6662" skillLevel="1" />
 			</effect>

@@ -600,13 +600,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="123" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="300" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="-10000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
+				<param power="300" />
 				<param percentage="100" />
 			</effect>
 		</for>
@@ -986,12 +986,12 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="200" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
+				<param power="200" />
 				<param percentage="100" />
 			</effect>
 		</for>
@@ -1058,12 +1058,12 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="123" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="100" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
+				<param power="100" />
 				<param percentage="100" />
 			</effect>
 		</for>
@@ -1271,12 +1271,12 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="100" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
+				<param power="100" />
 				<param percentage="100" />
 			</effect>
 		</for>
