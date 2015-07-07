@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
+import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -67,21 +68,15 @@ public class AreaFriendly implements ITargetTypeHandler
 		
 		if (target != null)
 		{
-			int maxTargets = skill.getAffectLimit();
-			World.getInstance().forEachVisibleObjectInRange(target, Creature.class, skill.getAffectRange(), obj ->
+			targetList = World.getInstance().getVisibleObjects(target, Creature.class, skill.getAffectRange(), o -> checkTarget(activeChar, o) && (o != activeChar));
+			if (skill.hasEffectType(L2EffectType.HEAL))
 			{
-				if (!checkTarget(activeChar, obj) || (obj == activeChar))
-				{
-					return;
-				}
-				
-				if ((maxTargets > 0) && (targetList.size() >= maxTargets))
-				{
-					return;
-				}
-				
-				targetList.add(obj);
-			});
+				targetList.sort(new CharComparator());
+			}
+			if (targetList.size() > skill.getAffectLimit())
+			{
+				targetList.subList(skill.getAffectLimit(), targetList.size()).clear();
+			}
 		}
 		
 		if (targetList.isEmpty())
