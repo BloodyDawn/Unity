@@ -35,9 +35,13 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public final class DeathLink extends AbstractEffect
 {
+	private final double _power;
+
 	public DeathLink(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
+
+		_power = params.getDouble("power", 0);
 	}
 	
 	@Override
@@ -73,7 +77,7 @@ public final class DeathLink extends AbstractEffect
 		
 		final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill()), info.getSkill(), target);
 		final byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		int damage = (int) Formulas.calcMagicDam(activeChar, target, info.getSkill(), shld, sps, bss, mcrit);
+		int damage = (int) Formulas.calcMagicDam(activeChar, target, info.getSkill(), _power * (-((activeChar.getCurrentHp() * 2) / activeChar.getMaxHp()) + 2), shld, sps, bss, mcrit);
 		
 		if (damage > 0)
 		{

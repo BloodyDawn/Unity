@@ -33,16 +33,17 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class MagicalDamOverTime extends AbstractEffect
 {
+	private final double _power;
 	private final boolean _canKill;
-	
+
 	// private final int _power; Uses skill power
 	
 	public MagicalDamOverTime(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-		
+
+		_power = params.getDouble("power", 0);
 		_canKill = params.getBoolean("canKill", false);
-		// _power = params.getInt("power", 0); Uses skill power
 	}
 	
 	@Override
@@ -69,7 +70,7 @@ public final class MagicalDamOverTime extends AbstractEffect
 		}
 		
 		final byte shld = 0; // No shield block is applied since this effect acts as a debuff.
-		int damage = (int) Formulas.calcMagicDam(activeChar, target, info.getSkill(), shld, false, false, false); // In retail spiritshots change nothing.
+		int damage = (int) Formulas.calcMagicDam(activeChar, target, info.getSkill(), _power, shld, false, false, false); // In retail spiritshots change nothing.
 		damage *= getTicksMultiplier();
 		
 		if (damage >= (target.getCurrentHp() - 1))

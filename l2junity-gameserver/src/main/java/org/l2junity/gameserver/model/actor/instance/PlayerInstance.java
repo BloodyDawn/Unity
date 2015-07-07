@@ -11907,7 +11907,7 @@ public final class PlayerInstance extends Playable
 		final BuffInfo info = getEffectList().getBuffInfoBySkillId(2274);
 		if (info != null)
 		{
-			skilllvl = (int) info.getSkill().getPower();
+			skilllvl = 1;//(int) info.getSkill().getPower();
 		}
 		if (skilllvl <= 0)
 		{

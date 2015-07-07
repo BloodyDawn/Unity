@@ -118,7 +118,6 @@ public final class EffectMasterHandler
 		HpByLevel.class,
 		HpCpHeal.class,
 		HpDrain.class,
-		HpMpDrain.class,
 		ImmobileBuff.class,
 		ImmobilePetBuff.class,
 		Invincible.class,

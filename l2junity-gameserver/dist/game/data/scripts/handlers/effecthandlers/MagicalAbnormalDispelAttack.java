@@ -36,11 +36,14 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public final class MagicalAbnormalDispelAttack extends AbstractEffect
 {
+	private final double _power;
 	private final AbnormalType _abnormalType;
 	
 	public MagicalAbnormalDispelAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
+
+		_power = params.getDouble("power", 0);
 		_abnormalType = AbnormalType.getAbnormalType(params.getString("abnormalType", null));
 	}
 	
@@ -83,7 +86,7 @@ public final class MagicalAbnormalDispelAttack extends AbstractEffect
 		boolean bss = info.getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill()), info.getSkill(), target);
 		final byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		int damage = (int) Formulas.calcMagicDam(activeChar, target, info.getSkill(), shld, sps, bss, mcrit);
+		int damage = (int) Formulas.calcMagicDam(activeChar, target, info.getSkill(), _power, shld, sps, bss, mcrit);
 		
 		if (damage > 0)
 		{

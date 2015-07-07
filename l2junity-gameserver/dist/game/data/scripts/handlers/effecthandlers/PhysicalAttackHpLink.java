@@ -37,6 +37,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class PhysicalAttackHpLink extends AbstractEffect
 {
+	private final double _power;
 	private final double _criticalChance;
 	private final boolean _overHit;
 	
@@ -44,6 +45,7 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 	{
 		super(attachCond, applyCond, set, params);
 		
+		_power = params.getDouble("power", 0);
 		_criticalChance = params.getDouble("criticalChance", 0);
 		_overHit = params.getBoolean("overHit", false);
 	}
@@ -100,7 +102,7 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 		
 		int damage = 0;
 		boolean ss = info.getSkill().isPhysical() && activeChar.isChargedShot(ShotType.SOULSHOTS);
-		damage = (int) Formulas.calcPhysDam(activeChar, target, info.getSkill(), shld, false, ss);
+		damage = (int) Formulas.calcPhysDam(activeChar, target, info.getSkill(), _power * (-((target.getCurrentHp() * 2) / target.getMaxHp()) + 2), shld, false, ss);
 		
 		if (damage > 0)
 		{

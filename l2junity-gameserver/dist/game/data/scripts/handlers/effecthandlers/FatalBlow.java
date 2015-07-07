@@ -35,6 +35,7 @@ import org.l2junity.gameserver.model.stats.Formulas;
  */
 public final class FatalBlow extends AbstractEffect
 {
+	private final double _power;
 	private final double _chance;
 	private final double _criticalChance;
 	private final boolean _overHit;
@@ -43,6 +44,7 @@ public final class FatalBlow extends AbstractEffect
 	{
 		super(attachCond, applyCond, set, params);
 		
+		_power = params.getDouble("power", 0);
 		_chance = params.getDouble("chance", 0);
 		_criticalChance = params.getDouble("criticalChance", 0);
 		_overHit = params.getBoolean("overHit", false);
@@ -84,7 +86,7 @@ public final class FatalBlow extends AbstractEffect
 		
 		boolean ss = info.getSkill().useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
 		byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		double damage = Formulas.calcBlowDamage(activeChar, target, info.getSkill(), shld, ss);
+		double damage = Formulas.calcBlowDamage(activeChar, target, info.getSkill(), _power, shld, ss);
 		
 		// Crit rate base crit rate for skill, modified with STR bonus
 		boolean crit = Formulas.calcCrit(_criticalChance * 10 * BaseStats.STR.calcBonus(activeChar), true, target);

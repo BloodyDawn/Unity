@@ -486,7 +486,7 @@ public final class Formulas
 		return 1.5; // If all is true, then modifier will be 50% more
 	}
 	
-	public static double calcBlowDamage(Creature attacker, Creature target, Skill skill, byte shld, boolean ss)
+	public static double calcBlowDamage(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean ss)
 	{
 		final double distance = attacker.calculateDistance(target, true, false);
 		if (distance > target.calcStat(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE, target, skill))
@@ -511,7 +511,6 @@ public final class Formulas
 		
 		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
 		final boolean isPvE = attacker.isPlayable() && target.isAttackable();
-		final double power = skill.getPower(isPvP, isPvE);
 		final double ssboost = ss ? 2 : 1;
 		final double proximityBonus = attacker.isBehindTarget(true) ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed);
 		double damage = 0;
@@ -562,7 +561,7 @@ public final class Formulas
 		if (attacker.isDebug())
 		{
 			final StatsSet set = new StatsSet();
-			set.set("skillPower", skill.getPower(isPvP, isPvE));
+			set.set("skillPower", power);
 			set.set("ssboost", ssboost);
 			set.set("proximityBonus", proximityBonus);
 			set.set("pvpBonus", pvpBonus);
@@ -583,7 +582,7 @@ public final class Formulas
 		return Math.max(damage, 1);
 	}
 	
-	public static double calcBackstabDamage(Creature attacker, Creature target, Skill skill, byte shld, boolean ss)
+	public static double calcBackstabDamage(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean ss)
 	{
 		final double distance = attacker.calculateDistance(target, true, false);
 		if (distance > target.calcStat(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE, target, skill))
@@ -622,7 +621,7 @@ public final class Formulas
 		}
 		
 		// Initial damage
-		double baseMod = ((77 * (skill.getPower(isPvP, isPvE) + attacker.getPAtk(target))) / defence) * ssboost;
+		double baseMod = ((77 * (power + attacker.getPAtk(target))) / defence) * ssboost;
 		// Critical
 		double criticalMod = (attacker.calcStat(Stats.CRITICAL_DAMAGE, 1, target, skill));
 		double criticalVulnMod = (target.calcStat(Stats.DEFENCE_CRITICAL_DAMAGE, 1, target, skill));
@@ -657,7 +656,7 @@ public final class Formulas
 		if (attacker.isDebug())
 		{
 			final StatsSet set = new StatsSet();
-			set.set("skillPower", skill.getPower(isPvP, isPvE));
+			set.set("skillPower", power);
 			set.set("ssboost", ssboost);
 			set.set("proximityBonus", proximityBonus);
 			set.set("pvpBonus", pvpBonus);
@@ -687,7 +686,7 @@ public final class Formulas
 	 * @param ss if weapon item was charged by soulshot
 	 * @return
 	 */
-	public static final double calcPhysDam(Creature attacker, Creature target, Skill skill, byte shld, boolean crit, boolean ss)
+	public static final double calcPhysDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean crit, boolean ss)
 	{
 		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
 		final boolean isPvE = attacker.isPlayable() && target.isAttackable();
@@ -724,7 +723,7 @@ public final class Formulas
 		
 		// Add soulshot boost.
 		int ssBoost = ss ? 2 : 1;
-		damage = (skill != null) ? ((damage * ssBoost) + skill.getPower(attacker, target, isPvP, isPvE)) : (damage * ssBoost);
+		damage = (skill != null) ? ((damage * ssBoost) + power) : (damage * ssBoost);
 		
 		if (crit)
 		{
@@ -845,7 +844,7 @@ public final class Formulas
 		return damage;
 	}
 	
-	public static final double calcMagicDam(Creature attacker, Creature target, Skill skill, byte shld, boolean sps, boolean bss, boolean mcrit)
+	public static final double calcMagicDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean sps, boolean bss, boolean mcrit)
 	{
 		final double distance = attacker.calculateDistance(target, true, false);
 		
@@ -888,7 +887,7 @@ public final class Formulas
 		// Bonus Spirit shot
 		mAtk *= bss ? 4 : sps ? 2 : 1;
 		// MDAM Formula.
-		double damage = ((91 * Math.sqrt(mAtk)) / mDef) * skill.getPower(attacker, target, isPvP, isPvE);
+		double damage = ((91 * Math.sqrt(mAtk)) / mDef) * power;
 		
 		// Failure calculation
 		if (Config.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(attacker, target, skill))
@@ -967,7 +966,7 @@ public final class Formulas
 		return damage;
 	}
 	
-	public static final double calcMagicDam(L2CubicInstance attacker, Creature target, Skill skill, boolean mcrit, byte shld)
+	public static final double calcMagicDam(L2CubicInstance attacker, Creature target, Skill skill, double power, boolean mcrit, byte shld)
 	{
 		int mDef = target.getMDef(attacker.getOwner(), skill);
 		switch (shld)
@@ -984,7 +983,7 @@ public final class Formulas
 		final boolean isPvE = target.isAttackable();
 		
 		// Cubics MDAM Formula (similar to PDAM formula, but using 91 instead of 70, also resisted by mDef).
-		double damage = 91 * ((mAtk + skill.getPower(isPvP, isPvE)) / mDef);
+		double damage = 91 * ((91 * Math.sqrt(mAtk)) / mDef) * power;
 		
 		// Failure calculation
 		PlayerInstance owner = attacker.getOwner();
@@ -1516,7 +1515,7 @@ public final class Formulas
 		return (Rnd.get(100) < rate);
 	}
 	
-	public static double calcManaDam(Creature attacker, Creature target, Skill skill, byte shld, boolean sps, boolean bss, boolean mcrit)
+	public static double calcManaDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean sps, boolean bss, boolean mcrit)
 	{
 		// Formula: (SQR(M.Atk)*Power*(Target Max MP/97))/M.Def
 		double mAtk = attacker.getMAtk(target, skill);
@@ -1537,7 +1536,7 @@ public final class Formulas
 		// Bonus Spiritshot
 		mAtk *= bss ? 4 : sps ? 2 : 1;
 		
-		double damage = (Math.sqrt(mAtk) * skill.getPower(attacker, target, isPvP, isPvE) * (mp / 97)) / mDef;
+		double damage = (Math.sqrt(mAtk) * power * (mp / 97)) / mDef;
 		damage *= calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
 		
 		if (target.isAttackable())

@@ -37,6 +37,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class PhysicalSoulAttack extends AbstractEffect
 {
+	private final double _power;
 	private final double _criticalChance;
 	private final boolean _ignoreShieldDefence;
 	private final boolean _overHit;
@@ -45,6 +46,7 @@ public final class PhysicalSoulAttack extends AbstractEffect
 	{
 		super(attachCond, applyCond, set, params);
 		
+		_power = params.getDouble("power", 0);
 		_criticalChance = params.getDouble("criticalChance", 0);
 		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);
 		_overHit = params.getBoolean("overHit", false);
@@ -107,7 +109,7 @@ public final class PhysicalSoulAttack extends AbstractEffect
 			((Attackable) target).overhitEnabled(true);
 		}
 		
-		damage = (int) Formulas.calcPhysDam(activeChar, target, info.getSkill(), shld, false, ss);
+		damage = (int) Formulas.calcPhysDam(activeChar, target, info.getSkill(), _power, shld, false, ss);
 		
 		if ((info.getSkill().getMaxSoulConsumeCount() > 0) && activeChar.isPlayer())
 		{

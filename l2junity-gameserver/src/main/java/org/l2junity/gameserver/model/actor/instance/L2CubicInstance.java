@@ -564,36 +564,8 @@ public final class L2CubicInstance implements IIdentifiable
 					continue;
 				}
 			}
-			
-			boolean mcrit = Formulas.calcMCrit(_owner.getMCriticalHit(target, skill), skill, target);
-			byte shld = Formulas.calcShldUse(_owner, target, skill);
-			int damage = (int) Formulas.calcMagicDam(this, target, skill, mcrit, shld);
-			
-			if (Config.DEBUG)
-			{
-				_log.info("L2SkillMdam: useCubicSkill() -> damage = " + damage);
-			}
-			
-			if (damage > 0)
-			{
-				// Manage attack or cast break of the target (calculating rate, sending message...)
-				if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
-				{
-					target.breakAttack();
-					target.breakCast();
-				}
-				
-				// Shield Deflect Magic: If target is reflecting the skill then no damage is done.
-				if (target.getStat().calcStat(Stats.VENGEANCE_SKILL_MAGIC_DAMAGE, 0, target, skill) > Rnd.get(100))
-				{
-					damage = 0;
-				}
-				else
-				{
-					_owner.sendDamageMessage(target, damage, mcrit, false, false);
-					target.reduceCurrentHp(damage, _owner, skill);
-				}
-			}
+
+			skill.applyEffects(_owner, target);
 		}
 	}
 	
@@ -611,34 +583,7 @@ public final class L2CubicInstance implements IIdentifiable
 				continue;
 			}
 			
-			boolean mcrit = Formulas.calcMCrit(_owner.getMCriticalHit(target, skill), skill, target);
-			byte shld = Formulas.calcShldUse(_owner, target, skill);
-			
-			int damage = (int) Formulas.calcMagicDam(this, target, skill, mcrit, shld);
-			if (Config.DEBUG)
-			{
-				_log.info("L2SkillDrain: useCubicSkill() -> damage = " + damage);
-			}
-			
-			// TODO: Unhardcode fixed value
-			double hpAdd = (0.4 * damage);
-			double hp = ((_owner.getCurrentHp() + hpAdd) > _owner.getMaxHp() ? _owner.getMaxHp() : (_owner.getCurrentHp() + hpAdd));
-			
-			_owner.setCurrentHp(hp);
-			
-			// Check to see if we should damage the target
-			if ((damage > 0) && !target.isDead())
-			{
-				target.reduceCurrentHp(damage, _owner, skill);
-				
-				// Manage attack or cast break of the target (calculating rate, sending message...)
-				if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
-				{
-					target.breakAttack();
-					target.breakCast();
-				}
-				_owner.sendDamageMessage(target, damage, mcrit, false, false);
-			}
+			skill.applyEffects(_owner, target);
 		}
 	}
 	

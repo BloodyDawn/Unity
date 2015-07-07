@@ -35,13 +35,15 @@ import org.l2junity.gameserver.model.stats.Formulas;
  */
 public final class SoulBlow extends AbstractEffect
 {
+	private final double _power;
 	private final double _chance;
 	private final boolean _overHit;
 	
 	public SoulBlow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-		
+
+		_power = params.getDouble("power", 0);
 		_chance = params.getDouble("chance", 0);
 		_overHit = params.getBoolean("overHit", false);
 	}
@@ -85,7 +87,7 @@ public final class SoulBlow extends AbstractEffect
 		
 		boolean ss = info.getSkill().useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
 		byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		double damage = Formulas.calcBlowDamage(activeChar, target, info.getSkill(), shld, ss);
+		double damage = Formulas.calcBlowDamage(activeChar, target, info.getSkill(), _power, shld, ss);
 		if ((info.getSkill().getMaxSoulConsumeCount() > 0) && activeChar.isPlayer())
 		{
 			// Souls Formula (each soul increase +4%)

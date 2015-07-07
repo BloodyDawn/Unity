@@ -100,7 +100,7 @@ public class CubicHeal implements Runnable
 				final Creature target = _cubic.getTarget();
 				if ((target != null) && !target.isDead())
 				{
-					if ((target.getMaxHp() - target.getCurrentHp()) > skill.getPower())
+					if ((target.getMaxHp() - target.getCurrentHp()) > 10)
 					{
 						Creature[] targets =
 						{

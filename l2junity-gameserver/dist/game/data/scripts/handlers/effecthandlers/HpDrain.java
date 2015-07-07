@@ -33,12 +33,14 @@ import org.l2junity.gameserver.model.stats.Formulas;
  */
 public final class HpDrain extends AbstractEffect
 {
+	private final double _power;
 	private final double _percentage;
-	
+
 	public HpDrain(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
+		_power = params.getDouble("power", 0);
 		_percentage = params.getDouble("percentage", 0);
 	}
 	
@@ -70,7 +72,7 @@ public final class HpDrain extends AbstractEffect
 		boolean bss = info.getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill()), info.getSkill(), target);
 		byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		int damage = (int) Formulas.calcMagicDam(activeChar, target, info.getSkill(), shld, sps, bss, mcrit);
+		int damage = (int) Formulas.calcMagicDam(activeChar, target, info.getSkill(), _power, shld, sps, bss, mcrit);
 		
 		int drain = 0;
 		int cp = (int) target.getCurrentCp();

@@ -136,10 +136,6 @@ public final class Skill implements IIdentifiable
 	
 	/** Target type of the skill : SELF, PARTY, CLAN, PET... */
 	private final L2TargetType _targetType;
-	// base success chance
-	private final double _power;
-	private final double _pvpPower;
-	private final double _pvePower;
 	private final int _magicLevel;
 	private final int _lvlBonusRate;
 	private final int _activateRate;
@@ -321,9 +317,6 @@ public final class Skill implements IIdentifiable
 		}
 		
 		_targetType = set.getEnum("targetType", L2TargetType.class, L2TargetType.SELF);
-		_power = set.getFloat("power", 0.f);
-		_pvpPower = set.getFloat("pvpPower", (float) getPower());
-		_pvePower = set.getFloat("pvePower", (float) getPower());
 		_magicLevel = set.getInt("magicLvl", 0);
 		_lvlBonusRate = set.getInt("lvlBonusRate", 0);
 		_activateRate = set.getInt("activateRate", -1);
@@ -446,43 +439,6 @@ public final class Skill implements IIdentifiable
 	public boolean allowOnTransform()
 	{
 		return isPassive();
-	}
-	
-	/**
-	 * Return the power of the skill.
-	 * @param activeChar
-	 * @param target
-	 * @param isPvP
-	 * @param isPvE
-	 * @return
-	 */
-	public double getPower(Creature activeChar, Creature target, boolean isPvP, boolean isPvE)
-	{
-		if (activeChar == null)
-		{
-			return getPower(isPvP, isPvE);
-		}
-		
-		if (hasEffectType(L2EffectType.DEATH_LINK))
-		{
-			return getPower(isPvP, isPvE) * (-((activeChar.getCurrentHp() * 2) / activeChar.getMaxHp()) + 2);
-		}
-		
-		if (hasEffectType(L2EffectType.PHYSICAL_ATTACK_HP_LINK))
-		{
-			return getPower(isPvP, isPvE) * (-((target.getCurrentHp() * 2) / target.getMaxHp()) + 2);
-		}
-		return getPower(isPvP, isPvE);
-	}
-	
-	public double getPower()
-	{
-		return _power;
-	}
-	
-	public double getPower(boolean isPvP, boolean isPvE)
-	{
-		return isPvE ? _pvePower : isPvP ? _pvpPower : _power;
 	}
 	
 	/**
