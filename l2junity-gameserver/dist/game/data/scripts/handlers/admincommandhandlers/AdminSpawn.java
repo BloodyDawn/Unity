@@ -31,7 +31,6 @@ import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
-import org.l2junity.gameserver.model.AutoSpawnHandler;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
@@ -226,7 +225,6 @@ public class AdminSpawn implements IAdminCommandHandler
 			NpcData.getInstance().load();
 			SpawnTable.getInstance().load();
 			RaidBossSpawnManager.getInstance().load();
-			AutoSpawnHandler.getInstance().reload();
 			QuestManager.getInstance().reloadAllScripts();
 			AdminData.getInstance().broadcastMessageToGMs("NPC Respawn completed!");
 		}

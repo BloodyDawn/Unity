@@ -122,7 +122,6 @@ import org.l2junity.gameserver.instancemanager.SiegeGuardManager;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
-import org.l2junity.gameserver.model.AutoSpawnHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.events.EventDispatcher;
@@ -322,13 +321,7 @@ public class GameServer
 		}
 		
 		MonsterRace.getInstance();
-		AutoSpawnHandler.getInstance();
-		
 		FaenorScriptEngine.getInstance();
-		// Init of a cursed weapon manager
-		
-		LOGGER.info("AutoSpawnHandler: Loaded {} handlers in total.", AutoSpawnHandler.getInstance().size());
-		
 		TaskManager.getInstance();
 		
 		AntiFeedManager.getInstance().registerEvent(AntiFeedManager.GAME_ID);
