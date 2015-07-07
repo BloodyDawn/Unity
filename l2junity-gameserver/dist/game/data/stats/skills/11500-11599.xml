@@ -1184,26 +1184,36 @@
 		</for>
 	</skill>
 	<skill id="11546" levels="4" name="Chaos Symphony">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts 38826 damage on target and nearby enemies. Decreases nearby enemies' P. Atk., P. Def., M. Atk., M. Def. and Speed by 50% for 10 seconds. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
+		<table name="#magicLvl"> 99 101 103 105 </table>
+		<table name="#power"> 38826 44708 46888 49068 </table>
 		<set name="icon" val="icon.skill11533" />
 		<set name="abnormalTime" val="10" />
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="200" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="1767" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="-707" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD, DUAL, DUALBLUNT" />
+		</cond>
 		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+				<param criticalChance="15" />
+				<param overHit="true"/>
+			</effect>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="0.50" />
-				<mul stat="pDef" val="0.50" />
-				<mul stat="mAtk" val="0.50" />
-				<mul stat="mDef" val="0.50" />
-				<mul stat="runSpd" val="0.50" />
+				<mul stat="pAtk" val="0.5" />
+				<mul stat="pDef" val="0.5" />
+				<mul stat="mAtk" val="0.5" />
+				<mul stat="mDef" val="0.5" />
+				<mul stat="runSpd" val="0.5" />
 			</effect>
 		</for>
 	</skill>

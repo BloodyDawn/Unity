@@ -660,9 +660,10 @@
 		</for>
 	</skill>
 	<skill id="30029" levels="4" name="Divine Storm">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- Updated to Ertheia -->
+		<!-- Updated to IO -->
 		<!-- Attacks nearby target with 448 Power added to M. Atk. and locks them inside a storm for 5 sec. 10% more damage if target is debuffed. Requires a sword or blunt weapon. -->
+		<table name="#magicLvl"> 98 101 103 105 </table>
+		<table name="#power"> 448 465 473 481 </table>
 		<set name="icon" val="icon.iconskill30007" />
 		<set name="abnormalTime" val="5" /> <!-- Unconfirmed -->
 		<set name="affectLimit" val="10-10" /> <!-- Unconfirmed -->
@@ -670,6 +671,7 @@
 		<set name="effectPoint" val="-707" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="1405" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
@@ -681,9 +683,10 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack">
-				<param power="448" />
+				<param power="#power" />
 			</effect>
 			<!-- TODO Lock inside storm for 5sec. -->
+			<!-- 10% more damage if target is debuffed. -->
 		</for>
 	</skill>
 	<skill id="30030" levels="1" name="Storm Captivity">
@@ -771,7 +774,7 @@
 				<mul stat="pDef" val="#mDefMul">
 					<using kind="MAGIC" />
 				</mul>
-				<add stat="pDef" val="#pDef">
+				<add stat="pDef" val="#pDefAdd">
 					<using kind="MAGIC" />
 				</add>
 				<mul stat="mDef" val="#mDefMul">
@@ -794,8 +797,7 @@
 		<table name="#regMp"> 1 3 5 12 12 12 12 12 12 12 </table>
 		<table name="#mReuse"> 0.9 0.85 0.8 0.7 0.7 0.7 0.7 0.7 0.7 0.7 </table>
 		<table name="#MagicalMpConsumeRate"> 1 1 0.95 0.93 0.93 0.93 0.93 0.93 0.93 0.93 </table>
-		<table name="#icons"> icon.skill11004 icon.skill10504 icon.skill10504 icon.skill10504 icon.skill10504 icon.skill10504 icon.skill10504 </table>
-		<set name="icon" val="#icons" />
+		<set name="icon" val="icon.skill10504" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>

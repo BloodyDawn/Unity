@@ -948,14 +948,14 @@
 		</for>
 	</skill>
 	<skill id="10781" levels="4" name="Phoenix Arrow">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Shoots a magical arrow to obliterate an area. Attacks targets within the skill's range with 45215 power. -->
+		<table name="#magicLvl"> 95 101 103 105 </table>
 		<table name="#power"> 45215 56558 59316 62074 </table>
 		<set name="icon" val="icon.skill10781" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="GROUND" />
+		<set name="#magicLvl" val="magicLvl" />
 		<set name="mpConsume" val="1067" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="7500" />
