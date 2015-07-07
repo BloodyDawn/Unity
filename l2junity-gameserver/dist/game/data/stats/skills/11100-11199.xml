@@ -940,7 +940,7 @@
 		<set name="isDebuff" val="true" />
 		<channelingEffects>
 			<effect name="HpDrain">
-				<param power="1.00" />
+				<param percentage="100" />
 			</effect>
 		</channelingEffects>
 	</skill>
@@ -1045,7 +1045,7 @@
 		<set name="isMagic" val="1" />
 		<channelingEffects>
 			<effect name="HpDrain">
-				<param power="0.50" />
+				<param percentage="50" />
 			</effect>
 			<effect name="CallSkill">
 				<param skillId="11140" skillLevel="1" skillLevelScaleTo="5" /> <!-- Black Shackle -->

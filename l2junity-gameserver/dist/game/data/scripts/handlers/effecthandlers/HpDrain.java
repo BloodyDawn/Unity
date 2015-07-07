@@ -33,13 +33,13 @@ import org.l2junity.gameserver.model.stats.Formulas;
  */
 public final class HpDrain extends AbstractEffect
 {
-	private final double _power;
+	private final double _percentage;
 	
 	public HpDrain(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
-		_power = params.getDouble("power", 0);
+		_percentage = params.getDouble("percentage", 0);
 	}
 	
 	@Override
@@ -89,7 +89,7 @@ public final class HpDrain extends AbstractEffect
 			drain = damage;
 		}
 		
-		final double hpAdd = (_power * drain);
+		final double hpAdd = ((_percentage / 100) * drain);
 		final double hpFinal = ((activeChar.getCurrentHp() + hpAdd) > activeChar.getMaxHp() ? activeChar.getMaxHp() : (activeChar.getCurrentHp() + hpAdd));
 		activeChar.setCurrentHp(hpFinal);
 		

@@ -788,7 +788,7 @@
 		<set name="isDebuff" val="true" />
 		<channelingEffects>
 			<effect name="HpDrain">
-				<param power="1.00" />
+				<param percentage="100" />
 			</effect>
 		</channelingEffects>
 	</skill>
@@ -1280,7 +1280,7 @@
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="HpDrain">
-				<param power="0.25" />
+				<param percentage="25" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="mAtk" val="0.7" />
