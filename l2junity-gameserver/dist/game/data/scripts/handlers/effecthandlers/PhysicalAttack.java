@@ -53,7 +53,7 @@ public final class PhysicalAttack extends AbstractEffect
 	public PhysicalAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_power = params.getDouble("power", 0);
 		_pAtkMod = params.getDouble("pAtkMod", 1.0);
 		_pDefMod = params.getDouble("pDefMod", 1.0);
@@ -150,7 +150,6 @@ public final class PhysicalAttack extends AbstractEffect
 		final Creature target = info.getEffected();
 		final Skill skill = info.getSkill();
 		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
-		final boolean isPvE = attacker.isPlayable() && target.isAttackable();
 		double damage = attacker.getPAtk(target);
 		double defence = target.getPDef(attacker);
 		boolean ss = info.getSkill().isPhysical() && attacker.isChargedShot(ShotType.SOULSHOTS);

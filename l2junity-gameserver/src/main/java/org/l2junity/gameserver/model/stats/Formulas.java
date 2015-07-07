@@ -510,7 +510,6 @@ public final class Formulas
 		}
 		
 		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
-		final boolean isPvE = attacker.isPlayable() && target.isAttackable();
 		final double ssboost = ss ? 2 : 1;
 		final double proximityBonus = attacker.isBehindTarget(true) ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed);
 		double damage = 0;
@@ -606,7 +605,6 @@ public final class Formulas
 		}
 		
 		boolean isPvP = attacker.isPlayable() && target.isPlayer();
-		boolean isPvE = attacker.isPlayable() && target.isAttackable();
 		double damage = 0;
 		double proximityBonus = attacker.isBehindTarget(true) ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed)
 		double ssboost = ss ? 2 : 1;
@@ -681,6 +679,7 @@ public final class Formulas
 	 * @param attacker player or NPC that makes ATTACK
 	 * @param target player or NPC, target of ATTACK
 	 * @param skill
+	 * @param power
 	 * @param shld
 	 * @param crit if the ATTACK have critical success
 	 * @param ss if weapon item was charged by soulshot
@@ -689,7 +688,6 @@ public final class Formulas
 	public static final double calcPhysDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean crit, boolean ss)
 	{
 		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
-		final boolean isPvE = attacker.isPlayable() && target.isAttackable();
 		double damage = attacker.getPAtk(target);
 		double defence = target.getPDef(attacker);
 		final double distance = attacker.calculateDistance(target, true, false);
@@ -869,7 +867,6 @@ public final class Formulas
 		
 		int mAtk = attacker.getMAtk(target, skill);
 		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
-		final boolean isPvE = attacker.isPlayable() && target.isAttackable();
 		
 		// PvP bonuses for defense
 		if (isPvP)
@@ -979,8 +976,6 @@ public final class Formulas
 		}
 		
 		int mAtk = attacker.getCubicPower();
-		final boolean isPvP = target.isPlayable();
-		final boolean isPvE = target.isAttackable();
 		
 		// Cubics MDAM Formula (similar to PDAM formula, but using 91 instead of 70, also resisted by mDef).
 		double damage = 91 * ((91 * Math.sqrt(mAtk)) / mDef) * power;
@@ -1520,8 +1515,6 @@ public final class Formulas
 		// Formula: (SQR(M.Atk)*Power*(Target Max MP/97))/M.Def
 		double mAtk = attacker.getMAtk(target, skill);
 		double mDef = target.getMDef(attacker, skill);
-		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
-		final boolean isPvE = attacker.isPlayable() && target.isAttackable();
 		double mp = target.getMaxMp();
 		
 		switch (shld)
