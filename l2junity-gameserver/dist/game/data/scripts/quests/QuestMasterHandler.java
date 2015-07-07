@@ -276,6 +276,7 @@ import quests.Q10780_AWeakenedBarrier.Q10780_AWeakenedBarrier;
 import quests.Q10781_IngredientsToEnforcements.Q10781_IngredientsToEnforcements;
 import quests.Q10782_LettersFromTheQueenForsakenPlains.Q10782_LettersFromTheQueenForsakenPlains;
 import quests.Q10783_TracesOfAnAmbush.Q10783_TracesOfAnAmbush;
+import quests.Q10784_TheBrokenDevice.Q10784_TheBrokenDevice;
 
 /**
  * @author NosBit
@@ -540,7 +541,8 @@ public class QuestMasterHandler
 		Q10780_AWeakenedBarrier.class,
 		Q10781_IngredientsToEnforcements.class,
 		Q10782_LettersFromTheQueenForsakenPlains.class,
-		Q10783_TracesOfAnAmbush.class
+		Q10783_TracesOfAnAmbush.class,
+		Q10784_TheBrokenDevice.class
 	};
 	
 	public static void main(String[] args)
