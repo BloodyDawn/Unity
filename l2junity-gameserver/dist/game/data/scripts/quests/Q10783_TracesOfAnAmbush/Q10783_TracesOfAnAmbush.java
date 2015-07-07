@@ -48,6 +48,8 @@ public final class Q10783_TracesOfAnAmbush extends Quest
 		21020, // Fallen Orc Shaman
 		21021, // Sharp Talon Tiger
 		21022, // Fallen Orc Captain
+		21258, // Fallen Orc Shaman
+		21259, // Fallen Orc Shaman
 	};
 	// Items
 	private static final int MISSIVE_SCRAPS = 39722;
@@ -63,7 +65,8 @@ public final class Q10783_TracesOfAnAmbush extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 58;
 	private static final int MAX_LEVEL = 61;
-	private static final int SPAWN_RATE = 80;
+	private static final int SPAWN_RATE = 70;
+	private static final int DROP_RATE = 80;
 	
 	public Q10783_TracesOfAnAmbush()
 	{
@@ -141,14 +144,17 @@ public final class Q10783_TracesOfAnAmbush extends Quest
 		{
 			if (npc.getId() == EMBRYO_PREDATOR)
 			{
-				giveItems(killer, MISSIVE_SCRAPS, 1);
-				if (getQuestItemsCount(killer, MISSIVE_SCRAPS) >= 10)
+				if (getRandom(100) < DROP_RATE)
 				{
-					qs.setCond(2, true);
-				}
-				else
-				{
-					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					giveItems(killer, MISSIVE_SCRAPS, 1);
+					if (getQuestItemsCount(killer, MISSIVE_SCRAPS) >= 10)
+					{
+						qs.setCond(2, true);
+					}
+					else
+					{
+						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
 				}
 			}
 			else if (getRandom(100) < SPAWN_RATE)
