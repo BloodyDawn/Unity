@@ -23,6 +23,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.entity.Auction;
 import org.slf4j.Logger;
@@ -33,7 +34,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class AuctionManager
 {
-	protected static final Logger _log = LoggerFactory.getLogger(AuctionManager.class);
+	protected static final Logger LOGGER = LoggerFactory.getLogger(AuctionManager.class);
 	private final List<Auction> _auctions = new ArrayList<>();
 	
 	private static final String[] ITEM_INIT_DATA =
@@ -107,11 +108,11 @@ public final class AuctionManager
 			{
 				_auctions.add(new Auction(rs.getInt("id")));
 			}
-			_log.info(getClass().getSimpleName() + ": Loaded: " + _auctions.size() + " auction(s)");
+			LOGGER.info("Loaded: {} auction(s)", _auctions.size());
 		}
 		catch (Exception e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Exception: AuctionManager.load(): " + e.getMessage(), e);
+			LOGGER.warn("Exception: AuctionManager.load(): ", e);
 		}
 	}
 	
@@ -160,7 +161,7 @@ public final class AuctionManager
 		}
 		if ((i >= ItemInitDataId.length) || (ItemInitDataId[i] != id))
 		{
-			_log.warn(getClass().getSimpleName() + ": Clan Hall auction not found for Id :" + id);
+			LOGGER.warn("Clan Hall auction not found for Id: {}", id);
 			return;
 		}
 		
@@ -169,11 +170,12 @@ public final class AuctionManager
 		{
 			s.executeUpdate("INSERT INTO `auction` VALUES " + ITEM_INIT_DATA[i]);
 			_auctions.add(new Auction(id));
-			_log.info(getClass().getSimpleName() + ": Created auction for ClanHall: " + id);
+			LOGGER.info("Created auction for ClanHall: {}", id);
 		}
 		catch (Exception e)
 		{
-			_log.error(getClass().getSimpleName() + ": Exception: Auction.initNPC(): " + e.getMessage(), e);
+			LOGGER.error("Exception: Auction.initNPC(): ", e);
+			
 		}
 	}
 	

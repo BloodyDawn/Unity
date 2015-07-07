@@ -117,7 +117,7 @@ public class ClanEntryManager
 				_waitingList.put(rs.getInt("char_id"), new PledgeWaitingInfo(rs.getInt("char_id"), rs.getInt("level"), rs.getInt("karma"), rs.getInt("base_class"), rs.getString("char_name")));
 			}
 			
-			LOGGER.info("Loaded:{} player in waiting list", _waitingList.size());
+			LOGGER.info("Loaded: {} player in waiting list", _waitingList.size());
 		}
 		catch (Exception e)
 		{

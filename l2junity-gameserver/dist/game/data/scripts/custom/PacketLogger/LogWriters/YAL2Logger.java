@@ -20,95 +20,112 @@ package custom.PacketLogger.LogWriters;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.net.InetAddress;
-import java.nio.ByteBuffer;
-import java.util.Calendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.time.LocalDateTime;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.network.client.L2GameClient;
-
-import custom.PacketLogger.PacketBuffer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
-public class YAL2Logger extends PacketBuffer implements IPacketHandler
+public class YAL2Logger implements IPacketHandler
 {
-	private static final Logger _log = Logger.getLogger(YAL2Logger.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(YAL2Logger.class);
 	private static final String YAL2_PROTOCOL_NAME = "Infinite Odyssey";
 	private static final byte YAL2_VERSION = 0x07;
 	private final L2GameClient _client;
+	private final AtomicInteger _packets = new AtomicInteger();
+	private RandomAccessFile _randomAccessFile;
 	
 	public YAL2Logger(L2GameClient client)
 	{
 		_client = client;
-		writeYAL2Header();
+		final File curDir = new File("log/packetlogs/" + _client.getAccountName());
+		if (!curDir.exists())
+		{
+			curDir.mkdirs();
+		}
+		final LocalDateTime now = LocalDateTime.now();
+		final String fileName = _client.getConnectionAddress().getHostAddress() + " " + now.getDayOfWeek().ordinal() + "-" + now.getMonthValue() + "-" + now.getYear() + " " + now.getHour() + "-" + now.getMinute() + "-" + now.getSecond() + ".l2l";
+		
+		try
+		{
+			_randomAccessFile = new RandomAccessFile(new File(curDir.getAbsoluteFile(), fileName), "rw");
+			writeYAL2Header();
+		}
+		catch (Exception e)
+		{
+			LOGGER.warn("Error while creating random accesss file:", e);
+		}
 	}
 	
-	private void writeYAL2Header()
+	private void writeYAL2Header() throws IOException
 	{
-		writeC(YAL2_VERSION); // YAL2 log version
-		writeD(0x00); // Packets count
-		writeC(0x00); // Split log
-		writeH(0x00); // Client port
-		writeH(Config.PORT_GAME); // Server port
-		writeB(getClientIp()); // Client ip
-		writeB(getServerIp()); // Server ip
-		writeS(YAL2_PROTOCOL_NAME);
-		writeS("Log sniffed from game server."); // comments
-		writeS("L2J"); // Server type
-		writeQ(0x00); // Analyser bit set
-		writeQ(0x00); // Session id
-		writeC(0x00); // Is encrypted
+		_randomAccessFile.writeByte(YAL2_VERSION);
+		_randomAccessFile.writeInt(0x00); // Packets count
+		_randomAccessFile.writeByte(0x00); // Split log
+		
+		_randomAccessFile.writeShort(Short.reverseBytes((short) 0x00)); // Client port
+		_randomAccessFile.writeShort(Short.reverseBytes((short) Config.PORT_GAME)); // Server port
+		
+		_randomAccessFile.write(getClientIp()); // Client ip
+		_randomAccessFile.write(getServerIp()); // Server ip
+		
+		writeS(YAL2_PROTOCOL_NAME, _randomAccessFile); // Protocol name
+		writeS("Log sniffed from game server.", _randomAccessFile); // Comments
+		writeS("L2J", _randomAccessFile); // Server Type
+		
+		_randomAccessFile.writeLong(0x00); // Analyser bit set
+		_randomAccessFile.writeLong(0x00); // Session id
+		_randomAccessFile.writeByte(0x00); // Is encrypted
 	}
 	
 	@Override
 	public synchronized void handlePacket(byte[] data, boolean clientSide)
 	{
-		// Write packet data.
-		writeC(!clientSide ? (byte) 0x01 : 0x00);
-		writeH(data.length + 2);
-		writeQ(System.currentTimeMillis());
-		writeB(data);
-		
-		// Update packet count
-		increasePackets();
+		try
+		{
+			_randomAccessFile.writeByte(!clientSide ? (byte) 0x01 : 0x00);
+			_randomAccessFile.writeShort(Short.reverseBytes((short) (data.length + 2)));
+			_randomAccessFile.writeLong(Long.reverseBytes(System.currentTimeMillis()));
+			_randomAccessFile.write(data);
+			
+			final int packets = _packets.incrementAndGet();
+			
+			// Update packets
+			final long pos = _randomAccessFile.getFilePointer();
+			_randomAccessFile.seek(1);
+			_randomAccessFile.writeInt(Integer.reverseBytes(packets));
+			_randomAccessFile.seek(pos);
+		}
+		catch (Exception e)
+		{
+			LOGGER.warn("", e);
+		}
 	}
 	
 	@Override
 	public void notifyTerminate()
 	{
-		try
-		{
-			final File curDir = new File("log/packetlogs/" + _client.getAccountName());
-			if (!curDir.exists())
-			{
-				curDir.mkdirs();
-			}
-			final Calendar cal = Calendar.getInstance();
-			final String fileName = _client.getConnectionAddress().getHostAddress() + " " + cal.get(Calendar.DAY_OF_WEEK) + "-" + (cal.get(Calendar.MONTH) + 1) + "-" + cal.get(Calendar.YEAR) + " " + cal.get(Calendar.HOUR_OF_DAY) + "-" + cal.get(Calendar.MINUTE) + "-" + cal.get(Calendar.SECOND) + ".l2l";
-			
-			writeToDisk(new File(curDir.getAbsoluteFile(), fileName));
-		}
-		catch (IOException e)
-		{
-			_log.log(Level.WARNING, "Error while saving log file!", e);
-		}
+		
 	}
 	
-	@Override
-	public void writeToDisk(File file) throws IOException
+	private static void writeS(String text, RandomAccessFile raf) throws IOException
 	{
-		// Update packet count.
-		final ByteBuffer buffer = getBuffer();
-		int pos = buffer.position();
-		buffer.position(1);
-		buffer.putInt(getPackets());
-		buffer.position(pos);
-		
-		super.writeToDisk(file);
+		if ((text != null) && !text.isEmpty())
+		{
+			final char[] chars = text.toCharArray();
+			for (char c : chars)
+			{
+				raf.writeChar(Character.reverseBytes(c));
+			}
+		}
+		raf.writeChar(0);
 	}
 	
 	private byte[] getClientIp()
