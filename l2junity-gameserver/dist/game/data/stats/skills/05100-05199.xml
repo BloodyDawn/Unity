@@ -183,7 +183,6 @@
 		<set name="itemConsumeId" val="8872" />
 		<set name="magicLvl" val="70" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="68" />
 		<set name="reuseDelay" val="10500" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
@@ -197,7 +196,9 @@
 			</not>
 		</cond>
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="68" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5112" levels="12" name="Stun">
@@ -340,13 +341,14 @@
 		<set name="magicLvl" val="90" />
 		<set name="mpConsume" val="84" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="829" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="829" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -381,12 +383,13 @@
 		<set name="mpConsume" val="84" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="2487" />
 		<set name="reuseDelay" val="17000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="2487" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5120" levels="1" name="Stun">
@@ -407,13 +410,14 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="5" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="703" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="703" />
+			</effect>
 			<effect name="Stun" />
 		</for>
 	</skill>
@@ -676,12 +680,12 @@
 		<set name="mpConsume" val="214" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="8264" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="8264" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -696,12 +700,12 @@
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="322" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4132" />
 		<set name="reuseDelay" val="17000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="4132" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -758,13 +762,13 @@
 		<set name="mpConsume" val="214" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="6198" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="PhysicalAttack">
+				<param power="6198" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Stun" />
@@ -786,12 +790,12 @@
 		<set name="mpConsume" val="258" />
 		<set name="mpInitialConsume" val="64" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="228" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack">
+				<param power="228" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -837,12 +841,13 @@
 		<set name="mpConsume" val="214" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="8264" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="8264" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5142" levels="1" name="Corpse Burst">
@@ -858,13 +863,14 @@
 		<set name="mpConsume" val="258" />
 		<set name="mpInitialConsume" val="64" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="228" />
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA_CORPSE_MOB" />
 		<for>
 			<effect name="ConsumeBody" />
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="228" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5143" levels="1" name="Sailren Use Blow">
@@ -877,11 +883,11 @@
 		<set name="magicLvl" val="89" />
 		<set name="mpConsume" val="84" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="39544" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="FatalBlow">
+				<param power="39544" />
 				<param chance="115" />
 			</effect>
 		</for>
@@ -1711,12 +1717,13 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="30" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="116" />
 		<set name="mpInitialConsume" val="8" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="116" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5179" levels="1" name="Raid Boss (Lv. 80)">
@@ -1799,12 +1806,13 @@
 		<set name="hitTime" val="4000" />
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="54" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="54" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5186" levels="2" name="Pet Haste">

@@ -2188,14 +2188,19 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
-			<effect name="PhysicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="897" levels="6" name="Double Blast">
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
@@ -2210,14 +2215,19 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
-			<effect name="PhysicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="898" levels="6" name="Tornado Slash">
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
@@ -2232,14 +2242,19 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
-			<effect name="PhysicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="899" levels="6" name="Cat Roar">
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
@@ -2261,14 +2276,11 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="PhysicalAttack" />
 			<effect name="Debuff">
 				<mul stat="pDef" val="0.6" />
 				<mul stat="mDef" val="0.6" />
@@ -2277,5 +2289,15 @@
 				<mul stat="mAtkSpd" val="0.6" />
 			</effect>
 		</for>
+		<pveEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 </list>

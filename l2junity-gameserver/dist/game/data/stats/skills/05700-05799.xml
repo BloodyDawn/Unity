@@ -64,13 +64,14 @@
 		<set name="magicLvl" val="36" />
 		<set name="mpConsume" val="5" />
 		<set name="mpInitialConsume" val="2" />
-		<set name="power" val="69" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="#targetType" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="69" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5703" levels="2" name="Adiantum Water Strike Deflect">
@@ -148,12 +149,13 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="160" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="160" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5709" levels="2" name="Whirlpool">
@@ -165,12 +167,13 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="220" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="220" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5710" levels="2" name="Triple Sword">
@@ -183,12 +186,13 @@
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="61" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="320" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="320" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5711" levels="1" name="Power of Rage">
@@ -265,12 +269,13 @@
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="73" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="213" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttack" />
+			<effect name="MagicalAttack">
+				<param power="213" />
+			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="55" />
 				<mul stat="runSpd" val="0.77" />
@@ -1006,14 +1011,19 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
-			<effect name="MagicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="5750" levels="12" name="Flash">
 		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -635 -659 -676 -689 -700 -709 </table>
@@ -1030,14 +1040,19 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
-			<effect name="MagicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="5751" levels="12" name="Lightning Wave">
 		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -635 -659 -676 -689 -700 -709 </table>
@@ -1053,14 +1068,19 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
-		<for>
-			<effect name="MagicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="5752" levels="12" name="Flare">
 		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -635 -659 -676 -689 -700 -709 </table>
@@ -1078,17 +1098,22 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<player active_effect_id="5753" />
 		</cond>
-		<for>
-			<effect name="MagicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="5753" levels="1" name="Awakening">
 		<set name="abnormalLvl" val="1" />
@@ -1239,11 +1264,12 @@
 		<set name="magicLvl" val="75" />
 		<set name="mpConsume" val="76" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4472" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4472" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5766" levels="1" name="Naia Sprout">
@@ -1256,11 +1282,12 @@
 		<set name="magicLvl" val="75" />
 		<set name="mpConsume" val="76" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4472" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4472" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5767" levels="1" name="Naia Sprout">
@@ -1273,11 +1300,12 @@
 		<set name="magicLvl" val="75" />
 		<set name="mpConsume" val="76" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4472" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4472" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5768" levels="1" name="Naia Sprout">
@@ -1290,11 +1318,12 @@
 		<set name="magicLvl" val="78" />
 		<set name="mpConsume" val="78" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="4472" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
+			<effect name="PhysicalAttack">
+				<param power="4472" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5769" levels="12" name="not_used">

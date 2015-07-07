@@ -26,11 +26,11 @@
 		<set name="magicLvl" val="76" />
 		<set name="mpConsume" val="181" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="111" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
+				<param power="111" />
 				<param percentage="80" />
 			</effect>
 		</for>
@@ -287,11 +287,11 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="61" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
+				<param power="61" />
 				<param percentage="80" />
 			</effect>
 		</for>
@@ -437,11 +437,11 @@
 		<set name="hitTime" val="6000" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="314" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="HpDrain">
+				<param power="314" />
 				<param percentage="80" />
 			</effect>
 		</for>

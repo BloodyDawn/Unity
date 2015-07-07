@@ -400,13 +400,13 @@
 		<set name="mpConsume" val="68" />
 		<set name="mpInitialConsume" val="17" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="112" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalSoulAttack">
+				<param power="112" />
 				<param overHit="true" />
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
@@ -514,13 +514,14 @@
 		<set name="mpConsume" val="27" />
 		<set name="mpInitialConsume" val="7" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="166" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalSoulAttack" />
+			<effect name="MagicalSoulAttack">
+				<param power="166" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1517" levels="1" name="Chant of Combat">
@@ -695,7 +696,7 @@
 		<table name="#magicLvl"> 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </table>
 		<table name="#mpConsume"> 28 29 30 30 31 32 33 33 34 35 36 36 37 38 39 39 40 41 42 42 43 44 44 45 46 46 47 48 48 49 49 50 50 51 51 52 52 53 53 53 54 54 </table>
 		<table name="#mpInitialConsume"> 7 8 8 8 8 8 9 9 9 9 9 9 10 10 10 10 10 11 11 11 11 11 11 12 12 12 12 12 12 13 13 13 13 13 13 13 13 14 14 14 14 14 </table>
-		<table name="#power"> 51 52 54 55 57 58 60 61 63 64 66 68 69 71 72 74 75 77 78 80 81 83 85 86 88 89 90 92 93 95 96 97 99 100 101 102 103 105 106 107 108 109 </table>
+		<table name="#pvePower"> 51 52 54 55 57 58 60 61 63 64 66 68 69 71 72 74 75 77 78 80 81 83 85 86 88 89 90 92 93 95 96 97 99 100 101 102 103 105 106 107 108 109 </table>
 		<table name="#pvpPower"> 31 32 33 33 34 35 36 37 38 39 40 41 42 43 44 44 45 46 47 48 49 50 51 52 53 54 54 55 56 57 58 59 59 60 61 62 62 63 64 64 65 65 </table>
 		<set name="castRange" val="750" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -709,14 +710,19 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
-			<effect name="MagicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="1524" levels="42" name="Surrender to Holy">
 		<!-- Confirmed CT2.5 -->
@@ -830,7 +836,7 @@
 		<table name="#magicLvl"> 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </table>
 		<table name="#mpConsume"> 45 47 48 49 50 52 53 54 55 56 58 59 60 61 63 64 65 66 68 69 70 71 72 74 75 76 77 78 79 80 81 82 83 84 84 85 86 87 87 88 89 89 </table>
 		<table name="#mpInitialConsume"> 12 12 12 13 13 13 14 14 14 14 15 15 15 16 16 16 17 17 17 18 18 18 18 19 19 19 20 20 20 20 21 21 21 21 21 22 22 22 22 22 23 23 </table>
-		<table name="#power"> 29 29 30 31 32 33 33 34 35 36 37 38 39 39 40 41 42 43 44 45 45 46 47 48 49 50 50 51 52 53 54 54 55 56 56 57 58 58 59 60 60 61 </table>
+		<table name="#pvePower"> 29 29 30 31 32 33 33 34 35 36 37 38 39 39 40 41 42 43 44 45 45 46 47 48 49 50 50 51 52 53 54 54 55 56 56 57 58 58 59 60 60 61 </table>
 		<table name="#pvpPower"> 17 18 18 19 19 20 20 21 21 22 22 23 23 24 24 25 25 26 26 27 27 28 29 29 30 30 30 31 31 32 32 33 33 34 34 34 35 35 36 36 36 37 </table>
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="200" />
@@ -846,14 +852,19 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
-			<effect name="MagicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="1529" levels="7" name="Soul Web">
 		<!-- Confirmed CT2.5 -->
@@ -1553,14 +1564,19 @@
 		<set name="mpConsume" val="116" />
 		<set name="mpInitialConsume" val="29" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="199" /> <!-- Inflicts additional non-attribute damage if the target is a monster -->
-		<set name="pvpPower" val="141" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
-		<for>
-			<effect name="MagicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="199" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="141" />
+			</effect>
+		</pvpEffects>
 		<selfEffects>
 			<effect name="ManaHeal">
 				<param power="10" />  <!-- FIXME: value unconfirmed -->
@@ -1579,14 +1595,19 @@
 		<set name="mpConsume" val="99" />
 		<set name="mpInitialConsume" val="24" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="302" /> <!-- Inflicts additional non-attribute damage if the target is a monster -->
-		<set name="pvpPower" val="178" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
-			<effect name="MagicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="302" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="178" />
+			</effect>
+		</pvpEffects>
 		<selfEffects>
 			<effect name="ManaHeal">
 				<param power="10" />  <!-- FIXME: value unconfirmed -->
@@ -1652,7 +1673,7 @@
 		<!-- High Five Skill -->
 		<table name="#magicLvl"> 40 44 48 52 56 58 60 62 64 66 68 70 72 74 76 77 78 79 80 81 82 83 84 85 </table>
 		<table name="#mpConsume"> 38 43 47 50 53 55 57 59 60 63 64 67 74 83 92 99 100 106 109 115 118 119 125 134 </table>
-		<table name="#power"> 57 58 60 61 63 66 68 71 74 77 79 82 89 94 100 104 110 115 139 152 166 179 193 207 </table>
+		<table name="#pvePower"> 57 58 60 61 63 66 68 71 74 77 79 82 89 94 100 104 110 115 139 152 166 179 193 207 </table>
 		<table name="#pvpPower"> 57 58 60 61 63 66 68 71 74 77 79 82 84 87 89 90 91 92 93 94 95 96 97 98 </table>
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-590" />
@@ -1663,15 +1684,10 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
-		<set name="power" val="#power" /> <!-- Inflicts additional non-attribute damage if the target is a monster -->
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack">
-				<param overHit="true" />
-			</effect>
 			<effect name="TriggerSkillBySkill">
 				<param castSkillId="1558" /> <!-- Dimension Spiral -->
 				<param chance="5" />
@@ -1679,6 +1695,18 @@
 				<param targetType="SUMMON" />
 			</effect>
 		</for>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvePower" />
+				<param overHit="true" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+				<param overHit="true" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="1559" levels="3" name="Potential Ability">
 		<!-- High Five Skill -->
@@ -1714,7 +1742,6 @@
 		<set name="mpConsume" val="82" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="11234" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
@@ -1724,6 +1751,7 @@
 		</cond>
 		<for>
 			<effect name="FatalBlow">
+				<param power="11234" />
 				<param chance="60" />
 				<param criticalChance="30" />
 				<param overHit="true" />

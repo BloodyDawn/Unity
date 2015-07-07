@@ -15,14 +15,19 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AURA" />
-		<for>
-			<effect name="PhysicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="901" levels="6" name="Dark Strike">
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
@@ -39,14 +44,19 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
-			<effect name="PhysicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="902" levels="6" name="Bursting Flame">
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
@@ -62,14 +72,19 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
-			<effect name="PhysicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="903" levels="6" name="Stratum Explosion">
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
@@ -85,14 +100,19 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
-			<effect name="PhysicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="904" levels="6" name="Corpse Burst">
 		<table name="#effectPoints"> -338 -340 -341 -342 -344 -345 </table>
@@ -118,18 +138,25 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA_CORPSE_MOB" />
 		<set name="trait" val="POISON" />
 		<for>
-			<effect name="MagicalAttack" />
 			<effect name="DamOverTime" ticks="5">
 				<param power="230" />
 			</effect>
 		</for>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="905" levels="6" name="Dark Detonation">
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
@@ -151,15 +178,22 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="PhysicalAttack" />
 			<effect name="Stun" />
 		</for>
+		<pveEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="906" levels="6" name="Lance Step">
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
@@ -175,14 +209,19 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AURA" />
-		<for>
-			<effect name="PhysicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="907" levels="6" name="Aqua Blast">
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
@@ -199,14 +238,19 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
-		<for>
-			<effect name="PhysicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="908" levels="6" name="Spin Slash">
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
@@ -221,14 +265,19 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
-		<for>
-			<effect name="PhysicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="909" levels="6" name="Ice Fog">
 		<table name="#effectPoints"> -338 -340 -341 -342 -344 -345 </table>
@@ -253,14 +302,11 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="POISON" />
 		<for>
-			<effect name="MagicalAttack" />
 			<effect name="DamOverTime" ticks="5">
 				<param power="230" />
 				<mul stat="runSpd" val="0.3" />
@@ -268,6 +314,16 @@
 				<mul stat="mAtkSpd" val="0.8" />
 			</effect>
 		</for>
+		<pveEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="MagicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="910" levels="6" name="Water Jet">
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
@@ -291,15 +347,20 @@
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="#pvePower" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="BLEED" />
-		<for>
-			<effect name="PhysicalAttack" />
-		</for>
+		<pveEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvePower" />
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="PhysicalAttack">
+				<param power="#pvpPower" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="911" levels="11" name="Energy Burst">
 		<!-- Aurabird Falcon and Owl -->
