@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.ai.CharacterAI;
@@ -624,11 +625,37 @@ public final class World
 		forEachVisibleObject(locational, clazz, result::add);
 		return result;
 	}
-	
+
+	public <T extends WorldObject> List<T> getVisibleObjects(ILocational locational, Class<T> clazz, Predicate<T> predicate)
+	{
+		final List<T> result = new LinkedList<>();
+		forEachVisibleObject(locational, clazz, o ->
+		{
+			if (predicate.test(o))
+			{
+				result.add(o);
+			}
+		});
+		return result;
+	}
+
 	public <T extends WorldObject> List<T> getVisibleObjects(ILocational locational, Class<T> clazz, int range)
 	{
 		final List<T> result = new LinkedList<>();
 		forEachVisibleObjectInRange(locational, clazz, range, result::add);
+		return result;
+	}
+
+	public <T extends WorldObject> List<T> getVisibleObjects(ILocational locational, Class<T> clazz, int range, Predicate<T> predicate)
+	{
+		final List<T> result = new LinkedList<>();
+		forEachVisibleObjectInRange(locational, clazz, range, o ->
+		{
+			if (predicate.test(o))
+			{
+				result.add(o);
+			}
+		});
 		return result;
 	}
 	
