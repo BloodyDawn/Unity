@@ -18,7 +18,6 @@
  */
 package handlers.targethandlers;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -42,7 +41,6 @@ public class AreaFriendly implements ITargetTypeHandler
 	@Override
 	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
-		List<Creature> targetList = new ArrayList<>();
 		if (!checkTarget(activeChar, target) && (skill.getCastRange() >= 0))
 		{
 			activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
@@ -64,26 +62,24 @@ public class AreaFriendly implements ITargetTypeHandler
 				activeChar
 			};
 		}
-		targetList.add(target); // Add target to target list
 		
 		if (target != null)
 		{
-			targetList = World.getInstance().getVisibleObjects(target, Creature.class, skill.getAffectRange(), o -> checkTarget(activeChar, o) && (o != activeChar));
+			List<Creature> targetList = World.getInstance().getVisibleObjects(target, Creature.class, skill.getAffectRange(), o -> checkTarget(activeChar, o) && (o != activeChar));
 			if (skill.hasEffectType(L2EffectType.HEAL))
 			{
 				targetList.sort(new CharComparator());
 			}
-			if (targetList.size() > skill.getAffectLimit())
+			targetList.add(0, target);
+			if (targetList.size() > (skill.getAffectLimit()))
 			{
 				targetList.subList(skill.getAffectLimit(), targetList.size()).clear();
 			}
+			
+			return targetList.isEmpty() ? EMPTY_TARGET_LIST : targetList.toArray(new Creature[targetList.size()]);
 		}
 		
-		if (targetList.isEmpty())
-		{
-			return EMPTY_TARGET_LIST;
-		}
-		return targetList.toArray(new Creature[targetList.size()]);
+		return EMPTY_TARGET_LIST;
 	}
 	
 	private boolean checkTarget(Creature activeChar, Creature target)
