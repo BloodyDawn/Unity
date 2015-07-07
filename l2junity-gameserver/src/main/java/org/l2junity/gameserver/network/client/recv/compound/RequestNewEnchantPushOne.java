@@ -83,7 +83,7 @@ public class RequestNewEnchantPushOne implements IClientIncomingPacket
 		// Not implemented or not able to merge!
 		if ((itemOne.getItem().getCompoundItem() == 0) || (itemOne.getItem().getCompoundChance() == 0))
 		{
-			client.sendPacket(ExEnchantOneOK.STATIC_PACKET);
+			client.sendPacket(ExEnchantOneFail.STATIC_PACKET);
 			activeChar.removeRequest(request.getClass());
 			return;
 		}
