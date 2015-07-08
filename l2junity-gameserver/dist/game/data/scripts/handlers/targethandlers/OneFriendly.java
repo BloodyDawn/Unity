@@ -70,7 +70,11 @@ public final class OneFriendly implements ITargetTypeHandler
 		{
 			boolean friendly = false;
 			
-			if ((activeChar.getAllyId() > 0) && (activeChar.getAllyId() == target.getActingPlayer().getAllyId()))
+			if (activeChar == target)
+			{
+				friendly = true;
+			}
+			else if ((activeChar.getAllyId() > 0) && (activeChar.getAllyId() == target.getActingPlayer().getAllyId()))
 			{
 				friendly = true;
 			}
