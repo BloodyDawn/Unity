@@ -98,6 +98,7 @@ artifacts {
 distributions {
 	main {
 		contents {
+			from('dist')
 			into('libs') {
 				from(configurations.runtime)
 			}
