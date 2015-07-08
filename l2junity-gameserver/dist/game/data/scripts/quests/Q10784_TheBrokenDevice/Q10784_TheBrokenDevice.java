@@ -16,9 +16,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package quests.Q10783_TracesOfAnAmbush;
+package quests.Q10784_TheBrokenDevice;
 
-import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -26,59 +25,44 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+
+import quests.Q10783_TracesOfAnAmbush.Q10783_TracesOfAnAmbush;
 
 /**
- * Traces of an Ambush (10783)
+ * The Broken Device (10784)
  * @author malyelfik
  */
-public final class Q10783_TracesOfAnAmbush extends Quest
+public final class Q10784_TheBrokenDevice extends Quest
 {
 	// NPC
 	private static final int NOVAIN = 33866;
 	// Monsters
-	private static final int EMBRYO_PREDATOR = 27539;
 	private static final int[] MONSTERS =
 	{
-		20679, // Marsh Stalker
-		20680, // Marsh Drake
-		21017, // Fallen Orc
-		21018, // Ancient Gargoyle
-		21019, // Fallen Orc Archer
-		21020, // Fallen Orc Shaman
-		21021, // Sharp Talon Tiger
-		21022, // Fallen Orc Captain
-		21258, // Fallen Orc Shaman
-		21259, // Fallen Orc Shaman
+		20647, // Yintzu
+		20648, // Paliote
+		20649, // Hamrut
+		20650, // Kranrot
 	};
 	// Items
-	private static final int MISSIVE_SCRAPS = 39722;
+	private static final int BROKE_MAGIC_DEVICE_FRAGMENT = 39723;
 	private static final int ENCHANT_ARMOR_B = 948;
 	private static final int STEEL_DOOR_GUILD_COIN = 37045;
-	// Messages
-	private static final NpcStringId[] MESSAGES =
-	{
-		NpcStringId.I_WILL_GIVE_YOU_DEATH,
-		NpcStringId.BACK_FOR_MORE_HUH,
-		NpcStringId.YOU_LITTLE_PUNK_TAKE_THAT
-	};
 	// Misc
 	private static final int MIN_LEVEL = 58;
 	private static final int MAX_LEVEL = 61;
-	private static final int SPAWN_RATE = 70;
-	private static final int DROP_RATE = 80;
 	
-	public Q10783_TracesOfAnAmbush()
+	public Q10784_TheBrokenDevice()
 	{
-		super(10783, Q10783_TracesOfAnAmbush.class.getSimpleName(), "Traces of an Ambush");
+		super(10784, Q10784_TheBrokenDevice.class.getSimpleName(), "The Broken Device");
 		addStartNpc(NOVAIN);
 		addTalkId(NOVAIN);
 		addKillId(MONSTERS);
-		addKillId(EMBRYO_PREDATOR);
 		
 		addCondRace(Race.ERTHEIA, "33866-00.html");
 		addCondLevel(MIN_LEVEL, MAX_LEVEL, "33866-01.htm");
-		registerQuestItems(MISSIVE_SCRAPS);
+		addCondCompletedQuest(Q10783_TracesOfAnAmbush.class.getSimpleName(), "33866-01.htm");
+		registerQuestItems(BROKE_MAGIC_DEVICE_FRAGMENT);
 	}
 	
 	@Override
@@ -97,16 +81,17 @@ public final class Q10783_TracesOfAnAmbush extends Quest
 			case "33866-04.htm":
 				break;
 			case "33866-05.htm":
-			{
 				qs.startQuest();
 				break;
-			}
 			case "33866-08.html":
 			{
-				giveItems(player, ENCHANT_ARMOR_B, 5);
-				giveItems(player, STEEL_DOOR_GUILD_COIN, 34);
-				addExpAndSp(player, 5482574, 1315);
-				qs.exitQuest(false, true);
+				if (qs.isCond(2))
+				{
+					giveItems(player, ENCHANT_ARMOR_B, 5);
+					giveItems(player, STEEL_DOOR_GUILD_COIN, 40);
+					addExpAndSp(player, 6579090, 1578);
+					qs.exitQuest(false, true);
+				}
 				break;
 			}
 			default:
@@ -142,26 +127,14 @@ public final class Q10783_TracesOfAnAmbush extends Quest
 		final QuestState qs = getQuestState(killer, false);
 		if ((qs != null) && qs.isCond(1))
 		{
-			if (npc.getId() == EMBRYO_PREDATOR)
+			giveItems(killer, BROKE_MAGIC_DEVICE_FRAGMENT, 1);
+			if (getQuestItemsCount(killer, BROKE_MAGIC_DEVICE_FRAGMENT) >= 20)
 			{
-				if (getRandom(100) < DROP_RATE)
-				{
-					giveItems(killer, MISSIVE_SCRAPS, 1);
-					if (getQuestItemsCount(killer, MISSIVE_SCRAPS) >= 10)
-					{
-						qs.setCond(2, true);
-					}
-					else
-					{
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-				}
+				qs.setCond(2, true);
 			}
-			else if (getRandom(100) < SPAWN_RATE)
+			else
 			{
-				final Npc mob = addSpawn(EMBRYO_PREDATOR, npc, false, 120000);
-				addAttackPlayerDesire(mob, killer);
-				mob.broadcastSay(ChatType.NPC_GENERAL, MESSAGES[getRandom(MESSAGES.length)]);
+				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
@@ -169,6 +142,6 @@ public final class Q10783_TracesOfAnAmbush extends Quest
 	
 	public static void main(String[] args)
 	{
-		new Q10783_TracesOfAnAmbush();
+		new Q10784_TheBrokenDevice();
 	}
 }
