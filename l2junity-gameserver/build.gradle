@@ -15,7 +15,6 @@ sourceSets {
 }
 
 dependencies {
-	compile(fileTree(dir: 'dist/libs', include: '*.jar'))
 	compile project(':l2junity-commons')
 	compile project(':l2junity-geodriver')
 	compile project(':l2junity-network')
@@ -99,9 +98,6 @@ artifacts {
 distributions {
 	main {
 		contents {
-			from('dist') {
-				exclude('libs')
-			}
 			into('libs') {
 				from(configurations.runtime)
 			}
