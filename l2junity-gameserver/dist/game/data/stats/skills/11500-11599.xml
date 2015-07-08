@@ -1428,10 +1428,12 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Invincible" />
+		</for>
+		<endEffects>
 			<effect name="CallSkill">
 				<param skillId="20007" skillLevel="1" /> <!-- Block Invincibility -->
 			</effect>
-		</for>
+		</endEffects>
 	</skill>
 	<skill id="11561" levels="4" name="Giant Root">
 		<table name="#effectPoint"> -701 -705 -709 -709 -709 -709 -709 </table>

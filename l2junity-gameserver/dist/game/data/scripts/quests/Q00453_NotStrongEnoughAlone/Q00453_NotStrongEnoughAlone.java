@@ -247,7 +247,7 @@ public final class Q00453_NotStrongEnoughAlone extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, PlayerInstance player)
+	public String onTalk(Npc npc, PlayerInstance player, boolean isSimulated)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
@@ -289,21 +289,24 @@ public final class Q00453_NotStrongEnoughAlone extends Quest
 					}
 					case 5:
 					{
-						final int random = getRandom(100);
-						if (random < 10)
+						if (!isSimulated)
 						{
-							giveItems(player, POUCH, getRandom(1, 4));
+							final int random = getRandom(100);
+							if (random < 10)
+							{
+								giveItems(player, POUCH, getRandom(1, 4));
+							}
+							else if (random < 20)
+							{
+								giveItems(player, (getRandom(100) < 25 ? EWR : EAR), 1);
+							}
+							else
+							{
+								giveItems(player, (getRandom(100) < 15 ? ATT_CRYSTALS[getRandom(ATT_CRYSTALS.length)] : ATT_STONES[getRandom(ATT_STONES.length)]), 1);
+							}
+							
+							st.exitQuest(QuestType.DAILY, true);
 						}
-						else if (random < 20)
-						{
-							giveItems(player, (getRandom(100) < 25 ? EWR : EAR), 1);
-						}
-						else
-						{
-							giveItems(player, (getRandom(100) < 15 ? ATT_CRYSTALS[getRandom(ATT_CRYSTALS.length)] : ATT_STONES[getRandom(ATT_STONES.length)]), 1);
-						}
-						
-						st.exitQuest(QuestType.DAILY, true);
 						htmltext = "32734-14.html";
 						break;
 					}
