@@ -261,7 +261,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 			}
 			case WHITELIST:
 			{
-				for (BuffInfo info : player.getEffectList().getBuffs().values())
+				for (BuffInfo info : player.getEffectList().getBuffs())
 				{
 					if (!inst.getBuffExceptionList().contains(info.getSkill().getId()))
 					{
@@ -271,7 +271,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 				
 				for (Summon summon : player.getServitors().values())
 				{
-					for (BuffInfo info : summon.getEffectList().getBuffs().values())
+					for (BuffInfo info : summon.getEffectList().getBuffs())
 					{
 						if (!inst.getBuffExceptionList().contains(info.getSkill().getId()))
 						{
@@ -283,7 +283,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 				final Summon pet = player.getPet();
 				if (pet != null)
 				{
-					for (BuffInfo info : pet.getEffectList().getBuffs().values())
+					for (BuffInfo info : pet.getEffectList().getBuffs())
 					{
 						if (!inst.getBuffExceptionList().contains(info.getSkill().getId()))
 						{
@@ -295,7 +295,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 			}
 			case BLACKLIST:
 			{
-				for (BuffInfo info : player.getEffectList().getBuffs().values())
+				for (BuffInfo info : player.getEffectList().getBuffs())
 				{
 					if (inst.getBuffExceptionList().contains(info.getSkill().getId()))
 					{
@@ -305,7 +305,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 				
 				for (Summon summon : player.getServitors().values())
 				{
-					for (BuffInfo info : summon.getEffectList().getBuffs().values())
+					for (BuffInfo info : summon.getEffectList().getBuffs())
 					{
 						if (inst.getBuffExceptionList().contains(info.getSkill().getId()))
 						{
@@ -317,7 +317,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 				final Summon pet = player.getPet();
 				if (pet != null)
 				{
-					for (BuffInfo info : pet.getEffectList().getBuffs().values())
+					for (BuffInfo info : pet.getEffectList().getBuffs())
 					{
 						if (inst.getBuffExceptionList().contains(info.getSkill().getId()))
 						{
