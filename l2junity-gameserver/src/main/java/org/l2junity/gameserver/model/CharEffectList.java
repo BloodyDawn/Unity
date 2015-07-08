@@ -1310,7 +1310,7 @@ public final class CharEffectList
 			}
 			
 			// Check for passive skill conditions.
-			if (!skill.checkCondition(info.getEffector(), info.getEffected(), false))
+			if (!skill.checkCondition(info.getEffector(), info.getEffected()))
 			{
 				return;
 			}

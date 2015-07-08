@@ -493,7 +493,7 @@ public class DocumentSkill extends DocumentBase
 							condition.addName();
 						}
 					}
-					_currentSkill.currentSkills.get(i).attach(condition, false);
+					_currentSkill.currentSkills.get(i).attach(condition);
 				}
 				else if ("for".equalsIgnoreCase(n.getNodeName()))
 				{
@@ -551,7 +551,7 @@ public class DocumentSkill extends DocumentBase
 							condition.addName();
 						}
 					}
-					_currentSkill.currentSkills.get(i).attach(condition, false);
+					_currentSkill.currentSkills.get(i).attach(condition);
 				}
 				else if ("enchant1for".equalsIgnoreCase(n.getNodeName()))
 				{
@@ -613,7 +613,7 @@ public class DocumentSkill extends DocumentBase
 								condition.addName();
 							}
 						}
-						_currentSkill.currentSkills.get(i).attach(condition, false);
+						_currentSkill.currentSkills.get(i).attach(condition);
 					}
 					else if (!foundFor && "for".equalsIgnoreCase(n.getNodeName()))
 					{
@@ -671,7 +671,7 @@ public class DocumentSkill extends DocumentBase
 							condition.addName();
 						}
 					}
-					_currentSkill.currentSkills.get(i).attach(condition, false);
+					_currentSkill.currentSkills.get(i).attach(condition);
 				}
 				else if ("enchant2for".equalsIgnoreCase(n.getNodeName()))
 				{
@@ -733,7 +733,7 @@ public class DocumentSkill extends DocumentBase
 								condition.addName();
 							}
 						}
-						_currentSkill.currentSkills.get(i).attach(condition, false);
+						_currentSkill.currentSkills.get(i).attach(condition);
 					}
 					else if (!foundFor && "for".equalsIgnoreCase(n.getNodeName()))
 					{
@@ -787,7 +787,7 @@ public class DocumentSkill extends DocumentBase
 							condition.addName();
 						}
 					}
-					_currentSkill.currentSkills.get(i).attach(condition, false);
+					_currentSkill.currentSkills.get(i).attach(condition);
 				}
 				else if ("enchant3for".equalsIgnoreCase(n.getNodeName()))
 				{
@@ -849,7 +849,7 @@ public class DocumentSkill extends DocumentBase
 								condition.addName();
 							}
 						}
-						_currentSkill.currentSkills.get(i).attach(condition, false);
+						_currentSkill.currentSkills.get(i).attach(condition);
 					}
 					else if (!foundFor && "for".equalsIgnoreCase(n.getNodeName()))
 					{
@@ -907,7 +907,7 @@ public class DocumentSkill extends DocumentBase
 							condition.addName();
 						}
 					}
-					_currentSkill.currentSkills.get(i).attach(condition, false);
+					_currentSkill.currentSkills.get(i).attach(condition);
 				}
 				else if ("enchant4for".equalsIgnoreCase(n.getNodeName()))
 				{
@@ -969,7 +969,7 @@ public class DocumentSkill extends DocumentBase
 								condition.addName();
 							}
 						}
-						_currentSkill.currentSkills.get(i).attach(condition, false);
+						_currentSkill.currentSkills.get(i).attach(condition);
 					}
 					else if (!foundFor && "for".equalsIgnoreCase(n.getNodeName()))
 					{
@@ -1027,7 +1027,7 @@ public class DocumentSkill extends DocumentBase
 							condition.addName();
 						}
 					}
-					_currentSkill.currentSkills.get(i).attach(condition, false);
+					_currentSkill.currentSkills.get(i).attach(condition);
 				}
 				else if ("enchant5for".equalsIgnoreCase(n.getNodeName()))
 				{
@@ -1089,7 +1089,7 @@ public class DocumentSkill extends DocumentBase
 								condition.addName();
 							}
 						}
-						_currentSkill.currentSkills.get(i).attach(condition, false);
+						_currentSkill.currentSkills.get(i).attach(condition);
 					}
 					else if (!foundFor && "for".equalsIgnoreCase(n.getNodeName()))
 					{
@@ -1147,7 +1147,7 @@ public class DocumentSkill extends DocumentBase
 							condition.addName();
 						}
 					}
-					_currentSkill.currentSkills.get(i).attach(condition, false);
+					_currentSkill.currentSkills.get(i).attach(condition);
 				}
 				else if ("enchant6for".equalsIgnoreCase(n.getNodeName()))
 				{
@@ -1209,7 +1209,7 @@ public class DocumentSkill extends DocumentBase
 								condition.addName();
 							}
 						}
-						_currentSkill.currentSkills.get(i).attach(condition, false);
+						_currentSkill.currentSkills.get(i).attach(condition);
 					}
 					else if (!foundFor && "for".equalsIgnoreCase(n.getNodeName()))
 					{
@@ -1267,7 +1267,7 @@ public class DocumentSkill extends DocumentBase
 							condition.addName();
 						}
 					}
-					_currentSkill.currentSkills.get(i).attach(condition, false);
+					_currentSkill.currentSkills.get(i).attach(condition);
 				}
 				else if ("enchant7for".equalsIgnoreCase(n.getNodeName()))
 				{
@@ -1329,7 +1329,7 @@ public class DocumentSkill extends DocumentBase
 								condition.addName();
 							}
 						}
-						_currentSkill.currentSkills.get(i).attach(condition, false);
+						_currentSkill.currentSkills.get(i).attach(condition);
 					}
 					else if (!foundFor && "for".equalsIgnoreCase(n.getNodeName()))
 					{
@@ -1387,7 +1387,7 @@ public class DocumentSkill extends DocumentBase
 							condition.addName();
 						}
 					}
-					_currentSkill.currentSkills.get(i).attach(condition, false);
+					_currentSkill.currentSkills.get(i).attach(condition);
 				}
 				else if ("enchant8for".equalsIgnoreCase(n.getNodeName()))
 				{
@@ -1449,7 +1449,7 @@ public class DocumentSkill extends DocumentBase
 								condition.addName();
 							}
 						}
-						_currentSkill.currentSkills.get(i).attach(condition, false);
+						_currentSkill.currentSkills.get(i).attach(condition);
 					}
 					else if (!foundFor && "for".equalsIgnoreCase(n.getNodeName()))
 					{

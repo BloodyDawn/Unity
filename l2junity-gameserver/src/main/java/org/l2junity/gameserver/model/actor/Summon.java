@@ -665,7 +665,7 @@ public abstract class Summon extends Playable
 		}
 		
 		// Check if all casting conditions are completed
-		if (!skill.checkCondition(this, target, false))
+		if (!skill.checkCondition(this, target))
 		{
 			// Send a Server->Client packet ActionFailed to the L2PcInstance
 			sendPacket(ActionFailed.STATIC_PACKET);

@@ -6597,7 +6597,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			{
 				return;
 			}
-			if (skill.checkCondition(this, target, false))
+			if (skill.checkCondition(this, target))
 			{
 				if (isSkillDisabled(skill))
 				{

@@ -259,7 +259,7 @@ public class EffectZone extends ZoneType
 							for (Entry<Integer, Integer> e : _skills.entrySet())
 							{
 								Skill skill = getSkill(e.getKey(), e.getValue());
-								if ((skill != null) && (_bypassConditions || skill.checkCondition(temp, temp, false)))
+								if ((skill != null) && (_bypassConditions || skill.checkCondition(temp, temp)))
 								{
 									if (!temp.isAffectedBySkill(e.getKey()))
 									{

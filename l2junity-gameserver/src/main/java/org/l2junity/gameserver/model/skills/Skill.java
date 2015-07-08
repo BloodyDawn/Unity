@@ -169,7 +169,6 @@ public final class Skill implements IIdentifiable
 	private final int _effectPoint;
 	// Condition lists
 	private List<Condition> _preCondition;
-	private List<Condition> _itemPreCondition;
 	private Set<MountType> _rideState;
 	
 	private final Map<EffectScope, List<AbstractEffect>> _effectLists = new EnumMap<>(EffectScope.class);
@@ -924,7 +923,7 @@ public final class Skill implements IIdentifiable
 		return _effectPoint < 0;
 	}
 	
-	public boolean checkCondition(Creature activeChar, WorldObject object, boolean itemOrWeapon)
+	public boolean checkCondition(Creature activeChar, WorldObject object)
 	{
 		if (activeChar.canOverrideCond(PcCondOverride.SKILL_CONDITIONS) && !Config.GM_SKILL_RESTRICTION)
 		{
@@ -938,15 +937,14 @@ public final class Skill implements IIdentifiable
 			activeChar.sendPacket(sm);
 			return false;
 		}
-		
-		final List<Condition> preCondition = itemOrWeapon ? _itemPreCondition : _preCondition;
-		if ((preCondition == null) || preCondition.isEmpty())
+
+		if ((_preCondition == null) || _preCondition.isEmpty())
 		{
 			return true;
 		}
 		
 		final Creature target = (object instanceof Creature) ? (Creature) object : null;
-		for (Condition cond : preCondition)
+		for (Condition cond : _preCondition)
 		{
 			if (!cond.test(activeChar, target, this))
 			{
@@ -1477,24 +1475,13 @@ public final class Skill implements IIdentifiable
 		effects.add(effect);
 	}
 	
-	public void attach(Condition c, boolean itemOrWeapon)
+	public void attach(Condition c)
 	{
-		if (itemOrWeapon)
+		if (_preCondition == null)
 		{
-			if (_itemPreCondition == null)
-			{
-				_itemPreCondition = new ArrayList<>();
-			}
-			_itemPreCondition.add(c);
+			_preCondition = new ArrayList<>();
 		}
-		else
-		{
-			if (_preCondition == null)
-			{
-				_preCondition = new ArrayList<>();
-			}
-			_preCondition.add(c);
-		}
+		_preCondition.add(c);
 	}
 	
 	@Override

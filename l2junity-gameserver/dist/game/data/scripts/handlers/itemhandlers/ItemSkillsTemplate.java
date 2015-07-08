@@ -83,7 +83,7 @@ public class ItemSkillsTemplate implements IItemHandler
 					hasConsumeSkill = true;
 				}
 				
-				if (!itemSkill.checkCondition(playable, playable.getTarget(), false))
+				if (!itemSkill.checkCondition(playable, playable.getTarget()))
 				{
 					return false;
 				}

@@ -289,7 +289,7 @@ public final class Weapon extends L2Item
 			}
 			
 			// Skill condition not met
-			if (!skill.checkCondition(caster, target, false))
+			if (!skill.checkCondition(caster, target))
 			{
 				return;
 			}
