@@ -107,7 +107,7 @@
 	</skill>
 	<skill id="20007" levels="1" name="Block Invincibility">
 		<!-- Updated to Ertheia -->
-		<!-- Skill activates once Celestial Aegis, Celestial Protection, or the Celestial Party Protection is received. -->
+		<!-- Skill activates once Celestial Aegis wears off. -->
 		<!-- For 2 min., HP/MP Recovery Bonus increase, and Speed + 5. You cannot receive the Celestial Aegis, Celestial Protection, or the Celestial Party Protection effect. -->
 		<set name="icon" val="icon.skill11560" />
 		<set name="abnormalLvl" val="99" />
@@ -118,6 +118,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
+		<set name="canBeDispelled" val="false" />
 		<for>
 			<effect name="Buff">
 				<add stat="regHp" val="1" /> <!-- 1 Bonus HP/MP regen... what a joke :D -->
