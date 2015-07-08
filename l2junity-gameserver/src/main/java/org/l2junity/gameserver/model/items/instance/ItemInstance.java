@@ -767,7 +767,7 @@ public final class ItemInstance extends WorldObject
 	 */
 	public boolean isDropable()
 	{
-		return isAugmented() ? false : _item.isDropable();
+		return !isAugmented() && _item.isDropable();
 	}
 	
 	/**
@@ -785,7 +785,7 @@ public final class ItemInstance extends WorldObject
 	 */
 	public boolean isTradeable()
 	{
-		return isAugmented() ? false : _item.isTradeable();
+		return !isAugmented() && _item.isTradeable();
 	}
 	
 	/**
@@ -794,7 +794,7 @@ public final class ItemInstance extends WorldObject
 	 */
 	public boolean isSellable()
 	{
-		return isAugmented() ? false : _item.isSellable();
+		return !isAugmented() && _item.isSellable();
 	}
 	
 	/**

@@ -1910,8 +1910,7 @@ public final class Formulas
 		{
 			return 0;
 		}
-		final double damage = cha.calcStat(Stats.FALL, (fallHeight * cha.getMaxHp()) / 1000.0, null, null);
-		return damage;
+		return cha.calcStat(Stats.FALL, (fallHeight * cha.getMaxHp()) / 1000.0, null, null);
 	}
 	
 	public static boolean calcBlowSuccess(Creature activeChar, Creature target, Skill skill, double blowChance)

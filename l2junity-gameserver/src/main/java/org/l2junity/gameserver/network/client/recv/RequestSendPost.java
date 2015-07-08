@@ -307,11 +307,7 @@ public final class RequestSendPost implements IClientIncomingPacket
 		{
 			return false;
 		}
-		
-		final StringBuilder recv = new StringBuilder(32);
-		recv.append(msg.getReceiverName() + "[" + msg.getReceiverId() + "]");
-		final String receiver = recv.toString();
-		
+
 		// Proceed to the transfer
 		InventoryUpdate playerIU = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
 		for (AttachmentItem i : _items)
@@ -324,7 +320,7 @@ public final class RequestSendPost implements IClientIncomingPacket
 				return false;
 			}
 			
-			final ItemInstance newItem = player.getInventory().transferItem("SendMail", i.getObjectId(), i.getCount(), attachments, player, receiver);
+			final ItemInstance newItem = player.getInventory().transferItem("SendMail", i.getObjectId(), i.getCount(), attachments, player, msg.getReceiverName() + "[" + msg.getReceiverId() + "]");
 			if (newItem == null)
 			{
 				_log.warn("Error adding attachment for char " + player.getName() + " (newitem == null)");

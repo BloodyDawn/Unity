@@ -503,7 +503,6 @@ public class AugmentationData
 			else
 			{
 				LOGGER.warn("ERROR The retailchances_accessory.xml data file is missing.");
-				return;
 			}
 		}
 	}

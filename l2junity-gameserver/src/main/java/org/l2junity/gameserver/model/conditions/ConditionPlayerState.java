@@ -47,7 +47,6 @@ public class ConditionPlayerState extends Condition
 	@Override
 	public boolean testImpl(Creature effector, Creature effected, Skill skill, L2Item item)
 	{
-		final Creature character = effector;
 		final PlayerInstance player = effector.getActingPlayer();
 		switch (_check)
 		{
@@ -58,21 +57,21 @@ public class ConditionPlayerState extends Condition
 				}
 				return !_required;
 			case MOVING:
-				return character.isMoving() == _required;
+				return effector.isMoving() == _required;
 			case RUNNING:
-				return character.isRunning() == _required;
+				return effector.isRunning() == _required;
 			case STANDING:
 				if (player != null)
 				{
 					return (_required != (player.isSitting() || player.isMoving()));
 				}
-				return (_required != character.isMoving());
+				return (_required != effector.isMoving());
 			case FLYING:
-				return (character.isFlying() == _required);
+				return (effector.isFlying() == _required);
 			case BEHIND:
-				return (character.isBehindTarget() == _required);
+				return (effector.isBehindTarget() == _required);
 			case FRONT:
-				return (character.isInFrontOfTarget() == _required);
+				return (effector.isInFrontOfTarget() == _required);
 			case CHAOTIC:
 				if (player != null)
 				{

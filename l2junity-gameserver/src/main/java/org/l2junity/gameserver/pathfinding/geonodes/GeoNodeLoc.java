@@ -54,13 +54,7 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	{
 		return _z;
 	}
-	
-	@Override
-	public void setZ(short z)
-	{
-		//
-	}
-	
+
 	@Override
 	public int getNodeX()
 	{

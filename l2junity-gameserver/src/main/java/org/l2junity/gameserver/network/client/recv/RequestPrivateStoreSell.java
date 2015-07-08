@@ -92,13 +92,12 @@ public final class RequestPrivateStoreSell implements IClientIncomingPacket
 			return;
 		}
 		
-		PlayerInstance object = World.getInstance().getPlayer(_storePlayerId);
-		if (object == null)
+		final PlayerInstance storePlayer = World.getInstance().getPlayer(_storePlayerId);
+		if (storePlayer == null)
 		{
 			return;
 		}
-		
-		PlayerInstance storePlayer = object;
+
 		if (!player.isInsideRadius(storePlayer, INTERACTION_DISTANCE, true, false))
 		{
 			return;

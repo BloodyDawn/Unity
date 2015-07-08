@@ -227,7 +227,7 @@ public class SecondaryPasswordAuth
 	
 	public boolean passwordExist()
 	{
-		return _password == null ? false : true;
+		return _password != null;
 	}
 	
 	public void openDialog()

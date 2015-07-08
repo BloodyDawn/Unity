@@ -695,15 +695,6 @@ public class CharacterAI extends AbstractAI
 	}
 	
 	/**
-	 * Do nothing.
-	 */
-	@Override
-	protected void onEvtUserCmd(Object arg0, Object arg1)
-	{
-		// do nothing
-	}
-	
-	/**
 	 * Launch actions corresponding to the Event Arrived.<br>
 	 * <B><U> Actions</U> :</B>
 	 * <ul>

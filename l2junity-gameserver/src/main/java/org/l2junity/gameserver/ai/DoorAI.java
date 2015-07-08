@@ -121,11 +121,6 @@ public class DoorAI extends CharacterAI
 	}
 	
 	@Override
-	protected void onEvtUserCmd(Object arg0, Object arg1)
-	{
-	}
-	
-	@Override
 	protected void onEvtArrived()
 	{
 	}

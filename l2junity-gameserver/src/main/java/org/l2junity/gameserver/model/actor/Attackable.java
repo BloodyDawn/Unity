@@ -1422,12 +1422,10 @@ public class Attackable extends Npc
 			}
 		}
 		
-		int[] tmp =
-		{
+		return new int[] {
 			(int) xp,
 			(int) sp
 		};
-		return tmp;
 	}
 	
 	public long calculateOverhitExp(long normalExp)
@@ -1443,11 +1441,10 @@ public class Attackable extends Npc
 		
 		// Get the overhit exp bonus according to the above over-hit damage percentage
 		// (1/1 basis - 13% of over-hit damage, 13% of extra exp is given, and so on...)
-		double overhitExp = ((overhitPercentage / 100) * normalExp);
+		final double overhitExp = ((overhitPercentage / 100) * normalExp);
 		
-		// Return the rounded ammount of exp points to be added to the player's normal exp reward
-		long bonusOverhit = Math.round(overhitExp);
-		return bonusOverhit;
+		// Return the rounded amount of exp points to be added to the player's normal exp reward
+		return Math.round(overhitExp);
 	}
 	
 	/**

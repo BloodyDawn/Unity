@@ -190,11 +190,9 @@ public class StatsSet implements IParserAdvUtils
 		}
 		if (val instanceof Number)
 		{
-			byte[] result =
-			{
+			return new byte[] {
 				((Number) val).byteValue()
 			};
-			return result;
 		}
 		int c = 0;
 		String[] vals = ((String) val).split(splitOn);
@@ -322,11 +320,9 @@ public class StatsSet implements IParserAdvUtils
 		}
 		if (val instanceof Number)
 		{
-			int[] result =
-			{
+			return new int[] {
 				((Number) val).intValue()
 			};
-			return result;
 		}
 		int c = 0;
 		String[] vals = ((String) val).split(splitOn);

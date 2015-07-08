@@ -539,8 +539,7 @@ public class CharStat
 		{
 			bonusAtk = Config.L2JMOD_CHAMPION_SPD_ATK;
 		}
-		int val = (int) Math.round(calcStat(Stats.POWER_ATTACK_SPEED, _activeChar.getTemplate().getBasePAtkSpd() * bonusAtk, null, null));
-		return val;
+		return (int) Math.round(calcStat(Stats.POWER_ATTACK_SPEED, _activeChar.getTemplate().getBasePAtkSpd() * bonusAtk, null, null));
 	}
 	
 	/**

@@ -322,7 +322,6 @@ public final class ItemAuction
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_SUBMITTED_A_BID_FOR_THE_AUCTION_OF_S1);
 			sm.addLong(newBid);
 			player.sendPacket(sm);
-			return;
 		}
 	}
 	

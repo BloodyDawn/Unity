@@ -328,7 +328,7 @@ public final class SiegeGuardManager
 	{
 		try
 		{
-			final boolean isHired = (castle.getOwnerId() > 0) ? true : false;
+			final boolean isHired = (castle.getOwnerId() > 0);
 			loadSiegeGuard(castle);
 			
 			for (L2Spawn spawn : getSpawnedGuards(castle.getResidenceId()))

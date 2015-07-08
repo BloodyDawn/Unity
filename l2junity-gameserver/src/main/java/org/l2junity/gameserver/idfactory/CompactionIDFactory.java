@@ -79,7 +79,7 @@ public class CompactionIDFactory extends IdFactory
 					ps.setInt(2, id);
 					try (ResultSet rs = ps.executeQuery())
 					{
-						while (rs.next())
+						if (rs.next())
 						{
 							int badId = rs.getInt(1);
 							LOGGER.error(getClass().getSimpleName() + ": Bad ID " + badId + " in DB found by: " + check);

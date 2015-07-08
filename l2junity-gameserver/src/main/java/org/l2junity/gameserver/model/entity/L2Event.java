@@ -261,9 +261,7 @@ public class L2Event
 		else
 		{
 			player.sendMessage("You have reached the maximum allowed participants per IP.");
-			return;
 		}
-		
 	}
 	
 	/**

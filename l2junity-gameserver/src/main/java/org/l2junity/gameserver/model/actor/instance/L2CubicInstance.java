@@ -493,7 +493,6 @@ public final class L2CubicInstance implements IIdentifiable
 						if (targetIt)
 						{
 							_target = enemy;
-							return;
 						}
 					}
 				}

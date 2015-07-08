@@ -568,31 +568,6 @@ public class GeoData
 		return true;
 	}
 	
-	public int traceTerrainZ(int x, int y, int z, int tx, int ty)
-	{
-		int geoX = getGeoX(x);
-		int geoY = getGeoY(y);
-		z = getNearestZ(geoX, geoY, z);
-		int tGeoX = getGeoX(tx);
-		int tGeoY = getGeoY(ty);
-		
-		LinePointIterator pointIter = new LinePointIterator(geoX, geoY, tGeoX, tGeoY);
-		// first point is guaranteed to be available
-		pointIter.next();
-		int prevZ = z;
-		
-		while (pointIter.next())
-		{
-			int curX = pointIter.x();
-			int curY = pointIter.y();
-			int curZ = getNearestZ(curX, curY, prevZ);
-			
-			prevZ = curZ;
-		}
-		
-		return prevZ;
-	}
-	
 	/**
 	 * Checks if its possible to move from one location to another.
 	 * @param from the {@code ILocational} to start checking from

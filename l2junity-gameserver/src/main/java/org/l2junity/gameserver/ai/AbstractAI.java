@@ -374,9 +374,6 @@ public abstract class AbstractAI implements Ctrl
 					onEvtReadyToAct();
 				}
 				break;
-			case EVT_USER_CMD:
-				onEvtUserCmd(arg0, arg1);
-				break;
 			case EVT_ARRIVED:
 				// happens e.g. from stopmove but we don't process it if we're casting
 				if (!_actor.isCastingNow() && !_actor.isCastingSimultaneouslyNow())
@@ -457,8 +454,6 @@ public abstract class AbstractAI implements Ctrl
 	protected abstract void onEvtEvaded(Creature attacker);
 	
 	protected abstract void onEvtReadyToAct();
-	
-	protected abstract void onEvtUserCmd(Object arg0, Object arg1);
 	
 	protected abstract void onEvtArrived();
 	

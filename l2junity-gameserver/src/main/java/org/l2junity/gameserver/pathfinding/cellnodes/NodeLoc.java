@@ -95,12 +95,6 @@ public class NodeLoc extends AbstractNodeLoc
 	}
 	
 	@Override
-	public void setZ(short z)
-	{
-		//
-	}
-	
-	@Override
 	public int getNodeX()
 	{
 		return _x;

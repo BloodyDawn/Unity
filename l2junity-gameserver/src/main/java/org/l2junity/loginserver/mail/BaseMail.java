@@ -136,8 +136,7 @@ public class BaseMail implements Runnable
 			{
 				if (rset.next())
 				{
-					String mail = rset.getString(Config.EMAIL_SYS_DBFIELD);
-					return mail;
+					return rset.getString(Config.EMAIL_SYS_DBFIELD);
 				}
 			}
 		}

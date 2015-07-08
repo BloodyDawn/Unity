@@ -136,12 +136,12 @@ public class Ingredient
 	
 	public final boolean isStackable()
 	{
-		return _template == null ? true : _template.isStackable();
+		return _template == null || _template.isStackable();
 	}
 	
 	public final boolean isArmorOrWeapon()
 	{
-		return _template == null ? false : (_template instanceof Armor) || (_template instanceof Weapon);
+		return _template != null && ((_template instanceof Armor) || (_template instanceof Weapon));
 	}
 	
 	public final int getWeight()

@@ -97,10 +97,9 @@ public final class SiegeManager
 			statement.setInt(2, castleid);
 			try (ResultSet rs = statement.executeQuery())
 			{
-				while (rs.next())
+				if (rs.next())
 				{
 					register = true;
-					break;
 				}
 			}
 		}

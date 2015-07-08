@@ -270,16 +270,6 @@ public abstract class AbstractEffect
 		return "Effect " + _name;
 	}
 	
-	public void decreaseForce()
-	{
-		
-	}
-	
-	public void increaseEffect()
-	{
-		
-	}
-	
 	public boolean checkCondition(Object obj)
 	{
 		return true;

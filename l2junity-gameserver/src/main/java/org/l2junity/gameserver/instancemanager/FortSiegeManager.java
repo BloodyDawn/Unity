@@ -95,10 +95,9 @@ public final class FortSiegeManager
 			ps.setInt(2, fortid);
 			try (ResultSet rs = ps.executeQuery())
 			{
-				while (rs.next())
+				if (rs.next())
 				{
 					register = true;
-					break;
 				}
 			}
 		}

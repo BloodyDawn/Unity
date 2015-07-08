@@ -61,20 +61,6 @@ public final class ClanWarehouse extends Warehouse
 		return ItemLocation.CLANWH;
 	}
 	
-	public String getLocationId()
-	{
-		return "0";
-	}
-	
-	public int getLocationId(boolean dummy)
-	{
-		return 0;
-	}
-	
-	public void setLocationId(PlayerInstance dummy)
-	{
-	}
-	
 	@Override
 	public boolean validateCapacity(long slots)
 	{

@@ -50,10 +50,6 @@ public enum CtrlEvent
 	 */
 	EVT_READY_TO_ACT,
 	/**
-	 * User's command, like using a combat magic or changing weapon, etc. The command is not intended to change final goal
-	 */
-	EVT_USER_CMD,
-	/**
 	 * The actor arrived to assigned location, or it's a time to modify movement destination (follow, interact, random move and others intentions).
 	 */
 	EVT_ARRIVED,

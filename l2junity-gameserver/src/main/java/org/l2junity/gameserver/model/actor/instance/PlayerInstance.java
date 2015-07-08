@@ -12680,7 +12680,7 @@ public final class PlayerInstance extends Playable
 	
 	public boolean isHungry()
 	{
-		return hasPet() && _canFeed ? (getCurrentFeed() < ((getPetData(getMountNpcId()).getHungryLimit() / 100f) * getPetLevelData(getMountNpcId()).getPetMaxFeed())) : false;
+		return hasPet() && _canFeed && (getCurrentFeed() < ((getPetData(getMountNpcId()).getHungryLimit() / 100f) * getPetLevelData(getMountNpcId()).getPetMaxFeed()));
 	}
 	
 	public void enteredNoLanding(int delay)
