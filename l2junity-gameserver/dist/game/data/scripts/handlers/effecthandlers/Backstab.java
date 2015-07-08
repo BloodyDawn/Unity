@@ -44,7 +44,7 @@ public final class Backstab extends AbstractEffect
 	public Backstab(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_power = params.getDouble("power", 0);
 		_chance = params.getDouble("chance", 0);
 		_criticalChance = params.getDouble("criticalChance", 0);
@@ -95,7 +95,7 @@ public final class Backstab extends AbstractEffect
 			damage *= 2;
 		}
 		
-		target.reduceCurrentHp(damage, activeChar, info.getSkill());
+		target.reduceCurrentHp(damage, activeChar, !info.getSkill().isToggle(), false, true, info.getSkill());
 		target.notifyDamageReceived(damage, activeChar, info.getSkill(), true, false, false);
 		
 		// Manage attack or cast break of the target (calculating rate, sending message...)

@@ -6337,9 +6337,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		getStatus().addStatusListener(object);
 	}
 	
-	public void reduceCurrentHp(double i, Creature attacker, Skill skill)
+	public void reduceCurrentHp(double value, Creature attacker, Skill skill)
 	{
-		reduceCurrentHp(i, attacker, true, false, skill);
+		reduceCurrentHp(value, attacker, true, false, skill);
 	}
 	
 	public void reduceCurrentHpByDOT(double i, Creature attacker, Skill skill)
@@ -6347,15 +6347,20 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		reduceCurrentHp(i, attacker, !skill.isToggle(), true, skill);
 	}
 	
-	public void reduceCurrentHp(double i, Creature attacker, boolean awake, boolean isDOT, Skill skill)
+	public void reduceCurrentHp(double value, Creature attacker, boolean awake, boolean isDOT, Skill skill)
+	{
+		reduceCurrentHp(value, attacker, awake, isDOT, false, skill);
+	}
+	
+	public void reduceCurrentHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean directlyToHp, Skill skill)
 	{
 		if (Config.L2JMOD_CHAMPION_ENABLE && isChampion() && (Config.L2JMOD_CHAMPION_HP != 0))
 		{
-			getStatus().reduceHp(i / Config.L2JMOD_CHAMPION_HP, attacker, awake, isDOT, false);
+			getStatus().reduceHp(value / Config.L2JMOD_CHAMPION_HP, attacker, awake, isDOT, false);
 		}
 		else
 		{
-			getStatus().reduceHp(i, attacker, awake, isDOT, false);
+			getStatus().reduceHp(value, attacker, awake, isDOT, false);
 		}
 	}
 	

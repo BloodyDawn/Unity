@@ -10881,11 +10881,11 @@ public final class PlayerInstance extends Playable
 	}
 	
 	@Override
-	public void reduceCurrentHp(double value, Creature attacker, boolean awake, boolean isDOT, Skill skill)
+	public void reduceCurrentHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean directlyToHp, Skill skill)
 	{
 		if (skill != null)
 		{
-			getStatus().reduceHp(value, attacker, awake, isDOT, skill.isToggle(), skill.getDmgDirectlyToHP());
+			getStatus().reduceHp(value, attacker, awake, isDOT, skill.isToggle(), directlyToHp);
 		}
 		else
 		{
@@ -11907,7 +11907,7 @@ public final class PlayerInstance extends Playable
 		final BuffInfo info = getEffectList().getBuffInfoBySkillId(2274);
 		if (info != null)
 		{
-			skilllvl = 1;//(int) info.getSkill().getPower();
+			skilllvl = 1;// (int) info.getSkill().getPower();
 		}
 		if (skilllvl <= 0)
 		{

@@ -26,6 +26,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
@@ -158,7 +159,6 @@ public final class Skill implements IIdentifiable
 	private final int _chargeConsume;
 	private final int _soulMaxConsume;
 	
-	private final boolean _directHpDmg; // If true then damage is being make directly
 	private final boolean _isTriggeredSkill; // If true the skill will take activation buff slot instead of a normal buff slot
 	private final int _effectPoint;
 	// Condition lists
@@ -333,7 +333,6 @@ public final class Skill implements IIdentifiable
 		
 		_soulMaxConsume = set.getInt("soulMaxConsumeCount", 0);
 		
-		_directHpDmg = set.getBoolean("dmgDirectlyToHp", false);
 		_isTriggeredSkill = set.getBoolean("isTriggeredSkill", false);
 		_effectPoint = set.getInt("effectPoint", 0);
 		
@@ -515,7 +514,7 @@ public final class Skill implements IIdentifiable
 	{
 		return _minChance;
 	}
-
+	
 	/**
 	 * Return custom maximum skill/effect chance.
 	 * @return
@@ -882,11 +881,6 @@ public final class Skill implements IIdentifiable
 		return _soulMaxConsume;
 	}
 	
-	public boolean getDmgDirectlyToHP()
-	{
-		return _directHpDmg;
-	}
-	
 	public FlyType getFlyType()
 	{
 		return _flyType;
@@ -931,7 +925,7 @@ public final class Skill implements IIdentifiable
 			activeChar.sendPacket(sm);
 			return false;
 		}
-
+		
 		if ((_preCondition == null) || _preCondition.isEmpty())
 		{
 			return true;
@@ -1267,7 +1261,8 @@ public final class Skill implements IIdentifiable
 			{
 				if ((addContinuousEffects && isContinuous() && !isDebuff()) || isRecoveryHerb())
 				{
-					effected.getServitors().values().forEach(s -> {
+					effected.getServitors().values().forEach(s ->
+					{
 						applyEffects(effector, s, isRecoveryHerb(), 0);
 					});
 				}
@@ -1296,7 +1291,8 @@ public final class Skill implements IIdentifiable
 			// Avoiding Servitor Share since it's implementation already "shares" the effect.
 			if (addContinuousEffects && isSharedWithSummon() && info.getEffected().isPlayer() && isContinuous() && !isDebuff() && info.getEffected().hasServitors())
 			{
-				info.getEffected().getServitors().values().forEach(s -> {
+				info.getEffected().getServitors().values().forEach(s ->
+				{
 					applyEffects(effector, s, false, 0);
 				});
 			}
@@ -1435,7 +1431,7 @@ public final class Skill implements IIdentifiable
 		{
 			return;
 		}
-
+		
 		List<AbstractEffect> effects = _effectLists.get(effectScope);
 		if (effects == null)
 		{
