@@ -1482,7 +1482,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		if (target instanceof L2PetInstance)
 		{
 			html.replace("%food%", ((L2PetInstance) target).getCurrentFed() + "/" + ((L2PetInstance) target).getPetLevelData().getPetMaxFeed());
-			html.replace("%load%", ((L2PetInstance) target).getInventory().getTotalWeight() + "/" + ((L2PetInstance) target).getMaxLoad());
+			html.replace("%load%", target.getInventory().getTotalWeight() + "/" + target.getMaxLoad());
 		}
 		else
 		{

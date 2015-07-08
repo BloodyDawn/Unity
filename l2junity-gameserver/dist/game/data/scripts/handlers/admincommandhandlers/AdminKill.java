@@ -130,7 +130,7 @@ public class AdminKill implements IAdminCommandHandler
 	{
 		if (target instanceof PlayerInstance)
 		{
-			if (!((PlayerInstance) target).isGM())
+			if (!target.isGM())
 			{
 				target.stopAllEffects(); // e.g. invincibility effect
 			}

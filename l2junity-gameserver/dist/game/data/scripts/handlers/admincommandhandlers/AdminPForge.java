@@ -441,7 +441,7 @@ public final class AdminPForge implements IAdminCommandHandler
 								target = activeChar.getTarget();
 								if ((target != null) && (target instanceof Playable))
 								{
-									boat = ((Playable) target).getActingPlayer().getBoat();
+									boat = target.getActingPlayer().getBoat();
 									if (boat != null)
 									{
 										value = String.valueOf(boat.getObjectId());

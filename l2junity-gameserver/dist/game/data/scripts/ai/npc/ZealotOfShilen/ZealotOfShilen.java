@@ -62,7 +62,7 @@ public final class ZealotOfShilen extends AbstractNpcAI
 		{
 			World.getInstance().forEachVisibleObject(npc, L2MonsterInstance.class, character ->
 			{
-				if (!character.isDead() && !((Attackable) character).isDecayed())
+				if (!character.isDead() && !character.isDecayed())
 				{
 					npc.setRunning();
 					((Attackable) npc).addDamageHate(character, 0, 999);

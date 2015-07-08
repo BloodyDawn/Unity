@@ -351,8 +351,8 @@ public class AdminFightCalculator implements IAdminCommandHandler
 		
 		if (params.length() != 0)
 		{
-			((L2MonsterInstance) npc1).deleteMe();
-			((L2MonsterInstance) npc2).deleteMe();
+			npc1.deleteMe();
+			npc2.deleteMe();
 		}
 	}
 }

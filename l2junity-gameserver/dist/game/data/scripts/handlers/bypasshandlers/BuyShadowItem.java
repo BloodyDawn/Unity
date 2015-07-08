@@ -40,7 +40,7 @@ public class BuyShadowItem implements IBypassHandler
 			return false;
 		}
 		
-		final NpcHtmlMessage html = new NpcHtmlMessage(((Npc) target).getObjectId());
+		final NpcHtmlMessage html = new NpcHtmlMessage(target.getObjectId());
 		if (activeChar.getLevel() < 40)
 		{
 			html.setFile(activeChar.getHtmlPrefix(), "data/html/common/shadow_item-lowlevel.htm");
@@ -57,7 +57,7 @@ public class BuyShadowItem implements IBypassHandler
 		{
 			html.setFile(activeChar.getHtmlPrefix(), "data/html/common/shadow_item_b.htm");
 		}
-		html.replace("%objectId%", String.valueOf(((Npc) target).getObjectId()));
+		html.replace("%objectId%", String.valueOf(target.getObjectId()));
 		activeChar.sendPacket(html);
 		
 		return true;

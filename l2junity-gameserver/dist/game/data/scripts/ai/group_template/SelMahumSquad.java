@@ -303,7 +303,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 	{
 		if (npc.isMonster() && (npc.getVariables().getInt("REWARD_TIME_GONE") == 0))
 		{
-			((L2MonsterInstance) npc).dropItem(killer, 15492, 1);
+			npc.dropItem(killer, 15492, 1);
 		}
 		cancelQuestTimer("chef_remove_invul", npc, null);
 		cancelQuestTimer("chef_disable_reward", npc, null);
