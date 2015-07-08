@@ -26,7 +26,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
@@ -46,8 +45,6 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2BlockInstance;
 import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -61,13 +58,10 @@ import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.TraitType;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
-import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
-import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -1159,7 +1153,7 @@ public final class Skill implements IIdentifiable
 	 */
 	public boolean hasEffects(EffectScope effectScope)
 	{
-		List<AbstractEffect> effects = _effectLists.get(effectScope);
+		final List<AbstractEffect> effects = _effectLists.get(effectScope);
 		return (effects != null) && !effects.isEmpty();
 	}
 	
@@ -1176,21 +1170,18 @@ public final class Skill implements IIdentifiable
 		{
 			for (AbstractEffect effect : getEffects(effectScope))
 			{
-				if (effect != null)
+				if (effect.isInstant())
 				{
-					if (effect.isInstant())
+					if (applyInstantEffects && effect.calcSuccess(info))
 					{
-						if (applyInstantEffects && effect.calcSuccess(info))
-						{
-							effect.onStart(info);
-						}
+						effect.onStart(info);
 					}
-					else if (addContinuousEffects)
+				}
+				else if (addContinuousEffects)
+				{
+					if (effect.canStart(info))
 					{
-						if (effect.canStart(info))
-						{
-							info.addEffect(effect);
-						}
+						info.addEffect(effect);
 					}
 				}
 			}
@@ -1276,8 +1267,7 @@ public final class Skill implements IIdentifiable
 			{
 				if ((addContinuousEffects && isContinuous() && !isDebuff()) || isRecoveryHerb())
 				{
-					effected.getServitors().values().forEach(s ->
-					{
+					effected.getServitors().values().forEach(s -> {
 						applyEffects(effector, s, isRecoveryHerb(), 0);
 					});
 				}
@@ -1306,8 +1296,7 @@ public final class Skill implements IIdentifiable
 			// Avoiding Servitor Share since it's implementation already "shares" the effect.
 			if (addContinuousEffects && isSharedWithSummon() && info.getEffected().isPlayer() && isContinuous() && !isDebuff() && info.getEffected().hasServitors())
 			{
-				info.getEffected().getServitors().values().forEach(s ->
-				{
+				info.getEffected().getServitors().values().forEach(s -> {
 					applyEffects(effector, s, false, 0);
 				});
 			}
@@ -1442,6 +1431,11 @@ public final class Skill implements IIdentifiable
 	 */
 	public void addEffect(EffectScope effectScope, AbstractEffect effect)
 	{
+		if (effect == null)
+		{
+			return;
+		}
+
 		List<AbstractEffect> effects = _effectLists.get(effectScope);
 		if (effects == null)
 		{
@@ -1611,10 +1605,6 @@ public final class Skill implements IIdentifiable
 						{
 							for (AbstractEffect effect : effectList)
 							{
-								if (effect == null)
-								{
-									continue;
-								}
 								effectTypesSet.add((byte) effect.getEffectType().ordinal());
 							}
 						}
@@ -1657,11 +1647,6 @@ public final class Skill implements IIdentifiable
 		
 		for (AbstractEffect effect : _effectLists.get(effectScope))
 		{
-			if (effect == null)
-			{
-				continue;
-			}
-			
 			if (effectType == effect.getEffectType())
 			{
 				return true;
