@@ -1235,4 +1235,10 @@ public abstract class Summon extends Playable
 			owner.sendInventoryUpdate(iu);
 		}
 	}
+	
+	@Override
+	public boolean isMovementDisabled()
+	{
+		return super.isMovementDisabled() || !getTemplate().canMove();
+	}
 }
