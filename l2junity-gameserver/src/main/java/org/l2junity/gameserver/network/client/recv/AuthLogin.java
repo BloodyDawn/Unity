@@ -22,7 +22,6 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.LoginServerThread;
 import org.l2junity.gameserver.LoginServerThread.SessionKey;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.network.PacketReader;
 
 /**
