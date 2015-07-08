@@ -5266,8 +5266,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			{
 				removeStatsOwner(oldSkill);
 			}
-			// Add Func objects of newSkill to the calculator set of the L2Character
-			addStatFuncs(newSkill.getStatFuncs(null, this));
 			
 			if (newSkill.isPassive())
 			{

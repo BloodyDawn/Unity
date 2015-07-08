@@ -171,8 +171,6 @@ public final class Skill implements IIdentifiable
 	private List<Condition> _preCondition;
 	private List<Condition> _itemPreCondition;
 	private Set<MountType> _rideState;
-	// Function lists
-	private List<FuncTemplate> _funcTemplates;
 	
 	private final Map<EffectScope, List<AbstractEffect>> _effectLists = new EnumMap<>(EffectScope.class);
 	
@@ -1170,30 +1168,6 @@ public final class Skill implements IIdentifiable
 		return true;
 	}
 	
-	public List<AbstractFunction> getStatFuncs(AbstractEffect effect, Creature player)
-	{
-		if (_funcTemplates == null)
-		{
-			return Collections.emptyList();
-		}
-		
-		if (!(player instanceof Playable) && !(player instanceof Attackable))
-		{
-			return Collections.emptyList();
-		}
-		
-		final List<AbstractFunction> functions = new ArrayList<>(_funcTemplates.size());
-		for (FuncTemplate template : _funcTemplates)
-		{
-			final AbstractFunction function = template.getFunc(player, null, this, this); // skill is owner
-			if (function != null)
-			{
-				functions.add(function);
-			}
-		}
-		return functions;
-	}
-	
 	/**
 	 * Gets the skill effects.
 	 * @param effectScope the effect scope
@@ -1485,15 +1459,6 @@ public final class Skill implements IIdentifiable
 				caster.setChargedShot(ShotType.SOULSHOTS, false);
 			}
 		}
-	}
-	
-	public void attach(FuncTemplate f)
-	{
-		if (_funcTemplates == null)
-		{
-			_funcTemplates = new ArrayList<>(1);
-		}
-		_funcTemplates.add(f);
 	}
 	
 	/**
