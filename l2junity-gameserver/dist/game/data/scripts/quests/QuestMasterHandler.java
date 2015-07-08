@@ -279,6 +279,7 @@ import quests.Q10781_IngredientsToEnforcements.Q10781_IngredientsToEnforcements;
 import quests.Q10782_LettersFromTheQueenForsakenPlains.Q10782_LettersFromTheQueenForsakenPlains;
 import quests.Q10783_TracesOfAnAmbush.Q10783_TracesOfAnAmbush;
 import quests.Q10784_TheBrokenDevice.Q10784_TheBrokenDevice;
+import quests.Q10785_LettersFromTheQueenFieldsOfMassacre.Q10785_LettersFromTheQueenFieldsOfMassacre;
 
 /**
  * @author NosBit
@@ -546,7 +547,8 @@ public class QuestMasterHandler
 		Q10781_IngredientsToEnforcements.class,
 		Q10782_LettersFromTheQueenForsakenPlains.class,
 		Q10783_TracesOfAnAmbush.class,
-		Q10784_TheBrokenDevice.class
+		Q10784_TheBrokenDevice.class,
+		Q10785_LettersFromTheQueenFieldsOfMassacre.class
 	};
 	
 	public static void main(String[] args)

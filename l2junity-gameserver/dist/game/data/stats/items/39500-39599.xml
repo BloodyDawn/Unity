@@ -1134,6 +1134,10 @@
 	<item id="39578" name="Scroll of Escape: Town of Aden" type="EtcItem">
 		<!-- Teleports you to Town of Aden. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="handler" val="ItemSkills" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1142,12 +1146,20 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
-		<set name="weight" val="30" />
+		<skills>
+			<skill id="17953" level="1" /> <!-- Scroll of Escape: Town of Aden -->
+		</skills>
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
 	</item>
 	<item id="39579" name="Scroll of Escape: Fields of Massacre" type="EtcItem">
 		<!-- Teleports you to Fields of Massacre. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="handler" val="ItemSkills" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1156,8 +1168,12 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
-		<set name="weight" val="30" />
+		<skills>
+			<skill id="17954" level="1" /> <!-- Scroll of Escape: Fields of Massacre -->
+		</skills>
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
 	</item>
 	<item id="39580" name="Scroll of Escape: Town of Rune" type="EtcItem">
 		<!-- Teleports you to Town of Rune. -->
