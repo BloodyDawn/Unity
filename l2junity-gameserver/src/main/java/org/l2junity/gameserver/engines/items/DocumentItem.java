@@ -143,7 +143,7 @@ public final class DocumentItem extends DocumentBase implements IXmlReader
 					if ("skill".equalsIgnoreCase(b.getNodeName()))
 					{
 						final int id = parseInteger(b.getAttributes(), "id");
-						final int level = parseInteger(b.getAttributes(), "id");
+						final int level = parseInteger(b.getAttributes(), "level");
 						final ItemSkillType type = parseEnum(b.getAttributes(), ItemSkillType.class, "type", ItemSkillType.NORMAL);
 						final int chance = parseInteger(b.getAttributes(), "type_chance", 0);
 						final int value = parseInteger(b.getAttributes(), "type_value", 0);
