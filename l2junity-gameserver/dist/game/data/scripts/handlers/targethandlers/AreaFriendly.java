@@ -21,7 +21,6 @@ package handlers.targethandlers;
 import java.util.Comparator;
 import java.util.List;
 
-import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
@@ -71,9 +70,10 @@ public class AreaFriendly implements ITargetTypeHandler
 				targetList.sort(new CharComparator());
 			}
 			targetList.add(0, target);
-			if (targetList.size() > (skill.getAffectLimit()))
+			final int affectLimit = skill.getAffectLimit();
+			if (targetList.size() > affectLimit)
 			{
-				targetList.subList(skill.getAffectLimit(), targetList.size()).clear();
+				targetList.subList(affectLimit, targetList.size()).clear();
 			}
 			
 			return targetList.isEmpty() ? EMPTY_TARGET_LIST : targetList.toArray(new Creature[targetList.size()]);
@@ -84,11 +84,6 @@ public class AreaFriendly implements ITargetTypeHandler
 	
 	private boolean checkTarget(Creature activeChar, Creature target)
 	{
-		if (!GeoData.getInstance().canSeeTarget(activeChar, target))
-		{
-			return false;
-		}
-		
 		if ((target == null) || target.isAlikeDead() || target.isDoor() || (target instanceof L2SiegeFlagInstance) || target.isMonster())
 		{
 			return false;
