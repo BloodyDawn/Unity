@@ -56,20 +56,20 @@ public class PartyNotMe implements ITargetTypeHandler
 				else
 				{
 					
-					if (Skill.addPet(activeChar, partyMember, radius, false))
+					if (addPet(activeChar, partyMember, radius, false))
 					{
 						targetList.add(partyMember.getPet());
 					}
 					
 					partyMember.getServitors().values().forEach(s ->
 					{
-						if (Skill.addCharacter(activeChar, s, radius, false))
+						if (addCharacter(activeChar, s, radius, false))
 						{
 							targetList.add(s);
 						}
 					});
 					
-					if (Skill.addCharacter(activeChar, partyMember, radius, false))
+					if (addCharacter(activeChar, partyMember, radius, false))
 					{
 						targetList.add(partyMember);
 					}

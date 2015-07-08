@@ -51,21 +51,21 @@ public class Party implements ITargetTypeHandler
 		PlayerInstance player = activeChar.getActingPlayer();
 		if (activeChar.isSummon())
 		{
-			if (Skill.addCharacter(activeChar, player, radius, false))
+			if (addCharacter(activeChar, player, radius, false))
 			{
 				targetList.add(player);
 			}
 		}
 		else if (activeChar.isPlayer())
 		{
-			if (Skill.addPet(activeChar, player, radius, false))
+			if (addPet(activeChar, player, radius, false))
 			{
 				targetList.add(player.getPet());
 			}
 			
 			player.getServitors().values().forEach(s ->
 			{
-				if (Skill.addCharacter(activeChar, s, radius, false))
+				if (addCharacter(activeChar, s, radius, false))
 				{
 					targetList.add(s);
 				}
@@ -82,19 +82,19 @@ public class Party implements ITargetTypeHandler
 					continue;
 				}
 				
-				if (Skill.addCharacter(activeChar, partyMember, radius, false))
+				if (addCharacter(activeChar, partyMember, radius, false))
 				{
 					targetList.add(partyMember);
 				}
 				
-				if (Skill.addPet(activeChar, partyMember, radius, false))
+				if (addPet(activeChar, partyMember, radius, false))
 				{
 					targetList.add(partyMember.getPet());
 				}
 				
 				partyMember.getServitors().values().forEach(s ->
 				{
-					if (Skill.addCharacter(activeChar, s, radius, false))
+					if (addCharacter(activeChar, s, radius, false))
 					{
 						targetList.add(s);
 					}

@@ -59,14 +59,14 @@ public class PartyClan implements ITargetTypeHandler
 		final boolean hasClan = player.getClan() != null;
 		final boolean hasParty = player.isInParty();
 		
-		if (Skill.addPet(activeChar, player, radius, false))
+		if (addPet(activeChar, player, radius, false))
 		{
 			targetList.add(player.getPet());
 		}
 		
 		player.getServitors().values().forEach(s ->
 		{
-			if (Skill.addCharacter(activeChar, s, radius, false))
+			if (addCharacter(activeChar, s, radius, false))
 			{
 				targetList.add(s);
 			}
@@ -129,20 +129,20 @@ public class PartyClan implements ITargetTypeHandler
 				return;
 			}
 			
-			if (Skill.addPet(activeChar, obj, radius, false))
+			if (addPet(activeChar, obj, radius, false))
 			{
 				targetList.add(obj.getPet());
 			}
 			
 			obj.getServitors().values().forEach(s ->
 			{
-				if (Skill.addCharacter(activeChar, s, radius, false))
+				if (addCharacter(activeChar, s, radius, false))
 				{
 					targetList.add(s);
 				}
 			});
 			
-			if (!Skill.addCharacter(activeChar, obj, radius, false))
+			if (!addCharacter(activeChar, obj, radius, false))
 			{
 				return;
 			}

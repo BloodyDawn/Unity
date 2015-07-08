@@ -521,7 +521,7 @@ public final class Skill implements IIdentifiable
 	{
 		return _minChance;
 	}
-	
+
 	/**
 	 * Return custom maximum skill/effect chance.
 	 * @return
@@ -1136,30 +1136,6 @@ public final class Skill implements IIdentifiable
 		}
 		
 		if (!GeoData.getInstance().canSeeTarget(caster, target))
-		{
-			return false;
-		}
-		return true;
-	}
-	
-	public static final boolean addPet(Creature caster, PlayerInstance owner, int radius, boolean isDead)
-	{
-		final Summon pet = owner.getPet();
-		if (pet == null)
-		{
-			return false;
-		}
-		return addCharacter(caster, pet, radius, isDead);
-	}
-	
-	public static final boolean addCharacter(Creature caster, Creature target, int radius, boolean isDead)
-	{
-		if (isDead != target.isDead())
-		{
-			return false;
-		}
-		
-		if ((radius > 0) && !Util.checkIfInRange(radius, caster, target, true))
 		{
 			return false;
 		}

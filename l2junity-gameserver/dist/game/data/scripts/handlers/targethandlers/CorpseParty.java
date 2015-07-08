@@ -87,7 +87,7 @@ public class CorpseParty implements ITargetTypeHandler
 						continue;
 					}
 					
-					if (!Skill.addCharacter(activeChar, member, radius, true))
+					if (!addCharacter(activeChar, member, radius, true))
 					{
 						continue;
 					}

@@ -89,7 +89,7 @@ public class CorpseClan implements ITargetTypeHandler
 						continue;
 					}
 					
-					if (!Skill.addCharacter(activeChar, obj, radius, true))
+					if (!addCharacter(activeChar, obj, radius, true))
 					{
 						continue;
 					}

@@ -50,14 +50,14 @@ public class CommandChannel implements ITargetTypeHandler
 		final Party party = player.getParty();
 		final boolean hasChannel = (party != null) && party.isInCommandChannel();
 		
-		if (Skill.addPet(activeChar, player, radius, false))
+		if (addPet(activeChar, player, radius, false))
 		{
 			targetList.add(player.getPet());
 		}
 		
 		player.getServitors().values().forEach(s ->
 		{
-			if (Skill.addCharacter(activeChar, s, radius, false))
+			if (addCharacter(activeChar, s, radius, false))
 			{
 				targetList.add(s);
 			}
@@ -80,7 +80,7 @@ public class CommandChannel implements ITargetTypeHandler
 				continue;
 			}
 			
-			if (Skill.addCharacter(activeChar, member, radius, false))
+			if (addCharacter(activeChar, member, radius, false))
 			{
 				targetList.add(member);
 				if (targetList.size() >= maxTargets)

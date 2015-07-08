@@ -20,8 +20,11 @@ package org.l2junity.gameserver.handler;
 
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Summon;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.util.Util;
 
 /**
  * @author UnAfraid
@@ -33,4 +36,28 @@ public interface ITargetTypeHandler
 	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target);
 	
 	public Enum<L2TargetType> getTargetType();
+
+	default boolean addPet(Creature caster, PlayerInstance owner, int radius, boolean isDead)
+	{
+		final Summon pet = owner.getPet();
+		if (pet == null)
+		{
+			return false;
+		}
+		return addCharacter(caster, pet, radius, isDead);
+	}
+
+	default boolean addCharacter(Creature caster, Creature target, int radius, boolean isDead)
+	{
+		if (isDead != target.isDead())
+		{
+			return false;
+		}
+
+		if ((radius > 0) && !Util.checkIfInRange(radius, caster, target, true))
+		{
+			return false;
+		}
+		return true;
+	}
 }

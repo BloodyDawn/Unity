@@ -72,14 +72,14 @@ public class Clan implements ITargetTypeHandler
 			final int radius = skill.getAffectRange();
 			final L2Clan clan = player.getClan();
 			
-			if (Skill.addPet(activeChar, player, radius, false))
+			if (addPet(activeChar, player, radius, false))
 			{
 				targetList.add(player.getPet());
 			}
 			
 			player.getServitors().values().forEach(s ->
 			{
-				if (Skill.addCharacter(activeChar, s, radius, false))
+				if (addCharacter(activeChar, s, radius, false))
 				{
 					targetList.add(s);
 				}
@@ -115,20 +115,20 @@ public class Clan implements ITargetTypeHandler
 						continue;
 					}
 					
-					if (Skill.addPet(activeChar, obj, radius, false))
+					if (addPet(activeChar, obj, radius, false))
 					{
 						targetList.add(obj.getPet());
 					}
 					
 					obj.getServitors().values().forEach(s ->
 					{
-						if (Skill.addCharacter(activeChar, s, radius, false))
+						if (addCharacter(activeChar, s, radius, false))
 						{
 							targetList.add(s);
 						}
 					});
 					
-					if (!Skill.addCharacter(activeChar, obj, radius, false))
+					if (!addCharacter(activeChar, obj, radius, false))
 					{
 						continue;
 					}
