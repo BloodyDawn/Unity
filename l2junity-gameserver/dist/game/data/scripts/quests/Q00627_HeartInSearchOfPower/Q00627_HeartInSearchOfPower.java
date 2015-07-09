@@ -33,7 +33,7 @@ import org.l2junity.gameserver.model.quest.State;
  * Heart in Search of Power (627)
  * @author Citizen
  */
-public class Q00627_HeartInSearchOfPower extends Quest
+public final class Q00627_HeartInSearchOfPower extends Quest
 {
 	// NPCs
 	private static final int MYSTERIOUS_NECROMANCER = 31518;
@@ -42,6 +42,8 @@ public class Q00627_HeartInSearchOfPower extends Quest
 	private static final int SEAL_OF_LIGHT = 7170;
 	private static final int BEAD_OF_OBEDIENCE = 7171;
 	private static final int GEM_OF_SAINTS = 7172;
+	private static final int COKES = 36561;
+	private static final int LOW_GRADE_ARMOR = 36551;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
 	static
@@ -62,13 +64,8 @@ public class Q00627_HeartInSearchOfPower extends Quest
 		MONSTERS.put(21658, 791); // Punishment of Splendor
 	}
 	// Misc
-	private static final int MIN_LEVEL_REQUIRED = 60;
+	private static final int MIN_LV = 60;
 	private static final int BEAD_OF_OBEDIENCE_COUNT_REQUIRED = 300;
-	// Rewards ID's
-	private static final int ASOFE = 4043;
-	private static final int THONS = 4044;
-	private static final int ENRIA = 4042;
-	private static final int MOLD_HARDENER = 4041;
 	
 	public Q00627_HeartInSearchOfPower()
 	{
@@ -77,6 +74,7 @@ public class Q00627_HeartInSearchOfPower extends Quest
 		addTalkId(MYSTERIOUS_NECROMANCER, ENFEUX);
 		addKillId(MONSTERS.keySet());
 		registerQuestItems(SEAL_OF_LIGHT, BEAD_OF_OBEDIENCE, GEM_OF_SAINTS);
+		addCondMinLevel(MIN_LV, "31518-00.htm");
 	}
 	
 	@Override
@@ -91,9 +89,12 @@ public class Q00627_HeartInSearchOfPower extends Quest
 		switch (event)
 		{
 			case "31518-02.htm":
+			{
 				st.startQuest();
 				break;
+			}
 			case "31518-06.html":
+			{
 				if (getQuestItemsCount(player, BEAD_OF_OBEDIENCE) < BEAD_OF_OBEDIENCE_COUNT_REQUIRED)
 				{
 					return "31518-05.html";
@@ -102,41 +103,20 @@ public class Q00627_HeartInSearchOfPower extends Quest
 				takeItems(player, BEAD_OF_OBEDIENCE, -1);
 				st.setCond(3);
 				break;
-			case "Adena":
-			case "Asofes":
-			case "Thons":
-			case "Enrias":
-			case "Mold_Hardener":
-				if (!hasQuestItems(player, GEM_OF_SAINTS))
-				{
-					return "31518-11.html";
-				}
-				switch (event)
-				{
-					case "Adena":
-						giveAdena(player, 100000, true);
-						break;
-					case "Asofes":
-						rewardItems(player, ASOFE, 13);
-						giveAdena(player, 6400, true);
-						break;
-					case "Thons":
-						rewardItems(player, THONS, 13);
-						giveAdena(player, 6400, true);
-						break;
-					case "Enrias":
-						rewardItems(player, ENRIA, 6);
-						giveAdena(player, 13600, true);
-						break;
-					case "Mold_Hardener":
-						rewardItems(player, MOLD_HARDENER, 3);
-						giveAdena(player, 17200, true);
-						break;
-				}
+			}
+			case "cokes":
+			case "lowGradeArmor":
+			{
+				final int itemId = event.equals("cokes") ? COKES : LOW_GRADE_ARMOR;
+				final int itemCount = event.equals("cokes") ? 28 : 1;
+				giveAdena(player, 6400, true);
+				giveItems(player, itemId, itemCount);
 				htmltext = "31518-10.html";
-				st.exitQuest(true);
+				st.exitQuest(true, true);
 				break;
+			}
 			case "31519-02.html":
+			{
 				if (hasQuestItems(player, SEAL_OF_LIGHT) && st.isCond(3))
 				{
 					giveItems(player, GEM_OF_SAINTS, 1);
@@ -148,6 +128,7 @@ public class Q00627_HeartInSearchOfPower extends Quest
 					htmltext = getNoQuestMsg(player);
 				}
 				break;
+			}
 			case "31518-09.html":
 				break;
 			default:
@@ -193,44 +174,46 @@ public class Q00627_HeartInSearchOfPower extends Quest
 		switch (st.getState())
 		{
 			case State.CREATED:
+			{
 				if (npc.getId() == MYSTERIOUS_NECROMANCER)
 				{
-					htmltext = (player.getLevel() >= MIN_LEVEL_REQUIRED) ? "31518-01.htm" : "31518-00.htm";
+					htmltext = "31518-01.htm";
 				}
 				break;
+			}
 			case State.STARTED:
-				switch (npc.getId())
+			{
+				if (npc.getId() == MYSTERIOUS_NECROMANCER)
 				{
-					case MYSTERIOUS_NECROMANCER:
-						switch (st.getCond())
-						{
-							case 1:
-								htmltext = "31518-03.html";
-								break;
-							case 2:
-								htmltext = "31518-04.html";
-								break;
-							case 3:
-								htmltext = "31518-07.html";
-								break;
-							case 4:
-								htmltext = "31518-08.html";
-								break;
-						}
-						break;
-					case ENFEUX:
-						switch (st.getCond())
-						{
-							case 3:
-								htmltext = "31519-01.html";
-								break;
-							case 4:
-								htmltext = "31519-03.html";
-								break;
-						}
-						break;
+					switch (st.getCond())
+					{
+						case 1:
+							htmltext = "31518-03.html";
+							break;
+						case 2:
+							htmltext = "31518-04.html";
+							break;
+						case 3:
+							htmltext = "31518-07.html";
+							break;
+						case 4:
+							htmltext = "31518-08.html";
+							break;
+					}
+				}
+				else if (npc.getId() == ENFEUX)
+				{
+					if (st.isCond(3))
+					{
+						htmltext = "31519-01.html";
+					}
+					else if (st.isCond(4))
+					{
+						htmltext = "31519-03.html";
+					}
 				}
 				break;
+			}
 		}
 		return htmltext;
 	}
