@@ -12,7 +12,7 @@
 										<xs:element name="common" maxOccurs="1" minOccurs="0">
 											<xs:complexType>
 												<xs:sequence maxOccurs="1" minOccurs="1">
-													<xs:element name="base" maxOccurs="1" minOccurs="1">
+													<xs:element name="base" maxOccurs="1" minOccurs="0">
 														<xs:complexType>
 															<xs:attribute name="range" type="xs:positiveInteger" use="required" />
 															<xs:attribute name="attackSpeed" type="xs:positiveInteger" use="required" />
@@ -67,7 +67,7 @@
 															<xs:attribute name="height" type="xs:decimal" use="required" />
 														</xs:complexType>
 													</xs:element>
-													<xs:element name="moving" maxOccurs="1" minOccurs="1">
+													<xs:element name="moving" maxOccurs="1" minOccurs="0">
 														<xs:complexType>
 															<xs:attribute name="walk" type="xs:decimal" use="required" />
 															<xs:attribute name="run" type="xs:positiveInteger" use="required" />
@@ -181,7 +181,7 @@
 										<xs:element name="common" maxOccurs="1" minOccurs="0">
 											<xs:complexType>
 												<xs:sequence maxOccurs="1" minOccurs="1">
-													<xs:element name="base" maxOccurs="1" minOccurs="1">
+													<xs:element name="base" maxOccurs="1" minOccurs="0">
 														<xs:complexType>
 															<xs:attribute name="range" type="xs:positiveInteger" use="required" />
 															<xs:attribute name="attackSpeed" type="xs:positiveInteger" use="required" />
@@ -236,7 +236,7 @@
 															<xs:attribute name="height" type="xs:decimal" use="required" />
 														</xs:complexType>
 													</xs:element>
-													<xs:element name="moving" maxOccurs="1" minOccurs="1">
+													<xs:element name="moving" maxOccurs="1" minOccurs="0">
 														<xs:complexType>
 															<xs:attribute name="walk" type="xs:decimal" use="required" />
 															<xs:attribute name="run" type="xs:positiveInteger" use="required" />
