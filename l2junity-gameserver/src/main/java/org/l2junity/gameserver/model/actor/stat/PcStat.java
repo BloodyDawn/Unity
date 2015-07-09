@@ -562,7 +562,11 @@ public class PcStat extends PlayableStat
 			final TransformTemplate template = player.getTransformation().getTemplate(player);
 			if (template != null)
 			{
-				return template.getBaseMoveSpeed(type);
+				final double speed = template.getBaseMoveSpeed(type);
+				if (speed > 0)
+				{
+					return speed;
+				}
 			}
 		}
 		else if (player.isMounted())
