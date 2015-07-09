@@ -1004,7 +1004,7 @@
 			<effect name="PhysicalMute" />
 			<effect name="PhysicalAttackMute" />
 			<effect name="Transformation">
-				<param id="104" />
+				<param transformationId="500;501;502;503;504" />
 				<mul stat="runSpd" val="#runSpd" />
 			</effect>
 		</for>
@@ -1093,7 +1093,7 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Transformation">
-				<param id="104" />
+				<param transformationId="104" />
 				<add stat="pDef" val="#def" />
 				<add stat="mDef" val="#def" />
 				<mul stat="runSpd" val="#runSpd" />
@@ -1119,7 +1119,7 @@
 		<for>
 			<effect name="Untargetable" />
 			<effect name="Transformation">
-				<param id="505" />
+				<param transformationId="505" />
 				<mul stat="runSpd" val="0.5" />
 			</effect>
 		</for>
@@ -1721,7 +1721,7 @@
 			<effect name="PhysicalMute" />
 			<effect name="PhysicalAttackMute" />
 			<effect name="Transformation">
-				<param id="0" />
+				<param transformationId="0" />
 				<mul stat="runSpd" val="0.80" />
 			</effect>
 		</for>
