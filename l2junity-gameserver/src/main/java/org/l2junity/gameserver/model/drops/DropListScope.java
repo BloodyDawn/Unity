@@ -36,7 +36,7 @@ public enum DropListScope
 	private final Class<? extends GeneralDropItem> _dropItemClass;
 	private final Class<? extends GroupedGeneralDropItem> _groupedDropItemClass;
 	
-	private DropListScope(Class<? extends GeneralDropItem> dropItemClass, Class<? extends GroupedGeneralDropItem> groupedDropItemClass)
+	DropListScope(Class<? extends GeneralDropItem> dropItemClass, Class<? extends GroupedGeneralDropItem> groupedDropItemClass)
 	{
 		_dropItemClass = dropItemClass;
 		_groupedDropItemClass = groupedDropItemClass;

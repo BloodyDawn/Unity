@@ -230,7 +230,7 @@ public final class Formulas
 	 * @param cha
 	 * @return
 	 */
-	public static final double calcHpRegen(Creature cha)
+	public static double calcHpRegen(Creature cha)
 	{
 		double init = cha.isPlayer() ? cha.getActingPlayer().getTemplate().getBaseHpRegen(cha.getLevel()) : cha.getTemplate().getBaseHpReg();
 		double hpRegenMultiplier = cha.isRaid() ? Config.RAID_HP_REGEN_MULTIPLIER : Config.HP_REGEN_MULTIPLIER;
@@ -343,7 +343,7 @@ public final class Formulas
 	 * @param cha
 	 * @return
 	 */
-	public static final double calcMpRegen(Creature cha)
+	public static double calcMpRegen(Creature cha)
 	{
 		double init = cha.isPlayer() ? cha.getActingPlayer().getTemplate().getBaseMpRegen(cha.getLevel()) : cha.getTemplate().getBaseMpReg();
 		double mpRegenMultiplier = cha.isRaid() ? Config.RAID_MP_REGEN_MULTIPLIER : Config.MP_REGEN_MULTIPLIER;
@@ -445,7 +445,7 @@ public final class Formulas
 	 * @param player the player
 	 * @return
 	 */
-	public static final double calcCpRegen(PlayerInstance player)
+	public static double calcCpRegen(PlayerInstance player)
 	{
 		final double init = player.getActingPlayer().getTemplate().getBaseCpRegen(player.getLevel()) * player.getLevelMod() * BaseStats.CON.calcBonus(player);
 		double cpRegenMultiplier = Config.CP_REGEN_MULTIPLIER;
@@ -464,7 +464,7 @@ public final class Formulas
 		return player.calcStat(Stats.REGENERATE_CP_RATE, Math.max(1, init), null, null) * cpRegenMultiplier;
 	}
 	
-	public static final double calcSiegeRegenModifier(PlayerInstance activeChar)
+	public static double calcSiegeRegenModifier(PlayerInstance activeChar)
 	{
 		if ((activeChar == null) || (activeChar.getClan() == null))
 		{
@@ -685,7 +685,7 @@ public final class Formulas
 	 * @param ss if weapon item was charged by soulshot
 	 * @return
 	 */
-	public static final double calcPhysDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean crit, boolean ss)
+	public static double calcPhysDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean crit, boolean ss)
 	{
 		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
 		double damage = attacker.getPAtk(target);
@@ -842,7 +842,7 @@ public final class Formulas
 		return damage;
 	}
 	
-	public static final double calcMagicDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean sps, boolean bss, boolean mcrit)
+	public static double calcMagicDam(Creature attacker, Creature target, Skill skill, double power, byte shld, boolean sps, boolean bss, boolean mcrit)
 	{
 		final double distance = attacker.calculateDistance(target, true, false);
 		
@@ -963,7 +963,7 @@ public final class Formulas
 		return damage;
 	}
 	
-	public static final double calcMagicDam(L2CubicInstance attacker, Creature target, Skill skill, double power, boolean mcrit, byte shld)
+	public static double calcMagicDam(L2CubicInstance attacker, Creature target, Skill skill, double power, boolean mcrit, byte shld)
 	{
 		int mDef = target.getMDef(attacker.getOwner(), skill);
 		switch (shld)
@@ -1054,13 +1054,13 @@ public final class Formulas
 	 * @param target
 	 * @return
 	 */
-	public static final boolean calcCrit(double rate, boolean skill, Creature target)
+	public static boolean calcCrit(double rate, boolean skill, Creature target)
 	{
 		double finalRate = target.getStat().calcStat(Stats.DEFENCE_CRITICAL_RATE, rate, null, null) + target.getStat().calcStat(Stats.DEFENCE_CRITICAL_RATE_ADD, 0, null, null);
 		return finalRate > Rnd.get(1000);
 	}
 	
-	public static final boolean calcMCrit(double mRate, Skill skill, Creature target)
+	public static boolean calcMCrit(double mRate, Skill skill, Creature target)
 	{
 		if ((target == null) || (skill == null) || !skill.isBad())
 		{
@@ -1087,7 +1087,7 @@ public final class Formulas
 	 * @param dmg
 	 * @return true in case when ATTACK is canceled due to hit
 	 */
-	public static final boolean calcAtkBreak(Creature target, double dmg)
+	public static boolean calcAtkBreak(Creature target, double dmg)
 	{
 		if (target.isChanneling())
 		{
@@ -1136,7 +1136,7 @@ public final class Formulas
 	 * @param rate
 	 * @return
 	 */
-	public static final int calcPAtkSpd(Creature attacker, Creature target, double rate)
+	public static int calcPAtkSpd(Creature attacker, Creature target, double rate)
 	{
 		// measured Oct 2006 by Tank6585, formula by Sami
 		// attack speed 312 equals 1500 ms delay... (or 300 + 40 ms delay?)
@@ -1154,7 +1154,7 @@ public final class Formulas
 	 * @param skillTime
 	 * @return
 	 */
-	public static final int calcAtkSpd(Creature attacker, Skill skill, double skillTime)
+	public static int calcAtkSpd(Creature attacker, Skill skill, double skillTime)
 	{
 		if (skill.isMagic())
 		{

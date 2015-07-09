@@ -215,7 +215,7 @@ public class AugmentationData
 		}
 	}
 	
-	private final void load()
+	private void load()
 	{
 		// Load stats
 		DocumentBuilderFactory factory2 = DocumentBuilderFactory.newInstance();
@@ -997,7 +997,7 @@ public class AugmentationData
 		return new Augmentation(((stat34 << 16) + stat12));
 	}
 	
-	public static final AugmentationData getInstance()
+	public static AugmentationData getInstance()
 	{
 		return SingletonHolder._instance;
 	}

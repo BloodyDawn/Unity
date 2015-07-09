@@ -25,11 +25,11 @@ package org.l2junity.gameserver.handler;
  */
 public interface IHandler<K, V>
 {
-	public void registerHandler(K handler);
+	void registerHandler(K handler);
 	
-	public void removeHandler(K handler);
+	void removeHandler(K handler);
 	
-	public K getHandler(V val);
+	K getHandler(V val);
 	
-	public int size();
+	int size();
 }

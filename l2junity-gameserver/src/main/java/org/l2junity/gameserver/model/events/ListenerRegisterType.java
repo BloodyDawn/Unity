@@ -32,5 +32,5 @@ public enum ListenerRegisterType
 	GLOBAL,
 	GLOBAL_NPCS,
 	GLOBAL_MONSTERS,
-	GLOBAL_PLAYERS;
+	GLOBAL_PLAYERS
 }

@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
  */
 public interface IItemHandler
 {
-	public static final Logger _log = LoggerFactory.getLogger(IItemHandler.class);
+	Logger _log = LoggerFactory.getLogger(IItemHandler.class);
 	
 	/**
 	 * Launch task associated to the item.
@@ -37,5 +37,5 @@ public interface IItemHandler
 	 * @param forceUse ctrl hold on item use
 	 * @return {@code true} if the item all conditions are met and the item is used, {@code false} otherwise.
 	 */
-	public boolean useItem(Playable playable, ItemInstance item, boolean forceUse);
+	boolean useItem(Playable playable, ItemInstance item, boolean forceUse);
 }

@@ -262,7 +262,7 @@ public final class RequestSendPost implements IClientIncomingPacket
 		}
 	}
 	
-	private final boolean removeItems(PlayerInstance player, Message msg)
+	private boolean removeItems(PlayerInstance player, Message msg)
 	{
 		long currentAdena = player.getAdena();
 		long fee = MESSAGE_FEE;

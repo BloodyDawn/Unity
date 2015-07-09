@@ -1571,7 +1571,7 @@ public final class FourSepulchersManager
 		}
 	}
 	
-	public static final FourSepulchersManager getInstance()
+	public static FourSepulchersManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}

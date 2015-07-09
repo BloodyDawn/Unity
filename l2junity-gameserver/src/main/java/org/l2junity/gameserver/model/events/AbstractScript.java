@@ -2816,7 +2816,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 * @param isWide
 	 * @param relAngle
 	 */
-	public static final void specialCamera(PlayerInstance player, Creature creature, int force, int angle1, int angle2, int time, int range, int duration, int relYaw, int relPitch, int isWide, int relAngle)
+	public static void specialCamera(PlayerInstance player, Creature creature, int force, int angle1, int angle2, int time, int range, int duration, int relYaw, int relPitch, int isWide, int relAngle)
 	{
 		player.sendPacket(new SpecialCamera(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle));
 	}
@@ -2835,7 +2835,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 * @param isWide
 	 * @param relAngle
 	 */
-	public static final void specialCameraEx(PlayerInstance player, Creature creature, int force, int angle1, int angle2, int time, int duration, int relYaw, int relPitch, int isWide, int relAngle)
+	public static void specialCameraEx(PlayerInstance player, Creature creature, int force, int angle1, int angle2, int time, int duration, int relYaw, int relPitch, int isWide, int relAngle)
 	{
 		player.sendPacket(new SpecialCamera(creature, player, force, angle1, angle2, time, duration, relYaw, relPitch, isWide, relAngle));
 	}
@@ -2856,7 +2856,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 * @param relAngle
 	 * @param unk
 	 */
-	public static final void specialCamera3(PlayerInstance player, Creature creature, int force, int angle1, int angle2, int time, int range, int duration, int relYaw, int relPitch, int isWide, int relAngle, int unk)
+	public static void specialCamera3(PlayerInstance player, Creature creature, int force, int angle1, int angle2, int time, int range, int duration, int relYaw, int relPitch, int isWide, int relAngle, int unk)
 	{
 		player.sendPacket(new SpecialCamera(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle, unk));
 	}

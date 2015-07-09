@@ -676,12 +676,12 @@ public enum OutgoingPackets
 	private final int _id1;
 	private final int _id2;
 	
-	private OutgoingPackets(int id1)
+	OutgoingPackets(int id1)
 	{
 		this(id1, -1);
 	}
 	
-	private OutgoingPackets(int id1, int id2)
+	OutgoingPackets(int id1, int id2)
 	{
 		_id1 = id1;
 		_id2 = id2;

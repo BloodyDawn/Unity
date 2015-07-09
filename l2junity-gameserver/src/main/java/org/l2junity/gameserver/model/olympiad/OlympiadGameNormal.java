@@ -62,7 +62,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 		_playerTwo.getPlayer().setOlympiadGameId(id);
 	}
 	
-	protected static final Participant[] createListOfParticipants(Set<Integer> set)
+	protected static Participant[] createListOfParticipants(Set<Integer> set)
 	{
 		if ((set == null) || set.isEmpty() || (set.size() < 2))
 		{
@@ -717,7 +717,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 		_damageP2 = 0;
 	}
 	
-	protected static final void saveResults(Participant one, Participant two, int winner, long startTime, long fightTime, CompetitionType type)
+	protected static void saveResults(Participant one, Participant two, int winner, long startTime, long fightTime, CompetitionType type)
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("INSERT INTO olympiad_fights (charOneId, charTwoId, charOneClass, charTwoClass, winner, start, time, classed) values(?,?,?,?,?,?,?,?)"))

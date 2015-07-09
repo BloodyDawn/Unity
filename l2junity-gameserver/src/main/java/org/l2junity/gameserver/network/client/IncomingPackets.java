@@ -224,7 +224,7 @@ public enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameCl
 	private Supplier<IIncomingPacket<L2GameClient>> _incomingPacketFactory;
 	private Set<IConnectionState> _connectionStates;
 	
-	private IncomingPackets(int packetId, Supplier<IIncomingPacket<L2GameClient>> incomingPacketFactory, IConnectionState... connectionStates)
+	IncomingPackets(int packetId, Supplier<IIncomingPacket<L2GameClient>> incomingPacketFactory, IConnectionState... connectionStates)
 	{
 		// packetId is an unsigned byte
 		if (packetId > 0xFF)

@@ -383,7 +383,7 @@ public final class SiegeGuardManager
 	 * Gets the single instance of {@code MercTicketManager}.
 	 * @return single instance of {@code MercTicketManager}
 	 */
-	public static final SiegeGuardManager getInstance()
+	public static SiegeGuardManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}

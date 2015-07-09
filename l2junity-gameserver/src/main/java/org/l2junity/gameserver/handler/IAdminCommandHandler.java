@@ -28,11 +28,11 @@ public interface IAdminCommandHandler
 	 * @param command
 	 * @return command success
 	 */
-	public boolean useAdminCommand(String command, PlayerInstance activeChar);
+	boolean useAdminCommand(String command, PlayerInstance activeChar);
 	
 	/**
 	 * this method is called at initialization to register all the item ids automatically
 	 * @return all known itemIds
 	 */
-	public String[] getAdminCommandList();
+	String[] getAdminCommandList();
 }

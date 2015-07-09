@@ -138,7 +138,7 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 		return _smId;
 	}
 	
-	private final void append(SMParam param)
+	private void append(SMParam param)
 	{
 		if (_paramIndex >= _params.length)
 		{

@@ -898,7 +898,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	 * @param instance the instance to update
 	 * @param hide if {@code true} hide the player
 	 */
-	private final void sendInstanceUpdate(Instance instance, boolean hide)
+	private void sendInstanceUpdate(Instance instance, boolean hide)
 	{
 		final int startTime = (int) ((System.currentTimeMillis() - instance.getInstanceStartTime()) / 1000);
 		final int endTime = (int) ((instance.getInstanceEndTime() - instance.getInstanceStartTime()) / 1000);

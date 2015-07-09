@@ -33,37 +33,37 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
  */
 public interface Siegable
 {
-	public void startSiege();
+	void startSiege();
 	
-	public void endSiege();
+	void endSiege();
 	
-	public SiegeClan getAttackerClan(int clanId);
+	SiegeClan getAttackerClan(int clanId);
 	
-	public SiegeClan getAttackerClan(L2Clan clan);
+	SiegeClan getAttackerClan(L2Clan clan);
 	
-	public Collection<SiegeClan> getAttackerClans();
+	Collection<SiegeClan> getAttackerClans();
 	
-	public List<PlayerInstance> getAttackersInZone();
+	List<PlayerInstance> getAttackersInZone();
 	
-	public boolean checkIsAttacker(L2Clan clan);
+	boolean checkIsAttacker(L2Clan clan);
 	
-	public SiegeClan getDefenderClan(int clanId);
+	SiegeClan getDefenderClan(int clanId);
 	
-	public SiegeClan getDefenderClan(L2Clan clan);
+	SiegeClan getDefenderClan(L2Clan clan);
 	
-	public List<SiegeClan> getDefenderClans();
+	List<SiegeClan> getDefenderClans();
 	
-	public boolean checkIsDefender(L2Clan clan);
+	boolean checkIsDefender(L2Clan clan);
 	
-	public Set<Npc> getFlag(L2Clan clan);
+	Set<Npc> getFlag(L2Clan clan);
 	
-	public Calendar getSiegeDate();
+	Calendar getSiegeDate();
 	
-	public boolean giveFame();
+	boolean giveFame();
 	
-	public int getFameFrequency();
+	int getFameFrequency();
 	
-	public int getFameAmount();
+	int getFameAmount();
 	
-	public void updateSiege();
+	void updateSiege();
 }

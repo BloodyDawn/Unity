@@ -76,7 +76,7 @@ public class L2ControlTowerInstance extends Tower
 		getGuards().add(guard);
 	}
 	
-	private final Set<L2Spawn> getGuards()
+	private Set<L2Spawn> getGuards()
 	{
 		if (_guards == null)
 		{

@@ -25,5 +25,5 @@ import org.l2junity.gameserver.model.events.EventType;
  */
 public interface IBaseEvent
 {
-	public EventType getType();
+	EventType getType();
 }

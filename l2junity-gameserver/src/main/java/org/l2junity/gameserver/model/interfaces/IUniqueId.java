@@ -23,5 +23,5 @@ package org.l2junity.gameserver.model.interfaces;
  */
 public interface IUniqueId
 {
-	public int getObjectId();
+	int getObjectId();
 }

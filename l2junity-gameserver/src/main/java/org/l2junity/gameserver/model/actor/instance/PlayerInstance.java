@@ -7338,7 +7338,7 @@ public final class PlayerInstance extends Playable
 		
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement delete = con.prepareStatement(DELETE_SKILL_SAVE);
-			PreparedStatement statement = con.prepareStatement(ADD_SKILL_SAVE);)
+			PreparedStatement statement = con.prepareStatement(ADD_SKILL_SAVE))
 		{
 			// Delete all current stored effects for char to avoid dupe
 			delete.setInt(1, getObjectId());
@@ -7766,7 +7766,7 @@ public final class PlayerInstance extends Playable
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(RESTORE_ITEM_REUSE_SAVE);
-			PreparedStatement delete = con.prepareStatement(DELETE_ITEM_REUSE_SAVE);)
+			PreparedStatement delete = con.prepareStatement(DELETE_ITEM_REUSE_SAVE))
 		{
 			statement.setInt(1, getObjectId());
 			try (ResultSet rset = statement.executeQuery())
@@ -12591,7 +12591,7 @@ public final class PlayerInstance extends Playable
 		}
 	}
 	
-	private final void clearPetData()
+	private void clearPetData()
 	{
 		_data = null;
 	}
@@ -12605,7 +12605,7 @@ public final class PlayerInstance extends Playable
 		return _data;
 	}
 	
-	private final PetLevelData getPetLevelData(int npcId)
+	private PetLevelData getPetLevelData(int npcId)
 	{
 		if (_leveldata == null)
 		{
@@ -13944,7 +13944,7 @@ public final class PlayerInstance extends Playable
 	 * Add a skill level to the custom skills map.
 	 * @param skill the skill to add
 	 */
-	private final void addCustomSkill(Skill skill)
+	private void addCustomSkill(Skill skill)
 	{
 		if ((skill != null) && (skill.getDisplayId() != skill.getId()))
 		{
@@ -13960,7 +13960,7 @@ public final class PlayerInstance extends Playable
 	 * Remove a skill level from the custom skill map.
 	 * @param skill the skill to remove
 	 */
-	private final void removeCustomSkill(Skill skill)
+	private void removeCustomSkill(Skill skill)
 	{
 		if ((skill != null) && (_customSkills != null) && (skill.getDisplayId() != skill.getId()))
 		{

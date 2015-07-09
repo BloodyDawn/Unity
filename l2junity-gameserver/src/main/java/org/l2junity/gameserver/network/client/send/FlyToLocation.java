@@ -46,7 +46,7 @@ public final class FlyToLocation implements IClientOutgoingPacket
 		NOT_USED,
 		PUSH_DOWN_HORIZONTAL,
 		WARP_BACK,
-		WARP_FORWARD;
+		WARP_FORWARD
 	}
 	
 	public FlyToLocation(Creature cha, int destX, int destY, int destZ, FlyType type)

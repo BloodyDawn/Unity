@@ -45,7 +45,7 @@ public class OlympiadManager
 	{
 	}
 	
-	public static final OlympiadManager getInstance()
+	public static OlympiadManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}
@@ -95,7 +95,7 @@ public class OlympiadManager
 		return isRegistered(noble, noble, false);
 	}
 	
-	private final boolean isRegistered(PlayerInstance noble, PlayerInstance player, boolean showMessage)
+	private boolean isRegistered(PlayerInstance noble, PlayerInstance player, boolean showMessage)
 	{
 		final Integer objId = Integer.valueOf(noble.getObjectId());
 		if (_nonClassBasedRegisters.contains(objId))
@@ -129,7 +129,7 @@ public class OlympiadManager
 		return isRegistered(noble, noble, false) || isInCompetition(noble, noble, false);
 	}
 	
-	private final boolean isInCompetition(PlayerInstance noble, PlayerInstance player, boolean showMessage)
+	private boolean isInCompetition(PlayerInstance noble, PlayerInstance player, boolean showMessage)
 	{
 		if (!Olympiad._inCompPeriod)
 		{
@@ -313,7 +313,7 @@ public class OlympiadManager
 	 * @return true if all requirements are met
 	 */
 	// TODO: move to the bypass handler after reworking points system
-	private final boolean checkNoble(PlayerInstance noble, PlayerInstance player)
+	private boolean checkNoble(PlayerInstance noble, PlayerInstance player)
 	{
 		SystemMessage sm;
 		if (!noble.isNoble())

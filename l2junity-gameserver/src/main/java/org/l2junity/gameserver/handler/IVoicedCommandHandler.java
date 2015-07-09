@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
 
 public interface IVoicedCommandHandler
 {
-	public static Logger _log = LoggerFactory.getLogger(IVoicedCommandHandler.class);
+	Logger _log = LoggerFactory.getLogger(IVoicedCommandHandler.class);
 	
 	/**
 	 * this is the worker method that is called when someone uses an admin command.
@@ -33,11 +33,11 @@ public interface IVoicedCommandHandler
 	 * @param params
 	 * @return command success
 	 */
-	public boolean useVoicedCommand(String command, PlayerInstance activeChar, String params);
+	boolean useVoicedCommand(String command, PlayerInstance activeChar, String params);
 	
 	/**
 	 * this method is called at initialization to register all the item ids automatically
 	 * @return all known itemIds
 	 */
-	public String[] getVoicedCommandList();
+	String[] getVoicedCommandList();
 }

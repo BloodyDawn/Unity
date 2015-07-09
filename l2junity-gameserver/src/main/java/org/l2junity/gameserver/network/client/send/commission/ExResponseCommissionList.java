@@ -109,7 +109,7 @@ public class ExResponseCommissionList extends AbstractItemPacket
 		
 		private final int _clientId;
 		
-		private CommissionListReplyType(int clientId)
+		CommissionListReplyType(int clientId)
 		{
 			_clientId = clientId;
 		}

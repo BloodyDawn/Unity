@@ -31,11 +31,11 @@ import org.l2junity.gameserver.util.Util;
  */
 public interface ITargetTypeHandler
 {
-	static final WorldObject[] EMPTY_TARGET_LIST = new WorldObject[0];
+	WorldObject[] EMPTY_TARGET_LIST = new WorldObject[0];
 	
-	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target);
+	WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target);
 	
-	public Enum<L2TargetType> getTargetType();
+	Enum<L2TargetType> getTargetType();
 
 	default boolean addPet(Creature caster, PlayerInstance owner, int radius, boolean isDead)
 	{

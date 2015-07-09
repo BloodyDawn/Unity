@@ -391,7 +391,7 @@ public final class InstanceManager implements IXmlReader
 	 * Gets the single instance of {@code InstanceManager}.
 	 * @return single instance of {@code InstanceManager}
 	 */
-	public static final InstanceManager getInstance()
+	public static InstanceManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}

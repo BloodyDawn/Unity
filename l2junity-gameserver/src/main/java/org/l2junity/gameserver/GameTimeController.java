@@ -66,7 +66,7 @@ public final class GameTimeController extends Thread
 		super.start();
 	}
 	
-	public static final void init()
+	public static void init()
 	{
 		_instance = new GameTimeController();
 	}
@@ -125,7 +125,7 @@ public final class GameTimeController extends Thread
 	 * <li>Create a task to update the _knownObject and _knowPlayers of each L2Character that finished its movement and of their already known L2Object then notify AI with EVT_ARRIVED</li>
 	 * </ul>
 	 */
-	private final void moveObjects()
+	private void moveObjects()
 	{
 		_movingObjects.removeIf(Creature::updatePosition);
 	}
@@ -180,7 +180,7 @@ public final class GameTimeController extends Thread
 		}
 	}
 	
-	public static final GameTimeController getInstance()
+	public static GameTimeController getInstance()
 	{
 		return _instance;
 	}

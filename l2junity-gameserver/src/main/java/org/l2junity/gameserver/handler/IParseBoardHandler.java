@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
  */
 public interface IParseBoardHandler
 {
-	public static final Logger LOG = LoggerFactory.getLogger(IParseBoardHandler.class);
+	Logger LOG = LoggerFactory.getLogger(IParseBoardHandler.class);
 	
 	/**
 	 * Parses a community board command.
@@ -36,11 +36,11 @@ public interface IParseBoardHandler
 	 * @param player the player
 	 * @return
 	 */
-	public boolean parseCommunityBoardCommand(String command, PlayerInstance player);
+	boolean parseCommunityBoardCommand(String command, PlayerInstance player);
 	
 	/**
 	 * Gets the community board commands.
 	 * @return the community board commands
 	 */
-	public String[] getCommunityBoardCommands();
+	String[] getCommunityBoardCommands();
 }

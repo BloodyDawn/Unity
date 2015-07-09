@@ -57,7 +57,7 @@ public enum GlobalQuest
 	UNK30(0);
 	private final int _value;
 	
-	private GlobalQuest(int value)
+	GlobalQuest(int value)
 	{
 		_value = value;
 	}

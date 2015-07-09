@@ -873,7 +873,7 @@ public class Party extends AbstractPlayerGroup
 		}
 	}
 	
-	private final long calculateExpSpPartyCutoff(PlayerInstance player, int topLvl, long addExp, int addSp, boolean vit)
+	private long calculateExpSpPartyCutoff(PlayerInstance player, int topLvl, long addExp, int addSp, boolean vit)
 	{
 		long xp = addExp;
 		int sp = addSp;

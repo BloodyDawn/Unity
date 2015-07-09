@@ -686,7 +686,7 @@ public class LoginController
 		}
 	}
 	
-	public static enum AuthLoginResult
+	public enum AuthLoginResult
 	{
 		INVALID_PASSWORD,
 		ACCOUNT_BANNED,

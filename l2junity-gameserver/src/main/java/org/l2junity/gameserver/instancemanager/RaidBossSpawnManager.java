@@ -53,7 +53,7 @@ public class RaidBossSpawnManager
 	protected final Map<Integer, StatsSet> _storedInfo = new ConcurrentHashMap<>();
 	protected final Map<Integer, ScheduledFuture<?>> _schedules = new ConcurrentHashMap<>();
 	
-	public static enum StatusEnum
+	public enum StatusEnum
 	{
 		ALIVE,
 		DEAD,

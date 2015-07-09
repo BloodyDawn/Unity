@@ -1512,7 +1512,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 * Loads all quest states and variables for the specified player.
 	 * @param player the player who is entering the world
 	 */
-	public static final void playerEnter(PlayerInstance player)
+	public static void playerEnter(PlayerInstance player)
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement invalidQuestData = con.prepareStatement("DELETE FROM character_quests WHERE charId = ? AND name = ?");

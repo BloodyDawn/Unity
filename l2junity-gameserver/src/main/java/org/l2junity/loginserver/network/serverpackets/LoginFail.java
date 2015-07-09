@@ -23,7 +23,7 @@ package org.l2junity.loginserver.network.serverpackets;
  */
 public final class LoginFail extends L2LoginServerPacket
 {
-	public static enum LoginFailReason
+	public enum LoginFailReason
 	{
 		REASON_NO_MESSAGE(0x00),
 		REASON_SYSTEM_ERROR_LOGIN_LATER(0x01),

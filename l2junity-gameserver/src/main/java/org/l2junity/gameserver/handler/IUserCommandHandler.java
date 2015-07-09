@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
 
 public interface IUserCommandHandler
 {
-	public static Logger _log = LoggerFactory.getLogger(IUserCommandHandler.class);
+	Logger _log = LoggerFactory.getLogger(IUserCommandHandler.class);
 	
 	/**
 	 * this is the worker method that is called when someone uses an admin command.
@@ -32,11 +32,11 @@ public interface IUserCommandHandler
 	 * @param activeChar
 	 * @return command success
 	 */
-	public boolean useUserCommand(int id, PlayerInstance activeChar);
+	boolean useUserCommand(int id, PlayerInstance activeChar);
 	
 	/**
 	 * this method is called at initialization to register all the item ids automatically
 	 * @return all known itemIds
 	 */
-	public int[] getUserCommandList();
+	int[] getUserCommandList();
 }

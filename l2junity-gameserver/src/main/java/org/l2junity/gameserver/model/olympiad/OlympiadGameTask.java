@@ -99,7 +99,7 @@ public final class OlympiadGameTask implements Runnable
 	private boolean _needAnnounce = false;
 	private int _countDown = 0;
 	
-	private static enum GameState
+	private enum GameState
 	{
 		BEGIN,
 		TELEPORT_TO_ARENA,
@@ -366,7 +366,7 @@ public final class OlympiadGameTask implements Runnable
 		}
 	}
 	
-	private final int getDelay(int[] times)
+	private int getDelay(int[] times)
 	{
 		int time;
 		for (int i = 0; i < (times.length - 1); i++)
@@ -390,7 +390,7 @@ public final class OlympiadGameTask implements Runnable
 	 * Second stage: check for defaulted, port players to arena, announce game.
 	 * @return true if no participants defaulted.
 	 */
-	private final boolean startGame()
+	private boolean startGame()
 	{
 		try
 		{
@@ -427,7 +427,7 @@ public final class OlympiadGameTask implements Runnable
 	 * Fourth stage: last checks, remove buffers, start competition itself.
 	 * @return true if all participants online and ready on the stadium.
 	 */
-	private final boolean startBattle()
+	private boolean startBattle()
 	{
 		try
 		{
@@ -456,7 +456,7 @@ public final class OlympiadGameTask implements Runnable
 	 * Fifth stage: battle is running, returns true if winner found.
 	 * @return
 	 */
-	private final boolean checkBattle()
+	private boolean checkBattle()
 	{
 		try
 		{
@@ -473,7 +473,7 @@ public final class OlympiadGameTask implements Runnable
 	/**
 	 * Sixth stage: winner's validations
 	 */
-	private final void stopGame()
+	private void stopGame()
 	{
 		try
 		{
@@ -506,7 +506,7 @@ public final class OlympiadGameTask implements Runnable
 	/**
 	 * Seventh stage: game cleanup (port players back, closing doors, etc)
 	 */
-	private final void cleanupGame()
+	private void cleanupGame()
 	{
 		try
 		{

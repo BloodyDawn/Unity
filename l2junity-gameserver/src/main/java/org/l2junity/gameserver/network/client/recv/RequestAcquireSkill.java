@@ -518,7 +518,7 @@ public final class RequestAcquireSkill implements IClientIncomingPacket
 		}
 	}
 	
-	public final static void showSubSkillList(PlayerInstance activeChar)
+	public static void showSubSkillList(PlayerInstance activeChar)
 	{
 		final List<SkillLearn> skills = SkillTreesData.getInstance().getAvailableSubClassSkills(activeChar);
 		if (!skills.isEmpty())
@@ -531,7 +531,7 @@ public final class RequestAcquireSkill implements IClientIncomingPacket
 		}
 	}
 	
-	public final static void showDualSkillList(PlayerInstance activeChar)
+	public static void showDualSkillList(PlayerInstance activeChar)
 	{
 		final List<SkillLearn> skills = SkillTreesData.getInstance().getAvailableDualClassSkills(activeChar);
 		if (!skills.isEmpty())

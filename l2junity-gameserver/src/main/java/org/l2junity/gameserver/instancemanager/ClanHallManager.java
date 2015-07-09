@@ -61,7 +61,7 @@ public final class ClanHallManager
 	}
 	
 	/** Load All Clan Hall */
-	private final void load()
+	private void load()
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();
@@ -112,7 +112,7 @@ public final class ClanHallManager
 		}
 	}
 	
-	public static final Map<Integer, ClanHall> getAllClanHalls()
+	public static Map<Integer, ClanHall> getAllClanHalls()
 	{
 		return _allClanHalls;
 	}
@@ -141,7 +141,7 @@ public final class ClanHallManager
 		return _allAuctionableClanHalls;
 	}
 	
-	public static final void addClanHall(ClanHall hall)
+	public static void addClanHall(ClanHall hall)
 	{
 		_allClanHalls.put(hall.getId(), hall);
 	}

@@ -889,7 +889,7 @@ public final class Config
 	public static int MAX_REPUTATION;
 	public static int REPUTATION_INCREASE;
 	
-	public static enum IdFactoryType
+	public enum IdFactoryType
 	{
 		Compaction,
 		BitSet,

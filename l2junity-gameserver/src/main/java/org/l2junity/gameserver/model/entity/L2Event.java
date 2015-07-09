@@ -523,7 +523,7 @@ public class L2Event
 		return "The event has been successfully finished.";
 	}
 	
-	private static final Map<PlayerInstance, Integer> sortByValue(Map<PlayerInstance, Integer> unsortMap)
+	private static Map<PlayerInstance, Integer> sortByValue(Map<PlayerInstance, Integer> unsortMap)
 	{
 		final List<Entry<PlayerInstance, Integer>> list = new LinkedList<>(unsortMap.entrySet());
 		

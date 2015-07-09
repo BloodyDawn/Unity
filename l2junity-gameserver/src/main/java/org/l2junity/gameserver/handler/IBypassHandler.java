@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
  */
 public interface IBypassHandler
 {
-	public static Logger _log = LoggerFactory.getLogger(IBypassHandler.class);
+	Logger _log = LoggerFactory.getLogger(IBypassHandler.class);
 	
 	/**
 	 * This is the worker method that is called when someone uses an bypass command.
@@ -37,11 +37,11 @@ public interface IBypassHandler
 	 * @param bypassOrigin
 	 * @return success
 	 */
-	public boolean useBypass(String command, PlayerInstance activeChar, Creature bypassOrigin);
+	boolean useBypass(String command, PlayerInstance activeChar, Creature bypassOrigin);
 	
 	/**
 	 * This method is called at initialization to register all bypasses automatically.
 	 * @return all known bypasses
 	 */
-	public String[] getBypassList();
+	String[] getBypassList();
 }

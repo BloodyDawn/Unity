@@ -141,7 +141,7 @@ public final class CursedWeaponsManager implements IXmlReader
 		}
 	}
 	
-	private final void restore()
+	private void restore()
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();
@@ -166,7 +166,7 @@ public final class CursedWeaponsManager implements IXmlReader
 		}
 	}
 	
-	private final void controlPlayers()
+	private void controlPlayers()
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT owner_id FROM items WHERE item_id=?"))
@@ -391,7 +391,7 @@ public final class CursedWeaponsManager implements IXmlReader
 		}
 	}
 	
-	public static final CursedWeaponsManager getInstance()
+	public static CursedWeaponsManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}

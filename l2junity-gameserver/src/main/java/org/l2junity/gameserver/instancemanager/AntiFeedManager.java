@@ -268,7 +268,7 @@ public final class AntiFeedManager
 		return limit;
 	}
 	
-	public static final AntiFeedManager getInstance()
+	public static AntiFeedManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}

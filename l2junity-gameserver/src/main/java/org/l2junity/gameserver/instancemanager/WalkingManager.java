@@ -472,7 +472,7 @@ public final class WalkingManager implements IXmlReader
 		}
 	}
 	
-	public static final WalkingManager getInstance()
+	public static WalkingManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}

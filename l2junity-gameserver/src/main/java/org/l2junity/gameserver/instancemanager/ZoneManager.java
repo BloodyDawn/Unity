@@ -745,7 +745,7 @@ public final class ZoneManager implements IXmlReader
 	 * Gets the single instance of ZoneManager.
 	 * @return single instance of ZoneManager
 	 */
-	public static final ZoneManager getInstance()
+	public static ZoneManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}

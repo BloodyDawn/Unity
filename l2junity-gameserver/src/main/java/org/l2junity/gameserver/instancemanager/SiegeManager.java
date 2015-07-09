@@ -118,7 +118,7 @@ public final class SiegeManager
 		}
 	}
 	
-	private final void load()
+	private void load()
 	{
 		final PropertiesParser siegeSettings = new PropertiesParser(Config.SIEGE_CONFIGURATION_FILE);
 		
@@ -275,7 +275,7 @@ public final class SiegeManager
 		return sieges;
 	}
 	
-	private final void loadTrapUpgrade(int castleId)
+	private void loadTrapUpgrade(int castleId)
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM castle_trapupgrade WHERE castleId=?"))
@@ -295,7 +295,7 @@ public final class SiegeManager
 		}
 	}
 	
-	public static final SiegeManager getInstance()
+	public static SiegeManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}

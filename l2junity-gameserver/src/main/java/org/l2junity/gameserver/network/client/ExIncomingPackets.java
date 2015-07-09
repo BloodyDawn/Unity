@@ -343,7 +343,7 @@ public enum ExIncomingPackets implements IIncomingPackets<IIncomingPacket<L2Game
 	private Supplier<IIncomingPacket<L2GameClient>> _incomingPacketFactory;
 	private Set<IConnectionState> _connectionStates;
 	
-	private ExIncomingPackets(int packetId, Supplier<IIncomingPacket<L2GameClient>> incomingPacketFactory, IConnectionState... connectionStates)
+	ExIncomingPackets(int packetId, Supplier<IIncomingPacket<L2GameClient>> incomingPacketFactory, IConnectionState... connectionStates)
 	{
 		// packetId is an unsigned short
 		if (packetId > 0xFFFF)

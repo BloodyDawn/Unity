@@ -148,7 +148,7 @@ public abstract class AbstractEnchantItem
 	 * @param type2
 	 * @return {@code true} if current type2 is valid to be enchanted, {@code false} otherwise
 	 */
-	private final boolean isValidItemType(int type2)
+	private boolean isValidItemType(int type2)
 	{
 		if (type2 == L2Item.TYPE2_WEAPON)
 		{

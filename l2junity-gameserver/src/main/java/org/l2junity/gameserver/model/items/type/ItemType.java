@@ -24,5 +24,5 @@ package org.l2junity.gameserver.model.items.type;
  */
 public interface ItemType
 {
-	public int mask();
+	int mask();
 }

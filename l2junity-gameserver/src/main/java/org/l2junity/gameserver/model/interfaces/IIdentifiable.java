@@ -24,5 +24,5 @@ package org.l2junity.gameserver.model.interfaces;
  */
 public interface IIdentifiable
 {
-	public int getId();
+	int getId();
 }

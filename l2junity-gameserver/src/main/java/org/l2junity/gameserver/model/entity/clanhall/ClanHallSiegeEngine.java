@@ -181,7 +181,7 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 	
 	// XXX Npc Management methods ----------------------------
 	
-	private final void spawnSiegeGuards()
+	private void spawnSiegeGuards()
 	{
 		for (L2Spawn guard : _guards)
 		{
@@ -192,7 +192,7 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 		}
 	}
 	
-	private final void unSpawnSiegeGuards()
+	private void unSpawnSiegeGuards()
 	{
 		if ((_guards != null) && (_guards.size() > 0))
 		{

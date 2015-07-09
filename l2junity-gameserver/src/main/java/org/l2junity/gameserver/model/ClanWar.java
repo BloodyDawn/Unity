@@ -322,7 +322,7 @@ public final class ClanWar
 		return _attackerClanId == clan.getId() ? ClanTable.getInstance().getClan(_attackedClanId) : ClanTable.getInstance().getClan(_attackerClanId);
 	}
 	
-	public static enum ClanWarState
+	public enum ClanWarState
 	{
 		DECLARATION,
 		BLOOD_DECLARATION,

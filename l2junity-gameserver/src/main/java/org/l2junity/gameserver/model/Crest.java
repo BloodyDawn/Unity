@@ -38,7 +38,7 @@ public final class Crest implements IIdentifiable
 		
 		private final int _id;
 		
-		private CrestType(int id)
+		CrestType(int id)
 		{
 			_id = id;
 		}

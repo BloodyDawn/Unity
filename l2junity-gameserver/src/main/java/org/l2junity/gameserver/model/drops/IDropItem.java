@@ -34,5 +34,5 @@ public interface IDropItem
 	 * @param killer the killer
 	 * @return {@code null} or empty collection if there are no drops, a collection containing all items to drop otherwise
 	 */
-	public Collection<ItemHolder> calculateDrops(Creature victim, Creature killer);
+	Collection<ItemHolder> calculateDrops(Creature victim, Creature killer);
 }

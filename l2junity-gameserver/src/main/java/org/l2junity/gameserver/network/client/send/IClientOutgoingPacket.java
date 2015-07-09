@@ -30,9 +30,9 @@ import org.slf4j.LoggerFactory;
  */
 public interface IClientOutgoingPacket extends IOutgoingPacket
 {
-	static final Logger _log = LoggerFactory.getLogger(IClientOutgoingPacket.class);
+	Logger _log = LoggerFactory.getLogger(IClientOutgoingPacket.class);
 	
-	static final int[] PAPERDOLL_ORDER = new int[]
+	int[] PAPERDOLL_ORDER = new int[]
 	{
 		Inventory.PAPERDOLL_UNDER,
 		Inventory.PAPERDOLL_REAR,
@@ -70,14 +70,14 @@ public interface IClientOutgoingPacket extends IOutgoingPacket
 	
 	};
 	
-	static final int[] PAPERDOLL_ORDER_AUGMENT = new int[]
+	int[] PAPERDOLL_ORDER_AUGMENT = new int[]
 	{
 		Inventory.PAPERDOLL_RHAND,
 		Inventory.PAPERDOLL_LHAND,
 		Inventory.PAPERDOLL_RHAND
 	};
 	
-	static final int[] PAPERDOLL_ORDER_VISUAL_ID = new int[]
+	int[] PAPERDOLL_ORDER_VISUAL_ID = new int[]
 	{
 		Inventory.PAPERDOLL_RHAND,
 		Inventory.PAPERDOLL_LHAND,
@@ -110,7 +110,7 @@ public interface IClientOutgoingPacket extends IOutgoingPacket
 	 * @param type
 	 * @return {@code true} if the mask contains the current update component type
 	 */
-	public static boolean containsMask(int masks, IUpdateTypeComponent type)
+	static boolean containsMask(int masks, IUpdateTypeComponent type)
 	{
 		return (masks & type.getMask()) == type.getMask();
 	}
@@ -120,12 +120,12 @@ public interface IClientOutgoingPacket extends IOutgoingPacket
 	 * {@code L2World.getInstance().getPlayers().forEach(packet::sendTo)}
 	 * @param player
 	 */
-	public default void sendTo(PlayerInstance player)
+	default void sendTo(PlayerInstance player)
 	{
 		player.sendPacket(this);
 	}
 	
-	public default void runImpl(PlayerInstance player)
+	default void runImpl(PlayerInstance player)
 	{
 		
 	}

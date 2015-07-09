@@ -159,7 +159,7 @@ public final class FortManager implements InstanceListManager
 		}
 	}
 	
-	public static final FortManager getInstance()
+	public static FortManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}

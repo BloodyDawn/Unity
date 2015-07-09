@@ -32,7 +32,7 @@ public final class SystemMessage extends AbstractMessagePacket<SystemMessage>
 		super(smId);
 	}
 	
-	public static final SystemMessage sendString(final String text)
+	public static SystemMessage sendString(final String text)
 	{
 		if (text == null)
 		{
@@ -44,7 +44,7 @@ public final class SystemMessage extends AbstractMessagePacket<SystemMessage>
 		return sm;
 	}
 	
-	public static final SystemMessage getSystemMessage(final SystemMessageId smId)
+	public static SystemMessage getSystemMessage(final SystemMessageId smId)
 	{
 		SystemMessage sm = smId.getStaticSystemMessage();
 		if (sm != null)

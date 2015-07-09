@@ -217,7 +217,7 @@ public class Message
 		}
 	}
 	
-	public static final PreparedStatement getStatement(Message msg, Connection con) throws SQLException
+	public static PreparedStatement getStatement(Message msg, Connection con) throws SQLException
 	{
 		PreparedStatement stmt = con.prepareStatement("INSERT INTO messages (messageId, senderId, receiverId, subject, content, expiration, reqAdena, hasAttachments, isUnread, isDeletedBySender, isDeletedByReceiver, sendBySystem, isReturned, itemId, enchantLvl, elementals) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		

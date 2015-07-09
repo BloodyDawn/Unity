@@ -53,7 +53,7 @@ public enum WeaponType implements ItemType
 	 * Constructor of the L2WeaponType.
 	 * @param traitType
 	 */
-	private WeaponType(TraitType traitType)
+	WeaponType(TraitType traitType)
 	{
 		_mask = 1 << ordinal();
 		_traitType = traitType;

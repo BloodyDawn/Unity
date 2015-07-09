@@ -64,7 +64,7 @@ public enum BaseStats
 		return _stat.getClass().getSimpleName();
 	}
 	
-	private BaseStats(BaseStat s)
+	BaseStats(BaseStat s)
 	{
 		_stat = s;
 	}
@@ -79,7 +79,7 @@ public enum BaseStats
 		return 1;
 	}
 	
-	public static final BaseStats valueOfXml(String name)
+	public static BaseStats valueOfXml(String name)
 	{
 		name = name.intern();
 		for (BaseStats s : values())
@@ -94,7 +94,7 @@ public enum BaseStats
 	
 	private interface BaseStat
 	{
-		public double calcBonus(Creature actor);
+		double calcBonus(Creature actor);
 	}
 	
 	protected static final class STR implements BaseStat

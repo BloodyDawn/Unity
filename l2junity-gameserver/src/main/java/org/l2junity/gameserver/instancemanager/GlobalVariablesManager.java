@@ -132,7 +132,7 @@ public final class GlobalVariablesManager extends AbstractVariables
 	 * Gets the single instance of {@code GlobalVariablesManager}.
 	 * @return single instance of {@code GlobalVariablesManager}
 	 */
-	public static final GlobalVariablesManager getInstance()
+	public static GlobalVariablesManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}

@@ -23,5 +23,5 @@ package org.l2junity.gameserver.model.interfaces;
  */
 public interface IDeletable
 {
-	public boolean deleteMe();
+	boolean deleteMe();
 }

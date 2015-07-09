@@ -107,7 +107,7 @@ public final class AuctionableHall extends ClanHall
 	 * Initialize Fee Task
 	 * @param forced
 	 */
-	private final void initialyzeTask(boolean forced)
+	private void initialyzeTask(boolean forced)
 	{
 		long currentTime = System.currentTimeMillis();
 		if (_paidUntil > currentTime)

@@ -2236,7 +2236,7 @@ public final class ItemInstance extends WorldObject
 		}
 	}
 	
-	private final void onVisualLifeTimeEnd()
+	private void onVisualLifeTimeEnd()
 	{
 		final ItemVariables vars = getVariables();
 		vars.remove(ItemVariables.VISUAL_ID);

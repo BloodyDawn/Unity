@@ -61,9 +61,9 @@ public abstract class Inventory extends ItemContainer
 	
 	public interface PaperdollListener
 	{
-		public void notifyEquiped(int slot, ItemInstance inst, Inventory inventory);
+		void notifyEquiped(int slot, ItemInstance inst, Inventory inventory);
 		
-		public void notifyUnequiped(int slot, ItemInstance inst, Inventory inventory);
+		void notifyUnequiped(int slot, ItemInstance inst, Inventory inventory);
 	}
 	
 	// Common Items

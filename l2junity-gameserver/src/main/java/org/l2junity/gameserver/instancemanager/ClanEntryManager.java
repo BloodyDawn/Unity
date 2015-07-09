@@ -91,7 +91,7 @@ public class ClanEntryManager
 		load();
 	}
 	
-	private final void load()
+	private void load()
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();

@@ -64,7 +64,7 @@ public class GeneralDropItem implements IDropItem
 		return 1.;
 	}
 	
-	private final long getMinMax(Creature victim, Creature killer, long val)
+	private long getMinMax(Creature victim, Creature killer, long val)
 	{
 		double multiplier = 1;
 		

@@ -53,7 +53,7 @@ public final class CHSiegeManager
 		loadClanHalls();
 	}
 	
-	private final void loadClanHalls()
+	private void loadClanHalls()
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();

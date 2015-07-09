@@ -133,7 +133,7 @@ public final class ItemAuctionManager implements IXmlReader
 		return _auctionIds.getAndIncrement();
 	}
 	
-	public static final void deleteAuction(final int auctionId)
+	public static void deleteAuction(final int auctionId)
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
@@ -159,7 +159,7 @@ public final class ItemAuctionManager implements IXmlReader
 	 * Gets the single instance of {@code ItemAuctionManager}.
 	 * @return single instance of {@code ItemAuctionManager}
 	 */
-	public static final ItemAuctionManager getInstance()
+	public static ItemAuctionManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}

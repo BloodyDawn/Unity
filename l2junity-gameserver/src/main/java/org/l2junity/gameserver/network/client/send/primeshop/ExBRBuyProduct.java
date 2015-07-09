@@ -47,7 +47,7 @@ public class ExBRBuyProduct implements IClientOutgoingPacket
 		SOLD_OUT(-14);
 		private final int _id;
 		
-		private ExBrProductReplyType(int id)
+		ExBrProductReplyType(int id)
 		{
 			_id = id;
 		}

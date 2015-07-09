@@ -161,7 +161,7 @@ public abstract class AbstractOlympiadGame
 		return null;
 	}
 	
-	protected static final boolean portPlayerToArena(Participant par, Location loc, int id, int instanceId)
+	protected static boolean portPlayerToArena(Participant par, Location loc, int id, int instanceId)
 	{
 		final PlayerInstance player = par.getPlayer();
 		if ((player == null) || !player.isOnline())
@@ -195,7 +195,7 @@ public abstract class AbstractOlympiadGame
 		return true;
 	}
 	
-	protected static final void removals(PlayerInstance player, boolean removeParty)
+	protected static void removals(PlayerInstance player, boolean removeParty)
 	{
 		try
 		{
@@ -298,7 +298,7 @@ public abstract class AbstractOlympiadGame
 		}
 	}
 	
-	protected static final void cleanEffects(PlayerInstance player)
+	protected static void cleanEffects(PlayerInstance player)
 	{
 		try
 		{
@@ -351,7 +351,7 @@ public abstract class AbstractOlympiadGame
 		}
 	}
 	
-	protected static final void playerStatusBack(PlayerInstance player)
+	protected static void playerStatusBack(PlayerInstance player)
 	{
 		try
 		{
@@ -398,7 +398,7 @@ public abstract class AbstractOlympiadGame
 		}
 	}
 	
-	protected static final void portPlayerBack(PlayerInstance player)
+	protected static void portPlayerBack(PlayerInstance player)
 	{
 		if (player == null)
 		{
@@ -416,7 +416,7 @@ public abstract class AbstractOlympiadGame
 		player.unsetLastLocation();
 	}
 	
-	public static final void rewardParticipant(PlayerInstance player, List<ItemHolder> list)
+	public static void rewardParticipant(PlayerInstance player, List<ItemHolder> list)
 	{
 		if ((player == null) || !player.isOnline() || (list == null))
 		{

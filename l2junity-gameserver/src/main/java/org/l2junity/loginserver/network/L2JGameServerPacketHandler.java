@@ -44,7 +44,7 @@ public class L2JGameServerPacketHandler
 {
 	protected static Logger _log = LoggerFactory.getLogger(L2JGameServerPacketHandler.class);
 	
-	public static enum GameServerState
+	public enum GameServerState
 	{
 		CONNECTED,
 		BF_CONNECTED,

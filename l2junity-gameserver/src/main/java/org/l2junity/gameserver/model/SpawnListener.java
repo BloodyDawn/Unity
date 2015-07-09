@@ -27,5 +27,5 @@ import org.l2junity.gameserver.model.actor.Npc;
 
 public interface SpawnListener
 {
-	public void npcSpawned(Npc npc);
+	void npcSpawned(Npc npc);
 }

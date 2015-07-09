@@ -28,11 +28,11 @@ import org.slf4j.LoggerFactory;
  */
 public interface IPunishmentHandler
 {
-	static final Logger _log = LoggerFactory.getLogger(IPunishmentHandler.class);
+	Logger _log = LoggerFactory.getLogger(IPunishmentHandler.class);
 	
-	public void onStart(PunishmentTask task);
+	void onStart(PunishmentTask task);
 	
-	public void onEnd(PunishmentTask task);
+	void onEnd(PunishmentTask task);
 	
-	public PunishmentType getType();
+	PunishmentType getType();
 }

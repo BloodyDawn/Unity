@@ -315,7 +315,7 @@ public class AirShipManager
 		}
 	}
 	
-	public static final AirShipManager getInstance()
+	public static AirShipManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}

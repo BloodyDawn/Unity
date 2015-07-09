@@ -35169,7 +35169,7 @@ public final class NpcStringId
 		buildFastLookupTable();
 	}
 	
-	private static final void buildFastLookupTable()
+	private static void buildFastLookupTable()
 	{
 		final Field[] fields = NpcStringId.class.getDeclaredFields();
 		
@@ -35195,7 +35195,7 @@ public final class NpcStringId
 		}
 	}
 	
-	private static final int parseMessageParameters(final String name)
+	private static int parseMessageParameters(final String name)
 	{
 		int paramCount = 0;
 		char c1, c2;
@@ -35215,23 +35215,23 @@ public final class NpcStringId
 		return paramCount;
 	}
 	
-	public static final NpcStringId getNpcStringId(final int id)
+	public static NpcStringId getNpcStringId(final int id)
 	{
 		return getNpcStringIdOrDefault(id, new NpcStringId(id));
 	}
 	
-	public static final NpcStringId getNpcStringIdOrDefault(final int id, NpcStringId defaultValue)
+	public static NpcStringId getNpcStringIdOrDefault(final int id, NpcStringId defaultValue)
 	{
 		final NpcStringId nsi = getNpcStringIdInternal(id);
 		return nsi == null ? defaultValue : nsi;
 	}
 	
-	private static final NpcStringId getNpcStringIdInternal(final int id)
+	private static NpcStringId getNpcStringIdInternal(final int id)
 	{
 		return VALUES.get(id);
 	}
 	
-	public static final NpcStringId getNpcStringId(final String name)
+	public static NpcStringId getNpcStringId(final String name)
 	{
 		try
 		{
@@ -35243,7 +35243,7 @@ public final class NpcStringId
 		}
 	}
 	
-	public static final void reloadLocalisations()
+	public static void reloadLocalisations()
 	{
 		for (final NpcStringId nsId : VALUES.values())
 		{
@@ -35357,7 +35357,7 @@ public final class NpcStringId
 		return _id;
 	}
 	
-	private final void setName(final String name)
+	private void setName(final String name)
 	{
 		_name = name;
 	}

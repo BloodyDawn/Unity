@@ -218,7 +218,7 @@ public final class ItemAuction
 		return lastBid;
 	}
 	
-	private final void updatePlayerBid(final ItemAuctionBid bid, final boolean delete)
+	private void updatePlayerBid(final ItemAuctionBid bid, final boolean delete)
 	{
 		// TODO nBd maybe move such stuff to you db updater :D
 		updatePlayerBidInternal(bid, delete);
@@ -325,7 +325,7 @@ public final class ItemAuction
 		}
 	}
 	
-	private final void onPlayerBid(final PlayerInstance player, final ItemAuctionBid bid)
+	private void onPlayerBid(final PlayerInstance player, final ItemAuctionBid bid)
 	{
 		if (_highestBid == null)
 		{
@@ -505,7 +505,7 @@ public final class ItemAuction
 		}
 	}
 	
-	private final boolean reduceItemCount(final PlayerInstance player, final long count)
+	private boolean reduceItemCount(final PlayerInstance player, final long count)
 	{
 		if (!player.reduceAdena("ItemAuction", count, player, true))
 		{
@@ -515,7 +515,7 @@ public final class ItemAuction
 		return true;
 	}
 	
-	private final void increaseItemCount(final PlayerInstance player, final long count)
+	private void increaseItemCount(final PlayerInstance player, final long count)
 	{
 		player.addAdena("ItemAuction", count, player, true);
 	}
@@ -537,7 +537,7 @@ public final class ItemAuction
 		return index != -1 ? _auctionBids.get(index) : null;
 	}
 	
-	private final int getBidIndexFor(final int playerObjId)
+	private int getBidIndexFor(final int playerObjId)
 	{
 		for (int i = _auctionBids.size(); i-- > 0;)
 		{

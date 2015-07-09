@@ -14018,7 +14018,7 @@ public final class SystemMessageId
 		buildFastLookupTable();
 	}
 	
-	private static final void buildFastLookupTable()
+	private static void buildFastLookupTable()
 	{
 		final Field[] fields = SystemMessageId.class.getDeclaredFields();
 		
@@ -14044,7 +14044,7 @@ public final class SystemMessageId
 		}
 	}
 	
-	private static final int parseMessageParameters(final String name)
+	private static int parseMessageParameters(final String name)
 	{
 		int paramCount = 0;
 		char c1, c2;
@@ -14064,18 +14064,18 @@ public final class SystemMessageId
 		return paramCount;
 	}
 	
-	public static final SystemMessageId getSystemMessageId(final int id)
+	public static SystemMessageId getSystemMessageId(final int id)
 	{
 		final SystemMessageId smi = getSystemMessageIdInternal(id);
 		return smi == null ? new SystemMessageId(id) : smi;
 	}
 	
-	private static final SystemMessageId getSystemMessageIdInternal(final int id)
+	private static SystemMessageId getSystemMessageIdInternal(final int id)
 	{
 		return VALUES.get(id);
 	}
 	
-	public static final SystemMessageId getSystemMessageId(final String name)
+	public static SystemMessageId getSystemMessageId(final String name)
 	{
 		try
 		{
@@ -14087,7 +14087,7 @@ public final class SystemMessageId
 		}
 	}
 	
-	public static final void reloadLocalisations()
+	public static void reloadLocalisations()
 	{
 		for (final SystemMessageId smId : VALUES.values())
 		{
@@ -14201,7 +14201,7 @@ public final class SystemMessageId
 		return _id;
 	}
 	
-	private final void setName(final String name)
+	private void setName(final String name)
 	{
 		_name = name;
 	}

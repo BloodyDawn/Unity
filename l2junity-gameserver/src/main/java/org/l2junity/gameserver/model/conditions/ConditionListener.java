@@ -31,5 +31,5 @@ public interface ConditionListener
 	/**
 	 * Notify changed.
 	 */
-	public void notifyChanged();
+	void notifyChanged();
 }

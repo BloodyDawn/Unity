@@ -214,7 +214,7 @@ public class Options
 		player.sendSkillList();
 	}
 	
-	private final void addSkill(PlayerInstance player, Skill skill)
+	private void addSkill(PlayerInstance player, Skill skill)
 	{
 		boolean updateTimeStamp = false;
 		

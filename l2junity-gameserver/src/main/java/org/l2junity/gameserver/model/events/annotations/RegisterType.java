@@ -32,5 +32,5 @@ import org.l2junity.gameserver.model.events.ListenerRegisterType;
 @Target(ElementType.METHOD)
 public @interface RegisterType
 {
-	public ListenerRegisterType value();
+	ListenerRegisterType value();
 }

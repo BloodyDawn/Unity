@@ -24,7 +24,7 @@ import org.l2junity.gameserver.model.zone.type.TownZone;
 
 public final class TownManager
 {
-	public static final int getTownCastle(int townId)
+	public static int getTownCastle(int townId)
 	{
 		switch (townId)
 		{
@@ -51,7 +51,7 @@ public final class TownManager
 		}
 	}
 	
-	public static final boolean townHasCastleInSiege(int townId)
+	public static boolean townHasCastleInSiege(int townId)
 	{
 		final int castleId = getTownCastle(townId);
 		if (castleId > 0)
@@ -65,12 +65,12 @@ public final class TownManager
 		return false;
 	}
 	
-	public static final boolean townHasCastleInSiege(int x, int y)
+	public static boolean townHasCastleInSiege(int x, int y)
 	{
 		return townHasCastleInSiege(MapRegionManager.getInstance().getMapRegionLocId(x, y));
 	}
 	
-	public static final TownZone getTown(int townId)
+	public static TownZone getTown(int townId)
 	{
 		for (TownZone temp : ZoneManager.getInstance().getAllZones(TownZone.class))
 		{
@@ -89,7 +89,7 @@ public final class TownManager
 	 * @param z
 	 * @return
 	 */
-	public static final TownZone getTown(int x, int y, int z)
+	public static TownZone getTown(int x, int y, int z)
 	{
 		for (ZoneType temp : ZoneManager.getInstance().getZones(x, y, z))
 		{

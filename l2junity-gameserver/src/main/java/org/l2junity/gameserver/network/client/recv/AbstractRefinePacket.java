@@ -198,7 +198,7 @@ public abstract class AbstractRefinePacket implements IClientIncomingPacket
 		_lifeStones.put(16178, new LifeStone(GRADE_ACC, 13));
 	}
 	
-	protected static final LifeStone getLifeStone(int itemId)
+	protected static LifeStone getLifeStone(int itemId)
 	{
 		return _lifeStones.get(itemId);
 	}
@@ -211,7 +211,7 @@ public abstract class AbstractRefinePacket implements IClientIncomingPacket
 	 * @param gemStones
 	 * @return
 	 */
-	protected static final boolean isValid(PlayerInstance player, ItemInstance item, ItemInstance refinerItem, ItemInstance gemStones)
+	protected static boolean isValid(PlayerInstance player, ItemInstance item, ItemInstance refinerItem, ItemInstance gemStones)
 	{
 		if (!isValid(player, item, refinerItem))
 		{
@@ -253,7 +253,7 @@ public abstract class AbstractRefinePacket implements IClientIncomingPacket
 	 * @param refinerItem
 	 * @return
 	 */
-	protected static final boolean isValid(PlayerInstance player, ItemInstance item, ItemInstance refinerItem)
+	protected static boolean isValid(PlayerInstance player, ItemInstance item, ItemInstance refinerItem)
 	{
 		if (!isValid(player, item))
 		{
@@ -301,7 +301,7 @@ public abstract class AbstractRefinePacket implements IClientIncomingPacket
 	 * @param item
 	 * @return
 	 */
-	protected static final boolean isValid(PlayerInstance player, ItemInstance item)
+	protected static boolean isValid(PlayerInstance player, ItemInstance item)
 	{
 		if (!isValid(player))
 		{
@@ -399,7 +399,7 @@ public abstract class AbstractRefinePacket implements IClientIncomingPacket
 	 * @param player
 	 * @return
 	 */
-	protected static final boolean isValid(PlayerInstance player)
+	protected static boolean isValid(PlayerInstance player)
 	{
 		if (player.getPrivateStoreType() != PrivateStoreType.NONE)
 		{
@@ -447,7 +447,7 @@ public abstract class AbstractRefinePacket implements IClientIncomingPacket
 	 * @param itemGrade
 	 * @return GemStone itemId based on item grade
 	 */
-	protected static final int getGemStoneId(CrystalType itemGrade)
+	protected static int getGemStoneId(CrystalType itemGrade)
 	{
 		switch (itemGrade)
 		{
@@ -471,7 +471,7 @@ public abstract class AbstractRefinePacket implements IClientIncomingPacket
 	 * @param lifeStoneGrade
 	 * @return GemStone count based on item grade and life stone grade
 	 */
-	protected static final int getGemStoneCount(CrystalType itemGrade, int lifeStoneGrade)
+	protected static int getGemStoneCount(CrystalType itemGrade, int lifeStoneGrade)
 	{
 		switch (lifeStoneGrade)
 		{

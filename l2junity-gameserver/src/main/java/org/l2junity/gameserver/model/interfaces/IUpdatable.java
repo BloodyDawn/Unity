@@ -23,5 +23,5 @@ package org.l2junity.gameserver.model.interfaces;
  */
 public interface IUpdatable
 {
-	public boolean updateMe();
+	boolean updateMe();
 }

@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
  */
 public interface ITelnetHandler
 {
-	public static Logger _log = LoggerFactory.getLogger(ITelnetHandler.class);
+	Logger _log = LoggerFactory.getLogger(ITelnetHandler.class);
 	
 	/**
 	 * this is the worker method that is called when someone uses an bypass command
@@ -39,11 +39,11 @@ public interface ITelnetHandler
 	 * @param __uptime
 	 * @return success
 	 */
-	public boolean useCommand(String command, PrintWriter _print, Socket _cSocket, int __uptime);
+	boolean useCommand(String command, PrintWriter _print, Socket _cSocket, int __uptime);
 	
 	/**
 	 * this method is called at initialization to register all bypasses automatically
 	 * @return all known bypasses
 	 */
-	public String[] getCommandList();
+	String[] getCommandList();
 }

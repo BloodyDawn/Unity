@@ -319,7 +319,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 		return checkVillageMasterRace(pclass) && checkVillageMasterTeachType(pclass);
 	}
 	
-	private static final void dissolveClan(PlayerInstance player, int clanId)
+	private static void dissolveClan(PlayerInstance player, int clanId)
 	{
 		if (!player.isClanLeader())
 		{
@@ -380,7 +380,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 		ClanTable.getInstance().scheduleRemoveClan(clan.getId());
 	}
 	
-	private static final void recoverClan(PlayerInstance player, int clanId)
+	private static void recoverClan(PlayerInstance player, int clanId)
 	{
 		if (!player.isClanLeader())
 		{
@@ -393,7 +393,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 		clan.updateClanInDB();
 	}
 	
-	private static final void createSubPledge(PlayerInstance player, String clanName, String leaderName, int pledgeType, int minClanLvl)
+	private static void createSubPledge(PlayerInstance player, String clanName, String leaderName, int pledgeType, int minClanLvl)
 	{
 		if (!player.isClanLeader())
 		{
@@ -503,7 +503,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 		}
 	}
 	
-	private static final void renameSubPledge(PlayerInstance player, int pledgeType, String pledgeName)
+	private static void renameSubPledge(PlayerInstance player, int pledgeType, String pledgeName)
 	{
 		if (!player.isClanLeader())
 		{
@@ -536,7 +536,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 		player.sendMessage("Pledge name changed.");
 	}
 	
-	private static final void assignSubPledgeLeader(PlayerInstance player, String clanName, String leaderName)
+	private static void assignSubPledgeLeader(PlayerInstance player, String clanName, String leaderName)
 	{
 		if (!player.isClanLeader())
 		{
@@ -598,7 +598,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 	 * this displays PledgeSkillList to the player.
 	 * @param player
 	 */
-	public static final void showPledgeSkillList(PlayerInstance player)
+	public static void showPledgeSkillList(PlayerInstance player)
 	{
 		if (!player.isClanLeader())
 		{

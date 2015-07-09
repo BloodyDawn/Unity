@@ -24,7 +24,7 @@ package org.l2junity.gameserver.model.interfaces;
  */
 public interface IParameterized<T>
 {
-	public T getParameters();
+	T getParameters();
 	
-	public void setParameters(T set);
+	void setParameters(T set);
 }

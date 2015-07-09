@@ -24,5 +24,5 @@ package org.l2junity.gameserver.model.interfaces;
  */
 public interface INamable
 {
-	public String getName();
+	String getName();
 }

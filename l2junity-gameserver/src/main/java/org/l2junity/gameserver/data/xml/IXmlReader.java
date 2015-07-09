@@ -46,18 +46,18 @@ import org.xml.sax.SAXParseException;
  */
 public interface IXmlReader
 {
-	static final Logger LOGGER = LoggerFactory.getLogger(IXmlReader.class);
+	Logger LOGGER = LoggerFactory.getLogger(IXmlReader.class);
 	
-	static final String JAXP_SCHEMA_LANGUAGE = "http://java.sun.com/xml/jaxp/properties/schemaLanguage";
-	static final String W3C_XML_SCHEMA = "http://www.w3.org/2001/XMLSchema";
+	String JAXP_SCHEMA_LANGUAGE = "http://java.sun.com/xml/jaxp/properties/schemaLanguage";
+	String W3C_XML_SCHEMA = "http://www.w3.org/2001/XMLSchema";
 	/** The default file filter, ".xml" files only. */
-	static final XMLFilter XML_FILTER = new XMLFilter();
+	XMLFilter XML_FILTER = new XMLFilter();
 	
 	/**
 	 * This method can be used to load/reload the data.<br>
 	 * It's highly recommended to clear the data storage, either the list or map.
 	 */
-	public void load();
+	void load();
 	
 	/**
 	 * Wrapper for {@link #parseFile(File)} method.
@@ -668,7 +668,7 @@ public interface IXmlReader
 	 * Simple XML error handler.
 	 * @author Zoey76
 	 */
-	static class XMLErrorHandler implements ErrorHandler
+	class XMLErrorHandler implements ErrorHandler
 	{
 		@Override
 		public void warning(SAXParseException e) throws SAXParseException

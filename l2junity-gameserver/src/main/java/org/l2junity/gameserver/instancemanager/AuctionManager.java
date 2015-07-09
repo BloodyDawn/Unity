@@ -98,7 +98,7 @@ public final class AuctionManager
 		load();
 	}
 	
-	private final void load()
+	private void load()
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();
@@ -179,7 +179,7 @@ public final class AuctionManager
 		}
 	}
 	
-	public static final AuctionManager getInstance()
+	public static AuctionManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}
