@@ -352,6 +352,8 @@ public final class CastleChamberlain extends AbstractNpcAI
 		final Castle castle = npc.getCastle();
 		final StringTokenizer st = new StringTokenizer(event, " ");
 		String htmltext = null;
+		boolean isMyLord = player.isClanLeader() ? (player.getClan().getCastleId() == (npc.getCastle() != null ? npc.getCastle().getResidenceId() : -1)) : false;
+		
 		switch (st.nextToken())
 		{
 			case "chamberlain-01.html":
@@ -365,7 +367,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 			}
 			case "fort_status":
 			{
-				if (npc.isMyLord(player))
+				if (isMyLord)
 				{
 					final StringBuilder sb = new StringBuilder();
 					final List<Integer> fort = FORTRESS.get(castle.getResidenceId());
@@ -607,7 +609,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 			}
 			case "receive_report":
 			{
-				if (npc.isMyLord(player))
+				if (isMyLord)
 				{
 					if (castle.getSiege().isInProgress())
 					{
@@ -1067,7 +1069,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 					htmltext = "chamberlain-08.html";
 					break;
 				}
-				else if (npc.isMyLord(player))
+				else if (isMyLord)
 				{
 					final int cloakId = npc.getCastle().getSide() == CastleSide.DARK ? LORD_CLOAK_OF_DARK : LORD_CLOAK_OF_LIGHT;
 					
@@ -1090,7 +1092,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 				{
 					htmltext = "chamberlain-08.html";
 				}
-				else if (npc.isMyLord(player))
+				else if (isMyLord)
 				{
 					if (hasQuestItems(player, CROWN))
 					{

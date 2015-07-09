@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.l2junity.Config;
+import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.SkillLearn;
@@ -102,7 +103,25 @@ public class L2NpcInstance extends Npc
 		
 		if (!npc.getTemplate().canTeach(classId))
 		{
-			npc.showNoTeachHtml(player);
+			String html = "";
+			
+			if (npc instanceof L2WarehouseInstance)
+			{
+				html = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/html/warehouse/" + npcId + "-noteach.htm");
+			}
+			
+			final NpcHtmlMessage noTeachMsg = new NpcHtmlMessage(npc.getObjectId());
+			if (html == null)
+			{
+				_log.warn("Npc " + npcId + " missing noTeach html!");
+				noTeachMsg.setHtml("<html><body>I cannot teach you any skills.<br>You must find your current class teachers.</body></html>");
+			}
+			else
+			{
+				noTeachMsg.setHtml(html);
+				noTeachMsg.replace("%objectId%", String.valueOf(npc.getObjectId()));
+			}
+			player.sendPacket(noTeachMsg);
 			return;
 		}
 		

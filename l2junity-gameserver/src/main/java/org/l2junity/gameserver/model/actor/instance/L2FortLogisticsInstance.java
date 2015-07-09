@@ -73,10 +73,11 @@ public class L2FortLogisticsInstance extends L2MerchantInstance
 		StringTokenizer st = new StringTokenizer(command, " ");
 		String actualCommand = st.nextToken(); // Get actual command
 		
+		boolean isMyLord = player.isClanLeader() ? (player.getClan().getFortId() == (getFort() != null ? getFort().getResidenceId() : -1)) : false;
 		final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 		if (actualCommand.equalsIgnoreCase("rewards"))
 		{
-			if (isMyLord(player))
+			if (isMyLord)
 			{
 				html.setFile(player.getHtmlPrefix(), "data/html/fortress/logistics-rewards.htm");
 				html.replace("%bloodoath%", String.valueOf(player.getClan().getBloodOathCount()));
@@ -90,7 +91,7 @@ public class L2FortLogisticsInstance extends L2MerchantInstance
 		}
 		else if (actualCommand.equalsIgnoreCase("blood"))
 		{
-			if (isMyLord(player))
+			if (isMyLord)
 			{
 				final int blood = player.getClan().getBloodOathCount();
 				if (blood > 0)
@@ -134,7 +135,7 @@ public class L2FortLogisticsInstance extends L2MerchantInstance
 		}
 		else if (actualCommand.equalsIgnoreCase("supply"))
 		{
-			if (isMyLord(player))
+			if (isMyLord)
 			{
 				if (getFort().getSiege().isInProgress())
 				{

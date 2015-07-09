@@ -178,7 +178,8 @@ public class L2Event
 			spawn.init();
 			spawn.getLastSpawn().setCurrentHp(999999999);
 			spawn.getLastSpawn().setTitle(_eventName);
-			spawn.getLastSpawn().setEventMob(true);
+			spawn.getLastSpawn().getVariables().set("eventmob", true);
+			spawn.getLastSpawn().setIsInvul(true);
 			// spawn.getLastSpawn().decayMe();
 			// spawn.getLastSpawn().spawnMe(spawn.getLastSpawn().getX(), spawn.getLastSpawn().getY(), spawn.getLastSpawn().getZ());
 			
@@ -202,7 +203,7 @@ public class L2Event
 		SpawnTable.getInstance().forEachSpawn(spawn ->
 		{
 			Npc npc = spawn.getLastSpawn();
-			if ((npc != null) && npc.isEventMob())
+			if ((npc != null) && npc.getVariables().getBoolean("eventmob", false))
 			{
 				npc.deleteMe();
 				spawn.stopRespawn();

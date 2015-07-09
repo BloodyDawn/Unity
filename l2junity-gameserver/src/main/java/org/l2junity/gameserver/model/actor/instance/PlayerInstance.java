@@ -5601,7 +5601,7 @@ public final class PlayerInstance extends Playable
 	 */
 	public L2TrapInstance getTrap()
 	{
-		return getSummonedNpcs().stream().filter(npc -> npc.isTrap()).map(L2TrapInstance.class::cast).findAny().orElse(null);
+		return getSummonedNpcs().stream().filter(Npc::isTrap).map(L2TrapInstance.class::cast).findAny().orElse(null);
 	}
 	
 	/**

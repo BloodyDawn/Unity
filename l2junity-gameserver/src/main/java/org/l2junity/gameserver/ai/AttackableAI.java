@@ -23,6 +23,8 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Future;
@@ -243,7 +245,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					return false;
 				}
 				
-				if (me.isChaos() && me.isInsideRadius(target, me.getAggroRange(), false, false))
+				if (me.getTemplate().isChaos() && me.isInsideRadius(target, me.getAggroRange(), false, false))
 				{
 					if (((Attackable) target).isInMyClan(me))
 					{
@@ -729,7 +731,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if (!aiSuicideSkills.isEmpty() && ((int) ((npc.getCurrentHp() / npc.getMaxHp()) * 100) < 30))
 		{
 			final Skill skill = aiSuicideSkills.get(Rnd.nextInt(aiSuicideSkills.size()));
-			if (Util.checkIfInRange(skill.getAffectRange(), getActiveChar(), mostHate, false) && (Rnd.get(100) < Rnd.get(npc.getMinSkillChance(), npc.getMaxSkillChance())))
+			if (Util.checkIfInRange(skill.getAffectRange(), getActiveChar(), mostHate, false) && (Rnd.get(100) < Rnd.get(npc.getTemplate().getMinSkillChance(), npc.getTemplate().getMaxSkillChance())))
 			{
 				if (cast(skill))
 				{
@@ -790,9 +792,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 		}
 		// Dodge if its needed
-		if (!npc.isMovementDisabled() && (npc.getDodge() > 0))
+		if (!npc.isMovementDisabled() && (npc.getTemplate().getDodge() > 0))
 		{
-			if (Rnd.get(100) <= npc.getDodge())
+			if (Rnd.get(100) <= npc.getTemplate().getDodge())
 			{
 				// Micht: kepping this one otherwise we should do 2 sqrt
 				double distance2 = npc.calculateDistance(mostHate, false, true);
@@ -1086,7 +1088,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		List<Skill> aiGeneralSkills = _skillrender.getAISkills(AISkillScope.GENERAL);
 		if (!aiGeneralSkills.isEmpty())
 		{
-			if (Rnd.get(100) < Rnd.get(npc.getMinSkillChance(), npc.getMaxSkillChance()))
+			if (Rnd.get(100) < Rnd.get(npc.getTemplate().getMinSkillChance(), npc.getTemplate().getMaxSkillChance()))
 			{
 				Skill skills = aiGeneralSkills.get(Rnd.nextInt(aiGeneralSkills.size()));
 				if (cast(skills))
@@ -1104,10 +1106,10 @@ public class AttackableAI extends CharacterAI implements Runnable
 			
 			// --------------------------------------------------------------------------------
 			// Long/Short Range skill usage.
-			if (npc.hasLSkill() || npc.hasSSkill())
+			if ((npc.getTemplate().getLongRangeSkillId() > 0) || (npc.getTemplate().getShortRangeSkillId() > 0))
 			{
 				final List<Skill> shortRangeSkills = shortRangeSkillRender();
-				if (!shortRangeSkills.isEmpty() && npc.hasSSkill() && (dist2 <= 150) && (Rnd.get(100) <= npc.getSSkillChance()))
+				if (!shortRangeSkills.isEmpty() && (npc.getTemplate().getShortRangeSkillId() > 0) && (dist2 <= 150) && (Rnd.get(100) <= npc.getTemplate().getShortRangeSkillChance()))
 				{
 					final Skill shortRangeSkill = shortRangeSkills.get(Rnd.get(shortRangeSkills.size()));
 					if ((shortRangeSkill != null) && cast(shortRangeSkill))
@@ -1124,7 +1126,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 				
 				final List<Skill> longRangeSkills = longRangeSkillRender();
-				if (!longRangeSkills.isEmpty() && npc.hasLSkill() && (dist2 > 150) && (Rnd.get(100) <= npc.getLSkillChance()))
+				if (!longRangeSkills.isEmpty() && (npc.getTemplate().getLongRangeSkillId() > 0) && (dist2 > 150) && (Rnd.get(100) <= npc.getTemplate().getLongRangeSkillChance()))
 				{
 					final Skill longRangeSkill = longRangeSkills.get(Rnd.get(longRangeSkills.size()));
 					if ((longRangeSkill != null) && cast(longRangeSkill))
@@ -1165,7 +1167,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			return;
 		}
 		
-		melee(npc.getPrimarySkillId());
+		melee(npc.getTemplate().getPrimarySkillId());
 	}
 	
 	private void melee(int type)
@@ -1200,7 +1202,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					for (Skill sk : _skillrender.getAISkills(AISkillScope.GENERAL))
 					{
-						if (sk.getId() == getActiveChar().getPrimarySkillId())
+						if (sk.getId() == getActiveChar().getTemplate().getPrimarySkillId())
 						{
 							if (cast(sk))
 							{
@@ -1908,7 +1910,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				
 			}
 			
-			melee(npc.getPrimarySkillId());
+			melee(npc.getTemplate().getPrimarySkillId());
 		}
 		catch (NullPointerException e)
 		{
@@ -2182,7 +2184,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 				if (obj instanceof Attackable)
 				{
-					if (actor.isChaos())
+					if (actor.getTemplate().isChaos())
 					{
 						if (((Attackable) obj).isInMyClan(actor))
 						{
@@ -2271,7 +2273,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 				else if (obj instanceof Attackable)
 				{
-					if (actor.isChaos())
+					if (actor.getTemplate().isChaos())
 					{
 						if (((Attackable) obj).isInMyClan(actor))
 						{
@@ -2374,7 +2376,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 				else if (obj instanceof Attackable)
 				{
-					if (actor.isChaos())
+					if (actor.getTemplate().isChaos())
 					{
 						if (((Attackable) obj).isInMyClan(actor))
 						{
@@ -2415,9 +2417,64 @@ public class AttackableAI extends CharacterAI implements Runnable
 		List<Skill> longRangeSkills = _skillrender.getAISkills(AISkillScope.LONG_RANGE);
 		if (longRangeSkills.isEmpty())
 		{
-			longRangeSkills = getActiveChar().getLongRangeSkill();
+			longRangeSkills = getLongRangeSkill();
 		}
 		return longRangeSkills;
+	}
+	
+	public List<Skill> getLongRangeSkill()
+	{
+		final List<Skill> skilldata = new ArrayList<>();
+		if (getActiveChar().getTemplate().getLongRangeSkillId() == 0)
+		{
+			return skilldata;
+		}
+		
+		switch (getActiveChar().getTemplate().getLongRangeSkillId())
+		{
+			case -1:
+			{
+				final Collection<Skill> skills = getActiveChar().getAllSkills();
+				if (skills != null)
+				{
+					for (Skill sk : skills)
+					{
+						if ((sk == null) || sk.isPassive() || (sk.getTargetType() == L2TargetType.SELF))
+						{
+							continue;
+						}
+						
+						if (sk.getCastRange() >= 200)
+						{
+							skilldata.add(sk);
+						}
+					}
+				}
+				break;
+			}
+			case 1:
+			{
+				for (Skill sk : getActiveChar().getTemplate().getAISkills(AISkillScope.UNIVERSAL))
+				{
+					if (sk.getCastRange() >= 200)
+					{
+						skilldata.add(sk);
+					}
+				}
+				break;
+			}
+			default:
+			{
+				for (Skill sk : getActiveChar().getAllSkills())
+				{
+					if (sk.getId() == getActiveChar().getTemplate().getLongRangeSkillId())
+					{
+						skilldata.add(sk);
+					}
+				}
+			}
+		}
+		return skilldata;
 	}
 	
 	private List<Skill> shortRangeSkillRender()
@@ -2425,9 +2482,63 @@ public class AttackableAI extends CharacterAI implements Runnable
 		List<Skill> shortRangeSkills = _skillrender.getAISkills(AISkillScope.SHORT_RANGE);
 		if (shortRangeSkills.isEmpty())
 		{
-			shortRangeSkills = getActiveChar().getShortRangeSkill();
+			shortRangeSkills = getShortRangeSkill();
 		}
 		return shortRangeSkills;
+	}
+	
+	public List<Skill> getShortRangeSkill()
+	{
+		final List<Skill> skilldata = new ArrayList<>();
+		if (getActiveChar().getTemplate().getShortRangeSkillId() == 0)
+		{
+			return skilldata;
+		}
+		
+		switch (getActiveChar().getTemplate().getShortRangeSkillId())
+		{
+			case -1:
+			{
+				Collection<Skill> skills = getActiveChar().getAllSkills();
+				if (skills != null)
+				{
+					for (Skill sk : skills)
+					{
+						if ((sk == null) || sk.isPassive() || (sk.getTargetType() == L2TargetType.SELF))
+						{
+							continue;
+						}
+						if (sk.getCastRange() <= 200)
+						{
+							skilldata.add(sk);
+						}
+					}
+				}
+				break;
+			}
+			case 1:
+			{
+				for (Skill sk : getActiveChar().getTemplate().getAISkills(AISkillScope.UNIVERSAL))
+				{
+					if (sk.getCastRange() <= 200)
+					{
+						skilldata.add(sk);
+					}
+				}
+				break;
+			}
+			default:
+			{
+				for (Skill sk : getActiveChar().getAllSkills())
+				{
+					if (sk.getId() == getActiveChar().getTemplate().getShortRangeSkillId())
+					{
+						skilldata.add(sk);
+					}
+				}
+			}
+		}
+		return skilldata;
 	}
 	
 	/**

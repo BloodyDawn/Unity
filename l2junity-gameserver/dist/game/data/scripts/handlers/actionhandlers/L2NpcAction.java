@@ -112,7 +112,7 @@ public class L2NpcAction implements IActionHandler
 						npc.onRandomAnimation(Rnd.get(8));
 					}
 					// Open a chat window on client with the text of the L2Npc
-					if (npc.isEventMob())
+					if (npc.getVariables().getBoolean("eventmob", false))
 					{
 						L2Event.showEventHtml(activeChar, String.valueOf(target.getObjectId()));
 					}

@@ -58,6 +58,7 @@ public final class CastleWarehouse extends AbstractNpcAI
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = event;
+		boolean isMyLord = player.isClanLeader() ? (player.getClan().getCastleId() == (npc.getCastle() != null ? npc.getCastle().getResidenceId() : -1)) : false;
 		switch (event)
 		{
 			case "warehouse-01.html":
@@ -65,10 +66,10 @@ public final class CastleWarehouse extends AbstractNpcAI
 			case "warehouse-03.html":
 				break;
 			case "warehouse-04.html":
-				htmltext = (!npc.isMyLord(player)) ? "warehouse-no.html" : getHtm(player.getHtmlPrefix(), "warehouse-04.html").replace("%blood%", Integer.toString(player.getClan().getBloodAllianceCount()));
+				htmltext = (!isMyLord) ? "warehouse-no.html" : getHtm(player.getHtmlPrefix(), "warehouse-04.html").replace("%blood%", Integer.toString(player.getClan().getBloodAllianceCount()));
 				break;
 			case "Receive":
-				if (!npc.isMyLord(player))
+				if (!isMyLord)
 				{
 					htmltext = "warehouse-no.html";
 				}
@@ -84,7 +85,7 @@ public final class CastleWarehouse extends AbstractNpcAI
 				}
 				break;
 			case "Exchange":
-				if (!npc.isMyLord(player))
+				if (!isMyLord)
 				{
 					htmltext = "warehouse-no.html";
 				}

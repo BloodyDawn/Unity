@@ -159,7 +159,7 @@ public final class WorldRegion
 				}
 				else if (o instanceof Npc)
 				{
-					((Npc) o).startRandomAnimationTimer();
+					((Npc) o).startRandomAnimationTask();
 				}
 			}
 			

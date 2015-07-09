@@ -55,7 +55,8 @@ public final class CastleBlacksmith extends AbstractNpcAI
 	
 	private boolean hasRights(PlayerInstance player, Npc npc)
 	{
-		return player.canOverrideCond(PcCondOverride.CASTLE_CONDITIONS) || npc.isMyLord(player) || ((player.getClanId() == npc.getCastle().getOwnerId()) && player.hasClanPrivilege(ClanPrivilege.CS_MANOR_ADMIN));
+		boolean isMyLord = player.isClanLeader() ? (player.getClan().getCastleId() == (npc.getCastle() != null ? npc.getCastle().getResidenceId() : -1)) : false;
+		return player.canOverrideCond(PcCondOverride.CASTLE_CONDITIONS) || isMyLord || ((player.getClanId() == npc.getCastle().getOwnerId()) && player.hasClanPrivilege(ClanPrivilege.CS_MANOR_ADMIN));
 	}
 	
 	@Override

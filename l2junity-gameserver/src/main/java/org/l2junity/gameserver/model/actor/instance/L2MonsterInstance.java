@@ -68,7 +68,7 @@ public class L2MonsterInstance extends Attackable
 	@Override
 	public boolean isAutoAttackable(Creature attacker)
 	{
-		return super.isAutoAttackable(attacker) && !isEventMob();
+		return super.isAutoAttackable(attacker);
 	}
 	
 	/**
@@ -77,7 +77,7 @@ public class L2MonsterInstance extends Attackable
 	@Override
 	public boolean isAggressive()
 	{
-		return getTemplate().isAggressive() && !isEventMob();
+		return getTemplate().isAggressive();
 	}
 	
 	@Override

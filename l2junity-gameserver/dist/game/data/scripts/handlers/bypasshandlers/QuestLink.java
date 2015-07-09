@@ -159,7 +159,8 @@ public class QuestLink implements IBypassHandler
 		}
 		
 		// Send a Server->Client packet NpcHtmlMessage to the L2PcInstance in order to display the message of the L2NpcInstance
-		npc.insertObjectIdAndShowChatWindow(player, content);
+		content = content.replaceAll("%objectId%", String.valueOf(npc.getObjectId()));
+		player.sendPacket(new NpcHtmlMessage(npc.getObjectId(), content));
 	}
 	
 	/**
@@ -216,7 +217,8 @@ public class QuestLink implements IBypassHandler
 		// Send a Server->Client packet NpcHtmlMessage to the L2PcInstance in order to display the message of the L2NpcInstance
 		if (content != null)
 		{
-			npc.insertObjectIdAndShowChatWindow(player, content);
+			content = content.replaceAll("%objectId%", String.valueOf(npc.getObjectId()));
+			player.sendPacket(new NpcHtmlMessage(npc.getObjectId(), content));
 		}
 		
 		// Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet

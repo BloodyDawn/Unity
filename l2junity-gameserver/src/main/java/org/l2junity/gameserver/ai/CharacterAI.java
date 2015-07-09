@@ -198,7 +198,7 @@ public class CharacterAI extends AbstractAI
 			// This is only for mobs - town npcs are handled in their constructor
 			if (_actor instanceof Attackable)
 			{
-				((Npc) _actor).startRandomAnimationTimer();
+				((Npc) _actor).startRandomAnimationTask();
 			}
 			
 			// Launch the Think Event
@@ -1462,7 +1462,7 @@ public class CharacterAI extends AbstractAI
 					{
 						Npc actors = ((Npc) _actor);
 						
-						if (!actors.isChaos())
+						if (!actors.getTemplate().isChaos())
 						{
 							continue;
 						}
@@ -1491,7 +1491,7 @@ public class CharacterAI extends AbstractAI
 					{
 						Npc actors = ((Npc) _actor);
 						
-						if (!actors.isChaos())
+						if (!actors.getTemplate().isChaos())
 						{
 							continue;
 						}
@@ -1523,7 +1523,7 @@ public class CharacterAI extends AbstractAI
 					{
 						Npc actors = ((Npc) _actor);
 						
-						if (!actors.isChaos())
+						if (!actors.getTemplate().isChaos())
 						{
 							continue;
 						}
@@ -1552,7 +1552,7 @@ public class CharacterAI extends AbstractAI
 					if (target instanceof Attackable)
 					{
 						Npc actors = ((Npc) _actor);
-						if (!actors.isChaos())
+						if (!actors.getTemplate().isChaos())
 						{
 							continue;
 						}

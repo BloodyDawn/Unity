@@ -277,11 +277,6 @@ public class Attackable extends Npc
 			}
 		}
 		
-		if (isEventMob())
-		{
-			return;
-		}
-		
 		// Add damage and hate to the attacker AggroInfo of the L2Attackable _aggroList
 		if (attacker != null)
 		{
@@ -1422,7 +1417,8 @@ public class Attackable extends Npc
 			}
 		}
 		
-		return new int[] {
+		return new int[]
+		{
 			(int) xp,
 			(int) sp
 		};
@@ -1604,12 +1600,6 @@ public class Attackable extends Npc
 	public boolean hasRandomAnimation()
 	{
 		return ((Config.MAX_MONSTER_ANIMATION > 0) && isRandomAnimationEnabled() && !(this instanceof L2GrandBossInstance));
-	}
-	
-	@Override
-	public boolean isMob()
-	{
-		return true; // This means we use MAX_MONSTER_ANIMATION instead of MAX_NPC_ANIMATION
 	}
 	
 	public void setCommandChannelTimer(CommandChannelTimer commandChannelTimer)

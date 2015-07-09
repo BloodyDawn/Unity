@@ -1533,7 +1533,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				continue;
 			}
 			
-			if (isAttackable() && obj.isAttackable() && !((Attackable) this).isChaos())
+			if (isAttackable() && obj.isAttackable() && !((Attackable) this).getTemplate().isChaos())
 			{
 				continue;
 			}
@@ -4813,7 +4813,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		// If the attacker/target is dead or use fake death, notify the AI with EVT_CANCEL
 		// and send a Server->Client packet ActionFailed (if attacker is a L2PcInstance)
-		if ((target == null) || isAlikeDead() || (isNpc() && ((Npc) this).isEventMob()))
+		if ((target == null) || isAlikeDead())
 		{
 			getAI().notifyEvent(CtrlEvent.EVT_CANCEL);
 			return;

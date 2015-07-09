@@ -18,19 +18,12 @@
  */
 package org.l2junity.gameserver.model.actor;
 
-import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ItemsAutoDestroy;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.datatables.ItemTable;
-import org.l2junity.gameserver.enums.AISkillScope;
 import org.l2junity.gameserver.enums.AIType;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.InstanceType;
@@ -60,6 +53,7 @@ import org.l2junity.gameserver.model.actor.instance.L2WarehouseInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.NpcStat;
 import org.l2junity.gameserver.model.actor.status.NpcStatus;
+import org.l2junity.gameserver.model.actor.tasks.npc.RandomAnimationTask;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
@@ -78,7 +72,6 @@ import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.spawns.NpcSpawnTemplate;
 import org.l2junity.gameserver.model.variables.NpcVariables;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -111,11 +104,8 @@ public class Npc extends Creature
 	private L2Spawn _spawn;
 	/** The flag to specify if this L2NpcInstance is busy */
 	private boolean _isBusy = false;
-	/** The busy message for this L2NpcInstance */
-	private String _busyMessage = "";
 	/** True if endDecayTask has already been called */
 	private volatile boolean _isDecayed = false;
-	private boolean _eventMob = false;
 	/** True if this L2Npc is autoattackable **/
 	private boolean _isAutoAttackable = false;
 	/** Time of last social packet broadcast */
@@ -127,7 +117,7 @@ public class Npc extends Creature
 	private boolean _isRandomWalkingEnabled = true;
 	private boolean _isTalkable = getTemplate().isTalkable();
 	
-	protected RandomAnimationTask _rAniTask = null;
+	protected RandomAnimationTask _rAniTask;
 	private int _currentLHandId; // normally this shouldn't change from the template, but there exist exceptions
 	private int _currentRHandId; // normally this shouldn't change from the template, but there exist exceptions
 	private int _currentEnchant; // normally this shouldn't change from the template, but there exist exceptions
@@ -175,213 +165,34 @@ public class Npc extends Creature
 		setIsFlying(template.isFlying());
 	}
 	
-	public int getSoulShotChance()
+	public void startRandomAnimationTask()
 	{
-		return getTemplate().getSoulShotChance();
-	}
-	
-	public int getSpiritShotChance()
-	{
-		return getTemplate().getSpiritShotChance();
-	}
-	
-	/**
-	 * @return the primary attack skill Id
-	 */
-	public int getPrimarySkillId()
-	{
-		return getTemplate().getPrimarySkillId();
-	}
-	
-	public int getMinSkillChance()
-	{
-		return getTemplate().getMinSkillChance();
-	}
-	
-	public int getMaxSkillChance()
-	{
-		return getTemplate().getMaxSkillChance();
-	}
-	
-	public boolean canMove()
-	{
-		return getTemplate().canMove();
-	}
-	
-	public boolean isChaos()
-	{
-		return getTemplate().isChaos();
-	}
-	
-	public int getDodge()
-	{
-		return getTemplate().getDodge();
-	}
-	
-	public int getSSkillChance()
-	{
-		return getTemplate().getShortRangeSkillChance();
-	}
-	
-	public int getLSkillChance()
-	{
-		return getTemplate().getLongRangeSkillChance();
-	}
-	
-	public boolean hasLSkill()
-	{
-		return getTemplate().getLongRangeSkillId() > 0;
-	}
-	
-	public boolean hasSSkill()
-	{
-		return getTemplate().getShortRangeSkillId() > 0;
-	}
-	
-	public List<Skill> getLongRangeSkill()
-	{
-		final List<Skill> skilldata = new ArrayList<>();
-		if (getTemplate().getLongRangeSkillId() == 0)
+		if (!hasRandomAnimation())
 		{
-			return skilldata;
+			return;
 		}
 		
-		switch (getTemplate().getLongRangeSkillId())
+		if (_rAniTask == null)
 		{
-			case -1:
+			synchronized (this)
 			{
-				final Collection<Skill> skills = getAllSkills();
-				if (skills != null)
+				if (_rAniTask == null)
 				{
-					for (Skill sk : skills)
-					{
-						if ((sk == null) || sk.isPassive() || (sk.getTargetType() == L2TargetType.SELF))
-						{
-							continue;
-						}
-						
-						if (sk.getCastRange() >= 200)
-						{
-							skilldata.add(sk);
-						}
-					}
-				}
-				break;
-			}
-			case 1:
-			{
-				for (Skill sk : getTemplate().getAISkills(AISkillScope.UNIVERSAL))
-				{
-					if (sk.getCastRange() >= 200)
-					{
-						skilldata.add(sk);
-					}
-				}
-				break;
-			}
-			default:
-			{
-				for (Skill sk : getAllSkills())
-				{
-					if (sk.getId() == getTemplate().getLongRangeSkillId())
-					{
-						skilldata.add(sk);
-					}
+					_rAniTask = new RandomAnimationTask(this);
 				}
 			}
 		}
-		return skilldata;
+		
+		_rAniTask.startRandomAnimationTimer();
 	}
 	
-	public List<Skill> getShortRangeSkill()
+	public void stopRandomAnimationTask()
 	{
-		final List<Skill> skilldata = new ArrayList<>();
-		if (getTemplate().getShortRangeSkillId() == 0)
+		RandomAnimationTask rAniTask = _rAniTask;
+		if (rAniTask != null)
 		{
-			return skilldata;
-		}
-		
-		switch (getTemplate().getShortRangeSkillId())
-		{
-			case -1:
-			{
-				Collection<Skill> skills = getAllSkills();
-				if (skills != null)
-				{
-					for (Skill sk : skills)
-					{
-						if ((sk == null) || sk.isPassive() || (sk.getTargetType() == L2TargetType.SELF))
-						{
-							continue;
-						}
-						if (sk.getCastRange() <= 200)
-						{
-							skilldata.add(sk);
-						}
-					}
-				}
-				break;
-			}
-			case 1:
-			{
-				for (Skill sk : getTemplate().getAISkills(AISkillScope.UNIVERSAL))
-				{
-					if (sk.getCastRange() <= 200)
-					{
-						skilldata.add(sk);
-					}
-				}
-				break;
-			}
-			default:
-			{
-				for (Skill sk : getAllSkills())
-				{
-					if (sk.getId() == getTemplate().getShortRangeSkillId())
-					{
-						skilldata.add(sk);
-					}
-				}
-			}
-		}
-		return skilldata;
-	}
-	
-	/** Task launching the function onRandomAnimation() */
-	protected class RandomAnimationTask implements Runnable
-	{
-		@Override
-		public void run()
-		{
-			try
-			{
-				if (isMob())
-				{
-					// Cancel further animation timers until intention is changed to ACTIVE again.
-					if (getAI().getIntention() != AI_INTENTION_ACTIVE)
-					{
-						return;
-					}
-				}
-				else
-				{
-					if (!isInActiveRegion())
-					{
-						return;
-					}
-				}
-				
-				if (!(isDead() || isStunned() || isSleeping() || isParalyzed()))
-				{
-					onRandomAnimation(Rnd.get(2, 3));
-				}
-				
-				startRandomAnimationTimer();
-			}
-			catch (Exception e)
-			{
-				_log.error("", e);
-			}
+			rAniTask.stopRandomAnimationTimer();
+			_rAniTask = null;
 		}
 	}
 	
@@ -398,27 +209,6 @@ public class Npc extends Creature
 			_lastSocialBroadcast = now;
 			broadcastPacket(new SocialAction(getObjectId(), animationId));
 		}
-	}
-	
-	/**
-	 * Create a RandomAnimation Task that will be launched after the calculated delay.
-	 */
-	public void startRandomAnimationTimer()
-	{
-		if (!hasRandomAnimation())
-		{
-			return;
-		}
-		
-		int minWait = isMob() ? Config.MIN_MONSTER_ANIMATION : Config.MIN_NPC_ANIMATION;
-		int maxWait = isMob() ? Config.MAX_MONSTER_ANIMATION : Config.MAX_NPC_ANIMATION;
-		
-		// Calculate the delay before the next animation
-		int interval = Rnd.get(minWait, maxWait) * 1000;
-		
-		// Create a RandomAnimation Task that will be launched after the calculated delay
-		_rAniTask = new RandomAnimationTask();
-		ThreadPoolManager.getInstance().scheduleGeneral(_rAniTask, interval);
 	}
 	
 	/**
@@ -513,7 +303,7 @@ public class Npc extends Creature
 	}
 	
 	/**
-	 * @return True if the L2NpcInstance is aggressive (ex : L2MonsterInstance in function of aggroRange).
+	 * @return false.
 	 */
 	public boolean isAggressive()
 	{
@@ -528,6 +318,10 @@ public class Npc extends Creature
 		return getTemplate().getAggroRange();
 	}
 	
+	/**
+	 * @param npc
+	 * @return if both npcs have the same clan by template.
+	 */
 	public boolean isInMyClan(Npc npc)
 	{
 		return getTemplate().isClan(npc.getTemplate().getClans());
@@ -564,16 +358,6 @@ public class Npc extends Creature
 				player.sendPacket(new NpcInfoAbnormalVisualEffect(this));
 			}
 		});
-	}
-	
-	public boolean isEventMob()
-	{
-		return _eventMob;
-	}
-	
-	public void setEventMob(boolean val)
-	{
-		_eventMob = val;
 	}
 	
 	@Override
@@ -622,22 +406,6 @@ public class Npc extends Creature
 	public void setBusy(boolean isBusy)
 	{
 		_isBusy = isBusy;
-	}
-	
-	/**
-	 * @return the busy message of this L2NpcInstance.
-	 */
-	public final String getBusyMessage()
-	{
-		return _busyMessage;
-	}
-	
-	/**
-	 * @param message the busy message of this L2Npc.
-	 */
-	public void setBusyMessage(String message)
-	{
-		_busyMessage = message;
 	}
 	
 	/**
@@ -700,27 +468,11 @@ public class Npc extends Creature
 	}
 	
 	/**
-	 * @return the L2Castle this L2NpcInstance belongs to.
+	 * @return the nearest L2Castle this L2NpcInstance belongs to. Otherwise null.
 	 */
 	public final Castle getCastle()
 	{
 		return CastleManager.getInstance().findNearestCastle(this);
-	}
-	
-	/**
-	 * Verify if the given player is this NPC's lord.
-	 * @param player the player to check
-	 * @return {@code true} if the player is clan leader and owner of a castle of fort that this NPC belongs to, {@code false} otherwise
-	 */
-	public boolean isMyLord(PlayerInstance player)
-	{
-		if (player.isClanLeader())
-		{
-			final int castleId = getCastle() != null ? getCastle().getResidenceId() : -1;
-			final int fortId = getFort() != null ? getFort().getResidenceId() : -1;
-			return (player.getClan().getCastleId() == castleId) || (player.getClan().getFortId() == fortId);
-		}
-		return false;
 	}
 	
 	public final SiegableHall getConquerableHall()
@@ -739,7 +491,7 @@ public class Npc extends Creature
 	}
 	
 	/**
-	 * @return the L2Fort this L2NpcInstance belongs to.
+	 * @return the nearest L2Fort this L2NpcInstance belongs to. Otherwise null.
 	 */
 	public final Fort getFort()
 	{
@@ -774,28 +526,14 @@ public class Npc extends Creature
 	{
 		// if (canInteract(player))
 		{
-			if (isBusy() && (getBusyMessage().length() > 0))
+			IBypassHandler handler = BypassHandler.getInstance().getHandler(command);
+			if (handler != null)
 			{
-				player.sendPacket(ActionFailed.STATIC_PACKET);
-				
-				final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-				html.setFile(player.getHtmlPrefix(), "data/html/npcbusy.htm");
-				html.replace("%busymessage%", getBusyMessage());
-				html.replace("%npcname%", getName());
-				html.replace("%playername%", player.getName());
-				player.sendPacket(html);
+				handler.useBypass(command, player, this);
 			}
 			else
 			{
-				IBypassHandler handler = BypassHandler.getInstance().getHandler(command);
-				if (handler != null)
-				{
-					handler.useBypass(command, player, this);
-				}
-				else
-				{
-					_log.info(getClass().getSimpleName() + ": Unknown NPC bypass: \"" + command + "\" NpcId: " + getId());
-				}
+				_log.info(getClass().getSimpleName() + ": Unknown NPC bypass: \"" + command + "\" NpcId: " + getId());
 			}
 		}
 	}
@@ -868,18 +606,6 @@ public class Npc extends Creature
 	}
 	
 	/**
-	 * Send a Server->Client packet NpcHtmlMessage to the L2PcInstance in order to display the message of the L2NpcInstance.
-	 * @param player The L2PcInstance who talks with the L2NpcInstance
-	 * @param content The text of the L2NpcMessage
-	 */
-	public void insertObjectIdAndShowChatWindow(PlayerInstance player, String content)
-	{
-		// Send a Server->Client packet NpcHtmlMessage to the L2PcInstance in order to display the message of the L2NpcInstance
-		content = content.replaceAll("%objectId%", String.valueOf(getObjectId()));
-		player.sendPacket(new NpcHtmlMessage(getObjectId(), content));
-	}
-	
-	/**
 	 * <B><U Format of the pathfile</U>:</B>
 	 * <ul>
 	 * <li>if the file exists on the server (page number = 0) : <B>data/html/default/12006.htm</B> (npcId-page number)</li>
@@ -938,10 +664,11 @@ public class Npc extends Creature
 	 */
 	private boolean showPkDenyChatWindow(PlayerInstance player, String type)
 	{
-		final String html = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/html/" + type + "/" + getId() + "-pk.htm");
+		String html = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/html/" + type + "/" + getId() + "-pk.htm");
 		if (html != null)
 		{
-			insertObjectIdAndShowChatWindow(player, html);
+			html = html.replaceAll("%objectId%", String.valueOf(getObjectId()));
+			player.sendPacket(new NpcHtmlMessage(getObjectId(), html));
 			if (player.isGM() && player.isDebug())
 			{
 				player.sendMessage("HTML : data/html/" + type + "/" + getId() + "-pk.htm");
@@ -1318,11 +1045,6 @@ public class Npc extends Creature
 		}
 	}
 	
-	public boolean isMob() // rather delete this check
-	{
-		return false; // This means we use MAX_NPC_ANIMATION instead of MAX_MONSTER_ANIMATION
-	}
-	
 	// Two functions to change the appearance of the equipped weapons on the NPC
 	// This is only useful for a few NPCs and is most likely going to be called from AI
 	public void setLHandId(int newWeaponId)
@@ -1396,30 +1118,6 @@ public class Npc extends Creature
 		}
 	}
 	
-	public void showNoTeachHtml(PlayerInstance player)
-	{
-		int npcId = getId();
-		String html = "";
-		
-		if (this instanceof L2WarehouseInstance)
-		{
-			html = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/html/warehouse/" + npcId + "-noteach.htm");
-		}
-		
-		final NpcHtmlMessage noTeachMsg = new NpcHtmlMessage(getObjectId());
-		if (html == null)
-		{
-			_log.warn("Npc " + npcId + " missing noTeach html!");
-			noTeachMsg.setHtml("<html><body>I cannot teach you any skills.<br>You must find your current class teachers.</body></html>");
-		}
-		else
-		{
-			noTeachMsg.setHtml(html);
-			noTeachMsg.replace("%objectId%", String.valueOf(getObjectId()));
-		}
-		player.sendPacket(noTeachMsg);
-	}
-	
 	public Npc scheduleDespawn(long delay)
 	{
 		ThreadPoolManager.getInstance().scheduleGeneral(() ->
@@ -1444,7 +1142,7 @@ public class Npc extends Creature
 	@Override
 	public boolean isMovementDisabled()
 	{
-		return super.isMovementDisabled() || !canMove() || getAiType().equals(AIType.CORPSE);
+		return super.isMovementDisabled() || !getTemplate().canMove() || getAiType().equals(AIType.CORPSE);
 	}
 	
 	public AIType getAiType()
@@ -1522,7 +1220,7 @@ public class Npc extends Creature
 	{
 		if (physical && (_soulshotamount > 0))
 		{
-			if (Rnd.get(100) > getSoulShotChance())
+			if (Rnd.get(100) > getTemplate().getSoulShotChance())
 			{
 				return;
 			}
@@ -1533,7 +1231,7 @@ public class Npc extends Creature
 		
 		if (magic && (_spiritshotamount > 0))
 		{
-			if (Rnd.get(100) > getSpiritShotChance())
+			if (Rnd.get(100) > getTemplate().getSpiritShotChance())
 			{
 				return;
 			}
