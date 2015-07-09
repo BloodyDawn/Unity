@@ -281,6 +281,7 @@ import quests.Q10783_TracesOfAnAmbush.Q10783_TracesOfAnAmbush;
 import quests.Q10784_TheBrokenDevice.Q10784_TheBrokenDevice;
 import quests.Q10785_LettersFromTheQueenFieldsOfMassacre.Q10785_LettersFromTheQueenFieldsOfMassacre;
 import quests.Q10786_ResidentProblemSolver.Q10786_ResidentProblemSolver;
+import quests.Q10787_ASpyMission.Q10787_ASpyMission;
 
 /**
  * @author NosBit
@@ -550,7 +551,8 @@ public class QuestMasterHandler
 		Q10783_TracesOfAnAmbush.class,
 		Q10784_TheBrokenDevice.class,
 		Q10785_LettersFromTheQueenFieldsOfMassacre.class,
-		Q10786_ResidentProblemSolver.class
+		Q10786_ResidentProblemSolver.class,
+		Q10787_ASpyMission.class
 	};
 	
 	public static void main(String[] args)

@@ -62,7 +62,7 @@ public final class Q10786_ResidentProblemSolver extends Quest
 	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Misc
 	private static final int MIN_LEVEL = 61;
-	private static final int MAX_LEVEL = 64;
+	private static final int MAX_LEVEL = 65;
 	private static final String KILL_COUNT_VAR = "KillCount";
 	
 	public Q10786_ResidentProblemSolver()
