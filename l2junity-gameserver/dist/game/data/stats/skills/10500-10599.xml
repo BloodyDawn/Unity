@@ -392,7 +392,7 @@
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="NONE" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="100" />
 		<set name="trait" val="PARALYZE" />
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
@@ -844,13 +844,13 @@
 		</for>
 	</skill>
 	<skill id="10532" levels="4" name="Clone Attack">
-		<table name="#effectPoint"> -687 -698 -707 -709 -711 -713 -715 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Melt into a target's shadow and summons clones to attack it. Requires a dagger or dual dagger to be equipped. -->
+		<table name="#effectPoint"> -687 -698 -707 -709 -711 -713 -715 </table>
 		<table name="#mpConsumes"> 38 41 45 47 </table>
 		<set name="icon" val="icon.skill10532" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="3000" />
@@ -860,6 +860,19 @@
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
+		<for>
+			<effect name="TeleportToTarget" /> <!-- FlyType is 5 in retail -->
+			<!-- TODO Summon 3 clones that attack the target you attack. They never stop attacking even if you move away. You can only change attacking target.
+				 Even party members, they keep attacking and there is no way to stop them. You trigger attack by any offense, even Throw Needle skill.
+				 The clones kinda act like summon, but send NpcInfo and no SummonLifeTime packets. On dissapear, DeleteObject packet is called.
+				 On being summoned, they copy your buffs, but after that, whatever buff you take, it will not be transfered to them.
+				 When you use SOE, the clones just disappear upon teleport. -->
+		</for>
+		<endEffects>
+			<effect name="CallSkill">
+				<param skillId="10556" skillLevel="1" /> <!-- Illusion Hide -->
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="10534" levels="1" name="Toad Poison">
 		<!-- AUTO GENERATED SKILL -->
@@ -1355,7 +1368,7 @@
 		<!-- Becomes hidden momentarily. -->
 		<set name="icon" val="icon.skill10517" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="30" /> <!-- Guessed -->
+		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="HIDE" />
 		<set name="abnormalVisualEffect" val="STEALTH" />
 		<set name="operateType" val="A2" />
