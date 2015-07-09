@@ -22,7 +22,7 @@ import java.util.Set;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
-import org.l2junity.gameserver.model.actor.Decoy;
+import org.l2junity.gameserver.model.actor.instance.L2DecoyInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.skills.AbnormalVisualEffect;
@@ -98,7 +98,7 @@ public class CharInfo implements IClientOutgoingPacket
 		_gmSeeInvis = gmSeeInvis;
 	}
 	
-	public CharInfo(Decoy decoy, boolean gmSeeInvis)
+	public CharInfo(L2DecoyInstance decoy, boolean gmSeeInvis)
 	{
 		this(decoy.getActingPlayer(), gmSeeInvis); // init
 		_objId = decoy.getObjectId();

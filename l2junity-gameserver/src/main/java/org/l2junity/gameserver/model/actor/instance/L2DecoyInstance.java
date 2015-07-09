@@ -19,17 +19,26 @@
 package org.l2junity.gameserver.model.actor.instance;
 
 import java.util.concurrent.Future;
+
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.InstanceType;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.PcCondOverride;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Decoy;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
+import org.l2junity.gameserver.model.items.Weapon;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.client.send.CharInfo;
+import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
 
-public class L2DecoyInstance extends Decoy
+public class L2DecoyInstance extends Creature
 {
+	private final PlayerInstance _owner;
 	private int _totalLifeTime;
 	private int _timeRemaining;
 	private Future<?> _DecoyLifeTask;
@@ -37,8 +46,11 @@ public class L2DecoyInstance extends Decoy
 	
 	public L2DecoyInstance(L2NpcTemplate template, PlayerInstance owner, int totalLifeTime)
 	{
-		super(template, owner);
+		super(template);
 		setInstanceType(InstanceType.L2DecoyInstance);
+		_owner = owner;
+		setXYZInvisible(owner.getX(), owner.getY(), owner.getZ());
+		setIsInvul(false);
 		_totalLifeTime = totalLifeTime;
 		_timeRemaining = _totalLifeTime;
 		int skilllevel = getTemplate().getDisplayId() - 13070;
@@ -120,7 +132,6 @@ public class L2DecoyInstance extends Decoy
 		}
 	}
 	
-	@Override
 	public void unSummon(PlayerInstance owner)
 	{
 		if (_DecoyLifeTask != null)
@@ -133,7 +144,12 @@ public class L2DecoyInstance extends Decoy
 			_HateSpam.cancel(true);
 			_HateSpam = null;
 		}
-		super.unSummon(owner);
+		
+		if (isVisible() && !isDead())
+		{
+			ZoneManager.getInstance().getRegion(this).removeFromZones(this);
+			decayMe();
+		}
 	}
 	
 	public void decTimeRemaining(int value)
@@ -149,5 +165,123 @@ public class L2DecoyInstance extends Decoy
 	public int getTotalLifeTime()
 	{
 		return _totalLifeTime;
+	}
+	
+	@Override
+	public void onSpawn()
+	{
+		super.onSpawn();
+		sendPacket(new CharInfo(this, false));
+	}
+	
+	@Override
+	public void updateAbnormalVisualEffects()
+	{
+		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
+		{
+			if (isVisibleFor(player))
+			{
+				player.sendPacket(new CharInfo(this, isInvisible() && player.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS)));
+			}
+		});
+	}
+	
+	public void stopDecay()
+	{
+		DecayTaskManager.getInstance().cancel(this);
+	}
+	
+	@Override
+	public void onDecay()
+	{
+		deleteMe(_owner);
+	}
+	
+	@Override
+	public boolean isAutoAttackable(Creature attacker)
+	{
+		return _owner.isAutoAttackable(attacker);
+	}
+	
+	@Override
+	public ItemInstance getActiveWeaponInstance()
+	{
+		return null;
+	}
+	
+	@Override
+	public Weapon getActiveWeaponItem()
+	{
+		return null;
+	}
+	
+	@Override
+	public ItemInstance getSecondaryWeaponInstance()
+	{
+		return null;
+	}
+	
+	@Override
+	public Weapon getSecondaryWeaponItem()
+	{
+		return null;
+	}
+	
+	@Override
+	public final int getId()
+	{
+		return getTemplate().getId();
+	}
+	
+	@Override
+	public int getLevel()
+	{
+		return getTemplate().getLevel();
+	}
+	
+	public void deleteMe(PlayerInstance owner)
+	{
+		decayMe();
+	}
+	
+	public final PlayerInstance getOwner()
+	{
+		return _owner;
+	}
+	
+	@Override
+	public PlayerInstance getActingPlayer()
+	{
+		return _owner;
+	}
+	
+	@Override
+	public L2NpcTemplate getTemplate()
+	{
+		return (L2NpcTemplate) super.getTemplate();
+	}
+	
+	@Override
+	public void sendInfo(PlayerInstance activeChar)
+	{
+		activeChar.sendPacket(new CharInfo(this, isInvisible() && activeChar.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS)));
+	}
+	
+	@Override
+	public void sendPacket(IClientOutgoingPacket mov)
+	{
+		if (getOwner() != null)
+		{
+			getOwner().sendPacket(mov);
+		}
+	}
+	
+	@Override
+	public void sendPacket(SystemMessageId id)
+	{
+		if (getOwner() != null)
+		{
+			getOwner().sendPacket(id);
+		}
 	}
 }

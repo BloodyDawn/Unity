@@ -153,7 +153,6 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Decoy;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Summon;
@@ -596,10 +595,6 @@ public final class PlayerInstance extends Playable
 	private Summon _pet = null;
 	/** Servitors of the L2PcInstance */
 	private volatile Map<Integer, Summon> _servitors = null;
-	/** The L2Decoy of the L2PcInstance */
-	private Decoy _decoy = null;
-	/** The L2Trap of the L2PcInstance */
-	private L2TrapInstance _trap = null;
 	/** The L2Agathion of the L2PcInstance */
 	private int _agathionId = 0;
 	// apparently, a L2PcInstance CAN have both a summon AND a tamed beast at the same time!!
@@ -5602,19 +5597,11 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * @return the L2Decoy of the L2PcInstance or null.
-	 */
-	public Decoy getDecoy()
-	{
-		return _decoy;
-	}
-	
-	/**
-	 * @return the L2Trap of the L2PcInstance or null.
+	 * @return any summoned trap by this player or null.
 	 */
 	public L2TrapInstance getTrap()
 	{
-		return _trap;
+		return getSummonedNpcs().stream().filter(npc -> npc.isTrap()).map(L2TrapInstance.class::cast).findAny().orElse(null);
 	}
 	
 	/**
@@ -5639,24 +5626,6 @@ public final class PlayerInstance extends Playable
 			}
 		}
 		_servitors.put(servitor.getObjectId(), servitor);
-	}
-	
-	/**
-	 * Set the L2Decoy of the L2PcInstance.
-	 * @param decoy
-	 */
-	public void setDecoy(Decoy decoy)
-	{
-		_decoy = decoy;
-	}
-	
-	/**
-	 * Set the L2Trap of this L2PcInstance
-	 * @param trap
-	 */
-	public void setTrap(L2TrapInstance trap)
-	{
-		_trap = trap;
 	}
 	
 	/**

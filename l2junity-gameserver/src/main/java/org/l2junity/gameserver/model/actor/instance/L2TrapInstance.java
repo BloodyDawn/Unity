@@ -215,11 +215,7 @@ public final class L2TrapInstance extends Npc
 	@Override
 	public boolean deleteMe()
 	{
-		if (_owner != null)
-		{
-			_owner.setTrap(null);
-			_owner = null;
-		}
+		_owner = null;
 		return super.deleteMe();
 	}
 	
@@ -249,6 +245,7 @@ public final class L2TrapInstance extends Npc
 		return _owner;
 	}
 	
+	@Override
 	public byte getPvpFlag()
 	{
 		return _owner != null ? _owner.getPvpFlag() : 0;
@@ -398,11 +395,7 @@ public final class L2TrapInstance extends Npc
 			_trapTask = null;
 		}
 		
-		if (_owner != null)
-		{
-			_owner.setTrap(null);
-			_owner = null;
-		}
+		_owner = null;
 		
 		if (isVisible() && !isDead())
 		{

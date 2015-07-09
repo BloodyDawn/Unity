@@ -89,6 +89,6 @@ public final class SummonTrap extends AbstractEffect
 		trap.setIsInvul(true);
 		trap.setHeading(player.getHeading());
 		trap.spawnMe(player.getX(), player.getY(), player.getZ());
-		player.setTrap(trap);
+		player.addSummonedNpc(trap); // player.setTrap(trap);
 	}
 }

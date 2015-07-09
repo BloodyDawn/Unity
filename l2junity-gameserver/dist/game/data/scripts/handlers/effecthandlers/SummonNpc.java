@@ -139,7 +139,6 @@ public final class SummonNpc extends AbstractEffect
 				decoy.setInstanceId(player.getInstanceId());
 				decoy.setSummoner(player);
 				decoy.spawnMe(x, y, z);
-				player.setDecoy(decoy);
 				break;
 			}
 			case "L2EffectPoint": // TODO: Implement proper signet skills.
