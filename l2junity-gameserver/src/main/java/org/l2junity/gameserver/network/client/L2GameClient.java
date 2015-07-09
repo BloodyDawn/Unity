@@ -512,12 +512,6 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 				ps.execute();
 			}
 			
-			try (PreparedStatement ps = con.prepareStatement("DELETE FROM character_raid_points WHERE charId=?"))
-			{
-				ps.setInt(1, objid);
-				ps.execute();
-			}
-			
 			try (PreparedStatement ps = con.prepareStatement("DELETE FROM character_reco_bonus WHERE charId=?"))
 			{
 				ps.setInt(1, objid);
