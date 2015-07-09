@@ -1206,6 +1206,10 @@
 	<item id="39582" name="Scroll of Escape: Town of Rune" type="EtcItem">
 		<!-- Teleports you to Town of Rune. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="handler" val="ItemSkills" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1214,12 +1218,20 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
-		<set name="weight" val="30" />
+		<skills>
+			<skill id="17957" level="1" /> <!-- Scroll of Escape: Town of Rune -->
+		</skills>
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
 	</item>
 	<item id="39583" name="Scroll of Escape: Forest of the Dead" type="EtcItem">
 		<!-- Teleports you to Forest of the Dead. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="handler" val="ItemSkills" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1228,8 +1240,12 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
-		<set name="weight" val="30" />
+		<skills>
+			<skill id="17958" level="1" /> <!-- Scroll of Escape: Forest of the Dead -->
+		</skills>
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
 	</item>
 	<item id="39584" name="Scroll of Escape: Town of Goddard" type="EtcItem">
 		<!-- Teleports you to Town of Goddard. -->

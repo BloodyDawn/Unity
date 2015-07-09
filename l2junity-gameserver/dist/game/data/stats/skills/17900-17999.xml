@@ -562,20 +562,54 @@
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="17957" levels="1" name="Scroll of Escape: Town of Rune">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Teleports you to the Town of Rune. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeId" val="39582" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="magicLvl" val="1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="36563" y="-49178" z="-1128" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="17958" levels="1" name="Scroll of Escape: Forest of the Dead">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Teleports you to Forest of the Dead. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeId" val="39583" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="magicLvl" val="1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="52107" y="-54328" z="-3136" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="17959" levels="1" name="Scroll of Escape: Town of Goddard">
 		<!-- AUTO GENERATED SKILL -->

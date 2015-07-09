@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package quests.Q10785_LettersFromTheQueenFieldsOfMassacre;
+package quests.Q10792_LettersFromTheQueenForestOfTheDead;
 
 import org.l2junity.gameserver.enums.HtmlActionScope;
 import org.l2junity.gameserver.enums.Race;
@@ -42,33 +42,31 @@ import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * Letters from the Queen: Fields of Massacre (10785)
+ * Letters from the Queen: Forest of the Dead (10792)
  * @author malyelfik
  */
-public final class Q10785_LettersFromTheQueenFieldsOfMassacre extends Quest
+public final class Q10792_LettersFromTheQueenForestOfTheDead extends Quest
 {
 	// NPCs
-	private static final int ORVEN = 30857;
-	private static final int SHUVANN = 33867;
+	private static final int INNOCENTIN = 31328;
+	private static final int HATUBA = 33849;
 	// Items
-	private static final int SOE_ADEN = 39578;
-	private static final int SOE_FIELDS_OF_MASSACRE = 39579;
+	private static final int SOE_RUNE = 39582;
+	private static final int SOE_FOREST_OF_DEAD = 39583;
 	private static final int ENCHANT_WEAPON_A = 26350;
 	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Location
-	private static final Location TELEPORT_LOC = new Location(147446, 22761, -1984);
+	private static final Location TELEPORT_LOC = new Location(36563, -49178, -1128);
 	// Misc
-	private static final int MIN_LEVEL = 61;
-	private static final int MAX_LEVEL = 64;
+	private static final int MIN_LEVEL = 65;
+	private static final int MAX_LEVEL = 69;
 	
-	public Q10785_LettersFromTheQueenFieldsOfMassacre()
+	public Q10792_LettersFromTheQueenForestOfTheDead()
 	{
-		super(10785, Q10785_LettersFromTheQueenFieldsOfMassacre.class.getSimpleName(), "Letters from the Queen: Fields of Massacre");
-		addTalkId(ORVEN, SHUVANN);
+		super(10792, Q10792_LettersFromTheQueenForestOfTheDead.class.getSimpleName(), "Letters from the Queen: Forest of the Dead");
+		addTalkId(INNOCENTIN, HATUBA);
 		
-		addCondRace(Race.ERTHEIA, "");
-		addCondLevel(MIN_LEVEL, MAX_LEVEL, "");
-		registerQuestItems(SOE_ADEN, SOE_FIELDS_OF_MASSACRE);
+		registerQuestItems(SOE_RUNE, SOE_FOREST_OF_DEAD);
 	}
 	
 	@Override
@@ -83,26 +81,26 @@ public final class Q10785_LettersFromTheQueenFieldsOfMassacre extends Quest
 		String htmltext = event;
 		switch (event)
 		{
-			case "30857-02.html":
-			case "33867-02.html":
+			case "31328-02.html":
+			case "33849-02.html":
 				break;
-			case "30857-03.html":
+			case "31328-03.html":
 			{
 				if (qs.isCond(1))
 				{
 					qs.setCond(2, true);
-					giveItems(player, SOE_FIELDS_OF_MASSACRE, 1);
+					giveItems(player, SOE_FOREST_OF_DEAD, 1);
 				}
 				break;
 			}
-			case "33867-03.html":
+			case "33849-03.html":
 			{
 				if (qs.isCond(2))
 				{
-					giveItems(player, ENCHANT_WEAPON_A, 1);
-					giveItems(player, STEEL_DOOR_GUILD_COIN, 71);
-					addExpAndSp(player, 807240, 193);
-					showOnScreenMsg(player, NpcStringId.GROW_STRONGER_HERE_UNTIL_YOU_RECEIVE_THE_NEXT_LETTER_FROM_QUEEN_NAVARI_AT_LV_65, ExShowScreenMessage.TOP_CENTER, 8000);
+					giveItems(player, ENCHANT_WEAPON_A, 2);
+					giveItems(player, STEEL_DOOR_GUILD_COIN, 91);
+					addExpAndSp(player, 942690, 226);
+					showOnScreenMsg(player, NpcStringId.GROW_STRONGER_HERE_UNTIL_YOU_RECEIVE_THE_NEXT_LETTER_FROM_QUEEN_NAVARI_AT_LV_70, ExShowScreenMessage.TOP_CENTER, 8000);
 					qs.exitQuest(false, true);
 				}
 				break;
@@ -125,13 +123,13 @@ public final class Q10785_LettersFromTheQueenFieldsOfMassacre extends Quest
 		
 		if (qs.isStarted())
 		{
-			if (npc.getId() == ORVEN)
+			if (npc.getId() == INNOCENTIN)
 			{
-				htmltext = (qs.isCond(1)) ? "30857-01.html" : "30857-04.html";
+				htmltext = (qs.isCond(1)) ? "31328-01.html" : "31328-04.html";
 			}
 			else if (qs.isCond(2))
 			{
-				htmltext = "33867-01.html";
+				htmltext = "33849-01.html";
 			}
 		}
 		return htmltext;
@@ -147,9 +145,9 @@ public final class Q10785_LettersFromTheQueenFieldsOfMassacre extends Quest
 			final QuestState st = getQuestState(player, true);
 			
 			st.startQuest();
-			player.sendPacket(new PlaySound(3, "Npcdialog1.serenia_quest_7", 0, 0, 0, 0, 0));
+			player.sendPacket(new PlaySound(3, "Npcdialog1.serenia_quest_8", 0, 0, 0, 0, 0));
 			player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), "popup.html")));
-			giveItems(player, SOE_ADEN, 1);
+			giveItems(player, SOE_RUNE, 1);
 		}
 	}
 	
@@ -161,7 +159,7 @@ public final class Q10785_LettersFromTheQueenFieldsOfMassacre extends Quest
 		final PlayerInstance player = event.getActiveChar();
 		final QuestState st = getQuestState(player, false);
 		
-		if (command.equals("Q10785_teleport") && (st != null) && st.isCond(1) && hasQuestItems(player, SOE_ADEN))
+		if (command.equals("Q10792_teleport") && (st != null) && st.isCond(1) && hasQuestItems(player, SOE_RUNE))
 		{
 			if (player.isTransformed())
 			{
@@ -174,7 +172,7 @@ public final class Q10785_LettersFromTheQueenFieldsOfMassacre extends Quest
 			else
 			{
 				player.teleToLocation(TELEPORT_LOC);
-				takeItems(player, SOE_ADEN, -1);
+				takeItems(player, SOE_RUNE, -1);
 			}
 			player.sendPacket(TutorialCloseHtml.STATIC_PACKET);
 			player.clearHtmlActions(HtmlActionScope.TUTORIAL_HTML);
@@ -190,7 +188,7 @@ public final class Q10785_LettersFromTheQueenFieldsOfMassacre extends Quest
 		final int oldLevel = event.getOldLevel();
 		final int newLevel = event.getNewLevel();
 		
-		if ((st == null) && (player.getRace().equals(Race.ERTHEIA)) && (oldLevel < newLevel) && ((newLevel >= MIN_LEVEL) && (newLevel <= MAX_LEVEL)))
+		if ((st == null) && (player.getRace().equals(Race.ERTHEIA)) && player.isMageClass() && (oldLevel < newLevel) && ((newLevel >= MIN_LEVEL) && (newLevel <= MAX_LEVEL)))
 		{
 			showOnScreenMsg(player, NpcStringId.QUEEN_NAVARI_HAS_SENT_A_LETTER_NCLICK_THE_QUESTION_MARK_ICON_TO_READ, ExShowScreenMessage.TOP_CENTER, 10000);
 			player.sendPacket(new TutorialShowQuestionMark(getId()));
@@ -204,7 +202,7 @@ public final class Q10785_LettersFromTheQueenFieldsOfMassacre extends Quest
 		final PlayerInstance player = event.getActiveChar();
 		final QuestState st = getQuestState(player, false);
 		
-		if ((st == null) && player.getRace().equals(Race.ERTHEIA) && (player.getLevel() >= MIN_LEVEL) && (player.getLevel() <= MAX_LEVEL))
+		if ((st == null) && player.getRace().equals(Race.ERTHEIA) && player.isMageClass() && (player.getLevel() >= MIN_LEVEL) && (player.getLevel() <= MAX_LEVEL))
 		{
 			showOnScreenMsg(player, NpcStringId.QUEEN_NAVARI_HAS_SENT_A_LETTER_NCLICK_THE_QUESTION_MARK_ICON_TO_READ, ExShowScreenMessage.TOP_CENTER, 10000);
 			player.sendPacket(new TutorialShowQuestionMark(getId()));
@@ -222,6 +220,6 @@ public final class Q10785_LettersFromTheQueenFieldsOfMassacre extends Quest
 	
 	public static void main(String[] args)
 	{
-		new Q10785_LettersFromTheQueenFieldsOfMassacre();
+		new Q10792_LettersFromTheQueenForestOfTheDead();
 	}
 }
