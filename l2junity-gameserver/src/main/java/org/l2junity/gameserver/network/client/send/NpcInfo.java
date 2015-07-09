@@ -24,7 +24,6 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.enums.NpcInfoType;
 import org.l2junity.gameserver.enums.Team;
-import org.l2junity.gameserver.instancemanager.TownManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2GuardInstance;
@@ -129,6 +128,11 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 			addComponentType(NpcInfoType.FLYING);
 		}
 		
+		if (npc.getCloneObjId() > 0)
+		{
+			addComponentType(NpcInfoType.CLONE);
+		}
+		
 		if (npc.getMaxHp() > 0)
 		{
 			addComponentType(NpcInfoType.MAX_HP);
@@ -169,12 +173,11 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 			addComponentType(NpcInfoType.TRANSFORMATION);
 		}
 		
-		if (npc.isInsideZone(ZoneId.TOWN) && (npc.getCastle() != null) && (Config.SHOW_CREST_WITHOUT_QUEST || npc.getCastle().getShowNpcCrest()) && (npc.getCastle().getOwnerId() != 0))
+		if (npc.getClanId() > 0)
 		{
-			int townId = TownManager.getTown(npc.getX(), npc.getY(), npc.getZ()).getTownId();
-			if ((townId != 33) && (townId != 22))
+			L2Clan clan = ClanTable.getInstance().getClan(npc.getClanId());
+			if (clan != null)
 			{
-				L2Clan clan = ClanTable.getInstance().getClan(npc.getCastle().getOwnerId());
 				_clanId = clan.getId();
 				_clanCrest = clan.getCrestId();
 				_clanLargeCrest = clan.getCrestLargeId();
@@ -186,6 +189,11 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		}
 		
 		addComponentType(NpcInfoType.UNKNOWN8);
+		
+		if (npc.getPvpFlag() > 0)
+		{
+			addComponentType(NpcInfoType.PVP_FLAG);
+		}
 		
 		// TODO: Confirm me
 		if (npc.isInCombat())
@@ -339,7 +347,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		}
 		if (containsMask(NpcInfoType.CLONE))
 		{
-			packet.writeD(0x00); // Player ObjectId with Decoy
+			packet.writeD(_npc.getCloneObjId()); // Player ObjectId with Decoy
 		}
 		if (containsMask(NpcInfoType.UNKNOWN8))
 		{
@@ -393,7 +401,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		}
 		if (containsMask(NpcInfoType.PVP_FLAG))
 		{
-			packet.writeC(0x00); // PVP flag
+			packet.writeC(_npc.getPvpFlag()); // PVP flag
 		}
 		if (containsMask(NpcInfoType.NAME_COLOR))
 		{

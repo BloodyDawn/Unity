@@ -6087,6 +6087,15 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	private boolean _AIdisabled = false;
 	
+	/**
+	 * Dummy value that gets overriden in Playable.
+	 * @return 0
+	 */
+	public byte getPvpFlag()
+	{
+		return 0;
+	}
+	
 	public void updatePvPFlag(int value)
 	{
 		// Overridden in L2PcInstance

@@ -334,8 +334,6 @@ public abstract class Playable extends Creature
 	
 	public abstract int getReputation();
 	
-	public abstract byte getPvpFlag();
-	
 	public abstract boolean useMagic(Skill skill, boolean forceUse, boolean dontMove);
 	
 	public abstract void storeMe();

@@ -48,13 +48,9 @@ public final class Disarmor extends AbstractEffect
 		_unequippedItems = new ConcurrentHashMap<>();
 		
 		String slot = set.getString("slot", "chest");
-		if (ItemTable._slots.containsKey(slot))
+		_slot = ItemTable._slots.getOrDefault(slot, L2Item.SLOT_NONE);
+		if (_slot == L2Item.SLOT_NONE)
 		{
-			_slot = ItemTable._slots.get(slot);
-		}
-		else
-		{
-			_slot = L2Item.SLOT_NONE;
 			_log.error("Unknown bodypart slot for effect: {}", slot);
 		}
 		
@@ -63,7 +59,7 @@ public final class Disarmor extends AbstractEffect
 	@Override
 	public boolean canStart(BuffInfo info)
 	{
-		return info.getEffected().isPlayer();
+		return (_slot != L2Item.SLOT_NONE) && info.getEffected().isPlayer();
 	}
 	
 	@Override
@@ -90,11 +86,11 @@ public final class Disarmor extends AbstractEffect
 			return;
 		}
 		
-		Integer disarmedObjId = _unequippedItems.get(info.getEffected().getObjectId());
+		Integer disarmedObjId = _unequippedItems.remove(info.getEffected().getObjectId());
 		if ((disarmedObjId != null) && (disarmedObjId > 0))
 		{
 			PlayerInstance player = info.getEffected().getActingPlayer();
-			info.getEffected().getInventory().blockItemSlot(_slot);
+			info.getEffected().getInventory().unblockItemSlot(_slot);
 			
 			ItemInstance item = player.getInventory().getItemByObjectId(disarmedObjId);
 			if (item != null)
@@ -102,7 +98,24 @@ public final class Disarmor extends AbstractEffect
 				player.getInventory().equipItem(item);
 				InventoryUpdate iu = new InventoryUpdate();
 				iu.addModifiedItem(item);
-				player.sendPacket(iu);
+				player.sendInventoryUpdate(iu);
+				
+				SystemMessage sm = null;
+				if (item.isEquipped())
+				{
+					if (item.getEnchantLevel() > 0)
+					{
+						sm = SystemMessage.getSystemMessage(SystemMessageId.EQUIPPED_S1_S2);
+						sm.addInt(item.getEnchantLevel());
+						sm.addItemName(item);
+					}
+					else
+					{
+						sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EQUIPPED_YOUR_S1);
+						sm.addItemName(item);
+					}
+					player.sendPacket(sm);
+				}
 			}
 		}
 		super.onExit(info);
@@ -121,7 +134,7 @@ public final class Disarmor extends AbstractEffect
 			{
 				iu.addModifiedItem(itm);
 			}
-			player.sendPacket(iu);
+			player.sendInventoryUpdate(iu);
 			player.broadcastUserInfo();
 			
 			SystemMessage sm = null;

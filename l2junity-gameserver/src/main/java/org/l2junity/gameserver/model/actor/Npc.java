@@ -81,6 +81,7 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.spawns.NpcSpawnTemplate;
 import org.l2junity.gameserver.model.variables.NpcVariables;
+import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.ExChangeNpcState;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
@@ -139,6 +140,9 @@ public class Npc extends Creature
 	
 	private int _shotsMask = 0;
 	private int _killingBlowWeaponId;
+	
+	private int _cloneObjId; // Used in NpcInfo packet to clone the specified player.
+	private int _clanId; // Used in NpcInfo packet to show the specified clan.
 	
 	/**
 	 * Constructor of L2NpcInstance (use L2Character constructor).<br>
@@ -1200,6 +1204,16 @@ public class Npc extends Creature
 		{
 			WalkingManager.getInstance().onSpawn(this);
 		}
+		
+		// Display clan flag
+		if (isInsideZone(ZoneId.TOWN) && (getCastle() != null) && (Config.SHOW_CREST_WITHOUT_QUEST || getCastle().getShowNpcCrest()) && (getCastle().getOwnerId() != 0))
+		{
+			int townId = TownManager.getTown(getX(), getY(), getZ()).getTownId();
+			if ((townId != 33) && (townId != 22))
+			{
+				setClanId(getCastle().getOwnerId());
+			}
+		}
 	}
 	
 	/**
@@ -1506,36 +1520,26 @@ public class Npc extends Creature
 	@Override
 	public void rechargeShots(boolean physical, boolean magic)
 	{
-		if ((_soulshotamount > 0) || (_spiritshotamount > 0))
+		if (physical && (_soulshotamount > 0))
 		{
-			if (physical)
+			if (Rnd.get(100) > getSoulShotChance())
 			{
-				if (_soulshotamount == 0)
-				{
-					return;
-				}
-				else if (Rnd.get(100) > getSoulShotChance())
-				{
-					return;
-				}
-				_soulshotamount--;
-				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2154, 1, 0, 0), 600);
-				setChargedShot(ShotType.SOULSHOTS, true);
+				return;
 			}
-			if (magic)
+			_soulshotamount--;
+			Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2154, 1, 0, 0), 600);
+			setChargedShot(ShotType.SOULSHOTS, true);
+		}
+		
+		if (magic && (_spiritshotamount > 0))
+		{
+			if (Rnd.get(100) > getSpiritShotChance())
 			{
-				if (_spiritshotamount == 0)
-				{
-					return;
-				}
-				else if (Rnd.get(100) > getSpiritShotChance())
-				{
-					return;
-				}
-				_spiritshotamount--;
-				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2061, 1, 0, 0), 600);
-				setChargedShot(ShotType.SPIRITSHOTS, true);
+				return;
 			}
+			_spiritshotamount--;
+			Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUse(this, this, 2061, 1, 0, 0), 600);
+			setChargedShot(ShotType.SPIRITSHOTS, true);
 		}
 	}
 	
@@ -1767,6 +1771,39 @@ public class Npc extends Creature
 	public int getKillingBlowWeapon()
 	{
 		return _killingBlowWeaponId;
+	}
+	
+	/**
+	 * @return The player's object Id this NPC is cloning.
+	 */
+	public int getCloneObjId()
+	{
+		return _cloneObjId;
+	}
+	
+	/**
+	 * @param cloneObjId object id of player or 0 to disable it.
+	 */
+	public void setCloneObjId(int cloneObjId)
+	{
+		_cloneObjId = cloneObjId;
+	}
+	
+	/**
+	 * @return The clan's object Id this NPC is displaying.
+	 */
+	@Override
+	public int getClanId()
+	{
+		return _clanId;
+	}
+	
+	/**
+	 * @param clanObjId object id of clan or 0 to disable it.
+	 */
+	public void setClanId(int clanObjId)
+	{
+		_clanId = clanObjId;
 	}
 	
 	/**
