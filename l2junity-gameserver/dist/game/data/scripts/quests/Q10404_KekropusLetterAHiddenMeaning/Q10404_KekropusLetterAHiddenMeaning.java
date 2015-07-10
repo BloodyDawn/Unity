@@ -113,6 +113,7 @@ public final class Q10404_KekropusLetterAHiddenMeaning extends Quest
 					{
 						addExpAndSp(player, 807_240, 193);
 					}
+					showOnScreenMsg(player, NpcStringId.GROW_STRONGER_HERE_UNTIL_YOU_RECEIVE_THE_NEXT_LETTER_FROM_KEKROPUS_AT_LV_65, ExShowScreenMessage.TOP_CENTER, 6000);
 					htmltext = event;
 				}
 				break;
