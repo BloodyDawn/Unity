@@ -53,9 +53,9 @@ public class GameServerInitializer extends ChannelInitializer<SocketChannel>
 		ch.pipeline().addLast("crypt-codec", new CryptCodec(new Crypt(blowfishKey)));
 		ch.pipeline().addLast(new LoggingHandler(LogLevel.INFO));
 
-		final ClientHandler clientHandler = new ClientHandler(blowfishKey);
-		ch.pipeline().addLast("packet-decoder", new PacketDecoder(ByteOrder.LITTLE_ENDIAN, IncomingPackets.PACKET_ARRAY, clientHandler));
+		final GameServerHandler gameServerHandler = new GameServerHandler();
+		ch.pipeline().addLast("packet-decoder", new PacketDecoder<>(ByteOrder.LITTLE_ENDIAN, IncomingPackets.PACKET_ARRAY, gameServerHandler));
 		ch.pipeline().addLast("packet-encoder", PACKET_ENCODER);
-		ch.pipeline().addLast(clientHandler);
+		ch.pipeline().addLast(gameServerHandler);
 	}
 }
