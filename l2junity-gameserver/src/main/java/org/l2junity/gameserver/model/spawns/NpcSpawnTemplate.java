@@ -275,6 +275,7 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 	{
 		_spawnedNpcs.forEach(npc ->
 		{
+			npc.getSpawn().stopRespawn();
 			SpawnTable.getInstance().deleteSpawn(npc.getSpawn(), false);
 			npc.deleteMe();
 		});
