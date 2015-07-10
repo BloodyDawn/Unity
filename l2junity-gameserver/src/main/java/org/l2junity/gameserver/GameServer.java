@@ -154,6 +154,11 @@ public class GameServer
 	
 	public GameServer() throws Exception
 	{
+		// Initialize config
+		Config.load();
+		printSection("Database");
+		DatabaseFactory.getInstance();
+
 		if (!IdFactory.getInstance().isInitialized())
 		{
 			LOGGER.error("Could not read object IDs from DB. Please check your data.");
@@ -409,10 +414,6 @@ public class GameServer
 	public static void main(String[] args) throws Exception
 	{
 		Server.serverMode = Server.MODE_GAMESERVER;
-		// Initialize config
-		Config.load();
-		printSection("Database");
-		DatabaseFactory.getInstance();
 		INSTANCE = new GameServer();
 	}
 	

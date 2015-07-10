@@ -45,7 +45,6 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 {
 	private static final int TREE_SIZE = 3;
 	private final Map<Integer, SkillHolder> _skills = new LinkedHashMap<>();
-	private boolean _duplicateFound;
 
 	@Override
 	public boolean read(L2GameClient client, PacketReader packet)
@@ -59,8 +58,8 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 				final SkillHolder holder = new SkillHolder(packet.readD(), packet.readD());
 				if (_skills.putIfAbsent(holder.getSkillId(), holder) != null)
 				{
-					_duplicateFound = true;
-					break;
+					_log.warn("Player {} is trying to send two times one skill {} to learn!", client, holder);
+					return false;
 				}
 			}
 		}
@@ -76,12 +75,6 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 			return;
 		}
 		
-		if (_duplicateFound)
-		{
-			_log.warn("Player {} is trying to send two times one skill to learn!", activeChar);
-			return;
-		}
-
 		if ((activeChar.getAbilityPoints() == 0) || (activeChar.getAbilityPoints() == activeChar.getAbilityPointsUsed()))
 		{
 			_log.warn("Player {} is trying to learn ability without ability points!", activeChar);
