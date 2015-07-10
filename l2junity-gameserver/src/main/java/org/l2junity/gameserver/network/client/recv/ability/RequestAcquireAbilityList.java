@@ -116,7 +116,7 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 			
 			if (activeChar.getSkillLevel(skill.getId()) > 0)
 			{
-				pointsSpent[learn.getTreeId()] += skill.getLevel();
+				pointsSpent[learn.getTreeId() - 1] += skill.getLevel();
 			}
 			
 			skillsToLearn.add(learn);
@@ -140,7 +140,7 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 			}
 			
 			// Case 1: Learning skill without having X points spent on the specific tree
-			if (learn.getPointsRequired() > pointsSpent[learn.getTreeId()])
+			if (learn.getPointsRequired() > pointsSpent[learn.getTreeId() - 1])
 			{
 				_log.warn("Player {} is trying to learn {} without enough ability points spent!", activeChar, skill);
 				client.sendPacket(ActionFailed.STATIC_PACKET);
@@ -166,7 +166,7 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 				return;
 			}
 			
-			pointsSpent[learn.getTreeId()] += points;
+			pointsSpent[learn.getTreeId() - 1] += points;
 
 			activeChar.addSkill(skill, true);
 			activeChar.setAbilityPointsUsed(activeChar.getAbilityPointsUsed() + points);
