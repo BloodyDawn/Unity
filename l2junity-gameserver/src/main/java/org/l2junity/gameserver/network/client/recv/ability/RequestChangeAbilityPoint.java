@@ -16,19 +16,24 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.network.client.recv;
+package org.l2junity.gameserver.network.client.recv.ability;
 
+import org.l2junity.Config;
+import org.l2junity.gameserver.data.xml.impl.AbilityPointsData;
+import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.send.ExAcquireAPSkillList;
-import org.l2junity.gameserver.network.client.send.ExCloseAPListWnd;
+import org.l2junity.gameserver.network.client.recv.IClientIncomingPacket;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.UserInfo;
+import org.l2junity.gameserver.network.client.send.ability.ExAcquireAPSkillList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
 
 /**
  * @author UnAfraid
  */
-public class RequestAbilityWndClose implements IClientIncomingPacket
+public class RequestChangeAbilityPoint implements IClientIncomingPacket
 {
 	@Override
 	public boolean read(PacketReader packet)
@@ -51,7 +56,28 @@ public class RequestAbilityWndClose implements IClientIncomingPacket
 			return;
 		}
 		
-		activeChar.sendPacket(ExCloseAPListWnd.STATIC_PACKET);
-		activeChar.sendPacket(new ExAcquireAPSkillList(activeChar));
+		else if (activeChar.getAbilityPoints() >= Config.ABILITY_MAX_POINTS)
+		{
+			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_ACQUIRE_ANY_MORE_ABILITY_POINTS);
+			return;
+		}
+		
+		long spRequired = AbilityPointsData.getInstance().getPrice(activeChar.getAbilityPoints());
+		if (spRequired > activeChar.getSp())
+		{
+			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_NEED_S1_SP_TO_CONVERT_TO1_ABILITY_POINT);
+			sm.addLong(spRequired);
+			activeChar.sendPacket(sm);
+			return;
+		}
+		
+		if (activeChar.getStat().removeSp(spRequired))
+		{
+			activeChar.setAbilityPoints(activeChar.getAbilityPoints() + 1);
+			final UserInfo info = new UserInfo(activeChar, false);
+			info.addComponentType(UserInfoType.SLOTS, UserInfoType.CURRENT_HPMPCP_EXP_SP);
+			activeChar.sendPacket(info);
+			activeChar.sendPacket(new ExAcquireAPSkillList(activeChar));
+		}
 	}
 }

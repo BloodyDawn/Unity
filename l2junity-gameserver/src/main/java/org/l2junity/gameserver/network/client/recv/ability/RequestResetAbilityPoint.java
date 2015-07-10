@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.network.client.recv;
+package org.l2junity.gameserver.network.client.recv.ability;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
@@ -25,7 +25,8 @@ import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.send.ExAcquireAPSkillList;
+import org.l2junity.gameserver.network.client.recv.IClientIncomingPacket;
+import org.l2junity.gameserver.network.client.send.ability.ExAcquireAPSkillList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
 
@@ -93,5 +94,4 @@ public class RequestResetAbilityPoint implements IClientIncomingPacket
 			client.sendPacket(new ExAcquireAPSkillList(activeChar));
 		}
 	}
-	
 }
