@@ -35,7 +35,6 @@ import org.l2junity.UPnPService;
 import org.l2junity.loginserver.mail.MailSystem;
 import org.l2junity.loginserver.network.L2LoginClient;
 import org.l2junity.loginserver.network.L2LoginPacketHandler;
-import org.l2junity.status.Status;
 import org.mmocore.network.SelectorConfig;
 import org.mmocore.network.SelectorThread;
 import org.slf4j.Logger;
@@ -52,7 +51,6 @@ public final class L2LoginServer
 	private static L2LoginServer _instance;
 	private GameServerListener _gameServerListener;
 	private SelectorThread<L2LoginClient> _selectorThread;
-	private Status _statusServer;
 	private Thread _restartLoginServer;
 	
 	public static void main(String[] args)
@@ -145,24 +143,7 @@ public final class L2LoginServer
 			_log.error("FATAL: Failed to start the Game Server Listener. Reason: " + e.getMessage(), e);
 			System.exit(1);
 		}
-		
-		if (Config.IS_TELNET_ENABLED)
-		{
-			try
-			{
-				_statusServer = new Status(Server.serverMode);
-				_statusServer.start();
-			}
-			catch (IOException e)
-			{
-				_log.warn("Failed to start the Telnet Server. Reason: " + e.getMessage(), e);
-			}
-		}
-		else
-		{
-			_log.info("Telnet server is currently disabled.");
-		}
-		
+
 		try
 		{
 			_selectorThread.openServerSocket(bindAddress, Config.PORT_LOGIN);
@@ -176,11 +157,6 @@ public final class L2LoginServer
 		}
 		
 		UPnPService.getInstance();
-	}
-	
-	public Status getStatusServer()
-	{
-		return _statusServer;
 	}
 	
 	public GameServerListener getGameServerListener()

@@ -21,7 +21,6 @@ package org.l2junity.gameserver;
 import java.awt.Toolkit;
 import java.lang.management.ManagementFactory;
 import java.time.Duration;
-import java.util.Calendar;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -127,12 +126,12 @@ import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.network.client.ClientNetworkManager;
+import org.l2junity.gameserver.network.telnet.TelnetServer;
 import org.l2junity.gameserver.pathfinding.PathFinding;
 import org.l2junity.gameserver.script.faenor.FaenorScriptEngine;
 import org.l2junity.gameserver.scripting.ScriptEngineManager;
 import org.l2junity.gameserver.taskmanager.TaskManager;
 import org.l2junity.gameserver.util.Broadcast;
-import org.l2junity.status.Status;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -141,8 +140,8 @@ public class GameServer
 	private static final Logger LOGGER = LoggerFactory.getLogger(GameServer.class);
 	
 	private final DeadLockDetector _deadDetectThread;
-	public static GameServer gameServer;
-	public static final Calendar dateTimeServerStarted = Calendar.getInstance();
+	private static GameServer INSTANCE;
+	private final long _dateTimeServerStarted = System.currentTimeMillis();
 	
 	public long getUsedMemoryMB()
 	{
@@ -169,6 +168,9 @@ public class GameServer
 		printSection("Scripting Engines");
 		ScriptEngineManager.getInstance();
 		
+		printSection("Telnet");
+		TelnetServer.getInstance();
+
 		printSection("World");
 		// start game time control early
 		GameTimeController.init();
@@ -377,25 +379,6 @@ public class GameServer
 		UPnPService.getInstance();
 	}
 	
-	public static void main(String[] args) throws Exception
-	{
-		Server.serverMode = Server.MODE_GAMESERVER;
-		// Initialize config
-		Config.load();
-		printSection("Database");
-		DatabaseFactory.getInstance();
-		gameServer = new GameServer();
-		
-		if (Config.IS_TELNET_ENABLED)
-		{
-			new Status(Server.serverMode).start();
-		}
-		else
-		{
-			LOGGER.info("Telnet server is currently disabled.");
-		}
-	}
-	
 	public static void printSection(String s)
 	{
 		s = "=[ " + s + " ]";
@@ -405,4 +388,38 @@ public class GameServer
 		}
 		LOGGER.info(s);
 	}
+	
+	public long getStartedTime()
+	{
+		return _dateTimeServerStarted;
+	}
+	
+	public String getUptime()
+	{
+		long uptime = (System.currentTimeMillis() - _dateTimeServerStarted) / 1000;
+		long hours = uptime / 3600;
+		long mins = (uptime - (hours * 3600)) / 60;
+		long secs = ((uptime - (hours * 3600)) - (mins * 60));
+		if (hours > 0)
+		{
+			return hours + "hrs " + mins + "mins " + secs + "secs";
+		}
+		return mins + "mins " + secs + "secs";
+	}
+
+	public static void main(String[] args) throws Exception
+	{
+		Server.serverMode = Server.MODE_GAMESERVER;
+		// Initialize config
+		Config.load();
+		printSection("Database");
+		DatabaseFactory.getInstance();
+		INSTANCE = new GameServer();
+	}
+	
+	public static GameServer getInstance()
+	{
+		return INSTANCE;
+	}
+
 }

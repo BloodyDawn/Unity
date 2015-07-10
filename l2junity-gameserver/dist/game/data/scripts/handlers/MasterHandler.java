@@ -222,14 +222,6 @@ import handlers.targethandlers.Servitor;
 import handlers.targethandlers.Summon;
 import handlers.targethandlers.TargetParty;
 import handlers.targethandlers.Unlockable;
-import handlers.telnethandlers.ChatsHandler;
-import handlers.telnethandlers.DebugHandler;
-import handlers.telnethandlers.HelpHandler;
-import handlers.telnethandlers.PlayerHandler;
-import handlers.telnethandlers.ReloadHandler;
-import handlers.telnethandlers.ServerHandler;
-import handlers.telnethandlers.StatusHandler;
-import handlers.telnethandlers.ThreadHandler;
 import handlers.usercommandhandlers.ChannelDelete;
 import handlers.usercommandhandlers.ChannelInfo;
 import handlers.usercommandhandlers.ChannelLeave;
@@ -268,7 +260,6 @@ import org.l2junity.gameserver.handler.IHandler;
 import org.l2junity.gameserver.handler.ItemHandler;
 import org.l2junity.gameserver.handler.PunishmentHandler;
 import org.l2junity.gameserver.handler.TargetHandler;
-import org.l2junity.gameserver.handler.TelnetHandler;
 import org.l2junity.gameserver.handler.UserCommandHandler;
 import org.l2junity.gameserver.handler.VoicedCommandHandler;
 import org.slf4j.Logger;
@@ -295,7 +286,6 @@ public class MasterHandler
 		UserCommandHandler.getInstance(),
 		VoicedCommandHandler.getInstance(),
 		TargetHandler.getInstance(),
-		TelnetHandler.getInstance(),
 	};
 	
 	private static final Class<?>[][] HANDLERS =
@@ -560,17 +550,6 @@ public class MasterHandler
 			Summon.class,
 			TargetParty.class,
 			Unlockable.class,
-		},
-		{
-			// Telnet Handlers
-			ChatsHandler.class,
-			DebugHandler.class,
-			HelpHandler.class,
-			PlayerHandler.class,
-			ReloadHandler.class,
-			ServerHandler.class,
-			StatusHandler.class,
-			ThreadHandler.class,
 		},
 	};
 	

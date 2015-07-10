@@ -925,7 +925,12 @@ public final class Config
 	public static double HP_REGEN_MULTIPLIER;
 	public static double MP_REGEN_MULTIPLIER;
 	public static double CP_REGEN_MULTIPLIER;
-	public static boolean IS_TELNET_ENABLED;
+	public static boolean TELNET_ENABLED;
+	public static boolean TELNET_UPNP_ENABLED;
+	public static String TELNET_PASSWORD;
+	public static String TELNET_HOSTNAME;
+	public static List<String> TELNET_HOSTS;
+	public static int TELNET_PORT;
 	public static boolean SHOW_LICENCE;
 	public static boolean ACCEPT_NEW_GAMESERVER;
 	public static int SERVER_ID;
@@ -1592,7 +1597,12 @@ public final class Config
 			// Load Telnet L2Properties file (if exists)
 			final PropertiesParser telnetSettings = new PropertiesParser(TELNET_FILE);
 			
-			IS_TELNET_ENABLED = telnetSettings.getBoolean("EnableTelnet", false);
+			TELNET_ENABLED = telnetSettings.getBoolean("EnableTelnet", false);
+			TELNET_UPNP_ENABLED = telnetSettings.getBoolean("EnableUPnP", false);
+			TELNET_PORT = telnetSettings.getInt("Port", 12345);
+			TELNET_HOSTNAME = telnetSettings.getString("BindAddress", "127.0.0.1");
+			TELNET_PASSWORD = telnetSettings.getString("Password", "");
+			TELNET_HOSTS = Arrays.asList(telnetSettings.getString("ListOfHosts", "127.0.0.1,::1").split(","));
 			
 			// MMO
 			final PropertiesParser mmoSettings = new PropertiesParser(MMO_CONFIG_FILE);
@@ -2407,12 +2417,7 @@ public final class Config
 			MMO_MAX_READ_PER_PASS = mmoSettings.getInt("MaxReadPerPass", 12);
 			MMO_HELPER_BUFFER_COUNT = mmoSettings.getInt("HelperBufferCount", 20);
 			MMO_TCP_NODELAY = mmoSettings.getBoolean("TcpNoDelay", false);
-			
-			// Load Telnet L2Properties file (if exists)
-			final PropertiesParser telnetSettings = new PropertiesParser(TELNET_FILE);
-			
-			IS_TELNET_ENABLED = telnetSettings.getBoolean("EnableTelnet", false);
-			
+
 			// Email
 			final PropertiesParser emailSettings = new PropertiesParser(EMAIL_CONFIG_FILE);
 			

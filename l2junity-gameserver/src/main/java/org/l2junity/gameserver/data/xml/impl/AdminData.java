@@ -334,13 +334,15 @@ public final class AdminData implements IXmlReader
 	/**
 	 * Broadcast message to GMs.
 	 * @param message the message
+	 * @return the message that was broadcasted
 	 */
-	public void broadcastMessageToGMs(String message)
+	public String broadcastMessageToGMs(String message)
 	{
 		for (PlayerInstance gm : getAllGms(true))
 		{
 			gm.sendMessage(message);
 		}
+		return message;
 	}
 	
 	/**

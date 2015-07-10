@@ -141,7 +141,6 @@ public class GameServerThread extends Thread
 			String serverName = (getServerId() != -1 ? "[" + getServerId() + "] " + GameServerTable.getInstance().getServerNameById(getServerId()) : "(" + _connectionIPAddress + ")");
 			String msg = "GameServer " + serverName + ": Connection lost: " + e.getMessage();
 			_log.info(msg);
-			broadcastToTelnet(msg);
 		}
 		finally
 		{
@@ -259,15 +258,7 @@ public class GameServerThread extends Thread
 			_log.error("IOException while sending packet " + sl.getClass().getSimpleName());
 		}
 	}
-	
-	public void broadcastToTelnet(String msg)
-	{
-		if (L2LoginServer.getInstance().getStatusServer() != null)
-		{
-			L2LoginServer.getInstance().getStatusServer().sendMessageToTelnets(msg);
-		}
-	}
-	
+
 	public void kickPlayer(String account)
 	{
 		sendPacket(new KickPlayer(account));

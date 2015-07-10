@@ -16,34 +16,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.handler;
+package org.l2junity.gameserver.network.telnet;
 
-import java.io.PrintWriter;
-import java.net.Socket;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import io.netty.channel.ChannelHandlerContext;
 
 /**
  * @author UnAfraid
  */
-public interface ITelnetHandler
+public interface ITelnetCommand
 {
-	Logger _log = LoggerFactory.getLogger(ITelnetHandler.class);
+	public String getCommand();
 	
-	/**
-	 * this is the worker method that is called when someone uses an bypass command
-	 * @param command
-	 * @param _print
-	 * @param _cSocket
-	 * @param __uptime
-	 * @return success
-	 */
-	boolean useCommand(String command, PrintWriter _print, Socket _cSocket, int __uptime);
+	public String getUsage();
 	
-	/**
-	 * this method is called at initialization to register all bypasses automatically
-	 * @return all known bypasses
-	 */
-	String[] getCommandList();
+	public String handle(ChannelHandlerContext ctx, String[] args);
 }

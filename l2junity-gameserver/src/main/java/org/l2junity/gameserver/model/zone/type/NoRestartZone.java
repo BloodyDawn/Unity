@@ -101,7 +101,7 @@ public class NoRestartZone extends ZoneType
 			return;
 		}
 		
-		if (((System.currentTimeMillis() - player.getLastAccess()) > getRestartTime()) && ((System.currentTimeMillis() - GameServer.dateTimeServerStarted.getTimeInMillis()) > getRestartAllowedTime()))
+		if (((System.currentTimeMillis() - player.getLastAccess()) > getRestartTime()) && ((System.currentTimeMillis() - GameServer.getInstance().getStartedTime()) > getRestartAllowedTime()))
 		{
 			player.teleToLocation(TeleportWhereType.TOWN);
 		}

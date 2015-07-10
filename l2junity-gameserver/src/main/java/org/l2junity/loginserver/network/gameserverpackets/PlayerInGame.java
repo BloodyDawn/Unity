@@ -48,7 +48,6 @@ public class PlayerInGame extends BaseRecievePacket
 			{
 				_log.info("Account " + account + " logged in GameServer: [" + server.getServerId() + "] " + GameServerTable.getInstance().getServerNameById(server.getServerId()));
 			}
-			server.broadcastToTelnet("Account " + account + " logged in GameServer " + server.getServerId());
 		}
 	}
 }

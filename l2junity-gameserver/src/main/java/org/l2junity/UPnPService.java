@@ -76,6 +76,11 @@ public class UPnPService
 		if (Server.serverMode == Server.MODE_GAMESERVER)
 		{
 			addPortMapping(Config.PORT_GAME, "L2j Game Server");
+			
+			if (Config.TELNET_ENABLED && Config.TELNET_UPNP_ENABLED)
+			{
+				addPortMapping(Config.TELNET_PORT, "L2j Telnet Server");
+			}
 		}
 		else if (Server.serverMode == Server.MODE_LOGINSERVER)
 		{
@@ -90,6 +95,11 @@ public class UPnPService
 			if (Server.serverMode == Server.MODE_GAMESERVER)
 			{
 				deletePortMapping(Config.PORT_GAME);
+				
+				if (Config.TELNET_ENABLED && Config.TELNET_UPNP_ENABLED)
+				{
+					deletePortMapping(Config.TELNET_PORT);
+				}
 			}
 			else if (Server.serverMode == Server.MODE_LOGINSERVER)
 			{

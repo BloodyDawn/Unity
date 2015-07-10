@@ -70,7 +70,7 @@ public class ThreadPoolManager
 {
 	protected static final Logger _log = LoggerFactory.getLogger(ThreadPoolManager.class);
 	
-	private static final class RunnableWrapper implements Runnable
+	public static final class RunnableWrapper implements Runnable
 	{
 		private final Runnable _r;
 		

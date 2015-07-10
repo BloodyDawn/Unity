@@ -44,6 +44,7 @@ import org.l2junity.gameserver.network.client.send.ServerClose;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.network.gameserverpackets.ServerStatus;
+import org.l2junity.gameserver.network.telnet.TelnetServer;
 import org.l2junity.gameserver.util.Broadcast;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -254,6 +255,16 @@ public class Shutdown extends Thread
 				// ignore
 			}
 			
+			try
+			{
+				TelnetServer.getInstance().shutdown();
+				LOGGER.info("Telnet Server Thread: Thread interruped(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+			}
+			catch (Throwable t)
+			{
+				// ignore
+			}
+
 			// last byebye, save all data and quit this server
 			saveData();
 			tc.restartCounter();
