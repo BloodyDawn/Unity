@@ -24,11 +24,13 @@ import java.util.List;
 import java.util.Set;
 
 import org.l2junity.Config;
+import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.base.SocialClass;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * @author Zoey76
@@ -50,6 +52,10 @@ public final class SkillLearn
 	private final boolean _learnedByNpc;
 	private final boolean _learnedByFS;
 	private final Set<Integer> _removeSkills = new HashSet<>(1);
+	private final int _treeId;
+	private final int _row;
+	private final int _column;
+	private final int _pointsRequired;
 	
 	/**
 	 * Constructor for L2SkillLearn.
@@ -66,6 +72,10 @@ public final class SkillLearn
 		_residenceSkill = set.getBoolean("residenceSkill", false);
 		_learnedByNpc = set.getBoolean("learnedByNpc", false);
 		_learnedByFS = set.getBoolean("learnedByFS", false);
+		_treeId = set.getInt("treeId", 0);
+		_row = set.getInt("row", 0);
+		_column = set.getInt("row", 0);
+		_pointsRequired = set.getInt("pointsRequired", 0);
 	}
 	
 	/**
@@ -238,6 +248,26 @@ public final class SkillLearn
 		return _removeSkills;
 	}
 	
+	public int getTreeId()
+	{
+		return _treeId;
+	}
+	
+	public int getRow()
+	{
+		return _row;
+	}
+	
+	public int getColumn()
+	{
+		return _column;
+	}
+	
+	public int getPointsRequired()
+	{
+		return _pointsRequired;
+	}
+
 	/**
 	 * Used for AltGameSkillLearn mod.<br>
 	 * If the alternative skill learn system is enabled and the player is learning a skill from a different class apply a fee.<br>
@@ -268,5 +298,12 @@ public final class SkillLearn
 			}
 		}
 		return levelUpSp;
+	}
+	
+	@Override
+	public String toString()
+	{
+		final Skill skill = SkillData.getInstance().getSkill(_skillId, _skillLvl);
+		return "[" + skill.toString() + " treeId: " + _treeId + " row: " + _row + " column: " + _column + " pointsRequired:" + _pointsRequired + "]";
 	}
 }

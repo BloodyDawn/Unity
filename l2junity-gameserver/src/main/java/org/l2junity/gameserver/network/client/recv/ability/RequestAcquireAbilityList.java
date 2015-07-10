@@ -16,19 +16,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.network.client.recv;
+package org.l2junity.gameserver.network.client.recv.ability;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
+import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.L2GameClient;
+import org.l2junity.gameserver.network.client.recv.IClientIncomingPacket;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
-import org.l2junity.gameserver.network.client.send.ExAcquireAPSkillList;
+import org.l2junity.gameserver.network.client.send.ability.ExAcquireAPSkillList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
 
@@ -37,18 +43,25 @@ import org.l2junity.network.PacketReader;
  */
 public class RequestAcquireAbilityList implements IClientIncomingPacket
 {
-	private final List<SkillHolder> _skills = new ArrayList<>();
-	
+	private static final int TREE_SIZE = 3;
+	private final Map<Integer, SkillHolder> _skills = new LinkedHashMap<>();
+	private boolean _duplicateFound;
+
 	@Override
 	public boolean read(PacketReader packet)
 	{
 		packet.readD(); // Total size
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < TREE_SIZE; i++)
 		{
 			int size = packet.readD();
 			for (int j = 0; j < size; j++)
 			{
-				_skills.add(new SkillHolder(packet.readD(), packet.readD()));
+				final SkillHolder holder = new SkillHolder(packet.readD(), packet.readD());
+				if (_skills.putIfAbsent(holder.getSkillId(), holder) != null)
+				{
+					_duplicateFound = true;
+					break;
+				}
 			}
 		}
 		return true;
@@ -63,9 +76,15 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 			return;
 		}
 		
+		if (_duplicateFound)
+		{
+			_log.warn("Player {} is trying to send two times one skill to learn!", activeChar);
+			return;
+		}
+
 		if ((activeChar.getAbilityPoints() == 0) || (activeChar.getAbilityPoints() == activeChar.getAbilityPointsUsed()))
 		{
-			_log.warn(getClass().getSimpleName() + ": Player " + activeChar + " is trying to learn ability without ability points!");
+			_log.warn("Player {} is trying to learn ability without ability points!", activeChar);
 			return;
 		}
 		
@@ -80,12 +99,16 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 			return;
 		}
 		
-		for (SkillHolder holder : _skills)
+		final int[] pointsSpent = new int[TREE_SIZE];
+		Arrays.fill(pointsSpent, 0);
+
+		final List<SkillLearn> skillsToLearn = new ArrayList<>(_skills.size());
+		for (SkillHolder holder : _skills.values())
 		{
 			final SkillLearn learn = SkillTreesData.getInstance().getAbilitySkill(holder.getSkillId(), holder.getSkillLvl());
 			if (learn == null)
 			{
-				_log.warn(getClass().getSimpleName() + ": SkillLearn " + holder.getSkillId() + "(" + holder.getSkillLvl() + ") not found!");
+				_log.warn("SkillLearn {} ({}) not found!", holder.getSkillId(), holder.getSkillLvl());
 				client.sendPacket(ActionFailed.STATIC_PACKET);
 				break;
 			}
@@ -93,28 +116,65 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 			final Skill skill = holder.getSkill();
 			if (skill == null)
 			{
-				_log.warn(getClass().getSimpleName() + ": SkillLearn " + holder.getSkillId() + "(" + holder.getSkillLvl() + ") not found!");
+				_log.warn("Skill {} ({}) not found!", holder.getSkillId(), holder.getSkillLvl());
 				client.sendPacket(ActionFailed.STATIC_PACKET);
 				break;
 			}
+			
+			if (activeChar.getSkillLevel(skill.getId()) > 0)
+			{
+				pointsSpent[learn.getTreeId()] += skill.getLevel();
+			}
+			
+			skillsToLearn.add(learn);
+		}
+
+		// Sort the skills by their tree id -> row -> column
+		skillsToLearn.sort(Comparator.comparingInt(SkillLearn::getTreeId).thenComparing(SkillLearn::getRow).thenComparing(SkillLearn::getColumn));
+
+		for (SkillLearn learn : skillsToLearn)
+		{
+			final Skill skill = SkillData.getInstance().getSkill(learn.getSkillId(), learn.getSkillLevel());
 			final int points;
-			final int knownLevel = activeChar.getSkillLevel(holder.getSkillId());
+			final int knownLevel = activeChar.getSkillLevel(skill.getId());
 			if (knownLevel == -1) // player didn't knew it at all!
 			{
-				points = holder.getSkillLvl();
+				points = learn.getSkillLevel();
 			}
 			else
 			{
-				points = holder.getSkillLvl() - knownLevel;
+				points = learn.getSkillLevel() - knownLevel;
 			}
 			
-			if ((activeChar.getAbilityPoints() - activeChar.getAbilityPointsUsed()) < points)
+			// Case 1: Learning skill without having X points spent on the specific tree
+			if (learn.getPointsRequired() > pointsSpent[learn.getTreeId()])
 			{
-				_log.warn(getClass().getSimpleName() + ": Player " + activeChar + " is trying to learn ability without ability points!");
+				_log.warn("Player {} is trying to learn {} without enough ability points spent!", activeChar, skill);
 				client.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 			
+			// Case 2: Learning skill without having its parent
+			for (SkillHolder required : learn.getPreReqSkills())
+			{
+				if (activeChar.getSkillLevel(required.getSkillId()) < required.getSkillLvl())
+				{
+					_log.warn("Player {} is trying to learn {} without having prerequsite skill: {}!", activeChar, skill, required.getSkill());
+					client.sendPacket(ActionFailed.STATIC_PACKET);
+					return;
+				}
+			}
+			
+			// Case 3 Learning a skill without having enough points
+			if ((activeChar.getAbilityPoints() - activeChar.getAbilityPointsUsed()) < points)
+			{
+				_log.warn("Player {} is trying to learn ability without ability points!", activeChar);
+				client.sendPacket(ActionFailed.STATIC_PACKET);
+				return;
+			}
+			
+			pointsSpent[learn.getTreeId()] += points;
+
 			activeChar.addSkill(skill, true);
 			activeChar.setAbilityPointsUsed(activeChar.getAbilityPointsUsed() + points);
 		}

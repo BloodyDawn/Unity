@@ -24,6 +24,12 @@ import java.util.Set;
 import java.util.function.Supplier;
 
 import org.l2junity.gameserver.network.client.recv.*;
+import org.l2junity.gameserver.network.client.recv.ability.RequestAbilityList;
+import org.l2junity.gameserver.network.client.recv.ability.RequestAbilityWndClose;
+import org.l2junity.gameserver.network.client.recv.ability.RequestAbilityWndOpen;
+import org.l2junity.gameserver.network.client.recv.ability.RequestAcquireAbilityList;
+import org.l2junity.gameserver.network.client.recv.ability.RequestChangeAbilityPoint;
+import org.l2junity.gameserver.network.client.recv.ability.RequestResetAbilityPoint;
 import org.l2junity.gameserver.network.client.recv.adenadistribution.RequestDivideAdena;
 import org.l2junity.gameserver.network.client.recv.adenadistribution.RequestDivideAdenaCancel;
 import org.l2junity.gameserver.network.client.recv.adenadistribution.RequestDivideAdenaStart;
