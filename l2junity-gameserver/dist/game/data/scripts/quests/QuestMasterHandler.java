@@ -284,6 +284,7 @@ import quests.Q10784_TheBrokenDevice.Q10784_TheBrokenDevice;
 import quests.Q10785_LettersFromTheQueenFieldsOfMassacre.Q10785_LettersFromTheQueenFieldsOfMassacre;
 import quests.Q10786_ResidentProblemSolver.Q10786_ResidentProblemSolver;
 import quests.Q10787_ASpyMission.Q10787_ASpyMission;
+import quests.Q10789_LettersFromTheQueenSwampOfScreams.Q10789_LettersFromTheQueenSwampOfScreams;
 import quests.Q10792_LettersFromTheQueenForestOfTheDead.Q10792_LettersFromTheQueenForestOfTheDead;
 
 /**
@@ -558,6 +559,7 @@ public class QuestMasterHandler
 		Q10785_LettersFromTheQueenFieldsOfMassacre.class,
 		Q10786_ResidentProblemSolver.class,
 		Q10787_ASpyMission.class,
+		Q10789_LettersFromTheQueenSwampOfScreams.class,
 		Q10792_LettersFromTheQueenForestOfTheDead.class
 	};
 	

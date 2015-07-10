@@ -20,6 +20,7 @@ package quests;
 
 import org.l2junity.gameserver.enums.HtmlActionScope;
 import org.l2junity.gameserver.enums.Race;
+import org.l2junity.gameserver.instancemanager.TownManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
@@ -167,6 +168,22 @@ public abstract class LetterQuest extends Quest
 				else if (player.isInCombat())
 				{
 					showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_IN_COMBAT, ExShowScreenMessage.TOP_CENTER, 5000);
+				}
+				else if (player.isInParty())
+				{
+					showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_IN_PARTY_STATUS, ExShowScreenMessage.TOP_CENTER, 5000);
+				}
+				else if (player.getInstanceId() > 0)
+				{
+					showOnScreenMsg(player, NpcStringId.YOU_MAY_NOT_TELEPORT_WHILE_USING_INSTANCE_ZONE, ExShowScreenMessage.TOP_CENTER, 5000);
+				}
+				else if (player.isDead())
+				{
+					showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_WHILE_YOU_ARE_DEAD, ExShowScreenMessage.TOP_CENTER, 5000);
+				}
+				else if (TownManager.townHasCastleInSiege(startTeleport.getX(), startTeleport.getY()))
+				{
+					showOnScreenMsg(player, NpcStringId.YOU_MAY_NOT_TELEPORT_IN_MIDDLE_OF_A_SIEGE, ExShowScreenMessage.TOP_CENTER, 5000);
 				}
 				else
 				{
