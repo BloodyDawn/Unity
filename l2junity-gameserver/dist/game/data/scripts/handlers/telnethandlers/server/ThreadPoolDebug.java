@@ -51,7 +51,7 @@ public class ThreadPoolDebug implements ITelnetCommand
 	@Override
 	public String getUsage()
 	{
-		return "threadpooldebug [effect, general, ai, quest]";
+		return "threadpooldebug [effect, general, ai, events]";
 	}
 	
 	@Override

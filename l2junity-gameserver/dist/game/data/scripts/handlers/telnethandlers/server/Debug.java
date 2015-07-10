@@ -35,8 +35,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.gameserver.GameServer;
 import org.l2junity.gameserver.GameTimeController;
@@ -57,13 +55,15 @@ import org.l2junity.gameserver.network.client.send.AdminForgePacket;
 import org.l2junity.gameserver.network.telnet.ITelnetCommand;
 import org.l2junity.gameserver.network.telnet.TelnetServer;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
 public class Debug implements ITelnetCommand
 {
-	private static final Logger _log = Logger.getLogger(Debug.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(Debug.class);
 	
 	private Debug()
 	{
@@ -135,7 +135,7 @@ public class Debug implements ITelnetCommand
 				}
 				catch (IOException e)
 				{
-					_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't write packet tp.", e);
+					LOGGER.warn("Couldn't write packet tp.", e);
 				}
 				return str;
 			}
@@ -156,7 +156,7 @@ public class Debug implements ITelnetCommand
 				}
 				catch (IOException e)
 				{
-					_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't write packet tp.", e);
+					LOGGER.warn("Couldn't write packet tp.", e);
 				}
 				return str;
 			}
@@ -177,7 +177,7 @@ public class Debug implements ITelnetCommand
 				}
 				catch (IOException e)
 				{
-					_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't write packet tp.", e);
+					LOGGER.warn("Couldn't write packet tp.", e);
 				}
 				return str;
 			}
@@ -198,7 +198,7 @@ public class Debug implements ITelnetCommand
 				}
 				catch (IOException e)
 				{
-					_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't write packet tp.", e);
+					LOGGER.warn("Couldn't write packet tp.", e);
 				}
 				return str;
 			}
@@ -314,7 +314,7 @@ public class Debug implements ITelnetCommand
 				}
 				catch (IOException e)
 				{
-					_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't write packet tp.", e);
+					LOGGER.warn("Couldn't write packet tp.", e);
 				}
 				return "Debug output saved to log/" + f.getName();
 			}

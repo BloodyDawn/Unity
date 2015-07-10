@@ -141,7 +141,6 @@ public class GameServer
 	
 	private final DeadLockDetector _deadDetectThread;
 	private static GameServer INSTANCE;
-	private final long _dateTimeServerStarted = System.currentTimeMillis();
 	
 	public long getUsedMemoryMB()
 	{
@@ -391,12 +390,12 @@ public class GameServer
 	
 	public long getStartedTime()
 	{
-		return _dateTimeServerStarted;
+		return ManagementFactory.getRuntimeMXBean().getStartTime();
 	}
 	
 	public String getUptime()
 	{
-		long uptime = (System.currentTimeMillis() - _dateTimeServerStarted) / 1000;
+		long uptime = ManagementFactory.getRuntimeMXBean().getUptime() / 1000;
 		long hours = uptime / 3600;
 		long mins = (uptime - (hours * 3600)) / 60;
 		long secs = ((uptime - (hours * 3600)) - (mins * 60));
