@@ -156,20 +156,23 @@ public abstract class LetterQuest extends Quest
 		final PlayerInstance player = event.getActiveChar();
 		final QuestState st = getQuestState(player, false);
 		
-		if (event.getCommand().equals(getTeleportCommand()) && (st != null) && st.isCond(1) && hasQuestItems(player, startSOE))
+		if (event.getCommand().equals(getTeleportCommand()))
 		{
-			if (player.isTransformed())
+			if ((st != null) && st.isCond(1) && hasQuestItems(player, startSOE))
 			{
-				showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_WHILE_IN_A_TRANSFORMED_STATE, ExShowScreenMessage.TOP_CENTER, 5000);
-			}
-			else if (player.isInCombat())
-			{
-				showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_IN_COMBAT, ExShowScreenMessage.TOP_CENTER, 5000);
-			}
-			else
-			{
-				player.teleToLocation(startTeleport);
-				takeItems(player, startSOE, -1);
+				if (player.isTransformed())
+				{
+					showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_WHILE_IN_A_TRANSFORMED_STATE, ExShowScreenMessage.TOP_CENTER, 5000);
+				}
+				else if (player.isInCombat())
+				{
+					showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_IN_COMBAT, ExShowScreenMessage.TOP_CENTER, 5000);
+				}
+				else
+				{
+					player.teleToLocation(startTeleport);
+					takeItems(player, startSOE, -1);
+				}
 			}
 			player.sendPacket(TutorialCloseHtml.STATIC_PACKET);
 			player.clearHtmlActions(HtmlActionScope.TUTORIAL_HTML);
