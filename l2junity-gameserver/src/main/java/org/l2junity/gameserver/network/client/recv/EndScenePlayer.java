@@ -31,7 +31,7 @@ public final class EndScenePlayer implements IClientIncomingPacket
 	private int _movieId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_movieId = packet.readD();
 		return true;

@@ -33,7 +33,7 @@ public final class RequestExMPCCShowPartyMembersInfo implements IClientIncomingP
 	private int _partyLeaderId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_partyLeaderId = packet.readD();
 		return true;

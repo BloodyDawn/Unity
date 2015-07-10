@@ -39,7 +39,7 @@ public final class RequestAutoSoulShot implements IClientIncomingPacket
 	private int _type; // 1 = on : 0 = off;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_itemId = packet.readD();
 		_type = packet.readD();

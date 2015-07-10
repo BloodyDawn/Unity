@@ -32,7 +32,7 @@ public final class RequestWithdrawPartyRoom implements IClientIncomingPacket
 	private int _roomId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_roomId = packet.readD();
 		return true;

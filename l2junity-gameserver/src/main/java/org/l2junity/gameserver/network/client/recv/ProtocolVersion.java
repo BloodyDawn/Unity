@@ -36,7 +36,7 @@ public final class ProtocolVersion implements IClientIncomingPacket
 	private int _version;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_version = packet.readD();
 		return true;

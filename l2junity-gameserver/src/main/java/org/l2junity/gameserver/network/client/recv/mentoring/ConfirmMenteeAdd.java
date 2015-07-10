@@ -46,7 +46,7 @@ public class ConfirmMenteeAdd implements IClientIncomingPacket
 	private String _mentor;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_confirmed = packet.readD();
 		_mentor = packet.readS();

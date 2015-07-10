@@ -69,7 +69,7 @@ public final class RequestSendPost implements IClientIncomingPacket
 	}
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_receiver = packet.readS();
 		_isCod = packet.readD() != 0;

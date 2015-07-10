@@ -33,7 +33,7 @@ public class ExGetOnAirShip implements IClientIncomingPacket
 	private int _shipId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_x = packet.readD();
 		_y = packet.readD();

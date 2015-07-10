@@ -39,7 +39,7 @@ public class RequestPetitionFeedback implements IClientIncomingPacket
 	private String _message;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		// _unknown =
 		packet.readD(); // unknown

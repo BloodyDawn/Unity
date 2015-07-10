@@ -41,7 +41,7 @@ public final class RequestAnswerJoinPledge implements IClientIncomingPacket
 	private int _answer;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_answer = packet.readD();
 		return true;

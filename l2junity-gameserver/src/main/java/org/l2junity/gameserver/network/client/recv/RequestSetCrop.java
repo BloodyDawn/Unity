@@ -42,7 +42,7 @@ public final class RequestSetCrop implements IClientIncomingPacket
 	private List<CropProcure> _items;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_manorId = packet.readD();
 		final int count = packet.readD();

@@ -35,7 +35,7 @@ public class RequestShuttleGetOn implements IClientIncomingPacket
 	private int _z;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		packet.readD(); // charId
 		_x = packet.readD();

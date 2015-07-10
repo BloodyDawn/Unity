@@ -31,7 +31,7 @@ public class RequestTutorialPassCmdToServer implements IClientIncomingPacket
 	private String _bypass = null;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_bypass = packet.readS();
 		return true;

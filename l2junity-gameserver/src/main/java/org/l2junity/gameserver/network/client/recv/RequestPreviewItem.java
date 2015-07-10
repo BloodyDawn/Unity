@@ -81,7 +81,7 @@ public final class RequestPreviewItem implements IClientIncomingPacket
 	}
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_unk = packet.readD();
 		_listId = packet.readD();

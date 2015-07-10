@@ -42,7 +42,7 @@ public final class AuthLogin implements IClientIncomingPacket
 	private int _loginKey2;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_loginName = packet.readS().toLowerCase();
 		_playKey2 = packet.readD();

@@ -36,7 +36,7 @@ public class RequestCommissionBuyInfo implements IClientIncomingPacket
 	private long _commissionId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_commissionId = packet.readQ();
 		// packet.readD(); // CommissionItemType

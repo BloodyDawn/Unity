@@ -49,7 +49,7 @@ public class RequestAlchemyConversion implements IClientIncomingPacket
 	private final Set<ItemHolder> _ingredients = new HashSet<>();
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_craftTimes = packet.readD();
 		packet.readH(); // TODO: Find me

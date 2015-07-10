@@ -37,7 +37,7 @@ public final class RequestRecipeShopMakeItem implements IClientIncomingPacket
 	private long _unknown;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_id = packet.readD();
 		_recipeId = packet.readD();

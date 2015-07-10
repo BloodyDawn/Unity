@@ -51,7 +51,7 @@ public final class RequestExEnchantSkillRouteChange implements IClientIncomingPa
 	private int _skillLvl;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_skillId = packet.readD();
 		_skillLvl = packet.readD();

@@ -42,7 +42,7 @@ public class RequestUnEquipItem implements IClientIncomingPacket
 	 * Packet type id 0x16 format: cd
 	 */
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_slot = packet.readD();
 		return true;

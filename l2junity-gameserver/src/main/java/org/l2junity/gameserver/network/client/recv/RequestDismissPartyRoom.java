@@ -32,7 +32,7 @@ public class RequestDismissPartyRoom implements IClientIncomingPacket
 	private int _roomid;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_roomid = packet.readD();
 		return true;

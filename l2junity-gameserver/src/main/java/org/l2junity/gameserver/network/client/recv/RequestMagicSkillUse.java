@@ -39,7 +39,7 @@ public final class RequestMagicSkillUse implements IClientIncomingPacket
 	private boolean _shiftPressed;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_magicId = packet.readD(); // Identifier of the used skill
 		_ctrlPressed = packet.readD() != 0; // True if it's a ForceAttack : Ctrl pressed

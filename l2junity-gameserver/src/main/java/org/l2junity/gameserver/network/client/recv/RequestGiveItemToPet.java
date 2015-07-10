@@ -38,7 +38,7 @@ public final class RequestGiveItemToPet implements IClientIncomingPacket
 	private long _amount;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_objectId = packet.readD();
 		_amount = packet.readQ();

@@ -32,7 +32,7 @@ public final class RequestSaveBookMarkSlot implements IClientIncomingPacket
 	private String name, tag;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		name = packet.readS();
 		icon = packet.readD();

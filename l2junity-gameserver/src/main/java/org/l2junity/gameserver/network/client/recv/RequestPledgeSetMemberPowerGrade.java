@@ -35,7 +35,7 @@ public final class RequestPledgeSetMemberPowerGrade implements IClientIncomingPa
 	private int _powerGrade;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_member = packet.readS();
 		_powerGrade = packet.readD();

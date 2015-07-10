@@ -83,7 +83,7 @@ public final class RequestAcquireSkill implements IClientIncomingPacket
 	private int _subType;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_id = packet.readD();
 		_level = packet.readD();

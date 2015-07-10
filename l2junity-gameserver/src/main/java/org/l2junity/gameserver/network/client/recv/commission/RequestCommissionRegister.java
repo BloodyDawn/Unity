@@ -36,7 +36,7 @@ public class RequestCommissionRegister implements IClientIncomingPacket
 	private int _durationType; // -1 = None, 0 = 1 Day, 1 = 3 Days, 2 = 5 Days, 3 = 7 Days
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_itemObjectId = packet.readD();
 		packet.readS(); // Item Name they use it for search we will use server side available names.

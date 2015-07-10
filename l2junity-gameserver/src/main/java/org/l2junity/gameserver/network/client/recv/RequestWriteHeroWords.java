@@ -32,7 +32,7 @@ public final class RequestWriteHeroWords implements IClientIncomingPacket
 	private String _heroWords;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_heroWords = packet.readS();
 		return true;

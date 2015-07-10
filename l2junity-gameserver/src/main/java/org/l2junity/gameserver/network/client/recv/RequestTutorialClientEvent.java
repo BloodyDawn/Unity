@@ -28,7 +28,7 @@ public class RequestTutorialClientEvent implements IClientIncomingPacket
 	int _eventId = 0;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_eventId = packet.readD();
 		return true;

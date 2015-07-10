@@ -80,7 +80,7 @@ import org.l2junity.network.IIncomingPackets;
 /**
  * @author Sdw
  */
-public enum ExIncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
+public enum ExIncomingPackets implements IIncomingPackets<L2GameClient>
 {
 	REQUEST_GOTO_LOBBY(0x33, RequestGotoLobby::new, ConnectionState.AUTHENTICATED),
 	REQUEST_EX_2ND_PASSWORD_CHECK(0xA6, RequestEx2ndPasswordCheck::new, ConnectionState.AUTHENTICATED),

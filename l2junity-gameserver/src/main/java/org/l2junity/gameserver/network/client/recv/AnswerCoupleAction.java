@@ -38,7 +38,7 @@ public class AnswerCoupleAction implements IClientIncomingPacket
 	private int _answer;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_actionId = packet.readD();
 		_answer = packet.readD();

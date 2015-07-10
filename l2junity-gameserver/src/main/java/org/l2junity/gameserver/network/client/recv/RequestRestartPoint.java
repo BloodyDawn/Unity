@@ -45,7 +45,7 @@ public final class RequestRestartPoint implements IClientIncomingPacket
 	protected boolean _continuation;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_requestedPointType = packet.readD();
 		return true;

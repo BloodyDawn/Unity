@@ -41,7 +41,7 @@ public class RequestMentorCancel implements IClientIncomingPacket
 	private String _name;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_confirmed = packet.readD();
 		_name = packet.readS();

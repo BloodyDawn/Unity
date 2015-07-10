@@ -49,7 +49,7 @@ public final class RequestRecipeShopListSet implements IClientIncomingPacket
 	private ManufactureItem[] _items = null;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		int count = packet.readD();
 		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != packet.getReadableBytes()))

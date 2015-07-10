@@ -42,7 +42,7 @@ public class RequestPledgeWaitingApply implements IClientIncomingPacket
 	private String _message;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_karma = packet.readD();
 		_clanId = packet.readD();

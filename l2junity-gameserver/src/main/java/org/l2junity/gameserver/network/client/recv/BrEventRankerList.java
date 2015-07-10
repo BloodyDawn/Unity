@@ -33,7 +33,7 @@ public class BrEventRankerList implements IClientIncomingPacket
 	private int _ranking;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_eventId = packet.readD();
 		_day = packet.readD(); // 0 - current, 1 - previous

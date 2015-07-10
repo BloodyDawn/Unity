@@ -44,7 +44,7 @@ public final class DlgAnswer implements IClientIncomingPacket
 	private int _requesterId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_messageId = packet.readD();
 		_answer = packet.readD();

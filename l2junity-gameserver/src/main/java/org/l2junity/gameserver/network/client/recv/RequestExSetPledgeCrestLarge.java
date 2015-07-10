@@ -38,7 +38,7 @@ public final class RequestExSetPledgeCrestLarge implements IClientIncomingPacket
 	private byte[] _data = null;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_length = packet.readD();
 		if (_length > 2176)

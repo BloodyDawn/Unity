@@ -41,7 +41,7 @@ public final class RequestSendFriendMsg implements IClientIncomingPacket
 	private String _reciever;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_message = packet.readS();
 		_reciever = packet.readS();

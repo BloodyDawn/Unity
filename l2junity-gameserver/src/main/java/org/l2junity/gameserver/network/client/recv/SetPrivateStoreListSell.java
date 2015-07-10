@@ -47,7 +47,7 @@ public class SetPrivateStoreListSell implements IClientIncomingPacket
 	private Item[] _items = null;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_packageSale = (packet.readD() == 1);
 		int count = packet.readD();

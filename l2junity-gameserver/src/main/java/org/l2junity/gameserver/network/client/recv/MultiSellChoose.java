@@ -49,7 +49,7 @@ public class MultiSellChoose implements IClientIncomingPacket
 	private long _amount;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_listId = packet.readD();
 		_entryId = packet.readD();

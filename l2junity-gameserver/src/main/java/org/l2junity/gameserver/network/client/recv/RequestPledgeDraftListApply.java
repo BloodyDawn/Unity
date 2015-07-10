@@ -35,7 +35,7 @@ public class RequestPledgeDraftListApply implements IClientIncomingPacket
 	private int _karma;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_applyType = packet.readD();
 		_karma = packet.readD();

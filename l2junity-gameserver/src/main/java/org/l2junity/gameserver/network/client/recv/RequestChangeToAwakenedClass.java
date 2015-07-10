@@ -33,7 +33,7 @@ public class RequestChangeToAwakenedClass implements IClientIncomingPacket
 	private boolean _change;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_change = packet.readD() == 1;
 		return true;

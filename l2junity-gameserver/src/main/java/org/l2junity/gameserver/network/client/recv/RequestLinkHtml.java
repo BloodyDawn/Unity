@@ -35,7 +35,7 @@ public final class RequestLinkHtml implements IClientIncomingPacket
 	private String _link;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_link = packet.readS();
 		return true;

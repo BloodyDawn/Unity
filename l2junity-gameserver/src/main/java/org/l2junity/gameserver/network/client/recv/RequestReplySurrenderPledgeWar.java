@@ -29,7 +29,7 @@ public final class RequestReplySurrenderPledgeWar implements IClientIncomingPack
 	private int _answer;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_reqName = packet.readS();
 		_answer = packet.readD();

@@ -43,7 +43,7 @@ public final class RequestExMagicSkillUseGround implements IClientIncomingPacket
 	private boolean _shiftPressed;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_x = packet.readD();
 		_y = packet.readD();

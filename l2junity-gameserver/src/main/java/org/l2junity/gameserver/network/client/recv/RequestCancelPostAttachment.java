@@ -44,7 +44,7 @@ public final class RequestCancelPostAttachment implements IClientIncomingPacket
 	private int _msgId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_msgId = packet.readD();
 		return true;

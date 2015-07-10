@@ -38,7 +38,7 @@ public class RequestPledgeDraftListSearch implements IClientIncomingPacket
 	private boolean _descending;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_levelMin = CommonUtil.constrain(packet.readD(), 0, 99);
 		_levelMax = CommonUtil.constrain(packet.readD(), 0, 99);

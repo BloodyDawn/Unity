@@ -36,7 +36,7 @@ public final class AnswerTradeRequest implements IClientIncomingPacket
 	private int _response;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_response = packet.readD();
 		return true;

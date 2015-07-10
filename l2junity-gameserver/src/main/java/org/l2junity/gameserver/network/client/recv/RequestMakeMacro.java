@@ -37,7 +37,7 @@ public final class RequestMakeMacro implements IClientIncomingPacket
 	private static final int MAX_MACRO_LENGTH = 12;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		int _id = packet.readD();
 		String _name = packet.readS();

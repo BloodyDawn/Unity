@@ -37,7 +37,7 @@ public final class RequestBlock implements IClientIncomingPacket
 	private Integer _type;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_type = packet.readD(); // 0x00 - block, 0x01 - unblock, 0x03 - allblock, 0x04 - allunblock
 		if ((_type == BLOCK) || (_type == UNBLOCK))

@@ -37,7 +37,7 @@ public class RequestRegistBeauty implements IClientIncomingPacket
 	private int _colorId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_hairId = packet.readD();
 		_faceId = packet.readD();

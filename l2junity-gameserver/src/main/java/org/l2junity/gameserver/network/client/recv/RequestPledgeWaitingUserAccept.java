@@ -38,7 +38,7 @@ public class RequestPledgeWaitingUserAccept implements IClientIncomingPacket
 	private int _clanId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_acceptRequest = packet.readD() == 1;
 		_playerId = packet.readD();

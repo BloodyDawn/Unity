@@ -53,7 +53,7 @@ public class RequestBuySeed implements IClientIncomingPacket
 	private List<ItemHolder> _items = null;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_manorId = packet.readD();
 		final int count = packet.readD();

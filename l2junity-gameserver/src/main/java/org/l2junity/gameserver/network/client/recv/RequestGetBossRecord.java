@@ -31,7 +31,7 @@ public class RequestGetBossRecord implements IClientIncomingPacket
 	private int _bossId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_bossId = packet.readD();
 		return true;

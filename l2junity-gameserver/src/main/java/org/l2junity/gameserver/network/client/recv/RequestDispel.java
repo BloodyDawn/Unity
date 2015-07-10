@@ -37,7 +37,7 @@ public class RequestDispel implements IClientIncomingPacket
 	private int _skillLevel;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_objectId = packet.readD();
 		_skillId = packet.readD();

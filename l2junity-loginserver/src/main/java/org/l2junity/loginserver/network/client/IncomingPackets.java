@@ -35,7 +35,7 @@ import org.l2junity.network.IIncomingPackets;
 /**
  * @author Nos
  */
-enum IncomingPackets implements IIncomingPackets<IIncomingPacket<ClientHandler>>
+enum IncomingPackets implements IIncomingPackets<ClientHandler>
 {
 	REQUEST_AUTH_LOGIN(0x00, RequestAuthLogin::new, ConnectionState.AUTHED_GG),
 	REQUEST_SERVER_LOGIN(0x02, RequestServerLogin::new, ConnectionState.AUTHED_SERVER_LIST),

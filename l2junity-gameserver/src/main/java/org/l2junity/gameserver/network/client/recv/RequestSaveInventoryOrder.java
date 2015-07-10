@@ -40,7 +40,7 @@ public final class RequestSaveInventoryOrder implements IClientIncomingPacket
 	private static final int LIMIT = 125;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		int sz = packet.readD();
 		sz = Math.min(sz, LIMIT);

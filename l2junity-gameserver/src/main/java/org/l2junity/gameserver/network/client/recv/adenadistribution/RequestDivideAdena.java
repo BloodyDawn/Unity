@@ -41,7 +41,7 @@ public class RequestDivideAdena implements IClientIncomingPacket
 	private long _adenaCount;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_adenaObjId = packet.readD();
 		_adenaCount = packet.readQ();

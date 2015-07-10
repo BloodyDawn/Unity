@@ -39,7 +39,7 @@ public class RequestListPartyMatchingWaitingRoom implements IClientIncomingPacke
 	private String _query;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_page = packet.readD();
 		_minLevel = packet.readD();

@@ -30,7 +30,7 @@ public final class RequestPCCafeCouponUse implements IClientIncomingPacket
 	private String _str;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_str = packet.readS();
 		return true;

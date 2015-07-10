@@ -34,7 +34,7 @@ public class RequestEx2ndPasswordReq implements IClientIncomingPacket
 	private String _password, _newPassword;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_changePass = packet.readC();
 		_password = packet.readS();

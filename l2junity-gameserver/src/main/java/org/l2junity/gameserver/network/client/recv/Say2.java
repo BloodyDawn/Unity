@@ -90,7 +90,7 @@ public final class Say2 implements IClientIncomingPacket
 	private String _target;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_text = packet.readS();
 		_type = packet.readD();

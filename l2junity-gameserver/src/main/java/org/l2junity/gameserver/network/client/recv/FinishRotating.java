@@ -34,7 +34,7 @@ public final class FinishRotating implements IClientIncomingPacket
 	private int _unknown;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_degree = packet.readD();
 		_unknown = packet.readD();

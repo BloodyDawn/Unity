@@ -27,7 +27,7 @@ import org.l2junity.network.PacketReader;
 public final class RequestChangeBookMarkSlot implements IClientIncomingPacket
 {
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		return false;
 	}

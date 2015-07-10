@@ -34,7 +34,7 @@ public final class RequestPartyMatchDetail implements IClientIncomingPacket
 	private int _level;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_roomId = packet.readD();
 		_location = packet.readD();

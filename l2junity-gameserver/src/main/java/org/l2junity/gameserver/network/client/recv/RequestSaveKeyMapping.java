@@ -40,7 +40,7 @@ public class RequestSaveKeyMapping implements IClientIncomingPacket
 	private final Map<Integer, List<Integer>> _catMap = new HashMap<>();
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		int category = 0;
 		

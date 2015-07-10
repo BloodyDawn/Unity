@@ -34,7 +34,7 @@ public final class RequestPledgeWarList implements IClientIncomingPacket
 	private int _tab;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_page = packet.readD();
 		_tab = packet.readD();

@@ -34,7 +34,7 @@ public class RequestServerLogin implements IIncomingPacket<ClientHandler>
 	private short _serverId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(ClientHandler client, PacketReader packet)
 	{
 		_loginSessionId = packet.readQ();
 		_serverId = packet.readC();

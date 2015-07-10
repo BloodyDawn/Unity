@@ -38,7 +38,7 @@ public final class RequestConfirmSiegeWaitingList implements IClientIncomingPack
 	private int _clanId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_castleId = packet.readD();
 		_clanId = packet.readD();

@@ -37,7 +37,7 @@ public class RequestExAddEnchantScrollItem implements IClientIncomingPacket
 	private int _enchantObjectId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_scrollObjectId = packet.readD();
 		_enchantObjectId = packet.readD();

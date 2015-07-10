@@ -28,7 +28,7 @@ public final class RequestRecipeItemMakeInfo implements IClientIncomingPacket
 	private int _id;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_id = packet.readD();
 		return true;

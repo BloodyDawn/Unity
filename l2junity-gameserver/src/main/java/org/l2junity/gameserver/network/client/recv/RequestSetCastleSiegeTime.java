@@ -41,7 +41,7 @@ public class RequestSetCastleSiegeTime implements IClientIncomingPacket
 	private long _time;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_castleId = packet.readD();
 		_time = packet.readD();

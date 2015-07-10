@@ -31,7 +31,7 @@ public final class RequestChangePartyLeader implements IClientIncomingPacket
 	private String _name;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_name = packet.readS();
 		return true;

@@ -29,7 +29,7 @@ public final class RequestRecipeBookOpen implements IClientIncomingPacket
 	private boolean _isDwarvenCraft;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_isDwarvenCraft = (packet.readD() == 0);
 		return true;

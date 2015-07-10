@@ -34,7 +34,7 @@ public final class RequestConfirmTargetItem extends AbstractRefinePacket
 	private int _itemObjId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_itemObjId = packet.readD();
 		return true;

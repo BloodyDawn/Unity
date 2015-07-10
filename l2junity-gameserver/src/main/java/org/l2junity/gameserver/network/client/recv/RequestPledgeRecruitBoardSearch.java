@@ -38,7 +38,7 @@ public class RequestPledgeRecruitBoardSearch implements IClientIncomingPacket
 	private int _page;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_clanLevel = packet.readD();
 		_karma = packet.readD();

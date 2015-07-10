@@ -30,7 +30,7 @@ import org.l2junity.network.IIncomingPackets;
 /**
  * @author Nos
  */
-enum IncomingPackets implements IIncomingPackets<IIncomingPacket<GameServerHandler>>
+enum IncomingPackets implements IIncomingPackets<GameServerHandler>
 {
 	NONE(0, null, null, null);
 	

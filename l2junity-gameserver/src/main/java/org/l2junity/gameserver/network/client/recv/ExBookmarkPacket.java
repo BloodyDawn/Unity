@@ -30,7 +30,7 @@ public class ExBookmarkPacket implements IClientIncomingPacket
 	private IIncomingPacket<L2GameClient> _exBookmarkPacket;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		int subId = packet.readD();
 		
@@ -67,7 +67,7 @@ public class ExBookmarkPacket implements IClientIncomingPacket
 				break;
 			}
 		}
-		return (_exBookmarkPacket != null) && _exBookmarkPacket.read(packet);
+		return (_exBookmarkPacket != null) && _exBookmarkPacket.read(client, packet);
 	}
 	
 	@Override

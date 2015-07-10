@@ -25,10 +25,12 @@ package org.l2junity.network;
 public interface IIncomingPacket<T>
 {
 	/**
+	 * Reads a packet.
+	 * @param client the client
 	 * @param packet the packet reader
 	 * @return {@code true} if packet was read successfully, {@code false} otherwise.
 	 */
-	public boolean read(PacketReader packet);
+	boolean read(T client, PacketReader packet);
 	
-	public void run(T client) throws Exception;
+	void run(T client) throws Exception;
 }

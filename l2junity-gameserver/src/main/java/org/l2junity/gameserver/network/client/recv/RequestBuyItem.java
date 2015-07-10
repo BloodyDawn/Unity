@@ -49,7 +49,7 @@ public final class RequestBuyItem implements IClientIncomingPacket
 	private List<ItemHolder> _items = null;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_listId = packet.readD();
 		int size = packet.readD();

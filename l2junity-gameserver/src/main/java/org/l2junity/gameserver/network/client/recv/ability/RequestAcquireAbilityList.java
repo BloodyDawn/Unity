@@ -48,7 +48,7 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 	private boolean _duplicateFound;
 
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		packet.readD(); // Total size
 		for (int i = 0; i < TREE_SIZE; i++)

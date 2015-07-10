@@ -34,7 +34,7 @@ public final class RequestShortCutReg implements IClientIncomingPacket
 	private int _characterType; // 1 - player, 2 - pet
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		final int typeId = packet.readD();
 		_type = ShortcutType.values()[(typeId < 1) || (typeId > 6) ? 0 : typeId];

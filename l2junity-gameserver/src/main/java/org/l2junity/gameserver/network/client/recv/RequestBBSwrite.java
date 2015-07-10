@@ -36,7 +36,7 @@ public final class RequestBBSwrite implements IClientIncomingPacket
 	private String _arg5;
 	
 	@Override
-	public final boolean read(PacketReader packet)
+	public final boolean read(L2GameClient client, PacketReader packet)
 	{
 		_url = packet.readS();
 		_arg1 = packet.readS();

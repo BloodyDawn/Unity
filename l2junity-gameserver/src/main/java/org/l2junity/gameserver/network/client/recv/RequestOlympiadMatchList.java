@@ -33,7 +33,7 @@ public final class RequestOlympiadMatchList implements IClientIncomingPacket
 	private static final String COMMAND = "arenalist";
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		return true;
 	}

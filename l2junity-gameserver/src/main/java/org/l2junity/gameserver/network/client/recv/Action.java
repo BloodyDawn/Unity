@@ -40,7 +40,7 @@ public final class Action implements IClientIncomingPacket
 	private int _actionId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_objectId = packet.readD(); // Target object Identifier
 		_originX = packet.readD();

@@ -36,7 +36,7 @@ public final class CannotMoveAnymoreInVehicle implements IClientIncomingPacket
 	private int _boatId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_boatId = packet.readD();
 		_x = packet.readD();

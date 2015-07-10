@@ -34,7 +34,7 @@ public class RequestMenteeWaitingList implements IClientIncomingPacket
 	private int _maxLevel;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_page = packet.readD();
 		_minLevel = packet.readD();

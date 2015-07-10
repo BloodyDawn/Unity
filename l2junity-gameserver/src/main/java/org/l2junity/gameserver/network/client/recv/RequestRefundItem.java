@@ -48,7 +48,7 @@ public final class RequestRefundItem implements IClientIncomingPacket
 	private int[] _items = null;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_listId = packet.readD();
 		final int count = packet.readD();

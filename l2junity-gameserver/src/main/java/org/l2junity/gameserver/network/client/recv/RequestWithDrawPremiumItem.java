@@ -37,7 +37,7 @@ public final class RequestWithDrawPremiumItem implements IClientIncomingPacket
 	private long _itemCount;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_itemNum = packet.readD();
 		_charId = packet.readD();

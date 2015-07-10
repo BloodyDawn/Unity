@@ -70,7 +70,7 @@ public final class CharacterCreate implements IClientIncomingPacket
 	private byte _face;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_name = packet.readS();
 		_race = packet.readD();

@@ -31,7 +31,7 @@ public class RequestShowBeautyList implements IClientIncomingPacket
 	private int _type;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_type = packet.readD();
 		return true;

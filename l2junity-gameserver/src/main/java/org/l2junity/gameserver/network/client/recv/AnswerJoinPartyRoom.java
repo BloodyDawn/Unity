@@ -33,7 +33,7 @@ public final class AnswerJoinPartyRoom implements IClientIncomingPacket
 	private boolean _answer;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_answer = packet.readD() == 1;
 		return true;

@@ -38,7 +38,7 @@ public final class RequestDuelStart implements IClientIncomingPacket
 	private int _partyDuel;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_player = packet.readS();
 		_partyDuel = packet.readD();

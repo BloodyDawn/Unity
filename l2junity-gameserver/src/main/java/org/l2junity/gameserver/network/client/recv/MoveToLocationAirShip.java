@@ -40,7 +40,7 @@ public class MoveToLocationAirShip implements IClientIncomingPacket
 	private int _param2 = 0;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_command = packet.readD();
 		_param1 = packet.readD();

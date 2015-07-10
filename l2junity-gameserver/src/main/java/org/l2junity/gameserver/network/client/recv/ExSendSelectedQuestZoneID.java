@@ -30,7 +30,7 @@ public final class ExSendSelectedQuestZoneID implements IClientIncomingPacket
 	private int _questZoneId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_questZoneId = packet.readD();
 		return true;

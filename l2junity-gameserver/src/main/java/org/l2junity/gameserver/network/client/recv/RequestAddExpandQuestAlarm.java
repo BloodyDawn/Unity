@@ -32,7 +32,7 @@ public class RequestAddExpandQuestAlarm implements IClientIncomingPacket
 	private int _questId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_questId = packet.readD();
 		return true;

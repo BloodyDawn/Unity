@@ -41,7 +41,7 @@ public final class RequestJoinParty implements IClientIncomingPacket
 	private int _partyDistributionTypeId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_name = packet.readS();
 		_partyDistributionTypeId = packet.readD();

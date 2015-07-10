@@ -46,7 +46,7 @@ public final class SendWareHouseDepositList implements IClientIncomingPacket
 	private List<ItemHolder> _items = null;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		final int size = packet.readD();
 		if ((size <= 0) || (size > Config.MAX_ITEM_IN_PACKET) || ((size * BATCH_LENGTH) != packet.getReadableBytes()))

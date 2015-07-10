@@ -31,7 +31,7 @@ public class AnswerPartyLootModification implements IClientIncomingPacket
 	public int _answer;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_answer = packet.readD();
 		return true;

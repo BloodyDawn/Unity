@@ -58,7 +58,7 @@ public class GameGuardReply implements IClientIncomingPacket
 	private final byte[] _reply = new byte[8];
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		packet.readB(_reply, 0, 4);
 		packet.readD();

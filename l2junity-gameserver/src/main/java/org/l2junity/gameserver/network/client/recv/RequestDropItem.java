@@ -47,7 +47,7 @@ public final class RequestDropItem implements IClientIncomingPacket
 	private int _z;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_objectId = packet.readD();
 		_count = packet.readQ();

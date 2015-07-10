@@ -41,7 +41,7 @@ public final class RequestJoinSiege implements IClientIncomingPacket
 	private int _isJoining;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_castleId = packet.readD();
 		_isAttacker = packet.readD();

@@ -24,11 +24,11 @@ import java.util.Set;
  * @author Nos
  * @param <T>
  */
-public interface IIncomingPackets<T extends IIncomingPacket<?>> extends IConnectionState
+public interface IIncomingPackets<T> extends IConnectionState
 {
-	public int getPacketId();
+	int getPacketId();
 	
-	public T newIncomingPacket();
+	IIncomingPacket<T> newIncomingPacket();
 	
-	public Set<IConnectionState> getConnectionStates();
+	Set<IConnectionState> getConnectionStates();
 }

@@ -34,18 +34,21 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author Nos
+ * @param <T>
  */
-public class PacketDecoder extends ByteToMessageDecoder
+public class PacketDecoder<T> extends ByteToMessageDecoder
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(PacketDecoder.class);
 	
 	private final ByteOrder _byteOrder;
-	private final IIncomingPackets<?>[] _incomingPackets;
+	private final IIncomingPackets<T>[] _incomingPackets;
+	private final T _client;
 	
-	public <T extends IIncomingPackets<?>> PacketDecoder(ByteOrder byteOrder, IIncomingPackets<?>[] incomingPackets)
+	public PacketDecoder(ByteOrder byteOrder, IIncomingPackets<T>[] incomingPackets, T client)
 	{
 		_byteOrder = byteOrder;
 		_incomingPackets = incomingPackets;
+		_client = client;
 	}
 	
 	@Override
@@ -70,7 +73,7 @@ public class PacketDecoder extends ByteToMessageDecoder
 				return;
 			}
 			
-			final IIncomingPackets<?> incomingPacket = _incomingPackets[packetId];
+			final IIncomingPackets<T> incomingPacket = _incomingPackets[packetId];
 			if (incomingPacket == null)
 			{
 				LOGGER.debug("Unknown packet: {}", Integer.toHexString(packetId));
@@ -84,8 +87,8 @@ public class PacketDecoder extends ByteToMessageDecoder
 				return;
 			}
 			
-			final IIncomingPacket<?> packet = incomingPacket.newIncomingPacket();
-			if ((packet != null) && packet.read(new PacketReader(in)))
+			final IIncomingPacket<T> packet = incomingPacket.newIncomingPacket();
+			if ((packet != null) && packet.read(_client, new PacketReader(in)))
 			{
 				out.add(packet);
 			}

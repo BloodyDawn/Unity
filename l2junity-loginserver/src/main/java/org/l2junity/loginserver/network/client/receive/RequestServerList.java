@@ -33,7 +33,7 @@ public class RequestServerList implements IIncomingPacket<ClientHandler>
 	private long _loginSessionId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(ClientHandler client, PacketReader packet)
 	{
 		_loginSessionId = packet.readQ();
 		// packet.readC() // hardcoded as 5

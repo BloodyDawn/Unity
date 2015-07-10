@@ -109,7 +109,7 @@ public class EnterWorld implements IClientIncomingPacket
 	private final int[][] tracert = new int[5][4];
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		packet.readB(32); // Unknown Byte Array
 		packet.readD(); // Unknown Value

@@ -31,7 +31,7 @@ public final class RequestPledgePower implements IClientIncomingPacket
 	private int _privs;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_rank = packet.readD();
 		_action = packet.readD();

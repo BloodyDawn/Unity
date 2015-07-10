@@ -36,7 +36,7 @@ public final class RequestPledgeMemberPowerInfo implements IClientIncomingPacket
 	private String _player;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_unk1 = packet.readD();
 		_player = packet.readS();

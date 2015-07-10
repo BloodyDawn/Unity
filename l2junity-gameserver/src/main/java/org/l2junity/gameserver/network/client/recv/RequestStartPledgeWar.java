@@ -40,7 +40,7 @@ public final class RequestStartPledgeWar implements IClientIncomingPacket
 	private String _pledgeName;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_pledgeName = packet.readS();
 		return true;

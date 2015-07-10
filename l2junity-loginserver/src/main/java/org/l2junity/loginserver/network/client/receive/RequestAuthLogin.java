@@ -42,7 +42,7 @@ public class RequestAuthLogin implements IIncomingPacket<ClientHandler>
 	private boolean _newAuth;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(ClientHandler client, PacketReader packet)
 	{
 		if (packet.getReadableBytes() >= (128 + 128 + 4 + 16))
 		{

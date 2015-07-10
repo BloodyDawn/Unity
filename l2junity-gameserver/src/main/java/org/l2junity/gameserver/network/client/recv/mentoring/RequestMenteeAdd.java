@@ -35,7 +35,7 @@ public class RequestMenteeAdd implements IClientIncomingPacket
 	private String _target;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_target = packet.readS();
 		return true;

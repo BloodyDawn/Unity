@@ -25,7 +25,7 @@ import io.netty.buffer.ByteBuf;
  */
 public interface ICrypt
 {
-	public void encrypt(ByteBuf buf);
+	void encrypt(ByteBuf buf);
 	
-	public void decrypt(ByteBuf buf);
+	void decrypt(ByteBuf buf);
 }

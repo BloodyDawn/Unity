@@ -36,7 +36,7 @@ public class RequestConfirmRefinerItem extends AbstractRefinePacket
 	private int _refinerItemObjId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_targetItemObjId = packet.readD();
 		_refinerItemObjId = packet.readD();

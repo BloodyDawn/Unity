@@ -33,7 +33,7 @@ public final class RequestExCubeGameChangeTeam implements IClientIncomingPacket
 	private int _team;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		// client sends -1,0,1,2 for arena parameter
 		_arena = packet.readD() + 1;

@@ -43,7 +43,7 @@ public class RequestCommissionList implements IClientIncomingPacket
 	private String _query;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_treeViewDepth = packet.readD();
 		_itemType = packet.readD();

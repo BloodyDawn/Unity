@@ -34,7 +34,7 @@ public final class RequestGetOffVehicle implements IClientIncomingPacket
 	private int _boatId, _x, _y, _z;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_boatId = packet.readD();
 		_x = packet.readD();

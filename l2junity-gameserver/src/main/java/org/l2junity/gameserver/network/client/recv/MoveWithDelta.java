@@ -35,7 +35,7 @@ public class MoveWithDelta implements IClientIncomingPacket
 	private int _dz;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_dx = packet.readD();
 		_dy = packet.readD();

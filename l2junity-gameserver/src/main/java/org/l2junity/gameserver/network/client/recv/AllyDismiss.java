@@ -31,7 +31,7 @@ public final class AllyDismiss implements IClientIncomingPacket
 	private String _clanName;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_clanName = packet.readS();
 		return true;

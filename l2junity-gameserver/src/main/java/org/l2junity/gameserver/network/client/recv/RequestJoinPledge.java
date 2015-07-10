@@ -36,7 +36,7 @@ public final class RequestJoinPledge implements IClientIncomingPacket
 	private int _pledgeType;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_target = packet.readD();
 		_pledgeType = packet.readD();

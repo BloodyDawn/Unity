@@ -29,7 +29,7 @@ public final class RequestHennaRemoveList implements IClientIncomingPacket
 	private int _unknown;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_unknown = packet.readD(); // TODO: Identify.
 		return true;

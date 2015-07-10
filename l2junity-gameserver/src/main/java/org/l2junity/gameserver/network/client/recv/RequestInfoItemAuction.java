@@ -34,7 +34,7 @@ public final class RequestInfoItemAuction implements IClientIncomingPacket
 	private int _instanceId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_instanceId = packet.readD();
 		return true;

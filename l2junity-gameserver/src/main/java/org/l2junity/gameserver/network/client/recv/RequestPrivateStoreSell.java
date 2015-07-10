@@ -42,7 +42,7 @@ public final class RequestPrivateStoreSell implements IClientIncomingPacket
 	private ItemRequest[] _items = null;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_storePlayerId = packet.readD();
 		int count = packet.readD();

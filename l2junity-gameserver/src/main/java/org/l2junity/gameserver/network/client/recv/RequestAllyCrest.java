@@ -31,7 +31,7 @@ public final class RequestAllyCrest implements IClientIncomingPacket
 	private int _crestId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_crestId = packet.readD();
 		packet.readD(); // Ally ID

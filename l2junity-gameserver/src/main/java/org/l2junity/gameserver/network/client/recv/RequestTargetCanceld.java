@@ -33,7 +33,7 @@ public final class RequestTargetCanceld implements IClientIncomingPacket
 	private int _unselect;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_unselect = packet.readH();
 		return true;

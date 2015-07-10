@@ -35,7 +35,7 @@ public final class RequestBidItemAuction implements IClientIncomingPacket
 	private long _bid;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_instanceId = packet.readD();
 		_bid = packet.readQ();

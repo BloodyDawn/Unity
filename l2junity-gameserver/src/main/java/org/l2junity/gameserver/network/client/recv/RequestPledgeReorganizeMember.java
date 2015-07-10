@@ -37,7 +37,7 @@ public final class RequestPledgeReorganizeMember implements IClientIncomingPacke
 	private String _selectedMember;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_isMemberSelected = packet.readD();
 		_memberName = packet.readS();

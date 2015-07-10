@@ -32,7 +32,7 @@ public final class RequestVoteNew implements IClientIncomingPacket
 	private int _targetId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_targetId = packet.readD();
 		return true;

@@ -43,7 +43,7 @@ public final class TradeRequest implements IClientIncomingPacket
 	private int _objectId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_objectId = packet.readD();
 		return true;

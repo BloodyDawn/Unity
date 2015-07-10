@@ -31,7 +31,7 @@ public final class SnoopQuit implements IClientIncomingPacket
 	private int _snoopID;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_snoopID = packet.readD();
 		return true;

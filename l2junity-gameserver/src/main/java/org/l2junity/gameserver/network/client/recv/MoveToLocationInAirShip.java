@@ -43,7 +43,7 @@ public class MoveToLocationInAirShip implements IClientIncomingPacket
 	private int _originZ;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_shipId = packet.readD();
 		_targetX = packet.readD();

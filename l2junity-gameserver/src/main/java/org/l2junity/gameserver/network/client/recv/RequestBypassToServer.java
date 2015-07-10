@@ -66,7 +66,7 @@ public final class RequestBypassToServer implements IClientIncomingPacket
 	private String _command;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_command = packet.readS();
 		return true;

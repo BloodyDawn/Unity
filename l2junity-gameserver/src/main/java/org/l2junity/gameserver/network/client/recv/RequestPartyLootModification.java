@@ -32,7 +32,7 @@ public class RequestPartyLootModification implements IClientIncomingPacket
 	private int _partyDistributionTypeId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_partyDistributionTypeId = packet.readD();
 		return true;

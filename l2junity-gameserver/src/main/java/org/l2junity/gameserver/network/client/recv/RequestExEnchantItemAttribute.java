@@ -40,7 +40,7 @@ public class RequestExEnchantItemAttribute implements IClientIncomingPacket
 	private long _count;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_objectId = packet.readD();
 		_count = packet.readQ();

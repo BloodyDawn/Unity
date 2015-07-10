@@ -37,7 +37,7 @@ public final class RequestSetAllyCrest implements IClientIncomingPacket
 	private byte[] _data = null;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_length = packet.readD();
 		if (_length > 192)

@@ -42,7 +42,7 @@ public final class RequestGMCommand implements IClientIncomingPacket
 	private int _command;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_targetName = packet.readS();
 		_command = packet.readD();

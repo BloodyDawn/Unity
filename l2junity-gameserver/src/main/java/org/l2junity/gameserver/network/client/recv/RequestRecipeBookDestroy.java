@@ -30,7 +30,7 @@ public final class RequestRecipeBookDestroy implements IClientIncomingPacket
 	private int _recipeID;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_recipeID = packet.readD();
 		return true;

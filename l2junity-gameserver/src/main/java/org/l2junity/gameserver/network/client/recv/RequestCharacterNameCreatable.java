@@ -40,7 +40,7 @@ public class RequestCharacterNameCreatable implements IClientIncomingPacket
 	public static int CANNOT_CREATE_SERVER = 5;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_name = packet.readS();
 		return true;

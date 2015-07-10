@@ -46,7 +46,7 @@ public class RequestChangeNicknameColor implements IClientIncomingPacket
 	private String _title;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_colorNum = packet.readD();
 		_title = packet.readS();

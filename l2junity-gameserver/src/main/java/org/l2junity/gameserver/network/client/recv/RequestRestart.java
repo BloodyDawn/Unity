@@ -40,7 +40,7 @@ public final class RequestRestart implements IClientIncomingPacket
 	protected static final Logger _logAccounting = LoggerFactory.getLogger("accounting");
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		return true;
 	}

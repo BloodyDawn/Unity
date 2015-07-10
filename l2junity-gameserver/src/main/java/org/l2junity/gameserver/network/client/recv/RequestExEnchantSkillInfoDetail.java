@@ -36,7 +36,7 @@ public final class RequestExEnchantSkillInfoDetail implements IClientIncomingPac
 	private int _skillLvl;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_type = packet.readD();
 		_skillId = packet.readD();

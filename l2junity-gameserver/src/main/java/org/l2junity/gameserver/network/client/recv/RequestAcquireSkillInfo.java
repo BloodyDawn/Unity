@@ -45,7 +45,7 @@ public final class RequestAcquireSkillInfo implements IClientIncomingPacket
 	private AcquireSkillType _skillType;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_id = packet.readD();
 		_level = packet.readD();

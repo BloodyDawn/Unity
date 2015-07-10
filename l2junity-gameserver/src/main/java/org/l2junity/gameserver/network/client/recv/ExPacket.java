@@ -36,7 +36,7 @@ public class ExPacket implements IClientIncomingPacket
 	private IIncomingPacket<L2GameClient> _exPacket;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		int exPacketId = packet.readH() & 0xFFFF;
 		if ((exPacketId < 0) || (exPacketId >= ExIncomingPackets.PACKET_ARRAY.length))
@@ -52,7 +52,7 @@ public class ExPacket implements IClientIncomingPacket
 		}
 		
 		_exPacket = _exIncomingPacket.newIncomingPacket();
-		return (_exPacket != null) && _exPacket.read(packet);
+		return (_exPacket != null) && _exPacket.read(client, packet);
 	}
 	
 	@Override

@@ -35,7 +35,7 @@ public final class RequestAnswerFriendInvite implements IClientIncomingPacket
 	private int _response;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_response = packet.readC();
 		return true;

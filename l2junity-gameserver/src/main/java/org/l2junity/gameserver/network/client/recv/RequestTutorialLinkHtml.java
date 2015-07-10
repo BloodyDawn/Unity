@@ -30,7 +30,7 @@ public class RequestTutorialLinkHtml implements IClientIncomingPacket
 	private String _bypass;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		packet.readD();
 		_bypass = packet.readS();

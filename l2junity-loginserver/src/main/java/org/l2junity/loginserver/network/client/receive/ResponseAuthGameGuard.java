@@ -34,7 +34,7 @@ public class ResponseAuthGameGuard implements IIncomingPacket<ClientHandler>
 	private byte[] _gameGuard;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(ClientHandler client, PacketReader packet)
 	{
 		_connectionId = packet.readD();
 		_gameGuard = packet.readB(16);

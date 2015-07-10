@@ -37,7 +37,7 @@ public final class RequestRefineCancel implements IClientIncomingPacket
 	private int _targetItemObjId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_targetItemObjId = packet.readD();
 		return true;

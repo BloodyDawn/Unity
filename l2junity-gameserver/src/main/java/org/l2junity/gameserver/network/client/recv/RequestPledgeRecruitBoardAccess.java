@@ -39,7 +39,7 @@ public class RequestPledgeRecruitBoardAccess implements IClientIncomingPacket
 	private String _datailedInformation;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_applyType = packet.readD();
 		_karma = packet.readD();

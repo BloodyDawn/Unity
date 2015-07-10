@@ -34,7 +34,7 @@ public final class RequestSiegeDefenderList implements IClientIncomingPacket
 	private int _castleId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_castleId = packet.readD();
 		return true;

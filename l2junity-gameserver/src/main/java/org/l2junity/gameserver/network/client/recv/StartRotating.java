@@ -33,7 +33,7 @@ public final class StartRotating implements IClientIncomingPacket
 	private int _side;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_degree = packet.readD();
 		_side = packet.readD();

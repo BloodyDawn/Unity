@@ -33,7 +33,7 @@ public class RequestPledgeRecruitInfo implements IClientIncomingPacket
 	private int _clanId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_clanId = packet.readD();
 		return true;

@@ -53,7 +53,7 @@ public class RequestAlchemyTryMixCube implements IClientIncomingPacket
 	private final List<ItemHolder> _items = new LinkedList<>();
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		final int itemsCount = packet.readD();
 		if ((itemsCount <= 0) || (itemsCount > 4))

@@ -39,7 +39,7 @@ public class RequestPartyMatchList implements IClientIncomingPacket
 	private String _roomTitle;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_roomId = packet.readD();
 		_maxMembers = packet.readD();

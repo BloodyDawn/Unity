@@ -44,7 +44,7 @@ public final class SendWareHouseWithDrawList implements IClientIncomingPacket
 	private ItemHolder _items[] = null;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		final int count = packet.readD();
 		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != packet.getReadableBytes()))

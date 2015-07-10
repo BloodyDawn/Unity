@@ -40,7 +40,7 @@ public final class CharacterDelete implements IClientIncomingPacket
 	private int _charSlot;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_charSlot = packet.readD();
 		return true;

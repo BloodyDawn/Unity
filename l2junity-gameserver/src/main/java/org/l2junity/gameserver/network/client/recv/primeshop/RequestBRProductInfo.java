@@ -32,7 +32,7 @@ public final class RequestBRProductInfo implements IClientIncomingPacket
 	private int _brId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_brId = packet.readD();
 		return true;

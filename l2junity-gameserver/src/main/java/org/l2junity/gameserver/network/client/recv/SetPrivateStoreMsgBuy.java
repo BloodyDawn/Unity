@@ -36,7 +36,7 @@ public final class SetPrivateStoreMsgBuy implements IClientIncomingPacket
 	private String _storeMsg;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_storeMsg = packet.readS();
 		return true;

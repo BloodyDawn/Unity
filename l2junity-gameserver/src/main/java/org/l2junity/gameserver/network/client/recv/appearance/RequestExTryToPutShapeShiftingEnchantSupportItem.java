@@ -45,7 +45,7 @@ public class RequestExTryToPutShapeShiftingEnchantSupportItem implements IClient
 	private int _extracItemObjId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_targetItemObjId = packet.readD();
 		_extracItemObjId = packet.readD();

@@ -61,7 +61,7 @@ public class CharacterSelect implements IClientIncomingPacket
 	private int _unk4; // new in C4
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_charSlot = packet.readD();
 		_unk1 = packet.readH();

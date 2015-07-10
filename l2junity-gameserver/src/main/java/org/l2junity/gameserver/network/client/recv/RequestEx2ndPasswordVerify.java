@@ -31,7 +31,7 @@ public class RequestEx2ndPasswordVerify implements IClientIncomingPacket
 	private String _password;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_password = packet.readS();
 		return true;

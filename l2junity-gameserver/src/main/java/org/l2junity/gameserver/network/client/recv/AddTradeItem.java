@@ -40,7 +40,7 @@ public final class AddTradeItem implements IClientIncomingPacket
 	private long _count;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_tradeId = packet.readD();
 		_objectId = packet.readD();

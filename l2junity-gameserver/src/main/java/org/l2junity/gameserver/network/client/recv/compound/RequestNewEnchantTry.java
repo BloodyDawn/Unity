@@ -37,7 +37,7 @@ import org.l2junity.network.PacketReader;
 public class RequestNewEnchantTry implements IClientIncomingPacket
 {
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		return true;
 	}

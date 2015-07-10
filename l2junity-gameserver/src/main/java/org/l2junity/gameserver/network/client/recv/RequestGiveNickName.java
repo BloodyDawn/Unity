@@ -31,7 +31,7 @@ public class RequestGiveNickName implements IClientIncomingPacket
 	private String _title;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_target = packet.readS();
 		_title = packet.readS();

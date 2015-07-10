@@ -36,7 +36,7 @@ public final class RequestOustFromPartyRoom implements IClientIncomingPacket
 	private int _charObjId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_charObjId = packet.readD();
 		return true;

@@ -42,7 +42,7 @@ public final class RequestMoveToLocationInVehicle implements IClientIncomingPack
 	private int _originZ;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_boatId = packet.readD(); // objectId of boat
 		_targetX = packet.readD();

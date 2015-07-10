@@ -51,7 +51,7 @@ public final class RequestSellItem implements IClientIncomingPacket
 	private List<UniqueItemHolder> _items = null;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_listId = packet.readD();
 		int size = packet.readD();

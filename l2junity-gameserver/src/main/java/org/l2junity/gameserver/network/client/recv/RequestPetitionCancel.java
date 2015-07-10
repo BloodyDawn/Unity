@@ -44,7 +44,7 @@ public final class RequestPetitionCancel implements IClientIncomingPacket
 	// private int _unknown;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		// _unknown = packet.readD(); This is pretty much a trigger packet.
 		return true;

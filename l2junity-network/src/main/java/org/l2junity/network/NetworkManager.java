@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
  */
 public class NetworkManager
 {
-	protected final Logger _log = LoggerFactory.getLogger(getClass());
+	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 	
 	private final ServerBootstrap _serverBootstrap;
 	private final String _host;
@@ -69,7 +69,7 @@ public class NetworkManager
 		}
 		
 		_channelFuture = _serverBootstrap.bind(_host, _port).sync();
-		_log.info("Listening on {}:{}", _host, _port);
+		LOGGER.info("Listening on {}:{}", _host, _port);
 	}
 	
 	public void stop() throws InterruptedException

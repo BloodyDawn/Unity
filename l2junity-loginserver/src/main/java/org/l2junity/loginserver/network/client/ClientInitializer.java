@@ -45,12 +45,15 @@ public class ClientInitializer extends ChannelInitializer<SocketChannel>
 	protected void initChannel(SocketChannel ch)
 	{
 		final SecretKey blowfishKey = KeyManager.getInstance().generateBlowfishKey();
+		final ClientHandler clientHandler = new ClientHandler(blowfishKey);
 		ch.pipeline().addLast("length-decoder", new LengthFieldBasedFrameDecoder(ByteOrder.LITTLE_ENDIAN, 0x8000 - 2, 0, 2, -2, 2, false));
 		ch.pipeline().addLast("length-encoder", LENGTH_ENCODER);
 		ch.pipeline().addLast("crypt-codec", new CryptCodec(new Crypt(blowfishKey)));
 		// ch.pipeline().addLast(new LoggingHandler(LogLevel.INFO));
-		ch.pipeline().addLast("packet-decoder", new PacketDecoder(ByteOrder.LITTLE_ENDIAN, IncomingPackets.PACKET_ARRAY));
+
+
+		ch.pipeline().addLast("packet-decoder", new PacketDecoder(ByteOrder.LITTLE_ENDIAN, IncomingPackets.PACKET_ARRAY, clientHandler));
 		ch.pipeline().addLast("packet-encoder", PACKET_ENCODER);
-		ch.pipeline().addLast(new ClientHandler(blowfishKey));
+		ch.pipeline().addLast(clientHandler);
 	}
 }

@@ -33,7 +33,7 @@ public class RequestFortressMapInfo implements IClientIncomingPacket
 	private int _fortressId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_fortressId = packet.readD();
 		return true;

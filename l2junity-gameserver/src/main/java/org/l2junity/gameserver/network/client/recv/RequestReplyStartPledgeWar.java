@@ -36,7 +36,7 @@ public final class RequestReplyStartPledgeWar implements IClientIncomingPacket
 	private int _answer;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		packet.readS();
 		_answer = packet.readD();

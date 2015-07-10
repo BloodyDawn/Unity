@@ -38,7 +38,7 @@ public final class RequestGetOnVehicle implements IClientIncomingPacket
 	private Location _pos;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		int x, y, z;
 		_boatId = packet.readD();

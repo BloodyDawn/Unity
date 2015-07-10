@@ -38,7 +38,7 @@ public final class RequestPledgeSetAcademyMaster implements IClientIncomingPacke
 	private String _targetPlayerName;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_set = packet.readD();
 		_currPlayerName = packet.readS();

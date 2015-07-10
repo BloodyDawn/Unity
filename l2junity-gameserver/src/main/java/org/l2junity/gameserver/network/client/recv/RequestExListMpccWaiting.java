@@ -31,7 +31,7 @@ public class RequestExListMpccWaiting implements IClientIncomingPacket
 	private int _page, _location, _level;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_page = packet.readD();
 		_location = packet.readD();

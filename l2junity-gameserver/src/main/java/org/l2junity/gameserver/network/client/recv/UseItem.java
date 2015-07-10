@@ -84,7 +84,7 @@ public final class UseItem implements IClientIncomingPacket
 	}
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_objectId = packet.readD();
 		_ctrlPressed = packet.readD() != 0;

@@ -40,7 +40,7 @@ public class RequestSCCheck implements IIncomingPacket<ClientHandler>
 	 * @see org.l2junity.network.IIncomingPacket#read(org.l2junity.network.PacketReader)
 	 */
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(ClientHandler client, PacketReader packet)
 	{
 		_unk1 = packet.readD();
 		_raw = packet.readB(128);

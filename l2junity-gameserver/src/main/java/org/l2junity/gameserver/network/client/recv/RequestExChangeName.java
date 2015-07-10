@@ -33,7 +33,7 @@ public class RequestExChangeName implements IClientIncomingPacket
 	private int _charSlot;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_type = packet.readD();
 		_newName = packet.readS();

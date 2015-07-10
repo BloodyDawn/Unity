@@ -36,7 +36,7 @@ public class RequestDivideAdenaCancel implements IClientIncomingPacket
 	private boolean _cancel;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_cancel = packet.readC() == 0;
 		return true;

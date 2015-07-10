@@ -33,7 +33,7 @@ public final class RequestHennaRemove implements IClientIncomingPacket
 	private int _symbolId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_symbolId = packet.readD();
 		return true;

@@ -46,7 +46,7 @@ public final class RequestBRBuyProduct implements IClientIncomingPacket
 	private int _count;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_brId = packet.readD();
 		_count = packet.readD();

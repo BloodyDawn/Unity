@@ -43,7 +43,7 @@ public final class RequestPetition implements IClientIncomingPacket
 	private int _type; // 1 = on : 0 = off;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_content = packet.readS();
 		_type = packet.readD();

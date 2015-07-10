@@ -38,7 +38,7 @@ public class RequestExTryToPutEnchantSupportItem implements IClientIncomingPacke
 	private int _enchantObjectId;
 	
 	@Override
-	public boolean read(PacketReader packet)
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_supportObjectId = packet.readD();
 		_enchantObjectId = packet.readD();
