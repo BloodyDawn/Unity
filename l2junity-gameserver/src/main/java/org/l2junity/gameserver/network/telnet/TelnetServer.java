@@ -131,7 +131,7 @@ public class TelnetServer
 		LOGGER.info("Shutting down..");
 	}
 	
-	public static final TelnetServer getInstance()
+	public static TelnetServer getInstance()
 	{
 		return SingletonHolder._instance;
 	}
