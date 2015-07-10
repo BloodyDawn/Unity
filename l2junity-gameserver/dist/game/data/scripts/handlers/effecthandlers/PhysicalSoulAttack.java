@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Formulas;
+import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -124,12 +125,13 @@ public final class PhysicalSoulAttack extends AbstractEffect
 		
 		if (damage > 0)
 		{
+			// Check if damage should be reflected
+			Formulas.calcDamageReflected(activeChar, target, info.getSkill(), crit);
+			
+			damage = (int) target.calcStat(Stats.DAMAGE_CAP, damage, null, null);
 			activeChar.sendDamageMessage(target, damage, false, crit, false);
 			target.reduceCurrentHp(damage, activeChar, info.getSkill());
 			target.notifyDamageReceived(damage, activeChar, info.getSkill(), crit, false, false);
-			
-			// Check if damage should be reflected
-			Formulas.calcDamageReflected(activeChar, target, info.getSkill(), crit);
 		}
 		else
 		{

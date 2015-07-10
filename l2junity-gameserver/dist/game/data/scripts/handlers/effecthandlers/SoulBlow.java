@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.Formulas;
+import org.l2junity.gameserver.model.stats.Stats;
 
 /**
  * Soul Blow effect implementation.
@@ -42,7 +43,7 @@ public final class SoulBlow extends AbstractEffect
 	public SoulBlow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_power = params.getDouble("power", 0);
 		_chance = params.getDouble("chance", 0);
 		_overHit = params.getBoolean("overHit", false);
@@ -95,6 +96,10 @@ public final class SoulBlow extends AbstractEffect
 			damage *= 1 + (chargedSouls * 0.04);
 		}
 		
+		// Check if damage should be reflected
+		Formulas.calcDamageReflected(activeChar, target, info.getSkill(), true);
+		
+		damage = (int) target.calcStat(Stats.DAMAGE_CAP, damage, null, null);
 		target.reduceCurrentHp(damage, activeChar, info.getSkill());
 		target.notifyDamageReceived(damage, activeChar, info.getSkill(), false, false, false);
 		
@@ -110,7 +115,5 @@ public final class SoulBlow extends AbstractEffect
 			PlayerInstance activePlayer = activeChar.getActingPlayer();
 			activePlayer.sendDamageMessage(target, (int) damage, false, true, false);
 		}
-		// Check if damage should be reflected
-		Formulas.calcDamageReflected(activeChar, target, info.getSkill(), true);
 	}
 }

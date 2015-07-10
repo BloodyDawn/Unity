@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Formulas;
+import org.l2junity.gameserver.model.stats.Stats;
 
 /**
  * Fatal Blow effect implementation.
@@ -95,6 +96,10 @@ public final class FatalBlow extends AbstractEffect
 			damage *= 2;
 		}
 		
+		// Check if damage should be reflected
+		Formulas.calcDamageReflected(activeChar, target, info.getSkill(), true);
+		
+		damage = target.calcStat(Stats.DAMAGE_CAP, damage, null, null);
 		target.reduceCurrentHp(damage, activeChar, info.getSkill());
 		target.notifyDamageReceived(damage, activeChar, info.getSkill(), crit, false, false);
 		
@@ -106,8 +111,5 @@ public final class FatalBlow extends AbstractEffect
 		}
 		
 		activeChar.sendDamageMessage(target, (int) damage, false, true, false);
-		
-		// Check if damage should be reflected
-		Formulas.calcDamageReflected(activeChar, target, info.getSkill(), true);
 	}
 }
