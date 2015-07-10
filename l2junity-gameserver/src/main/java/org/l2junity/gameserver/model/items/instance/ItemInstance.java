@@ -1492,7 +1492,7 @@ public final class ItemInstance extends WorldObject
 	{
 		private int _x, _y, _z;
 		private final Creature _dropper;
-		private final ItemInstance _itm;
+		private final ItemInstance _itеm;
 		
 		public ItemDropTask(ItemInstance item, Creature dropper, int x, int y, int z)
 		{
@@ -1500,17 +1500,17 @@ public final class ItemInstance extends WorldObject
 			_y = y;
 			_z = z;
 			_dropper = dropper;
-			_itm = item;
+			_itеm = item;
 		}
 		
 		@Override
 		public final void run()
 		{
-			assert _itm.getWorldRegion() == null;
+			assert _itеm.getWorldRegion() == null;
 			
 			if (_dropper != null)
 			{
-				Location dropDest = GeoData.getInstance().moveCheck(_dropper.getX(), _dropper.getY(), _dropper.getZ(), _x, _y, _z, _dropper.getInstanceId());
+				final Location dropDest = GeoData.getInstance().moveCheck(_dropper.getX(), _dropper.getY(), _dropper.getZ(), _x, _y, _z, _dropper.getInstanceId());
 				_x = dropDest.getX();
 				_y = dropDest.getY();
 				_z = dropDest.getZ();
@@ -1525,29 +1525,23 @@ public final class ItemInstance extends WorldObject
 				setInstanceId(0); // No dropper? Make it a global item...
 			}
 			
-			synchronized (_itm)
+			synchronized (_itеm)
 			{
 				// Set the x,y,z position of the L2ItemInstance dropped and update its _worldregion
-				_itm.setIsVisible(true);
-				_itm.setXYZ(_x, _y, _z);
-				_itm.setWorldRegion(World.getInstance().getRegion(getLocation()));
-				
-				// Add the L2ItemInstance dropped to _visibleObjects of its L2WorldRegion
+				_itеm.setIsVisible(true);
+				_itеm.setXYZ(_x, _y, _z);
 			}
 			
-			_itm.getWorldRegion().addVisibleObject(_itm);
-			_itm.setDropTime(System.currentTimeMillis());
-			_itm.setDropperObjectId(_dropper != null ? _dropper.getObjectId() : 0); // Set the dropper Id for the knownlist packets in sendInfo
+			_itеm.setDropTime(System.currentTimeMillis());
+			_itеm.setDropperObjectId(_dropper != null ? _dropper.getObjectId() : 0); // Set the dropper Id for the knownlist packets in sendInfo
 			
-			// this can synchronize on others instances, so it's out of
-			// synchronized, to avoid deadlocks
 			// Add the L2ItemInstance dropped in the world as a visible object
-			World.getInstance().addVisibleObject(_itm, _itm.getWorldRegion());
+			World.getInstance().addVisibleObject(_itеm, _itеm.getWorldRegion());
 			if (Config.SAVE_DROPPED_ITEM)
 			{
-				ItemsOnGroundManager.getInstance().save(_itm);
+				ItemsOnGroundManager.getInstance().save(_itеm);
 			}
-			_itm.setDropperObjectId(0); // Set the dropper Id back to 0 so it no longer shows the drop packet
+			_itеm.setDropperObjectId(0); // Set the dropper Id back to 0 so it no longer shows the drop packet
 		}
 	}
 	
