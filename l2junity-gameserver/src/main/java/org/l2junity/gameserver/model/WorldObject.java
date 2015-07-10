@@ -270,18 +270,6 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		}
 	}
 	
-	public void toggleVisible()
-	{
-		if (isVisible())
-		{
-			decayMe();
-		}
-		else
-		{
-			spawnMe();
-		}
-	}
-	
 	@Override
 	public String getName()
 	{
@@ -596,23 +584,6 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		setXYZInvisible(loc.getX(), loc.getY(), loc.getZ());
 	}
 	
-	public void updateWorldRegion()
-	{
-		if (!isVisible())
-		{
-			return;
-		}
-		
-		WorldRegion newRegion = World.getInstance().getRegion(getLocation());
-		if (newRegion != getWorldRegion())
-		{
-			getWorldRegion().removeVisibleObject(this);
-			newRegion.addVisibleObject(this);
-			World.getInstance().switchRegion(this, newRegion);
-			setWorldRegion(newRegion);
-		}
-	}
-	
 	public final WorldRegion getWorldRegion()
 	{
 		return _worldRegion;
@@ -730,9 +701,21 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		
 		try
 		{
-			if (World.getInstance().getRegion(getLocation()) != getWorldRegion())
+			if (_isVisible)
 			{
-				updateWorldRegion();
+				final WorldRegion oldRegion = getWorldRegion();
+				final WorldRegion newRegion = World.getInstance().getRegion(getLocation());
+				if (newRegion != oldRegion)
+				{
+					if (oldRegion != null)
+					{
+						oldRegion.removeVisibleObject(this);
+					}
+					newRegion.addVisibleObject(this);
+					World.getInstance().switchRegion(this, newRegion);
+					setWorldRegion(newRegion);
+
+				}
 			}
 		}
 		catch (Exception e)
