@@ -25,9 +25,9 @@ import io.netty.channel.ChannelHandlerContext;
  */
 public interface ITelnetCommand
 {
-	public String getCommand();
+	String getCommand();
 	
-	public String getUsage();
+	String getUsage();
 	
-	public String handle(ChannelHandlerContext ctx, String[] args);
+	String handle(ChannelHandlerContext ctx, String[] args);
 }

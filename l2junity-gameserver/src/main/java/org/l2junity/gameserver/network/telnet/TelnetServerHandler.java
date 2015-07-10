@@ -20,6 +20,7 @@ package org.l2junity.gameserver.network.telnet;
 
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
+import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.AttributeKey;
@@ -35,6 +36,7 @@ import org.l2junity.Config;
 /**
  * @author UnAfraid
  */
+@Sharable
 public class TelnetServerHandler extends ChannelHandlerAdapter
 {
 	private static final Pattern COMMAND_ARGS_PATTERN = Pattern.compile("\"([^\"]*)\"|([^\\s]+)");
@@ -72,9 +74,9 @@ public class TelnetServerHandler extends ChannelHandlerAdapter
 		}
 		
 		// Send greeting for a new connection.
-		ctx.write("Welcome To The L2jUnited Telnet Session." + System.lineSeparator());
+		ctx.write("Welcome to the L2J Unity telnet session." + System.lineSeparator());
 		ctx.write("It is " + new Date() + " now." + System.lineSeparator());
-		ctx.write("Please Insert Your Password:" + System.lineSeparator());
+		ctx.write("Please enter your password:" + System.lineSeparator());
 		if (!Config.TELNET_PASSWORD.isEmpty())
 		{
 			// Ask password
