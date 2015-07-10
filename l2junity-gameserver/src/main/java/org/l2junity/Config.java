@@ -891,7 +891,6 @@ public final class Config
 	
 	public enum IdFactoryType
 	{
-		Compaction,
 		BitSet,
 		Stack
 	}
