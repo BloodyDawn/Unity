@@ -241,9 +241,6 @@ public class PcStat extends PlayableStat
 			return false;
 		}
 		
-		// Notify to scripts
-		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerLevelChanged(getActiveChar(), getLevel(), getLevel() + value), getActiveChar());
-		
 		boolean levelIncreased = super.addLevel(value);
 		if (levelIncreased)
 		{
@@ -254,6 +251,9 @@ public class PcStat extends PlayableStat
 			
 			L2ClassMasterInstance.showQuestionMark(getActiveChar());
 		}
+		
+		// Notify to scripts
+		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerLevelChanged(getActiveChar(), getLevel() - value, getLevel()), getActiveChar());
 		
 		// Give AutoGet skills and all normal skills if Auto-Learn is activated.
 		getActiveChar().rewardSkills();

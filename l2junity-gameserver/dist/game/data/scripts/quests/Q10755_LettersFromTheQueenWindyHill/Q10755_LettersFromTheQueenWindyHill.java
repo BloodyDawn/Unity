@@ -18,34 +18,20 @@
  */
 package quests.Q10755_LettersFromTheQueenWindyHill;
 
-import org.l2junity.gameserver.enums.HtmlActionScope;
-import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.events.EventType;
-import org.l2junity.gameserver.model.events.ListenerRegisterType;
-import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
-import org.l2junity.gameserver.model.events.annotations.RegisterType;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerBypass;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPressTutorialMark;
-import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
-import org.l2junity.gameserver.network.client.send.PlaySound;
-import org.l2junity.gameserver.network.client.send.TutorialCloseHtml;
-import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
-import org.l2junity.gameserver.network.client.send.TutorialShowQuestionMark;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
-import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+
+import quests.LetterQuest;
 
 /**
  * Letters from the Queen: Windy Hill (10755)
  * @author malyelfik
  */
-public final class Q10755_LettersFromTheQueenWindyHill extends Quest
+public final class Q10755_LettersFromTheQueenWindyHill extends LetterQuest
 {
 	// NPCs
 	private static final int LEVIAN = 30037;
@@ -65,8 +51,10 @@ public final class Q10755_LettersFromTheQueenWindyHill extends Quest
 		super(10755, Q10755_LettersFromTheQueenWindyHill.class.getSimpleName(), "Letters from the Queen: Windy Hill");
 		addTalkId(LEVIAN, PIO);
 		
-		addCondRace(Race.ERTHEIA, "");
-		addCondLevel(MIN_LEVEL, MAX_LEVEL, "");
+		setIsErtheiaQuest(true);
+		setLevel(MIN_LEVEL, MAX_LEVEL);
+		setStartLocation(SOE_GLUDIN_VILLAGE, TELEPORT_LOC);
+		setStartQuestSound("Npcdialog1.serenia_quest_1");
 		registerQuestItems(SOE_GLUDIN_VILLAGE, SOE_WINDY_HILL);
 	}
 	
@@ -123,98 +111,17 @@ public final class Q10755_LettersFromTheQueenWindyHill extends Quest
 			return htmltext;
 		}
 		
-		if ((npc.getId() == LEVIAN) && qs.isStarted())
+		if (qs.isStarted())
 		{
-			htmltext = (qs.isCond(1)) ? "30037-01.html" : "30037-04.html";
-		}
-		else if (qs.isStarted() && qs.isCond(2))
-		{
-			htmltext = "33963-01.html";
+			if ((npc.getId() == LEVIAN))
+			{
+				htmltext = (qs.isCond(1)) ? "30037-01.html" : "30037-04.html";
+			}
+			else if (qs.isCond(2))
+			{
+				htmltext = "33963-01.html";
+			}
 		}
 		return htmltext;
-	}
-	
-	@RegisterEvent(EventType.ON_PLAYER_PRESS_TUTORIAL_MARK)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void onPlayerPressTutorialMark(OnPlayerPressTutorialMark event)
-	{
-		if (event.getMarkId() == getId())
-		{
-			final PlayerInstance player = event.getActiveChar();
-			final QuestState st = getQuestState(player, true);
-			
-			st.startQuest();
-			player.sendPacket(new PlaySound(3, "Npcdialog1.serenia_quest_1", 0, 0, 0, 0, 0));
-			player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), "popup.html")));
-			giveItems(player, SOE_GLUDIN_VILLAGE, 1);
-		}
-	}
-	
-	@RegisterEvent(EventType.ON_PLAYER_BYPASS)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void OnPlayerBypass(OnPlayerBypass event)
-	{
-		final String command = event.getCommand();
-		final PlayerInstance player = event.getActiveChar();
-		final QuestState st = getQuestState(player, false);
-		
-		if (command.equals("Q10755_teleport") && (st != null) && st.isCond(1) && hasQuestItems(player, SOE_GLUDIN_VILLAGE))
-		{
-			if (!player.isInCombat())
-			{
-				player.teleToLocation(TELEPORT_LOC);
-				takeItems(player, SOE_GLUDIN_VILLAGE, -1);
-			}
-			else
-			{
-				showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_IN_COMBAT, ExShowScreenMessage.TOP_CENTER, 5000);
-			}
-			player.sendPacket(TutorialCloseHtml.STATIC_PACKET);
-			player.clearHtmlActions(HtmlActionScope.TUTORIAL_HTML);
-		}
-	}
-	
-	@RegisterEvent(EventType.ON_PLAYER_LEVEL_CHANGED)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void OnPlayerLevelChanged(OnPlayerLevelChanged event)
-	{
-		final PlayerInstance player = event.getActiveChar();
-		final QuestState st = getQuestState(player, false);
-		final int oldLevel = event.getOldLevel();
-		final int newLevel = event.getNewLevel();
-		
-		if ((st == null) && (player.getRace().equals(Race.ERTHEIA)) && (oldLevel < newLevel) && (newLevel == MIN_LEVEL))
-		{
-			showOnScreenMsg(player, NpcStringId.QUEEN_NAVARI_HAS_SENT_A_LETTER_NCLICK_THE_QUESTION_MARK_ICON_TO_READ, ExShowScreenMessage.TOP_CENTER, 10000);
-			player.sendPacket(new TutorialShowQuestionMark(getId()));
-		}
-	}
-	
-	@RegisterEvent(EventType.ON_PLAYER_LOGIN)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void OnPlayerLogin(OnPlayerLogin event)
-	{
-		final PlayerInstance player = event.getActiveChar();
-		final QuestState st = getQuestState(player, false);
-		
-		if ((st == null) && player.getRace().equals(Race.ERTHEIA) && (player.getLevel() >= MIN_LEVEL) && (player.getLevel() <= MAX_LEVEL))
-		{
-			showOnScreenMsg(player, NpcStringId.QUEEN_NAVARI_HAS_SENT_A_LETTER_NCLICK_THE_QUESTION_MARK_ICON_TO_READ, ExShowScreenMessage.TOP_CENTER, 10000);
-			player.sendPacket(new TutorialShowQuestionMark(getId()));
-		}
-	}
-	
-	@Override
-	public void onQuestAborted(PlayerInstance player)
-	{
-		final QuestState st = getQuestState(player, true);
-		
-		st.startQuest();
-		player.sendPacket(SystemMessageId.THIS_QUEST_CANNOT_BE_DELETED);
-	}
-	
-	public static void main(String[] args)
-	{
-		new Q10755_LettersFromTheQueenWindyHill();
 	}
 }

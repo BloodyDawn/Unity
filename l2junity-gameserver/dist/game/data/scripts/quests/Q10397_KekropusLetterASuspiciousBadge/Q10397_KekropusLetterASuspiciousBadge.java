@@ -18,35 +18,21 @@
  */
 package quests.Q10397_KekropusLetterASuspiciousBadge;
 
-import org.l2junity.gameserver.enums.HtmlActionScope;
-import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.events.EventType;
-import org.l2junity.gameserver.model.events.ListenerRegisterType;
-import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
-import org.l2junity.gameserver.model.events.annotations.RegisterType;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerBypass;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPressTutorialMark;
-import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
-import org.l2junity.gameserver.model.quest.State;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
-import org.l2junity.gameserver.network.client.send.PlaySound;
-import org.l2junity.gameserver.network.client.send.TutorialCloseHtml;
-import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
-import org.l2junity.gameserver.network.client.send.TutorialShowQuestionMark;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+
+import quests.LetterQuest;
 
 /**
  * Kekropus' Letter: A Suspicious Badge (10397)
  * @author St3eT
  */
-public final class Q10397_KekropusLetterASuspiciousBadge extends Quest
+public final class Q10397_KekropusLetterASuspiciousBadge extends LetterQuest
 {
 	// NPCs
 	private static final int MOUEN = 30196;
@@ -68,16 +54,18 @@ public final class Q10397_KekropusLetterASuspiciousBadge extends Quest
 		super(10397, Q10397_KekropusLetterASuspiciousBadge.class.getSimpleName(), "Kekropus' Letter: A Suspicious Badge");
 		addTalkId(MOUEN, ANDY);
 		addSeeCreatureId(INVISIBLE_NPC);
+		
+		setIsErtheiaQuest(false);
+		setLevel(MIN_LEVEL, MAX_LEVEL);
+		setStartQuestSound("Npcdialog1.kekrops_quest_3");
+		setStartLocation(SOE_TOWN_OF_OREN, TELEPORT_LOC);
 		registerQuestItems(SOE_TOWN_OF_OREN, SOE_SEA_OF_SPORES);
-		addCondNotRace(Race.ERTHEIA, "");
-		addCondLevel(MIN_LEVEL, MAX_LEVEL, "");
 	}
 	
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
-		
 		if (st == null)
 		{
 			return null;
@@ -125,14 +113,14 @@ public final class Q10397_KekropusLetterASuspiciousBadge extends Quest
 	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
-		final QuestState st = getQuestState(player, true);
+		final QuestState st = getQuestState(player, false);
 		
 		if (st == null)
 		{
 			return htmltext;
 		}
 		
-		if (st.getState() == State.STARTED)
+		if (st.isStarted())
 		{
 			if (st.isCond(1) && (npc.getId() == MOUEN))
 			{
@@ -160,83 +148,5 @@ public final class Q10397_KekropusLetterASuspiciousBadge extends Quest
 			}
 		}
 		return super.onSeeCreature(npc, creature, isSummon);
-	}
-	
-	@RegisterEvent(EventType.ON_PLAYER_LEVEL_CHANGED)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void OnPlayerLevelChanged(OnPlayerLevelChanged event)
-	{
-		final PlayerInstance player = event.getActiveChar();
-		final QuestState st = getQuestState(player, false);
-		final int oldLevel = event.getOldLevel();
-		final int newLevel = event.getNewLevel();
-		
-		if ((st == null) && (oldLevel < newLevel) && (newLevel == MIN_LEVEL) && (player.getRace() != Race.ERTHEIA))
-		{
-			showOnScreenMsg(player, NpcStringId.KEKROPUS_LETTER_HAS_ARRIVED_NCLICK_THE_QUESTION_MARK_ICON_TO_READ3, ExShowScreenMessage.TOP_CENTER, 6000);
-			player.sendPacket(new TutorialShowQuestionMark(getId()));
-		}
-	}
-	
-	@RegisterEvent(EventType.ON_PLAYER_PRESS_TUTORIAL_MARK)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void onPlayerPressTutorialMark(OnPlayerPressTutorialMark event)
-	{
-		if (event.getMarkId() == getId())
-		{
-			final PlayerInstance player = event.getActiveChar();
-			final QuestState st = getQuestState(player, true);
-			
-			st.startQuest();
-			player.sendPacket(new PlaySound(3, "Npcdialog1.kekrops_quest_3", 0, 0, 0, 0, 0));
-			giveItems(player, SOE_TOWN_OF_OREN, 1);
-			player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), "popup.html")));
-		}
-	}
-	
-	@RegisterEvent(EventType.ON_PLAYER_BYPASS)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void OnPlayerBypass(OnPlayerBypass event)
-	{
-		final String command = event.getCommand();
-		final PlayerInstance player = event.getActiveChar();
-		final QuestState st = getQuestState(player, false);
-		
-		if (command.equals("Q10397_teleport") && (st != null) && st.isCond(1) && hasQuestItems(player, SOE_TOWN_OF_OREN))
-		{
-			if (!player.isInCombat())
-			{
-				player.teleToLocation(TELEPORT_LOC);
-				takeItems(player, SOE_TOWN_OF_OREN, -1);
-			}
-			else
-			{
-				showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_IN_COMBAT, ExShowScreenMessage.TOP_CENTER, 6000);
-			}
-			player.sendPacket(TutorialCloseHtml.STATIC_PACKET);
-			player.clearHtmlActions(HtmlActionScope.TUTORIAL_HTML);
-		}
-	}
-	
-	@RegisterEvent(EventType.ON_PLAYER_LOGIN)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void OnPlayerLogin(OnPlayerLogin event)
-	{
-		final PlayerInstance player = event.getActiveChar();
-		final QuestState st = getQuestState(player, false);
-		
-		if ((player.getLevel() >= MIN_LEVEL) && (player.getLevel() <= MAX_LEVEL) && (st == null) && (player.getRace() != Race.ERTHEIA))
-		{
-			showOnScreenMsg(player, NpcStringId.KEKROPUS_LETTER_HAS_ARRIVED_NCLICK_THE_QUESTION_MARK_ICON_TO_READ3, ExShowScreenMessage.TOP_CENTER, 6000);
-			player.sendPacket(new TutorialShowQuestionMark(getId()));
-		}
-	}
-	
-	@Override
-	public void onQuestAborted(PlayerInstance player)
-	{
-		final QuestState st = getQuestState(player, true);
-		
-		st.startQuest();
 	}
 }

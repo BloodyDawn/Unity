@@ -18,44 +18,29 @@
  */
 package quests.Q10408_KekropusLetterTheSwampOfScreams;
 
-import org.l2junity.gameserver.enums.HtmlActionScope;
-import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.events.EventType;
-import org.l2junity.gameserver.model.events.ListenerRegisterType;
-import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
-import org.l2junity.gameserver.model.events.annotations.RegisterType;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerBypass;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPressTutorialMark;
-import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
-import org.l2junity.gameserver.model.quest.State;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
-import org.l2junity.gameserver.network.client.send.PlaySound;
-import org.l2junity.gameserver.network.client.send.TutorialCloseHtml;
-import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
-import org.l2junity.gameserver.network.client.send.TutorialShowQuestionMark;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
-import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+
+import quests.LetterQuest;
 
 /**
  * Kekropus' Letter: The Swamp of Screams (10408)
  * @author St3eT
  */
-public final class Q10408_KekropusLetterTheSwampOfScreams extends Quest
+public final class Q10408_KekropusLetterTheSwampOfScreams extends LetterQuest
 {
 	// NPCs
 	private static final int MATHIAS = 31340;
 	private static final int DOKARA = 33847;
 	private static final int INVISIBLE_NPC = 19543;
 	// Items
-	private static final int SOE_SWAMP_OF_SCREAMS = 37030; // Scroll of Escape: Swamp of Screams 69340 -50203 -3288
-	private static final int SOE_TOWN_OF_RUNE = 37117; // Scroll of Escape: Town of Rune // 42682 -47986 -792
+	private static final int SOE_SWAMP_OF_SCREAMS = 37030; // Scroll of Escape: Swamp of Screams
+	private static final int SOE_TOWN_OF_RUNE = 37117; // Scroll of Escape: Town of Rune
 	private static final int EWA = 729; // Scroll: Enchant Weapon (A-grade)
 	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Location
@@ -69,14 +54,18 @@ public final class Q10408_KekropusLetterTheSwampOfScreams extends Quest
 		super(10408, Q10408_KekropusLetterTheSwampOfScreams.class.getSimpleName(), "Kekropus' Letter: The Swamp of Screams");
 		addTalkId(MATHIAS, DOKARA);
 		addSeeCreatureId(INVISIBLE_NPC);
-		registerQuestItems();
+		
+		setIsErtheiaQuest(false);
+		setLevel(MIN_LEVEL, MAX_LEVEL);
+		setStartQuestSound("Npcdialog1.kekrops_quest_6");
+		setStartLocation(SOE_TOWN_OF_RUNE, TELEPORT_LOC);
+		registerQuestItems(SOE_TOWN_OF_RUNE, SOE_SWAMP_OF_SCREAMS);
 	}
 	
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
-		
 		if (st == null)
 		{
 			return null;
@@ -125,9 +114,14 @@ public final class Q10408_KekropusLetterTheSwampOfScreams extends Quest
 	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
-		final QuestState st = getQuestState(player, true);
+		final QuestState st = getQuestState(player, false);
 		
-		if (st.getState() == State.STARTED)
+		if (st == null)
+		{
+			return htmltext;
+		}
+		
+		if (st.isStarted())
 		{
 			if ((npc.getId() == MATHIAS) && st.isCond(1))
 			{
@@ -157,82 +151,9 @@ public final class Q10408_KekropusLetterTheSwampOfScreams extends Quest
 		return super.onSeeCreature(npc, creature, isSummon);
 	}
 	
-	@RegisterEvent(EventType.ON_PLAYER_LEVEL_CHANGED)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void OnPlayerLevelChanged(OnPlayerLevelChanged event)
-	{
-		final PlayerInstance player = event.getActiveChar();
-		final QuestState st = getQuestState(player, false);
-		final int oldLevel = event.getOldLevel();
-		final int newLevel = event.getNewLevel();
-		
-		if ((st == null) && (oldLevel < newLevel) && (newLevel == MIN_LEVEL) && (player.getRace() != Race.ERTHEIA) && !player.isMageClass())
-		{
-			showOnScreenMsg(player, NpcStringId.KEKROPUS_LETTER_HAS_ARRIVED_NCLICK_THE_QUESTION_MARK_ICON_TO_READ3, ExShowScreenMessage.TOP_CENTER, 6000);
-			player.sendPacket(new TutorialShowQuestionMark(getId()));
-		}
-	}
-	
-	@RegisterEvent(EventType.ON_PLAYER_PRESS_TUTORIAL_MARK)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void onPlayerPressTutorialMark(OnPlayerPressTutorialMark event)
-	{
-		if (event.getMarkId() == getId())
-		{
-			final PlayerInstance player = event.getActiveChar();
-			final QuestState st = getQuestState(player, true);
-			
-			st.startQuest();
-			player.sendPacket(new PlaySound(3, "Npcdialog1.kekrops_quest_6", 0, 0, 0, 0, 0));
-			giveItems(player, SOE_TOWN_OF_RUNE, 1);
-			player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), "popup.html")));
-		}
-	}
-	
-	@RegisterEvent(EventType.ON_PLAYER_BYPASS)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void OnPlayerBypass(OnPlayerBypass event)
-	{
-		final String command = event.getCommand();
-		final PlayerInstance player = event.getActiveChar();
-		final QuestState st = getQuestState(player, false);
-		
-		if (command.equals("Q10404_teleport") && (st != null) && st.isCond(1) && hasQuestItems(player, SOE_TOWN_OF_RUNE))
-		{
-			if (!player.isInCombat())
-			{
-				player.teleToLocation(TELEPORT_LOC);
-				takeItems(player, SOE_TOWN_OF_RUNE, -1);
-			}
-			else
-			{
-				showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_IN_COMBAT, ExShowScreenMessage.TOP_CENTER, 6000);
-			}
-			player.sendPacket(TutorialCloseHtml.STATIC_PACKET);
-			player.clearHtmlActions(HtmlActionScope.TUTORIAL_HTML);
-		}
-	}
-	
-	@RegisterEvent(EventType.ON_PLAYER_LOGIN)
-	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void OnPlayerLogin(OnPlayerLogin event)
-	{
-		final PlayerInstance player = event.getActiveChar();
-		final QuestState st = getQuestState(player, false);
-		
-		if ((player.getLevel() >= MIN_LEVEL) && (player.getLevel() <= MAX_LEVEL) && (st == null) && (player.getRace() != Race.ERTHEIA) && !player.isMageClass())
-		{
-			showOnScreenMsg(player, NpcStringId.KEKROPUS_LETTER_HAS_ARRIVED_NCLICK_THE_QUESTION_MARK_ICON_TO_READ3, ExShowScreenMessage.TOP_CENTER, 6000);
-			player.sendPacket(new TutorialShowQuestionMark(getId()));
-		}
-	}
-	
 	@Override
-	public void onQuestAborted(PlayerInstance player)
+	public boolean canShowTutorialMark(PlayerInstance player)
 	{
-		final QuestState st = getQuestState(player, true);
-		
-		st.startQuest();
-		player.sendPacket(SystemMessageId.THIS_QUEST_CANNOT_BE_DELETED);
+		return !player.isMageClass();
 	}
 }
