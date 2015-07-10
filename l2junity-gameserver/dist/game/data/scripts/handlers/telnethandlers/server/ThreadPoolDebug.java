@@ -27,20 +27,20 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ThreadPoolManager.RunnableWrapper;
 import org.l2junity.gameserver.network.telnet.ITelnetCommand;
 import org.l2junity.gameserver.network.telnet.TelnetServer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
 public class ThreadPoolDebug implements ITelnetCommand
 {
-	private static final Logger _log = Logger.getLogger(ThreadPoolDebug.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(ThreadPoolDebug.class);
 	
 	@Override
 	public String getCommand()
@@ -77,9 +77,9 @@ public class ThreadPoolDebug implements ITelnetCommand
 					pool = "_aiScheduledThreadPool";
 					break;
 				}
-				case "quest":
+				case "events":
 				{
-					pool = "_questScheduledThreadPool";
+					pool = "_eventScheduledThreadPool";
 					break;
 				}
 				default:
@@ -166,7 +166,7 @@ public class ThreadPoolDebug implements ITelnetCommand
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Error while retrieving object of " + sourceInstance.getClass().getName() + "." + fieldName, e);
+			LOGGER.warn("Error while retrieving object of " + sourceInstance.getClass().getName() + "." + fieldName, e);
 		}
 		return null;
 	}
