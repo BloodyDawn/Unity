@@ -70,7 +70,7 @@ public final class ItemAuction
 	
 	public ItemAuction(final int auctionId, final int instanceId, final long startingTime, final long endingTime, final AuctionItem auctionItem)
 	{
-		this(auctionId, instanceId, startingTime, endingTime, auctionItem, new ArrayList<ItemAuctionBid>(), ItemAuctionState.CREATED);
+		this(auctionId, instanceId, startingTime, endingTime, auctionItem, new ArrayList<>(), ItemAuctionState.CREATED);
 	}
 	
 	public ItemAuction(final int auctionId, final int instanceId, final long startingTime, final long endingTime, final AuctionItem auctionItem, final ArrayList<ItemAuctionBid> auctionBids, final ItemAuctionState auctionState)

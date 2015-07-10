@@ -118,7 +118,7 @@ public final class AntiFeedManager
 	 */
 	public final void registerEvent(int eventId)
 	{
-		_eventIPs.putIfAbsent(eventId, new ConcurrentHashMap<Integer, AtomicInteger>());
+		_eventIPs.putIfAbsent(eventId, new ConcurrentHashMap<>());
 	}
 	
 	/**

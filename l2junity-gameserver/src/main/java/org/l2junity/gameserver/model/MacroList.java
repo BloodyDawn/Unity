@@ -45,7 +45,7 @@ public class MacroList implements IRestorable
 	
 	private final PlayerInstance _owner;
 	private int _macroId;
-	private final Map<Integer, Macro> _macroses = Collections.synchronizedMap(new LinkedHashMap<Integer, Macro>());
+	private final Map<Integer, Macro> _macroses = Collections.synchronizedMap(new LinkedHashMap<>());
 	
 	public MacroList(PlayerInstance owner)
 	{

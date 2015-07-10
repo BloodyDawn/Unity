@@ -5848,7 +5848,7 @@ public final class PlayerInstance extends Playable
 			{
 				if (_manufactureItems == null)
 				{
-					_manufactureItems = Collections.synchronizedMap(new LinkedHashMap<Integer, ManufactureItem>());
+					_manufactureItems = Collections.synchronizedMap(new LinkedHashMap<>());
 				}
 			}
 		}

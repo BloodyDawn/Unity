@@ -56,7 +56,7 @@ public final class HandysBlockCheckerManager
 	private static final Map<Integer, Boolean> _arenaStatus = new HashMap<>();
 	
 	// Registration request penalty (10 seconds)
-	protected static Set<Integer> _registrationPenalty = Collections.synchronizedSet(new HashSet<Integer>());
+	protected static Set<Integer> _registrationPenalty = Collections.synchronizedSet(new HashSet<>());
 	
 	/**
 	 * Return the number of event-start votes for the specified arena id
