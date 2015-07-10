@@ -374,6 +374,10 @@
 	<item id="37030" name="Scroll of Escape: Swamp of Screams" type="EtcItem">
 		<!-- Teleports you to the Swamp of Screams. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="30" />
+		<set name="handler" val="ItemSkills" />
 		<set name="weight" val="30" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -383,8 +387,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="9972" level="1" /> <!-- Scroll of Escape: Swamp of Screams -->
+		</skills>
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
 	</item>
 	<item id="37031" name="Scroll of Escape: Forest of the Dead" type="EtcItem">
 		<!-- Teleports you to the Forest of the Dead. -->
