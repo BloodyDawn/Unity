@@ -1264,10 +1264,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 				if (!caster.isAffectedBySkill(sk.getId()))
 				{
 					clientStopMoving(null);
-					// L2Object target = attackTarget;
 					caster.setTarget(caster);
 					caster.doCast(sk);
-					// _actor.setTarget(target);
+					_actor.setTarget(attackTarget);
 					return true;
 				}
 				// ----------------------------------------
@@ -1282,20 +1281,18 @@ public class AttackableAI extends CharacterAI implements Runnable
 					if (target != null)
 					{
 						clientStopMoving(null);
-						WorldObject targets = attackTarget;
 						caster.setTarget(target);
 						caster.doCast(sk);
-						caster.setTarget(targets);
+						caster.setTarget(attackTarget);
 						return true;
 					}
 				}
 				if (canParty(sk))
 				{
 					clientStopMoving(null);
-					WorldObject targets = attackTarget;
 					caster.setTarget(caster);
 					caster.doCast(sk);
-					caster.setTarget(targets);
+					caster.setTarget(attackTarget);
 					return true;
 				}
 			}
@@ -1352,10 +1349,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 				if (target != null)
 				{
 					clientStopMoving(null);
-					WorldObject targets = attackTarget;
 					caster.setTarget(target);
 					caster.doCast(sk);
-					caster.setTarget(targets);
+					caster.setTarget(attackTarget);
 					return true;
 				}
 			}
@@ -1394,6 +1390,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 						clientStopMoving(null);
 						caster.setTarget(leader);
 						caster.doCast(sk);
+						caster.setTarget(attackTarget);
 						return true;
 					}
 				}
@@ -1403,6 +1400,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				clientStopMoving(null);
 				caster.setTarget(caster);
 				caster.doCast(sk);
+				caster.setTarget(attackTarget);
 				return true;
 			}
 			
@@ -1428,6 +1426,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 							clientStopMoving(null);
 							caster.setTarget(obj);
 							caster.doCast(sk);
+							caster.setTarget(attackTarget);
 							return true;
 						}
 					}
@@ -1444,6 +1443,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 							clientStopMoving(null);
 							caster.setTarget(caster);
 							caster.doCast(sk);
+							caster.setTarget(attackTarget);
 							return true;
 						}
 					}
@@ -1466,10 +1466,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 				if (target != null)
 				{
 					clientStopMoving(null);
-					WorldObject targets = attackTarget;
 					caster.setTarget(target);
 					caster.doCast(sk);
-					caster.setTarget(targets);
+					caster.setTarget(attackTarget);
 					return true;
 				}
 			}
@@ -1620,6 +1619,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 							clientStopMoving(null);
 							caster.setTarget(leader);
 							caster.doCast(sk);
+							caster.setTarget(attackTarget);
 							return true;
 						}
 					}
@@ -1644,6 +1644,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 							clientStopMoving(null);
 							caster.setTarget(obj);
 							caster.doCast(sk);
+							caster.setTarget(attackTarget);
 							return true;
 						}
 					}
@@ -1665,6 +1666,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 							clientStopMoving(null);
 							caster.setTarget(caster);
 							caster.doCast(sk);
+							caster.setTarget(attackTarget);
 							return true;
 						}
 					}
@@ -1686,10 +1688,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 			if (target != null)
 			{
 				clientStopMoving(null);
-				WorldObject targets = attackTarget;
 				caster.setTarget(target);
 				caster.doCast(sk);
-				caster.setTarget(targets);
+				caster.setTarget(attackTarget);
 				return true;
 			}
 		}
