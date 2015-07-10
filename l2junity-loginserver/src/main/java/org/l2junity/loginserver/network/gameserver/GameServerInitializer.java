@@ -28,7 +28,6 @@ import java.nio.ByteOrder;
 
 import javax.crypto.SecretKey;
 
-import org.l2junity.loginserver.network.client.ClientHandler;
 import org.l2junity.loginserver.network.client.crypt.Crypt;
 import org.l2junity.loginserver.network.client.crypt.KeyManager;
 import org.l2junity.network.codecs.CryptCodec;
