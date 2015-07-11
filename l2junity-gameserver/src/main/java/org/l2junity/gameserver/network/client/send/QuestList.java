@@ -21,7 +21,6 @@ package org.l2junity.gameserver.network.client.send;
 import java.util.List;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.quest.GlobalQuest;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
@@ -30,11 +29,11 @@ import org.l2junity.network.PacketWriter;
 public class QuestList implements IClientOutgoingPacket
 {
 	private final List<Quest> _quests;
-	private final PlayerInstance _activeChar;
+	private final PlayerInstance _player;
 	
 	public QuestList(PlayerInstance player)
 	{
-		_activeChar = player;
+		_player = player;
 		_quests = player.getAllActiveQuests();
 	}
 	
@@ -47,7 +46,7 @@ public class QuestList implements IClientOutgoingPacket
 		{
 			packet.writeD(quest.getId());
 			
-			final QuestState qs = _activeChar.getQuestState(quest.getName());
+			final QuestState qs = _player.getQuestState(quest.getName());
 			if (qs == null)
 			{
 				packet.writeD(0);
@@ -64,11 +63,23 @@ public class QuestList implements IClientOutgoingPacket
 				packet.writeD(qs.getCond());
 			}
 		}
-		
-		for (GlobalQuest quest : GlobalQuest.values())
+
+		final byte[] oneTimeQuestMask = new byte[128];
+		for (QuestState questState : _player.getAllQuestStates())
 		{
-			packet.writeD(quest.getValue());
+			if (questState.isCompleted())
+			{
+				final int questId = questState.getQuest().getId();
+				if (questId < 0 || (questId > 255 && questId < 10256) || questId > 11023)
+				{
+					continue;
+				}
+
+				oneTimeQuestMask[(questId % 10000) / 8] |= 1 << (questId % 8);
+			}
 		}
+		packet.writeB(oneTimeQuestMask);
+
 		return true;
 	}
 }
