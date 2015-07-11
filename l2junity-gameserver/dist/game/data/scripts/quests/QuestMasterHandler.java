@@ -286,6 +286,7 @@ import quests.Q10786_ResidentProblemSolver.Q10786_ResidentProblemSolver;
 import quests.Q10787_ASpyMission.Q10787_ASpyMission;
 import quests.Q10789_LettersFromTheQueenSwampOfScreams.Q10789_LettersFromTheQueenSwampOfScreams;
 import quests.Q10792_LettersFromTheQueenForestOfTheDead.Q10792_LettersFromTheQueenForestOfTheDead;
+import quests.Q10793_SaveTheSouls.Q10793_SaveTheSouls;
 
 /**
  * @author NosBit
@@ -560,7 +561,8 @@ public class QuestMasterHandler
 		Q10786_ResidentProblemSolver.class,
 		Q10787_ASpyMission.class,
 		Q10789_LettersFromTheQueenSwampOfScreams.class,
-		Q10792_LettersFromTheQueenForestOfTheDead.class
+		Q10792_LettersFromTheQueenForestOfTheDead.class,
+		Q10793_SaveTheSouls.class
 	};
 	
 	public static void main(String[] args)
