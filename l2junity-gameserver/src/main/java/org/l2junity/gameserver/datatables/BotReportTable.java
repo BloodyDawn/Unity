@@ -52,7 +52,7 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 public final class BotReportTable
 {
-	// Zoey76: TODO: Split XML parsing from SQL operations, use IXmlReader instead of SAXParser.
+	// Zoey76: TODO: Split XML parsing from SQL operations, use IGameXmlReader instead of SAXParser.
 	private static final Logger LOGGER = LoggerFactory.getLogger(BotReportTable.class);
 	
 	private static final int COLUMN_BOT_ID = 1;

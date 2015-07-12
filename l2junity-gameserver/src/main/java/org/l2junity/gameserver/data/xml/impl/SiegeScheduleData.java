@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.SiegeScheduleDate;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.util.Util;
@@ -36,7 +36,7 @@ import org.w3c.dom.Node;
 /**
  * @author UnAfraid
  */
-public class SiegeScheduleData implements IXmlReader
+public class SiegeScheduleData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(SiegeScheduleData.class);
 	

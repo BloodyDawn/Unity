@@ -27,7 +27,7 @@ import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.DatabaseFactory;
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
@@ -40,7 +40,7 @@ import org.w3c.dom.Node;
 /**
  * @author evill33t, GodKratos
  */
-public final class InstanceManager implements IXmlReader
+public final class InstanceManager implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(InstanceManager.class);
 	

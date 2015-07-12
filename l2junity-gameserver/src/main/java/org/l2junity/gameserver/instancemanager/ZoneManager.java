@@ -27,7 +27,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -55,7 +55,7 @@ import org.w3c.dom.Node;
  * This class manages the zones
  * @author durgus
  */
-public final class ZoneManager implements IXmlReader
+public final class ZoneManager implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ZoneManager.class);
 	

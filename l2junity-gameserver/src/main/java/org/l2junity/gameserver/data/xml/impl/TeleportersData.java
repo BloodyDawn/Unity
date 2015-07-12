@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.teleporter.TeleportHolder;
 import org.l2junity.gameserver.model.teleporter.TeleportLocation;
@@ -36,7 +36,7 @@ import org.w3c.dom.Node;
 /**
  * @author UnAfraid
  */
-public class TeleportersData implements IXmlReader
+public class TeleportersData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(TeleportersData.class);
 	

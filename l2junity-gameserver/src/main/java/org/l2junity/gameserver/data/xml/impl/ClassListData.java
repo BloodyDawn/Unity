@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.base.ClassInfo;
 import org.slf4j.Logger;
@@ -35,7 +35,7 @@ import org.w3c.dom.Node;
  * Loads the the list of classes and it's info.
  * @author Zoey76
  */
-public final class ClassListData implements IXmlReader
+public final class ClassListData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ClassListData.class);
 	

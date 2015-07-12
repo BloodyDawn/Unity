@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.items.Henna;
@@ -41,7 +41,7 @@ import org.w3c.dom.Node;
  * Allowed classes to wear each henna.
  * @author Zoey76
  */
-public final class HennaData implements IXmlReader
+public final class HennaData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(HennaData.class);
 	

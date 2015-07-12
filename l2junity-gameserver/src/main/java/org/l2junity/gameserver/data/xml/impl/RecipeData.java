@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.RecipeInstance;
 import org.l2junity.gameserver.model.RecipeList;
 import org.l2junity.gameserver.model.RecipeStatInstance;
@@ -40,7 +40,7 @@ import org.w3c.dom.Node;
  * The Class RecipeData.
  * @author Zoey76
  */
-public class RecipeData implements IXmlReader
+public class RecipeData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(RecipeData.class);
 	

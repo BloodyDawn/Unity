@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.enums.CastleSide;
 import org.l2junity.gameserver.enums.SiegeGuardType;
 import org.l2junity.gameserver.model.holders.CastleSpawnHolder;
@@ -38,7 +38,7 @@ import org.w3c.dom.Node;
 /**
  * @author St3eT
  */
-public final class CastleData implements IXmlReader
+public final class CastleData implements IGameXmlReader
 {
 	private final Map<Integer, List<CastleSpawnHolder>> _spawns = new HashMap<>();
 	private static final Map<Integer, List<SiegeGuardHolder>> _siegeGuards = new HashMap<>();

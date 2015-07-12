@@ -38,7 +38,7 @@ import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.enums.ManorMode;
 import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.CropProcure;
@@ -60,7 +60,7 @@ import org.w3c.dom.Node;
  * Castle manor system.
  * @author malyelfik
  */
-public final class CastleManorManager implements IXmlReader, IStorable
+public final class CastleManorManager implements IGameXmlReader, IStorable
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(CastleManorManager.class);
 	

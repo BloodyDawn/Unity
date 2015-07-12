@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.items.PcItemTemplate;
@@ -40,7 +40,7 @@ import org.w3c.dom.Node;
  * What items get each newly created character and if this item is equipped upon creation (<b>Requires the item to be equippable</b>).
  * @author Zoey76
  */
-public final class InitialEquipmentData implements IXmlReader
+public final class InitialEquipmentData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(InitialEquipmentData.class);
 	

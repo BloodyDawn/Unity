@@ -31,7 +31,7 @@ import java.util.Set;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.CursedWeapon;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -55,7 +55,7 @@ import org.w3c.dom.Node;
  * UnAfraid: TODO: Rewrite with DocumentParser
  * @author Micht
  */
-public final class CursedWeaponsManager implements IXmlReader
+public final class CursedWeaponsManager implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(CursedWeaponsManager.class);
 	

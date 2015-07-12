@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.options.Options;
 import org.l2junity.gameserver.model.options.OptionsSkillHolder;
@@ -38,7 +38,7 @@ import org.w3c.dom.Node;
 /**
  * @author UnAfraid
  */
-public class OptionData implements IXmlReader
+public class OptionData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(OptionData.class);
 	

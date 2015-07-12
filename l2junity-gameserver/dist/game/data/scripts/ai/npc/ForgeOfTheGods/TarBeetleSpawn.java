@@ -28,7 +28,7 @@ import java.util.concurrent.ScheduledFuture;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.Territory;
@@ -41,7 +41,7 @@ import org.w3c.dom.Node;
  * Tar Beetle zone spawn
  * @author malyelfik
  */
-public class TarBeetleSpawn implements IXmlReader
+public class TarBeetleSpawn implements IGameXmlReader
 {
 	private final List<SpawnZone> zones = new ArrayList<>();
 	private ScheduledFuture<?> spawnTask;

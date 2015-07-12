@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.AccessLevel;
 import org.l2junity.gameserver.model.AdminCommandAccessRight;
 import org.l2junity.gameserver.model.StatsSet;
@@ -44,7 +44,7 @@ import org.w3c.dom.Node;
  * Loads administrator access levels and commands.
  * @author UnAfraid
  */
-public final class AdminData implements IXmlReader
+public final class AdminData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(AdminData.class);
 	

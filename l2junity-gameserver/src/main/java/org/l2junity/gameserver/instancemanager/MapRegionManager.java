@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.MapRegion;
 import org.l2junity.gameserver.model.TeleportWhereType;
@@ -48,7 +48,7 @@ import org.w3c.dom.Node;
 /**
  * @author Nyaran
  */
-public final class MapRegionManager implements IXmlReader
+public final class MapRegionManager implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(MapRegionManager.class);
 	

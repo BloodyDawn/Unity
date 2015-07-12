@@ -33,7 +33,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.Race;
@@ -78,7 +78,7 @@ import org.w3c.dom.Node;
  * For XML schema please refer to skillTrees.xsd in datapack in xsd folder and for parameters documentation refer to documentation.txt in skillTrees folder.<br>
  * @author Zoey76
  */
-public final class SkillTreesData implements IXmlReader
+public final class SkillTreesData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(SkillTreesData.class);
 	

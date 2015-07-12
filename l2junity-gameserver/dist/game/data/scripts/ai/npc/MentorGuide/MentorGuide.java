@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.Objects;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.MailType;
 import org.l2junity.gameserver.instancemanager.MailManager;
@@ -63,7 +63,7 @@ import ai.npc.AbstractNpcAI;
  * Mentor Guide.
  * @author Gnacik, UnAfraid
  */
-public class MentorGuide extends AbstractNpcAI implements IXmlReader
+public class MentorGuide extends AbstractNpcAI implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(MentorGuide.class);
 	

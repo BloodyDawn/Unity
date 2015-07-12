@@ -35,7 +35,7 @@ import java.util.Map;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.loginserver.network.gameserverpackets.ServerStatus;
 import org.l2junity.util.IPSubnet;
 import org.slf4j.Logger;
@@ -47,7 +47,7 @@ import org.w3c.dom.NodeList;
  * The Class GameServerTable loads the game server names and initialize the game server tables.
  * @author KenM, Zoey76
  */
-public final class GameServerTable implements IXmlReader
+public final class GameServerTable implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(GameServerTable.class);
 	

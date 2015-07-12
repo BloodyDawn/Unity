@@ -21,7 +21,7 @@ package org.l2junity.gameserver.data.xml.impl;
 import java.io.File;
 import java.util.Arrays;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -32,7 +32,7 @@ import org.w3c.dom.Node;
  * This class holds the Player Xp Percent Lost Data for each level for players.
  * @author Zealar
  */
-public final class PlayerXpPercentLostData implements IXmlReader
+public final class PlayerXpPercentLostData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(PlayerXpPercentLostData.class);
 	

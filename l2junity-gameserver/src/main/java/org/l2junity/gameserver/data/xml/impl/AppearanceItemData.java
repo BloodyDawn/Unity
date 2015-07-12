@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.StatsSet;
@@ -38,7 +38,7 @@ import org.w3c.dom.Node;
 /**
  * @author UnAfraid
  */
-public class AppearanceItemData implements IXmlReader
+public class AppearanceItemData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(AppearanceItemData.class);
 	

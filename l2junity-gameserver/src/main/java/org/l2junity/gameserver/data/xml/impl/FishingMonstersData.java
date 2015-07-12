@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.fishing.L2FishingMonster;
 import org.slf4j.Logger;
@@ -35,7 +35,7 @@ import org.w3c.dom.Node;
  * This class holds the Fishing Monsters information.
  * @author nonom
  */
-public final class FishingMonstersData implements IXmlReader
+public final class FishingMonstersData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(FishingMonstersData.class);
 	

@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.EnchantSkillGroup;
 import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
 import org.l2junity.gameserver.model.EnchantSkillLearn;
@@ -39,7 +39,7 @@ import org.w3c.dom.Node;
  * This class holds the Enchant Groups information.
  * @author Micr0
  */
-public class EnchantSkillGroupsData implements IXmlReader
+public class EnchantSkillGroupsData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(EnchantSkillGroupsData.class);
 	

@@ -30,7 +30,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.itemauction.ItemAuctionInstance;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,7 +41,7 @@ import org.w3c.dom.Node;
 /**
  * @author Forsaiken
  */
-public final class ItemAuctionManager implements IXmlReader
+public final class ItemAuctionManager implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ItemAuctionManager.class);
 	

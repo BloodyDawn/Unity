@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.VehiclePathPoint;
@@ -42,7 +42,7 @@ import org.w3c.dom.Node;
 /**
  * @author UnAfraid
  */
-public final class ShuttleData implements IXmlReader
+public final class ShuttleData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ShuttleData.class);
 	

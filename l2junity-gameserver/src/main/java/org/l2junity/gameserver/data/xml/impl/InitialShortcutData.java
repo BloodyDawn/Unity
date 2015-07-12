@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.enums.MacroType;
 import org.l2junity.gameserver.enums.ShortcutType;
 import org.l2junity.gameserver.model.Macro;
@@ -45,7 +45,7 @@ import org.w3c.dom.Node;
  * What shortcuts get each newly created character.
  * @author Zoey76
  */
-public final class InitialShortcutData implements IXmlReader
+public final class InitialShortcutData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(InitialShortcutData.class);
 	

@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.model.StatsSet;
@@ -44,7 +44,7 @@ import org.w3c.dom.Node;
  * Loads doors.
  * @author JIV, GodKratos, UnAfraid
  */
-public class DoorData implements IXmlReader
+public class DoorData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(DoorData.class);
 	

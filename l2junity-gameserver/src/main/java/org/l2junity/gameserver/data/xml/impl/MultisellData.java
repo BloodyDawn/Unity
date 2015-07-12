@@ -26,7 +26,7 @@ import java.util.Map;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.file.filter.NumericNameFilter;
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -46,7 +46,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-public final class MultisellData implements IXmlReader
+public final class MultisellData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(MultisellData.class);
 	

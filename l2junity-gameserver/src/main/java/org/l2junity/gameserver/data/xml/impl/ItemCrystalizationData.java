@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.CrystalizationData;
 import org.l2junity.gameserver.model.holders.ItemChanceHolder;
 import org.slf4j.Logger;
@@ -34,7 +34,7 @@ import org.w3c.dom.Node;
 /**
  * @author UnAfraid
  */
-public final class ItemCrystalizationData implements IXmlReader
+public final class ItemCrystalizationData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ItemCrystalizationData.class);
 	

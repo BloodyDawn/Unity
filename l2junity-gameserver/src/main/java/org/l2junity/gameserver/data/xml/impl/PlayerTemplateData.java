@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.templates.L2PcTemplate;
@@ -39,7 +39,7 @@ import org.w3c.dom.Node;
  * Loads player's base stats.
  * @author Forsaiken, Zoey76, GKR
  */
-public final class PlayerTemplateData implements IXmlReader
+public final class PlayerTemplateData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(PlayerTemplateData.class);
 	

@@ -24,7 +24,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.engines.DocumentBase;
 import org.l2junity.gameserver.enums.ItemSkillType;
 import org.l2junity.gameserver.model.ExtractableProduct;
@@ -38,7 +38,7 @@ import org.w3c.dom.Node;
 /**
  * @author mkizub, JIV
  */
-public final class DocumentItem extends DocumentBase implements IXmlReader
+public final class DocumentItem extends DocumentBase implements IGameXmlReader
 {
 	private Item _currentItem = null;
 	private final List<L2Item> _itemsInFile = new LinkedList<>();

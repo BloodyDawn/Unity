@@ -47,7 +47,7 @@ import org.w3c.dom.Node;
  */
 public class AugmentationData
 {
-	// Zoey76: TODO: Implement using IXmlReader.
+	// Zoey76: TODO: Implement using IGameXmlReader.
 	private static final Logger LOGGER = LoggerFactory.getLogger(AugmentationData.class);
 	
 	// stats

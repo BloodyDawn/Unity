@@ -25,7 +25,7 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.StatFunction;
 import org.l2junity.gameserver.model.items.L2Item;
@@ -42,7 +42,7 @@ import org.w3c.dom.Node;
  * This class holds the Enchant HP Bonus Data.
  * @author MrPoke, Zoey76
  */
-public class EnchantItemHPBonusData implements IXmlReader
+public class EnchantItemHPBonusData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(EnchantItemHPBonusData.class);
 	

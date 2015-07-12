@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.transform.Transform;
@@ -41,7 +41,7 @@ import org.w3c.dom.Node;
 /**
  * @author UnAfraid
  */
-public final class TransformData implements IXmlReader
+public final class TransformData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(TransformData.class);
 	

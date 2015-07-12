@@ -24,7 +24,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +36,7 @@ import org.w3c.dom.Node;
  * Loads the category data with Class or NPC IDs.
  * @author NosBit, xban1x
  */
-public final class CategoryData implements IXmlReader
+public final class CategoryData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(CategoryData.class);
 	

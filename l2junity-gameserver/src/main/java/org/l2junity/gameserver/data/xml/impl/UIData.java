@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.ActionKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,7 +35,7 @@ import org.w3c.dom.Node;
  * UI Data parser.
  * @author Zoey76
  */
-public class UIData implements IXmlReader
+public class UIData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(UIData.class);
 	

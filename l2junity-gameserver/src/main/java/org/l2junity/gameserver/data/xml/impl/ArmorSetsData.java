@@ -28,7 +28,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.model.ArmorSet;
 import org.l2junity.gameserver.model.holders.ArmorsetSkillHolder;
@@ -44,7 +44,7 @@ import org.w3c.dom.Node;
  * Loads armor set bonuses.
  * @author godson, Luno, UnAfraid
  */
-public final class ArmorSetsData implements IXmlReader
+public final class ArmorSetsData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ArmorSetsData.class);
 	

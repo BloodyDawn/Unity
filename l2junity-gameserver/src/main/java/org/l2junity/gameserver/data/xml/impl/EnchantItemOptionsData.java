@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.options.EnchantOptions;
 import org.l2junity.gameserver.util.Util;
@@ -34,7 +34,7 @@ import org.w3c.dom.Node;
 /**
  * @author UnAfraid
  */
-public class EnchantItemOptionsData implements IXmlReader
+public class EnchantItemOptionsData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(EnchantItemOptionsData.class);
 	

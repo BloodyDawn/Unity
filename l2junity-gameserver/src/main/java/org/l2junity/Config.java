@@ -55,7 +55,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import org.l2junity.commons.util.PropertiesParser;
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.IllegalActionPunishmentType;
 import org.l2junity.gameserver.model.World;
@@ -3431,7 +3431,7 @@ public final class Config
 		return result;
 	}
 	
-	private static class IPConfigData implements IXmlReader
+	private static class IPConfigData implements IGameXmlReader
 	{
 		private static final List<String> _subnets = new ArrayList<>(5);
 		private static final List<String> _hosts = new ArrayList<>(5);

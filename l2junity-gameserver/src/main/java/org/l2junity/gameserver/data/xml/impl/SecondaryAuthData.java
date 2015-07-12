@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -31,7 +31,7 @@ import org.w3c.dom.Node;
 /**
  * @author NosBit
  */
-public class SecondaryAuthData implements IXmlReader
+public class SecondaryAuthData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(SecondaryAuthData.class);
 	

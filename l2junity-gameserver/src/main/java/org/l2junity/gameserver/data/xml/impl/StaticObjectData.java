@@ -23,7 +23,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
@@ -37,7 +37,7 @@ import org.w3c.dom.Node;
  * This class loads and holds all static object data.
  * @author UnAfraid
  */
-public final class StaticObjectData implements IXmlReader
+public final class StaticObjectData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(StaticObjectData.class);
 	

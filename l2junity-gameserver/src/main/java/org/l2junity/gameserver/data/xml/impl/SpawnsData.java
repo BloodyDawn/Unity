@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.ChanceLocation;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
@@ -43,7 +43,7 @@ import org.w3c.dom.Node;
 /**
  * @author UnAfraid
  */
-public class SpawnsData implements IXmlReader
+public class SpawnsData implements IGameXmlReader
 {
 	protected static final Logger LOGGER = LoggerFactory.getLogger(SpawnsData.class);
 	

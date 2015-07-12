@@ -26,7 +26,7 @@ import java.util.Map;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.instancemanager.tasks.StartMovingTask;
 import org.l2junity.gameserver.model.Location;
@@ -50,7 +50,7 @@ import org.w3c.dom.Node;
  * This class manages walking monsters.
  * @author GKR
  */
-public final class WalkingManager implements IXmlReader
+public final class WalkingManager implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(WalkingManager.class);
 	

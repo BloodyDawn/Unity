@@ -29,7 +29,7 @@ import java.util.Map;
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.file.filter.NumericNameFilter;
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.model.buylist.L2BuyList;
 import org.l2junity.gameserver.model.buylist.Product;
@@ -44,7 +44,7 @@ import org.w3c.dom.Node;
  * Loads buy lists for NPCs.
  * @author NosBit
  */
-public final class BuyListData implements IXmlReader
+public final class BuyListData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(BuyListData.class);
 	

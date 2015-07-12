@@ -24,7 +24,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -41,7 +41,7 @@ import org.w3c.dom.Node;
 /**
  * @author Gnacik, UnAfraid
  */
-public class PrimeShopData implements IXmlReader
+public class PrimeShopData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(PrimeShopData.class);
 	

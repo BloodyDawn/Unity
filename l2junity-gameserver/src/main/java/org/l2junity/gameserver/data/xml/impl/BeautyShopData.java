@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.enums.Sex;
 import org.l2junity.gameserver.model.StatsSet;
@@ -35,7 +35,7 @@ import org.w3c.dom.Node;
 /**
  * @author Sdw
  */
-public final class BeautyShopData implements IXmlReader
+public final class BeautyShopData implements IGameXmlReader
 {
 	private final Map<Race, Map<Sex, BeautyData>> _beautyList = new HashMap<>();
 	private final Map<Sex, BeautyData> _beautyData = new HashMap<>();

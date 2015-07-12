@@ -33,7 +33,7 @@ import java.util.stream.Collectors;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.CommonUtil;
-import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.AISkillScope;
 import org.l2junity.gameserver.model.StatsSet;
@@ -56,7 +56,7 @@ import org.w3c.dom.Node;
  * NPC data parser.
  * @author NosBit
  */
-public class NpcData implements IXmlReader
+public class NpcData implements IGameXmlReader
 {
 	protected static final Logger LOGGER = LoggerFactory.getLogger(NpcData.class);
 	
@@ -775,7 +775,7 @@ public class NpcData implements IXmlReader
 	 * Once Spawn System gets reworked delete this class<br>
 	 * @author Zealar
 	 */
-	private static final class MinionData implements IXmlReader
+	private static final class MinionData implements IGameXmlReader
 	{
 		private static final Logger MINION_LOGGER = LoggerFactory.getLogger(MinionData.class);
 		
