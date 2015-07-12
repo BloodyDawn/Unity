@@ -24,6 +24,7 @@ package org.l2junity.gameserver.enums;
  */
 public enum AttributeType
 {
+	NONE_ARMOR(-2),
 	NONE(-1),
 	FIRE(0),
 	WATER(1),
@@ -34,6 +35,7 @@ public enum AttributeType
 
 	static
 	{
+		NONE_ARMOR._opposite = AttributeType.NONE_ARMOR;
 		NONE._opposite = AttributeType.NONE;
 		FIRE._opposite = AttributeType.WATER;
 		WATER._opposite = AttributeType.FIRE;
@@ -42,6 +44,10 @@ public enum AttributeType
 		HOLY._opposite = AttributeType.DARK;
 		DARK._opposite = AttributeType.HOLY;
 	}
+
+	public static final AttributeType[] ATTRIBUTE_TYPES = {
+		FIRE, WATER, WIND, EARTH, HOLY, DARK
+	};
 
 	private final int _clientId;
 	private AttributeType _opposite;
