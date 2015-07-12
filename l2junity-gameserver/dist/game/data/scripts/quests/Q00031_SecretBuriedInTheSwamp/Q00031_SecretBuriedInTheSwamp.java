@@ -54,6 +54,7 @@ public final class Q00031_SecretBuriedInTheSwamp extends Quest
 		addTalkId(ABERCROMBIE, CORPSE_OF_DWARF);
 		addTalkId(MONUMENTS);
 		registerQuestItems(KRORINS_JOURNAL);
+		addCondMinLevel(MIN_LVL, "31555-03.htm");
 	}
 	
 	@Override
@@ -70,11 +71,8 @@ public final class Q00031_SecretBuriedInTheSwamp extends Quest
 		{
 			case "31555-02.html":
 			{
-				if (st.isCreated())
-				{
-					st.startQuest();
-					htmltext = event;
-				}
+				st.startQuest();
+				htmltext = event;
 				break;
 			}
 			case "31665-02.html":
@@ -113,8 +111,11 @@ public final class Q00031_SecretBuriedInTheSwamp extends Quest
 			{
 				if (st.isCond(7))
 				{
-					addExpAndSp(player, 490000, 45880);
-					giveAdena(player, 120000, true);
+					giveAdena(player, 343430, true);
+					if (player.getLevel() >= MIN_LVL)
+					{
+						addExpAndSp(player, 1_650_970, 396);
+					}
 					st.exitQuest(false, true);
 					htmltext = event;
 				}
@@ -129,10 +130,7 @@ public final class Q00031_SecretBuriedInTheSwamp extends Quest
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (st == null)
-		{
-			return htmltext;
-		}
+		
 		switch (npc.getId())
 		{
 			case ABERCROMBIE:
@@ -141,7 +139,7 @@ public final class Q00031_SecretBuriedInTheSwamp extends Quest
 				{
 					case State.CREATED:
 					{
-						htmltext = (player.getLevel() >= MIN_LVL) ? "31555-01.htm" : "31555-03.htm";
+						htmltext = "31555-03.htm";
 						break;
 					}
 					case State.STARTED:
@@ -184,18 +182,13 @@ public final class Q00031_SecretBuriedInTheSwamp extends Quest
 			}
 			case CORPSE_OF_DWARF:
 			{
-				switch (st.getCond())
+				if (st.isCond(1))
 				{
-					case 1:
-					{
-						htmltext = "31665-01.html";
-						break;
-					}
-					case 2:
-					{
-						htmltext = "31665-03.html";
-						break;
-					}
+					htmltext = "31665-01.html";
+				}
+				else if (st.isCond(2))
+				{
+					htmltext = "31665-03.html";
 				}
 				break;
 			}
