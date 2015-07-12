@@ -231,6 +231,7 @@ import quests.Q10405_KartiasSeed.Q10405_KartiasSeed;
 import quests.Q10406_BeforeDarknessBearsFruit.Q10406_BeforeDarknessBearsFruit;
 import quests.Q10408_KekropusLetterTheSwampOfScreams.Q10408_KekropusLetterTheSwampOfScreams;
 import quests.Q10409_ASuspiciousVagabondInTheSwamp.Q10409_ASuspiciousVagabondInTheSwamp;
+import quests.Q10410_EmbryoInTheSwampOfScreams.Q10410_EmbryoInTheSwampOfScreams;
 import quests.Q10460_ReturnOfTheAlligatorHunter.Q10460_ReturnOfTheAlligatorHunter;
 import quests.Q10464_BePreparedForAnything.Q10464_BePreparedForAnything;
 import quests.Q10472_WindsOfFateEncroachingShadows.Q10472_WindsOfFateEncroachingShadows;
@@ -508,6 +509,7 @@ public class QuestMasterHandler
 		Q10406_BeforeDarknessBearsFruit.class,
 		Q10408_KekropusLetterTheSwampOfScreams.class,
 		Q10409_ASuspiciousVagabondInTheSwamp.class,
+		Q10410_EmbryoInTheSwampOfScreams.class,
 		Q10460_ReturnOfTheAlligatorHunter.class,
 		Q10464_BePreparedForAnything.class,
 		Q10472_WindsOfFateEncroachingShadows.class,
