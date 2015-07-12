@@ -114,6 +114,7 @@ public final class Q10410_EmbryoInTheSwampOfScreams extends Quest
 					}
 					htmltext = event;
 				}
+				break;
 			}
 		}
 		return htmltext;

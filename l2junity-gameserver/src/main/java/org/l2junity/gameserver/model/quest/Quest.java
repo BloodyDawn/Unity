@@ -100,6 +100,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	
 	private static final String DEFAULT_NO_QUEST_MSG = "<html><body>You are either not on a quest that involves this NPC, or you don't meet this NPC's minimum quest requirements.</body></html>";
 	private static final String DEFAULT_ALREADY_COMPLETED_MSG = "<html><body>You have already completed this quest.</body></html>";
+	private static final String DEFAULT_DAILY_ALREADY_COMPLETED_MSG = "<html><body>This is a daily quest which resets at 6:30am every day.</body></html>";
 	
 	private static final String QUEST_DELETE_FROM_CHAR_QUERY = "DELETE FROM character_quests WHERE charId=? AND name=?";
 	private static final String QUEST_DELETE_FROM_CHAR_QUERY_NON_REPEATABLE_QUERY = "DELETE FROM character_quests WHERE charId=? AND name=? AND var!=?";
@@ -1815,6 +1816,20 @@ public class Quest extends AbstractScript implements IIdentifiable
 			return result;
 		}
 		return DEFAULT_ALREADY_COMPLETED_MSG;
+	}
+	
+	/**
+	 * @param player the player whose language settings to use in finding the html of the right language
+	 * @return the default html for when daily quest is already completed.
+	 */
+	public static String getDailyAlreadyCompletedMsg(PlayerInstance player)
+	{
+		final String result = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/html/DailyAlreadyCompleted.html");
+		if ((result != null) && (result.length() > 0))
+		{
+			return result;
+		}
+		return DEFAULT_DAILY_ALREADY_COMPLETED_MSG;
 	}
 	
 	// TODO: Clean up these methods

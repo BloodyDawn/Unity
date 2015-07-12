@@ -161,6 +161,7 @@ import quests.Q00699_GuardianOfTheSkies.Q00699_GuardianOfTheSkies;
 import quests.Q00700_CursedLife.Q00700_CursedLife;
 import quests.Q00701_ProofOfExistence.Q00701_ProofOfExistence;
 import quests.Q00702_ATrapForRevenge.Q00702_ATrapForRevenge;
+import quests.Q00761_AssistingTheGoldenRamArmy.Q00761_AssistingTheGoldenRamArmy;
 import quests.Q00901_HowLavasaurusesAreMade.Q00901_HowLavasaurusesAreMade;
 import quests.Q00902_ReclaimOurEra.Q00902_ReclaimOurEra;
 import quests.Q00903_TheCallOfAntharas.Q00903_TheCallOfAntharas;
@@ -439,6 +440,7 @@ public class QuestMasterHandler
 		Q00700_CursedLife.class,
 		Q00701_ProofOfExistence.class,
 		Q00702_ATrapForRevenge.class,
+		Q00761_AssistingTheGoldenRamArmy.class,
 		Q00901_HowLavasaurusesAreMade.class,
 		Q00902_ReclaimOurEra.class,
 		Q00903_TheCallOfAntharas.class,
