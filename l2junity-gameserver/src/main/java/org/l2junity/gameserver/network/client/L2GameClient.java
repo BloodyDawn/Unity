@@ -18,9 +18,6 @@
  */
 package org.l2junity.gameserver.network.client;
 
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelHandlerContext;
-
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.sql.Connection;
@@ -67,6 +64,9 @@ import org.l2junity.network.IIncomingPacket;
 import org.l2junity.network.IOutgoingPacket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandlerContext;
 
 /**
  * Represents a client connected on Game Server.
@@ -136,14 +136,13 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 		final InetSocketAddress address = (InetSocketAddress) ctx.channel().remoteAddress();
 		_addr = address.getAddress();
 		_channel = ctx.channel();
-		
-		_log.info("Client Connected: " + ctx.channel());
+		_log.debug("Client Connected: " + ctx.channel());
 	}
 	
 	@Override
 	public void channelInactive(ChannelHandlerContext ctx)
 	{
-		_log.info("Client Disconnected: " + ctx.channel());
+		_log.debug("Client Disconnected: " + ctx.channel());
 		
 		// no long running tasks here, do it async
 		try
@@ -291,7 +290,11 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 	/**
 	 * Method to handle character deletion
 	 * @param charslot
-	 * @return a byte: <li>-1: Error: No char was found for such charslot, caught exception, etc... <li>0: character is not member of any clan, proceed with deletion <li>1: character is member of a clan, but not clan leader <li>2: character is clan leader
+	 * @return a byte:
+	 *         <li>-1: Error: No char was found for such charslot, caught exception, etc...
+	 *         <li>0: character is not member of any clan, proceed with deletion
+	 *         <li>1: character is member of a clan, but not clan leader
+	 *         <li>2: character is clan leader
 	 */
 	public CharacterDeleteFailType markToDeleteChar(int charslot)
 	{
