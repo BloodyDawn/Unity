@@ -34,7 +34,6 @@ import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.data.xml.impl.ClassListData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
-import org.l2junity.gameserver.model.PageResult;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -43,6 +42,8 @@ import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
+import org.l2junity.gameserver.model.html.PageResult;
+import org.l2junity.gameserver.model.html.pagehandlers.DefaultPageHandler;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.AcquireSkillList;
 import org.l2junity.gameserver.network.client.send.ExVoteSystemInfo;
@@ -904,17 +905,12 @@ public class AdminEditChar implements IAdminCommandHandler
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/charlist.htm");
 		
-		final PageResult result = HtmlUtil.createPage(players, page, 20, i ->
+		final PageResult result = HtmlUtil.createPage(players, page, 20, new DefaultPageHandler(page, 3, "bypass -h admin_show_characters"), (pages, player, sb) ->
 		{
-			return "<td align=center><a action=\"bypass -h admin_show_characters " + i + "\">Page " + (i + 1) + "</a></td>";
-		}, player ->
-		{
-			StringBuilder sb = new StringBuilder();
 			sb.append("<tr>");
 			sb.append("<td width=80><a action=\"bypass -h admin_character_info " + player.getName() + "\">" + player.getName() + "</a></td>");
 			sb.append("<td width=110>" + ClassListData.getInstance().getClass(player.getClassId()).getClientCode() + "</td><td width=40>" + player.getLevel() + "</td>");
 			sb.append("</tr>");
-			return sb.toString();
 		});
 		
 		if (result.getPages() > 0)

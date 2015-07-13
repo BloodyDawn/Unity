@@ -46,12 +46,18 @@ public class RequestTutorialPassCmdToServer implements IClientIncomingPacket
 			return;
 		}
 		
-		final IBypassHandler handler = BypassHandler.getInstance().getHandler(_bypass);
-		if (handler != null)
+		if (_bypass.startsWith("admin_"))
 		{
-			handler.useBypass(_bypass, player, null);
+			player.useAdminCommand(_bypass);
 		}
-		
+		else
+		{
+			final IBypassHandler handler = BypassHandler.getInstance().getHandler(_bypass);
+			if (handler != null)
+			{
+				handler.useBypass(_bypass, player, null);
+			}
+		}
 		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerBypass(player, _bypass), player);
 	}
 }

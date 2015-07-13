@@ -28,7 +28,12 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.html.PageResult;
+import org.l2junity.gameserver.model.html.pagehandlers.NextPrevPageHandler;
+import org.l2junity.gameserver.model.html.styles.ButtonsStyle;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+import org.l2junity.gameserver.util.HtmlUtil;
+import org.l2junity.gameserver.util.Util;
 
 /**
  * @author NosBit
@@ -53,7 +58,8 @@ public class AdminScan implements IAdminCommandHandler
 			case "admin_scan":
 			{
 				int radius = DEFAULT_RADIUS;
-				if (st.hasMoreElements())
+				int page = 0;
+				if (st.hasMoreTokens())
 				{
 					try
 					{
@@ -66,7 +72,18 @@ public class AdminScan implements IAdminCommandHandler
 					}
 				}
 				
-				sendNpcList(activeChar, radius);
+				if (st.hasMoreTokens())
+				{
+					try
+					{
+						page = Integer.parseInt(st.nextToken());
+					}
+					catch (NumberFormatException e)
+					{
+					}
+				}
+				
+				sendNpcList(activeChar, radius, page);
 				break;
 			}
 			case "admin_deletenpcbyobjectid":
@@ -76,11 +93,19 @@ public class AdminScan implements IAdminCommandHandler
 					activeChar.sendMessage("Usage: //deletenpcbyobjectid <object_id>");
 					return false;
 				}
-				
+				int page = 0;
 				try
 				{
 					int objectId = Integer.parseInt(st.nextToken());
 					
+					try
+					{
+						page = Integer.parseInt(st.nextToken());
+					}
+					catch (NumberFormatException e)
+					{
+					}
+
 					final WorldObject target = World.getInstance().findObject(objectId);
 					final Npc npc = target instanceof Npc ? (Npc) target : null;
 					if (npc == null)
@@ -114,29 +139,37 @@ public class AdminScan implements IAdminCommandHandler
 					return false;
 				}
 				
-				sendNpcList(activeChar, DEFAULT_RADIUS);
+				sendNpcList(activeChar, DEFAULT_RADIUS, page);
 				break;
 			}
 		}
 		return true;
 	}
 	
-	private void sendNpcList(PlayerInstance activeChar, int radius)
+	private void sendNpcList(PlayerInstance activeChar, int radius, int page)
 	{
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/scan.htm");
-		final StringBuilder sb = new StringBuilder();
-		World.getInstance().forEachVisibleObjectInRange(activeChar, Npc.class, radius, character ->
+		final PageResult result = HtmlUtil.createPage(World.getInstance().getVisibleObjects(activeChar, Npc.class, radius), page, 15, new NextPrevPageHandler(page, "bypass -h admin_scan " + radius, ButtonsStyle.INSTANCE), (pages, character, sb) ->
 		{
 			sb.append("<tr>");
-			sb.append("<td width=\"54\">" + character.getId() + "</td>");
-			sb.append("<td width=\"54\">" + character.getName() + "</td>");
-			sb.append("<td width=\"54\">" + Math.round(activeChar.calculateDistance(character, false, false)) + "</td>");
+			sb.append("<td width=\"45\">" + character.getId() + "</td>");
+			sb.append("<td><a action=\"bypass -h admin_move_to " + character.getX() + " " + character.getY() + " " + character.getZ() + "\">" + character.getName() + "</a></td>");
+			sb.append("<td width=\"60\">" + Util.formatAdena(Math.round(activeChar.calculateDistance(character, false, false))) + "</td>");
 			sb.append("<td width=\"54\"><a action=\"bypass -h admin_deleteNpcByObjectId " + character.getObjectId() + "\"><font color=\"LEVEL\">Delete</font></a></td>");
-			sb.append("<td width=\"54\"><a action=\"bypass -h admin_move_to " + character.getX() + " " + character.getY() + " " + character.getZ() + "\"><font color=\"LEVEL\">Go to</font></a></td>");
 			sb.append("</tr>");
 		});
-		html.replace("%data%", sb.toString());
+		
+		if (result.getPages() > 0)
+		{
+			html.replace("%pages%", "<center><table width=\"100%\" cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table></center>");
+		}
+		else
+		{
+			html.replace("%pages%", "");
+		}
+
+		html.replace("%data%", result.getBodyTemplate().toString());
 		activeChar.sendPacket(html);
 	}
 	

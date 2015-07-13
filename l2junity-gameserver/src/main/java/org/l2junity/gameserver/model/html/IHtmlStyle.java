@@ -16,36 +16,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model;
+package org.l2junity.gameserver.model.html;
 
 /**
  * @author UnAfraid
+ *
  */
-public class PageResult
+public interface IHtmlStyle
 {
-	private final int _pages;
-	private final StringBuilder _pagerTemplate;
-	private final StringBuilder _bodyTemplate;
+	String formatBypass(String bypass, String name, boolean isEnabled);
 	
-	public PageResult(int pages, StringBuilder pagerTemplate, StringBuilder bodyTemplate)
-	{
-		_pages = pages;
-		_pagerTemplate = pagerTemplate;
-		_bodyTemplate = bodyTemplate;
-	}
-	
-	public int getPages()
-	{
-		return _pages;
-	}
-	
-	public StringBuilder getPagerTemplate()
-	{
-		return _pagerTemplate;
-	}
-	
-	public StringBuilder getBodyTemplate()
-	{
-		return _bodyTemplate;
-	}
+	String formatSeparator();
 }

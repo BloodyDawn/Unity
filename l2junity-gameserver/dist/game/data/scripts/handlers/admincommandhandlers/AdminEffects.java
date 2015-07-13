@@ -24,13 +24,14 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
-import org.l2junity.gameserver.model.PageResult;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2ChestInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.html.PageResult;
+import org.l2junity.gameserver.model.html.pagehandlers.DefaultPageHandler;
 import org.l2junity.gameserver.model.skills.AbnormalVisualEffect;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.Earthquake;
@@ -560,12 +561,9 @@ public class AdminEffects implements IAdminCommandHandler
 						activeChar.sendMessage("Incorrect page.");
 					}
 				}
-				final PageResult result = HtmlUtil.createPage(AbnormalVisualEffect.values(), page, 100, i ->
+				final PageResult result = HtmlUtil.createPage(AbnormalVisualEffect.values(), page, 100, new DefaultPageHandler(page, 3, "bypass -h admin_ave_abnormal"), (pages, ave, sb) ->
 				{
-					return "<td align=center><a action=\"bypass -h admin_ave_abnormal " + i + "\">Page " + (i + 1) + "</a></td>";
-				}, ave ->
-				{
-					return "<button action=\"bypass admin_ave_abnormal " + ave.name() + "\" align=left icon=teleport>" + ave.name() + "(" + ave.getClientId() + ")</button>";
+					sb.append(String.format("<button action=\"bypass admin_ave_abnormal %s\" align=left icon=teleport>%s(%d)</button>", ave.name(), ave.name(), ave.getClientId()));
 				});
 				
 				final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);

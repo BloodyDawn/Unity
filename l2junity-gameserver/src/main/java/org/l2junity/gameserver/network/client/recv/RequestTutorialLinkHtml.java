@@ -46,14 +46,21 @@ public class RequestTutorialLinkHtml implements IClientIncomingPacket
 			return;
 		}
 		
-		final IBypassHandler handler = BypassHandler.getInstance().getHandler(_bypass);
-		if (handler != null)
+		if (_bypass.startsWith("admin_"))
 		{
-			handler.useBypass(_bypass, player, null);
+			player.useAdminCommand(_bypass);
 		}
 		else
 		{
-			L2ClassMasterInstance.onTutorialLink(player, _bypass);
+			final IBypassHandler handler = BypassHandler.getInstance().getHandler(_bypass);
+			if (handler != null)
+			{
+				handler.useBypass(_bypass, player, null);
+			}
+			else
+			{
+				L2ClassMasterInstance.onTutorialLink(player, _bypass);
+			}
 		}
 	}
 }
