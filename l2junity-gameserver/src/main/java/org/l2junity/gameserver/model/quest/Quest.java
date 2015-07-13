@@ -40,6 +40,7 @@ import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.enums.CategoryType;
+import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.enums.TrapAction;
 import org.l2junity.gameserver.instancemanager.QuestManager;
@@ -99,8 +100,6 @@ public class Quest extends AbstractScript implements IIdentifiable
 	private int[] _questItemIds = null;
 	
 	private static final String DEFAULT_NO_QUEST_MSG = "<html><body>You are either not on a quest that involves this NPC, or you don't meet this NPC's minimum quest requirements.</body></html>";
-	private static final String DEFAULT_ALREADY_COMPLETED_MSG = "<html><body>You have already completed this quest.</body></html>";
-	private static final String DEFAULT_DAILY_ALREADY_COMPLETED_MSG = "<html><body>This is a daily quest which resets at 6:30am every day.</body></html>";
 	
 	private static final String QUEST_DELETE_FROM_CHAR_QUERY = "DELETE FROM character_quests WHERE charId=? AND name=?";
 	private static final String QUEST_DELETE_FROM_CHAR_QUERY_NON_REPEATABLE_QUERY = "DELETE FROM character_quests WHERE charId=? AND name=? AND var!=?";
@@ -1806,30 +1805,21 @@ public class Quest extends AbstractScript implements IIdentifiable
 	
 	/**
 	 * @param player the player whose language settings to use in finding the html of the right language
-	 * @return the default html for when no quest is already completed: "This quest has already been completed."
+	 * @return the default html for when quest is already completed
 	 */
 	public static String getAlreadyCompletedMsg(PlayerInstance player)
 	{
-		final String result = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/html/alreadycompleted.htm");
-		if ((result != null) && (result.length() > 0))
-		{
-			return result;
-		}
-		return DEFAULT_ALREADY_COMPLETED_MSG;
+		return getAlreadyCompletedMsg(player, QuestType.ONE_TIME);
 	}
 	
 	/**
 	 * @param player the player whose language settings to use in finding the html of the right language
-	 * @return the default html for when daily quest is already completed.
+	 * @param type the Quest type
+	 * @return the default html for when quest is already completed
 	 */
-	public static String getDailyAlreadyCompletedMsg(PlayerInstance player)
+	public static String getAlreadyCompletedMsg(PlayerInstance player, QuestType type)
 	{
-		final String result = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/html/DailyAlreadyCompleted.html");
-		if ((result != null) && (result.length() > 0))
-		{
-			return result;
-		}
-		return DEFAULT_DAILY_ALREADY_COMPLETED_MSG;
+		return HtmCache.getInstance().getHtm(player.getHtmlPrefix(), (type == QuestType.ONE_TIME ? "data/html/alreadyCompleted.html" : "data/html/alreadyCompletedDaily.html"));
 	}
 	
 	// TODO: Clean up these methods

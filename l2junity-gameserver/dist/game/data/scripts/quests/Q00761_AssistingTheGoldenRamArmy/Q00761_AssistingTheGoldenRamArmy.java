@@ -163,7 +163,7 @@ public final class Q00761_AssistingTheGoldenRamArmy extends Quest
 			{
 				if (!st.isNowAvailable())
 				{
-					htmltext = getDailyAlreadyCompletedMsg(player);
+					htmltext = getAlreadyCompletedMsg(player, QuestType.DAILY);
 				}
 				else
 				{
