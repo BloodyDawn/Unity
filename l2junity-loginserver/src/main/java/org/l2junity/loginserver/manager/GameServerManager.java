@@ -64,7 +64,7 @@ public class GameServerManager implements IXmlReader
 			{
 				for (Node gameServerNode = gameServersNode.getFirstChild(); gameServerNode != null; gameServerNode = gameServerNode.getNextSibling())
 				{
-					if (gameServerNode.getNodeName().endsWith("gameServer"))
+					if (gameServerNode.getNodeName().equals("gameServer"))
 					{
 						final NamedNodeMap attributes = gameServerNode.getAttributes();
 						final short id = parseShort(attributes, "id");
