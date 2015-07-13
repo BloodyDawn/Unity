@@ -105,6 +105,7 @@
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
 		<ai clanHelpRange="300" />
+		<status targetable="false" showName="false" />
 		<collision>
 			<radius normal="90" />
 			<height normal="190" />
@@ -4026,7 +4027,7 @@
 				<defence fire="0" water="0" wind="0" earth="0" holy="0" dark="0" />
 			</attribute>
 		</stats>
-		<status attackable="false" />
+		<status attackable="false" targetable="false" />
 		<skill_list>
 			<skill id="5464" level="1" /> <!-- Wind Attack -->
 			<skill id="4416" level="10" /> <!-- Dragons -->
