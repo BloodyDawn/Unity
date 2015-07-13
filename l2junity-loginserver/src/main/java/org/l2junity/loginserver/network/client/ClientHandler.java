@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2004-2013 L2J Server
+ * Copyright (C) 2004-2015 L2J Unity
  *
- * This file is part of L2J Server.
+ * This file is part of L2J Unity.
  *
- * L2J Server is free software: you can redistribute it and/or modify
+ * L2J Unity is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * L2J Server is distributed in the hope that it will be useful,
+ * L2J Unity is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
@@ -24,7 +24,6 @@ import io.netty.channel.ChannelHandlerContext;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.util.Arrays;
-import java.util.logging.Logger;
 
 import javax.crypto.SecretKey;
 
@@ -36,13 +35,15 @@ import org.l2junity.loginserver.network.client.send.Init;
 import org.l2junity.network.ChannelInboundHandler;
 import org.l2junity.network.IIncomingPacket;
 import org.l2junity.network.IOutgoingPacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * @author Nos
+ * @author NosBit
  */
 public class ClientHandler extends ChannelInboundHandler<ClientHandler>
 {
-	private static final Logger _log = Logger.getLogger(ClientHandler.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(ClientHandler.class);
 	
 	private InetAddress _address;
 	private int _connectionId;
@@ -73,19 +74,19 @@ public class ClientHandler extends ChannelInboundHandler<ClientHandler>
 		_connectionId = LoginManager.getInstance().getNextConnectionId();
 		sendPacket(new Init(_connectionId, _scrambledRSAKeyPair, _blowfishKey));
 		
-		_log.info("Client Connected: " + ctx.channel());
+		LOGGER.info("Client Connected: " + ctx.channel());
 	}
 	
 	@Override
 	public void channelInactive(ChannelHandlerContext ctx)
 	{
-		_log.info("Client Disconnected: " + ctx.channel());
+		LOGGER.info("Client Disconnected: " + ctx.channel());
 	}
 	
 	@Override
 	protected void messageReceived(ChannelHandlerContext ctx, IIncomingPacket<ClientHandler> packet)
 	{
-		_log.info(packet.getClass().getSimpleName() + " packet from: " + ctx.channel());
+		LOGGER.info(packet.getClass().getSimpleName() + " packet from: " + ctx.channel());
 		try
 		{
 			packet.run(this);

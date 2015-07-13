@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2004-2015 L2J Server
+ * Copyright (C) 2004-2015 L2J Unity
  * 
- * This file is part of L2J Server.
+ * This file is part of L2J Unity.
  * 
- * L2J Server is free software: you can redistribute it and/or modify
+ * L2J Unity is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * L2J Server is distributed in the hope that it will be useful,
+ * L2J Unity is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
@@ -28,7 +28,7 @@ import org.l2junity.network.IIncomingPacket;
 import org.l2junity.network.IIncomingPackets;
 
 /**
- * @author Nos
+ * @author NosBit
  */
 enum IncomingPackets implements IIncomingPackets<GameServerHandler>
 {
@@ -50,7 +50,7 @@ enum IncomingPackets implements IIncomingPackets<GameServerHandler>
 	private Supplier<IIncomingPacket<GameServerHandler>> _incomingPacketFactory;
 	private Set<IConnectionState> _connectionStates;
 	
-	private IncomingPackets(int packetId, Supplier<IIncomingPacket<GameServerHandler>> incomingPacketFactory, IConnectionState... connectionStates)
+	IncomingPackets(int packetId, Supplier<IIncomingPacket<GameServerHandler>> incomingPacketFactory, IConnectionState... connectionStates)
 	{
 		// packetId is an unsigned byte
 		if (packetId > 0xFF)

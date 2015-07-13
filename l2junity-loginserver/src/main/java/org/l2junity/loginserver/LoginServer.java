@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2004-2013 L2J Server
+ * Copyright (C) 2004-2015 L2J Unity
  *
- * This file is part of L2J Server.
+ * This file is part of L2J Unity.
  *
- * L2J Server is free software: you can redistribute it and/or modify
+ * L2J Unity is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * L2J Server is distributed in the hope that it will be useful,
+ * L2J Unity is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
@@ -18,19 +18,21 @@
  */
 package org.l2junity.loginserver;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
+
+import org.l2junity.loginserver.manager.GameServerManager;
 import org.l2junity.loginserver.network.client.ClientNetworkManager;
 import org.l2junity.loginserver.network.client.crypt.KeyManager;
 import org.l2junity.loginserver.network.gameserver.GameServerNetworkManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * @author UnAfraid
+ * @author NosBit
  */
 public class LoginServer
 {
-	private static final Logger _log = Logger.getLogger(LoginServer.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(LoginServer.class);
 	
 	private LoginServer()
 	{
@@ -41,6 +43,9 @@ public class LoginServer
 			
 			printSection("Database");
 			DatabaseFactory.getInstance();
+
+			printSection("Data");
+			GameServerManager.getInstance();
 			
 			printSection("Network");
 			KeyManager.getInstance();
@@ -49,18 +54,28 @@ public class LoginServer
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Error while initializing: ", e);
+			LOGGER.warn("Error while initializing: ", e);
+		}
+
+		try
+		{
+			GameServerNetworkManager.getInstance().getChannelFuture().channel().closeFuture().sync();
+			ClientNetworkManager.getInstance().getChannelFuture().channel().closeFuture().sync();
+		}
+		catch (InterruptedException e)
+		{
+			LOGGER.warn("", e);
 		}
 	}
 	
 	public static void printSection(String s)
 	{
 		s = "=[ " + s + " ]";
-		while (s.length() < 78)
+		while (s.length() < 65 - LoginServer.class.getSimpleName().length())
 		{
 			s = "-" + s;
 		}
-		_log.info(s);
+		LOGGER.info(s);
 	}
 	
 	public static void main(String[] args)

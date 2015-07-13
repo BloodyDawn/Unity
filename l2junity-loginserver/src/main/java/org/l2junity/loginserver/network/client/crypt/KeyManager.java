@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2004-2014 L2J Server
+ * Copyright (C) 2004-2015 L2J Unity
  * 
- * This file is part of L2J Server.
+ * This file is part of L2J Unity.
  * 
- * L2J Server is free software: you can redistribute it and/or modify
+ * L2J Unity is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * L2J Server is distributed in the hope that it will be useful,
+ * L2J Unity is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
@@ -31,11 +31,11 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Manages the keys and key pairs required for network communication.
- * @author Nos
+ * @author NosBit
  */
 public class KeyManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(KeyManager.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(KeyManager.class);
 	
 	private final KeyGenerator _blowfishKeyGenerator;
 	private final ScrambledRSAKeyPair[] _scrambledRSAKeyPairs = new ScrambledRSAKeyPair[50];
@@ -53,7 +53,7 @@ public class KeyManager
 			_scrambledRSAKeyPairs[i] = new ScrambledRSAKeyPair(rsaKeyPairGenerator.generateKeyPair());
 		}
 		
-		_log.info("Cached " + _scrambledRSAKeyPairs.length + " RSA key pairs.");
+		LOGGER.info("Cached {} RSA key pairs.", _scrambledRSAKeyPairs.length);
 	}
 	
 	/**

@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'distribution'
 
 defaultTasks('build')
 
@@ -31,6 +32,19 @@ jar {
 	manifest {
 		attributes('Built-By': System.getProperty('user.name'),
 				'Implementation-URL': 'http://www.l2junity.org/',
+				'Main-Class': 'org.l2junity.loginserver.LoginServer',
+				'Class-Path': configurations.runtime.collect({ 'libs/' + it.getName() }).join(' ')
 			)
+	}
+}
+
+distributions {
+	main {
+		contents {
+			into('libs') {
+				from(configurations.runtime)
+			}
+			from(jar)
+		}
 	}
 }

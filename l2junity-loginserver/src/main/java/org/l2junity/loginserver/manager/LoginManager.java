@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2004-2014 L2J Server
+ * Copyright (C) 2004-2015 L2J Unity
  *
- * This file is part of L2J Server.
+ * This file is part of L2J Unity.
  *
- * L2J Server is free software: you can redistribute it and/or modify
+ * L2J Unity is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * L2J Server is distributed in the hope that it will be useful,
+ * L2J Unity is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
@@ -22,8 +22,6 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.util.Base64;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.loginserver.Config;
 import org.l2junity.loginserver.DatabaseFactory;
@@ -39,13 +37,15 @@ import org.l2junity.loginserver.network.client.send.LoginOk;
 import org.l2junity.loginserver.network.client.send.LoginOtpFail;
 import org.l2junity.loginserver.network.client.send.ServerList;
 import org.skife.jdbi.v2.exceptions.DBIException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * @author Nos
+ * @author NosBit
  */
 public class LoginManager
 {
-	private final Logger _log = Logger.getLogger(LoginManager.class.getName());
+	private final Logger LOGGER = LoggerFactory.getLogger(LoginManager.class);
 	
 	private MessageDigest _passwordHashCrypt;
 	private final AtomicInteger _connectionId = new AtomicInteger();
@@ -58,7 +58,7 @@ public class LoginManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Failed initializing: " + e.getMessage(), e);
+			LOGGER.error("Failed initializing:", e);
 		}
 	}
 	
@@ -73,7 +73,7 @@ public class LoginManager
 			{
 				long accountId = accountsDAO.insert(name, passwordHashBase64);
 				account = accountsDAO.findById(accountId);
-				_log.info("Auto created account '" + name + "'.");
+				LOGGER.info("Auto created account [{}]", name);
 			}
 			
 			if ((account == null) || !account.getPassword().equals(passwordHashBase64))
@@ -125,7 +125,7 @@ public class LoginManager
 		}
 		catch (DBIException e)
 		{
-			_log.log(Level.WARNING, "There was an error while logging in Name: " + name + " Password: " + password + " OTP: " + otp);
+			LOGGER.warn("There was an error while logging in Name: {}", name);
 			client.close(LoginFail2.SYSTEM_ERROR);
 		}
 	}

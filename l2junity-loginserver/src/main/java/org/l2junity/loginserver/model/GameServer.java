@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2004-2014 L2J Server
+ * Copyright (C) 2004-2015 L2J Unity
  *
- * This file is part of L2J Server.
+ * This file is part of L2J Unity.
  *
- * L2J Server is free software: you can redistribute it and/or modify
+ * L2J Unity is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * L2J Server is distributed in the hope that it will be useful,
+ * L2J Unity is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
@@ -24,7 +24,7 @@ import org.l2junity.loginserver.model.enums.AgeLimit;
 import org.l2junity.loginserver.model.enums.ServerType;
 
 /**
- * @author Nos
+ * @author NosBit
  */
 public class GameServer
 {
@@ -107,5 +107,41 @@ public class GameServer
 	public int getServerTypesMask()
 	{
 		return _serverTypes.stream().mapToInt(ServerType::getMask).reduce((r, e) -> r | e).orElse(0);
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (o == null || getClass() != o.getClass())
+		{
+			return false;
+		}
+
+		GameServer that = (GameServer) o;
+
+		return _id == that._id;
+
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return (int) _id;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "GameServer{" +
+			"id=" + _id +
+			", name='" + _name + '\'' +
+			", showing=" + _showing +
+			", ageLimit=" + _ageLimit +
+			", serverTypes=" + _serverTypes +
+			'}';
 	}
 }

@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2004-2015 L2J Server
+ * Copyright (C) 2004-2015 L2J Unity
  * 
- * This file is part of L2J Server.
+ * This file is part of L2J Unity.
  * 
- * L2J Server is free software: you can redistribute it and/or modify
+ * L2J Unity is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * L2J Server is distributed in the hope that it will be useful,
+ * L2J Unity is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
@@ -32,27 +32,27 @@ import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
 
 /**
- * @author Nos
+ * @author NosBit
  */
 @RegisterMapper(AccountOTPMapper.class)
 public interface AccountOTPsDAO extends Closeable
 {
 	@SqlUpdate("INSERT INTO `account_otps`(`account_id`, `name`, `code`) VALUES(:accountId, :name, :code)")
 	@GetGeneratedKeys
-	public long insert(@Bind("accountId") long accountId, @Bind("name") String name, @Bind("code") String code);
+	long insert(@Bind("accountId") long accountId, @Bind("name") String name, @Bind("code") String code);
 	
 	@SqlUpdate("DELETE FROM `account_otps` WHERE `id` = :id")
-	public int delete(@Bind("id") long id);
+	int delete(@Bind("id") long id);
 	
 	@SqlUpdate("DELETE FROM `account_otps` WHERE `id` = :id")
-	public int delete(@BindBean AccountOTP accountOTP);
+	int delete(@BindBean AccountOTP accountOTP);
 	
 	@SqlQuery("SELECT * FROM `account_otps` WHERE `account_id` = :accountId")
-	public List<AccountOTP> findByAccountId(@Bind("accountId") long accountId);
+	List<AccountOTP> findByAccountId(@Bind("accountId") long accountId);
 	
 	@SqlQuery("SELECT * FROM `account_otps` WHERE `account_id` = :id")
-	public List<AccountOTP> findByAccountId(@BindBean Account account);
+	List<AccountOTP> findByAccountId(@BindBean Account account);
 	
 	@Override
-	public void close();
+	void close();
 }

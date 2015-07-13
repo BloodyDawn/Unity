@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2004-2015 L2J Server
+ * Copyright (C) 2004-2015 L2J Unity
  * 
- * This file is part of L2J Server.
+ * This file is part of L2J Unity.
  * 
- * L2J Server is free software: you can redistribute it and/or modify
+ * L2J Unity is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * L2J Server is distributed in the hope that it will be useful,
+ * L2J Unity is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
@@ -19,8 +19,8 @@
 package org.l2junity.loginserver.model.enums;
 
 /**
- * {@code AgeLimit} is an {@code enum} representing the age limit such as None, Fifteen and Eighteen.
- * @author Nos
+ * An {@code enum} representing the age limit such as None, Fifteen and Eighteen.
+ * @author NosBit
  */
 public enum AgeLimit
 {
@@ -34,7 +34,7 @@ public enum AgeLimit
 	 * Creates an age limit instance.
 	 * @param age the age
 	 */
-	private AgeLimit(int age)
+	AgeLimit(int age)
 	{
 		_age = age;
 	}
