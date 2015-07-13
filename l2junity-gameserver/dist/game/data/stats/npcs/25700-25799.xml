@@ -2047,7 +2047,7 @@
 			<param name="RaidSpawnMusic" value="Rm03_A" />
 			<skill name="RangeHold_a" id="4197" level="2" /> <!-- Hold -->
 		</parameters>
-		<race>HUMANOID</race>
+		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<equipment rhand="67" lhand="633" /> <!-- rhand: Orcish Sword lhand: Zubei's Shield -->
 		<acquire expRate="332.11308641975" sp="83882" />
@@ -2090,6 +2090,7 @@
 	</npc>
 	<npc id="25736" level="90" type="L2Monster" name="Fairy Rogue" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<equipment rhand="7" /> <!-- rhand: Apprentice's Rod -->
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2130,6 +2131,7 @@
 	</npc>
 	<npc id="25737" level="90" type="L2Monster" name="Fairy Knight" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<equipment rhand="123" /> <!-- rhand: Saber -->
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2177,7 +2179,7 @@
 			<skill name="PhysicalSpecial_b" id="4743" level="2" /> <!-- BOSS Strike -->
 		</parameters>
 		<race>HUMANOID</race>
-		<sex>MALE</sex>
+		<sex>FEMALE</sex>
 		<equipment rhand="291" /> <!-- rhand: Trident -->
 		<acquire expRate="332.11308641975" sp="83882" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2220,7 +2222,8 @@
 	</npc>
 	<npc id="25739" level="90" type="L2Monster" name="Satyr Summoner" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
-		<sex>MALE</sex>
+		<race>HUMANOID</race>
+		<sex>FEMALE</sex>
 		<equipment rhand="2" /> <!-- rhand: Long Sword -->
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="28001" hpRegen="17.157688" mp="3035" mpRegen="1.5" />
@@ -2259,7 +2262,8 @@
 	</npc>
 	<npc id="25740" level="90" type="L2Monster" name="Satyr Witch" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
-		<sex>MALE</sex>
+		<race>HUMANOID</race>
+		<sex>FEMALE</sex>
 		<equipment rhand="2507" /> <!-- rhand: Lizardspear -->
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="28001" hpRegen="17.157688" mp="2023" mpRegen="1.5" />
@@ -2306,7 +2310,7 @@
 			<param name="RaidSpawnMusic" value="Rm02_A" />
 			<skill name="RangeDDMagic_a" id="4178" level="2" /> <!-- BOSS Flamestrike -->
 		</parameters>
-		<race>HUMANOID</race>
+		<race>PLANT</race>
 		<sex>MALE</sex>
 		<equipment rhand="216" /> <!-- rhand: Dirk -->
 		<acquire expRate="2" sp="60367" />
@@ -2348,7 +2352,8 @@
 	</npc>
 	<npc id="25742" level="90" type="L2Monster" name="Centaur Archer" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
-		<sex>MALE</sex>
+		<race>FAIRY</race>
+		<sex>FEMALE</sex>
 		<equipment rhand="216" /> <!-- rhand: Dirk -->
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="28001" hpRegen="16.540032" mp="2023" mpRegen="1.2" />
@@ -2386,6 +2391,7 @@
 	</npc>
 	<npc id="25743" level="90" type="L2Monster" name="Beorning Berserker" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="179" /> <!-- rhand: Mace of Prayer -->
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2433,7 +2439,7 @@
 			<param name="RaidSpawnMusic" value="Rm03_A" />
 			<skill name="RangeDDMagic_a" id="4178" level="2" /> <!-- BOSS Flamestrike -->
 		</parameters>
-		<race>UNDEAD</race>
+		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="150" /> <!-- rhand: Elemental Sword -->
 		<acquire sp="147445" expRate="191.92066175583" />
@@ -2480,7 +2486,8 @@
 	</npc>
 	<npc id="25745" level="92" type="L2RaidBoss" name="Kimerian" title="Fairy Leader">
 		<!-- TODO: Must be confirmed -->
-		<sex>FEMALE</sex>
+		<race>FAIRY</race>
+		<sex>MALE</sex>
 		<acquire expRate="16080" sp="32664" />
 		<stats str="79" int="74" dex="42" wit="65" con="75" men="72">
 			<vitals hp="648663" hpRegen="23.437467" mp="1917" mpRegen="1.5" />
@@ -2588,6 +2595,7 @@
 	</npc>
 	<npc id="25746" level="90" type="L2Monster" name="Kimerian Ghost" title="">
 		<!-- TODO: Must be confirmed -->
+		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<equipment rhand="299" /> <!-- rhand: Orcish Poleaxe -->
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2674,9 +2682,11 @@
 			<radius normal="22" />
 			<height normal="52" />
 		</collision>
+		<race>FAIRY</race>
 	</npc>
 	<npc id="25748" level="93" type="L2Monster" name="Fairy Warrior" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<equipment rhand="14" /> <!-- rhand: Bow -->
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2718,6 +2728,7 @@
 	</npc>
 	<npc id="25749" level="94" type="L2Monster" name="Fairy Rogue" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" /> <!-- rhand: Skeleton Dagger -->
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2766,7 +2777,7 @@
 			<param name="RaidSpawnMusic" value="Rm02_A" />
 			<skill name="RangeDDMagic_a" id="4178" level="2" /> <!-- BOSS Flamestrike -->
 		</parameters>
-		<race>UNDEAD</race>
+		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="351.68990634755" sp="71560" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2812,7 +2823,8 @@
 	</npc>
 	<npc id="25751" level="93" type="L2Monster" name="Satyr Wizard" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
-		<sex>MALE</sex>
+		<race>HUMANOID</race>
+		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="14467" hpRegen="16.294366" mp="3198" mpRegen="1.2" />
 			<attack physical="179.4779" magical="33.83233" attackSpeed="253" range="40" />
@@ -2854,7 +2866,8 @@
 	</npc>
 	<npc id="25752" level="94" type="L2Monster" name="Satyr Summoner" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
-		<sex>MALE</sex>
+		<race>HUMANOID</race>
+		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="14547" hpRegen="16.294366" mp="3253" mpRegen="1.2" />
 			<attack physical="89.73895" magical="8.45808" attackSpeed="253" range="40" />
@@ -2904,8 +2917,8 @@
 			<skill name="PhysicalSpecial_a" id="4726" level="4" /> <!-- Stun -->
 			<skill name="SelfRangePhysicalSpecial_a" id="4736" level="4" /> <!-- BOSS Spinning Slash -->
 		</parameters>
-		<race>UNDEAD</race>
-		<sex>MALE</sex>
+		<race>HUMANOID</race>
+		<sex>FEMALE</sex>
 		<equipment rhand="96" /> <!-- rhand: Scythe -->
 		<acquire sp="172964" expRate="216.43209597103" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2962,7 +2975,7 @@
 			<skill name="SelfRangeDebuff_a" id="4182" level="3" /> <!-- Poison -->
 			<skill name="SelfRangeDebuffAnother_a" id="4186" level="3" /> <!-- Hold -->
 		</parameters>
-		<race>DEMONIC</race>
+		<race>PLANT</race>
 		<sex>MALE</sex>
 		<acquire sp="144137" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3008,7 +3021,8 @@
 	</npc>
 	<npc id="25755" level="93" type="L2Monster" name="Centaur Archer" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
-		<sex>MALE</sex>
+		<race>FAIRY</race>
+		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="14467" hpRegen="25.612831" mp="2132" mpRegen="1.8" />
 			<attack physical="606.9712" magical="192.64979" attackSpeed="253" range="40" />
@@ -3045,7 +3059,8 @@
 	</npc>
 	<npc id="25756" level="94" type="L2Monster" name="Beorning Berserker" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
-		<sex>FEMALE</sex>
+		<race>BEAST</race>
+		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="14547" hpRegen="25.612831" mp="2169" mpRegen="1.8" />
 			<attack physical="303.4856" magical="48.16245" attackSpeed="253" range="40" />
@@ -3092,7 +3107,7 @@
 			<param name="RaidSpawnMusic" value="Rm01_A" />
 			<skill name="RangeHold_a" id="4197" level="3" /> <!-- Hold -->
 		</parameters>
-		<race>DEMONIC</race>
+		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="192" /> <!-- rhand: Crystal Staff -->
 		<acquire sp="172964" expRate="216.43209597103" />
@@ -3137,6 +3152,7 @@
 	</npc>
 	<npc id="25758" level="95" type="L2RaidBoss" name="Kimerian" title="Fairy Leader">
 		<!-- TODO: Must be confirmed -->
+		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="16080" sp="34829" />
 		<stats str="79" int="74" dex="42" wit="65" con="75" men="72">
@@ -3241,6 +3257,7 @@
 	</npc>
 	<npc id="25759" level="92" type="L2Monster" name="Kimerian Ghost" title="Fairy Leader">
 		<!-- TODO: Must be confirmed -->
+		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="31979" hpRegen="25.612831" mp="1988" mpRegen="1.8" />
@@ -3287,7 +3304,7 @@
 			<param name="RaidSpawnMusic" value="Rm01_A" />
 			<skill name="RangeHold_a" id="4197" level="6" /> <!-- Hold -->
 		</parameters>
-		<race>UNDEAD</race>
+		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="1472" /> <!-- rhand: Dreadbane -->
 		<acquire sp="46698" expRate="20260" raidPoints="30" />
@@ -3365,6 +3382,7 @@
 	</npc>
 	<npc id="25761" level="97" type="L2Monster" name="Georgios" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
+		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" lhand="945" /> <!-- rhand: Skeleton Dagger lhand: Skeleton Buckler -->
 		<acquire expRate="4502" sp="10166" />
@@ -3420,6 +3438,7 @@
 	</npc>
 	<npc id="25762" level="97" type="L2Monster" name="Angelos" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
+		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="150" lhand="103" /> <!-- rhand: Elemental Sword lhand: Tower Shield -->
 		<acquire expRate="9004" sp="20332" />
@@ -3483,7 +3502,7 @@
 			<param name="RaidSpawnMusic" value="Rm01_A" />
 			<skill name="RangeDDMagic_a" id="4178" level="5" /> <!-- BOSS Flamestrike -->
 		</parameters>
-		<race>DEMONIC</race>
+		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire sp="20332" expRate="9004" raidPoints="30" />
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
@@ -3557,7 +3576,8 @@
 	</npc>
 	<npc id="25764" level="97" type="L2Monster" name="Steregos" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
-		<sex>FEMALE</sex>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
 		<acquire expRate="9004" sp="20332" />
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="948252" hpRegen="69.690691" mp="22800" mpRegen="2.4" />
@@ -3610,6 +3630,7 @@
 	</npc>
 	<npc id="25765" level="96" type="L2Monster" name="Beast" title="Raid Fighter">
 		<!-- TODO: Must be confirmed -->
+		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="1472" /> <!-- rhand: Dreadbane -->
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3657,7 +3678,7 @@
 			<skill name="PhysicalSpecial_a" id="4731" level="6" /> <!-- BOSS Mortal Blow -->
 			<skill name="SelfRangePhysicalSpecial_a" id="4172" level="6" /> <!-- Stun -->
 		</parameters>
-		<race>DRAGON</race>
+		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire sp="46698" expRate="20260" raidPoints="30" />
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
@@ -3810,7 +3831,8 @@
 	</npc>
 	<npc id="25768" level="97" type="L2Monster" name="Evangelos" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
-		<sex>MALE</sex>
+		<race>HUMANOID</race>
+		<sex>FEMALE</sex>
 		<equipment rhand="273" /> <!-- rhand: Composite Bow -->
 		<acquire expRate="9004" sp="20332" />
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
@@ -3860,7 +3882,8 @@
 	</npc>
 	<npc id="25769" level="97" type="L2Monster" name="Sotiris" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
-		<sex>MALE</sex>
+		<race>HUMANOID</race>
+		<sex>FEMALE</sex>
 		<equipment rhand="69" /> <!-- rhand: Bastard Sword -->
 		<acquire expRate="9004" sp="20332" />
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
@@ -3917,7 +3940,7 @@
 			<skill name="PhysicalSpecial_b" id="4746" level="4" /> <!-- Stun -->
 		</parameters>
 		<race>HUMANOID</race>
-		<sex>MALE</sex>
+		<sex>FEMALE</sex>
 		<equipment rhand="84" /> <!-- rhand: Homunkulus's Sword -->
 		<acquire sp="20332" expRate="9004" raidPoints="30" />
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
@@ -3990,6 +4013,7 @@
 	</npc>
 	<npc id="25775" level="94" type="L2RaidBoss" name="Apherus" title="">
 		<!-- TODO: Must be confirmed -->
+		<race>PLANT</race>
 		<sex>MALE</sex>
 		<equipment rhand="150" /> <!-- rhand: Elemental Sword -->
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
@@ -4042,8 +4066,8 @@
 			<skill name="SelfRangeDebuff_a" id="4183" level="4" /> <!-- Decrease P. Atk. -->
 			<skill name="SelfRangeDebuffAnother_a" id="4189" level="4" /> <!-- Paralysis -->
 		</parameters>
-		<race>HUMANOID</race>
-		<sex>MALE</sex>
+		<race>PLANT</race>
+		<sex>FEMALE</sex>
 		<equipment rhand="183" /> <!-- rhand: Mystic Staff -->
 		<acquire sp="247245" expRate="233.56486294896" />
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4086,7 +4110,8 @@
 	</npc>
 	<npc id="25777" level="92" type="L2Monster" name="Chasseur" title="Apherus Garden">
 		<!-- TODO: Must be confirmed -->
-		<sex>MALE</sex>
+		<race>PLANT</race>
+		<sex>FEMALE</sex>
 		<equipment rhand="5130" /> <!-- rhand: Nos Sword -->
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="85381" hpRegen="37.54353" mp="20960" mpRegen="2.1" />
@@ -4124,7 +4149,8 @@
 	</npc>
 	<npc id="25778" level="92" type="L2Monster" name="Escort" title="Apherus Garden">
 		<!-- TODO: Must be confirmed -->
-		<sex>MALE</sex>
+		<race>PLANT</race>
+		<sex>FEMALE</sex>
 		<equipment rhand="5127" /> <!-- rhand: Dailaon Knife -->
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="85381" hpRegen="37.54353" mp="20960" mpRegen="2.1" />
@@ -4267,6 +4293,7 @@
 	</npc>
 	<npc id="25780" level="94" type="L2Monster" name="Spezion's Subordinate" title="">
 		<!-- TODO: Must be confirmed -->
+		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="10469" hpRegen="17.96077" mp="2169" mpRegen="1.5" />
@@ -4303,6 +4330,7 @@
 	</npc>
 	<npc id="25781" level="94" type="L2Monster" name="Spezion's Subordinate" title="">
 		<!-- TODO: Must be confirmed -->
+		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="10469" hpRegen="17.96077" mp="2169" mpRegen="1.5" />
@@ -4346,7 +4374,7 @@
 			<param name="RaidSpawnMusic" value="Rm01_A" />
 			<skill name="RangeHold_a" id="4197" level="3" /> <!-- Hold -->
 		</parameters>
-		<race>UNDEAD</race>
+		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="8532" /> <!-- rhand: For Monsters Only (Spinebone Sword) -->
 		<acquire sp="173127" />
@@ -4390,6 +4418,7 @@
 	</npc>
 	<npc id="25783" level="20" type="L2Monster" name="Eyesaroch" title="Husk">
 		<!-- TODO: Must be confirmed -->
+		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="79" int="74" dex="42" wit="65" con="75" men="72">
 			<vitals hp="342" hpRegen="30.872687" mp="192" mpRegen="1.8" />
@@ -4437,8 +4466,8 @@
 			<param name="RaidSpawnMusic" value="Rm02_A" />
 			<skill name="RangeHold_a" id="4197" level="3" /> <!-- Hold -->
 		</parameters>
-		<race>HUMANOID</race>
-		<sex>MALE</sex>
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
 		<equipment rhand="67" lhand="633" /> <!-- rhand: Orcish Sword lhand: Zubei's Shield -->
 		<acquire sp="184431" expRate="19325.89" raidPoints="7" />
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
@@ -4478,6 +4507,7 @@
 	</npc>
 	<npc id="25785" level="88" type="L2RaidBoss" name="Teredor" title="">
 		<!-- TODO: Must be confirmed -->
+		<race>BUG</race>
 		<sex>MALE</sex>
 		<equipment rhand="123" lhand="19" /> <!-- rhand: Saber lhand: Small Shield -->
 		<acquire expRate="114436" sp="212686" />
@@ -4549,6 +4579,7 @@
 	</npc>
 	<npc id="25786" level="87" type="L2Monster" name="Lachikios" title="Son-in-law of the King">
 		<!-- TODO: Must be confirmed -->
+		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="66" lhand="102" /> <!-- rhand: Gladius lhand: Round Shield -->
 		<stats str="79" int="74" dex="42" wit="65" con="75" men="72">
@@ -4596,7 +4627,7 @@
 			<param name="RaidSpawnMusic" value="Rm02_A" />
 			<skill name="PhysicalSpecial_b" id="4746" level="9" /> <!-- Stun -->
 		</parameters>
-		<race>HUMANOID</race>
+		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="6719" /> <!-- rhand: Monster Only(Ketra Orc Chieftain) -->
 		<acquire sp="557272" />
@@ -4638,6 +4669,7 @@
 	</npc>
 	<npc id="25788" level="89" type="L2Monster" name="Lachikios" title="Queen's Companion">
 		<!-- TODO: Must be confirmed -->
+		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="288" /> <!-- rhand: Carnage Bow -->
 		<stats str="79" int="74" dex="42" wit="65" con="75" men="72">
@@ -4675,6 +4707,7 @@
 	</npc>
 	<npc id="25789" level="89" type="L2Monster" name="Lachikios" title="Queen's Companion">
 		<!-- TODO: Must be confirmed -->
+		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="79" /> <!-- rhand: Sword of Damascus -->
 		<stats str="79" int="74" dex="42" wit="65" con="75" men="72">
@@ -4722,7 +4755,7 @@
 			<skill name="SelfRangeDebuff_a" id="4184" level="9" /> <!-- Decrease Atk. Spd. -->
 			<skill name="SelfRangeDebuffAnother_a" id="4188" level="9" /> <!-- Bleed -->
 		</parameters>
-		<race>HUMANOID</race>
+		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="6716" /> <!-- rhand: Monster Only(Silenos Shaman) -->
 		<acquire sp="557272" />
@@ -4766,6 +4799,7 @@
 	</npc>
 	<npc id="25791" level="88" type="L2Monster" name="Escort" title="Lachikios Subordinate">
 		<!-- TODO: Must be confirmed -->
+		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="142" lhand="6918" /> <!-- rhand: Keshanberk lhand: Monster Only (Shield of Silenos) -->
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4804,7 +4838,8 @@
 	</npc>
 	<npc id="25792" level="88" type="L2Monster" name="Rachicues" title="Successor">
 		<!-- TODO: Must be confirmed -->
-		<sex>MALE</sex>
+		<race>BEAST</race>
+		<sex>FEMALE</sex>
 		<equipment rhand="2504" /> <!-- rhand: Meteor Shower -->
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="1215559" hpRegen="91.493086" mp="22800" mpRegen="3" />
@@ -4841,7 +4876,8 @@
 	</npc>
 	<npc id="25793" level="88" type="L2RaidBoss" name="Rachicues" title="Successor">
 		<!-- TODO: Must be confirmed -->
-		<sex>MALE</sex>
+		<race>BEAST</race>
+		<sex>FEMALE</sex>
 		<acquire sp="827123" />
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="1215559" hpRegen="299.923216" mp="22800" mpRegen="3" />
@@ -4899,8 +4935,8 @@
 			<skill name="SelfRangeDebuff_a" id="4182" level="8" /> <!-- Poison -->
 			<skill name="SelfRangeDebuffAnother_a" id="4190" level="8" /> <!-- Decrease MP -->
 		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
+		<race>BEAST</race>
+		<sex>FEMALE</sex>
 		<acquire sp="864099" />
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="1215559" hpRegen="123.21629" mp="22800" mpRegen="3" />
@@ -4945,7 +4981,8 @@
 	</npc>
 	<npc id="25795" level="90" type="L2Monster" name="Rachicues" title="Queen">
 		<!-- TODO: Must be confirmed -->
-		<sex>MALE</sex>
+		<race>BEAST</race>
+		<sex>FEMALE</sex>
 		<equipment rhand="1472" /> <!-- rhand: Dreadbane -->
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="1215559" hpRegen="122.142751" mp="22800" mpRegen="3" />
@@ -4986,6 +5023,7 @@
 	</npc>
 	<npc id="25796" level="98" type="L2RaidBoss" name="Veridan" title="Hell's Warden">
 		<!-- TODO: Must be confirmed -->
+		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="142" /> <!-- rhand: Keshanberk -->
 		<acquire expRate="24388" sp="56213" />
@@ -5145,7 +5183,7 @@
 			<skill name="SelfRangeDebuff_a" id="4184" level="7" /> <!-- Decrease Atk. Spd. -->
 			<skill name="SelfRangeDebuffAnother_a" id="4188" level="7" /> <!-- Bleed -->
 		</parameters>
-		<race>DRAGON</race>
+		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire sp="112426" expRate="48776" />
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
@@ -5298,6 +5336,7 @@
 	</npc>
 	<npc id="25798" level="97" type="L2Monster" name="Kechi's Subordinate" title="">
 		<!-- TODO: Must be confirmed -->
+		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="77177" hpRegen="116.468584" mp="2280" mpRegen="3.6" />
@@ -5336,7 +5375,8 @@
 	</npc>
 	<npc id="25799" level="98" type="L2RaidBoss" name="Michaela" title="Grand Judge">
 		<!-- TODO: Must be confirmed -->
-		<sex>FEMALE</sex>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
 		<acquire expRate="48776" sp="112426" />
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
 			<vitals hp="745704" hpRegen="116.468584" mp="22800" mpRegen="3.6" />

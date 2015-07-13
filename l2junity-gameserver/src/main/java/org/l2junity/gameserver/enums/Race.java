@@ -48,5 +48,6 @@ public enum Race
 	NONE,
 	PLANT,
 	SIEGE_WEAPON,
-	UNDEAD;
+	UNDEAD,
+	FRIEND; // FRIEND ordinal has to be confirmed
 }
