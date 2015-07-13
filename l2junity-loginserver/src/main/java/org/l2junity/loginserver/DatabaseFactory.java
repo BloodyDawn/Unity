@@ -100,6 +100,7 @@ public class DatabaseFactory
 			
 			/* Test the connection */
 			_source.getConnection().close();
+			LOGGER.info("Connected!");
 		}
 		catch (Exception e)
 		{
