@@ -45,7 +45,7 @@ public class ButtonsStyle implements IHtmlStyle
 	}
 
 	@Override
-	public String formatBypass(String bypass, String name, boolean isEnabled)
+	public String applyBypass(String bypass, String name, boolean isEnabled)
 	{
 		if (isEnabled)
 		{
@@ -55,7 +55,7 @@ public class ButtonsStyle implements IHtmlStyle
 	}
 	
 	@Override
-	public String formatSeparator()
+	public String applySeparator()
 	{
 		return DEFAULT_PAGER_SEPARATOR;
 	}

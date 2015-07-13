@@ -16,34 +16,20 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.html.styles;
+package org.l2junity.gameserver.model.html.formatters;
 
-import org.l2junity.gameserver.model.html.IHtmlStyle;
+import org.l2junity.gameserver.model.html.IBypassFormatter;
 
 /**
  * @author UnAfraid
  */
-public class DefaultStyle implements IHtmlStyle
+public class BypassParserFormatter implements IBypassFormatter
 {
-	private static final String DEFAULT_PAGE_LINK_FORMAT = "<td><a action=\"%s\">%s</a></td>";
-	private static final String DEFAULT_PAGE_TEXT_FORMAT = "<td>%s</td>";
-	private static final String DEFAULT_PAGER_SEPARATOR = "<td align=center> | </td>";
-
-	public static final DefaultStyle INSTANCE = new DefaultStyle();
+	public static final BypassParserFormatter INSTANCE = new BypassParserFormatter();
 
 	@Override
-	public String applyBypass(String bypass, String name, boolean isEnabled)
+	public String formatBypass(String bypass, int page)
 	{
-		if (isEnabled)
-		{
-			return String.format(DEFAULT_PAGE_LINK_FORMAT, bypass, name);
-		}
-		return String.format(DEFAULT_PAGE_TEXT_FORMAT, name);
-	}
-	
-	@Override
-	public String applySeparator()
-	{
-		return DEFAULT_PAGER_SEPARATOR;
+		return bypass + " page=" + page;
 	}
 }

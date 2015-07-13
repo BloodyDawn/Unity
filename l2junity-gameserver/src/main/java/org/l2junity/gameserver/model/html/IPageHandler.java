@@ -24,5 +24,5 @@ package org.l2junity.gameserver.model.html;
 @FunctionalInterface
 public interface IPageHandler
 {
-	void apply(int pages, StringBuilder sb);
+	void apply(String bypass, int currentPage, int pages, StringBuilder sb, IBypassFormatter bypassFormatter, IHtmlStyle style);
 }

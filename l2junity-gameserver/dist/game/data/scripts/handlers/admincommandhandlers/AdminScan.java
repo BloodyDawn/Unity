@@ -19,6 +19,7 @@
 package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
+import java.util.function.Predicate;
 
 import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
@@ -28,11 +29,13 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.html.PageBuilder;
 import org.l2junity.gameserver.model.html.PageResult;
+import org.l2junity.gameserver.model.html.formatters.BypassParserFormatter;
 import org.l2junity.gameserver.model.html.pagehandlers.NextPrevPageHandler;
 import org.l2junity.gameserver.model.html.styles.ButtonsStyle;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
-import org.l2junity.gameserver.util.HtmlUtil;
+import org.l2junity.gameserver.util.BypassParser;
 import org.l2junity.gameserver.util.Util;
 
 /**
@@ -40,13 +43,14 @@ import org.l2junity.gameserver.util.Util;
  */
 public class AdminScan implements IAdminCommandHandler
 {
+	private static final String SPACE = " ";
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_scan",
 		"admin_deleteNpcByObjectId"
 	};
 	
-	private static final int DEFAULT_RADIUS = 500;
+	private static final int DEFAULT_RADIUS = 1000;
 	
 	@Override
 	public boolean useAdminCommand(String command, PlayerInstance activeChar)
@@ -57,53 +61,24 @@ public class AdminScan implements IAdminCommandHandler
 		{
 			case "admin_scan":
 			{
-				int radius = DEFAULT_RADIUS;
-				int page = 0;
-				if (st.hasMoreTokens())
-				{
-					try
-					{
-						radius = Integer.parseInt(st.nextToken());
-					}
-					catch (NumberFormatException e)
-					{
-						activeChar.sendMessage("Usage: //scan [radius]");
-						return false;
-					}
-				}
-				
-				if (st.hasMoreTokens())
-				{
-					try
-					{
-						page = Integer.parseInt(st.nextToken());
-					}
-					catch (NumberFormatException e)
-					{
-					}
-				}
-				
-				sendNpcList(activeChar, radius, page);
+				processBypass(activeChar, new BypassParser(command));
 				break;
 			}
 			case "admin_deletenpcbyobjectid":
 			{
 				if (!st.hasMoreElements())
 				{
-					activeChar.sendMessage("Usage: //deletenpcbyobjectid <object_id>");
+					activeChar.sendMessage("Usage: //deletenpcbyobjectid objectId=<object_id>");
 					return false;
 				}
-				int page = 0;
+
+				final BypassParser parser = new BypassParser(command);
 				try
 				{
-					int objectId = Integer.parseInt(st.nextToken());
-					
-					try
+					final int objectId = parser.getInt("objectId", 0);
+					if (objectId == 0)
 					{
-						page = Integer.parseInt(st.nextToken());
-					}
-					catch (NumberFormatException e)
-					{
+						activeChar.sendMessage("objectId is not set!");
 					}
 
 					final WorldObject target = World.getInstance().findObject(objectId);
@@ -139,26 +114,81 @@ public class AdminScan implements IAdminCommandHandler
 					return false;
 				}
 				
-				sendNpcList(activeChar, DEFAULT_RADIUS, page);
+				processBypass(activeChar, parser);
 				break;
 			}
 		}
 		return true;
 	}
 	
-	private void sendNpcList(PlayerInstance activeChar, int radius, int page)
+	private void processBypass(PlayerInstance activeChar, BypassParser parser)
 	{
+		final int id = parser.getInt("id", 0);
+		final String name = parser.getString("name", null);
+		int radius = parser.getInt("radius", parser.getInt("range", DEFAULT_RADIUS));
+		int page = parser.getInt("page", 0);
+		
+		final Predicate<Npc> condition;
+		if (id > 0)
+		{
+			condition = npc -> npc.getId() == id;
+		}
+		else if (name != null)
+		{
+			condition = npc -> npc.getName().toLowerCase().startsWith(name.toLowerCase());
+		}
+		else
+		{
+			condition = npc -> true;
+		}
+		
+		sendNpcList(activeChar, radius, page, condition, parser);
+	}
+	
+	private String generateBypass(BypassParser parser)
+	{
+		final int id = parser.getInt("id", 0);
+		final String name = parser.getString("name", null);
+		int radius = parser.getInt("radius", parser.getInt("range", DEFAULT_RADIUS));
+		
+		final StringBuilder sb = new StringBuilder();
+		if (id > 0)
+		{
+			sb.append("id=").append(id);
+		}
+		else if (name != null)
+		{
+			sb.append("name=\"").append(name).append("\"");
+		}
+		if (radius > DEFAULT_RADIUS)
+		{
+			sb.append(" radius=").append(radius);
+		}
+		return sb.toString().trim();
+	}
+
+	private void sendNpcList(PlayerInstance activeChar, int radius, int page, Predicate<Npc> condition, BypassParser parser)
+	{
+		final String bypass = generateBypass(parser);
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/scan.htm");
-		final PageResult result = HtmlUtil.createPage(World.getInstance().getVisibleObjects(activeChar, Npc.class, radius), page, 15, new NextPrevPageHandler(page, "bypass -h admin_scan " + radius, ButtonsStyle.INSTANCE), (pages, character, sb) ->
+
+		//@formatter:off
+		final PageResult result = PageBuilder.newBuilder(World.getInstance().getVisibleObjects(activeChar, Npc.class, radius, condition), 15, "bypass -h admin_scan " + bypass)
+			.currentPage(page)
+			.pageHandler(NextPrevPageHandler.INSTANCE)
+			.formatter(BypassParserFormatter.INSTANCE)
+			.style(ButtonsStyle.INSTANCE)
+			.bodyHandler((pages, character, sb) ->
 		{
 			sb.append("<tr>");
-			sb.append("<td width=\"45\">" + character.getId() + "</td>");
-			sb.append("<td><a action=\"bypass -h admin_move_to " + character.getX() + " " + character.getY() + " " + character.getZ() + "\">" + character.getName() + "</a></td>");
-			sb.append("<td width=\"60\">" + Util.formatAdena(Math.round(activeChar.calculateDistance(character, false, false))) + "</td>");
-			sb.append("<td width=\"54\"><a action=\"bypass -h admin_deleteNpcByObjectId " + character.getObjectId() + "\"><font color=\"LEVEL\">Delete</font></a></td>");
+			sb.append("<td width=\"45\">").append(character.getId()).append("</td>");
+			sb.append("<td><a action=\"bypass -h admin_move_to ").append(character.getX()).append(SPACE).append(character.getY()).append(SPACE).append(character.getZ()).append("\">").append(character.getName()).append("</a></td>");
+			sb.append("<td width=\"60\">").append(Util.formatAdena(Math.round(activeChar.calculateDistance(character, false, false)))).append("</td>");
+			sb.append("<td width=\"54\"><a action=\"bypass -h admin_deleteNpcByObjectId ").append(bypass).append(" page=").append(page).append(" objectId=").append(character.getObjectId()).append("\"><font color=\"LEVEL\">Delete</font></a></td>");
 			sb.append("</tr>");
-		});
+		}).build();
+		//@formatter:on
 		
 		if (result.getPages() > 0)
 		{

@@ -29,10 +29,9 @@ import org.l2junity.gameserver.model.announce.Announcement;
 import org.l2junity.gameserver.model.announce.AnnouncementType;
 import org.l2junity.gameserver.model.announce.AutoAnnouncement;
 import org.l2junity.gameserver.model.announce.IAnnouncement;
+import org.l2junity.gameserver.model.html.PageBuilder;
 import org.l2junity.gameserver.model.html.PageResult;
-import org.l2junity.gameserver.model.html.pagehandlers.DefaultPageHandler;
 import org.l2junity.gameserver.util.Broadcast;
-import org.l2junity.gameserver.util.HtmlUtil;
 import org.l2junity.gameserver.util.Util;
 
 /**
@@ -461,7 +460,7 @@ public class AdminAnnouncements implements IAdminCommandHandler
 						}
 						
 						String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/admin/announces-list.htm");
-						final PageResult result = HtmlUtil.createPage(AnnouncementsTable.getInstance().getAllAnnouncements(), page, 8, new DefaultPageHandler(page, 3, "bypass admin_announces list"), (pages, announcement, sb) ->
+						final PageResult result = PageBuilder.newBuilder(AnnouncementsTable.getInstance().getAllAnnouncements(), 8, "bypass admin_announces list").currentPage(page).bodyHandler((pages, announcement, sb) ->
 						{
 							sb.append("<tr>");
 							sb.append("<td width=5></td>");
@@ -489,7 +488,7 @@ public class AdminAnnouncements implements IAdminCommandHandler
 							sb.append("<td width=60><button action=\"bypass -h admin_announces remove " + announcement.getId() + "\" value=\"Remove\" width=\"60\" height=\"21\" back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>");
 							sb.append("<td width=5></td>");
 							sb.append("</tr>");
-						});
+						}).build();
 
 						content = content.replaceAll("%pages%", result.getPagerTemplate().toString());
 						content = content.replaceAll("%announcements%", result.getBodyTemplate().toString());

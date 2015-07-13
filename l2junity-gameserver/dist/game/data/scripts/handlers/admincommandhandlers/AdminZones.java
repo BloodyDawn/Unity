@@ -47,15 +47,14 @@ import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerDlgAnswer;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerMoveRequest;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
+import org.l2junity.gameserver.model.html.PageBuilder;
 import org.l2junity.gameserver.model.html.PageResult;
-import org.l2junity.gameserver.model.html.pagehandlers.DefaultPageHandler;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.form.ZoneNPoly;
 import org.l2junity.gameserver.network.client.send.ConfirmDlg;
 import org.l2junity.gameserver.network.client.send.ExServerPrimitive;
 import org.l2junity.gameserver.network.client.send.ExShowTerritory;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
-import org.l2junity.gameserver.util.HtmlUtil;
 import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -517,7 +516,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 		final ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder());
 		final AtomicInteger position = new AtomicInteger(page * 20);
 		
-		final PageResult result = HtmlUtil.createPage(holder.getNodes(), page, 20, new DefaultPageHandler(page, 3, "bypass -h admin_zones list"), (pages, loc, sb) ->
+		final PageResult result = PageBuilder.newBuilder(holder.getNodes(), 3, "bypass -h admin_zones list").currentPage(page).bodyHandler((pages, loc, sb) ->
 		{
 			sb.append("<tr>");
 			sb.append("<td fixwidth=5></td>");
@@ -530,7 +529,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 			sb.append("<td fixwidth=30><a action=\"bypass -h admin_zones delete " + holder.indexOf(loc) + "\">[D]</a></td>");
 			sb.append("<td fixwidth=5></td>");
 			sb.append("</tr>");
-		});
+		}).build();
 
 		msg.replace("%name%", holder.getName());
 		msg.replace("%pages%", result.getPagerTemplate());

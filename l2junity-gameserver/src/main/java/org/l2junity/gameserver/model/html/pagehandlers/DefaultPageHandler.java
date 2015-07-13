@@ -18,9 +18,9 @@
  */
 package org.l2junity.gameserver.model.html.pagehandlers;
 
+import org.l2junity.gameserver.model.html.IBypassFormatter;
 import org.l2junity.gameserver.model.html.IHtmlStyle;
 import org.l2junity.gameserver.model.html.IPageHandler;
-import org.l2junity.gameserver.model.html.styles.DefaultStyle;
 
 /**
  * Creates pager with links 1 2 3 | 9 10 | 998 | 999
@@ -28,57 +28,47 @@ import org.l2junity.gameserver.model.html.styles.DefaultStyle;
  */
 public class DefaultPageHandler implements IPageHandler
 {
-	protected final int _currentPage;
+	public static final DefaultPageHandler INSTANCE = new DefaultPageHandler(2);
 	protected final int _pagesOffset;
-	protected final String _bypass;
-	private final IHtmlStyle _style;
 	
-	public DefaultPageHandler(int currentPage, int pagesOffset, String bypass)
+	public DefaultPageHandler(int pagesOffset)
 	{
-		this(currentPage, pagesOffset, bypass, DefaultStyle.INSTANCE);
-	}
-
-	public DefaultPageHandler(int currentPage, int pagesOffset, String bypass, IHtmlStyle style)
-	{
-		_currentPage = currentPage;
 		_pagesOffset = pagesOffset;
-		_bypass = bypass;
-		_style = style;
 	}
 	
 	@Override
-	public void apply(int pages, StringBuilder sb)
+	public void apply(String bypass, int currentPage, int pages, StringBuilder sb, IBypassFormatter bypassFormatter, IHtmlStyle style)
 	{
-		final int pagerStart = Math.max(_currentPage - _pagesOffset, 0);
-		final int pagerFinish = Math.min(_currentPage + _pagesOffset + 1, pages);
+		final int pagerStart = Math.max(currentPage - _pagesOffset, 0);
+		final int pagerFinish = Math.min(currentPage + _pagesOffset + 1, pages);
 		
 		// Show the initial pages in case we are in the middle or at the end
 		if (pagerStart > _pagesOffset)
 		{
 			for (int i = 0; i < _pagesOffset; i++)
 			{
-				sb.append(_style.formatBypass(_bypass + " " + i, String.valueOf(i + 1), _currentPage == i));
+				sb.append(style.applyBypass(bypassFormatter.formatBypass(bypass, i), String.valueOf(i + 1), currentPage == i));
 			}
 			
 			// Separator
-			sb.append(_style.formatSeparator());
+			sb.append(style.applySeparator());
 		}
 
 		// Show current pages
 		for (int i = pagerStart; i < pagerFinish; i++)
 		{
-			sb.append(_style.formatBypass(_bypass + " " + i, String.valueOf(i + 1), _currentPage == i));
+			sb.append(style.applyBypass(bypassFormatter.formatBypass(bypass, i), String.valueOf(i + 1), currentPage == i));
 		}
 		
 		// Show the last pages
 		if (pages > pagerFinish)
 		{
 			// Separator
-			sb.append(_style.formatSeparator());
+			sb.append(style.applySeparator());
 
 			for (int i = pages - _pagesOffset; i < pages; i++)
 			{
-				sb.append(_style.formatBypass(_bypass + " " + i, String.valueOf(i + 1), _currentPage == i));
+				sb.append(style.applyBypass(bypassFormatter.formatBypass(bypass, i), String.valueOf(i + 1), currentPage == i));
 			}
 		}
 	}

@@ -18,9 +18,9 @@
  */
 package org.l2junity.gameserver.model.html.pagehandlers;
 
+import org.l2junity.gameserver.model.html.IBypassFormatter;
 import org.l2junity.gameserver.model.html.IHtmlStyle;
 import org.l2junity.gameserver.model.html.IPageHandler;
-import org.l2junity.gameserver.model.html.styles.DefaultStyle;
 
 /**
  * Creates pager with links << | < | > | >>
@@ -28,45 +28,31 @@ import org.l2junity.gameserver.model.html.styles.DefaultStyle;
  */
 public class NextPrevPageHandler implements IPageHandler
 {
-	protected final int _currentPage;
-	protected final String _bypass;
-	private final IHtmlStyle _style;
-	
-	public NextPrevPageHandler(int currentPage, String bypass)
-	{
-		this(currentPage, bypass, DefaultStyle.INSTANCE);
-	}
+	public static final NextPrevPageHandler INSTANCE = new NextPrevPageHandler();
 
-	public NextPrevPageHandler(int currentPage, String bypass, IHtmlStyle style)
-	{
-		_currentPage = currentPage;
-		_bypass = bypass;
-		_style = style;
-	}
-	
 	@Override
-	public void apply(int pages, StringBuilder sb)
+	public void apply(String bypass, int currentPage, int pages, StringBuilder sb, IBypassFormatter bypassFormatter, IHtmlStyle style)
 	{
 		// Beginning
-		sb.append(_style.formatBypass(_bypass + " 0", "<<", (_currentPage - 1) > 0));
+		sb.append(style.applyBypass(bypassFormatter.formatBypass(bypass, 0), "<<", (currentPage - 1) > 0));
 		
 		// Separator
-		sb.append(_style.formatSeparator());
+		sb.append(style.applySeparator());
 
 		// Previous
-		sb.append(_style.formatBypass(_bypass + " " + (_currentPage - 1), "<", _currentPage > 0));
+		sb.append(style.applyBypass(bypassFormatter.formatBypass(bypass, currentPage - 1), "<", currentPage > 0));
 		
-		sb.append(_style.formatSeparator());
-		sb.append(String.format("<td align=\"center\">Page: %d/%d</td>", _currentPage + 1, pages + 1));
-		sb.append(_style.formatSeparator());
+		sb.append(style.applySeparator());
+		sb.append(String.format("<td align=\"center\">Page: %d/%d</td>", currentPage + 1, pages + 1));
+		sb.append(style.applySeparator());
 		
 		// Next
-		sb.append(_style.formatBypass(_bypass + " " + (_currentPage + 1), ">", _currentPage < pages));
+		sb.append(style.applyBypass(bypassFormatter.formatBypass(bypass, currentPage + 1), ">", currentPage < pages));
 
 		// Separator
-		sb.append(_style.formatSeparator());
+		sb.append(style.applySeparator());
 		
 		// End
-		sb.append(_style.formatBypass(_bypass + " " + pages, ">>", (_currentPage + 1) < pages));
+		sb.append(style.applyBypass(bypassFormatter.formatBypass(bypass, pages), ">>", (currentPage + 1) < pages));
 	}
 }

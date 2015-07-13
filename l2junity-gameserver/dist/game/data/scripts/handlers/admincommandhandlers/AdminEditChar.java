@@ -42,8 +42,8 @@ import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
+import org.l2junity.gameserver.model.html.PageBuilder;
 import org.l2junity.gameserver.model.html.PageResult;
-import org.l2junity.gameserver.model.html.pagehandlers.DefaultPageHandler;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.AcquireSkillList;
 import org.l2junity.gameserver.network.client.send.ExVoteSystemInfo;
@@ -54,7 +54,6 @@ import org.l2junity.gameserver.network.client.send.PartySmallWindowDeleteAll;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
-import org.l2junity.gameserver.util.HtmlUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -905,13 +904,13 @@ public class AdminEditChar implements IAdminCommandHandler
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/charlist.htm");
 		
-		final PageResult result = HtmlUtil.createPage(players, page, 20, new DefaultPageHandler(page, 3, "bypass -h admin_show_characters"), (pages, player, sb) ->
+		final PageResult result = PageBuilder.newBuilder(players, 20, "bypass -h admin_show_characters").bodyHandler((pages, player, sb) ->
 		{
 			sb.append("<tr>");
 			sb.append("<td width=80><a action=\"bypass -h admin_character_info " + player.getName() + "\">" + player.getName() + "</a></td>");
 			sb.append("<td width=110>" + ClassListData.getInstance().getClass(player.getClassId()).getClientCode() + "</td><td width=40>" + player.getLevel() + "</td>");
 			sb.append("</tr>");
-		});
+		}).build();
 		
 		if (result.getPages() > 0)
 		{

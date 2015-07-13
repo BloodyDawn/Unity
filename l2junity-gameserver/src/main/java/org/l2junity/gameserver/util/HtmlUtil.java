@@ -18,13 +18,7 @@
  */
 package org.l2junity.gameserver.util;
 
-import java.util.Arrays;
-import java.util.Collection;
-
 import org.l2junity.commons.util.CommonUtil;
-import org.l2junity.gameserver.model.html.IBodyHandler;
-import org.l2junity.gameserver.model.html.IPageHandler;
-import org.l2junity.gameserver.model.html.PageResult;
 
 /**
  * A class containing useful methods for constructing HTML
@@ -223,35 +217,5 @@ public class HtmlUtil
 		sb.append("</tr>");
 		sb.append("</table>");
 		return sb.toString();
-	}
-	
-	public static <T> PageResult createPage(T[] elements, int page, int elementsPerPage, IPageHandler pageHandler, IBodyHandler<T> bodyHandler)
-	{
-		return createPage(Arrays.asList(elements), page, elementsPerPage, pageHandler, bodyHandler);
-	}
-	
-	public static <T> PageResult createPage(Collection<T> elements, int page, int elementsPerPage, IPageHandler pageHandler, IBodyHandler<T> bodyHandler)
-	{
-		int pages = elements.size() / elementsPerPage;
-		if ((elementsPerPage * pages) < elements.size())
-		{
-			pages++;
-		}
-		
-		final StringBuilder pagerTemplate = new StringBuilder();
-		if (pages > 1)
-		{
-			pageHandler.apply(pages, pagerTemplate);
-		}
-		
-		if (page >= pages)
-		{
-			page = pages - 1;
-		}
-		
-		final int start = Math.max(elementsPerPage * page, 0);
-		final StringBuilder sb = new StringBuilder();
-		bodyHandler.handleBodyCreation(elements, pages, start, elementsPerPage, sb);
-		return new PageResult(pages, pagerTemplate, sb);
 	}
 }

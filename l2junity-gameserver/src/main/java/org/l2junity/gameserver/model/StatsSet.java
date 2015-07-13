@@ -24,6 +24,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Supplier;
+
 import org.l2junity.commons.util.TimeUtil;
 import org.l2junity.gameserver.model.holders.MinionHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
@@ -46,9 +48,14 @@ public class StatsSet implements IParserAdvUtils
 	
 	public StatsSet()
 	{
-		this(new ConcurrentHashMap<>());
+		this(ConcurrentHashMap::new);
 	}
 	
+	public StatsSet(Supplier<Map<String, Object>> mapFactory)
+	{
+		this(mapFactory.get());
+	}
+
 	public StatsSet(Map<String, Object> map)
 	{
 		_set = map;
