@@ -108,7 +108,7 @@ public class GameServer
 	{
 		return _serverTypes.stream().mapToInt(ServerType::getMask).reduce((r, e) -> r | e).orElse(0);
 	}
-
+	
 	@Override
 	public boolean equals(Object o)
 	{
@@ -116,26 +116,27 @@ public class GameServer
 		{
 			return true;
 		}
-		if (o == null || getClass() != o.getClass())
+		if ((o == null) || (getClass() != o.getClass()))
 		{
 			return false;
 		}
-
+		
 		GameServer that = (GameServer) o;
-
+		
 		return _id == that._id;
-
+		
 	}
-
+	
 	@Override
 	public int hashCode()
 	{
-		return (int) _id;
+		return _id;
 	}
-
+	
 	@Override
 	public String toString()
 	{
+		//@formatter:off
 		return "GameServer{" +
 			"id=" + _id +
 			", name='" + _name + '\'' +
@@ -143,5 +144,6 @@ public class GameServer
 			", ageLimit=" + _ageLimit +
 			", serverTypes=" + _serverTypes +
 			'}';
+		//@formatter:on
 	}
 }
