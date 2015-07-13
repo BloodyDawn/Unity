@@ -1,4 +1,4 @@
-NOTE: This short guide is for a L2J Server. http://l2jserver.com
+NOTE: This short guide is for a L2J Unity. http://l2jserver.com
 
 If you received this file as a part of a packaged or bundled build:
  
@@ -11,13 +11,13 @@ The software may have viruses, cause security problems,
 or even send your personal information to remote servers without your express consent. 
 We cannot recommend the use of any of these packages on a server.
 
-WARNING: L2J Server is not a plug and play type of server. 
+WARNING: L2J Unity is not a plug and play type of server.
 To setup the server and to run it successfully you need to do a lot of reading.
 If reading and learning are not something you like to do,
 Stop now.
 
 ====================
-L2J Server 
+L2J Unity
 ====================
 
 TOC:
@@ -44,7 +44,7 @@ L2J is an Alternative Lineage 2 Game Server written in pure Java for
 best compatibility. L2J gives you the possibility to legally host a game
 server for this popular Korean MMO created by NCSoft. It is still
 unfinished and many features are missing, but L2J Dev team is working
-hard on implementing them. L2J Server is distributed under the terms
+hard on implementing them. L2J Unity is distributed under the terms
 of GNU/GPL in a hope that open source model is the best for
 developing quality software giving everyone a possibility to
 participate on development by submitting the code.
@@ -54,16 +54,16 @@ participate on development by submitting the code.
 II. LEGAL
 ====================
 
-Copyright (C) 2004-2015 L2J Server
+Copyright (C) 2004-2015 L2J Unity
 
-This file is part of L2J Server.
+This file is part of L2J Unity.
 
-L2J Server is free software: you can redistribute it and/or modify
+L2J Unity is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-L2J Server is distributed in the hope that it will be useful,
+L2J Unity is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 General Public License for more details.
@@ -110,9 +110,9 @@ IV. FIRST STARTUP
 
 Before you can start up the server it is extremely important to read 
 and get to know the wiki sites.
-They contain all the info you need to setup and run a L2J Server.
+They contain all the info you need to setup and run a L2J Unity.
 
-L2J Server wiki: Server Guides, How-to's, bugtracker:
+L2J Unity wiki: Server Guides, How-to's, bugtracker:
 https://www.l2jserver.com/trac/wiki
 
 L2J-Datapack wiki: Datapack Guides, How-to's, bugtracker:
@@ -121,7 +121,7 @@ http://www.l2jdp.com/trac/wiki
 This Server distribution does not contain any spawn/drop data or any world
 content. (Datapack)
 
-L2J Server has also a possibility to change exp/sp/drop rates relative
+L2J Unity has also a possibility to change exp/sp/drop rates relative
 to data in spawnlist/droplist files. To do that, just change the rates 
 you need in server.properties file found in config folder.
 
@@ -235,7 +235,7 @@ IRC: #l2j @ Freenode (irc.freenode.net)
 
 Please note that L2J Devs can't help players with connecting issues or
 anything related to playing on private servers. If you can't connect,
-you should contact your server GM's. We can solve only L2J server
+you should contact your server GM's. We can solve only L2J Unity
 ~software~ related issues. We don't have any backdoors or anything
 that would enable us GM accounts on every server using L2J, so there's
 no point in coming to our channel if you need items/adena/whatever
@@ -291,7 +291,7 @@ http://www.l2jserver.com/forum/memberlist.php?mode=leaders
 Have fun playing L2J ;)
 Dev Team
 
-    L2J Server, Copyright (C) 2004-2012 
-    L2J Server comes with ABSOLUTELY NO WARRANTY.
+    L2J Unity, Copyright (C) 2004-2012
+    L2J Unity comes with ABSOLUTELY NO WARRANTY.
     This is free software, and you are welcome to redistribute it
     under certain conditions.

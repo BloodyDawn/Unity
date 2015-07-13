@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2004-2015 L2J Server
+ * Copyright (C) 2004-2015 L2J Unity
  * 
- * This file is part of L2J Server.
+ * This file is part of L2J Unity.
  * 
- * L2J Server is free software: you can redistribute it and/or modify
+ * L2J Unity is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * L2J Server is distributed in the hope that it will be useful,
+ * L2J Unity is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
@@ -2074,7 +2074,7 @@ public final class Config
 			L2JMOD_DISPLAY_SERVER_TIME = L2JModSettings.getBoolean("DisplayServerTime", false);
 			
 			WELCOME_MESSAGE_ENABLED = L2JModSettings.getBoolean("ScreenWelcomeMessageEnable", false);
-			WELCOME_MESSAGE_TEXT = L2JModSettings.getString("ScreenWelcomeMessageText", "Welcome to L2J server!");
+			WELCOME_MESSAGE_TEXT = L2JModSettings.getString("ScreenWelcomeMessageText", "Welcome to L2J Unity!");
 			WELCOME_MESSAGE_TIME = L2JModSettings.getInt("ScreenWelcomeMessageTime", 10) * 1000;
 			
 			L2JMOD_ANTIFEED_ENABLE = L2JModSettings.getBoolean("AntiFeedEnable", false);
@@ -2420,7 +2420,7 @@ public final class Config
 			// Email
 			final PropertiesParser emailSettings = new PropertiesParser(EMAIL_CONFIG_FILE);
 			
-			EMAIL_SERVERINFO_NAME = emailSettings.getString("ServerInfoName", "Unconfigured L2J Server");
+			EMAIL_SERVERINFO_NAME = emailSettings.getString("ServerInfoName", "Unconfigured L2J Unity");
 			EMAIL_SERVERINFO_ADDRESS = emailSettings.getString("ServerInfoAddress", "info@myl2jserver.com");
 			
 			EMAIL_SYS_ENABLED = emailSettings.getBoolean("EmailSystemEnabled", false);

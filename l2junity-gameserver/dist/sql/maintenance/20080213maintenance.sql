@@ -2,7 +2,7 @@
 -- fixed bug where a player that deleted a friend
 -- stood in the ex-friend contacts list.
 -- 
--- If your L2J server setup was born after Core release 1711
+-- If your L2J Unity setup was born after Core release 1711
 -- you won't need to run this script. Else you might want to
 -- run it just once. (Running it again shouldn't have any
 -- effect.)
