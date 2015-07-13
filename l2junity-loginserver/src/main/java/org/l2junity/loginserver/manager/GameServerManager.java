@@ -19,6 +19,7 @@
 package org.l2junity.loginserver.manager;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -90,7 +91,7 @@ public class GameServerManager implements IXmlReader
 								}
 							}
 						}
-						_gameServers.put(id, new GameServer(id, name, showing, ageLimit, serverTypes));
+						_gameServers.put(id, new GameServer(id, name, showing, ageLimit, serverTypes != null ? serverTypes : Collections.emptySet()));
 					}
 				}
 			}
