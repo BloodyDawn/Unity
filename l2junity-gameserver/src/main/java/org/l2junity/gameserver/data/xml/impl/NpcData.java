@@ -174,9 +174,9 @@ public class NpcData implements IGameXmlReader
 												set.set("basePAtk", parseDouble(attrs, "physical"));
 												set.set("baseMAtk", parseDouble(attrs, "magical"));
 												set.set("baseRndDam", parseInteger(attrs, "random"));
-												set.set("baseCritRate", parseInteger(attrs, "critical"));
-												set.set("accuracy", parseDouble(attrs, "accuracy"));// TODO: Implement me
-												set.set("basePAtkSpd", parseInteger(attrs, "attackSpeed"));
+												set.set("baseCritRate", parseDouble(attrs, "critical"));
+												set.set("accuracy", parseFloat(attrs, "accuracy"));// TODO: Implement me
+												set.set("basePAtkSpd", parseFloat(attrs, "attackSpeed"));
 												set.set("reuseDelay", parseInteger(attrs, "reuseDelay"));// TODO: Implement me
 												set.set("baseAtkType", parseString(attrs, "type"));
 												set.set("baseAtkRange", parseInteger(attrs, "range"));
