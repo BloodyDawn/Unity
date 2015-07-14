@@ -38,7 +38,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.network.client.ClientNetworkManager;
-import org.l2junity.gameserver.network.client.EventLoopGroupManager;
+import org.l2junity.gameserver.network.EventLoopGroupManager;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ServerClose;
 import org.l2junity.gameserver.network.client.send.SystemMessage;

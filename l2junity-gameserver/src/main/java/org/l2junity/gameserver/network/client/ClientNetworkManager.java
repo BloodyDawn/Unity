@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.network.client;
 
 import org.l2junity.Config;
+import org.l2junity.gameserver.network.EventLoopGroupManager;
 import org.l2junity.network.NetworkManager;
 
 /**

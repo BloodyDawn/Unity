@@ -126,6 +126,7 @@ import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.network.client.ClientNetworkManager;
+import org.l2junity.gameserver.network.loginserver.LoginServerNetworkManager;
 import org.l2junity.gameserver.network.telnet.TelnetServer;
 import org.l2junity.gameserver.pathfinding.PathFinding;
 import org.l2junity.gameserver.script.faenor.FaenorScriptEngine;
@@ -372,9 +373,17 @@ public class GameServer
 		long totalMem = Runtime.getRuntime().maxMemory() / 1048576;
 		LOGGER.info("Started, free memory {} MB of {} MB", freeMem, totalMem);
 		Toolkit.getDefaultToolkit().beep();
-		LoginServerThread.getInstance().start();
 		
 		ClientNetworkManager.getInstance().start();
+
+		if(Boolean.getBoolean("newLoginServer"))
+		{
+			LoginServerNetworkManager.getInstance().connect();
+		}
+		else
+		{
+			LoginServerThread.getInstance().start();
+		}
 		
 		LOGGER.info("Maximum numbers of connected players: {}", Config.MAXIMUM_ONLINE_USERS);
 		LOGGER.info("Server loaded in {} seconds.", ManagementFactory.getRuntimeMXBean().getUptime() / 1000);
