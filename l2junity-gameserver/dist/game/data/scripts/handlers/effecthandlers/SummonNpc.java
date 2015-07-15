@@ -24,6 +24,7 @@ import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.DoppelgangerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2DecoyInstance;
 import org.l2junity.gameserver.model.actor.instance.L2EffectPointInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -156,6 +157,16 @@ public final class SummonNpc extends AbstractEffect
 				}
 				break;
 			}
+			case "Doppelganger":
+			{
+				final DoppelgangerInstance clone = new DoppelgangerInstance(npcTemplate, player);
+				clone.setCurrentHp(clone.getMaxHp());
+				clone.setCurrentMp(clone.getMaxMp());
+				clone.setSummoner(player);
+				clone.spawnMe(x, y, z);
+				clone.scheduleDespawn(_despawnDelay);
+				break;
+			}
 			default:
 			{
 				L2Spawn spawn;
@@ -165,7 +176,7 @@ public final class SummonNpc extends AbstractEffect
 				}
 				catch (Exception e)
 				{
-					_log.warn(SummonNpc.class.getSimpleName() + ": " + e.getMessage());
+					_log.warn(SummonNpc.class.getSimpleName() + ": Unable to create spawn. " + e.getMessage(), e);
 					return;
 				}
 				

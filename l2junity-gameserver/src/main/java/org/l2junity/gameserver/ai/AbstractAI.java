@@ -156,7 +156,7 @@ public abstract class AbstractAI implements Ctrl
 	Skill _skill;
 	
 	/** Different internal state flags */
-	private int _moveToPawnTimeout;
+	protected int _moveToPawnTimeout;
 	
 	protected Future<?> _followTask = null;
 	private static final int FOLLOW_INTERVAL = 1000;

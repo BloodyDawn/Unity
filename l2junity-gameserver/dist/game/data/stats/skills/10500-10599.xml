@@ -843,11 +843,12 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10532" levels="4" name="Clone Attack">
+	<skill id="10532" levels="7" name="Clone Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Melt into a target's shadow and summons clones to attack it. Requires a dagger or dual dagger to be equipped. -->
 		<table name="#effectPoint"> -687 -698 -707 -709 -711 -713 -715 </table>
-		<table name="#mpConsumes"> 38 41 45 47 </table>
+		<table name="#mpConsumes"> 38 41 45 47 49 51 53 </table>
+		<table name="#npcIds"> 13302 13303 13304 13305 13455 13456 13457 </table>
 		<set name="icon" val="icon.skill10532" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
@@ -861,13 +862,24 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="TeleportToTarget" /> <!-- FlyType is 5 in retail -->
+			<effect name="TeleportToTarget" /> <!-- TODO: FlyType is 5 in retail -->
 			<!-- TODO Summon 3 clones that attack the target you attack. They never stop attacking even if you move away. You can only change attacking target.
 				 Even party members, they keep attacking and there is no way to stop them. You trigger attack by any offense, even Throw Needle skill.
 				 The clones kinda act like summon, but send NpcInfo and no SummonLifeTime packets. On dissapear, DeleteObject packet is called.
 				 On being summoned, they copy your buffs, but after that, whatever buff you take, it will not be transfered to them.
 				 When you use SOE, the clones just disappear upon teleport. -->
 		</for>
+		<selfEffects>
+			<effect name="SummonNpc">
+				<param npcId="#npcIds" despawnDelay="30000" />
+			</effect>
+			<effect name="SummonNpc">
+				<param npcId="#npcIds" despawnDelay="30000" />
+			</effect>
+			<effect name="SummonNpc">
+				<param npcId="#npcIds" despawnDelay="30000" />
+			</effect>
+		</selfEffects>
 		<endEffects>
 			<effect name="CallSkill">
 				<param skillId="10556" skillLevel="1" /> <!-- Illusion Hide -->
