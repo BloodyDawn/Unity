@@ -23,11 +23,11 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Supplier;
 
-import org.l2junity.loginserver.network.client.receive.RequestAuthLogin;
-import org.l2junity.loginserver.network.client.receive.RequestSCCheck;
-import org.l2junity.loginserver.network.client.receive.RequestServerList;
-import org.l2junity.loginserver.network.client.receive.RequestServerLogin;
-import org.l2junity.loginserver.network.client.receive.ResponseAuthGameGuard;
+import org.l2junity.loginserver.network.client.recv.RequestAuthLogin;
+import org.l2junity.loginserver.network.client.recv.RequestSCCheck;
+import org.l2junity.loginserver.network.client.recv.RequestServerList;
+import org.l2junity.loginserver.network.client.recv.RequestServerLogin;
+import org.l2junity.loginserver.network.client.recv.ResponseAuthGameGuard;
 import org.l2junity.network.IConnectionState;
 import org.l2junity.network.IIncomingPacket;
 import org.l2junity.network.IIncomingPackets;

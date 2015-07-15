@@ -16,41 +16,43 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.loginserver.network.client.receive;
+package org.l2junity.loginserver.network.client.recv;
 
 import org.l2junity.loginserver.network.client.ClientHandler;
 import org.l2junity.loginserver.network.client.ConnectionState;
+import org.l2junity.loginserver.network.client.send.AuthGameGuard;
 import org.l2junity.loginserver.network.client.send.LoginFail2;
-import org.l2junity.loginserver.network.client.send.ServerList;
 import org.l2junity.network.IIncomingPacket;
 import org.l2junity.network.PacketReader;
 
 /**
- * @author NosBit
+ * @author UnAfraid
  */
-public class RequestServerList implements IIncomingPacket<ClientHandler>
+public class ResponseAuthGameGuard implements IIncomingPacket<ClientHandler>
 {
-	private long _loginSessionId;
+	private int _connectionId;
+	private byte[] _gameGuard;
 	
 	@Override
 	public boolean read(ClientHandler client, PacketReader packet)
 	{
-		_loginSessionId = packet.readQ();
-		// packet.readC() // hardcoded as 5
+		_connectionId = packet.readD();
+		_gameGuard = packet.readB(16);
 		return true;
 	}
 	
 	@Override
 	public void run(ClientHandler client)
 	{
-		if (client.getLoginSessionId() == _loginSessionId)
+		if (_connectionId == client.getConnectionId())
 		{
-			client.setConnectionState(ConnectionState.AUTHED_SERVER_LIST);
-			client.sendPacket(new ServerList(client));
+			client.setGameGuard(_gameGuard);
+			client.setConnectionState(ConnectionState.AUTHED_GG);
+			client.sendPacket(new AuthGameGuard(_connectionId));
 		}
 		else
 		{
-			client.close(LoginFail2.ACCESS_FAILED_PLEASE_TRY_AGAIN_LATER);
+			client.close(LoginFail2.ACCESS_FAILED);
 		}
 	}
 }

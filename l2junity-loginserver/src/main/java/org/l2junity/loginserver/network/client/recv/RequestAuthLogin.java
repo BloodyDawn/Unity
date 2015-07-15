@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.loginserver.network.client.receive;
+package org.l2junity.loginserver.network.client.recv;
 
 import java.security.GeneralSecurityException;
 
