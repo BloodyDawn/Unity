@@ -57,6 +57,9 @@ public final class StatusUpdate implements IClientOutgoingPacket
 	public static final int MAX_CP = 0x22;
 	
 	private final int _objectId;
+	private int _casterObjectId = 0;
+	private final boolean _isPlayable;
+	private boolean _isVisible = false;
 	private final ArrayList<Attribute> _attributes = new ArrayList<>();
 	
 	static class Attribute
@@ -75,26 +78,36 @@ public final class StatusUpdate implements IClientOutgoingPacket
 	}
 	
 	/**
-	 * If you have access to object itself use {@link StatusUpdate#StatusUpdate(WorldObject)}.
-	 * @param objectId
-	 */
-	public StatusUpdate(int objectId)
-	{
-		_objectId = objectId;
-	}
-	
-	/**
 	 * Create {@link StatusUpdate} packet for given {@link WorldObject}.
 	 * @param object
 	 */
 	public StatusUpdate(WorldObject object)
 	{
 		_objectId = object.getObjectId();
+		_isPlayable = object.isPlayable();
 	}
 	
 	public void addAttribute(int id, int level)
 	{
 		_attributes.add(new Attribute(id, level));
+		
+		if (_isPlayable)
+		{
+			switch (id)
+			{
+				case CUR_HP:
+				case CUR_MP:
+				case CUR_CP:
+				{
+					_isVisible = true;
+				}
+			}
+		}
+	}
+	
+	public void addCaster(WorldObject object)
+	{
+		_casterObjectId = object.getObjectId();
 	}
 	
 	public boolean hasAttributes()
@@ -108,8 +121,8 @@ public final class StatusUpdate implements IClientOutgoingPacket
 		OutgoingPackets.STATUS_UPDATE.writeId(packet);
 		
 		packet.writeD(_objectId); // casterId
-		packet.writeD(0x00);
-		packet.writeC(0x00);
+		packet.writeD(_isVisible ? _casterObjectId : 0x00);
+		packet.writeC(_isVisible ? 0x01 : 0x00);
 		packet.writeC(_attributes.size());
 		for (Attribute temp : _attributes)
 		{

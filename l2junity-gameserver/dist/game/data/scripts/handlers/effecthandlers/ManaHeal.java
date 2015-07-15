@@ -24,6 +24,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -68,7 +69,12 @@ public final class ManaHeal extends AbstractEffect
 		amount = Math.max(Math.min(amount, target.getMaxRecoverableMp() - target.getCurrentMp()), 0);
 		if (amount != 0)
 		{
-			target.setCurrentMp(amount + target.getCurrentMp());
+			final double newMp = amount + target.getCurrentMp();
+			target.setCurrentMp(newMp, false);
+			final StatusUpdate su = new StatusUpdate(target);
+			su.addAttribute(StatusUpdate.CUR_MP, (int) newMp);
+			su.addCaster(info.getEffector());
+			target.broadcastPacket(su);
 		}
 		SystemMessage sm;
 		if (info.getEffector().getObjectId() != target.getObjectId())

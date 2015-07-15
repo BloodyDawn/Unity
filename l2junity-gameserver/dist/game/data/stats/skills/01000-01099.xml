@@ -352,9 +352,14 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
-			<not>
-				<target active_skill_id="1013" /> <!-- Cannot be used to classes that has Recharge skill -->
-			</not>
+			<and>
+				<not>
+					<target active_skill_id="11760" /> <!-- Cannot be used to classes that has Radiant Recharge skill -->
+				</not>
+				<not>
+					<target active_skill_id="1013" /> <!-- Cannot be used to classes that has Recharge skill -->
+				</not>
+			</and>
 		</cond>
 		<for>
 			<effect name="ManaHealByLevel">

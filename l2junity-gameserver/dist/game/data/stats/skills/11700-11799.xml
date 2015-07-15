@@ -317,9 +317,14 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
-			<not>
-				<target class_id_restriction="179, 180, 181" />
-			</not>
+			<and>
+				<not>
+					<target active_skill_id="11760" /> <!-- Cannot be used to classes that has Radiant Recharge skill -->
+				</not>
+				<not>
+					<target active_skill_id="1013" /> <!-- Cannot be used to classes that has Recharge skill -->
+				</not>
+			</and>
 		</cond>
 		<for>
 			<effect name="ManaHealByLevel">
@@ -822,7 +827,7 @@
 				<mul stat="healEffect" val="#healEffect" />
 			</effect>
 		</for>
-	</skill>	
+	</skill>
 	<skill id="11781" levels="6" name="Dark Devour">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1367" />

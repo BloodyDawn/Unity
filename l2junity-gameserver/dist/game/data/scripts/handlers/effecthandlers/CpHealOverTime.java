@@ -22,6 +22,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.network.client.send.StatusUpdate;
 
 /**
  * Cp Heal Over Time effect implementation.
@@ -56,7 +57,11 @@ public final class CpHealOverTime extends AbstractEffect
 		
 		cp += _power * getTicksMultiplier();
 		cp = Math.min(cp, maxcp);
-		info.getEffected().setCurrentCp(cp);
+		info.getEffected().setCurrentCp(cp, false);
+		final StatusUpdate su = new StatusUpdate(info.getEffected());
+		su.addAttribute(StatusUpdate.CUR_CP, (int) cp);
+		su.addCaster(info.getEffector());
+		info.getEffected().broadcastPacket(su);
 		return true;
 	}
 }

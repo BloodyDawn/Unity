@@ -25,6 +25,7 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -119,7 +120,12 @@ public final class ManaHealByLevel extends AbstractEffect
 		amount = Math.max(Math.min(amount, target.getMaxRecoverableMp() - target.getCurrentMp()), 0);
 		if (amount != 0)
 		{
-			target.setCurrentMp(amount + target.getCurrentMp());
+			final double newMp = amount + target.getCurrentMp();
+			target.setCurrentMp(newMp, false);
+			final StatusUpdate su = new StatusUpdate(target);
+			su.addAttribute(StatusUpdate.CUR_MP, (int) newMp);
+			su.addCaster(info.getEffector());
+			target.broadcastPacket(su);
 		}
 		
 		final SystemMessage sm = SystemMessage.getSystemMessage(info.getEffector().getObjectId() != target.getObjectId() ? SystemMessageId.S2_MP_HAS_BEEN_RESTORED_BY_C1 : SystemMessageId.S1_MP_HAS_BEEN_RESTORED);

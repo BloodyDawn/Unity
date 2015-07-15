@@ -30,6 +30,7 @@ import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.ExMagicAttackInfo;
+import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -124,7 +125,12 @@ public final class Heal extends AbstractEffect
 		amount = Math.max(Math.min(amount, target.getMaxRecoverableHp() - target.getCurrentHp()), 0);
 		if (amount != 0)
 		{
-			target.setCurrentHp(amount + target.getCurrentHp());
+			final double newHp = amount + target.getCurrentHp();
+			target.setCurrentHp(newHp, false);
+			final StatusUpdate su = new StatusUpdate(target);
+			su.addAttribute(StatusUpdate.CUR_HP, (int) newHp);
+			su.addCaster(activeChar);
+			target.broadcastPacket(su);
 		}
 		
 		if (target.isPlayer())

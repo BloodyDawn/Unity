@@ -533,8 +533,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	/**
 	 * Remove the L2Character from the world when the decay task is launched.<br>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR> <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT>
 	 */
 	public void onDecay()
 	{
@@ -3502,13 +3501,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * A L2Character owns a table of Calculators called <B>_calculators</B>.<br>
 	 * Each Calculator (a calculator per state) own a table of Func object.<br>
 	 * A Func object is a mathematic function that permit to calculate the modifier of a state (ex : REGENERATE_HP_RATE...).<br>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method is ONLY for L2PcInstance</B></FONT><br>
-	 * <B><U>Example of use</U>:</B>
-	 * <ul>
-	 * <li>Equip an item from inventory</li>
-	 * <li>Learn a new passive skill</li>
-	 * <li>Use an active skill</li>
-	 * </ul>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method is ONLY for L2PcInstance</B></FONT><br> <B><U>Example of use</U>:</B> <ul> <li>Equip an item from inventory</li> <li>Learn a new passive skill</li> <li>Use an active skill</li> </ul>
 	 * @param functions The list of Func objects to add to the Calculator corresponding to the state affected
 	 */
 	public final void addStatFuncs(List<AbstractFunction> functions)
@@ -3588,12 +3581,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * A L2Character owns a table of Calculators called <B>_calculators</B>.<br>
 	 * Each Calculator (a calculator per state) own a table of Func object.<br>
 	 * A Func object is a mathematic function that permit to calculate the modifier of a state (ex : REGENERATE_HP_RATE...).<br>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method is ONLY for L2PcInstance</B></FONT><br>
-	 * <B><U>Example of use</U>:</B>
-	 * <ul>
-	 * <li>Unequip an item from inventory</li>
-	 * <li>Stop an active skill</li>
-	 * </ul>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method is ONLY for L2PcInstance</B></FONT><br> <B><U>Example of use</U>:</B> <ul> <li>Unequip an item from inventory</li> <li>Stop an active skill</li> </ul>
 	 * @param functions The list of Func objects to add to the Calculator corresponding to the state affected
 	 */
 	public final void removeStatFuncs(AbstractFunction[] functions)
@@ -4056,8 +4044,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * That's why, client send regularly a Client->Server ValidatePosition packet to eventually correct the gap on the server.<br>
 	 * But, it's always the server position that is used in range calculation. At the end of the estimated movement time,<br>
 	 * the L2Character position is automatically set to the destination position even if the movement is not finished.<br>
-	 * <FONT COLOR=#FF0000><B><U>Caution</U>: The current Z position is obtained FROM THE CLIENT by the Client->Server ValidatePosition Packet.<br>
-	 * But x and y positions must be calculated to avoid that players try to modify their movement speed.</B></FONT>
+	 * <FONT COLOR=#FF0000><B><U>Caution</U>: The current Z position is obtained FROM THE CLIENT by the Client->Server ValidatePosition Packet.<br> But x and y positions must be calculated to avoid that players try to modify their movement speed.</B></FONT>
 	 * @return True if the movement is finished
 	 */
 	public boolean updatePosition()
@@ -4139,7 +4126,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		
 		double delta = (dx * dx) + (dy * dy);
 		if ((delta < 10000) && ((dz * dz) > 2500) // close enough, allows error between client and server geodata if it cannot be avoided
-			&& !isFloating)
+		&& !isFloating)
 		{
 			delta = Math.sqrt(delta);
 		}
@@ -4309,11 +4296,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * <li>Add the L2Character to movingObjects of the GameTimeController</li>
 	 * <li>Create a task to notify the AI that L2Character arrives at a check point of the movement</li>
 	 * </ul>
-	 * <FONT COLOR=#FF0000><B><U>Caution</U>: This method DOESN'T send Server->Client packet MoveToPawn/CharMoveToLocation.</B></FONT><br>
-	 * <B><U>Example of use</U>:</B>
-	 * <ul>
-	 * <li>AI : onIntentionMoveTo(Location), onIntentionPickUp(L2Object), onIntentionInteract(L2Object)</li>
-	 * <li>FollowTask</li>
+	 * <FONT COLOR=#FF0000><B><U>Caution</U>: This method DOESN'T send Server->Client packet MoveToPawn/CharMoveToLocation.</B></FONT><br> <B><U>Example of use</U>:</B> <ul> <li>AI : onIntentionMoveTo(Location), onIntentionPickUp(L2Object), onIntentionInteract(L2Object)</li> <li>FollowTask</li>
 	 * </ul>
 	 * @param x The X position of the destination
 	 * @param y The Y position of the destination
@@ -4418,7 +4401,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		m.disregardingGeodata = false;
 		
 		if (!isFlying() // flying chars not checked - even canSeeTarget doesn't work yet
-			&& (!isInsideZone(ZoneId.WATER) || isInsideZone(ZoneId.SIEGE))) // swimming also not checked unless in siege zone - but distance is limited
+		&& (!isInsideZone(ZoneId.WATER) || isInsideZone(ZoneId.SIEGE))) // swimming also not checked unless in siege zone - but distance is limited
 		{
 			final boolean isInVehicle = isPlayer() && (getActingPlayer().getVehicle() != null);
 			if (isInVehicle)
@@ -4436,7 +4419,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Movement checks:
 			// when PATHFINDING > 0, for all characters except mobs returning home (could be changed later to teleport if pathfinding fails)
 			if (((Config.PATHFINDING > 0) && (!(isAttackable() && ((Attackable) this).isReturningToSpawnPoint()))) || (isPlayer() && !(isInVehicle && (distance > 1500))) || (isSummon() && !(getAI().getIntention() == AI_INTENTION_FOLLOW)) // assuming intention_follow only when following owner
-				|| isAfraid())
+			|| isAfraid())
 			{
 				if (isOnGeodataPath())
 				{
@@ -4741,7 +4724,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * <B><U> Overridden in </U> :</B> <li>L2PcInstance</li>
+	 * <B><U> Overridden in </U> :</B>
+	 * <li>L2PcInstance</li>
 	 * @return True if arrows are available.
 	 */
 	protected boolean checkAndEquipArrows()
@@ -4750,7 +4734,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * <B><U> Overridden in </U> :</B> <li>L2PcInstance</li>
+	 * <B><U> Overridden in </U> :</B>
+	 * <li>L2PcInstance</li>
 	 * @return True if bolts are available.
 	 */
 	protected boolean checkAndEquipBolts()
@@ -4760,7 +4745,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	/**
 	 * Add Exp and Sp to the L2Character.<br>
-	 * <B><U> Overridden in </U> :</B> <li>L2PcInstance</li> <li>L2PetInstance</li>
+	 * <B><U> Overridden in </U> :</B>
+	 * <li>L2PcInstance</li>
+	 * <li>L2PetInstance</li>
 	 * @param addToExp
 	 * @param addToSp
 	 */
@@ -4770,25 +4757,29 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * <B><U> Overridden in </U> :</B> <li>L2PcInstance</li>
+	 * <B><U> Overridden in </U> :</B>
+	 * <li>L2PcInstance</li>
 	 * @return the active weapon instance (always equiped in the right hand).
 	 */
 	public abstract ItemInstance getActiveWeaponInstance();
 	
 	/**
-	 * <B><U> Overridden in </U> :</B> <li>L2PcInstance</li>
+	 * <B><U> Overridden in </U> :</B>
+	 * <li>L2PcInstance</li>
 	 * @return the active weapon item (always equiped in the right hand).
 	 */
 	public abstract Weapon getActiveWeaponItem();
 	
 	/**
-	 * <B><U> Overridden in </U> :</B> <li>L2PcInstance</li>
+	 * <B><U> Overridden in </U> :</B>
+	 * <li>L2PcInstance</li>
 	 * @return the secondary weapon instance (always equiped in the left hand).
 	 */
 	public abstract ItemInstance getSecondaryWeaponInstance();
 	
 	/**
-	 * <B><U> Overridden in </U> :</B> <li>L2PcInstance</li>
+	 * <B><U> Overridden in </U> :</B>
+	 * <li>L2PcInstance</li>
 	 * @return the secondary {@link L2Item} item (always equiped in the left hand).
 	 */
 	public abstract L2Item getSecondaryWeaponItem();
@@ -5043,7 +5034,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	/**
 	 * Reduce the arrow number of the L2Character.<br>
-	 * <B><U> Overridden in </U> :</B> <li>L2PcInstance</li>
+	 * <B><U> Overridden in </U> :</B>
+	 * <li>L2PcInstance</li>
 	 * @param bolts
 	 */
 	protected void reduceArrowCount(boolean bolts)
@@ -5404,7 +5396,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		{
 			switch (skill.getTargetType())
 			{
-			// only AURA-type skills can be cast without target
+				// only AURA-type skills can be cast without target
 				case AURA:
 				case FRONT_AURA:
 				case BEHIND_AURA:
@@ -5720,7 +5712,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	// Quest event ON_SPELL_FNISHED
 	protected void notifyQuestEventSkillFinished(Skill skill, WorldObject target)
 	{
-		
+	
 	}
 	
 	/**
@@ -6399,6 +6391,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		getStatus().setCurrentCp(newCp);
 	}
 	
+	public final void setCurrentCp(double newCp, boolean broadcast)
+	{
+		getStatus().setCurrentCp(newCp, broadcast);
+	}
+	
 	public final double getCurrentHp()
 	{
 		return getStatus().getCurrentHp();
@@ -6407,6 +6404,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public final void setCurrentHp(double newHp)
 	{
 		getStatus().setCurrentHp(newHp);
+	}
+	
+	public final void setCurrentHp(double newHp, boolean broadcast)
+	{
+		getStatus().setCurrentHp(newHp, broadcast);
 	}
 	
 	public final void setCurrentHpMp(double newHp, double newMp)
@@ -6422,6 +6424,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public final void setCurrentMp(double newMp)
 	{
 		getStatus().setCurrentMp(newMp);
+	}
+	
+	public final void setCurrentMp(double newMp, boolean broadcast)
+	{
+		getStatus().setCurrentMp(newMp, false);
 	}
 	
 	/**
@@ -6475,7 +6482,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public void sendDamageMessage(Creature target, int damage, boolean mcrit, boolean pcrit, boolean miss)
 	{
-		
+	
 	}
 	
 	public byte getAttackElement()

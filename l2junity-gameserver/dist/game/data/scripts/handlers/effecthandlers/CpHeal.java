@@ -24,6 +24,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -69,7 +70,12 @@ public final class CpHeal extends AbstractEffect
 		amount = Math.max(Math.min(amount, target.getMaxRecoverableCp() - target.getCurrentCp()), 0);
 		if (amount != 0)
 		{
-			target.setCurrentCp(amount + target.getCurrentCp());
+			final double newCp = amount + target.getCurrentCp();
+			target.setCurrentCp(newCp, false);
+			final StatusUpdate su = new StatusUpdate(target);
+			su.addAttribute(StatusUpdate.CUR_CP, (int) newCp);
+			su.addCaster(info.getEffector());
+			target.broadcastPacket(su);
 		}
 		
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CP_HAS_BEEN_RESTORED);

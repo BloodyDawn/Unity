@@ -71,87 +71,90 @@ public final class RebalanceHP extends AbstractEffect
 		{
 			case PARTY:
 			{
-				for (PlayerInstance member : party.getMembers())
+				if (party != null)
 				{
-					if (!member.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, member, true))
+					for (PlayerInstance member : party.getMembers())
 					{
-						fullHP += member.getMaxHp();
-						currentHPs += member.getCurrentHp();
-					}
-					
-					final Summon summon = member.getPet();
-					if ((summon != null) && (!summon.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, summon, true)))
-					{
-						fullHP += summon.getMaxHp();
-						currentHPs += summon.getCurrentHp();
-					}
-					
-					for (Summon servitors : member.getServitors().values())
-					{
-						fullHP += servitors.getMaxHp();
-						currentHPs += servitors.getCurrentHp();
-					}
-				}
-				
-				double percentHP = currentHPs / fullHP;
-				for (PlayerInstance member : party.getMembers())
-				{
-					if (!member.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, member, true))
-					{
-						double newHP = member.getMaxHp() * percentHP;
-						if (newHP > member.getCurrentHp()) // The target gets healed
+						if (!member.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, member, true))
 						{
-							// The heal will be blocked if the current hp passes the limit
-							if (member.getCurrentHp() > member.getMaxRecoverableHp())
-							{
-								newHP = member.getCurrentHp();
-							}
-							else if (newHP > member.getMaxRecoverableHp())
-							{
-								newHP = member.getMaxRecoverableHp();
-							}
+							fullHP += member.getMaxHp();
+							currentHPs += member.getCurrentHp();
 						}
 						
-						member.setCurrentHp(newHP);
-					}
-					
-					final Summon summon = member.getPet();
-					if ((summon != null) && (!summon.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, summon, true)))
-					{
-						double newHP = summon.getMaxHp() * percentHP;
-						if (newHP > summon.getCurrentHp()) // The target gets healed
+						final Summon summon = member.getPet();
+						if ((summon != null) && (!summon.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, summon, true)))
 						{
-							// The heal will be blocked if the current hp passes the limit
-							if (summon.getCurrentHp() > summon.getMaxRecoverableHp())
-							{
-								newHP = summon.getCurrentHp();
-							}
-							else if (newHP > summon.getMaxRecoverableHp())
-							{
-								newHP = summon.getMaxRecoverableHp();
-							}
+							fullHP += summon.getMaxHp();
+							currentHPs += summon.getCurrentHp();
 						}
-						summon.setCurrentHp(newHP);
+						
+						for (Summon servitors : member.getServitors().values())
+						{
+							fullHP += servitors.getMaxHp();
+							currentHPs += servitors.getCurrentHp();
+						}
 					}
 					
-					for (Summon servitors : member.getServitors().values())
+					double percentHP = currentHPs / fullHP;
+					for (PlayerInstance member : party.getMembers())
 					{
-						if (!servitors.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, summon, true))
+						if (!member.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, member, true))
 						{
-							double newHP = servitors.getMaxHp() * percentHP;
-							if (newHP > servitors.getCurrentHp()) // The target gets healed
+							double newHP = member.getMaxHp() * percentHP;
+							if (newHP > member.getCurrentHp()) // The target gets healed
 							{
 								// The heal will be blocked if the current hp passes the limit
-								if (servitors.getCurrentHp() > servitors.getMaxRecoverableHp())
+								if (member.getCurrentHp() > member.getMaxRecoverableHp())
 								{
-									newHP = servitors.getCurrentHp();
+									newHP = member.getCurrentHp();
 								}
-								else if (newHP > servitors.getMaxRecoverableHp())
+								else if (newHP > member.getMaxRecoverableHp())
 								{
-									newHP = servitors.getMaxRecoverableHp();
+									newHP = member.getMaxRecoverableHp();
 								}
 							}
-							servitors.setCurrentHp(newHP);
+							
+							member.setCurrentHp(newHP);
+						}
+						
+						final Summon summon = member.getPet();
+						if ((summon != null) && (!summon.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, summon, true)))
+						{
+							double newHP = summon.getMaxHp() * percentHP;
+							if (newHP > summon.getCurrentHp()) // The target gets healed
+							{
+								// The heal will be blocked if the current hp passes the limit
+								if (summon.getCurrentHp() > summon.getMaxRecoverableHp())
+								{
+									newHP = summon.getCurrentHp();
+								}
+								else if (newHP > summon.getMaxRecoverableHp())
+								{
+									newHP = summon.getMaxRecoverableHp();
+								}
+							}
+							summon.setCurrentHp(newHP);
+						}
+						
+						for (Summon servitors : member.getServitors().values())
+						{
+							if (!servitors.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, summon, true))
+							{
+								double newHP = servitors.getMaxHp() * percentHP;
+								if (newHP > servitors.getCurrentHp()) // The target gets healed
+								{
+									// The heal will be blocked if the current hp passes the limit
+									if (servitors.getCurrentHp() > servitors.getMaxRecoverableHp())
+									{
+										newHP = servitors.getCurrentHp();
+									}
+									else if (newHP > servitors.getMaxRecoverableHp())
+									{
+										newHP = servitors.getMaxRecoverableHp();
+									}
+								}
+								servitors.setCurrentHp(newHP);
+							}
 						}
 					}
 				}

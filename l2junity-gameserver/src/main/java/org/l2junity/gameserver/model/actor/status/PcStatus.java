@@ -329,6 +329,7 @@ public class PcStatus extends PlayableStatus
 		setCurrentCp(newCp, true);
 	}
 	
+	@Override
 	public final void setCurrentCp(double newCp, boolean broadcastPacket)
 	{
 		// Get the Max CP of the L2Character
