@@ -18,14 +18,12 @@
  */
 package org.l2junity.loginserver.network.gameserver;
 
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.SimpleChannelInboundHandler;
-
-import org.l2junity.loginserver.manager.GameServerManager;
 import org.l2junity.network.ChannelInboundHandler;
 import org.l2junity.network.IIncomingPacket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import io.netty.channel.ChannelHandlerContext;
 
 /**
  * @author NosBit
@@ -37,7 +35,7 @@ public class GameServerHandler extends ChannelInboundHandler<GameServerHandler>
 	protected GameServerHandler()
 	{
 	}
-
+	
 	@Override
 	protected void messageReceived(ChannelHandlerContext ctx, IIncomingPacket<GameServerHandler> msg) throws Exception
 	{

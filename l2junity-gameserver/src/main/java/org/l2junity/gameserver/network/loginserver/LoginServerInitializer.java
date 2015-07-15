@@ -18,15 +18,15 @@
  */
 package org.l2junity.gameserver.network.loginserver;
 
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.socket.SocketChannel;
-import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
-
 import java.nio.ByteOrder;
 
 import org.l2junity.network.codecs.LengthFieldBasedFrameEncoder;
 import org.l2junity.network.codecs.PacketDecoder;
 import org.l2junity.network.codecs.PacketEncoder;
+
+import io.netty.channel.ChannelInitializer;
+import io.netty.channel.socket.SocketChannel;
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 
 /**
  * @author NosBit
@@ -35,7 +35,7 @@ public class LoginServerInitializer extends ChannelInitializer<SocketChannel>
 {
 	private static final LengthFieldBasedFrameEncoder LENGTH_ENCODER = new LengthFieldBasedFrameEncoder();
 	private static final PacketEncoder PACKET_ENCODER = new PacketEncoder(ByteOrder.LITTLE_ENDIAN, 0x8000 - 2);
-
+	
 	@Override
 	protected void initChannel(SocketChannel ch) throws Exception
 	{
