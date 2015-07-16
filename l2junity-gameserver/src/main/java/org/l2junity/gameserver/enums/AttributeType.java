@@ -35,14 +35,14 @@ public enum AttributeType
 
 	static
 	{
-		NONE_ARMOR._opposite = AttributeType.NONE_ARMOR;
-		NONE._opposite = AttributeType.NONE;
-		FIRE._opposite = AttributeType.WATER;
-		WATER._opposite = AttributeType.FIRE;
-		WIND._opposite = AttributeType.EARTH;
-		EARTH._opposite = AttributeType.WIND;
-		HOLY._opposite = AttributeType.DARK;
-		DARK._opposite = AttributeType.HOLY;
+		NONE_ARMOR._opposite = NONE_ARMOR;
+		NONE._opposite = NONE;
+		FIRE._opposite = WATER;
+		WATER._opposite = FIRE;
+		WIND._opposite = EARTH;
+		EARTH._opposite = WIND;
+		HOLY._opposite = DARK;
+		DARK._opposite = HOLY;
 	}
 
 	public static final AttributeType[] ATTRIBUTE_TYPES = {

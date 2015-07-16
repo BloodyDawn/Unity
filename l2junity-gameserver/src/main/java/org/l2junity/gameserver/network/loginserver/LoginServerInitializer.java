@@ -37,7 +37,7 @@ public class LoginServerInitializer extends ChannelInitializer<SocketChannel>
 	private static final PacketEncoder PACKET_ENCODER = new PacketEncoder(ByteOrder.LITTLE_ENDIAN, 0x8000 - 2);
 	
 	@Override
-	protected void initChannel(SocketChannel ch) throws Exception
+	protected void initChannel(SocketChannel ch)
 	{
 		final LoginServerHandler loginServerHandler = new LoginServerHandler();
 		ch.pipeline().addLast("length-decoder", new LengthFieldBasedFrameDecoder(ByteOrder.LITTLE_ENDIAN, 0x8000 - 2, 0, 2, -2, 2, false));
