@@ -851,14 +851,13 @@
 			<vitals hp="2193" hpRegen="7.5" mp="1188" mpRegen="2.7" />
 			<attack physical="541.44774" magical="369.73862" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="262.19426" magical="158.831806262641" />
-
 			<speed>
 				<walk ground="15" />
 				<run ground="1" />
 			</speed>
 			<hit_time>430</hit_time>
 		</stats>
-		<status undying="false" />
+		<status undying="false" targetable="false" randomWalk="false" randomAnimation="false" />
 		<skill_list>
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->

@@ -235,6 +235,7 @@ import quests.Q10409_ASuspiciousVagabondInTheSwamp.Q10409_ASuspiciousVagabondInT
 import quests.Q10410_EmbryoInTheSwampOfScreams.Q10410_EmbryoInTheSwampOfScreams;
 import quests.Q10411_KekropusLetterTheForestOfTheDead.Q10411_KekropusLetterTheForestOfTheDead;
 import quests.Q10412_ASuspiciousVagabondInTheForest.Q10412_ASuspiciousVagabondInTheForest;
+import quests.Q10413_EmbryoInTheForestOfTheDead.Q10413_EmbryoInTheForestOfTheDead;
 import quests.Q10460_ReturnOfTheAlligatorHunter.Q10460_ReturnOfTheAlligatorHunter;
 import quests.Q10464_BePreparedForAnything.Q10464_BePreparedForAnything;
 import quests.Q10472_WindsOfFateEncroachingShadows.Q10472_WindsOfFateEncroachingShadows;
@@ -516,6 +517,7 @@ public class QuestMasterHandler
 		Q10410_EmbryoInTheSwampOfScreams.class,
 		Q10411_KekropusLetterTheForestOfTheDead.class,
 		Q10412_ASuspiciousVagabondInTheForest.class,
+		Q10413_EmbryoInTheForestOfTheDead.class,
 		Q10460_ReturnOfTheAlligatorHunter.class,
 		Q10464_BePreparedForAnything.class,
 		Q10472_WindsOfFateEncroachingShadows.class,
