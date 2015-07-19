@@ -448,11 +448,11 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 	 * Sets the base elemental of the item.
 	 * @param holder the element to set.
 	 */
-	public void setElementals(AttributeHolder holder)
+	public void setAttributes(AttributeHolder holder)
 	{
 		if (_elementals == null)
 		{
-			_elementals = new LinkedHashMap<>();
+			_elementals = new LinkedHashMap<>(3);
 			_elementals.put(holder.getType(), holder);
 		}
 		else
@@ -644,37 +644,37 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 			case FIRE_RES:
 			case FIRE_POWER:
 			{
-				setElementals(new AttributeHolder(AttributeType.FIRE, (int) template.getValue()));
+				setAttributes(new AttributeHolder(AttributeType.FIRE, (int) template.getValue()));
 				break;
 			}
 			case WATER_RES:
 			case WATER_POWER:
 			{
-				setElementals(new AttributeHolder(AttributeType.WATER, (int) template.getValue()));
+				setAttributes(new AttributeHolder(AttributeType.WATER, (int) template.getValue()));
 				break;
 			}
 			case WIND_RES:
 			case WIND_POWER:
 			{
-				setElementals(new AttributeHolder(AttributeType.WIND, (int) template.getValue()));
+				setAttributes(new AttributeHolder(AttributeType.WIND, (int) template.getValue()));
 				break;
 			}
 			case EARTH_RES:
 			case EARTH_POWER:
 			{
-				setElementals(new AttributeHolder(AttributeType.EARTH, (int) template.getValue()));
+				setAttributes(new AttributeHolder(AttributeType.EARTH, (int) template.getValue()));
 				break;
 			}
 			case HOLY_RES:
 			case HOLY_POWER:
 			{
-				setElementals(new AttributeHolder(AttributeType.HOLY, (int) template.getValue()));
+				setAttributes(new AttributeHolder(AttributeType.HOLY, (int) template.getValue()));
 				break;
 			}
 			case DARK_RES:
 			case DARK_POWER:
 			{
-				setElementals(new AttributeHolder(AttributeType.DARK, (int) template.getValue()));
+				setAttributes(new AttributeHolder(AttributeType.DARK, (int) template.getValue()));
 				break;
 			}
 		}
