@@ -20,17 +20,20 @@ package org.l2junity.gameserver.model.items;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.datatables.ItemTable;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.ItemGrade;
 import org.l2junity.gameserver.enums.ItemSkillType;
-import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.ExtractableProduct;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.StatsSet;
@@ -43,6 +46,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
+import org.l2junity.gameserver.model.items.enchant.attribute.AttributeHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.ActionType;
 import org.l2junity.gameserver.model.items.type.CrystalType;
@@ -155,7 +159,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 	
 	protected int _type1; // needed for item list (inventory)
 	protected int _type2; // different lists for armor, weapon, etc
-	protected Elementals[] _elementals = null;
+	private Map<AttributeType, AttributeHolder> _elementals = null;
 	protected List<FuncTemplate> _funcTemplates;
 	protected List<Condition> _preConditions;
 	private List<ItemSkillHolder> _skills;
@@ -430,51 +434,37 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 		return _name;
 	}
 	
-	/**
-	 * @return the base elemental of the item.
-	 */
-	public final Elementals[] getElementals()
+	public Collection<AttributeHolder> getAttributes()
 	{
-		return _elementals;
+		return _elementals != null ? _elementals.values() : null;
 	}
 	
-	public Elementals getElemental(byte attribute)
+	public AttributeHolder getAttribute(AttributeType type)
 	{
-		for (Elementals elm : _elementals)
-		{
-			if (elm.getElement() == attribute)
-			{
-				return elm;
-			}
-		}
-		return null;
+		return _elementals != null ? _elementals.get(type) : null;
 	}
 	
 	/**
 	 * Sets the base elemental of the item.
-	 * @param element the element to set.
+	 * @param holder the element to set.
 	 */
-	public void setElementals(Elementals element)
+	public void setElementals(AttributeHolder holder)
 	{
 		if (_elementals == null)
 		{
-			_elementals = new Elementals[1];
-			_elementals[0] = element;
+			_elementals = new LinkedHashMap<>();
+			_elementals.put(holder.getType(), holder);
 		}
 		else
 		{
-			Elementals elm = getElemental(element.getElement());
-			if (elm != null)
+			final AttributeHolder attribute = getAttribute(holder.getType());
+			if (attribute != null)
 			{
-				elm.setValue(element.getValue());
+				attribute.setValue(holder.getValue());
 			}
 			else
 			{
-				elm = element;
-				Elementals[] array = new Elementals[_elementals.length + 1];
-				System.arraycopy(_elementals, 0, array, 0, _elementals.length);
-				array[_elementals.length] = elm;
-				_elementals = array;
+				_elementals.put(holder.getType(), holder);
 			}
 		}
 	}
@@ -653,28 +643,40 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 		{
 			case FIRE_RES:
 			case FIRE_POWER:
-				setElementals(new Elementals(Elementals.FIRE, (int) template.getValue()));
+			{
+				setElementals(new AttributeHolder(AttributeType.FIRE, (int) template.getValue()));
 				break;
+			}
 			case WATER_RES:
 			case WATER_POWER:
-				setElementals(new Elementals(Elementals.WATER, (int) template.getValue()));
+			{
+				setElementals(new AttributeHolder(AttributeType.WATER, (int) template.getValue()));
 				break;
+			}
 			case WIND_RES:
 			case WIND_POWER:
-				setElementals(new Elementals(Elementals.WIND, (int) template.getValue()));
+			{
+				setElementals(new AttributeHolder(AttributeType.WIND, (int) template.getValue()));
 				break;
+			}
 			case EARTH_RES:
 			case EARTH_POWER:
-				setElementals(new Elementals(Elementals.EARTH, (int) template.getValue()));
+			{
+				setElementals(new AttributeHolder(AttributeType.EARTH, (int) template.getValue()));
 				break;
+			}
 			case HOLY_RES:
 			case HOLY_POWER:
-				setElementals(new Elementals(Elementals.HOLY, (int) template.getValue()));
+			{
+				setElementals(new AttributeHolder(AttributeType.HOLY, (int) template.getValue()));
 				break;
+			}
 			case DARK_RES:
 			case DARK_POWER:
-				setElementals(new Elementals(Elementals.DARK, (int) template.getValue()));
+			{
+				setElementals(new AttributeHolder(AttributeType.DARK, (int) template.getValue()));
 				break;
+			}
 		}
 		
 		if (_funcTemplates == null)

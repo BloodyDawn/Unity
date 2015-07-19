@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.multisell;
 
-import org.l2junity.gameserver.model.Elementals;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 /**
@@ -35,21 +35,21 @@ public class ItemInfo
 	{
 		_enchantLevel = item.getEnchantLevel();
 		_augmentId = item.getAugmentation() != null ? item.getAugmentation().getAugmentationId() : 0;
-		_elementId = item.getAttackElementType();
-		_elementPower = item.getAttackElementPower();
-		_elementals[0] = item.getElementDefAttr(Elementals.FIRE);
-		_elementals[1] = item.getElementDefAttr(Elementals.WATER);
-		_elementals[2] = item.getElementDefAttr(Elementals.WIND);
-		_elementals[3] = item.getElementDefAttr(Elementals.EARTH);
-		_elementals[4] = item.getElementDefAttr(Elementals.HOLY);
-		_elementals[5] = item.getElementDefAttr(Elementals.DARK);
+		_elementId = item.getAttackAttributeType().getClientId();
+		_elementPower = item.getAttackAttributePower();
+		_elementals[0] = item.getDefenceAttribute(AttributeType.FIRE);
+		_elementals[1] = item.getDefenceAttribute(AttributeType.WATER);
+		_elementals[2] = item.getDefenceAttribute(AttributeType.WIND);
+		_elementals[3] = item.getDefenceAttribute(AttributeType.EARTH);
+		_elementals[4] = item.getDefenceAttribute(AttributeType.HOLY);
+		_elementals[5] = item.getDefenceAttribute(AttributeType.DARK);
 	}
 	
 	public ItemInfo(int enchantLevel)
 	{
 		_enchantLevel = enchantLevel;
 		_augmentId = 0;
-		_elementId = Elementals.NONE;
+		_elementId = AttributeType.NONE.getClientId();
 		_elementPower = 0;
 		_elementals[0] = 0;
 		_elementals[1] = 0;

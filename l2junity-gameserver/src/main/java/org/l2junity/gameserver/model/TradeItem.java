@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model;
 
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
@@ -57,11 +58,11 @@ public class TradeItem
 		_type2 = item.getCustomType2();
 		_count = count;
 		_price = price;
-		_elemAtkType = item.getAttackElementType();
-		_elemAtkPower = item.getAttackElementPower();
-		for (byte i = 0; i < 6; i++)
+		_elemAtkType = item.getAttackAttributeType().getClientId();
+		_elemAtkPower = item.getAttackAttributePower();
+		for (AttributeType type : AttributeType.ATTRIBUTE_TYPES)
 		{
-			_elemDefAttr[i] = item.getElementDefAttr(i);
+			_elemDefAttr[type.getClientId()] = item.getDefenceAttribute(type);
 		}
 		_enchantOptions = item.getEnchantOptions();
 		_visualId = item.getVisualId();

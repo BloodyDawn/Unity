@@ -18,13 +18,13 @@
  */
 package handlers.effecthandlers;
 
-import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.Weapon;
+import org.l2junity.gameserver.model.items.enchant.attribute.AttributeHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
@@ -86,7 +86,7 @@ public final class ConvertItem extends AbstractEffect
 		}
 		
 		final int enchantLevel = wpn.getEnchantLevel();
-		final Elementals elementals = wpn.getElementals() == null ? null : wpn.getElementals()[0];
+		final AttributeHolder elementals = wpn.getAttributes() == null ? null : wpn.getAttackAttribute();
 		final ItemInstance[] unequiped = player.getInventory().unEquipItemInBodySlotAndRecord(wpn.getItem().getBodyPart());
 		final InventoryUpdate iu = new InventoryUpdate();
 		for (ItemInstance item : unequiped)
@@ -140,9 +140,9 @@ public final class ConvertItem extends AbstractEffect
 			return;
 		}
 		
-		if ((elementals != null) && (elementals.getElement() != -1) && (elementals.getValue() != -1))
+		if (elementals != null)
 		{
-			newItem.setElementAttr(elementals.getElement(), elementals.getValue());
+			newItem.setAttribute(elementals);
 		}
 		newItem.setEnchantLevel(enchantLevel);
 		player.getInventory().equipItem(newItem);

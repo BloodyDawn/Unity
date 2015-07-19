@@ -27,8 +27,8 @@ import java.util.concurrent.TimeUnit;
 import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.datatables.ItemTable;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.handler.IBypassHandler;
-import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
@@ -203,14 +203,14 @@ public class NpcViewMod implements IBypassHandler
 		html.replace("%accuracy%", npc.getStat().getAccuracy());
 		html.replace("%speed%", (int) npc.getStat().getMoveSpeed());
 		
-		html.replace("%attributeatktype%", Elementals.getElementName(npc.getStat().getAttackElement()));
+		html.replace("%attributeatktype%", npc.getStat().getAttackElement().name());
 		html.replace("%attributeatkvalue%", npc.getStat().getAttackElementValue(npc.getStat().getAttackElement()));
-		html.replace("%attributefire%", npc.getStat().getDefenseElementValue(Elementals.FIRE));
-		html.replace("%attributewater%", npc.getStat().getDefenseElementValue(Elementals.WATER));
-		html.replace("%attributewind%", npc.getStat().getDefenseElementValue(Elementals.WIND));
-		html.replace("%attributeearth%", npc.getStat().getDefenseElementValue(Elementals.EARTH));
-		html.replace("%attributedark%", npc.getStat().getDefenseElementValue(Elementals.DARK));
-		html.replace("%attributeholy%", npc.getStat().getDefenseElementValue(Elementals.HOLY));
+		html.replace("%attributefire%", npc.getStat().getDefenseElementValue(AttributeType.FIRE));
+		html.replace("%attributewater%", npc.getStat().getDefenseElementValue(AttributeType.WATER));
+		html.replace("%attributewind%", npc.getStat().getDefenseElementValue(AttributeType.WIND));
+		html.replace("%attributeearth%", npc.getStat().getDefenseElementValue(AttributeType.EARTH));
+		html.replace("%attributedark%", npc.getStat().getDefenseElementValue(AttributeType.DARK));
+		html.replace("%attributeholy%", npc.getStat().getDefenseElementValue(AttributeType.HOLY));
 		
 		html.replace("%dropListButtons%", getDropListButtons(npc));
 		

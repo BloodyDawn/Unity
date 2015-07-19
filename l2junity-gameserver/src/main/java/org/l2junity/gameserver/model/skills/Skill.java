@@ -380,9 +380,9 @@ public final class Skill implements IIdentifiable
 		return _traitType;
 	}
 	
-	public byte getAttributeType()
+	public AttributeType getAttributeType()
 	{
-		return (byte) _attributeType.getClientId();
+		return _attributeType;
 	}
 	
 	public int getAttributeValue()

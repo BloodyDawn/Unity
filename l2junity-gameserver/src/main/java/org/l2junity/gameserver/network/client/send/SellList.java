@@ -22,6 +22,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -88,11 +89,11 @@ public class SellList implements IClientOutgoingPacket
 			packet.writeH(item.getCustomType2());
 			packet.writeQ(item.getItem().getReferencePrice() / 2);
 			// T1
-			packet.writeH(item.getAttackElementType());
-			packet.writeH(item.getAttackElementPower());
-			for (byte i = 0; i < 6; i++)
+			packet.writeH(item.getAttackAttributeType().getClientId());
+			packet.writeH(item.getAttackAttributePower());
+			for (AttributeType type : AttributeType.ATTRIBUTE_TYPES)
 			{
-				packet.writeH(item.getElementDefAttr(i));
+				packet.writeH(item.getDefenceAttribute(type));
 			}
 			// Enchant Effects
 			for (int op : item.getEnchantOptions())

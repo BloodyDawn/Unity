@@ -18,11 +18,12 @@
  */
 package handlers.admincommandhandlers;
 
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
-import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
+import org.l2junity.gameserver.model.items.enchant.attribute.AttributeHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -84,15 +85,15 @@ public class AdminElement implements IAdminCommandHandler
 			{
 				String[] args = command.split(" ");
 				
-				byte element = Elementals.getElementId(args[1]);
+				AttributeType type = AttributeType.findByName(args[1]);
 				int value = Integer.parseInt(args[2]);
-				if ((element < -1) || (element > 5) || (value < 0) || (value > 450))
+				if ((type == null) || (value < 0) || (value > 450))
 				{
 					activeChar.sendMessage("Usage: //setlh/setlc/setlg/setlb/setll/setlw/setls <element> <value>[0-450]");
 					return false;
 				}
 				
-				setElement(activeChar, element, value, armorType);
+				setElement(activeChar, type, value, armorType);
 			}
 			catch (Exception e)
 			{
@@ -110,7 +111,7 @@ public class AdminElement implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	private void setElement(PlayerInstance activeChar, byte type, int value, int armorType)
+	private void setElement(PlayerInstance activeChar, AttributeType type, int value, int armorType)
 	{
 		// get the target
 		WorldObject target = activeChar.getTarget();
@@ -141,7 +142,7 @@ public class AdminElement implements IAdminCommandHandler
 		if (itemInstance != null)
 		{
 			String old, current;
-			Elementals element = itemInstance.getElemental(type);
+			AttributeHolder element = itemInstance.getAttribute(type);
 			if (element == null)
 			{
 				old = "None";
@@ -153,23 +154,27 @@ public class AdminElement implements IAdminCommandHandler
 			
 			// set enchant value
 			player.getInventory().unEquipItemInSlot(armorType);
-			if (type == -1)
+			if (type == AttributeType.NONE)
 			{
-				itemInstance.clearElementAttr(type);
+				itemInstance.clearAllAttributes();
+			}
+			else if (value < 1)
+			{
+				itemInstance.clearAttribute(type);
 			}
 			else
 			{
-				itemInstance.setElementAttr(type, value);
+				itemInstance.setAttribute(new AttributeHolder(type, value));
 			}
 			player.getInventory().equipItem(itemInstance);
 			
-			if (itemInstance.getElementals() == null)
+			if (itemInstance.getAttributes() == null)
 			{
 				current = "None";
 			}
 			else
 			{
-				current = itemInstance.getElemental(type).toString();
+				current = itemInstance.getAttribute(type).toString();
 			}
 			
 			// send packets

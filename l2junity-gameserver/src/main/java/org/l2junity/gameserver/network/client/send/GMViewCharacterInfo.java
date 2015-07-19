@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.network.client.send;
 
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
@@ -164,12 +165,12 @@ public class GMViewCharacterInfo implements IClientOutgoingPacket
 		packet.writeD(_activeChar.getAppearance().getNameColor());
 		packet.writeD(_activeChar.getAppearance().getTitleColor());
 		
-		byte attackAttribute = _activeChar.getAttackElement();
-		packet.writeH(attackAttribute);
+		final AttributeType attackAttribute = _activeChar.getAttackElement();
+		packet.writeH(attackAttribute.getClientId());
 		packet.writeH(_activeChar.getAttackElementValue(attackAttribute));
-		for (byte i = 0; i < 6; i++)
+		for (AttributeType type : AttributeType.ATTRIBUTE_TYPES)
 		{
-			packet.writeH(_activeChar.getDefenseElementValue(i));
+			packet.writeH(_activeChar.getDefenseElementValue(type));
 		}
 		packet.writeD(_activeChar.getFame());
 		packet.writeD(_activeChar.getVitalityPoints());

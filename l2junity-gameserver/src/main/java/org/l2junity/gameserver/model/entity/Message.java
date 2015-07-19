@@ -27,6 +27,7 @@ import java.util.concurrent.ScheduledFuture;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.MailType;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.MailManager;
@@ -200,14 +201,14 @@ public class Message
 			_enchantLvl = item.getEnchantLevel();
 			if (item.isArmor())
 			{
-				for (int i = 0; i < 6; i++)
+				for (AttributeType type : AttributeType.ATTRIBUTE_TYPES)
 				{
-					_elementals[i] = item.getElementDefAttr((byte) i);
+					_elementals[type.getClientId()] = item.getDefenceAttribute(type);
 				}
 			}
-			else if (item.isWeapon() && (item.getAttackElementType() >= 0))
+			else if (item.isWeapon() && (item.getAttackAttributeType() != AttributeType.NONE))
 			{
-				_elementals[item.getAttackElementType()] = item.getAttackElementPower();
+				_elementals[item.getAttackAttributeType().getClientId()] = item.getAttackAttributePower();
 			}
 		}
 		else if (mailType == MailType.COMMISSION_ITEM_RETURNED)

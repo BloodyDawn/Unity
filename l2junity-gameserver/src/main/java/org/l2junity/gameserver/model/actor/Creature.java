@@ -56,6 +56,7 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.CategoryData;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.datatables.ItemTable;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.ItemSkillType;
@@ -6485,17 +6486,17 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	}
 	
-	public byte getAttackElement()
+	public AttributeType getAttackElement()
 	{
 		return getStat().getAttackElement();
 	}
 	
-	public int getAttackElementValue(byte attackAttribute)
+	public int getAttackElementValue(AttributeType attackAttribute)
 	{
 		return getStat().getAttackElementValue(attackAttribute);
 	}
 	
-	public int getDefenseElementValue(byte defenseAttribute)
+	public int getDefenseElementValue(AttributeType defenseAttribute)
 	{
 		return getStat().getDefenseElementValue(defenseAttribute);
 	}

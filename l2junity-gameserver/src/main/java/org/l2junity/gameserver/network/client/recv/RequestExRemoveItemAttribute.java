@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import org.l2junity.gameserver.model.Elementals;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -57,14 +57,19 @@ public class RequestExRemoveItemAttribute implements IClientIncomingPacket
 			return;
 		}
 		
-		ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_objectId);
-		
+		final ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_objectId);
 		if (targetItem == null)
 		{
 			return;
 		}
 		
-		if ((targetItem.getElementals() == null) || (targetItem.getElemental(_element) == null))
+		final AttributeType type = AttributeType.findByClientId(_element);
+		if (type == null)
+		{
+			return;
+		}
+		
+		if ((targetItem.getAttributes() == null) || (targetItem.getAttribute(type) == null))
 		{
 			return;
 		}
@@ -73,16 +78,16 @@ public class RequestExRemoveItemAttribute implements IClientIncomingPacket
 		{
 			if (targetItem.isEquipped())
 			{
-				targetItem.getElemental(_element).removeBonus(activeChar);
+				targetItem.getAttribute(type).remove(activeChar);
 			}
-			targetItem.clearElementAttr(_element);
+			targetItem.clearAttribute(type);
 			client.sendPacket(new UserInfo(activeChar));
 			
-			InventoryUpdate iu = new InventoryUpdate();
+			final InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(targetItem);
 			activeChar.sendInventoryUpdate(iu);
 			SystemMessage sm;
-			byte realElement = targetItem.isArmor() ? Elementals.getOppositeElement(_element) : _element;
+			AttributeType realElement = targetItem.isArmor() ? type.getOpposite() : type;
 			if (targetItem.getEnchantLevel() > 0)
 			{
 				if (targetItem.isArmor())
@@ -97,8 +102,8 @@ public class RequestExRemoveItemAttribute implements IClientIncomingPacket
 				sm.addItemName(targetItem);
 				if (targetItem.isArmor())
 				{
-					sm.addElemental(realElement);
-					sm.addElemental(Elementals.getOppositeElement(realElement));
+					sm.addAttribute(realElement.getClientId());
+					sm.addAttribute(realElement.getOpposite().getClientId());
 				}
 			}
 			else
@@ -114,8 +119,8 @@ public class RequestExRemoveItemAttribute implements IClientIncomingPacket
 				sm.addItemName(targetItem);
 				if (targetItem.isArmor())
 				{
-					sm.addElemental(realElement);
-					sm.addElemental(Elementals.getOppositeElement(realElement));
+					sm.addAttribute(realElement.getClientId());
+					sm.addAttribute(realElement.getOpposite().getClientId());
 				}
 			}
 			client.sendPacket(sm);

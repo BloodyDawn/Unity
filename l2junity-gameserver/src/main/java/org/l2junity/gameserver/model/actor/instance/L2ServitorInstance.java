@@ -35,6 +35,7 @@ import org.l2junity.gameserver.data.sql.impl.CharSummonTable;
 import org.l2junity.gameserver.data.sql.impl.SummonEffectsTable;
 import org.l2junity.gameserver.data.sql.impl.SummonEffectsTable.SummonEffect;
 import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -482,7 +483,7 @@ public class L2ServitorInstance extends Summon implements Runnable
 	}
 	
 	@Override
-	public byte getAttackElement()
+	public AttributeType getAttackElement()
 	{
 		if (getOwner() != null)
 		{
@@ -492,7 +493,7 @@ public class L2ServitorInstance extends Summon implements Runnable
 	}
 	
 	@Override
-	public int getAttackElementValue(byte attackAttribute)
+	public int getAttackElementValue(AttributeType attackAttribute)
 	{
 		if (getOwner() != null)
 		{
@@ -502,7 +503,7 @@ public class L2ServitorInstance extends Summon implements Runnable
 	}
 	
 	@Override
-	public int getDefenseElementValue(byte defenseAttribute)
+	public int getDefenseElementValue(AttributeType defenseAttribute)
 	{
 		if (getOwner() != null)
 		{

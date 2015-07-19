@@ -20,10 +20,12 @@ package org.l2junity.gameserver.network.client.recv;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.EnchantItemAttributeRequest;
+import org.l2junity.gameserver.model.items.enchant.attribute.AttributeHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ExAttributeEnchantResult;
@@ -133,32 +135,32 @@ public class RequestExEnchantItemAttribute implements IClientIncomingPacket
 		
 		final int stoneId = stone.getId();
 		final long count = Math.min(stone.getCount(), _count);
-		byte elementToAdd = Elementals.getItemElement(stoneId);
+		AttributeType elementToAdd = AttributeType.findByClientId(Elementals.getItemElement(stoneId));
 		// Armors have the opposite element
 		if (item.isArmor())
 		{
-			elementToAdd = Elementals.getOppositeElement(elementToAdd);
+			elementToAdd = elementToAdd.getOpposite();
 		}
-		byte opositeElement = Elementals.getOppositeElement(elementToAdd);
+		final AttributeType opositeElement = elementToAdd.getOpposite();
 		
-		final Elementals oldElement = item.getElemental(elementToAdd);
+		final AttributeHolder oldElement = item.getAttribute(elementToAdd);
 		final int elementValue = oldElement == null ? 0 : oldElement.getValue();
 		final int limit = getLimit(item, stoneId);
 		int powerToAdd = getPowerToAdd(stoneId, elementValue, item);
 		
-		if ((item.isWeapon() && (oldElement != null) && (oldElement.getElement() != elementToAdd) && (oldElement.getElement() != -2)) || (item.isArmor() && (item.getElemental(elementToAdd) == null) && (item.getElementals() != null) && (item.getElementals().length >= 3)))
+		if ((item.isWeapon() && (oldElement != null) && (oldElement.getType() != elementToAdd) && (oldElement.getType() != AttributeType.NONE)) || (item.isArmor() && (item.getAttribute(elementToAdd) == null) && (item.getAttributes() != null) && (item.getAttributes().size() >= 3)))
 		{
 			client.sendPacket(SystemMessageId.ANOTHER_ELEMENTAL_POWER_HAS_ALREADY_BEEN_ADDED_THIS_ELEMENTAL_POWER_CANNOT_BE_ADDED);
 			player.removeRequest(request.getClass());
 			return;
 		}
 		
-		if (item.isArmor() && (item.getElementals() != null))
+		if (item.isArmor() && (item.getAttributes() != null))
 		{
 			// can't add opposite element
-			for (Elementals elm : item.getElementals())
+			for (AttributeHolder attribute : item.getAttributes())
 			{
-				if (elm.getElement() == opositeElement)
+				if (attribute.getType() == opositeElement)
 				{
 					player.removeRequest(request.getClass());
 					Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to add oposite attribute to item!", Config.DEFAULT_PUNISH);
@@ -203,9 +205,9 @@ public class RequestExEnchantItemAttribute implements IClientIncomingPacket
 		}
 		
 		player.destroyItem("AttrEnchant", stone, usedStones, player, true);
-		final Elementals newElement = item.getElemental(elementToAdd);
+		final AttributeHolder newElement = item.getAttribute(elementToAdd);
 		final int newValue = newElement != null ? newElement.getValue() : 0;
-		final byte realElement = item.isArmor() ? opositeElement : elementToAdd;
+		final AttributeType realElement = item.isArmor() ? opositeElement : elementToAdd;
 		final InventoryUpdate iu = new InventoryUpdate();
 		
 		if (successfulAttempts > 0)
@@ -222,10 +224,10 @@ public class RequestExEnchantItemAttribute implements IClientIncomingPacket
 					sm = SystemMessage.getSystemMessage(SystemMessageId.S2_ELEMENTAL_POWER_HAS_BEEN_ADDED_SUCCESSFULLY_TO_S1);
 				}
 				sm.addItemName(item);
-				sm.addElemental(realElement);
+				sm.addAttribute(realElement.getClientId());
 				if (item.isArmor())
 				{
-					sm.addElemental(Elementals.getOppositeElement(realElement));
+					sm.addAttribute(realElement.getOpposite().getClientId());
 				}
 			}
 			else
@@ -240,10 +242,10 @@ public class RequestExEnchantItemAttribute implements IClientIncomingPacket
 				}
 				sm.addInt(item.getEnchantLevel());
 				sm.addItemName(item);
-				sm.addElemental(realElement);
+				sm.addAttribute(realElement.getClientId());
 				if (item.isArmor())
 				{
-					sm.addElemental(Elementals.getOppositeElement(realElement));
+					sm.addAttribute(realElement.getOpposite().getClientId());
 				}
 			}
 			player.sendPacket(sm);
@@ -283,9 +285,9 @@ public class RequestExEnchantItemAttribute implements IClientIncomingPacket
 		player.sendInventoryUpdate(iu);
 	}
 	
-	private int addElement(final PlayerInstance player, final ItemInstance stone, final ItemInstance item, byte elementToAdd)
+	private int addElement(final PlayerInstance player, final ItemInstance stone, final ItemInstance item, AttributeType elementToAdd)
 	{
-		final Elementals oldElement = item.getElemental(elementToAdd);
+		final AttributeHolder oldElement = item.getAttribute(elementToAdd);
 		final int elementValue = oldElement == null ? 0 : oldElement.getValue();
 		final int limit = getLimit(item, stone.getId());
 		int powerToAdd = getPowerToAdd(stone.getId(), elementValue, item);
@@ -341,7 +343,7 @@ public class RequestExEnchantItemAttribute implements IClientIncomingPacket
 		
 		if (success)
 		{
-			item.setElementAttr(elementToAdd, newPower);
+			item.setAttribute(new AttributeHolder(elementToAdd, newPower));
 		}
 		
 		return success ? 1 : 0;
@@ -364,7 +366,7 @@ public class RequestExEnchantItemAttribute implements IClientIncomingPacket
 	
 	public int getPowerToAdd(int stoneId, int oldValue, ItemInstance item)
 	{
-		if (Elementals.getItemElement(stoneId) != Elementals.NONE)
+		if (Elementals.getItemElement(stoneId) != -1)
 		{
 			if (item.isWeapon())
 			{

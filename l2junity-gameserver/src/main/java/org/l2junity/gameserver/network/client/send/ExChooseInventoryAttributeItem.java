@@ -21,6 +21,7 @@ package org.l2junity.gameserver.network.client.send;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -34,7 +35,7 @@ public class ExChooseInventoryAttributeItem implements IClientOutgoingPacket
 {
 	private final int _itemId;
 	private final long _count;
-	private final byte _atribute;
+	private final AttributeType _atribute;
 	private final int _level;
 	private final Set<Integer> _items = new HashSet<>();
 	
@@ -42,8 +43,8 @@ public class ExChooseInventoryAttributeItem implements IClientOutgoingPacket
 	{
 		_itemId = stone.getDisplayId();
 		_count = stone.getCount();
-		_atribute = Elementals.getItemElement(_itemId);
-		if (_atribute == Elementals.NONE)
+		_atribute = AttributeType.findByClientId(Elementals.getItemElement(_itemId));
+		if ((_atribute == AttributeType.NONE) || (_atribute == AttributeType.NONE_ARMOR))
 		{
 			throw new IllegalArgumentException("Undefined Atribute item: " + stone);
 		}
@@ -66,12 +67,12 @@ public class ExChooseInventoryAttributeItem implements IClientOutgoingPacket
 		
 		packet.writeD(_itemId);
 		packet.writeQ(_count);
-		packet.writeD(_atribute == Elementals.FIRE ? 1 : 0); // Fire
-		packet.writeD(_atribute == Elementals.WATER ? 1 : 0); // Water
-		packet.writeD(_atribute == Elementals.WIND ? 1 : 0); // Wind
-		packet.writeD(_atribute == Elementals.EARTH ? 1 : 0); // Earth
-		packet.writeD(_atribute == Elementals.HOLY ? 1 : 0); // Holy
-		packet.writeD(_atribute == Elementals.DARK ? 1 : 0); // Unholy
+		packet.writeD(_atribute == AttributeType.FIRE ? 1 : 0); // Fire
+		packet.writeD(_atribute == AttributeType.WATER ? 1 : 0); // Water
+		packet.writeD(_atribute == AttributeType.WIND ? 1 : 0); // Wind
+		packet.writeD(_atribute == AttributeType.EARTH ? 1 : 0); // Earth
+		packet.writeD(_atribute == AttributeType.HOLY ? 1 : 0); // Holy
+		packet.writeD(_atribute == AttributeType.DARK ? 1 : 0); // Unholy
 		packet.writeD(_level); // Item max attribute level
 		packet.writeD(_items.size());
 		_items.forEach(packet::writeD);

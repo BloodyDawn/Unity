@@ -19,8 +19,8 @@
 package org.l2junity.gameserver.network.client.send;
 
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.UserInfoType;
-import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -225,12 +225,12 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 		if (containsMask(UserInfoType.ELEMENTALS))
 		{
 			packet.writeH(14);
-			packet.writeH(_activeChar.getDefenseElementValue(Elementals.FIRE));
-			packet.writeH(_activeChar.getDefenseElementValue(Elementals.WATER));
-			packet.writeH(_activeChar.getDefenseElementValue(Elementals.WIND));
-			packet.writeH(_activeChar.getDefenseElementValue(Elementals.EARTH));
-			packet.writeH(_activeChar.getDefenseElementValue(Elementals.HOLY));
-			packet.writeH(_activeChar.getDefenseElementValue(Elementals.DARK));
+			packet.writeH(_activeChar.getDefenseElementValue(AttributeType.FIRE));
+			packet.writeH(_activeChar.getDefenseElementValue(AttributeType.WATER));
+			packet.writeH(_activeChar.getDefenseElementValue(AttributeType.WIND));
+			packet.writeH(_activeChar.getDefenseElementValue(AttributeType.EARTH));
+			packet.writeH(_activeChar.getDefenseElementValue(AttributeType.HOLY));
+			packet.writeH(_activeChar.getDefenseElementValue(AttributeType.DARK));
 		}
 		
 		if (containsMask(UserInfoType.POSITION))
@@ -272,8 +272,8 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 		if (containsMask(UserInfoType.ATK_ELEMENTAL))
 		{
 			packet.writeH(5);
-			byte attackAttribute = _activeChar.getAttackElement();
-			packet.writeC(attackAttribute);
+			final AttributeType attackAttribute = _activeChar.getAttackElement();
+			packet.writeC(attackAttribute.getClientId());
 			packet.writeH(_activeChar.getAttackElementValue(attackAttribute));
 		}
 		

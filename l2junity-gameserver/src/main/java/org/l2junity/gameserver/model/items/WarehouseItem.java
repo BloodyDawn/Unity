@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model.items;
 
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.CrystalType;
 import org.l2junity.gameserver.model.items.type.ItemType;
@@ -47,7 +48,7 @@ public class WarehouseItem
 	private final int _customType2;
 	private final int _mana;
 	
-	private int _elemAtkType = -2;
+	private byte _elemAtkType = -2;
 	private int _elemAtkPower = 0;
 	
 	private final int[] _elemDefAttr =
@@ -87,11 +88,11 @@ public class WarehouseItem
 		_mana = item.getMana();
 		_time = item.isTimeLimitedItem() ? (int) (item.getRemainingTime() / 1000) : -1;
 		
-		_elemAtkType = item.getAttackElementType();
-		_elemAtkPower = item.getAttackElementPower();
-		for (byte i = 0; i < 6; i++)
+		_elemAtkType = item.getAttackAttributeType().getClientId();
+		_elemAtkPower = item.getAttackAttributePower();
+		for (AttributeType type : AttributeType.ATTRIBUTE_TYPES)
 		{
-			_elemDefAttr[i] = item.getElementDefAttr(i);
+			_elemDefAttr[type.getClientId()] = item.getDefenceAttribute(type);
 		}
 		_enchantOptions = item.getEnchantOptions();
 	}
@@ -263,7 +264,7 @@ public class WarehouseItem
 		return _mana;
 	}
 	
-	public int getAttackElementType()
+	public byte getAttackElementType()
 	{
 		return _elemAtkType;
 	}

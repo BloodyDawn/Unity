@@ -32,36 +32,29 @@ public enum AttributeType
 	EARTH(3),
 	HOLY(4),
 	DARK(5);
-
-	static
+	
+	public static final AttributeType[] ATTRIBUTE_TYPES =
 	{
-		NONE_ARMOR._opposite = NONE_ARMOR;
-		NONE._opposite = NONE;
-		FIRE._opposite = WATER;
-		WATER._opposite = FIRE;
-		WIND._opposite = EARTH;
-		EARTH._opposite = WIND;
-		HOLY._opposite = DARK;
-		DARK._opposite = HOLY;
-	}
-
-	public static final AttributeType[] ATTRIBUTE_TYPES = {
-		FIRE, WATER, WIND, EARTH, HOLY, DARK
+		FIRE,
+		WATER,
+		WIND,
+		EARTH,
+		HOLY,
+		DARK
 	};
 
-	private final int _clientId;
-	private AttributeType _opposite;
+	private final byte _clientId;
 
 	AttributeType(int clientId)
 	{
-		_clientId = clientId;
+		_clientId = (byte) clientId;
 	}
 
 	/**
 	 * Gets the client id.
 	 * @return the client id
 	 */
-	public int getClientId()
+	public byte getClientId()
 	{
 		return _clientId;
 	}
@@ -72,7 +65,7 @@ public enum AttributeType
 	 */
 	public AttributeType getOpposite()
 	{
-		return _opposite;
+		return ATTRIBUTE_TYPES[((getClientId() % 2) == 0) ? (getClientId() + 1) : (getClientId() - 1)];
 	}
 
 	/**

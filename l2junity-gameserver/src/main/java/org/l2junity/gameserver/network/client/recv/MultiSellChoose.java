@@ -26,10 +26,10 @@ import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.MultisellData;
 import org.l2junity.gameserver.model.Augmentation;
-import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.PcInventory;
+import org.l2junity.gameserver.model.items.enchant.attribute.AttributeHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.multisell.Entry;
 import org.l2junity.gameserver.model.multisell.Ingredient;
@@ -216,7 +216,7 @@ public class MultiSellChoose implements IClientIncomingPacket
 				}
 				
 				List<Augmentation> augmentation = new ArrayList<>();
-				Elementals[] elemental = null;
+				Collection<AttributeHolder> attributes = null;
 				/** All ok, remove items and add final product */
 				
 				for (Ingredient e : entry.getIngredients())
@@ -274,9 +274,9 @@ public class MultiSellChoose implements IClientIncomingPacket
 										{
 											augmentation.add(inventoryContents[i].getAugmentation());
 										}
-										if (inventoryContents[i].getElementals() != null)
+										if (inventoryContents[i].getAttributes() != null)
 										{
-											elemental = inventoryContents[i].getElementals();
+											attributes = inventoryContents[i].getAttributes();
 										}
 										if (!player.destroyItem("Multisell", inventoryContents[i].getObjectId(), 1, player.getTarget(), true))
 										{
@@ -403,12 +403,9 @@ public class MultiSellChoose implements IClientIncomingPacket
 									{
 										product.setAugmentation(new Augmentation(augmentation.get(i).getAugmentationId()));
 									}
-									if (elemental != null)
+									if (attributes != null)
 									{
-										for (Elementals elm : elemental)
-										{
-											product.setElementAttr(elm.getElement(), elm.getValue());
-										}
+										attributes.forEach(product::setAttribute);
 									}
 									product.setEnchantLevel(e.getEnchantLevel());
 									product.updateDatabase();

@@ -26,6 +26,7 @@ import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.HitConditionBonusData;
 import org.l2junity.gameserver.data.xml.impl.KarmaData;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.ClanHallManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
@@ -1674,10 +1675,10 @@ public final class Formulas
 		
 		if (skill != null)
 		{
-			if (skill.getAttributeType() == -1)
+			if ((skill.getAttributeType() == AttributeType.NONE) || (skill.getAttributeType() == AttributeType.NONE_ARMOR))
 			{
 				attack_attribute = 0;
-				defence_attribute = target.getDefenseElementValue((byte) -1);
+				defence_attribute = target.getDefenseElementValue(AttributeType.NONE_ARMOR);
 			}
 			else
 			{

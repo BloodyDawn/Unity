@@ -19,8 +19,8 @@
 package quests.Q10275_ContainingTheAttributePower;
 
 import org.l2junity.commons.util.CommonUtil;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.QuestSound;
-import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
@@ -85,11 +85,11 @@ public class Q10275_ContainingTheAttributePower extends Quest
 				break;
 			case "32325-03.html":
 				st.setCond(3, true);
-				giveItems(player, YINSWORD, 1, Elementals.FIRE, 10);
+				giveItems(player, YINSWORD, 1, AttributeType.FIRE, 10);
 				break;
 			case "32326-03.html":
 				st.setCond(8, true);
-				giveItems(player, YANGSWORD, 1, Elementals.EARTH, 10);
+				giveItems(player, YANGSWORD, 1, AttributeType.EARTH, 10);
 				break;
 			case "32325-06.html":
 				if (hasQuestItems(player, YINSWORD))
@@ -97,7 +97,7 @@ public class Q10275_ContainingTheAttributePower extends Quest
 					takeItems(player, YINSWORD, 1);
 					htmltext = "32325-07.html";
 				}
-				giveItems(player, YINSWORD, 1, Elementals.FIRE, 10);
+				giveItems(player, YINSWORD, 1, AttributeType.FIRE, 10);
 				break;
 			case "32326-06.html":
 				if (hasQuestItems(player, YANGSWORD))
@@ -105,17 +105,17 @@ public class Q10275_ContainingTheAttributePower extends Quest
 					takeItems(player, YANGSWORD, 1);
 					htmltext = "32326-07.html";
 				}
-				giveItems(player, YANGSWORD, 1, Elementals.EARTH, 10);
+				giveItems(player, YANGSWORD, 1, AttributeType.EARTH, 10);
 				break;
 			case "32325-09.html":
 				st.setCond(5, true);
 				BLESSING_OF_FIRE.getSkill().applyEffects(player, player);
-				giveItems(player, YINSWORD, 1, Elementals.FIRE, 10);
+				giveItems(player, YINSWORD, 1, AttributeType.FIRE, 10);
 				break;
 			case "32326-09.html":
 				st.setCond(10, true);
 				BLESSING_OF_EARTH.getSkill().applyEffects(player, player);
-				giveItems(player, YANGSWORD, 1, Elementals.EARTH, 10);
+				giveItems(player, YANGSWORD, 1, AttributeType.EARTH, 10);
 				break;
 		}
 		

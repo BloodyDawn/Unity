@@ -26,7 +26,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -38,6 +41,7 @@ import org.l2junity.gameserver.data.xml.impl.AppearanceItemData;
 import org.l2junity.gameserver.data.xml.impl.EnchantItemOptionsData;
 import org.l2junity.gameserver.data.xml.impl.OptionData;
 import org.l2junity.gameserver.datatables.ItemTable;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.enums.ItemSkillType;
@@ -49,7 +53,6 @@ import org.l2junity.gameserver.instancemanager.ItemsOnGroundManager;
 import org.l2junity.gameserver.instancemanager.SiegeGuardManager;
 import org.l2junity.gameserver.model.Augmentation;
 import org.l2junity.gameserver.model.DropProtection;
-import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
@@ -70,6 +73,7 @@ import org.l2junity.gameserver.model.items.EtcItem;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.appearance.AppearanceStone;
+import org.l2junity.gameserver.model.items.enchant.attribute.AttributeHolder;
 import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.items.type.ItemType;
 import org.l2junity.gameserver.model.options.EnchantOptions;
@@ -162,7 +166,7 @@ public final class ItemInstance extends WorldObject
 	
 	private final ReentrantLock _dbLock = new ReentrantLock();
 	
-	private Elementals[] _elementals = null;
+	private Map<AttributeType, AttributeHolder> _elementals = null;
 	
 	private ScheduledFuture<?> itemLootShedule = null;
 	private ScheduledFuture<?> _lifeTimeTask;
@@ -930,7 +934,7 @@ public final class ItemInstance extends WorldObject
 		// there shall be no previous augmentation..
 		if (_augmentation != null)
 		{
-			_log.info("Warning: Augment set for (" + getObjectId() + ") " + getName() + " owner: " + getOwnerId());
+			_log.info("Warning: Augment set for ({}) {} owner: {}", getObjectId(), getName(), getOwnerId());
 			return false;
 		}
 		
@@ -969,7 +973,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (Exception e)
 		{
-			_log.error("Could not remove augmentation for item: " + this + " from DB:", e);
+			_log.error("Could not remove augmentation for item: {} from DB:", toString(), e);
 		}
 		
 		// Notify to scripts.
@@ -1000,18 +1004,18 @@ public final class ItemInstance extends WorldObject
 			{
 				while (rs.next())
 				{
-					byte elem_type = rs.getByte(1);
-					int elem_value = rs.getInt(2);
-					if ((elem_type != -1) && (elem_value != -1))
+					final byte attributeType = rs.getByte(1);
+					final int attributeValue = rs.getInt(2);
+					if ((attributeType != -1) && (attributeValue != -1))
 					{
-						applyAttribute(elem_type, elem_value);
+						applyAttribute(new AttributeHolder(AttributeType.findByClientId(attributeType), attributeValue));
 					}
 				}
 			}
 		}
 		catch (Exception e)
 		{
-			_log.error("Could not restore augmentation and elemental data for item " + this + " from DB: " + e.getMessage(), e);
+			_log.error("Could not restore augmentation and elemental data for item {} from DB: ", toString(), e);
 		}
 	}
 	
@@ -1025,7 +1029,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (SQLException e)
 		{
-			_log.error("Could not update atributes for item: " + this + " from DB:", e);
+			_log.error("Could not update atributes for item: {} from DB:", toString(), e);
 		}
 	}
 	
@@ -1038,7 +1042,7 @@ public final class ItemInstance extends WorldObject
 		}
 		catch (SQLException e)
 		{
-			_log.error("Could not update elementals for item: " + this + " from DB:", e);
+			_log.error("Could not update elementals for item: {} from DB:", toString(), e);
 		}
 		
 		if (_elementals == null)
@@ -1048,134 +1052,111 @@ public final class ItemInstance extends WorldObject
 		
 		try (PreparedStatement ps = con.prepareStatement("INSERT INTO item_elementals VALUES(?,?,?)"))
 		{
-			for (Elementals elm : _elementals)
+			for (AttributeHolder attribute : _elementals.values())
 			{
 				ps.setInt(1, getObjectId());
-				ps.setByte(2, elm.getElement());
-				ps.setInt(3, elm.getValue());
+				ps.setByte(2, attribute.getType().getClientId());
+				ps.setInt(3, attribute.getValue());
 				ps.executeUpdate();
 				ps.clearParameters();
 			}
 		}
 		catch (SQLException e)
 		{
-			_log.error("Could not update elementals for item: " + this + " from DB:", e);
+			_log.error("Could not update elementals for item: {} from DB:", toString(), e);
 		}
 	}
 	
-	public Elementals[] getElementals()
+	public Collection<AttributeHolder> getAttributes()
 	{
-		return _elementals;
+		return _elementals != null ? _elementals.values() : null;
 	}
 	
-	public Elementals getElemental(byte attribute)
+	public AttributeHolder getAttribute(AttributeType type)
 	{
-		if (_elementals == null)
+		return _elementals != null ? _elementals.get(type) : null;
+	}
+	
+	public AttributeHolder getAttackAttribute()
+	{
+		if (isWeapon())
 		{
-			return null;
-		}
-		for (Elementals elm : _elementals)
-		{
-			if (elm.getElement() == attribute)
+			if (getItem().getAttributes() != null)
 			{
-				return elm;
+				return getItem().getAttributes().stream().findFirst().orElse(null);
+			}
+			else if (_elementals != null)
+			{
+				return _elementals.values().stream().findFirst().orElse(null);
 			}
 		}
 		return null;
 	}
-	
-	public byte getAttackElementType()
+
+	public AttributeType getAttackAttributeType()
 	{
-		if (!isWeapon())
-		{
-			return -2;
-		}
-		else if (getItem().getElementals() != null)
-		{
-			return getItem().getElementals()[0].getElement();
-		}
-		else if (_elementals != null)
-		{
-			return _elementals[0].getElement();
-		}
-		return -2;
+		final AttributeHolder holder = getAttackAttribute();
+		return holder != null ? holder.getType() : AttributeType.NONE;
 	}
 	
-	public int getAttackElementPower()
+	public int getAttackAttributePower()
 	{
-		if (!isWeapon())
-		{
-			return 0;
-		}
-		else if (getItem().getElementals() != null)
-		{
-			return getItem().getElementals()[0].getValue();
-		}
-		else if (_elementals != null)
-		{
-			return _elementals[0].getValue();
-		}
-		return 0;
+		final AttributeHolder holder = getAttackAttribute();
+		return holder != null ? holder.getValue() : 0;
 	}
 	
-	public int getElementDefAttr(byte element)
+	public int getDefenceAttribute(AttributeType element)
 	{
-		if (!isArmor())
+		if (isArmor())
 		{
-			return 0;
-		}
-		else if (getItem().getElementals() != null)
-		{
-			Elementals elm = getItem().getElemental(element);
-			if (elm != null)
+			if (getItem().getAttributes() != null)
 			{
-				return elm.getValue();
+				final AttributeHolder attribute = getItem().getAttribute(element);
+				if (attribute != null)
+				{
+					return attribute.getValue();
+				}
 			}
-		}
-		else if (_elementals != null)
-		{
-			Elementals elm = getElemental(element);
-			if (elm != null)
+			else if (_elementals != null)
 			{
-				return elm.getValue();
+				final AttributeHolder attribute = getAttribute(element);
+				if (attribute != null)
+				{
+					return attribute.getValue();
+				}
 			}
 		}
 		return 0;
 	}
 	
-	private void applyAttribute(byte element, int value)
+	private synchronized void applyAttribute(AttributeHolder holder)
 	{
 		if (_elementals == null)
 		{
-			_elementals = new Elementals[1];
-			_elementals[0] = new Elementals(element, value);
+			_elementals = new LinkedHashMap<>(3);
+			_elementals.put(holder.getType(), holder);
 		}
 		else
 		{
-			Elementals elm = getElemental(element);
-			if (elm != null)
+			final AttributeHolder attribute = getAttribute(holder.getType());
+			if (attribute != null)
 			{
-				elm.setValue(value);
+				attribute.setValue(holder.getValue());
 			}
 			else
 			{
-				elm = new Elementals(element, value);
-				Elementals[] array = new Elementals[_elementals.length + 1];
-				System.arraycopy(_elementals, 0, array, 0, _elementals.length);
-				array[_elementals.length] = elm;
-				_elementals = array;
+				_elementals.put(holder.getType(), holder);
 			}
 		}
 	}
 	
 	/**
 	 * Add elemental attribute to item and save to db
-	 * @param element
-	 * @param value
+	 * @param holder
 	 */
-	public void setElementAttr(byte element, int value)
+	public void setAttribute(AttributeHolder holder)
 	{
-		applyAttribute(element, value);
+		applyAttribute(holder);
 		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
 			updateItemElements(con);
@@ -1188,49 +1169,57 @@ public final class ItemInstance extends WorldObject
 	
 	/**
 	 * Remove elemental from item
-	 * @param element byte element to remove, -1 for all elementals remove
+	 * @param type byte element to remove
 	 */
-	public void clearElementAttr(byte element)
+	public void clearAttribute(AttributeType type)
 	{
-		if ((getElemental(element) == null) && (element != -1))
+		if ((_elementals == null) || (getAttribute(type) == null))
 		{
 			return;
 		}
 		
-		Elementals[] array = null;
-		if ((element != -1) && (_elementals != null) && (_elementals.length > 1))
+		synchronized (_elementals)
 		{
-			array = new Elementals[_elementals.length - 1];
-			int i = 0;
-			for (Elementals elm : _elementals)
-			{
-				if (elm.getElement() != element)
-				{
-					array[i++] = elm;
-				}
-			}
+			_elementals.remove(type);
 		}
-		_elementals = array;
 		
-		String query = (element != -1) ? "DELETE FROM item_elementals WHERE itemId = ? AND elemType = ?" : "DELETE FROM item_elementals WHERE itemId = ?";
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement(query))
+			PreparedStatement ps = con.prepareStatement("DELETE FROM item_elementals WHERE itemId = ? AND elemType = ?"))
 		{
-			if (element != -1)
-			{
-				// Item can have still others
-				ps.setInt(2, element);
-			}
-			
+			ps.setInt(1, getObjectId());
+			ps.setByte(2, type.getClientId());
+			ps.executeUpdate();
+		}
+		catch (Exception e)
+		{
+			_log.error("Could not remove elemental enchant for item: {} from DB:", toString(), e);
+		}
+	}
+	
+	public void clearAllAttributes()
+	{
+		if (_elementals == null)
+		{
+			return;
+		}
+		
+		synchronized (_elementals)
+		{
+			_elementals.clear();
+		}
+		
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
+			PreparedStatement ps = con.prepareStatement("DELETE FROM item_elementals WHERE itemId = ?"))
+		{
 			ps.setInt(1, getObjectId());
 			ps.executeUpdate();
 		}
 		catch (Exception e)
 		{
-			_log.error("Could not remove elemental enchant for item: " + this + " from DB:", e);
+			_log.error("Could not remove all elemental enchant for item: {} from DB:", toString(), e);
 		}
 	}
-	
+
 	/**
 	 * Used to decrease mana (mana means life time for shadow items)
 	 */
@@ -1863,9 +1852,11 @@ public final class ItemInstance extends WorldObject
 		{
 			return;
 		}
-		for (Elementals elm : _elementals)
+
+		for (AttributeHolder holder : _elementals.values())
 		{
-			elm.updateBonus(player, isArmor());
+			holder.remove(player);
+			holder.apply(player, isArmor());
 		}
 	}
 	
@@ -1875,9 +1866,10 @@ public final class ItemInstance extends WorldObject
 		{
 			return;
 		}
-		for (Elementals elm : _elementals)
+		
+		for (AttributeHolder attribute : _elementals.values())
 		{
-			elm.removeBonus(player);
+			attribute.remove(player);
 		}
 	}
 	

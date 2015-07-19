@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model;
 
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.buylist.Product;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.WarehouseItem;
@@ -62,7 +63,7 @@ public class ItemInfo
 	
 	private int _location;
 	
-	private int _elemAtkType = -2;
+	private byte _elemAtkType = -2;
 	private int _elemAtkPower = 0;
 	private final int[] _elemDefAttr =
 	{
@@ -143,11 +144,11 @@ public class ItemInfo
 		_time = item.isTimeLimitedItem() ? (int) (item.getRemainingTime() / 1000) : -9999;
 		_location = item.getLocationSlot();
 		
-		_elemAtkType = item.getAttackElementType();
-		_elemAtkPower = item.getAttackElementPower();
-		for (byte i = 0; i < 6; i++)
+		_elemAtkType = item.getAttackAttributeType().getClientId();
+		_elemAtkPower = item.getAttackAttributePower();
+		for (AttributeType type : AttributeType.ATTRIBUTE_TYPES)
 		{
-			_elemDefAttr[i] = item.getElementDefAttr(i);
+			_elemDefAttr[type.getClientId()] = item.getDefenceAttribute(type);
 		}
 		_option = item.getEnchantOptions();
 		_visualId = item.getVisualId();

@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model.actor.stat;
 import java.util.Arrays;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.model.Elementals;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.items.Weapon;
@@ -697,13 +697,13 @@ public class CharStat
 		return (int) calcStat(Stats.MP_CONSUME, skill.getMpInitialConsume(), null, skill);
 	}
 	
-	public byte getAttackElement()
+	public AttributeType getAttackElement()
 	{
 		ItemInstance weaponInstance = _activeChar.getActiveWeaponInstance();
 		// 1st order - weapon element
-		if ((weaponInstance != null) && (weaponInstance.getAttackElementType() >= 0))
+		if ((weaponInstance != null) && (weaponInstance.getAttackAttributeType() != AttributeType.NONE))
 		{
-			return weaponInstance.getAttackElementType();
+			return weaponInstance.getAttackAttributeType();
 		}
 		
 		// temp fix starts
@@ -717,7 +717,7 @@ public class CharStat
 			0
 		};
 		
-		byte returnVal = -2;
+		AttributeType returnVal = AttributeType.NONE;
 		stats[0] = (int) calcStat(Stats.FIRE_POWER, _activeChar.getTemplate().getBaseFire());
 		stats[1] = (int) calcStat(Stats.WATER_POWER, _activeChar.getTemplate().getBaseWater());
 		stats[2] = (int) calcStat(Stats.WIND_POWER, _activeChar.getTemplate().getBaseWind());
@@ -729,55 +729,50 @@ public class CharStat
 		{
 			if (stats[x] > tempVal)
 			{
-				returnVal = x;
+				returnVal = AttributeType.findByClientId(x);
 				tempVal = stats[x];
 			}
 		}
 		
 		return returnVal;
-		// temp fix ends
-		
-		/*
-		 * uncomment me once deadlocks in getAllEffects() fixed return _activeChar.getElementIdFromEffects();
-		 */
 	}
 	
-	public int getAttackElementValue(byte attackAttribute)
+	public int getAttackElementValue(AttributeType attackAttribute)
 	{
 		switch (attackAttribute)
 		{
-			case Elementals.FIRE:
+			case FIRE:
 				return (int) calcStat(Stats.FIRE_POWER, _activeChar.getTemplate().getBaseFire());
-			case Elementals.WATER:
+			case WATER:
 				return (int) calcStat(Stats.WATER_POWER, _activeChar.getTemplate().getBaseWater());
-			case Elementals.WIND:
+			case WIND:
 				return (int) calcStat(Stats.WIND_POWER, _activeChar.getTemplate().getBaseWind());
-			case Elementals.EARTH:
+			case EARTH:
 				return (int) calcStat(Stats.EARTH_POWER, _activeChar.getTemplate().getBaseEarth());
-			case Elementals.HOLY:
+			case HOLY:
 				return (int) calcStat(Stats.HOLY_POWER, _activeChar.getTemplate().getBaseHoly());
-			case Elementals.DARK:
+			case DARK:
 				return (int) calcStat(Stats.DARK_POWER, _activeChar.getTemplate().getBaseDark());
 			default:
 				return 0;
 		}
 	}
 	
-	public int getDefenseElementValue(byte defenseAttribute)
+	public int getDefenseElementValue(AttributeType defenseAttribute)
 	{
 		switch (defenseAttribute)
 		{
-			case Elementals.FIRE:
+			case FIRE:
 				return (int) calcStat(Stats.FIRE_RES, _activeChar.getTemplate().getBaseFireRes());
-			case Elementals.WATER:
+			case WATER:
 				return (int) calcStat(Stats.WATER_RES, _activeChar.getTemplate().getBaseWaterRes());
-			case Elementals.WIND:
+			case WIND:
 				return (int) calcStat(Stats.WIND_RES, _activeChar.getTemplate().getBaseWindRes());
-			case Elementals.EARTH:
+			case EARTH:
 				return (int) calcStat(Stats.EARTH_RES, _activeChar.getTemplate().getBaseEarthRes());
-			case Elementals.HOLY:
+			case HOLY:
 				return (int) calcStat(Stats.HOLY_RES, _activeChar.getTemplate().getBaseHolyRes());
-			case Elementals.DARK:
+			case DARK:
 				return (int) calcStat(Stats.DARK_RES, _activeChar.getTemplate().getBaseDarkRes());
 			default:
 				return (int) _activeChar.getTemplate().getBaseElementRes();

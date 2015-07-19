@@ -40,6 +40,7 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.ItemTable;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.instancemanager.CastleManager;
@@ -121,6 +122,7 @@ import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.itemcontainer.PcInventory;
 import org.l2junity.gameserver.model.items.EtcItem;
 import org.l2junity.gameserver.model.items.L2Item;
+import org.l2junity.gameserver.model.items.enchant.attribute.AttributeHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -2252,10 +2254,10 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 * @param player
 	 * @param itemId
 	 * @param count
-	 * @param attributeId
-	 * @param attributeLevel
+	 * @param attributeType
+	 * @param attributeValue
 	 */
-	public static void giveItems(PlayerInstance player, int itemId, long count, byte attributeId, int attributeLevel)
+	public static void giveItems(PlayerInstance player, int itemId, long count, AttributeType attributeType, int attributeValue)
 	{
 		if (count <= 0)
 		{
@@ -2270,15 +2272,15 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 		}
 		
 		// set enchant level for item if that item is not adena
-		if ((attributeId >= 0) && (attributeLevel > 0))
+		if ((attributeType != null) && (attributeValue > 0))
 		{
-			item.setElementAttr(attributeId, attributeLevel);
+			item.setAttribute(new AttributeHolder(attributeType, attributeValue));
 			if (item.isEquipped())
 			{
 				item.updateElementAttrBonus(player);
 			}
 			
-			InventoryUpdate iu = new InventoryUpdate();
+			final InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(item);
 			player.sendInventoryUpdate(iu);
 		}

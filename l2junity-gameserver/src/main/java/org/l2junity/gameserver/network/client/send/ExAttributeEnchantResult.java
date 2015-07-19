@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -31,11 +32,11 @@ public class ExAttributeEnchantResult implements IClientOutgoingPacket
 	private final int _successCount;
 	private final int _failedCount;
 	
-	public ExAttributeEnchantResult(int result, boolean isWeapon, int type, int before, int after, int successCount, int failedCount)
+	public ExAttributeEnchantResult(int result, boolean isWeapon, AttributeType type, int before, int after, int successCount, int failedCount)
 	{
 		_result = result;
 		_isWeapon = isWeapon ? 1 : 0;
-		_type = type;
+		_type = type.getClientId();
 		_before = before;
 		_after = after;
 		_successCount = successCount;

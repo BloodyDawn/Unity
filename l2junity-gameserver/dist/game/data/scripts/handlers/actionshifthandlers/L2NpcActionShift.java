@@ -24,11 +24,11 @@ import java.util.Set;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.CommonUtil;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.handler.IActionShiftHandler;
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
-import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
@@ -91,15 +91,15 @@ public class L2NpcActionShift implements IActionShiftHandler
 			html.replace("%collision_height%", String.valueOf(npc.getTemplate().getfCollisionHeight()));
 			html.replace("%dist%", String.valueOf((int) activeChar.calculateDistance(target, true, false)));
 			
-			byte attackAttribute = npc.getAttackElement();
-			html.replace("%ele_atk%", Elementals.getElementName(attackAttribute));
+			AttributeType attackAttribute = npc.getAttackElement();
+			html.replace("%ele_atk%", attackAttribute.name());
 			html.replace("%ele_atk_value%", String.valueOf(npc.getAttackElementValue(attackAttribute)));
-			html.replace("%ele_dfire%", String.valueOf(npc.getDefenseElementValue(Elementals.FIRE)));
-			html.replace("%ele_dwater%", String.valueOf(npc.getDefenseElementValue(Elementals.WATER)));
-			html.replace("%ele_dwind%", String.valueOf(npc.getDefenseElementValue(Elementals.WIND)));
-			html.replace("%ele_dearth%", String.valueOf(npc.getDefenseElementValue(Elementals.EARTH)));
-			html.replace("%ele_dholy%", String.valueOf(npc.getDefenseElementValue(Elementals.HOLY)));
-			html.replace("%ele_ddark%", String.valueOf(npc.getDefenseElementValue(Elementals.DARK)));
+			html.replace("%ele_dfire%", String.valueOf(npc.getDefenseElementValue(AttributeType.FIRE)));
+			html.replace("%ele_dwater%", String.valueOf(npc.getDefenseElementValue(AttributeType.WATER)));
+			html.replace("%ele_dwind%", String.valueOf(npc.getDefenseElementValue(AttributeType.WIND)));
+			html.replace("%ele_dearth%", String.valueOf(npc.getDefenseElementValue(AttributeType.EARTH)));
+			html.replace("%ele_dholy%", String.valueOf(npc.getDefenseElementValue(AttributeType.HOLY)));
+			html.replace("%ele_ddark%", String.valueOf(npc.getDefenseElementValue(AttributeType.DARK)));
 			
 			final L2Spawn spawn = npc.getSpawn();
 			if (spawn != null)

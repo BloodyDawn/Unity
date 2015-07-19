@@ -21,10 +21,6 @@ package org.l2junity.gameserver.model;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.FuncAdd;
-
 public final class Elementals
 {
 	private static final Map<Integer, ElementalItems> TABLE = new HashMap<>();
@@ -37,13 +33,13 @@ public final class Elementals
 		}
 	}
 	
-	public static final byte NONE = -1;
-	public static final byte FIRE = 0;
-	public static final byte WATER = 1;
-	public static final byte WIND = 2;
-	public static final byte EARTH = 3;
-	public static final byte HOLY = 4;
-	public static final byte DARK = 5;
+	protected static final byte NONE = -1;
+	protected static final byte FIRE = 0;
+	protected static final byte WATER = 1;
+	protected static final byte WIND = 2;
+	protected static final byte EARTH = 3;
+	protected static final byte HOLY = 4;
+	protected static final byte DARK = 5;
 	
 	public static final int FIRST_WEAPON_BONUS = 20;
 	public static final int NEXT_WEAPON_BONUS = 5;
@@ -176,186 +172,5 @@ public final class Elementals
 			return item._type._maxLevel;
 		}
 		return -1;
-	}
-	
-	public static String getElementName(byte element)
-	{
-		switch (element)
-		{
-			case FIRE:
-				return "Fire";
-			case WATER:
-				return "Water";
-			case WIND:
-				return "Wind";
-			case EARTH:
-				return "Earth";
-			case DARK:
-				return "Dark";
-			case HOLY:
-				return "Holy";
-		}
-		return "None";
-	}
-	
-	public static byte getElementId(String name)
-	{
-		String tmp = name.toLowerCase();
-		if (tmp.equals("fire"))
-		{
-			return FIRE;
-		}
-		if (tmp.equals("water"))
-		{
-			return WATER;
-		}
-		if (tmp.equals("wind"))
-		{
-			return WIND;
-		}
-		if (tmp.equals("earth"))
-		{
-			return EARTH;
-		}
-		if (tmp.equals("dark"))
-		{
-			return DARK;
-		}
-		if (tmp.equals("holy"))
-		{
-			return HOLY;
-		}
-		return NONE;
-	}
-	
-	public static byte getOppositeElement(byte element)
-	{
-		return (byte) (((element % 2) == 0) ? (element + 1) : (element - 1));
-	}
-	
-	public static class ElementalStatBoni
-	{
-		private byte _elementalType;
-		private int _elementalValue;
-		private boolean _active;
-		
-		public ElementalStatBoni(byte type, int value)
-		{
-			_elementalType = type;
-			_elementalValue = value;
-			_active = false;
-		}
-		
-		public void applyBonus(PlayerInstance player, boolean isArmor)
-		{
-			// make sure the bonuses are not applied twice..
-			if (_active)
-			{
-				return;
-			}
-			
-			switch (_elementalType)
-			{
-				case FIRE:
-					player.addStatFunc(new FuncAdd(isArmor ? Stats.FIRE_RES : Stats.FIRE_POWER, 0x40, this, _elementalValue, null));
-					break;
-				case WATER:
-					player.addStatFunc(new FuncAdd(isArmor ? Stats.WATER_RES : Stats.WATER_POWER, 0x40, this, _elementalValue, null));
-					break;
-				case WIND:
-					player.addStatFunc(new FuncAdd(isArmor ? Stats.WIND_RES : Stats.WIND_POWER, 0x40, this, _elementalValue, null));
-					break;
-				case EARTH:
-					player.addStatFunc(new FuncAdd(isArmor ? Stats.EARTH_RES : Stats.EARTH_POWER, 0x40, this, _elementalValue, null));
-					break;
-				case DARK:
-					player.addStatFunc(new FuncAdd(isArmor ? Stats.DARK_RES : Stats.DARK_POWER, 0x40, this, _elementalValue, null));
-					break;
-				case HOLY:
-					player.addStatFunc(new FuncAdd(isArmor ? Stats.HOLY_RES : Stats.HOLY_POWER, 0x40, this, _elementalValue, null));
-					break;
-			}
-			
-			_active = true;
-		}
-		
-		public void removeBonus(PlayerInstance player)
-		{
-			// make sure the bonuses are not removed twice
-			if (!_active)
-			{
-				return;
-			}
-			
-			player.removeStatsOwner(this);
-			
-			_active = false;
-		}
-		
-		public void setValue(int val)
-		{
-			_elementalValue = val;
-		}
-		
-		public void setElement(byte type)
-		{
-			_elementalType = type;
-		}
-	}
-	
-	// non static:
-	private ElementalStatBoni _boni = null;
-	private byte _element = NONE;
-	private int _value = 0;
-	
-	public byte getElement()
-	{
-		return _element;
-	}
-	
-	public void setElement(byte type)
-	{
-		_element = type;
-		_boni.setElement(type);
-	}
-	
-	public int getValue()
-	{
-		return _value;
-	}
-	
-	public void setValue(int val)
-	{
-		_value = val;
-		_boni.setValue(val);
-	}
-	
-	@Override
-	public String toString()
-	{
-		return getElementName(_element) + " +" + _value;
-	}
-	
-	public Elementals(byte type, int value)
-	{
-		_element = type;
-		_value = value;
-		_boni = new ElementalStatBoni(_element, _value);
-	}
-	
-	public void applyBonus(PlayerInstance player, boolean isArmor)
-	{
-		_boni.applyBonus(player, isArmor);
-	}
-	
-	public void removeBonus(PlayerInstance player)
-	{
-		_boni.removeBonus(player);
-	}
-	
-	public void updateBonus(PlayerInstance player, boolean isArmor)
-	{
-		_boni.removeBonus(player);
-		_boni.applyBonus(player, isArmor);
 	}
 }

@@ -32,7 +32,7 @@ public class ExShowBaseAttributeCancelWindow implements IClientOutgoingPacket
 	
 	public ExShowBaseAttributeCancelWindow(PlayerInstance player)
 	{
-		_items = player.getInventory().getItems(i -> i.getElementals() != null);
+		_items = player.getInventory().getItems(i -> i.getAttributes() != null);
 	}
 	
 	@Override

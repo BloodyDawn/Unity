@@ -26,10 +26,10 @@ import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
-import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
@@ -329,7 +329,7 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 	 * @param type
 	 * @return
 	 */
-	public final T addElemental(final int type)
+	public final T addAttribute(final int type)
 	{
 		append(new SMParam(TYPE_ELEMENT_NAME, type));
 		return (T) this;
@@ -582,7 +582,7 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 				
 				case TYPE_ELEMENT_NAME:
 				{
-					params[i] = Elementals.getElementName((byte) param.getIntValue());
+					params[i] = "ITEM-ATTR-" + AttributeType.findByClientId(param.getIntValue());
 					break;
 				}
 				
