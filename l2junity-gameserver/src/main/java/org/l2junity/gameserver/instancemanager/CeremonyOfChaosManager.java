@@ -39,6 +39,7 @@ import org.l2junity.gameserver.model.events.ListenerRegisterType;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerBypass;
+import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseState;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.slf4j.Logger;
@@ -56,8 +57,6 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	public static final String MAX_PLAYERS_KEY = "max_players";
 	public static final String INSTANCE_TEMPLATES_KEY = "instance_templates";
 	
-	// Used for holding registered player
-	protected final Map<Integer, PlayerInstance> _waitingList = new ConcurrentHashMap<>();
 	// Used for holding player in Arena- THAT OR PLAYERINSTANCE BOOL ?
 	protected final Map<Integer, PlayerInstance> _participingList = new ConcurrentHashMap<>();
 	
@@ -118,7 +117,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			if (player.isOnline())
 			{
 				player.sendPacket(SystemMessageId.REGISTRATION_FOR_THE_CEREMONY_OF_CHAOS_HAS_ENDED);
-				if (!isInWaitingList(player))
+				if (!isRegistered(player))
 				{
 					player.sendPacket(ExCuriousHouseState.IDLE_PACKET);
 				}
@@ -137,7 +136,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		int eventId = 0;
 		int position = 1;
 		CeremonyOfChaosEvent event = null;
-		final List<PlayerInstance> players = _waitingList.values().stream().sorted(Comparator.comparingInt(PlayerInstance::getLevel)).collect(Collectors.toList());
+		final List<PlayerInstance> players = getRegisteredPlayers().stream().sorted(Comparator.comparingInt(PlayerInstance::getLevel)).collect(Collectors.toList());
 		final int maxPlayers = getVariables().getInt(MAX_PLAYERS_KEY, 18);
 		final List<String> templates = getVariables().getList(INSTANCE_TEMPLATES_KEY, String.class);
 		for (PlayerInstance player : players)
@@ -179,22 +178,8 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		setState(CeremonyOfChaosState.SCHEDULED);
 		getEvents().forEach(CeremonyOfChaosEvent::stopFight);
 	}
-	
-	public void addInWaitingList(PlayerInstance player)
-	{
-		_waitingList.put(player.getObjectId(), player);
-	}
-	
-	public void removeFromWaitingList(PlayerInstance player)
-	{
-		_waitingList.remove(player.getObjectId());
-	}
-	
-	public boolean isInWaitingList(PlayerInstance player)
-	{
-		return _waitingList.containsKey(player.getObjectId());
-	}
-	
+
+	@Override
 	public boolean canRegister(PlayerInstance player, boolean sendMessage)
 	{
 		boolean canRegister = true;
@@ -267,12 +252,12 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			sm = SystemMessageId.YOU_CANNOT_REGISTER_FOR_THE_WAITING_LIST_ON_THE_BATTLEFIELD_CASTLE_SIEGE_FORTRESS_SIEGE;
 			canRegister = false;
 		}
-		else if (player.isInsideZone(org.l2junity.gameserver.model.zone.ZoneId.SIEGE))
+		else if (player.isInsideZone(ZoneId.SIEGE))
 		{
 			sm = SystemMessageId.YOU_CANNOT_REGISTER_IN_THE_WAITING_LIST_WHILE_BEING_INSIDE_OF_A_BATTLEGROUND_CASTLE_SIEGE_FORTRESS_SIEGE;
 			canRegister = false;
 		}
-		else if (isInWaitingList(player))
+		else if (isRegistered(player))
 		{
 			sm = SystemMessageId.YOU_ARE_ON_THE_WAITING_LIST_FOR_THE_CEREMONY_OF_CHAOS;
 			canRegister = false;
@@ -288,7 +273,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	
 	public int getWaitingListCount()
 	{
-		return _waitingList.size();
+		return getRegisteredPlayers().size();
 	}
 	
 	@RegisterEvent(EventType.ON_PLAYER_BYPASS)
@@ -303,9 +288,8 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		
 		if (event.getCommand().equalsIgnoreCase("pledgegame?command=apply"))
 		{
-			if (canRegister(player, true))
+			if (registerPlayer(player))
 			{
-				CeremonyOfChaosManager.getInstance().addInWaitingList(player);
 				player.sendPacket(SystemMessageId.YOU_ARE_NOW_ON_THE_WAITING_LIST_YOU_WILL_AUTOMATICALLY_BE_TELEPORTED_WHEN_THE_TOURNAMENT_STARTS_AND_WILL_BE_REMOVED_FROM_THE_WAITING_LIST_IF_YOU_LOG_OUT_IF_YOU_CANCEL_REGISTRATION_WITHIN_THE_LAST_MINUTE_OF_ENTERING_THE_ARENA_AFTER_SIGNING_UP_30_TIMES_OR_MORE_OR_FORFEIT_AFTER_ENTERING_THE_ARENA_30_TIMES_OR_MORE_DURING_A_CYCLE_YOU_BECOME_INELIGIBLE_FOR_PARTICIPATION_IN_THE_CEREMONY_OF_CHAOS_UNTIL_THE_NEXT_CYCLE_ALL_THE_BUFFS_EXCEPT_THE_VITALITY_BUFF_WILL_BE_REMOVED_ONCE_YOU_ENTER_THE_ARENAS);
 				player.sendPacket(SystemMessageId.EXCEPT_THE_VITALITY_BUFF_ALL_BUFFS_INCLUDING_ART_OF_SEDUCTION_WILL_BE_DELETED);
 				player.sendPacket(ExCuriousHouseState.PREPARE_PACKET);
@@ -313,7 +297,6 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		}
 	}
 	
-	// player leave world
 	// player leave clan
 	
 	public static CeremonyOfChaosManager getInstance()

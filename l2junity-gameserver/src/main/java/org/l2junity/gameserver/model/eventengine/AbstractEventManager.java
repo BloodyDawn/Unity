@@ -20,11 +20,19 @@ package org.l2junity.gameserver.model.eventengine;
 
 import java.nio.file.Path;
 import java.util.LinkedHashSet;
+import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.AbstractScript;
+import org.l2junity.gameserver.model.events.EventType;
+import org.l2junity.gameserver.model.events.ListenerRegisterType;
+import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
+import org.l2junity.gameserver.model.events.annotations.RegisterType;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
 
 /**
  * @author UnAfraid
@@ -35,6 +43,7 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 	private final StatsSet _variables = new StatsSet();
 	private final Set<EventScheduler> _schedulers = new LinkedHashSet<>();
 	private final Set<T> _events = ConcurrentHashMap.newKeySet();
+	private final Queue<PlayerInstance> _registeredPlayers = new ConcurrentLinkedDeque<>();
 	private IEventState _state;
 	
 	public abstract void onInitialized();
@@ -74,6 +83,51 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 		_state = state;
 	}
 	
+	public final boolean registerPlayer(PlayerInstance player)
+	{
+		return canRegister(player, true) && _registeredPlayers.offer(player);
+	}
+	
+	public final boolean unregisterPlayer(PlayerInstance player)
+	{
+		return _registeredPlayers.remove(player);
+	}
+	
+	public final boolean isRegistered(PlayerInstance player)
+	{
+		return _registeredPlayers.contains(player);
+	}
+
+	public boolean canRegister(PlayerInstance player, boolean sendMessage)
+	{
+		return !_registeredPlayers.contains(player);
+	}
+	
+	public final Queue<PlayerInstance> getRegisteredPlayers()
+	{
+		return _registeredPlayers;
+	}
+
+	@RegisterEvent(EventType.ON_PLAYER_LOGOUT)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	private void onPlayerLogout(OnPlayerLogout event)
+	{
+		final PlayerInstance player = event.getActiveChar();
+		if (_registeredPlayers.remove(player))
+		{
+			onUnregisteredPlayer(player);
+		}
+	}
+	
+	/**
+	 * Triggered when a player is automatically removed from the event manager because he disconnected
+	 * @param player
+	 */
+	protected void onUnregisteredPlayer(PlayerInstance player)
+	{
+		
+	}
+
 	@Override
 	public String getScriptName()
 	{
