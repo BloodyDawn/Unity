@@ -22,7 +22,6 @@ import java.nio.file.Path;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosMember;
 import org.l2junity.gameserver.model.events.AbstractScript;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 
@@ -30,7 +29,7 @@ import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
  * @author UnAfraid
  * @param <T>
  */
-public abstract class AbstractEvent<T extends CeremonyOfChaosMember> extends AbstractScript
+public abstract class AbstractEvent<T extends AbstractEventMember<?>> extends AbstractScript
 {
 	private final Set<T> _members = ConcurrentHashMap.newKeySet();
 	private IEventState _state;
