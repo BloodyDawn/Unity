@@ -184,7 +184,6 @@ import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.base.ClassLevel;
 import org.l2junity.gameserver.model.base.PlayerClass;
 import org.l2junity.gameserver.model.base.SubClass;
-import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosMember;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.entity.Castle;
@@ -194,6 +193,7 @@ import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.entity.L2Event;
 import org.l2junity.gameserver.model.entity.Siege;
+import org.l2junity.gameserver.model.eventengine.AbstractEvent;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerEquipItem;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerFameChanged;
@@ -673,6 +673,9 @@ public final class PlayerInstance extends Playable
 	private ItemInstance _lure = null;
 	
 	private volatile Map<Integer, ExResponseCommissionInfo> _lastCommissionInfos;
+	
+	@SuppressWarnings("rawtypes")
+	private volatile Map<Class<? extends AbstractEvent>, AbstractEvent<?>> _events;
 	
 	public boolean isSpawnProtected()
 	{
@@ -14639,8 +14642,64 @@ public final class PlayerInstance extends Playable
 		sendPacket(new ExUserInfoInvenWeight(this));
 	}
 	
-	public CeremonyOfChaosMember getChaosCeremonyInstance()
+	/**
+	 * @param event
+	 * @return {@code true} if event is successfuly registered, {@code false} in case events map is not initialized yet or event is not registered
+	 */
+	public boolean registerOnEvent(AbstractEvent<?> event)
 	{
-		return getScript(CeremonyOfChaosMember.class);
+		if (_events == null)
+		{
+			synchronized (this)
+			{
+				if (_events == null)
+				{
+					_events = new ConcurrentHashMap<>();
+				}
+			}
+		}
+		return _events.putIfAbsent(event.getClass(), event) == null;
+	}
+	
+	/**
+	 * @param event
+	 * @return {@code true} if event is successfuly removed, {@code false} in case events map is not initialized yet or event is not registered
+	 */
+	public boolean removeFromEvent(AbstractEvent<?> event)
+	{
+		if (_events == null)
+		{
+			return false;
+		}
+		return _events.remove(event.getClass()) != null;
+	}
+	
+	/**
+	 * @param <T>
+	 * @param clazz
+	 * @return the event instance or null in case events map is not initialized yet or event is not registered
+	 */
+	public <T extends AbstractEvent<?>> T getEvent(Class<T> clazz)
+	{
+		if (_events == null)
+		{
+			return null;
+		}
+		
+		return _events.values().stream().filter(event -> clazz.isAssignableFrom(event.getClass())).map(clazz::cast).findFirst().orElse(null);
+	}
+	
+	/**
+	 * @param clazz
+	 * @return {@code true} if player is registered on specified event, {@code false} in case events map is not initialized yet or event is not registered
+	 */
+	public boolean isOnEvent(Class<AbstractEvent<?>> clazz)
+	{
+		if (_events == null)
+		{
+			return false;
+		}
+		
+		return _events.containsKey(clazz);
 	}
 }

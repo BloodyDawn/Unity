@@ -40,6 +40,11 @@ public abstract class AbstractEvent<T extends CeremonyOfChaosMember> extends Abs
 		return _members;
 	}
 	
+	public T getMember(int objectId)
+	{
+		return _members.stream().filter(member -> member.getObjectId() == objectId).findFirst().orElse(null);
+	}
+	
 	public void broadcastPacket(IClientOutgoingPacket... packets)
 	{
 		_members.forEach(member -> member.sendPacket(packets));

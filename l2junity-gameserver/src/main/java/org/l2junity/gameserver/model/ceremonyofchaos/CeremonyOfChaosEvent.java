@@ -88,6 +88,11 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 		{
 			final PlayerInstance player = member.getPlayer();
 			
+			// Remember player's last location
+			player.setLastLocation();
+			
+			player.registerOnEvent(this);
+			
 			// Load the html
 			msg.setFile(player.getHtmlPrefix(), "data/html/CeremonyOfChaos/started.htm");
 			
@@ -124,6 +129,17 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	
 	public void stopFight()
 	{
-		
+		for (CeremonyOfChaosMember member : getMembers())
+		{
+			final PlayerInstance player = member.getPlayer();
+			if (player != null)
+			{
+				// Teleport player back
+				player.teleToLocation(player.getLastLocation(), 0, 0);
+				
+				// Remove player from event
+				player.removeFromEvent(this);
+			}
+		}
 	}
 }
