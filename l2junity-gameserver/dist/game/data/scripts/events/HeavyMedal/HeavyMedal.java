@@ -21,7 +21,7 @@ package events.HeavyMedal;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.event.LongTimeEvent;
+import org.l2junity.gameserver.model.quest.LongTimeEvent;
 
 /**
  * Heavy Medals event AI.

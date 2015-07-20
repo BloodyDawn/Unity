@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.event;
+package org.l2junity.gameserver.model.quest;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -36,7 +36,6 @@ import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.announce.EventAnnouncement;
 import org.l2junity.gameserver.model.drops.GeneralDropItem;
-import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.script.DateRange;
 import org.l2junity.gameserver.util.Broadcast;
 import org.w3c.dom.Document;

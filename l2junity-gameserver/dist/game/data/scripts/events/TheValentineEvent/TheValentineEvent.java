@@ -21,7 +21,7 @@ package events.TheValentineEvent;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.event.LongTimeEvent;
+import org.l2junity.gameserver.model.quest.LongTimeEvent;
 
 /**
  * The Valentine Event event AI.
