@@ -81,7 +81,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	
 	public void preparePlayers()
 	{
-		final ExCuriousHouseMemberList membersList = new ExCuriousHouseMemberList(_id, CeremonyOfChaosManager.getInstance().getVariables().getInt("max_players", 18), getMembers());
+		final ExCuriousHouseMemberList membersList = new ExCuriousHouseMemberList(_id, CeremonyOfChaosManager.getInstance().getVariables().getInt(CeremonyOfChaosManager.MAX_PLAYERS_KEY, 18), getMembers());
 		final NpcHtmlMessage msg = new NpcHtmlMessage(0);
 		
 		for (CeremonyOfChaosMember member : getMembers())

@@ -55,6 +55,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	public static final String BUFF_KEY = "buff";
 	public static final String ITEMS_KEY = "items";
 	public static final String MAX_PLAYERS_KEY = "max_players";
+	public static final String MAX_ARENAS_KEY = "max_arenas";
 	public static final String INSTANCE_TEMPLATES_KEY = "instance_templates";
 	
 	// Used for holding player in Arena- THAT OR PLAYERINSTANCE BOOL ?
@@ -188,7 +189,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		
 		SystemMessageId sm = null;
 		
-		if (CeremonyOfChaosManager.getInstance().getState() != CeremonyOfChaosState.REGISTRATION)
+		if (getState() != CeremonyOfChaosState.REGISTRATION)
 		{
 			canRegister = false;
 		}
@@ -207,7 +208,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			sm = SystemMessageId.ONLY_CHARACTERS_WHO_HAVE_COMPLETED_THE_3RD_CLASS_TRANSFER_MAY_PARTICIPATE;
 			canRegister = false;
 		}
-		else if ((player.getInventory().getSize(false) >= (player.getInventoryLimit() * 0.8)) || (player.getWeightPenalty() >= 3))
+		else if (!player.isInventoryUnder90(false))
 		{
 			sm = SystemMessageId.UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_AND_SLOT_COUNT_ARE_LESS_THAN_80_PERCENT_OF_CAPACITY;
 			canRegister = false;
@@ -217,14 +218,9 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			sm = SystemMessageId.ONLY_CHARACTERS_WHO_ARE_A_PART_OF_A_CLAN_OF_LEVEL_6_OR_ABOVE_MAY_PARTICIPATE;
 			canRegister = false;
 		}
-		else if (getWaitingListCount() >= 72)
+		else if (getRegisteredPlayers().size() >= (getVariables().getInt(MAX_ARENAS_KEY, 5) * getVariables().getInt(MAX_PLAYERS_KEY, 18)))
 		{
 			sm = SystemMessageId.THERE_ARE_TOO_MANY_CHALLENGERS_YOU_CANNOT_PARTICIPATE_NOW;
-			canRegister = false;
-		}
-		else if (getState() != CeremonyOfChaosState.REGISTRATION)
-		{
-			sm = SystemMessageId.YOU_MAY_NOT_REGISTER_AS_A_PARTICIPANT;
 			canRegister = false;
 		}
 		else if (player.isCursedWeaponEquipped() || (player.getReputation() < 0))
@@ -269,11 +265,6 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		}
 		
 		return canRegister;
-	}
-	
-	public int getWaitingListCount()
-	{
-		return getRegisteredPlayers().size();
 	}
 	
 	@RegisterEvent(EventType.ON_PLAYER_BYPASS)
