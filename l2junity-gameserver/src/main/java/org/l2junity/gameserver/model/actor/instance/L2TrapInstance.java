@@ -33,7 +33,7 @@ import org.l2junity.gameserver.model.actor.tasks.npc.trap.TrapTask;
 import org.l2junity.gameserver.model.actor.tasks.npc.trap.TrapTriggerTask;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.events.EventDispatcher;
-import org.l2junity.gameserver.model.events.impl.character.trap.OnTrapAction;
+import org.l2junity.gameserver.model.events.impl.character.player.OnTrapAction;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;

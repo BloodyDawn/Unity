@@ -200,6 +200,8 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerFameCh
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerHennaRemove;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerMenteeStatus;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerMentorStatus;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPKChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerProfessionChange;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPvPChanged;
@@ -207,8 +209,6 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPvPKil
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerReputationChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSubChange;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerTransform;
-import org.l2junity.gameserver.model.events.impl.character.player.mentoring.OnPlayerMenteeStatus;
-import org.l2junity.gameserver.model.events.impl.character.player.mentoring.OnPlayerMentorStatus;
 import org.l2junity.gameserver.model.fishing.L2Fish;
 import org.l2junity.gameserver.model.fishing.L2Fishing;
 import org.l2junity.gameserver.model.holders.ItemHolder;

@@ -23,8 +23,8 @@ import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.events.EventDispatcher;
-import org.l2junity.gameserver.model.events.impl.character.npc.attackable.OnAttackableAttack;
-import org.l2junity.gameserver.model.events.impl.character.npc.attackable.OnAttackableKill;
+import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableAttack;
+import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableKill;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**

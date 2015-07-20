@@ -23,9 +23,9 @@ import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
-import org.l2junity.gameserver.model.events.impl.character.player.clanwh.OnPlayerClanWHItemAdd;
-import org.l2junity.gameserver.model.events.impl.character.player.clanwh.OnPlayerClanWHItemDestroy;
-import org.l2junity.gameserver.model.events.impl.character.player.clanwh.OnPlayerClanWHItemTransfer;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerClanWHItemAdd;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerClanWHItemDestroy;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerClanWHItemTransfer;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 public final class ClanWarehouse extends Warehouse
