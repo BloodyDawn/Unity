@@ -96,15 +96,21 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 		}
 	}
 	
+	// id 22 d (shared with 1-3,17,22
+	// id 21 h
+	// id 20 c
+	// id 19 c
+	// id 18 Q (read same as 6)
+	// id 17 shared with 1-3,17,22
 	private static final byte TYPE_POPUP_ID = 16;
 	private static final byte TYPE_CLASS_ID = 15;
-	// id 14 unknown
+	// id 14 dSSSSS
 	private static final byte TYPE_SYSTEM_STRING = 13;
 	private static final byte TYPE_PLAYER_NAME = 12;
 	private static final byte TYPE_DOOR_NAME = 11;
 	private static final byte TYPE_INSTANCE_NAME = 10;
 	private static final byte TYPE_ELEMENT_NAME = 9;
-	// id 8 - same as 3
+	// id 8 - ddd
 	private static final byte TYPE_ZONE_NAME = 7;
 	private static final byte TYPE_LONG_NUMBER = 6;
 	private static final byte TYPE_CASTLE_NAME = 5;
