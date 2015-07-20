@@ -28,6 +28,10 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.eventengine.AbstractEvent;
 import org.l2junity.gameserver.model.eventengine.AbstractEventManager;
 import org.l2junity.gameserver.model.eventengine.ScheduleTarget;
+import org.l2junity.gameserver.model.events.EventType;
+import org.l2junity.gameserver.model.events.ListenerRegisterType;
+import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
+import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerBypass;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseState;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -41,7 +45,6 @@ public class CeremonyOfChaosManager extends AbstractEventManager<AbstractEvent>
 {
 	protected static final Logger LOGGER = LoggerFactory.getLogger(CeremonyOfChaosManager.class);
 	
-	private static CeremonyOfChaosState _state;
 	// Used for holding registered player
 	protected final Map<Integer, PlayerInstance> _waitingList = new ConcurrentHashMap<>();
 	// Used for holding player in Arena- THAT OR PLAYERINSTANCE BOOL ?
@@ -164,7 +167,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<AbstractEvent>
 			sm = SystemMessageId.THERE_ARE_TOO_MANY_CHALLENGERS_YOU_CANNOT_PARTICIPATE_NOW;
 			canRegister = false;
 		}
-		else if (_state != CeremonyOfChaosState.REGISTRATION)
+		else if (getState() != CeremonyOfChaosState.REGISTRATION)
 		{
 			sm = SystemMessageId.YOU_MAY_NOT_REGISTER_AS_A_PARTICIPANT;
 			canRegister = false;
@@ -218,15 +221,11 @@ public class CeremonyOfChaosManager extends AbstractEventManager<AbstractEvent>
 		return _waitingList.size();
 	}
 	
-	public CeremonyOfChaosState getState()
-	{
-		return _state;
-	}
-	
+	@RegisterEvent(EventType.ON_PLAYER_BYPASS)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void OnPlayerBypass(OnPlayerBypass event)
 	{
 		final PlayerInstance player = event.getActiveChar();
-		
 		if (player == null)
 		{
 			return;

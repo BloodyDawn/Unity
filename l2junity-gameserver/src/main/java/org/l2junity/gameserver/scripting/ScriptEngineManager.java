@@ -270,7 +270,7 @@ public final class ScriptEngineManager
 	
 	protected Path getCurrentLoadingScript()
 	{
-		return _currentExecutionContext.getCurrentExecutingScript();
+		return _currentExecutionContext != null ? _currentExecutionContext.getCurrentExecutingScript() : null;
 	}
 	
 	public static ScriptEngineManager getInstance()

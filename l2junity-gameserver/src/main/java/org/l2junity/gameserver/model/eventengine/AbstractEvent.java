@@ -21,12 +21,13 @@ package org.l2junity.gameserver.model.eventengine;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.l2junity.gameserver.model.events.AbstractScript;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 
 /**
  * @author UnAfraid
  */
-public abstract class AbstractEvent
+public abstract class AbstractEvent extends AbstractScript
 {
 	private final Set<AbstractEventMember<? extends AbstractEvent>> _members = ConcurrentHashMap.newKeySet();
 	private IEventState _state;
@@ -49,5 +50,11 @@ public abstract class AbstractEvent
 	public void setState(IEventState state)
 	{
 		_state = state;
+	}
+	
+	@Override
+	public String getScriptName()
+	{
+		return getClass().getSimpleName();
 	}
 }

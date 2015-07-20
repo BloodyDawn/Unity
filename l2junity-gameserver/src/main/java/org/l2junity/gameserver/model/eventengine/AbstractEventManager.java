@@ -23,16 +23,18 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.events.AbstractScript;
 
 /**
  * @author UnAfraid
  * @param <T>
  */
-public abstract class AbstractEventManager<T extends AbstractEvent>
+public abstract class AbstractEventManager<T extends AbstractEvent> extends AbstractScript
 {
 	private final StatsSet _variables = new StatsSet();
 	private final Set<EventScheduler> _schedulers = new LinkedHashSet<>();
 	private final Set<T> _events = ConcurrentHashMap.newKeySet();
+	private IEventState _state;
 	
 	public abstract void onInitialized();
 	
@@ -59,5 +61,21 @@ public abstract class AbstractEventManager<T extends AbstractEvent>
 	public void stopScheduler()
 	{
 		_schedulers.forEach(EventScheduler::stopScheduler);
+	}
+	
+	public IEventState getState()
+	{
+		return _state;
+	}
+	
+	public void setState(IEventState state)
+	{
+		_state = state;
+	}
+	
+	@Override
+	public String getScriptName()
+	{
+		return getClass().getSimpleName();
 	}
 }

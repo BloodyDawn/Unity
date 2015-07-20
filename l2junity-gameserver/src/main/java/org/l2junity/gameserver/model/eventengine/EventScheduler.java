@@ -26,6 +26,7 @@ import java.util.concurrent.ScheduledFuture;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -90,18 +91,15 @@ public class EventScheduler
 		
 		_task = ThreadPoolManager.getInstance().scheduleEvent(() ->
 		{
-			if (_notifications != null)
+			for (EventMethodNotification notification : _notifications)
 			{
-				for (EventMethodNotification notification : _notifications)
+				try
 				{
-					try
-					{
-						notification.execute();
-					}
-					catch (Exception e)
-					{
-						LOGGER.warn("Failed to notify to event manager: {} method: {}", notification.getManager().getClass().getSimpleName(), notification.getMethod().getName());
-					}
+					notification.execute();
+				}
+				catch (Exception e)
+				{
+					LOGGER.warn("Failed to notify to event manager: {} method: {}", notification.getManager().getClass().getSimpleName(), notification.getMethod().getName());
 				}
 			}
 			
@@ -113,7 +111,7 @@ public class EventScheduler
 		
 		for (EventMethodNotification notification : _notifications)
 		{
-			LOGGER.info("Scheduled call to {}#{} on: {}", notification.getManager().getClass().getSimpleName(), notification.getMethod().getName(), predictor.nextMatchingDate());
+			LOGGER.info("Scheduled call to {}#{} on: {}", notification.getManager().getClass().getSimpleName(), notification.getMethod().getName(), Util.formatDate(predictor.nextMatchingDate(), "yyyy-MM-dd HH:mm:ss"));
 		}
 	}
 	

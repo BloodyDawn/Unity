@@ -18,10 +18,12 @@
  */
 package org.l2junity.gameserver.enums;
 
+import org.l2junity.gameserver.model.eventengine.IEventState;
+
 /**
  * @author Sdw
  */
-public enum CeremonyOfChaosState
+public enum CeremonyOfChaosState implements IEventState
 {
 	SCHEDULED,
 	REGISTRATION,
