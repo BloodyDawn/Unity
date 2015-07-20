@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model.quest;
 
+import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -71,6 +72,7 @@ import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.ExQuestNpcLogList;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.NpcQuestHtmlMessage;
+import org.l2junity.gameserver.scripting.ScriptEngineManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -2752,6 +2754,12 @@ public class Quest extends AbstractScript implements IIdentifiable
 	public String getScriptName()
 	{
 		return getName();
+	}
+	
+	@Override
+	public Path getScriptPath()
+	{
+		return ScriptEngineManager.getInstance().getCurrentLoadingScript();
 	}
 	
 	@Override

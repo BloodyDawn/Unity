@@ -268,7 +268,7 @@ public final class ScriptEngineManager
 		}
 	}
 	
-	protected Path getCurrentLoadingScript()
+	public Path getCurrentLoadingScript()
 	{
 		return _currentExecutionContext != null ? _currentExecutionContext.getCurrentExecutingScript() : null;
 	}

@@ -26,7 +26,7 @@ import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
  * @author UnAfraid
  * @param <T>
  */
-public abstract class AbstractEventMember<T extends AbstractEvent>
+public abstract class AbstractEventMember<T extends AbstractEvent<?>>
 {
 	private final int _objectId;
 	

@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model.eventengine;
 
+import java.nio.file.Path;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -29,7 +30,7 @@ import org.l2junity.gameserver.model.events.AbstractScript;
  * @author UnAfraid
  * @param <T>
  */
-public abstract class AbstractEventManager<T extends AbstractEvent> extends AbstractScript
+public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends AbstractScript
 {
 	private final StatsSet _variables = new StatsSet();
 	private final Set<EventScheduler> _schedulers = new LinkedHashSet<>();
@@ -77,5 +78,11 @@ public abstract class AbstractEventManager<T extends AbstractEvent> extends Abst
 	public String getScriptName()
 	{
 		return getClass().getSimpleName();
+	}
+	
+	@Override
+	public Path getScriptPath()
+	{
+		return null;
 	}
 }

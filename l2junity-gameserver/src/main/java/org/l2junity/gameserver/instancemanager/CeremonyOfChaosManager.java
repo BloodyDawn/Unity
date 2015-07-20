@@ -51,6 +51,11 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 {
 	protected static final Logger LOGGER = LoggerFactory.getLogger(CeremonyOfChaosManager.class);
 	
+	public static final String BUFF_KEY = "buff";
+	public static final String ITEMS_KEY = "items";
+	public static final String MAX_PLAYERS_KEY = "max_players";
+	public static final String INSTANCE_TEMPLATES_KEY = "instance_templates";
+	
 	// Used for holding registered player
 	protected final Map<Integer, PlayerInstance> _waitingList = new ConcurrentHashMap<>();
 	// Used for holding player in Arena- THAT OR PLAYERINSTANCE BOOL ?
@@ -133,8 +138,8 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		int position = 1;
 		CeremonyOfChaosEvent event = null;
 		final List<PlayerInstance> players = _waitingList.values().stream().sorted(Comparator.comparingInt(PlayerInstance::getLevel)).collect(Collectors.toList());
-		final int maxPlayers = getVariables().getInt("max_players", 18);
-		final List<String> templates = getVariables().getList("instance_templates", String.class);
+		final int maxPlayers = getVariables().getInt(MAX_PLAYERS_KEY, 18);
+		final List<String> templates = getVariables().getList(INSTANCE_TEMPLATES_KEY, String.class);
 		for (PlayerInstance player : players)
 		{
 			if (player.isOnline() && canRegister(player, true))

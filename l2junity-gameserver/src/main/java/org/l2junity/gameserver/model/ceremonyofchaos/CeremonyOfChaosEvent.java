@@ -36,7 +36,7 @@ import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHous
 /**
  * @author UnAfraid
  */
-public class CeremonyOfChaosEvent extends AbstractEvent
+public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 {
 	private final int _id;
 	private final Instance _instance;
@@ -79,13 +79,6 @@ public class CeremonyOfChaosEvent extends AbstractEvent
 		return _monsters;
 	}
 	
-	@SuppressWarnings("unchecked")
-	@Override
-	public Set<CeremonyOfChaosMember> getMembers()
-	{
-		return (Set<CeremonyOfChaosMember>) super.getMembers();
-	}
-	
 	public void preparePlayers()
 	{
 		final ExCuriousHouseMemberList membersList = new ExCuriousHouseMemberList(_id, CeremonyOfChaosManager.getInstance().getVariables().getInt("max_players", 18), getMembers());
@@ -102,7 +95,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent
 			player.teleToLocation(_instance.getSpawnLoc(), _instance.getId(), 200);
 			
 			// Apply the Energy of Chaos skill
-			for (SkillHolder holder : CeremonyOfChaosManager.getInstance().getVariables().getList("buff", SkillHolder.class))
+			for (SkillHolder holder : CeremonyOfChaosManager.getInstance().getVariables().getList(CeremonyOfChaosManager.BUFF_KEY, SkillHolder.class))
 			{
 				holder.getSkill().activateSkill(player, player);
 			}
@@ -117,7 +110,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent
 			player.sendPacket(msg);
 			
 			// Send support items to player
-			for (ItemHolder holder : CeremonyOfChaosManager.getInstance().getVariables().getList("items", ItemHolder.class))
+			for (ItemHolder holder : CeremonyOfChaosManager.getInstance().getVariables().getList(CeremonyOfChaosManager.ITEMS_KEY, ItemHolder.class))
 			{
 				player.addItem("CoC", holder, null, true);
 			}
