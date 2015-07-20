@@ -28,20 +28,14 @@ public class CeremonyOfChaosMember extends AbstractEventMember<CeremonyOfChaosEv
 {
 	private final int _position;
 	
-	public CeremonyOfChaosMember(PlayerInstance player, int position)
+	public CeremonyOfChaosMember(PlayerInstance player, CeremonyOfChaosEvent event, int position)
 	{
-		super(player);
+		super(player, event);
 		_position = position;
 	}
 	
 	public int getPosition()
 	{
 		return _position;
-	}
-	
-	@Override
-	public CeremonyOfChaosEvent getEvent()
-	{
-		return null;
 	}
 }

@@ -29,13 +29,15 @@ import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 public abstract class AbstractEventMember<T extends AbstractEvent<?>>
 {
 	private final int _objectId;
+	private final T _event;
 	
-	public AbstractEventMember(PlayerInstance player)
+	public AbstractEventMember(PlayerInstance player, T event)
 	{
 		_objectId = player.getObjectId();
+		_event = event;
 	}
 	
-	public int getObjectId()
+	public final int getObjectId()
 	{
 		return _objectId;
 	}
@@ -57,5 +59,8 @@ public abstract class AbstractEventMember<T extends AbstractEvent<?>>
 		}
 	}
 	
-	public abstract T getEvent();
+	public final T getEvent()
+	{
+		return _event;
+	}
 }

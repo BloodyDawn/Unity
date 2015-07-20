@@ -154,7 +154,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 					getEvents().add(event);
 				}
 				
-				event.addPlayer(new CeremonyOfChaosMember(player, position++));
+				event.addPlayer(new CeremonyOfChaosMember(player, event, position++));
 			}
 			else
 			{

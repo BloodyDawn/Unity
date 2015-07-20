@@ -34,39 +34,39 @@ public abstract class AbstractEvent<T extends AbstractEventMember<?>> extends Ab
 	private final Set<T> _members = ConcurrentHashMap.newKeySet();
 	private IEventState _state;
 	
-	public Set<T> getMembers()
+	public final Set<T> getMembers()
 	{
 		return _members;
 	}
 	
-	public T getMember(int objectId)
+	public final T getMember(int objectId)
 	{
 		return _members.stream().filter(member -> member.getObjectId() == objectId).findFirst().orElse(null);
 	}
 	
-	public void broadcastPacket(IClientOutgoingPacket... packets)
+	public final void broadcastPacket(IClientOutgoingPacket... packets)
 	{
 		_members.forEach(member -> member.sendPacket(packets));
 	}
 	
-	public IEventState getState()
+	public final IEventState getState()
 	{
 		return _state;
 	}
 	
-	public void setState(IEventState state)
+	public final void setState(IEventState state)
 	{
 		_state = state;
 	}
 	
 	@Override
-	public String getScriptName()
+	public final String getScriptName()
 	{
 		return getClass().getSimpleName();
 	}
 	
 	@Override
-	public Path getScriptPath()
+	public final Path getScriptPath()
 	{
 		return null;
 	}
