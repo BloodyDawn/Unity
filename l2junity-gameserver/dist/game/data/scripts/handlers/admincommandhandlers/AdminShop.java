@@ -21,7 +21,7 @@ package handlers.admincommandhandlers;
 import org.l2junity.gameserver.data.xml.impl.BuyListData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.buylist.L2BuyList;
+import org.l2junity.gameserver.model.buylist.ProductList;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.BuyList;
 import org.l2junity.gameserver.network.client.send.ExBuySellList;
@@ -84,7 +84,7 @@ public class AdminShop implements IAdminCommandHandler
 			_log.warn("admin buylist failed:" + command);
 		}
 		
-		L2BuyList buyList = BuyListData.getInstance().getBuyList(val);
+		ProductList buyList = BuyListData.getInstance().getBuyList(val);
 		
 		if (buyList != null)
 		{

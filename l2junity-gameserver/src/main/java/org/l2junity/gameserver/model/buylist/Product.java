@@ -119,7 +119,7 @@ public final class Product
 		}
 		if ((_restockTask == null) || _restockTask.isDone())
 		{
-			_restockTask = ThreadPoolManager.getInstance().scheduleGeneral(new RestockTask(), getRestockDelay());
+			_restockTask = ThreadPoolManager.getInstance().scheduleGeneral(this::restock, getRestockDelay());
 		}
 		boolean result = _count.addAndGet(-val) >= 0;
 		save();
@@ -136,7 +136,7 @@ public final class Product
 		long remainTime = nextRestockTime - System.currentTimeMillis();
 		if (remainTime > 0)
 		{
-			_restockTask = ThreadPoolManager.getInstance().scheduleGeneral(new RestockTask(), remainTime);
+			_restockTask = ThreadPoolManager.getInstance().scheduleGeneral(this::restock, remainTime);
 		}
 		else
 		{
@@ -148,15 +148,6 @@ public final class Product
 	{
 		setCount(getMaxCount());
 		save();
-	}
-	
-	protected final class RestockTask implements Runnable
-	{
-		@Override
-		public void run()
-		{
-			restock();
-		}
 	}
 	
 	private void save()

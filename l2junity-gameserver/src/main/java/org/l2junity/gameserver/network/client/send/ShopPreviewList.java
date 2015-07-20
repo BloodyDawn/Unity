@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.client.send;
 import java.util.Collection;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.model.buylist.L2BuyList;
+import org.l2junity.gameserver.model.buylist.ProductList;
 import org.l2junity.gameserver.model.buylist.Product;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
@@ -34,7 +34,7 @@ public class ShopPreviewList implements IClientOutgoingPacket
 	private final long _money;
 	private int _expertise;
 	
-	public ShopPreviewList(L2BuyList list, long currentMoney, int expertiseIndex)
+	public ShopPreviewList(ProductList list, long currentMoney, int expertiseIndex)
 	{
 		_listId = list.getListId();
 		_list = list.getProducts();

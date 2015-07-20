@@ -27,13 +27,13 @@ import java.util.Set;
 /**
  * @author NosBit
  */
-public final class L2BuyList
+public final class ProductList
 {
 	private final int _listId;
 	private final Map<Integer, Product> _products = new LinkedHashMap<>();
 	private Set<Integer> _allowedNpcs = null;
 	
-	public L2BuyList(int listId)
+	public ProductList(int listId)
 	{
 		_listId = listId;
 	}

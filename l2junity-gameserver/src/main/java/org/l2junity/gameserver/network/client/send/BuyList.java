@@ -21,8 +21,8 @@ package org.l2junity.gameserver.network.client.send;
 import java.util.Collection;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.model.buylist.L2BuyList;
 import org.l2junity.gameserver.model.buylist.Product;
+import org.l2junity.gameserver.model.buylist.ProductList;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -33,7 +33,7 @@ public final class BuyList extends AbstractItemPacket
 	private final long _money;
 	private double _taxRate = 0;
 	
-	public BuyList(L2BuyList list, long currentMoney, double taxRate)
+	public BuyList(ProductList list, long currentMoney, double taxRate)
 	{
 		_listId = list.getListId();
 		_list = list.getProducts();

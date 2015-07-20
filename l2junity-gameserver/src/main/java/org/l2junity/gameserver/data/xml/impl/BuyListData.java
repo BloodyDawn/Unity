@@ -31,7 +31,7 @@ import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.file.filter.NumericNameFilter;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.datatables.ItemTable;
-import org.l2junity.gameserver.model.buylist.L2BuyList;
+import org.l2junity.gameserver.model.buylist.ProductList;
 import org.l2junity.gameserver.model.buylist.Product;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.slf4j.Logger;
@@ -48,7 +48,7 @@ public final class BuyListData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(BuyListData.class);
 	
-	private final Map<Integer, L2BuyList> _buyLists = new HashMap<>();
+	private final Map<Integer, ProductList> _buyLists = new HashMap<>();
 	private static final FileFilter NUMERIC_FILTER = new NumericNameFilter();
 	
 	protected BuyListData()
@@ -78,7 +78,7 @@ public final class BuyListData implements IGameXmlReader
 				int itemId = rs.getInt("item_id");
 				long count = rs.getLong("count");
 				long nextRestockTime = rs.getLong("next_restock_time");
-				final L2BuyList buyList = getBuyList(buyListId);
+				final ProductList buyList = getBuyList(buyListId);
 				if (buyList == null)
 				{
 					LOGGER.warn("BuyList found in database but not loaded from xml! BuyListId: " + buyListId);
@@ -114,7 +114,7 @@ public final class BuyListData implements IGameXmlReader
 			{
 				if ("list".equalsIgnoreCase(node.getNodeName()))
 				{
-					final L2BuyList buyList = new L2BuyList(buyListId);
+					final ProductList buyList = new ProductList(buyListId);
 					for (Node list_node = node.getFirstChild(); list_node != null; list_node = list_node.getNextSibling())
 					{
 						if ("item".equalsIgnoreCase(list_node.getNodeName()))
@@ -179,7 +179,7 @@ public final class BuyListData implements IGameXmlReader
 		return NUMERIC_FILTER;
 	}
 	
-	public L2BuyList getBuyList(int listId)
+	public ProductList getBuyList(int listId)
 	{
 		return _buyLists.get(listId);
 	}

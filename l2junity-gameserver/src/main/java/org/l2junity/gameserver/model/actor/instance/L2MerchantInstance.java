@@ -23,7 +23,7 @@ import org.l2junity.gameserver.datatables.MerchantPriceConfigTable;
 import org.l2junity.gameserver.datatables.MerchantPriceConfigTable.MerchantPriceConfig;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.model.buylist.L2BuyList;
+import org.l2junity.gameserver.model.buylist.ProductList;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.BuyList;
 import org.l2junity.gameserver.network.client.send.ExBuySellList;
@@ -81,7 +81,7 @@ public class L2MerchantInstance extends L2NpcInstance
 	
 	public final void showBuyWindow(PlayerInstance player, int val, boolean applyTax)
 	{
-		final L2BuyList buyList = BuyListData.getInstance().getBuyList(val);
+		final ProductList buyList = BuyListData.getInstance().getBuyList(val);
 		if (buyList == null)
 		{
 			_log.warn("BuyList not found! BuyListId:" + val);
