@@ -29,10 +29,10 @@ import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
  */
 public abstract class AbstractEvent extends AbstractScript
 {
-	private final Set<AbstractEventMember<? extends AbstractEvent>> _members = ConcurrentHashMap.newKeySet();
+	private final Set<? extends AbstractEventMember<? extends AbstractEvent>> _members = ConcurrentHashMap.newKeySet();
 	private IEventState _state;
 	
-	public Set<AbstractEventMember<? extends AbstractEvent>> getMembers()
+	public Set<? extends AbstractEventMember<? extends AbstractEvent>> getMembers()
 	{
 		return _members;
 	}

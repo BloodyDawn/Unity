@@ -35,6 +35,11 @@ public abstract class AbstractEventMember<T extends AbstractEvent>
 		_objectId = player.getObjectId();
 	}
 	
+	public int getObjectId()
+	{
+		return _objectId;
+	}
+	
 	public PlayerInstance getPlayer()
 	{
 		return World.getInstance().getPlayer(_objectId);

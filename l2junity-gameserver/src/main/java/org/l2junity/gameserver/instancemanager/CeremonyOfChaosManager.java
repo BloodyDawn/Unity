@@ -24,14 +24,14 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.CeremonyOfChaosState;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.ceremonyofchaos.CoCArena;
-import org.l2junity.gameserver.model.ceremonyofchaos.CoCPlayer;
-import org.l2junity.gameserver.model.eventengine.AbstractEvent;
+import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosEvent;
+import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosMember;
 import org.l2junity.gameserver.model.eventengine.AbstractEventManager;
 import org.l2junity.gameserver.model.eventengine.ScheduleTarget;
 import org.l2junity.gameserver.model.events.EventType;
@@ -47,7 +47,7 @@ import org.slf4j.LoggerFactory;
 /**
  * @author Sdw
  */
-public class CeremonyOfChaosManager extends AbstractEventManager<AbstractEvent>
+public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaosEvent>
 {
 	protected static final Logger LOGGER = LoggerFactory.getLogger(CeremonyOfChaosManager.class);
 	
@@ -107,7 +107,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<AbstractEvent>
 	@ScheduleTarget
 	public void onRegistrationEnd()
 	{
-		setState(CeremonyOfChaosState.PREPARATION);
+		setState(CeremonyOfChaosState.PREPARING_FOR_TELEPORT);
 		for (PlayerInstance player : World.getInstance().getPlayers())
 		{
 			if (player.isOnline())
@@ -128,23 +128,28 @@ public class CeremonyOfChaosManager extends AbstractEventManager<AbstractEvent>
 	@ScheduleTarget
 	public void onPrepareForFight()
 	{
-		setState(CeremonyOfChaosState.RUNNING);
+		setState(CeremonyOfChaosState.PREPARING_FOR_FIGHT);
+		int eventId = 0;
 		int position = 1;
-		CoCArena arena = null;
-		List<PlayerInstance> players = _waitingList.values().stream().sorted(Comparator.comparingInt(PlayerInstance::getLevel)).collect(Collectors.toList());
+		CeremonyOfChaosEvent event = null;
+		final List<PlayerInstance> players = _waitingList.values().stream().sorted(Comparator.comparingInt(PlayerInstance::getLevel)).collect(Collectors.toList());
+		final int maxPlayers = getVariables().getInt("max_players", 18);
+		final List<String> templates = getVariables().getList("instance_templates", String.class);
 		for (PlayerInstance player : players)
 		{
 			if (player.isOnline() && canRegister(player, true))
 			{
 				_participingList.put(player.getObjectId(), player);
 				
-				if ((arena == null) || (arena.getPlayers().size() >= CeremonyOfChaosArenaManager.MAX_PLAYERS))
+				if ((event == null) || (event.getPlayers().size() >= maxPlayers))
 				{
-					arena = CeremonyOfChaosArenaManager.getInstance().createArena();
+					
+					event = new CeremonyOfChaosEvent(eventId++, templates.get(Rnd.get(templates.size())));
 					position = 1;
+					getEvents().add(event);
 				}
 				
-				arena.addPlayer(new CoCPlayer(player, position++));
+				event.addPlayer(new CeremonyOfChaosMember(player, position++));
 			}
 			else
 			{
@@ -152,21 +157,22 @@ public class CeremonyOfChaosManager extends AbstractEventManager<AbstractEvent>
 			}
 		}
 		
-		// Teleport all players
-		CeremonyOfChaosArenaManager.getInstance().startPreparation();
+		// Prepare all event's players for start
+		getEvents().forEach(CeremonyOfChaosEvent::preparePlayers);
 	}
 	
 	@ScheduleTarget
 	public void onStartFight()
 	{
-		// TODO: Start fight
+		setState(CeremonyOfChaosState.RUNNING);
+		getEvents().forEach(CeremonyOfChaosEvent::startFight);
 	}
 	
 	@ScheduleTarget
 	public void onEndFight()
 	{
 		setState(CeremonyOfChaosState.SCHEDULED);
-		CeremonyOfChaosArenaManager.getInstance().finish();
+		getEvents().forEach(CeremonyOfChaosEvent::stopFight);
 	}
 	
 	public void addInWaitingList(PlayerInstance player)

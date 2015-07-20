@@ -16,18 +16,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.enums;
+package org.l2junity.gameserver.model.ceremonyofchaos;
 
-import org.l2junity.gameserver.model.eventengine.IEventState;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.eventengine.AbstractEventMember;
 
 /**
- * @author Sdw
+ * @author UnAfraid
  */
-public enum CeremonyOfChaosState implements IEventState
+public class CeremonyOfChaosMember extends AbstractEventMember<CeremonyOfChaosEvent>
 {
-	SCHEDULED,
-	REGISTRATION,
-	PREPARING_FOR_TELEPORT,
-	PREPARING_FOR_FIGHT,
-	RUNNING
+	private final int _position;
+	
+	public CeremonyOfChaosMember(PlayerInstance player, int position)
+	{
+		super(player);
+		_position = position;
+	}
+	
+	public int getPosition()
+	{
+		return _position;
+	}
+	
+	@Override
+	public CeremonyOfChaosEvent getEvent()
+	{
+		return null;
+	}
 }

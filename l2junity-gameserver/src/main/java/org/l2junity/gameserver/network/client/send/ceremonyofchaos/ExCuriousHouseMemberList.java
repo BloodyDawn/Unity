@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.client.send.ceremonyofchaos;
 import java.util.Set;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.ceremonyofchaos.CoCPlayer;
+import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosMember;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.network.PacketWriter;
@@ -33,9 +33,9 @@ public class ExCuriousHouseMemberList implements IClientOutgoingPacket
 {
 	private final int _id;
 	private final int _maxPlayers;
-	private final Set<CoCPlayer> _players;
+	private final Set<CeremonyOfChaosMember> _players;
 	
-	public ExCuriousHouseMemberList(int id, int maxPlayers, Set<CoCPlayer> players)
+	public ExCuriousHouseMemberList(int id, int maxPlayers, Set<CeremonyOfChaosMember> players)
 	{
 		_id = id;
 		_maxPlayers = maxPlayers;
@@ -46,13 +46,13 @@ public class ExCuriousHouseMemberList implements IClientOutgoingPacket
 	public boolean write(PacketWriter packet)
 	{
 		OutgoingPackets.EX_CURIOUS_HOUSE_MEMBER_LIST.writeId(packet);
-
+		
 		packet.writeD(_id);
 		packet.writeD(_maxPlayers);
 		packet.writeD(_players.size());
-		for (CoCPlayer cocPlayer : _players)
+		for (CeremonyOfChaosMember cocPlayer : _players)
 		{
-			final PlayerInstance player = cocPlayer.getActiveChar();
+			final PlayerInstance player = cocPlayer.getPlayer();
 			packet.writeD(cocPlayer.getObjectId());
 			packet.writeD(cocPlayer.getPosition());
 			if (player != null)
@@ -72,5 +72,5 @@ public class ExCuriousHouseMemberList implements IClientOutgoingPacket
 		}
 		return true;
 	}
-
+	
 }
