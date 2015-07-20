@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package quests.Q00761_AssistingTheGoldenRamArmy;
+package quests.Q00762_AnOminousRequest;
 
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.QuestSound;
@@ -31,29 +31,58 @@ import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
- * Assisting the Golden Ram Army (761)
+ * An Ominous Request (762)
  * @author St3eT
  */
-public final class Q00761_AssistingTheGoldenRamArmy extends Quest
+public final class Q00762_AnOminousRequest extends Quest
 {
 	// NPCs
-	private static final int PIERCE = 31553;
+	private static final int MYSTERIOUS_WIZARD = 31522;
 	private static final int[] MONSTERS =
 	{
-		21508, // Splinter Stakato
-		21509, // Splinter Stakato Worker
-		21510, // Splinter Stakato Soldier
-		21511, // Splinter Stakato Drone
-		21513, // Needle Stakato
-		21514, // Needle Stakato Worker
-		21515, // Needle Stakato Soldier
-		21516, // Needle Stakato Drone
-		21517, // Needle Stakato Drone
-		21518, // Frenzied Stakato Soldier
+		21547, // Corrupted Knight
+		21551, // Resurrected Royal Guard
+		21553, // Trampled Man
+		21557, // Bone Snatcher
+		21559, // Bone Maker
+		21561, // Sacrificed Man
+		21563, // Bone Collector
+		21565, // Bone Animator
+		21567, // Bone Slayer
+		21570, // Ghost of Betrayer
+		21572, // Bone Sweeper
+		21574, // Bone Grinder
+		21578, // Behemoth Zombie
+		21580, // Bone Caster
+		21581, // Bone Puppeteer
+		21583, // Bone Scavenger
+		21587, // Vampire Warrior
+		21590, // Vampire Magister
+		21593, // Vampire Warlord
+		21596, // Requiem Lord
+		21599, // Requiem Priest
+		21549, // Corrupted Royal Guard
+		21555, // Slaughter Executioner
+		21560, // Bone Shaper
+		21562, // Guillotine's Ghost
+		21564, // Skull Collector
+		21566, // Skull Animator
+		21568, // Devil Bat
+		21571, // Ghost of Rebel Soldier
+		21573, // Atrox
+		21576, // Ghost of Guillotine
+		21579, // Ghost of Rebel Leader
+		21582, // Vampire Soldier
+		21585, // Vampire Magician
+		21586, // Vampire Adept
+		21588, // Vampire Wizard
+		21591, // Vampire Magister
+		21595, // Vampire Warlord
+		21599, // Requiem Priest
 	};
 	// Items
-	private static final int SHELL = 36668; // Intact Stakato Shell
-	private static final int TALON = 36669; // Intact Stakato Talon
+	private static final int BONE = 36670; // Monster Bone
+	private static final int BLOOD = 36671; // Monster Blood
 	private static final int STEEL_DOOR_BOX = 37391; // Steel Door Guild Reward Box (Low-grade)
 	// Rewards
 	//@formatter:off
@@ -76,16 +105,16 @@ public final class Q00761_AssistingTheGoldenRamArmy extends Quest
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 70;
 	
-	public Q00761_AssistingTheGoldenRamArmy()
+	public Q00762_AnOminousRequest()
 	{
-		super(761, Q00761_AssistingTheGoldenRamArmy.class.getSimpleName(), "Assisting the Golden Ram Army");
-		addStartNpc(PIERCE);
-		addTalkId(PIERCE);
+		super(762, Q00762_AnOminousRequest.class.getSimpleName(), "An Ominous Request");
+		addStartNpc(MYSTERIOUS_WIZARD);
+		addTalkId(MYSTERIOUS_WIZARD);
 		addKillId(MONSTERS);
-		registerQuestItems(SHELL, TALON);
-		addCondNotRace(Race.ERTHEIA, "31553-10.html");
-		addCondLevel(MIN_LEVEL, MAX_LEVEL, "31553-11.htm");
-		addCondInCategory(CategoryType.FIGHTER_GROUP, "31553-11.htm");
+		registerQuestItems(BONE, BLOOD);
+		addCondNotRace(Race.ERTHEIA, "31522-10.html");
+		addCondLevel(MIN_LEVEL, MAX_LEVEL, "31522-11.htm");
+		addCondInCategory(CategoryType.MAGE_GROUP, "31522-11.htm");
 	}
 	
 	@Override
@@ -100,25 +129,25 @@ public final class Q00761_AssistingTheGoldenRamArmy extends Quest
 		String htmltext = null;
 		switch (event)
 		{
-			case "31553-02.htm":
-			case "31553-03.htm":
-			case "31553-07.html":
-			case "31553-08.html":
+			case "31522-02.htm":
+			case "31522-03.htm":
+			case "31522-07.html":
+			case "31522-08.html":
 			{
 				htmltext = event;
 				break;
 			}
-			case "31553-04.htm":
+			case "31522-04.htm":
 			{
 				st.startQuest();
 				htmltext = event;
 				break;
 			}
-			case "31553-09.html":
+			case "31522-09.html":
 			{
 				if (st.isCond(2))
 				{
-					final long itemCount = getQuestItemsCount(player, TALON);
+					final long itemCount = getQuestItemsCount(player, BLOOD);
 					
 					for (int[] data : REWARD)
 					{
@@ -151,12 +180,12 @@ public final class Q00761_AssistingTheGoldenRamArmy extends Quest
 		{
 			case State.CREATED:
 			{
-				htmltext = "31553-01.htm";
+				htmltext = "31522-01.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				htmltext = st.isCond(1) ? "31553-05.html" : "31553-06.html";
+				htmltext = st.isCond(1) ? "31522-05.html" : "31522-06.html";
 				break;
 			}
 			case State.COMPLETED:
@@ -171,7 +200,7 @@ public final class Q00761_AssistingTheGoldenRamArmy extends Quest
 					{
 						st.setState(State.CREATED);
 					}
-					htmltext = "31553-01.htm";
+					htmltext = "31522-01.htm";
 				}
 				break;
 			}
@@ -186,20 +215,20 @@ public final class Q00761_AssistingTheGoldenRamArmy extends Quest
 		
 		if ((st != null) && (st.isCond(1) || st.isCond(2)) && (getRandom(100) < 15))
 		{
-			if (getQuestItemsCount(killer, SHELL) < 50)
+			if (getQuestItemsCount(killer, BONE) < 50)
 			{
-				giveItems(killer, SHELL, 1);
+				giveItems(killer, BONE, 1);
 				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				
-				if (getQuestItemsCount(killer, SHELL) >= 50)
+				if (getQuestItemsCount(killer, BONE) >= 50)
 				{
 					st.setCond(2, true);
-					showOnScreenMsg(killer, NpcStringId.YOU_CAN_GATHER_MORE_INTACT_STAKATO_TALONS, ExShowScreenMessage.TOP_CENTER, 6000);
+					showOnScreenMsg(killer, NpcStringId.YOU_CAN_GATHER_MORE_MONSTER_BLOOD, ExShowScreenMessage.TOP_CENTER, 6000);
 				}
 			}
 			else
 			{
-				giveItems(killer, TALON, 1);
+				giveItems(killer, BLOOD, 1);
 				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
