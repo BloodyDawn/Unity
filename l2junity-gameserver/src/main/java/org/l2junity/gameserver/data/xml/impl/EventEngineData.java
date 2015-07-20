@@ -30,7 +30,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.eventengine.AbstractEventManager;
 import org.l2junity.gameserver.model.eventengine.EventMethodNotification;
-import org.l2junity.gameserver.model.eventengine.EventSchedule;
+import org.l2junity.gameserver.model.eventengine.EventScheduler;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.slf4j.Logger;
@@ -82,7 +82,7 @@ public class EventEngineData implements IGameXmlReader
 	{
 		final String eventName = parseString(eventNode.getAttributes(), "name");
 		final String className = parseString(eventNode.getAttributes(), "class");
-		AbstractEventManager eventManager = null;
+		AbstractEventManager<?> eventManager = null;
 		try
 		{
 			final Class<?> clazz = Class.forName(className);
@@ -92,7 +92,7 @@ public class EventEngineData implements IGameXmlReader
 			{
 				if (Modifier.isStatic(method.getModifiers()) && AbstractEventManager.class.isAssignableFrom(method.getReturnType()) && (method.getParameterCount() == 0))
 				{
-					eventManager = (AbstractEventManager) method.invoke(null);
+					eventManager = (AbstractEventManager<?>) method.invoke(null);
 					break;
 				}
 			}
@@ -133,7 +133,7 @@ public class EventEngineData implements IGameXmlReader
 	 * @param eventManager
 	 * @param innerNode
 	 */
-	private void parseVariables(AbstractEventManager eventManager, Node innerNode)
+	private void parseVariables(AbstractEventManager<?> eventManager, Node innerNode)
 	{
 		eventManager.getVariables().getSet().clear();
 		for (Node variableNode = innerNode.getFirstChild(); variableNode != null; variableNode = variableNode.getNextSibling())
@@ -153,7 +153,7 @@ public class EventEngineData implements IGameXmlReader
 	 * @param eventManager
 	 * @param innerNode
 	 */
-	private void parseScheduler(AbstractEventManager eventManager, Node innerNode)
+	private void parseScheduler(AbstractEventManager<?> eventManager, Node innerNode)
 	{
 		eventManager.getSchedulers().clear();
 		for (Node scheduleNode = innerNode.getFirstChild(); scheduleNode != null; scheduleNode = scheduleNode.getNextSibling())
@@ -168,7 +168,7 @@ public class EventEngineData implements IGameXmlReader
 					params.set(node.getNodeName(), node.getNodeValue());
 				}
 				
-				final EventSchedule scheduler = new EventSchedule(eventManager, params);
+				final EventScheduler scheduler = new EventScheduler(eventManager, params);
 				for (Node eventNode = scheduleNode.getFirstChild(); eventNode != null; eventNode = eventNode.getNextSibling())
 				{
 					if ("event".equals(eventNode.getNodeName()))
@@ -211,7 +211,7 @@ public class EventEngineData implements IGameXmlReader
 	 * @param eventManager
 	 * @param variableNode
 	 */
-	private void parseListVariables(AbstractEventManager eventManager, Node variableNode)
+	private void parseListVariables(AbstractEventManager<?> eventManager, Node variableNode)
 	{
 		final String name = parseString(variableNode.getAttributes(), "name");
 		final String type = parseString(variableNode.getAttributes(), "type");
@@ -359,7 +359,7 @@ public class EventEngineData implements IGameXmlReader
 	 * @param argsNode
 	 * @return
 	 */
-	private Object parseArg(AbstractEventManager eventManager, Node argsNode)
+	private Object parseArg(AbstractEventManager<?> eventManager, Node argsNode)
 	{
 		final String type = parseString(argsNode.getAttributes(), "type");
 		switch (type)

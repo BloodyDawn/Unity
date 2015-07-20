@@ -18,46 +18,36 @@
  */
 package org.l2junity.gameserver.model.eventengine;
 
-import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 
 /**
  * @author UnAfraid
- * @param <T>
  */
-public abstract class AbstractEventManager<T extends AbstractEvent>
+public abstract class AbstractEvent
 {
-	private final StatsSet _variables = new StatsSet();
-	private final Set<EventScheduler> _schedulers = new LinkedHashSet<>();
-	private final Set<T> _events = ConcurrentHashMap.newKeySet();
+	private final Set<AbstractEventMember<? extends AbstractEvent>> _members = ConcurrentHashMap.newKeySet();
+	private IEventState _state;
 	
-	public abstract void onInitialized();
-	
-	public StatsSet getVariables()
+	public Set<AbstractEventMember<? extends AbstractEvent>> getMembers()
 	{
-		return _variables;
+		return _members;
 	}
 	
-	public Set<EventScheduler> getSchedulers()
+	public void broadcastPacket(IClientOutgoingPacket... packets)
 	{
-		return _schedulers;
+		_members.forEach(member -> member.sendPacket(packets));
 	}
 	
-	public Set<T> getEvents()
+	public IEventState getState()
 	{
-		return _events;
+		return _state;
 	}
 	
-	public void startScheduler()
+	public void setState(IEventState state)
 	{
-		_schedulers.forEach(EventScheduler::startScheduler);
-	}
-	
-	public void stopScheduler()
-	{
-		_schedulers.forEach(EventScheduler::stopScheduler);
+		_state = state;
 	}
 }

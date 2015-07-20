@@ -18,46 +18,39 @@
  */
 package org.l2junity.gameserver.model.eventengine;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-
-import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 
 /**
  * @author UnAfraid
  * @param <T>
  */
-public abstract class AbstractEventManager<T extends AbstractEvent>
+public abstract class AbstractEventMember<T extends AbstractEvent>
 {
-	private final StatsSet _variables = new StatsSet();
-	private final Set<EventScheduler> _schedulers = new LinkedHashSet<>();
-	private final Set<T> _events = ConcurrentHashMap.newKeySet();
+	private final int _objectId;
 	
-	public abstract void onInitialized();
-	
-	public StatsSet getVariables()
+	public AbstractEventMember(PlayerInstance player)
 	{
-		return _variables;
+		_objectId = player.getObjectId();
 	}
 	
-	public Set<EventScheduler> getSchedulers()
+	public PlayerInstance getPlayer()
 	{
-		return _schedulers;
+		return World.getInstance().getPlayer(_objectId);
 	}
 	
-	public Set<T> getEvents()
+	public void sendPacket(IClientOutgoingPacket... packets)
 	{
-		return _events;
+		final PlayerInstance player = getPlayer();
+		if (player != null)
+		{
+			for (IClientOutgoingPacket packet : packets)
+			{
+				player.sendPacket(packet);
+			}
+		}
 	}
 	
-	public void startScheduler()
-	{
-		_schedulers.forEach(EventScheduler::startScheduler);
-	}
-	
-	public void stopScheduler()
-	{
-		_schedulers.forEach(EventScheduler::stopScheduler);
-	}
+	public abstract T getEvent();
 }

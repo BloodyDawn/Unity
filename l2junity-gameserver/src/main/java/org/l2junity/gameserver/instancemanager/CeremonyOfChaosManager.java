@@ -25,6 +25,7 @@ import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.CeremonyOfChaosState;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.eventengine.AbstractEvent;
 import org.l2junity.gameserver.model.eventengine.AbstractEventManager;
 import org.l2junity.gameserver.model.eventengine.ScheduleTarget;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerBypass;
@@ -36,7 +37,7 @@ import org.slf4j.LoggerFactory;
 /**
  * @author Sdw
  */
-public class CeremonyOfChaosManager extends AbstractEventManager
+public class CeremonyOfChaosManager extends AbstractEventManager<AbstractEvent>
 {
 	protected static final Logger LOGGER = LoggerFactory.getLogger(CeremonyOfChaosManager.class);
 	

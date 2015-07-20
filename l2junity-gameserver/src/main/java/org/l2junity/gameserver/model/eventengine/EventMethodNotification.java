@@ -27,7 +27,7 @@ import java.util.List;
  */
 public class EventMethodNotification
 {
-	private final AbstractEventManager _manager;
+	private final AbstractEventManager<?> _manager;
 	private final Method _method;
 	private final Object[] _args;
 	
@@ -37,14 +37,14 @@ public class EventMethodNotification
 	 * @param args
 	 * @throws NoSuchMethodException
 	 */
-	public EventMethodNotification(AbstractEventManager manager, String methodName, List<Object> args) throws NoSuchMethodException
+	public EventMethodNotification(AbstractEventManager<?> manager, String methodName, List<Object> args) throws NoSuchMethodException
 	{
 		_manager = manager;
 		_method = manager.getClass().getMethod(methodName, args.stream().map(Object::getClass).toArray(Class[]::new));
 		_args = args.toArray();
 	}
 	
-	public AbstractEventManager getManager()
+	public AbstractEventManager<?> getManager()
 	{
 		return _manager;
 	}

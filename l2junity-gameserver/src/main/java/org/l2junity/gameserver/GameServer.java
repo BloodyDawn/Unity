@@ -269,9 +269,6 @@ public class GameServer
 		Olympiad.getInstance();
 		Hero.getInstance();
 		
-		printSection("Event Engine");
-		EventEngineData.getInstance();
-		
 		// Call to load caches
 		printSection("Cache");
 		HtmCache.getInstance();
@@ -307,6 +304,9 @@ public class GameServer
 		SpawnsData.getInstance().init();
 		FourSepulchersManager.getInstance().init();
 		RaidBossSpawnManager.getInstance();
+		
+		printSection("Event Engine");
+		EventEngineData.getInstance();
 		
 		printSection("Siege");
 		SiegeManager.getInstance().getSieges();
