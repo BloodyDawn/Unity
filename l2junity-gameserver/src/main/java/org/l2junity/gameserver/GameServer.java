@@ -52,6 +52,7 @@ import org.l2junity.gameserver.data.xml.impl.EnchantItemGroupsData;
 import org.l2junity.gameserver.data.xml.impl.EnchantItemHPBonusData;
 import org.l2junity.gameserver.data.xml.impl.EnchantItemOptionsData;
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
+import org.l2junity.gameserver.data.xml.impl.EventEngineData;
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
 import org.l2junity.gameserver.data.xml.impl.FishData;
 import org.l2junity.gameserver.data.xml.impl.FishingMonstersData;
@@ -159,7 +160,7 @@ public class GameServer
 		Config.load();
 		printSection("Database");
 		DatabaseFactory.getInstance();
-
+		
 		if (!IdFactory.getInstance().isInitialized())
 		{
 			LOGGER.error("Could not read object IDs from DB. Please check your data.");
@@ -175,7 +176,7 @@ public class GameServer
 		
 		printSection("Telnet");
 		TelnetServer.getInstance();
-
+		
 		printSection("World");
 		// start game time control early
 		GameTimeController.init();
@@ -267,6 +268,9 @@ public class GameServer
 		printSection("Olympiad");
 		Olympiad.getInstance();
 		Hero.getInstance();
+		
+		printSection("Event Engine");
+		EventEngineData.getInstance();
 		
 		// Call to load caches
 		printSection("Cache");
@@ -375,8 +379,8 @@ public class GameServer
 		Toolkit.getDefaultToolkit().beep();
 		
 		ClientNetworkManager.getInstance().start();
-
-		if(Boolean.getBoolean("newLoginServer"))
+		
+		if (Boolean.getBoolean("newLoginServer"))
 		{
 			LoginServerNetworkManager.getInstance().connect();
 		}
@@ -419,7 +423,7 @@ public class GameServer
 		}
 		return mins + "mins " + secs + "secs";
 	}
-
+	
 	public static void main(String[] args) throws Exception
 	{
 		Server.serverMode = Server.MODE_GAMESERVER;
@@ -430,5 +434,5 @@ public class GameServer
 	{
 		return INSTANCE;
 	}
-
+	
 }

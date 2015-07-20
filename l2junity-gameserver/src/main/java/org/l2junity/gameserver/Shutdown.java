@@ -26,6 +26,7 @@ import org.l2junity.gameserver.data.sql.impl.OfflineTradersTable;
 import org.l2junity.gameserver.datatables.BotReportTable;
 import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.CastleManorManager;
+import org.l2junity.gameserver.instancemanager.CeremonyOfChaosManager;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.instancemanager.GlobalVariablesManager;
 import org.l2junity.gameserver.instancemanager.GrandBossManager;
@@ -37,8 +38,8 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
-import org.l2junity.gameserver.network.client.ClientNetworkManager;
 import org.l2junity.gameserver.network.EventLoopGroupManager;
+import org.l2junity.gameserver.network.client.ClientNetworkManager;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ServerClose;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -264,7 +265,7 @@ public class Shutdown extends Thread
 			{
 				// ignore
 			}
-
+			
 			// last byebye, save all data and quit this server
 			saveData();
 			tc.restartCounter();
@@ -527,6 +528,9 @@ public class Shutdown extends Thread
 		LOGGER.info("Item Auction Manager: All tasks stopped(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		Olympiad.getInstance().saveOlympiadStatus();
 		LOGGER.info("Olympiad System: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+		CeremonyOfChaosManager.getInstance().stopScheduler();
+		LOGGER.info("CeremonyOfChaosManager: Scheduler stopped(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+		
 		Hero.getInstance().shutdown();
 		LOGGER.info("Hero System: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		ClanTable.getInstance().storeClanScore();

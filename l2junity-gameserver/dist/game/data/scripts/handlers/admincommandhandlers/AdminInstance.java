@@ -82,7 +82,7 @@ public class AdminInstance implements IAdminCommandHandler
 		{
 			for (Instance temp : InstanceManager.getInstance().getInstances().values())
 			{
-				activeChar.sendMessage("Id: " + temp.getId() + " Name: " + temp.getName());
+				activeChar.sendMessage("Id: " + temp.getObjectId() + " Name: " + temp.getName());
 			}
 		}
 		else if (command.startsWith("admin_setinstance"))

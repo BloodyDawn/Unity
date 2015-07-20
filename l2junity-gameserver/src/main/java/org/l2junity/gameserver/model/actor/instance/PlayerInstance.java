@@ -184,6 +184,7 @@ import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.base.ClassLevel;
 import org.l2junity.gameserver.model.base.PlayerClass;
 import org.l2junity.gameserver.model.base.SubClass;
+import org.l2junity.gameserver.model.ceremonyofchaos.CoCPlayer;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.entity.Castle;
@@ -14636,5 +14637,10 @@ public final class PlayerInstance extends Playable
 		sendPacket(new ExQuestItemList(this));
 		sendPacket(new ExAdenaInvenCount(this));
 		sendPacket(new ExUserInfoInvenWeight(this));
+	}
+	
+	public CoCPlayer getChaosCeremonyInstance()
+	{
+		return getScript(CoCPlayer.class);
 	}
 }

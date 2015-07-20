@@ -24,13 +24,13 @@ import java.util.Map;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.zone.ZoneType;
+import org.l2junity.gameserver.model.zone.L2ZoneRespawn;
 
 /**
  * Respawn zone implementation.
  * @author Nyaran
  */
-public class RespawnZone extends ZoneType
+public class RespawnZone extends L2ZoneRespawn
 {
 	private final Map<Race, String> _raceRespawnPoint = new HashMap<>();
 	

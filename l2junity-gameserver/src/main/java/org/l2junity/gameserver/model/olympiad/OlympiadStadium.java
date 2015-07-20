@@ -79,7 +79,7 @@ public class OlympiadStadium
 	
 	public int getInstanceId()
 	{
-		return _instance.getId();
+		return _instance.getObjectId();
 	}
 	
 	public final void openDoors()

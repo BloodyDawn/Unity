@@ -400,10 +400,26 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 			writeParamType(packet, param.getType());
 			switch (param.getType())
 			{
-				case TYPE_TEXT:
-				case TYPE_PLAYER_NAME:
+				case TYPE_ELEMENT_NAME:
 				{
-					packet.writeS(param.getStringValue());
+					packet.writeC(param.getIntValue());
+					break;
+				}
+				
+				case TYPE_CASTLE_NAME:
+				case TYPE_SYSTEM_STRING:
+				case TYPE_INSTANCE_NAME:
+				case TYPE_CLASS_ID:
+				{
+					packet.writeH(param.getIntValue());
+				}
+				
+				case TYPE_ITEM_NAME:
+				case TYPE_INT_NUMBER:
+				case TYPE_NPC_NAME:
+				case TYPE_DOOR_NAME:
+				{
+					packet.writeD(param.getIntValue());
 					break;
 				}
 				
@@ -413,24 +429,19 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 					break;
 				}
 				
-				case TYPE_ITEM_NAME:
-				case TYPE_CASTLE_NAME:
-				case TYPE_INT_NUMBER:
-				case TYPE_NPC_NAME:
-				case TYPE_ELEMENT_NAME:
-				case TYPE_SYSTEM_STRING:
-				case TYPE_INSTANCE_NAME:
-				case TYPE_DOOR_NAME:
+				case TYPE_TEXT:
+				case TYPE_PLAYER_NAME:
 				{
-					packet.writeD(param.getIntValue());
+					packet.writeS(param.getStringValue());
 					break;
 				}
 				
 				case TYPE_SKILL_NAME:
 				{
 					final int[] array = param.getIntArrayValue();
-					packet.writeD(array[0]); // SkillId
-					packet.writeD(array[1]); // SkillLevel
+					packet.writeD(array[0]); // skill id
+					packet.writeH(array[1]); // skill level
+					packet.writeH(0x00); // skill sub level
 					break;
 				}
 				
@@ -441,11 +452,6 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 					packet.writeD(array[0]); // x
 					packet.writeD(array[1]); // y
 					packet.writeD(array[2]); // z
-					break;
-				}
-				case TYPE_CLASS_ID:
-				{
-					packet.writeH(param.getIntValue());
 					break;
 				}
 			}

@@ -73,7 +73,8 @@ public final class Instance
 {
 	private static final Logger _log = LoggerFactory.getLogger(Instance.class);
 	
-	private final int _id;
+	private int _id;
+	private final int _objectId;
 	private String _name;
 	private int _ejectTime = Config.EJECT_DEAD_PLAYER_TIME;
 	/** Allow random walk for NPCs, global parameter. */
@@ -104,23 +105,37 @@ public final class Instance
 	
 	public Instance(int id)
 	{
-		_id = id;
+		_objectId = id;
 		_instanceStartTime = System.currentTimeMillis();
 	}
 	
 	public Instance(int id, String name)
 	{
-		_id = id;
+		_objectId = id;
 		_name = name;
 		_instanceStartTime = System.currentTimeMillis();
 	}
 	
 	/**
-	 * @return the ID of this instance.
+	 * The ID of the instance (from instancenames.xml)
+	 * @return
 	 */
 	public int getId()
 	{
 		return _id;
+	}
+	
+	public void setId(int id)
+	{
+		_id = id;
+	}
+	
+	/**
+	 * @return the unique identifier of the instance
+	 */
+	public int getObjectId()
+	{
+		return _objectId;
 	}
 	
 	/**
@@ -267,12 +282,12 @@ public final class Instance
 	{
 		if (_doors.containsKey(doorId))
 		{
-			_log.warn("Door ID " + doorId + " already exists in instance " + getId());
+			_log.warn("Door ID " + doorId + " already exists in instance " + getObjectId());
 			return;
 		}
 		
 		final L2DoorInstance newdoor = new L2DoorInstance(new L2DoorTemplate(set));
-		newdoor.setInstanceId(getId());
+		newdoor.setInstanceId(getObjectId());
 		newdoor.setCurrentHp(newdoor.getMaxHp());
 		newdoor.spawnMe(newdoor.getTemplate().getX(), newdoor.getTemplate().getY(), newdoor.getTemplate().getZ());
 		_doors.put(doorId, newdoor);
@@ -345,7 +360,7 @@ public final class Instance
 		for (Integer objectId : _players)
 		{
 			final PlayerInstance player = World.getInstance().getPlayer(objectId);
-			if ((player != null) && (player.getInstanceId() == getId()))
+			if ((player != null) && (player.getInstanceId() == getObjectId()))
 			{
 				player.setInstanceId(0);
 				if (getSpawnLoc() != null)
@@ -475,6 +490,11 @@ public final class Instance
 		{
 			_allowRandomWalk = Boolean.parseBoolean(a.getNodeValue());
 		}
+		a = n.getAttributes().getNamedItem("id");
+		if (a != null)
+		{
+			_id = Integer.valueOf(a.getNodeValue());
+		}
 		Node first = n.getFirstChild();
 		for (n = first; n != null; n = n.getNextSibling())
 		{
@@ -550,7 +570,7 @@ public final class Instance
 					{
 						doorId = Integer.parseInt(d.getAttributes().getNamedItem("doorId").getNodeValue());
 						StatsSet set = new StatsSet();
-						set.add(DoorData.getInstance().getDoorTemplate(doorId));
+						set.merge(DoorData.getInstance().getDoorTemplate(doorId));
 						for (Node bean = d.getFirstChild(); bean != null; bean = bean.getNextSibling())
 						{
 							if ("set".equalsIgnoreCase(bean.getNodeName()))
@@ -612,7 +632,7 @@ public final class Instance
 									{
 										spawnDat.startRespawn();
 									}
-									spawnDat.setInstanceId(getId());
+									spawnDat.setInstanceId(getObjectId());
 									if (allowRandomWalk == null)
 									{
 										spawnDat.setRandomWalking(_allowRandomWalk);
@@ -632,7 +652,7 @@ public final class Instance
 								}
 								else
 								{
-									_log.warn("Instance: Data missing in NPC table for ID: " + npcId + " in Instance " + getId());
+									_log.warn("Instance: Data missing in NPC table for ID: " + npcId + " in Instance " + getObjectId());
 								}
 							}
 						}
@@ -780,7 +800,7 @@ public final class Instance
 			interval = 300000;
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THIS_DUNGEON_WILL_EXPIRE_IN_S1_MINUTE_S_YOU_WILL_BE_FORCED_OUT_OF_THE_DUNGEON_WHEN_THE_TIME_EXPIRES);
 			sm.addString(Integer.toString(timeLeft));
-			Broadcast.toPlayersInInstance(sm, getId());
+			Broadcast.toPlayersInInstance(sm, getObjectId());
 			remaining = remaining - 300000;
 		}
 		else if (remaining > 60000)
@@ -789,7 +809,7 @@ public final class Instance
 			interval = 60000;
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THIS_DUNGEON_WILL_EXPIRE_IN_S1_MINUTE_S_YOU_WILL_BE_FORCED_OUT_OF_THE_DUNGEON_WHEN_THE_TIME_EXPIRES);
 			sm.addString(Integer.toString(timeLeft));
-			Broadcast.toPlayersInInstance(sm, getId());
+			Broadcast.toPlayersInInstance(sm, getObjectId());
 			remaining = remaining - 60000;
 		}
 		else if (remaining > 30000)
@@ -811,7 +831,7 @@ public final class Instance
 			for (Integer objectId : _players)
 			{
 				final PlayerInstance player = World.getInstance().getPlayer(objectId);
-				if ((player != null) && (player.getInstanceId() == getId()))
+				if ((player != null) && (player.getInstanceId() == getObjectId()))
 				{
 					player.sendPacket(cs);
 				}
@@ -851,7 +871,7 @@ public final class Instance
 		{
 			_ejectDeadTasks.put(player.getObjectId(), ThreadPoolManager.getInstance().scheduleGeneral(() ->
 			{
-				if (player.isDead() && (player.getInstanceId() == getId()))
+				if (player.isDead() && (player.getInstanceId() == getObjectId()))
 				{
 					player.setInstanceId(0);
 					if (getSpawnLoc() != null)
@@ -901,7 +921,7 @@ public final class Instance
 		@Override
 		public void run()
 		{
-			InstanceManager.getInstance().destroyInstance(getId());
+			InstanceManager.getInstance().destroyInstance(getObjectId());
 		}
 	}
 	

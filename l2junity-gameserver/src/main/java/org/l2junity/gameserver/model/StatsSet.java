@@ -40,7 +40,7 @@ import org.slf4j.LoggerFactory;
  */
 public class StatsSet implements IParserAdvUtils
 {
-	private static final Logger _log = LoggerFactory.getLogger(StatsSet.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(StatsSet.class);
 	/** Static empty immutable map, used to avoid multiple null checks over the source. */
 	public static final StatsSet EMPTY_STATSET = new StatsSet(Collections.emptyMap());
 	
@@ -55,7 +55,7 @@ public class StatsSet implements IParserAdvUtils
 	{
 		this(mapFactory.get());
 	}
-
+	
 	public StatsSet(Map<String, Object> map)
 	{
 		_set = map;
@@ -74,7 +74,7 @@ public class StatsSet implements IParserAdvUtils
 	 * Add a set of couple values in the current set
 	 * @param newSet : StatsSet pointing out the list of couples to add in the current set
 	 */
-	public void add(StatsSet newSet)
+	public void merge(StatsSet newSet)
 	{
 		_set.putAll(newSet.getSet());
 	}
@@ -197,7 +197,8 @@ public class StatsSet implements IParserAdvUtils
 		}
 		if (val instanceof Number)
 		{
-			return new byte[] {
+			return new byte[]
+			{
 				((Number) val).byteValue()
 			};
 		}
@@ -327,7 +328,8 @@ public class StatsSet implements IParserAdvUtils
 		}
 		if (val instanceof Number)
 		{
-			return new int[] {
+			return new int[]
+			{
 				((Number) val).intValue()
 			};
 		}
@@ -609,10 +611,47 @@ public class StatsSet implements IParserAdvUtils
 		Object obj = _set.get(key);
 		if ((obj == null) || !(obj instanceof List<?>))
 		{
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		
 		return (List<MinionHolder>) obj;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public <T> List<T> getList(String key, Class<T> clazz)
+	{
+		final Object obj = _set.get(key);
+		if ((obj == null) || !(obj instanceof List<?>))
+		{
+			return null;
+		}
+		
+		final List<?> originalList = (List<?>) obj;
+		if (!originalList.isEmpty() && (originalList.stream().filter(clazz::isInstance).count() == 0))
+		{
+			LOGGER.warn("getList(\"{}\", {}) requested with wrong generic type: {}!", key, clazz.getSimpleName(), obj.getClass().getGenericInterfaces()[0], new ClassNotFoundException());
+		}
+		return (List<T>) obj;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public <K, V> Map<K, V> getMap(String key, Class<K> keyClass, Class<V> valueClass)
+	{
+		final Object obj = _set.get(key);
+		if ((obj == null) || !(obj instanceof Map<?, ?>))
+		{
+			return null;
+		}
+		
+		final Map<?, ?> originalList = (Map<?, ?>) obj;
+		if (!originalList.isEmpty())
+		{
+			if ((originalList.keySet().stream().filter(keyClass::isInstance).count() == 0) || (originalList.values().stream().filter(valueClass::isInstance).count() == 0))
+			{
+				LOGGER.warn("getMap(\"{}\", {}, {}) requested with wrong generic type: {}!", key, keyClass.getSimpleName(), valueClass.getSimpleName(), obj.getClass().getGenericInterfaces()[0], new ClassNotFoundException());
+			}
+		}
+		return (Map<K, V>) obj;
 	}
 	
 	public void set(String name, Object value)
@@ -675,16 +714,5 @@ public class StatsSet implements IParserAdvUtils
 			return;
 		}
 		_set.put(key, value);
-	}
-	
-	public void safeSet(String key, int value, int min, int max, String reference)
-	{
-		assert !(((min <= max) && ((value < min) || (value >= max))));
-		if ((min <= max) && ((value < min) || (value >= max)))
-		{
-			_log.error("Incorrect value: " + value + "for: " + key + "Ref: " + reference);
-		}
-		
-		set(key, value);
 	}
 }

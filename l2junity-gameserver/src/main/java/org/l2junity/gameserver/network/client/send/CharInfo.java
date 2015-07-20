@@ -24,6 +24,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.model.actor.instance.L2DecoyInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.ceremonyofchaos.CoCPlayer;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.skills.AbnormalVisualEffect;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -112,13 +113,20 @@ public class CharInfo implements IClientOutgoingPacket
 	public boolean write(PacketWriter packet)
 	{
 		OutgoingPackets.CHAR_INFO.writeId(packet);
-		
+		final CoCPlayer cocPlayer = _activeChar.getChaosCeremonyInstance();
 		packet.writeD(_x); // Confirmed
 		packet.writeD(_y); // Confirmed
 		packet.writeD(_z); // Confirmed
 		packet.writeD(_vehicleId); // Confirmed
 		packet.writeD(_objId); // Confirmed
-		packet.writeS(_activeChar.getAppearance().getVisibleName()); // Confirmed
+		if (cocPlayer == null)
+		{
+			packet.writeS(_activeChar.getAppearance().getVisibleName()); // Confirmed
+		}
+		else
+		{
+			packet.writeS("Challenger" + cocPlayer.getPosition());
+		}
 		packet.writeH(_activeChar.getRace().ordinal()); // Confirmed
 		packet.writeC(_activeChar.getAppearance().getSex() ? 0x01 : 0x00); // Confirmed
 		packet.writeD(_activeChar.getBaseClass()); // Confirmed
@@ -164,9 +172,16 @@ public class CharInfo implements IClientOutgoingPacket
 		packet.writeD(_activeChar.getVisualHairColor());
 		packet.writeD(_activeChar.getVisualFace());
 		
-		packet.writeS(_gmSeeInvis ? "Invisible" : _activeChar.getAppearance().getVisibleTitle());
+		if (cocPlayer == null)
+		{
+			packet.writeS(_gmSeeInvis ? "Invisible" : _activeChar.getAppearance().getVisibleTitle());
+		}
+		else
+		{
+			packet.writeS("");
+		}
 		
-		if (!_activeChar.isCursedWeaponEquipped())
+		if (!_activeChar.isCursedWeaponEquipped() && (cocPlayer == null))
 		{
 			packet.writeD(_activeChar.getClanId());
 			packet.writeD(_activeChar.getClanCrestId());
@@ -250,7 +265,7 @@ public class CharInfo implements IClientOutgoingPacket
 		{
 			packet.writeH(AbnormalVisualEffect.STEALTH.getClientId());
 		}
-		packet.writeC(0x00); // TODO: Find me!
+		packet.writeC(cocPlayer != null ? cocPlayer.getPosition() : 0);
 		packet.writeC(_activeChar.isHairAccessoryEnabled() ? 0x01 : 0x00); // Hair accessory
 		packet.writeC(_activeChar.getAbilityPointsUsed()); // Used Ability Points
 		return true;

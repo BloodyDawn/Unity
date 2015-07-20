@@ -312,16 +312,12 @@ public final class InstanceManager implements IGameXmlReader
 	 */
 	public int getPlayerInstance(int objectId)
 	{
-		for (Instance temp : _instanceList.values())
+		for (Instance instance : _instanceList.values())
 		{
-			if (temp == null)
-			{
-				continue;
-			}
 			// check if the player is in any active instance
-			if (temp.containsPlayer(objectId))
+			if (instance.containsPlayer(objectId))
 			{
-				return temp.getId();
+				return instance.getObjectId();
 			}
 		}
 		// 0 is default instance aka the world

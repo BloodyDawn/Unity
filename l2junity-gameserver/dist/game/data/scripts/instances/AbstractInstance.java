@@ -126,7 +126,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 		
 		if (duration == 0)
 		{
-			InstanceManager.getInstance().destroyInstance(inst.getId());
+			InstanceManager.getInstance().destroyInstance(inst.getObjectId());
 		}
 		else if (duration > 0)
 		{

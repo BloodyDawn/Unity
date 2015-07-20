@@ -15,7 +15,7 @@
 				</xs:element>
 				<xs:element name="emptyDestroyTime" minOccurs="0" maxOccurs="1">
 					<xs:complexType>
-						<xs:attribute name="val" type="xs:positiveInteger" use="required" />
+						<xs:attribute name="val" type="xs:nonNegativeInteger" use="required" />
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="PvPInstance" minOccurs="0" maxOccurs="1">
@@ -64,9 +64,9 @@
 						<xs:attribute name="additionStyle">
 							<xs:simpleType>
 								<xs:restriction base="xs:token">
-										<xs:enumeration value="NONE" />
-										<xs:enumeration value="ON_INSTANCE_ENTER" />
-										<xs:enumeration value="ON_INSTANCE_FINISH" />
+									<xs:enumeration value="NONE" />
+									<xs:enumeration value="ON_INSTANCE_ENTER" />
+									<xs:enumeration value="ON_INSTANCE_FINISH" />
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:attribute>
@@ -84,9 +84,9 @@
 						<xs:attribute name="type">
 							<xs:simpleType>
 								<xs:restriction base="xs:token">
-										<xs:enumeration value="ALL" />
-										<xs:enumeration value="WHITELIST" />
-										<xs:enumeration value="BLACKLIST" />
+									<xs:enumeration value="ALL" />
+									<xs:enumeration value="WHITELIST" />
+									<xs:enumeration value="BLACKLIST" />
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:attribute>
@@ -147,6 +147,7 @@
 				</xs:element>
 			</xs:sequence>
 			<xs:attribute name="name" type="xs:normalizedString" use="required" />
+			<xs:attribute name="id" type="xs:positiveInteger" />
 			<xs:attribute name="ejectTime" type="xs:positiveInteger" />
 			<xs:attribute name="allowRandomWalk" type="xs:boolean" />
 		</xs:complexType>
