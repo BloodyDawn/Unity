@@ -166,54 +166,50 @@ public final class Raina extends AbstractNpcAI
 				if (player.isTransformed())
 				{
 					htmltext = "noTransform.html";
-					break;
 				}
 				else if (player.hasSummon())
 				{
 					htmltext = "noSummon.html";
-					break;
 				}
 				else if (player.getRace() == Race.ERTHEIA)
 				{
 					htmltext = "noErtheia.html";
-					break;
 				}
-				else if (!haveDoneQuest(player) && Config.ALT_GAME_SUBCLASS_WITHOUT_QUESTS && !player.isGM())
+				else if (!haveDoneQuest(player, false))
 				{
 					htmltext = "noQuest.html";
-					break;
 				}
 				else if (!hasAllSubclassLeveled(player) || (player.getTotalSubClasses() >= Config.MAX_SUBCLASS))
 				{
 					htmltext = "addFailed.html";
-					break;
 				}
 				else if (!player.isInventoryUnder90(true) || (player.getWeightPenalty() >= 2))
 				{
 					htmltext = "inventoryLimit.html";
-					break;
 				}
-				
-				final Set<PlayerClass> availSubs = getAvailableSubClasses(player);
-				final StringBuilder sb = new StringBuilder();
-				final NpcHtmlMessage html = getNpcHtmlMessage(player, npc, "subclassList.html");
-				
-				if ((availSubs == null) || availSubs.isEmpty())
+				else
 				{
-					break;
-				}
-				
-				for (PlayerClass subClass : availSubs)
-				{
-					if (subClass != null)
+					final Set<PlayerClass> availSubs = getAvailableSubClasses(player);
+					final StringBuilder sb = new StringBuilder();
+					final NpcHtmlMessage html = getNpcHtmlMessage(player, npc, "subclassList.html");
+					
+					if ((availSubs == null) || availSubs.isEmpty())
 					{
-						final int classId = subClass.ordinal();
-						final int npcStringId = 11170000 + classId;
-						sb.append("<fstring p1=\"0\" p2=\"" + classId + "\">" + npcStringId + "</fstring>");
+						break;
 					}
+					
+					for (PlayerClass subClass : availSubs)
+					{
+						if (subClass != null)
+						{
+							final int classId = subClass.ordinal();
+							final int npcStringId = 11170000 + classId;
+							sb.append("<fstring p1=\"0\" p2=\"" + classId + "\">" + npcStringId + "</fstring>");
+						}
+					}
+					html.replace("%subclassList%", sb.toString());
+					player.sendPacket(html);
 				}
-				html.replace("%subclassList%", sb.toString());
-				player.sendPacket(html);
 				break;
 			}
 			case "removeSubclass":
@@ -221,86 +217,81 @@ public final class Raina extends AbstractNpcAI
 				if (player.isTransformed())
 				{
 					htmltext = "noTransform.html";
-					break;
 				}
 				else if (player.hasSummon())
 				{
 					htmltext = "noSummon.html";
-					break;
 				}
 				else if (player.getRace() == Race.ERTHEIA)
 				{
 					htmltext = "noErtheia.html";
-					break;
 				}
 				else if (!player.isInventoryUnder90(true) || (player.getWeightPenalty() >= 2))
 				{
 					htmltext = "inventoryLimit.html";
-					break;
 				}
 				else if (player.getSubClasses().isEmpty())
 				{
 					htmltext = "noSubChange.html";
-					break;
 				}
-				
-				final StringBuilder sb = new StringBuilder();
-				final NpcHtmlMessage html = getNpcHtmlMessage(player, npc, "subclassRemoveList.html");
-				
-				for (SubClass subClass : player.getSubClasses().values())
+				else
 				{
-					if (subClass != null)
+					final StringBuilder sb = new StringBuilder();
+					final NpcHtmlMessage html = getNpcHtmlMessage(player, npc, "subclassRemoveList.html");
+					
+					for (SubClass subClass : player.getSubClasses().values())
 					{
-						final int classId = subClass.getClassId();
-						final int npcStringId = 11170000 + classId;
-						sb.append("<fstring p1=\"2\" p2=\"" + subClass.getClassIndex() + "\">" + npcStringId + "</fstring>");
+						if (subClass != null)
+						{
+							final int classId = subClass.getClassId();
+							final int npcStringId = 11170000 + classId;
+							sb.append("<fstring p1=\"2\" p2=\"" + subClass.getClassIndex() + "\">" + npcStringId + "</fstring>");
+						}
 					}
+					html.replace("%removeList%", sb.toString());
+					player.sendPacket(html);
 				}
-				html.replace("%removeList%", sb.toString());
-				player.sendPacket(html);
 				break;
 			}
-			case "changeSubclass":
+			case "changeSubclass": // TODO: Finish me
 			{
 				if (player.isTransformed())
 				{
 					htmltext = "noTransform.html";
-					break;
 				}
 				else if (player.hasSummon())
 				{
 					htmltext = "noSummon.html";
-					break;
 				}
 				else if (player.getRace() == Race.ERTHEIA)
 				{
 					htmltext = "noErtheia.html";
-					break;
 				}
 				else if (player.getSubClasses().isEmpty())
 				{
 					htmltext = "noSubChange.html";
-					break;
 				}
 				else if (!hasQuestItems(player, SUBCLASS_CERTIFICATE))
 				{
 					htmltext = "noCertificate.html";
-					break;
 				}
-				
-				player.sendMessage("Not done yet.");
+				else
+				{
+					player.sendMessage("Not done yet.");
+				}
 				break;
 			}
 			case "ertheiaDualClass":
 			{
 				// TODO: Maybe html is different when you have 85lvl but you haven't completed quest
-				final QuestState qs = player.getQuestState(Q10472_WindsOfFateEncroachingShadows.class.getSimpleName());
-				if ((qs == null) || !qs.isCompleted() || player.hasDualClass())
+				if (player.hasDualClass() || !haveDoneQuest(player, true))
 				{
 					htmltext = "addDualClassErtheiaFailed.html";
-					break;
 				}
-				htmltext = "addDualClassErtheia.html";
+				else
+				{
+					htmltext = "addDualClassErtheia.html";
+				}
 				break;
 			}
 			case "addDualClass_SIGEL_GROUP":
@@ -338,23 +329,22 @@ public final class Raina extends AbstractNpcAI
 				if (player.isTransformed())
 				{
 					htmltext = "noTransform.html";
-					break;
 				}
 				else if (player.hasSummon())
 				{
 					htmltext = "noSummon.html";
-					break;
 				}
 				else if (!player.hasDualClass() || !player.isDualClassActive() || (player.getClassId().level() != ClassLevel.AWAKEN.ordinal()))
 				{
 					htmltext = "reawakenNoDual.html";
-					break;
 				}
-				
-				final NpcHtmlMessage html = getNpcHtmlMessage(player, npc, "reawaken.html");
-				final int index = player.getLevel() > 94 ? REAWAKEN_PRICE.length - 1 : player.getLevel() - 85;
-				html.replace("%price%", REAWAKEN_PRICE[index]);
-				player.sendPacket(html);
+				else
+				{
+					final NpcHtmlMessage html = getNpcHtmlMessage(player, npc, "reawaken.html");
+					final int index = player.getLevel() > 94 ? REAWAKEN_PRICE.length - 1 : player.getLevel() - 85;
+					html.replace("%price%", REAWAKEN_PRICE[index]);
+					player.sendPacket(html);
+				}
 				break;
 			}
 			case "reawakenDualclassConfirm":
@@ -363,28 +353,26 @@ public final class Raina extends AbstractNpcAI
 				if (player.isTransformed())
 				{
 					htmltext = "noTransform.html";
-					break;
 				}
 				else if (player.hasSummon())
 				{
 					htmltext = "noSummon.html";
-					break;
 				}
 				else if (!player.hasDualClass() || !player.isDualClassActive() || (player.getClassId().level() != ClassLevel.AWAKEN.ordinal()))
 				{
 					htmltext = "reawakenNoDual.html";
-					break;
 				}
 				else if ((player.getAdena() < REAWAKEN_PRICE[index]) || !hasQuestItems(player, getCloakId(player)))
 				{
 					final NpcHtmlMessage html = getNpcHtmlMessage(player, npc, "reawakenNoFee.html");
 					html.replace("%price%", REAWAKEN_PRICE[index]);
 					player.sendPacket(html);
-					break;
 				}
-				
-				final NpcHtmlMessage html = getNpcHtmlMessage(player, npc, "reawakenList.html");
-				player.sendPacket(html);
+				else
+				{
+					final NpcHtmlMessage html = getNpcHtmlMessage(player, npc, "reawakenList.html");
+					player.sendPacket(html);
+				}
 				break;
 			}
 			case "reawaken_SIGEL_GROUP":
@@ -683,10 +671,10 @@ public final class Raina extends AbstractNpcAI
 		return availSubs;
 	}
 	
-	private boolean haveDoneQuest(PlayerInstance player)
+	private boolean haveDoneQuest(PlayerInstance player, boolean isErtheia)
 	{
-		final QuestState qs = player.getQuestState("Q10385_RedThreadOfFate"); // TODO: Replace with class name
-		return qs == null ? false : qs.isCompleted();
+		final QuestState qs = isErtheia ? player.getQuestState(Q10472_WindsOfFateEncroachingShadows.class.getSimpleName()) : player.getQuestState("Q10385_RedThreadOfFate"); // TODO: Replace with class name
+		return (((qs != null) && qs.isCompleted()) || Config.ALT_GAME_SUBCLASS_WITHOUT_QUESTS);
 	}
 	
 	/**
