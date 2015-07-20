@@ -18,13 +18,19 @@
  */
 package org.l2junity.gameserver.instancemanager;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.CeremonyOfChaosState;
 import org.l2junity.gameserver.model.L2Clan;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.ceremonyofchaos.CoCArena;
+import org.l2junity.gameserver.model.ceremonyofchaos.CoCPlayer;
 import org.l2junity.gameserver.model.eventengine.AbstractEvent;
 import org.l2junity.gameserver.model.eventengine.AbstractEventManager;
 import org.l2junity.gameserver.model.eventengine.ScheduleTarget;
@@ -83,31 +89,84 @@ public class CeremonyOfChaosManager extends AbstractEventManager<AbstractEvent>
 	@ScheduleTarget
 	public void onRegistrationStart()
 	{
-		LOGGER.info("on registration start");
+		setState(CeremonyOfChaosState.REGISTRATION);
+		
+		for (PlayerInstance player : World.getInstance().getPlayers())
+		{
+			if (player.isOnline())
+			{
+				player.sendPacket(SystemMessageId.REGISTRATION_FOR_THE_CEREMONY_OF_CHAOS_HAS_BEGUN);
+				if (canRegister(player, false))
+				{
+					player.sendPacket(ExCuriousHouseState.REGISTRATION_PACKET);
+				}
+			}
+		}
 	}
 	
 	@ScheduleTarget
 	public void onRegistrationEnd()
 	{
-		LOGGER.info("on registration end");
+		setState(CeremonyOfChaosState.PREPARATION);
+		for (PlayerInstance player : World.getInstance().getPlayers())
+		{
+			if (player.isOnline())
+			{
+				player.sendPacket(SystemMessageId.REGISTRATION_FOR_THE_CEREMONY_OF_CHAOS_HAS_ENDED);
+				if (!isInWaitingList(player))
+				{
+					player.sendPacket(ExCuriousHouseState.IDLE_PACKET);
+				}
+				else
+				{
+					// Notify TP in 2 minutes
+				}
+			}
+		}
 	}
 	
 	@ScheduleTarget
 	public void onPrepareForFight()
 	{
-		LOGGER.info("on prepare for fight");
+		setState(CeremonyOfChaosState.RUNNING);
+		int position = 1;
+		CoCArena arena = null;
+		List<PlayerInstance> players = _waitingList.values().stream().sorted(Comparator.comparingInt(PlayerInstance::getLevel)).collect(Collectors.toList());
+		for (PlayerInstance player : players)
+		{
+			if (player.isOnline() && canRegister(player, true))
+			{
+				_participingList.put(player.getObjectId(), player);
+				
+				if ((arena == null) || (arena.getPlayers().size() >= CeremonyOfChaosArenaManager.MAX_PLAYERS))
+				{
+					arena = CeremonyOfChaosArenaManager.getInstance().createArena();
+					position = 1;
+				}
+				
+				arena.addPlayer(new CoCPlayer(player, position++));
+			}
+			else
+			{
+				// TODO: Handle player penalties
+			}
+		}
+		
+		// Teleport all players
+		CeremonyOfChaosArenaManager.getInstance().startPreparation();
 	}
 	
 	@ScheduleTarget
 	public void onStartFight()
 	{
-		LOGGER.info("on start fight");
+		// TODO: Start fight
 	}
 	
 	@ScheduleTarget
 	public void onEndFight()
 	{
-		LOGGER.info("on end fight");
+		setState(CeremonyOfChaosState.SCHEDULED);
+		CeremonyOfChaosArenaManager.getInstance().finish();
 	}
 	
 	public void addInWaitingList(PlayerInstance player)

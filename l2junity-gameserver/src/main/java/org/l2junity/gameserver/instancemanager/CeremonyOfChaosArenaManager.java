@@ -119,7 +119,7 @@ public class CeremonyOfChaosArenaManager
 	
 	public void finish()
 	{
-	
+		
 	}
 	
 	public static CeremonyOfChaosArenaManager getInstance()
