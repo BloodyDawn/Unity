@@ -369,12 +369,6 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 				return;
 			}
 			final ExServerPrimitive exsp = new ExServerPrimitive("DebugPoint_" + activeChar.getObjectId(), activeChar.getX(), activeChar.getY(), activeChar.getZ());
-			int index = 1;
-			for (Location loc : holder.getNodes())
-			{
-				exsp.addPoint("Point: " + index, Color.GREEN, true, loc);
-				index++;
-			}
 			final List<Location> list = holder.getNodes();
 			for (int i = 1; i < list.size(); i++)
 			{

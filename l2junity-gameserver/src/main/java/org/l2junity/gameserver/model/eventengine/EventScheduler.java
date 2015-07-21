@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model.eventengine;
 import it.sauronsoftware.cron4j.Predictor;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 
@@ -111,7 +112,7 @@ public class EventScheduler
 		
 		for (EventMethodNotification notification : _notifications)
 		{
-			LOGGER.info("Scheduled call to {}#{} on: {}", notification.getManager().getClass().getSimpleName(), notification.getMethod().getName(), Util.formatDate(predictor.nextMatchingDate(), "yyyy-MM-dd HH:mm:ss"));
+			LOGGER.info("Scheduled call to {}#{} on: {}", notification.getManager().getClass().getSimpleName(), notification.getMethod().getName(), Util.formatDate(new Date(nextSchedule), "yyyy-MM-dd HH:mm:ss"));
 		}
 	}
 	
