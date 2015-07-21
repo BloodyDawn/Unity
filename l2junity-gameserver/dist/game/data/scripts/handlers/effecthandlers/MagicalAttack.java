@@ -38,13 +38,15 @@ public final class MagicalAttack extends AbstractEffect
 {
 	private final double _power;
 	private final boolean _overHit;
-
+	private final double _debuffModifier;
+	
 	public MagicalAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_power = params.getDouble("power", 0);
 		_overHit = params.getBoolean("overHit", false);
+		_debuffModifier = params.getDouble("debuffModifier", 1);
 	}
 	
 	@Override
@@ -86,6 +88,12 @@ public final class MagicalAttack extends AbstractEffect
 		final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill()), info.getSkill(), target);
 		final byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
 		int damage = (int) Formulas.calcMagicDam(activeChar, target, info.getSkill(), _power, shld, sps, bss, mcrit);
+		
+		// Apply debuff mod
+		if (target.getEffectList().hasDebuffs())
+		{
+			damage *= _debuffModifier;
+		}
 		
 		if (damage > 0)
 		{

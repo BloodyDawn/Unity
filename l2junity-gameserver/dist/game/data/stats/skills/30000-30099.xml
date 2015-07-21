@@ -33,6 +33,7 @@
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
+				<param debuffModifier="1.1" />
 			</effect>
 		</for>
 	</skill>
@@ -83,6 +84,7 @@
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
+				<param debuffModifier="1.1" />
 			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="STORM_SIGN,3" />
@@ -178,6 +180,7 @@
 			</effect>
 			<effect name="MagicalAttack">
 				<param power="#power" />
+				<param debuffModifier="1.1" />
 			</effect>
 		</for>
 	</skill>
@@ -369,6 +372,7 @@
 			</effect>
 			<effect name="MagicalAttack">
 				<param power="#power" />
+				<param debuffModifier="1.1" />
 			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="STORM_SIGN,3" />
@@ -542,6 +546,7 @@
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
+				<param debuffModifier="1.1" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.70" />
@@ -684,9 +689,9 @@
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
+				<param debuffModifier="1.1" />
 			</effect>
 			<!-- TODO Lock inside storm for 5sec. -->
-			<!-- 10% more damage if target is debuffed. -->
 		</for>
 	</skill>
 	<skill id="30030" levels="1" name="Storm Captivity">

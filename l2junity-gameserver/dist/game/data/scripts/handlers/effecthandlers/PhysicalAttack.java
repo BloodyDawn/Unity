@@ -18,6 +18,10 @@
  */
 package handlers.effecthandlers;
 
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
@@ -27,6 +31,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.Weapon;
+import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
@@ -45,10 +50,12 @@ public final class PhysicalAttack extends AbstractEffect
 	private final double _power;
 	private final double _pAtkMod;
 	private final double _pDefMod;
-	private final double _stunnedMod;
 	private final double _criticalChance;
 	private final boolean _ignoreShieldDefence;
 	private final boolean _overHit;
+	
+	private final Set<AbnormalType> _abnormals;
+	private final double _abnormalPowerMod;
 	
 	public PhysicalAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
@@ -57,10 +64,24 @@ public final class PhysicalAttack extends AbstractEffect
 		_power = params.getDouble("power", 0);
 		_pAtkMod = params.getDouble("pAtkMod", 1.0);
 		_pDefMod = params.getDouble("pDefMod", 1.0);
-		_stunnedMod = params.getDouble("stunnedMod", 1.0);
 		_criticalChance = params.getDouble("criticalChance", 0);
 		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);
 		_overHit = params.getBoolean("overHit", false);
+		
+		String abnormals = params.getString("abnormalType", null);
+		if ((abnormals != null) && !abnormals.isEmpty())
+		{
+			_abnormals = new HashSet<>();
+			for (String slot : abnormals.split(";"))
+			{
+				_abnormals.add(AbnormalType.getAbnormalType(slot));
+			}
+		}
+		else
+		{
+			_abnormals = Collections.<AbnormalType> emptySet();
+		}
+		_abnormalPowerMod = params.getDouble("damageModifier", 1);
 	}
 	
 	@Override
@@ -245,10 +266,10 @@ public final class PhysicalAttack extends AbstractEffect
 			}
 		}
 		
-		// Apply skill damage modifiers on targets that are stunned.
-		if (target.isStunned())
+		// Check if we apply an abnormal modifier
+		if (_abnormals.stream().anyMatch(a -> target.getEffectList().getBuffInfoByAbnormalType(a) != null))
 		{
-			damage *= _stunnedMod;
+			damage *= _abnormalPowerMod;
 		}
 		
 		return damage;

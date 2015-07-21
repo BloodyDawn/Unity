@@ -18,6 +18,10 @@
  */
 package handlers.effecthandlers;
 
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
@@ -25,6 +29,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Formulas;
@@ -41,6 +46,9 @@ public final class FatalBlow extends AbstractEffect
 	private final double _criticalChance;
 	private final boolean _overHit;
 	
+	private final Set<AbnormalType> _abnormals;
+	private final double _abnormalPowerMod;
+	
 	public FatalBlow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
@@ -49,6 +57,21 @@ public final class FatalBlow extends AbstractEffect
 		_chance = params.getDouble("chance", 0);
 		_criticalChance = params.getDouble("criticalChance", 0);
 		_overHit = params.getBoolean("overHit", false);
+		
+		String abnormals = params.getString("abnormalType", null);
+		if ((abnormals != null) && !abnormals.isEmpty())
+		{
+			_abnormals = new HashSet<>();
+			for (String slot : abnormals.split(";"))
+			{
+				_abnormals.add(AbnormalType.getAbnormalType(slot));
+			}
+		}
+		else
+		{
+			_abnormals = Collections.<AbnormalType> emptySet();
+		}
+		_abnormalPowerMod = params.getDouble("damageModifier", 1);
 	}
 	
 	@Override
@@ -94,6 +117,12 @@ public final class FatalBlow extends AbstractEffect
 		if (crit)
 		{
 			damage *= 2;
+		}
+		
+		// Check if we apply an abnormal modifier
+		if (_abnormals.stream().anyMatch(a -> target.getEffectList().getBuffInfoByAbnormalType(a) != null))
+		{
+			damage *= _abnormalPowerMod;
 		}
 		
 		// Check if damage should be reflected

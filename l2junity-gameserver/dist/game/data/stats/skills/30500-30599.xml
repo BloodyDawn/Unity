@@ -25,7 +25,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param stunnedMod="1.2" /> <!-- 20% more damage if target is Stunned -->
+				<param abnormalType="STUN" damageModifier="1.2" />
 				<param criticalChance="15" /> <!-- Unconfirmed -->
 				<param overHit="true" />
 			</effect>
