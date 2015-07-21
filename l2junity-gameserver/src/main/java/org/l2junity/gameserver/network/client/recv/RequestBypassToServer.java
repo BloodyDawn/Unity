@@ -35,6 +35,7 @@ import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcManorBypass;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcMenuSelect;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerBypass;
+import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
@@ -120,6 +121,12 @@ public final class RequestBypassToServer implements IClientIncomingPacket
 			return;
 		}
 		
+		final TerminateReturn terminateReturn = EventDispatcher.getInstance().notifyEvent(new OnPlayerBypass(activeChar, _command), activeChar, TerminateReturn.class);
+		if ((terminateReturn != null) && terminateReturn.terminate())
+		{
+			return;
+		}
+
 		try
 		{
 			if (_command.startsWith("admin_"))
@@ -291,8 +298,6 @@ public final class RequestBypassToServer implements IClientIncomingPacket
 				activeChar.sendPacket(msg);
 			}
 		}
-		
-		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerBypass(activeChar, _command), activeChar);
 	}
 	
 	/**

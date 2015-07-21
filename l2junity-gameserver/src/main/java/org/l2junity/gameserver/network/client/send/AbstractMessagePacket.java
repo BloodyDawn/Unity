@@ -102,6 +102,7 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 	// id 19 c
 	// id 18 Q (read same as 6)
 	// id 17 shared with 1-3,17,22
+	private static final byte TYPE_BYTE = 20;
 	private static final byte TYPE_POPUP_ID = 16;
 	private static final byte TYPE_CLASS_ID = 15;
 	// id 14 dSSSSS
@@ -374,6 +375,12 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 		return (T) this;
 	}
 	
+	public final T addByte(int time)
+	{
+		append(new SMParam(TYPE_BYTE, time));
+		return (T) this;
+	}
+
 	/**
 	 * Instance name from instantzonedata-e.dat
 	 * @param type id of instance
@@ -407,6 +414,7 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 			switch (param.getType())
 			{
 				case TYPE_ELEMENT_NAME:
+				case TYPE_BYTE:
 				{
 					packet.writeC(param.getIntValue());
 					break;

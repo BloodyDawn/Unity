@@ -20,11 +20,10 @@ package org.l2junity.gameserver.instancemanager;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 import org.l2junity.commons.util.Rnd;
+import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.CeremonyOfChaosState;
 import org.l2junity.gameserver.model.L2Clan;
@@ -39,7 +38,10 @@ import org.l2junity.gameserver.model.events.ListenerRegisterType;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerBypass;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
+import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseState;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.slf4j.Logger;
@@ -58,12 +60,8 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	public static final String MAX_ARENAS_KEY = "max_arenas";
 	public static final String INSTANCE_TEMPLATES_KEY = "instance_templates";
 	
-	// Used for holding player in Arena- THAT OR PLAYERINSTANCE BOOL ?
-	protected final Map<Integer, PlayerInstance> _participingList = new ConcurrentHashMap<>();
-	
-	public CeremonyOfChaosManager()
+	protected CeremonyOfChaosManager()
 	{
-		
 	}
 	
 	@Override
@@ -75,27 +73,31 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	@ScheduleTarget
 	public void onPeriodEnd(String text)
 	{
-		LOGGER.info("Period ended");
+		LOGGER.info("Ceremony of Chaos period has ended!");
 		LOGGER.info(text);
 	}
 	
 	@ScheduleTarget
 	public void onEventStart()
 	{
-		LOGGER.info("on event start");
+		LOGGER.info("Ceremony of Chaos event has started!");
 	}
 	
 	@ScheduleTarget
 	public void onEventEnd()
 	{
-		LOGGER.info("on event event");
+		LOGGER.info("Ceremony of Chaos event has ended!");
 	}
 	
 	@ScheduleTarget
 	public void onRegistrationStart()
 	{
+		if (getState() != CeremonyOfChaosState.SCHEDULED)
+		{
+			return;
+		}
+
 		setState(CeremonyOfChaosState.REGISTRATION);
-		
 		for (PlayerInstance player : World.getInstance().getPlayers())
 		{
 			if (player.isOnline())
@@ -112,6 +114,11 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	@ScheduleTarget
 	public void onRegistrationEnd()
 	{
+		if (getState() != CeremonyOfChaosState.REGISTRATION)
+		{
+			return;
+		}
+
 		setState(CeremonyOfChaosState.PREPARING_FOR_TELEPORT);
 		for (PlayerInstance player : World.getInstance().getPlayers())
 		{
@@ -122,17 +129,62 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 				{
 					player.sendPacket(ExCuriousHouseState.IDLE_PACKET);
 				}
-				else
+			}
+		}
+
+		ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(60), 55 * 1000);
+		ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(10), (55 + 10) * 1000);
+		for (int i = 5; i > 0; i--)
+		{
+			final int timeLeft = i;
+			ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(timeLeft), (55 + 10 + timeLeft) * 1000);
+		}
+	}
+
+	private void onAboutToTeleport(int time)
+	{
+		switch (time)
+		{
+			case 1:
+			case 2:
+			case 3:
+			case 4:
+			case 5:
+			case 60:
+			{
+				final SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.YOU_WILL_BE_MOVED_TO_THE_ARENA_IN_S1_SECOND_S);
+				msg.addByte(time);
+				for (PlayerInstance player : getRegisteredPlayers())
 				{
-					// Notify TP in 2 minutes
+					if (player.isOnline())
+					{
+						player.sendPacket(msg);
+					}
 				}
+				break;
+			}
+			case 10:
+			{
+				for (PlayerInstance player : getRegisteredPlayers())
+				{
+					if (player.isOnline())
+					{
+						player.sendPacket(ExCuriousHouseState.STARTING_PACKET);
+					}
+				}
+				break;
 			}
 		}
 	}
-	
+
 	@ScheduleTarget
 	public void onPrepareForFight()
 	{
+		if (getState() != CeremonyOfChaosState.PREPARING_FOR_TELEPORT)
+		{
+			return;
+		}
+
 		setState(CeremonyOfChaosState.PREPARING_FOR_FIGHT);
 		int eventId = 0;
 		int position = 1;
@@ -144,8 +196,6 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		{
 			if (player.isOnline() && canRegister(player, true))
 			{
-				_participingList.put(player.getObjectId(), player);
-				
 				if ((event == null) || (event.getPlayers().size() >= maxPlayers))
 				{
 					
@@ -159,6 +209,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			else
 			{
 				// TODO: Handle player penalties
+				player.sendPacket(ExCuriousHouseState.IDLE_PACKET);
 			}
 		}
 		
@@ -169,6 +220,11 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	@ScheduleTarget
 	public void onStartFight()
 	{
+		if (getState() != CeremonyOfChaosState.PREPARING_FOR_FIGHT)
+		{
+			return;
+		}
+
 		setState(CeremonyOfChaosState.RUNNING);
 		getEvents().forEach(CeremonyOfChaosEvent::startFight);
 	}
@@ -176,6 +232,11 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	@ScheduleTarget
 	public void onEndFight()
 	{
+		if (getState() != CeremonyOfChaosState.RUNNING)
+		{
+			return;
+		}
+
 		setState(CeremonyOfChaosState.SCHEDULED);
 		getEvents().forEach(CeremonyOfChaosEvent::stopFight);
 	}
@@ -269,12 +330,12 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	
 	@RegisterEvent(EventType.ON_PLAYER_BYPASS)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
-	public void OnPlayerBypass(OnPlayerBypass event)
+	public TerminateReturn OnPlayerBypass(OnPlayerBypass event)
 	{
 		final PlayerInstance player = event.getActiveChar();
 		if (player == null)
 		{
-			return;
+			return null;
 		}
 		
 		if (event.getCommand().equalsIgnoreCase("pledgegame?command=apply"))
@@ -285,9 +346,25 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 				player.sendPacket(SystemMessageId.EXCEPT_THE_VITALITY_BUFF_ALL_BUFFS_INCLUDING_ART_OF_SEDUCTION_WILL_BE_DELETED);
 				player.sendPacket(ExCuriousHouseState.PREPARE_PACKET);
 			}
+			return new TerminateReturn(true, false, false);
 		}
+		return null;
 	}
 	
+	@RegisterEvent(EventType.ON_PLAYER_LOGIN)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	public void OnPlayerLogin(OnPlayerLogin event)
+	{
+		if (getState() == CeremonyOfChaosState.REGISTRATION)
+		{
+			final PlayerInstance player = event.getActiveChar();
+			if (canRegister(player, false))
+			{
+				player.sendPacket(ExCuriousHouseState.REGISTRATION_PACKET);
+			}
+		}
+	}
+
 	// player leave clan
 	
 	public static CeremonyOfChaosManager getInstance()
