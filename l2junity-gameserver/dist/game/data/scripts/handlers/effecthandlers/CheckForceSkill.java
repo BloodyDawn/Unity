@@ -53,6 +53,10 @@ public class CheckForceSkill extends AbstractEffect
 					return info.getSkill().isToggle();
 				}
 			}
+			else if (player.isAffectedBySkill(_skillId))
+			{
+				return info.getSkill().isToggle();
+			}
 			
 			player.stopSkillEffects(info.getSkill());
 		}
