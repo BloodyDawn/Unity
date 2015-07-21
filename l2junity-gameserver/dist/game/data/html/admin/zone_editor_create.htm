@@ -21,6 +21,14 @@
 			<td><button action="bypass -h admin_zones setname $name" value="Set name" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
 		</tr>
 		<tr>
+			<td><edit var="minZ" width=127 height=15></td>
+			<td><button action="bypass -h admin_zones setMinZ $minZ" value="Set minZ" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+		</tr>
+		<tr>
+			<td><edit var="maxZ" width=127 height=15></td>
+			<td><button action="bypass -h admin_zones setMaxZ $maxZ" value="Set maxZ" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+		</tr>
+		<tr>
 			<td><button action="bypass -h admin_zones start" value="Picking" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
 			<td><button action="bypass -h admin_zones finish" value="Moving" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
 		</tr>
@@ -41,8 +49,9 @@
 	</tr>
 </table>
 <br1>
-Name: <font color="LEVEL">%name%</font>
-<br1>
+Name: <font color="LEVEL">%name%</font><br1>
+Min Z: <font color="LEVEL">%minZ%</font> Max Z: <font color="LEVEL">%maxZ%</font>
+<br>
 <table width=280 height=20 cellspacing=0 background="L2UI_CT1.Button_DF_Calculator">
 	<tr>
 		<td fixwidth=5></td>

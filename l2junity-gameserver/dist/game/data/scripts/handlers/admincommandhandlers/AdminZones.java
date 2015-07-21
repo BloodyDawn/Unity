@@ -138,6 +138,24 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 						disablePicking(activeChar);
 						break;
 					}
+					case "setMinZ":
+					{
+						if (st.hasMoreTokens())
+						{
+							final int minZ = Integer.parseInt(st.nextToken());
+							setMinZ(activeChar, minZ);
+						}
+						break;
+					}
+					case "setMaxZ":
+					{
+						if (st.hasMoreTokens())
+						{
+							final int maxZ = Integer.parseInt(st.nextToken());
+							setMaxZ(activeChar, maxZ);
+						}
+						break;
+					}
 					case "show":
 					{
 						showPoints(activeChar);
@@ -217,6 +235,24 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 		return false;
 	}
 	
+	/**
+	 * @param activeChar
+	 * @param minZ
+	 */
+	private void setMinZ(PlayerInstance activeChar, int minZ)
+	{
+		_zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder()).setMinZ(minZ);
+	}
+	
+	/**
+	 * @param activeChar
+	 * @param maxZ
+	 */
+	private void setMaxZ(PlayerInstance activeChar, int maxZ)
+	{
+		_zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder()).setMaxZ(maxZ);
+	}
+
 	private void buildZonesEditorWindow(PlayerInstance activeChar)
 	{
 		final StringBuilder sb = new StringBuilder();
@@ -262,6 +298,8 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 			final ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.getObjectId(), val -> new ZoneNodeHolder());
 			holder.getNodes().clear();
 			holder.setName(zoneType.getName());
+			holder.setMinZ(zone.getLowZ());
+			holder.setMinZ(zone.getHighZ());
 			for (int i = 0; i < zone.getX().length; i++)
 			{
 				final int x = zone.getX()[i];
@@ -342,9 +380,27 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 			{
 				final Location prevLoc = list.get(i - 1);
 				final Location nextLoc = list.get(i);
+				if (holder.getMinZ() != 0)
+				{
+					exsp.addLine("Min Point " + i + " > " + (i + 1), Color.CYAN, true, prevLoc.getX(), prevLoc.getY(), holder.getMinZ(), nextLoc.getX(), nextLoc.getY(), holder.getMinZ());
+				}
 				exsp.addLine("Point " + i + " > " + (i + 1), Color.WHITE, true, prevLoc, nextLoc);
+				if (holder.getMaxZ() != 0)
+				{
+					exsp.addLine("Max Point " + i + " > " + (i + 1), Color.RED, true, prevLoc.getX(), prevLoc.getY(), holder.getMaxZ(), nextLoc.getX(), nextLoc.getY(), holder.getMaxZ());
+				}
 			}
-			exsp.addLine("Point " + list.size() + " > 1", Color.WHITE, true, list.get(list.size() - 1), list.get(0));
+			final Location prevLoc = list.get(list.size() - 1);
+			final Location nextLoc = list.get(0);
+			if (holder.getMinZ() != 0)
+			{
+				exsp.addLine("Min Point " + list.size() + " > 1", Color.CYAN, true, prevLoc.getX(), prevLoc.getY(), holder.getMinZ(), nextLoc.getX(), nextLoc.getY(), holder.getMinZ());
+			}
+			exsp.addLine("Point " + list.size() + " > 1", Color.WHITE, true, prevLoc, nextLoc);
+			if (holder.getMaxZ() != 0)
+			{
+				exsp.addLine("Max Point " + list.size() + " > 1", Color.RED, true, prevLoc.getX(), prevLoc.getY(), holder.getMaxZ(), nextLoc.getX(), nextLoc.getY(), holder.getMaxZ());
+			}
 			activeChar.sendPacket(exsp);
 		}
 	}
@@ -408,7 +464,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 			final StringJoiner sj = new StringJoiner(System.lineSeparator());
 			sj.add("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 			sj.add("<list enabled=\"true\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"../../../data/xsd/zones.xsd\">");
-			sj.add("\t<zone name=\"" + holder.getName() + "\" type=\"ScriptZone\" shape=\"NPoly\" minZ=\"" + (firstNode.getZ() - 100) + "\" maxZ=\"" + (firstNode.getZ() + 100) + "\">");
+			sj.add("\t<zone name=\"" + holder.getName() + "\" type=\"ScriptZone\" shape=\"NPoly\" minZ=\"" + (holder.getMinZ() != 0 ? holder.getMinZ() : firstNode.getZ() - 100) + "\" maxZ=\"" + (holder.getMaxZ() != 0 ? holder.getMaxZ() : firstNode.getZ() + 100) + "\">");
 			for (Location loc : holder.getNodes())
 			{
 				sj.add("\t\t<node X=\"" + loc.getX() + "\" Y=\"" + loc.getY() + "\" />");
@@ -495,7 +551,9 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 				}
 				
 				final Location firstLoc = list.get(0);
-				final ExShowTerritory exst = new ExShowTerritory(firstLoc.getZ() - 100, firstLoc.getZ() + 100);
+				int minZ = holder.getMinZ() != 0 ? holder.getMinZ() : firstLoc.getZ() - 100;
+				int maxZ = holder.getMaxZ() != 0 ? holder.getMaxZ() : firstLoc.getZ() + 100;
+				final ExShowTerritory exst = new ExShowTerritory(minZ, maxZ);
 				list.forEach(exst::addVertice);
 				activeChar.sendPacket(exst);
 				activeChar.sendMessage("In order to remove the debug you must restart your game client!");
@@ -516,7 +574,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 		final ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder());
 		final AtomicInteger position = new AtomicInteger(page * 20);
 		
-		final PageResult result = PageBuilder.newBuilder(holder.getNodes(), 3, "bypass -h admin_zones list").currentPage(page).bodyHandler((pages, loc, sb) ->
+		final PageResult result = PageBuilder.newBuilder(holder.getNodes(), 20, "bypass -h admin_zones list").currentPage(page).bodyHandler((pages, loc, sb) ->
 		{
 			sb.append("<tr>");
 			sb.append("<td fixwidth=5></td>");
@@ -532,6 +590,8 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 		}).build();
 
 		msg.replace("%name%", holder.getName());
+		msg.replace("%minZ%", holder.getMinZ());
+		msg.replace("%maxZ%", holder.getMaxZ());
 		msg.replace("%pages%", result.getPagerTemplate());
 		msg.replace("%nodes%", result.getBodyTemplate());
 		activeChar.sendPacket(msg);
@@ -541,6 +601,8 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 	{
 		private String _name = "";
 		private Location _changingLoc = null;
+		private int _minZ;
+		private int _maxZ;
 		private final List<Location> _nodes = new ArrayList<>();
 		
 		public void setName(String name)
@@ -576,6 +638,26 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 		public int indexOf(Location loc)
 		{
 			return _nodes.indexOf(loc);
+		}
+		
+		public int getMinZ()
+		{
+			return _minZ;
+		}
+		
+		public int getMaxZ()
+		{
+			return _maxZ;
+		}
+		
+		public void setMinZ(int minZ)
+		{
+			_minZ = minZ;
+		}
+		
+		public void setMaxZ(int maxZ)
+		{
+			_maxZ = maxZ;
 		}
 	}
 }
