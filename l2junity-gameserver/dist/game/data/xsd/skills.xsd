@@ -226,6 +226,7 @@
 				<xs:attribute type="xs:byte" name="blockedActions" use="optional" />
 				<xs:attribute type="xs:string" name="skillId" use="optional" />
 				<xs:attribute type="xs:string" name="skillLevel" use="optional" />
+				<xs:attribute type="xs:byte" name="minSlot" use="optional" />
 				<xs:attribute type="xs:string" name="skillLevelScaleTo" use="optional" />
 				<xs:attribute type="xs:string" name="allowWeapons" use="optional" />
 				<xs:attribute type="xs:string" name="targetType" use="optional" />
@@ -302,6 +303,9 @@
 				<xs:attribute type="xs:integer" name="ride" use="optional" />
 				<xs:attribute type="xs:integer" name="wyvern" use="optional" />
 				<xs:attribute type="xs:string" name="percentage" use="optional" />
+				<xs:attribute type="xs:string" name="requiredSlots" use="optional" />
+				<xs:attribute type="xs:string" name="optionalSlots" use="optional" />
+				<xs:attribute type="xs:short" name="partyBuffSkillId" use="optional" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>

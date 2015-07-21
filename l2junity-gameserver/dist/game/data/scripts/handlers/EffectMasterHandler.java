@@ -18,12 +18,12 @@
  */
 package handlers;
 
-import handlers.effecthandlers.*;
-
 import org.l2junity.gameserver.handler.EffectHandler;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import handlers.effecthandlers.*;
 
 /**
  * Effect Master handler.
@@ -60,6 +60,8 @@ public final class EffectMasterHandler
 		ChangeFishingMastery.class,
 		ChangeHairColor.class,
 		ChangeHairStyle.class,
+		CheckForceSkill.class,
+		CheckSynergySkill.class,
 		ClanGate.class,
 		ClassChange.class,
 		Confuse.class,
@@ -194,6 +196,7 @@ public final class EffectMasterHandler
 		SummonPet.class,
 		SummonTrap.class,
 		Sweeper.class,
+		Synergy.class,
 		TakeCastle.class,
 		TakeCastleStart.class,
 		TakeFort.class,

@@ -797,23 +797,61 @@
 		</for>
 	</skill>
 	<skill id="10028" levels="1" name="Rage Aura">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- When equipped with a sword or blunt weapon, increases P. Atk. Atk. Spd. and P. Critical Damage by 10%, and Speed by 10. Decreases nearby enemies' P. Atk. and Atk. Spd. by 20%. Only one Sigel Knight's Aura can be active at any time. -->
+		<set name="abnormalType" val="SIGEL_AURA" />
+		<set name="abnormalVisualEffect" val="AURA_DEBUFF" />
 		<set name="icon" val="icon.skill10028" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="1000" />
+		<for>
+			<effect name="ManaDamOverTime" ticks="0">
+				<param power="0" />
+				<mul stat="pAtk" val="1.1">
+					<using kind="SWORD, BLUNT" />
+				</mul>
+				<mul stat="pAtkSpd" val="1.1">
+					<using kind="SWORD, BLUNT" />
+				</mul>
+				<mul stat="cAtk" val="1.1">
+					<using kind="SWORD, BLUNT" />
+				</mul>
+				<add stat="runSpd" val="10">
+					<using kind="SWORD, BLUNT" />
+				</add>
+			</effect>
+			<effect name="CallSkillOnActionTime" ticks="3">
+				<param power="0" />
+				<param skillId="10029" skillLevel="1" /> <!-- Rage Aura -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="10029" levels="1" name="Rage Aura">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Decrease P. Atk and Atk. Spd. by 20%. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="ULTIMATE_DEBUFF" />
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="200" />
 		<set name="icon" val="icon.skill10028" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="1000" />
-		<set name="effectPoint" val="2" />
+		<set name="effectPoint" val="-2" />
 		<set name="isDebuff" val="true" />
+		<set name="staticReuse" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pAtk" val="0.8">
+					<using kind="SWORD, BLUNT" />
+				</mul>
+				<mul stat="pAtkSpd" val="0.8">
+					<using kind="SWORD, BLUNT" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10030" levels="1" name="Challenge Aura">
 		<!-- AUTO GENERATED SKILL -->

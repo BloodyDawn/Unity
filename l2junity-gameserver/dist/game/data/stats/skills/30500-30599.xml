@@ -2,12 +2,12 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="30500" levels="28" name="Lateral Hit">
 		<!-- Updated to IO -->
-		<!-- Attacks target with 22 Power added to P. Atk., and decreases their P. Def. by 10% for 10 sec. 20% more damage if target is Stunned. Requires a fist weapon. -->
+		<!-- Attacks target with 22 Power added to P. Atk., and decreases their P. Def. by 10% for 20 sec. 20% more damage if target is Stunned. Requires a fist weapon. -->
 		<table name="#mpConsumes"> 8 17 23 29 35 39 44 47 52 55 59 63 67 69 70 71 73 73 74 75 75 75 76 76 77 78 79 80 </table>
 		<table name="#pDef"> 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 </table>
 		<table name="#power"> 22 77 141 221 669 856 1073 1323 1602 1913 2256 2629 3034 3879 4149 4434 4733 18990 20811 23098 25950 29500 33928 39478 46478 47966 49514 51032 </table>
 		<set name="icon" val="icon.skill30500" />
-		<set name="abnormalTime" val="10" />
+		<set name="abnormalTime" val="20" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />

@@ -48,24 +48,25 @@ public final class CallSkillOnActionTime extends AbstractEffect
 	@Override
 	public boolean onActionTime(BuffInfo info)
 	{
-		if (info.getEffected().isDead())
+		if (info.getEffector().isDead())
 		{
 			return false;
 		}
 		
 		final double manaDam = _power * getTicksMultiplier();
-		if ((manaDam > info.getEffected().getCurrentMp()) && info.getSkill().isToggle())
+		if ((manaDam > info.getEffector().getCurrentMp()) && info.getSkill().isToggle())
 		{
-			info.getEffected().sendPacket(SystemMessageId.YOUR_SKILL_WAS_DEACTIVATED_DUE_TO_LACK_OF_MP);
+			info.getEffector().sendPacket(SystemMessageId.YOUR_SKILL_WAS_DEACTIVATED_DUE_TO_LACK_OF_MP);
 			return false;
 		}
 		
-		info.getEffected().reduceCurrentMp(manaDam);
+		info.getEffector().reduceCurrentMp(manaDam);
 		
 		final Skill skill = _skill.getSkill();
 		
 		if (skill != null)
 		{
+			
 			final ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(skill.getTargetType());
 			
 			final WorldObject[] targets = targetHandler.getTargetList(skill, info.getEffector(), false, info.getEffected());
