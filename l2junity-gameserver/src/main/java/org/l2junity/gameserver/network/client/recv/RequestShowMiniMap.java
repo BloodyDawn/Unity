@@ -43,7 +43,6 @@ public final class RequestShowMiniMap implements IClientIncomingPacket
 		{
 			return;
 		}
-		// TODO: Unhardcode maybe?
-		client.sendPacket(new ShowMiniMap(1665));
+		client.sendPacket(new ShowMiniMap(0));
 	}
 }
