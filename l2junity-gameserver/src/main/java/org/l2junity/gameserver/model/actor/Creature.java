@@ -5721,7 +5721,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param skill The L2Skill to use
 	 * @param targets The table of L2Object targets
 	 */
-	public void callSkill(Skill skill, WorldObject[] targets)
+	public void callSkill(Skill skill, WorldObject... targets)
 	{
 		try
 		{

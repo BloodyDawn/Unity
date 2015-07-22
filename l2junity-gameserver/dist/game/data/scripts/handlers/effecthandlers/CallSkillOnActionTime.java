@@ -66,12 +66,17 @@ public final class CallSkillOnActionTime extends AbstractEffect
 		
 		if (skill != null)
 		{
-			
 			final ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(skill.getTargetType());
 			
 			final WorldObject[] targets = targetHandler.getTargetList(skill, info.getEffector(), false, info.getEffected());
 			
-			info.getEffector().callSkill(skill, targets);
+			for (WorldObject target : targets)
+			{
+				if (skill.checkCondition(info.getEffector(), target))
+				{
+					info.getEffector().callSkill(skill, target);
+				}
+			}
 		}
 		else
 		{
