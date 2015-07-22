@@ -46,7 +46,18 @@ public final class CallSkillOnActionTime extends AbstractEffect
 	}
 	
 	@Override
+	public void onStart(BuffInfo info)
+	{
+		castSkill(info);
+	}
+	
+	@Override
 	public boolean onActionTime(BuffInfo info)
+	{
+		return castSkill(info);
+	}
+	
+	private boolean castSkill(BuffInfo info)
 	{
 		if (info.getEffector().isDead())
 		{
@@ -82,7 +93,6 @@ public final class CallSkillOnActionTime extends AbstractEffect
 		{
 			_log.warn("Skill not found effect called from {}", info.getSkill());
 		}
-		
 		return info.getSkill().isToggle();
 	}
 }
