@@ -404,13 +404,30 @@
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="19227" levels="2" name="Wind Hiding">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Blends into the wind for 7 seconds. Increases Speed by 70. Canceled when using normal attacks or attack skills. -->
+		<table name="#abnormalLvls"> 1 2 </table>
+		<table name="#magicLvl"> 20 85 </table>
+		<table name="#runSpd"> 70 100 </table>
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="7" />
+		<set name="abnormalVisualEffect" val="WIND_BLEND" />
+		<set name="removedOnAnyActionExceptMove" val="true" />
+		<set name="removedOnDamage" val="true" />
+		<set name="isTriggeredSkill" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill30008" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD,BLUNT" />
+		</cond>
+		<for>
+			<effect name="Hide">
+				<add stat="runSpd" val="#runSpd" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="19228" levels="1" name="Song of Thief">
 		<!-- AUTO GENERATED SKILL -->

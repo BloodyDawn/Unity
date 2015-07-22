@@ -227,20 +227,17 @@
 	</skill>
 	<skill id="30008" levels="5" name="Wind Blend">
 		<!-- Updated to IO -->
-		<!-- for 10 sec., blends into the wind and Speed + 70. Canceled when using normal attacks or attack skills. Requires a sword or blunt weapon. -->
+		<!-- For 3 sec., blends into the wind. Becomes one with the wind and disappears later on. Requires a sword or blunt weapon. -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
 		<table name="#magicLvl"> 20 85 90 94 98 </table>
 		<table name="#mpConsumes"> 16 67 68 69 70 </table>
-		<table name="#reuseDelays"> 50000 50000 40000 30000 25000 </table>
-		<table name="#runSpd"> 70 100 100 100 100 </table>
+		<table name="#reuseDelays"> 50000 50000 40000 30000 20000 </table>
+		<table name="#triggerLvl"> 1 2 2 2 2 </table>
 		<set name="icon" val="icon.skill30008" />
 		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalVisualEffect" val="WIND_BLEND" />
-		<set name="effectPoint" val="687" /> <!-- Unconfirmed -->
+		<set name="abnormalTime" val="3" />
+		<set name="effectPoint" val="687" />
 		<set name="operateType" val="A2" />
-		<set name="removedOnAnyActionExceptMove" val="true" />
-		<set name="removedOnDamage" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -249,11 +246,11 @@
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
 		</cond>
-		<for>
-			<effect name="Hide">
-				<add stat="runSpd" val="#runSpd" />
+		<endEffects>
+			<effect name="CallSkill">
+				<param skillId="19227" skillLevel="#triggerLvl" /> <!-- Wind Hiding -->
 			</effect>
-		</for>
+		</endEffects>
 	</skill>
 	<skill id="30009" levels="10" name="Deceptive Blink">
 		<!-- Updated to Ertheia -->
