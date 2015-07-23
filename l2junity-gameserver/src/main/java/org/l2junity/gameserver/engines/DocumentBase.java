@@ -117,6 +117,7 @@ import org.l2junity.gameserver.model.conditions.ConditionTargetMyPartyExceptMe;
 import org.l2junity.gameserver.model.conditions.ConditionTargetNpcId;
 import org.l2junity.gameserver.model.conditions.ConditionTargetNpcType;
 import org.l2junity.gameserver.model.conditions.ConditionTargetPlayable;
+import org.l2junity.gameserver.model.conditions.ConditionTargetPlayer;
 import org.l2junity.gameserver.model.conditions.ConditionTargetRace;
 import org.l2junity.gameserver.model.conditions.ConditionTargetUsesWeaponKind;
 import org.l2junity.gameserver.model.conditions.ConditionTargetWeight;
@@ -1019,6 +1020,11 @@ public abstract class DocumentBase
 				case "playable":
 				{
 					cond = joinAnd(cond, new ConditionTargetPlayable());
+					break;
+				}
+				case "player":
+				{
+					cond = joinAnd(cond, new ConditionTargetPlayer());
 					break;
 				}
 				case "class_id_restriction":

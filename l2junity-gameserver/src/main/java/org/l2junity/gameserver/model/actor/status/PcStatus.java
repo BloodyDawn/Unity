@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.PcStat;
+import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.entity.Duel;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -84,6 +85,11 @@ public class PcStatus extends PlayableStatus
 		}
 		
 		if (getActiveChar().isInvul() && !(isDOT || isHPConsumption))
+		{
+			return;
+		}
+		
+		if (getActiveChar().isAffected(EffectFlag.FACEOFF) && (getActiveChar().getAttackerObjId() != attacker.getObjectId()))
 		{
 			return;
 		}

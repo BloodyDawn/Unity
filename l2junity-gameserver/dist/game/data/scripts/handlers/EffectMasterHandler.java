@@ -96,6 +96,7 @@ public final class EffectMasterHandler
 		EnlargeAbnormalSlot.class,
 		Escape.class,
 		EscapeToNpc.class,
+		Faceoff.class,
 		FakeDeath.class,
 		FatalBlow.class,
 		Fear.class,

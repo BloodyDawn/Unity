@@ -51,7 +51,8 @@ public enum EffectFlag
 	WIND_STANCE,
 	EARTH_STANCE,
 	ATTACK_BEHIND,
-	TARGETING_DISABLED;
+	TARGETING_DISABLED,
+	FACEOFF;
 	
 	public int getMask()
 	{
