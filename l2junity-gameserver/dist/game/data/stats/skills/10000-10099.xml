@@ -800,7 +800,7 @@
 		<!-- P. Atk./Atk. Spd + 15%, P. Critical Rate + 50, P. Critical Damage + 15%, Speed + 10, and enemies within range get P./M. Atk. - 20% and Atk. Spd./Casting Spd. - 20%. Only one Knight's Aura can be active at any time. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="SIGEL_AURA" />
-		<set name="abnormalVisualEffect" val="AURA_DEBUFF" />
+		<set name="abnormalVisualEffect" val="AURA_DEBUFF_SELF" />
 		<set name="icon" val="icon.skill10028" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="T" />
@@ -824,6 +824,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="ULTIMATE_DEBUFF" />
+		<set name="abnormalVisualEffect" val="AURA_DEBUFF" />
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="900" />
 		<set name="icon" val="icon.skill10028" />
