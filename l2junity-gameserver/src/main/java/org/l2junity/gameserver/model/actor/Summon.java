@@ -37,11 +37,11 @@ import org.l2junity.gameserver.model.AggroInfo;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.SummonStat;
 import org.l2junity.gameserver.model.actor.status.SummonStatus;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
+import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSummonSpawn;
@@ -614,7 +614,7 @@ public abstract class Summon extends Playable
 		WorldObject target = null;
 		switch (skill.getTargetType())
 		{
-		// OWNER_PET should be cast even if no target has been found
+			// OWNER_PET should be cast even if no target has been found
 			case OWNER_PET:
 				target = getOwner();
 				break;
@@ -786,7 +786,7 @@ public abstract class Summon extends Playable
 			
 			final SystemMessage sm;
 			
-			if (target.isInvul() && !(target instanceof L2NpcInstance))
+			if ((target.isInvul() && !target.isNpc()) || (target.isPlayer() && target.isAffected(EffectFlag.FACEOFF) && (target.getActingPlayer().getAttackerObjId() != getObjectId())))
 			{
 				sm = SystemMessage.getSystemMessage(SystemMessageId.THE_ATTACK_HAS_BEEN_BLOCKED);
 			}
@@ -808,7 +808,7 @@ public abstract class Summon extends Playable
 	{
 		super.reduceCurrentHp(damage, attacker, skill);
 		
-		if (!isDead() && !isInvul() && (getOwner() != null) && (attacker != null))
+		if (!isDead() && !isInvul() && (getOwner() != null) && (attacker != null) && (!getOwner().isAffected(EffectFlag.FACEOFF) || (getOwner().getAttackerObjId() == attacker.getObjectId())))
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
 			sm.addNpcName(this);

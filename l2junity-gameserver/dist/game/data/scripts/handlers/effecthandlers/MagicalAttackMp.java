@@ -23,6 +23,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.Formulas;
@@ -36,11 +37,11 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 public final class MagicalAttackMp extends AbstractEffect
 {
 	private final double _power;
-
+	
 	public MagicalAttackMp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_power = params.getDouble("power", 0);
 	}
 	
@@ -48,6 +49,11 @@ public final class MagicalAttackMp extends AbstractEffect
 	public boolean calcSuccess(BuffInfo info)
 	{
 		if (info.getEffected().isInvul())
+		{
+			return false;
+		}
+		
+		if (info.getEffector().isPlayer() && info.getEffected().isPlayer() && info.getEffected().isAffected(EffectFlag.FACEOFF) && (info.getEffected().getActingPlayer().getAttackerObjId() != info.getEffector().getObjectId()))
 		{
 			return false;
 		}

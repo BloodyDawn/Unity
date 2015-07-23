@@ -1229,6 +1229,12 @@ public final class Skill implements IIdentifiable
 			return;
 		}
 		
+		// Check bad skills against target.
+		if ((effector != effected) && effector.isPlayer() && effected.isPlayer() && isBad() && effected.isAffected(EffectFlag.FACEOFF) && (effected.getActingPlayer().getAttackerObjId() != effector.getObjectId()))
+		{
+			return;
+		}
+		
 		if (effected.isInvulAgainst(getId(), getLevel()))
 		{
 			effected.sendDebugMessage("Skill " + toString() + " has been ignored (invul against)");

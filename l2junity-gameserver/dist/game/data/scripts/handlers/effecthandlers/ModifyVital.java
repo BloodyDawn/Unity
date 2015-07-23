@@ -22,6 +22,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 
 /**
@@ -73,6 +74,11 @@ public final class ModifyVital extends AbstractEffect
 	{
 		final Creature creature = info.getEffected();
 		if ((creature == null) || creature.isDead() || creature.isInvul())
+		{
+			return;
+		}
+		
+		if (info.getEffector().isPlayer() && creature.isPlayer() && creature.isAffected(EffectFlag.FACEOFF) && (creature.getActingPlayer().getAttackerObjId() != info.getEffector().getObjectId()))
 		{
 			return;
 		}

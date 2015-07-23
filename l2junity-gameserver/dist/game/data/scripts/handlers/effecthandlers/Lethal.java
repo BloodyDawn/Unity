@@ -23,6 +23,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.Formulas;
@@ -73,6 +74,11 @@ public final class Lethal extends AbstractEffect
 		}
 		
 		if (!target.isLethalable() || target.isInvul())
+		{
+			return;
+		}
+		
+		if (activeChar.isPlayer() && target.isPlayer() && target.isAffected(EffectFlag.FACEOFF) && (target.getActingPlayer().getAttackerObjId() != activeChar.getObjectId()))
 		{
 			return;
 		}
