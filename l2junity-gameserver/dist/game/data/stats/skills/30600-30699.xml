@@ -24,23 +24,47 @@
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="30602" levels="1" name="Eviscerator Aura">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Casts Eviscerator Force on entire party, which increases P. Skill Critical Rate + 1%. -->
 		<set name="icon" val="icon.icon_lender" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="3" />
+		<for>
+			<effect name="CallSkillOnActionTime" ticks="5">
+				<param skillId="30603" skillLevel="1" /> <!-- Eviscerator Force -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="30603" levels="1" name="Eviscerator Force">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Skill Critical Rate + 1%. -->
+		<set name="abnormalTime" val="-1" />
+		<set name="abnormalType" val="SYNERGY_LENKER" />
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="1600" />
+		<set name="canBeDispelled" val="false" />
+		<set name="isTriggeredSkill" val="true" />
+		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.icon_lender_01" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="3" />
+		<cond>
+			<not>
+				<target abnormalType="SYNERGY_LENKER" />
+			</not>
+		</cond>
+		<for>
+			<effect name="Buff">
+				<!-- TODO Support for P. Skill Critical Rate -->
+			</effect>
+			<effect name="CheckForceSkill" ticks="7">
+				<param skillId="30602" /> <!-- Eviscerator Aura -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="30604" levels="1" name="Block Eviscerator Force">
 		<!-- AUTO GENERATED SKILL -->
@@ -50,23 +74,47 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="30605" levels="1" name="Sayha's Seer Aura">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Casts Sayha's Seer Force on entire party, which increases M. Critical Rate + 1%. -->
 		<set name="icon" val="icon.icon_Er_wizard" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="3" />
+		<for>
+			<effect name="CallSkillOnActionTime" ticks="5">
+				<param skillId="30606" skillLevel="1" /> <!-- Sayha's Seer Force -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="30606" levels="1" name="Sayha's Seer Force">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- M. Critical Rate + 1%. -->
+		<set name="abnormalTime" val="-1" />
+		<set name="abnormalType" val="SYNERGY_SEER" />
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="1600" />
+		<set name="canBeDispelled" val="false" />
+		<set name="isTriggeredSkill" val="true" />
+		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.icon_Er_wizard_01" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="3" />
+		<cond>
+			<not>
+				<target abnormalType="SYNERGY_SEER" />
+			</not>
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="mCritRate" val="1.01" />
+			</effect>
+			<effect name="CheckForceSkill" ticks="7">
+				<param skillId="30605" /> <!-- Sayha's Seer Aura -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="30607" levels="1" name="Block Sayha's Seer Force">
 		<!-- AUTO GENERATED SKILL -->
