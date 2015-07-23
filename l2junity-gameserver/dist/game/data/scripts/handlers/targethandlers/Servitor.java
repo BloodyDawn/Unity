@@ -19,7 +19,6 @@
 package handlers.targethandlers;
 
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
-import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -33,7 +32,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 public class Servitor implements ITargetTypeHandler
 {
 	@Override
-	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
+	public Creature[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
 		if (activeChar.hasServitors())
 		{

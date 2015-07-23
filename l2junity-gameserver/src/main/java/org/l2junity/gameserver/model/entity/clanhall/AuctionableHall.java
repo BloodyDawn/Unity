@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.entity.clanhall;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;

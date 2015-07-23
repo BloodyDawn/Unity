@@ -21,8 +21,8 @@ package org.l2junity.gameserver.network.client.send;
 import java.util.Collection;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.model.buylist.ProductList;
 import org.l2junity.gameserver.model.buylist.Product;
+import org.l2junity.gameserver.model.buylist.ProductList;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;

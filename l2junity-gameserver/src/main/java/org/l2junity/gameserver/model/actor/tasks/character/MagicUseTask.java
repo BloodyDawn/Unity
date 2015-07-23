@@ -18,7 +18,6 @@
  */
 package org.l2junity.gameserver.model.actor.tasks.character;
 
-import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
 
@@ -29,14 +28,14 @@ import org.l2junity.gameserver.model.skills.Skill;
 public final class MagicUseTask implements Runnable
 {
 	private final Creature _character;
-	private WorldObject[] _targets;
+	private Creature[] _targets;
 	private final Skill _skill;
 	private int _count;
 	private int _skillTime;
 	private int _phase;
 	private final boolean _simultaneously;
 	
-	public MagicUseTask(Creature character, WorldObject[] tgts, Skill s, int hit, boolean simultaneous)
+	public MagicUseTask(Creature character, Creature[] tgts, Skill s, int hit, boolean simultaneous)
 	{
 		_character = character;
 		_targets = tgts;
@@ -94,7 +93,7 @@ public final class MagicUseTask implements Runnable
 		return _skillTime;
 	}
 	
-	public WorldObject[] getTargets()
+	public Creature[] getTargets()
 	{
 		return _targets;
 	}
@@ -119,7 +118,7 @@ public final class MagicUseTask implements Runnable
 		_skillTime = skillTime;
 	}
 	
-	public void setTargets(WorldObject[] targets)
+	public void setTargets(Creature[] targets)
 	{
 		_targets = targets;
 	}

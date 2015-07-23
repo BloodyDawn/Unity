@@ -23,7 +23,6 @@ import java.util.List;
 
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -38,7 +37,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 public class AreaFriendly implements ITargetTypeHandler
 {
 	@Override
-	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
+	public Creature[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
 		if (!checkTarget(activeChar, target) && (skill.getCastRange() >= 0))
 		{

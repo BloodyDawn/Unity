@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
-import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -38,7 +37,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 public class PcBody implements ITargetTypeHandler
 {
 	@Override
-	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
+	public Creature[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
 		List<Creature> targetList = new ArrayList<>();
 		if ((target != null) && target.isDead())

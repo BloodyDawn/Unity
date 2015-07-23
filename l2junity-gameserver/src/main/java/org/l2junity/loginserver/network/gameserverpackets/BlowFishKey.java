@@ -19,6 +19,7 @@
 package org.l2junity.loginserver.network.gameserverpackets;
 
 import java.security.GeneralSecurityException;
+
 import javax.crypto.Cipher;
 
 import org.l2junity.Config;

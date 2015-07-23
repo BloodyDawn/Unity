@@ -1579,7 +1579,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		beginCast(skill, true);
 	}
 	
-	public void doCast(Skill skill, Creature target, WorldObject[] targets)
+	public void doCast(Skill skill, Creature target, Creature[] targets)
 	{
 		if (!checkDoCastConditions(skill))
 		{
@@ -1602,7 +1602,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		beginCast(skill, false, target, targets);
 	}
 	
-	public void doSimultaneousCast(Skill skill, Creature target, WorldObject[] targets)
+	public void doSimultaneousCast(Skill skill, Creature target, Creature[] targets)
 	{
 		if (!checkDoCastConditions(skill))
 		{
@@ -1644,7 +1644,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		// Set the target of the skill in function of Skill Type and Target Type
 		Creature target = null;
 		// Get all possible targets of the skill in a table in function of the skill target type
-		WorldObject[] targets = skill.getTargetList(this);
+		Creature[] targets = skill.getTargetList(this);
 		
 		boolean doit = false;
 		
@@ -1708,7 +1708,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		beginCast(skill, simultaneously, target, targets);
 	}
 	
-	private void beginCast(Skill skill, boolean simultaneously, Creature target, WorldObject[] targets)
+	private void beginCast(Skill skill, boolean simultaneously, Creature target, Creature[] targets)
 	{
 		if (target == null)
 		{
@@ -5721,7 +5721,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param skill The L2Skill to use
 	 * @param targets The table of L2Object targets
 	 */
-	public void callSkill(Skill skill, WorldObject... targets)
+	public void callSkill(Skill skill, Creature... targets)
 	{
 		try
 		{
@@ -6632,7 +6632,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				}
 				
 				// @formatter:off
-				final WorldObject[] targets = !ignoreTargetType ? skill.getTargetList(this, false, target) : new Creature[]{ target };
+				final Creature[] targets = !ignoreTargetType ? skill.getTargetList(this, false, target) : new Creature[]{ target };
 				// @formatter:on
 				if (targets.length == 0)
 				{

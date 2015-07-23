@@ -24,6 +24,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Base64;
 import java.util.Collection;
+
 import org.l2junity.DatabaseFactory;
 import org.l2junity.loginserver.GameServerTable;
 import org.l2junity.loginserver.GameServerTable.GameServerInfo;

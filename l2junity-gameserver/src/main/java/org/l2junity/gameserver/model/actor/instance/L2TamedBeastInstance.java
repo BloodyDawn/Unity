@@ -458,7 +458,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 				{
 					WorldObject oldTarget = owner.getTarget();
 					owner.setTarget(_tamedBeast);
-					WorldObject[] targets =
+					Creature[] targets =
 					{
 						_tamedBeast
 					};

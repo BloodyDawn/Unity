@@ -18,7 +18,6 @@
  */
 package org.l2junity.gameserver.handler;
 
-import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -31,9 +30,9 @@ import org.l2junity.gameserver.util.Util;
  */
 public interface ITargetTypeHandler
 {
-	WorldObject[] EMPTY_TARGET_LIST = new WorldObject[0];
+	Creature[] EMPTY_TARGET_LIST = new Creature[0];
 	
-	WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target);
+	Creature[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target);
 	
 	Enum<L2TargetType> getTargetType();
 

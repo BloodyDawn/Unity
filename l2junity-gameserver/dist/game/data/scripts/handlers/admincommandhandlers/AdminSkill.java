@@ -29,6 +29,7 @@ import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.AcquireSkillList;
@@ -242,7 +243,7 @@ public class AdminSkill implements IAdminCommandHandler
 				if (command.equalsIgnoreCase("admin_castnow"))
 				{
 					activeChar.sendMessage("Admin instant casting " + skill.getName() + " (" + skillId + "," + skillLevel + ")");
-					final WorldObject[] targets = skill.getTargetList(activeChar);
+					final Creature[] targets = skill.getTargetList(activeChar);
 					skill.activateSkill(activeChar, targets);
 				}
 				else

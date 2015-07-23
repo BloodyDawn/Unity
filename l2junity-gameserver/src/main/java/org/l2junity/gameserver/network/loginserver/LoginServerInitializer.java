@@ -18,15 +18,15 @@
  */
 package org.l2junity.gameserver.network.loginserver;
 
+import io.netty.channel.ChannelInitializer;
+import io.netty.channel.socket.SocketChannel;
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
+
 import java.nio.ByteOrder;
 
 import org.l2junity.network.codecs.LengthFieldBasedFrameEncoder;
 import org.l2junity.network.codecs.PacketDecoder;
 import org.l2junity.network.codecs.PacketEncoder;
-
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.socket.SocketChannel;
-import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 
 /**
  * @author NosBit

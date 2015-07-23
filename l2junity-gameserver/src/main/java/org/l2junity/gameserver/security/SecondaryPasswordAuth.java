@@ -25,6 +25,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Base64;
+
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.LoginServerThread;
 import org.l2junity.gameserver.data.xml.impl.SecondaryAuthData;

@@ -70,7 +70,7 @@ public final class Skill implements IIdentifiable
 {
 	private static final Logger _log = LoggerFactory.getLogger(Skill.class);
 	
-	private static final WorldObject[] EMPTY_TARGET_LIST = new WorldObject[0];
+	private static final Creature[] EMPTY_TARGET_LIST = new Creature[0];
 	
 	/** Skill ID. */
 	private final int _id;
@@ -967,7 +967,7 @@ public final class Skill implements IIdentifiable
 		return (_rideState == null) || _rideState.contains(player.getMountType());
 	}
 	
-	public WorldObject[] getTargetList(Creature activeChar, boolean onlyFirst)
+	public Creature[] getTargetList(Creature activeChar, boolean onlyFirst)
 	{
 		// Init to null the target of the skill
 		Creature target = null;
@@ -1004,7 +1004,7 @@ public final class Skill implements IIdentifiable
 	 * @param target
 	 * @return
 	 */
-	public WorldObject[] getTargetList(Creature activeChar, boolean onlyFirst, Creature target)
+	public Creature[] getTargetList(Creature activeChar, boolean onlyFirst, Creature target)
 	{
 		final ITargetTypeHandler handler = TargetHandler.getInstance().getHandler(getTargetType());
 		if (handler != null)
@@ -1022,7 +1022,7 @@ public final class Skill implements IIdentifiable
 		return EMPTY_TARGET_LIST;
 	}
 	
-	public WorldObject[] getTargetList(Creature activeChar)
+	public Creature[] getTargetList(Creature activeChar)
 	{
 		return getTargetList(activeChar, false);
 	}
@@ -1311,7 +1311,7 @@ public final class Skill implements IIdentifiable
 	 * @param caster the caster
 	 * @param targets the targets
 	 */
-	public void activateSkill(Creature caster, WorldObject... targets)
+	public void activateSkill(Creature caster, Creature... targets)
 	{
 		activateSkill(caster, null, targets);
 	}
@@ -1321,7 +1321,7 @@ public final class Skill implements IIdentifiable
 	 * @param cubic the cubic
 	 * @param targets the targets
 	 */
-	public void activateSkill(L2CubicInstance cubic, WorldObject... targets)
+	public void activateSkill(L2CubicInstance cubic, Creature... targets)
 	{
 		activateSkill(cubic.getOwner(), cubic, targets);
 	}
@@ -1332,8 +1332,7 @@ public final class Skill implements IIdentifiable
 	 * @param cubic the cubic that cast the skill, can be {@code null}
 	 * @param targets the targets
 	 */
-	@SafeVarargs
-	public final void activateSkill(Creature caster, L2CubicInstance cubic, WorldObject... targets)
+	public final void activateSkill(Creature caster, L2CubicInstance cubic, Creature... targets)
 	{
 		// TODO: replace with AI
 		switch (getId())
@@ -1372,7 +1371,7 @@ public final class Skill implements IIdentifiable
 			}
 			default:
 			{
-				for (Creature target : (Creature[]) targets)
+				for (Creature target : targets)
 				{
 					if (Formulas.calcBuffDebuffReflection(target, this))
 					{

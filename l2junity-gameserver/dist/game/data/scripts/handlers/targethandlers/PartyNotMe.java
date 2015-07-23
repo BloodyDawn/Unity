@@ -23,7 +23,6 @@ import java.util.List;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
-import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -36,7 +35,7 @@ import org.l2junity.gameserver.util.Util;
 public class PartyNotMe implements ITargetTypeHandler
 {
 	@Override
-	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
+	public Creature[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
 		final List<Creature> targetList = new ArrayList<>();
 		final int radius = skill.getAffectRange();

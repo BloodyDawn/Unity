@@ -31,14 +31,14 @@ import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 public class Holy implements ITargetTypeHandler
 {
 	@Override
-	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
+	public Creature[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
 		if (!(target instanceof L2ArtefactInstance))
 		{
 			return EMPTY_TARGET_LIST;
 		}
 		
-		return new WorldObject[]
+		return new Creature[]
 		{
 			target
 		};

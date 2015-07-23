@@ -39,7 +39,7 @@ import org.l2junity.gameserver.model.zone.ZoneId;
 public class CorpseClan implements ITargetTypeHandler
 {
 	@Override
-	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
+	public Creature[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
 		List<WorldObject> targetList = new ArrayList<>();
 		if (activeChar.isPlayable())
@@ -52,7 +52,7 @@ public class CorpseClan implements ITargetTypeHandler
 			
 			if (player.isInOlympiadMode())
 			{
-				return new WorldObject[]
+				return new Creature[]
 				{
 					player
 				};
@@ -102,7 +102,7 @@ public class CorpseClan implements ITargetTypeHandler
 					
 					if (onlyFirst)
 					{
-						return new WorldObject[]
+						return new Creature[]
 						{
 							obj
 						};
@@ -123,7 +123,7 @@ public class CorpseClan implements ITargetTypeHandler
 			final Npc npc = (Npc) activeChar;
 			if ((npc.getTemplate().getClans() == null) || npc.getTemplate().getClans().isEmpty())
 			{
-				return new WorldObject[]
+				return new Creature[]
 				{
 					activeChar
 				};
@@ -145,7 +145,7 @@ public class CorpseClan implements ITargetTypeHandler
 			}
 		}
 		
-		return targetList.toArray(new WorldObject[targetList.size()]);
+		return targetList.toArray(new Creature[targetList.size()]);
 	}
 	
 	@Override

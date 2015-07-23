@@ -22,6 +22,7 @@ import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.handler.TargetHandler;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.SkillHolder;
@@ -79,9 +80,9 @@ public final class CallSkillOnActionTime extends AbstractEffect
 		{
 			final ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(skill.getTargetType());
 			
-			final WorldObject[] targets = targetHandler.getTargetList(skill, info.getEffector(), false, info.getEffected());
+			final Creature[] targets = targetHandler.getTargetList(skill, info.getEffector(), false, info.getEffected());
 			
-			for (WorldObject target : targets)
+			for (Creature target : targets)
 			{
 				if (skill.checkCondition(info.getEffector(), target))
 				{

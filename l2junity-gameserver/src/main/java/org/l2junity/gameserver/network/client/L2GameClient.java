@@ -18,6 +18,9 @@
  */
 package org.l2junity.gameserver.network.client;
 
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandlerContext;
+
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.sql.Connection;
@@ -64,9 +67,6 @@ import org.l2junity.network.IIncomingPacket;
 import org.l2junity.network.IOutgoingPacket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelHandlerContext;
 
 /**
  * Represents a client connected on Game Server.
