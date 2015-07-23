@@ -36,6 +36,7 @@ public class ExAcquireSkillInfo implements IClientOutgoingPacket
 {
 	private final int _id;
 	private final int _level;
+	private final int _dualClassLevel;
 	private final int _spCost;
 	private final int _minLevel;
 	private final List<ItemHolder> _itemReq;
@@ -52,6 +53,7 @@ public class ExAcquireSkillInfo implements IClientOutgoingPacket
 	{
 		_id = skillLearn.getSkillId();
 		_level = skillLearn.getSkillLevel();
+		_dualClassLevel = skillLearn.getDualClassLevel();
 		_spCost = sp;
 		_minLevel = skillLearn.getGetLevel();
 		_itemReq = skillLearn.getRequiredItems();
@@ -67,7 +69,7 @@ public class ExAcquireSkillInfo implements IClientOutgoingPacket
 		packet.writeD(_level);
 		packet.writeQ(_spCost);
 		packet.writeH(_minLevel);
-		packet.writeH(0x00); // Dual Class Level Required
+		packet.writeH(_dualClassLevel);
 		packet.writeD(_itemReq.size());
 		for (ItemHolder holder : _itemReq)
 		{

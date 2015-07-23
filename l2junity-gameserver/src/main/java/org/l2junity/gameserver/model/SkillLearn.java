@@ -41,6 +41,7 @@ public final class SkillLearn
 	private final int _skillId;
 	private final int _skillLvl;
 	private final int _getLevel;
+	private final int _getDualClassLevel;
 	private final boolean _autoGet;
 	private final int _levelUpSp;
 	private final List<ItemHolder> _requiredItems = new ArrayList<>();
@@ -67,6 +68,7 @@ public final class SkillLearn
 		_skillId = set.getInt("skillId");
 		_skillLvl = set.getInt("skillLvl");
 		_getLevel = set.getInt("getLevel");
+		_getDualClassLevel = set.getInt("getDualClassLevel", 0);
 		_autoGet = set.getBoolean("autoGet", false);
 		_levelUpSp = set.getInt("levelUpSp", 0);
 		_residenceSkill = set.getBoolean("residenceSkill", false);
@@ -108,6 +110,14 @@ public final class SkillLearn
 	public int getGetLevel()
 	{
 		return _getLevel;
+	}
+	
+	/**
+	 * @return the minimum level of a character dual class required to acquire this skill.
+	 */
+	public int getDualClassLevel()
+	{
+		return _getDualClassLevel;
 	}
 	
 	/**
@@ -267,7 +277,7 @@ public final class SkillLearn
 	{
 		return _pointsRequired;
 	}
-
+	
 	/**
 	 * Used for AltGameSkillLearn mod.<br>
 	 * If the alternative skill learn system is enabled and the player is learning a skill from a different class apply a fee.<br>
