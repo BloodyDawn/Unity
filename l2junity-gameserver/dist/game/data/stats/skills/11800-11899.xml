@@ -408,6 +408,8 @@
 		<!-- For 30 minutes, target's P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, M. Def. + 30%. -->
 		<set name="icon" val="icon.skill11820" />
 		<set name="abnormalTime" val="1800" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="MELODY_HORN" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="17" />
@@ -424,6 +426,12 @@
 				<mul stat="mAtk" val="1.79" />
 				<mul stat="mDef" val="1.30" />
 			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="MD_UP;PD_UP;PA_UP;IMPROVE_PA_PD_UP" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="MD_UP;PD_UP;PA_UP;IMPROVE_PA_PD_UP" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11821" levels="1" name="Critical of Saha">
@@ -431,6 +439,8 @@
 		<!-- For 30 minutes, target's P. Critical Rate + 32%, P. Critical Damage + 35%, M. Critical Rate + 20, MP Consumption for physical skills - 20% and MP Consumption for magic skills - 10%. -->
 		<set name="icon" val="icon.skill11821" />
 		<set name="abnormalTime" val="1800" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="MELODY_GUITAR" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="17" />
@@ -448,6 +458,12 @@
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 				<mul stat="MagicalMpConsumeRate" val="0.90" />
 			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="INSTINCT;CRITICAL_DMG_UP;IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="INSTINCT;CRITICAL_DMG_UP;IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11822" levels="1" name="Force of Saha">
@@ -455,6 +471,8 @@
 		<!-- For 30 minutes, target's Atk. Spd. + 34% and Casting Spd. + 31%. Bestows a 9% Vampiric Rage effect at a certain rate. -->
 		<set name="icon" val="icon.skill11822" />
 		<set name="abnormalTime" val="1800" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="MELODY_LUTE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="17" />
@@ -470,6 +488,12 @@
 				<mul stat="mAtkSpd" val="1.31" />
 				<add stat="absorbDam" val="9" />
 			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="VAMPIRIC_ATTACK;CASTING_TIME_DOWN;IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param dispel="VAMPIRIC_ATTACK;CASTING_TIME_DOWN;IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11823" levels="1" name="Speed of Saha">
@@ -477,6 +501,8 @@
 		<!-- For 30 minutes, target's P. Accuracy + 5, P. and M. Evasion + 5, Speed + 34 and received Critical Damage - 30%. -->
 		<set name="icon" val="icon.skill11823" />
 		<set name="abnormalTime" val="1800" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="MELODY_HARP" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="17" />
@@ -494,6 +520,12 @@
 				<add stat="runSpd" val="34" />
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="HIT_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP;T_CRT_DMG_DOWN" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="HIT_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP;T_CRT_DMG_DOWN" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11824" levels="1" name="Resistance of Saha">
@@ -501,6 +533,8 @@
 		<!-- For 30 minutes, Stun Resistance + 40%, Poison Resistance + 50% and Holy/Dark Attack Resistance + 30. -->
 		<set name="icon" val="icon.skill11567" />
 		<set name="abnormalTime" val="1800" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="HOLY_ATTACK_RESISTANCE_ISS" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="17" />
@@ -519,6 +553,12 @@
 				<add stat="holyRes" val="30" />
 				<add stat="darkRes" val="30" />
 			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="SONG_OF_INVOCATION;ARMOR_HOLY;ARMOR_UNHOLY;RESIST_POISON;DANCE_OF_ALIGNMENT;DANCE_OF_LIGHT;RESIST_BLEEDING" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="SONG_OF_INVOCATION;ARMOR_HOLY;ARMOR_UNHOLY;RESIST_POISON;DANCE_OF_ALIGNMENT;DANCE_OF_LIGHT;RESIST_BLEEDING" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11825" levels="1" name="Clarity of Saha">
@@ -526,6 +566,8 @@
 		<!-- For 30 minutes, Hold/Sleep/Mental Attack Resistance + 50, Buff-canceling Attack Resistance + 30 and Debuff Resistance + 20. -->
 		<set name="icon" val="icon.skill11825" />
 		<set name="abnormalTime" val="1800" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="MENTAL_ATTACK_RESISTANCE_ISS" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="17" />
@@ -613,6 +655,8 @@
 		<!-- For 30 minutes, target's Max MP - 20%, HP Recovery Bonus - 20%, M. Critical Rate - 20, Critical Damage during a normal attack - 20%, P. Atk. - 10%, P. Def. - 20%, Atk. Spd. - 20%, M. Atk. - 20%, M. Def. - 20%, Casting Spd. - 20%, Debuff Resistance - 10%, damage received from a critical attack - 30% and Speed - 15%. -->
 		<set name="icon" val="icon.skill11522" />
 		<set name="abnormalTime" val="1800" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="MELODY_DRUM" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="35" />
@@ -637,6 +681,12 @@
 				<mul stat="debuffVuln" val="0.9" />
 				<mul stat="defCritRate" val="0.7" />
 				<mul stat="runSpd" val="0.85" />
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="MULTI_BUFF" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="MULTI_BUFF" />
 			</effect>
 		</for>
 	</skill>
