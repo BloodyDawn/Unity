@@ -4103,7 +4103,8 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * Send packet StatusUpdate with current HP,MP and CP to the L2PcInstance and only current HP, MP and Level to all other L2PcInstance of the Party. <B><U> Actions</U> :</B> <li>Send the Server->Client packet StatusUpdate with current HP, MP and CP to this L2PcInstance</li><BR>
+	 * Send packet StatusUpdate with current HP,MP and CP to the L2PcInstance and only current HP, MP and Level to all other L2PcInstance of the Party. <B><U> Actions</U> :</B>
+	 * <li>Send the Server->Client packet StatusUpdate with current HP, MP and CP to this L2PcInstance</li><BR>
 	 * <li>Send the Server->Client packet PartySmallWindowUpdate with current HP, MP and Level to all other L2PcInstance of the Party</li> <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND current HP and MP to all L2PcInstance of the _statusListener</B></FONT>
 	 */
 	@Override
@@ -4167,8 +4168,10 @@ public final class PlayerInstance extends Playable
 	
 	/**
 	 * Send a Server->Client packet UserInfo to this L2PcInstance and CharInfo to all L2PcInstance in its _KnownPlayers. <B><U> Concept</U> :</B> Others L2PcInstance in the detection area of the L2PcInstance are identified in <B>_knownPlayers</B>. In order to inform other players of this
-	 * L2PcInstance state modifications, server just need to go through _knownPlayers to send Server->Client Packet <B><U> Actions</U> :</B> <li>Send a Server->Client packet UserInfo to this L2PcInstance (Public and Private Data)</li> <li>Send a Server->Client packet CharInfo to all L2PcInstance in
-	 * _KnownPlayers of the L2PcInstance (Public data only)</li> <FONT COLOR=#FF0000><B> <U>Caution</U> : DON'T SEND UserInfo packet to other players instead of CharInfo packet. Indeed, UserInfo packet contains PRIVATE DATA as MaxHP, STR, DEX...</B></FONT>
+	 * L2PcInstance state modifications, server just need to go through _knownPlayers to send Server->Client Packet <B><U> Actions</U> :</B>
+	 * <li>Send a Server->Client packet UserInfo to this L2PcInstance (Public and Private Data)</li>
+	 * <li>Send a Server->Client packet CharInfo to all L2PcInstance in _KnownPlayers of the L2PcInstance (Public data only)</li>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : DON'T SEND UserInfo packet to other players instead of CharInfo packet. Indeed, UserInfo packet contains PRIVATE DATA as MaxHP, STR, DEX...</B></FONT>
 	 */
 	public final void broadcastUserInfo()
 	{
@@ -4364,8 +4367,10 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * Manage Interact Task with another L2PcInstance. <B><U> Actions</U> :</B> <li>If the private store is a STORE_PRIVATE_SELL, send a Server->Client PrivateBuyListSell packet to the L2PcInstance</li> <li>If the private store is a STORE_PRIVATE_BUY, send a Server->Client PrivateBuyListBuy packet
-	 * to the L2PcInstance</li> <li>If the private store is a STORE_PRIVATE_MANUFACTURE, send a Server->Client RecipeShopSellList packet to the L2PcInstance</li>
+	 * Manage Interact Task with another L2PcInstance. <B><U> Actions</U> :</B>
+	 * <li>If the private store is a STORE_PRIVATE_SELL, send a Server->Client PrivateBuyListSell packet to the L2PcInstance</li>
+	 * <li>If the private store is a STORE_PRIVATE_BUY, send a Server->Client PrivateBuyListBuy packet to the L2PcInstance</li>
+	 * <li>If the private store is a STORE_PRIVATE_MANUFACTURE, send a Server->Client RecipeShopSellList packet to the L2PcInstance</li>
 	 * @param target The L2Character targeted
 	 */
 	public void doInteract(Creature target)
@@ -4439,9 +4444,13 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * Manage Pickup Task. <B><U> Actions</U> :</B> <li>Send a Server->Client packet StopMove to this L2PcInstance</li> <li>Remove the L2ItemInstance from the world and send server->client GetItem packets</li> <li>Send a System Message to the L2PcInstance : YOU_PICKED_UP_S1_ADENA or
-	 * YOU_PICKED_UP_S1_S2</li> <li>Add the Item to the L2PcInstance inventory</li> <li>Send a Server->Client packet InventoryUpdate to this L2PcInstance with NewItem (use a new slot) or ModifiedItem (increase amount)</li> <li>Send a Server->Client packet StatusUpdate to this L2PcInstance with
-	 * current weight</li> <FONT COLOR=#FF0000><B> <U>Caution</U> : If a Party is in progress, distribute Items between party members</B></FONT>
+	 * Manage Pickup Task. <B><U> Actions</U> :</B>
+	 * <li>Send a Server->Client packet StopMove to this L2PcInstance</li>
+	 * <li>Remove the L2ItemInstance from the world and send server->client GetItem packets</li>
+	 * <li>Send a System Message to the L2PcInstance : YOU_PICKED_UP_S1_ADENA or YOU_PICKED_UP_S1_S2</li>
+	 * <li>Add the Item to the L2PcInstance inventory</li>
+	 * <li>Send a Server->Client packet InventoryUpdate to this L2PcInstance with NewItem (use a new slot) or ModifiedItem (increase amount)</li>
+	 * <li>Send a Server->Client packet StatusUpdate to this L2PcInstance with current weight</li> <FONT COLOR=#FF0000><B> <U>Caution</U> : If a Party is in progress, distribute Items between party members</B></FONT>
 	 * @param object The L2ItemInstance to pick up
 	 */
 	@Override
@@ -5042,8 +5051,12 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * Kill the L2Character, Apply Death Penalty, Manage gain/loss Karma and Item Drop. <B><U> Actions</U> :</B> <li>Reduce the Experience of the L2PcInstance in function of the calculated Death Penalty</li> <li>If necessary, unsummon the Pet of the killed L2PcInstance</li> <li>Manage Karma gain for
-	 * attacker and Karam loss for the killed L2PcInstance</li> <li>If the killed L2PcInstance has Karma, manage Drop Item</li> <li>Kill the L2PcInstance</li>
+	 * Kill the L2Character, Apply Death Penalty, Manage gain/loss Karma and Item Drop. <B><U> Actions</U> :</B>
+	 * <li>Reduce the Experience of the L2PcInstance in function of the calculated Death Penalty</li>
+	 * <li>If necessary, unsummon the Pet of the killed L2PcInstance</li>
+	 * <li>Manage Karma gain for attacker and Karam loss for the killed L2PcInstance</li>
+	 * <li>If the killed L2PcInstance has Karma, manage Drop Item</li>
+	 * <li>Kill the L2PcInstance</li>
 	 * @param killer
 	 */
 	@Override
@@ -5501,7 +5514,11 @@ public final class PlayerInstance extends Playable
 	
 	/**
 	 * Reduce the Experience (and level if necessary) of the L2PcInstance in function of the calculated Death Penalty.<BR>
-	 * <B><U> Actions</U> :</B> <li>Calculate the Experience loss</li> <li>Set the value of _expBeforeDeath</li> <li>Set the new Experience value of the L2PcInstance and Decrease its level if necessary</li> <li>Send a Server->Client StatusUpdate packet with its new Experience</li>
+	 * <B><U> Actions</U> :</B>
+	 * <li>Calculate the Experience loss</li>
+	 * <li>Set the value of _expBeforeDeath</li>
+	 * <li>Set the new Experience value of the L2PcInstance and Decrease its level if necessary</li>
+	 * <li>Send a Server->Client StatusUpdate packet with its new Experience</li>
 	 * @param killer
 	 */
 	public void calculateDeathExpPenalty(Creature killer)
@@ -5554,7 +5571,9 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * Stop the HP/MP/CP Regeneration task. <B><U> Actions</U> :</B> <li>Set the RegenActive flag to False</li> <li>Stop the HP/MP/CP Regeneration task</li>
+	 * Stop the HP/MP/CP Regeneration task. <B><U> Actions</U> :</B>
+	 * <li>Set the RegenActive flag to False</li>
+	 * <li>Stop the HP/MP/CP Regeneration task</li>
 	 */
 	public void stopAllTimers()
 	{
@@ -5902,7 +5921,10 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * Set the Private Store type of the L2PcInstance. <B><U> Values </U> :</B> <li>0 : STORE_PRIVATE_NONE</li> <li>1 : STORE_PRIVATE_SELL</li> <li>2 : sellmanage</li><BR>
+	 * Set the Private Store type of the L2PcInstance. <B><U> Values </U> :</B>
+	 * <li>0 : STORE_PRIVATE_NONE</li>
+	 * <li>1 : STORE_PRIVATE_SELL</li>
+	 * <li>2 : sellmanage</li><BR>
 	 * <li>3 : STORE_PRIVATE_BUY</li><BR>
 	 * <li>4 : buymanage</li><BR>
 	 * <li>5 : STORE_PRIVATE_MANUFACTURE</li><BR>
@@ -5919,7 +5941,10 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * <B><U> Values </U> :</B> <li>0 : STORE_PRIVATE_NONE</li> <li>1 : STORE_PRIVATE_SELL</li> <li>2 : sellmanage</li><BR>
+	 * <B><U> Values </U> :</B>
+	 * <li>0 : STORE_PRIVATE_NONE</li>
+	 * <li>1 : STORE_PRIVATE_SELL</li>
+	 * <li>2 : sellmanage</li><BR>
 	 * <li>3 : STORE_PRIVATE_BUY</li><BR>
 	 * <li>4 : buymanage</li><BR>
 	 * <li>5 : STORE_PRIVATE_MANUFACTURE</li><BR>
@@ -6668,8 +6693,11 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * Retrieve a L2PcInstance from the characters table of the database and add it in _allObjects of the L2world. <B><U> Actions</U> :</B> <li>Retrieve the L2PcInstance from the characters table of the database</li> <li>Add the L2PcInstance object in _allObjects</li> <li>Set the x,y,z position of
-	 * the L2PcInstance and make it invisible</li> <li>Update the overloaded status of the L2PcInstance</li>
+	 * Retrieve a L2PcInstance from the characters table of the database and add it in _allObjects of the L2world. <B><U> Actions</U> :</B>
+	 * <li>Retrieve the L2PcInstance from the characters table of the database</li>
+	 * <li>Add the L2PcInstance object in _allObjects</li>
+	 * <li>Set the x,y,z position of the L2PcInstance and make it invisible</li>
+	 * <li>Update the overloaded status of the L2PcInstance</li>
 	 * @param objectId Identifier of the object to initialized
 	 * @return The L2PcInstance loaded from the database
 	 */
@@ -7498,8 +7526,10 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * Add a skill to the L2PcInstance _skills and its Func objects to the calculator set of the L2PcInstance and save update in the character_skills table of the database. <B><U> Concept</U> :</B> All skills own by a L2PcInstance are identified in <B>_skills</B> <B><U> Actions</U> :</B> <li>Replace
-	 * oldSkill by newSkill or Add the newSkill</li> <li>If an old skill has been replaced, remove all its Func objects of L2Character calculator set</li> <li>Add Func objects of newSkill to the calculator set of the L2Character</li>
+	 * Add a skill to the L2PcInstance _skills and its Func objects to the calculator set of the L2PcInstance and save update in the character_skills table of the database. <B><U> Concept</U> :</B> All skills own by a L2PcInstance are identified in <B>_skills</B> <B><U> Actions</U> :</B>
+	 * <li>Replace oldSkill by newSkill or Add the newSkill</li>
+	 * <li>If an old skill has been replaced, remove all its Func objects of L2Character calculator set</li>
+	 * <li>Add Func objects of newSkill to the calculator set of the L2Character</li>
 	 * @param newSkill The L2Skill to add to the L2Character
 	 * @param store
 	 * @return The L2Skill replaced or null if just added a new L2Skill
@@ -7530,8 +7560,10 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * Remove a skill from the L2Character and its Func objects from calculator set of the L2Character and save update in the character_skills table of the database. <B><U> Concept</U> :</B> All skills own by a L2Character are identified in <B>_skills</B> <B><U> Actions</U> :</B> <li>Remove the
-	 * skill from the L2Character _skills</li> <li>Remove all its Func objects from the L2Character calculator set</li> <B><U> Overridden in </U> :</B> <li>L2PcInstance : Save update in the character_skills table of the database</li>
+	 * Remove a skill from the L2Character and its Func objects from calculator set of the L2Character and save update in the character_skills table of the database. <B><U> Concept</U> :</B> All skills own by a L2Character are identified in <B>_skills</B> <B><U> Actions</U> :</B>
+	 * <li>Remove the skill from the L2Character _skills</li>
+	 * <li>Remove all its Func objects from the L2Character calculator set</li> <B><U> Overridden in </U> :</B>
+	 * <li>L2PcInstance : Save update in the character_skills table of the database</li>
 	 * @param skill The L2Skill to remove from the L2Character
 	 * @return The L2Skill removed
 	 */
@@ -8477,7 +8509,7 @@ public final class PlayerInstance extends Playable
 		
 		switch (sklTargetType)
 		{
-		// Target the player if skill type is AURA, PARTY, CLAN or SELF
+			// Target the player if skill type is AURA, PARTY, CLAN or SELF
 			case AURA:
 			case FRONT_AURA:
 			case BEHIND_AURA:
@@ -9224,7 +9256,7 @@ public final class PlayerInstance extends Playable
 			}
 			
 			if ((magic && (item.getItem().getDefaultAction() == ActionType.SPIRITSHOT)) //
-				|| (physical && (item.getItem().getDefaultAction() == ActionType.SOULSHOT)))
+			|| (physical && (item.getItem().getDefaultAction() == ActionType.SOULSHOT)))
 			{
 				handler.useItem(this, item, false);
 			}
@@ -10137,6 +10169,11 @@ public final class PlayerInstance extends Playable
 	public boolean hasDualClass()
 	{
 		return getSubClasses().values().stream().anyMatch(SubClass::isDualClass);
+	}
+	
+	public SubClass getDualClass()
+	{
+		return getSubClasses().values().stream().filter(SubClass::isDualClass).findFirst().orElse(null);
 	}
 	
 	public Map<Integer, SubClass> getSubClasses()
@@ -11364,7 +11401,7 @@ public final class PlayerInstance extends Playable
 			catch (Exception e)
 			{
 				_log.error("deleteMe()", e);
-			}// returns pet to control item
+			} // returns pet to control item
 		}
 		
 		if (getClan() != null)

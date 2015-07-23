@@ -36,6 +36,7 @@ import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
 import org.l2junity.gameserver.model.actor.instance.L2VillageMasterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.AcquireSkillType;
+import org.l2junity.gameserver.model.base.SubClass;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSkillLearn;
 import org.l2junity.gameserver.model.holders.ItemHolder;
@@ -565,6 +566,15 @@ public final class RequestAcquireSkill implements IClientIncomingPacket
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_SKILL_LEVEL_REQUIREMENTS);
 					Util.handleIllegalPlayerAction(player, "Player " + player.getName() + ", level " + player.getLevel() + " is requesting skill Id: " + _id + " level " + _level + " without having minimum required level, " + s.getGetLevel() + "!", IllegalActionPunishmentType.NONE);
 					return false;
+				}
+				
+				if (s.getDualClassLevel() > 0)
+				{
+					final SubClass playerDualClass = player.getDualClass();
+					if ((playerDualClass == null) || (playerDualClass.getLevel() < s.getDualClassLevel()))
+					{
+						return false;
+					}
 				}
 				
 				// First it checks that the skill require SP and the player has enough SP to learn it.
