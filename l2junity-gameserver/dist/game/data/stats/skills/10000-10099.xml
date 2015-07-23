@@ -797,7 +797,8 @@
 		</for>
 	</skill>
 	<skill id="10028" levels="1" name="Rage Aura">
-		<!-- When equipped with a sword or blunt weapon, increases P. Atk. Atk. Spd. and P. Critical Damage by 10%, and Speed by 10. Decreases nearby enemies' P. Atk. and Atk. Spd. by 20%. Only one Sigel Knight's Aura can be active at any time. -->
+		<!-- P. Atk./Atk. Spd + 15%, P. Critical Rate + 50, P. Critical Damage + 15%, Speed + 10, and enemies within range get P./M. Atk. - 20% and Atk. Spd./Casting Spd. - 20%. Only one Knight's Aura can be active at any time. -->
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="SIGEL_AURA" />
 		<set name="abnormalVisualEffect" val="AURA_DEBUFF" />
 		<set name="icon" val="icon.skill10028" />
@@ -806,34 +807,25 @@
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="1000" />
 		<for>
-			<effect name="ManaDamOverTime" ticks="0">
-				<param power="0" />
-				<mul stat="pAtk" val="1.1">
-					<using kind="SWORD, BLUNT" />
-				</mul>
-				<mul stat="pAtkSpd" val="1.1">
-					<using kind="SWORD, BLUNT" />
-				</mul>
-				<mul stat="cAtk" val="1.1">
-					<using kind="SWORD, BLUNT" />
-				</mul>
-				<add stat="runSpd" val="10">
-					<using kind="SWORD, BLUNT" />
-				</add>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.15" />
+				<mul stat="pAtkSpd" val="1.15" />
+				<add stat="rCrit" val="50" />
+				<mul stat="cAtk" val="1.15" />
+				<add stat="runSpd" val="10" />
 			</effect>
 			<effect name="CallSkillOnActionTime" ticks="3">
-				<param power="0" />
 				<param skillId="10029" skillLevel="1" /> <!-- Rage Aura -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="10029" levels="1" name="Rage Aura">
-		<!-- Decrease P. Atk and Atk. Spd. by 20%. -->
+		<!-- P. Atk./M. Atk. - 20%, and Atk. Spd./Casting Spd. - 20%. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="ULTIMATE_DEBUFF" />
 		<set name="affectLimit" val="10-10" />
-		<set name="affectRange" val="200" />
+		<set name="affectRange" val="900" />
 		<set name="icon" val="icon.skill10028" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
@@ -844,104 +836,293 @@
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="0.8">
-					<using kind="SWORD, BLUNT" />
-				</mul>
-				<mul stat="pAtkSpd" val="0.8">
-					<using kind="SWORD, BLUNT" />
-				</mul>
+				<mul stat="pAtk" val="0.8" />
+				<mul stat="pAtkSpd" val="0.8" />
+				<mul stat="mAtk" val="0.8" />
+				<mul stat="mAtkSpd" val="0.8" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10030" levels="1" name="Challenge Aura">
-		<!-- AUTO GENERATED SKILL -->
-		<!-- When a sword or blunt weapon is equipped, increases aggression power. Additionally, increases party members' P. Atk. and Atk. Spd. by 5% and decreases skill MP Consumption by 20%. Only one Sigel Knight's Aura can be active at any time. -->
+		<!-- Skill MP Consumption - 25%, Skill Cooldown - 10%. Additionally, party members' Skill MP Consumption - 15%, and Skill Cooldown - 5%. Only one Knight's Aura can be active at any time. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="SIGEL_AURA" />
+		<set name="abnormalVisualEffect" val="AURA_BUFF_SELF" />
 		<set name="icon" val="icon.skill10030" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="1000" />
+		<for>
+			<effect name="CallSkillOnActionTime" ticks="3">
+				<param skillId="10031" skillLevel="1" /> <!-- Challenge Aura -->
+			</effect>
+			<effect name="Buff">
+				<mul stat="MagicalMpConsumeRate" val="0.75" />
+				<mul stat="PhysicalMpConsumeRate" val="0.75" />
+				<mul stat="DanceMpConsumeRate" val="0.75" />
+				<mul stat="pReuse" val="0.9" />
+				<mul stat="mReuse" val="0.9" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10031" levels="1" name="Challenge Aura">
-		<!-- AUTO GENERATED SKILL -->
-		<!-- P. Atk. and Atk. Spd. + 5%, and skill MP Consumption - 20%. -->
+		<!-- Skill MP Consumption - 15%, Skill Cooldown - 5%. -->
+		<set name="abnormalTime" val="-1" />
+		<set name="abnormalVisualEffect" val="AURA_BUFF" />
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="1000" />
+		<set name="canBeDispelled" val="false" />
+		<set name="isTriggeredSkill" val="true" />
+		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill10030" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY_NOT_ME" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="1000" />
+		<cond>
+			<not>
+				<target active_effect_id="10030" /> <!-- Challenge Aura -->
+			</not>
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="MagicalMpConsumeRate" val="0.85" />
+				<mul stat="PhysicalMpConsumeRate" val="0.85" />
+				<mul stat="DanceMpConsumeRate" val="0.85" />
+				<mul stat="pReuse" val="0.95" />
+				<mul stat="mReuse" val="0.95" />
+			</effect>
+			<effect name="CheckForceSkill" ticks="7">
+				<param skillId="10030" /> <!-- Challenge Aura -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="10032" levels="1" name="Iron Aura">
-		<!-- AUTO GENERATED SKILL -->
-		<!-- P. Atk. and Atk. Spd. + 5%. P. Def. + 215, Shield Defense + 50%, shield defense rate + 100% when equipped with heavy armor. Bow/Crossbow Resistance + 20%. Damage from critical attack - 15%. Only one Sigel Knight's Aura can be active at any time. -->
+		<!-- P. Def. + 15%, and Received Critical Damage - 15%. Additionally, party members' P. Def. + 10%, and Received Critical Damage - 10%. Only one Knight's Aura can be active at any time. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="SIGEL_AURA" />
+		<set name="abnormalVisualEffect" val="AURA_BUFF_SELF" />
 		<set name="icon" val="icon.skill10032" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="1000" />
+		<for>
+			<effect name="CallSkillOnActionTime" ticks="3">
+				<param skillId="10033" skillLevel="1" /> <!-- Iron Aura -->
+			</effect>
+			<effect name="Buff">
+				>
+				<mul stat="pDef" val="1.15" />
+				<mul stat="defCritDamage" val="0.85" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10033" levels="1" name="Iron Aura">
-		<!-- AUTO GENERATED SKILL -->
-		<!-- P. Atk. and Atk. Spd. + 5%, P. Def. + 10%, Bow/Crossbow Resistance + 20%. Instant heal effect + 10%. -->
+		<!-- P. P. Def. + 10%, and Received Critical Damage - 10%. -->
+		<set name="abnormalTime" val="-1" />
+		<set name="abnormalVisualEffect" val="AURA_BUFF" />
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="1000" />
+		<set name="canBeDispelled" val="false" />
+		<set name="isTriggeredSkill" val="true" />
+		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill10032" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY_NOT_ME" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="1000" />
+		<cond>
+			<not>
+				<target active_effect_id="10033" /> <!-- Iron Aura -->
+			</not>
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.1" />
+				<mul stat="defCritDamage" val="0.9" />
+			</effect>
+			<effect name="CheckForceSkill" ticks="7">
+				<param skillId="10032" /> <!-- Iron Aura -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="10034" levels="1" name="Aura Resistance">
-		<!-- AUTO GENERATED SKILL -->
-		<!-- P. Atk. and Atk. Spd. + 5%, M. Def. + 10%, Fire/Water/Wind/Earth Resistance + 20. Only one Sigel Knight's Aura can be active at any time. -->
+		<!-- M. Def. + 15%, and Attribute Resistance + 30. Additionally, party members' M. Def + 10%, and Attribute Resistance + 20. Only one Knight's Aura can be active at any time. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="SIGEL_AURA" />
+		<set name="abnormalVisualEffect" val="AURA_BUFF_SELF" />
+		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill10034" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="1000" />
+		<for>
+			<effect name="CallSkillOnActionTime" ticks="3">
+				<param skillId="10035" skillLevel="1" /> <!-- Aura Resistance -->
+			</effect>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.15" />
+				<add stat="fireRes" val="30" />
+				<add stat="waterRes" val="30" />
+				<add stat="windRes" val="30" />
+				<add stat="earthRes" val="30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10035" levels="1" name="Aura Resistance">
-		<!-- AUTO GENERATED SKILL -->
-		<!-- P. Atk. and Atk. Spd. + 5%, M. Def. + 10%, Fire/Water/Wind/Earth Resistance + 20. -->
+		<!-- M. Def. + 10%, Attribute Resistance + 20. -->
+		<set name="abnormalTime" val="-1" />
+		<set name="abnormalVisualEffect" val="AURA_BUFF" />
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="1000" />
+		<set name="canBeDispelled" val="false" />
+		<set name="isTriggeredSkill" val="true" />
+		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill10034" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY_NOT_ME" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="1000" />
+		<cond>
+			<not>
+				<target active_effect_id="10035" /> <!-- Aura Resistance -->
+			</not>
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.1" />
+				<add stat="fireRes" val="20" />
+				<add stat="waterRes" val="20" />
+				<add stat="windRes" val="20" />
+				<add stat="earthRes" val="20" />
+			</effect>
+			<effect name="CheckForceSkill" ticks="7">
+				<param skillId="10034" /> <!-- Aura Resistance -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="10036" levels="1" name="Recovery Aura">
-		<!-- AUTO GENERATED SKILL -->
-		<!-- P. Atk. and Atk. Spd. + 5%, and P. Mez/Debuff Resistance + 20. Additionally, Heal Amount by healing skills + 10% and HP Recovery Bonus + 10%. Only one Sigel Knight's Aura can be active at any time. -->
+		<!-- Heal amount + 15%, Stun/Knock Back/Knock Down/Hold Resistance + 25%. Additionally, party members' heal amount + 10%, Stun/Knock Back/Knock Down/Hold Resistance + 20%. Only one Knight's Aura can be active at any time. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="SIGEL_AURA" />
+		<set name="abnormalVisualEffect" val="AURA_BUFF_SELF" />
+		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill10036" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="1000" />
+		<for>
+			<effect name="CallSkillOnActionTime" ticks="3">
+				<param skillId="10037" skillLevel="1" /> <!-- Recovery Aura -->
+			</effect>
+			<effect name="Buff">
+				<mul stat="healEffect" val="1.15" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param SHOCK="25" />
+				<param KNOCKBACK="25" />
+				<param KNOCKDOWN="25" />
+				<param HOLD="25" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10037" levels="1" name="Recovery Aura">
-		<!-- AUTO GENERATED SKILL -->
-		<!-- P. Atk. and Atk. Spd. + 5%, and P. Mez/Debuff Resistance + 20. Additionally, Heal Amount by healing skills + 10% and HP Recovery Bonus + 10%. -->
+		<!-- Heal amount + 10%, Stun/Knock Back/Knock Down/Hold Resistance + 20%. -->
+		<set name="abnormalTime" val="-1" />
+		<set name="abnormalVisualEffect" val="AURA_BUFF" />
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="1000" />
+		<set name="canBeDispelled" val="false" />
+		<set name="isTriggeredSkill" val="true" />
+		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill10036" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY_NOT_ME" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="1000" />
+		<cond>
+			<not>
+				<target active_effect_id="10037" /> <!-- Recovery Aura -->
+			</not>
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="healEffect" val="1.1" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param SHOCK="20" />
+				<param KNOCKBACK="20" />
+				<param KNOCKDOWN="20" />
+				<param HOLD="20" />
+			</effect>
+			<effect name="CheckForceSkill" ticks="7">
+				<param skillId="10036" /> <!-- Iron Aura -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="10038" levels="1" name="Spirit Aura">
-		<!-- AUTO GENERATED SKILL -->
-		<!-- P. Atk. and Atk. Spd. + 5%, and M. Mez/Debuff Resistance + 20. Additionally, Additionally, MP Recovery Amount and MP Recovery Bonus + 10%. Only one Sigel Knight's Aura can be active at any time. -->
+		<!-- Heal amount + 15%, Mental/Paralysis/Aerial Yoke Resistance + 25%. Additionally, party members' heal amount + 10%, Mental/Paralysis/Aerial Yoke + 20%. Only one Knight's Aura can be active at any time. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="SIGEL_AURA" />
+		<set name="abnormalVisualEffect" val="AURA_BUFF_SELF" />
+		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill10038" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="1000" />
+		<for>
+			<effect name="CallSkillOnActionTime" ticks="3">
+				<param skillId="10039" skillLevel="1" /> <!-- Spirit Aura -->
+			</effect>
+			<effect name="Buff">
+				<mul stat="healEffect" val="1.15" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param AERIAL_YOKE="25" />
+				<param DERANGEMENT="25" />
+				<param PARALYZE="25" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10039" levels="1" name="Spirit Aura">
-		<!-- AUTO GENERATED SKILL -->
-		<!-- P. Atk. and Atk. Spd. + 5%, and M. Mez/Debuff Resistance + 20. Additionally, Additionally, MP Recovery Amount and MP Recovery Bonus + 10%. -->
+		<!-- Heal amount + 10%, Mental/Paralysis/Aerial Yoke Resistance + 20%. -->
+		<set name="abnormalTime" val="-1" />
+		<set name="abnormalVisualEffect" val="AURA_BUFF" />
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="1000" />
+		<set name="canBeDispelled" val="false" />
+		<set name="isTriggeredSkill" val="true" />
+		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill10038" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="1000" />
+		<cond>
+			<not>
+				<target active_effect_id="10039" /> <!-- Spirit Aura -->
+			</not>
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="healEffect" val="1.1" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param AERIAL_YOKE="20" />
+				<param DERANGEMENT="20" />
+				<param PARALYZE="20" />
+			</effect>
+			<effect name="CheckForceSkill" ticks="7">
+				<param skillId="10038" /> <!-- Spirit Aura -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="10040" levels="6" name="Summon Golden Lion">
 		<!-- Summons a golden lion to fight alongside you. -->
