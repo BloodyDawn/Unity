@@ -19,7 +19,6 @@
 package handlers.targethandlers;
 
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
-import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2ArtefactInstance;
 import org.l2junity.gameserver.model.skills.Skill;
