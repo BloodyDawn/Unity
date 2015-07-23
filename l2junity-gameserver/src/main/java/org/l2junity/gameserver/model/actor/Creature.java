@@ -1698,7 +1698,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				
 				if (doit)
 				{
-					target = (Creature) targets[0];
+					target = targets[0];
 				}
 				else
 				{
