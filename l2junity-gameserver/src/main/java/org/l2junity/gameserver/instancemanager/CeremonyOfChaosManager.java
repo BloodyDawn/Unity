@@ -67,7 +67,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	@Override
 	public void onInitialized()
 	{
-		
+	
 	}
 	
 	@ScheduleTarget
@@ -96,7 +96,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		{
 			return;
 		}
-
+		
 		setState(CeremonyOfChaosState.REGISTRATION);
 		for (PlayerInstance player : World.getInstance().getPlayers())
 		{
@@ -118,7 +118,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		{
 			return;
 		}
-
+		
 		setState(CeremonyOfChaosState.PREPARING_FOR_TELEPORT);
 		for (PlayerInstance player : World.getInstance().getPlayers())
 		{
@@ -131,7 +131,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 				}
 			}
 		}
-
+		
 		ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(60), 55 * 1000);
 		ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(10), (55 + 10) * 1000);
 		for (int i = 5; i > 0; i--)
@@ -140,7 +140,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(timeLeft), (55 + 10 + timeLeft) * 1000);
 		}
 	}
-
+	
 	private void onAboutToTeleport(int time)
 	{
 		switch (time)
@@ -176,7 +176,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			}
 		}
 	}
-
+	
 	@ScheduleTarget
 	public void onPrepareForFight()
 	{
@@ -184,7 +184,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		{
 			return;
 		}
-
+		
 		setState(CeremonyOfChaosState.PREPARING_FOR_FIGHT);
 		int eventId = 0;
 		int position = 1;
@@ -224,7 +224,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		{
 			return;
 		}
-
+		
 		setState(CeremonyOfChaosState.RUNNING);
 		getEvents().forEach(CeremonyOfChaosEvent::startFight);
 	}
@@ -236,11 +236,11 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		{
 			return;
 		}
-
+		
 		setState(CeremonyOfChaosState.SCHEDULED);
 		getEvents().forEach(CeremonyOfChaosEvent::stopFight);
 	}
-
+	
 	@Override
 	public boolean canRegister(PlayerInstance player, boolean sendMessage)
 	{
@@ -364,7 +364,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			}
 		}
 	}
-
+	
 	// player leave clan
 	
 	public static CeremonyOfChaosManager getInstance()

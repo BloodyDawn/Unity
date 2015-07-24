@@ -121,14 +121,8 @@ public class CharInfo implements IClientOutgoingPacket
 		packet.writeD(_z); // Confirmed
 		packet.writeD(_vehicleId); // Confirmed
 		packet.writeD(_objId); // Confirmed
-		if (cocPlayer == null)
-		{
-			packet.writeS(_activeChar.getAppearance().getVisibleName()); // Confirmed
-		}
-		else
-		{
-			packet.writeS("Challenger" + cocPlayer.getPosition());
-		}
+		packet.writeS(_activeChar.getAppearance().getVisibleName()); // Confirmed
+		
 		packet.writeH(_activeChar.getRace().ordinal()); // Confirmed
 		packet.writeC(_activeChar.getAppearance().getSex() ? 0x01 : 0x00); // Confirmed
 		packet.writeD(_activeChar.getBaseClass()); // Confirmed
@@ -174,29 +168,12 @@ public class CharInfo implements IClientOutgoingPacket
 		packet.writeD(_activeChar.getVisualHairColor());
 		packet.writeD(_activeChar.getVisualFace());
 		
-		if (cocPlayer == null)
-		{
-			packet.writeS(_gmSeeInvis ? "Invisible" : _activeChar.getAppearance().getVisibleTitle());
-		}
-		else
-		{
-			packet.writeS("");
-		}
+		packet.writeS(_gmSeeInvis ? "Invisible" : _activeChar.getAppearance().getVisibleTitle());
 		
-		if (!_activeChar.isCursedWeaponEquipped() && (cocPlayer == null))
-		{
-			packet.writeD(_activeChar.getClanId());
-			packet.writeD(_activeChar.getClanCrestId());
-			packet.writeD(_activeChar.getAllyId());
-			packet.writeD(_activeChar.getAllyCrestId());
-		}
-		else
-		{
-			packet.writeD(0x00);
-			packet.writeD(0x00);
-			packet.writeD(0x00);
-			packet.writeD(0x00);
-		}
+		packet.writeD(_activeChar.getAppearance().getVisibleClanId());
+		packet.writeD(_activeChar.getAppearance().getVisibleClanCrestId());
+		packet.writeD(_activeChar.getAppearance().getVisibleAllyId());
+		packet.writeD(_activeChar.getAppearance().getVisibleAllyCrestId());
 		
 		packet.writeC(_activeChar.isSitting() ? 0x00 : 0x01); // Confirmed
 		packet.writeC(_activeChar.isRunning() ? 0x01 : 0x00); // Confirmed
