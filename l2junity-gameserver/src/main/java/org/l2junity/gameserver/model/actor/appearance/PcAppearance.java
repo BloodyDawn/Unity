@@ -49,6 +49,7 @@ public class PcAppearance
 	
 	private int _visibleClanId = -1;
 	private int _visibleClanCrestId = -1;
+	private int _visibleClanLargeCrestId = -1;
 	private int _visibleAllyId = -1;
 	private int _visibleAllyCrestId = -1;
 	
@@ -229,6 +230,11 @@ public class PcAppearance
 		return _visibleClanCrestId != -1 ? _visibleClanCrestId : getOwner().isCursedWeaponEquipped() ? 0 : getOwner().getClanCrestId();
 	}
 	
+	public int getVisibleClanLargeCrestId()
+	{
+		return _visibleClanLargeCrestId != -1 ? _visibleClanLargeCrestId : getOwner().isCursedWeaponEquipped() ? 0 : getOwner().getClanCrestLargeId();
+	}
+	
 	public int getVisibleAllyId()
 	{
 		return _visibleAllyId != -1 ? _visibleAllyId : getOwner().isCursedWeaponEquipped() ? 0 : getOwner().getAllyId();
@@ -239,10 +245,11 @@ public class PcAppearance
 		return _visibleAllyCrestId != -1 ? _visibleAllyCrestId : getOwner().isCursedWeaponEquipped() ? 0 : getOwner().getAllyCrestId();
 	}
 	
-	public void setVisibleClanData(int clanId, int clanCrestId, int allyId, int allyCrestId)
+	public void setVisibleClanData(int clanId, int clanCrestId, int clanLargeCrestId, int allyId, int allyCrestId)
 	{
 		_visibleClanId = clanId;
 		_visibleClanCrestId = clanCrestId;
+		_visibleClanLargeCrestId = clanLargeCrestId;
 		_visibleAllyId = allyId;
 		_visibleAllyCrestId = allyCrestId;
 	}

@@ -146,11 +146,11 @@ public class ExPetInfo extends AbstractMaskPacket<NpcInfoType>
 		
 		if (summon.getOwner().getClan() != null)
 		{
-			_clanId = summon.getOwner().getClanId();
-			_clanCrest = summon.getOwner().getClanCrestId();
-			_clanLargeCrest = summon.getOwner().getClanCrestLargeId();
-			_allyCrest = summon.getOwner().getAllyId();
-			_allyId = summon.getOwner().getAllyCrestId();
+			_clanId = summon.getOwner().getAppearance().getVisibleClanId();
+			_clanCrest = summon.getOwner().getAppearance().getVisibleClanCrestId();
+			_clanLargeCrest = summon.getOwner().getAppearance().getVisibleClanLargeCrestId();
+			_allyCrest = summon.getOwner().getAppearance().getVisibleAllyId();
+			_allyId = summon.getOwner().getAppearance().getVisibleAllyCrestId();
 			
 			addComponentType(NpcInfoType.CLAN);
 		}

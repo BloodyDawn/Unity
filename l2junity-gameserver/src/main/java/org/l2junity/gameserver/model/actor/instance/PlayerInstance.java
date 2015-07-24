@@ -14701,6 +14701,19 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
+	 * @return the first event that player participates on or null if he doesn't
+	 */
+	public AbstractEvent<?> getEvent()
+	{
+		if (_events == null)
+		{
+			return null;
+		}
+		
+		return _events.values().stream().findFirst().orElse(null);
+	}
+	
+	/**
 	 * @param clazz
 	 * @return {@code true} if player is registered on specified event, {@code false} in case events map is not initialized yet or event is not registered
 	 */

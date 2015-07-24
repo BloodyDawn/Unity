@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.model.eventengine;
 
 import java.nio.file.Path;
-import java.util.Set;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -32,22 +32,22 @@ import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
  */
 public abstract class AbstractEvent<T extends AbstractEventMember<?>> extends AbstractScript
 {
-	private final Set<T> _members = ConcurrentHashMap.newKeySet();
+	private final Map<Integer, T> _members = new ConcurrentHashMap<>();
 	private IEventState _state;
 	
-	public final Set<T> getMembers()
+	public final Map<Integer, T> getMembers()
 	{
 		return _members;
 	}
 	
 	public final T getMember(int objectId)
 	{
-		return _members.stream().filter(member -> member.getObjectId() == objectId).findFirst().orElse(null);
+		return _members.get(objectId);
 	}
 	
 	public final void broadcastPacket(IClientOutgoingPacket... packets)
 	{
-		_members.forEach(member -> member.sendPacket(packets));
+		_members.values().forEach(member -> member.sendPacket(packets));
 	}
 	
 	public final IEventState getState()
@@ -78,7 +78,7 @@ public abstract class AbstractEvent<T extends AbstractEventMember<?>> extends Ab
 	 */
 	public boolean isOnEvent(PlayerInstance player)
 	{
-		return true;
+		return _members.containsKey(player.getObjectId());
 	}
 	
 	/**

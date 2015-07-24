@@ -84,10 +84,10 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	
 	public void preparePlayers()
 	{
-		final ExCuriousHouseMemberList membersList = new ExCuriousHouseMemberList(_id, CeremonyOfChaosManager.getInstance().getVariables().getInt(CeremonyOfChaosManager.MAX_PLAYERS_KEY, 18), getMembers());
+		final ExCuriousHouseMemberList membersList = new ExCuriousHouseMemberList(_id, CeremonyOfChaosManager.getInstance().getVariables().getInt(CeremonyOfChaosManager.MAX_PLAYERS_KEY, 18), getMembers().values());
 		final NpcHtmlMessage msg = new NpcHtmlMessage(0);
 		
-		for (CeremonyOfChaosMember member : getMembers())
+		for (CeremonyOfChaosMember member : getMembers().values())
 		{
 			final PlayerInstance player = member.getPlayer();
 			
@@ -98,7 +98,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			final PcAppearance app = player.getAppearance();
 			app.setVisibleName("Challenger" + member.getPosition());
 			app.setVisibleTitle("");
-			app.setVisibleClanData(0, 0, 0, 0);
+			app.setVisibleClanData(0, 0, 0, 0, 0);
 			
 			// Register the event instance
 			player.registerOnEvent(this);
@@ -190,7 +190,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	
 	public void startFight()
 	{
-		for (CeremonyOfChaosMember member : getMembers())
+		for (CeremonyOfChaosMember member : getMembers().values())
 		{
 			final PlayerInstance player = member.getPlayer();
 			if (player != null)
@@ -211,7 +211,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	
 	public void stopFight()
 	{
-		for (CeremonyOfChaosMember member : getMembers())
+		for (CeremonyOfChaosMember member : getMembers().values())
 		{
 			final PlayerInstance player = member.getPlayer();
 			if (player != null)
@@ -223,7 +223,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				final PcAppearance app = player.getAppearance();
 				app.setVisibleName(null);
 				app.setVisibleTitle(null);
-				app.setVisibleClanData(-1, -1, -1, -1);
+				app.setVisibleClanData(-1, -1, -1, -1, -1);
 				
 				// Remove player from event
 				player.removeFromEvent(this);

@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.send.ceremonyofchaos;
 
-import java.util.Set;
+import java.util.Collection;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosMember;
@@ -33,9 +33,9 @@ public class ExCuriousHouseMemberList implements IClientOutgoingPacket
 {
 	private final int _id;
 	private final int _maxPlayers;
-	private final Set<CeremonyOfChaosMember> _players;
+	private final Collection<CeremonyOfChaosMember> _players;
 	
-	public ExCuriousHouseMemberList(int id, int maxPlayers, Set<CeremonyOfChaosMember> players)
+	public ExCuriousHouseMemberList(int id, int maxPlayers, Collection<CeremonyOfChaosMember> players)
 	{
 		_id = id;
 		_maxPlayers = maxPlayers;

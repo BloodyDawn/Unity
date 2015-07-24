@@ -221,7 +221,7 @@ public class CharInfo implements IClientOutgoingPacket
 		
 		packet.writeC(_activeChar.isCursedWeaponEquipped() ? CursedWeaponsManager.getInstance().getLevel(_activeChar.getCursedWeaponEquippedId()) : 0);
 		
-		packet.writeD(_activeChar.getClanId() > 0 ? _activeChar.getClan().getReputationScore() : 0);
+		packet.writeD(_activeChar.getAppearance().getVisibleClanId() > 0 ? _activeChar.getClan().getReputationScore() : 0);
 		packet.writeD(_activeChar.getTransformationDisplayId()); // Confirmed
 		packet.writeD(_activeChar.getAgathionId()); // Confirmed
 		
