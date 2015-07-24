@@ -70,6 +70,25 @@
 					<item id="5282" min="1" max="1" chance="0.81967213114754" /> <!-- Recipe: Greater Blessed Spiritshot Compressed Package (S-grade) -->
 					<item id="9575" min="1" max="1" chance="0.81967213114754" /> <!-- High-grade Life Stone - Lv. 80 -->
 				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
 			</death>
 			<corpse>
 				<item id="36532" min="1" max="1" chance="1.682" /> <!-- Thin Braid -->
@@ -156,6 +175,25 @@
 					<item id="1808" min="1" max="1" chance="0.75187969924812" /> <!-- Recipe: Soulshot (S-grade) -->
 					<item id="5157" min="1" max="1" chance="0.75187969924812" /> <!-- Recipe: Soulshot Compressed Package (S-grade) -->
 					<item id="9575" min="1" max="1" chance="0.75187969924812" /> <!-- High-grade Life Stone - Lv. 80 -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 			<corpse>
@@ -2846,6 +2884,29 @@
 				<clan>ROBBER</clan>
 			</clan_list>
 		</ai>
+		<drop_lists>
+			<death>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
+			</death>
+		</drop_lists>
 		<collision>
 			<radius normal="14" />
 			<height normal="27.5" />
@@ -2873,7 +2934,6 @@
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
-
 			<speed>
 				<walk ground="36" />
 				<run ground="160" />
@@ -2904,6 +2964,29 @@
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
 		<ai clanHelpRange="500" />
+		<drop_lists>
+			<death>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
+			</death>
+		</drop_lists>
 		<collision>
 			<radius normal="15" />
 			<height normal="37.2" />
@@ -2931,7 +3014,6 @@
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
-
 			<speed>
 				<walk ground="24" />
 				<run ground="160" />
@@ -2962,6 +3044,29 @@
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
 		<ai clanHelpRange="500" />
+		<drop_lists>
+			<death>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
+			</death>
+		</drop_lists>
 		<collision>
 			<radius normal="14" />
 			<height normal="14.3" />
@@ -2982,7 +3087,6 @@
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
-
 			<speed>
 				<walk ground="36" />
 				<run ground="200" />
@@ -3011,6 +3115,29 @@
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
 		<ai clanHelpRange="500" />
+		<drop_lists>
+			<death>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
+			</death>
+		</drop_lists>
 		<collision>
 			<radius normal="15" />
 			<height normal="37.2" />
@@ -3031,7 +3158,6 @@
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
-
 			<speed>
 				<walk ground="24" />
 				<run ground="190" />
@@ -3060,6 +3186,29 @@
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
 		<ai clanHelpRange="500" />
+		<drop_lists>
+			<death>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
+			</death>
+		</drop_lists>
 		<collision>
 			<radius normal="14" />
 			<height normal="14.3" />
@@ -4672,7 +4821,6 @@
 			<vitals hp="4234.06312688557" hpRegen="8.5" mp="1846.8" mpRegen="3" />
 			<attack physical="1188.87259499001" magical="811.84586495282" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="361.78814" magical="264.74086" />
-
 			<speed>
 				<walk ground="40" />
 				<run ground="120" />
@@ -4710,7 +4858,6 @@
 			<vitals hp="4234.06312688557" hpRegen="8.5" mp="1846.8" mpRegen="3" />
 			<attack physical="1188.87259499001" magical="811.84586495282" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="361.78814" magical="264.74086" />
-
 			<speed>
 				<walk ground="20" />
 				<run ground="150" />
@@ -5461,6 +5608,25 @@
 					<item id="36865" min="1" max="1" chance="0.24213075060533" /> <!-- Recipe: Silver - Downgrade -->
 					<item id="36931" min="1" max="1" chance="0.24213075060533" /> <!-- Recipe: Accessory Gem - Downgrade -->
 				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
 			</death>
 			<corpse>
 				<item id="36532" min="1" max="1" chance="3.738" /> <!-- Thin Braid -->
@@ -5547,6 +5713,25 @@
 					<item id="959" min="1" max="1" chance="0.38743004735256" /> <!-- Scroll: Enchant Weapon (S-grade) -->
 					<item id="36939" min="1" max="1" chance="0.38743004735256" /> <!-- Recipe: Greater Cokes - Downgrade -->
 				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
 			</death>
 			<corpse>
 				<item id="36532" min="1" max="1" chance="5.839" /> <!-- Thin Braid -->
@@ -5629,6 +5814,25 @@
 					<item id="9552" min="1" max="1" chance="2.2058823529412" /> <!-- Fire Crystal -->
 					<item id="10485" min="1" max="1" chance="2.2058823529412" /> <!-- High-grade Life Stone - Lv. 82 -->
 				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
 			</death>
 			<corpse>
 				<item id="15650" min="1" max="1" chance="0.075" /> <!-- Sealed Moirai Tunic Piece -->
@@ -5709,6 +5913,25 @@
 					<item id="36553" min="1" max="1" chance="3.693754197448" /> <!-- Armor Fragment (Mid-grade) -->
 					<item id="960" min="1" max="1" chance="3.693754197448" /> <!-- Scroll: Enchant Armor (S-grade) -->
 					<item id="36940" min="1" max="1" chance="0.60443250503694" /> <!-- Recipe: Greater Cokes - Upgrade -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 			<corpse>
@@ -5806,6 +6029,25 @@
 					<item id="10485" min="1" max="1" chance="0.099911190053286" /> <!-- High-grade Life Stone - Lv. 82 -->
 					<item id="36890" min="1" max="1" chance="0.099911190053286" /> <!-- Recipe: Leather Braid - Downgrade -->
 				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
 			</death>
 			<corpse>
 				<item id="36532" min="1" max="1" chance="3.675" /> <!-- Thin Braid -->
@@ -5901,6 +6143,25 @@
 					<item id="10485" min="1" max="1" chance="1.8480492813142" /> <!-- High-grade Life Stone - Lv. 82 -->
 					<item id="36891" min="1" max="1" chance="1.8480492813142" /> <!-- Recipe: Leather Braid - Upgrade -->
 				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
 			</death>
 			<corpse>
 				<item id="36532" min="1" max="1" chance="0.75" /> <!-- Thin Braid -->
@@ -5981,6 +6242,25 @@
 					<item id="10484" min="1" max="1" chance="6.993006993007" /> <!-- Mid-grade Life Stone - Lv. 82 -->
 					<item id="10485" min="1" max="1" chance="2.0979020979021" /> <!-- High-grade Life Stone - Lv. 82 -->
 				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
 			</death>
 			<corpse>
 				<item id="10399" min="1" max="1" chance="0.03" /> <!-- Icarus Spirit Piece -->
@@ -6056,6 +6336,25 @@
 					<item id="36563" min="1" max="1" chance="3.9318479685452" /> <!-- Synthetic Cokes -->
 					<item id="10485" min="1" max="1" chance="1.1795543905636" /> <!-- High-grade Life Stone - Lv. 82 -->
 					<item id="36903" min="1" max="1" chance="1.1795543905636" /> <!-- Recipe: Silver Wire - Downgrade -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 			<corpse>
@@ -6137,6 +6436,25 @@
 					<item id="36904" min="1" max="1" chance="0.20422055820286" /> <!-- Recipe: Silver Wire - Upgrade -->
 					<item id="36932" min="1" max="1" chance="0.20422055820286" /> <!-- Recipe: Accessory Gem - Upgrade -->
 				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
 			</death>
 			<corpse>
 				<item id="36532" min="1" max="1" chance="0.75" /> <!-- Thin Braid -->
@@ -6214,6 +6532,25 @@
 					<item id="10485" min="1" max="1" chance="1.2278308321965" /> <!-- High-grade Life Stone - Lv. 82 -->
 					<item id="36905" min="1" max="1" chance="1.2278308321965" /> <!-- Recipe: Silver Wire - Combination -->
 				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
 			</death>
 			<corpse>
 				<item id="36532" min="1" max="1" chance="0.75" /> <!-- Thin Braid -->
@@ -6288,6 +6625,25 @@
 					<item id="36548" min="1" max="1" chance="19.480519480519" /> <!-- Weapon Fragment (Mid-grade) -->
 					<item id="36553" min="1" max="1" chance="19.480519480519" /> <!-- Armor Fragment (Mid-grade) -->
 					<item id="10485" min="1" max="1" chance="5.8441558441558" /> <!-- High-grade Life Stone - Lv. 82 -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 			<corpse>
@@ -6370,6 +6726,25 @@
 					<item id="10485" min="1" max="1" chance="0.75112669003505" /> <!-- High-grade Life Stone - Lv. 82 -->
 					<item id="36563" min="1" max="1" chance="1.3770655983976" /> <!-- Synthetic Cokes -->
 					<item id="36916" min="1" max="1" chance="0.22533800701052" /> <!-- Recipe: Weapon Fragment - Upgrade -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 			<corpse>
@@ -6470,6 +6845,25 @@
 					<item id="36857" min="1" max="1" chance="0.67064083457526" /> <!-- Recipe: Leather - Downgrade -->
 					<item id="36923" min="1" max="1" chance="0.67064083457526" /> <!-- Recipe: Armor Fragment - Downgrade -->
 				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
 			</death>
 			<corpse>
 				<item id="36532" min="1" max="1" chance="2.71" /> <!-- Thin Braid -->
@@ -6565,6 +6959,25 @@
 					<item id="10485" min="1" max="1" chance="1.0550996483001" /> <!-- High-grade Life Stone - Lv. 82 -->
 					<item id="36924" min="1" max="1" chance="1.0550996483001" /> <!-- Recipe: Armor Fragment - Upgrade -->
 				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
 			</death>
 			<corpse>
 				<item id="36532" min="1" max="1" chance="2.815" /> <!-- Thin Braid -->
@@ -6641,6 +7054,25 @@
 					<item id="9557" min="1" max="1" chance="2.1276595744681" /> <!-- Holy Crystal -->
 					<item id="14168" min="1" max="1" chance="2.1276595744681" /> <!-- High-grade Life Stone - Lv. 84 -->
 				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
 			</death>
 			<corpse>
 				<item id="9551" min="1" max="1" chance="0.075" /> <!-- Holy Stone -->
@@ -6714,6 +7146,25 @@
 					<item id="9557" min="1" max="1" chance="2.1276595744681" /> <!-- Holy Crystal -->
 					<item id="14168" min="1" max="1" chance="2.1276595744681" /> <!-- High-grade Life Stone - Lv. 84 -->
 				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
 			</death>
 			<corpse>
 				<item id="9551" min="1" max="1" chance="0.075" /> <!-- Holy Stone -->
@@ -6786,6 +7237,25 @@
 					<item id="14167" min="1" max="1" chance="17.543859649123" /> <!-- Mid-grade Life Stone - Lv. 84 -->
 					<item id="959" min="1" max="1" chance="1.7543859649123" /> <!-- Scroll: Enchant Weapon (S-grade) -->
 					<item id="14168" min="1" max="1" chance="1.7543859649123" /> <!-- High-grade Life Stone - Lv. 84 -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 			<corpse>
@@ -6864,6 +7334,25 @@
 					<item id="959" min="1" max="1" chance="6.7669172932331" /> <!-- Scroll: Enchant Weapon (S-grade) -->
 					<item id="14168" min="1" max="1" chance="6.7669172932331" /> <!-- High-grade Life Stone - Lv. 84 -->
 				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
+				</group>
 			</death>
 			<corpse>
 				<item id="15644" min="1" max="1" chance="0.03" /> <!-- Vesper Thrower Piece -->
@@ -6933,6 +7422,25 @@
 					<item id="14167" min="1" max="1" chance="17.543859649123" /> <!-- Mid-grade Life Stone - Lv. 84 -->
 					<item id="959" min="1" max="1" chance="1.7543859649123" /> <!-- Scroll: Enchant Weapon (S-grade) -->
 					<item id="14168" min="1" max="1" chance="1.7543859649123" /> <!-- High-grade Life Stone - Lv. 84 -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 			<corpse>

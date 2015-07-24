@@ -13,7 +13,6 @@
 			<vitals hp="3835.59060587002" hpRegen="8.5" mp="1777.4" mpRegen="3" />
 			<attack physical="1049.15027830518" magical="712.268320424488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="347.741195755814" magical="254.461918604651" />
-
 			<speed>
 				<walk ground="60" />
 				<run ground="180" />
@@ -57,7 +56,6 @@
 			<vitals hp="3835.59060587002" hpRegen="8.5" mp="1777.4" mpRegen="3" />
 			<attack physical="1049.15027830518" magical="712.268320424488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="347.741195755814" magical="254.461918604651" />
-
 			<speed>
 				<walk ground="60" />
 				<run ground="180" />
@@ -102,7 +100,6 @@
 			<vitals hp="3835.59060587002" hpRegen="8.5" mp="1777.4" mpRegen="3" />
 			<attack physical="1049.15027830518" magical="712.268320424488" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="347.741195755814" magical="254.461918604651" />
-
 			<speed>
 				<walk ground="1" />
 				<run ground="100" />
@@ -463,7 +460,6 @@
 			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
 			<attack physical="234.89829" magical="160.40508" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="177.78746" magical="130.09715" />
-
 			<speed>
 				<walk ground="35" />
 				<run ground="160" />
@@ -513,7 +509,6 @@
 			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
 			<attack physical="388.11142" magical="265.02979" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="223.6362" magical="163.64727" />
-
 			<speed>
 				<walk ground="35" />
 				<run ground="160" />
@@ -564,7 +559,6 @@
 			<vitals hp="2193.43142" hpRegen="7.5" mp="1188.8" mpRegen="2.7" />
 			<attack physical="582.81759" magical="397.98887" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="271.89033" magical="198.95754" />
-
 			<speed>
 				<walk ground="35" />
 				<run ground="160" />
@@ -615,7 +609,6 @@
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
-
 			<speed>
 				<walk ground="15" />
 				<run ground="160" />
@@ -668,7 +661,6 @@
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
-
 			<speed>
 				<walk ground="15" />
 				<run ground="160" />
@@ -729,7 +721,6 @@
 			<vitals hp="460.96247" hpRegen="3.5" mp="259.2" mpRegen="1.5" />
 			<attack physical="64.83203" magical="44.27187" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="101.83533" magical="74.51868" />
-
 			<speed>
 				<walk ground="50" />
 				<run ground="155" />
@@ -760,6 +751,25 @@
 			<death>
 				<group chance="1.031">
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -798,7 +808,6 @@
 			<vitals hp="460.96247" hpRegen="3.5" mp="259.2" mpRegen="1.5" />
 			<attack physical="64.83203" magical="44.27187" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="80" distance="80" width="120" />
 			<defence physical="101.83533" magical="74.51868" />
-
 			<speed>
 				<walk ground="40" />
 				<run ground="160" />
@@ -832,6 +841,25 @@
 			<death>
 				<group chance="0.985">
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -871,7 +899,6 @@
 			<vitals hp="515" hpRegen="3.5" mp="286" mpRegen="1.5" />
 			<attack physical="74.99121" magical="51.20928" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="108.28767" magical="79.24022" />
-
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
@@ -906,6 +933,25 @@
 			<death>
 				<group chance="1.179">
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -942,7 +988,6 @@
 			<vitals hp="604.08419" hpRegen="3.5" mp="329.4" mpRegen="1.5" />
 			<attack physical="92.64226" magical="63.26266" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="118.46427" magical="86.68702" />
-
 			<speed>
 				<walk ground="45" />
 				<run ground="110" />
@@ -973,6 +1018,25 @@
 			<death>
 				<group chance="1.278">
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -1011,7 +1075,6 @@
 			<vitals hp="604.08419" hpRegen="3.5" mp="329.4" mpRegen="1.5" />
 			<attack physical="92.64226" magical="63.26266" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="118.46427" magical="86.68702" />
-
 			<speed>
 				<walk ground="45" />
 				<run ground="110" />
@@ -1043,6 +1106,25 @@
 			<death>
 				<group chance="1.318">
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -1082,7 +1164,6 @@
 			<vitals hp="668" hpRegen="4.5" mp="358" mpRegen="1.8" />
 			<attack physical="106.16525" magical="72.49711" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="125.57727" magical="91.89199" />
-
 			<speed>
 				<walk ground="45" />
 				<run ground="130" />
@@ -1115,6 +1196,25 @@
 			<death>
 				<group chance="1.463">
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -1150,7 +1250,6 @@
 			<vitals hp="772.73802" hpRegen="4.5" mp="402.6" mpRegen="1.8" />
 			<attack physical="129.32896" magical="88.31491" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="136.72948" magical="100.0527" />
-
 			<speed>
 				<walk ground="15" />
 				<run ground="15" />
@@ -1181,6 +1280,25 @@
 			<death>
 				<group chance="1.757">
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -1218,7 +1336,6 @@
 			<vitals hp="772.73802" hpRegen="4.5" mp="402.6" mpRegen="1.8" />
 			<attack physical="129.32896" magical="88.31491" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="136.72948" magical="100.0527" />
-
 			<speed>
 				<walk ground="50" />
 				<run ground="90" />
@@ -1250,6 +1367,25 @@
 			<death>
 				<group chance="1.72">
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -1288,7 +1424,6 @@
 			<vitals hp="847" hpRegen="4.5" mp="432" mpRegen="1.8" />
 			<attack physical="146.82587" magical="100.26304" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="144.47758" magical="105.72243" />
-
 			<speed>
 				<walk ground="60" />
 				<run ground="170" />
@@ -1320,6 +1455,25 @@
 			<death>
 				<group chance="1.922">
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -1356,7 +1510,6 @@
 			<vitals hp="966.57792" hpRegen="4.5" mp="478.8" mpRegen="1.8" />
 			<attack physical="176.36077" magical="120.43155" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="156.55035" magical="114.55675" />
-
 			<speed>
 				<walk ground="18" />
 				<run ground="150" />
@@ -1387,6 +1540,25 @@
 			<death>
 				<group chance="2.261">
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -1424,7 +1596,6 @@
 			<vitals hp="966.57792" hpRegen="4.5" mp="478.8" mpRegen="1.8" />
 			<attack physical="176.36077" magical="120.43155" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="156.55035" magical="114.55675" />
-
 			<speed>
 				<walk ground="60" />
 				<run ground="160" />
@@ -1455,6 +1626,25 @@
 			<death>
 				<group chance="2.167">
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -1494,7 +1684,6 @@
 			<vitals hp="1050" hpRegen="5.5" mp="531" mpRegen="2.1" />
 			<attack physical="198.34591" magical="135.44454" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="164.88513" magical="120.65578" />
-
 			<speed>
 				<walk ground="18" />
 				<run ground="150" />
@@ -1527,6 +1716,25 @@
 			<death>
 				<group chance="2.415">
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -1563,7 +1771,6 @@
 			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
 			<attack physical="234.89829" magical="160.40508" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="177.78746" magical="130.09715" />
-
 			<speed>
 				<walk ground="37" />
 				<run ground="140" />
@@ -1594,6 +1801,25 @@
 			<death>
 				<group chance="1.084">
 					<item id="952" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (C-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -1632,7 +1858,6 @@
 			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
 			<attack physical="234.89829" magical="160.40508" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="177.78746" magical="130.09715" />
-
 			<speed>
 				<walk ground="40" />
 				<run ground="140" />
@@ -1664,6 +1889,25 @@
 			<death>
 				<group chance="1.123">
 					<item id="952" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (C-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -1703,7 +1947,6 @@
 			<vitals hp="1276" hpRegen="5.5" mp="665" mpRegen="2.1" />
 			<attack physical="261.69549" magical="178.7041" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="186.63569" magical="136.5719" />
-
 			<speed>
 				<walk ground="53" />
 				<run ground="140" />
@@ -1736,6 +1979,25 @@
 			<death>
 				<group chance="1.251">
 					<item id="952" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (C-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -1772,7 +2034,6 @@
 			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
 			<attack physical="305.54906" magical="208.6504" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="200.23844" magical="146.5258" />
-
 			<speed>
 				<walk ground="34" />
 				<run ground="160" />
@@ -1803,6 +2064,25 @@
 			<death>
 				<group chance="1.406">
 					<item id="952" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (C-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -1841,7 +2121,6 @@
 			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
 			<attack physical="305.54906" magical="208.6504" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="200.23844" magical="146.5258" />
-
 			<speed>
 				<walk ground="36" />
 				<run ground="160" />
@@ -1873,6 +2152,25 @@
 			<death>
 				<group chance="1.335">
 					<item id="952" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (C-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -1912,7 +2210,6 @@
 			<vitals hp="1520" hpRegen="6.5" mp="804" mpRegen="2.4" />
 			<attack physical="337.18867" magical="230.25615" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="209.50106" magical="153.30378" />
-
 			<speed>
 				<walk ground="27" />
 				<run ground="160" />
@@ -1945,6 +2242,25 @@
 			<death>
 				<group chance="1.449">
 					<item id="952" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (C-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -1981,7 +2297,6 @@
 			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
 			<attack physical="388.11142" magical="265.02979" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="223.6362" magical="163.64727" />
-
 			<speed>
 				<walk ground="80" />
 				<run ground="130" />
@@ -2012,6 +2327,25 @@
 			<death>
 				<group chance="0.3">
 					<item id="948" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (B-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -2050,7 +2384,6 @@
 			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
 			<attack physical="388.11142" magical="265.02979" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="223.6362" magical="163.64727" />
-
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
@@ -2082,6 +2415,25 @@
 			<death>
 				<group chance="0.3">
 					<item id="948" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (B-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -2121,7 +2473,6 @@
 			<vitals hp="1776" hpRegen="6.5" mp="948" mpRegen="2.4" />
 			<attack physical="424.23295" magical="289.69611" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="233.18839" magical="170.63714" />
-
 			<speed>
 				<walk ground="80" />
 				<run ground="140" />
@@ -2154,6 +2505,25 @@
 			<death>
 				<group chance="0.3">
 					<item id="948" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (B-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -2190,7 +2560,6 @@
 			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
 			<attack physical="481.34551" magical="328.69659" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="247.65008" magical="181.21958" />
-
 			<speed>
 				<walk ground="50" />
 				<run ground="160" />
@@ -2221,6 +2590,25 @@
 			<death>
 				<group chance="0.3">
 					<item id="948" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (B-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -2259,7 +2647,6 @@
 			<vitals hp="1933.24044" hpRegen="6.5" mp="1036.8" mpRegen="2.4" />
 			<attack physical="481.34551" magical="328.69659" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="247.65008" magical="181.21958" />
-
 			<speed>
 				<walk ground="50" />
 				<run ground="160" />
@@ -2291,6 +2678,25 @@
 			<death>
 				<group chance="0.3">
 					<item id="948" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (B-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -2330,7 +2736,6 @@
 			<vitals hp="2037" hpRegen="7.5" mp="1097" mpRegen="2.7" />
 			<attack physical="521.12391" magical="355.86007" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="257.34267" magical="188.3122" />
-
 			<speed>
 				<walk ground="50" />
 				<run ground="170" />
@@ -2363,6 +2768,25 @@
 			<death>
 				<group chance="0.3">
 					<item id="948" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (B-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -2399,7 +2823,6 @@
 			<vitals hp="2193.43142" hpRegen="7.5" mp="1188.8" mpRegen="2.7" />
 			<attack physical="582.81759" magical="397.98887" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="271.89033" magical="198.95754" />
-
 			<speed>
 				<walk ground="60" />
 				<run ground="190" />
@@ -2430,6 +2853,25 @@
 			<death>
 				<group chance="0.3">
 					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (A-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -2468,7 +2910,6 @@
 			<vitals hp="2193.43142" hpRegen="7.5" mp="1188.8" mpRegen="2.7" />
 			<attack physical="582.81759" magical="397.98887" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="271.89033" magical="198.95754" />
-
 			<speed>
 				<walk ground="43" />
 				<run ground="165" />
@@ -2499,6 +2940,25 @@
 			<death>
 				<group chance="0.3">
 					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (A-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -2538,7 +2998,6 @@
 			<vitals hp="2295" hpRegen="7.5" mp="1251" mpRegen="2.7" />
 			<attack physical="624.93199" magical="426.74754" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="281.55251" magical="206.02791" />
-
 			<speed>
 				<walk ground="60" />
 				<run ground="160" />
@@ -2570,6 +3029,25 @@
 			<death>
 				<group chance="0.3">
 					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (A-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -2605,7 +3083,6 @@
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-
 			<speed>
 				<walk ground="60" />
 				<run ground="210" />
@@ -2636,6 +3113,25 @@
 			<death>
 				<group chance="0.3">
 					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (A-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -2673,7 +3169,6 @@
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-
 			<speed>
 				<walk ground="60" />
 				<run ground="210" />
@@ -2705,6 +3200,25 @@
 			<death>
 				<group chance="0.3">
 					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (A-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -2743,7 +3257,6 @@
 			<vitals hp="2540" hpRegen="8.5" mp="1410" mpRegen="3" />
 			<attack physical="731.52506" magical="499.53679" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="305.35947" magical="223.44881" />
-
 			<speed>
 				<walk ground="60" />
 				<run ground="210" />
@@ -2776,6 +3289,25 @@
 			<death>
 				<group chance="0.3">
 					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (A-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -2811,7 +3343,6 @@
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
-
 			<speed>
 				<walk ground="60" />
 				<run ground="170" />
@@ -2842,6 +3373,25 @@
 			<death>
 				<group chance="0.075">
 					<item id="960" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (S-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -2879,7 +3429,6 @@
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
-
 			<speed>
 				<walk ground="60" />
 				<run ground="170" />
@@ -2911,6 +3460,25 @@
 			<death>
 				<group chance="0.075">
 					<item id="960" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (S-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -2949,7 +3517,6 @@
 			<vitals hp="2856" hpRegen="8.5" mp="1574" mpRegen="3" />
 			<attack physical="856.44055895414" magical="584.837886935576" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="328.27073" magical="240.21427" />
-
 			<speed>
 				<walk ground="60" />
 				<run ground="180" />
@@ -2984,6 +3551,25 @@
 			<death>
 				<group chance="0.3">
 					<item id="960" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (S-grade) -->
+				</group>
+				<group chance="20">
+					<item id="8600" min="1" max="1" chance="50" />
+					<item id="8601" min="1" max="1" chance="40" />
+					<item id="8602" min="1" max="1" chance="10" />
+				</group>
+				<group chance="33">
+					<item id="8603" min="1" max="1" chance="60" />
+					<item id="8604" min="1" max="1" chance="30" />
+					<item id="8605" min="1" max="1" chance="10" />
+				</group>
+				<group chance="0.7">
+					<item id="34849" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.7">
+					<item id="34850" min="1" max="1" chance="100" />
+				</group>
+				<group chance="0.1">
+					<item id="13028" min="1" max="1" chance="100" />
 				</group>
 			</death>
 		</drop_lists>
@@ -3020,7 +3606,6 @@
 			<vitals hp="2981" hpRegen="14.7623139950496" mp="315.12" mpRegen="1.5" />
 			<attack physical="197.913166994479" magical="135.149035208127" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="184.009568" magical="201.975312" />
-
 			<speed>
 				<walk ground="70" />
 				<run ground="110" />
@@ -3077,7 +3662,6 @@
 			<vitals hp="2981" hpRegen="14.7623139950496" mp="315.12" mpRegen="1.5" />
 			<attack physical="197.913166994479" magical="135.149035208127" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="184.009568" magical="201.975312" />
-
 			<speed>
 				<walk ground="70" />
 				<run ground="110" />
@@ -3137,7 +3721,6 @@
 			<vitals hp="5963" hpRegen="14.7623139950496" mp="315.12" mpRegen="1.5" />
 			<attack physical="162.779703287392" magical="111.157434266968" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="184.009568" magical="201.975312" />
-
 			<speed>
 				<walk ground="70" />
 				<run ground="160" />
@@ -3198,7 +3781,6 @@
 			<vitals hp="4390" hpRegen="20.0374788857507" mp="463.32" mpRegen="1.8" />
 			<attack physical="572.094397718011" magical="390.666298902313" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="243.948032" magical="267.765888" />
-
 			<speed>
 				<walk ground="37" />
 				<run ground="140" />
@@ -3255,7 +3837,6 @@
 			<vitals hp="4390" hpRegen="20.0374788857507" mp="463.32" mpRegen="1.8" />
 			<attack physical="572.094397718011" magical="390.666298902313" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="243.948032" magical="267.765888" />
-
 			<speed>
 				<walk ground="37" />
 				<run ground="140" />
@@ -3315,7 +3896,6 @@
 			<vitals hp="8764" hpRegen="20.0011107318101" mp="463.32" mpRegen="1.8" />
 			<attack physical="473.633315537076" magical="323.430145716799" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="243.948032" magical="267.765888" />
-
 			<speed>
 				<walk ground="40" />
 				<run ground="140" />
@@ -3375,7 +3955,6 @@
 			<vitals hp="9963" hpRegen="42.1792057329358" mp="720.0" mpRegen="2.1" />
 			<attack physical="939.100287140999" magical="641.283742632706" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="313.060832" magical="343.626504" />
-
 			<speed>
 				<walk ground="23" />
 				<run ground="23" />
@@ -3431,7 +4010,6 @@
 			<vitals hp="9963" hpRegen="42.1792057329358" mp="720.0" mpRegen="2.1" />
 			<attack physical="939.100287140999" magical="641.283742632706" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="313.060832" magical="343.626504" />
-
 			<speed>
 				<walk ground="23" />
 				<run ground="23" />
@@ -3490,7 +4068,6 @@
 			<vitals hp="19926" hpRegen="42.1792057329358" mp="720.0" mpRegen="2.1" />
 			<attack physical="789.236403634055" magical="538.946139911501" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="313.060832" magical="343.626504" />
-
 			<speed>
 				<walk ground="20" />
 				<run ground="20" />
@@ -3551,7 +4128,6 @@
 			<vitals hp="17981" hpRegen="70.9782228924142" mp="1007.0" mpRegen="2.4" />
 			<attack physical="2124.50738127262" magical="1450.7631349585" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="388.505488" magical="426.437184" />
-
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
@@ -3608,7 +4184,6 @@
 			<vitals hp="17981" hpRegen="70.9782228924142" mp="1007.0" mpRegen="2.4" />
 			<attack physical="2124.50738127262" magical="1450.7631349585" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="388.505488" magical="426.437184" />
-
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
@@ -3667,7 +4242,6 @@
 			<vitals hp="35924" hpRegen="70.9036355437913" mp="1007.0" mpRegen="2.4" />
 			<attack physical="1926.27081298952" magical="1315.3932568395" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="388.505488" magical="426.437184" />
-
 			<speed>
 				<walk ground="80" />
 				<run ground="160" />
@@ -3727,7 +4301,6 @@
 			<vitals hp="20810" hpRegen="76.9462041405843" mp="1314.0" mpRegen="2.7" />
 			<attack physical="3223.14678388188" magical="2200.991450698" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="465.841008" magical="511.323336" />
-
 			<speed>
 				<walk ground="30" />
 				<run ground="170" />
@@ -3783,7 +4356,6 @@
 			<vitals hp="20810" hpRegen="76.9462041405843" mp="1314.0" mpRegen="2.7" />
 			<attack physical="3223.14678388188" magical="2200.991450698" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="465.841008" magical="511.323336" />
-
 			<speed>
 				<walk ground="30" />
 				<run ground="170" />
@@ -3842,7 +4414,6 @@
 			<vitals hp="41576" hpRegen="76.8654232739137" mp="1314.0" mpRegen="2.7" />
 			<attack physical="3159.42642416583" magical="2157.47870480887" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="465.841008" magical="511.323336" />
-
 			<speed>
 				<walk ground="30" />
 				<run ground="170" />
