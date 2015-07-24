@@ -26,24 +26,26 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 public interface IEventListener
 {
 	/**
+	 * @param player
 	 * @return {@code true} if player is on event, {@code false} otherwise.
 	 */
-	boolean isOnEvent();
+	boolean isOnEvent(PlayerInstance player);
 	
 	/**
+	 * @param player
 	 * @return {@code true} if player is blocked from leaving the game, {@code false} otherwise.
 	 */
-	boolean isBlockingExit();
+	boolean isBlockingExit(PlayerInstance player);
 	
 	/**
+	 * @param player
 	 * @return {@code true} if player is blocked from receiving death penalty upon death, {@code false} otherwise.
 	 */
-	boolean isBlockingDeathPenalty();
+	boolean isBlockingDeathPenalty(PlayerInstance player);
 	
 	/**
+	 * @param player
 	 * @return {@code true} if player can revive after death, {@code false} otherwise.
 	 */
-	boolean canRevive();
-	
-	PlayerInstance getPlayer();
+	boolean canRevive(PlayerInstance player);
 }

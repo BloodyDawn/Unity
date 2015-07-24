@@ -265,18 +265,11 @@ public final class ItemInstance extends WorldObject
 	 * <BR>
 	 * <B><U> Actions</U> :</B><BR>
 	 * <BR>
-	 * <li>Send a Server->Client Packet GetItem to player that pick up and its _knowPlayers member</li> <li>Remove the L2Object from the world</li><BR>
+	 * <li>Send a Server->Client Packet GetItem to player that pick up and its _knowPlayers member</li>
+	 * <li>Remove the L2Object from the world</li><BR>
 	 * <BR>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR>
-	 * <BR>
-	 * <B><U> Assert </U> :</B><BR>
-	 * <BR>
-	 * <li>this instanceof L2ItemInstance</li> <li>_worldRegion != null <I>(L2Object is visible at the beginning)</I></li><BR>
-	 * <BR>
-	 * <B><U> Example of use </U> :</B><BR>
-	 * <BR>
-	 * <li>Do Pickup Item : PCInstance and Pet</li><BR>
-	 * <BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR> <BR> <B><U> Assert </U> :</B><BR> <BR> <li>this instanceof L2ItemInstance</li> <li>_worldRegion != null <I>(L2Object is visible at the beginning)</I></li><BR> <BR> <B><U>
+	 * Example of use </U> :</B><BR> <BR> <li>Do Pickup Item : PCInstance and Pet</li><BR> <BR>
 	 * @param player Player that pick up the item
 	 */
 	public final void pickupMe(Creature player)
@@ -291,7 +284,6 @@ public final class ItemInstance extends WorldObject
 		synchronized (this)
 		{
 			setSpawned(false);
-			setWorldRegion(null);
 		}
 		
 		// if this item is a mercenary ticket, remove the spawns!
@@ -570,7 +562,7 @@ public final class ItemInstance extends WorldObject
 	 */
 	public int getLocationSlot()
 	{
-		assert (_loc == ItemLocation.PAPERDOLL) || (_loc == ItemLocation.PET_EQUIP) || (_loc == ItemLocation.INVENTORY) || (_loc == ItemLocation.MAIL) || (_loc == ItemLocation.FREIGHT);
+		assert(_loc == ItemLocation.PAPERDOLL) || (_loc == ItemLocation.PET_EQUIP) || (_loc == ItemLocation.INVENTORY) || (_loc == ItemLocation.MAIL) || (_loc == ItemLocation.FREIGHT);
 		return _locData;
 	}
 	
@@ -874,12 +866,12 @@ public final class ItemInstance extends WorldObject
 		final Summon pet = player.getPet();
 		
 		return ((!isEquipped()) // Not equipped
-			&& (getItem().getType2() != L2Item.TYPE2_QUEST) // Not Quest Item
-			&& ((getItem().getType2() != L2Item.TYPE2_MONEY) || (getItem().getType1() != L2Item.TYPE1_SHIELD_ARMOR)) // not money, not shield
-			&& ((pet == null) || (getObjectId() != pet.getControlObjectId())) // Not Control item of currently summoned pet
-			&& !(player.isProcessingItem(getObjectId())) // Not momentarily used enchant scroll
-			&& (allowAdena || (getId() != Inventory.ADENA_ID)) // Not Adena
-			&& ((player.getCurrentSkill() == null) || (player.getCurrentSkill().getSkill().getItemConsumeId() != getId())) && (!player.isCastingSimultaneouslyNow() || (player.getLastSimultaneousSkillCast() == null) || (player.getLastSimultaneousSkillCast().getItemConsumeId() != getId())) && (allowNonTradeable || (isTradeable() && (!((getItem().getItemType() == EtcItemType.PET_COLLAR) && player.havePetInvItems())))));
+		&& (getItem().getType2() != L2Item.TYPE2_QUEST) // Not Quest Item
+		&& ((getItem().getType2() != L2Item.TYPE2_MONEY) || (getItem().getType1() != L2Item.TYPE1_SHIELD_ARMOR)) // not money, not shield
+		&& ((pet == null) || (getObjectId() != pet.getControlObjectId())) // Not Control item of currently summoned pet
+		&& !(player.isProcessingItem(getObjectId())) // Not momentarily used enchant scroll
+		&& (allowAdena || (getId() != Inventory.ADENA_ID)) // Not Adena
+		&& ((player.getCurrentSkill() == null) || (player.getCurrentSkill().getSkill().getItemConsumeId() != getId())) && (!player.isCastingSimultaneouslyNow() || (player.getLastSimultaneousSkillCast() == null) || (player.getLastSimultaneousSkillCast().getItemConsumeId() != getId())) && (allowNonTradeable || (isTradeable() && (!((getItem().getItemType() == EtcItemType.PET_COLLAR) && player.havePetInvItems())))));
 	}
 	
 	/**
@@ -1092,7 +1084,7 @@ public final class ItemInstance extends WorldObject
 		}
 		return null;
 	}
-
+	
 	public AttributeType getAttackAttributeType()
 	{
 		final AttributeHolder holder = getAttackAttribute();
@@ -1219,7 +1211,7 @@ public final class ItemInstance extends WorldObject
 			_log.error("Could not remove all elemental enchant for item: {} from DB:", toString(), e);
 		}
 	}
-
+	
 	/**
 	 * Used to decrease mana (mana means life time for shadow items)
 	 */
@@ -1465,16 +1457,11 @@ public final class ItemInstance extends WorldObject
 	 * <BR>
 	 * <B><U> Actions</U> :</B><BR>
 	 * <BR>
-	 * <li>Set the x,y,z position of the L2ItemInstance dropped and update its _worldregion</li> <li>Add the L2ItemInstance dropped to _visibleObjects of its L2WorldRegion</li> <li>Add the L2ItemInstance dropped in the world as a <B>visible</B> object</li><BR>
+	 * <li>Set the x,y,z position of the L2ItemInstance dropped and update its _worldregion</li>
+	 * <li>Add the L2ItemInstance dropped to _visibleObjects of its L2WorldRegion</li>
+	 * <li>Add the L2ItemInstance dropped in the world as a <B>visible</B> object</li><BR>
 	 * <BR>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object to _allObjects of L2World </B></FONT><BR>
-	 * <BR>
-	 * <B><U> Assert </U> :</B><BR>
-	 * <BR>
-	 * <li>_worldRegion == null <I>(L2Object is invisible at the beginning)</I></li><BR>
-	 * <BR>
-	 * <B><U> Example of use </U> :</B><BR>
-	 * <BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object to _allObjects of L2World </B></FONT><BR> <BR> <B><U> Assert </U> :</B><BR> <BR> <li>_worldRegion == null <I>(L2Object is invisible at the beginning)</I></li><BR> <BR> <B><U> Example of use </U> :</B><BR> <BR>
 	 * <li>Drop item</li> <li>Call Pet</li><BR>
 	 */
 	public class ItemDropTask implements Runnable
@@ -1589,7 +1576,7 @@ public final class ItemInstance extends WorldObject
 	 */
 	private void insertIntoDb()
 	{
-		assert !_existsInDb && (getObjectId() != 0);
+		assert!_existsInDb && (getObjectId() != 0);
 		
 		if (_wear)
 		{
@@ -1852,7 +1839,7 @@ public final class ItemInstance extends WorldObject
 		{
 			return;
 		}
-
+		
 		for (AttributeHolder holder : _elementals.values())
 		{
 			holder.remove(player);

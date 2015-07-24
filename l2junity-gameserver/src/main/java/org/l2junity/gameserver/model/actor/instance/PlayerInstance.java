@@ -30,7 +30,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -402,8 +401,6 @@ public final class PlayerInstance extends Playable
 	public static final int ID_NONE = -1;
 	
 	public static final int REQUEST_TIMEOUT = 15;
-	
-	private final Set<IEventListener> _eventListeners = ConcurrentHashMap.newKeySet();
 	
 	private L2GameClient _client;
 	
@@ -14018,11 +14015,14 @@ public final class PlayerInstance extends Playable
 	@Override
 	public boolean canRevive()
 	{
-		for (IEventListener listener : _eventListeners)
+		if (_events != null)
 		{
-			if (listener.isOnEvent() && !listener.canRevive())
+			for (IEventListener listener : _events.values())
 			{
-				return false;
+				if (listener.isOnEvent(this) && !listener.canRevive(this))
+				{
+					return false;
+				}
 			}
 		}
 		return _canRevive;
@@ -14044,11 +14044,14 @@ public final class PlayerInstance extends Playable
 	@Override
 	public boolean isOnEvent()
 	{
-		for (IEventListener listener : _eventListeners)
+		if (_events != null)
 		{
-			if (listener.isOnEvent())
+			for (AbstractEvent<?> listener : _events.values())
 			{
-				return true;
+				if (listener.isOnEvent(this))
+				{
+					return true;
+				}
 			}
 		}
 		return super.isOnEvent();
@@ -14056,11 +14059,14 @@ public final class PlayerInstance extends Playable
 	
 	public boolean isBlockedFromExit()
 	{
-		for (IEventListener listener : _eventListeners)
+		if (_events != null)
 		{
-			if (listener.isOnEvent() && listener.isBlockingExit())
+			for (IEventListener listener : _events.values())
 			{
-				return true;
+				if (listener.isOnEvent(this) && listener.isBlockingExit(this))
+				{
+					return true;
+				}
 			}
 		}
 		return false;
@@ -14068,11 +14074,14 @@ public final class PlayerInstance extends Playable
 	
 	public boolean isBlockedFromDeathPenalty()
 	{
-		for (IEventListener listener : _eventListeners)
+		if (_events != null)
 		{
-			if (listener.isOnEvent() && listener.isBlockingDeathPenalty())
+			for (IEventListener listener : _events.values())
 			{
-				return true;
+				if (listener.isOnEvent(this) && listener.isBlockingDeathPenalty(this))
+				{
+					return true;
+				}
 			}
 		}
 		return false;
@@ -14131,43 +14140,6 @@ public final class PlayerInstance extends Playable
 	{
 		final AccountVariables vars = getScript(AccountVariables.class);
 		return vars != null ? vars : addScript(new AccountVariables(getAccountName()));
-	}
-	
-	/**
-	 * Adds a event listener.
-	 * @param listener
-	 */
-	public void addEventListener(IEventListener listener)
-	{
-		_eventListeners.add(listener);
-	}
-	
-	/**
-	 * Removes event listener
-	 * @param listener
-	 */
-	public void removeEventListener(IEventListener listener)
-	{
-		_eventListeners.remove(listener);
-	}
-	
-	public void removeEventListener(Class<? extends IEventListener> clazz)
-	{
-		final Iterator<IEventListener> it = _eventListeners.iterator();
-		IEventListener event;
-		while (it.hasNext())
-		{
-			event = it.next();
-			if (event.getClass() == clazz)
-			{
-				it.remove();
-			}
-		}
-	}
-	
-	public Collection<IEventListener> getEventListeners()
-	{
-		return _eventListeners;
 	}
 	
 	@Override
