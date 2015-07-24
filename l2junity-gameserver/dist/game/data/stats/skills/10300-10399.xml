@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="10300" levels="6" name="Last Attack">
-		<!-- TODO Cuts regular monsters' HP down to 1. -->
 		<!-- Attacks target with 52746 Power added to P. Atk. Cuts regular monsters' HP down to 1. Usable when target's HP is 10% or below. Requires a sword, blunt, spear, fist, dual blunt, or dualsword. -->
 		<table name="#mpConsumes"> 276 297 315 333 351 369 </table>
 		<table name="#magicLvl"> 90 95 99 101 103 105 </table>
@@ -26,6 +25,10 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
+			</effect>
+			<effect name="Lethal">
+				<param fullLethal="100" />
+				<param monsterOnly="true" />
 			</effect>
 		</for>
 	</skill>

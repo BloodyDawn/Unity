@@ -37,6 +37,7 @@ public final class Lethal extends AbstractEffect
 {
 	private final int _fullLethal;
 	private final int _halfLethal;
+	private final boolean _monsterOnly;
 	
 	public Lethal(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
@@ -44,6 +45,7 @@ public final class Lethal extends AbstractEffect
 		
 		_fullLethal = params.getInt("fullLethal", 0);
 		_halfLethal = params.getInt("halfLethal", 0);
+		_monsterOnly = params.getBoolean("monsterOnly", false);
 	}
 	
 	@Override
@@ -88,7 +90,7 @@ public final class Lethal extends AbstractEffect
 		if (Rnd.get(100) < (_fullLethal * chanceMultiplier))
 		{
 			// for Players CP and HP is set to 1.
-			if (target.isPlayer())
+			if (target.isPlayer() && !_monsterOnly)
 			{
 				target.notifyDamageReceived(target.getCurrentHp() - 1, info.getEffector(), info.getSkill(), true, false, false);
 				target.setCurrentCp(1);

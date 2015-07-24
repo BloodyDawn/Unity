@@ -890,10 +890,9 @@
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<skill id="10535" levels="4" name="Scorpion Poison">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Injects a poison that decreases an enemy's Spd. during a normal attack or disables magic skills. Increases poison and bleed attack success rate. -->
 		<table name="#magicLvl"> 85 90 95 99 </table>
-		<table name="#triggerBlockMagicLvl"> 1 1 2 2 </table>
+		<table name="#triggerBlockMagicLvl"> 0 0 1 2 </table>
 		<table name="#triggerWeaknessLvl"> 1 2 3 4 </table>
 		<set name="icon" val="icon.skill10535" />
 		<set name="operateType" val="P" />

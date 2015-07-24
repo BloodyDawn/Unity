@@ -102,7 +102,6 @@
 		</for>
 	</skill>
 	<skill id="10704" levels="3" name="Mass Power Bluff">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Reveals the enemy's back and inflicts Stun for 3 seconds. Requires dagger/dual dagger. Consumes 2 Soulstones. -->
 		<set name="icon" val="icon.skill10704" />
 		<set name="abnormalLvl" val="1" />
@@ -179,7 +178,6 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="10748" levels="1" name="Rogue - Individual">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Pierce through target to inflict a fatal blow. Attacks with 8875 Power added to P. Atk. Over-hit. Half-kill. -->
 		<set name="icon" val="icon.skill1543" />
 		<set name="operateType" val="A2" />
@@ -808,7 +806,6 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10775" levels="6" name="Confusion Decoy">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons a decoy that receives attacks for you. -->
 		<table name="#mpConsumes"> 60 66 72 78 84 90 </table>
 		<table name="#npcIds"> 13437 13438 13439 13467 13468 13469 </table>
@@ -1023,7 +1020,6 @@
 		</for>
 	</skill>
 	<skill id="10784" levels="1" name="Camouflage">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., blends into the environment and hides. Decreases Speed by 30%. -->
 		<set name="icon" val="icon.skill10784" />
 		<set name="abnormalLvl" val="1" />
@@ -1056,13 +1052,16 @@
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="20000" />
+		<cond msgId="113" addName="1">
+			<using kind="BOW,CROSSBOW" />
+		</cond>
 		<for>
 			<effect name="Detection" />
 		</for>
 	</skill>
 	<skill id="10786" levels="6" name="Time Bomb">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Plants a bomb on target that detonates after 10 seconds to inflict damage with 30000 power. While the bomb is being installed, target's P. Accuracy decreases by 10. -->
+		<table name="#triggerLvl"> 1 1 1 2 3 4 </table>
 		<table name="#mpConsumes"> 66 69 72 75 78 81 </table>
 		<table name="#effectPoint"> -706 -710 -714 -718 -722 -726 </table>
 		<set name="icon" val="icon.skill10786" />
@@ -1083,7 +1082,7 @@
 		</for>
 		<endEffects>
 			<effect name="CallSkill">
-				<param skillId="0" skillLevel="1" />
+				<param skillId="10803" skillLevel="#triggerLvl" /> <!-- Time Bomb -->
 			</effect>
 		</endEffects>
 	</skill>

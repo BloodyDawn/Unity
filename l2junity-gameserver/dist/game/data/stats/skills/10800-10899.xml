@@ -90,13 +90,17 @@
 		</endEffects>
 	</skill>
 	<skill id="10803" levels="4" name="Time Bomb">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Boom! -->
+		<table name="#power"> 30000 33546 35088 36630</table>
 		<set name="icon" val="icon.skill0099" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10804" levels="4" name="Bullseye">
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -106,7 +110,6 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="isDebuff" val="true" />
-		<set name="isTriggeredSkill" val="true" />
 	</skill>
 	<skill id="10805" levels="4" name="Quick Charge">
 		<!-- AUTO GENERATED SKILL -->
