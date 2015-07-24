@@ -47,6 +47,11 @@ public class PcAppearance
 	/** The default title color is 0xECF9A2. */
 	private int _titleColor = DEFAULT_TITLE_COLOR;
 	
+	private int _visibleClanId = -1;
+	private int _visibleClanCrestId = -1;
+	private int _visibleAllyId = -1;
+	private int _visibleAllyCrestId = -1;
+	
 	public PcAppearance(byte face, byte hColor, byte hStyle, boolean sex)
 	{
 		_face = face;
@@ -212,5 +217,33 @@ public class PcAppearance
 	public PlayerInstance getOwner()
 	{
 		return _owner;
+	}
+	
+	public int getVisibleClanId()
+	{
+		return _visibleClanId != -1 ? _visibleClanId : getOwner().isCursedWeaponEquipped() ? 0 : getOwner().getClanId();
+	}
+	
+	public int getVisibleClanCrestId()
+	{
+		return _visibleClanCrestId != -1 ? _visibleClanCrestId : getOwner().isCursedWeaponEquipped() ? 0 : getOwner().getClanCrestId();
+	}
+	
+	public int getVisibleAllyId()
+	{
+		return _visibleAllyId != -1 ? _visibleAllyId : getOwner().isCursedWeaponEquipped() ? 0 : getOwner().getAllyId();
+	}
+	
+	public int getVisibleAllyCrestId()
+	{
+		return _visibleAllyCrestId != -1 ? _visibleAllyCrestId : getOwner().isCursedWeaponEquipped() ? 0 : getOwner().getAllyCrestId();
+	}
+	
+	public void setVisibleClanData(int clanId, int clanCrestId, int allyId, int allyCrestId)
+	{
+		_visibleClanId = clanId;
+		_visibleClanCrestId = clanCrestId;
+		_visibleAllyId = allyId;
+		_visibleAllyCrestId = allyCrestId;
 	}
 }

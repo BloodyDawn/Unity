@@ -23,6 +23,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.instancemanager.CeremonyOfChaosManager;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
+import org.l2junity.gameserver.model.actor.appearance.PcAppearance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Instance;
@@ -91,6 +92,13 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			// Remember player's last location
 			player.setLastLocation();
 			
+			// Hide player information
+			final PcAppearance app = player.getAppearance();
+			app.setVisibleName("Challenger" + member.getPosition());
+			app.setVisibleTitle("");
+			app.setVisibleClanData(0, 0, 0, 0);
+			
+			// Register the event instance
 			player.registerOnEvent(this);
 			
 			// Load the html
@@ -124,7 +132,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	
 	public void startFight()
 	{
-		
+	
 	}
 	
 	public void stopFight()
@@ -136,6 +144,12 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			{
 				// Teleport player back
 				player.teleToLocation(player.getLastLocation(), 0, 0);
+				
+				// Restore player information
+				final PcAppearance app = player.getAppearance();
+				app.setVisibleName(null);
+				app.setVisibleTitle(null);
+				app.setVisibleClanData(-1, -1, -1, -1);
 				
 				// Remove player from event
 				player.removeFromEvent(this);
