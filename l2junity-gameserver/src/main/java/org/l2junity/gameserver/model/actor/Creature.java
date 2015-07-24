@@ -4058,7 +4058,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			return true;
 		}
 		
-		if (!isVisible())
+		if (!isSpawned())
 		{
 			_move = null;
 			return true;
@@ -4253,7 +4253,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public void setTarget(WorldObject object)
 	{
-		if ((object != null) && !object.isVisible())
+		if ((object != null) && !object.isSpawned())
 		{
 			object = null;
 		}

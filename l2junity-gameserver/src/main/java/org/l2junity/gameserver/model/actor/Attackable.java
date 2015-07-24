@@ -954,7 +954,7 @@ public class Attackable extends Npc
 			}
 		}
 		
-		if (!ai.getAttacker().isVisible() || ai.getAttacker().isInvisible())
+		if (!ai.getAttacker().isSpawned() || ai.getAttacker().isInvisible())
 		{
 			getAggroList().remove(target);
 			return 0;

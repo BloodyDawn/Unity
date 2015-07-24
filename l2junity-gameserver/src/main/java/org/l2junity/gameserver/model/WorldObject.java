@@ -76,7 +76,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	private final AtomicInteger _heading = new AtomicInteger(0);
 	/** Instance id of object. 0 - Global */
 	private final AtomicInteger _instanceId = new AtomicInteger(0);
-	private boolean _isVisible;
+	private boolean _isSpawned;
 	private boolean _isInvisible;
 	private boolean _isTargetable = true;
 	
@@ -159,7 +159,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		
 		synchronized (this)
 		{
-			_isVisible = false;
+			_isSpawned = false;
 			setWorldRegion(null);
 		}
 		
@@ -187,7 +187,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		synchronized (this)
 		{
 			// Set the x,y,z position of the L2Object spawn and update its _worldregion
-			_isVisible = true;
+			_isSpawned = true;
 			setWorldRegion(World.getInstance().getRegion(getLocation()));
 			
 			// Add the L2Object spawn in the _allobjects of L2World
@@ -213,7 +213,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		synchronized (this)
 		{
 			// Set the x,y,z position of the L2Object spawn and update its _worldregion
-			_isVisible = true;
+			_isSpawned = true;
 			
 			if (x > World.MAP_MAX_X)
 			{
@@ -256,15 +256,15 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	
 	public abstract boolean isAutoAttackable(Creature attacker);
 	
-	public final boolean isVisible()
+	public final boolean isSpawned()
 	{
 		return getWorldRegion() != null;
 	}
 	
-	public final void setIsVisible(boolean value)
+	public final void setSpawned(boolean value)
 	{
-		_isVisible = value;
-		if (!_isVisible)
+		_isSpawned = value;
+		if (!_isSpawned)
 		{
 			setWorldRegion(null);
 		}
@@ -576,7 +576,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		}
 		
 		setXYZ(x, y, z);
-		setIsVisible(false);
+		setSpawned(false);
 	}
 	
 	public final void setLocationInvisible(ILocational loc)
@@ -701,7 +701,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		
 		try
 		{
-			if (_isVisible)
+			if (_isSpawned)
 			{
 				final WorldRegion oldRegion = getWorldRegion();
 				final WorldRegion newRegion = World.getInstance().getRegion(getLocation());
@@ -805,7 +805,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		}
 		
 		_instanceId.set(instanceId);
-		if (_isVisible)
+		if (_isSpawned)
 		{
 			// We don't want some ugly looking disappear/appear effects, so don't update
 			// the knownlist here, but players usually enter instancezones through teleporting

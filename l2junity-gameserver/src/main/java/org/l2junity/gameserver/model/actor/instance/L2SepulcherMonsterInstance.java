@@ -354,7 +354,7 @@ public class L2SepulcherMonsterInstance extends L2MonsterInstance
 				return;
 			}
 			
-			if (!_activeChar.isVisible())
+			if (!_activeChar.isSpawned())
 			{
 				return;
 			}
@@ -380,7 +380,7 @@ public class L2SepulcherMonsterInstance extends L2MonsterInstance
 				return;
 			}
 			
-			if (!_activeChar.isVisible())
+			if (!_activeChar.isSpawned())
 			{
 				return;
 			}

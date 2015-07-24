@@ -290,7 +290,7 @@ public final class ItemInstance extends WorldObject
 		
 		synchronized (this)
 		{
-			setIsVisible(false);
+			setSpawned(false);
 			setWorldRegion(null);
 		}
 		
@@ -1517,7 +1517,7 @@ public final class ItemInstance extends WorldObject
 			synchronized (_itеm)
 			{
 				// Set the x,y,z position of the L2ItemInstance dropped and update its _worldregion
-				_itеm.setIsVisible(true);
+				_itеm.setSpawned(true);
 				_itеm.setXYZ(_x, _y, _z);
 			}
 			

@@ -609,7 +609,7 @@ public final class BlockCheckerEngine
 				}
 				
 				// a player has it, it will be deleted later
-				if (!item.isVisible() || (item.getOwnerId() != 0))
+				if (!item.isSpawned() || (item.getOwnerId() != 0))
 				{
 					continue;
 				}

@@ -1423,7 +1423,7 @@ public final class CrystalCaverns extends AbstractInstance
 				CrystalGolem cryGolem = world.crystalGolems.get(npc);
 				int dx;
 				int dy;
-				if ((cryGolem.foodItem == null) || !cryGolem.foodItem.isVisible())
+				if ((cryGolem.foodItem == null) || !cryGolem.foodItem.isSpawned())
 				{
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, cryGolem.oldLoc);
 					cancelQuestTimers("reachFood");

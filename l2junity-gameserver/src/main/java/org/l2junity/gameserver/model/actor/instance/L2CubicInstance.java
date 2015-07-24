@@ -485,7 +485,7 @@ public final class L2CubicInstance implements IIdentifiable
 						{
 							targetIt = false;
 						}
-						if (!enemy.isVisible())
+						if (!enemy.isSpawned())
 						{
 							targetIt = false;
 						}

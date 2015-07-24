@@ -397,7 +397,7 @@ public abstract class Summon extends Playable
 	
 	public void unSummon(PlayerInstance owner)
 	{
-		if (isVisible() && !isDead())
+		if (isSpawned() && !isDead())
 		{
 			abortAttack();
 			abortCast();
@@ -856,7 +856,7 @@ public abstract class Summon extends Playable
 		
 		sendPacket(new PetInfo(this, val));
 		sendPacket(new PetStatusUpdate(this));
-		if (isVisible())
+		if (isSpawned())
 		{
 			broadcastNpcInfo(val);
 		}

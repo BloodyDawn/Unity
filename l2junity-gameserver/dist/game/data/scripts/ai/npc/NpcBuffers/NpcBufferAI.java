@@ -78,7 +78,7 @@ public class NpcBufferAI implements Runnable
 	@Override
 	public void run()
 	{
-		if ((_npc == null) || !_npc.isVisible() || _npc.isDecayed() || _npc.isDead() || (_skillData == null) || (_skillData.getSkill() == null))
+		if ((_npc == null) || !_npc.isSpawned() || _npc.isDecayed() || _npc.isDead() || (_skillData == null) || (_skillData.getSkill() == null))
 		{
 			return;
 		}

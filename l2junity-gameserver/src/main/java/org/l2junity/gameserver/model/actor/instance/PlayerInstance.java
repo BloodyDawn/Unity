@@ -4488,7 +4488,7 @@ public final class PlayerInstance extends Playable
 		synchronized (target)
 		{
 			// Check if the target to pick up is visible
-			if (!target.isVisible())
+			if (!target.isSpawned())
 			{
 				// Send a Server->Client packet ActionFailed to this L2PcInstance
 				sendPacket(ActionFailed.STATIC_PACKET);
@@ -4834,7 +4834,7 @@ public final class PlayerInstance extends Playable
 			}
 			
 			// Check if the new target is visible
-			if ((newTarget != null) && !isInParty && !newTarget.isVisible())
+			if ((newTarget != null) && !isInParty && !newTarget.isSpawned())
 			{
 				newTarget = null;
 			}

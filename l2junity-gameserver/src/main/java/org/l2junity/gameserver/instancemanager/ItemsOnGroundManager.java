@@ -122,7 +122,7 @@ public final class ItemsOnGroundManager implements Runnable
 					final long dropTime = rs.getLong(8);
 					item.setDropTime(dropTime);
 					item.setProtected(dropTime == -1);
-					item.setIsVisible(true);
+					item.setSpawned(true);
 					World.getInstance().addVisibleObject(item, item.getWorldRegion());
 					_items.add(item);
 					count++;

@@ -145,7 +145,7 @@ public class L2DecoyInstance extends Creature
 			_HateSpam = null;
 		}
 		
-		if (isVisible() && !isDead())
+		if (isSpawned() && !isDead())
 		{
 			ZoneManager.getInstance().getRegion(this).removeFromZones(this);
 			decayMe();

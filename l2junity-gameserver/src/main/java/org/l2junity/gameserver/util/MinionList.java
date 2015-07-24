@@ -301,10 +301,10 @@ public class MinionList
 		@Override
 		public void run()
 		{
-			if (!_master.isAlikeDead() && _master.isVisible())
+			if (!_master.isAlikeDead() && _master.isSpawned())
 			{
 				// minion can be already spawned or deleted
-				if (!_minion.isVisible())
+				if (!_minion.isSpawned())
 				{
 					if (_reusedMinionReferences != null)
 					{

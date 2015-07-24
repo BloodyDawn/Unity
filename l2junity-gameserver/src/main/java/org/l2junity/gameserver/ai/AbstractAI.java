@@ -331,7 +331,7 @@ public abstract class AbstractAI implements Ctrl
 	@Override
 	public final void notifyEvent(CtrlEvent evt, Object arg0, Object arg1)
 	{
-		if ((!_actor.isVisible() && !_actor.isTeleporting()) || !_actor.hasAI())
+		if ((!_actor.isSpawned() && !_actor.isTeleporting()) || !_actor.hasAI())
 		{
 			return;
 		}

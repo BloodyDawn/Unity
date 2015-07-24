@@ -397,7 +397,7 @@ public final class L2TrapInstance extends Npc
 		
 		_owner = null;
 		
-		if (isVisible() && !isDead())
+		if (isSpawned() && !isDead())
 		{
 			ZoneManager.getInstance().getRegion(this).removeFromZones(this);
 			deleteMe();
