@@ -214,7 +214,6 @@ import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.MovieHolder;
 import org.l2junity.gameserver.model.holders.PlayerEventHolder;
 import org.l2junity.gameserver.model.holders.SkillUseHolder;
-import org.l2junity.gameserver.model.interfaces.IEventListener;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.itemcontainer.ItemContainer;
@@ -14017,7 +14016,7 @@ public final class PlayerInstance extends Playable
 	{
 		if (_events != null)
 		{
-			for (IEventListener listener : _events.values())
+			for (AbstractEvent<?> listener : _events.values())
 			{
 				if (listener.isOnEvent(this) && !listener.canRevive(this))
 				{
@@ -14061,7 +14060,7 @@ public final class PlayerInstance extends Playable
 	{
 		if (_events != null)
 		{
-			for (IEventListener listener : _events.values())
+			for (AbstractEvent<?> listener : _events.values())
 			{
 				if (listener.isOnEvent(this) && listener.isBlockingExit(this))
 				{
@@ -14076,7 +14075,7 @@ public final class PlayerInstance extends Playable
 	{
 		if (_events != null)
 		{
-			for (IEventListener listener : _events.values())
+			for (AbstractEvent<?> listener : _events.values())
 			{
 				if (listener.isOnEvent(this) && listener.isBlockingDeathPenalty(this))
 				{

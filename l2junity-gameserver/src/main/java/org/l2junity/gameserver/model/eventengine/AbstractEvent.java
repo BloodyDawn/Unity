@@ -24,14 +24,13 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.AbstractScript;
-import org.l2junity.gameserver.model.interfaces.IEventListener;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 
 /**
  * @author UnAfraid
  * @param <T>
  */
-public abstract class AbstractEvent<T extends AbstractEventMember<?>> extends AbstractScript implements IEventListener
+public abstract class AbstractEvent<T extends AbstractEventMember<?>> extends AbstractScript
 {
 	private final Set<T> _members = ConcurrentHashMap.newKeySet();
 	private IEventState _state;
@@ -74,36 +73,36 @@ public abstract class AbstractEvent<T extends AbstractEventMember<?>> extends Ab
 	}
 	
 	/**
+	 * @param player
 	 * @return {@code true} if player is on event, {@code false} otherwise.
 	 */
-	@Override
 	public boolean isOnEvent(PlayerInstance player)
 	{
 		return true;
 	}
 	
 	/**
+	 * @param player
 	 * @return {@code true} if player is blocked from leaving the game, {@code false} otherwise.
 	 */
-	@Override
 	public boolean isBlockingExit(PlayerInstance player)
 	{
 		return false;
 	}
 	
 	/**
+	 * @param player
 	 * @return {@code true} if player is blocked from receiving death penalty upon death, {@code false} otherwise.
 	 */
-	@Override
 	public boolean isBlockingDeathPenalty(PlayerInstance player)
 	{
 		return false;
 	}
 	
 	/**
+	 * @param player
 	 * @return {@code true} if player can revive after death, {@code false} otherwise.
 	 */
-	@Override
 	public boolean canRevive(PlayerInstance player)
 	{
 		return true;
