@@ -33,11 +33,15 @@
 		</for>
 	</skill>
 	<skill id="10301" levels="1" name="Maximum Force Mastery">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Max Momentum increases to Stage 15. -->
 		<set name="icon" val="icon.skill11842" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<set stat="maxMomentum" val="15" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10302" levels="4" name="Triple Sonic Slash">
 		<!-- AUTO GENERATED SKILL -->

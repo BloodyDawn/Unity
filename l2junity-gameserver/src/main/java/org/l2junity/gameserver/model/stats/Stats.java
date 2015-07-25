@@ -237,7 +237,10 @@ public enum Stats
 	HP_LOCK("hpLock"),
 	
 	// Lock HP, can't go below min value.
-	HP_LOCK_MIN("hpLockMin");
+	HP_LOCK_MIN("hpLockMin"),
+	
+	// Maximun momentum one can charge
+	MAX_MOMENTUM("maxMomentum");
 	
 	public static final int NUM_STATS = values().length;
 	

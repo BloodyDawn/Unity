@@ -210,6 +210,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 		<for>
+			<set stat="maxMomentum" val="10" />
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
@@ -410,10 +411,8 @@
 			<effect name="Debuff">
 				<mul stat="pDef" val="#pDef" />
 			</effect>
-		</for>
-		<for>
 			<effect name="FocusEnergy">
-				<param charge="10" />
+				<param maxCharges="10" />
 			</effect>
 		</for>
 	</skill>

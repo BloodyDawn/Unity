@@ -2028,7 +2028,6 @@
 		<set name="activateRate" val="80" />
 		<set name="basicProperty" val="CON" />
 		<set name="castRange" val="40" />
-		<set name="chargeConsume" val="2" />
 		<set name="effectPoint" val="-679" />
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="1200" />
@@ -2049,6 +2048,7 @@
 		</cond>
 		<for>
 			<effect name="EnergyAttack">
+				<param chargeConsume="2" />
 				<param power="4500" />
 				<param criticalChance="20" />
 				<param overHit="true" />

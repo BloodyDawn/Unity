@@ -33,6 +33,8 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * Energy Attack effect implementation.
@@ -41,6 +43,7 @@ import org.l2junity.gameserver.model.stats.Stats;
 public final class EnergyAttack extends AbstractEffect
 {
 	private final double _power;
+	private final int _chargeConsume;
 	private final int _criticalChance;
 	private final boolean _ignoreShieldDefence;
 	private final boolean _overHit;
@@ -53,6 +56,7 @@ public final class EnergyAttack extends AbstractEffect
 		_criticalChance = params.getInt("criticalChance", 0);
 		_ignoreShieldDefence = params.getBoolean("ignoreShieldDefence", false);
 		_overHit = params.getBoolean("overHit", false);
+		_chargeConsume = params.getInt("chargeConsume", 0);
 	}
 	
 	@Override
@@ -77,9 +81,18 @@ public final class EnergyAttack extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		final PlayerInstance attacker = info.getEffector() instanceof PlayerInstance ? (PlayerInstance) info.getEffector() : null;
-		if (attacker == null)
+		if (!info.getEffector().isPlayer())
 		{
+			return;
+		}
+		
+		final PlayerInstance attacker = info.getEffector().getActingPlayer();
+		
+		if ((attacker.getCharges() < _chargeConsume) || !attacker.decreaseCharges(_chargeConsume))
+		{
+			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
+			sm.addSkillName(info.getSkill());
+			attacker.sendPacket(sm);
 			return;
 		}
 		
@@ -135,7 +148,7 @@ public final class EnergyAttack extends AbstractEffect
 			
 			// charge count should be the count before casting the skill but since its reduced before calling effects
 			// we add skill consume charges to current charges
-			double energyChargesBoost = (((attacker.getCharges() + skill.getChargeConsume()) - 1) * 0.2) + 1;
+			double energyChargesBoost = ((attacker.getCharges() - 1) * 0.2) + 1;
 			
 			attack += _power;
 			attack *= ssBoost;

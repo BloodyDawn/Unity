@@ -556,7 +556,7 @@
 			</not>
 		</cond>
 		<for>
-			<effect name="FocusMaxEnergy" />
+			<effect name="FocusMaxMomentum" />
 		</for>
 	</skill>
 	<skill id="919" levels="1" name="Maximum Sonic Focus">
@@ -580,7 +580,7 @@
 			</not>
 		</cond>
 		<for>
-			<effect name="FocusMaxEnergy" />
+			<effect name="FocusMaxMomentum" />
 		</for>
 	</skill>
 	<skill id="920" levels="37" name="Power Crush">
@@ -2304,12 +2304,16 @@
 	</skill>
 	<skill id="992" levels="8" name="Sonic Mastery">
 		<!-- High Five Skill -->
+		<table name="#maxMomentum"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#magicLvl"> 40 43 49 55 60 66 70 79 </table>
 		<table name="#skillLevel"> 1 2 3 4 5 6 7 8 </table>
 		<set name="icon" val="icon.skill0992" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<for>
+			<effect name="Buff">
+				<set stat="maxMomentum" val="#maxMomentum" />
+			</effect>
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
@@ -2330,6 +2334,7 @@
 	</skill>
 	<skill id="993" levels="8" name="Force Mastery">
 		<!-- High Five Skill -->
+		<table name="#maxMomentum"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#magicLvl"> 24 32 40 52 60 66 72 79 </table>
 		<table name="#skillLevel"> 1 2 3 4 5 6 7 8 </table>
 		<set name="icon" val="icon.skill0993" />
@@ -2337,6 +2342,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
+			<set stat="maxMomentum" val="#maxMomentum" />
 			<effect name="TriggerSkillByAttack">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />

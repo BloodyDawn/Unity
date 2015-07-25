@@ -843,7 +843,6 @@
 		<table name="#mpConsume"> 67 68 70 72 73 75 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 105 111 119 127 135 143 </table> <!-- Confirmed -->
 		<table name="#power"> 1948 2042 2138 2236 2337 2439 2544 2651 2760 2870 2982 3095 3210 3325 3442 3559 3676 3794 3911 4029 4146 4262 4299 4415 4645 4875 5106 22531 26017 29503 33377 38441 40315 42189 </table> <!-- Confirmed -->
 		<set name="castRange" val="40" />
-		<set name="chargeConsume" val="4" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="400" />
@@ -864,6 +863,7 @@
 		</cond>
 		<for>
 			<effect name="EnergyAttack">
+				<param chargeConsume="4" />
 				<param power="#power" />
 				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
@@ -1450,7 +1450,6 @@
 		<table name="#mpConsume"> 44 45 47 50 52 54 54 55 57 59 60 62 64 66 67 69 69 71 73 75 76 78 80 82 83 85 85 87 89 90 92 93 95 96 98 99 101 102 104 105 </table>
 		<table name="#power"> 501 535 570 607 646 729 773 820 868 918 971 1025 1081 1140 1200 1262 1327 1393 1461 1531 1603 1677 1753 1830 1908 1988 2070 2153 2237 2322 2408 2494 2581 2669 2757 2846 2934 3022 3109 3196 </table>
 		<set name="castRange" val="40" />
-		<set name="chargeConsume" val="2" />
 		<set name="coolTime" val="440" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="400" />
@@ -1471,6 +1470,7 @@
 		</cond>
 		<for>
 			<effect name="EnergyAttack">
+				<param chargeConsume="2" />
 				<param power="#power" />
 				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />

@@ -156,7 +156,6 @@ public final class Skill implements IIdentifiable
 	private final BaseStats _basicProperty;
 	
 	private final int _minPledgeClass;
-	private final int _chargeConsume;
 	private final int _soulMaxConsume;
 	
 	private final boolean _isTriggeredSkill; // If true the skill will take activation buff slot instead of a normal buff slot
@@ -329,7 +328,6 @@ public final class Skill implements IIdentifiable
 		_isSuicideAttack = set.getBoolean("isSuicideAttack", false);
 		
 		_minPledgeClass = set.getInt("minPledgeClass", 0);
-		_chargeConsume = set.getInt("chargeConsume", 0);
 		
 		_soulMaxConsume = set.getInt("soulMaxConsumeCount", 0);
 		
@@ -869,11 +867,6 @@ public final class Skill implements IIdentifiable
 	public boolean isHealingPotionSkill()
 	{
 		return getAbnormalType() == AbnormalType.HP_RECOVER;
-	}
-	
-	public int getChargeConsume()
-	{
-		return _chargeConsume;
 	}
 	
 	public int getMaxSoulConsumeCount()

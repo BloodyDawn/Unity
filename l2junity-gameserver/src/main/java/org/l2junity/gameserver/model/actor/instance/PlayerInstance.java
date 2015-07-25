@@ -4020,8 +4020,8 @@ public final class PlayerInstance extends Playable
 			return false;
 		}
 		
-		// Check if the spell using charges or not in AirShip
-		if (((getCharges() < skill.getChargeConsume())) || (isInAirShip() && !skill.hasEffectType(L2EffectType.REFUEL_AIRSHIP)))
+		// Check if not in AirShip
+		if (isInAirShip() && !skill.hasEffectType(L2EffectType.REFUEL_AIRSHIP))
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
 			sm.addSkillName(skill);
@@ -12772,30 +12772,10 @@ public final class PlayerInstance extends Playable
 		return _charges.get();
 	}
 	
-	public void increaseCharges(int count, int max)
+	public void setCharges(int count)
 	{
-		if (_charges.get() >= max)
-		{
-			sendPacket(SystemMessageId.YOUR_FORCE_HAS_REACHED_MAXIMUM_CAPACITY);
-			return;
-		}
-		
-		// Charge clear task should be reset every time a charge is increased.
 		restartChargeTask();
-		
-		if (_charges.addAndGet(count) >= max)
-		{
-			_charges.set(max);
-			sendPacket(SystemMessageId.YOUR_FORCE_HAS_REACHED_MAXIMUM_CAPACITY);
-		}
-		else
-		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOUR_FORCE_HAS_INCREASED_TO_LEVEL_S1);
-			sm.addInt(_charges.get());
-			sendPacket(sm);
-		}
-		
-		sendPacket(new EtcStatusUpdate(this));
+		_charges.set(count);
 	}
 	
 	public boolean decreaseCharges(int count)

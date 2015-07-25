@@ -19,18 +19,22 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
-import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.gameserver.network.client.send.EtcStatusUpdate;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * Focus Max Energy effect implementation.
  * @author Adry_85
  */
-public final class FocusMaxEnergy extends AbstractEffect
+public final class FocusMaxMomentum extends AbstractEffect
 {
-	public FocusMaxEnergy(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public FocusMaxMomentum(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 	}
@@ -46,14 +50,17 @@ public final class FocusMaxEnergy extends AbstractEffect
 	{
 		if (info.getEffected().isPlayer())
 		{
-			final Skill sonicMastery = info.getEffected().getSkills().get(992);
-			final Skill focusMastery = info.getEffected().getSkills().get(993);
-			int maxCharge = (sonicMastery != null) ? sonicMastery.getLevel() : (focusMastery != null) ? focusMastery.getLevel() : 0;
-			if (maxCharge != 0)
-			{
-				int count = maxCharge - info.getEffected().getActingPlayer().getCharges();
-				info.getEffected().getActingPlayer().increaseCharges(count, maxCharge);
-			}
+			final PlayerInstance player = info.getEffected().getActingPlayer();
+			
+			final int count = (int) info.getEffected().calcStat(Stats.MAX_MOMENTUM, 0);
+			
+			player.setCharges(count);
+			
+			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOUR_FORCE_HAS_INCREASED_TO_LEVEL_S1);
+			sm.addInt(count);
+			player.sendPacket(sm);
+			
+			player.sendPacket(new EtcStatusUpdate(player));
 		}
 	}
 }

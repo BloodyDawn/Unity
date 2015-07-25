@@ -159,6 +159,7 @@
 	<xs:complexType name="paramType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
+				<xs:attribute type="xs:byte" name="chargeConsume" use="optional" />
 				<xs:attribute type="xs:string" name="side" use="optional" />
 				<xs:attribute type="xs:string" name="chance" use="optional" />
 				<xs:attribute type="xs:boolean" name="staticChance" use="optional" />
@@ -167,6 +168,7 @@
 				<xs:attribute type="xs:string" name="index" use="optional" />
 				<xs:attribute type="xs:string" name="criticalChance" use="optional" />
 				<xs:attribute type="xs:string" name="charge" use="optional" />
+				<xs:attribute type="xs:string" name="maxCharges" use="optional" />
 				<xs:attribute type="xs:byte" name="cubicId" use="optional" />
 				<xs:attribute type="xs:byte" name="cubicDelay" use="optional" />
 				<xs:attribute type="xs:string" name="cubicDuration" use="optional" />
@@ -448,6 +450,7 @@
 			<xs:enumeration value="hpLock" />
 			<xs:enumeration value="hpLockMin" />
 			<xs:enumeration value="summonPoints" />
+			<xs:enumeration value="maxMomentum" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="addType" mixed="true">
