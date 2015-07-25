@@ -2006,6 +2006,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="trait" val="DISARM" />
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="DUAL" />
@@ -2579,6 +2580,7 @@
 		<set name="reuseDelay" val="150000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
+		<set name="trait" val="DISARM" />
 		<for>
 			<effect name="Disarm">
 				<mul stat="pAtk" val="0.6" />
