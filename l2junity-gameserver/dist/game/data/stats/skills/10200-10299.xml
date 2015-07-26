@@ -215,7 +215,7 @@
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
 				<param minDamage="1" chance="#chance" />
-				<param skillId="6813" skillLevel="8" /> <!-- Focus Sonic -->
+				<param skillId="10283" skillLevel="1" /> <!-- Increase Momentum -->
 				<param targetType="SELF" />
 				<param allowWeapons="ALL" />
 			</effect>
@@ -223,7 +223,7 @@
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="true" />
 				<param minDamage="1" chance="40" />
-				<param skillId="6813" skillLevel="8" /> <!-- Focus Sonic -->
+				<param skillId="10283" skillLevel="1" /> <!-- Increase Momentum -->
 				<param targetType="SELF" />
 				<param allowWeapons="ALL" />
 			</effect>
@@ -790,7 +790,6 @@
 		</for>
 	</skill>
 	<skill id="10276" levels="1" name="Force of Nature">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Immediately increases Momentum to its maximum level. -->
 		<set name="icon" val="icon.skill10276" />
 		<set name="operateType" val="A1" />
@@ -800,6 +799,9 @@
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="60000" />
+		<for>
+			<effect name="FocusMaxMomentum" />
+		</for>
 	</skill>
 	<skill id="10277" levels="4" name="Final Cry">
 		<!-- AUTO GENERATED SKILL -->
@@ -901,11 +903,24 @@
 		</for>
 	</skill>
 	<skill id="10283" levels="1" name="Increase Momentum">
-		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill10283" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="10000" />
+		<set name="rideState" val="NONE" />
+		<set name="magicLvl" val="85" />
+		<set name="blockedInOlympiad" val="true" />
+		<set name="isTriggeredSkill" val="true" />
+		<cond msgId="324">
+			<not>
+				<player Charges="15" />
+			</not>
+		</cond>
+		<for>
+			<effect name="FocusEnergy">
+				<param maxCharges="#maxCharges" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10284" levels="3" name="Lightning Force">
 		<!-- AUTO GENERATED SKILL -->

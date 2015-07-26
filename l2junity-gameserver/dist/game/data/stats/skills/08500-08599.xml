@@ -716,7 +716,6 @@
 		<set name="reuseDelay" val="8000" />
 	</skill>
 	<skill id="8567" levels="1" name="Maximum Force Focus">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Immediately increases Momentum to its maximum Lv.. -->
 		<set name="icon" val="icon.skill0918" />
 		<set name="operateType" val="A1" />
@@ -726,9 +725,20 @@
 		<set name="hitTime" val="900" />
 		<set name="effectPoint" val="150" />
 		<set name="reuseDelay" val="75000" />
+		<set name="rideState" val="NONE" />
+		<cond msgId="113" addName="1">
+			<using kind="DUALFIST" />
+		</cond>
+		<cond msgId="324">
+			<not>
+				<player Charges="8" />
+			</not>
+		</cond>
+		<for>
+			<effect name="FocusMaxMomentum" />
+		</for>
 	</skill>
 	<skill id="8568" levels="1" name="Maximum Sonic Focus">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Immediately increases Momentum to its maximum Lv.. -->
 		<set name="icon" val="icon.skill0919" />
 		<set name="operateType" val="A1" />
@@ -738,6 +748,18 @@
 		<set name="hitTime" val="900" />
 		<set name="effectPoint" val="150" />
 		<set name="reuseDelay" val="75000" />
+		<set name="rideState" val="NONE" />
+		<cond msgId="113" addName="1">
+			<using kind="DUAL" />
+		</cond>
+		<cond msgId="324">
+			<not>
+				<player Charges="8" />
+			</not>
+		</cond>
+		<for>
+			<effect name="FocusMaxMomentum" />
+		</for>
 	</skill>
 	<skill id="8569" levels="1" name="Sonic Rage">
 		<!-- AUTO GENERATED SKILL -->

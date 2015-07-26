@@ -148,6 +148,7 @@ public final class EnergyAttack extends AbstractEffect
 			
 			// charge count should be the count before casting the skill but since its reduced before calling effects
 			// we add skill consume charges to current charges
+			// Nik: 0.2 might 0.25 in H5, check it out for IO
 			double energyChargesBoost = ((attacker.getCharges() - 1) * 0.2) + 1;
 			
 			attack += _power;
