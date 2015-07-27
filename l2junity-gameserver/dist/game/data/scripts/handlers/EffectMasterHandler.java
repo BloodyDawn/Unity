@@ -60,7 +60,6 @@ public final class EffectMasterHandler
 		ChangeFishingMastery.class,
 		ChangeHairColor.class,
 		ChangeHairStyle.class,
-		CheckForceSkill.class,
 		CheckSynergySkill.class,
 		ClanGate.class,
 		ClassChange.class,
