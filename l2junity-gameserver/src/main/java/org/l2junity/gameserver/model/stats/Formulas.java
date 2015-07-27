@@ -1347,7 +1347,7 @@ public final class Formulas
 		}
 		
 		final int activateRate = skill.getActivateRate();
-		if ((activateRate == -1) || (skill.getBasicProperty() == BaseStats.NONE))
+		if ((activateRate == -1))
 		{
 			return true;
 		}
@@ -1358,30 +1358,8 @@ public final class Formulas
 			magicLevel = target.getLevel() + 3;
 		}
 		
-		int targetBaseStat = 0;
-		switch (skill.getBasicProperty())
-		{
-			case STR:
-				targetBaseStat = target.getSTR();
-				break;
-			case DEX:
-				targetBaseStat = target.getDEX();
-				break;
-			case CON:
-				targetBaseStat = target.getCON();
-				break;
-			case INT:
-				targetBaseStat = target.getINT();
-				break;
-			case MEN:
-				targetBaseStat = target.getMEN();
-				break;
-			case WIT:
-				targetBaseStat = target.getWIT();
-				break;
-		}
-		
-		final double baseMod = ((((((magicLevel - target.getLevel()) + 3) * skill.getLvlBonusRate()) + activateRate) + 30.0) - targetBaseStat);
+		final int targetBasicProperty = skill.getBasicProperty().calcBonus(target);
+		final double baseMod = ((((((magicLevel - target.getLevel()) + 3) * skill.getLvlBonusRate()) + activateRate) + 30.0) - targetBasicProperty);
 		final double elementMod = calcAttributeBonus(attacker, target, skill);
 		final double traitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
 		final double buffDebuffMod = 1 + (target.calcStat(skill.isDebuff() ? Stats.DEBUFF_VULN : Stats.BUFF_VULN, 1, null, null) / 100);
@@ -1439,7 +1417,7 @@ public final class Formulas
 		
 		// Calculate BaseRate.
 		double baseRate = skill.getActivateRate();
-		double statMod = skill.getBasicProperty().calcBonus(target);
+		double statMod = 1 + (skill.getBasicProperty().calcBonus(target) / 100);
 		double rate = (baseRate / statMod);
 		
 		// Resist Modifier.
@@ -2040,15 +2018,6 @@ public final class Formulas
 			time *= 2;
 		}
 		
-		// Debuffs Duration Affected by Resistances.
-		if ((caster != null) && (target != null) && skill.isDebuff())
-		{
-			double statMod = skill.getBasicProperty().calcBonus(target);
-			double resMod = calcGeneralTraitBonus(caster, target, skill.getTraitType(), false);
-			double lvlBonusMod = calcLvlBonusMod(caster, target, skill);
-			double elementMod = calcAttributeBonus(caster, target, skill);
-			time = (int) Math.ceil(CommonUtil.constrain(((time * resMod * lvlBonusMod * elementMod) / statMod), (time * 0.5), time));
-		}
 		return time;
 	}
 	

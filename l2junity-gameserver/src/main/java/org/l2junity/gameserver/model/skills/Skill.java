@@ -57,7 +57,7 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
-import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.BasicProperty;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.TraitType;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -154,7 +154,7 @@ public final class Skill implements IIdentifiable
 	private final AttributeType _attributeType;
 	private final int _attributeValue;
 	
-	private final BaseStats _basicProperty;
+	private final BasicProperty _basicProperty;
 	
 	private final int _minPledgeClass;
 	private final int _soulMaxConsume;
@@ -327,7 +327,7 @@ public final class Skill implements IIdentifiable
 		_attributeType = set.getEnum("attributeType", AttributeType.class, AttributeType.NONE);
 		_attributeValue = set.getInt("attributeValue", 0);
 		
-		_basicProperty = set.getEnum("basicProperty", BaseStats.class, BaseStats.NONE);
+		_basicProperty = set.getEnum("basicProperty", BasicProperty.class, BasicProperty.NONE);
 		
 		_isSuicideAttack = set.getBoolean("isSuicideAttack", false);
 		
@@ -635,10 +635,10 @@ public final class Skill implements IIdentifiable
 	}
 	
 	/**
-	 * Return skill basicProperty base stat (STR, INT ...).
+	 * Return skill basic property type.
 	 * @return
 	 */
-	public BaseStats getBasicProperty()
+	public BasicProperty getBasicProperty()
 	{
 		return _basicProperty;
 	}

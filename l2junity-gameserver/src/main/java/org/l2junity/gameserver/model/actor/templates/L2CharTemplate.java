@@ -27,6 +27,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.stats.BasicProperty;
 import org.l2junity.gameserver.model.stats.MoveType;
 
 /**
@@ -86,6 +87,9 @@ public class L2CharTemplate extends ListenersContainer
 	private double _fCollisionHeight;
 	
 	private final double[] _moveType = new double[MoveType.values().length];
+	
+	private final int[] _basicProperty = new int[BasicProperty.values().length];
+	
 	/** The creature's race. */
 	private Race _race;
 	
@@ -154,6 +158,9 @@ public class L2CharTemplate extends ListenersContainer
 		setBaseMoveSpeed(MoveType.SLOW_SWIM, set.getDouble("baseSwimWalkSpd", getBaseMoveSpeed(MoveType.WALK)));
 		setBaseMoveSpeed(MoveType.FAST_FLY, set.getDouble("baseFlyRunSpd", getBaseMoveSpeed(MoveType.RUN)));
 		setBaseMoveSpeed(MoveType.SLOW_FLY, set.getDouble("baseFlyWalkSpd", getBaseMoveSpeed(MoveType.WALK)));
+		
+		_basicProperty[BasicProperty.PHYSICAL.ordinal()] = set.getInt("physicalAbnormalResist", 10);
+		_basicProperty[BasicProperty.MAGIC.ordinal()] = set.getInt("magicAbnormalResist", 10);
 	}
 	
 	/**
@@ -468,6 +475,15 @@ public class L2CharTemplate extends ListenersContainer
 	public int getBaseBreath()
 	{
 		return _baseBreath;
+	}
+	
+	/**
+	 * @param property
+	 * @return base abnormal resist by basic property type.
+	 */
+	public int getBasicPropertyValue(BasicProperty property)
+	{
+		return _basicProperty[property.ordinal()];
 	}
 	
 	/**

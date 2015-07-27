@@ -193,6 +193,12 @@ public class NpcData implements IGameXmlReader
 												set.set("baseShldRate", parseInteger(attrs, "shieldRate"));
 												break;
 											}
+											case "abnormalresist":
+											{
+												set.set("physicalAbnormalResist", parseDouble(attrs, "physical"));
+												set.set("magicAbnormalResist", parseDouble(attrs, "magic"));
+												break;
+											}
 											case "attribute":
 											{
 												for (Node attribute_node = stats_node.getFirstChild(); attribute_node != null; attribute_node = attribute_node.getNextSibling())
