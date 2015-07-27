@@ -66,7 +66,7 @@ public class ExOlympiadSpelledInfo implements IClientOutgoingPacket
 				packet.writeH(info.getSkill().getDisplayLevel());
 				packet.writeH(0x00); // Sub level
 				packet.writeD(0x00);
-				packet.writeH(info.getTime());
+				packet.writeH(info.getSkill().isAura() ? -1 : info.getTime());
 			}
 		}
 		for (Skill skill : _effects2)

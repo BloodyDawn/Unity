@@ -261,7 +261,7 @@ public final class BuffInfo
 		}
 		
 		// When effects are initialized, the successfully landed.
-		if (_effected.isPlayer() && !_skill.isPassive())
+		if (_effected.isPlayer() && !_skill.isPassive() && !_skill.isAura())
 		{
 			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_S_EFFECT_CAN_BE_FELT);
 			sm.addSkillName(_skill);
@@ -384,7 +384,7 @@ public final class BuffInfo
 		// Remove abnormal visual effects.
 		resetAbnormalVisualEffects();
 		// Set the proper system message.
-		if (!(_effected.isSummon() && !((Summon) _effected).getOwner().hasSummon()))
+		if (!(_effected.isSummon() && !((Summon) _effected).getOwner().hasSummon()) && !_skill.isAura())
 		{
 			SystemMessageId smId = null;
 			if (_skill.isToggle())

@@ -51,7 +51,7 @@ public class ExAbnormalStatusUpdateFromTarget implements IClientOutgoingPacket
 			
 			_skillId = skill.getDisplayId();
 			_level = skill.getDisplayLevel();
-			_duration = info.getTime();
+			_duration = skill.isAura() ? -1 : info.getTime();
 			_caster = casterId;
 		}
 	}

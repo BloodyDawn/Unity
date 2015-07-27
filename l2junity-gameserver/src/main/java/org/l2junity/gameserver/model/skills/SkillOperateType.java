@@ -165,6 +165,15 @@ public enum SkillOperateType
 	}
 	
 	/**
+	 * Verifies if the operative type correspond to a active aura skill.
+	 * @return {@code true} if the operative skill type is active aura, {@code false} otherwise
+	 */
+	public boolean isAura()
+	{
+		return (this == A5);
+	}
+	
+	/**
 	 * Verifies if the operative type correspond to a channeling skill.
 	 * @return {@code true} if the operative skill type is channeling, {@code false} otherwise
 	 */

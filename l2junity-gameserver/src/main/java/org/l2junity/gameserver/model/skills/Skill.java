@@ -782,32 +782,37 @@ public final class Skill implements IIdentifiable
 	
 	public boolean isActive()
 	{
-		return (_operateType != null) && _operateType.isActive();
+		return _operateType.isActive();
 	}
 	
 	public boolean isPassive()
 	{
-		return (_operateType != null) && _operateType.isPassive();
+		return _operateType.isPassive();
 	}
 	
 	public boolean isToggle()
 	{
-		return (_operateType != null) && _operateType.isToggle();
+		return _operateType.isToggle();
+	}
+	
+	public boolean isAura()
+	{
+		return _operateType.isAura();
 	}
 	
 	public boolean isContinuous()
 	{
-		return ((_operateType != null) && _operateType.isContinuous()) || isSelfContinuous();
+		return _operateType.isContinuous() || isSelfContinuous();
 	}
 	
 	public boolean isSelfContinuous()
 	{
-		return (_operateType != null) && _operateType.isSelfContinuous();
+		return _operateType.isSelfContinuous();
 	}
 	
 	public boolean isChanneling()
 	{
-		return (_operateType != null) && _operateType.isChanneling();
+		return _operateType.isChanneling();
 	}
 	
 	public boolean isTriggeredSkill()
