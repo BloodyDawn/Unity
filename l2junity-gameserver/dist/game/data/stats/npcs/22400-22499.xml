@@ -18,6 +18,7 @@
 				<run ground="180" />
 			</speed>
 			<hit_time>450</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -61,6 +62,7 @@
 				<run ground="180" />
 			</speed>
 			<hit_time>450</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -104,6 +106,7 @@
 				<walk ground="1" />
 				<run ground="100" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -163,6 +166,7 @@
 				<run ground="200" />
 			</speed>
 			<hit_time>480</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -230,6 +234,7 @@
 				<run ground="200" />
 			</speed>
 			<hit_time>430</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -289,6 +294,7 @@
 				<run ground="200" />
 			</speed>
 			<hit_time>490</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -351,6 +357,7 @@
 				<run ground="200" />
 			</speed>
 			<hit_time>490</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -413,6 +420,7 @@
 				<run ground="200" />
 			</speed>
 			<hit_time>490</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -465,6 +473,7 @@
 				<run ground="160" />
 			</speed>
 			<hit_time>460</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -514,6 +523,7 @@
 				<run ground="160" />
 			</speed>
 			<hit_time>460</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -564,6 +574,7 @@
 				<run ground="160" />
 			</speed>
 			<hit_time>460</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -614,6 +625,7 @@
 				<run ground="160" />
 			</speed>
 			<hit_time>490</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -666,6 +678,7 @@
 				<run ground="160" />
 			</speed>
 			<hit_time>490</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -726,6 +739,7 @@
 				<run ground="155" />
 			</speed>
 			<hit_time>210</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -753,23 +767,23 @@
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -813,6 +827,7 @@
 				<run ground="160" />
 			</speed>
 			<hit_time>170</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -843,23 +858,23 @@
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -904,6 +919,7 @@
 				<run ground="120" />
 			</speed>
 			<hit_time>520</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -935,23 +951,23 @@
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -993,6 +1009,7 @@
 				<run ground="110" />
 			</speed>
 			<hit_time>480</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -1020,23 +1037,23 @@
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -1080,6 +1097,7 @@
 				<run ground="110" />
 			</speed>
 			<hit_time>460</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -1108,23 +1126,23 @@
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -1169,6 +1187,7 @@
 				<run ground="130" />
 			</speed>
 			<hit_time>760</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -1198,23 +1217,23 @@
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -1255,6 +1274,7 @@
 				<run ground="15" />
 			</speed>
 			<hit_time>430</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -1282,23 +1302,23 @@
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -1341,6 +1361,7 @@
 				<run ground="90" />
 			</speed>
 			<hit_time>370</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -1369,23 +1390,23 @@
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -1428,6 +1449,7 @@
 				<walk ground="60" />
 				<run ground="170" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -1457,23 +1479,23 @@
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -1515,6 +1537,7 @@
 				<run ground="150" />
 			</speed>
 			<hit_time>780</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -1542,23 +1565,23 @@
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -1600,6 +1623,7 @@
 				<walk ground="60" />
 				<run ground="160" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -1628,23 +1652,23 @@
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -1689,6 +1713,7 @@
 				<run ground="150" />
 			</speed>
 			<hit_time>780</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -1718,23 +1743,23 @@
 					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -1776,6 +1801,7 @@
 				<run ground="140" />
 			</speed>
 			<hit_time>280</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -1803,23 +1829,23 @@
 					<item id="952" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (C-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -1863,6 +1889,7 @@
 				<run ground="140" />
 			</speed>
 			<hit_time>560</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -1891,23 +1918,23 @@
 					<item id="952" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (C-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -1952,6 +1979,7 @@
 				<run ground="140" />
 			</speed>
 			<hit_time>460</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -1981,23 +2009,23 @@
 					<item id="952" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (C-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -2039,6 +2067,7 @@
 				<run ground="160" />
 			</speed>
 			<hit_time>460</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -2066,23 +2095,23 @@
 					<item id="952" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (C-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -2126,6 +2155,7 @@
 				<run ground="160" />
 			</speed>
 			<hit_time>390</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -2154,23 +2184,23 @@
 					<item id="952" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (C-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -2215,6 +2245,7 @@
 				<run ground="160" />
 			</speed>
 			<hit_time>390</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -2244,23 +2275,23 @@
 					<item id="952" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (C-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -2302,6 +2333,7 @@
 				<run ground="130" />
 			</speed>
 			<hit_time>460</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -2329,23 +2361,23 @@
 					<item id="948" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (B-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -2389,6 +2421,7 @@
 				<run ground="120" />
 			</speed>
 			<hit_time>300</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -2417,23 +2450,23 @@
 					<item id="948" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (B-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -2478,6 +2511,7 @@
 				<run ground="140" />
 			</speed>
 			<hit_time>280</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -2507,23 +2541,23 @@
 					<item id="948" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (B-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -2565,6 +2599,7 @@
 				<run ground="160" />
 			</speed>
 			<hit_time>520</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -2592,23 +2627,23 @@
 					<item id="948" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (B-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -2652,6 +2687,7 @@
 				<run ground="160" />
 			</speed>
 			<hit_time>340</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -2680,23 +2716,23 @@
 					<item id="948" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (B-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -2741,6 +2777,7 @@
 				<run ground="170" />
 			</speed>
 			<hit_time>560</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -2770,23 +2807,23 @@
 					<item id="948" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (B-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -2828,6 +2865,7 @@
 				<run ground="190" />
 			</speed>
 			<hit_time>450</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -2855,23 +2893,23 @@
 					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (A-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -2914,6 +2952,7 @@
 				<walk ground="43" />
 				<run ground="165" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -2942,23 +2981,23 @@
 					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (A-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -3002,6 +3041,7 @@
 				<walk ground="60" />
 				<run ground="160" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -3031,23 +3071,23 @@
 					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (A-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -3088,6 +3128,7 @@
 				<run ground="210" />
 			</speed>
 			<hit_time>490</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -3115,23 +3156,23 @@
 					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (A-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -3174,6 +3215,7 @@
 				<run ground="210" />
 			</speed>
 			<hit_time>490</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -3202,23 +3244,23 @@
 					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (A-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -3262,6 +3304,7 @@
 				<run ground="210" />
 			</speed>
 			<hit_time>490</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -3291,23 +3334,23 @@
 					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (A-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -3348,6 +3391,7 @@
 				<run ground="170" />
 			</speed>
 			<hit_time>580</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -3375,23 +3419,23 @@
 					<item id="960" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (S-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -3434,6 +3478,7 @@
 				<run ground="170" />
 			</speed>
 			<hit_time>550</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -3462,23 +3507,23 @@
 					<item id="960" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (S-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -3522,6 +3567,7 @@
 				<run ground="180" />
 			</speed>
 			<hit_time>550</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" />
 		<skill_list>
@@ -3553,23 +3599,23 @@
 					<item id="960" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (S-grade) -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -3611,6 +3657,7 @@
 				<run ground="110" />
 			</speed>
 			<hit_time>480</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -3667,6 +3714,7 @@
 				<run ground="110" />
 			</speed>
 			<hit_time>480</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -3726,6 +3774,7 @@
 				<run ground="160" />
 			</speed>
 			<hit_time>650</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -3786,6 +3835,7 @@
 				<run ground="140" />
 			</speed>
 			<hit_time>280</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -3842,6 +3892,7 @@
 				<run ground="140" />
 			</speed>
 			<hit_time>280</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -3901,6 +3952,7 @@
 				<run ground="140" />
 			</speed>
 			<hit_time>560</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -3960,6 +4012,7 @@
 				<run ground="23" />
 			</speed>
 			<hit_time>410</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -4015,6 +4068,7 @@
 				<run ground="23" />
 			</speed>
 			<hit_time>410</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -4073,6 +4127,7 @@
 				<run ground="20" />
 			</speed>
 			<hit_time>410</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -4133,6 +4188,7 @@
 				<run ground="120" />
 			</speed>
 			<hit_time>520</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -4189,6 +4245,7 @@
 				<run ground="120" />
 			</speed>
 			<hit_time>520</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -4247,6 +4304,7 @@
 				<run ground="160" />
 			</speed>
 			<hit_time>560</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -4306,6 +4364,7 @@
 				<run ground="170" />
 			</speed>
 			<hit_time>490</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -4361,6 +4420,7 @@
 				<run ground="170" />
 			</speed>
 			<hit_time>490</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -4419,6 +4479,7 @@
 				<run ground="170" />
 			</speed>
 			<hit_time>240</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>

@@ -24,6 +24,7 @@
 				<walk ground="45" />
 				<run ground="225" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
@@ -82,6 +83,7 @@
 				<walk ground="45" />
 				<run ground="270" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
@@ -129,6 +131,7 @@
 				<defence fire="150" water="200" wind="200" earth="200" holy="200" dark="200" />
 				<attack type="WATER" value="280" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -160,6 +163,7 @@
 				<defence fire="200" water="200" wind="200" earth="150" holy="200" dark="200" />
 				<attack type="WIND" value="280" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -191,6 +195,7 @@
 				<defence fire="200" water="200" wind="200" earth="150" holy="200" dark="200" />
 				<attack type="WIND" value="280" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -222,6 +227,7 @@
 				<defence fire="200" water="200" wind="200" earth="150" holy="200" dark="200" />
 				<attack type="WIND" value="280" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -253,6 +259,7 @@
 				<defence fire="200" water="200" wind="200" earth="150" holy="200" dark="200" />
 				<attack type="WIND" value="280" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -284,6 +291,7 @@
 				<defence fire="200" water="200" wind="200" earth="150" holy="200" dark="200" />
 				<attack type="WIND" value="280" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -315,6 +323,7 @@
 				<defence fire="200" water="200" wind="200" earth="150" holy="200" dark="200" />
 				<attack type="WIND" value="280" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -343,6 +352,7 @@
 			</speed>
 			<attack physical="864.185233843244" magical="414.921798802986" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="728.44779" magical="355.36" />
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -356,22 +366,22 @@
 		<drop_lists>
 			<death>
 				<group chance="2.961">
-					<item id="210" min="1" max="1" chance="50.151975683891" /> <!-- Staff of Evil Spirits  -->
-					<item id="7901" min="1" max="1" chance="49.848024316109" /> <!-- Star Buster  -->
+					<item id="210" min="1" max="1" chance="50.151975683891" /> <!-- Staff of Evil Spirits -->
+					<item id="7901" min="1" max="1" chance="49.848024316109" /> <!-- Star Buster -->
 				</group>
 				<group chance="4.295">
-					<item id="2403" min="1" max="1" chance="100" /> <!-- Blue Wolf Stockings  -->
+					<item id="2403" min="1" max="1" chance="100" /> <!-- Blue Wolf Stockings -->
 				</group>
 				<group chance="12.66">
-					<item id="2475" min="1" max="1" chance="100" /> <!-- Sealed Doom Gloves  -->
+					<item id="2475" min="1" max="1" chance="100" /> <!-- Sealed Doom Gloves -->
 				</group>
 				<group chance="29.475">
-					<item id="948" min="1" max="1" chance="86.242578456319" /> <!-- Scroll: Enchant Armor (B-grade)  -->
-					<item id="947" min="1" max="1" chance="13.757421543681" /> <!-- Scroll: Enchant Weapon (B-grade)  -->
+					<item id="948" min="1" max="1" chance="86.242578456319" /> <!-- Scroll: Enchant Armor (B-grade) -->
+					<item id="947" min="1" max="1" chance="13.757421543681" /> <!-- Scroll: Enchant Weapon (B-grade) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="1" max="1" chance="68.67" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="1" max="1" chance="68.67" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -391,6 +401,7 @@
 			</speed>
 			<attack physical="442.8992" magical="302.44274" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="237.99429" magical="174.1539" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -417,6 +428,7 @@
 			</speed>
 			<attack physical="995.161795536181" magical="528.117617261634" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="772.02801" magical="376.62" />
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -430,22 +442,22 @@
 		<drop_lists>
 			<death>
 				<group chance="0.6">
-					<item id="8678" min="1" max="1" chance="50" /> <!-- Sirra's Blade  -->
-					<item id="8688" min="1" max="1" chance="50" /> <!-- Daimon Crystal  -->
+					<item id="8678" min="1" max="1" chance="50" /> <!-- Sirra's Blade -->
+					<item id="8688" min="1" max="1" chance="50" /> <!-- Daimon Crystal -->
 				</group>
 				<group chance="11.846">
-					<item id="5305" min="1" max="1" chance="61.894310315718" /> <!-- Sealed Tallum Stockings  -->
-					<item id="5297" min="1" max="1" chance="38.105689684282" /> <!-- Sealed Dark Crystal Leather Armor  -->
+					<item id="5305" min="1" max="1" chance="61.894310315718" /> <!-- Sealed Tallum Stockings -->
+					<item id="5297" min="1" max="1" chance="38.105689684282" /> <!-- Sealed Dark Crystal Leather Armor -->
 				</group>
 				<group chance="4.539">
-					<item id="5289" min="1" max="1" chance="100" /> <!-- Sealed Dark Crystal Helmet  -->
+					<item id="5289" min="1" max="1" chance="100" /> <!-- Sealed Dark Crystal Helmet -->
 				</group>
 				<group chance="16.62">
-					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (A-grade)  -->
+					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (A-grade) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="1" max="1" chance="78.24" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="1" max="1" chance="78.24" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -465,6 +477,7 @@
 			</speed>
 			<attack physical="521.12391" magical="355.86007" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="257.34267" magical="188.3122" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -492,6 +505,7 @@
 			</speed>
 			<attack physical="1177.92572044928" magical="617.732267953375" critical="4" attackSpeed="253" range="80" type="POLE" distance="80" width="120" random="10" accuracy="0" />
 			<defence physical="830.18256" magical="405" />
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -506,20 +520,20 @@
 		<drop_lists>
 			<death>
 				<group chance="0.6">
-					<item id="8679" min="1" max="1" chance="50" /> <!-- Sword of Ipos  -->
-					<item id="8682" min="1" max="1" chance="50" /> <!-- Naga Storm  -->
+					<item id="8679" min="1" max="1" chance="50" /> <!-- Sword of Ipos -->
+					<item id="8682" min="1" max="1" chance="50" /> <!-- Naga Storm -->
 				</group>
 				<group chance="16.31">
-					<item id="5313" min="1" max="1" chance="60.606989576947" /> <!-- Sealed Gauntlets of Nightmare  -->
-					<item id="5314" min="1" max="1" chance="30.116492949111" /> <!-- Sealed Boots of Nightmare  -->
-					<item id="5311" min="1" max="1" chance="9.2765174739424" /> <!-- Sealed Armor of Nightmare  -->
+					<item id="5313" min="1" max="1" chance="60.606989576947" /> <!-- Sealed Gauntlets of Nightmare -->
+					<item id="5314" min="1" max="1" chance="30.116492949111" /> <!-- Sealed Boots of Nightmare -->
+					<item id="5311" min="1" max="1" chance="9.2765174739424" /> <!-- Sealed Armor of Nightmare -->
 				</group>
 				<group chance="19.67">
-					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (A-grade)  -->
+					<item id="730" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (A-grade) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="1" max="1" chance="80.86" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="1" max="1" chance="80.86" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -539,6 +553,7 @@
 			</speed>
 			<attack physical="582.81759" magical="397.98887" critical="4" attackSpeed="253" range="40" type="FIST" distance="80" width="120" random="5" accuracy="5" />
 			<defence physical="271.89033" magical="198.95754" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -565,6 +580,7 @@
 			</speed>
 			<attack physical="1360.14571404749" magical="715.941664120301" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="887.74791" magical="433.08" />
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -578,19 +594,19 @@
 		<drop_lists>
 			<death>
 				<group chance="1.5">
-					<item id="8685" min="1" max="1" chance="50" /> <!-- Sobekk's Hurricane  -->
-					<item id="8686" min="1" max="1" chance="50" /> <!-- Themis' Tongue  -->
+					<item id="8685" min="1" max="1" chance="50" /> <!-- Sobekk's Hurricane -->
+					<item id="8686" min="1" max="1" chance="50" /> <!-- Themis' Tongue -->
 				</group>
 				<group chance="16.399">
-					<item id="5294" min="1" max="1" chance="80.980547594366" /> <!-- Sealed Tallum Helmet  -->
-					<item id="5293" min="1" max="1" chance="19.019452405634" /> <!-- Sealed Tallum Plate Armor  -->
+					<item id="5294" min="1" max="1" chance="80.980547594366" /> <!-- Sealed Tallum Helmet -->
+					<item id="5293" min="1" max="1" chance="19.019452405634" /> <!-- Sealed Tallum Plate Armor -->
 				</group>
 				<group chance="2.639">
-					<item id="729" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Weapon (A-grade)  -->
+					<item id="729" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Weapon (A-grade) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="1" max="1" chance="79.9" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="1" max="1" chance="79.9" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -611,6 +627,7 @@
 			</speed>
 			<attack physical="1446.52525372902" magical="815.689881194743" critical="8" attackSpeed="253" range="1100" type="BOW" distance="10" width="0" random="5" accuracy="0" />
 			<defence physical="916.07841" magical="446.9" />
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -624,21 +641,21 @@
 		<drop_lists>
 			<death>
 				<group chance="1.5">
-					<item id="8683" min="1" max="1" chance="50" /> <!-- Tiphon's Spear  -->
-					<item id="8684" min="1" max="1" chance="50" /> <!-- Shyeed's Bow  -->
+					<item id="8683" min="1" max="1" chance="50" /> <!-- Tiphon's Spear -->
+					<item id="8684" min="1" max="1" chance="50" /> <!-- Shyeed's Bow -->
 				</group>
 				<group chance="6.993">
-					<item id="5304" min="1" max="1" chance="100" /> <!-- Sealed Tallum Tunic  -->
+					<item id="5304" min="1" max="1" chance="100" /> <!-- Sealed Tallum Tunic -->
 				</group>
 				<group chance="10.91">
-					<item id="5295" min="1" max="1" chance="100" /> <!-- Sealed Tallum Gloves  -->
+					<item id="5295" min="1" max="1" chance="100" /> <!-- Sealed Tallum Gloves -->
 				</group>
 				<group chance="2.745">
-					<item id="729" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Weapon (A-grade)  -->
+					<item id="729" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Weapon (A-grade) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="1" max="1" chance="78.37" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="1" max="1" chance="78.37" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -658,6 +675,7 @@
 			</speed>
 			<attack physical="731.52506" magical="499.53679" critical="8" attackSpeed="253" range="1100" type="BOW" distance="10" width="0" random="5" accuracy="0" />
 			<defence physical="305.35947" magical="223.44881" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -685,6 +703,7 @@
 			</speed>
 			<attack physical="1564.66050572141" magical="876.212888951461" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="957.73869" magical="467.22" />
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -698,22 +717,22 @@
 		<drop_lists>
 			<death>
 				<group chance="3.949">
-					<item id="5315" min="1" max="1" chance="59.635350721702" /> <!-- Sealed Shield of Nightmare  -->
-					<item id="7901" min="1" max="1" chance="32.76778931375" /> <!-- Star Buster  -->
-					<item id="8687" min="1" max="1" chance="7.596859964548" /> <!-- Cabrio's Hand  -->
+					<item id="5315" min="1" max="1" chance="59.635350721702" /> <!-- Sealed Shield of Nightmare -->
+					<item id="7901" min="1" max="1" chance="32.76778931375" /> <!-- Star Buster -->
+					<item id="8687" min="1" max="1" chance="7.596859964548" /> <!-- Cabrio's Hand -->
 				</group>
 				<group chance="9.766">
-					<item id="5318" min="1" max="1" chance="50.327667417571" /> <!-- Sealed Majestic Gauntlets  -->
-					<item id="5319" min="1" max="1" chance="33.841900471022" /> <!-- Sealed Majestic Boots  -->
-					<item id="5316" min="1" max="1" chance="15.830432111407" /> <!-- Sealed Majestic Plate Armor  -->
+					<item id="5318" min="1" max="1" chance="50.327667417571" /> <!-- Sealed Majestic Gauntlets -->
+					<item id="5319" min="1" max="1" chance="33.841900471022" /> <!-- Sealed Majestic Boots -->
+					<item id="5316" min="1" max="1" chance="15.830432111407" /> <!-- Sealed Majestic Plate Armor -->
 				</group>
 				<group chance="11.51">
-					<item id="730" min="1" max="1" chance="97.393570807993" /> <!-- Scroll: Enchant Armor (A-grade)  -->
-					<item id="6569" min="1" max="1" chance="2.6064291920069" /> <!-- Blessed Scroll: Enchant Weapon (A-grade)  -->
+					<item id="730" min="1" max="1" chance="97.393570807993" /> <!-- Scroll: Enchant Armor (A-grade) -->
+					<item id="6569" min="1" max="1" chance="2.6064291920069" /> <!-- Blessed Scroll: Enchant Weapon (A-grade) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="1" max="1" chance="78.98" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="1" max="1" chance="78.98" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -733,6 +752,7 @@
 			</speed>
 			<attack physical="794.70901" magical="542.68324" critical="1" attackSpeed="253" range="40" type="BLUNT" distance="80" width="120" random="20" accuracy="9" />
 			<defence physical="319.24623" magical="233.61053" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -759,6 +779,7 @@
 			</speed>
 			<attack physical="1564.66050572141" magical="876.212888951461" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="957.73869" magical="467.22" />
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -772,21 +793,21 @@
 		<drop_lists>
 			<death>
 				<group chance="1.5">
-					<item id="8683" min="1" max="1" chance="50" /> <!-- Tiphon's Spear  -->
-					<item id="8685" min="1" max="1" chance="50" /> <!-- Sobekk's Hurricane  -->
+					<item id="8683" min="1" max="1" chance="50" /> <!-- Tiphon's Spear -->
+					<item id="8685" min="1" max="1" chance="50" /> <!-- Sobekk's Hurricane -->
 				</group>
 				<group chance="8.338">
-					<item id="5308" min="1" max="1" chance="43.247781242504" /> <!-- Sealed Dark Crystal Robe  -->
-					<item id="5329" min="1" max="1" chance="28.579995202686" /> <!-- Sealed Majestic Robe  -->
-					<item id="5326" min="1" max="1" chance="28.172223554809" /> <!-- Sealed Robe of Nightmare  -->
+					<item id="5308" min="1" max="1" chance="43.247781242504" /> <!-- Sealed Dark Crystal Robe -->
+					<item id="5329" min="1" max="1" chance="28.579995202686" /> <!-- Sealed Majestic Robe -->
+					<item id="5326" min="1" max="1" chance="28.172223554809" /> <!-- Sealed Robe of Nightmare -->
 				</group>
 				<group chance="2.909">
-					<item id="729" min="1" max="1" chance="50.120316259883" /> <!-- Scroll: Enchant Weapon (A-grade)  -->
-					<item id="6570" min="1" max="1" chance="49.879683740117" /> <!-- Blessed Scroll: Enchant Armor (A-grade)  -->
+					<item id="729" min="1" max="1" chance="50.120316259883" /> <!-- Scroll: Enchant Weapon (A-grade) -->
+					<item id="6570" min="1" max="1" chance="49.879683740117" /> <!-- Blessed Scroll: Enchant Armor (A-grade) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="1" max="1" chance="81.48" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="1" max="1" chance="81.48" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -806,6 +827,7 @@
 			</speed>
 			<attack physical="794.70901" magical="542.68324" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="319.24623" magical="233.61053" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -835,6 +857,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -867,6 +890,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -900,6 +924,7 @@
 				<defence fire="350" water="300" wind="350" earth="350" holy="350" dark="350" />
 				<attack type="FIRE" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -944,6 +969,7 @@
 				<defence fire="350" water="300" wind="350" earth="350" holy="350" dark="350" />
 				<attack type="FIRE" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -978,6 +1004,7 @@
 				<defence fire="350" water="300" wind="350" earth="350" holy="350" dark="350" />
 				<attack type="FIRE" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1005,6 +1032,7 @@
 			</speed>
 			<attack physical="667.348949019213" magical="142.928040387499" critical="1" attackSpeed="253" range="40" type="BLUNT" distance="80" width="120" random="20" accuracy="9" />
 			<defence physical="533.36238" magical="260.2" />
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1032,6 +1060,7 @@
 			</speed>
 			<attack physical="667.348949019213" magical="142.928040387499" critical="1" attackSpeed="253" range="40" type="BLUNT" distance="80" width="120" random="20" accuracy="9" />
 			<defence physical="533.36238" magical="260.2" />
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1080,6 +1109,7 @@
 			</speed>
 			<attack physical="667.348949019213" magical="142.928040387499" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="533.36238" magical="260.2" />
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1105,6 +1135,7 @@
 			</speed>
 			<attack physical="234.89829" magical="160.40508" critical="1" attackSpeed="253" range="40" type="BLUNT" distance="80" width="120" random="20" accuracy="9" />
 			<defence physical="177.78746" magical="130.09715" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1130,6 +1161,7 @@
 			</speed>
 			<attack physical="19.33758" magical="13.20506" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="61.82527" magical="45.24105" />
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1156,6 +1188,7 @@
 			</speed>
 			<attack physical="44.32863" magical="30.2707" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="86.87049" magical="63.56806" />
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1186,6 +1219,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1217,6 +1251,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1248,6 +1283,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1279,6 +1315,7 @@
 				<defence fire="300" water="350" wind="350" earth="350" holy="350" dark="350" />
 				<attack type="WATER" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1311,6 +1348,7 @@
 				<defence fire="200" water="200" wind="200" earth="200" holy="150" dark="200" />
 				<attack type="DARK" value="280" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1335,36 +1373,36 @@
 		<drop_lists>
 			<death>
 				<group chance="22.629">
-					<item id="36847" min="1" max="1" chance="20.283706747978" /> <!-- Twilight Circlet Ingredient  -->
-					<item id="36836" min="1" max="1" chance="20.243934773963" /> <!-- Twilight Helmet Ingredient  -->
-					<item id="36842" min="1" max="1" chance="20.186486367051" /> <!-- Twilight Leather Helmet Ingredient  -->
-					<item id="36841" min="1" max="1" chance="19.832957709134" /> <!-- Twilight Shield Ingredient  -->
-					<item id="36852" min="1" max="1" chance="19.452914401874" /> <!-- Twilight Sigil Ingredient  -->
+					<item id="36847" min="1" max="1" chance="20.283706747978" /> <!-- Twilight Circlet Ingredient -->
+					<item id="36836" min="1" max="1" chance="20.243934773963" /> <!-- Twilight Helmet Ingredient -->
+					<item id="36842" min="1" max="1" chance="20.186486367051" /> <!-- Twilight Leather Helmet Ingredient -->
+					<item id="36841" min="1" max="1" chance="19.832957709134" /> <!-- Twilight Shield Ingredient -->
+					<item id="36852" min="1" max="1" chance="19.452914401874" /> <!-- Twilight Sigil Ingredient -->
 				</group>
 				<group chance="100">
-					<item id="36586" min="1" max="1" chance="40.663465096515" /> <!-- Scroll: Modify Armor (R-grade)  -->
-					<item id="17527" min="1" max="1" chance="28.025260144518" /> <!-- Scroll: Enchant Armor (R-grade)  -->
-					<item id="36777" min="1" max="1" chance="1.8705193944397" /> <!-- Recipe: Twilight Gauntlets (60%)  -->
-					<item id="36788" min="1" max="1" chance="1.8676729518829" /> <!-- Recipe: Twilight Gloves (60%)  -->
-					<item id="36845" min="1" max="1" chance="1.8640132400242" /> <!-- Twilight Leather Glove Ingredient  -->
-					<item id="36779" min="1" max="1" chance="1.8599468935146" /> <!-- Recipe: Twilight Shield (60%)  -->
-					<item id="36785" min="1" max="1" chance="1.8575070856088" /> <!-- Recipe: Twilight Circlet (60%)  -->
-					<item id="36851" min="1" max="1" chance="1.8518142004953" /> <!-- Twilight Shoe Ingredient  -->
-					<item id="36789" min="1" max="1" chance="1.8493743925895" /> <!-- Recipe: Twilight Shoes (60%)  -->
-					<item id="36780" min="1" max="1" chance="1.8469345846837" /> <!-- Recipe: Twilight Leather Helmet (60%)  -->
-					<item id="36846" min="1" max="1" chance="1.8375819877115" /> <!-- Twilight Leather Boot Ingredient  -->
-					<item id="36784" min="1" max="1" chance="1.832295737249" /> <!-- Recipe: Twilight Leather Boots (60%)  -->
-					<item id="36839" min="1" max="1" chance="1.8298559293432" /> <!-- Twilight Gauntlet Ingredient  -->
-					<item id="36850" min="1" max="1" chance="1.8266028521354" /> <!-- Twilight Glove Ingredient  -->
-					<item id="36783" min="1" max="1" chance="1.8241630442297" /> <!-- Recipe: Twilight Leather Gloves (60%)  -->
-					<item id="36774" min="1" max="1" chance="1.8241630442297" /> <!-- Recipe: Twilight Helmet (60%)  -->
-					<item id="36778" min="1" max="1" chance="1.8237564095787" /> <!-- Recipe: Twilight Boots (60%)  -->
-					<item id="36840" min="1" max="1" chance="1.8233497749277" /> <!-- Twilight Boot Ingredient  -->
-					<item id="36790" min="1" max="1" chance="1.8217232363239" /> <!-- Recipe: Twilight Sigil (60%)  -->
+					<item id="36586" min="1" max="1" chance="40.663465096515" /> <!-- Scroll: Modify Armor (R-grade) -->
+					<item id="17527" min="1" max="1" chance="28.025260144518" /> <!-- Scroll: Enchant Armor (R-grade) -->
+					<item id="36777" min="1" max="1" chance="1.8705193944397" /> <!-- Recipe: Twilight Gauntlets (60%) -->
+					<item id="36788" min="1" max="1" chance="1.8676729518829" /> <!-- Recipe: Twilight Gloves (60%) -->
+					<item id="36845" min="1" max="1" chance="1.8640132400242" /> <!-- Twilight Leather Glove Ingredient -->
+					<item id="36779" min="1" max="1" chance="1.8599468935146" /> <!-- Recipe: Twilight Shield (60%) -->
+					<item id="36785" min="1" max="1" chance="1.8575070856088" /> <!-- Recipe: Twilight Circlet (60%) -->
+					<item id="36851" min="1" max="1" chance="1.8518142004953" /> <!-- Twilight Shoe Ingredient -->
+					<item id="36789" min="1" max="1" chance="1.8493743925895" /> <!-- Recipe: Twilight Shoes (60%) -->
+					<item id="36780" min="1" max="1" chance="1.8469345846837" /> <!-- Recipe: Twilight Leather Helmet (60%) -->
+					<item id="36846" min="1" max="1" chance="1.8375819877115" /> <!-- Twilight Leather Boot Ingredient -->
+					<item id="36784" min="1" max="1" chance="1.832295737249" /> <!-- Recipe: Twilight Leather Boots (60%) -->
+					<item id="36839" min="1" max="1" chance="1.8298559293432" /> <!-- Twilight Gauntlet Ingredient -->
+					<item id="36850" min="1" max="1" chance="1.8266028521354" /> <!-- Twilight Glove Ingredient -->
+					<item id="36783" min="1" max="1" chance="1.8241630442297" /> <!-- Recipe: Twilight Leather Gloves (60%) -->
+					<item id="36774" min="1" max="1" chance="1.8241630442297" /> <!-- Recipe: Twilight Helmet (60%) -->
+					<item id="36778" min="1" max="1" chance="1.8237564095787" /> <!-- Recipe: Twilight Boots (60%) -->
+					<item id="36840" min="1" max="1" chance="1.8233497749277" /> <!-- Twilight Boot Ingredient -->
+					<item id="36790" min="1" max="1" chance="1.8217232363239" /> <!-- Recipe: Twilight Sigil (60%) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -1389,6 +1427,7 @@
 				<defence fire="200" water="200" wind="200" earth="200" holy="150" dark="200" />
 				<attack type="DARK" value="280" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1414,26 +1453,26 @@
 		<drop_lists>
 			<death>
 				<group chance="24.786">
-					<item id="36838" min="1" max="1" chance="16.753409182603" /> <!-- Twilight Gaiter Ingredient  -->
-					<item id="36848" min="1" max="1" chance="16.721132897603" /> <!-- Twilight Tunic Ingredient  -->
-					<item id="36844" min="1" max="1" chance="16.713063826354" /> <!-- Twilight Leather Legging Ingredient  -->
-					<item id="36849" min="1" max="1" chance="16.668683934479" /> <!-- Twilight Stocking Ingredient  -->
-					<item id="36843" min="1" max="1" chance="16.60413136448" /> <!-- Twilight Leather Armor Ingredient  -->
-					<item id="36837" min="1" max="1" chance="16.539578794481" /> <!-- Twilight Breastplate Ingredient  -->
+					<item id="36838" min="1" max="1" chance="16.753409182603" /> <!-- Twilight Gaiter Ingredient -->
+					<item id="36848" min="1" max="1" chance="16.721132897603" /> <!-- Twilight Tunic Ingredient -->
+					<item id="36844" min="1" max="1" chance="16.713063826354" /> <!-- Twilight Leather Legging Ingredient -->
+					<item id="36849" min="1" max="1" chance="16.668683934479" /> <!-- Twilight Stocking Ingredient -->
+					<item id="36843" min="1" max="1" chance="16.60413136448" /> <!-- Twilight Leather Armor Ingredient -->
+					<item id="36837" min="1" max="1" chance="16.539578794481" /> <!-- Twilight Breastplate Ingredient -->
 				</group>
 				<group chance="100">
-					<item id="36586" min="1" max="1" chance="50.849957031786" /> <!-- Scroll: Modify Armor (R-grade)  -->
-					<item id="17527" min="1" max="1" chance="36.428909217572" /> <!-- Scroll: Enchant Armor (R-grade)  -->
-					<item id="36787" min="1" max="1" chance="2.1537499300813" /> <!-- Recipe: Twilight Stockings (60%)  -->
-					<item id="36782" min="1" max="1" chance="2.1456139369562" /> <!-- Recipe: Twilight Leather Leggings (60%)  -->
-					<item id="36786" min="1" max="1" chance="2.121205957581" /> <!-- Recipe: Twilight Tunic (60%)  -->
-					<item id="36776" min="1" max="1" chance="2.1079849687527" /> <!-- Recipe: Twilight Gaiters (60%)  -->
-					<item id="36781" min="1" max="1" chance="2.0983234769167" /> <!-- Recipe: Twilight Leather Armor (60%)  -->
-					<item id="36775" min="1" max="1" chance="2.0942554803541" /> <!-- Recipe: Twilight Breastplate (60%)  -->
+					<item id="36586" min="1" max="1" chance="50.849957031786" /> <!-- Scroll: Modify Armor (R-grade) -->
+					<item id="17527" min="1" max="1" chance="36.428909217572" /> <!-- Scroll: Enchant Armor (R-grade) -->
+					<item id="36787" min="1" max="1" chance="2.1537499300813" /> <!-- Recipe: Twilight Stockings (60%) -->
+					<item id="36782" min="1" max="1" chance="2.1456139369562" /> <!-- Recipe: Twilight Leather Leggings (60%) -->
+					<item id="36786" min="1" max="1" chance="2.121205957581" /> <!-- Recipe: Twilight Tunic (60%) -->
+					<item id="36776" min="1" max="1" chance="2.1079849687527" /> <!-- Recipe: Twilight Gaiters (60%) -->
+					<item id="36781" min="1" max="1" chance="2.0983234769167" /> <!-- Recipe: Twilight Leather Armor (60%) -->
+					<item id="36775" min="1" max="1" chance="2.0942554803541" /> <!-- Recipe: Twilight Breastplate (60%) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -1458,6 +1497,7 @@
 				<defence fire="350" water="350" wind="300" earth="350" holy="350" dark="350" />
 				<attack type="EARTH" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1474,36 +1514,36 @@
 		<drop_lists>
 			<death>
 				<group chance="3.3">
-					<item id="35297" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Cutter Fragment  -->
-					<item id="35296" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Shaper Fragment  -->
-					<item id="35298" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Slasher Fragment  -->
-					<item id="35299" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Avenger Fragment  -->
-					<item id="35300" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Fighter Fragment  -->
-					<item id="35301" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Stormer Fragment  -->
-					<item id="35302" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Thrower Fragment  -->
-					<item id="35303" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Shooter Fragment  -->
-					<item id="35304" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Buster Fragment  -->
-					<item id="35305" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Caster Fragment  -->
-					<item id="35306" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Retributer Fragment  -->
+					<item id="35297" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Cutter Fragment -->
+					<item id="35296" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Shaper Fragment -->
+					<item id="35298" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Slasher Fragment -->
+					<item id="35299" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Avenger Fragment -->
+					<item id="35300" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Fighter Fragment -->
+					<item id="35301" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Stormer Fragment -->
+					<item id="35302" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Thrower Fragment -->
+					<item id="35303" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Shooter Fragment -->
+					<item id="35304" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Buster Fragment -->
+					<item id="35305" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Caster Fragment -->
+					<item id="35306" min="1" max="1" chance="9.0909090909091" /> <!-- Specter Retributer Fragment -->
 				</group>
 				<group chance="100">
-					<item id="36586" min="1" max="1" chance="65.053343741868" /> <!-- Scroll: Modify Armor (R-grade)  -->
-					<item id="17527" min="1" max="1" chance="32.79989591465" /> <!-- Scroll: Enchant Armor (R-grade)  -->
-					<item id="35422" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Slasher (60%)  -->
-					<item id="35423" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Avenger (60%)  -->
-					<item id="35424" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Fighter (60%)  -->
-					<item id="35425" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Stormer (60%)  -->
-					<item id="35426" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Thrower (60%)  -->
-					<item id="35427" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Shooter (60%)  -->
-					<item id="35428" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Buster (60%)  -->
-					<item id="35429" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Caster (60%)  -->
-					<item id="35430" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Retributer (60%)  -->
-					<item id="35421" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Cutter (60%)  -->
-					<item id="35420" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Shaper (60%)  -->
+					<item id="36586" min="1" max="1" chance="65.053343741868" /> <!-- Scroll: Modify Armor (R-grade) -->
+					<item id="17527" min="1" max="1" chance="32.79989591465" /> <!-- Scroll: Enchant Armor (R-grade) -->
+					<item id="35422" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Slasher (60%) -->
+					<item id="35423" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Avenger (60%) -->
+					<item id="35424" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Fighter (60%) -->
+					<item id="35425" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Stormer (60%) -->
+					<item id="35426" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Thrower (60%) -->
+					<item id="35427" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Shooter (60%) -->
+					<item id="35428" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Buster (60%) -->
+					<item id="35429" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Caster (60%) -->
+					<item id="35430" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Retributer (60%) -->
+					<item id="35421" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Cutter (60%) -->
+					<item id="35420" min="1" max="1" chance="0.1951600312256" /> <!-- Recipe: Specter Shaper (60%) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -1528,6 +1568,7 @@
 				<defence fire="200" water="200" wind="200" earth="200" holy="150" dark="200" />
 				<attack type="DARK" value="280" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1574,12 +1615,12 @@
 					<item id="38008" min="1" max="1" chance="9.0909090909091" /> <!-- Twilight Sigil Crafting Pack Robe -->
 				</group>
 				<group chance="30.63">
-					<item id="36574" min="1" max="1" chance="93.633692458374" /> <!-- Scroll: Modify Weapon (R-grade)  -->
-					<item id="17526" min="1" max="1" chance="6.3663075416259" /> <!-- Scroll: Enchant Weapon (R-grade)  -->
+					<item id="36574" min="1" max="1" chance="93.633692458374" /> <!-- Scroll: Modify Weapon (R-grade) -->
+					<item id="17526" min="1" max="1" chance="6.3663075416259" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -1604,6 +1645,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1630,36 +1672,36 @@
 		<drop_lists>
 			<death>
 				<group chance="1.5">
-					<item id="35307" min="1" max="1" chance="20" /> <!-- Seraph Helmet Ingredient  -->
-					<item id="35312" min="1" max="1" chance="20" /> <!-- Seraph Shield Ingredient  -->
-					<item id="35313" min="1" max="1" chance="20" /> <!-- Seraph Leather Helmet Ingredient  -->
-					<item id="35318" min="1" max="1" chance="20" /> <!-- Seraph Circlet Ingredient  -->
-					<item id="35323" min="1" max="1" chance="20" /> <!-- Seraph Sigil Ingredient  -->
+					<item id="35307" min="1" max="1" chance="20" /> <!-- Seraph Helmet Ingredient -->
+					<item id="35312" min="1" max="1" chance="20" /> <!-- Seraph Shield Ingredient -->
+					<item id="35313" min="1" max="1" chance="20" /> <!-- Seraph Leather Helmet Ingredient -->
+					<item id="35318" min="1" max="1" chance="20" /> <!-- Seraph Circlet Ingredient -->
+					<item id="35323" min="1" max="1" chance="20" /> <!-- Seraph Sigil Ingredient -->
 				</group>
 				<group chance="100">
-					<item id="36586" min="1" max="1" chance="53.656704405215" /> <!-- Scroll: Modify Armor (R-grade)  -->
-					<item id="17527" min="1" max="1" chance="43.606803670119" /> <!-- Scroll: Enchant Armor (R-grade)  -->
-					<item id="35310" min="1" max="1" chance="0.16097011321565" /> <!-- Seraph Gauntlet Ingredient  -->
-					<item id="35435" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Boots (60%)  -->
-					<item id="35436" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Shield (60%)  -->
-					<item id="35437" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Leather Helmet (60%)  -->
-					<item id="35440" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Leather Gloves (60%)  -->
-					<item id="35441" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Leather Boots (60%)  -->
-					<item id="35442" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Circlet (60%)  -->
-					<item id="35445" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Gloves (60%)  -->
-					<item id="35446" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Shoes (60%)  -->
-					<item id="35447" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Sigil (60%)  -->
-					<item id="35434" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Gauntlets (60%)  -->
-					<item id="35311" min="1" max="1" chance="0.16097011321565" /> <!-- Seraph Boot Ingredient  -->
-					<item id="35316" min="1" max="1" chance="0.16097011321565" /> <!-- Seraph Leather Glove Ingredient  -->
-					<item id="35317" min="1" max="1" chance="0.16097011321565" /> <!-- Seraph Leather Boot Ingredient  -->
-					<item id="35321" min="1" max="1" chance="0.16097011321565" /> <!-- Seraph Glove Ingredient  -->
-					<item id="35322" min="1" max="1" chance="0.16097011321565" /> <!-- Seraph Shoe Ingredient  -->
-					<item id="35431" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Helmet (60%)  -->
+					<item id="36586" min="1" max="1" chance="53.656704405215" /> <!-- Scroll: Modify Armor (R-grade) -->
+					<item id="17527" min="1" max="1" chance="43.606803670119" /> <!-- Scroll: Enchant Armor (R-grade) -->
+					<item id="35310" min="1" max="1" chance="0.16097011321565" /> <!-- Seraph Gauntlet Ingredient -->
+					<item id="35435" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Boots (60%) -->
+					<item id="35436" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Shield (60%) -->
+					<item id="35437" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Leather Helmet (60%) -->
+					<item id="35440" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Leather Gloves (60%) -->
+					<item id="35441" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Leather Boots (60%) -->
+					<item id="35442" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Circlet (60%) -->
+					<item id="35445" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Gloves (60%) -->
+					<item id="35446" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Shoes (60%) -->
+					<item id="35447" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Sigil (60%) -->
+					<item id="35434" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Gauntlets (60%) -->
+					<item id="35311" min="1" max="1" chance="0.16097011321565" /> <!-- Seraph Boot Ingredient -->
+					<item id="35316" min="1" max="1" chance="0.16097011321565" /> <!-- Seraph Leather Glove Ingredient -->
+					<item id="35317" min="1" max="1" chance="0.16097011321565" /> <!-- Seraph Leather Boot Ingredient -->
+					<item id="35321" min="1" max="1" chance="0.16097011321565" /> <!-- Seraph Glove Ingredient -->
+					<item id="35322" min="1" max="1" chance="0.16097011321565" /> <!-- Seraph Shoe Ingredient -->
+					<item id="35431" min="1" max="1" chance="0.16097011321565" /> <!-- Recipe: Seraph Helmet (60%) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -1683,6 +1725,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1714,6 +1757,7 @@
 				<defence fire="350" water="300" wind="350" earth="350" holy="350" dark="350" />
 				<attack type="FIRE" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1757,6 +1801,7 @@
 				<defence fire="350" water="300" wind="350" earth="350" holy="350" dark="350" />
 				<attack type="FIRE" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1802,6 +1847,7 @@
 				<defence fire="350" water="300" wind="350" earth="350" holy="350" dark="350" />
 				<attack type="FIRE" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1837,6 +1883,7 @@
 				<defence fire="350" water="350" wind="350" earth="300" holy="350" dark="350" />
 				<attack type="WIND" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1863,26 +1910,26 @@
 		<drop_lists>
 			<death>
 				<group chance="1.8">
-					<item id="35309" min="1" max="1" chance="16.666666666667" /> <!-- Seraph Gaiter Ingredient  -->
-					<item id="35308" min="1" max="1" chance="16.666666666667" /> <!-- Seraph Breastplate Ingredient  -->
-					<item id="35320" min="1" max="1" chance="16.666666666667" /> <!-- Seraph Stocking Ingredient  -->
-					<item id="35319" min="1" max="1" chance="16.666666666667" /> <!-- Seraph Tunic Ingredient  -->
-					<item id="35315" min="1" max="1" chance="16.666666666667" /> <!-- Seraph Leather Legging Ingredient  -->
-					<item id="35314" min="1" max="1" chance="16.666666666667" /> <!-- Seraph Leather Armor Ingredient  -->
+					<item id="35309" min="1" max="1" chance="16.666666666667" /> <!-- Seraph Gaiter Ingredient -->
+					<item id="35308" min="1" max="1" chance="16.666666666667" /> <!-- Seraph Breastplate Ingredient -->
+					<item id="35320" min="1" max="1" chance="16.666666666667" /> <!-- Seraph Stocking Ingredient -->
+					<item id="35319" min="1" max="1" chance="16.666666666667" /> <!-- Seraph Tunic Ingredient -->
+					<item id="35315" min="1" max="1" chance="16.666666666667" /> <!-- Seraph Leather Legging Ingredient -->
+					<item id="35314" min="1" max="1" chance="16.666666666667" /> <!-- Seraph Leather Armor Ingredient -->
 				</group>
 				<group chance="100">
-					<item id="36586" min="1" max="1" chance="65.368021963655" /> <!-- Scroll: Modify Armor (R-grade)  -->
-					<item id="17527" min="1" max="1" chance="33.455353640999" /> <!-- Scroll: Enchant Armor (R-grade)  -->
-					<item id="35444" min="1" max="1" chance="0.19610406589097" /> <!-- Recipe: Seraph Stockings (60%)  -->
-					<item id="35443" min="1" max="1" chance="0.19610406589097" /> <!-- Recipe: Seraph Tunic (60%)  -->
-					<item id="35439" min="1" max="1" chance="0.19610406589097" /> <!-- Recipe: Seraph Leather Leggings (60%)  -->
-					<item id="35438" min="1" max="1" chance="0.19610406589097" /> <!-- Recipe: Seraph Leather Armor (60%)  -->
-					<item id="35433" min="1" max="1" chance="0.19610406589097" /> <!-- Recipe: Seraph Gaiters (60%)  -->
-					<item id="35432" min="1" max="1" chance="0.19610406589097" /> <!-- Recipe: Seraph Breastplate (60%)  -->
+					<item id="36586" min="1" max="1" chance="65.368021963655" /> <!-- Scroll: Modify Armor (R-grade) -->
+					<item id="17527" min="1" max="1" chance="33.455353640999" /> <!-- Scroll: Enchant Armor (R-grade) -->
+					<item id="35444" min="1" max="1" chance="0.19610406589097" /> <!-- Recipe: Seraph Stockings (60%) -->
+					<item id="35443" min="1" max="1" chance="0.19610406589097" /> <!-- Recipe: Seraph Tunic (60%) -->
+					<item id="35439" min="1" max="1" chance="0.19610406589097" /> <!-- Recipe: Seraph Leather Leggings (60%) -->
+					<item id="35438" min="1" max="1" chance="0.19610406589097" /> <!-- Recipe: Seraph Leather Armor (60%) -->
+					<item id="35433" min="1" max="1" chance="0.19610406589097" /> <!-- Recipe: Seraph Gaiters (60%) -->
+					<item id="35432" min="1" max="1" chance="0.19610406589097" /> <!-- Recipe: Seraph Breastplate (60%) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -1906,6 +1953,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1949,6 +1997,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -1993,6 +2042,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2036,6 +2086,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2078,6 +2129,7 @@
 				<defence fire="350" water="350" wind="300" earth="350" holy="350" dark="350" />
 				<attack type="EARTH" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2101,12 +2153,12 @@
 					<item id="17407" min="1" max="1" chance="11.968581246932" /> <!-- Seraph Circlet Robe -->
 				</group>
 				<group chance="30.358">
-					<item id="30297" min="1" max="1" chance="78.69424863298" /> <!-- Superior Giant's Codex  -->
-					<item id="17526" min="1" max="1" chance="21.30575136702" /> <!-- Scroll: Enchant Weapon (R-grade)  -->
+					<item id="30297" min="1" max="1" chance="78.69424863298" /> <!-- Superior Giant's Codex -->
+					<item id="17526" min="1" max="1" chance="21.30575136702" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -2130,6 +2182,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2170,6 +2223,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2211,6 +2265,7 @@
 				<defence fire="350" water="350" wind="300" earth="350" holy="350" dark="350" />
 				<attack type="EARTH" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2231,12 +2286,12 @@
 					<item id="17396" min="1" max="2" chance="24.491392801252" /> <!-- Seraph Helmet Heavy Armor -->
 				</group>
 				<group chance="28.407">
-					<item id="30297" min="1" max="1" chance="77.199281867145" /> <!-- Superior Giant's Codex  -->
-					<item id="17526" min="1" max="1" chance="22.800718132855" /> <!-- Scroll: Enchant Weapon (R-grade)  -->
+					<item id="30297" min="1" max="1" chance="77.199281867145" /> <!-- Superior Giant's Codex -->
+					<item id="17526" min="1" max="1" chance="22.800718132855" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -2260,6 +2315,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2300,6 +2356,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2340,6 +2397,7 @@
 				<defence fire="200" water="200" wind="150" earth="200" holy="200" dark="200" />
 				<attack type="EARTH" value="280" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2372,6 +2430,7 @@
 				<defence fire="200" water="200" wind="150" earth="200" holy="200" dark="200" />
 				<attack type="EARTH" value="280" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2406,6 +2465,7 @@
 				<defence fire="450" water="450" wind="400" earth="450" holy="450" dark="450" />
 				<attack type="EARTH" value="450" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2448,6 +2508,7 @@
 				<defence fire="450" water="450" wind="400" earth="450" holy="450" dark="450" />
 				<attack type="EARTH" value="450" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2490,6 +2551,7 @@
 				<defence fire="450" water="450" wind="400" earth="450" holy="450" dark="450" />
 				<attack type="EARTH" value="450" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2529,6 +2591,7 @@
 			</speed>
 			<attack physical="583.088791057736" magical="119.062093508884" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="507.40251" magical="247.54" />
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2558,6 +2621,7 @@
 			</speed>
 			<attack physical="583.088791057736" magical="119.062093508884" critical="1" attackSpeed="253" range="40" type="BLUNT" distance="80" width="120" random="20" accuracy="9" />
 			<defence physical="507.40251" magical="247.54" />
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2571,20 +2635,20 @@
 		<drop_lists>
 			<death>
 				<group chance="0.9">
-					<item id="135" min="1" max="1" chance="33.333333333333" /> <!-- Samurai Long Sword  -->
-					<item id="5286" min="1" max="1" chance="33.333333333333" /> <!-- Berserker Blade  -->
-					<item id="7888" min="1" max="1" chance="33.333333333333" /> <!-- Ecliptic Sword  -->
+					<item id="135" min="1" max="1" chance="33.333333333333" /> <!-- Samurai Long Sword -->
+					<item id="5286" min="1" max="1" chance="33.333333333333" /> <!-- Berserker Blade -->
+					<item id="7888" min="1" max="1" chance="33.333333333333" /> <!-- Ecliptic Sword -->
 				</group>
 				<group chance="1.248">
-					<item id="401" min="1" max="1" chance="100" /> <!-- Drake Leather Armor  -->
+					<item id="401" min="1" max="1" chance="100" /> <!-- Drake Leather Armor -->
 				</group>
 				<group chance="9.568">
-					<item id="2462" min="1" max="1" chance="60.127508361204" /> <!-- Full Plate Gauntlets  -->
-					<item id="2414" min="1" max="1" chance="39.872491638796" /> <!-- Full Plate Helmet  -->
+					<item id="2462" min="1" max="1" chance="60.127508361204" /> <!-- Full Plate Gauntlets -->
+					<item id="2414" min="1" max="1" chance="39.872491638796" /> <!-- Full Plate Helmet -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="1" max="1" chance="60.28" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="1" max="1" chance="60.28" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -2608,6 +2672,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2637,6 +2702,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2666,6 +2732,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2696,6 +2763,7 @@
 				<defence fire="200" water="200" wind="200" earth="200" holy="150" dark="200" />
 				<attack type="DARK" value="280" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2711,10 +2779,10 @@
 		<drop_lists>
 			<death>
 				<group chance="1.2">
-					<item id="17300" min="1" max="1" chance="25" /> <!-- Requiem Retributer  -->
-					<item id="17296" min="1" max="1" chance="25" /> <!-- Requiem Thrower  -->
-					<item id="17291" min="1" max="1" chance="25" /> <!-- Requiem Cutter  -->
-					<item id="17290" min="1" max="1" chance="25" /> <!-- Requiem Shaper  -->
+					<item id="17300" min="1" max="1" chance="25" /> <!-- Requiem Retributer -->
+					<item id="17296" min="1" max="1" chance="25" /> <!-- Requiem Thrower -->
+					<item id="17291" min="1" max="1" chance="25" /> <!-- Requiem Cutter -->
+					<item id="17290" min="1" max="1" chance="25" /> <!-- Requiem Shaper -->
 				</group>
 				<group chance="17.486">
 					<item id="17318" min="1" max="1" chance="24.059247397918" /> <!-- Immortal Gloves Robe -->
@@ -2725,12 +2793,12 @@
 					<item id="17319" min="1" max="1" chance="7.7662129703763" /> <!-- Immortal Shoes Robe -->
 				</group>
 				<group chance="30.061">
-					<item id="17527" min="1" max="1" chance="92.478626792189" /> <!-- Scroll: Enchant Armor (R-grade)  -->
-					<item id="17526" min="1" max="1" chance="7.5213732078108" /> <!-- Scroll: Enchant Weapon (R-grade)  -->
+					<item id="17527" min="1" max="1" chance="92.478626792189" /> <!-- Scroll: Enchant Armor (R-grade) -->
+					<item id="17526" min="1" max="1" chance="7.5213732078108" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -2755,6 +2823,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2799,6 +2868,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2842,6 +2912,7 @@
 				<defence fire="200" water="200" wind="200" earth="200" holy="150" dark="200" />
 				<attack type="DARK" value="280" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2872,6 +2943,7 @@
 				<defence fire="200" water="200" wind="200" earth="200" holy="150" dark="200" />
 				<attack type="DARK" value="280" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2904,6 +2976,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2946,6 +3019,7 @@
 				<defence fire="300" water="350" wind="350" earth="350" holy="350" dark="350" />
 				<attack type="WATER" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2985,6 +3059,7 @@
 				<defence fire="200" water="200" wind="200" earth="200" holy="150" dark="200" />
 				<attack type="DARK" value="280" />
 			</attribute>
+			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3099,6 +3174,7 @@
 				<defence fire="200" water="150" wind="200" earth="200" holy="200" dark="200" />
 				<attack type="FIRE" value="280" />
 			</attribute>
+			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3120,76 +3196,76 @@
 		<drop_lists>
 			<death>
 				<group chance="39.076">
-					<item id="36829" min="1" max="1" chance="9.3126215579896" /> <!-- Apocalypse Fighter Fragment  -->
-					<item id="36826" min="1" max="1" chance="9.2409663220391" /> <!-- Apocalypse Cutter Fragment  -->
-					<item id="36828" min="1" max="1" chance="9.166751970519" /> <!-- Apocalypse Avenger Fragment  -->
-					<item id="36835" min="1" max="1" chance="9.1155696591258" /> <!-- Apocalypse Retributer Fragment  -->
-					<item id="36827" min="1" max="1" chance="9.0976558501382" /> <!-- Apocalypse Slasher Fragment  -->
-					<item id="36830" min="1" max="1" chance="9.0950967345685" /> <!-- Apocalypse Stormer Fragment  -->
-					<item id="36832" min="1" max="1" chance="9.0183232674788" /> <!-- Apocalypse Shooter Fragment  -->
-					<item id="36834" min="1" max="1" chance="9.0132050363394" /> <!-- Apocalypse Caster Fragment  -->
-					<item id="36825" min="1" max="1" chance="8.9952912273518" /> <!-- Apocalypse Shaper Fragment  -->
-					<item id="36831" min="1" max="1" chance="8.9824956495035" /> <!-- Apocalypse Thrower Fragment  -->
-					<item id="36833" min="1" max="1" chance="8.9620227249463" /> <!-- Apocalypse Buster Fragment  -->
+					<item id="36829" min="1" max="1" chance="9.3126215579896" /> <!-- Apocalypse Fighter Fragment -->
+					<item id="36826" min="1" max="1" chance="9.2409663220391" /> <!-- Apocalypse Cutter Fragment -->
+					<item id="36828" min="1" max="1" chance="9.166751970519" /> <!-- Apocalypse Avenger Fragment -->
+					<item id="36835" min="1" max="1" chance="9.1155696591258" /> <!-- Apocalypse Retributer Fragment -->
+					<item id="36827" min="1" max="1" chance="9.0976558501382" /> <!-- Apocalypse Slasher Fragment -->
+					<item id="36830" min="1" max="1" chance="9.0950967345685" /> <!-- Apocalypse Stormer Fragment -->
+					<item id="36832" min="1" max="1" chance="9.0183232674788" /> <!-- Apocalypse Shooter Fragment -->
+					<item id="36834" min="1" max="1" chance="9.0132050363394" /> <!-- Apocalypse Caster Fragment -->
+					<item id="36825" min="1" max="1" chance="8.9952912273518" /> <!-- Apocalypse Shaper Fragment -->
+					<item id="36831" min="1" max="1" chance="8.9824956495035" /> <!-- Apocalypse Thrower Fragment -->
+					<item id="36833" min="1" max="1" chance="8.9620227249463" /> <!-- Apocalypse Buster Fragment -->
 				</group>
 				<group chance="21.614">
-					<item id="36849" min="1" max="1" chance="16.840936430092" /> <!-- Twilight Stocking Ingredient  -->
-					<item id="36838" min="1" max="1" chance="16.711390765245" /> <!-- Twilight Gaiter Ingredient  -->
-					<item id="36848" min="1" max="1" chance="16.651244563709" /> <!-- Twilight Tunic Ingredient  -->
-					<item id="36844" min="1" max="1" chance="16.628111409272" /> <!-- Twilight Leather Legging Ingredient  -->
-					<item id="36843" min="1" max="1" chance="16.591098362173" /> <!-- Twilight Leather Armor Ingredient  -->
-					<item id="36837" min="1" max="1" chance="16.577218469511" /> <!-- Twilight Breastplate Ingredient  -->
+					<item id="36849" min="1" max="1" chance="16.840936430092" /> <!-- Twilight Stocking Ingredient -->
+					<item id="36838" min="1" max="1" chance="16.711390765245" /> <!-- Twilight Gaiter Ingredient -->
+					<item id="36848" min="1" max="1" chance="16.651244563709" /> <!-- Twilight Tunic Ingredient -->
+					<item id="36844" min="1" max="1" chance="16.628111409272" /> <!-- Twilight Leather Legging Ingredient -->
+					<item id="36843" min="1" max="1" chance="16.591098362173" /> <!-- Twilight Leather Armor Ingredient -->
+					<item id="36837" min="1" max="1" chance="16.577218469511" /> <!-- Twilight Breastplate Ingredient -->
 				</group>
 				<group chance="17.976">
-					<item id="36852" min="1" max="1" chance="20.315976858033" /> <!-- Twilight Sigil Ingredient  -->
-					<item id="36842" min="1" max="1" chance="20.232532265243" /> <!-- Twilight Leather Helmet Ingredient  -->
-					<item id="36841" min="1" max="1" chance="20.087894971073" /> <!-- Twilight Shield Ingredient  -->
-					<item id="36836" min="1" max="1" chance="19.831998219849" /> <!-- Twilight Helmet Ingredient  -->
-					<item id="36847" min="1" max="1" chance="19.531597685803" /> <!-- Twilight Circlet Ingredient  -->
+					<item id="36852" min="1" max="1" chance="20.315976858033" /> <!-- Twilight Sigil Ingredient -->
+					<item id="36842" min="1" max="1" chance="20.232532265243" /> <!-- Twilight Leather Helmet Ingredient -->
+					<item id="36841" min="1" max="1" chance="20.087894971073" /> <!-- Twilight Shield Ingredient -->
+					<item id="36836" min="1" max="1" chance="19.831998219849" /> <!-- Twilight Helmet Ingredient -->
+					<item id="36847" min="1" max="1" chance="19.531597685803" /> <!-- Twilight Circlet Ingredient -->
 				</group>
 				<group chance="100">
-					<item id="17526" min="1" max="1" chance="15.85171020956" /> <!-- Scroll: Enchant Weapon (R-grade)  -->
-					<item id="36586" min="1" max="1" chance="15.487338874684" /> <!-- Scroll: Modify Armor (R-grade)  -->
-					<item id="36574" min="1" max="1" chance="15.477996019944" /> <!-- Scroll: Modify Weapon (R-grade)  -->
-					<item id="17527" min="1" max="1" chance="15.340967483751" /> <!-- Scroll: Enchant Armor (R-grade)  -->
-					<item id="36790" min="1" max="1" chance="1.1379597073818" /> <!-- Recipe: Twilight Sigil (60%)  -->
-					<item id="36840" min="1" max="1" chance="1.1286168526414" /> <!-- Twilight Boot Ingredient  -->
-					<item id="36845" min="1" max="1" chance="1.12830542415" /> <!-- Twilight Leather Glove Ingredient  -->
-					<item id="36764" min="1" max="1" chance="1.1248797107452" /> <!-- Recipe: Apocalypse Cutter (60%)  -->
-					<item id="36850" min="1" max="1" chance="1.1242568537625" /> <!-- Twilight Glove Ingredient  -->
-					<item id="36776" min="1" max="1" chance="1.1239454252712" /> <!-- Recipe: Twilight Gaiters (60%)  -->
-					<item id="36783" min="1" max="1" chance="1.1211425688491" /> <!-- Recipe: Twilight Leather Gloves (60%)  -->
-					<item id="36769" min="1" max="1" chance="1.1211425688491" /> <!-- Recipe: Apocalypse Thrower (60%)  -->
-					<item id="36767" min="1" max="1" chance="1.120208283375" /> <!-- Recipe: Apocalypse Fighter (60%)  -->
-					<item id="36765" min="1" max="1" chance="1.120208283375" /> <!-- Recipe: Apocalypse Slasher (60%)  -->
-					<item id="36787" min="1" max="1" chance="1.1195854263923" /> <!-- Recipe: Twilight Stockings (60%)  -->
-					<item id="36779" min="1" max="1" chance="1.1195854263923" /> <!-- Recipe: Twilight Shield (60%)  -->
-					<item id="36772" min="1" max="1" chance="1.1183397124269" /> <!-- Recipe: Apocalypse Caster (60%)  -->
-					<item id="36786" min="1" max="1" chance="1.1174054269529" /> <!-- Recipe: Twilight Tunic (60%)  -->
-					<item id="36788" min="1" max="1" chance="1.1174054269529" /> <!-- Recipe: Twilight Gloves (60%)  -->
-					<item id="36773" min="1" max="1" chance="1.1164711414788" /> <!-- Recipe: Apocalypse Retributer (60%)  -->
-					<item id="36770" min="1" max="1" chance="1.1155368560048" /> <!-- Recipe: Apocalypse Shooter (60%)  -->
-					<item id="36785" min="1" max="1" chance="1.1152254275135" /> <!-- Recipe: Twilight Circlet (60%)  -->
-					<item id="36784" min="1" max="1" chance="1.1149139990221" /> <!-- Recipe: Twilight Leather Boots (60%)  -->
-					<item id="36777" min="1" max="1" chance="1.1124225710913" /> <!-- Recipe: Twilight Gauntlets (60%)  -->
-					<item id="36839" min="1" max="1" chance="1.1114882856173" /> <!-- Twilight Gauntlet Ingredient  -->
-					<item id="36781" min="1" max="1" chance="1.1114882856173" /> <!-- Recipe: Twilight Leather Armor (60%)  -->
-					<item id="36768" min="1" max="1" chance="1.1096197146692" /> <!-- Recipe: Apocalypse Stormer (60%)  -->
-					<item id="36775" min="1" max="1" chance="1.1083740007038" /> <!-- Recipe: Twilight Breastplate (60%)  -->
-					<item id="36778" min="1" max="1" chance="1.1080625722125" /> <!-- Recipe: Twilight Boots (60%)  -->
-					<item id="36846" min="1" max="1" chance="1.1037025733336" /> <!-- Twilight Leather Boot Ingredient  -->
-					<item id="36789" min="1" max="1" chance="1.1027682878596" /> <!-- Recipe: Twilight Shoes (60%)  -->
-					<item id="36763" min="1" max="1" chance="1.1005882884202" /> <!-- Recipe: Apocalypse Shaper (60%)  -->
-					<item id="36851" min="1" max="1" chance="1.0984082889807" /> <!-- Twilight Shoe Ingredient  -->
-					<item id="36782" min="1" max="1" chance="1.097785431998" /> <!-- Recipe: Twilight Leather Leggings (60%)  -->
-					<item id="36771" min="1" max="1" chance="1.0962282895413" /> <!-- Recipe: Apocalypse Buster (60%)  -->
-					<item id="36774" min="1" max="1" chance="1.0940482901019" /> <!-- Recipe: Twilight Helmet (60%)  -->
-					<item id="36766" min="1" max="1" chance="1.0918682906624" /> <!-- Recipe: Apocalypse Avenger (60%)  -->
-					<item id="36780" min="1" max="1" chance="1.0899997197144" /> <!-- Recipe: Twilight Leather Helmet (60%)  -->
+					<item id="17526" min="1" max="1" chance="15.85171020956" /> <!-- Scroll: Enchant Weapon (R-grade) -->
+					<item id="36586" min="1" max="1" chance="15.487338874684" /> <!-- Scroll: Modify Armor (R-grade) -->
+					<item id="36574" min="1" max="1" chance="15.477996019944" /> <!-- Scroll: Modify Weapon (R-grade) -->
+					<item id="17527" min="1" max="1" chance="15.340967483751" /> <!-- Scroll: Enchant Armor (R-grade) -->
+					<item id="36790" min="1" max="1" chance="1.1379597073818" /> <!-- Recipe: Twilight Sigil (60%) -->
+					<item id="36840" min="1" max="1" chance="1.1286168526414" /> <!-- Twilight Boot Ingredient -->
+					<item id="36845" min="1" max="1" chance="1.12830542415" /> <!-- Twilight Leather Glove Ingredient -->
+					<item id="36764" min="1" max="1" chance="1.1248797107452" /> <!-- Recipe: Apocalypse Cutter (60%) -->
+					<item id="36850" min="1" max="1" chance="1.1242568537625" /> <!-- Twilight Glove Ingredient -->
+					<item id="36776" min="1" max="1" chance="1.1239454252712" /> <!-- Recipe: Twilight Gaiters (60%) -->
+					<item id="36783" min="1" max="1" chance="1.1211425688491" /> <!-- Recipe: Twilight Leather Gloves (60%) -->
+					<item id="36769" min="1" max="1" chance="1.1211425688491" /> <!-- Recipe: Apocalypse Thrower (60%) -->
+					<item id="36767" min="1" max="1" chance="1.120208283375" /> <!-- Recipe: Apocalypse Fighter (60%) -->
+					<item id="36765" min="1" max="1" chance="1.120208283375" /> <!-- Recipe: Apocalypse Slasher (60%) -->
+					<item id="36787" min="1" max="1" chance="1.1195854263923" /> <!-- Recipe: Twilight Stockings (60%) -->
+					<item id="36779" min="1" max="1" chance="1.1195854263923" /> <!-- Recipe: Twilight Shield (60%) -->
+					<item id="36772" min="1" max="1" chance="1.1183397124269" /> <!-- Recipe: Apocalypse Caster (60%) -->
+					<item id="36786" min="1" max="1" chance="1.1174054269529" /> <!-- Recipe: Twilight Tunic (60%) -->
+					<item id="36788" min="1" max="1" chance="1.1174054269529" /> <!-- Recipe: Twilight Gloves (60%) -->
+					<item id="36773" min="1" max="1" chance="1.1164711414788" /> <!-- Recipe: Apocalypse Retributer (60%) -->
+					<item id="36770" min="1" max="1" chance="1.1155368560048" /> <!-- Recipe: Apocalypse Shooter (60%) -->
+					<item id="36785" min="1" max="1" chance="1.1152254275135" /> <!-- Recipe: Twilight Circlet (60%) -->
+					<item id="36784" min="1" max="1" chance="1.1149139990221" /> <!-- Recipe: Twilight Leather Boots (60%) -->
+					<item id="36777" min="1" max="1" chance="1.1124225710913" /> <!-- Recipe: Twilight Gauntlets (60%) -->
+					<item id="36839" min="1" max="1" chance="1.1114882856173" /> <!-- Twilight Gauntlet Ingredient -->
+					<item id="36781" min="1" max="1" chance="1.1114882856173" /> <!-- Recipe: Twilight Leather Armor (60%) -->
+					<item id="36768" min="1" max="1" chance="1.1096197146692" /> <!-- Recipe: Apocalypse Stormer (60%) -->
+					<item id="36775" min="1" max="1" chance="1.1083740007038" /> <!-- Recipe: Twilight Breastplate (60%) -->
+					<item id="36778" min="1" max="1" chance="1.1080625722125" /> <!-- Recipe: Twilight Boots (60%) -->
+					<item id="36846" min="1" max="1" chance="1.1037025733336" /> <!-- Twilight Leather Boot Ingredient -->
+					<item id="36789" min="1" max="1" chance="1.1027682878596" /> <!-- Recipe: Twilight Shoes (60%) -->
+					<item id="36763" min="1" max="1" chance="1.1005882884202" /> <!-- Recipe: Apocalypse Shaper (60%) -->
+					<item id="36851" min="1" max="1" chance="1.0984082889807" /> <!-- Twilight Shoe Ingredient -->
+					<item id="36782" min="1" max="1" chance="1.097785431998" /> <!-- Recipe: Twilight Leather Leggings (60%) -->
+					<item id="36771" min="1" max="1" chance="1.0962282895413" /> <!-- Recipe: Apocalypse Buster (60%) -->
+					<item id="36774" min="1" max="1" chance="1.0940482901019" /> <!-- Recipe: Twilight Helmet (60%) -->
+					<item id="36766" min="1" max="1" chance="1.0918682906624" /> <!-- Recipe: Apocalypse Avenger (60%) -->
+					<item id="36780" min="1" max="1" chance="1.0899997197144" /> <!-- Recipe: Twilight Leather Helmet (60%) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -3214,6 +3290,7 @@
 				<defence fire="350" water="350" wind="350" earth="300" holy="350" dark="350" />
 				<attack type="WIND" value="430" />
 			</attribute>
+			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3235,77 +3312,77 @@
 		<drop_lists>
 			<death>
 				<group chance="39.121">
-					<item id="35301" min="1" max="1" chance="9.2405613353442" /> <!-- Specter Stormer Fragment  -->
-					<item id="35298" min="1" max="1" chance="9.2277804759592" /> <!-- Specter Slasher Fragment  -->
-					<item id="35302" min="1" max="1" chance="9.1638761790343" /> <!-- Specter Thrower Fragment  -->
-					<item id="35304" min="1" max="1" chance="9.1127527414943" /> <!-- Specter Buster Fragment  -->
-					<item id="35297" min="1" max="1" chance="9.0923033664784" /> <!-- Specter Cutter Fragment  -->
-					<item id="35305" min="1" max="1" chance="9.0667416477084" /> <!-- Specter Caster Fragment  -->
-					<item id="35306" min="1" max="1" chance="9.0641854758314" /> <!-- Specter Retributer Fragment  -->
-					<item id="35299" min="1" max="1" chance="9.0360675851844" /> <!-- Specter Avenger Fragment  -->
-					<item id="35303" min="1" max="1" chance="9.0258428976764" /> <!-- Specter Shooter Fragment  -->
-					<item id="35296" min="1" max="1" chance="9.0156182101685" /> <!-- Specter Shaper Fragment  -->
-					<item id="35300" min="1" max="1" chance="8.9542700851205" /> <!-- Specter Fighter Fragment  -->
+					<item id="35301" min="1" max="1" chance="9.2405613353442" /> <!-- Specter Stormer Fragment -->
+					<item id="35298" min="1" max="1" chance="9.2277804759592" /> <!-- Specter Slasher Fragment -->
+					<item id="35302" min="1" max="1" chance="9.1638761790343" /> <!-- Specter Thrower Fragment -->
+					<item id="35304" min="1" max="1" chance="9.1127527414943" /> <!-- Specter Buster Fragment -->
+					<item id="35297" min="1" max="1" chance="9.0923033664784" /> <!-- Specter Cutter Fragment -->
+					<item id="35305" min="1" max="1" chance="9.0667416477084" /> <!-- Specter Caster Fragment -->
+					<item id="35306" min="1" max="1" chance="9.0641854758314" /> <!-- Specter Retributer Fragment -->
+					<item id="35299" min="1" max="1" chance="9.0360675851844" /> <!-- Specter Avenger Fragment -->
+					<item id="35303" min="1" max="1" chance="9.0258428976764" /> <!-- Specter Shooter Fragment -->
+					<item id="35296" min="1" max="1" chance="9.0156182101685" /> <!-- Specter Shaper Fragment -->
+					<item id="35300" min="1" max="1" chance="8.9542700851205" /> <!-- Specter Fighter Fragment -->
 				</group>
 				<group chance="21.369">
-					<item id="35320" min="1" max="1" chance="16.771959380411" /> <!-- Seraph Stocking Ingredient  -->
-					<item id="35319" min="1" max="1" chance="16.767279704244" /> <!-- Seraph Tunic Ingredient  -->
-					<item id="35309" min="1" max="1" chance="16.701764237915" /> <!-- Seraph Gaiter Ingredient  -->
-					<item id="35308" min="1" max="1" chance="16.664326828583" /> <!-- Seraph Breastplate Ingredient  -->
-					<item id="35315" min="1" max="1" chance="16.645608123918" /> <!-- Seraph Leather Legging Ingredient  -->
-					<item id="35314" min="1" max="1" chance="16.449061724929" /> <!-- Seraph Leather Armor Ingredient  -->
+					<item id="35320" min="1" max="1" chance="16.771959380411" /> <!-- Seraph Stocking Ingredient -->
+					<item id="35319" min="1" max="1" chance="16.767279704244" /> <!-- Seraph Tunic Ingredient -->
+					<item id="35309" min="1" max="1" chance="16.701764237915" /> <!-- Seraph Gaiter Ingredient -->
+					<item id="35308" min="1" max="1" chance="16.664326828583" /> <!-- Seraph Breastplate Ingredient -->
+					<item id="35315" min="1" max="1" chance="16.645608123918" /> <!-- Seraph Leather Legging Ingredient -->
+					<item id="35314" min="1" max="1" chance="16.449061724929" /> <!-- Seraph Leather Armor Ingredient -->
 				</group>
 				<group chance="17.855">
-					<item id="35307" min="1" max="1" chance="20.229627555307" /> <!-- Seraph Helmet Ingredient  -->
-					<item id="35323" min="1" max="1" chance="20.218426211145" /> <!-- Seraph Sigil Ingredient  -->
-					<item id="35318" min="1" max="1" chance="19.988798655839" /> <!-- Seraph Circlet Ingredient  -->
-					<item id="35313" min="1" max="1" chance="19.955194623355" /> <!-- Seraph Leather Helmet Ingredient  -->
-					<item id="35312" min="1" max="1" chance="19.607952954355" /> <!-- Seraph Shield Ingredient  -->
+					<item id="35307" min="1" max="1" chance="20.229627555307" /> <!-- Seraph Helmet Ingredient -->
+					<item id="35323" min="1" max="1" chance="20.218426211145" /> <!-- Seraph Sigil Ingredient -->
+					<item id="35318" min="1" max="1" chance="19.988798655839" /> <!-- Seraph Circlet Ingredient -->
+					<item id="35313" min="1" max="1" chance="19.955194623355" /> <!-- Seraph Leather Helmet Ingredient -->
+					<item id="35312" min="1" max="1" chance="19.607952954355" /> <!-- Seraph Shield Ingredient -->
 				</group>
 				<group chance="100">
-					<item id="36586" min="1" max="1" chance="23.16018605935" /> <!-- Scroll: Modify Armor (R-grade)  -->
-					<item id="17527" min="1" max="1" chance="15.632498282746" /> <!-- Scroll: Enchant Armor (R-grade)  -->
-					<item id="17526" min="1" max="1" chance="15.481944527214" /> <!-- Scroll: Enchant Weapon (R-grade)  -->
-					<item id="36574" min="1" max="1" chance="4.5009299830941" /> <!-- Scroll: Modify Weapon (R-grade)  -->
-					<item id="45432" min="1" max="1" chance="3.1541011783968" /> <!-- Entrance Pass: Kartia's Labyrinth Lv. 95 Party  -->
-					<item id="35447" min="1" max="1" chance="1.1507952688482" /> <!-- Recipe: Seraph Sigil (60%)  -->
-					<item id="35444" min="1" max="1" chance="1.1413856591275" /> <!-- Recipe: Seraph Stockings (60%)  -->
-					<item id="35311" min="1" max="1" chance="1.1388764298686" /> <!-- Seraph Boot Ingredient  -->
-					<item id="35434" min="1" max="1" chance="1.1360535469524" /> <!-- Recipe: Seraph Gauntlets (60%)  -->
-					<item id="35424" min="1" max="1" chance="1.1338579713509" /> <!-- Recipe: Specter Fighter (60%)  -->
-					<item id="35420" min="1" max="1" chance="1.1338579713509" /> <!-- Recipe: Specter Shaper (60%)  -->
-					<item id="35427" min="1" max="1" chance="1.1338579713509" /> <!-- Recipe: Specter Shooter (60%)  -->
-					<item id="35436" min="1" max="1" chance="1.1316623957494" /> <!-- Recipe: Seraph Shield (60%)  -->
-					<item id="35433" min="1" max="1" chance="1.1304077811199" /> <!-- Recipe: Seraph Gaiters (60%)  -->
-					<item id="35445" min="1" max="1" chance="1.1285258591758" /> <!-- Recipe: Seraph Gloves (60%)  -->
-					<item id="35440" min="1" max="1" chance="1.1282122055184" /> <!-- Recipe: Seraph Leather Gloves (60%)  -->
-					<item id="35439" min="1" max="1" chance="1.1257029762596" /> <!-- Recipe: Seraph Leather Leggings (60%)  -->
-					<item id="35443" min="1" max="1" chance="1.1250756689448" /> <!-- Recipe: Seraph Tunic (60%)  -->
-					<item id="35435" min="1" max="1" chance="1.1250756689448" /> <!-- Recipe: Seraph Boots (60%)  -->
-					<item id="35432" min="1" max="1" chance="1.1238210543154" /> <!-- Recipe: Seraph Breastplate (60%)  -->
-					<item id="35442" min="1" max="1" chance="1.1175479811682" /> <!-- Recipe: Seraph Circlet (60%)  -->
-					<item id="35421" min="1" max="1" chance="1.1159797128814" /> <!-- Recipe: Specter Cutter (60%)  -->
-					<item id="35437" min="1" max="1" chance="1.1159797128814" /> <!-- Recipe: Seraph Leather Helmet (60%)  -->
-					<item id="35316" min="1" max="1" chance="1.1156660592241" /> <!-- Seraph Leather Glove Ingredient  -->
-					<item id="35310" min="1" max="1" chance="1.114725098252" /> <!-- Seraph Gauntlet Ingredient  -->
-					<item id="35446" min="1" max="1" chance="1.1128431763079" /> <!-- Recipe: Seraph Shoes (60%)  -->
-					<item id="35321" min="1" max="1" chance="1.110333947049" /> <!-- Seraph Glove Ingredient  -->
-					<item id="35429" min="1" max="1" chance="1.1097066397343" /> <!-- Recipe: Specter Caster (60%)  -->
-					<item id="35431" min="1" max="1" chance="1.1090793324196" /> <!-- Recipe: Seraph Helmet (60%)  -->
-					<item id="35423" min="1" max="1" chance="1.1090793324196" /> <!-- Recipe: Specter Avenger (60%)  -->
-					<item id="35426" min="1" max="1" chance="1.1081383714475" /> <!-- Recipe: Specter Thrower (60%)  -->
-					<item id="35441" min="1" max="1" chance="1.1078247177901" /> <!-- Recipe: Seraph Leather Boots (60%)  -->
-					<item id="35425" min="1" max="1" chance="1.1071974104754" /> <!-- Recipe: Specter Stormer (60%)  -->
-					<item id="35317" min="1" max="1" chance="1.106883756818" /> <!-- Seraph Leather Boot Ingredient  -->
-					<item id="35428" min="1" max="1" chance="1.1065701031607" /> <!-- Recipe: Specter Buster (60%)  -->
-					<item id="35322" min="1" max="1" chance="1.105942795846" /> <!-- Seraph Shoe Ingredient  -->
-					<item id="35430" min="1" max="1" chance="1.1056291421886" /> <!-- Recipe: Specter Retributer (60%)  -->
-					<item id="35438" min="1" max="1" chance="1.1037472202445" /> <!-- Recipe: Seraph Leather Armor (60%)  -->
-					<item id="35422" min="1" max="1" chance="1.1002970300135" /> <!-- Recipe: Specter Slasher (60%)  -->
+					<item id="36586" min="1" max="1" chance="23.16018605935" /> <!-- Scroll: Modify Armor (R-grade) -->
+					<item id="17527" min="1" max="1" chance="15.632498282746" /> <!-- Scroll: Enchant Armor (R-grade) -->
+					<item id="17526" min="1" max="1" chance="15.481944527214" /> <!-- Scroll: Enchant Weapon (R-grade) -->
+					<item id="36574" min="1" max="1" chance="4.5009299830941" /> <!-- Scroll: Modify Weapon (R-grade) -->
+					<item id="45432" min="1" max="1" chance="3.1541011783968" /> <!-- Entrance Pass: Kartia's Labyrinth Lv. 95 Party -->
+					<item id="35447" min="1" max="1" chance="1.1507952688482" /> <!-- Recipe: Seraph Sigil (60%) -->
+					<item id="35444" min="1" max="1" chance="1.1413856591275" /> <!-- Recipe: Seraph Stockings (60%) -->
+					<item id="35311" min="1" max="1" chance="1.1388764298686" /> <!-- Seraph Boot Ingredient -->
+					<item id="35434" min="1" max="1" chance="1.1360535469524" /> <!-- Recipe: Seraph Gauntlets (60%) -->
+					<item id="35424" min="1" max="1" chance="1.1338579713509" /> <!-- Recipe: Specter Fighter (60%) -->
+					<item id="35420" min="1" max="1" chance="1.1338579713509" /> <!-- Recipe: Specter Shaper (60%) -->
+					<item id="35427" min="1" max="1" chance="1.1338579713509" /> <!-- Recipe: Specter Shooter (60%) -->
+					<item id="35436" min="1" max="1" chance="1.1316623957494" /> <!-- Recipe: Seraph Shield (60%) -->
+					<item id="35433" min="1" max="1" chance="1.1304077811199" /> <!-- Recipe: Seraph Gaiters (60%) -->
+					<item id="35445" min="1" max="1" chance="1.1285258591758" /> <!-- Recipe: Seraph Gloves (60%) -->
+					<item id="35440" min="1" max="1" chance="1.1282122055184" /> <!-- Recipe: Seraph Leather Gloves (60%) -->
+					<item id="35439" min="1" max="1" chance="1.1257029762596" /> <!-- Recipe: Seraph Leather Leggings (60%) -->
+					<item id="35443" min="1" max="1" chance="1.1250756689448" /> <!-- Recipe: Seraph Tunic (60%) -->
+					<item id="35435" min="1" max="1" chance="1.1250756689448" /> <!-- Recipe: Seraph Boots (60%) -->
+					<item id="35432" min="1" max="1" chance="1.1238210543154" /> <!-- Recipe: Seraph Breastplate (60%) -->
+					<item id="35442" min="1" max="1" chance="1.1175479811682" /> <!-- Recipe: Seraph Circlet (60%) -->
+					<item id="35421" min="1" max="1" chance="1.1159797128814" /> <!-- Recipe: Specter Cutter (60%) -->
+					<item id="35437" min="1" max="1" chance="1.1159797128814" /> <!-- Recipe: Seraph Leather Helmet (60%) -->
+					<item id="35316" min="1" max="1" chance="1.1156660592241" /> <!-- Seraph Leather Glove Ingredient -->
+					<item id="35310" min="1" max="1" chance="1.114725098252" /> <!-- Seraph Gauntlet Ingredient -->
+					<item id="35446" min="1" max="1" chance="1.1128431763079" /> <!-- Recipe: Seraph Shoes (60%) -->
+					<item id="35321" min="1" max="1" chance="1.110333947049" /> <!-- Seraph Glove Ingredient -->
+					<item id="35429" min="1" max="1" chance="1.1097066397343" /> <!-- Recipe: Specter Caster (60%) -->
+					<item id="35431" min="1" max="1" chance="1.1090793324196" /> <!-- Recipe: Seraph Helmet (60%) -->
+					<item id="35423" min="1" max="1" chance="1.1090793324196" /> <!-- Recipe: Specter Avenger (60%) -->
+					<item id="35426" min="1" max="1" chance="1.1081383714475" /> <!-- Recipe: Specter Thrower (60%) -->
+					<item id="35441" min="1" max="1" chance="1.1078247177901" /> <!-- Recipe: Seraph Leather Boots (60%) -->
+					<item id="35425" min="1" max="1" chance="1.1071974104754" /> <!-- Recipe: Specter Stormer (60%) -->
+					<item id="35317" min="1" max="1" chance="1.106883756818" /> <!-- Seraph Leather Boot Ingredient -->
+					<item id="35428" min="1" max="1" chance="1.1065701031607" /> <!-- Recipe: Specter Buster (60%) -->
+					<item id="35322" min="1" max="1" chance="1.105942795846" /> <!-- Seraph Shoe Ingredient -->
+					<item id="35430" min="1" max="1" chance="1.1056291421886" /> <!-- Recipe: Specter Retributer (60%) -->
+					<item id="35438" min="1" max="1" chance="1.1037472202445" /> <!-- Recipe: Seraph Leather Armor (60%) -->
+					<item id="35422" min="1" max="1" chance="1.1002970300135" /> <!-- Recipe: Specter Slasher (60%) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -3330,6 +3407,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3372,6 +3450,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3395,82 +3474,82 @@
 		<drop_lists>
 			<death>
 				<group chance="55.043">
-					<item id="35305" min="1" max="1" chance="9.2000799375034" /> <!-- Specter Caster Fragment  -->
-					<item id="35302" min="1" max="1" chance="9.1800955616518" /> <!-- Specter Thrower Fragment  -->
-					<item id="35304" min="1" max="1" chance="9.154660901477" /> <!-- Specter Buster Fragment  -->
-					<item id="35301" min="1" max="1" chance="9.1292262413023" /> <!-- Specter Stormer Fragment  -->
-					<item id="35296" min="1" max="1" chance="9.1237759569791" /> <!-- Specter Shaper Fragment  -->
-					<item id="35300" min="1" max="1" chance="9.0801736823938" /> <!-- Specter Fighter Fragment  -->
-					<item id="35298" min="1" max="1" chance="9.0601893065422" /> <!-- Specter Slasher Fragment  -->
-					<item id="35303" min="1" max="1" chance="9.0456552150137" /> <!-- Specter Shooter Fragment  -->
-					<item id="35297" min="1" max="1" chance="9.0238540777211" /> <!-- Specter Cutter Fragment  -->
-					<item id="35299" min="1" max="1" chance="9.0020529404284" /> <!-- Specter Avenger Fragment  -->
-					<item id="35306" min="1" max="1" chance="9.0002361789873" /> <!-- Specter Retributer Fragment  -->
+					<item id="35305" min="1" max="1" chance="9.2000799375034" /> <!-- Specter Caster Fragment -->
+					<item id="35302" min="1" max="1" chance="9.1800955616518" /> <!-- Specter Thrower Fragment -->
+					<item id="35304" min="1" max="1" chance="9.154660901477" /> <!-- Specter Buster Fragment -->
+					<item id="35301" min="1" max="1" chance="9.1292262413023" /> <!-- Specter Stormer Fragment -->
+					<item id="35296" min="1" max="1" chance="9.1237759569791" /> <!-- Specter Shaper Fragment -->
+					<item id="35300" min="1" max="1" chance="9.0801736823938" /> <!-- Specter Fighter Fragment -->
+					<item id="35298" min="1" max="1" chance="9.0601893065422" /> <!-- Specter Slasher Fragment -->
+					<item id="35303" min="1" max="1" chance="9.0456552150137" /> <!-- Specter Shooter Fragment -->
+					<item id="35297" min="1" max="1" chance="9.0238540777211" /> <!-- Specter Cutter Fragment -->
+					<item id="35299" min="1" max="1" chance="9.0020529404284" /> <!-- Specter Avenger Fragment -->
+					<item id="35306" min="1" max="1" chance="9.0002361789873" /> <!-- Specter Retributer Fragment -->
 				</group>
 				<group chance="24.067">
-					<item id="35320" min="1" max="1" chance="20.625753105913" /> <!-- Seraph Stocking Ingredient  -->
-					<item id="35309" min="1" max="1" chance="20.326588274401" /> <!-- Seraph Gaiter Ingredient  -->
-					<item id="35315" min="1" max="1" chance="20.309968005983" /> <!-- Seraph Leather Legging Ingredient  -->
-					<item id="35314" min="1" max="1" chance="13.046910707608" /> <!-- Seraph Leather Armor Ingredient  -->
-					<item id="35319" min="1" max="1" chance="12.868242822122" /> <!-- Seraph Tunic Ingredient  -->
-					<item id="35308" min="1" max="1" chance="12.822537083974" /> <!-- Seraph Breastplate Ingredient  -->
+					<item id="35320" min="1" max="1" chance="20.625753105913" /> <!-- Seraph Stocking Ingredient -->
+					<item id="35309" min="1" max="1" chance="20.326588274401" /> <!-- Seraph Gaiter Ingredient -->
+					<item id="35315" min="1" max="1" chance="20.309968005983" /> <!-- Seraph Leather Legging Ingredient -->
+					<item id="35314" min="1" max="1" chance="13.046910707608" /> <!-- Seraph Leather Armor Ingredient -->
+					<item id="35319" min="1" max="1" chance="12.868242822122" /> <!-- Seraph Tunic Ingredient -->
+					<item id="35308" min="1" max="1" chance="12.822537083974" /> <!-- Seraph Breastplate Ingredient -->
 				</group>
 				<group chance="29.055">
-					<item id="35318" min="1" max="1" chance="28.304938908966" /> <!-- Seraph Circlet Ingredient  -->
-					<item id="35307" min="1" max="1" chance="28.260196179659" /> <!-- Seraph Helmet Ingredient  -->
-					<item id="35313" min="1" max="1" chance="28.139734985373" /> <!-- Seraph Leather Helmet Ingredient  -->
-					<item id="35312" min="2" max="6" chance="10.672861813801" /> <!-- Seraph Shield Ingredient  -->
-					<item id="35323" min="4" max="12" chance="4.622268112201" /> <!-- Seraph Sigil Ingredient  -->
+					<item id="35318" min="1" max="1" chance="28.304938908966" /> <!-- Seraph Circlet Ingredient -->
+					<item id="35307" min="1" max="1" chance="28.260196179659" /> <!-- Seraph Helmet Ingredient -->
+					<item id="35313" min="1" max="1" chance="28.139734985373" /> <!-- Seraph Leather Helmet Ingredient -->
+					<item id="35312" min="2" max="6" chance="10.672861813801" /> <!-- Seraph Shield Ingredient -->
+					<item id="35323" min="4" max="12" chance="4.622268112201" /> <!-- Seraph Sigil Ingredient -->
 				</group>
 				<group chance="21.007">
-					<item id="35326" min="1" max="1" chance="44.780311324796" /> <!-- Seraph Ring Gem  -->
-					<item id="35325" min="1" max="1" chance="29.709144570857" /> <!-- Seraph Earring Gem  -->
-					<item id="35324" min="1" max="1" chance="22.297329461608" /> <!-- Seraph Necklace Gem  -->
-					<item id="35449" min="1" max="1" chance="1.4280953967725" /> <!-- Recipe: Seraph Earring (60%)  -->
-					<item id="35450" min="1" max="1" chance="1.4280953967725" /> <!-- Recipe: Seraph Ring (60%)  -->
-					<item id="35448" min="1" max="1" chance="0.35702384919313" /> <!-- Recipe: Seraph Necklace (60%)  -->
+					<item id="35326" min="1" max="1" chance="44.780311324796" /> <!-- Seraph Ring Gem -->
+					<item id="35325" min="1" max="1" chance="29.709144570857" /> <!-- Seraph Earring Gem -->
+					<item id="35324" min="1" max="1" chance="22.297329461608" /> <!-- Seraph Necklace Gem -->
+					<item id="35449" min="1" max="1" chance="1.4280953967725" /> <!-- Recipe: Seraph Earring (60%) -->
+					<item id="35450" min="1" max="1" chance="1.4280953967725" /> <!-- Recipe: Seraph Ring (60%) -->
+					<item id="35448" min="1" max="1" chance="0.35702384919313" /> <!-- Recipe: Seraph Necklace (60%) -->
 				</group>
 				<group chance="27.968">
-					<item id="35310" min="1" max="3" chance="22.085955377574" /> <!-- Seraph Gauntlet Ingredient  -->
-					<item id="17527" min="1" max="1" chance="17.666618993135" /> <!-- Scroll: Enchant Armor (R-grade)  -->
-					<item id="35311" min="1" max="3" chance="14.781178489703" /> <!-- Seraph Boot Ingredient  -->
-					<item id="35316" min="2" max="6" chance="8.8887299771167" /> <!-- Seraph Leather Glove Ingredient  -->
-					<item id="35317" min="3" max="9" chance="7.4728260869565" /> <!-- Seraph Leather Boot Ingredient  -->
-					<item id="35321" min="3" max="9" chance="6.375143020595" /> <!-- Seraph Glove Ingredient  -->
-					<item id="35322" min="4" max="12" chance="5.2989130434783" /> <!-- Seraph Shoe Ingredient  -->
-					<item id="35434" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Gauntlets (60%)  -->
-					<item id="35435" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Boots (60%)  -->
-					<item id="35436" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Shield (60%)  -->
-					<item id="35437" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Leather Helmet (60%)  -->
-					<item id="35440" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Leather Gloves (60%)  -->
-					<item id="35441" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Leather Boots (60%)  -->
-					<item id="35442" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Circlet (60%)  -->
-					<item id="35445" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Gloves (60%)  -->
-					<item id="35446" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Shoes (60%)  -->
-					<item id="35447" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Sigil (60%)  -->
-					<item id="35431" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Helmet (60%)  -->
-					<item id="17526" min="1" max="1" chance="1.0726544622426" /> <!-- Scroll: Enchant Weapon (R-grade)  -->
-					<item id="35430" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Retributer (60%)  -->
-					<item id="35423" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Avenger (60%)  -->
-					<item id="35444" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Seraph Stockings (60%)  -->
-					<item id="35422" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Slasher (60%)  -->
-					<item id="35421" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Cutter (60%)  -->
-					<item id="35420" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Shaper (60%)  -->
-					<item id="35424" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Fighter (60%)  -->
-					<item id="35425" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Stormer (60%)  -->
-					<item id="35432" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Seraph Breastplate (60%)  -->
-					<item id="35433" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Seraph Gaiters (60%)  -->
-					<item id="35429" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Caster (60%)  -->
-					<item id="35428" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Buster (60%)  -->
-					<item id="35427" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Shooter (60%)  -->
-					<item id="35426" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Thrower (60%)  -->
-					<item id="35438" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Seraph Leather Armor (60%)  -->
-					<item id="35439" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Seraph Leather Leggings (60%)  -->
-					<item id="35443" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Seraph Tunic (60%)  -->
+					<item id="35310" min="1" max="3" chance="22.085955377574" /> <!-- Seraph Gauntlet Ingredient -->
+					<item id="17527" min="1" max="1" chance="17.666618993135" /> <!-- Scroll: Enchant Armor (R-grade) -->
+					<item id="35311" min="1" max="3" chance="14.781178489703" /> <!-- Seraph Boot Ingredient -->
+					<item id="35316" min="2" max="6" chance="8.8887299771167" /> <!-- Seraph Leather Glove Ingredient -->
+					<item id="35317" min="3" max="9" chance="7.4728260869565" /> <!-- Seraph Leather Boot Ingredient -->
+					<item id="35321" min="3" max="9" chance="6.375143020595" /> <!-- Seraph Glove Ingredient -->
+					<item id="35322" min="4" max="12" chance="5.2989130434783" /> <!-- Seraph Shoe Ingredient -->
+					<item id="35434" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Gauntlets (60%) -->
+					<item id="35435" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Boots (60%) -->
+					<item id="35436" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Shield (60%) -->
+					<item id="35437" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Leather Helmet (60%) -->
+					<item id="35440" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Leather Gloves (60%) -->
+					<item id="35441" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Leather Boots (60%) -->
+					<item id="35442" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Circlet (60%) -->
+					<item id="35445" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Gloves (60%) -->
+					<item id="35446" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Shoes (60%) -->
+					<item id="35447" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Sigil (60%) -->
+					<item id="35431" min="1" max="1" chance="1.0726544622426" /> <!-- Recipe: Seraph Helmet (60%) -->
+					<item id="17526" min="1" max="1" chance="1.0726544622426" /> <!-- Scroll: Enchant Weapon (R-grade) -->
+					<item id="35430" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Retributer (60%) -->
+					<item id="35423" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Avenger (60%) -->
+					<item id="35444" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Seraph Stockings (60%) -->
+					<item id="35422" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Slasher (60%) -->
+					<item id="35421" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Cutter (60%) -->
+					<item id="35420" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Shaper (60%) -->
+					<item id="35424" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Fighter (60%) -->
+					<item id="35425" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Stormer (60%) -->
+					<item id="35432" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Seraph Breastplate (60%) -->
+					<item id="35433" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Seraph Gaiters (60%) -->
+					<item id="35429" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Caster (60%) -->
+					<item id="35428" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Buster (60%) -->
+					<item id="35427" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Shooter (60%) -->
+					<item id="35426" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Specter Thrower (60%) -->
+					<item id="35438" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Seraph Leather Armor (60%) -->
+					<item id="35439" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Seraph Leather Leggings (60%) -->
+					<item id="35443" min="1" max="1" chance="0.26816361556064" /> <!-- Recipe: Seraph Tunic (60%) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -3495,6 +3574,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3518,82 +3598,82 @@
 		<drop_lists>
 			<death>
 				<group chance="55.202">
-					<item id="35305" min="1" max="1" chance="9.1953190101808" /> <!-- Specter Caster Fragment  -->
-					<item id="35306" min="1" max="1" chance="9.1826383102062" /> <!-- Specter Retributer Fragment  -->
-					<item id="35297" min="1" max="1" chance="9.1681460816637" /> <!-- Specter Cutter Fragment  -->
-					<item id="35299" min="1" max="1" chance="9.1500307959857" /> <!-- Specter Avenger Fragment  -->
-					<item id="35304" min="1" max="1" chance="9.1264809246042" /> <!-- Specter Buster Fragment  -->
-					<item id="35303" min="1" max="1" chance="9.1228578674686" /> <!-- Specter Shooter Fragment  -->
-					<item id="35296" min="1" max="1" chance="9.0974964675193" /> <!-- Specter Shaper Fragment  -->
-					<item id="35301" min="1" max="1" chance="9.0304699105105" /> <!-- Specter Stormer Fragment  -->
-					<item id="35300" min="1" max="1" chance="8.9833701677475" /> <!-- Specter Fighter Fragment  -->
-					<item id="35302" min="1" max="1" chance="8.9761240534763" /> <!-- Specter Thrower Fragment  -->
-					<item id="35298" min="1" max="1" chance="8.9670664106373" /> <!-- Specter Slasher Fragment  -->
+					<item id="35305" min="1" max="1" chance="9.1953190101808" /> <!-- Specter Caster Fragment -->
+					<item id="35306" min="1" max="1" chance="9.1826383102062" /> <!-- Specter Retributer Fragment -->
+					<item id="35297" min="1" max="1" chance="9.1681460816637" /> <!-- Specter Cutter Fragment -->
+					<item id="35299" min="1" max="1" chance="9.1500307959857" /> <!-- Specter Avenger Fragment -->
+					<item id="35304" min="1" max="1" chance="9.1264809246042" /> <!-- Specter Buster Fragment -->
+					<item id="35303" min="1" max="1" chance="9.1228578674686" /> <!-- Specter Shooter Fragment -->
+					<item id="35296" min="1" max="1" chance="9.0974964675193" /> <!-- Specter Shaper Fragment -->
+					<item id="35301" min="1" max="1" chance="9.0304699105105" /> <!-- Specter Stormer Fragment -->
+					<item id="35300" min="1" max="1" chance="8.9833701677475" /> <!-- Specter Fighter Fragment -->
+					<item id="35302" min="1" max="1" chance="8.9761240534763" /> <!-- Specter Thrower Fragment -->
+					<item id="35298" min="1" max="1" chance="8.9670664106373" /> <!-- Specter Slasher Fragment -->
 				</group>
 				<group chance="23.977">
-					<item id="35315" min="1" max="1" chance="20.573883304834" /> <!-- Seraph Leather Legging Ingredient  -->
-					<item id="35320" min="1" max="1" chance="20.448763398257" /> <!-- Seraph Stocking Ingredient  -->
-					<item id="35309" min="1" max="1" chance="20.448763398257" /> <!-- Seraph Gaiter Ingredient  -->
-					<item id="35314" min="1" max="1" chance="13.029152938232" /> <!-- Seraph Leather Armor Ingredient  -->
-					<item id="35308" min="1" max="1" chance="12.812278433499" /> <!-- Seraph Breastplate Ingredient  -->
-					<item id="35319" min="1" max="1" chance="12.687158526922" /> <!-- Seraph Tunic Ingredient  -->
+					<item id="35315" min="1" max="1" chance="20.573883304834" /> <!-- Seraph Leather Legging Ingredient -->
+					<item id="35320" min="1" max="1" chance="20.448763398257" /> <!-- Seraph Stocking Ingredient -->
+					<item id="35309" min="1" max="1" chance="20.448763398257" /> <!-- Seraph Gaiter Ingredient -->
+					<item id="35314" min="1" max="1" chance="13.029152938232" /> <!-- Seraph Leather Armor Ingredient -->
+					<item id="35308" min="1" max="1" chance="12.812278433499" /> <!-- Seraph Breastplate Ingredient -->
+					<item id="35319" min="1" max="1" chance="12.687158526922" /> <!-- Seraph Tunic Ingredient -->
 				</group>
 				<group chance="28.852">
-					<item id="35318" min="1" max="1" chance="28.368917232774" /> <!-- Seraph Circlet Ingredient  -->
-					<item id="35307" min="1" max="1" chance="28.278802162762" /> <!-- Seraph Helmet Ingredient  -->
-					<item id="35313" min="1" max="1" chance="28.251074448912" /> <!-- Seraph Leather Helmet Ingredient  -->
-					<item id="35312" min="2" max="6" chance="10.533065298766" /> <!-- Seraph Shield Ingredient  -->
-					<item id="35323" min="4" max="12" chance="4.5681408567864" /> <!-- Seraph Sigil Ingredient  -->
+					<item id="35318" min="1" max="1" chance="28.368917232774" /> <!-- Seraph Circlet Ingredient -->
+					<item id="35307" min="1" max="1" chance="28.278802162762" /> <!-- Seraph Helmet Ingredient -->
+					<item id="35313" min="1" max="1" chance="28.251074448912" /> <!-- Seraph Leather Helmet Ingredient -->
+					<item id="35312" min="2" max="6" chance="10.533065298766" /> <!-- Seraph Shield Ingredient -->
+					<item id="35323" min="4" max="12" chance="4.5681408567864" /> <!-- Seraph Sigil Ingredient -->
 				</group>
 				<group chance="21.078">
-					<item id="35326" min="1" max="1" chance="44.534585824082" /> <!-- Seraph Ring Gem  -->
-					<item id="35325" min="1" max="1" chance="30.140430780909" /> <!-- Seraph Earring Gem  -->
-					<item id="35324" min="1" max="1" chance="22.122592276307" /> <!-- Seraph Necklace Gem  -->
-					<item id="35449" min="1" max="1" chance="1.4232849416453" /> <!-- Recipe: Seraph Earring (60%)  -->
-					<item id="35450" min="1" max="1" chance="1.4232849416453" /> <!-- Recipe: Seraph Ring (60%)  -->
-					<item id="35448" min="1" max="1" chance="0.35582123541133" /> <!-- Recipe: Seraph Necklace (60%)  -->
+					<item id="35326" min="1" max="1" chance="44.534585824082" /> <!-- Seraph Ring Gem -->
+					<item id="35325" min="1" max="1" chance="30.140430780909" /> <!-- Seraph Earring Gem -->
+					<item id="35324" min="1" max="1" chance="22.122592276307" /> <!-- Seraph Necklace Gem -->
+					<item id="35449" min="1" max="1" chance="1.4232849416453" /> <!-- Recipe: Seraph Earring (60%) -->
+					<item id="35450" min="1" max="1" chance="1.4232849416453" /> <!-- Recipe: Seraph Ring (60%) -->
+					<item id="35448" min="1" max="1" chance="0.35582123541133" /> <!-- Recipe: Seraph Necklace (60%) -->
 				</group>
 				<group chance="27.752">
-					<item id="35310" min="1" max="3" chance="22.030844623811" /> <!-- Seraph Gauntlet Ingredient  -->
-					<item id="17527" min="1" max="1" chance="17.883395791294" /> <!-- Scroll: Enchant Armor (R-grade)  -->
-					<item id="35311" min="1" max="3" chance="14.75929662727" /> <!-- Seraph Boot Ingredient  -->
-					<item id="35316" min="2" max="6" chance="8.7272989334102" /> <!-- Seraph Leather Glove Ingredient  -->
-					<item id="35317" min="3" max="9" chance="7.2102911501874" /> <!-- Seraph Leather Boot Ingredient  -->
-					<item id="35321" min="3" max="9" chance="6.4247621793024" /> <!-- Seraph Glove Ingredient  -->
-					<item id="35322" min="4" max="12" chance="5.3978091669069" /> <!-- Seraph Shoe Ingredient  -->
-					<item id="35437" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Leather Helmet (60%)  -->
-					<item id="35436" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Shield (60%)  -->
-					<item id="35435" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Boots (60%)  -->
-					<item id="35434" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Gauntlets (60%)  -->
-					<item id="35440" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Leather Gloves (60%)  -->
-					<item id="35441" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Leather Boots (60%)  -->
-					<item id="35442" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Circlet (60%)  -->
-					<item id="35446" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Shoes (60%)  -->
-					<item id="35447" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Sigil (60%)  -->
-					<item id="35431" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Helmet (60%)  -->
-					<item id="17526" min="1" max="1" chance="1.0810031709426" /> <!-- Scroll: Enchant Weapon (R-grade)  -->
-					<item id="35445" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Gloves (60%)  -->
-					<item id="35421" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Cutter (60%)  -->
-					<item id="35422" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Slasher (60%)  -->
-					<item id="35420" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Shaper (60%)  -->
-					<item id="35427" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Shooter (60%)  -->
-					<item id="35444" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Seraph Stockings (60%)  -->
-					<item id="35443" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Seraph Tunic (60%)  -->
-					<item id="35423" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Avenger (60%)  -->
-					<item id="35424" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Fighter (60%)  -->
-					<item id="35425" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Stormer (60%)  -->
-					<item id="35439" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Seraph Leather Leggings (60%)  -->
-					<item id="35438" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Seraph Leather Armor (60%)  -->
-					<item id="35426" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Thrower (60%)  -->
-					<item id="35428" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Buster (60%)  -->
-					<item id="35429" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Caster (60%)  -->
-					<item id="35433" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Seraph Gaiters (60%)  -->
-					<item id="35432" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Seraph Breastplate (60%)  -->
-					<item id="35430" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Retributer (60%)  -->
+					<item id="35310" min="1" max="3" chance="22.030844623811" /> <!-- Seraph Gauntlet Ingredient -->
+					<item id="17527" min="1" max="1" chance="17.883395791294" /> <!-- Scroll: Enchant Armor (R-grade) -->
+					<item id="35311" min="1" max="3" chance="14.75929662727" /> <!-- Seraph Boot Ingredient -->
+					<item id="35316" min="2" max="6" chance="8.7272989334102" /> <!-- Seraph Leather Glove Ingredient -->
+					<item id="35317" min="3" max="9" chance="7.2102911501874" /> <!-- Seraph Leather Boot Ingredient -->
+					<item id="35321" min="3" max="9" chance="6.4247621793024" /> <!-- Seraph Glove Ingredient -->
+					<item id="35322" min="4" max="12" chance="5.3978091669069" /> <!-- Seraph Shoe Ingredient -->
+					<item id="35437" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Leather Helmet (60%) -->
+					<item id="35436" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Shield (60%) -->
+					<item id="35435" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Boots (60%) -->
+					<item id="35434" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Gauntlets (60%) -->
+					<item id="35440" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Leather Gloves (60%) -->
+					<item id="35441" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Leather Boots (60%) -->
+					<item id="35442" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Circlet (60%) -->
+					<item id="35446" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Shoes (60%) -->
+					<item id="35447" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Sigil (60%) -->
+					<item id="35431" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Helmet (60%) -->
+					<item id="17526" min="1" max="1" chance="1.0810031709426" /> <!-- Scroll: Enchant Weapon (R-grade) -->
+					<item id="35445" min="1" max="1" chance="1.0810031709426" /> <!-- Recipe: Seraph Gloves (60%) -->
+					<item id="35421" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Cutter (60%) -->
+					<item id="35422" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Slasher (60%) -->
+					<item id="35420" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Shaper (60%) -->
+					<item id="35427" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Shooter (60%) -->
+					<item id="35444" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Seraph Stockings (60%) -->
+					<item id="35443" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Seraph Tunic (60%) -->
+					<item id="35423" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Avenger (60%) -->
+					<item id="35424" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Fighter (60%) -->
+					<item id="35425" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Stormer (60%) -->
+					<item id="35439" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Seraph Leather Leggings (60%) -->
+					<item id="35438" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Seraph Leather Armor (60%) -->
+					<item id="35426" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Thrower (60%) -->
+					<item id="35428" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Buster (60%) -->
+					<item id="35429" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Caster (60%) -->
+					<item id="35433" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Seraph Gaiters (60%) -->
+					<item id="35432" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Seraph Breastplate (60%) -->
+					<item id="35430" min="1" max="1" chance="0.27025079273566" /> <!-- Recipe: Specter Retributer (60%) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -3617,6 +3697,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3658,6 +3739,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3697,6 +3779,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3736,6 +3819,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3776,6 +3860,7 @@
 				<defence fire="350" water="350" wind="350" earth="350" holy="300" dark="350" />
 				<attack type="DARK" value="430" />
 			</attribute>
+			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3801,17 +3886,17 @@
 			<death>
 				<group chance="5.043">
 					<item id="17401" min="1" max="1" chance="34.562760261749" /> <!-- Seraph Shield Heavy Armor -->
-					<item id="17385" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Avenger  -->
-					<item id="17384" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Slasher  -->
-					<item id="17383" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Cutter  -->
-					<item id="17389" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Shooter  -->
-					<item id="17386" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Fighter  -->
-					<item id="17387" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Stormer  -->
-					<item id="17388" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Thrower  -->
-					<item id="17392" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Retributer  -->
-					<item id="17391" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Caster  -->
-					<item id="17390" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Buster  -->
-					<item id="17382" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Shaper  -->
+					<item id="17385" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Avenger -->
+					<item id="17384" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Slasher -->
+					<item id="17383" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Cutter -->
+					<item id="17389" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Shooter -->
+					<item id="17386" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Fighter -->
+					<item id="17387" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Stormer -->
+					<item id="17388" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Thrower -->
+					<item id="17392" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Retributer -->
+					<item id="17391" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Caster -->
+					<item id="17390" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Buster -->
+					<item id="17382" min="1" max="1" chance="5.9488399762046" /> <!-- Specter Shaper -->
 				</group>
 				<group chance="10.622">
 					<item id="17403" min="1" max="1" chance="17.011862172849" /> <!-- Seraph Leather Armor Light Armor -->
@@ -3834,25 +3919,25 @@
 					<item id="17396" min="1" max="1" chance="9.7345132743363" /> <!-- Seraph Helmet Heavy Armor -->
 				</group>
 				<group chance="100">
-					<item id="19448" min="1" max="1" chance="27.97628097917" /> <!-- Blessed Scroll: Enchant Armor (R-grade)  -->
-					<item id="37780" min="1" max="1" chance="8.7797150747319" /> <!-- Scroll of Blessing: Armor (R95-grade)  -->
-					<item id="36979" min="1" max="1" chance="8.7408198408124" /> <!-- Life Stone: Hair Accessory  -->
-					<item id="36978" min="1" max="1" chance="8.6099904176287" /> <!-- Scroll: Enchant Hair Accessory  -->
-					<item id="19447" min="1" max="1" chance="7.0046780358614" /> <!-- Blessed Scroll: Enchant Weapon (R-grade)  -->
+					<item id="19448" min="1" max="1" chance="27.97628097917" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+					<item id="37780" min="1" max="1" chance="8.7797150747319" /> <!-- Scroll of Blessing: Armor (R95-grade) -->
+					<item id="36979" min="1" max="1" chance="8.7408198408124" /> <!-- Life Stone: Hair Accessory -->
+					<item id="36978" min="1" max="1" chance="8.6099904176287" /> <!-- Scroll: Enchant Hair Accessory -->
+					<item id="19447" min="1" max="1" chance="7.0046780358614" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
 					<item id="17703" min="1" max="1" chance="6.1560547503456" /> <!-- Lv. 5 Ancient STR Dye STR + 5 / Fire Resistance + 25 -->
 					<item id="17704" min="1" max="1" chance="6.0499768396562" /> <!-- Lv. 5 Ancient DEX Dye DEX + 5 / Earth Resistance + 25 -->
 					<item id="17708" min="1" max="1" chance="5.7635664807946" /> <!-- Lv. 5 Ancient MEN Dye MEN + 5 / Holy Resistance + 25 -->
 					<item id="17707" min="1" max="1" chance="5.6999197343809" /> <!-- Lv. 5 Ancient WIT Dye WIT + 5 / Wind Resistance + 25 -->
 					<item id="17705" min="1" max="1" chance="5.6645604308178" /> <!-- Lv. 5 Ancient CON Dye CON + 5 / Dark Resistance + 25 -->
 					<item id="17706" min="1" max="1" chance="5.6645604308178" /> <!-- Lv. 5 Ancient INT Dye INT + 5 / Water Resistance + 25 -->
-					<item id="37771" min="1" max="1" chance="2.1448953541411" /> <!-- Scroll of Blessing: Weapon (R95-grade)  -->
-					<item id="19505" min="1" max="1" chance="0.59863300932425" /> <!-- Yellow Soul Crystal (R95-grade)  -->
-					<item id="19507" min="1" max="1" chance="0.57423508986567" /> <!-- Purple Soul Crystal (R95-grade)  -->
-					<item id="19506" min="1" max="1" chance="0.57211353165188" /> <!-- Teal Soul Crystal (R95-grade)  -->
+					<item id="37771" min="1" max="1" chance="2.1448953541411" /> <!-- Scroll of Blessing: Weapon (R95-grade) -->
+					<item id="19505" min="1" max="1" chance="0.59863300932425" /> <!-- Yellow Soul Crystal (R95-grade) -->
+					<item id="19507" min="1" max="1" chance="0.57423508986567" /> <!-- Purple Soul Crystal (R95-grade) -->
+					<item id="19506" min="1" max="1" chance="0.57211353165188" /> <!-- Teal Soul Crystal (R95-grade) -->
 				</group>
 			</death>
 			<lucky_corpse>
-				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1  -->
+				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
 			</lucky_corpse>
 		</drop_lists>
 		<collision>
@@ -3876,6 +3961,7 @@
 				<defence fire="250" water="250" wind="250" earth="250" holy="200" dark="250" />
 				<attack type="DARK" value="330" />
 			</attribute>
+			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="false" />
 		<ai aggroRange="300" isAggressive="true" />
@@ -3906,6 +3992,7 @@
 				<defence fire="200" water="200" wind="200" earth="200" holy="150" dark="200" />
 				<attack type="DARK" value="280" />
 			</attribute>
+			<abnormalResist physical="230" magical="230" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3946,6 +4033,7 @@
 				<attack type="WIND" value="430" />
 				<defence fire="350" water="350" wind="350" earth="300" holy="350" dark="350" />
 			</attribute>
+			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3975,6 +4063,7 @@
 				<attack type="WIND" value="430" />
 				<defence fire="350" water="350" wind="350" earth="300" holy="350" dark="350" />
 			</attribute>
+			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -4004,6 +4093,7 @@
 				<attack type="WIND" value="430" />
 				<defence fire="350" water="350" wind="350" earth="300" holy="350" dark="350" />
 			</attribute>
+			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -4033,6 +4123,7 @@
 				<defence fire="350" water="350" wind="350" earth="300" holy="350" dark="350" />
 				<attack type="WIND" value="430" />
 			</attribute>
+			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="false" targetable="false" />
 		<skill_list>
@@ -4064,6 +4155,7 @@
 				<attack type="WIND" value="430" />
 				<defence fire="350" water="350" wind="350" earth="300" holy="350" dark="350" />
 			</attribute>
+			<abnormalResist physical="0" magical="0" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>

@@ -111,6 +111,12 @@
 												<xs:attribute name="shieldRate" type="xs:nonNegativeInteger" />
 											</xs:complexType>
 										</xs:element>
+										<xs:element name="abnormalResist" minOccurs="0" maxOccurs="1">
+											<xs:complexType>
+												<xs:attribute name="physical" type="xs:decimal" />
+												<xs:attribute name="magical" type="xs:decimal" />
+											</xs:complexType>
+										</xs:element>
 										<xs:element name="attribute" minOccurs="0" maxOccurs="1">
 											<xs:complexType>
 												<xs:all>

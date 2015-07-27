@@ -25,6 +25,7 @@
 				<walk ground="40" />
 				<run ground="120" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -52,23 +53,23 @@
 		<drop_lists>
 			<death>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 		</drop_lists>
@@ -100,6 +101,7 @@
 				<run ground="110" />
 			</speed>
 			<hit_time>500</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -147,6 +149,7 @@
 				<run ground="110" />
 			</speed>
 			<hit_time>480</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -194,6 +197,7 @@
 				<run ground="110" />
 			</speed>
 			<hit_time>480</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -240,6 +244,7 @@
 				<walk ground="40" />
 				<run ground="120" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -285,6 +290,7 @@
 				<walk ground="60" />
 				<run ground="180" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
@@ -329,6 +335,7 @@
 				<walk ground="60" />
 				<run ground="180" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -367,23 +374,23 @@
 					<item id="15659" min="1" max="1" chance="16.616816218013" /> <!-- Sealed Moirai Shoes Piece -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 			<lucky_corpse>
@@ -417,6 +424,7 @@
 				<walk ground="60" />
 				<run ground="150" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -455,23 +463,23 @@
 					<item id="15693" min="1" max="1" chance="19.924287706714" /> <!-- Sealed Moirai Shield Fragment -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 			<lucky_corpse>
@@ -503,6 +511,7 @@
 				<walk ground="40" />
 				<run ground="120" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -551,6 +560,7 @@
 				<walk ground="53" />
 				<run ground="150" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -621,6 +631,7 @@
 				<walk ground="30" />
 				<run ground="66" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -684,6 +695,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -716,6 +728,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -747,6 +760,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -778,6 +792,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -809,6 +824,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status talkable="false" />
 		<skill_list>
@@ -841,6 +857,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" canBeSown="true" />
 		<skill_list>
@@ -880,6 +897,7 @@
 				<run ground="250" />
 			</speed>
 			<hit_time>640</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -910,23 +928,23 @@
 					<item id="9551" min="1" max="1" chance="16.666666666667" /> <!-- Holy Stone -->
 				</group>
 				<group chance="20">
-					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life  -->
-					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life  -->
-					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life  -->
+					<item id="8600" min="1" max="1" chance="50" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="40" /> <!-- Major Herb of Life -->
+					<item id="8602" min="1" max="1" chance="10" /> <!-- Superior Herb of Life -->
 				</group>
 				<group chance="33">
-					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana  -->
-					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana  -->
-					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana  -->
+					<item id="8603" min="1" max="1" chance="60" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="30" /> <!-- Major Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="10" /> <!-- Superior Herb of Mana -->
 				</group>
 				<group chance="0.7">
-					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power  -->
+					<item id="34849" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Power -->
 				</group>
 				<group chance="0.7">
-					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic  -->
+					<item id="34850" min="1" max="1" chance="100" /> <!-- Mysterious Herb of Magic -->
 				</group>
 				<group chance="0.1">
-					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb  -->
+					<item id="13028" min="1" max="1" chance="100" /> <!-- Vitality Replenishing Herb -->
 				</group>
 			</death>
 			<corpse>
@@ -952,6 +970,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" canBeSown="true" />
 		<skill_list>
@@ -985,6 +1004,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" noSleepMode="true" canBeSown="true" />
 		<skill_list>
@@ -1023,6 +1043,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" canBeSown="true" />
 		<skill_list>
@@ -1060,6 +1081,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -1098,6 +1120,7 @@
 				<run ground="80" />
 			</speed>
 			<hit_time>480</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -1136,6 +1159,7 @@
 				<run ground="80" />
 			</speed>
 			<hit_time>480</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -1174,6 +1198,7 @@
 				<run ground="80" />
 			</speed>
 			<hit_time>480</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -1211,6 +1236,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -1247,6 +1273,7 @@
 				<walk ground="30" />
 				<run ground="160" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" talkable="false" undying="false" canBeSown="true" />
 		<skill_list>
@@ -1285,6 +1312,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" talkable="false" targetable="false" showName="false" canBeSown="true" />
 		<skill_list>
@@ -1319,6 +1347,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" canBeSown="true" />
 		<skill_list>
@@ -1358,6 +1387,7 @@
 				<run ground="140" />
 			</speed>
 			<hit_time>100</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" canBeSown="true" />
 		<skill_list>
@@ -1393,6 +1423,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" canBeSown="true" />
 		<skill_list>
@@ -1425,6 +1456,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" canBeSown="true" />
 		<skill_list>
@@ -1458,6 +1490,7 @@
 				<run ground="1" />
 			</speed>
 			<hit_time>460</hit_time>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" canBeSown="true" />
 		<skill_list>
@@ -1490,6 +1523,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" talkable="false" showName="false" canBeSown="true" />
 		<skill_list>
@@ -1523,6 +1557,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skill_list>
@@ -1555,6 +1590,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" canBeSown="true" />
 		<skill_list>
@@ -1588,6 +1624,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" canBeSown="true" />
 		<skill_list>
@@ -1621,6 +1658,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
@@ -1644,6 +1682,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
@@ -1667,6 +1706,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
@@ -1690,6 +1730,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
@@ -1713,6 +1754,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
@@ -1736,6 +1778,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
@@ -1759,6 +1802,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
@@ -1782,6 +1826,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
@@ -1805,6 +1850,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
@@ -1828,6 +1874,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
@@ -1851,6 +1898,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
@@ -1878,6 +1926,7 @@
 				<walk ground="54" />
 				<run ground="180" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
@@ -1913,6 +1962,7 @@
 				<walk ground="54" />
 				<run ground="180" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<ai aggroRange="600" isAggressive="true" />
 		<skill_list>
@@ -1949,6 +1999,7 @@
 				<walk ground="54" />
 				<run ground="180" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<ai aggroRange="400" isAggressive="true" />
 		<skill_list>
@@ -1983,6 +2034,7 @@
 				<walk ground="54" />
 				<run ground="180" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<ai aggroRange="400" isAggressive="true" />
 		<skill_list>
@@ -2016,6 +2068,7 @@
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<ai aggroRange="500" isAggressive="true" />
 		<skill_list>
@@ -2050,6 +2103,7 @@
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<ai aggroRange="500" isAggressive="true" />
 		<skill_list>
@@ -2084,6 +2138,7 @@
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<ai aggroRange="500" isAggressive="true" />
 		<skill_list>
@@ -2118,6 +2173,7 @@
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<ai aggroRange="500" isAggressive="true" />
 		<skill_list>
@@ -2152,6 +2208,7 @@
 				<walk ground="30" />
 				<run ground="220" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<ai aggroRange="500" isAggressive="true" />
 		<skill_list>
@@ -2185,6 +2242,7 @@
 				<walk ground="30" />
 				<run ground="220" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<ai aggroRange="500" isAggressive="true" />
 		<skill_list>
@@ -2218,6 +2276,7 @@
 				<walk ground="30" />
 				<run ground="220" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<ai aggroRange="500" isAggressive="true" />
 		<skill_list>
@@ -2251,6 +2310,7 @@
 				<walk ground="30" />
 				<run ground="220" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<ai aggroRange="500" isAggressive="true" />
 		<skill_list>
@@ -2281,6 +2341,7 @@
 				<walk ground="54" />
 				<run ground="150" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="6" /> <!-- Humanoids -->
@@ -2303,6 +2364,7 @@
 				<walk ground="180" />
 				<run ground="180" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="10" /> <!-- Dragons -->
@@ -2325,6 +2387,7 @@
 				<walk ground="60" />
 				<run ground="250" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="9" /> <!-- Demons -->
@@ -2347,6 +2410,7 @@
 				<walk ground="50" />
 				<run ground="100" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="19" /> <!-- Others -->
@@ -2371,6 +2435,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4071" level="5" /> <!-- Resist Bow/Crossbow Weapons -->
@@ -2400,6 +2465,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4276" level="5" /> <!-- Weak Point against Bow/Crossbow Weapons -->
@@ -2429,6 +2495,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
@@ -2458,6 +2525,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
@@ -2481,6 +2549,7 @@
 				<walk ground="1" />
 				<run ground="1" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
@@ -2508,6 +2577,7 @@
 				<walk ground="57" />
 				<run ground="300" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
@@ -2541,6 +2611,7 @@
 				<walk ground="57" />
 				<run ground="300" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4408" level="8" /> <!-- HP Increase (1/4x) -->
@@ -2574,6 +2645,7 @@
 				<walk ground="100" />
 				<run ground="300" />
 			</speed>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<skill_list>
 			<skill id="4408" level="9" /> <!-- HP Increase (1/2x) -->
@@ -2608,6 +2680,7 @@
 				<defence fire="100" water="100" wind="50" earth="100" holy="100" dark="100" />
 				<attack type="EARTH" value="180" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2642,6 +2715,7 @@
 				<defence fire="100" water="100" wind="50" earth="100" holy="100" dark="100" />
 				<attack type="EARTH" value="180" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2676,6 +2750,7 @@
 				<defence fire="100" water="100" wind="100" earth="50" holy="100" dark="100" />
 				<attack type="WIND" value="180" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2709,6 +2784,7 @@
 				<defence fire="100" water="100" wind="100" earth="50" holy="100" dark="100" />
 				<attack type="WIND" value="180" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2742,6 +2818,7 @@
 				<defence fire="100" water="50" wind="100" earth="100" holy="100" dark="100" />
 				<attack type="FIRE" value="180" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2776,6 +2853,7 @@
 				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
 				<attack type="FIRE" value="330" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2810,6 +2888,7 @@
 				<defence fire="250" water="250" wind="250" earth="250" holy="200" dark="250" />
 				<attack type="DARK" value="330" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2875,6 +2954,7 @@
 				<defence fire="250" water="250" wind="250" earth="250" holy="200" dark="250" />
 				<attack type="DARK" value="330" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -2937,6 +3017,7 @@
 				<defence fire="250" water="250" wind="250" earth="250" holy="200" dark="250" />
 				<attack type="DARK" value="330" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3000,6 +3081,7 @@
 				<defence fire="200" water="250" wind="250" earth="250" holy="250" dark="250" />
 				<attack type="WATER" value="330" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3060,6 +3142,7 @@
 				<defence fire="250" water="250" wind="250" earth="250" holy="200" dark="250" />
 				<attack type="DARK" value="330" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3118,6 +3201,7 @@
 				<defence fire="200" water="250" wind="250" earth="250" holy="250" dark="250" />
 				<attack type="WATER" value="330" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3170,6 +3254,7 @@
 			</speed>
 			<attack physical="1949.95411856464" magical="1331.56588332443" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="405.66735" magical="296.84976" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" showName="false" />
 		<skill_list>
@@ -3195,6 +3280,7 @@
 			</speed>
 			<attack physical="5951.78807387916" magical="4064.29971055653" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="607.972112" magical="667.3314" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" />
 		<skill_list>
@@ -3220,6 +3306,7 @@
 			</speed>
 			<attack physical="5951.78807387916" magical="4064.29971055653" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="607.972112" magical="667.3314" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" />
 		<skill_list>
@@ -3245,6 +3332,7 @@
 			</speed>
 			<attack physical="1423.72742984904" magical="972.221273543337" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="379.98257" magical="278.05475" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" />
 		<skill_list>
@@ -3269,6 +3357,7 @@
 			</speed>
 			<attack physical="1423.72742984904" magical="972.221273543337" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="379.98257" magical="278.05475" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" />
 		<skill_list>
@@ -3293,6 +3382,7 @@
 			</speed>
 			<attack physical="1423.72742984904" magical="972.221273543337" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="379.98257" magical="278.05475" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" />
 		<skill_list>
@@ -3317,6 +3407,7 @@
 			</speed>
 			<attack physical="1423.72742984904" magical="972.221273543337" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="379.98257" magical="278.05475" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" />
 		<skill_list>
@@ -3341,6 +3432,7 @@
 			</speed>
 			<attack physical="1423.72742984904" magical="972.221273543337" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="379.98257" magical="278.05475" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" />
 		<skill_list>
@@ -3365,6 +3457,7 @@
 			</speed>
 			<attack physical="1423.72742984904" magical="972.221273543337" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="379.98257" magical="278.05475" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" />
 		<skill_list>
@@ -3394,6 +3487,7 @@
 				<defence fire="100" water="100" wind="50" earth="100" holy="100" dark="100" />
 				<attack type="EARTH" value="180" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3428,6 +3522,7 @@
 				<defence fire="100" water="100" wind="50" earth="100" holy="100" dark="100" />
 				<attack type="EARTH" value="180" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3463,6 +3558,7 @@
 				<defence fire="100" water="100" wind="50" earth="100" holy="100" dark="100" />
 				<attack type="EARTH" value="180" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<skill_list>
@@ -3495,6 +3591,7 @@
 				<defence fire="100" water="100" wind="50" earth="100" holy="100" dark="100" />
 				<attack type="EARTH" value="180" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<ai aggroRange="300" isAggressive="true" />
@@ -3525,6 +3622,7 @@
 				<defence fire="100" water="100" wind="50" earth="100" holy="100" dark="100" />
 				<attack type="EARTH" value="180" />
 			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
 		<ai aggroRange="300" isAggressive="true" />
@@ -3552,6 +3650,7 @@
 			</speed>
 			<attack physical="1423.72742984904" magical="972.221273543337" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="379.98257" magical="278.05475" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" />
 		<skill_list>
@@ -3577,6 +3676,7 @@
 			</speed>
 			<attack physical="1423.72742984904" magical="972.221273543337" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
 			<defence physical="379.98257" magical="278.05475" />
+			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" targetable="false" showName="false" />
 		<skill_list>
