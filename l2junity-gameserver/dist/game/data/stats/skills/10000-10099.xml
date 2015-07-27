@@ -216,9 +216,9 @@
 		<set name="isDebuff" val="true" />
 		<set name="effectPoint" val="#effectPoint" />
 		<alterSkill>
-			<skill id="10250" level="1" chance="100" type="KNOCK_DOWN" /> <!-- Heavy Hit -->
-			<skill id="10249" level="1" chance="100" type="AIR_BIND" /> <!-- Heavy Hit -->
-			<skill id="14579" level="1" chance="100" type="EARTHWORM_DEBUFF" />
+			<skill id="10250" level="1" chance="100" abnormalType="KNOCK_DOWN" /> <!-- Heavy Hit -->
+			<skill id="10249" level="1" chance="100" abnormalType="AIR_BIND" /> <!-- Heavy Hit -->
+			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
 		</alterSkill>
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />

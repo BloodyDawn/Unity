@@ -38,7 +38,6 @@ import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.handler.TargetHandler;
 import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;
-import org.l2junity.gameserver.model.AlterSkill;
 import org.l2junity.gameserver.model.ArenaParticipantsHolder;
 import org.l2junity.gameserver.model.ExtractableProductItem;
 import org.l2junity.gameserver.model.ExtractableSkill;
@@ -54,6 +53,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.holders.AlterSkillHolder;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
@@ -206,7 +206,7 @@ public final class Skill implements IIdentifiable
 	private final boolean _isSharedWithSummon;
 	
 	private final int _toggleGroupId;
-	private final List<AlterSkill> _alterSkills;
+	private final List<AlterSkillHolder> _alterSkills;
 	
 	public Skill(StatsSet set)
 	{
@@ -377,7 +377,7 @@ public final class Skill implements IIdentifiable
 		_isSharedWithSummon = set.getBoolean("isSharedWithSummon", true);
 		
 		_toggleGroupId = set.getInt("toggleGroupId", -1);
-		_alterSkills = set.getList("alterSkill", AlterSkill.class);
+		_alterSkills = set.getList("alterSkill", AlterSkillHolder.class);
 	}
 	
 	public TraitType getTraitType()
@@ -1748,7 +1748,7 @@ public final class Skill implements IIdentifiable
 		return _toggleGroupId;
 	}
 	
-	public List<AlterSkill> getAlterSkills()
+	public List<AlterSkillHolder> getAlterSkills()
 	{
 		return _alterSkills;
 	}

@@ -1375,7 +1375,7 @@ public final class Formulas
 			set.set("buffDebuffMod", buffDebuffMod);
 			set.set("rate", rate);
 			set.set("finalRate", finalRate);
-			Debug.sendSkillDebug(attacker, target, skill, set);
+			System.out.println(set.getSet());
 		}
 		
 		if (finalRate <= Rnd.get(100))

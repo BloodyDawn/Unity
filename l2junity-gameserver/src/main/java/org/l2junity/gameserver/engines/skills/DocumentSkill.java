@@ -26,7 +26,7 @@ import java.util.List;
 import org.l2junity.commons.util.IXmlReader;
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.engines.DocumentBase;
-import org.l2junity.gameserver.model.AlterSkill;
+import org.l2junity.gameserver.model.holders.AlterSkillHolder;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.skills.AbnormalType;
@@ -237,7 +237,7 @@ public class DocumentSkill extends DocumentBase implements IXmlReader
 				}
 				else if ("alterSkill".equalsIgnoreCase(n.getNodeName()))
 				{
-					final List<AlterSkill> alterSkills = new ArrayList<>();
+					final List<AlterSkillHolder> alterSkills = new ArrayList<>();
 					for (Node alterNode = n.getFirstChild(); alterNode != null; alterNode = alterNode.getNextSibling())
 					{
 						if ("skill".equalsIgnoreCase(alterNode.getNodeName()))
@@ -246,8 +246,8 @@ public class DocumentSkill extends DocumentBase implements IXmlReader
 							final int id = parseInteger(nodeAttrs, "id");
 							final int level = parseInteger(nodeAttrs, "level", 1);
 							final int chance = parseInteger(nodeAttrs, "chance", 100);
-							final AbnormalType type = parseEnum(nodeAttrs, AbnormalType.class, "type");
-							alterSkills.add(new AlterSkill(id, level, chance, type));
+							final AbnormalType type = parseEnum(nodeAttrs, AbnormalType.class, "abnormalType");
+							alterSkills.add(new AlterSkillHolder(id, level, chance, type));
 						}
 					}
 					_currentSkill.sets[i - 1].set("alterSkill", alterSkills);
