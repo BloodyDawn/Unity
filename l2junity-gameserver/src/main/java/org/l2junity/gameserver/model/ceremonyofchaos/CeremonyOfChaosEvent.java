@@ -91,6 +91,16 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 		{
 			final PlayerInstance player = member.getPlayer();
 			
+			if (player.inObserverMode())
+			{
+				player.leaveObserverMode();
+			}
+			
+			if (player.isInDuel())
+			{
+				player.setIsInDuel(0);
+			}
+			
 			// Remember player's last location
 			player.setLastLocation();
 			
@@ -119,6 +129,11 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				s.setInvisible(true);
 				s.setIsImmobilized(true);
 			});
+			
+			if (player.isTransformed())
+			{
+				player.untransform();
+			}
 			
 			// If player is dead, revive it
 			if (player.isDead())
