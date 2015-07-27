@@ -204,6 +204,8 @@ public final class Skill implements IIdentifiable
 	private final boolean _canCastWhileDisabled;
 	private final boolean _isSharedWithSummon;
 	
+	private final int _toggleGroupId;
+	
 	public Skill(StatsSet set)
 	{
 		_id = set.getInt("skill_id");
@@ -371,6 +373,8 @@ public final class Skill implements IIdentifiable
 		_canDoubleCast = set.getBoolean("canDoubleCast", false);
 		_canCastWhileDisabled = set.getBoolean("canCastWhileDisabled", false);
 		_isSharedWithSummon = set.getBoolean("isSharedWithSummon", true);
+		
+		_toggleGroupId = set.getInt("toggleGroupId", -1);
 	}
 	
 	public TraitType getTraitType()
@@ -1729,5 +1733,10 @@ public final class Skill implements IIdentifiable
 	public boolean isSharedWithSummon()
 	{
 		return _isSharedWithSummon;
+	}
+	
+	public int getToggleGroupId()
+	{
+		return _toggleGroupId;
 	}
 }

@@ -25,6 +25,7 @@
 		<table name="#pAtk"> 844 979 1135 1277 1447 1535 1629 </table>
 		<set name="icon" val="icon.skill10001" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -36,7 +37,7 @@
 				<add stat="skillCritical" val="1" /> <!-- STR -->
 			</effect>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
 				<param minDamage="1" chance="60" />
 				<param skillId="10060" skillLevel="1" />
 				<param targetType="SELF" />
@@ -50,6 +51,7 @@
 		<table name="#pDef"> 1904 2091 2297 2478 2776 2881 2990 </table>
 		<set name="icon" val="icon.skill10002" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -65,6 +67,12 @@
 				<add stat="STR" val="2" />
 				<add stat="reflectDam" val="10" />
 			</effect>
+			<effect name="CubicMastery">
+				<param cubicCount="3" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="ABSORB" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10003" levels="7" name="Superior Shield Mastery">
@@ -74,6 +82,7 @@
 		<set name="icon" val="icon.skill10003" />
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -97,6 +106,7 @@
 		<set name="icon" val="icon.skill10004" />
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -107,17 +117,19 @@
 		</for>
 	</skill>
 	<skill id="10005" levels="7" name="Superior Mental Attack Resistance">
-		<!-- TODO In addition, has a 10% chance of reflecting P./M. abnormal states back to the attacker. -->
 		<!-- Resistance + 20% to Hold/Sleep/Paralysis/Mental Attacks/Poison/Bleed/Stun. STR + 2. In addition, has a 10% chance of reflecting P./M. abnormal states back to the attacker. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#res"> 20 22 24 26 30 32 34 </table>
 		<set name="icon" val="icon.skill10005" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
+				<add stat="reflectSkillPhysic" val="10" />
+				<add stat="reflectSkillMagic" val="10" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param HOLD="#res" />
@@ -134,6 +146,7 @@
 		<!-- STR + 2. When receiving damage, has a chance of increasing P. Skill Power and Shield Defense -->
 		<set name="icon" val="icon.skill10006" />
 		<set name="magicLevel" val="85" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -141,25 +154,26 @@
 				<add stat="STR" val="2" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
 				<param minDamage="1" />
-				<param chance="20" /> <!-- Unconfirmed -->
-				<param skillId="10007" skillLevel="3" /> <!-- Unconfirmed level -->
+				<param chance="30" />
+				<param skillId="10007" skillLevel="1" />
 				<param targetType="SELF" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10007" levels="3" name="Last Patience">
 		<!-- For 9 seconds, Shield Defense/Skill Power + 25%. -->
-		<!-- TODO: abnormalType -->
-		<table name="#abnormalLvl"> 2 3 4 </table>
 		<table name="#icons"> icon.skill10006 icon.skill10007 icon.skill10007 </table>
+		<table name="#magicLvl"> 89 93 97 </table>
 		<table name="#power">1.25 1.30 1.35</table>
-		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="9" />
+		<set name="abnormalType" val="WEAPON_MASTERY" />
 		<set name="icon" val="#icons" />
 		<set name="operateType" val="A2" />
-		<set name="magicLevel" val="85" /> <!-- Unconfirmed -->
+		<set name="magicLevel" val="#magicLvl" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="8000" />
 		<set name="isMagic" val="4" />
@@ -169,7 +183,6 @@
 		</effect>
 	</skill>
 	<skill id="10008" levels="11" name="Shield Charge">
-		<!-- TODO: abnormalType -->
 		<!-- Uses a shield to attack target with 13634 Power added to P. Atk. and also P. Def. - 10%, P. Evasion - 2, and P. Critical Damage + 10%. Can be used while a shield is equipped. -->
 		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 11 </table>
 		<table name="#effectPoint"> -689 -692 -696 -700 -704 -707 -710 -713 -716 -719 -722 </table>
@@ -178,11 +191,15 @@
 		<table name="#power"> 13634 14179 15269 16359 17449 18539 19629 20719 22354 23444 24534 </table>
 		<set name="activateRate" val="80" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="20" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="SHIELD_ATTACK" />
+		<set name="affectHeight" val="-100;200" />
 		<set name="icon" val="icon.skill10008" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsume" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="570" />
@@ -190,6 +207,11 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isDebuff" val="true" />
 		<set name="effectPoint" val="#effectPoint" />
+		<alterSkill>
+			<skill id="10250" level="1" chance="100" type="KNOCKDOWN" /> <!-- Heavy Hit -->
+			<skill id="10249" level="1" chance="100" type="AIRBIND " /> <!-- Heavy Hit -->
+			<skill id="14579" level="1" chance="100" type="EARTHWORM_DEBUFF " />
+		</alterSkill>
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
@@ -207,20 +229,20 @@
 	</skill>
 	<skill id="10009" levels="11" name="Last Judgment">
 		<!-- Attacks target with 16556 Power added to P. Atk, and Speed - 70. Can be used while a sword or blunt weapon is equipped. Over-hit. Critical. -->
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 11 </table>
 		<table name="#effectPoint"> -689 -692 -696 -700 -704 -707 -710 -713 -716 -719 -722 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 64 66 68 70 72 75 77 79 81 83 85 </table>
 		<table name="#power"> 16556 17218 18542 19866 21190 22514 23838 25162 27148 28472 29796 </table>
-		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="effectRange" val="99" />
+		<set name="activateRate" val="100" />
+		<set name="effectRange" val="400" />
 		<set name="icon" val="icon.skill10009" />
-		<set name="lvlBonusRate" val="2" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
@@ -235,7 +257,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param criticalChance="10" />
+				<param criticalChance="5" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
@@ -249,12 +271,11 @@
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 80 83 85 88 91 94 97 100 103 106 109 </table>
 		<table name="#power"> 20451 22087 23723 25359 26995 28631 30267 31903 34357 35175 36811 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="4" />
-		<set name="abnormalType" val="SILENCE" />
-		<set name="abnormalVisualEffect" val="SILENCE" /> <!-- Unconfirmed -->
-		<set name="activateRate" val="80" />
-		<set name="lvlBonusRate" val="2" />
+		<set name="abnormalLvl" val="4" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="CRITICAL_DMG_DOWN" />
+		<set name="activateRate" val="200" />
+		<set name="lvlBonusRate" val="30" />
 		<set name="nextActionAttack" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="trait" val="DERANGEMENT" />
@@ -262,8 +283,11 @@
 		<set name="icon" val="icon.skill10010" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1700" />
 		<set name="coolTime" val="370" />
 		<set name="reuseDelay" val="5000" />
@@ -275,12 +299,12 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param criticalChance="10" />
+				<param criticalChance="5" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
-				<mul stat="pDef" val="0.8" />
-				<mul stat="mDef" val="0.8" />
+				<mul stat="pAtk" val="0.8" />
+				<mul stat="mAtk" val="0.8" />
 			</effect>
 			<effect name="Mute" />
 		</for>
@@ -295,15 +319,20 @@
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="activateRate" val="50" />
+		<set name="activateRate" val="90" />
+		<set name="affectLimit" val="5-12" />
+		<set name="fanRange" val="0,0,150,180" />
+		<set name="lvlBonusRate" val="30" />
 		<set name="basicProperty" val="CON" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="trait" val="SHOCK" />
 		<set name="icon" val="icon.skill10011" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="470" />
 		<set name="reuseDelay" val="10000" />
@@ -317,7 +346,9 @@
 				<param power="#power" />
 				<param ignoreShieldDefence="true" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="Stun">
+				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10012" levels="10" name="Shield Wave">
@@ -326,21 +357,25 @@
 		<table name="#magicLvl"> 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 59 61 63 65 67 69 71  73 75 77 </table>
 		<table name="#power"> 10174 10833 11492 12150 12809 13468 14126 14897 15623 16349 </table>
-		<set name="affectLimit" val="10-10" /> <!-- Unconfirmed -->
-		<set name="affectRange" val="150" /> <!-- Unconfirmed -->
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="200" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="activateRate" val="50" />
+		<set name="activateRate" val="70" />
 		<set name="basicProperty" val="CON" />
+		<set name="fanRange" val="0,0,150,180" />
+		<set name="lvlBonusRate" val="30" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="trait" val="SHOCK" />
 		<set name="icon" val="icon.skill10012" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="470" />
 		<set name="reuseDelay" val="60000" />
@@ -354,7 +389,9 @@
 				<param power="#power" />
 				<param ignoreShieldDefence="true" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="Stun">
+				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10013" levels="11" name="Gust Blade">
@@ -363,16 +400,20 @@
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 121 125 129 133 138 142 146 151 154 157 160 </table>
 		<table name="#power"> 10314 11026 11738 12450 13162 13874 14586 15298 18045 19013 19981 </table>
-		<set name="affectLimit" val="5-12" /> <!-- Unconfirmed -->
-		<set name="affectRange" val="200" /> <!-- Unconfirmed -->
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="200" />
+		<set name="affectHeight" val="-100;200" />
 		<set name="lvlBonusRate" val="2" />
+		<set name="basicProperty" val="MEN" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="nextActionAttack" val="true" />
+		<set name="fanRange" val="0,0,150,120" />
 		<set name="icon" val="icon.skill10013" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="40" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="370" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -383,7 +424,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param criticalChance="10" />
+				<param criticalChance="5" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -394,14 +435,16 @@
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 159 162 167 173 179 184 190 196 202 206 210 </table>
 		<table name="#power"> 14300 14789 15769 16748 17727 18707 19686 20666 23468 24612 25756 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="4" />
-		<set name="abnormalType" val="HEAL_EFFECT_DOWN" />  <!-- Unconfirmed -->
-		<set name="affectLimit" val="10-10" /> <!-- Unconfirmed -->
-		<set name="affectRange" val="250" /> <!-- Unconfirmed -->
+		<set name="abnormalLvl" val="3" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="HEAL_EFFECT_DOWN" />
+		<set name="activateRate" val="80" />
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="200" />
 		<set name="lvlBonusRate" val="2" />
+		<set name="basicProperty" val="MEN" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="nextActionAttack" val="true" />
 		<set name="icon" val="icon.skill10014" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
@@ -425,10 +468,17 @@
 		<table name="#effectPoint"> -2066 -2080 -2099 -2116 -2129 -2140 -2151 -2162 -2173 </table>
 		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
 		<table name="#mpConsumes"> 58 61 63 66 69 72 75 78 81 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="1" />
+		<set name="abnormalType" val="STUN" />
+		<set name="activateRate" val="190" />
+		<set name="lvlBonusRate" val="30" />
+		<set name="basicProperty" val="STR" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10015" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="500" />
@@ -441,8 +491,12 @@
 		</cond>
 		<for>
 			<effect name="PullBack">
-				<param speed="600" delay="1100" />
+				<param speed="600" delay="600" />
 			</effect>
+			<effect name="Stun">
+				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="GetAgro" />
 		</for>
 	</skill>
 	<skill id="10016" levels="9" name="Chain Hydra">
@@ -450,14 +504,20 @@
 		<table name="#effectPoint"> -2093 -2105 -2116 -2125 -2133 -2140 -2147 -2154 -2161 </table>
 		<table name="#magicLvl"> 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 123 127 132 136 140 144 148 152 156 </table>
-		<set name="affectLimit" val="5-12" /> <!-- Unconfirmed -->
-		<set name="affectRange" val="600" /> <!-- Unconfirmed -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="1" />
+		<set name="abnormalType" val="STUN" />
+		<set name="affectRange" val="200" />
+		<set name="activateRate" val="150" />
+		<set name="lvlBonusRate" val="30" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10016" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="45000" />
@@ -468,23 +528,27 @@
 		</cond>
 		<for>
 			<effect name="PullBack">
-				<param speed="600" delay="1100" />
+				<param speed="600" delay="650" />
 			</effect>
+			<effect name="Stun">
+				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="GetAgro" />
 		</for>
 	</skill>
 	<skill id="10017" levels="7" name="Final Ultimate Defense">
 		<!-- For 30 sec., P. Def. + 4000 and M. Def. + 4000. Damage received is capped at 300 and 40% of it is reflected back to the attacker. Additionally, + 80% Buff-canceling Attack Resistance. -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 </table>
 		<table name="#effectPoint"> 689 700 709 714 719 724 729 </table>
 		<table name="#mpConsumes"> 58 63 68 72 76 80 84 </table>
 		<table name="#def"> 4000 6000 8000 10000 12000 14000 16000 </table>
 		<table name="#reflectDam"> 40 60 80 100 100 100 100 </table>
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#damageCap"> 300 200 150 100 100 100 100 </table> <!-- TODO: Implement me -->
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
 		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10017" />
 		<set name="operateType" val="A2" />
@@ -494,6 +558,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="900000" />
+		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="ImmobileBuff">
 				<add stat="pDef" val="#def" />
@@ -506,21 +571,22 @@
 	</skill>
 	<skill id="10018" levels="2" name="Noble Sacrifice">
 		<!-- For 10 seconds, receives 60% of the damage inflicted to the party member. -->
-		<table name="#abnormalLvls"> 1 2 </table>
 		<table name="#effectPoint"> 694 704 </table>
 		<table name="#magicLvl"> 91 96 </table>
 		<table name="#mpConsumes"> 60 65 </table>
 		<table name="#transDamToPlayer"> 60 90 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="TRANSFER_DAMAGE" />
+		<set name="abnormalType" val="SACRIFICE" />
 		<set name="affectRange" val="1000" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10018" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="400" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -538,11 +604,12 @@
 		<table name="#mpConsumes"> 127 140 153 166 179 </table>
 		<table name="#pDef"> 5000 10000 11000 12000 13000 </table>
 		<table name="#mDef"> 5000 7000 8000 9000 10000 </table>
-		<table name="#derangementTrait"> 50 70 70 70 70 </table>
+		<table name="#debuffVuln"> 50 70 70 70 70 </table>
 		<set name="affectRange" val="1000" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="TRANSFER_DAMAGE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10019" />
 		<set name="operateType" val="A2" />
@@ -552,16 +619,15 @@
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="900000" />
+		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
 				<add stat="pDef" val="#pDef" />
 				<add stat="mDef" val="#mDef" />
+				<sub stat="debuffVuln" val="#debuffVuln" />
 			</effect>
 			<effect name="TransferDamage">
 				<add stat="transDamToPlayer" val="90" />
-			</effect>
-			<effect name="DefenceTrait">
-				<param DERANGEMENT="#derangementTrait" />
 			</effect>
 		</for>
 	</skill>
@@ -572,6 +638,7 @@
 		<table name="#rShld"> 1.35 1.4 1.45 1.5 1.5 1.5 1.5 </table>
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<set name="mpConsume" val="50" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10020" />
 		<set name="operateType" val="T" />
@@ -590,12 +657,13 @@
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#mpConsumes"> 20 21 23 24 25 26 27 </table>
 		<table name="#reflectDam"> 10 15 20 25 27 30 32 </table>
-		<set name="abnormalLvl" val="3" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="DMG_SHIELD" />
+		<set name="abnormalType" val="REFLECT_MAGIC_DD" />
 		<set name="icon" val="icon.skill10021" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
@@ -615,16 +683,18 @@
 		<!-- For 10 seconds, HP does not decrease below 1. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
-		<!-- TODO: abnormalType -->
+		<set name="abnormalType" val="RESIST_DEATH" />
 		<set name="magicLvl" val="97" />
 		<set name="icon" val="icon.skill10022" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="mpConsume" val="38" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="1800000" />
+		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
 				<add stat="hpLockMin" val="1" />
@@ -637,25 +707,21 @@
 		<table name="#magicLvl"> 95 98 101 103 105 </table>
 		<table name="#mpConsumes"> 1103 1158 1213 1268 1323 </table>
 		<table name="#power"> 35222 38826 43471 45591 47711 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="1" />
-		<set name="abnormalType" val="KNOCK_DOWN" />
-		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
 		<set name="affectLimit" val="5-12" />
-		<set name="affectRange" val="150" />
-		<set name="lvlBonusRate" val="1" />
 		<set name="nextActionAttack" val="true" />
-		<set name="trait" val="KNOCKDOWN" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10023" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="7500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="30000" />
+		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
@@ -663,41 +729,39 @@
 			<param power="#power" />
 			<param overHit="true" />
 		</effect>
-		<effect name="KnockDown">
-			<param speed="700" distance="50" />
-		</effect>
 	</skill>
 	<skill id="10024" levels="1" name="Party Rescue">
 		<!-- TODO Additionally, all damage received is capped at 10 -->
 		<!-- Drags all party members to oneself, and for 15 seconds receives 90% of the damage inflicted to all party members. Additionally, all damage received is capped at 10. Requires a shield. -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="TRANSFER_DAMAGE" />
 		<set name="magicLevel" val="99" />
-		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="1000" />
 		<set name="icon" val="icon.skill10024" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="mpConsume" val="96" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
+		<set name="staticReuse" val="true" />
 		<cond msgId="113">
 			<using kind="SHIELD" />
 		</cond>
 		<for>
 			<effect name="PullBack">
-				<param speed="600" />
+				<param speed="600" delay="600" />
 			</effect>
 			<effect name="TransferDamage">
 				<add stat="transDamToPlayer" val="90" />
 			</effect>
+			<!-- TODO p_get_damage_limit;10 -->
 		</for>
 	</skill>
 	<skill id="10025" levels="4" name="Knight Frenzy">
-		<!-- TODO: abnormalType -->
 		<!-- For 1 minute, P. Def. and M. Def. + 50%, Speed + 10, Accuracy + 4 and Atk. Spd. + 10% when equipped with a sword or blunt weapon. Additionally, Critical Rate + 30 when equipped with a sword, and Critical Damage + 30% when equipped with a blunt weapon. -->
 		<table name="#accCombat">4 6 8 10</table>
 		<table name="#def"> 1.5 1.7 2 2.2 </table>
@@ -709,9 +773,11 @@
 		<table name="#runSpd"> 10 20 25 30 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
+		<set name="abnormalType" val="POSSESSION" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="staticReuse" val="true" />
 		<set name="icon" val="icon.skill10025" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -719,6 +785,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
+		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT" />
 		</cond>
@@ -739,7 +806,7 @@
 				<mul stat="pAtkSpd" val="#pAtkSpd">
 					<using kind="SWORD, BLUNT" />
 				</mul>
-				<add stat="cAtkAdd" val="#cAtkAdd">
+				<add stat="rCrit" val="#cAtkAdd">
 					<using kind="SWORD" />
 				</add>
 				<mul stat="cAtk" val="#cAtk">
@@ -753,37 +820,50 @@
 		<table name="#effectPoint"> -10330 -10400 -10495 -10576 -10643 -10697 -10751 -10805 -10859 </table>
 		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3" />
+		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="TARGET_LOCK" />
-		<set name="effectRange" val="1300" />
+		<set name="affectHeight" val="-100;200" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="staticReuse" val="true" />
 		<set name="icon" val="icon.skill10026" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="isHate" val="true" />
+		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
+			<!-- TODO p_berserker -->
 		</for>
+		<selfEffects>
+			<effect name="DispelBySlot">
+				<param dispel="ABSORB,9" />
+			</effect>
+			<effect name="CallSkill">
+				<param skillId="10060" skillLevel="1" />
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="10027" levels="8" name="Superior Aggression Aura">
 		<!-- Provokes nearby enemies into attacking you. -->
 		<table name="#effectPoint"> -10330 -10433 -10523 -10600 -10663 -10726 -10789 -10852 </table>
 		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3" />
+		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="TARGET_LOCK" />
 		<set name="affectLimit" val="10-10" />
-		<set name="affectRange" val="200" />
+		<set name="affectRange" val="350" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="staticReuse" val="true" />
 		<set name="icon" val="icon.skill10027" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="1000" />
@@ -791,21 +871,31 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="TargetMe" />
 			<effect name="GetAgro" />
+			<!-- TODO p_berserker -->
 		</for>
+		<selfEffects>
+			<effect name="DispelBySlot">
+				<param dispel="ABSORB;9" />
+			</effect>
+			<effect name="CallSkill">
+				<param skillId="10060" skillLevel="1" />
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="10028" levels="1" name="Rage Aura">
 		<!-- P. Atk./Atk. Spd + 15%, P. Critical Rate + 50, P. Critical Damage + 15%, Speed + 10, and enemies within range get P./M. Atk. - 20% and Atk. Spd./Casting Spd. - 20%. Only one Knight's Aura can be active at any time. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="SIGEL_AURA" />
 		<set name="abnormalVisualEffect" val="AURA_DEBUFF_SELF" />
 		<set name="icon" val="icon.skill10028" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="T" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="operateType" val="AU" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="1000" />
+		<set name="toggleGroupId" val="4" />
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
@@ -822,17 +912,19 @@
 	<skill id="10029" levels="1" name="Rage Aura">
 		<!-- P. Atk./M. Atk. - 20%, and Atk. Spd./Casting Spd. - 20%. -->
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="ULTIMATE_DEBUFF" />
+		<set name="abnormalTime" val="11" />
+		<set name="abnormalType" val="AURA" />
 		<set name="abnormalVisualEffect" val="AURA_DEBUFF" />
-		<set name="affectLimit" val="10-10" />
-		<set name="affectRange" val="1000" />
+		<set name="affectRange" val="300" />
+		<set name="activateRate" val="100" />
 		<set name="icon" val="icon.skill10028" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A5" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="1000" />
-		<set name="effectPoint" val="-2" />
+		<set name="effectPoint" val="2" />
 		<set name="isDebuff" val="true" />
 		<set name="staticReuse" val="true" />
 		<for>
@@ -846,14 +938,14 @@
 	</skill>
 	<skill id="10030" levels="1" name="Challenge Aura">
 		<!-- Skill MP Consumption - 25%, Skill Cooldown - 10%. Additionally, party members' Skill MP Consumption - 15%, and Skill Cooldown - 5%. Only one Knight's Aura can be active at any time. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="SIGEL_AURA" />
 		<set name="abnormalVisualEffect" val="AURA_BUFF_SELF" />
 		<set name="icon" val="icon.skill10030" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="T" />
+		<set name="operateType" val="AU" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="1000" />
+		<set name="toggleGroupId" val="4" />
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="3">
 				<param skillId="10031" skillLevel="1" /> <!-- Challenge Aura -->
@@ -869,24 +961,21 @@
 	</skill>
 	<skill id="10031" levels="1" name="Challenge Aura">
 		<!-- Skill MP Consumption - 15%, Skill Cooldown - 5%. -->
-		<set name="abnormalTime" val="-1" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="11" />
+		<set name="abnormalType" val="AURA" />
 		<set name="abnormalVisualEffect" val="AURA_BUFF" />
 		<set name="affectLimit" val="10-10" />
-		<set name="affectRange" val="1000" />
+		<set name="affectRange" val="1000" /> <!-- TODO : check it out -->
 		<set name="canBeDispelled" val="false" />
-		<set name="isTriggeredSkill" val="true" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill10030" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A5" />
 		<set name="targetType" val="PARTY_NOTME" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="1000" />
-		<cond>
-			<not>
-				<target active_effect_id="10030" /> <!-- Challenge Aura -->
-			</not>
-		</cond>
 		<for>
 			<effect name="Buff">
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
@@ -895,27 +984,22 @@
 				<mul stat="pReuse" val="0.95" />
 				<mul stat="mReuse" val="0.95" />
 			</effect>
-			<effect name="CheckForceSkill" ticks="7">
-				<param skillId="10030" /> <!-- Challenge Aura -->
-			</effect>
 		</for>
 	</skill>
 	<skill id="10032" levels="1" name="Iron Aura">
 		<!-- P. Def. + 15%, and Received Critical Damage - 15%. Additionally, party members' P. Def. + 10%, and Received Critical Damage - 10%. Only one Knight's Aura can be active at any time. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="SIGEL_AURA" />
 		<set name="abnormalVisualEffect" val="AURA_BUFF_SELF" />
 		<set name="icon" val="icon.skill10032" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="T" />
+		<set name="operateType" val="AU" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="1000" />
+		<set name="toggleGroupId" val="4" />
 		<for>
 			<effect name="CallSkillOnActionTime" ticks="3">
 				<param skillId="10033" skillLevel="1" /> <!-- Iron Aura -->
 			</effect>
 			<effect name="Buff">
-				>
 				<mul stat="pDef" val="1.15" />
 				<mul stat="defCritDamage" val="0.85" />
 			</effect>
@@ -923,15 +1007,17 @@
 	</skill>
 	<skill id="10033" levels="1" name="Iron Aura">
 		<!-- P. P. Def. + 10%, and Received Critical Damage - 10%. -->
-		<set name="abnormalTime" val="-1" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="11" />
+		<set name="abnormalType" val="AURA" />
 		<set name="abnormalVisualEffect" val="AURA_BUFF" />
 		<set name="affectLimit" val="10-10" />
-		<set name="affectRange" val="1000" />
+		<set name="affectRange" val="1000" /> <!-- TODO : check it out -->
 		<set name="canBeDispelled" val="false" />
-		<set name="isTriggeredSkill" val="true" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill10032" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A5" />
 		<set name="targetType" val="PARTY_NOTME" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />

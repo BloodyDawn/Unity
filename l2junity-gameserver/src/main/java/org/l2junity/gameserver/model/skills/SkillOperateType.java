@@ -57,6 +57,11 @@ public enum SkillOperateType
 	A4,
 	
 	/**
+	 * Aura Active Skill
+	 */
+	A5,
+	
+	/**
 	 * Continuous Active Skill with "instant effect" (instant effect casted by ticks).
 	 */
 	CA1,
@@ -84,7 +89,12 @@ public enum SkillOperateType
 	/**
 	 * Toggle Skill.
 	 */
-	T;
+	T,
+	
+	/**
+	 * Aura Skill.
+	 */
+	AU;
 	
 	/**
 	 * Verifies if the operative type correspond to an active skill.
@@ -98,6 +108,7 @@ public enum SkillOperateType
 			case A2:
 			case A3:
 			case A4:
+			case A5:
 			case CA1:
 			case CA5:
 			case DA1:
@@ -118,6 +129,7 @@ public enum SkillOperateType
 		{
 			case A2:
 			case A4:
+			case A5:
 			case DA2:
 				return true;
 			default:
@@ -149,7 +161,7 @@ public enum SkillOperateType
 	 */
 	public boolean isToggle()
 	{
-		return (this == T);
+		return (this == T) || (this == AU);
 	}
 	
 	/**
