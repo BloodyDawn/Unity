@@ -19,13 +19,17 @@
 package org.l2junity.gameserver.engines.skills;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.l2junity.commons.util.IXmlReader;
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.engines.DocumentBase;
+import org.l2junity.gameserver.model.AlterSkill;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.EffectScope;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.w3c.dom.Document;
@@ -35,7 +39,7 @@ import org.w3c.dom.Node;
 /**
  * @author mkizub
  */
-public class DocumentSkill extends DocumentBase
+public class DocumentSkill extends DocumentBase implements IXmlReader
 {
 	public static class SkillInfo
 	{
@@ -230,6 +234,23 @@ public class DocumentSkill extends DocumentBase
 					{
 						parseBeanSet(n, _currentSkill.sets[i - 1], i);
 					}
+				}
+				else if ("alterSkill".equalsIgnoreCase(n.getNodeName()))
+				{
+					final List<AlterSkill> alterSkills = new ArrayList<>();
+					for (Node alterNode = n.getFirstChild(); alterNode != null; alterNode = alterNode.getNextSibling())
+					{
+						if ("skill".equalsIgnoreCase(alterNode.getNodeName()))
+						{
+							final NamedNodeMap nodeAttrs = alterNode.getAttributes();
+							final int id = parseInteger(nodeAttrs, "id");
+							final int level = parseInteger(nodeAttrs, "level", 1);
+							final int chance = parseInteger(nodeAttrs, "chance", 100);
+							final AbnormalType type = parseEnum(nodeAttrs, AbnormalType.class, "type");
+							alterSkills.add(new AlterSkill(id, level, chance, type));
+						}
+					}
+					_currentSkill.sets[i - 1].set("alterSkill", alterSkills);
 				}
 			}
 		}
@@ -1615,5 +1636,15 @@ public class DocumentSkill extends DocumentBase
 				_log.error("Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
 			}
 		}
+	}
+	
+	@Override
+	public void load()
+	{
+	}
+	
+	@Override
+	public void parseDocument(Document doc, File f)
+	{
 	}
 }
