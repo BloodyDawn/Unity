@@ -216,9 +216,9 @@
 		<set name="isDebuff" val="true" />
 		<set name="effectPoint" val="#effectPoint" />
 		<alterSkill>
-			<skill id="10250" level="1" chance="100" type="KNOCKDOWN" /> <!-- Heavy Hit -->
-			<skill id="10249" level="1" chance="100" type="AIRBIND " /> <!-- Heavy Hit -->
-			<skill id="14579" level="1" chance="100" type="EARTHWORM_DEBUFF " />
+			<skill id="10250" level="1" chance="100" type="KNOCK_DOWN" /> <!-- Heavy Hit -->
+			<skill id="10249" level="1" chance="100" type="AIR_BIND" /> <!-- Heavy Hit -->
+			<skill id="14579" level="1" chance="100" type="EARTHWORM_DEBUFF" />
 		</alterSkill>
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
@@ -906,7 +906,7 @@
 		</for>
 		<selfEffects>
 			<effect name="DispelBySlot">
-				<param dispel="ABSORB;9" />
+				<param dispel="ABSORB,9" />
 			</effect>
 			<effect name="CallSkill">
 				<param skillId="10060" skillLevel="1" />

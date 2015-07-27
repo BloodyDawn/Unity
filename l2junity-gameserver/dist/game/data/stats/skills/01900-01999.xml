@@ -338,18 +338,21 @@
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="1927" levels="1" name="Sigel Aura">
+		<!-- Glory Days confirmed -->
 		<!-- Casts Sigel Force on entire party, which increases P Atk. by 1%. -->
 		<set name="icon" val="icon.icon_sigel" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="T" />
+		<set name="operateType" val="AU" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="3" />
+		<set name="toggleGroupId" val="0" />
 		<for>
-			<effect name="CallSkillOnActionTime" ticks="5">
+			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="1928" skillLevel="1" /> <!-- Sigel Force -->
 			</effect>
-			<effect name="Synergy" ticks="7">
+			<effect name="Synergy" ticks="15">
 				<param requiredSlots="SYNERGY_SIGEL;SYNERGY_EOHL" />
 				<param optionalSlots="SYNERGY_FEOH;SYNERGY_LENKER;SYNERGY_OTHEL;SYNERGY_SEER;SYNERGY_TIR;SYNERGY_WYNN;SYNERGY_YR" />
 				<param partyBuffSkillId="1955" minSlot="2" skillLevelScaleTo="3" /> <!-- Party Solidarity -->
@@ -357,211 +360,191 @@
 		</for>
 	</skill>
 	<skill id="1928" levels="1" name="Sigel Force">
+		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 1%. -->
-		<set name="abnormalTime" val="-1" />
+		<set name="abnormallVL" val="1" />
+		<set name="abnormalTime" val="11" />
 		<set name="abnormalType" val="SYNERGY_SIGEL" />
-		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="1600" />
 		<set name="canBeDispelled" val="false" />
 		<set name="icon" val="icon.icon_sigel_01" />
-		<set name="isTriggeredSkill" val="true" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A6" />
 		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="3" />
-		<cond>
-			<not>
-				<target abnormalType="SYNERGY_SIGEL" />
-			</not>
-		</cond>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.01" />
 			</effect>
-			<effect name="CheckForceSkill" ticks="7">
-				<param skillId="1927" />
-			</effect>
 		</for>
 	</skill>
 	<skill id="1929" levels="1" name="Tyrr Aura">
+		<!-- Glory Days confirmed -->
 		<!-- Casts Tyrr Force on entire party, which increases P. Critical Rate by 1%. -->
 		<set name="icon" val="icon.icon_tir" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="T" />
+		<set name="operateType" val="AU" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="3" />
+		<set name="toggleGroupId" val="0" />
 		<for>
-			<effect name="CallSkillOnActionTime" ticks="5">
+			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="1930" skillLevel="1" /> <!-- Tyrr Force -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="1930" levels="1" name="Tyrr Force">
+		<!-- Glory Days confirmed -->
 		<!-- P. Critical Rate + 1%. -->
-		<set name="abnormalTime" val="-1" />
+		<set name="abnormallVL" val="1" />
+		<set name="abnormalTime" val="11" />
 		<set name="abnormalType" val="SYNERGY_TIR" />
-		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="1600" />
 		<set name="canBeDispelled" val="false" />
 		<set name="icon" val="icon.icon_tir_01" />
-		<set name="isTriggeredSkill" val="true" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A6" />
 		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="3" />
-		<cond>
-			<not>
-				<target abnormalType="SYNERGY_TIR" />
-			</not>
-		</cond>
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="1.01" />
 			</effect>
-			<effect name="CheckForceSkill" ticks="7">
-				<param skillId="1929" />
-			</effect>
 		</for>
 	</skill>
 	<skill id="1931" levels="1" name="Othell Aura">
+		<!-- Glory Days confirmed -->
 		<!-- Casts Othell Force on entire party, which increases Atk. Spd. by 1%. -->
+		<set name="magicCriticalRate" val="5" />
+		<set name="toggleGroupId" val="0" />
 		<set name="icon" val="icon.icon_othel" />
-		<set name="operateType" val="T" />
+		<set name="operateType" val="AU" />
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="3" />
 		<for>
-			<effect name="CallSkillOnActionTime" ticks="5">
+			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="1932" skillLevel="1" /> <!-- Othell Force -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="1932" levels="1" name="Othell Force">
+		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd. + 1%. -->
-		<set name="abnormalTime" val="-1" />
+		<set name="abnormallVL" val="1" />
+		<set name="abnormalTime" val="11" />
 		<set name="abnormalType" val="SYNERGY_OTHEL" />
-		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="1600" />
 		<set name="canBeDispelled" val="false" />
 		<set name="icon" val="icon.icon_othel_01" />
-		<set name="isTriggeredSkill" val="true" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A6" />
 		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="3" />
-		<cond>
-			<not>
-				<target abnormalType="SYNERGY_OTHEL" />
-			</not>
-		</cond>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.01" />
 			</effect>
-			<effect name="CheckForceSkill" ticks="7">
-				<param skillId="1931" />
-			</effect>
 		</for>
 	</skill>
 	<skill id="1933" levels="1" name="Yul Aura">
+		<!-- Glory Days confirmed -->
 		<!-- Casts Yul Force on entire party, which increases MP Recovery Bonus by 50%. -->
+		<set name="magicCriticalRate" val="5" />
+		<set name="toggleGroupId" val="0" />
 		<set name="icon" val="icon.icon_yr" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="T" />
+		<set name="operateType" val="AU" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="3" />
 		<for>
-			<effect name="CallSkillOnActionTime" ticks="5">
+			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="1934" skillLevel="1" /> <!-- Yul Force -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="1934" levels="1" name="Yul Force">
+		<!-- Glory Days confirmed -->
 		<!-- MP Recovery Bonus + 50%. -->
-		<set name="abnormalTime" val="-1" />
+		<set name="abnormallVL" val="1" />
+		<set name="abnormalTime" val="11" />
 		<set name="abnormalType" val="SYNERGY_YR" />
-		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="1600" />
 		<set name="canBeDispelled" val="false" />
 		<set name="icon" val="icon.icon_yr_01" />
-		<set name="isTriggeredSkill" val="true" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A6" />
 		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="3" />
-		<cond>
-			<not>
-				<target abnormalType="SYNERGY_YR" />
-			</not>
-		</cond>
 		<for>
 			<effect name="Buff">
 				<mul stat="regMp" val="1.5" />
 			</effect>
-			<effect name="CheckForceSkill" ticks="7">
-				<param skillId="1933" />
-			</effect>
 		</for>
 	</skill>
 	<skill id="1935" levels="1" name="Feoh Aura">
+		<!-- Glory Days confirmed -->
 		<!-- Casts Feoh Force on entire party, which increases Casting Spd. by 1%. -->
+		<set name="magicCriticalRate" val="5" />
+		<set name="toggleGroupId" val="0" />
 		<set name="icon" val="icon.icon_feoh" />
-		<set name="operateType" val="T" />
+		<set name="operateType" val="AU" />
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="3" />
 		<for>
-			<effect name="CallSkillOnActionTime" ticks="5">
+			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="1936" skillLevel="1" /> <!-- Feoh Force -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="1936" levels="1" name="Feoh Force">
+		<!-- Glory Days confirmed -->
 		<!-- Casting Spd. + 1%. -->
-		<set name="abnormalTime" val="-1" />
+		<set name="abnormallVL" val="1" />
+		<set name="abnormalTime" val="11" />
 		<set name="abnormalType" val="SYNERGY_FEOH" />
-		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="1600" />
 		<set name="canBeDispelled" val="false" />
 		<set name="icon" val="icon.icon_feoh_01" />
-		<set name="isTriggeredSkill" val="true" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A6" />
 		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="3" />
-		<cond>
-			<not>
-				<target abnormalType="SYNERGY_FEOH" />
-			</not>
-		</cond>
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="1.01" />
 			</effect>
-			<effect name="CheckForceSkill" ticks="7">
-				<param skillId="1936" />
-			</effect>
 		</for>
 	</skill>
 	<skill id="1937" levels="1" name="Wynn Aura">
+		<!-- Glory Days confirmed -->
 		<!-- Casts Wynn Force on entire party, which decreases P./M. Skill MP Consumption by 3%. -->
+		<set name="magicCriticalRate" val="5" />
+		<set name="toggleGroupId" val="0" />
 		<set name="icon" val="icon.icon_wynn" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="T" />
+		<set name="operateType" val="AU" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="3" />
@@ -572,75 +555,64 @@
 		</for>
 	</skill>
 	<skill id="1938" levels="1" name="Wynn Force">
+		<!-- Glory Days confirmed -->
 		<!-- P./M. Skill MP Consumption - 3%. -->
-		<set name="abnormalTime" val="-1" />
+		<set name="abnormallVL" val="1" />
+		<set name="abnormalTime" val="11" />
 		<set name="abnormalType" val="SYNERGY_WYNN" />
-		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="1600" />
 		<set name="canBeDispelled" val="false" />
 		<set name="icon" val="icon.icon_wynn_01" />
-		<set name="isTriggeredSkill" val="true" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A5" />
 		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="3" />
-		<cond>
-			<not>
-				<target abnormalType="SYNERGY_WYNN" />
-			</not>
-		</cond>
 		<for>
 			<effect name="Buff">
 				<mul stat="PhysicalMpConsumeRate" val="0.97" />
 				<mul stat="MagicalMpConsumeRate" val="0.97" />
 			</effect>
-			<effect name="CheckForceSkill" ticks="7">
-				<param skillId="1937" />
-			</effect>
 		</for>
 	</skill>
 	<skill id="1939" levels="1" name="Aeore Aura">
+		<!-- Glory Days confirmed -->
 		<!-- Casts Aeore Force on entire party, which increases M. Atk. by 1%. -->
+		<set name="magicCriticalRate" val="5" />
+		<set name="toggleGroupId" val="0" />
 		<set name="icon" val="icon.icon_eolh" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="T" />
+		<set name="operateType" val="AU" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="3" />
 		<for>
-			<effect name="CallSkillOnActionTime" ticks="5">
+			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="1940" skillLevel="1" /> <!-- Aeore Force -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="1940" levels="1" name="Aeore Force">
+		<!-- Glory Days confirmed -->
 		<!-- M. Atk. + 1%. -->
-		<set name="abnormalTime" val="-1" />
+		<set name="abnormallVL" val="1" />
+		<set name="abnormalTime" val="11" />
 		<set name="abnormalType" val="SYNERGY_EOHL" />
-		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="1600" />
 		<set name="canBeDispelled" val="false" />
 		<set name="icon" val="icon.icon_eolh_01" />
-		<set name="isTriggeredSkill" val="true" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A6" />
 		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="3" />
-		<cond>
-			<not>
-				<target abnormalType="SYNERGY_EOHL" />
-			</not>
-		</cond>
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.01" />
-			</effect>
-			<effect name="CheckForceSkill" ticks="7">
-				<param skillId="1939" />
 			</effect>
 		</for>
 	</skill>
@@ -781,14 +753,14 @@
 		<table name="#mAtk"> 1.01 1.05 1.16 </table>
 		<table name="#bonus"> 1.01 1.02 1.04 </table>
 		<table name="#reuse"> 0.99 0.98 0.95 </table>
-		<set name="abnormalTime" val="-1" />
+		<set name="abnormallVL" val="1" />
+		<set name="abnormalTime" val="11" />
 		<set name="abnormalType" val="SYNERGY_PARTY_BUF" />
-		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="200" />
 		<set name="icon" val="icon.skill1955" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY" />
+		<set name="operateType" val="A5" />
+		<set name="targetType" val="PARTY" /> <!-- Target ONE on retail, gonna leave it that way for now. -->
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="3" />
@@ -801,11 +773,6 @@
 				<mul stat="mAtkSpd" val="#bonus" />
 				<mul stat="pReuse" val="#reuse" />
 				<mul stat="mReuse" val="#reuse" />
-			</effect>
-			<effect name="CheckSynergySkill" ticks="7">
-				<param requiredSlots="SYNERGY_SIGEL;SYNERGY_EOHL" />
-				<param optionalSlots="SYNERGY_FEOH;SYNERGY_LENKER;SYNERGY_OTHEL;SYNERGY_SEER;SYNERGY_TIR;SYNERGY_WYNN;SYNERGY_YR" />
-				<param minSlot="2" />
 			</effect>
 		</for>
 	</skill>

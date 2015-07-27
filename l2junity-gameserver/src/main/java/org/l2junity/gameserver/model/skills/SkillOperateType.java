@@ -62,6 +62,11 @@ public enum SkillOperateType
 	A5,
 	
 	/**
+	 * Synergy Active Skill
+	 */
+	A6,
+	
+	/**
 	 * Continuous Active Skill with "instant effect" (instant effect casted by ticks).
 	 */
 	CA1,
@@ -109,6 +114,7 @@ public enum SkillOperateType
 			case A3:
 			case A4:
 			case A5:
+			case A6:
 			case CA1:
 			case CA5:
 			case DA1:
@@ -130,6 +136,7 @@ public enum SkillOperateType
 			case A2:
 			case A4:
 			case A5:
+			case A6:
 			case DA2:
 				return true;
 			default:
@@ -170,7 +177,7 @@ public enum SkillOperateType
 	 */
 	public boolean isAura()
 	{
-		return (this == A5);
+		return (this == A5) || (this == A6);
 	}
 	
 	/**
