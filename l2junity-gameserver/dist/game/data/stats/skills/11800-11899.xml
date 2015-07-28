@@ -534,7 +534,7 @@
 		<set name="icon" val="icon.skill11567" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="HOLY_ATTACK_RESISTANCE_ISS" />
+		<set name="abnormalType" val="ARMOR_HOLY" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="17" />
@@ -554,10 +554,10 @@
 				<add stat="darkRes" val="30" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="SONG_OF_INVOCATION;ARMOR_HOLY;ARMOR_UNHOLY;RESIST_POISON;DANCE_OF_ALIGNMENT;DANCE_OF_LIGHT;RESIST_BLEEDING" rate="100" />
+				<param dispel="RESIST_SHOCK;DANCE_OF_ALIGNMENT;ARMOR_UNHOLY;DANCE_OF_LIGHT;SONG_OF_INVOCATION;RESIST_BLEEDING" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_INVOCATION;ARMOR_HOLY;ARMOR_UNHOLY;RESIST_POISON;DANCE_OF_ALIGNMENT;DANCE_OF_LIGHT;RESIST_BLEEDING" />
+				<param slot="RESIST_SHOCK;DANCE_OF_ALIGNMENT;ARMOR_UNHOLY;DANCE_OF_LIGHT;SONG_OF_INVOCATION;RESIST_BLEEDING" />
 			</effect>
 		</for>
 	</skill>
@@ -567,7 +567,7 @@
 		<set name="icon" val="icon.skill11825" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="MENTAL_ATTACK_RESISTANCE_ISS" />
+		<set name="abnormalType" val="RESIST_DERANGEMENT" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="17" />
@@ -586,6 +586,12 @@
 			<effect name="Buff">
 				<sub stat="cancelVuln" val="30" />
 				<sub stat="debuffVuln" val="20" />
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="DANCE_OF_PROTECTION;RESIST_DEBUFF_DISPEL" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="DANCE_OF_PROTECTION;RESIST_DEBUFF_DISPEL" />
 			</effect>
 		</for>
 	</skill>
