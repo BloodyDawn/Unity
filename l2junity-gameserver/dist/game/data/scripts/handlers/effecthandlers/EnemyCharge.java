@@ -32,19 +32,17 @@ import org.l2junity.gameserver.network.client.send.ValidateLocation;
  */
 public final class EnemyCharge extends AbstractEffect
 {
-	private int _speed = 0;
-	private int _delay = 0;
-	private int _animationSpeed = 0;
+	private final int _speed;
+	private final int _delay;
+	private final int _animationSpeed;
 	
 	public EnemyCharge(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-		if (params != null)
-		{
-			_speed = params.getInt("speed", 0);
-			_delay = params.getInt("delay", 0);
-			_animationSpeed = params.getInt("animationSpeed", 0);
-		}
+
+		_speed = params.getInt("speed", 0);
+		_delay = params.getInt("delay", 0);
+		_animationSpeed = params.getInt("animationSpeed", 0);
 	}
 	
 	@Override

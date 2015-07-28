@@ -34,21 +34,19 @@ import org.l2junity.gameserver.network.client.send.ValidateLocation;
  */
 public final class PullBack extends AbstractEffect
 {
-	private int _speed = 0;
-	private int _delay = 0;
-	private int _animationSpeed = 0;
-	private FlyType _type;
+	private final int _speed;
+	private final int _delay;
+	private final int _animationSpeed;
+	private final FlyType _type;
 	
 	public PullBack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-		if (params != null)
-		{
-			_speed = params.getInt("speed", 0);
-			_delay = params.getInt("delay", _speed);
-			_animationSpeed = params.getInt("animationSpeed", 0);
-			_type = params.getEnum("type", FlyType.class, FlyType.WARP_FORWARD); // type 9
-		}
+
+		_speed = params.getInt("speed", 0);
+		_delay = params.getInt("delay", _speed);
+		_animationSpeed = params.getInt("animationSpeed", 0);
+		_type = params.getEnum("type", FlyType.class, FlyType.WARP_FORWARD); // type 9
 	}
 	
 	@Override

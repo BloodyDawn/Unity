@@ -39,23 +39,21 @@ import org.l2junity.gameserver.util.Util;
  */
 public final class KnockDown extends AbstractEffect
 {
-	private int _distance = 50;
-	private int _speed = 0;
-	private int _delay = 0;
-	private int _animationSpeed = 0;
-	private FlyType _type;
+	private final int _distance;
+	private final int _speed;
+	private final int _delay;
+	private final int _animationSpeed;
+	private final FlyType _type;
 	
 	public KnockDown(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-		if (params != null)
-		{
-			_distance = params.getInt("distance", 50);
-			_speed = params.getInt("speed", 0);
-			_delay = params.getInt("delay", 0);
-			_animationSpeed = params.getInt("animationSpeed", 0);
-			_type = params.getEnum("type", FlyType.class, FlyType.PUSH_DOWN_HORIZONTAL);
-		}
+
+		_distance = params.getInt("distance", 50);
+		_speed = params.getInt("speed", 0);
+		_delay = params.getInt("delay", 0);
+		_animationSpeed = params.getInt("animationSpeed", 0);
+		_type = params.getEnum("type", FlyType.class, FlyType.PUSH_DOWN_HORIZONTAL);
 	}
 	
 	@Override
