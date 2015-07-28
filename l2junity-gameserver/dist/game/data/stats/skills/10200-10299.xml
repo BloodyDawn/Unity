@@ -1021,22 +1021,32 @@
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="10285" levels="1" name="HP Drain">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Recovers HP by 20%. -->
 		<set name="icon" val="icon.skill10285" />
+		<set name="isTriggeredSkill" val="true" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="HealPercent">
+				<param power="20" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10286" levels="7" name="Superior Resistance">
+		<!-- Glory Days confirmed -->
 		<!-- M. Def. + 776, and Fire/Water/Wind/Earth Resistance + 20. STR + 2. -->
 		<table name="#magicLevel"> 85 90 95 99 100 102 104 </table>
 		<table name="#mDef"> 776 878 993 1097 1237 1299 1365 </table>
 		<table name="#res"> 20 22 24 26 30 32 34 </table>
 		<set name="icon" val="icon.skill10005" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLevel" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -1078,18 +1088,22 @@
 		</for>
 	</skill>
 	<skill id="10288" levels="11" name="Hurricane Storm">
+		<!-- Glory Days confirmed -->
 		<!-- Attacks near the enemy with 11557 Power added to P. Atk. Power - 10% when using a sword, dualsword, blunt, or fist weapon. Power + 50% when using a spear. Requires a sword, blunt, spear, fist weapon, dual blunt, or dualsword. Over-hit. Critical hit. -->
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 161 163 169 175 180 186 192 198 204 210 216 </table>
 		<table name="#power"> 11557 11956 12754 13553 14351 15150 15948 16747 20787 21925 23063 </table>
 		<set name="affectLimit" val="5-12" />
-		<set name="affectRange" val="200" />
+		<set name="affectRange" val="150" />
 		<set name="icon" val="icon.skill10288" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AURA" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="500" />
+		<set name="effectRange" val="1000" />
 		<set name="hitTime" val="1790" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="-709" />
@@ -1100,21 +1114,23 @@
 		<for>
 			<effect name="PhysicalAttackWeaponBonus">
 				<param power="#power" />
-				<param criticalChance="15" />
+				<param criticalChance="5" />
 				<param overHit="true" />
 				<param BLUNT="0.9" SWORD="0.9" POLE="1.5" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10289" levels="4" name="Boost">
+		<!-- Glory Days confirmed -->
 		<!-- Increases skills' effect by 30% for 60 seconds and normal/skill attack damage by 5% during PvP. -->
 		<table name="#physicalSkillPower"> 1.3 1.35 1.4 1.45 </table>
 		<table name="#pvpPhysDmg"> 1.05 1.1 1.15 1.2 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
-		<set name="abnormalType" val="FINAL_SECRET" />
+		<set name="abnormalType" val="SUPER_AVOID" />
 		<set name="icon" val="icon.skill10289" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -1127,6 +1143,7 @@
 			<effect name="Buff">
 				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
 				<mul stat="pvpPhysDmg" val="#pvpPhysDmg" />
+				<mul stat="pvpPhysSkillsDmg" val="#pvpPhysDmg" />
 			</effect>
 		</for>
 	</skill>
@@ -1143,6 +1160,7 @@
 		<set name="reuseDelay" val="7000" />
 	</skill>
 	<skill id="10291" levels="1" name="Feral Bear Cry">
+		<!-- Glory Days confirmed -->
 		<!-- Shouts loudly to invoke the power of the Bear. Increases P. Atk. And Critical Damage by 30% for 5 minutes 30 seconds. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="330" />
@@ -1150,6 +1168,7 @@
 		<set name="effectPoint" val="707" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill10291" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="38" />
 		<set name="operateType" val="A2" />
@@ -1163,6 +1182,7 @@
 		</for>
 	</skill>
 	<skill id="10292" levels="1" name="Feral Ogre Cry">
+		<!-- Glory Days confirmed -->
 		<!-- Shouts loudly to invoke the power of the Ogre. For 5 minutes, increases your P. Atk., P. Def. And M. Def. by 35% and P. Critical Damage and Max HP by 10%. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
@@ -1170,6 +1190,7 @@
 		<set name="effectPoint" val="707" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill10292" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="38" />
 		<set name="operateType" val="A2" />
@@ -1189,6 +1210,7 @@
 		</for>
 	</skill>
 	<skill id="10293" levels="1" name="Feral Puma Cry">
+		<!-- Glory Days confirmed -->
 		<!-- Shouts loudly to invoke the power of the Puma. For 5 minutes, increases your P. Accuracy by 10 and Atk. Spd. by 20%, and decreases Critical Damage received by 40%. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
@@ -1196,6 +1218,7 @@
 		<set name="effectPoint" val="707" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill10293" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="38" />
 		<set name="operateType" val="A2" />
@@ -1210,6 +1233,7 @@
 		</for>
 	</skill>
 	<skill id="10294" levels="1" name="Feral Rabbit Cry">
+		<!-- Glory Days confirmed -->
 		<!-- Shouts loudly to invoke the power of the Rabbit. For 5 minutes, increases your Atk. Spd. by 30%, Speed by 35% and P. Evasion by 15. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
@@ -1217,6 +1241,7 @@
 		<set name="effectPoint" val="707" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill10294" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="38" />
 		<set name="operateType" val="A2" />
@@ -1231,6 +1256,7 @@
 		</for>
 	</skill>
 	<skill id="10295" levels="1" name="Hawk Cry">
+		<!-- Glory Days confirmed -->
 		<!-- Shouts loudly to invoke the power of the Hawk. For 5 minutes, increases your P. Accuracy by 8, Critical Rate by 120 and Critical Damage by 30%. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
@@ -1238,6 +1264,7 @@
 		<set name="effectPoint" val="707" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill10295" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="38" />
 		<set name="operateType" val="A2" />
@@ -1252,13 +1279,15 @@
 		</for>
 	</skill>
 	<skill id="10296" levels="1" name="Spirit of the Hunter">
+		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, increases damage against insects/plants/animals + 10%. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="600" />
+		<set name="abnormalLvl" val="2" />
+		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="DETECT_WEAKNESS" />
 		<set name="icon" val="icon.skill0359" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="38" />
 		<set name="hitTime" val="2000" />
@@ -1274,13 +1303,15 @@
 		</for>
 	</skill>
 	<skill id="10297" levels="1" name="Spirit of the Slayer">
+		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, increases damage against monsters/magic creatures/giants/dragons + 10%. -->
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="600" />
+		<set name="abnormalLvl" val="2" />
+		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="DETECT_WEAKNESS" />
 		<set name="icon" val="icon.skill0360" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="38" />
 		<set name="hitTime" val="2000" />
@@ -1297,16 +1328,19 @@
 		</for>
 	</skill>
 	<skill id="10298" levels="1" name="Power Revival">
+		<!-- Glory Days confirmed -->
 		<!-- Recovers all of your HP. -->
 		<set name="effectPoint" val="707" />
 		<set name="icon" val="icon.skill10298" />
 		<set name="operateType" val="A1" />
-		<set name="magicLvl" val="86" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="38" />
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE" />
+		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="HealPercent">
 				<param power="100" />
@@ -1314,13 +1348,29 @@
 		</for>
 	</skill>
 	<skill id="10299" levels="1" name="Stun Spear">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicted with stun and unable to move for 3 seconds. -->
+		<set name="abnormalLvl" val="4" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="80" />
 		<set name="icon" val="icon.skill10299" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="POLE" />
+		</cond>
+		<for>
+			<effect name="Stun">
+				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 </list>
