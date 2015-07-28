@@ -27,6 +27,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Calculator;
 import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -197,6 +198,19 @@ public class CharStat
 		}
 		
 		return val;
+	}
+	
+	public double getSkillCriticalRateBonus()
+	{
+		// There is a chance that activeChar has altered base stat for skill critical.
+		byte statAlter = (byte) _activeChar.calcStat(Stats.STAT_SKILLCRITICAL, -1);
+		if ((statAlter >= 0) && (statAlter < BaseStats.values().length))
+		{
+			return BaseStats.values()[statAlter].calcBonus(_activeChar);
+		}
+		
+		// Default base stat used for skill critical formula is STR.
+		return BaseStats.STR.calcBonus(_activeChar);
 	}
 	
 	/**

@@ -1061,18 +1061,8 @@ public final class Formulas
 		// Skills are not affected by critical rate defence buffs.
 		if (skill)
 		{
-			// Default base stat used for skill critical formula is STR.
-			BaseStats stat = BaseStats.STR;
-			
-			// There is a chance that activeChar has altered base stat for skill critical.
-			byte statAlter = (byte) activeChar.calcStat(Stats.STAT_SKILLCRITICAL, -1);
-			if ((statAlter >= 0) && (statAlter < BaseStats.values().length))
-			{
-				stat = BaseStats.values()[statAlter];
-			}
-			
 			// Skill critical rate is calculated up to the first decimal, thats why multiply by 10 and compare to 1000.
-			double finalRate = rate * 10 * stat.calcBonus(activeChar);
+			double finalRate = rate * 10 * activeChar.getStat().getSkillCriticalRateBonus();
 			return finalRate > Rnd.get(1000);
 		}
 		
