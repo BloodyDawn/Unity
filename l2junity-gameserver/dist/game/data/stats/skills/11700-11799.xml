@@ -517,6 +517,7 @@
 		</for>
 	</skill>
 	<skill id="11768" levels="1" name="Rebirth">
+		<!-- Glory Days confirmed -->
 		<!-- Restores all party members' HP/MP/CP and has a chance of dispelling their debuffs. -->
 		<set name="icon" val="icon.skill11768" />
 		<set name="affectRange" val="1000" />
@@ -524,7 +525,7 @@
 		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="53" />
 		<set name="mpInitialConsume" val="13" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="93" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="600000" />
@@ -543,7 +544,7 @@
 				<param power="100" />
 			</effect>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="25" max="10" />
+				<param slot="debuff" rate="40" max="10" />
 			</effect>
 		</for>
 	</skill>
