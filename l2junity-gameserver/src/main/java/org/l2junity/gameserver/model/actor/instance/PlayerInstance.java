@@ -9980,7 +9980,7 @@ public final class PlayerInstance extends Playable
 				}
 			}
 			
-			sl.addSkill(s.getDisplayId(), s.getSharedReuseSkillId(), s.getDisplayLevel(), s.isPassive(), isDisabled, isEnchantable);
+			sl.addSkill(s.getDisplayId(), s.getReuseDelayGroup(), s.getDisplayLevel(), s.isPassive(), isDisabled, isEnchantable);
 		}
 		if (lastLearnedSkillId > 0)
 		{

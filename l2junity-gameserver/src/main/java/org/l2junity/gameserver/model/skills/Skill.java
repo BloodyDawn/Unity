@@ -128,7 +128,7 @@ public final class Skill implements IIdentifiable
 	private final int _coolTime;
 	private final int _reuseHashCode;
 	private final int _reuseDelay;
-	private final int _sharedReuseSkillId;
+	private final int _reuseDelayGroup;
 	
 	/** Target type of the skill : SELF, PARTY, CLAN, PET... */
 	private final L2TargetType _targetType;
@@ -270,8 +270,8 @@ public final class Skill implements IIdentifiable
 			_reuseDelay = set.getInt("reuseDelay", 0);
 		}
 		
-		_sharedReuseSkillId = set.getInt("sharedReuseSkillId", -1);
-		_reuseHashCode = SkillData.getSkillHashCode(_sharedReuseSkillId > 0 ? _sharedReuseSkillId : _id, _level);
+		_reuseDelayGroup = set.getInt("reuseDelayGroup", 0);
+		_reuseHashCode = SkillData.getSkillHashCode(_reuseDelayGroup > 0 ? _reuseDelayGroup : _id, _level);
 		
 		_affectRange = set.getInt("affectRange", 0);
 		
@@ -750,9 +750,9 @@ public final class Skill implements IIdentifiable
 	/**
 	 * @return the skill ID from which the reuse delay should be taken.
 	 */
-	public int getSharedReuseSkillId()
+	public int getReuseDelayGroup()
 	{
-		return _sharedReuseSkillId;
+		return _reuseDelayGroup;
 	}
 	
 	public int getReuseHashCode()
