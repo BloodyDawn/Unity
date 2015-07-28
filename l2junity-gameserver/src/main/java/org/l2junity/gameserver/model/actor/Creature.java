@@ -2726,7 +2726,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public final boolean isAllSkillsDisabled()
 	{
-		return _allSkillsDisabled || isStunned() || isSleeping() || isParalyzed();
+		return _allSkillsDisabled || isStunned() || isParalyzed();
 	}
 	
 	/**
@@ -2734,7 +2734,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public boolean isAttackingDisabled()
 	{
-		return isFlying() || isStunned() || isSleeping() || isAttackingNow() || isAlikeDead() || isParalyzed() || isPhysicalAttackMuted() || isCoreAIDisabled();
+		return isFlying() || isStunned() || isAttackingNow() || isAlikeDead() || isParalyzed() || isPhysicalAttackMuted() || isCoreAIDisabled();
 	}
 	
 	public final Calculator[] getCalculators()
@@ -2799,7 +2799,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public boolean isMovementDisabled()
 	{
 		// check for isTeleporting to prevent teleport cheating (if appear packet not received)
-		return isStunned() || isRooted() || isSleeping() || isOverloaded() || isParalyzed() || isImmobilized() || isAlikeDead() || isTeleporting();
+		return isStunned() || isRooted() || isOverloaded() || isParalyzed() || isImmobilized() || isAlikeDead() || isTeleporting();
 	}
 	
 	/**
@@ -2965,11 +2965,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		{
 			setIsRunning(true);
 		}
-	}
-	
-	public final boolean isSleeping()
-	{
-		return isAffected(EffectFlag.SLEEP);
 	}
 	
 	public final boolean isStunned()

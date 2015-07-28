@@ -18,7 +18,9 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
@@ -47,16 +49,25 @@ public final class Stun extends AbstractEffect
 	{
 		return L2EffectType.STUN;
 	}
-	
-	@Override
-	public void onExit(BuffInfo info)
-	{
-		info.getEffected().stopStunning(false);
-	}
-	
+
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		info.getEffected().startStunning();
+		// Aborts any attacks/casts if stunned
+		final Creature effected = info.getEffected();
+		effected.abortAttack();
+		effected.abortCast();
+		effected.stopMove(null);
+		effected.getAI().notifyEvent(CtrlEvent.EVT_STUNNED);
+	}
+
+	@Override
+	public void onExit(BuffInfo info)
+	{
+		final Creature effected = info.getEffected();
+		if (!effected.isPlayer())
+		{
+			effected.getAI().notifyEvent(CtrlEvent.EVT_THINK);
+		}
 	}
 }

@@ -63,7 +63,7 @@ public class RandomAnimationTask implements Runnable
 				return;
 			}
 			
-			if (!_npc.isDead() && !_npc.isStunned() && !_npc.isSleeping() && !_npc.isParalyzed())
+			if (!_npc.isDead() && !_npc.isStunned() && !_npc.isParalyzed())
 			{
 				_npc.onRandomAnimation(Rnd.get(2, 3));
 			}

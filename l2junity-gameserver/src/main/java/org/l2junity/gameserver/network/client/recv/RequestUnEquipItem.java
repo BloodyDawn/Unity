@@ -84,7 +84,7 @@ public class RequestUnEquipItem implements IClientIncomingPacket
 		}
 		
 		// Prevent player from unequipping items in special conditions.
-		if (activeChar.isStunned() || activeChar.isSleeping() || activeChar.isParalyzed() || activeChar.isAlikeDead())
+		if (activeChar.isStunned() || activeChar.isParalyzed() || activeChar.isAlikeDead())
 		{
 			return;
 		}

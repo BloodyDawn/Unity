@@ -40,12 +40,6 @@ public final class ThrowUp extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
-	{
-		return EffectFlag.STUNNED.getMask();
-	}
-	
-	@Override
 	public boolean isInstant()
 	{
 		return true;

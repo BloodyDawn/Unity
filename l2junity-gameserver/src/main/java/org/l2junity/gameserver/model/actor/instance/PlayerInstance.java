@@ -8436,7 +8436,7 @@ public final class PlayerInstance extends Playable
 		// ************************************* Check Player State *******************************************
 		
 		// Abnormal effects(ex : Stun, Sleep...) are checked in L2Character useMagic()
-		if (!skill.canCastWhileDisabled() && (isOutOfControl() || isParalyzed() || isStunned() || isSleeping()))
+		if (!skill.canCastWhileDisabled() && (isOutOfControl() || isParalyzed() || isStunned()))
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;

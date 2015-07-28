@@ -182,7 +182,6 @@ public final class EffectMasterHandler
 		SilentMove.class,
 		SkillTurning.class,
 		SkillTurningOverTime.class,
-		Sleep.class,
 		SoulBlow.class,
 		SoulEating.class,
 		Sow.class,
