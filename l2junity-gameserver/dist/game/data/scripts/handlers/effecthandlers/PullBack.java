@@ -23,8 +23,6 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.effects.EffectFlag;
-import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
@@ -54,15 +52,9 @@ public final class PullBack extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
+	public boolean isInstant()
 	{
-		return EffectFlag.STUNNED.getMask();
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.STUN;
+		return true;
 	}
 	
 	@Override
@@ -74,16 +66,9 @@ public final class PullBack extends AbstractEffect
 		// In retail, you get debuff, but you are not even moved if there is obstacle. You are still disabled from using skills and moving though.
 		if (GeoData.getInstance().canMove(effected, effector))
 		{
-			effected.startStunning();
 			effected.broadcastPacket(new FlyToLocation(effected, effector, _type, _speed, _delay, _animationSpeed));
 			effected.setXYZ(effector);
 			effected.broadcastPacket(new ValidateLocation(effected));
 		}
-	}
-	
-	@Override
-	public void onExit(BuffInfo info)
-	{
-		info.getEffected().stopStunning(false);
 	}
 }
