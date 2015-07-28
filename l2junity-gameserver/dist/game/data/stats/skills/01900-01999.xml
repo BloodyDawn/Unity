@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="1901" levels="1" name="Aim">
+		<!-- Glory Days confirmed -->
 		<!-- Elemental Resistance + 10. -->
 		<set name="icon" val="icon.skill1901" />
-		<set name="magicLvl" val="85" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -16,9 +18,11 @@
 		</for>
 	</skill>
 	<skill id="1902" levels="1" name="Mental Fortress">
+		<!-- Glory Days confirmed -->
 		<!-- Debuff Resistance + 1%. -->
 		<set name="icon" val="icon.skill1902" />
-		<set name="magicLvl" val="85" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -28,9 +32,11 @@
 		</for>
 	</skill>
 	<skill id="1903" levels="1" name="Fitness">
+		<!-- Glory Days confirmed -->
 		<!-- Increases HP Recovery bonus by 1 and MP Recovery bonus by 1. -->
 		<set name="icon" val="icon.skill1903" />
-		<set name="magicLvl" val="85" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -41,18 +47,37 @@
 		</for>
 	</skill>
 	<skill id="1904" levels="2" name="Unbind">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Cancels all debuffs and renders immune for 10 seconds. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="RACE_HUMAN1" />
 		<set name="icon" val="icon.skill1904" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="600000" />
+		<set name="staticReuse" val="true" />
+		<for>
+			<effect name="DispelBySlot">
+				<param dispel="POISON,9;ROOT_MAGICALLY,9;ROOT_PHYSICALLY,9;BLEEDING,9;STUN,9" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param SHOCK="100" />
+				<param POISON="100" />
+				<param HOLD="100" />
+				<param BLEED="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1905" levels="1" name="Swiftness">
+		<!-- Glory Days confirmed -->
 		<!-- Increases Atk. Spd. by 4, Casting Spd. by 3, and Speed when not in combat by 13. -->
 		<set name="icon" val="icon.skill1905" />
-		<set name="magicLvl" val="85" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -66,9 +91,11 @@
 		</for>
 	</skill>
 	<skill id="1906" levels="1" name="Blessing of Water">
+		<!-- Glory Days confirmed -->
 		<!-- Increases Water resistance by 20. -->
 		<set name="icon" val="icon.skill1906" />
-		<set name="magicLvl" val="85" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -78,18 +105,36 @@
 		</for>
 	</skill>
 	<skill id="1907" levels="2" name="Prevision">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 15 sec., P. Evasion/ M. Evasion + 90, and Speed + 50. -->
+		<table name="#bonus"> 0 90 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="RACE_ELF1" />
 		<set name="icon" val="icon.skill1907" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="600000" />
+		<set name="staticReuse" val="true" />
+		<for>
+			<effect name="Buff">
+				<add stat="rEvas" val="90" />
+				<add stat="mEvas" val="90" />
+				<add stat="runSpd" val="50" />
+				<add stat="pAtkSpd" val="#bonus" />
+				<add stat="mAtkSpd" val="#bonus" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1908" levels="1" name="Delicacy">
+		<!-- Glory Days confirmed -->
 		<!-- P. Critical Rate + 10 and M. Critical Rate + 10. -->
 		<set name="icon" val="icon.skill1908" />
-		<set name="magicLvl" val="85" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -100,9 +145,11 @@
 		</for>
 	</skill>
 	<skill id="1909" levels="1" name="Sharpness">
+		<!-- Glory Days confirmed -->
 		<!-- Increases P. Critical Damage and M. Critical Damage by 1%. -->
 		<set name="icon" val="icon.skill1909" />
-		<set name="magicLvl" val="85" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -113,9 +160,11 @@
 		</for>
 	</skill>
 	<skill id="1910" levels="1" name="Dark Presence">
+		<!-- Glory Days confirmed -->
 		<!-- STR and INT + 1 at night. -->
 		<set name="icon" val="icon.skill1910" />
-		<set name="magicLvl" val="85" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -130,9 +179,11 @@
 		</for>
 	</skill>
 	<skill id="1911" levels="1" name="Blessing of Wind">
+		<!-- Glory Days confirmed -->
 		<!-- Increases Wind resistance by 20. -->
 		<set name="icon" val="icon.skill1911" />
-		<set name="magicLvl" val="85" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -142,13 +193,28 @@
 		</for>
 	</skill>
 	<skill id="1912" levels="2" name="Disparition">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Cancels all your debuffs. For 5 seconds, you cannot be targeted. -->
+		<table name="#abnormalTime"> 5 6 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="#abnormalTime" />
+		<set name="abnormalType" val="RACE_DARKELF1" />
 		<set name="icon" val="icon.skill1912" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="600000" />
+		<set name="staticReuse" val="true" />
+		<for>
+			<effect name="Buff">
+				<set stat="debuffImmunity" val="1" />
+				<sub stat="cancelVuln" val="80" />
+			</effect>
+			<effect name="DispelByCategory">
+				<param slot="debuff" rate="100" max="10" />
+			</effect>
+			<effect name="Untargetable" />
+		</for>
 	</skill>
 	<skill id="1913" levels="1" name="Life Siphon">
 		<!-- Absorbs 1% of the damage inflicted as HP. -->
