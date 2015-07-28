@@ -1052,11 +1052,20 @@ public final class Formulas
 	 * Returns true in case of critical hit
 	 * @param rate
 	 * @param skill
+	 * @param activeChar
 	 * @param target
 	 * @return
 	 */
-	public static boolean calcCrit(double rate, boolean skill, Creature target)
+	public static boolean calcCrit(double rate, boolean skill, Creature activeChar, Creature target)
 	{
+		// Skills are not affected by critical rate defence buffs.
+		if (skill)
+		{
+			// Skill critical rate is calculated up to the first decimal, thats why multiply by 10 and compare to 1000.
+			double finalRate = rate * 10 * activeChar.getStat().getSkillCriticalRateBonus();
+			return finalRate > Rnd.get(1000);
+		}
+		
 		double finalRate = target.getStat().calcStat(Stats.DEFENCE_CRITICAL_RATE, rate, null, null) + target.getStat().calcStat(Stats.DEFENCE_CRITICAL_RATE_ADD, 0, null, null);
 		return finalRate > Rnd.get(1000);
 	}

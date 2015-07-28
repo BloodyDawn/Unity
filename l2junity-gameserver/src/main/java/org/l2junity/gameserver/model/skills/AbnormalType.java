@@ -419,7 +419,8 @@ public enum AbnormalType
 	MARK_OF_VOID,
 	MARK_OF_PLAGUE,
 	MARK_OF_TRICK,
-	SHOOTING_STANCE;
+	SHOOTING_STANCE,
+	MP_RECOVER;
 	
 	/**
 	 * Get the enumerate for the given String.

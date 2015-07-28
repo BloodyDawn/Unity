@@ -297,12 +297,16 @@
 		</endEffects>
 	</skill>
 	<skill id="11760" levels="11" name="Radiant Recharge">
+		<!-- Glory Days confirmed -->
 		<!-- Instantly recovers target's MP with a maximum of 166 Power depending on target's level. Also, for 10 seconds, recovers 12 MP per second. Ineffective on classes that have the Recharge skill. -->
 		<table name="#effectPoint"> 867 874 886 895 902 909 918 927 935 944 952 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsume"> 146 149 150 154 157 160 162 166 167 170 173 </table>
 		<table name="#mpInitialConsume"> 37 37 38 38 39 40 41 41 42 43 43 </table>
 		<table name="#amount"> 166 167 170 174 177 180 183 187 191 195 201 </table>
+		<table name="#amoutOverTime"> 12 12 12 12 13 13 13 13 13 13 13 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="MP_RECOVER" />
 		<set name="abnormalTime" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="icon" val="icon.skill11760" />
@@ -315,6 +319,7 @@
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectRange" val="1100" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -331,18 +336,21 @@
 				<param power="#amount" />
 			</effect>
 			<effect name="ManaHealOverTime" ticks="1">
-				<param power="13" />
+				<param power="#amoutOverTime" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11761" levels="8" name="Brilliant Recharge">
+		<!-- Glory Days confirmed -->
 		<!-- Instantly recovers party members' MP with a maximum of 700 Power depending on their level. Also, for 10 seconds, recovers 50 MP per second. -->
 		<table name="#effectPoint"> 1798 1811 1826 1844 1865 1878 1895 1912 </table>
 		<table name="#magicLvl"> 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsume"> 3120 3176 3224 3288 3344 3398 3454 3510 </table>
 		<table name="#mpInitialConsume"> 780 794 806 822 836 850 864 878 </table>
 		<table name="#amount"> 700 715 725 740 750 768 786 804 </table>
-		<table name="#amountPerSec"> 50 50 50 50 55 55 55 55 </table>
+		<table name="#amoutOverTime"> 10 10 10 10 11 11 11 11 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="MP_RECOVER" />
 		<set name="abnormalTime" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="icon" val="icon.skill11761" />
@@ -361,7 +369,7 @@
 				<param power="#amount" />
 			</effect>
 			<effect name="ManaHealOverTime" ticks="1">
-				<param power="#amountPerSec" />
+				<param power="#amoutOverTime" />
 			</effect>
 		</for>
 	</skill>
@@ -517,6 +525,7 @@
 		</for>
 	</skill>
 	<skill id="11768" levels="1" name="Rebirth">
+		<!-- Glory Days confirmed -->
 		<!-- Restores all party members' HP/MP/CP and has a chance of dispelling their debuffs. -->
 		<set name="icon" val="icon.skill11768" />
 		<set name="affectRange" val="1000" />
@@ -524,7 +533,7 @@
 		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="53" />
 		<set name="mpInitialConsume" val="13" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="93" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="600000" />
@@ -543,7 +552,7 @@
 				<param power="100" />
 			</effect>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="25" max="10" />
+				<param slot="debuff" rate="40" max="10" />
 			</effect>
 		</for>
 	</skill>

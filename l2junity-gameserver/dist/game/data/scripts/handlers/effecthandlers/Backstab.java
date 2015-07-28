@@ -27,7 +27,6 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
-import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 
@@ -90,8 +89,7 @@ public final class Backstab extends AbstractEffect
 		byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
 		double damage = Formulas.calcBackstabDamage(activeChar, target, info.getSkill(), _power, shld, ss);
 		
-		// Crit rate base crit rate for skill, modified with STR bonus
-		if (Formulas.calcCrit(_criticalChance * 10 * BaseStats.STR.calcBonus(activeChar), true, target))
+		if (Formulas.calcCrit(_criticalChance, true, activeChar, target))
 		{
 			damage *= 2;
 		}

@@ -75,7 +75,7 @@ public final class RegularAttack extends AbstractEffect
 		}
 		
 		final byte shld = Formulas.calcShldUse(activeChar, target);
-		final boolean crit = Formulas.calcCrit(activeChar.getStat().getCriticalHit(target, null), false, target);
+		final boolean crit = Formulas.calcCrit(activeChar.getStat().getCriticalHit(target, null), false, activeChar, target);
 		int damage = (int) Formulas.calcPhysDam(activeChar, target, null, 0, shld, crit, activeChar.isChargedShot(ShotType.SOULSHOTS));
 		damage *= _pAtkMod;
 		damage = (int) activeChar.calcStat(Stats.REGULAR_ATTACKS_DMG, damage); // Normal attacks have normal damage x 5
