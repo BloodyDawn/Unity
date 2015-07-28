@@ -512,7 +512,7 @@
 		<for>
 			<effect name="PhysicalAttackWeaponBonus">
 				<param power="#power" />
-				<param criticalChance="15" />
+				<param criticalChance="5" />
 				<param overHit="true" />
 				<param BLUNT="0.9" SWORD="0.9" POLE="1.5" />
 			</effect>
@@ -639,22 +639,25 @@
 		</for>
 	</skill>
 	<skill id="10269" levels="10" name="Jump Attack">
+		<!-- Glory Days confirmed -->
 		<!-- Jumps to attack frontal enemies with 10508 Power added to P. Atk. and decreases their Speed by 180 for 5 seconds. The more Momentum used the more damage inflicted, up to a maximum of 5 Momentum levels. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. Over-hit. Critical. -->
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<table name="#effectPoint"> -696 -700 -704 -707 -709 -711 -711 -711 -711 -711 </table>
 		<table name="#magicLvl"> 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 111 114 118 122 126 130 134 138 142 146 </table>
 		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15539 16297 17055 </table>
-		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="activateRate" val="80" />
+		<set name="activateRate" val="90" />
+		<set name="lvlBonusRate" val="20" />
+		<set name="basicProperty" val="PHYSICAL" />
 		<set name="affectLimit" val="5-12" />
-		<set name="affectRange" val="200" />
+		<set name="affectRange" val="150" />
 		<set name="flyType" val="CHARGE" />
 		<set name="icon" val="icon.skill10269" />
-		<set name="operateType" val="A1" />
+		<set name="operateType" val="DA2" />
 		<set name="targetType" val="AREA" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
@@ -667,15 +670,16 @@
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				<target mindistance="100" />
+				<target mindistance="200" />
 			</and>
 		</cond>
 		<for>
 			<effect name="EnemyCharge" />
 			<effect name="EnergyAttack">
 				<param power="#power" />
-				<param criticalChance="15" />
+				<param criticalChance="3" />
 				<param overHit="true" />
+				<param chargeConsume="5" />
 			</effect>
 			<effect name="Debuff">
 				<sub stat="runSpd" val="180" />
@@ -683,13 +687,15 @@
 		</for>
 	</skill>
 	<skill id="10270" levels="1" name="Second Wind">
+		<!-- Glory Days confirmed -->
 		<!-- Instantly recovers 35% of Max HP and 15% of Max CP. For 2 minutes, Max HP + 35% and Max CP + 15%. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="120" />
-		<set name="abnormalType" val="MAX_HP_CP_UP" />
+		<set name="abnormalType" val="FORCE_HP_UP" />
 		<set name="effectPoint" val="696" />
 		<set name="hitTime" val="1200" />
 		<set name="icon" val="icon.skill10270" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="93" />
 		<set name="mpConsume" val="43" />
 		<set name="coolTime" val="300" />
@@ -710,16 +716,21 @@
 		</for>
 	</skill>
 	<skill id="10271" levels="2" name="Power Provoke">
+		<!-- Glory Days confirmed -->
 		<!-- Provokes nearby enemies. Raises their P. Atk. and Atk. Spd. for 10 seconds but lower their P. Def. -->
+		<table name="#magicLvl"> 87 99 </table>
 		<table name="#mpConsumes"> 76 83 </table>
+		<table name="#pDef"> 0.8 0.75 </table>
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="PD_DOWN" />
 		<set name="affectLimit" val="9-10" />
-		<set name="affectRange" val="900" />
+		<set name="affectRange" val="700" />
 		<set name="icon" val="icon.skill10271" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
@@ -729,29 +740,31 @@
 		<set name="rideState" val="NONE" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="pAtk" val="1.2" />
-				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="pDef" val="0.76" />
+				<add stat="pAtk" val="200" />
+				<mul stat="pAtkSpd" val="1.1" />
+				<mul stat="pDef" val="#pDef" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10273" levels="4" name="Lightning Disarm">
+		<!-- Glory Days confirmed -->
 		<!-- Disarms nearby enemies for 5 seconds. Lowers P. Atk. and M. Atk. by 10%. -->
 		<table name="#atk"> 0.9 0.85 0.8 0.75 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="DISARM" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
-		<set name="activateRate" val="70" />
+		<set name="activateRate" val="90" />
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="200" />
 		<set name="basicProperty" val="PHYSICAL" />
-		<set name="lvlBonusRate" val="1" />
+		<set name="lvlBonusRate" val="20" />
 		<set name="icon" val="icon.skill10273" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DISARM" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="92" />
 		<set name="hitTime" val="1200" />
@@ -767,22 +780,25 @@
 		</for>
 	</skill>
 	<skill id="10274" levels="4" name="Berserker">
+		<!-- Glory Days confirmed -->
 		<!-- You have reached your physical limit. Increases debuff resistance, Speed, P. Atk., Accuracy, P. Def., Atk. Spd., and Critical Damage. When target is killed, recovers HP by 20%. When HP falls below 60%, increases P. Atk. by 10% and Critical Rate by 100. When HP falls below 30%, increases P. Atk. by 30% and Critical Rate by an additional 300. Can be used when HP is below 70%. -->
-		<table name="#abnormalLvl">3 4 5 6</table>
-		<table name="#accCombat"> 10 15 20 25 </table>
-		<table name="#bonus"> 1.05 1.07 1.09 1.11 </table>
-		<table name="#cAtkAdd">200 250 300 350</table>
-		<table name="#debuffVuln"> 1.4 1.5 1.6 1.7 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#effectPoint"> 687 698 707 709 </table>
+		<table name="#pDef"> 1.1 1.1 1.15 1.2 </table>
+		<table name="#debuffVuln"> 80 80 85 90 </table>
+		<table name="#pAtk"> 873 1015 1209 1435 </table>
+		<table name="#pAtkSpd"> 1.2 1.2 1.25 1.3 </table>
+		<table name="#accCombat"> 10 11 13 16 </table>
+		<table name="#cAtk"> 1.1 1.1 1.15 1.2 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 38 41 45 47 </table>
-		<table name="#runSpd"> 10 15 20 25 </table>
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="60" />
-		<set name="abnormalType" val="PINCH" />
+		<set name="abnormalType" val="SPECIAL_BERSERKER" />
 		<set name="icon" val="icon.skill10274" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3000" />
@@ -790,62 +806,38 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="300000" />
 		<cond addName="1" msgId="113">
-			<and>
-				<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				<player hp="70" />
-			</and>
+			<player hp="70" />
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="debuffVuln" val="#debuffVuln">
-					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				</add>
-				<add stat="runSpd" val="#runSpd">
-					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				</add>
-				<mul stat="pAtk" val="#bonus">
-					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				</mul>
-				<add stat="accCombat" val="#accCombat">
-					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				</add>
-				<mul stat="pDef" val="#bonus">
-					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				</mul>
-				<mul stat="pAtkSpd" val="#bonus">
-					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				</mul>
-				<add stat="cAtkAdd" val="#cAtkAdd">
-					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-				</add>
+				<mul stat="pDef" val="#pDef" />
+				<add stat="debuffVuln" val="#debuffVuln" />
+				<add stat="pAtk" val="#pAtk" />
+				<mul stat="pAtkSpd" val="#pAtkSpd" />
+				<add stat="accCombat" val="#accCombat" />
+				<mul stat="cAtk" val="#cAtk" />
+				<add stat="runSpd" val="30" />
 				<mul stat="pAtk" val="1.1">
-					<and>
-						<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-						<player hp="60" />
-					</and>
+					<player hp="60" />
 				</mul>
 				<add stat="rCrit" val="100">
-					<and>
-						<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-						<player hp="60" />
-					</and>
+					<player hp="60" />
 				</add>
 				<mul stat="pAtk" val="1.3">
-					<and>
-						<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-						<player hp="30" />
-					</and>
+					<player hp="30" />
 				</mul>
 				<add stat="rCrit" val="300">
-					<and>
-						<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-						<player hp="30" />
-					</and>
+					<player hp="30" />
 				</add>
+			</effect>
+			<effect name="TriggerSkillByKill">
+				<param chance="100" />
+				<param skillId="10285" skillLevel="1" /> <!-- HP Drain -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="10275" levels="4" name="Infinity Strike">
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful attack on target with 65085 Power added to P. Atk. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. Over-hit. Critical. -->
 		<table name="#magicLvl">00 101 103 105 </table>
 		<table name="#power"> 65085 69414 73352 77290 </table>
@@ -853,21 +845,23 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="1178" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="castRange" val="40" />
-		<set name="effectRange" val="400" />
+		<set name="effectRange" val="200" />
 		<set name="hitTime" val="5000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
 		<set name="nextActionAttack" val="true" />
+		<set name="staticReuse" val="true" />
 		<cond addName="1" msgId="113">
 			<using kind="SWORD, BLUNT, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param criticalChance="10" />
+				<param criticalChance="5" />
 				<param overHit="true" />
 			</effect>
 		</for>
@@ -877,11 +871,13 @@
 		<set name="icon" val="icon.skill10276" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="38" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="60000" />
+		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="FocusMaxMomentum" />
 		</for>
@@ -914,18 +910,22 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10279" levels="1" name="Giant Barrier">
+		<!-- Glory Days confirmed -->
 		<!-- Removes all debuffs and for 10 seconds, becomes invincible against normal attacks, skills, and debuffs. Spd. + 30%. Available when HP is 70% or lower. -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="INVINCIBILITY" />
 		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="icon" val="icon.skill10279" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="91" />
 		<set name="mpConsume" val="42" />
 		<set name="hitTime" val="200" />
 		<set name="effectPoint" val="707" />
 		<set name="reuseDelay" val="300000" />
+		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<player hp="70" />
 		</cond>
@@ -940,29 +940,38 @@
 		</for>
 	</skill>
 	<skill id="10280" levels="1" name="Momentum Charge">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Continuously consumes HP to produce Momentum. -->
 		<set name="icon" val="icon.skill10283" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="58" />
+		<for>
+			<effect name="DamOverTime" ticks="5">
+				<param power="30" />
+			</effect>
+			<effect name="GetMomentum" ticks="5" />
+		</for>
 	</skill>
 	<skill id="10281" levels="5" name="Sonic Star">
+		<!-- Glory Days confirmed -->
 		<!-- Attacks and knocks down nearby enemies at the speed of light with 44711 Power added to P. Atk. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon. Over-hit. Critical. -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
 		<table name="#effectPoint"> -700 -704 -708 -712 -716 </table>
 		<table name="#magicLvl"> 95 98 101 103 105 </table>
 		<table name="#mpConsumes"> 1103 1158 1213 1268 1323 </table>
 		<table name="#power"> 44711 46723 50165 52369 54573 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="KNOCK_DOWN" />
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
-		<set name="affectLimit" val="6-12" />
-		<set name="affectRange" val="400" />
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="300" />
 		<set name="icon" val="icon.skill10281" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="7500" />
@@ -977,7 +986,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param criticalChance="15" />
+				<param criticalChance="5" />
 				<param overHit="true" />
 			</effect>
 			<effect name="KnockDown">
@@ -986,19 +995,15 @@
 		</for>
 	</skill>
 	<skill id="10283" levels="1" name="Increase Momentum">
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill10283" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
-		<set name="magicLvl" val="85" />
-		<set name="blockedInOlympiad" val="true" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="97" />
 		<set name="isTriggeredSkill" val="true" />
-		<cond msgId="324">
-			<not>
-				<player Charges="15" />
-			</not>
-		</cond>
 		<for>
 			<effect name="FocusMomentum">
 				<param maxCharges="15" />
@@ -1073,12 +1078,11 @@
 		</for>
 	</skill>
 	<skill id="10288" levels="11" name="Hurricane Storm">
-		<!-- TODO Power - 10% when using a sword, dualsword, blunt, or fist weapon. Power + 50% when using a spear. -->
 		<!-- Attacks near the enemy with 11557 Power added to P. Atk. Power - 10% when using a sword, dualsword, blunt, or fist weapon. Power + 50% when using a spear. Requires a sword, blunt, spear, fist weapon, dual blunt, or dualsword. Over-hit. Critical hit. -->
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 161 163 169 175 180 186 192 198 204 210 216 </table>
 		<table name="#power"> 11557 11956 12754 13553 14351 15150 15948 16747 20787 21925 23063 </table>
-		<set name="affectLimit" val="6-12" />
+		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="200" />
 		<set name="icon" val="icon.skill10288" />
 		<set name="operateType" val="A1" />
@@ -1094,9 +1098,11 @@
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 		</cond>
 		<for>
-			<effect name="PhysicalAttack">
+			<effect name="PhysicalAttackWeaponBonus">
+				<param power="#power" />
 				<param criticalChance="15" />
 				<param overHit="true" />
+				<param BLUNT="0.9" SWORD="0.9" POLE="1.5" />
 			</effect>
 		</for>
 	</skill>

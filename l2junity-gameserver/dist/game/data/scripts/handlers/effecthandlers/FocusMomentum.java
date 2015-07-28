@@ -71,7 +71,7 @@ public final class FocusMomentum extends AbstractEffect
 			return;
 		}
 		
-		final int newCharge = Math.max(currentCharges + _amount, maxCharges);
+		final int newCharge = Math.min(currentCharges + _amount, maxCharges);
 		
 		player.setCharges(newCharge);
 		
