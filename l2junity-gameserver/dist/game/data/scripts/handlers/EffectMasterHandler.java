@@ -130,6 +130,7 @@ public final class EffectMasterHandler
 		MagicalAttack.class,
 		MagicalAttackByAbnormal.class,
 		MagicalAttackMp.class,
+		MagicalAttackRange.class,
 		MagicalDamOverTime.class,
 		MagicalSoulAttack.class,
 		ManaDamOverTime.class,
