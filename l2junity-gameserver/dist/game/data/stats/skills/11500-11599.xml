@@ -398,9 +398,9 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11517" levels="4" name="Horn Melody">
-		<table name="#effectPoint"> 687 698 707 712 </table>
 		<!-- For 30 minutes, all party members' P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%. -->
 		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#effectPoint"> 687 698 707 712 </table>
 		<table name="#mpConsumes"> 140 151 170 181 </table>
 		<table name="#mpInitialConsumes"> 28 31 34 37 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
@@ -410,7 +410,7 @@
 		<table name="#mDef"> 1.30 1.30 1.30 1.30 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1800" />
-		<set name="abnormalType" val="MELODY_HORN" />
+		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
 		<set name="affectRange" val="1000" />
 		<set name="icon" val="icon.skill11517" />
 		<set name="operateType" val="A2" />
@@ -432,10 +432,10 @@
 				<mul stat="mDef" val="#mDef" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MD_UP;PD_UP;PA_UP;IMPROVE_PA_PD_UP" rate="100" />
+				<param dispel="IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MD_UP;PD_UP;PA_UP;IMPROVE_PA_PD_UP" />
+				<param slot="IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL" />
 			</effect>
 		</for>
 	</skill>
@@ -448,7 +448,7 @@
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#runSpd"> 0.85 0.90 0.95 1.0 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalType" val="MELODY_DRUM" />
+		<set name="abnormalType" val="BUFF_SPECIAL_DEFENCE" />
 		<set name="abnormalTime" val="1800" />
 		<set name="affectRange" val="1000" />
 		<set name="icon" val="icon.skill11522" />
@@ -488,10 +488,10 @@
 				<param allowWeapons="SWORD,BLUNT,DAGGER,DUALDAGGER,DUAL,DUALFIST,POLE,ANCIENTSWORD,RAPIER,BOW,CROSSBOW,DUALBLUNT" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MULTI_BUFF" rate="100" />
+				<param dispel="MULTI_BUFF;COUNTER_CRITICAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MULTI_BUFF" />
+				<param slot="MULTI_BUFF;COUNTER_CRITICAL" />
 			</effect>
 		</for>
 	</skill>
@@ -506,7 +506,7 @@
 		<table name="#maxMp"> 1.37 1.39 1.41 1.43 </table>
 		<table name="#maxCp"> 1.37 1.39 1.41 1.43 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalType" val="MELODY_PIPE" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="abnormalTime" val="1800" />
 		<set name="affectRange" val="1000" />
 		<set name="icon" val="icon.skill11519" />
@@ -529,10 +529,10 @@
 				<mul stat="regHp" val="1.20" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MAX_MP_UP;MAX_HP_UP;HP_REGEN_UP;IMPROVE_HP_MP_UP" rate="100" />
+				<param dispel="IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MAX_MP_UP;MAX_HP_UP;HP_REGEN_UP;IMPROVE_HP_MP_UP" />
+				<param slot="IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP" />
 			</effect>
 		</for>
 	</skill>
@@ -544,7 +544,7 @@
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#rCrit"> 1.32 1.34 1.36 1.38 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalType" val="MELODY_GUITAR" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="abnormalTime" val="1800" />
 		<set name="affectRange" val="1000" />
 		<set name="icon" val="icon.skill11520" />
@@ -568,10 +568,10 @@
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="INSTINCT;CRITICAL_DMG_UP;IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP" rate="100" />
+				<param dispel="IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="INSTINCT;CRITICAL_DMG_UP;IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP" />
+				<param slot="IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP" />
 			</effect>
 		</for>
 	</skill>
@@ -586,7 +586,7 @@
 		<table name="#mEvas"> 5 6 7 8 </table>
 		<table name="#runSpd"> 34 35 36 37 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalType" val="MELODY_HARP" />
+		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="abnormalTime" val="1800" />
 		<set name="affectRange" val="1000" />
 		<set name="icon" val="icon.skill11521" />
@@ -610,10 +610,10 @@
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="HIT_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP;T_CRT_DMG_DOWN" rate="100" />
+				<param dispel="IMPROVE_HIT_DEFENCE_CRIT_RATE_UP;HIT_UP;T_CRIT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP_AVOID_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="HIT_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP;T_CRT_DMG_DOWN" />
+				<param slot="IMPROVE_HIT_DEFENCE_CRIT_RATE_UP;HIT_UP;T_CRIT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP_AVOID_UP" />
 			</effect>
 		</for>
 	</skill>
@@ -626,7 +626,7 @@
 		<table name="#pAtkSpd"> 1.34 1.35 1.36 1.37 </table>
 		<table name="#mAtkSpd"> 1.31 1.32 1.33 1.34 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalType" val="MELODY_LUTE" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="abnormalTime" val="1800" />
 		<set name="affectRange" val="1000" />
 		<set name="icon" val="icon.skill11518" />
@@ -648,10 +648,10 @@
 				<add stat="absorbDam" val="9" /> <!-- TODO: 20%? chance to trigger Vampiric rage -->
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="VAMPIRIC_ATTACK;CASTING_TIME_DOWN;IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN" rate="100" />
+				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param dispel="VAMPIRIC_ATTACK;CASTING_TIME_DOWN;IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN" />
+				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" />
 			</effect>
 		</for>
 	</skill>
@@ -659,7 +659,7 @@
 		<!-- For 30 minutes, the selected party member's P. Atk. + 12%, P. Critical Damage + 35%, P. Critical Rate + 100%, P. Def. + 45%, Shield Defense Rate + 30% and Shield Defense + 50%. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
-		<set name="abnormalType" val="HARMONY" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CLASS" />
 		<set name="icon" val="icon.skill11523" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY_MEMBER" />
@@ -683,10 +683,10 @@
 				<mul stat="rCrit" val="2" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" rate="100" />
+				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" />
+				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" />
 			</effect>
 		</for>
 	</skill>
@@ -694,7 +694,7 @@
 		<!-- For 30 minutes, the selected party member's P. Atk. + 35%, P. Critical Damage + 35%, P. Critical Rate + 100%, Atk. Spd. + 8%, M. Atk. + 16%, Casting Spd. + 8% and Speed + 8. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
-		<set name="abnormalType" val="HARMONY" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CLASS" />
 		<set name="icon" val="icon.skill11524" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY_MEMBER" />
@@ -719,10 +719,10 @@
 				<add stat="runSpd" val="8" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" rate="100" />
+				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" />
+				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" />
 			</effect>
 		</for>
 	</skill>
@@ -730,7 +730,7 @@
 		<!-- For 30 minutes, the selected party member's M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Speed + 8, M. Def. + 14%, MP Recovery Bonus + 20%, MP Consumption for magic skills - 15% and physical skills -5%, and Cooldown - 20%. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
-		<set name="abnormalType" val="HARMONY" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CLASS" />
 		<set name="icon" val="icon.skill11525" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY_MEMBER" />
@@ -761,10 +761,10 @@
 				<mul stat="dReuse" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" rate="100" />
+				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" />
+				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" />
 			</effect>
 		</for>
 	</skill>
@@ -795,7 +795,7 @@
 		<!-- Increases party members' Atk. Spd. by 15%, Casting Spd. by 30%, Max HP by 30%, MP recovery bonus by 20% and decreases MP Consumption for magic skill by 10% and the magic cancel rate for 5 minutes. -->
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="PREV_SONATA" />
+		<set name="abnormalType" val="BUFF_SPECIAL_AURA" />
 		<set name="abnormalTime" val="300" />
 		<set name="icon" val="icon.skill11529" />
 		<set name="operateType" val="A2" />
@@ -816,13 +816,13 @@
 				<mul stat="maxHp" val="1.30" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.90" />
-				<sub stat="cancel" val="53" /> <!-- Guess -->
+				<sub stat="cancel" val="40" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="SONG_OF_VITALITY;SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION;DANCE_OF_FURY" rate="100" />
+				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_VITALITY;SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION;DANCE_OF_FURY" />
+				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" />
 			</effect>
 		</for>
 	</skill>
@@ -830,7 +830,7 @@
 		<!-- Increases party members' P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. and Casting Spd. by 8% and decreases P. Def. by 3%, M. Def. by 11% and P. Evasion by 4 for 5 minutes. Also bestows an 8% Vampiric Rage effect and a chance of reflecting 10% of the damage received. -->
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="DARING_SONATA" />
+		<set name="abnormalType" val="ENCHANTED_MOD" />
 		<set name="abnormalTime" val="300" />
 		<set name="icon" val="icon.skill11530" />
 		<set name="operateType" val="A2" />
@@ -857,10 +857,10 @@
 				<add stat="reflectDam" val="10" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="DMG_SHIELD;SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" rate="100" />
+				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="DMG_SHIELD;SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" />
+				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" />
 			</effect>
 		</for>
 	</skill>
@@ -868,7 +868,7 @@
 		<!-- Increases party members' HP Recovery Bonus by 20%, P.ﾠAccuracy by 4, P.ﾠEvasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10% for 5 minutes. -->
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="REF_SONATA" />
+		<set name="abnormalType" val="SYNERGY_SI" />
 		<set name="abnormalTime" val="300" />
 		<set name="icon" val="icon.skill11532" />
 		<set name="operateType" val="A2" />
@@ -894,10 +894,10 @@
 				<mul stat="pReuse" val="0.90" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="SONG_OF_WIND;SONG_OF_WATER;SONG_OF_LIFE;SONG_OF_CHAMPION;MAX_BREATH_UP;DANCE_OF_INSPIRATION" rate="100" />
+				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_WIND;SONG_OF_WATER;SONG_OF_LIFE;SONG_OF_CHAMPION;MAX_BREATH_UP;DANCE_OF_INSPIRATION" />
+				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" />
 			</effect>
 		</for>
 	</skill>
@@ -1918,7 +1918,7 @@
 		<set name="icon" val="icon.skill11589" />
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1800" />
-		<set name="abnormalType" val="MELODY_HORN" />
+		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
 		<set name="affectLimit" val="50-100" /> <!-- Custom -->
 		<set name="affectRange" val="1000" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
@@ -1939,10 +1939,10 @@
 				<mul stat="mDef" val="#mDef" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MD_UP;PD_UP;PA_UP;IMPROVE_PA_PD_UP" rate="100" />
+				<param dispel="IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MD_UP;PD_UP;PA_UP;IMPROVE_PA_PD_UP" />
+				<param slot="IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL" />
 			</effect>
 		</for>
 	</skill>
@@ -1957,7 +1957,7 @@
 		<table name="#runSpd"> 0.85 0.90 0.95 1.0 </table>
 		<set name="icon" val="icon.skill11590" />
 		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalType" val="MELODY_DRUM" />
+		<set name="abnormalType" val="BUFF_SPECIAL_DEFENCE" />
 		<set name="abnormalTime" val="1800" />
 		<set name="affectLimit" val="50-100" /> <!-- Custom -->
 		<set name="affectRange" val="1000" /> <!-- Custom -->
@@ -1996,10 +1996,10 @@
 				<param allowWeapons="SWORD,BLUNT,DAGGER,DUALDAGGER,DUAL,DUALFIST,POLE,ANCIENTSWORD,RAPIER,BOW,CROSSBOW,DUALBLUNT" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MULTI_BUFF" rate="100" />
+				<param dispel="MULTI_BUFF;COUNTER_CRITICAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MULTI_BUFF" />
+				<param slot="MULTI_BUFF;COUNTER_CRITICAL" />
 			</effect>
 		</for>
 	</skill>
@@ -2016,7 +2016,7 @@
 		<table name="#maxCp"> 1.37 1.39 1.41 1.43 </table>
 		<set name="icon" val="icon.skill11591" />
 		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalType" val="MELODY_PIPE" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="abnormalTime" val="1800" />
 		<set name="affectLimit" val="50-100" /> <!-- Custom -->
 		<set name="affectRange" val="1000" /> <!-- Custom -->
@@ -2038,10 +2038,10 @@
 				<mul stat="regHp" val="1.20" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MAX_MP_UP;MAX_HP_UP;HP_REGEN_UP;IMPROVE_HP_MP_UP" rate="100" />
+				<param dispel="IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MAX_MP_UP;MAX_HP_UP;HP_REGEN_UP;IMPROVE_HP_MP_UP" />
+				<param slot="IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP" />
 			</effect>
 		</for>
 	</skill>
@@ -2056,7 +2056,7 @@
 		<table name="#rCrit"> 1.32 1.34 1.36 1.38 </table>
 		<set name="icon" val="icon.skill11592" />
 		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalType" val="MELODY_GUITAR" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="abnormalTime" val="1800" />
 		<set name="affectLimit" val="50-100" /> <!-- Custom -->
 		<set name="affectRange" val="1000" /> <!-- Custom -->
@@ -2079,10 +2079,10 @@
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="INSTINCT;CRITICAL_DMG_UP;IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP" rate="100" />
+				<param dispel="IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="INSTINCT;CRITICAL_DMG_UP;IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP" />
+				<param slot="IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP" />
 			</effect>
 		</for>
 	</skill>
@@ -2099,7 +2099,7 @@
 		<table name="#runSpd"> 34 35 36 37 </table>
 		<set name="icon" val="icon.skill11593" />
 		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalType" val="MELODY_HARP" />
+		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="abnormalTime" val="1800" />
 		<set name="affectLimit" val="50-100" /> <!-- Custom -->
 		<set name="affectRange" val="1000" /> <!-- Custom -->
@@ -2123,10 +2123,10 @@
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="HIT_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP;T_CRT_DMG_DOWN" rate="100" />
+				<param dispel="IMPROVE_HIT_DEFENCE_CRIT_RATE_UP;HIT_UP;T_CRIT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP_AVOID_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="HIT_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP;T_CRT_DMG_DOWN" />
+				<param slot="IMPROVE_HIT_DEFENCE_CRIT_RATE_UP;HIT_UP;T_CRIT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP_AVOID_UP" />
 			</effect>
 		</for>
 	</skill>
@@ -2141,7 +2141,7 @@
 		<table name="#mAtkSpd"> 1.31 1.32 1.33 1.34 </table>
 		<set name="icon" val="icon.skill11594" />
 		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalType" val="MELODY_LUTE" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="abnormalTime" val="1800" />
 		<set name="affectLimit" val="50-100" /> <!-- Custom -->
 		<set name="affectRange" val="1000" /> <!-- Custom -->
@@ -2162,10 +2162,10 @@
 				<add stat="absorbDam" val="9" /> <!-- TODO: 20%? chance to trigger Vampiric rage -->
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="VAMPIRIC_ATTACK;CASTING_TIME_DOWN;IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN" rate="100" />
+				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param dispel="VAMPIRIC_ATTACK;CASTING_TIME_DOWN;IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN" />
+				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" />
 			</effect>
 		</for>
 	</skill>
@@ -2175,7 +2175,7 @@
 		<set name="icon" val="icon.skill11596" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
-		<set name="abnormalType" val="HARMONY" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CLASS" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="CLAN_MEMBER" />
 		<set name="mpConsume" val="140" />
@@ -2197,10 +2197,10 @@
 				<mul stat="sDef" val="1.50" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" rate="100" />
+				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" />
+				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" />
 			</effect>
 		</for>
 	</skill>
@@ -2210,7 +2210,7 @@
 		<set name="icon" val="icon.skill11595" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
-		<set name="abnormalType" val="HARMONY" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CLASS" />
 		<set name="icon" val="icon.skill11524" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="CLAN_MEMBER" />
@@ -2234,10 +2234,10 @@
 				<add stat="runSpd" val="8" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" rate="100" />
+				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" />
+				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" />
 			</effect>
 		</for>
 	</skill>
@@ -2247,7 +2247,7 @@
 		<set name="icon" val="icon.skill11597" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
-		<set name="abnormalType" val="HARMONY" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CLASS" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="CLAN_MEMBER" />
 		<set name="mpConsume" val="140" />
@@ -2276,10 +2276,10 @@
 				<mul stat="dReuse" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" rate="100" />
+				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" />
+				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" />
 			</effect>
 		</for>
 	</skill>

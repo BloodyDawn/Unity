@@ -409,7 +409,7 @@
 		<set name="icon" val="icon.skill11820" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="MELODY_HORN" />
+		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="17" />
@@ -427,10 +427,10 @@
 				<mul stat="mDef" val="1.30" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MD_UP;PD_UP;PA_UP;IMPROVE_PA_PD_UP" rate="100" />
+				<param dispel="IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MD_UP;PD_UP;PA_UP;IMPROVE_PA_PD_UP" />
+				<param slot="IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL" />
 			</effect>
 		</for>
 	</skill>
@@ -440,7 +440,7 @@
 		<set name="icon" val="icon.skill11821" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="MELODY_GUITAR" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="17" />
@@ -459,10 +459,10 @@
 				<mul stat="MagicalMpConsumeRate" val="0.90" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="INSTINCT;CRITICAL_DMG_UP;IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP" rate="100" />
+				<param dispel="IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="INSTINCT;CRITICAL_DMG_UP;IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP" />
+				<param slot="IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP" />
 			</effect>
 		</for>
 	</skill>
@@ -472,7 +472,7 @@
 		<set name="icon" val="icon.skill11822" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="MELODY_LUTE" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="17" />
@@ -489,10 +489,10 @@
 				<add stat="absorbDam" val="9" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="VAMPIRIC_ATTACK;CASTING_TIME_DOWN;IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN" rate="100" />
+				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param dispel="VAMPIRIC_ATTACK;CASTING_TIME_DOWN;IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN" />
+				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" />
 			</effect>
 		</for>
 	</skill>
@@ -502,7 +502,7 @@
 		<set name="icon" val="icon.skill11823" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="MELODY_HARP" />
+		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="17" />
@@ -521,10 +521,10 @@
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="HIT_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP;T_CRT_DMG_DOWN" rate="100" />
+				<param dispel="IMPROVE_HIT_DEFENCE_CRIT_RATE_UP;HIT_UP;T_CRIT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP_AVOID_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="HIT_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP;T_CRT_DMG_DOWN" />
+				<param slot="IMPROVE_HIT_DEFENCE_CRIT_RATE_UP;HIT_UP;T_CRIT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP_AVOID_UP" />
 			</effect>
 		</for>
 	</skill>
@@ -656,7 +656,7 @@
 		<set name="icon" val="icon.skill11522" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="MELODY_DRUM" />
+		<set name="abnormalType" val="BUFF_SPECIAL_DEFENCE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="35" />
@@ -683,10 +683,10 @@
 				<mul stat="runSpd" val="0.85" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MULTI_BUFF" rate="100" />
+				<param dispel="MULTI_BUFF;COUNTER_CRITICAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MULTI_BUFF" />
+				<param slot="MULTI_BUFF;COUNTER_CRITICAL" />
 			</effect>
 		</for>
 	</skill>

@@ -440,7 +440,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="400" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="MELODY_HORN" />
+		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
 		<set name="abnormalTime" val="3600" />
 		<set name="effectRange" val="900" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -455,10 +455,10 @@
 				<mul stat="mDef" val="1.3" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MD_UP;PD_UP;PA_UP;IMPROVE_PA_PD_UP" rate="100" />
+				<param dispel="IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MD_UP;PD_UP;PA_UP;IMPROVE_PA_PD_UP" />
+				<param slot="IMPROVE_PA_PD_UP;PA_UP;IMPROVE_MA_MD_UP;MD_UP;MA_UP;KAMAEL_SPECIAL" />
 			</effect>
 		</for>
 	</skill>
@@ -469,7 +469,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="400" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="MELODY_DRUM" />
+		<set name="abnormalType" val="BUFF_SPECIAL_DEFENCE" />
 		<set name="abnormalTime" val="3600" />
 		<set name="effectRange" val="900" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -501,10 +501,10 @@
 				<param allowWeapons="SWORD,BLUNT,DAGGER,DUALDAGGER,DUAL,DUALFIST,POLE,ANCIENTSWORD,RAPIER,BOW,CROSSBOW" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MULTI_BUFF" rate="100" />
+				<param dispel="MULTI_BUFF;COUNTER_CRITICAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MULTI_BUFF" />
+				<param slot="MULTI_BUFF;COUNTER_CRITICAL" />
 			</effect>
 		</for>
 	</skill>
@@ -515,7 +515,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="400" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="MELODY_PIPE" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="abnormalTime" val="3600" />
 		<set name="effectRange" val="900" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -530,10 +530,10 @@
 				<mul stat="regHp" val="1.2" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MAX_MP_UP;MAX_HP_UP;HP_REGEN_UP;IMPROVE_HP_MP_UP" rate="100" />
+				<param dispel="IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MAX_MP_UP;MAX_HP_UP;HP_REGEN_UP;IMPROVE_HP_MP_UP" />
+				<param slot="IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP" />
 			</effect>
 		</for>
 	</skill>
@@ -545,7 +545,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="400" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="MELODY_GUITAR" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="abnormalTime" val="3600" />
 		<set name="effectRange" val="900" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -560,10 +560,10 @@
 				<mul stat="MagicalMpConsumeRate" val="1.1" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="INSTINCT;CRITICAL_DMG_UP;IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP" rate="100" />
+				<param dispel="IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="INSTINCT;CRITICAL_DMG_UP;IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP" />
+				<param slot="IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;CHEAP_MAGIC;MAGIC_CRITICAL_UP" />
 			</effect>
 		</for>
 	</skill>
@@ -574,7 +574,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="400" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="MELODY_HARP" />
+		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="abnormalTime" val="3600" />
 		<set name="effectRange" val="900" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -590,10 +590,10 @@
 				<mul stat="defCritDamage" val="1.3" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="HIT_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP;T_CRT_DMG_DOWN" rate="100" />
+				<param dispel="IMPROVE_HIT_DEFENCE_CRIT_RATE_UP;HIT_UP;T_CRIT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP_AVOID_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="HIT_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP;T_CRT_DMG_DOWN" />
+				<param slot="IMPROVE_HIT_DEFENCE_CRIT_RATE_UP;HIT_UP;T_CRIT_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;SPEED_UP_AVOID_UP" />
 			</effect>
 		</for>
 	</skill>
@@ -604,7 +604,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="400" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="MELODY_LUTE" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="abnormalTime" val="3600" />
 		<set name="effectRange" val="900" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -618,10 +618,10 @@
 				<add stat="absorbDam" val="9" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="VAMPIRIC_ATTACK;CASTING_TIME_DOWN;IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN" rate="100" />
+				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param dispel="VAMPIRIC_ATTACK;CASTING_TIME_DOWN;IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN" />
+				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" />
 			</effect>
 		</for>
 	</skill>
@@ -633,7 +633,7 @@
 		<set name="castRange" val="400" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="HARMONY" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CLASS" />
 		<set name="effectRange" val="900" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
@@ -649,10 +649,10 @@
 				<mul stat="rCrit" val="2.0" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" rate="100" />
+				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" />
+				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" />
 			</effect>
 		</for>
 	</skill>
@@ -664,7 +664,7 @@
 		<set name="castRange" val="400" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="HARMONY" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CLASS" />
 		<set name="effectRange" val="900" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
@@ -681,10 +681,10 @@
 				<add stat="runSpd" val="8" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" rate="100" />
+				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" />
+				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" />
 			</effect>
 		</for>
 	</skill>
@@ -696,7 +696,7 @@
 		<set name="castRange" val="400" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="HARMONY" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CLASS" />
 		<set name="effectRange" val="900" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
@@ -719,10 +719,10 @@
 				<mul stat="dReuse" val="0.8" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" rate="100" />
+				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" />
+				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" />
 			</effect>
 		</for>
 	</skill>
@@ -733,7 +733,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="400" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="PREV_SONATA" />
+		<set name="abnormalType" val="BUFF_SPECIAL_AURA" />
 		<set name="abnormalTime" val="3600" />
 		<set name="effectRange" val="900" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -750,10 +750,10 @@
 				<sub stat="cancel" val="50" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="SONG_OF_VITALITY;SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION;DANCE_OF_FURY" rate="100" />
+				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_VITALITY;SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION;DANCE_OF_FURY" />
+				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" />
 			</effect>
 		</for>
 	</skill>
@@ -764,7 +764,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="400" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="DARING_SONATA" />
+		<set name="abnormalType" val="ENCHANTED_MOD" />
 		<set name="abnormalTime" val="3600" />
 		<set name="effectRange" val="900" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -784,10 +784,10 @@
 				<add stat="reflectDam" val="10" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="DMG_SHIELD;SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" rate="100" />
+				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="DMG_SHIELD;SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" />
+				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" />
 			</effect>
 		</for>
 	</skill>
@@ -798,7 +798,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="400" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="REF_SONATA" />
+		<set name="abnormalType" val="SYNERGY_SI" />
 		<set name="abnormalTime" val="3600" />
 		<set name="effectRange" val="900" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -817,10 +817,10 @@
 				<mul stat="pReuse" val="0.95" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="SONG_OF_WIND;SONG_OF_WATER;SONG_OF_LIFE;SONG_OF_CHAMPION;MAX_BREATH_UP;DANCE_OF_INSPIRATION" rate="100" />
+				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_WIND;SONG_OF_WATER;SONG_OF_LIFE;SONG_OF_CHAMPION;MAX_BREATH_UP;DANCE_OF_INSPIRATION" />
+				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" />
 			</effect>
 		</for>
 	</skill>
