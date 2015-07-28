@@ -26,7 +26,6 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
@@ -60,15 +59,15 @@ public final class KnockDown extends AbstractEffect
 	}
 	
 	@Override
-	public int getEffectFlags()
-	{
-		return EffectFlag.STUNNED.getMask();
-	}
-	
-	@Override
 	public L2EffectType getEffectType()
 	{
 		return L2EffectType.KNOCK;
+	}
+	
+	@Override
+	public boolean isInstant()
+	{
+		return true;
 	}
 	
 	@Override
@@ -84,7 +83,6 @@ public final class KnockDown extends AbstractEffect
 		
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		effected.broadcastPacket(new FlyToLocation(effected, loc, _type, _speed, _delay, _animationSpeed));
-		effected.startStunning();
 		effected.setXYZ(loc);
 		effected.setHeading(newHeading);
 		effected.broadcastPacket(new ValidateLocation(effected));

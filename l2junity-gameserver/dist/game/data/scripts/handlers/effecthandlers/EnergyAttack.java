@@ -88,7 +88,9 @@ public final class EnergyAttack extends AbstractEffect
 		
 		final PlayerInstance attacker = info.getEffector().getActingPlayer();
 		
-		if ((attacker.getCharges() < _chargeConsume) || !attacker.decreaseCharges(_chargeConsume))
+		final int charge = Math.max(_chargeConsume, attacker.getCharges());
+		
+		if (!attacker.decreaseCharges(charge))
 		{
 			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
 			sm.addSkillName(info.getSkill());
@@ -146,10 +148,9 @@ public final class EnergyAttack extends AbstractEffect
 				weaponTypeBoost = 77;
 			}
 			
-			// charge count should be the count before casting the skill but since its reduced before calling effects
-			// we add skill consume charges to current charges
-			// Nik: 0.2 might 0.25 in H5, check it out for IO
-			double energyChargesBoost = ((attacker.getCharges() - 1) * 0.2) + 1;
+			// TODO Nik says 0.2 might 0.25 in H5, check it out for IO
+			// Sdw says (charge * 0.1) + 1
+			double energyChargesBoost = ((charge - 1) * 0.2) + 1;
 			
 			attack += _power;
 			attack *= ssBoost;

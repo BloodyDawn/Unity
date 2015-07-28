@@ -156,6 +156,7 @@ public final class EffectMasterHandler
 		PhysicalAttackMute.class,
 		PhysicalMute.class,
 		PhysicalSoulAttack.class,
+		PhysicalAttackWeaponBonus.class,
 		Pumping.class,
 		ProtectionBlessing.class,
 		PullBack.class,
