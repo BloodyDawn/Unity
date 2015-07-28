@@ -688,7 +688,15 @@ public class Attackable extends Npc
 				}
 				
 				getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, attacker);
-				addDamageHate(attacker, damage, (damage * 100) / (getLevel() + 7));
+				
+				// Calculate the amount of hate this attackable receives from this attack.
+				double hateValue = (damage * 100) / (getLevel() + 7);
+				if (skill == null)
+				{
+					hateValue = attacker.calcStat(Stats.HATE_ATTACK, hateValue, this, skill);
+				}
+				
+				addDamageHate(attacker, damage, (int) hateValue);
 				
 				final PlayerInstance player = attacker.getActingPlayer();
 				if (player != null)

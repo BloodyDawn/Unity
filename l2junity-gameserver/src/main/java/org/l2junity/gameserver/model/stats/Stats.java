@@ -240,7 +240,10 @@ public enum Stats
 	HP_LOCK_MIN("hpLockMin"),
 	
 	// Maximun momentum one can charge
-	MAX_MOMENTUM("maxMomentum");
+	MAX_MOMENTUM("maxMomentum"),
+	
+	// Alters the hate of your physical attacks.
+	HATE_ATTACK("hateAttack");
 	
 	public static final int NUM_STATS = values().length;
 	
