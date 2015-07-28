@@ -33,7 +33,6 @@ import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -120,12 +119,7 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 		}
 		
 		double damage = (int) calcPhysDam(info);
-		// Physical damage critical rate is only affected by STR.
-		boolean crit = false;
-		if (_criticalChance > 0)
-		{
-			crit = Formulas.calcCrit(_criticalChance * 10 * BaseStats.STR.calcBonus(activeChar), true, target);
-		}
+		boolean crit = Formulas.calcCrit(_criticalChance, true, activeChar, target);
 		
 		if (crit)
 		{

@@ -243,7 +243,11 @@ public enum Stats
 	MAX_MOMENTUM("maxMomentum"),
 	
 	// Alters the hate of your physical attacks.
-	HATE_ATTACK("hateAttack");
+	HATE_ATTACK("hateAttack"),
+	
+	// Which base stat ordinal should alter skill critical formula.
+	STAT_SKILLCRITICAL("statSkillCritical"),
+	STAT_SPEED("statSpeed");
 	
 	public static final int NUM_STATS = values().length;
 	

@@ -31,7 +31,6 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
-import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 
@@ -111,9 +110,8 @@ public final class FatalBlow extends AbstractEffect
 		boolean ss = info.getSkill().useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
 		byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
 		double damage = Formulas.calcBlowDamage(activeChar, target, info.getSkill(), _power, shld, ss);
+		boolean crit = Formulas.calcCrit(_criticalChance, true, activeChar, target);
 		
-		// Crit rate base crit rate for skill, modified with STR bonus
-		boolean crit = Formulas.calcCrit(_criticalChance * 10 * BaseStats.STR.calcBonus(activeChar), true, target);
 		if (crit)
 		{
 			damage *= 2;
