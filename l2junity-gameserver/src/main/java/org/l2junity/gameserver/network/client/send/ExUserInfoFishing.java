@@ -41,9 +41,9 @@ public class ExUserInfoFishing implements IClientOutgoingPacket
 		
 		packet.writeD(_activeChar.getObjectId());
 		packet.writeC(_activeChar.isFishing() ? 1 : 0);
-		packet.writeD(_activeChar.getFishx());
-		packet.writeD(_activeChar.getFishy());
-		packet.writeD(_activeChar.getFishz());
+		packet.writeD(0);	// Fish x
+		packet.writeD(0);	// Fish y
+		packet.writeD(0);	// Fish z
 		return true;
 	}
 }

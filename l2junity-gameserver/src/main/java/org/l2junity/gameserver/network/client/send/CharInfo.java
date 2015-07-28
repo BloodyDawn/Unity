@@ -206,9 +206,9 @@ public class CharInfo implements IClientOutgoingPacket
 		packet.writeC(_activeChar.isHero() || (_activeChar.isGM() && Config.GM_HERO_AURA) ? 1 : 0); // Confirmed
 		
 		packet.writeC(_activeChar.isFishing() ? 1 : 0); // Confirmed
-		packet.writeD(_activeChar.getFishx()); // Confirmed
-		packet.writeD(_activeChar.getFishy()); // Confirmed
-		packet.writeD(_activeChar.getFishz()); // Confirmed
+		packet.writeD(0); // Fish x
+		packet.writeD(0); // Fish y
+		packet.writeD(0); // Fish z
 		
 		packet.writeD(_activeChar.getAppearance().getNameColor()); // Confirmed
 		
