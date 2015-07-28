@@ -52,7 +52,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Paralyze">
+			<effect name="BlockActions">
 				<mul stat="healEffect" val="#healAmount" />
 			</effect>
 		</for>
@@ -786,7 +786,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Petrification" />
+			<effect name="BlockActions" />
 			<effect name="DamOverTime" ticks="1">
 				<param power="#dot" />
 			</effect>
@@ -864,7 +864,7 @@
 		<set name="effectPoint" val="-707" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="11277" levels="4" name="Sense of Loyalty">
@@ -945,7 +945,7 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="11280" levels="9" name="Cougar Bite">
@@ -1317,7 +1317,7 @@
 		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Petrification" />
+			<effect name="BlockActions" />
 			<effect name="DamOverTime" ticks="1">
 				<param power="#dot" />
 			</effect>

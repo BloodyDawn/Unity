@@ -299,7 +299,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="10314" levels="4" name="Disarmament">
@@ -386,7 +386,7 @@
 				<param criticalChance="15" />
 				<param ignoreShieldDefence="true" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="10318" levels="7" name="Sonic Flash">
@@ -507,7 +507,7 @@
 				<param ignoreShieldDefence="true" />
 				<param overHit="true" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="TargetCancel" />
 		</for>
 	</skill>
@@ -876,7 +876,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="10340" levels="3" name="Blade Slasher">

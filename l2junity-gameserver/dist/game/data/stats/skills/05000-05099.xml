@@ -100,7 +100,7 @@
 				<param power="5964" />
 			</effect>
 			<effect name="ThrowUp" />
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5005" levels="1" name="Frintezza's Ghost Summoning">
@@ -118,7 +118,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5006" levels="1" name="Frintezza's Melody">
@@ -151,7 +151,7 @@
 		<table name="#activateRate"> 0 0 0 10 10 </table>
 		<table name="#attackAndSpeed"> 1 1 1.2 1 1 </table>
 		<table name="#basicProperties"> NONE NONE NONE MAGIC MAGIC </table>
-		<table name="#effectname1"> Buff Buff Buff Buff Stun </table>
+		<table name="#effectname1"> Buff Buff Buff Buff BlockActions </table>
 		<table name="#effectPoints"> 100 100 100 -100 -100 </table>
 		<table name="#healEffect"> 1 1 1 0.5 1 </table>
 		<table name="#healPercent"> 3 0 0 0 0 </table>
@@ -273,7 +273,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5013" levels="1" name="Frintezza Energy Drain">
@@ -377,7 +377,7 @@
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5017" levels="1" name="Frintezza's Daemon Morph">
@@ -1347,7 +1347,7 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="TargetCancel">
 				<param chance="10" />
 			</effect>
@@ -1401,7 +1401,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5086" levels="1" name="Deadly Poison">

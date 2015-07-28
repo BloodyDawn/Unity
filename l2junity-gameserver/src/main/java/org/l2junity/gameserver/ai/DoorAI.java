@@ -101,12 +101,7 @@ public class DoorAI extends CharacterAI
 	}
 	
 	@Override
-	protected void onEvtStunned(Creature attacker)
-	{
-	}
-	
-	@Override
-	protected void onEvtSleeping(Creature attacker)
+	protected void onEvtActionBlocked(Creature attacker)
 	{
 	}
 	

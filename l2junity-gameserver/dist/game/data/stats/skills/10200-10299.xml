@@ -431,7 +431,7 @@
 				<param SLEEP="100" />
 				<param SHOCK="100" />
 			</effect>
-			<effect name="Stun">
+			<effect name="BlockActions">
 				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
 			</effect>
 		</for>
@@ -519,7 +519,7 @@
 			<effect name="TargetCancel">
 				<param chance="60" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="10266" levels="11" name="Giant Punch">
@@ -568,7 +568,7 @@
 				<param SHOCK="100" />
 				<param CHANGEBODY="100" />
 			</effect>
-			<effect name="Stun">
+			<effect name="BlockActions">
 				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
 			</effect>
 		</for>
@@ -612,7 +612,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="Stun">
+			<effect name="BlockActions">
 				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
 			</effect>
 		</for>
@@ -1368,7 +1368,7 @@
 			<using kind="POLE" />
 		</cond>
 		<for>
-			<effect name="Stun">
+			<effect name="BlockActions">
 				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
 			</effect>
 		</for>

@@ -28,7 +28,7 @@
 			<effect name="PhysicalAttack">
 				<param power="16" />
 			</effect>
-			<effect name="Stun">
+			<effect name="BlockActions">
 				<mul stat="pDef" val="#pDef" />
 			</effect>
 		</for>
@@ -464,7 +464,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Petrification" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4617" levels="1" name="Dispel Petrification">
@@ -543,7 +543,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4621" levels="12" name="NPC AE - 80% HP Drain">
@@ -1074,7 +1074,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SLEEP" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4641" levels="12" name="Super Strike">
@@ -1541,7 +1541,7 @@
 				<param power="#power" />
 				<param percentage="20" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4661" levels="12" name="Sleep">
@@ -1576,7 +1576,7 @@
 				<param power="#power" />
 				<param percentage="20" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4662" levels="12" name="Sleep">
@@ -1611,7 +1611,7 @@
 				<param power="#power" />
 				<param percentage="20" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4663" levels="1" name="Aggression">
@@ -1804,7 +1804,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4671" levels="1" name="Teleport">
@@ -2187,7 +2187,7 @@
 				<param criticalChance="10" />
 			</effect>
 			<effect name="ThrowUp" />
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4689" levels="2" name="Valakas Fear">

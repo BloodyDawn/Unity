@@ -182,7 +182,7 @@
 			<effect name="PhysicalAttack">
 				<param power="28600" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4107" levels="1" name="Antharas Stun">
@@ -214,7 +214,7 @@
 				<param power="28600" />
 			</effect>
 			<effect name="ThrowUp" />
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4108" levels="1" name="Antharas Fear">
@@ -334,7 +334,7 @@
 			<effect name="PhysicalAttack">
 				<param power="10" />
 			</effect>
-			<effect name="Petrification">
+			<effect name="BlockActions">
 				<mul stat="regHp" val="0" />
 			</effect>
 		</for>
@@ -463,7 +463,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4118" levels="12" name="Paralysis">
@@ -495,7 +495,7 @@
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4119" levels="3" name="Decrease Accuracy">
@@ -561,7 +561,7 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4121" levels="12" name="Summoned Monster Magic Protection">
@@ -760,7 +760,7 @@
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4132" levels="1" name="Spear: Pound the Ground">
@@ -1530,7 +1530,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4167" levels="1" name="Curse of Fairy Mimyu">
@@ -1602,7 +1602,7 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4170" levels="12" name="Mortal Blow">
@@ -1673,7 +1673,7 @@
 			<effect name="PhysicalAttack">
 				<param power="0" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4173" levels="12" name="Might">
@@ -1852,7 +1852,7 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4181" levels="12" name="Mortal Blow">
@@ -1983,7 +1983,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SLEEP" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4186" levels="12" name="Hold">
@@ -2089,7 +2089,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4190" levels="12" name="Decrease MP">

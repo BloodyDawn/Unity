@@ -140,7 +140,7 @@ public final class UseItem implements IClientIncomingPacket
 		}
 		
 		// No UseItem is allowed while the player is in special conditions
-		if (activeChar.isStunned() || activeChar.isParalyzed() || activeChar.isAfraid() || activeChar.isAlikeDead())
+		if (activeChar.hasBlockActions() || activeChar.isAfraid() || activeChar.isAlikeDead())
 		{
 			return;
 		}

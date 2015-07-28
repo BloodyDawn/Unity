@@ -762,7 +762,7 @@
 			<target race="UNDEAD" />
 		</cond>
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="1043" levels="1" name="Holy Weapon">
@@ -1153,7 +1153,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SLEEP" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
 				<param SLEEP="100" />
 			</effect>
@@ -1225,7 +1225,7 @@
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="SLEEP" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
 				<param SLEEP="100" />
 			</effect>
@@ -1641,7 +1641,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SLEEP" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
 				<param SLEEP="100" />
 			</effect>

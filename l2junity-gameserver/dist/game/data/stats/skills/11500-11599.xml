@@ -182,7 +182,7 @@
 		</cond>
 		<for>
 			<effect name="EnemyCharge" />
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="11509" levels="11" name="Crippling Attack">
@@ -1068,7 +1068,7 @@
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Petrification" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="11540" levels="7" name="Quick Escape">
@@ -1826,7 +1826,7 @@
 		<set name="reuseDelay" val="120000" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Petrification" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="11585" levels="4" name="Superior Dance of Mastery">

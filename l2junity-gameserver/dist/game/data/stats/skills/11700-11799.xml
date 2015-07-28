@@ -464,7 +464,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Petrification" />
+			<effect name="BlockActions" />
 			<effect name="HealOverTime" ticks="1">
 				<param power="#hpPower" />
 			</effect>
@@ -783,7 +783,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="trait" val="SLEEP" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
 				<param SLEEP="100" />
 			</effect>

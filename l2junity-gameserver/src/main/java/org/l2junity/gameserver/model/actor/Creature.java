@@ -204,7 +204,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	private boolean _isDead = false;
 	private boolean _isImmobilized = false;
 	private boolean _isOverloaded = false; // the char is carrying too much
-	private boolean _isParalyzed = false;
+	private boolean _blockActions = false;
 	private boolean _isPendingRevive = false;
 	private boolean _isRunning = false;
 	protected boolean _showSummonAnimation = false;
@@ -598,8 +598,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public void broadcastPacket(IClientOutgoingPacket mov)
 	{
-		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
-		{
+		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player -> {
 			if (isVisibleFor(player))
 			{
 				player.sendPacket(mov);
@@ -617,8 +616,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public void broadcastPacket(IClientOutgoingPacket mov, int radiusInKnownlist)
 	{
-		World.getInstance().forEachVisibleObjectInRange(this, PlayerInstance.class, radiusInKnownlist, player ->
-		{
+		World.getInstance().forEachVisibleObjectInRange(this, PlayerInstance.class, radiusInKnownlist, player -> {
 			if (isVisibleFor(player))
 			{
 				player.sendPacket(mov);
@@ -2727,7 +2725,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public final boolean isAllSkillsDisabled()
 	{
-		return _allSkillsDisabled || isStunned() || isParalyzed();
+		return _allSkillsDisabled || hasBlockActions();
 	}
 	
 	/**
@@ -2735,7 +2733,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public boolean isAttackingDisabled()
 	{
-		return isFlying() || isStunned() || isAttackingNow() || isAlikeDead() || isParalyzed() || isPhysicalAttackMuted() || isCoreAIDisabled();
+		return isFlying() || hasBlockActions() || isAttackingNow() || isAlikeDead() || isPhysicalAttackMuted() || isCoreAIDisabled();
 	}
 	
 	public final Calculator[] getCalculators()
@@ -2800,7 +2798,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public boolean isMovementDisabled()
 	{
 		// check for isTeleporting to prevent teleport cheating (if appear packet not received)
-		return isStunned() || isRooted() || isOverloaded() || isParalyzed() || isImmobilized() || isAlikeDead() || isTeleporting();
+		return hasBlockActions() || isRooted() || isOverloaded() || isImmobilized() || isAlikeDead() || isTeleporting();
 	}
 	
 	/**
@@ -2824,17 +2822,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		_isOverloaded = value;
 	}
-	
-	public final boolean isParalyzed()
-	{
-		return _isParalyzed || isAffected(EffectFlag.PARALYZED);
-	}
-	
-	public final void setIsParalyzed(boolean value)
-	{
-		_isParalyzed = value;
-	}
-	
+
 	public final boolean isPendingRevive()
 	{
 		return isDead() && _isPendingRevive;
@@ -2940,8 +2928,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		else if (isNpc())
 		{
-			World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
-			{
+			World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player -> {
 				if (!isVisibleFor(player))
 				{
 					return;
@@ -2968,10 +2955,16 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 	}
 	
-	public final boolean isStunned()
+	public final boolean hasBlockActions()
 	{
-		return isAffected(EffectFlag.STUNNED);
+		return _blockActions || isAffected(EffectFlag.BLOCK_ACTIONS);
 	}
+
+	public final void setBlockActions(boolean blockActions)
+	{
+		_blockActions = blockActions;
+	}
+
 	
 	public final boolean isBetrayed()
 	{
@@ -3225,35 +3218,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		broadcastPacket(new ChangeWaitType(this, ChangeWaitType.WT_START_FAKEDEATH));
 	}
 	
-	/**
-	 * Launch a Stun Abnormal Effect on the L2Character.<br>
-	 * <B><U>Actions</U>:</B>
-	 * <ul>
-	 * <li>Calculate the success rate of the Stun Abnormal Effect on this L2Character</li>
-	 * <li>If Stun succeed, active the abnormal effect Stun flag, notify the L2Character AI and send Server->Client UserInfo/CharInfo packet</li>
-	 * <li>If Stun NOT succeed, send a system message Failed to the L2PcInstance attacker</li>
-	 * </ul>
-	 */
-	public final void startStunning()
-	{
-		// Aborts any attacks/casts if stunned
-		abortAttack();
-		abortCast();
-		stopMove(null);
-		getAI().notifyEvent(CtrlEvent.EVT_STUNNED);
-		if (!isSummon())
-		{
-			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		}
-	}
-	
 	public final void startParalyze()
 	{
 		// Aborts any attacks/casts if paralyzed
 		abortAttack();
 		abortCast();
 		stopMove(null);
-		getAI().notifyEvent(CtrlEvent.EVT_PARALYZED);
+		getAI().notifyEvent(CtrlEvent.EVT_ACTION_BLOCKED);
 	}
 	
 	/**
@@ -3854,8 +3825,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			{
 				if (broadcastFull)
 				{
-					World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
-					{
+					World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player -> {
 						if (!isVisibleFor(player))
 						{
 							return;
@@ -4310,6 +4280,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	// called from AIAccessor only
+
 	/**
 	 * Calculate movement data for a move to location action and add the L2Character to movingObjects of GameTimeController (only called by AI Accessor).<br>
 	 * <B><U>Concept</U>:</B><br>
@@ -5420,7 +5391,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		{
 			switch (skill.getTargetType())
 			{
-			// only AURA-type skills can be cast without target
+				// only AURA-type skills can be cast without target
 				case AURA:
 				case FRONT_AURA:
 				case BEHIND_AURA:
@@ -5888,8 +5859,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				}
 				
 				// Mobs in range 1000 see spell
-				World.getInstance().forEachVisibleObjectInRange(player, Npc.class, 1000, npcMob ->
-				{
+				World.getInstance().forEachVisibleObjectInRange(player, Npc.class, 1000, npcMob -> {
 					EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee(npcMob, player, skill, isSummon(), targets), npcMob);
 					
 					// On Skill See logic
@@ -6543,9 +6513,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	/**
 	 * Check if target is affected with special buff
-	 * @see CharEffectList#isAffected(EffectFlag)
 	 * @param flag int
 	 * @return boolean
+	 * @see CharEffectList#isAffected(EffectFlag)
 	 */
 	public boolean isAffected(EffectFlag flag)
 	{
@@ -7103,5 +7073,10 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public int decrementDebuffBlockTimes()
 	{
 		return _blockedDebuffTimes.decrementAndGet();
+	}
+
+	public boolean hasAbnormalType(AbnormalType abnormalType)
+	{
+		return getEffectList().getBuffInfoByAbnormalType(abnormalType) != null;
 	}
 }

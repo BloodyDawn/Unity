@@ -2807,7 +2807,7 @@ public final class PlayerInstance extends Playable
 			broadcastPacket(new ChangeWaitType(this, ChangeWaitType.WT_SITTING));
 			// Schedule a sit down task to wait for the animation to finish
 			ThreadPoolManager.getInstance().scheduleGeneral(new SitDownTask(this), 2500);
-			setIsParalyzed(true);
+			setBlockActions(true);
 		}
 	}
 	
@@ -8436,7 +8436,7 @@ public final class PlayerInstance extends Playable
 		// ************************************* Check Player State *******************************************
 		
 		// Abnormal effects(ex : Stun, Sleep...) are checked in L2Character useMagic()
-		if (!skill.canCastWhileDisabled() && (isOutOfControl() || isParalyzed() || isStunned()))
+		if (!skill.canCastWhileDisabled() && (isOutOfControl() || hasBlockActions()))
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
@@ -9398,7 +9398,7 @@ public final class PlayerInstance extends Playable
 		
 		_observerMode = true;
 		setTarget(null);
-		setIsParalyzed(true);
+		setBlockActions(true);
 		startParalyze();
 		setIsInvul(true);
 		setInvisible(true);
@@ -9481,7 +9481,7 @@ public final class PlayerInstance extends Playable
 		unsetLastLocation();
 		sendPacket(new ObservationReturn(getLocation()));
 		
-		setIsParalyzed(false);
+		setBlockActions(false);
 		if (!isGM())
 		{
 			setInvisible(false);
@@ -12929,7 +12929,7 @@ public final class PlayerInstance extends Playable
 			sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_WHILE_PARTICIPATING_IN_AN_OLYMPIAD_MATCH);
 			return false;
 		}
-		else if (isParalyzed())
+		else if (hasBlockActions() && hasAbnormalType(AbnormalType.PARALYZE))
 		{
 			sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_WHILE_YOU_ARE_IN_A_PETRIFIED_OR_PARALYZED_STATE);
 			return false;

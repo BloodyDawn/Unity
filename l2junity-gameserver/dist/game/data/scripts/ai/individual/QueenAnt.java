@@ -300,14 +300,14 @@ public final class QueenAnt extends AbstractNpcAI
 			Skill curse = null;
 			if (isMage)
 			{
-				if (!character.isMuted() && (getRandom(4) == 0))
+				if (!character.hasAbnormalType(CommonSkill.RAID_CURSE.getSkill().getAbnormalType()) && (getRandom(4) == 0))
 				{
 					curse = CommonSkill.RAID_CURSE.getSkill();
 				}
 			}
 			else
 			{
-				if (!character.isParalyzed() && (getRandom(4) == 0))
+				if (!character.hasAbnormalType(CommonSkill.RAID_CURSE2.getSkill().getAbnormalType()) && (getRandom(4) == 0))
 				{
 					curse = CommonSkill.RAID_CURSE2.getSkill();
 				}

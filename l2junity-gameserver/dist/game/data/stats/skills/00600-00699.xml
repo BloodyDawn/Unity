@@ -1621,7 +1621,7 @@
 				<param power="1162" />
 				<param overHit="true" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="683" levels="1" name="Divine Knight Thunder Storm">
@@ -1652,7 +1652,7 @@
 				<param ignoreShieldDefence="true" />
 				<param overHit="true" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="684" levels="1" name="Divine Knight Ultimate Defense">
@@ -1734,7 +1734,7 @@
 				<param power="2323" />
 				<param overHit="true" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="TargetCancel">
 				<param chance="40" />
 			</effect>
@@ -1972,7 +1972,7 @@
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="SLEEP" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
 				<param SLEEP="100" />
 			</effect>

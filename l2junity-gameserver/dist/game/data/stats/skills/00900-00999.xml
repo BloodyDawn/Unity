@@ -182,7 +182,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 		<pveEffects>
 			<effect name="PhysicalAttack">
@@ -1790,7 +1790,7 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="974" levels="7" name="Stun Shot">
@@ -1823,7 +1823,7 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="TargetCancel">
 				<param chance="40" />
 			</effect>
@@ -1960,7 +1960,7 @@
 				<param power="1" />
 				<param overHit="true" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="EnemyCharge" />
 		</for>
 	</skill>
@@ -2044,7 +2044,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SLEEP" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
 				<param SLEEP="100" />
 			</effect>
@@ -2430,7 +2430,7 @@
 			<effect name="PhysicalAttack">
 				<param power="4224" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="996" levels="1" name="Disarm">

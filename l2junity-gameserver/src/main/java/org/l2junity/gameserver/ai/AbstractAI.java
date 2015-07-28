@@ -347,14 +347,8 @@ public abstract class AbstractAI implements Ctrl
 			case EVT_AGGRESSION:
 				onEvtAggression((Creature) arg0, ((Number) arg1).intValue());
 				break;
-			case EVT_STUNNED:
-				onEvtStunned((Creature) arg0);
-				break;
-			case EVT_PARALYZED:
-				onEvtParalyzed((Creature) arg0);
-				break;
-			case EVT_SLEEPING:
-				onEvtSleeping((Creature) arg0);
+			case EVT_ACTION_BLOCKED:
+				onEvtActionBlocked((Creature) arg0);
 				break;
 			case EVT_ROOTED:
 				onEvtRooted((Creature) arg0);
@@ -439,12 +433,8 @@ public abstract class AbstractAI implements Ctrl
 	
 	protected abstract void onEvtAggression(Creature target, int aggro);
 	
-	protected abstract void onEvtStunned(Creature attacker);
-	
-	protected abstract void onEvtParalyzed(Creature attacker);
-	
-	protected abstract void onEvtSleeping(Creature attacker);
-	
+	protected abstract void onEvtActionBlocked(Creature attacker);
+
 	protected abstract void onEvtRooted(Creature attacker);
 	
 	protected abstract void onEvtConfused(Creature attacker);

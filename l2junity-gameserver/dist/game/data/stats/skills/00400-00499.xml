@@ -1135,7 +1135,7 @@
 			<player Charges="3" /> <!-- Must recharge 3rd energy stage. -->
 		</cond>
 		<for>
-			<effect name="Paralyze">
+			<effect name="BlockActions">
 				<mul stat="pDef" val="0.2" />
 			</effect>
 			<effect name="HealOverTime" ticks="5">
@@ -1421,7 +1421,7 @@
 			<using kind="POLE" />
 		</cond>
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="TargetCancel">
 				<param chance="#chance" />
 			</effect>
@@ -2352,7 +2352,7 @@
 				<param power="1" />
 				<param overHit="true" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="EnemyCharge" />
 		</for>
 	</skill>

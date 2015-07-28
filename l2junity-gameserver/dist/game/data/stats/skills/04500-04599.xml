@@ -120,7 +120,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Petrification" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4516" levels="1" name="Orfen Heal">
@@ -1341,7 +1341,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Petrification" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4579" levels="12" name="Bleed">
@@ -1524,7 +1524,7 @@
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="PhysicalAttack" />
-			<effect name="Stun">
+			<effect name="BlockActions">
 				<mul stat="pDef" val="#pDef" />
 			</effect>
 		</for>

@@ -19,8 +19,8 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.ai.CtrlEvent;
-import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
@@ -28,11 +28,12 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 
 /**
- * Paralyze effect implementation.
+ * Block Actions effect implementation.
+ * @author mkizub
  */
-public final class Paralyze extends AbstractEffect
+public final class BlockActions extends AbstractEffect
 {
-	public Paralyze(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public BlockActions(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 	}
@@ -40,28 +41,29 @@ public final class Paralyze extends AbstractEffect
 	@Override
 	public int getEffectFlags()
 	{
-		return EffectFlag.PARALYZED.getMask();
+		return EffectFlag.BLOCK_ACTIONS.getMask();
 	}
 	
 	@Override
 	public L2EffectType getEffectType()
 	{
-		return L2EffectType.PARALYZE;
+		return L2EffectType.STUN;
 	}
-	
-	@Override
-	public void onExit(BuffInfo info)
-	{
-		if (!info.getEffected().isPlayer())
-		{
-			info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_THINK);
-		}
-	}
-	
+
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		info.getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, info.getEffector());
+		// Aborts any attacks/casts if stunned
 		info.getEffected().startParalyze();
+	}
+
+	@Override
+	public void onExit(BuffInfo info)
+	{
+		final Creature effected = info.getEffected();
+		if (!effected.isPlayer())
+		{
+			effected.getAI().notifyEvent(CtrlEvent.EVT_THINK);
+		}
 	}
 }

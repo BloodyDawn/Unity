@@ -1403,7 +1403,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Paralyze">
+			<effect name="BlockActions">
 				<mul stat="pDef" val="0.1" />
 			</effect>
 			<effect name="ManaHealOverTime" ticks="5">

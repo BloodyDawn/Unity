@@ -549,7 +549,7 @@ public class CharacterAI extends AbstractAI
 	 * </ul>
 	 */
 	@Override
-	protected void onEvtStunned(Creature attacker)
+	protected void onEvtActionBlocked(Creature attacker)
 	{
 		// Stop the actor auto-attack client side by sending Server->Client packet AutoAttackStop (broadcast)
 		_actor.broadcastPacket(new AutoAttackStop(_actor.getObjectId()));
@@ -559,56 +559,6 @@ public class CharacterAI extends AbstractAI
 		}
 		
 		// Stop Server AutoAttack also
-		setAutoAttacking(false);
-		
-		// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
-		clientStopMoving(null);
-		
-		// Launch actions corresponding to the Event onAttacked (only for L2AttackableAI after the stunning periode)
-		onEvtAttacked(attacker);
-	}
-	
-	@Override
-	protected void onEvtParalyzed(Creature attacker)
-	{
-		// Stop the actor auto-attack client side by sending Server->Client packet AutoAttackStop (broadcast)
-		_actor.broadcastPacket(new AutoAttackStop(_actor.getObjectId()));
-		if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(_actor))
-		{
-			AttackStanceTaskManager.getInstance().removeAttackStanceTask(_actor);
-		}
-		
-		// Stop Server AutoAttack also
-		setAutoAttacking(false);
-		
-		// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
-		clientStopMoving(null);
-		
-		// Launch actions corresponding to the Event onAttacked (only for L2AttackableAI after the stunning periode)
-		onEvtAttacked(attacker);
-	}
-	
-	/**
-	 * Launch actions corresponding to the Event Sleeping.<br>
-	 * <B><U> Actions</U> :</B>
-	 * <ul>
-	 * <li>Stop the actor auto-attack client side by sending Server->Client packet AutoAttackStop (broadcast)</li>
-	 * <li>Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)</li>
-	 * <li>Break an attack and send Server->Client ActionFailed packet and a System Message to the L2Character</li>
-	 * <li>Break a cast and send Server->Client ActionFailed packet and a System Message to the L2Character</li>
-	 * </ul>
-	 */
-	@Override
-	protected void onEvtSleeping(Creature attacker)
-	{
-		// Stop the actor auto-attack client side by sending Server->Client packet AutoAttackStop (broadcast)
-		_actor.broadcastPacket(new AutoAttackStop(_actor.getObjectId()));
-		if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(_actor))
-		{
-			AttackStanceTaskManager.getInstance().removeAttackStanceTask(_actor);
-		}
-		
-		// stop Server AutoAttack also
 		setAutoAttacking(false);
 		
 		// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)

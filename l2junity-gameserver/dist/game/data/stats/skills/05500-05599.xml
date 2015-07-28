@@ -57,7 +57,7 @@
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="TargetCancel">
 				<param chance="80" />
 			</effect>
@@ -84,7 +84,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="TargetCancel">
 				<param chance="80" />
 			</effect>
@@ -948,7 +948,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="TargetCancel">
 				<param chance="80" />
 			</effect>
@@ -1551,7 +1551,7 @@
 				<param power="704" />
 				<param overHit="true" />
 			</effect>
-			<effect name="Stun" /> <!-- using 1 second due abnormal don't have abnormal time -->
+			<effect name="BlockActions" /> <!-- using 1 second due abnormal don't have abnormal time -->
 		</for>
 	</skill>
 	<skill id="5582" levels="1" name="Divine Beast Fire Breath">
@@ -1842,7 +1842,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5593" levels="1" name="Vampiric Mana Burn">

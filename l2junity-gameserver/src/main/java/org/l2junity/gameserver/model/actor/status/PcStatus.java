@@ -111,7 +111,7 @@ public class PcStatus extends PlayableStatus
 			
 			if (!isDOT)
 			{
-				if (getActiveChar().isStunned() && (Rnd.get(10) == 0))
+				if (getActiveChar().hasBlockActions() && (Rnd.get(10) == 0))
 				{
 					getActiveChar().stopStunning(true);
 				}

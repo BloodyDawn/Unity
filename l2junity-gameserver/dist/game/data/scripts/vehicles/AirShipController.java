@@ -34,6 +34,7 @@ import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ControllableAirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.type.ScriptZone;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -181,7 +182,7 @@ public abstract class AirShipController extends Quest
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_TRANSFORMED);
 				return null;
 			}
-			else if (player.isParalyzed())
+			else if (player.hasBlockActions() && player.hasAbnormalType(AbnormalType.PARALYZE))
 			{
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_PETRIFIED);
 				return null;

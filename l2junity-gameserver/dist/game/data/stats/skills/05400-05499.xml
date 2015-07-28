@@ -32,7 +32,7 @@
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="ThrowUp" />
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5402" levels="1" name="Presentation - Baylor 2">
@@ -458,7 +458,7 @@
 		<set name="trait" val="GUST" />
 		<for>
 			<effect name="PhysicalAttack" />
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 		<endEffects>
 			<effect name="CallSkill">
@@ -489,7 +489,7 @@
 		<set name="trait" val="GUST" />
 		<for>
 			<effect name="PhysicalAttack" />
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 		<endEffects>
 			<effect name="CallSkill">
@@ -727,7 +727,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5448" levels="1" name="Oblivion">
@@ -752,7 +752,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5450" levels="7" name="Thin Skin">
@@ -1362,7 +1362,7 @@
 			<effect name="PhysicalAttack">
 				<param power="2319" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="DamOverTime" ticks="5">
 				<param power="52" />
 			</effect>

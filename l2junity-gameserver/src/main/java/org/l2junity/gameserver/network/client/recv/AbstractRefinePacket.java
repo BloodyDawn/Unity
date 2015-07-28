@@ -33,6 +33,7 @@ import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.CrystalType;
+import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 public abstract class AbstractRefinePacket implements IClientIncomingPacket
@@ -416,7 +417,7 @@ public abstract class AbstractRefinePacket implements IClientIncomingPacket
 			player.sendPacket(SystemMessageId.YOU_CANNOT_AUGMENT_ITEMS_WHILE_DEAD);
 			return false;
 		}
-		if (player.isParalyzed())
+		if (player.hasBlockActions() && player.hasAbnormalType(AbnormalType.PARALYZE))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_AUGMENT_ITEMS_WHILE_PARALYZED);
 			return false;

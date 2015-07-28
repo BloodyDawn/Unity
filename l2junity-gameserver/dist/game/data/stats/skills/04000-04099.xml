@@ -861,7 +861,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SLEEP" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4047" levels="13" name="Hold">
@@ -1172,7 +1172,7 @@
 			<effect name="PhysicalAttack">
 				<param power="916" />
 			</effect>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4064" levels="1" name="Paralysis">
@@ -1197,7 +1197,7 @@
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4065" levels="12" name="Heal">
@@ -1380,7 +1380,7 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4073" levels="12" name="Stun">
@@ -1412,7 +1412,7 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4074" levels="2" name="Haste">
@@ -1468,7 +1468,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4076" levels="3" name="Decrease Speed">

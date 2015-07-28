@@ -238,7 +238,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="4320" levels="12" name="Poison">
@@ -1532,7 +1532,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Petrification" />
+			<effect name="BlockActions" />
 			<effect name="TargetMeProbability">
 				<param chance="40" />
 			</effect>

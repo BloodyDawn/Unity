@@ -25,6 +25,7 @@ import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.model.actor.stat.ControllableAirShipStat;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
+import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.network.client.send.DeleteObject;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -141,7 +142,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHILE_IN_A_SITTING_POSITION);
 					return false;
 				}
-				else if (player.isParalyzed())
+				else if (player.hasBlockActions() && player.hasAbnormalType(AbnormalType.PARALYZE))
 				{
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHILE_YOU_ARE_PETRIFIED);
 					return false;

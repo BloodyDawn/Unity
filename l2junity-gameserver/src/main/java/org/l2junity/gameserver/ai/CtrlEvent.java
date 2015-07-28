@@ -36,11 +36,7 @@ public enum CtrlEvent
 	/** Increase/decrease aggression towards a target, or reduce global aggression if target is null */
 	EVT_AGGRESSION,
 	/** Actor is in stun state */
-	EVT_STUNNED,
-	/** Actor is paralyzed or petrified */
-	EVT_PARALYZED,
-	/** Actor starts/stops sleeping */
-	EVT_SLEEPING,
+	EVT_ACTION_BLOCKED,
 	/** Actor is in rooted state (cannot move) */
 	EVT_ROOTED,
 	/** Actor evaded hit **/

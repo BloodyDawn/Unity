@@ -351,7 +351,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 							manageScreenMsg(world, NpcStringId.WHO_DARES_AWAKEN_THE_MIGHTY_ZAKEN);
 						}
 						world._zaken.setInvisible(false);
-						world._zaken.setIsParalyzed(false);
+						world._zaken.setBlockActions(false);
 						spawnNpc(world._is83 ? DOLL_BLADER_83 : DOLL_BLADER_60, world._zakenRoom, player, world);
 						spawnNpc(world._is83 ? PIRATES_ZOMBIE_83 : PIRATES_ZOMBIE_60, world._zakenRoom, player, world);
 						spawnNpc(world._is83 ? PIRATES_ZOMBIE_CAPTAIN_83 : PIRATES_ZOMBIE_CAPTAIN_60, world._zakenRoom, player, world);
@@ -502,6 +502,6 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 		}
 		world._zaken = spawnNpc(world._is83 ? ZAKEN_83 : ZAKEN_60, world._zakenRoom, null, world);
 		world._zaken.setInvisible(true);
-		world._zaken.setIsParalyzed(true);
+		world._zaken.setBlockActions(true);
 	}
 }

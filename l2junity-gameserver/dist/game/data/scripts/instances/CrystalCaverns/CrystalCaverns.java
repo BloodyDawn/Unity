@@ -1257,10 +1257,10 @@ public final class CrystalCaverns extends AbstractInstance
 			{
 				world._camera.decayMe();
 				world._camera = null;
-				npc.setIsParalyzed(false);
+				npc.setBlockActions(false);
 				for (PlayerInstance p : world._raiders)
 				{
-					p.setIsParalyzed(false);
+					p.setBlockActions(false);
 					Throw(npc, p);
 					if (p.getPet() != null)
 					{
@@ -1354,7 +1354,7 @@ public final class CrystalCaverns extends AbstractInstance
 			else if (event.equalsIgnoreCase("Baylor"))
 			{
 				world._baylor = addSpawn(29099, 153572, 142075, -12738, 10800, false, 0, false, world.getInstanceId());
-				world._baylor.setIsParalyzed(true);
+				world._baylor.setBlockActions(true);
 				world._camera = addSpawn(29120, 153273, 141400, -12738, 10800, false, 0, false, world.getInstanceId());
 				world._camera.broadcastPacket(new SpecialCamera(world._camera, 700, -45, 160, 500, 15200, 0, 0, 1, 0, 0));
 				startQuestTimer("baylorMinions", 2000, world._baylor, null);
@@ -1939,7 +1939,7 @@ public final class CrystalCaverns extends AbstractInstance
 						s.teleToLocation(new Location(153571 + x, 142075 + y, -12737), true);
 						s.broadcastPacket(new ValidateLocation(s));
 					});
-					p.setIsParalyzed(true);
+					p.setBlockActions(true);
 					p.broadcastPacket(new ValidateLocation(p));
 				}
 				startQuestTimer("Baylor", 30000, npc, null);

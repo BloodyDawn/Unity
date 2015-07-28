@@ -820,7 +820,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="TargetCancel">
 				<param chance="80" />
 			</effect>
@@ -1359,7 +1359,7 @@
 			<effect name="PhysicalAttack">
 				<param power="873" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5883" levels="1" name="Meggling Injury">
@@ -1455,7 +1455,7 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5886" levels="1" name="Ground Shaker">

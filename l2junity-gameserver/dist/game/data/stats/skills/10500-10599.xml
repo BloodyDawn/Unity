@@ -442,7 +442,7 @@
 		<set name="isTriggeredSkill" val="true" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="10516" levels="9" name="Shadow Chase">
@@ -472,7 +472,7 @@
 		<for>
 			<effect name="TeleportToTarget" />
 			<effect name="TargetCancel" />
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="10517" levels="1" name="Shadow Hide">
@@ -766,7 +766,7 @@
 		<for>
 			<effect name="TeleportToTarget" />
 			<effect name="TargetCancel" />
-			<effect name="Stun">
+			<effect name="BlockActions">
 				<mul stat="defCritDamage" val="1.30" /> <!-- Guessed -->
 				<mul stat="maxRecoverableHp" val="0.50" />
 			</effect>
@@ -1373,7 +1373,7 @@
 			<effect name="DeleteHateOfMe">
 				<param chance="80" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 		<endEffects>
 			<effect name="CallSkill">

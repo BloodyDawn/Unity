@@ -1209,7 +1209,7 @@
 			<effect name="TargetCancel">
 				<param chance="80" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="353" levels="1" name="Shield Slam">
@@ -1407,7 +1407,7 @@
 			<effect name="DeleteHateOfMe">
 				<param chance="80" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="359" levels="1" name="Eye of Hunter">
@@ -1490,7 +1490,7 @@
 				<param ignoreShieldDefence="true" />
 				<param overHit="true" />
 			</effect>
-			<effect name="Stun">
+			<effect name="BlockActions">
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 			</effect>
@@ -1530,7 +1530,7 @@
 				<param ignoreShieldDefence="true" />
 				<param overHit="true" />
 			</effect>
-			<effect name="Stun">
+			<effect name="BlockActions">
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 			</effect>
@@ -1662,7 +1662,7 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="Petrification" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="368" levels="1" name="Vengeance">

@@ -38,7 +38,7 @@ public class SitDownTask implements Runnable
 	{
 		if (_player != null)
 		{
-			_player.setIsParalyzed(false);
+			_player.setBlockActions(false);
 		}
 	}
 }

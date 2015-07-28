@@ -654,7 +654,7 @@
 				<param power="15000" />
 				<param criticalChance="20" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="6749" levels="1" name="Devil Strike">
@@ -1055,7 +1055,7 @@
 				<param power="15000" />
 				<param criticalChance="20" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="6769" levels="1" name="Petrify">
@@ -1081,7 +1081,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Petrification" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="6770" levels="1" name="Heal">
@@ -1197,7 +1197,7 @@
 				<param power="15000" />
 				<param criticalChance="20" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="6775" levels="1" name="Soul Breath">
@@ -1281,7 +1281,7 @@
 				<param power="200" />
 				<mul stat="runSpd" val="0.8" />
 			</effect>
-			<effect name="Petrification" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="6778" levels="1" name="Devil Strike">
@@ -1321,7 +1321,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="6780" levels="1" name="Presentation - Portal Ray Combined Light Maintenance">

@@ -837,7 +837,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Paralyze">
+			<effect name="BlockActions">
 				<mul stat="pDef" val="0.1" />
 			</effect>
 			<effect name="ManaHealOverTime" ticks="5">
@@ -1412,7 +1412,7 @@
 			<effect name="PhysicalSoulAttack">
 				<param power="1" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 		<selfEffects>
 			<effect name="Blink" />
@@ -2279,7 +2279,7 @@
 			<effect name="ManaHealOverTime" ticks="1">
 				<param power="200" />
 			</effect>
-			<effect name="Paralyze">
+			<effect name="BlockActions">
 				<mul stat="pDef" val="0.1" />
 			</effect>
 		</for>

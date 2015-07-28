@@ -302,7 +302,7 @@
 			<effect name="PhysicalAttack">
 				<param power="2748" />
 			</effect>
-			<effect name="Stun">
+			<effect name="BlockActions">
 				<mul stat="defCritRate" val="0.5" />
 			</effect>
 		</for>
@@ -887,7 +887,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 			<effect name="DamOverTime" ticks="#ticks">
 				<param power="115" />
 			</effect>
@@ -1484,7 +1484,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 			<effect name="DamOverTime" ticks="5">
 				<param power="115" />
 			</effect>

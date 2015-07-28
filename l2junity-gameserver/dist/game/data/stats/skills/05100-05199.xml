@@ -226,7 +226,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5113" levels="12" name="Buff Dispel">
@@ -349,7 +349,7 @@
 			<effect name="PhysicalAttack">
 				<param power="829" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5118" levels="1" name="Cancel Sailren Use">
@@ -418,7 +418,7 @@
 			<effect name="PhysicalAttack">
 				<param power="703" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5121" levels="1" name="Presentation -  Corpse Revival">
@@ -771,7 +771,7 @@
 				<param power="6198" />
 				<param overHit="true" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5139" levels="1" name="Tidal Wave">
@@ -1444,7 +1444,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5169" levels="10" name="Hold">
@@ -1501,7 +1501,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SLEEP" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="DefenceTrait">
 				<param SLEEP="100" />
 			</effect>
@@ -1531,7 +1531,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5172" levels="10" name="Medusa">
@@ -1559,7 +1559,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Petrification" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="5173" levels="10" name="Fear">

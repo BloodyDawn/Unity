@@ -1334,7 +1334,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="11051" levels="4" name="Hell Binding">
@@ -1361,7 +1361,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="11052" levels="4" name="Mass Hell Binding">
@@ -1422,7 +1422,7 @@
 		<set name="effectPoint" val="-692" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="11055" levels="10" name="Death Fear">
@@ -1524,7 +1524,7 @@
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="TargetCancel">
 				<param chance="40" /> <!-- Custom -->
 			</effect>
@@ -2102,7 +2102,7 @@
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="11092" levels="3" name="Damaged Area">
@@ -2177,7 +2177,7 @@
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="Stun" />
+			<effect name="BlockActions" />
 			<effect name="TargetCancel">
 				<param chance="40" /> <!-- Custom -->
 			</effect>

@@ -881,7 +881,7 @@ public final class Stage1 extends AbstractInstance
 			}
 			else if (event.equalsIgnoreCase("TiatFullHp"))
 			{
-				if (!npc.isStunned() && !npc.isInvul())
+				if (!npc.hasBlockActions() && !npc.isInvul())
 				{
 					npc.setCurrentHp(npc.getMaxHp());
 				}

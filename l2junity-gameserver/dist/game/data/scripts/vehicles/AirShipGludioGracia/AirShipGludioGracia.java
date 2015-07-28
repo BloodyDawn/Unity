@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -170,7 +171,7 @@ public final class AirShipGludioGracia extends Quest implements Runnable
 			player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_TRANSFORMED);
 			return null;
 		}
-		else if (player.isParalyzed())
+		else if (player.hasBlockActions() && player.hasAbnormalType(AbnormalType.PARALYZE))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_PETRIFIED);
 			return null;
