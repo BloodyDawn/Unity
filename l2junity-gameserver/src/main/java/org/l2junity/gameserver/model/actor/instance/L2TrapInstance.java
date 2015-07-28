@@ -169,7 +169,7 @@ public final class L2TrapInstance extends Npc
 			return false;
 		}
 		
-		if (!target.isInsideRadius(this, _skill.getSkill().getEffectRange(), false, false))
+		if (!target.isInsideRadius(this, _skill.getSkill().getAffectRange(), false, false))
 		{
 			return false;
 		}
@@ -407,7 +407,7 @@ public final class L2TrapInstance extends Npc
 	@Override
 	public void updateAbnormalVisualEffects()
 	{
-		
+	
 	}
 	
 	public boolean hasLifeTime()
