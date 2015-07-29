@@ -173,71 +173,107 @@
 		</for>
 	</skill>
 	<skill id="10747" levels="1" name="Rogue - Individual Passive">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0217" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="10748" levels="1" name="Rogue - Individual">
+		<!-- Glory Days confirmed -->
 		<!-- Pierce through target to inflict a fatal blow. Attacks with 8875 Power added to P. Atk. Over-hit. Half-kill. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="1" />
+		<set name="abnormalType" val="STUN" />
+		<set name="activateRate" val="130" />
 		<set name="icon" val="icon.skill1543" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLevel" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="50" />
+		<set name="effectRange" val="60" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="400" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="4" />
 		<set name="effectPoint" val="-709" />
-		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
+		<set name="reuseDelayGroup" val="11509" />
+		<set name="trait" val="SHOCK" />
 		<for>
+			<effect name="TeleportToTarget" />
+			<effect name="TargetCancel" />
+			<effect name="BlockActions">
+				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
 			<effect name="FatalBlow">
 				<param power="8875" />
 				<param chance="30" />
-				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Lethal">
-				<param halfLethal="10" /> <!-- Guessed -->
+				<param halfLethal="15" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10749" levels="1" name="Heavy Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLevel" val="85" />
+		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="200" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="10000" />
+		<cond msgId="113" addName="1">
+			<target abnormalType="AIRBIND" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="10000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10750" levels="1" name="Heavy Hit">
-		<!-- AUTO GENERATED SKILL -->
-		<!-- Retail: 1128 p.atk vs 2265 p.def = 1883 damage -->
+		<!-- Glory Days confirmed -->
+		<!-- IO Retail: 1128 p.atk vs 2265 p.def = 1883 damage -->
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLevel" val="85" />
+		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
+		<set name="effectRange" val="800" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="10000" />
+		<cond msgId="113" addName="1">
+			<target abnormalType="KNOCKDOWN" />
+		</cond>
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="50000" />
+				<param power="10000" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10751" levels="10" name="Superior Bow/Crossbow Mastery">
+		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 10%, Additional P. Atk. + 1663, Atk. Sp.d + 15%, P. Accuracy + 8 when using a bow or crossbow. STR + 2. Depending on your STR, the Cooldown resets or the abnormal status duration increases + 2 times. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#pAtk"> 1663 1928 2235 2515 2850 3023 3208 3403 3610 3830 </table>
 		<set name="icon" val="icon.skill10751" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
@@ -246,26 +282,27 @@
 				<add stat="STR" val="2" />
 				<mul stat="pAtk" val="1.1" />
 				<add stat="pAtk" val="#pAtk">
-					<using kind="BOW, CROSSBOW" />
+					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</add>
 				<mul stat="pAtkSpd" val="1.15">
-					<using kind="BOW, CROSSBOW" />
+					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
 				<add stat="accCombat" val="8">
-					<using kind="BOW, CROSSBOW" />
+					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</add>
 				<add stat="skillCritical" val="1">
-					<using kind="BOW, CROSSBOW" />
+					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</add>
 			</effect>
 		</for>
 	</skill>
 	<skill id="10752" levels="10" name="Superior Light Armor Mastery">
-		<!-- Spd. and P. Skill Critical Rate change depending on DEX -->
+		<!-- Glory Days confirmed -->
 		<!-- Max HP + 4783, P. Def. + 1506, P. Evasion + 14, MP recovery bonus + 6, and chance of receiving critical attacks - 35% when equipped with Light Armor. Spd. and P. Skill Critical Rate change depending on DEX. STR + 2. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#pDef"> 1506 1645 1817 1959 2196 2279 2365 2455 2558 2655 </table>
 		<set name="icon" val="icon.skill10752" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
@@ -287,34 +324,40 @@
 				<mul stat="defCritRate" val="0.65">
 					<using kind="LIGHT" />
 				</mul>
+				<set stat="statSpeed" val="2" /> <!-- DEX -->
+				<set stat="statSkillCritical" val="2" /> <!-- DEX -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="10753" levels="1" name="Superior Hawkeye Mastery">
+		<!-- Glory Days confirmed -->
 		<!-- When using a bow/crossbow, increases range by 500 and Max MP by 25%, and decreases MP consumption upon skill use by 30%. -->
 		<set name="icon" val="icon.skill0113" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
 				<add stat="pAtkRange" val="500">
-					<using kind="BOW, CROSSBOW" />
+					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</add>
 				<mul stat="maxMp" val="1.25">
-					<using kind="BOW, CROSSBOW" />
+					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
 				<mul stat="PhysicalMpConsumeRate" val="0.7">
-					<using kind="BOW, CROSSBOW" />
+					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
 			</effect>
 		</for>
 	</skill>
 	<skill id="10754" levels="10" name="Superior Survival Ability">
+		<!-- Glory Days confirmed -->
 		<!-- Speed + 17, Weight Limit + 51%, and Terrain Damage - 30%. STR + 2. When inflicting a critical during, Survival Movement is triggered. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#runSpd"> 17 18 19 20 22 23 24 25 26 27 </table>
 		<set name="icon" val="icon.skill0295" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
@@ -330,17 +373,18 @@
 				<param minDamage="1" chance="100" />
 				<param skillId="10809" skillLevel="1" /> <!-- Survival Movement -->
 				<param targetType="SELF" />
-				<param allowWeapons="BOW,CROSSBOW" />
+				<param allowWeapons="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10755" levels="10" name="Superior Mental Attack Resistance">
-		<!-- TODO In addition, has a 10% chance of reflecting P./M. abnormal states back to the attacker. -->
+		<!-- Glory Days confirmed -->
 		<!-- Resistance + 20% to Hold/Sleep/Paralysis/Mental Attacks/Poison/Bleed/Stun. STR + 2. In addition, has a 10% chance of reflecting P./M. abnormal states back to the attacker. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#res"> 20 22 24 26 30 32 34 36 38 40 </table>
 		<set name="icon" val="icon.skill10005" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -361,11 +405,13 @@
 		</for>
 	</skill>
 	<skill id="10756" levels="10" name="Superior Critical Arrow">
+		<!-- Glory Days confirmed -->
 		<!-- p. Critical Rate + 25%, and P. Critical Damage + 5%, Skill Mastery rate + 1000%. STR + 2. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#cAtk"> 1.05 1.06 1.07 1.08 1.1 1.12 1.14 1.16 1.18 1.20 </table>
 		<set name="icon" val="icon.skill10756" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -378,7 +424,7 @@
 		</for>
 	</skill>
 	<skill id="10757" levels="4" name="Dead Eye Stance">
-		<!-- TODO abnormalType -->
+		<!-- Can't be Glory Days confirmed, was toggle -->
 		<!-- For 30 min., P. Atk. + 10%, and skill power + 5% when equipped with a bow or crossbow. -->
 		<table name="#abnormalLvls"> 1 2 3 4 </table>
 		<table name="#pAtk"> 1.10 1.12 1.15 1.20 </table>
@@ -390,6 +436,7 @@
 		<set name="icon" val="icon.skill10757" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="1000" />
@@ -399,16 +446,16 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk">
-					<using kind="BOW,CROSSBOW" />
+					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
 				<mul stat="physicalSkillPower" val="#physicalSkillPower">
-					<using kind="BOW,CROSSBOW" />
+					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
 			</effect>
 		</for>
 	</skill>
 	<skill id="10758" levels="4" name="Rapid Fire Stance">
-		<!-- TODO abnormalType -->
+		<!-- Can't be Glory Days confirmed, was toggle -->
 		<!-- For 30 min., P. Atk. + 10% and P. Skill Cooldown - 5% when a bow or crossbow is equipped. -->
 		<table name="#abnormalLvls"> 1 2 3 4 </table>
 		<table name="#pAtk"> 1.10 1.12 1.15 1.20 </table>
@@ -420,6 +467,7 @@
 		<set name="icon" val="icon.skill10758" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="1000" />
@@ -429,16 +477,16 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk">
-					<using kind="BOW,CROSSBOW" />
+					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
 				<mul stat="pReuse" val="#pReuse">
-					<using kind="BOW,CROSSBOW" />
+					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
 			</effect>
 		</for>
 	</skill>
 	<skill id="10759" levels="4" name="Sniper Stance">
-		<!-- TODO abnormalType -->
+		<!-- Can't be Glory Days confirmed, was toggle -->
 		<!-- For 30 min., P. Atk. + 10% and Atk. Spd. + 5% when a bow or crossbow is equipped. -->
 		<table name="#abnormalLvls"> 1 2 3 4 </table>
 		<table name="#pAtk"> 1.10 1.12 1.15 1.20 </table>
@@ -450,6 +498,7 @@
 		<set name="icon" val="icon.skill10759" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="1000" />
@@ -459,15 +508,16 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk">
-					<using kind="BOW,CROSSBOW" />
+					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
 				<mul stat="pAtkSpd" val="#pAtkSpd">
-					<using kind="BOW,CROSSBOW" />
+					<using kind="BOW, CROSSBOW, TWOHANDCROSSBOW" />
 				</mul>
 			</effect>
 		</for>
 	</skill>
 	<skill id="10760" levels="11" name="Tornado Shot">
+		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 20814 Power added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. Critical. -->
 		<table name="#effectPoint"> -689 -692 -696 -700 -704 -707 -710 -713 -716 -719 -722 </table>
 		<table name="#power"> 20814 21546 23011 24476 25941 27406 28871 30336 33258 34786 36314 </table>
@@ -478,57 +528,78 @@
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="350" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
+		<alterSkill>
+			<skill id="11000" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
+			<skill id="10099" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
+			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
+		</alterSkill>
 		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW" />
+			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
+				<param criticalChance="5" />
 				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10761" levels="11" name="Bow Strike">
+		<!-- Glory Days confirmed -->
 		<!-- Knocks back frontal enemies. Attacks target with 2681 Power added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. Critical. -->
 		<table name="#effectPoint"> -689 -692 -696 -700 -704 -707 -710 -713 -716 -719 -722 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 60 61 63 65 67 69 71 74 77 80 83 </table>
 		<table name="#power"> 2681 2771 2952 3133 3313 3494 3675 3855 4063 4239 4415 </table>
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="2" />
+		<set name="abnormalTime" val="1" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="activateRate" val="200" />
+		<set name="lvlBonusRate" val="20" />
 		<set name="icon" val="icon.skill10761" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="350" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
-		<set name="trait" val="KNOCKBACK" />
+		<set name="trait" val="KNOCKDOWN" />
 		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW" />
+			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param criticalChance="15" /> <!-- Guessed -->
+				<param criticalChance="5" />
 				<param overHit="true" />
 			</effect>
 			<effect name="KnockBack">
-				<param speed="400" distance="200" />
+				<param speed="500" distance="100" />
 			</effect>
+			<effect name="DefenceTrait">
+				<param KNOCKBACK="100" />
+				<param AIRBIND="100" />
+				<param HOLD="100" />
+				<param SLEEP="100" />
+				<param SHOCK="100" />
+			</effect>
+			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="10762" levels="11" name="Quick Shot">
