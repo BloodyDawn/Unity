@@ -35,6 +35,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="ATTACK_TIME_DOWN_SPECIAL" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -102,6 +103,7 @@
 		<set name="icon" val="icon.skill11752" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="#effectPoints" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -124,6 +126,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="icon" val="icon.skill11752" />
 		<set name="effectPoint" val="2" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -151,6 +154,7 @@
 		<set name="operateType" val="A2" />
 		<set name="icon" val="icon.skill11754" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="BLESS_THE_BLOOD" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<for>
 			<effect name="TriggerSkillByDamage">
@@ -250,7 +254,7 @@
 		<set name="icon" val="icon.skill11758" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="CELESTIAL_INVINCIBILITY" />
+		<set name="abnormalType" val="INVINCIBILITY_SPECIAL" />
 		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
@@ -277,7 +281,7 @@
 		<set name="icon" val="icon.skill11759" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="CELESTIAL_INVINCIBILITY" />
+		<set name="abnormalType" val="INVINCIBILITY_SPECIAL" />
 		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY" />
@@ -388,6 +392,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="RebalanceHP" />
@@ -433,6 +438,7 @@
 		<set name="mpInitialConsume" val="18" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="1734" />
+		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="DispelByCategory">
@@ -453,7 +459,7 @@
 		<table name="#abnormalLevels"> 2 3 4 5 5 5 5 </table>
 		<set name="abnormalLvl" val="#abnormalLevels" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="TURN_STONE" />
+		<set name="abnormalType" val="TURN_CRYSTAL" />
 		<set name="abnormalVisualEffect" val="FLESH_STONE" />
 		<set name="operateType" val="A2" />
 		<set name="icon" val="icon.skill11765" />
@@ -642,6 +648,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
+		<set name="abnormalType" val="HEAL_POWER_UP" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -749,6 +756,7 @@
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="4000" />
 		<set name="isMagic" val="1" />
+		<set name="abnormalType" val="MARK_OF_LUMI" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -803,6 +811,7 @@
 		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
+		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -830,6 +839,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="HEAL_EFFECT_DOWN" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -948,6 +958,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -1093,6 +1104,7 @@
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -1116,6 +1128,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -1140,6 +1153,7 @@
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -1163,6 +1177,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -1187,6 +1202,7 @@
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -1210,6 +1226,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -1234,6 +1251,7 @@
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">

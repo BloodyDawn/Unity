@@ -9,6 +9,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="NPC_FURY" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14201" levels="1" name="Apherus Invincibility">
@@ -19,6 +20,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="effectPoint" val="673" />
+		<set name="abnormalType" val="INVINCIBILITY" />
 		<set name="hitTime" val="500" />
 	</skill>
 	<skill id="14202" levels="1" name="Garden Malice">
@@ -33,6 +35,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="POISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14203" levels="1" name="Hold">
@@ -47,6 +50,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-100" />
+		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14204" levels="1" name="Hold">
@@ -61,6 +65,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-100" />
+		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14205" levels="1" name="Oath of Loyalty">
@@ -72,6 +77,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="2000" />
 		<set name="effectPoint" val="-351" />
+		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14206" levels="2" name="Lachik Evolution">
@@ -84,6 +90,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="2000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="PA_UP" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14207" levels="1" name="Pull Up">
@@ -96,6 +103,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="4000" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14208" levels="1" name="Reverberation of Shock">
@@ -108,6 +116,7 @@
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14209" levels="1" name="Millipede Paralysis">
@@ -121,6 +130,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="PARALYZE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14210" levels="1" name="Teredor Hiding Presentation">
@@ -172,6 +182,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="5000" />
 		<set name="effectPoint" val="379" />
+		<set name="abnormalType" val="DMG_SHIELD" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14216" levels="1" name="Energy Seal">
@@ -195,6 +206,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-100" />
+		<set name="abnormalType" val="AIRBIND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14218" levels="1" name="Istina's Mark">
@@ -208,6 +220,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-100" />
+		<set name="abnormalType" val="DEATH_CLACK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14219" levels="1" name="Death Blow">
@@ -230,6 +243,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="2000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="PA_UP_SPECIAL" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14221" levels="1" name="Acid Eruption">
@@ -274,6 +288,7 @@
 		<set name="icon" val="#icons" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="SEIZURE_A" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="14226" levels="1" name="Flood Cancel">
@@ -281,6 +296,7 @@
 		<set name="icon" val="icon.skill14226" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="PA_UP" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="14227" levels="1" name="Regeneration of Limit">
@@ -292,6 +308,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="3000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_ORC" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14228" levels="1" name="Energy Regeneration Stage 1">
@@ -304,6 +321,7 @@
 		<set name="castRange" val="2000" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_ORC" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14229" levels="1" name="Energy Regeneration Stage 2">
@@ -316,6 +334,7 @@
 		<set name="castRange" val="2000" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_ORC" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14230" levels="1" name="Energy Regeneration Stage 3">
@@ -328,6 +347,7 @@
 		<set name="castRange" val="2000" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_ORC" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14231" levels="1" name="Creation's Rage">
@@ -339,6 +359,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="4000" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14232" levels="1" name="Yoke of Thorns">
@@ -352,6 +373,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14233" levels="1" name="Shock Wave">
@@ -376,6 +398,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="MAX_HP_UP" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14235" levels="1" name="Maguen Steal">
@@ -397,6 +420,7 @@
 		<set name="castRange" val="200" />
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="TARGET_LOCK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14237" levels="1" name="Earth Vibration">
@@ -409,6 +433,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-100" />
+		<set name="abnormalType" val="BLEEDING" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14238" levels="1" name="Sound Blade">
@@ -422,6 +447,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-666" />
+		<set name="abnormalType" val="SILENCE_ALL" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14239" levels="1" name="Sound Prison">
@@ -435,6 +461,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-100" />
+		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14240" levels="1" name="Poison Eruption">
@@ -448,6 +475,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-100" />
+		<set name="abnormalType" val="POISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14241" levels="1" name="Poison Fog">
@@ -461,6 +489,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-100" />
+		<set name="abnormalType" val="POISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14242" levels="1" name="Wide Area Curse">
@@ -474,6 +503,7 @@
 		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="DOT_ATTR" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14243" levels="1" name="Hero's Influence">
@@ -494,6 +524,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14245" levels="1" name="Rotten Net">
@@ -506,6 +537,7 @@
 		<set name="castRange" val="700" />
 		<set name="hitTime" val="4000" />
 		<set name="effectPoint" val="-354" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14246" levels="1" name="Earth Demolition">
@@ -529,6 +561,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="FLY_AWAY" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14248" levels="1" name="Leap Attack">
@@ -541,6 +574,7 @@
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="100" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14249" levels="1" name="Recovery Howl">
@@ -552,6 +586,7 @@
 		<set name="mpConsume" val="2" />
 		<set name="hitTime" val="3000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="PA_UP" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14250" levels="1" name="Touch of Death">
@@ -564,6 +599,7 @@
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-355" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14251" levels="1" name="Death Rap">
@@ -586,6 +622,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14253" levels="1" name="Drag to Hell">
@@ -598,6 +635,7 @@
 		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-352" />
+		<set name="abnormalType" val="DOT_ATTR" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14254" levels="1" name="Flash">
@@ -708,6 +746,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="#isDebuffs" />
 	</skill>
 	<skill id="14264" levels="1" name="Poison Cloud">
@@ -721,6 +760,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="POISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14265" levels="1" name="Resurrection">
@@ -746,6 +786,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14267" levels="2" name="Hole Punch">
@@ -771,6 +812,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14269" levels="1" name="Foot Strike">
@@ -785,6 +827,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14270" levels="1" name="Spinning Blade of Fear">
@@ -799,6 +842,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14271" levels="1" name="Spinning Blade">
@@ -813,6 +857,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14272" levels="1" name="Powerful Blow">
@@ -837,6 +882,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14274" levels="1" name="Mechanic Shot">
@@ -883,6 +929,7 @@
 		<set name="castRange" val="1000" />
 		<set name="hitTime" val="1000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14278" levels="1" name="Orbis De-spawn">
@@ -893,6 +940,7 @@
 		<set name="castRange" val="1000" />
 		<set name="hitTime" val="5000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14279" levels="1" name="Octavis' Influence">
@@ -904,6 +952,7 @@
 		<set name="castRange" val="1000" />
 		<set name="hitTime" val="12000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14280" levels="1" name="Octavis' Influence">
@@ -915,6 +964,7 @@
 		<set name="castRange" val="1000" />
 		<set name="hitTime" val="12000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14281" levels="1" name="Octavis' Influence">
@@ -926,6 +976,7 @@
 		<set name="castRange" val="1000" />
 		<set name="hitTime" val="5000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14282" levels="1" name="Octavis' Obedience">
@@ -944,6 +995,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14284" levels="1" name="Golem Connection Break">
@@ -953,6 +1005,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14285" levels="1" name="Octavis' Arrow Shaft">
@@ -963,6 +1016,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="hitTime" val="5000" />
 	</skill>
 	<skill id="14286" levels="1" name="Teleport">
@@ -999,6 +1053,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="7000" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="ULTIMATE_DEBUFF" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14291" levels="1" name="Self Defense">
@@ -1009,6 +1064,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="MIRAGE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="14292" levels="7" name="Strike">
@@ -1037,6 +1093,7 @@
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14295" levels="7" name="Range Stun Strike">
@@ -1047,6 +1104,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="3000" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14296" levels="7" name="Shot">
@@ -1067,6 +1125,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14298" levels="7" name="Stab">
@@ -1078,6 +1137,7 @@
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="BLEEDING" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14299" levels="3" name="Divinity Burn">

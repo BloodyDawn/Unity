@@ -10,6 +10,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -34,6 +35,7 @@
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -57,6 +59,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -81,6 +84,7 @@
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -104,6 +108,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -162,6 +167,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="379" />
+		<set name="abnormalType" val="ALL_REGEN_DOWN" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -179,6 +185,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="379" />
+		<set name="abnormalType" val="MULTI_DEBUFF_EARTH" />
 		<set name="reuseDelay" val="10000" />
 		<for>
 			<effect name="Buff">
@@ -193,6 +200,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="abnormalType" val="AB_HAWK_EYE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff" />
@@ -205,6 +213,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="abnormalType" val="SNIPE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff" />
@@ -260,7 +269,7 @@
 		<table name="#power"> 124 127 129 133 137 141 144 148 178 182 186 </table>
 		<table name="#effectPoints"> -867 -880 -891 -899 -906 -913 -922 -933 -941 -950 -959 </table>
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="KNOCK_BACK" />
+		<set name="abnormalType" val="STUN" />
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="icon" val="icon.skill11814" />
@@ -302,6 +311,7 @@
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -325,6 +335,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -368,6 +379,7 @@
 		<set name="castRange" val="600" />
 		<set name="reuseDelay" val="8000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="DOT_MP" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Buff">
@@ -763,7 +775,7 @@
 		<set name="icon" val="icon.skill11758" />
 		<set name="abnormalLvl" val="99" />
 		<set name="abnormalTime" val="70" /> <!-- Tested -->
-		<set name="abnormalType" val="CELESTIAL_INVINCIBILITY" />
+		<set name="abnormalType" val="INVINCIBILITY_SPECIAL" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="1" />
@@ -788,7 +800,7 @@
 		<set name="icon" val="icon.skill11759" />
 		<set name="abnormalLvl" val="99" />
 		<set name="abnormalTime" val="70" /> <!-- Tested -->
-		<set name="abnormalType" val="CELESTIAL_INVINCIBILITY" />
+		<set name="abnormalType" val="INVINCIBILITY_SPECIAL" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="1" />
@@ -812,6 +824,7 @@
 		<set name="icon" val="icon.skill11770" />
 		<set name="abnormalTime" val="15" />
 		<set name="operateType" val="A2" />
+		<set name="abnormalType" val="SPEED_UP_SPECIAL" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">

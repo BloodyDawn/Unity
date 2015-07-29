@@ -14,7 +14,7 @@
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
 		<cond msgId="113" addName="1">
-			<target abnormalType="KNOCK_DOWN" /> <!-- Knock Down -->
+			<target abnormalType="KNOCKDOWN" /> <!-- Knock Down -->
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
@@ -271,8 +271,8 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="5000" />
 		<alterSkill>
-			<skill id="10750" level="1" chance="100" abnormalType="KNOCK_DOWN" /> <!-- Heavy Hit -->
-			<skill id="10749" level="1" chance="100" abnormalType="AIR_BIND" /> <!-- Heavy Hit -->
+			<skill id="10750" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
+			<skill id="10749" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
 			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
 		</alterSkill>
 		<cond msgId="113" addName="1">
@@ -722,7 +722,7 @@
 		<set name="icon" val="icon.skill10524" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="AVOID_SKILL" />
+		<set name="abnormalType" val="AVOID_SKILL_SPECIAL" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -747,7 +747,7 @@
 		<table name="#runSpd"> 66 66 66 66 68 70 72 </table>
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="SPEED_UP_SPECIAL" />
+		<set name="abnormalType" val="SUPER_MOVE" />
 		<set name="icon" val="icon.skill10525" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -811,6 +811,7 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="-709" />
+		<set name="abnormalType" val="CONFUSION" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="DeleteHateOfMe">
@@ -878,6 +879,7 @@
 		<set name="coolTime" val="100" />
 		<set name="reuseDelay" val="1000" />
 		<set name="effectPoint" val="709" />
+		<set name="abnormalType" val="SUPER_BUFF" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -906,7 +908,7 @@
 		<table name="#runSpd"> 30 34 </table>
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="20" />
-		<set name="abnormalType" val="AVOID_UP_SPECIAL" />
+		<set name="abnormalType" val="MOVEMENT" />
 		<set name="icon" val="icon.skill10531" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -979,6 +981,7 @@
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="100" />
 		<set name="effectPoint" val="711" />
+		<set name="abnormalType" val="POISON" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<skill id="10535" levels="4" name="Scorpion Poison">
@@ -1015,7 +1018,7 @@
 		<set name="icon" val="icon.skill0129" />
 		<set name="abnormalLvl" val="9" />
 		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="POISON" />
+		<set name="abnormalType" val="SILENCE" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="PHYSICAL" />
@@ -1249,7 +1252,7 @@
 		<set name="icon" val="icon.skill10546" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
-		<set name="abnormalType" val="KNOCK_DOWN" />
+		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
 		<set name="activateRate" val="100" /> <!-- Guessed -->
 		<set name="castRange" val="40" />
@@ -1283,6 +1286,7 @@
 		<set name="coolTime" val="400" />
 		<set name="reuseDelay" val="7000" />
 		<set name="effectPoint" val="-709" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10548" levels="8" name="Plunder">
@@ -1308,7 +1312,7 @@
 		<table name="#mpConsumes"> 38 40 42 44 46 48 50 52 </table>
 		<set name="icon" val="icon.skill10549" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="KNOCK_BACK" />
+		<set name="abnormalType" val="STUN" />
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="activateRate" val="100" /> <!-- Guessed -->
@@ -1381,6 +1385,7 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="4000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="CONFUSION" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="DeleteHateOfMe">
@@ -1517,7 +1522,7 @@
 		<set name="icon" val="#icons" />
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="20" />
-		<set name="abnormalType" val="MIGHT_MORTAL" />
+		<set name="abnormalType" val="CRITICAL_SPECIAL" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="800" />

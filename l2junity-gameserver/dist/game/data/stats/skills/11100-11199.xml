@@ -858,7 +858,7 @@
 		<table name="#power"> 620 657 695 </table>
 		<set name="icon" val="icon.skill0000" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="KNOCK_BACK" />
+		<set name="abnormalType" val="STUN" />
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
@@ -1220,6 +1220,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-702" />
+		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11143" levels="3" name="Damaged Area">
@@ -1230,6 +1231,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-707" />
+		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11144" levels="5" name="Wind Binding">
@@ -1367,6 +1369,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="PULL" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PullBack">
@@ -1387,6 +1390,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="PULL" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PullBack">
@@ -1456,7 +1460,7 @@
 		<set name="icon" val="icon.skill1042" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
-		<set name="abnormalType" val="AIR_BIND" />
+		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -1471,7 +1475,7 @@
 		<set name="icon" val="icon.skill1042" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
-		<set name="abnormalType" val="AIR_BIND" />
+		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -1486,7 +1490,7 @@
 		<set name="icon" val="icon.skill1042" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
-		<set name="abnormalType" val="AIR_BIND" />
+		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -1502,7 +1506,7 @@
 		<set name="icon" val="icon.skill1042" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
-		<set name="abnormalType" val="AIR_BIND" />
+		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />

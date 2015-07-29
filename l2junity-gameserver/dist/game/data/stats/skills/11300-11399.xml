@@ -10,6 +10,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="AIRBIND" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11301" levels="8" name="Dimension Storm">
@@ -1748,7 +1749,7 @@
 		<set name="icon" val="icon.skill10546" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
-		<set name="abnormalType" val="KNOCK_DOWN" />
+		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
@@ -1800,7 +1801,7 @@
 		<table name="#power"> 30623 32193 33763 </table>
 		<set name="icon" val="icon.skill1171" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="KNOCK_BACK" />
+		<set name="abnormalType" val="STUN" />
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
@@ -1872,7 +1873,7 @@
 		<table name="#power"> 22677 23839 25001 </table>
 		<set name="icon" val="icon.skill30006" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="KNOCK_BACK" />
+		<set name="abnormalType" val="STUN" />
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->

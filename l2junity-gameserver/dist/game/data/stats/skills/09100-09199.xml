@@ -316,7 +316,7 @@
 		<!-- Maintains the current Vitality for 10 minutes. -->
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="600" />
-		<set name="abnormalType" val="VP_UP" />
+		<set name="abnormalType" val="VP_KEEP" />
 		<set name="abnormalVisualEffect" val="VP_UP" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.etc_lesser_potion_blue_i00" />
@@ -1186,31 +1186,37 @@
 	<skill id="9167" levels="1" name="Nevit's Hourglass - 1 hour(s)">
 		<!-- Increases Nevit's blessing by 1 hour(s). -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="VOTE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9168" levels="1" name="Nevit's Hourglass - 1.5 hour(s)">
 		<!-- Increases Nevit's blessing by 1.5 hour(s). -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="VOTE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9169" levels="1" name="Nevit's Hourglass - 2 hour(s)">
 		<!-- Increases Nevit's blessing by 2 hour(s). -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="VOTE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9170" levels="1" name="Nevit's Hourglass - 2.5 hour(s)">
 		<!-- Increases Nevit's blessing by 2.5 hour(s). -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="VOTE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9171" levels="1" name="Nevit's Hourglass - 3 hour(s)">
 		<!-- Increases Nevit's blessing by 3 hour(s). -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="VOTE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9172" levels="1" name="Nevit's Hourglass - 4 hour(s)">
 		<!-- Increases Nevit's blessing by 4 hour(s). -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="VOTE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9173" levels="1" name="Nevit's Voice">
@@ -1330,23 +1336,27 @@
 	<skill id="9181" levels="1" name="Nevit's Hourglass - 4 hour(s)">
 		<!-- Increases Nevit's blessing by 4 hour(s). -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="VOTE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9182" levels="1" name="Nevit's Hourglass - 4 hour(s)">
 		<!-- Increases Nevit's blessing by 4 hour(s). -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="VOTE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9183" levels="1" name="Freya's Refreshing Breeze - 4 hour(s)">
 		<!-- "For 4 hours, recovers vitality when Exp. is acquired through hunting." -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="VP_UP" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9184" levels="1" name="Freya's Refreshing Breeze - 4 hour(s)">
 		<!-- "For 4 hours, recovers vitality when Exp. is acquired through hunting." -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="VP_UP" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="9185" levels="1" name="Scroll: Enchant Weapon (R-grade)">
@@ -1438,6 +1448,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9199" levels="1" name="Elixir: Drum Melody">
@@ -1447,6 +1458,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_DEFENCE" />
 		<set name="isMagic" val="1" />
 	</skill>
 </list>

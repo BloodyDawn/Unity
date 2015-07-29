@@ -11,6 +11,7 @@
 		<set name="coolTime" val="720" />
 		<set name="reuseDelay" val="3000" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="BLEEDING" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19002" levels="1" name="Anchor">
@@ -24,6 +25,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="PARALYZE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19003" levels="5" name="Clan Resistance Hall">
@@ -103,6 +105,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="CLAN_ADVENT" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="19010" levels="1" name="Clan Copy">
@@ -129,6 +132,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="HIDE" />
 		<set name="reuseDelay" val="14400000" />
 	</skill>
 	<skill id="19013" levels="1" name="Clan Un-debuff">
@@ -150,6 +154,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
+		<set name="abnormalType" val="INVINCIBILITY" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19015" levels="1" name="Clan Friendly">
@@ -160,6 +165,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="2500" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="CLAN_FRIEND" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19016" levels="1" name="Clan Boundary">
@@ -170,6 +176,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="2500" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="CLAN_BOUNDARY" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19017" levels="1" name="Clan Prison">
@@ -181,6 +188,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="effectPoint" val="-100" />
+		<set name="abnormalType" val="CLAN_PRISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19018" levels="1" name="Clan Guardian Recovery">
@@ -310,6 +318,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="635" />
+		<set name="abnormalType" val="MAX_HP_UP_K" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="19029" levels="1" name="Revolution Self CP Recovery">
@@ -439,6 +448,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
+		<set name="abnormalType" val="BRIGHTNESS_BLESS" />
 		<set name="abnormalTime" val="3600" />
 		<for>
 			<effect name="Buff">
@@ -587,6 +597,7 @@
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="4000" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="ACADEMY_UP" />
 		<set name="reuseDelay" val="#reuseDelays" />
 	</skill>
 	<skill id="19075" levels="1" name="Clan Relation">
@@ -608,6 +619,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19081" levels="1" name="Tyrr Ixion">
@@ -617,6 +629,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19082" levels="1" name="Othell Ixion">
@@ -626,6 +639,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19083" levels="1" name="Yul Ixion">
@@ -635,6 +649,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19084" levels="1" name="Feoh Ixion">
@@ -644,6 +659,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19085" levels="1" name="Iss Ixion">
@@ -653,6 +669,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19086" levels="1" name="Wynn Ixion">
@@ -662,6 +679,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19087" levels="1" name="Aeore Ixion">
@@ -671,6 +689,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19088" levels="4" name="Summon Siege Golem">
@@ -714,6 +733,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-700" />
+		<set name="abnormalType" val="PARALYZE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19092" levels="2" name="Chat Prohibited">
@@ -738,6 +758,7 @@
 		<set name="reuseDelay" val="#reuseDelays" />
 		<set name="isMagic" val="#isMagics" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="PARALYZE" />
 		<set name="isDebuff" val="#isDebuffs" />
 	</skill>
 	<skill id="19093" levels="1" name="Added Blow Quiver">
@@ -796,6 +817,7 @@
 		<set name="castRange" val="900" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="BLEEDING" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19099" levels="1" name="GM's Authority">
@@ -806,6 +828,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="500" />
+		<set name="abnormalType" val="TURN_STONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 </list>

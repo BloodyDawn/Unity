@@ -233,7 +233,7 @@
 		<table name="#power"> 14608 15776 16944 18112 19280 20448 21616 22784 28162 29386 30610 </table>
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="20" />
-		<set name="abnormalType" val="ALL_ATTACK_DOWN" />
+		<set name="abnormalType" val="CRITICAL_PROB_DOWN" />
 		<set name="activateRate" val="70" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="300" />
@@ -342,7 +342,7 @@
 		<table name="#power"> 11722 12525 13327 14130 14933 15736 16539 17342 21340 22380 23420 </table>
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="20" />
-		<set name="abnormalType" val="ALL_ATTACK_DOWN" />
+		<set name="abnormalType" val="CRITICAL_PROB_DOWN" />
 		<set name="affectLimit" val="5-12" /> <!-- Custom -->
 		<set name="affectRange" val="150" /> <!-- Custom -->
 		<set name="castRange" val="40" />
@@ -386,6 +386,7 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="180000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="PARALYZE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11516" levels="15" name="Curse Explosion">
@@ -830,7 +831,7 @@
 		<!-- Increases party members' P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. and Casting Spd. by 8% and decreases P. Def. by 3%, M. Def. by 11% and P. Evasion by 4 for 5 minutes. Also bestows an 8% Vampiric Rage effect and a chance of reflecting 10% of the damage received. -->
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="ENCHANTED_MOD" />
+		<set name="abnormalType" val="ENCHANTER_MOD" />
 		<set name="abnormalTime" val="300" />
 		<set name="icon" val="icon.skill11530" />
 		<set name="operateType" val="A2" />
@@ -868,7 +869,7 @@
 		<!-- Increases party members' HP Recovery Bonus by 20%, P.ﾠAccuracy by 4, P.ﾠEvasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10% for 5 minutes. -->
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="SYNERGY_SI" />
+		<set name="abnormalType" val="SYNERGY_IS" />
 		<set name="abnormalTime" val="300" />
 		<set name="icon" val="icon.skill11532" />
 		<set name="operateType" val="A2" />
@@ -907,7 +908,7 @@
 		<set name="icon" val="icon.skill11546" />
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="VAMPIRIC_ATTACK_SPECIAL" />
+		<set name="abnormalType" val="RHAPSODY" />
 		<set name="affectRange" val="1000" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY" />
@@ -996,6 +997,7 @@
 		<set name="removedOnDamage" val="true" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="CHANGEBODY" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="2195">
 			<player canTransform="true" />
@@ -1140,6 +1142,7 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="900000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MULTI" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11544" levels="1" name="Battle Rhapsody">
@@ -1154,6 +1157,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalType" val="RHAPSODY" />
 		<set name="reuseDelay" val="600000" />
 		<for>
 			<effect name="Buff">
@@ -1176,6 +1180,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="709" />
+		<set name="abnormalType" val="RHAPSODY" />
 		<set name="reuseDelay" val="600000" />
 		<for>
 			<effect name="Buff">
@@ -1199,6 +1204,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="-707" />
+		<set name="abnormalType" val="MULTI_DEBUFF" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, DUAL, DUALBLUNT" />
@@ -1207,7 +1213,7 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 				<param criticalChance="15" />
-				<param overHit="true"/>
+				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.5" />
@@ -1402,6 +1408,7 @@
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="120000" />
 		<set name="isMagic" val="1" />
+		<set name="abnormalType" val="REUSE_DELAY_UP" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1417,7 +1424,7 @@
 		<set name="icon" val="icon.skill11560" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
-		<set name="abnormalType" val="CELESTIAL_INVINCIBILITY" />
+		<set name="abnormalType" val="INVINCIBILITY" />
 		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="affectRange" val="1000" />
 		<set name="operateType" val="A2" />

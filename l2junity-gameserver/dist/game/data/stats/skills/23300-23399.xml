@@ -3,7 +3,7 @@
 	<skill id="23300" levels="1" name="Ghost Piercing">
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="GHOST_PIERCING" />
+		<set name="abnormalType" val="DOT_ATTR" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="20" />
@@ -44,6 +44,7 @@
 	<skill id="23305" levels="1" name="Zinyanzi Agathion - Yunbokhwan">
 		<!-- Restores all HP/MP/CP and becomes invincible for 5 seconds. But can only be used when HP is below 30%. -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="INVINCIBILITY" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23306" levels="1" name="Zinyanzi Agathion Cute Trick">
@@ -64,6 +65,7 @@
 		<set name="icon" val="BranchSys2.icon.totem_of_body" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="abnormalType" val="ENERGY_OF_TOTEM_1" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -80,6 +82,7 @@
 		<set name="icon" val="BranchSys2.icon.totem_of_mind" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="abnormalType" val="ENERGY_OF_TOTEM_2" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -95,6 +98,7 @@
 		<set name="icon" val="BranchSys2.icon.totem_of_bravery" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="abnormalType" val="ENERGY_OF_TOTEM_3" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -110,6 +114,7 @@
 		<set name="icon" val="BranchSys2.icon.totem_of_fortitude" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="abnormalType" val="ENERGY_OF_TOTEM_4" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -124,6 +129,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="1200" />
 		<set name="isMagic" val="4" />
+		<set name="abnormalType" val="VOTE" />
 		<set name="abnormalTime" val="3600" />
 		<for>
 			<effect name="Buff">
@@ -135,32 +141,38 @@
 	<skill id="23313" levels="5" name="Action Prohibit Immunity">
 		<!-- Increases resistance to action-inhibiting attacks by 100%. -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="RESIST_SHOCK" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23314" levels="5" name="Control Prohibit Immunity">
 		<!-- Increases resistance to control-inhibiting attacks by 100%. -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="RESIST_SHOCK" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23315" levels="5" name="Paralysis Immunity Enhance">
 		<!-- Increases resistance to paralysis attacks by 100%. -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="RESIST_SHOCK" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23316" levels="5" name="Enhance Petrification Immunity">
 		<!-- Increases resistance to petrification attacks by 100%. -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="RESIST_SHOCK" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23317" levels="5" name="Fear Immunity Enhance">
 		<!-- Increases resistance to fear attacks by 100%. -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="RESIST_SHOCK" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23318" levels="1" name="Cat the Ranger Boost">
 		<!-- "Recovers the master's HP by 10%. For 1 minute(s), receives power from Cat the Ranger to increase the master's resistance to debuff attacks by 80%, resistance to buff canceling attacks by 40%, Speed by 10%, P. Def. by 20%, and M. Def. by 20%. Does not receive preemptive attacks from monsters. Reuse delay 10 minutes." -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23319" levels="1" name="Blood Seeker">
@@ -283,7 +295,7 @@
 		<!-- This skill only has one level, 10. -->
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="9" />
-		<set name="abnormalType" val="PD_DOWN" />
+		<set name="abnormalType" val="STUN" />
 		<set name="activateRate" val="80" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="blockedInOlympiad" val="true" />
@@ -321,6 +333,7 @@
 		<set name="magicLvl" val="67" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
+		<set name="abnormalType" val="CASTING_TIME_DOWN" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -340,11 +353,13 @@
 	<skill id="23327" levels="1" name="Boss Test - Weaken">
 		<!-- A skill to test a boss mob - Weaken -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23328" levels="1" name="Boss Test - Strengthen">
 		<!-- A skill to test a boss mob - Strengthen -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23329" levels="1" name="Lantern Agathion's Gift1">
@@ -366,6 +381,7 @@
 	<skill id="23333" levels="1" name="Agathion's New Year's Wish">
 		<!-- Description: Through the power of the Lantern Agathion, Vitality is maintained and not consumed. -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="VP_KEEP" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23334" levels="1" name="Lantern Agathion Cute Trick">
@@ -376,6 +392,7 @@
 	<skill id="23335" levels="1" name="Agathion's New Year's Wish">
 		<!-- Description: Vitality is maintained with the power of Juju Agathion. -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="VP_KEEP" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23336" levels="1" name="Juju Agathion Cute Trick">
@@ -409,6 +426,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="3000" />
 		<set name="effectPoint" val="-100" />
+		<set name="abnormalType" val="TURN_STONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23342" levels="2" name="Norhand's Trace">
@@ -420,6 +438,7 @@
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="2000" />
+		<set name="abnormalType" val="BR_EVENT_BUF7" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23344" levels="5" name="Weakened Shilen's Breath">
@@ -430,6 +449,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="DEATH_PENALTY_GD" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23345" levels="1" name="Region Banishment">
@@ -462,6 +482,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="2500" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="23349" levels="1" name="Tree's Blessing - Stage 1">
@@ -471,6 +492,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="23350" levels="1" name="Tree's Blessing - Stage 2">
@@ -480,6 +502,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="23351" levels="1" name="Tree's Blessing - Stage 3">
@@ -489,6 +512,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="23352" levels="1" name="Tree's Blessing - Stage 4">
@@ -498,6 +522,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="23353" levels="1" name="Tree's Blessing - Stage 5">
@@ -507,6 +532,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="23354" levels="1" name="Lingering Tree's Blessing - Stage 1">
@@ -516,6 +542,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23355" levels="1" name="Lingering Tree's Blessing - Stage 2">
@@ -525,6 +552,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23356" levels="1" name="Lingering Tree's Blessing - Stage 3">
@@ -534,6 +562,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23357" levels="1" name="Lingering Tree's Blessing - Stage 4">
@@ -543,6 +572,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23358" levels="1" name="Lingering Tree's Blessing - Stage 5">
@@ -552,6 +582,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23359" levels="1" name="Tree's Blessing - Lute Melody">
@@ -561,6 +592,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23360" levels="1" name="Tree's Blessing - Lute Melody">
@@ -570,6 +602,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23361" levels="1" name="Tree's Blessing - Lute Melody">
@@ -579,6 +612,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23362" levels="1" name="Tree's Blessing - Lute Melody">
@@ -588,6 +622,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23363" levels="1" name="Tree's Blessing - Lute Melody">
@@ -597,6 +632,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23364" levels="1" name="Tree's Blessing - Pipe Organ Melody">
@@ -606,6 +642,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23365" levels="1" name="Tree's Blessing - Pipe Organ Melody">
@@ -615,6 +652,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23366" levels="1" name="Tree's Blessing - Pipe Organ Melody">
@@ -624,6 +662,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23367" levels="1" name="Tree's Blessing - Pipe Organ Melody">
@@ -633,6 +672,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23368" levels="1" name="Tree's Blessing - Pipe Organ Melody">
@@ -642,6 +682,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23369" levels="1" name="Tree's Blessing - Guitar Melody">
@@ -651,6 +692,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23370" levels="1" name="Tree's Blessing - Guitar Melody">
@@ -660,6 +702,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23371" levels="1" name="Tree's Blessing - Guitar Melody">
@@ -669,6 +712,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23372" levels="1" name="Tree's Blessing - Guitar Melody">
@@ -678,6 +722,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23373" levels="1" name="Tree's Blessing - Guitar Melody">
@@ -687,6 +732,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23374" levels="1" name="Tree's Blessing - Harp Melody">
@@ -696,6 +742,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23375" levels="1" name="Tree's Blessing - Harp Melody">
@@ -705,6 +752,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23376" levels="1" name="Tree's Blessing - Harp Melody">
@@ -714,6 +762,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23377" levels="1" name="Tree's Blessing - Harp Melody">
@@ -723,6 +772,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23378" levels="1" name="Tree's Blessing - Harp Melody">
@@ -732,6 +782,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23379" levels="1" name="Elpy Master">
@@ -742,6 +793,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="2500" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="23380" levels="1" name="Jermann - Soul Blackmail">
@@ -814,6 +866,7 @@
 		<set name="hitTime" val="800" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="HP_REGEN_UP" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23386" levels="3" name="Jermann - Destruction Instinct">
@@ -833,6 +886,7 @@
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23388" levels="1" name="Jermann">
@@ -841,6 +895,7 @@
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23389" levels="1" name="Jermann">
@@ -849,6 +904,7 @@
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23390" levels="1" name="Mysterious Power of Ancient Kartia's Labyrinth">
@@ -857,6 +913,7 @@
 		<set name="icon" val="BranchSys3.Icon.g_skill23380" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="POISON" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23391" levels="1" name="Great Mysterious Power of Ancient Kartia's Labyrinth">
@@ -865,6 +922,7 @@
 		<set name="icon" val="BranchSys3.Icon.g_skill23380" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="POISON" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23392" levels="1" name="Stabilized Power of Ancient Kartia's Labyrinth">
@@ -873,6 +931,7 @@
 		<set name="icon" val="BranchSys3.Icon.g_skill23380" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="POISON" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23393" levels="1" name="Self-destruction">
@@ -908,6 +967,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="4" />
 		<set name="effectPoint" val="-800" />
+		<set name="abnormalType" val="DEATH_CLACK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23396" levels="1" name="Jermann - Freezing Cold">
@@ -942,6 +1002,7 @@
 		<set name="icon" val="BranchSys3.Icon.g_skill23387" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="abnormalType" val="DOT_ATTR" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23399" levels="3" name="Freezing Cold">
@@ -950,6 +1011,7 @@
 		<set name="icon" val="BranchSys3.Icon.g_skill23389" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="abnormalType" val="ARMOR_WATER" />
 		<set name="isDebuff" val="true" />
 	</skill>
 </list>

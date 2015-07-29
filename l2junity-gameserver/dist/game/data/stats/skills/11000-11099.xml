@@ -122,8 +122,6 @@
 		<!-- Updated to IO -->
 		<!-- Bestows the property of Fire to magic spells cast. -->
 		<set name="icon" val="icon.skill10305" />
-		<set name="abnormalType" val="ELEMENT_STANCE" />
-		<set name="abnormalLvl" val="1" />
 		<set name="canBeDispelled" val="false" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="T" />
@@ -150,8 +148,6 @@
 		<!-- Updated to IO -->
 		<!-- Bestows the property of Water to magic spells cast. -->
 		<set name="icon" val="icon.skill10306" />
-		<set name="abnormalType" val="ELEMENT_STANCE" />
-		<set name="abnormalLvl" val="1" />
 		<set name="canBeDispelled" val="false" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
@@ -177,8 +173,6 @@
 		<!-- Updated to IO -->
 		<!-- Bestows the property of Wind to magic spells cast. -->
 		<set name="icon" val="icon.skill10307" />
-		<set name="abnormalType" val="ELEMENT_STANCE" />
-		<set name="abnormalLvl" val="1" />
 		<set name="canBeDispelled" val="false" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
@@ -204,8 +198,6 @@
 		<!-- Updated to IO -->
 		<!-- Bestows the property of Earth to magic spells cast. -->
 		<set name="icon" val="icon.skill10304" />
-		<set name="abnormalType" val="ELEMENT_STANCE" />
-		<set name="abnormalLvl" val="1" />
 		<set name="canBeDispelled" val="false" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
@@ -742,7 +734,7 @@
 		<table name="#mpConsumes"> 68 72 72 80 84 </table>
 		<set name="icon" val="icon.skill11029" />
 		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="DOT_ATTR" />
+		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="activateRate" val="80" />
 		<set name="basicProperty" val="MAGIC" />
@@ -801,7 +793,7 @@
 		<table name="#power"> 157 168 180 189 194 198 202 </table>
 		<set name="icon" val="icon.skill11032" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="KNOCK_BACK" />
+		<set name="abnormalType" val="STUN" />
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="activateRate" val="80" />
@@ -833,6 +825,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-696" />
+		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11034" levels="8" name="Elemental Blast">
@@ -1199,6 +1192,7 @@
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="FINAL_SECRET" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Debuff">
@@ -1222,7 +1216,7 @@
 		<set name="icon" val="icon.skill11047" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="20" />
-		<set name="abnormalType" val="DEVIL_CURSE" />
+		<set name="abnormalType" val="MULTI_DEBUFF" />
 		<set name="activateRate" val="100" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
@@ -1262,7 +1256,7 @@
 		<set name="icon" val="icon.skill11048" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="20" />
-		<set name="abnormalType" val="DEVIL_CURSE" />
+		<set name="abnormalType" val="MULTI_DEBUFF" />
 		<set name="activateRate" val="100" />
 		<set name="affectRange" val="200" />
 		<set name="operateType" val="A2" />
@@ -1318,7 +1312,7 @@
 		<set name="icon" val="icon.skill11050" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
-		<set name="abnormalType" val="AIR_BIND" />
+		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="activateRate" val="80" />
 		<set name="basicProperty" val="MAGIC" />
@@ -1345,7 +1339,7 @@
 		<set name="icon" val="icon.skill11050" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
-		<set name="abnormalType" val="AIR_BIND" />
+		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="activateRate" val="80" />
 		<set name="basicProperty" val="MAGIC" />
@@ -1365,7 +1359,6 @@
 		</for>
 	</skill>
 	<skill id="11052" levels="4" name="Mass Hell Binding">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Immobilizes target and nearby enemies midair for 9 seconds and inflicts 100 damage per second. -->
 		<table name="#mpConsumes"> 228 243 257 273 </table>
@@ -1386,7 +1379,6 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11053" levels="4" name="Mass Hell Binding">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Immobilizes target and nearby enemies midair for 9 seconds and inflicts 100 damage per second. -->
 		<table name="#mpConsumes"> 228 243 257 273 </table>
@@ -1412,7 +1404,7 @@
 		<set name="icon" val="icon.skill1042" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
-		<set name="abnormalType" val="AIR_BIND" />
+		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
@@ -1568,6 +1560,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="PULL" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PullBack">
@@ -1591,6 +1584,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="200" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="SPEED_UP_SPECIAL" />
 		<set name="reuseDelay" val="30000" />
 		<for>
 			<effect name="Buff">
@@ -1639,6 +1633,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="120000" />
 		<set name="effectPoint" val="707" />
+		<set name="abnormalType" val="MP_SHIELD" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -1737,6 +1732,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="180000" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalType" val="DC_MOD" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="VisualBuff">
@@ -1839,6 +1835,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
+		<set name="abnormalType" val="MULTI_DEBUFF_FIRE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1861,6 +1858,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
+		<set name="abnormalType" val="MULTI_DEBUFF_WATER" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1883,6 +1881,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
+		<set name="abnormalType" val="MULTI_DEBUFF_WIND" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1905,6 +1904,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
+		<set name="abnormalType" val="MULTI_DEBUFF_EARTH" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1925,6 +1925,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
+		<set name="abnormalType" val="MULTI_DEBUFF_HOLY" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -2034,6 +2035,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
+		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -2046,7 +2048,7 @@
 		<!-- Knock Back target. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalType" val="KNOCK_BACK" />
+		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="activateRate" val="40" />
@@ -2113,6 +2115,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-711" />
+		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11093" levels="1" name="Crystal Form">
@@ -2121,7 +2124,7 @@
 		<set name="icon" val="icon.skill11093" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="INVINCIBILITY" />
+		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
 		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="canCastWhileDisabled" val="true" />
 		<set name="removedOnAnyActionExceptMove" val="true" /> <!-- Guessed -->

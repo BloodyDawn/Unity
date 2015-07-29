@@ -216,8 +216,8 @@
 		<set name="isDebuff" val="true" />
 		<set name="effectPoint" val="#effectPoint" />
 		<alterSkill>
-			<skill id="10250" level="1" chance="100" abnormalType="KNOCK_DOWN" /> <!-- Heavy Hit -->
-			<skill id="10249" level="1" chance="100" abnormalType="AIR_BIND" /> <!-- Heavy Hit -->
+			<skill id="10250" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
+			<skill id="10249" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
 			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
 		</alterSkill>
 		<cond msgId="113" addName="1">
@@ -1319,6 +1319,7 @@
 		<set name="coolTime" val="570" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="SHIELD_ATTACK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10046" levels="3" name="Shield Charge III">
@@ -1335,6 +1336,7 @@
 		<set name="coolTime" val="570" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="SHIELD_ATTACK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10047" levels="3" name="Shield Charge IV">
@@ -1351,6 +1353,7 @@
 		<set name="coolTime" val="570" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="SHIELD_ATTACK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10048" levels="3" name="Shield Charge V">
@@ -1367,6 +1370,7 @@
 		<set name="coolTime" val="570" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="SHIELD_ATTACK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10049" levels="3" name="Shield Charge VI">
@@ -1383,6 +1387,7 @@
 		<set name="coolTime" val="570" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="SHIELD_ATTACK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10050" levels="3" name="Shield Charge VII">
@@ -1399,6 +1404,7 @@
 		<set name="coolTime" val="570" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="SHIELD_ATTACK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10051" levels="6" name="Lion Roar">
@@ -1565,6 +1571,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="effectPoint" val="2" />
+		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
@@ -1637,6 +1644,7 @@
 		<set name="coolTime" val="570" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="SHIELD_ATTACK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10060" levels="1" name="Aggression Attack">

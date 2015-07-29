@@ -39,6 +39,7 @@
 		<set name="effectPoint" val="-1033" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="STUN" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6706" levels="1" name="Piercing Attack">
@@ -91,6 +92,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1000" />
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6711" levels="3" name="Etis Power Up">
@@ -99,6 +101,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1000" />
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="PA_UP" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6714" levels="1" name="Wind Walk of Elcadia">
@@ -428,7 +431,7 @@
 		<!-- High Five Skill -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
-		<set name="abnormalType" val="ARMOR_UNHOLY" />
+		<set name="abnormalType" val="ARMOR_HOLY" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="655" />
@@ -467,6 +470,7 @@
 		<!-- none -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="1000" />
+		<set name="abnormalType" val="STEALTH" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6732" levels="1" name="Mirage">
@@ -487,18 +491,21 @@
 		<!-- "Antharas's stigma. After 10 seconds, spreads the Stigma Aftermath nearby, which decreases 400 HP per second and 150 MP." -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="-10000" />
+		<set name="abnormalType" val="TIME_BOMB" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6734" levels="1" name="Energy of Destruction">
 		<!-- "For 5 seconds, inflicted with poison with 800 HP decrease per second." -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="-100" />
+		<set name="abnormalType" val="POISON" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6735" levels="1" name="Petrify">
 		<!-- "Inflicted with petrification, the body is rigid like stone." -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="-1000" />
+		<set name="abnormalType" val="TURN_STONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6736" levels="1" name="Fierce Attack">
@@ -543,6 +550,7 @@
 		<!-- Temporarily inflicted with hold and unable to move. -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="-1000" />
+		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6739" levels="1" name="Presentation - Behemoth Leader Casting Preparation">
@@ -606,18 +614,21 @@
 		<!-- Casting Spd. decreases by 90% and Atk. Spd. decreases by 30%. -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="-10000" />
+		<set name="abnormalType" val="CASTING_TIME_UP" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6745" levels="1" name="Dark Space">
 		<!-- none -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="-10000" />
+		<set name="abnormalType" val="ARMOR_UNHOLY" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6746" levels="1" name="Dark Space">
 		<!-- Darkness attribute is weakened. -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="-10000" />
+		<set name="abnormalType" val="ARMOR_UNHOLY" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6747" levels="1" name="Dark Blade">
@@ -921,7 +932,7 @@
 		<!-- FIXME: value unconfirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
-		<set name="abnormalType" val="PA_UP" />
+		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
 		<set name="effectPoint" val="100000" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1068" />
@@ -1241,6 +1252,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="abnormalType" val="PARALYZE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">

@@ -325,8 +325,8 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<alterSkill>
-			<skill id="10250" level="1" chance="100" abnormalType="KNOCK_DOWN" /> <!-- Heavy Hit -->
-			<skill id="10249" level="1" chance="100" abnormalType="AIR_BIND" /> <!-- Heavy Hit -->
+			<skill id="10250" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
+			<skill id="10249" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
 			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
 		</alterSkill>
 		<cond msgId="113" addName="1">
@@ -391,7 +391,7 @@
 		<table name="#power"> 20483 22595 24708 26821 28934 30343 32981 34497 36013 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
-		<set name="abnormalType" val="KNOCK_DOWN" />
+		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
 		<set name="activateRate" val="120" />
 		<set name="castRange" val="40" />
@@ -530,7 +530,7 @@
 		<table name="#mpConsumes"> 76 79 81 84 87 90 92 95 98 101 104 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
-		<set name="abnormalType" val="KNOCK_DOWN" />
+		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="200" />
@@ -894,6 +894,7 @@
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="BATTLE_CRY" />
 		<set name="reuseDelay" val="180000" />
 	</skill>
 	<skill id="10278" levels="8" name="Reduce Anger">
@@ -914,7 +915,7 @@
 		<!-- Removes all debuffs and for 10 seconds, becomes invincible against normal attacks, skills, and debuffs. Spd. + 30%. Available when HP is 70% or lower. -->
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="INVINCIBILITY" />
+		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
 		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="icon" val="icon.skill10279" />
 		<set name="operateType" val="A2" />
@@ -964,7 +965,7 @@
 		<table name="#power"> 44711 46723 50165 52369 54573 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
-		<set name="abnormalType" val="KNOCK_DOWN" />
+		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="300" />
@@ -1018,6 +1019,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="400" />
+		<set name="abnormalType" val="WEAPON_MASTER_SPECIAL" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="10285" levels="1" name="HP Drain">

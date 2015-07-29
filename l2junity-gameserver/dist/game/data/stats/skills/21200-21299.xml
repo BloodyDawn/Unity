@@ -324,51 +324,61 @@
 	<skill id="21222" levels="1" name="Elemental Resistance">
 		<!-- "For 1 hour, increases Resistance to Fire/Water/Wind/Earth by 20. Reuse delay is 4 hours." -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="MD_UP_ATTR" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21223" levels="1" name="Ultimate Defense">
 		<!-- "For 30 seconds, increases one's own P. Def. by 3636, M. Def. by 2727, and resistance to buff canceling attacks by 80%, and becomes unable to move. Reuse delay is 1 hour." -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="PD_UP_SPECIAL" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21224" levels="1" name="Soul of an Adventurer of Immortality's Ability">
 		<!-- "For 5 minutes, receives the soul's help to raise Max HP by 20%, Max MP by 20%, and Speed by 20%. Increases Resistance to de-buffs by 10%. Reuse delay is 1 hour." -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21225" levels="1" name="Soul of a Strong Warrior's Ability">
 		<!-- "For 5 minutes, increases Atk. Spd. by 20%, P. Atk. by 10%, and P. Def. by 20% with the soul's help. Bestows the ability to recover as HP 5% of the standard short-range physical damage inflicted on an enemy. Reuse delay is 1 hour." -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21226" levels="1" name="Soul of a Wise Magician's Ability">
 		<!-- "For 5 minutes, receives the soul's help to raise Casting Spd. by 20%, M. Atk. by 20%, and M. Def. by 20%. Decreases MP consumption for skill use by 5%. Reuse delay is 1 hour." -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21227" levels="1" name="Ability of Prominent Adventure's Soul">
 		<!-- "For 5 minutes, receives the soul's help to raise Max HP by 20%, Max MP by 20%, and Speed by 20%. Increases HP Recovery Bonus by 20% and MP Recovery Bonus by 20%. Reuse delay is 1 hour." -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21228" levels="1" name="Soul of a Brave Warrior's Ability">
 		<!-- "For 5 minutes, increases Atk. Spd. by 20%, P. Atk. by 10%, and P. Def. by 20% with the soul's help. Increases Critical Damage by 20% and critical rate by 20%. Reuse delay is 1 hour." -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21229" levels="1" name="Blood Awakening">
 		<!-- "Combines general attack damage absorption and Atk. Spd. increase for a more advanced blood awakening effect. For 1 hour, increases Atk. Spd. by 33% and bestows the ability to recover as HP 9% of the standard short-range physical damage inflicted on an enemy. Reuse delay is 4 hours." -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="IMPROVE_VAMPIRIC_HASTE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21230" levels="1" name="Improve Magic">
 		<!-- "Combines M. Atk. increase and M. Def. increase to have more advanced magic ability increase effect. For 1 hour, increases M. Atk. by 75% and M. Def. by 30%. Reuse delay is 4 hours." -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="IMPROVE_MA_MD_UP" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21231" levels="1" name="Improve Critical Attack">
 		<!-- "Combines critical rate increase and Critical Damage increase to have more advanced critical increase effect. For 1 hour, increases critical rate by 30% and Critical Damage by 35%. Reuse delay is 4 hours." -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="IMPROVE_CRT_RATE_DMG_UP" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21232" levels="1" name="Shiny Platform">
@@ -467,6 +477,7 @@
 		<!-- Mounts a jet bike. -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21239" levels="1" name="Release Agathion's Seal - Cow">
@@ -598,6 +609,7 @@
 	<skill id="21246" levels="1" name="Rudolph's Energy">
 		<!-- "For 10 minute(s), energy is replenished when Exp. is acquired through hunting. Reuse time is 30 minutes." -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="VP_UP" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21247" levels="1" name="Santa's Gift">
@@ -657,6 +669,7 @@
 		<!-- Increases Max HP by 35% for 20 minutes. -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="MAX_HP_UP" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21252" levels="1" name="Hellblade">
@@ -854,6 +867,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="800" />
+		<set name="abnormalType" val="INVINCIBILITY" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="21270" levels="1" name="Ride Tame Princess Ant">
@@ -862,6 +876,7 @@
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21271" levels="1" name="Ride Black Bear">
@@ -870,6 +885,7 @@
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21272" levels="1" name="Ride Halloween Witch's Broomstick">
@@ -878,6 +894,7 @@
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21273" levels="7" name="Release Agathion's Seal - Valakas">
@@ -920,6 +937,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="14400000" />
+		<set name="abnormalType" val="BR_EVENT_BUF2" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="21278" levels="1" name="Vitality Recovery Potion">
@@ -930,6 +948,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="14400000" />
+		<set name="abnormalType" val="VP_KEEP" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="21279" levels="1" name="Drake Lord's Authority">
@@ -988,6 +1007,7 @@
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21287" levels="1" name="Emergency Ballista Repair">
@@ -1059,6 +1079,7 @@
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="isMagic" val="3" />
 	</skill>
 	<skill id="21295" levels="1" name="Un-equip Uthanka's Ring">

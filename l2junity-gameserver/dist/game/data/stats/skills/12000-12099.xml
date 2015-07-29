@@ -36,6 +36,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="castRange" val="300" />
 	</skill>
 	<skill id="12004" levels="1" name="Summon Detector">
@@ -56,6 +57,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="3000" />
+		<set name="abnormalType" val="POISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="12006" levels="1" name="Spray Insecticide">
@@ -66,6 +68,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="3000" />
+		<set name="abnormalType" val="POISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="12007" levels="1" name="Spray Insecticide">
@@ -76,6 +79,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="3000" />
+		<set name="abnormalType" val="POISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="12008" levels="1" name="Orbis' Reflect Shield">
@@ -89,6 +93,7 @@
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="180000" />
 		<set name="effectPoint" val="-687" />
+		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="12009" levels="1" name="Teredor Antidote">
@@ -96,6 +101,7 @@
 		<!-- Invincible against a terrible abnormal status. -->
 		<set name="icon" val="icon.grima_poison" />
 		<set name="operateType" val="A2" />
+		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="12010" levels="1" name="Bonus Hall Key">
@@ -114,6 +120,7 @@
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="2" />
+		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="12012" levels="1" name="Check Item">

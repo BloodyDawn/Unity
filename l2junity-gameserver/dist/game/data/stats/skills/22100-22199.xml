@@ -612,7 +612,7 @@
 		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="300" />
-		<set name="abnormalType" val="BR_EVENT_BUF2" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill1256" />
@@ -659,7 +659,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
-		<set name="abnormalType" val="BR_EVENT_BUF10" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_firecracker_red_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -680,7 +680,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
-		<set name="abnormalType" val="BR_EVENT_BUF10" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_firecracker_gold_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -701,7 +701,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
-		<set name="abnormalType" val="BR_EVENT_BUF10" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_firecracker_blue_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -722,7 +722,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
-		<set name="abnormalType" val="BR_EVENT_BUF10" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_firecracker_pink_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -743,7 +743,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
-		<set name="abnormalType" val="BR_EVENT_BUF10" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_firecracker_white_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -764,7 +764,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
-		<set name="abnormalType" val="BR_EVENT_BUF10" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="BranchSys.icon.br_firecracker_silver_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -1611,6 +1611,7 @@
 		<set name="stayAfterDeath" val="true" />
 		<set name="stayOnSubclassChange" val="false" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="VP_UP" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1649,6 +1650,7 @@
 	<skill id="22185" levels="1" name="Shiny Lighting">
 		<!-- Lighting shines brightly above the character's head. -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="VOTE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22186" levels="1" name="Echo Crystal - Theme of Celebration">
@@ -1660,6 +1662,7 @@
 		<!-- State in which the Energy Stage is maintained. -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="VP_KEEP" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22188" levels="1" name="Summon Big Wedding Cake">
@@ -1697,6 +1700,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22192" levels="1" name="Transformation Scroll: Doom Wraith">
@@ -1706,6 +1710,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22193" levels="1" name="Transformation Scroll: Grail Apostle">
@@ -1715,6 +1720,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22194" levels="1" name="Transformation Scroll: Unicorn">
@@ -1724,6 +1730,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22195" levels="1" name="Transformation Scroll: Lilim Knight">
@@ -1733,6 +1740,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22196" levels="1" name="Transformation Scroll: Golem Guardian">
@@ -1742,6 +1750,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22197" levels="1" name="Transformation Scroll: Inferno Drake">
@@ -1751,6 +1760,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22198" levels="1" name="Transformation Scroll: Dragon Bomber">
@@ -1760,6 +1770,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22199" levels="1" name="Transformation Scroll: Heretic">
@@ -1769,6 +1780,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="NONE" />
 	</skill>
 </list>

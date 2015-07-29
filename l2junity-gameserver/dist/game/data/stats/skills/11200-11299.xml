@@ -115,6 +115,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="-709" />
+		<set name="abnormalType" val="COMBINATION" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11245" levels="1" name="Sampling">
@@ -125,6 +126,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-696" />
+		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11247" levels="1" name="Heavy Hit">
@@ -382,7 +384,7 @@
 		<set name="icon" val="icon.skill11259" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="MARK_OF_WEAKNESS" />
+		<set name="abnormalType" val="MARK_DEBUF_B" />
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="operateType" val="A2" />
@@ -416,7 +418,7 @@
 		<set name="icon" val="icon.skill11260" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="MARK_OF_VOID" />
+		<set name="abnormalType" val="MARK_DEBUF_A" />
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="operateType" val="A2" />
@@ -455,7 +457,7 @@
 		<set name="icon" val="icon.skill11261" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="MARK_OF_PLAGUE" />
+		<set name="abnormalType" val="MARK_DEBUF_C" />
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="operateType" val="A2" />
@@ -485,7 +487,7 @@
 		<set name="icon" val="icon.skill11262" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="MARK_OF_TRICK" />
+		<set name="abnormalType" val="MARK_DEBUF_D" />
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="operateType" val="A2" />
@@ -850,7 +852,7 @@
 		<set name="icon" val="icon.skill11276" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" /> <!-- Guessed -->
-		<set name="abnormalType" val="AIR_BIND" />
+		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="MAGIC" />
@@ -878,6 +880,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="400" />
+		<set name="abnormalType" val="SUMMON_CONDITION" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -927,7 +930,7 @@
 		<set name="icon" val="icon.skill0028" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" /> <!-- Guessed -->
-		<set name="abnormalType" val="STUN" />
+		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="200" /> <!-- Guessed -->
@@ -1104,6 +1107,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="2" />
 		<set name="hitTime" val="1000" />
+		<set name="abnormalType" val="PA_UP_SPECIAL" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11287" levels="10" name="Superior Resistance">
@@ -1141,6 +1145,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="#coolTimes" />
 		<set name="reuseDelay" val="60000" />
+		<set name="abnormalType" val="ABILITY_CHANGE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<!-- Note: 0.5 means 50% of owner's patk! -->
@@ -1163,7 +1168,7 @@
 		<set name="icon" val="icon.skill0028" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" /> <!-- Guessed -->
-		<set name="abnormalType" val="ROOT_PHYSICALLY" />
+		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="200" /> <!-- Guessed -->

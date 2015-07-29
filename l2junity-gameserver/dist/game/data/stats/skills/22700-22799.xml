@@ -26,6 +26,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-209" />
+		<set name="abnormalType" val="MD_DOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="22703" levels="1" name="Flynt's Sealed Rune of Will_Trigger">
@@ -36,6 +37,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="180000" />
+		<set name="abnormalType" val="INVINCIBILITY" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="22704" levels="1" name="Flynt's Sealed Rune of Destruction_Trigger">
@@ -47,6 +49,7 @@
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="30000" />
 		<set name="effectPoint" val="-712" />
+		<set name="abnormalType" val="POISON" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="22705" levels="1" name="Dr. Destroy's Sealed Rune of Skill">
@@ -54,6 +57,7 @@
 		<!-- For 10 sec., Critical Damage and Critical Rage are increased. -->
 		<set name="icon" val="icon.etc_scroll_white_i00" />
 		<set name="operateType" val="A2" />
+		<set name="abnormalType" val="CRITICAL_DMG_UP" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="22706" levels="1" name="Dr. Destroy's Sealed Rune of Wisdom_Trigger">
@@ -63,6 +67,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="CHEAP_MAGIC" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="22707" levels="1" name="Vitality Maintaining Potion">
@@ -74,6 +79,7 @@
 		<set name="reuseDelay" val="3600000" />
 		<set name="isMagic" val="4" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="VP_KEEP" />
 		<set name="isDebuff" val="false" />
 	</skill>
 	<skill id="22708" levels="1" name="XP Buff 50% (1-hour)">
@@ -82,6 +88,7 @@
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="abnormalType" val="VOTE" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="22709" levels="1" name="XP Buff 50% (2-hour)">
@@ -90,6 +97,7 @@
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="abnormalType" val="VOTE" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="22710" levels="2" name="Scroll: Increase Vitality">
@@ -117,6 +125,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="VP_UP" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="22713" levels="1" name="Letter Collector's Gift">
@@ -127,6 +136,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="22714" levels="1" name="Transformation Scroll Pack">
@@ -220,6 +230,7 @@
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="22728" levels="1" name="Transformation Scroll: Oel Mahum">
@@ -228,6 +239,7 @@
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="22729" levels="1" name="Transformation Scroll: Doll Blader">
@@ -236,6 +248,7 @@
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="22730" levels="1" name="Transformation Scroll: Zaken">
@@ -244,6 +257,7 @@
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="22731" levels="1" name="Transformation Scroll: Anakim">
@@ -252,6 +266,7 @@
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="22732" levels="1" name="Transformation Scroll: Venom">
@@ -260,6 +275,7 @@
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="22733" levels="1" name="Transformation Scroll: Gordon">
@@ -268,6 +284,7 @@
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="22734" levels="1" name="Transformation Scroll: Ranku">
@@ -276,6 +293,7 @@
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="22735" levels="1" name="Transformation Scroll: Kechi">
@@ -284,6 +302,7 @@
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="22736" levels="1" name="Transformation Scroll: Demon Prince">
@@ -292,6 +311,7 @@
 		<set name="icon" val="icon.skilltransform1" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="22737" levels="1" name="Ink Herb">
@@ -352,6 +372,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="PA_PD_UP" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="22745" levels="1" name="Fantasy Homemade Cookie">
@@ -361,6 +382,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="BUFF_SPECIAL_DEFENCE" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="22746" levels="1" name="Fantasy Special Cookie">
@@ -369,6 +391,7 @@
 		<set name="icon" val="BranchSys3.Icon.ev_halloween_cookie" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="abnormalType" val="G_EV_BUFF1" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="22747" levels="1" name="Fantasy Isle Medal of Glory">
@@ -462,6 +485,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="780" />
+		<set name="abnormalType" val="RUNWAY_ARMOR" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="22757" levels="1" name="Transform: Traditional Taiwanese Costume">
@@ -474,6 +498,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="780" />
+		<set name="abnormalType" val="RUNWAY_ARMOR" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="22758" levels="1" name="Transform: Military Outfit">
@@ -486,6 +511,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="780" />
+		<set name="abnormalType" val="RUNWAY_ARMOR" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="22759" levels="1" name="Transform: Metal Suit">
@@ -498,6 +524,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="780" />
+		<set name="abnormalType" val="RUNWAY_ARMOR" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="22760" levels="1" name="Transform: Maid Costume">
@@ -510,6 +537,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="780" />
+		<set name="abnormalType" val="RUNWAY_ARMOR" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="22761" levels="1" name="Transform: Emerald Weapon">
@@ -522,6 +550,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="780" />
+		<set name="abnormalType" val="RUNWAY_WEAPON" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="22762" levels="1" name="Transform: Japanese Weapon">
@@ -534,6 +563,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="780" />
+		<set name="abnormalType" val="RUNWAY_WEAPON" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="22763" levels="1" name="Santa Outfit Appearance Stone (14-day)">
@@ -557,6 +587,7 @@
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="VP_UP" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="22766" levels="1" name="Vitality Maintaining Potion">
@@ -567,6 +598,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="VP_KEEP" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="22767" levels="1" name="Vitality Maintaining Potion">
@@ -578,6 +610,7 @@
 		<set name="reuseDelay" val="3600000" />
 		<set name="isMagic" val="4" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="VP_KEEP" />
 		<set name="isDebuff" val="false" />
 	</skill>
 	<skill id="22768" levels="1" name="Metal Suit Top Appearance Stone">

@@ -7,6 +7,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9201" levels="1" name="Elixir: Pipe Organ Melody">
@@ -16,6 +17,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9202" levels="1" name="Elixir: Guitar Melody">
@@ -25,6 +27,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9203" levels="1" name="Elixir: Harp Melody">
@@ -34,6 +37,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9204" levels="1" name="Kukuru">
@@ -63,13 +67,14 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="SPECIAL_RIDE" />
 		<set name="reuseDelay" val="45000" />
 	</skill>
 	<skill id="9206" levels="1" name="Fast Run">
 		<!-- For 30 seconds, Speed + 95. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
-		<set name="abnormalType" val="SIGNAL_A" />
+		<set name="abnormalType" val="SPECIAL_RIDE" />
 		<set name="icon" val="icon.skill9206" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -101,6 +106,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="9210" levels="1" name="Dismount">
@@ -144,6 +150,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="9214" levels="1" name="Divine Inspiration">
@@ -181,6 +188,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9219" levels="1" name="Elixir of Blessing - Drum Melody">
@@ -190,6 +198,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_DEFENCE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9220" levels="1" name="Elixir of Blessing - Lute Melody">
@@ -199,6 +208,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9221" levels="1" name="Elixir of Blessing - Pipe Organ Melody">
@@ -208,6 +218,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9222" levels="1" name="Elixir of Blessing - Guitar Melody">
@@ -217,6 +228,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9223" levels="1" name="Elixir of Blessing - Harp Melody">
@@ -226,6 +238,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9224" levels="1" name="Scroll of Escape: Talking Island Village">
@@ -281,6 +294,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
 		<set name="isMentoring" val="true" />
 		<for>
 			<effect name="Buff">
@@ -302,6 +316,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_DEFENCE" />
 		<set name="isMentoring" val="true" />
 		<for>
 			<effect name="TriggerSkillByAttack">
@@ -340,6 +355,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="isMentoring" val="true" />
 		<for>
 			<effect name="Buff">
@@ -361,6 +377,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="isMentoring" val="true" />
 		<for>
 			<effect name="Buff">
@@ -382,6 +399,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="isMentoring" val="true" />
 		<for>
 			<effect name="Buff">
@@ -408,6 +426,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="isMentoring" val="true" />
 		<for>
 			<effect name="Buff">
@@ -429,6 +448,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="VP_MENTOR_RUNE" />
 		<set name="isMentoring" val="true" />
 		<for>
 			<effect name="Buff">
@@ -603,6 +623,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="isMentoring" val="true" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_MENTEE1" />
 		<set name="isMagic" val="#isMagics" />
 		<for>
 			<effect name="Buff">
@@ -715,6 +736,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="9274" levels="1" name="Player Commendation - Drum Melody">
@@ -725,6 +747,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalType" val="BUFF_SPECIAL_DEFENCE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="9275" levels="1" name="Player Commendation - Lute Melody">
@@ -735,6 +758,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="9276" levels="1" name="Player Commendation - Pipe Organ Melody">
@@ -745,6 +769,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="9277" levels="1" name="Player Commendation - Guitar Melody">
@@ -755,6 +780,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="9278" levels="1" name="Player Commendation - Harp Melody">
@@ -765,6 +791,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="9279" levels="1" name="PC Progression Support">
@@ -774,6 +801,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BUFF_PCCAFE_EXP1" />
 		<set name="isMagic" val="3" />
 	</skill>
 	<skill id="9280" levels="2" name="Horn Melody - Heavenly Cocktail">
@@ -784,6 +812,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9281" levels="2" name="Drum Melody - Heavenly Cocktail">
@@ -794,6 +823,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="BUFF_SPECIAL_DEFENCE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9282" levels="2" name="Lute Melody - Heavenly Cocktail">
@@ -804,6 +834,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9283" levels="2" name="Pipe Organ Melody - Heavenly Cocktail">
@@ -814,6 +845,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9284" levels="2" name="Guitar Melody - Heavenly Cocktail">
@@ -824,6 +856,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9285" levels="2" name="Harp Melody - Heavenly Cocktail">
@@ -834,6 +867,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9286" levels="1" name="Player Commendation - Scroll: Enchant Weapon (D-grade)">

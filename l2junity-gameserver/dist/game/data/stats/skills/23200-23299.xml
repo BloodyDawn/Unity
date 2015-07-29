@@ -435,6 +435,7 @@
 	<skill id="23235" levels="1" name="Singer and Dancer Agathion Special Skill: Hunter's Song">
 		<!-- Increases critical attack rate by 100% for 2 minutes. Reuse delay 20 minutes. -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="SONG_OF_HUNTER" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23236" levels="1" name="Agathion Cute Trick - Zaken's Spirit Swords">
@@ -445,6 +446,7 @@
 	<skill id="23237" levels="1" name="Swords' Song">
 		<!-- "For 30 minutes, increases Max HP by 40% and Max MP by 40%. Increases Atk. Spd. by 20% and P. Atk. by 10%. Reuse delay is 2 hours." -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23238" levels="1" name="Master's Blessing - Eye of Pa'agrio">
@@ -1773,12 +1775,13 @@
 	<skill id="23297" levels="1" name="Santa Claus's Blessing">
 		<!-- "Rudolph's Blessing. For 20 minutes, increases Atk. Spd. by 10%, Casting Spd. by 10%, and Speed by 10. Rudolph consumes 2 fresh herbs." -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="EVENT_SANTA_REWARD" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23298" levels="1" name="Flame Hawk">
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="FLAME_HAWK" />
+		<set name="abnormalType" val="DOT_ATTR" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
@@ -1796,7 +1799,7 @@
 	<skill id="23299" levels="1" name="Arrow Rain">
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="ARROW_RAIN" />
+		<set name="abnormalType" val="DOT_ATTR" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" />

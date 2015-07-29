@@ -63,6 +63,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="TRANSFORM" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Transformation">
@@ -89,6 +90,7 @@
 		<!-- "Antharas's Stigma Aftermath. For 10 seconds, decreases 500 HP and 300 MP per second." -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="-10000" />
+		<set name="abnormalType" val="TIME_BOMB" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6913" levels="1" name="Challenge of Faith">
@@ -102,6 +104,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="effectPoint" val="673" />
+		<set name="abnormalType" val="KNIGHT_SHIELD" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -113,11 +116,13 @@
 	<skill id="6914" levels="10" name="Haste">
 		<!-- none -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6915" levels="10" name="Acumen">
 		<!-- none -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="CASTING_TIME_DOWN" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6916" levels="1" name="Antharas's Cute Tricks">
@@ -138,6 +143,7 @@
 	<skill id="6919" levels="1" name="Challenge Acceptance">
 		<!-- none -->
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="MORALE_UP" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6920" levels="1" name="Collector's Fortune">
@@ -151,6 +157,7 @@
 		<set name="operateType" val="A2" /> <!-- FIXME: value unconfirmed -->
 		<set name="reuseDelay" val="15000" /> <!-- FIXME: value unconfirmed -->
 		<set name="rideState" val="NONE" />
+		<set name="abnormalType" val="PATIENCE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -171,6 +178,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill0122" />
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="PD_DOWN" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6922" levels="3" name="Adventurer's Might">

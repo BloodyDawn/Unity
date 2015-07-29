@@ -130,6 +130,7 @@
 	<skill id="7008" levels="1" name="Feather of Blessing">
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="7009" levels="1" name="not_used">
@@ -630,7 +631,7 @@
 		<!-- GM Skill -->
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="PD_UP" />
+		<set name="abnormalType" val="MD_UP" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="1" />
 		<set name="effectRange" val="900" />
@@ -1549,6 +1550,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-700" />
+		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 </list>

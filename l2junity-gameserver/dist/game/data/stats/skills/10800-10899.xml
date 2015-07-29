@@ -137,6 +137,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="ALL_SPEED_DOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10807" levels="4" name="Gravity Trap">
@@ -147,6 +148,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10808" levels="4" name="Decoy Provocation">
@@ -158,6 +160,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="TARGET_LOCK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10809" levels="1" name="Survival Movement">
@@ -171,6 +174,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="30000" />
 		<set name="staticReuse" val="true" />
+		<set name="abnormalType" val="SPECIAL_MOVE_UP" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">

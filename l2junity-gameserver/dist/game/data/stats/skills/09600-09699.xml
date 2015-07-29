@@ -60,6 +60,7 @@
 		<!-- Seal the summoned Agathion. Not affected by Hour of Penitence for 10 sec. -->
 		<set name="icon" val="icon.etc_leash_i00" />
 		<set name="operateType" val="A2" />
+		<set name="abnormalType" val="EXP_BOTTLE" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9607" levels="1" name="Blessing of Light">
@@ -90,6 +91,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9610" levels="1" name="Clan Association - Drum Melody">
@@ -102,6 +104,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalType" val="BUFF_SPECIAL_DEFENCE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9611" levels="1" name="Clan Association - Pipe Organ Melody">
@@ -114,6 +117,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9612" levels="1" name="Clan Association - Guitar Melody">
@@ -126,6 +130,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9613" levels="1" name="Clan Association - Harp Melody">
@@ -138,6 +143,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9614" levels="1" name="Clan Association - Lute Melody">
@@ -150,6 +156,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="687" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9615" levels="1" name="Summon Association Request Manager">
@@ -266,6 +273,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="STAR_AGATHION_EXP_SP_BUFF1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9628" levels="1" name="Star Agathion's Gift Box">
@@ -289,6 +297,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="VP_UP" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9631" levels="1" name="Vitality Maintaining Star Candy">
@@ -299,6 +308,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="VP_KEEP" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9632" levels="1" name="Star Agathion Pack">
@@ -378,6 +388,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="STAR_AGATHION_EXP_SP_BUFF1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9641" levels="1" name="Powerful Sooro Teleport: Talking Island Village">
@@ -435,6 +446,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="STAR_AGATHION_EXP_SP_BUFF1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9647" levels="1" name="Chic Jaebum Teleport: Talking Island Village">
@@ -492,6 +504,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="STAR_AGATHION_EXP_SP_BUFF1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9653" levels="1" name="Cute Shinyoung Teleport: Talking Island Village">
@@ -549,6 +562,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="STAR_AGATHION_EXP_SP_BUFF1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9659" levels="1" name="Repair Energy Supplier">
@@ -569,6 +583,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CLASS" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="9661" levels="1" name="Heavenly P. Def. Cookie (Event)">
@@ -578,6 +593,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CLASS" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="9662" levels="1" name="Heavenly Magic Cookie (Event)">
@@ -587,6 +603,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="BUFF_SPECIAL_CLASS" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="9663" levels="1" name="Heavenly CP Cookie (Event)">
@@ -596,6 +613,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="INSTANT_EV_BUFF6" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="9664" levels="1" name="Kaliel's Treasure Chest (Low-grade)">
@@ -739,6 +757,7 @@
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="abnormalType" val="VOTE" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9686" levels="1" name="Kaliel's Training Scroll">
@@ -747,6 +766,7 @@
 		<set name="icon" val="icon.etc_ev_draco_exp_up" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="abnormalType" val="INSTANT_EV_BUFF1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9687" levels="1" name="Giant's Scroll: Enchant Weapon (R-grade)">

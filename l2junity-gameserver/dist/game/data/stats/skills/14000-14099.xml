@@ -35,6 +35,7 @@
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="2500" />
+		<set name="abnormalType" val="ABSORB" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14004" levels="3" name="Front Elven Bow">
@@ -75,6 +76,7 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="3000" />
 		<set name="effectPoint" val="-354" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14007" levels="3" name="Power Blow">
@@ -140,6 +142,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-354" />
+		<set name="abnormalType" val="BLEEDING" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14012" levels="3" name="Iron Deal">
@@ -178,6 +181,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="-354" />
+		<set name="abnormalType" val="ABSORB" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14015" levels="1" name="Circle Slash">
@@ -213,6 +217,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="-355" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14018" levels="1" name="Downward Blow">
@@ -251,6 +256,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-355" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14021" levels="1" name="Ice Chill Range">
@@ -264,6 +270,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-355" />
+		<set name="abnormalType" val="BLEEDING" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14022" levels="1" name="Ice Drop">
@@ -290,6 +297,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="1500" />
 		<set name="effectPoint" val="-355" />
+		<set name="abnormalType" val="FLY_AWAY" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14024" levels="1" name="Ancient Hero's Roar">
@@ -303,6 +311,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="-355" />
+		<set name="abnormalType" val="FLY_AWAY" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14025" levels="1" name="Hero's Arrow Shaft">
@@ -333,6 +342,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="2000" />
+		<set name="abnormalType" val="ABSORB" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14028" levels="1" name="Hero's Influence">
@@ -391,6 +401,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="-354" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14033" levels="1" name="Vital Spot Attack">
@@ -416,6 +427,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="-354" />
+		<set name="abnormalType" val="BLEEDING" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14035" levels="1" name="Octavis' Obedience">
@@ -472,6 +484,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="-355" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14040" levels="6" name="Power Strike">
@@ -513,6 +526,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="DISARM" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14043" levels="6" name="Double Blow">
@@ -538,6 +552,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="PD_UP" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14045" levels="6" name="Fairy Attack">
@@ -568,6 +583,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="MD_DOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14047" levels="6" name="Fairy Curse Poison">
@@ -584,6 +600,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="POISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14048" levels="1" name="Fairy Acumen">
@@ -596,6 +613,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="CASTING_TIME_DOWN" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14049" levels="1" name="Fairy Heal">
@@ -633,6 +651,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="PA_DOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14052" levels="4" name="Rush">
@@ -742,6 +761,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14061" levels="2" name="Frontal Brandish">
@@ -770,6 +790,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="SLEEP" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14063" levels="1" name="Fatal Rush">
@@ -819,6 +840,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14067" levels="11" name="Big Blind Light">
@@ -834,6 +856,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14068" levels="6" name="Garden Inducement">
@@ -864,6 +887,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="PARALYZE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14070" levels="6" name="Branch Straightening">
@@ -879,6 +903,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="2000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="BLEEDING" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14071" levels="6" name="Destroyer's Friction">
@@ -889,6 +914,7 @@
 		<set name="mpConsume" val="77" />
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="14072" levels="6" name="Gardener Blow">
@@ -904,6 +930,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="PA_DOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14073" levels="6" name="Garden Destroyer Slash">
@@ -928,6 +955,7 @@
 		<set name="mpConsume" val="84" />
 		<set name="reuseDelay" val="2000" />
 		<set name="effectPoint" val="-351" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14075" levels="1" name="Harmful Trap">
@@ -939,6 +967,7 @@
 		<set name="mpConsume" val="84" />
 		<set name="reuseDelay" val="2000" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14076" levels="1" name="Harmful Trap">
@@ -950,6 +979,7 @@
 		<set name="mpConsume" val="84" />
 		<set name="reuseDelay" val="2000" />
 		<set name="effectPoint" val="-2" />
+		<set name="abnormalType" val="MAX_HP_UP" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14077" levels="6" name="Gardener Slash">
@@ -979,6 +1009,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="2000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14079" levels="1" name="Garden Reflect">
@@ -989,6 +1020,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="DMG_SHIELD" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="14080" levels="1" name="Self Defense">
@@ -1000,6 +1032,7 @@
 		<set name="mpConsume" val="84" />
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="PD_UP_SPECIAL" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="14081" levels="6" name="Garden Judgment">
@@ -1036,6 +1069,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="100" />
 		<set name="effectPoint" val="679" />
+		<set name="abnormalType" val="TURN_STONE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="14084" levels="6" name="Garden Range Bleed">
@@ -1051,6 +1085,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="2000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="BLEEDING" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14085" levels="1" name="Protection">
@@ -1087,6 +1122,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="ABSORB" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14088" levels="1" name="Garden Apherus Recovery">
@@ -1099,6 +1135,7 @@
 		<set name="hitTime" val="10000" />
 		<set name="reuseDelay" val="2000" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="VAMPIRIC_ATTACK" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14089" levels="5" name="Reflect">
@@ -1128,6 +1165,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="PARALYZE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14091" levels="6" name="Rose Poison">
@@ -1141,6 +1179,7 @@
 		<set name="hitTime" val="100" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14092" levels="6" name="Entangle">
@@ -1155,6 +1194,7 @@
 		<set name="hitTime" val="100" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14093" levels="5" name="Sakum Follower Blow">

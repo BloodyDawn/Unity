@@ -29,6 +29,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="VP_UP" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9404" levels="1" name="Wondrous Herb of Power">
@@ -39,6 +40,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="100" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="PA_UP_HERB" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="9405" levels="1" name="Wondrous Herb of Magic">
@@ -49,6 +51,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="100" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="MA_UP_HERB" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="9406" levels="1" name="Ingredient and Hardener Pouch (R-grade)">
@@ -277,6 +280,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="effectPoint" val="100" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9439" levels="1" name="Scroll: 10,000 Individual Fame">
@@ -386,6 +390,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="24000" />
 		<set name="effectPoint" val="-687" />
+		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9452" levels="1" name="Item Skill: Dash">
@@ -396,6 +401,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="692" />
+		<set name="abnormalType" val="SUPER_MOVE" />
 		<set name="reuseDelay" val="90000" />
 	</skill>
 	<skill id="9453" levels="1" name="Item Skill: Undying Will">
@@ -405,6 +411,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
+		<set name="abnormalType" val="RACE_ORC2" />
 		<set name="reuseDelay" val="480000" />
 	</skill>
 	<skill id="9454" levels="1" name="Item Skill: Silence">
@@ -417,6 +424,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="240000" />
 		<set name="effectPoint" val="-1" />
+		<set name="abnormalType" val="SILENCE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9455" levels="1" name="Item Skill: Disable Target">
@@ -426,6 +434,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="800" />
+		<set name="abnormalType" val="MA_DOWN" />
 		<set name="reuseDelay" val="480000" />
 	</skill>
 	<skill id="9456" levels="3" name="Item Skill: Damage Reflect Resistance">
@@ -438,6 +447,7 @@
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="4000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9459" levels="1" name="Tauti's Wrath">
@@ -451,6 +461,7 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="-687" />
+		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9460" levels="1" name="Tauti's Authority">
@@ -465,6 +476,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-687" />
+		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9461" levels="1" name="Scroll of Escape: Guillotine Fortress">
@@ -577,6 +589,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="180000" />
 		<set name="effectPoint" val="-700" />
+		<set name="abnormalType" val="NOCHAT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9479" levels="1" name="Extra Pass">
@@ -636,6 +649,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9488" levels="1" name="Holiday Blessing Stage 1">
@@ -646,6 +660,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="INSTANT_EV_BUFF1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9489" levels="1" name="Holiday Blessing Stage 2">
@@ -656,6 +671,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="INSTANT_EV_BUFF1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9490" levels="1" name="Holiday Blessing Stage 3">
@@ -666,6 +682,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="INSTANT_EV_BUFF1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9491" levels="1" name="Holiday Blessing Stage 4">
@@ -676,6 +693,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="INSTANT_EV_BUFF1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9492" levels="1" name="Holiday Blessing Stage 5">
@@ -686,6 +704,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="INSTANT_EV_BUFF1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9493" levels="1" name="Lingering Holiday Blessing Stage 1">
@@ -695,6 +714,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="INSTANT_EV_BUFF1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9494" levels="1" name="Lingering Holiday Blessing Stage 2">
@@ -704,6 +724,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="INSTANT_EV_BUFF1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9495" levels="1" name="Lingering Holiday Blessing Stage 3">
@@ -713,6 +734,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="INSTANT_EV_BUFF1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9496" levels="1" name="Lingering Holiday Blessing Stage 4">
@@ -722,6 +744,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="INSTANT_EV_BUFF1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9497" levels="1" name="Lingering Holiday Blessing Stage 5">
@@ -731,6 +754,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
+		<set name="abnormalType" val="INSTANT_EV_BUFF1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9498" levels="1" name="Santa Girl's Cloak">
