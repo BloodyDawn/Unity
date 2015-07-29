@@ -1,32 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="10497" levels="1" name="Warrior - Individual Passive">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0217" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="10498" levels="1" name="Warrior - Individual">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- P. Atk. increases by 10% for 5 seconds. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="PA_UP" />
 		<set name="icon" val="icon.skill1543" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
+		<set name="reuseDelayGroup" val="10258" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10499" levels="1" name="Heavy Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
+		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="200" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="10000" />
+		<cond msgId="113" addName="1">
+			<target abnormalType="AIR_BIND" /> <!-- Air Bind -->
+		</cond>
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="12000" />
+			</effect>
+		</for>
 	</skill>
 </list>

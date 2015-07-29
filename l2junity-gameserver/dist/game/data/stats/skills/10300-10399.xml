@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="10300" levels="6" name="Last Attack">
+		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 52746 Power added to P. Atk. Cuts regular monsters' HP down to 1. Usable when target's HP is 10% or below. Requires a sword, blunt, spear, fist, dual blunt, or dualsword. -->
 		<table name="#mpConsumes"> 276 297 315 333 351 369 </table>
 		<table name="#magicLvl"> 90 95 99 101 103 105 </table>
 		<table name="#power"> 52746 59601 65085 69414 73352 77290 </table>
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10300" />
 		<set name="operateType" val="A1" />
@@ -12,25 +14,31 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1690" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-700" />
 		<set name="reuseDelay" val="30000" />
+		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<and>
 				<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
 				<player hp="10" />
 			</and>
 		</cond>
-		<for>
+		<pveEffects>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
 			<effect name="Lethal">
 				<param fullLethal="100" />
-				<param monsterOnly="true" />
 			</effect>
-		</for>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="10301" levels="1" name="Maximum Force Mastery">
 		<!-- Max Momentum increases to Stage 15. -->

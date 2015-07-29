@@ -46,7 +46,7 @@ public final class FatalBlow extends AbstractEffect
 	private final boolean _overHit;
 	
 	private final Set<AbnormalType> _abnormals;
-	private final double _abnormalPowerMod;
+	private final double _abnormalPower;
 	
 	public FatalBlow(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
@@ -70,7 +70,7 @@ public final class FatalBlow extends AbstractEffect
 		{
 			_abnormals = Collections.<AbnormalType> emptySet();
 		}
-		_abnormalPowerMod = params.getDouble("damageModifier", 1);
+		_abnormalPower = params.getDouble("abnormalPower", 1);
 	}
 	
 	@Override
@@ -107,20 +107,22 @@ public final class FatalBlow extends AbstractEffect
 			((Attackable) target).overhitEnabled(true);
 		}
 		
+		double power = _power;
+		
+		// Check if we apply an abnormal modifier
+		if (_abnormals.stream().anyMatch(a -> target.getEffectList().getBuffInfoByAbnormalType(a) != null))
+		{
+			power += _abnormalPower;
+		}
+		
 		boolean ss = info.getSkill().useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
 		byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		double damage = Formulas.calcBlowDamage(activeChar, target, info.getSkill(), _power, shld, ss);
+		double damage = Formulas.calcBlowDamage(activeChar, target, info.getSkill(), power, shld, ss);
 		boolean crit = Formulas.calcCrit(_criticalChance, true, activeChar, target);
 		
 		if (crit)
 		{
 			damage *= 2;
-		}
-		
-		// Check if we apply an abnormal modifier
-		if (_abnormals.stream().anyMatch(a -> target.getEffectList().getBuffInfoByAbnormalType(a) != null))
-		{
-			damage *= _abnormalPowerMod;
 		}
 		
 		// Check if damage should be reflected

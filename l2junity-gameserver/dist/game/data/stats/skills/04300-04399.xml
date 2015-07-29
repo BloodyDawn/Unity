@@ -196,8 +196,8 @@
 		</for>
 	</skill>
 	<skill id="4318" levels="2" name="Ultimate Buff">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- Freya retail confirmed -->
+		<!-- Glory Days confirmed -->
+		<table name="#magical"> 1 1.5 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="ULTIMATE_BUFF" />
@@ -217,6 +217,8 @@
 				<mul stat="pAtkSpd" val="1.33" />
 				<mul stat="rCrit" val="1.3" />
 				<mul stat="mDef" val="5" />
+				<mul stat="mAtk" val="#magical" />
+				<mul stat="mAtkSpd" val="#magical" />
 			</effect>
 		</for>
 	</skill>

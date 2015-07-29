@@ -544,22 +544,24 @@
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="5227" levels="2" name="Ground Strike">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- Confirmed CT2.5 -->
+		<!-- Glory Days confirmed -->
 		<!-- Baylor Skills -->
-		<set name="affectRange" val="200" />
+		<table name="#magicLvl"> 85 98 </table>
+		<table name="#power"> 100756 213631 </table>
+		<set name="affectRange" val="300" />
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="2500" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="187" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
-				<param power="5800" />
+				<param power="#power" />
 				<param criticalChance="20" />
 			</effect>
+			<!-- TODO: {i_fly_away;curve;push;200} -->
 		</for>
 	</skill>
 	<skill id="5228" levels="2" name="Jump Attack">

@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="10500" levels="1" name="Heavy Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
+		<set name="operateType" val="DA1" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
+		<set name="effectRange" val="800" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
+		<cond msgId="113" addName="1">
+			<target abnormalType="KNOCK_DOWN" /> <!-- Knock Down -->
+		</cond>
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="24000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10501" levels="10" name="Superior Dagger Mastery">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 739, Atk. Spd. + 25%, Accuracy + 8, and vital spot attack success rate + 5%. STR +2. Depending on your STR, Cooldown can be reset or abnormal status duration increases + 2 times. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#pAtk"> 739 856 993 1117 1266 1343 1425 1512 1604 1702 </table>
 		<set name="icon" val="icon.skill10501" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
@@ -39,10 +52,12 @@
 	</skill>
 	<skill id="10502" levels="10" name="Superior Dual Dagger Mastery">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 844, Atk. Spd. + 25%, Accuracy + 8, and vital spot attack success rate + 5%. STR + 2. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#pAtk"> 844 979 1135 1277 1447 1535 1629 1728 1833 1945 </table>
 		<set name="icon" val="icon.skill10502" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
@@ -64,11 +79,12 @@
 	</skill>
 	<skill id="10503" levels="10" name="Superior Light Armor Mastery">
 		<!-- Updated to IO -->
-		<!-- TODO Depending on your DEX, Spd. and P. Skill Critical Rate change. -->
+		<!-- Glory Days confirmed -->
 		<!-- STR + 2. Max HP + 4880, P. Def. + 1386, P. Evasion + 20, and chance of receiving Critical Damage -35% when equipped with Light Armor. Depending on your DEX, Spd. and P. Skill Critical Rate change. Upon evasion, 10% chance of obtaining an Assassin's Reflex effect that raises Atk. Spd. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#pDef"> 1506 1654 1817 1959 2196 2279 2365 2455 2558 2655 </table>
 		<set name="icon" val="icon.skill10503" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
@@ -86,6 +102,12 @@
 				<mul stat="defCritRate" val="0.65">
 					<using kind="LIGHT" />
 				</mul>
+				<set stat="statSkillCritical" val="2">
+					<using kind="LIGHT" />
+				</set>
+				<set stat="statSpeed" val="2">
+					<using kind="LIGHT" />
+				</set>
 				<add stat="STR" val="2" />
 			</effect>
 			<effect name="TriggerSkillByAvoid">
@@ -97,10 +119,12 @@
 	</skill>
 	<skill id="10504" levels="10" name="Superior Movement">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Speed + 17, HP Recovery Bonus + 12, MP Recovery Bonus + 6. STR + 2. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#runSpd"> 17 18 19 20 22 23 24 25 26 27 </table>
 		<set name="icon" val="icon.skill10504" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
@@ -115,11 +139,13 @@
 	</skill>
 	<skill id="10505" levels="10" name="Superior Critical Mastery">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- STR + 2, P. Critical Damage + 539 and P. Critical Rate + 60%. + 1000% chance of triggering skill mastery. -->
 		<table name="#cAtkAdd"> 539 644 750 891 970 1085 1200 1315 1430 1545 </table>
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<set name="icon" val="icon.skill10505" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -133,8 +159,10 @@
 	</skill>
 	<skill id="10506" levels="1" name="Superior Spirit Mastery">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- STR + 2 and Hold/Sleep/Bleed/Mind/Poison Resistance + 30. -->
 		<set name="icon" val="icon.skill10506" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
@@ -153,8 +181,10 @@
 	</skill>
 	<skill id="10507" levels="1" name="Death Clock">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 200. Also, when using Shadow Flash, triggers the Blind Spot effect that increases P. Atk., Critical Rate, Critical Damage, and Vital Spot Attack Rate. -->
 		<set name="icon" val="icon.skill10507" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="99" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
@@ -172,23 +202,26 @@
 	</skill>
 	<skill id="10508" levels="11" name="Blood Stab">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Strike's the enemy's unprotected back with 32401 Power and additionally inflicts bleed. Over-hit. Critical hit. Half-kill. Requires a dagger or dual dagger. -->
 		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -710 -711 -712 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 59 60 62 64 66 68 71 73 75 77 79 </table>
 		<table name="#power"> 32401 33521 35765 38007 40251 42495 44737 46983 48511 50491 52471 </table>
-		<set name="abnormalLvl" val="8" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
-		<set name="activateRate" val="100" />
+		<set name="activateRate" val="120" />
 		<set name="icon" val="icon.skill10508" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="830" />
 		<set name="coolTime" val="700" />
 		<set name="reuseDelay" val="5000" />
@@ -202,19 +235,20 @@
 			<effect name="Backstab">
 				<param power="#power" />
 				<param chance="40" />
-				<param criticalChance="15" />
+				<param criticalChance="30" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Lethal">
-				<param halfLethal="10" />
+				<param halfLethal="15" />
 			</effect>
-			<effect name="DamOverTime" ticks="3">
-				<param power="233" />
+			<effect name="DamOverTime" ticks="5">
+				<param power="70" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10509" levels="11" name="Heart Breaker">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Stabs target's heart with 21344 Power added to P. Atk. to inflict a powerful vital spot attack. Increases Spd. + 40, Evasion + 5, and Rear Critical Damage + 30%. Over-hit. Critical hit. Half-kill. Requires a dagger or dual dagger. -->
 		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -710 -711 -712 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
@@ -222,31 +256,40 @@
 		<table name="#power"> 21344 22083 23560 25039 26516 27993 29472 30949 35304 37016 38748 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="SPEED_UP_SPECIAL" />
 		<set name="icon" val="icon.skill10509" />
 		<set name="operateType" val="A3" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="40" />
 		<set name="hitTime" val="1030" />
 		<set name="coolTime" val="700" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="5000" />
+		<alterSkill>
+			<skill id="10750" level="1" chance="100" abnormalType="KNOCK_DOWN" /> <!-- Heavy Hit -->
+			<skill id="10749" level="1" chance="100" abnormalType="AIR_BIND" /> <!-- Heavy Hit -->
+			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
+		</alterSkill>
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
 			<effect name="FatalBlow">
 				<param power="#power" />
-				<param chance="30" />
+				<param chance="36.5" />
 				<param criticalChance="15" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Lethal">
-				<param halfLethal="10" />
+				<param halfLethal="15" />
 			</effect>
 		</for>
+		<!-- TODO : Move to effects after A3 skills rework -->
 		<selfEffects>
 			<effect name="Buff">
 				<add stat="runSpd" val="40" />
@@ -259,16 +302,21 @@
 	</skill>
 	<skill id="10510" levels="11" name="Chain Blow">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts damage with 22718 Power added to P. Atk. Additional Skill Power 20% to damage if used during bleed. Over-hit. Critical hit. Half-kill. Requires a dagger or dual dagger. -->
 		<table name="#mpConsumes"> 71 73 75 78 80 83 86 88 90 92 94 </table>
 		<table name="#effectPoint"> -700 -704 -707 -709 -709 -709 -709 -709 -709 -709 -709 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#power"> 22718 24289 25861 27431 29003 30574 32146 33717 37332 39152 40972 </table>
 		<set name="icon" val="icon.skill10510" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="40" />
 		<set name="hitTime" val="1130" />
 		<set name="coolTime" val="700" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -279,59 +327,72 @@
 		<for>
 			<effect name="FatalBlow">
 				<param power="#power" />
-				<param chance="30" />
-				<param criticalChance="15" />
+				<param chance="36.5" />
+				<param criticalChance="20" />
 				<param overHit="true" />
-				<param abnormalType="BLEEDING" damageModifier="1.2" />
+				<param abnormalType="BLEEDING" abnormalPower="4130" />
 			</effect>
 			<effect name="Lethal">
-				<param halfLethal="10" />
+				<param halfLethal="15" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10511" levels="7" name="Reverse">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Attempts a vital spot attack with 26320 Power added to P. Atk. Over-hit. Critical. Half-kill. Requires a dagger or dual dagger to be equipped. -->
 		<table name="#mpConsumes"> 90 98 106 112 118 124 130 </table>
 		<table name="#effectPoint"> -700 -704 -707 -709 -711 -713 -715 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#power"> 26320 30840 35360 38976 41506 43360 45214 </table>
 		<set name="icon" val="icon.skill10511" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="2030" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="5000" />
+		<set name="trait" val="DEATH" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
 			<effect name="FatalBlow">
 				<param power="#power" />
-				<param chance="30" />
-				<param criticalChance="15" />
+				<param chance="36.5" />
+				<param criticalChance="20" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Lethal">
-				<param halfLethal="10" />
+				<param halfLethal="15" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10512" levels="11" name="Dagger Explosion">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Detonates a blade to attack nearby enemies with 11903 Power added to P. Atk. Requires a dagger/dual dagger. Over-hit. Critical. -->
 		<table name="#mpConsumes"> 125 128 132 136 141 145 150 154 158 162 166 </table>
 		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -710 -711 -712 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#power"> 11903 12313 13135 13957 14779 15601 16423 17244 20954 21976 22998 </table>
 		<set name="icon" val="icon.skill10512" />
-		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="200" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="1430" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -342,27 +403,31 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param criticalChance="15" />
+				<param criticalChance="5" />
 				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10513" levels="10" name="Razor Rain">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Calls down a rain of blades to attack nearby enemies with 13649 Power added to P. Atk. and inflicts Bleed. Requires a dagger or dual dagger. Over-hit. Critical hit. -->
 		<table name="#mpConsumes"> 138 142 147 152 156 161 166 171 176 181 </table>
 		<table name="#effectPoint"> -704 -707 -709 -710 -710 -710 -710 -710 -710 -710 </table>
+		<table name="#magicLvl"> 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#power"> 13649 14529 15409 16289 17169 18049 18929 20954 21976 22998 </table>
 		<set name="icon" val="icon.skill10513" />
-		<set name="abnormalLvl" val="8" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
-		<set name="affectLimit" val="6-12" /> <!-- Guessed -->
-		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="activateRate" val="90" />
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="300" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
-		<set name="trait" val="BLEED" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1530" />
 		<set name="coolTime" val="200" />
@@ -375,15 +440,17 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param criticalChance="15" />
+				<param criticalChance="5" />
 				<param overHit="true" />
 			</effect>
-			<effect name="DamOverTime" ticks="3">
-				<param power="233" />
+			<effect name="DamOverTime" ticks="5">
+				<param power="70" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10514" levels="8" name="Dark Paralysis">
+		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Seals an enemy with the power of darkness. Causes the enemy's body to go completely rigid for 10 seconds and causes paralysis for 5 seconds. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -713 -717 -721 </table>
 		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
@@ -393,15 +460,18 @@
 		<set name="icon" val="icon.skill10514" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="NONE" />
-		<set name="activateRate" val="100" />
+		<set name="abnormalType" val="PARALYZE" />
+		<set name="activateRate" val="80" />
+		<set name="lvlBonusRate" val="20" />
 		<set name="trait" val="PARALYZE" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="40" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="120000" />
@@ -410,9 +480,9 @@
 		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.5" />
-				<mul stat="pAtkSpd" val="0.5" />
-				<mul stat="mAtkSpd" val="0.5" />
+				<mul stat="runSpd" val="0.77" />
+				<mul stat="pAtkSpd" val="0.77" />
+				<mul stat="mAtkSpd" val="0.77" />
 			</effect>
 		</for>
 		<endEffects>
@@ -422,6 +492,8 @@
 		</endEffects>
 	</skill>
 	<skill id="10515" levels="6" name="Paralyzed">
+		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Your body is paralyzed. -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 6 6 </table>
 		<table name="#effectPoint"> 687 694 700 705 709 709 </table>
@@ -430,11 +502,10 @@
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="abnormalVisualEffect" val="PARALYZE" />
-		<set name="basicProperty" val="MAGIC" />
 		<set name="icon" val="icon.skill1170" />
 		<set name="operateType" val="A2" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="lvlBonusRate" val="1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1200" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -442,10 +513,14 @@
 		<set name="isTriggeredSkill" val="true" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="BlockActions" />
+			<effect name="BlockActions">
+				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10516" levels="9" name="Shadow Chase">
+		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Moves behind an enemy, cancels his target, and inflicts Stun. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
 		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
@@ -455,8 +530,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="100" />
-		<set name="basicProperty" val="PHYSICAL" />
-		<set name="lvlBonusRate" val="1" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="trait" val="SHOCK" />
 		<set name="icon" val="icon.skill10516" />
@@ -464,6 +538,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="100" />
 		<set name="reuseDelay" val="7000" />
@@ -472,10 +547,14 @@
 		<for>
 			<effect name="TeleportToTarget" />
 			<effect name="TargetCancel" />
-			<effect name="BlockActions" />
+			<effect name="BlockActions">
+				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10517" levels="1" name="Shadow Hide">
+		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- You go into Hide state, cancel debuffs and Hold effects on you, increase HP Recovery Bonus, and eliminate enemy enmity toward you. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="50" />
@@ -484,6 +563,8 @@
 		<set name="icon" val="icon.skill10517" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="38" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="400" />
@@ -495,7 +576,7 @@
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Hide">
-				<mul stat="regHp" val="1.1" />
+				<mul stat="regHp" val="1.15" />
 			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="ROOT_PHYSICALLY,3" />
@@ -506,13 +587,16 @@
 		</for>
 	</skill>
 	<skill id="10518" levels="1" name="Assassin's Reflex">
-		<!-- TODO abnormalType -->
+		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Atk. Spd. + 20% for 10 seconds. -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="MIGHT_MORTAL" />
 		<set name="icon" val="icon.skill10518" />
 		<set name="isTriggeredSkill" val="true" />
 		<set name="operateType" val="A2" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="700" />
@@ -525,6 +609,8 @@
 		</for>
 	</skill>
 	<skill id="10520" levels="4" name="Final Ultimate Evasion">
+		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., increases P. Evasion by 60, M. Evasion by 60, M. Def. by 20%, P. Skill Evasion Rate by 60% and Debuff Resistance. Has a 40% chance of canceling the enemy's targeting when attacked. -->
 		<table name="#effectPoint"> 692 698 707 709 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
@@ -534,23 +620,25 @@
 		<table name="#triggerLvl"> 1 2 3 4 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
-		<set name="abnormalType" val="AVOID_UP_SPECIAL" />
+		<set name="abnormalType" val="SUPER_AVOID" />
 		<set name="icon" val="icon.skill10520" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="100" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="600000" />
+		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
 				<add stat="rEvas" val="#rEvas" />
 				<add stat="mEvas" val="#mEvas" />
 				<mul stat="mDef" val="1.2" />
 				<add stat="pSkillEvas" val="60" />
-				<sub stat="cancelVuln" val="80" />
+				<sub stat="cancelVuln" val="30" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
@@ -562,6 +650,8 @@
 		</for>
 	</skill>
 	<skill id="10522" levels="9" name="Poison Zone">
+		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Sprays poison onto nearby targets for 15 seconds. Decreases P. Atk., Speed, Shield Defense, P. Def., and M. Def. Inflicts Poison that blocks the use of magic. -->
 		<table name="#effectPoint"> -707 -709 -711 -711 -711 -711 -711 -711 -711 </table>
 		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
@@ -570,8 +660,10 @@
 		<set name="icon" val="icon.skill10522" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="GROUND" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
+		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="800" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
