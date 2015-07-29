@@ -600,7 +600,7 @@ public final class L2CubicInstance implements IIdentifiable
 			
 			byte shld = Formulas.calcShldUse(_owner, target, skill);
 			
-			if (skill.hasEffectType(L2EffectType.STUN, L2EffectType.PARALYZE, L2EffectType.ROOT))
+			if (skill.hasEffectType(L2EffectType.BLOCK_ACTIONS, L2EffectType.ROOT))
 			{
 				if (Formulas.calcCubicSkillSuccess(this, target, skill, shld))
 				{

@@ -534,7 +534,7 @@ public class NpcData implements IGameXmlReader
 											{
 												aiSkillScopes.add(AISkillScope.IMMOBILIZE);
 											}
-											else if (skill.hasEffectType(L2EffectType.STUN, L2EffectType.ROOT))
+											else if (skill.hasEffectType(L2EffectType.BLOCK_ACTIONS, L2EffectType.ROOT))
 											{
 												aiSkillScopes.add(AISkillScope.IMMOBILIZE);
 												aiSkillScopes.add(shortOrLongRangeScope);
@@ -542,11 +542,6 @@ public class NpcData implements IGameXmlReader
 											else if (skill.hasEffectType(L2EffectType.MUTE, L2EffectType.FEAR))
 											{
 												aiSkillScopes.add(AISkillScope.COT);
-												aiSkillScopes.add(shortOrLongRangeScope);
-											}
-											else if (skill.hasEffectType(L2EffectType.PARALYZE))
-											{
-												aiSkillScopes.add(AISkillScope.IMMOBILIZE);
 												aiSkillScopes.add(shortOrLongRangeScope);
 											}
 											else if (skill.hasEffectType(L2EffectType.DMG_OVER_TIME, L2EffectType.DMG_OVER_TIME_PERCENT))

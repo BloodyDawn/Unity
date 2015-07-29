@@ -1227,7 +1227,7 @@ public class CharacterAI extends AbstractAI
 				{
 					sleepSkills.add(sk);
 				}
-				else if (sk.hasEffectType(L2EffectType.STUN, L2EffectType.PARALYZE))
+				else if (sk.hasEffectType(L2EffectType.BLOCK_ACTIONS))
 				{
 					// hardcoding petrification until improvements are made to
 					// EffectTemplate... petrification is totally different for

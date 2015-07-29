@@ -204,6 +204,7 @@ public final class Skill implements IIdentifiable
 	private final boolean _canDoubleCast;
 	private final boolean _canCastWhileDisabled;
 	private final boolean _isSharedWithSummon;
+	private final boolean _isNecessaryToggle;
 	
 	private final int _toggleGroupId;
 	private final List<AlterSkillHolder> _alterSkills;
@@ -375,6 +376,8 @@ public final class Skill implements IIdentifiable
 		_canDoubleCast = set.getBoolean("canDoubleCast", false);
 		_canCastWhileDisabled = set.getBoolean("canCastWhileDisabled", false);
 		_isSharedWithSummon = set.getBoolean("isSharedWithSummon", true);
+		
+		_isNecessaryToggle = set.getBoolean("isNecessaryToggle", false);
 		
 		_toggleGroupId = set.getInt("toggleGroupId", -1);
 		_alterSkills = set.getList("alterSkill", AlterSkillHolder.class);
@@ -1741,6 +1744,11 @@ public final class Skill implements IIdentifiable
 	public boolean isSharedWithSummon()
 	{
 		return _isSharedWithSummon;
+	}
+	
+	public boolean isNecessaryToggle()
+	{
+		return _isNecessaryToggle;
 	}
 	
 	public int getToggleGroupId()

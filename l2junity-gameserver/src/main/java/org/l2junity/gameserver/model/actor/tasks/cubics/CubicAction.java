@@ -174,7 +174,7 @@ public final class CubicAction implements Runnable
 					{
 						_cubic.useCubicDrain(_cubic, skill, targets);
 					}
-					else if (skill.hasEffectType(L2EffectType.STUN, L2EffectType.ROOT, L2EffectType.PARALYZE))
+					else if (skill.hasEffectType(L2EffectType.BLOCK_ACTIONS, L2EffectType.ROOT))
 					{
 						_cubic.useCubicDisabler(skill, targets);
 					}

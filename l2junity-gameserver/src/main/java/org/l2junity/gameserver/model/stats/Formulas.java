@@ -68,6 +68,7 @@ import org.l2junity.gameserver.model.stats.functions.formulas.FuncMatkEvasion;
 import org.l2junity.gameserver.model.stats.functions.formulas.FuncMaxCpMul;
 import org.l2junity.gameserver.model.stats.functions.formulas.FuncMaxHpMul;
 import org.l2junity.gameserver.model.stats.functions.formulas.FuncMaxMpMul;
+import org.l2junity.gameserver.model.stats.functions.formulas.FuncMoveSpeed;
 import org.l2junity.gameserver.model.stats.functions.formulas.FuncPAtkMod;
 import org.l2junity.gameserver.model.stats.functions.formulas.FuncPAtkSpeed;
 import org.l2junity.gameserver.model.stats.functions.formulas.FuncPDefMod;
@@ -188,6 +189,7 @@ public final class Formulas
 			cha.addStatFunc(FuncMAtkSpeed.getInstance());
 			cha.addStatFunc(FuncMatkAccuracy.getInstance());
 			cha.addStatFunc(FuncMatkEvasion.getInstance());
+			cha.addStatFunc(FuncMoveSpeed.getInstance());
 			
 			cha.addStatFunc(FuncHenna.getInstance(Stats.STAT_STR));
 			cha.addStatFunc(FuncHenna.getInstance(Stats.STAT_DEX));

@@ -47,7 +47,7 @@ public final class BlockActions extends AbstractEffect
 	@Override
 	public L2EffectType getEffectType()
 	{
-		return L2EffectType.STUN;
+		return L2EffectType.BLOCK_ACTIONS;
 	}
 
 	@Override

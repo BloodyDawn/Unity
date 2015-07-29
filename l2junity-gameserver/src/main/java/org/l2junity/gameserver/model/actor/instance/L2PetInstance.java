@@ -862,9 +862,9 @@ public class L2PetInstance extends Summon
 				{
 					return new L2PetInstance(template, owner, control);
 				}
-
+				
 				pet = new L2PetInstance(template, owner, control, rset.getByte("level"));
-
+				
 				pet._respawned = true;
 				pet.setName(rset.getString("name"));
 				
@@ -1026,7 +1026,8 @@ public class L2PetInstance extends Summon
 						continue;
 					}
 					
-					if (skill.isToggle())
+					// Toggles are skipped, unless they are necessary to be always on.
+					if (skill.isToggle() && !skill.isNecessaryToggle())
 					{
 						continue;
 					}
