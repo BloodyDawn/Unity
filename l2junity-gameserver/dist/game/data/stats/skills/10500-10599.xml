@@ -1178,8 +1178,9 @@
 	</skill>
 	<skill id="10540" levels="8" name="Throw Sand">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Hurls poisonous sand at the enemy. For 5 seconds, greatly decreases P. accuracy and lures the enemy to you. Requires a dagger/dual dagger to be equipped. -->
-		<table name="#abnormalLvls"> 3 4 5 6 7 8 9 10 </table>
+		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#accCombat"> 40 42 44 46 48 50 52 54 </table>
 		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
 		<table name="#mpConsumes"> 38 40 42 44 46 48 50 52 </table>
@@ -1212,15 +1213,20 @@
 		</for>
 	</skill>
 	<skill id="10541" levels="9" name="Throw Poison Needle">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Throws a poison needle to cancel the enemy's skill casting. Requires a dagger/dual dagger to be equipped. -->
 		<table name="#effectPoint"> -696 -702 -707 -709 -709 -709 -709 -709 -709 </table>
+		<table name="#magicLvl">85 86 89 92 95 98 101 103 105 </table>
 		<table name="#mpConsumes"> 38 38 40 43 45 47 49 51 53 </table>
 		<set name="icon" val="icon.skill10541" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="800" />
+		<set name="effectRange" val="900" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="400" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -1230,13 +1236,16 @@
 		</cond>
 		<for>
 			<effect name="SkillTurning">
-				<param chance="50" /> <!-- Guessed -->
+				<param chance="100" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10542" levels="1" name="Maximum Critical">
+		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Critical Damage + 609 and vital spot attack success rate + 10%. Side Critical Rate + 30% and Critical Damage + 40%. Rear Critical Rate + 60% and Critical Damage + 70%. -->
 		<set name="icon" val="icon.skill10542_1" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
@@ -1267,30 +1276,36 @@
 	</skill>
 	<skill id="10543" levels="1" name="Silent Step">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Allows you to move unnoticed by most monsters. Decreases P. Def. by 20% and increases Speed by 20%. MP is consumed continuously. -->
 		<set name="abnormalVisualEffect" val="STEALTH" />
 		<set name="icon" val="icon.skill10543" />
 		<set name="operateType" val="T" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<set name="mpInitialConsume" val="1" />
 		<set name="hitTime" val="800" />
 		<for>
 			<effect name="SilentMove" ticks="5">
-				<param power="45" />
+				<param power="10" />
 				<mul stat="runSpd" val="1.2" />
 				<mul stat="pDef" val="0.8" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10544" levels="4" name="Cancel target">
+		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<set name="icon" val="icon.skill0445" />
 		<set name="isTriggeredSkill" val="true" />
 		<set name="operateType" val="A1" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="5000" />
 		<for>
@@ -1298,42 +1313,67 @@
 		</for>
 	</skill>
 	<skill id="10545" levels="4" name="Crippling Poison">
-		<table name="#effectPoint"> -700 -704 -707 -709 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Causes the body to gradually become rigid for 4 seconds. Once fully rigid, paralysis lasts for 5 seconds. -->
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
+		<table name="#effectPoint"> -700 -704 -707 -709 </table>
+		<table name="#magicLvl"> 91 94 97 99 </table>
 		<set name="icon" val="icon.skill1170" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="4" />
 		<set name="abnormalType" val="PARALYZE" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="100" />
+		<set name="lvlBonusRate" val="20" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="120000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="0.77" />
+				<mul stat="pAtkSpd" val="0.77" />
+				<mul stat="mAtkSpd" val="0.77" />
+			</effect>
+		</for>
+		<endEffects>
+			<effect name="CallSkill">
+				<param skillId="10515" skillLevel="1" /> <!-- Paralyzed -->
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="10546" levels="7" name="Uppercut">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Delivers a powerful blow to Knock Down the target for 2 seconds. Requires a dagger or dual dagger to be equipped. -->
+		<table name="#magicLvl"> 89 92 95 98 101 103 105 </table>
 		<table name="#mpConsumes"> 40 43 45 47 49 51 53 </table>
 		<set name="icon" val="icon.skill10546" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
 		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
-		<set name="activateRate" val="100" /> <!-- Guessed -->
+		<set name="activateRate" val="90" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="operateType" val="A2" />
 		<set name="hitTime" val="1800" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="30000" />
 		<set name="isDebuff" val="true" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="effectPoint" val="-709" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="KNOCKDOWN" />
@@ -1343,6 +1383,16 @@
 		<for>
 			<effect name="KnockDown">
 				<param speed="600" distance="50" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param CHANGEBODY="100" />
+				<param DERANGEMENT="100" />
+				<param HOLD="100" />
+				<param SLEEP="100" />
+				<param SHOCK="100" />
+			</effect>
+			<effect name="BlockActions">
+				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
 			</effect>
 		</for>
 	</skill>
@@ -1379,22 +1429,27 @@
 	</skill>
 	<skill id="10549" levels="8" name="Kick">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Powerfully Knock Back the target with a kick. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -713 -717 -721 </table>
+		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
 		<table name="#mpConsumes"> 38 40 42 44 46 48 50 52 </table>
 		<set name="icon" val="icon.skill10549" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="STUN" />
-		<set name="abnormalTime" val="1" />
+		<set name="abnormalTime" val="2" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
-		<set name="activateRate" val="100" /> <!-- Guessed -->
+		<set name="activateRate" val="140" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="operateType" val="A2" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isDebuff" val="true" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="targetType" val="ONE" />
@@ -1402,6 +1457,16 @@
 		<for>
 			<effect name="KnockBack">
 				<param speed="400" distance="100" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param AIRBIND="100" />
+				<param HOLD="100" />
+				<param KNOCKBACK="100" />
+				<param SLEEP="100" />
+				<param SHOCK="100" />
+			</effect>
+			<effect name="BlockActions">
+				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
 			</effect>
 		</for>
 	</skill>
@@ -1415,24 +1480,22 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="7" />
 		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="80" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="40" />
 		<set name="hitTime" val="1080" />
 		<set name="coolTime" val="720" />
 		<set name="reuseDelay" val="4000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="FatalBlow">
 				<param power="#power" />
 				<param chance="30" />
-				<param criticalChance="15" />
-			</effect>
-			<effect name="Lethal">
-				<param halfLethal="10" /> <!-- Guessed -->
 			</effect>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="0.77" />
@@ -1447,31 +1510,33 @@
 		<set name="icon" val="icon.skill10551" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="abnormalType" val="CONFUSION" />
+		<set name="activateRate" val="80" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
+		<set name="effectRange" val="600" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="4000" />
 		<set name="effectPoint" val="#effectPoint" />
-		<set name="abnormalType" val="CONFUSION" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="DeleteHateOfMe">
-				<param chance="100" /> <!-- Guessed -->
-			</effect>
 			<effect name="DisableTargeting" />
 		</for>
 	</skill>
 	<skill id="10552" levels="10" name="Superior Resistance">
+		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- STR + 2, M. Def. + 199, and Fire/Water/Wind/Earth Resistance + 20. When receiving damage, M. Def. and Attribute Resistance momentarily increase. -->
 		<table name="#magicLevel"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#mDef"> 776 878 993 1097 1237 1299 1365 1434 1507 1583 </table>
 		<table name="#res"> 20 22 24 26 30 32 34 36 38 40 </table>
 		<set name="icon" val="icon.skill10005" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLevel" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
@@ -1487,14 +1552,18 @@
 		</for>
 	</skill>
 	<skill id="10553" levels="8" name="Dagger Storm">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attack nearby enemies with 6871 Power added to P. Atk. Over-hit. -->
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 133 135 140 145 149 154 159 164 </table>
 		<table name="#power"> 6871 7012 7300 7599 7909 8232 8568 8917 </table>
 		<set name="icon" val="icon.skill0005" />
-		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="300" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AURA" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLevel" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1530" />
 		<set name="coolTime" val="200" />
@@ -1508,18 +1577,20 @@
 		</for>
 	</skill>
 	<skill id="10554" levels="7" name="Power Bluff">
+		<!-- Glory Days confirmed -->
 		<!-- For 3 sec., turns the enemy's back to you and Stuns them. Requires a dagger or dual dagger. -->
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="120" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="icon" val="icon.skill10554" />
-		<set name="lvlBonusRate" val="1" />
+		<set name="lvlBonusRate" val="20" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="40" />
 		<set name="castRange" val="40" />
@@ -1536,13 +1607,13 @@
 			<effect name="Bluff">
 				<param chance="80" />
 			</effect>
-			<effect name="TargetCancel">
-				<param chance="80" />
-			</effect>
+			<effect name="TargetCancel" />
 			<effect name="DeleteHateOfMe">
-				<param chance="80" />
+				<param chance="90" />
 			</effect>
-			<effect name="BlockActions" />
+			<effect name="BlockActions">
+				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
 		</for>
 		<endEffects>
 			<effect name="CallSkill">
@@ -1551,29 +1622,38 @@
 		</endEffects>
 	</skill>
 	<skill id="10555" levels="1" name="Impaired">
+		<!-- Glory Days confirmed -->
 		<!-- Cannot move for 5 seconds. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
-		<set name="activateRate" val="40" /> <!-- Guessed -->
+		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="icon" val="icon.skill1201" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1200" />
 		<set name="isDebuff" val="true" />
 		<set name="isTriggeredSkill" val="true" />
-		<set name="trait" val="HOLD" />
+		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="Root" />
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10556" levels="1" name="Illusion Hide">
+		<!-- Glory Days confirmed -->
 		<!-- Becomes hidden momentarily. -->
 		<set name="icon" val="icon.skill10517" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3" />
+		<set name="abnormalTime" val="2" />
 		<set name="abnormalType" val="HIDE" />
 		<set name="abnormalVisualEffect" val="STEALTH" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A2" />
 		<set name="removedOnAnyActionExceptMove" val="true" />
 		<set name="removedOnDamage" val="true" />
@@ -1584,13 +1664,25 @@
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Hide" />
+			<effect name="Buff">
+				<mul stat="runSpd" val="0.8" />
+				<mul stat="regHp" val="1.15" />
+			</effect>
+			<effect name="DispelByCategory">
+				<param slot="debuff" rate="100" max="10" />
+			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="ROOT_PHYSICALLY,3" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10557" levels="2" name="Maximize Critical">
 		<!-- For 20 sec., side Critical Rate + 30% and rear Critical Rate + 60%. During a critical attack, 50 % chance of triggering Critical level 2. -->
-		<table name="#abnormalLvls"> 1 2 </table>
+		<table name="#abnormalLvls"> 2 3 </table>
 		<table name="#icons"> icon.skill10542 icon.skill10542_2 </table>
 		<table name="#triggeredLevel"> 2 0 </table>
+		<table name="#rCrit1"> 1.3 1.4 </table>
+		<table name="#rCrit2"> 1.6 1.7 </table>
 		<set name="icon" val="#icons" />
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="20" />
@@ -1602,13 +1694,13 @@
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.3">
+				<mul stat="rCrit" val="#rCrit1">
 					<and>
 						<player front="false" />
 						<player behind="false" />
 					</and>
 				</mul>
-				<mul stat="rCrit" val="1.6">
+				<mul stat="rCrit" val="#rCrit2">
 					<player behind="true" />
 				</mul>
 			</effect>
