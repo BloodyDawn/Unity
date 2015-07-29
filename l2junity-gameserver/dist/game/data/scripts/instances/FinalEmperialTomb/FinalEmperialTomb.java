@@ -849,7 +849,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 					if ((_world.frintezza != null) && !_world.frintezza.isDead() && (_world.activeScarlet != null) && !_world.activeScarlet.isDead())
 					{
 						List<Creature> targetList = new LinkedList<>();
-						if (skill.hasEffectType(L2EffectType.STUN) || skill.isDebuff())
+						if (skill.hasEffectType(L2EffectType.BLOCK_ACTIONS) || skill.isDebuff())
 						{
 							for (int objId : _world.getAllowed())
 							{

@@ -3327,7 +3327,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		if (removeEffects)
 		{
-			stopEffects(L2EffectType.STUN);
+			stopEffects(L2EffectType.BLOCK_ACTIONS);
 		}
 		
 		if (!isPlayer())
