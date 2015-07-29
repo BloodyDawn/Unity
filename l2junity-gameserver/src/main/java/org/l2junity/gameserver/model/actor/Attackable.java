@@ -21,9 +21,11 @@ package org.l2junity.gameserver.model.actor;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicReference;
@@ -846,26 +848,7 @@ public class Attackable extends Npc
 			return null;
 		}
 		
-		Creature mostHated = null;
-		int maxHate = 0;
-		
-		// While Interacting over This Map Removing Object is Not Allowed
-		// Go through the aggroList of the L2Attackable
-		for (AggroInfo ai : getAggroList().values())
-		{
-			if (ai == null)
-			{
-				continue;
-			}
-			
-			if (ai.checkHate(this) > maxHate)
-			{
-				mostHated = ai.getAttacker();
-				maxHate = ai.getHate();
-			}
-		}
-		
-		return mostHated;
+		return getAggroList().values().stream().filter(Objects::nonNull).sorted(Comparator.comparingInt(AggroInfo::getHate)).map(AggroInfo::getAttacker).findFirst().orElse(null);
 	}
 	
 	/**

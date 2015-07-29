@@ -80,6 +80,7 @@ public final class EffectMasterHandler
 		DefenceTrait.class,
 		DeleteHate.class,
 		DeleteHateOfMe.class,
+		DeleteTopAgro.class,
 		DetectHiddenObjects.class,
 		Detection.class,
 		DisableTargeting.class,
