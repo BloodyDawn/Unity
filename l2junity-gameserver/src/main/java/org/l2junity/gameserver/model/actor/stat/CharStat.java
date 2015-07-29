@@ -425,36 +425,6 @@ public class CharStat
 		return (int) calcStat(Stats.STAT_CHA, _activeChar.getTemplate().getBaseCHA());
 	}
 	
-	public int getMovementSpeedStatBonus()
-	{
-		byte speedStat = (byte) calcStat(Stats.STAT_SPEED, -1);
-		if ((speedStat >= 0) && (speedStat < BaseStats.values().length))
-		{
-			// Very bad way of implementation... rework it once a better way is found.
-			switch (speedStat)
-			{
-				case 0: // STR
-					return Math.max(0, _activeChar.getSTR() - 55);
-				case 1: // INT
-					return Math.max(0, _activeChar.getINT() - 55);
-				case 2: // DEX
-					return Math.max(0, _activeChar.getDEX() - 55);
-				case 3: // WIT
-					return Math.max(0, _activeChar.getWIT() - 55);
-				case 4: // CON
-					return Math.max(0, _activeChar.getCON() - 55);
-				case 5: // MEN
-					return Math.max(0, _activeChar.getMEN() - 55);
-				case 6: // CHA
-					return Math.max(0, _activeChar.getCHA() - 55);
-				case 7: // LUC
-					return Math.max(0, _activeChar.getLUC() - 55);
-			}
-		}
-		
-		return 0;
-	}
-	
 	public double getMovementSpeedMultiplier()
 	{
 		double baseSpeed;
@@ -474,7 +444,7 @@ public class CharStat
 	 */
 	public double getRunSpeed()
 	{
-		final double baseRunSpd = _activeChar.isInsideZone(ZoneId.WATER) ? getSwimRunSpeed() : getBaseMoveSpeed(MoveType.RUN) + getMovementSpeedStatBonus();
+		final double baseRunSpd = _activeChar.isInsideZone(ZoneId.WATER) ? getSwimRunSpeed() : getBaseMoveSpeed(MoveType.RUN);
 		if (baseRunSpd <= 0)
 		{
 			return 0;
@@ -488,7 +458,7 @@ public class CharStat
 	 */
 	public double getWalkSpeed()
 	{
-		final double baseWalkSpd = _activeChar.isInsideZone(ZoneId.WATER) ? getSwimWalkSpeed() : getBaseMoveSpeed(MoveType.WALK) + getMovementSpeedStatBonus();
+		final double baseWalkSpd = _activeChar.isInsideZone(ZoneId.WATER) ? getSwimWalkSpeed() : getBaseMoveSpeed(MoveType.WALK);
 		if (baseWalkSpd <= 0)
 		{
 			return 0;
