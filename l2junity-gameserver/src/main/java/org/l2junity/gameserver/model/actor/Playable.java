@@ -22,6 +22,7 @@ import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.PlayableStat;
@@ -186,11 +187,10 @@ public abstract class Playable extends Creature
 		
 		if (killer != null)
 		{
-			PlayerInstance player = killer.getActingPlayer();
-			
-			if (player != null)
+			final PlayerInstance killerPlayer = killer.getActingPlayer();
+			if ((killerPlayer != null) && isPlayable())
 			{
-				player.onKillUpdatePvPKarma(this);
+				killerPlayer.onPlayerKill(this);
 			}
 		}
 		
@@ -200,63 +200,36 @@ public abstract class Playable extends Creature
 		return true;
 	}
 	
-	public boolean checkIfPvP(Creature target)
+	public boolean checkIfPvP(PlayerInstance target)
 	{
-		if (target == null)
-		{
-			return false; // Target is null
-		}
-		else if (target == this)
-		{
-			return false; // Target is self
-		}
-		else if (!target.isPlayable())
-		{
-			return false; // Target is not a L2Playable
-		}
-		
 		final PlayerInstance player = getActingPlayer();
-		if (player == null)
+		
+		if ((player == null) || (target == null) || (player == target))
 		{
-			return false; // Active player is null
-		}
-		else if (player.getReputation() < 0)
-		{
-			return false; // Active player has karma
+			return true;
 		}
 		
-		final PlayerInstance targetPlayer = target.getActingPlayer();
-		if (targetPlayer == null)
+		if (target.isOnDarkSide())
 		{
-			return false; // Target player is null
+			return true;
 		}
-		else if (targetPlayer == this)
+		else if (target.getReputation() < 0)
 		{
-			return false; // Target player is self
+			return true;
 		}
-		else if (targetPlayer.getReputation() < 0)
+		else if ((player.getPvpFlag() > 0) && (target.getPvpFlag() > 0))
 		{
-			return false; // Target player has karma
+			return true;
 		}
-		else if (targetPlayer.getPvpFlag() == 0)
+		
+		final L2Clan playerClan = player.getClan();
+		final L2Clan targetClan = target.getClan();
+		
+		if ((playerClan != null) && (targetClan != null) && playerClan.isAtWarWith(targetClan) && targetClan.isAtWarWith(playerClan))
 		{
-			return false;
+			return (player.getPledgeType() != L2Clan.SUBUNIT_ACADEMY) && (target.getPledgeType() != L2Clan.SUBUNIT_ACADEMY);
 		}
-		return true;
-		// Even at war, there should be PvP flag
-		// if(
-		// player.getClan() == null ||
-		// targetPlayer.getClan() == null ||
-		// (
-		// !targetPlayer.getClan().isAtWarWith(player.getClanId()) &&
-		// targetPlayer.getWantsPeace() == 0 &&
-		// player.getWantsPeace() == 0
-		// )
-		// )
-		// {
-		// return true;
-		// }
-		// return false;
+		return false;
 	}
 	
 	/**
