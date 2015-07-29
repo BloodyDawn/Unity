@@ -221,6 +221,7 @@ public final class Config
 	public static int ALT_CLAN_MEMBERS_FOR_WAR;
 	public static boolean ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH;
 	public static boolean REMOVE_CASTLE_CIRCLETS;
+	public static int ALT_PARTY_MAX_MEMBERS;
 	public static int ALT_PARTY_RANGE;
 	public static int ALT_PARTY_RANGE2;
 	public static boolean ALT_LEAVE_PARTY_LEADER;
@@ -1515,6 +1516,7 @@ public final class Config
 			ALT_CLAN_MEMBERS_FOR_WAR = Character.getInt("AltClanMembersForWar", 15);
 			ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH = Character.getBoolean("AltMembersCanWithdrawFromClanWH", false);
 			REMOVE_CASTLE_CIRCLETS = Character.getBoolean("RemoveCastleCirclets", true);
+			ALT_PARTY_MAX_MEMBERS = Character.getInt("AltPartyMaxMembers", 7);
 			ALT_PARTY_RANGE = Character.getInt("AltPartyRange", 1600);
 			ALT_PARTY_RANGE2 = Character.getInt("AltPartyRange2", 1400);
 			ALT_LEAVE_PARTY_LEADER = Character.getBoolean("AltLeavePartyLeader", false);
@@ -2416,7 +2418,7 @@ public final class Config
 			MMO_MAX_READ_PER_PASS = mmoSettings.getInt("MaxReadPerPass", 12);
 			MMO_HELPER_BUFFER_COUNT = mmoSettings.getInt("HelperBufferCount", 20);
 			MMO_TCP_NODELAY = mmoSettings.getBoolean("TcpNoDelay", false);
-
+			
 			// Email
 			final PropertiesParser emailSettings = new PropertiesParser(EMAIL_CONFIG_FILE);
 			
@@ -2451,7 +2453,7 @@ public final class Config
 	{
 		switch (pName.trim().toLowerCase())
 		{
-		// rates.properties
+			// rates.properties
 			case "ratexp":
 				RATE_XP = Float.parseFloat(pValue);
 				break;

@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
+import org.l2junity.Config;
 import org.l2junity.gameserver.enums.PartyDistributionType;
 import org.l2junity.gameserver.model.BlockList;
 import org.l2junity.gameserver.model.Party;
@@ -51,8 +52,8 @@ public final class RequestJoinParty implements IClientIncomingPacket
 	@Override
 	public void run(L2GameClient client)
 	{
-		PlayerInstance requestor = client.getActiveChar();
-		PlayerInstance target = World.getInstance().getPlayer(_name);
+		final PlayerInstance requestor = client.getActiveChar();
+		final PlayerInstance target = World.getInstance().getPlayer(_name);
 		
 		if (requestor == null)
 		{
@@ -163,7 +164,7 @@ public final class RequestJoinParty implements IClientIncomingPacket
 		{
 			requestor.sendPacket(SystemMessageId.ONLY_THE_LEADER_CAN_GIVE_OUT_INVITATIONS);
 		}
-		else if (party.getMemberCount() >= 9)
+		else if (party.getMemberCount() >= Config.ALT_PARTY_MAX_MEMBERS)
 		{
 			requestor.sendPacket(SystemMessageId.THE_PARTY_IS_FULL);
 		}
