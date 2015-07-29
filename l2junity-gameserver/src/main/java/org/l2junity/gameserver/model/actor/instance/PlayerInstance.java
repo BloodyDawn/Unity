@@ -8323,15 +8323,11 @@ public final class PlayerInstance extends Playable
 			return false;
 		}
 		
-		// Support for GOD wizard skills with stances (Fire, Water, Wind, Earth, 4 Elements)
-		final int stanceSkillId = skill.getIdByStance(this);
-		if (stanceSkillId > 0)
+		// Support for wizard skills with stances (Fire, Water, Wind, Earth)
+		final Skill attachedSkill = skill.getAttachedSkill(this);
+		if (attachedSkill != null)
 		{
-			final Skill stanceSkill = SkillData.getInstance().getSkill(stanceSkillId, skill.getLevel());
-			if (stanceSkill != null)
-			{
-				skill = stanceSkill;
-			}
+			skill = attachedSkill;
 		}
 		
 		// ************************************* Check Casting in Progress *******************************************

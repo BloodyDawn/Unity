@@ -122,7 +122,8 @@
 		<!-- Updated to IO -->
 		<!-- Bestows the property of Fire to magic spells cast. -->
 		<set name="icon" val="icon.skill10305" />
-		<set name="canBeDispelled" val="false" />
+		<set name="toggleGroupId" val="1" />
+		<set name="isNecessaryToggle" val="true" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
@@ -138,17 +139,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
-			<effect name="EffectFlag">
-				<param effectFlag="FIRE_STANCE" />
-			</effect>
-		</for>
 	</skill>
 	<skill id="11008" levels="1" name="Water Stance">
 		<!-- Updated to IO -->
 		<!-- Bestows the property of Water to magic spells cast. -->
 		<set name="icon" val="icon.skill10306" />
-		<set name="canBeDispelled" val="false" />
+		<set name="toggleGroupId" val="1" />
+		<set name="isNecessaryToggle" val="true" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="2000" />
@@ -163,17 +160,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
-			<effect name="EffectFlag">
-				<param effectFlag="WATER_STANCE" />
-			</effect>
-		</for>
 	</skill>
 	<skill id="11009" levels="1" name="Wind Stance">
 		<!-- Updated to IO -->
 		<!-- Bestows the property of Wind to magic spells cast. -->
 		<set name="icon" val="icon.skill10307" />
-		<set name="canBeDispelled" val="false" />
+		<set name="toggleGroupId" val="1" />
+		<set name="isNecessaryToggle" val="true" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="2000" />
@@ -188,17 +181,13 @@
 				</not>
 			</and>
 		</cond>
-		<for>
-			<effect name="EffectFlag">
-				<param effectFlag="WIND_STANCE" />
-			</effect>
-		</for>
 	</skill>
 	<skill id="11010" levels="1" name="Earth Stance">
 		<!-- Updated to IO -->
 		<!-- Bestows the property of Earth to magic spells cast. -->
 		<set name="icon" val="icon.skill10304" />
-		<set name="canBeDispelled" val="false" />
+		<set name="toggleGroupId" val="1" />
+		<set name="isNecessaryToggle" val="true" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="2000" />
@@ -213,11 +202,6 @@
 				</not>
 			</and>
 		</cond>
-		<for>
-			<effect name="EffectFlag">
-				<param effectFlag="EARTH_STANCE" />
-			</effect>
-		</for>
 	</skill>
 	<skill id="11011" levels="11" name="Elemental Spike">
 		<!-- Updated to IO -->
@@ -227,14 +211,11 @@
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<set name="icon" val="icon.skill11011" />
+		<set name="attachToggleGroupId" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="reuseDelayGroup" val="11011" />
-		<set name="fireStanceSkillId" val="11012" />
-		<set name="waterStanceSkillId" val="11013" />
-		<set name="windStanceSkillId" val="11014" />
-		<set name="earthStanceSkillId" val="11015" />
-		<set name="allStanceSkillId" val="11016" />
+		<set name="doubleCastSkill" val="11016" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -243,6 +224,12 @@
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<attachSkillList>
+			<skill requiredId="11007" id="11012" /> <!-- Fire Stance / Elemental Spike (Fire) -->
+			<skill requiredId="11008" id="11013" /> <!-- Water Stance / Elemental Spike (Water) -->
+			<skill requiredId="11009" id="11014" /> <!-- Wind Stance / Elemental Spike (Wind) -->
+			<skill requiredId="11010" id="11015" /> <!-- Earth Stance / Elemental Spike (Earth) -->
+		</attachSkillList>
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
@@ -390,14 +377,11 @@
 		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<set name="icon" val="icon.skill11017" />
+		<set name="attachToggleGroupId" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="reuseDelayGroup" val="11017" />
-		<set name="fireStanceSkillId" val="11018" />
-		<set name="waterStanceSkillId" val="11019" />
-		<set name="windStanceSkillId" val="11020" />
-		<set name="earthStanceSkillId" val="11021" />
-		<set name="allStanceSkillId" val="11022" />
+		<set name="doubleCastSkills" val="11022" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -407,6 +391,12 @@
 		<set name="reuseDelay" val="2400" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<attachSkillList>
+			<skill requiredId="11007" id="11018" /> <!-- Fire Stance / Elemental Crash (Fire) -->
+			<skill requiredId="11008" id="11019" /> <!-- Water Stance / Elemental Crash (Water) -->
+			<skill requiredId="11009" id="11020" /> <!-- Wind Stance / Elemental Crash (Wind) -->
+			<skill requiredId="11010" id="11021" /> <!-- Earth Stance / Elemental Crash (Earth) -->
+		</attachSkillList>
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
@@ -559,14 +549,11 @@
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<set name="icon" val="icon.skill11023" />
+		<set name="attachToggleGroupId" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="reuseDelayGroup" val="11023" />
-		<set name="fireStanceSkillId" val="11024" />
-		<set name="waterStanceSkillId" val="11025" />
-		<set name="windStanceSkillId" val="11026" />
-		<set name="earthStanceSkillId" val="11027" />
-		<set name="allStanceSkillId" val="11028" />
+		<set name="doubleCastSkill" val="11028" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -576,6 +563,12 @@
 		<set name="reuseDelay" val="6700" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<attachSkillList>
+			<skill requiredId="11007" id="11024" /> <!-- Fire Stance / Elemental Destruction (Fire) -->
+			<skill requiredId="11008" id="11025" /> <!-- Water Stance / Elemental Destruction (Water) -->
+			<skill requiredId="11009" id="11026" /> <!-- Wind Stance / Elemental Destruction (Wind) -->
+			<skill requiredId="11010" id="11027" /> <!-- Earth Stance / Elemental Destruction (Earth) -->
+		</attachSkillList>
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
@@ -836,14 +829,11 @@
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<set name="icon" val="icon.skill11034" />
+		<set name="attachToggleGroupId" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
 		<set name="reuseDelayGroup" val="11034" />
-		<set name="fireStanceSkillId" val="11035" />
-		<set name="waterStanceSkillId" val="11036" />
-		<set name="windStanceSkillId" val="11037" />
-		<set name="earthStanceSkillId" val="11038" />
-		<set name="allStanceSkillId" val="11039" />
+		<set name="doubleCastSkill" val="11039" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -853,6 +843,12 @@
 		<set name="reuseDelay" val="6700" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<attachSkillList>
+			<skill requiredId="11007" id="11035" /> <!-- Fire Stance / Elemental Blast (Fire) -->
+			<skill requiredId="11008" id="11036" /> <!-- Water Stance / Elemental Blast (Water) -->
+			<skill requiredId="11009" id="11037" /> <!-- Wind Stance / Elemental Blast (Wind) -->
+			<skill requiredId="11010" id="11038" /> <!-- Earth Stance / Elemental Blast (Earth) -->
+		</attachSkillList>
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
@@ -1008,14 +1004,11 @@
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<set name="icon" val="icon.skill11040" />
+		<set name="attachToggleGroupId" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
 		<set name="reuseDelayGroup" val="11040" />
-		<set name="fireStanceSkillId" val="11041" />
-		<set name="waterStanceSkillId" val="11042" />
-		<set name="windStanceSkillId" val="11043" />
-		<set name="earthStanceSkillId" val="11044" />
-		<set name="allStanceSkillId" val="11045" />
+		<set name="doubleCastSkill" val="11045" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -1025,6 +1018,12 @@
 		<set name="reuseDelay" val="6700" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<attachSkillList>
+			<skill requiredId="11007" id="11041" /> <!-- Fire Stance / Elemental Storm (Fire) -->
+			<skill requiredId="11008" id="11042" /> <!-- Water Stance / Elemental Storm (Water) -->
+			<skill requiredId="11009" id="11043" /> <!-- Wind Stance / Elemental Storm (Wind) -->
+			<skill requiredId="11010" id="11044" /> <!-- Earth Stance / Elemental Storm (Earth) -->
+		</attachSkillList>
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
@@ -1742,16 +1741,7 @@
 				<param skillId="11010" />
 			</effect>
 			<effect name="EffectFlag">
-				<param effectFlag="FIRE_STANCE" />
-			</effect>
-			<effect name="EffectFlag">
-				<param effectFlag="WATER_STANCE" />
-			</effect>
-			<effect name="EffectFlag">
-				<param effectFlag="WIND_STANCE" />
-			</effect>
-			<effect name="EffectFlag">
-				<param effectFlag="EARTH_STANCE" />
+				<param effectFlag="DOUBLE_CAST" />
 			</effect>
 		</for>
 	</skill>

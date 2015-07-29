@@ -542,6 +542,20 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="attachSkillList">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="skill">
+							<xs:complexType>
+								<xs:attribute name="id" type="xs:positiveInteger" />
+								<xs:attribute name="level" type="xs:positiveInteger" />
+								<xs:attribute name="requiredId" type="xs:positiveInteger" />
+								<xs:attribute name="requiredLevel" type="xs:positiveInteger" />
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 		</xs:choice>
 		<xs:attribute type="xs:short" name="id" use="optional" />
 		<xs:attribute type="xs:byte" name="levels" use="optional" />

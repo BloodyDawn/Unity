@@ -54,6 +54,7 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.AlterSkillHolder;
+import org.l2junity.gameserver.model.holders.AttachSkillHolder;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
@@ -195,11 +196,7 @@ public final class Skill implements IIdentifiable
 	private final boolean _isMentoring;
 	
 	// Stance skill IDs
-	private final int _fireStanceSkillId;
-	private final int _waterStanceSkillId;
-	private final int _windStanceSkillId;
-	private final int _earthStanceSkillId;
-	private final int _allStanceSkillId;
+	private final int _doubleCastSkill;
 	
 	private final boolean _canDoubleCast;
 	private final boolean _canCastWhileDisabled;
@@ -207,7 +204,9 @@ public final class Skill implements IIdentifiable
 	private final boolean _isNecessaryToggle;
 	
 	private final int _toggleGroupId;
+	private final int _attachToggleGroupId;
 	private final List<AlterSkillHolder> _alterSkills;
+	private final List<AttachSkillHolder> _attachSkills;
 	
 	public Skill(StatsSet set)
 	{
@@ -367,11 +366,7 @@ public final class Skill implements IIdentifiable
 		
 		_isMentoring = set.getBoolean("isMentoring", false);
 		
-		_fireStanceSkillId = set.getInt("fireStanceSkillId", 0);
-		_waterStanceSkillId = set.getInt("waterStanceSkillId", 0);
-		_windStanceSkillId = set.getInt("windStanceSkillId", 0);
-		_earthStanceSkillId = set.getInt("earthStanceSkillId", 0);
-		_allStanceSkillId = set.getInt("allStanceSkillId", 0);
+		_doubleCastSkill = set.getInt("doubleCastSkill", 0);
 		
 		_canDoubleCast = set.getBoolean("canDoubleCast", false);
 		_canCastWhileDisabled = set.getBoolean("canCastWhileDisabled", false);
@@ -380,7 +375,9 @@ public final class Skill implements IIdentifiable
 		_isNecessaryToggle = set.getBoolean("isNecessaryToggle", false);
 		
 		_toggleGroupId = set.getInt("toggleGroupId", -1);
+		_attachToggleGroupId = set.getInt("attachToggleGroupId", -1);
 		_alterSkills = set.getList("alterSkill", AlterSkillHolder.class);
+		_attachSkills = set.getList("attachSkillList", AttachSkillHolder.class);
 	}
 	
 	public TraitType getTraitType()
@@ -1703,37 +1700,54 @@ public final class Skill implements IIdentifiable
 	
 	/**
 	 * @param activeChar
-	 * @return skill ID depending on the current stance of the character or 0 if there is no such relation.
+	 * @return alternative skill that has been attached due to the effect of toggle skills on the player (e.g Fire Stance, Water Stance).
 	 */
-	public int getIdByStance(Creature activeChar)
+	public Skill getAttachedSkill(Creature activeChar)
 	{
-		if (activeChar.isAffected(EffectFlag.FIRE_STANCE) && activeChar.isAffected(EffectFlag.WATER_STANCE) && activeChar.isAffected(EffectFlag.WIND_STANCE) && activeChar.isAffected(EffectFlag.EARTH_STANCE))
+		// If character is double casting, return double cast skill.
+		if ((getDoubleCastSkill() > 0) && activeChar.isAffected(EffectFlag.DOUBLE_CAST))
 		{
-			return _allStanceSkillId;
-		}
-		else if (activeChar.isAffected(EffectFlag.FIRE_STANCE))
-		{
-			return _fireStanceSkillId;
-		}
-		else if (activeChar.isAffected(EffectFlag.WATER_STANCE))
-		{
-			return _waterStanceSkillId;
-		}
-		else if (activeChar.isAffected(EffectFlag.WIND_STANCE))
-		{
-			return _windStanceSkillId;
-		}
-		else if (activeChar.isAffected(EffectFlag.EARTH_STANCE))
-		{
-			return _earthStanceSkillId;
+			return SkillData.getInstance().getSkill(getDoubleCastSkill(), getLevel());
 		}
 		
-		return 0;
+		// Default toggle group ID, assume nothing attached.
+		if (getAttachToggleGroupId() <= 0)
+		{
+			return null;
+		}
+		
+		//@formatter:off
+		final int toggleSkillId = activeChar.getEffectList().getToggles().stream()
+		.filter(info -> info.getSkill().getToggleGroupId() == getAttachToggleGroupId())
+		.mapToInt(info -> info.getSkill().getId())
+		.findAny().orElse(0);
+		//@formatter:on
+		
+		// No active toggles with this toggle group ID found.
+		if (toggleSkillId == 0)
+		{
+			return null;
+		}
+		
+		final AttachSkillHolder attachedSkill = getAttachSkills().stream().filter(ash -> ash.getRequiredSkillId() == toggleSkillId).findAny().orElse(null);
+		
+		// No attached skills for this toggle found.
+		if (attachedSkill == null)
+		{
+			return null;
+		}
+		
+		return SkillData.getInstance().getSkill(attachedSkill.getSkillId(), getLevel());
 	}
 	
 	public boolean canDoubleCast()
 	{
 		return _canDoubleCast;
+	}
+	
+	public int getDoubleCastSkill()
+	{
+		return _doubleCastSkill;
 	}
 	
 	public boolean canCastWhileDisabled()
@@ -1756,8 +1770,18 @@ public final class Skill implements IIdentifiable
 		return _toggleGroupId;
 	}
 	
+	public int getAttachToggleGroupId()
+	{
+		return _attachToggleGroupId;
+	}
+	
 	public List<AlterSkillHolder> getAlterSkills()
 	{
 		return _alterSkills;
+	}
+	
+	public List<AttachSkillHolder> getAttachSkills()
+	{
+		return _attachSkills;
 	}
 }

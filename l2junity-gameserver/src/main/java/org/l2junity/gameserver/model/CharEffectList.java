@@ -1326,7 +1326,7 @@ public final class CharEffectList
 		
 		if (skill.isToggle() && (skill.getToggleGroupId() > 0))
 		{
-			getToggles().stream().filter(b -> b.getSkill().getToggleGroupId() == skill.getToggleGroupId()).forEach(b -> b.stopAllEffects(true));
+			getToggles().stream().filter(b -> b.getSkill().getToggleGroupId() == skill.getToggleGroupId()).forEach(b -> stopSkillEffects(true, b.getSkill().getId()));
 		}
 		
 		// Prevent adding and initializing buffs/effects on dead creatures.

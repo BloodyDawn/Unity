@@ -26,9 +26,10 @@ import java.util.List;
 import org.l2junity.commons.util.IXmlReader;
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.engines.DocumentBase;
-import org.l2junity.gameserver.model.holders.AlterSkillHolder;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.holders.AlterSkillHolder;
+import org.l2junity.gameserver.model.holders.AttachSkillHolder;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.EffectScope;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -251,6 +252,23 @@ public class DocumentSkill extends DocumentBase implements IXmlReader
 						}
 					}
 					_currentSkill.sets[i - 1].set("alterSkill", alterSkills);
+				}
+				else if ("attachSkillList".equalsIgnoreCase(n.getNodeName()))
+				{
+					final List<AttachSkillHolder> attachSkills = new ArrayList<>();
+					for (Node alterNode = n.getFirstChild(); alterNode != null; alterNode = alterNode.getNextSibling())
+					{
+						if ("skill".equalsIgnoreCase(alterNode.getNodeName()))
+						{
+							final NamedNodeMap nodeAttrs = alterNode.getAttributes();
+							final int id = parseInteger(nodeAttrs, "id");
+							final int level = parseInteger(nodeAttrs, "level", 1);
+							final int requiredId = parseInteger(nodeAttrs, "requiredId");
+							final int requiredLevel = parseInteger(nodeAttrs, "requiredLevel", 1);
+							attachSkills.add(new AttachSkillHolder(id, level, requiredId, requiredLevel));
+						}
+					}
+					_currentSkill.sets[i - 1].set("attachSkillList", attachSkills);
 				}
 			}
 		}

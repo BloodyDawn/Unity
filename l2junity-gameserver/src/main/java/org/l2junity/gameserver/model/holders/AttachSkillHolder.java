@@ -16,41 +16,31 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.effects;
+package org.l2junity.gameserver.model.holders;
+
 
 /**
- * @author UnAfraid
+ * @author Nik
  */
-public enum EffectFlag
+public class AttachSkillHolder extends SkillHolder
 {
-	NONE,
-	RESURRECTION_SPECIAL,
-	NOBLESS_BLESSING,
-	SILENT_MOVE,
-	PROTECTION_BLESSING,
-	RELAXING,
-	FEAR,
-	CONFUSED,
-	MUTED,
-	PSYCHICAL_MUTED,
-	PSYCHICAL_ATTACK_MUTED,
-	DISARMED,
-	ROOTED,
-	BLOCK_ACTIONS,
-	BETRAYED,
-	INVUL,
-	BLOCK_RESURRECTION,
-	SERVITOR_SHARE,
-	UNTARGETABLE,
-	CANNOT_ESCAPE,
-	DEBUFF_BLOCK,
-	DOUBLE_CAST,
-	ATTACK_BEHIND,
-	TARGETING_DISABLED,
-	FACEOFF;
+	private final int _requiredSkillId;
+	private final int _requiredSkillLevel;
 	
-	public int getMask()
+	public AttachSkillHolder(int skillId, int skillLevel, int requiredSkillId, int requiredSkillLevel)
 	{
-		return 1 << ordinal();
+		super(skillId, skillLevel);
+		_requiredSkillId = requiredSkillId;
+		_requiredSkillLevel = requiredSkillLevel;
+	}
+	
+	public int getRequiredSkillId()
+	{
+		return _requiredSkillId;
+	}
+	
+	public int getRequiredSkillLevel()
+	{
+		return _requiredSkillLevel;
 	}
 }
