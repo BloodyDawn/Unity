@@ -270,7 +270,7 @@ public final class Skill implements IIdentifiable
 			_reuseDelay = set.getInt("reuseDelay", 0);
 		}
 		
-		_reuseDelayGroup = set.getInt("reuseDelayGroup", 0);
+		_reuseDelayGroup = set.getInt("reuseDelayGroup", -1);
 		_reuseHashCode = SkillData.getSkillHashCode(_reuseDelayGroup > 0 ? _reuseDelayGroup : _id, _level);
 		
 		_affectRange = set.getInt("affectRange", 0);
