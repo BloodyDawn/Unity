@@ -863,7 +863,8 @@ public final class CharEffectList
 	{
 		if (hasToggles())
 		{
-			getToggles().forEach(b -> stopAndRemove(b, getToggles()));
+			// Ignore necessary toggles.
+			getToggles().stream().filter(b -> !b.getSkill().isNecessaryToggle()).forEach(b -> stopAndRemove(b, getToggles()));
 			// Update effect flags and icons.
 			updateEffectList(update);
 		}
