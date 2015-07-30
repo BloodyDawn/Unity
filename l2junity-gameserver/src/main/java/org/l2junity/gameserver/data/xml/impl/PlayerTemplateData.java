@@ -20,14 +20,9 @@ package org.l2junity.gameserver.data.xml.impl;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.EnumMap;
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.TreeMap;
 
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.Location;
@@ -48,8 +43,7 @@ public final class PlayerTemplateData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(PlayerTemplateData.class);
 	
-	private final Map<ClassId, L2PcTemplate> _playerTemplates = new EnumMap<>(ClassId.class);
-	private final Map<ClassId, StatsSet> _templates = new EnumMap<>(ClassId.class);
+	private final Map<ClassId, L2PcTemplate> _playerTemplates = new HashMap<>();
 	
 	private int _dataCount = 0;
 	
@@ -63,7 +57,6 @@ public final class PlayerTemplateData implements IGameXmlReader
 	{
 		_playerTemplates.clear();
 		parseDatapackDirectory("data/stats/chars/baseStats", false);
-		initializeTemplates();
 		LOGGER.info("Loaded {} character templates.", _playerTemplates.size());
 		LOGGER.info("Loaded {} level up gain records.", _dataCount);
 	}
@@ -72,11 +65,12 @@ public final class PlayerTemplateData implements IGameXmlReader
 	public void parseDocument(Document doc, File f)
 	{
 		NamedNodeMap attrs;
+		int classId = 0;
+		
 		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
 		{
 			if ("list".equalsIgnoreCase(n.getNodeName()))
 			{
-				int classId = 0;
 				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
 				{
 					if ("classId".equalsIgnoreCase(d.getNodeName()))
@@ -85,13 +79,14 @@ public final class PlayerTemplateData implements IGameXmlReader
 					}
 					else if ("staticData".equalsIgnoreCase(d.getNodeName()))
 					{
-						final StatsSet set = new StatsSet();
+						StatsSet set = new StatsSet();
 						set.set("classId", classId);
-						final List<Location> creationPoints = new ArrayList<>();
+						List<Location> creationPoints = new ArrayList<>();
 						
 						for (Node nd = d.getFirstChild(); nd != null; nd = nd.getNextSibling())
 						{
-							if (nd.getNodeType() != Node.ELEMENT_NODE)
+							// Skip odd nodes
+							if (nd.getNodeName().equals("#text"))
 							{
 								continue;
 							}
@@ -100,11 +95,6 @@ public final class PlayerTemplateData implements IGameXmlReader
 							{
 								for (Node cnd = nd.getFirstChild(); cnd != null; cnd = cnd.getNextSibling())
 								{
-									if (cnd.getNodeType() != Node.ELEMENT_NODE)
-									{
-										continue;
-									}
-									
 									// use L2CharTemplate(superclass) fields for male collision height and collision radius
 									if (nd.getNodeName().equalsIgnoreCase("collisionMale"))
 									{
@@ -138,9 +128,9 @@ public final class PlayerTemplateData implements IGameXmlReader
 									{
 										set.set("baseSwimRunSpd", cnd.getTextContent());
 									}
-									else
+									else if (!cnd.getNodeName().equals("#text"))
 									{
-										set.set(nd.getNodeName() + cnd.getNodeName(), cnd.getTextContent());
+										set.set((nd.getNodeName() + cnd.getNodeName()), cnd.getTextContent());
 									}
 								}
 							}
@@ -153,39 +143,24 @@ public final class PlayerTemplateData implements IGameXmlReader
 						set.set("basePDef", (set.getInt("basePDefchest", 0) + set.getInt("basePDeflegs", 0) + set.getInt("basePDefhead", 0) + set.getInt("basePDeffeet", 0) + set.getInt("basePDefgloves", 0) + set.getInt("basePDefunderwear", 0) + set.getInt("basePDefcloak", 0)));
 						set.set("baseMDef", (set.getInt("baseMDefrear", 0) + set.getInt("baseMDeflear", 0) + set.getInt("baseMDefrfinger", 0) + set.getInt("baseMDefrfinger", 0) + set.getInt("baseMDefneck", 0)));
 						
-						set.set("creationPoints", creationPoints);
-						_templates.put(ClassId.getClassId(classId), set);
+						_playerTemplates.put(ClassId.getClassId(classId), new L2PcTemplate(set, creationPoints));
 					}
 					else if ("lvlUpgainData".equalsIgnoreCase(d.getNodeName()))
 					{
-						final LevelUpHolder holder = new LevelUpHolder();
-						final StatsSet set = _templates.get(ClassId.getClassId(classId));
-						if (set == null)
-						{
-							LOGGER.warn("Couldn't find basic player template data but found levelUpagainData!");
-							continue;
-						}
-						
-						if (set.getSet().containsKey("levelUpData"))
-						{
-							LOGGER.warn("Player template data contains two times levelUpagainData!");
-						}
-						
-						set.set("levelUpData", holder);
 						for (Node lvlNode = d.getFirstChild(); lvlNode != null; lvlNode = lvlNode.getNextSibling())
 						{
 							if ("level".equalsIgnoreCase(lvlNode.getNodeName()))
 							{
 								attrs = lvlNode.getAttributes();
-								final int level = parseInteger(attrs, "val");
+								int level = parseInteger(attrs, "val");
 								
 								for (Node valNode = lvlNode.getFirstChild(); valNode != null; valNode = valNode.getNextSibling())
 								{
 									String nodeName = valNode.getNodeName();
 									
-									if ((nodeName.startsWith("hp") || nodeName.startsWith("mp") || nodeName.startsWith("cp")))
+									if ((nodeName.startsWith("hp") || nodeName.startsWith("mp") || nodeName.startsWith("cp")) && _playerTemplates.containsKey(ClassId.getClassId(classId)))
 									{
-										holder.addLevelData(level, new LevelUpData(nodeName, Double.parseDouble(valNode.getTextContent())));
+										_playerTemplates.get(ClassId.getClassId(classId)).setUpgainValue(nodeName, level, Double.parseDouble(valNode.getTextContent()));
 										_dataCount++;
 									}
 								}
@@ -194,100 +169,6 @@ public final class PlayerTemplateData implements IGameXmlReader
 					}
 				}
 			}
-		}
-	}
-	
-	private void initializeTemplates()
-	{
-		for (Entry<ClassId, StatsSet> entry : _templates.entrySet())
-		{
-			final ClassId classId = entry.getKey();
-			final StatsSet set = entry.getValue();
-			
-			if (classId.getParent() != null)
-			{
-				final StatsSet newSet = new StatsSet();
-				final Set<ClassId> parents = new HashSet<>();
-				ClassId parent = classId;
-				while ((parent = parent.getParent()) != null)
-				{
-					parents.add(parent);
-				}
-				
-				parents.stream().sorted(Comparator.comparingInt(ClassId::ordinal)).forEach(id ->
-				{
-					final StatsSet parentSet = _templates.get(id);
-					if (parentSet == null)
-					{
-						LOGGER.warn("Missing template {}", id);
-						return;
-					}
-					newSet.merge(_templates.get(id));
-				});
-				initializeTemplate(classId, newSet);
-			}
-			else
-			{
-				initializeTemplate(classId, set);
-			}
-		}
-		_templates.clear();
-	}
-	
-	private void initializeTemplate(ClassId classId, StatsSet set)
-	{
-		final List<Location> creationPoints = set.getList("creationPoints", Location.class);
-		final LevelUpHolder holder = set.getObject("levelUpData", LevelUpHolder.class);
-		final L2PcTemplate template = new L2PcTemplate(set, creationPoints);
-		
-		// Apply level up again data
-		if (holder != null)
-		{
-			for (Entry<Integer, List<LevelUpData>> entry : holder.getLevelUpData().entrySet())
-			{
-				for (LevelUpData data : entry.getValue())
-				{
-					template.setUpgainValue(data.getName(), entry.getKey(), data.getValue());
-				}
-			}
-		}
-		_playerTemplates.put(classId, template);
-	}
-	
-	class LevelUpHolder
-	{
-		private final Map<Integer, List<LevelUpData>> _levelUpData = new TreeMap<>();
-		
-		public void addLevelData(int level, LevelUpData data)
-		{
-			_levelUpData.computeIfAbsent(level, key -> new ArrayList<>()).add(data);
-		}
-		
-		public Map<Integer, List<LevelUpData>> getLevelUpData()
-		{
-			return _levelUpData;
-		}
-	}
-	
-	class LevelUpData
-	{
-		private final String _name;
-		private final double _value;
-		
-		public LevelUpData(String name, double value)
-		{
-			_name = name;
-			_value = value;
-		}
-		
-		public String getName()
-		{
-			return _name;
-		}
-		
-		public double getValue()
-		{
-			return _value;
 		}
 	}
 	
