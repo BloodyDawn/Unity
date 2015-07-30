@@ -1302,10 +1302,7 @@ public final class Skill implements IIdentifiable
 			{
 				if ((addContinuousEffects && isContinuous() && !isDebuff()) || isRecoveryHerb())
 				{
-					effected.getServitors().values().forEach(s ->
-					{
-						applyEffects(effector, s, isRecoveryHerb(), 0);
-					});
+					effected.getServitors().values().forEach(s -> applyEffects(effector, s, isRecoveryHerb(), 0));
 				}
 			}
 		}
@@ -1332,10 +1329,7 @@ public final class Skill implements IIdentifiable
 			// Avoiding Servitor Share since it's implementation already "shares" the effect.
 			if (addContinuousEffects && isSharedWithSummon() && info.getEffected().isPlayer() && isContinuous() && !isDebuff() && info.getEffected().hasServitors())
 			{
-				info.getEffected().getServitors().values().forEach(s ->
-				{
-					applyEffects(effector, s, false, 0);
-				});
+				info.getEffected().getServitors().values().forEach(s -> applyEffects(effector, s, false, 0));
 			}
 		}
 		
