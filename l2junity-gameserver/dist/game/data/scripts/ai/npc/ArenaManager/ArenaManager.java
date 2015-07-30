@@ -18,6 +18,7 @@
  */
 package ai.npc.ArenaManager;
 
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
@@ -74,20 +75,11 @@ public final class ArenaManager extends AbstractNpcAI
 				if (player.getAdena() >= CP_COST)
 				{
 					takeItems(player, Inventory.ADENA_ID, CP_COST);
-					startQuestTimer("CPrecovery_delay", 2000, npc, player);
+					getTimers().addTimer("CPrecovery_delay", 2000, npc, player);
 				}
 				else
 				{
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA);
-				}
-				break;
-			}
-			case "CPrecovery_delay":
-			{
-				if ((player != null) && !player.isInsideZone(ZoneId.PVP))
-				{
-					npc.setTarget(player);
-					npc.doCast(CP_RECOVERY.getSkill());
 				}
 				break;
 			}
@@ -96,20 +88,11 @@ public final class ArenaManager extends AbstractNpcAI
 				if (player.getAdena() >= HP_COST)
 				{
 					takeItems(player, Inventory.ADENA_ID, HP_COST);
-					startQuestTimer("HPrecovery_delay", 2000, npc, player);
+					getTimers().addTimer("HPrecovery_delay", 2000, npc, player);
 				}
 				else
 				{
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA);
-				}
-				break;
-			}
-			case "HPrecovery_delay":
-			{
-				if ((player != null) && !player.isInsideZone(ZoneId.PVP))
-				{
-					npc.setTarget(player);
-					npc.doCast(HP_RECOVERY.getSkill());
 				}
 				break;
 			}
@@ -132,6 +115,25 @@ public final class ArenaManager extends AbstractNpcAI
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
+	}
+	
+	@Override
+	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
+	{
+		if ((player != null) && !player.isInsideZone(ZoneId.PVP))
+		{
+			if (event.equals("CPrecovery_delay"))
+			{
+				npc.setTarget(player);
+				npc.doCast(CP_RECOVERY.getSkill());
+			}
+			else if (event.equals("HPrecovery_delay"))
+			{
+				
+				npc.setTarget(player);
+				npc.doCast(HP_RECOVERY.getSkill());
+			}
+		}
 	}
 	
 	public static void main(String[] args)
