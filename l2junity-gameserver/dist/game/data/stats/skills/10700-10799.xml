@@ -982,12 +982,16 @@
 		</for>
 	</skill>
 	<skill id="10775" levels="6" name="Confusion Decoy">
+		<!-- Glory Days confirmed -->
 		<!-- Summons a decoy that receives attacks for you. -->
+		<table name="#magicLvl"> 87 93 99 101 103 105 </table>
 		<table name="#mpConsumes"> 60 66 72 78 84 90 </table>
 		<table name="#npcIds"> 13437 13438 13439 13467 13468 13469 </table>
 		<set name="icon" val="icon.skill10775" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
@@ -999,6 +1003,7 @@
 		</for>
 	</skill>
 	<skill id="10776" levels="4" name="Final Ultimate Escape">
+		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., P. Evasion + 60, M. Evasion + 60, M. Def. + 20%, Debuff Resistance + 95%, and P. Skill Evasion Rate + 80%. -->
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 58 63 68 72 </table>
@@ -1008,8 +1013,10 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="AVOID_UP_SPECIAL" />
 		<set name="icon" val="icon.skill10776" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1000" />
@@ -1027,39 +1034,59 @@
 		</for>
 	</skill>
 	<skill id="10777" levels="4" name="Lure Shot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Draws in the enemy's attention. -->
+		<table name="#magicLvl"> 85 101 103 105 </table>
 		<set name="icon" val="icon.skill10777" />
-		<set name="abnormalTime" val="1" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="TARGET_LOCK" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
-		<set name="trait" val="DERANGEMENT" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="77" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
-		<set name="abnormalType" val="TARGET_LOCK" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
+		</cond>
 		<for>
+			<effect name="TargetMe" />
+			<effect name="GetAgro" />
 			<effect name="AddHate">
 				<param power="500" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10778" levels="1" name="Diversion">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Transfer the aggression of nearby enemies around target to another party member. -->
+		<set name="affectRange" val="1000" />
 		<set name="icon" val="icon.skill10778" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="91" />
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="1100" />
+		<set name="castRange" val="1400" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
+		<cond>
+			<target myPartyExceptMe="true" />
+		</cond>
+		<for>
+			<effect name="TransferHate" />
+		</for>
 	</skill>
 	<skill id="10779" levels="4" name="Quick Fire">
+		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., Atk. Spd. + 20% when equipped with a bow/crossbow. -->
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 39 42 46 48 </table>
@@ -1070,21 +1097,26 @@
 		<set name="icon" val="icon.skill10779" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="120000" />
+		<cond msgId="113" addName="1">
+			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
+		</cond>
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#pAtkSpd">
-					<using kind="BOW" />
+					<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 				</mul>
 			</effect>
 		</for>
 	</skill>
 	<skill id="10780" levels="9" name="Slow Shot">
+		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 9338 Power added to P. Atk. For 10 sec., Speed - 70. Requires a bow or crossbow to be equipped. -->
 		<table name="#effectPoint"> -689 -692 -698 -704 -709 -713 -717 -721 -725 </table>
 		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
@@ -1093,28 +1125,30 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="activateRate" val="100" /> <!-- Guessed -->
+		<set name="activateRate" val="40" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="icon" val="icon.skill10780" />
-		<set name="lvlBonusRate" val="1" />
+		<set name="lvlBonusRate" val="20" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="1100" />
-		<set name="effectRange" val="1600" />
+		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="2100" />
 		<set name="coolTime" val="350" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW" />
+			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param criticalChance="15" /> <!-- FIXME: value unconfirmed -->
+				<param criticalChance="5" />
 			</effect>
 			<effect name="Debuff">
 				<sub stat="runSpd" val="70" />
@@ -1122,22 +1156,27 @@
 		</for>
 	</skill>
 	<skill id="10781" levels="4" name="Phoenix Arrow">
+		<!-- Glory Days confirmed -->
 		<!-- Shoots a magical arrow to obliterate an area. Attacks targets within the skill's range with 45215 power. -->
 		<table name="#magicLvl"> 95 101 103 105 </table>
 		<table name="#power"> 45215 56558 59316 62074 </table>
 		<set name="icon" val="icon.skill10781" />
-		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="300" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="GROUND" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="#magicLvl" val="magicLvl" />
 		<set name="mpConsume" val="1067" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="7500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-706" />
 		<set name="reuseDelay" val="30000" />
+		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW" />
+			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
@@ -1146,32 +1185,49 @@
 		</for>
 	</skill>
 	<skill id="10782" levels="1" name="Deadly Move 2">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Death blow! Please do not use. -->
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="200" />
 		<set name="icon" val="icon.skill10782" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="97" />
 		<set name="mpConsume" val="226" />
 		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="effectPoint" val="-709" />
 		<set name="isMagic" val="4" />
+		<set name="staticReuse" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="74885" />
+				<param criticalChance="15" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10783" levels="4" name="Mind's Eye">
+		<!-- Glory Days confirmed -->
 		<!-- For 1 minute, opens the eye of infinity to increase Accuracy + 25, Critical Rate + 200, and Critical Damage + 70%. -->
 		<table name="#accCombat"> 25 30 35 40 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 54 59 64 64 </table>
 		<table name="#rCrit"> 200 220 240 250 </table>
 		<table name="#cAtk"> 1.7 1.9 2.1 2.3 </table>
-		<set name="abnormalLvl" val="8" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="POSSESSION" />
 		<set name="icon" val="icon.skill10783" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3000" />
@@ -1179,24 +1235,17 @@
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE" />
-		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW" />
-		</cond>
+		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
-				<add stat="accCombat" val="#accCombat">
-					<using kind="BOW,CROSSBOW" />
-				</add>
-				<add stat="rCrit" val="#rCrit">
-					<using kind="BOW,CROSSBOW" />
-				</add>
-				<mul stat="cAtk" val="#cAtk">
-					<using kind="BOW,CROSSBOW" />
-				</mul>
+				<add stat="accCombat" val="#accCombat" />
+				<add stat="rCrit" val="#rCrit" />
+				<mul stat="cAtk" val="#cAtk" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10784" levels="1" name="Camouflage">
+		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., blends into the environment and hides. Decreases Speed by 30%. -->
 		<set name="icon" val="icon.skill10784" />
 		<set name="abnormalLvl" val="1" />
@@ -1208,10 +1257,13 @@
 		<set name="removedOnDamage" val="true" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="93" />
 		<set name="mpConsume" val="9" />
 		<set name="hitTime" val="200" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="120000" />
+		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Hide">
 				<mul stat="runSpd" val="0.7" />
@@ -1219,39 +1271,62 @@
 		</for>
 	</skill>
 	<skill id="10785" levels="5" name="Flare">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Fires a Flare to reveal nearby hiding enemies or traps. Requires a bow or crossbow to be equipped. -->
+		<table name="#abnormalTime"> 0 0 1 2 3 </table>
+		<table name="#magicLvl"> 85 99 101 103 105 </table>
+		<table name="#slot"> NONE NONE HIDE HIDE HIDE </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="#abnormalTime" />
+		<!-- TODO set name="abnormalType" val="" / -->
 		<set name="icon" val="icon.skill10785" />
-		<set name="affectRange" val="300" /> <!-- Guessed -->
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="500" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AURA" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="70" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="20000" />
 		<cond msgId="113" addName="1">
-			<using kind="BOW,CROSSBOW" />
+			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
 		</cond>
 		<for>
 			<effect name="Detection" />
+			<effect name="TrapRemove">
+				<param power="99" />
+			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="HIDE,9" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="#slot" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10786" levels="6" name="Time Bomb">
+		<!-- Glory Days confirmed -->
 		<!-- Plants a bomb on target that detonates after 10 seconds to inflict damage with 30000 power. While the bomb is being installed, target's P. Accuracy decreases by 10. -->
 		<table name="#triggerLvl"> 1 1 1 2 3 4 </table>
+		<table name="#magicLvl"> 93 96 99  101 103 105 </table>
 		<table name="#mpConsumes"> 66 69 72 75 78 81 </table>
 		<table name="#effectPoint"> -706 -710 -714 -718 -722 -726 </table>
 		<set name="icon" val="icon.skill10786" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="TIME_BOMB" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
-		<set name="abnormalType" val="TIME_BOMB" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1266,12 +1341,16 @@
 	</skill>
 	<skill id="10787" levels="8" name="Summon Thunder Hawk">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Summons a Thunder Hawk. -->
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 123 127 132 136 140 145 149 154 </table>
 		<table name="#npcIds"> 14932 14940 14941 14942 14986 14987 14988 14989 </table>
 		<set name="icon" val="icon.skill10787" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="200" />
@@ -1380,13 +1459,18 @@
 	</skill>
 	<skill id="10794" levels="8" name="Thunder Flight">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Flies straight into the enemy. -->
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#effectPoint"> -687 -698 -707 -709 -709 -709 -709 -709 </table>
 		<set name="icon" val="icon.skill6041" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="nextActionAttack" val="true" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="DA1" />
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="400" />
+		<set name="effectRange" val="600" />
 		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="750" />
@@ -1401,48 +1485,81 @@
 	</skill>
 	<skill id="10795" levels="1" name="Thunder Purity">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Purifies the master. -->
 		<set name="icon" val="icon.skill6042" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="OWNER_PET" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="96" />
 		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="2500" />
 		<set name="reuseDelay" val="180000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="10" /> <!-- Guessed -->
+				<param slot="debuff" rate="100" max="5" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10796" levels="1" name="Hawk Gust">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Pushes the enemies around the master. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="5" />
+		<set name="abnormalType" val="KNOCKDOWN" />
+		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
+		<set name="activateRate" val="50" />
+		<set name="affectRate" val="150" />
+		<set name="lvlBonusRate" val="30" />
 		<set name="icon" val="icon.skill0092" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="46" />
 		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="100" />
 		<set name="reuseDelay" val="120000" />
 		<set name="effectPoint" val="-687" />
-		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="KnockDown">
+				<param speed="400" distance="500" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param DERANGEMENT="100" />
+				<param HOLD="100" />
+				<param SLEEP="100" />
+				<param SHOCK="100" />
+				<param CHANGEBODY="100" />
+			</effect>
+			<effect name="BlockActions" />
+		</for>
 	</skill>
 	<skill id="10797" levels="8" name="Thunder Feather Blast">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Hurls feathers toward the enemy. -->
 		<table name="#effectPoint"> -687 -698 -707 -709 -709 -709 -709 -709 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 71 78 84 86 86 86 86 86 </table>
-		<table name="#power"> 5254 5595 5936 6277 6618 6959 7300 7641 </table> <!-- Guessed from Feline Bite / 2 -->
+		<table name="#power"> 5555 5787 6029 6280 6541 6813 7095 7389 </table>
+		<set name="attributeType" val="FIRE" />
+		<set name="attributeValue" val="20" />
 		<set name="icon" val="icon.skill6044" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1080" />
 		<set name="coolTime" val="770" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -1455,40 +1572,52 @@
 	</skill>
 	<skill id="10798" levels="8" name="Thunder Sharp Claw">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks the enemy with sharp talon to inflict bleed. -->
 		<table name="#effectPoint"> -687 -698 -707 -709 -709 -709 -709 -709 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 71 78 84 86 86 86 86 86 </table>
-		<table name="#dot"> 100 120 140 160 180 200 220 240 </table> <!-- TODO -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#power"> 2796 2912 3034 3160 3291 3427 3569 3717 </table>
+		<table name="#dot"> 71 72 73 74 75 76 77 78 </table>
 		<set name="icon" val="icon.skill0096" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalTime" val="20" /> <!-- Guessed -->
+		<set name="abnormalLvl" val="3" />
+		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
-		<set name="activateRate" val="100" /> <!-- Guessed -->
+		<set name="activateRate" val="100" />
+		<set name="lvlBonusRate" val="30" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1080" />
 		<set name="coolTime" val="770" />
 		<set name="reuseDelay" val="25000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10799" levels="10" name="Superior M. Def.">
+		<!-- Glory Days confirmed -->
 		<!-- M. Def. + 776, and M. Def. + 25%. STR + 2. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 106 108 110 </table>
 		<table name="#mDef"> 776 878 993 1097 1237 1299 1365 1434 1507 1583 </table>
 		<set name="icon" val="icon.skill10004" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 		<for>
