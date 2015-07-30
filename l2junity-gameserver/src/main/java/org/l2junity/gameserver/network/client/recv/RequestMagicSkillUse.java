@@ -111,5 +111,6 @@ public final class RequestMagicSkillUse implements IClientIncomingPacket
 		}
 		
 		activeChar.useMagic(skill, _ctrlPressed, _shiftPressed);
+		activeChar.sendMessage("Attempting to use skill: " + skill);
 	}
 }

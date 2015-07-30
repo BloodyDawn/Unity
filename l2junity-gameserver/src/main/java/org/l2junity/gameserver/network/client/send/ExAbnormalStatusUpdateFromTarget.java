@@ -36,6 +36,8 @@ public class ExAbnormalStatusUpdateFromTarget implements IClientOutgoingPacket
 	{
 		protected int _skillId;
 		protected int _level;
+		protected int _subLevel;
+		protected int _abnormalType;
 		protected int _duration;
 		protected int _caster;
 		
@@ -51,6 +53,7 @@ public class ExAbnormalStatusUpdateFromTarget implements IClientOutgoingPacket
 			
 			_skillId = skill.getDisplayId();
 			_level = skill.getDisplayLevel();
+			_abnormalType = skill.getAbnormalType().getClientId();
 			_duration = skill.isAura() ? -1 : info.getTime();
 			_caster = casterId;
 		}
@@ -88,9 +91,9 @@ public class ExAbnormalStatusUpdateFromTarget implements IClientOutgoingPacket
 		{
 			packet.writeD(info._skillId);
 			packet.writeH(info._level);
-			packet.writeH(0x00); // Sub level
-			packet.writeH(0x00); // Combo abnormal ?
-			packet.writeH(info._duration);
+			packet.writeH(info._subLevel);
+			packet.writeH(info._abnormalType);
+			writeOptionalD(packet, info._duration);
 			packet.writeD(info._caster);
 		}
 		return true;

@@ -65,8 +65,8 @@ public class ExOlympiadSpelledInfo implements IClientOutgoingPacket
 				packet.writeD(info.getSkill().getDisplayId());
 				packet.writeH(info.getSkill().getDisplayLevel());
 				packet.writeH(0x00); // Sub level
-				packet.writeD(0x00);
-				packet.writeH(info.getSkill().isAura() ? -1 : info.getTime());
+				packet.writeD(info.getSkill().getAbnormalType().getClientId());
+				writeOptionalD(packet, info.getSkill().isAura() ? -1 : info.getTime());
 			}
 		}
 		for (Skill skill : _effects2)
@@ -76,7 +76,7 @@ public class ExOlympiadSpelledInfo implements IClientOutgoingPacket
 				packet.writeD(skill.getDisplayId());
 				packet.writeH(skill.getDisplayLevel());
 				packet.writeH(0x00); // Sub level
-				packet.writeD(0x00);
+				packet.writeD(skill.getAbnormalType().getClientId());
 				packet.writeH(-1);
 			}
 		}

@@ -22,6 +22,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.interfaces.IUpdateTypeComponent;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.network.IOutgoingPacket;
+import org.l2junity.network.PacketWriter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -67,7 +68,7 @@ public interface IClientOutgoingPacket extends IOutgoingPacket
 		Inventory.PAPERDOLL_BROOCH_JEWEL4,
 		Inventory.PAPERDOLL_BROOCH_JEWEL5,
 		Inventory.PAPERDOLL_BROOCH_JEWEL6
-	
+		
 	};
 	
 	int[] PAPERDOLL_ORDER_AUGMENT = new int[]
@@ -127,6 +128,19 @@ public interface IClientOutgoingPacket extends IOutgoingPacket
 	
 	default void runImpl(PlayerInstance player)
 	{
-		
+	
+	}
+	
+	default void writeOptionalD(PacketWriter packet, int value)
+	{
+		if (value >= Short.MAX_VALUE)
+		{
+			packet.writeH(Short.MAX_VALUE);
+			packet.writeD(value);
+		}
+		else
+		{
+			packet.writeH(value);
+		}
 	}
 }
