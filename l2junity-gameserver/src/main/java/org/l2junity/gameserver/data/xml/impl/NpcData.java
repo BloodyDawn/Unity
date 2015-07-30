@@ -539,7 +539,7 @@ public class NpcData implements IGameXmlReader
 												aiSkillScopes.add(AISkillScope.IMMOBILIZE);
 												aiSkillScopes.add(shortOrLongRangeScope);
 											}
-											else if (skill.hasEffectType(L2EffectType.MUTE, L2EffectType.FEAR))
+											else if (skill.hasEffectType(L2EffectType.MUTE, L2EffectType.BLOCK_CONTROL))
 											{
 												aiSkillScopes.add(AISkillScope.COT);
 												aiSkillScopes.add(shortOrLongRangeScope);

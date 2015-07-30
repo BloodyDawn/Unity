@@ -29,8 +29,6 @@ import org.l2junity.gameserver.model.actor.instance.L2FortCommanderInstance;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.effects.EffectFlag;
-import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.util.Util;
 
@@ -53,18 +51,6 @@ public final class Fear extends AbstractEffect
 		return info.getEffected().isPlayer() || info.getEffected().isSummon() || (info.getEffected().isAttackable() && //
 		!((info.getEffected() instanceof L2DefenderInstance) || (info.getEffected() instanceof L2FortCommanderInstance) || //
 			(info.getEffected() instanceof L2SiegeFlagInstance) || (info.getEffected().getTemplate().getRace() == Race.SIEGE_WEAPON)));
-	}
-	
-	@Override
-	public int getEffectFlags()
-	{
-		return EffectFlag.FEAR.getMask();
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.FEAR;
 	}
 	
 	@Override

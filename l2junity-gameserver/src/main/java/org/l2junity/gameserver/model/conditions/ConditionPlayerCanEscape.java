@@ -49,7 +49,7 @@ public class ConditionPlayerCanEscape extends Condition
 		{
 			canTeleport = false;
 		}
-		else if (player.isAfraid())
+		else if (player.isControlBlocked())
 		{
 			canTeleport = false;
 		}

@@ -1522,7 +1522,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 		}
 		
-		if (sk.hasEffectType(L2EffectType.BLOCK_ACTIONS, L2EffectType.ROOT, L2EffectType.MUTE, L2EffectType.FEAR))
+		if (sk.hasEffectType(L2EffectType.BLOCK_ACTIONS, L2EffectType.ROOT, L2EffectType.MUTE, L2EffectType.BLOCK_CONTROL))
 		{
 			if (GeoData.getInstance().canSeeTarget(caster, attackTarget) && !canAOE(sk) && (dist2 <= srange))
 			{

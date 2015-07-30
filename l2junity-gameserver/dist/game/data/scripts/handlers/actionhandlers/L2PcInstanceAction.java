@@ -55,7 +55,7 @@ public class L2PcInstanceAction implements IActionHandler
 	public boolean action(PlayerInstance activeChar, WorldObject target, boolean interact)
 	{
 		// Check if the L2PcInstance is confused
-		if (activeChar.isOutOfControl())
+		if (activeChar.isControlBlocked())
 		{
 			return false;
 		}

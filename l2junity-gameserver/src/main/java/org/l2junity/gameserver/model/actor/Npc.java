@@ -418,7 +418,7 @@ public class Npc extends Creature
 	
 	public boolean canTarget(PlayerInstance player)
 	{
-		if (player.isOutOfControl())
+		if (player.isControlBlocked())
 		{
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;

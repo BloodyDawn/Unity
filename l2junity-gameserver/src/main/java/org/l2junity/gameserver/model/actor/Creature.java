@@ -598,7 +598,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public void broadcastPacket(IClientOutgoingPacket mov)
 	{
-		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player -> {
+		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
+		{
 			if (isVisibleFor(player))
 			{
 				player.sendPacket(mov);
@@ -616,7 +617,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public void broadcastPacket(IClientOutgoingPacket mov, int radiusInKnownlist)
 	{
-		World.getInstance().forEachVisibleObjectInRange(this, PlayerInstance.class, radiusInKnownlist, player -> {
+		World.getInstance().forEachVisibleObjectInRange(this, PlayerInstance.class, radiusInKnownlist, player ->
+		{
 			if (isVisibleFor(player))
 			{
 				player.sendPacket(mov);
@@ -2715,9 +2717,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		_lastSkillCast = skill;
 	}
 	
-	public final boolean isAfraid()
+	public final boolean isControlBlocked()
 	{
-		return isAffected(EffectFlag.FEAR);
+		return isAffected(EffectFlag.BLOCK_CONTROL);
 	}
 	
 	/**
@@ -2801,14 +2803,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return hasBlockActions() || isRooted() || isOverloaded() || isImmobilized() || isAlikeDead() || isTeleporting();
 	}
 	
-	/**
-	 * @return True if the L2Character can not be controlled by the player (confused, afraid).
-	 */
-	public final boolean isOutOfControl()
-	{
-		return isConfused() || isAfraid();
-	}
-	
 	public final boolean isOverloaded()
 	{
 		return _isOverloaded;
@@ -2822,7 +2816,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		_isOverloaded = value;
 	}
-
+	
 	public final boolean isPendingRevive()
 	{
 		return isDead() && _isPendingRevive;
@@ -2928,7 +2922,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		else if (isNpc())
 		{
-			World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player -> {
+			World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
+			{
 				if (!isVisibleFor(player))
 				{
 					return;
@@ -2959,12 +2954,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		return _blockActions || isAffected(EffectFlag.BLOCK_ACTIONS);
 	}
-
+	
 	public final void setBlockActions(boolean blockActions)
 	{
 		_blockActions = blockActions;
 	}
-
 	
 	public final boolean isBetrayed()
 	{
@@ -3825,7 +3819,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			{
 				if (broadcastFull)
 				{
-					World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player -> {
+					World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
+					{
 						if (!isVisibleFor(player))
 						{
 							return;
@@ -4280,7 +4275,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	// called from AIAccessor only
-
+	
 	/**
 	 * Calculate movement data for a move to location action and add the L2Character to movingObjects of GameTimeController (only called by AI Accessor).<br>
 	 * <B><U>Concept</U>:</B><br>
@@ -4423,7 +4418,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Movement checks:
 			// when PATHFINDING > 0, for all characters except mobs returning home (could be changed later to teleport if pathfinding fails)
 			if (((Config.PATHFINDING > 0) && (!(isAttackable() && ((Attackable) this).isReturningToSpawnPoint()))) || (isPlayer() && !(isInVehicle && (distance > 1500))) || (isSummon() && !(getAI().getIntention() == AI_INTENTION_FOLLOW)) // assuming intention_follow only when following owner
-				|| isAfraid())
+				|| isControlBlocked())
 			{
 				if (isOnGeodataPath())
 				{
@@ -4473,7 +4468,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Pathfinding checks. Only when geodata setting is 2, the LoS check gives shorter result
 			// than the original movement was and the LoS gives a shorter distance than 2000
 			// This way of detecting need for pathfinding could be changed.
-			if ((Config.PATHFINDING > 0) && ((originalDistance - distance) > 30) && (distance < 2000) && !isAfraid())
+			if ((Config.PATHFINDING > 0) && ((originalDistance - distance) > 30) && (distance < 2000) && !isControlBlocked())
 			{
 				// Path calculation
 				// Overrides previous movement check
@@ -5391,7 +5386,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		{
 			switch (skill.getTargetType())
 			{
-				// only AURA-type skills can be cast without target
+			// only AURA-type skills can be cast without target
 				case AURA:
 				case FRONT_AURA:
 				case BEHIND_AURA:
@@ -5859,7 +5854,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				}
 				
 				// Mobs in range 1000 see spell
-				World.getInstance().forEachVisibleObjectInRange(player, Npc.class, 1000, npcMob -> {
+				World.getInstance().forEachVisibleObjectInRange(player, Npc.class, 1000, npcMob ->
+				{
 					EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee(npcMob, player, skill, isSummon(), targets), npcMob);
 					
 					// On Skill See logic
@@ -7074,7 +7070,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		return _blockedDebuffTimes.decrementAndGet();
 	}
-
+	
 	public boolean hasAbnormalType(AbnormalType abnormalType)
 	{
 		return getEffectList().getBuffInfoByAbnormalType(abnormalType) != null;
