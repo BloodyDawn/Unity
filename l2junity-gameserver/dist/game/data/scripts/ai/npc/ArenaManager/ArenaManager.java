@@ -129,7 +129,6 @@ public final class ArenaManager extends AbstractNpcAI
 			}
 			else if (event.equals("HPrecovery_delay"))
 			{
-				
 				npc.setTarget(player);
 				npc.doCast(HP_RECOVERY.getSkill());
 			}

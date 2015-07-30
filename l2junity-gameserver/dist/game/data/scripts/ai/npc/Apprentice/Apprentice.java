@@ -20,6 +20,7 @@ package ai.npc.Apprentice;
 
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.instancemanager.QuestManager;
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
@@ -27,8 +28,8 @@ import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
-import quests.Q10329_BackupSeekers.Q10329_BackupSeekers;
 import ai.npc.AbstractNpcAI;
+import quests.Q10329_BackupSeekers.Q10329_BackupSeekers;
 
 /**
  * Apprentice AI.
@@ -73,17 +74,22 @@ public final class Apprentice extends AbstractNpcAI
 				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.YOU_CAN_T_RIDE_A_KUKURI_NOW);
 			}
 		}
-		else if (event.equals("SPAM_TEXT") && (npc != null))
+		return super.onAdvEvent(event, npc, player);
+	}
+	
+	@Override
+	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
+	{
+		if (event.equals("SPAM_TEXT") && (npc != null))
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.TRY_RIDING_A_KUKURI, 1000);
 		}
-		return super.onAdvEvent(event, npc, player);
 	}
 	
 	@Override
 	public String onSpawn(Npc npc)
 	{
-		startQuestTimer("SPAM_TEXT", 12000, npc, null, true);
+		getTimers().addRepeatingTimer("SPAM_TEXT", 12000, npc, null);
 		return super.onSpawn(npc);
 	}
 	
