@@ -247,12 +247,12 @@
 		</for>
 	</skill>
 	<skill id="1508" levels="1" name="Thorn Root">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- Glory Days confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="abnormalVisualEffect" val="ROOT" />
-		<set name="activateRate" val="50" />
+		<set name="activateRate" val="90" />
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="200" />
 		<set name="basicProperty" val="MAGIC" />
@@ -261,7 +261,7 @@
 		<set name="icon" val="icon.skill1508" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="lvlBonusRate" val="2" />
+		<set name="lvlBonusRate" val="30" />
 		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="87" />
 		<set name="mpInitialConsume" val="22" />
@@ -284,7 +284,8 @@
 		</for>
 	</skill>
 	<skill id="1509" levels="9" name="Seal of Limit">
-		<!-- Confirmed CT2.5 and updated to IO -->
+		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 81 83 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsume"> 72 104 202 222 245 266 286 307 328 </table>
 		<table name="#mpInitialConsume"> 18 26 50 56 61 66 72 77 82 </table>
@@ -301,7 +302,7 @@
 		<set name="icon" val="icon.skill1509" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="lvlBonusRate" val="1" />
+		<set name="lvlBonusRate" val="20" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
@@ -382,7 +383,7 @@
 		</for>
 	</skill>
 	<skill id="1512" levels="1" name="Soul Vortex">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- Glory Days confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="MULTI_DEBUFF_SOUL" />
@@ -395,7 +396,7 @@
 		<set name="icon" val="icon.skill1512" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="lvlBonusRate" val="2" />
+		<set name="lvlBonusRate" val="30" />
 		<set name="magicLvl" val="78" />
 		<set name="mpConsume" val="68" />
 		<set name="mpInitialConsume" val="17" />
@@ -418,7 +419,7 @@
 		</for>
 	</skill>
 	<skill id="1513" levels="1" name="Soul Vortex Extinction">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- Glory Days confirmed -->
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-1009" />
 		<set name="effectRange" val="1400" />
@@ -434,7 +435,7 @@
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="109">
-			<target active_effect_id="1512" />
+			<target abnormalType="MULTI_DEBUFF_SOUL" />
 		</cond>
 		<for>
 			<effect name="MagicalSoulAttack">
@@ -446,7 +447,8 @@
 		</for>
 	</skill>
 	<skill id="1514" levels="7" name="Soul Barrier">
-		<!-- Confirmed CT2.5 and Updated to IO -->
+		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 58 63 74 85 90 95 99 </table>
 		<table name="#mDef"> 2 2 2.1 2.2 2.3 2.4 2.5 </table>
 		<table name="#mpConsume"> 17 20 22 24 26 27 28 </table>
@@ -473,6 +475,7 @@
 			<effect name="DefenceTrait">
 				<param BOW="#res" />
 				<param CROSSBOW="#res" />
+				<param TWOHANDCROSSBOW="#res" />
 			</effect>
 		</for>
 	</skill>
@@ -815,7 +818,7 @@
 		</for>
 	</skill>
 	<skill id="1527" levels="3" name="Expert Casting">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 40 49 55 </table>
 		<table name="#mReuse"> 0.9 0.85 0.8 </table>
 		<set name="icon" val="icon.skill1527" />
@@ -1289,7 +1292,6 @@
 	<skill id="1544" levels="7" name="Death Beam">
 		<!-- Confirmed CT2.5 -->
 		<!-- Kamael Final Form Skill -->
-		<!-- TODO: Related with Quest "Long live the Pa'agrio Lord! -->
 		<table name="#magicLvl"> 79 80 81 82 83 84 85 </table>
 		<table name="#power"> 138 139 141 142 144 145 146 </table>
 		<set name="affectLimit" val="5-12" />
@@ -1317,7 +1319,6 @@
 	<skill id="1545" levels="1" name="Soul Sucking">
 		<!-- Confirmed CT2.5 -->
 		<!-- Kamael Final Form Skill -->
-		<!-- TODO: Related with Quest "Long live the Pa'agrio Lord! -->
 		<set name="castRange" val="900" />
 		<set name="channelingTickInterval" val="2" />
 		<set name="effectPoint" val="-676" />
@@ -1435,9 +1436,8 @@
 		</for>
 	</skill>
 	<skill id="1549" levels="1" name="Chant of Elements">
-		<!-- High Five Skill -->
-		<!-- NOTE: skill desc says "increases the elemental attribute" but is client typo, it increase defense (see skill icon) -->
-		<set name="abnormalLvl" val="3" />
+		<!-- Glory Days confirmed -->
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="ARMOR_ELEMENT_ALL" />
 		<set name="affectRange" val="1000" />
@@ -1462,42 +1462,42 @@
 		</for>
 	</skill>
 	<skill id="1550" levels="1" name="Mass Cure Poison">
-		<!-- High Five Skill -->
+		<!-- Glory Days confirmed -->
 		<set name="affectRange" val="1000" />
 		<set name="effectPoint" val="662" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1550" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="76" />
-		<set name="mpConsume" val="67" />
-		<set name="mpInitialConsume" val="16" />
+		<set name="mpConsume" val="66" />
+		<set name="mpInitialConsume" val="17" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="POISON,9" />
+				<param dispel="POISON,10" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1551" levels="1" name="Mass Purify">
-		<!-- High Five Skill -->
+		<!-- Glory Days confirmed -->
 		<set name="affectRange" val="1000" />
 		<set name="effectPoint" val="662" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill1551" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="76" />
-		<set name="mpConsume" val="67" />
-		<set name="mpInitialConsume" val="16" />
+		<set name="mpConsume" val="66" />
+		<set name="mpInitialConsume" val="17" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="9000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="DispelBySlot">
-				<param dispel="POISON,9;BLEEDING,9;PARALYZE,1;TURN_STONE,1" />
+				<param dispel="POISON,10;BLEEDING,10;PARALYZE,1;TURN_STONE,1" />
 			</effect>
 		</for>
 	</skill>
@@ -1509,8 +1509,8 @@
 		<set name="icon" val="icon.skill1552" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="76" />
-		<set name="mpConsume" val="155" />
-		<set name="mpInitialConsume" val="38" />
+		<set name="mpConsume" val="154" />
+		<set name="mpInitialConsume" val="39" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="9000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1520,13 +1520,13 @@
 				<param power="796" />
 			</effect>
 			<effect name="DispelBySlot">
-				<param dispel="POISON,9;BLEEDING,9" />
+				<param dispel="POISON,10;BLEEDING,10" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1553" levels="1" name="Chain Heal">
 		<!-- High Five Skill -->
-		<set name="affectLimit" val="5-12" />
+		<set name="affectLimit" val="9-0" />
 		<set name="affectRange" val="300" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1301" />
@@ -1535,11 +1535,11 @@
 		<set name="icon" val="icon.skill1553" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="4" />
-		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="magicLvl" val="83" />
-		<set name="mpConsume" val="156" />
-		<set name="mpInitialConsume" val="38" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
+		<set name="mpConsume" val="155" />
+		<set name="mpInitialConsume" val="39" />
+		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA_FRIENDLY" />
@@ -1550,10 +1550,10 @@
 		</for>
 	</skill>
 	<skill id="1554" levels="1" name="Aura Blast">
-		<!-- High Five Skill -->
+		<!-- Glory Days confirmed -->
 		<set name="abnormalTime" val="3" />
 		<set name="affectLimit" val="2-10" />
-		<set name="affectRange" val="100" /> <!-- FIXME: value unconfirmed -->
+		<set name="affectRange" val="200" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-689" />
 		<set name="effectRange" val="1400" />
@@ -1579,21 +1579,21 @@
 		</pvpEffects>
 		<selfEffects>
 			<effect name="ManaHeal">
-				<param power="10" />  <!-- FIXME: value unconfirmed -->
+				<param power="29" />
 			</effect>
 		</selfEffects>
 	</skill>
 	<skill id="1555" levels="1" name="Aura Cannon">
-		<!-- High Five Skill -->
+		<!-- Glory Days confirmed -->
 		<set name="castRange" val="150" />
 		<set name="effectPoint" val="-689" />
-		<set name="effectRange" val="650" />
+		<set name="effectRange" val="300" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1555" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="82" />
-		<set name="mpConsume" val="99" />
-		<set name="mpInitialConsume" val="24" />
+		<set name="mpConsume" val="98" />
+		<set name="mpInitialConsume" val="25" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1610,12 +1610,13 @@
 		</pvpEffects>
 		<selfEffects>
 			<effect name="ManaHeal">
-				<param power="10" />  <!-- FIXME: value unconfirmed -->
+				<param power="25" />
 			</effect>
 		</selfEffects>
 	</skill>
 	<skill id="1556" levels="1" name="Arcane Shield">
-		<!-- High Five Skill -->
+		<!-- Glory Days confirmed -->
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalVisualEffect" val="MP_SHIELD" />
 		<set name="effectPoint" val="138" />
@@ -1623,13 +1624,14 @@
 		<set name="icon" val="icon.skill1556" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="83" />
-		<set name="mpConsume" val="90" />
-		<set name="mpInitialConsume" val="22" />
+		<set name="mpConsume" val="89" />
+		<set name="mpInitialConsume" val="23" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="abnormalType" val="MP_SHIELD" />
 		<set name="targetType" val="SELF" />
+		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
 				<add stat="manaShield" val="70" />
@@ -1639,20 +1641,25 @@
 	<skill id="1557" levels="1" name="Servitor Share">
 		<!-- High Five Skill -->
 		<!-- Totally Unconfirmed -->
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
-		<set name="castRange" val="400" />
+		<set name="abnormalType" val="ABILITY_CHANGE" />
+		<set name="castRange" val="400" /> <!-- No cast range -->
 		<set name="effectPoint" val="379" />
 		<set name="effectRange" val="900" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill1557" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="83" />
-		<set name="mpConsume" val="35" />
+		<set name="mpConsume" val="28" />
+		<set name="mpInitialConsume" val="7" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="abnormalType" val="ABILITY_CHANGE" />
-		<set name="targetType" val="SERVITOR" />
+		<set name="targetType" val="SERVITOR" /> <!-- Should be self -->
+		<cond>
+			<player hasSummon="true" />
+		</cond>
 		<for>
 			<!-- Note: 0.5 means 50% of owner's patk! -->
 			<effect name="ServitorShare">
@@ -1667,12 +1674,13 @@
 				<share stat="mAtkSpd" val="0.03" />
 			</effect>
 		</for>
+		<!-- Shouldn't have any self effects -->
 		<selfEffects>
 			<effect name="ServitorShare" /> <!-- This effect is used to cancel pet's effect when player's have been canceled. -->
 		</selfEffects>
 	</skill>
 	<skill id="1558" levels="24" name="Dimension Spiral">
-		<!-- High Five Skill -->
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 40 44 48 52 56 58 60 62 64 66 68 70 72 74 76 77 78 79 80 81 82 83 84 85 </table>
 		<table name="#mpConsume"> 38 43 47 50 53 55 57 59 60 63 64 67 74 83 92 99 100 106 109 115 118 119 125 134 </table>
 		<table name="#pvePower"> 57 58 60 61 63 66 68 71 74 77 79 82 89 94 100 104 110 115 139 152 166 179 193 207 </table>
@@ -1685,18 +1693,11 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
+		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="1558" /> <!-- Dimension Spiral -->
-				<param chance="5" />
-				<param skillId="5571" skillLevel="1" /> <!-- Mutual Response -->
-				<param targetType="SUMMON" />
-			</effect>
-		</for>
+		<set name="staticReuse" val="true" />
 		<pveEffects>
 			<effect name="MagicalAttack">
 				<param power="#pvePower" />
@@ -1711,7 +1712,7 @@
 		</pvpEffects>
 	</skill>
 	<skill id="1559" levels="3" name="Potential Ability">
-		<!-- High Five Skill -->
+		<!-- Glory Days confirmed -->
 		<table name="#cAtkAdd"> 177 295 384 </table>
 		<table name="#magicLvl"> 28 40 49 </table>
 		<table name="#rCrit"> 1.2 1.3 1.4 </table>
@@ -1731,7 +1732,7 @@
 		</for>
 	</skill>
 	<skill id="1560" levels="1" name="Lucky Blow">
-		<!-- High Five Skill -->
+		<!-- Glory Days confirmed -->
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-337" />
@@ -1739,7 +1740,6 @@
 		<set name="halfKillRate" val="8" />
 		<set name="hitTime" val="1800" />
 		<set name="icon" val="icon.skill1560" />
-		<set name="lethalStrikeRate" val="1" /> <!-- FIXME: unconfirmed -->
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="82" />
 		<set name="nextActionAttack" val="true" />
@@ -1758,11 +1758,15 @@
 				<param criticalChance="30" />
 				<param overHit="true" />
 			</effect>
+			<effect name="Lethal">
+				<param fullLethal="0.1" />
+				<param halfLethal="8" />
+			</effect>
 			<effect name="Spoil" />
 		</for>
 	</skill>
 	<skill id="1561" levels="5" name="Battle Cry">
-		<!-- High Five Skill -->
+		<!-- Glory Days confirmed -->
 		<table name="#abnormalLvls"> 2 3 4 5 6 </table>
 		<table name="#amount"> 15 20 25 30 35 </table>
 		<table name="#magicLvl"> 40 49 58 64 70 </table>
@@ -1797,8 +1801,8 @@
 		<table name="#mAtk"> 1.1 1.16 </table>
 		<table name="#mAtkSpd"> 1.05 1.08 </table>
 		<table name="#mDef"> 0.9 0.84 </table>
-		<table name="#mpConsume"> 124 151 </table>
-		<table name="#mpInitialConsume"> 30 37 </table>
+		<table name="#mpConsume"> 123 150 </table>
+		<table name="#mpInitialConsume"> 31 38 </table>
 		<table name="#pAtk"> 1.05 1.08 </table>
 		<table name="#pAtkSpd"> 1.05 1.08 </table>
 		<table name="#pDef"> 0.95 0.92 </table>
@@ -1833,7 +1837,7 @@
 		</for>
 	</skill>
 	<skill id="1563" levels="2" name="Fury of Pa'agrio">
-		<!-- High Five Skill -->
+		<!-- Glory Days confirmed -->
 		<table name="#abnormalLvls"> 1 2 </table>
 		<table name="#effectPoints"> 457 532 </table>
 		<table name="#magicLvl"> 48 56 </table>
@@ -1843,8 +1847,7 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
-		<set name="affectLimit" val="50-50" />
-		<set name="affectRange" val="900" />
+		<set name="affectRange" val="1000" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill1563" />
@@ -1863,7 +1866,7 @@
 		</for>
 	</skill>
 	<skill id="1564" levels="1" name="Penetrating Attack">
-		<!-- High Five Skill -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill1564" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
@@ -1872,14 +1875,14 @@
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="1" />
-				<param chance="5" />
+				<param chance="10" />
 				<param skillId="6921" skillLevel="1" /> <!-- Penetration Attack -->
 				<param targetType="ONE" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1565" levels="6" name="Mana Pump">
-		<!-- High Five Skill -->
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 40 49 58 64 68 72 </table>
 		<table name="#maxMp"> 70 100 140 150 180 200 </table>
 		<set name="icon" val="icon.skill0213" />
@@ -1893,94 +1896,131 @@
 		</for>
 	</skill>
 	<skill id="1566" levels="1" name="Class Change">
+		<!-- Glory Days confirmed -->
 		<!-- Change the class. -->
+		<!-- TODO : parse op_not_territory cond ... -->
 		<set name="icon" val="icon.skill0810" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="5000" />
 		<set name="effectPoint" val="1" />
 		<set name="reuseDelay" val="3000" />
+		<set name="isMagic" val="2" />
+		<set name="staticReuse" val="true" />
+		<set name="reuseDelayGroup" val="1566" />
 		<cond msgId="3574">
 			<and>
 				<player canSwitchSubClass="0" />
 				<not>
 					<player active_effect_id="1570" />
 				</not>
+				<player invSize="10" />
+				<player weight="90" />
+				<player inInstance="false" />
 			</and>
 		</cond>
 		<for>
 			<effect name="ClassChange">
 				<param index="0" />
 			</effect>
+			<effect name="UnsummonAgathion" />
 		</for>
 	</skill>
 	<skill id="1567" levels="1" name="Class Change">
+		<!-- Glory Days confirmed -->
 		<!-- Change the class. -->
+		<!-- TODO : parse op_not_territory cond ... -->
 		<set name="icon" val="icon.skill0810" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="5000" />
 		<set name="effectPoint" val="1" />
 		<set name="reuseDelay" val="3000" />
+		<set name="isMagic" val="2" />
+		<set name="staticReuse" val="true" />
+		<set name="reuseDelayGroup" val="1566" />
 		<cond msgId="3574">
 			<and>
 				<player canSwitchSubClass="1" />
 				<not>
 					<player active_effect_id="1570" />
 				</not>
+				<player invSize="10" />
+				<player weight="90" />
+				<player inInstance="false" />
 			</and>
 		</cond>
 		<for>
 			<effect name="ClassChange">
 				<param index="1" />
 			</effect>
+			<effect name="UnsummonAgathion" />
 		</for>
 	</skill>
 	<skill id="1568" levels="1" name="Class Change">
+		<!-- Glory Days confirmed -->
 		<!-- Change the class. -->
+		<!-- TODO : parse op_not_territory cond ... -->
 		<set name="icon" val="icon.skill0810" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="5000" />
 		<set name="effectPoint" val="1" />
 		<set name="reuseDelay" val="3000" />
+		<set name="isMagic" val="2" />
+		<set name="staticReuse" val="true" />
+		<set name="reuseDelayGroup" val="1566" />
 		<cond msgId="3574">
 			<and>
 				<player canSwitchSubClass="2" />
 				<not>
 					<player active_effect_id="1570" />
 				</not>
+				<player invSize="10" />
+				<player weight="90" />
+				<player inInstance="false" />
 			</and>
 		</cond>
 		<for>
 			<effect name="ClassChange">
 				<param index="2" />
 			</effect>
+			<effect name="UnsummonAgathion" />
 		</for>
 	</skill>
 	<skill id="1569" levels="1" name="Class Change">
+		<!-- Glory Days confirmed -->
 		<!-- Change the class. -->
+		<!-- TODO : parse op_not_territory cond ... -->
 		<set name="icon" val="icon.skill0810" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="5000" />
 		<set name="effectPoint" val="1" />
 		<set name="reuseDelay" val="3000" />
+		<set name="isMagic" val="2" />
+		<set name="staticReuse" val="true" />
+		<set name="reuseDelayGroup" val="1566" />
 		<cond msgId="3574">
 			<and>
 				<player canSwitchSubClass="3" />
 				<not>
 					<player active_effect_id="1570" />
 				</not>
+				<player invSize="10" />
+				<player weight="90" />
+				<player inInstance="false" />
 			</and>
 		</cond>
 		<for>
 			<effect name="ClassChange">
 				<param index="3" />
 			</effect>
+			<effect name="UnsummonAgathion" />
 		</for>
 	</skill>
 	<skill id="1570" levels="1" name="Identity Crisis">
+		<!-- Glory Days confirmed -->
 		<!-- For 15 seconds, you are going through an Identity Crisis. Battle abilities are decreased and skills and items cannot be used. However, consumables items can still be used. Also, you cannot switch between main, dual, or sub classes while under the effect of Identity Crisis. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
@@ -1994,10 +2034,11 @@
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="0.65" />
-				<mul stat="mAtkSpd" val="0.65" />
-				<mul stat="pAtk" val="0.25" />
-				<mul stat="mAtk" val="0.25" />
+				<mul stat="pAtkSpd" val="0.3" />
+				<mul stat="mAtkSpd" val="0.3" />
+				<mul stat="pAtk" val="0.3" />
+				<mul stat="mAtk" val="0.3" />
+				<sub stat="accCombat" val="8" />
 			</effect>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
@@ -2146,8 +2187,9 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1585" levels="1" name="Rhythm of Critical Dark">
+		<!-- Glory Days confirmed -->
 		<!-- For 2 minutes, increases party members' Critical Damage by 35% and critical attack rate by 100%. Addtionally increases MP Consumption when the skill is used while song/dance effect is in place. Requires a dualsword to be equipped. -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="DANCE_OF_FIRE" />
 		<set name="affectRange" val="1000" />
@@ -2169,16 +2211,17 @@
 				<mul stat="rCrit" val="2" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_HUNTER;DANCE_OF_FIRE" />
+				<param slot="SONG_OF_HUNTER" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="SONG_OF_HUNTER;DANCE_OF_FIRE" />
+				<param dispel="SONG_OF_HUNTER" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1586" levels="1" name="Rhythm of Critical">
+		<!-- Glory Days confirmed -->
 		<!-- For 2 minutes, increases party members' Critical Damage by 35% and critical attack rate by 100%. MP Consumption is additionally increased if the skill is used while song/dance effect is in place. -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="DANCE_OF_FIRE" />
 		<set name="affectRange" val="1000" />
@@ -2197,16 +2240,17 @@
 				<mul stat="rCrit" val="2" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_HUNTER;DANCE_OF_FIRE" />
+				<param slot="SONG_OF_HUNTER" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="SONG_OF_HUNTER;DANCE_OF_FIRE" />
+				<param dispel="SONG_OF_HUNTER" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1587" levels="1" name="Rhythm of Magic Dark">
+		<!-- Glory Days confirmed -->
 		<!-- Increases all party members' M. Atk. by 20% and M. Def. by 30% for 2 minutes. Addtionally increases MP Consumption when the skill is used while song/dance effect is in place. Requires a dualsword to be equipped. -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="DANCE_OF_MYSTIC" />
 		<set name="affectRange" val="1000" />
@@ -2228,16 +2272,17 @@
 				<mul stat="mDef" val="1.3" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_WARDING;DANCE_OF_MYSTIC" />
+				<param slot="SONG_OF_WARDING" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param slot="SONG_OF_WARDING;DANCE_OF_MYSTIC" />
+				<param slot="SONG_OF_WARDING" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1588" levels="1" name="Rhythm of Magic">
+		<!-- Glory Days confirmed -->
 		<!-- Increases all party members' M. Atk. by 20% and M. Def. by 30% for 2 minutes. MP Consumption is additionally increased if the skill is used while song/dance effect is in place. -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="DANCE_OF_MYSTIC" />
 		<set name="affectRange" val="1000" />
@@ -2256,16 +2301,17 @@
 				<mul stat="mDef" val="1.3" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_WARDING;DANCE_OF_MYSTIC" />
+				<param slot="SONG_OF_WARDING" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param slot="SONG_OF_WARDING;DANCE_OF_MYSTIC" />
+				<param slot="SONG_OF_WARDING" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1589" levels="1" name="Rhythm of Combat Dark">
+		<!-- Glory Days confirmed -->
 		<!-- Increases all party members' P. Atk. by 12% and P. Def. by 25% for 2 minutes. Addtionally increases MP Consumption when the skill is used while song/dance effect is in place. Requires a dualsword to be equipped. -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="DANCE_OF_WARRIOR" />
 		<set name="affectRange" val="1000" />
@@ -2287,16 +2333,17 @@
 				<mul stat="pDef" val="1.25" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_EARTH;DANCE_OF_WARRIOR" />
+				<param slot="SONG_OF_EARTH" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param slot="SONG_OF_EARTH;DANCE_OF_WARRIOR" />
+				<param slot="SONG_OF_EARTH" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1590" levels="1" name="Rhythm of Combat">
+		<!-- Glory Days confirmed -->
 		<!-- Increases all party members' P. Atk. by 12% and P. Def. by 25% for 2 minutes. MP Consumption is additionally increased if the skill is used while song/dance effect is in place. -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="DANCE_OF_WARRIOR" />
 		<set name="affectRange" val="1000" />
@@ -2315,16 +2362,17 @@
 				<mul stat="pDef" val="1.25" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_EARTH;DANCE_OF_WARRIOR" />
+				<param slot="SONG_OF_EARTH" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param slot="SONG_OF_EARTH;DANCE_OF_WARRIOR" />
+				<param slot="SONG_OF_EARTH" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1591" levels="1" name="Rhythm of Fighter Dark">
+		<!-- Glory Days confirmed -->
 		<!-- Increases all party members' Atk. Spd. by 15% and Max HP by 30% for 2 minutes. Addtionally increases MP Consumption when the skill is used while song/dance effect is in place. Requires a dualsword to be equipped. -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="DANCE_OF_FURY" />
 		<set name="affectRange" val="1000" />
@@ -2346,14 +2394,15 @@
 				<mul stat="maxHp" val="1.3" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_VITALITY;DANCE_OF_FURY" />
+				<param slot="SONG_OF_VITALITY" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param slot="SONG_OF_VITALITY;DANCE_OF_FURY" />
+				<param slot="SONG_OF_VITALITY" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1592" levels="1" name="Rhythm of Fighter">
+		<!-- Glory Days confirmed -->
 		<!-- Increases all party members' Atk. Spd. by 15% and Max HP by 30% for 2 minutes. MP Consumption is additionally increased if the skill is used while song/dance effect is in place. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="120" />
@@ -2374,16 +2423,17 @@
 				<mul stat="maxHp" val="1.3" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_VITALITY;DANCE_OF_FURY" />
+				<param slot="SONG_OF_VITALITY" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param slot="SONG_OF_VITALITY;DANCE_OF_FURY" />
+				<param slot="SONG_OF_VITALITY" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1593" levels="1" name="Rhythm of Revenge Dark">
+		<!-- Glory Days confirmed -->
 		<!-- For 2 minutes, gives all party members the ability to recover as HP 8% of any damage inflicted on the enemy, and has a chance of giving all party members the ability to return 20% of damage back to the enemy. Additionally increases MP Consumption when the skill is used while song/dance effect is in place. Requires a dualsword to be equipped. -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="DANCE_OF_VAMPIRE" />
 		<set name="affectRange" val="1000" />
@@ -2401,20 +2451,22 @@
 		</cond>
 		<for>
 			<effect name="Buff">
+				<!-- TODO: When vampiric effect type are reworked {p_vampiric_attack;8;30} -->
 				<add stat="absorbDam" val="8" />
 				<add stat="reflectDam" val="20" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" />
+				<param slot="SONG_OF_VENGEANCE" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param slot="SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" />
+				<param slot="SONG_OF_VENGEANCE" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1594" levels="1" name="Rhythm of Revenge">
+		<!-- Glory Days confirmed -->
 		<!-- For 2 minutes, gives all party members the ability to recover as HP 8% of any damage inflicted on the enemy, and has a chance of giving all party members the ability to return 20% of damage back to the enemy. MP Consumption is additionally increased if the skill is used while song/dance effect is in place. -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="DANCE_OF_VAMPIRE" />
 		<set name="affectRange" val="1000" />
@@ -2433,16 +2485,17 @@
 				<add stat="reflectDam" val="20" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" />
+				<param slot="SONG_OF_VENGEANCE" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param slot="SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" />
+				<param slot="SONG_OF_VENGEANCE" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1595" levels="1" name="Rhythm of Start Dark">
+		<!-- Glory Days confirmed -->
 		<!-- For 2 minutes, decreases all party members' damage attack magic's Critical Rate by 100%, physical/magic/song/dance skills' MP Consumption by 5%, and physical/magic skills' Cooldown by 20%. Addtionally increases MP Consumption when the skill is used while song/dance effect is in place. Requires a dualsword to be equipped. -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="DANCE_OF_SIREN" />
 		<set name="affectRange" val="1000" />
@@ -2467,16 +2520,17 @@
 				<mul stat="mCritRate" val="2" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_RENEWAL;DANCE_OF_SIREN" />
+				<param slot="SONG_OF_RENEWAL" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param slot="SONG_OF_RENEWAL;DANCE_OF_SIREN" />
+				<param slot="SONG_OF_RENEWAL" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1596" levels="1" name="Rhythm of Start">
+		<!-- Glory Days confirmed -->
 		<!-- For 2 minutes, decreases all party members' damage attack magic's Critical Rate by 100%, physical/magic/song/dance skills' MP Consumption by 5%, and physical/magic skills' Cooldown by 20%. MP Consumption is additionally increased if the skill is used while song/dance effect is in place. -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="DANCE_OF_SIREN" />
 		<set name="affectRange" val="1000" />
@@ -2498,10 +2552,10 @@
 				<mul stat="mCritRate" val="2" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_RENEWAL;DANCE_OF_SIREN" />
+				<param slot="SONG_OF_RENEWAL" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param slot="SONG_OF_RENEWAL;DANCE_OF_SIREN" />
+				<param slot="SONG_OF_RENEWAL" />
 			</effect>
 		</for>
 	</skill>
@@ -2518,8 +2572,9 @@
 		</for>
 	</skill>
 	<skill id="1598" levels="1" name="Rhythm of Magician Dark">
+		<!-- Glory Days confirmed -->
 		<!-- For 2 minutes, decreases all party members' magic cancel damage by 40, MP Consumption for magic skills by 10%, and increases Casting Spd. by 30% and MP recovery bonus by 20%. Addtionally increases MP Consumption when the skill is used while song/dance effect is in place. Requires a dualsword to be equipped. -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="DANCE_OF_CONCENTRATION" />
 		<set name="affectRange" val="1000" />
@@ -2542,16 +2597,17 @@
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION" />
+				<param slot="SONG_OF_MEDITATION" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param slot="SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION" />
+				<param slot="SONG_OF_MEDITATION" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="1599" levels="1" name="Rhythm of Magician">
+		<!-- Glory Days confirmed -->
 		<!-- For 2 minutes, decreases all party members' magic cancel damage by 40, MP Consumption for magic skills by 10%, and increases Casting Spd. by 30% and MP recovery bonus by 20%. MP Consumption is additionally increased if the skill is used while song/dance effect is in place. -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="DANCE_OF_CONCENTRATION" />
 		<set name="affectRange" val="1000" />
@@ -2571,10 +2627,10 @@
 				<mul stat="MagicalMpConsumeRate" val="0.9" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION" />
+				<param slot="SONG_OF_MEDITATION" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param slot="SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION" />
+				<param slot="SONG_OF_MEDITATION" />
 			</effect>
 		</for>
 	</skill>

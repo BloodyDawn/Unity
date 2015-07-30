@@ -340,7 +340,7 @@ public final class Transform implements IIdentifiable
 					final Skill skill = holder.getSkill();
 					if (!SkillTreesData.getInstance().isSkillAllowed(player, skill))
 					{
-						player.removeSkill(skill, false, skill.isPassive());
+						player.removeSkill(skill, false, true);
 					}
 				}
 			}
@@ -353,7 +353,7 @@ public final class Transform implements IIdentifiable
 					final Skill skill = holder.getSkill();
 					if ((player.getLevel() >= holder.getMinLevel()) && !SkillTreesData.getInstance().isSkillAllowed(player, skill))
 					{
-						player.removeSkill(skill, false, skill.isPassive());
+						player.removeSkill(skill, false, true);
 					}
 				}
 			}

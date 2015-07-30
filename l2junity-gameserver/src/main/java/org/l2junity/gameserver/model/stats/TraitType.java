@@ -75,7 +75,8 @@ public enum TraitType
 	DISARM(49, 3),
 	DEPORT(50, 3),
 	CHANGEBODY(51, 3),
-	NONE(52, 0);
+	TWOHANDCROSSBOW(52, 1),
+	NONE(53, 0);
 	
 	private final int _id;
 	private final int _type; // 1 = weapon, 2 = weakness, 3 = resistance

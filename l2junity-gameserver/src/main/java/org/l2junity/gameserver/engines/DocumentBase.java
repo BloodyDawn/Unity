@@ -78,6 +78,7 @@ import org.l2junity.gameserver.model.conditions.ConditionPlayerHasPet;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerHasSummon;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerHp;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerImmobile;
+import org.l2junity.gameserver.model.conditions.ConditionPlayerInInstance;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerInsideZoneId;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerInstanceId;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerInvSize;
@@ -961,6 +962,11 @@ public abstract class DocumentBase
 				case "isonside":
 				{
 					cond = joinAnd(cond, new ConditionPlayerIsOnSide(Enum.valueOf(CastleSide.class, a.getNodeValue())));
+					break;
+				}
+				case "ininstance":
+				{
+					cond = joinAnd(cond, new ConditionPlayerInInstance(Boolean.parseBoolean(a.getNodeValue())));
 					break;
 				}
 			}

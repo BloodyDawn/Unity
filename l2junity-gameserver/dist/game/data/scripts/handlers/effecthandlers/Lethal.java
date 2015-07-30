@@ -35,15 +35,15 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class Lethal extends AbstractEffect
 {
-	private final int _fullLethal;
-	private final int _halfLethal;
+	private final double _fullLethal;
+	private final double _halfLethal;
 	
 	public Lethal(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
-		_fullLethal = params.getInt("fullLethal", 0);
-		_halfLethal = params.getInt("halfLethal", 0);
+		_fullLethal = params.getDouble("fullLethal", 0);
+		_halfLethal = params.getDouble("halfLethal", 0);
 	}
 	
 	@Override

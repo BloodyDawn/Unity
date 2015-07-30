@@ -43,7 +43,7 @@ public enum WeaponType implements ItemType
 	FLAG(TraitType.NONE), // 0 items with that type
 	DUALDAGGER(TraitType.DUALDAGGER),
 	OWNTHING(TraitType.NONE), // 0 items with that type
-	TWOHANDCROSSBOW(TraitType.CROSSBOW), // TODO: Confirm this case..
+	TWOHANDCROSSBOW(TraitType.TWOHANDCROSSBOW),
 	DUALBLUNT(TraitType.DUALBLUNT);
 	
 	private final int _mask;
