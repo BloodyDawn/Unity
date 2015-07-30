@@ -444,8 +444,8 @@
 				<param overHit="true" />
 				<param chargeConsume="3" />
 			</effect>
-			<effect name="KnockDown">
-				<param distance="250" speed="600" />
+			<effect name="KnockBack">
+				<param distance="250" speed="600" knockDown="true" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param AIRBIND="100" />
@@ -580,8 +580,8 @@
 			<using kind="POLE, SWORD, BLUNT, DUAL, DUALFIST, DUALBLUNT" />
 		</cond>
 		<for>
-			<effect name="KnockDown">
-				<param speed="400" distance="50" />
+			<effect name="KnockBack">
+				<param speed="400" distance="50" knockDown="true" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param AIRBIND="100" />
@@ -1015,8 +1015,8 @@
 				<param criticalChance="5" />
 				<param overHit="true" />
 			</effect>
-			<effect name="KnockDown">
-				<param speed="700" distance="50" />
+			<effect name="KnockBack">
+				<param speed="700" distance="50" knockDown="true" />
 			</effect>
 		</for>
 	</skill>

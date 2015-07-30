@@ -43,6 +43,7 @@ public final class KnockBack extends AbstractEffect
 	private final int _speed;
 	private final int _delay;
 	private final int _animationSpeed;
+	private final boolean _knockDown;
 	private final FlyType _type;
 	
 	public KnockBack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
@@ -53,13 +54,14 @@ public final class KnockBack extends AbstractEffect
 		_speed = params.getInt("speed", 0);
 		_delay = params.getInt("delay", 0);
 		_animationSpeed = params.getInt("animationSpeed", 0);
-		_type = params.getEnum("type", FlyType.class, FlyType.PUSH_HORIZONTAL);
+		_knockDown = params.getBoolean("knockDown", false);
+		_type = params.getEnum("type", FlyType.class, _knockDown ? FlyType.PUSH_DOWN_HORIZONTAL : FlyType.PUSH_HORIZONTAL);
 	}
 	
 	@Override
 	public boolean isInstant()
 	{
-		return true;
+		return !_knockDown;
 	}
 	
 	@Override
@@ -80,6 +82,10 @@ public final class KnockBack extends AbstractEffect
 		
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		effected.broadcastPacket(new FlyToLocation(effected, loc, _type, _speed, _delay, _animationSpeed));
+		if (_knockDown)
+		{
+			effected.setHeading(Util.calculateHeadingFrom(info.getEffected(), info.getEffector()));
+		}
 		effected.setXYZ(loc);
 		effected.broadcastPacket(new ValidateLocation(effected));
 	}

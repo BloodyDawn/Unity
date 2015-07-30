@@ -1381,8 +1381,8 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="KnockDown">
-				<param speed="600" distance="50" />
+			<effect name="KnockBack">
+				<param speed="600" distance="50" knockDown="true" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param CHANGEBODY="100" />

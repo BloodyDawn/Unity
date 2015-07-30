@@ -1529,8 +1529,8 @@
 		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="KnockDown">
-				<param speed="400" distance="500" />
+			<effect name="KnockBack">
+				<param speed="400" distance="500" knockDown="true" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param DERANGEMENT="100" />

@@ -88,8 +88,8 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="KnockDown">
-				<param speed="700" distance="50" /> <!-- Unconfirmed -->
+			<effect name="KnockBack">
+				<param speed="700" distance="50" knockDown="true" /> <!-- Unconfirmed -->
 			</effect>
 		</for>
 	</skill>
@@ -559,8 +559,8 @@
 			<effect name="PhysicalAttack"><!-- TODO: Damage increases with the number of enemies affected. -->
 				<param power="#power" />
 			</effect>
-			<effect name="KnockDown">
-				<param speed="700" distance="50" /> <!-- Unconfirmed -->
+			<effect name="KnockBack">
+				<param speed="700" distance="50" knockDown="true" /> <!-- Unconfirmed -->
 			</effect>
 		</for>
 	</skill>
@@ -973,8 +973,8 @@
 			<target mindistance="100" />
 		</cond>
 		<for>
-			<effect name="KnockDown">
-				<param speed="700" distance="50" /> <!-- Unconfirmed -->
+			<effect name="KnockBack">
+				<param speed="700" distance="50" knockDown="true" /> <!-- Unconfirmed -->
 			</effect>
 		</for>
 	</skill>

@@ -127,7 +127,6 @@ public final class EffectMasterHandler
 		ImmobilePetBuff.class,
 		Invincible.class,
 		KnockBack.class,
-		KnockDown.class,
 		Lethal.class,
 		Lucky.class,
 		MagicalAbnormalDispelAttack.class,

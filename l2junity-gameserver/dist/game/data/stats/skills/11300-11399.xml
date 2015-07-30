@@ -1766,8 +1766,8 @@
 			<effect name="PhysicalAttack">
 				<param power="#power" />
 			</effect>
-			<effect name="KnockDown">
-				<param speed="700" distance="50" /> <!-- Guessed -->
+			<effect name="KnockBack">
+				<param speed="700" distance="50" knockDown="true" /> <!-- Guessed -->
 			</effect>
 		</for>
 	</skill>
