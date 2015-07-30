@@ -38,6 +38,7 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 	private final int _skillId;
 	private final int _skillLevel;
 	private final int _hitTime;
+	private final int _reuseGroup;
 	private final int _reuseDelay;
 	private final int _actionId; // If skill is called from RequestActionUse, use that ID.
 	private final Creature _activeChar;
@@ -45,13 +46,14 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 	private final List<Integer> _unknown = Collections.emptyList();
 	private final List<Location> _groundLocations;
 	
-	public MagicSkillUse(Creature cha, Creature target, int skillId, int skillLevel, int hitTime, int reuseDelay, int actionId)
+	public MagicSkillUse(Creature cha, Creature target, int skillId, int skillLevel, int hitTime, int reuseDelay, int reuseGroup, int actionId)
 	{
 		_activeChar = cha;
 		_target = target;
 		_skillId = skillId;
 		_skillLevel = skillLevel;
 		_hitTime = hitTime;
+		_reuseGroup = reuseGroup;
 		_reuseDelay = reuseDelay;
 		_actionId = actionId;
 		Location skillWorldPos = null;
@@ -68,12 +70,12 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 	
 	public MagicSkillUse(Creature cha, Creature target, int skillId, int skillLevel, int hitTime, int reuseDelay)
 	{
-		this(cha, cha, skillId, skillLevel, hitTime, reuseDelay, -1);
+		this(cha, cha, skillId, skillLevel, hitTime, reuseDelay, -1, -1);
 	}
 	
 	public MagicSkillUse(Creature cha, int skillId, int skillLevel, int hitTime, int reuseDelay)
 	{
-		this(cha, cha, skillId, skillLevel, hitTime, reuseDelay, -1);
+		this(cha, cha, skillId, skillLevel, hitTime, reuseDelay, -1, -1);
 	}
 	
 	@Override
@@ -87,7 +89,7 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 		packet.writeD(_skillId);
 		packet.writeD(_skillLevel);
 		packet.writeD(_hitTime);
-		packet.writeD(-1); // TODO: Combo skills ?
+		packet.writeD(_reuseGroup);
 		packet.writeD(_reuseDelay);
 		packet.writeD(_activeChar.getX());
 		packet.writeD(_activeChar.getY());
