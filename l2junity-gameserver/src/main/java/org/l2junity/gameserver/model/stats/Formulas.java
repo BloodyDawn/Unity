@@ -1346,6 +1346,9 @@ public final class Formulas
 				}
 				resisted = true;
 			}
+
+			final Skill targetCastingSkill = target.isCastingNow() ? target.getLastSkillCast() : null;
+			resisted |= targetCastingSkill != null && targetCastingSkill.getAbnormalResists().contains(skill.getAbnormalType());
 			
 			if (resisted)
 			{
