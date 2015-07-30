@@ -206,7 +206,7 @@
 			<effect name="TeleportToTarget" />
 			<effect name="TargetCancel" />
 			<effect name="BlockActions">
-				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
 			</effect>
 			<effect name="FatalBlow">
 				<param power="8875" />
@@ -777,7 +777,7 @@
 		<!-- TODO cond {op_blink;_back;300} -->
 		<for>
 			<effect name="BlockActions">
-				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
 			</effect>
 		</for>
 		<selfEffects>
@@ -822,7 +822,7 @@
 				<param overHit="true" />
 			</effect>
 			<effect name="BlockActions">
-				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
 			</effect>
 		</for>
 	</skill>

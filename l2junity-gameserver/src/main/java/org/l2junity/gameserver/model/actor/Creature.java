@@ -204,7 +204,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	private boolean _isDead = false;
 	private boolean _isImmobilized = false;
 	private boolean _isOverloaded = false; // the char is carrying too much
-	private boolean _blockActions = false;
 	private boolean _isPendingRevive = false;
 	private boolean _isRunning = false;
 	protected boolean _showSummonAnimation = false;
@@ -212,6 +211,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	private boolean _isInvul = false;
 	private boolean _isMortal = true; // Char will die when HP decreased to 0
 	private boolean _isFlying = false;
+
+	private boolean _blockActions = false;
+	private volatile Map<Integer, AtomicInteger> _blockActionsAllowedSkills;
 	
 	private CharStat _stat;
 	private CharStatus _status;
@@ -2415,7 +2417,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		{
 			return true;
 		}
-		
+
+		if (isAffected(EffectFlag.CONDITIONAL_BLOCK_ACTIONS) && !isBlockedActionsAllowedSkill(skill))
+		{
+			return true;
+		}
+
 		return isSkillDisabledByReuse(skill.getReuseHashCode());
 	}
 	
@@ -2951,7 +2958,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public final boolean hasBlockActions()
 	{
-		return _blockActions || isAffected(EffectFlag.BLOCK_ACTIONS);
+		return _blockActions || isAffected(EffectFlag.BLOCK_ACTIONS) || isAffected(EffectFlag.CONDITIONAL_BLOCK_ACTIONS);
 	}
 	
 	public final void setBlockActions(boolean blockActions)
@@ -7066,5 +7073,33 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public boolean hasAbnormalType(AbnormalType abnormalType)
 	{
 		return getEffectList().getBuffInfoByAbnormalType(abnormalType) != null;
+	}
+
+	public void addBlockActionsAllowedSkill(int skillId)
+	{
+		if (_blockActionsAllowedSkills == null)
+		{
+			synchronized (this)
+			{
+				if (_blockActionsAllowedSkills == null)
+				{
+					_blockActionsAllowedSkills = new ConcurrentHashMap<>();
+				}
+			}
+		}
+		_blockActionsAllowedSkills.computeIfAbsent(skillId, k -> new AtomicInteger()).incrementAndGet();
+	}
+
+	public void removeBlockActionsAllowedSkill(int skillId)
+	{
+		if(_blockActionsAllowedSkills != null)
+		{
+			_blockActionsAllowedSkills.computeIfPresent(skillId, (k, v) -> v.decrementAndGet() != 0 ? v : null);
+		}
+	}
+
+	public boolean isBlockedActionsAllowedSkill(Skill skill)
+	{
+		return _blockActionsAllowedSkills != null && _blockActionsAllowedSkills.containsKey(skill.getId());
 	}
 }

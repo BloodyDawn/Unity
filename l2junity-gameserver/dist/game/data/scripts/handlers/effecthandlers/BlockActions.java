@@ -18,6 +18,10 @@
  */
 package handlers.effecthandlers;
 
+import java.util.Arrays;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -33,15 +37,20 @@ import org.l2junity.gameserver.model.skills.BuffInfo;
  */
 public final class BlockActions extends AbstractEffect
 {
+	private final Set<Integer> _allowedSkills;
+
 	public BlockActions(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
+
+		final String[] skillIds = params.getString("allowedSkills", "").split(";");
+		_allowedSkills = Arrays.stream(skillIds).map(Integer::parseInt).collect(Collectors.toSet());
 	}
 	
 	@Override
 	public int getEffectFlags()
 	{
-		return EffectFlag.BLOCK_ACTIONS.getMask();
+		return _allowedSkills.isEmpty() ? EffectFlag.BLOCK_ACTIONS.getMask() : EffectFlag.CONDITIONAL_BLOCK_ACTIONS.getMask();
 	}
 	
 	@Override
@@ -54,13 +63,16 @@ public final class BlockActions extends AbstractEffect
 	public void onStart(BuffInfo info)
 	{
 		// Aborts any attacks/casts if stunned
-		info.getEffected().startParalyze();
+		final Creature effected = info.getEffected();
+		_allowedSkills.stream().forEach(effected::addBlockActionsAllowedSkill);
+		effected.startParalyze();
 	}
 
 	@Override
 	public void onExit(BuffInfo info)
 	{
 		final Creature effected = info.getEffected();
+		_allowedSkills.stream().forEach(effected::removeBlockActionsAllowedSkill);
 		if (!effected.isPlayer())
 		{
 			effected.getAI().notifyEvent(CtrlEvent.EVT_THINK);

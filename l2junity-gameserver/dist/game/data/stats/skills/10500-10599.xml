@@ -514,7 +514,7 @@
 		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="BlockActions">
-				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
 			</effect>
 		</for>
 	</skill>
@@ -548,7 +548,7 @@
 			<effect name="TeleportToTarget" />
 			<effect name="TargetCancel" />
 			<effect name="BlockActions">
-				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
 			</effect>
 		</for>
 	</skill>
@@ -887,7 +887,7 @@
 			<effect name="TeleportToTarget" />
 			<effect name="TargetCancel" />
 			<effect name="BlockActions">
-				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
 			</effect>
 			<effect name="Debuff">
 				<!-- TODO check this value since multiple levels have been added -->
@@ -1392,7 +1392,7 @@
 				<param SHOCK="100" />
 			</effect>
 			<effect name="BlockActions">
-				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
 			</effect>
 		</for>
 	</skill>
@@ -1466,7 +1466,7 @@
 				<param SHOCK="100" />
 			</effect>
 			<effect name="BlockActions">
-				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
 			</effect>
 		</for>
 	</skill>
@@ -1612,7 +1612,7 @@
 				<param chance="90" />
 			</effect>
 			<effect name="BlockActions">
-				<param escapeSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
 			</effect>
 		</for>
 		<endEffects>
