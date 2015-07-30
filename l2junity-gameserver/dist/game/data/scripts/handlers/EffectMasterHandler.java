@@ -44,6 +44,7 @@ public final class EffectMasterHandler
 		BlockAction.class,
 		BlockActions.class,
 		BlockChat.class,
+		BlockControl.class,
 		BlockEscape.class,
 		BlockParty.class,
 		BlockBuffSlot.class,
