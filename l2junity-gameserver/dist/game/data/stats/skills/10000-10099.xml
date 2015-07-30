@@ -560,7 +560,7 @@
 		<table name="#def"> 4000 6000 8000 10000 12000 14000 16000 </table>
 		<table name="#reflectDam"> 40 60 80 100 100 100 100 </table>
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
-		<table name="#damageCap"> 300 200 150 100 100 100 100 </table> <!-- TODO: Implement me -->
+		<table name="#damageCap"> 300 200 150 100 100 100 100 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
@@ -782,7 +782,9 @@
 			<effect name="TransferDamage">
 				<add stat="transDamToPlayer" val="90" />
 			</effect>
-			<!-- TODO p_get_damage_limit;10 -->
+			<effect name="Buff">
+				<set stat="damageCap" val="10" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10025" levels="4" name="Knight Frenzy">

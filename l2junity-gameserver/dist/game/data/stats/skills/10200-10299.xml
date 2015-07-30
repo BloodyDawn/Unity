@@ -80,27 +80,51 @@
 		</for>
 	</skill>
 	<skill id="10249" levels="1" name="Heavy Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
+		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1" />
 		<set name="reuseDelay" val="10000" />
+		<cond msgId="113" addName="1">
+			<target abnormalType="AIRBIND" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="10000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10250" levels="1" name="Heavy Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
+		<set name="nextActionAttack" val="true" />
+		<set name="operateType" val="DA1" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
+		<set name="effectRange" val="800" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1" />
 		<set name="reuseDelay" val="10000" />
+		<cond msgId="113" addName="1">
+			<target abnormalType="KNOCKDOWN" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="10000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10251" levels="7" name="Superior Weapon Mastery">
 		<!-- Glory Days confirmed -->
@@ -896,6 +920,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="BATTLE_CRY" />
 		<set name="reuseDelay" val="180000" />
+
 	</skill>
 	<skill id="10278" levels="8" name="Reduce Anger">
 		<!-- AUTO GENERATED SKILL -->
