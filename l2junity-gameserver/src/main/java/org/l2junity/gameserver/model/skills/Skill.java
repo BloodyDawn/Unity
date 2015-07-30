@@ -379,11 +379,11 @@ public final class Skill implements IIdentifiable
 		_attachToggleGroupId = set.getInt("attachToggleGroupId", -1);
 		_alterSkills = set.getList("alterSkill", AlterSkillHolder.class);
 		_attachSkills = set.getList("attachSkillList", AttachSkillHolder.class);
-
+		
 		final String abnormalResist = set.getString("abnormalResists", null);
 		if (abnormalResist != null)
 		{
-			String[] abnormalResistStrings = rideState.split(";");
+			String[] abnormalResistStrings = abnormalResist.split(";");
 			if (abnormalResistStrings.length > 0)
 			{
 				_abnormalResists = new HashSet<>(abnormalResistStrings.length);
@@ -1302,7 +1302,8 @@ public final class Skill implements IIdentifiable
 			{
 				if ((addContinuousEffects && isContinuous() && !isDebuff()) || isRecoveryHerb())
 				{
-					effected.getServitors().values().forEach(s -> {
+					effected.getServitors().values().forEach(s ->
+					{
 						applyEffects(effector, s, isRecoveryHerb(), 0);
 					});
 				}
@@ -1331,7 +1332,8 @@ public final class Skill implements IIdentifiable
 			// Avoiding Servitor Share since it's implementation already "shares" the effect.
 			if (addContinuousEffects && isSharedWithSummon() && info.getEffected().isPlayer() && isContinuous() && !isDebuff() && info.getEffected().hasServitors())
 			{
-				info.getEffected().getServitors().values().forEach(s -> {
+				info.getEffected().getServitors().values().forEach(s ->
+				{
 					applyEffects(effector, s, false, 0);
 				});
 			}
@@ -1812,7 +1814,7 @@ public final class Skill implements IIdentifiable
 	{
 		return _attachSkills;
 	}
-
+	
 	public Set<AbnormalType> getAbnormalResists()
 	{
 		return _abnormalResists;

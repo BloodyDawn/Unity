@@ -31,19 +31,16 @@ public class BypassParser extends StatsSet
 {
 	private static final String ALLOWED_CHARS = "a-zA-Z0-9-_`!@#%^&*()\\[\\]|\\\\/";
 	private static final Pattern PATTERN = Pattern.compile(String.format("([%s]*)=(\"([%s ]*)\"|[%s]*)", ALLOWED_CHARS, ALLOWED_CHARS, ALLOWED_CHARS));
-
-	private final String _bypass;
 	
 	public BypassParser(String bypass)
 	{
 		super(LinkedHashMap::new);
-		_bypass = bypass;
-		process();
+		process(bypass);
 	}
 	
-	private void process()
+	private void process(String bypass)
 	{
-		final Matcher regexMatcher = PATTERN.matcher(_bypass);
+		final Matcher regexMatcher = PATTERN.matcher(bypass);
 		while (regexMatcher.find())
 		{
 			final String name = regexMatcher.group(1);
