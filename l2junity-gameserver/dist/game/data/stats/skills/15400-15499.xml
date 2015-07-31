@@ -11,6 +11,7 @@
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="15401" levels="1" name="Burning Blood">
@@ -26,6 +27,7 @@
 		<set name="abnormalType" val="RESURRECTION_SPECIAL" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="15402" levels="1" name="Wisp's Blessing">
@@ -41,6 +43,7 @@
 		<set name="abnormalType" val="NPC_MULTI_BUFF1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15403" levels="1" name="Favor Exchange">
@@ -57,6 +60,7 @@
 		<set name="abnormalType" val="MULTI_DEBUFF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15404" levels="1" name="Unable to Target">
@@ -67,6 +71,7 @@
 		<set name="abnormalType" val="MA_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="15405" levels="1" name="Master's Blessing (Awakening)">
@@ -78,6 +83,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15406" levels="1" name="Warrior's Harmony Zone">
@@ -89,6 +95,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15407" levels="1" name="Knight's Harmony Zone">
@@ -100,6 +107,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15408" levels="1" name="Wizard's Harmony Zone">
@@ -111,6 +119,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15409" levels="1" name="Summon Buff Servant">
@@ -122,6 +131,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15410" levels="1" name="Full Attack">
@@ -139,6 +149,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15411" levels="1" name="Soul Break">
@@ -154,6 +165,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15412" levels="1" name="Presentation - Toad Cannon Explosion">
@@ -163,6 +175,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="100" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="15413" levels="1" name="Raid Boss (Lv. 96)">
@@ -170,6 +183,7 @@
 		<!-- Giant golem created by Dr. Chaos to excavate the Nornil Ruins. This Detector Golem is equipped with attack functions as well, and is a complete collection of all of Dr. Chaos' technological wonders. -->
 		<set name="icon" val="icon.skillraid" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="15414" levels="1" name="Raid Boss (Lv. 96)">
@@ -177,6 +191,7 @@
 		<!-- Leader of the Spiculas that activated the Intruder Elimination Project under Mother Nornil's orders. This prototype Spicula is emotionless and almost machine-like. It is currently creating mutations in various machines by spreading the Laido Virus. -->
 		<set name="icon" val="icon.skillraid" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="15415" levels="1" name="Appearance Modification (No-grade)">
@@ -192,6 +207,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF4" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="15416" levels="1" name="Appearance Modification (D-grade)">
@@ -207,6 +223,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF4" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="15417" levels="1" name="Appearance Modification (C-grade)">
@@ -222,6 +239,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF4" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="15418" levels="1" name="Appearance Modification (B-grade)">
@@ -237,6 +255,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF4" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="15419" levels="1" name="Appearance Modification (A-grade)">
@@ -252,6 +271,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF4" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="15420" levels="1" name="Before Lind Attack">
@@ -334,6 +354,7 @@
 		<set name="hitTime" val="1900" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="reuseDelay" val="7000" />
 	</skill>
 	<skill id="15432" levels="1" name="Power Strike">
@@ -347,6 +368,7 @@
 		<set name="coolTime" val="800" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="15433" levels="1" name="Surrender to Dark">
@@ -364,6 +386,7 @@
 		<set name="abnormalType" val="ARMOR_UNHOLY" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15434" levels="1" name="Drain Energy">
@@ -376,6 +399,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15435" levels="1" name="Power Strike">
@@ -389,6 +413,7 @@
 		<set name="coolTime" val="800" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="15436" levels="1" name="Wide Sweep">
@@ -401,6 +426,7 @@
 		<set name="hitTime" val="1800" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="15437" levels="1" name="Sonic Blaster">
@@ -413,6 +439,7 @@
 		<set name="hitTime" val="1900" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="15438" levels="1" name="Hold">
@@ -430,6 +457,7 @@
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15439" levels="1" name="Drain Energy">
@@ -442,6 +470,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15440" levels="1" name="Aura Burn">
@@ -454,6 +483,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15441" levels="1" name="Death Bomb">
@@ -463,6 +493,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="mpConsume" val="119" />
 	</skill>
 	<skill id="15442" levels="1" name="Bleed">
@@ -481,6 +512,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15443" levels="1" name="Drain Energy">
@@ -494,6 +526,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15444" levels="1" name="Bleed">
@@ -511,6 +544,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15445" levels="1" name="Super Strike">
@@ -523,6 +557,7 @@
 		<set name="hitTime" val="1800" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="15446" levels="1" name="Drain Energy">
@@ -535,6 +570,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15447" levels="1" name="Bleed">
@@ -553,6 +589,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15448" levels="1" name="Aura Burn">
@@ -565,6 +602,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15449" levels="1" name="Wind Strike">
@@ -577,6 +615,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15450" levels="1" name="Weakness">
@@ -594,6 +633,7 @@
 		<set name="abnormalType" val="PA_DOWN" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15451" levels="1" name="Bleed">
@@ -608,6 +648,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15452" levels="1" name="Decrease P. Atk.">
@@ -622,6 +663,7 @@
 		<set name="abnormalType" val="PA_DOWN" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15453" levels="1" name="Vampiric Touch">
@@ -633,6 +675,7 @@
 		<set name="castRange" val="750" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="hitTime" val="2500" />
 	</skill>
 	<skill id="15454" levels="1" name="Memorable Raid Blessing">
@@ -647,6 +690,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="15455" levels="1" name="Sensitive Skin">
@@ -654,6 +698,7 @@
 		<!-- Received damage increases due to skin sensitivity. -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="15456" levels="1" name="Triol's Voice">
@@ -666,6 +711,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15457" levels="2" name="Triol's Reign">
@@ -678,6 +724,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15458" levels="1" name="Memorable Raid Shield">
@@ -691,6 +738,7 @@
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15459" levels="1" name="Blaze">
@@ -703,6 +751,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15460" levels="1" name="Poison">
@@ -717,6 +766,7 @@
 		<set name="abnormalType" val="POISON" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15461" levels="1" name="Drain Energy">
@@ -729,6 +779,7 @@
 		<set name="hitTime" val="4000" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15462" levels="1" name="Heal">
@@ -742,6 +793,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="effectPoint" val="100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15463" levels="1" name="Prominence">
@@ -754,6 +806,7 @@
 		<set name="hitTime" val="4000" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15464" levels="1" name="Death Link">
@@ -766,6 +819,7 @@
 		<set name="hitTime" val="4000" />
 		<set name="effectPoint" val="-100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15465" levels="15" name="Vitality Reward 1 (Quest)">
@@ -776,6 +830,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="castRange" val="#castRanges" />
 	</skill>
 	<skill id="15466" levels="1" name="Triol's CON Increase">
@@ -785,6 +840,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="mpConsume" val="110" />
 	</skill>
 	<skill id="15467" levels="1" name="Triol's P. Def. Increase">
@@ -793,6 +849,7 @@
 		<set name="icon" val="icon.skill1040" />
 		<set name="operateType" val="P" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="15468" levels="1" name="Triol's M. Def. Decrease">
@@ -801,6 +858,7 @@
 		<set name="icon" val="icon.skill1388" />
 		<set name="operateType" val="P" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="15469" levels="1" name="Rites for Triol">
@@ -814,6 +872,7 @@
 		<set name="abnormalType" val="HP_REGEN_UP" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15470" levels="1" name="Cancel HP Regeneration">
@@ -822,6 +881,7 @@
 		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="15471" levels="1" name="Appearance Modification (No-grade) (Raid)">
@@ -837,6 +897,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF4" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="15472" levels="1" name="Appearance Modification (D-grade) (Raid)">
@@ -852,6 +913,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF4" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="15473" levels="1" name="Appearance Modification (C-grade) (Raid)">
@@ -867,6 +929,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF4" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="15474" levels="1" name="Appearance Modification (B-grade) (Raid)">
@@ -882,6 +945,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF4" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="15475" levels="1" name="Appearance Modification (A-grade) (Raid)">
@@ -897,6 +961,7 @@
 		<set name="abnormalType" val="BR_EVENT_BUF4" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="15476" levels="1" name="Spore Spray">
@@ -912,6 +977,7 @@
 		<set name="abnormalType" val="MULTI_DEBUFF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15477" levels="1" name="Corrosive Acid Spray">
@@ -926,6 +992,7 @@
 		<set name="abnormalType" val="PD_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15478" levels="1" name="Spread Disease">
@@ -941,6 +1008,7 @@
 		<set name="abnormalType" val="POISON" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15479" levels="1" name="Vomit Mucus">
@@ -955,6 +1023,7 @@
 		<set name="abnormalType" val="HIT_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15480" levels="1" name="Shoot Poison">
@@ -970,6 +1039,7 @@
 		<set name="abnormalType" val="POISON" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15481" levels="1" name="Shoot Spider Web">
@@ -985,6 +1055,7 @@
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15482" levels="1" name="Presentation - Lind">

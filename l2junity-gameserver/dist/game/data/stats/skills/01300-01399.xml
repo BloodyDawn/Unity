@@ -18,6 +18,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SERVITOR" />
 		<for>
 			<effect name="DispelBySlot">
@@ -38,6 +39,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SERVITOR" />
 		<for>
 			<effect name="DispelBySlot">
@@ -68,6 +70,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -98,6 +101,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -123,6 +127,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY_CLAN" />
 		<for>
 			<effect name="CpHeal">
@@ -148,6 +153,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="CpHeal">
@@ -177,6 +183,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -206,6 +213,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -235,6 +243,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -264,6 +273,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -294,6 +304,7 @@
 		<set name="reuseDelay" val="150000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -311,6 +322,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<!-- TODO: Missing condition for "op_fishing_cast" -->
 		<cond msgId="113" addName="1">
@@ -330,6 +342,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<!-- TODO: Missing condition for "op_fishing_pumping" -->
 		<cond msgId="113" addName="1">
@@ -351,6 +364,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<!-- TODO: Missing condition for "op_fishing_reeling" -->
 		<cond msgId="113" addName="1">
@@ -367,6 +381,7 @@
 		<set name="icon" val="icon.skill1315" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -379,6 +394,7 @@
 		<set name="icon" val="icon.skill1316" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1317" levels="1" name="Fishing Expertise: B Grade">
@@ -386,6 +402,7 @@
 		<set name="icon" val="icon.skill1317" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1318" levels="1" name="Fishing Expertise: A-Grade">
@@ -393,6 +410,7 @@
 		<set name="icon" val="icon.skill1318" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1319" levels="1" name="Fishing Expertise: S-Grade">
@@ -400,12 +418,14 @@
 		<set name="icon" val="icon.skill1319" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1320" levels="10" name="Create Common Item">
 		<set name="icon" val="icon.skill0172" />
 		<set name="magicLvl" val="5" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1321" levels="1" name="Dwarven Craft">
@@ -415,6 +435,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="OpenDwarfRecipeBook" />
@@ -427,6 +448,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="OpenCommonRecipeBook" />
@@ -452,6 +474,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="NoblesseBless" />
@@ -472,6 +495,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -504,6 +528,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -531,6 +556,7 @@
 		<set name="reuseDelay" val="900000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -573,6 +599,7 @@
 		<set name="reuseDelay" val="900000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -614,6 +641,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="SummonCubic">
@@ -640,6 +668,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="SummonCubic">
@@ -666,6 +695,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="SummonCubic">
@@ -693,6 +723,7 @@
 		<!-- H5 hitTime -->
 		<set name="hitTime" val="6000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="A1" />
 		<cond>
 			<and>
@@ -727,6 +758,7 @@
 		<!-- H5 hitTime -->
 		<set name="hitTime" val="6000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="A1" />
 		<cond>
 			<and>
@@ -761,6 +793,7 @@
 		<!-- H5 hitTime -->
 		<set name="hitTime" val="6000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="A1" />
 		<cond>
 			<and>
@@ -795,6 +828,7 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<and>
@@ -823,6 +857,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="RebalanceHP" />
@@ -850,6 +885,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="Mute" />
@@ -877,6 +913,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="DEATH" />
 		<for>
 			<effect name="Debuff">
@@ -910,6 +947,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="ManaDamOverTime" ticks="5">
@@ -943,6 +981,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -980,6 +1019,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1017,6 +1057,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1054,6 +1095,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1088,6 +1130,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
@@ -1115,6 +1158,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="DispelBySlotProbability">
@@ -1136,6 +1180,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="DispelBySlotProbability">
@@ -1162,6 +1207,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SERVITOR" />
 		<for>
 			<effect name="Buff">
@@ -1195,6 +1241,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SERVITOR" />
 		<for>
 			<effect name="Buff">
@@ -1227,6 +1274,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SERVITOR" />
 		<for>
 			<effect name="Buff">
@@ -1263,6 +1311,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SERVITOR" />
 		<for>
 			<effect name="Buff">
@@ -1298,6 +1347,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DispelBySlotProbability">
@@ -1319,6 +1369,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DispelBySlotProbability">
@@ -1343,6 +1394,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -1370,6 +1422,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -1395,6 +1448,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -1423,6 +1477,7 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<for>
 			<effect name="Buff">
@@ -1461,6 +1516,7 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<for>
 			<effect name="Buff">
@@ -1499,6 +1555,7 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<for>
 			<effect name="Buff">
@@ -1538,6 +1595,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -1572,6 +1630,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -1606,6 +1665,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Debuff">
@@ -1640,6 +1700,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Debuff">
@@ -1669,6 +1730,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -1695,6 +1757,7 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -1734,6 +1797,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY_CLAN" />
 		<for>
 			<effect name="Buff">
@@ -1766,6 +1830,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY_CLAN" />
 		<for>
 			<effect name="Buff">
@@ -1801,6 +1866,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="DEATH" />
 		<for>
 			<effect name="Debuff">
@@ -1836,6 +1902,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="Debuff">
@@ -1849,6 +1916,7 @@
 		<set name="icon" val="icon.skill1368" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1862,6 +1930,7 @@
 		<set name="icon" val="icon.skill1369" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1875,6 +1944,7 @@
 		<set name="icon" val="icon.skill1370" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1889,6 +1959,7 @@
 		<set name="icon" val="icon.skill0333" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1903,6 +1974,7 @@
 		<set name="icon" val="icon.skill0332" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1914,6 +1986,7 @@
 		<set name="icon" val="icon.skill1373" />
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1943,6 +2016,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Buff">
@@ -1978,6 +2052,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AURA" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="Mute">
@@ -2017,6 +2092,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AURA" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="BlockControl" />
@@ -2029,18 +2105,21 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="1378" levels="1" name="none">
 		<!-- Confirmed CT2.5 -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="1379" levels="1" name="none">
 		<!-- Confirmed CT2.5 -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="1380" levels="10" name="Betray">
@@ -2069,6 +2148,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ENEMY_SUMMON" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="Betray" />
@@ -2103,6 +2183,7 @@
 		<set name="reuseDelay" val="75000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="BlockControl" />
@@ -2137,6 +2218,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="12000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -2180,6 +2262,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="AREA_SUMMON" />
 		<for>
 			<effect name="Debuff">
@@ -2215,6 +2298,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="AREA_SUMMON" />
 		<for>
 			<effect name="Debuff">
@@ -2250,6 +2334,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="AREA_SUMMON" />
 		<for>
 			<effect name="Debuff">
@@ -2280,6 +2365,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -2309,6 +2395,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -2344,6 +2431,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -2375,6 +2463,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -2405,6 +2494,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -2435,6 +2525,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -2463,6 +2554,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -2491,6 +2583,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -2526,6 +2619,7 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="SLEEP" />
 		<for>
 			<effect name="BlockActions" />
@@ -2556,6 +2650,7 @@
 		<set name="reuseDelay" val="11000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ENEMY_SUMMON" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="Unsummon">
@@ -2588,6 +2683,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -2622,6 +2718,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -2647,6 +2744,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttackMp">
@@ -2670,6 +2768,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MagicalAttackMp">

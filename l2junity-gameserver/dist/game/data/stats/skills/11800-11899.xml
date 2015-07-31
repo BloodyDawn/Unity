@@ -13,6 +13,7 @@
 		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -40,6 +41,7 @@
 		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -66,6 +68,7 @@
 		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -94,6 +97,7 @@
 		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -121,6 +125,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -132,6 +137,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1460" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="11806" levels="4" name="Blessing of Tree">
@@ -145,6 +151,7 @@
 		<set name="reuseDelay" val="7000" />
 		<set name="effectPoint" val="2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HpCpHeal">
@@ -167,6 +174,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealPercent">
@@ -189,6 +197,7 @@
 		<set name="abnormalType" val="ALL_REGEN_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -209,6 +218,7 @@
 		<set name="abnormalType" val="MULTI_DEBUFF_EARTH" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="10000" />
 		<for>
 			<effect name="Buff">
@@ -226,6 +236,7 @@
 		<set name="abnormalType" val="AB_HAWK_EYE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff" />
@@ -241,6 +252,7 @@
 		<set name="abnormalType" val="SNIPE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff" />
@@ -263,6 +275,7 @@
 		<set name="staticReuse" val="true" /> <!-- Custom -->
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="ResurrectionSpecial">
@@ -286,6 +299,7 @@
 		<set name="staticReuse" val="true" /> <!-- Custom -->
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="ResurrectionSpecial">
@@ -322,6 +336,7 @@
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="KNOCKBACK" />
 		<for>
 			<effect name="MagicalAttack">
@@ -352,6 +367,7 @@
 		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -378,6 +394,7 @@
 		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -404,6 +421,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="6700" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -425,6 +443,7 @@
 		<set name="abnormalType" val="DOT_MP" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Buff">
@@ -445,6 +464,7 @@
 		<set name="reuseDelay" val="150000" />
 		<set name="isMagic" val="1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -477,6 +497,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -510,6 +531,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -544,6 +566,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -576,6 +599,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -610,6 +634,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DefenceTrait">
@@ -645,6 +670,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DefenceTrait">
@@ -683,6 +709,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="ResurrectionSpecial">
@@ -697,6 +724,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="4000" />
 		<for>
 			<effect name="Heal">
@@ -720,6 +748,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="AREA_FRIENDLY" />
 		<for>
 			<effect name="HealPercent">
@@ -744,6 +773,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -788,6 +818,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="trait" val="DERANGEMENT" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Unsummon">
@@ -822,6 +853,7 @@
 		<set name="reuseDelay" val="120000" />
 		<set name="isMagic" val="1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockActions" />
@@ -845,6 +877,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="canBeDispelled" val="false" />
 		<for>
 			<effect name="Buff">
@@ -872,6 +905,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="canBeDispelled" val="false" />
 		<for>
 			<effect name="Buff">
@@ -894,6 +928,7 @@
 		<set name="operateType" val="A2" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">

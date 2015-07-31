@@ -26,6 +26,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="SHOCK" />
 		<cond msgId="113" addName="1">
 			<using kind="BLUNT" />
@@ -64,6 +65,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="SHOCK" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW" />
@@ -105,6 +107,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -140,6 +143,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA_CORPSE_MOB" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -161,6 +165,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="AttackTrait">
@@ -195,6 +200,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -224,6 +230,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="Passive" />
@@ -252,6 +259,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="HOLD" />
 		<cond msgId="144">
 			<target race="UNDEAD" />
@@ -277,6 +285,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
@@ -314,6 +323,7 @@
 		<set name="reuseDelay" val="900000" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="ImmobileBuff">
@@ -342,6 +352,7 @@
 		<set name="reuseDelay" val="900000" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -370,6 +381,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="DefenceTrait">
@@ -384,6 +396,7 @@
 		<set name="icon" val="icon.skill0113" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -419,6 +432,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -447,6 +461,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Debuff">
@@ -459,6 +474,7 @@
 		<set name="icon" val="icon.skill0118" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -496,6 +512,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="SHOCK" />
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
@@ -527,6 +544,7 @@
 		<set name="reuseDelay" val="150000" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -559,6 +577,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -587,6 +606,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -617,6 +637,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -652,6 +673,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -678,6 +700,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -704,6 +727,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -716,6 +740,7 @@
 		<set name="icon" val="icon.skill0134" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="DefenceTrait">
@@ -731,6 +756,7 @@
 		<set name="icon" val="icon.skill0137" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -759,6 +785,7 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<player hp="#hp" />
@@ -777,6 +804,7 @@
 		<set name="icon" val="icon.skill0141" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -793,6 +821,7 @@
 		<set name="icon" val="icon.skill0142" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -811,6 +840,7 @@
 		<set name="icon" val="icon.skill0143" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="CubicMastery">
@@ -824,6 +854,7 @@
 		<set name="icon" val="icon.skill0144" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -840,6 +871,7 @@
 		<set name="icon" val="icon.skill0146" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -855,6 +887,7 @@
 		<set name="icon" val="icon.skill0147" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -870,6 +903,7 @@
 		<set name="icon" val="icon.skill0148" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -888,6 +922,7 @@
 		<set name="icon" val="icon.skill0150" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -903,6 +938,7 @@
 		<set name="icon" val="icon.skill0153" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -919,6 +955,7 @@
 		<set name="icon" val="icon.skill0163" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -936,6 +973,7 @@
 		<set name="icon" val="icon.skill0164" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -950,6 +988,7 @@
 		<set name="icon" val="icon.skill0165" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="168" levels="3" name="Boost Atk. Spd.">
@@ -958,6 +997,7 @@
 		<set name="icon" val="icon.skill0168" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -971,6 +1011,7 @@
 		<set name="icon" val="icon.skill0169" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -986,6 +1027,7 @@
 		<set name="icon" val="icon.skill0171" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1007,6 +1049,7 @@
 		<set name="icon" val="icon.skill0172" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="173" levels="2" name="Acrobatics">
@@ -1016,6 +1059,7 @@
 		<set name="icon" val="icon.skill0173" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1051,6 +1095,7 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<player hp="#hp" />
@@ -1133,6 +1178,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="900000" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<player hp="10" />
@@ -1160,6 +1206,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
@@ -1179,6 +1226,7 @@
 		<set name="icon" val="icon.skill0191" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1192,6 +1240,7 @@
 		<set name="icon" val="icon.skill0193" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1204,6 +1253,7 @@
 		<set name="icon" val="icon.skill0194" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Lucky" />
@@ -1215,6 +1265,7 @@
 		<set name="icon" val="icon.skill0195" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1229,6 +1280,7 @@
 		<set name="mpConsume" val="8" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1245,6 +1297,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1258,6 +1311,7 @@
 		<set name="icon" val="icon.skill0198" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">

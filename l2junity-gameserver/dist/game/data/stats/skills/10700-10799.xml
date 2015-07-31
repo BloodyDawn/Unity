@@ -970,6 +970,7 @@
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="-709" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="10774" levels="4" name="Quick Evasion">
@@ -1415,6 +1416,7 @@
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10789" levels="1" name="Flash Trap">
@@ -1428,6 +1430,7 @@
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-709" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="45000" />
 	</skill>
 	<skill id="10790" levels="1" name="Explosion Trap">
@@ -1441,6 +1444,7 @@
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-709" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="45000" />
 	</skill>
 	<skill id="10791" levels="4" name="Frost Trap">
@@ -1454,6 +1458,7 @@
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="45000" />
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="#npcIds,150,false" />
@@ -1475,6 +1480,7 @@
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="45000" />
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="#npcIds,150,false" />
@@ -1499,6 +1505,7 @@
 		<set name="abnormalType" val="MA_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="10794" levels="8" name="Thunder Flight">

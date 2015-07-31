@@ -5,6 +5,7 @@
 		<set name="icon" val="icon.skillraid" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6901" levels="1" name="Raid Boss (Lv. 84)">
@@ -12,6 +13,7 @@
 		<set name="icon" val="icon.skillraid" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6902" levels="1" name="Raid Boss (Lv. 84)">
@@ -19,6 +21,7 @@
 		<set name="icon" val="icon.skillraid" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6903" levels="1" name="Raid Boss (Lv. 84)">
@@ -26,6 +29,7 @@
 		<set name="icon" val="icon.skillraid" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6904" levels="1" name="Raid Boss (Lv. 84)">
@@ -33,6 +37,7 @@
 		<set name="icon" val="icon.skillraid" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6905" levels="1" name="Raid Boss (Lv. 85)">
@@ -40,6 +45,7 @@
 		<set name="icon" val="icon.skillraid" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6906" levels="1" name="Raid Boss (Lv. 85)">
@@ -47,6 +53,7 @@
 		<set name="icon" val="icon.skillraid" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6907" levels="1" name="Raid Boss (Lv. 85)">
@@ -54,6 +61,7 @@
 		<set name="icon" val="icon.skillraid" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="6908" levels="1" name="Transform Master">
@@ -65,6 +73,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Transformation">
@@ -76,18 +85,21 @@
 		<!-- Shows the game master's charming actions. -->
 		<set name="operateType" val="P" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6910" levels="1" name="Dance">
 		<!-- Shows the game master's dancing skills. -->
 		<set name="operateType" val="P" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6911" levels="1" name="Greeting">
 		<!-- Shows the game master's greeting. -->
 		<set name="operateType" val="P" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6912" levels="1" name="Stigma Aftermath">
@@ -97,6 +109,7 @@
 		<set name="abnormalType" val="TIME_BOMB" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6913" levels="1" name="Challenge of Faith">
@@ -112,6 +125,7 @@
 		<set name="effectPoint" val="673" />
 		<set name="abnormalType" val="KNIGHT_SHIELD" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -126,6 +140,7 @@
 		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6915" levels="10" name="Acumen">
@@ -134,24 +149,28 @@
 		<set name="abnormalType" val="CASTING_TIME_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6916" levels="1" name="Antharas's Cute Tricks">
 		<!-- You can see the summoned spirit's cute tricks. -->
 		<set name="operateType" val="P" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6917" levels="1" name="Kanna's Splendor">
 		<!-- Able to see the summoned spirit's splendor. -->
 		<set name="operateType" val="P" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6918" levels="1" name="Kallesin's Splendor">
 		<!-- Able to see the summoned spirit's splendor. -->
 		<set name="operateType" val="P" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6919" levels="1" name="Challenge Acceptance">
@@ -160,6 +179,7 @@
 		<set name="abnormalType" val="MORALE_UP" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6920" levels="1" name="Collector's Fortune">
@@ -175,6 +195,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="abnormalType" val="PATIENCE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -197,6 +218,7 @@
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="PD_DOWN" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6922" levels="3" name="Adventurer's Might">

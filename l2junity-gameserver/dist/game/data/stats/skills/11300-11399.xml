@@ -13,6 +13,7 @@
 		<set name="abnormalType" val="AIRBIND" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11301" levels="8" name="Dimension Storm">
@@ -29,6 +30,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="-704" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -50,6 +52,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Heal">
@@ -74,6 +77,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -98,6 +102,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -122,6 +127,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -146,6 +152,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -170,6 +177,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -194,6 +202,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -214,6 +223,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
@@ -241,6 +251,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -263,6 +274,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-704" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="4000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -284,6 +296,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-704" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="4000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -304,6 +317,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-704" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="4000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -326,6 +340,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-704" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -338,6 +353,7 @@
 		<!-- Increases Bow/Crossbow Resistance + 50 and M. Def. + 50%. -->
 		<set name="icon" val="icon.skill11253" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -361,6 +377,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<cond msgId="129">
 			<and>
@@ -388,6 +405,7 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Heal">

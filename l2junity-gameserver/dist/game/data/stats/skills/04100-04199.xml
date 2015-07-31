@@ -17,6 +17,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -38,6 +39,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -70,6 +72,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -95,6 +98,7 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -129,6 +133,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -151,6 +156,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -180,6 +186,7 @@
 		<set name="targetType" val="FRONT_AURA" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -213,6 +220,7 @@
 		<set name="targetType" val="BEHIND_AURA" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -247,6 +255,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="BlockControl" />
@@ -274,6 +283,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="Debuff">
@@ -308,6 +318,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -339,6 +350,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -364,6 +376,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -386,6 +399,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -408,6 +422,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -427,6 +442,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Heal">
@@ -440,6 +456,7 @@
 		<set name="icon" val="icon.skill4116_new" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -473,6 +490,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="BlockActions" />
@@ -505,6 +523,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="BlockActions" />
@@ -534,6 +553,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -565,6 +585,7 @@
 		<set name="reuseDelay" val="17000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="SHOCK" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW" />
@@ -581,6 +602,7 @@
 		<table name="#trait_derangement"> 5 10 15 20 25 30 35 40 45 50 75 100 </table>
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="DefenceTrait">
@@ -595,6 +617,7 @@
 		<set name="magicLvl" val="70" />
 		<set name="operateType" val="P" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -619,6 +642,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="4124" levels="12" name="Spear Attack">
@@ -635,6 +659,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="17000" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -652,6 +677,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -671,6 +697,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -690,6 +717,7 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -708,6 +736,7 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="FRONT_AURA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -725,6 +754,7 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -744,6 +774,7 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -773,6 +804,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="BlockActions" />
@@ -786,6 +818,7 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -802,6 +835,7 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Heal">
@@ -819,6 +853,7 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="4135" levels="1" name="Baium Heal">
@@ -829,6 +864,7 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Heal">
@@ -846,6 +882,7 @@
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -872,6 +909,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -897,6 +935,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AREA_CORPSE_MOB" />
 		<for>
 			<effect name="MagicalAttack">
@@ -919,6 +958,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -946,6 +986,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="ManaDamOverTime" ticks="5">
@@ -965,6 +1006,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -983,6 +1025,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1002,6 +1045,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1021,6 +1065,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1045,6 +1090,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -1069,6 +1115,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -1084,6 +1131,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DispelAll" />
@@ -1109,6 +1157,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -1136,6 +1185,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="BLEED" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -1164,6 +1214,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -1187,6 +1238,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1212,6 +1264,7 @@
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
@@ -1247,6 +1300,7 @@
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1271,6 +1325,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttackMp">
@@ -1294,6 +1349,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1315,6 +1371,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1340,6 +1397,7 @@
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1363,6 +1421,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1384,6 +1443,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1405,6 +1465,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1422,6 +1483,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="4162" levels="3" name="Decrease P. Atk.">
@@ -1441,6 +1503,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -1462,6 +1525,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1486,6 +1550,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="Debuff">
@@ -1520,6 +1585,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -1545,6 +1611,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="BlockActions" />
@@ -1563,6 +1630,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -1585,6 +1653,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1615,6 +1684,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1637,6 +1707,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="FatalBlow">
@@ -1658,6 +1729,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1686,6 +1758,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1710,6 +1783,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -1733,6 +1807,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -1756,6 +1831,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -1779,6 +1855,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -1797,6 +1874,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="DispelAll" />
@@ -1818,6 +1896,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1839,6 +1918,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1869,6 +1949,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1891,6 +1972,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="FatalBlow">
@@ -1921,6 +2003,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -1948,6 +2031,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1975,6 +2059,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Debuff">
@@ -2003,6 +2088,7 @@
 		<set name="removedOnDamage" val="true" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="SLEEP" />
 		<for>
 			<effect name="BlockActions" />
@@ -2028,6 +2114,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="HOLD" />
 		<for>
 			<effect name="Root" />
@@ -2053,6 +2140,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Debuff">
@@ -2082,6 +2170,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="BLEED" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -2109,6 +2198,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="BlockActions" />
@@ -2135,6 +2225,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="ManaDamOverTime" ticks="5">
@@ -2157,6 +2248,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -2179,6 +2271,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
@@ -2200,6 +2293,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
@@ -2221,6 +2315,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -2243,6 +2338,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -2273,6 +2369,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -2305,6 +2402,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="HOLD" />
 		<for>
 			<effect name="Root" />
@@ -2333,6 +2431,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -2361,6 +2460,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">

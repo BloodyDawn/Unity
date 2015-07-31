@@ -12,6 +12,7 @@
 		<set name="coolTime" val="1800" />
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="11001" levels="7" name="Superior Weapon Mastery">
@@ -21,6 +22,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill11251" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="P" />
 		<for>
 			<effect name="Buff">
@@ -38,6 +40,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill11252" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="P" />
 		<for>
 			<effect name="Buff">
@@ -61,6 +64,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10004" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="P" />
 		<for>
 			<effect name="Buff">
@@ -75,6 +79,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill11791" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="P" />
 		<for>
 			<effect name="Buff">
@@ -92,6 +97,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="icon" val="icon.skill11253" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -109,6 +115,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<set name="icon" val="icon.skill11006" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="P" />
 		<for>
 			<effect name="Buff">
@@ -129,6 +136,7 @@
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="2000" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<cond>
 			<and>
@@ -150,6 +158,7 @@
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="2000" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<cond>
 			<and>
@@ -171,6 +180,7 @@
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="2000" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<cond>
 			<and>
@@ -192,6 +202,7 @@
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="2000" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<cond>
 			<and>
@@ -225,6 +236,7 @@
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="6" />
 		<set name="isMagic" val="1" />
 		<attachSkillList>
 			<skill requiredId="11007" id="11012" /> <!-- Fire Stance / Elemental Spike (Fire) -->
@@ -259,6 +271,7 @@
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="6" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -287,6 +300,7 @@
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="6" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -315,6 +329,7 @@
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="6" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -343,6 +358,7 @@
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="6" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -369,6 +385,7 @@
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="6" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -398,6 +415,7 @@
 		<set name="reuseDelay" val="2400" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<attachSkillList>
 			<skill requiredId="11007" id="11018" /> <!-- Fire Stance / Elemental Crash (Fire) -->
@@ -432,6 +450,8 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2400" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -460,6 +480,8 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2400" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -488,6 +510,8 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2400" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -516,6 +540,8 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2400" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -543,6 +569,7 @@
 		<set name="reuseDelay" val="2400" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -572,6 +599,7 @@
 		<set name="reuseDelay" val="6700" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="11" />
 		<set name="isMagic" val="1" />
 		<attachSkillList>
 			<skill requiredId="11007" id="11024" /> <!-- Fire Stance / Elemental Destruction (Fire) -->
@@ -722,6 +750,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="11" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -753,6 +782,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -782,6 +812,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<channelingEffects>
 			<effect name="HpDrain">
@@ -814,6 +845,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -835,6 +867,7 @@
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11034" levels="8" name="Elemental Blast">
@@ -859,6 +892,7 @@
 		<set name="reuseDelay" val="6700" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<attachSkillList>
 			<skill requiredId="11007" id="11035" /> <!-- Fire Stance / Elemental Blast (Fire) -->
@@ -1007,6 +1041,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1036,6 +1071,7 @@
 		<set name="reuseDelay" val="6700" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="11" />
 		<set name="isMagic" val="1" />
 		<attachSkillList>
 			<skill requiredId="11007" id="11041" /> <!-- Fire Stance / Elemental Storm (Fire) -->
@@ -1186,6 +1222,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="11" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1214,6 +1251,7 @@
 		<set name="abnormalType" val="FINAL_SECRET" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Debuff">
@@ -1252,6 +1290,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1295,6 +1334,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="HpDrain">
@@ -1328,6 +1368,7 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11050" levels="4" name="Hell Binding">
@@ -1354,6 +1395,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalResists" val="STUN;TURN_FLEE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockActions" />
@@ -1383,6 +1425,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalResists" val="STUN;TURN_FLEE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockActions" />
@@ -1408,6 +1451,7 @@
 		<set name="effectPoint" val="-707" />
 		<set name="abnormalResists" val="STUN;TURN_FLEE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11053" levels="4" name="Mass Hell Binding">
@@ -1430,6 +1474,7 @@
 		<set name="effectPoint" val="-707" />
 		<set name="abnormalResists" val="STUN;TURN_FLEE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11054" levels="1" name="Yoke Status">
@@ -1448,6 +1493,7 @@
 		<set name="effectPoint" val="-692" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockActions" />
@@ -1480,6 +1526,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockControl" />
@@ -1516,6 +1563,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockControl" />
@@ -1552,6 +1600,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1584,6 +1633,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="SummonNpc">
@@ -1605,6 +1655,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PullBack">
@@ -1631,6 +1682,7 @@
 		<set name="abnormalType" val="SPEED_UP_SPECIAL" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="30000" />
 		<for>
 			<effect name="Buff">
@@ -1644,6 +1696,7 @@
 		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="709" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="11064" levels="11" name="Ultimate Body To Mind">
@@ -1662,6 +1715,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="ManaHeal">
@@ -1684,6 +1738,7 @@
 		<set name="abnormalType" val="MP_SHIELD" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -1720,6 +1775,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-704" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1759,6 +1815,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-709" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1789,6 +1846,7 @@
 		<set name="abnormalType" val="DC_MOD" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="VisualBuff">
@@ -1807,6 +1865,7 @@
 		<!-- target's Fire resistance is decreased. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -1820,6 +1879,7 @@
 		<!-- target's Water resistance is decreased. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -1833,6 +1893,7 @@
 		<!-- target's Wind resistance is decreased. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -1846,6 +1907,7 @@
 		<!-- target's Earth resistance is decreased. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -1859,6 +1921,7 @@
 		<!-- target's Fire/Water/Wind/Earth resistances are decreased. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -1884,6 +1947,7 @@
 		<set name="isMagic" val="4" />
 		<set name="abnormalType" val="MULTI_DEBUFF_FIRE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1908,6 +1972,7 @@
 		<set name="isMagic" val="4" />
 		<set name="abnormalType" val="MULTI_DEBUFF_WATER" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1932,6 +1997,7 @@
 		<set name="isMagic" val="4" />
 		<set name="abnormalType" val="MULTI_DEBUFF_WIND" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1956,6 +2022,7 @@
 		<set name="isMagic" val="4" />
 		<set name="abnormalType" val="MULTI_DEBUFF_EARTH" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1978,6 +2045,7 @@
 		<set name="isMagic" val="4" />
 		<set name="abnormalType" val="MULTI_DEBUFF_HOLY" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1993,6 +2061,7 @@
 		<!-- target is inflicted with Fear. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -2006,6 +2075,7 @@
 		<!-- target's Speed is reduced. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -2019,6 +2089,7 @@
 		<!-- target is Knocked Back. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -2032,6 +2103,7 @@
 		<!-- target is inflicted with Hold. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -2045,6 +2117,7 @@
 		<!-- target is inflicted with Stun. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -2070,6 +2143,7 @@
 		<set name="trait" val="DERANGEMENT" />
 		<set name="isMagic" val="4" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockControl" />
@@ -2091,6 +2165,7 @@
 		<set name="isMagic" val="4" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -2115,6 +2190,7 @@
 		<set name="trait" val="KNOCKBACK" />
 		<set name="isMagic" val="4" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="KnockBack">
@@ -2140,6 +2216,7 @@
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="trait" val="HOLD" />
 		<for>
 			<effect name="Root" />
@@ -2160,6 +2237,7 @@
 		<set name="trait" val="SHOCK" />
 		<set name="isMagic" val="4" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockActions" />
@@ -2176,6 +2254,7 @@
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11093" levels="1" name="Crystal Form">
@@ -2196,6 +2275,7 @@
 		<set name="coolTime" val="200" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="300000" />
 		<for>
 			<effect name="Invincible" />
@@ -2238,6 +2318,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -2265,6 +2346,7 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="-692" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="ResetDebuff">

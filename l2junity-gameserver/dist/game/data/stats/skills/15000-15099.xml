@@ -14,6 +14,7 @@
 		<set name="abnormalType" val="CHANGEBODY" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15001" levels="1" name="Cancel Transformation">
@@ -23,6 +24,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="castRange" val="2000" />
 	</skill>
 	<skill id="15002" levels="1" name="Progressive Heal - NPC">
@@ -32,6 +34,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="castRange" val="350" />
 	</skill>
 	<skill id="15003" levels="1" name="Summon Tree of Life - NPC">
@@ -44,6 +47,7 @@
 		<set name="abnormalType" val="LIFE_FORCE_ORC" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15004" levels="1" name="Bard's Blessing - Oil Coating">
@@ -57,6 +61,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="effectPoint" val="1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15005" levels="1" name="Bard's Blessing - Squeaking Noise">
@@ -72,6 +77,7 @@
 		<set name="abnormalType" val="DWARF_ATTACK_BUFF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15006" levels="1" name="Transform Bard - Bard">
@@ -83,6 +89,7 @@
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="15007" levels="1" name="Master's Strength">
@@ -90,6 +97,7 @@
 		<!-- Increases P. Atk, M. Atk., Atk. Spd., and Casting Spd. by 50%. -->
 		<set name="icon" val="icon.skill10001" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="15008" levels="1" name="IM's Blessing - Dragon Recovery">
@@ -103,6 +111,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="effectPoint" val="1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15009" levels="1" name="IM's Blessing - Force of Dragon">
@@ -118,6 +127,7 @@
 		<set name="abnormalType" val="DWARF_ATTACK_BUFF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15010" levels="1" name="Dimensional Poison Zone">
@@ -129,6 +139,7 @@
 		<set name="abnormalType" val="POISON" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15011" levels="1" name="Poison Area">
@@ -137,6 +148,7 @@
 		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="100" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="15012" levels="1" name="Bat Strike">
@@ -149,6 +161,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-2" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="500" />
 	</skill>
 	<skill id="15013" levels="1" name="Goods Strike">
@@ -164,6 +177,7 @@
 		<set name="abnormalType" val="ABSORB" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15014" levels="1" name="Vernier Calipers Strike">
@@ -179,6 +193,7 @@
 		<set name="abnormalType" val="ABSORB" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15015" levels="1" name="Spear Bash">
@@ -194,6 +209,7 @@
 		<set name="abnormalType" val="ABSORB" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15016" levels="1" name="Powerful Bash">
@@ -209,6 +225,7 @@
 		<set name="abnormalType" val="ABSORB" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15017" levels="1" name="Stone Throw">
@@ -224,6 +241,7 @@
 		<set name="abnormalType" val="POISON" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15018" levels="1" name="Goods Throw">
@@ -236,6 +254,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-2" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="500" />
 	</skill>
 	<skill id="15019" levels="1" name="Goods Throw">
@@ -251,6 +270,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15020" levels="1" name="Spanner Throw">
@@ -266,6 +286,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15021" levels="1" name="Battle Hammer Throw">
@@ -281,6 +302,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15022" levels="1" name="Battle Axe Throw">
@@ -296,6 +318,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15023" levels="1" name="Javelin Throw">
@@ -311,6 +334,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15024" levels="1" name="Use Petra">
@@ -326,6 +350,7 @@
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15025" levels="1" name="Use Petra">
@@ -341,6 +366,7 @@
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15026" levels="1" name="Use Petra">
@@ -354,6 +380,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15027" levels="1" name="Use Petra">
@@ -369,6 +396,7 @@
 		<set name="abnormalType" val="BUFF_SPECIAL_DEFENCE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15028" levels="1" name="Use Petra">
@@ -384,6 +412,7 @@
 		<set name="abnormalType" val="BUFF_SPECIAL_DEFENCE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15029" levels="1" name="Use Petra">
@@ -399,6 +428,7 @@
 		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15030" levels="1" name="Use Petra">
@@ -414,6 +444,7 @@
 		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15031" levels="1" name="Use Petra">
@@ -429,6 +460,7 @@
 		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15032" levels="1" name="Use Petra">
@@ -442,6 +474,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15033" levels="1" name="Aggression Chain Strike - NPC">
@@ -457,6 +490,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15034" levels="1" name="Aggression Chain Strike - NPC">
@@ -472,6 +506,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15035" levels="1" name="Shield Strike - NPC">
@@ -487,6 +522,7 @@
 		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15036" levels="1" name="Armor Break - NPC">
@@ -502,6 +538,7 @@
 		<set name="abnormalType" val="PD_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15037" levels="1" name="Leg Strike">
@@ -517,6 +554,7 @@
 		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15038" levels="1" name="Stab">
@@ -532,6 +570,7 @@
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15039" levels="1" name="Flame Blow">
@@ -548,6 +587,7 @@
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15040" levels="1" name="Fire Magic">
@@ -564,6 +604,7 @@
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15041" levels="1" name="Fire Magic">
@@ -580,6 +621,7 @@
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15042" levels="1" name="Tauti Push">
@@ -595,6 +637,7 @@
 		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15043" levels="1" name="Tauti Push">
@@ -610,6 +653,7 @@
 		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15044" levels="1" name="Tauti Whirlwind">
@@ -624,6 +668,7 @@
 		<set name="abnormalType" val="FLY_AWAY" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15045" levels="1" name="Tauti Whirlwind">
@@ -638,6 +683,7 @@
 		<set name="abnormalType" val="FLY_AWAY" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15046" levels="1" name="Tauti Shock Wave">
@@ -652,6 +698,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15047" levels="1" name="Tauti Rush">
@@ -667,6 +714,7 @@
 		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15048" levels="1" name="Tauti Leap Attack">
@@ -682,6 +730,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15049" levels="1" name="Tauti Axe Throw (up/chain)">
@@ -696,6 +745,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15050" levels="1" name="Tauti Shout">
@@ -710,6 +760,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15051" levels="1" name="Tauti Shout Maximum">
@@ -721,6 +772,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="500" />
 	</skill>
 	<skill id="15052" levels="1" name="Tauti Life Drain">
@@ -736,6 +788,7 @@
 		<set name="abnormalType" val="AIRBIND" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15053" levels="1" name="Pa'agrio's Hand">
@@ -749,6 +802,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="15054" levels="1" name="Attempt Incubation">
@@ -762,6 +816,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="15055" levels="1" name="Attempt Execution">
@@ -776,6 +831,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15056" levels="1" name="Executioner's Sword Dance">
@@ -790,6 +846,7 @@
 		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15057" levels="1" name="Induce Critical Penetration">
@@ -802,6 +859,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="500" />
 	</skill>
 	<skill id="15058" levels="1" name="3000 Strikes">
@@ -814,6 +872,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="500" />
 	</skill>
 	<skill id="15059" levels="1" name="Spill Your Blood">
@@ -830,6 +889,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15060" levels="1" name="Eat Poison">
@@ -846,6 +906,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15061" levels="1" name="Increase Slap Might">
@@ -860,6 +921,7 @@
 		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15062" levels="1" name="Detonate Slap Might">
@@ -874,6 +936,7 @@
 		<set name="abnormalType" val="BUFF_SPECIAL_ATTACK" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15063" levels="1" name="Tear Apart">
@@ -886,6 +949,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="500" />
 	</skill>
 	<skill id="15064" levels="1" name="Check for Escape">
@@ -899,6 +963,7 @@
 		<set name="abnormalType" val="SIGNAL_C" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="500" />
 	</skill>
 	<skill id="15065" levels="1" name="Trample">
@@ -911,6 +976,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="500" />
 	</skill>
 	<skill id="15066" levels="1" name="Call Comrade">
@@ -924,6 +990,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15067" levels="1" name="Attack Cancel Spell">
@@ -940,6 +1007,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15068" levels="1" name="HP Plunder">
@@ -953,6 +1021,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15069" levels="1" name="Limb Yoke">
@@ -968,6 +1037,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15070" levels="1" name="Restrain Legs">
@@ -983,6 +1053,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15071" levels="1" name="Bizarre Arrow">
@@ -995,6 +1066,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="500" />
 	</skill>
 	<skill id="15072" levels="1" name="Poison Arrow">
@@ -1010,6 +1082,7 @@
 		<set name="abnormalType" val="POISON" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15073" levels="1" name="Change All">
@@ -1026,6 +1099,7 @@
 		<set name="abnormalType" val="CHANGEBODY" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15074" levels="1" name="Shaman's Nightmare">
@@ -1042,6 +1116,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15075" levels="1" name="Half Death">
@@ -1057,6 +1132,7 @@
 		<set name="abnormalType" val="ABSORB" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15076" levels="1" name="Ferocious Fight">
@@ -1071,6 +1147,7 @@
 		<set name="abnormalType" val="SPECIAL_BERSERKER" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15077" levels="1" name="Mighty Rush">
@@ -1087,6 +1164,7 @@
 		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15078" levels="1" name="Scream Penetration">
@@ -1099,6 +1177,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="500" />
 	</skill>
 	<skill id="15079" levels="1" name="Mind Collapse">
@@ -1112,6 +1191,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15080" levels="1" name="Summon Subordinate">
@@ -1124,6 +1204,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15081" levels="1" name="Lightning Strike">
@@ -1139,6 +1220,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15082" levels="1" name="Thunder Arrow Shaft">
@@ -1152,6 +1234,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15083" levels="1" name="Tactical Retreat">
@@ -1164,6 +1247,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15084" levels="1" name="Poison Arrow">
@@ -1179,6 +1263,7 @@
 		<set name="abnormalType" val="POISON" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15085" levels="1" name="Lunacy">
@@ -1191,6 +1276,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15086" levels="1" name="Luminosity">
@@ -1207,6 +1293,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15087" levels="1" name="Chaos Shield">
@@ -1221,6 +1308,7 @@
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15088" levels="1" name="Near Death">
@@ -1234,6 +1322,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15089" levels="1" name="Call Subordinate">
@@ -1246,6 +1335,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="1" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15090" levels="1" name="Chaos Shield">
@@ -1258,6 +1348,7 @@
 		<set name="abnormalType" val="MP_SHIELD" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15091" levels="1" name="Destroy Physical Shields">
@@ -1272,6 +1363,7 @@
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15092" levels="1" name="Magic Shield Destroy">
@@ -1286,6 +1378,7 @@
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15093" levels="1" name="Knock Down">
@@ -1300,6 +1393,7 @@
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15094" levels="1" name="Clan Flag">
@@ -1312,6 +1406,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="100" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="reuseDelay" val="1800000" />
 	</skill>
 	<skill id="15095" levels="1" name="Clan Rising">
@@ -1324,6 +1419,7 @@
 		<set name="abnormalType" val="FLAG_BUF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="15096" levels="1" name="Clan Curse">
@@ -1335,6 +1431,7 @@
 		<set name="abnormalType" val="FLAG_DEBUF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="15097" levels="1" name="Raid Boss">
@@ -1342,6 +1439,7 @@
 		<!-- One of the 3 demons that guard the Kartia's Labyrinth, which came through the dimensional rift on orders from Shilen from the Abyss of Hell. It is a high-ranking demon and it is often called the demon of greed. -->
 		<set name="icon" val="icon.skillraid" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="15098" levels="1" name="Raid Boss">
@@ -1349,6 +1447,7 @@
 		<!-- One of the 3 demons that guard the Kartia's Labyrinth, which came through the dimensional rift on orders from Shilen from the Abyss of Hell. It is a high-ranking demon and it is often called the demon of jealousy. -->
 		<set name="icon" val="icon.skillraid" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="15099" levels="1" name="Raid Boss">
@@ -1356,6 +1455,7 @@
 		<!-- One of the 3 demons that guard the Kartia's Labyrinth, which came through the dimensional rift on orders from Shilen from the Abyss of Hell. It is a high-ranking demon and it is often called the demon of gluttony. -->
 		<set name="icon" val="icon.skillraid" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 </list>

@@ -5,6 +5,7 @@
 		<set name="icon" val="icon.etc_talisman_event_i00" />
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -17,6 +18,7 @@
 		<set name="icon" val="icon.etc_talisman_event_i00" />
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -29,6 +31,7 @@
 		<set name="icon" val="icon.etc_talisman_event_i00" />
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -41,6 +44,7 @@
 		<set name="icon" val="icon.etc_talisman_event_i00" />
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -53,6 +57,7 @@
 		<set name="icon" val="icon.etc_talisman_event_i01" />
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="DefenceTrait">
@@ -65,6 +70,7 @@
 		<set name="icon" val="icon.etc_talisman_event_i01" />
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="DefenceTrait">
@@ -77,6 +83,7 @@
 		<set name="icon" val="icon.etc_talisman_event_i01" />
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="DefenceTrait">
@@ -89,6 +96,7 @@
 		<set name="icon" val="icon.etc_talisman_event_i01" />
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="DefenceTrait">
@@ -101,6 +109,7 @@
 		<set name="icon" val="icon.etc_talisman_event_i02" />
 		<set name="magicLvl" val="55" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -123,6 +132,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -146,6 +156,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="NONE" />
 		<cond msgId="113" addName="1">
 			<not>
@@ -156,24 +167,28 @@
 	<skill id="8511" levels="1" name="Blessing of Victory">
 		<!-- Increases Speed by 2%. -->
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8512" levels="1" name="National Representative Warrior's Tenacity">
 		<!-- "When used, you can obtain at random one 3-, 7-, 10-, 30-day, or unlimited National Representative Warrior's accessory set. Upon skill use, 10 Proofs of Cheers are consumed, and it can be cancelled when attacked." -->
 		<set name="operateType" val="P" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8513" levels="1" name="Olympic Athlete's Spell of Blessing">
 		<!-- "When used, you can obtain at random a Blessed Scroll of Escape or a B~S grade Blessed Weapon/Armor Strengthening Scroll. Upon skill use, 10 Proofs of Cheers are consumed, and it can be cancelled when attacked." -->
 		<set name="operateType" val="P" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8514" levels="1" name="Olympic Athlete's Energy of Victory">
 		<!-- "When used, you can obtain at random one Nevit's Hourglass 1~4 hours and Nevit's Voice. Upon skill use, 10 Proofs of Cheers are consumed, and it can be cancelled when attacked." -->
 		<set name="operateType" val="P" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8515" levels="1" name="Release Agathion's Seal - Ball Trapping Gnosian">
@@ -185,6 +200,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -201,6 +217,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -217,6 +234,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -228,18 +246,21 @@
 		<!-- Informs you of the re-supply time of the gift given by the Agathion. -->
 		<set name="operateType" val="P" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8519" levels="1" name="Notifier">
 		<!-- Informs you of the re-supply time of the gift given by the Agathion. -->
 		<set name="operateType" val="P" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8520" levels="1" name="Notifier">
 		<!-- Informs you of the re-supply time of the gift given by the Agathion. -->
 		<set name="operateType" val="P" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8521" levels="1" name="Release Agathion's Seal - Antharas">
@@ -249,6 +270,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -263,6 +285,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -277,6 +300,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -287,16 +311,19 @@
 	<skill id="8524" levels="1" name="Hero's Holy Attack">
 		<!-- Divine attck is increased by 250. -->
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8525" levels="1" name="Hero's Holy Attack">
 		<!-- Increases holy attack by 250. -->
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8526" levels="1" name="Shiny Bracelet">
 		<!-- 3 Talisman can be equipped. -->
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="8527" levels="1" name="Release Agathion's Seal - Magmeld Fairy">
@@ -306,6 +333,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="hitTime" val="3000" />
 	</skill>
 	<skill id="8528" levels="1" name="Release Agathion's Seal">
@@ -315,6 +343,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="hitTime" val="3000" />
 	</skill>
 	<skill id="8529" levels="1" name="Ring of Insolence">
@@ -322,6 +351,7 @@
 		<!-- Increases Max MP by 15 and Poison Resistance by 10%. -->
 		<set name="icon" val="icon.ring_of_oman" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8530" levels="1" name="Ring of Insolence">
@@ -329,6 +359,7 @@
 		<!-- Increases Max MP by 15, Poison Resistance by 10%, and poison attack rate by 10%. -->
 		<set name="icon" val="icon.ring_of_oman" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8531" levels="1" name="Ring of Insolence">
@@ -336,6 +367,7 @@
 		<!-- Increases Max MP by 15, Poison Resistance by 10%, poison attack rate by 10%, and Hold Resistance by 10%. -->
 		<set name="icon" val="icon.ring_of_oman" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8532" levels="1" name="Ring of Insolence">
@@ -343,6 +375,7 @@
 		<!-- Increases Max MP by 15, Poison Resistance by 10%, poison attack rate by 10%, Hold Resistance by 10%, and hold attack rate by 10%. -->
 		<set name="icon" val="icon.ring_of_oman" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8533" levels="1" name="Ring of Insolence">
@@ -350,6 +383,7 @@
 		<!-- Increases Max MP by 15, Poison Resistance by 10%, poison attack rate by 10%, Hold Resistance by 10%, hold attack rate by 10%, and accuracy. -->
 		<set name="icon" val="icon.ring_of_oman" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8534" levels="1" name="Ring of Insolence">
@@ -357,6 +391,7 @@
 		<!-- Increases Max MP by 15, Poison Resistance by 10%, poison attack rate by 10%, Hold Resistance by 10%, hold attack rate by 10%, accuracy, and Atk. Spd. -->
 		<set name="icon" val="icon.ring_of_oman" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8535" levels="1" name="Ring of Insolence">
@@ -364,6 +399,7 @@
 		<!-- Increases Max MP by 15, Poison Resistance by 10%, poison attack rate by 10%, Hold Resistance by 10%, hold attack rate by 10%, accuracy, Atk. Spd., and Casting Spd. -->
 		<set name="icon" val="icon.ring_of_oman" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8536" levels="1" name="Ring of Insolence">
@@ -371,6 +407,7 @@
 		<!-- Increases Max MP by 15, Poison Resistance by 10%, poison attack rate by 10%, Hold Resistance by 10%, hold attack rate by 10%, accuracy, Atk. Spd., Casting Spd., and critical damage. -->
 		<set name="icon" val="icon.ring_of_oman" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8537" levels="1" name="T-shirt of Insolence">
@@ -378,6 +415,7 @@
 		<!-- Increases Max HP by 246. -->
 		<set name="icon" val="icon.tshirt_of_oman" />
 		<set name="operateType" val="P" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="8538" levels="1" name="Vengeance">
@@ -392,6 +430,7 @@
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="900000" />
 	</skill>
 	<skill id="8539" levels="1" name="Spirit of the Phoenix">
@@ -407,6 +446,7 @@
 		<set name="abnormalType" val="SEED_OF_KNIGHT" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8540" levels="1" name="Shield of Faith">
@@ -421,6 +461,7 @@
 		<set name="abnormalType" val="TRANSFER_DAMAGE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="900000" />
 	</skill>
 	<skill id="8541" levels="1" name="Seed of Revenge">
@@ -436,6 +477,7 @@
 		<set name="abnormalType" val="SEED_OF_KNIGHT" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8542" levels="1" name="Touch of Eva">
@@ -451,6 +493,7 @@
 		<set name="abnormalType" val="TOUCH_OF_LIFE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="150000" />
 	</skill>
 	<skill id="8543" levels="1" name="Pain of Shilen">
@@ -466,6 +509,7 @@
 		<set name="abnormalType" val="SEED_OF_KNIGHT" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8544" levels="1" name="Prophecy of Fire">
@@ -482,6 +526,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8545" levels="1" name="Turn to Stone">
@@ -496,6 +541,7 @@
 		<set name="abnormalType" val="TURN_STONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8546" levels="1" name="Arcane Wisdom">
@@ -505,6 +551,7 @@
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="mpConsume" val="36" />
 	</skill>
 	<skill id="8547" levels="1" name="Song of Champion">
@@ -520,6 +567,7 @@
 		<set name="abnormalType" val="SONG_OF_CHAMPION" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="3" />
 	</skill>
 	<skill id="8548" levels="1" name="Song of Purification">
@@ -535,6 +583,7 @@
 		<set name="abnormalType" val="SONG_OF_PURIFICATION" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="3" />
 	</skill>
 	<skill id="8549" levels="1" name="Dance of Berserker">
@@ -550,6 +599,7 @@
 		<set name="abnormalType" val="DANCE_OF_BERSERKER" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="3" />
 	</skill>
 	<skill id="8550" levels="1" name="Dance of Medusa">
@@ -565,6 +615,7 @@
 		<set name="abnormalType" val="TURN_STONE" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8551" levels="1" name="Chant of Victory">
@@ -580,6 +631,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8552" levels="1" name="Onslaught of Pa'agrio">
@@ -597,6 +649,7 @@
 		<set name="abnormalType" val="DOT_ATTR" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8553" levels="1" name="Arcane Power">
@@ -606,6 +659,7 @@
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="mpConsume" val="36" />
 	</skill>
 	<skill id="8554" levels="1" name="Lethal Blow">
@@ -619,6 +673,7 @@
 		<set name="hitTime" val="1800" />
 		<set name="effectPoint" val="-337" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="4000" />
 	</skill>
 	<skill id="8555" levels="1" name="Throwing Dagger">
@@ -635,6 +690,7 @@
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8556" levels="1" name="Exciting Adventure">
@@ -649,6 +705,7 @@
 		<set name="abnormalType" val="AVOID_UP_SPECIAL" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="900000" />
 	</skill>
 	<skill id="8557" levels="1" name="Wind Riding">
@@ -663,6 +720,7 @@
 		<set name="abnormalType" val="AVOID_UP_SPECIAL" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="900000" />
 	</skill>
 	<skill id="8558" levels="1" name="Ghost Walking">
@@ -677,6 +735,7 @@
 		<set name="abnormalType" val="AVOID_UP_SPECIAL" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="900000" />
 	</skill>
 	<skill id="8559" levels="1" name="Lethal Shot">
@@ -690,6 +749,7 @@
 		<set name="hitTime" val="4000" />
 		<set name="effectPoint" val="-897" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="8000" />
 	</skill>
 	<skill id="8560" levels="1" name="Flame Hawk">
@@ -704,6 +764,7 @@
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-686" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="75000" />
 	</skill>
 	<skill id="8561" levels="1" name="Arrow Rain">
@@ -718,6 +779,7 @@
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-686" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="75000" />
 	</skill>
 	<skill id="8562" levels="1" name="Ghost Piercing">
@@ -732,6 +794,7 @@
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-686" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="75000" />
 	</skill>
 	<skill id="8563" levels="1" name="Death Shot">
@@ -746,6 +809,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-1387" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="12000" />
 	</skill>
 	<skill id="8564" levels="1" name="Rush Impact">
@@ -762,6 +826,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8565" levels="1" name="Dread Pool">
@@ -777,6 +842,7 @@
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8566" levels="1" name="Earthquake">
@@ -790,6 +856,7 @@
 		<set name="hitTime" val="1800" />
 		<set name="effectPoint" val="-679" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="8000" />
 	</skill>
 	<skill id="8567" levels="1" name="Maximum Force Focus">
@@ -802,6 +869,7 @@
 		<set name="hitTime" val="900" />
 		<set name="effectPoint" val="150" />
 		<set name="reuseDelay" val="75000" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="rideState" val="NONE" />
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
@@ -825,6 +893,7 @@
 		<set name="hitTime" val="900" />
 		<set name="effectPoint" val="150" />
 		<set name="reuseDelay" val="75000" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="rideState" val="NONE" />
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
@@ -849,6 +918,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-340" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="8570" levels="1" name="Raging Force">
@@ -862,6 +932,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-340" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="8571" levels="1" name="Demolition Impact">
@@ -875,6 +946,7 @@
 		<set name="hitTime" val="1200" />
 		<set name="effectPoint" val="-692" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="75000" />
 	</skill>
 	<skill id="8572" levels="1" name="Armor Crush">
@@ -893,6 +965,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8573" levels="1" name="Soul Rage">
@@ -906,6 +979,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-340" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="8574" levels="1" name="Enuma Elish">
@@ -920,6 +994,7 @@
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-343" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="75000" />
 	</skill>
 	<skill id="8575" levels="1" name="Soul Vortex">
@@ -937,6 +1012,7 @@
 		<set name="abnormalType" val="MULTI_DEBUFF_SOUL" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8576" levels="1" name="Soul Vortex Extinction">
@@ -951,6 +1027,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="-1009" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8577" levels="1" name="Wild Shot">
@@ -965,6 +1042,7 @@
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-692" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="75000" />
 	</skill>
 	<skill id="8578" levels="1" name="Multiple Shot">
@@ -979,6 +1057,7 @@
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-686" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="12000" />
 	</skill>
 	<skill id="8579" levels="1" name="Fire Vortex">
@@ -996,6 +1075,7 @@
 		<set name="abnormalType" val="MULTI_DEBUFF_FIRE" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8580" levels="1" name="Fire Vortex Buster">
@@ -1010,6 +1090,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="-1009" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8581" levels="1" name="Meteor">
@@ -1024,6 +1105,7 @@
 		<set name="reuseDelay" val="900000" />
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8582" levels="1" name="Dark Vortex">
@@ -1041,6 +1123,7 @@
 		<set name="abnormalType" val="MULTI_DEBUFF_UNHOLY" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8583" levels="1" name="Day of Doom">
@@ -1054,6 +1137,7 @@
 		<set name="hitTime" val="5000" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8584" levels="1" name="Ice Vortex">
@@ -1071,6 +1155,7 @@
 		<set name="abnormalType" val="MULTI_DEBUFF_WATER" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8585" levels="1" name="Ice Vortex Crusher">
@@ -1085,6 +1170,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="-1009" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8586" levels="1" name="Star Fall">
@@ -1099,6 +1185,7 @@
 		<set name="reuseDelay" val="900000" />
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8587" levels="1" name="Wind Vortex">
@@ -1116,6 +1203,7 @@
 		<set name="abnormalType" val="MULTI_DEBUFF_WIND" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8588" levels="1" name="Wind Vortex Slug">
@@ -1130,6 +1218,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="-1009" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8589" levels="1" name="Summon Feline King">
@@ -1142,6 +1231,7 @@
 		<set name="hitTime" val="15000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8590" levels="1" name="Final Servitor">
@@ -1158,6 +1248,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8591" levels="1" name="Summon Magnus the Unicorn">
@@ -1170,6 +1261,7 @@
 		<set name="hitTime" val="15000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8592" levels="1" name="Summon Spectral Lord">
@@ -1182,6 +1274,7 @@
 		<set name="hitTime" val="15000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8593" levels="1" name="Servitor Barrier">
@@ -1198,6 +1291,7 @@
 		<set name="abnormalType" val="INVINCIBILITY" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8594" levels="1" name="Cleanse">
@@ -1212,6 +1306,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="effectPoint" val="679" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8595" levels="1" name="Prophecy of Water">
@@ -1228,6 +1323,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8596" levels="1" name="Prophecy of Wind">
@@ -1244,6 +1340,7 @@
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="8597" levels="1" name="Dance of Siren">
@@ -1259,6 +1356,7 @@
 		<set name="abnormalType" val="DANCE_OF_SIREN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="3" />
 	</skill>
 	<skill id="8598" levels="1" name="Song of Silence">
@@ -1274,6 +1372,7 @@
 		<set name="abnormalType" val="SILENCE_ALL" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="8599" levels="1" name="Chain Heal">
@@ -1288,6 +1387,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 </list>
