@@ -12,7 +12,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -31,7 +30,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
@@ -55,7 +53,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -78,7 +75,6 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -107,7 +103,6 @@
 		<set name="targetType" val="AURA" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -134,7 +129,6 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="BlockActions" />
@@ -151,7 +145,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="34" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5007" levels="5" name="Frintezza's Songs">
@@ -166,7 +159,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="32" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5008" levels="5" name="Frintezza's Songs">
@@ -200,7 +192,6 @@
 		<set name="targetType" val="SELF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="trait" val="#traits" />
 		<for>
 			<effect name="#effectname1">
@@ -233,7 +224,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -256,7 +246,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -277,7 +266,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -306,7 +294,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="BlockActions" />
@@ -326,7 +313,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
@@ -343,7 +329,7 @@
 		<table name="#power"> 15835 19096 16176 </table>
 		<set name="affectRange" val="150" />
 		<set name="castRange" val="150" />
-		<set name="coolTime" val="1.2" />
+		<set name="coolTime" val="1200" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="650" />
 		<set name="attributeType" val="DARK" />
@@ -371,7 +357,7 @@
 		<table name="#radius"> 400 500 700 400 500 700 </table>
 		<set name="affectRange" val="#radius" />
 		<set name="castRange" val="150" />
-		<set name="coolTime" val="0" />
+		<set name="coolTime" val="#coolTime" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="650" />
 		<set name="attributeType" val="DARK" />
@@ -405,7 +391,7 @@
 		<set name="affectRange" val="200" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="500" />
-		<set name="coolTime" val="1" />
+		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1000" />
 		<set name="hitTime" val="3000" />
@@ -430,7 +416,7 @@
 		<set name="abnormalType" val="BIG_BODY" />
 		<set name="abnormalVisualEffect" val="BIG_BODY" />
 		<set name="activateRate" val="0" />
-		<set name="coolTime" val="1" />
+		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -456,7 +442,7 @@
 		<table name="#power"> 607 754 </table>
 		<table name="#skillRadius"> 700 1000 </table>
 		<set name="affectRange" val="#skillRadius" />
-		<set name="coolTime" val="1" />
+		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-100" />
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="180" />
@@ -476,7 +462,7 @@
 		<!-- Confirmed CT2.5 -->
 		<!-- Frintezza Skills -->
 		<set name="affectRange" val="1000" />
-		<set name="coolTime" val="4" />
+		<set name="coolTime" val="4000" />
 		<set name="effectPoint" val="-100" />
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="180" />
@@ -508,7 +494,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="trait" val="HOLD" />
 	</skill>
 	<skill id="5021" levels="12" name="Inspiration of Einhasad">
@@ -517,7 +502,7 @@
 		<set name="abnormalType" val="HOLY_ATTACK" />
 		<set name="activateRate" val="40" />
 		<set name="basicProperty" val="MAGIC" />
-		<set name="coolTime" val="0.8" />
+		<set name="coolTime" val="800" />
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="3200" />
 		<set name="icon" val="icon.skill1043" />
@@ -548,7 +533,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5023" levels="12" name="Hold">
@@ -568,7 +552,6 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="trait" val="HOLD" />
 	</skill>
 	<skill id="5024" levels="12" name="Decrease Atk. Spd.">
@@ -588,7 +571,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5025" levels="1" name="Raid Boss (Lv. 30)">
@@ -702,7 +684,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5038" levels="16" name="Servitor PvP Penalty">
@@ -728,7 +709,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5040" levels="12" name="Healing Potion">
@@ -756,7 +736,6 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -784,7 +763,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -810,7 +788,6 @@
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -842,7 +819,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="ImmobileBuff">
@@ -867,7 +843,6 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -889,7 +864,6 @@
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -905,7 +879,6 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5048" levels="12" name="Burst Shot">
@@ -917,7 +890,6 @@
 		<set name="reuseDelay" val="25000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5049" levels="12" name="Mortal Blow">
@@ -928,7 +900,6 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5050" levels="12" name="Blaze">
@@ -939,7 +910,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5051" levels="12" name="Blazing Circle">
@@ -960,7 +930,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -988,7 +957,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1012,7 +980,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1028,7 +995,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5055" levels="12" name="Aqua Splash">
@@ -1039,7 +1005,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5056" levels="12" name="Hurricane">
@@ -1061,7 +1026,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1077,7 +1041,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5058" levels="12" name="Tempest">
@@ -1088,7 +1051,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5059" levels="12" name="Rock Strike">
@@ -1099,7 +1061,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5060" levels="12" name="Earthquake">
@@ -1110,7 +1071,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5061" levels="12" name="Earthquake">
@@ -1121,7 +1081,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5062" levels="12" name="Holy Strike">
@@ -1132,7 +1091,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5063" levels="12" name="Holy Circle">
@@ -1143,7 +1101,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5064" levels="12" name="Holy Blast">
@@ -1154,7 +1111,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5065" levels="12" name="Unholy Strike">
@@ -1173,7 +1129,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1189,7 +1144,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5067" levels="12" name="Unholy Blast">
@@ -1200,7 +1154,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5068" levels="12" name="Decrease Speed">
@@ -1219,7 +1172,6 @@
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5069" levels="12" name="Decrease Atk. Spd.">
@@ -1238,7 +1190,6 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5070" levels="12" name="Decrease Casting Spd.">
@@ -1257,7 +1208,6 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5071" levels="12" name="Decrease P. Atk.">
@@ -1276,7 +1226,6 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5072" levels="12" name="Decrease M. Atk.">
@@ -1294,7 +1243,6 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5073" levels="12" name="Power Shot">
@@ -1310,7 +1258,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1375,7 +1322,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5078" levels="1" name="Frintezza Critical Damage">
@@ -1408,7 +1354,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Buff">
@@ -1435,7 +1380,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Buff">
@@ -1453,7 +1397,7 @@
 		<set name="abnormalVisualEffect" val="SILENCE" />
 		<set name="activateRate" val="0" />
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.8" />
+		<set name="coolTime" val="800" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="1500" />
@@ -1477,7 +1421,7 @@
 	<skill id="5082" levels="4" name="NPC Spinning, Slashing Trick">
 		<table name="#mpConsume"> 60 60 60 5 </table>
 		<set name="affectRange" val="150" />
-		<set name="coolTime" val="0.8" />
+		<set name="coolTime" val="800" />
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
@@ -1502,7 +1446,7 @@
 		<set name="activateRate" val="50" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.8" />
+		<set name="coolTime" val="800" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="1500" />
@@ -1531,7 +1475,7 @@
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="SPEED_UP_SPECIAL" />
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.72" />
+		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="1080" />
@@ -1576,7 +1520,6 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="BlockActions" />
@@ -1604,7 +1547,6 @@
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
-		<set name="coolTime" val="0" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -1641,7 +1583,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="5089" levels="1" name="Presentation -  Enter the Sailren Nest Quest">
@@ -1655,7 +1596,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="5090" levels="1" name="Sailren Production">
@@ -1667,7 +1607,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5091" levels="1" name="Sailren Production">
@@ -1678,7 +1617,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5092" levels="1" name="Antharas Fear">
@@ -1692,7 +1630,7 @@
 		<set name="affectRange" val="400" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="600" />
-		<set name="coolTime" val="2.7" />
+		<set name="coolTime" val="2700" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="4000" />
@@ -1727,7 +1665,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1748,7 +1685,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1767,7 +1703,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1786,7 +1721,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1806,7 +1740,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1831,7 +1764,6 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 		<for>
 			<effect name="DefenceTrait">
@@ -1847,7 +1779,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 </list>

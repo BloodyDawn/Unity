@@ -109,7 +109,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11242" levels="1" name="Shadow Snare Zone">
@@ -124,7 +123,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11245" levels="1" name="Sampling">
@@ -140,7 +138,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11247" levels="1" name="Heavy Hit">
@@ -151,7 +148,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3380" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3000" />
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE" />
@@ -166,7 +163,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1830" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3000" />
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE" />
@@ -182,7 +179,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3700" />
-		<set name="coolTime" val="0.3" />
+		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="3000" />
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE" />
@@ -197,7 +194,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3700" />
-		<set name="coolTime" val="0.3" />
+		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="3000" />
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE" />
@@ -332,7 +329,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3800" />
-		<set name="coolTime" val="0.2" />
+		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -361,7 +358,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3800" />
-		<set name="coolTime" val="0.2" />
+		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -390,7 +387,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3800" />
-		<set name="coolTime" val="0.2" />
+		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -426,7 +423,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -462,7 +459,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1490" />
-		<set name="coolTime" val="0.3" />
+		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -503,7 +500,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -535,7 +532,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -566,7 +563,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="2560" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -593,7 +590,7 @@
 		<set name="hpConsume" val="#hpConsumes" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="0.3" />
+		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -619,7 +616,7 @@
 		<set name="mpConsume" val="71" />
 		<set name="castRange" val="-2" />
 		<set name="hitTime" val="1390" />
-		<set name="coolTime" val="0.3" />
+		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -655,7 +652,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -681,7 +678,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="70" />
 		<set name="hitTime" val="4000" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
@@ -717,7 +714,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -741,7 +738,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="5000" />
-		<set name="coolTime" val="0.2" />
+		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -787,7 +784,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1760" />
-		<set name="coolTime" val="0.3" />
+		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -817,7 +814,7 @@
 		<set name="mpConsume" val="97" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="0.3" />
+		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="709" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -848,7 +845,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -881,7 +878,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="removedOnAnyActionExceptMove" val="true" />
 		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="0.2" />
+		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="300000" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -908,7 +905,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="2500" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="1000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -941,7 +938,6 @@
 		<set name="abnormalResists" val="STUN;TURN_FLEE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockActions" />
@@ -962,7 +958,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -991,7 +986,7 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="50" />
 		<set name="hitTime" val="1560" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
@@ -1025,7 +1020,7 @@
 		<set name="trait" val="SHOCK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1660" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="7000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
@@ -1051,7 +1046,7 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="50" />
 		<set name="hitTime" val="1560" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -1082,7 +1077,7 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="660" />
-		<set name="coolTime" val="0.6" />
+		<set name="coolTime" val="600" />
 		<set name="effectRange" val="800" />
 		<set name="fanRange" val="0,0,600,60" />
 		<set name="flyType" val="CHARGE" />
@@ -1113,7 +1108,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2560" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1139,7 +1134,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="500" />
 		<set name="hitTime" val="2560" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1164,7 +1159,7 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1760" />
-		<set name="coolTime" val="0.3" />
+		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -1187,7 +1182,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1760" />
-		<set name="coolTime" val="0.3" />
+		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -1210,7 +1205,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11287" levels="10" name="Superior Resistance">
@@ -1247,7 +1241,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="77" />
 		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="0.2" />
+		<set name="coolTime" val="#coolTimes" />
 		<set name="reuseDelay" val="60000" />
 		<set name="abnormalType" val="ABILITY_CHANGE" />
 		<set name="basicProperty" val="NONE" />
@@ -1286,7 +1280,7 @@
 		<set name="trait" val="HOLD" />
 		<set name="mpConsume" val="70" />
 		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="4000" />
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE" />
@@ -1308,7 +1302,7 @@
 		<set name="mpConsume" val="71" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -1325,7 +1319,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="70" />
 		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="0.3" />
+		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="4000" />
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1348,7 +1342,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
@@ -1367,7 +1360,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
@@ -1395,7 +1387,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Root" />
@@ -1444,7 +1435,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="300000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-687" />
@@ -1474,7 +1465,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3800" />
-		<set name="coolTime" val="0.2" />
+		<set name="coolTime" val="200" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -1508,7 +1499,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3360" />
-		<set name="coolTime" val="0.2" />
+		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="-500" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1530,7 +1521,7 @@
 		<set name="mpConsume" val="63" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="5000" />
-		<set name="coolTime" val="0.2" />
+		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="398" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />

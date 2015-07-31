@@ -17,7 +17,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -41,7 +40,6 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="PC_BODY" />
 		<cond>
 			<player canResurrect="true" />
@@ -65,7 +63,6 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DispelByCategory">
@@ -86,7 +83,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<player mp="10" />
@@ -124,7 +120,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<for>
 			<effect name="Buff">
@@ -161,7 +156,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<for>
 			<effect name="Buff">
@@ -200,7 +194,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<for>
 			<effect name="Buff">
@@ -238,7 +231,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<for>
 			<effect name="Buff">
@@ -279,7 +271,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="trait" val="HOLD" />
 		<for>
 			<effect name="Root" />
@@ -305,7 +296,6 @@
 		<set name="staticReuse" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<player mp="10" />
@@ -343,7 +333,6 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<and>
@@ -395,7 +384,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SERVITOR" />
 		<for>
 			<effect name="Buff">
@@ -430,7 +418,6 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SERVITOR" />
 		<for>
 			<effect name="Heal">
@@ -455,7 +442,6 @@
 		<set name="staticReuse" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<player mp="10" />
@@ -480,7 +466,7 @@
 		<table name="#power"> 121 133 145 160 </table>
 		<set name="affectRange" val="100" />
 		<set name="castRange" val="600" />
-		<set name="coolTime" val="2" />
+		<set name="coolTime" val="2000" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1100" />
 		<set name="attributeType" val="DARK" />
@@ -514,7 +500,7 @@
 		<set name="activateRate" val="95" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="800" />
-		<set name="coolTime" val="2" />
+		<set name="coolTime" val="2000" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1300" />
 		<set name="hitTime" val="2000" />
@@ -539,7 +525,7 @@
 		<table name="#mpConsume"> 60 65 69 72 </table>
 		<table name="#power"> 2751 3252 3752 4224 </table>
 		<set name="castRange" val="50" />
-		<set name="coolTime" val="0.9" />
+		<set name="coolTime" val="900" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="150" />
 		<set name="hitTime" val="2100" />
@@ -565,7 +551,7 @@
 		<table name="#mpConsume"> 60 65 69 72 </table>
 		<table name="#power"> 1651 1951 2251 2534 </table>
 		<set name="affectRange" val="100" />
-		<set name="coolTime" val="1.5" />
+		<set name="coolTime" val="1500" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill_transform_s_attack" />
@@ -602,7 +588,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -617,7 +602,7 @@
 		<table name="#mpConsume"> 69 72 </table>
 		<table name="#power"> 3189 3590 </table>
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.72" />
+		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="400" />
 		<set name="attributeType" val="HOLY" />
@@ -660,7 +645,6 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -689,7 +673,6 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -712,7 +695,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0.2" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Heal">
@@ -733,7 +715,6 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="DispelByCategory">
@@ -746,7 +727,7 @@
 		<table name="#magicLvl"> 75 80 </table>
 		<table name="#power"> 2626 2957 </table>
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.66" />
+		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-342" />
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
@@ -781,7 +762,6 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -806,7 +786,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -817,7 +796,7 @@
 	<skill id="728" levels="1" name="Gordon Beast Attack">
 		<!-- Confirmed CT2.5 -->
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.66" />
+		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-342" />
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
@@ -850,7 +829,6 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -881,7 +859,6 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Debuff">
@@ -908,7 +885,6 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -925,7 +901,7 @@
 		<set name="activateRate" val="50" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.72" />
+		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-342" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1080" />
@@ -952,7 +928,7 @@
 	<skill id="733" levels="1" name="Kechi Double Cutter">
 		<!-- Confirmed CT2.5 -->
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.66" />
+		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-342" />
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
@@ -984,7 +960,6 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1009,7 +984,6 @@
 		<set name="reuseDelay" val="11000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1026,7 +1000,7 @@
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="castRange" val="900" />
-		<set name="coolTime" val="0.8" />
+		<set name="coolTime" val="800" />
 		<set name="effectPoint" val="-342" />
 		<set name="effectRange" val="1400" />
 		<set name="attributeType" val="DARK" />
@@ -1070,7 +1044,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="ImmobileBuff">
@@ -1097,7 +1070,6 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Heal">
@@ -1125,7 +1097,6 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Heal">
@@ -1153,7 +1124,6 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0.5" />
 		<set name="targetType" val="PC_BODY" />
 		<cond>
 			<player canResurrect="true" />
@@ -1192,7 +1162,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -1221,7 +1190,6 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1253,7 +1221,6 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1283,7 +1250,6 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1310,7 +1276,6 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DispelByCategory">
@@ -1324,7 +1289,7 @@
 		<table name="#magicLvl"> 70 73 76 </table>
 		<table name="#power"> 1789 1955 2117 </table>
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.66" />
+		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
@@ -1369,7 +1334,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1397,7 +1361,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1418,7 +1381,7 @@
 		<set name="activateRate" val="50" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.72" />
+		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1080" />
@@ -1456,7 +1419,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="ImmobileBuff">
@@ -1475,7 +1437,7 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="80" />
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.72" />
+		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="400" />
 		<set name="fanRange" val="0,0,80,150" />
@@ -1509,7 +1471,7 @@
 		<set name="activateRate" val="50" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.72" />
+		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1080" />
@@ -1541,7 +1503,7 @@
 		<table name="#mpConsume"> 142 148 153 </table>
 		<table name="#power"> 4769 5211 5645 </table>
 		<set name="castRange" val="700" />
-		<set name="coolTime" val="0.8" />
+		<set name="coolTime" val="800" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1200" />
 		<set name="hitTime" val="3200" />
@@ -1579,7 +1541,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -1716,7 +1677,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1741,7 +1701,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillByDamage">
@@ -1763,7 +1722,7 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="300" />
 		<set name="basicProperty" val="PHYSICAL" />
-		<set name="coolTime" val="0.7" />
+		<set name="coolTime" val="700" />
 		<set name="effectPoint" val="-1357" />
 		<set name="hitTime" val="1300" />
 		<set name="icon" val="icon.skill0762" />
@@ -1825,7 +1784,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="BlockControl" />
@@ -1852,7 +1810,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="DefenceTrait">
@@ -1877,7 +1834,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
@@ -1938,7 +1894,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1965,7 +1920,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1992,7 +1946,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -2009,7 +1962,7 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="900" />
 		<set name="castRange" val="900" />
-		<set name="coolTime" val="1" />
+		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-686" />
 		<set name="effectRange" val="1400" />
 		<set name="fanRange" val="0,0,900,40" />
@@ -2041,7 +1994,7 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="200" />
 		<set name="castRange" val="600" />
-		<set name="coolTime" val="1" />
+		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-686" />
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="4000" />
@@ -2072,7 +2025,7 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="900" />
 		<set name="castRange" val="900" />
-		<set name="coolTime" val="1" />
+		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-686" />
 		<set name="effectRange" val="1400" />
 		<set name="fanRange" val="0,0,900,100" />
@@ -2121,7 +2074,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="BlockControl" />
@@ -2155,7 +2107,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="trait" val="DISARM" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -2190,7 +2141,6 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -2225,7 +2175,6 @@
 		<set name="reuseDelay" val="75000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="FRONT_AREA" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -2260,7 +2209,6 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -2285,7 +2233,6 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic">
@@ -2308,7 +2255,6 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic">
@@ -2331,7 +2277,6 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic">
@@ -2354,7 +2299,6 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic">
@@ -2377,7 +2321,6 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic">
@@ -2403,7 +2346,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillByDamage">
@@ -2432,7 +2374,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<player active_effect_id_lvl="5562,3" />
@@ -2473,7 +2414,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillByDamage">
@@ -2506,7 +2446,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<player active_effect_id_lvl="5563,3" />
@@ -2542,7 +2481,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillByDamage">
@@ -2571,7 +2509,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<player active_effect_id_lvl="5564,3" />
@@ -2598,7 +2535,7 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="900" />
 		<set name="castRange" val="900" />
-		<set name="coolTime" val="1" />
+		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-1" />
 		<set name="effectRange" val="1400" />
 		<set name="fanRange" val="0,0,900,40" />
@@ -2636,7 +2573,7 @@
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="150" />
 		<set name="basicProperty" val="MAGIC" />
-		<set name="coolTime" val="0.72" />
+		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-1" />
 		<set name="hitTime" val="1080" />
 		<set name="icon" val="icon.skill0791" />
@@ -2689,7 +2626,6 @@
 		<set name="reuseDelay" val="11000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="TriggerSkillByDamage">
@@ -2716,7 +2652,7 @@
 		<set name="affectRange" val="600" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="castRange" val="600" />
-		<set name="coolTime" val="0.2" />
+		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-669" />
 		<set name="effectRange" val="800" />
 		<set name="fanRange" val="0,0,600,60" />
@@ -2770,7 +2706,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="trait" val="DISARM" />
 		<for>
 			<effect name="Disarm">
@@ -2782,7 +2717,7 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="200" />
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.66" />
+		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="400" />
 		<set name="fanRange" val="0,0,200,180" />
@@ -2805,7 +2740,7 @@
 	<skill id="796" levels="1" name="Divine Knight Explosion Attack">
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="100" />
-		<set name="coolTime" val="0.66" />
+		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="830" />
 		<set name="icon" val="icon.skill_transform_s_attack" />
@@ -2826,7 +2761,7 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="250" />
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.66" />
+		<set name="coolTime" val="660" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="400" />
 		<set name="fanRange" val="0,0,250,60" />
@@ -2854,7 +2789,7 @@
 		<set name="activateRate" val="50" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.72" />
+		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-340" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1080" />

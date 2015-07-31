@@ -243,7 +243,6 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="FLAGPOLE" />
 		<cond>
 			<player canTakeFort="true" />
@@ -297,7 +296,6 @@
 		<set name="staticReuse" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -385,7 +383,7 @@
 	<skill id="3328" levels="1" name="Double Stab">
 		<!-- Confirmed CT2.5 -->
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.133" />
+		<set name="coolTime" val="133" />
 		<set name="effectPoint" val="-1" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1667" />
@@ -407,7 +405,7 @@
 	<skill id="3329" levels="1" name="Power Slash">
 		<!-- Confirmed CT2.5 -->
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.133" />
+		<set name="coolTime" val="133" />
 		<set name="effectPoint" val="-1" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1667" />
@@ -430,7 +428,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="affectLimit" val="6-12" />
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="0.72" />
+		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-1" />
 		<set name="effectRange" val="80" />
 		<set name="fanRange" val="0,0,80,150" />
@@ -452,9 +450,9 @@
 	</skill>
 	<skill id="3331" levels="1" name="Enslave">
 		<!-- Confirmed CT2.5 -->
-		<!-- <set name="abnormalLvl" val="3" /> -->
-		<!-- <set name="abnormalTime" val="30" /> -->
-		<!-- <set name="abnormalType" val="ATTACK_TIME_UP" /> -->
+		<!-- <set name="abnormalLvl" val="3"  /> -->
+		<!-- <set name="abnormalTime" val="30"  /> -->
+		<!-- <set name="abnormalType" val="ATTACK_TIME_UP"  /> -->
 		<set name="activateRate" val="60" />
 		<set name="affectLimit" val="10-10" />
 		<set name="basicProperty" val="MAGIC" />
@@ -463,15 +461,14 @@
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill3631" />
 		<set name="rideState" val="NONE" />
-		<!-- <set name="isDebuff" val="true" /> -->
-		<!-- <set name="lvlBonusRate" val="1" /> -->
+		<!-- <set name="isDebuff" val="true"  /> -->
+		<!-- <set name="lvlBonusRate" val="1"  /> -->
 		<set name="magicLvl" val="78" />
 		<set name="mpConsume" val="200" />
 		<set name="operateType" val="A1" /> <!-- Should be A2 -->
 		<set name="reuseDelay" val="8000" />
 		<set name="abnormalType" val="ATTACK_TIME_UP" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="HpDrain">
@@ -495,7 +492,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -524,7 +520,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -553,7 +548,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -582,7 +576,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -608,7 +601,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -638,7 +630,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -923,7 +914,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -957,7 +947,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">

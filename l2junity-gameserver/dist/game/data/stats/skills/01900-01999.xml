@@ -62,7 +62,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="DispelBySlot">
@@ -125,7 +124,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -217,7 +215,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0.2" />
-		<set name="coolTime" val="0" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -262,7 +259,6 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0.2" />
-		<set name="coolTime" val="0" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -344,7 +340,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0.2" />
-		<set name="coolTime" val="0" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Invincible" />
@@ -388,7 +383,6 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0.2" />
-		<set name="coolTime" val="0" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -432,7 +426,6 @@
 		<set name="isDebuff" val="true" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0.2" />
-		<set name="coolTime" val="0" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="KnockBack">
@@ -503,7 +496,6 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0.2" />
-		<set name="coolTime" val="0" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="DebuffBlock">
@@ -530,7 +522,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="2500" />
-		<set name="coolTime" val="0.2" />
+		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="2" />
 		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="3600000" />
@@ -594,7 +586,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -637,7 +628,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -680,7 +670,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -723,7 +712,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -766,7 +754,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -809,7 +796,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -853,7 +839,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -872,7 +857,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="1080" />
-		<set name="coolTime" val="0.72" />
+		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="3000" />
@@ -896,7 +881,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1080" />
-		<set name="coolTime" val="0.72" />
+		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="4000" />
@@ -921,7 +906,7 @@
 		<set name="effectRange" val="600" />
 		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="800" />
-		<set name="coolTime" val="0.2" />
+		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="5000" />
@@ -952,7 +937,6 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttackRange">
@@ -980,7 +964,6 @@
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttackRange">
@@ -1071,7 +1054,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="2500" />
-		<set name="coolTime" val="0.2" />
+		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
@@ -1118,7 +1101,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -1496,7 +1478,6 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -1539,7 +1520,6 @@
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="staticDelay" val="true" />
 		<for>
 			<effect name="Buff">
@@ -1582,7 +1562,6 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="staticDelay" val="true" />
 		<for>
 			<effect name="Buff">
@@ -1620,7 +1599,6 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="staticDelay" val="true" />
 		<for>
 			<effect name="Heal">
@@ -1636,7 +1614,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="600000" />
 		<set name="effectPoint" val="-1" />
 		<set name="abnormalType" val="SILENCE_PHYSICAL" />
@@ -1653,7 +1631,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="600000" />
 		<set name="effectPoint" val="-1" />
 		<set name="abnormalType" val="SILENCE" />
@@ -1670,7 +1648,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="600000" />
 		<set name="effectPoint" val="-1" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
@@ -1686,7 +1664,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
-		<set name="coolTime" val="0.5" />
+		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="DUAL_DMG_SHIELD" />
 		<set name="basicProperty" val="NONE" />
@@ -1776,7 +1754,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="coolTime" val="0" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="1996" levels="2" name="Hurricane Shackle">
