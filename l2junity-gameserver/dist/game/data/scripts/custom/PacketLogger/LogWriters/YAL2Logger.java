@@ -22,6 +22,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.net.InetAddress;
+import java.nio.file.Files;
 import java.time.LocalDateTime;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -41,21 +42,22 @@ public class YAL2Logger implements IPacketHandler
 	private final L2GameClient _client;
 	private final AtomicInteger _packets = new AtomicInteger();
 	private RandomAccessFile _randomAccessFile;
+	private final File _file;
 	
 	public YAL2Logger(L2GameClient client)
 	{
 		_client = client;
-		final File curDir = new File("log/packetlogs/" + _client.getAccountName());
+		final File curDir = new File("log/packetlogs");
 		if (!curDir.exists())
 		{
 			curDir.mkdirs();
 		}
 		final LocalDateTime now = LocalDateTime.now();
-		final String fileName = _client.getConnectionAddress().getHostAddress() + " " + now.getDayOfWeek().ordinal() + "-" + now.getMonthValue() + "-" + now.getYear() + " " + now.getHour() + "-" + now.getMinute() + "-" + now.getSecond() + ".l2l";
-		
+		final String fileName = _client.getConnectionAddress().getHostAddress() + " [" + now.getDayOfWeek() + "-" + now.getMonthValue() + "-" + now.getYear() + "] (" + now.getHour() + "-" + now.getMinute() + "-" + now.getSecond() + ").l2l";
+		_file = new File(curDir, fileName);
 		try
 		{
-			_randomAccessFile = new RandomAccessFile(new File(curDir.getAbsoluteFile(), fileName), "rw");
+			_randomAccessFile = new RandomAccessFile(_file, "rw");
 			writeYAL2Header();
 		}
 		catch (Exception e)
@@ -112,7 +114,20 @@ public class YAL2Logger implements IPacketHandler
 	@Override
 	public void notifyTerminate()
 	{
-		
+		final File curDir = new File("log/packetlogs/" + _client.getAccountName());
+		if (!curDir.exists())
+		{
+			curDir.mkdirs();
+		}
+		try
+		{
+			Files.copy(_file.toPath(), new File(curDir, _file.getName()).toPath());
+		}
+		catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	private static void writeS(String text, RandomAccessFile raf) throws IOException
