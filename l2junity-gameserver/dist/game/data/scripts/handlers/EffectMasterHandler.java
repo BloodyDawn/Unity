@@ -217,6 +217,7 @@ public final class EffectMasterHandler
 		TriggerSkillByAvoid.class,
 		TriggerSkillByDamage.class,
 		TriggerSkillByKill.class,
+		TriggerSkillByMagicType.class,
 		TriggerSkillBySkill.class,
 		TriggerSkillBySkillAttack.class,
 		UnsummonAgathion.class,
