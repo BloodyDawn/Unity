@@ -668,6 +668,7 @@
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<skill id="11772" levels="7" name="Giant's Favor">
+		<!-- Glory Days confirmed -->
 		<!-- Performs an ancient secret technique of the Giants to increase P. Def., M. Def., and Healing power by 1000 for 30 seconds. -->
 		<table name="#healEffect"> 1000 1500 2000 2500 2500 2500 2500 </table>
 		<table name="#def"> 1000 1500 2000 2500 4000 4500 5000 </table>
@@ -675,16 +676,18 @@
 		<table name="#mpInitialConsume"> 3 4 4 4 5 5 6 </table>
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<set name="abnormalTime" val="30" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="HEAL_POWER_UP" />
 		<set name="operateType" val="A2" />
 		<set name="icon" val="icon.skill11772" />
 		<set name="hitTime" val="4000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="600000" />
-		<set name="isMagic" val="1" />
+		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
-		<set name="abnormalType" val="HEAL_POWER_UP" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -705,21 +708,25 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11774" levels="4" name="Summon Tree of Life">
+		<!-- Glory Days confirmed -->
 		<!-- Summons a Tree of Life. The summoned tree heals nearby party members for 30 seconds. Can also cast a debuff canceling blessing. -->
 		<table name="#effectPoint"> 1733 1789 1825 1865 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
-		<table name="#mpConsumes"> 185 205 225 243 </table>
+		<table name="#mpConsumes"> 148 164 180 195 </table>
+		<table name="#mpConsumesInit"> 37 41 45 48 </table>
 		<table name="#npcIds"> 14933 14943 15010 15011 </table>
 		<set name="icon" val="icon.skill11774" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="mpInitialConsume" val="#mpConsumesInit" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="5000" />
 		<set name="coolTime" val="2000" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="effectRange" val="1100" />
 		<set name="isMagic" val="1" />
 		<cond>
 			<and>
@@ -746,15 +753,18 @@
 	</skill>
 	<skill id="11776" levels="4" name="Summon Lumi">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Summons a Spirit of Light. -->
 		<table name="#magicLvl"> 85 90 95 99 </table>
-		<table name="#mpConsumes"> 96 106 117 127 </table>
+		<table name="#mpConsumes"> 77 85 94 102 </table>
+		<table name="#mpConsumesInit"> 19 21 23 25 </table>
 		<table name="#npcIds"> 14925 14944 14945 14946 </table>
 		<set name="icon" val="icon.skill11776" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="mpInitialConsume" val="#mpConsumesInit" />
 		<set name="hitTime" val="5000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
@@ -773,18 +783,25 @@
 	</skill>
 	<skill id="11777" levels="8" name="Mark of Lumi">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Leaves a mark that decreases target's P. Def. and M. Def. by 10%, and consumes 113 HP every second for 60 seconds. -->
 		<table name="#effectPoints"> -867 -886 -899 -909 -922 -936 -949 -963 </table>
 		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
-		<table name="#mpConsumes"> 40 42 45 47 32 52 54 57 </table>
+		<table name="#mpConsumes"> 32 34 36 38 26 42 43 46 </table>
+		<table name="#mpConsumesInit"> 8 8 9 9 6 10 11 11 </table>
 		<table name="#dot"> 113 118 123 128 134 134 134 134 </table>
 		<table name="#defences"> 0.9 0.85 0.8 0.75 0.7 0.7 0.7 0.7 </table>
-		<set name="icon" val="icon.skill11777" />
 		<set name="abnormalTime" val="60" />
+		<set name="abnormalLvl" val="3" />
+		<set name="abnormalType" val="MARK_OF_LUMI" />
+		<set name="activateRate" val="90" />
+		<set name="lvlBonusRate" val="20" />
+		<set name="icon" val="icon.skill11777" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="mpInitialConsume" val="#mpConsumesInit" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1400" />
@@ -792,11 +809,12 @@
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="4000" />
 		<set name="isMagic" val="1" />
-		<set name="abnormalType" val="MARK_OF_LUMI" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="DamOverTime" ticks="5">
+			<effect name="DamOverTime" ticks="1">
 				<param power="#dot" />
+			</effect>
+			<effect name="Debuff">
 				<mul stat="pDef" val="#defences" />
 				<mul stat="mDef" val="#defences" />
 			</effect>
