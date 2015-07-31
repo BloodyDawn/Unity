@@ -698,6 +698,14 @@ public final class Skill implements IIdentifiable
 	}
 	
 	/**
+	 * @return isMagic integer value from the XML.
+	 */
+	public int getMagicType()
+	{
+		return _magic;
+	}
+	
+	/**
 	 * @return Returns true to set physical skills.
 	 */
 	public boolean isPhysical()
