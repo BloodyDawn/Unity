@@ -640,6 +640,7 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="STRIDER" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<player SiegeZone="126" /> <!-- TODO: add new condition and ride_state -->
@@ -662,6 +663,7 @@
 		<set name="reuseDelay" val="3600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canCreateBase="true" />
@@ -688,6 +690,7 @@
 		<set name="rideState" val="WYVERN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<player flying="true" />
@@ -1714,6 +1717,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
@@ -2174,6 +2178,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -2203,6 +2208,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">

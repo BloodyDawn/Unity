@@ -45,6 +45,7 @@
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="ManaHealOverTime" ticks="5">
@@ -68,6 +69,7 @@
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -356,6 +358,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="CLAN" /> <!-- FIXME: Aura Friendly ? -->
 		<for>
 			<effect name="Buff">
@@ -480,6 +483,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="CLAN" /> <!-- FIXME: Aura Friendly ? -->
 		<for>
 			<effect name="Buff">
@@ -506,6 +510,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="CLAN" /> <!-- FIXME: Aura Friendly ? -->
 		<for>
 			<effect name="Buff">
@@ -1056,6 +1061,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1103,6 +1109,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="TARGET_PARTY" />
 		<for>
 			<effect name="Buff">
@@ -1134,6 +1141,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="TARGET_PARTY" />
 		<for>
 			<effect name="Buff">
@@ -1167,6 +1175,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="TARGET_PARTY" />
 		<for>
 			<effect name="Buff">
@@ -1196,6 +1205,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff" /> <!-- TODO: Remove when support for buffs without effects is finished. -->
@@ -1221,6 +1231,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff" /> <!-- TODO: Remove when support for buffs without effects is finished. -->
@@ -1246,6 +1257,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff" /> <!-- TODO: Remove when support for buffs without effects is finished. -->
@@ -1279,6 +1291,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6372" levels="10" name="Power Up">
@@ -1295,6 +1308,7 @@
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6373" levels="1" name="Thunderbolt">
@@ -1365,6 +1379,7 @@
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6378" levels="1" name="Earth Shift">
@@ -1636,6 +1651,7 @@
 		<set name="abnormalType" val="ABSORB" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1766,6 +1782,7 @@
 		<set name="abnormalType" val="ABSORB" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
