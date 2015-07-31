@@ -12,6 +12,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="AIRBIND" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11301" levels="8" name="Dimension Storm">
@@ -27,6 +28,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="-704" />
+		<set name="rideState" val="NONE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -47,6 +49,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3000" />
 		<set name="effectPoint" val="687" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Heal">
@@ -70,6 +73,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -93,6 +97,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -116,6 +121,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -139,6 +145,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -162,6 +169,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -185,6 +193,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -204,6 +213,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="687" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
@@ -230,6 +240,7 @@
 		<set name="reuseDelay" val="900000" />
 		<set name="effectPoint" val="687" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -251,6 +262,7 @@
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-704" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="4000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -271,6 +283,7 @@
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-704" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="4000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -290,6 +303,7 @@
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-704" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="4000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -311,6 +325,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-704" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -345,6 +360,7 @@
 		<set name="mpConsume" val="398" />
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="60000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 		<cond msgId="129">
 			<and>
@@ -371,6 +387,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="6000" />
 		<set name="effectPoint" val="687" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Heal">

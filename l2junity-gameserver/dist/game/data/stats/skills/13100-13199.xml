@@ -84,6 +84,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="PHYSICAL" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="13113" levels="1" name="Special Ability: Critical Slow">
@@ -96,6 +97,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="basicProperty" val="MAGIC" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="13114" levels="1" name="Special Ability: Magic Hold">
@@ -109,6 +111,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="basicProperty" val="MAGIC" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="13115" levels="1" name="Polearm Multi-attack">
@@ -165,6 +168,7 @@
 		<!-- Chance of inflicting damage again upon shooting. -->
 		<set name="icon" val="icon.skill0256" />
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="13123" levels="1" name="Increased Damage Quiver">
@@ -172,6 +176,7 @@
 		<!-- Great damage occurs if critical occurs while shooting. -->
 		<set name="icon" val="icon.skill0256" />
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="13124" levels="1" name="Added Bleed Quiver">
@@ -179,6 +184,7 @@
 		<!-- Chance of inflicting bleed if critical occurs while shooting. -->
 		<set name="icon" val="icon.skill0256" />
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="13125" levels="1" name="Special Talisman - P. Atk.">
@@ -263,6 +269,7 @@
 		<set name="effectPoint" val="669" />
 		<set name="abnormalType" val="ABILITY_CHANGE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="13136" levels="1" name="Hero's Cloak">

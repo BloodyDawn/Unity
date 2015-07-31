@@ -184,6 +184,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="8000" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isMagic" val="4" />
 		<effect name="Buff">
 			<mul stat="sDef" val="#power" />
@@ -216,6 +217,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isDebuff" val="true" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="effectPoint" val="#effectPoint" />
 		<alterSkill>
 			<skill id="10250" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
@@ -262,6 +264,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT" />
@@ -305,6 +308,7 @@
 		<set name="coolTime" val="370" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT" />
@@ -351,6 +355,7 @@
 		<set name="coolTime" val="470" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
@@ -395,6 +400,7 @@
 		<set name="coolTime" val="470" />
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
@@ -433,6 +439,7 @@
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="370" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="10000" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT" />
@@ -470,6 +477,7 @@
 		<set name="coolTime" val="370" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -503,6 +511,7 @@
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
@@ -542,6 +551,7 @@
 		<set name="reuseDelay" val="45000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="PHYSICAL" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
@@ -580,6 +590,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="900000" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="ImmobileBuff">
@@ -614,6 +625,7 @@
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="60000" />
 		<for>
 			<effect name="TransferDamage">
@@ -645,6 +657,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="900000" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -670,6 +683,7 @@
 		<set name="icon" val="icon.skill10020" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
+		<set name="rideState" val="NONE" />
 		<set name="mpConsume" val="50" />
 		<for>
 			<effect name="MpConsumePerLevel" ticks="5">
@@ -696,6 +710,7 @@
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="60000" />
 		<cond addName="1" msgId="113">
 			<using kind="SHIELD" />
@@ -725,6 +740,7 @@
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -753,6 +769,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="30000" />
+		<set name="rideState" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
@@ -780,6 +797,7 @@
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113">
 			<using kind="SHIELD" />
@@ -822,6 +840,7 @@
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT" />
@@ -875,6 +894,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="isHate" val="true" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="TargetMe" />
@@ -912,6 +932,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="TargetMe" />
@@ -970,6 +991,7 @@
 		<set name="effectPoint" val="2" />
 		<set name="isDebuff" val="true" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1021,6 +1043,7 @@
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Buff">
@@ -1070,6 +1093,7 @@
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Buff">
@@ -1119,6 +1143,7 @@
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Buff">
@@ -1172,6 +1197,7 @@
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Buff">
@@ -1226,6 +1252,7 @@
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Buff">
@@ -1252,6 +1279,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3500" />
 		<set name="coolTime" val="500" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="30000" />
 		<cond>
 			<and>
@@ -1279,6 +1307,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="300" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10042" levels="3" name="Summon Cubic of Life">
@@ -1289,6 +1318,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="300" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10043" levels="8" name="Summon Knight Cubic">
@@ -1301,6 +1331,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="300" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10044" levels="7" name="Superior Elemental Mastery">
@@ -1341,6 +1372,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="SHIELD_ATTACK" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10046" levels="3" name="Shield Charge III">
@@ -1359,6 +1391,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="SHIELD_ATTACK" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10047" levels="3" name="Shield Charge IV">
@@ -1377,6 +1410,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="SHIELD_ATTACK" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10048" levels="3" name="Shield Charge V">
@@ -1395,6 +1429,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="SHIELD_ATTACK" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10049" levels="3" name="Shield Charge VI">
@@ -1413,6 +1448,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="SHIELD_ATTACK" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10050" levels="3" name="Shield Charge VII">
@@ -1431,6 +1467,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="SHIELD_ATTACK" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10051" levels="6" name="Lion Roar">
@@ -1461,6 +1498,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="-2" />
 		<set name="isDebuff" val="true" />
+		<set name="rideState" val="NONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1489,6 +1527,7 @@
 		<set name="hitTime" val="1080" />
 		<set name="coolTime" val="790" />
 		<set name="effectPoint" val="-2" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="15000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1525,6 +1564,7 @@
 		<set name="coolTime" val="270" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="-2" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1556,6 +1596,7 @@
 		<set name="coolTime" val="70" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="-2" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttackRange">
@@ -1580,6 +1621,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-379" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1598,6 +1640,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="effectPoint" val="2" />
 		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
@@ -1622,6 +1665,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-467" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -1644,6 +1688,7 @@
 		<set name="effectRange" val="900" />
 		<set name="reuseDelay" val="30000" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -1673,6 +1718,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="SHIELD_ATTACK" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10060" levels="1" name="Aggression Attack">
@@ -1696,6 +1742,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="isMagic" val="4" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" /> <!-- TODO: Check with our crappy targeting -->
 		<for>
 			<effect name="TargetMe" />
@@ -1719,6 +1766,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">

@@ -202,6 +202,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="reuseDelayGroup" val="11509" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="TeleportToTarget" />
@@ -233,6 +234,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="10000" />
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
@@ -259,6 +261,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="10000" />
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
@@ -582,6 +585,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="trait" val="KNOCKDOWN" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -624,6 +628,7 @@
 		<set name="hitTime" val="1800" />
 		<set name="coolTime" val="250" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="7000" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -655,6 +660,7 @@
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="850" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="7000" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -688,6 +694,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="isDebuff" val="true" />
+		<set name="rideState" val="NONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="KnockBack">
@@ -714,6 +721,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="abnormalType" val="STUN" />
 		<set name="isDebuff" val="true" />
+		<set name="rideState" val="NONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="KnockBack">
@@ -738,6 +746,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Buff">
@@ -754,6 +763,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="97" />
 		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Lethal">
@@ -777,6 +787,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="15000" />
 		<set name="targetType" val="AURA" />
+		<set name="rideState" val="NONE" />
 		<set name="trait" val="SHOCK" />
 		<!-- TODO cond {op_blink;_back;300} -->
 		<for>
@@ -816,6 +827,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="rideState" val="NONE" />
 		<set name="trait" val="SHOCK" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -858,6 +870,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="rideState" val="NONE" />
 		<set name="trait" val="KNOCKDOWN" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -956,6 +969,7 @@
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="-709" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="10774" levels="4" name="Quick Evasion">
@@ -980,6 +994,7 @@
 		<set name="hitTime" val="700" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="2" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Blink" />
@@ -999,6 +1014,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="600000" />
 		<for>
 			<effect name="SummonNpc">
@@ -1027,6 +1043,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="900000" />
 		<for>
 			<effect name="Buff">
@@ -1057,6 +1074,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -1083,6 +1101,7 @@
 		<set name="castRange" val="1400" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="60000" />
 		<cond>
 			<target myPartyExceptMe="true" />
@@ -1110,6 +1129,7 @@
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="2" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="120000" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -1148,6 +1168,7 @@
 		<set name="coolTime" val="350" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -1181,6 +1202,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-706" />
 		<set name="reuseDelay" val="30000" />
+		<set name="rideState" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -1209,6 +1231,7 @@
 		<set name="reuseDelay" val="3600000" />
 		<set name="effectPoint" val="-709" />
 		<set name="isMagic" val="4" />
+		<set name="rideState" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -1272,6 +1295,7 @@
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="120000" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Hide">
@@ -1298,6 +1322,7 @@
 		<set name="mpConsume" val="70" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="20000" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -1337,6 +1362,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="PHYSICAL" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1365,6 +1391,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="60000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 		<cond>
 			<and>
@@ -1387,6 +1414,7 @@
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10789" levels="1" name="Flash Trap">
@@ -1399,6 +1427,7 @@
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-709" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="45000" />
 	</skill>
 	<skill id="10790" levels="1" name="Explosion Trap">
@@ -1411,6 +1440,7 @@
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-709" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="45000" />
 	</skill>
 	<skill id="10791" levels="4" name="Frost Trap">
@@ -1423,6 +1453,7 @@
 		<set name="mpConsume" val="39" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="45000" />
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="#npcIds,150,false" />
@@ -1443,6 +1474,7 @@
 		<set name="mpConsume" val="39" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="45000" />
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="#npcIds,150,false" />
@@ -1466,6 +1498,7 @@
 		<set name="effectPoint" val="-689" />
 		<set name="abnormalType" val="MA_DOWN" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="10794" levels="8" name="Thunder Flight">
@@ -1486,6 +1519,7 @@
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="750" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="10000" />
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
@@ -1509,6 +1543,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="reuseDelay" val="180000" />
 		<set name="effectPoint" val="687" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
@@ -1539,6 +1574,7 @@
 		<set name="reuseDelay" val="120000" />
 		<set name="effectPoint" val="-687" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="KnockBack">
@@ -1575,6 +1611,7 @@
 		<set name="hitTime" val="1080" />
 		<set name="coolTime" val="770" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="15000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1612,6 +1649,7 @@
 		<set name="coolTime" val="770" />
 		<set name="reuseDelay" val="25000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PhysicalAttack">

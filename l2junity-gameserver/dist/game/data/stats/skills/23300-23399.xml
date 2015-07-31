@@ -23,23 +23,27 @@
 	<skill id="23301" levels="1" name="Dimensional Door A">
 		<!-- Summons a dimensional door that moves the PC to the Dimensional Door B. -->
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23302" levels="1" name="Dimensional Door B">
 		<!-- Summons a dimensional door that moves the PC to the Dimensional Door A. -->
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23303" levels="1" name="Teleport">
 		<!-- none -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23304" levels="1" name="Teleport">
 		<!-- none -->
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23305" levels="1" name="Zinyanzi Agathion - Yunbokhwan">
@@ -47,16 +51,19 @@
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="INVINCIBILITY" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23306" levels="1" name="Zinyanzi Agathion Cute Trick">
 		<!-- Able to see the summoned Zinenze perform cute tricks. -->
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23307" levels="1" name="Yanzi Agathion Cute Trick">
 		<!-- Able to see the summoned Enze perform cute tricks. -->
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23308" levels="1" name="Totem's Energy - Body">
@@ -66,7 +73,7 @@
 		<set name="blockedInOlympiad" val="false" />
 		<set name="icon" val="BranchSys2.icon.totem_of_body" />
 		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="abnormalType" val="ENERGY_OF_TOTEM_1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -84,7 +91,7 @@
 		<set name="blockedInOlympiad" val="false" />
 		<set name="icon" val="BranchSys2.icon.totem_of_mind" />
 		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="abnormalType" val="ENERGY_OF_TOTEM_2" />
 		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -101,7 +108,7 @@
 		<set name="blockedInOlympiad" val="false" />
 		<set name="icon" val="BranchSys2.icon.totem_of_bravery" />
 		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="abnormalType" val="ENERGY_OF_TOTEM_3" />
 		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -118,7 +125,7 @@
 		<set name="blockedInOlympiad" val="false" />
 		<set name="icon" val="BranchSys2.icon.totem_of_fortitude" />
 		<set name="operateType" val="A2" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="abnormalType" val="ENERGY_OF_TOTEM_4" />
 		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="AURA" />
@@ -137,6 +144,7 @@
 		<set name="isMagic" val="4" />
 		<set name="abnormalType" val="VOTE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="abnormalTime" val="3600" />
 		<for>
 			<effect name="Buff">
@@ -150,6 +158,7 @@
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="RESIST_SHOCK" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23314" levels="5" name="Control Prohibit Immunity">
@@ -157,6 +166,7 @@
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="RESIST_SHOCK" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23315" levels="5" name="Paralysis Immunity Enhance">
@@ -164,6 +174,7 @@
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="RESIST_SHOCK" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23316" levels="5" name="Enhance Petrification Immunity">
@@ -171,6 +182,7 @@
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="RESIST_SHOCK" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23317" levels="5" name="Fear Immunity Enhance">
@@ -178,6 +190,7 @@
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="RESIST_SHOCK" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23318" levels="1" name="Cat the Ranger Boost">
@@ -186,6 +199,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23319" levels="1" name="Blood Seeker">
@@ -207,7 +221,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="effectPoint" val="-100" />
 		<set name="basicProperty" val="PHYSICAL" />
@@ -237,7 +251,7 @@
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="effectPoint" val="-100" />
 		<set name="basicProperty" val="PHYSICAL" />
@@ -361,10 +375,12 @@
 	</skill>
 	<skill id="23325" levels="1" name="Enlarge - Luckpy">
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23326" levels="1" name="Reduce - Luckpy">
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23327" levels="1" name="Boss Test - Weaken">
@@ -372,6 +388,7 @@
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23328" levels="1" name="Boss Test - Strengthen">
@@ -379,22 +396,27 @@
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23329" levels="1" name="Lantern Agathion's Gift1">
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23330" levels="1" name="Lantern Agathion's Gift2">
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23331" levels="1" name="Lantern Agathion's Gift3">
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23332" levels="1" name="Lantern Agathion's Gift4">
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23333" levels="1" name="Agathion's New Year's Wish">
@@ -402,11 +424,13 @@
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="VP_KEEP" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23334" levels="1" name="Lantern Agathion Cute Trick">
 		<!-- Description: Able to see the summoned Lantern's perform cute tricks. -->
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23335" levels="1" name="Agathion's New Year's Wish">
@@ -414,27 +438,33 @@
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="VP_KEEP" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23336" levels="1" name="Juju Agathion Cute Trick">
 		<!-- Description: Summoned Juju performs cute tricks. -->
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23337" levels="1" name="Juju Agathion's Gift 1">
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23338" levels="1" name="Juju Agathion's Gift 2">
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23339" levels="1" name="Juju Agathion's Gift 3">
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23340" levels="1" name="Juju Agathion's Gift 4">
 		<set name="operateType" val="P" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23341" levels="1" name="Norhand's Flint">
@@ -450,6 +480,7 @@
 		<set name="abnormalType" val="TURN_STONE" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23342" levels="2" name="Norhand's Trace">
@@ -463,6 +494,7 @@
 		<set name="coolTime" val="2000" />
 		<set name="abnormalType" val="BR_EVENT_BUF7" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23344" levels="5" name="Weakened Shilen's Breath">
@@ -475,6 +507,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="DEATH_PENALTY_GD" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23345" levels="1" name="Region Banishment">
@@ -482,6 +515,7 @@
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitTime" val="200" />
 	</skill>
 	<skill id="23346" levels="7" name="Valakas Agathion Cute Trick">
@@ -490,6 +524,7 @@
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitTime" val="3000" />
 	</skill>
 	<skill id="23347" levels="7" name="Valakas Agathion Special Skill: Valakas' Blessing">
@@ -497,6 +532,7 @@
 		<set name="icon" val="icon.skill_agathion_special" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitTime" val="4000" />
 	</skill>
 	<skill id="23348" levels="1" name="Transform Elpy">
@@ -509,6 +545,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="23349" levels="1" name="Tree's Blessing - Stage 1">
@@ -520,6 +557,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="23350" levels="1" name="Tree's Blessing - Stage 2">
@@ -531,6 +569,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="23351" levels="1" name="Tree's Blessing - Stage 3">
@@ -542,6 +581,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="23352" levels="1" name="Tree's Blessing - Stage 4">
@@ -553,6 +593,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="23353" levels="1" name="Tree's Blessing - Stage 5">
@@ -564,6 +605,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="23354" levels="1" name="Lingering Tree's Blessing - Stage 1">
@@ -575,6 +617,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23355" levels="1" name="Lingering Tree's Blessing - Stage 2">
@@ -586,6 +629,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23356" levels="1" name="Lingering Tree's Blessing - Stage 3">
@@ -597,6 +641,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23357" levels="1" name="Lingering Tree's Blessing - Stage 4">
@@ -608,6 +653,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23358" levels="1" name="Lingering Tree's Blessing - Stage 5">
@@ -619,6 +665,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BR_EVENT_BUF1" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23359" levels="1" name="Tree's Blessing - Lute Melody">
@@ -630,6 +677,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23360" levels="1" name="Tree's Blessing - Lute Melody">
@@ -641,6 +689,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23361" levels="1" name="Tree's Blessing - Lute Melody">
@@ -652,6 +701,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23362" levels="1" name="Tree's Blessing - Lute Melody">
@@ -663,6 +713,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23363" levels="1" name="Tree's Blessing - Lute Melody">
@@ -674,6 +725,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_MOVE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23364" levels="1" name="Tree's Blessing - Pipe Organ Melody">
@@ -685,6 +737,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23365" levels="1" name="Tree's Blessing - Pipe Organ Melody">
@@ -696,6 +749,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23366" levels="1" name="Tree's Blessing - Pipe Organ Melody">
@@ -707,6 +761,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23367" levels="1" name="Tree's Blessing - Pipe Organ Melody">
@@ -718,6 +773,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23368" levels="1" name="Tree's Blessing - Pipe Organ Melody">
@@ -729,6 +785,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_CONDITION" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23369" levels="1" name="Tree's Blessing - Guitar Melody">
@@ -740,6 +797,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23370" levels="1" name="Tree's Blessing - Guitar Melody">
@@ -751,6 +809,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23371" levels="1" name="Tree's Blessing - Guitar Melody">
@@ -762,6 +821,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23372" levels="1" name="Tree's Blessing - Guitar Melody">
@@ -773,6 +833,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23373" levels="1" name="Tree's Blessing - Guitar Melody">
@@ -784,6 +845,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_CRITICAL" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23374" levels="1" name="Tree's Blessing - Harp Melody">
@@ -795,6 +857,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23375" levels="1" name="Tree's Blessing - Harp Melody">
@@ -806,6 +869,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23376" levels="1" name="Tree's Blessing - Harp Melody">
@@ -817,6 +881,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23377" levels="1" name="Tree's Blessing - Harp Melody">
@@ -828,6 +893,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23378" levels="1" name="Tree's Blessing - Harp Melody">
@@ -839,6 +905,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23379" levels="1" name="Elpy Master">
@@ -851,6 +918,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="23380" levels="1" name="Jermann - Soul Blackmail">
@@ -860,6 +928,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="1200000" />
 	</skill>
 	<skill id="23381" levels="3" name="Jermann - Flow of Destruction">
@@ -874,6 +943,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1000" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23382" levels="1" name="Jermann - Swiftness">
@@ -887,6 +957,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="20000" />
 		<set name="effectPoint" val="-1000" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23383" levels="1" name="Jermann - Shadow of Darkness">
@@ -898,6 +969,7 @@
 		<set name="mpConsume" val="500" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="-800" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="60000" />
 	</skill>
 	<skill id="23384" levels="3" name="Jermann - Burning Darkness">
@@ -911,6 +983,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="50000" />
 		<set name="effectPoint" val="200" />
+		<set name="rideState" val="NONE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23385" levels="3" name="Jermann - Devourer of Nature">
@@ -925,6 +998,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="abnormalType" val="HP_REGEN_UP" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23386" levels="3" name="Jermann - Destruction Instinct">
@@ -936,6 +1010,7 @@
 		<set name="mpConsume" val="500" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="-800" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="12000" />
 	</skill>
 	<skill id="23387" levels="1" name="Jermann">
@@ -946,6 +1021,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23388" levels="1" name="Jermann">
@@ -956,6 +1032,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23389" levels="1" name="Jermann">
@@ -966,6 +1043,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23390" levels="1" name="Mysterious Power of Ancient Kartia's Labyrinth">
@@ -976,6 +1054,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="POISON" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23391" levels="1" name="Great Mysterious Power of Ancient Kartia's Labyrinth">
@@ -986,6 +1065,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="POISON" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23392" levels="1" name="Stabilized Power of Ancient Kartia's Labyrinth">
@@ -996,6 +1076,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="POISON" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23393" levels="1" name="Self-destruction">
@@ -1006,6 +1087,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="2000" />
 		<set name="effectPoint" val="-100" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23394" levels="1" name="Jermann - Grave of the Sword">
@@ -1017,6 +1099,7 @@
 		<set name="mpConsume" val="2000" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="-500" />
+		<set name="rideState" val="NONE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23395" levels="1" name="Jermann - Death' Calling">
@@ -1033,6 +1116,7 @@
 		<set name="effectPoint" val="-800" />
 		<set name="abnormalType" val="DEATH_CLACK" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23396" levels="1" name="Jermann - Freezing Cold">
@@ -1046,6 +1130,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="25000" />
 		<set name="effectPoint" val="-500" />
+		<set name="rideState" val="NONE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23397" levels="1" name="Jermann - Shard of Ice">
@@ -1059,6 +1144,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="-800" />
+		<set name="rideState" val="NONE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23398" levels="3" name="Grave of the Sword">
@@ -1069,6 +1155,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="abnormalType" val="DOT_ATTR" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23399" levels="3" name="Freezing Cold">
@@ -1079,6 +1166,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="abnormalType" val="ARMOR_WATER" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 	</skill>
 </list>

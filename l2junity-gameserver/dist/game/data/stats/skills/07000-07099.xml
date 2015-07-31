@@ -132,6 +132,7 @@
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="7009" levels="1" name="not_used">
@@ -1098,7 +1099,7 @@
 		<set name="mpInitialConsume" val="10" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="30000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonTrap">
@@ -1111,7 +1112,7 @@
 		<set name="magicLvl" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="30000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="7074" levels="1" name="Test - Cancel Trap">
@@ -1119,7 +1120,7 @@
 		<set name="magicLvl" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="30000" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="rideState" val="NONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="7075" levels="1" name="Test - Distance DD">
@@ -1495,7 +1496,7 @@
 		<set name="mpConsume" val="2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
@@ -1524,7 +1525,7 @@
 		<set name="mpConsume" val="2" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
-		<set name="rideState" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
@@ -1563,6 +1564,7 @@
 		<set name="icon" val="icon.skill01702" />
 		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="709" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="7098" levels="1" name="Clan-exclusive Pet Heal">
@@ -1574,6 +1576,7 @@
 		<set name="mpConsume" val="5" />
 		<set name="hitTime" val="1000" />
 		<set name="effectPoint" val="-700" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="7099" levels="1" name="Clan-exclusive Pet Fear">
@@ -1589,6 +1592,7 @@
 		<set name="effectPoint" val="-700" />
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 </list>

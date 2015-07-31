@@ -41,6 +41,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -75,6 +76,7 @@
 		<set name="reuseDelay" val="180000" />
 		<set name="effectPoint" val="-714" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -97,6 +99,7 @@
 		<set name="icon" val="icon.skill0099" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -111,6 +114,7 @@
 		<set name="icon" val="icon.skill0099" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10805" levels="4" name="Quick Charge">
@@ -129,6 +133,7 @@
 		<set name="coolTime" val="400" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="2" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10806" levels="4" name="Frost Trap">
@@ -141,6 +146,7 @@
 		<set name="effectPoint" val="-2" />
 		<set name="abnormalType" val="ALL_SPEED_DOWN" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10807" levels="4" name="Gravity Trap">
@@ -153,6 +159,7 @@
 		<set name="effectPoint" val="-2" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10808" levels="4" name="Decoy Provocation">
@@ -166,6 +173,7 @@
 		<set name="effectPoint" val="-2" />
 		<set name="abnormalType" val="TARGET_LOCK" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10809" levels="1" name="Survival Movement">
@@ -181,6 +189,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="abnormalType" val="SPECIAL_MOVE_UP" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">

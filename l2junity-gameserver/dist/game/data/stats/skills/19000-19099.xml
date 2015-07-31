@@ -13,6 +13,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19002" levels="1" name="Anchor">
@@ -28,6 +29,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="basicProperty" val="MAGIC" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19003" levels="5" name="Clan Resistance Hall">
@@ -87,6 +89,7 @@
 		<set name="castRange" val="-2" />
 		<set name="hitTime" val="15000" />
 		<set name="effectPoint" val="467" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="1800000" />
 	</skill>
 	<skill id="19008" levels="1" name="Clan Guardian">
@@ -98,6 +101,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="100" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19009" levels="1" name="Clan Advent">
@@ -109,6 +113,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="abnormalType" val="CLAN_ADVENT" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="19010" levels="1" name="Clan Copy">
@@ -118,6 +123,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="2000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19011" levels="1" name="Clan Legend">
@@ -137,6 +143,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="abnormalType" val="HIDE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="14400000" />
 	</skill>
 	<skill id="19013" levels="1" name="Clan Un-debuff">
@@ -148,6 +155,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="100" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19014" levels="1" name="Clan Defense">
@@ -160,6 +168,7 @@
 		<set name="coolTime" val="500" />
 		<set name="abnormalType" val="INVINCIBILITY" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19015" levels="1" name="Clan Friendly">
@@ -172,6 +181,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="abnormalType" val="CLAN_FRIEND" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19016" levels="1" name="Clan Boundary">
@@ -184,6 +194,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="abnormalType" val="CLAN_BOUNDARY" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19017" levels="1" name="Clan Prison">
@@ -197,6 +208,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="abnormalType" val="CLAN_PRISON" />
 		<set name="basicProperty" val="MAGIC" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19018" levels="1" name="Clan Guardian Recovery">
@@ -207,6 +219,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="100" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="19019" levels="1" name="Revolution Blade">
@@ -219,6 +232,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-687" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="19020" levels="1" name="Revolution Eruption">
@@ -231,6 +245,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-687" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="19021" levels="1" name="Revolution Strike">
@@ -243,6 +258,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-687" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="19022" levels="1" name="Revolution Shot">
@@ -255,6 +271,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-687" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="19023" levels="1" name="Revolution Multi-Shot">
@@ -267,6 +284,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-687" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="19024" levels="1" name="Revolution Tornado Shot">
@@ -279,6 +297,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-687" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="19025" levels="1" name="Revolution Spike">
@@ -291,6 +310,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-687" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="19026" levels="1" name="Revolution Blast">
@@ -303,6 +323,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-687" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="19027" levels="1" name="Revolution Destruction">
@@ -315,6 +336,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="-687" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="19028" levels="2" name="Revolution Spirit">
@@ -328,6 +350,7 @@
 		<set name="effectPoint" val="635" />
 		<set name="abnormalType" val="MAX_HP_UP_K" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="19029" levels="1" name="Revolution Self CP Recovery">
@@ -339,6 +362,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="669" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="19030" levels="1" name="Revolution CP Recovery">
@@ -351,6 +375,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="669" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="19031" levels="1" name="Revolution Party CP Recovery">
@@ -362,6 +387,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="669" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="19032" levels="1" name="Ability of Light">
@@ -459,6 +485,7 @@
 		<set name="isMagic" val="4" />
 		<set name="abnormalType" val="BRIGHTNESS_BLESS" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="abnormalTime" val="3600" />
 		<for>
 			<effect name="Buff">
@@ -594,6 +621,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="200" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19074" levels="2" name="Academy Precept">
@@ -609,6 +637,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="abnormalType" val="ACADEMY_UP" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="#reuseDelays" />
 	</skill>
 	<skill id="19075" levels="1" name="Clan Relation">
@@ -621,6 +650,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="19080" levels="1" name="Sigel Ixion">
@@ -632,6 +662,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19081" levels="1" name="Tyrr Ixion">
@@ -643,6 +674,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19082" levels="1" name="Othell Ixion">
@@ -654,6 +686,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19083" levels="1" name="Yul Ixion">
@@ -665,6 +698,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19084" levels="1" name="Feoh Ixion">
@@ -676,6 +710,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19085" levels="1" name="Iss Ixion">
@@ -687,6 +722,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19086" levels="1" name="Wynn Ixion">
@@ -698,6 +734,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19087" levels="1" name="Aeore Ixion">
@@ -709,6 +746,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19088" levels="4" name="Summon Siege Golem">
@@ -719,6 +757,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="530" />
 		<set name="hitTime" val="180000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="7200000" />
 	</skill>
 	<skill id="19089" levels="4" name="Summon Wild Hog Cannon">
@@ -729,6 +768,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="530" />
 		<set name="hitTime" val="30000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="1200000" />
 	</skill>
 	<skill id="19090" levels="4" name="Summon Swoop Cannon">
@@ -739,6 +779,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="530" />
 		<set name="hitTime" val="10000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="reuseDelay" val="7200000" />
 	</skill>
 	<skill id="19091" levels="1" name="Increase Item Drop Rate">
@@ -754,6 +795,7 @@
 		<set name="effectPoint" val="-700" />
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19092" levels="2" name="Chat Prohibited">
@@ -780,6 +822,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="#isDebuffs" />
 	</skill>
 	<skill id="19093" levels="1" name="Added Blow Quiver">
@@ -790,6 +833,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="500" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="19094" levels="1" name="Increased Damage Quiver">
@@ -800,6 +844,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="500" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="19095" levels="1" name="Added Bleed Quiver">
@@ -810,6 +855,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="500" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="19096" levels="1" name="Added Blow">
@@ -818,6 +864,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="-2" />
+		<set name="rideState" val="NONE" />
 		<set name="castRange" val="900" />
 	</skill>
 	<skill id="19097" levels="1" name="Critical Target">
@@ -827,6 +874,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="-2" />
+		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="19098" levels="1" name="Bleed Target">
@@ -840,6 +888,7 @@
 		<set name="effectPoint" val="-2" />
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="basicProperty" val="NONE" />
+		<set name="rideState" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19099" levels="1" name="GM's Authority">
@@ -852,6 +901,7 @@
 		<set name="hitTime" val="500" />
 		<set name="abnormalType" val="TURN_STONE" />
 		<set name="basicProperty" val="MAGIC" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="isDebuff" val="true" />
 	</skill>
 </list>
