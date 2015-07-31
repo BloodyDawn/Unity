@@ -730,7 +730,7 @@
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="activateRate" val="80" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -791,7 +791,7 @@
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="activateRate" val="80" />
 		<set name="affectRange" val="200" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="KNOCKBACK" />
@@ -819,6 +819,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-696" />
 		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11034" levels="8" name="Elemental Blast">
@@ -1192,6 +1193,7 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="FINAL_SECRET" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Debuff">
@@ -1228,6 +1230,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1269,6 +1272,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="HpDrain">
@@ -1314,7 +1318,7 @@
 		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="activateRate" val="80" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="AIRBIND" />
@@ -1342,7 +1346,7 @@
 		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="activateRate" val="80" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="AIRBIND" />
@@ -1365,7 +1369,7 @@
 		<table name="#mpConsumes"> 228 243 257 273 </table>
 		<set name="icon" val="icon.skill11052" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="channelingSkillId" val="11054" /> <!-- Yoke Status -->
 		<set name="channelingTickInterval" val="10" /> <!-- No channeling ticks. If you end channel, debuff is canceled. -->
 		<set name="operateType" val="A1" />
@@ -1386,7 +1390,7 @@
 		<table name="#mpConsumes"> 228 243 257 273 </table>
 		<set name="icon" val="icon.skill1042" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="channelingSkillId" val="11054" /> <!-- Yoke Status -->
 		<set name="channelingTickInterval" val="10" /> <!-- No channeling ticks. If you end channel, debuff is canceled. -->
 		<set name="operateType" val="A1" />
@@ -1415,6 +1419,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="effectPoint" val="-692" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockActions" />
@@ -1433,7 +1438,7 @@
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
 		<set name="activateRate" val="80" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
@@ -1468,7 +1473,7 @@
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
 		<set name="affectRange" val="200" />
 		<set name="activateRate" val="60" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1503,7 +1508,7 @@
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="affectRange" val="150" />
 		<set name="activateRate" val="40" />
-		<set name="basicProperty" val="PHYSICAL" />
+		<set name="basicProperty" val="NONE" />
 		<set name="flyCourse" val="0" /> <!-- Back -->
 		<set name="flyRadius" val="400" />
 		<set name="operateType" val="A2" />
@@ -1566,6 +1571,7 @@
 		<set name="trait" val="PULL" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="STUN" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PullBack">
@@ -1590,6 +1596,7 @@
 		<set name="hitTime" val="200" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="SPEED_UP_SPECIAL" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="30000" />
 		<for>
 			<effect name="Buff">
@@ -1639,6 +1646,7 @@
 		<set name="reuseDelay" val="120000" />
 		<set name="effectPoint" val="707" />
 		<set name="abnormalType" val="MP_SHIELD" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -1661,7 +1669,7 @@
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
@@ -1698,7 +1706,7 @@
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="200" /> <!-- Guessed -->
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="icon" val="icon.skill11067" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AREA" />
@@ -1740,6 +1748,7 @@
 		<set name="reuseDelay" val="180000" />
 		<set name="effectPoint" val="687" />
 		<set name="abnormalType" val="DC_MOD" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="VisualBuff">
@@ -1827,7 +1836,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="100" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
@@ -1850,7 +1859,7 @@
 		<set name="abnormalLvl" val="#abnormalTime" />
 		<set name="abnormalTime" val="3" />
 		<set name="activateRate" val="100" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
@@ -1873,7 +1882,7 @@
 		<set name="abnormalLvl" val="#abnormalTime" />
 		<set name="abnormalTime" val="3" />
 		<set name="activateRate" val="100" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
@@ -1896,7 +1905,7 @@
 		<set name="abnormalLvl" val="#abnormalTime" />
 		<set name="abnormalTime" val="3" />
 		<set name="activateRate" val="100" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
@@ -1919,7 +1928,7 @@
 		<set name="abnormalLvl" val="#abnormalTime" />
 		<set name="abnormalTime" val="3" />
 		<set name="activateRate" val="100" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
@@ -2008,7 +2017,7 @@
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
 		<set name="activateRate" val="80" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
@@ -2028,7 +2037,7 @@
 		<set name="icon" val="icon.skill11017" />
 		<set name="abnormalTime" val="3" />
 		<set name="activateRate" val="80" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
@@ -2051,7 +2060,7 @@
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="activateRate" val="40" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
@@ -2073,7 +2082,7 @@
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="abnormalVisualEffect" val="ROOT" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="activateRate" val="80" />
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="20" />
@@ -2096,7 +2105,7 @@
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" />
-		<set name="basicProperty" val="PHYSICAL" /> <!-- Custom -->
+		<set name="basicProperty" val="NONE" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
@@ -2115,6 +2124,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-711" />
 		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11093" levels="1" name="Crystal Form">
@@ -2133,6 +2143,7 @@
 		<set name="mpConsume" val="73" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="200" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="300000" />
 		<for>
 			<effect name="Invincible" />
@@ -2161,7 +2172,7 @@
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" />
 		<set name="affectRange" val="150" />
-		<set name="basicProperty" val="PHYSICAL" /> <!-- Custom -->
+		<set name="basicProperty" val="NONE" /> <!-- Custom -->
 		<set name="flyCourse" val="180" /> <!-- Front -->
 		<set name="flyRadius" val="400" />
 		<set name="operateType" val="A2" />

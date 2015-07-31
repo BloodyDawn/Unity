@@ -227,6 +227,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="trait" val="BLEED" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
@@ -269,6 +270,7 @@
 		<set name="hitTime" val="1030" />
 		<set name="coolTime" val="700" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="5000" />
 		<alterSkill>
 			<skill id="10750" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
@@ -433,6 +435,7 @@
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
@@ -464,7 +467,7 @@
 		<set name="activateRate" val="80" />
 		<set name="lvlBonusRate" val="20" />
 		<set name="trait" val="PARALYZE" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -511,6 +514,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<set name="isTriggeredSkill" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="BlockActions">
@@ -543,6 +547,7 @@
 		<set name="coolTime" val="100" />
 		<set name="reuseDelay" val="7000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="TeleportToTarget" />
@@ -573,6 +578,7 @@
 		<set name="removedOnAnyActionExceptMove" val="true" />
 		<set name="removedOnDamage" val="true" />
 		<set name="canCastWhileDisabled" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Hide">
@@ -601,6 +607,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="700" />
 		<set name="reuseDelay" val="8000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -631,6 +638,7 @@
 		<set name="coolTime" val="100" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="600000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -697,6 +705,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -733,6 +742,7 @@
 		<set name="hitTime" val="200" />
 		<set name="coolTime" val="100" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="150000" />
 		<for>
 			<effect name="Buff">
@@ -763,6 +773,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="800" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="60000" />
 		<for>
 			<effect name="Buff">
@@ -796,6 +807,7 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="DeleteTopAgro">
@@ -831,6 +843,7 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="-709" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="DeleteHateOfMe">
@@ -882,6 +895,7 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="TeleportToTarget" />
@@ -913,6 +927,7 @@
 		<set name="coolTime" val="100" />
 		<set name="reuseDelay" val="1000" />
 		<set name="effectPoint" val="709" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -946,6 +961,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="600000" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
@@ -1025,6 +1041,7 @@
 		<set name="coolTime" val="100" />
 		<set name="effectPoint" val="711" />
 		<set name="reuseDelay" val="600000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="TriggerSkillByAttack">
@@ -1093,6 +1110,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="4" />
 		<set name="effectPoint" val="-711" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1125,6 +1143,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="4" />
 		<set name="effectPoint" val="-711" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1199,6 +1218,7 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isDebuff" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
@@ -1337,6 +1357,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="120000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1376,6 +1397,7 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="effectPoint" val="-709" />
 		<set name="targetType" val="ONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="trait" val="KNOCKDOWN" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
@@ -1409,6 +1431,7 @@
 		<set name="reuseDelay" val="7000" />
 		<set name="effectPoint" val="-709" />
 		<set name="abnormalType" val="STUN" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10548" levels="8" name="Plunder">
@@ -1453,6 +1476,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="targetType" val="ONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="trait" val="KNOCKBACK" />
 		<for>
 			<effect name="KnockBack">
@@ -1491,6 +1515,7 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="FatalBlow">
@@ -1523,6 +1548,7 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="DisableTargeting" />
@@ -1636,6 +1662,7 @@
 		<set name="hitTime" val="1200" />
 		<set name="isDebuff" val="true" />
 		<set name="isTriggeredSkill" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="Root" />
@@ -1661,6 +1688,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="effectPoint" val="709" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Hide" />
@@ -1691,6 +1719,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="800" />
 		<set name="effectPoint" val="696" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">

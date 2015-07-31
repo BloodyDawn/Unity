@@ -19,6 +19,7 @@
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="679" />
 		<set name="abnormalType" val="HIDE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6803" levels="1" name="Arena Haste">
@@ -35,6 +36,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -56,6 +58,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -77,6 +80,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -98,6 +102,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -119,6 +124,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -140,6 +146,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -161,6 +168,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -182,6 +190,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -203,6 +212,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -224,6 +234,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -285,12 +296,14 @@
 		<!-- "Poison seeps deeper and for 10 seconds, 800 HP is decreased every second. If not treated, the poison will worsen." -->
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="POISON" />
+		<set name="basicProperty" val="PHYSICAL" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6816" levels="16" name="Deadly Bleed">
 		<!-- "Bleed becomes deeper and for 10 seconds, 800 HP is decreased every second. If not treated, the bleed will worsen." -->
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="BLEEDING" />
+		<set name="basicProperty" val="PHYSICAL" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6817" levels="1" name="Arena HP Recovery">
@@ -323,6 +336,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -338,6 +352,7 @@
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="-507" />
 		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="basicProperty" val="MAGIC" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6820" levels="1" name="P. Def. Enhance">
@@ -353,6 +368,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -376,6 +392,7 @@
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="-347" />
 		<set name="abnormalType" val="PD_DOWN" />
+		<set name="basicProperty" val="MAGIC" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6823" levels="1" name="Reflect Attack">
@@ -383,6 +400,7 @@
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="438" />
 		<set name="abnormalType" val="DMG_SHIELD" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6824" levels="1" name="Piercing Storm">
@@ -414,7 +432,7 @@
 		<!-- "Inflicted with petrification, the body is rigid like stone for 30 seconds." -->
 		<set name="abnormalTime" val="30" />
 		<set name="activateRate" val="80" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="NONE" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill4111" />
 		<set name="operateType" val="P" />
@@ -544,6 +562,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="basicProperty" val="MAGIC" />
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Buff">
@@ -556,6 +575,7 @@
 		<!-- Atk. Spd. is increased by 33%. -->
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="CASTING_TIME_UP" />
+		<set name="basicProperty" val="MAGIC" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6844" levels="1" name="Power Strike">
@@ -890,6 +910,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="basicProperty" val="MAGIC" />
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Buff">
@@ -981,6 +1002,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="effectPoint" val="-10000" />
+		<set name="basicProperty" val="PHYSICAL" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -1359,6 +1381,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE" />
 		<set name="effectPoint" val="-100" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="BlockActions" />
@@ -1369,6 +1392,7 @@
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="100" />
 		<set name="abnormalType" val="VP_CHANGE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6884" levels="1" name="Morale Boost">
@@ -1397,6 +1421,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="abnormalType" val="MORALE_UP" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -1496,6 +1521,7 @@
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="-10000" />
 		<set name="abnormalType" val="BLEEDING" />
+		<set name="basicProperty" val="PHYSICAL" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6891" levels="1" name="Power Attack">
@@ -1623,6 +1649,7 @@
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="-100" />
 		<set name="abnormalType" val="STUN" />
+		<set name="basicProperty" val="PHYSICAL" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6898" levels="1" name="Raid Boss (Lv. 84)">

@@ -592,6 +592,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="75000" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<using kind="CROSSBOW" />
@@ -638,6 +639,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff" />
@@ -767,6 +769,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="150000" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillByDamage">
@@ -791,6 +794,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="900000" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="TransferDamage">
@@ -814,6 +818,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="150000" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -838,6 +843,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="150000" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<using kind="DUAL" />
@@ -957,6 +963,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="900000" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<player cp="80" />
@@ -1024,6 +1031,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="20" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2195">
 			<and>
@@ -1110,6 +1118,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1136,6 +1145,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1162,6 +1172,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1188,6 +1199,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1214,6 +1226,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1240,6 +1253,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1266,6 +1280,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1292,6 +1307,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1318,6 +1334,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1344,6 +1361,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1370,6 +1388,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1396,6 +1415,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1422,6 +1442,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1448,6 +1469,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1474,6 +1496,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1500,6 +1523,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1526,6 +1550,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1552,6 +1577,7 @@
 		<set name="reuseDelay" val="14400000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="staticReuse" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1644,6 +1670,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -1667,6 +1694,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -2127,6 +2155,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="135000" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="ImmobileBuff">
@@ -2252,6 +2281,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SilentMove" />
@@ -2292,6 +2322,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">

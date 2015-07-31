@@ -183,6 +183,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="8000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="4" />
 		<effect name="Buff">
 			<mul stat="sDef" val="#power" />
@@ -214,6 +215,7 @@
 		<set name="magicLevel" val="#magicLvl" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isDebuff" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="effectPoint" val="#effectPoint" />
 		<alterSkill>
 			<skill id="10250" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
@@ -259,6 +261,7 @@
 		<set name="coolTime" val="470" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT" />
@@ -417,7 +420,7 @@
 		<set name="affectRange" val="200" />
 		<set name="affectHeight" val="-100;200" />
 		<set name="lvlBonusRate" val="2" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="fanRange" val="0,0,150,120" />
 		<set name="icon" val="icon.skill10013" />
@@ -538,6 +541,7 @@
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="45000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="PHYSICAL" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
@@ -575,6 +579,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="900000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="ImmobileBuff">
@@ -608,6 +613,7 @@
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="60000" />
 		<for>
 			<effect name="TransferDamage">
@@ -638,6 +644,7 @@
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="900000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -688,6 +695,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="60000" />
 		<cond addName="1" msgId="113">
 			<using kind="SHIELD" />
@@ -716,6 +724,7 @@
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="1800000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -770,6 +779,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113">
 			<using kind="SHIELD" />
@@ -811,6 +821,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT" />
@@ -863,6 +874,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<set name="isHate" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="TargetMe" />
@@ -899,6 +911,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="TargetMe" />
@@ -956,6 +969,7 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="effectPoint" val="2" />
 		<set name="isDebuff" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1006,6 +1020,7 @@
 		<set name="targetType" val="PARTY_NOTME" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Buff">
@@ -1054,6 +1069,7 @@
 		<set name="targetType" val="PARTY_NOTME" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Buff">
@@ -1102,6 +1118,7 @@
 		<set name="targetType" val="PARTY_NOTME" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Buff">
@@ -1154,6 +1171,7 @@
 		<set name="targetType" val="PARTY_NOTME" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Buff">
@@ -1207,6 +1225,7 @@
 		<set name="targetType" val="PARTY_NOTME" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Buff">
@@ -1321,6 +1340,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="SHIELD_ATTACK" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10046" levels="3" name="Shield Charge III">
@@ -1338,6 +1358,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="SHIELD_ATTACK" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10047" levels="3" name="Shield Charge IV">
@@ -1355,6 +1376,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="SHIELD_ATTACK" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10048" levels="3" name="Shield Charge V">
@@ -1372,6 +1394,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="SHIELD_ATTACK" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10049" levels="3" name="Shield Charge VI">
@@ -1389,6 +1412,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="SHIELD_ATTACK" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10050" levels="3" name="Shield Charge VII">
@@ -1406,6 +1430,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="SHIELD_ATTACK" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10051" levels="6" name="Lion Roar">
@@ -1618,6 +1643,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="reuseDelay" val="30000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -1646,6 +1672,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="SHIELD_ATTACK" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10060" levels="1" name="Aggression Attack">
@@ -1668,6 +1695,7 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="staticReuse" val="true" />
 		<set name="isMagic" val="4" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" /> <!-- TODO: Check with our crappy targeting -->
 		<for>
 			<effect name="TargetMe" />
@@ -1690,6 +1718,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="reuseDelay" val="8000" />
 		<set name="effectPoint" val="1" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -2168,7 +2197,7 @@
 		<set name="abnormalType" val="NORMAL_ATTACK_BLOCK" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="150" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="PHYSICAL_BLOCKADE" />
@@ -2198,7 +2227,7 @@
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="600" />
-		<set name="basicProperty" val="PHYSICAL" />
+		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
 		<set name="fanRange" val="0,0,600,60" />
 		<set name="flyType" val="CHARGE" />
 		<set name="operateType" val="DA2" />
@@ -2239,7 +2268,7 @@
 		<set name="abnormalTime" val="9" />
 		<set name="abnormalType" val="ROOT_PHYSICALLY" />
 		<set name="activateRate" val="80" />
-		<set name="basicProperty" val="PHYSICAL" />
+		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
 		<set name="coolTime" val="470" />
 		<set name="effectRange" val="200" />
 		<set name="isDebuff" val="true" />
@@ -2306,7 +2335,7 @@
 		<set name="activateRate" val="40" />
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="100" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
 		<set name="icon" val="icon.skll10094" />
 		<set name="itemConsumeId" val="1785" />
 		<set name="itemConsumeCount" val="#itemConsumeCount" />
@@ -2363,7 +2392,7 @@
 		<set name="abnormalTime" val="10" /> <!-- Guessed -->
 		<set name="abnormalType" val="T_CRT_DMG_UP" />
 		<set name="activateRate" val="90" /> <!-- Guessed -->
-		<set name="basicProperty" val="PHYSICAL" />
+		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
 		<set name="isTriggeredSkill" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />

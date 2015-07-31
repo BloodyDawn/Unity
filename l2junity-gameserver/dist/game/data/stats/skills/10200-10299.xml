@@ -42,6 +42,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="reuseDelayGroup" val="11011" />
 		<set name="effectPoint" val="1" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -72,6 +73,7 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="reuseDelayGroup" val="10008" />
 		<set name="effectPoint" val="1" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -347,6 +349,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<alterSkill>
 			<skill id="10250" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
@@ -432,6 +435,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="isDebuff" val="true" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="trait" val="KNOCKDOWN" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
@@ -483,6 +487,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
@@ -529,6 +534,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="isDebuff" val="true" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="trait" val="SHOCK" />
 		<cond msgId="113" addName="1">
 			<using kind="POLE, SWORD, BLUNT, DUAL, DUALFIST, DUALBLUNT" />
@@ -572,6 +578,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="trait" val="KNOCKDOWN" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<cond msgId="113" addName="1">
 			<target playable="true" />
@@ -725,6 +732,7 @@
 		<set name="coolTime" val="300" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="120000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -761,6 +769,7 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<for>
 			<effect name="Debuff">
@@ -828,6 +837,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="300000" />
 		<cond addName="1" msgId="113">
 			<player hp="70" />
@@ -919,8 +929,8 @@
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="BATTLE_CRY" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="180000" />
-
 	</skill>
 	<skill id="10278" levels="8" name="Reduce Anger">
 		<!-- AUTO GENERATED SKILL -->
@@ -951,6 +961,7 @@
 		<set name="hitTime" val="200" />
 		<set name="effectPoint" val="707" />
 		<set name="reuseDelay" val="300000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<player hp="70" />
@@ -1045,6 +1056,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="400" />
 		<set name="abnormalType" val="WEAPON_MASTER_SPECIAL" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="10285" levels="1" name="HP Drain">
@@ -1107,6 +1119,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="3000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -1165,6 +1178,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="673" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="180000" />
 		<for>
 			<effect name="Buff">
@@ -1200,6 +1214,7 @@
 		<set name="mpConsume" val="38" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1222,6 +1237,7 @@
 		<set name="mpConsume" val="38" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1250,6 +1266,7 @@
 		<set name="mpConsume" val="38" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1273,6 +1290,7 @@
 		<set name="mpConsume" val="38" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1296,6 +1314,7 @@
 		<set name="mpConsume" val="38" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1320,6 +1339,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="707" />
 		<set name="reuseDelay" val="30000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<for>
 			<effect name="AttackTrait">
@@ -1344,6 +1364,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="707" />
 		<set name="reuseDelay" val="30000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<for>
 			<effect name="AttackTrait">
@@ -1390,6 +1411,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="effectPoint" val="-687" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="POLE" />

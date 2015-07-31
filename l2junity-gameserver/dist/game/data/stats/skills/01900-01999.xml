@@ -59,6 +59,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="600000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="DispelBySlot">
@@ -118,6 +119,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="600000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -206,6 +208,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="600000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -246,6 +249,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="200" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="600000" />
 		<set name="staticReuse" val="true" />
 		<for>
@@ -325,6 +329,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="300000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Invincible" />
@@ -364,6 +369,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="200" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="600000" />
 		<set name="staticReuse" val="true" />
 		<for>
@@ -404,6 +410,7 @@
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="-2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<set name="staticReuse" val="true" />
 		<for>
@@ -471,6 +478,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="200" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="600000" />
 		<set name="staticReuse" val="true" />
 		<for>
@@ -500,6 +508,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="3600000" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="2195">
@@ -556,6 +565,7 @@
 		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -595,6 +605,7 @@
 		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -634,6 +645,7 @@
 		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -673,6 +685,7 @@
 		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -712,6 +725,7 @@
 		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -751,6 +765,7 @@
 		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -791,6 +806,7 @@
 		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -1002,6 +1018,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="1" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="10000" />
 		<cond msgId="2195">
 			<player canTransform="true" />
@@ -1041,6 +1058,7 @@
 		<set name="targetType" val="PARTY" /> <!-- Target ONE on retail, will be PARTY here. -->
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -1414,6 +1432,7 @@
 		<set name="reuseDelay" val="20000" />
 		<set name="icon" val="icon.dual_t_atkup" />
 		<set name="isMagic" val="4" />
+		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="staticReuse" val="true" />
 		<for>
@@ -1452,6 +1471,7 @@
 		<set name="operateType" val="A2" />
 		<set name="icon" val="icon.dual_t_skup" />
 		<set name="isMagic" val="4" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="20000" />
 		<set name="staticDelay" val="true" />
 		<for>
@@ -1491,6 +1511,7 @@
 		<set name="reuseDelay" val="20000" />
 		<set name="icon" val="icon.dual_t_dmgdef" />
 		<set name="isMagic" val="4" />
+		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="staticDelay" val="true" />
 		<for>
@@ -1546,6 +1567,7 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="effectPoint" val="-1" />
 		<set name="abnormalType" val="SILENCE_PHYSICAL" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1983" levels="1" name="Dual - Silence of the Giants">
@@ -1560,6 +1582,7 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="effectPoint" val="-1" />
 		<set name="abnormalType" val="SILENCE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1984" levels="1" name="Dual - Yoke of the Giants">
@@ -1574,6 +1597,7 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="effectPoint" val="-1" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1985" levels="1" name="Dual - Shield of the Giants">
@@ -1586,6 +1610,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="DUAL_DMG_SHIELD" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<skill id="1986" levels="4" name="Dual Maximum HP">

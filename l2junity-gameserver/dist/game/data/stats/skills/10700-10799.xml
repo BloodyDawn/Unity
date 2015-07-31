@@ -87,7 +87,7 @@
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="DISARM" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
-		<set name="basicProperty" val="PHYSICAL" />
+		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DISARM" /> <!-- Guessed -->
@@ -111,7 +111,7 @@
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="200" /> <!-- Guessed -->
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
 		<set name="itemConsumeCount" val="2" />
 		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
 		<set name="operateType" val="A2" />
@@ -201,6 +201,7 @@
 		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
 		<set name="reuseDelayGroup" val="11509" />
+		<set name="basicProperty" val="NONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="TeleportToTarget" />
@@ -580,6 +581,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="basicProperty" val="NONE" />
 		<set name="trait" val="KNOCKDOWN" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -735,6 +737,7 @@
 		<set name="magicLvl" val="97" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Buff">
@@ -1023,6 +1026,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="900000" />
 		<for>
 			<effect name="Buff">
@@ -1052,6 +1056,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -1104,6 +1109,7 @@
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="2" />
+		<set name="basicProperty" val="NONE" />
 		<set name="reuseDelay" val="120000" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -1236,6 +1242,7 @@
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -1264,6 +1271,7 @@
 		<set name="hitTime" val="200" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="120000" />
+		<set name="basicProperty" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Hide">
@@ -1328,6 +1336,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
+		<set name="basicProperty" val="PHYSICAL" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1456,6 +1465,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="-689" />
 		<set name="abnormalType" val="MA_DOWN" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="10794" levels="8" name="Thunder Flight">
@@ -1528,6 +1538,7 @@
 		<set name="coolTime" val="100" />
 		<set name="reuseDelay" val="120000" />
 		<set name="effectPoint" val="-687" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="KnockBack">

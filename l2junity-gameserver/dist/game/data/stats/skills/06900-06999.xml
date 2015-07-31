@@ -64,6 +64,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="TRANSFORM" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Transformation">
@@ -91,6 +92,7 @@
 		<set name="operateType" val="P" />
 		<set name="effectPoint" val="-10000" />
 		<set name="abnormalType" val="TIME_BOMB" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6913" levels="1" name="Challenge of Faith">
@@ -105,6 +107,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="effectPoint" val="673" />
 		<set name="abnormalType" val="KNIGHT_SHIELD" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -117,12 +120,14 @@
 		<!-- none -->
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6915" levels="10" name="Acumen">
 		<!-- none -->
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="CASTING_TIME_DOWN" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6916" levels="1" name="Antharas's Cute Tricks">
@@ -144,6 +149,7 @@
 		<!-- none -->
 		<set name="operateType" val="P" />
 		<set name="abnormalType" val="MORALE_UP" />
+		<set name="basicProperty" val="MAGIC" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6920" levels="1" name="Collector's Fortune">
@@ -158,6 +164,7 @@
 		<set name="reuseDelay" val="15000" /> <!-- FIXME: value unconfirmed -->
 		<set name="rideState" val="NONE" />
 		<set name="abnormalType" val="PATIENCE" />
+		<set name="basicProperty" val="NONE" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -173,7 +180,7 @@
 		<!-- P. Def. is decreased momentarily. -->
 		<set name="abnormalTime" val="30" />
 		<set name="activateRate" val="80" />
-		<set name="basicProperty" val="PHYSICAL" />
+		<set name="basicProperty" val="MAGIC" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill0122" />
