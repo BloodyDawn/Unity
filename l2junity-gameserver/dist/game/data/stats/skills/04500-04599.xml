@@ -111,7 +111,6 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="4514" levels="1" name="Squash - Poisoned">
@@ -121,7 +120,6 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="4515" levels="1" name="Raid Curse">
@@ -288,7 +286,6 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -310,7 +307,6 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff" />
@@ -340,7 +336,6 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="HealPercent">
@@ -407,7 +402,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -425,7 +419,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="HealPercent">
@@ -443,7 +436,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="ManaHealPercent">
@@ -724,7 +716,6 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -809,7 +800,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="4550" levels="1" name="Quest - Cursed Altar">
@@ -820,7 +810,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="4551" levels="10" name="Hot Springs Rheumatism">
@@ -1236,7 +1225,7 @@
 		<set name="affectRange" val="100" />
 		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="-100" />
-		<set name="effectRange" val="1500" />
+		<set name="effectRange" val="1000" />
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="hitTime" val="2500" />
@@ -1356,7 +1345,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1457,7 +1445,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Buff">
@@ -1487,7 +1474,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Buff">
@@ -1508,7 +1494,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-100" />
-		<set name="effectRange" val="1000" />
+		<set name="effectRange" val="900" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1222" />
 		<set name="isDebuff" val="true" />
@@ -1780,7 +1766,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Grow">
@@ -1806,7 +1791,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
-		<set name="effectRange" val="1100" />
+		<set name="effectRange" val="900" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1222" />
 		<set name="isDebuff" val="true" />
@@ -1839,7 +1824,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="500" />
 		<set name="effectPoint" val="-100" />
-		<set name="effectRange" val="1000" />
+		<set name="effectRange" val="900" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill4037" />
 		<set name="isDebuff" val="true" />
@@ -1887,7 +1872,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Buff">
@@ -1977,7 +1961,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="-100" />
-		<set name="effectRange" val="1500" />
+		<set name="effectRange" val="1300" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill1160" />
 		<set name="isDebuff" val="true" />
@@ -2010,7 +1994,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
-		<set name="effectRange" val="1100" />
+		<set name="effectRange" val="900" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill0122" />
 		<set name="isDebuff" val="true" />
@@ -2043,7 +2027,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
-		<set name="effectRange" val="1100" />
+		<set name="effectRange" val="900" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill0122" />
 		<set name="isDebuff" val="true" />
@@ -2076,7 +2060,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="-100" />
-		<set name="effectRange" val="1500" />
+		<set name="effectRange" val="1300" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill0122" />
 		<set name="isDebuff" val="true" />
@@ -2119,7 +2103,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Buff">
@@ -2141,7 +2124,7 @@
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
-		<set name="effectRange" val="1100" />
+		<set name="effectRange" val="900" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill0096" />
 		<set name="isDebuff" val="true" />
@@ -2175,7 +2158,7 @@
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-100" />
-		<set name="effectRange" val="1100" />
+		<set name="effectRange" val="900" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill0096" />
 		<set name="isDebuff" val="true" />
@@ -2209,7 +2192,7 @@
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="-100" />
-		<set name="effectRange" val="1500" />
+		<set name="effectRange" val="1300" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill0096" />
 		<set name="isDebuff" val="true" />

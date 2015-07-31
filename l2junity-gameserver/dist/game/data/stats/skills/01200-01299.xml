@@ -132,7 +132,6 @@
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="trait" val="HOLD" />
 		<for>
 			<effect name="Root" />
@@ -171,7 +170,6 @@
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -209,7 +207,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MagicalAttackMp">
@@ -241,7 +238,6 @@
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="Confuse" abnormalTime="20">
@@ -263,7 +259,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Heal">
@@ -364,7 +359,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -455,7 +449,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="#castRange" />
 		<set name="effectPoint" val="#effectPoints" />
-		<set name="effectRange" val="1250" />
+		<set name="effectRange" val="#effectRange" />
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="20" />
 		<set name="hitTime" val="1500" />
@@ -494,7 +488,7 @@
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="castRange" val="#castRange" />
 		<set name="effectPoint" val="#effectPoints" />
-		<set name="effectRange" val="1250" />
+		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1224" />
 		<set name="isDebuff" val="true" />
@@ -537,7 +531,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<and>
@@ -577,7 +570,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<and>
@@ -614,7 +606,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<and>
@@ -651,7 +642,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<and>
@@ -691,7 +681,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -1242,7 +1231,6 @@
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="Mute" />
@@ -1276,7 +1264,6 @@
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="trait" val="BOSS" />
 		<for>
 			<effect name="Debuff">
@@ -1310,7 +1297,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Debuff">
@@ -1344,7 +1330,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY_CLAN" />
 		<for>
 			<effect name="Buff">
@@ -1377,7 +1362,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY_CLAN" />
 		<for>
 			<effect name="Buff">
@@ -1409,7 +1393,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -1441,7 +1424,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -1473,7 +1455,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -1502,7 +1483,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0.5" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="CORPSE_CLAN" />
 		<cond>
 			<player canResurrect="true" />
@@ -1532,7 +1512,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -1574,7 +1553,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY_CLAN" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -1707,7 +1685,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY_CLAN" />
 		<for>
 			<effect name="Buff">
@@ -1747,7 +1724,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY_CLAN" />
 		<for>
 			<effect name="Buff">
@@ -2028,7 +2004,6 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="6" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<player mp="25" />
@@ -2067,7 +2042,6 @@
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="BlockControl" />
@@ -2093,7 +2067,6 @@
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="DeleteHate">
@@ -2177,7 +2150,6 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="operateType" val="A1" />
 		<cond>
 			<and>
@@ -2214,7 +2186,6 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="operateType" val="A1" />
 		<cond>
 			<and>
@@ -2251,7 +2222,6 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="operateType" val="A1" />
 		<cond>
 			<and>
@@ -2287,7 +2257,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic">
@@ -2315,7 +2284,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic">
@@ -2343,7 +2311,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic">
@@ -2376,7 +2343,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY_CLAN" />
 		<for>
 			<effect name="Buff">
@@ -2427,7 +2393,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -2453,7 +2418,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -2479,7 +2443,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -2505,7 +2468,6 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
-		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
