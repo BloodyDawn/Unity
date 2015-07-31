@@ -340,6 +340,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6624" levels="1" name="Stun">
@@ -822,6 +823,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6648" levels="1" name="Komodo Heal">
@@ -830,6 +832,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6649" levels="1" name="Transform Treykan">
@@ -847,6 +850,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<cond>
 			<player canTransform="true" />
@@ -869,6 +873,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6651" levels="1" name="Dopagen's Alienation">
@@ -883,6 +888,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6652" levels="1" name="Raid Boss (Lv. 89)">
@@ -984,6 +990,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="BlockActions" />
@@ -1017,6 +1024,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6666" levels="1" name="Feral Shield">
@@ -1208,6 +1216,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6674" levels="1" name="Energy of Range Increment">
@@ -1439,6 +1448,7 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -1594,6 +1604,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="trait" val="HOLD" />
 	</skill>
 	<skill id="6697" levels="1" name="Eternal Blizzard">
@@ -1643,6 +1654,7 @@
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="BlockActions" />
@@ -1666,6 +1678,7 @@
 		<set name="operateType" val="P" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 </list>

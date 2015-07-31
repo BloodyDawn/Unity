@@ -1360,6 +1360,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="7.5" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<and>
@@ -1536,6 +1537,7 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonNpc">
@@ -1558,6 +1560,7 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="GROUND" />
 		<for>
 			<effect name="SummonNpc">
@@ -1579,6 +1582,7 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonNpc">
@@ -1600,6 +1604,7 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonNpc">
@@ -1621,6 +1626,7 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonNpc">
@@ -1642,6 +1648,7 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonNpc">
@@ -1663,6 +1670,7 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonNpc">
@@ -2372,10 +2380,10 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="150" />
 		<set name="rideState" val="NONE" />
-		<!-- <set name="castRange" val="40" /> -->
+		<!-- <set name="castRange" val="40"   /> -->
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="#effectPoints" />
-		<!-- <set name="effectRange" val="400" /> -->
+		<!-- <set name="effectRange" val="400"   /> -->
 		<set name="hitTime" val="1080" />
 		<set name="icon" val="icon.skill0492" />
 		<set name="magicLvl" val="#magicLvl" />

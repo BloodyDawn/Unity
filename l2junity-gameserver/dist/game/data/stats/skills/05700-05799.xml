@@ -113,6 +113,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5706" levels="1" name="Poison">
@@ -133,6 +134,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="1.5" />
 		<set name="trait" val="POISON" />
 	</skill>
 	<skill id="5707" levels="1" name="Paralysis">
@@ -149,6 +151,7 @@
 		<set name="targetType" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="trait" val="PARALYZE" />
 	</skill>
 	<skill id="5708" levels="2" name="Water Cannon">
@@ -227,6 +230,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="1.5" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff" />
@@ -263,6 +267,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5714" levels="1" name="Boom Up">
@@ -371,6 +376,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5720" levels="6" name="Blade Cut">
@@ -898,6 +904,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="CpHeal">
@@ -921,6 +928,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="ManaHealPercent">
@@ -934,6 +942,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5743" levels="1" name="Full Recovery">
@@ -942,6 +951,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5744" levels="1" name="Invincibility">
@@ -958,6 +968,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5745" levels="12" name="Death Blow">
@@ -1201,6 +1212,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff" />
@@ -1255,6 +1267,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5759" levels="1" name="Presentation - The Rise of Latana">
@@ -1263,6 +1276,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5760" levels="9" name="Critical Hit">
@@ -1277,6 +1291,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5761" levels="2" name="Power Strike">
@@ -1312,6 +1327,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5763" levels="1" name="Wink">
@@ -1322,6 +1338,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5764" levels="1" name="Terror of the Pumpkin Ghost">
@@ -1456,6 +1473,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff" />
@@ -1476,6 +1494,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="1.5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5773" levels="1" name="Surrender to Water">
@@ -1493,6 +1512,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="1.5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5774" levels="2" name="Replenish Pailaka Reward Vitality">
@@ -1506,6 +1526,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="VitalityPointUp">
@@ -1526,6 +1547,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5776" levels="1" name="Raid Boss">
@@ -1558,6 +1580,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5779" levels="42" name="Transform Effect">
@@ -1594,6 +1617,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5782" levels="1" name="Presentation - Lindvior Gust">
@@ -1603,6 +1627,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5783" levels="1" name="Presentation - Lindvior Descent">
@@ -1612,6 +1637,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5784" levels="1" name="Presentation - Lindvior Dust">
@@ -1621,6 +1647,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5785" levels="1" name="Presentation - Dimensional Door">
@@ -1629,6 +1656,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5786" levels="1" name="Presentation - Ekimus Separation">
@@ -1639,6 +1667,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5787" levels="1" name="Presentation - Ekimus Approach">
@@ -1649,6 +1678,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5788" levels="1" name="Presentation - Ekimus Blood Hail">
@@ -1659,6 +1689,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5789" levels="1" name="Presentation - Ekimus Sneer">
@@ -1669,6 +1700,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5790" levels="1" name="Presentation - Ekimus Aftereffect">
@@ -1677,6 +1709,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5791" levels="1" name="Presentation - Magyun's Entrance">
@@ -1687,6 +1720,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5792" levels="1" name="Presentation - Summon Banshee Queen Boomeye">
@@ -1696,6 +1730,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5793" levels="1" name="Presentation - Summon Boomeye">
@@ -1705,6 +1740,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5794" levels="1" name="Decrease Spd.">

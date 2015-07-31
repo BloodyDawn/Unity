@@ -11,6 +11,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -127,6 +128,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="BlockActions" />
@@ -142,6 +144,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="34" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5007" levels="5" name="Frintezza's Songs">
@@ -155,6 +158,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="32" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5008" levels="5" name="Frintezza's Songs">
@@ -187,6 +191,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="trait" val="#traits" />
 		<for>
 			<effect name="#effectname1">
@@ -307,6 +312,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
@@ -487,6 +493,7 @@
 		<set name="targetType" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="trait" val="HOLD" />
 	</skill>
 	<skill id="5021" levels="12" name="Inspiration of Einhasad">
@@ -525,6 +532,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5023" levels="12" name="Hold">
@@ -543,6 +551,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="trait" val="HOLD" />
 	</skill>
 	<skill id="5024" levels="12" name="Decrease Atk. Spd.">
@@ -561,6 +570,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5025" levels="1" name="Raid Boss (Lv. 30)">
@@ -673,6 +683,7 @@
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5038" levels="16" name="Servitor PvP Penalty">
@@ -697,6 +708,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5040" levels="12" name="Healing Potion">
@@ -723,6 +735,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -749,6 +762,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1307,6 +1321,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5078" levels="1" name="Frintezza Critical Damage">
@@ -1567,6 +1582,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="5089" levels="1" name="Presentation -  Enter the Sailren Nest Quest">
@@ -1579,6 +1595,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="5090" levels="1" name="Sailren Production">
@@ -1589,6 +1606,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5091" levels="1" name="Sailren Production">
@@ -1598,6 +1616,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5092" levels="1" name="Antharas Fear">
@@ -1744,6 +1763,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 		<for>
 			<effect name="DefenceTrait">

@@ -108,6 +108,7 @@
 		<set name="effectPoint" val="-709" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11242" levels="1" name="Shadow Snare Zone">
@@ -121,6 +122,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11245" levels="1" name="Sampling">
@@ -135,6 +137,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11247" levels="1" name="Heavy Hit">
@@ -565,6 +568,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="3" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -652,6 +656,7 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="SummonNpc">
@@ -737,6 +742,7 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Heal">
@@ -845,6 +851,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="1" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockActions" />
@@ -1299,6 +1306,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11291" levels="4" name="Gate Vortex">
@@ -1333,6 +1341,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
@@ -1350,6 +1359,7 @@
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
@@ -1376,6 +1386,7 @@
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Root" />
@@ -1430,6 +1441,7 @@
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="1" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockActions" />

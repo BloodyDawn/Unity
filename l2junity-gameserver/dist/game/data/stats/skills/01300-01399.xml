@@ -323,6 +323,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<!-- TODO: Missing condition for "op_fishing_cast" -->
 		<cond msgId="113" addName="1">
@@ -343,6 +344,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<!-- TODO: Missing condition for "op_fishing_pumping" -->
 		<cond msgId="113" addName="1">
@@ -365,6 +367,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<!-- TODO: Missing condition for "op_fishing_reeling" -->
 		<cond msgId="113" addName="1">
@@ -436,6 +439,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="OpenDwarfRecipeBook" />
@@ -449,6 +453,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="OpenCommonRecipeBook" />
@@ -2020,6 +2025,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="2" />
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Buff">
@@ -2057,6 +2063,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="2" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="Mute">
@@ -2098,6 +2105,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="hitCancelTime" val="2" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="BlockControl" />

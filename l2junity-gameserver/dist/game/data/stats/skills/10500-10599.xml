@@ -13,6 +13,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE" />
+		<set name="hitCancelTime" val="0" />
 		<set name="reuseDelay" val="5000" />
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" /> <!-- Knock Down -->
@@ -620,6 +621,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="hitCancelTime" val="0" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -721,6 +723,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="hitCancelTime" val="0" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -1361,6 +1364,7 @@
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="2000" />
 		<set name="rideState" val="NONE" />
+		<set name="hitCancelTime" val="0" />
 		<set name="reuseDelay" val="5000" />
 		<for>
 			<effect name="TargetCancel" />
@@ -1393,6 +1397,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1738,6 +1743,7 @@
 		<set name="effectPoint" val="709" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="hitCancelTime" val="0" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Hide" />

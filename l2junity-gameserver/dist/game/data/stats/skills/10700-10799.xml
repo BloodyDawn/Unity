@@ -235,6 +235,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE" />
+		<set name="hitCancelTime" val="0" />
 		<set name="reuseDelay" val="10000" />
 		<cond msgId="113" addName="1">
 			<target abnormalType="AIRBIND" />
@@ -262,6 +263,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="rideState" val="NONE" />
+		<set name="hitCancelTime" val="0" />
 		<set name="reuseDelay" val="10000" />
 		<cond msgId="113" addName="1">
 			<target abnormalType="KNOCKDOWN" />
@@ -996,6 +998,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="2" />
 		<set name="rideState" val="NONE" />
+		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Blink" />
