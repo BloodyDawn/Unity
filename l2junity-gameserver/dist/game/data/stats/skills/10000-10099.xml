@@ -755,7 +755,6 @@
 	</skill>
 	<skill id="10024" levels="1" name="Party Rescue">
 		<!-- Glory Days confirmed -->
-		<!-- TODO Additionally, all damage received is capped at 10 -->
 		<!-- Drags all party members to oneself, and for 15 seconds receives 90% of the damage inflicted to all party members. Additionally, all damage received is capped at 10. Requires a shield. -->
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="15" />
@@ -1308,10 +1307,10 @@
 		</for>
 	</skill>
 	<skill id="10045" levels="3" name="Shield Charge II">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Strikes with the shield. Attacks target with 14179 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
 		<table name="#effectPoint"> -692 -2 -2 </table>
 		<table name="#mpConsumes"> 54 0 0 </table>
+		<table name="#power"> 14179 </table>
 		<set name="icon" val="icon.skill10045" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -1325,9 +1324,9 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10046" levels="3" name="Shield Charge III">
-		<table name="#effectPoint"> -696 -2 -2 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Strikes with the shield. Attacks target with 15269 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
+		<table name="#effectPoint"> -696 -2 -2 </table>
 		<table name="#mpConsumes"> 56 0 0 </table>
 		<set name="icon" val="icon.skill10046" />
 		<set name="operateType" val="A2" />
