@@ -266,6 +266,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -294,6 +295,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -314,6 +316,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canUntransform="true" />
@@ -341,6 +344,7 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -363,6 +367,7 @@
 		<set name="reuseDelay" val="150000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -396,6 +401,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -419,6 +425,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="TrapDetect">
@@ -438,6 +445,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="109">
 			<target npcType="L2TrapInstance" />
@@ -460,6 +468,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2163">
 			<not>
@@ -502,7 +511,7 @@
 		<set name="activateRate" val="40" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="200" />
-		<set name="coolTime" val="300" />
+		<set name="coolTime" val="0.3" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="600" />
 		<set name="hitTime" val="1500" />
@@ -532,7 +541,7 @@
 	</skill>
 	<skill id="628" levels="1" name="Warp">
 		<!-- Confirmed CT2.5 -->
-		<set name="coolTime" val="200" />
+		<set name="coolTime" val="0.2" />
 		<set name="flyCourse" val="180" /> <!-- Teleport to Front -->
 		<set name="flyRadius" val="500" />
 		<set name="hitTime" val="100" />
@@ -564,6 +573,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="630" levels="1" name="Rabbit Tornado">
@@ -579,6 +589,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="109">
 			<target npcId="13098,900102" />
@@ -1032,6 +1043,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1062,6 +1074,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1092,6 +1105,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1122,6 +1136,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1152,6 +1167,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1182,6 +1198,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1212,6 +1229,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1241,6 +1259,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1270,6 +1289,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1299,6 +1319,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1328,6 +1349,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1357,6 +1379,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1386,6 +1409,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1415,6 +1439,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1444,6 +1469,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1473,6 +1499,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1502,6 +1529,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1531,6 +1559,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1560,6 +1589,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -1572,7 +1602,7 @@
 	</skill>
 	<skill id="675" levels="1" name="Divine Warrior Cross Slash">
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="167" />
+		<set name="coolTime" val="0.167" />
 		<set name="effectPoint" val="-598" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1733" />
@@ -1605,6 +1635,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1617,7 +1648,7 @@
 	<skill id="677" levels="1" name="Divine Warrior Transfixion of Earth">
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="150" />
-		<set name="coolTime" val="733" />
+		<set name="coolTime" val="0.733" />
 		<set name="effectPoint" val="-342" />
 		<set name="hitTime" val="1067" />
 		<set name="icon" val="icon.skill_transform_s_attack" />
@@ -1650,6 +1681,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1674,6 +1706,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<player hp="30" />
@@ -1697,7 +1730,7 @@
 		<set name="activateRate" val="80" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="400" />
-		<set name="coolTime" val="200" />
+		<set name="coolTime" val="0.2" />
 		<set name="effectPoint" val="-6752" />
 		<set name="effectRange" val="900" />
 		<set name="hitTime" val="700" />
@@ -1737,6 +1770,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="staticReuse" val="true" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="TargetMe" />
@@ -1750,7 +1784,7 @@
 		<set name="activateRate" val="50" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="720" />
+		<set name="coolTime" val="0.72" />
 		<set name="effectPoint" val="-342" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1080" />
@@ -1783,7 +1817,7 @@
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="150" />
 		<set name="basicProperty" val="PHYSICAL" />
-		<set name="coolTime" val="720" />
+		<set name="coolTime" val="0.72" />
 		<set name="effectPoint" val="-171" />
 		<set name="hitTime" val="1080" />
 		<set name="icon" val="icon.skill_transform_debuff" />
@@ -1821,6 +1855,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="ImmobileBuff">
@@ -1847,6 +1882,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<player hp="30" />
@@ -1870,7 +1906,7 @@
 		<set name="activateRate" val="50" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="castRange" val="900" />
-		<set name="coolTime" val="1000" />
+		<set name="coolTime" val="1" />
 		<set name="effectPoint" val="-684" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="3000" />
@@ -1898,7 +1934,7 @@
 	</skill>
 	<skill id="687" levels="1" name="Divine Rogue Double Shot">
 		<set name="castRange" val="900" />
-		<set name="coolTime" val="1000" />
+		<set name="coolTime" val="1" />
 		<set name="effectPoint" val="-684" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="3000" />
@@ -1926,7 +1962,7 @@
 		<set name="activateRate" val="50" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="720" />
+		<set name="coolTime" val="0.72" />
 		<set name="effectPoint" val="-342" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1080" />
@@ -1954,7 +1990,7 @@
 	</skill>
 	<skill id="689" levels="1" name="Divine Rogue Deadly Blow">
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="720" />
+		<set name="coolTime" val="0.72" />
 		<set name="effectPoint" val="-342" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1080" />
@@ -1995,6 +2031,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -2019,6 +2056,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<player hp="30" />
@@ -2051,6 +2089,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -2078,6 +2117,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="144">
 			<target race="UNDEAD" />
@@ -2106,6 +2146,7 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -2138,6 +2179,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AREA" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="SLEEP" />
 		<for>
 			<effect name="BlockActions" />
@@ -2166,6 +2208,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -2191,6 +2234,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="PARTY" />
 		<cond msgId="113" addName="1">
 			<player mp="10" />
@@ -2219,6 +2263,7 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Heal">
@@ -2239,6 +2284,7 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Heal">

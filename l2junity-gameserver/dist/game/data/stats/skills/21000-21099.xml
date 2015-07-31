@@ -11,6 +11,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -29,6 +30,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -47,6 +49,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -64,6 +67,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -88,6 +92,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -111,6 +116,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -128,6 +134,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21007" levels="1" name="Mysterious Ability">
@@ -148,6 +155,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="ETC" />
 	</skill>
 	<skill id="21008" levels="1" name="Release Agathion's Seal - Baby Panda">
@@ -160,6 +168,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -177,6 +186,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -194,6 +204,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -218,6 +229,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -242,6 +254,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -266,6 +279,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -275,7 +289,7 @@
 	</skill>
 	<skill id="21014" levels="1" name="Scissors">
 		<set name="castRange" val="400" />
-		<set name="coolTime" val="500" />
+		<set name="coolTime" val="0.5" />
 		<set name="effectPoint" val="-1" />
 		<set name="effectRange" val="500" />
 		<set name="hitTime" val="2000" />
@@ -293,7 +307,7 @@
 	</skill>
 	<skill id="21015" levels="1" name="Rock">
 		<set name="castRange" val="400" />
-		<set name="coolTime" val="500" />
+		<set name="coolTime" val="0.5" />
 		<set name="effectPoint" val="-1" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="BranchSys.icon.br_xmas_bawi_i00" />
@@ -310,7 +324,7 @@
 	</skill>
 	<skill id="21016" levels="1" name="Paper">
 		<set name="castRange" val="400" />
-		<set name="coolTime" val="500" />
+		<set name="coolTime" val="0.5" />
 		<set name="effectPoint" val="-1" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="BranchSys.icon.br_xmas_bo_i00" />
@@ -532,6 +546,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -549,6 +564,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -566,6 +582,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -583,6 +600,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -600,6 +618,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -617,6 +636,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -634,6 +654,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -651,6 +672,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -668,6 +690,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -685,6 +708,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -702,6 +726,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -721,6 +746,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="HealPercent">
@@ -741,6 +767,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -758,6 +785,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -775,6 +803,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -792,6 +821,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -809,6 +839,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -826,6 +857,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -843,6 +875,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -860,6 +893,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -880,6 +914,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<player canTransform="true" />
@@ -905,6 +940,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -927,6 +963,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -948,6 +985,7 @@
 		<set name="reuseDelay" val="43200000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="PC_BODY" />
 		<cond>
 			<player canResurrect="true" />
@@ -975,6 +1013,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -998,6 +1037,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1024,6 +1064,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="ETC" />
 		<for>
 			<effect name="Buff">
@@ -1050,6 +1091,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="ETC" />
 		<for>
 			<effect name="Buff">
@@ -1076,6 +1118,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="ETC" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -1102,6 +1145,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1125,6 +1169,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1148,6 +1193,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1172,6 +1218,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1198,6 +1245,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="ETC" />
 		<for>
 			<effect name="Buff">
@@ -1224,6 +1272,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="ETC" />
 		<for>
 			<effect name="Buff">
@@ -1250,6 +1299,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="ETC" />
 		<for>
 			<effect name="Buff">
@@ -1269,6 +1319,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -1303,6 +1354,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="ETC" />
 		<for>
 			<effect name="Buff">
@@ -1327,6 +1379,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1350,6 +1403,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1373,6 +1427,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1396,6 +1451,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1422,6 +1478,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="ETC" />
 		<for>
 			<effect name="Buff">
@@ -1448,6 +1505,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="ETC" />
 		<for>
 			<effect name="Buff">
@@ -1474,6 +1532,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="ETC" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -1503,6 +1562,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="ETC" />
 		<for>
 			<effect name="Buff">
@@ -1527,6 +1587,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1550,6 +1611,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1573,6 +1635,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1596,6 +1659,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1622,6 +1686,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="ETC" />
 		<for>
 			<effect name="Buff">
@@ -1648,6 +1713,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="ETC" />
 		<for>
 			<effect name="Buff">
@@ -1674,6 +1740,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="ETC" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -1703,6 +1770,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="ETC" />
 		<for>
 			<effect name="Buff">
@@ -1720,6 +1788,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1746,6 +1815,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Invincible" />
@@ -1767,6 +1837,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1795,6 +1866,7 @@
 		<set name="reuseDelay" val="3600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<cond>
 			<and>
@@ -1831,6 +1903,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SilentMove">
@@ -1856,6 +1929,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="ResurrectionSpecial">
@@ -1873,6 +1947,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonAgathion">
@@ -1905,7 +1980,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="400" />
-		<set name="coolTime" val="600" />
+		<set name="coolTime" val="0" />
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="BranchSys.icon.br_comfortspirit_hat_a_i00" />
@@ -1941,6 +2016,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1963,6 +2039,7 @@
 		<set name="reuseDelay" val="3600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<cond>
 			<and>
@@ -1997,6 +2074,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -2023,6 +2101,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">

@@ -14,6 +14,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="1601" levels="1" name="Fishing">
@@ -60,6 +61,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="1628" levels="1" name="Super Strike">
@@ -73,6 +75,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="1629" levels="1" name="Might">
@@ -87,6 +90,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="1630" levels="1" name="Focus">
@@ -101,6 +105,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="1631" levels="1" name="Absolute Defense">
@@ -114,6 +119,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="1632" levels="1" name="Shield">
@@ -128,6 +134,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="1633" levels="1" name="Heal">
@@ -141,6 +148,7 @@
 		<set name="effectPoint" val="403" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="1634" levels="1" name="Spinning Slasher">
@@ -153,6 +161,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="1635" levels="1" name="Blood Siphon">
@@ -167,6 +176,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="1636" levels="1" name="Petrify">
@@ -181,6 +191,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1637" levels="1" name="Stun">
@@ -191,7 +202,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="300" />
+		<set name="coolTime" val="0.3" />
 		<set name="effectPoint" val="-1" />
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="NONE" />
@@ -207,7 +218,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="300" />
+		<set name="coolTime" val="0.3" />
 		<set name="effectPoint" val="-1" />
 		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="NONE" />
@@ -227,6 +238,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1640" levels="1" name="Hold">
@@ -237,7 +249,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="300" />
+		<set name="coolTime" val="0.3" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
@@ -254,7 +266,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="300" />
+		<set name="coolTime" val="0.3" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
@@ -276,6 +288,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1643" levels="1" name="Paralysis">
@@ -286,7 +299,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="1200" />
-		<set name="coolTime" val="300" />
+		<set name="coolTime" val="0.3" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
 		<set name="abnormalType" val="PARALYZE" />
@@ -307,6 +320,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="1645" levels="1" name="Debuff Invincibility">
@@ -321,6 +335,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="1646" levels="1" name="Mana Burn">
@@ -334,6 +349,7 @@
 		<set name="effectPoint" val="-655" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="1647" levels="1" name="50% Instant Herb of Mana">
@@ -345,6 +361,7 @@
 		<set name="effectPoint" val="100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="1648" levels="1" name="MP Recovery Herb">
@@ -359,6 +376,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="1649" levels="1" name="MP Regen">
@@ -372,6 +390,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1650" levels="1" name="Absolute Defense">
@@ -385,6 +404,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="1651" levels="1" name="Melee Weapon Resistance">
@@ -406,6 +426,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="1653" levels="1" name="Super Strike">
@@ -419,6 +440,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="1654" levels="1" name="Long Strike">
@@ -429,7 +451,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="500" />
+		<set name="coolTime" val="0.5" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -443,7 +465,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
+		<set name="coolTime" val="0.5" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -459,6 +481,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="castRange" val="2000" />
 	</skill>
 	<skill id="1657" levels="1" name="Self-destruction">
@@ -471,6 +494,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="hitTime" val="5000" />
 	</skill>
 	<skill id="1658" levels="1" name="Self-destruction">
@@ -483,6 +507,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="hitTime" val="5000" />
 	</skill>
 	<skill id="1659" levels="1" name="Wild Sweep">
@@ -493,7 +518,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1080" />
-		<set name="coolTime" val="720" />
+		<set name="coolTime" val="0.72" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -507,7 +532,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="1067" />
-		<set name="coolTime" val="733" />
+		<set name="coolTime" val="0.733" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -524,6 +549,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="1662" levels="1" name="Super Strike">
@@ -537,6 +563,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="1663" levels="1" name="Berserker">
@@ -553,6 +580,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="1664" levels="1" name="Strike">
@@ -567,6 +595,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="1665" levels="1" name="Mana Burn">
@@ -580,6 +609,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="1666" levels="1" name="Cancellation">
@@ -591,7 +621,7 @@
 		<set name="mpConsume" val="2" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="700" />
-		<set name="coolTime" val="300" />
+		<set name="coolTime" val="0.3" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -606,7 +636,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2000" />
-		<set name="coolTime" val="500" />
+		<set name="coolTime" val="0.5" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -624,6 +654,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="1669" levels="1" name="Sleep">
@@ -639,6 +670,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1670" levels="1" name="Silence">
@@ -656,6 +688,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1671" levels="1" name="Disarm">
@@ -674,6 +707,7 @@
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1672" levels="1" name="Gust">
@@ -685,6 +719,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1673" levels="1" name="Death">
@@ -701,6 +736,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1674" levels="1" name="Death">
@@ -712,6 +748,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1675" levels="1" name="Flood">
@@ -726,6 +763,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="1676" levels="1" name="Crazy After-effect">
@@ -739,6 +777,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1677" levels="1" name="Spinning Slasher">
@@ -751,6 +790,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="hitTime" val="300" />
 	</skill>
 	<skill id="1678" levels="1" name="Self-destruction">
@@ -767,6 +807,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1679" levels="1" name="Self-destruction">
@@ -777,6 +818,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1680" levels="1" name="Smokescreen">
@@ -785,7 +827,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
-		<set name="coolTime" val="500" />
+		<set name="coolTime" val="0.5" />
 		<set name="effectPoint" val="-689" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -806,6 +848,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="1682" levels="1" name="Aggression">
@@ -816,7 +859,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="700" />
-		<set name="coolTime" val="200" />
+		<set name="coolTime" val="0.2" />
 		<set name="reuseDelay" val="6000" />
 		<set name="effectPoint" val="-1" />
 		<set name="abnormalType" val="TARGET_LOCK" />
@@ -836,6 +879,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="1684" levels="1" name="Strike">
@@ -885,6 +929,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="1688" levels="1" name="Strike">
@@ -931,7 +976,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="200" />
+		<set name="coolTime" val="0.2" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -945,7 +990,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3000" />
-		<set name="coolTime" val="500" />
+		<set name="coolTime" val="0.5" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -1004,6 +1049,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="coolTime" val="0" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1697" levels="1" name="Prominence">
@@ -1019,6 +1065,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="4" />
+		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="1698" levels="1" name="Rain of Fire">
@@ -1034,6 +1081,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="4" />
+		<set name="coolTime" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="1699" levels="1" name="Blink">
@@ -1043,7 +1091,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="2" />
 		<set name="hitTime" val="300" />
-		<set name="coolTime" val="200" />
+		<set name="coolTime" val="0.2" />
 		<set name="reuseDelay" val="15000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />

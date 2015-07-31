@@ -720,6 +720,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="4990" levels="1" name="Hot Spring Mineral">
@@ -730,6 +731,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="4991" levels="1" name="Hot Spring Brimstone">
@@ -746,6 +748,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="4992" levels="1" name="Stun">
@@ -762,13 +765,14 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="4993" levels="1" name="Venom Strike">
 		<!-- Confirmed CT2.5 -->
 		<!-- Benom Skills -->
 		<set name="castRange" val="40" />
-		<set name="coolTime" val="660" />
+		<set name="coolTime" val="0.66" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="830" />
@@ -798,6 +802,7 @@
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -809,7 +814,7 @@
 		<!-- Confirmed CT2.5 -->
 		<!-- Benom Skills -->
 		<set name="castRange" val="800" />
-		<set name="coolTime" val="100" />
+		<set name="coolTime" val="0.1" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1300" />
 		<set name="hitTime" val="2900" />
@@ -824,7 +829,7 @@
 		<!-- Benom Skills -->
 		<set name="affectRange" val="300" />
 		<set name="castRange" val="800" />
-		<set name="coolTime" val="100" />
+		<set name="coolTime" val="0.1" />
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1300" />
 		<set name="hitTime" val="2900" />
@@ -847,6 +852,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="4998" levels="1" name="Lidia Twister">
@@ -858,6 +864,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="4999" levels="1" name="Lidia Vampiric Touch">
@@ -869,6 +876,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="coolTime" val="0" />
 		<set name="targetType" val="SELF" />
 	</skill>
 </list>
