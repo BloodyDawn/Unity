@@ -69,6 +69,7 @@
 	</skill>
 	<skill id="11803" levels="3" name="Sustain">
 		<!-- Updated to Ertheia -->
+		<!-- Glory Days confirmed -->
 		<!-- For 15 seconds, Heals allies over time. Also increases your Healing power. If triggered again, the effect will increase. -->
 		<table name="#mpConsumes"> 57 0 0 </table>
 		<table name="#power"> 1.10 1.20 1.30 </table> <!-- Custom -->
@@ -100,15 +101,16 @@
 	</skill>
 	<skill id="11804" levels="3" name="Sustain">
 		<!-- Updated to Ertheia -->
+		<!-- Glory Days confirmed -->
 		<!-- For 10 second, increases Healing power by 50. If triggered again, the effect will increase. -->
 		<table name="#healPower"> 50 100 200 </table>
-		<table name="#abnormalLevel"> 1 2 3 </table>
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="icon" val="icon.skill1217" />
+		<set name="magicLvl" val="97" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -124,8 +126,9 @@
 	</skill>
 	<skill id="11806" levels="4" name="Blessing of Tree">
 		<!-- Updated to Ertheia -->
+		<!-- Glory Days confirmed -->
 		<!-- Recovers HP and removes bad abnormal statuses. -->
-		<table name="#heal"> 3321 3321 3321 4277 </table> <!-- custom (value is from level 3. Level 4 is taken from sephiroth three lv.1) -->
+		<table name="#heal"> 3274 3296 3319 3338 </table>
 		<set name="icon" val="icon.skill1258" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
@@ -137,29 +140,33 @@
 				<param power="#heal" />
 			</effect>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="6" /> <!-- Till now it always removes buffs. Tested up to 6 debuffs. -->
+				<param slot="debuff" rate="100" max="10" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11807" levels="5" name="Miracle of Fairy">
 		<!-- Updated to Ertheia -->
-		<table name="#heal"> 546 546 546 546 546 </table> <!-- custom (value is from level 4) -->
+		<!-- Glory Days confirmed -->
+		<table name="#heal"> 5 6 7 8 9 </table>
+		<table name="#magicLvl"> 87 90 93 96 99 </table>
 		<set name="icon" val="icon.skill11807" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
-		<set name="reuseDelay" val="2000" /> <!-- Custom -->
+		<set name="effectRange" val="1100" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="Heal">
+			<effect name="HealPercent">
 				<param power="#heal" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11808" levels="2" name="Elegance of Light">
-		<!-- Updated to Ertheia (totally guessed) -->
+		<!-- Updated to Ertheia -->
 		<!-- Affected by Elegance of Light. HP is decreased. -->
 		<table name="#maxHp"> 100 200 </table> <!-- Totally custom -->
+		<table name="#magicLvl"> 87 90 93 96 99 </table>
 		<set name="icon" val="icon.skill0086" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -264,15 +271,21 @@
 	</skill>
 	<skill id="11814" levels="11" name="Dark Force">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts damage on target with 124 Power added to M. Atk. Has a chance of pushing back target. -->
 		<table name="#mpConsumes"> 87 91 95 98 102 107 111 116 118 122 127 </table>
 		<table name="#power"> 124 127 129 133 137 141 144 148 178 182 186 </table>
 		<table name="#effectPoints"> -867 -880 -891 -899 -906 -913 -922 -933 -941 -950 -959 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="activateRate" val="90" />
+		<set name="basicProperty" val="PHYSICAL" />
+		<set name="lvlBonusRate" val="20" />
 		<set name="icon" val="icon.skill11814" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="900" /> <!-- Custom -->
