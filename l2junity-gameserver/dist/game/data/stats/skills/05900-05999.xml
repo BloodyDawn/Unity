@@ -20,6 +20,7 @@
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="400" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="TriggerSkillByAttack">
@@ -52,6 +53,7 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="TriggerSkillByAttack">
@@ -74,6 +76,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TargetCancel" />
@@ -157,6 +160,7 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="trait" val="DERANGEMENT" />
 	</skill>
 	<skill id="5906" levels="1" name="Ritual of Revive">
@@ -167,6 +171,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1100" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5907" levels="2" name="Ritual of Entombment">
@@ -187,6 +192,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1100" />
 		<set name="targetType" val="NONE" />
 		<for>
 			<effect name="DefenceTrait">
@@ -212,6 +218,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1100" />
 		<set name="targetType" val="NONE" />
 		<for>
 			<effect name="DefenceTrait">
@@ -239,7 +246,7 @@
 	</skill>
 	<skill id="5910" levels="1" name="Stronghold Attack">
 		<set name="castRange" val="300" />
-		<set name="effectRange" val="500" />
+		<set name="effectRange" val="600" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
@@ -278,6 +285,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="trait" val="DERANGEMENT" />
 	</skill>
 	<skill id="5913" levels="1" name="Putrefaction Cleanse">
@@ -312,6 +320,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1100" />
 		<set name="trait" val="DERANGEMENT" />
 	</skill>
 	<skill id="5915" levels="9" name="Mummifying Aura">
@@ -329,6 +338,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5916" levels="9" name="Cruising Aura">
@@ -346,6 +356,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5917" levels="9" name="Shrouding Aura">
@@ -363,6 +374,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5918" levels="10" name="Physical Root Vulnerability">
@@ -421,6 +433,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -526,6 +539,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -545,6 +559,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5925" levels="1" name="Goring Charge">
@@ -555,6 +570,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="600" />
 		<set name="targetType" val="NONE" />
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
@@ -571,6 +587,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="600" />
 		<set name="targetType" val="FRONT_AREA" />
 	</skill>
 	<skill id="5927" levels="4" name="Immortal Frenzy">
@@ -587,6 +604,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5928" levels="4" name="Immortal Resilience">
@@ -603,6 +621,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5929" levels="1" name="Pairing of the Lost">
@@ -618,6 +637,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5930" levels="1" name="Shielding of the Lost">
@@ -634,6 +654,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 		<for>
 			<effect name="DefenceTrait">
@@ -722,6 +743,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5935" levels="1" name="Dark Ring">
@@ -786,6 +808,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5938" levels="5" name="P. Atk. Up">
@@ -801,6 +824,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5939" levels="5" name="Defense Ability Up">
@@ -816,6 +840,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5940" levels="12" name="Energy of Generation">
@@ -835,6 +860,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5941" levels="1" name="Energy of Erosion">
@@ -851,6 +877,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5942" levels="1" name="Energy of Pollution">
@@ -867,6 +894,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5943" levels="1" name="Energy of Contamination">
@@ -883,6 +911,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5944" levels="1" name="Energy of Oblivion">
@@ -899,6 +928,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5945" levels="1" name="Region2 Rotation5">
@@ -914,6 +944,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5946" levels="1" name="Large Firecracker">
@@ -925,6 +956,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5947" levels="1" name="Large Firecracker">
@@ -936,6 +968,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5948" levels="1" name="Large Firecracker">
@@ -947,6 +980,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5949" levels="1" name="Large Firecracker">
@@ -958,6 +992,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5950" levels="1" name="Birthday Gift">
@@ -997,6 +1032,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5952" levels="1" name="Agathion's Blessing">
@@ -1009,6 +1045,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5953" levels="1" name="Agathion's Blessing">
@@ -1021,6 +1058,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5954" levels="1" name="Agathion Cute Trick - Tinplate Golem">
@@ -1033,6 +1071,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5955" levels="1" name="Agathion Cute Trick - Joy">
@@ -1045,6 +1084,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2292">
 			<player agathionId="16056" />
@@ -1060,6 +1100,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2292">
 			<player agathionId="16058" />
@@ -1075,6 +1116,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2292">
 			<player agathionId="16057" />
@@ -1090,6 +1132,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2292">
 			<player agathionId="16059" />
@@ -1105,6 +1148,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2292">
 			<player agathionId="16060" />
@@ -1127,6 +1171,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="trait" val="POISON" />
 	</skill>
 	<skill id="5961" levels="1" name="Barrier Thunder Storm">
@@ -1147,6 +1192,7 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1100" />
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="5962" levels="1" name="Air Defense Cannon">
@@ -1157,6 +1203,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1100" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5963" levels="1" name="Emery Conversion">
@@ -1168,6 +1215,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1100" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5964" levels="1" name="Star Shard">
@@ -1178,6 +1226,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5965" levels="1" name="Fireworks">
@@ -1190,6 +1239,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1500" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5966" levels="1" name="Large Firecracker">
@@ -1201,6 +1251,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5967" levels="2" name="Aggression Aura">
@@ -1220,6 +1271,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5968" levels="2" name="Rapid Shot">
@@ -1240,6 +1292,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5969" levels="2" name="Punch of Doom">
@@ -1261,6 +1314,7 @@
 		<set name="reuseDelay" val="120000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="400" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1285,6 +1339,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="100" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5971" levels="1" name="Seduced Ranger's Help">
@@ -1303,6 +1358,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="100" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5972" levels="1" name="Seduced Wizard's Help">
@@ -1321,6 +1377,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="100" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5973" levels="1" name="Seduced Warrior's Help">
@@ -1339,6 +1396,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="100" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5974" levels="1" name="Tiat Transformation">
@@ -1356,6 +1414,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5975" levels="3" name="Dark Attack">
@@ -1397,6 +1456,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1414,6 +1474,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="400" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5978" levels="1" name="Devil Strike">
@@ -1425,6 +1486,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5979" levels="1" name="Forced Teleport">
@@ -1435,6 +1497,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5980" levels="3" name="Seal Isolation">
@@ -1454,6 +1517,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1474,6 +1538,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5982" levels="1" name="Aura Bird - Falcon">
@@ -1482,7 +1547,7 @@
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="castRange" val="1500" />
 		<set name="effectPoint" val="1" />
-		<set name="effectRange" val="2100" />
+		<set name="effectRange" val="1200" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill0841" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -1518,7 +1583,7 @@
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="castRange" val="1500" />
 		<set name="effectPoint" val="1" />
-		<set name="effectRange" val="2100" />
+		<set name="effectRange" val="1200" />
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill0842" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -1562,6 +1627,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5985" levels="9" name="Decaying Aura">
@@ -1578,6 +1644,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5986" levels="9" name="Vampiric Aura">
@@ -1594,6 +1661,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5987" levels="1" name="Weapon Maintenance">
@@ -1613,6 +1681,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -1648,6 +1717,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -1684,6 +1754,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5990" levels="3" name="Lesser Heal">
@@ -1697,6 +1768,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5991" levels="1" name="Presentation - Summon Tiat">
@@ -1708,6 +1780,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5992" levels="12" name="Aggression">
@@ -1726,6 +1799,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1400" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5993" levels="1" name="Command of Anchor">
@@ -1752,6 +1826,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="MagicalAttack">

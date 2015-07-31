@@ -49,6 +49,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -69,6 +70,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="200" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="11750" levels="1" name="Heavy Hit">
@@ -83,6 +85,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="1100" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="11751" levels="7" name="Superior Magic Weapon Mastery">
@@ -130,6 +133,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1100" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -159,6 +163,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -191,6 +196,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="1100" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<for>
 			<effect name="TriggerSkillByDamage">
@@ -286,6 +292,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="1" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HpCpHeal">
@@ -346,6 +353,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Invincible" />
@@ -431,6 +439,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="3" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="ManaHealByLevel">
@@ -460,6 +469,7 @@
 		<set name="abnormalType" val="LIFE_FORCE_OTHERS" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="RebalanceHP" />
@@ -549,6 +559,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Invincible" />
@@ -639,6 +650,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="1811" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="-1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<for>
 			<effect name="ManaHealPercent">
@@ -712,6 +724,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DeleteHate">
@@ -736,6 +749,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="3" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<skill id="11772" levels="7" name="Giant's Favor">
@@ -762,6 +776,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="-1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -801,7 +816,7 @@
 		<set name="coolTime" val="2" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="#effectPoint" />
-		<set name="effectRange" val="1100" />
+		<set name="effectRange" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="3" />
@@ -830,6 +845,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11776" levels="4" name="Summon Lumi">
@@ -852,6 +868,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="3" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="1" />
 		<cond>
 			<and>
@@ -961,6 +978,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -992,6 +1010,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1010,6 +1029,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="0" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11782" levels="2" name="Frantic Healing">
@@ -1046,6 +1066,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1100" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="ResetDebuff" />
@@ -1072,6 +1093,7 @@
 		<set name="effectPoint" val="2" />
 		<set name="targetType" val="PC_BODY" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="900" />
 		<set name="staticReuse" val="true" />
 		<cond>
 			<player canResurrect="true" />
@@ -1103,6 +1125,7 @@
 		<set name="isMagic" val="4" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<cond>
 			<player canResurrect="true" />
@@ -1128,6 +1151,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -1284,6 +1308,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1100" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -1313,6 +1338,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -1342,6 +1368,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1100" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -1371,6 +1398,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -1400,6 +1428,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1100" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -1429,6 +1458,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -1458,6 +1488,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="1100" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">

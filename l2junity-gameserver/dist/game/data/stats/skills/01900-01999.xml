@@ -63,6 +63,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="DispelBySlot">
@@ -126,6 +127,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -218,6 +220,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0.2" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -263,6 +266,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0.2" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -345,6 +349,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0.2" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Invincible" />
@@ -389,6 +394,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0.2" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -433,6 +439,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0.2" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="KnockBack">
@@ -504,6 +511,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0.2" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="DebuffBlock">
@@ -536,6 +544,7 @@
 		<set name="reuseDelay" val="3600000" />
 		<set name="rideState" val="NONE" />
 		<set name="specialLevel" val="-1" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="2195">
 			<player canTransform="true" />
@@ -595,6 +604,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -638,6 +648,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -681,6 +692,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -724,6 +736,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -767,6 +780,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -810,6 +824,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -854,6 +869,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -1076,6 +1092,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="specialLevel" val="-2" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="10000" />
 		<cond msgId="2195">
 			<player canTransform="true" />
@@ -1119,6 +1136,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
@@ -1497,6 +1515,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -1540,6 +1559,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticDelay" val="true" />
 		<for>
 			<effect name="Buff">
@@ -1583,6 +1603,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticDelay" val="true" />
 		<for>
 			<effect name="Buff">
@@ -1621,6 +1642,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticDelay" val="true" />
 		<for>
 			<effect name="Heal">
@@ -1643,6 +1665,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1983" levels="1" name="Dual - Silence of the Giants">
@@ -1660,6 +1683,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1984" levels="1" name="Dual - Yoke of the Giants">
@@ -1677,6 +1701,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1985" levels="1" name="Dual - Shield of the Giants">
@@ -1692,6 +1717,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<skill id="1986" levels="4" name="Dual Maximum HP">
@@ -1777,6 +1803,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="1996" levels="2" name="Hurricane Shackle">

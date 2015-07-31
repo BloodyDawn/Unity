@@ -663,6 +663,7 @@
 		<set name="coolTime" val="0.85" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="1500" />
 		<set name="reuseDelay" val="7000" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -698,6 +699,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="rideState" val="NONE" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="KnockBack">
@@ -726,6 +728,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="rideState" val="NONE" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="KnockBack">
@@ -794,6 +797,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="targetType" val="AURA" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="-1" />
 		<set name="trait" val="SHOCK" />
 		<!-- TODO cond {op_blink;_back;300} -->
 		<for>
@@ -977,6 +981,7 @@
 		<set name="effectPoint" val="-709" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="1400" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="10774" levels="4" name="Quick Evasion">
@@ -997,7 +1002,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="#castRanges" />
-		<set name="effectRange" val="#effectRanges" />
+		<set name="effectRange" val="1000" />
 		<set name="hitTime" val="700" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="2" />
@@ -1024,6 +1029,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="0.5" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="600000" />
 		<for>
 			<effect name="SummonNpc">
@@ -1053,6 +1059,7 @@
 		<set name="effectPoint" val="2" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="900000" />
 		<for>
 			<effect name="Buff">
@@ -1111,6 +1118,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="0.5" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="1400" />
 		<set name="reuseDelay" val="60000" />
 		<cond>
 			<target myPartyExceptMe="true" />
@@ -1139,6 +1147,7 @@
 		<set name="effectPoint" val="2" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="120000" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -1275,6 +1284,7 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -1306,6 +1316,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Hide">
@@ -1333,6 +1344,7 @@
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="0.3" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="20000" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -1367,7 +1379,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
-		<set name="effectRange" val="1500" />
+		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -1403,6 +1415,7 @@
 		<set name="coolTime" val="0.2" />
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="1" />
 		<cond>
 			<and>
@@ -1427,6 +1440,7 @@
 		<set name="coolTime" val="0.2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10789" levels="1" name="Flash Trap">
@@ -1441,6 +1455,7 @@
 		<set name="effectPoint" val="-709" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="45000" />
 	</skill>
 	<skill id="10790" levels="1" name="Explosion Trap">
@@ -1455,6 +1470,7 @@
 		<set name="effectPoint" val="-709" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="45000" />
 	</skill>
 	<skill id="10791" levels="4" name="Frost Trap">
@@ -1469,6 +1485,7 @@
 		<set name="coolTime" val="0.2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="45000" />
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="#npcIds,150,false" />
@@ -1491,6 +1508,7 @@
 		<set name="coolTime" val="0.2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="45000" />
 		<cond msgId="113" addName="1">
 			<player npcIdRadius="#npcIds,150,false" />
@@ -1516,6 +1534,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="10794" levels="8" name="Thunder Flight">

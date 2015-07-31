@@ -187,6 +187,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="4" />
 		<effect name="Buff">
 			<mul stat="sDef" val="#power" />
@@ -221,6 +222,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="400" />
 		<set name="effectPoint" val="#effectPoint" />
 		<alterSkill>
 			<skill id="10250" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
@@ -442,7 +444,7 @@
 		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
-		<set name="effectRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="0.37" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -487,6 +489,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -522,6 +525,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
@@ -603,6 +607,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="ImmobileBuff">
@@ -632,7 +637,7 @@
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="400" />
-		<set name="effectRange" val="400" />
+		<set name="effectRange" val="900" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -672,6 +677,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -727,6 +733,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="60000" />
 		<cond addName="1" msgId="113">
 			<using kind="SHIELD" />
@@ -758,6 +765,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -817,6 +825,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113">
 			<using kind="SHIELD" />
@@ -861,6 +870,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT" />
@@ -955,6 +965,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="TargetMe" />
@@ -1015,6 +1026,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1068,6 +1080,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Buff">
@@ -1119,6 +1132,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Buff">
@@ -1170,6 +1184,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Buff">
@@ -1225,6 +1240,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Buff">
@@ -1281,6 +1297,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Buff">
@@ -1309,6 +1326,7 @@
 		<set name="coolTime" val="0.5" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="30000" />
 		<cond>
 			<and>
@@ -1339,6 +1357,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10042" levels="3" name="Summon Cubic of Life">
@@ -1352,6 +1371,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10043" levels="8" name="Summon Knight Cubic">
@@ -1367,6 +1387,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10044" levels="7" name="Superior Elemental Mastery">
@@ -1410,6 +1431,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="400" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10046" levels="3" name="Shield Charge III">
@@ -1431,6 +1453,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="400" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10047" levels="3" name="Shield Charge IV">
@@ -1452,6 +1475,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="400" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10048" levels="3" name="Shield Charge V">
@@ -1473,6 +1497,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="400" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10049" levels="3" name="Shield Charge VI">
@@ -1494,6 +1519,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="400" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10050" levels="3" name="Shield Charge VII">
@@ -1515,6 +1541,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="400" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10051" levels="6" name="Lion Roar">
@@ -1606,7 +1633,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="500" />
-		<set name="effectRange" val="1100" />
+		<set name="effectRange" val="1000" />
 		<set name="hitTime" val="100" />
 		<set name="coolTime" val="0.27" />
 		<set name="reuseDelay" val="30000" />
@@ -1672,6 +1699,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1720,6 +1748,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="DamOverTime" ticks="5">
@@ -1776,6 +1805,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="400" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10060" levels="1" name="Aggression Attack">
@@ -1787,7 +1817,7 @@
 		<set name="castRange" val="600" />
 		<set name="coolTime" val="0" />
 		<set name="effectPoint" val="2" />
-		<set name="effectRange" val="1100" />
+		<set name="effectRange" val="-1" />
 		<set name="hitTime" val="700" />
 		<set name="icon" val="icon.skill0086" />
 		<set name="isDebuff" val="true" />

@@ -269,7 +269,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
-		<set name="effectRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1030" />
 		<set name="coolTime" val="0.7" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -322,7 +322,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
-		<set name="effectRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1130" />
 		<set name="coolTime" val="0.7" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -444,6 +444,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="-1" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
@@ -482,7 +483,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
-		<set name="effectRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="0.3" />
 		<set name="reuseDelay" val="120000" />
@@ -526,6 +527,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="BlockActions">
@@ -592,6 +594,7 @@
 		<set name="canCastWhileDisabled" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Hide">
@@ -624,6 +627,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -656,6 +660,7 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
@@ -728,6 +733,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -766,6 +772,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="150000" />
 		<for>
 			<effect name="Buff">
@@ -799,6 +806,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="60000" />
 		<for>
 			<effect name="Buff">
@@ -925,6 +933,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="1100" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="TeleportToTarget" />
@@ -958,6 +967,7 @@
 		<set name="effectPoint" val="709" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -993,6 +1003,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="600000" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
@@ -1075,6 +1086,7 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="-1" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="TriggerSkillByAttack">
@@ -1257,6 +1269,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="900" />
 		<set name="trait" val="DERANGEMENT" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
@@ -1481,6 +1494,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="60" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10548" levels="8" name="Plunder">
@@ -1497,6 +1511,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="400" />
 		<set name="reuseDelay" val="10000" />
 		<for>
 			<effect name="Plunder" />
@@ -1562,7 +1577,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
-		<set name="effectRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1080" />
 		<set name="coolTime" val="0.72" />
 		<set name="reuseDelay" val="4000" />
@@ -1597,7 +1612,7 @@
 		<set name="trait" val="DERANGEMENT" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
-		<set name="effectRange" val="600" />
+		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="0.3" />
 		<set name="reuseDelay" val="4000" />
@@ -1652,6 +1667,7 @@
 		<set name="coolTime" val="0.2" />
 		<set name="effectPoint" val="-704" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="10000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1725,6 +1741,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="Root" />
@@ -1754,6 +1771,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="reuseDelay" val="1000" />
 		<for>
 			<effect name="Hide" />
@@ -1788,6 +1806,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="coolTime" val="0" />
+		<set name="effectRange" val="-1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
