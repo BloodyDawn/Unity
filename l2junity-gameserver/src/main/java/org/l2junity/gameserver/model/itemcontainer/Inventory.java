@@ -1833,4 +1833,14 @@ public abstract class Inventory extends ItemContainer
 	{
 		_blockedItemSlotsMask = itemSlotsMask;
 	}
+
+	/**
+	 * Reduce the arrow number of the L2Character.<br>
+	 * <B><U> Overridden in </U> :</B> <li>L2PcInstance</li>
+	 * @param type
+	 */
+	public void reduceArrowCount(EtcItemType type)
+	{
+		// default is to do nothing
+	}
 }

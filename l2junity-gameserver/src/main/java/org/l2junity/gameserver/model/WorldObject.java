@@ -480,8 +480,9 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	 * Try to recharge a shot.
 	 * @param physical skill are using Soul shots.
 	 * @param magical skill are using Spirit shots.
+	 * @param fish
 	 */
-	public void rechargeShots(boolean physical, boolean magical)
+	public void rechargeShots(boolean physical, boolean magical, boolean fish)
 	{
 	}
 	

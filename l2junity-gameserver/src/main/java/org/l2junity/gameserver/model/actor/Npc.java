@@ -1216,7 +1216,7 @@ public class Npc extends Creature
 	}
 	
 	@Override
-	public void rechargeShots(boolean physical, boolean magic)
+	public void rechargeShots(boolean physical, boolean magic, boolean fish)
 	{
 		if (physical && (_soulshotamount > 0))
 		{

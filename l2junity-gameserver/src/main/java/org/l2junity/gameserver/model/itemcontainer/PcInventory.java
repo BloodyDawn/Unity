@@ -29,6 +29,7 @@ import java.util.stream.Collectors;
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.CommonUtil;
+import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.model.TradeItem;
@@ -41,6 +42,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerItemDr
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerItemTransfer;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.variables.ItemVariables;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -1018,5 +1020,116 @@ public class PcInventory extends Inventory
 			item.giveSkillsToOwner();
 			item.applyEnchantStats();
 		}
+	}
+
+	/**
+	 * Reduce the number of arrows/bolts owned by the L2PcInstance and send it Server->Client Packet InventoryUpdate or ItemList (to unequip if the last arrow was consumed).
+	 * @param type
+	 */
+	public void reduceArrowCount(EtcItemType type)
+	{
+		if (type != EtcItemType.ARROW && type != EtcItemType.BOLT)
+		{
+			_log.warn(type.toString(), " which is not arrow type passed to PlayerInstance.reduceArrowCount()");
+			return;
+		}
+
+		final ItemInstance arrows = getPaperdollItem(Inventory.PAPERDOLL_LHAND);
+
+		if (arrows == null || arrows.getItemType() != type)
+		{
+			return;
+		}
+
+		if (arrows.getEtcItem().isInfinite())	// Null-safe due to type checks above
+		{
+			return;
+		}
+
+		if ((GameTimeController.getInstance().getGameTicks() % 10) == 0)
+		{
+			updateItemCount(null, arrows, -1, _owner, null);
+		}
+		else
+		{
+			updateItemCountNoDbUpdate(null, arrows, -1, _owner, null);
+		}
+	}
+
+	/**
+	 * Reduces item count in the stack, destroys item when count reaches 0.
+	 * @param countDelta Adds items to stack if positive, reduces if negative. If stack count reaches 0 item is destroyed.
+	 * @return Amount of items left.
+	 */
+	public boolean updateItemCountNoDbUpdate(String process, ItemInstance item, long countDelta, PlayerInstance creator, Object reference)
+	{
+		final InventoryUpdate iu = new InventoryUpdate();
+		final long left = item.getCount() + countDelta;
+		try
+		{
+			if (left > 0)
+			{
+				synchronized (item)
+				{
+					if (process != null && process.length() > 0)
+					{
+						item.changeCount(process, countDelta, creator, reference);
+					}
+					else
+					{
+						item.changeCountWithoutTrace(-1, creator, reference);
+					}
+					item.setLastChange(ItemInstance.MODIFIED);
+					refreshWeight();
+					iu.addModifiedItem(item);
+					return true;
+				}
+			}
+			else if (left == 0)
+			{
+				iu.addRemovedItem(item);
+				destroyItem(process, item, _owner, null);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		finally
+		{
+			if (Config.FORCE_INVENTORY_UPDATE)
+			{
+				_owner.sendItemList(false);
+			}
+			else
+			{
+				_owner.sendInventoryUpdate(iu);
+			}
+		}
+	}
+
+	/**
+	 * Reduces item count in the stack, destroys item when count reaches 0.
+	 * @param countDelta Adds items to stack if positive, reduces if negative. If stack count reaches 0 item is destroyed.
+	 * @return Amount of items left.
+	 */
+	public boolean updateItemCount(String process, ItemInstance item, long countDelta, PlayerInstance creator, Object reference)
+	{
+		if (item != null)
+		{
+			try
+			{
+				return updateItemCountNoDbUpdate(process, item, countDelta, creator, reference);
+			}
+			finally
+			{
+				if (item.getCount() > 0)
+				{
+					item.updateDatabase();
+				}
+			}
+		}
+		return false;
 	}
 }

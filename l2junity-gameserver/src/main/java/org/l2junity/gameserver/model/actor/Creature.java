@@ -122,6 +122,7 @@ import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.options.OptionsSkillHolder;
 import org.l2junity.gameserver.model.options.OptionsSkillType;
@@ -991,7 +992,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 						}
 						
 						// Equip arrows needed in left hand and send a Server->Client packet ItemList to the L2PcInstance then return True
-						if (!checkAndEquipArrows())
+						if (!checkAndEquipAmmunition(EtcItemType.ARROW))
 						{
 							// Cancel the action because the L2PcInstance have no arrow
 							getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
@@ -1053,7 +1054,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 						}
 						
 						// Equip bolts needed in left hand and send a Server->Client packet ItemList to the L2PcINstance then return True
-						if (!checkAndEquipBolts())
+						if (!checkAndEquipAmmunition(EtcItemType.BOLT))
 						{
 							// Cancel the action because the L2PcInstance have no arrow
 							getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
@@ -1257,7 +1258,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		boolean miss1 = Formulas.calcHitMiss(this, target);
 		
 		// Consume arrows
-		reduceArrowCount(crossbow);
+		getInventory().reduceArrowCount(crossbow ? EtcItemType.BOLT : EtcItemType.ARROW);
 		
 		_move = null;
 		
@@ -4716,22 +4717,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * <B><U> Overridden in </U> :</B>
 	 * <li>L2PcInstance</li>
 	 * @return True if arrows are available.
+	 * @param type
 	 */
-	protected boolean checkAndEquipArrows()
+	protected boolean checkAndEquipAmmunition(EtcItemType type)
 	{
 		return true;
 	}
-	
-	/**
-	 * <B><U> Overridden in </U> :</B>
-	 * <li>L2PcInstance</li>
-	 * @return True if bolts are available.
-	 */
-	protected boolean checkAndEquipBolts()
-	{
-		return true;
-	}
-	
+
 	/**
 	 * Add Exp and Sp to the L2Character.<br>
 	 * <B><U> Overridden in </U> :</B>
@@ -4982,7 +4974,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		
 		// Recharge any active auto-soulshot tasks for current creature.
-		rechargeShots(true, false);
+		rechargeShots(true, false, false);
 	}
 	
 	/**
@@ -5020,18 +5012,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 		}
 	}
-	
-	/**
-	 * Reduce the arrow number of the L2Character.<br>
-	 * <B><U> Overridden in </U> :</B>
-	 * <li>L2PcInstance</li>
-	 * @param bolts
-	 */
-	protected void reduceArrowCount(boolean bolts)
-	{
-		// default is to do nothing
-	}
-	
+
 	/**
 	 * Manage Forced attack (shift + select target).<br>
 	 * <B><U>Actions</U>:</B>
@@ -5528,7 +5509,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				}
 			}
 			
-			rechargeShots(skill.useSoulShot(), skill.useSpiritShot());
+			rechargeShots(skill.useSoulShot(), skill.useSpiritShot(), false);
 			
 			final StatusUpdate su = new StatusUpdate(this);
 			boolean isSendStatus = false;
@@ -5641,7 +5622,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		// On each repeat recharge shots before cast.
 		if (mut.getCount() > 0)
 		{
-			rechargeShots(mut.getSkill().useSoulShot(), mut.getSkill().useSpiritShot());
+			rechargeShots(mut.getSkill().useSoulShot(), mut.getSkill().useSpiritShot(), false);
 		}
 		
 		// Attack target after skill use

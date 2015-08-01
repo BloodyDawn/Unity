@@ -127,11 +127,11 @@ public final class RequestAutoSoulShot implements IClientIncomingPacket
 						final Summon pet = activeChar.getPet();
 						if (pet != null)
 						{
-							pet.rechargeShots(isSoulshot, isSpiritshot);
+							pet.rechargeShots(isSoulshot, isSpiritshot, false);
 						}
 						activeChar.getServitors().values().forEach(s ->
 						{
-							s.rechargeShots(isSoulshot, isSpiritshot);
+							s.rechargeShots(isSoulshot, isSpiritshot, false);
 						});
 					}
 					else
@@ -141,8 +141,9 @@ public final class RequestAutoSoulShot implements IClientIncomingPacket
 				}
 				else if (isPlayerShot(item.getItem()))
 				{
-					final boolean isSoulshot = (item.getEtcItem().getDefaultAction() == ActionType.SOULSHOT) || (item.getEtcItem().getDefaultAction() == ActionType.FISHINGSHOT);
+					final boolean isSoulshot = item.getEtcItem().getDefaultAction() == ActionType.SOULSHOT;
 					final boolean isSpiritshot = item.getEtcItem().getDefaultAction() == ActionType.SPIRITSHOT;
+					final boolean isFishingshot = item.getEtcItem().getDefaultAction() == ActionType.FISHINGSHOT;
 					if ((activeChar.getActiveWeaponItem() == activeChar.getFistsWeaponItem()) || (item.getItem().getCrystalType() != activeChar.getActiveWeaponItem().getCrystalTypePlus()))
 					{
 						client.sendPacket(isSoulshot ? SystemMessageId.THE_SOULSHOT_YOU_ARE_ATTEMPTING_TO_USE_DOES_NOT_MATCH_THE_GRADE_OF_YOUR_EQUIPPED_WEAPON : SystemMessageId.YOUR_SPIRITSHOT_DOES_NOT_MATCH_THE_WEAPON_S_GRADE);
@@ -159,7 +160,7 @@ public final class RequestAutoSoulShot implements IClientIncomingPacket
 					client.sendPacket(sm);
 					
 					// Recharge player's shots
-					activeChar.rechargeShots(isSoulshot, isSpiritshot);
+					activeChar.rechargeShots(isSoulshot, isSpiritshot, isFishingshot);
 				}
 			}
 			else if (_type == 0)

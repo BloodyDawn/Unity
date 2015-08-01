@@ -224,7 +224,7 @@ public class SkillChannelizer implements Runnable
 							}
 							
 							// Shots are re-charged every cast.
-							_channelizer.rechargeShots(skill.useSoulShot(), skill.useSpiritShot());
+							_channelizer.rechargeShots(skill.useSoulShot(), skill.useSpiritShot(), false);
 						}
 						_channelizer.broadcastPacket(new MagicSkillLaunched(_channelizer, skill.getId(), skill.getLevel(), character));
 					}

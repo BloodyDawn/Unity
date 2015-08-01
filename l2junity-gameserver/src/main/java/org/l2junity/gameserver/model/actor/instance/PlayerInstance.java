@@ -69,7 +69,6 @@ import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.data.xml.impl.ClassListData;
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
-import org.l2junity.gameserver.data.xml.impl.FishData;
 import org.l2junity.gameserver.data.xml.impl.HennaData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.data.xml.impl.PetDataTable;
@@ -126,6 +125,7 @@ import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.ClanWar;
 import org.l2junity.gameserver.model.ContactList;
 import org.l2junity.gameserver.model.EnchantSkillLearn;
+import org.l2junity.gameserver.model.Fishing;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.L2Request;
 import org.l2junity.gameserver.model.Location;
@@ -207,7 +207,6 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPvPKil
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerReputationChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSubChange;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerTransform;
-import org.l2junity.gameserver.model.fishing.L2Fish;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.MovieHolder;
 import org.l2junity.gameserver.model.holders.PlayerEventHolder;
@@ -276,7 +275,6 @@ import org.l2junity.gameserver.network.client.send.ExSubjobInfo;
 import org.l2junity.gameserver.network.client.send.ExUseSharedGroupItem;
 import org.l2junity.gameserver.network.client.send.ExUserInfoAbnormalVisualEffect;
 import org.l2junity.gameserver.network.client.send.ExUserInfoCubic;
-import org.l2junity.gameserver.network.client.send.ExUserInfoFishing;
 import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.GameGuardQuery;
@@ -293,7 +291,6 @@ import org.l2junity.gameserver.network.client.send.ObservationMode;
 import org.l2junity.gameserver.network.client.send.ObservationReturn;
 import org.l2junity.gameserver.network.client.send.PartySmallWindowUpdate;
 import org.l2junity.gameserver.network.client.send.PetInventoryUpdate;
-import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.PledgeShowMemberListDelete;
 import org.l2junity.gameserver.network.client.send.PledgeShowMemberListUpdate;
 import org.l2junity.gameserver.network.client.send.PrivateStoreListBuy;
@@ -659,13 +656,9 @@ public final class PlayerInstance extends Playable
 	private PlayerInstance _activeRequester;
 	private long _requestExpireTime = 0;
 	private final L2Request _request = new L2Request(this);
-	private ItemInstance _arrowItem;
-	private ItemInstance _boltItem;
-	
+
 	// Used for protection after teleport
 	private long _protectEndTime = 0;
-	
-	private ItemInstance _lure = null;
 	
 	private volatile Map<Integer, ExResponseCommissionInfo> _lastCommissionInfos;
 	
@@ -721,11 +714,6 @@ public final class PlayerInstance extends Playable
 	private final int _race[] = new int[2];
 	
 	private final BlockList _blockList = new BlockList(this);
-	
-	private boolean _fishing = false;
-	private int _fishx = 0;
-	private int _fishy = 0;
-	private int _fishz = 0;
 	
 	private volatile Set<Integer> _transformAllowedSkills;
 	private ScheduledFuture<?> _taskRentPet;
@@ -803,7 +791,9 @@ public final class PlayerInstance extends Playable
 	private volatile int _actionMask;
 	
 	private int _questZoneId = -1;
-	
+
+	private Fishing _fishing = new Fishing(this);
+
 	public void setPvpFlagLasts(long time)
 	{
 		_pvpFlagLasts = time;
@@ -2172,7 +2162,7 @@ public final class PlayerInstance extends Playable
 				
 				if ((item.getItem().getBodyPart() & L2Item.SLOT_MULTI_ALLWEAPON) != 0)
 				{
-					rechargeShots(true, true);
+					rechargeShots(true, true, false);
 				}
 			}
 			else
@@ -4613,13 +4603,10 @@ public final class PlayerInstance extends Playable
 					if (etcItem != null)
 					{
 						final EtcItemType itemType = etcItem.getItemType();
-						if ((weapon.getItemType() == WeaponType.BOW) && (itemType == EtcItemType.ARROW))
+						if (weapon.getItemType() == WeaponType.BOW && itemType == EtcItemType.ARROW ||
+							(weapon.getItemType() == WeaponType.CROSSBOW || weapon.getItemType() == WeaponType.TWOHANDCROSSBOW) && itemType == EtcItemType.BOLT)
 						{
-							checkAndEquipArrows();
-						}
-						else if (((weapon.getItemType() == WeaponType.CROSSBOW) || (weapon.getItemType() == WeaponType.TWOHANDCROSSBOW)) && (itemType == EtcItemType.BOLT))
-						{
-							checkAndEquipBolts();
+							checkAndEquipAmmunition(itemType);
 						}
 					}
 				}
@@ -5923,135 +5910,41 @@ public final class PlayerInstance extends Playable
 		}
 		return getObjectId() == getClan().getLeaderId();
 	}
-	
-	/**
-	 * Reduce the number of arrows/bolts owned by the L2PcInstance and send it Server->Client Packet InventoryUpdate or ItemList (to unequip if the last arrow was consummed).
-	 */
-	@Override
-	protected void reduceArrowCount(boolean bolts)
-	{
-		final ItemInstance arrows = getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
-		
-		if (arrows == null)
-		{
-			getInventory().unEquipItemInSlot(Inventory.PAPERDOLL_LHAND);
-			if (bolts)
-			{
-				_boltItem = null;
-			}
-			else
-			{
-				_arrowItem = null;
-			}
-			sendItemList(false);
-			return;
-		}
-		
-		// Infinite quiver doesn't decreases arrows upon use
-		if (arrows.isEtcItem() && arrows.getEtcItem().isInfinite())
-		{
-			return;
-		}
-		
-		// Adjust item quantity
-		if (arrows.getCount() > 1)
-		{
-			synchronized (arrows)
-			{
-				arrows.changeCountWithoutTrace(-1, this, null);
-				arrows.setLastChange(ItemInstance.MODIFIED);
-				
-				// could do also without saving, but let's save approx 1 of 10
-				if ((GameTimeController.getInstance().getGameTicks() % 10) == 0)
-				{
-					arrows.updateDatabase();
-				}
-				_inventory.refreshWeight();
-			}
-		}
-		else
-		{
-			// Destroy entire item and save to database
-			_inventory.destroyItem("Consume", arrows, this, null);
-			
-			getInventory().unEquipItemInSlot(Inventory.PAPERDOLL_LHAND);
-			if (bolts)
-			{
-				_boltItem = null;
-			}
-			else
-			{
-				_arrowItem = null;
-			}
-			
-			sendItemList(false);
-			return;
-		}
-		
-		if (!Config.FORCE_INVENTORY_UPDATE)
-		{
-			InventoryUpdate iu = new InventoryUpdate();
-			iu.addModifiedItem(arrows);
-			sendInventoryUpdate(iu);
-		}
-		else
-		{
-			sendItemList(false);
-		}
-	}
-	
+
 	/**
 	 * Equip arrows needed in left hand and send a Server->Client packet ItemList to the L2PcINstance then return True.
+	 * @param type
 	 */
 	@Override
-	protected boolean checkAndEquipArrows()
+	protected boolean checkAndEquipAmmunition(EtcItemType type)
 	{
-		// Check if nothing is equiped in left hand
-		if (getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND) == null)
+		ItemInstance arrows = getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
+		if (arrows == null)
 		{
-			// Get the L2ItemInstance of the arrows needed for this bow
-			_arrowItem = getInventory().findArrowForBow(getActiveWeaponItem());
-			if (_arrowItem != null)
+			Weapon weapon = getActiveWeaponItem();
+			if (type == EtcItemType.ARROW)
+			{
+				arrows = getInventory().findArrowForBow(weapon);
+			}
+			else if (type == EtcItemType.BOLT)
+			{
+				arrows = getInventory().findBoltForCrossBow(weapon);
+			}
+			if (arrows != null)
 			{
 				// Equip arrows needed in left hand
-				getInventory().setPaperdollItem(Inventory.PAPERDOLL_LHAND, _arrowItem);
+				getInventory().setPaperdollItem(Inventory.PAPERDOLL_LHAND, arrows);
 				sendItemList(false);
+				return true;
 			}
 		}
 		else
 		{
-			// Get the L2ItemInstance of arrows equiped in left hand
-			_arrowItem = getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
+			return true;
 		}
-		return _arrowItem != null;
+		return false;
 	}
-	
-	/**
-	 * Equip bolts needed in left hand and send a Server->Client packet ItemList to the L2PcINstance then return True.
-	 */
-	@Override
-	protected boolean checkAndEquipBolts()
-	{
-		// Check if nothing is equiped in left hand
-		if (getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND) == null)
-		{
-			// Get the L2ItemInstance of the arrows needed for this bow
-			_boltItem = getInventory().findBoltForCrossBow(getActiveWeaponItem());
-			if (_boltItem != null)
-			{
-				// Equip arrows needed in left hand
-				getInventory().setPaperdollItem(Inventory.PAPERDOLL_LHAND, _boltItem);
-				sendItemList(false);
-			}
-		}
-		else
-		{
-			// Get the L2ItemInstance of arrows equiped in left hand
-			_boltItem = getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
-		}
-		return _boltItem != null;
-	}
-	
+
 	/**
 	 * Disarm the player's weapon.
 	 * @return {@code true} if the player was disarmed or doesn't have a weapon to disarm, {@code false} otherwise.
@@ -9149,7 +9042,7 @@ public final class PlayerInstance extends Playable
 	}
 	
 	@Override
-	public void rechargeShots(boolean physical, boolean magic)
+	public void rechargeShots(boolean physical, boolean magic, boolean fish)
 	{
 		for (int itemId : _activeSoulShots)
 		{
@@ -9165,9 +9058,11 @@ public final class PlayerInstance extends Playable
 			{
 				continue;
 			}
-			
-			if ((magic && (item.getItem().getDefaultAction() == ActionType.SPIRITSHOT)) //
-				|| (physical && (item.getItem().getDefaultAction() == ActionType.SOULSHOT)))
+
+			final ActionType defaultAction = item.getItem().getDefaultAction();
+			if ((magic && defaultAction == ActionType.SPIRITSHOT)
+			|| (physical && defaultAction == ActionType.SOULSHOT)
+			|| (fish && defaultAction == ActionType.FISHINGSHOT))
 			{
 				handler.useItem(this, item, false);
 			}
@@ -9826,17 +9721,7 @@ public final class PlayerInstance extends Playable
 	{
 		return _wantsPeace;
 	}
-	
-	public boolean isFishing()
-	{
-		return _fishing;
-	}
-	
-	public void setFishing(boolean fishing)
-	{
-		_fishing = fishing;
-	}
-	
+
 	public void sendSkillList()
 	{
 		sendSkillList(0);
@@ -13032,7 +12917,7 @@ public final class PlayerInstance extends Playable
 	@Override
 	public boolean isMovementDisabled()
 	{
-		return super.isMovementDisabled() || (getMovieHolder() != null);
+		return super.isMovementDisabled() || (getMovieHolder() != null) || _fishing.isFishing();
 	}
 	
 	private void restoreUISettings()
@@ -14211,5 +14096,15 @@ public final class PlayerInstance extends Playable
 	public int getAttackerObjId()
 	{
 		return _attackerObjId;
+	}
+
+	public Fishing getFishing()
+	{
+		return _fishing;
+	}
+
+	public boolean isFishing()
+	{
+		return _fishing.isFishing();
 	}
 }

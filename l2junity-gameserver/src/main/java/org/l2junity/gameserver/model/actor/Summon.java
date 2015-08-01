@@ -1121,7 +1121,7 @@ public abstract class Summon extends Playable
 	}
 	
 	@Override
-	public void rechargeShots(boolean physical, boolean magic)
+	public void rechargeShots(boolean physical, boolean magic, boolean fish)
 	{
 		ItemInstance item;
 		IItemHandler handler;
