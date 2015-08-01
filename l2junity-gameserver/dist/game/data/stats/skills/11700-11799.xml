@@ -939,14 +939,21 @@
 	</skill>
 	<skill id="11779" levels="8" name="Yoked status">
 		<!-- Updated to Ertheia -->
+		<!-- Glory Days confirmed -->
 		<!-- Decreases Speed, Atk. Spd. and Casting Spd. by 50%. -->
+		<table name="#magicLvl"> 85 88 91 94 97 100 103 106</table>
 		<table name="#speeds"> 0.5 0.4 0.3 0.2 0.1 0.1 0.1 0.1 </table>
 		<set name="icon" val="icon.skill1394" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="abnormalVisualEffect" val="ROOT" />
+		<set name="activateRate" val="100" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
-		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="trait" val="SLEEP" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="isMagic" val="2" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -962,26 +969,34 @@
 	</skill>
 	<skill id="11780" levels="9" name="Dark Devour">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Decreases target's Recovery by 50%. -->
 		<table name="#effectPoint"> -867 -874 -891 -902 -913 -927 -938 -950 -962 </table>
 		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
-		<table name="#mpConsumes"> 35 35 37 40 42 45 46 48 50 </table>
+		<table name="#mpConsume"> 28 28 29 32 33 36 36 38 40 </table>
+		<table name="#mpInitialConsume"> 7 7 7 8 8 9 9 9 10 </table>
 		<table name="#healEffect"> 0.5 0.48 0.44 0.4 0.35 0.3 0.3 0.3 0.3 </table>
+		<set name="abnormalTime" val="60" />
+		<set name="abnormalLvl" val="3" />
+		<set name="abnormalType" val="HEAL_EFFECT_DOWN" />
+		<set name="activateRate" val="100" />
+		<set name="lvlBonusRate" val="30" />
 		<set name="icon" val="icon.skill11780" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
-		<set name="abnormalType" val="HEAL_EFFECT_DOWN" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1003,8 +1018,9 @@
 	</skill>
 	<skill id="11782" levels="2" name="Frantic Healing">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Casting Spd. + 30% when equipped with a Robe/ Light Armor. MP is continuously consumed. -->
-		<table name="#magicLvl"> 95 99 </table>
+		<table name="#magicLvl"> 93 99 </table>
 		<table name="#mAtkSpd"> 1.30 1.50 </table>
 		<set name="icon" val="icon.skill11782" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1023,6 +1039,7 @@
 	</skill>
 	<skill id="11783" levels="1" name="Reset">
 		<!-- Updated to Ertheia -->
+		<!-- Glory Days confirmed -->
 		<!-- Restarts target's debuff timers. -->
 		<set name="icon" val="icon.skill11783" />
 		<set name="operateType" val="A1" />
@@ -1032,6 +1049,7 @@
 		<set name="hitTime" val="6000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="-100" />
+		<set name="effectRange" val="1100" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
@@ -1040,6 +1058,7 @@
 		</for>
 	</skill>
 	<skill id="11784" levels="4" name="Blessed Resurrection">
+		<!-- Glory Days confirmed -->
 		<!-- Resurrects a dead target and restores 85% of the XP lost. -->
 		<table name="#mpConsume"> 28 30 33 36 </table>
 		<table name="#mpInitialConsume"> 7 7 8 9 </table>
@@ -1058,6 +1077,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="2" />
+		<set name="effectRange" val="900" />
 		<set name="targetType" val="PC_BODY" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="staticReuse" val="true" />
@@ -1072,19 +1092,24 @@
 	</skill>
 	<skill id="11785" levels="3" name="Party Resurrection">
 		<!-- Updated to Ertheia -->
+		<!-- Glory Days confirmed -->
 		<!-- Resurrects all dead party members and restores 80% of the XP lost. -->
-		<!-- Custom -->
 		<table name="#magicLvl"> 89 93 96 </table>
-		<table name="#mpConsumes"> 133 145 152 </table>
+		<table name="#mpConsume"> 107 116 122 </table>
+		<table name="#mpInitialConsume"> 26 29 30 </table>
 		<table name="#power"> 80 90 100 </table>
+		<table name="#target"> PARTY PARTY PARTY_CLAN </table>
+		<table name="#limit"> 0-0 0-0 50-50 </table>
 		<set name="icon" val="icon.skill11785" />
-		<set name="affectRange" val="1000" /> <!-- Custom -->
+		<set name="affectLimit" val="#limit" />
+		<set name="affectRange" val="1000" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="2" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="CORPSE_PARTY_CLAN" />
+		<set name="targetType" val="#target" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="mpConsume" val="#mpConsumes" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="600000" />
@@ -1103,18 +1128,20 @@
 	</skill>
 	<skill id="11786" levels="1" name="Debuff Immunity">
 		<!-- Updated to Ertheia -->
+		<!-- Glory Days confirmed -->
 		<!-- Immune to debuffs for 5 seconds. -->
 		<set name="icon" val="icon.skill1411" />
 		<set name="abnormalTime" val="5" />
+		<set name="abnormalLvl" val="3" />
+		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
+		<set name="magicLvl" val="97" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="hitCancelTime" val="0" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
