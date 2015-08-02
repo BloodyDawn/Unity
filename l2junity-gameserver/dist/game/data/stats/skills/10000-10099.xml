@@ -1393,7 +1393,7 @@
 		<table name="#mpConsumes"> 54 0 0 </table>
 		<table name="#power"> 14179 </table>
 		<set name="icon" val="icon.skill10045" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A4" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
@@ -1416,7 +1416,7 @@
 		<table name="#effectPoint"> -696 -2 -2 </table>
 		<table name="#mpConsumes"> 56 0 0 </table>
 		<set name="icon" val="icon.skill10046" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A4" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
@@ -1439,7 +1439,7 @@
 		<!-- Strikes with the shield. Attacks target with 16359 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
 		<table name="#mpConsumes"> 58 0 0 </table>
 		<set name="icon" val="icon.skill10047" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A4" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
@@ -1462,7 +1462,7 @@
 		<!-- Strikes with the shield. Attacks target with 17449 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
 		<table name="#mpConsumes"> 59 0 0 </table>
 		<set name="icon" val="icon.skill10048" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A4" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
@@ -1485,7 +1485,7 @@
 		<!-- Strikes with the shield. Attacks target with 18539 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
 		<table name="#mpConsumes"> 61 0 0 </table>
 		<set name="icon" val="icon.skill10049" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A4" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
@@ -1508,7 +1508,7 @@
 		<!-- Strikes with the shield. Attacks target with 19629 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
 		<table name="#mpConsumes"> 63 0 0 </table>
 		<set name="icon" val="icon.skill10050" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A4" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
@@ -1572,7 +1572,7 @@
 		<set name="icon" val="icon.skill0217" />
 		<set name="affectLimit" val="5-12" />
 		<set name="fanRange" val="0,0,80,150" />
-		<set name="operateType" val="DA2" />
+		<set name="operateType" val="A1" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1687,11 +1687,12 @@
 		</for>
 	</skill>
 	<skill id="10056" levels="8" name="Cubic Protection">
+		<table name="#operateType"> A1 A2 A2 A2 A2 A2 A2 A2 </table>
 		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A1" />
+		<set name="operateType" val="#operateType" />
 		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
@@ -1768,7 +1769,7 @@
 		<!-- Strikes with the shield. Attacks target with 20719 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
 		<table name="#mpConsumes"> 65 0 0 </table>
 		<set name="icon" val="icon.skill10059" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="A4" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />

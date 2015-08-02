@@ -25,21 +25,21 @@
 	</skill>
 	<skill id="23301" levels="1" name="Dimensional Door A">
 		<!-- Summons a dimensional door that moves the PC to the Dimensional Door B. -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23302" levels="1" name="Dimensional Door B">
 		<!-- Summons a dimensional door that moves the PC to the Dimensional Door A. -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23303" levels="1" name="Teleport">
 		<!-- none -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
@@ -48,7 +48,7 @@
 	</skill>
 	<skill id="23304" levels="1" name="Teleport">
 		<!-- none -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
@@ -57,7 +57,7 @@
 	</skill>
 	<skill id="23305" levels="1" name="Zinyanzi Agathion - Yunbokhwan">
 		<!-- Restores all HP/MP/CP and becomes invincible for 5 seconds. But can only be used when HP is below 30%. -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A2" />
 		<set name="abnormalType" val="INVINCIBILITY" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -69,7 +69,7 @@
 	</skill>
 	<skill id="23306" levels="1" name="Zinyanzi Agathion Cute Trick">
 		<!-- Able to see the summoned Zinenze perform cute tricks. -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
@@ -77,7 +77,7 @@
 	</skill>
 	<skill id="23307" levels="1" name="Yanzi Agathion Cute Trick">
 		<!-- Able to see the summoned Enze perform cute tricks. -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
@@ -183,7 +183,7 @@
 	</skill>
 	<skill id="23313" levels="5" name="Action Prohibit Immunity">
 		<!-- Increases resistance to action-inhibiting attacks by 100%. -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A4" />
 		<set name="abnormalType" val="RESIST_SHOCK" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -194,7 +194,7 @@
 	</skill>
 	<skill id="23314" levels="5" name="Control Prohibit Immunity">
 		<!-- Increases resistance to control-inhibiting attacks by 100%. -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A4" />
 		<set name="abnormalType" val="RESIST_SHOCK" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -205,7 +205,7 @@
 	</skill>
 	<skill id="23315" levels="5" name="Paralysis Immunity Enhance">
 		<!-- Increases resistance to paralysis attacks by 100%. -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A2" />
 		<set name="abnormalType" val="RESIST_SHOCK" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -216,7 +216,7 @@
 	</skill>
 	<skill id="23316" levels="5" name="Enhance Petrification Immunity">
 		<!-- Increases resistance to petrification attacks by 100%. -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A2" />
 		<set name="abnormalType" val="RESIST_SHOCK" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -227,7 +227,7 @@
 	</skill>
 	<skill id="23317" levels="5" name="Fear Immunity Enhance">
 		<!-- Increases resistance to fear attacks by 100%. -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A2" />
 		<set name="abnormalType" val="RESIST_SHOCK" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -238,7 +238,7 @@
 	</skill>
 	<skill id="23318" levels="1" name="Cat the Ranger Boost">
 		<!-- "Recovers the master's HP by 10%. For 1 minute(s), receives power from Cat the Ranger to increase the master's resistance to debuff attacks by 80%, resistance to buff canceling attacks by 40%, Speed by 10%, P. Def. by 20%, and M. Def. by 20%. Does not receive preemptive attacks from monsters. Reuse delay 10 minutes." -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="MULTI_BUFF" />
 		<set name="basicProperty" val="NONE" />
@@ -431,14 +431,14 @@
 		</for>
 	</skill>
 	<skill id="23325" levels="1" name="Enlarge - Luckpy">
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23326" levels="1" name="Reduce - Luckpy">
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
@@ -446,7 +446,7 @@
 	</skill>
 	<skill id="23327" levels="1" name="Boss Test - Weaken">
 		<!-- A skill to test a boss mob - Weaken -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A2" />
 		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
@@ -458,7 +458,7 @@
 	</skill>
 	<skill id="23328" levels="1" name="Boss Test - Strengthen">
 		<!-- A skill to test a boss mob - Strengthen -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A2" />
 		<set name="abnormalType" val="PUBLIC_SLOT" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
@@ -469,28 +469,28 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23329" levels="1" name="Lantern Agathion's Gift1">
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23330" levels="1" name="Lantern Agathion's Gift2">
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23331" levels="1" name="Lantern Agathion's Gift3">
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23332" levels="1" name="Lantern Agathion's Gift4">
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
@@ -498,7 +498,7 @@
 	</skill>
 	<skill id="23333" levels="1" name="Agathion's New Year's Wish">
 		<!-- Description: Through the power of the Lantern Agathion, Vitality is maintained and not consumed. -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A2" />
 		<set name="abnormalType" val="VP_KEEP" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -509,7 +509,7 @@
 	</skill>
 	<skill id="23334" levels="1" name="Lantern Agathion Cute Trick">
 		<!-- Description: Able to see the summoned Lantern's perform cute tricks. -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
@@ -517,7 +517,7 @@
 	</skill>
 	<skill id="23335" levels="1" name="Agathion's New Year's Wish">
 		<!-- Description: Vitality is maintained with the power of Juju Agathion. -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A2" />
 		<set name="abnormalType" val="VP_KEEP" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -528,35 +528,35 @@
 	</skill>
 	<skill id="23336" levels="1" name="Juju Agathion Cute Trick">
 		<!-- Description: Summoned Juju performs cute tricks. -->
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23337" levels="1" name="Juju Agathion's Gift 1">
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23338" levels="1" name="Juju Agathion's Gift 2">
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23339" levels="1" name="Juju Agathion's Gift 3">
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23340" levels="1" name="Juju Agathion's Gift 4">
-		<set name="operateType" val="P" />
+		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
@@ -1118,7 +1118,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Teleport 300 grids forward. -->
 		<set name="icon" val="BranchSys3.Icon.g_skill23382" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="DA1" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="250" />
 		<set name="castRange" val="700" />

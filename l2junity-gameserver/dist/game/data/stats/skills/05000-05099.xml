@@ -162,6 +162,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5008" levels="5" name="Frintezza's Songs">
+		<table name="#operateType"> A1 A1 A2 A2 A2 </table>
 		<table name="#activateRate"> -1 -1 -1 10 10 </table>
 		<table name="#specialLevel"> 0 0 -1 0 0 </table>
 		<!-- Confirmed CT2.5 -->
@@ -189,7 +190,7 @@
 		<set name="isMagic" val="#isMagic" />
 		<set name="lvlBonusRate" val="#lvlBonusRate" />
 		<set name="magicLvl" val="85" />
-		<set name="operateType" val="A1" />
+		<set name="operateType" val="#operateType" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<set name="magicCriticalRate" val="-5" />

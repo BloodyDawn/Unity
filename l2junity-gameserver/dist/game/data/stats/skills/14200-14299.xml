@@ -270,7 +270,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Yoke status. -->
 		<set name="icon" val="icon.skill14216" />
-		<set name="operateType" val="A1" />
+		<set name="operateType" val="CA2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="2" />
 		<set name="castRange" val="900" />
@@ -395,7 +395,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Energy Control -->
 		<set name="icon" val="icon.skill14216" />
-		<set name="operateType" val="A1" />
+		<set name="operateType" val="CA5" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="25000" />
@@ -812,7 +812,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Stun status. -->
 		<set name="icon" val="icon.skill0793" />
-		<set name="operateType" val="A2" />
+		<set name="operateType" val="DA2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="400" />
@@ -1046,11 +1046,12 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14263" levels="2" name="Electric Attack">
+		<table name="#operateType"> A1 A2 </table>
 		<table name="#specialLevel"> 0 -1 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<table name="#isDebuffs"> false true </table>
 		<set name="icon" val="icon.skill1275" />
-		<set name="operateType" val="A1" />
+		<set name="operateType" val="#operateType" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="600" />
@@ -1228,7 +1229,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Knock back. -->
 		<set name="icon" val="icon.skill0494" />
-		<set name="operateType" val="A1" />
+		<set name="operateType" val="DA2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="400" />
@@ -1382,7 +1383,7 @@
 	<skill id="14282" levels="1" name="Octavis' Obedience">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
+		<set name="operateType" val="CA2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="-1" />
