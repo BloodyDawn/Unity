@@ -124,6 +124,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="activateRate" val="100" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11245" levels="1" name="Sampling">
@@ -139,6 +140,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="activateRate" val="100" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11247" levels="1" name="Heavy Hit">
@@ -458,7 +460,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="MARK_DEBUF_A" />
-		<set name="activateRate" val="100" />
+		<set name="activateRate" val="90" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
@@ -501,7 +503,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="MARK_DEBUF_C" />
-		<set name="activateRate" val="100" />
+		<set name="activateRate" val="90" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
@@ -535,7 +537,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="MARK_DEBUF_D" />
-		<set name="activateRate" val="100" />
+		<set name="activateRate" val="50" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
@@ -854,7 +856,7 @@
 		<set name="abnormalTime" val="10" /> <!-- Guessed -->
 		<set name="abnormalType" val="DEPORT" />
 		<set name="abnormalVisualEffect" val="DEPORT" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="90" /> <!-- Guessed -->
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
@@ -945,7 +947,7 @@
 		<set name="abnormalTime" val="5" /> <!-- Guessed -->
 		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIR_BIND" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="100" /> <!-- Guessed -->
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
@@ -1092,7 +1094,7 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="5" /> <!-- Guessed -->
 		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="activateRate" val="100" />
+		<set name="activateRate" val="90" />
 		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="DA2" />
@@ -1232,6 +1234,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="activateRate" val="0" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11287" levels="10" name="Superior Resistance">
@@ -1406,7 +1409,7 @@
 		<set name="abnormalTime" val="10" /> <!-- Guessed -->
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="abnormalVisualEffect" val="ROOT" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="30" /> <!-- Guessed -->
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />

@@ -1095,13 +1095,13 @@
 	<skill id="3571" levels="2" name="Special Ability: Critical Stun">
 		<table name="#lvlBonusRate"> 10 20 </table>
 		<!-- Confirmed CT2.5 -->
-		<table name="#activateRates"> 27 43 </table>
+		<table name="#activateRate"> 27 43 </table>
 		<table name="#magicLvl"> 75 84 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="activateRate" val="#activateRates" />
+		<set name="activateRate" val="#activateRate" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill0100" />
@@ -1156,12 +1156,12 @@
 	</skill>
 	<skill id="3574" levels="3" name="Special Ability: Critical Slow">
 		<!-- Confirmed CT2.5 -->
-		<table name="#activateRates"> 16 24 33 </table>
+		<table name="#activateRate"> 16 24 33 </table>
 		<table name="#magicLvl"> 75 84 84 </table>
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="activateRate" val="#activateRates" />
+		<set name="activateRate" val="#activateRate" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="1000" />
 		<set name="effectPoint" val="-100" />

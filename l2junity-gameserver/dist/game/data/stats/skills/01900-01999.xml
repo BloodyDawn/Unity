@@ -427,6 +427,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0.2" />
 		<set name="lvlBonusRate" val="20" />
+		<set name="activateRate" val="100" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="KnockBack">
@@ -497,6 +498,7 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0.2" />
+		<set name="activateRate" val="0" />
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="DebuffBlock">
@@ -529,6 +531,7 @@
 		<set name="reuseDelay" val="3600000" />
 		<set name="rideState" val="NONE" />
 		<set name="specialLevel" val="-1" />
+		<set name="activateRate" val="0" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="2195">
 			<player canTransform="true" />

@@ -1406,7 +1406,7 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="activateRate" val="80" />
+		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
@@ -1431,7 +1431,7 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ATTACK_TIME_UP" />
-		<set name="activateRate" val="80" />
+		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
@@ -1991,13 +1991,13 @@
 	</skill>
 	<skill id="5592" levels="16" name="Lightning Barrier">
 		<!-- Confirmed CT2.5 -->
-		<table name="#activateRates"> 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
+		<table name="#activateRate"> 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 </table>
 		<table name="#magicLvl"> 80 81 81 81 82 82 82 83 83 83 84 84 85 85 85 85 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="abnormalVisualEffect" val="PARALYZE" />
-		<set name="activateRate" val="#activateRates" />
+		<set name="activateRate" val="#activateRate" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="138" />
