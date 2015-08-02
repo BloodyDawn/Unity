@@ -460,6 +460,7 @@
 		</for>
 	</skill>
 	<skill id="1224" levels="17" name="Surrender to Poison">
+		<table name="#effectRange"> 1250 1250 1250 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 </table>
 		<table name="#abnormalLvls"> 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </table>
 		<table name="#castRange"> 750 750 750 900 900 900 900 900 900 900 900 900 900 900 900 900 900 </table>
 		<table name="#effectPoints"> -243 -285 -331 -379 -418 -457 -495 -532 -549 -566 -582 -597 -611 -624 -635 -646 -655 </table>
@@ -474,7 +475,7 @@
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="castRange" val="#castRange" />
 		<set name="effectPoint" val="#effectPoints" />
-		<set name="effectRange" val="1400" />
+		<set name="effectRange" val="#effectRange" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill1224" />
 		<set name="isDebuff" val="true" />

@@ -95,6 +95,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="400" />
 		<set name="targetType" val="UNLOCKABLE" />
 		<cond msgId="113" addName="1">
 			<target npcId="22110100,22110101,22110102,22110103,22110104,22110105" />
@@ -250,6 +251,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="2617" levels="1" name="Stun Planter">
@@ -264,6 +266,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="2618" levels="1" name="Stun Land Mine">
@@ -278,6 +281,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="1500" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="2619" levels="1" name="Extra Pass: Kamaloka (Hall of the Abyss) (Event)">
@@ -421,7 +425,7 @@
 	</skill>
 	<skill id="2630" levels="1" name="Presentation - Collect Items">
 		<set name="castRange" val="900" />
-		<set name="effectRange" val="1200" />
+		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="1" />

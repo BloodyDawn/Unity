@@ -20,6 +20,7 @@
 		</for>
 	</skill>
 	<skill id="10801" levels="8" name="Bullseye">
+		<table name="#effectRange"> 1100 1400 1400 1400 1400 </table>
 		<!-- Decreases target's Bow/Crossbow Resistance by 40% and M. Def. by 5%. -->
 		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#effectPoint"> -689 -696 -702 -707 -711 -715 -719 -723 </table>
@@ -44,6 +45,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="#effectRange" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -80,6 +82,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="1400" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -125,6 +128,7 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10805" levels="4" name="Quick Charge">
+		<table name="#effectRange"> 1000 1100 1200 1300 </table>
 		<!-- Momentarily teleport 500 forward. -->
 		<table name="#castRanges"> 500 600 700 800 </table>
 		<table name="#magicLvl"> 89 92 95 98 </table>
@@ -144,6 +148,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="#effectRange" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Blink" />

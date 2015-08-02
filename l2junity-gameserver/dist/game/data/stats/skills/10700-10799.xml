@@ -663,6 +663,7 @@
 		<set name="coolTime" val="850" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="1500" />
 		<set name="reuseDelay" val="7000" />
 		<cond msgId="113" addName="1">
 			<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
@@ -973,13 +974,14 @@
 		<set name="effectPoint" val="-709" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="1400" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="10774" levels="4" name="Quick Evasion">
 		<!-- Glory Days confirmed -->
 		<!-- Momentarily teleports 300 backward. -->
 		<table name="#castRanges"> 300 350 400 450 </table>
-		<table name="#effectRanges"> 1000 1100 1200 1300  </table>
+		<table name="#effectRange"> 1000 1100 1200 1300 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 27 32 33 33 </table>
 		<table name="#range"> 300 350 400 450 </table>
@@ -993,7 +995,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="#castRanges" />
-		<set name="effectRange" val="#effectRanges" />
+		<set name="effectRange" val="#effectRange" />
 		<set name="hitTime" val="700" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="2" />
@@ -1106,6 +1108,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="rideState" val="NONE" />
+		<set name="effectRange" val="1400" />
 		<set name="reuseDelay" val="60000" />
 		<cond>
 			<target myPartyExceptMe="true" />
@@ -1361,7 +1364,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
-		<set name="effectRange" val="1500" />
+		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />

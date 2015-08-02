@@ -15,12 +15,13 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="400" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="20002" levels="1" name="Dragon Kick">
 		<!-- A dragon's powerful blow that attacks an enemy with 3420 Power added to P. Atk. Over-hit is possible. -->
 		<set name="castRange" val="55" />
-		<set name="effectRange" val="550" /> <!-- FIXME: value unconfirmed -->
+		<set name="effectRange" val="400" /> <!-- FIXME: value unconfirmed -->
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="85" /> <!-- FIXME: value unconfirmed -->
 		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
@@ -40,7 +41,7 @@
 	<skill id="20003" levels="1" name="Dragon Slash">
 		<!-- A dragon's powerful slash that attacks an enemy with 3420 Power added to P. Atk. Over-hit is possible. -->
 		<set name="castRange" val="55" />
-		<set name="effectRange" val="550" /> <!-- FIXME: value unconfirmed -->
+		<set name="effectRange" val="400" /> <!-- FIXME: value unconfirmed -->
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="85" /> <!-- FIXME: value unconfirmed -->
 		<set name="operateType" val="A1" />
@@ -86,6 +87,7 @@
 		<set name="abnormalType" val="IMPROVE_CRT_RATE_DMG_UP" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="effectRange" val="900" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">

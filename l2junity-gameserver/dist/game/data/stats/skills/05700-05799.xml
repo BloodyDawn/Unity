@@ -57,7 +57,7 @@
 	<skill id="5702" levels="2" name="Adiantum Round Fighter">
 		<!-- Confirmed CT2.5 -->
 		<table name="#castRange"> 0 40 </table>
-		<table name="#effectRange"> 0 400 </table>
+		<table name="#effectRange"> -1 400 </table>
 		<table name="#targetType"> AURA ONE </table>
 		<set name="affectRange" val="400" />
 		<set name="castRange" val="#castRange" />
@@ -93,6 +93,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="400" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5704" levels="1" name="Water Strike">
@@ -104,6 +105,7 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="1400" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5705" levels="1" name="Fire Trap">
@@ -135,6 +137,7 @@
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="1.5" />
+		<set name="effectRange" val="1400" />
 		<set name="trait" val="POISON" />
 	</skill>
 	<skill id="5707" levels="1" name="Paralysis">
@@ -169,6 +172,7 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="1100" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
 			<effect name="MagicalAttack">
@@ -180,7 +184,7 @@
 		<table name="#effectPoints"> -574 -684 </table>
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="#effectPoints" />
-		<set name="effectRange" val="400" />
+		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="1200" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="61" />
@@ -200,7 +204,7 @@
 		<set name="affectLimit" val="5-15" />
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="#effectPoints" />
-		<set name="effectRange" val="400" />
+		<set name="effectRange" val="1400" />
 		<set name="fanRange" val="0,0,500,60" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="61" />
@@ -247,6 +251,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="1700" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Heal">
@@ -333,6 +338,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="2000" />
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="5717" levels="1" name="Fire Breath">
@@ -344,6 +350,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="2000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5718" levels="1" name="Anger">
@@ -1258,6 +1265,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="600" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5758" levels="1" name="Presentation - Large Firecracker">
@@ -1328,6 +1336,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="1400" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5763" levels="1" name="Wink">
@@ -1359,6 +1368,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="1400" />
 		<set name="trait" val="DERANGEMENT" />
 	</skill>
 	<skill id="5765" levels="1" name="Naia Sprout">
@@ -1446,6 +1456,7 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5770" levels="12" name="not_used">
@@ -1457,6 +1468,7 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="900" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5771" levels="1" name="Buff Control">
@@ -1548,6 +1560,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="effectRange" val="1400" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5776" levels="1" name="Raid Boss">
@@ -1592,7 +1605,7 @@
 	</skill>
 	<skill id="5780" levels="9" name="Agathion Collection">
 		<set name="castRange" val="100" />
-		<set name="effectRange" val="600" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="6000" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -1761,6 +1774,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="1400" />
 		<set name="targetType" val="FRONT_AREA" />
 	</skill>
 	<skill id="5795" levels="1" name="Poison">
@@ -1781,6 +1795,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="1100" />
 		<set name="trait" val="POISON" />
 	</skill>
 	<skill id="5796" levels="1" name="Decrease Spd.">
@@ -1801,6 +1816,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="1400" />
 		<set name="targetType" val="FRONT_AREA" />
 	</skill>
 	<skill id="5797" levels="1" name="Bursting Flame">
@@ -1814,6 +1830,7 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="1100" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5798" levels="1" name="Fireball">
@@ -1825,6 +1842,7 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="effectRange" val="1400" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5799" levels="1" name="Bleed">
