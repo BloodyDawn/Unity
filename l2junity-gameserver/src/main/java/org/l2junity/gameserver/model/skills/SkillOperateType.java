@@ -97,6 +97,11 @@ public enum SkillOperateType
 	T,
 	
 	/**
+	 * Toggle Skill with Group.
+	 */
+	TG,
+	
+	/**
 	 * Aura Skill.
 	 */
 	AU;
@@ -168,7 +173,7 @@ public enum SkillOperateType
 	 */
 	public boolean isToggle()
 	{
-		return (this == T) || (this == AU);
+		return (this == T) || (this == TG) || (this == AU);
 	}
 	
 	/**
