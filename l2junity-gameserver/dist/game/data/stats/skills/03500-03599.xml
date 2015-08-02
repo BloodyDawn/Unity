@@ -1093,6 +1093,7 @@
 		</for>
 	</skill>
 	<skill id="3571" levels="2" name="Special Ability: Critical Stun">
+		<table name="#lvlBonusRate"> 10 20 </table>
 		<!-- Confirmed CT2.5 -->
 		<table name="#activateRates"> 27 43 </table>
 		<table name="#magicLvl"> 75 84 </table>
@@ -1105,7 +1106,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
-		<set name="lvlBonusRate" val="1" />
+		<set name="lvlBonusRate" val="#lvlBonusRate" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
@@ -1167,7 +1168,7 @@
 		<set name="effectRange" val="1500" />
 		<set name="icon" val="icon.skill1160" />
 		<set name="isDebuff" val="true" />
-		<set name="lvlBonusRate" val="1" />
+		<set name="lvlBonusRate" val="10" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
@@ -1230,7 +1231,7 @@
 		<set name="icon" val="icon.skill1201" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="lvlBonusRate" val="2" />
+		<set name="lvlBonusRate" val="10" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1273,7 +1274,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="icon" val="icon.skill0122" />
 		<set name="isDebuff" val="true" />
-		<set name="lvlBonusRate" val="1" />
+		<set name="lvlBonusRate" val="10" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
@@ -1378,7 +1379,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
-		<set name="lvlBonusRate" val="1" />
+		<set name="lvlBonusRate" val="10" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
@@ -1424,7 +1425,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill1064" />
 		<set name="isDebuff" val="true" />
-		<set name="lvlBonusRate" val="2" />
+		<set name="lvlBonusRate" val="10" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
@@ -1470,7 +1471,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
-		<set name="lvlBonusRate" val="1" />
+		<set name="lvlBonusRate" val="10" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
@@ -1518,7 +1519,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill1064" />
 		<set name="isDebuff" val="true" />
-		<set name="lvlBonusRate" val="1" />
+		<set name="lvlBonusRate" val="10" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
@@ -1599,7 +1600,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="icon" val="icon.skill1160" />
 		<set name="isDebuff" val="true" />
-		<set name="lvlBonusRate" val="1" />
+		<set name="lvlBonusRate" val="10" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />

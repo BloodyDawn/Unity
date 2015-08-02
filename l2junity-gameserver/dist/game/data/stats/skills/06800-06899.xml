@@ -334,6 +334,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="lvlBonusRate" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6816" levels="16" name="Deadly Bleed">
@@ -344,6 +345,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="lvlBonusRate" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6817" levels="1" name="Arena HP Recovery">
@@ -400,6 +402,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1400" />
+		<set name="lvlBonusRate" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6820" levels="1" name="P. Def. Enhance">
@@ -437,6 +440,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="300" />
+		<set name="lvlBonusRate" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6822" levels="1" name="P. Def. Decrease">
@@ -448,6 +452,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="300" />
+		<set name="lvlBonusRate" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6823" levels="1" name="Reflect Attack">
@@ -484,6 +489,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="600" />
+		<set name="lvlBonusRate" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6826" levels="1" name="Critical Strike">
@@ -521,6 +527,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1200" />
+		<set name="lvlBonusRate" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6829" levels="1" name="Vampiric Attack">
@@ -545,6 +552,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1200" />
+		<set name="lvlBonusRate" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6831" levels="1" name="Blood Burst">
@@ -601,6 +609,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1500" />
+		<set name="lvlBonusRate" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6837" levels="1" name="Range Magic Attack">
@@ -642,6 +651,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="300" />
+		<set name="lvlBonusRate" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6841" levels="1" name="Summon Subordinate">
@@ -674,6 +684,7 @@
 		<set name="basicProperty" val="MAGIC" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="lvlBonusRate" val="2" />
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Buff">
@@ -690,6 +701,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="lvlBonusRate" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6844" levels="1" name="Power Strike">
@@ -1051,6 +1063,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="effectRange" val="900" />
+		<set name="lvlBonusRate" val="2" />
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Buff">
@@ -1074,7 +1087,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="icon" val="icon.skill0129" />
 		<set name="isDebuff" val="true" />
-		<set name="lvlBonusRate" val="1" />
+		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A2" />
@@ -1104,7 +1117,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill0129" />
 		<set name="isDebuff" val="true" />
-		<set name="lvlBonusRate" val="1" />
+		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A2" />
@@ -1138,7 +1151,7 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="2500" />
 		<set name="isDebuff" val="true" />
-		<set name="lvlBonusRate" val="1" />
+		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="80" />
 		<set name="operateType" val="A2" />
@@ -1375,6 +1388,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="lvlBonusRate" val="2" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -1707,6 +1721,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="600" />
+		<set name="lvlBonusRate" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6891" levels="1" name="Power Attack">
@@ -1843,6 +1858,7 @@
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="lvlBonusRate" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6898" levels="1" name="Raid Boss (Lv. 84)">

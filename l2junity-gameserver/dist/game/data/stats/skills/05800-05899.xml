@@ -961,6 +961,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5855" levels="2" name="Stun">
+		<table name="#lvlBonusRate"> 0 1 </table>
 		<table name="#effectRange"> 1100 400 </table>
 		<table name="#basicProperty"> NONE PHYSICAL </table>
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -981,6 +982,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="#effectRange" />
+		<set name="lvlBonusRate" val="#lvlBonusRate" />
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="5856" levels="1" name="Transformation Scroll: Makeshift Bat">
