@@ -484,6 +484,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Transformation">
@@ -528,6 +529,7 @@
 		<!-- High Five Skill -->
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -544,6 +546,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -573,6 +576,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="0" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Invincible" />
@@ -645,6 +649,7 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -670,6 +675,7 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -695,6 +701,7 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -743,6 +750,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21248" levels="1" name="Release Agathion's Seal - Zinyanzi">
@@ -785,6 +793,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="5000" />
 		<cond msgId="113" addName="1">
 			<player levelRange="1;84" />
@@ -807,6 +816,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21252" levels="1" name="Hellblade">
@@ -814,6 +824,7 @@
 		<!-- FIXME: value unconfirmed -->
 		<set name="icon" val="BranchSys2.icon.br_wp_Caladbulg_i00" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="84" />
 		<set name="operateType" val="P" />
 		<for>
 			<effect name="TriggerSkillByAttack">
@@ -831,6 +842,7 @@
 		<!-- FIXME: value unconfirmed -->
 		<set name="icon" val="BranchSys2.icon.br_wp_habus_knife_i00" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="83" />
 		<set name="operateType" val="P" />
 		<for>
 			<effect name="TriggerSkillByAttack">
@@ -848,6 +860,7 @@
 		<!-- FIXME: value unconfirmed -->
 		<set name="icon" val="BranchSys2.icon.br_wp_tiatenon_i00" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<for>
 			<effect name="TriggerSkillByAttack">
@@ -865,6 +878,7 @@
 		<!-- FIXME: value unconfirmed -->
 		<set name="icon" val="BranchSys2.icon.br_wp_astarot_i00" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<for>
 			<effect name="TriggerSkillByAttack">
@@ -882,6 +896,7 @@
 		<!-- FIXME: value unconfirmed -->
 		<set name="icon" val="BranchSys2.icon.br_wp_tirbing_i00" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="82" />
 		<set name="operateType" val="P" />
 		<for>
 			<effect name="TriggerSkillByAttack">
@@ -899,6 +914,7 @@
 		<!-- FIXME: value unconfirmed -->
 		<set name="icon" val="BranchSys2.icon.br_wp_wind_of_mardil_i00" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="71" />
 		<set name="operateType" val="P" />
 		<for>
 			<effect name="TriggerSkillByDamage">
@@ -952,24 +968,28 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21261" levels="1" name="Bad Bunny's Necklace">
 		<!-- Description: Its effects are MP+250, HP+500, CP+1035, increased P. Atk., increased M. Atk., wild magic effect, and increased Critical attack power. -->
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21262" levels="1" name="Bad Bunny's Earring">
 		<!-- Description: Its effects are HP+250, Vampiric Rage effect, increased accuracy, decreased re-use time for magic skills, and decreased MP consumption for magic skills. When two identical earrings are equipped, only one effect is applied. -->
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21263" levels="1" name="Bad Bunny's Ring">
 		<!-- Description: Its effects are increased Atk. Spd., and increased Casting Spd. When two identical rings are equipped, only one effect is applied. -->
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21264" levels="1" name="Summon Friend">
@@ -979,6 +999,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="-2" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21265" levels="1" name="Summon Friend">
@@ -988,6 +1009,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="-2" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21266" levels="1" name="Release Agathion's Seal - Juju">
@@ -1012,6 +1034,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21268" levels="1" name="Jack O'Lantern Crush">
@@ -1027,6 +1050,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="400" />
+		<set name="magicLvl" val="77" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="21269" levels="1" name="Jack O'Lantern Blessing">
@@ -1095,6 +1119,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="hitTime" val="3000" />
 	</skill>
 	<skill id="21274" levels="6" name="Start of Evolution">
@@ -1107,6 +1132,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="86400000" />
 	</skill>
 	<skill id="21275" levels="1" name="Cloak Inventory Slot Add">
@@ -1116,6 +1142,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="isDebuff" val="false" />
 	</skill>
 	<skill id="21276" levels="1" name="Add Cloak Weight Gauge">
@@ -1125,6 +1152,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="isDebuff" val="false" />
 	</skill>
 	<skill id="21277" levels="1" name="Miracle of the Tree - Vitality Recovery">
@@ -1166,6 +1194,7 @@
 		<set name="icon" val="BranchSys3.Icon.g_drake_maul_i00" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="80" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21280" levels="1" name="Freya's Authority">
@@ -1174,6 +1203,7 @@
 		<set name="icon" val="BranchSys3.Icon.g_glacierin_i00" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="80" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21281" levels="1" name="Spezion's Authority">
@@ -1182,6 +1212,7 @@
 		<set name="icon" val="BranchSys3.Icon.g_spacia_claw_i00" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21282" levels="1" name="Maliss' Authority">
@@ -1190,6 +1221,7 @@
 		<set name="icon" val="BranchSys3.Icon.g_melisa_stormer_i00" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="95" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21283" levels="1" name="Steregos' Authority">
@@ -1198,6 +1230,7 @@
 		<set name="icon" val="BranchSys3.Icon.g_dainsleif_i00" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="95" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21284" levels="1" name="Ron's Authority">
@@ -1206,6 +1239,7 @@
 		<set name="icon" val="BranchSys3.Icon.g_urukmash_i00" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="95" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21285" levels="1" name="Scroll of Escape: Uthanka's Tomb">
@@ -1216,6 +1250,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="hitTime" val="20000" />
 	</skill>
 	<skill id="21286" levels="1" name="Ride Unicorn">
@@ -1243,6 +1278,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="400" />
+		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="21288" levels="1" name="Emergency Ballista Repair">
@@ -1256,6 +1292,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="400" />
+		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="21289" levels="1" name="Throw Corrosive Acid">
@@ -1267,6 +1304,7 @@
 		<set name="hitTime" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="21290" levels="1" name="Throw Corrosive Acid">
@@ -1278,6 +1316,7 @@
 		<set name="hitTime" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="21291" levels="1" name="Relic Engraving Activation">
@@ -1289,6 +1328,7 @@
 		<set name="hitTime" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="21292" levels="1" name="Relic Engraving Activation">
@@ -1300,6 +1340,7 @@
 		<set name="hitTime" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="21293" levels="1" name="Two-handed Weapon of Vampiric Rage">
@@ -1308,6 +1349,7 @@
 		<set name="icon" val="icon.skill1268" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="67" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21294" levels="1" name="Transformed: Uthanka">
@@ -1321,6 +1363,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="1" />
 		<set name="isMagic" val="3" />
 	</skill>
 	<skill id="21295" levels="1" name="Un-equip Uthanka's Ring">
@@ -1329,6 +1372,7 @@
 		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="1" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21296" levels="1" name="Exorcist's Punishment">
@@ -1342,6 +1386,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="500" />
+		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="21297" levels="1" name="Nevit's Touch">
@@ -1355,6 +1400,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="1" />
+		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="20000" />
 	</skill>
 	<skill id="21298" levels="1" name="Release Agathion's Seal - Lancet">
@@ -1366,6 +1412,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="hitTime" val="3000" />
 	</skill>
 	<skill id="21299" levels="1" name="Release Agathion's Seal - Liposa">
@@ -1377,6 +1424,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="hitTime" val="3000" />
 	</skill>
 </list>

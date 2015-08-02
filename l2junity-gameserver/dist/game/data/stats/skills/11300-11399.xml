@@ -16,9 +16,11 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1000" />
 		<set name="activateRate" val="100" />
+		<set name="magicLvl" val="85" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11301" levels="8" name="Dimension Storm">
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<!-- Updated to IO -->
 		<!-- Attack nearby enemies with 152 Power added to M. Atk. -->
 		<table name="#power"> 152 154 157 161 165 169 173 177 </table>
@@ -33,6 +35,7 @@
 		<set name="effectPoint" val="-704" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -41,6 +44,7 @@
 		</for>
 	</skill>
 	<skill id="11302" levels="11" name="Servitor Major Heal">
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<!-- Updated to IO -->
 		<!-- Heals the servitor with 1637 Power. -->
 		<table name="#power"> 1637 1645 1658 1671 1685 1698 1713 1727 1928 1944 1960 </table>
@@ -56,6 +60,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Heal">
@@ -82,6 +87,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -108,6 +114,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -134,6 +141,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -160,6 +168,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -186,6 +195,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -212,6 +222,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -234,6 +245,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
@@ -263,6 +275,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -272,6 +285,7 @@
 		</for>
 	</skill>
 	<skill id="11311" levels="3" name="Naviarope Strike">
+		<table name="#magicLvl"> 95 97 99 </table>
 		<!-- Updated to IO -->
 		<!-- Inflicts 20633 damage. -->
 		<table name="#power"> 20633 21717 22799 </table>
@@ -287,6 +301,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="400" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="4000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -295,6 +310,7 @@
 		</for>
 	</skill>
 	<skill id="11312" levels="3" name="Naviarope Flame">
+		<table name="#magicLvl"> 95 97 99 </table>
 		<!-- Updated to IO -->
 		<!-- Inflicts 18758 ranged damage. -->
 		<table name="#power"> 18758 19743 20727 </table>
@@ -310,6 +326,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1500" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="4000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -318,6 +335,7 @@
 		</for>
 	</skill>
 	<skill id="11313" levels="3" name="Naviarope Explosion">
+		<table name="#magicLvl"> 95 97 99 </table>
 		<!-- Updated to IO -->
 		<!-- Inflicts 18758 damage to nearby enemies. -->
 		<table name="#power"> 18758 19743 20727 </table>
@@ -331,6 +349,7 @@
 		<set name="effectPoint" val="-704" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="4000" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -339,6 +358,7 @@
 		</for>
 	</skill>
 	<skill id="11314" levels="3" name="Corpse Blast">
+		<table name="#magicLvl"> 95 97 99 </table>
 		<!-- Updated to IO -->
 		<!-- Detonates a corpse to inflict damage on nearby enemies. -->
 		<table name="#power"> 1 1 1 </table> <!-- TODO -->
@@ -355,6 +375,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="900" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -368,6 +389,7 @@
 		<set name="icon" val="icon.skill11253" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -392,6 +414,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
 		<cond msgId="129">
 			<and>
@@ -406,6 +429,7 @@
 		</for>
 	</skill>
 	<skill id="11317" levels="8" name="Servitor Group Heal">
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<!-- Updated to IO -->
 		<!-- Restores all servitors' HP by 1191. Not in Use. -->
 		<table name="#mpConsumes"> 278 280 284 289 293 298 303 308 </table>
@@ -421,6 +445,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Heal">

@@ -14,6 +14,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1200" />
+		<set name="magicLvl" val="85" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="11001" levels="7" name="Superior Weapon Mastery">
@@ -21,7 +22,7 @@
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#mAtk"> 981 1138 1319 1485 1682 1785 1893 2009 2131 2261 </table>
 		<set name="targetType" val="SELF" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill11251" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="P" />
@@ -39,7 +40,7 @@
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#pDef"> 1212 1330 1462 1576 1767 1833 1903 1975 2058 2136 </table>
 		<set name="targetType" val="SELF" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill11252" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="P" />
@@ -63,7 +64,7 @@
 		<table name="#mDef"> 862 976 1104 1219 1374 1444 1517 1593 1674 1759 </table>
 		<set name="targetType" val="SELF" />
 		<set name="skillType" val="BUFF" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill10004" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="P" />
@@ -95,7 +96,7 @@
 	</skill>
 	<skill id="11005" levels="1" name="Superior Wizard Mastery">
 		<!-- INT + 2 and increases M. Atk., Casting Spd., and M. Critical Rate + 6%. Decreases skill MP Consumption by 6%. -->
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="90" />
 		<set name="operateType" val="P" />
 		<set name="icon" val="icon.skill11253" />
 		<set name="magicCriticalRate" val="5" />
@@ -113,7 +114,7 @@
 	</skill>
 	<skill id="11006" levels="1" name="Superior Mental Attack Resistance">
 		<!-- INT + 2 and Hold/Sleep/Bleed/Mind/Poison Resistance + 30. -->
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="95" />
 		<set name="targetType" val="SELF" />
 		<set name="icon" val="icon.skill11006" />
 		<set name="magicCriticalRate" val="5" />
@@ -160,6 +161,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="2000" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
 		<cond>
 			<and>
@@ -182,6 +184,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="2000" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
 		<cond>
 			<and>
@@ -204,6 +207,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="2000" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
 		<cond>
 			<and>
@@ -221,7 +225,7 @@
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="attachToggleGroupId" val="1" />
@@ -256,7 +260,7 @@
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="attributeType" val="FIRE" />
@@ -285,7 +289,7 @@
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="attributeType" val="WATER" />
@@ -314,7 +318,7 @@
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="attributeType" val="WIND" />
@@ -343,7 +347,7 @@
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="attributeType" val="EARTH" />
@@ -372,7 +376,7 @@
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="A1" />
@@ -398,7 +402,7 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<set name="icon" val="icon.skill11017" />
@@ -435,7 +439,7 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<set name="icon" val="icon.skill11017" />
@@ -465,7 +469,7 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<set name="icon" val="icon.skill11017" />
@@ -495,7 +499,7 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<set name="icon" val="icon.skill11017" />
@@ -525,7 +529,7 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<set name="icon" val="icon.skill11017" />
@@ -555,7 +559,7 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<set name="icon" val="icon.skill11017" />
@@ -585,7 +589,7 @@
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
 		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<set name="icon" val="icon.skill11023" />
 		<set name="attachToggleGroupId" val="1" />
@@ -622,7 +626,7 @@
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
 		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<set name="icon" val="icon.skill11023" />
 		<set name="attributeType" val="FIRE" />
@@ -651,7 +655,7 @@
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
 		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<set name="icon" val="icon.skill11023" />
 		<set name="attributeType" val="WATER" />
@@ -680,7 +684,7 @@
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
 		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<set name="icon" val="icon.skill11023" />
 		<set name="attributeType" val="WIND" />
@@ -709,7 +713,7 @@
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
 		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<set name="icon" val="icon.skill11023" />
 		<set name="attributeType" val="EARTH" />
@@ -738,7 +742,7 @@
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
 		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<set name="icon" val="icon.skill11023" />
 		<set name="operateType" val="A1" />
@@ -827,6 +831,7 @@
 		</channelingEffects>
 	</skill>
 	<skill id="11032" levels="7" name="Death Howl">
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<!-- Updated to IO -->
 		<!-- Attacks nearby targets with 157 Power and pushes them back. Over-hit. -->
 		<table name="#effectPoint"> -696 -702 -707 -711 -715 -719 -723 </table>
@@ -851,6 +856,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack">
@@ -875,6 +881,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="100" />
+		<set name="magicLvl" val="85" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11034" levels="8" name="Elemental Blast">
@@ -1060,7 +1067,7 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<set name="icon" val="icon.skill11040" />
@@ -1096,7 +1103,7 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<set name="icon" val="icon.skill11040" />
@@ -1125,7 +1132,7 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<set name="icon" val="icon.skill11040" />
@@ -1154,7 +1161,7 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<set name="icon" val="icon.skill11040" />
@@ -1183,7 +1190,7 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<set name="icon" val="icon.skill11040" />
@@ -1212,7 +1219,7 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<set name="icon" val="icon.skill11040" />
@@ -1277,7 +1284,7 @@
 		<!-- Attacks target with 157 Power. For 20 sec., target's M. Atk. and M. Def. - 30%, Casting Spd., P. Critical Rate, M. Critical Rate, P. Def. and Speed - 10%, and P. Evasion - 6. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
 		<table name="#power"> 157 160 166 174 180 187 191 195 199 </table>
-		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 89 92 95 98 </table>
 		<table name="#mpConsumes"> 70 71 76 81 85 91 97 103 109 </table>
 		<set name="icon" val="icon.skill11047" />
 		<set name="abnormalLvl" val="1" />
@@ -1321,7 +1328,7 @@
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
 		<table name="#power"> 125 128 133 139 144 150  155 159 163 </table>
 		<table name="#mpConsumes"> 211 220 233 247 262 278 294 310 326 </table>
-		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 90 93 96 99 </table>
 		<set name="icon" val="icon.skill11048" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="20" />
@@ -1361,6 +1368,7 @@
 		</for>
 	</skill>
 	<skill id="11049" levels="2" name="Ignore Divinity">
+		<table name="#magicLvl"> 93 98 </table>
 		<table name="#effectPoint"> -704 -708 -712 -716 -720 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Cancels one of target's buffs. -->
@@ -1376,9 +1384,11 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11050" levels="4" name="Hell Binding">
+		<table name="#magicLvl"> 85 89 93 97 </table>
 		<table name="#effectPoint"> -692 -698 -704 -708 -708 -708 -708 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Immobilizes target midair. -->
@@ -1404,12 +1414,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="1.5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="11051" levels="4" name="Hell Binding">
+		<table name="#magicLvl"> 85 89 93 97 </table>
 		<table name="#effectPoint"> -692 -698 -704 -708 -712 -716 -720 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Immobilizes target midair. -->
@@ -1435,12 +1447,14 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="1.5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockActions" />
 		</for>
 	</skill>
 	<skill id="11052" levels="4" name="Mass Hell Binding">
+		<table name="#magicLvl"> 89 92 95 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Immobilizes target and nearby enemies midair for 9 seconds and inflicts 100 damage per second. -->
 		<table name="#mpConsumes"> 228 243 257 273 </table>
@@ -1461,9 +1475,11 @@
 		<set name="abnormalResists" val="STUN;TURN_FLEE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11053" levels="4" name="Mass Hell Binding">
+		<table name="#magicLvl"> 89 92 95 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Immobilizes target and nearby enemies midair for 9 seconds and inflicts 100 damage per second. -->
 		<table name="#mpConsumes"> 228 243 257 273 </table>
@@ -1484,6 +1500,7 @@
 		<set name="abnormalResists" val="STUN;TURN_FLEE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11054" levels="1" name="Yoke Status">
@@ -1504,6 +1521,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="activateRate" val="100" />
+		<set name="magicLvl" val="85" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockActions" />
@@ -1513,7 +1531,7 @@
 		<!-- Updated to IO -->
 		<!-- For 10 seconds, inflicts Fear on target and decreases Speed by 40%. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 -709 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 </table>
 		<table name="#mpConsumes"> 70 72 76 78 82 85 88 91 94 97  </table>
 		<table name="#runSpd"> 0.60 0.55 0.50 0.45 0.40 0.35 0.30 0.30 0.30 0.30 </table>
 		<set name="icon" val="icon.skill11055" />
@@ -1549,7 +1567,7 @@
 		<!-- Updated to IO -->
 		<!-- For 10 seconds, inflicts Fear on target and nearby enemies and decreases Speed by 25%. -->
 		<table name="#effectPoint"> -700 -705 -705 -705 -705 -705 -705 -705 -705 -705 -705 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 96 99 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 211 220 228 238 247 257 267 278 289 300 311 </table>
 		<table name="#runSpd"> 0.75 0.70 0.65 0.60 0.55 0.50 0.45 0.40 0.40 0.40 0.40 </table>
 		<set name="icon" val="icon.skill11056" />
@@ -1586,7 +1604,7 @@
 		<!-- Updated to IO -->
 		<!-- Attacks nearby enemies with 133 Power added to M. Atk., inflicting Stun and canceling their targets. Teleports you to the back. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -709 -709 -709 -709 -709 </table>
-		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 90 93 96 99 </table>
 		<table name="#mpConsumes"> 70 72 77 82 87 92 97 102 107 </table>
 		<table name="#power"> 133 136 142 149 154 160 163 167 171 </table>
 		<set name="icon" val="icon.skill11057" />
@@ -1628,7 +1646,7 @@
 	<skill id="11058" levels="6" name="Shadow Snare">
 		<!-- Pulls enemies in a selected area to the center. -->
 		<table name="#effectPoint"> -700 -705 -709 -700 -705 -709 </table>
-		<table name="#magicLvl"> 91 94 97 101 103 105 </table>
+		<table name="#magicLvl"> 91 94 97 </table>
 		<table name="#mpConsumes"> 238 252 267 281 295 310 </table>
 		<table name="#npcId"> 13323 13324 13325 13458 13459 13460 </table>
 		<set name="icon" val="icon.skill11058" />
@@ -1668,6 +1686,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="97" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PullBack">
@@ -1709,6 +1728,7 @@
 		<set name="effectPoint" val="709" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="97" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="11064" levels="11" name="Ultimate Body To Mind">
@@ -1717,7 +1737,7 @@
 		<table name="#effectPoint"> 692 700 707 707 707 707 707 707 707 707 707 </table>
 		<table name="#hpConsumes"> 384 388 396 404 412 420 428 436 448 456 464 </table>
 		<table name="#manaHeal"> 400 412 436 450 474 499 523 547 591 623 655 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<set name="icon" val="icon.skill11064" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -1751,6 +1771,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -1777,7 +1798,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="95" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1100" /> <!-- Custom -->
@@ -1817,7 +1838,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="DERANGEMENT" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="99" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1100" /> <!-- Custom -->
@@ -1878,6 +1899,7 @@
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -1892,6 +1914,7 @@
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -1906,6 +1929,7 @@
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -1920,6 +1944,7 @@
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -1934,6 +1959,7 @@
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -1961,6 +1987,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1987,6 +2014,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -2013,6 +2041,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -2039,6 +2068,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -2063,6 +2093,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -2079,6 +2110,7 @@
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -2093,6 +2125,7 @@
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -2107,6 +2140,7 @@
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -2121,6 +2155,7 @@
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -2135,6 +2170,7 @@
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -2162,6 +2198,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockControl" />
@@ -2185,6 +2222,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -2211,6 +2249,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="KnockBack">
@@ -2238,6 +2277,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="trait" val="HOLD" />
 		<for>
 			<effect name="Root" />
@@ -2260,6 +2300,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockActions" />
@@ -2279,6 +2320,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="100" />
+		<set name="magicLvl" val="99" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11093" levels="1" name="Crystal Form">
@@ -2318,7 +2360,7 @@
 		<!-- Updated to IO -->
 		<!-- Attacks nearby enemies with 133 Power added to M. Atk., inflicting Stun and canceling their targets. Teleports you to the front. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -709 -709 -709 -709 -709 </table>
-		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 90 93 96 99 </table>
 		<table name="#mpConsumes"> 70 72 77 82 87 92 97 102 107 </table>
 		<table name="#power"> 133 136 142 149 154 160 163 167 171 </table>
 		<set name="icon" val="icon.skill11094" />
@@ -2371,6 +2413,7 @@
 		<set name="effectPoint" val="-692" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="87" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="ResetDebuff">

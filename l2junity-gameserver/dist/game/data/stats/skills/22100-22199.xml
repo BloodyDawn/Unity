@@ -13,7 +13,7 @@
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="20603" /> <!-- Soul Scent (Event) -->
-		<set name="magicLvl" val="1" />
+		<set name="magicLvl" val="-3" />
 		<set name="operateType" val="A3" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1341,7 +1341,7 @@
 		<set name="hitTime" val="100" />
 		<set name="icon" val="#icons" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
+		<set name="magicLvl" val="-3" />
 		<set name="operateType" val="A4" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
@@ -1803,6 +1803,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -1820,6 +1821,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22182" levels="1" name="Birthday Vitality Buff">
@@ -1836,6 +1838,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-2" />
+		<set name="magicLvl" val="-2" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1896,6 +1899,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22187" levels="1" name="Honeymoon Ticket - Joy of Vitality">
@@ -1915,6 +1919,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22189" levels="1" name="Flower Shower">
@@ -1923,6 +1928,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22190" levels="1" name="Transformation Scroll: Treasure Hunter">

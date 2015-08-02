@@ -712,6 +712,7 @@
 		</for>
 	</skill>
 	<skill id="2229" levels="8" name="Deluxe Chest Key - Grade 1">
+		<table name="#magicLvl"> 10 20 30 40 50 60 70 80 </table>
 		<table name="#effectPoints"> -1 -2 -3 -4 -5 -6 -7 -8 </table>
 		<table name="#itemConsumeId"> 6665 6666 6667 6668 6669 6670 6671 6672 </table>
 		<set name="castRange" val="40" />
@@ -721,7 +722,7 @@
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="#itemConsumeId" />
-		<set name="magicLvl" val="10" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1291,11 +1292,12 @@
 		</for>
 	</skill>
 	<skill id="2254" levels="3" name="Fire Crystal">
+		<table name="#magicLvl"> 20 40 70 </table>
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="7912" /> <!-- Fire Shard -->
-		<set name="magicLvl" val="20" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1303,11 +1305,12 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="2255" levels="3" name="Water Crystal">
+		<table name="#magicLvl"> 20 40 70 </table>
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="7913" /> <!-- Water Shard -->
-		<set name="magicLvl" val="20" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1315,11 +1318,12 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="2256" levels="3" name="Wind Crystal">
+		<table name="#magicLvl"> 20 0 70 </table>
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="7914" /> <!-- Wind Shard -->
-		<set name="magicLvl" val="20" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1327,11 +1331,12 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="2257" levels="3" name="Earth Crystal">
+		<table name="#magicLvl"> 20 40 70 </table>
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="7915" /> <!-- Earth Shard -->
-		<set name="magicLvl" val="20" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1339,11 +1344,12 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="2258" levels="3" name="Dark Shard">
+		<table name="#magicLvl"> 20 40 70 </table>
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="7916" /> <!-- Dark Shard -->
-		<set name="magicLvl" val="20" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1351,11 +1357,12 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="2259" levels="3" name="Holy Crystal">
+		<table name="#magicLvl"> 20 40 70 </table>
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="7917" /> <!-- Holy Shard -->
-		<set name="magicLvl" val="20" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />

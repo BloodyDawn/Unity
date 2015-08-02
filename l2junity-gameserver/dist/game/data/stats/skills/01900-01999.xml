@@ -968,6 +968,7 @@
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttackRange">
@@ -1063,6 +1064,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="specialLevel" val="-2" />
+		<set name="magicLvl" val="-2" />
 		<set name="reuseDelay" val="10000" />
 		<cond msgId="2195">
 			<player canTransform="true" />
@@ -1085,6 +1087,7 @@
 		</for>
 	</skill>
 	<skill id="1955" levels="3" name="Party Solidarity">
+		<table name="#magicLvl"> 85 90 95 </table>
 		<!-- Glory Days confirmed -->
 		<!-- Increases party members' P. Atk. by 1%, M. Atk. by 1%, P. Critical Rate by 1%, Atk. Spd. by 1%, and Casting Spd. by 1%. Decreases physical and magic skill Cooldown by 1%. Always includes Sigel and Aeore Force. When 4 or more forces are applied, the Party Solidarity effect is activated. When the number of forces applied increases, the Party Solidarity effect is raised. -->
 		<table name="#pAtk"> 1.01 1.05 1.13 </table>
@@ -1096,7 +1099,7 @@
 		<set name="abnormalType" val="SYNERGY_PARTY_BUF" />
 		<set name="affectRange" val="200" />
 		<set name="icon" val="icon.skill1955" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="A5" />
 		<set name="targetType" val="PARTY" /> <!-- Target ONE on retail, will be PARTY here. -->
@@ -1247,7 +1250,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="operateType" val="P" />
 		<set name="icon" val="icon.skill0439" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="1" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="excludedFromCheck" val="true" />
 		<for>
@@ -1265,7 +1268,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="operateType" val="P" />
 		<set name="icon" val="icon.skill0817" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="1" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="excludedFromCheck" val="true" />
 		<for>
@@ -1494,7 +1497,7 @@
 		<!-- Has a chance of Skill Power + 27% during skill use. -->
 		<set name="targetType" val="SELF" />
 		<set name="operateType" val="P" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="99" />
 		<set name="icon" val="icon.dual_t_skup" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="excludedFromCheck" val="true" />
@@ -1626,6 +1629,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
+		<set name="magicLvl" val="99" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1983" levels="1" name="Dual - Silence of the Giants">
@@ -1644,6 +1648,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
+		<set name="magicLvl" val="99" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1984" levels="1" name="Dual - Yoke of the Giants">
@@ -1662,6 +1667,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
+		<set name="magicLvl" val="99" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="1985" levels="1" name="Dual - Shield of the Giants">
@@ -1677,15 +1683,18 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="99" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<skill id="1986" levels="4" name="Dual Maximum HP">
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Max HP + 463. Can be used when the main/ dual class is Level 85 or above. -->
 		<set name="icon" val="icon.skill0917" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1987" levels="1" name="Sigel Armor Limit">
@@ -1694,6 +1703,7 @@
 		<set name="icon" val="icon.skill6213_4" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1988" levels="1" name="Tyrr Armor Limit">
@@ -1702,6 +1712,7 @@
 		<set name="icon" val="icon.skill6213_4" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1989" levels="1" name="Yul Armor Limit">
@@ -1710,6 +1721,7 @@
 		<set name="icon" val="icon.skill6213_4" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1990" levels="1" name="Othell Armor Limit">
@@ -1718,6 +1730,7 @@
 		<set name="icon" val="icon.skill6213_4" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1991" levels="1" name="Feoh Armor Limit">
@@ -1726,6 +1739,7 @@
 		<set name="icon" val="icon.skill6213_4" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1992" levels="1" name="Wynn Armor Limit">
@@ -1734,6 +1748,7 @@
 		<set name="icon" val="icon.skill6213_4" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1993" levels="1" name="Iss Armor Limit">
@@ -1742,6 +1757,7 @@
 		<set name="icon" val="icon.skill6213_4" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1994" levels="1" name="Aeore Armor Limit">
@@ -1750,6 +1766,7 @@
 		<set name="icon" val="icon.skill6213_4" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1995" levels="1" name="Dual - MP Drain">
@@ -1761,6 +1778,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="99" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="1996" levels="2" name="Hurricane Shackle">

@@ -27,7 +27,7 @@
 		<set name="icon" val="icon.skill10001" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -54,7 +54,7 @@
 		<set name="icon" val="icon.skill10002" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -84,7 +84,7 @@
 		<table name="#sDef"> 1.8 1.85 1.9 1.95 2 2.05 2.1 </table>
 		<set name="icon" val="icon.skill10003" />
 		<set name="operateType" val="P" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="85" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -109,7 +109,7 @@
 		<table name="#mDef"> 949 1073 1214 1340 1511 1588 1668 </table>
 		<set name="icon" val="icon.skill10004" />
 		<set name="operateType" val="P" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="85" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -128,7 +128,7 @@
 		<set name="icon" val="icon.skill10005" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -154,6 +154,7 @@
 		<set name="magicLevel" val="85" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="89" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -169,6 +170,7 @@
 		</for>
 	</skill>
 	<skill id="10007" levels="3" name="Last Patience">
+		<table name="#magicLvl"> 89 93 97 </table>
 		<!-- Glory Days confirmed -->
 		<!-- For 9 seconds, Shield Defense/Skill Power + 25%. -->
 		<table name="#icons"> icon.skill10006 icon.skill10007 icon.skill10007 </table>
@@ -186,6 +188,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="isMagic" val="4" />
 		<effect name="Buff">
 			<mul stat="sDef" val="#power" />
@@ -193,6 +196,7 @@
 		</effect>
 	</skill>
 	<skill id="10008" levels="11" name="Shield Charge">
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<!-- Glory Days confirmed -->
 		<!-- Uses a shield to attack target with 13634 Power added to P. Atk. and also P. Def. - 10%, P. Evasion - 2, and P. Critical Damage + 10%. Can be used while a shield is equipped. -->
 		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 11 </table>
@@ -221,6 +225,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="effectPoint" val="#effectPoint" />
 		<alterSkill>
 			<skill id="10250" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
@@ -246,7 +251,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 16556 Power added to P. Atk, and Speed - 70. Can be used while a sword or blunt weapon is equipped. Over-hit. Critical. -->
 		<table name="#effectPoint"> -689 -692 -696 -700 -704 -707 -710 -713 -716 -719 -722 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 64 66 68 70 72 75 77 79 81 83 85 </table>
 		<table name="#power"> 16556 17218 18542 19866 21190 22514 23838 25162 27148 28472 29796 </table>
 		<set name="abnormalLvl" val="4" />
@@ -288,7 +293,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 20451 Power added to P. Atk, and P. Atk./M. Atk. - 20%. Blocks the use of magic skills. Requires a sword or blunt weapon to be equipped. Over-hit. Critical. -->
 		<table name="#effectPoint"> -689 -694 -698 -702 -706 -709 -711 -714 -717 -720 -723 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 80 83 85 88 91 94 97 100 103 106 109 </table>
 		<table name="#power"> 20451 22087 23723 25359 26995 28631 30267 31903 34357 35175 36811 </table>
 		<set name="abnormalLvl" val="4" />
@@ -335,7 +340,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 11253 Power added to P. Atk. and Stuns for 5 seconds. Can be used while a shield is equipped. -->
 		<table name="#effectPoint"> -1378 -1392 -1404 -1414 -1422 -1430 -1438 -1446 </table>
-		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
+		<table name="#magicLvl"> 85 88 91 94 97 </table>
 		<table name="#mpConsumes"> 49 52 54 57 60 63 66 69 </table>
 		<table name="#power"> 11253 12603 13953 15303 16653 18453 19353 20253 </table>
 		<set name="abnormalLvl" val="1" />
@@ -380,7 +385,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby targets with 10174 Power added to P. Atk. Power added to P. Atk. and Stuns for 9 seconds Power added to P. Atk. Can be used while a shield is equipped. -->
 		<table name="#effectPoint"> -1378 -1396 -1404 -1411 -1417 -1422 -1427 -1432 -1437 -1442 </table>
-		<table name="#magicLvl"> 87 89 91 93 95 97 99 101 103 105 </table>
+		<table name="#magicLvl"> 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 59 61 63 65 67 69 71  73 75 77 </table>
 		<table name="#power"> 10174 10833 11492 12150 12809 13468 14126 14897 15623 16349 </table>
 		<set name="affectLimit" val="5-12" />
@@ -426,7 +431,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby targets with 10314 Power added to P. Atk. Can be used while a sword or blunt weapon is equipped. Over-hit. Critical. -->
 		<table name="#effectPoint"> -1378 -1387 -1396 -1404 -1411 -1417 -1422 -1427 -1432 -1437 -1442 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 121 125 129 133 138 142 146 151 154 157 160 </table>
 		<table name="#power"> 10314 11026 11738 12450 13162 13874 14586 15298 18045 19013 19981 </table>
 		<set name="affectLimit" val="5-12" />
@@ -464,7 +469,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby targets with 14300 Power added to P. Atk. Healing Power received - 90%. -->
 		<table name="#effectPoint"> -1378 -1383 -1392 -1400 -1407 -1414 -1420 -1425 -1430 -1435 -1440 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 159 162 167 173 179 184 190 196 202 206 210 </table>
 		<table name="#power"> 14300 14789 15769 16748 17727 18707 19686 20666 23468 24612 25756 </table>
 		<set name="abnormalLvl" val="3" />
@@ -501,7 +506,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Pulls selected target to make them attack you. Requires a shield. -->
 		<table name="#effectPoint"> -2066 -2080 -2099 -2116 -2129 -2140 -2151 -2162 -2173 </table>
-		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 90 93 96 99 </table>
 		<table name="#mpConsumes"> 58 61 63 66 69 72 75 78 81 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1" />
@@ -541,7 +546,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Pulls target and nearby enemies to make them attack you. Requires a shield. -->
 		<table name="#effectPoint"> -2093 -2105 -2116 -2125 -2133 -2140 -2147 -2154 -2161 </table>
-		<table name="#magicLvl"> 89 91 93 95 97 99 101 103 105 </table>
+		<table name="#magicLvl"> 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 123 127 132 136 140 144 148 152 156 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1" />
@@ -585,7 +590,7 @@
 		<table name="#mpConsumes"> 58 63 68 72 76 80 84 </table>
 		<table name="#def"> 4000 6000 8000 10000 12000 14000 16000 </table>
 		<table name="#reflectDam"> 40 60 80 100 100 100 100 </table>
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#damageCap"> 300 200 150 100 100 100 100 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
@@ -619,7 +624,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, receives 60% of the damage inflicted to the party member. -->
 		<table name="#effectPoint"> 694 704 </table>
-		<table name="#magicLvl"> 91 96 </table>
+		<table name="#magicLvl"> 91 92 </table>
 		<table name="#mpConsumes"> 60 65 </table>
 		<table name="#transDamToPlayer"> 60 90 </table>
 		<set name="abnormalLvl" val="1" />
@@ -651,7 +656,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- For 15 seconds, all party members' P. Def. + 5000, M. Def. + 5000, and Debuff Resistance + 50%. Receives 90% of the damage inflicted to each party member. -->
 		<table name="#effectPoint"> 702 711 720 729 738 </table>
-		<table name="#magicLvl"> 85 97 100 102 104 </table>
+		<table name="#magicLvl"> 91 97 </table>
 		<table name="#mpConsumes"> 127 140 153 166 179 </table>
 		<table name="#pDef"> 5000 10000 11000 12000 13000 </table>
 		<table name="#mDef"> 5000 7000 8000 9000 10000 </table>
@@ -691,7 +696,7 @@
 		<table name="#sDef"> 700 800 900 1000 1100 1200 1300 </table>
 		<table name="#pDef"> 350 400 450 500 550 600 650 </table>
 		<table name="#rShld"> 1.35 1.4 1.45 1.5 1.5 1.5 1.5 </table>
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<set name="mpConsume" val="50" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -709,6 +714,7 @@
 		</for>
 	</skill>
 	<skill id="10021" levels="7" name="Spike Shield">
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, reflects 10% of received damage back to the attacker. Also has a 50% chance of reflecting magic damage back to the attacker. Requires a shield. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
@@ -727,6 +733,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="60000" />
 		<cond addName="1" msgId="113">
 			<using kind="SHIELD" />
@@ -769,7 +776,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Summons the King of Beasts to attack nearby and frontal targets with 35222 Power added to P. Atk. Requires a shield. Over-hit. -->
 		<table name="#effectPoint"> -3541 -3561 -3581 -3601 -3621 </table>
-		<table name="#magicLvl"> 95 98 101 103 105 </table>
+		<table name="#magicLvl"> 95 98 </table>
 		<table name="#mpConsumes"> 1103 1158 1213 1268 1323 </table>
 		<table name="#power"> 35222 38826 43471 45591 47711 </table>
 		<set name="affectLimit" val="5-12" />
@@ -817,6 +824,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="99" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113">
 			<using kind="SHIELD" />
@@ -895,7 +903,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Provokes target into attacking you. -->
 		<table name="#effectPoint"> -10330 -10400 -10495 -10576 -10643 -10697 -10751 -10805 -10859 </table>
-		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 90 93 96 99 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="TARGET_LOCK" />
@@ -935,7 +943,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Provokes nearby enemies into attacking you. -->
 		<table name="#effectPoint"> -10330 -10433 -10523 -10600 -10663 -10726 -10789 -10852 </table>
-		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
+		<table name="#magicLvl"> 85 88 91 94 97 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="TARGET_LOCK" />
@@ -1325,6 +1333,7 @@
 		</endEffects>
 	</skill>
 	<skill id="10041" levels="4" name="Summon Cubic of Despair">
+		<table name="#magicLvl"> 89 92 94 96 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0010" />
 		<set name="operateType" val="A1" />
@@ -1335,9 +1344,11 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10042" levels="3" name="Summon Cubic of Life">
+		<table name="#magicLvl"> 91 94 96 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0010" />
 		<set name="operateType" val="A1" />
@@ -1348,9 +1359,11 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10043" levels="8" name="Summon Knight Cubic">
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons a Knight Cubic. The summoned cubic removes debuffs from you. -->
 		<table name="#mpConsumes"> 96 98 101 105 108 111 115 118 </table>
@@ -1363,6 +1376,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10044" levels="7" name="Superior Elemental Mastery">
@@ -1372,7 +1386,7 @@
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<set name="icon" val="icon.skill10044" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -1408,6 +1422,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
 		<set name="activateRate" val="80" />
+		<set name="magicLvl" val="86" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10046" levels="3" name="Shield Charge III">
@@ -1431,6 +1446,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
 		<set name="activateRate" val="80" />
+		<set name="magicLvl" val="88" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10047" levels="3" name="Shield Charge IV">
@@ -1454,6 +1470,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
 		<set name="activateRate" val="80" />
+		<set name="magicLvl" val="90" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10048" levels="3" name="Shield Charge V">
@@ -1477,6 +1494,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
 		<set name="activateRate" val="80" />
+		<set name="magicLvl" val="92" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10049" levels="3" name="Shield Charge VI">
@@ -1500,6 +1518,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
 		<set name="activateRate" val="80" />
+		<set name="magicLvl" val="94" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10050" levels="3" name="Shield Charge VII">
@@ -1523,6 +1542,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
 		<set name="activateRate" val="80" />
+		<set name="magicLvl" val="96" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10051" levels="6" name="Lion Roar">
@@ -1594,7 +1614,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Updated to IO -->
 		<!-- Dashes to the enemy to inflict damage and shock. -->
-		<table name="#magicLvl"> 85 89 92 95 98 99 </table>
+		<table name="#magicLvl"> 85 86 89 92 95 98 </table>
 		<table name="#mpConsumes"> 15 16 17 18 18 18 </table>
 		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
 		<table name="#power"> 2421 2476 2646 2829 3022 3229 </table>
@@ -1635,7 +1655,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Updated to IO -->
 		<!-- Spews flames at the enemy to inflict damage. -->
-		<table name="#magicLvl"> 85 89 92 95 98 99 </table>
+		<table name="#magicLvl"> 85 86 89 92 95 98 </table>
 		<table name="#mpConsumes"> 99 108 116 120 120 120 </table>
 		<table name="#power"> 109 109 112 116 120 125 </table> <!-- Guessed from Elemental Spike -->
 		<set name="icon" val="icon.skill0217" />
@@ -1784,6 +1804,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
 		<set name="activateRate" val="80" />
+		<set name="magicLvl" val="98" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10060" levels="1" name="Aggression Attack">
@@ -1809,6 +1830,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="99" />
 		<set name="targetType" val="SELF" /> <!-- TODO: Check with our crappy targeting -->
 		<for>
 			<effect name="TargetMe" />
@@ -1834,6 +1856,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="specialLevel" val="-1" />
+		<set name="magicLvl" val="99" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">

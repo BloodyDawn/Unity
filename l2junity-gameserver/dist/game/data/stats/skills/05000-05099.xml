@@ -162,6 +162,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5008" levels="5" name="Frintezza's Songs">
+		<table name="#magicLvl"> 85 85 -1 85 85 </table>
 		<table name="#operateType"> A1 A1 A2 A2 A2 </table>
 		<table name="#activateRate"> -1 -1 -1 10 10 </table>
 		<table name="#specialLevel"> 0 0 -1 0 0 </table>
@@ -189,7 +190,7 @@
 		<set name="isDebuff" val="#isDebuff" />
 		<set name="isMagic" val="#isMagic" />
 		<set name="lvlBonusRate" val="#lvlBonusRate" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="#operateType" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
@@ -544,6 +545,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5023" levels="12" name="Hold">
+		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
@@ -554,7 +556,7 @@
 		<set name="icon" val="icon.skill4047" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="10" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
@@ -882,9 +884,10 @@
 		</for>
 	</skill>
 	<skill id="5047" levels="12" name="Spinning Slasher">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="2000" />
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
@@ -892,10 +895,11 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5048" levels="12" name="Burst Shot">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="affectLimit" val="5-12" />
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="25000" />
 		<set name="rideState" val="NONE" />
@@ -904,9 +908,10 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5049" levels="12" name="Mortal Blow">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="2000" />
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
@@ -915,10 +920,11 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5050" levels="12" name="Blaze">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1001,20 +1007,22 @@
 		</for>
 	</skill>
 	<skill id="5054" levels="12" name="Aqua Splash">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5055" levels="12" name="Aqua Splash">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1048,20 +1056,22 @@
 		</for>
 	</skill>
 	<skill id="5057" levels="12" name="Tempest">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5058" levels="12" name="Tempest">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1069,10 +1079,11 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5059" levels="12" name="Rock Strike">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1080,20 +1091,22 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5060" levels="12" name="Earthquake">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5061" levels="12" name="Earthquake">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1101,10 +1114,11 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5062" levels="12" name="Holy Strike">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1112,20 +1126,22 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5063" levels="12" name="Holy Circle">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5064" levels="12" name="Holy Blast">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1156,20 +1172,22 @@
 		</for>
 	</skill>
 	<skill id="5066" levels="12" name="Unholy Circle">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5067" levels="12" name="Unholy Blast">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1177,6 +1195,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5068" levels="12" name="Decrease Speed">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="SPEED_DOWN" />
@@ -1187,7 +1206,7 @@
 		<set name="icon" val="icon.skill1160" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1196,6 +1215,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5069" levels="12" name="Decrease Atk. Spd.">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ATTACK_TIME_UP" />
@@ -1206,7 +1226,7 @@
 		<set name="icon" val="icon.skill4038" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1215,6 +1235,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5070" levels="12" name="Decrease Casting Spd.">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="CASTING_TIME_UP" />
@@ -1225,7 +1246,7 @@
 		<set name="icon" val="icon.skill1206" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1234,6 +1255,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5071" levels="12" name="Decrease P. Atk.">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="PA_DOWN" />
@@ -1244,7 +1266,7 @@
 		<set name="icon" val="icon.skill4037" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1253,6 +1275,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5072" levels="12" name="Decrease M. Atk.">
+		<table name="#magicLvl"> 40 45 50 55 60 65 70 75 80 85 90 95 </table>
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="MA_DOWN" />
@@ -1262,7 +1285,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="40" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1663,7 +1686,7 @@
 		<set name="icon" val="icon.skill4108" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AREA" />
@@ -1685,7 +1708,7 @@
 		<set name="attributeValue" val="180" />
 		<set name="hitTime" val="8000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1706,7 +1729,7 @@
 		<set name="attributeValue" val="180" />
 		<set name="hitTime" val="100" />
 		<set name="isSuicideAttack" val="true" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="abnormalResists" val="TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT" />
@@ -1724,7 +1747,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="1500" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="99" />
 		<set name="mpConsume" val="83" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
@@ -1742,7 +1765,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="3000" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="99" />
 		<set name="mpConsume" val="83" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
@@ -1762,7 +1785,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="hitTime" val="100" />
 		<set name="isSuicideAttack" val="true" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />

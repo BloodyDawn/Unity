@@ -234,7 +234,7 @@
 	<skill id="508" levels="31" name="Rising Shot">
 		<!-- Confirmed CT2.5 -->
 		<table name="#effectPoints"> -213 -218 -223 -228 -233 -237 -242 -247 -252 -257 -261 -266 -271 -275 -279 -284 -288 -292 -296 -300 -304 -307 -311 -314 -317 -320 -323 -326 -328 -331 -333 </table>
-		<table name="#magicLvl"> 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 </table>
+		<table name="#magicLvl"> 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<table name="#mpConsume"> 112 116 119 123 126 129 133 133 137 140 143 147 150 154 157 160 164 164 167 170 173 177 180 183 186 188 191 194 197 199 202 </table>
 		<table name="#power"> 350 370 391 412 434 457 481 506 531 557 584 611 639 668 697 727 758 789 820 852 885 917 950 984 1017 1051 1084 1118 1151 1185 1218 </table>
 		<set name="affectLimit" val="5-12" />
@@ -1091,6 +1091,7 @@
 		</for>
 	</skill>
 	<skill id="539" levels="2" name="Nail Attack">
+		<table name="#magicLvl"> 79 85 </table>
 		<!-- Confirmed CT2.5 and updated to IO -->
 		<!-- Kamael Final Form Skill -->
 		<table name="#mpConsume"> 71 72 </table>
@@ -1101,7 +1102,7 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1080" />
 		<set name="icon" val="icon.skill0539" />
-		<set name="magicLvl" val="79" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
@@ -1116,6 +1117,7 @@
 		</for>
 	</skill>
 	<skill id="540" levels="2" name="Wing Assault">
+		<table name="#magicLvl"> 79 85 </table>
 		<!-- Confirmed CT2.5 and updated to IO -->
 		<!-- Kamael Final Form Skill -->
 		<table name="#mpConsume"> 71 72 </table>
@@ -1129,7 +1131,7 @@
 		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="800" />
 		<set name="icon" val="icon.skill0540" />
-		<set name="magicLvl" val="79" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="DA1" />

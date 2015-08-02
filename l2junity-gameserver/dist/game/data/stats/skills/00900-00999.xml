@@ -119,6 +119,7 @@
 		</pvpEffects>
 	</skill>
 	<skill id="904" levels="6" name="Corpse Burst">
+		<table name="#magicLvl"> 80 81 82 83 84 85 </table>
 		<table name="#effectPoints"> -338 -340 -341 -342 -344 -345 </table>
 		<table name="#mpConsume"> 72 73 74 74 75 75 </table>
 		<table name="#pvePower"> 348 351 355 358 361 364 </table>
@@ -139,7 +140,7 @@
 		<set name="icon" val="icon.skill_transform_debuff" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="20" />
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
@@ -164,6 +165,7 @@
 		</pvpEffects>
 	</skill>
 	<skill id="905" levels="6" name="Dark Detonation">
+		<table name="#magicLvl"> 80 81 82 83 84 85 </table>
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
 		<table name="#mpConsume"> 72 73 74 74 75 75 </table>
 		<table name="#pvePower"> 12670 12936 13195 13446 13688 13920 </table>
@@ -180,7 +182,7 @@
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_debuff" />
 		<set name="lvlBonusRate" val="20" />
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
@@ -202,6 +204,7 @@
 		</pvpEffects>
 	</skill>
 	<skill id="906" levels="6" name="Lance Step">
+		<table name="#magicLvl"> 80 81 82 83 84 85 </table>
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
 		<table name="#mpConsume"> 72 73 74 74 75 75 </table>
 		<table name="#pvePower"> 9503 9702 9896 10084 10266 10440 </table>
@@ -212,7 +215,7 @@
 		<set name="fanRange" val="0,0,900,100" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill_transform_s_attack" />
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
@@ -231,6 +234,7 @@
 		</pvpEffects>
 	</skill>
 	<skill id="907" levels="6" name="Aqua Blast">
+		<table name="#magicLvl"> 80 81 82 83 84 85 </table>
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
 		<table name="#mpConsume"> 72 73 74 74 75 75 </table>
 		<table name="#pvePower"> 9503 9702 9896 10084 10266 10440 </table>
@@ -242,7 +246,7 @@
 		<set name="attributeValue" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_s_attack" />
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
@@ -261,6 +265,7 @@
 		</pvpEffects>
 	</skill>
 	<skill id="908" levels="6" name="Spin Slash">
+		<table name="#magicLvl"> 80 81 82 83 84 85 </table>
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
 		<table name="#mpConsume"> 72 73 74 74 75 75 </table>
 		<table name="#pvePower"> 5068 5175 5278 5379 5475 5568 </table>
@@ -270,7 +275,7 @@
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_s_attack" />
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
@@ -289,6 +294,7 @@
 		</pvpEffects>
 	</skill>
 	<skill id="909" levels="6" name="Ice Fog">
+		<table name="#magicLvl"> 80 81 82 83 84 85 </table>
 		<table name="#effectPoints"> -338 -340 -341 -342 -344 -345 </table>
 		<table name="#mpConsume"> 72 73 74 74 75 75 </table>
 		<table name="#pvePower"> 348 351 355 358 361 364 </table>
@@ -308,7 +314,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="20" />
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
@@ -336,6 +342,7 @@
 		</pvpEffects>
 	</skill>
 	<skill id="910" levels="6" name="Water Jet">
+		<table name="#magicLvl"> 80 81 82 83 84 85 </table>
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
 		<table name="#mpConsume"> 72 73 74 74 75 75 </table>
 		<table name="#pvePower"> 12670 12936 13195 13446 13688 13920 </table>
@@ -354,7 +361,7 @@
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_s_attack" />
 		<set name="lvlBonusRate" val="20" />
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
@@ -956,7 +963,7 @@
 		<set name="hitTime" val="6000" />
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1425,7 +1432,7 @@
 		<set name="icon" val="icon.skill00954" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="30" />
-		<set name="magicLvl" val="56" />
+		<set name="magicLvl" val="55" />
 		<set name="mpConsume" val="68" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
@@ -2306,7 +2313,7 @@
 		<set name="fanRange" val="0,0,900,60" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill0987" />
-		<set name="magicLvl" val="82" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="162" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="12000" />
@@ -2416,7 +2423,7 @@
 		<set name="icon" val="icon.skill0991" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="20" />
-		<set name="magicLvl" val="80" />
+		<set name="magicLvl" val="82" />
 		<set name="mpConsume" val="82" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
@@ -2584,7 +2591,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="20" />
-		<set name="magicLvl" val="74" />
+		<set name="magicLvl" val="82" />
 		<set name="mpConsume" val="55" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />

@@ -7,7 +7,7 @@
 		<table name="#pve"> 1.5 1.55 1.6 </table>
 		<set name="icon" val="icon.skill0810" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
@@ -26,6 +26,7 @@
 		<set name="magicLevel" val="85" />
 		<set name="operateType" val="P" />
 		<set name="icon" val="icon.skill0217" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="10246" levels="1" name="Wizard - Individual">
@@ -46,6 +47,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -59,6 +61,7 @@
 		<set name="magicLevel" val="85" />
 		<set name="icon" val="icon.skill0217" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="10248" levels="1" name="Knight - Individual">
@@ -79,6 +82,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -145,7 +149,7 @@
 		<set name="icon" val="icon.skill10251" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -200,7 +204,7 @@
 		<table name="#pDef"> 1731 1901 2088 2252 2524 2619 2718 </table>
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill10253" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -222,7 +226,7 @@
 		<table name="#pDef"> 1506 1654 1817 1959 2196 2279 2365 </table>
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill10254" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -262,7 +266,7 @@
 		<set name="icon" val="icon.skill10255" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -296,7 +300,7 @@
 		<table name="#pAtk"> 1027 1027 1381 1554 1761 1869 1982 </table>
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill10256" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -337,7 +341,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 11159 Power added to P. Atk. Weakens P. Def. and absorbs Momentum. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. Over-hit. Critical. -->
 		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -710 -711 -712 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 50 52 53 54 57 59 60 62 64 66 68 </table>
 		<table name="#power"> 11159 11932 12547 13206 14101 14995 15873 16601 20595 21599 22603 </table>
 		<set name="abnormalLvl" val="4" />
@@ -389,7 +393,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 19893 added to P. Atk. and increases damage as Momentum increases. Increases damage by 30% when Momentum is used up to 3. Requires a sword, blunt, spear, fist, dual blunt, or dualsword Over-hit. Critical. Ignores Shield Defense. -->
 		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -710 -711 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 65 66 69 71 73 76 78 80 82 84 86 </table>
 		<table name="#power"> 19893 20581 21956 23332 24707 26082 27458 28833 31628 33090 34552 </table>
 		<set name="castRange" val="40" />
@@ -422,7 +426,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful strike on target with 20483 Power added to P. Atk., knocking them down for 3 sec., and increases damage as Momentum increases. Increases damage by 30% when Momentum is used up to 3. Requires a sword, blunt, spear, fist, dual blunt, or dualsword. Critical. Ignores Shield Defense. -->
 		<table name="#effectPoint"> -700 -704 -707 -709 -709 -709 -709 -709 -709 </table>
-		<table name="#magicLvl"> 85 88 91 94 97 99 101 103 105 </table>
+		<table name="#magicLvl"> 85 88 91 94 97 99 </table>
 		<table name="#mpConsumes"> 84 89 93 98 102 105 108 111 114 </table>
 		<table name="#power"> 20483 22595 24708 26821 28934 30343 32981 34497 36013 </table>
 		<set name="abnormalLvl" val="1" />
@@ -477,7 +481,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 551 power, lowers P. Def., and absorbs Momentum. Requires a sword, blunt, spear, fist, dual blunt, or dualsword. -->
 		<table name="#effectPoint"> -692 -696 -700 -704 -707 -709 -709 -709 -709 -709 -709 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 58 59 61 63 65 67 69 71 73 75 77 </table>
 		<table name="#power"> 551 566 598 630 662 693 725 757 812 844 876 </table>
 		<set name="abnormalLvl" val="4" />
@@ -520,7 +524,7 @@
 		<!-- Attacks nearby enemies with 11557 Power added to P. Atk., Stuns them for 2 seconds and remove their target. Power is decreased by 10% when equipped with a sword/blunt/fist weapon and increased by 50% when equipped with a spear. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. Over-hit. Critical. -->
 		<table name="#effectPoints"> -687 -690 -694 -698 -702 -705 -708 -709 -710 -711 -712 </table>
 		<table name="#mpConsumes"> 122 124 129 133 137 142 146 151 156 161 166 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#power"> 11557 11956 12754 13533 14351 15155 15948 16747 17896 18622 19348 </table>
 		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="2" />
@@ -565,7 +569,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Strikes down at the ground with a fist to Knock Down nearby enemies for 5 sec. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 -709 -709 </table>
-		<table name="#magicLvl"> 85 87 88 91 93 95 97 99 101 103 105 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 76 79 81 84 87 90 92 95 98 101 104 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
@@ -614,6 +618,7 @@
 		</for>
 	</skill>
 	<skill id="10267" levels="9" name="Hurricane Rush">
+		<table name="#magicLvl"> 85 87 90 93 96 99 </table>
 		<!-- Glory Days confirmed -->
 		<!-- Shoulder charge target to Stun it for 3 seconds. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. -->
 		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
@@ -644,6 +649,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<set name="rideState" val="NONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="trait" val="SHOCK" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -682,7 +688,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Jumps to attack frontal enemies with 10508 Power added to P. Atk. and decreases their Speed by 180 for 5 seconds. The more Momentum used the more damage inflicted, up to a maximum of 5 Momentum levels. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. Over-hit. Critical. -->
 		<table name="#effectPoint"> -696 -700 -704 -707 -709 -711 -711 -711 -711 -711 </table>
-		<table name="#magicLvl"> 87 89 91 93 95 97 99 101 103 105 </table>
+		<table name="#magicLvl"> 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 111 114 118 122 126 130 134 138 142 146 </table>
 		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15539 16297 17055 </table>
 		<set name="abnormalLvl" val="4" />
@@ -763,7 +769,7 @@
 	<skill id="10271" levels="2" name="Power Provoke">
 		<!-- Glory Days confirmed -->
 		<!-- Provokes nearby enemies. Raises their P. Atk. and Atk. Spd. for 10 seconds but lower their P. Def. -->
-		<table name="#magicLvl"> 87 99 </table>
+		<table name="#magicLvl"> 97 99 </table>
 		<table name="#mpConsumes"> 76 83 </table>
 		<table name="#pDef"> 0.8 0.75 </table>
 		<set name="abnormalLvl" val="4" />
@@ -895,7 +901,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="1178" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLvl" />
+		<set name="magicLvl" val="99" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="5000" />
@@ -935,6 +941,7 @@
 		</for>
 	</skill>
 	<skill id="10277" levels="4" name="Final Cry">
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P. Atk. + 20% and skill damage + 10% for 2 minutes. Increases general/skill attack damage + 5% during PvP. -->
 		<table name="#effectPoint"> 687 698 707 709 </table>
@@ -950,9 +957,11 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="180000" />
 	</skill>
 	<skill id="10278" levels="8" name="Reduce Anger">
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreases the aggression of nearby enemies toward the caster. -->
 		<table name="#mpConsumes"> 76 77 80 83 86 88 91 94 </table>
@@ -965,6 +974,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10279" levels="1" name="Giant Barrier">
@@ -1020,7 +1030,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Attacks and knocks down nearby enemies at the speed of light with 44711 Power added to P. Atk. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon. Over-hit. Critical. -->
 		<table name="#effectPoint"> -700 -704 -708 -712 -716 </table>
-		<table name="#magicLvl"> 95 98 101 103 105 </table>
+		<table name="#magicLvl"> 95 98 </table>
 		<table name="#mpConsumes"> 1103 1158 1213 1268 1323 </table>
 		<table name="#power"> 44711 46723 50165 52369 54573 </table>
 		<set name="abnormalLvl" val="1" />
@@ -1087,6 +1097,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="900" />
+		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="10285" levels="1" name="HP Drain">
@@ -1118,7 +1129,7 @@
 		<set name="icon" val="icon.skill10005" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="#magicLevel" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1164,7 +1175,7 @@
 	<skill id="10288" levels="11" name="Hurricane Storm">
 		<!-- Glory Days confirmed -->
 		<!-- Attacks near the enemy with 11557 Power added to P. Atk. Power - 10% when using a sword, dualsword, blunt, or fist weapon. Power + 50% when using a spear. Requires a sword, blunt, spear, fist weapon, dual blunt, or dualsword. Over-hit. Critical hit. -->
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 161 163 169 175 180 186 192 198 204 210 216 </table>
 		<table name="#power"> 11557 11956 12754 13553 14351 15150 15948 16747 20787 21925 23063 </table>
 		<set name="affectLimit" val="5-12" />
@@ -1225,6 +1236,7 @@
 		</for>
 	</skill>
 	<skill id="10290" levels="8" name="Hurricane Slasher">
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks around the enemy with 11557 Power added to P. Atk. Decreases power - 10% when equipped with a sword/blunt/fist weapon. Increases power + 50% when equipped with a spear. Requires a dagger, blunt, spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Critical. -->
 		<table name="#mpConsumes"> 138 141 146 150 155 160 165 170 </table>
@@ -1236,6 +1248,7 @@
 		<set name="effectPoint" val="-709" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="7000" />
 	</skill>
 	<skill id="10291" levels="1" name="Feral Bear Cry">

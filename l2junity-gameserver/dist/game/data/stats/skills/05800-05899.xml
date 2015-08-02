@@ -46,11 +46,12 @@
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="5803" levels="3" name="Green Chili">
+		<table name="#magicLvl"> 75 78 80 </table>
 		<table name="#effectPoints"> -659 -669 -676 </table>
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="75" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -59,11 +60,12 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5804" levels="3" name="Fireball">
+		<table name="#magicLvl"> 70 75 80 </table>
 		<table name="#effectPoints"> -635 -659 -676 </table>
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="70" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -187,9 +189,10 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5814" levels="3" name="Self-destruction">
+		<table name="#magicLvl"> 70 75 80 </table>
 		<table name="#effectPoints"> -635 -659 -676 </table>
 		<set name="effectPoint" val="#effectPoints" />
-		<set name="magicLvl" val="70" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
@@ -961,6 +964,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5855" levels="2" name="Stun">
+		<table name="#magicLvl"> 80 85 </table>
 		<table name="#activateRate"> -1 80 </table>
 		<table name="#lvlBonusRate"> 0 1 </table>
 		<table name="#effectRange"> 1100 400 </table>
@@ -974,7 +978,7 @@
 		<set name="fanRange" val="0,0,300,90" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill0100" />
-		<set name="magicLvl" val="80" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
@@ -1128,7 +1132,7 @@
 	<skill id="5862" levels="1" name="Destruction of the Body">
 		<set name="affectLimit" val="10-10" />
 		<set name="effectPoint" val="-1000" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1139,7 +1143,7 @@
 	<skill id="5863" levels="1" name="Destruction of the Soul">
 		<set name="affectLimit" val="10-10" />
 		<set name="effectPoint" val="-1000" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1414,9 +1418,10 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5877" levels="4" name="Chant of Worm Waking">
+		<table name="#magicLvl"> 78 80 83 85 </table>
 		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="1000" />
-		<set name="magicLvl" val="78" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1726,6 +1731,7 @@
 		</for>
 	</skill>
 	<skill id="5889" levels="3" name="Tainted Shackle">
+		<table name="#magicLvl"> 76 79 81 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="TARGET_LOCK" />
@@ -1736,7 +1742,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="76" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
@@ -1745,6 +1751,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5890" levels="3" name="Tainted Mass Shackle">
+		<table name="#magicLvl"> 83 84 85 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="TARGET_LOCK" />
@@ -1756,7 +1763,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill0402" />
 		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE" />
@@ -1775,6 +1782,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5892" levels="2" name="Cunning Coercion">
+		<table name="#magicLvl"> 80 85 </table>
 		<table name="#hitTime"> 1000 11470 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
@@ -1789,7 +1797,7 @@
 		<set name="icon" val="icon.skill0358" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="70" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1000" />

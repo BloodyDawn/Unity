@@ -158,6 +158,7 @@
 		<set name="trait" val="PARALYZE" />
 	</skill>
 	<skill id="5708" levels="2" name="Water Cannon">
+		<table name="#magicLvl"> 61 83 </table>
 		<table name="#effectPoints"> -574 -684 </table>
 		<set name="affectLimit" val="5-15" />
 		<set name="castRange" val="900" />
@@ -167,7 +168,7 @@
 		<set name="fanRange" val="0,0,400,60" />
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="61" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -181,13 +182,14 @@
 		</for>
 	</skill>
 	<skill id="5709" levels="2" name="Whirlpool">
+		<table name="#magicLvl"> 61 83 </table>
 		<table name="#effectPoints"> -574 -684 </table>
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="1200" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="61" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -200,6 +202,7 @@
 		</for>
 	</skill>
 	<skill id="5710" levels="2" name="Triple Sword">
+		<table name="#magicLvl"> 61 83 </table>
 		<table name="#effectPoints"> -574 -684 </table>
 		<set name="affectLimit" val="5-15" />
 		<set name="castRange" val="40" />
@@ -207,7 +210,7 @@
 		<set name="effectRange" val="1400" />
 		<set name="fanRange" val="0,0,500,60" />
 		<set name="hitTime" val="1500" />
-		<set name="magicLvl" val="61" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE" />
@@ -944,8 +947,9 @@
 		</for>
 	</skill>
 	<skill id="5742" levels="5" name="Recharge">
+		<table name="#magicLvl"> 10 20 30 40 50 </table>
 		<set name="effectPoint" val="100" />
-		<set name="magicLvl" val="10" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1069,13 +1073,14 @@
 		</for>
 	</skill>
 	<skill id="5748" levels="12" name="Meteor Shower">
+		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#effectPoints"> -138 -204 -285 -379 -477 -566 -635 -659 -676 -689 -700 -709 </table>
 		<set name="affectLimit" val="5-12" />
 		<set name="coolTime" val="720" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="1080" />
 		<set name="icon" val="icon.skill1467" />
-		<set name="magicLvl" val="10" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="20000" />
@@ -1294,7 +1299,7 @@
 		<set name="abnormalType" val="SEED_OF_CRITICAL" />
 		<set name="effectPoint" val="100" />
 		<set name="icon" val="icon.skill5760" />
-		<set name="magicLvl" val="73" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="NONE" />
@@ -1448,10 +1453,11 @@
 		</for>
 	</skill>
 	<skill id="5769" levels="12" name="not_used">
+		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="418" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="10" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1460,10 +1466,11 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5770" levels="12" name="not_used">
+		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<set name="effectPoint" val="418" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="10" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1597,8 +1604,9 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5779" levels="42" name="Transform Effect">
+		<table name="#magicLvl"> 7 14 20 23 25 28 30 33 35 38 39 40 42 43 44 46 47 48 50 51 52 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<set name="icon" val="icon.skilltransform3" />
-		<set name="magicLvl" val="7" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="NONE" />

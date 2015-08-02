@@ -1001,12 +1001,13 @@
 		</for>
 	</skill>
 	<skill id="2065" levels="8" name="Box Key">
+		<table name="#magicLvl"> 1 10 20 30 40 50 60 70 </table>
 		<table name="#effectPoints"> -1 -2 -3 -4 -5 -6 -7 -8 </table>
 		<set name="castRange" val="40" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />

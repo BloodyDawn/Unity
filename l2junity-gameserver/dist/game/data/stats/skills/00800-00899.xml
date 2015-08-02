@@ -485,7 +485,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="100" />
 		<set name="icon" val="icon.skill0821" />
-		<set name="magicLvl" val="72" />
+		<set name="magicLvl" val="40" />
 		<set name="mpConsume" val="50" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="75000" />
@@ -2308,7 +2308,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill_transform_buff" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="75" />
 		<set name="mpConsume" val="69" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
@@ -2333,7 +2333,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill_transform_buff" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="75" />
 		<set name="mpConsume" val="70" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
@@ -2354,6 +2354,7 @@
 		</for>
 	</skill>
 	<skill id="896" levels="6" name="Rolling Step">
+		<table name="#magicLvl"> 80 81 82 83 84 85 </table>
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
 		<table name="#mpConsume"> 72 73 74 74 75 75 </table>
 		<table name="#pvePower"> 9503 9702 9896 10084 10266 10440 </table>
@@ -2363,7 +2364,7 @@
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill_transform_etc" />
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
@@ -2383,6 +2384,7 @@
 		</pvpEffects>
 	</skill>
 	<skill id="897" levels="6" name="Double Blast">
+		<table name="#magicLvl"> 80 81 82 83 84 85 </table>
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
 		<table name="#mpConsume"> 72 73 74 74 75 75 </table>
 		<table name="#pvePower"> 9503 9702 9896 10084 10266 10440 </table>
@@ -2392,7 +2394,7 @@
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_etc" />
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
@@ -2411,6 +2413,7 @@
 		</pvpEffects>
 	</skill>
 	<skill id="898" levels="6" name="Tornado Slash">
+		<table name="#magicLvl"> 80 81 82 83 84 85 </table>
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
 		<table name="#mpConsume"> 72 73 74 74 75 75 </table>
 		<table name="#pvePower"> 5068 5175 5278 5379 5475 5568 </table>
@@ -2420,7 +2423,7 @@
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_etc" />
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
@@ -2439,6 +2442,7 @@
 		</pvpEffects>
 	</skill>
 	<skill id="899" levels="6" name="Cat Roar">
+		<table name="#magicLvl"> 80 81 82 83 84 85 </table>
 		<table name="#effectPoints"> -676 -679 -681 -684 -687 -689 </table>
 		<table name="#mpConsume"> 72 73 74 74 75 75 </table>
 		<table name="#pvePower"> 3168 3234 3299 3362 3422 3480 </table>
@@ -2455,7 +2459,7 @@
 		<set name="icon" val="icon.skill_transform_debuff" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="20" />
-		<set name="magicLvl" val="83" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />

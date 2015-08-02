@@ -246,6 +246,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="basicProperty" val="NONE" />
+		<set name="magicLvl" val="72" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5614" levels="1" name="Raid Boss (Lv. 87)">
@@ -843,7 +844,7 @@
 		<table name="#abnormalTypes"> MAGIC_CRITICAL_UP MAGIC_CRITICAL_UP HIT_UP </table>
 		<table name="#effectPoints"> 582 635 532 </table>
 		<table name="#icons"> icon.skill1303 icon.skill1303 icon.skill1240 </table>
-		<table name="#magicLvl"> 64 72 80 </table> <!-- Guessed -->
+		<table name="#magicLvl"> 64 72 56 </table> <!-- Guessed -->
 		<table name="#mCritRate"> 2 3 4 </table> <!-- Guessed -->
 		<table name="#mpConsume"> 46 52 42 </table> <!-- Guessed -->
 		<table name="#mpInitialConsume"> 12 13 10 </table> <!-- Guessed -->
@@ -1676,6 +1677,7 @@
 		</for>
 	</skill>
 	<skill id="5679" levels="3" name="Oblivion Trap">
+		<table name="#magicLvl"> 64 68 72 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="MIRAGE_TRAP" />
@@ -1688,7 +1690,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="64" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
@@ -2116,6 +2118,7 @@
 		</for>
 	</skill>
 	<skill id="5697" levels="4" name="Seal">
+		<table name="#magicLvl"> 68 70 72 74 </table>
 		<!-- Imbue Seed of Destruction end effect. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
@@ -2129,7 +2132,7 @@
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="isTriggeredSkill" val="true" />
 		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="68" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />

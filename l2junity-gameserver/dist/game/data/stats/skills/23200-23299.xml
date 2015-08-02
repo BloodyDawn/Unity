@@ -153,6 +153,7 @@
 		</cond>
 	</skill>
 	<skill id="23210" levels="85" name="Aura Flare">
+		<table name="#magicLvl"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </table>
 		<table name="#effectPoints"> -74 -77 -81 -85 -89 -93 -97 -101 -106 -110 -115 -120 -125 -130 -135 -140 -146 -151 -157 -163 -169 -175 -181 -188 -194 -201 -208 -214 -221 -228 -236 -243 -250 -258 -265 -273 -280 -288 -296 -303 -311 -319 -327 -335 -343 -350 -358 -366 -374 -381 -389 -396 -404 -411 -419 -426 -433 -440 -446 -453 -459 -466 -472 -478 -483 -489 -494 -499 -504 -508 -513 -517 -520 -524 -527 -530 -533 -536 -538 -541 -543 -545 -547 -549 -551 </table>
 		<set name="abnormalLvl" val="0" />
 		<set name="abnormalTime" val="3" />
@@ -161,7 +162,7 @@
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="icon" val="icon.skill1231" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A3" />
 		<set name="reuseDelay" val="1000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -171,12 +172,13 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23211" levels="85" name="Prominence">
+		<table name="#magicLvl"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </table>
 		<table name="#effectPoints"> -92 -97 -101 -106 -111 -116 -121 -126 -132 -138 -143 -149 -156 -162 -168 -175 -182 -189 -196 -204 -211 -219 -227 -235 -243 -251 -259 -268 -277 -285 -294 -303 -313 -322 -331 -341 -350 -360 -369 -379 -389 -399 -408 -418 -428 -438 -448 -457 -467 -477 -486 -495 -505 -514 -523 -532 -541 -549 -558 -566 -574 -582 -590 -597 -604 -611 -617 -624 -630 -635 -641 -646 -650 -655 -659 -662 -666 -669 -673 -676 -679 -681 -684 -687 -689 </table>
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="icon" val="icon.skill1230" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -185,13 +187,14 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23212" levels="85" name="Flame Strike">
+		<table name="#magicLvl"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </table>
 		<table name="#effectPoints"> -92 -97 -101 -106 -111 -116 -121 -126 -132 -138 -143 -149 -156 -162 -168 -175 -182 -189 -196 -204 -211 -219 -227 -235 -243 -251 -259 -268 -277 -285 -294 -303 -313 -322 -331 -341 -350 -360 -369 -379 -389 -399 -408 -418 -428 -438 -448 -457 -467 -477 -486 -495 -505 -514 -523 -532 -541 -549 -558 -566 -574 -582 -590 -597 -604 -611 -617 -624 -630 -635 -641 -646 -650 -655 -659 -662 -666 -669 -673 -676 -679 -681 -684 -687 -689 </table>
 		<set name="affectLimit" val="5-12" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="icon" val="icon.skill1181" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -519,6 +522,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23235" levels="1" name="Singer and Dancer Agathion Special Skill: Hunter's Song">
@@ -538,6 +542,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23237" levels="1" name="Swords' Song">
@@ -592,7 +597,7 @@
 		<set name="effectRange" val="1500" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="77" />
+		<set name="magicLvl" val="82" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -627,6 +632,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="79" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -695,13 +701,14 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="49" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.05">
 					<using kind="BLUNT" />
 				</mul>
-				<!-- TODO:? <add stat="stunProf" val="8"> <using kind="BLUNT" /> </add> -->
+				<!-- TODO:? <add stat="stunProf" val="8"> <using kind="BLUNT"  /> </add> -->
 			</effect>
 		</for>
 	</skill>
@@ -720,6 +727,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="49" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -747,6 +755,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="46" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -774,6 +783,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="46" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -827,6 +837,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="76" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -851,6 +862,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="82" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -869,6 +881,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="effectPoint" val="1" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="78" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="CallParty" />
@@ -880,6 +893,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23251" levels="1" name="Agathion Cute Trick - Makeshift Bat">
@@ -888,6 +902,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23252" levels="1" name="Agathion Cute Trick - Griffin">
@@ -896,6 +911,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23253" levels="1" name="Master's Blessing - Focus">
@@ -911,6 +927,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="52" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -931,6 +948,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="56" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -951,6 +969,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="52" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -971,6 +990,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="56" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -991,6 +1011,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="72" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1011,6 +1032,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="70" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1031,6 +1053,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="52" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1051,6 +1074,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="48" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1071,6 +1095,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="52" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1091,6 +1116,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="40" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1111,6 +1137,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="44" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1131,6 +1158,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="52" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1151,6 +1179,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="72" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1171,6 +1200,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="52" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1191,6 +1221,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="30" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1211,6 +1242,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="52" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1238,6 +1270,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="74" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1258,6 +1291,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="74" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1278,6 +1312,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="70" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1298,6 +1333,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="74" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1353,6 +1389,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="78" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1385,6 +1422,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="78" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1416,6 +1454,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="78" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1643,6 +1682,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="49" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1669,6 +1709,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="46" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1692,6 +1733,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="1" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="NoblesseBless" />
@@ -1736,7 +1778,7 @@
 		<set name="affectRange" val="200" />
 		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="77" />
+		<set name="magicLvl" val="82" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1770,6 +1812,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="79" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1836,13 +1879,14 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="49" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.05">
 					<using kind="BLUNT" />
 				</mul>
-				<!-- TODO:? <add stat="stunProf" val="8"> <using kind="BLUNT" /> </add> -->
+				<!-- TODO:? <add stat="stunProf" val="8"> <using kind="BLUNT"  /> </add> -->
 			</effect>
 		</for>
 	</skill>
@@ -1860,6 +1904,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="49" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1886,6 +1931,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="46" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1912,6 +1958,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="46" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1963,6 +2010,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="76" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -1986,6 +2034,7 @@
 		<set name="effectPoint" val="1" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="magicLvl" val="82" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
@@ -2014,7 +2063,7 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="isTriggeredSkill" val="true" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="basicProperty" val="MAGIC" />
@@ -2036,7 +2085,7 @@
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" />
 		<set name="isTriggeredSkill" val="true" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
 		<set name="effectPoint" val="100" />

@@ -209,6 +209,7 @@
 		</for>
 	</skill>
 	<skill id="1108" levels="4" name="Seal of Flame">
+		<table name="#magicLvl"> 48 56 68 74 </table>
 		<table name="#abnormalLvls"> 5 6 7 8 </table>
 		<table name="#dot"> 60 73 84 92 </table>
 		<table name="#effectPoints"> -286 -333 -390 -409 </table>
@@ -236,6 +237,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -244,6 +246,7 @@
 		</for>
 	</skill>
 	<skill id="1111" levels="18" name="Summon Kat the Cat">
+		<table name="#magicLvl"> 20 25 30 35 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 31 35 42 48 56 62 69 75 82 85 88 92 95 98 101 104 106 109 </table>
 		<table name="#mpInitialConsume"> 8 9 11 12 14 16 18 19 21 22 22 23 24 25 26 26 27 28 </table>
 		<table name="#reuseDelay"> 5400000 5400000 5400000 5400000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 </table>
@@ -264,6 +267,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="#reuseDelay" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<and>
@@ -333,6 +337,7 @@
 		</for>
 	</skill>
 	<skill id="1128" levels="18" name="Summon Shadow">
+		<table name="#magicLvl"> 20 25 30 35 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 31 35 42 48 56 62 69 75 82 85 88 92 95 98 101 104 106 109 </table>
 		<table name="#mpInitialConsume"> 8 9 11 12 14 16 18 19 21 22 22 23 24 25 26 26 27 28 </table>
 		<table name="#reuseDelay"> 5400000 5400000 5400000 5400000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 </table>
@@ -353,6 +358,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="#reuseDelay" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<and>
@@ -369,6 +375,7 @@
 		</for>
 	</skill>
 	<skill id="1129" levels="13" name="Summon Reanimated Man">
+		<table name="#magicLvl"> 44 52 60 64 68 72 74 </table>
 		<table name="#itemConsumeCount"> 11 13 6 9 9 6 9 0 0 0 0 0 0 </table>
 		<table name="#itemConsumeCountOT"> 0 0 1 1 1 2 2 0 0 0 0 0 0 </table>
 		<table name="#itemConsumeSteps"> 0 0 14 14 14 14 14 0 0 0 0 0 0 </table>
@@ -387,6 +394,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="400" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<and>
@@ -403,6 +411,7 @@
 		</for>
 	</skill>
 	<skill id="1139" levels="2" name="Servitor Magic Shield">
+		<table name="#magicLvl"> 44 52 </table>
 		<table name="#abnormalLvls"> 2 3 </table>
 		<table name="#effectPoints"> 418 495 </table>
 		<table name="#mDef"> 1.23 1.3 </table>
@@ -424,6 +433,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SERVITOR" />
 		<for>
 			<effect name="Buff">
@@ -432,6 +442,7 @@
 		</for>
 	</skill>
 	<skill id="1140" levels="3" name="Servitor Physical Shield">
+		<table name="#magicLvl"> 40 48 56 </table>
 		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#effectPoints"> 379 457 532 </table>
 		<table name="#mpConsume"> 28 35 41 </table>
@@ -453,6 +464,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SERVITOR" />
 		<for>
 			<effect name="Buff">
@@ -461,6 +473,7 @@
 		</for>
 	</skill>
 	<skill id="1141" levels="2" name="Servitor Haste">
+		<table name="#magicLvl"> 44 52 </table>
 		<table name="#abnormalLvls"> 1 2 </table>
 		<table name="#effectPoints"> 418 495 </table>
 		<table name="#mpConsume"> 31 38 </table>
@@ -482,6 +495,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SERVITOR" />
 		<for>
 			<effect name="Buff">
@@ -490,6 +504,7 @@
 		</for>
 	</skill>
 	<skill id="1144" levels="2" name="Servitor Wind Walk">
+		<table name="#magicLvl"> 35 48 </table>
 		<table name="#abnormalLvls"> 1 2 </table>
 		<table name="#effectPoints"> 331 457 </table>
 		<table name="#mpConsume"> 24 36 </table>
@@ -511,6 +526,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SERVITOR" />
 		<for>
 			<effect name="Buff">
@@ -519,6 +535,7 @@
 		</for>
 	</skill>
 	<skill id="1145" levels="3" name="Servitor Magic Boost">
+		<table name="#magicLvl"> 35 48 56 </table>
 		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#effectPoints"> 331 457 532 </table>
 		<table name="#mAtk"> 1.55 1.65 1.75 </table>
@@ -540,6 +557,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SERVITOR" />
 		<for>
 			<effect name="Buff">
@@ -548,6 +566,7 @@
 		</for>
 	</skill>
 	<skill id="1146" levels="3" name="Mighty Servitor">
+		<table name="#magicLvl"> 35 48 56 </table>
 		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#effectPoints"> 331 457 532 </table>
 		<table name="#mpConsume"> 24 36 42 </table>
@@ -569,6 +588,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SERVITOR" />
 		<for>
 			<effect name="Buff">
@@ -659,6 +679,7 @@
 		</for>
 	</skill>
 	<skill id="1154" levels="6" name="Summon Corrupted Man">
+		<table name="#magicLvl"> 40 48 56 62 66 70 </table>
 		<table name="#itemConsumeCount"> 3 3 3 3 3 3 </table>
 		<table name="#mpConsume"> 56 69 82 92 98 104 </table>
 		<table name="#mpInitialConsume"> 14 18 21 23 25 26 </table>
@@ -677,6 +698,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="400" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 		<cond>
 			<and>
@@ -747,6 +769,7 @@
 		</for>
 	</skill>
 	<skill id="1157" levels="5" name="Body To Mind">
+		<table name="#magicLvl"> 25 40 52 58 66 </table>
 		<table name="#amount"> 22 35 47 53 61 </table>
 		<table name="#effectPoints"> 243 379 495 549 611 </table>
 		<table name="#hpConsume"> 131 209 280 318 366 </table>
@@ -759,6 +782,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="ManaHeal">
@@ -999,7 +1023,7 @@
 	<skill id="1170" levels="13" name="Anchor">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<table name="#effectPoints"> -418 -457 -495 -532 -549 -566 -582 -597 -611 -624 -635 -646 -655 </table>
-		<table name="#magicLvl"> 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#magicLvl"> 40 48 52 56 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 31 35 38 41 43 44 46 48 49 51 52 53 55 </table>
 		<table name="#mpInitialConsume"> 8 9 10 11 11 11 12 12 13 13 13 14 14 </table>
 		<set name="abnormalTime" val="5" />
@@ -1266,6 +1290,7 @@
 		</for>
 	</skill>
 	<skill id="1182" levels="3" name="Water Resistance">
+		<table name="#magicLvl"> 25 40 44 </table>
 		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#effectPoints"> 243 379 418 </table>
 		<table name="#mpConsume"> 18 28 31 </table>
@@ -1287,6 +1312,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -1371,6 +1397,7 @@
 		</for>
 	</skill>
 	<skill id="1189" levels="3" name="Wind Resistance">
+		<table name="#magicLvl"> 35 40 44 </table>
 		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#effectPoints"> 331 379 418 </table>
 		<table name="#mpConsume"> 24 28 31 </table>
@@ -1392,6 +1419,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -1400,6 +1428,7 @@
 		</for>
 	</skill>
 	<skill id="1191" levels="3" name="Fire Resistance">
+		<table name="#magicLvl"> 30 40 44 </table>
 		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#effectPoints"> 285 379 418 </table>
 		<table name="#mpConsume"> 21 28 31 </table>
@@ -1421,6 +1450,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
