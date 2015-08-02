@@ -1423,11 +1423,12 @@
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10789" levels="1" name="Flash Trap">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Flash Trap -->
 		<set name="icon" val="icon.skill0517" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="97" />
 		<set name="mpConsume" val="47" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
@@ -1435,13 +1436,23 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="45000" />
+		<set name="staticReuse" val="true" />
+		<cond msgId="113" addName="1">
+			<player npcIdRadius="13052,150,false" />
+		</cond>
+		<for>
+			<effect name="SummonTrap">
+				<param npcId="13052" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10790" levels="1" name="Explosion Trap">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Damage Trap -->
 		<set name="icon" val="icon.skill0514" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="97" />
 		<set name="mpConsume" val="39" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
@@ -1449,48 +1460,61 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="45000" />
+		<set name="staticReuse" val="true" />
+		<cond msgId="113" addName="1">
+			<player npcIdRadius="13037,150,false" />
+		</cond>
+		<for>
+			<effect name="SummonTrap">
+				<param npcId="13037" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10791" levels="4" name="Frost Trap">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Plants a Frost Trap, decreasing the enemy's Speed, Atk. Spd. and Casting Spd. -->
+		<!-- TODO: Find npcId for additional level -->
 		<set name="icon" val="icon.skill10791" />
-		<table name="#npcIds"> 13065 13066 13067 13068 13069 13070 </table>
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="97" />
 		<set name="mpConsume" val="39" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="45000" />
+		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
-			<player npcIdRadius="#npcIds,150,false" />
+			<player npcIdRadius="13057,150,false" />
 		</cond>
 		<for>
 			<effect name="SummonTrap">
-				<param npcId="#npcIds" />
+				<param npcId="13326" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="10792" levels="4" name="Gravity Trap">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Plants a Gravity Trap, immobilizing the enemy. -->
-		<table name="#npcIds"> 13065 13066 13067 13068 13069 13070 </table>
+		<!-- TODO: Find npcId for additional level -->
 		<set name="icon" val="icon.skill10792" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="97" />
 		<set name="mpConsume" val="39" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="reuseDelay" val="45000" />
+		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
-			<player npcIdRadius="#npcIds,150,false" />
+			<player npcIdRadius="13057,150,false" />
 		</cond>
 		<for>
 			<effect name="SummonTrap">
-				<param npcId="#npcIds" />
+				<param npcId="13327" />
 			</effect>
 		</for>
 	</skill>

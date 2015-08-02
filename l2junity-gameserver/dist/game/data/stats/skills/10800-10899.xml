@@ -125,12 +125,13 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10805" levels="4" name="Quick Charge">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily teleport 500 forward. -->
 		<table name="#castRanges"> 500 600 700 800 </table>
 		<table name="#magicLvl"> 89 92 95 98 </table>
 		<table name="#mpConsumes"> 41 44 46 48 </table>
 		<set name="icon" val="icon.skill10805" />
+		<set name="flyCourse" val="180" /> <!-- Teleport to Front -->
+		<set name="flyRadius" val="500" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -144,6 +145,9 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Blink" />
+		</for>
 	</skill>
 	<skill id="10806" levels="4" name="Frost Trap">
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -192,17 +196,17 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10809" levels="1" name="Survival Movement">
-		<!-- TODO Disappears after 4 strikes. / abnormalType -->
+		<!-- TODO Disappears after 4 strikes. -->
 		<!-- P. Evasion + 15. Disappears after 4 strikes. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
+		<set name="abnormalType" val="SPECIAL_MOVE_UP" />
 		<set name="icon" val="icon.skill1087" />
 		<set name="isTriggeredSkill" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="30000" />
 		<set name="staticReuse" val="true" />
-		<set name="abnormalType" val="SPECIAL_MOVE_UP" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
