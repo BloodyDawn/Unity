@@ -346,7 +346,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="PD_DOWN" />
 		<set name="activateRate" val="80" />
-		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
+		<set name="basicProperty" val="PHYSICAL" /> <!-- Guessed -->
 		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="80" />
 		<set name="effectPoint" val="-100" />
@@ -359,6 +359,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -388,6 +389,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
+		<set name="magicCriticalRate" val="-5" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="BlockActions">

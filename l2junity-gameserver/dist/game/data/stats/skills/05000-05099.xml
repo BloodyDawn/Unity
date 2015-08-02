@@ -162,12 +162,13 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5008" levels="5" name="Frintezza's Songs">
+		<table name="#specialLevel"> 0 0 -1 0 0 </table>
 		<!-- Confirmed CT2.5 -->
 		<!-- Frintezza Skills -->
 		<table name="#abnormalTypes"> NONE NONE ULTIMATE_BUFF HEAL_EFFECT_DOWN STUN </table>
 		<table name="#activateRate"> 0 0 0 10 10 </table>
 		<table name="#attackAndSpeed"> 1 1 1.2 1 1 </table>
-		<table name="#basicProperties"> NONE NONE NONE MAGIC MAGIC </table>
+		<table name="#basicProperty"> NONE NONE NONE MAGIC MAGIC </table>
 		<table name="#effectname1"> Buff Buff Buff Buff BlockActions </table>
 		<table name="#effectPoints"> 100 100 100 -100 -100 </table>
 		<table name="#healEffect"> 1 1 1 0.5 1 </table>
@@ -180,7 +181,7 @@
 		<table name="#time"> 0 0 5 5 5 </table>
 		<table name="#traits"> NONE NONE NONE DERANGEMENT DERANGEMENT </table>
 		<set name="abnormalType" val="#abnormalTypes" />
-		<set name="basicProperty" val="#basicProperties" />
+		<set name="basicProperty" val="#basicProperty" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="icon" val="#icons" />
 		<set name="isDebuff" val="#isDebuff" />
@@ -192,6 +193,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="specialLevel" val="#specialLevel" />
 		<set name="trait" val="#traits" />
 		<for>
 			<effect name="#effectname1">

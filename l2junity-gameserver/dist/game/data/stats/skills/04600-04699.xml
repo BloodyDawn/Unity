@@ -2366,6 +2366,7 @@
 		</for>
 	</skill>
 	<skill id="4689" levels="2" name="Valakas Fear">
+		<table name="#basicProperty"> MAGIC NONE </table>
 		<!-- Confirmed CT2.5 -->
 		<!-- Valakas Skills -->
 		<!-- Lvl 1: Valakas Fear from Front -->
@@ -2381,7 +2382,7 @@
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
 		<set name="activateRate" val="#activateRates" />
 		<set name="affectRange" val="1000" />
-		<set name="basicProperty" val="MAGIC" />
+		<set name="basicProperty" val="#basicProperty" />
 		<set name="coolTime" val="#coolTime" />
 		<set name="effectPoint" val="-100" />
 		<set name="attributeType" val="FIRE" />

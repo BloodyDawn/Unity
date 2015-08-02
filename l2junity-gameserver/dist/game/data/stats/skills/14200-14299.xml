@@ -982,6 +982,7 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14263" levels="2" name="Electric Attack">
+		<table name="#specialLevel"> 0 -1 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<table name="#isDebuffs"> false true </table>
 		<set name="icon" val="icon.skill1275" />
@@ -997,6 +998,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="specialLevel" val="#specialLevel" />
+		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="#isDebuffs" />
 	</skill>
 	<skill id="14264" levels="1" name="Poison Cloud">
