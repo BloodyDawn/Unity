@@ -7,7 +7,7 @@
 		<table name="#magicLvl"> 85 90 95 </table>
 		<table name="#pveDamage"> 1.50 1.55 1.60 </table>
 		<set name="icon" val="icon.skill1520" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -117,7 +117,7 @@
 		<table name="#mpConsume"> 42 38 40 42 43 45 46 46 50 57 62 </table>
 		<table name="#mpInitialConsume"> 11 10 10 10 11 11 11 11 12 14 15 </table>
 		<table name="#power"> 1.10 1.13 1.16 1.19 1.22 1.25 1.28 1.3 1.3 1.3 1.3 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#hotValue"> 172 173 173 174 174 175 175 176 184 192 200 </table>
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalLvl" val="1" />
@@ -220,7 +220,7 @@
 		<table name="#mpInitialConsume"> 28 28 28 29 29 30 30 31 32 33 34 </table>
 		<table name="#power"> 1488 1495 1507 1519 1532 1544 1557 1570 1749 1763 1777 </table>
 		<table name="#effectPoints"> 867 874 886 895 902 909 918 927 935 944 952 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<set name="icon" val="icon.skill11755" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
@@ -251,7 +251,7 @@
 		<table name="#mpInitialConsume"> 41 42 42 43 44 44 45 46 47 48 50 </table>
 		<table name="#power"> 1488 1495 1507 1519 1532 1544 1557 1570 1749 1763 1777 </table>
 		<table name="#effectPoints"> 867 874 886 895 902 909 918 927 935 944 952 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<set name="icon" val="icon.skill11756" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
@@ -279,7 +279,7 @@
 		<table name="#power"> 1191 1200 1210 1220 1230 1240 1250 1261 1406 1418 1430 </table>
 		<table name="#effectPoints"> 1734 1760 1781 1798 1811 1826 1844 1865 1881 1899 1917 </table>
 		<table name="#mpConsumes"> 277 281 286 290 295 300 305 310 314 319 323 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<set name="icon" val="icon.skill11757" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="PARTY" />
@@ -367,7 +367,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Instantly recovers target's MP with a maximum of 166 Power depending on target's level. Also, for 10 seconds, recovers 12 MP per second. Ineffective on classes that have the Recharge skill. -->
 		<table name="#effectPoint"> 867 874 886 895 902 909 918 927 935 944 952 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsume"> 146 149 150 154 157 160 162 166 167 170 173 </table>
 		<table name="#mpInitialConsume"> 37 37 38 38 39 40 41 41 42 43 43 </table>
 		<table name="#amount"> 166 167 170 174 177 180 183 187 191 195 201 </table>
@@ -415,7 +415,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Instantly recovers party members' MP with a maximum of 700 Power depending on their level. Also, for 10 seconds, recovers 50 MP per second. -->
 		<table name="#effectPoint"> 1798 1811 1826 1844 1865 1878 1895 1912 </table>
-		<table name="#magicLvl"> 91 93 95 97 99 </table>
+		<table name="#magicLvl"> 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsume"> 3120 3176 3224 3288 3344 3398 3454 3510 </table>
 		<table name="#mpInitialConsume"> 780 794 806 822 836 850 864 878 </table>
 		<table name="#amount"> 700 715 725 740 750 768 786 804 </table>
@@ -536,7 +536,7 @@
 		<!-- Crystallize yourself and become immune to damage and debuffs for 10 seconds. Recover 266 HP and 74 MP every second. -->
 		<table name="#effectPoint"> 867 895 913 933 956 977 999 </table>
 		<table name="#hpPower"> 266 273 280 285 342 410 492 </table>
-		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpPower"> 74 77 81 84 101 121 145 </table>
 		<table name="#mpConsume"> 73 77 80 83 86 90 92 </table>
 		<table name="#abnormalLevels"> 2 3 4 5 5 5 5 </table>
@@ -572,7 +572,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 153 Power added to M. Atk. -->
 		<table name="#effectPoints"> -867 -880 -891 -899 -906 -913 -922 -933 -941 -950 -959 </table>
-		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 70 72 76 78 82 85 88 92 95 97 101 </table>
 		<table name="#power"> 153 158 163 167 171 176 180 185 203 209 215 </table>
 		<set name="icon" val="icon.skill11766" />
@@ -600,7 +600,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Inflicts damage on target and nearby enemies with 117 Power and decreases aggression toward yourself. -->
 		<table name="#effectPoints"> -1733 -1747 -1771 -1789 -1803 -1817 -1835 -1853 -1870 -1887 -1904 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 423 432 450 468 487 506 526 547 561 589 597 </table>
 		<table name="#power"> 117 119 123 126 129 133 136 139 149 151 157 </table>
 		<set name="affectLimit" val="10-10" />
@@ -665,7 +665,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., target's MP Consumption + 50%, and Casting Spd. and Atk. Spd. - 20%. -->
 		<table name="#effectPoint"> -867 -880 -895 -906 -918 -933 -945 -958 -971 </table>
-		<table name="#magicLvl"> 85 87 90 93 96 99 </table>
+		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
 		<table name="#mpInitialConsume"> 7 7 8 8 9 9 9 10 10 </table>
 		<table name="#mpConsume"> 28 29 30 33 34 37 38 40 42 </table>
 		<table name="#MpConsumeRate"> 1.5 2.5 3.0 3.5 4.0 4.0 4.0  4.0 4.0 </table>
@@ -751,7 +751,7 @@
 		<table name="#def"> 1000 1500 2000 2500 4000 4500 5000 </table>
 		<table name="#mpConsume"> 14 14 17 18 19 20 21 </table>
 		<table name="#mpInitialConsume"> 3 4 4 4 5 5 6 </table>
-		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="HEAL_POWER_UP" />
@@ -878,7 +878,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Leaves a mark that decreases target's P. Def. and M. Def. by 10%, and consumes 113 HP every second for 60 seconds. -->
 		<table name="#effectPoints"> -867 -886 -899 -909 -922 -936 -949 -963 </table>
-		<table name="#magicLvl"> 85 88 91 94 97 </table>
+		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
 		<table name="#mpConsumes"> 32 34 36 38 26 42 43 46 </table>
 		<table name="#mpConsumesInit"> 8 8 9 9 6 10 11 11 </table>
 		<table name="#dot"> 113 118 123 128 134 134 134 134 </table>
@@ -960,7 +960,7 @@
 		<!-- Updated to Ertheia -->
 		<!-- Glory Days confirmed -->
 		<!-- Decreases Speed, Atk. Spd. and Casting Spd. by 50%. -->
-		<table name="#magicLvl"> 85 88 91 94 97 </table>
+		<table name="#magicLvl"> 85 88 91 94 97 100 103 106</table>
 		<table name="#speeds"> 0.5 0.4 0.3 0.2 0.1 0.1 0.1 0.1 </table>
 		<set name="icon" val="icon.skill1394" />
 		<set name="abnormalTime" val="10" />
@@ -991,7 +991,7 @@
 		<!-- Glory Days confirmed -->
 		<!-- Decreases target's Recovery by 50%. -->
 		<table name="#effectPoint"> -867 -874 -891 -902 -913 -927 -938 -950 -962 </table>
-		<table name="#magicLvl"> 85 86 89 92 95 98 </table>
+		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
 		<table name="#mpConsume"> 28 28 29 32 33 36 36 38 40 </table>
 		<table name="#mpInitialConsume"> 7 7 7 8 8 9 9 9 10 </table>
 		<table name="#healEffect"> 0.5 0.48 0.44 0.4 0.35 0.3 0.3 0.3 0.3 </table>
@@ -1179,7 +1179,7 @@
 		<table name="#regMp"> 3.6 4.2 4.8 5.4 6.2 7 8.6 </table>
 		<set name="icon" val="icon.skill11787" />
 		<set name="operateType" val="P" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -1205,7 +1205,7 @@
 		<table name="#maxMp"> 313 374 435 517 566 635 704 </table>
 		<set name="icon" val="icon.skill11788" />
 		<set name="operateType" val="P" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -1224,7 +1224,7 @@
 		<table name="#mDef"> 862 976 1104 1219 1374 1444 1517 </table>
 		<set name="icon" val="icon.skill10004" />
 		<set name="operateType" val="P" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -1241,7 +1241,7 @@
 		<table name="#res"> 20 22 24 26 30 32 34 </table>
 		<set name="icon" val="icon.skill10044" />
 		<set name="operateType" val="P" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -1277,7 +1277,7 @@
 		<table name="#traits"> 20 22 24 26 30 32 34 36 38 40 </table>
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 104 104 104 </table>
 		<set name="icon" val="icon.skill10005" />
-		<set name="magicLvl" val="87" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
@@ -1310,7 +1310,7 @@
 		<set name="castRange" val="600" />
 		<set name="reuseDelay" val="1000" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="magicLvl" val="87" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A4" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
@@ -1368,7 +1368,7 @@
 		<set name="castRange" val="600" />
 		<set name="reuseDelay" val="1000" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="magicLvl" val="89" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A4" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
@@ -1426,7 +1426,7 @@
 		<set name="castRange" val="600" />
 		<set name="reuseDelay" val="1000" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="magicLvl" val="91" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A4" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
@@ -1484,7 +1484,7 @@
 		<set name="castRange" val="600" />
 		<set name="reuseDelay" val="1000" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="magicLvl" val="93" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A4" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
