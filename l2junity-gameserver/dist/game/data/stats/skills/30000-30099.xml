@@ -228,13 +228,13 @@
 	<skill id="30008" levels="5" name="Wind Blend">
 		<!-- Updated to IO -->
 		<!-- For 3 sec., blends into the wind. Becomes one with the wind and disappears later on. Requires a sword or blunt weapon. -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<table name="#magicLvl"> 20 85 90 94 98 </table>
 		<table name="#mpConsumes"> 16 67 68 69 70 </table>
 		<table name="#reuseDelays"> 50000 50000 40000 30000 20000 </table>
 		<table name="#triggerLvl"> 1 2 2 2 2 </table>
 		<set name="icon" val="icon.skill30008" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="3" />
 		<set name="effectPoint" val="687" />
 		<set name="operateType" val="A2" />
@@ -255,10 +255,10 @@
 	<skill id="30009" levels="10" name="Deceptive Blink">
 		<!-- Updated to Ertheia -->
 		<!-- For 5 sec., blends into the wind and teleports backward, and Speed + 100. Requires a sword or blunt weapon. -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 10 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<table name="#mpConsumes"> 77 78 79 80 81 82 82 83 83 84 </table>
 		<set name="icon" val="icon.skill30009" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalVisualEffect" val="DECEPTIVE_BLINK" />
 		<set name="effectPoint" val="687" /> <!-- Unconfirmed -->

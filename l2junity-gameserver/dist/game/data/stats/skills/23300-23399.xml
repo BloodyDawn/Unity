@@ -199,7 +199,7 @@
 		</for>
 	</skill>
 	<skill id="23313" levels="5" name="Action Prohibit Immunity">
-		<table name="#abnormalLvls"> 1 2 3 4 0 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 0 </table>
 		<!-- Increases resistance to action-inhibiting attacks by 100%. -->
 		<set name="operateType" val="A4" />
 		<set name="abnormalType" val="RESIST_SHOCK" />
@@ -209,7 +209,7 @@
 		<set name="specialLevel" val="-3" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="-3" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23314" levels="5" name="Control Prohibit Immunity">
@@ -631,7 +631,7 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23342" levels="2" name="Norhand's Trace">
-		<table name="#abnormalLvls"> 1 2 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Norhand is searching for Skooldie. A trace of its voice remains. -->
 		<set name="icon" val="BranchSys.icon.br_rotten_jack_ghost_i00" />
@@ -648,11 +648,11 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="300" />
 		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23344" levels="5" name="Weakened Shilen's Breath">
-		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Is killed and poisoned by Shilen's Breath. Increases Dark Attack Resistance by 5 and HP recovery by 5%. Poison stage increases when killed while poisoned. -->
 		<set name="icon" val="icon.skill5076_c" />
@@ -667,7 +667,7 @@
 		<set name="specialLevel" val="-2" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="-2" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23345" levels="1" name="Region Banishment">

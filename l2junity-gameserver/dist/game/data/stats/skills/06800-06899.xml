@@ -705,10 +705,10 @@
 	<skill id="6842" levels="2" name="Enhance">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<table name="#abnormalLvls"> 1 2 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
 		<table name="#pAtk"> 1.12 1 </table>
 		<table name="#pAtkSpd"> 1.15 1.4 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="CASTING_TIME_UP" />
 		<set name="affectRange" val="600" />
@@ -1366,9 +1366,9 @@
 	<skill id="6873" levels="2" name="Hex">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<table name="#abnormalLvls"> 3 4 </table>
+		<table name="#abnormalLvl"> 3 4 </table>
 		<table name="#pDef"> 0.77 0.67 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="PD_DOWN" />
 		<set name="activateRate" val="80" />
@@ -1642,7 +1642,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6885" levels="3" name="Morale Boost">
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<!-- "The persistence of the brave who fight together in Dragon Valley receive resistance to Paralysis/Bleed/Poison/Stun +90, Critical Rate +50%, Critical Damage +15%, P. Atk. +15%, M. Atk. +15%, Atk. Spd. +15%, Casting Spd. +15%, and EXP bonus +20%." -->
 		<!-- High Five Skill -->
 		<table name="#bonusExp"> 1 1 1.2 </table>
@@ -1664,7 +1664,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="2000" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">

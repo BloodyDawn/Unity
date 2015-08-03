@@ -595,14 +595,14 @@
 	</skill>
 	<skill id="521" levels="8" name="Sharpshooting">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#accCombat"> 3 3 4 4 5 5 6 6 </table>
 		<table name="#effectPoints"> 566 582 597 611 624 635 646 655 </table>
 		<table name="#magicLvl"> 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 28 29 30 31 32 33 34 34 </table>
 		<table name="#pAtk"> 124 134 145 155 166 177 188 199 </table>
 		<table name="#range"> 50 50 100 100 150 150 200 200 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="SNIPE" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -638,7 +638,7 @@
 	</skill>
 	<skill id="522" levels="4" name="Real Target">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
-		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#castRange"> 600 700 800 900 </table>
 		<table name="#effectPoints"> -193 -252 -296 -323 </table>
 		<table name="#effectRange"> 1100 1200 1300 1400 </table>
@@ -646,7 +646,7 @@
 		<table name="#mpConsume"> 11 14 19 22 </table>
 		<table name="#trait_bow"> -12 -16 -20 -24 </table>
 		<table name="#trait_crossbow"> -16 -24 -32 -40 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="REAL_TARGET" />
 		<set name="abnormalVisualEffect" val="REAL_TARGET" />
@@ -1689,12 +1689,12 @@
 	</skill>
 	<skill id="559" levels="4" name="Spear">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 6 6 7 7 </table>
+		<table name="#abnormalLvl"> 6 6 7 7 </table>
 		<table name="#effectPoints"> -288 -300 -311 -320 </table>
 		<table name="#magicLvl"> 60 63 66 69 </table>
 		<table name="#mpConsume"> 61 63 67 70 </table>
 		<table name="#power"> 900 1013 1129 1248 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
@@ -2011,12 +2011,12 @@
 	</skill>
 	<skill id="571" levels="4" name="Poison Dust">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 6 6 7 7 </table>
+		<table name="#abnormalLvl"> 6 6 7 7 </table>
 		<table name="#effectPoints"> -566 -590 -611 -630 </table>
 		<table name="#magicLvl"> 60 63 66 69 </table>
 		<table name="#mpConsume"> 18 21 23 26 </table>
 		<table name="#mpInitialConsume"> 5 6 6 7 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
@@ -2217,13 +2217,13 @@
 	</skill>
 	<skill id="578" levels="4" name="Blaze Quake">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 6 6 7 7 </table>
+		<table name="#abnormalLvl"> 6 6 7 7 </table>
 		<table name="#dot"> 27 27 31 31 </table>
 		<table name="#effectPoints"> -477 -532 -582 -630 </table>
 		<table name="#magicLvl"> 60 63 66 69 </table>
 		<table name="#mpConsume"> 61 63 67 70 </table>
 		<table name="#power"> 625 703 784 867 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="DOT_ATTR" />
 		<set name="activateRate" val="60" />
@@ -2256,13 +2256,13 @@
 	</skill>
 	<skill id="579" levels="4" name="Fire Armor">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#effectPoints"> 477 532 582 630 </table>
 		<table name="#magicLvl"> 60 63 66 69 </table>
 		<table name="#mDef"> 800 900 1000 1100 </table>
 		<table name="#mpConsume"> 61 63 67 70 </table>
 		<table name="#pDef"> 1000 1100 1200 1300 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -2348,12 +2348,12 @@
 	</skill>
 	<skill id="582" levels="4" name="Scope Bleed">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 6 6 7 7 </table>
+		<table name="#abnormalLvl"> 6 6 7 7 </table>
 		<table name="#effectPoints"> -242 -271 -296 -320 </table>
 		<table name="#magicLvl"> 60 63 66 69 </table>
 		<table name="#mpConsume"> 61 63 67 70 </table>
 		<table name="#power"> 875 984 1098 1213 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="activateRate" val="50" />

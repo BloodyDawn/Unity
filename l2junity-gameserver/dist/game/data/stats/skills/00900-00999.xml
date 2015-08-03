@@ -779,12 +779,12 @@
 	</skill>
 	<skill id="927" levels="14" name="Burning Chop">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
-		<table name="#abnormalLvls"> 5 5 5 6 6 6 7 7 7 7 7 8 8 8 </table>
+		<table name="#abnormalLvl"> 5 5 5 6 6 6 7 7 7 7 7 8 8 8 </table>
 		<table name="#dot"> 43 43 43 53 53 53 61 61 61 61 61 66 66 66 </table>
 		<table name="#effectPoints"> -193 -213 -233 -252 -271 -279 -288 -296 -304 -311 -317 -323 -328 -333 </table>
 		<table name="#magicLvl"> 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#power"> 167 210 261 319 384 419 455 492 531 570 610 651 691 731 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="DOT_ATTR" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
@@ -2171,11 +2171,11 @@
 		</for>
 	</skill>
 	<skill id="982" levels="3" name="Combat Aura">
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#amount"> 1.03 1.04 1.05 </table>
 		<table name="#magicLvl"> 52 64 70 </table>
 		<table name="#mpConsume"> 38 48 52 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="KNIGHT_AURA" />
 		<set name="affectRange" val="1000" />
@@ -2333,7 +2333,7 @@
 		</for>
 	</skill>
 	<skill id="988" levels="3" name="Battle Whisper">
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<!-- High Five Skill -->
 		<table name="#amount"> 1.05 1.07 1.1 </table>
 		<table name="#effectPoints"> 486 566 448 </table>
@@ -2352,7 +2352,7 @@
 		<set name="abnormalType" val="WISPERING_OF_BATTLE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">

@@ -636,13 +636,13 @@
 	</skill>
 	<skill id="5638" levels="4" name="Feline Queen - Blessed Body">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 3 4 5 6 </table>
+		<table name="#abnormalLvl"> 3 4 5 6 </table>
 		<table name="#effectPoints"> 495 532 597 646 </table>
 		<table name="#magicLvl"> 52 56 64 72 </table>
 		<table name="#maxHp"> 1.2 1.25 1.3 1.35 </table>
 		<table name="#mpConsume"> 38 41 48 53 </table>
 		<table name="#mpInitialConsume"> 10 11 12 14 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="MAX_HP_UP" />
 		<set name="castRange" val="400" />
@@ -668,13 +668,13 @@
 	</skill>
 	<skill id="5639" levels="4" name="Feline Queen - Blessed Soul">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 3 4 5 6 </table>
+		<table name="#abnormalLvl"> 3 4 5 6 </table>
 		<table name="#effectPoints"> 495 532 582 635 </table>
 		<table name="#magicLvl"> 52 56 62 70 </table>
 		<table name="#maxMp"> 1.2 1.25 1.3 1.35 </table>
 		<table name="#mpConsume"> 38 41 46 52 </table>
 		<table name="#mpInitialConsume"> 10 11 12 13 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="MAX_MP_UP" />
 		<set name="castRange" val="400" />
@@ -700,13 +700,13 @@
 	</skill>
 	<skill id="5640" levels="2" name="Feline Queen - Haste">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 1 2 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
 		<table name="#effectPoints"> 418 495 </table>
 		<table name="#magicLvl"> 44 52 </table>
 		<table name="#mpConsume"> 31 38 </table>
 		<table name="#mpInitialConsume"> 8 10 </table>
 		<table name="#pAtkSpd"> 1.15 1.33 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
 		<set name="castRange" val="400" />
@@ -748,10 +748,10 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5642" levels="4" name="not_used">
-		<table name="#abnormalLvls"> 3 4 5 6 </table>
+		<table name="#abnormalLvl"> 3 4 5 6 </table>
 		<table name="#effectPoints"> 532 582 611 635 </table>
 		<table name="#magicLvl"> 56 62 66 70 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="SHIELD_PROB_UP" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -811,11 +811,11 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5645" levels="3" name="not_used">
-		<table name="#abnormalLvls"> 2 3 4 </table>
+		<table name="#abnormalLvl"> 2 3 4 </table>
 		<table name="#effectPoints"> 379 457 532 </table>
 		<table name="#magicLvl"> 40 48 56 </table>
 		<table name="#traits"> 30 40 50 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="RESIST_DERANGEMENT" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -840,7 +840,7 @@
 	</skill>
 	<skill id="5646" levels="3" name="Seraphim the Unicorn - Wild Magic">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#abnormalTypes"> MAGIC_CRITICAL_UP MAGIC_CRITICAL_UP HIT_UP </table>
 		<table name="#effectPoints"> 582 635 532 </table>
 		<table name="#icons"> icon.skill1303 icon.skill1303 icon.skill1240 </table>
@@ -848,7 +848,7 @@
 		<table name="#mCritRate"> 2 3 4 </table> <!-- Guessed -->
 		<table name="#mpConsume"> 46 52 42 </table> <!-- Guessed -->
 		<table name="#mpInitialConsume"> 12 13 10 </table> <!-- Guessed -->
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="#abnormalTypes" />
 		<set name="castRange" val="400" />
@@ -874,7 +874,7 @@
 	</skill>
 	<skill id="5647" levels="3" name="Seraphim the Unicorn - Clarity">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#effectPoints"> 549 611 655 </table>
 		<table name="#MagicalMpConsumeRate"> 0.9 0.85 0.8 </table>
 		<table name="#magicLvl"> 58 66 74 </table>
@@ -882,7 +882,7 @@
 		<table name="#MpConsumeRate"> 0.96 0.93 0.9 </table>
 		<table name="#mpInitialConsume"> 11 13 14 </table>
 		<table name="#SpiritOre"> 1 2 3 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="CHEAP_MAGIC" />
 		<set name="castRange" val="400" />
@@ -912,13 +912,13 @@
 	</skill>
 	<skill id="5648" levels="2" name="Seraphim the Unicorn - Empower">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 2 3 </table>
+		<table name="#abnormalLvl"> 2 3 </table>
 		<table name="#effectPoints"> 418 495 </table>
 		<table name="#magicLvl"> 44 52 </table>
 		<table name="#mAtk"> 1.65 1.75 </table>
 		<table name="#mpConsume"> 31 38 </table>
 		<table name="#mpInitialConsume"> 8 10 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="MA_UP" />
 		<set name="castRange" val="400" />
@@ -943,10 +943,10 @@
 		</for>
 	</skill>
 	<skill id="5649" levels="2" name="not_used">
-		<table name="#abnormalLvls"> 2 3 </table>
+		<table name="#abnormalLvl"> 2 3 </table>
 		<table name="#effectPoints"> 418 495 </table>
 		<table name="#magicLvl"> 44 52 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="AVOID_UP" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -962,10 +962,10 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5650" levels="3" name="not_used">
-		<table name="#abnormalLvls"> 4 5 6 </table>
+		<table name="#abnormalLvl"> 4 5 6 </table>
 		<table name="#effectPoints"> 495 566 624 </table>
 		<table name="#magicLvl"> 52 60 68 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="CANCEL_PROB_DOWN" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -999,13 +999,13 @@
 	<skill id="5652" levels="3" name="Nightshade - Death Whisper">
 		<!-- Confirmed CT2.5 -->
 		<!-- Summon Nightshade Skill -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#cAtk"> 1.25 1.3 1.35 </table>
 		<table name="#effectPoints"> 379 457 532 </table>
 		<table name="#magicLvl"> 40 48 56 </table>
 		<table name="#mpConsume"> 28 35 41 </table>
 		<table name="#mpInitialConsume"> 7 9 11 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="CRITICAL_DMG_UP" />
 		<set name="castRange" val="400" />
@@ -1032,13 +1032,13 @@
 	<skill id="5653" levels="2" name="Nightshade - Focus">
 		<!-- Confirmed CT2.5 -->
 		<!-- Summon Nightshade Skill -->
-		<table name="#abnormalLvls"> 2 3 </table>
+		<table name="#abnormalLvl"> 2 3 </table>
 		<table name="#effectPoints"> 418 495 </table>
 		<table name="#magicLvl"> 44 52 </table>
 		<table name="#mpConsume"> 31 38 </table>
 		<table name="#mpInitialConsume"> 8 10 </table>
 		<table name="#rCrit"> 1.25 1.3 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="CRITICAL_PROB_UP" />
 		<set name="castRange" val="400" />
@@ -1065,13 +1065,13 @@
 	<skill id="5654" levels="3" name="Nightshade - Guidance">
 		<!-- Confirmed CT2.5 -->
 		<!-- Summon Nightshade Skill -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#accCombat"> 2 3 4 </table>
 		<table name="#effectPoints"> 379 457 532 </table>
 		<table name="#magicLvl"> 56 62 64 </table>
 		<table name="#mpConsume"> 28 35 41 </table>
 		<table name="#mpInitialConsume"> 7 9 11 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="HIT_UP" />
 		<set name="castRange" val="400" />
@@ -1228,7 +1228,7 @@
 		</pvpEffects>
 	</skill>
 	<skill id="5659" levels="2" name="Gatekeeper Berserker Spirit">
-		<table name="#abnormalLvls"> 1 2 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
 		<table name="#effectPoints"> 331 486 </table>
 		<table name="#magicLvl"> 35 52 </table>
 		<table name="#mAtk"> 1.1 1.16 </table>
@@ -1241,7 +1241,7 @@
 		<table name="#pDef"> 0.95 0.92 </table>
 		<table name="#rEvas"> 2 4 </table>
 		<table name="#runSpd"> 5 8 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="BERSERKER" />
 		<set name="castRange" val="400" />

@@ -203,7 +203,7 @@
 		</for>
 	</skill>
 	<skill id="10508" levels="11" name="Blood Stab">
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Strike's the enemy's unprotected back with 32401 Power and additionally inflicts bleed. Over-hit. Critical hit. Half-kill. Requires a dagger or dual dagger. -->
@@ -211,7 +211,7 @@
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 59 60 62 64 66 68 71 73 75 77 79 </table>
 		<table name="#power"> 32401 33521 35765 38007 40251 42495 44737 46983 48511 50491 52471 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
@@ -468,9 +468,9 @@
 		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
 		<table name="#mpConsumes"> 38 40 42 44 46 48 50 52 </table>
 		<table name="#triggerLvl"> 1 2 3 4 5 6 6 6 </table>
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<set name="icon" val="icon.skill10514" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="activateRate" val="80" />
@@ -505,14 +505,14 @@
 		</endEffects>
 	</skill>
 	<skill id="10515" levels="6" name="Paralyzed">
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Your body is paralyzed. -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 6 6 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 6 6 </table>
 		<table name="#effectPoint"> 687 694 700 705 709 709 </table>
 		<table name="#magicLvl"> 85 88 91 94 97 99 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="abnormalVisualEffect" val="PARALYZE" />
@@ -535,14 +535,14 @@
 		</for>
 	</skill>
 	<skill id="10516" levels="9" name="Shadow Chase">
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Moves behind an enemy, cancels his target, and inflicts Stun. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
 		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
 		<table name="#mpConsumes"> 38 39 41 43 45 47 49 51 53 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
@@ -633,7 +633,7 @@
 		</for>
 	</skill>
 	<skill id="10520" levels="4" name="Final Ultimate Evasion">
-		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., increases P. Evasion by 60, M. Evasion by 60, M. Def. by 20%, P. Skill Evasion Rate by 60% and Debuff Resistance. Has a 40% chance of canceling the enemy's targeting when attacked. -->
@@ -643,7 +643,7 @@
 		<table name="#rEvas"> 60 65 70 75 </table>
 		<table name="#mEvas"> 60 70 80 90 </table>
 		<table name="#triggerLvl"> 1 2 3 4 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="SUPER_AVOID" />
 		<set name="icon" val="icon.skill10520" />
@@ -705,14 +705,14 @@
 		</for>
 	</skill>
 	<skill id="10523" levels="9" name="Poisoned">
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Poisoned by a toxin cloud. Decreases Speed, P. Atk., Shield Defense, P. Def., and M. Def., and blocks the use of magic. Decreases HP by 687 per second. -->
 		<table name="#dot"> 687 700 721 742 762 783 803 823 844 </table>
 		<table name="#effectPoint"> -707 -709 -709 -709 -709 -709 -709 -709 -709 </table>
 		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="2" />
 		<set name="abnormalType" val="POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
@@ -747,7 +747,7 @@
 		</for>
 	</skill>
 	<skill id="10524" levels="3" name="Evasive Counterstrike">
-		<table name="#abnormalLvls"> 1 2 2 </table>
+		<table name="#abnormalLvl"> 1 2 2 </table>
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, evades physical skill attacks and reflects part of the damage received. -->
@@ -757,7 +757,7 @@
 		<table name="#pSkillEvas"> 70 75 80 </table>
 		<table name="#vengeancePdam"> 70 75 80 </table>
 		<set name="icon" val="icon.skill10524" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="AVOID_SKILL_SPECIAL" />
 		<set name="operateType" val="A2" />
@@ -780,7 +780,7 @@
 		</for>
 	</skill>
 	<skill id="10525" levels="7" name="Shadow Dash">
-		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- For 15 seconds, increases Speed by 66, P. Evasion by 4, and HP Recovery Bonus by 10. -->
@@ -790,7 +790,7 @@
 		<table name="#regHp"> 10 20 30 40 43 46 49 </table>
 		<table name="#rEvas"> 4 6 8 10 12 14 16 </table>
 		<table name="#runSpd"> 66 66 66 66 68 70 72 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="SUPER_MOVE" />
 		<set name="icon" val="icon.skill10525" />
@@ -974,7 +974,7 @@
 		</for>
 	</skill>
 	<skill id="10531" levels="2" name="Angel of Death">
-		<table name="#abnormalLvls"> 1 2 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Momentarily increases Speed by 30, P. Evasion by 40, skill Evasion by 75, Vital Spot Attack Rate by 40%, and Debuff Resistance by 80%. Casts Crippling Poison on enemies attacking you. Requires a dagger/dual dagger to be equipped. -->
@@ -985,7 +985,7 @@
 		<table name="#pSkillEvas"> 75 80 </table>
 		<table name="#runSpd"> 30 34 </table>
 		<table name="#triggerLvl"> 1 2 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="MOVEMENT" />
 		<set name="icon" val="icon.skill10531" />
@@ -1129,10 +1129,10 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Poisoned. Speed is decreased and M. Skills are disabled momentarily. -->
-		<table name="#abnormalLvls"> 1 2 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
 		<table name="#magicLvl"> 95 99 </table>
 		<set name="icon" val="icon.skill0129" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SILENCE" />
 		<set name="abnormalVisualEffect" val="SILENCE" />
@@ -1164,11 +1164,11 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Inflicted with Poison. Increases received Critical Damage by 35% momentarily. Increases the chance of receiving a critical attack by 10%. -->
-		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#defCritRate"> 1.1 1.11 1.12 1.13 </table>
 		<set name="icon" val="icon.skill1222" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="T_CRT_RATE_UP" />
 		<set name="activateRate" val="80" />
@@ -1242,11 +1242,11 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Hurls poisonous sand at the enemy. For 5 seconds, greatly decreases P. accuracy and lures the enemy to you. Requires a dagger/dual dagger to be equipped. -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#accCombat"> 40 42 44 46 48 50 52 54 </table>
 		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
 		<table name="#mpConsumes"> 38 40 42 44 46 48 50 52 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="HIT_DOWN" />
 		<set name="activateRate" val="80" />
@@ -1386,11 +1386,11 @@
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Causes the body to gradually become rigid for 4 seconds. Once fully rigid, paralysis lasts for 5 seconds. -->
-		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#effectPoint"> -700 -704 -707 -709 </table>
 		<table name="#magicLvl"> 91 94 97 99 </table>
 		<set name="icon" val="icon.skill1170" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="4" />
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="activateRate" val="100" />
@@ -1425,14 +1425,14 @@
 		</endEffects>
 	</skill>
 	<skill id="10546" levels="7" name="Uppercut">
-		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Delivers a powerful blow to Knock Down the target for 2 seconds. Requires a dagger or dual dagger to be equipped. -->
 		<table name="#magicLvl"> 89 92 95 98 101 103 105 </table>
 		<table name="#mpConsumes"> 40 43 45 47 49 51 53 </table>
 		<set name="icon" val="icon.skill10546" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="2" />
 		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
@@ -1516,7 +1516,7 @@
 		</for>
 	</skill>
 	<skill id="10549" levels="8" name="Kick">
-		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Powerfully Knock Back the target with a kick. -->
@@ -1524,7 +1524,7 @@
 		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
 		<table name="#mpConsumes"> 38 40 42 44 46 48 50 52 </table>
 		<set name="icon" val="icon.skill10549" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalTime" val="2" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
@@ -1786,13 +1786,13 @@
 	</skill>
 	<skill id="10557" levels="2" name="Maximize Critical">
 		<!-- For 20 sec., side Critical Rate + 30% and rear Critical Rate + 60%. During a critical attack, 50 % chance of triggering Critical level 2. -->
-		<table name="#abnormalLvls"> 2 3 </table>
+		<table name="#abnormalLvl"> 2 3 </table>
 		<table name="#icons"> icon.skill10542 icon.skill10542_2 </table>
 		<table name="#triggeredLevel"> 2 0 </table>
 		<table name="#rCrit1"> 1.3 1.4 </table>
 		<table name="#rCrit2"> 1.6 1.7 </table>
 		<set name="icon" val="#icons" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="CRITICAL_SPECIAL" />
 		<set name="operateType" val="A2" />

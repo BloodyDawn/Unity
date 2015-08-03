@@ -821,11 +821,11 @@
 	<skill id="11128" levels="3" name="Water Destruction">
 		<!-- Updated to IO -->
 		<!-- Inflicts 620 magical damage on target, and decreases their Speed by 130. Over-hit. -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#mpConsumes"> 768 873 993 </table>
 		<table name="#power"> 620 657 695 </table>
 		<set name="icon" val="icon.skill0000" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" /> <!-- Guessed -->
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
@@ -1168,10 +1168,10 @@
 	<skill id="11140" levels="5" name="Black Shackle">
 		<!-- Updated to IO -->
 		<!-- Bound to dark power. -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Guessed. TODO: Stun Target at Lv5 -->
 		<set name="icon" val="icon.skill11135" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
@@ -1191,11 +1191,11 @@
 	<skill id="11141" levels="5" name="Freezing Slow">
 		<!-- Updated to IO -->
 		<!-- The cold is creeping up from your feet. -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Guessed. TODO: Freeze Target at Lv5 -->
 		<table name="#ave"> SNOW_SLOW SNOW_SLOW SNOW_SLOW SNOW_SLOW SNOW_HOLD </table>
 		<set name="icon" val="icon.skill11136" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="abnormalVisualEffect" val="#ave" />
@@ -1252,11 +1252,11 @@
 	<skill id="11144" levels="5" name="Wind Binding">
 		<!-- Updated to IO -->
 		<!-- Speed has decreased due to the gust. -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Guessed. TODO: Air Bind Target at Lv5 -->
 		<table name="#ave"> TORNADO_SLOW TORNADO_SLOW TORNADO_SLOW TORNADO_SLOW TORNADO </table>
 		<set name="icon" val="icon.skill11137" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" /> <!-- Guessed -->
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="abnormalVisualEffect" val="#ave" />
@@ -1277,10 +1277,10 @@
 	<skill id="11145" levels="5" name="Soul Weakness">
 		<!-- Updated to IO -->
 		<!-- Cursed by a soul. -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<table name="#pvpDef"> 0.90 0.80 0.70 0.60 0.50 </table> <!-- Guessed -->
 		<set name="icon" val="icon.skill11138" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" /> <!-- Guessed -->
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
@@ -1651,9 +1651,9 @@
 	<skill id="11188" levels="5" name="Frozen">
 		<!-- Updated to IO -->
 		<!-- The cold is creeping up from your feet. -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Totally Guessed, TODO Freeze target at level 5 -->
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="2" /> <!-- Guessed -->
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="icon" val="icon.skill11017" />

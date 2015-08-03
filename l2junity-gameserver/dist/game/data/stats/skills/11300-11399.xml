@@ -602,11 +602,11 @@
 	<skill id="11326" levels="8" name="Feline Pounce">
 		<!-- Updated to IO -->
 		<!-- Inflicts damage on a target with 8406 Power added to P. Atk. Speed - 100. -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#mpConsumes"> 48 50 52 54 56 58 60 62 </table>
 		<table name="#power"> 8406 8920 9497 10043 10588 11134 11680 12225 </table>
 		<set name="icon" val="icon.skill0121" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="100" />
@@ -826,11 +826,11 @@
 	<skill id="11335" levels="8" name="Unicorn's Pounce">
 		<!-- Updated to IO -->
 		<!-- Inflicts damage on a target with 8406 Power added to P. Atk. Speed - 100. -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#mpConsumes"> 48 50 52 54 56 58 60 62 </table>
 		<table name="#power"> 8406 8920 9497 10043 10588 11134 11680 12225 </table>
 		<set name="icon" val="icon.skill0121" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="100" />
@@ -1050,11 +1050,11 @@
 	<skill id="11344" levels="8" name="Phantom Pounce">
 		<!-- Updated to IO -->
 		<!-- Inflicts damage on a target with 8406 Power added to P. Atk. Speed - 100. -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#mpConsumes"> 48 50 52 54 56 58 60 62 </table>
 		<table name="#power"> 8406 8920 9497 10043 10588 11134 11680 12225 </table>
 		<set name="icon" val="icon.skill0121" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="100" />
@@ -1129,10 +1129,10 @@
 		<!-- Updated to IO -->
 		<!-- For 30 min., all servitors' Atk. Spd. + 10%. -->
 		<table name="#mpConsumes"> 61 67 73 79 </table>
-		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#pAtkSpd"> 1.10 1.12 1.15 1.20 </table>
 		<set name="icon" val="icon.skill11347" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="GREATER_SERVITOR_BUFF" />
 		<set name="operateType" val="A2" />
@@ -1154,10 +1154,10 @@
 		<!-- Updated to IO -->
 		<!-- For 30 min., all servitors' Critical Damage + 10%. -->
 		<table name="#mpConsumes"> 61 67 73 79 </table>
-		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#cAtk"> 1.10 1.12 1.15 1.20 </table>
 		<set name="icon" val="icon.skill11348" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="GREATER_SERVITOR_BUFF" />
 		<set name="operateType" val="A2" />
@@ -1179,10 +1179,10 @@
 		<!-- Updated to IO -->
 		<!-- For 30 min., all servitors' P. Atk. + 10%. -->
 		<table name="#mpConsumes"> 61 67 73 79 </table>
-		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#pAtk"> 1.10 1.12 1.15 1.20 </table>
 		<set name="icon" val="icon.skill11349" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="GREATER_SERVITOR_BUFF" />
 		<set name="operateType" val="A2" />
@@ -1412,12 +1412,12 @@
 	<skill id="11360" levels="3" name="Arcane Protection">
 		<!-- Updated to IO -->
 		<!-- For 30 sec., Received P./M. Critical Rate - 5%, Pull Resistance and Knock Back / Knock Down Resistance - 5. Debuff Resistance + 5%, HP/MP Recovery Bonus + 5%. -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#stat"> 1.05 1.07 1.10 </table>
 		<table name="#debuffVuln"> 0.95 0.93 0.90 </table>
 		<table name="#trait"> 5 7 10 </table>
 		<set name="icon" val="icon.skill11360" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ARCANE_PROTECTION" />
 		<set name="affectRange" val="200" />
@@ -1514,11 +1514,11 @@
 	<skill id="11365" levels="3" name="Summon Demonic Crucifix">
 		<!-- Updated to IO -->
 		<!-- Attacks target with 518 Power added to M. Atk. and casts a curse that decreases target's Atk./Casting Spd. by 30% and Speed by 180. Consumes 3 Spirit Ores. -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#mpConsumes"> 394 382 394 </table>
 		<table name="#power"> 518 526 542 558 </table>
 		<set name="icon" val="icon.skill11365" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="NONE" />
 		<set name="activateRate" val="90" /> <!-- Guessed -->
@@ -1563,13 +1563,13 @@
 	<skill id="11367" levels="3" name="Arcane Protection">
 		<!-- Updated to IO -->
 		<!-- For 30 sec., Received P./M. Critical Rate - 7%, Pull Resistance and Knock Back / Knock Down Resistance - 10. Debuff Resistance + 10%, HP/MP Recovery Bonus + 10%. -->
-		<table name="#abnormalLvls"> 3 4 5 </table>
+		<table name="#abnormalLvl"> 3 4 5 </table>
 		<table name="#defCritRate"> 1.07 1.10 1.12 </table>
 		<table name="#regHpMp"> 1.10 1.12 1.15 </table>
 		<table name="#debuffVuln"> 0.90 0.88 0.85 </table>
 		<table name="#trait"> 10 12 15 </table>
 		<set name="icon" val="icon.skill11360" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ARCANE_PROTECTION" />
 		<set name="affectRange" val="200" />
@@ -1596,13 +1596,13 @@
 	<skill id="11368" levels="3" name="Arcane Protection">
 		<!-- Updated to IO -->
 		<!-- For 30 sec., Debuff Resistance + 15%, Pull Resistance + 15%, Knock Back / Knock Down Resistance + 15%, HP/MP Recovery Bonus + 15%. Received P./M. Critical Rate - 10%. -->
-		<table name="#abnormalLvls"> 5 6 6 </table>
+		<table name="#abnormalLvl"> 5 6 6 </table>
 		<table name="#defCritRate"> 1.10 1.15 1.15 </table>
 		<table name="#regHpMp"> 1.15 1.20 1.20 </table>
 		<table name="#debuffVuln"> 0.85 0.80 0.80 </table>
 		<table name="#trait"> 15 20 20 </table>
 		<set name="icon" val="icon.skill11360" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ARCANE_PROTECTION" />
 		<set name="affectRange" val="200" />
@@ -1789,11 +1789,11 @@
 	<skill id="11375" levels="3" name="Commando Jumping Attack">
 		<!-- Updated to IO -->
 		<!-- Jumps and hulrs attack to target and nearby enemies with 18224 Power added to P. Atk., and decreases Speed by 100 for 5 seconds. -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#mpConsumes"> 86 86 87 </table>
 		<table name="#power"> 18224 19158 20092 </table>
 		<set name="icon" val="icon.skill0121" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="100" /> <!-- Guessed -->
@@ -2006,11 +2006,11 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts damage to target and nearby enemies with 34449 Power added to P. Atk., and decreases Speed by 100 for 5 seconds. -->
 		<table name="#effectPoint"> -3541 -3561 -3561 </table>
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#mpConsumes"> 172 173 174 </table>
 		<table name="#power"> 34449 36215 37981 </table>
 		<set name="icon" val="icon.skill10103" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="100" />

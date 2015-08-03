@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="400" levels="10" name="Tribunal">
-		<table name="#abnormalLvls"> 1 1 1 1 1 2 2 2 2 3 </table>
+		<table name="#abnormalLvl"> 1 1 1 1 1 2 2 2 2 3 </table>
 		<table name="#effectPoints"> -1255 -1318 -1358 -1396 -1432 -1465 -1496 -1524 -1549 -1570 </table>
 		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 52 56 58 60 62 64 66 68 70 72 </table>
 		<table name="#power"> 924 1054 1146 1240 1337 1437 1538 1639 1741 1841 </table>
 		<table name="#rCrit"> 0.7 0.7 0.7 0.7 0.7 0.6 0.6 0.6 0.6 0.5 </table>
 		<table name="#traits"> -12 -12 -12 -12 -12 -16 -16 -16 -16 -20 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="CRITICAL_PROB_DOWN" />
 		<set name="activateRate" val="80" />
@@ -58,14 +58,14 @@
 		</for>
 	</skill>
 	<skill id="401" levels="10" name="Judgment">
-		<table name="#abnormalLvls"> 1 1 1 1 2 2 2 2 2 3 </table>
+		<table name="#abnormalLvl"> 1 1 1 1 2 2 2 2 2 3 </table>
 		<table name="#cAtk"> 0.75 0.75 0.75 0.75 0.75 0.7 0.7 0.7 0.7 0.65 </table>
 		<table name="#effectPoints"> -1255 -1318 -1358 -1396 -1432 -1465 -1496 -1524 -1549 -1570 </table>
 		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 52 56 58 60 62 64 66 68 70 72 </table>
 		<table name="#power"> 1056 1205 1309 1417 1528 1642 1757 1873 1989 2104 </table>
 		<table name="#traits"> -12 -12 -12 -12 -12 -16 -16 -16 -16 -20 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="CRITICAL_DMG_DOWN" />
 		<set name="activateRate" val="80" />
@@ -248,7 +248,7 @@
 	</skill>
 	<skill id="406" levels="3" name="Angelic Archon">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#cAtk"> 1.33 1.66 2 </table>
 		<table name="#effectPoints"> 549 611 655 </table>
 		<table name="#magicLvl"> 58 66 74 </table>
@@ -256,7 +256,7 @@
 		<table name="#pAtkSpd"> 1.1 1.2 1.3 </table>
 		<table name="#rCrit"> 33 66 100 </table>
 		<table name="#runSpd"> 10 20 30 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="POSSESSION" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -298,13 +298,13 @@
 	</skill>
 	<skill id="407" levels="10" name="Psycho Symphony">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 1 1 1 2 2 3 3 4 4 5 </table>
+		<table name="#abnormalLvl"> 1 1 1 2 2 3 3 4 4 5 </table>
 		<table name="#debuff"> 0.9 0.9 0.9 0.85 0.85 0.8 0.8 0.75 0.75 0.7 </table>
 		<table name="#effectPoints"> -523 -549 -566 -582 -597 -611 -624 -635 -646 -655 </table>
 		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 78 84 87 90 93 96 99 102 105 107 </table>
 		<table name="#power"> 229 262 284 308 332 357 382 407 432 457 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="ALL_SPEED_DOWN" />
 		<set name="activateRate" val="80" />
@@ -338,13 +338,13 @@
 	</skill>
 	<skill id="408" levels="10" name="Demonic Blade Dance">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
-		<table name="#abnormalLvls"> 1 1 1 2 2 3 3 4 4 5 </table>
+		<table name="#abnormalLvl"> 1 1 1 2 2 3 3 4 4 5 </table>
 		<table name="#debuff"> 0.9 0.9 0.9 0.85 0.85 0.8 0.8 0.75 0.75 0.7 </table>
 		<table name="#effectPoints"> -523 -549 -566 -582 -597 -611 -624 -635 -646 -655 </table>
 		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 39 42 44 45 47 48 50 51 53 54 </table>
 		<table name="#power"> 825 941 1023 1107 1194 1283 1373 1464 1554 1644 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="ALL_ATTACK_DOWN" />
 		<set name="activateRate" val="80" />
@@ -381,13 +381,13 @@
 	<skill id="409" levels="10" name="Critical Blow">
 		<!-- Confirmed CT2.5 -->
 		<!-- NOTE: This skill increases "Blow Rate" and description in client says "Critical Rate" but is client typo, so please don't change this skill -->
-		<table name="#abnormalLvls"> 1 1 1 2 2 3 3 4 4 5 </table>
+		<table name="#abnormalLvl"> 1 1 1 2 2 3 3 4 4 5 </table>
 		<table name="#blowRate"> 1.1 1.1 1.1 1.15 1.15 1.2 1.2 1.25 1.25 1.3 </table>
 		<table name="#effectPoints"> -266 -279 -288 -296 -304 -311 -317 -323 -328 -333 </table>
 		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 52 56 58 60 62 64 66 68 70 72 </table>
 		<table name="#power"> 1832 2091 2272 2460 2653 2850 3050 3252 3453 3653 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="MIGHT_MORTAL" />
 		<set name="castRange" val="40" />
@@ -426,12 +426,12 @@
 	</skill>
 	<skill id="410" levels="8" name="Mortal Strike">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#blowRate"> 1.1 1.15 1.2 1.22 1.24 1.26 1.28 1.30 </table>
 		<table name="#effectPoints"> 549 611 655 655 655 655 655 655 </table> <!-- Guessed -->
 		<table name="#magicLvl"> 58 66 74 80 85 90 95 99 </table>
 		<table name="#mpConsume"> 27 31 34 37 40 43 46 49 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="MIGHT_MORTAL" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -455,13 +455,13 @@
 		</for>
 	</skill>
 	<skill id="411" levels="3" name="Stealth">
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#amount"> 0.55 0.7 0.85 </table>
 		<table name="#effectPoints"> 549 611 655 </table>
 		<table name="#magicLvl"> 58 66 74 </table>
 		<table name="#mpConsume"> 27 31 34 </table>
 		<table name="#rEvas"> 12 8 4 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="STEALTH" />
 		<set name="abnormalVisualEffect" val="STEALTH" />
@@ -488,12 +488,12 @@
 	</skill>
 	<skill id="412" levels="10" name="Sand Bomb">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 1 1 1 1 1 2 2 2 2 3 </table>
+		<table name="#abnormalLvl"> 1 1 1 1 1 2 2 2 2 3 </table>
 		<table name="#accCombat"> 6 6 6 6 6 9 9 9 9 12 </table>
 		<table name="#effectPoints"> -523 -549 -566 -582 -597 -611 -624 -635 -646 -655 </table>
 		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 25 27 28 29 30 31 32 33 34 34 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="HIT_DOWN" />
 		<set name="activateRate" val="80" />
@@ -519,12 +519,12 @@
 		</for>
 	</skill>
 	<skill id="413" levels="8" name="Rapid Fire">
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#effectPoints"> 566 582 597 611 624 635 646 655 </table>
 		<table name="#magicLvl"> 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 28 29 30 31 32 33 34 34 </table>
 		<table name="#pAtk"> 62 67 73 78 83 89 94 100 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="SNIPE" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -556,13 +556,13 @@
 		</for>
 	</skill>
 	<skill id="414" levels="8" name="Dead Eye">
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#accCombat"> 1 1 2 2 2 3 3 3 </table>
 		<table name="#effectPoints"> 566 582 597 611 624 635 646 655 </table>
 		<table name="#magicLvl"> 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 28 29 30 31 32 33 34 35 </table>
 		<table name="#pAtk"> 124 134 155 155 166 177 188 199 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="SNIPE" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -597,12 +597,12 @@
 		</for>
 	</skill>
 	<skill id="415" levels="3" name="Spirit of Sagittarius">
-		<table name="#abnormalLvls"> 2 4 6 </table>
+		<table name="#abnormalLvl"> 2 4 6 </table>
 		<table name="#effectPoints"> 549 611 655 </table>
 		<table name="#magicLvl"> 58 66 74 </table>
 		<table name="#mpConsume"> 27 31 34 </table>
 		<table name="#PhysicalMpConsumeRate"> 0.9 0.8 0.7 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="MP_COST_DOWN" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -623,12 +623,12 @@
 		</for>
 	</skill>
 	<skill id="416" levels="3" name="Blessing of Sagittarius">
-		<table name="#abnormalLvls"> 2 4 6 </table>
+		<table name="#abnormalLvl"> 2 4 6 </table>
 		<table name="#effectPoints"> 549 611 655 </table>
 		<table name="#magicLvl"> 58 66 74 </table>
 		<table name="#mpConsume"> 27 31 34 </table>
 		<table name="#pReuse"> 0.9 0.85 0.8 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="REUSE_DELAY_DOWN" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -716,7 +716,7 @@
 		</for>
 	</skill>
 	<skill id="420" levels="3" name="Zealot">
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#cAtk"> 1.33 1.66 2 </table>
 		<table name="#effectPoints"> 549 611 655 </table>
 		<table name="#hpConsume"> 159 183 204 </table>
@@ -725,7 +725,7 @@
 		<table name="#pAtkSpd"> 1.1 1.2 1.3 </table>
 		<table name="#rCrit"> 33 66 100 </table>
 		<table name="#runSpd"> 10 20 30 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -766,12 +766,12 @@
 		</for>
 	</skill>
 	<skill id="421" levels="5" name="Fell Swoop">
-		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<table name="#atkCountMax"> 1 2 3 4 5 </table>
 		<table name="#effectPoints"> 549 582 611 635 655 </table>
 		<table name="#magicLvl"> 58 62 66 70 74 </table>
 		<table name="#mpConsume"> 27 29 31 33 34 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="POLEARM_ATTACK" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -1080,8 +1080,8 @@
 	<skill id="437" levels="7" name="Song of Silence">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<table name="#magicLvl"> 79 81 83 85 90 95 99 </table>
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="SILENCE_ALL" />
 		<set name="abnormalVisualEffect" val="SILENCE" />
@@ -2131,13 +2131,13 @@
 	</skill>
 	<skill id="482" levels="2" name="Furious Soul">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
-		<table name="#abnormalLvls"> 1 2 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
 		<table name="#cAtk"> 1.25 1.3 </table>
 		<table name="#effectPoints"> 235 523 </table>
 		<table name="#magicLvl"> 24 55 </table>
 		<table name="#mpConsume"> 11 25 </table>
 		<table name="#rCrit"> 1.2 1.3 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="90" />
 		<set name="abnormalType" val="PA_UP_SPECIAL" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -2161,13 +2161,13 @@
 	</skill>
 	<skill id="483" levels="8" name="Sword Shield">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#effectPoints"> 204 237 270 304 337 371 404 438 </table>
 		<table name="#magicLvl"> 36 52 64 74 85 90 95 99 </table>
 		<table name="#mpConsume"> 16 18 20 22 24 26 28 30 </table>
 		<table name="#pDef"> 2000 4000 4750 5250 6250 6250 6250 7500 </table>
 		<table name="#runSpd"> 0.6 0.6 0.6 0.6 0.7 0.8 0.9 1 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -2325,12 +2325,12 @@
 	</skill>
 	<skill id="490" levels="2" name="Fast Shot">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 1 2 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
 		<table name="#effectPoints"> 303 549 </table>
 		<table name="#magicLvl"> 32 55 </table>
 		<table name="#mpConsume"> 14 25 </table>
 		<table name="#pAtkSpd"> 1.08 1.12 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="ATTACK_SPEED_UP_BOW" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -2489,14 +2489,14 @@
 	</skill>
 	<skill id="495" levels="10" name="Blade Rush">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 6 6 7 7 7 7 8 8 8 8 </table>
+		<table name="#abnormalLvl"> 6 6 7 7 7 7 8 8 8 8 </table>
 		<table name="#castRange"> 400 500 500 500 500 500 600 600 600 600 </table>
 		<table name="#dot"> 107 107 123 123 123 123 123 134 134 134 </table>
 		<table name="#effectPoints"> -266 -279 -288 -296 -304 -311 -317 -323 -328 -333 </table>
 		<table name="#effectRange"> 600 700 700 700 700 700 800 800 800 800 </table>
 		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 65 70 73 75 77 80 83 85 88 90 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
@@ -2638,12 +2638,12 @@
 	</skill>
 	<skill id="499" levels="3" name="Courage">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#effectPoints"> 341 467 582 </table>
 		<table name="#magicLvl"> 36 49 62 </table>
 		<table name="#mpConsume"> 16 22 29 </table>
 		<table name="#trait_derangement"> 40 60 100 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="RESIST_SPIRITLESS" />
 		<set name="effectPoint" val="#effectPoints" />
