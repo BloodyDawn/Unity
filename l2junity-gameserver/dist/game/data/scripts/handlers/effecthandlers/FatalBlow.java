@@ -31,6 +31,7 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 
@@ -90,35 +91,32 @@ public final class FatalBlow extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		Creature target = info.getEffected();
-		Creature activeChar = info.getEffector();
-		
-		if (activeChar.isAlikeDead())
+		if (effector.isAlikeDead())
 		{
 			return;
 		}
 		
-		if (_overHit && target.isAttackable())
+		if (_overHit && effected.isAttackable())
 		{
-			((Attackable) target).overhitEnabled(true);
+			((Attackable) effected).overhitEnabled(true);
 		}
 		
 		double power = _power;
 		
 		// Check if we apply an abnormal modifier
-		if (_abnormals.stream().anyMatch(a -> target.getEffectList().getBuffInfoByAbnormalType(a) != null))
+		if (_abnormals.stream().anyMatch(a -> effected.getEffectList().getBuffInfoByAbnormalType(a) != null))
 		{
 			power += _abnormalPower;
 		}
 		
-		boolean ss = info.getSkill().useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
-		byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		double damage = Formulas.calcBlowDamage(activeChar, target, info.getSkill(), power, shld, ss);
-		boolean crit = Formulas.calcCrit(_criticalChance, true, activeChar, target);
+		boolean ss = skill.useSoulShot() && effector.isChargedShot(ShotType.SOULSHOTS);
+		byte shld = Formulas.calcShldUse(effector, effected, skill);
+		double damage = Formulas.calcBlowDamage(effector, effected, skill, power, shld, ss);
+		boolean crit = Formulas.calcCrit(_criticalChance, true, effector, effected);
 		
 		if (crit)
 		{
@@ -126,19 +124,19 @@ public final class FatalBlow extends AbstractEffect
 		}
 		
 		// Check if damage should be reflected
-		Formulas.calcDamageReflected(activeChar, target, info.getSkill(), true);
+		Formulas.calcDamageReflected(effector, effected, skill, true);
 		
-		damage = target.calcStat(Stats.DAMAGE_CAP, damage, null, null);
-		target.reduceCurrentHp(damage, activeChar, info.getSkill());
-		target.notifyDamageReceived(damage, activeChar, info.getSkill(), crit, false, false);
+		damage = effected.calcStat(Stats.DAMAGE_CAP, damage, null, null);
+		effected.reduceCurrentHp(damage, effector, skill);
+		effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 		
 		// Manage attack or cast break of the target (calculating rate, sending message...)
-		if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
+		if (!effected.isRaid() && Formulas.calcAtkBreak(effected, damage))
 		{
-			target.breakAttack();
-			target.breakCast();
+			effected.breakAttack();
+			effected.breakCast();
 		}
 		
-		activeChar.sendDamageMessage(target, (int) damage, false, true, false);
+		effector.sendDamageMessage(effected, (int) damage, false, true, false);
 	}
 }

@@ -19,10 +19,12 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.ExVoteSystemInfo;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.UserInfo;
@@ -52,15 +54,14 @@ public final class GiveRecommendation extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		PlayerInstance target = info.getEffected() instanceof PlayerInstance ? (PlayerInstance) info.getEffected() : null;
+		PlayerInstance target = effected instanceof PlayerInstance ? (PlayerInstance) effected : null;
 		if (target != null)
 		{
 			int recommendationsGiven = _amount;
-			
 			if ((target.getRecomHave() + _amount) >= 255)
 			{
 				recommendationsGiven = 255 - target.getRecomHave();
@@ -78,7 +79,7 @@ public final class GiveRecommendation extends AbstractEffect
 			}
 			else
 			{
-				PlayerInstance player = info.getEffector() instanceof PlayerInstance ? (PlayerInstance) info.getEffector() : null;
+				PlayerInstance player = effector instanceof PlayerInstance ? (PlayerInstance) effector: null;
 				if (player != null)
 				{
 					player.sendPacket(SystemMessageId.NOTHING_HAPPENED);

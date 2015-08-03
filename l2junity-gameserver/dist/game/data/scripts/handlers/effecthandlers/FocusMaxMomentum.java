@@ -19,10 +19,12 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.EtcStatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -44,15 +46,15 @@ public final class FocusMaxMomentum extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (info.getEffected().isPlayer())
+		if (effected.isPlayer())
 		{
-			final PlayerInstance player = info.getEffected().getActingPlayer();
+			final PlayerInstance player = effected.getActingPlayer();
 			
-			final int count = (int) info.getEffected().calcStat(Stats.MAX_MOMENTUM, 0);
+			final int count = (int) effected.calcStat(Stats.MAX_MOMENTUM, 0);
 			
 			player.setCharges(count);
 			

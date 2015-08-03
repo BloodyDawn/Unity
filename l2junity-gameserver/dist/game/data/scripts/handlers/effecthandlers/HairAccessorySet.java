@@ -20,10 +20,12 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
@@ -41,17 +43,16 @@ public class HairAccessorySet extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if ((info.getEffector() == null) || (info.getEffected() == null) || !info.getEffector().isPlayer() || !info.getEffected().isPlayer() || info.getEffected().isAlikeDead())
+		if (!effector.isPlayer() || !effected.isPlayer() || effected.isAlikeDead())
 		{
 			return;
 		}
 		
-		final PlayerInstance player = info.getEffected().getActingPlayer();
-		
+		final PlayerInstance player = effected.getActingPlayer();
 		player.setHairAccessoryEnabled(!player.isHairAccessoryEnabled());
 		player.broadcastUserInfo(UserInfoType.APPAREANCE);
 		player.sendPacket(player.isHairAccessoryEnabled() ? SystemMessageId.HAIR_ACCESSORIES_WILL_BE_DISPLAYED_FROM_NOW_ON : SystemMessageId.HAIR_ACCESSORIES_WILL_NO_LONGER_BE_DISPLAYED);

@@ -21,11 +21,13 @@ package handlers.effecthandlers;
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.MountType;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * @author Sdw
@@ -50,18 +52,18 @@ public class Feed extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (info.getEffected().isPet())
+		if (effected.isPet())
 		{
-			final L2PetInstance pet = (L2PetInstance) info.getEffected();
+			final L2PetInstance pet = (L2PetInstance) effected;
 			pet.setCurrentFed(pet.getCurrentFed() + (_normal * Config.PET_FOOD_RATE));
 		}
-		else if (info.getEffected().isPlayer())
+		else if (effected.isPlayer())
 		{
-			PlayerInstance player = info.getEffected().getActingPlayer();
+			final PlayerInstance player = effected.getActingPlayer();
 			if (player.getMountType() == MountType.WYVERN)
 			{
 				player.setCurrentFeed(player.getCurrentFeed() + _wyvern);

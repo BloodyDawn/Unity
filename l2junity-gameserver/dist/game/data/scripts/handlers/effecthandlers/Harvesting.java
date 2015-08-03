@@ -20,12 +20,14 @@ package handlers.effecthandlers;
 
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -45,17 +47,17 @@ public final class Harvesting extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if ((info.getEffector() == null) || (info.getEffected() == null) || !info.getEffector().isPlayer() || !info.getEffected().isMonster() || !info.getEffected().isDead())
+		if (!effector.isPlayer() || !effected.isMonster() || !effected.isDead())
 		{
 			return;
 		}
 		
-		final PlayerInstance player = info.getEffector().getActingPlayer();
-		final L2MonsterInstance monster = (L2MonsterInstance) info.getEffected();
+		final PlayerInstance player = effector.getActingPlayer();
+		final L2MonsterInstance monster = (L2MonsterInstance) effected;
 		if (player.getObjectId() != monster.getSeederId())
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_HARVEST);

@@ -25,6 +25,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 
 /**
@@ -55,28 +56,25 @@ public final class HpDrain extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		Creature target = info.getEffected();
-		Creature activeChar = info.getEffector();
-		
 		// TODO: Unhardcode Cubic Skill to avoid double damage
-		if (activeChar.isAlikeDead() || (info.getSkill().getId() == 4050))
+		if (effector.isAlikeDead() || (skill.getId() == 4050))
 		{
 			return;
 		}
 		
-		boolean sps = info.getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.SPIRITSHOTS);
-		boolean bss = info.getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
-		boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill()), info.getSkill(), target);
-		byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		int damage = (int) Formulas.calcMagicDam(activeChar, target, info.getSkill(), _power, shld, sps, bss, mcrit);
+		boolean sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
+		boolean bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
+		boolean mcrit = Formulas.calcMCrit(effector.getMCriticalHit(effected, skill), skill, effected);
+		byte shld = Formulas.calcShldUse(effector, effected, skill);
+		int damage = (int) Formulas.calcMagicDam(effector, effected, skill, _power, shld, sps, bss, mcrit);
 		
 		int drain = 0;
-		int cp = (int) target.getCurrentCp();
-		int hp = (int) target.getCurrentHp();
+		int cp = (int) effected.getCurrentCp();
+		int hp = (int) effected.getCurrentHp();
 		
 		if (cp > 0)
 		{
@@ -92,20 +90,20 @@ public final class HpDrain extends AbstractEffect
 		}
 		
 		final double hpAdd = ((_percentage / 100) * drain);
-		final double hpFinal = ((activeChar.getCurrentHp() + hpAdd) > activeChar.getMaxHp() ? activeChar.getMaxHp() : (activeChar.getCurrentHp() + hpAdd));
-		activeChar.setCurrentHp(hpFinal);
+		final double hpFinal = ((effector.getCurrentHp() + hpAdd) > effector.getMaxHp() ? effector.getMaxHp() : (effector.getCurrentHp() + hpAdd));
+		effector.setCurrentHp(hpFinal);
 		
 		if (damage > 0)
 		{
 			// Manage attack or cast break of the target (calculating rate, sending message...)
-			if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
+			if (!effected.isRaid() && Formulas.calcAtkBreak(effected, damage))
 			{
-				target.breakAttack();
-				target.breakCast();
+				effected.breakAttack();
+				effected.breakCast();
 			}
-			activeChar.sendDamageMessage(target, damage, mcrit, false, false);
-			target.reduceCurrentHp(damage, activeChar, info.getSkill());
-			target.notifyDamageReceived(damage, activeChar, info.getSkill(), mcrit, false, false);
+			effector.sendDamageMessage(effected, damage, mcrit, false, false);
+			effected.reduceCurrentHp(damage, effector, skill);
+			effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
 		}
 	}
 }

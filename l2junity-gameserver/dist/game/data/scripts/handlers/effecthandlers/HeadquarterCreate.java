@@ -23,6 +23,7 @@ import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -31,6 +32,7 @@ import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Headquarter Create effect implementation.
@@ -53,11 +55,11 @@ public final class HeadquarterCreate extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		final PlayerInstance player = info.getEffector().getActingPlayer();
+		final PlayerInstance player = effector.getActingPlayer();
 		if ((player.getClan() == null) || (player.getClan().getLeaderId() != player.getObjectId()))
 		{
 			return;

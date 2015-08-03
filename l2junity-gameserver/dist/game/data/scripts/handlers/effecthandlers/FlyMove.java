@@ -25,6 +25,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.util.Util;
@@ -62,14 +63,14 @@ public class FlyMove extends AbstractEffect
 		_delay = params.getInt("delay", 0);
 		_animationSpeed = params.getInt("animationSpeed", 0);
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		final Creature target = _selfPos ? info.getEffector() : info.getEffected();
+		final Creature target = _selfPos ? effector : effected;
 		
 		// Avoid calculating heading towards yourself because it always yields 0. Same results can be achieved with absoluteAngle of 0.
-		final int heading = (_selfPos || (info.getEffector() == info.getEffected())) ? info.getEffector().getHeading() : Util.calculateHeadingFrom(info.getEffector(), info.getEffected());
+		final int heading = (_selfPos || (effector == effected)) ? effector.getHeading() : Util.calculateHeadingFrom(effector, effected);
 		double angle = _absoluteAngle ? _angle : Util.convertHeadingToDegree(heading);
 		angle = (angle + _angle) % 360;
 		if (angle < 0)
@@ -81,10 +82,10 @@ public class FlyMove extends AbstractEffect
 		final int posX = (int) (target.getX() + (_range * Math.cos(radiansAngle)));
 		final int posY = (int) (target.getY() + (_range * Math.sin(radiansAngle)));
 		final int posZ = target.getZ();
-		final Location destination = GeoData.getInstance().moveCheck(info.getEffector().getX(), info.getEffector().getY(), info.getEffector().getZ(), posX, posY, posZ, info.getEffector().getInstanceId());
+		final Location destination = GeoData.getInstance().moveCheck(effector.getX(), effector.getY(), effector.getZ(), posX, posY, posZ, effector.getInstanceId());
 		
-		info.getEffector().broadcastPacket(new FlyToLocation(info.getEffector(), destination, _flyType, _speed, _delay, _animationSpeed));
-		info.getEffector().setXYZ(destination);
+		effector.broadcastPacket(new FlyToLocation(effector, destination, _flyType, _speed, _delay, _animationSpeed));
+		effector.setXYZ(destination);
 	}
 	
 	@Override
