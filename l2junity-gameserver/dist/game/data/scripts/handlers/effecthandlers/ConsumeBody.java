@@ -19,10 +19,11 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Consume Body effect implementation.
@@ -40,15 +41,14 @@ public final class ConsumeBody extends AbstractEffect
 	{
 		return true;
 	}
-	
-	@Override
-	public void onStart(BuffInfo info)
+
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if ((info.getEffector() == null) || (info.getEffected() == null) || !info.getEffected().isNpc() || !info.getEffected().isDead())
+		if (!effected.isNpc() || !effected.isDead())
 		{
 			return;
 		}
-		
-		((Npc) info.getEffected()).endDecayTask();
+
+		((Npc) effected).endDecayTask();
 	}
 }

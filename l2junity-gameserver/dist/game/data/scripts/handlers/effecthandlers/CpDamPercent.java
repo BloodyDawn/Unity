@@ -19,9 +19,10 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 
 /**
@@ -44,31 +45,31 @@ public final class CpDamPercent extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (!info.getEffected().isPlayer())
+		if (!effected.isPlayer())
 		{
 			return;
 		}
-		
-		if (info.getEffected().isPlayer() && info.getEffected().getActingPlayer().isFakeDeath())
+
+		if (effected.getActingPlayer().isFakeDeath())
 		{
-			info.getEffected().stopFakeDeath(true);
+			effected.stopFakeDeath(true);
 		}
-		
-		int damage = (int) ((info.getEffected().getCurrentCp() * _power) / 100);
+
+		int damage = (int) ((effected.getCurrentCp() * _power) / 100);
 		// Manage attack or cast break of the target (calculating rate, sending message)
-		if (!info.getEffected().isRaid() && Formulas.calcAtkBreak(info.getEffected(), damage))
+		if (Formulas.calcAtkBreak(effected, damage))
 		{
-			info.getEffected().breakAttack();
-			info.getEffected().breakCast();
+			effected.breakAttack();
+			effected.breakCast();
 		}
-		
+
 		if (damage > 0)
 		{
-			info.getEffected().setCurrentCp(info.getEffected().getCurrentCp() - damage);
+			effected.setCurrentCp(effected.getCurrentCp() - damage);
 		}
 	}
 }

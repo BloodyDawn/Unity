@@ -22,7 +22,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -47,35 +47,34 @@ public final class CpHealPercent extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		final Creature target = info.getEffected();
-		if ((target == null) || target.isDead() || target.isDoor())
+		if (effected.isDead() || effected.isDoor())
 		{
 			return;
 		}
-		
+
 		double amount = 0;
 		double power = _power;
 		boolean full = (power == 100.0);
-		
-		amount = full ? target.getMaxCp() : (target.getMaxCp() * power) / 100.0;
+
+		amount = full ? effected.getMaxCp() : (effected.getMaxCp() * power) / 100.0;
 		// Prevents overheal and negative amount
-		amount = Math.max(Math.min(amount, target.getMaxRecoverableCp() - target.getCurrentCp()), 0);
+		amount = Math.max(Math.min(amount, effected.getMaxRecoverableCp() - effected.getCurrentCp()), 0);
 		if (amount != 0)
 		{
-			final double newCp = amount + target.getCurrentCp();
-			target.setCurrentCp(newCp, false);
-			final StatusUpdate su = new StatusUpdate(target);
+			final double newCp = amount + effected.getCurrentCp();
+			effected.setCurrentCp(newCp, false);
+			final StatusUpdate su = new StatusUpdate(effected);
 			su.addAttribute(StatusUpdate.CUR_CP, (int) newCp);
-			su.addCaster(info.getEffector());
-			target.broadcastPacket(su);
+			su.addCaster(effector);
+			effected.broadcastPacket(su);
 		}
-		
+
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CP_HAS_BEEN_RESTORED);
 		sm.addInt((int) amount);
-		target.sendPacket(sm);
+		effected.sendPacket(sm);
 	}
 }

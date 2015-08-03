@@ -20,9 +20,10 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -36,17 +37,23 @@ public final class ClanGate extends AbstractEffect
 	{
 		super(attachCond, applyCond, set, params);
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public boolean isInstant()
 	{
-		if (info.getEffected().isPlayer())
+		return super.isInstant();
+	}
+
+	@Override
+	public void instant(Creature effector, Creature effected, Skill skill)
+	{
+		if (effected.isPlayer())
 		{
-			final L2Clan clan = info.getEffected().getActingPlayer().getClan();
+			final L2Clan clan = effected.getActingPlayer().getClan();
 			if (clan != null)
 			{
 				SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.COURT_WIZARD_THE_PORTAL_HAS_BEEN_CREATED);
-				clan.broadcastToOtherOnlineMembers(msg, info.getEffected().getActingPlayer());
+				clan.broadcastToOtherOnlineMembers(msg, effected.getActingPlayer());
 			}
 		}
 	}

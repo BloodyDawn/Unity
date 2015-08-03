@@ -22,10 +22,10 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.SubclassInfoType;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.AcquireSkillList;
 import org.l2junity.gameserver.network.client.send.ExSubjobInfo;
@@ -52,36 +52,35 @@ public class ClassChange extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (info.getEffector().isPlayer())
+		if (effected.isPlayer())
 		{
-			final PlayerInstance player = info.getEffector().getActingPlayer();
-			
+			final PlayerInstance player = effected.getActingPlayer();
 			// TODO: FIX ME - Executing 1 second later otherwise interupted exception during storeCharBase()
 			ThreadPoolManager.getInstance().scheduleGeneral(() ->
 			{
 				final int activeClass = player.getClassId().getId();
-				
+
 				if (!player.setActiveClass(_index))
 				{
-					player.sendMessage("You cannot switch your class right now!.");
+					player.sendMessage("You cannot switch your class right now!");
 					return;
 				}
-				
+
 				final Skill identifyCrisis = SkillData.getInstance().getSkill(IDENTITY_CRISIS_SKILL_ID, 1);
 				if (identifyCrisis != null)
 				{
 					identifyCrisis.applyEffects(player, player);
 				}
-				
+
 				final SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_SUCCESSFULLY_SWITCHED_S1_TO_S2);
 				msg.addClassId(activeClass);
 				msg.addClassId(player.getClassId().getId());
 				player.sendPacket(msg);
-				
+
 				player.broadcastUserInfo();
 				player.sendPacket(new AcquireSkillList(player));
 				player.sendPacket(new ExSubjobInfo(player, SubclassInfoType.CLASS_CHANGED));
