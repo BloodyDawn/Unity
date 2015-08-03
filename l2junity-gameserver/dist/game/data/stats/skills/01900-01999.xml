@@ -517,6 +517,7 @@
 	<skill id="1926" levels="1" name="Body Reinforcement">
 		<!-- Glory Days confirmed -->
 		<!-- For 5 minutes, transforms into ultimate combat form. -->
+		<!-- The p(m)atk/p(m)def multiplier are gone in Lindvior in benefit of higher stat in transform template -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="TRANSFORM" />
@@ -540,10 +541,6 @@
 			<effect name="TargetCancel" />
 			<effect name="Transformation">
 				<param transformationId="506" />
-				<mul stat="pAtk" val="2" />
-				<mul stat="pDef" val="2" />
-				<mul stat="mAtk" val="2" />
-				<mul stat="mDef" val="2" />
 			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="CHANGEBODY,-1;TURN_STONE,-1;BUFF_SPECIAL_MULTI,-1" />
