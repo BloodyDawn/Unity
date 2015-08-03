@@ -24,6 +24,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
 
@@ -53,24 +54,21 @@ public final class Resurrection extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		Creature target = info.getEffected();
-		Creature activeChar = info.getEffector();
-		
-		if (activeChar.isPlayer())
+		if (effector.isPlayer())
 		{
-			if (target.getActingPlayer() != null)
+			if (effected.getActingPlayer() != null)
 			{
-				target.getActingPlayer().reviveRequest(activeChar.getActingPlayer(), info.getSkill(), target.isPet(), _power);
+				effected.getActingPlayer().reviveRequest(effector.getActingPlayer(), skill, effected.isPet(), _power);
 			}
 		}
 		else
 		{
-			DecayTaskManager.getInstance().cancel(target);
-			target.doRevive(Formulas.calculateSkillResurrectRestorePercent(_power, activeChar));
+			DecayTaskManager.getInstance().cancel(effected);
+			effected.doRevive(Formulas.calculateSkillResurrectRestorePercent(_power, effector));
 		}
 	}
 }

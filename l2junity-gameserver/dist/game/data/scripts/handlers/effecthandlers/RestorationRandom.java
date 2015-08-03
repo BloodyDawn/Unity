@@ -26,11 +26,13 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.ExtractableProductItem;
 import org.l2junity.gameserver.model.ExtractableSkill;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
@@ -51,16 +53,16 @@ public final class RestorationRandom extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if ((info.getEffector() == null) || (info.getEffected() == null) || !info.getEffector().isPlayer() || !info.getEffected().isPlayer())
+		if (!effector.isPlayer() || !effected.isPlayer())
 		{
 			return;
 		}
-		
-		final ExtractableSkill exSkill = info.getSkill().getExtractableSkill();
+
+		final ExtractableSkill exSkill = skill.getExtractableSkill();
 		if (exSkill == null)
 		{
 			return;
@@ -68,7 +70,7 @@ public final class RestorationRandom extends AbstractEffect
 		
 		if (exSkill.getProductItems().isEmpty())
 		{
-			_log.warn("Extractable Skill with no data, probably wrong/empty table in Skill Id: " + info.getSkill().getId());
+			_log.warn("Extractable Skill with no data, probably wrong/empty table in Skill Id: " + skill.getId());
 			return;
 		}
 		
@@ -97,7 +99,7 @@ public final class RestorationRandom extends AbstractEffect
 			chanceFrom += chance;
 		}
 		
-		final PlayerInstance player = info.getEffected().getActingPlayer();
+		final PlayerInstance player = effected.getActingPlayer();
 		if (creationList.isEmpty())
 		{
 			player.sendPacket(SystemMessageId.THERE_WAS_NOTHING_FOUND_INSIDE);
@@ -110,7 +112,7 @@ public final class RestorationRandom extends AbstractEffect
 			{
 				continue;
 			}
-			player.addItem("Extract", item.getId(), (long) (item.getCount() * Config.RATE_EXTRACTABLE), info.getEffector(), true);
+			player.addItem("Extract", item.getId(), (long) (item.getCount() * Config.RATE_EXTRACTABLE), effector, true);
 		}
 	}
 }

@@ -19,11 +19,13 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Refuel Airship effect implementation.
@@ -51,11 +53,11 @@ public final class RefuelAirship extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		final L2AirShipInstance ship = info.getEffector().getActingPlayer().getAirShip();
+		final L2AirShipInstance ship = effector.getActingPlayer().getAirShip();
 		ship.setFuel(ship.getFuel() + _value);
 		ship.updateAbnormalVisualEffects();
 	}

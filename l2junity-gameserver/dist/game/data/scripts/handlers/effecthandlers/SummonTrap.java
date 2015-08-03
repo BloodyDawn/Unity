@@ -20,12 +20,14 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2TrapInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Summon Trap effect implementation.
@@ -49,22 +51,22 @@ public final class SummonTrap extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if ((info.getEffected() == null) || !info.getEffected().isPlayer() || info.getEffected().isAlikeDead() || info.getEffected().getActingPlayer().inObserverMode())
+		if (!effected.isPlayer() || effected.isAlikeDead() || effected.getActingPlayer().inObserverMode())
 		{
 			return;
 		}
-		
+
 		if (_npcId <= 0)
 		{
-			_log.warn(SummonTrap.class.getSimpleName() + ": Invalid NPC ID:" + _npcId + " in skill ID: " + info.getSkill().getId());
+			_log.warn(SummonTrap.class.getSimpleName() + ": Invalid NPC ID:" + _npcId + " in skill ID: " + skill.getId());
 			return;
 		}
 		
-		final PlayerInstance player = info.getEffected().getActingPlayer();
+		final PlayerInstance player = effected.getActingPlayer();
 		if (player.inObserverMode() || player.isMounted())
 		{
 			return;
@@ -79,7 +81,7 @@ public final class SummonTrap extends AbstractEffect
 		final L2NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(_npcId);
 		if (npcTemplate == null)
 		{
-			_log.warn(SummonTrap.class.getSimpleName() + ": Spawn of the non-existing Trap ID: " + _npcId + " in skill ID:" + info.getSkill().getId());
+			_log.warn(SummonTrap.class.getSimpleName() + ": Spawn of the non-existing Trap ID: " + _npcId + " in skill ID:" + skill.getId());
 			return;
 		}
 		

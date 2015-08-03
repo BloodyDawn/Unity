@@ -22,11 +22,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * An effect that resets all debuffs' timers.
@@ -61,10 +63,10 @@ public final class ResetDebuff extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		info.getEffected().getEffectList().resetDebuffs(true, _resetSlots);
+		effected.getEffectList().resetDebuffs(true, _resetSlots);
 	}
 }

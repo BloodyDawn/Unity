@@ -29,6 +29,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -48,17 +49,17 @@ public final class Sow extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (!info.getEffector().isPlayer() || !info.getEffected().isMonster())
+		if (!effector.isPlayer() || !effected.isMonster())
 		{
 			return;
 		}
 		
-		final PlayerInstance player = info.getEffector().getActingPlayer();
-		final L2MonsterInstance target = (L2MonsterInstance) info.getEffected();
+		final PlayerInstance player = effector.getActingPlayer();
+		final L2MonsterInstance target = (L2MonsterInstance) effected;
 		
 		if (target.isDead() || (!target.getTemplate().canBeSown()) || target.isSeeded() || (target.getSeederId() != player.getObjectId()))
 		{

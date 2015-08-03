@@ -19,9 +19,11 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.PetItemList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -47,30 +49,30 @@ public final class Restoration extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if ((info.getEffected() == null) || !info.getEffected().isPlayable())
+		if (!effected.isPlayable())
 		{
 			return;
 		}
 		
 		if ((_itemId <= 0) || (_itemCount <= 0))
 		{
-			info.getEffected().sendPacket(SystemMessageId.THERE_WAS_NOTHING_FOUND_INSIDE);
+			effected.sendPacket(SystemMessageId.THERE_WAS_NOTHING_FOUND_INSIDE);
 			_log.warn(Restoration.class.getSimpleName() + " effect with wrong item Id/count: " + _itemId + "/" + _itemCount + "!");
 			return;
 		}
-		
-		if (info.getEffected().isPlayer())
+
+		if (effected.isPlayer())
 		{
-			info.getEffected().getActingPlayer().addItem("Skill", _itemId, _itemCount, info.getEffector(), true);
+			effected.getActingPlayer().addItem("Skill", _itemId, _itemCount, effector, true);
 		}
-		else if (info.getEffected().isPet())
+		else if (effected.isPet())
 		{
-			info.getEffected().getInventory().addItem("Skill", _itemId, _itemCount, info.getEffected().getActingPlayer(), info.getEffector());
-			info.getEffected().getActingPlayer().sendPacket(new PetItemList(info.getEffected().getInventory().getItems()));
+			effected.getInventory().addItem("Skill", _itemId, _itemCount, effected.getActingPlayer(), effector);
+			effected.getActingPlayer().sendPacket(new PetItemList(effected.getInventory().getItems()));
 		}
 	}
 }

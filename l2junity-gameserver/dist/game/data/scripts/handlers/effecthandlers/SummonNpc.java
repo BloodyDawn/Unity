@@ -23,6 +23,7 @@ import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.DoppelgangerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2DecoyInstance;
@@ -33,6 +34,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Summon Npc effect implementation.
@@ -70,22 +72,22 @@ public final class SummonNpc extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if ((info.getEffected() == null) || !info.getEffected().isPlayer() || info.getEffected().isAlikeDead() || info.getEffected().getActingPlayer().inObserverMode())
+		if (!effected.isPlayer() || effected.isAlikeDead() || effected.getActingPlayer().inObserverMode())
 		{
 			return;
 		}
-		
+
 		if ((_npcId <= 0) || (_npcCount <= 0))
 		{
-			_log.warn(SummonNpc.class.getSimpleName() + ": Invalid NPC ID or count skill ID: " + info.getSkill().getId());
+			_log.warn(SummonNpc.class.getSimpleName() + ": Invalid NPC ID or count skill ID: " + skill.getId());
 			return;
 		}
 		
-		final PlayerInstance player = info.getEffected().getActingPlayer();
+		final PlayerInstance player = effected.getActingPlayer();
 		if (player.isMounted())
 		{
 			return;
@@ -94,7 +96,7 @@ public final class SummonNpc extends AbstractEffect
 		final L2NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(_npcId);
 		if (npcTemplate == null)
 		{
-			_log.warn(SummonNpc.class.getSimpleName() + ": Spawn of the nonexisting NPC ID: " + _npcId + ", skill ID:" + info.getSkill().getId());
+			_log.warn(SummonNpc.class.getSimpleName() + ": Spawn of the nonexisting NPC ID: " + _npcId + ", skill ID:" + skill.getId());
 			return;
 		}
 		
@@ -102,7 +104,7 @@ public final class SummonNpc extends AbstractEffect
 		int y = player.getY();
 		int z = player.getZ();
 		
-		switch (info.getSkill().getTargetType())
+		switch (skill.getTargetType())
 		{
 			case GROUND:
 				final Location wordPosition = player.getActingPlayer().getCurrentSkillWorldPosition();

@@ -23,6 +23,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * An effect that sets the current hp to the given amount.
@@ -46,18 +47,17 @@ public final class SetHp extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		final Creature target = info.getEffected();
-		if ((target == null) || target.isDead() || target.isDoor())
+		if (effected.isDead() || effected.isDoor())
 		{
 			return;
 		}
 		
 		boolean full = _isPercent && (_amount == 100.0);
-		double amount = full ? target.getMaxHp() : _isPercent ? ((target.getMaxHp() * _amount) / 100.0) : _amount;
-		target.setCurrentHp(amount);
+		double amount = full ? effected.getMaxHp() : _isPercent ? ((effected.getMaxHp() * _amount) / 100.0) : _amount;
+		effected.setCurrentHp(amount);
 	}
 }

@@ -26,6 +26,7 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -62,55 +63,52 @@ public final class RegularAttack extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		Creature target = info.getEffected();
-		Creature activeChar = info.getEffector();
-		
-		if (activeChar.isAlikeDead())
+		if (effector.isAlikeDead())
 		{
 			return;
 		}
 		
-		final byte shld = Formulas.calcShldUse(activeChar, target);
-		final boolean crit = Formulas.calcCrit(activeChar.getStat().getCriticalHit(target, null), false, activeChar, target);
-		int damage = (int) Formulas.calcPhysDam(activeChar, target, null, 0, shld, crit, activeChar.isChargedShot(ShotType.SOULSHOTS));
+		final byte shld = Formulas.calcShldUse(effector, effected);
+		final boolean crit = Formulas.calcCrit(effector.getStat().getCriticalHit(effected, null), false, effector, effected);
+		int damage = (int) Formulas.calcPhysDam(effector, effected, null, 0, shld, crit, effector.isChargedShot(ShotType.SOULSHOTS));
 		damage *= _pAtkMod;
-		damage = (int) activeChar.calcStat(Stats.REGULAR_ATTACKS_DMG, damage); // Normal attacks have normal damage x 5
-		
+		damage = (int) effector.calcStat(Stats.REGULAR_ATTACKS_DMG, damage); // Normal attacks have normal damage x 5
+
 		if (damage > 0)
 		{
-			activeChar.sendDamageMessage(target, damage, false, crit, false);
-			target.reduceCurrentHp(damage, activeChar, info.getSkill());
-			target.notifyDamageReceived(damage, activeChar, info.getSkill(), crit, false, false);
+			effector.sendDamageMessage(effected, damage, false, crit, false);
+			effected.reduceCurrentHp(damage, effector, skill);
+			effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 			
-			Weapon weapon = activeChar.getActiveWeaponItem();
+			Weapon weapon = effector.getActiveWeaponItem();
 			boolean isBow = ((weapon != null) && weapon.isBowOrCrossBow());
-			if (!isBow && !target.isInvul()) // Do not reflect if weapon is of type bow or target is invunlerable
+			if (!isBow && !effected.isInvul()) // Do not reflect if weapon is of type bow or target is invunlerable
 			{
 				int reflectedDamage = 0;
 				
 				// quick fix for no drop from raid if boss attack high-level char with damage reflection
-				if (!target.isRaid() || (activeChar.getActingPlayer() == null) || (activeChar.getActingPlayer().getLevel() <= (target.getLevel() + 8)))
+				if (!effected.isRaid() || (effector.getActingPlayer() == null) || (effector.getActingPlayer().getLevel() <= (effected.getLevel() + 8)))
 				{
 					// Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
-					double reflectPercent = target.getStat().calcStat(Stats.REFLECT_DAMAGE_PERCENT, 0, null, null);
+					double reflectPercent = effected.getStat().calcStat(Stats.REFLECT_DAMAGE_PERCENT, 0, null, null);
 					
 					if (reflectPercent > 0)
 					{
 						reflectedDamage = (int) ((reflectPercent / 100.) * damage);
 						
-						if (reflectedDamage > target.getMaxHp())
+						if (reflectedDamage > effected.getMaxHp())
 						{
-							reflectedDamage = target.getMaxHp();
+							reflectedDamage = effected.getMaxHp();
 						}
 						
 						if (reflectedDamage > 0)
 						{
-							activeChar.reduceCurrentHp(reflectedDamage, target, true, false, null);
-							activeChar.notifyDamageReceived(reflectedDamage, target, null, crit, false, true);
+							effector.reduceCurrentHp(reflectedDamage, effected, true, false, null);
+							effector.notifyDamageReceived(reflectedDamage, effected, null, crit, false, true);
 						}
 					}
 				}
@@ -118,12 +116,12 @@ public final class RegularAttack extends AbstractEffect
 		}
 		else
 		{
-			activeChar.sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
+			effector.sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
 		}
 		
-		if (info.getSkill().isSuicideAttack())
+		if (skill.isSuicideAttack())
 		{
-			activeChar.doDie(activeChar);
+			effector.doDie(effector);
 		}
 	}
 }

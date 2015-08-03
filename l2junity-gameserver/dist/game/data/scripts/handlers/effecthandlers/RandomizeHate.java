@@ -29,6 +29,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 
 /**
@@ -56,20 +57,20 @@ public final class RandomizeHate extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if ((info.getEffected() == null) || (info.getEffected() == info.getEffector()) || !info.getEffected().isAttackable())
+		if ((effected == effector) || !effected.isAttackable())
 		{
 			return;
 		}
 		
-		Attackable effectedMob = (Attackable) info.getEffected();
+		Attackable effectedMob = (Attackable) effected;
 		final List<Creature> targetList = new ArrayList<>();
-		World.getInstance().forEachVisibleObject(info.getEffected(), Creature.class, cha ->
+		World.getInstance().forEachVisibleObject(effected, Creature.class, cha ->
 		{
-			if ((cha != effectedMob) && (cha != info.getEffector()))
+			if ((cha != effectedMob) && (cha != effector))
 			{
 				// Aggro cannot be transfered to a mob of the same faction.
 				if (cha.isAttackable() && ((Attackable) cha).isInMyClan(effectedMob))
@@ -88,8 +89,8 @@ public final class RandomizeHate extends AbstractEffect
 		
 		// Choosing randomly a new target
 		final Creature target = targetList.get(Rnd.get(targetList.size()));
-		final int hate = effectedMob.getHating(info.getEffector());
-		effectedMob.stopHating(info.getEffector());
+		final int hate = effectedMob.getHating(effector);
+		effectedMob.stopHating(effector);
 		effectedMob.addDamageHate(target, 0, hate);
 	}
 }

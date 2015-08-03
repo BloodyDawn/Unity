@@ -27,6 +27,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 
@@ -69,51 +70,48 @@ public final class SoulBlow extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		Creature target = info.getEffected();
-		Creature activeChar = info.getEffector();
-		
-		if (activeChar.isAlikeDead())
+		if (effector.isAlikeDead())
 		{
 			return;
 		}
 		
-		if (_overHit && target.isAttackable())
+		if (_overHit && effected.isAttackable())
 		{
-			((Attackable) target).overhitEnabled(true);
+			((Attackable) effected).overhitEnabled(true);
 		}
-		
-		boolean ss = info.getSkill().useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
-		byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		double damage = Formulas.calcBlowDamage(activeChar, target, info.getSkill(), _power, shld, ss);
-		if ((info.getSkill().getMaxSoulConsumeCount() > 0) && activeChar.isPlayer())
+
+		boolean ss = skill.useSoulShot() && effector.isChargedShot(ShotType.SOULSHOTS);
+		byte shld = Formulas.calcShldUse(effector, effected, skill);
+		double damage = Formulas.calcBlowDamage(effector, effected, skill, _power, shld, ss);
+		if ((skill.getMaxSoulConsumeCount() > 0) && effector.isPlayer())
 		{
 			// Souls Formula (each soul increase +4%)
-			int chargedSouls = (activeChar.getActingPlayer().getChargedSouls() <= info.getSkill().getMaxSoulConsumeCount()) ? activeChar.getActingPlayer().getChargedSouls() : info.getSkill().getMaxSoulConsumeCount();
+			int chargedSouls = (effector.getActingPlayer().getChargedSouls() <= skill.getMaxSoulConsumeCount()) ? effector.getActingPlayer().getChargedSouls() : skill.getMaxSoulConsumeCount();
 			damage *= 1 + (chargedSouls * 0.04);
 		}
 		
 		// Check if damage should be reflected
-		Formulas.calcDamageReflected(activeChar, target, info.getSkill(), true);
+		Formulas.calcDamageReflected(effector, effected, skill, true);
 		
-		damage = (int) target.calcStat(Stats.DAMAGE_CAP, damage, null, null);
-		target.reduceCurrentHp(damage, activeChar, info.getSkill());
-		target.notifyDamageReceived(damage, activeChar, info.getSkill(), false, false, false);
+		damage = (int) effected.calcStat(Stats.DAMAGE_CAP, damage, null, null);
+		effected.reduceCurrentHp(damage, effector, skill);
+		effected.notifyDamageReceived(damage, effector, skill, false, false, false);
 		
 		// Manage attack or cast break of the target (calculating rate, sending message...)
-		if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
+		if (!effected.isRaid() && Formulas.calcAtkBreak(effected, damage))
 		{
-			target.breakAttack();
-			target.breakCast();
+			effected.breakAttack();
+			effected.breakCast();
 		}
 		
-		if (activeChar.isPlayer())
+		if (effector.isPlayer())
 		{
-			PlayerInstance activePlayer = activeChar.getActingPlayer();
-			activePlayer.sendDamageMessage(target, (int) damage, false, true, false);
+			PlayerInstance activePlayer = effector.getActingPlayer();
+			activePlayer.sendDamageMessage(effected, (int) damage, false, true, false);
 		}
 	}
 }

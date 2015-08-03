@@ -22,6 +22,7 @@ import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.data.xml.impl.PetDataTable;
 import org.l2junity.gameserver.model.PetData;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
@@ -31,6 +32,7 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.PetItemHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.PetItemList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -56,16 +58,16 @@ public final class SummonPet extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if ((info.getEffector() == null) || (info.getEffected() == null) || !info.getEffector().isPlayer() || !info.getEffected().isPlayer() || info.getEffected().isAlikeDead())
+		if (!effector.isPlayer() || !effected.isPlayer() || effected.isAlikeDead())
 		{
 			return;
 		}
 		
-		final PlayerInstance player = info.getEffector().getActingPlayer();
+		final PlayerInstance player = effector.getActingPlayer();
 		
 		if (player.hasPet() || player.isMounted())
 		{

@@ -22,12 +22,14 @@ import java.util.Collection;
 
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -52,30 +54,30 @@ public final class Plunder extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (!info.getEffector().isPlayer())
+		if (!effector.isPlayer())
 		{
 			return;
 		}
-		else if (!info.getEffected().isMonster() || info.getEffected().isDead())
+		else if (!effected.isMonster() || effected.isDead())
 		{
-			info.getEffector().sendPacket(SystemMessageId.INVALID_TARGET);
+			effector.sendPacket(SystemMessageId.INVALID_TARGET);
 			return;
 		}
 		
-		final L2MonsterInstance monster = (L2MonsterInstance) info.getEffected();
-		final PlayerInstance player = info.getEffector().getActingPlayer();
+		final L2MonsterInstance monster = (L2MonsterInstance) effected;
+		final PlayerInstance player = effector.getActingPlayer();
 		
 		if (monster.isSpoiled())
 		{
-			info.getEffector().sendPacket(SystemMessageId.PLUNDER_SKILL_HAS_BEEN_ALREADY_USED_ON_THIS_TARGET);
+			effector.sendPacket(SystemMessageId.PLUNDER_SKILL_HAS_BEEN_ALREADY_USED_ON_THIS_TARGET);
 			return;
 		}
 		
-		monster.setSpoilerObjectId(info.getEffector().getObjectId());
+		monster.setSpoilerObjectId(effector.getObjectId());
 		if (monster.isSweepActive())
 		{
 			final Collection<ItemHolder> items = monster.takeSweep();
@@ -84,17 +86,17 @@ public final class Plunder extends AbstractEffect
 			{
 				for (ItemHolder item : items)
 				{
-					if (info.getEffector().isInParty())
+					if (effector.isInParty())
 					{
-						info.getEffector().getParty().distributeItem(player, item, true, monster);
+						effector.getParty().distributeItem(player, item, true, monster);
 					}
 					else
 					{
-						player.addItem("Sweeper", item, info.getEffected(), true);
+						player.addItem("Sweeper", item, effected, true);
 					}
 				}
 			}
 		}
-		monster.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, info.getEffector());
+		monster.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, effector);
 	}
 }

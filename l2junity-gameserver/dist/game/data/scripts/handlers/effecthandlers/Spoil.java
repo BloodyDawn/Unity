@@ -20,10 +20,12 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -49,25 +51,25 @@ public final class Spoil extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (!info.getEffected().isMonster() || info.getEffected().isDead())
+		if (!effected.isMonster() || effected.isDead())
 		{
-			info.getEffector().sendPacket(SystemMessageId.INVALID_TARGET);
+			effector.sendPacket(SystemMessageId.INVALID_TARGET);
 			return;
 		}
 		
-		final L2MonsterInstance target = (L2MonsterInstance) info.getEffected();
+		final L2MonsterInstance target = (L2MonsterInstance) effected;
 		if (target.isSpoiled())
 		{
-			info.getEffector().sendPacket(SystemMessageId.IT_HAS_ALREADY_BEEN_SPOILED);
+			effector.sendPacket(SystemMessageId.IT_HAS_ALREADY_BEEN_SPOILED);
 			return;
 		}
 		
-		target.setSpoilerObjectId(info.getEffector().getObjectId());
-		info.getEffector().sendPacket(SystemMessageId.THE_SPOIL_CONDITION_HAS_BEEN_ACTIVATED);
-		target.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, info.getEffector());
+		target.setSpoilerObjectId(effector.getObjectId());
+		effector.sendPacket(SystemMessageId.THE_SPOIL_CONDITION_HAS_BEEN_ACTIVATED);
+		target.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, effector);
 	}
 }

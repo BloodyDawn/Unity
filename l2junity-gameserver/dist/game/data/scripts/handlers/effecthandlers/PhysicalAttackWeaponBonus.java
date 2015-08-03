@@ -88,46 +88,43 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		Creature target = info.getEffected();
-		Creature activeChar = info.getEffector();
-		
-		if (activeChar.isAlikeDead())
+		if (effector.isAlikeDead())
 		{
 			return;
 		}
-		
-		if (((info.getSkill().getFlyRadius() > 0) || (info.getSkill().getFlyType() != null)) && activeChar.isMovementDisabled())
+
+		if (((skill.getFlyRadius() > 0) || (skill.getFlyType() != null)) && effector.isMovementDisabled())
 		{
 			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
-			sm.addSkillName(info.getSkill());
-			activeChar.sendPacket(sm);
+			sm.addSkillName(skill);
+			effector.sendPacket(sm);
 			return;
 		}
 		
-		if (target.isPlayer() && target.getActingPlayer().isFakeDeath())
+		if (effected.isPlayer() && effected.getActingPlayer().isFakeDeath())
 		{
-			target.stopFakeDeath(true);
+			effected.stopFakeDeath(true);
 		}
 		
-		if (_overHit && target.isAttackable())
+		if (_overHit && effected.isAttackable())
 		{
-			((Attackable) target).overhitEnabled(true);
+			((Attackable) effected).overhitEnabled(true);
 		}
 		
-		double damage = (int) calcPhysDam(info);
-		boolean crit = Formulas.calcCrit(_criticalChance, true, activeChar, target);
+		double damage = (int) calcPhysDam(effector, effected, skill);
+		boolean crit = Formulas.calcCrit(_criticalChance, true, effector, effected);
 		
 		if (crit)
 		{
-			damage = activeChar.calcStat(Stats.CRITICAL_DAMAGE_SKILL, damage, target, info.getSkill());
+			damage = effector.calcStat(Stats.CRITICAL_DAMAGE_SKILL, damage, effected, skill);
 			damage *= 2;
 		}
 		
-		final Weapon weapon = activeChar.getActiveWeaponItem();
+		final Weapon weapon = effector.getActiveWeaponItem();
 		if (weapon != null)
 		{
 			damage *= _weaponBonus.getOrDefault(weapon.getItemType(), 1.);
@@ -136,37 +133,34 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 		if (damage > 0)
 		{
 			// Check if damage should be reflected
-			Formulas.calcDamageReflected(activeChar, target, info.getSkill(), crit);
+			Formulas.calcDamageReflected(effector, effected, skill, crit);
 			
-			damage = target.calcStat(Stats.DAMAGE_CAP, damage, null, null);
-			activeChar.sendDamageMessage(target, (int) damage, false, crit, false);
-			target.reduceCurrentHp(damage, activeChar, info.getSkill());
-			target.notifyDamageReceived(damage, activeChar, info.getSkill(), crit, false, false);
+			damage = effected.calcStat(Stats.DAMAGE_CAP, damage, null, null);
+			effector.sendDamageMessage(effected, (int) damage, false, crit, false);
+			effected.reduceCurrentHp(damage, effector, skill);
+			effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 		}
 		else
 		{
-			activeChar.sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
+			effector.sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
 		}
 		
-		if (info.getSkill().isSuicideAttack())
+		if (skill.isSuicideAttack())
 		{
-			activeChar.doDie(activeChar);
+			effector.doDie(effector);
 		}
 	}
 	
-	public final double calcPhysDam(BuffInfo info)
+	public final double calcPhysDam(Creature effector, Creature effected, Skill skill)
 	{
-		final Creature attacker = info.getEffector();
-		final Creature target = info.getEffected();
-		final Skill skill = info.getSkill();
-		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
-		double damage = attacker.getPAtk(target);
-		double defence = target.getPDef(attacker);
-		boolean ss = info.getSkill().isPhysical() && attacker.isChargedShot(ShotType.SOULSHOTS);
-		final byte shld = !_ignoreShieldDefence ? Formulas.calcShldUse(attacker, target, info.getSkill()) : 0;
-		final double distance = attacker.calculateDistance(target, true, false);
+		final boolean isPvP = effector.isPlayable() && effected.isPlayable();
+		double damage = effector.getPAtk(effected);
+		double defence = effected.getPDef(effector);
+		boolean ss = skill.isPhysical() && effector.isChargedShot(ShotType.SOULSHOTS);
+		final byte shld = !_ignoreShieldDefence ? Formulas.calcShldUse(effector, effected, skill) : 0;
+		final double distance = effector.calculateDistance(effected, true, false);
 		
-		if (distance > target.calcStat(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE, target, skill))
+		if (distance > effected.calcStat(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE, effected, skill))
 		{
 			return 0;
 		}
@@ -174,7 +168,7 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 		// Defense bonuses in PvP fight
 		if (isPvP)
 		{
-			defence *= target.calcStat(Stats.PVP_PHYS_SKILL_DEF, 1, null, null);
+			defence *= effected.calcStat(Stats.PVP_PHYS_SKILL_DEF, 1, null, null);
 		}
 		
 		switch (shld)
@@ -183,7 +177,7 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 			{
 				if (!Config.ALT_GAME_SHIELD_BLOCKS)
 				{
-					defence += target.getShldDef();
+					defence += effected.getShldDef();
 				}
 				break;
 			}
@@ -197,13 +191,13 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 		int ssBoost = ss ? 2 : 1;
 		damage = (damage * ssBoost) + _power;
 		damage = (70 * damage) / (defence); // Calculate defence modifier.
-		damage *= Formulas.calcAttackTraitBonus(attacker, target); // Calculate Weapon resists
+		damage *= Formulas.calcAttackTraitBonus(effector, effected); // Calculate Weapon resists
 		
 		// Weapon random damage
-		damage *= attacker.getRandomDamageMultiplier();
+		damage *= effector.getRandomDamageMultiplier();
 		if ((shld > 0) && Config.ALT_GAME_SHIELD_BLOCKS)
 		{
-			damage -= target.getShldDef();
+			damage -= effected.getShldDef();
 			if (damage < 0)
 			{
 				damage = 0;
@@ -222,27 +216,27 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 		// Dmg bonuses in PvP fight
 		if (isPvP)
 		{
-			damage *= attacker.calcStat(Stats.PVP_PHYS_SKILL_DMG, 1, null, null);
+			damage *= effector.calcStat(Stats.PVP_PHYS_SKILL_DMG, 1, null, null);
 		}
 		
 		// Physical skill dmg boost
-		damage = attacker.calcStat(Stats.PHYSICAL_SKILL_POWER, damage, null, null);
+		damage = effector.calcStat(Stats.PHYSICAL_SKILL_POWER, damage, null, null);
 		
-		damage *= Formulas.calcAttributeBonus(attacker, target, skill);
-		if (target.isAttackable())
+		damage *= Formulas.calcAttributeBonus(effector, effected, skill);
+		if (effected.isAttackable())
 		{
-			final Weapon weapon = attacker.getActiveWeaponItem();
+			final Weapon weapon = effector.getActiveWeaponItem();
 			if ((weapon != null) && weapon.isBowOrCrossBow())
 			{
-				damage *= attacker.calcStat(Stats.PVE_BOW_SKILL_DMG, 1, null, null);
+				damage *= effector.calcStat(Stats.PVE_BOW_SKILL_DMG, 1, null, null);
 			}
 			else
 			{
-				damage *= attacker.calcStat(Stats.PVE_PHYSICAL_DMG, 1, null, null);
+				damage *= effector.calcStat(Stats.PVE_PHYSICAL_DMG, 1, null, null);
 			}
-			if (!target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (attacker.getActingPlayer() != null) && ((target.getLevel() - attacker.getActingPlayer().getLevel()) >= 2))
+			if (!effected.isRaid() && !effected.isRaidMinion() && (effected.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (effector.getActingPlayer() != null) && ((effected.getLevel() - effector.getActingPlayer().getLevel()) >= 2))
 			{
-				int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 1;
+				int lvlDiff = effected.getLevel() - effector.getActingPlayer().getLevel() - 1;
 				if (lvlDiff >= Config.NPC_SKILL_DMG_PENALTY.size())
 				{
 					damage *= Config.NPC_SKILL_DMG_PENALTY.get(Config.NPC_SKILL_DMG_PENALTY.size() - 1);

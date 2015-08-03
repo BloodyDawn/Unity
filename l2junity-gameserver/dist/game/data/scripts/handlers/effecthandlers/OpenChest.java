@@ -20,11 +20,13 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2ChestInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Open Chest effect implementation.
@@ -42,17 +44,17 @@ public final class OpenChest extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (!(info.getEffected() instanceof L2ChestInstance))
+		if (!(effected instanceof L2ChestInstance))
 		{
 			return;
 		}
 		
-		final PlayerInstance player = info.getEffector().getActingPlayer();
-		final L2ChestInstance chest = (L2ChestInstance) info.getEffected();
+		final PlayerInstance player = effector.getActingPlayer();
+		final L2ChestInstance chest = (L2ChestInstance) effected;
 		if (chest.isDead() || (player.getInstanceId() != chest.getInstanceId()))
 		{
 			return;
@@ -63,7 +65,7 @@ public final class OpenChest extends AbstractEffect
 			player.broadcastSocialAction(3);
 			chest.setSpecialDrop();
 			chest.setMustRewardExpSp(false);
-			chest.reduceCurrentHp(chest.getMaxHp(), player, info.getSkill());
+			chest.reduceCurrentHp(chest.getMaxHp(), player, skill);
 		}
 		else
 		{

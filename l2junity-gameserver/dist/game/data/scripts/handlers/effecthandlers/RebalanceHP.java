@@ -52,20 +52,18 @@ public final class RebalanceHP extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (!info.getEffector().isPlayer())
+		if (!effector.isPlayer())
 		{
 			return;
 		}
 		
 		double fullHP = 0;
 		double currentHPs = 0;
-		final Party party = info.getEffector().getParty();
-		final Skill skill = info.getSkill();
-		final Creature effector = info.getEffector();
+		final Party party = effector.getParty();
 		
 		switch (skill.getTargetType())
 		{

@@ -26,6 +26,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -67,51 +68,48 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		Creature target = info.getEffected();
-		Creature activeChar = info.getEffector();
-		
-		if (activeChar.isAlikeDead())
+		if (effector.isAlikeDead())
 		{
 			return;
 		}
-		
-		if (activeChar.isMovementDisabled())
+
+		if (effector.isMovementDisabled())
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
-			sm.addSkillName(info.getSkill());
-			activeChar.sendPacket(sm);
+			sm.addSkillName(skill);
+			effector.sendPacket(sm);
 			return;
 		}
 		
-		final byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		boolean crit = Formulas.calcCrit(_criticalChance, true, activeChar, target);
+		final byte shld = Formulas.calcShldUse(effector, effected, skill);
+		boolean crit = Formulas.calcCrit(_criticalChance, true, effector, effected);
 		
-		if (_overHit && target.isAttackable())
+		if (_overHit && effected.isAttackable())
 		{
-			((Attackable) target).overhitEnabled(true);
+			((Attackable) effected).overhitEnabled(true);
 		}
 		
 		int damage = 0;
-		boolean ss = info.getSkill().isPhysical() && activeChar.isChargedShot(ShotType.SOULSHOTS);
-		damage = (int) Formulas.calcPhysDam(activeChar, target, info.getSkill(), _power * (-((target.getCurrentHp() * 2) / target.getMaxHp()) + 2), shld, false, ss);
+		boolean ss = skill.isPhysical() && effector.isChargedShot(ShotType.SOULSHOTS);
+		damage = (int) Formulas.calcPhysDam(effector, effected, skill, _power * (-((effected.getCurrentHp() * 2) / effected.getMaxHp()) + 2), shld, false, ss);
 		
 		if (damage > 0)
 		{
 			// Check if damage should be reflected.
-			Formulas.calcDamageReflected(activeChar, target, info.getSkill(), crit);
+			Formulas.calcDamageReflected(effector, effected, skill, crit);
 			
-			damage = (int) target.calcStat(Stats.DAMAGE_CAP, damage, null, null);
-			activeChar.sendDamageMessage(target, damage, false, crit, false);
-			target.reduceCurrentHp(damage, activeChar, info.getSkill());
-			target.notifyDamageReceived(damage, activeChar, info.getSkill(), crit, false, false);
+			damage = (int) effected.calcStat(Stats.DAMAGE_CAP, damage, null, null);
+			effector.sendDamageMessage(effected, damage, false, crit, false);
+			effected.reduceCurrentHp(damage, effector, skill);
+			effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 		}
 		else
 		{
-			activeChar.sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
+			effector.sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
 		}
 	}
 }

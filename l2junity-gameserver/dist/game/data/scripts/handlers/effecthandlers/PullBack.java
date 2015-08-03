@@ -24,6 +24,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.ValidateLocation;
@@ -54,13 +55,10 @@ public final class PullBack extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		final Creature effector = info.getEffector();
-		final Creature effected = info.getEffected();
-		
 		// In retail, you get debuff, but you are not even moved if there is obstacle. You are still disabled from using skills and moving though.
 		if (GeoData.getInstance().canMove(effected, effector))
 		{

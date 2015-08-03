@@ -19,10 +19,12 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.ExUserInfoCubic;
 
 /**
@@ -50,16 +52,16 @@ public final class SummonAgathion extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if ((info.getEffected() == null) || !info.getEffected().isPlayer())
+		if (!effected.isPlayer())
 		{
 			return;
 		}
 		
-		final PlayerInstance player = info.getEffected().getActingPlayer();
+		final PlayerInstance player = effected.getActingPlayer();
 		
 		player.setAgathionId(_npcId);
 		player.sendPacket(new ExUserInfoCubic(player));
