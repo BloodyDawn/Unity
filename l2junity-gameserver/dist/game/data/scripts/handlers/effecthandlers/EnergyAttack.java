@@ -77,41 +77,38 @@ public final class EnergyAttack extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (!info.getEffector().isPlayer())
+		if (!effector.isPlayer())
 		{
 			return;
 		}
 		
-		final PlayerInstance attacker = info.getEffector().getActingPlayer();
+		final PlayerInstance attacker = effector.getActingPlayer();
 		
 		final int charge = Math.max(_chargeConsume, attacker.getCharges());
 		
 		if (!attacker.decreaseCharges(charge))
 		{
 			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
-			sm.addSkillName(info.getSkill());
+			sm.addSkillName(skill);
 			attacker.sendPacket(sm);
 			return;
 		}
-		
-		final Creature target = info.getEffected();
-		final Skill skill = info.getSkill();
-		
-		double attack = attacker.getPAtk(target);
-		int defence = target.getPDef(attacker);
+
+		double attack = attacker.getPAtk(effected);
+		int defence = effected.getPDef(attacker);
 		
 		if (!_ignoreShieldDefence)
 		{
-			byte shield = Formulas.calcShldUse(attacker, target, skill, true);
+			byte shield = Formulas.calcShldUse(attacker, effected, skill, true);
 			switch (shield)
 			{
 				case Formulas.SHIELD_DEFENSE_SUCCEED:
 				{
-					defence += target.getShldDef();
+					defence += effected.getShldDef();
 					break;
 				}
 				case Formulas.SHIELD_DEFENSE_PERFECT_BLOCK:
@@ -122,9 +119,9 @@ public final class EnergyAttack extends AbstractEffect
 			}
 		}
 		
-		if (_overHit && target.isAttackable())
+		if (_overHit && effected.isAttackable())
 		{
-			((Attackable) target).overhitEnabled(true);
+			((Attackable) effected).overhitEnabled(true);
 		}
 		
 		double damage = 1;
@@ -132,9 +129,9 @@ public final class EnergyAttack extends AbstractEffect
 		
 		if (defence != -1)
 		{
-			double damageMultiplier = Formulas.calcWeaponTraitBonus(attacker, target) * Formulas.calcAttributeBonus(attacker, target, skill) * Formulas.calcGeneralTraitBonus(attacker, target, skill.getTraitType(), true);
+			double damageMultiplier = Formulas.calcWeaponTraitBonus(attacker, effected) * Formulas.calcAttributeBonus(attacker, effected, skill) * Formulas.calcGeneralTraitBonus(attacker, effected, skill.getTraitType(), true);
 			
-			boolean ss = info.getSkill().useSoulShot() && attacker.isChargedShot(ShotType.SOULSHOTS);
+			boolean ss = skill.useSoulShot() && attacker.isChargedShot(ShotType.SOULSHOTS);
 			double ssBoost = ss ? 2 : 1.0;
 			
 			double weaponTypeBoost;
@@ -159,10 +156,10 @@ public final class EnergyAttack extends AbstractEffect
 			
 			damage = attack / defence;
 			damage *= damageMultiplier;
-			if (target instanceof PlayerInstance)
+			if (effected instanceof PlayerInstance)
 			{
 				damage *= attacker.getStat().calcStat(Stats.PVP_PHYS_SKILL_DMG, 1.0);
-				damage *= target.getStat().calcStat(Stats.PVP_PHYS_SKILL_DEF, 1.0);
+				damage *= effected.getStat().calcStat(Stats.PVP_PHYS_SKILL_DEF, 1.0);
 				damage = attacker.getStat().calcStat(Stats.PHYSICAL_SKILL_POWER, damage);
 			}
 			
@@ -176,12 +173,12 @@ public final class EnergyAttack extends AbstractEffect
 		if (damage > 0)
 		{
 			// Check if damage should be reflected
-			Formulas.calcDamageReflected(attacker, target, skill, critical);
+			Formulas.calcDamageReflected(attacker, effected, skill, critical);
 			
-			damage = target.calcStat(Stats.DAMAGE_CAP, damage, null, null);
-			attacker.sendDamageMessage(target, (int) damage, false, critical, false);
-			target.reduceCurrentHp(damage, attacker, skill);
-			target.notifyDamageReceived(damage, attacker, skill, critical, false, false);
+			damage = effected.calcStat(Stats.DAMAGE_CAP, damage, null, null);
+			attacker.sendDamageMessage(effected, (int) damage, false, critical, false);
+			effected.reduceCurrentHp(damage, attacker, skill);
+			effected.notifyDamageReceived(damage, attacker, skill, critical, false, false);
 		}
 	}
 }

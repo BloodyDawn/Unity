@@ -31,6 +31,7 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Dispel By Slot effect implementation.
@@ -72,16 +73,15 @@ public final class DispelBySlot extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
 		if (_dispelAbnormals.isEmpty())
 		{
 			return;
 		}
-		
-		final Creature effected = info.getEffected();
+
 		final CharEffectList effectList = effected.getEffectList();
 		// There is no need to iterate over all buffs,
 		// Just iterate once over all slots to dispel and get the buff with that abnormal if exists,
@@ -93,7 +93,7 @@ public final class DispelBySlot extends AbstractEffect
 			{
 				if (effected.isTransformed() || (effected.isPlayer() || (entry.getValue() == effected.getActingPlayer().getTransformationId()) || (entry.getValue() < 0)))
 				{
-					info.getEffected().stopTransformation(true);
+					effected.stopTransformation(true);
 					continue;
 				}
 			}

@@ -21,9 +21,10 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.ValidateLocation;
 
@@ -50,32 +51,32 @@ public final class EnemyCharge extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (info.getEffected().isMovementDisabled())
+		if (effected.isMovementDisabled())
 		{
 			return;
 		}
 		
 		// Get current position of the L2Character
-		final int curX = info.getEffector().getX();
-		final int curY = info.getEffector().getY();
-		final int curZ = info.getEffector().getZ();
+		final int curX = effector.getX();
+		final int curY = effector.getY();
+		final int curZ = effector.getZ();
 		
 		// Calculate distance (dx,dy) between current position and destination
-		double dx = info.getEffected().getX() - curX;
-		double dy = info.getEffected().getY() - curY;
-		double dz = info.getEffected().getZ() - curZ;
+		double dx = effected.getX() - curX;
+		double dy = effected.getY() - curY;
+		double dz = effected.getZ() - curZ;
 		double distance = Math.sqrt((dx * dx) + (dy * dy));
 		if (distance > 2000)
 		{
-			_log.info("EffectEnemyCharge was going to use invalid coordinates for characters, getEffector: " + curX + "," + curY + " and getEffected: " + info.getEffected().getX() + "," + info.getEffected().getY());
+			_log.info("EffectEnemyCharge was going to use invalid coordinates for characters, getEffector: " + curX + "," + curY + " and getEffected: " + effected.getX() + "," + effected.getY());
 			return;
 		}
 		
-		int offset = Math.max((int) distance - info.getSkill().getFlyRadius(), 30);
+		int offset = Math.max((int) distance - skill.getFlyRadius(), 30);
 		
 		// approximation for moving closer when z coordinates are different
 		// TODO: handle Z axis movement better
@@ -98,14 +99,14 @@ public final class EnemyCharge extends AbstractEffect
 		// Calculate the new destination with offset included
 		int x = curX + (int) ((distance - offset) * cos);
 		int y = curY + (int) ((distance - offset) * sin);
-		int z = info.getEffected().getZ();
+		int z = effected.getZ();
 		
-		final Location destination = GeoData.getInstance().moveCheck(info.getEffector().getX(), info.getEffector().getY(), info.getEffector().getZ(), x, y, z, info.getEffector().getInstanceId());
+		final Location destination = GeoData.getInstance().moveCheck(effector.getX(), effector.getY(), effector.getZ(), x, y, z, effector.getInstanceId());
 		
-		info.getEffector().broadcastPacket(new FlyToLocation(info.getEffector(), destination, info.getSkill().getFlyType(), _speed, _delay, _animationSpeed));
+		effector.broadcastPacket(new FlyToLocation(effector, destination, skill.getFlyType(), _speed, _delay, _animationSpeed));
 		
 		// maybe is need force set X,Y,Z
-		info.getEffector().setXYZ(destination);
-		info.getEffector().broadcastPacket(new ValidateLocation(info.getEffector()));
+		effected.setXYZ(destination);
+		effected.broadcastPacket(new ValidateLocation(effector));
 	}
 }

@@ -22,6 +22,7 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -29,6 +30,7 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.ValidateLocation;
@@ -68,9 +70,9 @@ public final class EscapeToNpc extends AbstractEffect
 		// While affected by escape blocking effect you cannot use Blink or Scroll of Escape
 		return !info.getEffected().cannotEscape();
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
 		if (_npcId <= 0)
 		{
@@ -87,7 +89,7 @@ public final class EscapeToNpc extends AbstractEffect
 		if (_summonedOnly)
 		{
 			// Search only summoned NPCs
-			teleLocation = info.getEffector().getSummonedNpcs().stream().filter(npc -> npc.getId() == _npcId).findAny().orElse(null);
+			teleLocation = effector.getSummonedNpcs().stream().filter(npc -> npc.getId() == _npcId).findAny().orElse(null);
 		}
 		else
 		{
@@ -95,9 +97,9 @@ public final class EscapeToNpc extends AbstractEffect
 			{
 				// Use the right NPC class for faster search.
 				final Class<? extends Npc> clazz = Class.forName("org.l2junity.gameserver.model.actor.instance." + template.getType() + "Instance").asSubclass(Npc.class);
-				final int range = info.getSkill().getCastRange() <= 0 ? Integer.MAX_VALUE : info.getSkill().getCastRange();
+				final int range = skill.getCastRange() <= 0 ? Integer.MAX_VALUE : skill.getCastRange();
 				
-				for (Npc npc : World.getInstance().getVisibleObjects(info.getEffected(), clazz, range))
+				for (Npc npc : World.getInstance().getVisibleObjects(effected, clazz, range))
 				{
 					if ((npc != null) && (npc.getId() == _npcId))
 					{
@@ -114,18 +116,18 @@ public final class EscapeToNpc extends AbstractEffect
 		
 		if (teleLocation != null)
 		{
-			if (info.getEffected().isInsideRadius(teleLocation, 900, false, false))
+			if (effected.isInsideRadius(teleLocation, 900, false, false))
 			{
-				info.getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-				info.getEffected().broadcastPacket(new FlyToLocation(info.getEffected(), teleLocation, FlyType.DUMMY));
-				info.getEffected().abortAttack();
-				info.getEffected().abortCast();
-				info.getEffected().setXYZ(teleLocation);
-				info.getEffected().broadcastPacket(new ValidateLocation(info.getEffected()));
+				effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+				effected.broadcastPacket(new FlyToLocation(effected, teleLocation, FlyType.DUMMY));
+				effected.abortAttack();
+				effected.abortCast();
+				effected.setXYZ(teleLocation);
+				effected.broadcastPacket(new ValidateLocation(effected));
 			}
 			else
 			{
-				info.getEffected().teleToLocation(teleLocation);
+				effected.teleToLocation(teleLocation);
 			}
 		}
 	}

@@ -21,10 +21,12 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.TeleportWhereType;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Escape effect implementation.
@@ -59,16 +61,16 @@ public final class Escape extends AbstractEffect
 		// While affected by escape blocking effect you cannot use Blink or Scroll of Escape
 		return super.canStart(info) && !info.getEffected().cannotEscape();
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
 		if (_escapeType == null)
 		{
 			return;
 		}
 		
-		info.getEffected().teleToLocation(MapRegionManager.getInstance().getTeleToLocation(info.getEffected(), _escapeType), true);
-		info.getEffected().setInstanceId(0);
+		 effected.teleToLocation(MapRegionManager.getInstance().getTeleToLocation(effected, _escapeType), true);
+		 effected.setInstanceId(0);
 	}
 }
