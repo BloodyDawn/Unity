@@ -99,7 +99,6 @@
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
 		<set name="castRange" val="600" />
-		<set name="castRange" val="1100" />
 		<set name="reuseDelay" val="1000" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="magicLvl" val="97" />
@@ -157,10 +156,10 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="11806" levels="4" name="Blessing of Tree">
-		<table name="#magicLvl"> 85 90 95 99 </table>
 		<!-- Updated to Ertheia -->
 		<!-- Glory Days confirmed -->
 		<!-- Recovers HP and removes bad abnormal statuses. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#heal"> 3274 3296 3319 3338 </table>
 		<set name="icon" val="icon.skill1258" />
 		<set name="operateType" val="A1" />
@@ -202,61 +201,69 @@
 		</for>
 	</skill>
 	<skill id="11808" levels="2" name="Elegance of Light">
-		<table name="#magicLvl"> 91 97 </table>
 		<!-- Updated to Ertheia -->
+		<!-- Glory Days confirmed -->
 		<!-- Affected by Elegance of Light. HP is decreased. -->
-		<table name="#maxHp"> 100 200 </table> <!-- Totally custom -->
-		<table name="#magicLvl"> 87 90 93 96 99 </table>
+		<table name="#magicLvl"> 91 97 </table>
+		<table name="#dot"> 200 400 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="11" />
+		<set name="abnormalType" val="ALL_REGEN_DOWN" />
+		<set name="affectRange" val="300" />
 		<set name="icon" val="icon.skill0086" />
 		<set name="operateType" val="A5" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="379" />
-		<set name="abnormalType" val="ALL_REGEN_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Debuff">
-				<sub stat="maxHp" val="#maxHp" />
+			<effect name="DamOverTime" ticks="1">
+				<param power="#dot" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11809" levels="2" name="Elegance of Light">
-		<table name="#magicLvl"> 91 97 </table>
-		<!-- Updated to Ertheia (totally guessed) -->
+		<!-- Updated to Ertheia -->
+		<!-- Glory Days confirmed -->
 		<!-- Affected by Elegance of Light. Increases HP. -->
-		<table name="#maxHp"> 100 200 </table> <!-- Totally custom -->
+		<table name="#magicLvl"> 91 97 </table>
+		<table name="#dot"> 200 400 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="11" />
+		<set name="abnormalType" val="MULTI_DEBUFF_EARTH" />
+		<set name="affectRange" val="300" />
 		<set name="icon" val="icon.skill0086" />
 		<set name="operateType" val="A5" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="379" />
-		<set name="abnormalType" val="MULTI_DEBUFF_EARTH" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="10000" />
 		<for>
-			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
+			<effect name="HealOverTime" ticks="1">
+				<param power="#dot" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11810" levels="1" name="Resurrection Wish">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Can use the Mark of Resurrection for 30 seconds. -->
 		<set name="icon" val="icon.skill1217" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="AB_HAWK_EYE" />
 		<set name="operateType" val="A4" />
 		<set name="targetType" val="SELF" />
-		<set name="abnormalType" val="AB_HAWK_EYE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -264,18 +271,16 @@
 		<set name="activateRate" val="0" />
 		<set name="magicLvl" val="97" />
 		<set name="isMagic" val="1" />
-		<for>
-			<effect name="Buff" />
-		</for>
 	</skill>
 	<skill id="11811" levels="1" name="Total Resurrection Wish">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Can use the Mark of Resurrection and Mark of Total Resurrection for 30 seconds. -->
-		<set name="icon" val="icon.skill1217" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="SNIPE" />
+		<set name="icon" val="icon.skill1217" />
 		<set name="operateType" val="A4" />
 		<set name="targetType" val="SELF" />
-		<set name="abnormalType" val="SNIPE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -291,17 +296,19 @@
 		<!-- Updated to Ertheia (totally guessed) -->
 		<!-- Bestows the mark of resurrection that can completely resurrect party members from death for 10 minutes. Buffs and debuffs are maintained at death. But the Noblesse Blessing and Lucky Charm will disappear. -->
 		<set name="icon" val="icon.skill1410" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="RESURRECTION_SPECIAL" />
-		<set name="effectPoint" val="379" /> <!-- Custom -->
+		<set name="effectPoint" val="379" />
+		<set name="itemConsumeCount" val="2" />
+		<set name="itemConsumeId" val="8874" /> <!-- Einhasad's Holy Water -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="38" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="600000" />
-		<set name="staticReuse" val="true" /> <!-- Custom -->
+		<set name="staticReuse" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -309,6 +316,8 @@
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
 		<for>
+			<!-- TODO check Zealar implementation of Res special -->
+			<!-- p_resurrection_special;100;100;100;[s_debuff_immunity1]} -->
 			<effect name="ResurrectionSpecial">
 				<param power="100" />
 			</effect>
@@ -318,22 +327,27 @@
 		<!-- Updated to Ertheia (totally guessed) -->
 		<!-- Bestows the mark of resurrection that can completely resurrect all party members from death for 10 minutes. Buffs and debuffs are maintained at death. But the Noblesse Blessing and Lucky Charm will disappear. -->
 		<set name="icon" val="icon.skill1410" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="RESURRECTION_SPECIAL" />
-		<set name="effectPoint" val="379" /> <!-- Custom -->
+		<set name="affectRange" val="1000" />
+		<set name="itemConsumeCount" val="2" />
+		<set name="itemConsumeId" val="8874" /> <!-- Einhasad's Holy Water -->
+		<set name="effectPoint" val="379" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="77" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="600000" />
-		<set name="staticReuse" val="true" /> <!-- Custom -->
+		<set name="staticReuse" val="true" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="93" />
 		<set name="isMagic" val="1" />
 		<for>
+			<!-- TODO check Zealar implementation of Res special -->
+			<!-- p_resurrection_special;100;100;100;[s_debuff_immunity1]} -->
 			<effect name="ResurrectionSpecial">
 				<param power="100" />
 			</effect>
@@ -358,7 +372,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="#effectPoints" />
-		<set name="effectRange" val="900" /> <!-- Custom -->
+		<set name="effectRange" val="900" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="400" />
@@ -383,11 +397,12 @@
 		<!-- Updated to Ertheia -->
 		<!-- For 15 seconds, Heals allies over time. Also increases your Healing power. If triggered again, the effect will increase. -->
 		<table name="#mpConsumes"> 57 0 0 </table>
-		<table name="#power"> 1.10 1.20 1.30 </table>
-		<table name="#magicLvl"> 85 95 99 </table> <!-- Custom -->
-		<table name="#hotValue"> 172 174 176 </table> <!-- Custom -->
+		<table name="#power"> 1.1 1.2 1.3 </table>
+		<table name="#hotValue"> 107 143 179 </table>
 		<set name="icon" val="icon.skill1217" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
 		<set name="castRange" val="600" />
 		<set name="reuseDelay" val="1000" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -396,7 +411,6 @@
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="LIFE_FORCE_HEALER" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -405,12 +419,14 @@
 		<for>
 			<effect name="HealOverTime" ticks="1">
 				<param power="#hotValue" />
+			</effect>
+			<effect name="Buff">
 				<mul stat="healEffect" val="#power" />
 			</effect>
 		</for>
 		<selfEffects>
 			<effect name="CallSkill">
-				<param skillId="11816" skillLevel="1" skillLevelScaleTo="3" />
+				<param skillId="11804" skillLevel="1" skillLevelScaleTo="3" /> <!-- Sustain -->
 			</effect>
 		</selfEffects>
 	</skill>
@@ -418,13 +434,13 @@
 		<!-- Updated to Ertheia -->
 		<!-- For 10 second, increases Healing power by 50. If triggered again, the effect will increase. -->
 		<table name="#healPower"> 50 100 200 </table>
-		<table name="#abnormalLevel"> 1 2 3 </table>
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="icon" val="icon.skill1217" />
 		<set name="operateType" val="A4" />
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="LIFE_FORCE_HEALER_SELF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -444,6 +460,8 @@
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 282 288 300 312 325 337 351 365 373 386 398 </table>
 		<table name="#power"> 102 104 107 110 113 116 119 122 162 166 170 </table>
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="300" />
 		<set name="icon" val="icon.skill11817" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -461,6 +479,9 @@
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
+			</effect>
+			<effect name="AddHate">
+				<param power="-1240" />
 			</effect>
 		</for>
 	</skill>
