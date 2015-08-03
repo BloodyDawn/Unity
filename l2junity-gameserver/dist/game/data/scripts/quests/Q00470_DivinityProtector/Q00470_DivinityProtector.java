@@ -148,9 +148,12 @@ public final class Q00470_DivinityProtector extends Quest
 			}
 			case State.COMPLETED:
 			{
-				if (st.isNowAvailable())
+				if ((npc.getId() == ADVENTURER) && st.isNowAvailable())
 				{
-					st.setState(State.CREATED);
+					if (!isSimulated)
+					{
+						st.setState(State.CREATED);
+					}
 					htmltext = "32327-01.htm";
 				}
 				break;
