@@ -23,7 +23,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Modify vital effect implementation.
@@ -68,17 +68,16 @@ public final class ModifyVital extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		final Creature creature = info.getEffected();
-		if ((creature == null) || creature.isDead() || creature.isInvul())
+		if (effected.isDead() || effected.isInvul())
 		{
 			return;
 		}
 		
-		if (info.getEffector().isPlayer() && creature.isPlayer() && creature.isAffected(EffectFlag.FACEOFF) && (creature.getActingPlayer().getAttackerObjId() != info.getEffector().getObjectId()))
+		if (effector.isPlayer() && effected.isPlayer() && effected.isAffected(EffectFlag.FACEOFF) && (effected.getActingPlayer().getAttackerObjId() != effector.getObjectId()))
 		{
 			return;
 		}
@@ -87,32 +86,32 @@ public final class ModifyVital extends AbstractEffect
 		{
 			case DIFF:
 			{
-				creature.setCurrentCp(creature.getCurrentCp() + _cp);
-				creature.setCurrentHp(creature.getCurrentHp() + _hp);
-				creature.setCurrentMp(creature.getCurrentMp() + _mp);
+				effected.setCurrentCp(effected.getCurrentCp() + _cp);
+				effected.setCurrentHp(effected.getCurrentHp() + _hp);
+				effected.setCurrentMp(effected.getCurrentMp() + _mp);
 				break;
 			}
 			case SET:
 			{
 				if (_cp >= 0)
 				{
-					creature.setCurrentCp(_cp);
+					effected.setCurrentCp(_cp);
 				}
 				if (_hp >= 0)
 				{
-					creature.setCurrentHp(_hp);
+					effected.setCurrentHp(_hp);
 				}
 				if (_mp >= 0)
 				{
-					creature.setCurrentMp(_mp);
+					effected.setCurrentMp(_mp);
 				}
 				break;
 			}
 			case PER:
 			{
-				creature.setCurrentCp(creature.getCurrentCp() + (creature.getMaxCp() * (_cp / 100)));
-				creature.setCurrentHp(creature.getCurrentHp() + (creature.getMaxHp() * (_hp / 100)));
-				creature.setCurrentMp(creature.getCurrentMp() + (creature.getMaxMp() * (_mp / 100)));
+				effected.setCurrentCp(effected.getCurrentCp() + (effected.getMaxCp() * (_cp / 100)));
+				effected.setCurrentHp(effected.getCurrentHp() + (effected.getMaxHp() * (_hp / 100)));
+				effected.setCurrentMp(effected.getCurrentMp() + (effected.getMaxMp() * (_mp / 100)));
 				break;
 			}
 		}

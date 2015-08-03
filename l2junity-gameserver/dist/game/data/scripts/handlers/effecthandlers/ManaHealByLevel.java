@@ -24,7 +24,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -56,17 +56,16 @@ public final class ManaHealByLevel extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		Creature target = info.getEffected();
-		if ((target == null) || target.isDead() || target.isDoor() || target.isInvul())
+		if (effected.isDead() || effected.isDoor() || effected.isInvul())
 		{
 			return;
 		}
 		
-		if ((target != info.getEffector()) && target.isAffected(EffectFlag.FACEOFF))
+		if ((effected != effector) && effected.isAffected(EffectFlag.FACEOFF))
 		{
 			return;
 		}
@@ -75,10 +74,10 @@ public final class ManaHealByLevel extends AbstractEffect
 		
 		// recharged mp influenced by difference between target level and skill level
 		// if target is within 5 levels or lower then skill level there's no penalty.
-		amount = target.calcStat(Stats.MANA_CHARGE, amount, null, null);
-		if (target.getLevel() > info.getSkill().getMagicLevel())
+		amount = effected.calcStat(Stats.MANA_CHARGE, amount, null, null);
+		if (effected.getLevel() > skill.getMagicLevel())
 		{
-			int lvlDiff = target.getLevel() - info.getSkill().getMagicLevel();
+			int lvlDiff = effected.getLevel() - skill.getMagicLevel();
 			// if target is too high compared to skill level, the amount of recharged mp gradually decreases.
 			if (lvlDiff == 6)
 			{
@@ -123,23 +122,23 @@ public final class ManaHealByLevel extends AbstractEffect
 		}
 		
 		// Prevents overheal and negative amount
-		amount = Math.max(Math.min(amount, target.getMaxRecoverableMp() - target.getCurrentMp()), 0);
+		amount = Math.max(Math.min(amount, effected.getMaxRecoverableMp() - effected.getCurrentMp()), 0);
 		if (amount != 0)
 		{
-			final double newMp = amount + target.getCurrentMp();
-			target.setCurrentMp(newMp, false);
-			final StatusUpdate su = new StatusUpdate(target);
+			final double newMp = amount + effected.getCurrentMp();
+			effected.setCurrentMp(newMp, false);
+			final StatusUpdate su = new StatusUpdate(effected);
 			su.addAttribute(StatusUpdate.CUR_MP, (int) newMp);
-			su.addCaster(info.getEffector());
-			target.broadcastPacket(su);
+			su.addCaster(effector);
+			effected.broadcastPacket(su);
 		}
 		
-		final SystemMessage sm = SystemMessage.getSystemMessage(info.getEffector().getObjectId() != target.getObjectId() ? SystemMessageId.S2_MP_HAS_BEEN_RESTORED_BY_C1 : SystemMessageId.S1_MP_HAS_BEEN_RESTORED);
-		if (info.getEffector().getObjectId() != target.getObjectId())
+		final SystemMessage sm = SystemMessage.getSystemMessage(effector.getObjectId() != effected.getObjectId() ? SystemMessageId.S2_MP_HAS_BEEN_RESTORED_BY_C1 : SystemMessageId.S1_MP_HAS_BEEN_RESTORED);
+		if (effector.getObjectId() != effected.getObjectId())
 		{
-			sm.addCharName(info.getEffector());
+			sm.addCharName(effector);
 		}
 		sm.addInt((int) amount);
-		target.sendPacket(sm);
+		effected.sendPacket(sm);
 	}
 }

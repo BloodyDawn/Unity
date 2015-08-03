@@ -23,7 +23,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -54,12 +54,11 @@ public final class ManaHealPercent extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		Creature target = info.getEffected();
-		if ((target == null) || target.isDead() || target.isDoor())
+		if ((effected == null) || effected.isDead() || effected.isDoor())
 		{
 			return;
 		}
@@ -68,29 +67,29 @@ public final class ManaHealPercent extends AbstractEffect
 		double power = _power;
 		boolean full = (power == 100.0);
 		
-		amount = full ? target.getMaxMp() : (target.getMaxMp() * power) / 100.0;
+		amount = full ? effected.getMaxMp() : (effected.getMaxMp() * power) / 100.0;
 		// Prevents overheal and negative amount
-		amount = Math.max(Math.min(amount, target.getMaxRecoverableMp() - target.getCurrentMp()), 0);
+		amount = Math.max(Math.min(amount, effected.getMaxRecoverableMp() - effected.getCurrentMp()), 0);
 		if (amount != 0)
 		{
-			final double newMp = amount + target.getCurrentMp();
-			target.setCurrentMp(newMp, false);
-			final StatusUpdate su = new StatusUpdate(target);
+			final double newMp = amount + effected.getCurrentMp();
+			effected.setCurrentMp(newMp, false);
+			final StatusUpdate su = new StatusUpdate(effected);
 			su.addAttribute(StatusUpdate.CUR_MP, (int) newMp);
-			su.addCaster(info.getEffector());
-			target.broadcastPacket(su);
+			su.addCaster(effector);
+			effected.broadcastPacket(su);
 		}
 		SystemMessage sm;
-		if (info.getEffector().getObjectId() != target.getObjectId())
+		if (effector.getObjectId() != effected.getObjectId())
 		{
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S2_MP_HAS_BEEN_RESTORED_BY_C1);
-			sm.addCharName(info.getEffector());
+			sm.addCharName(effector);
 		}
 		else
 		{
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_MP_HAS_BEEN_RESTORED);
 		}
 		sm.addInt((int) amount);
-		target.sendPacket(sm);
+		effected.sendPacket(sm);
 	}
 }

@@ -25,7 +25,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -57,69 +57,67 @@ public final class Lethal extends AbstractEffect
 	{
 		return L2EffectType.LETHAL_ATTACK;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		Creature target = info.getEffected();
-		Creature activeChar = info.getEffector();
-		if (activeChar.isPlayer() && !activeChar.getAccessLevel().canGiveDamage())
+		if (effector.isPlayer() && !effector.getAccessLevel().canGiveDamage())
 		{
 			return;
 		}
 		
-		if (info.getSkill().getMagicLevel() < (target.getLevel() - 6))
+		if (skill.getMagicLevel() < (effected.getLevel() - 6))
 		{
 			return;
 		}
 		
-		if (!target.isLethalable() || target.isInvul())
+		if (!effected.isLethalable() || effected.isInvul())
 		{
 			return;
 		}
 		
-		if (activeChar.isPlayer() && target.isPlayer() && target.isAffected(EffectFlag.FACEOFF) && (target.getActingPlayer().getAttackerObjId() != activeChar.getObjectId()))
+		if (effector.isPlayer() && effected.isPlayer() && effected.isAffected(EffectFlag.FACEOFF) && (effected.getActingPlayer().getAttackerObjId() != effector.getObjectId()))
 		{
 			return;
 		}
 		
-		double chanceMultiplier = Formulas.calcAttributeBonus(activeChar, target, info.getSkill()) * Formulas.calcGeneralTraitBonus(activeChar, target, info.getSkill().getTraitType(), false);
+		double chanceMultiplier = Formulas.calcAttributeBonus(effector, effected, skill) * Formulas.calcGeneralTraitBonus(effector, effected, skill.getTraitType(), false);
 		// Lethal Strike
 		if (Rnd.get(100) < (_fullLethal * chanceMultiplier))
 		{
 			// for Players CP and HP is set to 1.
-			if (target.isPlayer())
+			if (effected.isPlayer())
 			{
-				target.notifyDamageReceived(target.getCurrentHp() - 1, info.getEffector(), info.getSkill(), true, false, false);
-				target.setCurrentCp(1);
-				target.setCurrentHp(1);
-				target.sendPacket(SystemMessageId.LETHAL_STRIKE);
+				effected.notifyDamageReceived(effected.getCurrentHp() - 1, effector, skill, true, false, false);
+				effected.setCurrentCp(1);
+				effected.setCurrentHp(1);
+				effected.sendPacket(SystemMessageId.LETHAL_STRIKE);
 			}
 			// for Monsters HP is set to 1.
-			else if (target.isMonster() || target.isSummon())
+			else if (effected.isMonster() || effected.isSummon())
 			{
-				target.notifyDamageReceived(target.getCurrentHp() - 1, info.getEffector(), info.getSkill(), true, false, false);
-				target.setCurrentHp(1);
+				effected.notifyDamageReceived(effected.getCurrentHp() - 1, effector, skill, true, false, false);
+				effected.setCurrentHp(1);
 			}
-			activeChar.sendPacket(SystemMessageId.HIT_WITH_LETHAL_STRIKE);
+			effector.sendPacket(SystemMessageId.HIT_WITH_LETHAL_STRIKE);
 		}
 		// Half-Kill
 		else if (Rnd.get(100) < (_halfLethal * chanceMultiplier))
 		{
 			// for Players CP is set to 1.
-			if (target.isPlayer())
+			if (effected.isPlayer())
 			{
-				target.setCurrentCp(1);
-				target.sendPacket(SystemMessageId.HALF_KILL);
-				target.sendPacket(SystemMessageId.YOUR_CP_WAS_DRAINED_BECAUSE_YOU_WERE_HIT_WITH_A_HALF_KILL_SKILL);
+				effected.setCurrentCp(1);
+				effected.sendPacket(SystemMessageId.HALF_KILL);
+				effected.sendPacket(SystemMessageId.YOUR_CP_WAS_DRAINED_BECAUSE_YOU_WERE_HIT_WITH_A_HALF_KILL_SKILL);
 			}
 			// for Monsters HP is set to 50%.
-			else if (target.isMonster() || target.isSummon())
+			else if (effected.isMonster() || effected.isSummon())
 			{
-				target.notifyDamageReceived(target.getCurrentHp() * 0.5, info.getEffector(), info.getSkill(), true, false, false);
-				target.setCurrentHp(target.getCurrentHp() * 0.5);
+				effected.notifyDamageReceived(effected.getCurrentHp() * 0.5, effector, skill, true, false, false);
+				effected.setCurrentHp(effected.getCurrentHp() * 0.5);
 			}
-			activeChar.sendPacket(SystemMessageId.HALF_KILL);
+			effector.sendPacket(SystemMessageId.HALF_KILL);
 		}
 	}
 }

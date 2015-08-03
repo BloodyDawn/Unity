@@ -26,6 +26,7 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -87,44 +88,41 @@ public final class MagicalAttackMp extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		Creature target = info.getEffected();
-		Creature activeChar = info.getEffector();
-		
-		if (activeChar.isAlikeDead())
+		if (effector.isAlikeDead())
 		{
 			return;
 		}
 		
-		boolean sps = info.getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.SPIRITSHOTS);
-		boolean bss = info.getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
-		final byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill()), info.getSkill(), target);
-		double damage = Formulas.calcManaDam(activeChar, target, info.getSkill(), _power, shld, sps, bss, mcrit);
-		double mp = (damage > target.getCurrentMp() ? target.getCurrentMp() : damage);
+		boolean sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
+		boolean bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
+		final byte shld = Formulas.calcShldUse(effector, effected, skill);
+		final boolean mcrit = Formulas.calcMCrit(effector.getMCriticalHit(effected, skill), skill, effected);
+		double damage = Formulas.calcManaDam(effector, effected, skill, _power, shld, sps, bss, mcrit);
+		double mp = (damage > effected.getCurrentMp() ? effected.getCurrentMp() : damage);
 		
 		if (damage > 0)
 		{
-			target.stopEffectsOnDamage(true);
-			target.setCurrentMp(target.getCurrentMp() - mp);
+			effected.stopEffectsOnDamage(true);
+			effected.setCurrentMp(effected.getCurrentMp() - mp);
 		}
 		
-		if (target.isPlayer())
+		if (effected.isPlayer())
 		{
 			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_S_MP_HAS_BEEN_DRAINED_BY_C1);
-			sm.addCharName(activeChar);
+			sm.addCharName(effector);
 			sm.addInt((int) mp);
-			target.sendPacket(sm);
+			effected.sendPacket(sm);
 		}
 		
-		if (activeChar.isPlayer())
+		if (effector.isPlayer())
 		{
 			SystemMessage sm2 = SystemMessage.getSystemMessage(SystemMessageId.YOUR_OPPONENT_S_MP_WAS_REDUCED_BY_S1);
 			sm2.addInt((int) mp);
-			activeChar.sendPacket(sm2);
+			effector.sendPacket(sm2);
 		}
 	}
 }
