@@ -20,9 +20,11 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Add Hate effect implementation.
@@ -46,9 +48,9 @@ public final class AddHate extends AbstractEffect
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (!info.getEffected().isAttackable())
+		if (!effected.isAttackable())
 		{
 			return;
 		}
@@ -56,11 +58,11 @@ public final class AddHate extends AbstractEffect
 		final double val = _power;
 		if (val > 0)
 		{
-			((Attackable) info.getEffected()).addDamageHate(info.getEffector(), 0, (int) val);
+			((Attackable) effected).addDamageHate(effector, 0, (int) val);
 		}
 		else if (val < 0)
 		{
-			((Attackable) info.getEffected()).reduceHate(info.getEffector(), (int) -val);
+			((Attackable) effected).reduceHate(effector, (int) -val);
 		}
 	}
 }

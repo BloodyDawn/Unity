@@ -75,7 +75,7 @@ public class DoppelgangerInstance extends Npc
 			{
 				if (summonerInfo.getAbnormalTime() > 0)
 				{
-					final BuffInfo info = new BuffInfo(getSummoner(), this, summonerInfo.getSkill());
+					final BuffInfo info = new BuffInfo(getSummoner(), this, summonerInfo.getSkill(), false);
 					info.setAbnormalTime(summonerInfo.getAbnormalTime());
 					getEffectList().add(info);
 				}

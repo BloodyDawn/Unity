@@ -27,6 +27,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 
@@ -70,48 +71,45 @@ public final class Backstab extends AbstractEffect
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (info.getEffector().isAlikeDead())
+		if (effector.isAlikeDead())
 		{
 			return;
 		}
-		
-		Creature target = info.getEffected();
-		Creature activeChar = info.getEffector();
-		
-		if (_overHit && target.isAttackable())
+
+		if (_overHit && effected.isAttackable())
 		{
-			((Attackable) target).overhitEnabled(true);
+			((Attackable) effected).overhitEnabled(true);
 		}
 		
-		boolean ss = info.getSkill().useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
-		byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		double damage = Formulas.calcBackstabDamage(activeChar, target, info.getSkill(), _power, shld, ss);
+		boolean ss = skill.useSoulShot() && effector.isChargedShot(ShotType.SOULSHOTS);
+		byte shld = Formulas.calcShldUse(effector, effected, skill);
+		double damage = Formulas.calcBackstabDamage(effector, effected, skill, _power, shld, ss);
 		
-		if (Formulas.calcCrit(_criticalChance, true, activeChar, target))
+		if (Formulas.calcCrit(_criticalChance, true, effector, effected))
 		{
 			damage *= 2;
 		}
 		
 		// Check if damage should be reflected
-		Formulas.calcDamageReflected(activeChar, target, info.getSkill(), true);
+		Formulas.calcDamageReflected(effector, effected, skill, true);
 		
-		damage = target.calcStat(Stats.DAMAGE_CAP, damage, null, null);
-		target.reduceCurrentHp(damage, activeChar, !info.getSkill().isToggle(), false, true, info.getSkill());
-		target.notifyDamageReceived(damage, activeChar, info.getSkill(), true, false, false);
+		damage = effected.calcStat(Stats.DAMAGE_CAP, damage, null, null);
+		effected.reduceCurrentHp(damage, effector, !skill.isToggle(), false, true, skill);
+		effected.notifyDamageReceived(damage, effector, skill, true, false, false);
 		
 		// Manage attack or cast break of the target (calculating rate, sending message...)
-		if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
+		if (!effected.isRaid() && Formulas.calcAtkBreak(effected, damage))
 		{
-			target.breakAttack();
-			target.breakCast();
+			effected.breakAttack();
+			effected.breakCast();
 		}
 		
-		if (activeChar.isPlayer())
+		if (effector.isPlayer())
 		{
-			PlayerInstance activePlayer = activeChar.getActingPlayer();
-			activePlayer.sendDamageMessage(target, (int) damage, false, true, false);
+			PlayerInstance activePlayer = effector.getActingPlayer();
+			activePlayer.sendDamageMessage(effected, (int) damage, false, true, false);
 		}
 	}
 }

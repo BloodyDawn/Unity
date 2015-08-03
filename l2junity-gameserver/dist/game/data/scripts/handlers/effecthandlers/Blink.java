@@ -26,6 +26,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.ValidateLocation;
@@ -63,24 +64,23 @@ public final class Blink extends AbstractEffect
 		// While affected by escape blocking effect you cannot use Blink or Scroll of Escape
 		return super.canStart(info) && !info.getEffected().cannotEscape();
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		final Creature effected = info.getEffected();
-		final int radius = info.getSkill().getFlyRadius();
+		final int radius = skill.getFlyRadius();
 		final double angle = Util.convertHeadingToDegree(effected.getHeading());
 		final double radian = Math.toRadians(angle);
-		final double course = Math.toRadians(info.getSkill().getFlyCourse());
+		final double course = Math.toRadians(skill.getFlyCourse());
 		final int x1 = (int) (Math.cos(Math.PI + radian + course) * radius);
 		final int y1 = (int) (Math.sin(Math.PI + radian + course) * radius);
-		
+
 		int x = effected.getX() + x1;
 		int y = effected.getY() + y1;
 		int z = effected.getZ();
-		
+
 		final Location destination = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceId());
-		
+
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		effected.broadcastPacket(new FlyToLocation(effected, destination, FlyType.DUMMY));
 		effected.abortAttack();

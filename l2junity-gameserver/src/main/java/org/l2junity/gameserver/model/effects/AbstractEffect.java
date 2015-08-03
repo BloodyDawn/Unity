@@ -199,6 +199,11 @@ public abstract class AbstractEffect
 	{
 		return true;
 	}
+
+	public void instant(Creature effector, Creature effected, Skill skill)
+	{
+
+	}
 	
 	/**
 	 * Called on effect start.

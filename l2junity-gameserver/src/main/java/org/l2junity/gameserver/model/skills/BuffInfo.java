@@ -71,6 +71,7 @@ public final class BuffInfo
 	private boolean _isRemoved = false;
 	/** If {@code true} then this effect is in use (or has been stop because an Herb took place). */
 	private boolean _isInUse = true;
+	private boolean _hideStartMessage;
 	
 	/**
 	 * Buff Info constructor.
@@ -78,13 +79,14 @@ public final class BuffInfo
 	 * @param effected
 	 * @param skill
 	 */
-	public BuffInfo(Creature effector, Creature effected, Skill skill)
+	public BuffInfo(Creature effector, Creature effected, Skill skill, boolean hideStartMessage)
 	{
 		_effector = effector;
 		_effected = effected;
 		_skill = skill;
 		_abnormalTime = Formulas.calcEffectAbnormalTime(effector, effected, skill);
 		_periodStartTicks = GameTimeController.getInstance().getGameTicks();
+		_hideStartMessage = hideStartMessage;
 	}
 	
 	/**
@@ -261,7 +263,7 @@ public final class BuffInfo
 		}
 		
 		// When effects are initialized, the successfully landed.
-		if (_effected.isPlayer() && !_skill.isPassive() && !_skill.isAura())
+		if (!_hideStartMessage && _effected.isPlayer() && !_skill.isPassive() && !_skill.isAura())
 		{
 			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_S_EFFECT_CAN_BE_FELT);
 			sm.addSkillName(_skill);

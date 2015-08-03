@@ -1211,6 +1211,7 @@ public final class Skill implements IIdentifiable
 				{
 					if (applyInstantEffects && effect.calcSuccess(info))
 					{
+						effect.instant(info.getEffector(), info.getEffected(), info.getSkill());
 						effect.onStart(info);
 					}
 				}
@@ -1287,7 +1288,7 @@ public final class Skill implements IIdentifiable
 		boolean addContinuousEffects = !passive && (_operateType.isToggle() || (_operateType.isContinuous() && Formulas.calcEffectSuccess(effector, effected, this)));
 		if (!self && !passive)
 		{
-			final BuffInfo info = new BuffInfo(effector, effected, this);
+			final BuffInfo info = new BuffInfo(effector, effected, this, !instant);
 			if (addContinuousEffects && (abnormalTime > 0))
 			{
 				info.setAbnormalTime(abnormalTime);
@@ -1319,7 +1320,7 @@ public final class Skill implements IIdentifiable
 		{
 			addContinuousEffects = !passive && (_operateType.isToggle() || ((_operateType.isContinuous() || _operateType.isSelfContinuous()) && Formulas.calcEffectSuccess(effector, effector, this)));
 			
-			final BuffInfo info = new BuffInfo(effector, effector, this);
+			final BuffInfo info = new BuffInfo(effector, effector, this, !instant);
 			if (addContinuousEffects && (abnormalTime > 0))
 			{
 				info.setAbnormalTime(abnormalTime);
@@ -1343,7 +1344,7 @@ public final class Skill implements IIdentifiable
 		
 		if (passive)
 		{
-			final BuffInfo info = new BuffInfo(effector, effector, this);
+			final BuffInfo info = new BuffInfo(effector, effector, this, true);
 			applyEffectScope(EffectScope.PASSIVE, info, false, true);
 			effector.getEffectList().add(info);
 		}
@@ -1422,7 +1423,7 @@ public final class Skill implements IIdentifiable
 						// and continuous effects on caster
 						applyEffects(target, caster, false, 0);
 						
-						final BuffInfo info = new BuffInfo(caster, target, this);
+						final BuffInfo info = new BuffInfo(caster, target, this, false);
 						applyEffectScope(EffectScope.GENERAL, info, true, false);
 						
 						EffectScope pvpOrPveEffectScope = caster.isPlayable() && target.isAttackable() ? EffectScope.PVE : caster.isPlayable() && target.isPlayable() ? EffectScope.PVP : null;

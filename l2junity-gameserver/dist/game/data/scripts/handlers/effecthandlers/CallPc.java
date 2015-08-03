@@ -21,12 +21,14 @@ package handlers.effecthandlers;
 import org.l2junity.Config;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.holders.SummonRequestHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.ConfirmDlg;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -56,15 +58,15 @@ public final class CallPc extends AbstractEffect
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (info.getEffected() == info.getEffector())
+		if (effector == effected)
 		{
 			return;
 		}
 		
-		PlayerInstance target = info.getEffected().getActingPlayer();
-		PlayerInstance activeChar = info.getEffector().getActingPlayer();
+		PlayerInstance target = effected.getActingPlayer();
+		PlayerInstance activeChar = effector.getActingPlayer();
 		if (checkSummonTargetStatus(target, activeChar))
 		{
 			if ((_itemId != 0) && (_itemCount != 0))
@@ -82,7 +84,7 @@ public final class CallPc extends AbstractEffect
 				target.sendPacket(sm);
 			}
 			
-			target.addScript(new SummonRequestHolder(activeChar, info.getSkill()));
+			target.addScript(new SummonRequestHolder(activeChar, skill));
 			final ConfirmDlg confirm = new ConfirmDlg(SystemMessageId.C1_WISHES_TO_SUMMON_YOU_FROM_S2_DO_YOU_ACCEPT.getId());
 			confirm.addCharName(activeChar);
 			confirm.addZoneName(activeChar.getX(), activeChar.getY(), activeChar.getZ());

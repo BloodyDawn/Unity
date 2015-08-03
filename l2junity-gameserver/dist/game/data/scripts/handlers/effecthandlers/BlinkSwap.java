@@ -25,6 +25,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.ValidateLocation;
@@ -49,10 +50,8 @@ public final class BlinkSwap extends AbstractEffect
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		final Creature effector = info.getEffector();
-		final Creature effected = info.getEffected();
 		final Location effectorLoc = effector.getLocation();
 		final Location effectedLoc = effected.getLocation();
 		
