@@ -702,10 +702,6 @@ public final class Config
 	public static List<String> L2JMOD_MULTILANG_ALLOWED = new ArrayList<>();
 	public static String L2JMOD_MULTILANG_DEFAULT;
 	public static boolean L2JMOD_MULTILANG_VOICED_ALLOW;
-	public static boolean L2JMOD_MULTILANG_SM_ENABLE;
-	public static List<String> L2JMOD_MULTILANG_SM_ALLOWED = new ArrayList<>();
-	public static boolean L2JMOD_MULTILANG_NS_ENABLE;
-	public static List<String> L2JMOD_MULTILANG_NS_ALLOWED = new ArrayList<>();
 	public static boolean L2WALKER_PROTECTION;
 	public static boolean L2JMOD_DEBUG_VOICE_COMMAND;
 	public static int L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP;
@@ -2105,26 +2101,6 @@ public final class Config
 			}
 			
 			L2JMOD_MULTILANG_VOICED_ALLOW = L2JModSettings.getBoolean("MultiLangVoiceCommand", true);
-			L2JMOD_MULTILANG_SM_ENABLE = L2JModSettings.getBoolean("MultiLangSystemMessageEnable", false);
-			allowed = L2JModSettings.getString("MultiLangSystemMessageAllowed", "").split(";");
-			L2JMOD_MULTILANG_SM_ALLOWED = new ArrayList<>(allowed.length);
-			for (String lang : allowed)
-			{
-				if (!lang.isEmpty())
-				{
-					L2JMOD_MULTILANG_SM_ALLOWED.add(lang);
-				}
-			}
-			L2JMOD_MULTILANG_NS_ENABLE = L2JModSettings.getBoolean("MultiLangNpcStringEnable", false);
-			allowed = L2JModSettings.getString("MultiLangNpcStringAllowed", "").split(";");
-			L2JMOD_MULTILANG_NS_ALLOWED = new ArrayList<>(allowed.length);
-			for (String lang : allowed)
-			{
-				if (!lang.isEmpty())
-				{
-					L2JMOD_MULTILANG_NS_ALLOWED.add(lang);
-				}
-			}
 			
 			L2WALKER_PROTECTION = L2JModSettings.getBoolean("L2WalkerProtection", false);
 			L2JMOD_DEBUG_VOICE_COMMAND = L2JModSettings.getBoolean("DebugVoiceCommand", false);

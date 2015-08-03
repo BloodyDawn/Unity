@@ -29,7 +29,6 @@ import java.util.Map;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.model.clientstrings.Builder;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,7 +42,6 @@ import org.w3c.dom.Node;
 public final class SystemMessageId
 {
 	private static final Logger _log = LoggerFactory.getLogger(SystemMessageId.class);
-	private static final SMLocalisation[] EMPTY_SML_ARRAY = new SMLocalisation[0];
 	public static final SystemMessageId[] EMPTY_ARRAY = new SystemMessageId[0];
 	
 	/**
@@ -14087,113 +14085,14 @@ public final class SystemMessageId
 		}
 	}
 	
-	public static void reloadLocalisations()
-	{
-		for (final SystemMessageId smId : VALUES.values())
-		{
-			if (smId != null)
-			{
-				smId.removeAllLocalisations();
-			}
-		}
-		
-		if (!Config.L2JMOD_MULTILANG_SM_ENABLE)
-		{
-			_log.info("SystemMessageId: MultiLanguage disabled.");
-			return;
-		}
-		
-		final List<String> languages = Config.L2JMOD_MULTILANG_SM_ALLOWED;
-		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		factory.setValidating(false);
-		factory.setIgnoringComments(true);
-		
-		File file;
-		Node node;
-		Document doc;
-		NamedNodeMap nnmb;
-		SystemMessageId smId;
-		String text;
-		for (final String lang : languages)
-		{
-			file = new File(Config.DATAPACK_ROOT, "/data/lang/" + lang + "/sm/SystemMessageLocalisation.xml");
-			if (!file.isFile())
-			{
-				continue;
-			}
-			
-			_log.info("SystemMessageId: Loading localisation for '" + lang + "'");
-			
-			try
-			{
-				doc = factory.newDocumentBuilder().parse(file);
-				for (Node na = doc.getFirstChild(); na != null; na = na.getNextSibling())
-				{
-					if ("list".equals(na.getNodeName()))
-					{
-						for (Node nb = na.getFirstChild(); nb != null; nb = nb.getNextSibling())
-						{
-							if ("sm".equals(nb.getNodeName()))
-							{
-								nnmb = nb.getAttributes();
-								node = nnmb.getNamedItem("id");
-								if (node != null)
-								{
-									smId = getSystemMessageId(Integer.parseInt(node.getNodeValue()));
-									if (smId == null)
-									{
-										_log.warn("SystemMessageId: Unknown SMID '" + node.getNodeValue() + "', lang '" + lang + "'.");
-										continue;
-									}
-								}
-								else
-								{
-									node = nnmb.getNamedItem("name");
-									smId = getSystemMessageId(node.getNodeValue());
-									if (smId == null)
-									{
-										_log.warn("SystemMessageId: Unknown SMID '" + node.getNodeValue() + "', lang '" + lang + "'.");
-										continue;
-									}
-								}
-								
-								node = nnmb.getNamedItem("text");
-								if (node == null)
-								{
-									_log.warn("SystemMessageId: No text defined for SMID '" + smId + "', lang '" + lang + "'.");
-									continue;
-								}
-								
-								text = node.getNodeValue();
-								if (text.isEmpty() || (text.length() > 255))
-								{
-									_log.warn("SystemMessageId: Invalid text defined for SMID '" + smId + "' (to long or empty), lang '" + lang + "'.");
-									continue;
-								}
-								
-								smId.attachLocalizedText(lang, text);
-							}
-						}
-					}
-				}
-			}
-			catch (final Exception e)
-			{
-				_log.error("SystemMessageId: Failed loading '" + file + "'", e);
-			}
-		}
-	}
-	
 	private final int _id;
 	private String _name;
 	private byte _params;
-	private SMLocalisation[] _localisations;
 	private SystemMessage _staticSystemMessage;
 	
 	private SystemMessageId(final int id)
 	{
 		_id = id;
-		_localisations = EMPTY_SML_ARRAY;
 	}
 	
 	public final int getId()
@@ -14239,34 +14138,7 @@ public final class SystemMessageId
 		
 		_params = (byte) params;
 	}
-	
-	public final SMLocalisation getLocalisation(final String lang)
-	{
-		SMLocalisation sml;
-		for (int i = _localisations.length; i-- > 0;)
-		{
-			sml = _localisations[i];
-			if (sml.getLanguage().hashCode() == lang.hashCode())
-			{
-				return sml;
-			}
-		}
-		return null;
-	}
-	
-	public final void attachLocalizedText(final String lang, final String text)
-	{
-		final int length = _localisations.length;
-		final SMLocalisation[] localisations = Arrays.copyOf(_localisations, length + 1);
-		localisations[length] = new SMLocalisation(lang, text);
-		_localisations = localisations;
-	}
-	
-	public final void removeAllLocalisations()
-	{
-		_localisations = EMPTY_SML_ARRAY;
-	}
-	
+
 	public final SystemMessage getStaticSystemMessage()
 	{
 		return _staticSystemMessage;
@@ -14281,27 +14153,5 @@ public final class SystemMessageId
 	public final String toString()
 	{
 		return "SM[" + getId() + ":" + getName() + "]";
-	}
-	
-	public static final class SMLocalisation
-	{
-		private final String _lang;
-		private final Builder _builder;
-		
-		public SMLocalisation(final String lang, final String text)
-		{
-			_lang = lang;
-			_builder = Builder.newBuilder(text);
-		}
-		
-		public final String getLanguage()
-		{
-			return _lang;
-		}
-		
-		public final String getLocalisation(final Object... params)
-		{
-			return _builder.toString(params);
-		}
 	}
 }

@@ -21,33 +21,22 @@ package org.l2junity.gameserver.network.client.send;
 import java.io.PrintStream;
 import java.util.Arrays;
 
-import org.l2junity.Config;
-import org.l2junity.gameserver.data.xml.impl.DoorData;
-import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.ItemTable;
-import org.l2junity.gameserver.datatables.SkillData;
-import org.l2junity.gameserver.enums.AttributeType;
-import org.l2junity.gameserver.instancemanager.CastleManager;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
-import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
-import org.l2junity.gameserver.network.client.send.string.SystemMessageId.SMLocalisation;
 import org.l2junity.network.PacketWriter;
 
 /**
- * @author UnAfraid
  * @param <T>
+ * @author UnAfraid
  */
 @SuppressWarnings("unchecked")
 public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> implements IClientOutgoingPacket
@@ -298,11 +287,8 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 	
 	public final T addZoneName(final int x, final int y, final int z)
 	{
-		append(new SMParam(TYPE_ZONE_NAME, new int[]
-		{
-			x,
-			y,
-			z
+		append(new SMParam(TYPE_ZONE_NAME, new int[] {
+			x, y, z
 		}));
 		return (T) this;
 	}
@@ -323,10 +309,8 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 	
 	public final T addSkillName(final int id, final int lvl)
 	{
-		append(new SMParam(TYPE_SKILL_NAME, new int[]
-		{
-			id,
-			lvl
+		append(new SMParam(TYPE_SKILL_NAME, new int[] {
+			id, lvl
 		}));
 		return (T) this;
 	}
@@ -366,11 +350,8 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 	
 	public final T addPopup(int target, int attacker, int damage)
 	{
-		append(new SMParam(TYPE_POPUP_ID, new int[]
-		{
-			target,
-			attacker,
-			damage
+		append(new SMParam(TYPE_POPUP_ID, new int[] {
+			target, attacker, damage
 		}));
 		return (T) this;
 	}
@@ -537,121 +518,5 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 				}
 			}
 		}
-	}
-	
-	public final T getLocalizedMessage(final String lang)
-	{
-		if (!Config.L2JMOD_MULTILANG_SM_ENABLE || (getSystemMessageId() == SystemMessageId.S13))
-		{
-			return (T) this;
-		}
-		
-		final SMLocalisation sml = getSystemMessageId().getLocalisation(lang);
-		if (sml == null)
-		{
-			return (T) this;
-		}
-		
-		final Object[] params = new Object[_paramIndex];
-		
-		SMParam param;
-		for (int i = 0; i < _paramIndex; i++)
-		{
-			param = _params[i];
-			switch (param.getType())
-			{
-				case TYPE_TEXT:
-				case TYPE_PLAYER_NAME:
-				{
-					params[i] = param.getValue();
-					break;
-				}
-				
-				case TYPE_LONG_NUMBER:
-				{
-					params[i] = param.getValue();
-					break;
-				}
-				
-				case TYPE_ITEM_NAME:
-				{
-					final L2Item item = ItemTable.getInstance().getTemplate(param.getIntValue());
-					params[i] = item == null ? "Unknown" : item.getName();
-					break;
-				}
-				
-				case TYPE_CASTLE_NAME:
-				{
-					final Castle castle = CastleManager.getInstance().getCastleById(param.getIntValue());
-					params[i] = castle == null ? "Unknown" : castle.getName();
-					break;
-				}
-				
-				case TYPE_INT_NUMBER:
-				{
-					params[i] = param.getValue();
-					break;
-				}
-				
-				case TYPE_NPC_NAME:
-				{
-					final L2NpcTemplate template = NpcData.getInstance().getTemplate(param.getIntValue());
-					params[i] = template == null ? "Unknown" : template.getName();
-					break;
-				}
-				
-				case TYPE_ELEMENT_NAME:
-				{
-					params[i] = "ITEM-ATTR-" + AttributeType.findByClientId(param.getIntValue());
-					break;
-				}
-				
-				case TYPE_SYSTEM_STRING:
-				{
-					params[i] = "SYS-S-" + param.getIntValue(); // packet.writeD(param.getIntValue());
-					break;
-				}
-				
-				case TYPE_CLASS_ID:
-				{
-					params[i] = "CLASS_ID-N-" + param.getIntValue(); // packet.writeD(param.getIntValue());
-					break;
-				}
-				
-				case TYPE_INSTANCE_NAME:
-				{
-					final String instanceName = InstanceManager.getInstance().getInstanceIdName(param.getIntValue());
-					params[i] = instanceName == null ? "Unknown" : instanceName;
-					break;
-				}
-				
-				case TYPE_DOOR_NAME:
-				{
-					final L2DoorInstance door = DoorData.getInstance().getDoor(param.getIntValue());
-					params[i] = door == null ? "Unknown" : door.getName();
-					break;
-				}
-				
-				case TYPE_SKILL_NAME:
-				{
-					final int[] array = param.getIntArrayValue();
-					final Skill skill = SkillData.getInstance().getSkill(array[0], array[1]);
-					params[i] = skill == null ? "Unknown" : skill.getName();
-					break;
-				}
-				
-				case TYPE_ZONE_NAME:
-				{
-					final int[] array = param.getIntArrayValue();
-					final ZoneType zone = ZoneManager.getInstance().getZone(array[0], array[1], array[2], ZoneType.class);
-					params[i] = zone == null ? "Unknown ZONE-N-" + Arrays.toString(array) : zone.getName();
-					break;
-				}
-			}
-			i++;
-		}
-		
-		addString(sml.getLocalisation(params));
-		return (T) this;
 	}
 }
