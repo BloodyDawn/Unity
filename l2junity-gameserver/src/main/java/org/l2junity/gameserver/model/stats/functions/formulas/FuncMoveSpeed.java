@@ -52,21 +52,29 @@ public class FuncMoveSpeed extends AbstractFunction
 			switch (speedStat)
 			{
 				case 0: // STR
-					return Math.max(0, effector.getSTR() - 55);
+					speedBonus = Math.max(0, effector.getSTR() - 55);
+					break;
 				case 1: // INT
-					return Math.max(0, effector.getINT() - 55);
+					speedBonus = Math.max(0, effector.getINT() - 55);
+					break;
 				case 2: // DEX
-					return Math.max(0, effector.getDEX() - 55);
+					speedBonus = Math.max(0, effector.getDEX() - 55);
+					break;
 				case 3: // WIT
-					return Math.max(0, effector.getWIT() - 55);
+					speedBonus = Math.max(0, effector.getWIT() - 55);
+					break;
 				case 4: // CON
-					return Math.max(0, effector.getCON() - 55);
+					speedBonus = Math.max(0, effector.getCON() - 55);
+					break;
 				case 5: // MEN
-					return Math.max(0, effector.getMEN() - 55);
+					speedBonus = Math.max(0, effector.getMEN() - 55);
+					break;
 				case 6: // CHA
-					return Math.max(0, effector.getCHA() - 55);
+					speedBonus = Math.max(0, effector.getCHA() - 55);
+					break;
 				case 7: // LUC
-					return Math.max(0, effector.getLUC() - 55);
+					speedBonus = Math.max(0, effector.getLUC() - 55);
+					break;
 			}
 		}
 		
