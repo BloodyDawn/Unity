@@ -24,9 +24,11 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="0" />
 		<set name="magicLvl" val="99" />
+		<set name="abnormalLvl" val="5" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23402" levels="3" name="Unclean Power of Ancient Kartia's Labyrinth">
+		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#magicLvl"> 88 93 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Consistently decreases HP. -->
@@ -40,6 +42,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="0" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23404" levels="1" name="Borna Fire">
@@ -413,6 +416,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="3" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23422" levels="1" name="Escape: Clan Hall">
@@ -440,6 +444,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="1" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="23424" levels="1" name="Brilliant Seduction">
@@ -512,6 +517,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23429" levels="1" name="Magic Strike">
@@ -780,6 +786,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="80" />
+		<set name="abnormalLvl" val="13" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23443" levels="1" name="Freya's Authority">
@@ -795,6 +802,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="80" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23444" levels="1" name="Spezion's Authority">
@@ -810,6 +818,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23445" levels="1" name="Maliss' Authority">
@@ -830,6 +839,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="13" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23446" levels="1" name="Steregos' Authority">
@@ -850,6 +860,7 @@
 		<set name="lvlBonusRate" val="30" />
 		<set name="activateRate" val="90" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="8" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23447" levels="1" name="Ron's Authority">
@@ -865,6 +876,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="0" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="1" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="23448" levels="1" name="Blessed Three-headed Dragon's Egg">
@@ -918,6 +930,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="3" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23451" levels="3" name="(Final Ultimate Defense)">
@@ -937,6 +950,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="reuseDelay" val="900000" />
 	</skill>
 	<skill id="23452" levels="3" name="(Protection of Faith)">
@@ -956,6 +970,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="2" />
 		<set name="reuseDelay" val="900000" />
 	</skill>
 	<skill id="23453" levels="1" name="(Superior Aggression)">
@@ -974,6 +989,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="90" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23454" levels="3" name="(Dark Blast)">
@@ -1032,6 +1048,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="2" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23457" levels="3" name="(Sustain)">
@@ -1052,6 +1069,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23458" levels="1" name="(Second Wind)">
@@ -1069,6 +1087,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="1" />
 		<set name="reuseDelay" val="120000" />
 	</skill>
 	<skill id="23459" levels="3" name="(Sonic Star)">
@@ -1125,6 +1144,7 @@
 		<set name="effectRange" val="400" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="4" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23462" levels="1" name="(Power Bomber)">
@@ -1146,6 +1166,7 @@
 		<set name="effectRange" val="400" />
 		<set name="activateRate" val="90" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23463" levels="1" name="(Recoil Shot)">
@@ -1168,6 +1189,7 @@
 		<set name="lvlBonusRate" val="20" />
 		<set name="activateRate" val="90" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23464" levels="1" name="(Tornado Shot)">
@@ -1206,6 +1228,7 @@
 		<set name="lvlBonusRate" val="20" />
 		<set name="activateRate" val="90" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23466" levels="1" name="(Heavy Arrow Rain)">
@@ -1244,6 +1267,7 @@
 		<set name="effectRange" val="400" />
 		<set name="activateRate" val="90" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23468" levels="2" name="(Chain Blow)">
@@ -1295,6 +1319,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="activateRate" val="150" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23471" levels="2" name="(Elemental Destruction)">
@@ -1337,6 +1362,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="activateRate" val="60" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23473" levels="2" name="(Unleash Hell)">
@@ -1359,6 +1385,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="7" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23474" levels="2" name="(Death Strike)">
@@ -1398,6 +1425,7 @@
 		<set name="effectRange" val="400" />
 		<set name="activateRate" val="99" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23476" levels="2" name="(Horn Melody)">
@@ -1416,6 +1444,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="23477" levels="2" name="(Assault Rush)">
@@ -1437,6 +1466,7 @@
 		<set name="effectRange" val="800" />
 		<set name="activateRate" val="150" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23478" levels="1" name="Protected Area">
@@ -1451,6 +1481,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="99" />
+		<set name="abnormalLvl" val="99" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23479" levels="1" name="Mysterious Power of Ancient Kartia's Labyrinth">
@@ -1465,6 +1496,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-2" />
 		<set name="hitCancelTime" val="0" />
+		<set name="abnormalLvl" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="23480" levels="1" name="Hide">
@@ -1505,6 +1537,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="23483" levels="1" name="">
@@ -1540,6 +1573,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23485" levels="1" name="Unknown Sculptor - Horn Melody">
@@ -1571,6 +1605,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-2" />
 		<set name="magicLvl" val="99" />
+		<set name="abnormalLvl" val="99" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="23487" levels="1" name="Unknown Sculptor - Pipe Organ Melody">
@@ -1588,6 +1623,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-2" />
 		<set name="magicLvl" val="99" />
+		<set name="abnormalLvl" val="99" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="23488" levels="1" name="Unknown Sculptor - Guitar Melody">
@@ -1605,6 +1641,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-2" />
 		<set name="magicLvl" val="99" />
+		<set name="abnormalLvl" val="99" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="23489" levels="1" name="Unknown Sculptor - Harp Melody">
@@ -1622,6 +1659,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-2" />
 		<set name="magicLvl" val="99" />
+		<set name="abnormalLvl" val="99" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="23490" levels="1" name="Unknown Sculptor - Lute Melody">
@@ -1639,6 +1677,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-2" />
 		<set name="magicLvl" val="99" />
+		<set name="abnormalLvl" val="99" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="23491" levels="1" name="Jermann - Swiftness">
@@ -1658,6 +1697,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="99" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23492" levels="1" name="(Horn Melody)">
@@ -1674,6 +1714,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="90" />
+		<set name="abnormalLvl" val="2" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="23493" levels="1" name="(Horn Melody)">
@@ -1690,6 +1731,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="3" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="23494" levels="1" name="(Drum Melody)">
@@ -1706,6 +1748,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="90" />
+		<set name="abnormalLvl" val="2" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="23495" levels="1" name="(Drum Melody)">
@@ -1722,6 +1765,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="3" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="23496" levels="1" name="(Pipe Organ Melody)">
@@ -1738,6 +1782,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="90" />
+		<set name="abnormalLvl" val="2" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="23497" levels="1" name="(Pipe Organ Melody)">
@@ -1754,6 +1799,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="3" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="23498" levels="1" name="(Guitar Melody)">
@@ -1770,6 +1816,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="90" />
+		<set name="abnormalLvl" val="2" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="23499" levels="1" name="(Guitar Melody)">
@@ -1786,6 +1833,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="3" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 </list>

@@ -424,6 +424,7 @@
 		<set name="lvlBonusRate" val="20" />
 		<set name="activateRate" val="60" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11516" levels="15" name="Curse Explosion">
@@ -485,7 +486,7 @@
 	</skill>
 	<skill id="11518" levels="4" name="Drum Melody">
 		<!-- For 30 minutes, party members' Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage during a normal attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, damage received from critical attacks - 30% and Speed - 15%. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage. -->
-		<table name="#abnormalLvls"> 1 2 3 4</table>
+		<table name="#abnormalLvls"> 1 2 3 4 </table>
 		<table name="#effectPoint"> 687 698 707 712 </table>
 		<table name="#mpConsumes"> 140 151 170 181 </table>
 		<table name="#mpInitialConsumes"> 28 31 34 37 </table>
@@ -1008,7 +1009,7 @@
 		<table name="#mpConsumes"> 70 75 80 85 90 95 </table>
 		<table name="#abnormalTime"> 7 9 11 13 15 17 </table>
 		<set name="icon" val="icon.skill11534" />
-		<set name="abnormalLvl" val="4" /> <!-- Custom -->
+		<set name="abnormalLvl" val="5" /> <!-- Custom -->
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
 		<set name="operateType" val="A2" />
@@ -1084,6 +1085,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="activateRate" val="60" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="2195">
 			<player canTransform="true" />
@@ -1140,7 +1142,7 @@
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 70 72 76 78 82 85 88 92 96 100 104 </table>
 		<set name="icon" val="icon.skill11539" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="TURN_STONE" />
 		<set name="abnormalVisualEffect" val="FLESH_STONE" />
@@ -1246,6 +1248,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="5" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11544" levels="1" name="Battle Rhapsody">
@@ -1265,6 +1268,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="89" />
+		<set name="abnormalLvl" val="5" />
 		<set name="reuseDelay" val="600000" />
 		<for>
 			<effect name="Buff">
@@ -1292,6 +1296,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="5" />
 		<set name="reuseDelay" val="600000" />
 		<for>
 			<effect name="Buff">
@@ -1322,6 +1327,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="99" />
+		<set name="abnormalLvl" val="5" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, DUAL, DUALBLUNT" />
@@ -1484,7 +1490,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Disables nearby enemies' natural HP Recovery for 2 minutes. -->
 		<set name="icon" val="icon.skill11557" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="HP_REGEN_DOWN" />
 		<set name="activateRate" val="65" /> <!-- Custom -->
@@ -1554,6 +1560,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="activateRate" val="60" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1568,7 +1575,7 @@
 		<!-- Makes all party members invincible for 30 seconds. -->
 		<table name="#mpConsumes"> 423 557 </table>
 		<set name="icon" val="icon.skill11560" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="INVINCIBILITY" />
 		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
@@ -1601,7 +1608,7 @@
 		<!-- Inflicts Hold on the enemy for 15 seconds. -->
 		<table name="#mpConsumes"> 126 139 153 166 </table>
 		<set name="icon" val="icon.skill11561" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="activateRate" val="65" /> <!-- Custom -->
@@ -1632,7 +1639,7 @@
 		<!-- Updated to Ertheia -->
 		<!-- Prevents all party members from being attacked preemptively by monsters for 2 minutes. But if any party member initiates an attack, the effect will be canceled. -->
 		<set name="icon" val="icon.skill11562" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="DANCE_OF_SHADOW" /> <!-- Custom -->
 		<set name="abnormalVisualEffect" val="STEALTH" />

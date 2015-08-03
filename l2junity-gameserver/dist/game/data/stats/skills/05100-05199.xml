@@ -747,6 +747,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="lvlBonusRate" val="2" />
+		<set name="abnormalLvl" val="1" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Unsummon">
@@ -1746,7 +1747,7 @@
 	<skill id="5174" levels="15" name="Poison">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<!-- Augmentation Skill (Trigger) -->
-		<table name="#abnormalLvls"> 5 5 6 6 6 7 7 7 8 8 9 10 11 12 13 </table> <!-- Guessed -->
+		<table name="#abnormalLvls"> 5 5 6 6 6 7 7 7 8 8 8 8 8 8 8 </table> <!-- Guessed -->
 		<table name="#dot"> 41 41 50 50 50 58 58 58 63 63 68 73 78 83 88 </table> <!-- Guessed -->
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 80 85 90 95 99 </table> <!-- Guessed -->
 		<set name="abnormalLvl" val="#abnormalLvls" />
@@ -1779,7 +1780,7 @@
 	<skill id="5175" levels="15" name="Bleed">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<!-- Augmentation Skill (Trigger) -->
-		<table name="#abnormalLvls"> 5 5 6 6 6 7 7 7 8 8 9 10 11 12 13 </table> <!-- Guessed -->
+		<table name="#abnormalLvls"> 5 5 6 6 6 7 7 7 8 8 8 8 8 8 8 </table> <!-- Guessed -->
 		<table name="#dot"> 44 44 54 54 54 62 62 62 67 67 68 69 70 71 72 </table> <!-- Guessed -->
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 80 85 90 95 99 </table> <!-- Guessed -->
 		<set name="abnormalLvl" val="#abnormalLvls" />

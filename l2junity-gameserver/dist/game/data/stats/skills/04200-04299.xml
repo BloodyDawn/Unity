@@ -1517,9 +1517,10 @@
 		</for>
 	</skill>
 	<skill id="4265" levels="3" name="Holiday Might">
+		<table name="#abnormalLvls"> 1 2 3 </table>
 		<!-- Freya retail confirmed -->
 		<!-- This skill only has one level, 3. -->
-		<set name="abnormalLvl" val="3" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="PA_UP" />
 		<set name="castRange" val="400" />
@@ -1542,9 +1543,10 @@
 		</for>
 	</skill>
 	<skill id="4266" levels="3" name="Holiday Shield">
+		<table name="#abnormalLvls"> 1 2 3 </table>
 		<!-- Freya retail confirmed -->
 		<!-- This skill only has one level, 3. -->
-		<set name="abnormalLvl" val="3" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="PD_UP" />
 		<set name="castRange" val="400" />

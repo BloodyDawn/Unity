@@ -33,6 +33,7 @@
 		<set name="specialLevel" val="-2" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="-2" />
+		<set name="abnormalLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6803" levels="1" name="Arena Haste">
@@ -340,6 +341,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="10" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6816" levels="16" name="Deadly Bleed">
@@ -353,6 +355,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="10" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6817" levels="1" name="Arena HP Recovery">
@@ -411,12 +414,13 @@
 		<set name="effectRange" val="1400" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="3" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6820" levels="1" name="P. Def. Enhance">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="abnormalLvl" val="4" />
+		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="PD_UP" />
 		<set name="effectPoint" val="100" />
@@ -450,6 +454,7 @@
 		<set name="effectRange" val="300" />
 		<set name="lvlBonusRate" val="4" />
 		<set name="magicLvl" val="84" />
+		<set name="abnormalLvl" val="3" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6822" levels="1" name="P. Def. Decrease">
@@ -463,6 +468,7 @@
 		<set name="effectRange" val="300" />
 		<set name="lvlBonusRate" val="4" />
 		<set name="magicLvl" val="84" />
+		<set name="abnormalLvl" val="4" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6823" levels="1" name="Reflect Attack">
@@ -474,6 +480,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="abnormalLvl" val="3" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6824" levels="1" name="Piercing Storm">
@@ -502,6 +509,7 @@
 		<set name="effectRange" val="600" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="84" />
+		<set name="abnormalLvl" val="9" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6826" levels="1" name="Critical Strike">
@@ -527,6 +535,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="600" />
 		<set name="magicLvl" val="84" />
+		<set name="abnormalLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6828" levels="1" name="Dust Storm">
@@ -543,6 +552,7 @@
 		<set name="effectRange" val="1200" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="84" />
+		<set name="abnormalLvl" val="3" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6829" levels="1" name="Vampiric Attack">
@@ -570,6 +580,7 @@
 		<set name="effectRange" val="1200" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="84" />
+		<set name="abnormalLvl" val="9" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6831" levels="1" name="Blood Burst">
@@ -633,6 +644,7 @@
 		<set name="effectRange" val="1500" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6837" levels="1" name="Range Magic Attack">
@@ -679,6 +691,7 @@
 		<set name="effectRange" val="300" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6841" levels="1" name="Summon Subordinate">
@@ -692,7 +705,7 @@
 	<skill id="6842" levels="2" name="Enhance">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<table name="#abnormalLvls"> 2 3 </table>
+		<table name="#abnormalLvls"> 1 2 </table>
 		<table name="#pAtk"> 1.12 1 </table>
 		<table name="#pAtkSpd"> 1.15 1.4 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
@@ -730,6 +743,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="lvlBonusRate" val="2" />
+		<set name="abnormalLvl" val="3" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6844" levels="1" name="Power Strike">
@@ -1107,7 +1121,7 @@
 	<skill id="6862" levels="1" name="Poison">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="9" />
 		<set name="abnormalTime" val="6" />
 		<set name="abnormalType" val="POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
@@ -1137,7 +1151,7 @@
 	<skill id="6863" levels="1" name="Poison">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="10" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
@@ -1176,7 +1190,7 @@
 	<skill id="6865" levels="1" name="Poison">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="9" />
 		<set name="abnormalTime" val="8" />
 		<set name="abnormalType" val="POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
@@ -1404,7 +1418,7 @@
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
 		<table name="#dmg"> 120 140 </table>
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="10" />
 		<set name="abnormalTime" val="8" />
 		<set name="abnormalType" val="POISON" />
 		<set name="abnormalVisualEffect" val="DOT_POISON" />
@@ -1610,6 +1624,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="effectRange" val="1200" />
+		<set name="abnormalLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6884" levels="1" name="Morale Boost">
@@ -1627,6 +1642,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6885" levels="3" name="Morale Boost">
+		<table name="#abnormalLvls"> 1 2 3 </table>
 		<!-- "The persistence of the brave who fight together in Dragon Valley receive resistance to Paralysis/Bleed/Poison/Stun +90, Critical Rate +50%, Critical Damage +15%, P. Atk. +15%, M. Atk. +15%, Atk. Spd. +15%, Casting Spd. +15%, and EXP bonus +20%." -->
 		<!-- High Five Skill -->
 		<table name="#bonusExp"> 1 1 1.2 </table>
@@ -1648,6 +1664,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="2000" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -1758,6 +1775,7 @@
 		<set name="effectRange" val="600" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="84" />
+		<set name="abnormalLvl" val="10" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6891" levels="1" name="Power Attack">
@@ -1898,6 +1916,7 @@
 		<set name="lvlBonusRate" val="1" />
 		<set name="activateRate" val="30" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6898" levels="1" name="Raid Boss (Lv. 84)">

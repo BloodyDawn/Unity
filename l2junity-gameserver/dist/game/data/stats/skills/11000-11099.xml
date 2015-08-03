@@ -792,6 +792,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -882,6 +883,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11034" levels="8" name="Elemental Blast">
@@ -1266,6 +1268,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Debuff">
@@ -1280,6 +1283,7 @@
 		</for>
 	</skill>
 	<skill id="11047" levels="9" name="Devil's Curse">
+		<table name="#abnormalLvls"> 1 2 3 4 5 5 </table>
 		<!-- Updated to IO -->
 		<!-- Attacks target with 157 Power. For 20 sec., target's M. Atk. and M. Def. - 30%, Casting Spd., P. Critical Rate, M. Critical Rate, P. Def. and Speed - 10%, and P. Evasion - 6. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
@@ -1287,7 +1291,7 @@
 		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
 		<table name="#mpConsumes"> 70 71 76 81 85 91 97 103 109 </table>
 		<set name="icon" val="icon.skill11047" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="MULTI_DEBUFF" />
 		<set name="activateRate" val="60" />
@@ -1330,7 +1334,7 @@
 		<table name="#mpConsumes"> 211 220 233 247 262 278 294 310 326 </table>
 		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
 		<set name="icon" val="icon.skill11048" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="MULTI_DEBUFF" />
 		<set name="activateRate" val="60" />
@@ -1539,7 +1543,7 @@
 		<table name="#mpConsumes"> 70 72 76 78 82 85 88 91 94 97  </table>
 		<table name="#runSpd"> 0.60 0.55 0.50 0.45 0.40 0.35 0.30 0.30 0.30 0.30 </table>
 		<set name="icon" val="icon.skill11055" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
@@ -1575,7 +1579,7 @@
 		<table name="#mpConsumes"> 211 220 228 238 247 257 267 278 289 300 311 </table>
 		<table name="#runSpd"> 0.75 0.70 0.65 0.60 0.55 0.50 0.45 0.40 0.40 0.40 0.40 </table>
 		<set name="icon" val="icon.skill11056" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
@@ -1691,6 +1695,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="97" />
+		<set name="abnormalLvl" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PullBack">
@@ -1718,6 +1723,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="abnormalLvl" val="2" />
 		<set name="reuseDelay" val="30000" />
 		<for>
 			<effect name="Buff">
@@ -1776,6 +1782,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -1793,7 +1800,7 @@
 		<table name="#mpConsumes"> 1655 1672 1689 1706 </table>
 		<table name="#power"> 620 677 693 709 </table>
 		<set name="icon" val="icon.skill11066" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="7" />
 		<set name="abnormalTime" val="5" /> <!-- Guessed -->
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
@@ -1831,7 +1838,7 @@
 		<table name="#magicLvl"> 95 101 103 105 </table>
 		<table name="#mpConsumes"> 1767 1783 1799 1815 </table>
 		<table name="#power"> 620 641 655 669 </table>
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="7" />
 		<set name="abnormalTime" val="5" /> <!-- Guessed -->
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
@@ -1884,6 +1891,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="VisualBuff">
@@ -1978,7 +1986,7 @@
 		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#fireRes"> 20 50 100 </table>
 		<set name="icon" val="icon.skill11011" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
@@ -2005,7 +2013,7 @@
 		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#waterRes"> 20 50 100 </table>
 		<set name="icon" val="icon.skill11011" />
-		<set name="abnormalLvl" val="#abnormalTime" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3" />
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
@@ -2032,7 +2040,7 @@
 		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#windRes"> 20 50 100 </table>
 		<set name="icon" val="icon.skill11011" />
-		<set name="abnormalLvl" val="#abnormalTime" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3" />
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
@@ -2059,7 +2067,7 @@
 		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#earthRes"> 20 50 100 </table>
 		<set name="icon" val="icon.skill11011" />
-		<set name="abnormalLvl" val="#abnormalTime" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3" />
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
@@ -2086,7 +2094,7 @@
 		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#allRes"> 20 50 100 </table>
 		<set name="icon" val="icon.skill11011" />
-		<set name="abnormalLvl" val="#abnormalTime" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3" />
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
@@ -2187,7 +2195,7 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts fear and hold on target. -->
 		<set name="icon" val="icon.skill11017" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
@@ -2227,6 +2235,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -2238,7 +2247,7 @@
 		<!-- Updated to IO -->
 		<!-- Knock Back target. -->
 		<set name="icon" val="icon.skill11017" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalType" val="KNOCKDOWN" />
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
@@ -2265,7 +2274,7 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts hold on target. -->
 		<set name="icon" val="icon.skill11017" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="abnormalVisualEffect" val="ROOT" />
@@ -2291,7 +2300,7 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts stun on target. -->
 		<set name="icon" val="icon.skill11017" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
@@ -2325,6 +2334,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="99" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11093" levels="1" name="Crystal Form">

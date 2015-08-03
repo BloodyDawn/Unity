@@ -39,6 +39,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
+		<set name="abnormalLvl" val="2" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14102" levels="1" name="Agathion Cute Trick - Magmeld Fairy">
@@ -79,6 +80,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1500" />
+		<set name="abnormalLvl" val="1" />
 		<set name="castRange" val="900" />
 	</skill>
 	<skill id="14105" levels="6" name="Howling">
@@ -103,6 +105,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14106" levels="1" name="Recovery">
@@ -135,6 +138,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="3.5" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14108" levels="6" name="Lachik Ball">
@@ -195,6 +199,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="200" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14111" levels="1" name="Teredor Range Attack">
@@ -237,6 +242,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="90" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14113" levels="1" name="Teredor Flu Infection">
@@ -257,6 +263,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="90" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14114" levels="1" name="Teredor P. Resistance">
@@ -287,6 +294,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="14117" levels="5" name="Millipede P. Atk. Enhancement">
+		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1168" />
 		<set name="operateType" val="A2" />
@@ -302,6 +310,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="90" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14118" levels="1" name="Millipede P. Def. Enhancement">
@@ -319,6 +328,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14119" levels="1" name="Underbug Self Blasting">
@@ -338,9 +348,11 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14120" levels="3" name="Enhance">
+		<table name="#abnormalLvls"> 1 2 3 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1059" />
 		<set name="operateType" val="A2" />
@@ -358,6 +370,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="90" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14121" levels="1" name="Othell Rogue's Essence">
@@ -376,6 +389,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14122" levels="1" name="Tyrr Warrior's Essence">
@@ -394,6 +408,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14123" levels="1" name="Feoh Wizard's Essence">
@@ -412,6 +427,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14124" levels="1" name="Iss Enchanter's Essence">
@@ -430,6 +446,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14125" levels="1" name="Wynn Summoner's Essence">
@@ -448,6 +465,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14126" levels="1" name="Sigel Knight's Essence">
@@ -466,6 +484,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14127" levels="1" name="Yul Archer's Essence">
@@ -484,6 +503,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14128" levels="1" name="Aeore Healer's Essence">
@@ -502,6 +522,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14129" levels="1" name="Enchant Skill">
@@ -520,6 +541,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14130" levels="3" name="Phantom Circle">
@@ -581,6 +603,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14133" levels="3" name="Curse Shout">
@@ -677,6 +700,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14138" levels="3" name="Dark Avenger">
@@ -736,6 +760,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="3" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14141" levels="3" name="Sleep">
@@ -760,6 +785,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14142" levels="3" name="Fear">
@@ -784,6 +810,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14143" levels="3" name="Exile Sword Attack">
@@ -843,6 +870,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14146" levels="3" name="Bloodstain's Will">
@@ -1127,6 +1155,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="16" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14163" levels="1" name="Howl">
@@ -1150,6 +1179,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="70" />
 		<set name="magicLvl" val="16" />
+		<set name="abnormalLvl" val="3" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14164" levels="1" name="Arcane Jet">
@@ -1193,6 +1223,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="14" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14167" levels="1" name="Black Powder">
@@ -1251,6 +1282,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="18" />
+		<set name="abnormalLvl" val="3" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14171" levels="1" name="Steady Shot">
@@ -1291,6 +1323,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="20" />
+		<set name="abnormalLvl" val="3" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14173" levels="1" name="Assault">
@@ -1398,6 +1431,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="activateRate" val="200" />
+		<set name="abnormalLvl" val="1" />
 		<set name="reuseDelay" val="500" />
 	</skill>
 	<skill id="14180" levels="1" name="Trap Over Steam">
@@ -1479,6 +1513,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="400" />
+		<set name="abnormalLvl" val="1" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14185" levels="1" name="Rose Sleep">
@@ -1495,6 +1530,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14186" levels="1" name="Fairy Lv.">
@@ -1558,6 +1594,7 @@
 		<set name="lvlBonusRate" val="1" />
 		<set name="activateRate" val="60" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="3" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14190" levels="1" name="Invincibility Activation">
@@ -1573,6 +1610,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="abnormalLvl" val="1" />
 		<set name="hitTime" val="500" />
 	</skill>
 	<skill id="14191" levels="1" name="Cancel Invincibility">
@@ -1602,6 +1640,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14193" levels="1" name="Damage Shield">
@@ -1618,6 +1657,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14194" levels="1" name="Range Stun">
@@ -1636,6 +1676,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14195" levels="1" name="Range Fire Magic">
@@ -1657,6 +1698,7 @@
 		<set name="lvlBonusRate" val="1" />
 		<set name="activateRate" val="90" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="3" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14196" levels="1" name="Decaying Darkness">
@@ -1673,6 +1715,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14197" levels="1" name="Range Fire Damage Zone">
@@ -1693,6 +1736,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="95" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14198" levels="1" name="Water Cannon Damage">
@@ -1712,6 +1756,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="activateRate" val="200" />
+		<set name="abnormalLvl" val="1" />
 		<set name="reuseDelay" val="500" />
 	</skill>
 	<skill id="14199" levels="6" name="Garden Voltage">
@@ -1729,6 +1774,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="1100" />
+		<set name="abnormalLvl" val="1" />
 		<set name="hitTime" val="1500" />
 	</skill>
 </list>

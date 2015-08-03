@@ -108,13 +108,12 @@
 	</skill>
 	<skill id="3204" levels="3" name="Item Skill: Reflect Damage">
 		<!-- Confirmed CT2.5 -->
-		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#effectPoints"> 379 438 495 </table>
 		<table name="#magicLvl"> 55 64 75 </table>
 		<table name="#mpConsume"> 20 24 28 </table>
 		<table name="#mpInitialConsume"> 5 6 7 </table>
 		<table name="#reflectDam"> 10 15 20 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="ABNORMAL_ITEM" />
 		<set name="effectPoint" val="#effectPoints" />

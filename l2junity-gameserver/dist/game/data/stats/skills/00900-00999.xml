@@ -2333,6 +2333,7 @@
 		</for>
 	</skill>
 	<skill id="988" levels="3" name="Battle Whisper">
+		<table name="#abnormalLvls"> 1 2 3 </table>
 		<!-- High Five Skill -->
 		<table name="#amount"> 1.05 1.07 1.1 </table>
 		<table name="#effectPoints"> 486 566 448 </table>
@@ -2351,6 +2352,7 @@
 		<set name="abnormalType" val="WISPERING_OF_BATTLE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -2375,6 +2377,7 @@
 		<set name="abnormalType" val="MOTION_OF_DEFENCE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="abnormalLvl" val="1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -2629,6 +2632,7 @@
 		<set name="abnormalType" val="PD_DOWN" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="lvlBonusRate" val="30" />
+		<set name="abnormalLvl" val="3" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />

@@ -127,6 +127,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="97" />
+		<set name="abnormalLvl" val="5" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11245" levels="1" name="Sampling">
@@ -144,6 +145,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="89" />
+		<set name="abnormalLvl" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11247" levels="1" name="Heavy Hit">
@@ -419,6 +421,7 @@
 		</for>
 	</skill>
 	<skill id="11259" levels="11" name="Mark of Weakness">
+		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
 		<!-- Updated to IO -->
 		<!-- Weakens target for 10 seconds. Decreases 326 HP per second, P. Def. by 30%, M. Def. by 30%, and Debuff Resistance by 30%. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 -709 -709 </table>
@@ -426,7 +429,7 @@
 		<table name="#mpConsumes"> 54 58 62 66 70 74 78 82 86 90 94 </table>
 		<table name="#power"> 85 89 93 97 101 105 109 113 117 121 125 </table>
 		<set name="icon" val="icon.skill11259" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="MARK_DEBUF_B" />
 		<set name="activateRate" val="100" />
@@ -455,6 +458,7 @@
 		</for>
 	</skill>
 	<skill id="11260" levels="8" name="Mark of Void">
+		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
 		<!-- Updated to IO -->
 		<!-- Carves a mark linked to the Void Dimension onto target and steals their life force. For 10 seconds, decreases HP by 326 every second and absorbs 50% of the damage inflicted as HP/MP for yourself and your servitor(s). Absorbs 25% of the inflicted damage during PvP. -->
 		<table name="#effectPoint"> -692 -698 -704 -708 -709 -709 -709 -709 </table>
@@ -464,7 +468,7 @@
 		<table name="#heal"> 213 213 213 213 213 213 213 213 </table> <!-- TODO Only first level is retail-like -->
 		<table name="#manaheal"> 47 47 47 47 47 47 47 47 </table> <!-- TODO Only first level is retail-like -->
 		<set name="icon" val="icon.skill11260" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="MARK_DEBUF_A" />
 		<set name="activateRate" val="90" />
@@ -499,6 +503,7 @@
 		</selfEffects>
 	</skill>
 	<skill id="11261" levels="9" name="Mark of Plague">
+		<table name="#abnormalLvls"> 1 2 3 4 5 6 </table>
 		<!-- Updated to IO -->
 		<!-- Carves a mark linked to the cursed dimension on target. For 10 seconds, decreases HP by 326 every second and decreases the power of incoming Heals. -->
 		<table name="#effectPoint"> -692 -698 -704 -708 -709 -709 -709 -709 -709 </table>
@@ -507,7 +512,7 @@
 		<table name="#power"> 85 89 85 101 107 113 117 121 125 </table>
 		<table name="#healEffect"> 0.95 0.90 0.85 0.80 0.75 0.70 0.65 0.60 0.55 </table> <!-- TODO Guessed except level 2 -->
 		<set name="icon" val="icon.skill11261" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="MARK_DEBUF_C" />
 		<set name="activateRate" val="90" />
@@ -534,6 +539,7 @@
 		</for>
 	</skill>
 	<skill id="11262" levels="9" name="Mark of Trick">
+		<table name="#abnormalLvls"> 1 2 3 4 5 6 </table>
 		<!-- Updated to IO -->
 		<!-- Carves a mark linked to the dupery dimension on target. For 10 seconds, decreases HP by 326 every second. Has a 25% of causing target to fail to use a skill. -->
 		<table name="#effectPoint"> -692 -698 -704 -708 -709 -709 -709 -709 -709 </table>
@@ -541,7 +547,7 @@
 		<table name="#mpConsumes"> 54 56 62 68 74 80 86 92 98 </table>
 		<table name="#power"> 85 87 93 99 105 111 117 121 125 </table>
 		<set name="icon" val="icon.skill11262" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="MARK_DEBUF_D" />
 		<set name="activateRate" val="50" />
@@ -689,12 +695,13 @@
 		</for>
 	</skill>
 	<skill id="11267" levels="3" name="Spirit of Naviarope">
+		<table name="#abnormalLvls"> 1 2 3 </table>
 		<!-- Updated to IO -->
 		<!-- Transform into Naviarope. For 5 minutes, M. Def. and P. Def. + 50%; and Bow/Crossbow Resistance + 50% using his powerful skills. -->
 		<table name="#abnormalTime"> 300 420 600 </table>
 		<table name="#magicLvl"> 95 97 99 </table>
 		<set name="icon" val="icon.skill11267" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="TRANSFORM" />
 		<set name="operateType" val="A2" />
@@ -855,6 +862,7 @@
 		</for>
 	</skill>
 	<skill id="11273" levels="8" name="Exile">
+		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
 		<!-- Updated to IO -->
 		<!-- Banishes target to another dimension. The exiled target becomes incapacitated and invincible to some attacks, skills, and debuffs. Decreases HP by 353 per second. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -713 -717 -721 </table>
@@ -862,7 +870,7 @@
 		<table name="#mpConsumes"> 78 83 87 92 97 102 107 112 </table>
 		<table name="#dot"> 353 364 374 385 395 409 416 423 </table>
 		<set name="icon" val="icon.skill11273" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="10" /> <!-- Guessed -->
 		<set name="abnormalType" val="DEPORT" />
 		<set name="abnormalVisualEffect" val="DEPORT" />
@@ -892,13 +900,14 @@
 		</for>
 	</skill>
 	<skill id="11274" levels="4" name="Summon Barrier">
+		<table name="#abnormalLvls"> 1 2 3 4 </table>
 		<!-- Updated to IO -->
 		<!-- Becomes invincible with energy from your servitor. Increases HP Recovery Bonus while skill is in effect. Requires a servitor. -->
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 78 86 94 97 </table>
 		<table name="#regHp"> 1.10 1.15 1.20 1.25 </table>
 		<set name="icon" val="icon.skill11274" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="INVINCIBILITY" />
 		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
@@ -981,6 +990,7 @@
 		</for>
 	</skill>
 	<skill id="11277" levels="4" name="Sense of Loyalty">
+		<table name="#abnormalLvls"> 1 2 3 4 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Servitor's Fury. P. Atk. + 35%, M. Atk. + 75%, P. Critical Rate + 30%, and P. Critical Damage by 35%. -->
@@ -998,6 +1008,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -1009,6 +1020,7 @@
 		</for>
 	</skill>
 	<skill id="11278" levels="9" name="Bear Claw">
+		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 99 </table>
 		<!-- Updated to IO -->
 		<!-- Provokes the enemy and inflicts damage. -->
@@ -1016,7 +1028,7 @@
 		<table name="#mpConsumes"> 79 81 84 86 89 92 95 98 99 </table>
 		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15282 15282 </table> <!-- Guessed from Feline Bite -->
 		<set name="icon" val="icon.skill0028" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="TARGET_LOCK" />
 		<set name="activateRate" val="100" />
@@ -1045,6 +1057,7 @@
 		</for>
 	</skill>
 	<skill id="11279" levels="9" name="Bear Tumbling">
+		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 99 </table>
 		<!-- Updated to IO -->
 		<!-- Rolls over at the same spot to give a shock to the ground and temporarily stops nearby targets from moving. -->
@@ -1052,7 +1065,7 @@
 		<table name="#mpConsumes"> 332 337 349 360 372 384 396 408 414 </table>
 		<table name="#power"> 8000 8406 8920 9497 10043 10588 11134 11680 12225 </table> <!-- Guessed from Feline Pounce -->
 		<set name="icon" val="icon.skill0028" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="5" /> <!-- Guessed -->
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="abnormalVisualEffect" val="STUN" />
@@ -1110,11 +1123,10 @@
 		<!-- Updated to IO -->
 		<!-- Jumps to inflict damage on targets within a certain range. Speed - 100. Can be used when below 200 grids. -->
 		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -709 </table>
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 </table>
 		<table name="#mpConsumes"> 194 197 204 210 217 224 231 238 242 </table>
 		<table name="#power"> 8000 8406 8920 9497 10043 10588 11134 11680 12225 </table> <!-- Guessed from Feline Pounce -->
 		<set name="icon" val="icon.skill0121" />
-		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="5" /> <!-- Guessed -->
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="90" />
@@ -1268,6 +1280,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="activateRate" val="0" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="1" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11287" levels="10" name="Superior Resistance">
@@ -1290,6 +1303,7 @@
 		</for>
 	</skill>
 	<skill id="11288" levels="4" name="Ultimate Servitor Share">
+		<table name="#abnormalLvls"> 1 2 3 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Shares the following with your servitor(s): 60% of P. Atk. and P. Def., 30% of M. Atk. and M. Def., 15% of Max HP and MP, 30% of Critical Rate, 10% of Atk. Spd. and 3% of Casting Spd. for 30 minutes. -->
 		<table name="#coolTimes"> 200 0 0 0 </table>
@@ -1311,6 +1325,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="isMagic" val="1" />
 		<for>
 			<!-- Note: 0.5 means 50% of owner's patk! -->
@@ -1329,9 +1344,8 @@
 	<skill id="11289" levels="4" name="Gate Root">
 		<!-- Updated to IO -->
 		<!-- Temporarily stops nearby enemies from moving. -->
-		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<set name="icon" val="icon.skill0028" />
-		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" /> <!-- Guessed -->
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="abnormalVisualEffect" val="ROOT" />
@@ -1444,9 +1458,8 @@
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Temporarily stops the enemy from moving. -->
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 11 </table>
 		<set name="icon" val="icon.skill1201" />
-		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" /> <!-- Guessed -->
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="abnormalVisualEffect" val="ROOT" />
@@ -1493,13 +1506,14 @@
 		</for>
 	</skill>
 	<skill id="11296" levels="9" name="Mass Exile">
+		<table name="#abnormalLvls"> 1 2 3 4 5 6 </table>
 		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
 		<!-- Updated to IO -->
 		<!-- Banishes target and nearby enemies to another dimension. The exiled targets become incapacitated and invincible to some attacks, skills, and debuffs. Decreases HP by 282 per second. -->
 		<table name="#mpConsumes"> 102 106 112 118 125 132 139 146 153 </table>
 		<table name="#dot"> 282 288 296 305 313 322 336 343 350 </table>
 		<set name="icon" val="icon.skill11296" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="10" /> <!-- Guessed -->
 		<set name="abnormalType" val="DEPORT" />
 		<set name="abnormalVisualEffect" val="DEPORT" />

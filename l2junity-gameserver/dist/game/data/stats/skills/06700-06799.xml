@@ -65,6 +65,7 @@
 		<set name="effectRange" val="300" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6706" levels="1" name="Piercing Attack">
@@ -133,9 +134,11 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="abnormalLvl" val="2" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6711" levels="3" name="Etis Power Up">
+		<table name="#abnormalLvls"> 1 2 3 </table>
 		<!-- none -->
 		<set name="abnormalTime" val="30" />
 		<set name="blockedInOlympiad" val="false" />
@@ -146,11 +149,12 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6714" levels="1" name="Wind Walk of Elcadia">
 		<!-- High Five Skill -->
-		<set name="abnormalLvl" val="2" />
+		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="SPEED_UP" />
 		<set name="blockedInOlympiad" val="false" />
@@ -174,7 +178,7 @@
 	</skill>
 	<skill id="6715" levels="1" name="Haste of Elcadia">
 		<!-- High Five Skill -->
-		<set name="abnormalLvl" val="2" />
+		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
 		<set name="blockedInOlympiad" val="false" />
@@ -198,7 +202,7 @@
 	</skill>
 	<skill id="6716" levels="1" name="Might of Elcadia">
 		<!-- High Five Skill -->
-		<set name="abnormalLvl" val="3" />
+		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="PA_UP" />
 		<set name="blockedInOlympiad" val="false" />
@@ -222,7 +226,7 @@
 	</skill>
 	<skill id="6717" levels="1" name="Berserker Spirit of Elcadia">
 		<!-- High Five Skill -->
-		<set name="abnormalLvl" val="2" />
+		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="BERSERKER" />
 		<set name="blockedInOlympiad" val="false" />
@@ -253,7 +257,7 @@
 	</skill>
 	<skill id="6718" levels="1" name="Death Whisper of Elcadia">
 		<!-- High Five Skill -->
-		<set name="abnormalLvl" val="3" />
+		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="CRITICAL_DMG_UP" />
 		<set name="blockedInOlympiad" val="false" />
@@ -277,7 +281,7 @@
 	</skill>
 	<skill id="6719" levels="1" name="Guidance of Elcadia">
 		<!-- High Five Skill -->
-		<set name="abnormalLvl" val="3" />
+		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="HIT_UP" />
 		<set name="blockedInOlympiad" val="false" />
@@ -301,7 +305,7 @@
 	</skill>
 	<skill id="6720" levels="1" name="Focus of Elcadia">
 		<!-- High Five Skill -->
-		<set name="abnormalLvl" val="3" />
+		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="CRITICAL_PROB_UP" />
 		<set name="blockedInOlympiad" val="false" />
@@ -325,7 +329,7 @@
 	</skill>
 	<skill id="6721" levels="1" name="Empower of Elcadia">
 		<!-- High Five Skill -->
-		<set name="abnormalLvl" val="3" />
+		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="MA_UP" />
 		<set name="blockedInOlympiad" val="false" />
@@ -349,7 +353,7 @@
 	</skill>
 	<skill id="6722" levels="1" name="Acumen of Elcadia">
 		<!-- High Five Skill -->
-		<set name="abnormalLvl" val="3" />
+		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="CASTING_TIME_DOWN" />
 		<set name="blockedInOlympiad" val="false" />
@@ -373,7 +377,7 @@
 	</skill>
 	<skill id="6723" levels="1" name="Concentration of Elcadia">
 		<!-- High Five Skill -->
-		<set name="abnormalLvl" val="6" />
+		<set name="abnormalLvl" val="7" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="CANCEL_PROB_DOWN" />
 		<set name="blockedInOlympiad" val="false" />
@@ -472,7 +476,7 @@
 	</skill>
 	<skill id="6727" levels="1" name="Vampiric Rage of Elcadia">
 		<!-- High Five Skill -->
-		<set name="abnormalLvl" val="4" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="VAMPIRIC_ATTACK" />
 		<set name="blockedInOlympiad" val="false" />
@@ -515,7 +519,7 @@
 	</skill>
 	<skill id="6729" levels="1" name="Holy Attack Resistance of Elcadia">
 		<!-- High Five Skill -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="ARMOR_HOLY" />
 		<set name="blockedInOlympiad" val="false" />
@@ -568,6 +572,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="200" />
+		<set name="abnormalLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6732" levels="1" name="Mirage">
@@ -595,6 +600,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="2000" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6734" levels="1" name="Energy of Destruction">
@@ -608,6 +614,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="10" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6735" levels="1" name="Petrify">
@@ -621,6 +628,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6736" levels="1" name="Fierce Attack">
@@ -674,6 +682,7 @@
 		<set name="effectRange" val="2000" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6739" levels="1" name="Presentation - Behemoth Leader Casting Preparation">
@@ -720,7 +729,7 @@
 	<skill id="6743" levels="1" name="Dark Wound">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="9" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
@@ -761,6 +770,7 @@
 		<set name="effectRange" val="1200" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="3" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6745" levels="1" name="Dark Space">
@@ -774,6 +784,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="effectRange" val="1200" />
 		<set name="lvlBonusRate" val="2" />
+		<set name="abnormalLvl" val="3" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6746" levels="1" name="Dark Space">
@@ -787,6 +798,7 @@
 		<set name="effectRange" val="1200" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="85" />
+		<set name="abnormalLvl" val="3" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6747" levels="1" name="Dark Blade">
@@ -934,7 +946,7 @@
 	<skill id="6754" levels="1" name="Bleed">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="9" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
@@ -1037,7 +1049,7 @@
 	<skill id="6758" levels="1" name="Rage">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="PA_UP" />
 		<set name="effectPoint" val="100000" />
@@ -1116,7 +1128,7 @@
 	<skill id="6762" levels="1" name="Rage">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
 		<set name="effectPoint" val="100000" />
@@ -1364,7 +1376,7 @@
 	<skill id="6773" levels="1" name="Rage">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="PA_UP" />
 		<set name="effectPoint" val="100000" />
@@ -1464,6 +1476,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="abnormalLvl" val="1" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -1480,7 +1493,7 @@
 	</skill>
 	<skill id="6777" levels="1" name="Bleeding Gash">
 		<!-- High Five Skill -->
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="9" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="BLEEDING" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
