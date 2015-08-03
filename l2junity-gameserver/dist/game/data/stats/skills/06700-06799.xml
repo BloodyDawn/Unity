@@ -66,6 +66,7 @@
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
+		<set name="trait" val="SHOCK" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6706" levels="1" name="Piercing Attack">
@@ -618,6 +619,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="10" />
 		<set name="abnormalTime" val="5" />
+		<set name="trait" val="POISON" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6735" levels="1" name="Petrify">
@@ -688,6 +690,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
+		<set name="trait" val="HOLD" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6739" levels="1" name="Presentation - Behemoth Leader Casting Preparation">
@@ -943,6 +946,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="trait" val="DEATH" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1485,6 +1489,7 @@
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="abnormalLvl" val="1" />
+		<set name="trait" val="PARALYZE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">

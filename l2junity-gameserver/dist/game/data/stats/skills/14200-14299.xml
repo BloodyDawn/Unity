@@ -57,6 +57,7 @@
 		<set name="magicLvl" val="95" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
+		<set name="trait" val="POISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14203" levels="1" name="Hold">
@@ -81,6 +82,7 @@
 		<set name="magicLvl" val="90" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="trait" val="HOLD" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14204" levels="1" name="Hold">
@@ -105,6 +107,7 @@
 		<set name="magicLvl" val="90" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="trait" val="HOLD" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14205" levels="1" name="Oath of Loyalty">
@@ -215,6 +218,7 @@
 		<set name="magicLvl" val="95" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
+		<set name="trait" val="PARALYZE" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14210" levels="1" name="Teredor Hiding Presentation">
@@ -583,6 +587,7 @@
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
+		<set name="trait" val="SHOCK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14232" levels="1" name="Yoke of Thorns">
@@ -699,6 +704,7 @@
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="30" />
+		<set name="trait" val="BLEED" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14238" levels="1" name="Sound Blade">
@@ -720,6 +726,7 @@
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="20" />
+		<set name="trait" val="DERANGEMENT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14239" levels="1" name="Sound Prison">
@@ -741,6 +748,7 @@
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="trait" val="HOLD" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14240" levels="1" name="Poison Eruption">
@@ -763,6 +771,7 @@
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="30" />
+		<set name="trait" val="POISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14241" levels="1" name="Poison Fog">
@@ -785,6 +794,7 @@
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="30" />
+		<set name="trait" val="POISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14242" levels="1" name="Wide Area Curse">
@@ -866,6 +876,7 @@
 		<set name="activateRate" val="99" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
+		<set name="trait" val="SHOCK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14246" levels="1" name="Earth Demolition">
@@ -971,6 +982,7 @@
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="trait" val="SHOCK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14251" levels="1" name="Death Rap">
@@ -1177,6 +1189,7 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14263" levels="2" name="Electric Attack">
+		<table name="#trait"> NONE SHOCK </table>
 		<table name="#magicLvl"> 93 -1 </table>
 		<table name="#operateType"> A1 A2 </table>
 		<table name="#specialLevel"> 0 -1 </table>
@@ -1201,6 +1214,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="8" />
+		<set name="trait" val="#trait" />
 		<set name="isDebuff" val="#isDebuffs" />
 	</skill>
 	<skill id="14264" levels="1" name="Poison Cloud">
@@ -1221,6 +1235,7 @@
 		<set name="magicLvl" val="93" />
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="30" />
+		<set name="trait" val="POISON" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14265" levels="1" name="Resurrection">
@@ -1259,6 +1274,7 @@
 		<set name="magicLvl" val="95" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="8" />
+		<set name="trait" val="HOLD" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14267" levels="2" name="Hole Punch">
@@ -1298,6 +1314,7 @@
 		<set name="magicLvl" val="97" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="8" />
+		<set name="trait" val="DERANGEMENT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14269" levels="1" name="Foot Strike">
@@ -1320,6 +1337,7 @@
 		<set name="magicLvl" val="98" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="trait" val="HOLD" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14270" levels="1" name="Spinning Blade of Fear">
@@ -1342,6 +1360,7 @@
 		<set name="magicLvl" val="98" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
+		<set name="trait" val="DERANGEMENT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14271" levels="1" name="Spinning Blade">
@@ -1364,6 +1383,7 @@
 		<set name="magicLvl" val="98" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
+		<set name="trait" val="HOLD" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14272" levels="1" name="Powerful Blow">
@@ -1404,6 +1424,7 @@
 		<set name="magicLvl" val="98" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
+		<set name="trait" val="SHOCK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14274" levels="1" name="Mechanic Shot">
@@ -1474,6 +1495,7 @@
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="trait" val="HOLD" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14278" levels="1" name="Orbis De-spawn">
@@ -1493,6 +1515,7 @@
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="trait" val="HOLD" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14279" levels="1" name="Octavis' Influence">
@@ -1556,6 +1579,7 @@
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="trait" val="HOLD" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14282" levels="1" name="Octavis' Obedience">
@@ -1588,6 +1612,7 @@
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="trait" val="HOLD" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14284" levels="1" name="Golem Connection Break">
@@ -1606,6 +1631,7 @@
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="trait" val="HOLD" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14285" levels="1" name="Octavis' Arrow Shaft">
@@ -1754,6 +1780,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
+		<set name="trait" val="SHOCK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14295" levels="7" name="Range Stun Strike">
@@ -1775,6 +1802,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
+		<set name="trait" val="SHOCK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14296" levels="7" name="Shot">
@@ -1813,6 +1841,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
+		<set name="trait" val="SHOCK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14298" levels="7" name="Stab">
@@ -1836,6 +1865,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
+		<set name="trait" val="BLEED" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14299" levels="3" name="Divinity Burn">

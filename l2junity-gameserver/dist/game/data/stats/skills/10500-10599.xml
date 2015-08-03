@@ -1493,6 +1493,7 @@
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1" />
+		<set name="trait" val="SHOCK" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10548" levels="8" name="Plunder">
@@ -1545,7 +1546,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
-		<set name="trait" val="KNOCKBACK" />
+		<set name="trait" val="KNOCKDOWN" />
 		<for>
 			<effect name="KnockBack">
 				<param speed="400" distance="100" />
@@ -1612,7 +1613,7 @@
 		<set name="activateRate" val="80" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
-		<set name="trait" val="DERANGEMENT" />
+		<set name="trait" val="SHOCK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />

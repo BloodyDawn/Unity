@@ -426,6 +426,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
+		<set name="trait" val="DERANGEMENT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11516" levels="15" name="Curse Explosion">
@@ -439,6 +440,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="trait" val="DERANGEMENT" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11517" levels="4" name="Horn Melody">
@@ -1162,6 +1164,7 @@
 		<set name="isMagic" val="1" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="trait" val="TURN_STONE" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockActions" />
@@ -1329,6 +1332,7 @@
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="5" />
+		<set name="trait" val="DERANGEMENT" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, DUAL, DUALBLUNT" />
@@ -1485,6 +1489,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="99" />
+		<set name="trait" val="HOLD" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="11557" levels="1" name="Ultimate Scourge">
@@ -1562,6 +1567,7 @@
 		<set name="activateRate" val="60" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="5" />
+		<set name="trait" val="BOSS" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
