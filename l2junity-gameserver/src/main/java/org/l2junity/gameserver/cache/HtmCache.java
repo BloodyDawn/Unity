@@ -34,11 +34,11 @@ import org.slf4j.LoggerFactory;
  */
 public class HtmCache
 {
-	private static final Logger _log = LoggerFactory.getLogger(HtmCache.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(HtmCache.class);
 	
-	private static final HTMLFilter htmlFilter = new HTMLFilter();
+	private final HTMLFilter htmlFilter = new HTMLFilter();
 	
-	private static final Map<String, String> _cache = Config.LAZY_CACHE ? new ConcurrentHashMap<>() : new HashMap<>();
+	private final Map<String, String> _cache = Config.LAZY_CACHE ? new ConcurrentHashMap<>() : new HashMap<>();
 	
 	private int _loadedFiles;
 	private long _bytesBuffLen;
@@ -57,23 +57,23 @@ public class HtmCache
 	{
 		if (!Config.LAZY_CACHE)
 		{
-			_log.info("Html cache start...");
+			LOGGER.info("Html cache start...");
 			parseDir(f);
-			_log.info("Cache[HTML]: " + String.format("%.3f", getMemoryUsage()) + " megabytes on " + getLoadedFiles() + " files loaded");
+			LOGGER.info("Cache[HTML]: {} megabytes on {} files loaded", String.format("%.3f", getMemoryUsage()), getLoadedFiles());
 		}
 		else
 		{
 			_cache.clear();
 			_loadedFiles = 0;
 			_bytesBuffLen = 0;
-			_log.info("Cache[HTML]: Running lazy cache");
+			LOGGER.info("Cache[HTML]: Running lazy cache");
 		}
 	}
 	
 	public void reloadPath(File f)
 	{
 		parseDir(f);
-		_log.info("Cache[HTML]: Reloaded specified path.");
+		LOGGER.info("Cache[HTML]: Reloaded specified path.");
 	}
 	
 	public double getMemoryUsage()
@@ -126,7 +126,7 @@ public class HtmCache
 			}
 			catch (Exception e)
 			{
-				_log.warn("Problem with htm file " + e.getMessage(), e);
+				LOGGER.warn("Problem with htm file:", e);
 			}
 		}
 		return null;
@@ -138,7 +138,7 @@ public class HtmCache
 		if (content == null)
 		{
 			content = "<html><body>My text is missing:<br>" + path + "</body></html>";
-			_log.warn("Cache[HTML]: Missing HTML page: " + path);
+			LOGGER.warn("Cache[HTML]: Missing HTML page: {}", path);
 		}
 		return content;
 	}
@@ -172,13 +172,8 @@ public class HtmCache
 		{
 			return ""; // avoid possible NPE
 		}
-		
-		String content = _cache.get(path);
-		if (Config.LAZY_CACHE && (content == null))
-		{
-			content = loadFile(new File(Config.DATAPACK_ROOT, path));
-		}
-		return content;
+
+		return _cache.computeIfAbsent(path, k -> Config.LAZY_CACHE ? loadFile(new File(Config.DATAPACK_ROOT, k)) : null);
 	}
 	
 	public boolean contains(String path)
