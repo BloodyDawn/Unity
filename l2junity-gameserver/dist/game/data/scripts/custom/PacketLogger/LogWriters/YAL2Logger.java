@@ -125,8 +125,7 @@ public class YAL2Logger implements IPacketHandler
 		}
 		catch (IOException e)
 		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.warn("Couldn't copy the file: ", e);
 		}
 	}
 	

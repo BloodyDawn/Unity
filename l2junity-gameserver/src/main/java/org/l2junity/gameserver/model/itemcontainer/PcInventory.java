@@ -1021,31 +1021,32 @@ public class PcInventory extends Inventory
 			item.applyEnchantStats();
 		}
 	}
-
+	
 	/**
 	 * Reduce the number of arrows/bolts owned by the L2PcInstance and send it Server->Client Packet InventoryUpdate or ItemList (to unequip if the last arrow was consumed).
 	 * @param type
 	 */
+	@Override
 	public void reduceArrowCount(EtcItemType type)
 	{
-		if (type != EtcItemType.ARROW && type != EtcItemType.BOLT)
+		if ((type != EtcItemType.ARROW) && (type != EtcItemType.BOLT))
 		{
 			_log.warn(type.toString(), " which is not arrow type passed to PlayerInstance.reduceArrowCount()");
 			return;
 		}
-
+		
 		final ItemInstance arrows = getPaperdollItem(Inventory.PAPERDOLL_LHAND);
-
-		if (arrows == null || arrows.getItemType() != type)
+		
+		if ((arrows == null) || (arrows.getItemType() != type))
 		{
 			return;
 		}
-
-		if (arrows.getEtcItem().isInfinite())	// Null-safe due to type checks above
+		
+		if (arrows.getEtcItem().isInfinite()) // Null-safe due to type checks above
 		{
 			return;
 		}
-
+		
 		if ((GameTimeController.getInstance().getGameTicks() % 10) == 0)
 		{
 			updateItemCount(null, arrows, -1, _owner, null);
@@ -1055,10 +1056,14 @@ public class PcInventory extends Inventory
 			updateItemCountNoDbUpdate(null, arrows, -1, _owner, null);
 		}
 	}
-
+	
 	/**
 	 * Reduces item count in the stack, destroys item when count reaches 0.
+	 * @param process
+	 * @param item
 	 * @param countDelta Adds items to stack if positive, reduces if negative. If stack count reaches 0 item is destroyed.
+	 * @param creator
+	 * @param reference
 	 * @return Amount of items left.
 	 */
 	public boolean updateItemCountNoDbUpdate(String process, ItemInstance item, long countDelta, PlayerInstance creator, Object reference)
@@ -1071,7 +1076,7 @@ public class PcInventory extends Inventory
 			{
 				synchronized (item)
 				{
-					if (process != null && process.length() > 0)
+					if ((process != null) && (process.length() > 0))
 					{
 						item.changeCount(process, countDelta, creator, reference);
 					}
@@ -1108,10 +1113,14 @@ public class PcInventory extends Inventory
 			}
 		}
 	}
-
+	
 	/**
 	 * Reduces item count in the stack, destroys item when count reaches 0.
+	 * @param process
+	 * @param item
 	 * @param countDelta Adds items to stack if positive, reduces if negative. If stack count reaches 0 item is destroyed.
+	 * @param creator
+	 * @param reference
 	 * @return Amount of items left.
 	 */
 	public boolean updateItemCount(String process, ItemInstance item, long countDelta, PlayerInstance creator, Object reference)

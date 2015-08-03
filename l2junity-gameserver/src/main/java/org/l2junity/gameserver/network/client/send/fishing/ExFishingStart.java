@@ -29,13 +29,16 @@ import org.l2junity.network.PacketWriter;
  */
 public class ExFishingStart implements IClientOutgoingPacket
 {
-	private PlayerInstance _player;
-	private int _fishType;
-	private int _baitType;
-	private ILocational _baitLocation;
-
+	private final PlayerInstance _player;
+	private final int _fishType;
+	private final int _baitType;
+	private final ILocational _baitLocation;
+	
 	/**
+	 * @param player
+	 * @param fishType
 	 * @param baitType - 0 = newbie, 1 = normal, 2 = night
+	 * @param baitLocation
 	 */
 	public ExFishingStart(PlayerInstance player, int fishType, int baitType, ILocational baitLocation)
 	{
