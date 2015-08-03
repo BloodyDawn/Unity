@@ -47,8 +47,8 @@ public class ExFishingEnd implements IClientOutgoingPacket
 		}
 	}
 
-	private PlayerInstance _player;
-	private FishingEndReason _reason;
+	private final PlayerInstance _player;
+	private final FishingEndReason _reason;
 
 	public ExFishingEnd(PlayerInstance player, FishingEndReason reason)
 	{

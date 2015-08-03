@@ -30,8 +30,8 @@ import org.l2junity.network.PacketWriter;
 public class ExUserInfoFishing implements IClientOutgoingPacket
 {
 	private final PlayerInstance _activeChar;
-	private boolean _isFishing;
-	private ILocational _baitLocation;
+	private final boolean _isFishing;
+	private final ILocational _baitLocation;
 
 	public ExUserInfoFishing(PlayerInstance activeChar, boolean isFishing, ILocational baitLocation)
 	{
