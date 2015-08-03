@@ -869,6 +869,7 @@
 		</for>
 	</skill>
 	<skill id="11033" levels="3" name="Damaged Area">
+		<table name="#abnormalTime"> 3 3 5 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily incurs damage. All speeds are decreased. -->
 		<set name="icon" val="icon.skill11032" />
@@ -884,6 +885,7 @@
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11034" levels="8" name="Elemental Blast">
@@ -1335,7 +1337,7 @@
 		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
 		<set name="icon" val="icon.skill11048" />
 		<set name="abnormalLvl" val="5" />
-		<set name="abnormalTime" val="20" />
+		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="MULTI_DEBUFF" />
 		<set name="activateRate" val="60" />
 		<set name="affectRange" val="200" />
@@ -1617,7 +1619,7 @@
 		<table name="#power"> 133 136 142 149 154 160 163 167 171 </table>
 		<set name="icon" val="icon.skill11057" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="2" />
+		<set name="abnormalTime" val="1" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="affectRange" val="150" />
@@ -2008,13 +2010,14 @@
 		</for>
 	</skill>
 	<skill id="11078" levels="3" name="Decrease Water Resistance">
+		<table name="#abnormalTime"> 3 3 10 </table>
 		<!-- Updated to IO -->
 		<!-- Decreases Water resistance by 20 for 3 seconds. -->
 		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#waterRes"> 20 50 100 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="abnormalLvl" val="5" />
-		<set name="abnormalTime" val="3" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
 		<set name="attributeType" val="WATER" />
@@ -2035,13 +2038,14 @@
 		</for>
 	</skill>
 	<skill id="11079" levels="3" name="Decrease Wind Resistance">
+		<table name="#abnormalTime"> 3 3 10 </table>
 		<!-- Updated to IO -->
 		<!-- Decreases Wind resistance by 20 for 3 seconds. -->
 		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#windRes"> 20 50 100 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="abnormalLvl" val="5" />
-		<set name="abnormalTime" val="3" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
 		<set name="attributeType" val="WIND" />
@@ -2062,13 +2066,14 @@
 		</for>
 	</skill>
 	<skill id="11080" levels="3" name="Decrease Earth Resistance">
+		<table name="#abnormalTime"> 3 3 10 </table>
 		<!-- Updated to IO -->
 		<!-- Decreases Earth resistance by 20 for 3 seconds. -->
 		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#earthRes"> 20 50 100 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="abnormalLvl" val="5" />
-		<set name="abnormalTime" val="3" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
 		<set name="attributeType" val="EARTH" />
@@ -2089,13 +2094,14 @@
 		</for>
 	</skill>
 	<skill id="11081" levels="3" name="Decrease Fire/Water/Wind/Earth Resistances">
+		<table name="#abnormalTime"> 3 3 10 </table>
 		<!-- Updated to IO -->
 		<!-- Decreases Fire/Water/Wind/Earth resistances by 20 for 3 seconds. -->
 		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#allRes"> 20 50 100 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="abnormalLvl" val="5" />
-		<set name="abnormalTime" val="3" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A4" />
@@ -2192,11 +2198,12 @@
 		</for>
 	</skill>
 	<skill id="11087" levels="3" name="Elemental Crash (Fire)">
+		<table name="#abnormalTime"> 3 3 5 </table>
 		<!-- Updated to IO -->
 		<!-- Inflicts fear and hold on target. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="abnormalLvl" val="5" />
-		<set name="abnormalTime" val="3" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
 		<set name="activateRate" val="50" />
@@ -2219,10 +2226,11 @@
 		</for>
 	</skill>
 	<skill id="11088" levels="3" name="Elemental Crash (Water)">
+		<table name="#abnormalTime"> 3 3 5 </table>
 		<!-- Updated to IO -->
 		<!-- Decreases target's Speed. -->
 		<set name="icon" val="icon.skill11017" />
-		<set name="abnormalTime" val="3" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="99" />
 		<set name="basicProperty" val="NONE" />
 		<set name="attributeType" val="WATER" />
@@ -2271,11 +2279,12 @@
 		</for>
 	</skill>
 	<skill id="11090" levels="3" name="Elemental Crash (Earth)">
+		<table name="#abnormalTime"> 3 3 5 </table>
 		<!-- Updated to IO -->
 		<!-- Inflicts hold on target. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="abnormalLvl" val="5" />
-		<set name="abnormalTime" val="3" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="basicProperty" val="NONE" />
@@ -2297,11 +2306,12 @@
 		</for>
 	</skill>
 	<skill id="11091" levels="3" name="Elemental Crash (4 Elements)">
+		<table name="#abnormalTime"> 3 3 5 </table>
 		<!-- Updated to IO -->
 		<!-- Inflicts stun on target. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="abnormalLvl" val="5" />
-		<set name="abnormalTime" val="3" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="99" />
@@ -2320,6 +2330,7 @@
 		</for>
 	</skill>
 	<skill id="11092" levels="3" name="Damaged Area">
+		<table name="#abnormalTime"> 3 3 5 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily incurs damage. All speeds are decreased. -->
 		<set name="icon" val="icon.skill11032" />
@@ -2335,6 +2346,7 @@
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="99" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11093" levels="1" name="Crystal Form">
@@ -2342,7 +2354,7 @@
 		<!-- Cancels Poison/Bleed/Hold/Stun effect. Becomes invincible for 10 seconds and rapidly recovers HP and MP. -->
 		<set name="icon" val="icon.skill11093" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
+		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
 		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="canCastWhileDisabled" val="true" />
@@ -2379,7 +2391,7 @@
 		<table name="#power"> 133 136 142 149 154 160 163 167 171 </table>
 		<set name="icon" val="icon.skill11094" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="2" />
+		<set name="abnormalTime" val="1" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="150" />

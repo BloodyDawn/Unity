@@ -962,6 +962,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="120" />
 		<set name="reuseDelay" val="180000" />
 	</skill>
 	<skill id="10278" levels="8" name="Reduce Anger">
@@ -1089,6 +1090,7 @@
 		</for>
 	</skill>
 	<skill id="10284" levels="3" name="Lightning Force">
+		<table name="#abnormalTime"> 30 20 15 </table>
 		<table name="#abnormalLvl"> 1 2 3 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- You are imbued with Rage. P. Atk. + 10% and Speed + 5 when equipped with a fist weapon/sword/blunt/dualsword/spear. 20% chance of raising Lightning Force to level 2 during a critical attack. -->
@@ -1104,6 +1106,7 @@
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="10285" levels="1" name="HP Drain">

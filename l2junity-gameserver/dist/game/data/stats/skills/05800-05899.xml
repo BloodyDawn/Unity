@@ -964,6 +964,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5855" levels="2" name="Stun">
+		<table name="#abnormalTime"> 15 3 </table>
 		<table name="#magicLvl"> 80 85 </table>
 		<table name="#activateRate"> -1 80 </table>
 		<table name="#lvlBonusRate"> 0 1 </table>
@@ -971,7 +972,7 @@
 		<table name="#basicProperty"> NONE PHYSICAL </table>
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="15" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="effectPoint" val="-100" />

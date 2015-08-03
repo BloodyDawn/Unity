@@ -199,6 +199,7 @@
 		<set name="specialLevel" val="#specialLevel" />
 		<set name="activateRate" val="#activateRate" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" />
 		<set name="trait" val="#traits" />
 		<for>
 			<effect name="#effectname1">
@@ -1487,10 +1488,11 @@
 		</for>
 	</skill>
 	<skill id="5083" levels="4" name="Stun">
+		<table name="#abnormalTime"> 3 9 9 9 </table>
 		<table name="#mpConsume"> 93 93 93 5 </table>
 		<table name="#power"> 1715 3540 7305 8602 </table>
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="9" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="50" />

@@ -251,6 +251,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9321" levels="1" name="Dismount">
@@ -280,6 +281,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="30" />
 		<set name="reuseDelay" val="45000" />
 	</skill>
 	<skill id="9323" levels="1" name="Player Commendation - Transform Rose (Male)">
@@ -296,6 +298,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="600" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9324" levels="1" name="Player Commendation - Transform Rose (Female)">
@@ -312,6 +315,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="600" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9325" levels="2" name="Fire Stone">
@@ -387,6 +391,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="5" />
+		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9332" levels="1" name="Drum Melody - Enhanced Cocktail">
@@ -402,6 +407,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="5" />
+		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9333" levels="1" name="Lute Melody - Enhanced Cocktail">
@@ -417,6 +423,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="5" />
+		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9334" levels="1" name="Pipe Organ Melody - Enhanced Cocktail">
@@ -432,6 +439,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="5" />
+		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9335" levels="1" name="Guitar Melody - Enhanced Cocktail">
@@ -447,6 +455,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="5" />
+		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9336" levels="1" name="Harp Melody - Enhanced Cocktail">
@@ -462,6 +471,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="5" />
+		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9337" levels="1" name="Hair Accessory Pack">
@@ -591,6 +601,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9349" levels="1" name="Dismount">
@@ -620,6 +631,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="1" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="30" />
 		<set name="reuseDelay" val="45000" />
 	</skill>
 	<skill id="9351" levels="1" name="Pirate's Eyepatch - STR">
@@ -763,6 +775,7 @@
 		<set name="reuseDelay" val="1800000" />
 	</skill>
 	<skill id="9367" levels="2" name="Power of Pa'agrio">
+		<table name="#abnormalTime"> 5 10 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- All abnormal status removed. Invincible for 5 sec. Cannot be used when immobile. Can be used in the Olympiad. -->
 		<set name="icon" val="icon.pi_shirt_of_wolf_2nd_fire" />
@@ -776,6 +789,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="reuseDelayGroup" val="9367" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="reuseDelay" val="1800000" />
 	</skill>
 	<skill id="9369" levels="2" name="Power of Maphr">
@@ -812,6 +826,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="300" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="9373" levels="2" name="Power of Sayha">
@@ -842,6 +857,7 @@
 		<set name="specialLevel" val="-2" />
 		<set name="hitCancelTime" val="0" />
 		<set name="abnormalLvl" val="8" />
+		<set name="abnormalTime" val="3600" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9376" levels="1" name="Mentor's Knight's Harmony">
@@ -863,6 +879,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="-2" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="7200" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="9377" levels="1" name="Mentor's Wizard's Harmony">
@@ -884,6 +901,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="-2" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="7200" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="9378" levels="1" name="Mentor's Warrior's Harmony">
@@ -905,6 +923,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="-2" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="7200" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="9379" levels="1" name="Mentee's Mentor Summon">
@@ -1150,6 +1169,7 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="-2" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="10" />
 		<set name="isMagic" val="4" />
 	</skill>
 </list>

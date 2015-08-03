@@ -334,7 +334,7 @@
 		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<!-- Antharas Skills -->
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="60" />
+		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="TURN_STONE" />
 		<set name="abnormalVisualEffect" val="FLESH_STONE" />
 		<set name="activateRate" val="50" />
@@ -567,12 +567,13 @@
 		</for>
 	</skill>
 	<skill id="4120" levels="12" name="Stun">
+		<table name="#abnormalTime"> 9 3 9 3 3 3 9 9 9 9 9 9 </table>
 		<!-- Freya retail confirmed -->
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume"> 25 40 56 76 99 121 142 151 159 165 168 170 </table>
 		<table name="#power"> 46 105 219 417 722 1136 1626 1876 2112 2320 2487 2617 </table>
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="9" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="50" />
@@ -676,7 +677,7 @@
 		<!-- Confirmed CT2.5 -->
 		<!-- Antharas Skills -->
 		<set name="abnormalLvl" val="11" />
-		<set name="abnormalTime" val="1800" />
+		<set name="abnormalTime" val="43200" />
 		<set name="abnormalType" val="HP_REGEN_DOWN" />
 		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
@@ -1701,12 +1702,13 @@
 		</for>
 	</skill>
 	<skill id="4169" levels="12" name="Stun">
+		<table name="#abnormalTime"> 5 5 5 5 5 5 5 5 5 9 9 9 </table>
 		<!-- Freya retail confirmed -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
 		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 61 163 447 1169 2942 5686 8732 10131 11622 13182 14784 16398 </table>
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="9" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" />
@@ -1970,12 +1972,13 @@
 		</for>
 	</skill>
 	<skill id="4180" levels="12" name="Stun">
+		<table name="#abnormalTime"> 5 5 5 5 5 5 5 5 5 9 9 9 </table>
 		<!-- Freya retail confirmed -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
 		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<table name="#power"> 61 163 447 1169 2942 5686 8732 10131 11622 13182 14784 16398 </table>
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="9" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" />
@@ -2111,11 +2114,12 @@
 		</for>
 	</skill>
 	<skill id="4185" levels="12" name="Sleep">
+		<table name="#abnormalTime"> 10 10 10 10 10 10 10 10 10 30 30 30 </table>
 		<!-- Freya retail confirmed -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
 		<table name="#mpConsume"> 17 29 39 53 67 83 97 103 108 112 115 116 </table>
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="30" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="SLEEP" />
 		<set name="abnormalVisualEffect" val="SLEEP" />
 		<set name="activateRate" val="70" />
@@ -2138,11 +2142,12 @@
 		</for>
 	</skill>
 	<skill id="4186" levels="12" name="Hold">
+		<table name="#abnormalTime"> 10 10 10 10 10 10 10 10 10 30 30 30 </table>
 		<!-- Freya retail confirmed -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
 		<table name="#mpConsume"> 17 29 39 53 67 83 97 103 108 112 115 116 </table>
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="30" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="activateRate" val="70" />
@@ -2222,11 +2227,12 @@
 		</for>
 	</skill>
 	<skill id="4189" levels="12" name="Paralysis">
+		<table name="#abnormalTime"> 10 10 10 10 10 10 10 10 10 30 30 30 </table>
 		<!-- Freya retail confirmed -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
 		<table name="#mpConsume"> 17 29 39 53 67 83 97 103 108 112 115 116 </table>
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="30" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="abnormalVisualEffect" val="PARALYZE" />
 		<set name="activateRate" val="20" />
@@ -2424,11 +2430,12 @@
 		</for>
 	</skill>
 	<skill id="4197" levels="12" name="Hold">
+		<table name="#abnormalTime"> 10 10 10 10 10 10 10 10 10 30 30 30 </table>
 		<!-- Freya retail confirmed -->
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
 		<table name="#mpConsume"> 17 29 39 53 67 83 97 103 108 112 115 116 </table>
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="30" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="activateRate" val="70" />

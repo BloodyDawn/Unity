@@ -128,6 +128,7 @@
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="97" />
 		<set name="abnormalLvl" val="5" />
+		<set name="abnormalTime" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11245" levels="1" name="Sampling">
@@ -146,6 +147,7 @@
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="89" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11247" levels="1" name="Heavy Hit">
@@ -900,6 +902,7 @@
 		</for>
 	</skill>
 	<skill id="11274" levels="4" name="Summon Barrier">
+		<table name="#abnormalTime"> 6 8 10 12 </table>
 		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<!-- Updated to IO -->
 		<!-- Becomes invincible with energy from your servitor. Increases HP Recovery Bonus while skill is in effect. Requires a servitor. -->
@@ -908,7 +911,7 @@
 		<table name="#regHp"> 1.10 1.15 1.20 1.25 </table>
 		<set name="icon" val="icon.skill11274" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="5" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="INVINCIBILITY" />
 		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="isSharedWithSummon" val="false" />
@@ -1009,6 +1012,7 @@
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="20" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -1281,6 +1285,7 @@
 		<set name="activateRate" val="0" />
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="60" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11287" levels="10" name="Superior Resistance">
@@ -1460,10 +1465,10 @@
 		<!-- Temporarily stops the enemy from moving. -->
 		<set name="icon" val="icon.skill1201" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" /> <!-- Guessed -->
+		<set name="abnormalTime" val="1" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
 		<set name="abnormalVisualEffect" val="ROOT" />
-		<set name="activateRate" val="30" /> <!-- Guessed -->
+		<set name="activateRate" val="30" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />

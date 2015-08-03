@@ -1424,6 +1424,7 @@
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="86" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="10" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10046" levels="3" name="Shield Charge III">
@@ -1450,6 +1451,7 @@
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="88" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="10" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10047" levels="3" name="Shield Charge IV">
@@ -1476,6 +1478,7 @@
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="90" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="10" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10048" levels="3" name="Shield Charge V">
@@ -1502,6 +1505,7 @@
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="92" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="10" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10049" levels="3" name="Shield Charge VI">
@@ -1528,6 +1532,7 @@
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="94" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="10" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10050" levels="3" name="Shield Charge VII">
@@ -1554,6 +1559,7 @@
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="96" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="10" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10051" levels="6" name="Lion Roar">
@@ -1718,6 +1724,7 @@
 		</for>
 	</skill>
 	<skill id="10056" levels="8" name="Cubic Protection">
+		<table name="#abnormalTime"> 3 6 6 6 6 6 6 </table>
 		<table name="#operateType"> A1 A2 A2 A2 A2 A2 A2 A2 </table>
 		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0000" />
@@ -1733,6 +1740,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="basicProperty" val="NONE" />
 		<set name="abnormalLvl" val="3" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
@@ -1819,6 +1827,7 @@
 		<set name="activateRate" val="80" />
 		<set name="magicLvl" val="98" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="10" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10060" levels="1" name="Aggression Attack">
