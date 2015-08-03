@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="11000" levels="1" name="Heavy Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks long-range enemies. Hurls arrows like rain near target to inflict damage with 19158 damage added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. -->
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="1" />
+		<set name="targetType" val="ONE" />
+		<set name="mpInitialConsume" val="1" />
 		<set name="castRange" val="700" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="1800" />
@@ -16,6 +16,17 @@
 		<set name="effectRange" val="1200" />
 		<set name="magicLvl" val="85" />
 		<set name="reuseDelay" val="10000" />
+		<cond msgId="113" addName="1">
+			<and>
+				<target abnormalType="KNOCKDOWN" />
+				<using kind="BOW,CROSSBOW,TWOHANDCROSSBOW" />
+			</and>
+		</cond>
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="21365.2" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11001" levels="7" name="Superior Weapon Mastery">
 		<!--M. Atk. + 17%, additional M. Atk. + 981, Casting Spd. + 23%. Depending on your INT, the Cooldown resets or the duration increases by 2 times. -->
@@ -869,24 +880,36 @@
 		</for>
 	</skill>
 	<skill id="11033" levels="3" name="Damaged Area">
-		<table name="#abnormalTime"> 3 3 5 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Momentarily incurs damage. All speeds are decreased. -->
+		<table name="#abnormalTime"> 3 3 5 </table>
+		<table name="#runSpd"> 0.6 0.4 0.2 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="#abnormalTime" />
+		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="300" />
 		<set name="icon" val="icon.skill11032" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-696" />
-		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="114" />
+				<param overHit="true" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11034" levels="8" name="Elemental Blast">
 		<!-- Updated to IO -->
@@ -1395,12 +1418,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="isMagic" val="1" />
 	</skill>
-	<skill id="11050" levels="4" name="Hell Binding">
-		<table name="#magicLvl"> 85 89 93 97 </table>
-		<table name="#effectPoint"> -692 -698 -704 -708 -708 -708 -708 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11050" levels="7" name="Hell Binding">
+		<!-- Glory Days confirmed -->
 		<!-- Immobilizes target midair. -->
-		<table name="#mpConsumes"> 70 76 82 88 </table>
+		<table name="#effectPoint"> -692 -698 -704 -708 -708 -708 -708 </table>
+		<table name="#magicLvl"> 85 89 93 97 101 103 105 </table>
+		<table name="#mpConsumes"> 70 76 82 88 94 100 106 </table>
 		<set name="icon" val="icon.skill11050" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
@@ -1413,7 +1436,7 @@
 		<set name="trait" val="AIRBIND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
-		<set name="effectRange" val="1100" /> <!-- Custom -->
+		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="120000" />
@@ -1425,16 +1448,29 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelayGroup" val="11050" />
 		<set name="isDebuff" val="true" />
+		<set name="isMagic" val="2" />
 		<for>
-			<effect name="BlockActions" />
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+				<param SLEEP="100" />
+				<param DERANGEMENT="100" />
+				<param CHANGEBODY="100" />
+				<param SHOCK="100" />
+				<param AIRBIND="100" />
+				<param KNOCKBACK="100" />
+				<param KNOCKDOWN="100" />
+			</effect>
 		</for>
 	</skill>
-	<skill id="11051" levels="4" name="Hell Binding">
-		<table name="#magicLvl"> 85 89 93 97 </table>
-		<table name="#effectPoint"> -692 -698 -704 -708 -712 -716 -720 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11051" levels="7" name="Hell Binding">
+		<!-- Glory Days confirmed -->
 		<!-- Immobilizes target midair. -->
-		<table name="#mpConsumes"> 70 76 82 88 </table>
+		<table name="#effectPoint"> -692 -698 -704 -708 -712 -716 -720 </table>
+		<table name="#magicLvl"> 85 89 93 97 101 103 105 </table>
+		<table name="#mpConsumes"> 70 76 82 88 94 100 106 </table>
 		<set name="icon" val="icon.skill11050" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
@@ -1447,7 +1483,7 @@
 		<set name="trait" val="AIRBIND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
-		<set name="effectRange" val="1100" /> <!-- Custom -->
+		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="120000" />
@@ -1459,8 +1495,21 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelayGroup" val="11050" />
 		<set name="isDebuff" val="true" />
+		<set name="isMagic" val="2" />
 		<for>
-			<effect name="BlockActions" />
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+				<param SLEEP="100" />
+				<param DERANGEMENT="100" />
+				<param CHANGEBODY="100" />
+				<param SHOCK="100" />
+				<param AIRBIND="100" />
+				<param KNOCKBACK="100" />
+				<param KNOCKDOWN="100" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11052" levels="4" name="Mass Hell Binding">
