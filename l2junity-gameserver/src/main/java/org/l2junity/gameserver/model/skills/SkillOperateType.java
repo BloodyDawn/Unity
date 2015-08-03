@@ -72,6 +72,11 @@ public enum SkillOperateType
 	CA1,
 	
 	/**
+	 * ?
+	 */
+	CA2,
+	
+	/**
 	 * Continuous Active Skill with "continuous effect" (continuous effect casted by ticks).
 	 */
 	CA5,
@@ -85,6 +90,11 @@ public enum SkillOperateType
 	 * Directional Active Skill with "Charge/Rush Continuous effect".
 	 */
 	DA2,
+	
+	/**
+	 * Directional Active Skill with Blink effect
+	 */
+	DA3,
 	
 	/**
 	 * Passive Skill.
@@ -194,6 +204,7 @@ public enum SkillOperateType
 		switch (this)
 		{
 			case CA1:
+			case CA2:
 			case CA5:
 				return true;
 			default:
