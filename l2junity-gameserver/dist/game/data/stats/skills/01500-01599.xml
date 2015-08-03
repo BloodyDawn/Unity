@@ -737,6 +737,8 @@
 		</for>
 	</skill>
 	<skill id="1523" levels="42" name="Divine Punishment">
+		<table name="#attributeType"> NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY </table>
+		<table name="#attributeValue"> 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 </table>
 		<!-- Confirmed CT2.5 -->
 		<!-- Inquisitor Stance Skill -->
 		<table name="#effectPoints"> -418 -428 -438 -448 -457 -467 -477 -486 -495 -505 -514 -523 -532 -541 -549 -558 -566 -574 -582 -590 -597 -604 -611 -617 -624 -630 -635 -641 -646 -650 -655 -659 -662 -666 -669 -673 -676 -679 -681 -684 -687 -689 </table>
@@ -748,8 +750,8 @@
 		<set name="castRange" val="750" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1250" />
-		<set name="attributeType" val="HOLY" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeType" val="#attributeType" />
+		<set name="attributeValue" val="#attributeValue" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1523" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -799,6 +801,8 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="attributeType" val="HOLY" />
+		<set name="attributeValue" val="20" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -882,6 +886,8 @@
 		</for>
 	</skill>
 	<skill id="1528" levels="42" name="Divine Flash">
+		<table name="#attributeType"> NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY </table>
+		<table name="#attributeValue"> 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 </table>
 		<!-- Confirmed CT2.5 -->
 		<!-- Inquisitor Stance Skill -->
 		<table name="#effectPoints"> -408 -418 -428 -438 -448 -457 -467 -477 -486 -495 -505 -514 -523 -532 -541 -549 -558 -566 -574 -582 -590 -597 -604 -611 -617 -624 -630 -635 -641 -646 -650 -655 -659 -662 -666 -669 -673 -676 -679 -681 -684 -687 </table>
@@ -895,8 +901,8 @@
 		<set name="castRange" val="500" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1000" />
-		<set name="attributeType" val="HOLY" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeType" val="#attributeType" />
+		<set name="attributeValue" val="#attributeValue" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill1528" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -1388,6 +1394,8 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributeValue" val="20" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
 			<effect name="MagicalSoulAttack">

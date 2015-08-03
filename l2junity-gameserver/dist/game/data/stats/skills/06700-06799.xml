@@ -620,6 +620,8 @@
 		<set name="abnormalLvl" val="10" />
 		<set name="abnormalTime" val="5" />
 		<set name="trait" val="POISON" />
+		<set name="attributeType" val="EARTH" />
+		<set name="attributeValue" val="120" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6735" levels="1" name="Petrify">
@@ -759,6 +761,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributeValue" val="120" />
 		<set name="trait" val="BLEED" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -780,6 +784,8 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="120" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributeValue" val="120" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6745" levels="1" name="Dark Space">
@@ -795,6 +801,8 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="120" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributeValue" val="120" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6746" levels="1" name="Dark Space">
@@ -810,6 +818,8 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="120" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributeValue" val="120" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6747" levels="1" name="Dark Blade">
@@ -820,6 +830,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="150" />
 		<set name="magicLvl" val="85" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributeValue" val="120" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6748" levels="1" name="Stun Attack">
@@ -834,7 +846,7 @@
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="300" />
 		<set name="attributeType" val="DARK" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill0100" />
 		<set name="isDebuff" val="true" />
@@ -862,7 +874,7 @@
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="300" />
 		<set name="attributeType" val="DARK" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="79" />
@@ -885,7 +897,7 @@
 		<set name="effectPoint" val="-1000" />
 		<set name="effectRange" val="300" />
 		<set name="attributeType" val="DARK" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="33" />
@@ -909,6 +921,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="300" />
 		<set name="magicLvl" val="85" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributeValue" val="120" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6752" levels="1" name="Revival">
@@ -937,7 +951,7 @@
 		<set name="effectPoint" val="-337" />
 		<set name="effectRange" val="300" />
 		<set name="attributeType" val="DARK" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="77" />
@@ -977,6 +991,8 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributeValue" val="120" />
 		<set name="trait" val="BLEED" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -991,7 +1007,7 @@
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="1400" />
 		<set name="attributeType" val="DARK" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="120" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
@@ -1013,7 +1029,7 @@
 		<set name="affectRange" val="150" />
 		<set name="effectPoint" val="-10000" />
 		<set name="attributeType" val="DARK" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="120" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
@@ -1051,6 +1067,8 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributeValue" val="120" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -1094,6 +1112,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="85" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributeValue" val="120" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6760" levels="1" name="Dragon Strike">
@@ -1109,6 +1129,8 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="attributeType" val="EARTH" />
+		<set name="attributeValue" val="120" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1129,6 +1151,8 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="attributeType" val="EARTH" />
+		<set name="attributeValue" val="120" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1172,7 +1196,7 @@
 		<set name="effectPoint" val="-1000" />
 		<set name="effectRange" val="300" />
 		<set name="attributeType" val="EARTH" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="79" />
@@ -1195,7 +1219,7 @@
 		<set name="effectPoint" val="-897" />
 		<set name="effectRange" val="1400" />
 		<set name="attributeType" val="EARTH" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="79" />
@@ -1236,7 +1260,7 @@
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="1400" />
 		<set name="attributeType" val="EARTH" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="120" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
@@ -1259,6 +1283,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="magicLvl" val="85" />
+		<set name="attributeType" val="EARTH" />
+		<set name="attributeValue" val="120" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6768" levels="1" name="Stun Attack">
@@ -1283,6 +1309,8 @@
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="lvlBonusRate" val="1" />
+		<set name="attributeType" val="EARTH" />
+		<set name="attributeValue" val="120" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1314,6 +1342,8 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="attributeType" val="EARTH" />
+		<set name="attributeValue" val="120" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="BlockActions" />
@@ -1346,7 +1376,7 @@
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="300" />
 		<set name="attributeType" val="DARK" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="79" />
@@ -1369,7 +1399,7 @@
 		<set name="effectPoint" val="-1000" />
 		<set name="effectRange" val="300" />
 		<set name="attributeType" val="DARK" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="33" />
@@ -1435,6 +1465,8 @@
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="lvlBonusRate" val="1" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributeValue" val="120" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1451,7 +1483,7 @@
 		<set name="effectPoint" val="-1000" />
 		<set name="effectRange" val="200" />
 		<set name="attributeType" val="DARK" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="85" />
@@ -1490,6 +1522,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="abnormalLvl" val="1" />
 		<set name="trait" val="PARALYZE" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributeValue" val="120" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
@@ -1525,6 +1559,8 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributeValue" val="120" />
 		<set name="trait" val="BLEED" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -1541,7 +1577,7 @@
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="300" />
 		<set name="attributeType" val="DARK" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="120" />
 		<set name="hitTime" val="1500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="89" />

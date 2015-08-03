@@ -94,6 +94,8 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="400" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributeValue" val="20" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5704" levels="1" name="Water Strike">
@@ -106,6 +108,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1400" />
+		<set name="attributeType" val="40" />
+		<set name="attributeValue" val="40" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5705" levels="1" name="Fire Trap">
@@ -116,6 +120,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="attributeType" val="FIRE" />
+		<set name="attributeValue" val="20" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5706" levels="1" name="Poison">
@@ -194,6 +200,8 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributeValue" val="20" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -287,6 +295,8 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="attributeType" val="FIRE" />
+		<set name="attributeValue" val="20" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5715" levels="1" name="Electric Flame">
@@ -342,6 +352,8 @@
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="2000" />
+		<set name="attributeType" val="FIRE" />
+		<set name="attributeValue" val="20" />
 		<set name="trait" val="SHOCK" />
 	</skill>
 	<skill id="5717" levels="1" name="Fire Breath">
@@ -354,6 +366,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="2000" />
+		<set name="attributeType" val="FIRE" />
+		<set name="attributeValue" val="20" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5718" levels="1" name="Anger">
@@ -1825,6 +1839,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1400" />
+		<set name="attributeType" val="WIND" />
+		<set name="attributeValue" val="20" />
 		<set name="targetType" val="FRONT_AREA" />
 	</skill>
 	<skill id="5797" levels="1" name="Bursting Flame">
@@ -1839,6 +1855,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1100" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributeValue" val="20" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5798" levels="1" name="Fireball">
@@ -1851,6 +1869,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1400" />
+		<set name="attributeType" val="FIRE" />
+		<set name="attributeValue" val="20" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5799" levels="1" name="Bleed">
@@ -1871,6 +1891,8 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="attributeType" val="DARK" />
+		<set name="attributeValue" val="50" />
 		<set name="trait" val="BLEED" />
 	</skill>
 </list>
