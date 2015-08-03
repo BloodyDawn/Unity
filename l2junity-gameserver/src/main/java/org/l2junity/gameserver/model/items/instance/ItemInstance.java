@@ -1696,11 +1696,6 @@ public final class ItemInstance extends WorldObject
 		return _protected;
 	}
 	
-	public boolean isNightLure()
-	{
-		return (((_itemId >= 8505) && (_itemId <= 8513)) || (_itemId == 8485));
-	}
-	
 	public void setCountDecrease(boolean decrease)
 	{
 		_decrease = decrease;

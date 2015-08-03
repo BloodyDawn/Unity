@@ -43,6 +43,7 @@ import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.ArmorType;
+import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
@@ -364,7 +365,7 @@ public final class UseItem implements IClientIncomingPacket
 		else
 		{
 			final Weapon weaponItem = activeChar.getActiveWeaponItem();
-			if (((weaponItem != null) && (weaponItem.getItemType() == WeaponType.FISHINGROD)) && (((_itemId >= 6519) && (_itemId <= 6527)) || ((_itemId >= 7610) && (_itemId <= 7613)) || ((_itemId >= 7807) && (_itemId <= 7809)) || ((_itemId >= 8484) && (_itemId <= 8486)) || ((_itemId >= 8505) && (_itemId <= 8513))))
+			if ((weaponItem != null && weaponItem.getItemType() == WeaponType.FISHINGROD) && item.getItemType() == EtcItemType.LURE)
 			{
 				activeChar.getInventory().setPaperdollItem(Inventory.PAPERDOLL_LHAND, item);
 				activeChar.broadcastUserInfo();

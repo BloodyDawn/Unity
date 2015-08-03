@@ -16,34 +16,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.network.client.send;
+package org.l2junity.gameserver.network.client.send.fishing;
 
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
+import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.network.PacketWriter;
 
 /**
- * @author Sdw
+ * @author bit
  */
-public class ExUserInfoFishing implements IClientOutgoingPacket
+public class ExAutoFishAvailable implements IClientOutgoingPacket
 {
-	private final PlayerInstance _activeChar;
-	
-	public ExUserInfoFishing(PlayerInstance activeChar)
+	public static ExAutoFishAvailable YES = new ExAutoFishAvailable(true);
+	public static ExAutoFishAvailable NO = new ExAutoFishAvailable(false);
+
+	private final boolean _available;
+
+	private ExAutoFishAvailable(boolean available)
 	{
-		_activeChar = activeChar;
+		_available = available;
 	}
-	
+
 	@Override
 	public boolean write(PacketWriter packet)
 	{
-		OutgoingPackets.EX_USER_INFO_FISHING.writeId(packet);
-		
-		packet.writeD(_activeChar.getObjectId());
-		packet.writeC(_activeChar.isFishing() ? 1 : 0);
-		packet.writeD(0);	// Fish x
-		packet.writeD(0);	// Fish y
-		packet.writeD(0);	// Fish z
+		OutgoingPackets.EX_AUTO_FISH_AVAILABLE.writeId(packet);
+		packet.writeC(_available ? 1 : 0);
 		return true;
 	}
 }

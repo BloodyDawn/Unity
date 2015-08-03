@@ -977,6 +977,8 @@
 		<!-- A 30-day fishing rod. Consumes 1 Fishing Shot. -->
 		<set name="icon" val="icon.weapon_fishing_rod_i03" />
 		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FISHINGROD" />
+		<set name="bodypart" val="lrhand" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1006,6 +1008,8 @@
 		<!-- A sturdy fishing rod. Consumes 1 Fishing Shot. -->
 		<set name="icon" val="icon.weapon_fishing_rod_i04" />
 		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="FISHINGROD" />
+		<set name="bodypart" val="lrhand" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="weight" val="1000" />
@@ -1019,6 +1023,12 @@
 	<item id="45495" name="Normal Bait" type="EtcItem">
 		<!-- Bait for fishing. Use to catch fresh fish. -->
 		<set name="icon" val="icon.etc_huge_lure" />
+		<set name="default_action" val="EQUIP" />
+		<set name="etcitem_type" val="LURE" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="4" />
 		<set name="price" val="3000" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1027,6 +1037,12 @@
 	<item id="45496" name="Special Bait" type="EtcItem">
 		<!-- Special bait for fishing. Use to catch shiny fish. -->
 		<set name="icon" val="icon.etc_gludio_fish_lure_i00" />
+		<set name="etcitem_type" val="LURE" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="4" />
+		<set name="price" val="3000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />

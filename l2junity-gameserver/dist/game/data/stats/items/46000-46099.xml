@@ -1092,6 +1092,12 @@
 	<item id="46084" name="Player Commendation Special Bait" name_additional="PC-exclusive" type="EtcItem">
 		<!-- Special bait for fishing. You can get Treasure Map Pieces when fishing with it. Can be used outside a PC. -->
 		<set name="icon" val="icon.etc_bait_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="etcitem_type" val="LURE" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="4" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />

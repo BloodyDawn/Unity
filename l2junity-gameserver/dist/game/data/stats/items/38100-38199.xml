@@ -359,10 +359,17 @@
 	<item id="38154" name="Fishing Shot" type="EtcItem">
 		<!-- Soulshot for fishing rods. Doubles the fishing success rate. -->
 		<set name="icon" val="icon.etc_spirit_bullet_fish_i05" />
+		<set name="default_action" val="FISHINGSHOT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
 		<set name="weight" val="3" />
 		<set name="price" val="500" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="FishShots" />
+		<skills>
+			<skill id="2181" level="1" /> <!-- Item - Fishing Shot -->
+		</skills>
 	</item>
 	<item id="38155" name="Fishing Rod (Novice)" type="Weapon">
 		<!-- Novice Fishing Rod that can no longer be used. Get a refund from a fishing guild member. -->

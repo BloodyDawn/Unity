@@ -26,6 +26,7 @@ import org.l2junity.gameserver.model.actor.instance.L2DecoyInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosEvent;
 import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosMember;
+import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.skills.AbnormalVisualEffect;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -206,9 +207,11 @@ public class CharInfo implements IClientOutgoingPacket
 		packet.writeC(_activeChar.isHero() || (_activeChar.isGM() && Config.GM_HERO_AURA) ? 1 : 0); // Confirmed
 		
 		packet.writeC(_activeChar.isFishing() ? 1 : 0); // Confirmed
-		packet.writeD(0); // Fish x
-		packet.writeD(0); // Fish y
-		packet.writeD(0); // Fish z
+
+		final ILocational baitLocation = _activeChar.getFishing().getBaitLocation();
+		packet.writeD(baitLocation.getX()); // Confirmed
+		packet.writeD(baitLocation.getY()); // Confirmed
+		packet.writeD(baitLocation.getZ()); // Confirmed
 		
 		packet.writeD(_activeChar.getAppearance().getNameColor()); // Confirmed
 		

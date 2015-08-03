@@ -334,7 +334,7 @@ public enum ExIncomingPackets implements IIncomingPackets<L2GameClient>
 	REQUEST_ALCHEMY_CONVERSION(0x101, RequestAlchemyConversion::new, ConnectionState.IN_GAME),
 	SEND_EXECUTED_UI_EVENTS_COUNT(0x102, null, ConnectionState.IN_GAME),
 	EX_SEND_CLIENT_INI(0x103, null, ConnectionState.IN_GAME),
-	REQUEST_EX_AUTO_FISH(0x104, null, ConnectionState.IN_GAME);
+	REQUEST_EX_AUTO_FISH(0x104, ExRequestAutoFish::new, ConnectionState.IN_GAME);
 	
 	public static final ExIncomingPackets[] PACKET_ARRAY;
 	

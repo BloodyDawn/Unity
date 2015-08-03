@@ -16,42 +16,42 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.zone;
+package org.l2junity.gameserver.network.client.recv;
+
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.client.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
- * Zone Ids.
- * @author Zoey76
+ * @author St3eT
  */
-public enum ZoneId
+public final class ExRequestAutoFish implements IClientIncomingPacket
 {
-	PVP,
-	PEACE,
-	SIEGE,
-	MOTHER_TREE,
-	CLAN_HALL,
-	LANDING,
-	NO_LANDING,
-	WATER,
-	JAIL,
-	MONSTER_TRACK,
-	CASTLE,
-	SWAMP,
-	NO_SUMMON_FRIEND,
-	FORT,
-	NO_STORE,
-	TOWN,
-	SCRIPT,
-	HQ,
-	DANGER_AREA,
-	ALTERED,
-	NO_BOOKMARK,
-	NO_ITEM_DROP,
-	NO_RESTART,
-	SAYUNE,
-	FISHING;
-	
-	public static int getZoneCount()
+	private boolean _start;
+
+	@Override
+	public boolean read(L2GameClient client, PacketReader packet)
 	{
-		return values().length;
+		_start = packet.readC() != 0;
+		return true;
+	}
+	
+	@Override
+	public void run(L2GameClient client)
+	{
+		final PlayerInstance activeChar = client.getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
+
+		if (_start)
+		{
+			activeChar.getFishing().startFishing();
+		}
+		else
+		{
+			activeChar.getFishing().stopFishing();
+		}
 	}
 }

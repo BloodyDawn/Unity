@@ -9060,9 +9060,7 @@ public final class PlayerInstance extends Playable
 			}
 
 			final ActionType defaultAction = item.getItem().getDefaultAction();
-			if ((magic && defaultAction == ActionType.SPIRITSHOT)
-			|| (physical && defaultAction == ActionType.SOULSHOT)
-			|| (fish && defaultAction == ActionType.FISHINGSHOT))
+			if ((magic && defaultAction == ActionType.SPIRITSHOT) || (physical && defaultAction == ActionType.SOULSHOT) || (fish && defaultAction == ActionType.FISHINGSHOT))
 			{
 				handler.useItem(this, item, false);
 			}
