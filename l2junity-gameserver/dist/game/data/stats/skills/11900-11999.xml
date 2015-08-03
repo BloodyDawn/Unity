@@ -38,8 +38,9 @@
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="2" />
+		<set name="targetType" val="ONE" />
+		<set name="mpInitialConsume" val="1" />
+		<set name="mpConsume" val="1" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="300" />
@@ -50,5 +51,13 @@
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
+		<cond msgId="113" addName="1">
+			<target abnormalType="AIRBIND" />
+		</cond>
+		<for>
+			<effect name="MagicalAttack">
+				<param power="10000" />
+			</effect>
+		</for>
 	</skill>
 </list>
