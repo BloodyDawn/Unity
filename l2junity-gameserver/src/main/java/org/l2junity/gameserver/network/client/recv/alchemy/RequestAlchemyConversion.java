@@ -104,7 +104,7 @@ public class RequestAlchemyConversion implements IClientIncomingPacket
 		// TODO : Implement this
 		// if (!_ingredients.equals(data.getIngredients()))
 		// {
-		// _log.warn("Client ingredients are not same as server ingredients for alchemy conversion player: {}", player);
+		// LOGGER.warn("Client ingredients are not same as server ingredients for alchemy conversion player: {}", player);
 		// return;
 		// }
 		

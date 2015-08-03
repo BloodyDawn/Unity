@@ -783,7 +783,7 @@ public class Olympiad extends ListenersContainer
 		}
 		catch (Exception e)
 		{
-			_log.warn("Unable to save olympiad properties to file: ", e);
+			LOGGER.warn("Unable to save olympiad properties to file: ", e);
 		}
 		*/
 		//@formatter:on

@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Post
 {
-	private static Logger _log = LoggerFactory.getLogger(Post.class);
+	private static Logger LOGGER = LoggerFactory.getLogger(Post.class);
 	
 	public static class CPost
 	{
@@ -89,7 +89,7 @@ public class Post
 		}
 		catch (Exception e)
 		{
-			_log.warn("Error while saving new Post to db " + e.getMessage(), e);
+			LOGGER.warn("Error while saving new Post to db " + e.getMessage(), e);
 		}
 	}
 	
@@ -124,7 +124,7 @@ public class Post
 		}
 		catch (Exception e)
 		{
-			_log.warn("Error while deleting post: " + e.getMessage(), e);
+			LOGGER.warn("Error while deleting post: " + e.getMessage(), e);
 		}
 	}
 	
@@ -156,7 +156,7 @@ public class Post
 		}
 		catch (Exception e)
 		{
-			_log.warn("Data error on Post " + t.getForumID() + "/" + t.getID() + " : " + e.getMessage(), e);
+			LOGGER.warn("Data error on Post " + t.getForumID() + "/" + t.getID() + " : " + e.getMessage(), e);
 		}
 	}
 	
@@ -177,7 +177,7 @@ public class Post
 		}
 		catch (Exception e)
 		{
-			_log.warn("Error while saving new Post to db " + e.getMessage(), e);
+			LOGGER.warn("Error while saving new Post to db " + e.getMessage(), e);
 		}
 	}
 }

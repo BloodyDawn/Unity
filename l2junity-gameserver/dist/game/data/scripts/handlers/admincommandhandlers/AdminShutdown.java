@@ -31,12 +31,9 @@ import org.l2junity.gameserver.util.Util;
 
 /**
  * This class handles following admin commands: - server_shutdown [sec] = shows menu or shuts down server in sec seconds
- * @version $Revision: 1.5.2.1.2.4 $ $Date: 2005/04/11 10:06:06 $
  */
 public class AdminShutdown implements IAdminCommandHandler
 {
-	// private static Logger _log = LoggerFactory.getLogger(AdminShutdown.class);
-	
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_server_shutdown",

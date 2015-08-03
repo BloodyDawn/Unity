@@ -57,7 +57,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class Inventory extends ItemContainer
 {
-	protected static final Logger _log = LoggerFactory.getLogger(Inventory.class);
+	protected static final Logger LOGGER = LoggerFactory.getLogger(Inventory.class);
 	
 	public interface PaperdollListener
 	{
@@ -322,7 +322,7 @@ public abstract class Inventory extends ItemContainer
 				}
 				else
 				{
-					_log.warn("Inventory.ItemSkillsListener.Weapon: Incorrect skill: {}", holder);
+					LOGGER.warn("Inventory.ItemSkillsListener.Weapon: Incorrect skill: {}", holder);
 				}
 			});
 			
@@ -437,7 +437,7 @@ public abstract class Inventory extends ItemContainer
 				}
 				else
 				{
-					_log.warn("Inventory.ItemSkillsListener.Weapon: Incorrect skill: {}", holder);
+					LOGGER.warn("Inventory.ItemSkillsListener.Weapon: Incorrect skill: {}", holder);
 				}
 			});
 			
@@ -505,7 +505,7 @@ public abstract class Inventory extends ItemContainer
 						final Skill itemSkill = holder.getSkill();
 						if (itemSkill == null)
 						{
-							_log.warn("Inventory.ArmorSetListener.addSkills: Incorrect skill: {}", holder);
+							LOGGER.warn("Inventory.ArmorSetListener.addSkills: Incorrect skill: {}", holder);
 							continue;
 						}
 						
@@ -563,7 +563,7 @@ public abstract class Inventory extends ItemContainer
 						final Skill itemSkill = holder.getSkill();
 						if (itemSkill == null)
 						{
-							_log.warn("Inventory.ArmorSetListener.removeSkills: Incorrect skill: {}", holder);
+							LOGGER.warn("Inventory.ArmorSetListener.removeSkills: Incorrect skill: {}", holder);
 							continue;
 						}
 						
@@ -1205,7 +1205,7 @@ public abstract class Inventory extends ItemContainer
 	{
 		if (Config.DEBUG)
 		{
-			_log.info("Unequip body slot: {}", slot);
+			LOGGER.info("Unequip body slot: {}", slot);
 		}
 		
 		int pdollSlot = -1;
@@ -1286,8 +1286,8 @@ public abstract class Inventory extends ItemContainer
 				pdollSlot = PAPERDOLL_BROOCH_JEWEL1;
 				break;
 			default:
-				_log.info("Unhandled slot type: {}", slot);
-				_log.info(CommonUtil.getTraceString(Thread.currentThread().getStackTrace()));
+				LOGGER.info("Unhandled slot type: {}", slot);
+				LOGGER.info(CommonUtil.getTraceString(Thread.currentThread().getStackTrace()));
 		}
 		if (pdollSlot >= 0)
 		{
@@ -1525,7 +1525,7 @@ public abstract class Inventory extends ItemContainer
 				equipBroochJewel(item);
 				break;
 			default:
-				_log.warn("Unknown body slot {} for Item ID: {}", targetSlot, item.getId());
+				LOGGER.warn("Unknown body slot {} for Item ID: {}", targetSlot, item.getId());
 		}
 	}
 	
@@ -1648,7 +1648,7 @@ public abstract class Inventory extends ItemContainer
 		}
 		catch (Exception e)
 		{
-			_log.warn("Could not restore inventory: {}", e.getMessage(), e);
+			LOGGER.warn("Could not restore inventory: {}", e.getMessage(), e);
 		}
 	}
 	

@@ -52,7 +52,7 @@ public class TeleportersData implements IGameXmlReader
 	{
 		_teleporters.clear();
 		parseDatapackDirectory("data/teleporters", true);
-		LOGGER.info("Loaded: " + _teleporters.size() + " npc teleporters.");
+		LOGGER.info("Loaded: {} npc teleporters.", _teleporters.size());
 	}
 	
 	@Override

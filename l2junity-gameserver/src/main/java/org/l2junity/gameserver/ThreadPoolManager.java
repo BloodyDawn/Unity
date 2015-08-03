@@ -68,7 +68,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ThreadPoolManager
 {
-	protected static final Logger _log = LoggerFactory.getLogger(ThreadPoolManager.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ThreadPoolManager.class);
 	
 	public static final class RunnableWrapper implements Runnable
 	{
@@ -577,12 +577,12 @@ public class ThreadPoolManager
 			_ioPacketsThreadPool.shutdown();
 			_generalThreadPool.shutdown();
 			_eventThreadPool.shutdown();
-			_log.info("All ThreadPools are now stopped");
+			LOGGER.info("All ThreadPools are now stopped");
 			
 		}
 		catch (InterruptedException e)
 		{
-			_log.warn("", e);
+			LOGGER.warn("", e);
 		}
 	}
 	

@@ -1884,7 +1884,7 @@ public class L2Clan implements IIdentifiable, INamable
 	{
 		if (_subPledges.get(pledgeType) != null)
 		{
-			// _log.warn("found sub-unit with id: "+pledgeType);
+			// LOGGER.warn("found sub-unit with id: "+pledgeType);
 			switch (pledgeType)
 			{
 				case SUBUNIT_ACADEMY:
@@ -1938,7 +1938,7 @@ public class L2Clan implements IIdentifiable, INamable
 		{
 			// Retrieve all skills of this L2PcInstance from the database
 			ps.setInt(1, getId());
-			// _log.warn("clanPrivs restore for ClanId : "+getClanId());
+			// LOGGER.warn("clanPrivs restore for ClanId : "+getClanId());
 			try (ResultSet rset = ps.executeQuery())
 			{
 				// Go though the recordset of this SQL query

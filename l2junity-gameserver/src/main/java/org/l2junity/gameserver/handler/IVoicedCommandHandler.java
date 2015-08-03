@@ -19,13 +19,9 @@
 package org.l2junity.gameserver.handler;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public interface IVoicedCommandHandler
 {
-	Logger _log = LoggerFactory.getLogger(IVoicedCommandHandler.class);
-	
 	/**
 	 * this is the worker method that is called when someone uses an admin command.
 	 * @param activeChar

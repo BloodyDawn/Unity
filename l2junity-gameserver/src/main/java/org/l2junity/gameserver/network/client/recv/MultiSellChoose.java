@@ -241,7 +241,7 @@ public class MultiSellChoose implements IClientIncomingPacket
 						// if (itemToTake.isEquipped())
 						// {
 						// this is a cheat, transaction will be aborted and if any items already taken will not be returned back to inventory!
-						// _log.error("Character: " + player.getName() + " is trying to cheat in multisell, exchanging equipped item, merchatnt id:" + merchant.getNpcId());
+						// LOGGER.error("Character: " + player.getName() + " is trying to cheat in multisell, exchanging equipped item, merchatnt id:" + merchant.getNpcId());
 						// player.setMultiSell(null);
 						// return;
 						// }

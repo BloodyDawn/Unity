@@ -4131,7 +4131,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			distFraction = distPassed / delta;
 		}
 		
-		// if (Config.DEVELOPER) _log.warn("Move Ticks:" + (gameTicks - m._moveTimestamp) + ", distPassed:" + distPassed + ", distFraction:" + distFraction);
+		// if (Config.DEVELOPER) LOGGER.warn("Move Ticks:" + (gameTicks - m._moveTimestamp) + ", distPassed:" + distPassed + ", distFraction:" + distFraction);
 		
 		if (distFraction > 1)
 		{

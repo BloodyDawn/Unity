@@ -550,7 +550,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 		}
 		catch (NullPointerException e)
 		{
-			// _log.warn("AttackableAI: Attack target is NULL.");
+			// LOGGER.warn("AttackableAI: Attack target is NULL.");
 			_actor.setTarget(null);
 			setIntention(AI_INTENTION_IDLE, null, null);
 			return;

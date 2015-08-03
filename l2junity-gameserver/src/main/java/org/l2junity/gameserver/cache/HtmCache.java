@@ -59,21 +59,21 @@ public class HtmCache
 		{
 			LOGGER.info("Html cache start...");
 			parseDir(f);
-			LOGGER.info("Cache[HTML]: {} megabytes on {} files loaded", String.format("%.3f", getMemoryUsage()), getLoadedFiles());
+			LOGGER.info("{} megabytes on {} files loaded", String.format("%.3f", getMemoryUsage()), getLoadedFiles());
 		}
 		else
 		{
 			_cache.clear();
 			_loadedFiles = 0;
 			_bytesBuffLen = 0;
-			LOGGER.info("Cache[HTML]: Running lazy cache");
+			LOGGER.info("Running lazy cache");
 		}
 	}
 	
 	public void reloadPath(File f)
 	{
 		parseDir(f);
-		LOGGER.info("Cache[HTML]: Reloaded specified path.");
+		LOGGER.info("Reloaded specified path.");
 	}
 	
 	public double getMemoryUsage()
@@ -138,7 +138,7 @@ public class HtmCache
 		if (content == null)
 		{
 			content = "<html><body>My text is missing:<br>" + path + "</body></html>";
-			LOGGER.warn("Cache[HTML]: Missing HTML page: {}", path);
+			LOGGER.warn("Missing HTML page: {}", path);
 		}
 		return content;
 	}

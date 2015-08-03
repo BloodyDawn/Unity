@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
 
 public class Forum
 {
-	private static final Logger _log = LoggerFactory.getLogger(Forum.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(Forum.class);
 	
 	// type
 	public static final int ROOT = 0;
@@ -113,7 +113,7 @@ public class Forum
 		}
 		catch (Exception e)
 		{
-			_log.warn("Data error on Forum " + _forumId + " : " + e.getMessage(), e);
+			LOGGER.warn("Data error on Forum " + _forumId + " : " + e.getMessage(), e);
 		}
 		
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
@@ -135,7 +135,7 @@ public class Forum
 		}
 		catch (Exception e)
 		{
-			_log.warn("Data error on Forum " + _forumId + " : " + e.getMessage(), e);
+			LOGGER.warn("Data error on Forum " + _forumId + " : " + e.getMessage(), e);
 		}
 	}
 	
@@ -157,7 +157,7 @@ public class Forum
 		}
 		catch (Exception e)
 		{
-			_log.warn("Data error on Forum (children): " + e.getMessage(), e);
+			LOGGER.warn("Data error on Forum (children): " + e.getMessage(), e);
 		}
 	}
 	
@@ -241,7 +241,7 @@ public class Forum
 		}
 		catch (Exception e)
 		{
-			_log.warn("Error while saving new Forum to db " + e.getMessage(), e);
+			LOGGER.warn("Error while saving new Forum to db " + e.getMessage(), e);
 		}
 	}
 	

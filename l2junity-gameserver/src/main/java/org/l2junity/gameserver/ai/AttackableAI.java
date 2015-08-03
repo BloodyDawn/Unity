@@ -63,12 +63,16 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class manages AI of L2Attackable.
  */
 public class AttackableAI extends CharacterAI implements Runnable
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(AttackableAI.class);
+
 	private static final int RANDOM_WALK_RATE = 30; // confirmed
 	// private static final int MAX_DRIFT_RANGE = 300;
 	private static final int MAX_ATTACK_TIMEOUT = 1200; // int ticks, i.e. 2min
@@ -621,7 +625,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				z1 = npc.getZ();
 			}
 			
-			// _log.debug("Current pos ("+getX()+", "+getY()+"), moving to ("+x1+", "+y1+").");
+			// LOGGER.debug("Current pos ("+getX()+", "+getY()+"), moving to ("+x1+", "+y1+").");
 			// Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet CharMoveToLocation (broadcast)
 			final Location moveLoc = GeoData.getInstance().moveCheck(npc.getX(), npc.getY(), npc.getZ(), x1, y1, z1, npc.getInstanceId());
 			
@@ -705,7 +709,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 			catch (NullPointerException e)
 			{
-				_log.warn(getClass().getSimpleName() + ": thinkAttack() faction call failed: " + e.getMessage());
+				LOGGER.warn(getClass().getSimpleName() + ": thinkAttack() faction call failed: " + e.getMessage());
 			}
 		}
 		
@@ -1916,7 +1920,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		catch (NullPointerException e)
 		{
 			setIntention(AI_INTENTION_ACTIVE);
-			_log.warn("{} - failed executing movementDisable(): {}", this, e.getMessage());
+			LOGGER.warn("{} - failed executing movementDisable(): {}", this, e.getMessage());
 			return;
 		}
 	}
@@ -2575,7 +2579,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		}
 		catch (Exception e)
 		{
-			_log.warn("{} -  onEvtThink() failed: {}", this, e.getMessage());
+			LOGGER.warn("{} -  onEvtThink() failed: {}", this, e.getMessage());
 		}
 		finally
 		{

@@ -171,7 +171,7 @@ public class RecipeController
 	
 	private static class RecipeItemMaker implements Runnable
 	{
-		private static final Logger _log = LoggerFactory.getLogger(RecipeItemMaker.class);
+		private static final Logger LOGGER = LoggerFactory.getLogger(RecipeItemMaker.class);
 		protected boolean _isValid;
 		protected List<TempItem> _items = null;
 		protected final RecipeList _recipeList;
@@ -307,14 +307,14 @@ public class RecipeController
 			
 			if ((_player == null) || (_target == null))
 			{
-				_log.warn("player or target == null (disconnected?), aborting" + _target + _player);
+				LOGGER.warn("player or target == null (disconnected?), aborting" + _target + _player);
 				abort();
 				return;
 			}
 			
 			if (!_player.isOnline() || !_target.isOnline())
 			{
-				_log.warn("player or target is not online, aborting " + _target + _player);
+				LOGGER.warn("player or target is not online, aborting " + _target + _player);
 				abort();
 				return;
 			}

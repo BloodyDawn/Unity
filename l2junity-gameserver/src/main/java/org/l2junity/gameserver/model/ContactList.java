@@ -41,7 +41,8 @@ import org.slf4j.LoggerFactory;
  */
 public class ContactList
 {
-	private final Logger _log = LoggerFactory.getLogger(getClass());
+	private static final Logger LOGGER = LoggerFactory.getLogger(ContactList.class);
+
 	private final PlayerInstance activeChar;
 	private final Set<String> _contacts = ConcurrentHashMap.newKeySet();
 	
@@ -82,7 +83,7 @@ public class ContactList
 		}
 		catch (Exception e)
 		{
-			_log.warn("Error found in " + activeChar.getName() + "'s ContactsList: " + e.getMessage(), e);
+			LOGGER.warn("Error found in " + activeChar.getName() + "'s ContactsList: " + e.getMessage(), e);
 		}
 	}
 	
@@ -140,7 +141,7 @@ public class ContactList
 		}
 		catch (Exception e)
 		{
-			_log.warn("Error found in " + activeChar.getName() + "'s ContactsList: " + e.getMessage(), e);
+			LOGGER.warn("Error found in " + activeChar.getName() + "'s ContactsList: " + e.getMessage(), e);
 		}
 		return true;
 	}
@@ -175,7 +176,7 @@ public class ContactList
 		}
 		catch (Exception e)
 		{
-			_log.warn("Error found in " + activeChar.getName() + "'s ContactsList: " + e.getMessage(), e);
+			LOGGER.warn("Error found in " + activeChar.getName() + "'s ContactsList: " + e.getMessage(), e);
 		}
 	}
 	

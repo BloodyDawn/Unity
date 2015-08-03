@@ -78,7 +78,7 @@ public class MonsterRace
 			{
 				LOGGER.warn("", e);
 			}
-			// _log.info("Monster "+i+" is id: "+(id+random));
+			// LOGGER.info("Monster "+i+" is id: "+(id+random));
 		}
 		newSpeeds();
 	}

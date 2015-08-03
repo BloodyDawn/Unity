@@ -28,8 +28,6 @@ import org.l2junity.Config;
 import org.l2junity.commons.util.IXmlReader;
 import org.l2junity.gameserver.model.holders.MinionHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
@@ -39,8 +37,6 @@ import org.w3c.dom.Node;
  */
 public interface IGameXmlReader extends IXmlReader
 {
-	Logger LOGGER = LoggerFactory.getLogger(IGameXmlReader.class);
-
 	/**
 	 * Wrapper for {@link #parseFile(File)} method.
 	 * @param path the relative path to the datapack root of the XML file to parse.

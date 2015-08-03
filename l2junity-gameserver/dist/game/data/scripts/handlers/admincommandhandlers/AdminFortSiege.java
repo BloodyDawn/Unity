@@ -36,8 +36,6 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public class AdminFortSiege implements IAdminCommandHandler
 {
-	// private static Logger _log = LoggerFactory.getLogger(AdminFortSiege.class);
-	
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_fortsiege",

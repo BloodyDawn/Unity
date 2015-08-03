@@ -57,6 +57,8 @@ import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.AutoAttackStop;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class manages AI of L2Character.<br>
@@ -70,6 +72,8 @@ import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
  */
 public class CharacterAI extends AbstractAI
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(CharacterAI.class);
+
 	public static class IntentionCommand
 	{
 		protected final CtrlIntention _crtlIntention;
@@ -468,7 +472,7 @@ public class CharacterAI extends AbstractAI
 		setTarget(object);
 		if ((object.getX() == 0) && (object.getY() == 0)) // TODO: Find the drop&spawn bug
 		{
-			_log.warn("Object in coords 0,0 - using a temporary fix");
+			LOGGER.warn("Object in coords 0,0 - using a temporary fix");
 			object.setXYZ(getActor().getX(), getActor().getY(), getActor().getZ() + 5);
 		}
 		
@@ -887,7 +891,7 @@ public class CharacterAI extends AbstractAI
 	{
 		if (worldPosition == null)
 		{
-			_log.warn("maybeMoveToPosition: worldPosition == NULL!");
+			LOGGER.warn("maybeMoveToPosition: worldPosition == NULL!");
 			return false;
 		}
 		
@@ -959,7 +963,7 @@ public class CharacterAI extends AbstractAI
 		// Get the distance between the current position of the L2Character and the target (x,y)
 		if (target == null)
 		{
-			_log.warn("maybeMoveToPawn: target == NULL!");
+			LOGGER.warn("maybeMoveToPawn: target == NULL!");
 			return false;
 		}
 		if (offset < 0)

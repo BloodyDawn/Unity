@@ -25,12 +25,16 @@ import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.handler.IVoicedCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Nik
  */
 public class ChangePassword implements IVoicedCommandHandler
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(ChangePassword.class);
+
 	private static final String[] _voicedCommands =
 	{
 		"changepassword"
@@ -87,7 +91,7 @@ public class ChangePassword implements IVoicedCommandHandler
 			catch (Exception e)
 			{
 				activeChar.sendMessage("A problem occured while changing password!");
-				_log.warn("", e);
+				LOGGER.warn("", e);
 			}
 		}
 		else
