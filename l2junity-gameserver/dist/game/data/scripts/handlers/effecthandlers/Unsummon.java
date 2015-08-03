@@ -20,11 +20,13 @@ package handlers.effecthandlers;
 
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -75,13 +77,13 @@ public final class Unsummon extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (info.getEffected().isServitor())
+		if (effected.isServitor())
 		{
-			final Summon servitor = (Summon) info.getEffected();
+			final Summon servitor = (Summon) effected;
 			final PlayerInstance summonOwner = servitor.getOwner();
 			
 			servitor.abortAttack();

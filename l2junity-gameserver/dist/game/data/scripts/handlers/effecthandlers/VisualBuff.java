@@ -50,13 +50,11 @@ public class VisualBuff extends AbstractEffect
 	public void onStart(BuffInfo info)
 	{
 		info.getEffected().getEffectList().addVisualAbnormalStatus(_visualSkills);
-		super.onStart(info);
 	}
 	
 	@Override
 	public void onExit(BuffInfo info)
 	{
 		info.getEffected().getEffectList().removeVisualAbnormalStatus(_visualSkills);
-		super.onExit(info);
 	}
 }

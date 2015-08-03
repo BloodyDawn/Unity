@@ -20,9 +20,11 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 
 /**
@@ -51,13 +53,13 @@ public final class TargetCancel extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		info.getEffected().setTarget(null);
-		info.getEffected().abortAttack();
-		info.getEffected().abortCast();
-		info.getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, info.getEffector());
+		effected.setTarget(null);
+		effected.abortAttack();
+		effected.abortCast();
+		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, effector);
 	}
 }

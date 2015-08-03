@@ -26,7 +26,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.ValidateLocation;
@@ -54,20 +54,13 @@ public final class TeleportToTarget extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		Creature activeChar = info.getEffector();
-		Creature target = info.getEffected();
-		if (target == null)
-		{
-			return;
-		}
-		
-		int px = target.getX();
-		int py = target.getY();
-		double ph = Util.convertHeadingToDegree(target.getHeading());
+		int px = effected.getX();
+		int py = effected.getY();
+		double ph = Util.convertHeadingToDegree(effected.getHeading());
 		
 		ph += 180;
 		if (ph > 360)
@@ -78,15 +71,15 @@ public final class TeleportToTarget extends AbstractEffect
 		ph = (Math.PI * ph) / 180;
 		int x = (int) (px + (25 * Math.cos(ph)));
 		int y = (int) (py + (25 * Math.sin(ph)));
-		int z = target.getZ();
+		int z = effected.getZ();
 		
-		final Location loc = GeoData.getInstance().moveCheck(activeChar.getX(), activeChar.getY(), activeChar.getZ(), x, y, z, activeChar.getInstanceId());
+		final Location loc = GeoData.getInstance().moveCheck(effector.getX(), effector.getY(), effector.getZ(), x, y, z, effector.getInstanceId());
 		
-		activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		activeChar.broadcastPacket(new FlyToLocation(activeChar, loc.getX(), loc.getY(), loc.getZ(), FlyType.DUMMY));
-		activeChar.abortAttack();
-		activeChar.abortCast();
-		activeChar.setXYZ(loc);
-		activeChar.broadcastPacket(new ValidateLocation(activeChar));
+		effector.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+		effector.broadcastPacket(new FlyToLocation(effector, loc.getX(), loc.getY(), loc.getZ(), FlyType.DUMMY));
+		effector.abortAttack();
+		effector.abortCast();
+		effector.setXYZ(loc);
+		effector.broadcastPacket(new ValidateLocation(effector));
 	}
 }

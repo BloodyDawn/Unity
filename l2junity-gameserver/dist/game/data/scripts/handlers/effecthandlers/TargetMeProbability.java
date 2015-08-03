@@ -19,10 +19,12 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 
 /**
@@ -51,20 +53,20 @@ public final class TargetMeProbability extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (info.getEffected().isPlayable())
+		if (effected.isPlayable())
 		{
-			if (info.getEffected().getTarget() != info.getEffector())
+			if (effected.getTarget() != effector)
 			{
-				PlayerInstance effector = info.getEffector().getActingPlayer();
+				PlayerInstance player = effector.getActingPlayer();
 				// If effector is null, then its not a player, but NPC. If its not null, then it should check if the skill is pvp skill.
-				if ((effector == null) || effector.checkPvpSkill(info.getEffected(), info.getSkill()))
+				if ((player == null) || player.checkPvpSkill(effected, skill))
 				{
 					// Target is different
-					info.getEffected().setTarget(info.getEffector());
+					effected.setTarget(effector);
 				}
 			}
 		}

@@ -26,7 +26,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnTrapAction;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
@@ -54,27 +54,26 @@ public final class TrapRemove extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		final Creature target = info.getEffected();
-		if (!target.isTrap())
+		if (!effected.isTrap())
 		{
 			return;
 		}
 		
-		if (target.isAlikeDead())
+		if (effected.isAlikeDead())
 		{
 			return;
 		}
 		
-		final L2TrapInstance trap = (L2TrapInstance) target;
-		if (!trap.canBeSeen(info.getEffector()))
+		final L2TrapInstance trap = (L2TrapInstance) effected;
+		if (!trap.canBeSeen(effector))
 		{
-			if (info.getEffector().isPlayer())
+			if (effector.isPlayer())
 			{
-				info.getEffector().sendPacket(SystemMessageId.INVALID_TARGET);
+				effector.sendPacket(SystemMessageId.INVALID_TARGET);
 			}
 			return;
 		}
@@ -85,12 +84,12 @@ public final class TrapRemove extends AbstractEffect
 		}
 		
 		// Notify to scripts
-		EventDispatcher.getInstance().notifyEventAsync(new OnTrapAction(trap, info.getEffector(), TrapAction.TRAP_DISARMED), trap);
+		EventDispatcher.getInstance().notifyEventAsync(new OnTrapAction(trap, effector, TrapAction.TRAP_DISARMED), trap);
 		
 		trap.unSummon();
-		if (info.getEffector().isPlayer())
+		if (effector.isPlayer())
 		{
-			info.getEffector().sendPacket(SystemMessageId.THE_TRAP_DEVICE_HAS_BEEN_STOPPED);
+			effector.sendPacket(SystemMessageId.THE_TRAP_DEVICE_HAS_BEEN_STOPPED);
 		}
 	}
 }

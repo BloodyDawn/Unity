@@ -21,9 +21,10 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.ValidateLocation;
@@ -43,26 +44,25 @@ public final class ThrowUp extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		// Get current position of the L2Character
-		final int curX = info.getEffected().getX();
-		final int curY = info.getEffected().getY();
-		final int curZ = info.getEffected().getZ();
+		final int curX = effected.getX();
+		final int curY = effected.getY();
+		final int curZ = effected.getZ();
 		
 		// Calculate distance between effector and effected current position
-		double dx = info.getEffector().getX() - curX;
-		double dy = info.getEffector().getY() - curY;
-		double dz = info.getEffector().getZ() - curZ;
+		double dx = effector.getX() - curX;
+		double dy = effector.getY() - curY;
+		double dz = effector.getZ() - curZ;
 		double distance = Math.sqrt((dx * dx) + (dy * dy));
 		if (distance > 2000)
 		{
-			_log.info("EffectThrow was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY + " and getEffector: " + info.getEffector().getX() + "," + info.getEffector().getY());
+			_log.info("EffectThrow was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY + " and getEffector: " + effector.getX() + "," + effector.getY());
 			return;
 		}
-		int offset = Math.min((int) distance + info.getSkill().getFlyRadius(), 1400);
+		int offset = Math.min((int) distance + skill.getFlyRadius(), 1400);
 		
 		double cos;
 		double sin;
@@ -86,15 +86,15 @@ public final class ThrowUp extends AbstractEffect
 		cos = dx / distance;
 		
 		// Calculate the new destination with offset included
-		int x = info.getEffector().getX() - (int) (offset * cos);
-		int y = info.getEffector().getY() - (int) (offset * sin);
-		int z = info.getEffected().getZ();
+		int x = effector.getX() - (int) (offset * cos);
+		int y = effector.getY() - (int) (offset * sin);
+		int z = effected.getZ();
 		
-		final Location destination = GeoData.getInstance().moveCheck(info.getEffected().getX(), info.getEffected().getY(), info.getEffected().getZ(), x, y, z, info.getEffected().getInstanceId());
+		final Location destination = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceId());
 		
-		info.getEffected().broadcastPacket(new FlyToLocation(info.getEffected(), destination, FlyType.THROW_UP));
+		effected.broadcastPacket(new FlyToLocation(effected, destination, FlyType.THROW_UP));
 		// TODO: Review.
-		info.getEffected().setXYZ(destination);
-		info.getEffected().broadcastPacket(new ValidateLocation(info.getEffected()));
+		effected.setXYZ(destination);
+		effected.broadcastPacket(new ValidateLocation(effected));
 	}
 }

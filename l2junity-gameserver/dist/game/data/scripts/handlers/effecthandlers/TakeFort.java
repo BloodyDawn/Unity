@@ -20,10 +20,11 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.entity.Fort;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Take Fort effect implementation.
@@ -41,19 +42,19 @@ public final class TakeFort extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (!info.getEffector().isPlayer())
+		if (!effector.isPlayer())
 		{
 			return;
 		}
 		
-		final Fort fort = FortManager.getInstance().getFort(info.getEffector().getActingPlayer());
+		final Fort fort = FortManager.getInstance().getFort(effector);
 		if (fort != null)
 		{
-			fort.endOfSiege(info.getEffector().getActingPlayer().getClan());
+			fort.endOfSiege(effector.getClan());
 		}
 	}
 }

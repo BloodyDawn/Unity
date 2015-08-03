@@ -19,10 +19,11 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2TrapInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Trap Detect effect implementation.
@@ -49,19 +50,19 @@ public final class TrapDetect extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (!info.getEffected().isTrap() || info.getEffected().isAlikeDead())
+		if (!effected.isTrap() || effected.isAlikeDead())
 		{
 			return;
 		}
 		
-		final L2TrapInstance trap = (L2TrapInstance) info.getEffected();
+		final L2TrapInstance trap = (L2TrapInstance) effected;
 		if (trap.getLevel() <= _power)
 		{
-			trap.setDetected(info.getEffector());
+			trap.setDetected(effector);
 		}
 	}
 }

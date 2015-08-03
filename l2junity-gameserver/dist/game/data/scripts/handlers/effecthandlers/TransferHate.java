@@ -21,9 +21,11 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Attackable;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.util.Util;
 
@@ -59,24 +61,24 @@ public final class TransferHate extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		World.getInstance().forEachVisibleObjectInRange(info.getEffector(), Attackable.class, info.getSkill().getAffectRange(), hater ->
+		World.getInstance().forEachVisibleObjectInRange(effector, Attackable.class, skill.getAffectRange(), hater ->
 		{
 			if (hater.isDead())
 			{
 				return;
 			}
-			final int hate = hater.getHating(info.getEffector());
+			final int hate = hater.getHating(effector);
 			if (hate <= 0)
 			{
 				return;
 			}
 			
-			hater.reduceHate(info.getEffector(), -hate);
-			hater.addDamageHate(info.getEffected(), 0, hate);
+			hater.reduceHate(effector, -hate);
+			hater.addDamageHate(effected, 0, hate);
 		});
 	}
 }

@@ -22,11 +22,10 @@ import org.l2junity.gameserver.enums.CastleSide;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.entity.Castle;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Take Castle effect implementation.
@@ -48,19 +47,16 @@ public final class TakeCastle extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (!info.getEffector().isPlayer())
+		if (!effector.isPlayer())
 		{
 			return;
 		}
-		
-		final PlayerInstance effector = info.getEffector().getActingPlayer();
+
 		final Castle castle = CastleManager.getInstance().getCastle(effector);
-		final Creature effected = info.getEffected();
-		
 		castle.engrave(effector.getClan(), effected, _side);
 	}
 }

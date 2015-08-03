@@ -21,11 +21,11 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.entity.Fort;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -45,15 +45,14 @@ public final class TakeFortStart extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (info.getEffector().isPlayer())
+		if (effector.isPlayer())
 		{
-			final PlayerInstance player = info.getEffector().getActingPlayer();
-			final Fort fort = FortManager.getInstance().getFort(player);
-			final L2Clan clan = player.getClan();
+			final Fort fort = FortManager.getInstance().getFort(effector);
+			final L2Clan clan = effector.getClan();
 			if ((fort != null) && (clan != null))
 			{
 				fort.getSiege().announceToPlayer(SystemMessage.getSystemMessage(SystemMessageId.S1_CLAN_IS_TRYING_TO_DISPLAY_A_FLAG), clan.getName());
