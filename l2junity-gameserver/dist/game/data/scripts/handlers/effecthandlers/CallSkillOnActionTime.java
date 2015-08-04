@@ -63,18 +63,8 @@ public final class CallSkillOnActionTime extends AbstractEffect
 		{
 			return false;
 		}
-		
-		final double manaDam = _power * getTicksMultiplier();
-		if ((manaDam > info.getEffector().getCurrentMp()) && info.getSkill().isToggle() && !info.getSkill().isNecessaryToggle())
-		{
-			info.getEffector().sendPacket(SystemMessageId.YOUR_SKILL_WAS_DEACTIVATED_DUE_TO_LACK_OF_MP);
-			return false;
-		}
-		
-		info.getEffector().reduceCurrentMp(manaDam);
-		
+
 		final Skill skill = _skill.getSkill();
-		
 		if (skill != null)
 		{
 			final ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(skill.getTargetType());

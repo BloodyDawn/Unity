@@ -30,13 +30,9 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class SilentMove extends AbstractEffect
 {
-	private final double _power;
-	
 	public SilentMove(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-		
-		_power = params.getDouble("power", 0);
 	}
 	
 	@Override
@@ -52,15 +48,7 @@ public final class SilentMove extends AbstractEffect
 		{
 			return false;
 		}
-		
-		final double manaDam = _power * getTicksMultiplier();
-		if (manaDam > info.getEffected().getCurrentMp())
-		{
-			info.getEffected().sendPacket(SystemMessageId.YOUR_SKILL_WAS_DEACTIVATED_DUE_TO_LACK_OF_MP);
-			return false;
-		}
-		
-		info.getEffected().reduceCurrentMp(manaDam);
+
 		return info.getSkill().isToggle();
 	}
 }

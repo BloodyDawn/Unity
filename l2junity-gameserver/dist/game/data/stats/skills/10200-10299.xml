@@ -680,6 +680,9 @@
 		<set name="mpInitialConsume" val="#mpInitialConsumes" />
 		<set name="toggleGroupId" val="0" />
 		<for>
+			<effect name="ManaDamOverTime" ticks="1">
+				<param power="4" />
+			</effect>
 			<effect name="CallSkillOnActionTime" ticks="1">
 				<param power="4" />
 				<param skillId="10287" skillLevel="#skillLvl" />

@@ -1355,8 +1355,10 @@
 		<set name="rideState" val="NONE" />
 		<set name="hitTime" val="800" />
 		<for>
-			<effect name="SilentMove" ticks="5">
+			<effect name="ManaDamOverTime" ticks="5">
 				<param power="10" />
+			</effect>
+			<effect name="SilentMove">
 				<mul stat="runSpd" val="1.2" />
 				<mul stat="pDef" val="0.8" />
 			</effect>
