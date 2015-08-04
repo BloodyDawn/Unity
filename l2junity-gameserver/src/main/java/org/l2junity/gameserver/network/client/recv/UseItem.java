@@ -364,21 +364,11 @@ public final class UseItem implements IClientIncomingPacket
 		}
 		else
 		{
-			final Weapon weaponItem = activeChar.getActiveWeaponItem();
-			if ((weaponItem != null && weaponItem.getItemType() == WeaponType.FISHINGROD) && item.getItemType() == EtcItemType.LURE)
-			{
-				activeChar.getInventory().setPaperdollItem(Inventory.PAPERDOLL_LHAND, item);
-				activeChar.broadcastUserInfo();
-				// Send a Server->Client packet ItemList to this L2PcINstance to update left hand equipment.
-				activeChar.sendItemList(false);
-				return;
-			}
-			
 			final EtcItem etcItem = item.getEtcItem();
 			final IItemHandler handler = ItemHandler.getInstance().getHandler(etcItem);
 			if (handler == null)
 			{
-				if ((etcItem != null) && (etcItem.getHandlerName() != null))
+				if (etcItem != null && etcItem.getHandlerName() != null)
 				{
 					_log.warn("Unmanaged Item handler: " + etcItem.getHandlerName() + " for Item Id: " + _itemId + "!");
 				}
@@ -386,13 +376,11 @@ public final class UseItem implements IClientIncomingPacket
 				{
 					_log.warn("No Item handler registered for Item Id: " + _itemId + "!");
 				}
-				return;
 			}
-			
-			// Item reuse time should be added if the item is successfully used.
-			// Skill reuse delay is done at handlers.itemhandlers.ItemSkillsTemplate;
-			if (handler.useItem(activeChar, item, _ctrlPressed))
+			else if (handler.useItem(activeChar, item, _ctrlPressed))
 			{
+				// Item reuse time should be added if the item is successfully used.
+				// Skill reuse delay is done at handlers.itemhandlers.ItemSkillsTemplate;
 				if (reuseDelay > 0)
 				{
 					activeChar.addTimeStampItem(item, reuseDelay);

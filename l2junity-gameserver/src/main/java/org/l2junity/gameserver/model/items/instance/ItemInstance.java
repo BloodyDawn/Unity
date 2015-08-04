@@ -544,7 +544,7 @@ public final class ItemInstance extends WorldObject
 	 */
 	public boolean isEquipable()
 	{
-		return !((_item.getBodyPart() == 0) || (_item.getItemType() == EtcItemType.ARROW) || (_item.getItemType() == EtcItemType.BOLT) || (_item.getItemType() == EtcItemType.LURE));
+		return _item.getBodyPart() != L2Item.SLOT_NONE;
 	}
 	
 	/**
