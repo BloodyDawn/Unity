@@ -45,9 +45,9 @@ public final class TransferHate extends AbstractEffect
 	}
 	
 	@Override
-	public boolean calcSuccess(BuffInfo info)
+	public boolean calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
-		return Formulas.calcProbability(_chance, info.getEffector(), info.getEffected(), info.getSkill());
+		return Formulas.calcProbability(_chance, effector, effected, skill);
 	}
 	
 	@Override

@@ -46,17 +46,17 @@ public final class Unsummon extends AbstractEffect
 	}
 	
 	@Override
-	public boolean calcSuccess(BuffInfo info)
+	public boolean calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
 		if (_chance < 0)
 		{
 			return true;
 		}
 		
-		int magicLevel = info.getSkill().getMagicLevel();
-		if ((magicLevel <= 0) || ((info.getEffected().getLevel() - 9) <= magicLevel))
+		int magicLevel = skill.getMagicLevel();
+		if ((magicLevel <= 0) || ((effected.getLevel() - 9) <= magicLevel))
 		{
-			double chance = _chance * Formulas.calcAttributeBonus(info.getEffector(), info.getEffected(), info.getSkill()) * Formulas.calcGeneralTraitBonus(info.getEffector(), info.getEffected(), info.getSkill().getTraitType(), false);
+			double chance = _chance * Formulas.calcAttributeBonus(effector, effected, skill) * Formulas.calcGeneralTraitBonus(effector, effected, skill.getTraitType(), false);
 			if ((chance >= 100) || (chance > (Rnd.nextDouble() * 100)))
 			{
 				return true;

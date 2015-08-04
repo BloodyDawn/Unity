@@ -25,7 +25,6 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -47,30 +46,30 @@ public final class MagicalAttackMp extends AbstractEffect
 	}
 	
 	@Override
-	public boolean calcSuccess(BuffInfo info)
+	public boolean calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
-		if (info.getEffected().isInvul())
+		if (effected.isInvul())
 		{
 			return false;
 		}
 		
-		if (info.getEffector().isPlayer() && info.getEffected().isPlayer() && info.getEffected().isAffected(EffectFlag.FACEOFF) && (info.getEffected().getActingPlayer().getAttackerObjId() != info.getEffector().getObjectId()))
+		if (effector.isPlayer() && effected.isPlayer() && effected.isAffected(EffectFlag.FACEOFF) && (effected.getActingPlayer().getAttackerObjId() != effector.getObjectId()))
 		{
 			return false;
 		}
 		
-		if (!Formulas.calcMagicAffected(info.getEffector(), info.getEffected(), info.getSkill()))
+		if (!Formulas.calcMagicAffected(effector, effected, skill))
 		{
-			if (info.getEffector().isPlayer())
+			if (effector.isPlayer())
 			{
-				info.getEffector().sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
+				effector.sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
 			}
-			if (info.getEffected().isPlayer())
+			if (effected.isPlayer())
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_C2_S_DRAIN);
-				sm.addCharName(info.getEffected());
-				sm.addCharName(info.getEffector());
-				info.getEffected().sendPacket(sm);
+				sm.addCharName(effected);
+				sm.addCharName(effector);
+				effected.sendPacket(sm);
 			}
 			return false;
 		}

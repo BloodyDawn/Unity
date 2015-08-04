@@ -1209,7 +1209,7 @@ public final class Skill implements IIdentifiable
 			{
 				if (effect.isInstant())
 				{
-					if (applyInstantEffects && effect.calcSuccess(info))
+					if (applyInstantEffects && effect.calcSuccess(info.getEffector(), info.getEffected(), info.getSkill()))
 					{
 						effect.instant(info.getEffector(), info.getEffected(), info.getSkill());
 					}
