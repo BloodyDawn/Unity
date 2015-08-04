@@ -59,7 +59,7 @@ public class MaxHP extends AbstractEffect
 				throw new IllegalArgumentException("Mode should be DIFF or PER skill id:" + params.getInt("id"));
 			}
 		}
-		_heal = params.getBoolean("heal", 0);
+		_heal = params.getBoolean("heal", false);
 	}
 
 	@Override
@@ -76,7 +76,7 @@ public class MaxHP extends AbstractEffect
 				}
 				case 1: // PER
 				{
-					effected.setCurrentHp(effected.getCurrentHp() + (effected.getMaxHp() * (_amount / 100));
+					effected.setCurrentHp(effected.getCurrentHp() + (effected.getMaxHp() * (_amount / 100)));
 					break;
 				}
 			}
