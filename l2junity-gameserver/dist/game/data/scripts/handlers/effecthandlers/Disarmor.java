@@ -23,12 +23,14 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -61,20 +63,42 @@ public final class Disarmor extends AbstractEffect
 	{
 		return (_slot != L2Item.SLOT_NONE) && info.getEffected().isPlayer();
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void continuousInstant(Creature effector, Creature effected, Skill skill)
 	{
-		if (!info.getEffected().isPlayer())
+		if (!effected.isPlayer())
 		{
 			return;
 		}
-		
-		ItemInstance disarmed = disarmItem(info);
-		if (disarmed != null)
+
+		PlayerInstance player = effected.getActingPlayer();
+		ItemInstance[] unequiped = player.getInventory().unEquipItemInBodySlotAndRecord(_slot);
+		if (unequiped.length > 0)
 		{
-			info.getEffected().getInventory().blockItemSlot(_slot);
-			_unequippedItems.put(info.getEffected().getObjectId(), disarmed.getObjectId());
+			InventoryUpdate iu = new InventoryUpdate();
+			for (ItemInstance itm : unequiped)
+			{
+				iu.addModifiedItem(itm);
+			}
+			player.sendInventoryUpdate(iu);
+			player.broadcastUserInfo();
+
+			SystemMessage sm = null;
+			if (unequiped[0].getEnchantLevel() > 0)
+			{
+				sm = SystemMessage.getSystemMessage(SystemMessageId.THE_EQUIPMENT_S1_S2_HAS_BEEN_REMOVED);
+				sm.addInt(unequiped[0].getEnchantLevel());
+				sm.addItemName(unequiped[0]);
+			}
+			else
+			{
+				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_BEEN_UNEQUIPPED);
+				sm.addItemName(unequiped[0]);
+			}
+			player.sendPacket(sm);
+			effected.getInventory().blockItemSlot(_slot);
+			_unequippedItems.put(effected.getObjectId(), unequiped[0].getObjectId());
 		}
 	}
 	
@@ -119,40 +143,5 @@ public final class Disarmor extends AbstractEffect
 			}
 		}
 		super.onExit(info);
-	}
-	
-	public ItemInstance disarmItem(BuffInfo info)
-	{
-		PlayerInstance player = info.getEffected().getActingPlayer();
-		ItemInstance[] unequiped = player.getInventory().unEquipItemInBodySlotAndRecord(_slot);
-		
-		// this can be 0 if the user pressed the right mousebutton twice very fast
-		if (unequiped.length > 0)
-		{
-			InventoryUpdate iu = new InventoryUpdate();
-			for (ItemInstance itm : unequiped)
-			{
-				iu.addModifiedItem(itm);
-			}
-			player.sendInventoryUpdate(iu);
-			player.broadcastUserInfo();
-			
-			SystemMessage sm = null;
-			if (unequiped[0].getEnchantLevel() > 0)
-			{
-				sm = SystemMessage.getSystemMessage(SystemMessageId.THE_EQUIPMENT_S1_S2_HAS_BEEN_REMOVED);
-				sm.addInt(unequiped[0].getEnchantLevel());
-				sm.addItemName(unequiped[0]);
-			}
-			else
-			{
-				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_BEEN_UNEQUIPPED);
-				sm.addItemName(unequiped[0]);
-			}
-			player.sendPacket(sm);
-			return unequiped[0];
-		}
-		
-		return null;
 	}
 }

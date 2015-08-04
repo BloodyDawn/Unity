@@ -19,10 +19,12 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Crystal Grade Modify effect implementation.
@@ -44,7 +46,13 @@ public final class CrystalGradeModify extends AbstractEffect
 	{
 		return info.getEffected().isPlayer();
 	}
-	
+
+	@Override
+	public void onStart(Creature effector, Creature effected, Skill skill)
+	{
+		effected.getActingPlayer().setExpertisePenaltyBonus(_grade);
+	}
+
 	@Override
 	public void onExit(BuffInfo info)
 	{
@@ -53,11 +61,5 @@ public final class CrystalGradeModify extends AbstractEffect
 		{
 			player.setExpertisePenaltyBonus(0);
 		}
-	}
-	
-	@Override
-	public void onStart(BuffInfo info)
-	{
-		info.getEffected().getActingPlayer().setExpertisePenaltyBonus(_grade);
 	}
 }

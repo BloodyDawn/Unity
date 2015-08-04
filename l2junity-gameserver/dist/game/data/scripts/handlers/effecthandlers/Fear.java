@@ -24,12 +24,14 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2DefenderInstance;
 import org.l2junity.gameserver.model.actor.instance.L2FortCommanderInstance;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.util.Util;
 
 /**
@@ -62,15 +64,15 @@ public final class Fear extends AbstractEffect
 	@Override
 	public boolean onActionTime(BuffInfo info)
 	{
-		fearAction(info, false);
+		fearAction(null, info.getEffected());
 		return false;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
-		info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_AFRAID);
-		fearAction(info, true);
+		effected.getAI().notifyEvent(CtrlEvent.EVT_AFRAID);
+		fearAction(effector, effected);
 	}
 	
 	@Override
@@ -80,18 +82,17 @@ public final class Fear extends AbstractEffect
 		{
 			info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_THINK);
 		}
-		super.onExit(info);
 	}
 	
-	private void fearAction(BuffInfo info, boolean start)
+	private void fearAction(Creature effector, Creature effected)
 	{
-		double radians = Math.toRadians(start ? Util.calculateAngleFrom(info.getEffector(), info.getEffected()) : Util.convertHeadingToDegree(info.getEffected().getHeading()));
+		double radians = Math.toRadians(effector != null ? Util.calculateAngleFrom(effector, effected) : Util.convertHeadingToDegree(effected.getHeading()));
 		
-		int posX = (int) (info.getEffected().getX() + (FEAR_RANGE * Math.cos(radians)));
-		int posY = (int) (info.getEffected().getY() + (FEAR_RANGE * Math.sin(radians)));
-		int posZ = info.getEffected().getZ();
+		int posX = (int) (effected.getX() + (FEAR_RANGE * Math.cos(radians)));
+		int posY = (int) (effected.getY() + (FEAR_RANGE * Math.sin(radians)));
+		int posZ = effected.getZ();
 		
-		final Location destination = GeoData.getInstance().moveCheck(info.getEffected().getX(), info.getEffected().getY(), info.getEffected().getZ(), posX, posY, posZ, info.getEffected().getInstanceId());
-		info.getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);
+		final Location destination = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), posX, posY, posZ, effected.getInstanceId());
+		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);
 	}
 }
