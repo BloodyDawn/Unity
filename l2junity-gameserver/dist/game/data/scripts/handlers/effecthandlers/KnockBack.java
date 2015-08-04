@@ -81,11 +81,11 @@ public final class KnockBack extends AbstractEffect
 	}
 
 	@Override
-	public void onStart(BuffInfo info)
+	public void continuousInstant(Creature effector, Creature effected, Skill skill)
 	{
 		if(_knockDown)
 		{
-			knockBack(info.getEffector(), info.getEffected());
+			knockBack(effector, effected);
 		}
 	}
 

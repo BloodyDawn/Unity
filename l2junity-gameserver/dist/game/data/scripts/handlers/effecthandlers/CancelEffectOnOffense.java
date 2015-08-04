@@ -45,13 +45,7 @@ public final class CancelEffectOnOffense extends AbstractEffect
 
 	private final int _cancelSkillId;
 	private final L2TargetType _targetType;
-	
-	/**
-	 * @param attachCond
-	 * @param applyCond
-	 * @param set
-	 * @param params
-	 */
+
 	public CancelEffectOnOffense(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);

@@ -84,9 +84,8 @@ public class MaxHP extends AbstractEffect
 	}
 
 	@Override
-	public void onStart(BuffInfo info)
+	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
-		final Creature effected = info.getEffected();
 		switch(_mode)
 		{
 			case 0: // DIFF

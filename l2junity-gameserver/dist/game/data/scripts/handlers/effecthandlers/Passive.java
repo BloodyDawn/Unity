@@ -20,9 +20,11 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Passive effect implementation.
@@ -36,25 +38,24 @@ public final class Passive extends AbstractEffect
 	}
 	
 	@Override
-	public void onExit(BuffInfo info)
-	{
-		info.getEffected().enableAllSkills();
-		info.getEffected().setIsImmobilized(false);
-	}
-	
-	@Override
 	public boolean canStart(BuffInfo info)
 	{
 		return info.getEffected().isAttackable();
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
-		Attackable target = (Attackable) info.getEffected();
-		target.abortAttack();
-		target.abortCast();
-		target.disableAllSkills();
-		target.setIsImmobilized(true);
+		effected.abortAttack();
+		effected.abortCast();
+		effected.disableAllSkills();
+		effected.setIsImmobilized(true);
+	}
+
+	@Override
+	public void onExit(BuffInfo info)
+	{
+		info.getEffected().enableAllSkills();
+		info.getEffected().setIsImmobilized(false);
 	}
 }
