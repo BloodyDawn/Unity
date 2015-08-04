@@ -375,7 +375,7 @@ public final class Skill implements IIdentifiable
 		_isSharedWithSummon = set.getBoolean("isSharedWithSummon", true);
 		
 		_isNecessaryToggle = set.getBoolean("isNecessaryToggle", false);
-		_deleteAbnormalOnLeave = set.getBoolean("isDeleteAbnormalOnLeave", false);
+		_deleteAbnormalOnLeave = set.getBoolean("deleteAbnormalOnLeave", false);
 		
 		_toggleGroupId = set.getInt("toggleGroupId", -1);
 		_attachToggleGroupId = set.getInt("attachToggleGroupId", -1);
