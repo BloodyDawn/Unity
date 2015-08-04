@@ -40,6 +40,7 @@ import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
 import org.l2junity.gameserver.network.client.send.TutorialShowQuestionMark;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 
 /**
  * Abstract class for quests "Letters from the Queen" and "Kekropus' Letter"
@@ -161,7 +162,7 @@ public abstract class LetterQuest extends Quest
 		{
 			if ((st != null) && st.isCond(1) && hasQuestItems(player, startSOE))
 			{
-				if (CastleManager.getInstance().getCastles().stream().filter(c -> c.getSiege().isInProgress()).count() > 1)
+				if (CastleManager.getInstance().getCastles().stream().anyMatch(c -> c.getSiege().isInProgress()))
 				{
 					showOnScreenMsg(player, NpcStringId.YOU_MAY_NOT_TELEPORT_IN_MIDDLE_OF_A_SIEGE, ExShowScreenMessage.TOP_CENTER, 5000);
 				}
@@ -173,7 +174,7 @@ public abstract class LetterQuest extends Quest
 				{
 					showOnScreenMsg(player, NpcStringId.YOU_MAY_NOT_TELEPORT_WHILE_USING_INSTANCE_ZONE, ExShowScreenMessage.TOP_CENTER, 5000);
 				}
-				else if (player.isInCombat())
+				else if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(player))
 				{
 					showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_IN_COMBAT, ExShowScreenMessage.TOP_CENTER, 5000);
 				}
