@@ -18,31 +18,21 @@
  */
 package org.l2junity.gameserver.network.client.send.string;
 
-import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import javax.xml.parsers.DocumentBuilderFactory;
-
-import org.l2junity.Config;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
 
 /**
  * @author Noctarius, Nille02, crion, Forsaiken
  */
 public final class SystemMessageId
 {
-	private static final Logger _log = LoggerFactory.getLogger(SystemMessageId.class);
-	public static final SystemMessageId[] EMPTY_ARRAY = new SystemMessageId[0];
+	private static final Logger LOGGER = LoggerFactory.getLogger(SystemMessageId.class);
 	
 	/**
 	 * Map containing all SystemMessageIds<br>
@@ -14036,7 +14026,7 @@ public final class SystemMessageId
 				}
 				catch (final Exception e)
 				{
-					_log.warn("SystemMessageId: Failed field access for '" + field.getName() + "'", e);
+					LOGGER.warn("SystemMessageId: Failed field access for '" + field.getName() + "'", e);
 				}
 			}
 		}

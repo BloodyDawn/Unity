@@ -70,65 +70,7 @@ public abstract class AbstractAI implements Ctrl
 	{
 		_nextAction = nextAction;
 	}
-	
-	private class FollowTask implements Runnable
-	{
-		protected int _range = 70;
-		
-		public FollowTask()
-		{
-		}
-		
-		public FollowTask(int range)
-		{
-			_range = range;
-		}
-		
-		@Override
-		public void run()
-		{
-			try
-			{
-				if (_followTask == null)
-				{
-					return;
-				}
-				
-				Creature followTarget = _followTarget; // copy to prevent NPE
-				if (followTarget == null)
-				{
-					if (_actor instanceof Summon)
-					{
-						((Summon) _actor).setFollowStatus(false);
-					}
-					setIntention(AI_INTENTION_IDLE);
-					return;
-				}
-				
-				if (!_actor.isInsideRadius(followTarget, _range, true, false))
-				{
-					if (!_actor.isInsideRadius(followTarget, 3000, true, false))
-					{
-						// if the target is too far (maybe also teleported)
-						if (_actor instanceof Summon)
-						{
-							((Summon) _actor).setFollowStatus(false);
-						}
-						
-						setIntention(AI_INTENTION_IDLE);
-						return;
-					}
-					
-					moveToPawn(followTarget, _range);
-				}
-			}
-			catch (Exception e)
-			{
-				LOGGER.warn("Error: " + e.getMessage());
-			}
-		}
-	}
-	
+
 	/** The character that this AI manages */
 	protected final Creature _actor;
 	
@@ -760,15 +702,7 @@ public abstract class AbstractAI implements Ctrl
 	 */
 	public synchronized void startFollow(Creature target)
 	{
-		if (_followTask != null)
-		{
-			_followTask.cancel(false);
-			_followTask = null;
-		}
-		
-		// Create and Launch an AI Follow Task to execute every 1s
-		_followTarget = target;
-		_followTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new FollowTask(), 5, FOLLOW_INTERVAL);
+		startFollow(target, -1);
 	}
 	
 	/**
@@ -783,9 +717,51 @@ public abstract class AbstractAI implements Ctrl
 			_followTask.cancel(false);
 			_followTask = null;
 		}
-		
+
 		_followTarget = target;
-		_followTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new FollowTask(range), 5, ATTACK_FOLLOW_INTERVAL);
+
+		final int followRange = range == -1 ? 70 : range;
+		_followTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(() -> {
+			try
+			{
+				if (_followTask == null)
+				{
+					return;
+				}
+
+				Creature followTarget = _followTarget; // copy to prevent NPE
+				if (followTarget == null)
+				{
+					if (_actor instanceof Summon)
+					{
+						((Summon) _actor).setFollowStatus(false);
+					}
+					setIntention(AI_INTENTION_IDLE);
+					return;
+				}
+
+				if (!_actor.isInsideRadius(followTarget, followRange, true, false))
+				{
+					if (!_actor.isInsideRadius(followTarget, 3000, true, false))
+					{
+						// if the target is too far (maybe also teleported)
+						if (_actor instanceof Summon)
+						{
+							((Summon) _actor).setFollowStatus(false);
+						}
+
+						setIntention(AI_INTENTION_IDLE);
+						return;
+					}
+
+					moveToPawn(followTarget, followRange);
+				}
+			}
+			catch (Exception e)
+			{
+				LOGGER.warn("Error: " + e.getMessage());
+			}
+		}, 5, range == -1 ? FOLLOW_INTERVAL : ATTACK_FOLLOW_INTERVAL);
 	}
 	
 	/**

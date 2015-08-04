@@ -34,14 +34,12 @@ import org.l2junity.gameserver.model.skills.Skill;
 public final class CallSkillOnActionTime extends AbstractEffect
 {
 	private final SkillHolder _skill;
-	private final double _power;
 	
 	public CallSkillOnActionTime(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
 		_skill = new SkillHolder(params.getInt("skillId"), params.getInt("skillLevel", 1));
-		_power = params.getDouble("power", 0);
 	}
 	
 	@Override

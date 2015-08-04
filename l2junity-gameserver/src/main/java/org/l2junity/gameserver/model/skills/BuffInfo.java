@@ -75,9 +75,10 @@ public final class BuffInfo
 	
 	/**
 	 * Buff Info constructor.
-	 * @param effector
-	 * @param effected
-	 * @param skill
+	 * @param effector the effector
+	 * @param effected the effected
+	 * @param skill the skill
+	 * @param hideStartMessage  hides start message
 	 */
 	public BuffInfo(Creature effector, Creature effected, Skill skill, boolean hideStartMessage)
 	{

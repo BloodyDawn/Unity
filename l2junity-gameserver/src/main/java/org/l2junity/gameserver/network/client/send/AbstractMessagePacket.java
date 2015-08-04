@@ -59,11 +59,6 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 			return _type;
 		}
 		
-		public final Object getValue()
-		{
-			return _value;
-		}
-		
 		public final String getStringValue()
 		{
 			return (String) _value;
