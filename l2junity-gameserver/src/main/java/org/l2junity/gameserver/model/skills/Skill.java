@@ -202,6 +202,7 @@ public final class Skill implements IIdentifiable
 	private final boolean _canCastWhileDisabled;
 	private final boolean _isSharedWithSummon;
 	private final boolean _isNecessaryToggle;
+	private final boolean _deleteAbnormalOnLeave;
 	
 	private final int _toggleGroupId;
 	private final int _attachToggleGroupId;
@@ -374,6 +375,7 @@ public final class Skill implements IIdentifiable
 		_isSharedWithSummon = set.getBoolean("isSharedWithSummon", true);
 		
 		_isNecessaryToggle = set.getBoolean("isNecessaryToggle", false);
+		_deleteAbnormalOnLeave = set.getBoolean("deleteAbnormalOnLeave", false);
 		
 		_toggleGroupId = set.getInt("toggleGroupId", -1);
 		_attachToggleGroupId = set.getInt("attachToggleGroupId", -1);
@@ -1216,11 +1218,11 @@ public final class Skill implements IIdentifiable
 				}
 				else if (addContinuousEffects)
 				{
-					if(applyInstantEffects)
+					if (applyInstantEffects)
 					{
 						effect.continuousInstant(info.getEffector(), info.getEffected(), info.getSkill());
 					}
-
+					
 					if (effect.canStart(info))
 					{
 						info.addEffect(effect);
@@ -1800,6 +1802,11 @@ public final class Skill implements IIdentifiable
 	public boolean isNecessaryToggle()
 	{
 		return _isNecessaryToggle;
+	}
+	
+	public boolean deleteAbnormalOnLeave()
+	{
+		return _deleteAbnormalOnLeave;
 	}
 	
 	public int getToggleGroupId()

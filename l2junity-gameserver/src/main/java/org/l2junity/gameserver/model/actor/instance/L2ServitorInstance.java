@@ -315,6 +315,13 @@ public class L2ServitorInstance extends Summon implements Runnable
 						}
 						
 						final Skill skill = info.getSkill();
+						
+						// Do not store those effects.
+						if (skill.deleteAbnormalOnLeave())
+						{
+							continue;
+						}
+						
 						// Do not save heals.
 						if (skill.getAbnormalType() == AbnormalType.LIFE_FORCE_OTHERS)
 						{
