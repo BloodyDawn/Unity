@@ -238,13 +238,13 @@
 	</skill>
 	<skill id="19122" levels="4" name="Noble Blessed Body">
 		<!-- Max HP + 6%. -->
-		<table name="#bonus"> 1.06 1.10 1.12 1.16 </table>
+		<table name="#bonus"> 6 10 12 16 </table>
 		<set name="icon" val="icon.skill1045" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
-				<mul stat="maxHp" val="#bonus" />
+			<effect name="MaxHP">
+				<param amount="#bonus" mode="PER" />
 			</effect>
 		</for>
 	</skill>
@@ -867,13 +867,13 @@
 	</skill>
 	<skill id="19171" levels="4" name="Noble Condition">
 		<!-- Max HP + 6%. -->
-		<table name="#bonus"> 1.06 1.10 1.14 1.20 </table>
+		<table name="#bonus"> 6 10 14 20 </table>
 		<set name="operateType" val="P" />
 		<set name="icon" val="icon.skill1045" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
-				<mul stat="maxHp" val="#bonus" />
+			<effect name="MaxHP">
+				<param amount="#bonus" mode="PER" />
 			</effect>
 		</for>
 	</skill>
@@ -923,13 +923,13 @@
 	</skill>
 	<skill id="19175" levels="2" name="Noble Life">
 		<!-- Max HP + 6%. -->
-		<table name="#bonus"> 1.06 1.10 </table>
+		<table name="#bonus"> 6 10 </table>
 		<set name="operateType" val="P" />
 		<set name="icon" val="icon.skill1045" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
-				<mul stat="maxHp" val="#bonus" />
+			<effect name="MaxHP">
+				<param amount="#bonus" mode="PER" />
 			</effect>
 		</for>
 	</skill>

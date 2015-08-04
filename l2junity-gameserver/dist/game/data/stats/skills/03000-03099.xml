@@ -141,7 +141,9 @@
 		<for>
 			<effect name="Buff">
 				<add stat="pAtk" val="#pAtk" />
-				<mul stat="maxHp" val="0.85" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="-15" mode="PER" />
 			</effect>
 		</for>
 	</skill>
@@ -157,11 +159,13 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.25" />
 				<add stat="atkCountMax" val="#atkCountMax" />
 				<mul stat="pvpPhysDmg" val="#pvpBonus" />
 				<mul stat="pvpPhysSkillsDmg" val="#pvpBonus" />
 				<mul stat="pvpMagicalDmg" val="#pvpBonus" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="25" mode="PER" />
 			</effect>
 		</for>
 	</skill>
@@ -813,10 +817,12 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.6" />
-				<mul stat="maxHp" val="0.6" />
 				<mul stat="pvpPhysDmg" val="#pvpBonus" />
 				<mul stat="pvpPhysSkillsDmg" val="#pvpBonus" />
 				<mul stat="pvpMagicalDmg" val="#pvpBonus" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="-40" mode="PER" />
 			</effect>
 		</for>
 	</skill>
@@ -1008,10 +1014,12 @@
 		<for>
 			<effect name="Buff">
 				<add stat="pAtk" val="#pAtk" />
-				<mul stat="maxHp" val="0.85" />
 				<mul stat="pvpPhysDmg" val="1.05" />
 				<mul stat="pvpPhysSkillsDmg" val="1.05" />
 				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="-15" mode="PER" />
 			</effect>
 		</for>
 	</skill>
@@ -1027,10 +1035,12 @@
 		<for>
 			<effect name="Buff">
 				<add stat="pAtk" val="#pAtk" />
-				<mul stat="maxHp" val="0.85" />
 				<mul stat="pvpPhysDmg" val="1.05" />
 				<mul stat="pvpPhysSkillsDmg" val="1.05" />
 				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="-15" mode="PER" />
 			</effect>
 		</for>
 	</skill>

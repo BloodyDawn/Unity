@@ -20,10 +20,12 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.15" />
 				<mul stat="mAtkSpd" val="1.30" />
-				<mul stat="maxHp" val="1.30" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="1.10" />
 				<add stat="cancel" val="53" /> <!-- Custom -->
+			</effect>
+			<effect name="MaxHP">
+				<param amount="30" mode="PER" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" rate="100" />
@@ -228,10 +230,12 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.15" />
 				<mul stat="mAtkSpd" val="1.30" />
-				<mul stat="maxHp" val="1.30" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.90" />
 				<sub stat="cancel" val="53" /> <!-- Guess -->
+			</effect>
+			<effect name="MaxHP">
+				<param amount="30" mode="PER" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" rate="100" />
@@ -332,10 +336,12 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.15" />
 				<mul stat="mAtkSpd" val="1.30" />
-				<mul stat="maxHp" val="1.30" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.90" />
 				<sub stat="cancel" val="53" /> <!-- Guess -->
+			</effect>
+			<effect name="MaxHP">
+				<param amount="30" mode="PER" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" rate="100" />

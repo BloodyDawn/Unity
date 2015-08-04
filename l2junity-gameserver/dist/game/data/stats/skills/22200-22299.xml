@@ -217,7 +217,6 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.2" />
 				<mul stat="rCrit" val="1.2" />
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
@@ -229,6 +228,9 @@
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="runSpd" val="0.8" />
 				<add stat="absorbDam" val="5" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="20" mode="PER" />
 			</effect>
 		</for>
 	</skill>

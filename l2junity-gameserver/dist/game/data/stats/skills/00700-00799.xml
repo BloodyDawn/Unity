@@ -197,7 +197,6 @@
 		<set name="targetType" val="PARTY_MEMBER" />
 		<for>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.2" />
 				<mul stat="rCrit" val="1.2" />
 				<mul stat="mCritRate" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
@@ -209,6 +208,9 @@
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="runSpd" val="0.8" />
 				<add stat="absorbDam" val="5" /> <!-- absorb 5% HP from damage inflicted on enemies -->
+			</effect>
+			<effect name="MaxHP">
+				<param amount="20" mode="PER" />
 			</effect>
 		</for>
 	</skill>
@@ -234,7 +236,6 @@
 		<set name="targetType" val="PARTY_MEMBER" />
 		<for>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.2" />
 				<add stat="mCritRate" val="2" />
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
@@ -246,6 +247,9 @@
 				<sub stat="debuffVuln" val="10" />
 				<add stat="accCombat" val="4" />
 				<mul stat="runSpd" val="0.8" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="20" mode="PER" />
 			</effect>
 		</for>
 	</skill>
@@ -391,7 +395,6 @@
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="maxHp" val="1.2" />
 				<mul stat="runSpd" val="0.8" />
 				<add stat="accCombat" val="4" />
 				<mul stat="pDef" val="1.2" />
@@ -400,8 +403,8 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="20" />
 			</effect>
-			<effect name="HealPercent">
-				<param power="20" />
+			<effect name="MaxHP">
+				<param amount="20" mode="PER" heal="true" />
 			</effect>
 		</for>
 	</skill>

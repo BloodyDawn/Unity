@@ -759,11 +759,10 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.35" />
 				<mul stat="maxCp" val="1.15" />
 			</effect>
-			<effect name="HealPercent">
-				<param power="35" />
+			<effect name="MaxHP">
+				<param amount="35" mode="PER" heal="true" />
 			</effect>
 			<effect name="CpHealPercent">
 				<param power="15" />
@@ -1307,14 +1306,13 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.1" />
 				<mul stat="pAtk" val="1.35" />
 				<mul stat="pDef" val="1.35" />
 				<mul stat="mDef" val="1.35" />
 				<mul stat="cAtk" val="1.1" />
 			</effect>
-			<effect name="HealPercent">
-				<param power="10" />
+			<effect name="MaxHP">
+				<param amount="10" mode="PER" heal="true" />
 			</effect>
 		</for>
 	</skill>

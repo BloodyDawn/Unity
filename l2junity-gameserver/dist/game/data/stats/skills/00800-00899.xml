@@ -563,7 +563,7 @@
 		<!-- Confirmed CT2.5 -->
 		<table name="#effectPoints"> 379 467 523 </table>
 		<table name="#magicLvl"> 40 49 55 </table>
-		<table name="#maxHp"> 1.05 1.08 1.1 </table>
+		<table name="#maxHp"> 5 8 10 </table>
 		<table name="#mpConsume"> 35 44 44 </table>
 		<table name="#pDef"> 1.08 1.12 1.15 </table>
 		<set name="abnormalLvl" val="4" />
@@ -589,7 +589,9 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
-				<mul stat="maxHp" val="#maxHp" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="#maxHp" mode="PER" />
 			</effect>
 		</for>
 	</skill>
@@ -843,8 +845,10 @@
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.1" />
 				<add stat="regHp" val="10" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="10" mode="PER" />
 			</effect>
 		</for>
 	</skill>
@@ -2318,10 +2322,12 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.2" />
 				<mul stat="pAtk" val="1.08" />
 				<mul stat="pDef" val="1.18" />
 				<mul stat="pAtkSpd" val="1.2" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="20" mode="PER" />
 			</effect>
 		</for>
 	</skill>

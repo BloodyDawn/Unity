@@ -800,8 +800,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
-				<add stat="maxHp" val="295.32" />
+			<effect name="MaxHP">
+				<param amount="295.32" mode="DIFF" />
 			</effect>
 		</for>
 	</skill>
@@ -829,8 +829,10 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="maxHp" val="147.66" />
 				<add stat="maxMp" val="74.1" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="147.66" mode="DIFF" />
 			</effect>
 		</for>
 	</skill>

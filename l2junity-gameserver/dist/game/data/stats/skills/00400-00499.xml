@@ -963,7 +963,7 @@
 	<skill id="430" levels="8" name="Master of Combat">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<table name="#magicLvl"> 78 80 82 84 85 90 95 99 </table>
-		<table name="#cp"> 1.02 1.04 1.06 1.08 1.1 1.12 1.14 1.16 </table>
+		<table name="#cp"> 2 4 6 8 10 12 14 16 </table>
 		<table name="#hp"> 2 2 3 4 5 6 7 8 </table>
 		<set name="icon" val="icon.skill0430" />
 		<set name="operateType" val="P" />
@@ -972,8 +972,10 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<for>
 			<effect name="Buff">
-				<mul stat="maxHp" val="#hp" />
 				<mul stat="maxCp" val="#cp" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="#hp" mode="PER" />
 			</effect>
 		</for>
 	</skill>

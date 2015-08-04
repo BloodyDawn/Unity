@@ -713,7 +713,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.054" /> <!-- P. Def. +5.4% -->
-				<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
 				<mul stat="healEffect" val="1.03" /> <!-- Received Increased Heal +3% -->
 				<add stat="darkRes" val="8" /> <!-- Darkness resistance is increased +8 -->
 			</effect>
@@ -721,6 +720,9 @@
 				<param SHOCK="13" />
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MaxHP">
+				<param amount="492" mode="DIFF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3349" levels="1" name="Dynasty Breastplate">
@@ -733,12 +735,14 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.054" /> <!-- P. Atk +5.4% -->
-				<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
 				<add stat="rCrit" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
 				<add stat="cAtkAdd" val="234" /> <!-- Critical Damage +234 -->
 				<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MaxHP">
+				<param amount="492" mode="DIFF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3350" levels="1" name="Dynasty Breastplate">
@@ -751,11 +755,13 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.054" /> <!-- P. Atk. +5.4% -->
-				<add stat="maxHp" val="492" /> <!-- HP +492 -->
 				<add stat="darkRes" val="8" /> <!-- Resistance to Darkness attacks +8 -->
 				<mul stat="PhysicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MaxHP">
+				<param amount="492" mode="DIFF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3351" levels="1" name="Dynasty Breastplate">
@@ -768,11 +774,13 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.054" /> <!-- P. Def. +5.4% -->
-				<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
 				<mul stat="DanceMpConsumeRate" val="0.95" /> <!-- MP consumption is decreased when song and dance skills are used -5% -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MaxHP">
+				<param amount="492" mode="DIFF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3352" levels="1" name="Dynasty Leather Armor">
@@ -785,7 +793,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="rEvas" val="4.3" /> <!-- Evasion +4.3 -->
-				<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
 				<mul stat="pAtkSpd" val="1.0266" /> <!-- Atk. Spd. are increased +2.66% -->
 				<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 			</effect>
@@ -793,6 +800,9 @@
 				<param HOLD="13" />
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="MaxHP">
+				<param amount="492" mode="DIFF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3353" levels="1" name="Dynasty Leather Armor">

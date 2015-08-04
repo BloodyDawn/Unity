@@ -17,7 +17,7 @@
 	</skill>
 	<skill id="30401" levels="2" name="Tenacity">
 		<!-- Max. HP + 1%, Speed + 4. -->
-		<table name="#maxHp"> 1.01 1.02 </table>
+		<table name="#maxHp"> 1 2 </table>
 		<table name="#runSpd"> 4 7 </table>
 		<table name="#magicLvl"> 85 85 </table>
 		<set name="magicLvl" val="#magicLvl" />
@@ -26,8 +26,10 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="maxHp" val="#maxHp" />
 				<add stat="runSpd" val="#runSpd" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="#maxHp" mode="PER" />
 			</effect>
 		</for>
 	</skill>

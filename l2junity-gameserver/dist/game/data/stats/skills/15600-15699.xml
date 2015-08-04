@@ -524,7 +524,6 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.37" />
 				<mul stat="maxMp" val="1.37" />
 				<mul stat="maxCp" val="1.37" />
 				<mul stat="regHp" val="1.2" />
@@ -534,6 +533,9 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param slot="IMPROVE_HP_MP_UP;MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="37" mode="PER" />
 			</effect>
 		</for>
 	</skill>
@@ -744,10 +746,12 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.10" />
 				<mul stat="mAtkSpd" val="1.20" />
-				<mul stat="maxHp" val="1.20" />
 				<mul stat="regMp" val="1.10" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<sub stat="cancel" val="50" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="20" mode="PER" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" rate="100" />

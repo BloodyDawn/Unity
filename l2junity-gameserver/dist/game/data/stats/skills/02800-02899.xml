@@ -14,8 +14,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
-				<mul stat="maxHp" val="1.2" />
+			<effect name="MaxHP">
+				<param amount="20" mode="PER" />
 			</effect>
 		</for>
 	</skill>
@@ -2259,8 +2259,10 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.1" />
 				<mul stat="regHp" val="1.2" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="10" mode="PER" />
 			</effect>
 		</for>
 	</skill>
@@ -2283,13 +2285,15 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="maxHp" val="1.1" />
 				<mul stat="maxMp" val="1.1" />
 				<mul stat="mAtkSpd" val="1.1" />
 				<mul stat="pDef" val="1.1" />
 				<mul stat="mDef" val="1.1" />
 				<mul stat="pAtkSpd" val="1.15" />
 				<add stat="runSpd" val="10" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="10" mode="PER" />
 			</effect>
 		</for>
 	</skill>

@@ -877,12 +877,14 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="maxHp" val="#maxHp" />
 				<add stat="maxCp" val="#maxCp" />
 				<add stat="regCp" val="#regHp" />
 				<add stat="regHp" val="#regHp" />
 				<add stat="regMp" val="#regMp" />
 				<add stat="runSpd" val="#runSpd" />
+			</effect>
+			<effect name="MaxHP">
+				<param amount="#maxHp" mode="DIFF" />
 			</effect>
 		</for>
 	</skill>
