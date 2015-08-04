@@ -30,6 +30,7 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Block Actions effect implementation.
@@ -60,10 +61,8 @@ public final class BlockActions extends AbstractEffect
 	}
 
 	@Override
-	public void onStart(BuffInfo info)
+	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
-		// Aborts any attacks/casts if stunned
-		final Creature effected = info.getEffected();
 		_allowedSkills.stream().forEach(effected::addBlockActionsAllowedSkill);
 		effected.startParalyze();
 	}

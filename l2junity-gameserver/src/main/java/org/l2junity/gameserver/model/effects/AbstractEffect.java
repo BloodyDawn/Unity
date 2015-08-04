@@ -211,7 +211,12 @@ public abstract class AbstractEffect
 	{
 
 	}
-	
+
+	public void onStart(Creature effector, Creature effected, Skill skill)
+	{
+
+	}
+
 	/**
 	 * Called on effect start.
 	 * @param info the buff info

@@ -62,7 +62,6 @@ public final class DamOverTime extends AbstractEffect
 				info.getEffected().notifyDamageReceived(damage, info.getEffector(), info.getSkill(), true, true, false);
 			}
 		}
-		super.onStart(info);
 	}
 	
 	@Override

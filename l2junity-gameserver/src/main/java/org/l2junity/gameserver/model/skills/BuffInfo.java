@@ -287,8 +287,9 @@ public final class BuffInfo
 			}
 			
 			// Call on start.
+			effect.onStart(getEffector(), getEffected(), getSkill());
 			effect.onStart(this);
-			
+
 			// If it's a continuous effect, if has ticks schedule a task with period, otherwise schedule a simple task to end it.
 			if (effect.getTicks() > 0)
 			{

@@ -22,7 +22,6 @@ import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.handler.TargetHandler;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -33,6 +32,8 @@ import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Skill that canceles certain effect when offense is initiated.
@@ -40,9 +41,10 @@ import org.l2junity.gameserver.model.skills.targets.L2TargetType;
  */
 public final class CancelEffectOnOffense extends AbstractEffect
 {
-	private int _cancelSkillId;
-	private L2TargetType _targetType;
-	private Skill _skill;
+	private static final Logger LOGGER = LoggerFactory.getLogger(CancelEffectOnOffense.class);
+
+	private final int _cancelSkillId;
+	private final L2TargetType _targetType;
 	
 	/**
 	 * @param attachCond
@@ -50,39 +52,34 @@ public final class CancelEffectOnOffense extends AbstractEffect
 	 * @param set
 	 * @param params
 	 */
-	
 	public CancelEffectOnOffense(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
-		_cancelSkillId = params.getInt("cancelSkillId", 0);
-		_targetType = params.getEnum("targetType", L2TargetType.class, L2TargetType.NONE);
+		_cancelSkillId = params.getInt("cancelSkillId", set.getInt("id"));
+		_targetType = params.getEnum("targetType", L2TargetType.class, null);
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
-		// Default buff cancel is this.
-		if (_cancelSkillId <= 0)
+		final Skill cancelSkill = SkillData.getInstance().getSkill(_cancelSkillId, 1);
+		if(cancelSkill == null)
 		{
-			_cancelSkillId = info.getSkill().getId();
-		}
-		
-		if (SkillData.getInstance().getSkill(_cancelSkillId, 1) == null)
-		{
+			LOGGER.warn("Cancel skill {} does not exist from skill:{}", _cancelSkillId, skill);
 			return;
 		}
-		
-		_skill = info.getSkill();
-		
-		// Default target type is this skill's target type.
-		if (_targetType == L2TargetType.NONE)
+
+		final L2TargetType targetType = _targetType != L2TargetType.NONE ? _targetType : cancelSkill.getTargetType();
+		final ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(targetType);
+		if (targetHandler == null)
 		{
-			_targetType = info.getSkill().getTargetType();
+			LOGGER.warn("Handler for target type: {} does not exist.", targetType);
+			return;
 		}
-		
-		info.getEffected().addListener(new ConsumerEventListener(info.getEffected(), EventType.ON_CREATURE_DAMAGE_DEALT, (OnCreatureDamageDealt event) -> onOffenseEvent(event, null), this));
-		info.getEffected().addListener(new ConsumerEventListener(info.getEffected(), EventType.ON_CREATURE_SKILL_FINISH_CAST, (OnCreatureSkillFinishCast event) -> onOffenseEvent(null, event), this));
+
+		effected.addListener(new ConsumerEventListener(effected, EventType.ON_CREATURE_DAMAGE_DEALT, (OnCreatureDamageDealt event) -> onOffenseEvent(event, null, skill, targetHandler), this));
+		effected.addListener(new ConsumerEventListener(effected, EventType.ON_CREATURE_SKILL_FINISH_CAST, (OnCreatureSkillFinishCast event) -> onOffenseEvent(null, event, skill, targetHandler), this));
 	}
 	
 	@Override
@@ -92,7 +89,7 @@ public final class CancelEffectOnOffense extends AbstractEffect
 		info.getEffected().removeListenerIf(EventType.ON_CREATURE_SKILL_FINISH_CAST, listener -> listener.getOwner() == this);
 	}
 	
-	public void onOffenseEvent(OnCreatureDamageDealt event, OnCreatureSkillFinishCast castEvent)
+	public void onOffenseEvent(OnCreatureDamageDealt event, OnCreatureSkillFinishCast castEvent, Skill skill, ITargetTypeHandler targetHandler)
 	{
 		final Creature attacker = event != null ? event.getAttacker() : castEvent != null ? castEvent.getCaster() : null;
 		final Creature target = event != null ? event.getTarget() : castEvent != null ? castEvent.getTarget() : null;
@@ -108,21 +105,9 @@ public final class CancelEffectOnOffense extends AbstractEffect
 			return;
 		}
 		
-		final ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(_targetType);
-		if (targetHandler == null)
+		for (Creature affected : targetHandler.getTargetList(skill, attacker, false, target))
 		{
-			_log.warn("Handler for target type: " + _targetType + " does not exist.");
-			return;
-		}
-		
-		for (WorldObject affected : targetHandler.getTargetList(_skill, attacker, false, target))
-		{
-			if (!affected.isCreature())
-			{
-				return;
-			}
-			
-			((Creature) affected).getEffectList().stopSkillEffects(true, _cancelSkillId);
+			affected.getEffectList().stopSkillEffects(true, _cancelSkillId);
 		}
 	}
 }

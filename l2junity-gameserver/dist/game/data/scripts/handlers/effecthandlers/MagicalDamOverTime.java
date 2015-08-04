@@ -47,12 +47,6 @@ public final class MagicalDamOverTime extends AbstractEffect
 	}
 	
 	@Override
-	public void onStart(BuffInfo info)
-	{
-		super.onStart(info);
-	}
-	
-	@Override
 	public L2EffectType getEffectType()
 	{
 		return L2EffectType.MAGICAL_DMG_OVER_TIME;

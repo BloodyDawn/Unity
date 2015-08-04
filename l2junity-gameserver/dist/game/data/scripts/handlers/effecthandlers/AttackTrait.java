@@ -23,10 +23,12 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.stat.CharStat;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.TraitType;
 
 /**
@@ -66,11 +68,11 @@ public final class AttackTrait extends AbstractEffect
 			}
 		}
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
-		final CharStat charStat = info.getEffected().getStat();
+		final CharStat charStat = effected.getStat();
 		synchronized (charStat.getAttackTraits())
 		{
 			for (Entry<TraitType, Float> trait : _attackTraits.entrySet())

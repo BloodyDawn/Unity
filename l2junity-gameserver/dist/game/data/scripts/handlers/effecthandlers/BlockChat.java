@@ -20,6 +20,7 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.instancemanager.PunishmentManager;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -27,6 +28,7 @@ import org.l2junity.gameserver.model.punishment.PunishmentAffect;
 import org.l2junity.gameserver.model.punishment.PunishmentTask;
 import org.l2junity.gameserver.model.punishment.PunishmentType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Block Chat effect implementation.
@@ -50,16 +52,16 @@ public final class BlockChat extends AbstractEffect
 	{
 		return L2EffectType.CHAT_BLOCK;
 	}
-	
+
+	@Override
+	public void onStart(Creature effector, Creature effected, Skill skill)
+	{
+		PunishmentManager.getInstance().startPunishment(new PunishmentTask(0, effected.getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN, 0, "Chat banned bot report", "system", true));
+	}
+
 	@Override
 	public void onExit(BuffInfo info)
 	{
 		PunishmentManager.getInstance().stopPunishment(info.getEffected().getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN);
-	}
-	
-	@Override
-	public void onStart(BuffInfo info)
-	{
-		PunishmentManager.getInstance().startPunishment(new PunishmentTask(0, info.getEffected().getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN, 0, "Chat banned bot report", "system", true));
 	}
 }
