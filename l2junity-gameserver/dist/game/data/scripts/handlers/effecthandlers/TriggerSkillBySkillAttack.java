@@ -51,14 +51,7 @@ public final class TriggerSkillBySkillAttack extends AbstractEffect
 	private final int _skillLevelScaleTo;
 	private final L2TargetType _targetType;
 	private final InstanceType _attackerType;
-	
-	/**
-	 * @param attachCond
-	 * @param applyCond
-	 * @param set
-	 * @param params
-	 */
-	
+
 	public TriggerSkillBySkillAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
@@ -72,6 +65,18 @@ public final class TriggerSkillBySkillAttack extends AbstractEffect
 		_skillLevelScaleTo = params.getInt("skillLevelScaleTo", 0);
 		_targetType = params.getEnum("targetType", L2TargetType.class, L2TargetType.ONE);
 		_attackerType = params.getEnum("attackerType", InstanceType.class, InstanceType.L2Character);
+	}
+
+	@Override
+	public void onStart(Creature effector, Creature effected, Skill skill)
+	{
+		effected.addListener(new ConsumerEventListener(effected, EventType.ON_CREATURE_DAMAGE_DEALT, (OnCreatureDamageDealt event) -> onAttackEvent(event), this));
+	}
+
+	@Override
+	public void onExit(BuffInfo info)
+	{
+		info.getEffected().removeListenerIf(EventType.ON_CREATURE_DAMAGE_DEALT, listener -> listener.getOwner() == this);
 	}
 	
 	public void onAttackEvent(OnCreatureDamageDealt event)
@@ -152,17 +157,5 @@ public final class TriggerSkillBySkillAttack extends AbstractEffect
 				event.getAttacker().makeTriggerCast(skill, targetChar);
 			}
 		}
-	}
-	
-	@Override
-	public void onExit(BuffInfo info)
-	{
-		info.getEffected().removeListenerIf(EventType.ON_CREATURE_DAMAGE_DEALT, listener -> listener.getOwner() == this);
-	}
-	
-	@Override
-	public void onStart(BuffInfo info)
-	{
-		info.getEffected().addListener(new ConsumerEventListener(info.getEffected(), EventType.ON_CREATURE_DAMAGE_DEALT, (OnCreatureDamageDealt event) -> onAttackEvent(event), this));
 	}
 }

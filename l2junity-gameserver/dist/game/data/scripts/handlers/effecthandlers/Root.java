@@ -20,11 +20,13 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Root effect implementation.
@@ -57,11 +59,11 @@ public final class Root extends AbstractEffect
 			info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_THINK);
 		}
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
-		info.getEffected().stopMove(null);
-		info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_ROOTED);
+		effected.stopMove(null);
+		effected.getAI().notifyEvent(CtrlEvent.EVT_ROOTED);
 	}
 }

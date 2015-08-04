@@ -25,6 +25,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Untargetable effect implementation.
@@ -42,14 +43,14 @@ public final class Untargetable extends AbstractEffect
 	{
 		return info.getEffected().isPlayer();
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
 		// Remove target from those that have the untargetable creature on target.
-		World.getInstance().forEachVisibleObject(info.getEffected(), Creature.class, c ->
+		World.getInstance().forEachVisibleObject(effected, Creature.class, c ->
 		{
-			if (c.getTarget() == info.getEffected())
+			if (c.getTarget() == effected)
 			{
 				c.setTarget(null);
 			}

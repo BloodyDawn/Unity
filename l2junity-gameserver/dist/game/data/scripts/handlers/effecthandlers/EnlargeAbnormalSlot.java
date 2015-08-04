@@ -19,9 +19,11 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Enlarge Abnormal Slot effect implementation.
@@ -43,11 +45,11 @@ public final class EnlargeAbnormalSlot extends AbstractEffect
 	{
 		return (info.getEffector() != null) && (info.getEffected() != null) && info.getEffected().isPlayer();
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
-		info.getEffected().getStat().setMaxBuffCount(info.getEffected().getStat().getMaxBuffCount() + _slots);
+		effected.getStat().setMaxBuffCount(effected.getStat().getMaxBuffCount() + _slots);
 	}
 	
 	@Override

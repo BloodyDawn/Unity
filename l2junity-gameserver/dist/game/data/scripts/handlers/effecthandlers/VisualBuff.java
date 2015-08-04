@@ -22,10 +22,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * An Effect that does nothing except showing visual representation of a skill in the buff bar.
@@ -45,11 +47,11 @@ public class VisualBuff extends AbstractEffect
 			_visualSkills.add(new SkillHolder(skillId, 1));
 		}
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
-		info.getEffected().getEffectList().addVisualAbnormalStatus(_visualSkills);
+		effected.getEffectList().addVisualAbnormalStatus(_visualSkills);
 	}
 	
 	@Override

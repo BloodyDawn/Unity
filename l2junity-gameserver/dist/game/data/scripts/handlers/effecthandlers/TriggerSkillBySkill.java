@@ -46,14 +46,7 @@ public final class TriggerSkillBySkill extends AbstractEffect
 	private final SkillHolder _skill;
 	private final int _skillLevelScaleTo;
 	private final L2TargetType _targetType;
-	
-	/**
-	 * @param attachCond
-	 * @param applyCond
-	 * @param set
-	 * @param params
-	 */
-	
+
 	public TriggerSkillBySkill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
@@ -63,6 +56,18 @@ public final class TriggerSkillBySkill extends AbstractEffect
 		_skill = new SkillHolder(params.getInt("skillId", 0), params.getInt("skillLevel", 0));
 		_skillLevelScaleTo = params.getInt("skillLevelScaleTo", 0);
 		_targetType = params.getEnum("targetType", L2TargetType.class, L2TargetType.ONE);
+	}
+
+	@Override
+	public void onStart(Creature effector, Creature effected, Skill skill)
+	{
+		effected.addListener(new ConsumerEventListener(effected, EventType.ON_CREATURE_SKILL_USE, (OnCreatureSkillUse event) -> onSkillUseEvent(event), this));
+	}
+
+	@Override
+	public void onExit(BuffInfo info)
+	{
+		info.getEffected().removeListenerIf(EventType.ON_CREATURE_SKILL_USE, listener -> listener.getOwner() == this);
 	}
 	
 	public void onSkillUseEvent(OnCreatureSkillUse event)
@@ -108,7 +113,6 @@ public final class TriggerSkillBySkill extends AbstractEffect
 		}
 		
 		final WorldObject[] targets = targetHandler.getTargetList(triggerSkill, event.getCaster(), false, event.getTarget());
-		
 		for (WorldObject triggerTarget : targets)
 		{
 			if ((triggerTarget == null) || !triggerTarget.isCreature())
@@ -122,17 +126,5 @@ public final class TriggerSkillBySkill extends AbstractEffect
 				event.getCaster().makeTriggerCast(triggerSkill, targetChar);
 			}
 		}
-	}
-	
-	@Override
-	public void onExit(BuffInfo info)
-	{
-		info.getEffected().removeListenerIf(EventType.ON_CREATURE_SKILL_USE, listener -> listener.getOwner() == this);
-	}
-	
-	@Override
-	public void onStart(BuffInfo info)
-	{
-		info.getEffected().addListener(new ConsumerEventListener(info.getEffected(), EventType.ON_CREATURE_SKILL_USE, (OnCreatureSkillUse event) -> onSkillUseEvent(event), this));
 	}
 }
