@@ -31,6 +31,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 
 /**
@@ -59,31 +60,22 @@ public final class Confuse extends AbstractEffect
 	{
 		return EffectFlag.CONFUSED.getMask();
 	}
-	
+
 	@Override
 	public boolean isInstant()
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onExit(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (!info.getEffected().isPlayer())
-		{
-			info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_THINK);
-		}
-	}
-	
-	@Override
-	public void onStart(BuffInfo info)
-	{
-		info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_CONFUSED);
+		effected.getAI().notifyEvent(CtrlEvent.EVT_CONFUSED);
 		
 		final List<Creature> targetList = new ArrayList<>();
 		// Getting the possible targets
 		
-		World.getInstance().forEachVisibleObject(info.getEffected(), Creature.class, targetList::add);
+		World.getInstance().forEachVisibleObject(effected, Creature.class, targetList::add);
 		
 		// if there is no target, exit function
 		if (!targetList.isEmpty())
@@ -91,8 +83,8 @@ public final class Confuse extends AbstractEffect
 			// Choosing randomly a new target
 			final Creature target = targetList.get(Rnd.nextInt(targetList.size()));
 			// Attacking the target
-			info.getEffected().setTarget(target);
-			info.getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
+			effected.setTarget(target);
+			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 		}
 	}
 }

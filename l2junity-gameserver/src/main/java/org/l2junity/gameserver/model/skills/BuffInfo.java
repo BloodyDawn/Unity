@@ -378,7 +378,7 @@ public final class BuffInfo
 		for (AbstractEffect effect : _effects)
 		{
 			// Instant effects shouldn't call onExit(..).
-			if ((effect != null) && !effect.isInstant())
+			if (!effect.isInstant())
 			{
 				effect.onExit(this);
 			}

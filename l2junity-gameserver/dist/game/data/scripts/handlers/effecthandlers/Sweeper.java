@@ -22,11 +22,12 @@ import java.util.Collection;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.ItemHolder;
-import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Sweeper effect implementation.
@@ -44,17 +45,17 @@ public final class Sweeper extends AbstractEffect
 	{
 		return true;
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if ((info.getEffector() == null) || (info.getEffected() == null) || !info.getEffector().isPlayer() || !info.getEffected().isAttackable())
+		if (!effector.isPlayer() || !effected.isAttackable())
 		{
 			return;
 		}
 		
-		final PlayerInstance player = info.getEffector().getActingPlayer();
-		final Attackable monster = (Attackable) info.getEffected();
+		final PlayerInstance player = effector.getActingPlayer();
+		final Attackable monster = (Attackable) effected;
 		if (!monster.checkSpoilOwner(player, false))
 		{
 			return;
@@ -76,7 +77,7 @@ public final class Sweeper extends AbstractEffect
 				}
 				else
 				{
-					player.addItem("Sweeper", item, info.getEffected(), true);
+					player.addItem("Sweeper", item, effected, true);
 				}
 			}
 		}

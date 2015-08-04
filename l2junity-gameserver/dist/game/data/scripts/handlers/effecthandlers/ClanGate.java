@@ -41,7 +41,7 @@ public final class ClanGate extends AbstractEffect
 	@Override
 	public boolean isInstant()
 	{
-		return super.isInstant();
+		return true;
 	}
 
 	@Override

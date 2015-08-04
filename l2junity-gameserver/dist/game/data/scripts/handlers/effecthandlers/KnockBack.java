@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.ValidateLocation;
@@ -69,27 +70,25 @@ public final class KnockBack extends AbstractEffect
 	{
 		return L2EffectType.KNOCK;
 	}
-	
+
+	@Override
+	public void instant(Creature effector, Creature effected, Skill skill)
+	{
+		if(!_knockDown)
+		{
+			knockBack(effector, effected);
+		}
+	}
+
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		final Creature effected = info.getEffected();
-		final double radians = Math.toRadians(Util.calculateAngleFrom(info.getEffector(), info.getEffected()));
-		final int x = (int) (info.getEffected().getX() + (_distance * Math.cos(radians)));
-		final int y = (int) (info.getEffected().getY() + (_distance * Math.sin(radians)));
-		final int z = effected.getZ();
-		final Location loc = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceId());
-		
-		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		effected.broadcastPacket(new FlyToLocation(effected, loc, _type, _speed, _delay, _animationSpeed));
-		if (_knockDown)
+		if(_knockDown)
 		{
-			effected.setHeading(Util.calculateHeadingFrom(info.getEffected(), info.getEffector()));
+			knockBack(info.getEffector(), info.getEffected());
 		}
-		effected.setXYZ(loc);
-		effected.broadcastPacket(new ValidateLocation(effected));
 	}
-	
+
 	@Override
 	public void onExit(BuffInfo info)
 	{
@@ -97,5 +96,23 @@ public final class KnockBack extends AbstractEffect
 		{
 			info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_THINK);
 		}
+	}
+
+	public void knockBack(Creature effector, Creature effected)
+	{
+		final double radians = Math.toRadians(Util.calculateAngleFrom(effector, effected));
+		final int x = (int) (effected.getX() + (_distance * Math.cos(radians)));
+		final int y = (int) (effected.getY() + (_distance * Math.sin(radians)));
+		final int z = effected.getZ();
+		final Location loc = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceId());
+
+		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+		effected.broadcastPacket(new FlyToLocation(effected, loc, _type, _speed, _delay, _animationSpeed));
+		if (_knockDown)
+		{
+			effected.setHeading(Util.calculateHeadingFrom(effected, effector));
+		}
+		effected.setXYZ(loc);
+		effected.broadcastPacket(new ValidateLocation(effected));
 	}
 }
