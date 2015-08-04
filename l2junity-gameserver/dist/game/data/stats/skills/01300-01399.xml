@@ -306,7 +306,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<for>
-			<effect name="MaxHP">
+			<effect name="MaxHp">
 				<param amount="#amount" mode="PER" heal="true" />
 			</effect>
 		</for>
@@ -1211,7 +1211,7 @@
 				<mul stat="runSpd" val="0.9" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
-			<effect name="MaxHP">
+			<effect name="MaxHp">
 				<param amount="20" mode="PER" />
 			</effect>
 		</for>
@@ -1321,7 +1321,7 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="20" />
 			</effect>
-			<effect name="MaxHP">
+			<effect name="MaxHp">
 				<param amount="20" mode="PER" heal="true" />
 			</effect>
 		</for>
@@ -1564,7 +1564,7 @@
 				<mul stat="runSpd" val="0.8" />
 				<add stat="absorbDam" val="5" /> <!-- absorb 5% HP from damage inflicted on enemies -->
 			</effect>
-			<effect name="MaxHP">
+			<effect name="MaxHp">
 				<param amount="20" mode="PER" />
 			</effect>
 		</for>
@@ -1768,7 +1768,7 @@
 				<add stat="accCombat" val="4" />
 				<mul stat="runSpd" val="0.8" />
 			</effect>
-			<effect name="MaxHP">
+			<effect name="MaxHp">
 				<param amount="20" mode="PER" heal="true" />
 			</effect>
 		</for>
