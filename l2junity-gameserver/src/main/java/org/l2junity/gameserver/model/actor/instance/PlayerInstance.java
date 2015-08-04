@@ -7227,7 +7227,7 @@ public final class PlayerInstance extends Playable
 					final Skill skill = info.getSkill();
 					
 					// Do not store those effects.
-					if (skill.deleteAbnormalOnLeave())
+					if (skill.isDeleteAbnormalOnLeave())
 					{
 						continue;
 					}

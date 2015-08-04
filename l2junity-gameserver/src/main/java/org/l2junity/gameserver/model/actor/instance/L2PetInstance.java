@@ -1024,7 +1024,7 @@ public class L2PetInstance extends Summon
 					final Skill skill = info.getSkill();
 					
 					// Do not store those effects.
-					if (skill.deleteAbnormalOnLeave())
+					if (skill.isDeleteAbnormalOnLeave())
 					{
 						continue;
 					}
