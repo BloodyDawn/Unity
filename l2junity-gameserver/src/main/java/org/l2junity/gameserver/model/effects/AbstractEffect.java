@@ -206,6 +206,11 @@ public abstract class AbstractEffect
 	{
 
 	}
+
+	public void continuousInstant(Creature effector, Creature effected, Skill skill)
+	{
+
+	}
 	
 	/**
 	 * Called on effect start.
