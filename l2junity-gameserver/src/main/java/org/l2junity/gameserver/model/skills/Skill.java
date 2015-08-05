@@ -117,8 +117,6 @@ public final class Skill implements IIdentifiable
 	private Set<AbnormalVisualEffect> _abnormalVisualEffects;
 	/** If {@code true} this skill's effect should stay after death. */
 	private final boolean _stayAfterDeath;
-	/** If {@code true} this skill's effect should stay after class-subclass change. */
-	private final boolean _stayOnSubclassChange;
 	/** If {@code true} this skill's effect recovery HP/MP or CP from herb. */
 	private final boolean _isRecoveryHerb;
 	
@@ -203,6 +201,7 @@ public final class Skill implements IIdentifiable
 	private final boolean _isSharedWithSummon;
 	private final boolean _isNecessaryToggle;
 	private final boolean _deleteAbnormalOnLeave;
+	private final boolean _irreplacableBuff; // Stays after death, on subclass change, cant be canceled.
 	
 	private final int _toggleGroupId;
 	private final int _attachToggleGroupId;
@@ -252,7 +251,6 @@ public final class Skill implements IIdentifiable
 		parseAbnormalVisualEffect(set.getString("abnormalVisualEffect", null));
 		
 		_stayAfterDeath = set.getBoolean("stayAfterDeath", false);
-		_stayOnSubclassChange = set.getBoolean("stayOnSubclassChange", true);
 		
 		_hitTime = set.getInt("hitTime", 0);
 		_coolTime = set.getInt("coolTime", 0);
@@ -376,6 +374,7 @@ public final class Skill implements IIdentifiable
 		
 		_isNecessaryToggle = set.getBoolean("isNecessaryToggle", false);
 		_deleteAbnormalOnLeave = set.getBoolean("deleteAbnormalOnLeave", false);
+		_irreplacableBuff = set.getBoolean("irreplacableBuff", false);
 		
 		_toggleGroupId = set.getInt("toggleGroupId", -1);
 		_attachToggleGroupId = set.getInt("attachToggleGroupId", -1);
@@ -943,12 +942,7 @@ public final class Skill implements IIdentifiable
 	
 	public boolean isStayAfterDeath()
 	{
-		return _stayAfterDeath;
-	}
-	
-	public boolean isStayOnSubclassChange()
-	{
-		return _stayOnSubclassChange;
+		return _stayAfterDeath || isIrreplacableBuff();
 	}
 	
 	public boolean isBad()
@@ -1807,6 +1801,11 @@ public final class Skill implements IIdentifiable
 	public boolean isDeleteAbnormalOnLeave()
 	{
 		return _deleteAbnormalOnLeave;
+	}
+	
+	public boolean isIrreplacableBuff()
+	{
+		return _irreplacableBuff;
 	}
 	
 	public int getToggleGroupId()

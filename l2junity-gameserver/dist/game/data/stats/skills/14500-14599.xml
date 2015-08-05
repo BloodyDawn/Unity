@@ -204,6 +204,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="9" />
 		<set name="abnormalTime" val="60" />
+		<set name="irreplacableBuff" val="true" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14513" levels="1" name="Fierce Kick">
@@ -1346,7 +1347,6 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="isDebuff" val="true" />
-		<set name="stayAfterDeath" val="true" />
 		<set name="canBeDispelled" val="false" />
 		<set name="effectPoint" val="1" />
 		<set name="abnormalType" val="DEATH_PENALTY_GD" />
@@ -1356,7 +1356,7 @@
 		<set name="specialLevel" val="-2" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="-2" />
-		<set name="stayOnSubclassChange" val="true" />
+		<set name="irreplacableBuff" val="true" />
 		<for>
 			<effect name="Debuff">
 				<add stat="darkRes" val="#darkRes" />
@@ -1542,6 +1542,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="irreplacableBuff" val="true" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14582" levels="1" name="Cry of Destiny - Chain Strike">

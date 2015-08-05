@@ -793,31 +793,31 @@ public final class CharEffectList
 		boolean update = false;
 		if (hasBuffs())
 		{
-			getBuffs().stream().filter(info -> !info.getSkill().isStayOnSubclassChange()).forEach(info -> stopAndRemove(info, getBuffs()));
+			getBuffs().stream().filter(info -> !info.getSkill().isIrreplacableBuff()).forEach(info -> stopAndRemove(info, getBuffs()));
 			update = true;
 		}
 		
 		if (hasTriggered())
 		{
-			getTriggered().stream().filter(info -> !info.getSkill().isStayOnSubclassChange()).forEach(info -> stopAndRemove(info, getTriggered()));
+			getTriggered().stream().filter(info -> !info.getSkill().isIrreplacableBuff()).forEach(info -> stopAndRemove(info, getTriggered()));
 			update = true;
 		}
 		
 		if (hasDebuffs())
 		{
-			getDebuffs().stream().filter(info -> !info.getSkill().isStayOnSubclassChange()).forEach(info -> stopAndRemove(info, getDebuffs()));
+			getDebuffs().stream().filter(info -> !info.getSkill().isIrreplacableBuff()).forEach(info -> stopAndRemove(info, getDebuffs()));
 			update = true;
 		}
 		
 		if (hasDances())
 		{
-			getDances().stream().filter(info -> !info.getSkill().isStayOnSubclassChange()).forEach(info -> stopAndRemove(info, getDances()));
+			getDances().stream().filter(info -> !info.getSkill().isIrreplacableBuff()).forEach(info -> stopAndRemove(info, getDances()));
 			update = true;
 		}
 		
 		if (hasToggles())
 		{
-			getToggles().stream().filter(info -> !info.getSkill().isStayOnSubclassChange()).forEach(info -> stopAndRemove(info, getToggles()));
+			getToggles().stream().filter(info -> !info.getSkill().isIrreplacableBuff()).forEach(info -> stopAndRemove(info, getToggles()));
 			update = true;
 		}
 		
