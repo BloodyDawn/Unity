@@ -28,7 +28,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.events.EventType;
-import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillUse;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillFinishCast;
 import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -46,7 +46,7 @@ public final class TriggerSkillBySkill extends AbstractEffect
 	private final SkillHolder _skill;
 	private final int _skillLevelScaleTo;
 	private final L2TargetType _targetType;
-
+	
 	public TriggerSkillBySkill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
@@ -57,20 +57,20 @@ public final class TriggerSkillBySkill extends AbstractEffect
 		_skillLevelScaleTo = params.getInt("skillLevelScaleTo", 0);
 		_targetType = params.getEnum("targetType", L2TargetType.class, L2TargetType.ONE);
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
-		effected.addListener(new ConsumerEventListener(effected, EventType.ON_CREATURE_SKILL_USE, (OnCreatureSkillUse event) -> onSkillUseEvent(event), this));
+		effected.addListener(new ConsumerEventListener(effected, EventType.ON_CREATURE_SKILL_FINISH_CAST, (OnCreatureSkillFinishCast event) -> onSkillUseEvent(event), this));
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{
-		info.getEffected().removeListenerIf(EventType.ON_CREATURE_SKILL_USE, listener -> listener.getOwner() == this);
+		info.getEffected().removeListenerIf(EventType.ON_CREATURE_SKILL_FINISH_CAST, listener -> listener.getOwner() == this);
 	}
 	
-	public void onSkillUseEvent(OnCreatureSkillUse event)
+	public void onSkillUseEvent(OnCreatureSkillFinishCast event)
 	{
 		if ((_chance == 0) || ((_skill.getSkillId() == 0) || (_skill.getSkillLvl() == 0) || (_castSkillId == 0)))
 		{
