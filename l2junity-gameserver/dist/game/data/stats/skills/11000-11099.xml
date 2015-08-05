@@ -106,6 +106,7 @@
 		</for>
 	</skill>
 	<skill id="11005" levels="1" name="Superior Wizard Mastery">
+		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and increases M. Atk., Casting Spd., and M. Critical Rate + 6%. Decreases skill MP Consumption by 6%. -->
 		<set name="magicLvl" val="90" />
 		<set name="operateType" val="P" />
@@ -118,12 +119,12 @@
 				<mul stat="mAtk" val="1.06" />
 				<mul stat="mAtkSpd" val="1.06" />
 				<mul stat="MagicalMpConsumeRate" val="0.94" />
-				<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- TODO: Check me. I think is only magic skills. -->
 				<mul stat="mCritRate" val="1.06" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11006" levels="1" name="Superior Mental Attack Resistance">
+		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and Hold/Sleep/Bleed/Mind/Poison Resistance + 30. -->
 		<set name="magicLvl" val="95" />
 		<set name="targetType" val="SELF" />
@@ -967,6 +968,7 @@
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
+		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="100" />
 		<set name="icon" val="icon.skill11034" />
 		<set name="attachToggleGroupId" val="1" />
@@ -1000,14 +1002,17 @@
 	</skill>
 	<skill id="11035" levels="8" name="Elemental Blast (Fire)">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="100" />
 		<set name="icon" val="icon.skill11034" />
 		<set name="attributeType" val="FIRE" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="10" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
 		<set name="reuseDelayGroup" val="11034" />
@@ -1030,12 +1035,17 @@
 	</skill>
 	<skill id="11036" levels="8" name="Elemental Blast (Water)">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="100" />
 		<set name="icon" val="icon.skill11034" />
+		<set name="attributeType" val="WATER" />
+		<set name="attributeValue" val="10" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
 		<set name="reuseDelayGroup" val="11034" />
@@ -1063,9 +1073,11 @@
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="100" />
 		<set name="icon" val="icon.skill11034" />
 		<set name="attributeType" val="WIND" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="10" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
 		<set name="reuseDelayGroup" val="11034" />
@@ -1088,14 +1100,17 @@
 	</skill>
 	<skill id="11038" levels="8" name="Elemental Blast (Earth)">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="100" />
 		<set name="icon" val="icon.skill11034" />
 		<set name="attributeType" val="EARTH" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="10" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
 		<set name="reuseDelayGroup" val="11034" />
@@ -1118,11 +1133,14 @@
 	</skill>
 	<skill id="11039" levels="8" name="Elemental Blast (4 Elements)">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="100" />
 		<set name="icon" val="icon.skill11034" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
@@ -1149,11 +1167,14 @@
 	</skill>
 	<skill id="11040" levels="8" name="Elemental Storm">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="150" />
 		<set name="icon" val="icon.skill11040" />
 		<set name="attachToggleGroupId" val="1" />
 		<set name="operateType" val="A1" />
@@ -1180,19 +1201,23 @@
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11041" levels="8" name="Elemental Storm (Fire)">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="150" />
 		<set name="icon" val="icon.skill11040" />
 		<set name="attributeType" val="FIRE" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="10" /> <!-- TODO : Check me, Glory days says no attribute -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
 		<set name="reuseDelayGroup" val="11040" />
@@ -1209,19 +1234,23 @@
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11042" levels="8" name="Elemental Storm (Water)">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="150" />
 		<set name="icon" val="icon.skill11040" />
 		<set name="attributeType" val="WATER" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="10" />  <!-- TODO : Check me, Glory days says no attribute -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
 		<set name="reuseDelayGroup" val="11040" />
@@ -1238,19 +1267,23 @@
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11043" levels="8" name="Elemental Storm (Wind)">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="150" />
 		<set name="icon" val="icon.skill11040" />
 		<set name="attributeType" val="WIND" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="10" />  <!-- TODO : Check me, Glory days says no attribute -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
 		<set name="reuseDelayGroup" val="11040" />
@@ -1267,19 +1300,23 @@
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11044" levels="8" name="Elemental Storm (Earth)">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="150" />
 		<set name="icon" val="icon.skill11040" />
 		<set name="attributeType" val="EARTH" />
-		<set name="attributeValue" val="20" />
+		<set name="attributeValue" val="10" />  <!-- TODO : Check me, Glory days says no attribute -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
 		<set name="reuseDelayGroup" val="11040" />
@@ -1296,16 +1333,20 @@
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11045" levels="8" name="Elemental Storm (4 Elements)">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="150" />
 		<set name="icon" val="icon.skill11040" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
@@ -1326,11 +1367,13 @@
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
+				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11046" levels="2" name="Wizard Spirit">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., M. Atk. + 20%, M. Critical Rate + 50%, P. Def. and M. Def. + 20%, Evasion + 2, and MP Consumption for magic skills - 50%. When attacked, has a chance of inflicting magic damage on the attacking target. -->
 		<table name="#effectPoint"> 696 705 </table>
 		<table name="#magicLvl"> 85 95 </table>
@@ -1339,7 +1382,9 @@
 		<table name="#mCritRate"> 1.50 1.60 </table>
 		<table name="#MagicalMpConsumeRate"> 0.50 0.40 </table>
 		<set name="icon" val="icon.skill11046" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="FINAL_SECRET" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1347,11 +1392,9 @@
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="#effectPoint" />
-		<set name="abnormalType" val="FINAL_SECRET" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Debuff">
@@ -1362,13 +1405,20 @@
 				<add stat="rEvas" val="2" />
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 			</effect>
-			<!-- TODO When attacked, has a chance of inflicting magic damage on the attacking target -->
+			<effect name="TriggerSkillByDamage">
+				<param minAttackerLevel="1" maxAttackerLevel="107" />
+				<param minDamage="1" />
+				<param chance="10" />
+				<param skillId="5567" skillLevel="1" /> <!-- Flame Armor -->
+				<param targetType="ONE" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11047" levels="9" name="Devil's Curse">
-		<table name="#abnormalLvl"> 1 2 3 4 5 5 5 5 5 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 157 Power. For 20 sec., target's M. Atk. and M. Def. - 30%, Casting Spd., P. Critical Rate, M. Critical Rate, P. Def. and Speed - 10%, and P. Evasion - 6. -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 5 5 5 5 </table>
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
 		<table name="#power"> 157 160 166 174 180 187 191 195 199 </table>
 		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
@@ -1412,6 +1462,7 @@
 	</skill>
 	<skill id="11048" levels="9" name="Mass Devil's Curse">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks target and surrounding enemies with 125 power and absorbs 25% of the damage inflicted as HP. Additionally, for 10 seconds, target's M. Atk. and M. Def. - 30%; P. Def., M. Atk., Casting Spd., M. Def., P. Critical Rate, M. Critical Rate, and Speed - 8%; and Accuracy - 12. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
 		<table name="#power"> 125 128 133 139 144 150  155 159 163 </table>
@@ -1422,13 +1473,13 @@
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="MULTI_DEBUFF" />
 		<set name="activateRate" val="60" />
-		<set name="affectRange" val="200" />
+		<set name="affectRange" val="300" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AREA" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
-		<set name="effectRange" val="1100" />
+		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="3500" />
 		<set name="coolTime" val="580" />
 		<set name="reuseDelay" val="30000" />
@@ -1457,14 +1508,15 @@
 		</for>
 	</skill>
 	<skill id="11049" levels="2" name="Ignore Divinity">
-		<table name="#magicLvl"> 93 98 </table>
-		<table name="#effectPoint"> -704 -708 -712 -716 -720 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Cancels one of target's buffs. -->
-		<table name="#mpConsumes"> 82 91 </table>
+		<table name="#buffCount"> 1 2 2 2 2 </table>
+		<table name="#magicLvl"> 93 98 101 103 105 </table>
+		<table name="#effectPoint"> -704 -708 -712 -716 -720 </table>
+		<table name="#mpConsumes"> 82 91 100 109 118 </table>
 		<set name="icon" val="icon.skill11049" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1100" />
@@ -1475,6 +1527,12 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="isMagic" val="1" />
+		<set name="staticReuse" val="true" />
+		<for>
+			<effect name="DispelByCategory">
+				<param slot="buff" rate="60" max="#buffCount" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11050" levels="7" name="Hell Binding">
 		<!-- Glory Days confirmed -->
@@ -1623,7 +1681,7 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11054" levels="1" name="Yoke Status">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Momentarily immobilized midair. -->
 		<set name="icon" val="icon.skill1042" />
 		<set name="abnormalLvl" val="1" />
@@ -1643,11 +1701,28 @@
 		<set name="magicLvl" val="85" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="BlockActions" />
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="BlockControl" />
+			<effect name="DamOverTime" ticks="1">
+				<param power="100" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+				<param SLEEP="100" />
+				<param DERANGEMENT="100" />
+				<param CHANGEBODY="100" />
+				<param SHOCK="100" />
+				<param AIRBIND="100" />
+				<param KNOCKBACK="100" />
+				<param KNOCKDOWN="100" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11055" levels="10" name="Death Fear">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, inflicts Fear on target and decreases Speed by 40%. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 -709 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 101 103 105 </table>
@@ -1677,13 +1752,22 @@
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockControl" />
-			<effect name="Fear">
+			<effect name="Fear" />
+			<effect name="Debuff">
 				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param minDamage="1" />
+				<param chance="100" />
+				<param skillId="1703" skillLevel="1" /> <!-- Cancel Fear -->
+				<param targetType="ONE" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11056" levels="11" name="Mass Death Fear">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- For 10 seconds, inflicts Fear on target and nearby enemies and decreases Speed by 25%. -->
 		<table name="#effectPoint"> -700 -705 -705 -705 -705 -705 -705 -705 -705 -705 -705 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
@@ -1694,7 +1778,8 @@
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
-		<set name="affectRange" val="200" />
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="150" />
 		<set name="activateRate" val="60" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
@@ -1714,13 +1799,22 @@
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="BlockControl" />
-			<effect name="Fear">
+			<effect name="Fear" />
+			<effect name="Debuff">
 				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param minDamage="1" />
+				<param chance="100" />
+				<param skillId="1703" skillLevel="1" /> <!-- Cancel Fear -->
+				<param targetType="ONE" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11057" levels="9" name="Magical Evasion">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby enemies with 133 Power added to M. Atk., inflicting Stun and canceling their targets. Teleports you to the back. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -709 -709 -709 -709 -709 </table>
 		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
@@ -1731,11 +1825,12 @@
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="150" />
 		<set name="activateRate" val="150" />
 		<set name="basicProperty" val="NONE" />
 		<set name="flyCourse" val="0" /> <!-- Back -->
-		<set name="flyRadius" val="400" />
+		<set name="flyRadius" val="600" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
@@ -1754,9 +1849,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="BlockActions" />
-			<effect name="TargetCancel">
-				<param chance="40" /> <!-- Custom -->
-			</effect>
+			<effect name="TargetCancel" />
 		</for>
 		<selfEffects>
 			<effect name="Blink" />
@@ -2182,7 +2275,7 @@
 			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_EARTH,9" />
-			</effect>	
+			</effect>
 		</for>
 	</skill>
 	<skill id="11080" levels="3" name="Decrease Earth Resistance">
@@ -2259,7 +2352,7 @@
 			<effect name="TriggerSkillBySkill">
 				<param castSkillId="11018" /> <!-- Elemental Crash (Fire) -->
 				<param chance="30" />
-				<param skillId="11087" skillLevel="1" /> <!-- Elemental Crash (Fire) -->
+				<param skillId="11087" skillLevel="1" skillLevelScaleTo="3" /> <!-- Elemental Crash (Fire) -->
 				<param targetType="ONE" />
 			</effect>
 		</for>
@@ -2277,7 +2370,7 @@
 			<effect name="TriggerSkillBySkill">
 				<param castSkillId="11019" /> <!-- Elemental Crash (Water) -->
 				<param chance="99" />
-				<param skillId="11088" skillLevel="1" /> <!-- Elemental Crash (Water) -->
+				<param skillId="11088" skillLevel="1" skillLevelScaleTo="3" /> <!-- Elemental Crash (Water) -->
 				<param targetType="ONE" />
 			</effect>
 		</for>
@@ -2295,7 +2388,7 @@
 			<effect name="TriggerSkillBySkill">
 				<param castSkillId="11020" /> <!-- Elemental Crash (Wind) -->
 				<param chance="50" />
-				<param skillId="11089" skillLevel="1" /> <!-- Elemental Crash (Wind) -->
+				<param skillId="11089" skillLevel="1" skillLevelScaleTo="3" /> <!-- Elemental Crash (Wind) -->
 				<param targetType="ONE" />
 			</effect>
 		</for>
@@ -2313,7 +2406,7 @@
 			<effect name="TriggerSkillBySkill">
 				<param castSkillId="11021" /> <!-- Elemental Crash (Earth) -->
 				<param chance="40" />
-				<param skillId="11090" skillLevel="1" /> <!-- Elemental Crash (Earth) -->
+				<param skillId="11090" skillLevel="1" skillLevelScaleTo="3" /> <!-- Elemental Crash (Earth) -->
 				<param targetType="ONE" />
 			</effect>
 		</for>
@@ -2331,7 +2424,7 @@
 			<effect name="TriggerSkillBySkill">
 				<param castSkillId="11022" /> <!-- Elemental Crash (4 Elements) -->
 				<param chance="30" />
-				<param skillId="11091" skillLevel="1" /> <!-- Elemental Crash (4 Elements) -->
+				<param skillId="11091" skillLevel="1" skillLevelScaleTo="3" /> <!-- Elemental Crash (4 Elements) -->
 				<param targetType="ONE" />
 			</effect>
 		</for>
