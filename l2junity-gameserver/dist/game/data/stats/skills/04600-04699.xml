@@ -237,6 +237,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="affectRange" val="200" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -473,6 +474,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="affectRange" val="200" />
 		<set name="trait" val="BLEED" />
 		<for>
 			<effect name="DamOverTime" ticks="3">
@@ -605,6 +607,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
@@ -656,6 +659,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="2" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="HpDrain">
@@ -1163,6 +1167,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="2" />
+		<set name="affectRange" val="200" />
 		<set name="trait" val="SLEEP" />
 		<for>
 			<effect name="BlockActions" />
@@ -2573,6 +2578,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="4698" levels="12" name="Regeneration">

@@ -95,7 +95,7 @@
 	<skill id="23308" levels="1" name="Totem's Energy - Body">
 		<!-- Increases HP Recovery Bonus by 30% and decreases damage from the topography by 80% through the mysterious totem's energy. The energy disappears when the totem becomes out of range. -->
 		<set name="abnormalTime" val="300" />
-		<set name="affectRange" val="200" />
+		<set name="affectRange" val="400" />
 		<set name="blockedInOlympiad" val="false" />
 		<set name="icon" val="BranchSys2.icon.totem_of_body" />
 		<set name="operateType" val="A2" />
@@ -117,7 +117,7 @@
 	<skill id="23309" levels="1" name="Totem's Energy - Spirit">
 		<!-- Increases MP Recovery Bonus by 30% through the mysterious totem's energy. The energy disappears when the totem becomes out of range. -->
 		<set name="abnormalTime" val="300" />
-		<set name="affectRange" val="200" />
+		<set name="affectRange" val="400" />
 		<set name="blockedInOlympiad" val="false" />
 		<set name="icon" val="BranchSys2.icon.totem_of_mind" />
 		<set name="operateType" val="A2" />
@@ -138,7 +138,7 @@
 	<skill id="23310" levels="1" name="Totem's Energy - Courage">
 		<!-- Increases P. Def. by 15% through the mysterious totem's energy. The energy disappears when the totem becomes out of range. -->
 		<set name="abnormalTime" val="300" />
-		<set name="affectRange" val="200" />
+		<set name="affectRange" val="400" />
 		<set name="blockedInOlympiad" val="false" />
 		<set name="icon" val="BranchSys2.icon.totem_of_bravery" />
 		<set name="operateType" val="A2" />
@@ -159,7 +159,7 @@
 	<skill id="23311" levels="1" name="Totem's Energy - Fortitude">
 		<!-- Increases M. Def. by 25% through the mysterious totem's energy. The energy disappears when the totem becomes out of range. -->
 		<set name="abnormalTime" val="300" />
-		<set name="affectRange" val="200" />
+		<set name="affectRange" val="400" />
 		<set name="blockedInOlympiad" val="false" />
 		<set name="icon" val="BranchSys2.icon.totem_of_fortitude" />
 		<set name="operateType" val="A2" />
@@ -654,6 +654,7 @@
 		<set name="abnormalTime" val="7" />
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="20" />
+		<set name="affectRange" val="300" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23342" levels="2" name="Norhand's Trace">
@@ -677,6 +678,7 @@
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="7200" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="affectRange" val="300" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23344" levels="5" name="Weakened Shilen's Breath">
@@ -1399,6 +1401,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectRange" val="200" />
 		<set name="reuseDelay" val="12000" />
 	</skill>
 	<skill id="23387" levels="1" name="Jermann">
@@ -1528,6 +1531,7 @@
 		<set name="magicLvl" val="97" />
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="50" />
+		<set name="affectRange" val="150" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23394" levels="1" name="Jermann - Grave of the Sword">
@@ -1543,6 +1547,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="91" />
+		<set name="affectRange" val="300" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="23395" levels="1" name="Jermann - Death' Calling">
@@ -1621,6 +1626,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="7" />
 		<set name="trait" val="POISON" />
+		<set name="affectRange" val="250" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="23399" levels="3" name="Freezing Cold">
@@ -1639,6 +1645,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="12" />
 		<set name="trait" val="POISON" />
+		<set name="affectRange" val="250" />
 		<set name="isDebuff" val="true" />
 	</skill>
 </list>

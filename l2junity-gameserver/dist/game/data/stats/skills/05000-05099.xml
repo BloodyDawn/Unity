@@ -53,6 +53,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="affectRange" val="900" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -448,8 +449,8 @@
 		<!-- Confirmed CT2.5 -->
 		<!-- Frintezza Skills -->
 		<table name="#power"> 607 754 </table>
-		<table name="#skillRadius"> 700 1000 </table>
-		<set name="affectRange" val="#skillRadius" />
+		<table name="#affectRange"> 700 1000 </table>
+		<set name="affectRange" val="#affectRange" />
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-100" />
 		<set name="attributeType" val="DARK" />
@@ -526,6 +527,7 @@
 		<set name="effectRange" val="900" />
 		<set name="attributeType" val="HOLY" />
 		<set name="attributeValue" val="20" />
+		<set name="affectRange" val="150" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5022" levels="12" name="Decrease Speed">
@@ -700,6 +702,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5038" levels="16" name="Servitor PvP Penalty">
@@ -896,6 +899,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="affectRange" val="150" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5048" levels="12" name="Burst Shot">
@@ -909,6 +913,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="2000" />
+		<set name="affectRange" val="150" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5049" levels="12" name="Mortal Blow">
@@ -1023,6 +1028,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5055" levels="12" name="Aqua Splash">
@@ -1037,6 +1043,7 @@
 		<set name="effectRange" val="2000" />
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5056" levels="12" name="Hurricane">
@@ -1076,6 +1083,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5058" levels="12" name="Tempest">
@@ -1090,6 +1098,7 @@
 		<set name="effectRange" val="2000" />
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5059" levels="12" name="Rock Strike">
@@ -1117,6 +1126,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="20" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5061" levels="12" name="Earthquake">
@@ -1131,6 +1141,7 @@
 		<set name="effectRange" val="2000" />
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="20" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5062" levels="12" name="Holy Strike">
@@ -1158,6 +1169,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="attributeType" val="HOLY" />
 		<set name="attributeValue" val="20" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5064" levels="12" name="Holy Blast">
@@ -1172,6 +1184,7 @@
 		<set name="effectRange" val="2000" />
 		<set name="attributeType" val="HOLY" />
 		<set name="attributeValue" val="20" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5065" levels="12" name="Unholy Strike">
@@ -1208,6 +1221,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="20" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5067" levels="12" name="Unholy Blast">
@@ -1222,6 +1236,7 @@
 		<set name="effectRange" val="2000" />
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="20" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5068" levels="12" name="Decrease Speed">

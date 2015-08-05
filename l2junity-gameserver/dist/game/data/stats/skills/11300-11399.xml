@@ -28,7 +28,7 @@
 		<!-- Attack nearby enemies with 152 Power added to M. Atk. -->
 		<table name="#power"> 152 154 157 161 165 169 173 177 </table>
 		<set name="icon" val="icon.skill0005" />
-		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="affectRange" val="300" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="70" />
@@ -91,6 +91,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="affectRange" val="1000" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -118,6 +119,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="affectRange" val="1000" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -145,6 +147,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="affectRange" val="1000" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -172,6 +175,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="affectRange" val="1000" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -199,6 +203,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="affectRange" val="1000" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -226,6 +231,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="affectRange" val="1000" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -249,6 +255,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="affectRange" val="1000" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
@@ -278,6 +285,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="affectRange" val="1000" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -365,7 +373,7 @@
 		<!-- Detonates a corpse to inflict damage on nearby enemies. -->
 		<table name="#power"> 1 1 1 </table> <!-- TODO -->
 		<set name="icon" val="icon.skill_transform_debuff" />
-		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA_CORPSE_MOB" />
 		<set name="mpConsume" val="70" />
@@ -448,6 +456,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="affectRange" val="1000" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Heal">

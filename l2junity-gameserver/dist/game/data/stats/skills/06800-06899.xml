@@ -398,6 +398,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="affectRange" val="300" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -421,6 +422,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="15" />
+		<set name="affectRange" val="300" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6820" levels="1" name="P. Def. Enhance">
@@ -439,6 +441,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="affectRange" val="300" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -500,6 +503,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="600" />
 		<set name="magicLvl" val="84" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6825" levels="2" name="Bleed">
@@ -518,6 +522,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="84" />
 		<set name="abnormalLvl" val="9" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6826" levels="1" name="Critical Strike">
@@ -561,6 +566,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="84" />
 		<set name="abnormalLvl" val="3" />
+		<set name="affectRange" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6829" levels="1" name="Vampiric Attack">
@@ -589,6 +595,7 @@
 		<set name="lvlBonusRate" val="2" />
 		<set name="magicLvl" val="84" />
 		<set name="abnormalLvl" val="9" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6831" levels="1" name="Blood Burst">
@@ -599,6 +606,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="600" />
 		<set name="magicLvl" val="84" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6832" levels="1" name="Summon Parasitic Leech">
@@ -628,6 +636,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1200" />
 		<set name="magicLvl" val="84" />
+		<set name="affectRange" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6835" levels="1" name="Summon Skeleton">
@@ -664,6 +673,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="1200" />
 		<set name="magicLvl" val="85" />
+		<set name="affectRange" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6838" levels="1" name="Self-destruction">
@@ -674,6 +684,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="effectRange" val="800" />
 		<set name="magicLvl" val="85" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6839" levels="2" name="Power Attack">
@@ -702,6 +713,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="abnormalLvl" val="1" />
 		<set name="trait" val="PARALYZE" />
+		<set name="affectRange" val="300" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6841" levels="1" name="Summon Subordinate">
@@ -1184,6 +1196,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="affectRange" val="600" />
 		<set name="trait" val="POISON" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -1266,6 +1279,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="affectRange" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1298,6 +1312,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="affectRange" val="1000" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="MagicalAttack">
@@ -1332,7 +1347,7 @@
 	<skill id="6871" levels="1" name="Range Magic Attack">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="affectRange" val="150" />
+		<set name="affectRange" val="200" />
 		<set name="castRange" val="800" />
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="300" />
@@ -1408,7 +1423,7 @@
 	<skill id="6874" levels="1" name="Range Magic Attack">
 		<!-- High Five Skill -->
 		<!-- FIXME: value unconfirmed -->
-		<set name="affectRange" val="300" />
+		<set name="affectRange" val="200" />
 		<set name="effectPoint" val="-10000" />
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="20" />
@@ -1450,6 +1465,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="lvlBonusRate" val="2" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DamOverTime" ticks="1">
@@ -1526,6 +1542,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="affectRange" val="800" />
 		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="BlockActions" />
@@ -1640,6 +1657,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="irreplacableBuff" val="true" />
+		<set name="affectRange" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6884" levels="1" name="Morale Boost">
@@ -1680,6 +1698,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="effectRange" val="2000" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="affectRange" val="1600" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
@@ -1750,6 +1769,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="affectRange" val="300" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1832,6 +1852,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="120" />
+		<set name="affectRange" val="300" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1878,6 +1899,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="120" />
+		<set name="affectRange" val="300" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1924,6 +1946,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="attributeType" val="EARTH" />
 		<set name="attributeValue" val="120" />
+		<set name="affectRange" val="300" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -1947,6 +1970,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
 		<set name="trait" val="SHOCK" />
+		<set name="affectRange" val="150" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6898" levels="1" name="Raid Boss (Lv. 84)">

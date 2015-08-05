@@ -129,7 +129,7 @@
 		<set name="abnormalType" val="POISON" />
 		<set name="activateRate" val="80" />
 		<set name="affectLimit" val="6-12" />
-		<set name="affectRange" val="200" />
+		<set name="affectRange" val="150" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="castRange" val="400" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -176,7 +176,7 @@
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" />
 		<set name="affectLimit" val="6-12" />
-		<set name="affectRange" val="100" />
+		<set name="affectRange" val="200" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="4000" />
@@ -273,7 +273,7 @@
 		<table name="#pvePower"> 5068 5175 5278 5379 5475 5568 </table>
 		<table name="#pvpPower"> 1690 1725 1760 1793 1825 1856 </table>
 		<set name="affectLimit" val="6-12" />
-		<set name="affectRange" val="80" />
+		<set name="affectRange" val="200" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill_transform_s_attack" />
@@ -306,7 +306,7 @@
 		<set name="abnormalType" val="POISON" />
 		<set name="activateRate" val="80" />
 		<set name="affectLimit" val="6-12" />
-		<set name="affectRange" val="100" />
+		<set name="affectRange" val="200" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="attributeType" val="WATER" />
@@ -389,7 +389,7 @@
 		<table name="#mpConsume"> 69 70 70 71 72 72 73 74 74 75 75 </table>
 		<table name="#power"> 469 482 494 505 517 528 539 550 561 571 580 </table>
 		<set name="affectLimit" val="6-12" />
-		<set name="affectRange" val="100" />
+		<set name="affectRange" val="200" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="hitTime" val="1000" />
 		<set name="icon" val="icon.skill_transform_etc" />
@@ -2177,6 +2177,7 @@
 		</for>
 	</skill>
 	<skill id="982" levels="3" name="Combat Aura">
+		<table name="#affectRange"> 300 400 500 </table>
 		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#amount"> 1.03 1.04 1.05 </table>
 		<table name="#magicLvl"> 52 64 70 </table>
@@ -2184,7 +2185,7 @@
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="KNIGHT_AURA" />
-		<set name="affectRange" val="1000" />
+		<set name="affectRange" val="#affectRange" />
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="icon.skill0982" />

@@ -110,6 +110,7 @@
 		<set name="effectRange" val="1400" />
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="40" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5705" levels="1" name="Fire Trap">
@@ -122,6 +123,7 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5706" levels="1" name="Poison">
@@ -202,6 +204,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
+		<set name="affectRange" val="200" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack">
@@ -297,6 +300,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
+		<set name="affectRange" val="600" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="5715" levels="1" name="Electric Flame">
@@ -1100,6 +1104,7 @@
 		<set name="reuseDelay" val="20000" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="affectRange" val="400" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5749" levels="12" name="Thunder Bolt">
@@ -1252,6 +1257,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="affectRange" val="400" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5755" levels="1" name="Presentation - Trap On">
@@ -1262,6 +1268,7 @@
 		<set name="operateType" val="A1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
+		<set name="affectRange" val="400" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5756" levels="1" name="Presentation - Summon Follower">
@@ -1893,6 +1900,7 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="attributeType" val="DARK" />
 		<set name="attributeValue" val="50" />
+		<set name="affectRange" val="600" />
 		<set name="trait" val="BLEED" />
 	</skill>
 </list>
