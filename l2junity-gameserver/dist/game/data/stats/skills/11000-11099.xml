@@ -1895,7 +1895,7 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="300" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="trait" val="PULL" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="basicProperty" val="NONE" />
@@ -2097,7 +2097,7 @@
 			</effect>
 			<effect name="BlockControl" />
 			<effect name="Fear" />
-			<effect name="Debuff">	
+			<effect name="Debuff">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
 			<effect name="DamOverTime" ticks="1">
@@ -2127,19 +2127,27 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
 		<for>
+			<!-- TODO please change/remove this shit effect -->
 			<effect name="VisualBuff">
 				<param skillId="11007" />
 				<param skillId="11008" />
 				<param skillId="11009" />
 				<param skillId="11010" />
 			</effect>
+			<!-- Same here -->
 			<effect name="EffectFlag">
 				<param effectFlag="DOUBLE_CAST" />
+			</effect>
+			<effect name="Buff">
+				<mul stat="mReuse" val="0.95" />
+				<mul stat="MagicalMpConsumeRate" val="0.5" />
+				<sub stat="cancel" val="-10000000" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11072" levels="1" name="Fire - Elemental Spike">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- target's Fire resistance is decreased. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
@@ -2147,14 +2155,17 @@
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkillAttack">
-				<param attackSkillId="11012" /> <!-- Elemental Spike (Fire) -->
-				<param skillId="11077" skillLevel="1" skillLevelScaleTo="3" /> <!-- Decrease Fire Resistance -->
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11012" /> <!-- Elemental Spike (Fire) -->
+				<param chance="99" />
+				<param skillId="11077" skillLevel="1" skillLevelScaleTo="3" /> <!-- Elemental Spike (Fire) -->
+				<param targetType="ONE" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11073" levels="1" name="Water - Elemental Spike">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- target's Water resistance is decreased. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
@@ -2162,14 +2173,17 @@
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkillAttack">
-				<param attackSkillId="11013" /> <!-- Elemental Spike (Water) -->
-				<param skillId="11078" skillLevel="1" skillLevelScaleTo="3" /> <!-- Decrease Water Resistance -->
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11013" /> <!-- Elemental Spike (Water) -->
+				<param chance="99" />
+				<param skillId="11078" skillLevel="1" skillLevelScaleTo="3" /> <!-- Elemental Spike (Water) -->
+				<param targetType="ONE" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11074" levels="1" name="Wind - Elemental Spike">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- target's Wind resistance is decreased. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
@@ -2177,14 +2191,17 @@
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkillAttack">
-				<param attackSkillId="11014" /> <!-- Elemental Spike (Wind) -->
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11014" /> <!-- Elemental Spike (Wind) -->
+				<param chance="99" />
 				<param skillId="11079" skillLevel="1" skillLevelScaleTo="3" /> <!-- Decrease Wind Resistance -->
+				<param targetType="ONE" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11075" levels="1" name="Earth - Elemental Spike">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- target's Earth resistance is decreased. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
@@ -2192,14 +2209,17 @@
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkillAttack">
-				<param attackSkillId="11015" /> <!-- Elemental Spike (Earth) -->
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11015" /> <!-- Elemental Spike (Earth) -->
+				<param chance="99" />
 				<param skillId="11080" skillLevel="1" skillLevelScaleTo="3" /> <!-- Decrease Earth Resistance -->
+				<param targetType="ONE" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11076" levels="1" name="Double Casting - Elemental Spike">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- target's Fire/Water/Wind/Earth resistances are decreased. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
@@ -2207,9 +2227,11 @@
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkillAttack">
-				<param attackSkillId="11016" /> <!-- Elemental Spike (4 Elements) -->
-				<param skillId="11081" skillLevel="1" skillLevelScaleTo="3" /> <!-- Decrease Fire/Water/Wind/Earth Resistances -->
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11016" /> <!-- Elemental Spike (4 Elements) -->
+				<param chance="99" />
+				<param skillId="11081" skillLevel="1" skillLevelScaleTo="3" /> <!-- Decrease Fire/Water/Wind/Earth Resistance -->
+				<param targetType="ONE" />
 			</effect>
 		</for>
 	</skill>
