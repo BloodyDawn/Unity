@@ -866,8 +866,8 @@
 		<table name="#mpConsumes"> 68 72 84 88 </table>
 		<set name="icon" val="icon.skill11030" />
 		<set name="channelingSkillId" val="11030" />
-		<set name="channelingTickInterval" val="1" />
-		<set name="channelingTickInitialDelay" val="2" />
+		<set name="channelingTickInterval" val="1000" />
+		<set name="channelingTickInitialDelay" val="1200" />
 		<set name="operateType" val="CA1" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1636,8 +1636,8 @@
 		<set name="icon" val="icon.skill11052" />
 		<set name="activateRate" val="100" /> <!-- Guessed -->
 		<set name="basicProperty" val="NONE" />
-		<set name="channelingSkillId" val="11054" /> <!-- Yoke Status -->
-		<set name="channelingTickInterval" val="10" /> <!-- No channeling ticks. If you end channel, debuff is canceled. -->
+		<set name="channelingSkillId" val="11182" /> <!-- Yoke Status -->
+		<set name="channelingTickInterval" val="10000" /> <!-- No channeling ticks. If you end channel, debuff is canceled. -->
 		<set name="operateType" val="CA2" />
 		<set name="targetType" val="SELF" />
 		<set name="trait" val="AIRBIND" />
@@ -1653,6 +1653,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelayGroup" val="11052" />
 		<set name="affectRange" val="150" />
+		<set name="channelingTickInitialDelay" val="1200" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11053" levels="4" name="Mass Hell Binding">
@@ -1663,8 +1664,8 @@
 		<set name="icon" val="icon.skill1042" />
 		<set name="activateRate" val="100" /> <!-- Guessed -->
 		<set name="basicProperty" val="NONE" />
-		<set name="channelingSkillId" val="11054" /> <!-- Yoke Status -->
-		<set name="channelingTickInterval" val="10" /> <!-- No channeling ticks. If you end channel, debuff is canceled. -->
+		<set name="channelingSkillId" val="11182" /> <!-- Yoke Status -->
+		<set name="channelingTickInterval" val="10000" /> <!-- No channeling ticks. If you end channel, debuff is canceled. -->
 		<set name="operateType" val="CA2" />
 		<set name="targetType" val="SELF" />
 		<set name="trait" val="AIRBIND" />
@@ -1680,6 +1681,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelayGroup" val="11052" />
 		<set name="affectRange" val="150" />
+		<set name="channelingTickInitialDelay" val="1200" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11054" levels="1" name="Yoke Status">

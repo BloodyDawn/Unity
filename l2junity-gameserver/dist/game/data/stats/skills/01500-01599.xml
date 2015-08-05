@@ -1414,7 +1414,7 @@
 		<!-- Confirmed CT2.5 -->
 		<!-- Kamael Final Form Skill -->
 		<set name="castRange" val="900" />
-		<set name="channelingTickInterval" val="2" />
+		<set name="channelingTickInterval" val="2000" />
 		<set name="effectPoint" val="-676" />
 		<set name="effectRange" val="1000" />
 		<set name="attributeType" val="DARK" />
@@ -1431,6 +1431,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="4" />
+		<set name="channelingTickInitialDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<channelingEffects>
 			<effect name="MagicalAttack">
