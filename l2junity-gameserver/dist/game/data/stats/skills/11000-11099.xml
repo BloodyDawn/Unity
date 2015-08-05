@@ -1856,13 +1856,13 @@
 		</selfEffects>
 	</skill>
 	<skill id="11058" levels="6" name="Shadow Snare">
+		<!-- Glory Days confirmed -->
 		<!-- Pulls enemies in a selected area to the center. -->
 		<table name="#effectPoint"> -700 -705 -709 -700 -705 -709 </table>
 		<table name="#magicLvl"> 91 94 97 101 103 105 </table>
 		<table name="#mpConsumes"> 238 252 267 281 295 310 </table>
 		<table name="#npcId"> 13323 13324 13325 13458 13459 13460 </table>
 		<set name="icon" val="icon.skill11058" />
-		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="GROUND" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1884,60 +1884,71 @@
 		</for>
 	</skill>
 	<skill id="11059" levels="4" name="Shadow Snare Zone"> <!-- Client Levels only 1 and 4 -->
+		<!-- Glory Days confirmed -->
 		<!-- Pulls nearby enemies to the center. -->
 		<table name="#effectPoint"> -709 0 0 -709 </table>
 		<set name="icon" val="icon.skill1469" />
 		<set name="abnormalTime" val="1" />
+		<set name="abnormalLvl" val="5" />
+		<set name="abnormalType" val="STUN" />
 		<set name="activateRate" val="100" />
-		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="300" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="SELF" />
 		<set name="trait" val="PULL" />
 		<set name="effectPoint" val="#effectPoint" />
-		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="97" />
-		<set name="abnormalLvl" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PullBack">
 				<param speed="600" />
 			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11062" levels="4" name="Air Rider">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- For 15 seconds, increases Speed by 60. The effect disappears when attacked. -->
 		<table name="#effectPoint"> 692 700 707 707 </table>
 		<table name="#magicLvl"> 87 91 95 99 </table>
 		<table name="#mpConsumes"> 7 8 9 9 </table>
 		<table name="#runSpd"> 60 70 80 90 </table>
 		<set name="icon" val="icon.skill11062" />
+		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="SPEED_UP_SPECIAL" />
 		<set name="operateType" val="A2" />
-		<set name="removedOnDamage" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="200" />
 		<set name="effectPoint" val="#effectPoint" />
-		<set name="abnormalType" val="SPEED_UP_SPECIAL" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
-		<set name="abnormalLvl" val="2" />
 		<set name="reuseDelay" val="30000" />
 		<for>
 			<effect name="Buff">
 				<add stat="runSpd" val="#runSpd" />
 			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param minDamage="1" chance="100" />
+				<param skillId="11063" skillLevel="1" /> <!-- Floating Blow -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11063" levels="1" name="Floating Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill01702" />
 		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="709" />
@@ -1945,9 +1956,16 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="97" />
 		<set name="targetType" val="SELF" />
+		<set name="isMagic" val="2" />
+		<for>
+			<effect name="DispelBySlot">
+				<param dispel="SPEED_UP_SPECIAL,9" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11064" levels="11" name="Ultimate Body To Mind">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Sacrifices 384 HP to recover 400 MP. -->
 		<table name="#effectPoint"> 692 700 707 707 707 707 707 707 707 707 707 </table>
 		<table name="#hpConsumes"> 384 388 396 404 412 420 428 436 448 456 464 </table>
@@ -1972,44 +1990,45 @@
 	</skill>
 	<skill id="11065" levels="1" name="Arcane Barrier">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- For 20 seconds, decreases incoming damage - 90% and defends against the rest by consuming MP. When attacked, reflects 10% of incoming damage. Ineffective when MP drops to 0. -->
 		<set name="icon" val="icon.skill11065" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="20" />
-		<set name="abnormalVisualEffect" val="MP_SHIELD" /> <!-- Custom -->
+		<set name="abnormalType" val="MP_SHIELD" />
+		<set name="abnormalVisualEffect" val="MP_SHIELD" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="70" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="120000" />
 		<set name="effectPoint" val="707" />
-		<set name="abnormalType" val="MP_SHIELD" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
 		<set name="isMagic" val="1" />
+		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Buff">
-				<!-- TODO Check me : decreases incoming damage - 90% and defends against the rest by consuming MP -->
 				<add stat="manaShield" val="90" />
 				<add stat="reflectDam" val="10" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11066" levels="4" name="Unleash Hell">
-		<!-- TODO: looks like skill does 0 damage every time to air binded targets -->
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts magical damage on target with 620 Power. Casts Fear and Burn and decreases target's Speed by 40%. Over-hit. -->
 		<table name="#magicLvl"> 95 101 103 105 </table>
 		<table name="#mpConsumes"> 1655 1672 1689 1706 </table>
 		<table name="#power"> 620 677 693 709 </table>
 		<set name="icon" val="icon.skill11066" />
 		<set name="abnormalLvl" val="7" />
-		<set name="abnormalTime" val="5" /> <!-- Guessed -->
+		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
-		<set name="activateRate" val="100" /> <!-- Guessed -->
+		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
@@ -2029,26 +2048,32 @@
 		<for>
 			<effect name="MagicalAttack">
 				<param power="#power" />
+				<param overHit="true" />
 			</effect>
 			<effect name="BlockControl" />
-			<effect name="Fear">
-				<mul stat="runSpd" val="0.60" />
+			<effect name="Fear" />
+			<effect name="Debuff">
+				<mul stat="runSpd" val="0.6" />
 			</effect>
-			<!-- TODO: Cast Burn -->
+			<effect name="DamOverTime" ticks="1">
+				<param power="200" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11067" levels="4" name="Death Mass Unleash Hell">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts magical damage on target and nearby enemies with 620 Power. Casts Fear and Burn and decreases target's Speed by 20%. Over-hit. -->
 		<table name="#magicLvl"> 95 101 103 105 </table>
 		<table name="#mpConsumes"> 1767 1783 1799 1815 </table>
 		<table name="#power"> 620 641 655 669 </table>
 		<set name="abnormalLvl" val="7" />
-		<set name="abnormalTime" val="5" /> <!-- Guessed -->
+		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="TURN_FLEE" />
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
-		<set name="activateRate" val="100" /> <!-- Guessed -->
-		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="activateRate" val="100" />
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="150" />
 		<set name="basicProperty" val="NONE" />
 		<set name="icon" val="icon.skill11067" />
 		<set name="operateType" val="A2" />
@@ -2071,10 +2096,13 @@
 				<param power="#power" />
 			</effect>
 			<effect name="BlockControl" />
-			<effect name="Fear">
-				<mul stat="runSpd" val="0.60" />
+			<effect name="Fear" />
+			<effect name="Debuff">	
+				<mul stat="runSpd" val="0.8" />
 			</effect>
-			<!-- TODO: Cast Burn -->
+			<effect name="DamOverTime" ticks="1">
+				<param power="160" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11068" levels="4" name="Double Casting">
