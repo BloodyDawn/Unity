@@ -2094,6 +2094,7 @@
 	</skill>
 	<skill id="11077" levels="3" name="Decrease Fire Resistance">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Decreases Fire resistance by 20 for 3 seconds. -->
 		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#fireRes"> 20 50 100 </table>
@@ -2105,7 +2106,7 @@
 		<set name="attributeType" val="FIRE" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
 		<set name="abnormalType" val="MULTI_DEBUFF_FIRE" />
 		<set name="rideState" val="NONE" />
@@ -2117,11 +2118,14 @@
 			<effect name="Debuff">
 				<sub stat="fireRes" val="#fireRes" />
 			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11078" levels="3" name="Decrease Water Resistance">
-		<table name="#abnormalTime"> 3 3 10 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Decreases Water resistance by 20 for 3 seconds. -->
 		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#waterRes"> 20 50 100 </table>
@@ -2133,7 +2137,7 @@
 		<set name="attributeType" val="WATER" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
 		<set name="abnormalType" val="MULTI_DEBUFF_WATER" />
 		<set name="rideState" val="NONE" />
@@ -2145,11 +2149,14 @@
 			<effect name="Debuff">
 				<sub stat="waterRes" val="#waterRes" />
 			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11079" levels="3" name="Decrease Wind Resistance">
-		<table name="#abnormalTime"> 3 3 10 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Decreases Wind resistance by 20 for 3 seconds. -->
 		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#windRes"> 20 50 100 </table>
@@ -2161,7 +2168,7 @@
 		<set name="attributeType" val="WIND" />
 		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
 		<set name="abnormalType" val="MULTI_DEBUFF_WIND" />
 		<set name="rideState" val="NONE" />
@@ -2173,25 +2180,26 @@
 			<effect name="Debuff">
 				<sub stat="windRes" val="#windRes" />
 			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_HOLY,9;MULTI_DEBUFF_EARTH,9" />
+			</effect>	
 		</for>
 	</skill>
 	<skill id="11080" levels="3" name="Decrease Earth Resistance">
-		<table name="#abnormalTime"> 3 3 10 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Decreases Earth resistance by 20 for 3 seconds. -->
 		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#earthRes"> 20 50 100 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="#abnormalTime" />
+		<set name="abnormalType" val="MULTI_DEBUFF_EARTH" />
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
-		<set name="attributeType" val="EARTH" />
-		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
-		<set name="abnormalType" val="MULTI_DEBUFF_EARTH" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
@@ -2201,23 +2209,26 @@
 			<effect name="Debuff">
 				<sub stat="earthRes" val="#earthRes" />
 			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_HOLY,9" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11081" levels="3" name="Decrease Fire/Water/Wind/Earth Resistances">
-		<table name="#abnormalTime"> 3 3 10 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Decreases Fire/Water/Wind/Earth resistances by 20 for 3 seconds. -->
 		<table name="#abnormalTime"> 3 3 10 </table>
 		<table name="#allRes"> 20 50 100 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="#abnormalTime" />
+		<set name="abnormalType" val="MULTI_DEBUFF_HOLY" />
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
-		<set name="abnormalType" val="MULTI_DEBUFF_HOLY" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
@@ -2230,10 +2241,14 @@
 				<sub stat="windRes" val="#allRes" />
 				<sub stat="earthRes" val="#allRes" />
 			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="MULTI_DEBUFF_FIRE,9;MULTI_DEBUFF_WATER,9;MULTI_DEBUFF_WIND,9;MULTI_DEBUFF_EARTH,9" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11082" levels="1" name="Fire - Elemental Crash">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- target is inflicted with Fear. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
@@ -2241,14 +2256,17 @@
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkillAttack">
-				<param attackSkillId="11018" /> <!-- Elemental Crash (Fire) -->
-				<param skillId="11087" skillLevel="1" chance="20" /> <!-- Elemental Crash (Fire) -->
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11018" /> <!-- Elemental Crash (Fire) -->
+				<param chance="30" />
+				<param skillId="11087" skillLevel="1" /> <!-- Elemental Crash (Fire) -->
+				<param targetType="ONE" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11083" levels="1" name="Water - Elemental Crash">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- target's Speed is reduced. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
@@ -2256,14 +2274,17 @@
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkillAttack">
-				<param attackSkillId="11019" /> <!-- Elemental Crash (Water) -->
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11019" /> <!-- Elemental Crash (Water) -->
+				<param chance="99" />
 				<param skillId="11088" skillLevel="1" /> <!-- Elemental Crash (Water) -->
+				<param targetType="ONE" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11084" levels="1" name="Wind - Elemental Crash">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- target is Knocked Back. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
@@ -2271,14 +2292,17 @@
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkillAttack">
-				<param attackSkillId="11020" /> <!-- Elemental Crash (Wind) -->
-				<param skillId="11089" skillLevel="1" chance="30" /> <!-- Elemental Crash (Wind) -->
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11020" /> <!-- Elemental Crash (Wind) -->
+				<param chance="50" />
+				<param skillId="11089" skillLevel="1" /> <!-- Elemental Crash (Wind) -->
+				<param targetType="ONE" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11085" levels="1" name="Earth - Elemental Crash">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- target is inflicted with Hold. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
@@ -2286,14 +2310,17 @@
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkillAttack">
-				<param attackSkillId="11021" /> <!-- Elemental Crash (Earth) -->
-				<param skillId="11090" skillLevel="1" chance="20" /> <!-- Elemental Crash (Earth) -->
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11021" /> <!-- Elemental Crash (Earth) -->
+				<param chance="40" />
+				<param skillId="11090" skillLevel="1" /> <!-- Elemental Crash (Earth) -->
+				<param targetType="ONE" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11086" levels="1" name="Double Casting - Elemental Crash">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- target is inflicted with Stun. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
@@ -2301,16 +2328,19 @@
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkillAttack">
-				<param attackSkillId="11022" /> <!-- Elemental Crash (4 Elements) -->
-				<param skillId="11091" skillLevel="1" chance="20" /> <!-- Elemental Crash (4 Elements) -->
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11022" /> <!-- Elemental Crash (4 Elements) -->
+				<param chance="30" />
+				<param skillId="11091" skillLevel="1" /> <!-- Elemental Crash (4 Elements) -->
+				<param targetType="ONE" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11087" levels="3" name="Elemental Crash (Fire)">
-		<table name="#abnormalTime"> 3 3 5 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts fear and hold on target. -->
+		<table name="#abnormalTime"> 3 3 5 </table>
 		<set name="icon" val="icon.skill11017" />
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="#abnormalTime" />
@@ -2318,10 +2348,8 @@
 		<set name="abnormalVisualEffect" val="TURN_FLEE" />
 		<set name="activateRate" val="50" />
 		<set name="basicProperty" val="NONE" />
-		<set name="attributeType" val="FIRE" />
-		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="SELF" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="isMagic" val="4" />
 		<set name="rideState" val="NONE" />
@@ -2333,37 +2361,48 @@
 			<effect name="BlockControl" />
 			<effect name="Fear" />
 			<effect name="Root" />
+			<effect name="Debuff">
+				<mul stat="runSpd" val="0.7" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param minDamage="1" />
+				<param chance="100" />
+				<param skillId="1703" skillLevel="1" /> <!-- Cancel Fear -->
+				<param targetType="ONE" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11088" levels="3" name="Elemental Crash (Water)">
-		<table name="#abnormalTime"> 3 3 5 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Decreases target's Speed. -->
-		<set name="icon" val="icon.skill11017" />
+		<table name="#abnormalTime"> 3 3 5 </table>
+		<table name="#runSpd"> 0.6 0.4 0.2 </table>
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="#abnormalTime" />
+		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="icon" val="icon.skill11017" />
 		<set name="activateRate" val="99" />
 		<set name="basicProperty" val="NONE" />
-		<set name="attributeType" val="WATER" />
-		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
-		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="5" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.60" />
+				<mul stat="runSpd" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11089" levels="3" name="Elemental Crash (Wind)">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Knock Back target. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="abnormalLvl" val="5" />
@@ -2372,10 +2411,8 @@
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="activateRate" val="99" />
 		<set name="basicProperty" val="NONE" />
-		<set name="attributeType" val="WIND" />
-		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="SELF" />
 		<set name="trait" val="KNOCKDOWN" />
 		<set name="isMagic" val="4" />
 		<set name="rideState" val="NONE" />
@@ -2390,9 +2427,10 @@
 		</for>
 	</skill>
 	<skill id="11090" levels="3" name="Elemental Crash (Earth)">
-		<table name="#abnormalTime"> 3 3 5 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts hold on target. -->
+		<table name="#abnormalTime"> 3 3 5 </table>
 		<set name="icon" val="icon.skill11017" />
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="#abnormalTime" />
@@ -2400,10 +2438,8 @@
 		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="basicProperty" val="NONE" />
 		<set name="activateRate" val="80" />
-		<set name="attributeType" val="EARTH" />
-		<set name="attributeValue" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="SELF" />
 		<set name="trait" val="HOLD" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
@@ -2411,24 +2447,24 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
-		<set name="trait" val="HOLD" />
 		<for>
 			<effect name="Root" />
 		</for>
 	</skill>
 	<skill id="11091" levels="3" name="Elemental Crash (4 Elements)">
-		<table name="#abnormalTime"> 3 3 5 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts stun on target. -->
+		<table name="#abnormalTime"> 3 3 5 </table>
 		<set name="icon" val="icon.skill11017" />
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="99" />
-		<set name="basicProperty" val="NONE" /> <!-- Custom -->
+		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="SELF" />
 		<set name="trait" val="SHOCK" />
 		<set name="isMagic" val="4" />
 		<set name="rideState" val="NONE" />
@@ -2441,33 +2477,46 @@
 		</for>
 	</skill>
 	<skill id="11092" levels="3" name="Damaged Area">
-		<table name="#abnormalTime"> 3 3 5 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Momentarily incurs damage. All speeds are decreased. -->
+		<table name="#abnormalTime"> 3 3 5 </table>
+		<table name="#runSpd"> 0.6 0.4 0.2 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="#abnormalTime" />
+		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="affectRange" val="300" />
+		<set name="affectLimit" val="5-12" />
 		<set name="icon" val="icon.skill11032" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-711" />
-		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="99" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="139" />
+				<param overHit="true" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11093" levels="1" name="Crystal Form">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Cancels Poison/Bleed/Hold/Stun effect. Becomes invincible for 10 seconds and rapidly recovers HP and MP. -->
 		<set name="icon" val="icon.skill11093" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
-		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
+		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
 		<set name="canCastWhileDisabled" val="true" />
 		<set name="removedOnAnyActionExceptMove" val="true" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
@@ -2483,18 +2532,25 @@
 		<for>
 			<effect name="Invincible" />
 			<effect name="HealOverTime" ticks="1">
-				<param power="150" /> <!-- Guessed -->
+				<param power="266" />
 			</effect>
 			<effect name="ManaHealOverTime" ticks="1">
-				<param power="150" /> <!-- Guessed -->
+				<param power="74" />
 			</effect>
-			<effect name="DispelBySlotProbability">
-				<param dispel="POISON;BLEEDING;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN" rate="100" />
+			<effect name="DispelBySlot">
+				<param dispel="POISON,9;BLEEDING,9;ROOT_MAGICALLY,9;ROOT_PHYSICALLY,9;STUN,9" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+				<param POISON="100" />
+				<param BLEED="100" />
+				<param SHOCK="100" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11094" levels="6" name="Magical Charge">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby enemies with 133 Power added to M. Atk., inflicting Stun and canceling their targets. Teleports you to the front. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -709 -709 -709 -709 -709 </table>
 		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
@@ -2507,7 +2563,8 @@
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="150" />
 		<set name="affectRange" val="150" />
-		<set name="basicProperty" val="NONE" /> <!-- Custom -->
+		<set name="affectLimit" val="6-12" />
+		<set name="basicProperty" val="NONE" />
 		<set name="flyCourse" val="180" /> <!-- Front -->
 		<set name="flyRadius" val="400" />
 		<set name="operateType" val="A2" />
@@ -2528,9 +2585,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="BlockActions" />
-			<effect name="TargetCancel">
-				<param chance="40" /> <!-- Custom -->
-			</effect>
+			<effect name="TargetCancel" />
 		</for>
 		<selfEffects>
 			<effect name="Blink" />
@@ -2538,13 +2593,14 @@
 	</skill>
 	<skill id="11095" levels="1" name="Devil's Sway">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Resets the duration of target's paralysis, hold, silence, sleep, shock, fear, petrification, and disarm. -->
 		<set name="icon" val="icon.skill11535" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="190" />
 		<set name="castRange" val="1100" />
-		<set name="effectRange" val="1100" />
+		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="-692" />
@@ -2554,7 +2610,7 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="ResetDebuff">
-				<param slot="PARALYZE;ROOT_MAGICALLY;ROOT_PHYSICALLY;SILENCE;SILENCE_ALL;SILENCE_PHYSICAL;SLEEP;STUN;TURN_FLEE;TURN_STONE;DISARM" />
+				<param slot="CHANGEBODY;DISARM;PARALYZE;ROOT_MAGICALLY;SILENCE;SLEEP;STUN;TURN_FLEE;TURN_STONE" />
 			</effect>
 		</for>
 	</skill>

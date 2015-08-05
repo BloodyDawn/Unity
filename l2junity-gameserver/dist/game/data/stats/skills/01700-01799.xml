@@ -43,7 +43,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1703" levels="1" name="Cancel Fear">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill01703" />
 		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="1" />
@@ -51,6 +51,12 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="60" />
 		<set name="targetType" val="SELF" />
+		<set name="isMagic" val="2" />
+		<for>
+			<effect name="DispelBySlot">
+				<param dispel="TURN_FLEE,9" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1704" levels="1" name="Aggression Aura">
 		<!-- AUTO GENERATED SKILL -->
