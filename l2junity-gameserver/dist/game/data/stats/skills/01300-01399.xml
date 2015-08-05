@@ -320,6 +320,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="canBeDispelled" val="false" />
 		<set name="targetType" val="SELF" />
 		<!-- TODO: Missing condition for "op_fishing_cast" -->
 		<cond msgId="113" addName="1">
@@ -338,6 +339,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="canBeDispelled" val="false" />
 		<set name="targetType" val="SELF" />
 		<!-- TODO: Missing condition for "op_fishing_pumping" -->
 		<cond msgId="113" addName="1">
@@ -356,6 +358,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
+		<set name="canBeDispelled" val="false" />
 		<set name="targetType" val="SELF" />
 		<!-- TODO: Missing condition for "op_fishing_reeling" -->
 		<cond msgId="113" addName="1">
@@ -368,6 +371,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="canBeDispelled" val="false" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -464,6 +468,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="canBeDispelled" val="false" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="NoblesseBless" />
@@ -486,6 +491,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="canBeDispelled" val="false" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="129">
 			<and>
@@ -520,6 +526,7 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
+		<set name="canBeDispelled" val="false" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -548,6 +555,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="canBeDispelled" val="false" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -591,6 +599,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="canBeDispelled" val="false" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="113" addName="1">
 			<and>
@@ -1911,6 +1920,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="canBeDispelled" val="false" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1925,6 +1935,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="canBeDispelled" val="false" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1939,6 +1950,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="canBeDispelled" val="false" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1954,6 +1966,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="canBeDispelled" val="false" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -1969,6 +1982,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
+		<set name="canBeDispelled" val="false" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -2013,6 +2027,7 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="specialLevel" val="-1" />
 		<set name="hitCancelTime" val="2" />
+		<set name="canBeDispelled" val="false" />
 		<set name="targetType" val="CLAN" />
 		<for>
 			<effect name="Buff">
