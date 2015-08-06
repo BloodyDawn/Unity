@@ -26,6 +26,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Hide effect implementation.
@@ -37,7 +38,32 @@ public final class Hide extends AbstractEffect
 	{
 		super(attachCond, applyCond, set, params);
 	}
-	
+
+	@Override
+	public void onStart(Creature effector, Creature effected, Skill skill)
+	{
+		if (effected.isPlayer())
+		{
+			effected.setInvisible(true);
+
+			if ((effected.getAI().getNextIntention() != null) && (effected.getAI().getNextIntention().getCtrlIntention() == CtrlIntention.AI_INTENTION_ATTACK))
+			{
+				effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+			}
+
+			World.getInstance().forEachVisibleObject(effected, Creature.class, target ->
+			{
+				if ((target.getTarget() == effected))
+				{
+					target.setTarget(null);
+					target.abortAttack();
+					target.abortCast();
+					target.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+				}
+			});
+		}
+	}
+
 	@Override
 	public void onExit(BuffInfo info)
 	{
@@ -48,32 +74,6 @@ public final class Hide extends AbstractEffect
 			{
 				activeChar.setInvisible(false);
 			}
-		}
-	}
-	
-	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (info.getEffected().isPlayer())
-		{
-			PlayerInstance activeChar = info.getEffected().getActingPlayer();
-			activeChar.setInvisible(true);
-			
-			if ((activeChar.getAI().getNextIntention() != null) && (activeChar.getAI().getNextIntention().getCtrlIntention() == CtrlIntention.AI_INTENTION_ATTACK))
-			{
-				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			}
-			
-			World.getInstance().forEachVisibleObject(activeChar, Creature.class, target ->
-			{
-				if ((target.getTarget() == activeChar))
-				{
-					target.setTarget(null);
-					target.abortAttack();
-					target.abortCast();
-					target.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-				}
-			});
 		}
 	}
 }

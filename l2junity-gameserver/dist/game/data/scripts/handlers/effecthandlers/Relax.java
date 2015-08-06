@@ -20,11 +20,13 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
@@ -52,7 +54,20 @@ public final class Relax extends AbstractEffect
 	{
 		return L2EffectType.RELAXING;
 	}
-	
+
+	@Override
+	public void onStart(Creature effector, Creature effected, Skill skill)
+	{
+		if (effected.isPlayer())
+		{
+			effected.getActingPlayer().sitDown(false);
+		}
+		else
+		{
+			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_REST);
+		}
+	}
+
 	@Override
 	public boolean onActionTime(BuffInfo info)
 	{
@@ -91,18 +106,5 @@ public final class Relax extends AbstractEffect
 		info.getEffected().reduceCurrentMp(manaDam);
 		
 		return info.getSkill().isToggle();
-	}
-	
-	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (info.getEffected().isPlayer())
-		{
-			info.getEffected().getActingPlayer().sitDown(false);
-		}
-		else
-		{
-			info.getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_REST);
-		}
 	}
 }

@@ -20,10 +20,12 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Targeting disable effect implementation. When affected, player will lose target and be unable to target for the duration.
@@ -35,14 +37,14 @@ public final class DisableTargeting extends AbstractEffect
 	{
 		super(attachCond, applyCond, set, params);
 	}
-	
+
 	@Override
-	public void onStart(BuffInfo info)
+	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
-		info.getEffected().setTarget(null);
-		info.getEffected().abortAttack();
-		info.getEffected().abortCast();
-		info.getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, info.getEffector());
+		effected.setTarget(null);
+		effected.abortAttack();
+		effected.abortCast();
+		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 	}
 	
 	@Override

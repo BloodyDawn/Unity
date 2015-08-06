@@ -19,10 +19,12 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.ExRegenMax;
 import org.l2junity.gameserver.network.client.send.StatusUpdate;
 
@@ -39,7 +41,7 @@ public final class HealOverTime extends AbstractEffect
 		
 		_power = params.getDouble("power", 0);
 	}
-	
+
 	@Override
 	public boolean onActionTime(BuffInfo info)
 	{
@@ -70,9 +72,11 @@ public final class HealOverTime extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		if (info.getEffected().isPlayer() && (getTicks() > 0) && (info.getSkill().getAbnormalType() == AbnormalType.HP_RECOVER))
+		final Creature effected = info.getEffected();
+		final Skill skill = info.getSkill();
+		if (effected.isPlayer() && (getTicks() > 0) && (skill.getAbnormalType() == AbnormalType.HP_RECOVER))
 		{
-			info.getEffected().sendPacket(new ExRegenMax(info.getAbnormalTime(), getTicks(), _power));
+			effected.sendPacket(new ExRegenMax(info.getAbnormalTime(), getTicks(), _power));
 		}
 	}
 }

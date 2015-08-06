@@ -19,6 +19,7 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -28,6 +29,7 @@ import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayableExpChanged;
 import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.ExSpawnEmitter;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -45,7 +47,16 @@ public final class SoulEating extends AbstractEffect
 		super(attachCond, applyCond, set, params);
 		_expNeeded = params.getInt("expNeeded");
 	}
-	
+
+	@Override
+	public void onStart(Creature effector, Creature effected, Skill skill)
+	{
+		if (effected.isPlayer())
+		{
+			effected.addListener(new ConsumerEventListener(effected, EventType.ON_PLAYABLE_EXP_CHANGED, (OnPlayableExpChanged event) -> onExperienceReceived(event.getActiveChar(), (event.getNewExp() - event.getOldExp())), this));
+		}
+	}
+
 	@Override
 	public void onExit(BuffInfo info)
 	{
@@ -75,15 +86,6 @@ public final class SoulEating extends AbstractEffect
 				final Npc npc = (Npc) playable.getTarget();
 				player.broadcastPacket(new ExSpawnEmitter(player, npc), 500);
 			}
-		}
-	}
-	
-	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (info.getEffected().isPlayer())
-		{
-			info.getEffected().addListener(new ConsumerEventListener(info.getEffected(), EventType.ON_PLAYABLE_EXP_CHANGED, (OnPlayableExpChanged event) -> onExperienceReceived(event.getActiveChar(), (event.getNewExp() - event.getOldExp())), this));
 		}
 	}
 }

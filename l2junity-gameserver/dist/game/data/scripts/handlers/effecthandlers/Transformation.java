@@ -25,9 +25,11 @@ import java.util.List;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.TransformData;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Transformation effect implementation.
@@ -61,19 +63,19 @@ public final class Transformation extends AbstractEffect
 	{
 		return info.getEffected().isPlayer();
 	}
-	
+
+	@Override
+	public void onStart(Creature effector, Creature effected, Skill skill)
+	{
+		if (!_id.isEmpty())
+		{
+			TransformData.getInstance().transformPlayer(_id.get(Rnd.get(_id.size())), effected.getActingPlayer());
+		}
+	}
+
 	@Override
 	public void onExit(BuffInfo info)
 	{
 		info.getEffected().stopTransformation(false);
-	}
-	
-	@Override
-	public void onStart(BuffInfo info)
-	{
-		if (!_id.isEmpty())
-		{
-			TransformData.getInstance().transformPlayer(_id.get(Rnd.get(_id.size())), info.getEffected().getActingPlayer());
-		}
 	}
 }
