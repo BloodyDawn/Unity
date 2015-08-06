@@ -122,7 +122,7 @@ public class MaxHp extends AbstractEffect
 			}
 			case 1: // PER
 			{
-				effected.addStatFunc(new FuncMul(Stats.MAX_HP, StatFunction.MUL.getOrder(), this, _amount, _armorTypeCondition));
+				effected.addStatFunc(new FuncMul(Stats.MAX_HP, StatFunction.MUL.getOrder(), this, (_amount / 100) + 1, _armorTypeCondition));
 				break;
 			}
 		}
