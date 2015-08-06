@@ -2,6 +2,17 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="20800" level="47" type="L2Monster" name="Eva's Seeker">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="40" />
+			<param name="MoveAroundSocial1" value="40" />
+			<param name="MoveAroundSocial2" value="40" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DeBuff" id="4119" level="3" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="4.0172023540063" sp="2" />
@@ -77,6 +88,19 @@
 	</npc>
 	<npc id="20801" level="48" type="L2Monster" name="Theeder Piker">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SetHateGroup" value="attacker_group" />
+			<param name="SetHateGroupRatio" value="20" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4244" level="4" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<equipment rhand="302" /> <!-- Body Slasher -->
@@ -157,6 +181,21 @@
 	</npc>
 	<npc id="20802" level="49" type="L2Monster" name="Theeder Mage">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<skill name="CheckMagic" id="4118" level="4" />
+			<skill name="CheckMagic1" id="4046" level="4" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SleepMagic" id="4046" level="4" />
+			<skill name="DDMagic" id="4039" level="4" />
+			<skill name="CancelMagic" id="4094" level="4" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<equipment rhand="192" /> <!-- Crystal Staff -->
@@ -238,6 +277,19 @@
 	</npc>
 	<npc id="20803" level="50" type="L2Monster" name="Doll Master">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SetHateGroup" value="attacker_group" />
+			<param name="SetHateGroupRatio" value="40" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="Buff" id="4074" level="2" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="8.5308" sp="5" />
@@ -314,6 +366,17 @@
 	</npc>
 	<npc id="20804" level="41" type="L2Monster" name="Crokian Lad">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="115" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="115" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="Buff" id="4074" level="2" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="5128" /> <!-- Crokian Blade -->
@@ -404,6 +467,17 @@
 	</npc>
 	<npc id="20805" level="42" type="L2Monster" name="Dailaon Lad">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4228" level="4" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="5127" /> <!-- Dailaon Knife -->
@@ -492,6 +566,17 @@
 	</npc>
 	<npc id="20806" level="43" type="L2Monster" name="Crokian Lad Warrior">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="115" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="115" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="Buff" id="4030" level="3" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="5128" /> <!-- Crokian Blade -->
@@ -581,6 +666,19 @@
 	</npc>
 	<npc id="20807" level="44" type="L2Monster" name="Farhite Lad">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="W_LongRangeDDMagic" id="4153" level="4" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="4" />
+			<skill name="MagicHeal" id="4065" level="4" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="5131" /> <!-- Monster Only (Parhit Staff) -->
@@ -674,6 +772,17 @@
 	</npc>
 	<npc id="20808" level="45" type="L2Monster" name="Nos Lad">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="81" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="Buff" id="4103" level="2" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="128" /> <!-- Knight's Sword -->
@@ -762,6 +871,19 @@
 	</npc>
 	<npc id="20809" level="60" type="L2Monster" name="Ghost of the Tower">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="W_LongRangeDDMagic" id="4158" level="6" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="6" />
+			<skill name="DeBuff" id="4046" level="6" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="7.2811111111111" sp="6" />
@@ -809,6 +931,22 @@
 	</npc>
 	<npc id="20810" level="60" type="L2Monster" name="Hallate's Seer">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="40" />
+			<param name="MoveAroundSocial1" value="40" />
+			<param name="MoveAroundSocial2" value="40" />
+			<skill name="CheckMagic" id="4046" level="6" />
+			<skill name="CheckMagic1" id="4098" level="6" />
+			<skill name="CheckMagic2" id="4088" level="6" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4002" level="6" />
+			<skill name="CancelMagic" id="4094" level="6" />
+			<skill name="SleepMagic" id="4046" level="6" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="7.2811111111111" sp="6" />
@@ -856,6 +994,19 @@
 	</npc>
 	<npc id="20811" level="61" type="L2Monster" name="Ghastly Warrior">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfRangeDDMagic" id="4033" level="6" />
+			<skill name="SelfBuff" id="4092" level="1" />
+			<skill name="PhysicalSpecial" id="4032" level="6" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="8.3058317656544" sp="7" />
@@ -902,6 +1053,18 @@
 	</npc>
 	<npc id="20812" level="61" type="L2Monster" name="Archer of Despair">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="157" />
+			<param name="MoveAroundSocial1" value="157" />
+			<param name="MoveAroundSocial2" value="157" />
+			<param name="AttackLowLevel" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4040" level="6" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="284" /> <!-- Dark Elven Longbow -->
@@ -948,6 +1111,18 @@
 	</npc>
 	<npc id="20813" level="62" type="L2Monster" name="Crendion">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="57" />
+			<param name="MoveAroundSocial1" value="57" />
+			<param name="MoveAroundSocial2" value="57" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="W_LongRangeDDMagic" id="4157" level="6" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="6" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="7.2096774193548" sp="6" />
@@ -992,6 +1167,19 @@
 	</npc>
 	<npc id="20814" level="62" type="L2Monster" name="Blader of Despair">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="110" />
+			<param name="MoveAroundSocial1" value="110" />
+			<param name="MoveAroundSocial2" value="110" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfRangeDDMagic" id="4033" level="6" />
+			<skill name="SelfBuff" id="4091" level="1" />
+			<skill name="PhysicalSpecial" id="4032" level="6" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="79" /> <!-- Damascus Sword -->
@@ -1039,6 +1227,20 @@
 	</npc>
 	<npc id="20815" level="63" type="L2Monster" name="Hound Dog of Hallate">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="60" />
+			<param name="MoveAroundSocial1" value="60" />
+			<param name="MoveAroundSocial2" value="60" />
+			<param name="SetHateGroup" value="attacker_group" />
+			<param name="SetHateGroupRatio" value="30" />
+			<param name="AttackLowLevel" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfRangeDDMagic" id="4033" level="6" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.9778281683044" sp="9" />
@@ -1081,6 +1283,19 @@
 	</npc>
 	<npc id="20816" level="63" type="L2Monster" name="Hallate's Royal Guard">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfRangeDDMagic" id="4033" level="6" />
+			<skill name="SelfBuff" id="4092" level="1" />
+			<skill name="PhysicalSpecial" id="4067" level="6" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" lhand="945" /> <!-- Skeleton Dagger / Skeleton Buckler -->
@@ -1129,6 +1344,20 @@
 	</npc>
 	<npc id="20817" level="64" type="L2Monster" name="Corrupt Sage">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="114" />
+			<param name="MoveAroundSocial1" value="114" />
+			<param name="MoveAroundSocial2" value="114" />
+			<param name="AttackLowLevel" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="W_LongRangeDDMagic" id="4155" level="6" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="6" />
+			<skill name="DeBuff" id="4118" level="6" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="210" /> <!-- Staff of Evil Spirits -->
@@ -1176,6 +1405,17 @@
 	</npc>
 	<npc id="20818" level="64" type="L2Monster" name="Hallate's Warrior">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="215" />
+			<param name="MoveAroundSocial1" value="215" />
+			<param name="MoveAroundSocial2" value="215" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4032" level="6" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="78" /> <!-- Great Sword -->
@@ -1222,6 +1462,17 @@
 	</npc>
 	<npc id="20819" level="65" type="L2Monster" name="Archer of Abyss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="108" />
+			<param name="MoveAroundSocial1" value="108" />
+			<param name="MoveAroundSocial2" value="108" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="W_FiendArcher" id="4141" level="6" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="7.4994082840237" sp="7" />
@@ -1268,6 +1519,21 @@
 	</npc>
 	<npc id="20820" level="65" type="L2Monster" name="Hallate's Knight">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="74" />
+			<param name="MoveAroundSocial1" value="74" />
+			<param name="MoveAroundSocial2" value="74" />
+			<param name="SetHateGroup" value="attacker_group" />
+			<param name="SetHateGroupRatio" value="35" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfRangeDDMagic" id="4033" level="6" />
+			<skill name="SelfBuff" id="4092" level="1" />
+			<skill name="PhysicalSpecial" id="4032" level="6" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="80" /> <!-- Tallum Blade -->
@@ -1318,6 +1584,20 @@
 	</npc>
 	<npc id="20821" level="66" type="L2Monster" name="Erin Ediunce">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="AttackLowLevel" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4100" level="6" />
+			<skill name="DeBuff" id="4119" level="3" />
+			<skill name="HoldMagic" id="4047" level="6" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="3939" /> <!-- Monster Only (Bensh) -->
@@ -1365,6 +1645,20 @@
 	</npc>
 	<npc id="20822" level="66" type="L2Monster" name="Hallate's Maid">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="60" />
+			<param name="MoveAroundSocial1" value="60" />
+			<param name="MoveAroundSocial2" value="60" />
+			<skill name="CheckMagic" id="4046" level="6" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4039" level="6" />
+			<skill name="CancelMagic" id="4094" level="6" />
+			<skill name="SleepMagic" id="4046" level="6" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="9.8477961432507" sp="10" />
@@ -1414,6 +1708,17 @@
 	</npc>
 	<npc id="20823" level="67" type="L2Monster" name="Platinum Tribe Soldier">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="74" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4033" level="6" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="242" /> <!-- Soulfire Dirk -->
@@ -1457,6 +1762,17 @@
 	</npc>
 	<npc id="20824" level="67" type="L2Monster" name="Hallate's Commander">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4033" level="6" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="1472" /> <!-- Dreadbane -->
@@ -1503,6 +1819,19 @@
 	</npc>
 	<npc id="20825" level="68" type="L2Monster" name="Hallate's Inspector">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="140" />
+			<param name="MoveAroundSocial1" value="140" />
+			<param name="MoveAroundSocial2" value="140" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic1" id="4078" level="6" />
+			<skill name="DDMagic2" id="4069" level="6" />
+			<skill name="DeBuff" id="4118" level="6" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="10.117430795848" sp="11" />
@@ -1552,6 +1881,20 @@
 	</npc>
 	<npc id="20826" level="68" type="L2Monster" name="Platinum Tribe Archer">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="74" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="SetHateGroup" value="attacker_group" />
+			<param name="SetHateGroupRatio" value="25" />
+			<param name="AttackLowLevel" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4040" level="6" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="288" /> <!-- Carnage Bow -->
@@ -1597,6 +1940,19 @@
 	</npc>
 	<npc id="20827" level="69" type="L2Monster" name="Platinum Tribe Warrior">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="110" />
+			<param name="MoveAroundSocial1" value="74" />
+			<param name="MoveAroundSocial2" value="110" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfRangeDDMagic" id="4033" level="6" />
+			<skill name="SelfBuff" id="4091" level="1" />
+			<skill name="PhysicalSpecial" id="4032" level="6" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="148" /> <!-- Sword of Valhalla -->
@@ -1646,6 +2002,22 @@
 	</npc>
 	<npc id="20828" level="70" type="L2Monster" name="Platinum Tribe Shaman">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="74" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="AttackLowLevel" value="1" />
+			<skill name="CheckMagic" id="4046" level="7" />
+			<skill name="CheckMagic1" id="4073" level="7" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4066" level="7" />
+			<skill name="CancelMagic" id="4094" level="7" />
+			<skill name="SleepMagic" id="4046" level="7" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="202" /> <!-- Mace of Underworld -->
@@ -1693,6 +2065,21 @@
 	</npc>
 	<npc id="20829" level="71" type="L2Monster" name="Platinum Tribe Overlord">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="74" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SetHateGroup" value="attacker_group" />
+			<param name="SetHateGroupRatio" value="35" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfRangeDDMagic" id="4033" level="7" />
+			<skill name="SelfBuff" id="4092" level="1" />
+			<skill name="PhysicalSpecial" id="4032" level="7" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="147" /> <!-- Tear of Darkness -->
@@ -1740,6 +2127,22 @@
 	</npc>
 	<npc id="20830" level="72" type="L2Monster" name="Guardian Angel">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="50" />
+			<param name="MoveAroundSocial1" value="50" />
+			<param name="MoveAroundSocial2" value="50" />
+			<param name="AttackLowLevel" value="1" />
+			<param name="silhouette" value="20859" />
+			<param name="ai_type" value="guardian_angel_r" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfRangeDDMagic" id="4033" level="7" />
+			<skill name="SelfBuff" id="4092" level="1" />
+			<skill name="PhysicalSpecial" id="4032" level="7" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="148" /> <!-- Sword of Valhalla -->
@@ -1788,6 +2191,21 @@
 	</npc>
 	<npc id="20831" level="73" type="L2Monster" name="Seal Angel">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="50" />
+			<param name="MoveAroundSocial1" value="50" />
+			<param name="MoveAroundSocial2" value="50" />
+			<param name="silhouette" value="20860" />
+			<param name="ai_type" value="seal_angel_r" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfRangeDDMagic" id="4033" level="7" />
+			<skill name="SelfBuff" id="4090" level="1" />
+			<skill name="PhysicalSpecial" id="4232" level="7" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="148" /> <!-- Sword of Valhalla -->
@@ -1836,6 +2254,20 @@
 	</npc>
 	<npc id="20832" level="92" type="L2Monster" name="Zaken's Pikeman">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="IsTransform" value="2" />
+			<param name="step1" value="21602" />
+			<param name="step2" value="21603" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4244" level="4" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="292" /> <!-- Pike -->
@@ -1898,6 +2330,20 @@
 	</npc>
 	<npc id="20833" level="92" type="L2Monster" name="Zaken's Archer">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="157" />
+			<param name="MoveAroundSocial1" value="157" />
+			<param name="MoveAroundSocial2" value="157" />
+			<param name="IsTransform" value="2" />
+			<param name="step1" value="21605" />
+			<param name="step2" value="21606" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4040" level="4" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="279" /> <!-- Reinforced Longbow -->
@@ -1960,6 +2406,17 @@
 	</npc>
 	<npc id="20834" level="42" type="L2Monster" name="Mardian">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="Buff" id="4074" level="2" />
+		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="4.59410430839" sp="1" />
@@ -2002,6 +2459,21 @@
 	</npc>
 	<npc id="20835" level="92" type="L2Monster" name="Zaken's Seer">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="57" />
+			<param name="MoveAroundSocial1" value="57" />
+			<param name="MoveAroundSocial2" value="57" />
+			<param name="IsTransform" value="2" />
+			<param name="step1" value="21608" />
+			<param name="step2" value="21609" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="W_LongRangeDDMagic" id="4151" level="4" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="4" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="1.6982514177694" sp="3" />
@@ -2061,6 +2533,19 @@
 	</npc>
 	<npc id="20836" level="92" type="L2Monster" name="Pirate Zombie">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="SetHateGroup" value="attacker_group" />
+			<param name="SetHateGroupRatio" value="35" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4067" level="4" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="225" /> <!-- Mithril Dagger -->
@@ -2124,6 +2609,17 @@
 	</npc>
 	<npc id="20837" level="45" type="L2Monster" name="Tainted Ogre">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="62" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4073" level="4" />
+		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
 		<equipment rhand="194" /> <!-- Heavy Doom Axe -->
@@ -2168,6 +2664,17 @@
 	</npc>
 	<npc id="20838" level="45" type="L2Monster" name="Bloody Bat">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DeBuff" id="4088" level="4" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="4.2755555555556" sp="2" />
@@ -2210,6 +2717,20 @@
 	</npc>
 	<npc id="20839" level="92" type="L2Monster" name="Unpleasant Humming">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsTransform" value="2" />
+			<param name="step1" value="21611" />
+			<param name="step2" value="21612" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DeBuff" id="4088" level="4" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="1.6982514177694" sp="3" />
@@ -2272,6 +2793,20 @@
 	</npc>
 	<npc id="20840" level="92" type="L2Monster" name="Death Flyer">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="110" />
+			<param name="MoveAroundSocial1" value="110" />
+			<param name="MoveAroundSocial2" value="110" />
+			<param name="IsTransform" value="2" />
+			<param name="step1" value="21614" />
+			<param name="step2" value="21615" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="Buff" id="4074" level="2" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="1.6982514177694" sp="3" />
@@ -2337,6 +2872,22 @@
 	</npc>
 	<npc id="20841" level="92" type="L2Monster" name="Fiend Archer">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="108" />
+			<param name="MoveAroundSocial1" value="108" />
+			<param name="MoveAroundSocial2" value="108" />
+			<param name="IsTransform" value="2" />
+			<param name="step1" value="21617" />
+			<param name="step2" value="21618" />
+			<param name="SetHateGroup" value="attacker_group" />
+			<param name="SetHateGroupRatio" value="25" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="W_FiendArcher" id="4141" level="4" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="1.6982514177694" sp="3" />
@@ -2384,6 +2935,20 @@
 	</npc>
 	<npc id="20842" level="92" type="L2Monster" name="Musveren">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="40" />
+			<param name="MoveAroundSocial1" value="40" />
+			<param name="MoveAroundSocial2" value="40" />
+			<param name="IsTransform" value="2" />
+			<param name="step1" value="21620" />
+			<param name="step2" value="21621" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4002" level="4" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="1.6982514177694" sp="3" />
@@ -2446,6 +3011,20 @@
 	</npc>
 	<npc id="20843" level="92" type="L2Monster" name="Zaken's Royal Guard">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="IsTransform" value="2" />
+			<param name="step1" value="21623" />
+			<param name="step2" value="21624" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4067" level="5" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="225" lhand="945" /> <!-- Mithril Dagger / Skeleton Buckler -->
@@ -2511,6 +3090,20 @@
 	</npc>
 	<npc id="20844" level="92" type="L2Monster" name="Kaim Vanul">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="108" />
+			<param name="MoveAroundSocial1" value="108" />
+			<param name="MoveAroundSocial2" value="108" />
+			<param name="IsTransform" value="2" />
+			<param name="step1" value="21626" />
+			<param name="step2" value="21627" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="HoldMagic" id="4047" level="5" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="1.6982514177694" sp="3" />
@@ -2574,6 +3167,22 @@
 	</npc>
 	<npc id="20845" level="92" type="L2Monster" name="Pirate Zombie Captain">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="IsTransform" value="2" />
+			<param name="step1" value="21629" />
+			<param name="step2" value="21630" />
+			<param name="SetHateGroup" value="attacker_group" />
+			<param name="SetHateGroupRatio" value="35" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4067" level="5" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="232" /> <!-- Dark Elven Dagger -->
@@ -2636,6 +3245,22 @@
 	</npc>
 	<npc id="20846" level="92" type="L2Monster" name="Doll Blader">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="50" />
+			<param name="MoveAroundSocial1" value="50" />
+			<param name="MoveAroundSocial2" value="50" />
+			<param name="IsTransform" value="2" />
+			<param name="step1" value="21632" />
+			<param name="step2" value="21633" />
+			<param name="SetHateGroup" value="attacker_group" />
+			<param name="SetHateGroupRatio" value="25" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="Buff" id="4074" level="2" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="5129" lhand="5129" /> <!-- Doll Knife / Doll Knife -->
@@ -2684,6 +3309,23 @@
 	</npc>
 	<npc id="20847" level="92" type="L2Monster" name="Veil Master">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="114" />
+			<param name="MoveAroundSocial1" value="114" />
+			<param name="MoveAroundSocial2" value="114" />
+			<param name="IsTransform" value="2" />
+			<param name="step1" value="21635" />
+			<param name="step2" value="21636" />
+			<skill name="CheckMagic" id="4076" level="3" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SleepMagic" id="4046" level="5" />
+			<skill name="DDMagic" id="4087" level="5" />
+			<skill name="CancelMagic" id="4094" level="5" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="1.6982514177694" sp="3" />
@@ -2750,6 +3392,17 @@
 	</npc>
 	<npc id="20848" level="92" type="L2Monster" name="Light Bringer">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DeBuff" id="4076" level="3" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="4.5874291115312" sp="9" />
@@ -2810,6 +3463,17 @@
 	</npc>
 	<npc id="20849" level="41" type="L2Monster" name="Light Worm">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DeBuff" id="4076" level="3" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="4.1386079714456" sp="1" />
@@ -2894,6 +3558,17 @@
 	</npc>
 	<npc id="20850" level="50" type="L2Monster" name="Golden Stag Lord">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="40" />
+			<param name="MoveAroundSocial1" value="40" />
+			<param name="MoveAroundSocial2" value="40" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DeBuff" id="4076" level="3" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.2696" sp="1" />
@@ -2938,6 +3613,16 @@
 	</npc>
 	<npc id="20851" level="47" type="L2Monster" name="Theeder">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.3150746944319" sp="1" />
@@ -2980,6 +3665,16 @@
 	</npc>
 	<npc id="20852" level="60" type="L2Monster" name="Banshee">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="3939" /> <!-- Monster Only (Bensh) -->
@@ -3023,6 +3718,19 @@
 	</npc>
 	<npc id="20853" level="65" type="L2Monster" name="Kel Mahum">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="74" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfBuff" id="4090" level="1" />
+			<skill name="SelfRangeDDMagic" id="4072" level="6" />
+			<skill name="PhysicalSpecial" id="4032" level="6" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="242" /> <!-- Soulfire Dirk -->
@@ -3067,6 +3775,19 @@
 	</npc>
 	<npc id="20854" level="66" type="L2Monster" name="Kel Mahum Warrior">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="110" />
+			<param name="MoveAroundSocial1" value="74" />
+			<param name="MoveAroundSocial2" value="110" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfBuff" id="4090" level="1" />
+			<skill name="SelfRangeDDMagic" id="4033" level="6" />
+			<skill name="PhysicalSpecial" id="4073" level="6" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="148" /> <!-- Sword of Valhalla -->
@@ -3114,6 +3835,17 @@
 	</npc>
 	<npc id="20855" level="67" type="L2Monster" name="Kel Mahum Archer">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="74" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4040" level="6" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="288" /> <!-- Carnage Bow -->
@@ -3158,6 +3890,19 @@
 	</npc>
 	<npc id="20856" level="68" type="L2Monster" name="Kel Mahum Shaman">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="74" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4087" level="6" />
+			<skill name="DeBuff" id="4038" level="5" />
+			<skill name="HoldMagic" id="4047" level="6" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="202" /> <!-- Mace of Underworld -->
@@ -3202,6 +3947,17 @@
 	</npc>
 	<npc id="20857" level="70" type="L2Monster" name="Kel Mahum Champion">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="74" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4077" level="7" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="147" /> <!-- Tear of Darkness -->
@@ -3251,6 +4007,19 @@
 	</npc>
 	<npc id="20858" level="72" type="L2Monster" name="Angel">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="50" />
+			<param name="MoveAroundSocial1" value="50" />
+			<param name="MoveAroundSocial2" value="50" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfBuff" id="4091" level="1" />
+			<skill name="SelfRangeDDMagic" id="4072" level="7" />
+			<skill name="PhysicalSpecial" id="4032" level="7" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="148" /> <!-- Sword of Valhalla -->
@@ -3298,6 +4067,20 @@
 	</npc>
 	<npc id="20859" level="72" type="L2Monster" name="Guardian Angel">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="50" />
+			<param name="MoveAroundSocial1" value="50" />
+			<param name="MoveAroundSocial2" value="50" />
+			<skill name="CheckMagic" id="4046" level="7" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4087" level="7" />
+			<skill name="CancelMagic" id="4094" level="7" />
+			<skill name="SleepMagic" id="4046" level="7" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="148" /> <!-- Sword of Valhalla -->
@@ -3345,6 +4128,19 @@
 	</npc>
 	<npc id="20860" level="73" type="L2Monster" name="Seal Angel">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="50" />
+			<param name="MoveAroundSocial1" value="50" />
+			<param name="MoveAroundSocial2" value="50" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic1" id="4087" level="7" />
+			<skill name="DDMagic2" id="4066" level="7" />
+			<skill name="DeBuff" id="4118" level="7" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="148" /> <!-- Sword of Valhalla -->
@@ -3392,6 +4188,19 @@
 	</npc>
 	<npc id="20861" level="56" type="L2Monster" name="Oel Mahum Champion">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="140" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="140" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfBuff" id="4090" level="1" />
+			<skill name="SelfRangeDDMagic" id="4033" level="5" />
+			<skill name="PhysicalSpecial" id="4032" level="5" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="127" /> <!-- Crimson Sword -->
@@ -3441,6 +4250,19 @@
 	</npc>
 	<npc id="20862" level="75" type="L2Monster" name="Death Lord">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic1" id="4034" level="8" />
+			<skill name="DDMagic2" id="4078" level="8" />
+			<skill name="DeBuff" id="4118" level="8" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="78" /> <!-- Great Sword -->

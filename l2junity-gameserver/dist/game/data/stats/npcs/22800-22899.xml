@@ -2,6 +2,12 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="22800" level="84" type="L2Monster" name="Divinity Magus">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6321" level="1" />
+			<skill name="Skill02_ID" id="6322" level="1" />
+			<skill name="Skill03_ID" id="6320" level="1" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire expRate="89.132511337868" sp="150" />
@@ -93,6 +99,13 @@
 	</npc>
 	<npc id="22801" level="72" type="L2Monster" name="Cruel Pincer Golem">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="Privates01_sil" value="22802" />
+			<param name="Privates01_ai" value="golem_cannon2_p" />
+			<param name="Privates02_sil" value="22803" />
+			<param name="Privates02_ai" value="golem_cannon3_p" />
+			<skill name="Skill01_ID" id="6598" level="9" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.9243827160494" sp="3" />
@@ -167,6 +180,9 @@
 	</npc>
 	<npc id="22802" level="72" type="L2Monster" name="Cruel Pincer Golem">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6598" level="9" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.0875771604938" sp="2" />
@@ -242,6 +258,9 @@
 	</npc>
 	<npc id="22803" level="72" type="L2Monster" name="Cruel Pincer Golem">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6598" level="9" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.6813271604938" sp="3" />
@@ -315,6 +334,13 @@
 	</npc>
 	<npc id="22804" level="73" type="L2Monster" name="Horrifying Jackhammer Golem">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="Privates01_sil" value="22805" />
+			<param name="Privates01_ai" value="golem_prop2_p" />
+			<param name="Privates02_sil" value="22806" />
+			<param name="Privates02_ai" value="golem_prop3_p" />
+			<skill name="Skill01_ID" id="6599" level="9" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.924939012948" sp="3" />
@@ -388,6 +414,9 @@
 	</npc>
 	<npc id="22805" level="73" type="L2Monster" name="Horrifying Jackhammer Golem">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6599" level="9" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.0878213548508" sp="2" />
@@ -462,6 +491,9 @@
 	</npc>
 	<npc id="22806" level="73" type="L2Monster" name="Horrifying Jackhammer Golem">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6599" level="9" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.6819290673672" sp="3" />
@@ -534,6 +566,10 @@
 	</npc>
 	<npc id="22807" level="72" type="L2Monster" name="Scout-type Golem No. 28">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6610" level="9" />
+			<skill name="Skill02_ID" id="4156" level="7" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.8649691358025" sp="3" />
@@ -608,6 +644,11 @@
 	</npc>
 	<npc id="22808" level="72" type="L2Monster" name="Scout-type Golem No. 2">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6597" level="9" />
+			<skill name="Skill02_ID" id="4156" level="7" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="1.7131558641975" sp="2" />
@@ -673,6 +714,11 @@
 	</npc>
 	<npc id="22809" level="73" type="L2Monster" name="Guard Golem">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6599" level="9" />
+			<skill name="Skill02_ID" id="4156" level="7" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.8930380934509" sp="7" />
@@ -733,6 +779,11 @@
 	</npc>
 	<npc id="22810" level="72" type="L2Monster" name="Micro Scout Golem">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6599" level="9" />
+			<skill name="Skill02_ID" id="4156" level="7" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.0136959876543" sp="6" />
@@ -794,6 +845,10 @@
 	</npc>
 	<npc id="22811" level="73" type="L2Monster" name="Great Chaos Golem">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6262" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="8.4544942765997" sp="10" />
@@ -853,6 +908,9 @@
 	</npc>
 	<npc id="22812" level="72" type="L2Monster" name="Boom Golem">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6264" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="4.9994212962963" sp="6" />
@@ -912,6 +970,11 @@
 	</npc>
 	<npc id="22838" level="85" type="L2Monster" name="Maluk Leader">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6748" level="1" />
+			<skill name="Skill02_ID" id="6750" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="98.320415224913" sp="170" />
@@ -983,6 +1046,11 @@
 	</npc>
 	<npc id="22839" level="85" type="L2Monster" name="Maluk Warlord">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6755" level="1" />
+			<skill name="SpecialSkill01_ID" id="6752" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="93.385882352941" sp="161" />
@@ -1053,6 +1121,11 @@
 	</npc>
 	<npc id="22840" level="85" type="L2Monster" name="Maluk Hunter">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6753" level="1" />
+			<skill name="Skill02_ID" id="6754" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="34.807889273356" sp="60" />
@@ -1125,6 +1198,11 @@
 	</npc>
 	<npc id="22841" level="85" type="L2Monster" name="Maluk Princess">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6749" level="1" />
+			<skill name="Skill02_ID" id="6756" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="58.840415224913" sp="102" />
@@ -1197,6 +1275,12 @@
 	</npc>
 	<npc id="22842" level="85" type="L2Monster" name="Maluk Banshee">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6757" level="1" />
+			<skill name="Skill02_ID" id="6758" level="1" />
+			<skill name="Skill03_ID" id="6819" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="58.840415224913" sp="102" />
@@ -1271,6 +1355,10 @@
 	</npc>
 	<npc id="22843" level="85" type="L2Monster" name="Maluk Sniper">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6759" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="15302" /> <!-- Transparent Bow (NPC) -->
@@ -1343,6 +1431,11 @@
 	</npc>
 	<npc id="22844" level="85" type="L2Monster" name="Dragon Knight">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6763" level="1" />
+			<skill name="Skill02_ID" id="6761" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="102.87141868512" sp="178" />
@@ -1419,6 +1512,11 @@
 	</npc>
 	<npc id="22845" level="85" type="L2Monster" name="Dragon Knight">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6763" level="1" />
+			<skill name="Skill02_ID" id="6761" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="103.17107266436" sp="178" />
@@ -1493,6 +1591,11 @@
 	</npc>
 	<npc id="22846" level="85" type="L2Monster" name="Elite Dragon Knight">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6763" level="1" />
+			<skill name="Skill02_ID" id="6761" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="134.1475432526" sp="232" />
@@ -1566,6 +1669,10 @@
 	</npc>
 	<npc id="22847" level="85" type="L2Monster" name="Dragon Knight Warrior">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6760" level="1" />
+			<skill name="Skill02_ID" id="6762" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<equipment rhand="13978" /> <!-- Monster Only (Dragontroop Commander) -->
@@ -1639,6 +1746,12 @@
 	</npc>
 	<npc id="22848" level="85" type="L2Monster" name="Drake Leader">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6763" level="1" />
+			<skill name="SpecialSkill01_ID" id="6818" level="1" />
+			<skill name="SpecialSkill02_ID" id="6820" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="105.25467128028" sp="182" />
@@ -1713,6 +1826,9 @@
 	</npc>
 	<npc id="22849" level="85" type="L2Monster" name="Drake Warrior">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6760" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<equipment rhand="13979" lhand="13980" /> <!-- Monster Only (Dragontroop Commando) / Monster Only (Dragontroop Defender) -->
@@ -1787,6 +1903,10 @@
 	</npc>
 	<npc id="22850" level="85" type="L2Monster" name="Drake Scout">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6764" level="1" />
+			<skill name="Skill02_ID" id="6761" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<equipment rhand="13843" /> <!-- Draconic Peltast Weapon -->
@@ -1861,6 +1981,10 @@
 	</npc>
 	<npc id="22851" level="85" type="L2Monster" name="Drake Mage">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6766" level="1" />
+			<skill name="SpecialSkill01_ID" id="6765" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="59.964705882353" sp="103" />
@@ -1933,6 +2057,10 @@
 	</npc>
 	<npc id="22852" level="85" type="L2Monster" name="Dragon Guard">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6768" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="182.23294117647" sp="315" />
@@ -2005,6 +2133,11 @@
 	</npc>
 	<npc id="22853" level="85" type="L2Monster" name="Dragon Mage">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6769" level="1" />
+			<skill name="Skill02_ID" id="6770" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<equipment rhand="13981" /> <!-- Monster Only (Dragontoop Tactician) -->
@@ -2078,6 +2211,12 @@
 	</npc>
 	<npc id="22854" level="85" type="L2Monster" name="Bloody Karik">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6771" level="1" />
+			<skill name="Skill02_ID" id="6772" level="1" />
+			<skill name="Skill03_ID" id="6773" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="265.27709342561" sp="459" />
@@ -2151,6 +2290,11 @@
 	</npc>
 	<npc id="22855" level="85" type="L2Monster" name="Bloody Berserker">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6774" level="1" />
+			<skill name="Skill02_ID" id="6775" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="178.60152249135" sp="309" />
@@ -2225,6 +2369,12 @@
 	</npc>
 	<npc id="22856" level="85" type="L2Monster" name="Bloody Karinness">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6776" level="1" />
+			<skill name="Skill02_ID" id="6777" level="1" />
+			<skill name="Skill03_ID" id="6778" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="178.60152249135" sp="309" />
@@ -2371,6 +2521,15 @@
 	</npc>
 	<npc id="22863" level="88" type="L2Monster" name="Fairy Warrior" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="3" />
+			<skill name="Skill02_ID" id="6914" level="3" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="110.33703512397" sp="205" />
@@ -2449,6 +2608,15 @@
 	</npc>
 	<npc id="22864" level="90" type="L2Monster" name="Fairy Warrior" title="Wicked">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="4" />
+			<skill name="Skill02_ID" id="6914" level="3" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="224.36592592593" sp="436" />
@@ -2529,6 +2697,15 @@
 	</npc>
 	<npc id="22865" level="89" type="L2Monster" name="Fairy Warrior" title="Mature">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="3" />
+			<skill name="Skill02_ID" id="6914" level="3" />
+			<param name="Attack_BoostValue" value="133" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="168.98257795733" sp="321" />
@@ -2606,6 +2783,15 @@
 	</npc>
 	<npc id="22866" level="89" type="L2Monster" name="Fairy Warrior" title="Imperfect">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="3" />
+			<skill name="Skill02_ID" id="6914" level="3" />
+			<param name="Attack_BoostValue" value="133" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="121.80027774271" sp="231" />
@@ -2683,6 +2869,15 @@
 	</npc>
 	<npc id="22867" level="91" type="L2Monster" name="Fairy Warrior" title="Violent">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="4" />
+			<skill name="Skill02_ID" id="6914" level="3" />
+			<param name="Attack_BoostValue" value="137" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="178.25455862819" sp="354" />
@@ -2763,6 +2958,15 @@
 	</npc>
 	<npc id="22868" level="93" type="L2Monster" name="Fairy Warrior" title="Brutal">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="6" />
+			<skill name="Skill02_ID" id="6914" level="3" />
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="354.76425020234" sp="736" />
@@ -2846,6 +3050,15 @@
 	</npc>
 	<npc id="22869" level="92" type="L2Monster" name="Fairy Warrior" title="Fully Enraged">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="4" />
+			<skill name="Skill02_ID" id="6914" level="3" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="290.94447069943" sp="591" />
@@ -2927,6 +3140,15 @@
 	</npc>
 	<npc id="22870" level="92" type="L2Monster" name="Fairy Warrior" title="Slightly Enraged">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="4" />
+			<skill name="Skill02_ID" id="6914" level="3" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="224.98440453686" sp="457" />
@@ -3008,6 +3230,15 @@
 	</npc>
 	<npc id="22871" level="88" type="L2Monster" name="Fairy Rogue" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6914" level="3" />
+			<skill name="Skill03_ID" id="14043" level="1" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="110.33703512397" sp="205" />
@@ -3083,6 +3314,15 @@
 	</npc>
 	<npc id="22872" level="90" type="L2Monster" name="Fairy Rogue" title="Wicked">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6914" level="3" />
+			<skill name="Skill03_ID" id="14043" level="1" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="224.36592592593" sp="436" />
@@ -3160,6 +3400,15 @@
 	</npc>
 	<npc id="22873" level="89" type="L2Monster" name="Fairy Rogue" title="Mature">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6914" level="3" />
+			<skill name="Skill03_ID" id="14043" level="1" />
+			<param name="Attack_BoostValue" value="133" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="168.98257795733" sp="321" />
@@ -3234,6 +3483,15 @@
 	</npc>
 	<npc id="22874" level="89" type="L2Monster" name="Fairy Rogue" title="Imperfect">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6914" level="3" />
+			<skill name="Skill03_ID" id="14043" level="1" />
+			<param name="Attack_BoostValue" value="133" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="121.80027774271" sp="231" />
@@ -3308,6 +3566,15 @@
 	</npc>
 	<npc id="22875" level="91" type="L2Monster" name="Fairy Rogue" title="Violent">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6914" level="3" />
+			<skill name="Skill03_ID" id="14043" level="1" />
+			<param name="Attack_BoostValue" value="137" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="178.25455862819" sp="354" />
@@ -3384,6 +3651,15 @@
 	</npc>
 	<npc id="22876" level="93" type="L2Monster" name="Fairy Rogue" title="Brutal">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6914" level="3" />
+			<skill name="Skill03_ID" id="14043" level="1" />
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="354.76425020234" sp="736" />
@@ -3464,6 +3740,15 @@
 	</npc>
 	<npc id="22877" level="92" type="L2Monster" name="Fairy Rogue" title="Fully Enraged">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6914" level="3" />
+			<skill name="Skill03_ID" id="14043" level="1" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="290.94447069943" sp="591" />
@@ -3542,6 +3827,15 @@
 	</npc>
 	<npc id="22878" level="92" type="L2Monster" name="Fairy Rogue" title="Slightly Enraged">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6914" level="3" />
+			<skill name="Skill03_ID" id="14043" level="1" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="224.98440453686" sp="457" />
@@ -3618,6 +3912,14 @@
 	</npc>
 	<npc id="22879" level="88" type="L2Monster" name="Fairy Knight" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="2" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="110.33703512397" sp="205" />
@@ -3694,6 +3996,14 @@
 	</npc>
 	<npc id="22880" level="90" type="L2Monster" name="Fairy Knight" title="Wicked">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="4" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="224.36592592593" sp="436" />
@@ -3773,6 +4083,14 @@
 	</npc>
 	<npc id="22881" level="89" type="L2Monster" name="Fairy Knight" title="Mature">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="2" />
+			<param name="Attack_BoostValue" value="133" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="168.98257795733" sp="321" />
@@ -3849,6 +4167,14 @@
 	</npc>
 	<npc id="22882" level="89" type="L2Monster" name="Fairy Knight" title="Imperfect">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="2" />
+			<param name="Attack_BoostValue" value="133" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="121.80027774271" sp="231" />
@@ -3925,6 +4251,14 @@
 	</npc>
 	<npc id="22883" level="91" type="L2Monster" name="Fairy Knight" title="Violent">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="5" />
+			<param name="Attack_BoostValue" value="137" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="178.25455862819" sp="354" />
@@ -4003,6 +4337,14 @@
 	</npc>
 	<npc id="22884" level="93" type="L2Monster" name="Fairy Knight" title="Brutal">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="6" />
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="354.76425020234" sp="736" />
@@ -4085,6 +4427,14 @@
 	</npc>
 	<npc id="22885" level="92" type="L2Monster" name="Fairy Knight" title="Fully Enraged">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="5" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="290.94447069943" sp="591" />
@@ -4166,6 +4516,14 @@
 	</npc>
 	<npc id="22886" level="92" type="L2Monster" name="Fairy Knight" title="Slightly Enraged">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="5" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="224.98440453686" sp="457" />
@@ -4245,6 +4603,17 @@
 	</npc>
 	<npc id="22887" level="88" type="L2Monster" name="Satyr Wizard" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="2" />
+			<skill name="Skill02_ID" id="14045" level="2" />
+			<skill name="Skill03_ID" id="14046" level="2" />
+			<skill name="Skill04_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="110.33703512397" sp="205" />
@@ -4321,6 +4690,17 @@
 	</npc>
 	<npc id="22888" level="90" type="L2Monster" name="Satyr Wizard" title="Wicked">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="3" />
+			<skill name="Skill02_ID" id="14045" level="3" />
+			<skill name="Skill03_ID" id="14046" level="3" />
+			<skill name="Skill04_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="224.36592592593" sp="436" />
@@ -4400,6 +4780,17 @@
 	</npc>
 	<npc id="22889" level="89" type="L2Monster" name="Satyr Wizard" title="Mature">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="2" />
+			<skill name="Skill02_ID" id="14045" level="2" />
+			<skill name="Skill03_ID" id="14046" level="2" />
+			<skill name="Skill04_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="133" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="168.98257795733" sp="321" />
@@ -4476,6 +4867,17 @@
 	</npc>
 	<npc id="22890" level="89" type="L2Monster" name="Satyr Wizard" title="Imperfect">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="2" />
+			<skill name="Skill02_ID" id="14045" level="2" />
+			<skill name="Skill03_ID" id="14046" level="2" />
+			<skill name="Skill04_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="133" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="121.80027774271" sp="231" />
@@ -4553,6 +4955,17 @@
 	</npc>
 	<npc id="22891" level="91" type="L2Monster" name="Satyr Wizard" title="Violent">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="3" />
+			<skill name="Skill02_ID" id="14045" level="3" />
+			<skill name="Skill03_ID" id="14046" level="3" />
+			<skill name="Skill04_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="137" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="178.25455862819" sp="354" />
@@ -4614,6 +5027,17 @@
 	</npc>
 	<npc id="22892" level="93" type="L2Monster" name="Satyr Wizard" title="Brutal">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="6" />
+			<skill name="Skill02_ID" id="14045" level="6" />
+			<skill name="Skill03_ID" id="14046" level="6" />
+			<skill name="Skill04_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="354.76425020234" sp="736" />
@@ -4696,6 +5120,17 @@
 	</npc>
 	<npc id="22893" level="92" type="L2Monster" name="Satyr Wizard" title="Fully Enraged">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="3" />
+			<skill name="Skill02_ID" id="14045" level="3" />
+			<skill name="Skill03_ID" id="14046" level="3" />
+			<skill name="Skill04_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="290.94447069943" sp="591" />
@@ -4777,6 +5212,17 @@
 	</npc>
 	<npc id="22894" level="92" type="L2Monster" name="Satyr Wizard" title="Slightly Enraged">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="3" />
+			<skill name="Skill02_ID" id="14045" level="3" />
+			<skill name="Skill03_ID" id="14046" level="3" />
+			<skill name="Skill04_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="224.98440453686" sp="457" />
@@ -4857,6 +5303,17 @@
 	</npc>
 	<npc id="22895" level="88" type="L2Monster" name="Satyr Summoner" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="3" />
+			<skill name="Skill02_ID" id="14045" level="3" />
+			<skill name="Skill03_ID" id="14047" level="3" />
+			<skill name="Skill04_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="110.33703512397" sp="205" />
@@ -4932,6 +5389,17 @@
 	</npc>
 	<npc id="22896" level="90" type="L2Monster" name="Satyr Summoner" title="Wicked">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="4" />
+			<skill name="Skill02_ID" id="14045" level="4" />
+			<skill name="Skill03_ID" id="14047" level="4" />
+			<skill name="Skill04_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="224.36592592593" sp="436" />
@@ -5010,6 +5478,17 @@
 	</npc>
 	<npc id="22897" level="89" type="L2Monster" name="Satyr Summoner" title="Mature">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="3" />
+			<skill name="Skill02_ID" id="14045" level="3" />
+			<skill name="Skill03_ID" id="14047" level="3" />
+			<skill name="Skill04_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="133" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="168.98257795733" sp="321" />
@@ -5085,6 +5564,17 @@
 	</npc>
 	<npc id="22898" level="89" type="L2Monster" name="Satyr Summoner" title="Imperfect">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="3" />
+			<skill name="Skill02_ID" id="14045" level="3" />
+			<skill name="Skill03_ID" id="14047" level="3" />
+			<skill name="Skill04_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="133" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="121.80027774271" sp="231" />
@@ -5161,6 +5651,17 @@
 	</npc>
 	<npc id="22899" level="91" type="L2Monster" name="Satyr Summoner" title="Violent">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="4" />
+			<skill name="Skill02_ID" id="14045" level="4" />
+			<skill name="Skill03_ID" id="14047" level="4" />
+			<skill name="Skill04_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="137" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="178.25455862819" sp="354" />

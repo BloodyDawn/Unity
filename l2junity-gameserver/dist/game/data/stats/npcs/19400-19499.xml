@@ -2,6 +2,12 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="19400" level="90" type="L2Monster" name="Cocoon Destroyer" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="4" />
+			<skill name="Skill02_ID" id="6914" level="3" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="180" sp="349" />
@@ -44,6 +50,9 @@
 	</npc>
 	<npc id="19401" level="93" type="L2Npc" name="Soldier" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>FRIEND</race>
 		<sex>MALE</sex>
 		<equipment rhand="17325" /> <!-- Apocalypse Cutter -->
@@ -76,6 +85,9 @@
 	</npc>
 	<npc id="19402" level="93" type="L2Npc" name="Soldier" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>FRIEND</race>
 		<sex>MALE</sex>
 		<equipment rhand="17329" /> <!-- Apocalypse Stormer -->
@@ -165,6 +177,14 @@
 	</npc>
 	<npc id="19405" level="99" type="L2Monster" name="Gatekeeper Zombie" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="pass1" value="36228" />
+			<param name="pass2" value="8065" />
+			<param name="pass3" value="36229" />
+			<param name="SkillRange" value="700" />
+			<skill name="DDMagic" id="15431" level="1" />
+			<param name="Attack_BoostValue" value="155" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="8217" /> <!-- Monster Only (Zombie Gate Guard Spear) -->
@@ -205,6 +225,14 @@
 	</npc>
 	<npc id="19406" level="97" type="L2Monster" name="Anteroom Gatekeeper" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="119" />
+			<skill name="PhysicalSpecial" id="15432" level="1" />
+			<skill name="DDMagic" id="15459" level="1" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="8217" /> <!-- Monster Only (Zombie Gate Guard Spear) -->
@@ -246,6 +274,11 @@
 	</npc>
 	<npc id="19407" level="97" type="L2Monster" name="Anteroom Gatekeeper" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="PhysicalSpecial" id="15432" level="1" />
+			<skill name="DDMagic" id="15459" level="1" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="8217" /> <!-- Monster Only (Zombie Gate Guard Spear) -->
@@ -287,6 +320,14 @@
 	</npc>
 	<npc id="19408" level="99" type="L2Monster" name="Chapel Gatekeeper" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="119" />
+			<skill name="PhysicalSpecial" id="15432" level="1" />
+			<skill name="DDMagic" id="15459" level="1" />
+			<param name="Attack_BoostValue" value="155" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="8217" /> <!-- Monster Only (Zombie Gate Guard Spear) -->
@@ -328,6 +369,9 @@
 	</npc>
 	<npc id="19409" level="97" type="L2Monster" name="Triol's High Priest" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -361,6 +405,9 @@
 	</npc>
 	<npc id="19410" level="99" type="L2Monster" name="Triol's High Priest" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="155" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">

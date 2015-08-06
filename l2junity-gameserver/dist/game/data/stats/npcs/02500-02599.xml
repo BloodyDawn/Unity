@@ -2,6 +2,12 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="2501" level="80" type="L2Npc" name="Lucky Pig" title="The Spirit of Fortune">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<param name="IsAggressive" value="1" />
+		</parameters>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
 			<vitals hp="2676" mp="1507" hpRegen="8.5" mpRegen="3" />
@@ -79,6 +85,9 @@
 	</npc>
 	<npc id="2507" level="85" type="L2Monster" name="Ancient Kartia Scout" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14917" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -108,6 +117,10 @@
 	</npc>
 	<npc id="2508" level="86" type="L2Monster" name="Ancient Kartia Guard" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="23425" level="1" />
+			<skill name="Skill03_ID" id="14917" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -137,6 +150,10 @@
 	</npc>
 	<npc id="2509" level="86" type="L2Monster" name="Ancient Kartia Watchman" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="23429" level="1" />
+			<skill name="Skill02_ID" id="14924" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -166,6 +183,10 @@
 	</npc>
 	<npc id="2510" level="86" type="L2Monster" name="Ancient Kartia Researcher" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="23432" level="1" />
+			<skill name="Skill02_ID" id="14924" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -195,6 +216,11 @@
 	</npc>
 	<npc id="2511" level="88" type="L2Monster" name="Kajin" title="Cool-headed">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="23454" level="1" />
+			<skill name="Skill03_ID" id="23470" level="1" />
+			<param name="elite_type" value="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -223,6 +249,11 @@
 	</npc>
 	<npc id="2512" level="88" type="L2Monster" name="Beryn" title="Valiant">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="23461" level="1" />
+			<skill name="Skill03_ID" id="23459" level="1" />
+			<param name="elite_type" value="2" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -251,6 +282,9 @@
 	</npc>
 	<npc id="2513" level="90" type="L2Monster" name="Ancient Kartia Scout" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14917" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -280,6 +314,10 @@
 	</npc>
 	<npc id="2514" level="91" type="L2Monster" name="Ancient Kartia Guard" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="23426" level="1" />
+			<skill name="Skill03_ID" id="14917" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -309,6 +347,10 @@
 	</npc>
 	<npc id="2515" level="91" type="L2Monster" name="Ancient Kartia Watchman" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="23430" level="1" />
+			<skill name="Skill02_ID" id="14925" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -338,6 +380,10 @@
 	</npc>
 	<npc id="2516" level="91" type="L2Monster" name="Ancient Kartia Researcher" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="23433" level="1" />
+			<skill name="Skill02_ID" id="14925" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -367,6 +413,11 @@
 	</npc>
 	<npc id="2517" level="93" type="L2Monster" name="Kajin" title="Cool-headed">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="23454" level="2" />
+			<skill name="Skill03_ID" id="23470" level="2" />
+			<param name="elite_type" value="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -395,6 +446,11 @@
 	</npc>
 	<npc id="2518" level="93" type="L2Monster" name="Beryn" title="Valiant">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="23461" level="2" />
+			<skill name="Skill03_ID" id="23459" level="2" />
+			<param name="elite_type" value="2" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -423,6 +479,9 @@
 	</npc>
 	<npc id="2519" level="95" type="L2Monster" name="Ancient Kartia Scout" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14917" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -452,6 +511,10 @@
 	</npc>
 	<npc id="2520" level="96" type="L2Monster" name="Ancient Kartia Guard" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="23427" level="1" />
+			<skill name="Skill03_ID" id="14917" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -481,6 +544,10 @@
 	</npc>
 	<npc id="2521" level="96" type="L2Monster" name="Ancient Kartia Watchman" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="23431" level="1" />
+			<skill name="Skill02_ID" id="14926" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -510,6 +577,10 @@
 	</npc>
 	<npc id="2522" level="96" type="L2Monster" name="Ancient Kartia Researcher" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="23434" level="1" />
+			<skill name="Skill02_ID" id="14926" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -539,6 +610,11 @@
 	</npc>
 	<npc id="2523" level="98" type="L2Monster" name="Kajin" title="Cool-headed">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="23454" level="3" />
+			<skill name="Skill03_ID" id="23470" level="3" />
+			<param name="elite_type" value="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -567,6 +643,11 @@
 	</npc>
 	<npc id="2524" level="98" type="L2Monster" name="Beryn" title="Valiant">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="23461" level="3" />
+			<skill name="Skill03_ID" id="23459" level="3" />
+			<param name="elite_type" value="2" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -623,6 +704,14 @@
 	</npc>
 	<npc id="2526" level="75" type="L2Monster" name="Ancient Kartia Watchman" title="35% Drop">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="MoveAroundSocial" value="200" />
+			<param name="MoveAroundSocial1" value="200" />
+			<skill name="Skill01_ID" id="14920" level="1" />
+			<skill name="Skill02_ID" id="14926" level="1" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -651,6 +740,14 @@
 	</npc>
 	<npc id="2527" level="80" type="L2Monster" name="Ancient Kartia Researcher" title="50% Drop">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="HealProb" value="3333" />
+			<param name="SelfRangeHealProb" value="1500" />
+			<skill name="SelfRangeBuff" id="4610" level="2" />
+			<skill name="Heal" id="4065" level="9" />
+			<skill name="SelfRangeHeal" id="4613" level="9" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -707,6 +804,11 @@
 	</npc>
 	<npc id="2529" level="99" type="L2Npc" name="Tree of Life" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="100" />
+			<skill name="HealSkill" id="23517" level="1" />
+		</parameters>
 		<race>FRIEND</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">

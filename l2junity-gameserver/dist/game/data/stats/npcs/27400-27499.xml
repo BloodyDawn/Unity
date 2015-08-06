@@ -2,6 +2,12 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="27400" level="51" type="L2Monster" name="Shilen's Evil Thoughts">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5975" level="1" />
+			<skill name="Skill02_ID" id="5976" level="1" />
+			<param name="Skill01_Probablity" value="1000" />
+			<param name="Skill02_Probablity" value="1000" />
+		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -40,6 +46,12 @@
 	</npc>
 	<npc id="27401" level="61" type="L2Monster" name="Shilen's Evil Thoughts">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5975" level="1" />
+			<skill name="Skill02_ID" id="5976" level="2" />
+			<param name="Skill01_Probablity" value="1000" />
+			<param name="Skill02_Probablity" value="1000" />
+		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -78,6 +90,15 @@
 	</npc>
 	<npc id="27402" level="79" type="L2Monster" name="Shilen's Evil Thoughts">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="Skill01_Probablity" value="1000" />
+			<param name="Skill02_Probablity" value="1000" />
+			<skill name="Skill01_ID" id="5975" level="3" />
+			<skill name="Skill02_ID" id="5976" level="3" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -118,6 +139,11 @@
 	</npc>
 	<npc id="27403" level="80" type="L2Monster" name="Trainee of Rest">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6494" level="13" />
+			<skill name="Skill02_ID" id="6711" level="1" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -152,6 +178,11 @@
 	</npc>
 	<npc id="27404" level="80" type="L2Monster" name="Supplicant of Rest">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6494" level="13" />
+			<skill name="Skill02_ID" id="6509" level="13" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -186,6 +217,11 @@
 	</npc>
 	<npc id="27405" level="80" type="L2Monster" name="Monastic Pilgrim">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="PhysicalSpecial" id="4032" level="9" />
+			<skill name="MagicHeal" id="4065" level="9" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="148" /> <!-- Sword of Valhalla -->
@@ -220,6 +256,10 @@
 	</npc>
 	<npc id="27406" level="80" type="L2Monster" name="Monastic Crusader">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="PhysicalSpecial" id="4032" level="9" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="97" /> <!-- Lance -->
@@ -254,6 +294,12 @@
 	</npc>
 	<npc id="27407" level="80" type="L2Monster" name="Solina Lay Brother">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="W_LongRangeDDMagic" id="4563" level="9" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="9" />
+			<skill name="MagicHeal" id="4613" level="9" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8212" /> <!-- Monster Only (Solina Brother Mace) -->
@@ -288,6 +334,12 @@
 	</npc>
 	<npc id="27408" level="80" type="L2Monster" name="Savior Solina">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="W_LongRangeDDMagic" id="4563" level="9" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="9" />
+			<skill name="DeBuff" id="5021" level="9" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8213" /> <!-- Monster Only (Solina Father Mace) -->
@@ -322,6 +374,11 @@
 	</npc>
 	<npc id="27409" level="81" type="L2Monster" name="Solina Knight Captain">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="PhysicalSpecial" id="6312" level="1" />
+			<skill name="Buff" id="6313" level="1" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -356,6 +413,13 @@
 	</npc>
 	<npc id="27410" level="80" type="L2Monster" name="Solina Knights">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6494" level="13" />
+			<skill name="Skill02_ID" id="6711" level="1" />
+			<skill name="Skill03_ID" id="6711" level="2" />
+			<skill name="Skill04_ID" id="6711" level="3" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8211" lhand="8210" /> <!-- Monster Only (Monk Warrior Sword) / Monster Only (Monk Warrior Shield) -->
@@ -392,6 +456,11 @@
 	</npc>
 	<npc id="27411" level="80" type="L2Monster" name="Divinity Manager">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6309" level="1" />
+			<skill name="Skill02_ID" id="6316" level="1" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="6718" /> <!-- Monster Only (Einhasad Shaman) -->
@@ -425,6 +494,10 @@
 	</npc>
 	<npc id="27412" level="80" type="L2Monster" name="Divinity Supervisor">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6317" level="1" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8221" /> <!-- Monster Only (Grail Apostle Spear) -->
@@ -459,6 +532,11 @@
 	</npc>
 	<npc id="27413" level="80" type="L2Monster" name="Divinity Fighter">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6328" level="1" />
+			<skill name="Skill02_ID" id="6329" level="1" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>FEMALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -492,6 +570,12 @@
 	</npc>
 	<npc id="27414" level="80" type="L2Monster" name="Divinity Magus">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6321" level="1" />
+			<skill name="Skill02_ID" id="6322" level="1" />
+			<skill name="Skill03_ID" id="6320" level="1" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -525,6 +609,11 @@
 	</npc>
 	<npc id="27415" level="80" type="L2Monster" name="Guide Solina">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6303" level="1" />
+			<skill name="Skill02_ID" id="6304" level="1" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8212" /> <!-- Monster Only (Solina Brother Mace) -->
@@ -558,6 +647,11 @@
 	</npc>
 	<npc id="27416" level="80" type="L2Monster" name="Relic Manager Golem">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6515" level="13" />
+			<skill name="Skill02_ID" id="6710" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -592,6 +686,11 @@
 	</npc>
 	<npc id="27417" level="80" type="L2Monster" name="Mutant Archer">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6709" level="1" />
+			<skill name="Skill02_ID" id="4088" level="9" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="275" /> <!-- Longbow -->
@@ -628,6 +727,11 @@
 	</npc>
 	<npc id="27418" level="80" type="L2Monster" name="Mutant Warrior">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6515" level="13" />
+			<skill name="Skill02_ID" id="6262" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="150" /> <!-- Elemental Sword -->
@@ -663,6 +767,10 @@
 	</npc>
 	<npc id="27419" level="80" type="L2Monster" name="Divinity Watcher">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6262" level="1" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>FEMALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -696,6 +804,10 @@
 	</npc>
 	<npc id="27420" level="80" type="L2Monster" name="Instructor Solina">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="4047" level="9" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -728,6 +840,11 @@
 	</npc>
 	<npc id="27421" level="79" type="L2Monster" name="Creature of the Dusk">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="W_LongRangeDDMagic" id="4603" level="9" />
+			<skill name="W_ShortRangeDDMagic" id="4561" level="9" />
+			<skill name="MagicHeal" id="4613" level="9" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" lhand="945" /> <!-- Skeleton Dagger / Skeleton Buckler -->
@@ -764,6 +881,16 @@
 	</npc>
 	<npc id="27422" level="79" type="L2Monster" name="Creature of the Dusk">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="SpiritShot" value="100" />
+			<param name="SpeedBonus" value="40" />
+			<param name="HealBonus" value="2.4" />
+			<param name="SpiritShotRate" value="30" />
+			<skill name="W_LongRangeDDMagic" id="4566" level="9" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="9" />
+			<skill name="DDMagic" id="4657" level="9" />
+			<skill name="DeBuff" id="4037" level="2" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -800,6 +927,13 @@
 	</npc>
 	<npc id="27423" level="79" type="L2Monster" name="Creature of the Dusk">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="W_LongRangeDDMagic" id="4157" level="9" />
+			<skill name="W_ShortRangeDDMagic" id="4561" level="9" />
+			<skill name="DeBuff" id="4117" level="9" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="150" lhand="103" /> <!-- Elemental Sword / Tower Shield -->
@@ -835,6 +969,11 @@
 	</npc>
 	<npc id="27424" level="79" type="L2Monster" name="Creature of the Dusk">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsTeleport" value="0" />
+			<skill name="PhysicalSpecial" id="4579" level="9" />
+			<skill name="SelfRangeDeBuff" id="4036" level="9" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="304" /> <!-- Corroded Orcish Halberd -->
@@ -872,6 +1011,12 @@
 	</npc>
 	<npc id="27425" level="79" type="L2Monster" name="Death Wound" title="Shilen's Creation">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6050" level="13" />
+			<skill name="Skill02_ID" id="4180" level="8" />
+			<skill name="Skill03_ID" id="6052" level="13" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="78" /> <!-- Great Sword -->
@@ -908,6 +1053,12 @@
 	</npc>
 	<npc id="27426" level="79" type="L2Monster" name="Death Wound" title="Shilen's Creation">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6914" level="3" />
+			<skill name="Skill02_ID" id="4180" level="8" />
+			<skill name="Skill03_ID" id="6050" level="13" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="78" /> <!-- Great Sword -->
@@ -945,6 +1096,12 @@
 	</npc>
 	<npc id="27427" level="79" type="L2Monster" name="Death Wound" title="Shilen's Creation">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6914" level="3" />
+			<skill name="Skill02_ID" id="4180" level="8" />
+			<skill name="Skill03_ID" id="4204" level="8" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="78" /> <!-- Great Sword -->
@@ -980,6 +1137,12 @@
 	</npc>
 	<npc id="27428" level="79" type="L2Monster" name="Death Wound" title="Shilen's Creation">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6050" level="13" />
+			<skill name="Skill02_ID" id="4203" level="8" />
+			<skill name="Skill03_ID" id="4206" level="8" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="78" /> <!-- Great Sword -->
@@ -1017,6 +1180,12 @@
 	</npc>
 	<npc id="27429" level="79" type="L2Monster" name="Death Wound" title="Shilen's Creation">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6914" level="3" />
+			<skill name="Skill02_ID" id="6049" level="4" />
+			<skill name="Skill03_ID" id="4180" level="8" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="78" /> <!-- Great Sword -->
@@ -1054,6 +1223,11 @@
 	</npc>
 	<npc id="27430" level="76" type="L2Monster" name="Screaming Shaman" title="Resurrected">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6527" level="11" />
+			<skill name="Skill02_ID" id="6530" level="12" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1087,6 +1261,11 @@
 	</npc>
 	<npc id="27431" level="76" type="L2Monster" name="Slayer" title="Resurrected">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6515" level="11" />
+			<skill name="Skill02_ID" id="6518" level="11" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1120,6 +1299,11 @@
 	</npc>
 	<npc id="27432" level="76" type="L2Monster" name="Tracker" title="Resurrected">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="4073" level="9" />
+			<skill name="Skill02_ID" id="6515" level="11" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" lhand="945" /> <!-- Skeleton Dagger / Skeleton Buckler -->
@@ -1153,6 +1337,11 @@
 	</npc>
 	<npc id="27433" level="76" type="L2Monster" name="Priest of Darkness" title="Resurrected">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="4613" level="9" />
+			<skill name="Skill02_ID" id="4582" level="9" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1185,6 +1374,11 @@
 	</npc>
 	<npc id="27434" level="76" type="L2Monster" name="Guardian of Darkness" title="Resurrected">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="4073" level="9" />
+			<skill name="Skill02_ID" id="6518" level="11" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="77" /> <!-- Tsurugi -->
@@ -1218,6 +1412,9 @@
 	</npc>
 	<npc id="27435" level="76" type="L2Monster" name="Victim's Spirit" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1247,6 +1444,9 @@
 	</npc>
 	<npc id="27436" level="77" type="L2Monster" name="Resurrected Chaos" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1276,6 +1476,13 @@
 	</npc>
 	<npc id="27437" level="85" type="L2Monster" name="Krakia Bathus" title="Tyrr Warrior">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14676" level="1" />
+			<skill name="Skill02_ID" id="14678" level="1" />
+			<skill name="s_knockback" id="14677" level="1" />
+			<skill name="ultimate_skill" id="4318" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="0" sp="0" />
@@ -1328,6 +1535,13 @@
 	</npc>
 	<npc id="27438" level="85" type="L2Monster" name="Krakia Carcass" title="Yul Archer">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14682" level="1" />
+			<skill name="Skill02_ID" id="14683" level="1" />
+			<skill name="s_knockback_shot" id="14684" level="1" />
+			<skill name="ultimate_skill" id="4318" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="0" sp="0" />
@@ -1381,6 +1595,14 @@
 	</npc>
 	<npc id="27439" level="85" type="L2Monster" name="Krakia Lotus" title="Wynn Summoner">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14688" level="1" />
+			<skill name="Skill02_ID" id="14688" level="1" />
+			<skill name="Skill03_ID" id="14689" level="1" />
+			<skill name="Skill04_ID" id="14690" level="1" />
+			<skill name="ultimate_skill" id="4318" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="0" sp="0" />
@@ -1433,6 +1655,13 @@
 	</npc>
 	<npc id="27440" level="85" type="L2Monster" name="Rakzan" title="Sigel Knight">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14673" level="1" />
+			<skill name="Skill02_ID" id="14674" level="1" />
+			<skill name="s_chain" id="14675" level="1" />
+			<skill name="ultimate_skill" id="4318" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="0" sp="0" />
@@ -1485,6 +1714,14 @@
 	</npc>
 	<npc id="27441" level="85" type="L2Monster" name="Weiss Khan" title="Feoh Wizard">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14685" level="1" />
+			<skill name="Skill02_ID" id="14685" level="1" />
+			<skill name="Skill03_ID" id="14686" level="1" />
+			<skill name="s_air_band" id="14687" level="1" />
+			<skill name="ultimate_skill" id="4318" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="0" sp="0" />
@@ -1537,6 +1774,13 @@
 	</npc>
 	<npc id="27442" level="85" type="L2Monster" name="Bamonti" title="Othell Rogue">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14679" level="1" />
+			<skill name="s_poison" id="14681" level="1" />
+			<skill name="s_inivisible" id="14680" level="1" />
+			<skill name="ultimate_skill" id="4318" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="0" sp="0" />
@@ -1588,6 +1832,14 @@
 	</npc>
 	<npc id="27443" level="85" type="L2Monster" name="Seknus" title="Iss Enchanter">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14691" level="1" />
+			<skill name="Skill02_ID" id="14692" level="1" />
+			<skill name="s_attack_up" id="14693" level="1" />
+			<skill name="s_change_stone" id="11537" level="1" />
+			<skill name="ultimate_skill" id="4318" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="0" sp="0" />
@@ -1641,6 +1893,9 @@
 	</npc>
 	<npc id="27444" level="85" type="L2Monster" name="Noctum" title="Watchman of the Seal">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="2358.3850519031" sp="490762" />
@@ -1683,6 +1938,21 @@
 	</npc>
 	<npc id="27445" level="85" type="L2Monster" name="Harnak's Wraith" title="Giant's Watchman">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="Skill01_Probablity" value="500" />
+			<param name="Skill02_Probablity" value="500" />
+			<param name="Skill03_Probablity" value="500" />
+			<param name="Skill04_Probablity" value="500" />
+			<param name="Skill05_Probablity" value="500" />
+			<param name="Skill06_Probablity" value="500" />
+			<skill name="Skill01_ID" id="14674" level="1" />
+			<skill name="Skill02_ID" id="14676" level="1" />
+			<skill name="Skill03_ID" id="14685" level="1" />
+			<skill name="Skill04_ID" id="14688" level="1" />
+			<skill name="Skill05_ID" id="14694" level="1" />
+			<skill name="Skill06_ID" id="14687" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
 		<acquire expRate="0" sp="0" />
@@ -1770,6 +2040,9 @@
 	</npc>
 	<npc id="27447" level="85" type="L2Monster" name="Demonic Carcass" title="Watchman of the Seal">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="15304" /> <!-- Transparent Crossbow (NPC) -->
@@ -1835,6 +2108,9 @@
 	</npc>
 	<npc id="27449" level="85" type="L2Monster" name="Demonic Weiss Khan" title="Watchman of the Seal">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1867,6 +2143,9 @@
 	</npc>
 	<npc id="27450" level="85" type="L2Monster" name="Demonic Bamonti" title="Watchman of the Seal">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1899,6 +2178,10 @@
 	</npc>
 	<npc id="27451" level="29" type="L2Monster" name="Kanilov" title="Quest Monster">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="4073" level="3" />
+			<skill name="Skill02_ID" id="14093" level="1" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1931,6 +2214,10 @@
 	</npc>
 	<npc id="27452" level="34" type="L2Monster" name="Poslof" title="Quest Monster">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="4073" level="4" />
+			<skill name="Skill02_ID" id="14094" level="1" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1963,6 +2250,10 @@
 	</npc>
 	<npc id="27453" level="40" type="L2Monster" name="Sakum" title="Quest Monster">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14095" level="1" />
+			<skill name="Skill02_ID" id="14352" level="1" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1996,6 +2287,14 @@
 	</npc>
 	<npc id="27454" level="85" type="L2Monster" name="Weiss Ele" title="Aeore Healer">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14694" level="1" />
+			<skill name="Skill02_ID" id="14694" level="1" />
+			<skill name="s_heal" id="14695" level="1" />
+			<skill name="s_protect" id="14696" level="1" />
+			<skill name="ultimate_skill" id="4318" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="0" sp="0" />
@@ -2135,6 +2434,10 @@
 	</npc>
 	<npc id="27459" level="38" type="L2Monster" name="Regenerated Kanilov" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="4073" level="4" />
+			<skill name="Skill02_ID" id="14094" level="5" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -2168,6 +2471,10 @@
 	</npc>
 	<npc id="27460" level="38" type="L2Monster" name="Regenerated Poslof" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="4073" level="4" />
+			<skill name="Skill02_ID" id="14094" level="5" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -2201,6 +2508,10 @@
 	</npc>
 	<npc id="27461" level="38" type="L2Monster" name="Sakum's Summoned Pet" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14095" level="1" />
+			<skill name="Skill02_ID" id="14352" level="1" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -2233,6 +2544,12 @@
 	</npc>
 	<npc id="27462" level="85" type="L2Monster" name="Rakzan" title="Sigel Knight">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14673" level="1" />
+			<skill name="Skill02_ID" id="14674" level="1" />
+			<skill name="s_chain" id="14675" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2271,6 +2588,12 @@
 	</npc>
 	<npc id="27463" level="85" type="L2Monster" name="Krakia Bathus" title="Tyrr Warrior">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14676" level="1" />
+			<skill name="Skill02_ID" id="14678" level="1" />
+			<skill name="s_knockback" id="14677" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2309,6 +2632,12 @@
 	</npc>
 	<npc id="27464" level="85" type="L2Monster" name="Bamonti" title="Othell Rogue">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14679" level="1" />
+			<skill name="s_poison" id="14681" level="1" />
+			<skill name="s_inivisible" id="14680" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2346,6 +2675,12 @@
 	</npc>
 	<npc id="27465" level="85" type="L2Monster" name="Krakia Carcass" title="Yul Archer">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14682" level="1" />
+			<skill name="Skill02_ID" id="14683" level="1" />
+			<skill name="s_knockback_shot" id="14684" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="15304" /> <!-- Transparent Crossbow (NPC) -->
@@ -2385,6 +2720,13 @@
 	</npc>
 	<npc id="27466" level="85" type="L2Monster" name="Weiss Khan" title="Feoh Wizard">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14685" level="1" />
+			<skill name="Skill02_ID" id="14685" level="1" />
+			<skill name="Skill03_ID" id="14686" level="1" />
+			<skill name="s_air_band" id="14687" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2423,6 +2765,13 @@
 	</npc>
 	<npc id="27467" level="85" type="L2Monster" name="Seknus" title="Iss Enchanter">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14691" level="1" />
+			<skill name="Skill02_ID" id="14692" level="1" />
+			<skill name="s_attack_up" id="14693" level="1" />
+			<skill name="s_change_stone" id="11537" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2461,6 +2810,13 @@
 	</npc>
 	<npc id="27468" level="85" type="L2Monster" name="Krakia Lotus" title="Wynn Summoner">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14688" level="2" />
+			<skill name="Skill02_ID" id="14688" level="2" />
+			<skill name="Skill03_ID" id="14689" level="2" />
+			<skill name="Skill04_ID" id="14690" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2499,6 +2855,13 @@
 	</npc>
 	<npc id="27469" level="85" type="L2Monster" name="Weiss Ele" title="Aeore Healer">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14694" level="1" />
+			<skill name="Skill02_ID" id="14694" level="1" />
+			<skill name="s_heal" id="14695" level="1" />
+			<skill name="s_protect" id="14696" level="1" />
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2531,6 +2894,14 @@
 	</npc>
 	<npc id="27470" level="70" type="L2Monster" name="Shilen's Messenger Cabrio" title="Quest Monster">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="27471" count="2" respawnTime="120" weightPoint="1" />
+				<npc id="27472" count="2" respawnTime="120" weightPoint="1" />
+			</minions>
+			<param name="Party_Type" value="2" />
+			<param name="MoveArounding" value="0" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="189" /> <!-- Staff of Life -->
@@ -2562,6 +2933,9 @@
 	</npc>
 	<npc id="27471" level="69" type="L2Monster" name="Cabrio Captor" title="Quest Monster">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Party_Type" value="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="279" /> <!-- Reinforced Longbow -->
@@ -2594,6 +2968,9 @@
 	</npc>
 	<npc id="27472" level="69" type="L2Monster" name="Cabrio Blader" title="Quest Monster">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Party_Type" value="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="5129" lhand="5129" /> <!-- Doll Knife / Doll Knife -->
@@ -2624,6 +3001,17 @@
 	</npc>
 	<npc id="27473" level="75" type="L2Monster" name="Kernon" title="Quest Monster">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="27474" count="2" respawnTime="120" weightPoint="1" />
+				<npc id="27475" count="2" respawnTime="120" weightPoint="1" />
+			</minions>
+			<param name="Party_Type" value="2" />
+			<param name="MoveArounding" value="0" />
+			<skill name="Skill01_ID" id="4195" level="4" />
+			<skill name="Skill02_ID" id="4182" level="4" />
+			<skill name="Skill03_ID" id="4190" level="4" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
@@ -2654,6 +3042,10 @@
 	</npc>
 	<npc id="27474" level="74" type="L2Monster" name="Taliadon" title="Quest Monster">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Party_Type" value="1" />
+			<skill name="Skill01_ID" id="4168" level="3" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="1472" /> <!-- Dreadbane -->
@@ -2685,6 +3077,9 @@
 	</npc>
 	<npc id="27475" level="74" type="L2Monster" name="Vemsk" title="Quest Monster">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Party_Type" value="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="142" /> <!-- Keshanberk -->
@@ -2715,6 +3110,10 @@
 	</npc>
 	<npc id="27476" level="79" type="L2Monster" name="Longhorn Golkonda" title="Quest Monster">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveArounding" value="0" />
+			<skill name="Skill03_ID" id="4172" level="4" />
+		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
 		<equipment rhand="91" /> <!-- Heavy War Axe -->
@@ -2744,6 +3143,15 @@
 	</npc>
 	<npc id="27477" level="73" type="L2Monster" name="Death Lord Hallate" title="Quest Monster">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="27478" count="3" respawnTime="120" weightPoint="1" />
+				<npc id="27479" count="1" respawnTime="120" weightPoint="1" />
+			</minions>
+			<param name="Party_Type" value="2" />
+			<param name="MoveArounding" value="0" />
+			<skill name="Skill01_ID" id="4197" level="4" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="78" /> <!-- Great Sword -->
@@ -2775,6 +3183,11 @@
 	</npc>
 	<npc id="27478" level="72" type="L2Monster" name="Death Mage Krician" title="Quest Monster">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Party_Type" value="1" />
+			<skill name="Skill01_ID" id="4194" level="3" />
+			<skill name="Skill02_ID" id="4204" level="3" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="1472" /> <!-- Dreadbane -->
@@ -2806,6 +3219,10 @@
 	</npc>
 	<npc id="27479" level="72" type="L2Monster" name="Death Fighter Harik" title="Quest Monster">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Party_Type" value="1" />
+			<skill name="Skill01_ID" id="4169" level="3" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="75" /> <!-- Caliburs -->
@@ -2837,6 +3254,11 @@
 	</npc>
 	<npc id="27480" level="84" type="L2Monster" name="Sehkmeti" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="50" />
+			<param name="MoveAroundSocial1" value="50" />
+			<param name="IsAggressive" value="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -2880,6 +3302,13 @@
 	</npc>
 	<npc id="27481" level="84" type="L2Monster" name="Blood Thirst" title="Succubus Lord">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="IsAggressive" value="0" />
+			<skill name="i_s_elite_real" id="14974" level="1" />
+			<skill name="Skill01_ID" id="14973" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">

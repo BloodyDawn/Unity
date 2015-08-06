@@ -2,6 +2,24 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="2081" level="82" type="L2Monster" name="Plague Kanabion">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="Skill01_Probablity" value="2000" />
+			<param name="Type" value="0" />
+			<param name="PrivatesNorm" value="2081" />
+			<param name="PrivatesSpA" value="2082" />
+			<param name="PrivatesSpB" value="2083" />
+			<param name="MyMakerName" value="inzone03_2111_80m1" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="Skill01_ID" id="4032" level="8" />
+			<skill name="Debuff" id="5719" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="1.8899464604402" sp="3" />
@@ -65,6 +83,26 @@
 	</npc>
 	<npc id="2082" level="82" type="L2Monster" name="Canabion of Plague" title="Doppler">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="MoveAroundSocial" value="160" />
+			<param name="MoveAroundSocial1" value="160" />
+			<param name="MoveAroundSocial2" value="160" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="1" />
+			<param name="Skill01_Probablity" value="3500" />
+			<param name="Type" value="1" />
+			<param name="PrivatesNorm" value="2081" />
+			<param name="PrivatesSpA" value="2082" />
+			<param name="PrivatesSpB" value="2083" />
+			<param name="MyMakerName" value="inzone03_2111_80m1" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="Skill01_ID" id="4032" level="8" />
+			<skill name="Debuff" id="5719" level="1" />
+		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="1.8899464604402" sp="3" />
@@ -128,6 +166,27 @@
 	</npc>
 	<npc id="2083" level="83" type="L2Monster" name="Canabion of Plague" title="Void">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="MoveAroundSocial" value="160" />
+			<param name="MoveAroundSocial1" value="160" />
+			<param name="MoveAroundSocial2" value="160" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="1" />
+			<param name="Skill01_Probablity" value="4500" />
+			<param name="Type" value="2" />
+			<param name="PrivatesNorm" value="2081" />
+			<param name="PrivatesSpA" value="2082" />
+			<param name="PrivatesSpB" value="2083" />
+			<param name="MyMakerName" value="inzone03_2111_80m1" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="Skill01_ID" id="4032" level="8" />
+			<skill name="Buff" id="4340" level="1" />
+			<skill name="Debuff" id="5719" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="1.8899695166207" sp="3" />

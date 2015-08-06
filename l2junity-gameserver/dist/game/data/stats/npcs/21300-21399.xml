@@ -2,6 +2,21 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="21300" level="71" type="L2Monster" name="Eye of Guide">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SetHateGroup" value="subjob_group_knight" />
+			<param name="SetHateGroupRatio" value="30" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpeedBonus" value="40" />
+			<param name="HealBonus" value="2.4" />
+			<param name="SpiritShotRate" value="30" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="W_LongRangeDDMagic" id="4158" level="7" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="7" />
+			<skill name="Heal" id="4613" level="7" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="16.726443166038" sp="20" />
@@ -65,6 +80,24 @@
 	</npc>
 	<npc id="21301" level="71" type="L2Monster" name="Gaze of Nightmare">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="40" />
+			<param name="MoveAroundSocial1" value="40" />
+			<param name="MoveAroundSocial2" value="40" />
+			<skill name="CheckMagic" id="4098" level="7" />
+			<skill name="CheckMagic1" id="4046" level="7" />
+			<skill name="SleepMagic" id="4046" level="7" />
+			<param name="RandomAggressive" value="30" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4105" level="7" />
+			<skill name="CancelMagic" id="4094" level="7" />
+			<skill name="DeBuff" id="4047" level="7" />
+			<skill name="DeBuffCancel" id="4650" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="20.071811148582" sp="24" />
@@ -131,6 +164,23 @@
 	</npc>
 	<npc id="21302" level="72" type="L2Monster" name="Eye of Watchman">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="90" />
+			<skill name="CheckMagic" id="4098" level="7" />
+			<skill name="CheckMagic1" id="4046" level="7" />
+			<skill name="SleepMagic" id="4046" level="7" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="DDMagic" id="4105" level="7" />
+			<skill name="CancelMagic" id="4094" level="7" />
+			<skill name="DeBuff" id="4657" level="7" />
+			<skill name="DeBuffCancel" id="4650" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="15.704861111111" sp="19" />
@@ -197,6 +247,19 @@
 	</npc>
 	<npc id="21303" level="74" type="L2Monster" name="Homunculus">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="AttackLowHP" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="W_LongRangeDDMagic" id="4563" level="7" />
+			<skill name="W_ShortRangeDDMagic" id="4561" level="7" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="15.884404674945" sp="20" />
@@ -259,6 +322,23 @@
 	</npc>
 	<npc id="21304" level="75" type="L2Monster" name="Grendel Slave">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="115" />
+			<param name="MoveAroundSocial1" value="115" />
+			<param name="MoveAroundSocial2" value="115" />
+			<param name="SetHateGroup" value="subjob_group_knight" />
+			<param name="SetHateGroupRatio" value="30" />
+			<param name="AttackLowHP" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfBuff1" id="4089" level="1" />
+			<skill name="SelfBuff2" id="4090" level="1" />
+			<skill name="SelfBuff3" id="4092" level="1" />
+			<skill name="SelfBuff4" id="4091" level="1" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="22.714844444444" sp="30" />
@@ -324,6 +404,21 @@
 	</npc>
 	<npc id="21305" level="73" type="L2Monster" name="Eye of Pilgrim">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="SetHateGroup" value="subjob_group_knight" />
+			<param name="SetHateGroupRatio" value="30" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="W_LongRangeDDMagic" id="4158" level="7" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="7" />
+			<skill name="Heal" id="4613" level="7" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="16.726590354663" sp="21" />
@@ -388,6 +483,18 @@
 	</npc>
 	<npc id="21306" level="76" type="L2Monster" name="Disciples of Protection">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="130" />
+			<param name="MoveAroundSocial1" value="130" />
+			<param name="MoveAroundSocial2" value="130" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="30" />
+			<param name="SetHateGroup" value="subjob_group_knight" />
+			<param name="SetHateGroupRatio" value="30" />
+			<param name="AttackLowHP" value="1" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="Buff" id="4585" level="3" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="6717" /> <!-- Monster Only (Einhasad Warrior) -->
@@ -453,6 +560,20 @@
 	</npc>
 	<npc id="21307" level="74" type="L2Monster" name="Elder Homunculus">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="Attack_DecayRatio" value="4" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="W_LongRangeDDMagic" id="4257" level="8" />
+			<skill name="W_ShortRangeDDMagic" id="4561" level="8" />
+			<skill name="DeBuff" id="4038" level="5" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="20.649744338934" sp="27" />
@@ -517,6 +638,18 @@
 	</npc>
 	<npc id="21308" level="77" type="L2Monster" name="Disciples of Punishment">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="130" />
+			<param name="MoveAroundSocial1" value="130" />
+			<param name="MoveAroundSocial2" value="130" />
+			<param name="SetHateGroup" value="subjob_group_knight" />
+			<param name="SetHateGroupRatio" value="30" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="30" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="W_LongRangeDDMagic" id="4158" level="9" />
+			<skill name="PhysicalSpecialRange" id="4599" level="9" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="6717" /> <!-- Monster Only (Einhasad Warrior) -->
@@ -591,6 +724,20 @@
 	</npc>
 	<npc id="21309" level="77" type="L2Monster" name="Disciples of Punishment">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="130" />
+			<param name="MoveAroundSocial1" value="130" />
+			<param name="MoveAroundSocial2" value="130" />
+			<param name="SetHateGroup" value="subjob_group_knight" />
+			<param name="SetHateGroupRatio" value="30" />
+			<param name="AttackLowHP" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfRangeDDMagic" id="4033" level="9" />
+			<skill name="SelfBuff" id="4091" level="1" />
+			<skill name="PhysicalSpecial" id="4580" level="9" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="6717" /> <!-- Monster Only (Einhasad Warrior) -->
@@ -639,6 +786,18 @@
 	</npc>
 	<npc id="21310" level="78" type="L2Monster" name="Disciples of Authority">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="85" />
+			<param name="MoveAroundSocial1" value="85" />
+			<param name="MoveAroundSocial2" value="85" />
+			<param name="AttackLowHP" value="1" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpeedBonus" value="40" />
+			<param name="HealBonus" value="1" />
+			<param name="SpiritShotRate" value="30" />
+			<skill name="W_LongRangeDDMagic" id="4158" level="9" />
+			<skill name="SelfRangeDDMagic" id="4599" level="9" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="6718" /> <!-- Monster Only (Einhasad Shaman) -->
@@ -709,6 +868,17 @@
 	</npc>
 	<npc id="21311" level="78" type="L2Monster" name="Disciples of Authority">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="85" />
+			<param name="MoveAroundSocial1" value="85" />
+			<param name="MoveAroundSocial2" value="85" />
+			<param name="SpiritShot" value="300" />
+			<param name="SpeedBonus" value="40" />
+			<param name="HealBonus" value="1" />
+			<param name="SpiritShotRate" value="30" />
+			<skill name="W_LongRangeDDMagic" id="4158" level="9" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="9" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="6718" /> <!-- Monster Only (Einhasad Shaman) -->
@@ -754,6 +924,25 @@
 	</npc>
 	<npc id="21312" level="74" type="L2Monster" name="Eye of Ruler">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="90" />
+			<minions name="Privates">
+				<npc id="21313" count="2" respawnTime="0" weightPoint="1" />
+			</minions>
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="W_LongRangeDDMagic" id="4156" level="7" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="7" />
+			<skill name="RangeBuff" id="4609" level="4" />
+			<skill name="DeBuff" id="4047" level="7" />
+			<skill name="DeBuffCancel" id="4650" level="1" />
+			<skill name="RangeDD" id="4571" level="7" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="23.13184806428" sp="30" />
@@ -821,6 +1010,19 @@
 	</npc>
 	<npc id="21313" level="72" type="L2Monster" name="Sly Hound Dog">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="78" />
+			<param name="MoveAroundSocial1" value="78" />
+			<param name="MoveAroundSocial2" value="78" />
+			<param name="Attack_DecayRatio" value="8" />
+			<param name="AttackLowHP" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4579" level="7" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="23.390432098765" sp="29" />
@@ -882,6 +1084,21 @@
 	</npc>
 	<npc id="21314" level="73" type="L2Monster" name="Hot Springs Bandersnatchling">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="78" />
+			<param name="MoveAroundSocial1" value="78" />
+			<param name="MoveAroundSocial2" value="78" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="DDMagic" id="4002" level="7" />
+			<skill name="PhysicalSpecial" id="4073" level="7" />
+			<skill name="Buff1" id="4074" level="2" />
+			<skill name="Buff2" id="4096" level="3" />
+			<skill name="DeBuff1" id="4554" level="1" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="10.468568211672" sp="13" />
@@ -970,6 +1187,19 @@
 	</npc>
 	<npc id="21315" level="73" type="L2Monster" name="Hot Springs Buffalo">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="30" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="SelfBuff" id="4092" level="1" />
+			<skill name="SelfRangeDDMagic" id="4072" level="7" />
+			<skill name="PhysicalSpecial" id="4073" level="7" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="10.909551510602" sp="13" />
@@ -1056,6 +1286,20 @@
 	</npc>
 	<npc id="21316" level="74" type="L2Monster" name="Hot Springs Flava">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4073" level="7" />
+			<skill name="Buff1" id="4099" level="2" />
+			<skill name="Buff2" id="4074" level="2" />
+			<skill name="DeBuff1" id="4554" level="1" />
+		</parameters>
 		<race>PLANT</race>
 		<sex>MALE</sex>
 		<acquire expRate="12.492147552958" sp="16" />
@@ -1145,6 +1389,21 @@
 	</npc>
 	<npc id="21317" level="74" type="L2Monster" name="Hot Springs Atroxspawn">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="DDMagic" id="4002" level="7" />
+			<skill name="PhysicalSpecial" id="4073" level="7" />
+			<skill name="Buff1" id="4074" level="2" />
+			<skill name="Buff2" id="4096" level="3" />
+			<skill name="DeBuff1" id="4554" level="1" />
+		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="10.468590211833" sp="13" />
@@ -1233,6 +1492,19 @@
 	</npc>
 	<npc id="21318" level="74" type="L2Monster" name="Hot Springs Antelope">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="SelfBuff" id="4092" level="1" />
+			<skill name="SelfRangeDDMagic" id="4033" level="7" />
+			<skill name="PhysicalSpecial" id="4073" level="7" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="10.942476260044" sp="14" />
@@ -1319,6 +1591,21 @@
 	</npc>
 	<npc id="21319" level="75" type="L2Monster" name="Hot Springs Nepenthes">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4073" level="8" />
+			<skill name="RangePhysicalSpecial" id="4072" level="8" />
+			<skill name="Buff1" id="4074" level="2" />
+			<skill name="Buff2" id="4099" level="2" />
+			<skill name="DeBuff1" id="4554" level="1" />
+		</parameters>
 		<race>PLANT</race>
 		<sex>MALE</sex>
 		<acquire expRate="13.405333333333" sp="18" />
@@ -1409,6 +1696,19 @@
 	</npc>
 	<npc id="21320" level="75" type="L2Monster" name="Hot Springs Yeti">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="SelfBuff" id="4092" level="1" />
+			<skill name="SelfRangeDDMagic" id="4072" level="8" />
+			<skill name="PhysicalSpecial" id="4073" level="8" />
+		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
 		<acquire expRate="10.909511111111" sp="14" />
@@ -1495,6 +1795,16 @@
 	</npc>
 	<npc id="21321" level="76" type="L2Monster" name="Hot Springs Atrox">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<skill name="DDMagic" id="4002" level="8" />
+			<skill name="PhysicalSpecial" id="4073" level="8" />
+			<skill name="Buff1" id="4074" level="2" />
+			<skill name="Buff2" id="4096" level="3" />
+			<skill name="DeBuff1" id="4554" level="1" />
+		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="12.49203601108" sp="17" />
@@ -1583,6 +1893,16 @@
 	</npc>
 	<npc id="21322" level="76" type="L2Monster" name="Hot Springs Bandersnatch">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="78" />
+			<param name="MoveAroundSocial1" value="78" />
+			<param name="MoveAroundSocial2" value="78" />
+			<skill name="DDMagic" id="4002" level="8" />
+			<skill name="PhysicalSpecial" id="4073" level="8" />
+			<skill name="Buff1" id="4074" level="2" />
+			<skill name="Buff2" id="4099" level="2" />
+			<skill name="DeBuff1" id="4554" level="1" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="12.49203601108" sp="17" />
@@ -1671,6 +1991,14 @@
 	</npc>
 	<npc id="21323" level="76" type="L2Monster" name="Hot Springs Grendel">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="115" />
+			<param name="MoveAroundSocial1" value="115" />
+			<param name="MoveAroundSocial2" value="115" />
+			<skill name="SelfBuff" id="4092" level="1" />
+			<skill name="SelfRangeDDMagic" id="4033" level="8" />
+			<skill name="PhysicalSpecial" id="4073" level="8" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="10.942520775623" sp="15" />
@@ -1757,6 +2085,22 @@
 	</npc>
 	<npc id="21324" level="77" type="L2Monster" name="Ketra Orc Footman">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="SelfBuff" id="4099" level="2" />
+			<skill name="SelfRangeDDMagic" id="4072" level="8" />
+			<skill name="PhysicalSpecial" id="4573" level="8" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="79" /> <!-- Damascus Sword -->
@@ -1843,6 +2187,18 @@
 	</npc>
 	<npc id="21325" level="77" type="L2Monster" name="Ketra's War Hound">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="78" />
+			<param name="MoveAroundSocial1" value="78" />
+			<param name="MoveAroundSocial2" value="78" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<skill name="PhysicalSpecial" id="4032" level="8" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="22.589306797099" sp="32" />
@@ -1926,6 +2282,17 @@
 	</npc>
 	<npc id="21326" level="77" type="L2Monster" name="Grazing Kookaburra">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="72" />
+			<param name="MoveAroundSocial1" value="30" />
+			<param name="MoveAroundSocial2" value="72" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<skill name="PhysicalSpecial" id="4073" level="8" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="22.000843312532" sp="31" />
@@ -2009,6 +2376,24 @@
 	</npc>
 	<npc id="21327" level="78" type="L2Monster" name="Ketra Orc Raider">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="MaxRoarCount" value="3" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="Fury" id="4317" level="1" />
+			<skill name="SelfRangePhysicalSpecial" id="4072" level="8" />
+			<skill name="PhysicalSpecial" id="4572" level="8" />
+			<skill name="DeBuff" id="4038" level="5" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="79" lhand="6919" /> <!-- Damascus Sword / Monster Only (Shield of Ketra Orc) -->
@@ -2103,6 +2488,20 @@
 	</npc>
 	<npc id="21328" level="78" type="L2Monster" name="Ketra Orc Scout">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="PhysicalSpecial" id="4040" level="8" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="288" /> <!-- Carnage Bow -->
@@ -2186,6 +2585,26 @@
 	</npc>
 	<npc id="21329" level="78" type="L2Monster" name="Ketra Orc Shaman">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="75" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpeedBonus" value="40" />
+			<param name="HealBonus" value="1" />
+			<param name="SpiritShotRate" value="30" />
+			<skill name="W_LongRangeDDMagic" id="4157" level="8" />
+			<skill name="W_ShortRangeDDMagic" id="4561" level="8" />
+			<skill name="Buff1" id="4030" level="3" />
+			<skill name="Buff2" id="4031" level="3" />
+			<skill name="DeBuff" id="4035" level="8" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="92" /> <!-- Spirit's Staff -->
@@ -2281,6 +2700,17 @@
 	</npc>
 	<npc id="21330" level="78" type="L2Monster" name="Grazing Buffalo">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="30" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<skill name="PhysicalSpecial" id="4073" level="8" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="21.770874424721" sp="31" />
@@ -2362,6 +2792,22 @@
 	</npc>
 	<npc id="21331" level="78" type="L2Monster" name="Ketra Orc Warrior">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="DDMagic1" id="4078" level="9" />
+			<skill name="DDMagic2" id="4596" level="9" />
+			<skill name="DeBuff" id="4119" level="3" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="79" lhand="6919" /> <!-- Damascus Sword / Monster Only (Shield of Ketra Orc) -->
@@ -2448,6 +2894,24 @@
 	</npc>
 	<npc id="21332" level="78" type="L2Monster" name="Ketra Orc Lieutenant">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="140" />
+			<param name="MoveAroundSocial1" value="54" />
+			<param name="MoveAroundSocial2" value="140" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="MaxRoarCount" value="3" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="50" />
+			<skill name="Fury" id="4317" level="1" />
+			<skill name="SelfRangePhysicalSpecial" id="4072" level="9" />
+			<skill name="PhysicalSpecial" id="4573" level="9" />
+			<skill name="DeBuff" id="4038" level="5" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6719" /> <!-- Monster Only (Ketra Orc Chieftain) -->
@@ -2538,6 +3002,17 @@
 	</npc>
 	<npc id="21333" level="78" type="L2Monster" name="Grazing Windsus">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="95" />
+			<param name="MoveAroundSocial1" value="95" />
+			<param name="MoveAroundSocial2" value="95" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<skill name="PhysicalSpecial" id="4067" level="9" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="21.770874424721" sp="31" />
@@ -2619,6 +3094,27 @@
 	</npc>
 	<npc id="21334" level="78" type="L2Monster" name="Ketra Orc Medium">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="75" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpeedBonus" value="40" />
+			<param name="HealBonus" value="1" />
+			<param name="SpiritShotRate" value="30" />
+			<skill name="W_LongRangeDDMagic" id="4158" level="9" />
+			<skill name="W_ShortRangeDDMagic" id="4561" level="9" />
+			<skill name="RangeDD" id="4571" level="9" />
+			<skill name="Buff1" id="4575" level="2" />
+			<skill name="Buff2" id="4576" level="3" />
+			<skill name="DeBuff" id="4035" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="92" /> <!-- Spirit's Staff -->
@@ -2708,6 +3204,22 @@
 	</npc>
 	<npc id="21335" level="78" type="L2Monster" name="Ketra Orc Elite Soldier">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="SelfBuff" id="4099" level="2" />
+			<skill name="SelfRangeDDMagic" id="4571" level="9" />
+			<skill name="PhysicalSpecial" id="4573" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="79" /> <!-- Damascus Sword -->
@@ -2796,6 +3308,24 @@
 	</npc>
 	<npc id="21336" level="78" type="L2Monster" name="Ketra Orc White Captain">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="MaxRoarCount" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="50" />
+			<skill name="Fury" id="4317" level="1" />
+			<skill name="SelfRangePhysicalSpecial" id="4072" level="9" />
+			<skill name="PhysicalSpecial" id="4572" level="9" />
+			<skill name="DeBuff" id="4038" level="5" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="80" /> <!-- Tallum Blade -->
@@ -2884,6 +3414,17 @@
 	</npc>
 	<npc id="21337" level="78" type="L2Monster" name="Grazing Elder Buffalo">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="30" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<skill name="PhysicalSpecial" id="4032" level="9" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="21.770874424721" sp="31" />
@@ -2962,6 +3503,26 @@
 	</npc>
 	<npc id="21338" level="78" type="L2Monster" name="Ketra Orc Seer">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="75" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpeedBonus" value="40" />
+			<param name="HealBonus" value="1" />
+			<param name="SpiritShotRate" value="30" />
+			<skill name="W_LongRangeDDMagic" id="4158" level="9" />
+			<skill name="W_ShortRangeDDMagic" id="4561" level="9" />
+			<skill name="Buff1" id="4030" level="3" />
+			<skill name="Buff2" id="4575" level="2" />
+			<skill name="DeBuff" id="4035" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="213" /> <!-- Branch of the Mother Tree -->
@@ -3056,6 +3617,24 @@
 	</npc>
 	<npc id="21339" level="78" type="L2Monster" name="Ketra Orc General">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="140" />
+			<param name="MoveAroundSocial1" value="54" />
+			<param name="MoveAroundSocial2" value="140" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="MaxRoarCount" value="3" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="50" />
+			<skill name="Fury" id="4317" level="1" />
+			<skill name="SelfRangePhysicalSpecial" id="4072" level="9" />
+			<skill name="PhysicalSpecial" id="4573" level="9" />
+			<skill name="DeBuff" id="4038" level="5" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6719" /> <!-- Monster Only (Ketra Orc Chieftain) -->
@@ -3144,6 +3723,24 @@
 	</npc>
 	<npc id="21340" level="78" type="L2Monster" name="Ketra Orc Battalion Commander">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="110" />
+			<param name="MoveAroundSocial1" value="54" />
+			<param name="MoveAroundSocial2" value="110" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="MaxRoarCount" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="60" />
+			<skill name="Fury" id="4317" level="1" />
+			<skill name="SelfRangePhysicalSpecial" id="4072" level="9" />
+			<skill name="PhysicalSpecial" id="4573" level="9" />
+			<skill name="DeBuff" id="4038" level="5" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="80" lhand="6919" /> <!-- Tallum Blade / Monster Only (Shield of Ketra Orc) -->
@@ -3235,6 +3832,17 @@
 	</npc>
 	<npc id="21341" level="78" type="L2Monster" name="Grazing Elder Kookaburra">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="72" />
+			<param name="MoveAroundSocial1" value="30" />
+			<param name="MoveAroundSocial2" value="72" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<skill name="PhysicalSpecial" id="4580" level="9" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="21.770874424721" sp="31" />
@@ -3314,6 +3922,27 @@
 	</npc>
 	<npc id="21342" level="78" type="L2Monster" name="Ketra Orc Grand Seer">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="75" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpeedBonus" value="40" />
+			<param name="HealBonus" value="1" />
+			<param name="SpiritShotRate" value="50" />
+			<skill name="W_LongRangeDDMagic" id="4158" level="9" />
+			<skill name="W_ShortRangeDDMagic" id="4561" level="9" />
+			<skill name="RangeDD" id="4571" level="9" />
+			<skill name="Buff1" id="4575" level="2" />
+			<skill name="Buff2" id="4031" level="3" />
+			<skill name="DeBuff" id="4035" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="213" /> <!-- Branch of the Mother Tree -->
@@ -3410,6 +4039,25 @@
 	</npc>
 	<npc id="21343" level="78" type="L2Monster" name="Ketra Commander">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="110" />
+			<param name="MoveAroundSocial1" value="54" />
+			<param name="MoveAroundSocial2" value="110" />
+			<minions name="Privates">
+				<npc id="21344" count="2" respawnTime="0" weightPoint="1" />
+			</minions>
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="50" />
+			<skill name="PhysicalSpecial" id="4572" level="9" />
+			<skill name="Buff" id="4575" level="2" />
+			<skill name="DeBuff" id="4038" level="5" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="80" lhand="6919" /> <!-- Tallum Blade / Monster Only (Shield of Ketra Orc) -->
@@ -3478,6 +4126,20 @@
 	</npc>
 	<npc id="21344" level="78" type="L2Monster" name="Ketra Elite Guard">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="PhysicalSpecial" id="4573" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="80" /> <!-- Tallum Blade -->
@@ -3541,6 +4203,25 @@
 	</npc>
 	<npc id="21345" level="78" type="L2Monster" name="Ketra's Head Shaman">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="75" />
+			<param name="MoveAroundSocial2" value="90" />
+			<minions name="Privates">
+				<npc id="21346" count="2" respawnTime="0" weightPoint="1" />
+			</minions>
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpeedBonus" value="40" />
+			<param name="HealBonus" value="1" />
+			<param name="SpiritShotRate" value="30" />
+			<skill name="DDMagic" id="4100" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="210" /> <!-- Staff of Evil Spirits -->
@@ -3611,6 +4292,20 @@
 	</npc>
 	<npc id="21346" level="78" type="L2Monster" name="Ketra's Head Guard">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="140" />
+			<param name="MoveAroundSocial1" value="54" />
+			<param name="MoveAroundSocial2" value="140" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="PhysicalSpecial" id="4573" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6719" /> <!-- Monster Only (Ketra Orc Chieftain) -->
@@ -3675,6 +4370,30 @@
 	</npc>
 	<npc id="21347" level="78" type="L2Monster" name="Ketra Prophet">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="75" />
+			<param name="MoveAroundSocial2" value="90" />
+			<minions name="Privates">
+				<npc id="21348" count="1" respawnTime="0" weightPoint="1" />
+				<npc id="21349" count="1" respawnTime="0" weightPoint="1" />
+			</minions>
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpeedBonus" value="40" />
+			<param name="HealBonus" value="1" />
+			<param name="SpiritShotRate" value="50" />
+			<skill name="W_LongRangeDDMagic" id="4158" level="9" />
+			<skill name="W_ShortRangeDDMagic" id="4561" level="9" />
+			<skill name="Buff1" id="4030" level="3" />
+			<skill name="Buff2" id="4575" level="2" />
+			<skill name="RangeDeBuff" id="4035" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="213" /> <!-- Branch of the Mother Tree -->
@@ -3750,6 +4469,20 @@
 	</npc>
 	<npc id="21348" level="78" type="L2Monster" name="Prophet's Guard">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="140" />
+			<param name="MoveAroundSocial1" value="54" />
+			<param name="MoveAroundSocial2" value="140" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="PhysicalSpecial" id="4573" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6719" /> <!-- Monster Only (Ketra Orc Chieftain) -->
@@ -3814,6 +4547,23 @@
 	</npc>
 	<npc id="21349" level="78" type="L2Monster" name="Prophet's Aide">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="75" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="FriendShip1" value="7211" />
+			<param name="FriendShip2" value="7212" />
+			<param name="FriendShip3" value="7213" />
+			<param name="FriendShip4" value="7214" />
+			<param name="FriendShip5" value="7215" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpeedBonus" value="40" />
+			<param name="HealBonus" value="1" />
+			<param name="SpiritShotRate" value="30" />
+			<skill name="DDMagic" id="4100" level="9" />
+			<skill name="DeBuff" id="4035" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="210" /> <!-- Staff of Evil Spirits -->
@@ -3886,6 +4636,23 @@
 	</npc>
 	<npc id="21350" level="77" type="L2Monster" name="Varka Silenos Recruit">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="65" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="65" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="SelfBuff" id="4092" level="1" />
+			<skill name="SelfRangeDDMagic" id="4072" level="8" />
+			<skill name="PhysicalSpecial" id="4032" level="8" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="2504" lhand="6918" /> <!-- Meteor Shower / Monster Only (Shield of Silenos) -->
@@ -3978,6 +4745,21 @@
 	</npc>
 	<npc id="21351" level="77" type="L2Monster" name="Varka Silenos Footman">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="85" />
+			<param name="MoveAroundSocial1" value="85" />
+			<param name="MoveAroundSocial2" value="85" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="PhysicalSpecial" id="4573" level="8" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="2504" lhand="6918" /> <!-- Meteor Shower / Monster Only (Shield of Silenos) -->
@@ -4069,6 +4851,19 @@
 	</npc>
 	<npc id="21352" level="77" type="L2Monster" name="Grazing Antelope">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="PhysicalSpecial" id="4067" level="8" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="22.544779895429" sp="32" />
@@ -4150,6 +4945,24 @@
 	</npc>
 	<npc id="21353" level="78" type="L2Monster" name="Varka Silenos Scout">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="65" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="65" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="Fury" id="4317" level="1" />
+			<skill name="SelfRangePhysicalSpecial" id="4072" level="8" />
+			<skill name="PhysicalSpecial" id="4573" level="8" />
+			<skill name="DeBuff" id="4038" level="5" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="142" lhand="6918" /> <!-- Keshanberk / Monster Only (Shield of Silenos) -->
@@ -4245,6 +5058,21 @@
 	</npc>
 	<npc id="21354" level="78" type="L2Monster" name="Varka Silenos Hunter">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="75" />
+			<param name="MoveAroundSocial1" value="75" />
+			<param name="MoveAroundSocial2" value="75" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="PhysicalSpecial" id="4040" level="8" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6917" /> <!-- Monster Only (Poison Sting) -->
@@ -4336,6 +5164,25 @@
 	</npc>
 	<npc id="21355" level="78" type="L2Monster" name="Varka Silenos Shaman">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="123" />
+			<param name="MoveAroundSocial1" value="123" />
+			<param name="MoveAroundSocial2" value="123" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="W_LongRangeDDMagic" id="4563" level="8" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="8" />
+			<skill name="Buff1" id="4030" level="3" />
+			<skill name="Buff2" id="4031" level="3" />
+			<skill name="DeBuff" id="4098" level="8" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6716" /> <!-- Monster Only (Silenos Shaman) -->
@@ -4432,6 +5279,19 @@
 	</npc>
 	<npc id="21356" level="78" type="L2Monster" name="Grazing Nepenthes">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="PhysicalSpecial" id="4073" level="8" />
+		</parameters>
 		<race>PLANT</race>
 		<sex>MALE</sex>
 		<acquire expRate="22.309171597633" sp="32" />
@@ -4515,6 +5375,23 @@
 	</npc>
 	<npc id="21357" level="78" type="L2Monster" name="Varka Silenos Priest">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="DDMagic1" id="4562" level="9" />
+			<skill name="DDMagic2" id="4560" level="9" />
+			<skill name="DeBuff" id="4119" level="3" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6716" /> <!-- Monster Only (Silenos Shaman) -->
@@ -4585,6 +5462,24 @@
 	</npc>
 	<npc id="21358" level="78" type="L2Monster" name="Varka Silenos Warrior">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="85" />
+			<param name="MoveAroundSocial1" value="85" />
+			<param name="MoveAroundSocial2" value="85" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="Fury" id="4317" level="1" />
+			<skill name="SelfRangePhysicalSpecial" id="4072" level="9" />
+			<skill name="PhysicalSpecial" id="4572" level="9" />
+			<skill name="DeBuff" id="4038" level="5" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="142" lhand="6918" /> <!-- Keshanberk / Monster Only (Shield of Silenos) -->
@@ -4677,6 +5572,19 @@
 	</npc>
 	<npc id="21359" level="78" type="L2Monster" name="Grazing Bandersnatch">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="78" />
+			<param name="MoveAroundSocial1" value="78" />
+			<param name="MoveAroundSocial2" value="78" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="PhysicalSpecial" id="4032" level="9" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="22.309171597633" sp="32" />
@@ -4761,6 +5669,26 @@
 	</npc>
 	<npc id="21360" level="78" type="L2Monster" name="Varka Silenos Medium">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="123" />
+			<param name="MoveAroundSocial1" value="123" />
+			<param name="MoveAroundSocial2" value="123" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="W_LongRangeDDMagic" id="4563" level="9" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="9" />
+			<skill name="RangeDD" id="4033" level="9" />
+			<skill name="Buff1" id="4575" level="2" />
+			<skill name="Buff2" id="4576" level="3" />
+			<skill name="DeBuff" id="4035" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6716" /> <!-- Monster Only (Silenos Shaman) -->
@@ -4853,6 +5781,23 @@
 	</npc>
 	<npc id="21361" level="78" type="L2Monster" name="Varka Silenos Magus">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="SelfBuff" id="4099" level="2" />
+			<skill name="SelfRangeDDMagic" id="4571" level="9" />
+			<skill name="PhysicalSpecial" id="4573" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6716" /> <!-- Monster Only (Silenos Shaman) -->
@@ -4947,6 +5892,24 @@
 	</npc>
 	<npc id="21362" level="78" type="L2Monster" name="Varka Silenos Officer">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="Fury" id="4317" level="1" />
+			<skill name="SelfRangePhysicalSpecial" id="4072" level="9" />
+			<skill name="PhysicalSpecial" id="4572" level="9" />
+			<skill name="DeBuff" id="4038" level="5" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="2504" /> <!-- Meteor Shower -->
@@ -5043,6 +6006,19 @@
 	</npc>
 	<npc id="21363" level="78" type="L2Monster" name="Grazing Flava">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="120" />
+			<param name="MoveAroundSocial1" value="120" />
+			<param name="MoveAroundSocial2" value="120" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="PhysicalSpecial" id="4032" level="9" />
+		</parameters>
 		<race>PLANT</race>
 		<sex>MALE</sex>
 		<acquire expRate="19.43063773833" sp="28" />
@@ -5140,6 +6116,25 @@
 	</npc>
 	<npc id="21364" level="78" type="L2Monster" name="Varka Silenos Seer">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="123" />
+			<param name="MoveAroundSocial1" value="123" />
+			<param name="MoveAroundSocial2" value="123" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="W_LongRangeDDMagic" id="4562" level="9" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="9" />
+			<skill name="Buff1" id="4030" level="3" />
+			<skill name="Buff2" id="4575" level="2" />
+			<skill name="DeBuff" id="4119" level="3" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6716" /> <!-- Monster Only (Silenos Shaman) -->
@@ -5240,6 +6235,24 @@
 	</npc>
 	<npc id="21365" level="78" type="L2Monster" name="Varka Silenos Great Magus">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="85" />
+			<param name="MoveAroundSocial1" value="85" />
+			<param name="MoveAroundSocial2" value="85" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="Fury" id="4317" level="1" />
+			<skill name="SelfRangePhysicalSpecial" id="4072" level="9" />
+			<skill name="PhysicalSpecial" id="4573" level="9" />
+			<skill name="DeBuff" id="4038" level="5" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="2500" /> <!-- Dark Legion's Edge -->
@@ -5338,6 +6351,24 @@
 	</npc>
 	<npc id="21366" level="78" type="L2Monster" name="Varka Silenos General">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="Fury" id="4317" level="1" />
+			<skill name="SelfRangePhysicalSpecial" id="4072" level="9" />
+			<skill name="PhysicalSpecial" id="4077" level="9" />
+			<skill name="DeBuff" id="4038" level="5" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="2500" /> <!-- Dark Legion's Edge -->
@@ -5437,6 +6468,19 @@
 	</npc>
 	<npc id="21367" level="78" type="L2Monster" name="Grazing Elder Antelope">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="PhysicalSpecial" id="4580" level="9" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="22.309171597633" sp="32" />
@@ -5528,6 +6572,26 @@
 	</npc>
 	<npc id="21368" level="78" type="L2Monster" name="Varka Silenos Great Seer">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="123" />
+			<param name="MoveAroundSocial1" value="123" />
+			<param name="MoveAroundSocial2" value="123" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="W_LongRangeDDMagic" id="4563" level="9" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="9" />
+			<skill name="RangeDD" id="4033" level="9" />
+			<skill name="Buff1" id="4575" level="2" />
+			<skill name="Buff2" id="4576" level="3" />
+			<skill name="DeBuff" id="4119" level="3" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6716" /> <!-- Monster Only (Silenos Shaman) -->
@@ -5626,6 +6690,23 @@
 	</npc>
 	<npc id="21369" level="78" type="L2Monster" name="Varka's Commander">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="PhysicalSpecial" id="4573" level="9" />
+			<skill name="Buff" id="4575" level="2" />
+			<skill name="DeBuff" id="4038" level="5" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="2500" /> <!-- Dark Legion's Edge -->
@@ -5675,6 +6756,20 @@
 	</npc>
 	<npc id="21370" level="78" type="L2Monster" name="Varka's Elite Guard">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="85" />
+			<param name="MoveAroundSocial1" value="85" />
+			<param name="MoveAroundSocial2" value="85" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="PhysicalSpecial" id="4572" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="2500" lhand="6918" /> <!-- Dark Legion's Edge / Monster Only (Shield of Silenos) -->
@@ -5720,6 +6815,21 @@
 	</npc>
 	<npc id="21371" level="78" type="L2Monster" name="Varka's Head Magus">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="123" />
+			<param name="MoveAroundSocial1" value="123" />
+			<param name="MoveAroundSocial2" value="123" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="DDMagic" id="4562" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6716" /> <!-- Monster Only (Silenos Shaman) -->
@@ -5766,6 +6876,20 @@
 	</npc>
 	<npc id="21372" level="78" type="L2Monster" name="Varka's Head Guard">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="65" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="65" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="PhysicalSpecial" id="4573" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="2500" lhand="6918" /> <!-- Dark Legion's Edge / Monster Only (Shield of Silenos) -->
@@ -5840,6 +6964,24 @@
 	</npc>
 	<npc id="21373" level="78" type="L2Monster" name="Varka's Prophet">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="123" />
+			<param name="MoveAroundSocial1" value="123" />
+			<param name="MoveAroundSocial2" value="123" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<param name="MeleeAttackerAg" value="50" />
+			<skill name="W_LongRangeDDMagic" id="4563" level="9" />
+			<skill name="W_ShortRangeDDMagic" id="4160" level="9" />
+			<skill name="Buff1" id="4030" level="3" />
+			<skill name="Buff2" id="4575" level="2" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6716" /> <!-- Monster Only (Silenos Shaman) -->
@@ -5889,6 +7031,20 @@
 	</npc>
 	<npc id="21374" level="78" type="L2Monster" name="Prophet's Guard">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="85" />
+			<param name="MoveAroundSocial1" value="85" />
+			<param name="MoveAroundSocial2" value="85" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="PhysicalSpecial" id="4573" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="2500" lhand="6918" /> <!-- Dark Legion's Edge / Monster Only (Shield of Silenos) -->
@@ -5961,6 +7117,21 @@
 	</npc>
 	<npc id="21375" level="78" type="L2Monster" name="Disciple of Prophet">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="FriendShip1" value="7221" />
+			<param name="FriendShip2" value="7222" />
+			<param name="FriendShip3" value="7223" />
+			<param name="FriendShip4" value="7224" />
+			<param name="FriendShip5" value="7225" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="DDMagic" id="4066" level="9" />
+			<skill name="DeBuff" id="4098" level="9" />
+			<skill name="DeBuff1" id="4578" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6716" /> <!-- Monster Only (Silenos Shaman) -->
@@ -6034,6 +7205,15 @@
 	</npc>
 	<npc id="21376" level="78" type="L2Monster" name="Scarlet Stakato Worker">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="ShoutTarget" value="0" />
+			<param name="AcceptShoutTarget" value="1" />
+			<skill name="PhysicalSpecial" id="4579" level="8" />
+			<skill name="SelfExplosion" id="4614" level="8" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="235" /> <!-- Bloody Orchid -->
@@ -6079,6 +7259,15 @@
 	</npc>
 	<npc id="21377" level="78" type="L2Monster" name="Scarlet Stakato Soldier">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="ShoutTarget" value="0" />
+			<param name="AcceptShoutTarget" value="1" />
+			<skill name="PhysicalSpecial" id="4580" level="8" />
+			<skill name="SelfExplosion" id="4614" level="8" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="148" /> <!-- Sword of Valhalla -->
@@ -6124,6 +7313,17 @@
 	</npc>
 	<npc id="21378" level="78" type="L2Monster" name="Scarlet Stakato Noble">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="62" />
+			<param name="MoveAroundSocial1" value="62" />
+			<param name="MoveAroundSocial2" value="62" />
+			<param name="ShoutTarget" value="1" />
+			<param name="AcceptShoutTarget" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="PhysicalSpecial" id="4581" level="8" />
+			<skill name="SelfExplosion" id="4614" level="8" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="235" /> <!-- Bloody Orchid -->
@@ -6169,6 +7369,16 @@
 	</npc>
 	<npc id="21379" level="78" type="L2Monster" name="Tepra Scorpion">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="85" />
+			<param name="MoveAroundSocial1" value="85" />
+			<param name="MoveAroundSocial2" value="85" />
+			<param name="ShoutTarget" value="0" />
+			<param name="AcceptShoutTarget" value="1" />
+			<skill name="DeBuff1" id="4117" level="8" />
+			<skill name="DeBuff2" id="4037" level="2" />
+			<skill name="SelfExplosion" id="4614" level="8" />
+		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="10.500164365549" sp="15" />
@@ -6215,6 +7425,16 @@
 	</npc>
 	<npc id="21380" level="78" type="L2Monster" name="Tepra Scarab">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="65" />
+			<param name="MoveAroundSocial1" value="65" />
+			<param name="MoveAroundSocial2" value="65" />
+			<param name="ShoutTarget" value="0" />
+			<param name="AcceptShoutTarget" value="1" />
+			<skill name="PhysicalSpecial" id="4582" level="8" />
+			<skill name="DeBuff" id="4119" level="3" />
+			<skill name="SelfExplosion" id="4614" level="8" />
+		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="10.705621301775" sp="15" />
@@ -6261,6 +7481,19 @@
 	</npc>
 	<npc id="21381" level="78" type="L2Monster" name="Assassin Beetle">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="SetAggressiveTime" value="0" />
+			<param name="ShoutTarget" value="0" />
+			<param name="AcceptShoutTarget" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="W_LongRangeDDMagic" id="4573" level="9" />
+			<skill name="SelfRangeDDMagic" id="4244" level="9" />
+			<skill name="SelfExplosion" id="4614" level="9" />
+		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="12.448060486522" sp="18" />
@@ -6308,6 +7541,19 @@
 	</npc>
 	<npc id="21382" level="78" type="L2Monster" name="Mercenary of Destruction">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="215" />
+			<param name="MoveAroundSocial1" value="215" />
+			<param name="MoveAroundSocial2" value="215" />
+			<param name="ShoutTarget" value="0" />
+			<param name="AcceptShoutTarget" value="1" />
+			<param name="MaxRoarCount" value="3" />
+			<skill name="Fury" id="4317" level="1" />
+			<skill name="SelfRangePhysicalSpecial" id="4072" level="9" />
+			<skill name="PhysicalSpecial" id="4584" level="9" />
+			<skill name="DeBuff" id="4037" level="2" />
+			<skill name="SelfExplosion" id="4614" level="9" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="150" lhand="103" /> <!-- Elemental Sword / Tower Shield -->
@@ -6359,6 +7605,18 @@
 	</npc>
 	<npc id="21383" level="78" type="L2Monster" name="Knight of Destruction">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="80" />
+			<param name="ShoutTarget" value="1" />
+			<param name="AcceptShoutTarget" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="PhysicalSpecial" id="4579" level="9" />
+			<skill name="DeBuff" id="4586" level="9" />
+			<skill name="SelfExplosion" id="4614" level="9" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" lhand="945" /> <!-- Skeleton Dagger / Skeleton Buckler -->
@@ -6408,6 +7666,17 @@
 	</npc>
 	<npc id="21384" level="78" type="L2Monster" name="Necromancer of Destruction">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="114" />
+			<param name="MoveAroundSocial1" value="114" />
+			<param name="MoveAroundSocial2" value="114" />
+			<param name="ShoutTarget" value="1" />
+			<param name="AcceptShoutTarget" value="0" />
+			<skill name="W_LongRangeDDMagic" id="4153" level="9" />
+			<skill name="PhysicalSpecialRange" id="4072" level="9" />
+			<skill name="Buff" id="4031" level="3" />
+			<skill name="SelfExplosion" id="4614" level="9" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="13.188198553583" sp="19" />
@@ -6455,6 +7724,15 @@
 	</npc>
 	<npc id="21385" level="78" type="L2Monster" name="Lavastone Golem">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="116" />
+			<param name="MoveAroundSocial1" value="116" />
+			<param name="MoveAroundSocial2" value="116" />
+			<param name="ShoutTarget" value="0" />
+			<param name="AcceptShoutTarget" value="1" />
+			<skill name="DDMagicSlow" id="4594" level="9" />
+			<skill name="SelfExplosion" id="4614" level="9" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="12.701019066404" sp="18" />
@@ -6501,6 +7779,19 @@
 	</npc>
 	<npc id="21386" level="78" type="L2Monster" name="Magma Golem">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="135" />
+			<param name="MoveAroundSocial1" value="135" />
+			<param name="MoveAroundSocial2" value="135" />
+			<param name="ShoutTarget" value="1" />
+			<param name="AcceptShoutTarget" value="0" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpeedBonus" value="80" />
+			<param name="HealBonus" value="1" />
+			<param name="SpiritShotRate" value="30" />
+			<skill name="DDMagicSlow" id="4591" level="9" />
+			<skill name="SelfExplosion" id="4614" level="9" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="13.571663379356" sp="19" />
@@ -6548,6 +7839,18 @@
 	</npc>
 	<npc id="21387" level="78" type="L2Monster" name="Arimanes of Destruction">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="ShoutTarget" value="0" />
+			<param name="AcceptShoutTarget" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="40" />
+			<skill name="W_LongRangeDDMagic" id="4157" level="9" />
+			<skill name="SelfRangeDDMagic" id="4589" level="9" />
+			<skill name="SelfExplosion" id="4614" level="9" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="6722" /> <!-- Monster Only (Ahrimanes) -->
@@ -6596,6 +7899,16 @@
 	</npc>
 	<npc id="21388" level="78" type="L2Monster" name="Iblis of Destruction">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="108" />
+			<param name="MoveAroundSocial1" value="108" />
+			<param name="MoveAroundSocial2" value="108" />
+			<param name="ShoutTarget" value="0" />
+			<param name="AcceptShoutTarget" value="1" />
+			<skill name="W_FiendArcher" id="4141" level="9" />
+			<skill name="SelfBuff" id="4595" level="3" />
+			<skill name="SelfExplosion" id="4614" level="9" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="16.368836291913" sp="23" />
@@ -6644,6 +7957,18 @@
 	</npc>
 	<npc id="21389" level="78" type="L2Monster" name="Balrog of Destruction">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="108" />
+			<param name="MoveAroundSocial1" value="108" />
+			<param name="MoveAroundSocial2" value="108" />
+			<param name="ShoutTarget" value="0" />
+			<param name="AcceptShoutTarget" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="20" />
+			<skill name="W_LongRangeDDMagic" id="4597" level="9" />
+			<skill name="PhysicalSpecialRange" id="4599" level="9" />
+			<skill name="SelfExplosion" id="4614" level="9" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="17.552596975674" sp="25" />
@@ -6691,6 +8016,18 @@
 	</npc>
 	<npc id="21390" level="78" type="L2Monster" name="Ashuras of Destruction">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="ShoutTarget" value="1" />
+			<param name="AcceptShoutTarget" value="1" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="30" />
+			<skill name="SelfRangeDDMagic" id="4072" level="9" />
+			<skill name="Buff" id="4030" level="3" />
+			<skill name="SelfExplosion" id="4614" level="9" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="20.251314924392" sp="29" />
@@ -6738,6 +8075,16 @@
 	</npc>
 	<npc id="21391" level="78" type="L2Monster" name="Lavasillisk">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="ShoutTarget" value="0" />
+			<param name="AcceptShoutTarget" value="1" />
+			<skill name="SelfRangeDDMagic" id="4078" level="9" />
+			<skill name="Buff" id="4601" level="3" />
+			<skill name="SelfExplosion" id="4614" level="9" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="14.000328731098" sp="20" />
@@ -6782,6 +8129,20 @@
 	</npc>
 	<npc id="21392" level="78" type="L2Monster" name="Blazing Ifrit">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="124" />
+			<param name="MoveAroundSocial1" value="124" />
+			<param name="MoveAroundSocial2" value="124" />
+			<param name="ShoutTarget" value="1" />
+			<param name="AcceptShoutTarget" value="1" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpeedBonus" value="80" />
+			<param name="HealBonus" value="1" />
+			<param name="SpiritShotRate" value="30" />
+			<skill name="W_LongRangeDDMagic" id="4229" level="9" />
+			<skill name="PhysicalSpecialRange" id="4605" level="9" />
+			<skill name="SelfExplosion" id="4614" level="9" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="19.972879684418" sp="29" />
@@ -6827,6 +8188,20 @@
 	</npc>
 	<npc id="21393" level="78" type="L2Monster" name="Magma Drake">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="ShoutTarget" value="1" />
+			<param name="AcceptShoutTarget" value="0" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpeedBonus" value="80" />
+			<param name="HealBonus" value="1" />
+			<param name="SpiritShotRate" value="30" />
+			<skill name="W_LongRangeDDMagic" id="4590" level="9" />
+			<skill name="PhysicalSpecialRange" id="4605" level="9" />
+			<skill name="SelfExplosion" id="4614" level="10" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="16.85322156476" sp="24" />
@@ -6874,6 +8249,13 @@
 	</npc>
 	<npc id="21394" level="78" type="L2Monster" name="Lavasaurus">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="3" />
+			<param name="AttackRange" value="2" />
+			<param name="MovingAttack" value="0" />
+			<skill name="Skill01_ID" id="4607" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="13.297008547009" sp="19" />
@@ -6921,6 +8303,13 @@
 	</npc>
 	<npc id="21395" level="78" type="L2Monster" name="Elder Lavasaurus">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="3" />
+			<param name="AttackRange" value="2" />
+			<param name="MovingAttack" value="0" />
+			<skill name="Skill01_ID" id="4607" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="17.326594345825" sp="25" />

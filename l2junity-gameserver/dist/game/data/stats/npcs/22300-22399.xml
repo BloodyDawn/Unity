@@ -2,6 +2,15 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="22300" level="82" type="L2Monster" name="Dolph's Minion">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="110" />
+			<param name="MoveAroundSocial1" value="110" />
+			<param name="MoveAroundSocial2" value="110" />
+			<param name="Party_Type" value="1" />
+			<param name="Party_Loyalty" value="1" />
+			<param name="Party_OneShot" value="50" />
+			<skill name="Skill01_ID" id="5303" level="4" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.2221891731112" sp="14" />
@@ -42,6 +51,14 @@
 	</npc>
 	<npc id="22301" level="82" type="L2Monster" name="Terod">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<skill name="PhysicalSpecial" id="5283" level="4" />
+			<skill name="W_LongRangeDDMagic" id="5317" level="4" />
+			<skill name="debuff" id="5203" level="10" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="50.945865556217" sp="82" />
@@ -89,6 +106,24 @@
 	</npc>
 	<npc id="22302" level="82" type="L2Monster" name="Darnels's Guardian">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="0" />
+			<param name="MoveArounding" value="0" />
+			<param name="Skill01_Target" value="3" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<param name="Skill01_Check_Dist" value="1" />
+			<param name="Skill01_Dist_Max" value="150" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill02_Check_Dist" value="1" />
+			<param name="Skill02_Dist_Min" value="150" />
+			<skill name="Skill01_ID" id="5360" level="2" />
+			<skill name="Skill02_ID" id="5390" level="4" />
+			<skill name="Skill03_ID" id="4666" level="10" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="48.800713860797" sp="78" />
@@ -136,6 +171,16 @@
 	</npc>
 	<npc id="22303" level="82" type="L2Monster" name="Guardian of the Square">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="100" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="0" />
+			<param name="MoveArounding" value="0" />
+			<skill name="Skill01_ID" id="5365" level="4" />
+			<skill name="Skill02_ID" id="5359" level="4" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="50.893515764426" sp="82" />
@@ -182,6 +227,16 @@
 	</npc>
 	<npc id="22304" level="82" type="L2Monster" name="Guardian of the Emerald">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="0" />
+			<param name="MoveArounding" value="0" />
+			<skill name="Skill01_ID" id="5362" level="4" />
+			<skill name="Skill02_ID" id="5393" level="4" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="51.109309934563" sp="82" />
@@ -228,6 +283,18 @@
 	</npc>
 	<npc id="22305" level="82" type="L2Monster" name="Kechi's Captain">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="40" />
+			<param name="MoveAroundSocial1" value="40" />
+			<param name="MoveAroundSocial2" value="40" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="0" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="2" />
+			<param name="Party_Loyalty" value="0" />
+			<param name="Party_OneShot" value="50" />
+			<skill name="Skill01_ID" id="5273" level="3" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.2757287328971" sp="14" />
@@ -273,6 +340,27 @@
 	</npc>
 	<npc id="22306" level="82" type="L2Monster" name="Kechi's Captain">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="135" />
+			<param name="MoveAroundSocial1" value="135" />
+			<param name="MoveAroundSocial2" value="135" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="0" />
+			<param name="AttackRange" value="2" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="2" />
+			<param name="Party_Loyalty" value="0" />
+			<param name="Party_OneShot" value="50" />
+			<param name="Skill01_Check_Dist" value="1" />
+			<param name="Skill01_Dist_Min" value="150" />
+			<param name="Skill01_MainAttack" value="1" />
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill02_Check_Dist" value="1" />
+			<param name="Skill02_Dist_Max" value="150" />
+			<skill name="Skill01_ID" id="5312" level="4" />
+			<skill name="Skill02_ID" id="5314" level="4" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="23.576442593694" sp="38" />
@@ -320,6 +408,22 @@
 	</npc>
 	<npc id="22307" level="82" type="L2Monster" name="Kechi's Captain">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="116" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="0" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="2" />
+			<param name="Party_Loyalty" value="0" />
+			<param name="Party_OneShot" value="50" />
+			<param name="Skill01_Target" value="3" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<param name="Skill01_Check_Dist" value="1" />
+			<param name="Skill01_Dist_Max" value="150" />
+			<skill name="Skill01_ID" id="5340" level="3" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="51.110202260559" sp="82" />
@@ -366,6 +470,20 @@
 	</npc>
 	<npc id="22308" level="82" type="L2Monster" name="Kechi's Guard">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="1" />
+			<param name="Party_Loyalty" value="1" />
+			<param name="Party_OneShot" value="50" />
+			<param name="Skill01_Target" value="3" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<param name="Skill01_Check_Dist" value="1" />
+			<param name="Skill01_Dist_Max" value="150" />
+			<skill name="Skill01_ID" id="4614" level="10" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="8.1354848304581" sp="13" />
@@ -412,6 +530,17 @@
 	</npc>
 	<npc id="22309" level="82" type="L2Monster" name="Kechi's Guard">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="1" />
+			<param name="Party_Loyalty" value="1" />
+			<param name="Party_OneShot" value="50" />
+			<skill name="Skill01_ID" id="4572" level="10" />
+			<skill name="Skill02_ID" id="5301" level="3" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="148" /> <!-- Sword of Valhalla -->
@@ -461,6 +590,23 @@
 	</npc>
 	<npc id="22310" level="82" type="L2Monster" name="Kechi's Guard">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="AttackRange" value="2" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="1" />
+			<param name="Party_Loyalty" value="1" />
+			<param name="Party_OneShot" value="50" />
+			<param name="Skill01_Check_Dist" value="1" />
+			<param name="Skill01_Dist_Min" value="150" />
+			<param name="Skill01_MainAttack" value="1" />
+			<param name="Skill02_Check_Dist" value="1" />
+			<param name="Skill02_Dist_Max" value="150" />
+			<skill name="Skill01_ID" id="4157" level="10" />
+			<skill name="Skill02_ID" id="4561" level="10" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="10.681737061273" sp="17" />
@@ -511,6 +657,25 @@
 	</npc>
 	<npc id="22311" level="83" type="L2Monster" name="Parme's Guardian">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="40" />
+			<param name="MoveAroundSocial1" value="40" />
+			<param name="MoveAroundSocial2" value="40" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="0" />
+			<param name="AttackRange" value="2" />
+			<param name="MoveArounding" value="0" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<param name="Skill01_Check_Dist" value="1" />
+			<param name="Skill01_Dist_Min" value="150" />
+			<param name="Skill01_MainAttack" value="1" />
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill02_Check_Dist" value="1" />
+			<param name="Skill02_Dist_Max" value="150" />
+			<skill name="Skill01_ID" id="5317" level="4" />
+			<skill name="Skill02_ID" id="5318" level="4" />
+		</parameters>
 		<race>BUG</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="47.093337204239" sp="77" />
@@ -558,6 +723,18 @@
 	</npc>
 	<npc id="22312" level="83" type="L2Monster" name="Fafurion's Henchman">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="0" />
+			<param name="MoveArounding" value="0" />
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<skill name="Skill01_ID" id="5282" level="4" />
+			<skill name="Skill02_ID" id="5283" level="4" />
+		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="49.886776019742" sp="82" />
@@ -604,6 +781,21 @@
 	</npc>
 	<npc id="22313" level="83" type="L2Monster" name="Garden Stakato">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="62" />
+			<param name="MoveAroundSocial1" value="62" />
+			<param name="MoveAroundSocial2" value="62" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="0" />
+			<param name="MoveArounding" value="0" />
+			<param name="Skill01_Target" value="3" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<param name="Skill01_Check_Dist" value="1" />
+			<param name="Skill01_Dist_Max" value="150" />
+			<param name="Skill02_Probablity" value="1500" />
+			<skill name="Skill01_ID" id="4072" level="10" />
+			<skill name="Skill02_ID" id="5282" level="4" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="134" /> <!-- Sword of Nightmare -->
@@ -653,6 +845,18 @@
 	</npc>
 	<npc id="22314" level="83" type="L2Monster" name="Garden Poison Moth">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="0" />
+			<param name="AttackRange" value="2" />
+			<param name="MoveArounding" value="0" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<skill name="Skill01_ID" id="5333" level="4" />
+			<skill name="Skill02_ID" id="5310" level="4" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="15.576426186674" sp="25" />
@@ -700,6 +904,16 @@
 	</npc>
 	<npc id="22315" level="83" type="L2Monster" name="Garden Guard">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="0" />
+			<param name="MoveAroundSocial2" value="0" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="0" />
+			<param name="MoveArounding" value="0" />
+			<skill name="Skill01_ID" id="5273" level="4" />
+			<skill name="Skill02_ID" id="5309" level="4" />
+		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
 		<equipment rhand="5132" /> <!-- Monster Only (Giant Trident) -->
@@ -747,6 +961,17 @@
 	</npc>
 	<npc id="22316" level="83" type="L2Monster" name="Garden Guardian Tree">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="114" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="0" />
+			<param name="MoveArounding" value="0" />
+			<param name="Skill02_Type" value="2" />
+			<skill name="Skill01_ID" id="5273" level="4" />
+			<skill name="Skill02_ID" id="4463" level="3" />
+		</parameters>
 		<race>PLANT</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="26.385542168675" sp="43" />
@@ -792,6 +1017,31 @@
 	</npc>
 	<npc id="22317" level="83" type="L2Monster" name="Garden Castalia">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="90" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="0" />
+			<param name="AttackRange" value="2" />
+			<param name="IsHealer" value="1" />
+			<param name="MoveArounding" value="0" />
+			<param name="Skill01_Check_Dist" value="1" />
+			<param name="Skill01_Dist_Min" value="150" />
+			<param name="Skill01_MainAttack" value="1" />
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill02_Check_Dist" value="1" />
+			<param name="Skill02_Dist_Max" value="150" />
+			<param name="Skill03_Target" value="3" />
+			<param name="Skill03_Type" value="3" />
+			<param name="Skill03_AttackSplash" value="1" />
+			<param name="Skill03_Check_Dist" value="1" />
+			<param name="Skill03_Dist_Max" value="800" />
+			<skill name="Skill01_ID" id="5282" level="4" />
+			<skill name="Skill02_ID" id="5318" level="4" />
+			<skill name="Skill03_ID" id="4613" level="10" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="9639" lhand="9639" /> <!-- Tears r2 / Tears r2 -->

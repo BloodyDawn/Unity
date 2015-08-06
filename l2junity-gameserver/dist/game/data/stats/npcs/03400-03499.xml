@@ -2,6 +2,14 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="3401" level="23" type="L2Monster" name="Greyclaw Kutus" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3402" count="3" respawnTime="360" weightPoint="1" />
+				<npc id="3403" count="1" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm03_A" />
+			<skill name="RangeHold_a" id="4197" level="2" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="7627.9300567108" sp="968" />
@@ -34,6 +42,10 @@
 	</npc>
 	<npc id="3402" level="22" type="L2Monster" name="Kutus' Escort" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="DDMagic_a" id="4191" level="2" />
+			<skill name="Debuff_a" id="4198" level="2" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="7" /> <!-- Apprentice's Rod -->
@@ -64,6 +76,9 @@
 	</npc>
 	<npc id="3403" level="22" type="L2Monster" name="Kutus' Pawn" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4727" level="2" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="123" /> <!-- Saber -->
@@ -94,6 +109,14 @@
 	</npc>
 	<npc id="3404" level="23" type="L2Monster" name="Tracker Captain Sharuk" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3405" count="2" respawnTime="360" weightPoint="1" />
+				<npc id="3406" count="3" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm02_A" />
+			<skill name="PhysicalSpecial_b" id="4743" level="2" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="7627.9300567108" sp="968" />
@@ -186,6 +209,14 @@
 	</npc>
 	<npc id="3407" level="21" type="L2Monster" name="Sukar Ratman Chief" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3408" count="2" respawnTime="360" weightPoint="1" />
+				<npc id="3409" count="1" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm02_A" />
+			<skill name="RangeDDMagic_a" id="4178" level="2" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="9001.2154195011" sp="952" />
@@ -218,6 +249,9 @@
 	</npc>
 	<npc id="3408" level="20" type="L2Monster" name="Sukar Ratman Escort" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4733" level="2" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="216" /> <!-- Dirk -->
@@ -248,6 +282,10 @@
 	</npc>
 	<npc id="3409" level="20" type="L2Monster" name="Sukar Ratman Priest" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="HealMagic_a" id="4783" level="2" />
+			<skill name="SelfRangeBuff_a" id="4211" level="2" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="179" /> <!-- Mace of Prayer -->
@@ -278,6 +316,14 @@
 	</npc>
 	<npc id="3410" level="25" type="L2Monster" name="Ikuntai" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3411" count="2" respawnTime="360" weightPoint="1" />
+				<npc id="3412" count="2" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm03_A" />
+			<skill name="RangeDDMagic_a" id="4178" level="2" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="3814.3088" sp="572" />
@@ -313,6 +359,10 @@
 	</npc>
 	<npc id="3411" level="24" type="L2Monster" name="Ikuntai's Servitor" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="HealMagic_a" id="4780" level="2" />
+			<skill name="SelfRangeBuff_a" id="4214" level="2" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -378,6 +428,14 @@
 	</npc>
 	<npc id="3413" level="25" type="L2Monster" name="Zombie Lord Crowl" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3414" count="3" respawnTime="360" weightPoint="1" />
+				<npc id="3415" count="2" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm03_A" />
+			<skill name="PhysicalSpecial_b" id="4741" level="2" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="6098.4288" sp="914" />
@@ -412,6 +470,9 @@
 	</npc>
 	<npc id="3414" level="24" type="L2Monster" name="Evil Spirit Archer" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="LongRangePhysicalSpecial_a" id="4756" level="2" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="14" /> <!-- Bow -->
@@ -478,6 +539,14 @@
 	</npc>
 	<npc id="3416" level="20" type="L2Monster" name="Zombie Lord Ferkel" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3417" count="2" respawnTime="360" weightPoint="1" />
+				<npc id="3418" count="1" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm02_A" />
+			<skill name="RangeDDMagic_a" id="4178" level="2" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="11406.6225" sp="1095" />
@@ -514,6 +583,9 @@
 	</npc>
 	<npc id="3417" level="19" type="L2Monster" name="Ferkel's Warrior" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4743" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -548,6 +620,10 @@
 	</npc>
 	<npc id="3418" level="19" type="L2Monster" name="Ferkel's Priest" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="HealMagic_a" id="4783" level="1" />
+			<skill name="SelfRangeBuff_a" id="4213" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -582,6 +658,13 @@
 	</npc>
 	<npc id="3419" level="35" type="L2Monster" name="Execution Grounds Watchman Guillotine" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="RaidSpawnMusic" value="Rm02_A" />
+			<skill name="SelfRangeCancel_a" id="4177" level="4" />
+			<skill name="SelfBuff_a" id="4175" level="4" />
+			<skill name="PhysicalSpecial_a" id="4726" level="4" />
+			<skill name="SelfRangePhysicalSpecial_a" id="4736" level="4" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="2341.7069387755" sp="688" />
@@ -618,6 +701,16 @@
 	</npc>
 	<npc id="3420" level="35" type="L2Monster" name="Flame Lord Shadar" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3421" count="1" respawnTime="360" weightPoint="1" />
+				<npc id="3422" count="4" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm02_A" />
+			<skill name="DDMagic_a" id="4192" level="3" />
+			<skill name="SelfRangeDebuff_a" id="4182" level="3" />
+			<skill name="SelfRangeDebuffAnother_a" id="4186" level="3" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="2341.7069387755" sp="688" />
@@ -652,6 +745,9 @@
 	</npc>
 	<npc id="3421" level="34" type="L2Monster" name="Claws of Shadar" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4731" level="3" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -713,6 +809,14 @@
 	</npc>
 	<npc id="3423" level="35" type="L2Monster" name="Soul Collector Acheron" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3424" count="3" respawnTime="360" weightPoint="1" />
+				<npc id="3425" count="1" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="RangeHold_a" id="4197" level="3" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="2341.7069387755" sp="688" />
@@ -748,6 +852,10 @@
 	</npc>
 	<npc id="3424" level="34" type="L2Monster" name="Soul Slasher" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="DDMagic_a" id="4196" level="3" />
+			<skill name="Debuff_a" id="4203" level="3" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -780,6 +888,9 @@
 	</npc>
 	<npc id="3425" level="34" type="L2Monster" name="Soul Strainer" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4727" level="3" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -812,6 +923,14 @@
 	</npc>
 	<npc id="3426" level="60" type="L2Monster" name="Lord Ishka" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3427" count="1" respawnTime="360" weightPoint="1" />
+				<npc id="3428" count="2" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="RangeHold_a" id="4197" level="6" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="1139.5969444444" sp="984" />
@@ -849,6 +968,9 @@
 	</npc>
 	<npc id="3427" level="59" type="L2Monster" name="Ishka's Elite Officer" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4733" level="5" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" lhand="945" /> <!-- Skeleton Dagger / Skeleton Buckler -->
@@ -884,6 +1006,9 @@
 	</npc>
 	<npc id="3428" level="59" type="L2Monster" name="Ishka's Elite Soldier" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4743" level="5" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="150" lhand="103" /> <!-- Elemental Sword / Tower Shield -->
@@ -919,6 +1044,14 @@
 	</npc>
 	<npc id="3429" level="59" type="L2Monster" name="Demon Kuri" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3430" count="2" respawnTime="360" weightPoint="1" />
+				<npc id="3431" count="2" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="RangeDDMagic_a" id="4178" level="5" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="1156.682562482" sp="966" />
@@ -953,6 +1086,10 @@
 	</npc>
 	<npc id="3430" level="58" type="L2Monster" name="Kuri's Wife" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="HealMagic_a" id="4786" level="5" />
+			<skill name="SelfRangeBuff_a" id="4213" level="5" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1016,6 +1153,13 @@
 	</npc>
 	<npc id="3432" level="60" type="L2Monster" name="Ancient Weird Drake" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="SelfRangeCancel_a" id="4177" level="6" />
+			<skill name="SelfBuff_a" id="4175" level="6" />
+			<skill name="PhysicalSpecial_a" id="4731" level="6" />
+			<skill name="SelfRangePhysicalSpecial_a" id="4172" level="6" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="1139.5969444444" sp="984" />
@@ -1048,6 +1192,14 @@
 	</npc>
 	<npc id="3433" level="50" type="L2Monster" name="Slaughter Lord Gato" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3434" count="3" respawnTime="360" weightPoint="1" />
+				<npc id="3435" count="2" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm02_A" />
+			<skill name="PhysicalSpecial_b" id="4741" level="5" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="1433.86" sp="860" />
@@ -1080,6 +1232,9 @@
 	</npc>
 	<npc id="3434" level="49" type="L2Monster" name="Gato's Sniper" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="LongRangePhysicalSpecial_a" id="4761" level="4" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="273" /> <!-- Compound Bow -->
@@ -1139,6 +1294,14 @@
 	</npc>
 	<npc id="3436" level="49" type="L2Monster" name="Ketra's Commander Atis" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3437" count="3" respawnTime="360" weightPoint="1" />
+				<npc id="3438" count="2" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm02_A" />
+			<skill name="PhysicalSpecial_b" id="4746" level="4" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="1454.4369012911" sp="838" />
@@ -1171,6 +1334,9 @@
 	</npc>
 	<npc id="3437" level="48" type="L2Monster" name="Ketra Marksman" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="LongRangePhysicalSpecial_a" id="4761" level="4" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="279" /> <!-- Reinforced Longbow -->
@@ -1230,6 +1396,14 @@
 	</npc>
 	<npc id="3439" level="45" type="L2Monster" name="Beacon of Blue Sky" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3440" count="3" respawnTime="360" weightPoint="1" />
+				<npc id="3441" count="2" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm03_A" />
+			<skill name="PhysicalSpecial_b" id="4742" level="4" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="1544.8217283951" sp="750" />
@@ -1261,6 +1435,9 @@
 	</npc>
 	<npc id="3440" level="44" type="L2Monster" name="Beacon's Shooter" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="LongRangePhysicalSpecial_a" id="4757" level="5" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="279" /> <!-- Reinforced Longbow -->
@@ -1326,6 +1503,16 @@
 	</npc>
 	<npc id="3442" level="43" type="L2Monster" name="Earth Protector Panathen" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3443" count="1" respawnTime="360" weightPoint="1" />
+				<npc id="3444" count="4" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm03_A" />
+			<skill name="DDMagic_a" id="4191" level="4" />
+			<skill name="SelfRangeDebuff_a" id="4183" level="4" />
+			<skill name="SelfRangeDebuffAnother_a" id="4189" level="4" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="1603.7528393726" sp="711" />
@@ -1358,6 +1545,9 @@
 	</npc>
 	<npc id="3443" level="42" type="L2Monster" name="Panathen's Knight" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4721" level="4" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="5130" /> <!-- Nos Sword -->
@@ -1417,6 +1607,14 @@
 	</npc>
 	<npc id="3445" level="25" type="L2Monster" name="Betrayer of Urutu Freki" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3446" count="2" respawnTime="360" weightPoint="1" />
+				<npc id="3447" count="1" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm02_A" />
+			<skill name="RangeHold_a" id="4197" level="2" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="6098.4288" sp="914" />
@@ -1448,6 +1646,9 @@
 	</npc>
 	<npc id="3446" level="24" type="L2Monster" name="Freki's Vampire Bat" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4743" level="2" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1477,6 +1678,9 @@
 	</npc>
 	<npc id="3447" level="24" type="L2Monster" name="Freki's Wild Bear" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4728" level="2" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1506,6 +1710,13 @@
 	</npc>
 	<npc id="3448" level="39" type="L2Monster" name="Nellis' Vengeful Spirit" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3449" count="3" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="RangeHold_a" id="4197" level="3" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="1960.996712689" sp="715" />
@@ -1541,6 +1752,9 @@
 	</npc>
 	<npc id="3449" level="38" type="L2Monster" name="Nellis' Follower" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4723" level="3" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1573,6 +1787,14 @@
 	</npc>
 	<npc id="3450" level="37" type="L2Monster" name="Rayito the Looter" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3451" count="1" respawnTime="360" weightPoint="1" />
+				<npc id="3452" count="3" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm02_A" />
+			<skill name="RangeHold_a" id="4197" level="3" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="2117.5186267348" sp="695" />
@@ -1605,6 +1827,9 @@
 	</npc>
 	<npc id="3451" level="36" type="L2Monster" name="Rayito's Guard Captain" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4728" level="3" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="123" lhand="19" /> <!-- Saber / Small Shield -->
@@ -1635,6 +1860,10 @@
 	</npc>
 	<npc id="3452" level="36" type="L2Monster" name="Rayito's Henchman" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="DDMagic_a" id="4194" level="3" />
+			<skill name="Debuff_a" id="4202" level="3" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="66" lhand="102" /> <!-- Gladius / Round Shield -->
@@ -1665,6 +1894,14 @@
 	</npc>
 	<npc id="3453" level="80" type="L2Monster" name="Ketra's Hero Hekaton" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3454" count="3" respawnTime="360" weightPoint="1" />
+				<npc id="3455" count="2" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm02_A" />
+			<skill name="PhysicalSpecial_b" id="4746" level="9" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="884.99078125" sp="1359" />
@@ -1757,6 +1994,16 @@
 	</npc>
 	<npc id="3456" level="80" type="L2Monster" name="Varka's Hero Shadith" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3457" count="1" respawnTime="360" weightPoint="1" />
+				<npc id="3458" count="4" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm03_A" />
+			<skill name="DDMagic_a" id="4195" level="9" />
+			<skill name="SelfRangeDebuff_a" id="4184" level="9" />
+			<skill name="SelfRangeDebuffAnother_a" id="4188" level="9" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="884.99078125" sp="1359" />
@@ -1789,6 +2036,9 @@
 	</npc>
 	<npc id="3457" level="79" type="L2Monster" name="Shadith' Escort Captain" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4741" level="8" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="142" lhand="6918" /> <!-- Keshanberk / Monster Only (Shield of Silenos) -->
@@ -1849,6 +2099,14 @@
 	</npc>
 	<npc id="3459" level="72" type="L2Monster" name="Doom Blade Thanatos" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<param name="doSummonNPC" value="1" />
+			<skill name="SelfRangeCancel_a" id="4177" level="7" />
+			<skill name="SelfBuff_a" id="4175" level="7" />
+			<skill name="PhysicalSpecial_a" id="4720" level="7" />
+			<skill name="SelfRangePhysicalSpecial_a" id="4735" level="7" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="1487.168595679" sp="1850" />
@@ -1885,6 +2143,16 @@
 	</npc>
 	<npc id="3460" level="75" type="L2Monster" name="Kernon" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3461" count="1" respawnTime="360" weightPoint="1" />
+				<npc id="3462" count="4" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="DDMagic_a" id="4195" level="8" />
+			<skill name="SelfRangeDebuff_a" id="4182" level="8" />
+			<skill name="SelfRangeDebuffAnother_a" id="4190" level="8" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="1394.9728" sp="1883" />
@@ -1919,6 +2187,9 @@
 	</npc>
 	<npc id="3461" level="74" type="L2Monster" name="Taliadon" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4168" level="7" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="1472" /> <!-- Dreadbane -->
@@ -1983,6 +2254,16 @@
 	</npc>
 	<npc id="3463" level="70" type="L2Monster" name="Meanas Anor" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3464" count="3" respawnTime="360" weightPoint="1" />
+				<npc id="3465" count="1" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="DDMagic_a" id="4195" level="7" />
+			<skill name="SelfRangeDebuff_a" id="4184" level="7" />
+			<skill name="SelfRangeDebuffAnother_a" id="4188" level="7" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="1407.0853061224" sp="1654" />
@@ -2014,6 +2295,10 @@
 	</npc>
 	<npc id="3464" level="69" type="L2Monster" name="Swamp Wyvern" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="DDMagic_a" id="4196" level="6" />
+			<skill name="Debuff_a" id="4204" level="6" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2043,6 +2328,10 @@
 	</npc>
 	<npc id="3465" level="69" type="L2Monster" name="Swamp Succubus" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="HealMagic_a" id="4780" level="6" />
+			<skill name="SelfRangeBuff_a" id="4211" level="6" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2075,6 +2364,13 @@
 	</npc>
 	<npc id="3466" level="25" type="L2Monster" name="Mammon Collector Talos" title="Lord of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3467" count="3" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="RangeHold_a" id="4197" level="2" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="6098.4288" sp="914" />
@@ -2109,6 +2405,9 @@
 	</npc>
 	<npc id="3467" level="22" type="L2Monster" name="Talos' Pawn" title="Follower of Destruction">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4743" level="2" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2141,6 +2440,16 @@
 	</npc>
 	<npc id="3468" level="88" type="L2Monster" name="Jermann" title="Weakened Ruler">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="134" />
+			<param name="MoveAroundSocial1" value="134" />
+			<skill name="Skill01_ID" id="14940" level="1" />
+			<skill name="Skill02_ID" id="14943" level="1" />
+			<skill name="Skill03_ID" id="23381" level="1" />
+			<skill name="Skill04_ID" id="23386" level="1" />
+			<skill name="Skill05_ID" id="23397" level="1" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="126" int="79" dex="55" wit="78" con="96" men="113">
@@ -2170,6 +2479,16 @@
 	</npc>
 	<npc id="3469" level="93" type="L2Monster" name="Jermann" title="Weakened Ruler">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="134" />
+			<param name="MoveAroundSocial1" value="134" />
+			<skill name="Skill01_ID" id="14941" level="1" />
+			<skill name="Skill02_ID" id="14944" level="1" />
+			<skill name="Skill03_ID" id="23381" level="2" />
+			<skill name="Skill04_ID" id="23386" level="2" />
+			<skill name="Skill05_ID" id="23397" level="1" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="126" int="79" dex="55" wit="78" con="96" men="113">
@@ -2199,6 +2518,16 @@
 	</npc>
 	<npc id="3470" level="98" type="L2Monster" name="Jermann" title="Weakened Ruler">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="134" />
+			<param name="MoveAroundSocial1" value="134" />
+			<skill name="Skill01_ID" id="14942" level="1" />
+			<skill name="Skill02_ID" id="23482" level="1" />
+			<skill name="Skill03_ID" id="23381" level="3" />
+			<skill name="Skill04_ID" id="23386" level="3" />
+			<skill name="Skill05_ID" id="23397" level="1" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="126" int="79" dex="55" wit="78" con="96" men="113">
@@ -2228,6 +2557,13 @@
 	</npc>
 	<npc id="3471" level="75" type="L2Monster" name="Jermann" title="35% Drop">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="134" />
+			<param name="MoveAroundSocial1" value="134" />
+			<skill name="Skill01_ID" id="14940" level="1" />
+			<skill name="Skill02_ID" id="14943" level="1" />
+			<skill name="Skill05_ID" id="14948" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
@@ -2257,6 +2593,16 @@
 	</npc>
 	<npc id="3472" level="80" type="L2Monster" name="Jermann" title="50% Drop">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="MoveAroundSocial" value="134" />
+			<param name="MoveAroundSocial1" value="134" />
+			<skill name="Skill01_ID" id="14940" level="1" />
+			<skill name="Skill02_ID" id="14943" level="1" />
+			<skill name="Skill03_ID" id="23381" level="1" />
+			<skill name="Skill04_ID" id="23386" level="1" />
+			<skill name="Skill05_ID" id="23397" level="1" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
@@ -2286,6 +2632,19 @@
 	</npc>
 	<npc id="3473" level="96" type="L2Monster" name="Omega Golem" title="Raid Boss">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="3474" count="2" respawnTime="360" weightPoint="1" />
+				<npc id="3475" count="1" respawnTime="360" weightPoint="1" />
+				<npc id="3476" count="1" respawnTime="360" weightPoint="1" />
+			</minions>
+			<skill name="Skill01_ID" id="23561" level="1" />
+			<skill name="Skill02_ID" id="23562" level="1" />
+			<param name="Skill01_Probablity" value="400" />
+			<param name="Skill02_Probablity" value="300" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="2" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="22512" sp="49792" />
@@ -2321,6 +2680,13 @@
 	</npc>
 	<npc id="3474" level="95" type="L2Monster" name="Super Kat the Cat" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Party_Type" value="1" />
+			<skill name="Skill01_ID" id="23545" level="2" />
+			<skill name="Skill02_ID" id="23546" level="2" />
+			<param name="Skill01_Probablity" value="300" />
+			<param name="Skill02_Probablity" value="300" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2352,6 +2718,9 @@
 	</npc>
 	<npc id="3475" level="95" type="L2Monster" name="Super Feline Queen" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Party_Type" value="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2383,6 +2752,13 @@
 	</npc>
 	<npc id="3476" level="95" type="L2Monster" name="Super Mew the Cat" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Party_Type" value="1" />
+			<skill name="Skill01_ID" id="23555" level="2" />
+			<skill name="Skill02_ID" id="23557" level="2" />
+			<param name="Skill01_Probablity" value="300" />
+			<param name="Skill02_Probablity" value="300" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2414,6 +2790,21 @@
 	</npc>
 	<npc id="3477" level="88" type="L2Monster" name="Reinforced Super Kat the Cat" title="Raid Boss">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Party_Type" value="2" />
+			<minions name="Privates">
+				<npc id="3478" count="4" respawnTime="360" weightPoint="1" />
+			</minions>
+			<skill name="Skill01_ID" id="23543" level="1" />
+			<skill name="Skill02_ID" id="23544" level="1" />
+			<skill name="Skill03_ID" id="23545" level="1" />
+			<skill name="Skill04_ID" id="23546" level="1" />
+			<param name="Skill01_Probablity" value="300" />
+			<param name="Skill02_Probablity" value="300" />
+			<param name="Skill03_Probablity" value="200" />
+			<param name="Skill04_Probablity" value="200" />
+			<param name="Attack_BoostValue" value="6550" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="20636" sp="38353" />
@@ -2447,6 +2838,12 @@
 	</npc>
 	<npc id="3478" level="87" type="L2Monster" name="Reinforced Kat the Cat" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Party_Type" value="1" />
+			<skill name="Skill01_ID" id="23547" level="1" />
+			<param name="Skill01_Probablity" value="300" />
+			<param name="Attack_BoostValue" value="6450" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2478,6 +2875,18 @@
 	</npc>
 	<npc id="3479" level="92" type="L2Monster" name="Darkened Super Feline Queen" title="Raid Boss">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Skill01_Probablity" value="400" />
+			<param name="Skill02_Probablity" value="300" />
+			<param name="Party_Type" value="2" />
+			<minions name="Privates">
+				<npc id="3480" count="4" respawnTime="180" weightPoint="1" />
+			</minions>
+			<param name="MoveArounding" value="0" />
+			<skill name="Skill01_ID" id="23549" level="1" />
+			<skill name="Skill02_ID" id="23550" level="1" />
+			<param name="Attack_BoostValue" value="6950" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="21636" sp="43950" />
@@ -2511,6 +2920,12 @@
 	</npc>
 	<npc id="3480" level="91" type="L2Monster" name="Mind-controlling Feline Queen" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Party_Type" value="1" />
+			<skill name="Skill01_ID" id="23553" level="1" />
+			<param name="Skill01_Probablity" value="300" />
+			<param name="Attack_BoostValue" value="6850" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2542,6 +2957,18 @@
 	</npc>
 	<npc id="3481" level="94" type="L2Monster" name="Control-crazed Mew the Cat" title="Raid Boss">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Skill01_Probablity" value="300" />
+			<param name="Skill02_Probablity" value="300" />
+			<param name="Party_Type" value="2" />
+			<minions name="Privates">
+				<npc id="3482" count="4" respawnTime="180" weightPoint="1" />
+			</minions>
+			<param name="MoveArounding" value="0" />
+			<skill name="Skill01_ID" id="23555" level="1" />
+			<skill name="Skill02_ID" id="23556" level="1" />
+			<param name="Attack_BoostValue" value="7100" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="22512" sp="47739" />
@@ -2575,6 +3002,12 @@
 	</npc>
 	<npc id="3482" level="93" type="L2Monster" name="Traitorous Mew the Cat" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Party_Type" value="1" />
+			<skill name="Skill01_ID" id="23559" level="1" />
+			<param name="Skill01_Probablity" value="400" />
+			<param name="Attack_BoostValue" value="7000" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">

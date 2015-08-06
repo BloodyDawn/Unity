@@ -2,6 +2,13 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="25700" level="88" type="L2RaidBoss" name="Glakias" title="Ice Knight Captain">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6293" level="1" />
+			<skill name="Skill02_ID" id="6295" level="1" />
+			<skill name="Skill03_ID" id="6297" level="1" />
+			<skill name="SelfRangeBuff" id="6294" level="1" />
+			<skill name="Skill_Summon" id="6298" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
@@ -53,6 +60,11 @@
 	</npc>
 	<npc id="25701" level="84" type="L2RaidBoss" name="Anais" title="Lord of Splendor">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6324" level="1" />
+			<skill name="Skill02_ID" id="6323" level="1" />
+			<skill name="Skill03_ID" id="6325" level="1" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8214" /> <!-- Monster Only (Solina Priest Pole) -->
@@ -128,6 +140,9 @@
 	</npc>
 	<npc id="25702" level="84" type="L2Monster" name="Guard of the Grail">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6326" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -168,6 +183,19 @@
 	</npc>
 	<npc id="25703" level="76" type="L2RaidBoss" name="Gigantic Golem" title="Chaos">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="25704" count="3" respawnTime="420" weightPoint="1" />
+			</minions>
+			<minions name="Privates2">
+				<npc id="25705" count="6" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="Party_Type" value="2" />
+			<param name="Party_Loyalty" value="2" />
+			<param name="Skill01_Probablity" value="0" />
+			<skill name="Skill01_ID" id="6263" level="1" />
+			<skill name="Skill02_ID" id="6608" level="10" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="593.68871191136" sp="822" />
@@ -233,6 +261,11 @@
 	</npc>
 	<npc id="25704" level="75" type="L2Monster" name="Gigantic Golem Subordinate" title="Chaos">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="Party_Type" value="1" />
+			<param name="Party_Loyalty" value="1" />
+			<skill name="Skill01_ID" id="6602" level="10" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -273,6 +306,10 @@
 	</npc>
 	<npc id="25705" level="74" type="L2Monster" name="Gigantic Boom Golem" title="Chaos">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6265" level="1" />
+			<skill name="Skill02_ID" id="6264" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -309,6 +346,17 @@
 	</npc>
 	<npc id="25706" level="83" type="L2Monster" name="Lost Watcher">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="MoveArounding" value="0" />
+			<param name="Skill02_Type" value="2" />
+			<param name="Skill02_Probablity" value="500" />
+			<param name="is_private" value="0" />
+			<param name="silhouette" value="25707" />
+			<param name="ai_type" value="kamaloka_83_a_false" />
+			<skill name="Skill01_ID" id="6693" level="9" />
+			<skill name="Skill02_ID" id="4047" level="9" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -355,6 +403,14 @@
 	</npc>
 	<npc id="25707" level="83" type="L2Monster" name="Lost Watcher">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="MoveArounding" value="0" />
+			<param name="Skill02_Type" value="2" />
+			<param name="Skill02_Probablity" value="500" />
+			<skill name="Skill01_ID" id="6693" level="9" />
+			<skill name="Skill02_ID" id="4047" level="9" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -401,6 +457,17 @@
 	</npc>
 	<npc id="25708" level="83" type="L2Monster" name="Lost Beholder">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="MoveArounding" value="0" />
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_Type" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill03_Type" value="2" />
+			<skill name="Skill01_ID" id="6693" level="9" />
+			<skill name="Skill02_ID" id="4613" level="9" />
+			<skill name="Skill03_ID" id="4098" level="10" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -447,6 +514,12 @@
 	</npc>
 	<npc id="25709" level="83" type="L2RaidBoss" name="Lost Warden">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="6694" level="8" />
+			<skill name="SelfRangePhysicalSpecial_a" id="6695" level="8" />
+			<skill name="SelfBuff_a" id="4173" level="8" />
+			<skill name="SelfRangeCancel_a" id="4177" level="8" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="211.28073740746" sp="349" />
@@ -493,6 +566,18 @@
 	</npc>
 	<npc id="25710" level="83" type="L2RaidBoss" name="Lost Captain">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="25711" count="2" respawnTime="150" weightPoint="1" />
+				<npc id="25712" count="2" respawnTime="150" weightPoint="1" />
+			</minions>
+			<param name="PCCafe_Reward" value="13002" />
+			<param name="PCCafe_Number" value="19" />
+			<skill name="RangeDDMagic_a" id="4178" level="8" />
+			<skill name="Debuff1" id="5699" level="7" />
+			<skill name="Debuff2" id="5700" level="7" />
+			<skill name="Debuff3" id="5701" level="7" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="2417.4688634054" sp="3996" />
@@ -603,6 +688,10 @@
 	</npc>
 	<npc id="25712" level="83" type="L2Monster" name="Lost Assistant Guard">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="SelfRangeBuff_a" id="4214" level="8" />
+			<skill name="HealMagic_a" id="4780" level="8" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -649,6 +738,11 @@
 	</npc>
 	<npc id="25713" level="84" type="L2RaidBoss" name="Darnel" title="Torture Maiden">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="InzoneRestriction" value="1" />
+			<skill name="SelfRangeDebuff_a" id="4182" level="9" />
+			<skill name="debuff" id="4189" level="9" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="253.65547052154" sp="429" />
@@ -696,6 +790,10 @@
 	</npc>
 	<npc id="25714" level="84" type="L2RaidBoss" name="Kechi" title="Flaming">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="InzoneRestriction" value="1" />
+			<skill name="selfbuff1" id="5418" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="377.28316326531" sp="638" />
@@ -746,6 +844,13 @@
 	</npc>
 	<npc id="25715" level="84" type="L2Monster" name="Kechi's Subordinate">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="0" />
+			<param name="AttackRange" value="0" />
+			<param name="Party_Type" value="1" />
+			<param name="Party_Loyalty" value="2" />
+			<skill name="selfbuff1" id="4084" level="2" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -792,6 +897,12 @@
 	</npc>
 	<npc id="25716" level="84" type="L2RaidBoss" name="Tears" title="Ice">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="InzoneRestriction" value="1" />
+			<skill name="W_LongRangeDDMagic" id="5238" level="1" />
+			<skill name="selfbuff1" id="5420" level="1" />
+			<skill name="selfbuff2" id="2369" level="1" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="9638" lhand="9638" /> <!-- Tears r1 / Tears r1 -->
@@ -883,6 +994,12 @@
 	</npc>
 	<npc id="25718" level="84" type="L2RaidBoss" name="Emerald Horn" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6821" level="1" />
+			<skill name="Skill02_ID" id="6821" level="1" />
+			<skill name="Skill03_ID" id="6822" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="1994.599914966" sp="3377" />
@@ -953,6 +1070,13 @@
 	</npc>
 	<npc id="25719" level="84" type="L2RaidBoss" name="Dust Rider" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Skill03_Probablity" value="1111" />
+			<skill name="Skill01_ID" id="6826" level="1" />
+			<skill name="Skill02_ID" id="6827" level="1" />
+			<skill name="Skill03_ID" id="6828" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="2443.3849206349" sp="4137" />
@@ -1022,6 +1146,14 @@
 	</npc>
 	<npc id="25720" level="84" type="L2RaidBoss" name="Bleeding Fly" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Skill03_Probablity" value="1111" />
+			<skill name="Skill01_ID" id="6829" level="1" />
+			<skill name="Skill02_ID" id="6829" level="1" />
+			<skill name="Skill03_ID" id="6831" level="1" />
+			<skill name="Skill04_ID" id="6830" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="2742.5749716553" sp="4644" />
@@ -1097,6 +1229,10 @@
 	</npc>
 	<npc id="25721" level="84" type="L2RaidBoss" name="Blackdagger Wing" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill02_ID" id="6833" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="2991.8999433107" sp="5066" />
@@ -1170,6 +1306,12 @@
 	</npc>
 	<npc id="25722" level="84" type="L2RaidBoss" name="Shadow Summoner" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Skill01_Probablity" value="1111" />
+			<skill name="Skill01_ID" id="6836" level="1" />
+			<skill name="Skill02_ID" id="6837" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="3241.224914966" sp="5488" />
@@ -1246,6 +1388,12 @@
 	</npc>
 	<npc id="25723" level="84" type="L2RaidBoss" name="Spike Slasher" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6839" level="1" />
+			<skill name="Skill02_ID" id="6839" level="2" />
+			<skill name="Skill03_ID" id="6840" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="3490.5498866213" sp="5911" />
@@ -1320,6 +1468,10 @@
 	</npc>
 	<npc id="25724" level="84" type="L2RaidBoss" name="Muscle Bomber" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill04_ID" id="6844" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="3739.875" sp="6333" />
@@ -1388,6 +1540,14 @@
 	</npc>
 	<npc id="25725" level="85" type="L2RaidBoss" name="Drake Lord" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="selfheal_skill" id="6886" level="1" />
+			<skill name="notank_skill_a" id="6887" level="1" />
+			<skill name="notank_skill_b" id="6888" level="1" />
+			<skill name="Skill01_ID" id="6891" level="1" />
+			<skill name="Skill02_ID" id="6892" level="1" />
+			<skill name="Skill03_ID" id="6732" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire />
@@ -1446,6 +1606,16 @@
 	</npc>
 	<npc id="25726" level="85" type="L2RaidBoss" name="Behemoth Leader" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="selfheal_skill" id="6886" level="1" />
+			<skill name="notank_skill_a" id="6887" level="1" />
+			<skill name="notank_skill_b" id="6888" level="1" />
+			<skill name="Skill01_ID" id="6893" level="1" />
+			<skill name="Skill02_ID" id="6894" level="1" />
+			<skill name="Skill03_ID_P" id="6739" level="1" />
+			<skill name="Skill03_ID_F" id="6741" level="1" />
+			<skill name="Skill03_ID" id="6740" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire />
@@ -1504,6 +1674,15 @@
 	</npc>
 	<npc id="25727" level="85" type="L2RaidBoss" name="Dragon Beast" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="selfheal_skill" id="6886" level="1" />
+			<skill name="notank_skill_a" id="6887" level="1" />
+			<skill name="notank_skill_b" id="6888" level="1" />
+			<skill name="Skill01_ID" id="6895" level="1" />
+			<skill name="Skill02_ID" id="6896" level="1" />
+			<skill name="Skill03_ID" id="6736" level="1" />
+			<skill name="Skill04_ID" id="6737" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="79" int="74" dex="42" wit="65" con="75" men="72">
@@ -1556,6 +1735,9 @@
 	</npc>
 	<npc id="25728" level="85" type="L2Monster" name="Death Knight">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="hold_skill" id="6738" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="127" /> <!-- Crimson Sword -->
@@ -1598,6 +1780,10 @@
 	</npc>
 	<npc id="25729" level="85" type="L2Monster" name="Death Knight">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="fan_attack_skill" id="6889" level="1" />
+			<skill name="debuff_skill" id="6890" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="127" /> <!-- Crimson Sword -->
@@ -1641,6 +1827,9 @@
 	</npc>
 	<npc id="25730" level="80" type="L2Monster" name="Demon's Banquet">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" lhand="945" /> <!-- Skeleton Dagger / Skeleton Buckler -->
@@ -1683,6 +1872,9 @@
 	</npc>
 	<npc id="25731" level="80" type="L2Monster" name="Demon's Banquet">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" lhand="945" /> <!-- Skeleton Dagger / Skeleton Buckler -->
@@ -1725,6 +1917,15 @@
 	</npc>
 	<npc id="25732" level="85" type="L2Monster" name="Dragon Beast" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="selfheal_skill" id="6886" level="1" />
+			<skill name="notank_skill_a" id="6887" level="1" />
+			<skill name="notank_skill_b" id="6888" level="1" />
+			<skill name="Skill01_ID" id="6895" level="1" />
+			<skill name="Skill02_ID" id="6896" level="1" />
+			<skill name="Skill03_ID" id="6736" level="1" />
+			<skill name="Skill04_ID" id="6737" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire />
@@ -1771,6 +1972,12 @@
 	</npc>
 	<npc id="25733" level="83" type="L2Monster" name="Gem Dragon">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6876" level="1" />
+			<skill name="Skill02_ID" id="6877" level="1" />
+			<skill name="Skill03_ID" id="6878" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1813,6 +2020,12 @@
 	</npc>
 	<npc id="25734" level="83" type="L2Monster" name="Parasitic Leech">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Skill02_Probablity" value="1111" />
+			<skill name="Skill01_ID" id="6870" level="1" />
+			<skill name="Skill02_ID" id="6871" level="1" />
+		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1854,6 +2067,12 @@
 	</npc>
 	<npc id="25735" level="90" type="L2RaidBoss" name="Fairy Warrior" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="1" />
+			<skill name="Skill02_ID" id="6914" level="3" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<equipment rhand="67" lhand="633" /> <!-- Orcish Sword / Zubei's Shield -->
@@ -1899,6 +2118,12 @@
 	</npc>
 	<npc id="25736" level="90" type="L2Monster" name="Fairy Rogue" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6914" level="3" />
+			<skill name="Skill03_ID" id="14043" level="1" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<equipment rhand="7" /> <!-- Apprentice's Rod -->
@@ -1942,6 +2167,11 @@
 	</npc>
 	<npc id="25737" level="90" type="L2Monster" name="Fairy Knight" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="1" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<equipment rhand="123" /> <!-- Saber -->
@@ -1983,6 +2213,13 @@
 	</npc>
 	<npc id="25738" level="90" type="L2RaidBoss" name="Satyr Wizard" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="1" />
+			<skill name="Skill02_ID" id="14046" level="1" />
+			<skill name="Skill03_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="291" /> <!-- Trident -->
@@ -2029,6 +2266,13 @@
 	</npc>
 	<npc id="25739" level="90" type="L2Monster" name="Satyr Summoner" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="1" />
+			<skill name="Skill02_ID" id="14047" level="1" />
+			<skill name="Skill03_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="2" /> <!-- Long Sword -->
@@ -2071,6 +2315,13 @@
 	</npc>
 	<npc id="25740" level="90" type="L2Monster" name="Satyr Witch" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="1" />
+			<skill name="Skill02_ID" id="14046" level="1" />
+			<skill name="Skill03_ID" id="14049" level="1" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="2507" /> <!-- Lizardspear -->
@@ -2113,6 +2364,13 @@
 	</npc>
 	<npc id="25741" level="90" type="L2RaidBoss" name="Treekin Defender" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14053" level="1" />
+			<skill name="Skill02_ID" id="14054" level="1" />
+			<skill name="Skill03_ID" id="14101" level="1" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>PLANT</race>
 		<sex>MALE</sex>
 		<equipment rhand="216" /> <!-- Dirk -->
@@ -2157,6 +2415,12 @@
 	</npc>
 	<npc id="25742" level="90" type="L2Monster" name="Centaur Archer" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14055" level="1" />
+			<skill name="Skill02_ID" id="14056" level="1" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="15302" /> <!-- Transparent Bow (NPC) -->
@@ -2198,6 +2462,13 @@
 	</npc>
 	<npc id="25743" level="90" type="L2Monster" name="Beorning Berserker" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14050" level="1" />
+			<skill name="Skill02_ID" id="14051" level="1" />
+			<skill name="Skill03_ID" id="14052" level="1" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="179" /> <!-- Mace of Prayer -->
@@ -2240,6 +2511,13 @@
 	</npc>
 	<npc id="25744" level="91" type="L2RaidBoss" name="Double Nightmare" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14058" level="1" />
+			<skill name="Skill02_ID" id="14059" level="1" />
+			<skill name="Skill03_ID" id="14060" level="1" />
+			<param name="Attack_BoostValue" value="137" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="150" /> <!-- Elemental Sword -->
@@ -2288,6 +2566,14 @@
 	</npc>
 	<npc id="25745" level="92" type="L2RaidBoss" name="Kimerian" title="Fairy Leader">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14061" level="1" />
+			<skill name="Skill02_ID" id="14062" level="1" />
+			<skill name="Skill03_ID" id="14042" level="3" />
+			<skill name="Skill04_ID" id="14063" level="1" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="16080" sp="32664" />
@@ -2398,6 +2684,10 @@
 	</npc>
 	<npc id="25746" level="90" type="L2Monster" name="Kimerian Ghost" title="">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<equipment rhand="299" /> <!-- Orcish Poleaxe -->
@@ -2439,6 +2729,10 @@
 	</npc>
 	<npc id="25747" level="25" type="L2RaidBoss" name="Kimerian" title="Fairy Leader">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<acquire expRate="4065.6192" sp="95136" />
 		<stats str="79" int="74" dex="42" wit="65" con="75" men="72">
 			<vitals hp="187114" hpRegen="18.438531" mp="2023" mpRegen="1.5" />
@@ -2483,6 +2777,12 @@
 	</npc>
 	<npc id="25748" level="93" type="L2Monster" name="Fairy Warrior" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="6" />
+			<skill name="Skill02_ID" id="6914" level="3" />
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<equipment rhand="14" /> <!-- Bow -->
@@ -2526,6 +2826,12 @@
 	</npc>
 	<npc id="25749" level="94" type="L2Monster" name="Fairy Rogue" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6914" level="3" />
+			<skill name="Skill03_ID" id="14043" level="1" />
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" /> <!-- Skeleton Dagger -->
@@ -2568,6 +2874,11 @@
 	</npc>
 	<npc id="25750" level="93" type="L2RaidBoss" name="Fairy Knight" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14040" level="6" />
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="351.68990634755" sp="71560" />
@@ -2615,6 +2926,13 @@
 	</npc>
 	<npc id="25751" level="93" type="L2Monster" name="Satyr Wizard" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="6" />
+			<skill name="Skill02_ID" id="14046" level="6" />
+			<skill name="Skill03_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2659,6 +2977,13 @@
 	</npc>
 	<npc id="25752" level="94" type="L2Monster" name="Satyr Summoner" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="6" />
+			<skill name="Skill02_ID" id="14047" level="6" />
+			<skill name="Skill03_ID" id="14048" level="1" />
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2704,6 +3029,13 @@
 	</npc>
 	<npc id="25753" level="94" type="L2RaidBoss" name="Satyr Witch" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14045" level="6" />
+			<skill name="Skill02_ID" id="14046" level="6" />
+			<skill name="Skill03_ID" id="14049" level="1" />
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="96" /> <!-- Scythe -->
@@ -2753,6 +3085,13 @@
 	</npc>
 	<npc id="25754" level="94" type="L2RaidBoss" name="Treekin Defender" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14053" level="3" />
+			<skill name="Skill02_ID" id="14054" level="3" />
+			<skill name="Skill03_ID" id="14101" level="3" />
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>PLANT</race>
 		<sex>MALE</sex>
 		<acquire sp="144137" />
@@ -2800,6 +3139,12 @@
 	</npc>
 	<npc id="25755" level="93" type="L2Monster" name="Centaur Archer" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14055" level="3" />
+			<skill name="Skill02_ID" id="14056" level="3" />
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="15302" /> <!-- Transparent Bow (NPC) -->
@@ -2841,6 +3186,13 @@
 	</npc>
 	<npc id="25756" level="94" type="L2Monster" name="Beorning Berserker" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14050" level="2" />
+			<skill name="Skill02_ID" id="14051" level="2" />
+			<skill name="Skill03_ID" id="14052" level="2" />
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2882,6 +3234,13 @@
 	</npc>
 	<npc id="25757" level="94" type="L2RaidBoss" name="Double Nightmare" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14058" level="2" />
+			<skill name="Skill02_ID" id="14059" level="2" />
+			<skill name="Skill03_ID" id="14060" level="2" />
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="192" /> <!-- Crystal Staff -->
@@ -2928,6 +3287,15 @@
 	</npc>
 	<npc id="25758" level="95" type="L2RaidBoss" name="Kimerian" title="Fairy Leader">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14061" level="2" />
+			<skill name="Skill02_ID" id="14062" level="2" />
+			<skill name="Skill03_ID" id="14042" level="6" />
+			<skill name="Skill04_ID" id="14063" level="1" />
+			<skill name="anger_skill" id="14491" level="1" />
+			<param name="Attack_BoostValue" value="144" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="16080" sp="34829" />
@@ -3034,6 +3402,10 @@
 	</npc>
 	<npc id="25759" level="92" type="L2Monster" name="Kimerian Ghost" title="Fairy Leader">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3074,6 +3446,15 @@
 	</npc>
 	<npc id="25760" level="98" type="L2RaidBoss" name="Turanclass" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="boss_skill_01" id="14015" level="1" />
+			<skill name="boss_skill_02" id="14016" level="1" />
+			<skill name="boss_skill_03" id="14017" level="1" />
+			<skill name="boss_skill_04" id="14018" level="1" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="151" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="1472" /> <!-- Dreadbane -->
@@ -3153,6 +3534,15 @@
 	</npc>
 	<npc id="25761" level="97" type="L2Monster" name="Georgios" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14012" level="2" />
+			<skill name="Skill02_ID" id="14013" level="2" />
+			<skill name="Damage_Shield_Skill" id="14193" level="1" />
+			<skill name="Skill06_ID" id="14014" level="2" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" lhand="945" /> <!-- Skeleton Dagger / Skeleton Buckler -->
@@ -3210,6 +3600,14 @@
 	</npc>
 	<npc id="25762" level="97" type="L2Monster" name="Angelos" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14001" level="3" />
+			<skill name="Skill02_ID" id="14002" level="3" />
+			<skill name="Skill06_ID" id="14003" level="3" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="150" lhand="103" /> <!-- Elemental Sword / Tower Shield -->
@@ -3267,6 +3665,14 @@
 	</npc>
 	<npc id="25763" level="97" type="L2RaidBoss" name="Theofanis" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14004" level="3" />
+			<skill name="Skill02_ID" id="14005" level="3" />
+			<skill name="Skill06_ID" id="14006" level="3" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire sp="20332" expRate="9004" raidPoints="30" />
@@ -3342,6 +3748,14 @@
 	</npc>
 	<npc id="25764" level="97" type="L2Monster" name="Steregos" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14034" level="1" />
+			<skill name="Skill05_ID" id="14032" level="1" />
+			<skill name="Skill02_ID" id="14033" level="1" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="9004" sp="20332" />
@@ -3397,6 +3811,13 @@
 	</npc>
 	<npc id="25765" level="96" type="L2Monster" name="Beast" title="Raid Fighter">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14036" level="1" />
+			<skill name="Skill02_ID" id="14037" level="1" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="146" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="1472" /> <!-- Dreadbane -->
@@ -3439,6 +3860,15 @@
 	</npc>
 	<npc id="25766" level="98" type="L2RaidBoss" name="Talicrome" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="boss_skill_01" id="14019" level="1" />
+			<skill name="boss_skill_02" id="14020" level="1" />
+			<skill name="boss_skill_03" id="14021" level="1" />
+			<skill name="boss_skill_04" id="14022" level="1" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="151" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire sp="46698" expRate="20260" raidPoints="30" />
@@ -3517,6 +3947,14 @@
 	</npc>
 	<npc id="25767" level="97" type="L2RaidBoss" name="Meikaliya" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14009" level="3" />
+			<skill name="Skill02_ID" id="14010" level="3" />
+			<skill name="Skill06_ID" id="14011" level="3" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="71" /> <!-- Flamberge -->
@@ -3588,6 +4026,14 @@
 	</npc>
 	<npc id="25768" level="97" type="L2Monster" name="Evangelos" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14009" level="3" />
+			<skill name="Skill02_ID" id="14010" level="3" />
+			<skill name="Skill06_ID" id="14011" level="3" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="273" /> <!-- Compound Bow -->
@@ -3641,6 +4087,15 @@
 	</npc>
 	<npc id="25769" level="97" type="L2Monster" name="Sotiris" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14009" level="3" />
+			<skill name="Skill02_ID" id="14010" level="3" />
+			<skill name="Skill04_ID" id="14011" level="3" />
+			<skill name="Skill06_ID" id="14194" level="1" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="69" /> <!-- Bastard Sword -->
@@ -3693,6 +4148,15 @@
 	</npc>
 	<npc id="25770" level="97" type="L2RaidBoss" name="Lazaros" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14009" level="3" />
+			<skill name="Skill02_ID" id="14010" level="3" />
+			<skill name="Skill06_ID" id="14011" level="3" />
+			<skill name="Skill03_ID" id="14195" level="1" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="84" /> <!-- Homunkulus' Sword -->
@@ -3769,6 +4233,11 @@
 	</npc>
 	<npc id="25775" level="94" type="L2RaidBoss" name="Apherus" title="">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14462" level="1" />
+			<skill name="Skill02_ID" id="14465" level="1" />
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>PLANT</race>
 		<sex>MALE</sex>
 		<equipment rhand="150" /> <!-- Elemental Sword -->
@@ -3813,6 +4282,11 @@
 	</npc>
 	<npc id="25776" level="92" type="L2RaidBoss" name="Royal Guard" title="Apherus Garden">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6599" level="25" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>PLANT</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="183" /> <!-- Mystic Staff -->
@@ -3859,6 +4333,11 @@
 	</npc>
 	<npc id="25777" level="92" type="L2Monster" name="Chasseur" title="Apherus Garden">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14089" level="3" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>PLANT</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="5130" /> <!-- Nos Sword -->
@@ -3900,6 +4379,11 @@
 	</npc>
 	<npc id="25778" level="92" type="L2Monster" name="Escort" title="Apherus Garden">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14090" level="3" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>PLANT</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="5127" /> <!-- Dailaon Knife -->
@@ -3940,6 +4424,16 @@
 	</npc>
 	<npc id="25779" level="94" type="L2RaidBoss" name="Spezion" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14149" level="1" />
+			<skill name="Skill02_ID" id="14150" level="1" />
+			<skill name="Skill03_ID" id="14151" level="1" />
+			<skill name="Skill04_ID" id="14150" level="1" />
+			<skill name="Skill05_ID" id="14152" level="1" />
+			<skill name="Skill06_ID" id="14153" level="1" />
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="114436" sp="242677" raidPoints="7" />
@@ -4040,6 +4534,10 @@
 	</npc>
 	<npc id="25780" level="94" type="L2Monster" name="Spezion's Subordinate" title="">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="5800" lhand="5799" /> <!-- Nephilim Lord / Nephilim Lord -->
@@ -4080,6 +4578,10 @@
 	</npc>
 	<npc id="25781" level="94" type="L2Monster" name="Spezion's Subordinate" title="">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4119,6 +4621,10 @@
 	</npc>
 	<npc id="25782" level="94" type="L2RaidBoss" name="Spezion's Subordinate" title="">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="8532" /> <!-- Monster Only (Spinebone Sword) -->
@@ -4164,6 +4670,10 @@
 	</npc>
 	<npc id="25783" level="20" type="L2Monster" name="Eyesaroch" title="Husk">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14159" level="1" />
+			<skill name="Skill02_ID" id="14160" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="79" int="74" dex="42" wit="65" con="75" men="72">
@@ -4201,6 +4711,12 @@
 	</npc>
 	<npc id="25784" level="10" type="L2RaidBoss" name="Overseer" title="Embryo">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14172" level="1" />
+			<skill name="Skill02_ID" id="14173" level="1" />
+			<skill name="Skill03_ID" id="14174" level="1" />
+		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="67" lhand="633" /> <!-- Orcish Sword / Zubei's Shield -->
@@ -4240,6 +4756,16 @@
 	</npc>
 	<npc id="25785" level="88" type="L2RaidBoss" name="Teredor" title="">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14110" level="1" />
+			<skill name="Skill02_ID" id="14111" level="1" />
+			<skill name="PoisonSkill" id="14112" level="1" />
+			<skill name="toggle_shield1" id="14114" level="1" />
+			<skill name="toggle_shield2" id="14115" level="1" />
+			<skill name="Lastskill" id="14116" level="1" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<equipment rhand="123" lhand="19" /> <!-- Saber / Small Shield -->
@@ -4314,6 +4840,11 @@
 	</npc>
 	<npc id="25786" level="87" type="L2Monster" name="Lachikios" title="Son-in-law of the King">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14099" level="3" />
+			<skill name="Skill04_ID" id="14105" level="3" />
+			<param name="Attack_BoostValue" value="129" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="66" lhand="102" /> <!-- Gladius / Round Shield -->
@@ -4356,6 +4887,11 @@
 	</npc>
 	<npc id="25787" level="87" type="L2RaidBoss" name="Lachikios" title="Son-in-law of the King">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14100" level="3" />
+			<skill name="Skill04_ID" id="14105" level="3" />
+			<param name="Attack_BoostValue" value="129" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="6719" /> <!-- Monster Only (Ketra Orc Chieftain) -->
@@ -4400,6 +4936,12 @@
 	</npc>
 	<npc id="25788" level="89" type="L2Monster" name="Lachikios" title="Queen's Companion">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14099" level="5" />
+			<skill name="Skill04_ID" id="14105" level="5" />
+			<skill name="Skill05_ID" id="14208" level="1" />
+			<param name="Attack_BoostValue" value="133" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="288" /> <!-- Carnage Bow -->
@@ -4440,6 +4982,12 @@
 	</npc>
 	<npc id="25789" level="89" type="L2Monster" name="Lachikios" title="Queen's Companion">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14100" level="5" />
+			<skill name="Skill04_ID" id="14105" level="5" />
+			<skill name="Skill05_ID" id="14208" level="1" />
+			<param name="Attack_BoostValue" value="133" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="79" /> <!-- Damascus Sword -->
@@ -4480,6 +5028,13 @@
 	</npc>
 	<npc id="25790" level="86" type="L2RaidBoss" name="Escort" title="Lachikios Subordinate">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14099" level="2" />
+			<skill name="Skill04_ID" id="14203" level="1" />
+			<skill name="Skill_Ball" id="14105" level="2" />
+			<param name="Attack_BoostValue" value="127" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="15280" /> <!-- Transparent 1HS (NPC) -->
@@ -4526,6 +5081,13 @@
 	</npc>
 	<npc id="25791" level="88" type="L2Monster" name="Escort" title="Lachikios Subordinate">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14100" level="2" />
+			<skill name="Skill04_ID" id="14204" level="1" />
+			<skill name="Skill_Ball" id="14108" level="4" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="15280" lhand="6918" /> <!-- Transparent 1HS (NPC) / Monster Only (Shield of Silenos) -->
@@ -4567,6 +5129,16 @@
 	</npc>
 	<npc id="25792" level="88" type="L2Monster" name="Rachicues" title="Successor">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14099" level="4" />
+			<skill name="Skill05_ID" id="14105" level="4" />
+			<skill name="Skill_Beam" id="14109" level="4" />
+			<skill name="Skill_Crazy" id="14107" level="1" />
+			<skill name="Skill_Evol2" id="14206" level="2" />
+			<skill name="Skill_Heal" id="14106" level="1" />
+			<skill name="Skill_Knockbach" id="14208" level="1" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="2504" /> <!-- Meteor Shower -->
@@ -4607,6 +5179,17 @@
 	</npc>
 	<npc id="25793" level="88" type="L2RaidBoss" name="Rachicues" title="Successor">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14100" level="4" />
+			<skill name="Skill04_ID" id="14105" level="4" />
+			<skill name="Skill05_ID" id="14208" level="1" />
+			<skill name="Skill_Beam" id="14109" level="4" />
+			<skill name="Skill_Crazy" id="14107" level="1" />
+			<skill name="Skill_Evol2" id="14206" level="2" />
+			<skill name="Skill_Heal" id="14106" level="1" />
+			<skill name="Skill_Pull" id="14207" level="1" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>FEMALE</sex>
 		<acquire sp="827123" />
@@ -4657,6 +5240,15 @@
 	</npc>
 	<npc id="25794" level="90" type="L2RaidBoss" name="Rachicues" title="Queen">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14099" level="6" />
+			<skill name="Skill05_ID" id="14208" level="1" />
+			<skill name="Skill_Beam" id="14109" level="6" />
+			<skill name="Skill_Crazy" id="14107" level="1" />
+			<skill name="Skill_Evol2" id="14206" level="2" />
+			<skill name="Skill_Heal" id="14106" level="1" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>FEMALE</sex>
 		<acquire sp="864099" />
@@ -4704,6 +5296,17 @@
 	</npc>
 	<npc id="25795" level="90" type="L2Monster" name="Rachicues" title="Queen">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="Skill01_ID" id="14100" level="6" />
+			<skill name="Skill04_ID" id="14105" level="6" />
+			<skill name="Skill05_ID" id="14208" level="1" />
+			<skill name="Skill_Beam" id="14109" level="6" />
+			<skill name="Skill_Crazy" id="14107" level="1" />
+			<skill name="Skill_Evol2" id="14206" level="2" />
+			<skill name="Skill_Heal" id="14106" level="1" />
+			<skill name="Skill_Pull" id="14207" level="1" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="1472" /> <!-- Dreadbane -->
@@ -4747,6 +5350,9 @@
 	</npc>
 	<npc id="25796" level="98" type="L2RaidBoss" name="Veridan" title="Hell's Warden">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="Attack_BoostValue" value="151" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="5800" lhand="5799" /> <!-- Nephilim Lord / Nephilim Lord -->
@@ -4898,6 +5504,12 @@
 	</npc>
 	<npc id="25797" level="98" type="L2RaidBoss" name="Kechi" title="Flaming">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="selfbuff1" id="5418" level="1" />
+			<skill name="boss_skill_01" id="14370" level="1" />
+			<skill name="boss_skill_02" id="14371" level="1" />
+			<param name="Attack_BoostValue" value="151" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire sp="112426" expRate="48776" />
@@ -5053,6 +5665,10 @@
 	</npc>
 	<npc id="25798" level="97" type="L2Monster" name="Kechi's Subordinate" title="">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="selfbuff1" id="4084" level="2" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -5094,6 +5710,10 @@
 	</npc>
 	<npc id="25799" level="98" type="L2RaidBoss" name="Michaela" title="Grand Judge">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="W_LongRangeDDMagic" id="5238" level="1" />
+			<param name="Attack_BoostValue" value="151" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="48776" sp="112426" />

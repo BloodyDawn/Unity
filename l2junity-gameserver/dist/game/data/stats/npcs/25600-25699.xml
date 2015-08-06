@@ -2,6 +2,24 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="25600" level="82" type="L2Monster" name="Temenir" title="Darion's Challenger">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="AttackRange" value="2" />
+			<param name="IsHealer" value="2" />
+			<param name="Party_Type" value="2" />
+			<param name="OutOfTerritory" value="1" />
+			<minions name="Privates">
+				<npc id="25596" count="2" respawnTime="0" weightPoint="1" />
+			</minions>
+			<param name="Skill01_Probablity" value="1000" />
+			<param name="Skill02_Probablity" value="1000" />
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill02_Check_Dist" value="1" />
+			<param name="Skill02_Dist_Max" value="150" />
+			<skill name="Skill01_ID" id="5297" level="5" />
+			<skill name="Skill02_ID" id="5299" level="5" />
+			<skill name="Skill04_ID" id="5331" level="5" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="10277" /> <!-- Monster Only (Behamah Pole) -->
@@ -54,6 +72,23 @@
 	</npc>
 	<npc id="25601" level="82" type="L2Monster" name="Draksius" title="Darion's Challenger">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsHealer" value="2" />
+			<param name="Party_Type" value="2" />
+			<param name="OutOfTerritory" value="1" />
+			<minions name="Privates">
+				<npc id="25596" count="2" respawnTime="0" weightPoint="1" />
+			</minions>
+			<param name="Skill01_Probablity" value="1000" />
+			<param name="Skill02_Probablity" value="1000" />
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill02_Check_Dist" value="1" />
+			<param name="Skill02_Dist_Max" value="150" />
+			<skill name="Skill01_ID" id="5277" level="5" />
+			<skill name="Skill02_ID" id="5279" level="5" />
+			<skill name="Skill03_ID" id="4663" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="6722" /> <!-- Monster Only (Ahrimanes) -->
@@ -108,6 +143,27 @@
 	</npc>
 	<npc id="25602" level="82" type="L2Monster" name="Kiretcenah" title="Darion's Challenger">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="AttackRange" value="2" />
+			<param name="IsHealer" value="2" />
+			<param name="Party_Type" value="2" />
+			<param name="OutOfTerritory" value="1" />
+			<minions name="Privates">
+				<npc id="25596" count="2" respawnTime="0" weightPoint="1" />
+			</minions>
+			<param name="Skill01_Check_Dist" value="1" />
+			<param name="Skill01_Dist_Min" value="200" />
+			<param name="Skill01_MainAttack" value="1" />
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill02_Check_Dist" value="1" />
+			<param name="Skill02_Dist_Max" value="200" />
+			<param name="Skill03_Target" value="4" />
+			<param name="Skill03_Type" value="3" />
+			<skill name="Skill01_ID" id="5316" level="5" />
+			<skill name="Skill02_ID" id="5318" level="5" />
+			<skill name="Skill03_ID" id="4065" level="11" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="9442" /> <!-- Dynasty Sword -->
@@ -159,6 +215,23 @@
 	</npc>
 	<npc id="25603" level="99" type="L2RaidBoss" name="Darion">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="1" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<param name="Skill01_Check_Dist" value="1" />
+			<param name="Skill01_Dist_Max" value="50" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill03_Target" value="3" />
+			<param name="Skill03_AttackSplash" value="1" />
+			<param name="Skill03_Check_Dist" value="1" />
+			<param name="Skill03_Dist_Max" value="600" />
+			<param name="Skill04_Target" value="3" />
+			<skill name="Skill01_ID" id="5501" level="1" />
+			<skill name="Skill02_ID" id="5500" level="1" />
+			<skill name="Skill03_ID" id="5502" level="1" />
+			<skill name="Skill04_ID" id="5503" level="1" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment lhand="10548" /> <!-- Monster Only (Transparent Shield) -->
@@ -250,6 +323,14 @@
 	</npc>
 	<npc id="25605" level="82" type="L2Monster" name="Naia Spore">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="1" />
+			<param name="Skill02_Probablity" value="1000" />
+			<param name="aspect_myself" value="0" />
+			<skill name="Skill01_ID" id="5765" level="1" />
+			<skill name="Skill02_ID" id="4032" level="10" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -299,6 +380,14 @@
 	</npc>
 	<npc id="25606" level="82" type="L2Monster" name="Naia Spore">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="1" />
+			<param name="Skill02_Probablity" value="1000" />
+			<param name="aspect_myself" value="1" />
+			<skill name="Skill01_ID" id="5766" level="1" />
+			<skill name="Skill02_ID" id="4032" level="10" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -348,6 +437,14 @@
 	</npc>
 	<npc id="25607" level="82" type="L2Monster" name="Naia Spore">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="1" />
+			<param name="Skill02_Probablity" value="1000" />
+			<param name="aspect_myself" value="2" />
+			<skill name="Skill01_ID" id="5767" level="1" />
+			<skill name="Skill02_ID" id="4032" level="10" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -397,6 +494,14 @@
 	</npc>
 	<npc id="25608" level="82" type="L2Monster" name="Naia Spore">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="1" />
+			<param name="Skill02_Probablity" value="1000" />
+			<param name="aspect_myself" value="3" />
+			<skill name="Skill01_ID" id="5768" level="1" />
+			<skill name="Skill02_ID" id="4032" level="10" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -446,6 +551,27 @@
 	</npc>
 	<npc id="25609" level="82" type="L2RaidBoss" name="Epidos" title="Naia Shambler">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="AttackRange" value="2" />
+			<param name="IsHealer" value="2" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<param name="Skill01_MainAttack" value="1" />
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill02_Check_Dist" value="1" />
+			<param name="Skill02_Dist_Max" value="800" />
+			<param name="Skill03_Target" value="3" />
+			<param name="Skill03_AttackSplash" value="1" />
+			<param name="Skill03_Check_Dist" value="1" />
+			<param name="Skill03_Dist_Max" value="250" />
+			<param name="Skill04_Target" value="3" />
+			<param name="aspect_myself" value="0" />
+			<skill name="Skill01_ID" id="5505" level="1" />
+			<skill name="Skill02_ID" id="5509" level="1" />
+			<skill name="Skill03_ID" id="5513" level="1" />
+			<skill name="Skill04_ID" id="5517" level="1" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="2001.1354848305" sp="3229" />
@@ -500,6 +626,27 @@
 	</npc>
 	<npc id="25610" level="82" type="L2RaidBoss" name="Epidos" title="Naia Shambler">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="AttackRange" value="2" />
+			<param name="IsHealer" value="2" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<param name="Skill01_MainAttack" value="1" />
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill02_Check_Dist" value="1" />
+			<param name="Skill02_Dist_Max" value="800" />
+			<param name="Skill03_Target" value="3" />
+			<param name="Skill03_AttackSplash" value="1" />
+			<param name="Skill03_Check_Dist" value="1" />
+			<param name="Skill03_Dist_Max" value="250" />
+			<param name="Skill04_Target" value="3" />
+			<param name="aspect_myself" value="1" />
+			<skill name="Skill01_ID" id="5506" level="1" />
+			<skill name="Skill02_ID" id="5510" level="1" />
+			<skill name="Skill03_ID" id="5514" level="1" />
+			<skill name="Skill04_ID" id="5517" level="1" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="2001.1354848305" sp="3229" />
@@ -554,6 +701,27 @@
 	</npc>
 	<npc id="25611" level="82" type="L2RaidBoss" name="Epidos" title="Naia Shambler">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="AttackRange" value="2" />
+			<param name="IsHealer" value="2" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<param name="Skill01_MainAttack" value="1" />
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill02_Check_Dist" value="1" />
+			<param name="Skill02_Dist_Max" value="800" />
+			<param name="Skill03_Target" value="3" />
+			<param name="Skill03_AttackSplash" value="1" />
+			<param name="Skill03_Check_Dist" value="1" />
+			<param name="Skill03_Dist_Max" value="250" />
+			<param name="Skill04_Target" value="3" />
+			<param name="aspect_myself" value="2" />
+			<skill name="Skill01_ID" id="5507" level="1" />
+			<skill name="Skill02_ID" id="5511" level="1" />
+			<skill name="Skill03_ID" id="5515" level="1" />
+			<skill name="Skill04_ID" id="5517" level="1" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="2001.1354848305" sp="3229" />
@@ -608,6 +776,27 @@
 	</npc>
 	<npc id="25612" level="82" type="L2RaidBoss" name="Epidos" title="Naia Shambler">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="AttackRange" value="2" />
+			<param name="IsHealer" value="2" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<param name="Skill01_MainAttack" value="1" />
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill02_Check_Dist" value="1" />
+			<param name="Skill02_Dist_Max" value="800" />
+			<param name="Skill03_Target" value="3" />
+			<param name="Skill03_AttackSplash" value="1" />
+			<param name="Skill03_Check_Dist" value="1" />
+			<param name="Skill03_Dist_Max" value="250" />
+			<param name="Skill04_Target" value="3" />
+			<param name="aspect_myself" value="3" />
+			<skill name="Skill01_ID" id="5508" level="1" />
+			<skill name="Skill02_ID" id="5512" level="1" />
+			<skill name="Skill03_ID" id="5516" level="1" />
+			<skill name="Skill04_ID" id="5517" level="1" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="2001.1354848305" sp="3229" />
@@ -662,6 +851,11 @@
 	</npc>
 	<npc id="25613" level="83" type="L2Monster" name="Naia Spore">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="1" />
+			<skill name="Skill01_ID" id="4077" level="10" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -704,6 +898,9 @@
 	</npc>
 	<npc id="25614" level="82" type="L2Monster" name="Floating Ghost">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="cursed_magic" id="5593" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -740,6 +937,9 @@
 	</npc>
 	<npc id="25615" level="82" type="L2Monster" name="Floating Ghost">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="cursed_magic" id="5593" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -776,6 +976,12 @@
 	</npc>
 	<npc id="25616" level="29" type="L2RaidBoss" name="Lost Warden">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4723" level="2" />
+			<skill name="SelfRangePhysicalSpecial_a" id="4738" level="2" />
+			<skill name="SelfBuff_a" id="4173" level="2" />
+			<skill name="SelfRangeCancel_a" id="4177" level="2" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="201" /> <!-- Club of Nature -->
@@ -818,6 +1024,12 @@
 	</npc>
 	<npc id="25617" level="39" type="L2RaidBoss" name="Lost Warden">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4723" level="3" />
+			<skill name="SelfRangePhysicalSpecial_a" id="4738" level="3" />
+			<skill name="SelfBuff_a" id="4173" level="3" />
+			<skill name="SelfRangeCancel_a" id="4177" level="3" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="221" /> <!-- Assassin Knife -->
@@ -860,6 +1072,12 @@
 	</npc>
 	<npc id="25618" level="49" type="L2RaidBoss" name="Lost Warden">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4723" level="4" />
+			<skill name="SelfRangePhysicalSpecial_a" id="4738" level="4" />
+			<skill name="SelfBuff_a" id="4173" level="4" />
+			<skill name="SelfRangeCancel_a" id="4177" level="4" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="339.36859641816" sp="195" />
@@ -901,6 +1119,12 @@
 	</npc>
 	<npc id="25619" level="59" type="L2RaidBoss" name="Lost Warden">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4723" level="5" />
+			<skill name="SelfRangePhysicalSpecial_a" id="4738" level="5" />
+			<skill name="SelfBuff_a" id="4173" level="5" />
+			<skill name="SelfRangeCancel_a" id="4177" level="5" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="75" /> <!-- Caliburs -->
@@ -943,6 +1167,12 @@
 	</npc>
 	<npc id="25620" level="69" type="L2RaidBoss" name="Lost Warden">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4723" level="6" />
+			<skill name="SelfRangePhysicalSpecial_a" id="4738" level="6" />
+			<skill name="SelfBuff_a" id="4173" level="6" />
+			<skill name="SelfRangeCancel_a" id="4177" level="6" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="218.31085906322" sp="249" />
@@ -984,6 +1214,12 @@
 	</npc>
 	<npc id="25621" level="78" type="L2RaidBoss" name="Lost Warden">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4723" level="7" />
+			<skill name="SelfRangePhysicalSpecial_a" id="4738" level="7" />
+			<skill name="SelfBuff_a" id="4173" level="7" />
+			<skill name="SelfRangeCancel_a" id="4177" level="7" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8221" /> <!-- Monster Only (Grail Apostle Spear) -->
@@ -1031,6 +1267,12 @@
 	</npc>
 	<npc id="25622" level="81" type="L2RaidBoss" name="Lost Warden">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4723" level="8" />
+			<skill name="SelfRangePhysicalSpecial_a" id="4738" level="8" />
+			<skill name="SelfBuff_a" id="4173" level="8" />
+			<skill name="SelfRangeCancel_a" id="4177" level="8" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="78" /> <!-- Great Sword -->
@@ -1078,6 +1320,35 @@
 	</npc>
 	<npc id="25623" level="80" type="L2RaidBoss" name="Valdstone" title="Master Rider">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="Skill01_AttackSplash" value="1" />
+			<param name="Skill03_Target" value="3" />
+			<param name="ItemRate_B" value="720280" />
+			<param name="ItemName_B_1" value="6365" />
+			<param name="ItemRate_B_1" value="3713" />
+			<param name="ItemName_B_2" value="6366" />
+			<param name="ItemRate_B_2" value="3713" />
+			<param name="ItemName_B_3" value="6369" />
+			<param name="ItemRate_B_3" value="3713" />
+			<param name="ItemName_B_4" value="6579" />
+			<param name="ItemRate_B_4" value="3713" />
+			<param name="ItemName_B_5" value="6689" />
+			<param name="ItemRate_B_5" value="420931" />
+			<param name="ItemName_B_6" value="6690" />
+			<param name="ItemRate_B_6" value="81873" />
+			<param name="ItemName_B_7" value="6693" />
+			<param name="ItemRate_B_7" value="145597" />
+			<param name="ItemName_B_8" value="6697" />
+			<param name="ItemRate_B_8" value="336747" />
+			<param name="ItemRate_C" value="325017" />
+			<param name="ItemName_C_1" value="6367" />
+			<param name="ItemRate_C_1" value="49371" />
+			<param name="ItemName_C_2" value="6691" />
+			<param name="ItemRate_C_2" value="950629" />
+			<skill name="Skill01_ID" id="5797" level="1" />
+			<skill name="Skill02_ID" id="5798" level="1" />
+			<skill name="Skill03_ID" id="5225" level="1" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="553.064375" sp="849" />
@@ -1129,6 +1400,23 @@
 	</npc>
 	<npc id="25624" level="83" type="L2RaidBoss" name="Rok" title="King of Birds">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="Skill01_AttackSplash" value="1" />
+			<param name="Skill03_AttackSplash" value="1" />
+			<param name="ItemRate_B" value="503240" />
+			<param name="ItemName_B_1" value="6680" />
+			<param name="ItemRate_B_1" value="58550" />
+			<param name="ItemName_B_2" value="6707" />
+			<param name="ItemRate_B_2" value="941450" />
+			<param name="ItemRate_C" value="329703" />
+			<param name="ItemName_C_1" value="7575" />
+			<param name="ItemRate_C_1" value="48834" />
+			<param name="ItemName_C_2" value="7579" />
+			<param name="ItemRate_C_2" value="951166" />
+			<skill name="Skill01_ID" id="5794" level="1" />
+			<skill name="Skill02_ID" id="5795" level="1" />
+			<skill name="Skill03_ID" id="5796" level="1" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="571.62328125" sp="878" />
@@ -1179,6 +1467,43 @@
 	</npc>
 	<npc id="25625" level="85" type="L2RaidBoss" name="Enira" title="Banshee Queen">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="Skill01_Target" value="3" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<param name="Skill02_Target" value="3" />
+			<param name="ItemRate_B" value="763645" />
+			<param name="ItemName_B_1" value="6676" />
+			<param name="ItemRate_B_1" value="32342" />
+			<param name="ItemName_B_2" value="6677" />
+			<param name="ItemRate_B_2" value="32342" />
+			<param name="ItemName_B_3" value="6681" />
+			<param name="ItemRate_B_3" value="32342" />
+			<param name="ItemName_B_4" value="6682" />
+			<param name="ItemRate_B_4" value="32342" />
+			<param name="ItemName_B_5" value="6685" />
+			<param name="ItemRate_B_5" value="32342" />
+			<param name="ItemName_B_6" value="6686" />
+			<param name="ItemRate_B_6" value="32342" />
+			<param name="ItemName_B_7" value="6703" />
+			<param name="ItemRate_B_7" value="32840" />
+			<param name="ItemName_B_8" value="6704" />
+			<param name="ItemRate_B_8" value="272451" />
+			<param name="ItemName_B_9" value="6708" />
+			<param name="ItemRate_B_9" value="183904" />
+			<param name="ItemName_B_10" value="6709" />
+			<param name="ItemRate_B_10" value="133748" />
+			<param name="ItemName_B_11" value="6712" />
+			<param name="ItemRate_B_11" value="102169" />
+			<param name="ItemName_B_12" value="6713" />
+			<param name="ItemRate_B_12" value="80836" />
+			<param name="ItemRate_C" value="778684" />
+			<param name="ItemName_C_1" value="6684" />
+			<param name="ItemRate_C_1" value="58550" />
+			<param name="ItemName_C_2" value="6711" />
+			<param name="ItemRate_C_2" value="941450" />
+			<skill name="Skill01_ID" id="5799" level="1" />
+			<skill name="Skill02_ID" id="5792" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="585.23953125" sp="898" />
@@ -1227,6 +1552,26 @@
 	</npc>
 	<npc id="25626" level="85" type="L2RaidBoss" name="Dius" title="Deadman of Destruction">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="Skill01_AttackSplash" value="1" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="ItemRate_B" value="506522" />
+			<param name="ItemName_B_1" value="6364" />
+			<param name="ItemRate_B_1" value="10930" />
+			<param name="ItemName_B_2" value="6372" />
+			<param name="ItemRate_B_2" value="10930" />
+			<param name="ItemName_B_3" value="6688" />
+			<param name="ItemRate_B_3" value="336734" />
+			<param name="ItemName_B_4" value="6696" />
+			<param name="ItemRate_B_4" value="641406" />
+			<param name="ItemRate_C" value="340109" />
+			<param name="ItemName_C_1" value="7575" />
+			<param name="ItemRate_C_1" value="48834" />
+			<param name="ItemName_C_2" value="7579" />
+			<param name="ItemRate_C_2" value="951166" />
+			<skill name="Skill01_ID" id="5801" level="1" />
+			<skill name="Skill02_ID" id="5802" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="585.23953125" sp="898" />
@@ -1277,6 +1622,12 @@
 	</npc>
 	<npc id="25627" level="75" type="L2Monster" name="Mutant Bird" title="King's Subordinate">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<skill name="Skill01_ID" id="5806" level="1" />
+			<skill name="Skill02_ID" id="5807" level="1" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1323,6 +1674,11 @@
 	</npc>
 	<npc id="25628" level="76" type="L2Monster" name="Dra Hawk" title="King's Subordinate">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="Skill02_AttackSplash" value="1" />
+			<skill name="Skill01_ID" id="5809" level="1" />
+			<skill name="Skill02_ID" id="5810" level="1" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1369,6 +1725,10 @@
 	</npc>
 	<npc id="25629" level="78" type="L2Monster" name="Floating Skeleton" title="Enira's Evil Spirit">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5803" level="1" />
+			<skill name="Skill02_ID" id="5804" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1415,6 +1775,11 @@
 	</npc>
 	<npc id="25630" level="77" type="L2Monster" name="Floating Zombie" title="Enira's Evil Spirit">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="Skill02_Target" value="3" />
+			<skill name="Skill01_ID" id="5813" level="1" />
+			<skill name="Skill02_ID" id="5793" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1461,6 +1826,10 @@
 	</npc>
 	<npc id="25631" level="77" type="L2Monster" name="Drake Wing" title="Underling of Destruction">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5805" level="1" />
+			<skill name="Skill02_ID" id="5804" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1507,6 +1876,11 @@
 	</npc>
 	<npc id="25632" level="78" type="L2Monster" name="Drak" title="Underling of Destruction">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="Skill02_AttackSplash" value="1" />
+			<skill name="Skill01_ID" id="5811" level="1" />
+			<skill name="Skill02_ID" id="5812" level="1" />
+		</parameters>
 		<race>DRAGON</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1553,6 +1927,13 @@
 	</npc>
 	<npc id="25633" level="76" type="L2Monster" name="Elite Rider" title="Valdstone's Escort">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="Skill03_Target" value="4" />
+			<param name="Skill03_Type" value="3" />
+			<skill name="Skill01_ID" id="5808" level="1" />
+			<skill name="Skill02_ID" id="5804" level="1" />
+			<skill name="Skill03_ID" id="4065" level="9" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="10.143871191136" sp="1540" />
@@ -1601,6 +1982,14 @@
 	</npc>
 	<npc id="25634" level="81" type="L2Monster" name="Cohemenes" title="Soul Collector">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="raise" value="5" />
+			<skill name="Skill01_ID" id="5898" level="2" />
+			<skill name="Skill02_ID" id="5904" level="2" />
+			<skill name="Skill03_ID" id="5908" level="2" />
+			<skill name="Skill04_ID" id="5907" level="2" />
+			<skill name="Skill_HPBuff" id="5917" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="686.93583295229" sp="1081" />
@@ -1650,6 +2039,14 @@
 	</npc>
 	<npc id="25635" level="81" type="L2Monster" name="Argekunte" title="Vacuous Soul">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="raise" value="5" />
+			<skill name="Skill01_ID" id="5881" level="2" />
+			<skill name="Skill02_ID" id="5894" level="1" />
+			<skill name="Skill03_ID" id="5895" level="1" />
+			<skill name="Skill04_ID" id="5888" level="2" />
+			<skill name="Skill_HPBuff" id="5916" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="13985" lhand="13986" /> <!-- Monster Only (Death Slayer_r) / Monster Only (Death Slayer_l) -->
@@ -1700,6 +2097,11 @@
 	</npc>
 	<npc id="25636" level="81" type="L2Monster" name="Ravenous Soul Devourer">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="tide" value="3" />
+			<param name="type" value="spc_wagon_boss" />
+			<skill name="Skill01_ID" id="5888" level="2" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="708.83661027282" sp="1116" />
@@ -1766,6 +2168,13 @@
 	</npc>
 	<npc id="25637" level="81" type="L2Monster" name="Karpencharr" title="Prophet of Lies">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="raise" value="5" />
+			<skill name="Skill01_ID" id="5898" level="2" />
+			<skill name="Skill02_ID" id="5904" level="2" />
+			<skill name="Skill03_ID" id="5907" level="2" />
+			<skill name="Skill_HPBuff" id="5916" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="708.83661027282" sp="1116" />
@@ -1836,6 +2245,13 @@
 	</npc>
 	<npc id="25638" level="81" type="L2Monster" name="Romerohiv" title="Betrayer of Oblivion">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="raise" value="5" />
+			<skill name="Skill01_ID" id="5896" level="2" />
+			<skill name="Skill02_ID" id="5901" level="2" />
+			<skill name="Skill03_ID" id="5908" level="2" />
+			<skill name="Skill_HPBuff" id="5917" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="708.83661027282" sp="1116" />
@@ -1910,6 +2326,13 @@
 	</npc>
 	<npc id="25639" level="81" type="L2Monster" name="Hitchkarshiek" title="Wise Retainer of Suffering">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="raise" value="5" />
+			<skill name="Skill01_ID" id="5881" level="2" />
+			<skill name="Skill02_ID" id="5894" level="1" />
+			<skill name="Skill03_ID" id="5888" level="2" />
+			<skill name="Skill_HPBuff" id="5986" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="13985" lhand="13986" /> <!-- Monster Only (Death Slayer_r) / Monster Only (Death Slayer_l) -->
@@ -1984,6 +2407,12 @@
 	</npc>
 	<npc id="25640" level="81" type="L2Monster" name="Freedkyilla" title="Hand of Night">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="raise" value="5" />
+			<skill name="Skill01_ID" id="5880" level="2" />
+			<skill name="Skill02_ID" id="5894" level="1" />
+			<skill name="Skill03_ID" id="5899" level="2" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="13984" /> <!-- Monster Only (Death Slayer_1hs) -->
@@ -2053,6 +2482,14 @@
 	</npc>
 	<npc id="25641" level="81" type="L2Monster" name="Yehan Cravenizad" title="Bloodsucker">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="raise" value="5" />
+			<skill name="Skill01_ID" id="5884" level="2" />
+			<skill name="Skill02_ID" id="5891" level="1" />
+			<skill name="Skill03_ID" id="5887" level="1" />
+			<skill name="Skill04_ID" id="5895" level="1" />
+			<skill name="Skill_HPBuff" id="5915" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="13982" /> <!-- Monster Only (Death Knight_pole) -->
@@ -2128,6 +2565,14 @@
 	</npc>
 	<npc id="25642" level="81" type="L2Monster" name="Yehan Jaxsibhan" title="Dark Guardian">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="raise" value="5" />
+			<skill name="Skill01_ID" id="5855" level="2" />
+			<skill name="Skill02_ID" id="5891" level="1" />
+			<skill name="Skill03_ID" id="5890" level="3" />
+			<skill name="Skill04_ID" id="5900" level="1" />
+			<skill name="Skill_HPBuff" id="5985" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="13983" /> <!-- Monster Only (Death Knight_2hs) -->
@@ -2199,6 +2644,12 @@
 	</npc>
 	<npc id="25643" level="81" type="L2RaidBoss" name="Awakened Ancient Sentry" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5878" level="1" />
+			<skill name="Skill02_ID" id="5879" level="1" />
+			<skill name="Skill03_ID" id="5894" level="1" />
+			<skill name="Skill_HPBuff" id="5917" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="472.55768937662" sp="744" />
@@ -2250,6 +2701,11 @@
 	</npc>
 	<npc id="25644" level="81" type="L2RaidBoss" name="Awakened Ancient Severer" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5884" level="2" />
+			<skill name="Skill02_ID" id="5898" level="2" />
+			<skill name="Skill03_ID" id="5895" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="472.55768937662" sp="744" />
@@ -2301,6 +2757,12 @@
 	</npc>
 	<npc id="25645" level="81" type="L2RaidBoss" name="Awakened Ancient Soul Extractor" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5892" level="2" />
+			<skill name="Skill02_ID" id="5905" level="1" />
+			<skill name="Skill03_ID" id="5903" level="1" />
+			<skill name="Skill_HPBuff" id="5917" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="472.55768937662" sp="744" />
@@ -2352,6 +2814,10 @@
 	</npc>
 	<npc id="25646" level="81" type="L2RaidBoss" name="Awakened Ancient Soul Devourer" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5888" level="2" />
+			<skill name="Skill02_ID" id="5899" level="2" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="472.55768937662" sp="744" />
@@ -2404,6 +2870,13 @@
 	</npc>
 	<npc id="25647" level="81" type="L2RaidBoss" name="Awakened Ancient Fighter" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5884" level="2" />
+			<skill name="Skill02_ID" id="5891" level="1" />
+			<skill name="Skill03_ID" id="5887" level="1" />
+			<skill name="Skill04_ID" id="5895" level="1" />
+			<skill name="Skill_HPBuff" id="5915" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="13982" /> <!-- Monster Only (Death Knight_pole) -->
@@ -2457,6 +2930,13 @@
 	</npc>
 	<npc id="25648" level="81" type="L2RaidBoss" name="Awakened Ancient Fighter" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5855" level="2" />
+			<skill name="Skill02_ID" id="5891" level="1" />
+			<skill name="Skill03_ID" id="5890" level="3" />
+			<skill name="Skill04_ID" id="5900" level="1" />
+			<skill name="Skill_HPBuff" id="5985" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="13983" /> <!-- Monster Only (Death Knight_2hs) -->
@@ -2511,6 +2991,12 @@
 	</npc>
 	<npc id="25649" level="81" type="L2RaidBoss" name="Awakened Ancient Executor" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5880" level="2" />
+			<skill name="Skill02_ID" id="5894" level="1" />
+			<skill name="Skill03_ID" id="5899" level="2" />
+			<skill name="Skill_HPBuff" id="5986" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="13985" lhand="13986" /> <!-- Monster Only (Death Slayer_r) / Monster Only (Death Slayer_l) -->
@@ -2588,6 +3074,11 @@
 	</npc>
 	<npc id="25650" level="81" type="L2RaidBoss" name="Awakened Ancient Executor" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5881" level="2" />
+			<skill name="Skill02_ID" id="5894" level="1" />
+			<skill name="Skill03_ID" id="5888" level="2" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="13984" /> <!-- Monster Only (Death Slayer_1hs) -->
@@ -2640,6 +3131,12 @@
 	</npc>
 	<npc id="25651" level="81" type="L2RaidBoss" name="Awakened Ancient Prophet" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5898" level="2" />
+			<skill name="Skill02_ID" id="5904" level="2" />
+			<skill name="Skill03_ID" id="5907" level="2" />
+			<skill name="Skill_HPBuff" id="5916" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="472.55768937662" sp="744" />
@@ -2692,6 +3189,12 @@
 	</npc>
 	<npc id="25652" level="81" type="L2RaidBoss" name="Awakened Ancient Prophet" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5896" level="2" />
+			<skill name="Skill02_ID" id="5901" level="2" />
+			<skill name="Skill03_ID" id="5908" level="2" />
+			<skill name="Skill_HPBuff" id="5917" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="472.55768937662" sp="744" />
@@ -2744,6 +3247,20 @@
 	</npc>
 	<npc id="25653" level="95" type="L2RaidBoss" name="Kanadis Herald" title="Invading Forces">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="String_Num1" value="1300145" />
+			<param name="String_Num2" value="1300147" />
+			<param name="String_Num3" value="1300148" />
+			<param name="is_restrict_npc" value="1" />
+			<param name="DDSkill_01_Prob" value="25" />
+			<param name="DDSkill_02_Prob" value="15" />
+			<skill name="SelfBuff" id="4030" level="3" />
+			<skill name="DDSkill_01" id="4736" level="11" />
+			<skill name="DDSkill_02" id="4172" level="11" />
+			<skill name="different_level_9_attacked" id="5456" level="1" />
+			<skill name="different_level_9_see_spelled" id="5456" level="1" />
+			<param name="Attack_BoostValue" value="144" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire expRate="15383" sp="33319" raidPoints="7" />
@@ -2794,6 +3311,19 @@
 	</npc>
 	<npc id="25654" level="97" type="L2RaidBoss" name="Kanadis Herald" title="Invading Forces">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="String_Num1" value="1300145" />
+			<param name="String_Num2" value="1300147" />
+			<param name="String_Num3" value="1300148" />
+			<param name="DDSkill_01_Prob" value="25" />
+			<param name="DDSkill_02_Prob" value="15" />
+			<skill name="SelfBuff" id="4031" level="3" />
+			<skill name="DDSkill_01" id="4766" level="11" />
+			<skill name="DDSkill_02" id="4771" level="11" />
+			<skill name="different_level_9_attacked" id="5456" level="1" />
+			<skill name="different_level_9_see_spelled" id="5456" level="1" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire expRate="23075" sp="52107" raidPoints="7" />
@@ -2844,6 +3374,20 @@
 	</npc>
 	<npc id="25655" level="99" type="L2RaidBoss" name="Kanadis Herald" title="Invading Forces">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="String_Num1" value="1300146" />
+			<param name="String_Num2" value="1300147" />
+			<param name="String_Num3" value="1300148" />
+			<param name="is_last_invader" value="1" />
+			<param name="DDSkill_01_Prob" value="25" />
+			<param name="DDSkill_02_Prob" value="15" />
+			<skill name="SelfBuff" id="4089" level="1" />
+			<skill name="DDSkill_01" id="4721" level="12" />
+			<skill name="DDSkill_02" id="4746" level="12" />
+			<skill name="different_level_9_attacked" id="5456" level="1" />
+			<skill name="different_level_9_see_spelled" id="5456" level="1" />
+			<param name="Attack_BoostValue" value="155" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire expRate="38458" sp="603082" raidPoints="7" />
@@ -2901,6 +3445,12 @@
 	</npc>
 	<npc id="25656" level="93" type="L2Monster" name="Kanadis Fanatic">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="String_Num1" value="1300149" />
+			<skill name="different_level_9_attacked" id="5456" level="1" />
+			<skill name="different_level_9_see_spelled" id="5456" level="1" />
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="152" /> <!-- Heavy Chisel -->
@@ -2949,6 +3499,14 @@
 	</npc>
 	<npc id="25657" level="95" type="L2Monster" name="Kanadis Fanatic">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="String_Num1" value="1300149" />
+			<skill name="DDSkill_01" id="4066" level="12" />
+			<skill name="DDSkill_02" id="4077" level="12" />
+			<skill name="different_level_9_attacked" id="5456" level="1" />
+			<skill name="different_level_9_see_spelled" id="5456" level="1" />
+			<param name="Attack_BoostValue" value="144" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8212" /> <!-- Monster Only (Solina Brother Mace) -->
@@ -2998,6 +3556,12 @@
 	</npc>
 	<npc id="25658" level="97" type="L2Monster" name="Kanadis Fanatic">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="String_Num1" value="1300149" />
+			<skill name="different_level_9_attacked" id="5456" level="1" />
+			<skill name="different_level_9_see_spelled" id="5456" level="1" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3044,6 +3608,20 @@
 	</npc>
 	<npc id="25659" level="95" type="L2RaidBoss" name="Kanadis Guide" title="Invading Forces">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="String_Num1" value="1300145" />
+			<param name="String_Num2" value="1300147" />
+			<param name="String_Num3" value="1300148" />
+			<param name="is_restrict_npc" value="1" />
+			<param name="DDSkill_01_Prob" value="20" />
+			<param name="DDSkill_02_Prob" value="20" />
+			<skill name="SelfBuff" id="4030" level="3" />
+			<skill name="DDSkill_01" id="4736" level="11" />
+			<skill name="DDSkill_02" id="4172" level="11" />
+			<skill name="different_level_9_attacked" id="5456" level="1" />
+			<skill name="different_level_9_see_spelled" id="5456" level="1" />
+			<param name="Attack_BoostValue" value="144" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire expRate="15383" sp="33319" raidPoints="7" />
@@ -3094,6 +3672,19 @@
 	</npc>
 	<npc id="25660" level="97" type="L2RaidBoss" name="Kanadis Guide" title="Invading Forces">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="String_Num1" value="1300145" />
+			<param name="String_Num2" value="1300147" />
+			<param name="String_Num3" value="1300148" />
+			<param name="DDSkill_01_Prob" value="20" />
+			<param name="DDSkill_02_Prob" value="20" />
+			<skill name="SelfBuff" id="4031" level="3" />
+			<skill name="DDSkill_01" id="4766" level="11" />
+			<skill name="DDSkill_02" id="4771" level="11" />
+			<skill name="different_level_9_attacked" id="5456" level="1" />
+			<skill name="different_level_9_see_spelled" id="5456" level="1" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire expRate="23075" sp="52107" raidPoints="7" />
@@ -3144,6 +3735,20 @@
 	</npc>
 	<npc id="25661" level="99" type="L2RaidBoss" name="Kanadis Guide" title="Invading Forces">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="String_Num1" value="1300146" />
+			<param name="String_Num2" value="1300147" />
+			<param name="String_Num3" value="1300148" />
+			<param name="is_last_invader" value="1" />
+			<param name="DDSkill_01_Prob" value="20" />
+			<param name="DDSkill_02_Prob" value="20" />
+			<skill name="SelfBuff" id="4089" level="1" />
+			<skill name="DDSkill_01" id="4721" level="12" />
+			<skill name="DDSkill_02" id="4746" level="12" />
+			<skill name="different_level_9_attacked" id="5456" level="1" />
+			<skill name="different_level_9_see_spelled" id="5456" level="1" />
+			<param name="Attack_BoostValue" value="155" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire expRate="38458" sp="603082" raidPoints="7" />
@@ -3201,6 +3806,12 @@
 	</npc>
 	<npc id="25662" level="93" type="L2Monster" name="Kanadis Follower">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="String_Num1" value="1300149" />
+			<skill name="different_level_9_attacked" id="5456" level="1" />
+			<skill name="different_level_9_see_spelled" id="5456" level="1" />
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="152" /> <!-- Heavy Chisel -->
@@ -3248,6 +3859,14 @@
 	</npc>
 	<npc id="25663" level="95" type="L2Monster" name="Kanadis Follower">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="String_Num1" value="1300149" />
+			<skill name="DDSkill_01" id="4066" level="12" />
+			<skill name="DDSkill_02" id="4077" level="12" />
+			<skill name="different_level_9_attacked" id="5456" level="1" />
+			<skill name="different_level_9_see_spelled" id="5456" level="1" />
+			<param name="Attack_BoostValue" value="144" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8212" /> <!-- Monster Only (Solina Brother Mace) -->
@@ -3297,6 +3916,12 @@
 	</npc>
 	<npc id="25664" level="97" type="L2Monster" name="Kanadis Follower">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="String_Num1" value="1300149" />
+			<skill name="different_level_9_attacked" id="5456" level="1" />
+			<skill name="different_level_9_see_spelled" id="5456" level="1" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3343,6 +3968,12 @@
 	</npc>
 	<npc id="25665" level="99" type="L2RaidBoss" name="Yehan Klodekus" title="Soul Destroyer">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="pan_skill" id="5933" level="1" />
+			<skill name="donut_skill" id="5936" level="1" />
+			<skill name="pc_buff_skill" id="5934" level="1" />
+			<skill name="toggle_shield" id="5931" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="13982" /> <!-- Monster Only (Death Knight_pole) -->
@@ -3415,6 +4046,12 @@
 	</npc>
 	<npc id="25666" level="99" type="L2RaidBoss" name="Yehan Klanikus" title="Guide of Darkness">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="pan_skill" id="5932" level="1" />
+			<skill name="donut_skill" id="5935" level="1" />
+			<skill name="pc_buff_skill" id="5934" level="1" />
+			<skill name="toggle_shield" id="5931" level="1" />
+		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="13983" /> <!-- Monster Only (Death Knight_2hs) -->
@@ -3492,6 +4129,18 @@
 	</npc>
 	<npc id="25667" level="84" type="L2RaidBoss" name="Cannibalistic Stakato Captain" title="Shadow of Violence">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5350" level="1" />
+			<skill name="Skill02_ID" id="5352" level="1" />
+			<skill name="summon_display_skill" id="4161" level="1" />
+			<skill name="teleport_display_skill" id="5218" level="1" />
+			<skill name="special_aoe_skill" id="4232" level="7" />
+			<skill name="normal_aoe_skill" id="4232" level="12" />
+			<skill name="long_distance_stun" id="5307" level="4" />
+			<skill name="mass_slow" id="6237" level="1" />
+			<skill name="mass_slow_damage" id="6238" level="1" />
+			<skill name="party_recall_display" id="6236" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="608.32879818594" sp="1030" />
@@ -3545,6 +4194,18 @@
 	</npc>
 	<npc id="25668" level="82" type="L2RaidBoss" name="Cannibalistic Stakato Captain" title="Shadow of Violence">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5350" level="1" />
+			<skill name="Skill02_ID" id="5352" level="1" />
+			<skill name="summon_display_skill" id="4161" level="1" />
+			<skill name="teleport_display_skill" id="5218" level="1" />
+			<skill name="special_aoe_skill" id="4232" level="7" />
+			<skill name="normal_aoe_skill" id="4232" level="12" />
+			<skill name="long_distance_stun" id="5307" level="4" />
+			<skill name="mass_slow" id="6237" level="1" />
+			<skill name="mass_slow_damage" id="6238" level="1" />
+			<skill name="party_recall_display" id="6236" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="638.36525877454" sp="1030" />
@@ -3597,6 +4258,18 @@
 	</npc>
 	<npc id="25669" level="82" type="L2RaidBoss" name="Cannibalistic Stakato Captain" title="Shadow of Violence">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5350" level="1" />
+			<skill name="Skill02_ID" id="5352" level="1" />
+			<skill name="summon_display_skill" id="4161" level="1" />
+			<skill name="teleport_display_skill" id="5218" level="1" />
+			<skill name="special_aoe_skill" id="4232" level="7" />
+			<skill name="normal_aoe_skill" id="4232" level="12" />
+			<skill name="long_distance_stun" id="5307" level="4" />
+			<skill name="mass_slow" id="6237" level="1" />
+			<skill name="mass_slow_damage" id="6238" level="1" />
+			<skill name="party_recall_display" id="6236" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="638.36525877454" sp="1030" />
@@ -3649,6 +4322,18 @@
 	</npc>
 	<npc id="25670" level="82" type="L2RaidBoss" name="Cannibalistic Stakato Captain" title="Shadow of Violence">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="5350" level="1" />
+			<skill name="Skill02_ID" id="5352" level="1" />
+			<skill name="summon_display_skill" id="4161" level="1" />
+			<skill name="teleport_display_skill" id="5218" level="1" />
+			<skill name="special_aoe_skill" id="4232" level="7" />
+			<skill name="normal_aoe_skill" id="4232" level="12" />
+			<skill name="long_distance_stun" id="5307" level="4" />
+			<skill name="mass_slow" id="6237" level="1" />
+			<skill name="mass_slow_damage" id="6238" level="1" />
+			<skill name="party_recall_display" id="6236" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="638.36525877454" sp="1030" />
@@ -3701,6 +4386,14 @@
 	</npc>
 	<npc id="25671" level="84" type="L2RaidBoss" name="Queen Shyeed" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="25673" count="1" respawnTime="360" weightPoint="1" />
+				<npc id="25672" count="3" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm02_A" />
+			<skill name="RangeHold_a" id="4197" level="9" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="608.32879818594" sp="1030" />
@@ -3768,6 +4461,10 @@
 	</npc>
 	<npc id="25672" level="84" type="L2Monster" name="Spiked Stakato" title="Raid Fighter">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="DDMagic_a" id="4195" level="9" />
+			<skill name="Debuff_a" id="4198" level="9" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="123" /> <!-- Saber -->
@@ -3811,6 +4508,9 @@
 	</npc>
 	<npc id="25673" level="84" type="L2Monster" name="Spiked Stakato" title="Raid Fighter">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4726" level="9" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3852,6 +4552,14 @@
 	</npc>
 	<npc id="25674" level="83" type="L2RaidBoss" name="Gwindorr" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="25675" count="3" respawnTime="360" weightPoint="1" />
+				<npc id="25676" count="2" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm03_A" />
+			<skill name="PhysicalSpecial_b" id="4743" level="9" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="129" /> <!-- Sword of Revolution -->
@@ -4002,6 +4710,14 @@
 	</npc>
 	<npc id="25677" level="84" type="L2RaidBoss" name="Water Spirit Lian" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="25678" count="3" respawnTime="360" weightPoint="1" />
+				<npc id="25679" count="1" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm03_A" />
+			<skill name="RangeHold_a" id="4197" level="9" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="273099.84098639" sp="462478" />
@@ -4071,6 +4787,10 @@
 	</npc>
 	<npc id="25678" level="83" type="L2Monster" name="Gildor's Spirit" title="Raid Fighter">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="DDMagic_a" id="4196" level="9" />
+			<skill name="Debuff_a" id="4200" level="9" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4113,6 +4833,9 @@
 	</npc>
 	<npc id="25679" level="83" type="L2Monster" name="Gildor's Guardian" title="Raid Fighter">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4743" level="9" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4154,6 +4877,13 @@
 	</npc>
 	<npc id="25680" level="82" type="L2RaidBoss" name="Giant Marpanak" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="SelfRangeCancel_a" id="4177" level="8" />
+			<skill name="SelfBuff_a" id="4173" level="8" />
+			<skill name="PhysicalSpecial_a" id="4730" level="8" />
+			<skill name="SelfRangePhysicalSpecial_a" id="4735" level="8" />
+		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
 		<equipment rhand="3937" /> <!-- Monster Only (Lesser Giant) -->
@@ -4226,6 +4956,15 @@
 	</npc>
 	<npc id="25681" level="82" type="L2RaidBoss" name="Gorgolos" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="25682" count="3" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="DDMagic_a" id="4196" level="8" />
+			<skill name="SelfRangeDebuff_a" id="4185" level="8" />
+			<skill name="SelfRangeDebuffAnother_a" id="4190" level="8" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="599.04060083284" sp="966" />
@@ -4339,6 +5078,9 @@
 	</npc>
 	<npc id="25683" level="82" type="L2Monster" name="Cursed Soul" title="Raid Fighter">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4743" level="8" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4381,6 +5123,13 @@
 	</npc>
 	<npc id="25684" level="83" type="L2RaidBoss" name="Last Titan Utenus" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="25685" count="3" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="RangeHold_a" id="4197" level="8" />
+		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
 		<equipment rhand="3938" /> <!-- Monster Only (Lesser Giant Wizard's Weapon) -->
@@ -4455,6 +5204,10 @@
 	</npc>
 	<npc id="25685" level="82" type="L2Monster" name="Utenus' Wizard" title="Raid Fighter">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="DDMagic_a" id="4195" level="8" />
+			<skill name="Debuff_a" id="4205" level="8" />
+		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4500,6 +5253,9 @@
 	</npc>
 	<npc id="25686" level="82" type="L2Monster" name="Utenus' Escort" title="Raid Fighter">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4743" level="8" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4544,6 +5300,16 @@
 	</npc>
 	<npc id="25687" level="83" type="L2RaidBoss" name="Hekaton Prime" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="25688" count="1" respawnTime="360" weightPoint="1" />
+				<npc id="25689" count="2" respawnTime="360" weightPoint="1" />
+			</minions>
+			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="DDMagic_a" id="4195" level="8" />
+			<skill name="SelfRangeDebuff_a" id="4184" level="8" />
+			<skill name="SelfRangeDebuffAnother_a" id="4189" level="8" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="815.02859631296" sp="1347" />
@@ -4612,6 +5378,9 @@
 	</npc>
 	<npc id="25688" level="83" type="L2Monster" name="Hekaton Cottus" title="Raid Fighter">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="PhysicalSpecial_a" id="4720" level="8" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4694,6 +5463,22 @@
 	</npc>
 	<npc id="25690" level="81" type="L2RaidBoss" name="Aenkinel" title="Invader of Dream">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Skill01_Probablity" value="1000" />
+			<param name="Skill02_Probablity" value="1000" />
+			<param name="Skill02_Target" value="2" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill03_Probablity" value="50" />
+			<param name="Skill03_Type" value="2" />
+			<param name="Skill04_Probablity" value="10000" />
+			<param name="Skill04_Target" value="2" />
+			<param name="Skill04_Type" value="1" />
+			<skill name="Skill01_ID" id="5334" level="5" />
+			<skill name="Skill02_ID" id="5336" level="5" />
+			<skill name="Skill03_ID" id="4584" level="10" />
+			<skill name="Skill04_ID" id="4173" level="9" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="507.2382258802" sp="798" />
@@ -4741,6 +5526,22 @@
 	</npc>
 	<npc id="25691" level="81" type="L2RaidBoss" name="Aenkinel" title="Invader of Dream">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Skill01_Probablity" value="1000" />
+			<param name="Skill02_Probablity" value="1000" />
+			<param name="Skill02_Target" value="2" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill03_Probablity" value="50" />
+			<param name="Skill03_Type" value="2" />
+			<param name="Skill04_Probablity" value="10000" />
+			<param name="Skill04_Target" value="2" />
+			<param name="Skill04_Type" value="1" />
+			<skill name="Skill01_ID" id="5334" level="5" />
+			<skill name="Skill02_ID" id="5336" level="5" />
+			<skill name="Skill03_ID" id="4584" level="10" />
+			<skill name="Skill04_ID" id="4173" level="9" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="507.2382258802" sp="798" />
@@ -4816,6 +5617,22 @@
 	</npc>
 	<npc id="25692" level="81" type="L2RaidBoss" name="Aenkinel" title="Invader of Dream">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Skill01_Probablity" value="1000" />
+			<param name="Skill02_Probablity" value="1000" />
+			<param name="Skill02_Target" value="2" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill03_Probablity" value="50" />
+			<param name="Skill03_Type" value="2" />
+			<param name="Skill04_Probablity" value="10000" />
+			<param name="Skill04_Target" value="2" />
+			<param name="Skill04_Type" value="1" />
+			<skill name="Skill01_ID" id="5334" level="5" />
+			<skill name="Skill02_ID" id="5336" level="5" />
+			<skill name="Skill03_ID" id="4584" level="10" />
+			<skill name="Skill04_ID" id="4173" level="9" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="507.2382258802" sp="798" />
@@ -4891,6 +5708,22 @@
 	</npc>
 	<npc id="25693" level="81" type="L2RaidBoss" name="Aenkinel" title="Invader of Dream">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Skill01_Probablity" value="1000" />
+			<param name="Skill02_Probablity" value="1000" />
+			<param name="Skill02_Target" value="2" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill03_Probablity" value="50" />
+			<param name="Skill03_Type" value="2" />
+			<param name="Skill04_Probablity" value="10000" />
+			<param name="Skill04_Target" value="2" />
+			<param name="Skill04_Type" value="1" />
+			<skill name="Skill01_ID" id="5334" level="5" />
+			<skill name="Skill02_ID" id="5336" level="5" />
+			<skill name="Skill03_ID" id="4584" level="10" />
+			<skill name="Skill04_ID" id="4173" level="9" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="507.2382258802" sp="798" />
@@ -4966,6 +5799,22 @@
 	</npc>
 	<npc id="25694" level="82" type="L2RaidBoss" name="Aenkinel" title="Invader of Dream">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Skill01_Probablity" value="1000" />
+			<param name="Skill02_Probablity" value="1000" />
+			<param name="Skill02_Target" value="2" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill03_Probablity" value="50" />
+			<param name="Skill03_Type" value="2" />
+			<param name="Skill04_Probablity" value="10000" />
+			<param name="Skill04_Target" value="2" />
+			<param name="Skill04_Type" value="1" />
+			<skill name="Skill01_ID" id="5334" level="5" />
+			<skill name="Skill02_ID" id="5336" level="5" />
+			<skill name="Skill03_ID" id="4584" level="10" />
+			<skill name="Skill04_ID" id="4173" level="9" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="5618.0465496728" sp="9066" />
@@ -5035,6 +5884,22 @@
 	</npc>
 	<npc id="25695" level="84" type="L2RaidBoss" name="Aenkinel" title="Invader of Dream">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Skill01_Probablity" value="1000" />
+			<param name="Skill02_Probablity" value="1000" />
+			<param name="Skill02_Target" value="2" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<param name="Skill03_Probablity" value="50" />
+			<param name="Skill03_Type" value="2" />
+			<param name="Skill04_Probablity" value="10000" />
+			<param name="Skill04_Target" value="2" />
+			<param name="Skill04_Type" value="1" />
+			<skill name="Skill01_ID" id="5334" level="5" />
+			<skill name="Skill02_ID" id="5336" level="5" />
+			<skill name="Skill03_ID" id="4584" level="10" />
+			<skill name="Skill04_ID" id="4173" level="9" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="6054.4734977324" sp="10252" />
@@ -5104,6 +5969,15 @@
 	</npc>
 	<npc id="25696" level="90" type="L2RaidBoss" name="Taklacan" title="Bistakon">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6379" level="1" />
+			<skill name="Skill02_ID" id="6378" level="1" />
+			<skill name="SpecialSkill01_ID" id="6380" level="1" />
+			<skill name="SpecialSkill02_ID" id="6381" level="2" />
+			<skill name="CurseOfTacrakhan" id="6650" level="1" />
+			<param name="Attack_DecayRatio" value="5387" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="47698.110617284" sp="92725" raidPoints="30" />
@@ -5178,6 +6052,13 @@
 	</npc>
 	<npc id="25697" level="90" type="L2RaidBoss" name="Torumba" title="Reptilikon">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="SpecialSkill01_ID" id="6403" level="1" />
+			<skill name="SpecialSkill02_ID" id="6404" level="1" />
+			<skill name="SpecialSkill03_ID" id="6405" level="1" />
+			<param name="Attack_DecayRatio" value="5387" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire raidPoints="30" />
@@ -5249,6 +6130,14 @@
 	</npc>
 	<npc id="25698" level="90" type="L2RaidBoss" name="Dopagen" title="Kokracon">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6390" level="1" />
+			<skill name="Skill02_ID" id="6391" level="1" />
+			<skill name="SpecialSkill01_ID" id="6392" level="1" />
+			<skill name="SpecialSkill02_ID" id="6376" level="1" />
+			<param name="Attack_DecayRatio" value="5387" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="48776" sp="92725" raidPoints="30" />
@@ -5321,6 +6210,13 @@
 	</npc>
 	<npc id="25699" level="85" type="L2RaidBoss" name="Glakias" title="Ice Knight Captain">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6293" level="1" />
+			<skill name="Skill02_ID" id="6295" level="1" />
+			<skill name="Skill03_ID" id="6297" level="1" />
+			<skill name="SelfRangeBuff" id="6294" level="1" />
+			<skill name="Skill_Summon" id="6298" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">

@@ -2,6 +2,14 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="18900" level="84" type="L2FeedableBeast" name="Full Grown Grendel">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="my_type" value="4" />
+			<param name="my_grade" value="4" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6556" level="17" />
+			<skill name="Buff" id="4028" level="2" />
+			<skill name="DeBuff" id="4592" level="10" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="32.106009070295" sp="54" />
@@ -72,6 +80,12 @@
 	</npc>
 	<npc id="18901" level="83" type="L2Monster" name="Kookaburra" title="Golden">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6556" level="16" />
+			<skill name="Buff" id="4074" level="1" />
+			<skill name="Skill_Display" id="6234" level="1" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -114,6 +128,12 @@
 	</npc>
 	<npc id="18902" level="83" type="L2Monster" name="Cougar" title="Golden">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6556" level="16" />
+			<skill name="Buff" id="4074" level="1" />
+			<skill name="Skill_Display" id="6234" level="1" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -156,6 +176,12 @@
 	</npc>
 	<npc id="18903" level="84" type="L2Monster" name="Buffalo" title="Golden">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6556" level="17" />
+			<skill name="Buff" id="4028" level="2" />
+			<skill name="Skill_Display" id="6234" level="1" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -198,6 +224,12 @@
 	</npc>
 	<npc id="18904" level="84" type="L2Monster" name="Grendel" title="Golden">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6556" level="17" />
+			<skill name="Buff" id="4028" level="2" />
+			<skill name="Skill_Display" id="6234" level="1" />
+		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -239,6 +271,10 @@
 	</npc>
 	<npc id="18905" level="84" type="L2Monster" name="Farm Bandit" title="Crazed">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6559" level="17" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="93.358276643991" sp="158" />
@@ -279,6 +315,11 @@
 	</npc>
 	<npc id="18906" level="84" type="L2Monster" name="Farm Bandit">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6559" level="16" />
+			<skill name="SelfBuff" id="4028" level="3" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="6.7583616780045" sp="11" />
@@ -363,6 +404,11 @@
 	</npc>
 	<npc id="18907" level="84" type="L2Monster" name="Beast Devourer">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6566" level="17" />
+			<skill name="SelfBuff" id="4074" level="2" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="7.1370464852608" sp="12" />
@@ -447,6 +493,9 @@
 	</npc>
 	<npc id="18908" level="83" type="L2Monster" name="Sel Mahum Chef">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6330" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.8207286979242" sp="6" />
@@ -493,6 +542,9 @@
 	</npc>
 	<npc id="18909" level="83" type="L2Monster" name="Solina Knights">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="PhysicalSpecial" id="6311" level="1" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8211" lhand="8210" /> <!-- Monster Only (Monk Warrior Sword) / Monster Only (Monk Warrior Shield) -->
@@ -561,6 +613,10 @@
 	</npc>
 	<npc id="18910" level="83" type="L2Monster" name="Solina Knight Captain">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="PhysicalSpecial" id="6312" level="1" />
+			<skill name="Buff" id="6313" level="1" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.6275221367397" sp="15" />
@@ -824,6 +880,12 @@
 	</npc>
 	<npc id="18917" level="72" type="L2Monster" name="Pavel Safety Device">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<param name="Privates01_sil" value="22801" />
+			<param name="Privates01_ai" value="golem_cannon1_p" />
+			<param name="Privates02_sil" value="22804" />
+			<param name="Privates02_ai" value="golem_prop1_p" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1198,6 +1260,9 @@
 	</npc>
 	<npc id="18926" level="85" type="L2QuestGuard" name="Mercenary Archer" title="Jinia Guild">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="4032" level="9" />
+		</parameters>
 		<race>ELF</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1233,6 +1298,10 @@
 	</npc>
 	<npc id="18927" level="84" type="L2Npc" name="Fire">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6331" level="1" />
+			<skill name="Skill02_ID" id="6332" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1301,6 +1370,9 @@
 	</npc>
 	<npc id="18929" level="84" type="L2Monster" name="Ward of the Grail">
 		<!-- Confirmed CT2.5 -->
+		<parameters>
+			<skill name="Skill01_ID" id="6326" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1840,6 +1912,13 @@
 	</npc>
 	<npc id="18948" level="84" type="L2Monster" name="Etis van Etina" title="Head of the Embryo">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6599" level="17" />
+			<skill name="Skill02_ID" id="6705" level="1" />
+			<skill name="Skill03_ID" id="4088" level="10" />
+			<skill name="Skill04_ID" id="6611" level="17" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1876,6 +1955,12 @@
 	</npc>
 	<npc id="18949" level="84" type="L2Monster" name="Etis van Etina" title="Head of the Embryo">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6599" level="17" />
+			<skill name="Skill02_ID" id="6705" level="1" />
+			<skill name="Skill03_ID" id="6262" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1913,6 +1998,10 @@
 	</npc>
 	<npc id="18950" level="84" type="L2Monster" name="Etis van Etina's Phantom">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6707" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1948,6 +2037,10 @@
 	</npc>
 	<npc id="18951" level="84" type="L2Monster" name="Etis van Etina's Phantom">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6708" level="1" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1983,6 +2076,15 @@
 	</npc>
 	<npc id="18952" level="82" type="L2Monster" name="Solina's Guardian">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6494" level="15" />
+			<skill name="Skill02_ID" id="6705" level="1" />
+			<skill name="Skill03_ID" id="6710" level="1" />
+			<skill name="Skill04_ID" id="6711" level="1" />
+			<skill name="Skill05_ID" id="6711" level="2" />
+			<skill name="Skill06_ID" id="6711" level="3" />
+		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -2018,6 +2120,15 @@
 	</npc>
 	<npc id="18953" level="82" type="L2Monster" name="Solina's Guardian">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6494" level="15" />
+			<skill name="Skill02_ID" id="6705" level="1" />
+			<skill name="Skill03_ID" id="6710" level="1" />
+			<skill name="Skill04_ID" id="6711" level="1" />
+			<skill name="Skill05_ID" id="6711" level="2" />
+			<skill name="Skill06_ID" id="6711" level="3" />
+		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -2053,6 +2164,15 @@
 	</npc>
 	<npc id="18954" level="82" type="L2Monster" name="Solina's Guardian">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6494" level="15" />
+			<skill name="Skill02_ID" id="6705" level="1" />
+			<skill name="Skill03_ID" id="6710" level="1" />
+			<skill name="Skill04_ID" id="6711" level="1" />
+			<skill name="Skill05_ID" id="6711" level="2" />
+			<skill name="Skill06_ID" id="6711" level="3" />
+		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -2088,6 +2208,15 @@
 	</npc>
 	<npc id="18955" level="82" type="L2Monster" name="Solina's Guardian">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6494" level="15" />
+			<skill name="Skill02_ID" id="6705" level="1" />
+			<skill name="Skill03_ID" id="6710" level="1" />
+			<skill name="Skill04_ID" id="6711" level="1" />
+			<skill name="Skill05_ID" id="6711" level="2" />
+			<skill name="Skill06_ID" id="6711" level="3" />
+		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -2123,6 +2252,12 @@
 	</npc>
 	<npc id="18956" level="82" type="L2Monster" name="Guardian of the Tomb">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6709" level="1" />
+			<skill name="Skill02_ID" id="5024" level="9" />
+			<skill name="Skill03_ID" id="4153" level="9" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -2157,6 +2292,12 @@
 	</npc>
 	<npc id="18957" level="82" type="L2Monster" name="Guardian of the Tomb">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6709" level="1" />
+			<skill name="Skill02_ID" id="5024" level="9" />
+			<skill name="Skill03_ID" id="4153" level="9" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -2191,6 +2332,12 @@
 	</npc>
 	<npc id="18958" level="82" type="L2Monster" name="Guardian of the Tomb">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6709" level="1" />
+			<skill name="Skill02_ID" id="5024" level="9" />
+			<skill name="Skill03_ID" id="4153" level="9" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -2225,6 +2372,12 @@
 	</npc>
 	<npc id="18959" level="82" type="L2Monster" name="Guardian of the Tomb">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6709" level="1" />
+			<skill name="Skill02_ID" id="5024" level="9" />
+			<skill name="Skill03_ID" id="4153" level="9" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -2328,6 +2481,9 @@
 	</npc>
 	<npc id="18963" level="85" type="L2Npc">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="petrify_skill" id="6735" level="1" />
+		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -2353,6 +2509,9 @@
 	</npc>
 	<npc id="18964" level="85" type="L2Monster" name="Antharas's Symbol">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="channeling_skill" id="6742" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>FEMALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -2383,6 +2542,9 @@
 	</npc>
 	<npc id="18965" level="85" type="L2Monster" name="Antharas's Symbol">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="channeling_skill" id="6742" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>FEMALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -2413,6 +2575,9 @@
 	</npc>
 	<npc id="18966" level="85" type="L2Monster" name="Antharas's Symbol">
 		<!-- TODO: Must be confirmed -->
+		<parameters>
+			<skill name="channeling_skill" id="6742" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>FEMALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -2593,6 +2758,13 @@
 	</npc>
 	<npc id="18972" level="90" type="L2Monster" name="Treekin Defender" title="Scout">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14053" level="2" />
+			<skill name="Skill02_ID" id="14054" level="2" />
+			<skill name="Skill03_ID" id="14101" level="2" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>PLANT</race>
 		<sex>MALE</sex>
 		<acquire expRate="329.37950617284" sp="640" />
@@ -2628,6 +2800,13 @@
 	</npc>
 	<npc id="18973" level="92" type="L2Monster" name="Treekin Defender" title="Experienced Scout">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14053" level="3" />
+			<skill name="Skill02_ID" id="14054" level="3" />
+			<skill name="Skill03_ID" id="14101" level="3" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>PLANT</race>
 		<sex>MALE</sex>
 		<acquire expRate="360.67993856333" sp="732" />
@@ -2663,6 +2842,12 @@
 	</npc>
 	<npc id="18974" level="90" type="L2Monster" name="Centaur Archer" title="Scout">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14055" level="2" />
+			<skill name="Skill02_ID" id="14056" level="2" />
+			<param name="Attack_BoostValue" value="135" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="329.37950617284" sp="640" />
@@ -2698,6 +2883,12 @@
 	</npc>
 	<npc id="18975" level="92" type="L2Monster" name="Centaur Archer" title="Experienced Scout">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14055" level="3" />
+			<skill name="Skill02_ID" id="14056" level="3" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>FAIRY</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="360.67993856333" sp="732" />
@@ -2733,6 +2924,13 @@
 	</npc>
 	<npc id="18976" level="91" type="L2Monster" name="Beorning Berserker" title="Scout">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14050" level="1" />
+			<skill name="Skill02_ID" id="14051" level="1" />
+			<skill name="Skill03_ID" id="14052" level="1" />
+			<param name="Attack_BoostValue" value="137" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="330.62323390895" sp="657" />
@@ -2768,6 +2966,13 @@
 	</npc>
 	<npc id="18977" level="93" type="L2Monster" name="Beorning Berserker" title="Experienced Scout">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14050" level="2" />
+			<skill name="Skill02_ID" id="14051" level="2" />
+			<skill name="Skill03_ID" id="14052" level="2" />
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="360.70135275754" sp="748" />
@@ -2803,6 +3008,15 @@
 	</npc>
 	<npc id="18978" level="96" type="L2Monster" name="Orbis' Victim" title="Cursed">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14038" level="1" />
+			<skill name="Skill02_ID" id="14039" level="1" />
+			<skill name="Skill04_ID" id="14196" level="1" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="146" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="43.864908854167" sp="97" />
@@ -2869,6 +3083,15 @@
 	</npc>
 	<npc id="18979" level="96" type="L2Monster" name="Orbis' Guard" title="Cursed">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14038" level="1" />
+			<skill name="Skill02_ID" id="14039" level="1" />
+			<skill name="Skill04_ID" id="14196" level="1" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="146" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="43.864908854167" sp="97" />
@@ -2932,6 +3155,15 @@
 	</npc>
 	<npc id="18980" level="96" type="L2Monster" name="Orbis' Thrower" title="Cursed">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14038" level="1" />
+			<skill name="Skill02_ID" id="14039" level="1" />
+			<skill name="Skill04_ID" id="14196" level="1" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="146" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="43.864908854167" sp="97" />
@@ -2996,6 +3228,15 @@
 	</npc>
 	<npc id="18981" level="96" type="L2Monster" name="Orbis' Curator" title="Cursed">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14038" level="1" />
+			<skill name="Skill02_ID" id="14039" level="1" />
+			<skill name="Skill04_ID" id="14196" level="1" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="146" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="43.864908854167" sp="97" />
@@ -3057,6 +3298,15 @@
 	</npc>
 	<npc id="18982" level="96" type="L2Monster" name="Orbis' Ancient Hero" title="Cursed">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14038" level="1" />
+			<skill name="Skill02_ID" id="14039" level="1" />
+			<skill name="Skill04_ID" id="14196" level="1" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="146" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="43.864908854167" sp="97" />
@@ -3116,6 +3366,15 @@
 	</npc>
 	<npc id="18983" level="96" type="L2Monster" name="Orbis' Chief Curator" title="Cursed">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14038" level="1" />
+			<skill name="Skill02_ID" id="14039" level="1" />
+			<skill name="Skill04_ID" id="14196" level="1" />
+			<skill name="EnterSkill" id="14277" level="1" />
+			<skill name="DespawnSkill" id="14278" level="1" />
+			<param name="Attack_BoostValue" value="146" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="43.864908854167" sp="97" />
@@ -3174,6 +3433,11 @@
 	</npc>
 	<npc id="18984" level="99" type="L2Npc" name="Octavis' Influence" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="boss_skill_01" id="14028" level="1" />
+			<skill name="boss_skill_02" id="14029" level="1" />
+			<skill name="boss_skill_03" id="14243" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3200,6 +3464,9 @@
 	</npc>
 	<npc id="18985" level="90" type="L2Npc" name="Genesis Trap 1" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14075" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3226,6 +3493,9 @@
 	</npc>
 	<npc id="18986" level="90" type="L2Npc" name="Genesis Trap 2" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14076" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3402,6 +3672,16 @@
 	</npc>
 	<npc id="18993" level="88" type="L2Monster" name="Hatched Millipede" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14183" level="1" />
+			<skill name="BuffSkill01_ID" id="14117" level="1" />
+			<skill name="BuffSkill02_ID" id="14117" level="2" />
+			<skill name="BuffSkill03_ID" id="14117" level="3" />
+			<skill name="BuffSkill04_ID" id="14117" level="4" />
+			<skill name="BuffSkill05_ID" id="14117" level="5" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="13.184271694215" sp="2028" />
@@ -3437,6 +3717,13 @@
 	</npc>
 	<npc id="18994" level="88" type="L2Monster" name="Hatched Underbug" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14183" level="1" />
+			<skill name="BuffSkill01_ID" id="14118" level="1" />
+			<skill name="SuicideSkill01_ID" id="14119" level="1" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="13.184271694215" sp="2028" />
@@ -3473,6 +3760,11 @@
 	</npc>
 	<npc id="18995" level="88" type="L2Monster" name="Awakened Millipede" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14183" level="1" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="13.184271694215" sp="2028" />
@@ -3507,6 +3799,9 @@
 	</npc>
 	<npc id="18996" level="88" type="L2Monster" name="Egg" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3538,6 +3833,9 @@
 	</npc>
 	<npc id="18997" level="88" type="L2Monster" name="Egg" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">

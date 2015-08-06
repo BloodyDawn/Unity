@@ -2,6 +2,13 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="19000" level="88" type="L2Monster" name="Mutated Millipede" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14183" level="1" />
+			<skill name="Buff1" id="14120" level="1" />
+			<skill name="Buff2" id="14120" level="2" />
+			<skill name="Buff3" id="14120" level="3" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="1.7422520661157" sp="268" />
@@ -209,6 +216,10 @@
 	</npc>
 	<npc id="19008" level="98" type="L2Monster" name="Water Cannon" title="Square Base">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="6341" level="1" />
+			<param name="Attack_BoostValue" value="151" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -269,6 +280,12 @@
 	</npc>
 	<npc id="19011" level="97" type="L2Npc" name="Trap" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14180" level="1" />
+			<skill name="Skill02_ID" id="14181" level="1" />
+			<skill name="Skill03_ID" id="14372" level="1" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>ETC</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -300,6 +317,12 @@
 	</npc>
 	<npc id="19012" level="97" type="L2Npc" name="Trap" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14180" level="1" />
+			<skill name="Skill02_ID" id="14181" level="1" />
+			<skill name="Skill03_ID" id="14372" level="1" />
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>ETC</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -331,6 +354,10 @@
 	</npc>
 	<npc id="19013" level="96" type="L2Npc" name="Crystalline Golem" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Link_Skill_01" id="14283" level="1" />
+			<skill name="Link_Skill_02" id="14284" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -364,6 +391,10 @@
 	</npc>
 	<npc id="19014" level="96" type="L2Npc" name="Crystalline Golem" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Link_Skill_01" id="14283" level="1" />
+			<skill name="Link_Skill_02" id="14284" level="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -397,6 +428,11 @@
 	</npc>
 	<npc id="19015" level="88" type="L2Monster" name="Elite Millipede" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14184" level="1" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="50.133393595041" sp="7714" />
@@ -430,6 +466,11 @@
 	</npc>
 	<npc id="19016" level="88" type="L2Monster" name="Teredor's Larva" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14182" level="1" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="0.5051652892562" sp="77" />
@@ -490,6 +531,12 @@
 	</npc>
 	<npc id="19018" level="95" type="L2Monster" name="Lizard Charmer" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Skill01_Probablity" value="10000" />
+			<skill name="Skill01_ID" id="14139" level="1" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -525,6 +572,12 @@
 	</npc>
 	<npc id="19019" level="95" type="L2Monster" name="Lizard Spearman" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Skill01_Probablity" value="10000" />
+			<skill name="Skill01_ID" id="14139" level="1" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -560,6 +613,11 @@
 	</npc>
 	<npc id="19020" level="92" type="L2Monster" name="Lizard Spearman" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="14139" level="1" />
+			<param name="Attack_BoostValue" value="139" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -650,6 +708,9 @@
 	</npc>
 	<npc id="19023" level="88" type="L2Monster" name="Egg" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -681,6 +742,10 @@
 	</npc>
 	<npc id="19024" level="88" type="L2Monster" name="Beetle" title="Hatcher">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14183" level="1" />
+			<param name="Attack_BoostValue" value="131" />
+		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="6.7386363636364" sp="1036" />
@@ -1000,6 +1065,9 @@
 	</npc>
 	<npc id="19036" level="99" type="L2Npc" name="Sealing Energy" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Channeling_Skill" id="14216" level="1" />
+		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1028,6 +1096,9 @@
 	</npc>
 	<npc id="19037" level="85" type="L2Npc" name="Wild Maguen" title="Raider">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Steal_Skill" id="14235" level="1" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1104,6 +1175,9 @@
 	</npc>
 	<npc id="19040" level="98" type="L2Npc" name="Hell's Gate" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="151" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1131,6 +1205,9 @@
 	</npc>
 	<npc id="19041" level="97" type="L2Monster" name="Greedy Crystalline Golem" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="148" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1928,6 +2005,9 @@
 	</npc>
 	<npc id="19072" level="99" type="L2Monster" name="Standard Monster Dummy" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="155" />
+		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2033,6 +2113,11 @@
 	</npc>
 	<npc id="19076" level="93" type="L2Monster" name="Escort Paladin" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Skill01_ID" id="14130" level="1" />
+			<skill name="Skill02_ID" id="14135" level="1" />
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="5800" lhand="5799" /> <!-- Nephilim Lord / Nephilim Lord -->
@@ -2172,6 +2257,9 @@
 	</npc>
 	<npc id="19081" level="95" type="L2Monster" name="Earth Wyrm Heart" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="144" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2203,6 +2291,9 @@
 	</npc>
 	<npc id="19082" level="85" type="L2Monster" name="Light Sphere" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2228,6 +2319,9 @@
 	</npc>
 	<npc id="19083" level="85" type="L2Monster" name="Light Sphere" title="Large">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="126" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2253,6 +2347,9 @@
 	</npc>
 	<npc id="19084" level="97" type="L2Monster" name="Cursed Priest" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<skill name="Area_Skill" id="14365" level="1" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2552,6 +2649,23 @@
 	</npc>
 	<npc id="19096" level="97" type="L2Npc" name="Antharas Transparent 1" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="suicide1_x" value="177456" />
+			<param name="suicide2_x" value="177120" />
+			<param name="suicide3_x" value="176832" />
+			<param name="suicide4_x" value="176512" />
+			<param name="suicide5_x" value="176208" />
+			<param name="suicide6_x" value="175952" />
+			<param name="suicide1_y" value="111504" />
+			<param name="suicide2_y" value="111440" />
+			<param name="suicide3_y" value="111440" />
+			<param name="suicide4_y" value="111408" />
+			<param name="suicide5_y" value="111376" />
+			<param name="suicide6_y" value="111424" />
+			<param name="zerging_spawn_x" value="177229" />
+			<param name="zerging_spawn_y" value="113298" />
+			<param name="dice" value="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2577,6 +2691,23 @@
 	</npc>
 	<npc id="19097" level="97" type="L2Npc" name="Antharas Transparent 2" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="suicide1_x" value="175952" />
+			<param name="suicide2_x" value="175712" />
+			<param name="suicide3_x" value="175520" />
+			<param name="suicide4_x" value="175344" />
+			<param name="suicide5_x" value="175216" />
+			<param name="suicide6_x" value="175120" />
+			<param name="suicide1_y" value="111424" />
+			<param name="suicide2_y" value="111472" />
+			<param name="suicide3_y" value="111664" />
+			<param name="suicide4_y" value="111888" />
+			<param name="suicide5_y" value="112064" />
+			<param name="suicide6_y" value="112240" />
+			<param name="zerging_spawn_x" value="176707" />
+			<param name="zerging_spawn_y" value="113585" />
+			<param name="dice" value="0" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2603,6 +2734,23 @@
 	</npc>
 	<npc id="19098" level="97" type="L2Npc" name="Antharas Transparent 3" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="suicide1_x" value="175120" />
+			<param name="suicide2_x" value="175024" />
+			<param name="suicide3_x" value="174960" />
+			<param name="suicide4_x" value="174864" />
+			<param name="suicide5_x" value="174736" />
+			<param name="suicide6_x" value="174640" />
+			<param name="suicide1_y" value="112240" />
+			<param name="suicide2_y" value="112416" />
+			<param name="suicide3_y" value="112624" />
+			<param name="suicide4_y" value="112896" />
+			<param name="suicide5_y" value="113056" />
+			<param name="suicide6_y" value="113232" />
+			<param name="zerging_spawn_x" value="176385" />
+			<param name="zerging_spawn_y" value="113889" />
+			<param name="dice" value="1" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2629,6 +2777,23 @@
 	</npc>
 	<npc id="19099" level="97" type="L2Npc" name="Antharas Transparent 4" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="suicide1_x" value="174640" />
+			<param name="suicide2_x" value="174576" />
+			<param name="suicide3_x" value="174544" />
+			<param name="suicide4_x" value="174352" />
+			<param name="suicide5_x" value="174160" />
+			<param name="suicide6_x" value="173968" />
+			<param name="suicide1_y" value="113232" />
+			<param name="suicide2_y" value="113392" />
+			<param name="suicide3_y" value="113552" />
+			<param name="suicide4_y" value="113792" />
+			<param name="suicide5_y" value="113936" />
+			<param name="suicide6_y" value="114096" />
+			<param name="zerging_spawn_x" value="176082" />
+			<param name="zerging_spawn_y" value="114241" />
+			<param name="dice" value="0" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">

@@ -2,6 +2,12 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="19300" level="95" type="L2Monster" name="Spicula Elite Lieutenant" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="15233" level="1" />
+			<skill name="Skill02_ID" id="15231" level="1" />
+			<param name="Attack_BoostValue" value="144" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -37,6 +43,12 @@
 	</npc>
 	<npc id="19301" level="93" type="L2Monster" name="Elite Soldier Clone 1" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="15221" level="1" />
+			<skill name="Skill02_ID" id="15222" level="1" />
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -72,6 +84,12 @@
 	</npc>
 	<npc id="19302" level="93" type="L2Monster" name="Spicula Elite Guard 1" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="15221" level="2" />
+			<skill name="Skill02_ID" id="15223" level="1" />
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -105,6 +123,12 @@
 	</npc>
 	<npc id="19303" level="94" type="L2Monster" name="Elite Soldier Clone 2" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="15224" level="1" />
+			<skill name="Skill02_ID" id="15389" level="1" />
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="15304" /> <!-- Transparent Crossbow (NPC) -->
@@ -140,6 +164,12 @@
 	</npc>
 	<npc id="19304" level="94" type="L2Monster" name="Spicula Elite Guard 2" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="15224" level="1" />
+			<skill name="Skill02_ID" id="15390" level="1" />
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="15304" /> <!-- Transparent Crossbow (NPC) -->
@@ -174,6 +204,9 @@
 	</npc>
 	<npc id="19305" level="94" type="L2Monster" name="Boz" title="Spicula Clone Generator">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -207,6 +240,10 @@
 	</npc>
 	<npc id="19306" level="95" type="L2Monster" name="Yin Spicula Lieutenant" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="120.84587257618" sp="261" />
@@ -265,6 +302,10 @@
 	</npc>
 	<npc id="19307" level="96" type="L2Monster" name="Yin Spicula Captain" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="IsAggressive" value="1" />
+			<param name="Attack_BoostValue" value="140" />
+		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="120.84592013889" sp="267" />
@@ -323,6 +364,9 @@
 	</npc>
 	<npc id="19308" level="94" type="L2Npc" name="Yin Fragment" title="Spicula Clone Generator">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>FRIEND</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -359,6 +403,9 @@
 	</npc>
 	<npc id="19309" level="94" type="L2Npc" name="Golem of Repairs" title="Black Anvil Guild">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>FRIEND</race>
 		<sex>MALE</sex>
 		<acquire expRate="134.15980081485" sp="284" />
@@ -395,6 +442,9 @@
 	</npc>
 	<npc id="19310" level="94" type="L2Monster" name="Drill Golem" title="Black Anvil Guild">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>FRIEND</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -430,6 +480,9 @@
 	</npc>
 	<npc id="19311" level="94" type="L2Npc" name="Drill Golem" title="Black Anvil Guild">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>FRIEND</race>
 		<sex>MALE</sex>
 		<acquire expRate="134.15980081485" sp="284" />
@@ -466,6 +519,9 @@
 	</npc>
 	<npc id="19312" level="94" type="L2Monster" name="Excavator Golem" title="Black Anvil Guild">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>FRIEND</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -501,6 +557,9 @@
 	</npc>
 	<npc id="19313" level="94" type="L2Npc" name="Excavator Golem" title="Black Anvil Guild">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>FRIEND</race>
 		<sex>MALE</sex>
 		<acquire expRate="134.15980081485" sp="284" />
@@ -537,6 +596,9 @@
 	</npc>
 	<npc id="19314" level="95" type="L2Monster" name="Pincer Golem" title="Black Anvil Guild">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="144" />
+		</parameters>
 		<race>FRIEND</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -572,6 +634,9 @@
 	</npc>
 	<npc id="19315" level="95" type="L2Npc" name="Pincer Golem" title="Black Anvil Guild">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="144" />
+		</parameters>
 		<race>FRIEND</race>
 		<sex>MALE</sex>
 		<acquire expRate="123.9811634349" sp="268" />
@@ -608,6 +673,9 @@
 	</npc>
 	<npc id="19316" level="94" type="L2Monster" name="Screw Golem" title="Black Anvil Guild">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>FRIEND</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -643,6 +711,9 @@
 	</npc>
 	<npc id="19317" level="94" type="L2Npc" name="Screw Golem" title="Black Anvil Guild">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>FRIEND</race>
 		<sex>MALE</sex>
 		<acquire expRate="134.15980081485" sp="284" />
@@ -679,6 +750,9 @@
 	</npc>
 	<npc id="19318" level="94" type="L2Monster" name="Cannon Golem" title="Black Anvil Guild">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>FRIEND</race>
 		<sex>MALE</sex>
 		<acquire expRate="134.15980081485" sp="284" />
@@ -717,6 +791,9 @@
 	</npc>
 	<npc id="19319" level="94" type="L2Monster" name="Cannon Golem" title="Black Anvil Guild">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>SIEGE_WEAPON</race>
 		<sex>MALE</sex>
 		<acquire expRate="134.15980081485" sp="284" />
@@ -754,6 +831,9 @@
 	</npc>
 	<npc id="19320" level="94" type="L2Npc" name="Yin" title="Spicula Clone Generator">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<param name="Attack_BoostValue" value="142" />
+		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
