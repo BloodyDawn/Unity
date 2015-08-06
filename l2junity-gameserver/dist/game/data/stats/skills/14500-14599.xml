@@ -1371,14 +1371,16 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14571" levels="5" name="Shilen's Breath">
-		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<!-- Ertheia skill -->
 		<!-- Is killed and poisoned by Shilen's Breath. Increases Dark Attack Resistance by 5 and HP recovery by 5%. If killed while poisoned, the poison stage increases. -->
-		<!-- TODO: confirm me! -->
-		<table name="#val1"> 1 1 0.73 0.66 0.6 </table>
-		<table name="#val2"> 0 0 13 17 21 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<table name="#abnormalTime"> 600 600 300 300 300 </table>
-		<table name="#darkRes">5 5 0 0 0</table>
+		<table name="#pAttkMattk"> 1 1 0.75 0.5 0.5 </table>
+		<table name="#pAttkSpdMattkSpd"> 1 1 0.85 0.7 0.7 </table>
+		<table name="#evas"> 0 0 15 30 30 </table>
+		<table name="#speed"> 0 0 40 50 60 </table>
+		<table name="#darkRes"> 5 5 0 0 0 </table>
+		<table name="#maxHpCpMp"> 1 1 0.7 0.5 0.5 </table>
 		<table name="#regHp">1.05 1.1 0 0 0</table>
 		<table name="#bonusExp">1 1.01 1 1 1</table>
 		<set name="abnormalLvl" val="#abnormalLvl" />
@@ -1402,12 +1404,15 @@
 				<add stat="darkRes" val="#darkRes" />
 				<mul stat="regHp" val="#regHp" />
 				<mul stat="bonusExp" val="#bonusExp" />
-				<mul stat="pAtk" val="#val1" />
-				<mul stat="mAtk" val="#val1" />
-				<mul stat="pAtkSpd" val="#val1" />
-				<mul stat="mAtkSpd" val="#val1" />
-				<sub stat="rEvas" val="#val2" />
-				<sub stat="accCombat" val="#val2" />
+				<mul stat="pAtk" val="#pAttkMattk" />
+				<mul stat="mAtk" val="#pAttkMattk" />
+				<mul stat="pAtkSpd" val="#pAttkSpdMattkSpd" />
+				<mul stat="mAtkSpd" val="#pAttkSpdMattkSpd" />
+				<mul stat="maxHp" val="#maxHpCpMp" />
+				<mul stat="maxCp" val="#maxHpCpMp" />
+				<mul stat="maxMp" val="#maxHpCpMp" />
+				<sub stat="rEvas" val="#evas" />
+				<sub stat="statSpeed" val="#speed" />
 			</effect>
 			<effect name="ShilensBreath" />
 		</for>
