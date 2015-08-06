@@ -21,6 +21,7 @@ package quests.Q00476_PlainMission;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -39,10 +40,30 @@ public final class Q00476_PlainMission extends Quest
 	// NPCs
 	private static final int ADVENTURER = 32327;
 	private static final int ANDREI = 31292;
-	private static final int ANTELOPE = 21278;
-	private static final int BANDERSNATCH = 21282;
-	private static final int BUFFALO = 21286;
-	private static final int GRENDEL = 21290;
+	private static final int[] GRENDEL =
+	{
+		21290,
+		21291,
+		21292,
+	};
+	private static final int[] BUFFALO =
+	{
+		21286,
+		21287,
+		21288,
+	};
+	private static final int[] ANTELOPE =
+	{
+		21278,
+		21279,
+		21280,
+	};
+	private static final int[] BANDERSNATCH =
+	{
+		21282,
+		21283,
+		21284,
+	};
 	// Misc
 	private static final int MIN_LEVEL = 65;
 	private static final int MAX_LEVEL = 69;
@@ -52,7 +73,10 @@ public final class Q00476_PlainMission extends Quest
 		super(476, Q00476_PlainMission.class.getSimpleName(), "Plain Mission");
 		addStartNpc(ADVENTURER);
 		addTalkId(ADVENTURER, ANDREI);
-		addKillId(ANTELOPE, BANDERSNATCH, BUFFALO, GRENDEL);
+		addKillId(BANDERSNATCH);
+		addKillId(ANTELOPE);
+		addKillId(BUFFALO);
+		addKillId(GRENDEL);
 		addCondLevel(MIN_LEVEL, MAX_LEVEL, "");
 	}
 	
@@ -141,7 +165,7 @@ public final class Q00476_PlainMission extends Quest
 				}
 				else if ((npc.getId() == ANDREI) && st.isCompleted() && !st.isNowAvailable())
 				{
-					htmltext = "32327-02.htm";
+					htmltext = "31292-02.html";
 				}
 				break;
 			}
@@ -156,52 +180,45 @@ public final class Q00476_PlainMission extends Quest
 		
 		if ((st != null) && st.isCond(1))
 		{
-			int killedAntelope = st.getInt("killed_" + ANTELOPE);
-			int killedBandersnatch = st.getInt("killed_" + BANDERSNATCH);
-			int killedBuffalo = st.getInt("killed_" + BUFFALO);
-			int killedGrendel = st.getInt("killed_" + GRENDEL);
+			int killedAntelope = st.getInt("killed_" + ANTELOPE[0]);
+			int killedBandersnatch = st.getInt("killed_" + BANDERSNATCH[0]);
+			int killedBuffalo = st.getInt("killed_" + BUFFALO[0]);
+			int killedGrendel = st.getInt("killed_" + GRENDEL[0]);
 			
-			switch (npc.getId())
+			if (CommonUtil.contains(ANTELOPE, npc.getId()))
 			{
-				case ANTELOPE:
+				if (killedAntelope < 45)
 				{
-					if (killedAntelope < 45)
-					{
-						killedAntelope++;
-						st.set("killed_" + ANTELOPE, killedAntelope);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					break;
+					killedAntelope++;
+					st.set("killed_" + ANTELOPE[0], killedAntelope);
+					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
-				case BANDERSNATCH:
+			}
+			else if (CommonUtil.contains(BANDERSNATCH, npc.getId()))
+			{
+				if (killedBandersnatch < 45)
 				{
-					if (killedBandersnatch < 45)
-					{
-						killedBandersnatch++;
-						st.set("killed_" + BANDERSNATCH, killedBandersnatch);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					break;
+					killedBandersnatch++;
+					st.set("killed_" + BANDERSNATCH[0], killedBandersnatch);
+					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
-				case BUFFALO:
+			}
+			else if (CommonUtil.contains(BUFFALO, npc.getId()))
+			{
+				if (killedBuffalo < 45)
 				{
-					if (killedBuffalo < 45)
-					{
-						killedBuffalo++;
-						st.set("killed_" + BUFFALO, killedBuffalo);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					break;
+					killedBuffalo++;
+					st.set("killed_" + BUFFALO[0], killedBuffalo);
+					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
-				case GRENDEL:
+			}
+			else
+			{
+				if (killedGrendel < 45)
 				{
-					if (killedGrendel < 45)
-					{
-						killedGrendel++;
-						st.set("killed_" + GRENDEL, killedGrendel);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					break;
+					killedGrendel++;
+					st.set("killed_" + GRENDEL[0], killedGrendel);
+					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 			
@@ -221,10 +238,10 @@ public final class Q00476_PlainMission extends Quest
 		if ((st != null) && st.isStarted() && st.isCond(1))
 		{
 			final Set<NpcLogListHolder> npcLogList = new HashSet<>(4);
-			npcLogList.add(new NpcLogListHolder(ANTELOPE, false, st.getInt("killed_" + ANTELOPE)));
-			npcLogList.add(new NpcLogListHolder(BANDERSNATCH, false, st.getInt("killed_" + BANDERSNATCH)));
-			npcLogList.add(new NpcLogListHolder(BUFFALO, false, st.getInt("killed_" + BUFFALO)));
-			npcLogList.add(new NpcLogListHolder(GRENDEL, false, st.getInt("killed_" + GRENDEL)));
+			npcLogList.add(new NpcLogListHolder(ANTELOPE[0], false, st.getInt("killed_" + ANTELOPE[0])));
+			npcLogList.add(new NpcLogListHolder(BANDERSNATCH[0], false, st.getInt("killed_" + BANDERSNATCH[0])));
+			npcLogList.add(new NpcLogListHolder(BUFFALO[0], false, st.getInt("killed_" + BUFFALO[0])));
+			npcLogList.add(new NpcLogListHolder(GRENDEL[0], false, st.getInt("killed_" + GRENDEL[0])));
 			return npcLogList;
 		}
 		return super.getNpcLogList(activeChar);
