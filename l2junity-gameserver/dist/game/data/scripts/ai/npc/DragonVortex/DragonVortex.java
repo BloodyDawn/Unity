@@ -18,6 +18,7 @@
  */
 package ai.npc.DragonVortex;
 
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
@@ -60,47 +61,60 @@ public final class DragonVortex extends AbstractNpcAI
 	{
 		if ("Spawn".equals(event))
 		{
-			if (hasQuestItems(player, LARGE_DRAGON_BONE))
+			if (!hasQuestItems(player, LARGE_DRAGON_BONE))
 			{
-				takeItems(player, LARGE_DRAGON_BONE, 1);
-				final int random = getRandom(1000);
-				int raid = 0;
-				if (random < 292)
-				{
-					raid = RAIDS[0]; // Emerald Horn 29.2%
-				}
-				else if (random < 516)
-				{
-					raid = RAIDS[1]; // Dust Rider 22.4%
-				}
-				else if (random < 692)
-				{
-					raid = RAIDS[2]; // Bleeding Fly 17.6%
-				}
-				else if (random < 808)
-				{
-					raid = RAIDS[3]; // Blackdagger Wing 11.6%
-				}
-				else if (random < 900)
-				{
-					raid = RAIDS[4]; // Spike Slasher 9.2%
-				}
-				else if (random < 956)
-				{
-					raid = RAIDS[5]; // Shadow Summoner 5.6%
-				}
-				else
-				{
-					raid = RAIDS[6]; // Muscle Bomber 4.4%
-				}
-				addSpawn(raid, npc.getX() + getRandom(-500, 500), npc.getY() + getRandom(-500, 500), npc.getZ() + 10, 0, false, DESPAWN_DELAY, true);
+				return "32871-noItem.html";
+			}
+			else if (npc.isScriptValue(1))
+			{
+				return "32871-noTime.html";
+			}
+			
+			takeItems(player, LARGE_DRAGON_BONE, 1);
+			final int random = getRandom(100);
+			int raid = 0;
+			
+			if (random < 3)
+			{
+				raid = RAIDS[6]; // Muscle Bomber
+			}
+			else if (random < 8)
+			{
+				raid = RAIDS[5]; // Shadow Summoner
+			}
+			else if (random < 15)
+			{
+				raid = RAIDS[4]; // Spike Slasher
+			}
+			else if (random < 25)
+			{
+				raid = RAIDS[3]; // Blackdagger Wing
+			}
+			else if (random < 45)
+			{
+				raid = RAIDS[2]; // Bleeding Fly
+			}
+			else if (random < 67)
+			{
+				raid = RAIDS[1]; // Dust Rider
 			}
 			else
 			{
-				return "32871-no.html";
+				raid = RAIDS[0]; // Emerald Horn
 			}
+			addSpawn(raid, npc.getX() + getRandom(-500, 500), npc.getY() + getRandom(-500, 500), npc.getZ() + 10, 0, false, DESPAWN_DELAY, true);
+			getTimers().addTimer("RESET", 60000, npc, null);
 		}
 		return super.onAdvEvent(event, npc, player);
+	}
+	
+	@Override
+	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
+	{
+		if (event.equals("RESET") && (npc != null))
+		{
+			npc.setScriptValue(0);
+		}
 	}
 	
 	public static void main(String[] args)
