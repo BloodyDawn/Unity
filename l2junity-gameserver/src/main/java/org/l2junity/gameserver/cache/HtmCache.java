@@ -173,7 +173,7 @@ public class HtmCache
 			return ""; // avoid possible NPE
 		}
 
-		return _cache.computeIfAbsent(path, k -> Config.LAZY_CACHE ? loadFile(new File(Config.DATAPACK_ROOT, k)) : null);
+		return _cache.getOrDefault(path, Config.LAZY_CACHE ? loadFile(new File(Config.DATAPACK_ROOT, path)) : null);
 	}
 	
 	public boolean contains(String path)
