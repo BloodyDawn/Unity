@@ -5134,18 +5134,6 @@
 	</npc>
 	<npc id="22679" level="82" type="L2Monster" name="Grave Robber Wizard" title="Lunatic">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<minions name="Privates1">
-				<npc id="22685" count="1" respawnTime="0" weightPoint="1" /> <!-- Servitor of Darkness -->
-			</minions>
-			<minions name="Privates2">
-				<npc id="22686" count="1" respawnTime="0" weightPoint="1" /> <!-- Servitor of Darkness -->
-			</minions>
-			<skill name="Skill01_ID" id="4254" level="9" /> <!-- NPC Prominence - Slow -->
-			<skill name="SelfBuff" id="6145" level="1" /> <!-- Earthworm's Evil Aura -->
-			<skill name="SelfDeBuff1" id="5699" level="7" /> <!-- Decrease P. Def -->
-			<skill name="SelfDeBuff2" id="6146" level="1" /> <!-- Forfeiture of Will -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.430993456276" sp="15" />
@@ -5236,10 +5224,6 @@
 	</npc>
 	<npc id="22680" level="81" type="L2Monster" name="Grave Robber Worker" title="Lunatic">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="5082" level="1" /> <!-- NPC Spinning, Slashing Trick -->
-			<skill name="SelfBuff" id="6145" level="1" /> <!-- Earthworm's Evil Aura -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="7.9326322206981" sp="12" />
@@ -5324,12 +5308,6 @@
 	</npc>
 	<npc id="22681" level="82" type="L2Monster" name="Grave Robber Warrior" title="Lunatic">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="DeBuffProb" value="2000" />
-			<skill name="Skill01_ID" id="5082" level="1" /> <!-- NPC Spinning, Slashing Trick -->
-			<skill name="DeBuff" id="6168" level="9" /> <!-- Shock -->
-			<skill name="SelfBuff" id="6145" level="1" /> <!-- Earthworm's Evil Aura -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="8.1296847114813" sp="13" />
@@ -5415,12 +5393,6 @@
 	</npc>
 	<npc id="22682" level="82" type="L2Monster" name="Grave Robber Berserker" title="Lunatic">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="4643" level="9" /> <!-- Decrease Speed -->
-			<skill name="SelfBuff1" id="6145" level="1" /> <!-- Earthworm's Evil Aura -->
-			<skill name="SelfBuff2" id="4048" level="2" /> <!-- NPC Dash -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="8.9912254610351" sp="14" />
@@ -5506,9 +5478,6 @@
 	</npc>
 	<npc id="22683" level="81" type="L2Monster" name="Servitor of Darkness">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="4643" level="9" /> <!-- Decrease Speed -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="10.100442005792" sp="15" />
@@ -5593,9 +5562,6 @@
 	</npc>
 	<npc id="22684" level="81" type="L2Monster" name="Servitor of Darkness">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="4573" level="9" /> <!-- NPC Sonic Blaster -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.5695778082609" sp="15" />
@@ -5680,9 +5646,6 @@
 	</npc>
 	<npc id="22685" level="82" type="L2Monster" name="Servitor of Darkness">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="4573" level="9" /> <!-- NPC Sonic Blaster -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.807257584771" sp="15" />
@@ -5767,9 +5730,6 @@
 	</npc>
 	<npc id="22686" level="82" type="L2Monster" name="Servitor of Darkness">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="4573" level="9" /> <!-- NPC Sonic Blaster -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.807257584771" sp="15" />
@@ -5853,12 +5813,6 @@
 	</npc>
 	<npc id="22687" level="81" type="L2Monster" name="Phantoms of the Mine">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="DeBuffProb" value="2000" />
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="DeBuff" id="4034" level="9" /> <!-- Decrease Speed -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="9.0387136107301" sp="14" />
@@ -5949,12 +5903,6 @@
 	</npc>
 	<npc id="22688" level="82" type="L2Monster" name="Evil Spirits of the Mine">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="SelfRangeBuffProb" value="3333" />
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="4582" level="9" /> <!-- Poison -->
-			<skill name="SelfRangeBuff" id="5080" level="1" /> <!-- NPC Mighty Haste -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.2632361689471" sp="14" />
@@ -6043,10 +5991,6 @@
 	</npc>
 	<npc id="22689" level="82" type="L2Monster" name="Mine Bug">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="SelfBuff" id="6145" level="1" /> <!-- Earthworm's Evil Aura -->
-		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.0600832837597" sp="8" />
@@ -6135,11 +6079,6 @@
 	</npc>
 	<npc id="22690" level="82" type="L2Monster" name="Earthworm's Descendant">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="DeBuffProb" value="5000" />
-			<skill name="Skill01_ID" id="4582" level="9" /> <!-- Poison -->
-			<skill name="DeBuff" id="4035" level="9" /> <!-- Poison -->
-		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.7166864961333" sp="15" />
@@ -6227,9 +6166,6 @@
 	</npc>
 	<npc id="22691" level="81" type="L2Monster" name="Ragna Orc" title="Spirit Infested">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="4032" level="9" /> <!-- NPC Strike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="2" /> <!-- Long Sword -->
@@ -6326,11 +6262,6 @@
 	</npc>
 	<npc id="22692" level="82" type="L2Monster" name="Ragna Orc Warrior" title="Spirit Infested">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="BuffDelay" value="10" />
-			<skill name="Skill01_ID" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="Buff" id="4028" level="2" /> <!-- NPC Might -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="127" /> <!-- Crimson Sword -->
@@ -6433,19 +6364,6 @@
 	</npc>
 	<npc id="22693" level="82" type="L2Monster" name="Ragna Orc Hero" title="Spirit Infested">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<param name="BuffDelay" value="10" />
-			<minions name="Privates1">
-				<npc id="22695" count="1" respawnTime="0" weightPoint="1" /> <!-- Ragna Orc Healer -->
-			</minions>
-			<minions name="Privates2">
-				<npc id="22692" count="1" respawnTime="0" weightPoint="1" /> <!-- Ragna Orc Warrior -->
-			</minions>
-			<skill name="Skill01_ID" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="DeBuff" id="6168" level="9" /> <!-- Shock -->
-			<skill name="Buff" id="4029" level="2" /> <!-- NPC Shield -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6365" /> <!-- Basalt Battlehammer -->
@@ -6546,21 +6464,6 @@
 	</npc>
 	<npc id="22694" level="82" type="L2Monster" name="Ragna Orc Commander" title="Spirit Infested">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<minions name="Privates1">
-				<npc id="22695" count="1" respawnTime="0" weightPoint="1" /> <!-- Ragna Orc Healer -->
-			</minions>
-			<minions name="Privates2">
-				<npc id="22693" count="1" respawnTime="0" weightPoint="1" /> <!-- Ragna Orc Hero -->
-			</minions>
-			<minions name="Privates3">
-				<npc id="22697" count="1" respawnTime="0" weightPoint="1" /> <!-- Ragna Orc Seer -->
-			</minions>
-			<skill name="Skill01_ID" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4596" level="9" /> <!-- Bleed -->
-			<skill name="DeBuff" id="4046" level="9" /> <!-- Sleep -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="7892" /> <!-- Spell Breaker -->
@@ -6665,12 +6568,6 @@
 	</npc>
 	<npc id="22695" level="81" type="L2Monster" name="Ragna Orc Healer" title="Spirit Infested">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="HealProb" value="3333" />
-			<param name="SelfRangeHealProb" value="1500" />
-			<skill name="Heal" id="4065" level="9" /> <!-- NPC Heal -->
-			<skill name="SelfRangeHeal" id="4613" level="9" /> <!-- NPC Clan Heal -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8680" /> <!-- Barakiel's Axe -->
@@ -6776,12 +6673,6 @@
 	</npc>
 	<npc id="22696" level="81" type="L2Monster" name="Ragna Orc Shaman" title="Spirit Infested">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="SelfRangeHealProb" value="1000" />
-			<skill name="Skill01_ID" id="4158" level="9" /> <!-- NPC Prominence - Magic -->
-			<skill name="Skill02_ID" id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill name="SelfRangeHeal" id="4613" level="9" /> <!-- NPC Clan Heal -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8680" /> <!-- Barakiel's Axe -->
@@ -6892,19 +6783,6 @@
 	</npc>
 	<npc id="22697" level="82" type="L2Monster" name="Ragna Orc Priest" title="Spirit Infested">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<param name="DeBuffProb" value="2000" />
-			<minions name="Privates1">
-				<npc id="22696" count="1" respawnTime="0" weightPoint="1" /> <!-- Ragna Orc Shaman -->
-			</minions>
-			<minions name="Privates2">
-				<npc id="22692" count="1" respawnTime="0" weightPoint="1" /> <!-- Ragna Orc Warrior -->
-			</minions>
-			<skill name="Skill01_ID" id="4158" level="9" /> <!-- NPC Prominence - Magic -->
-			<skill name="Skill02_ID" id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill name="DeBuff" id="4046" level="9" /> <!-- Sleep -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8687" /> <!-- Cabrio's Hand -->
@@ -7013,10 +6891,6 @@
 	</npc>
 	<npc id="22698" level="81" type="L2Monster" name="Ragna Orc Archer" title="Spirit Infested">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="4040" level="9" /> <!-- NPC Bow Attack -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8684" /> <!-- Shyeed's Bow -->
@@ -7122,10 +6996,6 @@
 	</npc>
 	<npc id="22699" level="82" type="L2Monster" name="Ragna Orc Sniper" title="Spirit Infested">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="4040" level="9" /> <!-- NPC Bow Attack -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8684" /> <!-- Shyeed's Bow -->

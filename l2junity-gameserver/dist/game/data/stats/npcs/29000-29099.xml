@@ -1257,10 +1257,6 @@
 	</npc>
 	<npc id="29031" level="84" type="L2Monster" name="Kerinne's Ifrit">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="HealMagic_a" id="4209" level="9" /> <!-- BOSS Heal -->
-			<skill name="SelfRangeBuff_a" id="4213" level="9" /> <!-- BOSS Haste -->
-		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1341,13 +1337,6 @@
 	</npc>
 	<npc id="29033" level="84" type="L2RaidBoss" name="Fenril Hound Freki" title="Family of Valakas">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="29034" count="3" respawnTime="360" weightPoint="1" /> <!-- Freki's Ifrit -->
-				<npc id="29035" count="1" respawnTime="360" weightPoint="1" /> <!-- Freki's Golem -->
-			</minions>
-			<skill name="RangeHold_a" id="4197" level="9" /> <!-- Hold -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="344.96712018141" sp="584" />
@@ -1392,10 +1381,6 @@
 	</npc>
 	<npc id="29034" level="84" type="L2Monster" name="Freki's Ifrit">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="DDMagic_a" id="4193" level="9" /> <!-- BOSS Life Drain -->
-			<skill name="Debuff_a" id="4203" level="9" /> <!-- Decrease Speed -->
-		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1476,12 +1461,6 @@
 	</npc>
 	<npc id="29036" level="84" type="L2RaidBoss" name="Fenril Hound Uruz" title="Family of Valakas">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="SelfRangeCancel_a" id="4177" level="9" /> <!-- BOSS Cancel Magic -->
-			<skill name="SelfBuff_a" id="4175" level="9" /> <!-- BOSS Haste -->
-			<skill name="PhysicalSpecial_a" id="4170" level="9" /> <!-- BOSS Mortal Blow -->
-			<skill name="SelfRangePhysicalSpecial_a" id="4172" level="9" /> <!-- Stun -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="349.52692743764" sp="591" />
@@ -1529,15 +1508,6 @@
 	</npc>
 	<npc id="29037" level="84" type="L2RaidBoss" name="Fenril Hound Kinaz" title="Family of Valakas">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="29038" count="3" respawnTime="360" weightPoint="1" /> <!-- Kinaz's Ifrit -->
-				<npc id="29039" count="1" respawnTime="360" weightPoint="1" /> <!-- Kinaz's Ifrit -->
-			</minions>
-			<skill name="DDMagic_a" id="4195" level="9" /> <!-- BOSS Twister -->
-			<skill name="SelfRangeDebuff_a" id="4184" level="9" /> <!-- Decrease Atk. Spd. -->
-			<skill name="SelfRangeDebuffAnother_a" id="4188" level="9" /> <!-- Bleed -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="355" sp="601" />
@@ -1584,10 +1554,6 @@
 	</npc>
 	<npc id="29038" level="84" type="L2Monster" name="Kinaz's Ifrit">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="DDMagic_a" id="4191" level="9" /> <!-- BOSS Windstrike -->
-			<skill name="Debuff_a" id="4201" level="9" /> <!-- Sleep -->
-		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1629,10 +1595,6 @@
 	</npc>
 	<npc id="29039" level="84" type="L2Monster" name="Kinaz's Ifrit">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="HealMagic_a" id="4210" level="9" /> <!-- BOSS Chant of Life -->
-			<skill name="SelfRangeBuff_a" id="4212" level="9" /> <!-- BOSS Shield -->
-		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1674,19 +1636,6 @@
 	</npc>
 	<npc id="29040" level="84" type="L2RaidBoss" name="Wings of Flame, Ixion" title="Gatekeeper of Valakas">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="29041" count="1" respawnTime="30" weightPoint="1" /> <!-- Inferno Golem -->
-				<npc id="29042" count="1" respawnTime="30" weightPoint="1" /> <!-- Inferno Golem -->
-				<npc id="29043" count="1" respawnTime="30" weightPoint="1" /> <!-- Howling Ifrit -->
-				<npc id="29044" count="1" respawnTime="30" weightPoint="1" /> <!-- Howling Ifrit -->
-			</minions>
-			<param name="MaxPrivateNumber" value="32" />
-			<skill name="SelfRangeCancel_a" id="4177" level="10" /> <!-- BOSS Cancel Magic -->
-			<skill name="SelfBuff_a" id="4175" level="10" /> <!-- BOSS Haste -->
-			<skill name="PhysicalSpecial_a" id="4168" level="10" /> <!-- BOSS Strike -->
-			<skill name="SelfRangePhysicalSpecial_a" id="4172" level="10" /> <!-- Stun -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="359.40674603175" sp="608" />
@@ -1746,9 +1695,6 @@
 	</npc>
 	<npc id="29041" level="84" type="L2Monster" name="Inferno Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="PhysicalSpecial_a" id="4179" level="9" /> <!-- BOSS Strike -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1828,10 +1774,6 @@
 	</npc>
 	<npc id="29043" level="84" type="L2Monster" name="Howling Ifrit">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="HealMagic_a" id="4209" level="9" /> <!-- BOSS Heal -->
-			<skill name="SelfRangeBuff_a" id="4211" level="9" /> <!-- BOSS Might -->
-		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1873,10 +1815,6 @@
 	</npc>
 	<npc id="29044" level="84" type="L2Monster" name="Howling Ifrit">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="DDMagic_a" id="4191" level="9" /> <!-- BOSS Windstrike -->
-			<skill name="Debuff_a" id="4199" level="9" /> <!-- Decrease P. Atk. -->
-		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2326,12 +2264,6 @@
 	</npc>
 	<npc id="29054" level="75" type="L2RaidBoss" name="Benom" title="Triol's Leader">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="PhysicalSpecial" id="4993" level="1" /> <!-- Venom - Strike -->
-			<skill name="DDMagic" id="4994" level="1" /> <!-- Venom - Sonic Storm -->
-			<skill name="SelfRangeCancel_a1" id="4995" level="1" /> <!-- Venom - Teleport -->
-			<skill name="SelfRangeCancel_a2" id="4996" level="1" /> <!-- Venom - Range Teleport -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="8203" lhand="8203" /> <!-- Monster Only (Venom Sword) / Monster Only (Venom Sword) -->
@@ -2397,16 +2329,6 @@
 	</npc>
 	<npc id="29055" level="70" type="L2Monster" name="Teleportation Cubic">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="Pos_x1" value="11913" />
-			<param name="Pos_y1" value="-48851" />
-			<param name="Pos_z1" value="-1088" />
-			<param name="Pos_x2" value="11918" />
-			<param name="Pos_y2" value="-49447" />
-			<param name="Pos_z2" value="-1088" />
-		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2441,14 +2363,6 @@
 	</npc>
 	<npc id="29056" level="60" type="L2RaidBoss" name="Ice Fairy Sirra" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="29058" count="2" respawnTime="360" weightPoint="1" /> <!-- Sirra's Beholder -->
-				<npc id="29057" count="2" respawnTime="360" weightPoint="1" /> <!-- Sirra's Page -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm02_A" />
-			<skill name="RangeDDMagic_a" id="4478" level="1" /> <!-- Ice Fairy Aqua Splash -->
-		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="447.4575" sp="386" />
@@ -2525,10 +2439,6 @@
 	</npc>
 	<npc id="29057" level="59" type="L2Monster" name="Sirra's Servant" title="Raid Fighter">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="HealMagic_a" id="4780" level="5" /> <!-- BOSS Heal -->
-			<skill name="SelfRangeBuff_a" id="4213" level="5" /> <!-- BOSS Haste -->
-		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2645,12 +2555,6 @@
 	</npc>
 	<npc id="29060" level="59" type="L2RaidBoss" name="Ice Queen's Escort Captain" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="SelfRangeCancel_a" id="4177" level="5" /> <!-- BOSS Cancel Magic -->
-			<skill name="SelfBuff_a" id="4173" level="5" /> <!-- BOSS Might -->
-			<skill name="PhysicalSpecial_a" id="4727" level="5" /> <!-- Stun -->
-			<skill name="SelfRangePhysicalSpecial_a" id="4737" level="5" /> <!-- BOSS Spinning Slash -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="502.44355070382" sp="419" />
@@ -2754,13 +2658,6 @@
 	</npc>
 	<npc id="29062" level="80" type="L2RaidBoss" name="Andreas Van Halter" title="Seer of Pagan">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="RaidSpawnMusic" value="Rm03_A" />
-			<param name="doSummonNPC" value="1" />
-			<skill name="SelfRangeDebuff_a" id="4188" level="10" /> <!-- Bleed -->
-			<skill name="SelfRangeDebuffAnother_a" id="4183" level="10" /> <!-- Decrease P. Atk. -->
-			<skill name="DDMagic_a" id="4192" level="10" /> <!-- BOSS HP Drain -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8208" /> <!-- Monster Only (Heretic Private Staff) -->
@@ -2852,10 +2749,6 @@
 	</npc>
 	<npc id="29063" level="99" type="L2Monster" name="Andreas' Acolyte" title="Raid Fighter">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="DDMagic_a" id="4193" level="10" /> <!-- BOSS Life Drain -->
-			<skill name="Debuff_a" id="4206" level="10" /> <!-- Decrease MP -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -2905,10 +2798,6 @@
 	</npc>
 	<npc id="29064" level="99" type="L2Monster" name="Andreas' Acolyte" title="Raid Fighter">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="HealMagic_a" id="4210" level="10" /> <!-- BOSS Chant of Life -->
-			<skill name="SelfRangeBuff_a" id="4214" level="10" /> <!-- BOSS Reflect Damage -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8207" lhand="8207" /> <!-- Monster Only (Heretic Private Axe) / Monster Only (Heretic Private Axe) -->
@@ -2958,13 +2847,6 @@
 	</npc>
 	<npc id="29065" level="80" type="L2RaidBoss" name="Sailren" title="Sealed Evil Power">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="RootingManage" value="0" />
-			<skill name="SelfRangeCancel_a" id="5118" level="1" /> <!-- Cancel Sailren Use -->
-			<skill name="SelfBuff_a" id="5122" level="1" /> <!-- Sailren Use Might -->
-			<skill name="PhysicalSpecial_a" id="5143" level="1" /> <!-- Sailren Use Blow -->
-			<skill name="SelfRangePhysicalSpecial_a" id="5117" level="1" /> <!-- Stun -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="713.92875" sp="1096" />
@@ -3028,9 +2910,6 @@
 	</npc>
 	<npc id="29066" level="79" type="L2GrandBoss" name="Antharas">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="ultra_respawn_time" value="8" />
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="42095.9650697" sp="63053" />
@@ -3073,9 +2952,6 @@
 	</npc>
 	<npc id="29067" level="79" type="L2GrandBoss" name="Antharas">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="ultra_respawn_time" value="5" />
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="56830" sp="85122" />
@@ -3118,9 +2994,6 @@
 	</npc>
 	<npc id="29068" level="104" type="L2GrandBoss" name="Antharas" title="Land Dragon">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="ultra_respawn_time" value="3" />
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="14407680" sp="225935474" raidPoints="1000" />
@@ -3169,11 +3042,6 @@
 	</npc>
 	<npc id="29069" level="99" type="L2Monster" name="Behemoth Dragon">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="RootingManage" value="0" />
-			<skill name="PhysicalSpecial" id="5095" level="1" /> <!-- Antharas Subordinate Melee Attack -->
-			<skill name="LongRangePhysicalSpecial" id="5096" level="1" /> <!-- Antharas Subordinate Remote Attack -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="164" int="188" dex="48" wit="71" con="111" men="149">
@@ -3228,9 +3096,6 @@
 	</npc>
 	<npc id="29070" level="99" type="L2Monster" name="Dragon Bomber">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="SelfRangeDDMagic" id="5094" level="1" /> <!-- Antharas Subordinate Suicide -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="164" int="188" dex="48" wit="71" con="111" men="149">
@@ -3283,9 +3148,6 @@
 	</npc>
 	<npc id="29071" level="78" type="L2Monster" name="Dragon Bomber">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="SelfRangeDDMagic" id="5094" level="1" /> <!-- Antharas Subordinate Suicide -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="164" int="188" dex="48" wit="71" con="111" men="149">
@@ -3332,9 +3194,6 @@
 	</npc>
 	<npc id="29072" level="78" type="L2Monster" name="Dragon Bomber">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="SelfRangeDDMagic" id="5094" level="1" /> <!-- Antharas Subordinate Suicide -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="164" int="188" dex="48" wit="71" con="111" men="149">
@@ -3381,9 +3240,6 @@
 	</npc>
 	<npc id="29073" level="78" type="L2Monster" name="Dragon Bomber">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="SelfRangeDDMagic" id="5094" level="1" /> <!-- Antharas Subordinate Suicide -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="164" int="188" dex="48" wit="71" con="111" men="149">
@@ -3430,9 +3286,6 @@
 	</npc>
 	<npc id="29074" level="78" type="L2Monster" name="Dragon Bomber">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="SelfRangeDDMagic" id="5094" level="1" /> <!-- Antharas Subordinate Suicide -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="164" int="188" dex="48" wit="71" con="111" men="149">
@@ -3479,9 +3332,6 @@
 	</npc>
 	<npc id="29075" level="78" type="L2Monster" name="Dragon Bomber">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="SelfRangeDDMagic" id="5094" level="1" /> <!-- Antharas Subordinate Suicide -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="164" int="188" dex="48" wit="71" con="111" men="149">
@@ -3528,9 +3378,6 @@
 	</npc>
 	<npc id="29076" level="99" type="L2Monster" name="Dragon Bomber">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="SelfRangeDDMagic" id="5094" level="1" /> <!-- Antharas Subordinate Suicide -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="164" int="188" dex="48" wit="71" con="111" men="149">
@@ -3582,23 +3429,6 @@
 	</npc>
 	<npc id="29077" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="177456" />
-			<param name="suicide2_x" value="177120" />
-			<param name="suicide3_x" value="176832" />
-			<param name="suicide4_x" value="176512" />
-			<param name="suicide5_x" value="176208" />
-			<param name="suicide6_x" value="175952" />
-			<param name="suicide1_y" value="111504" />
-			<param name="suicide2_y" value="111440" />
-			<param name="suicide3_y" value="111440" />
-			<param name="suicide4_y" value="111408" />
-			<param name="suicide5_y" value="111376" />
-			<param name="suicide6_y" value="111424" />
-			<param name="zerging_spawn_x" value="177229" />
-			<param name="zerging_spawn_y" value="113298" />
-			<param name="dice" value="1" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3633,23 +3463,6 @@
 	</npc>
 	<npc id="29078" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="175952" />
-			<param name="suicide2_x" value="175712" />
-			<param name="suicide3_x" value="175520" />
-			<param name="suicide4_x" value="175344" />
-			<param name="suicide5_x" value="175216" />
-			<param name="suicide6_x" value="175120" />
-			<param name="suicide1_y" value="111424" />
-			<param name="suicide2_y" value="111472" />
-			<param name="suicide3_y" value="111664" />
-			<param name="suicide4_y" value="111888" />
-			<param name="suicide5_y" value="112064" />
-			<param name="suicide6_y" value="112240" />
-			<param name="zerging_spawn_x" value="176707" />
-			<param name="zerging_spawn_y" value="113585" />
-			<param name="dice" value="0" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3684,23 +3497,6 @@
 	</npc>
 	<npc id="29079" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="175120" />
-			<param name="suicide2_x" value="175024" />
-			<param name="suicide3_x" value="174960" />
-			<param name="suicide4_x" value="174864" />
-			<param name="suicide5_x" value="174736" />
-			<param name="suicide6_x" value="174640" />
-			<param name="suicide1_y" value="112240" />
-			<param name="suicide2_y" value="112416" />
-			<param name="suicide3_y" value="112624" />
-			<param name="suicide4_y" value="112896" />
-			<param name="suicide5_y" value="113056" />
-			<param name="suicide6_y" value="113232" />
-			<param name="zerging_spawn_x" value="176385" />
-			<param name="zerging_spawn_y" value="113889" />
-			<param name="dice" value="1" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3735,23 +3531,6 @@
 	</npc>
 	<npc id="29080" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="174640" />
-			<param name="suicide2_x" value="174576" />
-			<param name="suicide3_x" value="174544" />
-			<param name="suicide4_x" value="174352" />
-			<param name="suicide5_x" value="174160" />
-			<param name="suicide6_x" value="173968" />
-			<param name="suicide1_y" value="113232" />
-			<param name="suicide2_y" value="113392" />
-			<param name="suicide3_y" value="113552" />
-			<param name="suicide4_y" value="113792" />
-			<param name="suicide5_y" value="113936" />
-			<param name="suicide6_y" value="114096" />
-			<param name="zerging_spawn_x" value="176082" />
-			<param name="zerging_spawn_y" value="114241" />
-			<param name="dice" value="0" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3786,23 +3565,6 @@
 	</npc>
 	<npc id="29081" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="173968" />
-			<param name="suicide2_x" value="173856" />
-			<param name="suicide3_x" value="173808" />
-			<param name="suicide4_x" value="173792" />
-			<param name="suicide5_x" value="173824" />
-			<param name="suicide6_x" value="173920" />
-			<param name="suicide1_y" value="114096" />
-			<param name="suicide2_y" value="114320" />
-			<param name="suicide3_y" value="114592" />
-			<param name="suicide4_y" value="114912" />
-			<param name="suicide5_y" value="115152" />
-			<param name="suicide6_y" value="115408" />
-			<param name="zerging_spawn_x" value="176066" />
-			<param name="zerging_spawn_y" value="114802" />
-			<param name="dice" value="1" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3837,23 +3599,6 @@
 	</npc>
 	<npc id="29082" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="173920" />
-			<param name="suicide2_x" value="174064" />
-			<param name="suicide3_x" value="174272" />
-			<param name="suicide4_x" value="174480" />
-			<param name="suicide5_x" value="174592" />
-			<param name="suicide6_x" value="174704" />
-			<param name="suicide1_y" value="115408" />
-			<param name="suicide2_y" value="115568" />
-			<param name="suicide3_y" value="115664" />
-			<param name="suicide4_y" value="115920" />
-			<param name="suicide5_y" value="116176" />
-			<param name="suicide6_y" value="116448" />
-			<param name="zerging_spawn_x" value="176095" />
-			<param name="zerging_spawn_y" value="115313" />
-			<param name="dice" value="0" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3888,23 +3633,6 @@
 	</npc>
 	<npc id="29083" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="174704" />
-			<param name="suicide2_x" value="174800" />
-			<param name="suicide3_x" value="174960" />
-			<param name="suicide4_x" value="175136" />
-			<param name="suicide5_x" value="175248" />
-			<param name="suicide6_x" value="175424" />
-			<param name="suicide1_y" value="116448" />
-			<param name="suicide2_y" value="116672" />
-			<param name="suicide3_y" value="116864" />
-			<param name="suicide4_y" value="117184" />
-			<param name="suicide5_y" value="117504" />
-			<param name="suicide6_y" value="117792" />
-			<param name="zerging_spawn_x" value="176425" />
-			<param name="zerging_spawn_y" value="115829" />
-			<param name="dice" value="1" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3939,23 +3667,6 @@
 	</npc>
 	<npc id="29084" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="175424" />
-			<param name="suicide2_x" value="175632" />
-			<param name="suicide3_x" value="175856" />
-			<param name="suicide4_x" value="176256" />
-			<param name="suicide5_x" value="176544" />
-			<param name="suicide6_x" value="176880" />
-			<param name="suicide1_y" value="117792" />
-			<param name="suicide2_y" value="118016" />
-			<param name="suicide3_y" value="118176" />
-			<param name="suicide4_y" value="118256" />
-			<param name="suicide5_y" value="118240" />
-			<param name="suicide6_y" value="118192" />
-			<param name="zerging_spawn_x" value="176949" />
-			<param name="zerging_spawn_y" value="116378" />
-			<param name="dice" value="0" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3990,23 +3701,6 @@
 	</npc>
 	<npc id="29085" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="176880" />
-			<param name="suicide2_x" value="177200" />
-			<param name="suicide3_x" value="177488" />
-			<param name="suicide4_x" value="177824" />
-			<param name="suicide5_x" value="178048" />
-			<param name="suicide6_x" value="178368" />
-			<param name="suicide1_y" value="118192" />
-			<param name="suicide2_y" value="118128" />
-			<param name="suicide3_y" value="118096" />
-			<param name="suicide4_y" value="118080" />
-			<param name="suicide5_y" value="118096" />
-			<param name="suicide6_y" value="118128" />
-			<param name="zerging_spawn_x" value="177655" />
-			<param name="zerging_spawn_y" value="116402" />
-			<param name="dice" value="1" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4041,23 +3735,6 @@
 	</npc>
 	<npc id="29086" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="178368" />
-			<param name="suicide2_x" value="178592" />
-			<param name="suicide3_x" value="178848" />
-			<param name="suicide4_x" value="179200" />
-			<param name="suicide5_x" value="179472" />
-			<param name="suicide6_x" value="179696" />
-			<param name="suicide1_y" value="118128" />
-			<param name="suicide2_y" value="118192" />
-			<param name="suicide3_y" value="118240" />
-			<param name="suicide4_y" value="118272" />
-			<param name="suicide5_y" value="118272" />
-			<param name="suicide6_y" value="118192" />
-			<param name="zerging_spawn_x" value="178248" />
-			<param name="zerging_spawn_y" value="116395" />
-			<param name="dice" value="0" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4092,23 +3769,6 @@
 	</npc>
 	<npc id="29087" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="179696" />
-			<param name="suicide2_x" value="179920" />
-			<param name="suicide3_x" value="180096" />
-			<param name="suicide4_x" value="180272" />
-			<param name="suicide5_x" value="180544" />
-			<param name="suicide6_x" value="180592" />
-			<param name="suicide1_y" value="118192" />
-			<param name="suicide2_y" value="118016" />
-			<param name="suicide3_y" value="117824" />
-			<param name="suicide4_y" value="117520" />
-			<param name="suicide5_y" value="117264" />
-			<param name="suicide6_y" value="116928" />
-			<param name="zerging_spawn_x" value="178706" />
-			<param name="zerging_spawn_y" value="115998" />
-			<param name="dice" value="1" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4143,23 +3803,6 @@
 	</npc>
 	<npc id="29088" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="180592" />
-			<param name="suicide2_x" value="180752" />
-			<param name="suicide3_x" value="181104" />
-			<param name="suicide4_x" value="181184" />
-			<param name="suicide5_x" value="180992" />
-			<param name="suicide6_x" value="180896" />
-			<param name="suicide1_y" value="116928" />
-			<param name="suicide2_y" value="116576" />
-			<param name="suicide3_y" value="116544" />
-			<param name="suicide4_y" value="116240" />
-			<param name="suicide5_y" value="116064" />
-			<param name="suicide6_y" value="115888" />
-			<param name="zerging_spawn_x" value="179208" />
-			<param name="zerging_spawn_y" value="115452" />
-			<param name="dice" value="0" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4194,23 +3837,6 @@
 	</npc>
 	<npc id="29089" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="180896" />
-			<param name="suicide2_x" value="180784" />
-			<param name="suicide3_x" value="180656" />
-			<param name="suicide4_x" value="180528" />
-			<param name="suicide5_x" value="180496" />
-			<param name="suicide6_x" value="180496" />
-			<param name="suicide1_y" value="115888" />
-			<param name="suicide2_y" value="115712" />
-			<param name="suicide3_y" value="115504" />
-			<param name="suicide4_y" value="115232" />
-			<param name="suicide5_y" value="115008" />
-			<param name="suicide6_y" value="114816" />
-			<param name="zerging_spawn_x" value="179191" />
-			<param name="zerging_spawn_y" value="115079" />
-			<param name="dice" value="1" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4245,23 +3871,6 @@
 	</npc>
 	<npc id="29090" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="180496" />
-			<param name="suicide2_x" value="180512" />
-			<param name="suicide3_x" value="180544" />
-			<param name="suicide4_x" value="180688" />
-			<param name="suicide5_x" value="180804" />
-			<param name="suicide6_x" value="180896" />
-			<param name="suicide1_y" value="114816" />
-			<param name="suicide2_y" value="114624" />
-			<param name="suicide3_y" value="114400" />
-			<param name="suicide4_y" value="114112" />
-			<param name="suicide5_y" value="113920" />
-			<param name="suicide6_y" value="113776" />
-			<param name="zerging_spawn_x" value="179221" />
-			<param name="zerging_spawn_y" value="114546" />
-			<param name="dice" value="0" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4296,23 +3905,6 @@
 	</npc>
 	<npc id="29091" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="180896" />
-			<param name="suicide2_x" value="181040" />
-			<param name="suicide3_x" value="181184" />
-			<param name="suicide4_x" value="181120" />
-			<param name="suicide5_x" value="180880" />
-			<param name="suicide6_x" value="180720" />
-			<param name="suicide1_y" value="113776" />
-			<param name="suicide2_y" value="113632" />
-			<param name="suicide3_y" value="113472" />
-			<param name="suicide4_y" value="113168" />
-			<param name="suicide5_y" value="113072" />
-			<param name="suicide6_y" value="112896" />
-			<param name="zerging_spawn_x" value="178916" />
-			<param name="zerging_spawn_y" value="113925" />
-			<param name="dice" value="1" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4347,23 +3939,6 @@
 	</npc>
 	<npc id="29092" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="180720" />
-			<param name="suicide2_x" value="180640" />
-			<param name="suicide3_x" value="180576" />
-			<param name="suicide4_x" value="180368" />
-			<param name="suicide5_x" value="180192" />
-			<param name="suicide6_x" value="180048" />
-			<param name="suicide1_y" value="112896" />
-			<param name="suicide2_y" value="112672" />
-			<param name="suicide3_y" value="112432" />
-			<param name="suicide4_y" value="112128" />
-			<param name="suicide5_y" value="111968" />
-			<param name="suicide6_y" value="111760" />
-			<param name="zerging_spawn_x" value="178782" />
-			<param name="zerging_spawn_y" value="113814" />
-			<param name="dice" value="0" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4398,23 +3973,6 @@
 	</npc>
 	<npc id="29093" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="180048" />
-			<param name="suicide2_x" value="179920" />
-			<param name="suicide3_x" value="179728" />
-			<param name="suicide4_x" value="179376" />
-			<param name="suicide5_x" value="179136" />
-			<param name="suicide6_x" value="178848" />
-			<param name="suicide1_y" value="111760" />
-			<param name="suicide2_y" value="111584" />
-			<param name="suicide3_y" value="111472" />
-			<param name="suicide4_y" value="111392" />
-			<param name="suicide5_y" value="111376" />
-			<param name="suicide6_y" value="111424" />
-			<param name="zerging_spawn_x" value="178419" />
-			<param name="zerging_spawn_y" value="113417" />
-			<param name="dice" value="1" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4449,23 +4007,6 @@
 	</npc>
 	<npc id="29094" level="78" type="L2Monster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="suicide1_x" value="178848" />
-			<param name="suicide2_x" value="178560" />
-			<param name="suicide3_x" value="178320" />
-			<param name="suicide4_x" value="178000" />
-			<param name="suicide5_x" value="177728" />
-			<param name="suicide6_x" value="177456" />
-			<param name="suicide1_y" value="111424" />
-			<param name="suicide2_y" value="111456" />
-			<param name="suicide3_y" value="111488" />
-			<param name="suicide4_y" value="111536" />
-			<param name="suicide5_y" value="111536" />
-			<param name="suicide6_y" value="111504" />
-			<param name="zerging_spawn_x" value="177855" />
-			<param name="zerging_spawn_y" value="113282" />
-			<param name="dice" value="0" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4500,13 +4041,6 @@
 	</npc>
 	<npc id="29095" level="80" type="L2RaidBoss" name="Gordon" title="Knight of Destruction">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="RaidSpawnMusic" value="Rm01_A" />
-			<skill name="SelfRangeCancel_a" id="4177" level="10" /> <!-- BOSS Cancel Magic -->
-			<skill name="SelfBuff_a" id="4174" level="10" /> <!-- BOSS Shield -->
-			<skill name="PhysicalSpecial_a" id="4726" level="10" /> <!-- Stun -->
-			<skill name="SelfRangePhysicalSpecial_a" id="5119" level="1" /> <!-- Bleed -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="919.53375" sp="1412" />
@@ -4570,15 +4104,6 @@
 	</npc>
 	<npc id="29096" level="84" type="L2RaidBoss" name="Anais" title="Lord of Splendor">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="29098" count="3" respawnTime="360" weightPoint="1" /> <!-- Splendor Worshiper -->
-				<npc id="29097" count="2" respawnTime="360" weightPoint="1" /> <!-- Disciple of Splendor -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm02_A" />
-			<param name="doSummonNPC" value="1" />
-			<skill name="PhysicalSpecial_b" id="4180" level="10" /> <!-- Stun -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8214" /> <!-- Monster Only (Solina Priest Pole) -->
@@ -4666,9 +4191,6 @@
 	</npc>
 	<npc id="29098" level="80" type="L2Monster" name="Worshiper of Splendor" title="Raid Fighter">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="LongRangePhysicalSpecial_a" id="4208" level="10" /> <!-- Stun -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4710,20 +4232,6 @@
 	</npc>
 	<npc id="29099" level="83" type="L2GrandBoss" name="Baylor" title="Warden">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="selfbuff1" id="5221" level="1" /> <!-- Balor - Physical Close Range Weak Point -->
-			<skill name="selfbuff2" id="5222" level="1" /> <!-- Balor - Physical Long Range Weak Point -->
-			<skill name="selfbuff3" id="5223" level="1" /> <!-- Balor - Magic Weak Point -->
-			<skill name="selfbuff4" id="5224" level="1" /> <!-- Berserk -->
-			<skill name="selfbuff5" id="5225" level="1" /> <!-- Invincible -->
-			<skill name="PhysicalSpecial1" id="5227" level="1" /> <!-- Ground Strike -->
-			<skill name="PhysicalSpecial2" id="5228" level="1" /> <!-- Jump Attack -->
-			<skill name="PhysicalSpecial3" id="5229" level="1" /> <!-- Strong Punch -->
-			<skill name="PhysicalSpecial4" id="5226" level="1" /> <!-- Imprison -->
-			<skill name="d_skill1" id="5402" level="1" /> <!-- Presentation - Balor 2 -->
-			<skill name="d_skill2" id="5403" level="1" /> <!-- Presentation - Balor 3 -->
-			<skill name="d_skill3" id="5404" level="1" /> <!-- Presentation - Balor 4 -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="463.08665989258" sp="765" />

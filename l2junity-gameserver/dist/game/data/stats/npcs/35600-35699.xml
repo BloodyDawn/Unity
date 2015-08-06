@@ -3628,13 +3628,6 @@
 	</npc>
 	<npc id="35687" level="75" type="L2Monster" name="Mercenary Private">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="fortress_id" value="101" />
-			<param name="Party_Type" value="1" />
-			<param name="PrivateFollowBoss" value="1" />
-		</parameters>
 		<race>ORC</race>
 		<sex>MALE</sex>
 		<equipment rhand="96" /> <!-- Scythe -->
@@ -3715,13 +3708,6 @@
 	</npc>
 	<npc id="35689" level="75" type="L2FortManager" name="Foreman" title="Gludio Southern Fortress">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="fnAgitBuff" value="fortressbuff" />
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="158" />
-			<param name="fortress_id" value="102" />
-			<param name="dominion_id" value="81" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3759,10 +3745,6 @@
 	</npc>
 	<npc id="35690" level="75" type="L2Npc" name="Suspicious Merchant" title="Gludio Southern Fortress">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="140" />
-		</parameters>
 		<race>ORC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3800,16 +3782,6 @@
 	</npc>
 	<npc id="35691" level="75" type="L2Npc" name="Guard Captain" title="Gludio Southern Fortress">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="fortress_id" value="102" />
-			<param name="fee_photocannon" value="100000" />
-			<param name="fee_scout" value="150000" />
-			<param name="fee_door" value="200000" />
-			<param name="fee_guard_reinforce_lv1" value="100000" />
-			<param name="fee_guard_reinforce_lv2" value="100000" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="80" lhand="641" /> <!-- Tallum Blade / Dark Crystal Shield -->
@@ -3848,10 +3820,6 @@
 	</npc>
 	<npc id="35692" level="75" type="L2Npc" name="Archer Captain" title="Gludio Southern Fortress">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="105" />
-		</parameters>
 		<race>ELF</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3889,10 +3857,6 @@
 	</npc>
 	<npc id="35693" level="75" type="L2Npc" name="General" title="Gludio Southern Fortress">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="140" />
-		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
 		<equipment rhand="9813" lhand="9813" /> <!-- Orc Officer / Orc Officer -->
@@ -3931,10 +3895,6 @@
 	</npc>
 	<npc id="35694" level="75" type="L2Npc" name="Support Unit Captain" title="Gludio Southern Fortress">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3972,10 +3932,6 @@
 	</npc>
 	<npc id="35695" level="75" type="L2Npc" name="Engineering Manager" title="Gludio Southern Fortress">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="144" />
-		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4013,29 +3969,6 @@
 	</npc>
 	<npc id="35696" level="75" type="L2FortLogistics" name="Logistics Officer" title="Gludio Southern Fortress">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="88" />
-			<param name="fortress_id" value="102" />
-			<param name="fee_power_up_lv1" value="100000" />
-			<param name="fee_power_up_lv2" value="150000" />
-			<param name="ai_type1" value="gludio_fort_a_supply" />
-			<param name="ai_type2" value="gludio_fort_b_supply" />
-			<param name="ai_type3" value="dion_fort_supply" />
-			<param name="ai_type4" value="giran_fort_supply" />
-			<param name="ai_type5" value="oren_fort_supply" />
-			<param name="ai_type6" value="aden_fort_a_supply" />
-			<param name="silhouette1" value="35665" /> <!-- Supply Box -->
-			<param name="silhouette2" value="35697" /> <!-- Supply Box -->
-			<param name="silhouette3" value="35734" /> <!-- Supply Box -->
-			<param name="silhouette4" value="35766" /> <!-- Supply Box -->
-			<param name="silhouette5" value="35803" /> <!-- Supply Box -->
-			<param name="silhouette6" value="35834" /> <!-- Supply Box -->
-			<param name="item_medal" value="9910" /> <!-- Blood Oath -->
-			<param name="tr_x" value="-24695" />
-			<param name="tr_y" value="220915" />
-			<param name="tr_z" value="-3232" />
-		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4111,17 +4044,6 @@
 	</npc>
 	<npc id="35698" level="75" type="L2Npc" name="Detention Camp Warden" title="Gludio Southern Fortress">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="92" />
-			<param name="fortress_condition" value="1" />
-			<param name="restrict_time" value="240" />
-			<param name="enter_type" value="1" />
-			<param name="zone_type" value="23" />
-			<param name="fortress_id" value="102" />
-			<param name="enter_type1" value="1" />
-			<param name="zone_type1" value="90" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4159,15 +4081,6 @@
 	</npc>
 	<npc id="35699" level="75" type="L2FortDoormen" name="Doorman">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="92" />
-			<param name="DoorName1" value="fortress_1924_010" />
-			<param name="pos_x01" value="-22278" />
-			<param name="pos_y01" value="219757" />
-			<param name="pos_z01" value="-2344" />
-			<param name="dominion_id" value="81" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">

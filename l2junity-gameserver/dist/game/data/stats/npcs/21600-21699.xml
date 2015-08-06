@@ -2990,15 +2990,6 @@
 	</npc>
 	<npc id="21653" level="78" type="L2Monster" name="Assassin Beetle">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<minions name="Privates">
-				<npc id="21381" count="5" respawnTime="0" weightPoint="1" /> <!-- Assassin Beetle -->
-			</minions>
-			<param name="SummonPrivateRate" value="30" />
-		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="10.065417488494" sp="14" />
@@ -3042,15 +3033,6 @@
 	</npc>
 	<npc id="21654" level="78" type="L2Monster" name="Necromancer of Destruction">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="114" />
-			<param name="MoveAroundSocial1" value="114" />
-			<param name="MoveAroundSocial2" value="114" />
-			<minions name="Privates">
-				<npc id="21384" count="5" respawnTime="0" weightPoint="1" /> <!-- Necromancer of Destruction -->
-			</minions>
-			<param name="SummonPrivateRate" value="30" />
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="11.897435897436" sp="17" />
@@ -3094,15 +3076,6 @@
 	</npc>
 	<npc id="21655" level="78" type="L2Monster" name="Arimanes of Destruction">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-			<minions name="Privates">
-				<npc id="21387" count="5" respawnTime="0" weightPoint="1" /> <!-- Arimanes of Destruction -->
-			</minions>
-			<param name="SummonPrivateRate" value="30" />
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="6722" /> <!-- Monster Only (Ahrimanes) -->
@@ -3147,15 +3120,6 @@
 	</npc>
 	<npc id="21656" level="78" type="L2Monster" name="Ashuras of Destruction">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-			<minions name="Privates">
-				<npc id="21390" count="5" respawnTime="0" weightPoint="1" /> <!-- Ashuras of Destruction -->
-			</minions>
-			<param name="SummonPrivateRate" value="30" />
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="18.57412886259" sp="27" />
@@ -3199,15 +3163,6 @@
 	</npc>
 	<npc id="21657" level="78" type="L2Monster" name="Magma Drake">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="70" />
-			<param name="MoveAroundSocial1" value="70" />
-			<param name="MoveAroundSocial2" value="70" />
-			<minions name="Privates">
-				<npc id="21393" count="5" respawnTime="0" weightPoint="1" /> <!-- Magma Drake -->
-			</minions>
-			<param name="SummonPrivateRate" value="30" />
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="16.086785009862" sp="23" />
@@ -3251,20 +3206,6 @@
 	</npc>
 	<npc id="21658" level="64" type="L2Monster" name="Punishment of Splendor">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="74" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="IsMainForm" value="0" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4641" level="6" /> <!-- NPC Super Strike -->
-			<skill name="SelfBuff" id="4103" level="2" /> <!-- NPC Ultimate Evasion -->
-			<skill name="TeleportEffect" id="4671" level="1" /> <!-- AV - Teleport -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="242" /> <!-- Soulfire Dirk -->

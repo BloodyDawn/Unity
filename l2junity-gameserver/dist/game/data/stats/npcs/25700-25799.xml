@@ -233,11 +233,6 @@
 	</npc>
 	<npc id="25704" level="75" type="L2Monster" name="Gigantic Golem Subordinate" title="Chaos">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="Party_Type" value="1" />
-			<param name="Party_Loyalty" value="1" />
-			<skill name="Skill01_ID" id="6602" level="10" /> <!-- NPC earth attack -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -278,10 +273,6 @@
 	</npc>
 	<npc id="25705" level="74" type="L2Monster" name="Gigantic Boom Golem" title="Chaos">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6265" level="1" /> <!-- Smoke -->
-			<skill name="Skill02_ID" id="6264" level="1" /> <!-- Golem Boom -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -318,17 +309,6 @@
 	</npc>
 	<npc id="25706" level="83" type="L2Monster" name="Lost Watcher">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Type" value="2" />
-			<param name="Skill02_Probablity" value="500" />
-			<param name="is_private" value="0" />
-			<param name="silhouette" value="25707" /> <!-- Lost Watcher -->
-			<param name="ai_type" value="kamaloka_83_a_false" />
-			<skill name="Skill01_ID" id="6693" level="9" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4047" level="9" /> <!-- Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -375,14 +355,6 @@
 	</npc>
 	<npc id="25707" level="83" type="L2Monster" name="Lost Watcher">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Type" value="2" />
-			<param name="Skill02_Probablity" value="500" />
-			<skill name="Skill01_ID" id="6693" level="9" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4047" level="9" /> <!-- Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -429,17 +401,6 @@
 	</npc>
 	<npc id="25708" level="83" type="L2Monster" name="Lost Beholder">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_Type" value="3" />
-			<param name="Skill02_AttackSplash" value="1" />
-			<param name="Skill03_Type" value="2" />
-			<skill name="Skill01_ID" id="6693" level="9" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4613" level="9" /> <!-- NPC Clan Heal -->
-			<skill name="Skill03_ID" id="4098" level="10" /> <!-- Silence -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -486,12 +447,6 @@
 	</npc>
 	<npc id="25709" level="83" type="L2RaidBoss" name="Lost Warden">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="PhysicalSpecial_a" id="6694" level="8" /> <!-- BOSS Strike -->
-			<skill name="SelfRangePhysicalSpecial_a" id="6695" level="8" /> <!-- BOSS Spinning Slasher -->
-			<skill name="SelfBuff_a" id="4173" level="8" /> <!-- BOSS Might -->
-			<skill name="SelfRangeCancel_a" id="4177" level="8" /> <!-- BOSS Cancel Magic -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="211.28073740746" sp="349" />
@@ -538,18 +493,6 @@
 	</npc>
 	<npc id="25710" level="83" type="L2RaidBoss" name="Lost Captain">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25711" count="2" respawnTime="150" weightPoint="1" /> <!-- Lost Guard -->
-				<npc id="25712" count="2" respawnTime="150" weightPoint="1" /> <!-- Lost Assistant Guard -->
-			</minions>
-			<param name="PCCafe_Reward" value="13002" /> <!-- Essence of Kamaloka -->
-			<param name="PCCafe_Number" value="19" />
-			<skill name="RangeDDMagic_a" id="4178" level="8" /> <!-- BOSS Flamestrike -->
-			<skill name="Debuff1" id="5699" level="7" /> <!-- Decrease P. Def -->
-			<skill name="Debuff2" id="5700" level="7" /> <!-- Magic Resistance Decrease -->
-			<skill name="Debuff3" id="5701" level="7" /> <!-- Decrease P. Atk -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="2417.4688634054" sp="3996" />
@@ -660,10 +603,6 @@
 	</npc>
 	<npc id="25712" level="83" type="L2Monster" name="Lost Assistant Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="SelfRangeBuff_a" id="4214" level="8" /> <!-- BOSS Reflect Damage -->
-			<skill name="HealMagic_a" id="4780" level="8" /> <!-- BOSS Heal -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -710,11 +649,6 @@
 	</npc>
 	<npc id="25713" level="84" type="L2RaidBoss" name="Darnel" title="Torture Maiden">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="InzoneRestriction" value="1" />
-			<skill name="SelfRangeDebuff_a" id="4182" level="9" /> <!-- Poison -->
-			<skill name="debuff" id="4189" level="9" /> <!-- Paralysis -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="253.65547052154" sp="429" />
@@ -762,10 +696,6 @@
 	</npc>
 	<npc id="25714" level="84" type="L2RaidBoss" name="Kechi" title="Flaming">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="InzoneRestriction" value="1" />
-			<skill name="selfbuff1" id="5418" level="1" /> <!-- Invincible -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="377.28316326531" sp="638" />
@@ -816,14 +746,6 @@
 	</npc>
 	<npc id="25715" level="84" type="L2Monster" name="Kechi's Subordinate">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="0" />
-			<param name="AttackRange" value="0" />
-			<param name="Party_Type" value="1" />
-			<param name="Party_Loyalty" value="2" />
-			<skill name="selfbuff1" id="4099" level="2" /> <!-- NPC Berserk -->
-			<skill name="selfbuff1" id="4084" level="2" /> <!-- Resist Physical Attack -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -870,12 +792,6 @@
 	</npc>
 	<npc id="25716" level="84" type="L2RaidBoss" name="Tears" title="Ice">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="InzoneRestriction" value="1" />
-			<skill name="W_LongRangeDDMagic" id="5238" level="1" /> <!-- Freezing -->
-			<skill name="selfbuff1" id="5420" level="1" /> <!-- Invincible -->
-			<skill name="selfbuff2" id="2369" level="1" /> <!-- Water Dragon Scale -->
-		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="9638" lhand="9638" /> <!-- Tears r1 / Tears r1 -->
@@ -967,12 +883,6 @@
 	</npc>
 	<npc id="25718" level="84" type="L2RaidBoss" name="Emerald Horn" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6821" level="1" /> <!-- P. Def. Decrease -->
-			<skill name="Skill02_ID" id="6821" level="1" /> <!-- P. Def. Decrease -->
-			<skill name="Skill03_ID" id="6822" level="1" /> <!-- P. Def. Decrease -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="1994.599914966" sp="3377" />
@@ -1043,13 +953,6 @@
 	</npc>
 	<npc id="25719" level="84" type="L2RaidBoss" name="Dust Rider" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<param name="Skill03_Probablity" value="1111" />
-			<skill name="Skill01_ID" id="6826" level="1" /> <!-- Critical Strike -->
-			<skill name="Skill02_ID" id="6827" level="1" /> <!-- Petrify -->
-			<skill name="Skill03_ID" id="6828" level="1" /> <!-- Dust Storm -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="2443.3849206349" sp="4137" />
@@ -1119,14 +1022,6 @@
 	</npc>
 	<npc id="25720" level="84" type="L2RaidBoss" name="Bleeding Fly" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<param name="Skill03_Probablity" value="1111" />
-			<skill name="Skill01_ID" id="6829" level="1" /> <!-- Vampiric Attack -->
-			<skill name="Skill02_ID" id="6829" level="1" /> <!-- Vampiric Attack -->
-			<skill name="Skill03_ID" id="6831" level="1" /> <!-- Blood Burst -->
-			<skill name="Skill04_ID" id="6830" level="1" /> <!-- Bleed -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="2742.5749716553" sp="4644" />
@@ -1202,11 +1097,6 @@
 	</npc>
 	<npc id="25721" level="84" type="L2RaidBoss" name="Blackdagger Wing" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill02_ID" id="6833" level="1" /> <!-- Power Strike -->
-			<skill name="Skill02_ID" id="6833" level="1" /> <!-- Power Strike -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="2991.8999433107" sp="5066" />
@@ -1280,12 +1170,6 @@
 	</npc>
 	<npc id="25722" level="84" type="L2RaidBoss" name="Shadow Summoner" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<param name="Skill01_Probablity" value="1111" />
-			<skill name="Skill01_ID" id="6836" level="1" /> <!-- Silence -->
-			<skill name="Skill02_ID" id="6837" level="1" /> <!-- Range Magic Attack -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="3241.224914966" sp="5488" />
@@ -1362,12 +1246,6 @@
 	</npc>
 	<npc id="25723" level="84" type="L2RaidBoss" name="Spike Slasher" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6839" level="1" /> <!-- Power Attack -->
-			<skill name="Skill02_ID" id="6839" level="2" /> <!-- Power Attack -->
-			<skill name="Skill03_ID" id="6840" level="1" /> <!-- Paralysis -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="3490.5498866213" sp="5911" />
@@ -1442,10 +1320,6 @@
 	</npc>
 	<npc id="25724" level="84" type="L2RaidBoss" name="Muscle Bomber" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill04_ID" id="6844" level="1" /> <!-- Power Strike -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="3739.875" sp="6333" />
@@ -1514,14 +1388,6 @@
 	</npc>
 	<npc id="25725" level="85" type="L2RaidBoss" name="Drake Lord" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="selfheal_skill" id="6886" level="1" /> <!-- Complete Recovery -->
-			<skill name="notank_skill_a" id="6887" level="1" /> <!-- Fatal Strike -->
-			<skill name="notank_skill_b" id="6888" level="1" /> <!-- Fatal Shot -->
-			<skill name="Skill01_ID" id="6891" level="1" /> <!-- Power Attack -->
-			<skill name="Skill02_ID" id="6892" level="1" /> <!-- Power Shot -->
-			<skill name="Skill03_ID" id="6732" level="1" /> <!-- Mirage -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire />
@@ -1580,16 +1446,6 @@
 	</npc>
 	<npc id="25726" level="85" type="L2RaidBoss" name="Behemoth Leader" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="selfheal_skill" id="6886" level="1" /> <!-- Complete Recovery -->
-			<skill name="notank_skill_a" id="6887" level="1" /> <!-- Fatal Strike -->
-			<skill name="notank_skill_b" id="6888" level="1" /> <!-- Fatal Shot -->
-			<skill name="Skill01_ID" id="6893" level="1" /> <!-- Power Attack -->
-			<skill name="Skill02_ID" id="6894" level="1" /> <!-- Power Shot -->
-			<skill name="Skill03_ID_P" id="6739" level="1" /> <!-- Presentation - Behemoth Leader Casting Preparation -->
-			<skill name="Skill03_ID_F" id="6741" level="1" /> <!-- Presentation - Behemoth Leader Casting Failure -->
-			<skill name="Skill03_ID" id="6740" level="1" /> <!-- Presentation - Behemoth Leader Casting -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire />
@@ -1648,15 +1504,6 @@
 	</npc>
 	<npc id="25727" level="85" type="L2RaidBoss" name="Dragon Beast" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="selfheal_skill" id="6886" level="1" /> <!-- Complete Recovery -->
-			<skill name="notank_skill_a" id="6887" level="1" /> <!-- Fatal Strike -->
-			<skill name="notank_skill_b" id="6888" level="1" /> <!-- Fatal Shot -->
-			<skill name="Skill01_ID" id="6895" level="1" /> <!-- Power Attack -->
-			<skill name="Skill02_ID" id="6896" level="1" /> <!-- Power Shot -->
-			<skill name="Skill03_ID" id="6736" level="1" /> <!-- Fierce Attack -->
-			<skill name="Skill04_ID" id="6737" level="1" /> <!-- Heal -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="79" int="74" dex="42" wit="65" con="75" men="72">
@@ -1709,9 +1556,6 @@
 	</npc>
 	<npc id="25728" level="85" type="L2Monster" name="Death Knight">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="hold_skill" id="6738" level="1" /> <!-- Hold -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="127" /> <!-- Crimson Sword -->
@@ -1754,10 +1598,6 @@
 	</npc>
 	<npc id="25729" level="85" type="L2Monster" name="Death Knight">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="fan_attack_skill" id="6889" level="1" /> <!-- Range Attack -->
-			<skill name="debuff_skill" id="6890" level="1" /> <!-- Bleed -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="127" /> <!-- Crimson Sword -->
@@ -1801,9 +1641,6 @@
 	</npc>
 	<npc id="25730" level="80" type="L2Monster" name="Demon's Banquet">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" lhand="945" /> <!-- Skeleton Dagger / Skeleton Buckler -->
@@ -1846,9 +1683,6 @@
 	</npc>
 	<npc id="25731" level="80" type="L2Monster" name="Demon's Banquet">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" lhand="945" /> <!-- Skeleton Dagger / Skeleton Buckler -->
@@ -1891,15 +1725,6 @@
 	</npc>
 	<npc id="25732" level="85" type="L2Monster" name="Dragon Beast" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="selfheal_skill" id="6886" level="1" /> <!-- Complete Recovery -->
-			<skill name="notank_skill_a" id="6887" level="1" /> <!-- Fatal Strike -->
-			<skill name="notank_skill_b" id="6888" level="1" /> <!-- Fatal Shot -->
-			<skill name="Skill01_ID" id="6895" level="1" /> <!-- Power Attack -->
-			<skill name="Skill02_ID" id="6896" level="1" /> <!-- Power Shot -->
-			<skill name="Skill03_ID" id="6736" level="1" /> <!-- Fierce Attack -->
-			<skill name="Skill04_ID" id="6737" level="1" /> <!-- Heal -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire />
@@ -1946,12 +1771,6 @@
 	</npc>
 	<npc id="25733" level="83" type="L2Monster" name="Gem Dragon">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6876" level="1" /> <!-- Power Strike -->
-			<skill name="Skill02_ID" id="6877" level="1" /> <!-- Power Strike -->
-			<skill name="Skill03_ID" id="6878" level="1" /> <!-- Paralysis -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1994,12 +1813,6 @@
 	</npc>
 	<npc id="25734" level="83" type="L2Monster" name="Parasitic Leech">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<param name="Skill02_Probablity" value="1111" />
-			<skill name="Skill01_ID" id="6870" level="1" /> <!-- Vampiric Claw -->
-			<skill name="Skill02_ID" id="6871" level="1" /> <!-- Range Magic Attack -->
-		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2041,14 +1854,6 @@
 	</npc>
 	<npc id="25735" level="90" type="L2RaidBoss" name="Fairy Warrior" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25736" count="3" respawnTime="360" weightPoint="1" /> <!-- Kutus' Guard -->
-				<npc id="25737" count="1" respawnTime="360" weightPoint="1" /> <!-- Kutus' Pawn -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm03_A" />
-			<skill name="RangeHold_a" id="4197" level="2" /> <!-- Hold -->
-		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<equipment rhand="67" lhand="633" /> <!-- Orcish Sword / Zubei's Shield -->
@@ -2178,14 +1983,6 @@
 	</npc>
 	<npc id="25738" level="90" type="L2RaidBoss" name="Satyr Wizard" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25739" count="2" respawnTime="360" weightPoint="1" /> <!-- Sharuk's Minion -->
-				<npc id="25740" count="3" respawnTime="360" weightPoint="1" /> <!-- Sharuk's Marksman -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm02_A" />
-			<skill name="PhysicalSpecial_b" id="4743" level="2" /> <!-- BOSS Strike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="291" /> <!-- Trident -->
@@ -2316,14 +2113,6 @@
 	</npc>
 	<npc id="25741" level="90" type="L2RaidBoss" name="Treekin Defender" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25742" count="2" respawnTime="360" weightPoint="1" /> <!-- Sukar Wererat Guard -->
-				<npc id="25743" count="1" respawnTime="360" weightPoint="1" /> <!-- Sukar Wererat Priest -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm02_A" />
-			<skill name="RangeDDMagic_a" id="4178" level="2" /> <!-- BOSS Flamestrike -->
-		</parameters>
 		<race>PLANT</race>
 		<sex>MALE</sex>
 		<equipment rhand="216" /> <!-- Dirk -->
@@ -2451,14 +2240,6 @@
 	</npc>
 	<npc id="25744" level="91" type="L2RaidBoss" name="Double Nightmare" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25745" count="2" respawnTime="360" weightPoint="1" /> <!-- Ikuntai's Servitor -->
-				<npc id="25746" count="2" respawnTime="360" weightPoint="1" /> <!-- Ikuntai's Pawn -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm03_A" />
-			<skill name="RangeDDMagic_a" id="4178" level="2" /> <!-- BOSS Flamestrike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="150" /> <!-- Elemental Sword -->
@@ -2658,14 +2439,6 @@
 	</npc>
 	<npc id="25747" level="25" type="L2RaidBoss" name="Kimerian" title="Fairy Leader">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25748" count="3" respawnTime="360" weightPoint="1" /> <!-- Evil Spirit Archer -->
-				<npc id="25749" count="2" respawnTime="360" weightPoint="1" /> <!-- Evil Spirit Warrior -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm03_A" />
-			<skill name="PhysicalSpecial_b" id="4741" level="2" /> <!-- BOSS Strike -->
-		</parameters>
 		<acquire expRate="4065.6192" sp="95136" />
 		<stats str="79" int="74" dex="42" wit="65" con="75" men="72">
 			<vitals hp="187114" hpRegen="18.438531" mp="2023" mpRegen="1.5" />
@@ -2795,14 +2568,6 @@
 	</npc>
 	<npc id="25750" level="93" type="L2RaidBoss" name="Fairy Knight" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25751" count="2" respawnTime="360" weightPoint="1" /> <!-- Ferkel's Warrior -->
-				<npc id="25752" count="1" respawnTime="360" weightPoint="1" /> <!-- Ferkel's Priest -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm02_A" />
-			<skill name="RangeDDMagic_a" id="4178" level="2" /> <!-- BOSS Flamestrike -->
-		</parameters>
 		<race>FAIRY</race>
 		<sex>MALE</sex>
 		<acquire expRate="351.68990634755" sp="71560" />
@@ -2939,13 +2704,6 @@
 	</npc>
 	<npc id="25753" level="94" type="L2RaidBoss" name="Satyr Witch" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<param name="RaidSpawnMusic" value="Rm02_A" />
-			<skill name="SelfRangeCancel_a" id="4177" level="4" /> <!-- BOSS Cancel Magic -->
-			<skill name="SelfBuff_a" id="4175" level="4" /> <!-- BOSS Haste -->
-			<skill name="PhysicalSpecial_a" id="4726" level="4" /> <!-- Stun -->
-			<skill name="SelfRangePhysicalSpecial_a" id="4736" level="4" /> <!-- BOSS Spinning Slash -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="96" /> <!-- Scythe -->
@@ -2995,16 +2753,6 @@
 	</npc>
 	<npc id="25754" level="94" type="L2RaidBoss" name="Treekin Defender" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25755" count="1" respawnTime="360" weightPoint="1" /> <!-- Sword of Shadar -->
-				<npc id="25756" count="4" respawnTime="360" weightPoint="1" /> <!-- Whip of Shadar -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm02_A" />
-			<skill name="DDMagic_a" id="4192" level="3" /> <!-- BOSS HP Drain -->
-			<skill name="SelfRangeDebuff_a" id="4182" level="3" /> <!-- Poison -->
-			<skill name="SelfRangeDebuffAnother_a" id="4186" level="3" /> <!-- Hold -->
-		</parameters>
 		<race>PLANT</race>
 		<sex>MALE</sex>
 		<acquire sp="144137" />
@@ -3134,14 +2882,6 @@
 	</npc>
 	<npc id="25757" level="94" type="L2RaidBoss" name="Double Nightmare" title="Faithful Servant">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25758" count="3" respawnTime="360" weightPoint="1" /> <!-- Soul Slasher -->
-				<npc id="25759" count="1" respawnTime="360" weightPoint="1" /> <!-- Soul Strainer -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm01_A" />
-			<skill name="RangeHold_a" id="4197" level="3" /> <!-- Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="192" /> <!-- Crystal Staff -->
@@ -3334,14 +3074,6 @@
 	</npc>
 	<npc id="25760" level="98" type="L2RaidBoss" name="Turanclass" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25761" count="1" respawnTime="360" weightPoint="1" /> <!-- Ishka's Elite Officer -->
-				<npc id="25762" count="2" respawnTime="360" weightPoint="1" /> <!-- Ishka's Elite Soldier -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm01_A" />
-			<skill name="RangeHold_a" id="4197" level="6" /> <!-- Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="1472" /> <!-- Dreadbane -->
@@ -3535,14 +3267,6 @@
 	</npc>
 	<npc id="25763" level="97" type="L2RaidBoss" name="Theofanis" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25764" count="2" respawnTime="360" weightPoint="1" /> <!-- Kuri's Wife -->
-				<npc id="25765" count="2" respawnTime="360" weightPoint="1" /> <!-- Devil Blader of Chaos -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm01_A" />
-			<skill name="RangeDDMagic_a" id="4178" level="5" /> <!-- BOSS Flamestrike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire sp="20332" expRate="9004" raidPoints="30" />
@@ -3715,13 +3439,6 @@
 	</npc>
 	<npc id="25766" level="98" type="L2RaidBoss" name="Talicrome" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<param name="RaidSpawnMusic" value="Rm01_A" />
-			<skill name="SelfRangeCancel_a" id="4177" level="6" /> <!-- BOSS Cancel Magic -->
-			<skill name="SelfBuff_a" id="4175" level="6" /> <!-- BOSS Haste -->
-			<skill name="PhysicalSpecial_a" id="4731" level="6" /> <!-- BOSS Mortal Blow -->
-			<skill name="SelfRangePhysicalSpecial_a" id="4172" level="6" /> <!-- Stun -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire sp="46698" expRate="20260" raidPoints="30" />
@@ -3800,14 +3517,6 @@
 	</npc>
 	<npc id="25767" level="97" type="L2RaidBoss" name="Meikaliya" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25768" count="3" respawnTime="360" weightPoint="1" /> <!-- Gato's Marksman -->
-				<npc id="25769" count="2" respawnTime="360" weightPoint="1" /> <!-- Gato's Champion -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm02_A" />
-			<skill name="PhysicalSpecial_b" id="4741" level="5" /> <!-- BOSS Strike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="71" /> <!-- Flamberge -->
@@ -3984,13 +3693,6 @@
 	</npc>
 	<npc id="25770" level="97" type="L2RaidBoss" name="Lazaros" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25772" count="2" respawnTime="360" weightPoint="1" /> <!-- Ketra Raider -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm02_A" />
-			<skill name="PhysicalSpecial_b" id="4746" level="4" /> <!-- Stun -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="84" /> <!-- Homunkulus' Sword -->
@@ -4111,16 +3813,6 @@
 	</npc>
 	<npc id="25776" level="92" type="L2RaidBoss" name="Royal Guard" title="Apherus Garden">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25777" count="1" respawnTime="360" weightPoint="1" /> <!-- Panathen's Knight -->
-				<npc id="25778" count="4" respawnTime="360" weightPoint="1" /> <!-- Panathen's Protectors -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm03_A" />
-			<skill name="DDMagic_a" id="4191" level="4" /> <!-- BOSS Windstrike -->
-			<skill name="SelfRangeDebuff_a" id="4183" level="4" /> <!-- Decrease P. Atk. -->
-			<skill name="SelfRangeDebuffAnother_a" id="4189" level="4" /> <!-- Paralysis -->
-		</parameters>
 		<race>PLANT</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="183" /> <!-- Mystic Staff -->
@@ -4248,14 +3940,6 @@
 	</npc>
 	<npc id="25779" level="94" type="L2RaidBoss" name="Spezion" title="Raid Boss">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25780" count="2" respawnTime="360" weightPoint="1" /> <!-- Freki's Vampire Bat -->
-				<npc id="25781" count="1" respawnTime="360" weightPoint="1" /> <!-- Freki's Wild Bear -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm02_A" />
-			<skill name="RangeHold_a" id="4197" level="2" /> <!-- Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="114436" sp="242677" raidPoints="7" />
@@ -4435,13 +4119,6 @@
 	</npc>
 	<npc id="25782" level="94" type="L2RaidBoss" name="Spezion's Subordinate" title="">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25783" count="3" respawnTime="360" weightPoint="1" /> <!-- Nellis' Follower -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm01_A" />
-			<skill name="RangeHold_a" id="4197" level="3" /> <!-- Hold -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="8532" /> <!-- Monster Only (Spinebone Sword) -->
@@ -4524,14 +4201,6 @@
 	</npc>
 	<npc id="25784" level="10" type="L2RaidBoss" name="Overseer" title="Embryo">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25785" count="1" respawnTime="360" weightPoint="1" /> <!-- Rayito's Henchman -->
-				<npc id="25786" count="3" respawnTime="360" weightPoint="1" /> <!-- Rayito's Henchman -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm02_A" />
-			<skill name="RangeHold_a" id="4197" level="3" /> <!-- Hold -->
-		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="67" lhand="633" /> <!-- Orcish Sword / Zubei's Shield -->
@@ -4687,14 +4356,6 @@
 	</npc>
 	<npc id="25787" level="87" type="L2RaidBoss" name="Lachikios" title="Son-in-law of the King">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25788" count="3" respawnTime="360" weightPoint="1" /> <!-- Scout of Hekaton -->
-				<npc id="25789" count="2" respawnTime="360" weightPoint="1" /> <!-- Servant of Hekaton -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm02_A" />
-			<skill name="PhysicalSpecial_b" id="4746" level="9" /> <!-- Stun -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="6719" /> <!-- Monster Only (Ketra Orc Chieftain) -->
@@ -4819,16 +4480,6 @@
 	</npc>
 	<npc id="25790" level="86" type="L2RaidBoss" name="Escort" title="Lachikios Subordinate">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25791" count="1" respawnTime="360" weightPoint="1" /> <!-- Shadith's Royal Guard Captain -->
-				<npc id="25792" count="4" respawnTime="360" weightPoint="1" /> <!-- Shadith's Sentinel -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm03_A" />
-			<skill name="DDMagic_a" id="4195" level="9" /> <!-- BOSS Twister -->
-			<skill name="SelfRangeDebuff_a" id="4184" level="9" /> <!-- Decrease Atk. Spd. -->
-			<skill name="SelfRangeDebuffAnother_a" id="4188" level="9" /> <!-- Bleed -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<equipment rhand="15280" /> <!-- Transparent 1HS (NPC) -->
@@ -5006,16 +4657,6 @@
 	</npc>
 	<npc id="25794" level="90" type="L2RaidBoss" name="Rachicues" title="Queen">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25795" count="1" respawnTime="360" weightPoint="1" /> <!-- Taliadon -->
-				<npc id="25796" count="4" respawnTime="360" weightPoint="1" /> <!-- Vemsk -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm01_A" />
-			<skill name="DDMagic_a" id="4195" level="8" /> <!-- BOSS Twister -->
-			<skill name="SelfRangeDebuff_a" id="4182" level="8" /> <!-- Poison -->
-			<skill name="SelfRangeDebuffAnother_a" id="4190" level="8" /> <!-- Decrease MP -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>FEMALE</sex>
 		<acquire sp="864099" />
@@ -5257,16 +4898,6 @@
 	</npc>
 	<npc id="25797" level="98" type="L2RaidBoss" name="Kechi" title="Flaming">
 		<!-- TODO: Must be confirmed -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25798" count="3" respawnTime="360" weightPoint="1" /> <!-- Wyvern of Marsh -->
-				<npc id="25799" count="1" respawnTime="360" weightPoint="1" /> <!-- Succubus of Marsh -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm01_A" />
-			<skill name="DDMagic_a" id="4195" level="7" /> <!-- BOSS Twister -->
-			<skill name="SelfRangeDebuff_a" id="4184" level="7" /> <!-- Decrease Atk. Spd. -->
-			<skill name="SelfRangeDebuffAnother_a" id="4188" level="7" /> <!-- Bleed -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire sp="112426" expRate="48776" />

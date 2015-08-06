@@ -2715,17 +2715,6 @@
 	</npc>
 	<npc id="21542" level="62" type="L2Monster" name="Disciple of Pilgrim">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="74" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<skill name="W_LongRangeDDMagic" id="4158" level="6" /> <!-- NPC Prominence - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="6" /> <!-- NPC Fire Burn - Magic -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="193" /> <!-- Stick of Faith -->
@@ -2788,18 +2777,6 @@
 	</npc>
 	<npc id="21543" level="62" type="L2Monster" name="Page of Pilgrim">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="74" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<skill name="W_LongRangeDDMagic" id="4158" level="6" /> <!-- NPC Prominence - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="6" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="MagicHeal" id="4097" level="6" /> <!-- NPC Chant of Life -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="326" /> <!-- Heathen's Book -->
@@ -2863,23 +2840,6 @@
 	</npc>
 	<npc id="21544" level="67" type="L2Monster" name="Judge of Splendor">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="74" />
-			<param name="MoveAroundSocial2" value="90" />
-			<minions name="Privates">
-				<npc id="21545" count="1" respawnTime="0" weightPoint="1" /> <!-- Judge of Fire -->
-				<npc id="21546" count="1" respawnTime="0" weightPoint="1" /> <!-- Judge of Light -->
-			</minions>
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<skill name="W_LongRangeDDMagic1" id="4155" level="6" /> <!-- NPC Twister - Magic -->
-			<skill name="W_LongRangeDDMagic2" id="4569" level="6" /> <!-- NPC AE Solar Flare - Magic -->
-			<skill name="SelfRangeBuff" id="4635" level="3" /> <!-- NPC Buff - Acumen Berserk WildMagic -->
-			<skill name="RangeDeBuff" id="4640" level="6" /> <!-- Sleep -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="150" /> <!-- Elemental Sword -->
@@ -2944,17 +2904,6 @@
 	</npc>
 	<npc id="21545" level="66" type="L2Monster" name="Judge of Fire">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="74" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<skill name="W_LongRangeDDMagic" id="4155" level="6" /> <!-- NPC Twister - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="6" /> <!-- NPC Aura Burn - Magic -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="189" /> <!-- Staff of Life -->
@@ -2999,18 +2948,6 @@
 	</npc>
 	<npc id="21546" level="66" type="L2Monster" name="Judge of Light">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="74" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<skill name="W_LongRangeDDMagic" id="4563" level="6" /> <!-- NPC Solar Flare - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="6" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="MagicHeal" id="4097" level="6" /> <!-- NPC Chant of Life -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="196" /> <!-- Stick of Eternity -->
@@ -3056,19 +2993,6 @@
 	</npc>
 	<npc id="21547" level="65" type="L2Monster" name="Corrupted Knight">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="215" />
-			<param name="MoveAroundSocial1" value="215" />
-			<param name="MoveAroundSocial2" value="215" />
-			<skill name="IsTeleport" id="4671" level="1" /> <!-- AV - Teleport -->
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="SelfRangeDeBuff" id="4649" level="6" /> <!-- Poison -->
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="150" lhand="103" /> <!-- Elemental Sword / Tower Shield -->
@@ -3154,17 +3078,6 @@
 	</npc>
 	<npc id="21548" level="66" type="L2Monster" name="Resurrected Knight">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="215" />
-			<param name="MoveAroundSocial1" value="215" />
-			<param name="MoveAroundSocial2" value="215" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="SelfRangeDeBuff" id="4649" level="6" /> <!-- Poison -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="150" lhand="103" /> <!-- Elemental Sword / Tower Shield -->
@@ -3249,18 +3162,6 @@
 	</npc>
 	<npc id="21549" level="65" type="L2Monster" name="Corrupted Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="SelfRangeDeBuff" id="4649" level="6" /> <!-- Poison -->
-			<skill name="PhysicalSpecial" id="4067" level="6" /> <!-- NPC Mortal Blow -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" /> <!-- Skeleton Dagger -->
@@ -3347,19 +3248,6 @@
 	</npc>
 	<npc id="21550" level="65" type="L2Monster" name="Corrupted Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<skill name="IsTeleport" id="4671" level="1" /> <!-- AV - Teleport -->
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="SelfRangeDeBuff" id="4649" level="6" /> <!-- Poison -->
-			<skill name="PhysicalSpecial" id="4073" level="6" /> <!-- Stun -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" lhand="945" /> <!-- Skeleton Dagger / Skeleton Buckler -->
@@ -3429,18 +3317,6 @@
 	</npc>
 	<npc id="21551" level="66" type="L2Monster" name="Resurrected Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="SelfRangeDeBuff" id="4649" level="6" /> <!-- Poison -->
-			<skill name="PhysicalSpecial" id="4579" level="6" /> <!-- Bleed -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="221" /> <!-- Assassin Knife -->
@@ -3527,19 +3403,6 @@
 	</npc>
 	<npc id="21552" level="66" type="L2Monster" name="Resurrected Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<skill name="IsTeleport" id="4671" level="1" /> <!-- AV - Teleport -->
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="SelfRangeDeBuff" id="4649" level="6" /> <!-- Poison -->
-			<skill name="PhysicalSpecial" id="4073" level="6" /> <!-- Stun -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="221" lhand="945" /> <!-- Assassin Knife / Skeleton Buckler -->
@@ -3608,18 +3471,6 @@
 	</npc>
 	<npc id="21553" level="65" type="L2Monster" name="Trampled Man">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="120" />
-			<param name="MoveAroundSocial1" value="120" />
-			<param name="MoveAroundSocial2" value="120" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="SelfRangeDeBuff" id="4649" level="6" /> <!-- Poison -->
-			<skill name="DDMagic" id="4001" level="6" /> <!-- NPC Windstrike -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="12.445917159763" sp="12" />
@@ -3702,18 +3553,6 @@
 	</npc>
 	<npc id="21554" level="65" type="L2Monster" name="Trampled Man">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="120" />
-			<param name="MoveAroundSocial1" value="120" />
-			<param name="MoveAroundSocial2" value="120" />
-			<skill name="IsTeleport" id="4671" level="1" /> <!-- AV - Teleport -->
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="SelfRangeDeBuff" id="4649" level="6" /> <!-- Poison -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="11.27100591716" sp="11" />
@@ -3783,18 +3622,6 @@
 	</npc>
 	<npc id="21555" level="65" type="L2Monster" name="Slaughter Executioner">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="SelfBuff" id="4028" level="3" /> <!-- NPC Might -->
-			<skill name="PhysicalSpecial" id="4581" level="6" /> <!-- Hold -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="15.040473372781" sp="15" />
@@ -3880,18 +3707,6 @@
 	</npc>
 	<npc id="21556" level="65" type="L2Monster" name="Slaughter Executioner">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="SelfBuff" id="4074" level="2" /> <!-- NPC Haste -->
-			<skill name="DDMagic" id="4596" level="6" /> <!-- Bleed -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="14.759053254438" sp="14" />
@@ -3960,23 +3775,6 @@
 	</npc>
 	<npc id="21557" level="66" type="L2Monster" name="Bone Snatcher">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<skill name="ClearCorpse" id="4672" level="1" /> <!-- NPC Corpse Remove -->
-			<param name="SummonPrivate" value="21548" /> <!-- Resurrected Knight -->
-			<param name="SummonPrivateAI" value="reanimated_knight" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4155" level="6" /> <!-- NPC Twister - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="6" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4654" level="6" /> <!-- NPC Death Link -->
-			<skill name="DeBuff" id="4047" level="6" /> <!-- Hold -->
-			<skill name="Cancel" id="4650" level="1" /> <!-- NPC AE - Dispel Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -4061,20 +3859,6 @@
 	</npc>
 	<npc id="21558" level="66" type="L2Monster" name="Bone Snatcher">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4155" level="6" /> <!-- NPC Twister - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="6" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4654" level="6" /> <!-- NPC Death Link -->
-			<skill name="DeBuff" id="4098" level="6" /> <!-- Silence -->
-			<skill name="Cancel" id="4652" level="1" /> <!-- NPC AE - Dispel Silence -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -4144,23 +3928,6 @@
 	</npc>
 	<npc id="21559" level="66" type="L2Monster" name="Bone Maker">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<skill name="ClearCorpse" id="4672" level="1" /> <!-- NPC Corpse Remove -->
-			<param name="SummonPrivate" value="21547" /> <!-- Corrupted Knight -->
-			<param name="SummonPrivateAI" value="corrupted_knight" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4597" level="6" /> <!-- Bleed -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="6" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4654" level="6" /> <!-- NPC Death Link -->
-			<skill name="DeBuff" id="4047" level="6" /> <!-- Hold -->
-			<skill name="Cancel" id="4650" level="1" /> <!-- NPC AE - Dispel Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -4245,20 +4012,6 @@
 	</npc>
 	<npc id="21560" level="66" type="L2Monster" name="Bone Shaper">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4597" level="6" /> <!-- Bleed -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="6" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4654" level="6" /> <!-- NPC Death Link -->
-			<skill name="DeBuff" id="4098" level="6" /> <!-- Silence -->
-			<skill name="Cancel" id="4652" level="1" /> <!-- NPC AE - Dispel Silence -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -4343,19 +4096,6 @@
 	</npc>
 	<npc id="21561" level="67" type="L2Monster" name="Sacrificed Man">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="120" />
-			<param name="MoveAroundSocial1" value="120" />
-			<param name="MoveAroundSocial2" value="120" />
-			<skill name="IsTeleport" id="4671" level="1" /> <!-- AV - Teleport -->
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="SelfRangeDeBuff" id="4649" level="6" /> <!-- Poison -->
-			<skill name="PhysicalSpecial" id="4073" level="6" /> <!-- Stun -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="14.739808420584" sp="15" />
@@ -4439,18 +4179,6 @@
 	</npc>
 	<npc id="21562" level="67" type="L2Monster" name="Guillotine's Ghost">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="57" />
-			<param name="MoveAroundSocial1" value="57" />
-			<param name="MoveAroundSocial2" value="57" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="SelfBuff" id="4635" level="3" /> <!-- NPC Buff - Acumen Berserk WildMagic -->
-			<skill name="DDMagic" id="4596" level="6" /> <!-- Bleed -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="15.354644687013" sp="16" />
@@ -4535,23 +4263,6 @@
 	</npc>
 	<npc id="21563" level="67" type="L2Monster" name="Bone Collector">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<skill name="ClearCorpse" id="4672" level="1" /> <!-- NPC Corpse Remove -->
-			<param name="SummonPrivate" value="21549" /> <!-- Corrupted Guard -->
-			<param name="SummonPrivateAI" value="corrupted_guard" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4597" level="6" /> <!-- Bleed -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="6" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4654" level="6" /> <!-- NPC Death Link -->
-			<skill name="DeBuff" id="4047" level="6" /> <!-- Hold -->
-			<skill name="Cancel" id="4650" level="1" /> <!-- NPC AE - Dispel Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -4622,23 +4333,6 @@
 	</npc>
 	<npc id="21564" level="67" type="L2Monster" name="Skull Collector">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<skill name="ClearCorpse" id="4672" level="1" /> <!-- NPC Corpse Remove -->
-			<param name="SummonPrivate" value="21550" /> <!-- Corrupted Guard -->
-			<param name="SummonPrivateAI" value="corrupted_guard_a" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4658" level="6" /> <!-- Hold -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="6" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4654" level="6" /> <!-- NPC Death Link -->
-			<skill name="DeBuff" id="4076" level="3" /> <!-- Decrease Speed -->
-			<skill name="Cancel" id="4651" level="3" /> <!-- NPC AE - Dispel Slow -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -4725,20 +4419,6 @@
 	</npc>
 	<npc id="21565" level="68" type="L2Monster" name="Bone Animator">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4155" level="6" /> <!-- NPC Twister - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="6" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4654" level="6" /> <!-- NPC Death Link -->
-			<skill name="DeBuff" id="4047" level="6" /> <!-- Hold -->
-			<skill name="Cancel" id="4650" level="1" /> <!-- NPC AE - Dispel Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -4824,20 +4504,6 @@
 	</npc>
 	<npc id="21566" level="68" type="L2Monster" name="Skull Animator">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4597" level="6" /> <!-- Bleed -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="6" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4654" level="6" /> <!-- NPC Death Link -->
-			<skill name="DeBuff" id="4098" level="6" /> <!-- Silence -->
-			<skill name="Cancel" id="4652" level="1" /> <!-- NPC AE - Dispel Silence -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -4923,19 +4589,6 @@
 	</npc>
 	<npc id="21567" level="68" type="L2Monster" name="Bone Slayer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4573" level="6" /> <!-- NPC Sonic Blaster -->
-			<skill name="DDMagic1" id="4654" level="6" /> <!-- NPC Death Link -->
-			<skill name="DDMagic2" id="4138" level="6" /> <!-- NPC AE - Corpse Burst -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -5018,20 +4671,6 @@
 	</npc>
 	<npc id="21568" level="68" type="L2Monster" name="Devil Bat">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4584" level="6" /> <!-- Reducing P. Def Stun -->
-			<skill name="DDMagic1" id="4664" level="6" /> <!-- NPC 100% HP Drain -->
-			<skill name="SelfBuff" id="4029" level="3" /> <!-- NPC Shield -->
-			<skill name="DeBuff" id="4596" level="6" /> <!-- Bleed -->
-		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="16.057958477509" sp="17" />
@@ -5116,17 +4755,6 @@
 	</npc>
 	<npc id="21569" level="68" type="L2Monster" name="Devil Bat">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="DDMagic" id="4664" level="6" /> <!-- NPC 100% HP Drain -->
-		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="13.04865916955" sp="14" />
@@ -5193,19 +4821,6 @@
 	</npc>
 	<npc id="21570" level="69" type="L2Monster" name="Ghost of Betrayer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="70" />
-			<param name="MoveAroundSocial1" value="70" />
-			<param name="MoveAroundSocial2" value="70" />
-			<skill name="IsTeleport" id="4671" level="1" /> <!-- AV - Teleport -->
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="SelfRangeDeBuff" id="4649" level="6" /> <!-- Poison -->
-			<skill name="DDMagic" id="4592" level="6" /> <!-- Decrease P. Def. -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="13.124343625289" sp="14" />
@@ -5290,18 +4905,6 @@
 	</npc>
 	<npc id="21571" level="69" type="L2Monster" name="Ghost of Rebellion Soldier">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="215" />
-			<param name="MoveAroundSocial1" value="215" />
-			<param name="MoveAroundSocial2" value="215" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="SelfBuff" id="4074" level="2" /> <!-- NPC Haste -->
-			<skill name="PhysicalSpecial" id="4581" level="6" /> <!-- Hold -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="150" lhand="103" /> <!-- Elemental Sword / Tower Shield -->
@@ -5387,23 +4990,6 @@
 	</npc>
 	<npc id="21572" level="69" type="L2Monster" name="Bone Sweeper">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<skill name="ClearCorpse" id="4672" level="1" /> <!-- NPC Corpse Remove -->
-			<param name="SummonPrivate" value="21551" /> <!-- Resurrected Guard -->
-			<param name="SummonPrivateAI" value="reanimated_guard" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4597" level="6" /> <!-- Bleed -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="6" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4654" level="6" /> <!-- NPC Death Link -->
-			<skill name="DeBuff" id="4076" level="3" /> <!-- Decrease Speed -->
-			<skill name="Cancel" id="4651" level="3" /> <!-- NPC AE - Dispel Slow -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -5492,20 +5078,6 @@
 	</npc>
 	<npc id="21573" level="69" type="L2Monster" name="Atrox">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4582" level="6" /> <!-- Poison -->
-			<skill name="DDMagic1" id="4664" level="6" /> <!-- NPC 100% HP Drain -->
-			<skill name="SelfBuff" id="4028" level="3" /> <!-- NPC Might -->
-			<skill name="DeBuff" id="4596" level="6" /> <!-- Bleed -->
-		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="15.365469439193" sp="17" />
@@ -5591,19 +5163,6 @@
 	</npc>
 	<npc id="21574" level="70" type="L2Monster" name="Bone Grinder">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4573" level="7" /> <!-- NPC Sonic Blaster -->
-			<skill name="DDMagic1" id="4654" level="7" /> <!-- NPC Death Link -->
-			<skill name="DDMagic2" id="4138" level="7" /> <!-- NPC AE - Corpse Burst -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -5689,17 +5248,6 @@
 	</npc>
 	<npc id="21575" level="70" type="L2Monster" name="Bone Grinder">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4658" level="7" /> <!-- Hold -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" /> <!-- NPC Fire Burn - Magic -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -5766,19 +5314,6 @@
 	</npc>
 	<npc id="21576" level="70" type="L2Monster" name="Ghost of Guillotine">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="57" />
-			<param name="MoveAroundSocial1" value="57" />
-			<param name="MoveAroundSocial2" value="57" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4622" level="7" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4664" level="7" /> <!-- NPC 100% HP Drain -->
-			<skill name="DeBuff" id="4596" level="7" /> <!-- Bleed -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="15.616326530612" sp="18" />
@@ -5865,18 +5400,6 @@
 	</npc>
 	<npc id="21577" level="70" type="L2Monster" name="Ghost of Guillotine">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="57" />
-			<param name="MoveAroundSocial1" value="57" />
-			<param name="MoveAroundSocial2" value="57" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4593" level="7" /> <!-- Decrease P. Def. -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DeBuff" id="4596" level="7" /> <!-- Bleed -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="16.402857142857" sp="19" />
@@ -5945,19 +5468,6 @@
 	</npc>
 	<npc id="21578" level="71" type="L2Monster" name="Behemoth Zombie">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<skill name="IsTeleport" id="4671" level="1" /> <!-- AV - Teleport -->
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="SelfRangeDeBuff" id="4649" level="7" /> <!-- Poison -->
-			<skill name="PhysicalSpecial" id="4073" level="7" /> <!-- Stun -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="17.584209482246" sp="21" />
@@ -6043,18 +5553,6 @@
 	</npc>
 	<npc id="21579" level="71" type="L2Monster" name="Ghost of Rebellion Leader">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="SelfBuff" id="4635" level="3" /> <!-- NPC Buff - Acumen Berserk WildMagic -->
-			<skill name="DDMagic" id="4596" level="7" /> <!-- Bleed -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="221" lhand="945" /> <!-- Assassin Knife / Skeleton Buckler -->
@@ -6144,20 +5642,6 @@
 	</npc>
 	<npc id="21580" level="71" type="L2Monster" name="Bone Caster">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4155" level="7" /> <!-- NPC Twister - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4654" level="7" /> <!-- NPC Death Link -->
-			<skill name="DeBuff" id="4047" level="7" /> <!-- Hold -->
-			<skill name="Cancel" id="4650" level="1" /> <!-- NPC AE - Dispel Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -6245,20 +5729,6 @@
 	</npc>
 	<npc id="21581" level="71" type="L2Monster" name="Bone Puppeteer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4597" level="7" /> <!-- Bleed -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4654" level="7" /> <!-- NPC Death Link -->
-			<skill name="DeBuff" id="4098" level="7" /> <!-- Silence -->
-			<skill name="Cancel" id="4652" level="1" /> <!-- NPC AE - Dispel Silence -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -6345,21 +5815,6 @@
 	</npc>
 	<npc id="21582" level="71" type="L2Monster" name="Vampire Soldier">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4582" level="7" /> <!-- Poison -->
-			<skill name="DDMagic1" id="4664" level="7" /> <!-- NPC 100% HP Drain -->
-			<skill name="SelfBuff" id="4028" level="3" /> <!-- NPC Might -->
-			<skill name="DeBuff" id="4596" level="7" /> <!-- Bleed -->
-			<skill name="DDMagic2" id="4663" level="1" /> <!-- NPC Hate -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="234" /> <!-- Demon's Dagger -->
@@ -6450,23 +5905,6 @@
 	</npc>
 	<npc id="21583" level="72" type="L2Monster" name="Bone Scavenger">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<skill name="ClearCorpse" id="4672" level="1" /> <!-- NPC Corpse Remove -->
-			<param name="SummonPrivate" value="21552" /> <!-- Resurrected Guard -->
-			<param name="SummonPrivateAI" value="reanimated_guard_a" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4597" level="7" /> <!-- Bleed -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4654" level="7" /> <!-- NPC Death Link -->
-			<skill name="DeBuff" id="4047" level="7" /> <!-- Hold -->
-			<skill name="Cancel" id="4650" level="1" /> <!-- NPC AE - Dispel Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -6557,20 +5995,6 @@
 	</npc>
 	<npc id="21584" level="72" type="L2Monster" name="Bone Scavenger">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4257" level="7" /> <!-- NPC Hydroblast - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4654" level="7" /> <!-- NPC Death Link -->
-			<skill name="DeBuff" id="4098" level="7" /> <!-- Silence -->
-			<skill name="Cancel" id="4652" level="1" /> <!-- NPC AE - Dispel Silence -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -6641,21 +6065,6 @@
 	</npc>
 	<npc id="21585" level="72" type="L2Monster" name="Vampire Magician">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4590" level="7" /> <!-- Decrease Speed -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4664" level="7" /> <!-- NPC 100% HP Drain -->
-			<skill name="DeBuff" id="4596" level="7" /> <!-- Bleed -->
-			<skill name="DeBuff1" id="4047" level="6" /> <!-- Hold -->
-			<skill name="Cancel" id="4650" level="1" /> <!-- NPC AE - Dispel Hold -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="946" /> <!-- Skeleton Dagger -->
@@ -6748,20 +6157,6 @@
 	</npc>
 	<npc id="21586" level="72" type="L2Monster" name="Vampire Adept">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="95" />
-			<param name="MoveAroundSocial1" value="95" />
-			<param name="MoveAroundSocial2" value="95" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4152" level="7" /> <!-- NPC HP Drain - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4664" level="7" /> <!-- NPC 100% HP Drain -->
-			<skill name="DeBuff" id="4596" level="7" /> <!-- Bleed -->
-			<skill name="W_SelfRangeDDMagic" id="4033" level="7" /> <!-- NPC Burn -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="99" /> <!-- Apprentice's Spellbook -->
@@ -6852,21 +6247,6 @@
 	</npc>
 	<npc id="21587" level="72" type="L2Monster" name="Vampire Warrior">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4582" level="7" /> <!-- Poison -->
-			<skill name="DDMagic1" id="4664" level="7" /> <!-- NPC 100% HP Drain -->
-			<skill name="SelfBuff" id="4099" level="2" /> <!-- NPC Berserk -->
-			<skill name="DeBuff" id="4596" level="7" /> <!-- Bleed -->
-			<skill name="DDMagic2" id="4663" level="1" /> <!-- NPC Hate -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="234" /> <!-- Demon's Dagger -->
@@ -6959,20 +6339,6 @@
 	</npc>
 	<npc id="21588" level="73" type="L2Monster" name="Vampire Wizard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<skill name="TeleportEffect" id="4671" level="1" /> <!-- AV - Teleport -->
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4152" level="7" /> <!-- NPC HP Drain - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4664" level="7" /> <!-- NPC 100% HP Drain -->
-			<skill name="DeBuff" id="4596" level="7" /> <!-- Bleed -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="946" /> <!-- Skeleton Dagger -->
@@ -7060,20 +6426,6 @@
 	</npc>
 	<npc id="21589" level="73" type="L2Monster" name="Vampire Wizard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<skill name="TeleportEffect" id="4671" level="1" /> <!-- AV - Teleport -->
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4622" level="7" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4664" level="7" /> <!-- NPC 100% HP Drain -->
-			<skill name="DeBuff" id="4596" level="7" /> <!-- Bleed -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="946" /> <!-- Skeleton Dagger -->
@@ -7148,19 +6500,6 @@
 	</npc>
 	<npc id="21590" level="73" type="L2Monster" name="Vampire Magister">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="95" />
-			<param name="MoveAroundSocial1" value="95" />
-			<param name="MoveAroundSocial2" value="95" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4157" level="7" /> <!-- NPC Blaze - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4664" level="7" /> <!-- NPC 100% HP Drain -->
-			<skill name="DeBuff" id="4596" level="7" /> <!-- Bleed -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="99" /> <!-- Apprentice's Spellbook -->
@@ -7248,20 +6587,6 @@
 	</npc>
 	<npc id="21591" level="73" type="L2Monster" name="Vampire Magister">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="95" />
-			<param name="MoveAroundSocial1" value="95" />
-			<param name="MoveAroundSocial2" value="95" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4157" level="7" /> <!-- NPC Blaze - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic" id="4664" level="7" /> <!-- NPC 100% HP Drain -->
-			<skill name="DeBuff" id="4596" level="7" /> <!-- Bleed -->
-			<skill name="W_SelfRangeDDMagic" id="4033" level="7" /> <!-- NPC Burn -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="99" /> <!-- Apprentice's Spellbook -->
@@ -7336,17 +6661,6 @@
 	</npc>
 	<npc id="21592" level="73" type="L2Monster" name="Vampire Magister">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="95" />
-			<param name="MoveAroundSocial1" value="95" />
-			<param name="MoveAroundSocial2" value="95" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4257" level="7" /> <!-- NPC Hydroblast - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" /> <!-- NPC Fire Burn - Magic -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="99" /> <!-- Apprentice's Spellbook -->
@@ -7418,20 +6732,6 @@
 	</npc>
 	<npc id="21593" level="73" type="L2Monster" name="Vampire Warlord">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4582" level="7" /> <!-- Poison -->
-			<skill name="DDMagic1" id="4664" level="7" /> <!-- NPC 100% HP Drain -->
-			<skill name="SelfBuff" id="4585" level="3" /> <!-- NPC Clan Buff - Berserk Might -->
-			<skill name="DeBuff" id="4596" level="7" /> <!-- Bleed -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="6723" /> <!-- Monster Only (Vampire Warrior) -->
@@ -7520,21 +6820,6 @@
 	</npc>
 	<npc id="21594" level="73" type="L2Monster" name="Vampire Warlord">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4582" level="7" /> <!-- Poison -->
-			<skill name="DDMagic1" id="4664" level="7" /> <!-- NPC 100% HP Drain -->
-			<skill name="SelfBuff" id="4028" level="3" /> <!-- NPC Might -->
-			<skill name="DeBuff" id="4596" level="7" /> <!-- Bleed -->
-			<skill name="DDMagic2" id="4663" level="1" /> <!-- NPC Hate -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="6723" /> <!-- Monster Only (Vampire Warrior) -->
@@ -7608,19 +6893,6 @@
 	</npc>
 	<npc id="21595" level="73" type="L2Monster" name="Vampire Warlord">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="DDMagic1" id="4664" level="7" /> <!-- NPC 100% HP Drain -->
-			<skill name="DDMagic2" id="4078" level="7" /> <!-- NPC Flamestrike -->
-			<skill name="DeBuff" id="4663" level="1" /> <!-- NPC Hate -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="6723" /> <!-- Monster Only (Vampire Warrior) -->
@@ -7692,26 +6964,6 @@
 	</npc>
 	<npc id="21596" level="68" type="L2Monster" name="Requiem Lord">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<minions name="Privates">
-				<npc id="21597" count="1" respawnTime="0" weightPoint="1" /> <!-- Requiem Behemoth -->
-				<npc id="21598" count="1" respawnTime="0" weightPoint="1" /> <!-- Requiem Behemoth -->
-			</minions>
-			<skill name="ClearCorpse" id="4672" level="1" /> <!-- NPC Corpse Remove -->
-			<param name="SummonPrivate" value="21561" /> <!-- Sacrificed Man -->
-			<param name="SummonPrivateAI" value="sacrificed_one" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<skill name="W_LongRangeDDMagic" id="4593" level="6" /> <!-- Decrease P. Def. -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="6" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic1" id="4654" level="6" /> <!-- NPC Death Link -->
-			<skill name="DDmagic2" id="4138" level="6" /> <!-- NPC AE - Corpse Burst -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
@@ -7778,20 +7030,6 @@
 	</npc>
 	<npc id="21597" level="67" type="L2Monster" name="Requiem Behemoth">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="IsPrivate" value="1" />
-			<skill name="IsTeleport" id="4671" level="1" /> <!-- AV - Teleport -->
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="SelfRangeDeBuff" id="4649" level="6" /> <!-- Poison -->
-			<skill name="DDMagic" id="4592" level="6" /> <!-- Decrease P. Def. -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="14.371129427489" sp="15" />
@@ -7859,20 +7097,6 @@
 	</npc>
 	<npc id="21598" level="67" type="L2Monster" name="Requiem Behemoth">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="IsPrivate" value="1" />
-			<skill name="IsTeleport" id="4671" level="1" /> <!-- AV - Teleport -->
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="SelfRangeDeBuff" id="4649" level="6" /> <!-- Poison -->
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="16.70683893963" sp="18" />
@@ -7936,26 +7160,6 @@
 	</npc>
 	<npc id="21599" level="71" type="L2Monster" name="Requiem Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<minions name="Privates">
-				<npc id="21600" count="1" respawnTime="0" weightPoint="1" /> <!-- Requiem Behemoth -->
-				<npc id="21601" count="1" respawnTime="0" weightPoint="1" /> <!-- Requiem Behemoth -->
-			</minions>
-			<skill name="ClearCorpse" id="4672" level="1" /> <!-- NPC Corpse Remove -->
-			<param name="SummonPrivate" value="21570" /> <!-- Ghost of Betrayer -->
-			<param name="SummonPrivateAI" value="restless_rebel" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<skill name="W_LongRangeDDMagic" id="4257" level="7" /> <!-- NPC Hydroblast - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DDMagic1" id="4654" level="7" /> <!-- NPC Death Link -->
-			<skill name="DDmagic2" id="4138" level="7" /> <!-- NPC AE - Corpse Burst -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
