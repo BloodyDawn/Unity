@@ -2,14 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="18900" level="84" type="L2FeedableBeast" name="Full Grown Grendel">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="my_type" value="4" />
-			<param name="my_grade" value="4" />
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6556" level="17" /> <!-- NPC water attack -->
-			<skill name="Buff" id="4028" level="2" /> <!-- NPC Might -->
-			<skill name="DeBuff" id="4592" level="10" /> <!-- Decrease P. Def. -->
-		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="32.106009070295" sp="54" />
@@ -80,12 +72,6 @@
 	</npc>
 	<npc id="18901" level="83" type="L2Monster" name="Kookaburra" title="Golden">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6556" level="16" /> <!-- NPC water attack -->
-			<skill name="Buff" id="4074" level="1" /> <!-- NPC Haste -->
-			<skill name="Skill_Display" id="6234" level="1" /> <!-- Presentation - Adena Firework -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -128,12 +114,6 @@
 	</npc>
 	<npc id="18902" level="83" type="L2Monster" name="Cougar" title="Golden">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6556" level="16" /> <!-- NPC water attack -->
-			<skill name="Buff" id="4074" level="1" /> <!-- NPC Haste -->
-			<skill name="Skill_Display" id="6234" level="1" /> <!-- Presentation - Adena Firework -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -176,12 +156,6 @@
 	</npc>
 	<npc id="18903" level="84" type="L2Monster" name="Buffalo" title="Golden">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6556" level="17" /> <!-- NPC water attack -->
-			<skill name="Buff" id="4028" level="2" /> <!-- NPC Might -->
-			<skill name="Skill_Display" id="6234" level="1" /> <!-- Presentation - Adena Firework -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -224,12 +198,6 @@
 	</npc>
 	<npc id="18904" level="84" type="L2Monster" name="Grendel" title="Golden">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6556" level="17" /> <!-- NPC water attack -->
-			<skill name="Buff" id="4028" level="2" /> <!-- NPC Might -->
-			<skill name="Skill_Display" id="6234" level="1" /> <!-- Presentation - Adena Firework -->
-		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -271,10 +239,6 @@
 	</npc>
 	<npc id="18905" level="84" type="L2Monster" name="Farm Bandit" title="Crazed">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6559" level="17" /> <!-- NPC water attack -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="93.358276643991" sp="158" />
@@ -315,11 +279,6 @@
 	</npc>
 	<npc id="18906" level="84" type="L2Monster" name="Farm Bandit">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6559" level="16" /> <!-- NPC water attack -->
-			<skill name="SelfBuff" id="4028" level="3" /> <!-- NPC Might -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="6.7583616780045" sp="11" />
@@ -404,11 +363,6 @@
 	</npc>
 	<npc id="18907" level="84" type="L2Monster" name="Beast Devourer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6566" level="17" /> <!-- NPC water shot -->
-			<skill name="SelfBuff" id="4074" level="2" /> <!-- NPC Haste -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="7.1370464852608" sp="12" />
@@ -493,9 +447,6 @@
 	</npc>
 	<npc id="18908" level="83" type="L2Monster" name="Sel Mahum Chef">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6330" level="1" /> <!-- Salmon Porridge Attack -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.8207286979242" sp="6" />
@@ -542,9 +493,6 @@
 	</npc>
 	<npc id="18909" level="83" type="L2Monster" name="Solina Knights">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="PhysicalSpecial" id="6311" level="1" /> <!-- Solina Thrust -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8211" lhand="8210" /> <!-- Monster Only (Monk Warrior Sword) / Monster Only (Monk Warrior Shield) -->
@@ -613,10 +561,6 @@
 	</npc>
 	<npc id="18910" level="83" type="L2Monster" name="Solina Knight Captain">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="PhysicalSpecial" id="6312" level="1" /> <!-- Launch Sacred Sword Energy -->
-			<skill name="Buff" id="6313" level="1" /> <!-- Solina Bless -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.6275221367397" sp="15" />
@@ -880,12 +824,6 @@
 	</npc>
 	<npc id="18917" level="72" type="L2Monster" name="Pavel Safety Device">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="Privates01_sil" value="22801" /> <!-- Cruel Pincer Golem -->
-			<param name="Privates01_ai" value="golem_cannon1_p" />
-			<param name="Privates02_sil" value="22804" /> <!-- Horrifying Jackhammer Golem -->
-			<param name="Privates02_ai" value="golem_prop1_p" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1260,9 +1198,6 @@
 	</npc>
 	<npc id="18926" level="85" type="L2QuestGuard" name="Mercenary Archer" title="Jinia Guild">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="4032" level="9" /> <!-- NPC Strike -->
-		</parameters>
 		<race>ELF</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1298,10 +1233,6 @@
 	</npc>
 	<npc id="18927" level="84" type="L2Npc" name="Fire">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6331" level="1" /> <!-- Camp Fire Tired -->
-			<skill name="Skill02_ID" id="6332" level="1" /> <!-- Camp Fire Full -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -1370,9 +1301,6 @@
 	</npc>
 	<npc id="18929" level="84" type="L2Monster" name="Ward of the Grail">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6326" level="1" /> <!-- Martyr's Happiness -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">

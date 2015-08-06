@@ -2,14 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="29100" level="83" type="L2Monster" name="Crystal Prison Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="7" />
-			<param name="AttackRange" value="0" />
-			<skill name="Skill01_ID" id="5360" level="9" /> <!-- NPC(party) - Physical Range Close Range Attack - Dark -->
-			<skill name="Skill02_ID" id="5043" level="9" /> <!-- NPC Super Sonic Blaster -->
-			<skill name="PhysicalSpecial1" id="4032" level="9" /> <!-- NPC Strike -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -126,9 +118,6 @@
 	</npc>
 	<npc id="29103" level="83" type="L2Monster" name="Baylor" title="Warden">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="d_skill1" id="5401" level="1" /> <!-- Stun -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -166,10 +155,6 @@
 	</npc>
 	<npc id="29104" level="83" type="L2Monster" name="Crystal Prison Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="d_skill1" id="5405" level="1" /> <!-- Presentation - Demonic 1 -->
-			<skill name="d_skill2" id="5406" level="1" /> <!-- Presentation - Demonic 2 -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -208,11 +193,6 @@
 	</npc>
 	<npc id="29105" level="83" type="L2Monster" name="Crystalline Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="d_skill1" id="5407" level="1" /> <!-- Presentation - Crystalline Golem 1 -->
-			<skill name="d_skill2" id="5408" level="1" /> <!-- Presentation - Crystalline Golem 2 -->
-			<skill name="d_skill3" id="5409" level="1" /> <!-- Presentation - Crystalline Golem 3 -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -549,13 +529,6 @@
 	</npc>
 	<npc id="29115" level="83" type="L2Monster" name="Crystal Prison Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="7" />
-			<param name="AttackRange" value="0" />
-			<skill name="Skill01_ID" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="5043" level="9" /> <!-- NPC Super Sonic Blaster -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1053,18 +1026,6 @@
 	</npc>
 	<npc id="29129" level="29" type="L2RaidBoss" name="Lost Captain">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="29130" count="2" respawnTime="300" weightPoint="1" /> <!-- Lost Guard -->
-				<npc id="29131" count="2" respawnTime="300" weightPoint="1" /> <!-- Lost Assistant Guard -->
-			</minions>
-			<param name="PCCafe_Reward" value="13002" /> <!-- Essence of Kamaloka -->
-			<param name="PCCafe_Number" value="5" />
-			<skill name="RangeDDMagic_a" id="4178" level="2" /> <!-- BOSS Flamestrike -->
-			<skill name="Debuff1" id="5699" level="1" /> <!-- Decrease P. Def -->
-			<skill name="Debuff2" id="5700" level="1" /> <!-- Magic Resistance Decrease -->
-			<skill name="Debuff3" id="5701" level="1" /> <!-- Decrease P. Atk -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="1192.1831153389" sp="240" />

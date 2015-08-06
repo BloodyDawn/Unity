@@ -2,10 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="25200" level="71" type="L2Monster" name="Sheshark's Family" title="Raid Fighter">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="DDMagic_a" id="4195" level="7" /> <!-- BOSS Twister -->
-			<skill name="Debuff_a" id="4200" level="7" /> <!-- Decrease Atk. Spd. -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -43,9 +39,6 @@
 	</npc>
 	<npc id="25201" level="71" type="L2Monster" name="Sheshark's Escort" title="Raid Fighter">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="PhysicalSpecial_a" id="4724" level="7" /> <!-- Stun -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6370" /> <!-- Saint Spear -->
@@ -83,14 +76,6 @@
 	</npc>
 	<npc id="25202" level="74" type="L2RaidBoss" name="Krokian Padisha Sobekk" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25203" count="2" respawnTime="360" weightPoint="1" /> <!-- Parhit Padisha Sobekk -->
-				<npc id="25204" count="2" respawnTime="360" weightPoint="1" /> <!-- Krokian Padisha Sobekk -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm01_A" />
-			<skill name="RangeDDMagic_a" id="4178" level="7" /> <!-- BOSS Flamestrike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="5130" /> <!-- Nos Sword -->

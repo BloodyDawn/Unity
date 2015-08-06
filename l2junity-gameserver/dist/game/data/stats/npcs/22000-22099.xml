@@ -2,16 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="22001" level="25" type="L2Monster" name="Grim Wolf">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="60" />
-			<param name="MoveAroundSocial1" value="60" />
-			<param name="MoveAroundSocial2" value="60" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.5232" sp="1" />
@@ -91,17 +81,6 @@
 	</npc>
 	<npc id="22002" level="26" type="L2Monster" name="Grim Grizzly">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4032" level="2" /> <!-- NPC Strike -->
-		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.4852071005917" sp="1" />
@@ -178,15 +157,6 @@
 	</npc>
 	<npc id="22003" level="27" type="L2Monster" name="Grave Robber Scout">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="165" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="8527" /> <!-- Monster Only (Reinforced Bow) -->
@@ -267,17 +237,6 @@
 	</npc>
 	<npc id="22004" level="27" type="L2Monster" name="Grave Robber Lookout">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="Buff" id="4028" level="2" /> <!-- NPC Might -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.4115226337449" sp="1" />
@@ -358,17 +317,6 @@
 	</npc>
 	<npc id="22005" level="28" type="L2Monster" name="Grave Robber Ranger">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="70" />
-			<param name="MoveAroundSocial2" value="144" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4032" level="2" /> <!-- NPC Strike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="8529" /> <!-- Monster Only (Knife) -->
@@ -450,17 +398,6 @@
 	</npc>
 	<npc id="22006" level="29" type="L2Monster" name="Grave Robber Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="88" />
-			<param name="MoveAroundSocial2" value="170" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4032" level="2" /> <!-- NPC Strike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8528" /> <!-- Monster Only (Doom Hammer) -->
@@ -544,18 +481,6 @@
 	</npc>
 	<npc id="22017" level="30" type="L2Monster" name="Bandit Sweeper">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="115" />
-			<param name="MoveAroundSocial1" value="115" />
-			<param name="MoveAroundSocial2" value="115" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="EffectSkill" id="4470" level="1" /> <!-- NPC Spoils -->
-			<skill name="PhysicalSpecial" id="4032" level="3" /> <!-- NPC Strike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="152" /> <!-- Heavy Chisel -->
@@ -640,16 +565,6 @@
 	</npc>
 	<npc id="22018" level="31" type="L2Monster" name="Bandit Hound">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="60" />
-			<param name="MoveAroundSocial1" value="60" />
-			<param name="MoveAroundSocial2" value="60" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.3423517169615" sp="83" />
@@ -726,16 +641,6 @@
 	</npc>
 	<npc id="22019" level="32" type="L2Monster" name="Bandit Watchman">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="120" />
-			<param name="MoveAroundSocial1" value="120" />
-			<param name="MoveAroundSocial2" value="120" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="PhysicalSpecial" id="4040" level="3" /> <!-- NPC Bow Attack -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="273" /> <!-- Compound Bow -->
@@ -820,17 +725,6 @@
 	</npc>
 	<npc id="22020" level="33" type="L2Monster" name="Snow Lynx">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4032" level="3" /> <!-- NPC Strike -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.3425160697888" sp="97" />
@@ -904,17 +798,6 @@
 	</npc>
 	<npc id="22021" level="34" type="L2Monster" name="Bandit Undertaker">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="115" />
-			<param name="MoveAroundSocial1" value="115" />
-			<param name="MoveAroundSocial2" value="115" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4151" level="3" /> <!-- NPC Windstrike - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="3" /> <!-- NPC Aura Burn - Magic -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="66" lhand="102" /> <!-- Gladius / Round Shield -->
@@ -996,18 +879,6 @@
 	</npc>
 	<npc id="22022" level="35" type="L2Monster" name="Bandit Assassin">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4067" level="3" /> <!-- NPC Mortal Blow -->
-			<skill name="MagicHeal" id="5040" level="3" /> <!-- NPC - Healing Potion -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="221" /> <!-- Assassin Knife -->
@@ -1087,18 +958,6 @@
 	</npc>
 	<npc id="22023" level="36" type="L2Monster" name="Bandit Warrior">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="130" />
-			<param name="MoveAroundSocial1" value="130" />
-			<param name="MoveAroundSocial2" value="130" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4032" level="3" /> <!-- NPC Strike -->
-			<skill name="MagicHeal" id="5040" level="3" /> <!-- NPC - Healing Potion -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="2" /> <!-- Long Sword -->
@@ -1180,18 +1039,6 @@
 	</npc>
 	<npc id="22024" level="37" type="L2Monster" name="Bandit Inspector">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="115" />
-			<param name="MoveAroundSocial1" value="115" />
-			<param name="MoveAroundSocial2" value="115" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="EffectSkill" id="4470" level="1" /> <!-- NPC Spoils -->
-			<skill name="PhysicalSpecial" id="4032" level="3" /> <!-- NPC Strike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="66" /> <!-- Gladius -->
@@ -1274,17 +1121,6 @@
 	</npc>
 	<npc id="22025" level="38" type="L2Monster" name="Frozen Wasteland Werewolf">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="72" />
-			<param name="MoveAroundSocial1" value="72" />
-			<param name="MoveAroundSocial2" value="72" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4032" level="3" /> <!-- NPC Strike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.7645429362881" sp="166" />
@@ -1358,18 +1194,6 @@
 	</npc>
 	<npc id="22026" level="40" type="L2Monster" name="Bandit Captain">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4032" level="3" /> <!-- NPC Strike -->
-			<skill name="MagicHeal" id="5040" level="4" /> <!-- NPC - Healing Potion -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="69" lhand="19" /> <!-- Bastard Sword / Small Shield -->
@@ -1455,17 +1279,6 @@
 	</npc>
 	<npc id="22027" level="39" type="L2Monster" name="Forgotten Crewman">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="3" /> <!-- NPC Strike -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="6.7514792899408" sp="2" />
@@ -1536,17 +1349,6 @@
 	</npc>
 	<npc id="22028" level="40" type="L2Monster" name="Vagabond of the Ruins">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="187" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="DDMagic" id="4100" level="4" /> <!-- NPC Prominence -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="8530" /> <!-- Monster Only (Squire's Sword) -->
@@ -1619,16 +1421,6 @@
 	</npc>
 	<npc id="22050" level="46" type="L2Monster" name="Probe Golem Prodigy IV">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="96" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="LongRangePhysicalSpecial" id="4105" level="4" /> <!-- NPC Straight Beam Cannon -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.3931947069943" sp="1" />
@@ -1698,17 +1490,6 @@
 	</npc>
 	<npc id="22051" level="47" type="L2Monster" name="Spelunking Spider">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="DeBuff" id="4035" level="4" /> <!-- Poison -->
-		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.4938886373925" sp="1" />
@@ -1774,18 +1555,6 @@
 	</npc>
 	<npc id="22052" level="47" type="L2Monster" name="Menacing Jackhammer Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="122" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4472" level="5" /> <!-- NPC Strike Golem -->
-			<skill name="SelfRangePhysicalSpecial" id="4101" level="5" /> <!-- NPC Spinning Slash -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.6568583069262" sp="1" />
@@ -1856,18 +1625,6 @@
 	</npc>
 	<npc id="22053" level="48" type="L2Monster" name="Horrifying Cannon Golem I">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="92" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="LongRangePhysicalSpecial" id="4473" level="4" /> <!-- Stun -->
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="SelfRangePhysicalSpecial" id="4232" level="5" /> <!-- NPC AE Strike -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.4409722222222" sp="1" />
@@ -1939,23 +1696,6 @@
 	</npc>
 	<npc id="22054" level="48" type="L2Monster" name="Horrifying Cannon Golem IV">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="92" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="LongRangePhysicalSpecial" id="4473" level="4" /> <!-- Stun -->
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="SelfRangePhysicalSpecial" id="4232" level="5" /> <!-- NPC AE Strike -->
-			<skill name="DeBuff1" id="4492" level="5" /> <!-- Enlarging Head Curse -->
-			<skill name="DeBuff2" id="4037" level="1" /> <!-- Decrease P. Atk. -->
-			<skill name="DeBuff3" id="4054" level="2" /> <!-- Decrease P. Def. -->
-			<skill name="DeBuff4" id="4028" level="2" /> <!-- NPC Might -->
-			<skill name="DeBuff5" id="4029" level="2" /> <!-- NPC Shield -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.5490451388889" sp="1" />
@@ -2032,18 +1772,6 @@
 	</npc>
 	<npc id="22055" level="49" type="L2Monster" name="Cruel Vice Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="121" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4472" level="5" /> <!-- NPC Strike Golem -->
-			<skill name="SelfRangePhysicalSpecial" id="4101" level="5" /> <!-- NPC Spinning Slash -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.6568096626406" sp="2" />
@@ -2114,16 +1842,6 @@
 	</npc>
 	<npc id="22056" level="49" type="L2Monster" name="Probe Golem Champion I">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="96" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="LongRangePhysicalSpecial" id="4105" level="4" /> <!-- NPC Straight Beam Cannon -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.2898792169929" sp="1" />
@@ -2193,16 +1911,6 @@
 	</npc>
 	<npc id="22057" level="50" type="L2Monster" name="Spelunking Ant">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.494" sp="1" />
@@ -2267,18 +1975,6 @@
 	</npc>
 	<npc id="22058" level="51" type="L2Monster" name="Horrifying Excavator Golem III">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="83" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="PhysicalSpecial" id="4472" level="5" /> <!-- NPC Strike Golem -->
-			<skill name="SelfRangePhysicalSpecial" id="4101" level="5" /> <!-- NPC Spinning Slash -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.6570549788543" sp="2" />
@@ -2349,23 +2045,6 @@
 	</npc>
 	<npc id="22059" level="51" type="L2Monster" name="Bloodthirsty Ginzu Golem VII">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="94" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="SelfBuff1" id="4471" level="1" /> <!-- NPC Anger -->
-			<skill name="SelfBuff2" id="4471" level="2" /> <!-- NPC Anger -->
-			<skill name="Buff1" id="4471" level="3" /> <!-- NPC Anger -->
-			<skill name="Buff2" id="4471" level="5" /> <!-- NPC Anger -->
-			<skill name="Buff3" id="4471" level="7" /> <!-- NPC Anger -->
-			<skill name="Buff4" id="4471" level="9" /> <!-- NPC Anger -->
-			<skill name="SelfRangePhysicalSpecial" id="4641" level="5" /> <!-- NPC Super Strike -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.8604382929642" sp="6" />
@@ -2414,19 +2093,6 @@
 	</npc>
 	<npc id="22060" level="52" type="L2Monster" name="Horrifying Cannon Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="93" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="SelfRangePhysicalSpecial" id="4232" level="5" /> <!-- NPC AE Strike -->
-			<skill name="DeBuff" id="4663" level="1" /> <!-- NPC Hate -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="8.2433431952663" sp="5" />
@@ -2476,17 +2142,6 @@
 	</npc>
 	<npc id="22061" level="51" type="L2Monster" name="Horrifying Cannon Golem III">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="96" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="DDMagic" id="4105" level="4" /> <!-- NPC Straight Beam Cannon -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.4232987312572" sp="3" />
@@ -2533,18 +2188,6 @@
 	</npc>
 	<npc id="22062" level="52" type="L2Monster" name="Horrifying Jackhammer Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="122" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4472" level="5" /> <!-- NPC Strike Golem -->
-			<skill name="SelfRangePhysicalSpecial" id="4101" level="5" /> <!-- NPC Spinning Slash -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="7.7511094674556" sp="5" />
@@ -2593,23 +2236,6 @@
 	</npc>
 	<npc id="22063" level="52" type="L2Monster" name="Ginzu Golem Prodigy X">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="94" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="SelfBuff1" id="4471" level="1" /> <!-- NPC Anger -->
-			<skill name="SelfBuff2" id="4471" level="2" /> <!-- NPC Anger -->
-			<skill name="Buff1" id="4471" level="3" /> <!-- NPC Anger -->
-			<skill name="Buff2" id="4471" level="5" /> <!-- NPC Anger -->
-			<skill name="Buff3" id="4471" level="7" /> <!-- NPC Anger -->
-			<skill name="Buff4" id="4471" level="9" /> <!-- NPC Anger -->
-			<skill name="PhysicalSpecial" id="4641" level="5" /> <!-- NPC Super Strike -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="10.502588757396" sp="6" />
@@ -2658,23 +2284,6 @@
 	</npc>
 	<npc id="22064" level="52" type="L2Monster" name="Bloodthirsty Ginzu Golem II">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="95" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="SelfBuff1" id="4471" level="1" /> <!-- NPC Anger -->
-			<skill name="SelfBuff2" id="4471" level="2" /> <!-- NPC Anger -->
-			<skill name="Buff1" id="4471" level="3" /> <!-- NPC Anger -->
-			<skill name="Buff2" id="4471" level="5" /> <!-- NPC Anger -->
-			<skill name="Buff3" id="4471" level="7" /> <!-- NPC Anger -->
-			<skill name="Buff4" id="4471" level="9" /> <!-- NPC Anger -->
-			<skill name="SelfRangePhysicalSpecial" id="4641" level="5" /> <!-- NPC Super Strike -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.8602071005917" sp="6" />
@@ -2723,23 +2332,6 @@
 	</npc>
 	<npc id="22065" level="53" type="L2Monster" name="Horrifying Ginzu Golem V">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="94" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="SelfBuff1" id="4471" level="1" /> <!-- NPC Anger -->
-			<skill name="SelfBuff2" id="4471" level="2" /> <!-- NPC Anger -->
-			<skill name="Buff1" id="4471" level="3" /> <!-- NPC Anger -->
-			<skill name="Buff2" id="4471" level="5" /> <!-- NPC Anger -->
-			<skill name="Buff3" id="4471" level="7" /> <!-- NPC Anger -->
-			<skill name="Buff4" id="4471" level="9" /> <!-- NPC Anger -->
-			<skill name="SelfRangePhysicalSpecial" id="4641" level="5" /> <!-- NPC Super Strike -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.8604485582058" sp="6" />
@@ -2787,22 +2379,6 @@
 	</npc>
 	<npc id="22066" level="53" type="L2Monster" name="Horrifying Cannon Golem VI">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="93" />
-			<param name="AreaName1" value="22_14_pabel_A_01" />
-			<param name="AreaName2" value="22_14_pabel_A_02" />
-			<param name="AreaName3" value="22_14_pabel_A_03" />
-			<param name="AreaName4" value="22_14_pabel_A_04" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="SelfRangePhysicalSpecial" id="4232" level="5" /> <!-- NPC AE Strike -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.3058027767889" sp="3" />
@@ -2851,22 +2427,6 @@
 	</npc>
 	<npc id="22067" level="53" type="L2Monster" name="Horrifying Cannon Golem VI">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="93" />
-			<param name="AreaName1" value="22_14_pabel_B_01" />
-			<param name="AreaName2" value="22_14_pabel_B_02" />
-			<param name="AreaName3" value="22_14_pabel_B_03" />
-			<param name="AreaName4" value="22_14_pabel_B_04" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="SelfRangePhysicalSpecial" id="4232" level="5" /> <!-- NPC AE Strike -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.3058027767889" sp="3" />
@@ -2915,22 +2475,6 @@
 	</npc>
 	<npc id="22068" level="53" type="L2Monster" name="Horrifying Cannon Golem VI">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="93" />
-			<param name="AreaName1" value="22_14_pabel_C_01" />
-			<param name="AreaName2" value="22_14_pabel_C_02" />
-			<param name="AreaName3" value="22_14_pabel_C_03" />
-			<param name="AreaName4" value="22_14_pabel_C_04" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="SelfRangePhysicalSpecial" id="4232" level="5" /> <!-- NPC AE Strike -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.3058027767889" sp="3" />
@@ -2979,22 +2523,6 @@
 	</npc>
 	<npc id="22069" level="53" type="L2Monster" name="Horrifying Cannon Golem VI">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="93" />
-			<param name="AreaName1" value="22_14_pabel_D_01" />
-			<param name="AreaName2" value="22_14_pabel_D_02" />
-			<param name="AreaName3" value="22_14_pabel_D_03" />
-			<param name="AreaName4" value="22_14_pabel_D_04" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="SelfRangePhysicalSpecial" id="4232" level="5" /> <!-- NPC AE Strike -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.3058027767889" sp="3" />
@@ -3043,22 +2571,6 @@
 	</npc>
 	<npc id="22070" level="53" type="L2Monster" name="Horrifying Cannon Golem VI">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="93" />
-			<param name="AreaName1" value="22_14_pabel_E_01" />
-			<param name="AreaName2" value="22_14_pabel_E_02" />
-			<param name="AreaName3" value="22_14_pabel_E_03" />
-			<param name="AreaName4" value="22_14_pabel_E_04" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="SelfRangePhysicalSpecial" id="4232" level="5" /> <!-- NPC AE Strike -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.3058027767889" sp="3" />
@@ -3107,22 +2619,6 @@
 	</npc>
 	<npc id="22071" level="53" type="L2Monster" name="Horrifying Cannon Golem VI">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="93" />
-			<param name="AreaName1" value="22_14_pabel_F_01" />
-			<param name="AreaName2" value="22_14_pabel_F_02" />
-			<param name="AreaName3" value="22_14_pabel_F_03" />
-			<param name="AreaName4" value="22_14_pabel_F_04" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="SelfRangePhysicalSpecial" id="4232" level="5" /> <!-- NPC AE Strike -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.3058027767889" sp="3" />
@@ -3171,22 +2667,6 @@
 	</npc>
 	<npc id="22072" level="53" type="L2Monster" name="Horrifying Cannon Golem VI">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="93" />
-			<param name="AreaName1" value="22_14_pabel_G_01" />
-			<param name="AreaName2" value="22_14_pabel_G_02" />
-			<param name="AreaName3" value="22_14_pabel_G_03" />
-			<param name="AreaName4" value="22_14_pabel_G_04" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="SelfRangePhysicalSpecial" id="4232" level="5" /> <!-- NPC AE Strike -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.3058027767889" sp="3" />
@@ -3235,22 +2715,6 @@
 	</npc>
 	<npc id="22073" level="53" type="L2Monster" name="Horrifying Cannon Golem VI">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="93" />
-			<param name="AreaName1" value="22_14_pabel_H_01" />
-			<param name="AreaName2" value="22_14_pabel_H_02" />
-			<param name="AreaName3" value="22_14_pabel_H_03" />
-			<param name="AreaName4" value="22_14_pabel_H_04" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="SelfRangePhysicalSpecial" id="4232" level="5" /> <!-- NPC AE Strike -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.3058027767889" sp="3" />
@@ -3299,19 +2763,6 @@
 	</npc>
 	<npc id="22074" level="53" type="L2Monster" name="Epic Cannon Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="93" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="SelfRangePhysicalSpecial" id="4232" level="5" /> <!-- NPC AE Strike -->
-			<skill name="DeBuff" id="4663" level="1" /> <!-- NPC Hate -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="8.2435030259879" sp="5" />
@@ -3361,17 +2812,6 @@
 	</npc>
 	<npc id="22075" level="52" type="L2Monster" name="Epic Cannon Golem Adjunct">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="96" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="DDMagic" id="4105" level="4" /> <!-- NPC Straight Beam Cannon -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.4234467455621" sp="3" />
@@ -3418,23 +2858,6 @@
 	</npc>
 	<npc id="22076" level="53" type="L2Monster" name="Deadly Ginzu Golem V">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="94" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="SelfRangePhysicalSpecial" id="4641" level="5" /> <!-- NPC Super Strike -->
-			<skill name="SelfBuff1" id="4471" level="1" /> <!-- NPC Anger -->
-			<skill name="SelfBuff2" id="4471" level="2" /> <!-- NPC Anger -->
-			<skill name="Buff1" id="4471" level="3" /> <!-- NPC Anger -->
-			<skill name="Buff2" id="4471" level="5" /> <!-- NPC Anger -->
-			<skill name="Buff3" id="4471" level="7" /> <!-- NPC Anger -->
-			<skill name="Buff4" id="4471" level="9" /> <!-- NPC Anger -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.8604485582058" sp="6" />
@@ -3482,23 +2905,6 @@
 	</npc>
 	<npc id="22077" level="54" type="L2Monster" name="Horrifying Ginzu Golem VIII">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="95" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="SelfRangePhysicalSpecial" id="4641" level="5" /> <!-- NPC Super Strike -->
-			<skill name="SelfBuff1" id="4471" level="1" /> <!-- NPC Anger -->
-			<skill name="SelfBuff2" id="4471" level="2" /> <!-- NPC Anger -->
-			<skill name="Buff1" id="4471" level="3" /> <!-- NPC Anger -->
-			<skill name="Buff2" id="4471" level="5" /> <!-- NPC Anger -->
-			<skill name="Buff3" id="4471" level="7" /> <!-- NPC Anger -->
-			<skill name="Buff4" id="4471" level="9" /> <!-- NPC Anger -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.8604252400549" sp="6" />
@@ -3546,23 +2952,6 @@
 	</npc>
 	<npc id="22078" level="54" type="L2Monster" name="Deadly Ginzu Golem VIII">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="95" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="SelfRangePhysicalSpecial" id="4641" level="5" /> <!-- NPC Super Strike -->
-			<skill name="SelfBuff1" id="4471" level="1" /> <!-- NPC Anger -->
-			<skill name="SelfBuff2" id="4471" level="2" /> <!-- NPC Anger -->
-			<skill name="Buff1" id="4471" level="3" /> <!-- NPC Anger -->
-			<skill name="Buff2" id="4471" level="5" /> <!-- NPC Anger -->
-			<skill name="Buff3" id="4471" level="7" /> <!-- NPC Anger -->
-			<skill name="Buff4" id="4471" level="9" /> <!-- NPC Anger -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.8604252400549" sp="6" />
@@ -3610,16 +2999,6 @@
 	</npc>
 	<npc id="22079" level="53" type="L2Monster" name="Lost Bandersnatch">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="78" />
-			<param name="MoveAroundSocial1" value="78" />
-			<param name="MoveAroundSocial2" value="78" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.440014239943" sp="2" />
@@ -3680,17 +3059,6 @@
 	</npc>
 	<npc id="22080" level="54" type="L2Monster" name="Massive Lost Bandersnatch">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="78" />
-			<param name="MoveAroundSocial1" value="78" />
-			<param name="MoveAroundSocial2" value="78" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="5" /> <!-- NPC Strike -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.6344307270233" sp="2" />
@@ -3752,17 +3120,6 @@
 	</npc>
 	<npc id="22081" level="53" type="L2Monster" name="Lost Watcher">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="40" />
-			<param name="MoveAroundSocial1" value="40" />
-			<param name="MoveAroundSocial2" value="40" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4137" level="5" /> <!-- Hydro Screw -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="5" /> <!-- NPC Aura Burn - Magic -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.5183339266643" sp="2" />
@@ -3845,17 +3202,6 @@
 	</npc>
 	<npc id="22082" level="54" type="L2Monster" name="Elder Lost Watcher">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="40" />
-			<param name="MoveAroundSocial1" value="40" />
-			<param name="MoveAroundSocial2" value="40" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4137" level="5" /> <!-- Hydro Screw -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="5" /> <!-- NPC Aura Burn - Magic -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.8878600823045" sp="2" />
@@ -3937,17 +3283,6 @@
 	</npc>
 	<npc id="22083" level="55" type="L2Monster" name="Baby Panthera">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="30" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="5" /> <!-- NPC Strike -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.44" sp="2" />
@@ -4009,17 +3344,6 @@
 	</npc>
 	<npc id="22084" level="56" type="L2Monster" name="Panthera">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="30" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="5" /> <!-- NPC Strike -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.4400510204082" sp="2" />
@@ -4081,17 +3405,6 @@
 	</npc>
 	<npc id="22085" level="55" type="L2Monster" name="Lost Gargoyle">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-			<skill name="Buff" id="4074" level="2" /> <!-- NPC Haste -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.0919008264463" sp="2" />
@@ -4176,18 +3489,6 @@
 	</npc>
 	<npc id="22086" level="56" type="L2Monster" name="Lost Gargoyle Youngling">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<skill name="W_LongRangeDDMagic" id="4137" level="5" /> <!-- Hydro Screw -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="5" /> <!-- NPC Aura Burn - Magic -->
-			<skill name="MagicHeal" id="4065" level="5" /> <!-- NPC Heal -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.4610969387755" sp="2" />
@@ -4274,18 +3575,6 @@
 	</npc>
 	<npc id="22087" level="56" type="L2Monster" name="Pronghorn Spirit">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial1" id="4032" level="5" /> <!-- NPC Strike -->
-			<skill name="PhysicalSpecial2" id="4073" level="5" /> <!-- Stun -->
-		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.5548469387755" sp="4" />
@@ -4348,18 +3637,6 @@
 	</npc>
 	<npc id="22088" level="57" type="L2Monster" name="Pronghorn">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="ai_type" value="pronghorn_spirit" />
-			<param name="silhouette" value="22087" /> <!-- Pronghorn Spirit -->
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.254539858418" sp="2" />
@@ -4438,16 +3715,6 @@
 	</npc>
 	<npc id="22089" level="57" type="L2Monster" name="Ice Tarantula">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.7411511234226" sp="2" />
@@ -4527,16 +3794,6 @@
 	</npc>
 	<npc id="22090" level="58" type="L2Monster" name="Frost Tarantula">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.7410820451843" sp="3" />
@@ -4616,17 +3873,6 @@
 	</npc>
 	<npc id="22091" level="58" type="L2Monster" name="Lost Iron Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="DDMagicSlow" id="4247" level="5" /> <!-- NPC Windstrike - Slow -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="4.0326991676576" sp="3" />
@@ -4692,17 +3938,6 @@
 	</npc>
 	<npc id="22092" level="59" type="L2Monster" name="Frost Iron Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="DDMagicSlow" id="4247" level="5" /> <!-- NPC Windstrike - Slow -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="4.0324619362252" sp="3" />
@@ -4768,18 +4003,6 @@
 	</npc>
 	<npc id="22093" level="60" type="L2Monster" name="Lost Buffalo">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="120" />
-			<param name="MoveAroundSocial1" value="30" />
-			<param name="MoveAroundSocial2" value="120" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial1" id="4032" level="5" /> <!-- NPC Strike -->
-			<skill name="PhysicalSpecial2" id="4073" level="5" /> <!-- Stun -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.555" sp="4" />
@@ -4841,18 +4064,6 @@
 	</npc>
 	<npc id="22094" level="61" type="L2Monster" name="Frost Buffalo">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="120" />
-			<param name="MoveAroundSocial1" value="30" />
-			<param name="MoveAroundSocial2" value="120" />
-			<param name="ai_type" value="maze_buffalo" />
-			<param name="silhouette" value="22093" /> <!-- Lost Buffalo -->
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.2545014780973" sp="2" />
@@ -4933,16 +4144,6 @@
 	</npc>
 	<npc id="22095" level="61" type="L2Monster" name="Ursus Cub">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.4399355012094" sp="3" />
@@ -5005,17 +4206,6 @@
 	</npc>
 	<npc id="22096" level="62" type="L2Monster" name="Ursus">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="5" /> <!-- NPC Strike -->
-		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.4399063475546" sp="3" />
@@ -5077,16 +4267,6 @@
 	</npc>
 	<npc id="22097" level="62" type="L2Monster" name="Lost Yeti">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.937825182102" sp="3" />
@@ -5166,16 +4346,6 @@
 	</npc>
 	<npc id="22098" level="63" type="L2Monster" name="Frost Yeti">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="10" />
-		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.9380196523054" sp="3" />
@@ -5255,17 +4425,6 @@
 	</npc>
 	<npc id="22099" level="57" type="L2Monster" name="Freya's Buffalo">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="120" />
-			<param name="MoveAroundSocial1" value="30" />
-			<param name="MoveAroundSocial2" value="120" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Buff" id="5044" level="2" /> <!-- NPC Ultimate Defense -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="14.706063404124" sp="11" />

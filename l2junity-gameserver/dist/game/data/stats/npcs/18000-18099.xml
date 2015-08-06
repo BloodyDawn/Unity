@@ -2,14 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="18001" level="60" type="L2Monster" name="Blood Queen">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="60" />
-			<param name="MoveAroundSocial1" value="60" />
-			<param name="MoveAroundSocial2" value="60" />
-			<skill name="DDMagic1" id="4039" level="6" /> <!-- NPC MP Drain -->
-			<skill name="DDMagic2" id="4002" level="6" /> <!-- NPC HP Drain -->
-			<skill name="DeBuff" id="4035" level="6" /> <!-- Poison -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="1.89" sp="1" />
@@ -84,14 +76,6 @@
 	</npc>
 	<npc id="18002" level="60" type="L2Monster" name="Blood Queen">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="60" />
-			<param name="MoveAroundSocial1" value="60" />
-			<param name="MoveAroundSocial2" value="60" />
-			<skill name="DDMagic1" id="4039" level="6" /> <!-- NPC MP Drain -->
-			<skill name="DDMagic2" id="4002" level="6" /> <!-- NPC HP Drain -->
-			<skill name="DeBuff" id="4035" level="6" /> <!-- Poison -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="1.8" sp="1" />
@@ -150,11 +134,6 @@
 	</npc>
 	<npc id="18003" level="1" type="L2Monster" name="Bearded Keltir">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="44" sp="2" />
@@ -263,15 +242,6 @@
 	</npc>
 	<npc id="18006" level="68" type="L2Monster" name="Maluk Lord">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<skill name="DDMagic" id="4002" level="6" /> <!-- NPC HP Drain -->
-			<skill name="CancelMagic" id="4094" level="6" /> <!-- NPC Cancel Magic -->
-			<skill name="CheckMagic" id="4098" level="6" /> <!-- Silence -->
-			<skill name="SleepMagic" id="4046" level="6" /> <!-- Sleep -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="1472" /> <!-- Dreadbane -->
@@ -318,14 +288,6 @@
 	</npc>
 	<npc id="18007" level="69" type="L2Monster" name="Limal Karinness">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="60" />
-			<param name="MoveAroundSocial1" value="60" />
-			<param name="MoveAroundSocial2" value="60" />
-			<skill name="DDMagic" id="4002" level="6" /> <!-- NPC HP Drain -->
-			<skill name="DeBuff" id="4118" level="6" /> <!-- Paralysis -->
-			<skill name="HoldMagic" id="4047" level="6" /> <!-- Hold -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="1.8748162150809" sp="2" />
@@ -370,12 +332,6 @@
 	</npc>
 	<npc id="18008" level="70" type="L2Monster" name="Karik">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="140" />
-			<param name="MoveAroundSocial2" value="140" />
-			<skill name="HoldMagic" id="4047" level="7" /> <!-- Hold -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="1.95" sp="2" />
@@ -421,14 +377,6 @@
 	</npc>
 	<npc id="18009" level="34" type="L2FestivalMonster" name="Offering of the Branded, Elder">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="RoomIndex" value="1" />
-			<param name="SSQPart" value="TWILIGHT" />
-			<minions name="Privates">
-				<npc id="18010" count="2" respawnTime="120" weightPoint="0" /> <!-- Offering of the Branded -->
-			</minions>
-			<skill name="DDMagic" id="4078" level="3" /> <!-- NPC Flamestrike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="127" /> <!-- Crimson Sword -->

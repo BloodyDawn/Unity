@@ -2,10 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="31300" level="70" type="L2Merchant" name="Drumond" title="Weapon Merchant">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="140" />
-		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -43,10 +39,6 @@
 	</npc>
 	<npc id="31301" level="70" type="L2Merchant" name="Nils" title="Weapon Merchant">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="110" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -84,10 +76,6 @@
 	</npc>
 	<npc id="31302" level="70" type="L2Merchant" name="Vladimir" title="Armor Merchant">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="110" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<acquire expRate="88.386734693878" sp="112697" />
@@ -126,10 +114,6 @@
 	</npc>
 	<npc id="31303" level="70" type="L2Merchant" name="Alisha" title="Armor Merchant">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -167,10 +151,6 @@
 	</npc>
 	<npc id="31304" level="70" type="L2Merchant" name="Astrid" title="Accessory Merchant">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="120" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -208,10 +188,6 @@
 	</npc>
 	<npc id="31305" level="70" type="L2Merchant" name="Candice" title="Accessory Merchant">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="87" />
-		</parameters>
 		<race>DWARF</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -249,10 +225,6 @@
 	</npc>
 	<npc id="31306" level="70" type="L2Merchant" name="Natasha" title="Trader">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -290,10 +262,6 @@
 	</npc>
 	<npc id="31307" level="70" type="L2Merchant" name="Weber" title="Grocer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="110" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -331,10 +299,6 @@
 	</npc>
 	<npc id="31308" level="70" type="L2Npc" name="Achim" title="Symbol Maker">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="120" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -372,42 +336,6 @@
 	</npc>
 	<npc id="31309" level="70" type="L2PetManager" name="Woods" title="Pet Manager">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="HavePet" value="1" />
-			<param name="silhouette" value="31266" /> <!-- Kaiser -->
-			<param name="item_baby_pet1" value="2375" /> <!-- Wolf Collar -->
-			<param name="item_grown_pet1" value="9882" /> <!-- Great Wolf Necklace -->
-			<param name="id_grown_pet1" value="12" />
-			<param name="class_id_baby_pet1" value="12077" /> <!-- Wolf -->
-			<param name="min_lv_pet1" value="55" />
-			<param name="check_min_lv_pet1" value="1" />
-			<param name="item_baby_pet2" value="6648" /> <!-- Baby Buffalo Panpipe -->
-			<param name="item_grown_pet2" value="10311" /> <!-- Improved Buffalo Panpipe -->
-			<param name="id_grown_pet2" value="18" />
-			<param name="class_id_baby_pet2" value="12780" /> <!-- Baby Buffalo -->
-			<param name="min_lv_pet2" value="55" />
-			<param name="check_min_lv_pet2" value="1" />
-			<param name="item_baby_pet3" value="6650" /> <!-- Baby Kookaburra Ocarina -->
-			<param name="item_grown_pet3" value="10313" /> <!-- Improved Kookaburra Ocarina -->
-			<param name="id_grown_pet3" value="19" />
-			<param name="class_id_baby_pet3" value="12781" /> <!-- Baby Kookaburra -->
-			<param name="min_lv_pet3" value="55" />
-			<param name="check_min_lv_pet3" value="1" />
-			<param name="item_baby_pet4" value="6649" /> <!-- Baby Cougar Chime -->
-			<param name="item_grown_pet4" value="10312" /> <!-- Improved Cougar Chime -->
-			<param name="id_grown_pet4" value="20" />
-			<param name="class_id_baby_pet4" value="12782" /> <!-- Baby Cougar -->
-			<param name="min_lv_pet4" value="55" />
-			<param name="check_min_lv_pet4" value="1" />
-			<param name="item_baby_pet5" value="9882" /> <!-- Great Wolf Necklace -->
-			<param name="item_grown_pet5" value="10426" /> <!-- Fenrir Necklace -->
-			<param name="id_grown_pet5" value="21" />
-			<param name="class_id_baby_pet5" value="16025" /> <!-- Great Wolf -->
-			<param name="min_lv_pet5" value="70" />
-			<param name="check_min_lv_pet5" value="1" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -483,10 +411,6 @@
 	</npc>
 	<npc id="31311" level="70" type="L2Warehouse" name="Hugin" title="Warehouse Keeper">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="150" />
-		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -524,10 +448,6 @@
 	</npc>
 	<npc id="31312" level="70" type="L2Warehouse" name="Durin" title="Warehouse Keeper">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="93" />
-		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -565,10 +485,6 @@
 	</npc>
 	<npc id="31313" level="70" type="L2Warehouse" name="Lunin" title="Warehouse Keeper">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="104" />
-		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -606,11 +522,6 @@
 	</npc>
 	<npc id="31314" level="70" type="L2VillageMasterDwarf" name="Donal" title="Warehouse Chief">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="93" />
-			<param name="chk_my_cat" value="SUB_GROUP_WARE" />
-		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -648,10 +559,6 @@
 	</npc>
 	<npc id="31315" level="70" type="L2Warehouse" name="Daisy" title="Warehouse Keeper">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="74" />
-		</parameters>
 		<race>DWARF</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -689,10 +596,6 @@
 	</npc>
 	<npc id="31316" level="70" type="L2Npc" name="Vincenz" title="Blacksmith">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="93" />
-		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
 		<equipment rhand="89" /> <!-- Big Hammer -->
@@ -731,11 +634,6 @@
 	</npc>
 	<npc id="31317" level="70" type="L2VillageMasterDwarf" name="Lombert" title="Head Blacksmith">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="85" />
-			<param name="chk_my_cat" value="SUB_GROUP_BLACK" />
-		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -773,10 +671,6 @@
 	</npc>
 	<npc id="31318" level="70" type="L2Merchant" name="Greta" title="Blueprint Seller">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="60" />
-		</parameters>
 		<race>DWARF</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -814,10 +708,6 @@
 	</npc>
 	<npc id="31319" level="70" type="L2Merchant" name="Hans" title="Mineral Trader">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="140" />
-		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -855,11 +745,6 @@
 	</npc>
 	<npc id="31320" level="70" type="L2Teleporter" name="Ilyana" title="Gatekeeper">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="134" />
-			<param name="IsGateKeeperForCoreTime" value="1" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -897,11 +782,6 @@
 	</npc>
 	<npc id="31321" level="70" type="L2VillageMasterFighter" name="Siegmund" title="Grand Master">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="63" />
-			<param name="chk_my_cat" value="SUB_GROUP_HEF" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<equipment rhand="76" /> <!-- Sword of Delusion -->
@@ -940,10 +820,6 @@
 	</npc>
 	<npc id="31322" level="70" type="L2Npc" name="Erian" title="Master">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="130" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<equipment rhand="7884" lhand="20" /> <!-- Infernal Master / Buckler -->
@@ -982,10 +858,6 @@
 	</npc>
 	<npc id="31323" level="70" type="L2Npc" name="Beryl" title="Master">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="123" />
-		</parameters>
 		<race>ELF</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="130" /> <!-- Elven Sword -->
@@ -1024,11 +896,6 @@
 	</npc>
 	<npc id="31324" level="70" type="L2VillageMasterDElf" name="Andromeda" title="Grand Master">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="135" />
-			<param name="chk_my_cat" value="SUB_GROUP_DE" />
-		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="316" /> <!-- Sage's Blood -->
@@ -1067,10 +934,6 @@
 	</npc>
 	<npc id="31325" level="70" type="L2Npc" name="Themis" title="Master">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="103" />
-		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="227" lhand="627" /> <!-- Stiletto / Aspis -->
@@ -1109,11 +972,6 @@
 	</npc>
 	<npc id="31326" level="70" type="L2VillageMasterOrc" name="Lambac" title="High Prefect">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="95" />
-			<param name="chk_my_cat" value="SUB_GROUP_ORC" />
-		</parameters>
 		<race>ORC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1151,10 +1009,6 @@
 	</npc>
 	<npc id="31327" level="70" type="L2Npc" name="Tazki" title="Prefect">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="120" />
-		</parameters>
 		<race>ORC</race>
 		<sex>MALE</sex>
 		<equipment rhand="161" /> <!-- Silver Axe -->
@@ -1193,11 +1047,6 @@
 	</npc>
 	<npc id="31328" level="70" type="L2VillageMasterPriest" name="Innocentin" title="High Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="chk_my_cat" value="SUB_GROUP_HEC" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<equipment rhand="193" /> <!-- Stick of Faith -->
@@ -1236,12 +1085,6 @@
 	</npc>
 	<npc id="31329" level="70" type="L2Npc" name="Eliyah" title="Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="120" />
-			<param name="skill_sharing_item" value="15307" /> <!-- Holy Pomander - Cardinal -->
-			<param name="token_num" value="1" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1279,12 +1122,6 @@
 	</npc>
 	<npc id="31330" level="70" type="L2Npc" name="Wagner" title="Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="127" />
-			<param name="skill_sharing_item" value="15308" /> <!-- Holy Pomander - Eva's Saint -->
-			<param name="token_num" value="1" />
-		</parameters>
 		<race>ELF</race>
 		<sex>MALE</sex>
 		<equipment rhand="6579" /> <!-- Arcana Mace -->
@@ -1323,11 +1160,6 @@
 	</npc>
 	<npc id="31331" level="70" type="L2VillageMasterMystic" name="Valdis" title="Grand Magister">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="130" />
-			<param name="chk_my_cat" value="SUB_GROUP_HEW" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1365,10 +1197,6 @@
 	</npc>
 	<npc id="31332" level="70" type="L2Npc" name="Amelia" title="Magister">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="133" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1406,10 +1234,6 @@
 	</npc>
 	<npc id="31333" level="70" type="L2Npc" name="Rumiel" title="Magister">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="100" />
-		</parameters>
 		<race>ELF</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="13466" /> <!-- Vesper Singer -->
@@ -1448,11 +1272,6 @@
 	</npc>
 	<npc id="31334" level="70" type="L2VillageMasterDElf" name="Tifaren" title="Grand Magister">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="120" />
-			<param name="chk_my_cat" value="SUB_GROUP_DE" />
-		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1490,12 +1309,6 @@
 	</npc>
 	<npc id="31335" level="70" type="L2Npc" name="Kayan" title="Magister">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="124" />
-			<param name="skill_sharing_item" value="15309" /> <!-- Holy Pomander - Shillien Saint -->
-			<param name="token_num" value="4" />
-		</parameters>
 		<race>DARK_ELF</race>
 		<sex>MALE</sex>
 		<equipment rhand="317" /> <!-- Tome of Blood -->
@@ -1534,11 +1347,6 @@
 	</npc>
 	<npc id="31336" level="70" type="L2VillageMasterOrc" name="Rahorakti" title="Grand Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="165" />
-			<param name="chk_my_cat" value="SUB_GROUP_ORC" />
-		</parameters>
 		<race>ORC</race>
 		<sex>MALE</sex>
 		<equipment rhand="202" /> <!-- Mace of Underworld -->
@@ -1577,10 +1385,6 @@
 	</npc>
 	<npc id="31337" level="70" type="L2Npc" name="Mekara" title="Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="100" />
-		</parameters>
 		<race>ORC</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1618,10 +1422,6 @@
 	</npc>
 	<npc id="31338" level="70" type="L2Npc" name="Anton" title="Spellbook Seller">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="110" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1659,10 +1459,6 @@
 	</npc>
 	<npc id="31339" level="70" type="L2Npc" name="Hakran" title="Amulet Seller">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="130" />
-		</parameters>
 		<race>ORC</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -1700,15 +1496,6 @@
 	</npc>
 	<npc id="31340" level="99" type="L2Guard" name="Mathias" title="Captain">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="92" />
-			<param name="enter_type" value="1" />
-			<param name="inzone_id1" value="72" />
-			<param name="inzone_id2" value="78" />
-			<param name="inzone_id3" value="79" />
-			<param name="inzone_id4" value="134" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<equipment rhand="133" lhand="632" /> <!-- Raid Sword / Knight's Shield -->
@@ -1747,10 +1534,6 @@
 	</npc>
 	<npc id="31341" level="99" type="L2Guard" name="Richtor" title="Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="92" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<equipment rhand="126" lhand="628" /> <!-- Artisan's Sword / Hoplon -->
@@ -1789,10 +1572,6 @@
 	</npc>
 	<npc id="31342" level="99" type="L2Guard" name="Dimitri" title="Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="92" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<equipment rhand="94" /> <!-- Bec de Corbin -->
@@ -1831,10 +1610,6 @@
 	</npc>
 	<npc id="31343" level="99" type="L2Guard" name="Bellard" title="Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="92" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<equipment rhand="126" lhand="628" /> <!-- Artisan's Sword / Hoplon -->
@@ -1873,10 +1648,6 @@
 	</npc>
 	<npc id="31344" level="99" type="L2Guard" name="Schmidt" title="Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="92" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<equipment rhand="94" /> <!-- Bec de Corbin -->
@@ -1915,10 +1686,6 @@
 	</npc>
 	<npc id="31345" level="99" type="L2Guard" name="Ian" title="Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="92" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<equipment rhand="126" lhand="628" /> <!-- Artisan's Sword / Hoplon -->
@@ -1957,10 +1724,6 @@
 	</npc>
 	<npc id="31346" level="99" type="L2Guard" name="Sirius" title="Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="92" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<equipment rhand="94" /> <!-- Bec de Corbin -->
@@ -1999,10 +1762,6 @@
 	</npc>
 	<npc id="31347" level="99" type="L2Guard" name="Burke" title="Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="92" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<equipment rhand="126" lhand="628" /> <!-- Artisan's Sword / Hoplon -->
@@ -2041,10 +1800,6 @@
 	</npc>
 	<npc id="31348" level="70" type="L2Npc" name="Agripel" title="High Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2082,10 +1837,6 @@
 	</npc>
 	<npc id="31349" level="70" type="L2Npc" name="Benedict" title="Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2123,10 +1874,6 @@
 	</npc>
 	<npc id="31350" level="70" type="L2Npc" name="Dominic" title="Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2164,10 +1911,6 @@
 	</npc>
 	<npc id="31351" level="70" type="L2Merchant" name="Volker" title="Wharf Manager">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="120" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2205,10 +1948,6 @@
 	</npc>
 	<npc id="31356" level="70" type="L2Npc" name="Remy" title="Porter">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="110" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2246,10 +1985,6 @@
 	</npc>
 	<npc id="31357" level="70" type="L2Npc" name="Leandro" title="Secretary">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="120" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2287,10 +2022,6 @@
 	</npc>
 	<npc id="31358" level="70" type="L2Npc" name="Kasiel" title="Bard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="140" />
-		</parameters>
 		<race>ELF</race>
 		<sex>MALE</sex>
 		<equipment rhand="4202" /> <!-- Chrono Cithara -->
@@ -2329,10 +2060,6 @@
 	</npc>
 	<npc id="31359" level="70" type="L2Npc" name="Jaradine" title="Mother Tree Guardian">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="127" />
-		</parameters>
 		<race>ELF</race>
 		<sex>MALE</sex>
 		<equipment rhand="6579" /> <!-- Arcana Mace -->
@@ -2371,10 +2098,6 @@
 	</npc>
 	<npc id="31360" level="70" type="L2Npc" name="Alhena" title="Hierarch Agent">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="135" />
-		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="315" /> <!-- Divine Tome -->
@@ -2413,10 +2136,6 @@
 	</npc>
 	<npc id="31361" level="70" type="L2Npc" name="Kreed" title="Hierarch Executioner">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="139" />
-		</parameters>
 		<race>DARK_ELF</race>
 		<sex>MALE</sex>
 		<equipment rhand="151" /> <!-- Sword of Miracles -->
@@ -2455,10 +2174,6 @@
 	</npc>
 	<npc id="31362" level="70" type="L2Npc" name="Tate" title="Carrier">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="93" />
-		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2496,10 +2211,6 @@
 	</npc>
 	<npc id="31363" level="70" type="L2Npc" name="Rogin" title="Deliveryman">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="150" />
-		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2537,10 +2248,6 @@
 	</npc>
 	<npc id="31364" level="70" type="L2Npc" name="Rokar" title="Guardian of Flame">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="140" />
-		</parameters>
 		<race>ORC</race>
 		<sex>MALE</sex>
 		<equipment rhand="203" /> <!-- Pa'agrio Axe -->
@@ -2579,10 +2286,6 @@
 	</npc>
 	<npc id="31365" level="70" type="L2Npc" name="Yakand" title="Guardian of Flame">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="140" />
-		</parameters>
 		<race>ORC</race>
 		<sex>MALE</sex>
 		<equipment rhand="203" /> <!-- Pa'agrio Axe -->
@@ -2621,10 +2324,6 @@
 	</npc>
 	<npc id="31366" level="70" type="L2Merchant" name="Feed Seller">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="110" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2662,10 +2361,6 @@
 	</npc>
 	<npc id="31367" level="70" type="L2Npc" name="Voice of Glory">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="74" />
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="193" /> <!-- Stick of Faith -->
@@ -2705,10 +2400,6 @@
 	</npc>
 	<npc id="31368" level="70" type="L2Npc" name="Mikellan" title="Monk of Silence">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="120" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2746,10 +2437,6 @@
 	</npc>
 	<npc id="31369" level="70" type="L2Npc" name="Mennon" title="Monk of Silence">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="120" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -2787,15 +2474,6 @@
 	</npc>
 	<npc id="31370" level="70" type="L2Npc" name="Kadun Zu Ketra" title="Hierarch">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="140" />
-			<param name="MoveAroundSocial1" value="54" />
-			<param name="FriendShip1" value="7211" /> <!-- Mark of Ketra's Alliance - Level 1 -->
-			<param name="FriendShip2" value="7212" /> <!-- Mark of Ketra's Alliance - Level 2 -->
-			<param name="FriendShip3" value="7213" /> <!-- Mark of Ketra's Alliance - Level 3 -->
-			<param name="FriendShip4" value="7214" /> <!-- Mark of Ketra's Alliance - Level 4 -->
-			<param name="FriendShip5" value="7215" /> <!-- Mark of Ketra's Alliance - Level 5 -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6719" /> <!-- Monster Only (Ketra Orc Chieftain) -->
@@ -2835,15 +2513,6 @@
 	</npc>
 	<npc id="31371" level="70" type="L2Npc" name="Wahkan" title="Ketra's Messenger">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="65" />
-			<param name="FriendShip1" value="7211" /> <!-- Mark of Ketra's Alliance - Level 1 -->
-			<param name="FriendShip2" value="7212" /> <!-- Mark of Ketra's Alliance - Level 2 -->
-			<param name="FriendShip3" value="7213" /> <!-- Mark of Ketra's Alliance - Level 3 -->
-			<param name="FriendShip4" value="7214" /> <!-- Mark of Ketra's Alliance - Level 4 -->
-			<param name="FriendShip5" value="7215" /> <!-- Mark of Ketra's Alliance - Level 5 -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="175" /> <!-- Art of Battle Axe -->
@@ -2883,32 +2552,6 @@
 	</npc>
 	<npc id="31372" level="70" type="L2Npc" name="Asefa" title="Guide of Dead Souls">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="75" />
-			<param name="FriendShip1" value="7211" /> <!-- Mark of Ketra's Alliance - Level 1 -->
-			<param name="FriendShip2" value="7212" /> <!-- Mark of Ketra's Alliance - Level 2 -->
-			<param name="FriendShip3" value="7213" /> <!-- Mark of Ketra's Alliance - Level 3 -->
-			<param name="FriendShip4" value="7214" /> <!-- Mark of Ketra's Alliance - Level 4 -->
-			<param name="FriendShip5" value="7215" /> <!-- Mark of Ketra's Alliance - Level 5 -->
-			<skill name="Buff1" id="4359" level="2" /> <!-- Focus -->
-			<skill name="Buff2" id="4360" level="2" /> <!-- Death Whisper -->
-			<skill name="Buff3" id="4345" level="3" /> <!-- Might -->
-			<skill name="Buff4" id="4355" level="2" /> <!-- Acumen -->
-			<skill name="Buff5" id="4352" level="1" /> <!-- Berserker Spirit -->
-			<skill name="Buff6" id="4354" level="2" /> <!-- Vampiric Rage -->
-			<skill name="Buff7" id="4356" level="1" /> <!-- Empower -->
-			<skill name="Buff8" id="4357" level="2" /> <!-- Haste -->
-			<param name="BuffForItem" value="7186" /> <!-- Horn of Buffalo -->
-			<param name="BuffPrices1" value="2" />
-			<param name="BuffPrices2" value="2" />
-			<param name="BuffPrices3" value="3" />
-			<param name="BuffPrices4" value="3" />
-			<param name="BuffPrices5" value="3" />
-			<param name="BuffPrices6" value="3" />
-			<param name="BuffPrices7" value="6" />
-			<param name="BuffPrices8" value="6" />
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="205" /> <!-- Ghoul's Staff -->
@@ -2956,15 +2599,6 @@
 	</npc>
 	<npc id="31373" level="70" type="L2Merchant" name="Atan" title="Grocer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="65" />
-			<param name="FriendShip1" value="7211" /> <!-- Mark of Ketra's Alliance - Level 1 -->
-			<param name="FriendShip2" value="7212" /> <!-- Mark of Ketra's Alliance - Level 2 -->
-			<param name="FriendShip3" value="7213" /> <!-- Mark of Ketra's Alliance - Level 3 -->
-			<param name="FriendShip4" value="7214" /> <!-- Mark of Ketra's Alliance - Level 4 -->
-			<param name="FriendShip5" value="7215" /> <!-- Mark of Ketra's Alliance - Level 5 -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3003,15 +2637,6 @@
 	</npc>
 	<npc id="31374" level="70" type="L2Warehouse" name="Jaff" title="Warehouse Keeper">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="65" />
-			<param name="FriendShip1" value="7211" /> <!-- Mark of Ketra's Alliance - Level 1 -->
-			<param name="FriendShip2" value="7212" /> <!-- Mark of Ketra's Alliance - Level 2 -->
-			<param name="FriendShip3" value="7213" /> <!-- Mark of Ketra's Alliance - Level 3 -->
-			<param name="FriendShip4" value="7214" /> <!-- Mark of Ketra's Alliance - Level 4 -->
-			<param name="FriendShip5" value="7215" /> <!-- Mark of Ketra's Alliance - Level 5 -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3050,15 +2675,6 @@
 	</npc>
 	<npc id="31375" level="70" type="L2Merchant" name="Jumara" title="Trader">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="65" />
-			<param name="FriendShip1" value="7211" /> <!-- Mark of Ketra's Alliance - Level 1 -->
-			<param name="FriendShip2" value="7212" /> <!-- Mark of Ketra's Alliance - Level 2 -->
-			<param name="FriendShip3" value="7213" /> <!-- Mark of Ketra's Alliance - Level 3 -->
-			<param name="FriendShip4" value="7214" /> <!-- Mark of Ketra's Alliance - Level 4 -->
-			<param name="FriendShip5" value="7215" /> <!-- Mark of Ketra's Alliance - Level 5 -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3097,15 +2713,6 @@
 	</npc>
 	<npc id="31376" level="70" type="L2Teleporter" name="Kurfa" title="Gatekeeper">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="75" />
-			<param name="FriendShip1" value="7211" /> <!-- Mark of Ketra's Alliance - Level 1 -->
-			<param name="FriendShip2" value="7212" /> <!-- Mark of Ketra's Alliance - Level 2 -->
-			<param name="FriendShip3" value="7213" /> <!-- Mark of Ketra's Alliance - Level 3 -->
-			<param name="FriendShip4" value="7214" /> <!-- Mark of Ketra's Alliance - Level 4 -->
-			<param name="FriendShip5" value="7215" /> <!-- Mark of Ketra's Alliance - Level 5 -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="205" /> <!-- Ghoul's Staff -->
@@ -3145,15 +2752,6 @@
 	</npc>
 	<npc id="31377" level="70" type="L2Npc" name="Ashas Varka Durai" title="Hierarch">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="FriendShip1" value="7221" /> <!-- Mark of Varka's Alliance - Level 1 -->
-			<param name="FriendShip2" value="7222" /> <!-- Mark of Varka's Alliance - Level 2 -->
-			<param name="FriendShip3" value="7223" /> <!-- Mark of Varka's Alliance - Level 3 -->
-			<param name="FriendShip4" value="7224" /> <!-- Mark of Varka's Alliance - Level 4 -->
-			<param name="FriendShip5" value="7225" /> <!-- Mark of Varka's Alliance - Level 5 -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="145" /> <!-- Sword of Whispering Death -->
@@ -3193,15 +2791,6 @@
 	</npc>
 	<npc id="31378" level="70" type="L2Npc" name="Naran Ashanuk" title="Varka's Messenger">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="85" />
-			<param name="MoveAroundSocial1" value="85" />
-			<param name="FriendShip1" value="7221" /> <!-- Mark of Varka's Alliance - Level 1 -->
-			<param name="FriendShip2" value="7222" /> <!-- Mark of Varka's Alliance - Level 2 -->
-			<param name="FriendShip3" value="7223" /> <!-- Mark of Varka's Alliance - Level 3 -->
-			<param name="FriendShip4" value="7224" /> <!-- Mark of Varka's Alliance - Level 4 -->
-			<param name="FriendShip5" value="7225" /> <!-- Mark of Varka's Alliance - Level 5 -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="173" /> <!-- Skull Graver -->
@@ -3241,32 +2830,6 @@
 	</npc>
 	<npc id="31379" level="70" type="L2Npc" name="Udan Mardui" title="Guide of Dead Souls">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="123" />
-			<param name="MoveAroundSocial1" value="123" />
-			<param name="FriendShip1" value="7221" /> <!-- Mark of Varka's Alliance - Level 1 -->
-			<param name="FriendShip2" value="7222" /> <!-- Mark of Varka's Alliance - Level 2 -->
-			<param name="FriendShip3" value="7223" /> <!-- Mark of Varka's Alliance - Level 3 -->
-			<param name="FriendShip4" value="7224" /> <!-- Mark of Varka's Alliance - Level 4 -->
-			<param name="FriendShip5" value="7225" /> <!-- Mark of Varka's Alliance - Level 5 -->
-			<skill name="Buff1" id="4359" level="2" /> <!-- Focus -->
-			<skill name="Buff2" id="4360" level="2" /> <!-- Death Whisper -->
-			<skill name="Buff3" id="4345" level="3" /> <!-- Might -->
-			<skill name="Buff4" id="4355" level="2" /> <!-- Acumen -->
-			<skill name="Buff5" id="4352" level="1" /> <!-- Berserker Spirit -->
-			<skill name="Buff6" id="4354" level="2" /> <!-- Vampiric Rage -->
-			<skill name="Buff7" id="4356" level="1" /> <!-- Empower -->
-			<skill name="Buff8" id="4357" level="2" /> <!-- Haste -->
-			<param name="BuffForItem" value="7187" /> <!-- Nepenthes Seed -->
-			<param name="BuffPrices1" value="2" />
-			<param name="BuffPrices2" value="2" />
-			<param name="BuffPrices3" value="3" />
-			<param name="BuffPrices4" value="3" />
-			<param name="BuffPrices5" value="3" />
-			<param name="BuffPrices6" value="3" />
-			<param name="BuffPrices7" value="6" />
-			<param name="BuffPrices8" value="6" />
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6716" /> <!-- Monster Only (Silenos Shaman) -->
@@ -3314,15 +2877,6 @@
 	</npc>
 	<npc id="31380" level="70" type="L2Merchant" name="Diyabu" title="Grocer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="65" />
-			<param name="MoveAroundSocial1" value="65" />
-			<param name="FriendShip1" value="7221" /> <!-- Mark of Varka's Alliance - Level 1 -->
-			<param name="FriendShip2" value="7222" /> <!-- Mark of Varka's Alliance - Level 2 -->
-			<param name="FriendShip3" value="7223" /> <!-- Mark of Varka's Alliance - Level 3 -->
-			<param name="FriendShip4" value="7224" /> <!-- Mark of Varka's Alliance - Level 4 -->
-			<param name="FriendShip5" value="7225" /> <!-- Mark of Varka's Alliance - Level 5 -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3361,15 +2915,6 @@
 	</npc>
 	<npc id="31381" level="70" type="L2Warehouse" name="Hagos" title="Warehouse Keeper">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="85" />
-			<param name="MoveAroundSocial1" value="85" />
-			<param name="FriendShip1" value="7221" /> <!-- Mark of Varka's Alliance - Level 1 -->
-			<param name="FriendShip2" value="7222" /> <!-- Mark of Varka's Alliance - Level 2 -->
-			<param name="FriendShip3" value="7223" /> <!-- Mark of Varka's Alliance - Level 3 -->
-			<param name="FriendShip4" value="7224" /> <!-- Mark of Varka's Alliance - Level 4 -->
-			<param name="FriendShip5" value="7225" /> <!-- Mark of Varka's Alliance - Level 5 -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3408,15 +2953,6 @@
 	</npc>
 	<npc id="31382" level="70" type="L2Merchant" name="Shikon" title="Trader">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="65" />
-			<param name="MoveAroundSocial1" value="65" />
-			<param name="FriendShip1" value="7221" /> <!-- Mark of Varka's Alliance - Level 1 -->
-			<param name="FriendShip2" value="7222" /> <!-- Mark of Varka's Alliance - Level 2 -->
-			<param name="FriendShip3" value="7223" /> <!-- Mark of Varka's Alliance - Level 3 -->
-			<param name="FriendShip4" value="7224" /> <!-- Mark of Varka's Alliance - Level 4 -->
-			<param name="FriendShip5" value="7225" /> <!-- Mark of Varka's Alliance - Level 5 -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3455,15 +2991,6 @@
 	</npc>
 	<npc id="31383" level="70" type="L2Teleporter" name="Teranu Mardui" title="Gatekeeper">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="123" />
-			<param name="MoveAroundSocial1" value="123" />
-			<param name="FriendShip1" value="7221" /> <!-- Mark of Varka's Alliance - Level 1 -->
-			<param name="FriendShip2" value="7222" /> <!-- Mark of Varka's Alliance - Level 2 -->
-			<param name="FriendShip3" value="7223" /> <!-- Mark of Varka's Alliance - Level 3 -->
-			<param name="FriendShip4" value="7224" /> <!-- Mark of Varka's Alliance - Level 4 -->
-			<param name="FriendShip5" value="7225" /> <!-- Mark of Varka's Alliance - Level 5 -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6716" /> <!-- Monster Only (Silenos Shaman) -->
@@ -3503,12 +3030,6 @@
 	</npc>
 	<npc id="31384" level="70" type="L2Npc" name="Gatekeeper of Fire Dragon">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="215" />
-			<param name="MoveAroundSocial1" value="215" />
-			<param name="SDoorName" value="valakas_door_01" />
-			<param name="close_time" value="3600000" />
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="84" /> <!-- Homunkulus' Sword -->
@@ -3586,10 +3107,6 @@
 	</npc>
 	<npc id="31386" level="70" type="L2Merchant" name="Violet" title="Grocer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3627,10 +3144,6 @@
 	</npc>
 	<npc id="31387" level="70" type="L2Npc" name="Kurstin">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3668,10 +3181,6 @@
 	</npc>
 	<npc id="31388" level="70" type="L2Npc" name="Mina">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3709,10 +3218,6 @@
 	</npc>
 	<npc id="31389" level="70" type="L2Npc" name="Dorian">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="92" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<equipment rhand="297" /> <!-- Glaive -->
@@ -3751,10 +3256,6 @@
 	</npc>
 	<npc id="31390" level="70" type="L2Npc" name="Dummy - Boy A" title="For Test">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="110" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3792,10 +3293,6 @@
 	</npc>
 	<npc id="31391" level="70" type="L2Npc" name="Dummy - Boy B" title="For Test">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="110" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3833,10 +3330,6 @@
 	</npc>
 	<npc id="31392" level="70" type="L2Npc" name="Dummy - Boy C" title="For Test">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="110" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3874,10 +3367,6 @@
 	</npc>
 	<npc id="31393" level="70" type="L2Npc" name="Dummy - Boy D" title="For Test">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="110" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3915,10 +3404,6 @@
 	</npc>
 	<npc id="31394" level="70" type="L2Npc" name="Dummy - Boy E" title="For Test">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="110" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3956,10 +3441,6 @@
 	</npc>
 	<npc id="31395" level="70" type="L2Npc" name="Dummy - Lady F" title="For Test">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -3997,10 +3478,6 @@
 	</npc>
 	<npc id="31396" level="70" type="L2Npc" name="Dummy - Lady G" title="For Test">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4038,10 +3515,6 @@
 	</npc>
 	<npc id="31397" level="70" type="L2Npc" name="Dummy - Lady H" title="For Test">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4079,10 +3552,6 @@
 	</npc>
 	<npc id="31398" level="70" type="L2Npc" name="Dummy - Lady I" title="For Test">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -4120,10 +3589,6 @@
 	</npc>
 	<npc id="31399" level="70" type="L2Npc" name="Dummy - Lady J" title="For Test">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">

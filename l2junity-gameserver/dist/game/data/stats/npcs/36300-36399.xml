@@ -2,14 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="36300" level="89" type="L2Defender" name="Rebel Private" title="Aaru Fortress">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="92" />
-			<param name="MoveAroundSocial2" value="92" />
-			<param name="IsAggressive" value="1" />
-			<param name="MovingAttack" value="0" />
-			<param name="MoveArounding" value="0" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<equipment rhand="97" /> <!-- Lance -->
@@ -56,16 +48,6 @@
 	</npc>
 	<npc id="36301" level="86" type="L2Defender" name="Royal Guard" title="Aaru Fortress">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="fortress_id" value="119" />
-			<param name="IsAggressive" value="1" />
-			<param name="MovingAttack" value="0" />
-			<param name="MoveArounding" value="0" />
-			<skill name="toggle_buff" id="5432" level="1" /> <!-- Weapon Supply -->
-		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
 		<equipment rhand="98" /> <!-- Halberd -->
@@ -113,16 +95,6 @@
 	</npc>
 	<npc id="36302" level="86" type="L2Defender" name="Escort" title="Aaru Fortress">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="79" />
-			<param name="MoveAroundSocial2" value="79" />
-			<param name="fortress_id" value="119" />
-			<param name="IsAggressive" value="1" />
-			<param name="MovingAttack" value="0" />
-			<param name="MoveArounding" value="0" />
-			<skill name="toggle_buff" id="5432" level="1" /> <!-- Weapon Supply -->
-		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
 		<equipment rhand="287" /> <!-- Bow of Peril -->
@@ -212,17 +184,6 @@
 	</npc>
 	<npc id="36304" level="90" type="L2Defender" name="Dwarven Gunnery Sergeant">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="165" />
-			<param name="MoveAroundSocial1" value="165" />
-			<param name="MoveAroundSocial2" value="165" />
-			<param name="fortress_id" value="119" />
-			<param name="IsAggressive" value="1" />
-			<param name="MovingAttack" value="0" />
-			<skill name="toggle_buff" id="5432" level="1" /> <!-- Weapon Supply -->
-			<skill name="Skill01_ID" id="5461" level="6" /> <!-- Castle Gunner Shot -->
-			<skill name="Skill02_ID" id="5468" level="6" /> <!-- Castle Gunner Fire -->
-		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
 		<acquire expRate="0.5" />
@@ -271,27 +232,6 @@
 	</npc>
 	<npc id="36305" level="92" type="L2FortCommander" name="Guard Captain" title="Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="barrack_id" value="1" />
-			<param name="fortress_id" value="119" />
-			<param name="silhouette" value="36306" /> <!-- Guard -->
-			<param name="ai_type" value="inna_gi_fort_garrison_a" />
-			<param name="msg_dying" value="1300006" />
-			<param name="msg_one_point" value="1300012" />
-			<param name="one_point_prob" value="5" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<skill name="toggle_buff" id="5432" level="1" /> <!-- Weapon Supply -->
-			<param name="spawn_x" value="10" />
-			<param name="spawn_y" value="10" />
-			<skill name="clanbuff" id="4608" level="1" /> <!-- NPC Clan Buff - Berserk -->
-			<skill name="Skill01_ID" id="4172" level="6" /> <!-- Stun -->
-			<param name="Skill01_Probablity" value="2000" />
-			<skill name="selfheal_skill" id="5457" level="1" /> <!-- NPC Full Recover -->
-		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="80" lhand="641" /> <!-- Tallum Blade / Dark Crystal Shield -->
@@ -345,18 +285,6 @@
 	</npc>
 	<npc id="36306" level="90" type="L2Defender" name="Guard" title="Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="fortress_id" value="119" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<skill name="toggle_buff" id="5432" level="1" /> <!-- Weapon Supply -->
-			<param name="Party_Type" value="1" />
-			<param name="PrivateFollowBoss" value="1" />
-			<skill name="Skill01_ID" id="5112" level="6" /> <!-- Stun -->
-		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
 		<equipment rhand="75" /> <!-- Caliburs -->
@@ -405,16 +333,6 @@
 	</npc>
 	<npc id="36307" level="90" type="L2Defender" name="Guard" title="Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="fortress_id" value="119" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<skill name="toggle_buff" id="5432" level="1" /> <!-- Weapon Supply -->
-			<skill name="Skill01_ID" id="5045" level="6" /> <!-- Castle Power Strike -->
-		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
 		<equipment rhand="75" /> <!-- Caliburs -->
@@ -463,29 +381,6 @@
 	</npc>
 	<npc id="36308" level="92" type="L2FortCommander" name="Support Unit Captain" title="Support Unit">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="barrack_id" value="2" />
-			<param name="fortress_id" value="119" />
-			<param name="msg_dying" value="1300005" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="spawn_interval" value="30" />
-			<param name="max_spawn" value="7" />
-			<param name="spawn_prob" value="90" />
-			<param name="silhouette" value="36309" /> <!-- Wizard -->
-			<param name="ai_type" value="inna_gi_fort_witch" />
-			<skill name="toggle_buff" id="5432" level="1" /> <!-- Weapon Supply -->
-			<param name="msg_final_skill" value="1300014" />
-			<skill name="final_skill_id" id="5398" level="1" /> <!-- NPC - Combination Force -->
-			<param name="final_skill_prob" value="2" />
-			<skill name="Skill01_ID" id="4196" level="6" /> <!-- Decrease Speed -->
-			<skill name="Skill02_ID" id="4194" level="6" /> <!-- BOSS Aura Burn -->
-			<skill name="send_zen_id" id="5396" level="1" /> <!-- NPC - Spell Stance -->
-			<skill name="selfheal_skill" id="5457" level="1" /> <!-- NPC Full Recover -->
-		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="0.5" sp="1" />
@@ -537,22 +432,6 @@
 	</npc>
 	<npc id="36309" level="90" type="L2Defender" name="Wizard" title="Support Unit">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="127" />
-			<param name="MoveAroundSocial2" value="148" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="fortress_id" value="119" />
-			<param name="barrack_id" value="2" />
-			<skill name="toggle_buff" id="5432" level="1" /> <!-- Weapon Supply -->
-			<param name="Party_Type" value="1" />
-			<param name="PrivateFollowBoss" value="1" />
-			<skill name="zen_skill_id" id="5396" level="1" /> <!-- NPC - Spell Stance -->
-			<param name="channelling_dist" value="300" />
-			<skill name="Skill01_ID" id="5053" level="6" /> <!-- Castle DD Water -->
-			<skill name="Skill02_ID" id="4077" level="6" /> <!-- NPC Aura Burn -->
-		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
 		<equipment rhand="6579" /> <!-- Arcana Mace -->
@@ -603,21 +482,6 @@
 	</npc>
 	<npc id="36310" level="90" type="L2Defender" name="Healer" title="Support Unit">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="120" />
-			<param name="MoveAroundSocial2" value="120" />
-			<param name="fortress_id" value="119" />
-			<param name="MovingAttack" value="0" />
-			<param name="MoveArounding" value="0" />
-			<param name="IsHealer" value="2" />
-			<skill name="toggle_buff" id="5432" level="1" /> <!-- Weapon Supply -->
-			<skill name="Skill03_ID" id="4115" level="1" /> <!-- Aden Heal -->
-			<param name="Skill03_Target" value="2" />
-			<param name="Skill03_Type" value="3" />
-			<skill name="Skill04_ID" id="5114" level="6" /> <!-- Hold -->
-			<param name="Skill04_Type" value="2" />
-		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="92" /> <!-- Spirit's Staff -->
@@ -667,21 +531,6 @@
 	</npc>
 	<npc id="36311" level="92" type="L2FortCommander" name="Archer Captain" title="Archer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="105" />
-			<param name="MoveAroundSocial2" value="105" />
-			<param name="barrack_id" value="0" />
-			<param name="fortress_id" value="119" />
-			<param name="msg_dying" value="1300004" />
-			<param name="IsAggressive" value="1" />
-			<param name="MovingAttack" value="0" />
-			<param name="MoveArounding" value="0" />
-			<param name="msg_see_spell" value="1300013" />
-			<skill name="toggle_buff" id="5432" level="1" /> <!-- Weapon Supply -->
-			<skill name="skill00_id" id="4755" level="6" /> <!-- BOSS Power Shot -->
-			<skill name="selfheal_skill" id="5457" level="1" /> <!-- NPC Full Recover -->
-		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
 		<equipment rhand="10212" /> <!-- For NPC (Bow) -->
@@ -731,17 +580,6 @@
 	</npc>
 	<npc id="36312" level="90" type="L2Defender" name="Archer" title="Archer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="79" />
-			<param name="MoveAroundSocial2" value="79" />
-			<param name="fortress_id" value="119" />
-			<param name="IsAggressive" value="1" />
-			<param name="MovingAttack" value="0" />
-			<param name="MoveArounding" value="0" />
-			<skill name="toggle_buff" id="5432" level="1" /> <!-- Weapon Supply -->
-			<skill name="Skill01_ID" id="5046" level="6" /> <!-- Castle Power Shot -->
-		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
 		<equipment rhand="287" /> <!-- Bow of Peril -->
@@ -829,52 +667,6 @@
 	</npc>
 	<npc id="36314" level="80" type="L2Monster" name="Mercenary Captain">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="fortress_id" value="119" />
-			<param name="DoorName" value="fortress_2223_004" />
-			<param name="DoorName2" value="fortress_2223_005" />
-			<param name="DoorName3" value="fortress_2223_006" />
-			<param name="DoorName4" value="fortress_2223_007" />
-			<param name="msg_door_break" value="1300001" />
-			<param name="msg_open_door" value="1300002" />
-			<param name="msg_dying" value="1300003" />
-			<param name="Party_Type" value="2" />
-			<minions name="Privates">
-				<npc id="36315" count="1" respawnTime="3" weightPoint="4" /> <!-- Mercenary Private -->
-			</minions>
-			<param name="x0" value="72637" />
-			<param name="y0" value="188462" />
-			<param name="z0" value="-2584" />
-			<param name="x1" value="72662" />
-			<param name="y1" value="188248" />
-			<param name="z1" value="-2584" />
-			<param name="x2" value="72843" />
-			<param name="y2" value="188053" />
-			<param name="z2" value="-2584" />
-			<param name="x3" value="72962" />
-			<param name="y3" value="187937" />
-			<param name="z3" value="-2584" />
-			<param name="x4" value="73126" />
-			<param name="y4" value="187676" />
-			<param name="z4" value="-2584" />
-			<param name="x5" value="73213" />
-			<param name="y5" value="187450" />
-			<param name="z5" value="-2584" />
-			<param name="x6" value="73137" />
-			<param name="y6" value="187219" />
-			<param name="z6" value="-2584" />
-			<param name="x7" value="72939" />
-			<param name="y7" value="187027" />
-			<param name="z7" value="-2584" />
-			<param name="x8" value="72652" />
-			<param name="y8" value="186758" />
-			<param name="z8" value="-2584" />
-			<param name="x9" value="72713" />
-			<param name="y9" value="186612" />
-			<param name="z9" value="-2584" />
-		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
 		<equipment rhand="2500" lhand="6377" /> <!-- Dark Legion's Edge / Imperial Crusader Shield -->

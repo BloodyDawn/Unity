@@ -2,24 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="25600" level="82" type="L2Monster" name="Temenir" title="Darion's Challenger">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="AttackRange" value="2" />
-			<param name="IsHealer" value="2" />
-			<param name="Party_Type" value="2" />
-			<param name="OutOfTerritory" value="1" />
-			<minions name="Privates">
-				<npc id="25596" count="2" respawnTime="0" weightPoint="1" /> <!-- Ocular Servitor -->
-			</minions>
-			<param name="Skill01_Probablity" value="1000" />
-			<param name="Skill02_Probablity" value="1000" />
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_AttackSplash" value="1" />
-			<param name="Skill02_Check_Dist" value="1" />
-			<param name="Skill02_Dist_Max" value="150" />
-			<skill name="Skill01_ID" id="5297" level="5" /> <!-- NPC(party) - Physical Single Close Range Attack - Dark -->
-			<skill name="Skill02_ID" id="5299" level="5" /> <!-- NPC(party) - Physical Range Close Range Attack - Dark -->
-			<skill name="Skill04_ID" id="5331" level="5" /> <!-- NPC HP Drain -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="10277" /> <!-- Monster Only (Behamah Pole) -->

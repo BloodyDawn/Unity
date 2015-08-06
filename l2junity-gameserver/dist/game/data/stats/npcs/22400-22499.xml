@@ -2,9 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="22400" level="83" type="L2Monster" name="Parme's Healer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="MagicHeal" id="4065" level="9" /> <!-- NPC Heal -->
-		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="9639" lhand="9639" /> <!-- Tears r2 / Tears r2 -->
@@ -46,9 +43,6 @@
 	</npc>
 	<npc id="22401" level="83" type="L2Monster" name="Parme's Healer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="MagicHeal" id="4065" level="9" /> <!-- NPC Heal -->
-		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="9639" lhand="9639" /> <!-- Tears r2 / Tears r2 -->
@@ -90,11 +84,6 @@
 	</npc>
 	<npc id="22402" level="83" type="L2Monster" name="Shadow Column">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="SelfRangeDDmagic" id="4614" level="9" /> <!-- NPC Death Bomb -->
-			<skill name="selfbuff" id="5417" level="1" /> <!-- Invincible -->
-			<skill name="W_LongRangeDDMagic" id="4178" level="12" /> <!-- BOSS Flamestrike -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.2326897953259" sp="3" />
@@ -136,20 +125,6 @@
 	</npc>
 	<npc id="22416" level="82" type="L2Monster" name="Kechi's Captain">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="124" />
-			<param name="MoveAroundSocial1" value="124" />
-			<param name="MoveAroundSocial2" value="124" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="0" />
-			<param name="MoveArounding" value="0" />
-			<param name="Party_Type" value="2" />
-			<param name="Party_Loyalty" value="0" />
-			<param name="Party_OneShot" value="50" />
-			<param name="Skill02_AttackSplash" value="1" />
-			<skill name="Skill01_ID" id="5273" level="4" /> <!-- NPC(party) - Physical Single Close Range Attack -->
-			<skill name="Skill02_ID" id="5280" level="3" /> <!-- NPC(party) - Physical Range Long Range Attack - Fire -->
-		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="53.462819750149" sp="86" />
@@ -196,28 +171,6 @@
 	</npc>
 	<npc id="22417" level="82" type="L2Monster" name="Kechi's Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="AttackRange" value="2" />
-			<param name="MoveArounding" value="0" />
-			<param name="Party_Type" value="1" />
-			<param name="Party_Loyalty" value="1" />
-			<param name="Party_OneShot" value="50" />
-			<param name="Skill01_Check_Dist" value="1" />
-			<param name="Skill01_Dist_Min" value="150" />
-			<param name="Skill01_MainAttack" value="1" />
-			<param name="Skill02_Check_Dist" value="1" />
-			<param name="Skill02_Dist_Max" value="150" />
-			<param name="Skill03_Probablity" value="2000" />
-			<param name="Skill03_Type" value="2" />
-			<param name="Skill03_Check_Dist" value="1" />
-			<param name="Skill03_Dist_Max" value="600" />
-			<skill name="Skill01_ID" id="4593" level="1" /> <!-- Decrease P. Def. -->
-			<skill name="Skill02_ID" id="4160" level="10" /> <!-- NPC Aura Burn - Magic -->
-			<skill name="Skill03_ID" id="4104" level="10" /> <!-- Flame -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="11.110648423557" sp="17" />
@@ -269,15 +222,6 @@
 	</npc>
 	<npc id="22418" level="82" type="L2Monster" name="Burning Iris">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="0" />
-			<param name="MoveArounding" value="0" />
-			<skill name="Skill01_ID" id="4032" level="10" /> <!-- NPC Strike -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="7.4955383700178" sp="12" />
@@ -325,22 +269,6 @@
 	</npc>
 	<npc id="22419" level="82" type="L2Monster" name="Flame Iris">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="0" />
-			<param name="AttackRange" value="2" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill01_Check_Dist" value="1" />
-			<param name="Skill01_Dist_Min" value="150" />
-			<param name="Skill01_MainAttack" value="1" />
-			<param name="Skill02_Check_Dist" value="1" />
-			<param name="Skill02_Dist_Max" value="150" />
-			<skill name="Skill01_ID" id="4157" level="10" /> <!-- NPC Blaze - Magic -->
-			<skill name="Skill02_ID" id="4160" level="10" /> <!-- NPC Aura Burn - Magic -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="7.046252230815" sp="11" />
@@ -389,21 +317,6 @@
 	</npc>
 	<npc id="22420" level="82" type="L2Monster" name="Brimstone Iris">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="0" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill01_Target" value="3" />
-			<param name="Skill01_AttackSplash" value="1" />
-			<param name="Skill01_Check_Dist" value="1" />
-			<param name="Skill01_Dist_Max" value="150" />
-			<param name="Skill02_AttackSplash" value="1" />
-			<skill name="Skill01_ID" id="4072" level="10" /> <!-- Stun -->
-			<skill name="Skill02_ID" id="4078" level="10" /> <!-- NPC Flamestrike -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="7.6839678762641" sp="12" />
@@ -452,15 +365,6 @@
 	</npc>
 	<npc id="22443" level="45" type="L2Monster" name="Kertang's Messenger">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<skill name="Skill01_ID" id="4582" level="5" /> <!-- Poison -->
-			<skill name="Skill02_ID" id="4579" level="5" /> <!-- Bleed -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.84" sp="1" />
@@ -502,15 +406,6 @@
 	</npc>
 	<npc id="22444" level="55" type="L2Monster" name="Kertang's Messenger">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<skill name="Skill01_ID" id="4582" level="6" /> <!-- Poison -->
-			<skill name="Skill02_ID" id="4579" level="5" /> <!-- Bleed -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.8403305785124" sp="2" />
@@ -552,16 +447,6 @@
 	</npc>
 	<npc id="22445" level="65" type="L2Monster" name="Kertang's Messenger">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_AttackSplash" value="1" />
-			<skill name="Skill01_ID" id="4606" level="7" /> <!-- Poison -->
-			<skill name="Skill02_ID" id="4579" level="6" /> <!-- Bleed -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.7682840236686" sp="2" />
@@ -603,16 +488,6 @@
 	</npc>
 	<npc id="22446" level="75" type="L2Monster" name="Kertang's Messenger">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_AttackSplash" value="1" />
-			<skill name="Skill01_ID" id="4606" level="8" /> <!-- Poison -->
-			<skill name="Skill02_ID" id="4597" level="8" /> <!-- Bleed -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.5756444444444" sp="3" />
@@ -654,18 +529,6 @@
 	</npc>
 	<npc id="22447" level="80" type="L2Monster" name="Kertang's Messenger">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_AttackSplash" value="1" />
-			<param name="Skill03_AttackSplash" value="1" />
-			<skill name="Skill01_ID" id="4606" level="9" /> <!-- Poison -->
-			<skill name="Skill02_ID" id="4597" level="9" /> <!-- Bleed -->
-			<skill name="Skill03_ID" id="4078" level="9" /> <!-- NPC Flamestrike -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.8640625" sp="4" />
@@ -708,24 +571,6 @@
 	</npc>
 	<npc id="22452" level="25" type="L2Monster" name="White Skull Kanabion">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="Skill01_Probablity" value="2000" />
-			<param name="Type" value="0" />
-			<param name="PrivatesNorm" value="22452" /> <!-- White Skull Kanabion -->
-			<param name="PrivatesSpA" value="22453" /> <!-- White Skull Kanabion -->
-			<param name="PrivatesSpB" value="22454" /> <!-- White Skull Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_25m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="2" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="292" /> <!-- Pike -->
@@ -794,26 +639,6 @@
 	</npc>
 	<npc id="22453" level="25" type="L2Monster" name="White Skull Kanabion" title="Doppler">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="215" />
-			<param name="MoveAroundSocial1" value="215" />
-			<param name="MoveAroundSocial2" value="215" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="3500" />
-			<param name="Type" value="1" />
-			<param name="PrivatesNorm" value="22452" /> <!-- White Skull Kanabion -->
-			<param name="PrivatesSpA" value="22453" /> <!-- White Skull Kanabion -->
-			<param name="PrivatesSpB" value="22454" /> <!-- White Skull Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_25m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="2" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="5285" /> <!-- Heavy Sword -->
@@ -885,27 +710,6 @@
 	</npc>
 	<npc id="22454" level="27" type="L2Monster" name="White Skull Kanabion" title="Void">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="4500" />
-			<param name="Type" value="2" />
-			<param name="PrivatesNorm" value="22452" /> <!-- White Skull Kanabion -->
-			<param name="PrivatesSpA" value="22453" /> <!-- White Skull Kanabion -->
-			<param name="PrivatesSpB" value="22454" /> <!-- White Skull Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_25m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="2" /> <!-- NPC Strike -->
-			<skill name="Buff" id="4340" level="1" /> <!-- Ultimate Buff, 2nd -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="236" /> <!-- Soul Separator -->
@@ -978,24 +782,6 @@
 	</npc>
 	<npc id="22455" level="30" type="L2Monster" name="Begrudged Kanabion">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="138" />
-			<param name="MoveAroundSocial1" value="138" />
-			<param name="MoveAroundSocial2" value="138" />
-			<param name="Skill01_Probablity" value="2000" />
-			<param name="Type" value="0" />
-			<param name="PrivatesNorm" value="22455" /> <!-- Begrudged Kanabion -->
-			<param name="PrivatesSpA" value="22456" /> <!-- Begrudged Kanabion -->
-			<param name="PrivatesSpB" value="22457" /> <!-- Begrudged Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_30m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="3" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="127" /> <!-- Crimson Sword -->
@@ -1064,26 +850,6 @@
 	</npc>
 	<npc id="22456" level="30" type="L2Monster" name="Begrudged Kanabion" title="Doppler">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="75" />
-			<param name="MoveAroundSocial1" value="75" />
-			<param name="MoveAroundSocial2" value="75" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="3500" />
-			<param name="Type" value="1" />
-			<param name="PrivatesNorm" value="22455" /> <!-- Begrudged Kanabion -->
-			<param name="PrivatesSpA" value="22456" /> <!-- Begrudged Kanabion -->
-			<param name="PrivatesSpB" value="22457" /> <!-- Begrudged Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_30m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="3" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="129" /> <!-- Sword of Revolution -->
@@ -1153,27 +919,6 @@
 	</npc>
 	<npc id="22457" level="32" type="L2Monster" name="Begrudged Kanabion" title="Void">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="70" />
-			<param name="MoveAroundSocial1" value="70" />
-			<param name="MoveAroundSocial2" value="70" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="4500" />
-			<param name="Type" value="2" />
-			<param name="PrivatesNorm" value="22455" /> <!-- Begrudged Kanabion -->
-			<param name="PrivatesSpA" value="22456" /> <!-- Begrudged Kanabion -->
-			<param name="PrivatesSpB" value="22457" /> <!-- Begrudged Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_30m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="3" /> <!-- NPC Strike -->
-			<skill name="Buff" id="4340" level="1" /> <!-- Ultimate Buff, 2nd -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="7886" /> <!-- Sword of Magic Fog -->
@@ -1244,24 +989,6 @@
 	</npc>
 	<npc id="22458" level="35" type="L2Monster" name="Rotten Kanabion">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="120" />
-			<param name="MoveAroundSocial1" value="120" />
-			<param name="MoveAroundSocial2" value="120" />
-			<param name="Skill01_Probablity" value="2000" />
-			<param name="Type" value="0" />
-			<param name="PrivatesNorm" value="22458" /> <!-- Rotten Kanabion -->
-			<param name="PrivatesSpA" value="22459" /> <!-- Rotten Kanabion -->
-			<param name="PrivatesSpB" value="22460" /> <!-- Rotten Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_35m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="3" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.4979591836735" sp="1" />
@@ -1329,26 +1056,6 @@
 	</npc>
 	<npc id="22459" level="35" type="L2Monster" name="Rotten Kanabion" title="Doppler">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="126" />
-			<param name="MoveAroundSocial1" value="126" />
-			<param name="MoveAroundSocial2" value="126" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="3500" />
-			<param name="Type" value="1" />
-			<param name="PrivatesNorm" value="22458" /> <!-- Rotten Kanabion -->
-			<param name="PrivatesSpA" value="22459" /> <!-- Rotten Kanabion -->
-			<param name="PrivatesSpB" value="22460" /> <!-- Rotten Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_35m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="3" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.4979591836735" sp="1" />
@@ -1417,27 +1124,6 @@
 	</npc>
 	<npc id="22460" level="37" type="L2Monster" name="Rotten Kanabion" title="Void">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="104" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="4500" />
-			<param name="Type" value="2" />
-			<param name="PrivatesNorm" value="22458" /> <!-- Rotten Kanabion -->
-			<param name="PrivatesSpA" value="22459" /> <!-- Rotten Kanabion -->
-			<param name="PrivatesSpB" value="22460" /> <!-- Rotten Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_35m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="3" /> <!-- NPC Strike -->
-			<skill name="Buff" id="4340" level="1" /> <!-- Ultimate Buff, 2nd -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.7574872169467" sp="1" />
@@ -1506,24 +1192,6 @@
 	</npc>
 	<npc id="22461" level="40" type="L2Monster" name="Gluttonous Kanabion">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="115" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="115" />
-			<param name="Skill01_Probablity" value="2000" />
-			<param name="Type" value="0" />
-			<param name="PrivatesNorm" value="22461" /> <!-- Gluttonous Kanabion -->
-			<param name="PrivatesSpA" value="22462" /> <!-- Gluttonous Kanabion -->
-			<param name="PrivatesSpB" value="22463" /> <!-- Gluttonous Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_40m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="4" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="5128" /> <!-- Crokian Blade -->
@@ -1592,26 +1260,6 @@
 	</npc>
 	<npc id="22462" level="40" type="L2Monster" name="Gluttonous Kanabion" title="Doppler">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="111" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="3500" />
-			<param name="Type" value="1" />
-			<param name="PrivatesNorm" value="22461" /> <!-- Gluttonous Kanabion -->
-			<param name="PrivatesSpA" value="22462" /> <!-- Gluttonous Kanabion -->
-			<param name="PrivatesSpB" value="22463" /> <!-- Gluttonous Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_40m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="4" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.498125" sp="1" />
@@ -1679,27 +1327,6 @@
 	</npc>
 	<npc id="22463" level="42" type="L2Monster" name="Gluttonous Kanabion" title="Void">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="70" />
-			<param name="MoveAroundSocial1" value="81" />
-			<param name="MoveAroundSocial2" value="70" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="4500" />
-			<param name="Type" value="2" />
-			<param name="PrivatesNorm" value="22461" /> <!-- Gluttonous Kanabion -->
-			<param name="PrivatesSpA" value="22462" /> <!-- Gluttonous Kanabion -->
-			<param name="PrivatesSpB" value="22463" /> <!-- Gluttonous Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_40m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="4" /> <!-- NPC Strike -->
-			<skill name="Buff" id="4340" level="1" /> <!-- Ultimate Buff, 2nd -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="5130" /> <!-- Nos Sword -->
@@ -1770,24 +1397,6 @@
 	</npc>
 	<npc id="22464" level="45" type="L2Monster" name="Callous Kanabion">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="60" />
-			<param name="MoveAroundSocial1" value="60" />
-			<param name="MoveAroundSocial2" value="60" />
-			<param name="Skill01_Probablity" value="2000" />
-			<param name="Type" value="0" />
-			<param name="PrivatesNorm" value="22464" /> <!-- Callous Kanabion -->
-			<param name="PrivatesSpA" value="22465" /> <!-- Callous Kanabion -->
-			<param name="PrivatesSpB" value="22466" /> <!-- Callous Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_45m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="4" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="7887" /> <!-- Mysterious Sword -->
@@ -1856,26 +1465,6 @@
 	</npc>
 	<npc id="22465" level="45" type="L2Monster" name="Callous Kanabion" title="Doppler">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="120" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="120" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="3500" />
-			<param name="Type" value="1" />
-			<param name="PrivatesNorm" value="22464" /> <!-- Callous Kanabion -->
-			<param name="PrivatesSpA" value="22465" /> <!-- Callous Kanabion -->
-			<param name="PrivatesSpB" value="22466" /> <!-- Callous Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_45m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="4" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="298" /> <!-- Orcish Glaive -->
@@ -1945,27 +1534,6 @@
 	</npc>
 	<npc id="22466" level="47" type="L2Monster" name="Callous Kanabion" title="Void">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="70" />
-			<param name="MoveAroundSocial1" value="70" />
-			<param name="MoveAroundSocial2" value="70" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="4500" />
-			<param name="Type" value="2" />
-			<param name="PrivatesNorm" value="22464" /> <!-- Callous Kanabion -->
-			<param name="PrivatesSpA" value="22465" /> <!-- Callous Kanabion -->
-			<param name="PrivatesSpB" value="22466" /> <!-- Callous Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_45m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="4" /> <!-- NPC Strike -->
-			<skill name="Buff" id="4340" level="1" /> <!-- Ultimate Buff, 2nd -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="226" /> <!-- Cursed Dagger -->
@@ -2036,24 +1604,6 @@
 	</npc>
 	<npc id="22467" level="50" type="L2Monster" name="Savage Kanabion">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="50" />
-			<param name="MoveAroundSocial2" value="100" />
-			<param name="Skill01_Probablity" value="2000" />
-			<param name="Type" value="0" />
-			<param name="PrivatesNorm" value="22467" /> <!-- Savage Kanabion -->
-			<param name="PrivatesSpA" value="22468" /> <!-- Savage Kanabion -->
-			<param name="PrivatesSpB" value="22469" /> <!-- Savage Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_50m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="5" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="77" /> <!-- Tsurugi -->
@@ -2122,26 +1672,6 @@
 	</npc>
 	<npc id="22468" level="50" type="L2Monster" name="Savage Kanabion" title="Doppler">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="60" />
-			<param name="MoveAroundSocial1" value="50" />
-			<param name="MoveAroundSocial2" value="60" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="3500" />
-			<param name="Type" value="1" />
-			<param name="PrivatesNorm" value="22467" /> <!-- Savage Kanabion -->
-			<param name="PrivatesSpA" value="22468" /> <!-- Savage Kanabion -->
-			<param name="PrivatesSpB" value="22469" /> <!-- Savage Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_50m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="5" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="75" /> <!-- Caliburs -->
@@ -2211,27 +1741,6 @@
 	</npc>
 	<npc id="22469" level="52" type="L2Monster" name="Savage Kanabion" title="Void">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="60" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="4500" />
-			<param name="Type" value="2" />
-			<param name="PrivatesNorm" value="22467" /> <!-- Savage Kanabion -->
-			<param name="PrivatesSpA" value="22468" /> <!-- Savage Kanabion -->
-			<param name="PrivatesSpB" value="22469" /> <!-- Savage Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_50m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="5" /> <!-- NPC Strike -->
-			<skill name="Buff" id="4340" level="1" /> <!-- Ultimate Buff, 2nd -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="84" /> <!-- Homunkulus' Sword -->
@@ -2302,24 +1811,6 @@
 	</npc>
 	<npc id="22470" level="55" type="L2Monster" name="Peerless Kanabion">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="35" />
-			<param name="MoveAroundSocial1" value="35" />
-			<param name="MoveAroundSocial2" value="35" />
-			<param name="Skill01_Probablity" value="2000" />
-			<param name="Type" value="0" />
-			<param name="PrivatesNorm" value="22470" /> <!-- Peerless Kanabion -->
-			<param name="PrivatesSpA" value="22471" /> <!-- Peerless Kanabion -->
-			<param name="PrivatesSpB" value="22472" /> <!-- Peerless Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_55m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="5" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="7888" /> <!-- Ecliptic Sword -->
@@ -2388,26 +1879,6 @@
 	</npc>
 	<npc id="22471" level="55" type="L2Monster" name="Peerless Kanabion" title="Doppler">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="60" />
-			<param name="MoveAroundSocial1" value="60" />
-			<param name="MoveAroundSocial2" value="60" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="3500" />
-			<param name="Type" value="1" />
-			<param name="PrivatesNorm" value="22470" /> <!-- Peerless Kanabion -->
-			<param name="PrivatesSpA" value="22471" /> <!-- Peerless Kanabion -->
-			<param name="PrivatesSpB" value="22472" /> <!-- Peerless Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_55m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="5" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="84" /> <!-- Homunkulus' Sword -->
@@ -2477,27 +1948,6 @@
 	</npc>
 	<npc id="22472" level="57" type="L2Monster" name="Peerless Kanabion" title="Void">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="60" />
-			<param name="MoveAroundSocial1" value="60" />
-			<param name="MoveAroundSocial2" value="60" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="4500" />
-			<param name="Type" value="2" />
-			<param name="PrivatesNorm" value="22470" /> <!-- Peerless Kanabion -->
-			<param name="PrivatesSpA" value="22471" /> <!-- Peerless Kanabion -->
-			<param name="PrivatesSpB" value="22472" /> <!-- Peerless Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_55m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="5" /> <!-- NPC Strike -->
-			<skill name="Buff" id="4340" level="1" /> <!-- Ultimate Buff, 2nd -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="135" /> <!-- Samurai Long Sword -->
@@ -2568,24 +2018,6 @@
 	</npc>
 	<npc id="22473" level="60" type="L2Monster" name="Massive Kanabion">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="74" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="Skill01_Probablity" value="2000" />
-			<param name="Type" value="0" />
-			<param name="PrivatesNorm" value="22473" /> <!-- Massive Kanabion -->
-			<param name="PrivatesSpA" value="22474" /> <!-- Massive Kanabion -->
-			<param name="PrivatesSpB" value="22475" /> <!-- Massive Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_60m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="127" /> <!-- Crimson Sword -->
@@ -2654,26 +2086,6 @@
 	</npc>
 	<npc id="22474" level="60" type="L2Monster" name="Massive Kanabion" title="Doppler">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="74" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="3500" />
-			<param name="Type" value="1" />
-			<param name="PrivatesNorm" value="22473" /> <!-- Massive Kanabion -->
-			<param name="PrivatesSpA" value="22474" /> <!-- Massive Kanabion -->
-			<param name="PrivatesSpB" value="22475" /> <!-- Massive Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_60m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="148" /> <!-- Sword of Valhalla -->
@@ -2743,27 +2155,6 @@
 	</npc>
 	<npc id="22475" level="62" type="L2Monster" name="Massive Kanabion" title="Void">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="74" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="4500" />
-			<param name="Type" value="2" />
-			<param name="PrivatesNorm" value="22473" /> <!-- Massive Kanabion -->
-			<param name="PrivatesSpA" value="22474" /> <!-- Massive Kanabion -->
-			<param name="PrivatesSpB" value="22475" /> <!-- Massive Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_60m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="Buff" id="4340" level="1" /> <!-- Ultimate Buff, 2nd -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="161" /> <!-- Silver Axe -->
@@ -2834,24 +2225,6 @@
 	</npc>
 	<npc id="22476" level="65" type="L2Monster" name="Fervent Kanabion">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="Skill01_Probablity" value="2000" />
-			<param name="Type" value="0" />
-			<param name="PrivatesNorm" value="22476" /> <!-- Fervent Kanabion -->
-			<param name="PrivatesSpA" value="22477" /> <!-- Fervent Kanabion -->
-			<param name="PrivatesSpB" value="22478" /> <!-- Fervent Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_65m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="85" /> <!-- Corroded Phantom Sword -->
@@ -2920,26 +2293,6 @@
 	</npc>
 	<npc id="22477" level="65" type="L2Monster" name="Fervent Kanabion" title="Doppler">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="3500" />
-			<param name="Type" value="1" />
-			<param name="PrivatesNorm" value="22476" /> <!-- Fervent Kanabion -->
-			<param name="PrivatesSpA" value="22477" /> <!-- Fervent Kanabion -->
-			<param name="PrivatesSpB" value="22478" /> <!-- Fervent Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_65m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="6723" /> <!-- Monster Only (Vampire Warrior) -->
@@ -3008,27 +2361,6 @@
 	</npc>
 	<npc id="22478" level="67" type="L2Monster" name="Fervent Kanabion" title="Void">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="4500" />
-			<param name="Type" value="2" />
-			<param name="PrivatesNorm" value="22476" /> <!-- Fervent Kanabion -->
-			<param name="PrivatesSpA" value="22477" /> <!-- Fervent Kanabion -->
-			<param name="PrivatesSpB" value="22478" /> <!-- Fervent Kanabion -->
-			<param name="MyMakerName" value="inzone03_2011_65m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="Buff" id="4340" level="1" /> <!-- Ultimate Buff, 2nd -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="8686" /> <!-- Themis' Tongue -->
@@ -3098,24 +2430,6 @@
 	</npc>
 	<npc id="22479" level="70" type="L2Monster" name="Ruptured Kanabion">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="Skill01_Probablity" value="2000" />
-			<param name="Type" value="0" />
-			<param name="PrivatesNorm" value="22479" /> <!-- Ruptured Kanabion -->
-			<param name="PrivatesSpA" value="22480" /> <!-- Ruptured Kanabion -->
-			<param name="PrivatesSpB" value="22481" /> <!-- Ruptured Kanabion -->
-			<param name="MyMakerName" value="inzone03_2111_70m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="7" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.3255102040816" sp="2" />
@@ -3183,26 +2497,6 @@
 	</npc>
 	<npc id="22480" level="70" type="L2Monster" name="Ruptured Kanabion" title="Doppler">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="3500" />
-			<param name="Type" value="1" />
-			<param name="PrivatesNorm" value="22479" /> <!-- Ruptured Kanabion -->
-			<param name="PrivatesSpA" value="22480" /> <!-- Ruptured Kanabion -->
-			<param name="PrivatesSpB" value="22481" /> <!-- Ruptured Kanabion -->
-			<param name="MyMakerName" value="inzone03_2111_70m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="7" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.3255102040816" sp="2" />
@@ -3271,27 +2565,6 @@
 	</npc>
 	<npc id="22481" level="72" type="L2Monster" name="Ruptured Kanabion" title="Void">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="4500" />
-			<param name="Type" value="2" />
-			<param name="PrivatesNorm" value="22479" /> <!-- Ruptured Kanabion -->
-			<param name="PrivatesSpA" value="22480" /> <!-- Ruptured Kanabion -->
-			<param name="PrivatesSpB" value="22481" /> <!-- Ruptured Kanabion -->
-			<param name="MyMakerName" value="inzone03_2111_70m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="7" /> <!-- NPC Strike -->
-			<skill name="Buff" id="4340" level="1" /> <!-- Ultimate Buff, 2nd -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.5842978395062" sp="3" />
@@ -3361,24 +2634,6 @@
 	</npc>
 	<npc id="22482" level="75" type="L2Monster" name="Sword Kanabion">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-			<param name="Skill01_Probablity" value="2000" />
-			<param name="Type" value="0" />
-			<param name="PrivatesNorm" value="22482" /> <!-- Sword Kanabion -->
-			<param name="PrivatesSpA" value="22483" /> <!-- Sword Kanabion -->
-			<param name="PrivatesSpB" value="22484" /> <!-- Sword Kanabion -->
-			<param name="MyMakerName" value="inzone03_2111_75m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="8" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="2.3255111111111" sp="3" />
@@ -3446,26 +2701,6 @@
 	</npc>
 	<npc id="22483" level="75" type="L2Monster" name="Sword Kanabion" title="Doppler">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="160" />
-			<param name="MoveAroundSocial1" value="160" />
-			<param name="MoveAroundSocial2" value="160" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="3500" />
-			<param name="Type" value="1" />
-			<param name="PrivatesNorm" value="22482" /> <!-- Sword Kanabion -->
-			<param name="PrivatesSpA" value="22483" /> <!-- Sword Kanabion -->
-			<param name="PrivatesSpB" value="22484" /> <!-- Sword Kanabion -->
-			<param name="MyMakerName" value="inzone03_2111_75m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="8" /> <!-- NPC Strike -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.3255111111111" sp="3" />
@@ -3534,27 +2769,6 @@
 	</npc>
 	<npc id="22484" level="77" type="L2Monster" name="Sword Kanabion" title="Void">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="160" />
-			<param name="MoveAroundSocial1" value="160" />
-			<param name="MoveAroundSocial2" value="160" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="4500" />
-			<param name="Type" value="2" />
-			<param name="PrivatesNorm" value="22482" /> <!-- Sword Kanabion -->
-			<param name="PrivatesSpA" value="22483" /> <!-- Sword Kanabion -->
-			<param name="PrivatesSpB" value="22484" /> <!-- Sword Kanabion -->
-			<param name="MyMakerName" value="inzone03_2111_75m1" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="5" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="10" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="8" /> <!-- NPC Strike -->
-			<skill name="Buff" id="4340" level="1" /> <!-- Ultimate Buff, 2nd -->
-			<skill name="Debuff" id="5719" level="1" /> <!-- Kamabion Susceptibility -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="3.1017034913139" sp="4" />
@@ -3626,25 +2840,6 @@
 	</npc>
 	<npc id="22485" level="29" type="L2Monster" name="Lost Watcher">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="120" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="120" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Type" value="2" />
-			<param name="Skill02_Probablity" value="500" />
-			<param name="is_private" value="0" />
-			<param name="silhouette" value="22486" /> <!-- Lost Watcher -->
-			<param name="ai_type" value="kamaloka_29_a_false" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="2" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4047" level="2" /> <!-- Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="127" /> <!-- Crimson Sword -->
@@ -3686,22 +2881,6 @@
 	</npc>
 	<npc id="22486" level="29" type="L2Monster" name="Lost Watcher">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="120" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="120" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Type" value="2" />
-			<param name="Skill02_Probablity" value="500" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="2" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4047" level="2" /> <!-- Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="127" /> <!-- Crimson Sword -->
@@ -3743,25 +2922,6 @@
 	</npc>
 	<npc id="22487" level="29" type="L2Monster" name="Lost Beholder">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="120" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="120" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_Type" value="3" />
-			<param name="Skill02_AttackSplash" value="1" />
-			<param name="Skill03_Type" value="2" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="2" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4613" level="2" /> <!-- NPC Clan Heal -->
-			<skill name="Skill03_ID" id="4098" level="3" /> <!-- Silence -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="72" /> <!-- StormBringer -->
@@ -3804,25 +2964,6 @@
 	</npc>
 	<npc id="22488" level="39" type="L2Monster" name="Lost Watcher">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="60" />
-			<param name="MoveAroundSocial1" value="60" />
-			<param name="MoveAroundSocial2" value="60" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Type" value="2" />
-			<param name="Skill02_Probablity" value="500" />
-			<param name="is_private" value="0" />
-			<param name="silhouette" value="22489" /> <!-- Lost Watcher -->
-			<param name="ai_type" value="kamaloka_39_a_false" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="3" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4047" level="3" /> <!-- Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="68" /> <!-- Falchion -->
@@ -3864,22 +3005,6 @@
 	</npc>
 	<npc id="22489" level="39" type="L2Monster" name="Lost Watcher">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="60" />
-			<param name="MoveAroundSocial1" value="60" />
-			<param name="MoveAroundSocial2" value="60" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Type" value="2" />
-			<param name="Skill02_Probablity" value="500" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="3" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4047" level="3" /> <!-- Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="68" /> <!-- Falchion -->
@@ -3921,25 +3046,6 @@
 	</npc>
 	<npc id="22490" level="39" type="L2Monster" name="Lost Beholder">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="120" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="120" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_Type" value="3" />
-			<param name="Skill02_AttackSplash" value="1" />
-			<param name="Skill03_Type" value="2" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="3" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4613" level="3" /> <!-- NPC Clan Heal -->
-			<skill name="Skill03_ID" id="4098" level="4" /> <!-- Silence -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- Great Spear -->
@@ -3982,25 +3088,6 @@
 	</npc>
 	<npc id="22491" level="49" type="L2Monster" name="Lost Watcher">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="116" />
-			<param name="MoveAroundSocial1" value="116" />
-			<param name="MoveAroundSocial2" value="116" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Type" value="2" />
-			<param name="Skill02_Probablity" value="500" />
-			<param name="is_private" value="0" />
-			<param name="silhouette" value="22492" /> <!-- Lost Watcher -->
-			<param name="ai_type" value="kamaloka_49_a_false" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="4" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4047" level="4" /> <!-- Hold -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -4041,22 +3128,6 @@
 	</npc>
 	<npc id="22492" level="49" type="L2Monster" name="Lost Watcher">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="116" />
-			<param name="MoveAroundSocial1" value="116" />
-			<param name="MoveAroundSocial2" value="116" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Type" value="2" />
-			<param name="Skill02_Probablity" value="500" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="4" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4047" level="4" /> <!-- Hold -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -4097,25 +3168,6 @@
 	</npc>
 	<npc id="22493" level="49" type="L2Monster" name="Lost Beholder">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_Type" value="3" />
-			<param name="Skill02_AttackSplash" value="1" />
-			<param name="Skill03_Type" value="2" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="4" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4613" level="4" /> <!-- NPC Clan Heal -->
-			<skill name="Skill03_ID" id="4098" level="5" /> <!-- Silence -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -4157,25 +3209,6 @@
 	</npc>
 	<npc id="22494" level="59" type="L2Monster" name="Lost Watcher">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Type" value="2" />
-			<param name="Skill02_Probablity" value="500" />
-			<param name="is_private" value="0" />
-			<param name="silhouette" value="22495" /> <!-- Lost Watcher -->
-			<param name="ai_type" value="kamaloka_59_a_false" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="5" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4047" level="5" /> <!-- Hold -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" lhand="945" /> <!-- Skeleton Dagger / Skeleton Buckler -->
@@ -4217,22 +3250,6 @@
 	</npc>
 	<npc id="22495" level="59" type="L2Monster" name="Lost Watcher">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Type" value="2" />
-			<param name="Skill02_Probablity" value="500" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="5" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4047" level="5" /> <!-- Hold -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" lhand="945" /> <!-- Skeleton Dagger / Skeleton Buckler -->
@@ -4274,25 +3291,6 @@
 	</npc>
 	<npc id="22496" level="59" type="L2Monster" name="Lost Beholder">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_Type" value="3" />
-			<param name="Skill02_AttackSplash" value="1" />
-			<param name="Skill03_Type" value="2" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="5" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4613" level="5" /> <!-- NPC Clan Heal -->
-			<skill name="Skill03_ID" id="4098" level="6" /> <!-- Silence -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -4334,25 +3332,6 @@
 	</npc>
 	<npc id="22497" level="69" type="L2Monster" name="Lost Watcher">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="78" />
-			<param name="MoveAroundSocial1" value="78" />
-			<param name="MoveAroundSocial2" value="78" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Type" value="2" />
-			<param name="Skill02_Probablity" value="500" />
-			<param name="is_private" value="0" />
-			<param name="silhouette" value="22498" /> <!-- Lost Watcher -->
-			<param name="ai_type" value="kamaloka_69_a_false" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4047" level="6" /> <!-- Hold -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -4393,22 +3372,6 @@
 	</npc>
 	<npc id="22498" level="69" type="L2Monster" name="Lost Watcher">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="78" />
-			<param name="MoveAroundSocial1" value="78" />
-			<param name="MoveAroundSocial2" value="78" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Type" value="2" />
-			<param name="Skill02_Probablity" value="500" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4047" level="6" /> <!-- Hold -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
@@ -4449,25 +3412,6 @@
 	</npc>
 	<npc id="22499" level="69" type="L2Monster" name="Lost Beholder">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="IsAggressive" value="1" />
-			<param name="MoveArounding" value="0" />
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_Type" value="3" />
-			<param name="Skill02_AttackSplash" value="1" />
-			<param name="Skill03_Type" value="2" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Skill01_ID" id="4032" level="6" /> <!-- NPC Strike -->
-			<skill name="Skill02_ID" id="4613" level="6" /> <!-- NPC Clan Heal -->
-			<skill name="Skill03_ID" id="4098" level="7" /> <!-- Silence -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">

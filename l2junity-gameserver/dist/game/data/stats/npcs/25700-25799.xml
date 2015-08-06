@@ -2,13 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="25700" level="88" type="L2RaidBoss" name="Glakias" title="Ice Knight Captain">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6293" level="1" /> <!-- Power Strike -->
-			<skill name="Skill02_ID" id="6295" level="1" /> <!-- Point Target -->
-			<skill name="Skill03_ID" id="6297" level="1" /> <!-- Cylinder Throw -->
-			<skill name="SelfRangeBuff" id="6294" level="1" /> <!-- Leader's Roar -->
-			<skill name="Skill_Summon" id="6298" level="1" /> <!-- Summon Follower Knight -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
@@ -60,11 +53,6 @@
 	</npc>
 	<npc id="25701" level="84" type="L2RaidBoss" name="Anais" title="Lord of Splendor">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6324" level="1" /> <!-- Divine Strike -->
-			<skill name="Skill02_ID" id="6323" level="1" /> <!-- Divine Bolt -->
-			<skill name="Skill03_ID" id="6325" level="1" /> <!-- Divine Nova -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8214" /> <!-- Monster Only (Solina Priest Pole) -->
@@ -140,9 +128,6 @@
 	</npc>
 	<npc id="25702" level="84" type="L2Monster" name="Guard of the Grail">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6326" level="1" /> <!-- Martyr's Happiness -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -183,19 +168,6 @@
 	</npc>
 	<npc id="25703" level="76" type="L2RaidBoss" name="Gigantic Golem" title="Chaos">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25704" count="3" respawnTime="420" weightPoint="1" /> <!-- Gigantic Golem Subordinate -->
-			</minions>
-			<minions name="Privates2">
-				<npc id="25705" count="6" respawnTime="360" weightPoint="1" /> <!-- Gigantic Boom Golem -->
-			</minions>
-			<param name="Party_Type" value="2" />
-			<param name="Party_Loyalty" value="2" />
-			<param name="Skill01_Probablity" value="0" />
-			<skill name="Skill01_ID" id="6263" level="1" /> <!-- EMP Shock -->
-			<skill name="Skill02_ID" id="6608" level="10" /> <!-- NPC earth shot -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="593.68871191136" sp="822" />

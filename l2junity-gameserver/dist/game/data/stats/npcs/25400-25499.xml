@@ -2,10 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="25400" level="34" type="L2Monster" name="Watchman's Servant" title="Raid Fighter">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="HealMagic_a" id="4783" level="3" /> <!-- BOSS Heal -->
-			<skill name="SelfRangeBuff_a" id="4213" level="3" /> <!-- BOSS Haste -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
@@ -43,14 +39,6 @@
 	</npc>
 	<npc id="25401" level="32" type="L2RaidBoss" name="Skyla" title="Raid Boss">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<minions name="Privates">
-				<npc id="25402" count="1" respawnTime="360" weightPoint="1" /> <!-- Retainer of Skyla -->
-				<npc id="25403" count="3" respawnTime="360" weightPoint="1" /> <!-- Follower of Skyla -->
-			</minions>
-			<param name="RaidSpawnMusic" value="Rm02_A" />
-			<skill name="RangeHold_a" id="4197" level="3" /> <!-- Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="215" /> <!-- Doom Dagger -->

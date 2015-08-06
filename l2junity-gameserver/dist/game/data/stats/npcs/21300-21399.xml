@@ -2,20 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="21300" level="71" type="L2Monster" name="Eye of Guide">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="SetHateGroup" value="SUBJOB_GROUP_KNIGHT" />
-			<param name="SetHateGroupRatio" value="30" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpeedBonus" value="40" />
-			<param name="HealBonus" value="2.4" />
-			<param name="SpiritShotRate" value="30" />
-			<skill name="W_LongRangeDDMagic" id="4158" level="7" /> <!-- NPC Prominence - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="7" /> <!-- NPC Aura Burn - Magic -->
-			<skill name="Heal" id="4613" level="7" /> <!-- NPC Clan Heal -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="16.726443166038" sp="20" />
@@ -79,24 +65,6 @@
 	</npc>
 	<npc id="21301" level="71" type="L2Monster" name="Gaze of Nightmare">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="40" />
-			<param name="MoveAroundSocial1" value="40" />
-			<param name="MoveAroundSocial2" value="40" />
-			<skill name="CheckMagic" id="4098" level="7" /> <!-- Silence -->
-			<skill name="CheckMagic1" id="4046" level="7" /> <!-- Sleep -->
-			<skill name="SleepMagic" id="4046" level="7" /> <!-- Sleep -->
-			<param name="RandomAggressive" value="30" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="DDMagic" id="4105" level="7" /> <!-- NPC Straight Beam Cannon -->
-			<skill name="CancelMagic" id="4094" level="7" /> <!-- NPC Cancel Magic -->
-			<skill name="DeBuff" id="4047" level="7" /> <!-- Hold -->
-			<skill name="DeBuffCancel" id="4650" level="1" /> <!-- NPC AE - Dispel Hold -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="20.071811148582" sp="24" />
@@ -163,23 +131,6 @@
 	</npc>
 	<npc id="21302" level="72" type="L2Monster" name="Eye of Watchman">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="90" />
-			<skill name="CheckMagic" id="4098" level="7" /> <!-- Silence -->
-			<skill name="CheckMagic1" id="4046" level="7" /> <!-- Sleep -->
-			<skill name="SleepMagic" id="4046" level="7" /> <!-- Sleep -->
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="DDMagic" id="4105" level="7" /> <!-- NPC Straight Beam Cannon -->
-			<skill name="CancelMagic" id="4094" level="7" /> <!-- NPC Cancel Magic -->
-			<skill name="DeBuff" id="4657" level="7" /> <!-- Hold -->
-			<skill name="DeBuffCancel" id="4650" level="1" /> <!-- NPC AE - Dispel Hold -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="15.704861111111" sp="19" />
@@ -246,18 +197,6 @@
 	</npc>
 	<npc id="21303" level="74" type="L2Monster" name="Homunculus">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="AttackLowHP" value="1" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<skill name="W_LongRangeDDMagic" id="4563" level="7" /> <!-- NPC Solar Flare - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="7" /> <!-- NPC Fire Burn - Magic -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="15.884404674945" sp="20" />
@@ -320,23 +259,6 @@
 	</npc>
 	<npc id="21304" level="75" type="L2Monster" name="Grendel Slave">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="115" />
-			<param name="MoveAroundSocial1" value="115" />
-			<param name="MoveAroundSocial2" value="115" />
-			<param name="SetHateGroup" value="SUBJOB_GROUP_KNIGHT" />
-			<param name="SetHateGroupRatio" value="30" />
-			<param name="AttackLowHP" value="1" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="SelfBuff1" id="4089" level="1" /> <!-- NPC Bear Spirit Totem -->
-			<skill name="SelfBuff2" id="4090" level="1" /> <!-- NPC Wolf Spirit Totem -->
-			<skill name="SelfBuff3" id="4092" level="1" /> <!-- NPC Puma Spirit Totem -->
-			<skill name="SelfBuff4" id="4091" level="1" /> <!-- NPC Ogre Spirit Totem -->
-		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="22.714844444444" sp="30" />
@@ -402,20 +324,6 @@
 	</npc>
 	<npc id="21305" level="73" type="L2Monster" name="Eye of Pilgrim">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="SetHateGroup" value="SUBJOB_GROUP_KNIGHT" />
-			<param name="SetHateGroupRatio" value="30" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<skill name="W_LongRangeDDMagic" id="4158" level="7" /> <!-- NPC Prominence - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="7" /> <!-- NPC Aura Burn - Magic -->
-			<skill name="Heal" id="4613" level="7" /> <!-- NPC Clan Heal -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="16.726590354663" sp="21" />
@@ -480,18 +388,6 @@
 	</npc>
 	<npc id="21306" level="76" type="L2Monster" name="Disciples of Protection">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="130" />
-			<param name="MoveAroundSocial1" value="130" />
-			<param name="MoveAroundSocial2" value="130" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="30" />
-			<param name="SetHateGroup" value="SUBJOB_GROUP_KNIGHT" />
-			<param name="SetHateGroupRatio" value="30" />
-			<param name="AttackLowHP" value="1" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="Buff" id="4585" level="3" /> <!-- NPC Clan Buff - Berserk Might -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="6717" /> <!-- Monster Only (Einhasad Warrior) -->
@@ -557,19 +453,6 @@
 	</npc>
 	<npc id="21307" level="74" type="L2Monster" name="Elder Homunculus">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="Attack_DecayRatio" value="4" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<skill name="W_LongRangeDDMagic" id="4257" level="8" /> <!-- NPC Hydroblast - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4561" level="8" /> <!-- NPC Fire Burn - Magic -->
-			<skill name="DeBuff" id="4038" level="5" /> <!-- Decrease Atk. Spd. -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="20.649744338934" sp="27" />
@@ -634,17 +517,6 @@
 	</npc>
 	<npc id="21308" level="77" type="L2Monster" name="Disciples of Punishment">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="130" />
-			<param name="MoveAroundSocial1" value="130" />
-			<param name="MoveAroundSocial2" value="130" />
-			<param name="SetHateGroup" value="SUBJOB_GROUP_KNIGHT" />
-			<param name="SetHateGroupRatio" value="30" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="30" />
-			<skill name="W_LongRangeDDMagic" id="4158" level="8" /> <!-- NPC Prominence - Magic -->
-			<skill name="PhysicalSpecialRange" id="4599" level="8" /> <!-- Decrease Speed -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="6717" /> <!-- Monster Only (Einhasad Warrior) -->
@@ -719,20 +591,6 @@
 	</npc>
 	<npc id="21309" level="77" type="L2Monster" name="Disciples of Punishment">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="130" />
-			<param name="MoveAroundSocial1" value="130" />
-			<param name="MoveAroundSocial2" value="130" />
-			<param name="SetHateGroup" value="SUBJOB_GROUP_KNIGHT" />
-			<param name="SetHateGroupRatio" value="30" />
-			<param name="AttackLowHP" value="1" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="30" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="SelfRangeDDMagic" id="4033" level="8" /> <!-- NPC Burn -->
-			<skill name="SelfBuff" id="4091" level="1" /> <!-- NPC Ogre Spirit Totem -->
-			<skill name="PhysicalSpecial" id="4580" level="8" /> <!-- Decrease P. Atk. -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="6717" /> <!-- Monster Only (Einhasad Warrior) -->
@@ -781,18 +639,6 @@
 	</npc>
 	<npc id="21310" level="78" type="L2Monster" name="Disciples of Authority">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="85" />
-			<param name="MoveAroundSocial1" value="85" />
-			<param name="MoveAroundSocial2" value="85" />
-			<param name="AttackLowHP" value="1" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpeedBonus" value="40" />
-			<param name="HealBonus" value="1" />
-			<param name="SpiritShotRate" value="30" />
-			<skill name="W_LongRangeDDMagic" id="4158" level="8" /> <!-- NPC Prominence - Magic -->
-			<skill name="SelfRangeDDMagic" id="4599" level="8" /> <!-- Decrease Speed -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="6718" /> <!-- Monster Only (Einhasad Shaman) -->
@@ -863,17 +709,6 @@
 	</npc>
 	<npc id="21311" level="78" type="L2Monster" name="Disciples of Authority">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="85" />
-			<param name="MoveAroundSocial1" value="85" />
-			<param name="MoveAroundSocial2" value="85" />
-			<param name="SpiritShot" value="300" />
-			<param name="SpeedBonus" value="40" />
-			<param name="HealBonus" value="1" />
-			<param name="SpiritShotRate" value="30" />
-			<skill name="W_LongRangeDDMagic" id="4158" level="8" /> <!-- NPC Prominence - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="8" /> <!-- NPC Aura Burn - Magic -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="6718" /> <!-- Monster Only (Einhasad Shaman) -->
@@ -919,24 +754,6 @@
 	</npc>
 	<npc id="21312" level="74" type="L2Monster" name="Eye of Ruler">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="90" />
-			<minions name="Privates">
-				<npc id="21313" count="2" respawnTime="0" weightPoint="1" /> <!-- Sly Hound Dog -->
-			</minions>
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<skill name="W_LongRangeDDMagic" id="4156" level="7" /> <!-- NPC Curve Beam Cannon - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="7" /> <!-- NPC Aura Burn - Magic -->
-			<skill name="RangeBuff" id="4609" level="4" /> <!-- NPC Clan Buff - Vampiric Rage -->
-			<skill name="DeBuff" id="4047" level="7" /> <!-- Hold -->
-			<skill name="DeBuffCancel" id="4650" level="1" /> <!-- NPC AE - Dispel Hold -->
-			<skill name="RangeDD" id="4571" level="7" /> <!-- NPC Blazing Circle -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="23.13184806428" sp="30" />

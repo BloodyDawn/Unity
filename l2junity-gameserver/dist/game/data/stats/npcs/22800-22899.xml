@@ -2,12 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="22800" level="84" type="L2Monster" name="Divinity Magus">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6321" level="1" /> <!-- Divine Flash -->
-			<skill name="Skill02_ID" id="6322" level="1" /> <!-- Divine Impact -->
-			<skill name="Skill03_ID" id="6320" level="1" /> <!-- Summon Sacred Magic Force -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire expRate="89.132511337868" sp="150" />
@@ -99,13 +93,6 @@
 	</npc>
 	<npc id="22801" level="72" type="L2Monster" name="Cruel Pincer Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="Privates01_sil" value="22802" /> <!-- Cruel Pincer Golem -->
-			<param name="Privates01_ai" value="golem_cannon2_p" />
-			<param name="Privates02_sil" value="22803" /> <!-- Cruel Pincer Golem -->
-			<param name="Privates02_ai" value="golem_cannon3_p" />
-			<skill name="Skill01_ID" id="6598" level="9" /> <!-- NPC earth attack -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.9243827160494" sp="3" />
@@ -180,9 +167,6 @@
 	</npc>
 	<npc id="22802" level="72" type="L2Monster" name="Cruel Pincer Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6598" level="9" /> <!-- NPC earth attack -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.0875771604938" sp="2" />
@@ -258,9 +242,6 @@
 	</npc>
 	<npc id="22803" level="72" type="L2Monster" name="Cruel Pincer Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6598" level="9" /> <!-- NPC earth attack -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.6813271604938" sp="3" />
@@ -334,13 +315,6 @@
 	</npc>
 	<npc id="22804" level="73" type="L2Monster" name="Horrifying Jackhammer Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="Privates01_sil" value="22805" /> <!-- Horrifying Jackhammer Golem -->
-			<param name="Privates01_ai" value="golem_prop2_p" />
-			<param name="Privates02_sil" value="22806" /> <!-- Horrifying Jackhammer Golem -->
-			<param name="Privates02_ai" value="golem_prop3_p" />
-			<skill name="Skill01_ID" id="6599" level="9" /> <!-- NPC earth attack -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.924939012948" sp="3" />
@@ -414,9 +388,6 @@
 	</npc>
 	<npc id="22805" level="73" type="L2Monster" name="Horrifying Jackhammer Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6599" level="9" /> <!-- NPC earth attack -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.0878213548508" sp="2" />
@@ -491,9 +462,6 @@
 	</npc>
 	<npc id="22806" level="73" type="L2Monster" name="Horrifying Jackhammer Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6599" level="9" /> <!-- NPC earth attack -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.6819290673672" sp="3" />
@@ -566,10 +534,6 @@
 	</npc>
 	<npc id="22807" level="72" type="L2Monster" name="Scout-type Golem No. 28">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6610" level="9" /> <!-- NPC earth magic -->
-			<skill name="Skill02_ID" id="4156" level="7" /> <!-- NPC Curve Beam Cannon - Magic -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.8649691358025" sp="3" />
@@ -644,11 +608,6 @@
 	</npc>
 	<npc id="22808" level="72" type="L2Monster" name="Scout-type Golem No. 2">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6597" level="9" /> <!-- NPC earth attack -->
-			<skill name="Skill02_ID" id="4156" level="7" /> <!-- NPC Curve Beam Cannon - Magic -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="1.7131558641975" sp="2" />
@@ -714,11 +673,6 @@
 	</npc>
 	<npc id="22809" level="73" type="L2Monster" name="Guard Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6599" level="9" /> <!-- NPC earth attack -->
-			<skill name="Skill02_ID" id="4156" level="7" /> <!-- NPC Curve Beam Cannon - Magic -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.8930380934509" sp="7" />
@@ -779,11 +733,6 @@
 	</npc>
 	<npc id="22810" level="72" type="L2Monster" name="Micro Scout Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6599" level="9" /> <!-- NPC earth attack -->
-			<skill name="Skill02_ID" id="4156" level="7" /> <!-- NPC Curve Beam Cannon - Magic -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="5.0136959876543" sp="6" />
@@ -845,10 +794,6 @@
 	</npc>
 	<npc id="22811" level="73" type="L2Monster" name="Great Chaos Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6262" level="1" /> <!-- EMP Power -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="8.4544942765997" sp="10" />
@@ -908,9 +853,6 @@
 	</npc>
 	<npc id="22812" level="72" type="L2Monster" name="Boom Golem">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6264" level="1" /> <!-- Golem Boom -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="4.9994212962963" sp="6" />
@@ -970,11 +912,6 @@
 	</npc>
 	<npc id="22838" level="85" type="L2Monster" name="Maluk Leader">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6748" level="1" /> <!-- Stun Attack -->
-			<skill name="Skill02_ID" id="6750" level="1" /> <!-- Power Strike -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="98.320415224913" sp="170" />
@@ -1046,11 +983,6 @@
 	</npc>
 	<npc id="22839" level="85" type="L2Monster" name="Maluk Warlord">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6755" level="1" /> <!-- Death Strike -->
-			<skill name="SpecialSkill01_ID" id="6752" level="1" /> <!-- Revival -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="93.385882352941" sp="161" />
@@ -1121,11 +1053,6 @@
 	</npc>
 	<npc id="22840" level="85" type="L2Monster" name="Maluk Hunter">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6753" level="1" /> <!-- Death Blow -->
-			<skill name="Skill02_ID" id="6754" level="1" /> <!-- Bleed -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="34.807889273356" sp="60" />
@@ -1198,11 +1125,6 @@
 	</npc>
 	<npc id="22841" level="85" type="L2Monster" name="Maluk Princess">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6749" level="1" /> <!-- Death Strike -->
-			<skill name="Skill02_ID" id="6756" level="1" /> <!-- Death Talon -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="58.840415224913" sp="102" />
@@ -1275,12 +1197,6 @@
 	</npc>
 	<npc id="22842" level="85" type="L2Monster" name="Maluk Banshee">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6757" level="1" /> <!-- Slow -->
-			<skill name="Skill02_ID" id="6758" level="1" /> <!-- Rage -->
-			<skill name="Skill03_ID" id="6819" level="1" /> <!-- Banshee's Curse -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="58.840415224913" sp="102" />
@@ -1355,10 +1271,6 @@
 	</npc>
 	<npc id="22843" level="85" type="L2Monster" name="Maluk Sniper">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6759" level="1" /> <!-- Death Shot -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="15302" /> <!-- Transparent Bow (NPC) -->
@@ -1431,11 +1343,6 @@
 	</npc>
 	<npc id="22844" level="85" type="L2Monster" name="Dragon Knight">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6763" level="1" /> <!-- Dragon Earth Strike -->
-			<skill name="Skill02_ID" id="6761" level="1" /> <!-- Dragon Blow Strike -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="102.87141868512" sp="178" />
@@ -1512,11 +1419,6 @@
 	</npc>
 	<npc id="22845" level="85" type="L2Monster" name="Dragon Knight">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6763" level="1" /> <!-- Dragon Earth Strike -->
-			<skill name="Skill02_ID" id="6761" level="1" /> <!-- Dragon Blow Strike -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="103.17107266436" sp="178" />
@@ -1591,11 +1493,6 @@
 	</npc>
 	<npc id="22846" level="85" type="L2Monster" name="Elite Dragon Knight">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6763" level="1" /> <!-- Dragon Earth Strike -->
-			<skill name="Skill02_ID" id="6761" level="1" /> <!-- Dragon Blow Strike -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="134.1475432526" sp="232" />
@@ -1669,10 +1566,6 @@
 	</npc>
 	<npc id="22847" level="85" type="L2Monster" name="Dragon Knight Warrior">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6760" level="1" /> <!-- Dragon Strike -->
-			<skill name="Skill02_ID" id="6762" level="1" /> <!-- Rage -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<equipment rhand="13978" /> <!-- Monster Only (Dragontroop Commander) -->
@@ -1746,12 +1639,6 @@
 	</npc>
 	<npc id="22848" level="85" type="L2Monster" name="Drake Leader">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6763" level="1" /> <!-- Dragon Earth Strike -->
-			<skill name="SpecialSkill01_ID" id="6818" level="1" /> <!-- Powerful Rage -->
-			<skill name="SpecialSkill02_ID" id="6820" level="1" /> <!-- P. Def. Enhance -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="105.25467128028" sp="182" />
@@ -1826,9 +1713,6 @@
 	</npc>
 	<npc id="22849" level="85" type="L2Monster" name="Drake Warrior">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6760" level="1" /> <!-- Dragon Strike -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<equipment rhand="13979" lhand="13980" /> <!-- Monster Only (Dragontroop Commando) / Monster Only (Dragontroop Defender) -->
@@ -1903,10 +1787,6 @@
 	</npc>
 	<npc id="22850" level="85" type="L2Monster" name="Drake Scout">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6764" level="1" /> <!-- Dragon Earth Shot -->
-			<skill name="Skill02_ID" id="6761" level="1" /> <!-- Dragon Blow Strike -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<equipment rhand="13843" /> <!-- Draconic Peltast Weapon -->
@@ -1981,10 +1861,6 @@
 	</npc>
 	<npc id="22851" level="85" type="L2Monster" name="Drake Mage">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="Skill01_ID" id="6766" level="1" /> <!-- Earth Tremor -->
-			<skill name="SpecialSkill01_ID" id="6765" level="1" /> <!-- Complete Recovery -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="59.964705882353" sp="103" />
@@ -2057,10 +1933,6 @@
 	</npc>
 	<npc id="22852" level="85" type="L2Monster" name="Dragon Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6768" level="1" /> <!-- Stun Attack -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<acquire expRate="182.23294117647" sp="315" />
@@ -2133,11 +2005,6 @@
 	</npc>
 	<npc id="22853" level="85" type="L2Monster" name="Dragon Mage">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6769" level="1" /> <!-- Petrify -->
-			<skill name="Skill02_ID" id="6770" level="1" /> <!-- Heal -->
-		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
 		<equipment rhand="13981" /> <!-- Monster Only (Dragontoop Tactician) -->
@@ -2211,12 +2078,6 @@
 	</npc>
 	<npc id="22854" level="85" type="L2Monster" name="Bloody Karik">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6771" level="1" /> <!-- Death Strike -->
-			<skill name="Skill02_ID" id="6772" level="1" /> <!-- Power Strike -->
-			<skill name="Skill03_ID" id="6773" level="1" /> <!-- Rage -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="265.27709342561" sp="459" />
@@ -2290,11 +2151,6 @@
 	</npc>
 	<npc id="22855" level="85" type="L2Monster" name="Bloody Berserker">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6774" level="1" /> <!-- Stun Attack -->
-			<skill name="Skill02_ID" id="6775" level="1" /> <!-- Soul Breath -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="178.60152249135" sp="309" />
@@ -2369,12 +2225,6 @@
 	</npc>
 	<npc id="22856" level="85" type="L2Monster" name="Bloody Karinness">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<skill name="Skill01_ID" id="6776" level="1" /> <!-- Paralysis -->
-			<skill name="Skill02_ID" id="6777" level="1" /> <!-- Bleeding Gash -->
-			<skill name="Skill03_ID" id="6778" level="1" /> <!-- Death Strike -->
-		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<acquire expRate="178.60152249135" sp="309" />

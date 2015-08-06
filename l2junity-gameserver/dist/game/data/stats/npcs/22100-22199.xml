@@ -2,18 +2,6 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="22100" level="58" type="L2Monster" name="Freya's Gardener">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="40" />
-			<param name="MoveAroundSocial1" value="40" />
-			<param name="MoveAroundSocial2" value="40" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="DeBuff" id="4578" level="1" /> <!-- Petrification -->
-			<skill name="RangeHold_a" id="4483" level="6" /> <!-- Hold -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="16.911117717004" sp="13" />
@@ -84,17 +72,6 @@
 	</npc>
 	<npc id="22101" level="58" type="L2Monster" name="Freya's Servant">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="5" /> <!-- NPC Strike -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="14.777942925089" sp="11" />
@@ -164,14 +141,6 @@
 	</npc>
 	<npc id="22102" level="58" type="L2Monster" name="Freya's Servant">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="20" />
-			<param name="LongRangeGuardRate" value="5" />
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="14.777942925089" sp="11" />
@@ -215,17 +184,6 @@
 	</npc>
 	<npc id="22103" level="57" type="L2Monster" name="Freya's White Bear">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="MagicHeal" id="4065" level="5" /> <!-- NPC Heal -->
-		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
 		<acquire expRate="15.453678054786" sp="12" />
@@ -294,17 +252,6 @@
 	</npc>
 	<npc id="22104" level="58" type="L2Monster" name="Freya's Dog">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="78" />
-			<param name="MoveAroundSocial1" value="78" />
-			<param name="MoveAroundSocial2" value="78" />
-			<param name="SoulShot" value="100" />
-			<param name="SoulShotRate" value="10" />
-			<param name="SpiritShot" value="100" />
-			<param name="SpiritShotRate" value="5" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="selfbuff" id="5044" level="2" /> <!-- NPC Ultimate Defense -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="15.561533888228" sp="12" />
@@ -375,15 +322,6 @@
 	</npc>
 	<npc id="22105" level="72" type="L2Monster" name="Spiked Stakato">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="30" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="7" /> <!-- NPC Strike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="8.9265046296296" sp="11" />
@@ -428,15 +366,6 @@
 	</npc>
 	<npc id="22106" level="73" type="L2Monster" name="Spiked Stakato Worker">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="70" />
-			<param name="MoveAroundSocial1" value="70" />
-			<param name="MoveAroundSocial2" value="70" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="30" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4067" level="7" /> <!-- NPC Mortal Blow -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="221" /> <!-- Assassin Knife -->
@@ -482,15 +411,6 @@
 	</npc>
 	<npc id="22107" level="74" type="L2Monster" name="Spiked Stakato Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="62" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="30" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4067" level="7" /> <!-- NPC Mortal Blow -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="123" /> <!-- Saber -->
@@ -536,19 +456,6 @@
 	</npc>
 	<npc id="22108" level="74" type="L2Monster" name="Female Spiked Stakato">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="60" />
-			<param name="MoveAroundSocial1" value="60" />
-			<param name="MoveAroundSocial2" value="60" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="30" />
-			<param name="ai_type" value="spike_stakato_guard" />
-			<param name="silhouette" value="22107" /> <!-- Spiked Stakato Guard -->
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4073" level="7" /> <!-- Stun -->
-			<skill name="Buff" id="4029" level="3" /> <!-- NPC Shield -->
-			<skill name="Debuff" id="4036" level="7" /> <!-- Poison -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="123" /> <!-- Saber -->
@@ -599,18 +506,6 @@
 	</npc>
 	<npc id="22109" level="74" type="L2Monster" name="Male Spiked Stakato">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="57" />
-			<param name="MoveAroundSocial1" value="62" />
-			<param name="MoveAroundSocial2" value="57" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="30" />
-			<param name="ai_type" value="male_spike_stakato_c" />
-			<param name="silhouette" value="22110" /> <!-- Male Spiked Stakato -->
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="7" /> <!-- NPC Strike -->
-			<skill name="SelfRangePhysicalSpecial" id="4072" level="7" /> <!-- Stun -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="135" /> <!-- Samurai Long Sword -->
@@ -660,17 +555,6 @@
 	</npc>
 	<npc id="22110" level="74" type="L2Monster" name="Male Spiked Stakato">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="103" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="30" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4232" level="7" /> <!-- NPC AE Strike -->
-			<skill name="SelfRangeDDMagic" id="4571" level="7" /> <!-- NPC Blazing Circle -->
-			<skill name="SelfBuff" id="4030" level="3" /> <!-- NPC Clan Might -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="135" /> <!-- Samurai Long Sword -->
@@ -721,15 +605,6 @@
 	</npc>
 	<npc id="22111" level="75" type="L2Monster" name="Spiked Stakato Sorcerer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="SpiritShot" value="200" />
-			<param name="SpiritShotRate" value="30" />
-			<skill name="W_LongRangeDDMagic" id="4563" level="7" /> <!-- NPC Solar Flare - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4257" level="7" /> <!-- NPC Hydroblast - Magic -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="221" /> <!-- Assassin Knife -->
@@ -776,16 +651,6 @@
 	</npc>
 	<npc id="22112" level="74" type="L2Monster" name="Cannibalistic Stakato Follower">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="62" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="30" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial1" id="4232" level="8" /> <!-- NPC AE Strike -->
-			<skill name="PhysicalSpecial2" id="4072" level="8" /> <!-- Stun -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="223" /> <!-- Kukuri -->
@@ -835,18 +700,6 @@
 	</npc>
 	<npc id="22113" level="75" type="L2Monster" name="Cannibalistic Stakato Leader">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="81" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="30" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial1" id="4073" level="8" /> <!-- Stun -->
-			<skill name="buff" id="4028" level="3" /> <!-- NPC Might -->
-			<skill name="EffectSkill" id="4485" level="1" /> <!-- Eating Follower -->
-			<skill name="EffectSkill2" id="4484" level="1" /> <!-- Eating Follower Heal -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="13.794666666667" sp="18" />
@@ -897,17 +750,6 @@
 	</npc>
 	<npc id="22114" level="75" type="L2Monster" name="Cannibalistic Stakato Leader">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="82" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="30" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4072" level="8" /> <!-- Stun -->
-			<skill name="SelfRangeDDMagic" id="4571" level="8" /> <!-- NPC Blazing Circle -->
-			<skill name="SelfBuff" id="4029" level="3" /> <!-- NPC Shield -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="9.2952888888889" sp="12" />
@@ -957,15 +799,6 @@
 	</npc>
 	<npc id="22115" level="76" type="L2Monster" name="Spiked Stakato Soldier">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="30" />
-			<param name="LongRangeGuardRate" value="5" />
-			<skill name="PhysicalSpecial" id="4032" level="8" /> <!-- NPC Strike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<acquire expRate="8.9281509695291" sp="12" />
@@ -1009,14 +842,6 @@
 	</npc>
 	<npc id="22116" level="77" type="L2Monster" name="Spiked Stakato Drone">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="62" />
-			<param name="MoveAroundSocial1" value="62" />
-			<param name="MoveAroundSocial2" value="62" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="30" />
-			<skill name="PhysicalSpecial" id="4232" level="8" /> <!-- NPC AE Strike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="235" /> <!-- Bloody Orchid -->
@@ -1061,14 +886,6 @@
 	</npc>
 	<npc id="22117" level="78" type="L2Monster" name="Spiked Stakato Captain">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="20" />
-			<param name="MoveAroundSocial1" value="60" />
-			<param name="MoveAroundSocial2" value="20" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="30" />
-			<skill name="PhysicalSpecial" id="4032" level="8" /> <!-- NPC Strike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="234" /> <!-- Demon's Dagger -->
@@ -1113,17 +930,6 @@
 	</npc>
 	<npc id="22118" level="78" type="L2Monster" name="Spiked Stakato Nurse">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="20" />
-			<param name="MoveAroundSocial1" value="60" />
-			<param name="MoveAroundSocial2" value="20" />
-			<param name="SpiritShot" value="200" />
-			<param name="SpiritShotRate" value="30" />
-			<param name="ai_type" value="nurse_spike_stakato_c" />
-			<param name="silhouette" value="22119" /> <!-- Spiked Stakato Nurse -->
-			<skill name="SelfRangeDDMagic" id="4571" level="8" /> <!-- NPC Blazing Circle -->
-			<skill name="DDMagic" id="4078" level="8" /> <!-- NPC Flamestrike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="132" /> <!-- Ultimate Sword -->
@@ -1172,16 +978,6 @@
 	</npc>
 	<npc id="22119" level="78" type="L2Monster" name="Spiked Stakato Nurse">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="102" />
-			<param name="SpiritShot" value="200" />
-			<param name="SpiritShotRate" value="30" />
-			<skill name="DDMagic1" id="4100" level="8" /> <!-- NPC Prominence -->
-			<skill name="DDMagic2" id="4078" level="8" /> <!-- NPC Flamestrike -->
-			<skill name="DeBuff" id="4486" level="7" /> <!-- Decrease P. Def. -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<acquire expRate="9.2172912557528" sp="13" />
@@ -1230,17 +1026,6 @@
 	</npc>
 	<npc id="22120" level="78" type="L2Monster" name="Spiked Stakato Baby">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="60" />
-			<param name="MoveAroundSocial1" value="62" />
-			<param name="MoveAroundSocial2" value="60" />
-			<param name="SoulShot" value="200" />
-			<param name="SoulShotRate" value="30" />
-			<param name="ai_type" value="spike_stakato_raider" />
-			<param name="silhouette" value="22117" /> <!-- Spiked Stakato Captain -->
-			<skill name="SelfRangePhysicalSpecial" id="4244" level="8" /> <!-- NPC Wild Sweep -->
-			<skill name="Buff" id="4585" level="3" /> <!-- NPC Clan Buff - Berserk Might -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="235" /> <!-- Bloody Orchid -->
@@ -1289,16 +1074,6 @@
 	</npc>
 	<npc id="22121" level="78" type="L2Monster" name="Spiked Stakato Shaman">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="90" />
-			<param name="SpiritShot" value="200" />
-			<param name="SpiritShotRate" value="30" />
-			<skill name="W_LongRangeDDMagic" id="4563" level="8" /> <!-- NPC Solar Flare - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4158" level="8" /> <!-- NPC Prominence - Magic -->
-			<skill name="DeBuff" id="4036" level="8" /> <!-- Poison -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="221" /> <!-- Assassin Knife -->
@@ -1345,13 +1120,6 @@
 	</npc>
 	<npc id="22122" level="78" type="L2Monster" name="Monastic Pilgrim">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="50" />
-			<param name="MoveAroundSocial1" value="50" />
-			<param name="MoveAroundSocial2" value="50" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="MagicHeal" id="4065" level="9" /> <!-- NPC Heal -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="148" /> <!-- Sword of Valhalla -->
@@ -1399,12 +1167,6 @@
 	</npc>
 	<npc id="22123" level="78" type="L2Monster" name="Monastic Crusader">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="98" />
-			<param name="MoveAroundSocial2" value="90" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="97" /> <!-- Lance -->
@@ -1451,15 +1213,6 @@
 	</npc>
 	<npc id="22124" level="78" type="L2Monster" name="Solina Brother">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="112" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="SelfRangePhysicalSpecial" id="4574" level="9" /> <!-- NPC Sonic Storm -->
-			<skill name="DeBuff" id="4589" level="10" /> <!-- Decrease Speed -->
-			<skill name="DeBuff2" id="4467" level="3" /> <!-- Surrender To Light -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8212" /> <!-- Monster Only (Solina Brother Mace) -->
@@ -1509,14 +1262,6 @@
 	</npc>
 	<npc id="22125" level="78" type="L2Monster" name="Solina Lay Brother">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="112" />
-			<skill name="W_LongRangeDDMagic" id="4563" level="9" /> <!-- NPC Solar Flare - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill name="MagicHeal" id="4613" level="9" /> <!-- NPC Clan Heal -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8212" /> <!-- Monster Only (Solina Brother Mace) -->
@@ -1565,15 +1310,6 @@
 	</npc>
 	<npc id="22126" level="78" type="L2Monster" name="Silent Seeker">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="113" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="SelfRangePhysicalSpecial" id="4574" level="9" /> <!-- NPC Sonic Storm -->
-			<skill name="DeBuff" id="4589" level="10" /> <!-- Decrease Speed -->
-			<skill name="DeBuff2" id="4467" level="3" /> <!-- Surrender To Light -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8213" /> <!-- Monster Only (Solina Father Mace) -->
@@ -1623,14 +1359,6 @@
 	</npc>
 	<npc id="22127" level="78" type="L2Monster" name="Silent Brother">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="113" />
-			<skill name="W_LongRangeDDMagic" id="4563" level="9" /> <!-- NPC Solar Flare - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill name="DeBuff" id="5021" level="9" /> <!-- Inspiration of Einhasad -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8213" /> <!-- Monster Only (Solina Father Mace) -->
@@ -1679,12 +1407,6 @@
 	</npc>
 	<npc id="22128" level="78" type="L2Monster" name="Monastic Guardian">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="97" />
-			<skill name="SelfRangeDDMagic" id="4614" level="8" /> <!-- NPC Death Bomb -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire expRate="2.8816568047337" sp="4" />
@@ -1731,15 +1453,6 @@
 	</npc>
 	<npc id="22129" level="78" type="L2Monster" name="Warrior Monk">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="104" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="SelfRangePhysicalSpecial" id="4574" level="9" /> <!-- NPC Sonic Storm -->
-			<skill name="DeBuff" id="4643" level="10" /> <!-- Decrease Speed -->
-			<skill name="DeBuff2" id="4467" level="3" /> <!-- Surrender To Light -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8211" lhand="8210" /> <!-- Monster Only (Monk Warrior Sword) / Monster Only (Monk Warrior Shield) -->
@@ -1788,12 +1501,6 @@
 	</npc>
 	<npc id="22130" level="78" type="L2Monster" name="Divine Advocate">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="130" />
-			<param name="MoveAroundSocial1" value="130" />
-			<param name="MoveAroundSocial2" value="130" />
-			<skill name="MagicHeal" id="4065" level="6" /> <!-- NPC Heal -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="6717" /> <!-- Monster Only (Einhasad Warrior) -->
@@ -1840,16 +1547,6 @@
 	</npc>
 	<npc id="22131" level="78" type="L2Monster" name="Pilgrim of Light">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="85" />
-			<param name="MoveAroundSocial1" value="85" />
-			<param name="MoveAroundSocial2" value="85" />
-			<skill name="Buff1" id="4074" level="2" /> <!-- NPC Haste -->
-			<skill name="Buff2" id="4028" level="3" /> <!-- NPC Might -->
-			<skill name="Buff3" id="4029" level="3" /> <!-- NPC Shield -->
-			<skill name="Buff4" id="4163" level="10" /> <!-- NPC Self-Damage Shield -->
-			<skill name="Buff5" id="4099" level="2" /> <!-- NPC Berserk -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="6718" /> <!-- Monster Only (Einhasad Shaman) -->
@@ -1900,13 +1597,6 @@
 	</npc>
 	<npc id="22132" level="78" type="L2Monster" name="Judge of Light">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="122" />
-			<skill name="LongRangePhysicalSpecial" id="4491" level="9" /> <!-- Holy Weapon -->
-			<skill name="MagicHeal" id="4065" level="9" /> <!-- NPC Heal -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<acquire expRate="10.994904667982" sp="16" />
@@ -1953,15 +1643,6 @@
 	</npc>
 	<npc id="22133" level="78" type="L2Monster" name="Guardian of the Grail">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<skill name="SelfRangeDDMagic" id="4614" level="8" /> <!-- NPC Death Bomb -->
-			<skill name="TeleportEffect" id="4671" level="1" /> <!-- AV - Teleport -->
-			<skill name="SelfRangeDDMagic2" id="4489" level="10" /> <!-- NPC Death MP Bomb -->
-			<skill name="SelfRangeDDMagic3" id="4488" level="10" /> <!-- Hold -->
-		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<acquire expRate="4.1093030900723" sp="6" />
@@ -2011,14 +1692,6 @@
 	</npc>
 	<npc id="22134" level="78" type="L2Monster" name="Guardian of the Holy Land">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="114" />
-			<skill name="W_LongRangeDDMagic" id="4563" level="9" /> <!-- NPC Solar Flare - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill name="MagicHeal" id="4613" level="9" /> <!-- NPC Clan Heal -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8214" /> <!-- Monster Only (Solina Priest Pole) -->
@@ -2067,12 +1740,6 @@
 	</npc>
 	<npc id="22135" level="78" type="L2Monster" name="Beholder of Light">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="122" />
-			<skill name="PhysicalSpecial" id="4574" level="9" /> <!-- NPC Sonic Storm -->
-		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="8221" /> <!-- Monster Only (Grail Apostle Spear) -->
@@ -2119,13 +1786,6 @@
 	</npc>
 	<npc id="22136" level="99" type="L2Monster" name="Doorman Zombie">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="pass1" value="8064" /> <!-- Visitor's Mark -->
-			<param name="pass2" value="8065" /> <!-- Faded Visitor's Mark -->
-			<param name="pass3" value="8067" /> <!-- Pagan's Mark -->
-			<param name="SkillRange" value="700" />
-			<skill name="DDMagic" id="5043" level="10" /> <!-- NPC Super Sonic Blaster -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="8217" /> <!-- Monster Only (Zombie Gate Guard Spear) -->
@@ -2179,13 +1839,6 @@
 	</npc>
 	<npc id="22137" level="99" type="L2Monster" name="Penance Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="119" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="DDMagic" id="4253" level="9" /> <!-- NPC Blaze - Slow -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="8217" /> <!-- Monster Only (Zombie Gate Guard Spear) -->
@@ -2241,13 +1894,6 @@
 	</npc>
 	<npc id="22138" level="99" type="L2Monster" name="Chapel Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="119" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="DDMagic" id="4253" level="9" /> <!-- NPC Blaze - Slow -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="8217" /> <!-- Monster Only (Zombie Gate Guard Spear) -->
@@ -2303,14 +1949,6 @@
 	</npc>
 	<npc id="22139" level="98" type="L2Monster" name="Old Aristocrat's Soldier">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="118" />
-			<skill name="DeBuff" id="4466" level="3" /> <!-- Surrender To Darkness -->
-			<skill name="W_ShortRangeDDMagic" id="4622" level="9" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_LongRangeDDMagic" id="4665" level="9" /> <!-- NPC 100% HP Drain - Magic -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="463.74833402749" sp="2850" />
@@ -2382,14 +2020,6 @@
 	</npc>
 	<npc id="22140" level="98" type="L2Monster" name="Zombie Worker">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="120" />
-			<param name="IsTeleport" value="0" />
-			<skill name="PhysicalSpecial" id="4032" level="2" /> <!-- NPC Strike -->
-			<skill name="SelfRangeDeBuff" id="4649" level="9" /> <!-- Poison -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="123" /> <!-- Saber -->
@@ -2461,13 +2091,6 @@
 	</npc>
 	<npc id="22141" level="98" type="L2Monster" name="Forgotten Victim">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="120" />
-			<skill name="SelfRangePhysicalSpecial" id="4612" level="9" /> <!-- NPC Wide Wild Sweep -->
-			<skill name="DeBuff" id="4088" level="9" /> <!-- Bleed -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="123" /> <!-- Saber -->
@@ -2544,24 +2167,6 @@
 	</npc>
 	<npc id="22142" level="98" type="L2Monster" name="Triol's Layperson">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<param name="party_members" value="5" />
-			<param name="TelPosX1" value="-16128" />
-			<param name="TelPosY1" value="-35888" />
-			<param name="TelPosZ1" value="-10726" />
-			<param name="TelPosX2" value="-17029" />
-			<param name="TelPosY2" value="-39617" />
-			<param name="TelPosZ2" value="-10724" />
-			<param name="TelPosX3" value="-15729" />
-			<param name="TelPosY3" value="-42001" />
-			<param name="TelPosZ3" value="-10724" />
-			<skill name="PhysicalSpecial2" id="4573" level="9" /> <!-- NPC Sonic Blaster -->
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="HoldMagic" id="4047" level="9" /> <!-- Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8207" lhand="8207" /> <!-- Monster Only (Heretic Private Axe) / Monster Only (Heretic Private Axe) -->
@@ -2640,25 +2245,6 @@
 	</npc>
 	<npc id="22143" level="98" type="L2Monster" name="Triol's Believer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<param name="party_members" value="5" />
-			<param name="TelPosX1" value="-16128" />
-			<param name="TelPosY1" value="-35888" />
-			<param name="TelPosZ1" value="-10726" />
-			<param name="TelPosX2" value="-15729" />
-			<param name="TelPosY2" value="-42001" />
-			<param name="TelPosZ2" value="-10724" />
-			<param name="TelPosX3" value="-16397" />
-			<param name="TelPosY3" value="-44970" />
-			<param name="TelPosZ3" value="-10724" />
-			<skill name="DeBuff" id="4466" level="3" /> <!-- Surrender To Darkness -->
-			<skill name="W_ShortRangeDDMagic" id="4629" level="9" /> <!-- NPC MR - HP Drain -->
-			<skill name="W_LongRangeDDMagic" id="4668" level="9" /> <!-- NPC Strong 100% HP Drain - Magic -->
-			<skill name="HoldMagic" id="4047" level="9" /> <!-- Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -2734,13 +2320,6 @@
 	</npc>
 	<npc id="22144" level="98" type="L2Monster" name="Resurrected Temple Knight">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="118" />
-			<skill name="W_ShortRangeDDMagic" id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill name="W_LongRangeDDMagic" id="4152" level="9" /> <!-- NPC HP Drain - Magic -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="463.74833402749" sp="2850" />
@@ -2816,14 +2395,6 @@
 	</npc>
 	<npc id="22145" level="98" type="L2Monster" name="Ritual Sacrifice">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="111" />
-			<param name="DDMagicUseHpRate" value="10" />
-			<param name="SelfRangeDDMagicRate" value="10" />
-			<skill name="SelfRangeDDMagic" id="4614" level="9" /> <!-- NPC Death Bomb -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="463.74833402749" sp="2850" />
@@ -2898,24 +2469,6 @@
 	</npc>
 	<npc id="22146" level="99" type="L2Monster" name="Triol's Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<param name="party_members" value="5" />
-			<param name="TelPosX1" value="-16128" />
-			<param name="TelPosY1" value="-35888" />
-			<param name="TelPosZ1" value="-10726" />
-			<param name="TelPosX2" value="-16368" />
-			<param name="TelPosY2" value="-43339" />
-			<param name="TelPosZ2" value="-10724" />
-			<param name="TelPosX3" value="-16363" />
-			<param name="TelPosY3" value="-47026" />
-			<param name="TelPosZ3" value="-10825" />
-			<skill name="PhysicalSpecial2" id="4573" level="9" /> <!-- NPC Sonic Blaster -->
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="HoldMagic" id="4047" level="9" /> <!-- Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -2992,13 +2545,6 @@
 	</npc>
 	<npc id="22147" level="99" type="L2Monster" name="Ritual Offering">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="118" />
-			<skill name="SelfRangePhysicalSpecial" id="4612" level="9" /> <!-- NPC Wide Wild Sweep -->
-			<skill name="DeBuff" id="4615" level="9" /> <!-- Bleed -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="899.13141516172" sp="14099" />
@@ -3071,14 +2617,6 @@
 	</npc>
 	<npc id="22148" level="99" type="L2Monster" name="Triol's Believer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="DeBuff" id="4088" level="9" /> <!-- Bleed -->
-			<skill name="W_ShortRangeDDMagic" id="4622" level="9" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_LongRangeDDMagic" id="4665" level="9" /> <!-- NPC 100% HP Drain - Magic -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -3133,14 +2671,6 @@
 	</npc>
 	<npc id="22149" level="99" type="L2Monster" name="Ritual Offering">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="118" />
-			<param name="IsTeleport" value="0" />
-			<skill name="PhysicalSpecial" id="4032" level="2" /> <!-- NPC Strike -->
-			<skill name="SelfRangeDeBuff" id="4649" level="9" /> <!-- Poison -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="895.43005815733" sp="14041" />
@@ -3215,15 +2745,6 @@
 	</npc>
 	<npc id="22150" level="99" type="L2Monster" name="Triol's Believer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="DeBuff" id="4466" level="3" /> <!-- Surrender To Darkness -->
-			<skill name="DeBuff1" id="4088" level="9" /> <!-- Bleed -->
-			<skill name="W_ShortRangeDDMagic" id="4629" level="9" /> <!-- NPC MR - HP Drain -->
-			<skill name="W_LongRangeDDMagic" id="4668" level="9" /> <!-- NPC Strong 100% HP Drain - Magic -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -3279,25 +2800,6 @@
 	</npc>
 	<npc id="22151" level="99" type="L2Monster" name="Triol's Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<param name="party_members" value="5" />
-			<param name="TelPosX1" value="-16128" />
-			<param name="TelPosY1" value="-35888" />
-			<param name="TelPosZ1" value="-10726" />
-			<param name="TelPosX2" value="-16368" />
-			<param name="TelPosY2" value="-43339" />
-			<param name="TelPosZ2" value="-10724" />
-			<param name="TelPosX3" value="-16395" />
-			<param name="TelPosY3" value="-50743" />
-			<param name="TelPosZ3" value="-11015" />
-			<skill name="DeBuff" id="4615" level="9" /> <!-- Bleed -->
-			<skill name="W_ShortRangeDDMagic" id="4629" level="9" /> <!-- NPC MR - HP Drain -->
-			<skill name="W_LongRangeDDMagic" id="4668" level="9" /> <!-- NPC Strong 100% HP Drain - Magic -->
-			<skill name="HoldMagic" id="4047" level="9" /> <!-- Hold -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -3353,13 +2855,6 @@
 	</npc>
 	<npc id="22152" level="99" type="L2Monster" name="Temple Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="118" />
-			<skill name="SelfRangePhysicalSpecial" id="4612" level="9" /> <!-- NPC Wide Wild Sweep -->
-			<skill name="DeBuff" id="4615" level="9" /> <!-- Bleed -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="8215" /> <!-- Monster Only (Zombie Enlisted Man Sword) -->
@@ -3435,14 +2930,6 @@
 	</npc>
 	<npc id="22153" level="99" type="L2Monster" name="Temple Guard Captain">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="118" />
-			<skill name="DeBuff" id="4466" level="3" /> <!-- Surrender To Darkness -->
-			<skill name="W_ShortRangeDDMagic" id="4622" level="9" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_LongRangeDDMagic" id="4665" level="9" /> <!-- NPC 100% HP Drain - Magic -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="8215" /> <!-- Monster Only (Zombie Enlisted Man Sword) -->
@@ -3519,14 +3006,6 @@
 	</npc>
 	<npc id="22154" level="99" type="L2Monster" name="Ritual Sacrifice">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="111" />
-			<param name="DDMagicUseHpRate" value="10" />
-			<param name="SelfRangeDDMagicRate" value="10" />
-			<skill name="SelfRangeDDMagic" id="4614" level="9" /> <!-- NPC Death Bomb -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="895.43005815733" sp="14041" />
@@ -3578,15 +3057,6 @@
 	</npc>
 	<npc id="22155" level="99" type="L2Monster" name="Triol's High Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="98" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="PhysicalSpecial2" id="4612" level="9" /> <!-- NPC Wide Wild Sweep -->
-			<skill name="SpecialAttack" id="4641" level="10" /> <!-- NPC Super Strike -->
-			<skill name="SelfMagicHeal" id="4065" level="9" /> <!-- NPC Heal -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8206" lhand="8206" /> <!-- Monster Only (Heretic Priest Sword) / Monster Only (Heretic Priest Sword) -->
@@ -3664,12 +3134,6 @@
 	</npc>
 	<npc id="22156" level="99" type="L2Monster" name="Triol's Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="PhysicalSpecial2" id="4032" level="9" /> <!-- NPC Strike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -3721,12 +3185,6 @@
 	</npc>
 	<npc id="22157" level="99" type="L2Monster" name="Triol's Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="DeBuff" id="4466" level="3" /> <!-- Surrender To Darkness -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -3778,14 +3236,6 @@
 	</npc>
 	<npc id="22158" level="99" type="L2Monster" name="Triol's Believer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="W_ShortRangeDDMagic" id="4622" level="9" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_LongRangeDDMagic" id="4665" level="9" /> <!-- NPC 100% HP Drain - Magic -->
-			<skill name="DeBuff" id="4466" level="3" /> <!-- Surrender To Darkness -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8207" lhand="8207" /> <!-- Monster Only (Heretic Private Axe) / Monster Only (Heretic Private Axe) -->
@@ -3839,15 +3289,6 @@
 	</npc>
 	<npc id="22159" level="99" type="L2Monster" name="Triol's High Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="98" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="PhysicalSpecial2" id="4612" level="9" /> <!-- NPC Wide Wild Sweep -->
-			<skill name="SpecialAttack" id="4641" level="10" /> <!-- NPC Super Strike -->
-			<skill name="SelfMagicHeal" id="4065" level="9" /> <!-- NPC Heal -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8206" lhand="8206" /> <!-- Monster Only (Heretic Priest Sword) / Monster Only (Heretic Priest Sword) -->
@@ -3902,12 +3343,6 @@
 	</npc>
 	<npc id="22160" level="99" type="L2Monster" name="Triol's Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="PhysicalSpecial2" id="4032" level="9" /> <!-- NPC Strike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -3959,13 +3394,6 @@
 	</npc>
 	<npc id="22161" level="99" type="L2Monster" name="Ritual Sacrifice">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="111" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="PhysicalSpecial2" id="4614" level="9" /> <!-- NPC Death Bomb -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="862.3004795429" sp="13522" />
@@ -4017,14 +3445,6 @@
 	</npc>
 	<npc id="22162" level="99" type="L2Monster" name="Triol's Believer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="W_ShortRangeDDMagic" id="4622" level="9" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_LongRangeDDMagic" id="4665" level="9" /> <!-- NPC 100% HP Drain - Magic -->
-			<skill name="DeBuff" id="4466" level="3" /> <!-- Surrender To Darkness -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8207" lhand="8207" /> <!-- Monster Only (Heretic Private Axe) / Monster Only (Heretic Private Axe) -->
@@ -4078,18 +3498,6 @@
 	</npc>
 	<npc id="22163" level="99" type="L2Monster" name="Triol's High Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="98" />
-			<param name="SpecialDDMagicUse" value="30" />
-			<skill name="SpecialAttack" id="4641" level="10" /> <!-- NPC Super Strike -->
-			<skill name="SelfMagicHeal" id="4065" level="9" /> <!-- NPC Heal -->
-			<skill name="W_ShortRangeDDMagic" id="4622" level="9" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_LongRangeDDMagic" id="4158" level="9" /> <!-- NPC Prominence - Magic -->
-			<skill name="DeBuff" id="4088" level="9" /> <!-- Bleed -->
-			<skill name="SpecialDDMagic" id="4655" level="9" /> <!-- NPC Death Link - Magic -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8208" /> <!-- Monster Only (Heretic Private Staff) -->
@@ -4146,12 +3554,6 @@
 	</npc>
 	<npc id="22164" level="99" type="L2Monster" name="Triol's Believer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="PhysicalSpecial2" id="4612" level="9" /> <!-- NPC Wide Wild Sweep -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8207" lhand="8207" /> <!-- Monster Only (Heretic Private Axe) / Monster Only (Heretic Private Axe) -->
@@ -4203,14 +3605,6 @@
 	</npc>
 	<npc id="22165" level="99" type="L2Monster" name="Triol's Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="W_ShortRangeDDMagic" id="4622" level="9" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_LongRangeDDMagic" id="4665" level="9" /> <!-- NPC 100% HP Drain - Magic -->
-			<skill name="DeBuff" id="4466" level="3" /> <!-- Surrender To Darkness -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -4264,13 +3658,6 @@
 	</npc>
 	<npc id="22166" level="99" type="L2Monster" name="Triol's Believer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="W_ShortRangeDDMagic" id="4622" level="9" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_LongRangeDDMagic" id="4665" level="9" /> <!-- NPC 100% HP Drain - Magic -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -4323,15 +3710,6 @@
 	</npc>
 	<npc id="22167" level="99" type="L2Monster" name="Triol's High Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="98" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="PhysicalSpecial2" id="4612" level="9" /> <!-- NPC Wide Wild Sweep -->
-			<skill name="SpecialAttack" id="4641" level="10" /> <!-- NPC Super Strike -->
-			<skill name="SelfMagicHeal" id="4065" level="9" /> <!-- NPC Heal -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8206" lhand="8206" /> <!-- Monster Only (Heretic Priest Sword) / Monster Only (Heretic Priest Sword) -->
@@ -4386,14 +3764,6 @@
 	</npc>
 	<npc id="22168" level="99" type="L2Monster" name="Triol's Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="W_ShortRangeDDMagic" id="4622" level="9" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_LongRangeDDMagic" id="4665" level="9" /> <!-- NPC 100% HP Drain - Magic -->
-			<skill name="DeBuff" id="4466" level="3" /> <!-- Surrender To Darkness -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -4447,13 +3817,6 @@
 	</npc>
 	<npc id="22169" level="99" type="L2Monster" name="Ritual Sacrifice">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="111" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="PhysicalSpecial2" id="4614" level="9" /> <!-- NPC Death Bomb -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="862.3004795429" sp="13522" />
@@ -4505,12 +3868,6 @@
 	</npc>
 	<npc id="22170" level="99" type="L2Monster" name="Triol's Believer">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8207" lhand="8207" /> <!-- Monster Only (Heretic Private Axe) / Monster Only (Heretic Private Axe) -->
@@ -4562,18 +3919,6 @@
 	</npc>
 	<npc id="22171" level="99" type="L2Monster" name="Triol's High Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="98" />
-			<param name="SpecialDDMagicUse" value="30" />
-			<skill name="SpecialAttack" id="4641" level="10" /> <!-- NPC Super Strike -->
-			<skill name="SelfMagicHeal" id="4065" level="9" /> <!-- NPC Heal -->
-			<skill name="W_ShortRangeDDMagic" id="4622" level="9" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_LongRangeDDMagic" id="4158" level="9" /> <!-- NPC Prominence - Magic -->
-			<skill name="DeBuff" id="4088" level="10" /> <!-- Bleed -->
-			<skill name="SpecialDDMagic" id="4655" level="9" /> <!-- NPC Death Link - Magic -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8208" /> <!-- Monster Only (Heretic Private Staff) -->
@@ -4630,13 +3975,6 @@
 	</npc>
 	<npc id="22172" level="99" type="L2Monster" name="Ritual Sacrifice">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="111" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="PhysicalSpecial2" id="4614" level="9" /> <!-- NPC Death Bomb -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="862.3004795429" sp="13522" />
@@ -4688,14 +4026,6 @@
 	</npc>
 	<npc id="22173" level="99" type="L2Monster" name="Triol's Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="W_ShortRangeDDMagic" id="4622" level="9" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_LongRangeDDMagic" id="4665" level="9" /> <!-- NPC 100% HP Drain - Magic -->
-			<skill name="DeBuff" id="4088" level="10" /> <!-- Bleed -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -4749,14 +4079,6 @@
 	</npc>
 	<npc id="22174" level="99" type="L2Monster" name="Triol's Priest">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="W_ShortRangeDDMagic" id="4622" level="9" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_LongRangeDDMagic" id="4665" level="9" /> <!-- NPC 100% HP Drain - Magic -->
-			<skill name="DeBuff" id="4466" level="3" /> <!-- Surrender To Darkness -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -4810,25 +4132,6 @@
 	</npc>
 	<npc id="22175" level="99" type="L2Monster" name="Andreas' Captain of the Royal Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="118" />
-			<param name="Hold" value="0" />
-			<param name="party_members" value="9" />
-			<param name="TelPosX1" value="-16128" />
-			<param name="TelPosY1" value="-35888" />
-			<param name="TelPosZ1" value="-10726" />
-			<param name="TelPosX2" value="-17029" />
-			<param name="TelPosY2" value="-39617" />
-			<param name="TelPosZ2" value="-10724" />
-			<param name="TelPosX3" value="-15729" />
-			<param name="TelPosY3" value="-42001" />
-			<param name="TelPosZ3" value="-10724" />
-			<skill name="PhysicalSpecial" id="4573" level="9" /> <!-- NPC Sonic Blaster -->
-			<skill name="PhysicalSpecial2" id="4612" level="9" /> <!-- NPC Wide Wild Sweep -->
-			<skill name="HoldMagic" id="4047" level="9" /> <!-- Hold -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="8215" /> <!-- Monster Only (Zombie Enlisted Man Sword) -->
@@ -4905,14 +4208,6 @@
 	</npc>
 	<npc id="22176" level="99" type="L2Monster" name="Andreas' Royal Guards">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="118" />
-			<param name="IsTeleport" value="0" />
-			<skill name="PhysicalSpecial" id="4032" level="2" /> <!-- NPC Strike -->
-			<skill name="SelfRangeDeBuff" id="4649" level="9" /> <!-- Poison -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="8215" /> <!-- Monster Only (Zombie Enlisted Man Sword) -->
@@ -4985,13 +4280,6 @@
 	</npc>
 	<npc id="22188" level="99" type="L2Monster" name="Andreas' Captain of the Royal Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="98" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="PhysicalSpecial2" id="4612" level="9" /> <!-- NPC Wide Wild Sweep -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8208" /> <!-- Monster Only (Heretic Private Staff) -->
@@ -5066,12 +4354,6 @@
 	</npc>
 	<npc id="22189" level="99" type="L2Monster" name="Andreas' Royal Guards">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -5145,13 +4427,6 @@
 	</npc>
 	<npc id="22190" level="99" type="L2Monster" name="Ritual Sacrifice">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="111" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="PhysicalSpecial2" id="4614" level="9" /> <!-- NPC Death Bomb -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="1117.6425874911" sp="17526" />
@@ -5203,14 +4478,6 @@
 	</npc>
 	<npc id="22191" level="99" type="L2Monster" name="Andreas' Captain of the Royal Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="98" />
-			<skill name="W_ShortRangeDDMagic" id="4622" level="9" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_LongRangeDDMagic" id="4158" level="9" /> <!-- NPC Prominence - Magic -->
-			<skill name="DeBuff" id="4466" level="3" /> <!-- Surrender To Darkness -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8208" /> <!-- Monster Only (Heretic Private Staff) -->
@@ -5296,14 +4563,6 @@
 	</npc>
 	<npc id="22192" level="99" type="L2Monster" name="Andreas' Royal Guards">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="W_ShortRangeDDMagic" id="4622" level="9" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_LongRangeDDMagic" id="4665" level="9" /> <!-- NPC 100% HP Drain - Magic -->
-			<skill name="DeBuff" id="4466" level="3" /> <!-- Surrender To Darkness -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -5372,13 +4631,6 @@
 	</npc>
 	<npc id="22193" level="99" type="L2Monster" name="Andreas' Royal Guards">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="99" />
-			<skill name="W_ShortRangeDDMagic" id="4622" level="9" /> <!-- NPC AE - 80% HP Drain - Magic -->
-			<skill name="W_LongRangeDDMagic" id="4665" level="9" /> <!-- NPC 100% HP Drain - Magic -->
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="8205" /> <!-- Monster Only (Heretic Priest Sigil) -->
@@ -5446,10 +4698,6 @@
 	</npc>
 	<npc id="22194" level="99" type="L2Monster" name="Penance Guard">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<skill name="DDMagic" id="4253" level="9" /> <!-- NPC Blaze - Slow -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="8217" /> <!-- Monster Only (Zombie Gate Guard Spear) -->
@@ -5503,14 +4751,6 @@
 	</npc>
 	<npc id="22195" level="99" type="L2Monster" name="Ritual Sacrifice">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="111" />
-			<param name="DDMagicUseHpRate" value="10" />
-			<param name="SelfRangeDDMagicRate" value="10" />
-			<skill name="SelfRangeDDMagic" id="4614" level="9" /> <!-- NPC Death Bomb -->
-		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<acquire expRate="234.18814406693" sp="3672" />
@@ -5561,18 +4801,6 @@
 	</npc>
 	<npc id="22196" level="80" type="L2Monster" name="Velociraptor">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="ag_type" value="1" />
-			<param name="ProbSelfRangeBuff1" value="100" />
-			<param name="ProbPhysicalSpecial1" value="10" />
-			<param name="ProbPhysicalSpecial2" value="20" />
-			<param name="BroadCastRange" value="100" />
-			<param name="BroadCastReception" value="1" />
-			<param name="HpChkRate5" value="80" />
-			<skill name="SelfRangeBuff1" id="5079" level="1" /> <!-- NPC Focused Haste -->
-			<skill name="PhysicalSpecial1" id="5081" level="2" /> <!-- Silence -->
-			<skill name="PhysicalSpecial2" id="5082" level="2" /> <!-- NPC Spinning, Slashing Trick -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="15.7125" sp="24" />
@@ -5651,12 +4879,6 @@
 	</npc>
 	<npc id="22197" level="80" type="L2Monster" name="Velociraptor">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="IsSayPrivate" value="0" />
-			<param name="ag_type" value="1" />
-			<param name="BroadCastReception" value="1" />
-			<skill name="PhysicalSpecial" id="4073" level="10" /> <!-- Stun -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="15.7125" sp="24" />
@@ -5733,18 +4955,6 @@
 	</npc>
 	<npc id="22198" level="80" type="L2Monster" name="Velociraptor">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="mobile_type" value="1" />
-			<param name="ProbSelfRangeBuff1" value="100" />
-			<param name="ProbPhysicalSpecial1" value="10" />
-			<param name="ProbPhysicalSpecial2" value="20" />
-			<param name="BroadCastRange" value="100" />
-			<param name="BroadCastReception" value="1" />
-			<param name="HpChkRate5" value="80" />
-			<skill name="SelfRangeBuff1" id="5079" level="1" /> <!-- NPC Focused Haste -->
-			<skill name="PhysicalSpecial1" id="5081" level="2" /> <!-- Silence -->
-			<skill name="PhysicalSpecial2" id="5082" level="2" /> <!-- NPC Spinning, Slashing Trick -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="15.7125" sp="24" />
@@ -5824,20 +5034,6 @@
 	</npc>
 	<npc id="22199" level="80" type="L2Monster" name="Pterosaur">
 		<!-- Confirmed CT2.5 -->
-		<parameters>
-			<param name="ag_type" value="1" />
-			<param name="BroadCastReception" value="1" />
-			<param name="LongRangeSkillDist" value="100" />
-			<param name="mobile_type" value="0" />
-			<param name="ProbSelfBuff1" value="100" />
-			<param name="ProbLongRangeDDMagic1" value="15" />
-			<param name="ProbPhysicalSpecial1" value="10" />
-			<param name="ProbPhysicalSpecial2" value="15" />
-			<skill name="SelfBuff1" id="5087" level="1" /> <!-- Berserk -->
-			<skill name="LongRangeDDMagic1" id="5120" level="1" /> <!-- Stun -->
-			<skill name="PhysicalSpecial1" id="5083" level="3" /> <!-- Stun -->
-			<skill name="PhysicalSpecial2" id="4244" level="10" /> <!-- NPC Wild Sweep -->
-		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire expRate="15.7125" sp="24" />
