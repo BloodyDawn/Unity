@@ -23,6 +23,7 @@ import java.util.List;
 
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -79,34 +80,32 @@ public final class TersisHerald extends AbstractNpcAI
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
-		switch (event)
+		if (event.equals("giveBuff"))
 		{
-			case "giveBuff":
+			if (player.isAffectedBySkill(DRAGON_BUFF.getSkillId()))
 			{
-				if (player.isAffectedBySkill(DRAGON_BUFF.getSkillId()))
-				{
-					return npc.getId() + "-01.html";
-				}
-				
-				npc.setTarget(player);
-				npc.doCast(DRAGON_BUFF.getSkill());
-				// DRAGON_BUFF.getSkill().applyEffects(npc, player);
-				break;
+				return npc.getId() + "-01.html";
 			}
-			case "DESPAWN_NPCS":
-			{
-				cancelQuestTimer("TEXT_SPAM", null, null);
-				SPAWNED_NPCS.stream().forEach(Npc::deleteMe);
-				SPAWNED_NPCS.clear();
-				break;
-			}
-			case "TEXT_SPAM":
-			{
-				SPAWNED_NPCS.stream().forEach(n -> n.broadcastSay(ChatType.NPC_GENERAL, SPAM_MSGS[getRandom(SPAM_MSGS.length)]));
-				break;
-			}
+			
+			npc.setTarget(player);
+			npc.doCast(DRAGON_BUFF.getSkill());
 		}
 		return super.onAdvEvent(event, npc, player);
+	}
+	
+	@Override
+	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
+	{
+		if (event.equals("DESPAWN_NPCS"))
+		{
+			cancelQuestTimer("TEXT_SPAM", null, null);
+			SPAWNED_NPCS.stream().forEach(Npc::deleteMe);
+			SPAWNED_NPCS.clear();
+		}
+		else if (event.equals("TEXT_SPAM"))
+		{
+			SPAWNED_NPCS.stream().forEach(n -> n.broadcastSay(ChatType.NPC_GENERAL, SPAM_MSGS[getRandom(SPAM_MSGS.length)]));
+		}
 	}
 	
 	@Override
@@ -132,8 +131,8 @@ public final class TersisHerald extends AbstractNpcAI
 		
 		if (!SPAWNED_NPCS.isEmpty())
 		{
-			cancelQuestTimer("DESPAWN_NPCS", null, null);
-			startQuestTimer("DESPAWN_NPCS", DESPAWN_TIME, null, null);
+			getTimers().cancelTimers("DESPAWN_NPCS");
+			getTimers().addTimer("DESPAWN_NPCS", DESPAWN_TIME, null, null);
 		}
 		else
 		{
@@ -142,8 +141,8 @@ public final class TersisHerald extends AbstractNpcAI
 				SPAWNED_NPCS.add(addSpawn(HERALD, loc));
 			}
 			
-			startQuestTimer("DESPAWN_NPCS", DESPAWN_TIME, null, null);
-			startQuestTimer("TEXT_SPAM", 60000, null, null);
+			getTimers().addTimer("DESPAWN_NPCS", DESPAWN_TIME, null, null);
+			getTimers().addTimer("TEXT_SPAM", 300000, null, null);
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
