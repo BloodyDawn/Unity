@@ -87,7 +87,7 @@ public final class AdventurersGuide extends AbstractNpcAI
 				}
 				
 				player.setShilensBreathDebuffLevel(2);
-				htmltext = ""; // TODO: Any success html?
+				htmltext = "guide-cleanedBreath.html";
 				break;
 			}
 			case "knight":
