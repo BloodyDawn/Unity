@@ -227,6 +227,9 @@
 	<item id="37119" name="Scroll of Escape: Town of Goddard" type="EtcItem">
 		<!-- Teleports you close to Captain Andrei in the town of Goddard. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="handler" val="ItemSkills" />
 		<set name="is_depositable" val="false" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -235,8 +238,13 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
 		<set name="weight" val="30" />
+		<skills>
+			<skill id="9933" level="1" /> <!-- Scroll of Escape: Town of Goddard -->
+		</skills>
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
 	</item>
 	<item id="37120" name="Scroll of Escape: Town of Goddard" type="EtcItem">
 		<!-- Teleports you close to Captain Andrei in the town of Goddard. -->
