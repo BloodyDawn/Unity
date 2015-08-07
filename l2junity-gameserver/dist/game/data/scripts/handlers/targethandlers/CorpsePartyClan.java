@@ -50,7 +50,7 @@ public class CorpsePartyClan implements ITargetTypeHandler
 			
 			if ((clan != null) || (party != null))
 			{
-				final List<Creature> targetList = World.getInstance().getVisibleObjects(target, Creature.class, skill.getAffectRange(), o -> (o != activeChar) && checkTarget(activeChar, o));
+				final List<Creature> targetList = World.getInstance().getVisibleObjects(target, Creature.class, skill.getAffectRange(), o -> (o != activeChar) && checkTarget(activeChar, o, skill));
 				
 				targetList.sort(Comparator.comparingDouble(p -> player.calculateDistance(p, false, false)));
 				
@@ -68,11 +68,19 @@ public class CorpsePartyClan implements ITargetTypeHandler
 		return EMPTY_TARGET_LIST;
 	}
 	
-	private boolean checkTarget(Creature activeChar, Creature target)
+	private boolean checkTarget(Creature activeChar, Creature target, Skill skill)
 	{
 		if ((target.getActingPlayer() != null) && (target.getActingPlayer() != activeChar) && (target.getActingPlayer().inObserverMode() || target.getActingPlayer().isInOlympiadMode()))
 		{
 			return false;
+		}
+		
+		if ((skill.getAffectHeightMin() != 0) && (skill.getAffectHeightMax() != 0))
+		{
+			if (((activeChar.getZ() + skill.getAffectHeightMin()) > target.getZ()) || ((activeChar.getZ() + skill.getAffectHeightMax()) < target.getZ()))
+			{
+				return false;
+			}
 		}
 		
 		if (target.isPlayable() && target.isDead())

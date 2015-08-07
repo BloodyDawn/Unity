@@ -79,6 +79,14 @@ public class CommandChannel implements ITargetTypeHandler
 				continue;
 			}
 			
+			if ((skill.getAffectHeightMin() != 0) && (skill.getAffectHeightMax() != 0))
+			{
+				if (((activeChar.getZ() + skill.getAffectHeightMin()) > member.getZ()) || ((activeChar.getZ() + skill.getAffectHeightMax()) < member.getZ()))
+				{
+					continue;
+				}
+			}
+			
 			if (addCharacter(activeChar, member, radius, false))
 			{
 				targetList.add(member);

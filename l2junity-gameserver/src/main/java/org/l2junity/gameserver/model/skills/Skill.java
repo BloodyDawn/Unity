@@ -142,6 +142,7 @@ public final class Skill implements IIdentifiable
 	// "caster" if targetType = AURA/PARTY/CLAN or "target" if targetType = AREA
 	private final int _affectRange;
 	private final int[] _affectLimit = new int[3]; // TODO: Third value is unknown... find it out!
+	private final int[] _affectHeight = new int[2];
 	
 	private final boolean _nextActionIsAttack;
 	
@@ -310,7 +311,27 @@ public final class Skill implements IIdentifiable
 			}
 			catch (Exception e)
 			{
-				throw new IllegalArgumentException("SkillId: " + _id + " invalid affectLimit value: " + affectLimit + ", \"percent-percent\" required");
+				throw new IllegalArgumentException("SkillId: " + _id + " invalid affectLimit value: " + affectLimit + ", \"minAffected-additionalRandom\" required");
+			}
+		}
+		
+		final String affectHeight = set.getString("affectHeight", null);
+		if (affectHeight != null)
+		{
+			try
+			{
+				String[] valuesSplit = affectHeight.split(";");
+				_affectHeight[0] = Integer.parseInt(valuesSplit[0]);
+				_affectHeight[1] = Integer.parseInt(valuesSplit[1]);
+			}
+			catch (Exception e)
+			{
+				throw new IllegalArgumentException("SkillId: " + _id + " invalid affectHeight value: " + affectHeight + ", \"minHeight-maxHeight\" required");
+			}
+			
+			if (_affectHeight[0] > _affectHeight[1])
+			{
+				throw new IllegalArgumentException("SkillId: " + _id + " invalid affectHeight value: " + affectHeight + ", \"minHeight-maxHeight\" required, minHeight is higher than maxHeight!");
 			}
 		}
 		
@@ -832,6 +853,16 @@ public final class Skill implements IIdentifiable
 	public int getAffectLimit()
 	{
 		return (_affectLimit[0] + Rnd.get(_affectLimit[1]));
+	}
+	
+	public int getAffectHeightMin()
+	{
+		return _affectHeight[0];
+	}
+	
+	public int getAffectHeightMax()
+	{
+		return _affectHeight[1];
 	}
 	
 	public boolean isActive()

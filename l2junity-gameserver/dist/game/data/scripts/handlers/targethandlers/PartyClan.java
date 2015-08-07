@@ -151,6 +151,14 @@ public class PartyClan implements ITargetTypeHandler
 				return;
 			}
 			
+			if ((skill.getAffectHeightMin() != 0) && (skill.getAffectHeightMax() != 0))
+			{
+				if (((activeChar.getZ() + skill.getAffectHeightMin()) > obj.getZ()) || ((activeChar.getZ() + skill.getAffectHeightMax()) < obj.getZ()))
+				{
+					return;
+				}
+			}
+			
 			targetList.add(obj);
 		});
 		return targetList.toArray(new Creature[targetList.size()]);

@@ -61,6 +61,15 @@ public class Ground implements ITargetTypeHandler
 				{
 					return;
 				}
+				
+				if ((skill.getAffectHeightMin() != 0) && (skill.getAffectHeightMax() != 0))
+				{
+					if (((activeChar.getZ() + skill.getAffectHeightMin()) > character.getZ()) || ((activeChar.getZ() + skill.getAffectHeightMax()) < character.getZ()))
+					{
+						return;
+					}
+				}
+				
 				targetList.add(character);
 			}
 		});

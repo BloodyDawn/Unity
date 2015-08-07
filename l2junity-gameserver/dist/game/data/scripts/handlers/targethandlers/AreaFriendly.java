@@ -39,7 +39,7 @@ public class AreaFriendly implements ITargetTypeHandler
 	@Override
 	public Creature[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
-		if (!checkTarget(activeChar, target) && (skill.getCastRange() >= 0))
+		if (!checkTarget(activeChar, target, null) && (skill.getCastRange() >= 0))
 		{
 			activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 			return EMPTY_TARGET_LIST;
@@ -63,7 +63,7 @@ public class AreaFriendly implements ITargetTypeHandler
 		
 		if (target != null)
 		{
-			List<Creature> targetList = World.getInstance().getVisibleObjects(target, Creature.class, skill.getAffectRange(), o -> checkTarget(activeChar, o) && (o != activeChar));
+			List<Creature> targetList = World.getInstance().getVisibleObjects(target, Creature.class, skill.getAffectRange(), o -> checkTarget(activeChar, o, skill) && (o != activeChar));
 			if (skill.hasEffectType(L2EffectType.HEAL))
 			{
 				targetList.sort(new CharComparator());
@@ -81,7 +81,7 @@ public class AreaFriendly implements ITargetTypeHandler
 		return EMPTY_TARGET_LIST;
 	}
 	
-	private boolean checkTarget(Creature activeChar, Creature target)
+	private boolean checkTarget(Creature activeChar, Creature target, Skill skill)
 	{
 		if ((target == null) || target.isAlikeDead() || target.isDoor() || (target instanceof L2SiegeFlagInstance) || target.isMonster())
 		{
@@ -91,6 +91,14 @@ public class AreaFriendly implements ITargetTypeHandler
 		if ((target.getActingPlayer() != null) && (target.getActingPlayer() != activeChar) && (target.getActingPlayer().inObserverMode() || target.getActingPlayer().isInOlympiadMode()))
 		{
 			return false;
+		}
+		
+		if ((skill != null) && (skill.getAffectHeightMin() != 0) && (skill.getAffectHeightMax() != 0))
+		{
+			if (((activeChar.getZ() + skill.getAffectHeightMin()) > target.getZ()) || ((activeChar.getZ() + skill.getAffectHeightMax()) < target.getZ()))
+			{
+				return false;
+			}
 		}
 		
 		if (target.isPlayable())

@@ -64,7 +64,18 @@ public class FrontArea implements ITargetTypeHandler
 			}
 			
 			origin = target;
-			targetList.add(origin); // Add target to target list
+			
+			if ((skill.getAffectHeightMin() != 0) && (skill.getAffectHeightMax() != 0))
+			{
+				if (((activeChar.getZ() + skill.getAffectHeightMin()) < target.getZ()) && ((activeChar.getZ() + skill.getAffectHeightMax()) > target.getZ()))
+				{
+					targetList.add(origin); // Add target to target list
+				}
+			}
+			else
+			{
+				targetList.add(origin); // Add target to target list
+			}
 		}
 		else
 		{
@@ -99,6 +110,14 @@ public class FrontArea implements ITargetTypeHandler
 				if ((maxTargets > 0) && (targetList.size() >= maxTargets))
 				{
 					return;
+				}
+				
+				if ((skill.getAffectHeightMin() != 0) && (skill.getAffectHeightMax() != 0))
+				{
+					if (((activeChar.getZ() + skill.getAffectHeightMin()) > obj.getZ()) || ((activeChar.getZ() + skill.getAffectHeightMax()) < obj.getZ()))
+					{
+						return;
+					}
 				}
 				
 				targetList.add(obj);

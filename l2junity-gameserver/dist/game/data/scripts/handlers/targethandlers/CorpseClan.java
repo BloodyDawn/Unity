@@ -113,6 +113,14 @@ public class CorpseClan implements ITargetTypeHandler
 						break;
 					}
 					
+					if ((skill.getAffectHeightMin() != 0) && (skill.getAffectHeightMax() != 0))
+					{
+						if (((activeChar.getZ() + skill.getAffectHeightMin()) > obj.getZ()) || ((activeChar.getZ() + skill.getAffectHeightMax()) < obj.getZ()))
+						{
+							continue;
+						}
+					}
+					
 					targetList.add(obj);
 				}
 			}
@@ -138,6 +146,14 @@ public class CorpseClan implements ITargetTypeHandler
 					if ((skill.getAffectLimit() > 0) && (targetList.size() >= skill.getAffectLimit()))
 					{
 						break;
+					}
+					
+					if ((skill.getAffectHeightMin() != 0) && (skill.getAffectHeightMax() != 0))
+					{
+						if (((activeChar.getZ() + skill.getAffectHeightMin()) > newTarget.getZ()) || ((activeChar.getZ() + skill.getAffectHeightMax()) < newTarget.getZ()))
+						{
+							continue;
+						}
 					}
 					
 					targetList.add(newTarget);

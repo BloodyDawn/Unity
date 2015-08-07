@@ -168,6 +168,14 @@ public class Clan implements ITargetTypeHandler
 						break;
 					}
 					
+					if ((skill.getAffectHeightMin() != 0) && (skill.getAffectHeightMax() != 0))
+					{
+						if (((activeChar.getZ() + skill.getAffectHeightMin()) > newTarget.getZ()) || ((activeChar.getZ() + skill.getAffectHeightMax()) < newTarget.getZ()))
+						{
+							continue;
+						}
+					}
+					
 					targetList.add(newTarget);
 				}
 			}
