@@ -1214,46 +1214,68 @@
 		</for>
 	</skill>
 	<skill id="11142" levels="3" name="Damaged Area">
-		<table name="#abnormalTime"> 3 3 5 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Momentarily incurs damage. All speeds are decreased. -->
+		<table name="#abnormalTime"> 3 3 5 </table>
+		<table name="#runSpd"> 0.6 0.4 0.2 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="#abnormalTime" />
+		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="300" />
 		<set name="icon" val="icon.skill11032" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-702" />
-		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="90" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="#abnormalTime" />
-		<set name="affectRange" val="300" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="123" />
+				<param overHit="true" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11143" levels="3" name="Damaged Area">
-		<table name="#abnormalTime"> 3 3 5 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Momentarily incurs damage. All speeds are decreased. -->
+		<table name="#abnormalTime"> 3 3 5 </table>
+		<table name="#runSpd"> 0.6 0.4 0.2 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="#abnormalTime" />
+		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="300" />
 		<set name="icon" val="icon.skill11032" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-707" />
-		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="95" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="#abnormalTime" />
-		<set name="affectRange" val="300" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="131" />
+				<param overHit="true" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11144" levels="5" name="Wind Binding">
 		<!-- Updated to IO -->
@@ -1380,54 +1402,63 @@
 		</selfEffects>
 	</skill>
 	<skill id="11174" levels="5" name="Shadow Snare Zone"> <!-- Client Levels only 1 and 5 -->
-		<table name="#effectPoint"> -709 0 0 0 -709 </table>
+		<!-- Glory Days confirmed -->
 		<!-- Pulls nearby enemies to the center. -->
+		<table name="#effectPoint"> -709 0 0 0 -709 </table>
 		<set name="icon" val="icon.skill1469" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="1" />
+		<set name="abnormalType" val="STUN" />
 		<set name="activateRate" val="100" />
-		<set name="affectRange" val="300" /> <!-- Guessed -->
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="300" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="PULL" />
 		<set name="effectPoint" val="#effectPoint" />
-		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="97" />
-		<set name="abnormalLvl" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PullBack">
 				<param speed="600" />
 			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11175" levels="6" name="Shadow Snare Zone"> <!-- Client Levels only 1 and 6 -->
-		<table name="#effectPoint"> -709 0 0 0 0 -709 </table>
 		<!-- TODO: Skill called by npc: 13325 (Whisper of Fear) title mer3nwen mer3nwen. NPC IS NOT INVISIBLE, just no template -->
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Pulls nearby enemies to the center. -->
+		<table name="#effectPoint"> -709 0 0 0 0 -709 </table>
 		<set name="icon" val="icon.skill1469" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="1" />
+		<set name="abnormalType" val="STUN" />
 		<set name="activateRate" val="100" />
-		<set name="affectRange" val="300" /> <!-- Guessed -->
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="300" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="PULL" />
 		<set name="effectPoint" val="#effectPoint" />
-		<set name="abnormalType" val="STUN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="97" />
-		<set name="abnormalLvl" val="5" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PullBack">
 				<param speed="600" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
 			</effect>
 		</for>
 	</skill>
@@ -1488,7 +1519,7 @@
 		</for>
 	</skill>
 	<skill id="11179" levels="1" name="Yoke Status">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Momentarily immobilized midair. -->
 		<set name="icon" val="icon.skill1042" />
 		<set name="abnormalLvl" val="1" />
@@ -1496,9 +1527,9 @@
 		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="1100" />
-		<set name="effectRange" val="1100" /> <!-- Custom -->
+		<set name="effectRange" val="1100" />
 		<set name="effectPoint" val="-698" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
@@ -1507,9 +1538,29 @@
 		<set name="magicLvl" val="89" />
 		<set name="trait" val="AIRBIND" />
 		<set name="isDebuff" val="true" />
+		<!-- TODO Cond {op_check_crt_effect} -->
+		<for>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="BlockControl" />
+			<effect name="DamOverTime" ticks="1">
+				<param power="100" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+				<param SLEEP="100" />
+				<param DERANGEMENT="100" />
+				<param CHANGEBODY="100" />
+				<param SHOCK="100" />
+				<param AIRBIND="100" />
+				<param KNOCKBACK="100" />
+				<param KNOCKDOWN="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11180" levels="1" name="Yoke Status">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Momentarily immobilized midair. -->
 		<set name="icon" val="icon.skill1042" />
 		<set name="abnormalLvl" val="1" />
@@ -1517,9 +1568,9 @@
 		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="1100" />
-		<set name="effectRange" val="1100" /> <!-- Custom -->
+		<set name="effectRange" val="1100" />
 		<set name="effectPoint" val="-704" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
@@ -1528,9 +1579,29 @@
 		<set name="magicLvl" val="93" />
 		<set name="trait" val="AIRBIND" />
 		<set name="isDebuff" val="true" />
+		<!-- TODO Cond {op_check_crt_effect} -->
+		<for>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="BlockControl" />
+			<effect name="DamOverTime" ticks="1">
+				<param power="100" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+				<param SLEEP="100" />
+				<param DERANGEMENT="100" />
+				<param CHANGEBODY="100" />
+				<param SHOCK="100" />
+				<param AIRBIND="100" />
+				<param KNOCKBACK="100" />
+				<param KNOCKDOWN="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11181" levels="1" name="Yoke Status">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Momentarily immobilized midair. -->
 		<set name="icon" val="icon.skill1042" />
 		<set name="abnormalLvl" val="1" />
@@ -1538,9 +1609,9 @@
 		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="1100" />
-		<set name="effectRange" val="1100" /> <!-- Custom -->
+		<set name="effectRange" val="1100" />
 		<set name="effectPoint" val="-708" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
@@ -1549,10 +1620,30 @@
 		<set name="magicLvl" val="97" />
 		<set name="trait" val="AIRBIND" />
 		<set name="isDebuff" val="true" />
+		<!-- TODO Cond {op_check_crt_effect} -->
+		<for>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="BlockControl" />
+			<effect name="DamOverTime" ticks="1">
+				<param power="100" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+				<param SLEEP="100" />
+				<param DERANGEMENT="100" />
+				<param CHANGEBODY="100" />
+				<param SHOCK="100" />
+				<param AIRBIND="100" />
+				<param KNOCKBACK="100" />
+				<param KNOCKDOWN="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11182" levels="4" name="Yoke Status">
 		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Momentarily immobilized midair. -->
 		<set name="icon" val="icon.skill1042" />
 		<set name="abnormalLvl" val="1" />
@@ -1560,9 +1651,9 @@
 		<set name="abnormalType" val="AIRBIND" />
 		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="1100" />
-		<set name="effectRange" val="1100" /> <!-- Custom -->
+		<set name="effectRange" val="1100" />
 		<set name="effectPoint" val="-707" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
@@ -1571,8 +1662,29 @@
 		<set name="magicLvl" val="95" />
 		<set name="trait" val="AIRBIND" />
 		<set name="isDebuff" val="true" />
+		<!-- TODO Cond {op_check_crt_effect} -->
+		<for>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="BlockControl" />
+			<effect name="DamOverTime" ticks="1">
+				<param power="100" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+				<param SLEEP="100" />
+				<param DERANGEMENT="100" />
+				<param CHANGEBODY="100" />
+				<param SHOCK="100" />
+				<param AIRBIND="100" />
+				<param KNOCKBACK="100" />
+				<param KNOCKDOWN="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11183" levels="1" name="Superior Quick Recovery">
+		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and Cooldown - 25% for magic skills. -->
 		<set name="icon" val="icon.skill11004" />
 		<set name="magicLvl" val="85" />
@@ -1587,6 +1699,7 @@
 		</for>
 	</skill>
 	<skill id="11184" levels="1" name="Superior Arcane Lore">
+		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and increases Fire/Water/Wind/Earth Resistance by 20 and M. Def. by 5%. -->
 		<set name="icon" val="icon.skill10044" />
 		<set name="magicLvl" val="85" />
@@ -1605,6 +1718,7 @@
 		</for>
 	</skill>
 	<skill id="11185" levels="7" name="Superior MP Boost">
+		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and increases Max MP by 313. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#maxMp"> 313 374 435 517 566 635 704 </table>
@@ -1621,6 +1735,7 @@
 		</for>
 	</skill>
 	<skill id="11186" levels="7" name="Superior Fast MP Recovery">
+		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and increases MP Recovery Bonus by 3.6. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#regMp"> 3.6 4.2 4.8 5.4 6.2 7.0 7.8 8.6 9.4 10.2 </table>
@@ -1637,6 +1752,7 @@
 		</for>
 	</skill>
 	<skill id="11187" levels="7" name="Superior Clear Mind">
+		<!-- Glory Days confirmed -->
 		<!-- INT + 2, increases MP Recovery Bonus by 5.1 while standing and by 6.5 while walking. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#regMpStand"> 5.1 5.7 6.3 6.9 7.7 8.5 9.3 10.1 10.9 11.7 </table>
