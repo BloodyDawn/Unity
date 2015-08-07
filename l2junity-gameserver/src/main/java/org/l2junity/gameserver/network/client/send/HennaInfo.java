@@ -23,6 +23,7 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.Henna;
+import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -52,14 +53,14 @@ public final class HennaInfo implements IClientOutgoingPacket
 	{
 		OutgoingPackets.HENNA_INFO.writeId(packet);
 		
-		packet.writeD(_activeChar.getHennaStatINT()); // equip INT
-		packet.writeD(_activeChar.getHennaStatSTR()); // equip STR
-		packet.writeD(_activeChar.getHennaStatCON()); // equip CON
-		packet.writeD(_activeChar.getHennaStatMEN()); // equip MEN
-		packet.writeD(_activeChar.getHennaStatDEX()); // equip DEX
-		packet.writeD(_activeChar.getHennaStatWIT()); // equip WIT
-		packet.writeD(_activeChar.getHennaStatLUC()); // equip LUC
-		packet.writeD(_activeChar.getHennaStatCHA()); // equip CHA
+		packet.writeD((int) _activeChar.getHennaValue(BaseStats.INT)); // equip INT
+		packet.writeD((int) _activeChar.getHennaValue(BaseStats.STR)); // equip STR
+		packet.writeD((int) _activeChar.getHennaValue(BaseStats.CON)); // equip CON
+		packet.writeD((int) _activeChar.getHennaValue(BaseStats.MEN)); // equip MEN
+		packet.writeD((int) _activeChar.getHennaValue(BaseStats.DEX)); // equip DEX
+		packet.writeD((int) _activeChar.getHennaValue(BaseStats.WIT)); // equip WIT
+		packet.writeD((int) _activeChar.getHennaValue(BaseStats.LUC)); // equip LUC
+		packet.writeD((int) _activeChar.getHennaValue(BaseStats.CHA)); // equip CHA
 		packet.writeD(3 - _activeChar.getHennaEmptySlots()); // Slots
 		packet.writeD(_hennas.size()); // Size
 		for (Henna henna : _hennas)

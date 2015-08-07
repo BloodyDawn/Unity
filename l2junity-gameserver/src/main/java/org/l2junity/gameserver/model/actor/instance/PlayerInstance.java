@@ -243,6 +243,7 @@ import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.variables.AccountVariables;
@@ -575,14 +576,7 @@ public final class PlayerInstance extends Playable
 	
 	// hennas
 	private final Henna[] _henna = new Henna[3];
-	private int _hennaSTR;
-	private int _hennaINT;
-	private int _hennaDEX;
-	private int _hennaMEN;
-	private int _hennaWIT;
-	private int _hennaCON;
-	private int _hennaLUC;
-	private int _hennaCHA;
+	private final Map<BaseStats, Double> _hennaBaseStats = new ConcurrentHashMap<>();
 	
 	/** The Pet of the L2PcInstance */
 	private Summon _pet = null;
@@ -7894,30 +7888,27 @@ public final class PlayerInstance extends Playable
 	 */
 	private void recalcHennaStats()
 	{
-		_hennaINT = 0;
-		_hennaSTR = 0;
-		_hennaCON = 0;
-		_hennaMEN = 0;
-		_hennaWIT = 0;
-		_hennaDEX = 0;
-		_hennaLUC = 0;
-		_hennaCHA = 0;
-		
-		for (Henna h : _henna)
+		_hennaBaseStats.clear();
+		for (Henna henna : _henna)
 		{
-			if (h == null)
+			if (henna == null)
 			{
 				continue;
 			}
 			
-			_hennaINT += ((_hennaINT + h.getStatINT()) > 5) ? 5 - _hennaINT : h.getStatINT();
-			_hennaSTR += ((_hennaSTR + h.getStatSTR()) > 5) ? 5 - _hennaSTR : h.getStatSTR();
-			_hennaMEN += ((_hennaMEN + h.getStatMEN()) > 5) ? 5 - _hennaMEN : h.getStatMEN();
-			_hennaCON += ((_hennaCON + h.getStatCON()) > 5) ? 5 - _hennaCON : h.getStatCON();
-			_hennaWIT += ((_hennaWIT + h.getStatWIT()) > 5) ? 5 - _hennaWIT : h.getStatWIT();
-			_hennaDEX += ((_hennaDEX + h.getStatDEX()) > 5) ? 5 - _hennaDEX : h.getStatDEX();
-			_hennaLUC += ((_hennaLUC + h.getStatLUC()) > 5) ? 5 - _hennaLUC : h.getStatLUC();
-			_hennaCHA += ((_hennaCHA + h.getStatCHA()) > 5) ? 5 - _hennaCHA : h.getStatCHA();
+			for (Entry<BaseStats, Double> entry : henna.getBaseStats().entrySet())
+			{
+				final BaseStats baseStat = entry.getKey();
+				final Stats stat = baseStat.getStat();
+				if (_hennaBaseStats.getOrDefault(stat, 0d) > 5)
+				{
+					_hennaBaseStats.merge(baseStat, 5 - entry.getValue(), stat::add);
+				}
+				else
+				{
+					_hennaBaseStats.merge(baseStat, entry.getValue(), stat::add);
+				}
+			}
 		}
 	}
 	
@@ -7958,67 +7949,20 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * @return the INT Henna modifier of this L2PcInstance.
+	 * @param stat
+	 * @return the henna bonus of specified base stat
 	 */
-	public int getHennaStatINT()
+	public double getHennaValue(BaseStats stat)
 	{
-		return _hennaINT;
+		return _hennaBaseStats.getOrDefault(stat, 0d);
 	}
 	
 	/**
-	 * @return the STR Henna modifier of this L2PcInstance.
+	 * @return map of all henna base stats bonus
 	 */
-	public int getHennaStatSTR()
+	public Map<BaseStats, Double> getHennaBaseStats()
 	{
-		return _hennaSTR;
-	}
-	
-	/**
-	 * @return the CON Henna modifier of this L2PcInstance.
-	 */
-	public int getHennaStatCON()
-	{
-		return _hennaCON;
-	}
-	
-	/**
-	 * @return the MEN Henna modifier of this L2PcInstance.
-	 */
-	public int getHennaStatMEN()
-	{
-		return _hennaMEN;
-	}
-	
-	/**
-	 * @return the WIT Henna modifier of this L2PcInstance.
-	 */
-	public int getHennaStatWIT()
-	{
-		return _hennaWIT;
-	}
-	
-	/**
-	 * @return the DEX Henna modifier of this L2PcInstance.
-	 */
-	public int getHennaStatDEX()
-	{
-		return _hennaDEX;
-	}
-	
-	/**
-	 * @return the LUC Henna modifier of this L2PcInstance.
-	 */
-	public int getHennaStatLUC()
-	{
-		return _hennaLUC;
-	}
-	
-	/**
-	 * @return the CHA Henna modifier of this L2PcInstance.
-	 */
-	public int getHennaStatCHA()
-	{
-		return _hennaCHA;
+		return _hennaBaseStats;
 	}
 	
 	/**

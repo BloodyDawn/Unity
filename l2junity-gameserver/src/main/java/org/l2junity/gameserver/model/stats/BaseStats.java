@@ -37,14 +37,15 @@ import org.w3c.dom.Node;
  */
 public enum BaseStats
 {
-	STR(BaseStats::calcSTRBonus),
-	INT(BaseStats::calcINTBonus),
-	DEX(BaseStats::calcDEXBonus),
-	WIT(BaseStats::calcWITBonus),
-	CON(BaseStats::calcCONBonus),
-	MEN(BaseStats::calcMENBonus),
-	CHA(BaseStats::calcCHABonus),
-	NONE(creature -> 1d);
+	STR(BaseStats::calcSTRBonus, Stats.STAT_STR),
+	INT(BaseStats::calcINTBonus, Stats.STAT_INT),
+	DEX(BaseStats::calcDEXBonus, Stats.STAT_DEX),
+	WIT(BaseStats::calcWITBonus, Stats.STAT_WIT),
+	CON(BaseStats::calcCONBonus, Stats.STAT_CON),
+	MEN(BaseStats::calcMENBonus, Stats.STAT_MEN),
+	CHA(BaseStats::calcCHABonus, Stats.STAT_CHA),
+	LUC(creature -> 1d, Stats.STAT_LUC), // TODO: Implement me
+	NONE(creature -> 1d, null);
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(BaseStats.class);
 	
@@ -59,10 +60,17 @@ public enum BaseStats
 	private static final double[] CHA_BONUS = new double[MAX_STAT_VALUE];
 	
 	private final Function<Creature, Double> _bonusCalculator;
+	private final Stats _stat;
 	
-	BaseStats(Function<Creature, Double> bonusCalculator)
+	BaseStats(Function<Creature, Double> bonusCalculator, Stats stat)
 	{
 		_bonusCalculator = bonusCalculator;
+		_stat = stat;
+	}
+	
+	public Stats getStat()
+	{
+		return _stat;
 	}
 	
 	public final double calcBonus(Creature actor)
@@ -86,6 +94,18 @@ public enum BaseStats
 			}
 		}
 		throw new NoSuchElementException("Unknown name '" + name + "' for enum BaseStats");
+	}
+	
+	public static BaseStats toBaseStats(Stats stat)
+	{
+		for (BaseStats baseStat : values())
+		{
+			if (baseStat.getStat() == stat)
+			{
+				return baseStat;
+			}
+		}
+		throw new NoSuchElementException("Unknown base stat '" + stat + "' for enum BaseStats");
 	}
 	
 	public static double calcSTRBonus(Creature actor)

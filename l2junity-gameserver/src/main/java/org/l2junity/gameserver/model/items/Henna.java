@@ -19,10 +19,14 @@
 package org.l2junity.gameserver.model.items;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.base.ClassId;
+import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.Stats;
 
 /**
  * Class for the Henna object.
@@ -33,14 +37,7 @@ public class Henna
 	private final int _dyeId;
 	private final String _dyeName;
 	private final int _dyeItemId;
-	private final int _str;
-	private final int _con;
-	private final int _dex;
-	private final int _int;
-	private final int _men;
-	private final int _wit;
-	private final int _luc;
-	private final int _cha;
+	private final Map<BaseStats, Double> _baseStats = new HashMap<>();
 	private final int _wear_fee;
 	private final int _wear_count;
 	private final int _cancel_fee;
@@ -52,14 +49,14 @@ public class Henna
 		_dyeId = set.getInt("dyeId");
 		_dyeName = set.getString("dyeName");
 		_dyeItemId = set.getInt("dyeItemId");
-		_str = set.getInt("str");
-		_con = set.getInt("con");
-		_dex = set.getInt("dex");
-		_int = set.getInt("int");
-		_men = set.getInt("men");
-		_wit = set.getInt("wit");
-		_luc = set.getInt("luc");
-		_cha = set.getInt("cha");
+		_baseStats.put(BaseStats.STR, set.getDouble("str"));
+		_baseStats.put(BaseStats.CON, set.getDouble("con"));
+		_baseStats.put(BaseStats.DEX, set.getDouble("dex"));
+		_baseStats.put(BaseStats.INT, set.getDouble("int"));
+		_baseStats.put(BaseStats.MEN, set.getDouble("men"));
+		_baseStats.put(BaseStats.WIT, set.getDouble("wit"));
+		_baseStats.put(BaseStats.LUC, set.getDouble("luc"));
+		_baseStats.put(BaseStats.CHA, set.getDouble("cha"));
 		_wear_fee = set.getInt("wear_fee");
 		_wear_count = set.getInt("wear_count");
 		_cancel_fee = set.getInt("cancel_fee");
@@ -91,68 +88,14 @@ public class Henna
 		return _dyeItemId;
 	}
 	
-	/**
-	 * @return the STR stat.
-	 */
-	public int getStatSTR()
+	public double getBaseStats(Stats stat)
 	{
-		return _str;
+		return _baseStats.getOrDefault(stat, 0d);
 	}
 	
-	/**
-	 * @return the CON stat.
-	 */
-	public int getStatCON()
+	public Map<BaseStats, Double> getBaseStats()
 	{
-		return _con;
-	}
-	
-	/**
-	 * @return the DEX stat.
-	 */
-	public int getStatDEX()
-	{
-		return _dex;
-	}
-	
-	/**
-	 * @return the INT stat.
-	 */
-	public int getStatINT()
-	{
-		return _int;
-	}
-	
-	/**
-	 * @return the MEN stat.
-	 */
-	public int getStatMEN()
-	{
-		return _men;
-	}
-	
-	/**
-	 * @return the WIT stat.
-	 */
-	public int getStatWIT()
-	{
-		return _wit;
-	}
-	
-	/**
-	 * @return the LUC stat.
-	 */
-	public int getStatLUC()
-	{
-		return _luc;
-	}
-	
-	/**
-	 * @return the CHA stat.
-	 */
-	public int getStatCHA()
-	{
-		return _cha;
+		return _baseStats;
 	}
 	
 	/**

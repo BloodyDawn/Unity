@@ -91,10 +91,16 @@ public abstract class ItemContainer
 	/**
 	 * Gets the items in inventory filtered by filter.
 	 * @param filter the filter
+	 * @param filters multiple filters
 	 * @return the filtered items in inventory
 	 */
-	public Collection<ItemInstance> getItems(Predicate<ItemInstance> filter)
+	@SafeVarargs
+	public final Collection<ItemInstance> getItems(Predicate<ItemInstance> filter, Predicate<ItemInstance>... filters)
 	{
+		for (Predicate<ItemInstance> additionalFilter : filters)
+		{
+			filter = filter.and(additionalFilter);
+		}
 		return _items.values().stream().filter(filter).collect(Collectors.toCollection(LinkedList::new));
 	}
 	

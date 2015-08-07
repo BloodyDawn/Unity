@@ -20,6 +20,7 @@ package org.l2junity.gameserver.network.client.send;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.Henna;
+import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -49,21 +50,21 @@ public class HennaItemDrawInfo implements IClientOutgoingPacket
 		packet.writeD(_henna.isAllowedClass(_activeChar.getClassId()) ? 0x01 : 0x00); // able to draw or not 0 is false and 1 is true
 		packet.writeQ(_activeChar.getAdena());
 		packet.writeD(_activeChar.getINT()); // current INT
-		packet.writeC(_activeChar.getINT() + _henna.getStatINT()); // equip INT
+		packet.writeC(_activeChar.getINT() + (int) _activeChar.getHennaValue(BaseStats.INT)); // equip INT
 		packet.writeD(_activeChar.getSTR()); // current STR
-		packet.writeC(_activeChar.getSTR() + _henna.getStatSTR()); // equip STR
+		packet.writeC(_activeChar.getSTR() + (int) _activeChar.getHennaValue(BaseStats.STR)); // equip STR
 		packet.writeD(_activeChar.getCON()); // current CON
-		packet.writeC(_activeChar.getCON() + _henna.getStatCON()); // equip CON
+		packet.writeC(_activeChar.getCON() + (int) _activeChar.getHennaValue(BaseStats.CON)); // equip CON
 		packet.writeD(_activeChar.getMEN()); // current MEN
-		packet.writeC(_activeChar.getMEN() + _henna.getStatMEN()); // equip MEN
+		packet.writeC(_activeChar.getMEN() + (int) _activeChar.getHennaValue(BaseStats.MEN)); // equip MEN
 		packet.writeD(_activeChar.getDEX()); // current DEX
-		packet.writeC(_activeChar.getDEX() + _henna.getStatDEX()); // equip DEX
+		packet.writeC(_activeChar.getDEX() + (int) _activeChar.getHennaValue(BaseStats.DEX)); // equip DEX
 		packet.writeD(_activeChar.getWIT()); // current WIT
-		packet.writeC(_activeChar.getWIT() + _henna.getStatWIT()); // equip WIT
+		packet.writeC(_activeChar.getWIT() + (int) _activeChar.getHennaValue(BaseStats.WIT)); // equip WIT
 		packet.writeD(_activeChar.getLUC()); // current LUC
-		packet.writeC(_activeChar.getLUC() + _henna.getStatLUC()); // equip LUC
+		packet.writeC(_activeChar.getLUC() + (int) _activeChar.getHennaValue(BaseStats.LUC)); // equip LUC
 		packet.writeD(_activeChar.getCHA()); // current CHA
-		packet.writeC(_activeChar.getCHA() + _henna.getStatCHA()); // equip CHA
+		packet.writeC(_activeChar.getCHA() + (int) _activeChar.getHennaValue(BaseStats.CHA)); // equip CHA
 		packet.writeD(0x00); // TODO: Find me!
 		return true;
 	}

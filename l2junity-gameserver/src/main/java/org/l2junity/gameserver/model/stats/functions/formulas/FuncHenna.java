@@ -24,6 +24,7 @@ import java.util.Map;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 
@@ -55,27 +56,7 @@ public class FuncHenna extends AbstractFunction
 		double value = initVal;
 		if (pc != null)
 		{
-			switch (getStat())
-			{
-				case STAT_STR:
-					value += pc.getHennaStatSTR();
-					break;
-				case STAT_CON:
-					value += pc.getHennaStatCON();
-					break;
-				case STAT_DEX:
-					value += pc.getHennaStatDEX();
-					break;
-				case STAT_INT:
-					value += pc.getHennaStatINT();
-					break;
-				case STAT_WIT:
-					value += pc.getHennaStatWIT();
-					break;
-				case STAT_MEN:
-					value += pc.getHennaStatMEN();
-					break;
-			}
+			value += pc.getHennaValue(BaseStats.toBaseStats(getStat()));
 		}
 		return value;
 	}
