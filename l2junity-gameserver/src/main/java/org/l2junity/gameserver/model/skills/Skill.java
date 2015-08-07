@@ -141,7 +141,7 @@ public final class Skill implements IIdentifiable
 	// The radius center varies according to the _targetType:
 	// "caster" if targetType = AURA/PARTY/CLAN or "target" if targetType = AREA
 	private final int _affectRange;
-	private final int[] _affectLimit = new int[2];
+	private final int[] _affectLimit = new int[3]; // TODO: Third value is unknown... find it out!
 	
 	private final boolean _nextActionIsAttack;
 	
@@ -303,6 +303,10 @@ public final class Skill implements IIdentifiable
 				String[] valuesSplit = affectLimit.split("-");
 				_affectLimit[0] = Integer.parseInt(valuesSplit[0]);
 				_affectLimit[1] = Integer.parseInt(valuesSplit[1]);
+				if (valuesSplit.length > 2)
+				{
+					_affectLimit[2] = Integer.parseInt(valuesSplit[2]);
+				}
 			}
 			catch (Exception e)
 			{

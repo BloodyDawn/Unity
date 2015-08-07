@@ -135,7 +135,7 @@ public class CorpseClan implements ITargetTypeHandler
 			{
 				if (npc.isInMyClan(newTarget))
 				{
-					if (targetList.size() >= skill.getAffectLimit())
+					if ((skill.getAffectLimit() > 0) && (targetList.size() >= skill.getAffectLimit()))
 					{
 						break;
 					}

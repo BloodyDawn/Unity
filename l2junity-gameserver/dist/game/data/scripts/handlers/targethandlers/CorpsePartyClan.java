@@ -56,7 +56,7 @@ public class CorpsePartyClan implements ITargetTypeHandler
 				
 				final int affectLimit = skill.getAffectLimit();
 				
-				if (targetList.size() > affectLimit)
+				if ((affectLimit > 0) && (targetList.size() > affectLimit))
 				{
 					targetList.subList(affectLimit, targetList.size()).clear();
 				}
