@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.stats;
 
 import java.io.File;
 import java.util.NoSuchElementException;
+import java.util.function.Function;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -36,44 +37,39 @@ import org.w3c.dom.Node;
  */
 public enum BaseStats
 {
-	STR(new STR()),
-	INT(new INT()),
-	DEX(new DEX()),
-	WIT(new WIT()),
-	CON(new CON()),
-	MEN(new MEN()),
-	CHA(new CHA()),
-	NONE(new NONE());
+	STR(BaseStats::calcSTRBonus),
+	INT(BaseStats::calcINTBonus),
+	DEX(BaseStats::calcDEXBonus),
+	WIT(BaseStats::calcWITBonus),
+	CON(BaseStats::calcCONBonus),
+	MEN(BaseStats::calcMENBonus),
+	CHA(BaseStats::calcCHABonus),
+	NONE(creature -> 1d);
 	
-	private static final Logger _log = LoggerFactory.getLogger(BaseStats.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(BaseStats.class);
 	
 	public static final int MAX_STAT_VALUE = 201;
 	
-	protected static final double[] STRbonus = new double[MAX_STAT_VALUE];
-	protected static final double[] INTbonus = new double[MAX_STAT_VALUE];
-	protected static final double[] DEXbonus = new double[MAX_STAT_VALUE];
-	protected static final double[] WITbonus = new double[MAX_STAT_VALUE];
-	protected static final double[] CONbonus = new double[MAX_STAT_VALUE];
-	protected static final double[] MENbonus = new double[MAX_STAT_VALUE];
-	protected static final double[] CHAbonus = new double[MAX_STAT_VALUE];
+	private static final double[] STR_BONUS = new double[MAX_STAT_VALUE];
+	private static final double[] INT_BONUS = new double[MAX_STAT_VALUE];
+	private static final double[] DEX_BONUS = new double[MAX_STAT_VALUE];
+	private static final double[] WIT_BONUS = new double[MAX_STAT_VALUE];
+	private static final double[] CON_BONUS = new double[MAX_STAT_VALUE];
+	private static final double[] MEN_BONUS = new double[MAX_STAT_VALUE];
+	private static final double[] CHA_BONUS = new double[MAX_STAT_VALUE];
 	
-	private final BaseStat _stat;
+	private final Function<Creature, Double> _bonusCalculator;
 	
-	public final String getValue()
+	BaseStats(Function<Creature, Double> bonusCalculator)
 	{
-		return _stat.getClass().getSimpleName();
-	}
-	
-	BaseStats(BaseStat s)
-	{
-		_stat = s;
+		_bonusCalculator = bonusCalculator;
 	}
 	
 	public final double calcBonus(Creature actor)
 	{
 		if (actor != null)
 		{
-			return _stat.calcBonus(actor);
+			return _bonusCalculator.apply(actor);
 		}
 		
 		return 1;
@@ -84,7 +80,7 @@ public enum BaseStats
 		name = name.intern();
 		for (BaseStats s : values())
 		{
-			if (s.getValue().equalsIgnoreCase(name))
+			if (s.name().equalsIgnoreCase(name))
 			{
 				return s;
 			}
@@ -92,81 +88,44 @@ public enum BaseStats
 		throw new NoSuchElementException("Unknown name '" + name + "' for enum BaseStats");
 	}
 	
-	private interface BaseStat
+	public static double calcSTRBonus(Creature actor)
 	{
-		double calcBonus(Creature actor);
+		return calcBonus(STR_BONUS, actor.getSTR());
 	}
 	
-	protected static final class STR implements BaseStat
+	public static double calcINTBonus(Creature actor)
 	{
-		@Override
-		public final double calcBonus(Creature actor)
-		{
-			return STRbonus[Math.min(actor.getSTR(), MAX_STAT_VALUE - 1)];
-		}
+		return calcBonus(INT_BONUS, actor.getINT());
 	}
 	
-	protected static final class INT implements BaseStat
+	public static double calcDEXBonus(Creature actor)
 	{
-		@Override
-		public final double calcBonus(Creature actor)
-		{
-			return INTbonus[Math.min(actor.getINT(), MAX_STAT_VALUE - 1)];
-		}
+		return calcBonus(DEX_BONUS, actor.getDEX());
 	}
 	
-	protected static final class DEX implements BaseStat
+	public static double calcWITBonus(Creature actor)
 	{
-		@Override
-		public final double calcBonus(Creature actor)
-		{
-			return DEXbonus[Math.min(actor.getDEX(), MAX_STAT_VALUE - 1)];
-		}
+		return calcBonus(WIT_BONUS, actor.getWIT());
 	}
 	
-	protected static final class WIT implements BaseStat
+	public static double calcCONBonus(Creature actor)
 	{
-		@Override
-		public final double calcBonus(Creature actor)
-		{
-			return WITbonus[Math.min(actor.getWIT(), MAX_STAT_VALUE - 1)];
-		}
+		return calcBonus(CON_BONUS, actor.getCON());
 	}
 	
-	protected static final class CON implements BaseStat
+	public static double calcMENBonus(Creature actor)
 	{
-		@Override
-		public final double calcBonus(Creature actor)
-		{
-			return CONbonus[Math.min(actor.getCON(), MAX_STAT_VALUE - 1)];
-		}
+		return calcBonus(MEN_BONUS, actor.getMEN());
 	}
 	
-	protected static final class MEN implements BaseStat
+	public static double calcCHABonus(Creature actor)
 	{
-		@Override
-		public final double calcBonus(Creature actor)
-		{
-			return MENbonus[Math.min(actor.getMEN(), MAX_STAT_VALUE - 1)];
-		}
+		return calcBonus(CHA_BONUS, actor.getCHA());
 	}
 	
-	protected static final class CHA implements BaseStat
+	public static double calcBonus(double[] values, int value)
 	{
-		@Override
-		public final double calcBonus(Creature actor)
-		{
-			return CHAbonus[Math.min(actor.getCHA(), MAX_STAT_VALUE - 1)];
-		}
-	}
-	
-	protected static final class NONE implements BaseStat
-	{
-		@Override
-		public final double calcBonus(Creature actor)
-		{
-			return 1f;
-		}
+		return values[Math.min(value, MAX_STAT_VALUE - 1)];
 	}
 	
 	static
@@ -185,7 +144,7 @@ public enum BaseStats
 			}
 			catch (Exception e)
 			{
-				_log.warn("Could not parse file: " + e.getMessage(), e);
+				LOGGER.warn("Could not parse file: " + e.getMessage(), e);
 			}
 			
 			if (doc != null)
@@ -213,41 +172,41 @@ public enum BaseStats
 									}
 									catch (Exception e)
 									{
-										_log.error("Invalid stats value: " + value.getNodeValue() + ", skipping");
+										LOGGER.error("Invalid stats value: " + value.getNodeValue() + ", skipping");
 										continue;
 									}
 									
 									if ("STR".equalsIgnoreCase(statName))
 									{
-										STRbonus[val] = bonus;
+										STR_BONUS[val] = bonus;
 									}
 									else if ("INT".equalsIgnoreCase(statName))
 									{
-										INTbonus[val] = bonus;
+										INT_BONUS[val] = bonus;
 									}
 									else if ("DEX".equalsIgnoreCase(statName))
 									{
-										DEXbonus[val] = bonus;
+										DEX_BONUS[val] = bonus;
 									}
 									else if ("WIT".equalsIgnoreCase(statName))
 									{
-										WITbonus[val] = bonus;
+										WIT_BONUS[val] = bonus;
 									}
 									else if ("CON".equalsIgnoreCase(statName))
 									{
-										CONbonus[val] = bonus;
+										CON_BONUS[val] = bonus;
 									}
 									else if ("MEN".equalsIgnoreCase(statName))
 									{
-										MENbonus[val] = bonus;
+										MEN_BONUS[val] = bonus;
 									}
 									else if ("CHA".equalsIgnoreCase(statName))
 									{
-										CHAbonus[val] = bonus;
+										CHA_BONUS[val] = bonus;
 									}
 									else
 									{
-										_log.error("Invalid stats name: " + statName + ", skipping");
+										LOGGER.error("Invalid stats name: {}, skipping", statName);
 									}
 								}
 							}
