@@ -252,7 +252,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 	{
 		_zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder()).setMaxZ(maxZ);
 	}
-
+	
 	private void buildZonesEditorWindow(PlayerInstance activeChar)
 	{
 		final StringBuilder sb = new StringBuilder();
@@ -299,7 +299,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 			holder.getNodes().clear();
 			holder.setName(zoneType.getName());
 			holder.setMinZ(zone.getLowZ());
-			holder.setMinZ(zone.getHighZ());
+			holder.setMaxZ(zone.getHighZ());
 			for (int i = 0; i < zone.getX().length; i++)
 			{
 				final int x = zone.getX()[i];
@@ -582,7 +582,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 			sb.append("<td fixwidth=5></td>");
 			sb.append("</tr>");
 		}).build();
-
+		
 		msg.replace("%name%", holder.getName());
 		msg.replace("%minZ%", holder.getMinZ());
 		msg.replace("%maxZ%", holder.getMaxZ());
