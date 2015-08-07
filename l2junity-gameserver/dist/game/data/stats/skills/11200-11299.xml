@@ -878,19 +878,20 @@
 		</for>
 	</skill>
 	<skill id="11273" levels="8" name="Exile">
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Banishes target to another dimension. The exiled target becomes incapacitated and invincible to some attacks, skills, and debuffs. Decreases HP by 353 per second. -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -713 -717 -721 </table>
 		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
 		<table name="#mpConsumes"> 78 83 87 92 97 102 107 112 </table>
 		<table name="#dot"> 353 364 374 385 395 409 416 423 </table>
 		<set name="icon" val="icon.skill11273" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="10" /> <!-- Guessed -->
+		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="DEPORT" />
 		<set name="abnormalVisualEffect" val="DEPORT" />
-		<set name="activateRate" val="90" /> <!-- Guessed -->
+		<set name="activateRate" val="90" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
@@ -909,20 +910,24 @@
 		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="BlockActions" />
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
 			<effect name="DamOverTime" ticks="1">
 				<param power="#dot" />
 			</effect>
+			<effect name="Invincible" />
 		</for>
 	</skill>
 	<skill id="11274" levels="4" name="Summon Barrier">
-		<table name="#abnormalTime"> 6 8 10 12 </table>
-		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Becomes invincible with energy from your servitor. Increases HP Recovery Bonus while skill is in effect. Requires a servitor. -->
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
+		<table name="#abnormalTime"> 6 8 10 12 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 78 86 94 97 </table>
-		<table name="#regHp"> 1.10 1.15 1.20 1.25 </table>
+		<table name="#regHp"> 1.2 1.3 1.4 1.5 </table>
 		<set name="icon" val="icon.skill11274" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="#abnormalTime" />
@@ -941,6 +946,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
+		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">
 			<player hasSummon="true" />
 		</cond>
@@ -951,12 +957,12 @@
 		</for>
 	</skill>
 	<skill id="11275" levels="2" name="Mark Flare">
-		<table name="#magicLvl"> 95 97 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts powerful magic damage on target. -->
 		<table name="#effectPoint"> -707 -709 </table>
+		<table name="#magicLvl"> 95 97 </table>
 		<table name="#mpConsumes"> 52 53 </table>
-		<table name="#power"> 1 1 </table> <!-- TODO -->
+		<table name="#power"> 100 150 </table>
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
@@ -978,19 +984,14 @@
 		</for>
 	</skill>
 	<skill id="11276" levels="6" name="Dimensional Binding">
-		<table name="#magicLvl"> 93 96 99 101 103 105 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Binds target midair in another dimension. -->
+		<table name="#magicLvl"> 93 96 99 101 103 105 </table>
 		<set name="icon" val="icon.skill11276" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" /> <!-- Guessed -->
-		<set name="abnormalType" val="AIRBIND" />
-		<set name="abnormalVisualEffect" val="AIR_BIND" />
-		<set name="activateRate" val="100" /> <!-- Guessed -->
+		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="CA2" />
 		<set name="targetType" val="ONE" />
-		<set name="trait" val="AIRBIND" />
 		<set name="mpConsume" val="90" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="10000" />
@@ -1003,32 +1004,33 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="channelingSkillId" val="11300" />
 		<set name="channelingTickInitialDelay" val="1200" />
+		<set name="channelingTickInterval" val="2000" />
+		<set name="mpPerChanneling" val="12" />
 		<set name="isDebuff" val="true" />
-		<for>
-			<effect name="BlockActions" />
-		</for>
+		<set name="staticReuse" val="true" />
+		<!-- TODO cond {op_check_crt_effect} -->
 	</skill>
 	<skill id="11277" levels="4" name="Sense of Loyalty">
+		<!-- Glory Days confirmed -->
+		<!-- Servitor's Fury. P. Atk. + 35%, M. Atk. + 75%, P. Critical Rate + 30%, and P. Critical Damage by 35%. -->
 		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
-		<!-- AUTO GENERATED SKILL -->
-		<!-- Servitor's Fury. P. Atk. + 35%, M. Atk. + 75%, P. Critical Rate + 30%, and P. Critical Damage by 35%. -->
 		<table name="#pAtk"> 1.35 1.35 1.40 1.40 </table>
 		<table name="#mAtk"> 1.75 1.75 1.85 1.85 </table>
 		<table name="#rCrit"> 1.30 1.35 1.35 1.40 </table>
 		<table name="#cAtk"> 1.35 1.40 1.40 1.45 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="20" />
+		<set name="abnormalType" val="SUMMON_CONDITION" />
 		<set name="icon" val="icon.skill11277" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA_SUMMON" />
 		<set name="castRange" val="400" />
-		<set name="abnormalType" val="SUMMON_CONDITION" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="20" />
 		<set name="affectRange" val="1000" />
 		<set name="isMagic" val="4" />
 		<for>
@@ -1041,13 +1043,14 @@
 		</for>
 	</skill>
 	<skill id="11278" levels="9" name="Bear Claw">
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 99 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Provokes the enemy and inflicts damage. -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
 		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -709 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 99 </table>
 		<table name="#mpConsumes"> 79 81 84 86 89 92 95 98 99 </table>
-		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15282 15282 </table> <!-- Guessed from Feline Bite -->
+		<table name="#power"> 6277 6494 6930 7365 7800 8236 8671 9106 9324 </table>
 		<set name="icon" val="icon.skill0028" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="3" />
@@ -1069,6 +1072,7 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="isDebuff" val="true" />
+		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
@@ -1078,20 +1082,21 @@
 		</for>
 	</skill>
 	<skill id="11279" levels="9" name="Bear Tumbling">
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 99 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Rolls over at the same spot to give a shock to the ground and temporarily stops nearby targets from moving. -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
 		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -709 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 99 </table>
 		<table name="#mpConsumes"> 332 337 349 360 372 384 396 408 414 </table>
-		<table name="#power"> 8000 8406 8920 9497 10043 10588 11134 11680 12225 </table> <!-- Guessed from Feline Pounce -->
+		<table name="#power"> 5337 5521 5889 6258 6627 6995 7364 7732 7917 </table>
 		<set name="icon" val="icon.skill0028" />
 		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalTime" val="5" /> <!-- Guessed -->
+		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
-		<set name="abnormalVisualEffect" val="STUN" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
-		<set name="affectRange" val="150" /> <!-- Guessed -->
+		<set name="abnormalVisualEffect" val="STUN" /> <!-- TODO Verify skilldata have no AVE -->
+		<set name="activateRate" val="80" />
+		<set name="affectRange" val="150" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
@@ -1109,17 +1114,20 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
+				<param criticalChance="15" />
+				<param ignoreShieldDefence="true" />
 			</effect>
-			<effect name="BlockActions" />
+			<effect name="Root" />
 		</for>
 	</skill>
 	<skill id="11280" levels="9" name="Cougar Bite">
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 99 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Bites target to inflict damage. -->
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 99 </table>
 		<table name="#mpConsumes"> 79 81 84 86 89 92 95 98 99 </table>
 		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -709 </table>
-		<table name="#power"> 10000 10508 11190 11872 12554 13236 13918 14600 15282 </table> <!-- Guessed from Feline Bite -->
+		<table name="#power"> 6300 6518 6954 7391 7827 8264 8700 9137 9355 </table>
 		<set name="icon" val="icon.skill0121" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
@@ -1141,28 +1149,27 @@
 		</for>
 	</skill>
 	<skill id="11281" levels="9" name="Cougar Pounce">
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 99 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Jumps to inflict damage on targets within a certain range. Speed - 100. Can be used when below 200 grids. -->
 		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -709 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 99 </table>
 		<table name="#mpConsumes"> 194 197 204 210 217 224 231 238 242 </table>
-		<table name="#power"> 8000 8406 8920 9497 10043 10588 11134 11680 12225 </table> <!-- Guessed from Feline Pounce -->
+		<table name="#power"> 2683 2780 2975 3170 3365 3560 3755 3950 4048 </table>
 		<set name="icon" val="icon.skill0121" />
 		<set name="abnormalLvl" val="4" />
-		<set name="abnormalTime" val="5" /> <!-- Guessed -->
+		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="90" />
-		<set name="affectRange" val="150" /> <!-- Guessed -->
+		<set name="affectRange" val="150" />
 		<set name="basicProperty" val="NONE" />
 		<set name="operateType" val="DA2" />
 		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="660" />
 		<set name="coolTime" val="600" />
 		<set name="effectRange" val="800" />
-		<set name="fanRange" val="0,0,600,60" />
 		<set name="flyType" val="CHARGE" />
 		<set name="reuseDelay" val="7000" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -1182,12 +1189,13 @@
 		</for>
 	</skill>
 	<skill id="11282" levels="9" name="Reaper Touch">
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 99 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts damage on the enemy and absorbs 20% of damage as HP. -->
 		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -709 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 99 </table>
 		<table name="#mpConsumes"> 56 57 59 61 64 66 69 71 73 </table>
-		<table name="#power"> 158 161 165 169 175 179 184 188 193 </table> <!-- Guessed from Elemental Crash -->
+		<table name="#power"> 125 127 131 134 138 141 145 149 150 </table>
 		<set name="icon" val="icon.skill1234" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
@@ -1210,14 +1218,15 @@
 		</for>
 	</skill>
 	<skill id="11283" levels="9" name="Reaper Power">
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 99 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Creates a death space near the enemy to inflict damage. -->
 		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -709 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 99 </table>
 		<table name="#mpConsumes"> 218 222 231 241 250 260 270 281 286 </table>
-		<table name="#power"> 133 134 139 142 146 150 154 157 164 </table> <!-- Guessed from Elemental Spike -->
+		<table name="#power"> 100 102 104 107 110 113 116 119 120 </table>
 		<set name="icon" val="icon.skill1171" />
-		<set name="affectRange" val="150" /> <!-- Guessed -->
+		<set name="affectRange" val="150" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1239,12 +1248,12 @@
 		</for>
 	</skill>
 	<skill id="11284" levels="4" name="Naviarope Smash">
-		<table name="#magicLvl"> 95 97 99 99 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful attack on target. -->
 		<table name="#effectPoint"> -700 -704 -707 -709 </table>
+		<table name="#magicLvl"> 95 97 99 99 </table>
 		<table name="#mpConsumes"> 93 96 99 99 </table>
-		<table name="#power"> 1 1 1 1 </table> <!-- TODO -->
+		<table name="#power"> 8690 9051 9392 9392 </table>
 		<set name="icon" val="icon.skill0121" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
@@ -1266,14 +1275,14 @@
 		</for>
 	</skill>
 	<skill id="11285" levels="4" name="Naviarope Power">
-		<table name="#magicLvl"> 95 97 99 99 </table>
-		<table name="#effectPoint"> -700 -704 -707 -709 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Uses the authority of Naviarope to inflict powerful damage on nearby targets. -->
+		<table name="#effectPoint"> -700 -704 -707 -709 </table>
+		<table name="#magicLvl"> 95 97 99 99 </table>
 		<table name="#mpConsumes"> 372 383 395 395 </table>
-		<table name="#power"> 1 1 1 1 </table> <!-- TODO -->
+		<table name="#power"> 7183 7481 7757 7757 </table>
 		<set name="icon" val="icon.skill0121" />
-		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="affectRange" val="200" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
