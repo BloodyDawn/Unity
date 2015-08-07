@@ -19,6 +19,7 @@
 package quests;
 
 import org.l2junity.gameserver.enums.HtmlActionScope;
+import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.Location;
@@ -206,8 +207,9 @@ public abstract class LetterQuest extends Quest
 		
 		if ((st == null) && (event.getOldLevel() < event.getNewLevel()) && canStartQuest(player))
 		{
-			showOnScreenMsg(player, startMessage, ExShowScreenMessage.TOP_CENTER, 10000);
 			player.sendPacket(new TutorialShowQuestionMark(getId()));
+			playSound(player, QuestSound.ITEMSOUND_QUEST_TUTORIAL);
+			showOnScreenMsg(player, startMessage, ExShowScreenMessage.TOP_CENTER, 10000);
 		}
 	}
 	
@@ -220,8 +222,9 @@ public abstract class LetterQuest extends Quest
 		
 		if ((st == null) && canStartQuest(player))
 		{
-			showOnScreenMsg(player, startMessage, ExShowScreenMessage.TOP_CENTER, 10000);
 			player.sendPacket(new TutorialShowQuestionMark(getId()));
+			playSound(player, QuestSound.ITEMSOUND_QUEST_TUTORIAL);
+			showOnScreenMsg(player, startMessage, ExShowScreenMessage.TOP_CENTER, 10000);
 		}
 	}
 	
