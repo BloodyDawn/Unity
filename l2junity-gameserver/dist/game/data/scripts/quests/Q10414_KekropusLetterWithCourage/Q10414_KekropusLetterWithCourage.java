@@ -40,7 +40,7 @@ public final class Q10414_KekropusLetterWithCourage extends LetterQuest
 	private static final int INVISIBLE_NPC = 19543;
 	// Items
 	private static final int SOE_WALL_OF_ARGOS = 37032; // Scroll of Escape: Wall of Argos
-	private static final int SOE_TOWN_OF_GODDARD = 37119; // Scroll of Escape: Town of Goddard //TODO: 147491, -56633, -2776
+	private static final int SOE_TOWN_OF_GODDARD = 37119; // Scroll of Escape: Town of Goddard
 	private static final int EAA = 730; // Scroll: Enchant Armor (A-grade)
 	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Location
