@@ -20,6 +20,8 @@ package org.l2junity.commons.util;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -30,6 +32,7 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXParseException;
 
@@ -51,7 +54,7 @@ public interface IXmlReader
 	 * It's highly recommended to clear the data storage, either the list or map.
 	 */
 	void load();
-
+	
 	/**
 	 * Parses a single XML file.<br>
 	 * If the file was successfully parsed, call {@link #parseDocument(Document, File)} for the parsed document.<br>
@@ -88,7 +91,7 @@ public interface IXmlReader
 			return;
 		}
 	}
-
+	
 	/**
 	 * Checks if XML validation is enabled.
 	 * @return {@code true} if its enabled, {@code false} otherwise
@@ -97,7 +100,7 @@ public interface IXmlReader
 	{
 		return true;
 	}
-
+	
 	/**
 	 * Wrapper for {@link #parseDirectory(File, boolean)}.
 	 * @param file the path to the directory where the XML files are.
@@ -136,7 +139,7 @@ public interface IXmlReader
 		}
 		return true;
 	}
-
+	
 	/**
 	 * Abstract method that when implemented will parse the current document.<br>
 	 * Is expected to be call from {@link #parseFile(File)}.
@@ -581,6 +584,46 @@ public interface IXmlReader
 	default <T extends Enum<T>> T parseEnum(NamedNodeMap attrs, Class<T> clazz, String name, T defaultValue)
 	{
 		return parseEnum(attrs.getNamedItem(name), clazz, defaultValue);
+	}
+	
+	/**
+	 * Executes action for each child of node
+	 * @param node
+	 * @param action
+	 */
+	default void forEach(Node node, Consumer<Node> action)
+	{
+		forEach(node, a -> true, action);
+	}
+	
+	/**
+	 * Executes action for each child that matches nodeName
+	 * @param node
+	 * @param nodeName
+	 * @param action
+	 */
+	default void forEach(Node node, String nodeName, Consumer<Node> action)
+	{
+		forEach(node, innerNode -> nodeName.equalsIgnoreCase(innerNode.getNodeName()), action);
+	}
+	
+	/**
+	 * Executes action for each child of node if matches the filter specified
+	 * @param node
+	 * @param filter
+	 * @param action
+	 */
+	default void forEach(Node node, Predicate<Node> filter, Consumer<Node> action)
+	{
+		final NodeList list = node.getChildNodes();
+		for (int i = 0; i < list.getLength(); i++)
+		{
+			final Node targetNode = list.item(i);
+			if (filter.test(targetNode))
+			{
+				action.accept(targetNode);
+			}
+		}
 	}
 	
 	/**
