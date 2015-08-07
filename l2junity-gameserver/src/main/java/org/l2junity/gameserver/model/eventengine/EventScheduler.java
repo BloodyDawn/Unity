@@ -18,18 +18,16 @@
  */
 package org.l2junity.gameserver.model.eventengine;
 
-import it.sauronsoftware.cron4j.Predictor;
-
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import it.sauronsoftware.cron4j.Predictor;
 
 /**
  * @author UnAfraid
@@ -108,12 +106,7 @@ public class EventScheduler
 			{
 				startScheduler();
 			}
-		}, nextSchedule - System.currentTimeMillis());
-		
-		for (EventMethodNotification notification : _notifications)
-		{
-			LOGGER.info("Scheduled call to {}#{} on: {}", notification.getManager().getClass().getSimpleName(), notification.getMethod().getName(), Util.formatDate(new Date(nextSchedule), "yyyy-MM-dd HH:mm:ss"));
-		}
+		} , nextSchedule - System.currentTimeMillis());
 	}
 	
 	public void stopScheduler()
