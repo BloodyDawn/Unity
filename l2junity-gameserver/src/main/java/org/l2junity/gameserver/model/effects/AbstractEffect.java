@@ -201,29 +201,29 @@ public abstract class AbstractEffect
 	{
 		return true;
 	}
-
+	
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-
+	
 	}
-
+	
 	public void continuousInstant(Creature effector, Creature effected, Skill skill)
 	{
-
+	
 	}
-
+	
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
-
+	
 	}
-
+	
 	/**
 	 * Called on effect start.
 	 * @param info the buff info
 	 */
 	public void onStart(BuffInfo info)
 	{
-		
+	
 	}
 	
 	/**
@@ -243,7 +243,7 @@ public abstract class AbstractEffect
 	 */
 	public void onExit(BuffInfo info)
 	{
-		
+	
 	}
 	
 	/**
@@ -299,5 +299,14 @@ public abstract class AbstractEffect
 	public boolean isInstant()
 	{
 		return false;
+	}
+	
+	/**
+	 * @param effected
+	 * @param skill
+	 */
+	public void pump(Creature effected, Skill skill)
+	{
+	
 	}
 }
