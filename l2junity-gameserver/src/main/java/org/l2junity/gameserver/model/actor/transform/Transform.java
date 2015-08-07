@@ -225,6 +225,9 @@ public final class Transform implements IIdentifiable
 				player.setIsFlying(true);
 			}
 			
+			// Get player a bit higher so he doesn't drops underground after transformation happens
+			player.setZ(player.getZ() + (int) template.getCollisionHeight());
+			
 			if (getName() != null)
 			{
 				player.getAppearance().setVisibleName(getName());
