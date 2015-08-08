@@ -200,7 +200,7 @@ public interface IXmlReader
 	 */
 	default Byte parseByte(Node node, Byte defaultValue)
 	{
-		return node != null ? Byte.valueOf(node.getNodeValue()) : defaultValue;
+		return node != null ? Byte.decode(node.getNodeValue()) : defaultValue;
 	}
 	
 	/**
@@ -244,7 +244,7 @@ public interface IXmlReader
 	 */
 	default Short parseShort(Node node, Short defaultValue)
 	{
-		return node != null ? Short.valueOf(node.getNodeValue()) : defaultValue;
+		return node != null ? Short.decode(node.getNodeValue()) : defaultValue;
 	}
 	
 	/**
@@ -288,7 +288,7 @@ public interface IXmlReader
 	 */
 	default int parseInt(Node node, Integer defaultValue)
 	{
-		return node != null ? Integer.parseInt(node.getNodeValue()) : defaultValue;
+		return node != null ? Integer.decode(node.getNodeValue()) : defaultValue;
 	}
 	
 	/**
@@ -309,7 +309,7 @@ public interface IXmlReader
 	 */
 	default Integer parseInteger(Node node, Integer defaultValue)
 	{
-		return node != null ? Integer.valueOf(node.getNodeValue()) : defaultValue;
+		return node != null ? Integer.decode(node.getNodeValue()) : defaultValue;
 	}
 	
 	/**
@@ -353,7 +353,7 @@ public interface IXmlReader
 	 */
 	default Long parseLong(Node node, Long defaultValue)
 	{
-		return node != null ? Long.valueOf(node.getNodeValue()) : defaultValue;
+		return node != null ? Long.decode(node.getNodeValue()) : defaultValue;
 	}
 	
 	/**
