@@ -31,12 +31,12 @@ import org.l2junity.gameserver.model.stats.Stats;
 public class MAttackFinalizer implements IStatsFunction
 {
 	@Override
-	public double calc(Creature creature, Optional<Double> baseValue, Stats stat)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
 		double value = 1;
-		if (baseValue.isPresent())
+		if (base.isPresent())
 		{
-			value = baseValue.get();
+			value = base.get();
 		}
 		final double chaMod = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
 		value *= Math.pow(BaseStats.INT.calcBonus(creature), 2) * Math.pow(creature.getLevelMod(), 2) * chaMod;

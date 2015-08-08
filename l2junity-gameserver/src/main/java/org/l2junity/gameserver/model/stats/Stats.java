@@ -156,6 +156,7 @@ public enum Stats
 	EARTH_RES("earthRes", new AttributeFinalizer(AttributeType.EARTH, false)),
 	HOLY_RES("holyRes", new AttributeFinalizer(AttributeType.HOLY, false)),
 	DARK_RES("darkRes", new AttributeFinalizer(AttributeType.DARK, false)),
+	BASE_ATTRIBUTE_RES("baseAttrRes"),
 	MAGIC_SUCCESS_RES("magicSuccRes"),
 	// BUFF_IMMUNITY("buffImmunity"), //TODO: Implement me
 	DEBUFF_IMMUNITY("debuffImmunity"),

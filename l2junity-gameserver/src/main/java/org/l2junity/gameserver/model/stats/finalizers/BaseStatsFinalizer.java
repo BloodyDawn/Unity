@@ -37,13 +37,15 @@ import org.l2junity.gameserver.model.stats.Stats;
 public class BaseStatsFinalizer implements IStatsFunction
 {
 	@Override
-	public double calc(Creature creature, Optional<Double> baseValue, Stats stat)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		double value = 0;
-		if (baseValue.isPresent())
+		if (base.isPresent())
 		{
-			value = baseValue.get();
+			throw new IllegalArgumentException("base should not be set for base stats!");
 		}
+		
+		// Apply template value
+		double value = creature.getTemplate().getBaseValue(stat, 0);
 		
 		final PlayerInstance player = creature.getActingPlayer();
 		if (player != null)

@@ -30,12 +30,12 @@ import org.l2junity.gameserver.model.stats.Stats;
 public class PAccuracyFinalizer implements IStatsFunction
 {
 	@Override
-	public double calc(Creature creature, Optional<Double> baseValue, Stats stat)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
 		double value = 0;
-		if (baseValue.isPresent())
+		if (base.isPresent())
 		{
-			value = baseValue.get();
+			value = base.get();
 		}
 		
 		// [Square(DEX)] * 5 + lvl + weapon hitbonus;

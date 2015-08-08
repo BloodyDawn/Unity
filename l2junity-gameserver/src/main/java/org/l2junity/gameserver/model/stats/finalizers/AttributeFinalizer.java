@@ -43,12 +43,12 @@ public class AttributeFinalizer implements IStatsFunction
 	}
 	
 	@Override
-	public double calc(Creature creature, Optional<Double> baseValue, Stats stat)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
 		double value = 0;
-		if (baseValue.isPresent())
+		if (base.isPresent())
 		{
-			value = baseValue.get();
+			value = base.get();
 		}
 		if (_isWeapon)
 		{

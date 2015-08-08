@@ -31,12 +31,12 @@ import org.l2junity.gameserver.model.stats.Stats;
 public class PCriticalRateFinalizer implements IStatsFunction
 {
 	@Override
-	public double calc(Creature creature, Optional<Double> baseValue, Stats stat)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
 		double value = 1;
-		if (baseValue.isPresent())
+		if (base.isPresent())
 		{
-			value = baseValue.get();
+			value = base.get();
 		}
 		return Stats.defaultValue(creature, stat, value * BaseStats.DEX.calcBonus(creature) * 10);
 	}

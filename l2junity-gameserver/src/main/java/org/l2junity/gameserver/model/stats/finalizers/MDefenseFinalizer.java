@@ -34,13 +34,13 @@ import org.l2junity.gameserver.model.stats.Stats;
 public class MDefenseFinalizer implements IStatsFunction
 {
 	@Override
-	public double calc(Creature creature, Optional<Double> baseValue, Stats stat)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		if (!baseValue.isPresent())
+		if (!base.isPresent())
 		{
 			throw new NoSuchElementException("base value should present!");
 		}
-		double value = baseValue.get();
+		double value = base.get();
 		if (creature.isPlayer())
 		{
 			PlayerInstance p = creature.getActingPlayer();

@@ -130,7 +130,7 @@ public class CharStat
 	 */
 	public final int getCON()
 	{
-		return (int) calcStat(Stats.STAT_CON, _activeChar.getTemplate().getBaseCON());
+		return (int) getValue(Stats.STAT_CON, Optional.empty());
 	}
 	
 	/**
@@ -178,7 +178,7 @@ public class CharStat
 	 */
 	public final int getDEX()
 	{
-		return (int) calcStat(Stats.STAT_DEX, _activeChar.getTemplate().getBaseDEX());
+		return (int) getValue(Stats.STAT_DEX, Optional.empty());
 	}
 	
 	/**
@@ -228,7 +228,7 @@ public class CharStat
 	 */
 	public int getINT()
 	{
-		return (int) calcStat(Stats.STAT_INT, _activeChar.getTemplate().getBaseINT());
+		return (int) getValue(Stats.STAT_INT, Optional.empty());
 	}
 	
 	public byte getLevel()
@@ -372,17 +372,17 @@ public class CharStat
 	 */
 	public final int getMEN()
 	{
-		return (int) calcStat(Stats.STAT_MEN, _activeChar.getTemplate().getBaseMEN());
+		return (int) getValue(Stats.STAT_MEN, Optional.empty());
 	}
 	
 	public final int getLUC()
 	{
-		return (int) calcStat(Stats.STAT_LUC, _activeChar.getTemplate().getBaseLUC());
+		return (int) getValue(Stats.STAT_LUC, Optional.empty());
 	}
 	
 	public final int getCHA()
 	{
-		return (int) calcStat(Stats.STAT_CHA, _activeChar.getTemplate().getBaseCHA());
+		return (int) getValue(Stats.STAT_CHA, Optional.empty());
 	}
 	
 	public double getMovementSpeedMultiplier()
@@ -610,7 +610,7 @@ public class CharStat
 	 */
 	public final int getSTR()
 	{
-		return (int) calcStat(Stats.STAT_STR, _activeChar.getTemplate().getBaseSTR());
+		return (int) getValue(Stats.STAT_STR, Optional.empty());
 	}
 	
 	/**
@@ -618,7 +618,7 @@ public class CharStat
 	 */
 	public final int getWIT()
 	{
-		return (int) calcStat(Stats.STAT_WIT, _activeChar.getTemplate().getBaseWIT());
+		return (int) getValue(Stats.STAT_WIT, Optional.empty());
 	}
 	
 	/**

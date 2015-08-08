@@ -32,21 +32,21 @@ import org.l2junity.gameserver.model.stats.Stats;
 public class PAttackFinalizer implements IStatsFunction
 {
 	@Override
-	public double calc(Creature creature, Optional<Double> baseValue, Stats stat)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
 		double value = 1;
 		final Weapon weapon = creature.getActiveWeaponItem();
 		if (weapon != null)
 		{
-			value = weapon.getStats(stat, baseValue.isPresent() ? baseValue.get() : 1);
+			value = weapon.getStats(stat, base.isPresent() ? base.get() : 1);
 		}
 		else if (creature.isTransformed())
 		{
 			value = creature.getTransformation().getStat(creature.getActingPlayer(), stat);
 		}
-		else if (baseValue.isPresent())
+		else if (base.isPresent())
 		{
-			value = baseValue.get();
+			value = base.get();
 		}
 		
 		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;

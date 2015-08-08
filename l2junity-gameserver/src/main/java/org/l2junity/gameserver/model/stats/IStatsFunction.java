@@ -28,5 +28,5 @@ import org.l2junity.gameserver.model.actor.Creature;
 @FunctionalInterface
 public interface IStatsFunction
 {
-	public double calc(Creature creature, Optional<Double> baseValue, Stats stat);
+	public double calc(Creature creature, Optional<Double> base, Stats stat);
 }
