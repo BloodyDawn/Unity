@@ -44,6 +44,6 @@ public class MaxHpFinalizer implements IStatsFunction
 		}
 		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
 		baseValue *= BaseStats.CON.calcBonus(creature) * chaBonus;
-		return Stats.defaultMulValue(creature, stat, baseValue);
+		return Stats.defaultValue(creature, stat, baseValue);
 	}
 }

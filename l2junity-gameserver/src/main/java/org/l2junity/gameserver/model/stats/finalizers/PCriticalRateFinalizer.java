@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.stats.finalizers;
 
 import java.util.Optional;
 
+import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
@@ -33,11 +34,9 @@ public class PCriticalRateFinalizer implements IStatsFunction
 	@Override
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		double value = 1;
-		if (base.isPresent())
-		{
-			value = base.get();
-		}
-		return Stats.defaultValue(creature, stat, value * BaseStats.DEX.calcBonus(creature) * 10);
+		throwIfPresent(base);
+		
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		return Math.min(Stats.defaultValue(creature, stat, baseValue * BaseStats.DEX.calcBonus(creature) * 10), Config.MAX_PCRIT_RATE);
 	}
 }

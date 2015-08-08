@@ -286,11 +286,11 @@ public abstract class AbstractEffect
 	{
 		if (_funcTemplates != null)
 		{
-			_funcTemplates.forEach(func -> processFunc(effected, func));
+			_funcTemplates.stream().filter(func -> func.meetCondition(effected, skill)).forEach(func -> processFunc(effected, func, skill));
 		}
 	}
 	
-	private void processFunc(Creature effected, FuncTemplate func)
+	private void processFunc(Creature effected, FuncTemplate func, Skill skill)
 	{
 		final Stats stat = func.getStat();
 		if (func.getFunctionClass() == FuncSet.class)

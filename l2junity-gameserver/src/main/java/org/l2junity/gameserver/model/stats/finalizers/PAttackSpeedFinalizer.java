@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.stats.finalizers;
 
 import java.util.Optional;
 
+import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
@@ -33,14 +34,14 @@ public class PAttackSpeedFinalizer implements IStatsFunction
 	@Override
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		double value = 0;
-		if (base.isPresent())
+		throwIfPresent(base);
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		if (Config.L2JMOD_CHAMPION_ENABLE && creature.isChampion())
 		{
-			value = base.get();
+			baseValue = Config.L2JMOD_CHAMPION_SPD_ATK;
 		}
-		
 		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
-		value *= BaseStats.DEX.calcBonus(creature) * chaBonus;
-		return Stats.defaultValue(creature, stat, value);
+		baseValue *= BaseStats.DEX.calcBonus(creature) * chaBonus;
+		return Stats.defaultValue(creature, stat, baseValue);
 	}
 }

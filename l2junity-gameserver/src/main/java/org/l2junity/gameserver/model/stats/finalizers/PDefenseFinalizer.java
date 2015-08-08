@@ -85,6 +85,6 @@ public class PDefenseFinalizer implements IStatsFunction
 		}
 		baseValue *= creature.getLevelMod();
 		
-		return Stats.defaultMulValue(creature, stat, baseValue);
+		return Stats.defaultValue(creature, stat, baseValue);
 	}
 }

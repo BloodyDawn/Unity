@@ -95,7 +95,7 @@ public class CharStat
 	 */
 	public int getAccuracy()
 	{
-		return (int) Math.round(calcStat(Stats.ACCURACY_COMBAT, 0, null, null));
+		return (int) getValue(Stats.ACCURACY_COMBAT);
 	}
 	
 	/**
@@ -151,7 +151,7 @@ public class CharStat
 			val = Math.min(val, Config.MAX_PCRIT_RATE);
 		}
 		
-		return val;
+		return (int) getValue(Stats.CRITICAL_RATE);
 	}
 	
 	public double getSkillCriticalRateBonus()
@@ -181,14 +181,7 @@ public class CharStat
 	 */
 	public int getEvasionRate(Creature target)
 	{
-		int val = (int) Math.round(calcStat(Stats.EVASION_RATE, 0, target, null));
-		
-		if (!_activeChar.canOverrideCond(PcCondOverride.MAX_STATS_VALUE))
-		{
-			val = Math.min(val, Config.MAX_EVASION);
-		}
-		
-		return val;
+		return (int) getValue(Stats.EVASION_RATE);
 	}
 	
 	/**
@@ -197,14 +190,7 @@ public class CharStat
 	 */
 	public int getMagicEvasionRate(Creature target)
 	{
-		int val = (int) Math.round(calcStat(Stats.MAGIC_EVASION_RATE, 0, target, null));
-		
-		if (!_activeChar.canOverrideCond(PcCondOverride.MAX_STATS_VALUE))
-		{
-			val = Math.min(val, Config.MAX_EVASION);
-		}
-		
-		return val;
+		return (int) getValue(Stats.MAGIC_EVASION_RATE);
 	}
 	
 	public long getExp()
@@ -452,12 +438,7 @@ public class CharStat
 	 */
 	public int getPAtkSpd()
 	{
-		float bonusAtk = 1;
-		if (Config.L2JMOD_CHAMPION_ENABLE && _activeChar.isChampion())
-		{
-			bonusAtk = Config.L2JMOD_CHAMPION_SPD_ATK;
-		}
-		return (int) Math.round(calcStat(Stats.POWER_ATTACK_SPEED, _activeChar.getTemplate().getBasePAtkSpd() * bonusAtk, null, null));
+		return (int) getValue(Stats.POWER_ATTACK_SPEED);
 	}
 	
 	/**
@@ -782,7 +763,7 @@ public class CharStat
 	 */
 	public void mergeMul(Stats stat, double val)
 	{
-		_statsAdd.merge(stat, val, stat::mul);
+		_statsMul.merge(stat, val, stat::mul);
 	}
 	
 	/**

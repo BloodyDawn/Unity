@@ -32,40 +32,38 @@ public class PAccuracyFinalizer implements IStatsFunction
 	@Override
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		double value = 0;
-		if (base.isPresent())
-		{
-			value = base.get();
-		}
+		throwIfPresent(base);
+		
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
 		
 		// [Square(DEX)] * 5 + lvl + weapon hitbonus;
 		final int level = creature.getLevel();
-		value += (Math.sqrt(creature.getDEX()) * 5) + level;
+		baseValue += (Math.sqrt(creature.getDEX()) * 5) + level;
 		if (level > 69)
 		{
-			value += level - 69;
+			baseValue += level - 69;
 		}
 		if (level > 77)
 		{
-			value += 1;
+			baseValue += 1;
 		}
 		if (level > 80)
 		{
-			value += 2;
+			baseValue += 2;
 		}
 		if (level > 87)
 		{
-			value += 2;
+			baseValue += 2;
 		}
 		if (level > 92)
 		{
-			value += 1;
+			baseValue += 1;
 		}
 		if (level > 97)
 		{
-			value += 1;
+			baseValue += 1;
 		}
-		return Stats.defaultValue(creature, stat, value);
+		return Stats.defaultValue(creature, stat, baseValue);
 	}
 	
 }

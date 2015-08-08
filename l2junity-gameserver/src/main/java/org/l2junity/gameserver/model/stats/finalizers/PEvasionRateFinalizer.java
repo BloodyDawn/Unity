@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.stats.finalizers;
 
 import java.util.Optional;
 
+import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -32,50 +33,48 @@ public class PEvasionRateFinalizer implements IStatsFunction
 	@Override
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		double value = 0;
-		if (base.isPresent())
-		{
-			value = base.get();
-		}
+		throwIfPresent(base);
+		
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
 		final int level = creature.getLevel();
 		if (creature.isPlayer())
 		{
 			// [Square(DEX)] * 5 + lvl;
-			value += (Math.sqrt(creature.getDEX()) * 5) + level;
+			baseValue += (Math.sqrt(creature.getDEX()) * 5) + level;
 			if (level > 69)
 			{
-				value += level - 69;
+				baseValue += level - 69;
 			}
 			if (level > 77)
 			{
-				value += 1;
+				baseValue += 1;
 			}
 			if (level > 80)
 			{
-				value += 2;
+				baseValue += 2;
 			}
 			if (level > 87)
 			{
-				value += 2;
+				baseValue += 2;
 			}
 			if (level > 92)
 			{
-				value += 1;
+				baseValue += 1;
 			}
 			if (level > 97)
 			{
-				value += 1;
+				baseValue += 1;
 			}
 		}
 		else
 		{
 			// [Square(DEX)] * 5 + lvl;
-			value += (Math.sqrt(creature.getDEX()) * 5) + level;
+			baseValue += (Math.sqrt(creature.getDEX()) * 5) + level;
 			if (level > 69)
 			{
-				value += (level - 69) + 2;
+				baseValue += (level - 69) + 2;
 			}
 		}
-		return Stats.defaultValue(creature, stat, value);
+		return Math.min(Stats.defaultValue(creature, stat, baseValue), Config.MAX_EVASION);
 	}
 }

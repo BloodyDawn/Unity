@@ -79,6 +79,6 @@ public class MDefenseFinalizer implements IStatsFunction
 		}
 		
 		baseValue *= BaseStats.MEN.calcBonus(creature) * creature.getLevelMod();
-		return Stats.defaultMulValue(creature, stat, baseValue);
+		return Stats.defaultValue(creature, stat, baseValue);
 	}
 }

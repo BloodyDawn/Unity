@@ -18,16 +18,11 @@
  */
 package org.l2junity.gameserver.model.stats.functions;
 
-import java.lang.reflect.Constructor;
-
 import org.l2junity.gameserver.enums.StatFunction;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
-import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Function template.
@@ -35,12 +30,9 @@ import org.slf4j.LoggerFactory;
  */
 public final class FuncTemplate
 {
-	private static final Logger LOG = LoggerFactory.getLogger(FuncTemplate.class);
-	
 	private final Class<?> _functionClass;
 	private final Condition _attachCond;
 	private final Condition _applayCond;
-	private final Constructor<?> _constructor;
 	private final Stats _stat;
 	private final int _order;
 	private final double _value;
@@ -65,14 +57,8 @@ public final class FuncTemplate
 		try
 		{
 			_functionClass = Class.forName("org.l2junity.gameserver.model.stats.functions.Func" + function.getName());
-			_constructor = _functionClass.getConstructor(Stats.class, // Stats to update
-			Integer.TYPE, // Order of execution
-			Object.class, // Owner
-			Double.TYPE, // Value for function
-			Condition.class // Condition
-			);
 		}
-		catch (ClassNotFoundException | NoSuchMethodException e)
+		catch (ClassNotFoundException e)
 		{
 			throw new RuntimeException(e);
 		}
@@ -110,55 +96,18 @@ public final class FuncTemplate
 		return _value;
 	}
 	
-	/**
-	 * Gets the functions for skills.
-	 * @param caster the caster
-	 * @param target the target
-	 * @param skill the skill
-	 * @param owner the owner
-	 * @return the function if conditions are met, {@code null} otherwise
-	 */
-	public AbstractFunction getFunc(Creature caster, Creature target, Skill skill, Object owner)
+	public boolean meetCondition(Creature effected, Skill skill)
 	{
-		return getFunc(caster, target, skill, null, owner);
-	}
-	
-	/**
-	 * Gets the functions for items.
-	 * @param caster the caster
-	 * @param target the target
-	 * @param item the item
-	 * @param owner the owner
-	 * @return the function if conditions are met, {@code null} otherwise
-	 */
-	public AbstractFunction getFunc(Creature caster, Creature target, ItemInstance item, Object owner)
-	{
-		return getFunc(caster, target, null, item, owner);
-	}
-	
-	/**
-	 * Gets the functions for skills and items.
-	 * @param caster the caster
-	 * @param target the target
-	 * @param skill the skill
-	 * @param item the item
-	 * @param owner the owner
-	 * @return the function if conditions are met, {@code null} otherwise
-	 */
-	private AbstractFunction getFunc(Creature caster, Creature target, Skill skill, ItemInstance item, Object owner)
-	{
-		if ((_attachCond != null) && !_attachCond.test(caster, target, skill))
+		if ((_attachCond != null) && !_attachCond.test(effected, effected, skill))
 		{
-			return null;
+			return false;
 		}
-		try
+		
+		if ((_applayCond != null) && !_applayCond.test(effected, effected, skill))
 		{
-			return (AbstractFunction) _constructor.newInstance(_stat, _order, owner, _value, _applayCond);
+			return false;
 		}
-		catch (Exception e)
-		{
-			LOG.warn(FuncTemplate.class.getSimpleName() + ": " + e.getMessage());
-		}
-		return null;
+		
+		return true;
 	}
 }

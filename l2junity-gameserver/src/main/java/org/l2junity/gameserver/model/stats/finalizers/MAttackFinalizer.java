@@ -38,23 +38,21 @@ public class MAttackFinalizer implements IStatsFunction
 	{
 		throwIfPresent(base);
 		
-		float bonusAtk = 1;
+		final Weapon weapon = creature.getActiveWeaponItem();
+		final Transform transform = creature.getTransformation();
+		double baseValue = (weapon != null ? weapon.getStats(stat, 0) : transform != null ? transform.getStats(creature.getActingPlayer(), stat, 0) : creature.getTemplate().getBaseValue(stat, 0));
 		if (Config.L2JMOD_CHAMPION_ENABLE && creature.isChampion())
 		{
-			bonusAtk = Config.L2JMOD_CHAMPION_ATK;
+			baseValue *= Config.L2JMOD_CHAMPION_ATK;
 		}
 		if (creature.isRaid())
 		{
-			bonusAtk *= Config.RAID_MATTACK_MULTIPLIER;
+			baseValue *= Config.RAID_MATTACK_MULTIPLIER;
 		}
-		
-		final Weapon weapon = creature.getActiveWeaponItem();
-		final Transform transform = creature.getTransformation();
-		double baseValue = (weapon != null ? weapon.getStats(stat, 0) : transform != null ? transform.getStats(creature.getActingPlayer(), stat, 0) : creature.getTemplate().getBaseValue(stat, 0)) * bonusAtk;
 		
 		// Calculate modifiers Magic Attack
 		final double chaMod = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
 		baseValue *= Math.pow(BaseStats.INT.calcBonus(creature), 2) * Math.pow(creature.getLevelMod(), 2) * chaMod;
-		return Stats.defaultMulValue(creature, stat, baseValue);
+		return Stats.defaultValue(creature, stat, baseValue);
 	}
 }
