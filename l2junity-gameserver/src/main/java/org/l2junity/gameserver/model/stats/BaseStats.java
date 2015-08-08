@@ -22,49 +22,38 @@ import java.io.File;
 import java.util.NoSuchElementException;
 import java.util.function.Function;
 
-import javax.xml.parsers.DocumentBuilderFactory;
-
-import org.l2junity.Config;
+import org.l2junity.commons.util.IXmlReader;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
 
 /**
  * @author DS
  */
 public enum BaseStats
 {
-	STR(BaseStats::calcSTRBonus, Stats.STAT_STR),
-	INT(BaseStats::calcINTBonus, Stats.STAT_INT),
-	DEX(BaseStats::calcDEXBonus, Stats.STAT_DEX),
-	WIT(BaseStats::calcWITBonus, Stats.STAT_WIT),
-	CON(BaseStats::calcCONBonus, Stats.STAT_CON),
-	MEN(BaseStats::calcMENBonus, Stats.STAT_MEN),
-	CHA(BaseStats::calcCHABonus, Stats.STAT_CHA),
-	LUC(creature -> 1d, Stats.STAT_LUC), // TODO: Implement me
-	NONE(creature -> 1d, null);
-	
-	private static final Logger LOGGER = LoggerFactory.getLogger(BaseStats.class);
+	STR(Creature::getSTR, Stats.STAT_STR),
+	INT(Creature::getINT, Stats.STAT_INT),
+	DEX(Creature::getDEX, Stats.STAT_DEX),
+	WIT(Creature::getWIT, Stats.STAT_WIT),
+	CON(Creature::getCON, Stats.STAT_CON),
+	MEN(Creature::getMEN, Stats.STAT_MEN),
+	CHA(Creature::getCHA, Stats.STAT_CHA),
+	LUC(Creature::getLUC, Stats.STAT_LUC),
+	NONE(creature -> 0, null);
 	
 	public static final int MAX_STAT_VALUE = 201;
 	
-	private static final double[] STR_BONUS = new double[MAX_STAT_VALUE];
-	private static final double[] INT_BONUS = new double[MAX_STAT_VALUE];
-	private static final double[] DEX_BONUS = new double[MAX_STAT_VALUE];
-	private static final double[] WIT_BONUS = new double[MAX_STAT_VALUE];
-	private static final double[] CON_BONUS = new double[MAX_STAT_VALUE];
-	private static final double[] MEN_BONUS = new double[MAX_STAT_VALUE];
-	private static final double[] CHA_BONUS = new double[MAX_STAT_VALUE];
-	
-	private final Function<Creature, Double> _bonusCalculator;
+	private final double[] _bonus = new double[MAX_STAT_VALUE];
+	private final Function<Creature, Integer> _valueCalculator;
 	private final Stats _stat;
 	
-	BaseStats(Function<Creature, Double> bonusCalculator, Stats stat)
+	BaseStats(Function<Creature, Integer> valueCalculator, Stats stat)
 	{
-		_bonusCalculator = bonusCalculator;
+		_valueCalculator = valueCalculator;
 		_stat = stat;
 	}
 	
@@ -73,30 +62,31 @@ public enum BaseStats
 		return _stat;
 	}
 	
-	public final double calcBonus(Creature actor)
+	public int calcValue(Creature creature)
 	{
-		if (actor != null)
+		if (creature != null)
 		{
-			return _bonusCalculator.apply(actor);
+			return Math.min(_valueCalculator.apply(creature), MAX_STAT_VALUE - 1);
+		}
+		return 0;
+	}
+	
+	public double calcBonus(Creature creature)
+	{
+		if (creature != null)
+		{
+			return _bonus[calcValue(creature)];
 		}
 		
 		return 1;
 	}
 	
-	public static BaseStats valueOfXml(String name)
+	void setValue(int index, double value)
 	{
-		name = name.intern();
-		for (BaseStats s : values())
-		{
-			if (s.name().equalsIgnoreCase(name))
-			{
-				return s;
-			}
-		}
-		throw new NoSuchElementException("Unknown name '" + name + "' for enum BaseStats");
+		_bonus[index] = value;
 	}
 	
-	public static BaseStats toBaseStats(Stats stat)
+	public static BaseStats valueOf(Stats stat)
 	{
 		for (BaseStats baseStat : values())
 		{
@@ -108,136 +98,43 @@ public enum BaseStats
 		throw new NoSuchElementException("Unknown base stat '" + stat + "' for enum BaseStats");
 	}
 	
-	public static double calcSTRBonus(Creature actor)
-	{
-		return calcBonus(STR_BONUS, actor.getSTR());
-	}
-	
-	public static double calcINTBonus(Creature actor)
-	{
-		return calcBonus(INT_BONUS, actor.getINT());
-	}
-	
-	public static double calcDEXBonus(Creature actor)
-	{
-		return calcBonus(DEX_BONUS, actor.getDEX());
-	}
-	
-	public static double calcWITBonus(Creature actor)
-	{
-		return calcBonus(WIT_BONUS, actor.getWIT());
-	}
-	
-	public static double calcCONBonus(Creature actor)
-	{
-		return calcBonus(CON_BONUS, actor.getCON());
-	}
-	
-	public static double calcMENBonus(Creature actor)
-	{
-		return calcBonus(MEN_BONUS, actor.getMEN());
-	}
-	
-	public static double calcCHABonus(Creature actor)
-	{
-		return calcBonus(CHA_BONUS, actor.getCHA());
-	}
-	
-	public static double calcBonus(double[] values, int value)
-	{
-		return values[Math.min(value, MAX_STAT_VALUE - 1)];
-	}
-	
 	static
 	{
-		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		factory.setValidating(false);
-		factory.setIgnoringComments(true);
-		final File file = new File(Config.DATAPACK_ROOT, "data/stats/statBonus.xml");
-		Document doc = null;
-		
-		if (file.exists())
+		new IGameXmlReader()
 		{
-			try
+			final Logger LOGGER = LoggerFactory.getLogger(BaseStats.class);
+			
+			@Override
+			public void load()
 			{
-				doc = factory.newDocumentBuilder().parse(file);
-			}
-			catch (Exception e)
-			{
-				LOGGER.warn("Could not parse file: " + e.getMessage(), e);
+				parseDatapackFile("data/stats/statBonus.xml");
 			}
 			
-			if (doc != null)
+			@Override
+			public void parseDocument(Document doc, File f)
 			{
-				String statName;
-				int val;
-				double bonus;
-				NamedNodeMap attrs;
-				for (Node list = doc.getFirstChild(); list != null; list = list.getNextSibling())
+				forEach(doc, "list", listNode -> forEach(listNode, IXmlReader::isNode, statNode ->
 				{
-					if ("list".equalsIgnoreCase(list.getNodeName()))
+					final BaseStats baseStat;
+					try
 					{
-						for (Node stat = list.getFirstChild(); stat != null; stat = stat.getNextSibling())
-						{
-							statName = stat.getNodeName();
-							for (Node value = stat.getFirstChild(); value != null; value = value.getNextSibling())
-							{
-								if ("stat".equalsIgnoreCase(value.getNodeName()))
-								{
-									attrs = value.getAttributes();
-									try
-									{
-										val = Integer.parseInt(attrs.getNamedItem("value").getNodeValue());
-										bonus = Double.parseDouble(attrs.getNamedItem("bonus").getNodeValue());
-									}
-									catch (Exception e)
-									{
-										LOGGER.error("Invalid stats value: " + value.getNodeValue() + ", skipping");
-										continue;
-									}
-									
-									if ("STR".equalsIgnoreCase(statName))
-									{
-										STR_BONUS[val] = bonus;
-									}
-									else if ("INT".equalsIgnoreCase(statName))
-									{
-										INT_BONUS[val] = bonus;
-									}
-									else if ("DEX".equalsIgnoreCase(statName))
-									{
-										DEX_BONUS[val] = bonus;
-									}
-									else if ("WIT".equalsIgnoreCase(statName))
-									{
-										WIT_BONUS[val] = bonus;
-									}
-									else if ("CON".equalsIgnoreCase(statName))
-									{
-										CON_BONUS[val] = bonus;
-									}
-									else if ("MEN".equalsIgnoreCase(statName))
-									{
-										MEN_BONUS[val] = bonus;
-									}
-									else if ("CHA".equalsIgnoreCase(statName))
-									{
-										CHA_BONUS[val] = bonus;
-									}
-									else
-									{
-										LOGGER.error("Invalid stats name: {}, skipping", statName);
-									}
-								}
-							}
-						}
+						baseStat = valueOf(statNode.getNodeName());
 					}
-				}
+					catch (Exception e)
+					{
+						LOGGER.error("Invalid base stats type: {}, skipping", statNode.getNodeValue());
+						return;
+					}
+					
+					forEach(statNode, "stat", statValue ->
+					{
+						final NamedNodeMap attrs = statValue.getAttributes();
+						final int val = parseInteger(attrs, "value");
+						final double bonus = parseDouble(attrs, "bonus");
+						baseStat.setValue(val, bonus);
+					});
+				}));
 			}
-		}
-		else
-		{
-			throw new Error("[BaseStats] File not found: " + file.getName());
-		}
+		}.load();
 	}
 }

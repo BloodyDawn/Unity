@@ -48,34 +48,8 @@ public class FuncMoveSpeed extends AbstractFunction
 		byte speedStat = (byte) effector.calcStat(Stats.STAT_SPEED, -1);
 		if ((speedStat >= 0) && (speedStat < BaseStats.values().length))
 		{
-			// Bad way of implementation... rework it once a better way is found.
-			switch (speedStat)
-			{
-				case 0: // STR
-					speedBonus = Math.max(0, effector.getSTR() - 55);
-					break;
-				case 1: // INT
-					speedBonus = Math.max(0, effector.getINT() - 55);
-					break;
-				case 2: // DEX
-					speedBonus = Math.max(0, effector.getDEX() - 55);
-					break;
-				case 3: // WIT
-					speedBonus = Math.max(0, effector.getWIT() - 55);
-					break;
-				case 4: // CON
-					speedBonus = Math.max(0, effector.getCON() - 55);
-					break;
-				case 5: // MEN
-					speedBonus = Math.max(0, effector.getMEN() - 55);
-					break;
-				case 6: // CHA
-					speedBonus = Math.max(0, effector.getCHA() - 55);
-					break;
-				case 7: // LUC
-					speedBonus = Math.max(0, effector.getLUC() - 55);
-					break;
-			}
+			final BaseStats baseStat = BaseStats.values()[speedStat];
+			speedBonus = Math.max(0, baseStat.calcValue(effected) - 55);
 		}
 		
 		return initVal + speedBonus;

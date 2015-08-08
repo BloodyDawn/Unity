@@ -56,7 +56,7 @@ public class FuncHenna extends AbstractFunction
 		double value = initVal;
 		if (pc != null)
 		{
-			value += pc.getHennaValue(BaseStats.toBaseStats(getStat()));
+			value += pc.getHennaValue(BaseStats.valueOf(getStat()));
 		}
 		return value;
 	}

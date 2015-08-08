@@ -635,6 +635,11 @@ public interface IXmlReader
 		return XML_FILTER;
 	}
 	
+	public static boolean isNode(Node node)
+	{
+		return node.getNodeType() == Node.ELEMENT_NODE;
+	}
+	
 	/**
 	 * Simple XML error handler.
 	 * @author Zoey76

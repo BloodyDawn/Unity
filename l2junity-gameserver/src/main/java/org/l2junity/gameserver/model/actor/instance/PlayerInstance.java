@@ -7898,8 +7898,7 @@ public final class PlayerInstance extends Playable
 			
 			for (Entry<BaseStats, Integer> entry : henna.getBaseStats().entrySet())
 			{
-				final BaseStats baseStat = entry.getKey();
-				_hennaBaseStats.merge(baseStat, entry.getValue(), Integer::sum);
+				_hennaBaseStats.merge(entry.getKey(), entry.getValue(), Integer::sum);
 			}
 		}
 	}
