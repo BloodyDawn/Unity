@@ -21,20 +21,22 @@ package org.l2junity.gameserver.model.stats.finalizers;
 import java.util.Optional;
 
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
  * @author UnAfraid
  */
-public class MagicCriticalFinalizer implements IStatsFunction
+public class MCritRateFinalizer implements IStatsFunction
 {
 	@Override
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
 		throwIfPresent(base);
 		
-		final double baseValue = creature.getTemplate().getBaseValue(stat, 0);
-		return Stats.defaultValue(creature, stat, baseValue + (Math.sqrt(creature.getWIT()) * 3)) + (creature.getLevel() * 2);
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		baseValue *= BaseStats.WIT.calcBonus(creature) * 10;
+		return Stats.defaultValue(creature, stat, baseValue);
 	}
 }

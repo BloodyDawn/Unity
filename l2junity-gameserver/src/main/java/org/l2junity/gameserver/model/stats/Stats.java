@@ -29,6 +29,7 @@ import org.l2junity.gameserver.model.stats.finalizers.BaseStatsFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.MAccuracyFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.MAttackFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.MAttackSpeedFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.MCritRateFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.MDefenseFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.MEvasionRateFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.MaxCpFinalizer;
@@ -110,8 +111,8 @@ public enum Stats
 	DEFENCE_CRITICAL_DAMAGE_ADD("defCritDamageAdd"), // Resistance to critical damage in value (Example: +100 will be 100 more critical damage, NOT 100% more).
 	SHIELD_RATE("rShld"),
 	CRITICAL_RATE("rCrit", new PCriticalRateFinalizer(), Stats::defaultAdd, Stats::defaultAdd),
+	MCRITICAL_RATE("mCritRate", new MCritRateFinalizer()),
 	BLOW_RATE("blowRate"),
-	MCRITICAL_RATE("mCritRate"),
 	EXPSP_RATE("rExp"),
 	BONUS_EXP("bonusExp"),
 	BONUS_SP("bonusSp"),

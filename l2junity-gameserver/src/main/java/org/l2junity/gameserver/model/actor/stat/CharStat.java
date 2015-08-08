@@ -30,7 +30,6 @@ import java.util.stream.Stream;
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.CharEffectList;
-import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -144,13 +143,6 @@ public class CharStat
 	 */
 	public int getCriticalHit(Creature target, Skill skill)
 	{
-		int val = (int) calcStat(Stats.CRITICAL_RATE, _activeChar.getTemplate().getBaseCritRate(), target, skill);
-		
-		if (!_activeChar.canOverrideCond(PcCondOverride.MAX_STATS_VALUE))
-		{
-			val = Math.min(val, Config.MAX_PCRIT_RATE);
-		}
-		
 		return (int) getValue(Stats.CRITICAL_RATE);
 	}
 	
