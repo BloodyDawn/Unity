@@ -93,7 +93,7 @@ public class CharStat
 	 */
 	public final double calcStat(Stats stat, double initVal, Creature target, Skill skill)
 	{
-		return getValue(stat, Optional.of(initVal));
+		return getValue(stat, initVal);
 	}
 	
 	/**
@@ -880,9 +880,9 @@ public class CharStat
 	 * @param baseValue
 	 * @return the final value of the stat
 	 */
-	public double getValue(Stats stat, Optional<Double> baseValue)
+	public double getValue(Stats stat, double baseValue)
 	{
-		return stat.finalize(_activeChar, baseValue);
+		return stat.finalize(_activeChar, Optional.of(baseValue));
 	}
 	
 	/**
