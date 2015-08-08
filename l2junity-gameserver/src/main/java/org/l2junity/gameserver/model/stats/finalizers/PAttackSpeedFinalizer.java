@@ -16,36 +16,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.stats.functions.formulas;
+package org.l2junity.gameserver.model.stats.finalizers;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 
 /**
  * @author UnAfraid
  */
-public class FuncMAtkMod extends AbstractFunction
+public class PAttackSpeedFinalizer implements IStatsFunction
 {
-	private static final FuncMAtkMod _fma_instance = new FuncMAtkMod();
-	
-	public static AbstractFunction getInstance()
-	{
-		return _fma_instance;
-	}
-	
-	private FuncMAtkMod()
-	{
-		super(Stats.MAGIC_ATTACK, 1, null, 0, null);
-	}
-	
 	@Override
-	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
+	public double calc(Creature creature, double baseValue, Stats stat)
 	{
-		// Level Modifier^2 * INT Modifier^2
-		final double chaMod = effector.isPlayer() ? BaseStats.CHA.calcBonus(effector) : 1.;
-		return initVal * Math.pow(BaseStats.INT.calcBonus(effector), 2) * Math.pow(effector.getLevelMod(), 2) * chaMod;
+		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
+		baseValue *= BaseStats.DEX.calcBonus(creature) * chaBonus;
+		return Stats.defaultValue(creature, stat, baseValue);
 	}
 }

@@ -257,13 +257,13 @@ public abstract class Inventory extends ItemContainer
 		@Override
 		public void notifyUnequiped(int slot, ItemInstance item, Inventory inventory)
 		{
-			inventory.getOwner().removeStatsOwner(item);
+			inventory.getOwner().getStat().recalculateStats();
 		}
 		
 		@Override
 		public void notifyEquiped(int slot, ItemInstance item, Inventory inventory)
 		{
-			inventory.getOwner().addStatFuncs(item.getStatFuncs(inventory.getOwner()));
+			inventory.getOwner().getStat().recalculateStats();
 		}
 	}
 	
@@ -295,8 +295,8 @@ public abstract class Inventory extends ItemContainer
 				item.getAugmentation().removeBonus(player);
 			}
 			
-			// Remove elemental bonus
-			item.removeElementAttrBonus(player);
+			// Recalculate all stats
+			player.getStat().recalculateStats();
 			
 			it.forEachSkill(ItemSkillType.ON_ENCHANT, holder ->
 			{
@@ -397,8 +397,8 @@ public abstract class Inventory extends ItemContainer
 				item.getAugmentation().applyBonus(player);
 			}
 			
-			// Update item elemental bonus
-			item.updateElementAttrBonus(player);
+			// Recalculate all stats
+			player.getStat().recalculateStats();
 			
 			item.getItem().forEachSkill(ItemSkillType.ON_ENCHANT, holder ->
 			{
@@ -962,7 +962,7 @@ public abstract class Inventory extends ItemContainer
 	 */
 	public synchronized void addPaperdollListener(PaperdollListener listener)
 	{
-		assert !_paperdollListeners.contains(listener);
+		assert!_paperdollListeners.contains(listener);
 		_paperdollListeners.add(listener);
 	}
 	
@@ -1833,10 +1833,11 @@ public abstract class Inventory extends ItemContainer
 	{
 		_blockedItemSlotsMask = itemSlotsMask;
 	}
-
+	
 	/**
 	 * Reduce the arrow number of the L2Character.<br>
-	 * <B><U> Overridden in </U> :</B> <li>L2PcInstance</li>
+	 * <B><U> Overridden in </U> :</B>
+	 * <li>L2PcInstance</li>
 	 * @param type
 	 */
 	public void reduceArrowCount(EtcItemType type)

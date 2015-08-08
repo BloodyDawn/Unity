@@ -701,8 +701,6 @@ public final class CharEffectList
 				{
 					// Sets the buff in use again.
 					buff.setInUse(true);
-					// Adds the stats.
-					buff.addStats();
 					// Adds the buff to the stack.
 					if (_stackedEffects != null)
 					{
@@ -710,6 +708,9 @@ public final class CharEffectList
 					}
 					// If it's a hidden buff that gets activated, then decrease hidden buff count.
 					_hiddenBuffs.decrementAndGet();
+					
+					// Recalculate all stats
+					_owner.getStat().recalculateStats();
 					break;
 				}
 			}
@@ -1314,7 +1315,6 @@ public final class CharEffectList
 			getPassives().stream().filter(b -> b.getSkill().getId() == skill.getId()).forEach(b ->
 			{
 				b.setInUse(false);
-				b.removeStats();
 				getPassives().remove(b);
 			});
 			
@@ -1378,8 +1378,8 @@ public final class CharEffectList
 						if (stackedInfo != null)
 						{
 							stackedInfo.setInUse(false);
-							// Remove stats
-							stackedInfo.removeStats();
+							// Recalculate all stats
+							_owner.getStat().recalculateStats();
 							_hiddenBuffs.incrementAndGet();
 						}
 					}

@@ -16,48 +16,28 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.stats.functions.formulas;
-
-import java.util.HashMap;
-import java.util.Map;
+package org.l2junity.gameserver.model.stats.finalizers;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 
 /**
  * @author UnAfraid
  */
-public class FuncHenna extends AbstractFunction
+public class SpeedFinalizer implements IStatsFunction
 {
-	private static final Map<Stats, FuncHenna> _fh_instance = new HashMap<>();
-	
-	public static AbstractFunction getInstance(Stats st)
-	{
-		if (!_fh_instance.containsKey(st))
-		{
-			_fh_instance.put(st, new FuncHenna(st));
-		}
-		return _fh_instance.get(st);
-	}
-	
-	private FuncHenna(Stats stat)
-	{
-		super(stat, 1, null, 0, null);
-	}
-	
 	@Override
-	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
+	public double calc(Creature creature, double baseValue, Stats stat)
 	{
-		PlayerInstance pc = effector.getActingPlayer();
-		double value = initVal;
-		if (pc != null)
+		final byte speedStat = (byte) creature.calcStat(Stats.STAT_SPEED, -1);
+		if ((speedStat >= 0) && (speedStat < BaseStats.values().length))
 		{
-			value += pc.getHennaValue(BaseStats.valueOf(getStat()));
+			final BaseStats baseStat = BaseStats.values()[speedStat];
+			baseValue += Math.max(0, baseStat.calcValue(creature) - 55);
 		}
-		return value;
+		
+		return Stats.defaultValue(creature, stat, baseValue);
 	}
 }

@@ -19,6 +19,27 @@
 package org.l2junity.gameserver.model.stats;
 
 import java.util.NoSuchElementException;
+import java.util.function.BiFunction;
+
+import org.l2junity.gameserver.enums.AttributeType;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.stats.finalizers.AttributeFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.BaseStatsFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.MAccuracyFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.MAttackFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.MAttackSpeedFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.MDefenseFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.MEvasionRateFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.MaxCpFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.MaxHpFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.MaxMpFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.PAccuracyFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.PAttackFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.PAttackSpeedFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.PCriticalRateFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.PDefenseFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.PEvasionRateFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.SpeedFinalizer;
 
 /**
  * Enum of basic stats.
@@ -29,9 +50,9 @@ public enum Stats
 	// Base stats, for each in Calculator a slot is allocated
 	
 	// HP, MP & CP
-	MAX_HP("maxHp"),
-	MAX_MP("maxMp"),
-	MAX_CP("maxCp"),
+	MAX_HP("maxHp", new MaxHpFinalizer()),
+	MAX_MP("maxMp", new MaxMpFinalizer()),
+	MAX_CP("maxCp", new MaxCpFinalizer()),
 	MAX_RECOVERABLE_HP("maxRecoverableHp"), // The maximum HP that is able to be recovered trough heals
 	MAX_RECOVERABLE_MP("maxRecoverableMp"),
 	MAX_RECOVERABLE_CP("maxRecoverableCp"),
@@ -43,13 +64,13 @@ public enum Stats
 	HEAL_POWER("healPower"),
 	
 	// ATTACK & DEFENCE
-	POWER_DEFENCE("pDef"),
-	MAGIC_DEFENCE("mDef"),
-	POWER_ATTACK("pAtk"),
-	MAGIC_ATTACK("mAtk"),
+	POWER_DEFENCE("pDef", new PDefenseFinalizer()),
+	MAGIC_DEFENCE("mDef", new MDefenseFinalizer()),
+	POWER_ATTACK("pAtk", new PAttackFinalizer()),
+	MAGIC_ATTACK("mAtk", new MAttackFinalizer()),
 	PHYSICAL_SKILL_POWER("physicalSkillPower"),
-	POWER_ATTACK_SPEED("pAtkSpd"),
-	MAGIC_ATTACK_SPEED("mAtkSpd"), // Magic Skill Casting Time Rate
+	POWER_ATTACK_SPEED("pAtkSpd", new PAttackSpeedFinalizer()),
+	MAGIC_ATTACK_SPEED("mAtkSpd", new MAttackSpeedFinalizer()), // Magic Skill Casting Time Rate
 	ATK_REUSE("atkReuse"), // Bows Hits Reuse Rate
 	P_REUSE("pReuse"), // Physical Skill Reuse Rate
 	MAGIC_REUSE_RATE("mReuse"), // Magic Skill Reuse Rate
@@ -76,8 +97,8 @@ public enum Stats
 	PVE_MAGICAL_DMG("pveMagicalDmg"),
 	
 	// ATTACK & DEFENCE RATES
-	EVASION_RATE("rEvas"),
-	MAGIC_EVASION_RATE("mEvas"),
+	EVASION_RATE("rEvas", new PEvasionRateFinalizer()),
+	MAGIC_EVASION_RATE("mEvas", new MEvasionRateFinalizer()),
 	P_SKILL_EVASION("pSkillEvas"),
 	DEFENCE_CRITICAL_RATE("defCritRate"),
 	DEFENCE_CRITICAL_RATE_ADD("defCritRateAdd"),
@@ -87,7 +108,7 @@ public enum Stats
 	DEFENCE_MAGIC_CRITICAL_DAMAGE("defMCritDamage"),
 	DEFENCE_CRITICAL_DAMAGE_ADD("defCritDamageAdd"), // Resistance to critical damage in value (Example: +100 will be 100 more critical damage, NOT 100% more).
 	SHIELD_RATE("rShld"),
-	CRITICAL_RATE("rCrit"),
+	CRITICAL_RATE("rCrit", new PCriticalRateFinalizer(), Stats::defaultAdd, Stats::defaultAdd),
 	BLOW_RATE("blowRate"),
 	MCRITICAL_RATE("mCritRate"),
 	EXPSP_RATE("rExp"),
@@ -96,23 +117,23 @@ public enum Stats
 	ATTACK_CANCEL("cancel"),
 	
 	// ACCURACY & RANGE
-	ACCURACY_COMBAT("accCombat"),
-	ACCURACY_MAGIC("accMagic"),
+	ACCURACY_COMBAT("accCombat", new PAccuracyFinalizer()),
+	ACCURACY_MAGIC("accMagic", new MAccuracyFinalizer()),
 	POWER_ATTACK_RANGE("pAtkRange"),
 	MAGIC_ATTACK_RANGE("mAtkRange"),
 	ATTACK_COUNT_MAX("atkCountMax"),
 	// Run speed, walk & escape speed are calculated proportionally, magic speed is a buff
-	MOVE_SPEED("runSpd"),
+	MOVE_SPEED("runSpd", new SpeedFinalizer()),
 	
 	// BASIC STATS
-	STAT_STR("STR"),
-	STAT_CON("CON"),
-	STAT_DEX("DEX"),
-	STAT_INT("INT"),
-	STAT_WIT("WIT"),
-	STAT_MEN("MEN"),
-	STAT_LUC("LUC"),
-	STAT_CHA("CHA"),
+	STAT_STR("STR", new BaseStatsFinalizer()),
+	STAT_CON("CON", new BaseStatsFinalizer()),
+	STAT_DEX("DEX", new BaseStatsFinalizer()),
+	STAT_INT("INT", new BaseStatsFinalizer()),
+	STAT_WIT("WIT", new BaseStatsFinalizer()),
+	STAT_MEN("MEN", new BaseStatsFinalizer()),
+	STAT_LUC("LUC", new BaseStatsFinalizer()),
+	STAT_CHA("CHA", new BaseStatsFinalizer()),
 	
 	// Special stats, share one slot in Calculator
 	
@@ -128,23 +149,23 @@ public enum Stats
 	BUFF_VULN("buffVuln"),
 	
 	// RESISTANCES
-	FIRE_RES("fireRes"),
-	WIND_RES("windRes"),
-	WATER_RES("waterRes"),
-	EARTH_RES("earthRes"),
-	HOLY_RES("holyRes"),
-	DARK_RES("darkRes"),
+	FIRE_RES("fireRes", new AttributeFinalizer(AttributeType.FIRE, false)),
+	WIND_RES("windRes", new AttributeFinalizer(AttributeType.WIND, false)),
+	WATER_RES("waterRes", new AttributeFinalizer(AttributeType.WATER, false)),
+	EARTH_RES("earthRes", new AttributeFinalizer(AttributeType.EARTH, false)),
+	HOLY_RES("holyRes", new AttributeFinalizer(AttributeType.HOLY, false)),
+	DARK_RES("darkRes", new AttributeFinalizer(AttributeType.DARK, false)),
 	MAGIC_SUCCESS_RES("magicSuccRes"),
 	// BUFF_IMMUNITY("buffImmunity"), //TODO: Implement me
 	DEBUFF_IMMUNITY("debuffImmunity"),
 	
 	// ELEMENT POWER
-	FIRE_POWER("firePower"),
-	WATER_POWER("waterPower"),
-	WIND_POWER("windPower"),
-	EARTH_POWER("earthPower"),
-	HOLY_POWER("holyPower"),
-	DARK_POWER("darkPower"),
+	FIRE_POWER("firePower", new AttributeFinalizer(AttributeType.FIRE, true)),
+	WATER_POWER("waterPower", new AttributeFinalizer(AttributeType.WATER, true)),
+	WIND_POWER("windPower", new AttributeFinalizer(AttributeType.WIND, true)),
+	EARTH_POWER("earthPower", new AttributeFinalizer(AttributeType.EARTH, true)),
+	HOLY_POWER("holyPower", new AttributeFinalizer(AttributeType.HOLY, true)),
+	DARK_POWER("darkPower", new AttributeFinalizer(AttributeType.DARK, true)),
 	
 	// PROFICIENCY
 	CANCEL_PROF("cancelProf"),
@@ -251,16 +272,33 @@ public enum Stats
 	
 	public static final int NUM_STATS = values().length;
 	
-	private String _value;
+	private final String _value;
+	private final IStatsFunction _valueFinalizer;
+	private final BiFunction<Double, Double, Double> _addFunction;
+	private final BiFunction<Double, Double, Double> _mulFunction;
 	
 	public String getValue()
 	{
 		return _value;
 	}
 	
-	Stats(String s)
+	Stats(String xmlString)
 	{
-		_value = s;
+		this(xmlString, Stats::defaultValue, Stats::defaultAdd, Stats::defaultMul);
+	}
+	
+	Stats(String xmlString, IStatsFunction valueFinalizer)
+	{
+		this(xmlString, valueFinalizer, Stats::defaultAdd, Stats::defaultMul);
+		
+	}
+	
+	Stats(String xmlString, IStatsFunction valueFinalizer, BiFunction<Double, Double, Double> addFunction, BiFunction<Double, Double, Double> mulFunction)
+	{
+		_value = xmlString;
+		_valueFinalizer = valueFinalizer;
+		_addFunction = addFunction;
+		_mulFunction = mulFunction;
 	}
 	
 	public static Stats valueOfXml(String name)
@@ -275,5 +313,50 @@ public enum Stats
 		}
 		
 		throw new NoSuchElementException("Unknown name '" + name + "' for enum " + Stats.class.getSimpleName());
+	}
+	
+	/**
+	 * @param creature
+	 * @param baseValue
+	 * @return the final value
+	 */
+	public Double finalize(Creature creature, double baseValue)
+	{
+		return _valueFinalizer.calc(creature, baseValue, this);
+	}
+	
+	public double add(double oldValue, double value)
+	{
+		return _addFunction.apply(oldValue, value);
+	}
+	
+	public double mul(double oldValue, double value)
+	{
+		return _mulFunction.apply(oldValue, value);
+	}
+	
+	public static double defaultValue(Creature creature, double base, Stats stat)
+	{
+		return creature.getStat().getMul(stat) * creature.getStat().getAdd(stat);
+	}
+	
+	public static double defaultValue(Creature creature, Stats stat, double baseValue)
+	{
+		return (baseValue + creature.getStat().getAdd(stat)) * creature.getStat().getMul(stat);
+	}
+	
+	public static double defaultMulValue(Creature creature, Stats stat, double baseValue)
+	{
+		return (baseValue * creature.getStat().getMul(stat)) + creature.getStat().getAdd(stat);
+	}
+	
+	public static double defaultAdd(double oldValue, double value)
+	{
+		return oldValue + value;
+	}
+	
+	public static double defaultMul(double oldValue, double value)
+	{
+		return oldValue * value;
 	}
 }

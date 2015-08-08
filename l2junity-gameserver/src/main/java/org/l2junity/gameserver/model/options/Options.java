@@ -19,15 +19,11 @@
 package org.l2junity.gameserver.model.options;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
-import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.l2junity.gameserver.network.client.send.SkillCoolTime;
 
@@ -55,31 +51,6 @@ public class Options
 	public final int getId()
 	{
 		return _id;
-	}
-	
-	public boolean hasFuncs()
-	{
-		return !_funcs.isEmpty();
-	}
-	
-	public List<AbstractFunction> getStatFuncs(ItemInstance item, Creature player)
-	{
-		if (_funcs.isEmpty())
-		{
-			return Collections.emptyList();
-		}
-		
-		final List<AbstractFunction> funcs = new ArrayList<>(_funcs.size());
-		for (FuncTemplate template : _funcs)
-		{
-			final AbstractFunction fuction = template.getFunc(player, player, item, this);
-			if (fuction != null)
-			{
-				funcs.add(fuction);
-			}
-			player.sendDebugMessage("Adding stats: " + template.getStat() + " val: " + template.getValue());
-		}
-		return funcs;
 	}
 	
 	public void addFunc(FuncTemplate template)
@@ -160,10 +131,6 @@ public class Options
 	public void apply(PlayerInstance player)
 	{
 		player.sendDebugMessage("Activating option id: " + _id);
-		if (hasFuncs())
-		{
-			player.addStatFuncs(getStatFuncs(null, player));
-		}
 		if (hasActiveSkill())
 		{
 			addSkill(player, getActiveSkill().getSkill());
@@ -183,16 +150,13 @@ public class Options
 			}
 		}
 		
+		player.getStat().recalculateStats();
 		player.sendSkillList();
 	}
 	
 	public void remove(PlayerInstance player)
 	{
 		player.sendDebugMessage("Deactivating option id: " + _id);
-		if (hasFuncs())
-		{
-			player.removeStatsOwner(this);
-		}
 		if (hasActiveSkill())
 		{
 			player.removeSkill(getActiveSkill().getSkill(), false, false);
@@ -211,6 +175,7 @@ public class Options
 				player.sendDebugMessage("Removing trigger skill: " + holder);
 			}
 		}
+		player.getStat().recalculateStats();
 		player.sendSkillList();
 	}
 	

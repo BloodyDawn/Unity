@@ -18,18 +18,14 @@
  */
 package handlers.effecthandlers;
 
-import org.l2junity.gameserver.enums.StatFunction;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.conditions.ConditionUsingItemType;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.items.type.ArmorType;
-import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.FuncAdd;
-import org.l2junity.gameserver.model.stats.functions.FuncMul;
 
 /**
  * @author NosBit
@@ -40,11 +36,11 @@ public class MaxHp extends AbstractEffect
 	private final int _mode;
 	private final boolean _heal;
 	private final Condition _armorTypeCondition;
-
+	
 	public MaxHp(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_amount = params.getDouble("amount", 0);
 		switch (params.getString("mode", "diff"))
 		{
@@ -64,7 +60,7 @@ public class MaxHp extends AbstractEffect
 			}
 		}
 		_heal = params.getBoolean("heal", false);
-
+		
 		int armorTypesMask = 0;
 		final String[] armorTypes = params.getString("armorType", "ALL").split(";");
 		for (String armorType : armorTypes)
@@ -74,7 +70,7 @@ public class MaxHp extends AbstractEffect
 				armorTypesMask = 0;
 				break;
 			}
-
+			
 			try
 			{
 				armorTypesMask |= ArmorType.valueOf(armorType).mask();
@@ -88,7 +84,7 @@ public class MaxHp extends AbstractEffect
 		}
 		_armorTypeCondition = armorTypesMask != 0 ? new ConditionUsingItemType(armorTypesMask) : null;
 	}
-
+	
 	@Override
 	public void continuousInstant(Creature effector, Creature effected, Skill skill)
 	{
@@ -109,29 +105,28 @@ public class MaxHp extends AbstractEffect
 			}
 		}
 	}
-
+	
 	@Override
-	public void onStart(Creature effector, Creature effected, Skill skill)
+	public void pump(Creature effected, Skill skill)
 	{
 		switch (_mode)
 		{
 			case 0: // DIFF
 			{
-				effected.addStatFunc(new FuncAdd(Stats.MAX_HP, StatFunction.ADD.getOrder(), this, _amount, _armorTypeCondition));
+				if ((_armorTypeCondition == null) || _armorTypeCondition.test(effected, effected, skill))
+				{
+					effected.getStat().mergeAdd(Stats.MAX_HP, _amount);
+				}
 				break;
 			}
 			case 1: // PER
 			{
-				effected.addStatFunc(new FuncMul(Stats.MAX_HP, StatFunction.MUL.getOrder(), this, (_amount / 100) + 1, _armorTypeCondition));
+				if ((_armorTypeCondition == null) || _armorTypeCondition.test(effected, effected, skill))
+				{
+					effected.getStat().mergeMul(Stats.MAX_HP, (_amount / 100) + 1);
+				}
 				break;
 			}
 		}
-	}
-
-	@Override
-	public void onExit(BuffInfo info)
-	{
-		final Creature effected = info.getEffected();
-		effected.removeStatsOwner(this);
 	}
 }

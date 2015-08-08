@@ -16,34 +16,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.stats.functions.formulas;
+package org.l2junity.gameserver.model.stats.finalizers;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 
 /**
  * @author UnAfraid
  */
-public class FuncMAtkCritical extends AbstractFunction
+public class MAttackFinalizer implements IStatsFunction
 {
-	private static final FuncMAtkCritical _fac_instance = new FuncMAtkCritical();
-	
-	public static AbstractFunction getInstance()
-	{
-		return _fac_instance;
-	}
-	
-	private FuncMAtkCritical()
-	{
-		super(Stats.MCRITICAL_RATE, 1, null, 0, null);
-	}
-	
 	@Override
-	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
+	public double calc(Creature creature, double baseValue, Stats stat)
 	{
-		return initVal * BaseStats.WIT.calcBonus(effector) * 10;
+		final double chaMod = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
+		baseValue *= Math.pow(BaseStats.INT.calcBonus(creature), 2) * Math.pow(creature.getLevelMod(), 2) * chaMod;
+		return Stats.defaultMulValue(creature, stat, baseValue);
 	}
 }

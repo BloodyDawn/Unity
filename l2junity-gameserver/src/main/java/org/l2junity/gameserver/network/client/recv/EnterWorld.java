@@ -149,6 +149,8 @@ public class EnterWorld implements IClientIncomingPacket
 		
 		client.setClientTracert(tracert);
 		
+		activeChar.getStat().recalculateStats();
+		
 		activeChar.broadcastUserInfo();
 		
 		// Restore to instanced area if enabled

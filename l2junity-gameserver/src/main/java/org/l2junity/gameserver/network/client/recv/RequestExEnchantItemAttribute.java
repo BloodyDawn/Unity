@@ -251,7 +251,8 @@ public class RequestExEnchantItemAttribute implements IClientIncomingPacket
 			player.sendPacket(sm);
 			if (item.isEquipped())
 			{
-				item.updateElementAttrBonus(player);
+				// Recalculate all stats
+				player.getStat().recalculateStats();
 			}
 			
 			// send packets

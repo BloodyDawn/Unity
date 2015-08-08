@@ -47,13 +47,11 @@ import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.items.enchant.attribute.AttributeHolder;
-import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.ActionType;
 import org.l2junity.gameserver.model.items.type.CrystalType;
 import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.items.type.ItemType;
 import org.l2junity.gameserver.model.items.type.MaterialType;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -608,29 +606,9 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 		return (getItemType() == EtcItemType.SCROLL);
 	}
 	
-	/**
-	 * Get the functions used by this item.
-	 * @param item : L2ItemInstance pointing out the item
-	 * @param player : L2Character pointing out the player
-	 * @return the list of functions
-	 */
-	public final List<AbstractFunction> getStatFuncs(ItemInstance item, Creature player)
+	public List<FuncTemplate> getFunctionTemplates()
 	{
-		if ((_funcTemplates == null) || _funcTemplates.isEmpty())
-		{
-			return Collections.emptyList();
-		}
-		
-		final List<AbstractFunction> functions = new ArrayList<>(_funcTemplates.size());
-		for (FuncTemplate template : _funcTemplates)
-		{
-			final AbstractFunction function = template.getFunc(player, player, item, item);
-			if (function != null)
-			{
-				functions.add(function);
-			}
-		}
-		return functions;
+		return _funcTemplates != null ? _funcTemplates : Collections.emptyList();
 	}
 	
 	/**

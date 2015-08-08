@@ -78,7 +78,7 @@ public class RequestExRemoveItemAttribute implements IClientIncomingPacket
 		{
 			if (targetItem.isEquipped())
 			{
-				targetItem.getAttribute(type).remove(activeChar);
+				activeChar.getStat().recalculateStats();
 			}
 			targetItem.clearAttribute(type);
 			client.sendPacket(new UserInfo(activeChar));

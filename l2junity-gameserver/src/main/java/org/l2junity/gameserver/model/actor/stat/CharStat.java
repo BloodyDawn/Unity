@@ -19,19 +19,32 @@
 package org.l2junity.gameserver.model.actor.stat;
 
 import java.util.Arrays;
+import java.util.EnumMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.stream.Stream;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.AttributeType;
+import org.l2junity.gameserver.model.CharEffectList;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
-import org.l2junity.gameserver.model.stats.Calculator;
 import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.TraitType;
+import org.l2junity.gameserver.model.stats.functions.FuncAdd;
+import org.l2junity.gameserver.model.stats.functions.FuncMul;
+import org.l2junity.gameserver.model.stats.functions.FuncSet;
+import org.l2junity.gameserver.model.stats.functions.FuncSub;
+import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.l2junity.gameserver.model.zone.ZoneId;
 
 public class CharStat
@@ -48,6 +61,10 @@ public class CharStat
 	/** Creature's maximum buff count. */
 	private int _maxBuffCount = Config.BUFFS_MAX_AMOUNT;
 	
+	private final Map<Stats, Double> _statsAdd = new EnumMap<>(Stats.class);
+	private final Map<Stats, Double> _statsMul = new EnumMap<>(Stats.class);
+	private final ReentrantReadWriteLock _lock = new ReentrantReadWriteLock();
+	
 	public CharStat(Creature activeChar)
 	{
 		_activeChar = activeChar;
@@ -62,8 +79,7 @@ public class CharStat
 	
 	/**
 	 * Calculate the new value of the state with modifiers that will be applied on the targeted L2Character.<BR>
-	 * <B><U> Concept</U> :</B><BR
-	 * A L2Character owns a table of Calculators called <B>_calculators</B>. Each Calculator (a calculator per state) own a table of Func object. A Func object is a mathematic function that permit to calculate the modifier of a state (ex : REGENERATE_HP_RATE...) : <BR>
+	 * <B><U> Concept</U> :</B><BR A L2Character owns a table of Calculators called <B>_calculators</B>. Each Calculator (a calculator per state) own a table of Func object. A Func object is a mathematic function that permit to calculate the modifier of a state (ex : REGENERATE_HP_RATE...) : <BR>
 	 * FuncAtkAccuracy -> Math.sqrt(_player.getDEX())*6+_player.getLevel()<BR>
 	 * When the calc method of a calculator is launched, each mathematical function is called according to its priority <B>_order</B>.<br>
 	 * Indeed, Func with lowest priority order is executed firsta and Funcs with the same order are executed in unspecified order.<br>
@@ -76,64 +92,7 @@ public class CharStat
 	 */
 	public final double calcStat(Stats stat, double initVal, Creature target, Skill skill)
 	{
-		double value = initVal;
-		if (stat == null)
-		{
-			return value;
-		}
-		
-		final int id = stat.ordinal();
-		final Calculator c = _activeChar.getCalculators()[id];
-		
-		// If no Func object found, no modifier is applied
-		if ((c == null) || (c.size() == 0))
-		{
-			return value;
-		}
-		
-		// Apply transformation stats.
-		if (getActiveChar().isPlayer() && getActiveChar().isTransformed())
-		{
-			double val = getActiveChar().getTransformation().getStat(getActiveChar().getActingPlayer(), stat);
-			if (val > 0)
-			{
-				value = val;
-			}
-		}
-		
-		// Launch the calculation
-		value = c.calc(_activeChar, target, skill, value);
-		
-		// avoid some troubles with negative stats (some stats should never be negative)
-		if (value <= 0)
-		{
-			switch (stat)
-			{
-				case MAX_HP:
-				case MAX_MP:
-				case MAX_CP:
-				case MAGIC_DEFENCE:
-				case POWER_DEFENCE:
-				case POWER_ATTACK:
-				case MAGIC_ATTACK:
-				case POWER_ATTACK_SPEED:
-				case MAGIC_ATTACK_SPEED:
-				case SHIELD_DEFENCE:
-				case STAT_CON:
-				case STAT_DEX:
-				case STAT_INT:
-				case STAT_MEN:
-				case STAT_STR:
-				case STAT_WIT:
-				case STAT_LUC:
-				case STAT_CHA:
-				{
-					value = 1.0;
-					break;
-				}
-			}
-		}
-		return value;
+		return getValue(stat, initVal);
 	}
 	
 	/**
@@ -859,5 +818,150 @@ public class CharStat
 	public void setMaxBuffCount(int buffCount)
 	{
 		_maxBuffCount = buffCount;
+	}
+	
+	/**
+	 * Merges the stat's value with the values within the map of adds
+	 * @param stat
+	 * @param val
+	 */
+	public void mergeAdd(Stats stat, double val)
+	{
+		_statsAdd.merge(stat, val, stat::add);
+	}
+	
+	/**
+	 * Merges the stat's value with the values within the map of muls
+	 * @param stat
+	 * @param val
+	 */
+	public void mergeMul(Stats stat, double val)
+	{
+		_statsAdd.merge(stat, val, stat::mul);
+	}
+	
+	/**
+	 * @param stat
+	 * @return the add value
+	 */
+	public double getAdd(Stats stat)
+	{
+		_lock.readLock().lock();
+		try
+		{
+			return _statsAdd.getOrDefault(stat, 0d);
+		}
+		finally
+		{
+			_lock.readLock().unlock();
+		}
+	}
+	
+	/**
+	 * @param stat
+	 * @return the mul value
+	 */
+	public double getMul(Stats stat)
+	{
+		_lock.readLock().lock();
+		try
+		{
+			return _statsMul.getOrDefault(stat, 1d);
+		}
+		finally
+		{
+			_lock.readLock().unlock();
+		}
+	}
+	
+	/**
+	 * @param stat
+	 * @param baseValue
+	 * @return the final value of the stat
+	 */
+	public double getValue(Stats stat, double baseValue)
+	{
+		return stat.finalize(_activeChar, baseValue);
+	}
+	
+	/**
+	 * Locks and resets all stats and recalculates all
+	 */
+	public void recalculateStats()
+	{
+		_lock.writeLock().lock();
+		try
+		{
+			// Copy old data before wiping it out
+			final Map<Stats, Double> adds = new EnumMap<>(_statsAdd);
+			final Map<Stats, Double> muls = new EnumMap<>(_statsMul);
+			
+			// Wipe all the data
+			_statsAdd.clear();
+			_statsMul.clear();
+			
+			// Collect all necessary effects
+			final CharEffectList effectList = _activeChar.getEffectList();
+			final Stream<BuffInfo> passives = effectList.hasPassives() ? effectList.getPassives().stream() : null;
+			final Stream<BuffInfo> effectsStream = Stream.concat(effectList.getEffects().stream(), passives != null ? passives : Stream.empty());
+			
+			// Call pump to each effect
+			//@formatter:off
+			effectsStream.forEach(info -> info.getEffects().stream()
+				.filter(effect -> effect.canStart(info))
+				.forEach(effect -> effect.pump(info.getEffected(), info.getSkill())));
+			//@formatter:on
+			
+			// Apply items stats
+			final Inventory inventory = _activeChar.getInventory();
+			if (inventory != null)
+			{
+				for (ItemInstance item : inventory.getItems(ItemInstance::isEquipped))
+				{
+					item.getItem().getFunctionTemplates().forEach(this::processFunc);
+				}
+			}
+			
+			// Calculate the difference between old and new stats
+			final Set<Stats> changed = new HashSet<>();
+			for (Stats stat : Stats.values())
+			{
+				if (_statsAdd.getOrDefault(stat, 0d) != adds.getOrDefault(stat, 0d))
+				{
+					changed.add(stat);
+				}
+				else if (_statsMul.getOrDefault(stat, 1d) != muls.getOrDefault(stat, 1d))
+				{
+					changed.add(stat);
+				}
+			}
+			
+			_activeChar.broadcastModifiedStats(changed);
+		}
+		finally
+		{
+			_lock.writeLock().unlock();
+		}
+	}
+	
+	private void processFunc(FuncTemplate func)
+	{
+		final Stats stat = func.getStat();
+		if (func.getFunctionClass() == FuncSet.class)
+		{
+			mergeAdd(stat, func.getValue());
+		}
+		else if (func.getFunctionClass() == FuncAdd.class)
+		{
+			mergeAdd(stat, func.getValue());
+		}
+		else if (func.getFunctionClass() == FuncSub.class)
+		{
+			mergeAdd(stat, -func.getValue());
+		}
+		else if (func.getFunctionClass() == FuncMul.class)
+		{
+			mergeMul(stat, func.getValue());
+		}
 	}
 }

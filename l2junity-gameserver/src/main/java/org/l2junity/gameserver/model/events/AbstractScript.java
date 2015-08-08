@@ -1546,7 +1546,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 */
 	public void onSpawnActivate(SpawnTemplate template)
 	{
-		
+	
 	}
 	
 	/**
@@ -1554,7 +1554,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 */
 	public void onSpawnDeactivate(SpawnTemplate template)
 	{
-		
+	
 	}
 	
 	/**
@@ -1564,7 +1564,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 */
 	public void onSpawnNpc(SpawnTemplate template, SpawnGroup group, Npc npc)
 	{
-		
+	
 	}
 	
 	/**
@@ -1574,7 +1574,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 */
 	public void onSpawnDespawnNpc(SpawnTemplate template, SpawnGroup group, Npc npc)
 	{
-		
+	
 	}
 	
 	/**
@@ -1585,7 +1585,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 */
 	public void onSpawnNpcDeath(SpawnTemplate template, SpawnGroup group, Npc npc, Creature killer)
 	{
-		
+	
 	}
 	
 	/**
@@ -2277,7 +2277,8 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 			item.setAttribute(new AttributeHolder(attributeType, attributeValue));
 			if (item.isEquipped())
 			{
-				item.updateElementAttrBonus(player);
+				// Recalculate all stats
+				player.getStat().recalculateStats();
 			}
 			
 			final InventoryUpdate iu = new InventoryUpdate();

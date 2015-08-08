@@ -37,6 +37,7 @@ public final class FuncTemplate
 {
 	private static final Logger LOG = LoggerFactory.getLogger(FuncTemplate.class);
 	
+	private final Class<?> _functionClass;
 	private final Condition _attachCond;
 	private final Condition _applayCond;
 	private final Constructor<?> _constructor;
@@ -63,18 +64,23 @@ public final class FuncTemplate
 		
 		try
 		{
-			final Class<?> functionClass = Class.forName("org.l2junity.gameserver.model.stats.functions.Func" + function.getName());
-			_constructor = functionClass.getConstructor(Stats.class, // Stats to update
-				Integer.TYPE, // Order of execution
-				Object.class, // Owner
-				Double.TYPE, // Value for function
-				Condition.class // Condition
+			_functionClass = Class.forName("org.l2junity.gameserver.model.stats.functions.Func" + function.getName());
+			_constructor = _functionClass.getConstructor(Stats.class, // Stats to update
+			Integer.TYPE, // Order of execution
+			Object.class, // Owner
+			Double.TYPE, // Value for function
+			Condition.class // Condition
 			);
 		}
 		catch (ClassNotFoundException | NoSuchMethodException e)
 		{
 			throw new RuntimeException(e);
 		}
+	}
+	
+	public Class<?> getFunctionClass()
+	{
+		return _functionClass;
 	}
 	
 	/**

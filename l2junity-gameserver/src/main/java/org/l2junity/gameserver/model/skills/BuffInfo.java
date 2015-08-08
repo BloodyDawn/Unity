@@ -71,14 +71,14 @@ public final class BuffInfo
 	private boolean _isRemoved = false;
 	/** If {@code true} then this effect is in use (or has been stop because an Herb took place). */
 	private boolean _isInUse = true;
-	private boolean _hideStartMessage;
+	private final boolean _hideStartMessage;
 	
 	/**
 	 * Buff Info constructor.
 	 * @param effector the effector
 	 * @param effected the effected
 	 * @param skill the skill
-	 * @param hideStartMessage  hides start message
+	 * @param hideStartMessage hides start message
 	 */
 	public BuffInfo(Creature effector, Creature effected, Skill skill, boolean hideStartMessage)
 	{
@@ -290,7 +290,7 @@ public final class BuffInfo
 			// Call on start.
 			effect.onStart(getEffector(), getEffected(), getSkill());
 			effect.onStart(this);
-
+			
 			// If it's a continuous effect, if has ticks schedule a task with period, otherwise schedule a simple task to end it.
 			if (effect.getTicks() > 0)
 			{
@@ -301,8 +301,8 @@ public final class BuffInfo
 				addTask(effect, new EffectTaskInfo(effectTask, scheduledFuture));
 			}
 			
-			// Add stats.
-			_effected.addStatFuncs(effect.getStatFuncs(_effector, _effected, _skill));
+			// Recalculate all stats
+			_effected.getStat().recalculateStats();
 		}
 	}
 	
@@ -374,8 +374,7 @@ public final class BuffInfo
 				effectTask.getScheduledFuture().cancel(true); // Don't allow to finish current run.
 			}
 		}
-		// Remove stats
-		removeStats();
+		
 		// Notify on exit.
 		for (AbstractEffect effect : _effects)
 		{
@@ -385,8 +384,13 @@ public final class BuffInfo
 				effect.onExit(this);
 			}
 		}
+		
 		// Remove abnormal visual effects.
 		resetAbnormalVisualEffects();
+		
+		// Recalculate all stats
+		_effected.getStat().recalculateStats();
+		
 		// Set the proper system message.
 		if (!(_effected.isSummon() && !((Summon) _effected).getOwner().hasSummon()) && !_skill.isAura())
 		{
@@ -428,23 +432,6 @@ public final class BuffInfo
 		{
 			_effected.resetCurrentAbnormalVisualEffects();
 		}
-	}
-	
-	/**
-	 * Adds the buff stats.
-	 */
-	public void addStats()
-	{
-		_effects.forEach(effect -> _effected.addStatFuncs(effect.getStatFuncs(_effector, _effected, _skill)));
-	}
-	
-	/**
-	 * Removes the buff stats.
-	 */
-	public void removeStats()
-	{
-		_effects.forEach(_effected::removeStatsOwner);
-		_effected.removeStatsOwner(_skill);
 	}
 	
 	/**

@@ -79,7 +79,6 @@ import org.l2junity.gameserver.model.items.type.ItemType;
 import org.l2junity.gameserver.model.options.EnchantOptions;
 import org.l2junity.gameserver.model.options.Options;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.variables.ItemVariables;
 import org.l2junity.gameserver.network.client.send.DropItem;
 import org.l2junity.gameserver.network.client.send.GetItem;
@@ -1399,16 +1398,6 @@ public final class ItemInstance extends WorldObject
 	}
 	
 	/**
-	 * This function basically returns a set of functions from L2Item/L2Armor/L2Weapon, but may add additional functions, if this particular item instance is enhanced for a particular player.
-	 * @param player the player
-	 * @return the functions list
-	 */
-	public List<AbstractFunction> getStatFuncs(Creature player)
-	{
-		return getItem().getStatFuncs(this, player);
-	}
-	
-	/**
 	 * Updates the database.<BR>
 	 */
 	public void updateDatabase()
@@ -1825,33 +1814,6 @@ public final class ItemInstance extends WorldObject
 			{
 				_log.error("", e);
 			}
-		}
-	}
-	
-	public void updateElementAttrBonus(PlayerInstance player)
-	{
-		if (_elementals == null)
-		{
-			return;
-		}
-		
-		for (AttributeHolder holder : _elementals.values())
-		{
-			holder.remove(player);
-			holder.apply(player, isArmor());
-		}
-	}
-	
-	public void removeElementAttrBonus(PlayerInstance player)
-	{
-		if (_elementals == null)
-		{
-			return;
-		}
-		
-		for (AttributeHolder attribute : _elementals.values())
-		{
-			attribute.remove(player);
 		}
 	}
 	
