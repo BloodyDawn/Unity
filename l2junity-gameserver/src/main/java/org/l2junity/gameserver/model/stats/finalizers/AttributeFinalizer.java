@@ -45,11 +45,11 @@ public class AttributeFinalizer implements IStatsFunction
 	@Override
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		double value = 0;
 		if (base.isPresent())
 		{
-			value = base.get();
+			throw new IllegalArgumentException("base should not be set for attrobite stats!");
 		}
+		double value = 0;
 		if (_isWeapon)
 		{
 			final ItemInstance weapon = creature.getActiveWeaponInstance();

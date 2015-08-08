@@ -692,12 +692,12 @@ public class CharStat
 		};
 		
 		AttributeType returnVal = AttributeType.NONE;
-		stats[0] = (int) calcStat(Stats.FIRE_POWER, _activeChar.getTemplate().getBaseFire());
-		stats[1] = (int) calcStat(Stats.WATER_POWER, _activeChar.getTemplate().getBaseWater());
-		stats[2] = (int) calcStat(Stats.WIND_POWER, _activeChar.getTemplate().getBaseWind());
-		stats[3] = (int) calcStat(Stats.EARTH_POWER, _activeChar.getTemplate().getBaseEarth());
-		stats[4] = (int) calcStat(Stats.HOLY_POWER, _activeChar.getTemplate().getBaseHoly());
-		stats[5] = (int) calcStat(Stats.DARK_POWER, _activeChar.getTemplate().getBaseDark());
+		stats[0] = getAttackElementValue(AttributeType.FIRE);
+		stats[1] = getAttackElementValue(AttributeType.WATER);
+		stats[2] = getAttackElementValue(AttributeType.WIND);
+		stats[3] = getAttackElementValue(AttributeType.EARTH);
+		stats[4] = getAttackElementValue(AttributeType.HOLY);
+		stats[5] = getAttackElementValue(AttributeType.DARK);
 		
 		for (byte x = 0; x < 6; x++)
 		{
@@ -716,17 +716,17 @@ public class CharStat
 		switch (attackAttribute)
 		{
 			case FIRE:
-				return (int) calcStat(Stats.FIRE_POWER, _activeChar.getTemplate().getBaseFire());
+				return (int) getValue(Stats.FIRE_POWER);
 			case WATER:
-				return (int) calcStat(Stats.WATER_POWER, _activeChar.getTemplate().getBaseWater());
+				return (int) getValue(Stats.WATER_POWER);
 			case WIND:
-				return (int) calcStat(Stats.WIND_POWER, _activeChar.getTemplate().getBaseWind());
+				return (int) getValue(Stats.WIND_POWER);
 			case EARTH:
-				return (int) calcStat(Stats.EARTH_POWER, _activeChar.getTemplate().getBaseEarth());
+				return (int) getValue(Stats.EARTH_POWER);
 			case HOLY:
-				return (int) calcStat(Stats.HOLY_POWER, _activeChar.getTemplate().getBaseHoly());
+				return (int) getValue(Stats.HOLY_POWER);
 			case DARK:
-				return (int) calcStat(Stats.DARK_POWER, _activeChar.getTemplate().getBaseDark());
+				return (int) getValue(Stats.DARK_POWER);
 			default:
 				return 0;
 		}
@@ -737,19 +737,19 @@ public class CharStat
 		switch (defenseAttribute)
 		{
 			case FIRE:
-				return (int) calcStat(Stats.FIRE_RES, _activeChar.getTemplate().getBaseFireRes());
+				return (int) getValue(Stats.FIRE_RES);
 			case WATER:
-				return (int) calcStat(Stats.WATER_RES, _activeChar.getTemplate().getBaseWaterRes());
+				return (int) getValue(Stats.WATER_RES);
 			case WIND:
-				return (int) calcStat(Stats.WIND_RES, _activeChar.getTemplate().getBaseWindRes());
+				return (int) getValue(Stats.WIND_RES);
 			case EARTH:
-				return (int) calcStat(Stats.EARTH_RES, _activeChar.getTemplate().getBaseEarthRes());
+				return (int) getValue(Stats.EARTH_RES);
 			case HOLY:
-				return (int) calcStat(Stats.HOLY_RES, _activeChar.getTemplate().getBaseHolyRes());
+				return (int) getValue(Stats.HOLY_RES);
 			case DARK:
-				return (int) calcStat(Stats.DARK_RES, _activeChar.getTemplate().getBaseDarkRes());
+				return (int) getValue(Stats.DARK_RES);
 			default:
-				return (int) _activeChar.getTemplate().getBaseElementRes();
+				return (int) getValue(Stats.BASE_ATTRIBUTE_RES);
 		}
 	}
 	
