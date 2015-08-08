@@ -710,7 +710,7 @@ public final class CharEffectList
 					_hiddenBuffs.decrementAndGet();
 					
 					// Recalculate all stats
-					_owner.getStat().recalculateStats();
+					_owner.getStat().recalculateStats(true);
 					break;
 				}
 			}
@@ -1379,7 +1379,7 @@ public final class CharEffectList
 						{
 							stackedInfo.setInUse(false);
 							// Recalculate all stats
-							_owner.getStat().recalculateStats();
+							_owner.getStat().recalculateStats(true);
 							_hiddenBuffs.incrementAndGet();
 						}
 					}

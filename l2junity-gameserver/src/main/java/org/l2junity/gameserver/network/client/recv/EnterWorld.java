@@ -149,8 +149,6 @@ public class EnterWorld implements IClientIncomingPacket
 		
 		client.setClientTracert(tracert);
 		
-		activeChar.getStat().recalculateStats();
-		
 		activeChar.broadcastUserInfo();
 		
 		// Restore to instanced area if enabled
@@ -196,7 +194,7 @@ public class EnterWorld implements IClientIncomingPacket
 			if (Config.GM_STARTUP_DIET_MODE && AdminData.getInstance().hasAccess("admin_diet", activeChar.getAccessLevel()))
 			{
 				activeChar.setDietMode(true);
-				activeChar.refreshOverloaded();
+				activeChar.refreshOverloaded(true);
 			}
 			
 			if (Config.GM_STARTUP_AUTO_LIST && AdminData.getInstance().hasAccess("admin_gmliston", activeChar.getAccessLevel()))

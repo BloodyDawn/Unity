@@ -32,7 +32,6 @@ import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.CharEffectList;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -41,11 +40,6 @@ import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.TraitType;
-import org.l2junity.gameserver.model.stats.functions.FuncAdd;
-import org.l2junity.gameserver.model.stats.functions.FuncMul;
-import org.l2junity.gameserver.model.stats.functions.FuncSet;
-import org.l2junity.gameserver.model.stats.functions.FuncSub;
-import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.l2junity.gameserver.model.zone.ZoneId;
 
 public class CharStat
@@ -109,7 +103,7 @@ public class CharStat
 	 */
 	public int getMagicAccuracy()
 	{
-		return (int) Math.round(calcStat(Stats.ACCURACY_MAGIC, 0, null, null));
+		return (int) getValue(Stats.ACCURACY_MAGIC);
 	}
 	
 	public Creature getActiveChar()
@@ -323,17 +317,7 @@ public class CharStat
 	 */
 	public int getMDef(Creature target, Skill skill)
 	{
-		// Get the base MDef of the L2Character
-		double defence = _activeChar.getTemplate().getBaseMDef();
-		
-		// Calculate modifier for Raid Bosses
-		if (_activeChar.isRaid())
-		{
-			defence *= Config.RAID_MDEFENCE_MULTIPLIER;
-		}
-		
-		// Calculate modifiers Magic Attack
-		return (int) calcStat(Stats.MAGIC_DEFENCE, defence, target, skill);
+		return (int) getValue(Stats.MAGIC_DEFENCE);
 	}
 	
 	/**
@@ -460,16 +444,7 @@ public class CharStat
 	 */
 	public int getPAtk(Creature target)
 	{
-		float bonusAtk = 1;
-		if (Config.L2JMOD_CHAMPION_ENABLE && _activeChar.isChampion())
-		{
-			bonusAtk = Config.L2JMOD_CHAMPION_ATK;
-		}
-		if (_activeChar.isRaid())
-		{
-			bonusAtk *= Config.RAID_PATTACK_MULTIPLIER;
-		}
-		return (int) calcStat(Stats.POWER_ATTACK, _activeChar.getTemplate().getBasePAtk() * bonusAtk, target, null);
+		return (int) getValue(Stats.POWER_ATTACK);
 	}
 	
 	/**
@@ -491,7 +466,7 @@ public class CharStat
 	 */
 	public int getPDef(Creature target)
 	{
-		return (int) calcStat(Stats.POWER_DEFENCE, (_activeChar.isRaid()) ? _activeChar.getTemplate().getBasePDef() * Config.RAID_PDEFENCE_MULTIPLIER : _activeChar.getTemplate().getBasePDef(), target, null);
+		return (int) getValue(Stats.POWER_DEFENCE);
 	}
 	
 	/**
@@ -865,8 +840,9 @@ public class CharStat
 	
 	/**
 	 * Locks and resets all stats and recalculates all
+	 * @param broadcast TODO
 	 */
-	public void recalculateStats()
+	public void recalculateStats(boolean broadcast)
 	{
 		_lock.writeLock().lock();
 		try
@@ -891,56 +867,28 @@ public class CharStat
 				.forEach(effect -> effect.pump(info.getEffected(), info.getSkill())));
 			//@formatter:on
 			
-			// Apply items stats
-			final Inventory inventory = _activeChar.getInventory();
-			if (inventory != null)
+			if (broadcast)
 			{
-				for (ItemInstance item : inventory.getItems(ItemInstance::isEquipped))
+				// Calculate the difference between old and new stats
+				final Set<Stats> changed = new HashSet<>();
+				for (Stats stat : Stats.values())
 				{
-					item.getItem().getFunctionTemplates().forEach(this::processFunc);
+					if (_statsAdd.getOrDefault(stat, 0d) != adds.getOrDefault(stat, 0d))
+					{
+						changed.add(stat);
+					}
+					else if (_statsMul.getOrDefault(stat, 1d) != muls.getOrDefault(stat, 1d))
+					{
+						changed.add(stat);
+					}
 				}
+				
+				_activeChar.broadcastModifiedStats(changed);
 			}
-			
-			// Calculate the difference between old and new stats
-			final Set<Stats> changed = new HashSet<>();
-			for (Stats stat : Stats.values())
-			{
-				if (_statsAdd.getOrDefault(stat, 0d) != adds.getOrDefault(stat, 0d))
-				{
-					changed.add(stat);
-				}
-				else if (_statsMul.getOrDefault(stat, 1d) != muls.getOrDefault(stat, 1d))
-				{
-					changed.add(stat);
-				}
-			}
-			
-			_activeChar.broadcastModifiedStats(changed);
 		}
 		finally
 		{
 			_lock.writeLock().unlock();
-		}
-	}
-	
-	private void processFunc(FuncTemplate func)
-	{
-		final Stats stat = func.getStat();
-		if (func.getFunctionClass() == FuncSet.class)
-		{
-			mergeAdd(stat, func.getValue());
-		}
-		else if (func.getFunctionClass() == FuncAdd.class)
-		{
-			mergeAdd(stat, func.getValue());
-		}
-		else if (func.getFunctionClass() == FuncSub.class)
-		{
-			mergeAdd(stat, -func.getValue());
-		}
-		else if (func.getFunctionClass() == FuncMul.class)
-		{
-			mergeMul(stat, func.getValue());
 		}
 	}
 }

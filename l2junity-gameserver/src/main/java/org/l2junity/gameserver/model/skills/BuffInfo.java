@@ -302,7 +302,7 @@ public final class BuffInfo
 			}
 			
 			// Recalculate all stats
-			_effected.getStat().recalculateStats();
+			_effected.getStat().recalculateStats(true);
 		}
 	}
 	
@@ -389,7 +389,7 @@ public final class BuffInfo
 		resetAbnormalVisualEffects();
 		
 		// Recalculate all stats
-		_effected.getStat().recalculateStats();
+		_effected.getStat().recalculateStats(true);
 		
 		// Set the proper system message.
 		if (!(_effected.isSummon() && !((Summon) _effected).getOwner().hasSummon()) && !_skill.isAura())

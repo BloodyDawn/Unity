@@ -20,7 +20,9 @@ package org.l2junity.gameserver.model.stats.finalizers;
 
 import java.util.Optional;
 
+import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.transform.Transform;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
@@ -34,23 +36,24 @@ public class PAttackFinalizer implements IStatsFunction
 	@Override
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		double value = 1;
-		final Weapon weapon = creature.getActiveWeaponItem();
-		if (weapon != null)
+		throwIfPresent(base);
+		
+		float bonusAtk = 1;
+		if (Config.L2JMOD_CHAMPION_ENABLE && creature.isChampion())
 		{
-			value = weapon.getStats(stat, base.isPresent() ? base.get() : 1);
+			bonusAtk = Config.L2JMOD_CHAMPION_ATK;
 		}
-		else if (creature.isTransformed())
+		if (creature.isRaid())
 		{
-			value = creature.getTransformation().getStat(creature.getActingPlayer(), stat);
-		}
-		else if (base.isPresent())
-		{
-			value = base.get();
+			bonusAtk *= Config.RAID_PATTACK_MULTIPLIER;
 		}
 		
+		final Weapon weapon = creature.getActiveWeaponItem();
+		final Transform transform = creature.getTransformation();
+		double baseValue = (weapon != null ? weapon.getStats(stat, 0) : transform != null ? transform.getStats(creature.getActingPlayer(), stat, 0) : creature.getTemplate().getBaseValue(stat, 0)) * bonusAtk;
+		
 		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
-		value *= BaseStats.STR.calcBonus(creature) * creature.getLevelMod() * chaBonus;
-		return Stats.defaultMulValue(creature, stat, value);
+		baseValue *= BaseStats.STR.calcBonus(creature) * creature.getLevelMod() * chaBonus;
+		return Stats.defaultMulValue(creature, stat, baseValue);
 	}
 }

@@ -252,7 +252,7 @@ public class RequestExEnchantItemAttribute implements IClientIncomingPacket
 			if (item.isEquipped())
 			{
 				// Recalculate all stats
-				player.getStat().recalculateStats();
+				player.getStat().recalculateStats(true);
 			}
 			
 			// send packets

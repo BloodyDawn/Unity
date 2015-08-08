@@ -257,13 +257,13 @@ public abstract class Inventory extends ItemContainer
 		@Override
 		public void notifyUnequiped(int slot, ItemInstance item, Inventory inventory)
 		{
-			inventory.getOwner().getStat().recalculateStats();
+			inventory.getOwner().getStat().recalculateStats(true);
 		}
 		
 		@Override
 		public void notifyEquiped(int slot, ItemInstance item, Inventory inventory)
 		{
-			inventory.getOwner().getStat().recalculateStats();
+			inventory.getOwner().getStat().recalculateStats(true);
 		}
 	}
 	
@@ -296,7 +296,7 @@ public abstract class Inventory extends ItemContainer
 			}
 			
 			// Recalculate all stats
-			player.getStat().recalculateStats();
+			player.getStat().recalculateStats(true);
 			
 			it.forEachSkill(ItemSkillType.ON_ENCHANT, holder ->
 			{
@@ -398,7 +398,7 @@ public abstract class Inventory extends ItemContainer
 			}
 			
 			// Recalculate all stats
-			player.getStat().recalculateStats();
+			player.getStat().recalculateStats(true);
 			
 			item.getItem().forEachSkill(ItemSkillType.ON_ENCHANT, holder ->
 			{

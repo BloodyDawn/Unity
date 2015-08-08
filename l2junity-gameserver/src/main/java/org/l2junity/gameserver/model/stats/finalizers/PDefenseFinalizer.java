@@ -20,10 +20,13 @@ package org.l2junity.gameserver.model.stats.finalizers;
 
 import java.util.Optional;
 
+import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.actor.transform.Transform;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.L2Item;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -33,49 +36,55 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class PDefenseFinalizer implements IStatsFunction
 {
+	private static final int[] SLOTS =
+	{
+		Inventory.PAPERDOLL_CHEST,
+		Inventory.PAPERDOLL_LEGS,
+		Inventory.PAPERDOLL_HEAD,
+		Inventory.PAPERDOLL_FEET,
+		Inventory.PAPERDOLL_GLOVES,
+		Inventory.PAPERDOLL_UNDER,
+		Inventory.PAPERDOLL_CLOAK
+	};
+	
 	@Override
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		double value = 0;
-		if (base.isPresent())
+		throwIfPresent(base);
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		
+		final Transform transform = creature.getTransformation();
+		final Inventory inv = creature.getInventory();
+		if (inv != null)
 		{
-			value = base.get();
-		}
-		if (creature.isPlayer())
-		{
-			final PlayerInstance p = creature.getActingPlayer();
-			if (!p.getInventory().isPaperdollSlotEmpty(Inventory.PAPERDOLL_CHEST))
+			for (ItemInstance item : inv.getItems(ItemInstance::isEquipped))
 			{
-				value -= p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_CHEST) : p.getTemplate().getBaseDefBySlot(Inventory.PAPERDOLL_CHEST);
-			}
-			if (!p.getInventory().isPaperdollSlotEmpty(Inventory.PAPERDOLL_LEGS) || (!p.getInventory().isPaperdollSlotEmpty(Inventory.PAPERDOLL_CHEST) && (p.getInventory().getPaperdollItem(Inventory.PAPERDOLL_CHEST).getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR)))
-			{
-				value -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_LEGS) : Inventory.PAPERDOLL_LEGS);
-			}
-			if (!p.getInventory().isPaperdollSlotEmpty(Inventory.PAPERDOLL_HEAD))
-			{
-				value -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_HEAD) : Inventory.PAPERDOLL_HEAD);
-			}
-			if (!p.getInventory().isPaperdollSlotEmpty(Inventory.PAPERDOLL_FEET))
-			{
-				value -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_FEET) : Inventory.PAPERDOLL_FEET);
-			}
-			if (!p.getInventory().isPaperdollSlotEmpty(Inventory.PAPERDOLL_GLOVES))
-			{
-				value -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_GLOVES) : Inventory.PAPERDOLL_GLOVES);
-			}
-			if (!p.getInventory().isPaperdollSlotEmpty(Inventory.PAPERDOLL_UNDER))
-			{
-				value -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_UNDER) : Inventory.PAPERDOLL_UNDER);
-			}
-			if (!p.getInventory().isPaperdollSlotEmpty(Inventory.PAPERDOLL_CLOAK))
-			{
-				value -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_CLOAK) : Inventory.PAPERDOLL_CLOAK);
+				baseValue += item.getItem().getStats(stat, 0);
 			}
 			
-			value *= BaseStats.CHA.calcBonus(p);
+			final PlayerInstance player = creature.getActingPlayer();
+			for (int slot : SLOTS)
+			{
+				if (slot == Inventory.PAPERDOLL_LEGS)
+				{
+					if (!inv.isPaperdollSlotEmpty(slot) || (!inv.isPaperdollSlotEmpty(Inventory.PAPERDOLL_CHEST) && (inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST).getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR)))
+					{
+						baseValue -= player.getTemplate().getBaseDefBySlot(transform != null ? transform.getBaseDefBySlot(player, slot) : slot);
+					}
+				}
+				else if (!inv.isPaperdollSlotEmpty(slot))
+				{
+					baseValue -= transform != null ? transform.getBaseDefBySlot(player, slot) : player.getTemplate().getBaseDefBySlot(slot);
+				}
+			}
+			baseValue *= BaseStats.CHA.calcBonus(player);
 		}
-		value *= creature.getLevelMod();
-		return Stats.defaultMulValue(creature, stat, value);
+		if (creature.isRaid())
+		{
+			baseValue *= Config.RAID_PDEFENCE_MULTIPLIER;
+		}
+		baseValue *= creature.getLevelMod();
+		
+		return Stats.defaultMulValue(creature, stat, baseValue);
 	}
 }

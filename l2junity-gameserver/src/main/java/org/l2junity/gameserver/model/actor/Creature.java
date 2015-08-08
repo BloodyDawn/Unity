@@ -204,7 +204,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	private boolean _isImmobilized = false;
 	private boolean _isOverloaded = false; // the char is carrying too much
 	private boolean _isPendingRevive = false;
-	private boolean _isRunning = false;
+	private boolean _isRunning = isPlayer();
 	protected boolean _showSummonAnimation = false;
 	protected boolean _isTeleporting = false;
 	private boolean _isInvul = false;
@@ -3548,7 +3548,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			if (isPlayer())
 			{
 				final PlayerInstance player = getActingPlayer();
-				player.refreshOverloaded();
+				player.refreshOverloaded(true);
 				player.refreshExpertisePenalty();
 				sendPacket(info);
 				
@@ -4983,7 +4983,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// If an old skill has been replaced, remove all its Func objects
 			if (oldSkill != null)
 			{
-				getStat().recalculateStats();
+				getStat().recalculateStats(true);
 			}
 			
 			if (newSkill.isPassive())
@@ -5032,7 +5032,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			if (cancelEffect || oldSkill.isToggle() || oldSkill.isPassive())
 			{
 				stopSkillEffects(true, oldSkill.getId());
-				getStat().recalculateStats();
+				getStat().recalculateStats(true);
 			}
 		}
 		

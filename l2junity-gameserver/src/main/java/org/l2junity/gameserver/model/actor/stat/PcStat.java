@@ -297,7 +297,7 @@ public class PcStat extends PlayableStat
 		getActiveChar().sendPacket(su);
 		
 		// Update the overloaded status of the L2PcInstance
-		getActiveChar().refreshOverloaded();
+		getActiveChar().refreshOverloaded(true);
 		// Update the expertise status of the L2PcInstance
 		getActiveChar().refreshExpertisePenalty();
 		// Send a Server->Client packet UserInfo to the L2PcInstance
@@ -467,7 +467,7 @@ public class PcStat extends PlayableStat
 	public final int getMaxCp()
 	{
 		// Get the Max CP (base+modifier) of the L2PcInstance
-		int val = (getActiveChar() == null) ? 1 : (int) calcStat(Stats.MAX_CP, getActiveChar().getTemplate().getBaseCpMax(getActiveChar().getLevel()));
+		int val = (getActiveChar() == null) ? 1 : (int) super.getMaxCp();
 		if (val != _oldMaxCp)
 		{
 			_oldMaxCp = val;
@@ -485,7 +485,7 @@ public class PcStat extends PlayableStat
 	public final int getMaxHp()
 	{
 		// Get the Max HP (base+modifier) of the L2PcInstance
-		int val = (getActiveChar() == null) ? 1 : (int) calcStat(Stats.MAX_HP, getActiveChar().getTemplate().getBaseHpMax(getActiveChar().getLevel()));
+		int val = (getActiveChar() == null) ? 1 : (int) super.getMaxHp();
 		if (val != _oldMaxHp)
 		{
 			_oldMaxHp = val;
@@ -504,7 +504,7 @@ public class PcStat extends PlayableStat
 	public final int getMaxMp()
 	{
 		// Get the Max MP (base+modifier) of the L2PcInstance
-		int val = (getActiveChar() == null) ? 1 : (int) calcStat(Stats.MAX_MP, getActiveChar().getTemplate().getBaseMpMax(getActiveChar().getLevel()));
+		int val = (getActiveChar() == null) ? 1 : (int) super.getMaxMp();
 		
 		if (val != _oldMaxMp)
 		{

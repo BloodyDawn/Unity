@@ -150,7 +150,7 @@ public class Options
 			}
 		}
 		
-		player.getStat().recalculateStats();
+		player.getStat().recalculateStats(true);
 		player.sendSkillList();
 	}
 	
@@ -175,7 +175,7 @@ public class Options
 				player.sendDebugMessage("Removing trigger skill: " + holder);
 			}
 		}
-		player.getStat().recalculateStats();
+		player.getStat().recalculateStats(true);
 		player.sendSkillList();
 	}
 	

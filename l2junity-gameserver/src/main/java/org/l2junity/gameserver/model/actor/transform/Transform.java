@@ -397,9 +397,9 @@ public final class Transform implements IIdentifiable
 		}
 	}
 	
-	public double getStat(PlayerInstance player, Stats stats)
+	public double getStats(PlayerInstance player, Stats stats, double defaultValue)
 	{
-		double val = 0;
+		double val = defaultValue;
 		final TransformTemplate template = getTemplate(player);
 		if (template != null)
 		{
@@ -407,7 +407,7 @@ public final class Transform implements IIdentifiable
 			final TransformLevelData data = template.getData(player.getLevel());
 			if (data != null)
 			{
-				val = data.getStats(stats);
+				val = data.getStats(stats, defaultValue);
 			}
 		}
 		return val;

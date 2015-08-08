@@ -584,7 +584,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		npc.setDecayed(false);
 		
 		// Recalculate npcs stats
-		npc.getStat().recalculateStats();
+		npc.getStat().recalculateStats(true);
 		
 		// Set the HP and MP of the L2NpcInstance to the max
 		npc.setCurrentHpMp(npc.getMaxHp(), npc.getMaxMp());

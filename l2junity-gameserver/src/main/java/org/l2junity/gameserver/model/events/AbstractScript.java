@@ -2278,7 +2278,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 			if (item.isEquipped())
 			{
 				// Recalculate all stats
-				player.getStat().recalculateStats();
+				player.getStat().recalculateStats(true);
 			}
 			
 			final InventoryUpdate iu = new InventoryUpdate();
