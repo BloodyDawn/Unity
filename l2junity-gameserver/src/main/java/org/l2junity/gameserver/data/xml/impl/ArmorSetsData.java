@@ -24,8 +24,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
@@ -89,8 +87,9 @@ public final class ArmorSetsData implements IGameXmlReader
 							{
 								case "requiredItems":
 								{
-									readAhead(innerSetNode, b -> "item".equals(b.getNodeName()), attrs ->
+									forEach(innerSetNode, b -> "item".equals(b.getNodeName()), node ->
 									{
+										final NamedNodeMap attrs = node.getAttributes();
 										final int itemId = parseInteger(attrs, "id");
 										final L2Item item = ItemTable.getInstance().getTemplate(itemId);
 										if (item == null)
@@ -106,8 +105,9 @@ public final class ArmorSetsData implements IGameXmlReader
 								}
 								case "optionalItems":
 								{
-									readAhead(innerSetNode, b -> "item".equals(b.getNodeName()), attrs ->
+									forEach(innerSetNode, b -> "item".equals(b.getNodeName()), node ->
 									{
+										final NamedNodeMap attrs = node.getAttributes();
 										final int itemId = parseInteger(attrs, "id");
 										final L2Item item = ItemTable.getInstance().getTemplate(itemId);
 										if (item == null)
@@ -123,8 +123,9 @@ public final class ArmorSetsData implements IGameXmlReader
 								}
 								case "skills":
 								{
-									readAhead(innerSetNode, b -> "skill".equals(b.getNodeName()), attrs ->
+									forEach(innerSetNode, b -> "skill".equals(b.getNodeName()), node ->
 									{
+										final NamedNodeMap attrs = node.getAttributes();
 										final int skillId = parseInteger(attrs, "id");
 										final int skillLevel = parseInteger(attrs, "level");
 										final int minPieces = parseInteger(attrs, "minimumPieces", set.getMinimumPieces());
@@ -136,8 +137,9 @@ public final class ArmorSetsData implements IGameXmlReader
 								}
 								case "stats":
 								{
-									readAhead(innerSetNode, b -> "stat".equals(b.getNodeName()), attrs ->
+									forEach(innerSetNode, b -> "stat".equals(b.getNodeName()), node ->
 									{
+										final NamedNodeMap attrs = node.getAttributes();
 										set.addStatsBonus(parseEnum(attrs, BaseStats.class, "type"), parseInteger(attrs, "val"));
 									});
 									break;
@@ -148,23 +150,6 @@ public final class ArmorSetsData implements IGameXmlReader
 						Stream.concat(set.getRequiredItems().stream(), set.getOptionalItems().stream()).forEach(itemHolder -> _armorSetItems.computeIfAbsent(itemHolder, key -> new ArrayList<>()).add(set));
 					}
 				}
-			}
-		}
-	}
-	
-	/**
-	 * Reads the next elements and applies consumer's code if matches the filter's conditions
-	 * @param n
-	 * @param filter
-	 * @param consumer
-	 */
-	private void readAhead(Node n, Predicate<Node> filter, Consumer<NamedNodeMap> consumer)
-	{
-		for (Node b = n.getFirstChild(); b != null; b = b.getNextSibling())
-		{
-			if (filter.test(b))
-			{
-				consumer.accept(b.getAttributes());
 			}
 		}
 	}
