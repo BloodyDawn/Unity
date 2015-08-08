@@ -7899,15 +7899,7 @@ public final class PlayerInstance extends Playable
 			for (Entry<BaseStats, Double> entry : henna.getBaseStats().entrySet())
 			{
 				final BaseStats baseStat = entry.getKey();
-				final Stats stat = baseStat.getStat();
-				if (_hennaBaseStats.getOrDefault(stat, 0d) > 5)
-				{
-					_hennaBaseStats.merge(baseStat, 5 - entry.getValue(), stat::add);
-				}
-				else
-				{
-					_hennaBaseStats.merge(baseStat, entry.getValue(), stat::add);
-				}
+				_hennaBaseStats.merge(baseStat, entry.getValue(), baseStat.getStat()::add);
 			}
 		}
 	}
