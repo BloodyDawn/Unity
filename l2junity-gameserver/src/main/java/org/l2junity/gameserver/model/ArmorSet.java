@@ -31,7 +31,7 @@ import org.l2junity.gameserver.model.holders.ArmorsetSkillHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.itemcontainer.PcInventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.gameserver.model.stats.BaseStats;
 
 /**
  * @author UnAfraid
@@ -46,7 +46,7 @@ public final class ArmorSet
 	private final Set<Integer> _optionalItems = new LinkedHashSet<>();
 	
 	private final List<ArmorsetSkillHolder> _skills = new ArrayList<>();
-	private final Map<Stats, Double> _stats = new LinkedHashMap<>();
+	private final Map<BaseStats, Double> _stats = new LinkedHashMap<>();
 	
 	private static final int[] ARMORSET_SLOTS = new int[]
 	{
@@ -149,7 +149,7 @@ public final class ArmorSet
 	 * @param stat
 	 * @param value
 	 */
-	public void addStatsBonus(Stats stat, double value)
+	public void addStatsBonus(BaseStats stat, double value)
 	{
 		_stats.putIfAbsent(stat, value);
 	}
@@ -158,7 +158,7 @@ public final class ArmorSet
 	 * @param stat
 	 * @return the stats bonus value or 0 if doesn't exists
 	 */
-	public double getStatsBonus(Stats stat)
+	public double getStatsBonus(BaseStats stat)
 	{
 		return _stats.getOrDefault(stat, 0d);
 	}

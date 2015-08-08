@@ -635,6 +635,10 @@ public interface IXmlReader
 		return XML_FILTER;
 	}
 	
+	/**
+	 * @param node
+	 * @return {@code true} if the node is an element type, {@code false} otherwise
+	 */
 	public static boolean isNode(Node node)
 	{
 		return node.getNodeType() == Node.ELEMENT_NODE;

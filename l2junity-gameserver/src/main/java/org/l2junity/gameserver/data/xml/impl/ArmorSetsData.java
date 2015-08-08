@@ -33,7 +33,7 @@ import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.model.ArmorSet;
 import org.l2junity.gameserver.model.holders.ArmorsetSkillHolder;
 import org.l2junity.gameserver.model.items.L2Item;
-import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.gameserver.model.stats.BaseStats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -138,8 +138,7 @@ public final class ArmorSetsData implements IGameXmlReader
 								{
 									readAhead(innerSetNode, b -> "stat".equals(b.getNodeName()), attrs ->
 									{
-										final String stat = parseString(attrs, "type");
-										set.addStatsBonus(Stats.valueOfXml(stat), parseInteger(attrs, "val"));
+										set.addStatsBonus(parseEnum(attrs, BaseStats.class, "type"), parseInteger(attrs, "val"));
 									});
 									break;
 								}
