@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.model.stats.finalizers;
 
+import java.util.Optional;
+
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
@@ -29,15 +31,21 @@ import org.l2junity.gameserver.model.stats.Stats;
 public class SpeedFinalizer implements IStatsFunction
 {
 	@Override
-	public double calc(Creature creature, double baseValue, Stats stat)
+	public double calc(Creature creature, Optional<Double> baseValue, Stats stat)
 	{
+		double value = 1;
+		if (baseValue.isPresent())
+		{
+			value = baseValue.get();
+		}
+		
 		final byte speedStat = (byte) creature.calcStat(Stats.STAT_SPEED, -1);
 		if ((speedStat >= 0) && (speedStat < BaseStats.values().length))
 		{
 			final BaseStats baseStat = BaseStats.values()[speedStat];
-			baseValue += Math.max(0, baseStat.calcValue(creature) - 55);
+			value += Math.max(0, baseStat.calcValue(creature) - 55);
 		}
 		
-		return Stats.defaultValue(creature, stat, baseValue);
+		return Stats.defaultValue(creature, stat, value);
 	}
 }

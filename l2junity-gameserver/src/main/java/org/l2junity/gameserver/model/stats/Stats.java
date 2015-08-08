@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.model.stats;
 
 import java.util.NoSuchElementException;
+import java.util.Optional;
 import java.util.function.BiFunction;
 
 import org.l2junity.gameserver.enums.AttributeType;
@@ -320,7 +321,7 @@ public enum Stats
 	 * @param baseValue
 	 * @return the final value
 	 */
-	public Double finalize(Creature creature, double baseValue)
+	public Double finalize(Creature creature, Optional<Double> baseValue)
 	{
 		return _valueFinalizer.calc(creature, baseValue, this);
 	}
@@ -335,7 +336,7 @@ public enum Stats
 		return _mulFunction.apply(oldValue, value);
 	}
 	
-	public static double defaultValue(Creature creature, double base, Stats stat)
+	public static double defaultValue(Creature creature, Optional<Double> base, Stats stat)
 	{
 		return creature.getStat().getMul(stat) * creature.getStat().getAdd(stat);
 	}

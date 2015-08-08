@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.model.stats.finalizers;
 
+import java.util.Optional;
+
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -28,7 +30,7 @@ import org.l2junity.gameserver.model.stats.Stats;
 public class MAccuracyFinalizer implements IStatsFunction
 {
 	@Override
-	public double calc(Creature creature, double baseValue, Stats stat)
+	public double calc(Creature creature, Optional<Double> baseValue, Stats stat)
 	{
 		return Stats.defaultValue(creature, stat, Math.sqrt(creature.getWIT()) * 3) + (creature.getLevel() * 2);
 	}

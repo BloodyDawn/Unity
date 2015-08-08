@@ -18,6 +18,9 @@
  */
 package org.l2junity.gameserver.model.stats.finalizers;
 
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -31,38 +34,43 @@ import org.l2junity.gameserver.model.stats.Stats;
 public class MDefenseFinalizer implements IStatsFunction
 {
 	@Override
-	public double calc(Creature creature, double baseValue, Stats stat)
+	public double calc(Creature creature, Optional<Double> baseValue, Stats stat)
 	{
+		if (!baseValue.isPresent())
+		{
+			throw new NoSuchElementException("base value should present!");
+		}
+		double value = baseValue.get();
 		if (creature.isPlayer())
 		{
 			PlayerInstance p = creature.getActingPlayer();
 			if (!p.getInventory().isPaperdollSlotEmpty(Inventory.PAPERDOLL_LFINGER))
 			{
-				baseValue -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_LFINGER) : Inventory.PAPERDOLL_LFINGER);
+				value -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_LFINGER) : Inventory.PAPERDOLL_LFINGER);
 			}
 			if (!p.getInventory().isPaperdollSlotEmpty(Inventory.PAPERDOLL_RFINGER))
 			{
-				baseValue -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_RFINGER) : Inventory.PAPERDOLL_RFINGER);
+				value -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_RFINGER) : Inventory.PAPERDOLL_RFINGER);
 			}
 			if (!p.getInventory().isPaperdollSlotEmpty(Inventory.PAPERDOLL_LEAR))
 			{
-				baseValue -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_LEAR) : Inventory.PAPERDOLL_LEAR);
+				value -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_LEAR) : Inventory.PAPERDOLL_LEAR);
 			}
 			if (!p.getInventory().isPaperdollSlotEmpty(Inventory.PAPERDOLL_REAR))
 			{
-				baseValue -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_REAR) : Inventory.PAPERDOLL_REAR);
+				value -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_REAR) : Inventory.PAPERDOLL_REAR);
 			}
 			if (!p.getInventory().isPaperdollSlotEmpty(Inventory.PAPERDOLL_NECK))
 			{
-				baseValue -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_NECK) : Inventory.PAPERDOLL_NECK);
+				value -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_NECK) : Inventory.PAPERDOLL_NECK);
 			}
-			baseValue *= BaseStats.CHA.calcBonus(creature);
+			value *= BaseStats.CHA.calcBonus(creature);
 		}
 		else if (creature.isPet() && (creature.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_NECK) != 0))
 		{
-			baseValue -= 13;
+			value -= 13;
 		}
-		baseValue *= BaseStats.MEN.calcBonus(creature) * creature.getLevelMod();
-		return Stats.defaultMulValue(creature, stat, baseValue);
+		value *= BaseStats.MEN.calcBonus(creature) * creature.getLevelMod();
+		return Stats.defaultMulValue(creature, stat, value);
 	}
 }

@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.model.stats.finalizers;
 
+import java.util.Optional;
+
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
@@ -29,10 +31,16 @@ import org.l2junity.gameserver.model.stats.Stats;
 public class PAttackSpeedFinalizer implements IStatsFunction
 {
 	@Override
-	public double calc(Creature creature, double baseValue, Stats stat)
+	public double calc(Creature creature, Optional<Double> baseValue, Stats stat)
 	{
+		double value = 0;
+		if (baseValue.isPresent())
+		{
+			value = baseValue.get();
+		}
+		
 		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
-		baseValue *= BaseStats.DEX.calcBonus(creature) * chaBonus;
-		return Stats.defaultValue(creature, stat, baseValue);
+		value *= BaseStats.DEX.calcBonus(creature) * chaBonus;
+		return Stats.defaultValue(creature, stat, value);
 	}
 }

@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.model.stats.finalizers;
 
+import java.util.Optional;
+
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -41,8 +43,13 @@ public class AttributeFinalizer implements IStatsFunction
 	}
 	
 	@Override
-	public double calc(Creature creature, double baseValue, Stats stat)
+	public double calc(Creature creature, Optional<Double> baseValue, Stats stat)
 	{
+		double value = 0;
+		if (baseValue.isPresent())
+		{
+			value = baseValue.get();
+		}
 		if (_isWeapon)
 		{
 			final ItemInstance weapon = creature.getActiveWeaponInstance();
@@ -51,7 +58,7 @@ public class AttributeFinalizer implements IStatsFunction
 				final AttributeHolder holder = weapon.getAttribute(_type);
 				if (holder != null)
 				{
-					baseValue += holder.getValue();
+					value += holder.getValue();
 				}
 			}
 		}
@@ -65,11 +72,11 @@ public class AttributeFinalizer implements IStatsFunction
 					final AttributeHolder holder = item.getAttribute(_type);
 					if (holder != null)
 					{
-						baseValue += holder.getValue();
+						value += holder.getValue();
 					}
 				}
 			}
 		}
-		return Stats.defaultValue(creature, stat, baseValue);
+		return Stats.defaultValue(creature, stat, value);
 	}
 }

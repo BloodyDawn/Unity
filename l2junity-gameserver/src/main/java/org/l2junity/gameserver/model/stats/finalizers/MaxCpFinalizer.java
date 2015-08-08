@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.model.stats.finalizers;
 
+import java.util.Optional;
+
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
@@ -29,10 +31,15 @@ import org.l2junity.gameserver.model.stats.Stats;
 public class MaxCpFinalizer implements IStatsFunction
 {
 	@Override
-	public double calc(Creature creature, double baseValue, Stats stat)
+	public double calc(Creature creature, Optional<Double> baseValue, Stats stat)
 	{
+		double value = 1;
+		if (baseValue.isPresent())
+		{
+			value = baseValue.get();
+		}
 		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
-		baseValue *= BaseStats.CON.calcBonus(creature) * chaBonus;
-		return Stats.defaultMulValue(creature, stat, baseValue);
+		value *= BaseStats.CON.calcBonus(creature) * chaBonus;
+		return Stats.defaultMulValue(creature, stat, value);
 	}
 }

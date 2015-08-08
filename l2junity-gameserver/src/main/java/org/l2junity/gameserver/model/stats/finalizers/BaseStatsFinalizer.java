@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.model.stats.finalizers;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 import org.l2junity.gameserver.data.xml.impl.ArmorSetsData;
@@ -36,8 +37,14 @@ import org.l2junity.gameserver.model.stats.Stats;
 public class BaseStatsFinalizer implements IStatsFunction
 {
 	@Override
-	public double calc(Creature creature, double baseValue, Stats stat)
+	public double calc(Creature creature, Optional<Double> baseValue, Stats stat)
 	{
+		double value = 0;
+		if (baseValue.isPresent())
+		{
+			value = baseValue.get();
+		}
+		
 		final PlayerInstance player = creature.getActingPlayer();
 		if (player != null)
 		{
@@ -50,15 +57,15 @@ public class BaseStatsFinalizer implements IStatsFunction
 				{
 					if ((set.getPiecesCount(player, ItemInstance::getId) >= set.getMinimumPieces()) && appliedSets.add(set))
 					{
-						baseValue += set.getStatsBonus(BaseStats.valueOf(stat));
+						value += set.getStatsBonus(BaseStats.valueOf(stat));
 					}
 				}
 			}
 			
 			// Henna calculation
-			baseValue += player.getHennaValue(BaseStats.valueOf(stat));
+			value += player.getHennaValue(BaseStats.valueOf(stat));
 		}
-		return Math.min(Stats.defaultValue(creature, stat, baseValue), BaseStats.MAX_STAT_VALUE - 1);
+		return Math.min(Stats.defaultValue(creature, stat, value), BaseStats.MAX_STAT_VALUE - 1);
 	}
 	
 }

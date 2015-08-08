@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.model.stats;
 
+import java.util.Optional;
+
 import org.l2junity.gameserver.model.actor.Creature;
 
 /**
@@ -26,5 +28,5 @@ import org.l2junity.gameserver.model.actor.Creature;
 @FunctionalInterface
 public interface IStatsFunction
 {
-	public double calc(Creature creature, double base, Stats stat);
+	public double calc(Creature creature, Optional<Double> baseValue, Stats stat);
 }

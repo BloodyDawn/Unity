@@ -22,6 +22,7 @@ import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Stream;
@@ -92,7 +93,7 @@ public class CharStat
 	 */
 	public final double calcStat(Stats stat, double initVal, Creature target, Skill skill)
 	{
-		return getValue(stat, initVal);
+		return getValue(stat, Optional.of(initVal));
 	}
 	
 	/**
@@ -879,7 +880,7 @@ public class CharStat
 	 * @param baseValue
 	 * @return the final value of the stat
 	 */
-	public double getValue(Stats stat, double baseValue)
+	public double getValue(Stats stat, Optional<Double> baseValue)
 	{
 		return stat.finalize(_activeChar, baseValue);
 	}

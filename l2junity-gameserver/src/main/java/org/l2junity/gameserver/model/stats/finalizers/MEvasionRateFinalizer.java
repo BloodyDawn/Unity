@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.model.stats.finalizers;
 
+import java.util.Optional;
+
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -28,23 +30,28 @@ import org.l2junity.gameserver.model.stats.Stats;
 public class MEvasionRateFinalizer implements IStatsFunction
 {
 	@Override
-	public double calc(Creature creature, double baseValue, Stats stat)
+	public double calc(Creature creature, Optional<Double> baseValue, Stats stat)
 	{
+		double value = 0;
+		if (baseValue.isPresent())
+		{
+			value = baseValue.get();
+		}
 		final int level = creature.getLevel();
 		if (creature.isPlayer())
 		{
 			// [Square(WIT)] * 3 + lvl;
-			baseValue += (Math.sqrt(creature.getWIT()) * 3) + (level * 2);
+			value += (Math.sqrt(creature.getWIT()) * 3) + (level * 2);
 		}
 		else
 		{
 			// [Square(DEX)] * 6 + lvl;
-			baseValue += (Math.sqrt(creature.getWIT()) * 3) + (level * 2);
+			value += (Math.sqrt(creature.getWIT()) * 3) + (level * 2);
 			if (level > 69)
 			{
-				baseValue += (level - 69) + 2;
+				value += (level - 69) + 2;
 			}
 		}
-		return Stats.defaultValue(creature, stat, baseValue);
+		return Stats.defaultValue(creature, stat, value);
 	}
 }
