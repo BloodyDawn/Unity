@@ -45,7 +45,7 @@ public class BaseStatsFinalizer implements IStatsFunction
 		}
 		
 		// Apply template value
-		double value = creature.getTemplate().getBaseValue(stat, 0);
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
 		
 		final PlayerInstance player = creature.getActingPlayer();
 		if (player != null)
@@ -59,15 +59,15 @@ public class BaseStatsFinalizer implements IStatsFunction
 				{
 					if ((set.getPiecesCount(player, ItemInstance::getId) >= set.getMinimumPieces()) && appliedSets.add(set))
 					{
-						value += set.getStatsBonus(BaseStats.valueOf(stat));
+						baseValue += set.getStatsBonus(BaseStats.valueOf(stat));
 					}
 				}
 			}
 			
 			// Henna calculation
-			value += player.getHennaValue(BaseStats.valueOf(stat));
+			baseValue += player.getHennaValue(BaseStats.valueOf(stat));
 		}
-		return Math.min(Stats.defaultValue(creature, stat, value), BaseStats.MAX_STAT_VALUE - 1);
+		return Math.min(Stats.defaultValue(creature, stat, baseValue), BaseStats.MAX_STAT_VALUE - 1);
 	}
 	
 }

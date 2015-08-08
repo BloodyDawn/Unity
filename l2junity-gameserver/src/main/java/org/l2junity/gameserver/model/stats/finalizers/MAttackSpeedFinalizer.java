@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.stats.finalizers;
 
 import java.util.Optional;
 
+import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
@@ -33,13 +34,20 @@ public class MAttackSpeedFinalizer implements IStatsFunction
 	@Override
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		double value = 1;
 		if (base.isPresent())
 		{
-			value = base.get();
+			throw new IllegalArgumentException("base should not be set for matk speed stat!");
 		}
+		
+		float bonusSpdAtk = 1;
+		if (Config.L2JMOD_CHAMPION_ENABLE && creature.isChampion())
+		{
+			bonusSpdAtk = Config.L2JMOD_CHAMPION_SPD_ATK;
+		}
+		
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0) * bonusSpdAtk;
 		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
-		value *= BaseStats.WIT.calcBonus(creature) * chaBonus;
-		return Stats.defaultMulValue(creature, stat, value);
+		baseValue *= BaseStats.WIT.calcBonus(creature) * chaBonus;
+		return Math.min(Stats.defaultMulValue(creature, stat, baseValue), Config.MAX_MATK_SPEED);
 	}
 }

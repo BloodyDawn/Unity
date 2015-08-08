@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.stats.finalizers;
 
 import java.util.Optional;
 
+import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
@@ -33,13 +34,25 @@ public class MAttackFinalizer implements IStatsFunction
 	@Override
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		double value = 1;
 		if (base.isPresent())
 		{
-			value = base.get();
+			throw new IllegalArgumentException("base should not be set for matk stat!");
 		}
+		
+		float bonusAtk = 1;
+		if (Config.L2JMOD_CHAMPION_ENABLE && creature.isChampion())
+		{
+			bonusAtk = Config.L2JMOD_CHAMPION_ATK;
+		}
+		if (creature.isRaid())
+		{
+			bonusAtk *= Config.RAID_MATTACK_MULTIPLIER;
+		}
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0) * bonusAtk;
+		
+		// Calculate modifiers Magic Attack
 		final double chaMod = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
-		value *= Math.pow(BaseStats.INT.calcBonus(creature), 2) * Math.pow(creature.getLevelMod(), 2) * chaMod;
-		return Stats.defaultMulValue(creature, stat, value);
+		baseValue *= Math.pow(BaseStats.INT.calcBonus(creature), 2) * Math.pow(creature.getLevelMod(), 2) * chaMod;
+		return Stats.defaultMulValue(creature, stat, baseValue);
 	}
 }

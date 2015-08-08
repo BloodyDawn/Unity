@@ -49,7 +49,8 @@ public class AttributeFinalizer implements IStatsFunction
 		{
 			throw new IllegalArgumentException("base should not be set for attrobite stats!");
 		}
-		double value = 0;
+		
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
 		if (_isWeapon)
 		{
 			final ItemInstance weapon = creature.getActiveWeaponInstance();
@@ -58,7 +59,7 @@ public class AttributeFinalizer implements IStatsFunction
 				final AttributeHolder holder = weapon.getAttribute(_type);
 				if (holder != null)
 				{
-					value += holder.getValue();
+					baseValue += holder.getValue();
 				}
 			}
 		}
@@ -72,11 +73,11 @@ public class AttributeFinalizer implements IStatsFunction
 					final AttributeHolder holder = item.getAttribute(_type);
 					if (holder != null)
 					{
-						value += holder.getValue();
+						baseValue += holder.getValue();
 					}
 				}
 			}
 		}
-		return Stats.defaultValue(creature, stat, value);
+		return Stats.defaultValue(creature, stat, baseValue);
 	}
 }

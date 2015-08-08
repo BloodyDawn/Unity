@@ -294,18 +294,7 @@ public class CharStat
 	 */
 	public int getMAtk(Creature target, Skill skill)
 	{
-		float bonusAtk = 1;
-		if (Config.L2JMOD_CHAMPION_ENABLE && _activeChar.isChampion())
-		{
-			bonusAtk = Config.L2JMOD_CHAMPION_ATK;
-		}
-		if (_activeChar.isRaid())
-		{
-			bonusAtk *= Config.RAID_MATTACK_MULTIPLIER;
-		}
-		
-		// Calculate modifiers Magic Attack
-		return (int) calcStat(Stats.MAGIC_ATTACK, _activeChar.getTemplate().getBaseMAtk() * bonusAtk, target, skill);
+		return (int) getValue(Stats.MAGIC_ATTACK);
 	}
 	
 	/**
@@ -313,20 +302,7 @@ public class CharStat
 	 */
 	public int getMAtkSpd()
 	{
-		float bonusSpdAtk = 1;
-		if (Config.L2JMOD_CHAMPION_ENABLE && _activeChar.isChampion())
-		{
-			bonusSpdAtk = Config.L2JMOD_CHAMPION_SPD_ATK;
-		}
-		
-		double val = calcStat(Stats.MAGIC_ATTACK_SPEED, _activeChar.getTemplate().getBaseMAtkSpd() * bonusSpdAtk);
-		
-		if (!_activeChar.canOverrideCond(PcCondOverride.MAX_STATS_VALUE))
-		{
-			val = Math.min(val, Config.MAX_MATK_SPEED);
-		}
-		
-		return (int) val;
+		return (int) getValue(Stats.MAGIC_ATTACK_SPEED);
 	}
 	
 	/**
@@ -336,14 +312,7 @@ public class CharStat
 	 */
 	public final int getMCriticalHit(Creature target, Skill skill)
 	{
-		int val = (int) calcStat(Stats.MCRITICAL_RATE, getActiveChar().getTemplate().getBaseMCritRate(), target, skill);
-		
-		if (!_activeChar.canOverrideCond(PcCondOverride.MAX_STATS_VALUE))
-		{
-			val = Math.min(val, Config.MAX_MCRIT_RATE);
-		}
-		
-		return val;
+		return (int) getValue(Stats.MCRITICAL_RATE);
 	}
 	
 	/**
