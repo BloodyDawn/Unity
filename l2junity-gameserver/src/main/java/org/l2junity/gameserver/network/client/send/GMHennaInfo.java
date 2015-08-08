@@ -53,14 +53,14 @@ public final class GMHennaInfo implements IClientOutgoingPacket
 	{
 		OutgoingPackets.GMHENNA_INFO.writeId(packet);
 		
-		packet.writeC((int) _activeChar.getHennaValue(BaseStats.INT)); // equip INT
-		packet.writeC((int) _activeChar.getHennaValue(BaseStats.STR)); // equip STR
-		packet.writeC((int) _activeChar.getHennaValue(BaseStats.CON)); // equip CON
-		packet.writeC((int) _activeChar.getHennaValue(BaseStats.MEN)); // equip MEN
-		packet.writeC((int) _activeChar.getHennaValue(BaseStats.DEX)); // equip DEX
-		packet.writeC((int) _activeChar.getHennaValue(BaseStats.WIT)); // equip WIT
-		packet.writeC((int) _activeChar.getHennaValue(BaseStats.LUC)); // equip LUC
-		packet.writeC((int) _activeChar.getHennaValue(BaseStats.CHA)); // equip CHA
+		packet.writeC(_activeChar.getHennaValue(BaseStats.INT)); // equip INT
+		packet.writeC(_activeChar.getHennaValue(BaseStats.STR)); // equip STR
+		packet.writeC(_activeChar.getHennaValue(BaseStats.CON)); // equip CON
+		packet.writeC(_activeChar.getHennaValue(BaseStats.MEN)); // equip MEN
+		packet.writeC(_activeChar.getHennaValue(BaseStats.DEX)); // equip DEX
+		packet.writeC(_activeChar.getHennaValue(BaseStats.WIT)); // equip WIT
+		packet.writeC(_activeChar.getHennaValue(BaseStats.LUC)); // equip LUC
+		packet.writeC(_activeChar.getHennaValue(BaseStats.CHA)); // equip CHA
 		packet.writeD(3); // Slots
 		packet.writeD(_hennas.size()); // Size
 		for (Henna henna : _hennas)

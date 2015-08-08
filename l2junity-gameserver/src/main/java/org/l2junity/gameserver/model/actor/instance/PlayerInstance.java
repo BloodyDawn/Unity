@@ -576,7 +576,7 @@ public final class PlayerInstance extends Playable
 	
 	// hennas
 	private final Henna[] _henna = new Henna[3];
-	private final Map<BaseStats, Double> _hennaBaseStats = new ConcurrentHashMap<>();
+	private final Map<BaseStats, Integer> _hennaBaseStats = new ConcurrentHashMap<>();
 	
 	/** The Pet of the L2PcInstance */
 	private Summon _pet = null;
@@ -7896,10 +7896,10 @@ public final class PlayerInstance extends Playable
 				continue;
 			}
 			
-			for (Entry<BaseStats, Double> entry : henna.getBaseStats().entrySet())
+			for (Entry<BaseStats, Integer> entry : henna.getBaseStats().entrySet())
 			{
 				final BaseStats baseStat = entry.getKey();
-				_hennaBaseStats.merge(baseStat, entry.getValue(), baseStat.getStat()::add);
+				_hennaBaseStats.merge(baseStat, entry.getValue(), Integer::sum);
 			}
 		}
 	}
@@ -7944,15 +7944,15 @@ public final class PlayerInstance extends Playable
 	 * @param stat
 	 * @return the henna bonus of specified base stat
 	 */
-	public double getHennaValue(BaseStats stat)
+	public int getHennaValue(BaseStats stat)
 	{
-		return _hennaBaseStats.getOrDefault(stat, 0d);
+		return _hennaBaseStats.getOrDefault(stat, 0);
 	}
 	
 	/**
 	 * @return map of all henna base stats bonus
 	 */
-	public Map<BaseStats, Double> getHennaBaseStats()
+	public Map<BaseStats, Integer> getHennaBaseStats()
 	{
 		return _hennaBaseStats;
 	}

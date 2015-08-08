@@ -37,7 +37,7 @@ public class Henna
 	private final int _dyeId;
 	private final String _dyeName;
 	private final int _dyeItemId;
-	private final Map<BaseStats, Double> _baseStats = new HashMap<>();
+	private final Map<BaseStats, Integer> _baseStats = new HashMap<>();
 	private final int _wear_fee;
 	private final int _wear_count;
 	private final int _cancel_fee;
@@ -49,14 +49,14 @@ public class Henna
 		_dyeId = set.getInt("dyeId");
 		_dyeName = set.getString("dyeName");
 		_dyeItemId = set.getInt("dyeItemId");
-		_baseStats.put(BaseStats.STR, set.getDouble("str"));
-		_baseStats.put(BaseStats.CON, set.getDouble("con"));
-		_baseStats.put(BaseStats.DEX, set.getDouble("dex"));
-		_baseStats.put(BaseStats.INT, set.getDouble("int"));
-		_baseStats.put(BaseStats.MEN, set.getDouble("men"));
-		_baseStats.put(BaseStats.WIT, set.getDouble("wit"));
-		_baseStats.put(BaseStats.LUC, set.getDouble("luc"));
-		_baseStats.put(BaseStats.CHA, set.getDouble("cha"));
+		_baseStats.put(BaseStats.STR, set.getInt("str"));
+		_baseStats.put(BaseStats.CON, set.getInt("con"));
+		_baseStats.put(BaseStats.DEX, set.getInt("dex"));
+		_baseStats.put(BaseStats.INT, set.getInt("int"));
+		_baseStats.put(BaseStats.MEN, set.getInt("men"));
+		_baseStats.put(BaseStats.WIT, set.getInt("wit"));
+		_baseStats.put(BaseStats.LUC, set.getInt("luc"));
+		_baseStats.put(BaseStats.CHA, set.getInt("cha"));
 		_wear_fee = set.getInt("wear_fee");
 		_wear_count = set.getInt("wear_count");
 		_cancel_fee = set.getInt("cancel_fee");
@@ -88,12 +88,12 @@ public class Henna
 		return _dyeItemId;
 	}
 	
-	public double getBaseStats(Stats stat)
+	public int getBaseStats(Stats stat)
 	{
-		return _baseStats.getOrDefault(stat, 0d);
+		return _baseStats.getOrDefault(stat, 0);
 	}
 	
-	public Map<BaseStats, Double> getBaseStats()
+	public Map<BaseStats, Integer> getBaseStats()
 	{
 		return _baseStats;
 	}
