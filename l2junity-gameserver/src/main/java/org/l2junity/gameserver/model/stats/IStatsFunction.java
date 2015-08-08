@@ -28,5 +28,13 @@ import org.l2junity.gameserver.model.actor.Creature;
 @FunctionalInterface
 public interface IStatsFunction
 {
+	default void throwIfPresent(Optional<Double> base)
+	{
+		if (base.isPresent())
+		{
+			throw new IllegalArgumentException("base should not be set for " + getClass().getSimpleName());
+		}
+	}
+	
 	public double calc(Creature creature, Optional<Double> base, Stats stat);
 }

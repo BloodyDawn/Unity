@@ -32,10 +32,7 @@ public class MAccuracyFinalizer implements IStatsFunction
 	@Override
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		if (base.isPresent())
-		{
-			throw new IllegalArgumentException("base should not be set for m accuracy stats!");
-		}
+		throwIfPresent(base);
 		
 		final double baseValue = creature.getTemplate().getBaseValue(stat, 0);
 		return Stats.defaultValue(creature, stat, baseValue + (Math.sqrt(creature.getWIT()) * 3) + (creature.getLevel() * 2));

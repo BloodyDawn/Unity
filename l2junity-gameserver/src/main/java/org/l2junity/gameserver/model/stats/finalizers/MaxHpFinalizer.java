@@ -33,13 +33,11 @@ public class MaxHpFinalizer implements IStatsFunction
 	@Override
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		double value = 1;
-		if (base.isPresent())
-		{
-			value = base.get();
-		}
+		throwIfPresent(base);
+		
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
 		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
-		value *= BaseStats.CON.calcBonus(creature) * chaBonus;
-		return Stats.defaultMulValue(creature, stat, value);
+		baseValue *= BaseStats.CON.calcBonus(creature) * chaBonus;
+		return Stats.defaultMulValue(creature, stat, baseValue);
 	}
 }

@@ -257,7 +257,7 @@ public class CharStat
 	
 	public int getMaxCp()
 	{
-		return (int) calcStat(Stats.MAX_CP, _activeChar.getTemplate().getBaseCpMax());
+		return (int) getValue(Stats.MAX_CP);
 	}
 	
 	public int getMaxRecoverableCp()
@@ -267,7 +267,7 @@ public class CharStat
 	
 	public int getMaxHp()
 	{
-		return (int) calcStat(Stats.MAX_HP, _activeChar.getTemplate().getBaseHpMax());
+		return (int) getValue(Stats.MAX_HP);
 	}
 	
 	public int getMaxRecoverableHp()
@@ -277,7 +277,7 @@ public class CharStat
 	
 	public int getMaxMp()
 	{
-		return (int) calcStat(Stats.MAX_MP, _activeChar.getTemplate().getBaseMpMax());
+		return (int) getValue(Stats.MAX_MP);
 	}
 	
 	public int getMaxRecoverableMp()

@@ -34,10 +34,7 @@ public class MAttackFinalizer implements IStatsFunction
 	@Override
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		if (base.isPresent())
-		{
-			throw new IllegalArgumentException("base should not be set for matk stat!");
-		}
+		throwIfPresent(base);
 		
 		float bonusAtk = 1;
 		if (Config.L2JMOD_CHAMPION_ENABLE && creature.isChampion())

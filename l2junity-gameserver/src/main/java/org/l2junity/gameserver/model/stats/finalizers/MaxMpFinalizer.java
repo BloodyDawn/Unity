@@ -33,14 +33,11 @@ public class MaxMpFinalizer implements IStatsFunction
 	@Override
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		double value = 0;
-		if (base.isPresent())
-		{
-			value = base.get();
-		}
+		throwIfPresent(base);
 		
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
 		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
-		value *= BaseStats.MEN.calcBonus(creature) * chaBonus;
-		return Stats.defaultMulValue(creature, stat, value);
+		baseValue *= BaseStats.MEN.calcBonus(creature) * chaBonus;
+		return Stats.defaultMulValue(creature, stat, baseValue);
 	}
 }

@@ -39,10 +39,7 @@ public class BaseStatsFinalizer implements IStatsFunction
 	@Override
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		if (base.isPresent())
-		{
-			throw new IllegalArgumentException("base should not be set for base stats!");
-		}
+		throwIfPresent(base);
 		
 		// Apply template value
 		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
