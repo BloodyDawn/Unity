@@ -19,7 +19,9 @@
 package org.l2junity.gameserver.model.stats.functions.formulas;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import org.l2junity.gameserver.data.xml.impl.ArmorSetsData;
 import org.l2junity.gameserver.model.ArmorSet;
@@ -59,13 +61,17 @@ public class FuncArmorSet extends AbstractFunction
 		final PlayerInstance player = effector.getActingPlayer();
 		if (player != null)
 		{
+			final Set<ArmorSet> appliedSets = new HashSet<>(2);
 			for (ItemInstance item : player.getInventory().getItems(ItemInstance::isEquipped))
 			{
 				for (ArmorSet set : ArmorSetsData.getInstance().getSets(item.getId()))
 				{
 					if (set.getPiecesCount(player, ItemInstance::getId) >= set.getMinimumPieces())
 					{
-						value += set.getStatsBonus(BaseStats.valueOf(getStat()));
+						if (appliedSets.add(set))
+						{
+							value += set.getStatsBonus(BaseStats.valueOf(getStat()));
+						}
 					}
 				}
 			}
