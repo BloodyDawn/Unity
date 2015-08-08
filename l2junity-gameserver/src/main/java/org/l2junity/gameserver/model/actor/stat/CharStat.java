@@ -130,7 +130,7 @@ public class CharStat
 	 */
 	public final int getCON()
 	{
-		return (int) getValue(Stats.STAT_CON, Optional.empty());
+		return (int) getValue(Stats.STAT_CON);
 	}
 	
 	/**
@@ -178,7 +178,7 @@ public class CharStat
 	 */
 	public final int getDEX()
 	{
-		return (int) getValue(Stats.STAT_DEX, Optional.empty());
+		return (int) getValue(Stats.STAT_DEX);
 	}
 	
 	/**
@@ -228,7 +228,7 @@ public class CharStat
 	 */
 	public int getINT()
 	{
-		return (int) getValue(Stats.STAT_INT, Optional.empty());
+		return (int) getValue(Stats.STAT_INT);
 	}
 	
 	public byte getLevel()
@@ -372,17 +372,17 @@ public class CharStat
 	 */
 	public final int getMEN()
 	{
-		return (int) getValue(Stats.STAT_MEN, Optional.empty());
+		return (int) getValue(Stats.STAT_MEN);
 	}
 	
 	public final int getLUC()
 	{
-		return (int) getValue(Stats.STAT_LUC, Optional.empty());
+		return (int) getValue(Stats.STAT_LUC);
 	}
 	
 	public final int getCHA()
 	{
-		return (int) getValue(Stats.STAT_CHA, Optional.empty());
+		return (int) getValue(Stats.STAT_CHA);
 	}
 	
 	public double getMovementSpeedMultiplier()
@@ -610,7 +610,7 @@ public class CharStat
 	 */
 	public final int getSTR()
 	{
-		return (int) getValue(Stats.STAT_STR, Optional.empty());
+		return (int) getValue(Stats.STAT_STR);
 	}
 	
 	/**
@@ -618,7 +618,7 @@ public class CharStat
 	 */
 	public final int getWIT()
 	{
-		return (int) getValue(Stats.STAT_WIT, Optional.empty());
+		return (int) getValue(Stats.STAT_WIT);
 	}
 	
 	/**
@@ -883,6 +883,15 @@ public class CharStat
 	public double getValue(Stats stat, Optional<Double> baseValue)
 	{
 		return stat.finalize(_activeChar, baseValue);
+	}
+	
+	/**
+	 * @param stat
+	 * @return the final value of the stat
+	 */
+	public double getValue(Stats stat)
+	{
+		return stat.finalize(_activeChar, Optional.empty());
 	}
 	
 	/**
