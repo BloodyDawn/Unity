@@ -1,0 +1,75 @@
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../data/xsd/classMaster.xsd">
+	<classMaster classChangeEnabled="true" spawnClassMasters="true" showEntireTree="false">
+		<!-- Fuck Ertheias, no class change for later classes, let them make quests so next time they think carefully about picking OP class -->
+		<bannedClassIds>
+			<classId>186</classId> <!-- Ripper -->
+			<classId>187</classId> <!-- Stratomancer -->
+			<classId>188</classId> <!-- Eviscerator -->
+			<classId>189</classId> <!-- Sayha Seer -->
+		</bannedClassIds>
+		<classChangeOption name="Free" showPopupWindow="true" >
+			<appliesTo>
+				<category>FIRST_CLASS_GROUP</category>
+			</appliesTo>
+		</classChangeOption>
+		<classChangeOption name="Pay Adena" showPopupWindow="true" >
+			<appliesTo>
+				<category>SECOND_CLASS_GROUP</category>
+			</appliesTo>
+			<conditions>
+				<item id="57" count="1000000" /> <!-- 1kk Adena for second class -->
+			</conditions>
+		</classChangeOption>
+		<classChangeOption name="Pay Ancient Adena" showPopupWindow="true" >
+			<appliesTo>
+				<category>SECOND_CLASS_GROUP</category>
+			</appliesTo>
+			<conditions>
+				<item id="5575" count="100000" /> <!-- 100k Ancient Adena for second class -->
+			</conditions>
+		</classChangeOption>
+		<classChangeOption name="Pay Adena and Ancient Adena">
+			<appliesTo>
+				<category>THIRD_CLASS_GROUP</category>
+			</appliesTo>
+			<conditions>
+				<item id="57" count="10000000" /> <!-- 10kk Adena for third class -->
+				<item id="5575" count="1000000" /> <!-- 1kk Ancient Adena for third class -->
+			</conditions>
+		</classChangeOption>
+		<classChangeOption name="Pay more Adena for a chance to not pay Ancient Adena">
+			<appliesTo>
+				<category>THIRD_CLASS_GROUP</category>
+			</appliesTo>
+			<conditions>
+				<item id="57" count="30000000" /> <!-- 50% chance to take your 30kk Adena for third class -->
+				<item id="5575" count="1000000" chance="50" /> <!-- 50% chance to take your 1kk Ancient Adena for third class -->
+			</conditions>
+		</classChangeOption>
+		<classChangeOption name="Pay Adena and Ancient Adena with Noblesse reward">
+			<appliesTo>
+				<category>THIRD_CLASS_GROUP</category>
+			</appliesTo>
+			<rewards>
+				<setNoble/> <!-- Set noble when this option is used -->
+			</rewards>
+			<conditions>
+				<item id="57" count="100000000" /> <!-- 100kk Adena for third class -->
+				<item id="5575" count="10000000" /> <!-- 10kk Ancient Adena for third class -->
+			</conditions>
+		</classChangeOption>
+		<classChangeOption name="Option 1">
+			<appliesTo>
+				<category>FOURTH_GROUP</category>
+			</appliesTo>
+			<rewards>
+				<item id="57" count="100000000" chance="10" /> <!-- 100kk Adena -->
+				<setHero/> <!-- Set hero when this option is used -->
+			</rewards>
+			<conditions>
+				<item id="57" count="100000000" /> <!-- 100kk Adena for fourth class -->
+				<item id="5575" count="10000000" /> <!-- 10kk Ancient Adena for fourth class -->
+			</conditions>
+		</classChangeOption>
+	</classMaster>
+</list>
