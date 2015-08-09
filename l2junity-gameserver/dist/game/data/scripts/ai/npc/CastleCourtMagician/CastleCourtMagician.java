@@ -287,7 +287,7 @@ public final class CastleCourtMagician extends AbstractNpcAI
 				{
 					showClassSpecificMultisell(player, npc, 813);
 				}
-				else // TODO: Glory Days AI use "else if (talker->level == 99)" but on IO is max level 106 so let's use just "else"
+				else if (playerLevel >= 99) // TODO: Glory Days AI use "else if (talker->level == 99)" but on IO is max level 106 - need be confirmed for 100+ chars
 				{
 					showClassSpecificMultisell(player, npc, 821);
 				}
@@ -308,7 +308,7 @@ public final class CastleCourtMagician extends AbstractNpcAI
 				{
 					MultisellData.getInstance().separateAndSend(795, player, npc, false);
 				}
-				else // TODO: Glory Days AI use "else if (talker->level == 99)" but on IO is max level 106 so let's use just "else"
+				else if (playerLevel >= 99) // TODO: Glory Days AI use "else if (talker->level == 99)" but on IO is max level 106 - need be confirmed for 100+ chars
 				{
 					MultisellData.getInstance().separateAndSend(796, player, npc, false);
 				}
@@ -329,7 +329,7 @@ public final class CastleCourtMagician extends AbstractNpcAI
 				{
 					MultisellData.getInstance().separateAndSend(791, player, npc, false);
 				}
-				else // TODO: Glory Days AI use "else if (talker->level == 99)" but on IO is max level 106 so let's use just "else"
+				else if (playerLevel >= 99) // TODO: Glory Days AI use "else if (talker->level == 99)" but on IO is max level 106 - need be confirmed for 100+ chars
 				{
 					MultisellData.getInstance().separateAndSend(792, player, npc, false);
 				}
