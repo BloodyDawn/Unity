@@ -18,9 +18,9 @@
  */
 package ai.npc.CastleCourtMagician;
 
-import handlers.effecthandlers.CallPc;
-
+import org.l2junity.gameserver.data.xml.impl.MultisellData;
 import org.l2junity.gameserver.enums.CastleSide;
+import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.network.client.recv.RequestAcquireSkill;
 
 import ai.npc.AbstractNpcAI;
+import handlers.effecthandlers.CallPc;
 
 /**
  * Castle Court Magician AI.
@@ -119,6 +120,18 @@ public final class CastleCourtMagician extends AbstractNpcAI
 		10423, // Blue Talisman - Self-Destruction
 		10419, // White Talisman - Darkness
 	};
+	// Misc
+	private static final CategoryType[] AWAKENED_CT =
+	{
+		CategoryType.SIGEL_GROUP,
+		CategoryType.TYRR_GROUP,
+		CategoryType.OTHELL_GROUP,
+		CategoryType.YUL_GROUP,
+		CategoryType.FEOH_GROUP,
+		CategoryType.ISS_GROUP,
+		CategoryType.WYNN_GROUP,
+		CategoryType.AEORE_GROUP,
+	};
 	
 	private CastleCourtMagician()
 	{
@@ -143,6 +156,7 @@ public final class CastleCourtMagician extends AbstractNpcAI
 			case "courtmagician.html":
 			case "courtmagician-03.html":
 			case "courtmagician-07.html":
+			case "courtmagician-11.html":
 			{
 				htmltext = event;
 				break;
@@ -253,6 +267,74 @@ public final class CastleCourtMagician extends AbstractNpcAI
 				htmltext = "courtmagician-04.html";
 				break;
 			}
+			case "giveTalismanR":
+			{
+				htmltext = player.isInCategory(CategoryType.AWAKEN_GROUP) ? "courtmagician-09.html" : "courtmagician-10.html";
+				break;
+			}
+			case "giveTalismanR_classSpecific":
+			{
+				final int playerLevel = player.getLevel();
+				if ((playerLevel >= 85) && (playerLevel < 90))
+				{
+					showClassSpecificMultisell(player, npc, 797);
+				}
+				else if ((playerLevel >= 90) && (playerLevel < 95))
+				{
+					showClassSpecificMultisell(player, npc, 805);
+				}
+				else if ((playerLevel >= 95) && (playerLevel <= 98))
+				{
+					showClassSpecificMultisell(player, npc, 813);
+				}
+				else // TODO: Glory Days AI use "else if (talker->level == 99)" but on IO is max level 106 so let's use just "else"
+				{
+					showClassSpecificMultisell(player, npc, 821);
+				}
+				break;
+			}
+			case "giveTalismanR_active":
+			{
+				final int playerLevel = player.getLevel();
+				if ((playerLevel >= 85) && (playerLevel < 90))
+				{
+					MultisellData.getInstance().separateAndSend(789, player, npc, false);
+				}
+				else if ((playerLevel >= 90) && (playerLevel < 95))
+				{
+					MultisellData.getInstance().separateAndSend(794, player, npc, false);
+				}
+				else if ((playerLevel >= 95) && (playerLevel < 99))
+				{
+					MultisellData.getInstance().separateAndSend(795, player, npc, false);
+				}
+				else // TODO: Glory Days AI use "else if (talker->level == 99)" but on IO is max level 106 so let's use just "else"
+				{
+					MultisellData.getInstance().separateAndSend(796, player, npc, false);
+				}
+				break;
+			}
+			case "giveTalismanR_passive":
+			{
+				final int playerLevel = player.getLevel();
+				if ((playerLevel >= 85) && (playerLevel < 90))
+				{
+					MultisellData.getInstance().separateAndSend(789, player, npc, false);
+				}
+				else if ((playerLevel >= 90) && (playerLevel < 95))
+				{
+					MultisellData.getInstance().separateAndSend(790, player, npc, false);
+				}
+				else if ((playerLevel >= 95) && (playerLevel < 99))
+				{
+					MultisellData.getInstance().separateAndSend(791, player, npc, false);
+				}
+				else // TODO: Glory Days AI use "else if (talker->level == 99)" but on IO is max level 106 so let's use just "else"
+				{
+					MultisellData.getInstance().separateAndSend(792, player, npc, false);
+				}
+				break;
+			}
 			case "squadSkill":
 			{
 				if (player.isClanLeader() || player.hasClanPrivilege(ClanPrivilege.CL_TROOPS_FAME))
@@ -307,6 +389,21 @@ public final class CastleCourtMagician extends AbstractNpcAI
 	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		return ((player.getClan() != null) && (player.getClanId() == npc.getCastle().getOwnerId())) ? "courtmagician.html" : "courtmagician-01.html";
+	}
+	
+	private void showClassSpecificMultisell(PlayerInstance player, Npc npc, int index)
+	{
+		for (CategoryType ct : AWAKENED_CT)
+		{
+			if (player.isInCategory(ct))
+			{
+				MultisellData.getInstance().separateAndSend(index, player, npc, false);
+			}
+			else
+			{
+				index++;
+			}
+		}
 	}
 	
 	public static void main(String[] args)
