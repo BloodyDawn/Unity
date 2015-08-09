@@ -18,16 +18,22 @@
  */
 package ai.npc.ClassMaster;
 
+import java.io.File;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.Rnd;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.data.xml.impl.ClassListData;
-import org.l2junity.gameserver.data.xml.impl.ClassMasterData;
-import org.l2junity.gameserver.data.xml.impl.ClassMasterData.ClassChangeData;
 import org.l2junity.gameserver.datatables.ItemTable;
+import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.HtmlActionScope;
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
@@ -42,19 +48,36 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPressT
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerProfessionChange;
 import org.l2junity.gameserver.model.holders.ItemChanceHolder;
 import org.l2junity.gameserver.model.holders.ItemHolder;
+import org.l2junity.gameserver.model.spawns.NpcSpawnTemplate;
+import org.l2junity.gameserver.model.spawns.SpawnGroup;
+import org.l2junity.gameserver.model.spawns.SpawnTemplate;
 import org.l2junity.gameserver.network.client.send.TutorialCloseHtml;
 import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
 import org.l2junity.gameserver.network.client.send.TutorialShowQuestionMark;
 import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 import ai.npc.AbstractNpcAI;
 
 /**
  * @author Nik
  */
-public class ClassMaster extends AbstractNpcAI
+public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(ClassMaster.class);
+	
+	private boolean _isEnabled;
+	private boolean _spawnClassMasters;
+	private boolean _showEntireTree;
+	private final List<ClassChangeData> _classChangeData = new LinkedList<>();
+	private final List<NpcSpawnTemplate> _spawnTemplates = new LinkedList<>();
+	private final List<Integer> _bannedClassIds = new LinkedList<>();
+	
 	// Npc
 	private static final int[] CLASS_MASTER =
 	{
@@ -65,9 +88,196 @@ public class ClassMaster extends AbstractNpcAI
 	public ClassMaster()
 	{
 		super(ClassMaster.class.getSimpleName(), "ai/npc");
+		load();
 		addStartNpc(CLASS_MASTER);
 		addTalkId(CLASS_MASTER);
 		addFirstTalkId(CLASS_MASTER);
+		
+		// Spawn NPCs
+		if (isSpawnClassMasters())
+		{
+			_spawnTemplates.forEach(NpcSpawnTemplate::spawn);
+		}
+	}
+	
+	@Override
+	public void load()
+	{
+		_classChangeData.clear();
+		_spawnTemplates.clear();
+		_bannedClassIds.clear();
+		parseDatapackFile("config/ClassMaster.xml");
+		
+		LOGGER.info("Loaded {} class change options.", _classChangeData.size());
+		LOGGER.info("Loaded {} class master spawns.", _spawnTemplates.size());
+	}
+	
+	@Override
+	public boolean isValidating()
+	{
+		return false;
+	}
+	
+	@Override
+	public void parseDocument(Document doc, File f)
+	{
+		NamedNodeMap attrs;
+		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		{
+			if ("list".equals(n.getNodeName()))
+			{
+				for (Node cm = n.getFirstChild(); cm != null; cm = cm.getNextSibling())
+				{
+					attrs = cm.getAttributes();
+					if ("classMaster".equals(cm.getNodeName()))
+					{
+						_isEnabled = parseBoolean(attrs, "classChangeEnabled", false);
+						if (!_isEnabled)
+						{
+							return;
+						}
+						
+						_spawnClassMasters = parseBoolean(attrs, "spawnClassMasters", true);
+						_showEntireTree = parseBoolean(attrs, "showEntireTree", false);
+						
+						for (Node c = cm.getFirstChild(); c != null; c = c.getNextSibling())
+						{
+							attrs = c.getAttributes();
+							if ("classChangeOption".equals(c.getNodeName()))
+							{
+								List<CategoryType> appliedCategories = new LinkedList<>();
+								List<ItemChanceHolder> requiredItems = new LinkedList<>();
+								List<ItemChanceHolder> rewardedItems = new LinkedList<>();
+								boolean setNoble = false;
+								boolean setHero = false;
+								String optionName = parseString(attrs, "name", "");
+								boolean showPopupWindow = parseBoolean(attrs, "showPopupWindow", false);
+								for (Node b = c.getFirstChild(); b != null; b = b.getNextSibling())
+								{
+									attrs = b.getAttributes();
+									if ("appliesTo".equals(b.getNodeName()))
+									{
+										for (Node r = b.getFirstChild(); r != null; r = r.getNextSibling())
+										{
+											attrs = r.getAttributes();
+											if ("category".equals(r.getNodeName()))
+											{
+												CategoryType category = CategoryType.findByName(r.getTextContent().trim());
+												if (category == null)
+												{
+													LOGGER.error("Incorrect category type: {}", r.getNodeValue());
+													continue;
+												}
+												
+												appliedCategories.add(category);
+											}
+										}
+									}
+									if ("rewards".equals(b.getNodeName()))
+									{
+										for (Node r = b.getFirstChild(); r != null; r = r.getNextSibling())
+										{
+											attrs = r.getAttributes();
+											if ("item".equals(r.getNodeName()))
+											{
+												int itemId = parseInteger(attrs, "id");
+												int count = parseInteger(attrs, "count", 1);
+												int chance = parseInteger(attrs, "chance", 100);
+												
+												rewardedItems.add(new ItemChanceHolder(itemId, chance, count));
+											}
+											else if ("setNoble".equals(r.getNodeName()))
+											{
+												setNoble = true;
+											}
+											else if ("setHero".equals(r.getNodeName()))
+											{
+												setHero = true;
+											}
+										}
+									}
+									else if ("conditions".equals(b.getNodeName()))
+									{
+										for (Node r = b.getFirstChild(); r != null; r = r.getNextSibling())
+										{
+											attrs = r.getAttributes();
+											if ("item".equals(r.getNodeName()))
+											{
+												int itemId = parseInteger(attrs, "id");
+												int count = parseInteger(attrs, "count", 1);
+												int chance = parseInteger(attrs, "chance", 100);
+												
+												requiredItems.add(new ItemChanceHolder(itemId, chance, count));
+											}
+										}
+									}
+								}
+								
+								if (appliedCategories.isEmpty())
+								{
+									LOGGER.warn("Class change option: {} has no categories to be applied on. Skipping!", optionName);
+									continue;
+								}
+								
+								ClassChangeData classChangeData = new ClassChangeData(optionName, appliedCategories, showPopupWindow);
+								classChangeData.setItemsRequired(requiredItems);
+								classChangeData.setItemsRewarded(rewardedItems);
+								classChangeData.setRewardHero(setHero);
+								classChangeData.setRewardNoblesse(setNoble);
+								
+								_classChangeData.add(classChangeData);
+							}
+							else if ("bannedClassIds".equals(c.getNodeName()))
+							{
+								for (Node b = c.getFirstChild(); b != null; b = b.getNextSibling())
+								{
+									if ("classId".equals(b.getNodeName()))
+									{
+										int classId = Integer.parseInt(b.getTextContent().trim());
+										_bannedClassIds.add(classId);
+									}
+								}
+							}
+						}
+					}
+					else if ("spawnlist".equals(cm.getNodeName()))
+					{
+						SpawnGroup group = new SpawnGroup(StatsSet.EMPTY_STATSET);
+						final SpawnTemplate spawnTemplate = new SpawnTemplate(StatsSet.EMPTY_STATSET, f);
+						for (Node d = cm.getFirstChild(); d != null; d = d.getNextSibling())
+						{
+							if ("npc".equalsIgnoreCase(d.getNodeName()))
+							{
+								final StatsSet set = new StatsSet();
+								attrs = d.getAttributes();
+								for (int i = 0; i < attrs.getLength(); i++)
+								{
+									final Node node = attrs.item(i);
+									set.set(node.getNodeName(), node.getNodeValue());
+								}
+								
+								try
+								{
+									final NpcSpawnTemplate npcTemplate = new NpcSpawnTemplate(spawnTemplate, group, set);
+									if (CommonUtil.contains(CLASS_MASTER, npcTemplate.getId()))
+									{
+										_spawnTemplates.add(npcTemplate);
+									}
+									else
+									{
+										LOGGER.warn("NPC ID: {} defined in {} spawnlist is not part of the ClassMaster script.", npcTemplate.getId(), f.getName());
+									}
+								}
+								catch (Exception e)
+								{
+									LOGGER.warn("Error while spawning class master npc: ", e);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	@Override
@@ -122,10 +332,15 @@ public class ClassMaster extends AbstractNpcAI
 				player.sendPacket(new UserInfo(player));
 				htmltext = getHtm(player.getHtmlPrefix(), "nobleok.html");
 			}
+			else
+			{
+				return null;
+			}
 		}
 		else if (event.startsWith("learn_skills"))
 		{
 			player.giveAvailableSkills(Config.AUTO_LEARN_FS_SKILLS, true);
+			return null;
 		}
 		else if (event.startsWith("increase_clan_level"))
 		{
@@ -140,12 +355,13 @@ public class ClassMaster extends AbstractNpcAI
 			else
 			{
 				player.getClan().changeLevel(5);
+				return null;
 			}
 		}
 		
 		if (classLevelMenu > 0)
 		{
-			if (!ClassMasterData.getInstance().isEnabled())
+			if (!isEnabled())
 			{
 				htmltext = getHtm(player.getHtmlPrefix(), "disabled.html");
 			}
@@ -163,7 +379,7 @@ public class ClassMaster extends AbstractNpcAI
 				else
 				{
 					final int minLevel = getMinLevel(classLevelMenu - 1);
-					if ((player.getLevel() >= minLevel) || ClassMasterData.getInstance().isShowEntireTree())
+					if ((player.getLevel() >= minLevel) || isShowEntireTree())
 					{
 						final StringBuilder menu = new StringBuilder(100);
 						
@@ -311,9 +527,9 @@ public class ClassMaster extends AbstractNpcAI
 		}
 	}
 	
-	private static boolean checkAndChangeClass(PlayerInstance player, int classId, int classDataIndex)
+	private boolean checkAndChangeClass(PlayerInstance player, int classId, int classDataIndex)
 	{
-		final ClassChangeData data = ClassMasterData.getInstance().getClassChangeData(classDataIndex);
+		final ClassChangeData data = getClassChangeData(classDataIndex);
 		
 		if (data == null)
 		{
@@ -408,13 +624,13 @@ public class ClassMaster extends AbstractNpcAI
 		return true;
 	}
 	
-	private static String getClassChangeOptions(PlayerInstance player, int selectedClassId, boolean tutorialWindow)
+	private String getClassChangeOptions(PlayerInstance player, int selectedClassId, boolean tutorialWindow)
 	{
 		final StringBuilder sb = new StringBuilder();
 		
-		for (int i = 0; i < ClassMasterData.getInstance().getClassChangeData().size(); i++)
+		for (int i = 0; i < getClassChangeData().size(); i++)
 		{
-			ClassChangeData option = ClassMasterData.getInstance().getClassChangeData(i);
+			ClassChangeData option = getClassChangeData(i);
 			if ((option == null) || !option.getCategories().stream().anyMatch(ct -> player.isInCategory(ct)))
 			{
 				continue;
@@ -520,16 +736,16 @@ public class ClassMaster extends AbstractNpcAI
 		}
 	}
 	
-	private static boolean validateClassChange(PlayerInstance player, int newClassId, boolean validateLevel, boolean popup)
+	private boolean validateClassChange(PlayerInstance player, int newClassId, boolean validateLevel, boolean popup)
 	{
-		if (!ClassMasterData.getInstance().isEnabled())
+		if (!isEnabled())
 		{
 			return false;
 		}
 		
 		if (validateLevel && (player.getLevel() < (getMinLevel(player.getClassId().level()))))
 		{
-			if (!ClassMasterData.getInstance().isShowEntireTree())
+			if (!isShowEntireTree())
 			{
 				return false;
 			}
@@ -547,14 +763,14 @@ public class ClassMaster extends AbstractNpcAI
 		
 		if (popup)
 		{
-			if (!ClassMasterData.getInstance().isClassChangeAvailableShowPopup(player))
+			if (!isClassChangeAvailableShowPopup(player))
 			{
 				return false;
 			}
 		}
 		else
 		{
-			if (!ClassMasterData.getInstance().isClassChangeAvailable(player))
+			if (!isClassChangeAvailable(player))
 			{
 				return false;
 			}
@@ -563,7 +779,7 @@ public class ClassMaster extends AbstractNpcAI
 		return true;
 	}
 	
-	private static boolean validateClassId(PlayerInstance player, ClassId newCID)
+	private boolean validateClassId(PlayerInstance player, ClassId newCID)
 	{
 		if ((newCID == null) || (newCID.getRace() == null))
 		{
@@ -575,17 +791,136 @@ public class ClassMaster extends AbstractNpcAI
 			return false;
 		}
 		
+		if (_bannedClassIds.contains(newCID.getId()))
+		{
+			return false;
+		}
+		
 		if (player.getClassId().equals(newCID.getParent()))
 		{
 			return true;
 		}
 		
-		if (ClassMasterData.getInstance().isShowEntireTree() && newCID.childOf(player.getClassId()))
+		if (isShowEntireTree() && newCID.childOf(player.getClassId()))
 		{
 			return true;
 		}
 		
 		return false;
+	}
+	
+	private static class ClassChangeData
+	{
+		private final String _name;
+		private final List<CategoryType> _appliedCategories;
+		private final boolean _showPopupWindow;
+		private boolean _rewardNoblesse;
+		private boolean _rewardHero;
+		private List<ItemChanceHolder> _itemsRequired;
+		private List<ItemChanceHolder> _itemsRewarded;
+		
+		public ClassChangeData(String name, List<CategoryType> appliedCategories, boolean showPopupWindow)
+		{
+			_name = name;
+			_appliedCategories = appliedCategories;
+			_showPopupWindow = showPopupWindow;
+		}
+		
+		public String getName()
+		{
+			return _name;
+		}
+		
+		public boolean isShowPopupWindow()
+		{
+			return _showPopupWindow;
+		}
+		
+		public List<CategoryType> getCategories()
+		{
+			return _appliedCategories != null ? _appliedCategories : Collections.emptyList();
+		}
+		
+		public boolean isRewardNoblesse()
+		{
+			return _rewardNoblesse;
+		}
+		
+		public void setRewardNoblesse(boolean rewardNoblesse)
+		{
+			_rewardNoblesse = rewardNoblesse;
+		}
+		
+		public boolean isRewardHero()
+		{
+			return _rewardHero;
+		}
+		
+		public void setRewardHero(boolean rewardHero)
+		{
+			_rewardHero = rewardHero;
+		}
+		
+		void setItemsRequired(List<ItemChanceHolder> itemsRequired)
+		{
+			_itemsRequired = itemsRequired;
+		}
+		
+		public List<ItemChanceHolder> getItemsRequired()
+		{
+			return _itemsRequired != null ? _itemsRequired : Collections.emptyList();
+		}
+		
+		void setItemsRewarded(List<ItemChanceHolder> itemsRewarded)
+		{
+			_itemsRewarded = itemsRewarded;
+		}
+		
+		public List<ItemChanceHolder> getItemsRewarded()
+		{
+			return _itemsRewarded != null ? _itemsRewarded : Collections.emptyList();
+		}
+		
+	}
+	
+	private boolean isEnabled()
+	{
+		return _isEnabled;
+	}
+	
+	private boolean isSpawnClassMasters()
+	{
+		return _spawnClassMasters;
+	}
+	
+	private boolean isShowEntireTree()
+	{
+		return _showEntireTree;
+	}
+	
+	private List<ClassChangeData> getClassChangeData()
+	{
+		return _classChangeData;
+	}
+	
+	private boolean isClassChangeAvailableShowPopup(PlayerInstance player)
+	{
+		return getClassChangeData().stream().filter(ClassChangeData::isShowPopupWindow).flatMap(ccd -> ccd.getCategories().stream()).anyMatch(ct -> player.isInCategory(ct));
+	}
+	
+	private boolean isClassChangeAvailable(PlayerInstance player)
+	{
+		return getClassChangeData().stream().flatMap(ccd -> ccd.getCategories().stream()).anyMatch(ct -> player.isInCategory(ct));
+	}
+	
+	private ClassChangeData getClassChangeData(int index)
+	{
+		if ((index >= 0) && (index < _classChangeData.size()))
+		{
+			return _classChangeData.get(index);
+		}
+		
+		return null;
 	}
 	
 	public static void main(String[] args)

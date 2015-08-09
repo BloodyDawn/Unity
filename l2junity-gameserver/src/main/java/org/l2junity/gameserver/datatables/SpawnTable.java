@@ -30,7 +30,6 @@ import java.util.function.Function;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
-import org.l2junity.gameserver.data.xml.impl.ClassMasterData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.StatsSet;
@@ -72,7 +71,7 @@ public final class SpawnTable
 			return false;
 		}
 		
-		if (npcTemplate.isType("L2SiegeGuard") || npcTemplate.isType("L2RaidBoss") || (!ClassMasterData.getInstance().isSpawnClassMasters() && npcTemplate.isType("L2ClassMaster")))
+		if (npcTemplate.isType("L2SiegeGuard") || npcTemplate.isType("L2RaidBoss"))
 		{
 			// Don't spawn
 			return false;

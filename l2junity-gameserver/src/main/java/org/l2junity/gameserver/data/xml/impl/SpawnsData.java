@@ -201,12 +201,6 @@ public class SpawnsData implements IGameXmlReader
 			return;
 		}
 		
-		if (!ClassMasterData.getInstance().isSpawnClassMasters() && template.isType("L2ClassMaster"))
-		{
-			// Don't spawn Class Masters unless config say so
-			return;
-		}
-		
 		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
 		{
 			if ("parameters".equalsIgnoreCase(d.getNodeName()))
