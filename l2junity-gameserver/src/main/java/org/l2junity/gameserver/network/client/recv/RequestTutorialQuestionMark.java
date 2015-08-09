@@ -18,7 +18,6 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import org.l2junity.gameserver.model.actor.instance.L2ClassMasterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPressTutorialMark;
@@ -47,7 +46,5 @@ public class RequestTutorialQuestionMark implements IClientIncomingPacket
 		
 		// Notify scripts
 		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerPressTutorialMark(player, _number), player);
-		
-		L2ClassMasterInstance.onTutorialQuestionMark(player, _number);
 	}
 }

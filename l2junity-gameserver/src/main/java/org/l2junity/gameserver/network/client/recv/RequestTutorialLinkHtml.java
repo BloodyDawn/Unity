@@ -20,7 +20,6 @@ package org.l2junity.gameserver.network.client.recv;
 
 import org.l2junity.gameserver.handler.BypassHandler;
 import org.l2junity.gameserver.handler.IBypassHandler;
-import org.l2junity.gameserver.model.actor.instance.L2ClassMasterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.network.PacketReader;
@@ -56,10 +55,6 @@ public class RequestTutorialLinkHtml implements IClientIncomingPacket
 			if (handler != null)
 			{
 				handler.useBypass(_bypass, player, null);
-			}
-			else
-			{
-				L2ClassMasterInstance.onTutorialLink(player, _bypass);
 			}
 		}
 	}

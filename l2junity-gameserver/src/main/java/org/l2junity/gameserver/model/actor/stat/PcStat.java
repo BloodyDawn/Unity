@@ -28,7 +28,6 @@ import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.PetLevelData;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2ClassMasterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.transform.TransformTemplate;
@@ -248,8 +247,6 @@ public class PcStat extends PlayableStat
 			getActiveChar().broadcastPacket(new SocialAction(getActiveChar().getObjectId(), SocialAction.LEVEL_UP));
 			getActiveChar().sendPacket(SystemMessageId.YOUR_LEVEL_HAS_INCREASED);
 			getActiveChar().notifyFriends(L2FriendStatus.MODE_LEVEL);
-			
-			L2ClassMasterInstance.showQuestionMark(getActiveChar());
 		}
 		
 		// Notify to scripts
