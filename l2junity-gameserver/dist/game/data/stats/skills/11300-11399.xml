@@ -236,7 +236,7 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="34" />
+				<add stat="moveSpeed" val="34" />
 			</effect>
 		</for>
 	</skill>
@@ -646,7 +646,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<sub stat="runSpd" val="100" />
+				<sub stat="moveSpeed" val="100" />
 			</effect>
 		</for>
 	</skill>
@@ -870,7 +870,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<sub stat="runSpd" val="100" />
+				<sub stat="moveSpeed" val="100" />
 			</effect>
 		</for>
 	</skill>
@@ -1094,7 +1094,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<sub stat="runSpd" val="100" />
+				<sub stat="moveSpeed" val="100" />
 			</effect>
 		</for>
 	</skill>
@@ -1521,7 +1521,7 @@
 		<set name="reuseDelay" val="4000" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -1557,7 +1557,7 @@
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.70" />
 				<mul stat="mAtkSpd" val="0.70" />
-				<sub stat="runSpd" val="180" />
+				<sub stat="moveSpeed" val="180" />
 			</effect>
 		</for>
 	</skill>
@@ -1834,7 +1834,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<sub stat="runSpd" val="100" />
+				<sub stat="moveSpeed" val="100" />
 			</effect>
 		</for>
 	</skill>
@@ -2044,7 +2044,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<sub stat="runSpd" val="100" />
+				<sub stat="moveSpeed" val="100" />
 			</effect>
 		</for>
 	</skill>

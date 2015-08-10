@@ -281,7 +281,7 @@
 				<add stat="accCombat" val="6">
 					<using kind="SWORD,BLUNT" />
 				</add>
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="pAtkSpd" val="#pAtkSpd">
 					<using kind="SWORD,BLUNT" />
 				</mul>
@@ -330,7 +330,7 @@
 				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="#debuff" />
+				<mul stat="moveSpeed" val="#debuff" />
 				<mul stat="pAtkSpd" val="#debuff" />
 				<mul stat="mAtkSpd" val="#debuff" />
 			</effect>
@@ -747,7 +747,7 @@
 			<effect name="Buff">
 				<sub stat="debuffVuln" val="80" />
 				<sub stat="cancelVuln" val="40" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<add stat="accCombat" val="6">
 					<using kind="SWORD,BLUNT,POLE,DUALFIST" />
 				</add>
@@ -1469,7 +1469,7 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -2099,7 +2099,7 @@
 		<for>
 			<effect name="MpConsumePerLevel" ticks="5">
 				<param power="0.4" />
-				<add stat="runSpd" val="20" />
+				<add stat="moveSpeed" val="20" />
 			</effect>
 		</for>
 	</skill>
@@ -2188,7 +2188,7 @@
 		<for>
 			<effect name="Buff">
 				<add stat="pDef" val="#pDef" />
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>

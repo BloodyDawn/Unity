@@ -345,7 +345,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
+				<add stat="moveSpeed" val="33" />
 			</effect>
 		</for>
 	</skill>
@@ -736,7 +736,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -1012,7 +1012,7 @@
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<sub stat="rEvas" val="#rEvas" />
 			</effect>
 		</for>
@@ -1874,7 +1874,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -2032,7 +2032,7 @@
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<sub stat="rEvas" val="#rEvas" />
 				<mul stat="mDef" val="#mDef" />
 				<mul stat="pDef" val="#pDef" />

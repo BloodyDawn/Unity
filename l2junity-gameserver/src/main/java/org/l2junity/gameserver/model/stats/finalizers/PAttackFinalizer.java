@@ -40,7 +40,7 @@ public class PAttackFinalizer implements IStatsFunction
 		
 		final Weapon weapon = creature.getActiveWeaponItem();
 		final Transform transform = creature.getTransformation();
-		double baseValue = (weapon != null ? weapon.getStats(stat, 0) : transform != null ? transform.getStats(creature.getActingPlayer(), stat, 0) : creature.getTemplate().getBaseValue(stat, 0));
+		double baseValue = (weapon != null ? weapon.getStats(stat, creature.getTemplate().getBaseValue(stat, 0)) : transform != null ? transform.getStats(creature.getActingPlayer(), stat, 0) : creature.getTemplate().getBaseValue(stat, 0));
 		if (Config.L2JMOD_CHAMPION_ENABLE && creature.isChampion())
 		{
 			baseValue *= Config.L2JMOD_CHAMPION_ATK;

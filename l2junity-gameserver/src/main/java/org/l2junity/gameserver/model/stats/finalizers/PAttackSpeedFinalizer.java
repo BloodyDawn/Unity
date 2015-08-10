@@ -22,6 +22,8 @@ import java.util.Optional;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.transform.Transform;
+import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -35,7 +37,9 @@ public class PAttackSpeedFinalizer implements IStatsFunction
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
 		throwIfPresent(base);
-		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		final Weapon weapon = creature.getActiveWeaponItem();
+		final Transform transform = creature.getTransformation();
+		double baseValue = (weapon != null ? weapon.getStats(stat, creature.getTemplate().getBaseValue(stat, 0)) : transform != null ? transform.getStats(creature.getActingPlayer(), stat, 0) : creature.getTemplate().getBaseValue(stat, 0));
 		if (Config.L2JMOD_CHAMPION_ENABLE && creature.isChampion())
 		{
 			baseValue = Config.L2JMOD_CHAMPION_SPD_ATK;

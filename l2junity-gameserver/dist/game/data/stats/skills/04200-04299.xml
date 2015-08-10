@@ -111,7 +111,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -865,7 +865,7 @@
 				<param power="72" />
 			</effect>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 		</for>
 	</skill>
@@ -1143,7 +1143,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 		</for>
 	</skill>
@@ -1355,7 +1355,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 		</for>
 	</skill>
@@ -1471,7 +1471,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
+				<add stat="moveSpeed" val="33" />
 			</effect>
 		</for>
 	</skill>
@@ -1618,7 +1618,7 @@
 			<effect name="Buff">
 				<mul stat="regHp" val="#rate" />
 				<mul stat="regMp" val="#rate" />
-				<mul stat="runSpd" val="#rateSpd" />
+				<mul stat="moveSpeed" val="#rateSpd" />
 			</effect>
 		</for>
 	</skill>

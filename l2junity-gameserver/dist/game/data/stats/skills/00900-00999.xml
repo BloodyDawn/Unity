@@ -327,7 +327,7 @@
 		<for>
 			<effect name="DamOverTime" ticks="5">
 				<param power="230" />
-				<mul stat="runSpd" val="0.3" />
+				<mul stat="moveSpeed" val="0.3" />
 				<mul stat="pAtkSpd" val="0.8" />
 				<mul stat="mAtkSpd" val="0.8" />
 			</effect>
@@ -509,7 +509,7 @@
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtk" val="1.16" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<add stat="runSpd" val="8" />
+				<add stat="moveSpeed" val="8" />
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mDef" val="0.84" />
 				<sub stat="rEvas" val="4" />
@@ -697,7 +697,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Hide">
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 		</for>
 	</skill>
@@ -1474,7 +1474,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="66" />
+				<add stat="moveSpeed" val="66" />
 			</effect>
 		</for>
 	</skill>
@@ -1601,7 +1601,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
+				<add stat="moveSpeed" val="33" />
 			</effect>
 		</for>
 	</skill>
@@ -1624,7 +1624,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
+				<add stat="moveSpeed" val="33" />
 			</effect>
 		</for>
 	</skill>
@@ -1647,7 +1647,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
+				<add stat="moveSpeed" val="33" />
 			</effect>
 		</for>
 	</skill>
@@ -1671,7 +1671,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
+				<add stat="moveSpeed" val="33" />
 			</effect>
 		</for>
 	</skill>
@@ -1695,7 +1695,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SilentMove">
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 		</for>
 	</skill>
@@ -1786,7 +1786,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="runSpd" val="2" />
+				<mul stat="moveSpeed" val="2" />
 			</effect>
 		</for>
 	</skill>
@@ -1809,7 +1809,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="66" />
+				<add stat="moveSpeed" val="66" />
 			</effect>
 		</for>
 	</skill>
@@ -2039,7 +2039,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 		</for>
 	</skill>
@@ -2447,7 +2447,7 @@
 		</cond>
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.2" />
+				<mul stat="moveSpeed" val="0.2" />
 			</effect>
 			<effect name="PhysicalAttack">
 				<param power="3488" />

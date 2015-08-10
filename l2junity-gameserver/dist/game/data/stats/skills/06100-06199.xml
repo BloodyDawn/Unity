@@ -282,7 +282,7 @@
 				<mul stat="maxHp" val="1.1" />
 				<mul stat="maxMp" val="1.1" />
 				<mul stat="maxCp" val="1.1" />
-				<add stat="runSpd" val="15" />
+				<add stat="moveSpeed" val="15" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="mAtk" val="1.15" />
 				<add stat="rCrit" val="50" />
@@ -706,7 +706,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="#speed" />
+				<mul stat="moveSpeed" val="#speed" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="rEvas" val="#pDef" />
 			</effect>
@@ -843,7 +843,7 @@
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.5" />
 				<mul stat="pDef" val="0.5" />
-				<mul stat="runSpd" val="0.5" />
+				<mul stat="moveSpeed" val="0.5" />
 			</effect>
 		</for>
 	</skill>

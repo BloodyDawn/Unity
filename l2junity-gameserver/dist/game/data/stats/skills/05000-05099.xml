@@ -208,7 +208,7 @@
 				<mul stat="mAtk" val="#attackAndSpeed" />
 				<mul stat="pAtkSpd" val="#attackAndSpeed" />
 				<mul stat="mAtkSpd" val="#attackAndSpeed" />
-				<add stat="runSpd" val="#attackAndSpeed" />
+				<add stat="moveSpeed" val="#attackAndSpeed" />
 				<mul stat="healEffect" val="#healEffect" />
 			</effect>
 			<effect name="DispelByCategory">
@@ -438,7 +438,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Grow">
-				<mul stat="runSpd" val="1.22" />
+				<mul stat="moveSpeed" val="1.22" />
 			</effect>
 			<effect name="HealPercent">
 				<param power="20" />
@@ -1403,7 +1403,7 @@
 				<sub stat="rEvas" val="#accCombatrEvas" />
 				<mul stat="pDef" val="#pDefmDef" />
 				<mul stat="mDef" val="#pDefmDef" />
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -1592,7 +1592,7 @@
 		<selfEffects>
 			<effect name="Buff">
 				<param chance="80" />
-				<add stat="runSpd" val="40" />
+				<add stat="moveSpeed" val="40" />
 			</effect>
 		</selfEffects>
 	</skill>

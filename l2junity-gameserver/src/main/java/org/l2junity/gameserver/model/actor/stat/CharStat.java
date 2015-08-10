@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.model.actor.stat;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.EnumMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -36,7 +37,6 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
-import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.TraitType;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -321,11 +321,11 @@ public class CharStat
 		double baseSpeed;
 		if (_activeChar.isInsideZone(ZoneId.WATER))
 		{
-			baseSpeed = getBaseMoveSpeed(_activeChar.isRunning() ? MoveType.FAST_SWIM : MoveType.SLOW_SWIM);
+			baseSpeed = _activeChar.getTemplate().getBaseValue(_activeChar.isRunning() ? Stats.SWIM_RUN_SPEED : Stats.SWIM_WALK_SPEED, 0);
 		}
 		else
 		{
-			baseSpeed = getBaseMoveSpeed(_activeChar.isRunning() ? MoveType.RUN : MoveType.WALK);
+			baseSpeed = _activeChar.getTemplate().getBaseValue(_activeChar.isRunning() ? Stats.RUN_SPEED : Stats.WALK_SPEED, 0);
 		}
 		return getMoveSpeed() * (1. / baseSpeed);
 	}
@@ -335,13 +335,7 @@ public class CharStat
 	 */
 	public double getRunSpeed()
 	{
-		final double baseRunSpd = _activeChar.isInsideZone(ZoneId.WATER) ? getSwimRunSpeed() : getBaseMoveSpeed(MoveType.RUN);
-		if (baseRunSpd <= 0)
-		{
-			return 0;
-		}
-		
-		return calcStat(Stats.MOVE_SPEED, baseRunSpd, null, null);
+		return getValue(_activeChar.isInsideZone(ZoneId.WATER) ? Stats.SWIM_RUN_SPEED : Stats.RUN_SPEED);
 	}
 	
 	/**
@@ -349,13 +343,7 @@ public class CharStat
 	 */
 	public double getWalkSpeed()
 	{
-		final double baseWalkSpd = _activeChar.isInsideZone(ZoneId.WATER) ? getSwimWalkSpeed() : getBaseMoveSpeed(MoveType.WALK);
-		if (baseWalkSpd <= 0)
-		{
-			return 0;
-		}
-		
-		return calcStat(Stats.MOVE_SPEED, baseWalkSpd);
+		return getValue(_activeChar.isInsideZone(ZoneId.WATER) ? Stats.SWIM_WALK_SPEED : Stats.WALK_SPEED);
 	}
 	
 	/**
@@ -363,13 +351,7 @@ public class CharStat
 	 */
 	public double getSwimRunSpeed()
 	{
-		final double baseRunSpd = getBaseMoveSpeed(MoveType.FAST_SWIM);
-		if (baseRunSpd <= 0)
-		{
-			return 0;
-		}
-		
-		return calcStat(Stats.MOVE_SPEED, baseRunSpd, null, null);
+		return getValue(Stats.SWIM_RUN_SPEED);
 	}
 	
 	/**
@@ -377,22 +359,7 @@ public class CharStat
 	 */
 	public double getSwimWalkSpeed()
 	{
-		final double baseWalkSpd = getBaseMoveSpeed(MoveType.SLOW_SWIM);
-		if (baseWalkSpd <= 0)
-		{
-			return 0;
-		}
-		
-		return calcStat(Stats.MOVE_SPEED, baseWalkSpd);
-	}
-	
-	/**
-	 * @param type movement type
-	 * @return the base move speed of given movement type.
-	 */
-	public double getBaseMoveSpeed(MoveType type)
-	{
-		return _activeChar.getTemplate().getBaseMoveSpeed(type);
+		return getValue(Stats.SWIM_WALK_SPEED);
 	}
 	
 	/**
@@ -764,10 +731,20 @@ public class CharStat
 	 */
 	public double getAdd(Stats stat)
 	{
+		return getAdd(stat, 0d);
+	}
+	
+	/**
+	 * @param stat
+	 * @param defaultValue
+	 * @return the add value
+	 */
+	public double getAdd(Stats stat, double defaultValue)
+	{
 		_lock.readLock().lock();
 		try
 		{
-			return _statsAdd.getOrDefault(stat, 0d);
+			return _statsAdd.getOrDefault(stat, defaultValue);
 		}
 		finally
 		{
@@ -781,10 +758,20 @@ public class CharStat
 	 */
 	public double getMul(Stats stat)
 	{
+		return getMul(stat, 1d);
+	}
+	
+	/**
+	 * @param stat
+	 * @param defaultValue
+	 * @return the mul value
+	 */
+	public double getMul(Stats stat, double defaultValue)
+	{
 		_lock.readLock().lock();
 		try
 		{
-			return _statsMul.getOrDefault(stat, 1d);
+			return _statsMul.getOrDefault(stat, defaultValue);
 		}
 		finally
 		{
@@ -821,8 +808,8 @@ public class CharStat
 		try
 		{
 			// Copy old data before wiping it out
-			final Map<Stats, Double> adds = new EnumMap<>(_statsAdd);
-			final Map<Stats, Double> muls = new EnumMap<>(_statsMul);
+			final Map<Stats, Double> adds = !broadcast ? Collections.emptyMap() : new EnumMap<>(_statsAdd);
+			final Map<Stats, Double> muls = !broadcast ? Collections.emptyMap() : new EnumMap<>(_statsMul);
 			
 			// Wipe all the data
 			_statsAdd.clear();

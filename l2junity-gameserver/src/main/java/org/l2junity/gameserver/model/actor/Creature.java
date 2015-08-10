@@ -3451,6 +3451,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					switch (stat)
 					{
 						case MOVE_SPEED:
+						case RUN_SPEED:
+						case WALK_SPEED:
+						case SWIM_RUN_SPEED:
+						case SWIM_WALK_SPEED:
+						case FLY_RUN_SPEED:
+						case FLY_WALK_SPEED:
 						{
 							info.addComponentType(UserInfoType.MULTIPLIER);
 							break;

@@ -31,7 +31,6 @@ import org.l2junity.gameserver.model.holders.AdditionalSkillHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.type.WeaponType;
-import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.ExBasicActionList;
 
@@ -50,7 +49,6 @@ public final class TransformTemplate
 	private List<AdditionalItemHolder> _additionalItems;
 	private Map<Integer, Integer> _baseDefense;
 	private Map<Integer, Double> _baseStats;
-	private Map<Integer, Double> _baseSpeed;
 	
 	private ExBasicActionList _list;
 	private final Map<Integer, TransformLevelData> _data = new LinkedHashMap<>(100);
@@ -63,12 +61,12 @@ public final class TransformTemplate
 		_baseAttackRange = set.getInt("range", 40);
 		_baseRandomDamage = set.getDouble("randomDamage", 0);
 		
-		addSpeed(MoveType.WALK, set.getDouble("walk", 0));
-		addSpeed(MoveType.RUN, set.getDouble("run", 0));
-		addSpeed(MoveType.SLOW_SWIM, set.getDouble("waterWalk", 0));
-		addSpeed(MoveType.FAST_SWIM, set.getDouble("waterRun", 0));
-		addSpeed(MoveType.SLOW_FLY, set.getDouble("flyWalk", 0));
-		addSpeed(MoveType.FAST_FLY, set.getDouble("flyRun", 0));
+		addStats(Stats.WALK_SPEED, set.getDouble("walk", 0));
+		addStats(Stats.RUN_SPEED, set.getDouble("run", 0));
+		addStats(Stats.SWIM_WALK_SPEED, set.getDouble("waterWalk", 0));
+		addStats(Stats.SWIM_RUN_SPEED, set.getDouble("waterRun", 0));
+		addStats(Stats.FLY_WALK_SPEED, set.getDouble("flyWalk", 0));
+		addStats(Stats.FLY_RUN_SPEED, set.getDouble("flyRun", 0));
 		
 		addStats(Stats.POWER_ATTACK, set.getDouble("pAtk", 0));
 		addStats(Stats.MAGIC_ATTACK, set.getDouble("mAtk", 0));
@@ -94,24 +92,6 @@ public final class TransformTemplate
 		addDefense(Inventory.PAPERDOLL_RFINGER, set.getInt("rfinger", 0));
 		addDefense(Inventory.PAPERDOLL_LFINGER, set.getInt("lfinger", 0));
 		addDefense(Inventory.PAPERDOLL_NECK, set.getInt("neck", 0));
-	}
-	
-	private void addSpeed(MoveType type, double val)
-	{
-		if (_baseSpeed == null)
-		{
-			_baseSpeed = new HashMap<>();
-		}
-		_baseSpeed.put(type.ordinal(), val);
-	}
-	
-	public double getBaseMoveSpeed(MoveType type)
-	{
-		if ((_baseSpeed == null) || !_baseSpeed.containsKey(type.ordinal()))
-		{
-			return 0;
-		}
-		return _baseSpeed.get(type.ordinal());
 	}
 	
 	private void addDefense(int type, int val)

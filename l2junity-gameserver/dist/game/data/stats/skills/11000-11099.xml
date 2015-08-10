@@ -956,7 +956,7 @@
 				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -1455,7 +1455,7 @@
 				<mul stat="rCrit" val="0.9" />
 				<mul stat="mCritRate" val="0.9" />
 				<mul stat="pDef" val="0.9" />
-				<mul stat="runSpd" val="0.9" />
+				<mul stat="moveSpeed" val="0.9" />
 				<sub stat="rEvas" val="6" />
 			</effect>
 		</for>
@@ -1502,7 +1502,7 @@
 				<mul stat="mAtkSpd" val="0.92" />
 				<mul stat="rCrit" val="0.92" />
 				<mul stat="mCritRate" val="0.92" />
-				<mul stat="runSpd" val="0.92" />
+				<mul stat="moveSpeed" val="0.92" />
 				<sub stat="accCombat" val="12" />
 			</effect>
 		</for>
@@ -1760,7 +1760,7 @@
 			<effect name="BlockControl" />
 			<effect name="Fear" />
 			<effect name="Debuff">
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
@@ -1807,7 +1807,7 @@
 			<effect name="BlockControl" />
 			<effect name="Fear" />
 			<effect name="Debuff">
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
@@ -1943,7 +1943,7 @@
 		<set name="reuseDelay" val="30000" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
@@ -2059,7 +2059,7 @@
 			<effect name="BlockControl" />
 			<effect name="Fear" />
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.6" />
+				<mul stat="moveSpeed" val="0.6" />
 			</effect>
 			<effect name="DamOverTime" ticks="1">
 				<param power="200" />
@@ -2104,7 +2104,7 @@
 			<effect name="BlockControl" />
 			<effect name="Fear" />
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 			<effect name="DamOverTime" ticks="1">
 				<param power="160" />
@@ -2511,7 +2511,7 @@
 			<effect name="Fear" />
 			<effect name="Root" />
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
@@ -2545,7 +2545,7 @@
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -2653,7 +2653,7 @@
 				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>

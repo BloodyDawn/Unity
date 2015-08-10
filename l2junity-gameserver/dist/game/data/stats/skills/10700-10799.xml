@@ -374,7 +374,7 @@
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<sub stat="damageZoneVuln" val="30" />
 				<mul stat="weightLimit" val="1.51" />
 			</effect>
@@ -1195,7 +1195,7 @@
 				<param criticalChance="5" />
 			</effect>
 			<effect name="Debuff">
-				<sub stat="runSpd" val="70" />
+				<sub stat="moveSpeed" val="70" />
 			</effect>
 		</for>
 	</skill>
@@ -1316,7 +1316,7 @@
 		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Hide">
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 		</for>
 	</skill>

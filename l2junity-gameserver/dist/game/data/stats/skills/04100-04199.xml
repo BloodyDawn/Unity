@@ -297,7 +297,7 @@
 				<mul stat="mDef" val="0.6" />
 				<mul stat="pAtkSpd" val="0.75" />
 				<mul stat="mAtkSpd" val="0.75" />
-				<mul stat="runSpd" val="0.5" />
+				<mul stat="moveSpeed" val="0.5" />
 				<sub stat="accCombat" val="19" />
 				<sub stat="rEvas" val="19" />
 				<mul stat="rCrit" val="1.1" />
@@ -1332,7 +1332,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 		</for>
 	</skill>
@@ -1590,7 +1590,7 @@
 		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.5" />
+				<mul stat="moveSpeed" val="0.5" />
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
 			</effect>
@@ -1675,7 +1675,7 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.77" />
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 		</for>
 	</skill>
@@ -2192,7 +2192,7 @@
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -2425,7 +2425,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 		</for>
 	</skill>

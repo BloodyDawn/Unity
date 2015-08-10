@@ -18,7 +18,6 @@
  */
 package org.l2junity.gameserver.model.actor.templates;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.Map;
@@ -29,7 +28,6 @@ import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BasicProperty;
-import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -49,7 +47,6 @@ public class L2CharTemplate extends ListenersContainer
 	private double _fCollisionRadius;
 	private double _fCollisionHeight;
 	
-	private final double[] _moveType = new double[MoveType.values().length];
 	private final int[] _basicProperty = new int[BasicProperty.values().length];
 	protected final Map<Stats, Double> _baseValues = new EnumMap<>(Stats.class);
 	
@@ -131,13 +128,16 @@ public class L2CharTemplate extends ListenersContainer
 		_collisionHeight = (int) _fCollisionHeight;
 		
 		// Speed
-		Arrays.fill(_moveType, 1);
-		setBaseMoveSpeed(MoveType.RUN, set.getDouble("baseRunSpd", 120));
-		setBaseMoveSpeed(MoveType.WALK, set.getDouble("baseWalkSpd", 50));
-		setBaseMoveSpeed(MoveType.FAST_SWIM, set.getDouble("baseSwimRunSpd", getBaseMoveSpeed(MoveType.RUN)));
-		setBaseMoveSpeed(MoveType.SLOW_SWIM, set.getDouble("baseSwimWalkSpd", getBaseMoveSpeed(MoveType.WALK)));
-		setBaseMoveSpeed(MoveType.FAST_FLY, set.getDouble("baseFlyRunSpd", getBaseMoveSpeed(MoveType.RUN)));
-		setBaseMoveSpeed(MoveType.SLOW_FLY, set.getDouble("baseFlyWalkSpd", getBaseMoveSpeed(MoveType.WALK)));
+		_baseValues.put(Stats.RUN_SPEED, set.getDouble("baseRunSpd", 120));
+		_baseValues.put(Stats.WALK_SPEED, set.getDouble("baseWalkSpd", 50));
+		
+		// Swimming
+		_baseValues.put(Stats.SWIM_RUN_SPEED, set.getDouble("baseSwimRunSpd", 120));
+		_baseValues.put(Stats.SWIM_WALK_SPEED, set.getDouble("baseSwimWalkSpd", 50));
+		
+		// Flying
+		_baseValues.put(Stats.FLY_RUN_SPEED, set.getDouble("baseFlyRunSpd", 120));
+		_baseValues.put(Stats.FLY_WALK_SPEED, set.getDouble("baseFlyWalkSpd", 50));
 		
 		// Attack type
 		_baseAttackType = set.getEnum("baseAtkType", WeaponType.class, WeaponType.FIST);
@@ -542,16 +542,6 @@ public class L2CharTemplate extends ListenersContainer
 	public void setRace(Race race)
 	{
 		_race = race;
-	}
-	
-	public void setBaseMoveSpeed(MoveType type, double val)
-	{
-		_moveType[type.ordinal()] = val;
-	}
-	
-	public double getBaseMoveSpeed(MoveType mt)
-	{
-		return _moveType[mt.ordinal()];
 	}
 	
 	/**

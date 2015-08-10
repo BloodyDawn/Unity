@@ -125,7 +125,13 @@ public enum Stats
 	MAGIC_ATTACK_RANGE("mAtkRange"),
 	ATTACK_COUNT_MAX("atkCountMax"),
 	// Run speed, walk & escape speed are calculated proportionally, magic speed is a buff
-	MOVE_SPEED("runSpd", new SpeedFinalizer()),
+	MOVE_SPEED("moveSpeed"),
+	RUN_SPEED("runSpd", new SpeedFinalizer()),
+	WALK_SPEED("walkSpd", new SpeedFinalizer()),
+	SWIM_RUN_SPEED("fastSwimSpd", new SpeedFinalizer()),
+	SWIM_WALK_SPEED("slowSimSpd", new SpeedFinalizer()),
+	FLY_RUN_SPEED("fastFlySpd", new SpeedFinalizer()),
+	FLY_WALK_SPEED("slowFlySpd", new SpeedFinalizer()),
 	
 	// BASIC STATS
 	STAT_STR("STR", new BaseStatsFinalizer()),
@@ -347,6 +353,17 @@ public enum Stats
 	{
 		final double mul = creature.getStat().getMul(stat);
 		final double add = creature.getStat().getAdd(stat);
+		if (creature.isPlayer())
+		{
+			switch (stat)
+			{
+				case POWER_ATTACK_SPEED:
+				{
+					System.out.println(String.format("%s (%s) (%f * %f) + %f = %f", creature.getName(), stat.name(), baseValue, mul, add, ((baseValue * mul) + add)));
+					break;
+				}
+			}
+		}
 		return (baseValue * mul) + add;
 	}
 	

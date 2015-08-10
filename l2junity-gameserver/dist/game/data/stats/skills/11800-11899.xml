@@ -688,7 +688,7 @@
 				<add stat="accCombat" val="5" />
 				<add stat="rEvas" val="5" />
 				<add stat="mEvas" val="5" />
-				<add stat="runSpd" val="34" />
+				<add stat="moveSpeed" val="34" />
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -888,7 +888,7 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<mul stat="debuffVuln" val="0.9" />
 				<mul stat="defCritRate" val="0.7" />
-				<mul stat="runSpd" val="0.85" />
+				<mul stat="moveSpeed" val="0.85" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="MULTI_BUFF,-1;COUNTER_CRITICAL,-1" />
@@ -990,7 +990,7 @@
 			<effect name="Buff">
 				<add stat="regHp" val="1" /> <!-- 1 Bonus HP/MP regen... what a joke :D -->
 				<add stat="regMp" val="1" />
-				<add stat="runSpd" val="5" />
+				<add stat="moveSpeed" val="5" />
 			</effect>
 		</for>
 	</skill>
@@ -1020,7 +1020,7 @@
 			<effect name="Buff">
 				<add stat="regHp" val="1" />
 				<add stat="regMp" val="0.5" />
-				<add stat="runSpd" val="5" />
+				<add stat="moveSpeed" val="5" />
 			</effect>
 		</for>
 	</skill>
@@ -1041,7 +1041,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="100" />
+				<add stat="moveSpeed" val="100" />
 			</effect>
 		</for>
 	</skill>

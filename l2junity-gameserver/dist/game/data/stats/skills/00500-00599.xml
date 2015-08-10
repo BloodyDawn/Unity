@@ -1014,7 +1014,7 @@
 				<mul stat="pAtk" val="1.25" />
 				<mul stat="pDef" val="1.3" />
 				<mul stat="pAtkSpd" val="1.1" />
-				<mul stat="runSpd" val="1.1" />
+				<mul stat="moveSpeed" val="1.1" />
 			</effect>
 			<effect name="MaxHp">
 				<param amount="35" mode="PER" />
@@ -1882,7 +1882,7 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -2474,7 +2474,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="66" />
+				<add stat="moveSpeed" val="66" />
 			</effect>
 		</for>
 	</skill>

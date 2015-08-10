@@ -293,6 +293,15 @@ public abstract class AbstractEffect
 	private void processFunc(Creature effected, FuncTemplate func, Skill skill)
 	{
 		final Stats stat = func.getStat();
+		processStats(effected, func, func.getStat(), skill);
+		if ((stat == Stats.POWER_ATTACK_SPEED) && effected.isPlayer())
+		{
+			System.out.println("Applying " + skill + " stat: " + stat + " value: " + func.getValue() + " type: " + func.getFunctionClass().getSimpleName());
+		}
+	}
+	
+	private void processStats(Creature effected, FuncTemplate func, Stats stat, Skill skill)
+	{
 		if (func.getFunctionClass() == FuncSet.class)
 		{
 			effected.getStat().mergeAdd(stat, func.getValue());
@@ -308,6 +317,17 @@ public abstract class AbstractEffect
 		else if (func.getFunctionClass() == FuncMul.class)
 		{
 			effected.getStat().mergeMul(stat, func.getValue());
+		}
+		
+		// TODO: Make p_speed effect and handle it there!
+		if (stat == Stats.MOVE_SPEED)
+		{
+			processStats(effected, func, Stats.RUN_SPEED, skill);
+			processStats(effected, func, Stats.WALK_SPEED, skill);
+			processStats(effected, func, Stats.SWIM_RUN_SPEED, skill);
+			processStats(effected, func, Stats.SWIM_WALK_SPEED, skill);
+			processStats(effected, func, Stats.FLY_RUN_SPEED, skill);
+			processStats(effected, func, Stats.FLY_WALK_SPEED, skill);
 		}
 	}
 }

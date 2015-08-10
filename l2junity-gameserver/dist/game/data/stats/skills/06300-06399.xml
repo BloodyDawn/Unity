@@ -825,7 +825,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 				<mul stat="pAtkSpd" val="0.7" />
 			</effect>
 		</for>
@@ -1156,7 +1156,7 @@
 			<effect name="Buff">
 				<mul stat="mAtkSpd" val="#pmAtkSpd" />
 				<mul stat="pAtkSpd" val="#pmAtkSpd" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -1697,7 +1697,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.5" />
+				<mul stat="moveSpeed" val="0.5" />
 			</effect>
 		</for>
 	</skill>

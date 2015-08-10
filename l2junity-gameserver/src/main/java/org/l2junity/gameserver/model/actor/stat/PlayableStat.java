@@ -22,15 +22,12 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
 import org.l2junity.gameserver.data.xml.impl.PetDataTable;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
-import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayableExpChanged;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
-import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.model.zone.type.SwampZone;
 import org.l2junity.gameserver.network.client.send.ExNewSkillToLearnByLevelUp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -226,34 +223,6 @@ public class PlayableStat extends CharStat
 	public long getExpForLevel(int level)
 	{
 		return level;
-	}
-	
-	@Override
-	public double getRunSpeed()
-	{
-		if (getActiveChar().isInsideZone(ZoneId.SWAMP))
-		{
-			final SwampZone zone = ZoneManager.getInstance().getZone(getActiveChar(), SwampZone.class);
-			if (zone != null)
-			{
-				return super.getRunSpeed() * zone.getMoveBonus();
-			}
-		}
-		return super.getRunSpeed();
-	}
-	
-	@Override
-	public double getWalkSpeed()
-	{
-		if (getActiveChar().isInsideZone(ZoneId.SWAMP))
-		{
-			final SwampZone zone = ZoneManager.getInstance().getZone(getActiveChar(), SwampZone.class);
-			if (zone != null)
-			{
-				return super.getWalkSpeed() * zone.getMoveBonus();
-			}
-		}
-		return super.getWalkSpeed();
 	}
 	
 	@Override

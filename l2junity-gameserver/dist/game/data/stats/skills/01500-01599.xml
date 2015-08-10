@@ -156,7 +156,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
+				<add stat="moveSpeed" val="33" />
 				<add stat="rEvas" val="4" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -434,7 +434,7 @@
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
 				<param power="12" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="mAtkSpd" val="0.7" />
 			</effect>
@@ -960,7 +960,7 @@
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 		</for>
 	</skill>
@@ -1127,7 +1127,7 @@
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
+				<add stat="moveSpeed" val="33" />
 				<add stat="rEvas" val="4" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -1328,7 +1328,7 @@
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.5" />
 				<mul stat="pAtkSpd" val="0.5" />
-				<mul stat="runSpd" val="0.5" />
+				<mul stat="moveSpeed" val="0.5" />
 				<sub stat="accCombat" val="12" />
 			</effect>
 		</for>
@@ -1955,7 +1955,7 @@
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>

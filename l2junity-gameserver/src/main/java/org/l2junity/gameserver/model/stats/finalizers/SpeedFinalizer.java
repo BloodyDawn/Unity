@@ -20,10 +20,18 @@ package org.l2junity.gameserver.model.stats.finalizers;
 
 import java.util.Optional;
 
+import org.l2junity.Config;
+import org.l2junity.gameserver.data.xml.impl.PetDataTable;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.PetLevelData;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.actor.transform.TransformTemplate;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.model.zone.type.SwampZone;
 
 /**
  * @author UnAfraid
@@ -33,19 +41,74 @@ public class SpeedFinalizer implements IStatsFunction
 	@Override
 	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		double value = 1;
-		if (base.isPresent())
-		{
-			value = base.get();
-		}
+		throwIfPresent(base);
 		
-		final byte speedStat = (byte) creature.calcStat(Stats.STAT_SPEED, -1);
+		double baseValue = getBaseSpeed(creature, stat);
+		
+		final byte speedStat = (byte) creature.getStat().getAdd(Stats.STAT_SPEED, -1);
 		if ((speedStat >= 0) && (speedStat < BaseStats.values().length))
 		{
 			final BaseStats baseStat = BaseStats.values()[speedStat];
-			value += Math.max(0, baseStat.calcValue(creature) - 55);
+			final double bonusDex = Math.max(0, baseStat.calcValue(creature) - 55);
+			if (creature.isPlayer())
+			{
+				System.out.println("speedstat: " + speedStat);
+				System.out.println("baseValue: " + baseValue);
+				System.out.println(baseStat + " Bonus: " + bonusDex);
+			}
+			baseValue += bonusDex;
 		}
 		
-		return Stats.defaultValue(creature, stat, value);
+		return Math.min(Stats.defaultValue(creature, stat, baseValue), Config.MAX_RUN_SPEED);
+	}
+	
+	private double getBaseSpeed(Creature creature, Stats stat)
+	{
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		if (creature.isPlayer())
+		{
+			final PlayerInstance player = creature.getActingPlayer();
+			if (player.isTransformed())
+			{
+				final TransformTemplate template = player.getTransformation().getTemplate(player);
+				if (template != null)
+				{
+					final double speed = template.getStats(stat);
+					if (speed > 0)
+					{
+						baseValue = speed;
+					}
+				}
+			}
+			else if (player.isMounted())
+			{
+				final PetLevelData data = PetDataTable.getInstance().getPetLevelData(player.getMountNpcId(), player.getMountLevel());
+				if (data != null)
+				{
+					baseValue = data.getSpeedOnRide(stat);
+					// if level diff with mount >= 10, it decreases move speed by 50%
+					if ((player.getMountLevel() - creature.getLevel()) >= 10)
+					{
+						baseValue /= 2;
+					}
+					
+					// if mount is hungry, it decreases move speed by 50%
+					if (player.isHungry())
+					{
+						baseValue /= 2;
+					}
+				}
+			}
+			baseValue += Config.RUN_SPD_BOOST;
+		}
+		if (creature.isPlayable() && creature.isInsideZone(ZoneId.SWAMP))
+		{
+			final SwampZone zone = ZoneManager.getInstance().getZone(creature, SwampZone.class);
+			if (zone != null)
+			{
+				baseValue *= zone.getMoveBonus();
+			}
+		}
+		return baseValue;
 	}
 }

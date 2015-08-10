@@ -94,7 +94,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="1.16" />
+				<add stat="moveSpeed" val="1.16" />
 				<add stat="breath" val="33" />
 				<mul stat="regMp" val="1.0083" />
 			</effect>
@@ -109,7 +109,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="1.16" />
+				<add stat="moveSpeed" val="1.16" />
 				<add stat="breath" val="33" />
 				<mul stat="regMp" val="1.0083" />
 			</effect>
@@ -126,7 +126,7 @@
 			<effect name="Buff">
 				<add stat="breath" val="200" />
 				<mul stat="regMp" val="1.0724" />
-				<add stat="runSpd" val="7" />
+				<add stat="moveSpeed" val="7" />
 			</effect>
 		</for>
 	</skill>
@@ -139,7 +139,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="2.91" />
+				<add stat="moveSpeed" val="2.91" />
 				<add stat="breath" val="88" />
 				<mul stat="regMp" val="1.0208" />
 			</effect>
@@ -154,7 +154,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="1.75" />
+				<add stat="moveSpeed" val="1.75" />
 				<add stat="breath" val="50" />
 				<mul stat="regMp" val="1.0125" />
 			</effect>
@@ -170,7 +170,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.0724" />
-				<add stat="runSpd" val="7" />
+				<add stat="moveSpeed" val="7" />
 			</effect>
 		</for>
 	</skill>
@@ -183,7 +183,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="2.91" />
+				<add stat="moveSpeed" val="2.91" />
 				<mul stat="regHp" val="1.0208" />
 			</effect>
 		</for>
@@ -197,7 +197,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="1.16" />
+				<add stat="moveSpeed" val="1.16" />
 				<mul stat="regHp" val="1.0083" />
 			</effect>
 		</for>
@@ -211,7 +211,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="1.16" />
+				<add stat="moveSpeed" val="1.16" />
 				<mul stat="regHp" val="1.0083" />
 			</effect>
 		</for>
@@ -225,7 +225,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="1.75" />
+				<add stat="moveSpeed" val="1.75" />
 				<mul stat="regHp" val="1.0125" />
 			</effect>
 		</for>
@@ -541,7 +541,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.0133" />
-				<add stat="runSpd" val="1.16" />
+				<add stat="moveSpeed" val="1.16" />
 				<sub stat="cancel" val="8" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -561,7 +561,7 @@
 				<add stat="cancelVuln" val="8.33" />
 				<mul stat="mAtkSpd" val="1.15" />
 				<mul stat="pDef" val="1.0333" />
-				<add stat="runSpd" val="2.91" />
+				<add stat="moveSpeed" val="2.91" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param PARALYZE="20" />
@@ -578,7 +578,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.0133" />
-				<add stat="runSpd" val="1.16" />
+				<add stat="moveSpeed" val="1.16" />
 				<sub stat="cancel" val="8" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -596,7 +596,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="1.02" />
-				<add stat="runSpd" val="1.75" />
+				<add stat="moveSpeed" val="1.75" />
 				<sub stat="cancel" val="13" />
 			</effect>
 			<effect name="DefenceTrait">
@@ -1306,7 +1306,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.0041" />
-				<add stat="runSpd" val="1.16" />
+				<add stat="moveSpeed" val="1.16" />
 				<sub stat="cancel" val="8" />
 				<add stat="weightPenalty" val="960" />
 			</effect>
@@ -1327,7 +1327,7 @@
 				<sub stat="cancel" val="21" />
 				<add stat="weightPenalty" val="8159" />
 				<mul stat="mAtk" val="1.1603" />
-				<mul stat="runSpd" val="1.0991" />
+				<mul stat="moveSpeed" val="1.0991" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="20.83" />
@@ -1344,7 +1344,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.0041" />
-				<add stat="runSpd" val="1.16" />
+				<add stat="moveSpeed" val="1.16" />
 				<sub stat="cancel" val="8" />
 				<add stat="weightPenalty" val="960" />
 			</effect>
@@ -1363,7 +1363,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.0062" />
-				<add stat="runSpd" val="1.175" />
+				<add stat="moveSpeed" val="1.175" />
 				<sub stat="cancel" val="13" />
 				<add stat="weightPenalty" val="1440" />
 			</effect>

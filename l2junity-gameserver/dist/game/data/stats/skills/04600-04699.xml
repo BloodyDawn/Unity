@@ -299,7 +299,7 @@
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mDef" val="#mDef" />
 			</effect>
@@ -718,7 +718,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -925,7 +925,7 @@
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mDef" val="#mDef" />
 			</effect>
@@ -994,7 +994,7 @@
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mDef" val="#mDef" />
 				<mul stat="mCritRate" val="#mCritRate" />
@@ -1034,7 +1034,7 @@
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mDef" val="#mDef" />
 				<add stat="reflectDam" val="#reflect" />
@@ -1135,7 +1135,7 @@
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mDef" val="#mDef" />
 			</effect>
@@ -1237,7 +1237,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
