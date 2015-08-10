@@ -1720,15 +1720,20 @@
 		</for>
 	</skill>
 	<skill id="7097" levels="1" name="Cancel Shadow Move">
-		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill01702" />
 		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="709" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
 		<set name="specialLevel" val="-1" />
+		<set name="isTriggeredSkill" val="true" />
 		<set name="affectRange" val="2000" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="DispelBySlot">
+				<param dispel="DANCE_OF_SHADOW,-1;STEALTH,-1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="7098" levels="1" name="Clan-exclusive Pet Heal">
 		<!-- AUTO GENERATED SKILL -->

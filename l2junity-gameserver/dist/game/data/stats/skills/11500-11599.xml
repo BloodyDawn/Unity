@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="11500" levels="1" name="Heavy Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
@@ -17,6 +17,14 @@
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
+		<cond msgId="113" addName="1">
+			<target abnormalType="KNOCKDOWN" />
+		</cond>
+		<for>
+			<effect name="MagicalAttack">
+				<param power="104" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11501" levels="7" name="Superior Dual Weapon Mastery">
 		<!-- P. Atk. + 30%, Additional P. Atk. + 1027, Atk. Spd. + 30%, P. Critical Damage + 15% when a dualsword/dualblunt is equipped. Normal hit damage to monsters + 20%. Chance to activate Physical Pose during a normal attack. Depending on your STR can reset cooldown or double skill effect duration. -->
@@ -1665,10 +1673,10 @@
 		<set name="icon" val="icon.skill11562" />
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="120" />
-		<set name="abnormalType" val="DANCE_OF_SHADOW" /> <!-- Custom -->
+		<set name="abnormalType" val="DANCE_OF_SHADOW" />
 		<set name="abnormalVisualEffect" val="STEALTH" />
 		<set name="affectRange" val="1000" />
-		<set name="effectPoint" val="666" /> <!-- Custom -->
+		<set name="effectPoint" val="666" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="60" />
@@ -1680,8 +1688,29 @@
 		<set name="magicLvl" val="85" />
 		<set name="reuseDelay" val="3000" />
 		<for>
-			<effect name="CancelEffectOnOffense" /> <!-- Cancels this effect from you and party members around skill range on offense -->
 			<effect name="SilentMove" />
+			<effect name="TriggerSkillByMagicType">
+				<param magicTypes="0;1;2;3;4;22" />
+				<param chance="100" />
+				<param skillId="7097" skillLevel="1" /> <!-- Cancel Shadow Move -->
+				<param targetType="PARTY" />
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="100" />
+				<param skillId="7097" skillLevel="1" /> <!-- Cancel Shadow Move -->
+				<param targetType="PARTY" />
+				<param allowWeapons="SWORD,BLUNT" />
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param isCritical="false" />
+				<param minDamage="1" chance="100" />
+				<param skillId="7097" skillLevel="1" /> <!-- Cancel Shadow Move -->
+				<param targetType="PARTY" />
+				<param allowWeapons="SWORD,BLUNT" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11563" levels="1" name="Quick Return">
