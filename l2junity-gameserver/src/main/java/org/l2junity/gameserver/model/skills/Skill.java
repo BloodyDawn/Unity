@@ -387,15 +387,7 @@ public final class Skill implements IIdentifiable
 		
 		_channelingSkillId = set.getInt("channelingSkillId", 0);
 		_channelingTickInterval = set.getInt("channelingTickInterval", 2000);
-		if (_channelingTickInterval < 100)
-		{
-			_log.warn("Channeling tick interval of {}ms is too low! Skill Id: {}", _channelingTickInterval, _id);
-		}
 		_channelingTickInitialDelay = set.getInt("channelingTickInitialDelay", _channelingTickInterval);
-		if (_channelingTickInitialDelay < 100)
-		{
-			_log.warn("Channeling tick initial delay of {}ms is too low! Skill Id: {}", _channelingTickInitialDelay, _id);
-		}
 		
 		_isMentoring = set.getBoolean("isMentoring", false);
 		
