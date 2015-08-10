@@ -22,8 +22,6 @@ import java.util.Optional;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.transform.Transform;
-import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -38,9 +36,7 @@ public class MAttackFinalizer implements IStatsFunction
 	{
 		throwIfPresent(base);
 		
-		final Weapon weapon = creature.getActiveWeaponItem();
-		final Transform transform = creature.getTransformation();
-		double baseValue = (weapon != null ? weapon.getStats(stat, creature.getTemplate().getBaseValue(stat, 0)) : transform != null ? transform.getStats(creature.getActingPlayer(), stat, 0) : creature.getTemplate().getBaseValue(stat, 0));
+		double baseValue = calcWeaponBaseValue(creature, stat);
 		if (Config.L2JMOD_CHAMPION_ENABLE && creature.isChampion())
 		{
 			baseValue *= Config.L2JMOD_CHAMPION_ATK;

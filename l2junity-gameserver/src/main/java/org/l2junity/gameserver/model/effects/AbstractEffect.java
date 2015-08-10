@@ -286,48 +286,38 @@ public abstract class AbstractEffect
 	{
 		if (_funcTemplates != null)
 		{
-			_funcTemplates.stream().filter(func -> func.meetCondition(effected, skill)).forEach(func -> processFunc(effected, func, skill));
+			_funcTemplates.stream().filter(func -> func.meetCondition(effected, skill)).forEach(func -> processStats(effected, func.getFunctionClass(), func.getStat(), func.getValue(), skill));
 		}
 	}
 	
-	private void processFunc(Creature effected, FuncTemplate func, Skill skill)
+	private void processStats(Creature effected, Class<?> funcClass, Stats stat, double value, Skill skill)
 	{
-		final Stats stat = func.getStat();
-		processStats(effected, func, func.getStat(), skill);
-		if ((stat == Stats.POWER_ATTACK_SPEED) && effected.isPlayer())
+		if (funcClass == FuncSet.class)
 		{
-			System.out.println("Applying " + skill + " stat: " + stat + " value: " + func.getValue() + " type: " + func.getFunctionClass().getSimpleName());
+			effected.getStat().mergeAdd(stat, value);
 		}
-	}
-	
-	private void processStats(Creature effected, FuncTemplate func, Stats stat, Skill skill)
-	{
-		if (func.getFunctionClass() == FuncSet.class)
+		else if (funcClass == FuncAdd.class)
 		{
-			effected.getStat().mergeAdd(stat, func.getValue());
+			effected.getStat().mergeAdd(stat, value);
 		}
-		else if (func.getFunctionClass() == FuncAdd.class)
+		else if (funcClass == FuncSub.class)
 		{
-			effected.getStat().mergeAdd(stat, func.getValue());
+			effected.getStat().mergeAdd(stat, -value);
 		}
-		else if (func.getFunctionClass() == FuncSub.class)
+		else if (funcClass == FuncMul.class)
 		{
-			effected.getStat().mergeAdd(stat, -func.getValue());
-		}
-		else if (func.getFunctionClass() == FuncMul.class)
-		{
-			effected.getStat().mergeMul(stat, func.getValue());
+			effected.getStat().mergeMul(stat, value);
 		}
 		
 		// TODO: Make p_speed effect and handle it there!
 		if (stat == Stats.MOVE_SPEED)
 		{
-			processStats(effected, func, Stats.RUN_SPEED, skill);
-			processStats(effected, func, Stats.WALK_SPEED, skill);
-			processStats(effected, func, Stats.SWIM_RUN_SPEED, skill);
-			processStats(effected, func, Stats.SWIM_WALK_SPEED, skill);
-			processStats(effected, func, Stats.FLY_RUN_SPEED, skill);
-			processStats(effected, func, Stats.FLY_WALK_SPEED, skill);
+			processStats(effected, funcClass, Stats.RUN_SPEED, value, skill);
+			processStats(effected, funcClass, Stats.WALK_SPEED, value, skill);
+			processStats(effected, funcClass, Stats.SWIM_RUN_SPEED, value, skill);
+			processStats(effected, funcClass, Stats.SWIM_WALK_SPEED, value, skill);
+			processStats(effected, funcClass, Stats.FLY_RUN_SPEED, value, skill);
+			processStats(effected, funcClass, Stats.FLY_WALK_SPEED, value, skill);
 		}
 	}
 }

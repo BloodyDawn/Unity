@@ -353,17 +353,6 @@ public enum Stats
 	{
 		final double mul = creature.getStat().getMul(stat);
 		final double add = creature.getStat().getAdd(stat);
-		if (creature.isPlayer())
-		{
-			switch (stat)
-			{
-				case POWER_ATTACK_SPEED:
-				{
-					System.out.println(String.format("%s (%s) (%f * %f) + %f = %f", creature.getName(), stat.name(), baseValue, mul, add, ((baseValue * mul) + add)));
-					break;
-				}
-			}
-		}
 		return (baseValue * mul) + add;
 	}
 	

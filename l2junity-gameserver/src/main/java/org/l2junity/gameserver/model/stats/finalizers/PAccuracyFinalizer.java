@@ -21,8 +21,6 @@ package org.l2junity.gameserver.model.stats.finalizers;
 import java.util.Optional;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.transform.Transform;
-import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
 
@@ -36,9 +34,7 @@ public class PAccuracyFinalizer implements IStatsFunction
 	{
 		throwIfPresent(base);
 		
-		final Weapon weapon = creature.getActiveWeaponItem();
-		final Transform transform = creature.getTransformation();
-		double baseValue = (weapon != null ? weapon.getStats(stat, creature.getTemplate().getBaseValue(stat, 0)) : transform != null ? transform.getStats(creature.getActingPlayer(), stat, 0) : creature.getTemplate().getBaseValue(stat, 0));
+		double baseValue = calcWeaponBaseValue(creature, stat);
 		
 		// [Square(DEX)] * 5 + lvl + weapon hitbonus;
 		final int level = creature.getLevel();

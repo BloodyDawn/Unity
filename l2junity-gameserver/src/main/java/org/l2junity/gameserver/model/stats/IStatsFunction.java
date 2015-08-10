@@ -21,6 +21,8 @@ package org.l2junity.gameserver.model.stats;
 import java.util.Optional;
 
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.transform.Transform;
+import org.l2junity.gameserver.model.items.Weapon;
 
 /**
  * @author UnAfraid
@@ -34,6 +36,14 @@ public interface IStatsFunction
 		{
 			throw new IllegalArgumentException("base should not be set for " + getClass().getSimpleName());
 		}
+	}
+	
+	default double calcWeaponBaseValue(Creature creature, Stats stat)
+	{
+		final Weapon weapon = creature.getActiveWeaponItem();
+		final Transform transform = creature.getTransformation();
+		final double baseTemplateBalue = creature.getTemplate().getBaseValue(stat, 0);
+		return (weapon != null ? weapon.getStats(stat, baseTemplateBalue) : transform != null ? transform.getStats(creature.getActingPlayer(), stat, baseTemplateBalue) : baseTemplateBalue);
 	}
 	
 	public double calc(Creature creature, Optional<Double> base, Stats stat);
