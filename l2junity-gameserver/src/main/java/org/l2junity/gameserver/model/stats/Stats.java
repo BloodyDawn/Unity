@@ -347,7 +347,9 @@ public enum Stats
 	
 	public static double defaultValue(Creature creature, Optional<Double> base, Stats stat)
 	{
-		return creature.getStat().getMul(stat) * creature.getStat().getAdd(stat);
+		final double mul = creature.getStat().getMul(stat);
+		final double add = creature.getStat().getAdd(stat);
+		return base.isPresent() ? defaultValue(creature, stat, base.get()) : mul * add;
 	}
 	
 	public static double defaultValue(Creature creature, Stats stat, double baseValue)

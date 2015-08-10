@@ -221,7 +221,7 @@ public class CharStat
 	{
 		if (skill != null)
 		{
-			return (int) calcStat(Stats.MAGIC_ATTACK_RANGE, skill.getCastRange(), null, skill);
+			return (int) getValue(Stats.MAGIC_ATTACK_RANGE, skill.getCastRange());
 		}
 		
 		return _activeChar.getTemplate().getBaseAttackRange();
