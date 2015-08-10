@@ -42,7 +42,6 @@ import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2ClassMasterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
@@ -547,8 +546,6 @@ public class EnterWorld implements IClientIncomingPacket
 		{
 			activeChar.sendPacket(new ExShowScreenMessage(Config.WELCOME_MESSAGE_TEXT, Config.WELCOME_MESSAGE_TIME));
 		}
-		
-		L2ClassMasterInstance.showQuestionMark(activeChar);
 		
 		int birthday = activeChar.checkBirthDay();
 		if (birthday == 0)

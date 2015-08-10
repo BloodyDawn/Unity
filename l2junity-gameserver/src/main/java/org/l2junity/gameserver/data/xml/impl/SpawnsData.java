@@ -24,7 +24,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.model.ChanceLocation;
 import org.l2junity.gameserver.model.StatsSet;
@@ -199,12 +198,6 @@ public class SpawnsData implements IGameXmlReader
 		if (template.isType("L2Servitor") || template.isType("L2Pet"))
 		{
 			LOGGER.warn("Requested spawn for {} {}({}) file: {}", template.getType(), template.getName(), template.getId(), spawnTemplate.getFile().getName());
-			return;
-		}
-		
-		if (!Config.ALLOW_CLASS_MASTERS && template.isType("L2ClassMaster"))
-		{
-			// Don't spawn Class Masters unless config say so
 			return;
 		}
 		

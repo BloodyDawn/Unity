@@ -42,7 +42,7 @@ public final class MagicalAbnormalDispelAttack extends AbstractEffect
 	public MagicalAbnormalDispelAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_power = params.getDouble("power", 0);
 		_abnormalType = AbnormalType.getAbnormalType(params.getString("abnormalType", null));
 	}
@@ -58,18 +58,12 @@ public final class MagicalAbnormalDispelAttack extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
 		// First dispells the effect, then does damage. Sometimes the damage is evaded, but debuff is still dispelled.
-		if ((_abnormalType == AbnormalType.NONE) || !effected.getEffectList().stopSkillEffects(true, _abnormalType))
-		{
-			return;
-		}
-		
-		// TODO: Unhardcode Cubic Skill to avoid double damage
-		if (effector.isAlikeDead() || (skill.getId() == 4049))
+		if (effector.isAlikeDead() || (_abnormalType == AbnormalType.NONE) || !effected.getEffectList().stopSkillEffects(true, _abnormalType))
 		{
 			return;
 		}

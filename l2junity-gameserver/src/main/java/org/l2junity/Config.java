@@ -48,7 +48,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
-import java.util.StringTokenizer;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 import java.util.stream.Collectors;
@@ -141,10 +140,6 @@ public final class Config
 	public static boolean ALT_GAME_SHIELD_BLOCKS;
 	public static int ALT_PERFECT_SHLD_BLOCK;
 	public static long EFFECT_TICK_RATIO;
-	public static boolean ALLOW_CLASS_MASTERS;
-	public static ClassMasterSettings CLASS_MASTER_SETTINGS;
-	public static boolean ALLOW_ENTIRE_TREE;
-	public static boolean ALTERNATE_CLASS_MASTER;
 	public static boolean LIFE_CRYSTAL_NEEDED;
 	public static boolean ES_SP_BOOK_NEEDED;
 	public static boolean DIVINE_SP_BOOK_NEEDED;
@@ -1354,13 +1349,6 @@ public final class Config
 			ALT_GAME_SHIELD_BLOCKS = Character.getBoolean("AltShieldBlocks", false);
 			ALT_PERFECT_SHLD_BLOCK = Character.getInt("AltPerfectShieldBlockRate", 10);
 			EFFECT_TICK_RATIO = Character.getLong("EffectTickRatio", 666);
-			ALLOW_CLASS_MASTERS = Character.getBoolean("AllowClassMasters", false);
-			ALLOW_ENTIRE_TREE = Character.getBoolean("AllowEntireTree", false);
-			ALTERNATE_CLASS_MASTER = Character.getBoolean("AlternateClassMaster", false);
-			if (ALLOW_CLASS_MASTERS || ALTERNATE_CLASS_MASTER)
-			{
-				CLASS_MASTER_SETTINGS = new ClassMasterSettings(Character.getString("ConfigClassMaster", ""));
-			}
 			LIFE_CRYSTAL_NEEDED = Character.getBoolean("LifeCrystalNeeded", true);
 			ES_SP_BOOK_NEEDED = Character.getBoolean("EnchantSkillSpBookNeeded", true);
 			DIVINE_SP_BOOK_NEEDED = Character.getBoolean("DivineInspirationSpBookNeeded", true);
@@ -2902,15 +2890,6 @@ public final class Config
 			case "altgameexponentsp":
 				ALT_GAME_EXPONENT_SP = Float.parseFloat(pValue);
 				break;
-			case "allowclassmasters":
-				ALLOW_CLASS_MASTERS = Boolean.parseBoolean(pValue);
-				break;
-			case "allowentiretree":
-				ALLOW_ENTIRE_TREE = Boolean.parseBoolean(pValue);
-				break;
-			case "alternateclassmaster":
-				ALTERNATE_CLASS_MASTER = Boolean.parseBoolean(pValue);
-				break;
 			case "altpartyrange":
 				ALT_PARTY_RANGE = Integer.parseInt(pValue);
 				break;
@@ -3254,89 +3233,6 @@ public final class Config
 			}
 		}
 		return serverType;
-	}
-	
-	public static final class ClassMasterSettings
-	{
-		private final Map<Integer, List<ItemHolder>> _claimItems = new HashMap<>(3);
-		private final Map<Integer, List<ItemHolder>> _rewardItems = new HashMap<>(3);
-		private final Map<Integer, Boolean> _allowedClassChange = new HashMap<>(3);
-		
-		public ClassMasterSettings(String configLine)
-		{
-			parseConfigLine(configLine.trim());
-		}
-		
-		private void parseConfigLine(String configLine)
-		{
-			if (configLine.isEmpty())
-			{
-				return;
-			}
-			
-			final StringTokenizer st = new StringTokenizer(configLine, ";");
-			
-			while (st.hasMoreTokens())
-			{
-				// get allowed class change
-				final int job = Integer.parseInt(st.nextToken());
-				
-				_allowedClassChange.put(job, true);
-				
-				final List<ItemHolder> requiredItems = new ArrayList<>();
-				// parse items needed for class change
-				if (st.hasMoreTokens())
-				{
-					final StringTokenizer st2 = new StringTokenizer(st.nextToken(), "[],");
-					
-					while (st2.hasMoreTokens())
-					{
-						final StringTokenizer st3 = new StringTokenizer(st2.nextToken(), "()");
-						final int itemId = Integer.parseInt(st3.nextToken());
-						final int quantity = Integer.parseInt(st3.nextToken());
-						requiredItems.add(new ItemHolder(itemId, quantity));
-					}
-				}
-				
-				_claimItems.put(job, requiredItems);
-				
-				final List<ItemHolder> rewardItems = new ArrayList<>();
-				// parse gifts after class change
-				if (st.hasMoreTokens())
-				{
-					final StringTokenizer st2 = new StringTokenizer(st.nextToken(), "[],");
-					
-					while (st2.hasMoreTokens())
-					{
-						final StringTokenizer st3 = new StringTokenizer(st2.nextToken(), "()");
-						final int itemId = Integer.parseInt(st3.nextToken());
-						final int quantity = Integer.parseInt(st3.nextToken());
-						rewardItems.add(new ItemHolder(itemId, quantity));
-					}
-				}
-				
-				_rewardItems.put(job, rewardItems);
-			}
-		}
-		
-		public boolean isAllowed(int job)
-		{
-			if ((_allowedClassChange == null) || !_allowedClassChange.containsKey(job))
-			{
-				return false;
-			}
-			return _allowedClassChange.get(job);
-		}
-		
-		public List<ItemHolder> getRewardItems(int job)
-		{
-			return _rewardItems.get(job);
-		}
-		
-		public List<ItemHolder> getRequireItems(int job)
-		{
-			return _claimItems.get(job);
-		}
 	}
 	
 	/**
