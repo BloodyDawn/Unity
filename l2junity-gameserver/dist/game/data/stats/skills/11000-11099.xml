@@ -1628,18 +1628,20 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11052" levels="4" name="Mass Hell Binding">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11052" levels="7" name="Mass Hell Binding">
+		<!-- Glory Days confirmed -->
 		<!-- Immobilizes target and nearby enemies midair for 9 seconds and inflicts 100 damage per second. -->
-		<table name="#magicLvl"> 89 92 95 98 </table>
-		<table name="#mpConsumes"> 228 243 257 273 </table>
+		<table name="#magicLvl"> 89 92 95 98 101 103 105 </table>
+		<table name="#mpConsumes"> 228 243 257 273 289 305 321 </table>
 		<set name="icon" val="icon.skill11052" />
-		<set name="activateRate" val="100" /> <!-- Guessed -->
+		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
 		<set name="channelingSkillId" val="11182" /> <!-- Yoke Status -->
-		<set name="channelingTickInterval" val="10000" /> <!-- No channeling ticks. If you end channel, debuff is canceled. -->
+		<set name="channelingTickInitialDelay" val="1200" />
+		<set name="channelingTickInterval" val="2000" />
+		<set name="mpPerChanneling" val="15" />
 		<set name="operateType" val="CA2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="trait" val="AIRBIND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -1653,22 +1655,28 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelayGroup" val="11052" />
 		<set name="affectRange" val="150" />
-		<set name="channelingTickInitialDelay" val="1200" />
 		<set name="affectLimit" val="5-12" />
 		<set name="isDebuff" val="true" />
+		<set name="isMagic" val="2" />
+		<set name="staticReuse" val="true" />
+		<cond msgId="113" addName="1">
+			<target checkCrtEffect="true" />
+		</cond>
 	</skill>
-	<skill id="11053" levels="4" name="Mass Hell Binding">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11053" levels="7" name="Mass Hell Binding">
+		<!-- Glory Days confirmed -->
 		<!-- Immobilizes target and nearby enemies midair for 9 seconds and inflicts 100 damage per second. -->
 		<table name="#magicLvl"> 89 92 95 98 101 103 105 </table>
-		<table name="#mpConsumes"> 228 243 257 273 </table>
+		<table name="#mpConsumes"> 228 243 257 273 289 305 321 </table>
 		<set name="icon" val="icon.skill1042" />
 		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
 		<set name="channelingSkillId" val="11182" /> <!-- Yoke Status -->
-		<set name="channelingTickInterval" val="10000" /> <!-- No channeling ticks. If you end channel, debuff is canceled. -->
+		<set name="channelingTickInitialDelay" val="1200" />
+		<set name="channelingTickInterval" val="2000" />
+		<set name="mpPerChanneling" val="15" />
 		<set name="operateType" val="CA2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="trait" val="AIRBIND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -1682,9 +1690,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelayGroup" val="11052" />
 		<set name="affectRange" val="150" />
-		<set name="channelingTickInitialDelay" val="1200" />
 		<set name="affectLimit" val="5-12" />
 		<set name="isDebuff" val="true" />
+		<set name="isMagic" val="2" />
+		<set name="staticReuse" val="true" />
+		<cond msgId="113" addName="1">
+			<target checkCrtEffect="true" />
+		</cond>
 	</skill>
 	<skill id="11054" levels="1" name="Yoke Status">
 		<!-- Glory Days confirmed -->

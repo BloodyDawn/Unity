@@ -1008,7 +1008,9 @@
 		<set name="mpPerChanneling" val="12" />
 		<set name="isDebuff" val="true" />
 		<set name="staticReuse" val="true" />
-		<!-- TODO cond {op_check_crt_effect} -->
+		<cond msgId="113" addName="1">
+			<target checkCrtEffect="true" />
+		</cond>
 	</skill>
 	<skill id="11277" levels="4" name="Sense of Loyalty">
 		<!-- Glory Days confirmed -->

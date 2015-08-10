@@ -110,6 +110,7 @@ import org.l2junity.gameserver.model.conditions.ConditionTargetAbnormalType;
 import org.l2junity.gameserver.model.conditions.ConditionTargetActiveEffectId;
 import org.l2junity.gameserver.model.conditions.ConditionTargetActiveSkillId;
 import org.l2junity.gameserver.model.conditions.ConditionTargetAggro;
+import org.l2junity.gameserver.model.conditions.ConditionTargetCheckCrtEffect;
 import org.l2junity.gameserver.model.conditions.ConditionTargetClassIdRestriction;
 import org.l2junity.gameserver.model.conditions.ConditionTargetInvSize;
 import org.l2junity.gameserver.model.conditions.ConditionTargetLevel;
@@ -1157,6 +1158,11 @@ public abstract class DocumentBase
 				{
 					int size = Integer.decode(getValue(a.getNodeValue(), null));
 					cond = joinAnd(cond, new ConditionTargetInvSize(size));
+					break;
+				}
+				case "checkcrteffect":
+				{
+					cond = joinAnd(cond, new ConditionTargetCheckCrtEffect(Boolean.parseBoolean(a.getNodeValue())));
 					break;
 				}
 			}

@@ -78,6 +78,7 @@ public final class L2NpcTemplate extends L2CharTemplate implements IIdentifiable
 	private boolean _passableDoor;
 	private boolean _hasSummoner;
 	private boolean _canBeSown;
+	private boolean _canBeCrt;
 	private int _corpseTime;
 	private AIType _aiType;
 	private int _aggroRange;
@@ -153,6 +154,7 @@ public final class L2NpcTemplate extends L2CharTemplate implements IIdentifiable
 		_passableDoor = set.getBoolean("passableDoor", false);
 		_hasSummoner = set.getBoolean("hasSummoner", false);
 		_canBeSown = set.getBoolean("canBeSown", false);
+		_canBeCrt = set.getBoolean("ex_crt_effect", true);
 		
 		_corpseTime = set.getInt("corpseTime", Config.DEFAULT_CORPSE_TIME);
 		
@@ -344,6 +346,11 @@ public final class L2NpcTemplate extends L2CharTemplate implements IIdentifiable
 	public boolean canBeSown()
 	{
 		return _canBeSown;
+	}
+	
+	public boolean canBeCrt()
+	{
+		return _canBeCrt;
 	}
 	
 	public int getCorpseTime()
