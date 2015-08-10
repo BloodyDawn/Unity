@@ -81,8 +81,8 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 	// Npc
 	private static final int[] CLASS_MASTER =
 	{
-		31756, // Mulia
-		31757, // Ilia
+		31756, // Mr. Cat
+		31757, // Queen of Hearts
 	};
 	
 	public ClassMaster()

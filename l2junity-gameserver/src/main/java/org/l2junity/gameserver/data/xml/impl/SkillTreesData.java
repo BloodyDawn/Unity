@@ -694,6 +694,12 @@ public final class SkillTreesData implements IGameXmlReader
 			
 			if (player.getLevel() >= skill.getGetLevel())
 			{
+				if (skill.getSkillLevel() > SkillData.getInstance().getMaxLevel(skill.getSkillId()))
+				{
+					LOGGER.error("SkillTreesData found learnable skill {} with level higher than max skill level!", skill.getSkillId());
+					continue;
+				}
+				
 				final Skill oldSkill = holder.getKnownSkill(skill.getSkillId());
 				if (oldSkill != null)
 				{
@@ -716,19 +722,8 @@ public final class SkillTreesData implements IGameXmlReader
 		// Get available skills
 		PlayerSkillHolder holder = new PlayerSkillHolder(player);
 		List<SkillLearn> learnable = getAvailableSkills(player, classId, includeByFs, includeAutoGet, holder);
-		// while (learnable.size() > 0)
-		for (int i = 0; learnable.size() > 0; i++) // Infinite loop warning
+		for (int i = 0; (learnable.size() > 0) && (i < 1000); i++) // Infinite loop warning
 		{
-			if (i >= 100)
-			{
-				StringBuilder sb = new StringBuilder();
-				for (SkillLearn learn : learnable)
-				{
-					sb.append(learn.getName()).append(", ");
-				}
-				LOGGER.error("SkillTreesData infinite loop found. {} learnable skills cannot be learned. Skills: {} ", learnable.size(), sb);
-				break;
-			}
 			for (SkillLearn s : learnable)
 			{
 				Skill sk = SkillData.getInstance().getSkill(s.getSkillId(), s.getSkillLevel());
