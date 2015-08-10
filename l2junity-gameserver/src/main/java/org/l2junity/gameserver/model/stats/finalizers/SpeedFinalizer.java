@@ -59,7 +59,7 @@ public class SpeedFinalizer implements IStatsFunction
 			baseValue += bonusDex;
 		}
 		
-		return Math.min(Stats.defaultValue(creature, stat, baseValue), Config.MAX_RUN_SPEED);
+		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue), Config.MAX_RUN_SPEED);
 	}
 	
 	private double getBaseSpeed(Creature creature, Stats stat)
