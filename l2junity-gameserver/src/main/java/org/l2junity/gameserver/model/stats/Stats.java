@@ -41,6 +41,7 @@ import org.l2junity.gameserver.model.stats.finalizers.PAttackSpeedFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.PCriticalRateFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.PDefenseFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.PEvasionRateFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.RandomDamageFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.SpeedFinalizer;
 
 /**
@@ -258,7 +259,7 @@ public enum Stats
 	DEBUFF_BLOCK("debuffBlock"),
 	
 	// Affects the random weapon damage.
-	RANDOM_DAMAGE("randomDamage"),
+	RANDOM_DAMAGE("randomDamage", new RandomDamageFinalizer()),
 	
 	// Affects the random weapon damage.
 	DAMAGE_CAP("damageCap"),

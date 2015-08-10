@@ -5825,20 +5825,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public final double getRandomDamageMultiplier()
 	{
-		Weapon activeWeapon = getActiveWeaponItem();
-		int random;
-		
-		if (activeWeapon != null)
-		{
-			random = activeWeapon.getRandomDamage();
-		}
-		else
-		{
-			random = 5 + (int) Math.sqrt(getLevel());
-		}
-		
-		random = (int) calcStat(Stats.RANDOM_DAMAGE, random);
-		
+		final int random = (int) getStat().getValue(Stats.RANDOM_DAMAGE);
 		return (1 + ((double) Rnd.get(-random, random) / 100));
 	}
 	
