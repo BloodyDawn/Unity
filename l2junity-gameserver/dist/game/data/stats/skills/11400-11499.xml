@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="11496" levels="2" name="Summoner Boss Penalty">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Decreases P. Atk. Toward bosses by 20%. -->
 		<set name="icon" val="icon.skill0217" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pvePhysDmg" val="0.8" />
+				<mul stat="pvePhysSkillsDmg" val="0.8" />
+				<mul stat="pveMagicalDmg" val="0.8" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11497" levels="1" name="Summoner - Individual Passive">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill0217" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
@@ -18,17 +25,17 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="11498" levels="1" name="Summoner - Individual">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 5 seconds, increases P. Atk., M. Atk., Critical rate, and critical damage by 10%. -->
 		<set name="icon" val="icon.skill1543" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="SUMMON_CONDITION" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="1" />
-		<set name="abnormalType" val="SUMMON_CONDITION" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
@@ -38,19 +45,19 @@
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.10" />
-				<mul stat="mAtk" val="1.10" />
-				<mul stat="rCrit" val="1.10" />
-				<mul stat="cAtk" val="1.10" />
+				<mul stat="pAtk" val="1.1" />
+				<mul stat="mAtk" val="1.1" />
+				<mul stat="rCrit" val="1.1" />
+				<mul stat="cAtk" val="1.1" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11499" levels="1" name="Heavy Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="71" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2000" />
@@ -62,5 +69,13 @@
 		<set name="effectRange" val="1400" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
+		<cond msgId="113" addName="1">
+			<target abnormalType="AIRBIND" />
+		</cond>
+		<for>
+			<effect name="MagicalAttack">
+				<param power="184" />
+			</effect>
+		</for>
 	</skill>
 </list>

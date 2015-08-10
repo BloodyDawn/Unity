@@ -1507,7 +1507,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11049" levels="2" name="Ignore Divinity">
+	<skill id="11049" levels="5" name="Ignore Divinity">
 		<!-- Glory Days confirmed -->
 		<!-- Cancels one of target's buffs. -->
 		<table name="#buffCount"> 1 2 2 2 2 </table>
@@ -1658,12 +1658,12 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11053" levels="4" name="Mass Hell Binding">
-		<table name="#magicLvl"> 89 92 95 98 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Immobilizes target and nearby enemies midair for 9 seconds and inflicts 100 damage per second. -->
+		<table name="#magicLvl"> 89 92 95 98 101 103 105 </table>
 		<table name="#mpConsumes"> 228 243 257 273 </table>
 		<set name="icon" val="icon.skill1042" />
-		<set name="activateRate" val="100" /> <!-- Guessed -->
+		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="NONE" />
 		<set name="channelingSkillId" val="11182" /> <!-- Yoke Status -->
 		<set name="channelingTickInterval" val="10000" /> <!-- No channeling ticks. If you end channel, debuff is canceled. -->
@@ -2697,7 +2697,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11094" levels="6" name="Magical Charge">
+	<skill id="11094" levels="9" name="Magical Charge">
 		<!-- Updated to IO -->
 		<!-- Glory Days confirmed -->
 		<!-- Attacks nearby enemies with 133 Power added to M. Atk., inflicting Stun and canceling their targets. Teleports you to the front. -->
