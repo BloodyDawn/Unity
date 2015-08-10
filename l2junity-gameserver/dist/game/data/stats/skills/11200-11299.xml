@@ -39,6 +39,7 @@
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="abnormalVisualEffect" val="PARALYZE" />
 		<set name="activateRate" val="90" /> <!-- Guessed -->
+		<set name="affectLimit" val="5-12" /> <!-- Guessed -->
 		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="basicProperty" val="MAGIC" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
@@ -96,7 +97,7 @@
 		</for>
 	</skill>
 	<skill id="11241" levels="1" name="Shadow Snare">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Pulls nearby enemies to the center. -->
 		<set name="icon" val="icon.skill1469" />
 		<set name="operateType" val="A1" />
@@ -112,56 +113,79 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="97" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="SummonNpc">
+				<param npcId="13307" npcCount="1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11242" levels="1" name="Shadow Snare Zone">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Pulls nearby enemies to the center. -->
+		<set name="abnormalLvl" val="5" />
+		<set name="abnormalTime" val="1" />
+		<set name="abnormalType" val="COMBINATION" />
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="300" />
 		<set name="icon" val="icon.skill1469" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="effectPoint" val="-709" />
-		<set name="abnormalType" val="COMBINATION" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="97" />
-		<set name="abnormalLvl" val="5" />
-		<set name="abnormalTime" val="1" />
 		<set name="trait" val="SHOCK" />
-		<set name="affectRange" val="300" />
-		<set name="affectLimit" val="5-12" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PullBack">
+				<param speed="600" delay="600" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11245" levels="1" name="Sampling">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Momentarily incurs damage. All speeds are decreased. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="affectRange" val="300" />
+		<set name="affectLimit" val="5-12" />
 		<set name="icon" val="icon.skill11032" />
 		<set name="operateType" val="A4" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-696" />
-		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="89" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="3" />
 		<set name="trait" val="SHOCK" />
-		<set name="affectRange" val="300" />
-		<set name="affectLimit" val="5-12" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack">
+				<param power="55" />
+				<param overHit="true" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="0.95" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11247" levels="1" name="Heavy Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
+		<set name="attachToggleGroupId" val="1" />
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3380" />
 		<set name="coolTime" val="500" />
@@ -173,13 +197,22 @@
 		<set name="magicLvl" val="85" />
 		<set name="canDoubleCast" val="true" />
 		<set name="isMagic" val="1" />
+		<cond msgId="113" addName="1">
+			<target abnormalType="AIRBIND" />
+		</cond>
+		<for>
+			<effect name="MagicalAttack">
+				<param power="320" />
+				<param overHit="true" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11248" levels="1" name="Heavy Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1830" />
 		<set name="coolTime" val="500" />
@@ -190,15 +223,25 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
 		<set name="canDoubleCast" val="true" />
+		<set name="attachToggleGroupId" val="1" />
 		<set name="isMagic" val="1" />
+		<cond msgId="113" addName="1">
+			<target abnormalType="KNOCKDOWN" />
+		</cond>
+		<for>
+			<effect name="MagicalAttack">
+				<param power="320" />
+				<param overHit="true" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11249" levels="1" name="Heavy Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
 		<!-- Feoh Storm Screamer Hell Binding (11150) attack -->
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3700" />
 		<set name="coolTime" val="300" />
@@ -208,10 +251,20 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="attachToggleGroupId" val="1" />
 		<set name="isMagic" val="1" />
+		<cond msgId="113" addName="1">
+			<target abnormalType="AIRBIND" />
+		</cond>
+		<for>
+			<effect name="MagicalAttack">
+				<param power="320" />
+				<param overHit="true" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11250" levels="1" name="Heavy Hit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts a powerful blow on target. -->
 		<set name="icon" val="icon.skill10317" />
 		<set name="operateType" val="A1" />
@@ -225,10 +278,21 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="85" />
+		<set name="attachToggleGroupId" val="1" />
 		<set name="isMagic" val="1" />
+		<cond msgId="113" addName="1">
+			<target abnormalType="KNOCKDOWN" />
+		</cond>
+		<for>
+			<effect name="MagicalAttack">
+				<param power="320" />
+				<param overHit="true" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11251" levels="10" name="Superior Weapon Mastery">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- M. Atk. + 24%, additional M. Atk. + 1079, Casting Spd. + 23%, M. Critical Rate + 6. P. Atk. + 105%, Additional P. Atk. + 822, P. Accuracy + 4 when a dual blunt weapon is equipped. INT + 2. Depending on your INT, the Cooldown resets or the duration increases by 2 times. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 104 104 104 </table>
 		<table name="#mAtk"> 1079 1252 1451 1633 1850 1963 2083 2210 2344 2478 </table>
@@ -257,6 +321,7 @@
 		</for>
 	</skill>
 	<skill id="11252" levels="10" name="Superior Robe Mastery">
+		<!-- Glory Days confirmed -->
 		<!-- INT + 2. Max HP + 4151, P. Def. + 845, and Casting Spd. + 5% when equipped with a Robe. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 104 104 104 </table>
 		<table name="#pDef"> 1212 1330 1462 1576 1767 1833 1903 1975 2058 2136 </table>
@@ -281,6 +346,7 @@
 		</for>
 	</skill>
 	<skill id="11253" levels="10" name="Superior Magic Mastery">
+		<!-- Glory Days confirmed -->
 		<!-- M. Def. + 862, Magic Attack Resistance + 35%, Magic skill Cooldown - 25%, MP Consumption - 10%. INT +2 -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 104 104 104</table>
 		<table name="#mDef"> 862 976 1104 1219 1374 1444 1517 1593 1674 1759 </table>
@@ -331,6 +397,7 @@
 		</for>
 	</skill>
 	<skill id="11255" levels="1" name="Superior Spirit Mastery">
+		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and Hold/Sleep/Bleed/Poison/Mental Attack Resistance + 30. -->
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
@@ -348,6 +415,7 @@
 	</skill>
 	<skill id="11256" levels="8" name="Summon Cute Bear">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Summons a fearless Cute Bear from the fairy dimension. Consumes 2 summon points. -->
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 351 361 376 391 406 421 436 456 </table>
@@ -377,6 +445,7 @@
 	</skill>
 	<skill id="11257" levels="8" name="Summon Saber Tooth Cougar">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Summons a dauntless Saber Tooth Cougar from the beast dimension. Consumes 2 summon points. -->
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 351 361 376 391 406 421 436 456 </table>
@@ -406,6 +475,7 @@
 	</skill>
 	<skill id="11258" levels="8" name="Summon Grim Reaper">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Summons a nefarious Grim Reaper from the demonic dimension. Consumes 2 summon points. -->
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 351 361 376 391 406 421 436 456 </table>
@@ -434,9 +504,10 @@
 		</for>
 	</skill>
 	<skill id="11259" levels="11" name="Mark of Weakness">
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 11 </table>
 		<!-- Updated to IO -->
-		<!-- Weakens target for 10 seconds. Decreases 326 HP per second, P. Def. by 30%, M. Def. by 30%, and Debuff Resistance by 30%. -->
+		<!-- Glory Days confirmed -->
+		<!-- For 10 sec., inflict damage with 85 Power added to M. Atk. Additionally, decrease target's P. Def./M. Def. -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 11 </table>
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 -709 -709 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 54 58 62 66 70 74 78 82 86 90 94 </table>
@@ -465,15 +536,17 @@
 		<for>
 			<effect name="MagicalDamOverTime" ticks="1">
 				<param power="#power" />
-				<mul stat="pDef" val="0.70" />
-				<mul stat="mDef" val="0.70" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.7" />
+				<mul stat="mDef" val="0.7" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11260" levels="8" name="Mark of Void">
-		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<!-- Updated to IO -->
 		<!-- Carves a mark linked to the Void Dimension onto target and steals their life force. For 10 seconds, decreases HP by 326 every second and absorbs 50% of the damage inflicted as HP/MP for yourself and your servitor(s). Absorbs 25% of the inflicted damage during PvP. -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#effectPoint"> -692 -698 -704 -708 -709 -709 -709 -709 </table>
 		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
 		<table name="#mpConsumes"> 54 60 66 72 78 84 90 96 </table>
@@ -1005,7 +1078,7 @@
 		<set name="channelingSkillId" val="11300" />
 		<set name="channelingTickInitialDelay" val="1200" />
 		<set name="channelingTickInterval" val="2000" />
-		<set name="mpPerChanneling" val="12" />
+		<set name="mpPerChanneling" val="15" />
 		<set name="isDebuff" val="true" />
 		<set name="staticReuse" val="true" />
 		<cond msgId="113" addName="1">

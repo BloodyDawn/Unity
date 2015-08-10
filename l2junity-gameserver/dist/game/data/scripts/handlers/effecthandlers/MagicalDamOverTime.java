@@ -35,13 +35,11 @@ public final class MagicalDamOverTime extends AbstractEffect
 {
 	private final double _power;
 	private final boolean _canKill;
-
-	// private final int _power; Uses skill power
 	
 	public MagicalDamOverTime(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_power = params.getDouble("power", 0);
 		_canKill = params.getBoolean("canKill", false);
 	}

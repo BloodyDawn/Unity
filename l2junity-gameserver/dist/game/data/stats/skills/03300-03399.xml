@@ -244,6 +244,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="channelingTickInitialDelay" val="1000" />
+		<set name="channelingTickInterval" val="0" />
 		<set name="targetType" val="FLAGPOLE" />
 		<cond>
 			<player canTakeFort="true" />
@@ -451,9 +452,9 @@
 	</skill>
 	<skill id="3331" levels="1" name="Enslave">
 		<!-- Confirmed CT2.5 -->
-		<!-- <set name="abnormalLvl" val="3" /> -->
-		<!-- <set name="abnormalTime" val="30" /> -->
-		<!-- <set name="abnormalType" val="ATTACK_TIME_UP" /> -->
+		<!-- <set name="abnormalLvl" val="3"   /> -->
+		<!-- <set name="abnormalTime" val="30"   /> -->
+		<!-- <set name="abnormalType" val="ATTACK_TIME_UP"   /> -->
 		<set name="activateRate" val="60" />
 		<set name="affectLimit" val="10-10" />
 		<set name="basicProperty" val="MAGIC" />
@@ -462,8 +463,8 @@
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill3631" />
 		<set name="rideState" val="NONE" />
-		<!-- <set name="isDebuff" val="true" /> -->
-		<!-- <set name="lvlBonusRate" val="1" /> -->
+		<!-- <set name="isDebuff" val="true"   /> -->
+		<!-- <set name="lvlBonusRate" val="1"   /> -->
 		<set name="magicLvl" val="99" />
 		<set name="mpConsume" val="200" />
 		<set name="operateType" val="A1" /> <!-- TODO: Should be A2 -->
