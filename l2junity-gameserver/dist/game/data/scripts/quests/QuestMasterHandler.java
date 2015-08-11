@@ -240,6 +240,7 @@ import quests.Q10412_ASuspiciousVagabondInTheForest.Q10412_ASuspiciousVagabondIn
 import quests.Q10413_EmbryoInTheForestOfTheDead.Q10413_EmbryoInTheForestOfTheDead;
 import quests.Q10414_KekropusLetterWithCourage.Q10414_KekropusLetterWithCourage;
 import quests.Q10416_InSearchOfTheEyeOfArgos.Q10416_InSearchOfTheEyeOfArgos;
+import quests.Q10417_DaimonTheWhiteEyed.Q10417_DaimonTheWhiteEyed;
 import quests.Q10460_ReturnOfTheAlligatorHunter.Q10460_ReturnOfTheAlligatorHunter;
 import quests.Q10464_BePreparedForAnything.Q10464_BePreparedForAnything;
 import quests.Q10472_WindsOfFateEncroachingShadows.Q10472_WindsOfFateEncroachingShadows;
@@ -526,6 +527,7 @@ public class QuestMasterHandler
 		Q10413_EmbryoInTheForestOfTheDead.class,
 		Q10414_KekropusLetterWithCourage.class,
 		Q10416_InSearchOfTheEyeOfArgos.class,
+		Q10417_DaimonTheWhiteEyed.class,
 		Q10460_ReturnOfTheAlligatorHunter.class,
 		Q10464_BePreparedForAnything.class,
 		Q10472_WindsOfFateEncroachingShadows.class,
