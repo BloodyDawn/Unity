@@ -165,7 +165,6 @@ public final class EffectMasterHandler
 		RefuelAirship.class,
 		RegularAttack.class,
 		Relax.class,
-		ResetDebuff.class,
 		ResistSkill.class,
 		Restoration.class,
 		RestorationRandom.class,

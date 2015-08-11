@@ -47,16 +47,6 @@ public class BuffTimeTask implements Runnable
 		return _time.get();
 	}
 	
-	/**
-	 * Sets the elapsed time.
-	 * @param newTime in seconds.
-	 * @return the tick count before setting the new elapsed time.
-	 */
-	public int setElapsedTime(int newTime)
-	{
-		return _time.getAndSet(newTime);
-	}
-	
 	@Override
 	public void run()
 	{

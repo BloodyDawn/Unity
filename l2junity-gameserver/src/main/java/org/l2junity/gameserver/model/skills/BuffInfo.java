@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ScheduledFuture;
 
 import org.l2junity.Config;
@@ -37,8 +36,6 @@ import org.l2junity.gameserver.model.effects.EffectTickTask;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Buff Info.<br>
@@ -47,8 +44,6 @@ import org.slf4j.LoggerFactory;
  */
 public final class BuffInfo
 {
-	private static final Logger _log = LoggerFactory.getLogger(BuffInfo.class);
-	
 	// Data
 	/** Data. */
 	private final Creature _effector;
@@ -65,20 +60,20 @@ public final class BuffInfo
 	/** Abnormal time. */
 	private int _abnormalTime;
 	/** The game ticks at the start of this effect. */
-	private int _periodStartTicks;
+	private final int _periodStartTicks;
 	// Misc
 	/** If {@code true} then this effect has been cancelled. */
 	private boolean _isRemoved = false;
 	/** If {@code true} then this effect is in use (or has been stop because an Herb took place). */
 	private boolean _isInUse = true;
-	private boolean _hideStartMessage;
+	private final boolean _hideStartMessage;
 	
 	/**
 	 * Buff Info constructor.
 	 * @param effector the effector
 	 * @param effected the effected
 	 * @param skill the skill
-	 * @param hideStartMessage  hides start message
+	 * @param hideStartMessage hides start message
 	 */
 	public BuffInfo(Creature effector, Creature effected, Skill skill, boolean hideStartMessage)
 	{
@@ -290,7 +285,7 @@ public final class BuffInfo
 			// Call on start.
 			effect.onStart(getEffector(), getEffected(), getSkill());
 			effect.onStart(this);
-
+			
 			// If it's a continuous effect, if has ticks schedule a task with period, otherwise schedule a simple task to end it.
 			if (effect.getTicks() > 0)
 			{
@@ -304,37 +299,6 @@ public final class BuffInfo
 			// Add stats.
 			_effected.addStatFuncs(effect.getStatFuncs(_effector, _effected, _skill));
 		}
-	}
-	
-	/**
-	 * Resets the effects' duration.
-	 * @return true if the debuff duration is reset and a visual update is needed.
-	 */
-	public boolean resetAbnormalTime()
-	{
-		if ((_effected == null) || (_skill == null))
-		{
-			return false;
-		}
-		
-		// Check if the effect is continuous and has an active timer.
-		if ((_abnormalTime > 0) && (_scheduledFutureTimeTask != null))
-		{
-			try
-			{
-				// In retail Reset skill doesn't exactly reset to the bare milisecond. If a second is ticking, its counted.
-				// Thats why here its the same way. It just sets the elapsed time to 0, but including the seconds' tick time before it was reset.
-				((BuffTimeTask) _scheduledFutureTimeTask.get()).setElapsedTime(0);
-				_periodStartTicks = GameTimeController.getInstance().getGameTicks();
-				return true;
-			}
-			catch (InterruptedException | ExecutionException e)
-			{
-				_log.warn("Task interrupted while resetting the abnormal time. ", e);
-			}
-		}
-		
-		return false;
 	}
 	
 	/**
