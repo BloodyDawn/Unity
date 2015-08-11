@@ -701,7 +701,7 @@
 		<set name="abnormalType" val="MP_COST_UP" />
 		<set name="icon" val="icon.skill11769" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
@@ -809,10 +809,11 @@
 		</for>
 	</skill>
 	<skill id="11773" levels="2" name="Lakcis Disc">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Directly manipulates the power of light to Heal nearby allies and damage nearby enemies. Continuously consumes MP. -->
 		<table name="#magicLvl"> 93 95 </table>
 		<table name="#effectPoint"> 906 913 </table>
+		<table name="#skillLevel"> 1 2 </table>
 		<set name="icon" val="icon.skill11773" />
 		<set name="operateType" val="AU" />
 		<set name="targetType" val="SELF" />
@@ -821,6 +822,17 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="toggleGroupId" val="0" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MpConsumePerLevel" ticks="3">
+				<param power="2" />
+			</effect>
+			<effect name="CallSkillOnActionTime" ticks="15">
+				<param skillId="11808" skillLevel="#skillLevel" /> <!-- Elegance of Light -->
+			</effect>
+			<effect name="CallSkillOnActionTime" ticks="15">
+				<param skillId="11809" skillLevel="#skillLevel" /> <!-- Elegance of Light -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11774" levels="4" name="Summon Tree of Life">
 		<!-- Glory Days confirmed -->
@@ -859,7 +871,7 @@
 		</for>
 	</skill>
 	<skill id="11775" levels="1" name="Return">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Moves to the summoned entity. Cannot be used beyond 1000 range. -->
 		<set name="icon" val="icon.skill11775" />
 		<set name="operateType" val="A1" />
@@ -871,6 +883,19 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="91" />
 		<set name="isMagic" val="1" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="TeleportToSummon">
+				<param distance="1000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11776" levels="4" name="Summon Lumi">
 		<!-- Updated to IO -->
@@ -1056,11 +1081,11 @@
 		</for>
 	</skill>
 	<skill id="11781" levels="6" name="Dark Devour">
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 85 86 89 92 95 98 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1367" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="castRange" val="0" />
 		<set name="effectPoint" val="-1" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -1070,6 +1095,11 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="affectRange" val="500" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HpCpHeal">
+				<param power="666" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11782" levels="2" name="Frantic Healing">
 		<!-- Updated to IO -->
