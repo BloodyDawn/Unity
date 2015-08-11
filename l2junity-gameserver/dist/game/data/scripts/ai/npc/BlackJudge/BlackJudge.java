@@ -18,15 +18,8 @@
  */
 package ai.npc.BlackJudge;
 
-import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.itemcontainer.Inventory;
-import org.l2junity.gameserver.model.skills.BuffInfo;
-import org.l2junity.gameserver.model.skills.CommonSkill;
-import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.client.send.SystemMessage;
-import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 import ai.npc.AbstractNpcAI;
 
@@ -34,17 +27,10 @@ import ai.npc.AbstractNpcAI;
  * Black Judge AI.
  * @author St3eT
  */
-public class BlackJudge extends AbstractNpcAI
+public final class BlackJudge extends AbstractNpcAI
 {
 	// NPC
 	private static final int BLACK_JUDGE = 30981;
-	// Misc
-	// @formatter:off
-	private static final int[] COSTS =
-	{
-		3600, 8640, 25200, 50400, 86400, 144000
-	};
-	// @formatter:on
 	
 	private BlackJudge()
 	{
@@ -58,54 +44,17 @@ public class BlackJudge extends AbstractNpcAI
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = null;
-		final int level = ((player.getExpertiseLevel() < 5) ? player.getExpertiseLevel() : 5);
-		switch (event)
+		
+		if (event.equals("weakenBreath"))
 		{
-			case "remove_info":
+			if (player.getShilensBreathDebuffLevel() >= 3)
 			{
-				htmltext = "30981-0" + (level + 1) + ".html";
-				break;
+				player.setShilensBreathDebuffLevel(2);
+				htmltext = "30981-01.html";
 			}
-			case "remove_dp":
+			else
 			{
-				if (player.getShilensBreathDebuffLevel() > 0)
-				{
-					int cost = COSTS[level];
-					
-					if (player.getAdena() >= cost)
-					{
-						takeItems(player, Inventory.ADENA_ID, cost);
-						final int nextLv = player.getShilensBreathDebuffLevel() - 1;
-						
-						if (nextLv > 0)
-						{
-							final Skill skill = SkillData.getInstance().getSkill(CommonSkill.SHILENS_BREATH.getId(), nextLv);
-							if (skill != null)
-							{
-								skill.applyEffects(player, player);
-								player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_VE_BEEN_AFFLICTED_BY_SHILEN_S_BREATH_LEVEL_S1).addInt(nextLv));
-							}
-						}
-						else
-						{
-							final BuffInfo buff = player.getEffectList().getBuffInfoBySkillId(CommonSkill.SHILENS_BREATH.getId());
-							if (buff != null)
-							{
-								player.getEffectList().remove(true, buff);
-							}
-							player.sendPacket(SystemMessageId.SHILEN_S_BREATH_HAS_BEEN_PURIFIED);
-						}
-					}
-					else
-					{
-						htmltext = "30981-07.html";
-					}
-				}
-				else
-				{
-					htmltext = "30981-08.html";
-				}
-				break;
+				htmltext = "30981-02.html";
 			}
 		}
 		return htmltext;
