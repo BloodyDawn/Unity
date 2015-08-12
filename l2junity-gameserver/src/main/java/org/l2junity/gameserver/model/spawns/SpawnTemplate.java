@@ -105,7 +105,6 @@ public class SpawnTemplate implements IParameterized<StatsSet>
 	public void spawn(Predicate<SpawnGroup> groupFilter)
 	{
 		_groups.stream().filter(groupFilter).forEach(SpawnGroup::spawnAll);
-		notifyEvent(script -> script.onSpawnActivate(this));
 	}
 	
 	public void spawnAll()
@@ -113,10 +112,14 @@ public class SpawnTemplate implements IParameterized<StatsSet>
 		spawn(SpawnGroup::isSpawningByDefault);
 	}
 	
+	public void notifyActivate()
+	{
+		notifyEvent(script -> script.onSpawnActivate(this));
+	}
+	
 	public void spawnAllIncludingNotDefault()
 	{
 		_groups.forEach(SpawnGroup::spawnAll);
-		notifyEvent(script -> script.onSpawnActivate(this));
 	}
 	
 	public void despawn(Predicate<SpawnGroup> groupFilter)

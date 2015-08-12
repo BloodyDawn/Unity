@@ -26,7 +26,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.ai.CharacterAI;
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.ai.CtrlIntention;
@@ -88,7 +87,7 @@ public final class World
 	/** Map containing all visible objects. */
 	private final Map<Integer, WorldObject> _allObjects = new ConcurrentHashMap<>();
 	/** Map used for debug. */
-	private final Map<Integer, String> _allObjectsDebug = new ConcurrentHashMap<>();
+	// private final Map<Integer, String> _allObjectsDebug = new ConcurrentHashMap<>();
 	/** Map with the pets instances and their owner ID. */
 	private final Map<Integer, L2PetInstance> _petsInstance = new ConcurrentHashMap<>();
 	
@@ -124,16 +123,16 @@ public final class World
 	{
 		if (_allObjects.containsKey(object.getObjectId()))
 		{
-			_log.warn(getClass().getSimpleName() + ": Current object: " + object + " already exist in OID map!");
-			_log.warn(CommonUtil.getTraceString(Thread.currentThread().getStackTrace()));
-			_log.warn(getClass().getSimpleName() + ": Previous object: " + _allObjects.get(object.getObjectId()) + " already exist in OID map!");
-			_log.warn(_allObjectsDebug.get(object.getObjectId()));
-			_log.warn("---------------------- End ---------------------");
+			// _log.warn(getClass().getSimpleName() + ": Current object: " + object + " already exist in OID map!");
+			// _log.warn(CommonUtil.getTraceString(Thread.currentThread().getStackTrace()));
+			// _log.warn(getClass().getSimpleName() + ": Previous object: " + _allObjects.get(object.getObjectId()) + " already exist in OID map!");
+			// _log.warn(_allObjectsDebug.get(object.getObjectId()));
+			// _log.warn("---------------------- End ---------------------");
 			return;
 		}
 		
 		_allObjects.put(object.getObjectId(), object);
-		_allObjectsDebug.put(object.getObjectId(), CommonUtil.getTraceString(Thread.currentThread().getStackTrace()));
+		// _allObjectsDebug.put(object.getObjectId(), CommonUtil.getTraceString(Thread.currentThread().getStackTrace()));
 	}
 	
 	/**
@@ -149,7 +148,7 @@ public final class World
 	public void removeObject(WorldObject object)
 	{
 		_allObjects.remove(object.getObjectId());
-		_allObjectsDebug.remove(object.getObjectId());
+		// _allObjectsDebug.remove(object.getObjectId());
 	}
 	
 	/**
@@ -243,12 +242,15 @@ public final class World
 	
 	/**
 	 * Add a L2Object in the world. <B><U> Concept</U> :</B> L2Object (including L2PcInstance) are identified in <B>_visibleObjects</B> of his current L2WorldRegion and in <B>_knownObjects</B> of other surrounding L2Characters <BR>
-	 * L2PcInstance are identified in <B>_allPlayers</B> of L2World, in <B>_allPlayers</B> of his current L2WorldRegion and in <B>_knownPlayer</B> of other surrounding L2Characters <B><U> Actions</U> :</B> <li>Add the L2Object object in _allPlayers* of L2World</li> <li>Add the L2Object object in
-	 * _gmList** of GmListTable</li> <li>Add object in _knownObjects and _knownPlayer* of all surrounding L2WorldRegion L2Characters</li><BR>
+	 * L2PcInstance are identified in <B>_allPlayers</B> of L2World, in <B>_allPlayers</B> of his current L2WorldRegion and in <B>_knownPlayer</B> of other surrounding L2Characters <B><U> Actions</U> :</B>
+	 * <li>Add the L2Object object in _allPlayers* of L2World</li>
+	 * <li>Add the L2Object object in _gmList** of GmListTable</li>
+	 * <li>Add object in _knownObjects and _knownPlayer* of all surrounding L2WorldRegion L2Characters</li><BR>
 	 * <li>If object is a L2Character, add all surrounding L2Object in its _knownObjects and all surrounding L2PcInstance in its _knownPlayer</li><BR>
 	 * <I>* only if object is a L2PcInstance</I><BR>
-	 * <I>** only if object is a GM L2PcInstance</I> <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object in _visibleObjects and _allPlayers* of L2WorldRegion (need synchronisation)</B></FONT><BR>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object to _allObjects and _allPlayers* of L2World (need synchronisation)</B></FONT> <B><U> Example of use </U> :</B> <li>Drop an Item</li> <li>Spawn a L2Character</li> <li>Apply Death Penalty of a L2PcInstance</li>
+	 * <I>** only if object is a GM L2PcInstance</I>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object in _visibleObjects and _allPlayers* of L2WorldRegion (need synchronisation)</B></FONT><BR> <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object to _allObjects and _allPlayers* of L2World (need
+	 * synchronisation)</B></FONT> <B><U> Example of use </U> :</B> <li>Drop an Item</li> <li>Spawn a L2Character</li> <li>Apply Death Penalty of a L2PcInstance</li>
 	 * @param object L2object to add in the world
 	 * @param newRegion L2WorldRegion in wich the object will be add (not used)
 	 */
@@ -351,10 +353,14 @@ public final class World
 	
 	/**
 	 * Remove a L2Object from the world. <B><U> Concept</U> :</B> L2Object (including L2PcInstance) are identified in <B>_visibleObjects</B> of his current L2WorldRegion and in <B>_knownObjects</B> of other surrounding L2Characters <BR>
-	 * L2PcInstance are identified in <B>_allPlayers</B> of L2World, in <B>_allPlayers</B> of his current L2WorldRegion and in <B>_knownPlayer</B> of other surrounding L2Characters <B><U> Actions</U> :</B> <li>Remove the L2Object object from _allPlayers* of L2World</li> <li>Remove the L2Object
-	 * object from _visibleObjects and _allPlayers* of L2WorldRegion</li> <li>Remove the L2Object object from _gmList** of GmListTable</li> <li>Remove object from _knownObjects and _knownPlayer* of all surrounding L2WorldRegion L2Characters</li><BR>
-	 * <li>If object is a L2Character, remove all L2Object from its _knownObjects and all L2PcInstance from its _knownPlayer</li> <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World</B></FONT> <I>* only if object is a L2PcInstance</I><BR>
-	 * <I>** only if object is a GM L2PcInstance</I> <B><U> Example of use </U> :</B> <li>Pickup an Item</li> <li>Decay a L2Character</li>
+	 * L2PcInstance are identified in <B>_allPlayers</B> of L2World, in <B>_allPlayers</B> of his current L2WorldRegion and in <B>_knownPlayer</B> of other surrounding L2Characters <B><U> Actions</U> :</B>
+	 * <li>Remove the L2Object object from _allPlayers* of L2World</li>
+	 * <li>Remove the L2Object object from _visibleObjects and _allPlayers* of L2WorldRegion</li>
+	 * <li>Remove the L2Object object from _gmList** of GmListTable</li>
+	 * <li>Remove object from _knownObjects and _knownPlayer* of all surrounding L2WorldRegion L2Characters</li><BR>
+	 * <li>If object is a L2Character, remove all L2Object from its _knownObjects and all L2PcInstance from its _knownPlayer</li>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World</B></FONT> <I>* only if object is a L2PcInstance</I><BR> <I>** only if object is a GM L2PcInstance</I> <B><U> Example of use </U> :</B> <li>Pickup an Item</li> <li>Decay a
+	 * L2Character</li>
 	 * @param object L2object to remove from the world
 	 * @param oldRegion L2WorldRegion in which the object was before removing
 	 */
@@ -625,7 +631,7 @@ public final class World
 		forEachVisibleObject(locational, clazz, result::add);
 		return result;
 	}
-
+	
 	public <T extends WorldObject> List<T> getVisibleObjects(ILocational locational, Class<T> clazz, Predicate<T> predicate)
 	{
 		final List<T> result = new LinkedList<>();
@@ -638,14 +644,14 @@ public final class World
 		});
 		return result;
 	}
-
+	
 	public <T extends WorldObject> List<T> getVisibleObjects(ILocational locational, Class<T> clazz, int range)
 	{
 		final List<T> result = new LinkedList<>();
 		forEachVisibleObjectInRange(locational, clazz, range, result::add);
 		return result;
 	}
-
+	
 	public <T extends WorldObject> List<T> getVisibleObjects(ILocational locational, Class<T> clazz, int range, Predicate<T> predicate)
 	{
 		final List<T> result = new LinkedList<>();
@@ -660,7 +666,9 @@ public final class World
 	}
 	
 	/**
-	 * Calculate the current L2WorldRegions of the object according to its position (x,y). <B><U> Example of use </U> :</B> <li>Set position of a new L2Object (drop, spawn...)</li> <li>Update position of a L2Object after a movement</li><BR>
+	 * Calculate the current L2WorldRegions of the object according to its position (x,y). <B><U> Example of use </U> :</B>
+	 * <li>Set position of a new L2Object (drop, spawn...)</li>
+	 * <li>Update position of a L2Object after a movement</li><BR>
 	 * @param point position of the object
 	 * @return
 	 */
@@ -684,7 +692,8 @@ public final class World
 	}
 	
 	/**
-	 * Check if the current L2WorldRegions of the object is valid according to its position (x,y). <B><U> Example of use </U> :</B> <li>Init L2WorldRegions</li><BR>
+	 * Check if the current L2WorldRegions of the object is valid according to its position (x,y). <B><U> Example of use </U> :</B>
+	 * <li>Init L2WorldRegions</li><BR>
 	 * @param x X position of the object
 	 * @param y Y position of the object
 	 * @param z Z position of the object
