@@ -289,6 +289,7 @@ public class GameServer
 		try
 		{
 			LOGGER.info("Loading server scripts...");
+			ScriptEngineManager.getInstance().executeMasterHandler();
 			ScriptEngineManager.getInstance().executeScriptList();
 		}
 		catch (Exception e)

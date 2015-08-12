@@ -106,7 +106,12 @@ public class LongTimeEvent extends Quest
 	 */
 	private void loadConfig()
 	{
-		File configFile = new File("data/scripts/events/" + getScriptName() + "/config.xml");
+		final File configFile = new File("data/scripts/events/" + getScriptName() + "/config.xml");
+		if (!configFile.isFile())
+		{
+			return;
+		}
+		
 		try
 		{
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();

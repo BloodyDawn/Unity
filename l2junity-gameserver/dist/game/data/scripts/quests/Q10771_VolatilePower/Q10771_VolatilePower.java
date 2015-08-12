@@ -213,9 +213,4 @@ public final class Q10771_VolatilePower extends Quest
 				super.onTimerEvent(event, params, npc, player);
 		}
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q10771_VolatilePower();
-	}
 }

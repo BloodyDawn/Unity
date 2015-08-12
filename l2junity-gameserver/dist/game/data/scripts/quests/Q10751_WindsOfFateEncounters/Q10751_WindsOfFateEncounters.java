@@ -497,9 +497,4 @@ public final class Q10751_WindsOfFateEncounters extends Quest
 			player.sendPacket(new TutorialShowQuestionMark(getId()));
 		}
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q10751_WindsOfFateEncounters();
-	}
 }

@@ -142,9 +142,4 @@ public final class Q10758_TheOathOfTheWind extends Quest
 		npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.I_AM_LOYAL_TO_YOU_MASTER_OF_THE_WINDS_AND_LOYAL_I_SHALL_REMAIN_IF_MY_VERY_SOUL_BETRAYS_ME);
 		return super.onKill(npc, killer, isSummon);
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q10758_TheOathOfTheWind();
-	}
 }

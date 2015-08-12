@@ -166,9 +166,4 @@ public final class Q10777_ReportsFromCrumaTowerPart2 extends Quest
 			super.onTimerEvent(event, params, npc, player);
 		}
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q10777_ReportsFromCrumaTowerPart2();
-	}
 }

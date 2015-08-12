@@ -18,7 +18,10 @@
  */
 package cron;
 
-public class example
+import org.l2junity.gameserver.scripting.annotations.Disabled;
+
+@Disabled
+public class Example
 {
 	public static void main(String[] args)
 	{

@@ -20,6 +20,8 @@ package org.l2junity.gameserver.scripting.java;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.Arrays;
@@ -34,6 +36,7 @@ import javax.tools.DiagnosticCollector;
 import javax.tools.JavaFileObject;
 
 import org.l2junity.gameserver.scripting.AbstractExecutionContext;
+import org.l2junity.gameserver.scripting.annotations.Disabled;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -194,12 +197,24 @@ public final class JavaExecutionContext extends AbstractExecutionContext<JavaScr
 						setCurrentExecutingScript(compiledSourcePath);
 						try
 						{
-							ScriptingClassLoader loader = new ScriptingClassLoader(parentClassLoader, compiledClasses);
-							Class<?> javaCls = loader.loadClass(javaName);
-							javaCls.getMethod("main", String[].class).invoke(null, (Object) new String[]
+							final ScriptingClassLoader loader = new ScriptingClassLoader(parentClassLoader, compiledClasses);
+							final Class<?> javaClass = loader.loadClass(javaName);
+							Method mainMethod = null;
+							for (Method m : javaClass.getMethods())
 							{
-								compiledSourcePath.toString()
-							});
+								if (m.getName().equals("main") && Modifier.isStatic(m.getModifiers()) && (m.getParameterCount() == 1) && (m.getParameterTypes()[0] == String[].class))
+								{
+									mainMethod = m;
+									break;
+								}
+							}
+							if ((mainMethod != null) && !javaClass.isAnnotationPresent(Disabled.class))
+							{
+								mainMethod.invoke(null, (Object) new String[]
+								{
+									compiledSourcePath.toString()
+								});
+							}
 						}
 						catch (Exception e)
 						{

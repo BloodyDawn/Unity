@@ -166,9 +166,4 @@ public final class Q10783_TracesOfAnAmbush extends Quest
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q10783_TracesOfAnAmbush();
-	}
 }

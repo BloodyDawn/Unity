@@ -431,9 +431,4 @@ public final class Q10472_WindsOfFateEncroachingShadows extends Quest
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q10472_WindsOfFateEncroachingShadows();
-	}
 }

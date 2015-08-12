@@ -18,12 +18,12 @@
  */
 package org.l2junity.gameserver.scripting;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -32,7 +32,6 @@ import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.Properties;
 import java.util.ServiceLoader;
-import java.util.Set;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.scripting.java.JavaScriptingEngine;
@@ -45,7 +44,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class ScriptEngineManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(ScriptEngineManager.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ScriptEngineManager.class);
 	public static final Path SCRIPT_LIST_FILE = Paths.get(Config.DATAPACK_ROOT.getAbsolutePath(), "data", "scripts.cfg");
 	public static final Path SCRIPT_FOLDER = Paths.get(Config.DATAPACK_ROOT.getAbsolutePath(), "data", "scripts");
 	public static final Path MASTER_HANDLER_FILE = Paths.get(SCRIPT_FOLDER.toString(), "handlers", "MasterHandler.java");
@@ -76,7 +75,7 @@ public final class ScriptEngineManager
 		catch (Exception e)
 		{
 			props = null;
-			_log.warn("Couldn't load ScriptEngines.properties: " + e.getMessage());
+			LOGGER.warn("Couldn't load ScriptEngines.properties: " + e.getMessage());
 		}
 		return props;
 	}
@@ -90,7 +89,7 @@ public final class ScriptEngineManager
 			_extEngines.put(commonExtension, context);
 		}
 		
-		_log.info("ScriptEngine: " + engine.getEngineName() + " " + engine.getEngineVersion() + " (" + engine.getLanguageName() + " " + engine.getLanguageVersion() + ")");
+		LOGGER.info("ScriptEngine: " + engine.getEngineName() + " " + engine.getEngineVersion() + " (" + engine.getLanguageName() + " " + engine.getLanguageVersion() + ")");
 	}
 	
 	private void maybeSetProperties(String propPrefix, Properties props, IScriptingEngine engine)
@@ -174,47 +173,7 @@ public final class ScriptEngineManager
 		checkExistingFile("ScriptList", SCRIPT_LIST_FILE);
 		
 		final Map<IExecutionContext, List<Path>> files = new LinkedHashMap<>();
-		final Set<String> extWithoutEngine = new HashSet<>();
-		
-		Files.lines(SCRIPT_LIST_FILE).forEach(line ->
-		{
-			line = line.trim();
-			if (line.isEmpty() || (line.charAt(0) == '#'))
-			{
-				return;
-			}
-			
-			Path sourceFile = SCRIPT_FOLDER.resolve(line);
-			try
-			{
-				checkExistingFile("ScriptFile", sourceFile);
-			}
-			catch (Exception e)
-			{
-				_log.warn(e.getMessage());
-				return;
-			}
-			
-			sourceFile = sourceFile.toAbsolutePath();
-			final String ext = getFileExtension(sourceFile);
-			if (ext == null)
-			{
-				_log.warn("ScriptFile: " + sourceFile + " does not have an extension to determine the script engine!");
-				return;
-			}
-			
-			final IExecutionContext engine = getEngineByExtension(ext);
-			if (engine == null)
-			{
-				if (extWithoutEngine.add(ext))
-				{
-					_log.warn("ScriptEngine: No engine registered for extension " + ext + "!");
-				}
-				return;
-			}
-			
-			files.computeIfAbsent(engine, k -> new LinkedList<>()).add(sourceFile);
-		});
+		processDirectory(SCRIPT_FOLDER.toFile(), files);
 		
 		for (Entry<IExecutionContext, List<Path>> entry : files.entrySet())
 		{
@@ -224,7 +183,7 @@ public final class ScriptEngineManager
 				Map<Path, Throwable> invokationErrors = entry.getKey().executeScripts(entry.getValue());
 				for (Entry<Path, Throwable> entry2 : invokationErrors.entrySet())
 				{
-					_log.warn("ScriptEngine: " + entry2.getKey() + " failed execution!", entry2.getValue());
+					LOGGER.warn("ScriptEngine: " + entry2.getKey() + " failed execution!", entry2.getValue());
 				}
 			}
 			finally
@@ -232,6 +191,56 @@ public final class ScriptEngineManager
 				_currentExecutionContext = null;
 			}
 		}
+	}
+	
+	private void processDirectory(File dir, Map<IExecutionContext, List<Path>> files)
+	{
+		for (File file : dir.listFiles())
+		{
+			if (file.isDirectory())
+			{
+				processDirectory(file, files);
+			}
+			else
+			{
+				processFile(file, files);
+			}
+		}
+	}
+	
+	private void processFile(File file, Map<IExecutionContext, List<Path>> files)
+	{
+		if (file.getName().equals(MASTER_HANDLER_FILE.toFile().getName()) || (file.getName().equals(EFFECT_MASTER_HANDLER_FILE.toFile().getName())))
+		{
+			return;
+		}
+		
+		Path sourceFile = file.toPath();
+		try
+		{
+			checkExistingFile("ScriptFile", sourceFile);
+		}
+		catch (Exception e)
+		{
+			LOGGER.warn(e.getMessage());
+			return;
+		}
+		
+		sourceFile = sourceFile.toAbsolutePath();
+		final String ext = getFileExtension(sourceFile);
+		if (ext == null)
+		{
+			LOGGER.warn("ScriptFile: " + sourceFile + " does not have an extension to determine the script engine!");
+			return;
+		}
+		
+		final IExecutionContext engine = getEngineByExtension(ext);
+		if (engine == null)
+		{
+			return;
+		}
+		
+		files.computeIfAbsent(engine, k -> new LinkedList<>()).add(sourceFile);
 	}
 	
 	public void executeScript(Path sourceFile) throws Exception

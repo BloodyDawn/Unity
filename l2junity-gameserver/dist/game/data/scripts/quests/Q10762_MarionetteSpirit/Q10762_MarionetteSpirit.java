@@ -124,9 +124,4 @@ public final class Q10762_MarionetteSpirit extends Quest
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q10762_MarionetteSpirit();
-	}
 }

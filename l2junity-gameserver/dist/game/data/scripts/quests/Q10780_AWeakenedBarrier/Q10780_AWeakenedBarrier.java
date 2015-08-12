@@ -175,9 +175,4 @@ public final class Q10780_AWeakenedBarrier extends Quest
 		}
 		return super.getNpcLogList(player);
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q10780_AWeakenedBarrier();
-	}
 }

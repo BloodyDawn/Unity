@@ -18,8 +18,6 @@
  */
 package instances.PailakaDevilsLegacy;
 
-import instances.AbstractInstance;
-
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -37,6 +35,7 @@ import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.zone.ZoneType;
 
+import instances.AbstractInstance;
 import quests.Q00129_PailakaDevilsLegacy.Q00129_PailakaDevilsLegacy;
 
 /**
@@ -311,10 +310,5 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 			((DIWorld) world)._lematanNpc = (Attackable) addSpawn(LEMATAN, LEMATAN_SPAWN, false, 0, false, world.getInstanceId());
 		}
 		teleportPlayer(player, TELEPORT, world.getInstanceId());
-	}
-	
-	public static void main(String[] args)
-	{
-		new PailakaDevilsLegacy();
 	}
 }

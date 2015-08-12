@@ -182,9 +182,4 @@ public final class Q00481_ShadowHelper extends Quest
 		}
 		return super.getNpcLogList(player);
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q00481_ShadowHelper();
-	}
 }

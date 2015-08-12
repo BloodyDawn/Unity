@@ -160,9 +160,4 @@ public final class Q10764_FreeSpirit extends Quest
 		}
 		return super.onSpawn(npc);
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q10764_FreeSpirit();
-	}
 }

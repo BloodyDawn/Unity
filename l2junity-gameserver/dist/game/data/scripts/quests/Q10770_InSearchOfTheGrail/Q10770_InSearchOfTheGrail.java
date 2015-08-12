@@ -166,9 +166,4 @@ public final class Q10770_InSearchOfTheGrail extends Quest
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q10770_InSearchOfTheGrail();
-	}
 }

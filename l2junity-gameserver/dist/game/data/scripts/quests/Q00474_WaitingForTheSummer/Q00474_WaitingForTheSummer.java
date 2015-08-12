@@ -172,9 +172,4 @@ public final class Q00474_WaitingForTheSummer extends Quest
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q00474_WaitingForTheSummer();
-	}
 }
