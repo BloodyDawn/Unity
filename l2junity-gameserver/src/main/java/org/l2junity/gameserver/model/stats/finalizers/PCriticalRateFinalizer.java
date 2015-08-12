@@ -36,7 +36,7 @@ public class PCriticalRateFinalizer implements IStatsFunction
 	{
 		throwIfPresent(base);
 		
-		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		final double baseValue = calcWeaponBaseValue(creature, stat);
 		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue * BaseStats.DEX.calcBonus(creature) * 10), Config.MAX_PCRIT_RATE);
 	}
 }

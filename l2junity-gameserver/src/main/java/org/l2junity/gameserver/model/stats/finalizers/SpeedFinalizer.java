@@ -50,12 +50,6 @@ public class SpeedFinalizer implements IStatsFunction
 		{
 			final BaseStats baseStat = BaseStats.values()[speedStat];
 			final double bonusDex = Math.max(0, baseStat.calcValue(creature) - 55);
-			if (creature.isPlayer())
-			{
-				System.out.println("speedstat: " + speedStat);
-				System.out.println("baseValue: " + baseValue);
-				System.out.println(baseStat + " Bonus: " + bonusDex);
-			}
 			baseValue += bonusDex;
 		}
 		
