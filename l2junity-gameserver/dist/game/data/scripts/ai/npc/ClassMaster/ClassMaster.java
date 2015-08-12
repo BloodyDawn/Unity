@@ -58,23 +58,23 @@ import org.w3c.dom.Node;
 import ai.npc.AbstractNpcAI;
 
 /**
+ * Class Master AI.
  * @author Nik
  */
-public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
+public final class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(ClassMaster.class);
-	
-	private boolean _isEnabled;
-	private boolean _spawnClassMasters;
-	private boolean _showPopupWindow;
-	private final List<ClassChangeData> _classChangeData = new LinkedList<>();
-	
-	// Npc
+	// NPCs
 	private static final int[] CLASS_MASTER =
 	{
 		31756, // Mr. Cat
 		31757, // Queen of Hearts
 	};
+	// Misc
+	private boolean _isEnabled;
+	private boolean _spawnClassMasters;
+	private boolean _showPopupWindow;
+	private static final Logger LOGGER = LoggerFactory.getLogger(ClassMaster.class);
+	private final List<ClassChangeData> _classChangeData = new LinkedList<>();
 	
 	public ClassMaster()
 	{
@@ -251,14 +251,7 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 		{
 			case "buyitems":
 			{
-				if (npc.getId() == CLASS_MASTER[0])
-				{
-					htmltext = "test_server_helper001a.html";
-				}
-				else
-				{
-					htmltext = "test_server_helper001b.html";
-				}
+				htmltext = npc.getId() == CLASS_MASTER[0] ? "test_server_helper001a.html" : "test_server_helper001b.html";
 				break;
 			}
 			case "setnoble":
@@ -319,14 +312,7 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 			{
 				if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP) || player.isInCategory(CategoryType.FIRST_CLASS_GROUP))
 				{
-					if (player.getLevel() < 40)
-					{
-						htmltext = "test_server_helper023.html";
-					}
-					else
-					{
-						htmltext = getSecondOccupationChangeHtml(player);
-					}
+					htmltext = player.getLevel() < 40 ? "test_server_helper023.html" : getSecondOccupationChangeHtml(player);
 				}
 				else if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP))
 				{
@@ -373,7 +359,7 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 			}
 			case "awaken":
 			{
-				if (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP) && (player.getLevel() > 84)) // 9
+				if (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP) && (player.getLevel() > 84))
 				{
 					if (changeToNextClass(player))
 					{
@@ -383,13 +369,13 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 						htmltext = "test_server_helper021.html";
 					}
 				}
-				else if (player.isInCategory(CategoryType.AWAKEN_GROUP)) // 9
+				else if (player.isInCategory(CategoryType.AWAKEN_GROUP))
 				{
 					htmltext = "test_server_helper011a.html";
 				}
 				else
 				{
-					htmltext = "test_server_helper011b.html"; // "test_server_helper024.htm"
+					htmltext = "test_server_helper011b.html";
 				}
 				break;
 			}
@@ -438,7 +424,7 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 							return htmltext;
 						}
 						
-						ClassChangeData data = getClassChangeData(classDataIndex);
+						final ClassChangeData data = getClassChangeData(classDataIndex);
 						if (data == null)
 						{
 							return null;
@@ -475,23 +461,19 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 			}
 			case "clanlevel":
 			{
-				if (player.isClanLeader())
-				{
-					htmltext = "test_server_helper022.html";
-				}
-				else
-				{
-					htmltext = "pl014.html";
-				}
+				htmltext = player.isClanLeader() ? "test_server_helper022.html" : "pl014.html";
 			}
 			case "learnskills":
 			{
 				// Retail class master only lets you learn all third class skills.
 				if (player.isInCategory(CategoryType.AWAKEN_GROUP))
 				{
-					return "test_server_helper001_failed.html";
+					htmltext = "test_server_helper001_failed.html";
 				}
-				player.giveAvailableSkills(true, true);
+				else
+				{
+					player.giveAvailableSkills(true, true);
+				}
 				break;
 			}
 			case "clanlevelup":
