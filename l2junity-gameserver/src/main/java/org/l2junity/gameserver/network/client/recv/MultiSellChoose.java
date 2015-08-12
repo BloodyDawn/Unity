@@ -401,7 +401,7 @@ public class MultiSellChoose implements IClientIncomingPacket
 								{
 									if (i < augmentation.size())
 									{
-										product.setAugmentation(new Augmentation(augmentation.get(i).getAugmentationId()));
+										product.setAugmentation(new Augmentation(augmentation.get(i).getId()));
 									}
 									if (attributes != null)
 									{

@@ -918,7 +918,7 @@ public final class ItemInstance extends WorldObject
 	/**
 	 * Sets a new augmentation
 	 * @param augmentation
-	 * @return return true if sucessfull
+	 * @return return true if successfully
 	 */
 	public boolean setAugmentation(Augmentation augmentation)
 	{
@@ -1015,7 +1015,7 @@ public final class ItemInstance extends WorldObject
 		try (PreparedStatement ps = con.prepareStatement("REPLACE INTO item_attributes VALUES(?,?)"))
 		{
 			ps.setInt(1, getObjectId());
-			ps.setInt(2, _augmentation != null ? _augmentation.getAttributes() : -1);
+			ps.setInt(2, _augmentation != null ? _augmentation.getId() : -1);
 			ps.executeUpdate();
 		}
 		catch (SQLException e)

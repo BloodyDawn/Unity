@@ -30,11 +30,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.FuncAdd;
-import org.l2junity.gameserver.model.stats.functions.FuncMul;
-import org.l2junity.gameserver.model.stats.functions.FuncSet;
-import org.l2junity.gameserver.model.stats.functions.FuncSub;
 import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -286,38 +281,7 @@ public abstract class AbstractEffect
 	{
 		if (_funcTemplates != null)
 		{
-			_funcTemplates.stream().filter(func -> func.meetCondition(effected, skill)).forEach(func -> processStats(effected, func.getFunctionClass(), func.getStat(), func.getValue(), skill));
-		}
-	}
-	
-	private void processStats(Creature effected, Class<?> funcClass, Stats stat, double value, Skill skill)
-	{
-		if (funcClass == FuncSet.class)
-		{
-			effected.getStat().mergeAdd(stat, value);
-		}
-		else if (funcClass == FuncAdd.class)
-		{
-			effected.getStat().mergeAdd(stat, value);
-		}
-		else if (funcClass == FuncSub.class)
-		{
-			effected.getStat().mergeAdd(stat, -value);
-		}
-		else if (funcClass == FuncMul.class)
-		{
-			effected.getStat().mergeMul(stat, value);
-		}
-		
-		// TODO: Make p_speed effect and handle it there!
-		if (stat == Stats.MOVE_SPEED)
-		{
-			processStats(effected, funcClass, Stats.RUN_SPEED, value, skill);
-			processStats(effected, funcClass, Stats.WALK_SPEED, value, skill);
-			processStats(effected, funcClass, Stats.SWIM_RUN_SPEED, value, skill);
-			processStats(effected, funcClass, Stats.SWIM_WALK_SPEED, value, skill);
-			processStats(effected, funcClass, Stats.FLY_RUN_SPEED, value, skill);
-			processStats(effected, funcClass, Stats.FLY_WALK_SPEED, value, skill);
+			_funcTemplates.stream().filter(func -> func.meetCondition(effected, skill)).forEach(func -> effected.getStat().processStats(effected, func.getFunctionClass(), func.getStat(), func.getValue()));
 		}
 	}
 }

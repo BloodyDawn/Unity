@@ -32,6 +32,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.CharEffectList;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -39,6 +40,10 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.TraitType;
+import org.l2junity.gameserver.model.stats.functions.FuncAdd;
+import org.l2junity.gameserver.model.stats.functions.FuncMul;
+import org.l2junity.gameserver.model.stats.functions.FuncSet;
+import org.l2junity.gameserver.model.stats.functions.FuncSub;
 import org.l2junity.gameserver.model.zone.ZoneId;
 
 public class CharStat
@@ -827,6 +832,15 @@ public class CharStat
 				.forEach(effect -> effect.pump(info.getEffected(), info.getSkill())));
 			//@formatter:on
 			
+			final Inventory inventory = _activeChar.getInventory();
+			if (inventory != null)
+			{
+				for (ItemInstance item : inventory.getItems(ItemInstance::isEquipped, ItemInstance::isAugmented))
+				{
+					item.getAugmentation().applyStats(_activeChar.getActingPlayer());
+				}
+			}
+			
 			if (broadcast)
 			{
 				// Calculate the difference between old and new stats
@@ -849,6 +863,36 @@ public class CharStat
 		finally
 		{
 			_lock.writeLock().unlock();
+		}
+	}
+	
+	public void processStats(Creature effected, Class<?> funcClass, Stats stat, double value)
+	{
+		if (funcClass == FuncSet.class)
+		{
+			effected.getStat().mergeAdd(stat, value);
+		}
+		else if (funcClass == FuncAdd.class)
+		{
+			effected.getStat().mergeAdd(stat, value);
+		}
+		else if (funcClass == FuncSub.class)
+		{
+			effected.getStat().mergeAdd(stat, -value);
+		}
+		else if (funcClass == FuncMul.class)
+		{
+			effected.getStat().mergeMul(stat, value);
+		}
+		
+		if (stat == Stats.MOVE_SPEED)
+		{
+			processStats(effected, funcClass, Stats.RUN_SPEED, value);
+			processStats(effected, funcClass, Stats.WALK_SPEED, value);
+			processStats(effected, funcClass, Stats.SWIM_RUN_SPEED, value);
+			processStats(effected, funcClass, Stats.SWIM_WALK_SPEED, value);
+			processStats(effected, funcClass, Stats.FLY_RUN_SPEED, value);
+			processStats(effected, funcClass, Stats.FLY_WALK_SPEED, value);
 		}
 	}
 }

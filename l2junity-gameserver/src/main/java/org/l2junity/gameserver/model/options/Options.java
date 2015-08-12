@@ -58,6 +58,11 @@ public class Options
 		_funcs.add(template);
 	}
 	
+	public List<FuncTemplate> getFunctionTemplates()
+	{
+		return _funcs;
+	}
+	
 	public boolean hasActiveSkill()
 	{
 		return _activeSkill != null;
@@ -150,7 +155,6 @@ public class Options
 			}
 		}
 		
-		player.getStat().recalculateStats(true);
 		player.sendSkillList();
 	}
 	
@@ -175,7 +179,7 @@ public class Options
 				player.sendDebugMessage("Removing trigger skill: " + holder);
 			}
 		}
-		player.getStat().recalculateStats(true);
+		
 		player.sendSkillList();
 	}
 	
