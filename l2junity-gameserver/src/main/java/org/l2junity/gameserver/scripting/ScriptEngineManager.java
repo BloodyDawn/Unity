@@ -169,9 +169,6 @@ public final class ScriptEngineManager
 			return;
 		}
 		
-		// throws exception if not exists or not file
-		checkExistingFile("ScriptList", SCRIPT_LIST_FILE);
-		
 		final Map<IExecutionContext, List<Path>> files = new LinkedHashMap<>();
 		processDirectory(SCRIPT_FOLDER.toFile(), files);
 		

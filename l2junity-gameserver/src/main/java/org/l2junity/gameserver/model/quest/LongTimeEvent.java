@@ -25,11 +25,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.AnnouncementsTable;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.EventDroplist;
 import org.l2junity.gameserver.datatables.ItemTable;
@@ -48,22 +46,22 @@ import org.w3c.dom.Node;
  */
 public class LongTimeEvent extends Quest
 {
-	private String _eventName;
+	protected String _eventName;
 	
 	// Messages
-	private String _onEnterMsg = "Event is in process";
+	protected String _onEnterMsg = "Event is in process";
 	protected String _endMsg = "Event ends!";
 	
-	private DateRange _eventPeriod = null;
-	private DateRange _dropPeriod;
+	protected DateRange _eventPeriod = null;
+	protected DateRange _dropPeriod;
 	
 	// NPC's to spawm and their spawn points
-	private final List<NpcSpawn> _spawnList = new ArrayList<>();
+	protected final List<NpcSpawn> _spawnList = new ArrayList<>();
 	
 	// Drop data for event
-	private final List<GeneralDropItem> _dropList = new ArrayList<>();
+	protected final List<GeneralDropItem> _dropList = new ArrayList<>();
 	
-	private class NpcSpawn
+	protected class NpcSpawn
 	{
 		protected final Location loc;
 		protected final int npcId;
@@ -106,159 +104,157 @@ public class LongTimeEvent extends Quest
 	 */
 	private void loadConfig()
 	{
-		final File configFile = new File("data/scripts/events/" + getScriptName() + "/config.xml");
-		if (!configFile.isFile())
+		new IGameXmlReader()
 		{
-			return;
-		}
+			@Override
+			public void load()
+			{
+				parseDatapackFile("data/scripts/events/" + getScriptName() + "/config.xml");
+			}
+			
+			@Override
+			public void parseDocument(Document doc, File f)
+			{
+				if (!doc.getDocumentElement().getNodeName().equalsIgnoreCase("event"))
+				{
+					throw new NullPointerException("WARNING!!! " + getScriptName() + " event: bad config file!");
+				}
+				_eventName = doc.getDocumentElement().getAttributes().getNamedItem("name").getNodeValue();
+				String period = doc.getDocumentElement().getAttributes().getNamedItem("active").getNodeValue();
+				_eventPeriod = DateRange.parse(period, new SimpleDateFormat("dd MM yyyy", Locale.US));
+				
+				if (doc.getDocumentElement().getAttributes().getNamedItem("dropPeriod") != null)
+				{
+					String dropPeriod = doc.getDocumentElement().getAttributes().getNamedItem("dropPeriod").getNodeValue();
+					_dropPeriod = DateRange.parse(dropPeriod, new SimpleDateFormat("dd MM yyyy", Locale.US));
+					// Check if drop period is within range of event period
+					if (!_eventPeriod.isWithinRange(_dropPeriod.getStartDate()) || !_eventPeriod.isWithinRange(_dropPeriod.getEndDate()))
+					{
+						_dropPeriod = _eventPeriod;
+					}
+				}
+				else
+				{
+					_dropPeriod = _eventPeriod; // Drop period, if not specified, assumes all event period.
+				}
+				
+				if (_eventPeriod == null)
+				{
+					throw new NullPointerException("WARNING!!! " + getScriptName() + " event: illegal event period");
+				}
+				
+				Date today = new Date();
+				
+				if (_eventPeriod.getStartDate().after(today) || _eventPeriod.isWithinRange(today))
+				{
+					Node first = doc.getDocumentElement().getFirstChild();
+					for (Node n = first; n != null; n = n.getNextSibling())
+					{
+						// Loading droplist
+						if (n.getNodeName().equalsIgnoreCase("droplist"))
+						{
+							for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+							{
+								if (d.getNodeName().equalsIgnoreCase("add"))
+								{
+									try
+									{
+										int itemId = Integer.parseInt(d.getAttributes().getNamedItem("item").getNodeValue());
+										int minCount = Integer.parseInt(d.getAttributes().getNamedItem("min").getNodeValue());
+										int maxCount = Integer.parseInt(d.getAttributes().getNamedItem("max").getNodeValue());
+										String chance = d.getAttributes().getNamedItem("chance").getNodeValue();
+										int finalChance = 0;
+										
+										if (!chance.isEmpty() && chance.endsWith("%"))
+										{
+											finalChance = Integer.parseInt(chance.substring(0, chance.length() - 1)) * 10000;
+										}
+										
+										if (ItemTable.getInstance().getTemplate(itemId) == null)
+										{
+											_log.warn(getScriptName() + " event: " + itemId + " is wrong item id, item was not added in droplist");
+											continue;
+										}
+										
+										if (minCount > maxCount)
+										{
+											_log.warn(getScriptName() + " event: item " + itemId + " - min greater than max, item was not added in droplist");
+											continue;
+										}
+										
+										if ((finalChance < 10000) || (finalChance > 1000000))
+										{
+											_log.warn(getScriptName() + " event: item " + itemId + " - incorrect drop chance, item was not added in droplist");
+											continue;
+										}
+										
+										_dropList.add(new GeneralDropItem(itemId, minCount, maxCount, finalChance));
+									}
+									catch (NumberFormatException nfe)
+									{
+										_log.warn("Wrong number format in config.xml droplist block for " + getScriptName() + " event");
+									}
+								}
+							}
+						}
+						else if (n.getNodeName().equalsIgnoreCase("spawnlist"))
+						{
+							// Loading spawnlist
+							for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+							{
+								if (d.getNodeName().equalsIgnoreCase("add"))
+								{
+									try
+									{
+										int npcId = Integer.parseInt(d.getAttributes().getNamedItem("npc").getNodeValue());
+										int xPos = Integer.parseInt(d.getAttributes().getNamedItem("x").getNodeValue());
+										int yPos = Integer.parseInt(d.getAttributes().getNamedItem("y").getNodeValue());
+										int zPos = Integer.parseInt(d.getAttributes().getNamedItem("z").getNodeValue());
+										int heading = d.getAttributes().getNamedItem("heading").getNodeValue() != null ? Integer.parseInt(d.getAttributes().getNamedItem("heading").getNodeValue()) : 0;
+										
+										if (NpcData.getInstance().getTemplate(npcId) == null)
+										{
+											_log.warn(getScriptName() + " event: " + npcId + " is wrong NPC id, NPC was not added in spawnlist");
+											continue;
+										}
+										
+										_spawnList.add(new NpcSpawn(npcId, new Location(xPos, yPos, zPos, heading)));
+									}
+									catch (NumberFormatException nfe)
+									{
+										_log.warn("Wrong number format in config.xml spawnlist block for " + getScriptName() + " event");
+									}
+								}
+							}
+						}
+						else if (n.getNodeName().equalsIgnoreCase("messages"))
+						{
+							// Loading Messages
+							for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+							{
+								if (d.getNodeName().equalsIgnoreCase("add"))
+								{
+									String msgType = d.getAttributes().getNamedItem("type").getNodeValue();
+									String msgText = d.getAttributes().getNamedItem("text").getNodeValue();
+									if ((msgType != null) && (msgText != null))
+									{
+										if (msgType.equalsIgnoreCase("onEnd"))
+										{
+											_endMsg = msgText;
+										}
+										else if (msgType.equalsIgnoreCase("onEnter"))
+										{
+											_onEnterMsg = msgText;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}.load();
 		
-		try
-		{
-			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-			DocumentBuilder db = dbf.newDocumentBuilder();
-			Document doc = db.parse(configFile);
-			if (!doc.getDocumentElement().getNodeName().equalsIgnoreCase("event"))
-			{
-				throw new NullPointerException("WARNING!!! " + getScriptName() + " event: bad config file!");
-			}
-			_eventName = doc.getDocumentElement().getAttributes().getNamedItem("name").getNodeValue();
-			String period = doc.getDocumentElement().getAttributes().getNamedItem("active").getNodeValue();
-			_eventPeriod = DateRange.parse(period, new SimpleDateFormat("dd MM yyyy", Locale.US));
-			
-			if (doc.getDocumentElement().getAttributes().getNamedItem("dropPeriod") != null)
-			{
-				String dropPeriod = doc.getDocumentElement().getAttributes().getNamedItem("dropPeriod").getNodeValue();
-				_dropPeriod = DateRange.parse(dropPeriod, new SimpleDateFormat("dd MM yyyy", Locale.US));
-				// Check if drop period is within range of event period
-				if (!_eventPeriod.isWithinRange(_dropPeriod.getStartDate()) || !_eventPeriod.isWithinRange(_dropPeriod.getEndDate()))
-				{
-					_dropPeriod = _eventPeriod;
-				}
-			}
-			else
-			{
-				_dropPeriod = _eventPeriod; // Drop period, if not specified, assumes all event period.
-			}
-			
-			if (_eventPeriod == null)
-			{
-				throw new NullPointerException("WARNING!!! " + getScriptName() + " event: illegal event period");
-			}
-			
-			Date today = new Date();
-			
-			if (_eventPeriod.getStartDate().after(today) || _eventPeriod.isWithinRange(today))
-			{
-				Node first = doc.getDocumentElement().getFirstChild();
-				for (Node n = first; n != null; n = n.getNextSibling())
-				{
-					// Loading droplist
-					if (n.getNodeName().equalsIgnoreCase("droplist"))
-					{
-						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-						{
-							if (d.getNodeName().equalsIgnoreCase("add"))
-							{
-								try
-								{
-									int itemId = Integer.parseInt(d.getAttributes().getNamedItem("item").getNodeValue());
-									int minCount = Integer.parseInt(d.getAttributes().getNamedItem("min").getNodeValue());
-									int maxCount = Integer.parseInt(d.getAttributes().getNamedItem("max").getNodeValue());
-									String chance = d.getAttributes().getNamedItem("chance").getNodeValue();
-									int finalChance = 0;
-									
-									if (!chance.isEmpty() && chance.endsWith("%"))
-									{
-										finalChance = Integer.parseInt(chance.substring(0, chance.length() - 1)) * 10000;
-									}
-									
-									if (ItemTable.getInstance().getTemplate(itemId) == null)
-									{
-										_log.warn(getScriptName() + " event: " + itemId + " is wrong item id, item was not added in droplist");
-										continue;
-									}
-									
-									if (minCount > maxCount)
-									{
-										_log.warn(getScriptName() + " event: item " + itemId + " - min greater than max, item was not added in droplist");
-										continue;
-									}
-									
-									if ((finalChance < 10000) || (finalChance > 1000000))
-									{
-										_log.warn(getScriptName() + " event: item " + itemId + " - incorrect drop chance, item was not added in droplist");
-										continue;
-									}
-									
-									_dropList.add(new GeneralDropItem(itemId, minCount, maxCount, finalChance));
-								}
-								catch (NumberFormatException nfe)
-								{
-									_log.warn("Wrong number format in config.xml droplist block for " + getScriptName() + " event");
-								}
-							}
-						}
-					}
-					else if (n.getNodeName().equalsIgnoreCase("spawnlist"))
-					{
-						// Loading spawnlist
-						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-						{
-							if (d.getNodeName().equalsIgnoreCase("add"))
-							{
-								try
-								{
-									int npcId = Integer.parseInt(d.getAttributes().getNamedItem("npc").getNodeValue());
-									int xPos = Integer.parseInt(d.getAttributes().getNamedItem("x").getNodeValue());
-									int yPos = Integer.parseInt(d.getAttributes().getNamedItem("y").getNodeValue());
-									int zPos = Integer.parseInt(d.getAttributes().getNamedItem("z").getNodeValue());
-									int heading = d.getAttributes().getNamedItem("heading").getNodeValue() != null ? Integer.parseInt(d.getAttributes().getNamedItem("heading").getNodeValue()) : 0;
-									
-									if (NpcData.getInstance().getTemplate(npcId) == null)
-									{
-										_log.warn(getScriptName() + " event: " + npcId + " is wrong NPC id, NPC was not added in spawnlist");
-										continue;
-									}
-									
-									_spawnList.add(new NpcSpawn(npcId, new Location(xPos, yPos, zPos, heading)));
-								}
-								catch (NumberFormatException nfe)
-								{
-									_log.warn("Wrong number format in config.xml spawnlist block for " + getScriptName() + " event");
-								}
-							}
-						}
-					}
-					else if (n.getNodeName().equalsIgnoreCase("messages"))
-					{
-						// Loading Messages
-						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-						{
-							if (d.getNodeName().equalsIgnoreCase("add"))
-							{
-								String msgType = d.getAttributes().getNamedItem("type").getNodeValue();
-								String msgText = d.getAttributes().getNamedItem("text").getNodeValue();
-								if ((msgType != null) && (msgText != null))
-								{
-									if (msgType.equalsIgnoreCase("onEnd"))
-									{
-										_endMsg = msgText;
-									}
-									else if (msgType.equalsIgnoreCase("onEnter"))
-									{
-										_onEnterMsg = msgText;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		catch (Exception e)
-		{
-			_log.warn(getScriptName() + " event: error reading " + configFile.getAbsolutePath() + " ! " + e.getMessage(), e);
-		}
 	}
 	
 	/**
