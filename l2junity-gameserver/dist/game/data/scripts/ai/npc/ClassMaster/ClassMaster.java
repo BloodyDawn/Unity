@@ -25,8 +25,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
 import org.l2junity.gameserver.data.xml.impl.CategoryData;
+import org.l2junity.gameserver.data.xml.impl.ClassListData;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.Race;
@@ -399,10 +401,11 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 				}
 				
 				int classId = Integer.parseInt(st.nextToken());
+				
 				boolean canChange = false;
 				if ((player.isInCategory(CategoryType.SECOND_CLASS_GROUP) || player.isInCategory(CategoryType.FIRST_CLASS_GROUP)) && (player.getLevel() >= 40)) // In retail you can skip first occupation
 				{
-					canChange = CategoryData.getInstance().isInCategory(CategoryType.THIRD_CLASS_GROUP, classId);
+					canChange = CategoryData.getInstance().isInCategory(CategoryType.THIRD_CLASS_GROUP, classId) || (player.isInCategory(CategoryType.FIRST_CLASS_GROUP) && CategoryData.getInstance().isInCategory(CategoryType.SECOND_CLASS_GROUP, classId));
 				}
 				else if (player.isInCategory(CategoryType.FIRST_CLASS_GROUP) && (player.getLevel() >= 20))
 				{
@@ -419,6 +422,49 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 				
 				if (canChange)
 				{
+					int classDataIndex = -1;
+					if (st.hasMoreTokens())
+					{
+						classDataIndex = Integer.parseInt(st.nextToken());
+					}
+					
+					if (checkIfClassChangeHasOptions(player))
+					{
+						if (classDataIndex == -1)
+						{
+							htmltext = getHtm(player.getHtmlPrefix(), "cc_options.html");
+							htmltext = htmltext.replace("%name%", ClassListData.getInstance().getClass(classId).getClassName()); // getEscapedClientCode());
+							htmltext = htmltext.replace("%options%", getClassChangeOptions(player, classId));
+							return htmltext;
+						}
+						
+						ClassChangeData data = getClassChangeData(classDataIndex);
+						if (data == null)
+						{
+							return null;
+						}
+						
+						//@formatter:off
+						boolean paid = data.getItemsRequired().stream()
+						.filter(ich -> ich.getChance() > Rnd.get(100)) // Chance to pay the price
+						.filter(ih -> player.getInventory().getInventoryItemCount(ih.getId(), -1) >= ih.getCount())
+						.allMatch(ih -> player.destroyItemByItemId(getClass().getSimpleName(), ih.getId(), ih.getCount(), npc, true));
+						//@formatter:on
+						
+						if (paid)
+						{
+							//@formatter:off
+							data.getItemsRewarded().stream()
+							.filter(ich -> ich.getChance() > Rnd.get(100)) // Chance to receive the reward
+							.forEach(ih -> player.addItem(getClass().getSimpleName(), ih.getId(), ih.getCount(), npc, true));
+							//@formatter:on
+						}
+						else
+						{
+							return null; // No class change if payment failed.
+						}
+					}
+					
 					player.setClassId(classId);
 					player.sendPacket(new PlaySound("ItemSound.quest_fanfare_2"));
 					player.broadcastUserInfo();
@@ -455,38 +501,14 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 					return null;
 				}
 				
-				switch (st.nextToken())
+				if (player.getClan().getLevel() >= 10)
 				{
-					case "1":
-						player.getClan().setLevel(1);
-						break;
-					case "2":
-						player.getClan().setLevel(2);
-						break;
-					case "3":
-						player.getClan().setLevel(3);
-						break;
-					case "4":
-						player.getClan().setLevel(4);
-						break;
-					case "5":
-						player.getClan().setLevel(5);
-						break;
-					case "6":
-						player.getClan().setLevel(6);
-						break;
-					case "7":
-						player.getClan().setLevel(7);
-						break;
-					case "8":
-						player.getClan().setLevel(8);
-						break;
-					case "9":
-						player.getClan().setLevel(9);
-						break;
-					case "10":
-						player.getClan().setLevel(10);
-						break;
+					htmltext = "test_server_helper022a.html";
+				}
+				else
+				{
+					player.getClan().setLevel(player.getClan().getLevel() + 1);
+					player.getClan().broadcastClanStatus();
 				}
 				break;
 			}
@@ -610,6 +632,14 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 			LOGGER.warn("New classId found for player {} is exactly the same as the one he currently is!", player);
 			return false;
 		}
+		else if (checkIfClassChangeHasOptions(player))
+		{
+			String html = getHtm(player.getHtmlPrefix(), "cc_options.html");
+			html = html.replace("%name%", ClassListData.getInstance().getClass(newClass.getId()).getClassName()); // getEscapedClientCode());
+			html = html.replace("%options%", getClassChangeOptions(player, newClass.getId()));
+			showResult(player, html);
+			return false;
+		}
 		else
 		{
 			player.setClassId(newClass.getId());
@@ -658,11 +688,11 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 		}
 		else if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP) && (player.getLevel() >= 76))
 		{
-			html = getHtm(player.getHtmlPrefix(), "tutorialThirdClass.html");
+			html = getHtm(player.getHtmlPrefix(), "qm_thirdclass.html");
 		}
 		else if (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP) && (player.getLevel() >= 85)) // 9
 		{
-			html = getHtm(player.getHtmlPrefix(), "tutorialAwaken.html");
+			html = getHtm(player.getHtmlPrefix(), "qm_awaken.html");
 		}
 		
 		if (html != null)
@@ -705,7 +735,7 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 		showPopupWindow(event.getActiveChar());
 	}
 	
-	private String getClassChangeOptions(PlayerInstance player, int selectedClassId, boolean tutorialWindow)
+	private String getClassChangeOptions(PlayerInstance player, int selectedClassId)
 	{
 		final StringBuilder sb = new StringBuilder();
 		
@@ -719,14 +749,7 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 			
 			sb.append("<tr><td><img src=L2UI_CT1.ChatBalloon_DF_TopCenter width=276 height=1 /></td></tr>");
 			sb.append("<tr><td><table bgcolor=3f3f3f width=100%>");
-			if (tutorialWindow)
-			{
-				sb.append("<tr><td align=center><a action=\"bypass -h Quest ClassMaster CO " + selectedClassId + " " + i + "\">" + option.getName() + ":</a></td></tr>");
-			}
-			else
-			{
-				sb.append("<tr><td align=center><a action=\"bypass -h Quest ClassMaster change_class " + selectedClassId + " " + i + "\">" + option.getName() + ":</a></td></tr>");
-			}
+			sb.append("<tr><td align=center><a action=\"bypass -h Quest ClassMaster setclass " + selectedClassId + " " + i + "\">" + option.getName() + ":</a></td></tr>");
 			sb.append("<tr><td><table width=276>");
 			sb.append("<tr><td>Requirements:</td></tr>");
 			if (option.getItemsRequired().isEmpty())
@@ -808,7 +831,7 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 		public ClassChangeData(String name, List<CategoryType> appliedCategories)
 		{
 			_name = name;
-			_appliedCategories = appliedCategories;
+			_appliedCategories = appliedCategories != null ? appliedCategories : Collections.emptyList();
 		}
 		
 		public String getName()
@@ -819,6 +842,22 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 		public List<CategoryType> getCategories()
 		{
 			return _appliedCategories != null ? _appliedCategories : Collections.emptyList();
+		}
+		
+		public boolean isInCategory(PlayerInstance player)
+		{
+			if (_appliedCategories != null)
+			{
+				for (CategoryType category : _appliedCategories)
+				{
+					if (player.isInCategory(category))
+					{
+						return true;
+					}
+				}
+			}
+			
+			return false;
 		}
 		
 		public boolean isRewardNoblesse()
@@ -860,6 +899,17 @@ public class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 		{
 			return _itemsRewarded != null ? _itemsRewarded : Collections.emptyList();
 		}
+	}
+	
+	private boolean checkIfClassChangeHasOptions(PlayerInstance player)
+	{
+		boolean showOptions = _classChangeData.stream().filter(ccd -> !ccd.getItemsRequired().isEmpty()).anyMatch(ccd -> ccd.isInCategory(player)); // Check if there are requirements
+		if (!showOptions)
+		{
+			showOptions = _classChangeData.stream().filter(ccd -> !ccd.getItemsRewarded().isEmpty()).filter(ccd -> ccd.isInCategory(player)).count() > 1; // Check if there is more than 1 reward to chose.
+		}
+		
+		return showOptions;
 	}
 	
 	private ClassChangeData getClassChangeData(int index)
