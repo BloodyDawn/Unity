@@ -428,4 +428,17 @@ public final class BuffInfo
 		}
 		return 0;
 	}
+	
+	public void resetAbnormalTime(int abnormalTime)
+	{
+		if (_abnormalTime > 0)
+		{
+			_abnormalTime = abnormalTime;
+			if ((_scheduledFutureTimeTask != null) && !_scheduledFutureTimeTask.isCancelled())
+			{
+				_scheduledFutureTimeTask.cancel(true);
+			}
+			_scheduledFutureTimeTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new BuffTimeTask(this), 0, 1000L);
+		}
+	}
 }

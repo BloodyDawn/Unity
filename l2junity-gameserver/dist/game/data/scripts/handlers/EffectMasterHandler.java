@@ -35,6 +35,7 @@ public final class EffectMasterHandler
 	
 	private static final Class<?>[] EFFECTS =
 	{
+		AbnormalTimeChange.class,
 		AddHate.class,
 		AttackTrait.class,
 		Backstab.class,
@@ -89,6 +90,7 @@ public final class EffectMasterHandler
 		DispelAll.class,
 		DispelByCategory.class,
 		DispelBySlot.class,
+		DispelBySlotMyself.class,
 		DispelBySlotProbability.class,
 		EnableCloak.class,
 		EnemyCharge.class,

@@ -27,6 +27,7 @@
 		</for>
 	</skill>
 	<skill id="11501" levels="7" name="Superior Dual Weapon Mastery">
+		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 30%, Additional P. Atk. + 1027, Atk. Spd. + 30%, P. Critical Damage + 15% when a dualsword/dualblunt is equipped. Normal hit damage to monsters + 20%. Chance to activate Physical Pose during a normal attack. Depending on your STR can reset cooldown or double skill effect duration. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#pAtk"> 1027 1191 1381 1554 1761 1869 1982 </table>
@@ -51,16 +52,17 @@
 				<add stat="skillCritical" val="1" /> <!-- STR -->
 			</effect>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
 				<param isCritical="false" />
 				<param minDamage="1" chance="3" />
 				<param skillId="5559" skillLevel="1" /> <!-- Physical Pose -->
 				<param targetType="SELF" />
-				<param allowWeapons="SWORD,BLUNT,DUAL,DUALFIST,DAGGER,DUALDAGGER,POLE,ANCIENTSWORD,RAPIER" />
+				<param allowWeapons="DUAL,DUALBLUNT" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11502" levels="7" name="Superior Robe Mastery">
+		<!-- Glory Days confirmed -->
 		<!--Max HP + 4636, P. Def. + 969 when equipped with a Robe. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#pDef"> 969 1064 1169 1261 1413 1467 1522 </table>
@@ -77,10 +79,12 @@
 				<add stat="maxHp" val="4636">
 					<using kind="MAGIC" />
 				</add>
+				<mul stat="rShld" val="0.5" /> <!-- Never been in description but is in skilldata -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="11503" levels="7" name="Superior Light Armor Mastery">
+		<!-- Glory Days confirmed -->
 		<!-- Max HP + 4636, P. Def. + 1355 when equipped with Light Armor. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#pDef"> 1355 1488 1635 1763 1976 2051 2128 </table>
@@ -97,10 +101,12 @@
 				<add stat="maxHp" val="4636">
 					<using kind="LIGHT" />
 				</add>
+				<mul stat="rShld" val="0.5" /> <!-- Never been in description but is in skilldata -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="11504" levels="7" name="Superior Heavy Armor Mastery">
+		<!-- Glory Days confirmed -->
 		<!-- Max HP + 4636, P. Def. + 1558 when equipped with Heavy Armor. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#pDef"> 1558 1711 1880 2027 2271 2357 2446 </table>
@@ -117,10 +123,12 @@
 				<add stat="maxHp" val="4636">
 					<using kind="HEAVY" />
 				</add>
+				<mul stat="rShld" val="0.5" /> <!-- Never been in description but is in skilldata -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="11505" levels="7" name="Superior Anti Magic">
+		<!-- Glory Days confirmed -->
 		<!-- M. Def. + 776 and Attack M. Def. Rate + 35%. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#mDef"> 776 878 993 1097 1237 1299 1365 </table>
@@ -137,6 +145,7 @@
 		</for>
 	</skill>
 	<skill id="11506" levels="7" name="Superior HP Boost">
+		<!-- Glory Days confirmed -->
 		<!-- STR + 2 and Max HP + 366. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#maxHp"> 513 574 635 717 766 835 904 </table>
@@ -153,6 +162,7 @@
 		</for>
 	</skill>
 	<skill id="11507" levels="7" name="Superior MP Boost">
+		<!-- Glory Days confirmed -->
 		<!-- STR + 2 and Max MP + 313. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#maxMp"> 313 374 435 517 566 635 704 </table>
@@ -169,7 +179,7 @@
 		</for>
 	</skill>
 	<skill id="11508" levels="9" name="Assault Rush">
-		<table name="#magicLvl"> 85 87 90 93 96 99 </table>
+		<!-- Glory Days confirmed -->
 		<!-- Rushes the enemy to inflict Stun for 1 second. Requires a sword, dualsword or dual blunt to be equipped. -->
 		<table name="#effectPoint"> -687 -698 -707 -712 -712 -712 -712 -712 -712 </table>
 		<table name="#magicLvl"> 85 87 90 93 96 99 101 102 105 </table>
@@ -200,16 +210,19 @@
 		<set name="trait" val="SHOCK" />
 		<cond addName="1" msgId="113">
 			<and>
-				<using kind="SWORD, DUAL, DUALBLUNT" />
+				<using kind="SWORD, DUAL, DUALBLUNT, BLUNT" />
 				<target mindistance="200" />
 			</and>
 		</cond>
 		<for>
 			<effect name="EnemyCharge" />
-			<effect name="BlockActions" />
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11509" levels="11" name="Crippling Attack">
+		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 14608 Power added to P. Atk. For 20 seconds, P. Def. and M. Def. - 40% and P. Evasion - 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
@@ -235,13 +248,18 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
+		<alterSkill>
+			<skill id="10750" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
+			<skill id="10749" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
+			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
+		</alterSkill>
 		<cond msgId="113" addName="1">
-			<using kind="SWORD, DUAL, DUALBLUNT" />
+			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param criticalChance="15" />
+				<param criticalChance="5" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
@@ -252,6 +270,7 @@
 		</for>
 	</skill>
 	<skill id="11510" levels="11" name="Shadow Blade">
+		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 14608 Power added to P. Atk. For 20 seconds, P. Atk. and M. Atk. - 40%. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
@@ -278,12 +297,12 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
-			<using kind="SWORD, DUAL, DUALBLUNT" />
+			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param criticalChance="15" />
+				<param criticalChance="5" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
@@ -293,6 +312,7 @@
 		</for>
 	</skill>
 	<skill id="11511" levels="11" name="Death Strike">
+		<!-- Glory Days confirmed -->
 		<!-- Attacks target with 21642 Power added to P. Atk. Requires a sword, blunt, dualsword, or dual blunt weapon. Over-hit. Critical. -->
 		<table name="#effectPoint"> -692 -696 -700 -704 -707 -709 -712 -712 -712 -712 -712 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
@@ -318,23 +338,24 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param criticalChance="15" />
+				<param criticalChance="5" />
 				<param overHit="true" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11513" levels="11" name="Mass Crippling Attack">
+		<!-- Glory Days confirmed -->
 		<!-- Attacks target and nearby enemies with 10263 Power added to P. Atk. For 20 seconds, decreases target's P. Def. and M. Def. by 40% and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table> <!-- Custom -->
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#mpConsumes"> 130 132 136 142 146 150 156 160 164 168 172 </table>
 		<table name="#power"> 10263 10616 11322 12027 12733 13438 14144 14849 19113 20045 20977 </table>
 		<set name="icon" val="icon.skill11513" />
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="ULTIMATE_DEBUFF" />
-		<set name="affectLimit" val="5-12" /> <!-- Custom -->
-		<set name="affectRange" val="200" /> <!-- Custom -->
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="200" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="300" />
 		<set name="hitTime" val="910" />
@@ -357,7 +378,7 @@
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param criticalChance="15" />
+				<param criticalChance="5" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
@@ -647,8 +668,8 @@
 		</for>
 	</skill>
 	<skill id="11521" levels="4" name="Harp Melody">
-		<table name="#affectLimit"> 0-0 0-0 0-0 50-50 </table>
 		<!-- For 30 minutes, party members' P. Accuracy + 5, P. and M. Evasion + 5, Speed + 34 and received Critical Damage - 30%. -->
+		<table name="#affectLimit"> 0-0 0-0 0-0 50-50 </table>
 		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#mpConsumes"> 140 151 170 181 </table>
 		<table name="#mpInitialConsumes"> 28 31 34 37 </table>
@@ -658,8 +679,8 @@
 		<table name="#mEvas"> 5 6 7 8 </table>
 		<table name="#runSpd"> 34 35 36 37 </table>
 		<set name="abnormalLvl" val="#abnormalLvl" />
-		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="abnormalTime" val="1800" />
+		<set name="abnormalType" val="BUFF_SPECIAL_HITAVOID" />
 		<set name="affectRange" val="1000" />
 		<set name="icon" val="icon.skill11521" />
 		<set name="operateType" val="A2" />
@@ -1083,7 +1104,6 @@
 		</for>
 	</skill>
 	<skill id="11537" levels="10" name="Transform">
-		<!-- TODO activationRate -->
 		<!-- Transforms target into a harmless creature and decrease its Speed by 20% for 15 seconds. The effect is canceled if the transformed target is attacked. -->
 		<table name="#effectPoint"> -696 -702 -707 -711 -711 -711 -711 -711 -711 -711 </table>
 		<table name="#magicLvl"> 85 86 88 91 94 97 99 101 103 105 </table>
@@ -1252,29 +1272,46 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11543" levels="3" name="Disperse">
-		<table name="#magicLvl"> 93 96 99 </table>
-		<table name="#effectPoint"> 704 711 711 715 719 722 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11543" levels="6" name="Disperse">
+		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., transforms yourself and nearby party members to increase P. Def. and M. Def. + 2000 and Speed + 44. Decreases P. Atk. and M. Atk. + 80%. -->
-		<table name="#mpConsumes"> 330 350 370 </table>
+		<table name="#def"> 2000 3000 4000 4500 5000 5500 </table>
+		<table name="#magicLvl"> 93 96 99 101 103 105 </table>
+		<table name="#effectPoint"> 704 711 711 715 719 722 </table>
+		<table name="#mpConsumes"> 330 350 370 390 410 430 </table>
+		<table name="#runSpd"> 44 44 44 48 52 56 </table>
 		<set name="icon" val="icon.skill11543" />
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="BUFF_SPECIAL_MULTI" />
 		<set name="affectRange" val="1000" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="900000" />
 		<set name="effectPoint" val="#effectPoint" />
-		<set name="abnormalType" val="BUFF_SPECIAL_MULTI" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="abnormalLvl" val="5" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="DispelBySlot">
+				<param dispel="CHANGEBODY,9" />
+			</effect>
+			<effect name="Transformation">
+				<param transformationId="500;501;502;503;504" />
+				<add stat="runSpd" val="#runSpd" />
+				<mul stat="pAtk" val="0.2" />
+				<mul stat="mAtk" val="0.2" />
+				<mul stat="pAtkSpd" val="0.2" />
+				<mul stat="mAtkSpd" val="0.2" />
+				<add stat="pDef" val="#def" />
+				<add stat="mDef" val="#def" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11544" levels="1" name="Battle Rhapsody">
 		<!-- AUTO GENERATED SKILL -->
@@ -1600,10 +1637,10 @@
 		</for>
 	</skill>
 	<skill id="11560" levels="2" name="Celestial Aegis">
-		<table name="#affectLimit"> 0-0 50-50 </table>
-		<table name="#magicLvl"> 85 99 </table>
 		<!--Updated to Ertheia -->
 		<!-- Makes all party members invincible for 30 seconds. -->
+		<table name="#affectLimit"> 0-0 50-50 </table>
+		<table name="#magicLvl"> 85 99 </table>
 		<table name="#mpConsumes"> 423 557 </table>
 		<set name="icon" val="icon.skill11560" />
 		<set name="abnormalLvl" val="5" />
@@ -1624,8 +1661,12 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="affectLimit" val="#affectLimit" />
 		<set name="isMagic" val="1" />
+		<set name="staticReuse" val="true" />
 		<for>
 			<effect name="Invincible" />
+			<effect name="DispelBySlotMyself">
+				<param dispel="MAGICAL_STANCE" />
+			</effect>
 		</for>
 		<endEffects>
 			<effect name="CallSkill">
@@ -1974,7 +2015,7 @@
 			<effect name="PhysicalMute" />
 			<effect name="PhysicalAttackMute" />
 			<effect name="Transformation">
-				<param transformationId="0" />
+				<param transformationId="500;501;502;503;504" />
 				<mul stat="runSpd" val="0.80" />
 			</effect>
 		</for>
