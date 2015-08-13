@@ -362,6 +362,7 @@
 		<set name="icon" val="icon.skill11509" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
@@ -389,6 +390,7 @@
 		</for>
 	</skill>
 	<skill id="11514" levels="11" name="Mass Shadow Blade">
+		<!-- Glory Days confirmed -->
 		<!-- Attacks target and nearby enemies with 11722 Power added to P. Atk. For 20 seconds, decreases P. Atk. and M. Atk. by 40%. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
 		<table name="#effectPoint"> -692 -696 -700 -704 -707 -709 -712 -712 -712 -712 -712 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
@@ -397,14 +399,15 @@
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="CRITICAL_PROB_DOWN" />
-		<set name="affectLimit" val="5-12" /> <!-- Custom -->
-		<set name="affectRange" val="200" /> <!-- Custom -->
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="200" />
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
 		<set name="hitTime" val="1410" />
 		<set name="icon" val="icon.skill11514" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
@@ -416,12 +419,12 @@
 		<set name="activateRate" val="99" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
-			<using kind="SWORD, DUAL, DUALBLUNT" />
+			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param criticalChance="15" />
+				<param criticalChance="5" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
@@ -431,11 +434,12 @@
 		</for>
 	</skill>
 	<skill id="11515" levels="5" name="Confusion Bomber">
-		<table name="#magicLvl"> 85 88 91 94 97 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Curses target with darkness. For 5 seconds, decreases Speed and Atk. Spd. by 5%. After 5 seconds, detonates target to inflict damage nearby. Requires a sword, dualsword or dual blunt to be equipped. -->
 		<table name="#effectPoint"> -696 -702 -707 -711 -711 </table>
+		<table name="#magicLvl"> 85 88 91 94 97 </table>
 		<table name="#mpConsumes"> 76 80 84 88 92 </table>
+		<table name="#skillLevel"> 1 2 3 4 5 </table>
 		<set name="icon" val="icon.skill11515" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -457,14 +461,27 @@
 		<set name="abnormalTime" val="5" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="0.95" />
+				<mul stat="pAtkSpd" val="0.95" />
+				<mul stat="mAtkSpd" val="0.95" />
+			</effect>
+		</for>
+		<endEffects>
+			<effect name="CallSkill">
+				<param skillId="11516" skillLevel="#skillLevel" />
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="11516" levels="15" name="Curse Explosion">
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 85 88 91 94 97 99 99 99 99 99 99 99 99 99 99 </table>
 		<table name="#effectPoint"> -696 -702 -707 -711 -711 -711 -711 -711 -711 -711 -711 -711 -711 -711 -711 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<table name="#power"> 8805 9717 10630 11542 12454 13366 13670 13974 14278 14582 14886 15190 15494 15799 16103 </table>
 		<set name="icon" val="icon.skill1170" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -472,10 +489,16 @@
 		<set name="trait" val="DERANGEMENT" />
 		<set name="affectRange" val="200" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11517" levels="4" name="Horn Melody">
-		<table name="#affectLimit"> 0-0 0-0 0-0 50-50 </table>
+		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, all party members' P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%. -->
+		<table name="#affectLimit"> 0-0 0-0 0-0 50-50 </table>
 		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#effectPoint"> 687 698 707 712 </table>
 		<table name="#mpConsumes"> 140 151 170 181 </table>
@@ -520,8 +543,9 @@
 		</for>
 	</skill>
 	<skill id="11518" levels="4" name="Drum Melody">
-		<table name="#affectLimit"> 0-0 0-0 0-0 50-50 </table>
 		<!-- For 30 minutes, party members' Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage during a normal attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, damage received from critical attacks - 30% and Speed - 15%. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage. -->
+		<!-- Glory Days confirmed -->
+		<table name="#affectLimit"> 0-0 0-0 0-0 50-50 </table>
 		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#effectPoint"> 687 698 707 712 </table>
 		<table name="#mpConsumes"> 140 151 170 181 </table>
@@ -564,12 +588,11 @@
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
 				<param minDamage="300" />
-				<param chance="25" />
+				<param chance="80" />
 				<param skillId="11569" skillLevel="1" /> <!-- Critical Damage Increase -->
 				<param targetType="SELF" />
-				<param allowWeapons="SWORD,BLUNT,DAGGER,DUALDAGGER,DUAL,DUALFIST,POLE,ANCIENTSWORD,RAPIER,BOW,CROSSBOW,DUALBLUNT" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="MULTI_BUFF;COUNTER_CRITICAL" rate="100" />
@@ -580,8 +603,9 @@
 		</for>
 	</skill>
 	<skill id="11519" levels="4" name="Pipe Organ Melody">
-		<table name="#affectLimit"> 0-0 0-0 0-0 50-50 </table>
+		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, party members' Max HP + 37%, Max MP + 37%, Max CP + 37%, and HP Recovery Bonus + 20%. -->
+		<table name="#affectLimit"> 0-0 0-0 0-0 50-50 </table>
 		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#effectPoint"> 687 698 707 712 </table>
 		<table name="#mpConsumes"> 140 151 170 181 </table>
@@ -625,8 +649,9 @@
 		</for>
 	</skill>
 	<skill id="11520" levels="4" name="Guitar Melody">
-		<table name="#affectLimit"> 0-0 0-0 0-0 50-50 </table>
+		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, party members' P. Critical Rate + 32%, P. Critical Damage + 35%, M. Critical Rate + 20 , and MP Consumption - 20% for physical skills and - 10% for magic skills. Iss Enchanter's Enchant Skill MP Consumption - 20%. -->
+		<table name="#affectLimit"> 0-0 0-0 0-0 50-50 </table>
 		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#mpConsumes"> 140 151 170 181 </table>
 		<table name="#mpInitialConsumes"> 28 31 34 37 </table>
@@ -668,6 +693,7 @@
 		</for>
 	</skill>
 	<skill id="11521" levels="4" name="Harp Melody">
+		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, party members' P. Accuracy + 5, P. and M. Evasion + 5, Speed + 34 and received Critical Damage - 30%. -->
 		<table name="#affectLimit"> 0-0 0-0 0-0 50-50 </table>
 		<table name="#abnormalLvl"> 1 2 3 4 </table>
@@ -714,8 +740,9 @@
 		</for>
 	</skill>
 	<skill id="11522" levels="4" name="Lute Melody">
-		<table name="#affectLimit"> 0-0 0-0 0-0 50-50 </table>
+		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, party members' Atk. Spd. + 34% and Casting Spd. + 31%. Also has a chance of triggering a 9% Vampiric Rage effect during a normal attack. -->
+		<table name="#affectLimit"> 0-0 0-0 0-0 50-50 </table>
 		<table name="#abnormalLvl"> 1 2 3 4 </table>
 		<table name="#mpConsumes"> 140 151 170 181 </table>
 		<table name="#mpInitialConsumes"> 28 31 34 37 </table>
@@ -745,7 +772,7 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<add stat="absorbDam" val="9" /> <!-- TODO: 20%? chance to trigger Vampiric rage -->
+				<add stat="absorbDam" val="9" /> <!-- TODO: 20% chance to trigger Vampiric rage -->
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" rate="100" />
@@ -756,6 +783,7 @@
 		</for>
 	</skill>
 	<skill id="11523" levels="1" name="Knight's Harmony">
+		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, the selected party member's P. Atk. + 12%, P. Critical Damage + 35%, P. Critical Rate + 100%, P. Def. + 45%, Shield Defense Rate + 30% and Shield Defense + 50%. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
@@ -794,6 +822,7 @@
 		</for>
 	</skill>
 	<skill id="11524" levels="1" name="Warrior's Harmony">
+		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, the selected party member's P. Atk. + 35%, P. Critical Damage + 35%, P. Critical Rate + 100%, Atk. Spd. + 8%, M. Atk. + 16%, Casting Spd. + 8% and Speed + 8. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
@@ -833,6 +862,7 @@
 		</for>
 	</skill>
 	<skill id="11525" levels="1" name="Wizard's Harmony">
+		<!-- Glory Days confirmed -->
 		<!-- For 30 minutes, the selected party member's M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Speed + 8, M. Def. + 14%, MP Recovery Bonus + 20%, MP Consumption for magic skills - 15% and physical skills -5%, and Cooldown - 20%. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
@@ -878,6 +908,7 @@
 		</for>
 	</skill>
 	<skill id="11526" levels="7" name="Superior Sword/Blunt Weapon Mastery">
+		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 30%, Additional P. Atk. + 1027, Atk. Spd. + 30%, P. Critical Damage + 15% when a sword or blunt weapon is equipped. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#pAtk"> 1027 1191 1381 1554 1761 1869 1982 </table>
@@ -902,6 +933,7 @@
 		</for>
 	</skill>
 	<skill id="11529" levels="1" name="Prevailing Sonata">
+		<!-- Glory Days confirmed -->
 		<!-- Increases party members' Atk. Spd. by 15%, Casting Spd. by 30%, Max HP by 30%, MP recovery bonus by 20% and decreases MP Consumption for magic skill by 10% and the magic cancel rate for 5 minutes. -->
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
@@ -940,6 +972,7 @@
 		</for>
 	</skill>
 	<skill id="11530" levels="1" name="Daring Sonata">
+		<!-- Glory Days confirmed -->
 		<!-- Increases party members' P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. and Casting Spd. by 8% and decreases P. Def. by 3%, M. Def. by 11% and P. Evasion by 4 for 5 minutes. Also bestows an 8% Vampiric Rage effect and a chance of reflecting 10% of the damage received. -->
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
@@ -969,7 +1002,7 @@
 				<mul stat="pDef" val="0.97" />
 				<mul stat="mDef" val="0.97" />
 				<sub stat="rEvas" val="4" />
-				<add stat="absorbDam" val="8" /> <!-- Custom, I think it should be some kind of a trigger -->
+				<add stat="absorbDam" val="8" /> <!-- TODO : 30% chance to vampiric -->
 				<add stat="reflectDam" val="10" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -981,6 +1014,7 @@
 		</for>
 	</skill>
 	<skill id="11532" levels="1" name="Refreshing Sonata">
+		<!-- Glory Days confirmed -->
 		<!-- Increases party members' HP Recovery Bonus by 20%, P.ﾠAccuracy by 4, P.ﾠEvasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10% for 5 minutes. -->
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
@@ -1022,6 +1056,7 @@
 	</skill>
 	<skill id="11533" levels="1" name="Blood Requiem">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Party members receives 80% Vampiric Rage effect for 15 seconds. -->
 		<set name="icon" val="icon.skill11546" />
 		<set name="abnormalLvl" val="5" />
@@ -1042,19 +1077,23 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<for>
 			<effect name="Buff">
-				<add stat="absorbDam" val="80" />
+				<add stat="absorbDam" val="80" /> <!-- TODO 30% chance to vampiric -->
+			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="BUFF_SPECIAL_MULTI,-1" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11534" levels="6" name="Angel's Touch">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- For 7 seconds, renders target immune to debuffs. -->
 		<table name="#effectPoint"> 704 707 709 709 709 709 </table>
 		<table name="#magicLvl"> 87 90 93 96 99 101 </table>
 		<table name="#mpConsumes"> 70 75 80 85 90 95 </table>
 		<table name="#abnormalTime"> 7 9 11 13 15 17 </table>
 		<set name="icon" val="icon.skill11534" />
-		<set name="abnormalLvl" val="5" /> <!-- Custom -->
+		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
 		<set name="operateType" val="A2" />
@@ -1079,9 +1118,11 @@
 	</skill>
 	<skill id="11536" levels="9" name="Divine Cancel">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Has a chance of canceling up to 2 of the buff effects on target. -->
 		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
 		<table name="#mpConsumes"> 70 70 75 80 85 90 95 100 105 </table>
+		<table name="#rate"> 35 40 45 50 55 60 60 60 60 </table> <!-- TODO: check rate above lvl 98 -->
 		<set name="icon" val="icon.skill11536" />
 		<set name="effectPoint" val="-709" />
 		<set name="operateType" val="A1" />
@@ -1099,11 +1140,12 @@
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="buff" rate="50" max="2" />
+				<param slot="buff" rate="#rate" max="2" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11537" levels="10" name="Transform">
+		<!-- Glory Days confirmed -->
 		<!-- Transforms target into a harmless creature and decrease its Speed by 20% for 15 seconds. The effect is canceled if the transformed target is attacked. -->
 		<table name="#effectPoint"> -696 -702 -707 -711 -711 -711 -711 -711 -711 -711 </table>
 		<table name="#magicLvl"> 85 86 88 91 94 97 99 101 103 105 </table>
@@ -1138,14 +1180,22 @@
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
 			<effect name="PhysicalAttackMute" />
-			<effect name="Transformation">
+			<effect name="Transformation"> <!-- TODO check effects -->
 				<param transformationId="500;501;502;503;504" />
 				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param minDamage="1" />
+				<param chance="100" />
+				<param skillId="11556" skillLevel="1" /> <!-- Cancel Transform -->
+				<param targetType="SELF" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11538" levels="7" name="Mass Giant Root">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts Hold on nearby enemies for 15 seconds. -->
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 252 558 612 666 720 774 828 </table>
@@ -1182,6 +1232,7 @@
 	</skill>
 	<skill id="11539" levels="11" name="Petrify">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Petrifies target for 15 seconds. -->
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
 		<table name="#mpConsumes"> 70 72 76 78 82 85 88 92 96 100 104 </table>
@@ -1190,9 +1241,9 @@
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="TURN_STONE" />
 		<set name="abnormalVisualEffect" val="FLESH_STONE" />
-		<set name="activateRate" val="60" /> <!-- Custom -->
+		<set name="activateRate" val="60" />
 		<set name="basicProperty" val="MAGIC" />
-		<set name="effectPoint" val="-687" /> <!-- Custom -->
+		<set name="effectPoint" val="-687" />
 		<set name="effectRange" val="1100" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
@@ -1208,11 +1259,17 @@
 		<set name="trait" val="TURN_STONE" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="BlockActions" />
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="Invincible" />
+			<effect name="DispelBySlot">
+				<param dispel="CHANGEBODY,9" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11540" levels="7" name="Quick Escape">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Transforms yourself into a cute pig for 15 seconds. P. Def. and M. Def. + 3000, and Speed + 30%. -->
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 70 77 85 92 99 106 114 </table>
@@ -1236,16 +1293,19 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="Transformation">
-				<param transformationId="104" />
+			<effect name="Transformation"> <!-- TODO check effects -->
+				<param transformationId="500" />
 				<add stat="pDef" val="#def" />
 				<add stat="mDef" val="#def" />
 				<mul stat="runSpd" val="#runSpd" />
 			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="CHANGEBODY,9" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11541" levels="1" name="Polymorph">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Transforms yourself into a stone for 15 seconds to eliminate nearby enemies' aggression and keep them from targeting you. Greatly decreases Speed while transformed. Cannot be used while Disparition is active. -->
 		<set name="icon" val="icon.skill11541" />
 		<set name="abnormalLvl" val="5" />
@@ -1266,9 +1326,13 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Untargetable" />
-			<effect name="Transformation">
+			<effect name="Transformation"> <!-- TODO check effects -->
 				<param transformationId="505" />
 				<mul stat="runSpd" val="0.5" />
+			</effect>
+			<effect name="DeleteHate" />
+			<effect name="DispelBySlot">
+				<param dispel="CHANGEBODY,9" />
 			</effect>
 		</for>
 	</skill>
@@ -1301,7 +1365,7 @@
 			<effect name="DispelBySlot">
 				<param dispel="CHANGEBODY,9" />
 			</effect>
-			<effect name="Transformation">
+			<effect name="Transformation"> <!-- TODO check effects -->
 				<param transformationId="500;501;502;503;504" />
 				<add stat="runSpd" val="#runSpd" />
 				<mul stat="pAtk" val="0.2" />
@@ -1314,7 +1378,7 @@
 		</for>
 	</skill>
 	<skill id="11544" levels="1" name="Battle Rhapsody">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- For 30 sec., doubles all party members' P. Atk., M. Atk., Atk. Spd. and Casting Spd. -->
 		<set name="icon" val="icon.skill11544" />
 		<set name="abnormalTime" val="30" />
@@ -1334,10 +1398,10 @@
 		<set name="reuseDelay" val="600000" />
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="2.00" />
-				<mul stat="mAtk" val="2.00" />
-				<mul stat="pAtkSpd" val="2.00" />
-				<mul stat="mAtkSpd" val="2.00" />
+				<mul stat="pAtk" val="2" />
+				<mul stat="mAtk" val="2" />
+				<mul stat="pAtkSpd" val="2" />
+				<mul stat="mAtkSpd" val="2" />
 			</effect>
 		</for>
 	</skill>
@@ -1368,13 +1432,16 @@
 		</for>
 	</skill>
 	<skill id="11546" levels="4" name="Chaos Symphony">
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts 38826 damage on target and nearby enemies. Decreases nearby enemies' P. Atk., P. Def., M. Atk., M. Def. and Speed by 50% for 10 seconds. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
 		<table name="#magicLvl"> 99 101 103 105 </table>
 		<table name="#power"> 38826 44708 46888 49068 </table>
-		<set name="icon" val="icon.skill11533" />
-		<set name="abnormalTime" val="10" />
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="300" />
+		<set name="abnormalLvl" val="5" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="MULTI_DEBUFF" />
+		<set name="icon" val="icon.skill11533" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="1767" />
@@ -1382,23 +1449,21 @@
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="-707" />
-		<set name="abnormalType" val="MULTI_DEBUFF" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="99" />
-		<set name="abnormalLvl" val="5" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
-			<using kind="SWORD, DUAL, DUALBLUNT" />
+			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
 				<param power="#power" />
-				<param criticalChance="15" />
+				<param criticalChance="5" />
 				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
@@ -1411,6 +1476,7 @@
 		</for>
 	</skill>
 	<skill id="11547" levels="7" name="Superior HP Recovery">
+		<!-- Glory Days confirmed -->
 		<!-- STR + 2 and HP Recovery Bonus + 2.8. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#regHp"> 2.8 3.4 4 4.6 5.4 6.2 7 </table>
@@ -1427,6 +1493,7 @@
 		</for>
 	</skill>
 	<skill id="11548" levels="1" name="Superior Quick Recovery">
+		<!-- Glory Days confirmed -->
 		<!-- INT + 2 and Cooldown for magic skills - 25%. -->
 		<set name="icon" val="icon.skill11004" />
 		<set name="magicLvl" val="85" />
@@ -1436,21 +1503,31 @@
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
-				<mul stat="mReuse" val="0.75" />
+				<mul stat="mReuse" val="0.75" /> <!-- TODO check me seems based on isMagic type -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="11549" levels="1" name="Superior Mana Steal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Has a chance of recovering MP during a normal attack when equipped with a sword, blunt, dualsword, or dual blunt weapon. -->
 		<set name="icon" val="icon.skill11505" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillByAttack">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param isCritical="false" />
+				<param minDamage="100" chance="5" />
+				<param skillId="11550" skillLevel="1" /> <!-- Superior Mana Steal -->
+				<param targetType="SELF" />
+				<param allowWeapons="SWORD,BLUNT,DUAL,DUALBLUNT" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11550" levels="1" name="Superior Mana Steal">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill11505" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -1459,8 +1536,14 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="85" />
 		<set name="reuseDelay" val="3000" />
+		<for>
+			<effect name="ManaHeal">
+				<param power="30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11551" levels="1" name="Superior Mental Attack Resistance">
+		<!-- Glory Days confirmed -->
 		<!-- STR + 2 and Hold/Sleep/Bleed/Mind/Poison Resistance + 30. -->
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="85" />
@@ -1481,6 +1564,7 @@
 		</for>
 	</skill>
 	<skill id="11552" levels="4" name="Superior Divine Lore">
+		<!-- Glory Days confirmed -->
 		<!-- MP Consumption for skills is decreased by 6%. -->
 		<table name="#mpConsumes"> 0.94 0.91 0.88 0.85 </table>
 		<set name="operateType" val="P" />
@@ -1497,6 +1581,7 @@
 		</for>
 	</skill>
 	<skill id="11553" levels="1" name="Superior Focus Mind">
+		<!-- Glory Days confirmed -->
 		<!-- STR + 2 and increases MP recovery bonus by 8.4. -->
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="85" />
@@ -1511,6 +1596,7 @@
 		</for>
 	</skill>
 	<skill id="11554" levels="1" name="Superior Sixth Sense">
+		<!-- Glory Days confirmed -->
 		<!--When HP is below 30%, increases P. Evasion by 17. STR + 2. -->
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="85" />
@@ -1527,6 +1613,7 @@
 		</for>
 	</skill>
 	<skill id="11555" levels="1" name="Superior Fast Spell Casting">
+		<!-- Glory Days confirmed -->
 		<!-- Increases Casting Spd. by 15%. -->
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="85" />
@@ -1540,7 +1627,7 @@
 		</for>
 	</skill>
 	<skill id="11556" levels="1" name="Cancel Transform">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<set name="icon" val="icon.skill01703" />
 		<set name="operateType" val="A1" />
 		<set name="effectPoint" val="1" />
@@ -1549,18 +1636,24 @@
 		<set name="magicLvl" val="99" />
 		<set name="trait" val="HOLD" />
 		<set name="targetType" val="SELF" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<for>
+			<effect name="DispelBySlot">
+				<param dispel="CHANGEBODY,9" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11557" levels="1" name="Ultimate Scourge">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Disables nearby enemies' natural HP Recovery for 2 minutes. -->
 		<set name="icon" val="icon.skill11557" />
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="HP_REGEN_DOWN" />
-		<set name="activateRate" val="65" /> <!-- Custom -->
+		<set name="activateRate" val="65" />
 		<set name="affectRange" val="200" />
-		<set name="affectLimit" val="10-10" /> <!-- Custom -->
-		<set name="effectPoint" val="-379" /> <!-- Custom -->
+		<set name="affectLimit" val="10-10" />
+		<set name="effectPoint" val="-379" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="423" />
@@ -1581,11 +1674,11 @@
 		</for>
 	</skill>
 	<skill id="11558" levels="1" name="Ultimate Oblivion">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Cancels nearby enemies' targets. -->
 		<set name="icon" val="icon.skill11558" />
 		<set name="affectRange" val="200" />
-		<set name="effectPoint" val="-457" /> <!-- Custom -->
+		<set name="effectPoint" val="-457" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="423" />
@@ -1600,18 +1693,17 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="TargetCancel">
-				<param chance="80" />
-			</effect>
+			<effect name="TargetCancel" />
 		</for>
 	</skill>
 	<skill id="11559" levels="1" name="Ultimate Suspension">
 		<!-- Updated to Ertheia -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases nearby enemies' physical/magic skill Cooldown by 200% for 2 minutes. -->
 		<set name="icon" val="icon.skill11559" />
 		<set name="abnormalTime" val="120" />
-		<set name="affectRange" val="200" /> <!-- (x1 - x2)^2 + (y1 - y2)^2 = range^2 isnt it like that? 72819->71818 142606->142808 -->
-		<set name="effectPoint" val="-457" /> <!-- Custom -->
+		<set name="affectRange" val="200" />
+		<set name="effectPoint" val="-457" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="423" />
@@ -1638,10 +1730,12 @@
 	</skill>
 	<skill id="11560" levels="2" name="Celestial Aegis">
 		<!--Updated to Ertheia -->
+		<!-- Glory Days confirmed -->
 		<!-- Makes all party members invincible for 30 seconds. -->
 		<table name="#affectLimit"> 0-0 50-50 </table>
 		<table name="#magicLvl"> 85 99 </table>
 		<table name="#mpConsumes"> 423 557 </table>
+		<table name="#targetType"> PARTY PARTY_CLAN </table>
 		<set name="icon" val="icon.skill11560" />
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="30" />
@@ -1649,7 +1743,7 @@
 		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="affectRange" val="1000" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="PARTY" />
+		<set name="targetType" val="#targetType" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
@@ -1668,26 +1762,22 @@
 				<param dispel="MAGICAL_STANCE" />
 			</effect>
 		</for>
-		<endEffects>
-			<effect name="CallSkill">
-				<param skillId="20007" skillLevel="1" /> <!-- Block Invincibility -->
-			</effect>
-		</endEffects>
 	</skill>
-	<skill id="11561" levels="4" name="Giant Root">
-		<table name="#magicLvl"> 85 90 95 99 </table>
-		<table name="#effectPoint"> -701 -705 -709 -709 -709 -709 -709 </table>
+	<skill id="11561" levels="7" name="Giant Root">
 		<!-- Updated to Ertheia -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts Hold on the enemy for 15 seconds. -->
-		<table name="#mpConsumes"> 126 139 153 166 </table>
+		<table name="#effectPoint"> -701 -705 -709 -709 -709 -709 -709 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 126 139 153 166 139 153 166 </table>
 		<set name="icon" val="icon.skill11561" />
 		<set name="abnormalLvl" val="5" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
-		<set name="activateRate" val="65" /> <!-- Custom -->
+		<set name="activateRate" val="65" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
@@ -1710,6 +1800,7 @@
 	</skill>
 	<skill id="11562" levels="1" name="Devil's Movement">
 		<!-- Updated to Ertheia -->
+		<!-- Glory Days confirmed -->
 		<!-- Prevents all party members from being attacked preemptively by monsters for 2 minutes. But if any party member initiates an attack, the effect will be canceled. -->
 		<set name="icon" val="icon.skill11562" />
 		<set name="abnormalLvl" val="3" />
@@ -1755,6 +1846,7 @@
 		</for>
 	</skill>
 	<skill id="11563" levels="1" name="Quick Return">
+		<!-- Glory Days confirmed -->
 		<!-- Copy-Pasted from Return Skill -->
 		<!-- Teleports to a town. Cannot be used in a specially designated place such as the GM Consultation Service. -->
 		<set name="icon" val="icon.skill11819" />
@@ -1769,12 +1861,7 @@
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
 		<cond msgId="113" addName="1">
-			<and>
-				<player canEscape="true" />
-				<not>
-					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
-				</not>
-			</and>
+			<player canEscape="true" />
 		</cond>
 		<for>
 			<effect name="Escape">
@@ -1783,9 +1870,10 @@
 		</for>
 	</skill>
 	<skill id="11564" levels="3" name="Angel's Resurrection">
-		<table name="#magicLvl"> 85 90 95 </table>
 		<!-- Updated to Ertheia -->
+		<!-- Glory Days confirmed -->
 		<!-- Resurrects a dead target and restores 40% of the XP lost. -->
+		<table name="#magicLvl"> 85 90 95 </table>
 		<table name="#power"> 40 50 60 </table>
 		<set name="icon" val="icon.skill1016" />
 		<set name="blockedInOlympiad" val="true" />
@@ -1802,6 +1890,7 @@
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="isMagic" val="4" />
+		<set name="staticReuse" val="true" />
 		<cond>
 			<player canResurrect="true" />
 		</cond>
@@ -1812,6 +1901,7 @@
 		</for>
 	</skill>
 	<skill id="11565" levels="1" name="Elemental Resistance">
+		<!-- Glory Days confirmed -->
 		<!-- Increases party members' Fire/Water/Wind/Earth Resistance by 30 for 30 minutes. -->
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="5" />
@@ -1847,6 +1937,7 @@
 		</for>
 	</skill>
 	<skill id="11566" levels="1" name="Holy Attack Resistance">
+		<!-- Glory Days confirmed -->
 		<!-- Increases party members' Holy/Dark Attack Resistance by 30, and Poison/Bleed Resistance by 50% for 30 minutes. -->
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="5" />
@@ -1884,6 +1975,7 @@
 		</for>
 	</skill>
 	<skill id="11567" levels="1" name="Mental Attack Resistance">
+		<!-- Glory Days confirmed -->
 		<!-- Increases party members' Hold/Sleep/Mental Attack Resistance by 50, Buff-canceling Attack Resistance by 30 and Debuff Resistance by 20 for 30 minutes. -->
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="5" />
@@ -1921,6 +2013,7 @@
 		</for>
 	</skill>
 	<skill id="11569" levels="1" name="Critical Damage Increase">
+		<!-- Glory Days confirmed -->
 		<!-- Critical Damage is greatly increased through Poem of Drum. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="8" />
@@ -1937,7 +2030,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="2.00"> <!-- GUESS: From testing it's looking more like 120% increase to critical damage. More testing on live server is needed to confirm this -->
+				<mul stat="cAtk" val="2">
 					<using kind="SWORD,BLUNT,DAGGER,DUALDAGGER,DUAL,DUALFIST,POLE,ANCIENTSWORD,RAPIER,BOW,CROSSBOW,DUALBLUNT" />
 				</mul>
 			</effect>
@@ -1946,7 +2039,7 @@
 	<skill id="11570" levels="1" name="Healing Melody">
 		<!-- Heals target and the 10 most injured allies around target by up to 35% of their Max HP. The recovery amount decreases starting from the most injured person. -->
 		<set name="icon" val="icon.skill11570" />
-		<set name="affectLimit" val="9-0" /> <!-- Custom -->
+		<set name="affectLimit" val="9-0" />
 		<set name="affectRange" val="300" />
 		<set name="effectPoint" val="1301" />
 		<set name="effectRange" val="1100" />
@@ -1970,7 +2063,7 @@
 		<!-- Updated to Ertheia -->
 		<!-- Restores target's CP by 1000. -->
 		<set name="icon" val="icon.skill11571" />
-		<set name="effectPoint" val="780" /> <!-- Custom -->
+		<set name="effectPoint" val="780" />
 		<set name="effectRange" val="1100" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
