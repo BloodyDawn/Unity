@@ -72,7 +72,7 @@ import org.slf4j.LoggerFactory;
 public class AttackableAI extends CharacterAI implements Runnable
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(AttackableAI.class);
-
+	
 	private static final int RANDOM_WALK_RATE = 30; // confirmed
 	// private static final int MAX_DRIFT_RANGE = 300;
 	private static final int MAX_ATTACK_TIMEOUT = 1200; // int ticks, i.e. 2min
@@ -1920,7 +1920,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		catch (NullPointerException e)
 		{
 			setIntention(AI_INTENTION_ACTIVE);
-			LOGGER.warn("{} - failed executing movementDisable(): {}", this, e.getMessage());
+			LOGGER.warn("{} - failed executing movementDisable()", this, e);
 			return;
 		}
 	}
@@ -2579,7 +2579,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		}
 		catch (Exception e)
 		{
-			LOGGER.warn("{} -  onEvtThink() failed: {}", this, e.getMessage());
+			LOGGER.warn("{} -  onEvtThink() failed", this, e);
 		}
 		finally
 		{
