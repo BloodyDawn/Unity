@@ -31,6 +31,7 @@ import org.l2junity.gameserver.model.events.impl.server.OnPacketReceived;
 import org.l2junity.gameserver.model.events.impl.server.OnPacketSent;
 import org.l2junity.gameserver.network.client.IncomingPackets;
 import org.l2junity.gameserver.network.client.L2GameClient;
+import org.l2junity.gameserver.scripting.annotations.Disabled;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,6 +42,7 @@ import custom.PacketLogger.LogWriters.YAL2Logger;
 /**
  * @author UnAfraid
  */
+@Disabled
 public final class PacketLogger extends AbstractNpcAI
 {
 	private final Map<Integer, IPacketHandler> _logs = new ConcurrentHashMap<>();
@@ -70,7 +72,12 @@ public final class PacketLogger extends AbstractNpcAI
 	public void onPlayerLogout(OnPlayerLogout event)
 	{
 		final PlayerInstance player = event.getActiveChar();
-		final IPacketHandler handler = _logs.remove(player.getClient().getObjectId());
+		final L2GameClient client = player.getClient();
+		if (client == null)
+		{
+			return;
+		}
+		final IPacketHandler handler = _logs.remove(client.getObjectId());
 		if (handler != null)
 		{
 			handler.notifyTerminate();
