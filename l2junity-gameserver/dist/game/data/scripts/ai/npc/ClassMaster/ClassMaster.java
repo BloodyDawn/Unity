@@ -46,6 +46,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPressT
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerProfessionChange;
 import org.l2junity.gameserver.model.holders.ItemChanceHolder;
 import org.l2junity.gameserver.model.spawns.SpawnTemplate;
+import org.l2junity.gameserver.network.client.send.AcquireSkillList;
 import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.TutorialCloseHtml;
 import org.l2junity.gameserver.network.client.send.TutorialShowQuestionMark;
@@ -452,8 +453,17 @@ public final class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 					}
 					
 					player.setClassId(classId);
+					if (player.isSubClassActive())
+					{
+						player.getSubClasses().get(player.getClassIndex()).setClassId(player.getActiveClass());
+					}
+					else
+					{
+						player.setBaseClass(player.getActiveClass());
+					}
 					player.sendPacket(new PlaySound("ItemSound.quest_fanfare_2"));
 					player.broadcastUserInfo();
+					player.sendPacket(new AcquireSkillList(player));
 					player.store(false); // Save player cause if server crashes before this char is saved, he will lose class and the money payed for class change.
 					return "test_server_helper021.html";
 				}
@@ -625,7 +635,15 @@ public final class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 		else
 		{
 			player.setClassId(newClass.getId());
-			// TODO: IncrementParam(talker, @EXP, 100);
+			if (player.isSubClassActive())
+			{
+				player.getSubClasses().get(player.getClassIndex()).setClassId(player.getActiveClass());
+			}
+			else
+			{
+				player.setBaseClass(player.getActiveClass());
+			}
+			player.sendPacket(new AcquireSkillList(player));
 			return true;
 		}
 	}
