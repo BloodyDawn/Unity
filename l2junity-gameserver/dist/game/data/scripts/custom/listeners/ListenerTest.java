@@ -38,6 +38,7 @@ import org.l2junity.gameserver.model.events.impl.sieges.OnCastleSiegeStart;
 import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.holders.ItemHolder;
+import org.l2junity.gameserver.scripting.annotations.Disabled;
 
 import ai.npc.AbstractNpcAI;
 
@@ -45,6 +46,7 @@ import ai.npc.AbstractNpcAI;
  * An example usage of Listeners.
  * @author UnAfraid
  */
+@Disabled
 public class ListenerTest extends AbstractNpcAI
 {
 	private static final int[] ELPIES =
@@ -65,7 +67,7 @@ public class ListenerTest extends AbstractNpcAI
 		Containers.Global().addListener(new ConsumerEventListener(Containers.Global(), EventType.ON_PLAYER_DLG_ANSWER, (OnPlayerDlgAnswer event) ->
 		{
 			_log.info(getClass().getSimpleName() + ": " + event.getActiveChar() + " OnPlayerDlgAnswer: Answer: " + event.getAnswer() + " MessageId: " + event.getMessageId());
-		}, this));
+		} , this));
 	}
 	
 	/**
