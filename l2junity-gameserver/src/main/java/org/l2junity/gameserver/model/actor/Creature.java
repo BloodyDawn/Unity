@@ -20,7 +20,6 @@ package org.l2junity.gameserver.model.actor;
 
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
-import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_FOLLOW;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -4307,9 +4306,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		
 		// Get current position of the L2Character
-		final int curX = super.getX();
-		final int curY = super.getY();
-		final int curZ = super.getZ();
+		final int curX = getX();
+		final int curY = getY();
+		final int curZ = getZ();
 		
 		// Calculate distance (dx,dy) between current position and destination
 		// TODO: improve Z axis move/follow support when dx,dy are small compared to dz
@@ -4394,8 +4393,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		m.onGeodataPathIndex = -1; // Initialize not on geodata path
 		m.disregardingGeodata = false;
 		
-		if (!isFlying() // flying chars not checked - even canSeeTarget doesn't work yet
-		&& (!isInsideZone(ZoneId.WATER) || isInsideZone(ZoneId.SIEGE))) // swimming also not checked unless in siege zone - but distance is limited
+		if (!isFlying() && (!isInsideZone(ZoneId.WATER) || isInsideZone(ZoneId.SIEGE)))
 		{
 			final boolean isInVehicle = isPlayer() && (getActingPlayer().getVehicle() != null);
 			if (isInVehicle)
@@ -4412,8 +4410,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			// Movement checks:
 			// when PATHFINDING > 0, for all characters except mobs returning home (could be changed later to teleport if pathfinding fails)
-			if (((Config.PATHFINDING > 0) && (!(isAttackable() && ((Attackable) this).isReturningToSpawnPoint()))) || (isPlayer() && !(isInVehicle && (distance > 1500))) || (isSummon() && !(getAI().getIntention() == AI_INTENTION_FOLLOW)) // assuming intention_follow only when following owner
-			|| isControlBlocked())
+			if (Config.PATHFINDING > 0)
 			{
 				if (isOnGeodataPath())
 				{
@@ -4463,11 +4460,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Pathfinding checks. Only when geodata setting is 2, the LoS check gives shorter result
 			// than the original movement was and the LoS gives a shorter distance than 2000
 			// This way of detecting need for pathfinding could be changed.
-			if ((Config.PATHFINDING > 0) && ((originalDistance - distance) > 30) && (distance < 2000) && !isControlBlocked())
+			if ((Config.PATHFINDING > 0) && ((originalDistance - distance) > 30) && !isControlBlocked())
 			{
 				// Path calculation
 				// Overrides previous movement check
-				if ((isPlayable() && !isInVehicle) || isMinion() || isInCombat())
+				if (!isInVehicle && !isFlying())
 				{
 					m.geoPath = PathFinding.getInstance().findPath(curX, curY, curZ, originalX, originalY, originalZ, getInstanceId(), isPlayable());
 					if ((m.geoPath == null) || (m.geoPath.size() < 2)) // No path found
