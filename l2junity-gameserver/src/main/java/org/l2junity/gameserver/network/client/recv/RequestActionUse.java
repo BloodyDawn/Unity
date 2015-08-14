@@ -22,9 +22,7 @@ import java.util.Arrays;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
-import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.ai.CtrlIntention;
-import org.l2junity.gameserver.ai.NextAction;
 import org.l2junity.gameserver.ai.SummonAI;
 import org.l2junity.gameserver.data.sql.impl.SummonSkillsTable;
 import org.l2junity.gameserver.data.xml.impl.ActionData;
@@ -47,22 +45,16 @@ import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.events.EventDispatcher;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSocialAction;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.ChairSit;
-import org.l2junity.gameserver.network.client.send.ExAskCoupleAction;
 import org.l2junity.gameserver.network.client.send.ExBasicActionList;
 import org.l2junity.gameserver.network.client.send.NpcSay;
 import org.l2junity.gameserver.network.client.send.RecipeShopManageList;
-import org.l2junity.gameserver.network.client.send.SocialAction;
-import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
-import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 import org.l2junity.network.PacketReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -331,11 +323,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 						activeChar.getAirShip().oustPlayer(activeChar);
 					}
 				}
-				break;
-			case 71:
-			case 72:
-			case 73:
-				useCoupleSocial(activeChar, _actionId - 55);
 				break;
 			case 78:
 			case 79:
@@ -856,58 +843,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 				useSkill(activeChar, 6054, true);
 				break;
 			// Social Packets
-			case 12: // Greeting
-				tryBroadcastSocial(activeChar, 2);
-				break;
-			case 13: // Victory
-				tryBroadcastSocial(activeChar, 3);
-				break;
-			case 14: // Advance
-				tryBroadcastSocial(activeChar, 4);
-				break;
-			case 24: // Yes
-				tryBroadcastSocial(activeChar, 6);
-				break;
-			case 25: // No
-				tryBroadcastSocial(activeChar, 5);
-				break;
-			case 26: // Bow
-				tryBroadcastSocial(activeChar, 7);
-				break;
-			case 29: // Unaware
-				tryBroadcastSocial(activeChar, 8);
-				break;
-			case 30: // Social Waiting
-				tryBroadcastSocial(activeChar, 9);
-				break;
-			case 31: // Laugh
-				tryBroadcastSocial(activeChar, 10);
-				break;
-			case 33: // Applaud
-				tryBroadcastSocial(activeChar, 11);
-				break;
-			case 34: // Dance
-				tryBroadcastSocial(activeChar, 12);
-				break;
-			case 35: // Sorrow
-				tryBroadcastSocial(activeChar, 13);
-				break;
-			case 62: // Charm
-				tryBroadcastSocial(activeChar, 14);
-				break;
-			case 66: // Shyness
-				tryBroadcastSocial(activeChar, 15);
-				break;
-			case 87: // Propose
-				tryBroadcastSocial(activeChar, 28);
-				break;
-			case 88: // Provoke
-				tryBroadcastSocial(activeChar, 29);
-				break;
-			case 89: // Beauty Shop
-				tryBroadcastSocial(activeChar, 30);
-				activeChar.broadcastInfo();
-				break;
 			default:
 				_log.warn(activeChar.getName() + ": unhandled action type " + _actionId);
 				break;
@@ -1076,258 +1011,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 			player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_A_SERVITOR);
 		}
 		return false;
-	}
-	
-	/**
-	 * Try to broadcast SocialAction packet.
-	 * @param player TODO
-	 * @param id the social action Id to broadcast
-	 */
-	private void tryBroadcastSocial(PlayerInstance player, int id)
-	{
-		if (player.isFishing())
-		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_DO_THAT_WHILE_FISHING3);
-			return;
-		}
-		
-		if (player.canMakeSocialAction())
-		{
-			player.broadcastPacket(new SocialAction(player.getObjectId(), id));
-			
-			// Notify to scripts
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSocialAction(player, id), player);
-		}
-	}
-	
-	/**
-	 * Perform a couple social action.
-	 * @param player TODO
-	 * @param id the couple social action Id
-	 */
-	private void useCoupleSocial(PlayerInstance player, final int id)
-	{
-		if (player == null)
-		{
-			return;
-		}
-		
-		final WorldObject target = player.getTarget();
-		if ((target == null) || !target.isPlayer())
-		{
-			player.sendPacket(SystemMessageId.INVALID_TARGET);
-			return;
-		}
-		
-		final int distance = (int) player.calculateDistance(target, false, false);
-		if ((distance > 125) || (distance < 15) || (player.getObjectId() == target.getObjectId()))
-		{
-			player.sendPacket(SystemMessageId.THE_REQUEST_CANNOT_BE_COMPLETED_BECAUSE_THE_TARGET_DOES_NOT_MEET_LOCATION_REQUIREMENTS);
-			return;
-		}
-		
-		SystemMessage sm;
-		if (player.isInStoreMode() || player.isInCraftMode())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_PRIVATE_STORE_MODE_OR_IN_A_BATTLE_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(player);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (player.isInCombat() || player.isInDuel() || AttackStanceTaskManager.getInstance().hasAttackStanceTask(player))
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_A_BATTLE_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(player);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (player.isFishing())
-		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_DO_THAT_WHILE_FISHING3);
-			return;
-		}
-		
-		if (player.getReputation() < 0)
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_A_CHAOTIC_STATE_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(player);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (player.isInOlympiadMode())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_PARTICIPATING_IN_THE_OLYMPIAD_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(player);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (player.isInSiege())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_A_CASTLE_SIEGE_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(player);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (player.isInHideoutSiege())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_PARTICIPATING_IN_A_CLAN_HALL_SIEGE_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(player);
-			player.sendPacket(sm);
-		}
-		
-		if (player.isMounted() || player.isFlyingMounted() || player.isInBoat() || player.isInAirShip())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_RIDING_A_SHIP_STEED_OR_STRIDER_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(player);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (player.isTransformed())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_CURRENTLY_TRANSFORMING_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(player);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (player.isAlikeDead())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_CURRENTLY_DEAD_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(player);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		// Checks for partner.
-		final PlayerInstance partner = target.getActingPlayer();
-		if (partner.isInStoreMode() || partner.isInCraftMode())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_PRIVATE_STORE_MODE_OR_IN_A_BATTLE_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(partner);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (partner.isInCombat() || partner.isInDuel() || AttackStanceTaskManager.getInstance().hasAttackStanceTask(partner))
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_A_BATTLE_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(partner);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (partner.getMultiSociaAction() > 0)
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_ALREADY_PARTICIPATING_IN_A_COUPLE_ACTION_AND_CANNOT_BE_REQUESTED_FOR_ANOTHER_COUPLE_ACTION);
-			sm.addPcName(partner);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (partner.isFishing())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_FISHING_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(partner);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (partner.getReputation() < 0)
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_A_CHAOTIC_STATE_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(partner);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (partner.isInOlympiadMode())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_PARTICIPATING_IN_THE_OLYMPIAD_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(partner);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (partner.isInHideoutSiege())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_PARTICIPATING_IN_A_CLAN_HALL_SIEGE_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(partner);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (partner.isInSiege())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_A_CASTLE_SIEGE_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(partner);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (partner.isMounted() || partner.isFlyingMounted() || partner.isInBoat() || partner.isInAirShip())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_RIDING_A_SHIP_STEED_OR_STRIDER_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(partner);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (partner.isTeleporting())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_CURRENTLY_TELEPORTING_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(partner);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (partner.isTransformed())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_CURRENTLY_TRANSFORMING_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(partner);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (partner.isAlikeDead())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_CURRENTLY_DEAD_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
-			sm.addPcName(partner);
-			player.sendPacket(sm);
-			return;
-		}
-		
-		if (player.isAllSkillsDisabled() || partner.isAllSkillsDisabled())
-		{
-			player.sendPacket(SystemMessageId.THE_COUPLE_ACTION_WAS_CANCELLED);
-			return;
-		}
-		
-		player.setMultiSocialAction(id, partner.getObjectId());
-		sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_REQUESTED_A_COUPLE_ACTION_WITH_C1);
-		sm.addPcName(partner);
-		player.sendPacket(sm);
-		
-		if ((player.getAI().getIntention() != CtrlIntention.AI_INTENTION_IDLE) || (partner.getAI().getIntention() != CtrlIntention.AI_INTENTION_IDLE))
-		{
-			final NextAction nextAction = new NextAction(CtrlEvent.EVT_ARRIVED, CtrlIntention.AI_INTENTION_MOVE_TO, () -> partner.sendPacket(new ExAskCoupleAction(player.getObjectId(), id)));
-			player.getAI().setNextAction(nextAction);
-			return;
-		}
-		
-		if (player.isCastingNow() || player.isCastingSimultaneouslyNow())
-		{
-			final NextAction nextAction = new NextAction(CtrlEvent.EVT_FINISH_CASTING, CtrlIntention.AI_INTENTION_CAST, () -> partner.sendPacket(new ExAskCoupleAction(player.getObjectId(), id)));
-			player.getAI().setNextAction(nextAction);
-			return;
-		}
-		
-		partner.sendPacket(new ExAskCoupleAction(player.getObjectId(), id));
 	}
 	
 	/**
