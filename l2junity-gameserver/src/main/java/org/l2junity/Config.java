@@ -1363,7 +1363,7 @@ public final class Config
 			FEE_DELETE_DUALCLASS_SKILLS = Character.getInt("FeeDeleteDualClassSkills", 20000000);
 			ENABLE_VITALITY = Character.getBoolean("EnableVitality", true);
 			STARTING_VITALITY_POINTS = Character.getInt("StartingVitalityPoints", 140000);
-			ALT_VITALITY_DATE_RESET = Character.getEnumList("AltVitalityDateReset", ",", DayOfWeek.class, DayOfWeek.WEDNESDAY).toArray(new DayOfWeek[0]);
+			ALT_VITALITY_DATE_RESET = Character.getEnumArray("AltVitalityDayReset", ",", DayOfWeek.class, DayOfWeek.WEDNESDAY);
 			if ((ALT_VITALITY_DATE_RESET == null) || (ALT_VITALITY_DATE_RESET.length == 0))
 			{
 				LOGGER.warn("Failed to load for AltVitalityDateReset: setting default values!");

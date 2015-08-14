@@ -21,6 +21,7 @@ package org.l2junity.commons.util;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.nio.charset.Charset;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -287,7 +288,7 @@ public final class PropertiesParser
 	 */
 	public int[] getIntArray(String key, String separator, int... defaultValues)
 	{
-		String value = getValue(key);
+		final String value = getValue(key);
 		if (value == null)
 		{
 			LOGGER.warn("[{}] missing property for key: {} using default value: {}", _file.getName(), key, defaultValues);
@@ -304,7 +305,43 @@ public final class PropertiesParser
 			}
 			return result;
 		}
-		catch (IllegalArgumentException e)
+		catch (Exception e)
+		{
+			LOGGER.warn("[{}] Invalid value specified for key: {} specified value: {} should be array using default value: {}", _file.getName(), key, value, defaultValues);
+			return defaultValues;
+		}
+	}
+	
+	/**
+	 * @param <T>
+	 * @param key
+	 * @param separator
+	 * @param clazz
+	 * @param defaultValues
+	 * @return
+	 */
+	@SafeVarargs
+	public final <T extends Enum<T>> T[] getEnumArray(String key, String separator, Class<T> clazz, T... defaultValues)
+	{
+		final String value = getValue(key);
+		if (value == null)
+		{
+			LOGGER.warn("[{}] missing property for key: {} using default value: {}", _file.getName(), key, defaultValues);
+			return defaultValues;
+		}
+		
+		try
+		{
+			final String[] data = value.trim().split(separator);
+			@SuppressWarnings("unchecked")
+			final T[] result = (T[]) Array.newInstance(clazz, data.length);
+			for (int i = 0; i < data.length; i++)
+			{
+				result[i] = Enum.valueOf(clazz, data[i]);
+			}
+			return result;
+		}
+		catch (Exception e)
 		{
 			LOGGER.warn("[{}] Invalid value specified for key: {} specified value: {} should be array using default value: {}", _file.getName(), key, value, defaultValues);
 			return defaultValues;
@@ -339,7 +376,7 @@ public final class PropertiesParser
 			}
 			return result;
 		}
-		catch (IllegalArgumentException e)
+		catch (Exception e)
 		{
 			LOGGER.warn("[{}] Invalid value specified for key: {} specified value: {} should be array using default value: {}", _file.getName(), key, value, defaultValues);
 			return Arrays.asList(defaultValues);
