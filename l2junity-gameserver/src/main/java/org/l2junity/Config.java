@@ -38,6 +38,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.DayOfWeek;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -1362,13 +1363,13 @@ public final class Config
 			FEE_DELETE_DUALCLASS_SKILLS = Character.getInt("FeeDeleteDualClassSkills", 20000000);
 			ENABLE_VITALITY = Character.getBoolean("EnableVitality", true);
 			STARTING_VITALITY_POINTS = Character.getInt("StartingVitalityPoints", 140000);
-			ALT_VITALITY_DATE_RESET = Character.getIntArray("AltVitalityDateReset", ",", 4);
+			ALT_VITALITY_DATE_RESET = Character.getIntArray("AltVitalityDateReset", ",", DayOfWeek.WEDNESDAY.getValue());
 			for (int i = 0; i < ALT_VITALITY_DATE_RESET.length; i++)
 			{
 				if ((ALT_VITALITY_DATE_RESET[i] < 1) || (ALT_VITALITY_DATE_RESET[i] > 7))
 				{
 					LOGGER.warn("Wrong value specified for AltVitalityDateReset: {}", ALT_VITALITY_DATE_RESET);
-					ALT_VITALITY_DATE_RESET[i] = 3;
+					ALT_VITALITY_DATE_RESET[i] = DayOfWeek.WEDNESDAY.getValue();
 				}
 			}
 			if (ALT_VITALITY_DATE_RESET.length == 0)
@@ -1376,7 +1377,7 @@ public final class Config
 				LOGGER.warn("Failed to load for AltVitalityDateReset: setting default values!");
 				ALT_VITALITY_DATE_RESET = new int[]
 				{
-					3
+					DayOfWeek.WEDNESDAY.getValue()
 				};
 			}
 			ALT_VITALITY_HOUR_RESET = Character.getString("AltVitalityHourReset", "06:30:00");
