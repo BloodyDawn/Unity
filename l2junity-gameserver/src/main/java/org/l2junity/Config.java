@@ -203,7 +203,7 @@ public final class Config
 	public static double ALT_GAME_CREATION_RARE_XPSP_RATE;
 	public static double ALT_GAME_CREATION_SP_RATE;
 	public static boolean ALT_BLACKSMITH_USE_RECIPES;
-	public static int ALT_CLAN_LEADER_DATE_CHANGE;
+	public static DayOfWeek[] ALT_CLAN_LEADER_DAY_CHANGE;
 	public static String ALT_CLAN_LEADER_HOUR_CHANGE;
 	public static boolean ALT_CLAN_LEADER_INSTANT_ACTIVATION;
 	public static int ALT_CLAN_JOIN_DAYS;
@@ -1366,7 +1366,7 @@ public final class Config
 			ALT_VITALITY_DATE_RESET = Character.getEnumArray("AltVitalityDayReset", ",", DayOfWeek.class, DayOfWeek.WEDNESDAY);
 			if ((ALT_VITALITY_DATE_RESET == null) || (ALT_VITALITY_DATE_RESET.length == 0))
 			{
-				LOGGER.warn("Failed to load for AltVitalityDateReset: setting default values!");
+				LOGGER.warn("Failed to load for AltVitalityDayReset: setting default values!");
 				ALT_VITALITY_DATE_RESET = new DayOfWeek[]
 				{
 					DayOfWeek.WEDNESDAY
@@ -1485,11 +1485,14 @@ public final class Config
 			ALT_GAME_CREATION_SP_RATE = Character.getDouble("AltGameCreationSpRate", 1);
 			ALT_GAME_CREATION_RARE_XPSP_RATE = Character.getDouble("AltGameCreationRareXpSpRate", 2);
 			ALT_BLACKSMITH_USE_RECIPES = Character.getBoolean("AltBlacksmithUseRecipes", true);
-			ALT_CLAN_LEADER_DATE_CHANGE = Character.getInt("AltClanLeaderDateChange", 3);
-			if ((ALT_CLAN_LEADER_DATE_CHANGE < 1) || (ALT_CLAN_LEADER_DATE_CHANGE > 7))
+			ALT_CLAN_LEADER_DAY_CHANGE = Character.getEnumArray("AltClanLeaderDayChange", ",", DayOfWeek.class, DayOfWeek.TUESDAY);
+			if ((ALT_CLAN_LEADER_DAY_CHANGE == null) || (ALT_CLAN_LEADER_DAY_CHANGE.length == 0))
 			{
-				LOGGER.warn("Wrong value specified for AltClanLeaderDateChange: {}", ALT_CLAN_LEADER_DATE_CHANGE);
-				ALT_CLAN_LEADER_DATE_CHANGE = 3;
+				LOGGER.warn("Wrong value specified for AltClanLeaderDayChange");
+				ALT_CLAN_LEADER_DAY_CHANGE = new DayOfWeek[]
+				{
+					DayOfWeek.TUESDAY
+				};
 			}
 			ALT_CLAN_LEADER_HOUR_CHANGE = Character.getString("AltClanLeaderHourChange", "00:00:00");
 			ALT_CLAN_LEADER_INSTANT_ACTIVATION = Character.getBoolean("AltClanLeaderInstantActivation", false);

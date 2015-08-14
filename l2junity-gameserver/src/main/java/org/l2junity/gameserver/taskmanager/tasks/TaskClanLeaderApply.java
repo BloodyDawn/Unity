@@ -18,7 +18,8 @@
  */
 package org.l2junity.gameserver.taskmanager.tasks;
 
-import java.util.Calendar;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
@@ -45,23 +46,26 @@ public class TaskClanLeaderApply extends Task
 	@Override
 	public void onTimeElapsed(ExecutedTask task)
 	{
-		Calendar cal = Calendar.getInstance();
-		if (cal.get(Calendar.DAY_OF_WEEK) == Config.ALT_CLAN_LEADER_DATE_CHANGE)
+		final LocalDate now = LocalDate.now();
+		for (DayOfWeek day : Config.ALT_CLAN_LEADER_DAY_CHANGE)
 		{
-			for (L2Clan clan : ClanTable.getInstance().getClans())
+			if (now.getDayOfWeek() == day)
 			{
-				if (clan.getNewLeaderId() != 0)
+				for (L2Clan clan : ClanTable.getInstance().getClans())
 				{
-					final ClanMember member = clan.getClanMember(clan.getNewLeaderId());
-					if (member == null)
+					if (clan.getNewLeaderId() != 0)
 					{
-						continue;
+						final ClanMember member = clan.getClanMember(clan.getNewLeaderId());
+						if (member == null)
+						{
+							continue;
+						}
+						
+						clan.setNewLeader(member);
 					}
-					
-					clan.setNewLeader(member);
 				}
+				_log.info(getClass().getSimpleName() + ": launched.");
 			}
-			_log.info(getClass().getSimpleName() + ": launched.");
 		}
 	}
 	
