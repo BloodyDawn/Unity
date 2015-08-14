@@ -275,4 +275,36 @@ public final class PropertiesParser
 		}
 		return defaultDuration;
 	}
+	
+	/**
+	 * @param key
+	 * @param separator
+	 * @param defaultValues
+	 * @return
+	 */
+	public int[] getIntArray(String key, String separator, int... defaultValues)
+	{
+		String value = getValue(key);
+		if (value == null)
+		{
+			LOGGER.warn("[{}] missing property for key: {} using default value: {}", _file.getName(), key, defaultValues);
+			return defaultValues;
+		}
+		
+		try
+		{
+			final String[] data = value.trim().split(separator);
+			int[] result = new int[data.length];
+			for (int i = 0; i < data.length; i++)
+			{
+				result[i] = Integer.decode(data[i].trim());
+			}
+		}
+		catch (IllegalArgumentException e)
+		{
+			LOGGER.warn("[{}] Invalid value specified for key: {} specified value: {} should be array using default value: {}", _file.getName(), key, value, defaultValues);
+			return defaultValues;
+		}
+		return null;
+	}
 }

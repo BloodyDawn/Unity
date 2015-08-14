@@ -858,7 +858,7 @@ public final class Config
 	public static boolean ENABLE_VITALITY;
 	public static int STARTING_VITALITY_POINTS;
 	
-	public static int ALT_VITALITY_DATE_RESET;
+	public static int[] ALT_VITALITY_DATE_RESET;
 	public static String ALT_VITALITY_HOUR_RESET;
 	
 	public static float RATE_VITALITY_EXP_MULTIPLIER;
@@ -1362,11 +1362,22 @@ public final class Config
 			FEE_DELETE_DUALCLASS_SKILLS = Character.getInt("FeeDeleteDualClassSkills", 20000000);
 			ENABLE_VITALITY = Character.getBoolean("EnableVitality", true);
 			STARTING_VITALITY_POINTS = Character.getInt("StartingVitalityPoints", 140000);
-			ALT_VITALITY_DATE_RESET = Character.getInt("AltVitalityDateReset", 4);
-			if ((ALT_VITALITY_DATE_RESET < 1) || (ALT_VITALITY_DATE_RESET > 7))
+			ALT_VITALITY_DATE_RESET = Character.getIntArray("AltVitalityDateReset", ",", 4);
+			for (int i = 0; i < ALT_VITALITY_DATE_RESET.length; i++)
 			{
-				LOGGER.warn("Wrong value specified for AltVitalityDateReset: {}", ALT_VITALITY_DATE_RESET);
-				ALT_VITALITY_DATE_RESET = 3;
+				if ((ALT_VITALITY_DATE_RESET[i] < 1) || (ALT_VITALITY_DATE_RESET[i] > 7))
+				{
+					LOGGER.warn("Wrong value specified for AltVitalityDateReset: {}", ALT_VITALITY_DATE_RESET);
+					ALT_VITALITY_DATE_RESET[i] = 3;
+				}
+			}
+			if (ALT_VITALITY_DATE_RESET.length == 0)
+			{
+				LOGGER.warn("Failed to load for AltVitalityDateReset: setting default values!");
+				ALT_VITALITY_DATE_RESET = new int[]
+				{
+					3
+				};
 			}
 			ALT_VITALITY_HOUR_RESET = Character.getString("AltVitalityHourReset", "06:30:00");
 			MAX_BONUS_EXP = Character.getDouble("MaxExpBonus", 0);

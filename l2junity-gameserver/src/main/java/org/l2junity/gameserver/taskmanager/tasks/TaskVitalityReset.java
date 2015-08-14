@@ -20,7 +20,7 @@ package org.l2junity.gameserver.taskmanager.tasks;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.Calendar;
+import java.time.LocalDate;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -49,34 +49,38 @@ public class TaskVitalityReset extends Task
 	@Override
 	public void onTimeElapsed(ExecutedTask task)
 	{
-		Calendar cal = Calendar.getInstance();
-		if (cal.get(Calendar.DAY_OF_WEEK) == Config.ALT_VITALITY_DATE_RESET)
+		final LocalDate now = LocalDate.now();
+		for (int day : Config.ALT_VITALITY_DATE_RESET)
 		{
-			for (PlayerInstance player : World.getInstance().getPlayers())
+			if (now.getDayOfWeek().getValue() == day)
 			{
-				player.setVitalityPoints(PcStat.MAX_VITALITY_POINTS, false);
-				
-				for (SubClass subclass : player.getSubClasses().values())
+				for (PlayerInstance player : World.getInstance().getPlayers())
 				{
-					subclass.setVitalityPoints(PcStat.MAX_VITALITY_POINTS);
+					player.setVitalityPoints(PcStat.MAX_VITALITY_POINTS, false);
+					
+					for (SubClass subclass : player.getSubClasses().values())
+					{
+						subclass.setVitalityPoints(PcStat.MAX_VITALITY_POINTS);
+					}
 				}
-			}
-			
-			try (Connection con = DatabaseFactory.getInstance().getConnection();
-				PreparedStatement st = con.prepareStatement("UPDATE character_subclasses SET vitality_points = ?");
-				PreparedStatement st2 = con.prepareStatement("UPDATE characters SET vitality_points = ?"))
-			{
-				st.setInt(1, PcStat.MAX_VITALITY_POINTS);
-				st.execute();
 				
-				st2.setInt(1, PcStat.MAX_VITALITY_POINTS);
-				st2.execute();
+				try (Connection con = DatabaseFactory.getInstance().getConnection();
+					PreparedStatement st = con.prepareStatement("UPDATE character_subclasses SET vitality_points = ?");
+					PreparedStatement st2 = con.prepareStatement("UPDATE characters SET vitality_points = ?"))
+				{
+					st.setInt(1, PcStat.MAX_VITALITY_POINTS);
+					st.execute();
+					
+					st2.setInt(1, PcStat.MAX_VITALITY_POINTS);
+					st2.execute();
+				}
+				catch (Exception e)
+				{
+					_log.warn("", e);
+				}
+				_log.info("Vitality resetted");
+				break;
 			}
-			catch (Exception e)
-			{
-				_log.warn("", e);
-			}
-			_log.info(getClass().getSimpleName() + ": launched.");
 		}
 	}
 	
