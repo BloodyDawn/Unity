@@ -38,6 +38,7 @@ import org.l2junity.gameserver.data.sql.impl.OfflineTradersTable;
 import org.l2junity.gameserver.data.sql.impl.SummonSkillsTable;
 import org.l2junity.gameserver.data.sql.impl.TeleportLocationTable;
 import org.l2junity.gameserver.data.xml.impl.AbilityPointsData;
+import org.l2junity.gameserver.data.xml.impl.ActionData;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.data.xml.impl.AlchemyData;
 import org.l2junity.gameserver.data.xml.impl.AppearanceItemData;
@@ -185,6 +186,7 @@ public class GameServer
 		GlobalVariablesManager.getInstance();
 		
 		printSection("Data");
+		ActionData.getInstance();
 		CategoryData.getInstance();
 		SecondaryAuthData.getInstance();
 		AbilityPointsData.getInstance();

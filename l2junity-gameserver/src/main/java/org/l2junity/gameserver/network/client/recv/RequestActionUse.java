@@ -27,13 +27,17 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.ai.NextAction;
 import org.l2junity.gameserver.ai.SummonAI;
 import org.l2junity.gameserver.data.sql.impl.SummonSkillsTable;
+import org.l2junity.gameserver.data.xml.impl.ActionData;
 import org.l2junity.gameserver.data.xml.impl.PetDataTable;
 import org.l2junity.gameserver.datatables.BotReportTable;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.MountType;
 import org.l2junity.gameserver.enums.PrivateStoreType;
+import org.l2junity.gameserver.handler.IPlayerActionHandler;
+import org.l2junity.gameserver.handler.PlayerActionHandler;
 import org.l2junity.gameserver.instancemanager.AirShipManager;
+import org.l2junity.gameserver.model.ActionDataHolder;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
@@ -60,6 +64,8 @@ import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 import org.l2junity.network.PacketReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class manages the action use request packet.
@@ -67,6 +73,8 @@ import org.l2junity.network.PacketReader;
  */
 public final class RequestActionUse implements IClientIncomingPacket
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(RequestActionUse.class);
+	
 	private static final int SIN_EATER_ID = 12564;
 	private static final int SWITCH_STANCE_ID = 6054;
 	private static final NpcStringId[] NPC_STRINGS =
@@ -97,11 +105,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 		if (activeChar == null)
 		{
 			return;
-		}
-		
-		if (Config.DEBUG)
-		{
-			_log.info(getClass().getSimpleName() + ": " + activeChar + " requested action use ID: " + _actionId + " Ctrl pressed:" + _ctrlPressed + " Shift pressed:" + _shiftPressed);
 		}
 		
 		// Don't do anything if player is dead or confused
@@ -135,6 +138,19 @@ public final class RequestActionUse implements IClientIncomingPacket
 				_log.warn("Player " + activeChar + " used action which he does not have! Id = " + _actionId + " transform: " + activeChar.getTransformation());
 				return;
 			}
+		}
+		
+		final ActionDataHolder actionHolder = ActionData.getInstance().getActionData(_actionId);
+		if (actionHolder != null)
+		{
+			final IPlayerActionHandler actionHandler = PlayerActionHandler.getInstance().getHandler(actionHolder.getHandler());
+			if (actionHandler != null)
+			{
+				actionHandler.useAction(activeChar, actionHolder, _ctrlPressed, _shiftPressed);
+				return;
+			}
+			LOGGER.warn("Couldnt find handler with name: {}", actionHolder.getHandler());
+			return;
 		}
 		
 		final Summon pet = activeChar.getPet();
