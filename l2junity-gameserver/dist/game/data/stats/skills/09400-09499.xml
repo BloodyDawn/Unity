@@ -53,38 +53,58 @@
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9404" levels="1" name="Wondrous Herb of Power">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 1 min. 30 sec., P. Atk. + 100%. -->
-		<set name="icon" val="icon.etc_warrior_set_i00" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="100" />
-		<set name="effectPoint" val="100" />
-		<set name="abnormalType" val="PA_UP_HERB" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="90" />
+		<set name="abnormalType" val="PA_UP_HERB" />
+		<set name="abnormalVisualEffect" val="HERB_OF_POWER" />
+		<set name="effectPoint" val="100" />
+		<set name="hitTime" val="100" />
+		<set name="icon" val="icon.etc_warrior_set_i00" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="magicLvl" val="99" />
+		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="false" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="2" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="9405" levels="1" name="Wondrous Herb of Magic">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 1 min. 30 sec., M. Atk. + 400%. -->
-		<set name="icon" val="icon.etc_magic_set_i00" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="100" />
-		<set name="effectPoint" val="100" />
-		<set name="abnormalType" val="MA_UP_HERB" />
-		<set name="basicProperty" val="NONE" />
-		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<set name="magicCriticalRate" val="5" />
-		<set name="magicLvl" val="99" />
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="90" />
+		<set name="abnormalType" val="MA_UP_HERB" />
+		<set name="abnormalVisualEffect" val="HERB_OF_MAGIC" />
+		<set name="effectPoint" val="100" />
+		<set name="hitTime" val="100" />
+		<set name="icon" val="icon.etc_magic_set_i00" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="magicLvl" val="99" />
+		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="basicProperty" val="NONE" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="false" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="mAtk" val="5" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="9406" levels="1" name="Ingredient and Hardener Pouch (R-grade)">
 		<!-- AUTO GENERATED SKILL -->
