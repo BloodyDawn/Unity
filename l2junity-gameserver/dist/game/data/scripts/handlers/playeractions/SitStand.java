@@ -32,9 +32,10 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.network.client.send.ChairSit;
 
 /**
+ * Sit/Stand player action handler.
  * @author UnAfraid
  */
-public class SitStand implements IPlayerActionHandler
+public final class SitStand implements IPlayerActionHandler
 {
 	@Override
 	public void useAction(PlayerInstance activeChar, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)

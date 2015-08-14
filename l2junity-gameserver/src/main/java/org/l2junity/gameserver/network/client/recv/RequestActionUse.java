@@ -106,6 +106,7 @@ public final class RequestActionUse implements IClientIncomingPacket
 		{
 			return;
 		}
+		activeChar.sendMessage("Action id: " + _actionId);
 		
 		// Don't do anything if player is dead or confused
 		if ((activeChar.isFakeDeath() && (_actionId != 0)) || activeChar.isDead() || activeChar.isControlBlocked())
@@ -158,31 +159,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 		final WorldObject target = activeChar.getTarget();
 		switch (_actionId)
 		{
-			case 0: // Sit/Stand
-				if (activeChar.isSitting() || !activeChar.isMoving() || activeChar.isFakeDeath())
-				{
-					useSit(activeChar, target);
-				}
-				else
-				{
-					// Sit when arrive using next action.
-					// Creating next action class.
-					final NextAction nextAction = new NextAction(CtrlEvent.EVT_ARRIVED, CtrlIntention.AI_INTENTION_MOVE_TO, () -> useSit(activeChar, target));
-					
-					// Binding next action to AI.
-					activeChar.getAI().setNextAction(nextAction);
-				}
-				break;
-			case 1: // Walk/Run
-				if (activeChar.isRunning())
-				{
-					activeChar.setWalking();
-				}
-				else
-				{
-					activeChar.setRunning();
-				}
-				break;
 			case 10: // Private Store - Sell
 				activeChar.tryOpenPrivateSellStore(false);
 				break;
@@ -206,40 +182,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 				{
 					pet.cancelAction();
 				}
-				break;
-			case 19: // Unsummon Pet
-				
-				if (!validateSummon(activeChar, pet, true))
-				{
-					break;
-				}
-				
-				if (pet.isDead())
-				{
-					client.sendPacket(SystemMessageId.DEAD_PETS_CANNOT_BE_RETURNED_TO_THEIR_SUMMONING_ITEM);
-					break;
-				}
-				
-				if (pet.isAttackingNow() || pet.isInCombat() || pet.isMovementDisabled())
-				{
-					client.sendPacket(SystemMessageId.A_PET_CANNOT_BE_UNSUMMONED_DURING_BATTLE);
-					break;
-				}
-				
-				if (pet.isHungry())
-				{
-					if (!((L2PetInstance) pet).getPetData().getFood().isEmpty())
-					{
-						client.sendPacket(SystemMessageId.YOU_MAY_NOT_RESTORE_A_HUNGRY_PET);
-					}
-					else
-					{
-						client.sendPacket(SystemMessageId.THE_MINION_PET_CANNOT_BE_RETURNED_BECAUSE_THERE_IS_NOT_MUCH_TIME_REMAINING_UNTIL_IT_LEAVES);
-					}
-					break;
-				}
-				
-				pet.unSummon(activeChar);
 				break;
 			case 21: // Change Movement Mode (Servitors)
 				if (validateSummon(activeChar, servitor, false))
@@ -347,17 +289,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 				}
 				
 				client.sendPacket(new RecipeShopManageList(activeChar, false));
-				break;
-			case 52: // Unsummon Servitor
-				if (validateSummon(activeChar, servitor, false))
-				{
-					if (servitor.isAttackingNow() || servitor.isInCombat())
-					{
-						client.sendPacket(SystemMessageId.A_SERVITOR_WHOM_IS_ENGAGED_IN_BATTLE_CANNOT_BE_DE_ACTIVATED);
-						break;
-					}
-					servitor.unSummon(activeChar);
-				}
 				break;
 			case 53: // Move to target (Servitors)
 				if (validateSummon(activeChar, servitor, false))
@@ -756,26 +687,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 						summon.cancelAction();
 					}
 				});
-				break;
-			case 1102: // Unsummon all servitors
-				boolean canUnsummon = true;
-				OUT: for (Summon s : activeChar.getServitors().values())
-				{
-					if (validateSummon(activeChar, s, false))
-					{
-						if (s.isAttackingNow() || s.isInCombat())
-						{
-							client.sendPacket(SystemMessageId.A_SERVITOR_WHOM_IS_ENGAGED_IN_BATTLE_CANNOT_BE_DE_ACTIVATED);
-							canUnsummon = false;
-							break OUT;
-						}
-						s.unSummon(activeChar);
-					}
-				}
-				if (canUnsummon)
-				{
-					activeChar.getServitors().values().forEach(s -> s.unSummon(activeChar));
-				}
 				break;
 			case 1103: // seems to be passive mode
 				activeChar.getServitors().values().forEach(summon -> ((SummonAI) summon.getAI()).setDefending(false));

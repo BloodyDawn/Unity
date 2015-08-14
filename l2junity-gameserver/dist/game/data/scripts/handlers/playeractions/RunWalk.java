@@ -24,21 +24,15 @@ import org.l2junity.gameserver.model.ActionDataHolder;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
+ * Run/Walk player action handler.
  * @author UnAfraid
  */
-public class RunWalk implements IPlayerActionHandler
+public final class RunWalk implements IPlayerActionHandler
 {
 	@Override
 	public void useAction(PlayerInstance activeChar, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
-		if (activeChar.isRunning())
-		{
-			activeChar.setWalking();
-		}
-		else
-		{
-			activeChar.setRunning();
-		}
+		activeChar.setIsRunning(activeChar.isRunning());
 	}
 	
 	public static void main(String[] args)
