@@ -472,6 +472,7 @@ public final class ClassMaster extends AbstractNpcAI implements IGameXmlReader
 			case "clanlevel":
 			{
 				htmltext = player.isClanLeader() ? "test_server_helper022.html" : "pl014.html";
+				break;
 			}
 			case "learnskills":
 			{
