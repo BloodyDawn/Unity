@@ -32,7 +32,7 @@ public final class RunWalk implements IPlayerActionHandler
 	@Override
 	public void useAction(PlayerInstance activeChar, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
-		activeChar.setIsRunning(activeChar.isRunning());
+		activeChar.setIsRunning(!activeChar.isRunning());
 	}
 	
 	public static void main(String[] args)
