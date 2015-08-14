@@ -297,7 +297,6 @@ import org.l2junity.gameserver.network.client.send.PledgeShowMemberListUpdate;
 import org.l2junity.gameserver.network.client.send.PrivateStoreListBuy;
 import org.l2junity.gameserver.network.client.send.PrivateStoreListSell;
 import org.l2junity.gameserver.network.client.send.PrivateStoreManageListBuy;
-import org.l2junity.gameserver.network.client.send.PrivateStoreManageListSell;
 import org.l2junity.gameserver.network.client.send.PrivateStoreMsgBuy;
 import org.l2junity.gameserver.network.client.send.PrivateStoreMsgSell;
 import org.l2junity.gameserver.network.client.send.RecipeShopMsg;
@@ -4652,36 +4651,6 @@ public final class PlayerInstance extends Playable
 				}
 				setPrivateStoreType(PrivateStoreType.BUY_MANAGE);
 				sendPacket(new PrivateStoreManageListBuy(this));
-			}
-		}
-		else
-		{
-			if (isInsideZone(ZoneId.NO_STORE))
-			{
-				sendPacket(SystemMessageId.YOU_CANNOT_OPEN_A_PRIVATE_STORE_HERE);
-			}
-			sendPacket(ActionFailed.STATIC_PACKET);
-		}
-	}
-	
-	public void tryOpenPrivateSellStore(boolean isPackageSale)
-	{
-		// Player shouldn't be able to set stores if he/she is alike dead (dead or fake death)
-		if (canOpenPrivateStore())
-		{
-			if ((getPrivateStoreType() == PrivateStoreType.SELL) || (getPrivateStoreType() == PrivateStoreType.SELL_MANAGE) || (getPrivateStoreType() == PrivateStoreType.PACKAGE_SELL))
-			{
-				setPrivateStoreType(PrivateStoreType.NONE);
-			}
-			
-			if (getPrivateStoreType() == PrivateStoreType.NONE)
-			{
-				if (isSitting())
-				{
-					standUp();
-				}
-				setPrivateStoreType(PrivateStoreType.SELL_MANAGE);
-				sendPacket(new PrivateStoreManageListSell(this, isPackageSale));
 			}
 		}
 		else

@@ -158,9 +158,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 		final WorldObject target = activeChar.getTarget();
 		switch (_actionId)
 		{
-			case 10: // Private Store - Sell
-				activeChar.tryOpenPrivateSellStore(false);
-				break;
 			case 15: // Change Movement Mode (Pets)
 				if (validateSummon(activeChar, pet, true))
 				{
@@ -203,32 +200,11 @@ public final class RequestActionUse implements IClientIncomingPacket
 					servitor.cancelAction();
 				}
 				break;
-			case 28: // Private Store - Buy
-				activeChar.tryOpenPrivateBuyStore();
-				break;
 			case 32: // Wild Hog Cannon - Wild Cannon
 				useSkill(activeChar, 4230, false);
 				break;
 			case 36: // Soulless - Toxic Smoke
 				useSkill(activeChar, 4259, false);
-				break;
-			case 37: // Dwarven Manufacture
-				if (activeChar.isAlikeDead())
-				{
-					client.sendPacket(ActionFailed.STATIC_PACKET);
-					return;
-				}
-				if (activeChar.getPrivateStoreType() != PrivateStoreType.NONE)
-				{
-					activeChar.setPrivateStoreType(PrivateStoreType.NONE);
-					activeChar.broadcastUserInfo();
-				}
-				if (activeChar.isSitting())
-				{
-					activeChar.standUp();
-				}
-				
-				client.sendPacket(new RecipeShopManageList(activeChar, true));
 				break;
 			case 38: // Mount/Dismount
 				activeChar.mountPlayer(pet);
@@ -308,9 +284,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 						pet.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, target.getLocation());
 					}
 				}
-				break;
-			case 61: // Private Store Package Sell
-				activeChar.tryOpenPrivateSellStore(true);
 				break;
 			case 65: // Bot Report Button
 				if (Config.BOTREPORT_ENABLE)
