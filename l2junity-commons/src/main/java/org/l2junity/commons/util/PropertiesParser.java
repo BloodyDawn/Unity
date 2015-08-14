@@ -23,6 +23,9 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 
 import org.slf4j.Logger;
@@ -299,12 +302,47 @@ public final class PropertiesParser
 			{
 				result[i] = Integer.decode(data[i].trim());
 			}
+			return result;
 		}
 		catch (IllegalArgumentException e)
 		{
 			LOGGER.warn("[{}] Invalid value specified for key: {} specified value: {} should be array using default value: {}", _file.getName(), key, value, defaultValues);
 			return defaultValues;
 		}
-		return null;
+	}
+	
+	/**
+	 * @param <T>
+	 * @param key
+	 * @param separator
+	 * @param clazz
+	 * @param defaultValues
+	 * @return
+	 */
+	@SafeVarargs
+	public final <T extends Enum<T>> List<T> getEnumList(String key, String separator, Class<T> clazz, T... defaultValues)
+	{
+		String value = getValue(key);
+		if (value == null)
+		{
+			LOGGER.warn("[{}] missing property for key: {} using default value: {}", _file.getName(), key, defaultValues);
+			return Arrays.asList(defaultValues);
+		}
+		
+		try
+		{
+			final String[] data = value.trim().split(separator);
+			final List<T> result = new ArrayList<>(data.length);
+			for (String element : data)
+			{
+				result.add(Enum.valueOf(clazz, element));
+			}
+			return result;
+		}
+		catch (IllegalArgumentException e)
+		{
+			LOGGER.warn("[{}] Invalid value specified for key: {} specified value: {} should be array using default value: {}", _file.getName(), key, value, defaultValues);
+			return Arrays.asList(defaultValues);
+		}
 	}
 }

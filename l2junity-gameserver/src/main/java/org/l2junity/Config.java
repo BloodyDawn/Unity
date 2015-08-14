@@ -859,7 +859,7 @@ public final class Config
 	public static boolean ENABLE_VITALITY;
 	public static int STARTING_VITALITY_POINTS;
 	
-	public static int[] ALT_VITALITY_DATE_RESET;
+	public static DayOfWeek[] ALT_VITALITY_DATE_RESET;
 	public static String ALT_VITALITY_HOUR_RESET;
 	
 	public static float RATE_VITALITY_EXP_MULTIPLIER;
@@ -1363,21 +1363,13 @@ public final class Config
 			FEE_DELETE_DUALCLASS_SKILLS = Character.getInt("FeeDeleteDualClassSkills", 20000000);
 			ENABLE_VITALITY = Character.getBoolean("EnableVitality", true);
 			STARTING_VITALITY_POINTS = Character.getInt("StartingVitalityPoints", 140000);
-			ALT_VITALITY_DATE_RESET = Character.getIntArray("AltVitalityDateReset", ",", DayOfWeek.WEDNESDAY.getValue());
-			for (int i = 0; i < ALT_VITALITY_DATE_RESET.length; i++)
-			{
-				if ((ALT_VITALITY_DATE_RESET[i] < 1) || (ALT_VITALITY_DATE_RESET[i] > 7))
-				{
-					LOGGER.warn("Wrong value specified for AltVitalityDateReset: {}", ALT_VITALITY_DATE_RESET);
-					ALT_VITALITY_DATE_RESET[i] = DayOfWeek.WEDNESDAY.getValue();
-				}
-			}
-			if (ALT_VITALITY_DATE_RESET.length == 0)
+			ALT_VITALITY_DATE_RESET = Character.getEnumList("AltVitalityDateReset", ",", DayOfWeek.class, DayOfWeek.WEDNESDAY).toArray(new DayOfWeek[0]);
+			if ((ALT_VITALITY_DATE_RESET == null) || (ALT_VITALITY_DATE_RESET.length == 0))
 			{
 				LOGGER.warn("Failed to load for AltVitalityDateReset: setting default values!");
-				ALT_VITALITY_DATE_RESET = new int[]
+				ALT_VITALITY_DATE_RESET = new DayOfWeek[]
 				{
-					DayOfWeek.WEDNESDAY.getValue()
+					DayOfWeek.WEDNESDAY
 				};
 			}
 			ALT_VITALITY_HOUR_RESET = Character.getString("AltVitalityHourReset", "06:30:00");

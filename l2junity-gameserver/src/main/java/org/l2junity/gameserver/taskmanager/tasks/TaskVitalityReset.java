@@ -20,6 +20,7 @@ package org.l2junity.gameserver.taskmanager.tasks;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 import org.l2junity.Config;
@@ -50,9 +51,9 @@ public class TaskVitalityReset extends Task
 	public void onTimeElapsed(ExecutedTask task)
 	{
 		final LocalDate now = LocalDate.now();
-		for (int day : Config.ALT_VITALITY_DATE_RESET)
+		for (DayOfWeek day : Config.ALT_VITALITY_DATE_RESET)
 		{
-			if (now.getDayOfWeek().getValue() == day)
+			if (now.getDayOfWeek() == day)
 			{
 				for (PlayerInstance player : World.getInstance().getPlayers())
 				{
