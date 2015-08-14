@@ -405,7 +405,7 @@ public abstract class AbstractOlympiadGame
 			return;
 		}
 		final Location loc = player.getLastLocation();
-		if ((loc.getX() == 0) && (loc.getY() == 0))
+		if (loc == null)
 		{
 			return;
 		}

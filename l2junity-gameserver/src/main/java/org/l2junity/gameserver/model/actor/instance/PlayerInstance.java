@@ -521,7 +521,7 @@ public final class PlayerInstance extends Playable
 	private boolean _waitTypeSitting;
 	
 	/** Location before entering Observer Mode */
-	private final Location _lastLoc = new Location(0, 0, 0);
+	private Location _lastLoc;
 	private boolean _observerMode = false;
 	
 	/** Stored from last ValidatePosition **/
@@ -7102,9 +7102,9 @@ public final class PlayerInstance extends Playable
 			statement.setInt(10, getAppearance().getHairColor());
 			statement.setInt(11, getAppearance().getSex() ? 1 : 0);
 			statement.setInt(12, getHeading());
-			statement.setInt(13, _observerMode ? _lastLoc.getX() : getX());
-			statement.setInt(14, _observerMode ? _lastLoc.getY() : getY());
-			statement.setInt(15, _observerMode ? _lastLoc.getZ() : getZ());
+			statement.setInt(13, _lastLoc != null ? _lastLoc.getX() : getX());
+			statement.setInt(14, _lastLoc != null ? _lastLoc.getY() : getY());
+			statement.setInt(15, _lastLoc != null ? _lastLoc.getZ() : getZ());
 			statement.setLong(16, exp);
 			statement.setLong(17, getExpBeforeDeath());
 			statement.setLong(18, sp);
@@ -9189,12 +9189,12 @@ public final class PlayerInstance extends Playable
 	
 	public void setLastLocation()
 	{
-		_lastLoc.setXYZ(getX(), getY(), getZ());
+		_lastLoc = new Location(getX(), getY(), getZ());
 	}
 	
 	public void unsetLastLocation()
 	{
-		_lastLoc.setXYZ(0, 0, 0);
+		_lastLoc = null;
 	}
 	
 	public void enterOlympiadObserverMode(Location loc, int id)
