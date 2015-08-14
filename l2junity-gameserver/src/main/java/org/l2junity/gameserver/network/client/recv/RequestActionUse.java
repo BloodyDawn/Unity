@@ -106,7 +106,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 		{
 			return;
 		}
-		activeChar.sendMessage("Action id: " + _actionId);
 		
 		// Don't do anything if player is dead or confused
 		if ((activeChar.isFakeDeath() && (_actionId != 0)) || activeChar.isDead() || activeChar.isControlBlocked())
