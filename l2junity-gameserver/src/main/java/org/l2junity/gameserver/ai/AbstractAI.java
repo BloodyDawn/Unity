@@ -24,6 +24,7 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 
 import java.util.concurrent.Future;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.Location;
@@ -70,7 +71,7 @@ public abstract class AbstractAI implements Ctrl
 	{
 		_nextAction = nextAction;
 	}
-
+	
 	/** The character that this AI manages */
 	protected final Creature _actor;
 	
@@ -156,10 +157,8 @@ public abstract class AbstractAI implements Ctrl
 	
 	/**
 	 * Set the Intention of this AbstractAI.<br>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method is USED by AI classes</B></FONT><B><U><br>
-	 * Overridden in </U> : </B><BR>
-	 * <B>L2AttackableAI</B> : Create an AI Task executed every 1s (if necessary)<BR>
-	 * <B>L2PlayerAI</B> : Stores the current AI intention parameters to later restore it if necessary.
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method is USED by AI classes</B></FONT><B><U><br> Overridden in </U> : </B><BR> <B>L2AttackableAI</B> : Create an AI Task executed every 1s (if necessary)<BR> <B>L2PlayerAI</B> : Stores the current AI intention parameters to later restore it if
+	 * necessary.
 	 * @param intention The new Intention to set to the AI
 	 * @param arg0 The first parameter of the Intention
 	 * @param arg1 The second parameter of the Intention
@@ -376,7 +375,7 @@ public abstract class AbstractAI implements Ctrl
 	protected abstract void onEvtAggression(Creature target, int aggro);
 	
 	protected abstract void onEvtActionBlocked(Creature attacker);
-
+	
 	protected abstract void onEvtRooted(Creature attacker);
 	
 	protected abstract void onEvtConfused(Creature attacker);
@@ -717,19 +716,20 @@ public abstract class AbstractAI implements Ctrl
 			_followTask.cancel(false);
 			_followTask = null;
 		}
-
+		
 		_followTarget = target;
-
-		final int followRange = range == -1 ? 70 : range;
-		_followTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(() -> {
+		
+		final int followRange = range == -1 ? Rnd.get(50, 100) : range;
+		_followTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(() ->
+		{
 			try
 			{
 				if (_followTask == null)
 				{
 					return;
 				}
-
-				Creature followTarget = _followTarget; // copy to prevent NPE
+				
+				final Creature followTarget = _followTarget; // copy to prevent NPE
 				if (followTarget == null)
 				{
 					if (_actor instanceof Summon)
@@ -739,7 +739,7 @@ public abstract class AbstractAI implements Ctrl
 					setIntention(AI_INTENTION_IDLE);
 					return;
 				}
-
+				
 				if (!_actor.isInsideRadius(followTarget, followRange, true, false))
 				{
 					if (!_actor.isInsideRadius(followTarget, 3000, true, false))
@@ -749,11 +749,11 @@ public abstract class AbstractAI implements Ctrl
 						{
 							((Summon) _actor).setFollowStatus(false);
 						}
-
+						
 						setIntention(AI_INTENTION_IDLE);
 						return;
 					}
-
+					
 					moveToPawn(followTarget, followRange);
 				}
 			}
@@ -761,7 +761,7 @@ public abstract class AbstractAI implements Ctrl
 			{
 				LOGGER.warn("Error: " + e.getMessage());
 			}
-		}, 5, range == -1 ? FOLLOW_INTERVAL : ATTACK_FOLLOW_INTERVAL);
+		} , 5, range == -1 ? FOLLOW_INTERVAL : ATTACK_FOLLOW_INTERVAL);
 	}
 	
 	/**
