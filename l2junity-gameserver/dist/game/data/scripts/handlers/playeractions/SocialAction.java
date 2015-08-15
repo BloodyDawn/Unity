@@ -34,8 +34,8 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 
 /**
- * Run/Walk player action handler.
- * @author UnAfraid
+ * Social Action player action handler.
+ * @author Nik
  */
 public final class SocialAction implements IPlayerActionHandler
 {

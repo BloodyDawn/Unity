@@ -20,24 +20,20 @@ package org.l2junity.gameserver.network.client.recv;
 
 import java.util.Arrays;
 
-import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.ai.SummonAI;
 import org.l2junity.gameserver.data.sql.impl.SummonSkillsTable;
 import org.l2junity.gameserver.data.xml.impl.ActionData;
 import org.l2junity.gameserver.data.xml.impl.PetDataTable;
-import org.l2junity.gameserver.datatables.BotReportTable;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.MountType;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.handler.IPlayerActionHandler;
 import org.l2junity.gameserver.handler.PlayerActionHandler;
-import org.l2junity.gameserver.instancemanager.AirShipManager;
 import org.l2junity.gameserver.model.ActionDataHolder;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
@@ -275,79 +271,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 						pet.setFollowStatus(false);
 						pet.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, target.getLocation());
 					}
-				}
-				break;
-			case 65: // Bot Report Button
-				if (Config.BOTREPORT_ENABLE)
-				{
-					BotReportTable.getInstance().reportBot(activeChar);
-				}
-				else
-				{
-					activeChar.sendMessage("This feature is disabled.");
-				}
-				break;
-			case 67: // Steer
-				if (activeChar.isInAirShip())
-				{
-					if (activeChar.getAirShip().setCaptain(activeChar))
-					{
-						activeChar.broadcastUserInfo();
-					}
-				}
-				break;
-			case 68: // Cancel Control
-				if (activeChar.isInAirShip() && activeChar.getAirShip().isCaptain(activeChar))
-				{
-					if (activeChar.getAirShip().setCaptain(null))
-					{
-						activeChar.broadcastUserInfo();
-					}
-				}
-				break;
-			case 69: // Destination Map
-				AirShipManager.getInstance().sendAirShipTeleportList(activeChar);
-				break;
-			case 70: // Exit Airship
-				if (activeChar.isInAirShip())
-				{
-					if (activeChar.getAirShip().isCaptain(activeChar))
-					{
-						if (activeChar.getAirShip().setCaptain(null))
-						{
-							activeChar.broadcastUserInfo();
-						}
-					}
-					else if (activeChar.getAirShip().isInDock())
-					{
-						activeChar.getAirShip().oustPlayer(activeChar);
-					}
-				}
-				break;
-			case 78:
-			case 79:
-			case 80:
-			case 81:
-				if ((activeChar.getParty() != null) && (activeChar.getTarget() != null) && (activeChar.getTarget().isCreature()))
-				{
-					activeChar.getParty().addTacticalSign(activeChar, _actionId - 77, (Creature) activeChar.getTarget());
-				}
-				else
-				{
-					client.sendPacket(ActionFailed.STATIC_PACKET);
-				}
-				break;
-			case 82:
-			case 83:
-			case 84:
-			case 85:
-				if (activeChar.getParty() != null)
-				{
-					activeChar.getParty().setTargetBasedOnTacticalSignId(activeChar, _actionId - 81);
-				}
-				else
-				{
-					client.sendPacket(ActionFailed.STATIC_PACKET);
 				}
 				break;
 			case 1000: // Siege Golem - Siege Hammer
