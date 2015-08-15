@@ -5,14 +5,14 @@
 	<action id="10" handler="PrivateStore" option="1" /> <!-- Private Store Sell -->
 	<action id="12" handler="SocialAction" option="2" /> <!-- Greeting -->
 	<action id="13" handler="SocialAction" option="3" /> <!-- Victory -->
-	<action id="15" handler="PetAction" option="3" /> <!-- Change Movement Mode -->
+	<action id="15" handler="PetHold" /> <!-- Change Movement Mode -->
 	<action id="14" handler="SocialAction" option="4" /> <!-- Advance -->
-	<action id="16" handler="PetAction" option="1" /> <!-- Attack -->
-	<action id="17" handler="PetAction" option="2" /> <!-- Stop -->
+	<action id="16" handler="PetAttack" /> <!-- Attack -->
+	<action id="17" handler="PetStop" /> <!-- Stop -->
 	<action id="19" handler="UnsummonPet" />
-	<action id="21" handler="ServitorAction" option="3" /> <!-- Change Movement Mode -->
-	<action id="22" handler="ServitorAction" option="1" /> <!-- Attack -->
-	<action id="23" handler="ServitorAction" option="2" /> <!-- Stop -->
+	<action id="21" handler="ServitorHold" /> <!-- Change Movement Mode -->
+	<action id="22" handler="ServitorAttack" /> <!-- Attack -->
+	<action id="23" handler="ServitorStop" /> <!-- Stop -->
 	<action id="24" handler="SocialAction" option="6" /> <!-- Yes -->
 	<action id="25" handler="SocialAction" option="5" /> <!-- No -->
 	<action id="26" handler="SocialAction" option="7" /> <!-- Bow -->
@@ -26,8 +26,8 @@
 	<action id="37" handler="PrivateStore" option="5" /> <!-- Dwarven Manufacture -->
 	<action id="38" handler="Ride" /> <!-- Mount/Dismount -->
 	<action id="52" handler="UnsummonServitor" />
-	<action id="53" handler="ServitorAction" option="4" /> <!-- Move to target -->
-	<action id="54" handler="PetAction" option="4" /> <!-- Move to target -->
+	<action id="53" handler="ServitorMove" /> <!-- Move to target -->
+	<action id="54" handler="PetMove" /> <!-- Move to target -->
 	<action id="61" handler="PrivateStore" option="8" /> <!-- Private Store Package Sell -->
 	<action id="62" handler="SocialAction" option="14" /> <!-- Charm -->
 	<action id="64" handler="TeleportBookmark" />
@@ -53,9 +53,9 @@
 	<action id="88" handler="SocialAction" option="29" /> <!-- Provoke -->
 	<action id="89" handler="SocialAction" option="30" /> <!-- Beauty Shop -->
 	<action id="1102" handler="UnsummonServitor" />
-	<action id="1099" handler="ServitorAction" option="1" /> <!-- All Attack -->
-	<action id="1100" handler="ServitorAction" option="4" /> <!-- All Move to target -->
-	<action id="1101" handler="ServitorAction" option="2" /> <!-- All Stop -->
-	<action id="1103" handler="ServitorAction" option="5" /> <!-- All Passive mode -->
-	<action id="1104" handler="ServitorAction" option="6" /> <!-- All Defending mode -->
+	<action id="1099" handler="ServitorAttack" /> <!-- All Attack -->
+	<action id="1100" handler="ServitorMove" /> <!-- All Move to target -->
+	<action id="1101" handler="ServitorStop" /> <!-- All Stop -->
+	<action id="1103" handler="ServitorMode" option="1" /> <!-- All Passive mode -->
+	<action id="1104" handler="ServitorMode" option="2" /> <!-- All Defending mode -->
 </list>
