@@ -21,8 +21,6 @@ package org.l2junity.gameserver.network.client.recv;
 import java.util.Arrays;
 
 import org.l2junity.commons.util.Rnd;
-import org.l2junity.gameserver.ai.CtrlIntention;
-import org.l2junity.gameserver.ai.SummonAI;
 import org.l2junity.gameserver.data.sql.impl.SummonSkillsTable;
 import org.l2junity.gameserver.data.xml.impl.ActionData;
 import org.l2junity.gameserver.data.xml.impl.PetDataTable;
@@ -146,47 +144,11 @@ public final class RequestActionUse implements IClientIncomingPacket
 		final WorldObject target = activeChar.getTarget();
 		switch (_actionId)
 		{
-			case 15: // Change Movement Mode (Pets)
-				if (validateSummon(activeChar, pet, true))
-				{
-					((SummonAI) pet.getAI()).notifyFollowStatusChange();
-				}
-				break;
-			case 16: // Attack (Pets)
-				if (validateSummon(activeChar, pet, true))
-				{
-					if (pet.canAttack(activeChar.getTarget(), _ctrlPressed))
-					{
-						pet.doAttack(activeChar.getTarget());
-					}
-				}
-				break;
-			case 17: // Stop (Pets)
-				if (validateSummon(activeChar, pet, true))
-				{
-					pet.cancelAction();
-				}
-				break;
-			case 21: // Change Movement Mode (Servitors)
-				if (validateSummon(activeChar, servitor, false))
-				{
-					((SummonAI) servitor.getAI()).notifyFollowStatusChange();
-				}
-				break;
-			case 23: // Stop (Servitors)
-				if (validateSummon(activeChar, servitor, false))
-				{
-					servitor.cancelAction();
-				}
-				break;
 			case 32: // Wild Hog Cannon - Wild Cannon
 				useSkill(activeChar, 4230, false);
 				break;
 			case 36: // Soulless - Toxic Smoke
 				useSkill(activeChar, 4259, false);
-				break;
-			case 38: // Mount/Dismount
-				activeChar.mountPlayer(pet);
 				break;
 			case 39: // Soulless - Parasite Burst
 				useSkill(activeChar, 4138, false);
@@ -243,26 +205,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 				}
 				
 				client.sendPacket(new RecipeShopManageList(activeChar, false));
-				break;
-			case 53: // Move to target (Servitors)
-				if (validateSummon(activeChar, servitor, false))
-				{
-					if ((target != null) && (servitor != target) && !servitor.isMovementDisabled())
-					{
-						servitor.setFollowStatus(false);
-						servitor.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, target.getLocation());
-					}
-				}
-				break;
-			case 54: // Move to target (Pets)
-				if (validateSummon(activeChar, pet, true))
-				{
-					if ((target != null) && (pet != target) && !pet.isMovementDisabled())
-					{
-						pet.setFollowStatus(false);
-						pet.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, target.getLocation());
-					}
-				}
 				break;
 			case 1000: // Siege Golem - Siege Hammer
 				if ((target != null) && target.isDoor())
@@ -526,34 +468,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 				break;
 			case 1098: // Elite Maguen - Maguen Party Return
 				useSkill(activeChar, 6684, true);
-				break;
-			case 1100: // All servitor move to
-				activeChar.getServitors().values().forEach(s ->
-				{
-					if (validateSummon(activeChar, s, false))
-					{
-						if ((target != null) && (s != target) && !s.isMovementDisabled())
-						{
-							s.setFollowStatus(false);
-							s.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, target.getLocation());
-						}
-					}
-				});
-				break;
-			case 1101: // All servitor stop
-				activeChar.getServitors().values().forEach(summon ->
-				{
-					if (validateSummon(activeChar, summon, false))
-					{
-						summon.cancelAction();
-					}
-				});
-				break;
-			case 1103: // seems to be passive mode
-				activeChar.getServitors().values().forEach(summon -> ((SummonAI) summon.getAI()).setDefending(false));
-				break;
-			case 1104: // seems to be defend mode
-				activeChar.getServitors().values().forEach(summon -> ((SummonAI) summon.getAI()).setDefending(true));
 				break;
 			case 1106: // Cute Bear - Bear Claw
 				useServitorsSkill(activeChar, 11278);
