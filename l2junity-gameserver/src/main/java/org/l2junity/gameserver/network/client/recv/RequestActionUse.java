@@ -173,15 +173,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 					((SummonAI) servitor.getAI()).notifyFollowStatusChange();
 				}
 				break;
-			case 22: // Attack (Servitors)
-				if (validateSummon(activeChar, servitor, false))
-				{
-					if (servitor.canAttack(activeChar.getTarget(), _ctrlPressed))
-					{
-						servitor.doAttack(activeChar.getTarget());
-					}
-				}
-				break;
 			case 23: // Stop (Servitors)
 				if (validateSummon(activeChar, servitor, false))
 				{
@@ -535,18 +526,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 				break;
 			case 1098: // Elite Maguen - Maguen Party Return
 				useSkill(activeChar, 6684, true);
-				break;
-			case 1099: // All servitor attack
-				activeChar.getServitors().values().forEach(s ->
-				{
-					if (validateSummon(activeChar, s, false))
-					{
-						if (s.canAttack(activeChar.getTarget(), _ctrlPressed))
-						{
-							s.doAttack(activeChar.getTarget());
-						}
-					}
-				});
 				break;
 			case 1100: // All servitor move to
 				activeChar.getServitors().values().forEach(s ->
