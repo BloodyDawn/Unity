@@ -43,7 +43,7 @@ public final class PrivateStore implements IPlayerActionHandler
 	@Override
 	public void useAction(PlayerInstance activeChar, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
-		PrivateStoreType type = PrivateStoreType.findById(data.getOptionId());
+		final PrivateStoreType type = PrivateStoreType.findById(data.getOptionId());
 		if (type == null)
 		{
 			LOGGER.warn("Incorrect private store type: {}", data.getOptionId());

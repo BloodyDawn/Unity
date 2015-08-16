@@ -26,6 +26,7 @@ import org.l2junity.gameserver.model.ActionDataHolder;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
@@ -34,8 +35,6 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class PetSkillUse implements IPlayerActionHandler
 {
-	private static final int SWITCH_STANCE_ID = 6054;
-	
 	@Override
 	public void useAction(PlayerInstance activeChar, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
@@ -44,42 +43,36 @@ public final class PetSkillUse implements IPlayerActionHandler
 			return;
 		}
 		
-		Summon summon = activeChar.getPet();
+		final Summon summon = activeChar.getPet();
 		if ((summon == null) || !summon.isPet())
 		{
 			activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_A_PET);
-			return;
 		}
-		
-		if (((L2PetInstance) summon).isUncontrollable())
+		else if (((L2PetInstance) summon).isUncontrollable())
 		{
 			activeChar.sendPacket(SystemMessageId.WHEN_YOUR_PET_S_HUNGER_GAUGE_IS_AT_0_YOU_CANNOT_USE_YOUR_PET);
-			return;
 		}
-		
-		if (summon.isBetrayed())
+		else if (summon.isBetrayed())
 		{
 			activeChar.sendPacket(SystemMessageId.YOUR_PET_SERVITOR_IS_UNRESPONSIVE_AND_WILL_NOT_OBEY_ANY_ORDERS);
-			return;
 		}
-		
-		if ((summon.getLevel() - activeChar.getLevel()) > 20)
+		else if ((summon.getLevel() - activeChar.getLevel()) > 20)
 		{
 			activeChar.sendPacket(SystemMessageId.YOUR_PET_IS_TOO_HIGH_LEVEL_TO_CONTROL);
-			return;
 		}
-		
-		final int skillLevel = PetDataTable.getInstance().getPetData(summon.getId()).getAvailableLevel(data.getOptionId(), summon.getLevel());
-		
-		if (skillLevel > 0)
+		else
 		{
-			summon.setTarget(activeChar.getTarget());
-			summon.useMagic(SkillData.getInstance().getSkill(data.getOptionId(), skillLevel), ctrlPressed, shiftPressed);
-		}
-		
-		if (data.getOptionId() == SWITCH_STANCE_ID)
-		{
-			summon.switchMode();
+			final int skillLevel = PetDataTable.getInstance().getPetData(summon.getId()).getAvailableLevel(data.getOptionId(), summon.getLevel());
+			if (skillLevel > 0)
+			{
+				summon.setTarget(activeChar.getTarget());
+				summon.useMagic(SkillData.getInstance().getSkill(data.getOptionId(), skillLevel), ctrlPressed, shiftPressed);
+			}
+			
+			if (data.getOptionId() == CommonSkill.PET_SWITCH_STANCE.getId())
+			{
+				summon.switchMode();
+			}
 		}
 	}
 	

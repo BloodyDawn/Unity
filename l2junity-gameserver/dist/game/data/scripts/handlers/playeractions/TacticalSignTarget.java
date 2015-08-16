@@ -33,7 +33,7 @@ public final class TacticalSignTarget implements IPlayerActionHandler
 	@Override
 	public void useAction(PlayerInstance activeChar, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
-		if (activeChar.getParty() == null)
+		if (!activeChar.isInParty())
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

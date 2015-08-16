@@ -41,20 +41,16 @@ public final class PetMove implements IPlayerActionHandler
 			return;
 		}
 		
-		L2PetInstance pet = (L2PetInstance) activeChar.getPet();
+		final L2PetInstance pet = (L2PetInstance) activeChar.getPet();
 		if (pet.isUncontrollable())
 		{
 			activeChar.sendPacket(SystemMessageId.WHEN_YOUR_PET_S_HUNGER_GAUGE_IS_AT_0_YOU_CANNOT_USE_YOUR_PET);
-			return;
 		}
-		
-		if (pet.isBetrayed())
+		else if (pet.isBetrayed())
 		{
 			activeChar.sendPacket(SystemMessageId.YOUR_PET_SERVITOR_IS_UNRESPONSIVE_AND_WILL_NOT_OBEY_ANY_ORDERS);
-			return;
 		}
-		
-		if ((activeChar.getTarget() != null) && (pet != activeChar.getTarget()) && !pet.isMovementDisabled())
+		else if ((activeChar.getTarget() != null) && (pet != activeChar.getTarget()) && !pet.isMovementDisabled())
 		{
 			pet.setFollowStatus(false);
 			pet.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, activeChar.getTarget().getLocation());

@@ -37,12 +37,6 @@ public final class ServitorAttack implements IPlayerActionHandler
 		{
 			activeChar.getServitors().values().stream().filter(s -> s.canAttack(activeChar.getTarget(), ctrlPressed)).forEach(s ->
 			{
-				if (s.isBetrayed())
-				{
-					activeChar.sendPacket(SystemMessageId.YOUR_PET_SERVITOR_IS_UNRESPONSIVE_AND_WILL_NOT_OBEY_ANY_ORDERS);
-					return;
-				}
-				
 				s.doAttack(activeChar.getTarget());
 			});
 		}

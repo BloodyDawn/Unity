@@ -41,7 +41,7 @@ public final class ServitorSkillUse implements IPlayerActionHandler
 			return;
 		}
 		
-		Summon summon = activeChar.getAnyServitor();
+		final Summon summon = activeChar.getAnyServitor();
 		if ((summon == null) || !summon.isServitor())
 		{
 			activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_A_SERVITOR);
@@ -57,7 +57,6 @@ public final class ServitorSkillUse implements IPlayerActionHandler
 			}
 			
 			final int skillLevel = SummonSkillsTable.getInstance().getAvailableLevel(servitor, data.getOptionId());
-			
 			if (skillLevel > 0)
 			{
 				servitor.setTarget(activeChar.getTarget());

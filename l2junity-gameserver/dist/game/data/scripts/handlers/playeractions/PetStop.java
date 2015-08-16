@@ -34,28 +34,25 @@ public final class PetStop implements IPlayerActionHandler
 	@Override
 	public void useAction(PlayerInstance activeChar, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
-		
 		if ((activeChar.getPet() == null) || !activeChar.getPet().isPet())
 		{
 			activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_A_PET);
 			return;
 		}
 		
-		L2PetInstance pet = (L2PetInstance) activeChar.getPet();
+		final L2PetInstance pet = (L2PetInstance) activeChar.getPet();
 		if (pet.isUncontrollable())
 		{
 			activeChar.sendPacket(SystemMessageId.WHEN_YOUR_PET_S_HUNGER_GAUGE_IS_AT_0_YOU_CANNOT_USE_YOUR_PET);
-			return;
 		}
-		
-		if (pet.isBetrayed())
+		else if (pet.isBetrayed())
 		{
 			activeChar.sendPacket(SystemMessageId.YOUR_PET_SERVITOR_IS_UNRESPONSIVE_AND_WILL_NOT_OBEY_ANY_ORDERS);
-			return;
 		}
-		
-		pet.cancelAction();
-		
+		else
+		{
+			pet.cancelAction();
+		}
 	}
 	
 	public static void main(String[] args)
