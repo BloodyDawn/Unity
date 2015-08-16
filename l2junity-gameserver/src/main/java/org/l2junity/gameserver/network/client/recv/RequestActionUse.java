@@ -147,12 +147,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 			case 32: // Wild Hog Cannon - Wild Cannon
 				useSkill(activeChar, 4230, false);
 				break;
-			case 36: // Soulless - Toxic Smoke
-				useSkill(activeChar, 4259, false);
-				break;
-			case 39: // Soulless - Parasite Burst
-				useSkill(activeChar, 4138, false);
-				break;
 			case 41: // Wild Hog Cannon - Attack
 				if (validateSummon(activeChar, servitor, false))
 				{
@@ -298,9 +292,6 @@ public final class RequestActionUse implements IClientIncomingPacket
 				{
 					useSkill(activeChar, 5111, false);
 				}
-				break;
-			case 1041: // Great Wolf - Bite Attack
-				useSkill(activeChar, 5442, true);
 				break;
 			case 1042: // Great Wolf - Maul
 				useSkill(activeChar, 5444, true);
