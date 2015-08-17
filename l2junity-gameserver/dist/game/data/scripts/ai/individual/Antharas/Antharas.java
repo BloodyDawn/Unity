@@ -64,25 +64,26 @@ public final class Antharas extends AbstractNpcAI
 	private static final int HEART = 13001; // Heart of Warding
 	private static final int CUBE = 31859; // Teleportation Cubic
 	private static final Map<Integer, Location> INVISIBLE_NPC = new HashMap<>();
+	
 	{
-		INVISIBLE_NPC.put(29077, new Location(177229, 113298, -7735)); // antaras_clear_npc_1
-		INVISIBLE_NPC.put(29078, new Location(176707, 113585, -7735)); // antaras_clear_npc_2
-		INVISIBLE_NPC.put(29079, new Location(176385, 113889, -7735)); // antaras_clear_npc_3
-		INVISIBLE_NPC.put(29080, new Location(176082, 114241, -7735)); // antaras_clear_npc_4
-		INVISIBLE_NPC.put(29081, new Location(176066, 114802, -7735)); // antaras_clear_npc_5
-		INVISIBLE_NPC.put(29082, new Location(176095, 115313, -7735)); // antaras_clear_npc_6
-		INVISIBLE_NPC.put(29083, new Location(176425, 115829, -7735)); // antaras_clear_npc_7
-		INVISIBLE_NPC.put(29084, new Location(176949, 116378, -7735)); // antaras_clear_npc_8
-		INVISIBLE_NPC.put(29085, new Location(177655, 116402, -7735)); // antaras_clear_npc_9
-		INVISIBLE_NPC.put(29086, new Location(178248, 116395, -7735)); // antaras_clear_npc_10
-		INVISIBLE_NPC.put(29087, new Location(178706, 115998, -7735)); // antaras_clear_npc_11
-		INVISIBLE_NPC.put(29088, new Location(179208, 115452, -7735)); // antaras_clear_npc_12
-		INVISIBLE_NPC.put(29089, new Location(179191, 115079, -7735)); // antaras_clear_npc_13
-		INVISIBLE_NPC.put(29090, new Location(179221, 114546, -7735)); // antaras_clear_npc_14
-		INVISIBLE_NPC.put(29091, new Location(178916, 113925, -7735)); // antaras_clear_npc_15
-		INVISIBLE_NPC.put(29092, new Location(178782, 113814, -7735)); // antaras_clear_npc_16
-		INVISIBLE_NPC.put(29093, new Location(178419, 113417, -7735)); // antaras_clear_npc_17
-		INVISIBLE_NPC.put(29094, new Location(177855, 113282, -7735)); // antaras_clear_npc_18
+		INVISIBLE_NPC.put(29077, new Location(177229, 113298, -7735));
+		INVISIBLE_NPC.put(29078, new Location(176707, 113585, -7735));
+		INVISIBLE_NPC.put(29079, new Location(176385, 113889, -7735));
+		INVISIBLE_NPC.put(29080, new Location(176082, 114241, -7735));
+		INVISIBLE_NPC.put(29081, new Location(176066, 114802, -7735));
+		INVISIBLE_NPC.put(29082, new Location(176095, 115313, -7735));
+		INVISIBLE_NPC.put(29083, new Location(176425, 115829, -7735));
+		INVISIBLE_NPC.put(29084, new Location(176949, 116378, -7735));
+		INVISIBLE_NPC.put(29085, new Location(177655, 116402, -7735));
+		INVISIBLE_NPC.put(29086, new Location(178248, 116395, -7735));
+		INVISIBLE_NPC.put(29087, new Location(178706, 115998, -7735));
+		INVISIBLE_NPC.put(29088, new Location(179208, 115452, -7735));
+		INVISIBLE_NPC.put(29089, new Location(179191, 115079, -7735));
+		INVISIBLE_NPC.put(29090, new Location(179221, 114546, -7735));
+		INVISIBLE_NPC.put(29091, new Location(178916, 113925, -7735));
+		INVISIBLE_NPC.put(29092, new Location(178782, 113814, -7735));
+		INVISIBLE_NPC.put(29093, new Location(178419, 113417, -7735));
+		INVISIBLE_NPC.put(29094, new Location(177855, 113282, -7735));
 	}
 	
 	// Item
