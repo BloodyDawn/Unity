@@ -705,7 +705,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 			if (_isSpawned)
 			{
 				final WorldRegion oldRegion = getWorldRegion();
-				final WorldRegion newRegion = World.getInstance().getRegion(getLocation());
+				final WorldRegion newRegion = World.getInstance().getRegion(this);
 				if (newRegion != oldRegion)
 				{
 					if (oldRegion != null)
@@ -715,7 +715,6 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 					newRegion.addVisibleObject(this);
 					World.getInstance().switchRegion(this, newRegion);
 					setWorldRegion(newRegion);
-
 				}
 			}
 		}
