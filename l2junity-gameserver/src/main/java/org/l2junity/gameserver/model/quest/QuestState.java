@@ -627,8 +627,8 @@ public final class QuestState
 				setRestartTime();
 				break;
 			}
-			// case ONE_TIME:
-			// case REPEATABLE:
+				// case ONE_TIME:
+				// case REPEATABLE:
 			default:
 			{
 				exitQuest(type == QuestType.REPEATABLE);

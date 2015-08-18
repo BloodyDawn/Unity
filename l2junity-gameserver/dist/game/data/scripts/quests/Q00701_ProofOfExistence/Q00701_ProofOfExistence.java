@@ -44,6 +44,7 @@ public class Q00701_ProofOfExistence extends Quest
 	// Monsters
 	private static final int ENIRA = 25625;
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(22606, 518); // Floating Skull
@@ -53,6 +54,7 @@ public class Q00701_ProofOfExistence extends Quest
 		MOBS.put(25629, 735); // Floating Skull (Enira's Evil Spirit)
 		MOBS.put(25630, 391); // Floating Zombie (Enira's Evil Spirit)
 	}
+	
 	// Misc
 	private static final int MIN_LEVEL = 78;
 	

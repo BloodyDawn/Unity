@@ -18,14 +18,12 @@
  */
 package instances.JiniaGuildHideout4;
 
-import instances.AbstractInstance;
-
-import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.quest.QuestState;
 
+import instances.AbstractInstance;
 import quests.Q10287_StoryOfThoseLeft.Q10287_StoryOfThoseLeft;
 
 /**
@@ -36,8 +34,6 @@ public final class JiniaGuildHideout4 extends AbstractInstance
 {
 	// NPC
 	private static final int RAFFORTY = 32020;
-	// Location
-	private static final Location START_LOC = new Location(-23530, -8963, -5413, 0, 0);
 	// Misc
 	private static final int TEMPLATE_ID = 146;
 	
@@ -49,24 +45,28 @@ public final class JiniaGuildHideout4 extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(Npc npc, PlayerInstance talker)
+	protected void onEnter(PlayerInstance player, Instance instance, boolean firstEnter)
 	{
-		final QuestState qs = talker.getQuestState(Q10287_StoryOfThoseLeft.class.getSimpleName());
-		if ((qs != null) && qs.isMemoState(1))
+		super.onEnter(player, instance, firstEnter);
+		if (firstEnter)
 		{
-			enterInstance(talker, "JiniaGuildHideout4.xml", TEMPLATE_ID);
-			qs.setCond(2, true);
+			final QuestState qs = player.getQuestState(Q10287_StoryOfThoseLeft.class.getSimpleName());
+			if (qs != null)
+			{
+				qs.setCond(2, true);
+			}
 		}
-		return super.onTalk(npc, talker);
 	}
 	
 	@Override
-	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
+	public String onTalk(Npc npc, PlayerInstance talker)
 	{
-		if (firstEntrance)
-		{
-			world.addAllowed(player.getObjectId());
-		}
-		teleportPlayer(player, START_LOC, world.getInstanceId(), false);
+		enterInstance(talker, npc, TEMPLATE_ID);
+		return super.onTalk(npc, talker);
+	}
+	
+	public static void main(String[] args)
+	{
+		new JiniaGuildHideout4();
 	}
 }

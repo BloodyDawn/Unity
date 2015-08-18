@@ -19,12 +19,12 @@
 package instances.FaeronTrainingGrounds1;
 
 import org.l2junity.gameserver.enums.QuestSound;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ItemHolder;
-import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
@@ -40,12 +40,6 @@ import quests.Q10735_ASpecialPower.Q10735_ASpecialPower;
  */
 public final class FaeronTrainingGrounds1 extends AbstractInstance
 {
-	// Instance world
-	protected class FTG1World extends InstanceWorld
-	{
-		public Npc[] spawnedMonsters = new Npc[2];
-	}
-	
 	// NPCs
 	private static final int AYANTHE = 33942;
 	private static final int AYANTHE_2 = 33944;
@@ -56,8 +50,6 @@ public final class FaeronTrainingGrounds1 extends AbstractInstance
 	// Items
 	private static final ItemHolder SPIRITSHOTS_TRAINING = new ItemHolder(2509, 150);
 	// Locations
-	private static final Location START_LOC = new Location(-74808, 240640, -3568);
-	private static final Location EXIT_LOC = new Location(-82132, 249836, -3360);
 	private static final Location[] MOB_SPAWNS =
 	{
 		new Location(-74721, 240513, -3584),
@@ -78,16 +70,6 @@ public final class FaeronTrainingGrounds1 extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
-	{
-		if (firstEntrance)
-		{
-			world.addAllowed(player.getObjectId());
-		}
-		teleportPlayer(player, START_LOC, world.getInstanceId());
-	}
-	
-	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = player.getQuestState(Q10735_ASpecialPower.class.getSimpleName());
@@ -100,15 +82,11 @@ public final class FaeronTrainingGrounds1 extends AbstractInstance
 		switch (event)
 		{
 			case "enter_instance":
-				enterInstance(player, new FTG1World(), "FaeronTrainingGrounds1.xml", TEMPLATE_ID);
+				enterInstance(player, npc, TEMPLATE_ID);
 				break;
 			case "exit_instance":
-			{
-				final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-				world.removeAllowed(player.getObjectId());
-				teleportPlayer(player, EXIT_LOC, 0);
+				finishInstance(player, 0);
 				break;
-			}
 			case "33944-03.html":
 			{
 				if (qs.isCond(6))
@@ -208,15 +186,14 @@ public final class FaeronTrainingGrounds1 extends AbstractInstance
 	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		// Check if monster is inside instance
-		final InstanceWorld wrd = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		if ((wrd == null) || !(wrd instanceof FTG1World))
+		final Instance world = getInstance(npc);
+		if (world == null)
 		{
 			return super.onKill(npc, killer, isSummon);
 		}
 		
 		// Remove monster from instance spawn holder
-		final FTG1World world = (FTG1World) wrd;
-		world.spawnedMonsters[npc.getScriptValue()] = null;
+		world.setParameter("Mob" + npc.getScriptValue(), null);
 		
 		// Handle quest state
 		final QuestState qs = killer.getQuestState(Q10735_ASpecialPower.class.getSimpleName());
@@ -290,20 +267,18 @@ public final class FaeronTrainingGrounds1 extends AbstractInstance
 	 */
 	private void spawnMonsters(int npcId, PlayerInstance player)
 	{
-		final InstanceWorld wrd = InstanceManager.getInstance().getPlayerWorld(player);
-		if ((wrd == null) || !(wrd instanceof FTG1World))
+		final Instance world = getPlayerInstance(player, true);
+		if (world != null)
 		{
-			return;
-		}
-		
-		final FTG1World world = (FTG1World) wrd;
-		for (int i = 0; i < MOB_SPAWNS.length; i++)
-		{
-			if (world.spawnedMonsters[i] == null)
+			final StatsSet params = world.getParameters();
+			for (int i = 0; i < MOB_SPAWNS.length; i++)
 			{
-				final Npc npc = addSpawn(npcId, MOB_SPAWNS[i], false, 0, false, world.getInstanceId());
-				npc.setScriptValue(i);
-				world.spawnedMonsters[i] = npc;
+				if (params.getObject("Mob" + i, Npc.class) == null)
+				{
+					final Npc npc = addSpawn(npcId, MOB_SPAWNS[i], false, 0, false, world.getId());
+					npc.setScriptValue(i);
+					params.set("Mob" + i, npc);
+				}
 			}
 		}
 	}
@@ -314,20 +289,24 @@ public final class FaeronTrainingGrounds1 extends AbstractInstance
 	 */
 	private void despawnMonsters(PlayerInstance player)
 	{
-		final InstanceWorld wrd = InstanceManager.getInstance().getPlayerWorld(player);
-		if ((wrd == null) || !(wrd instanceof FTG1World))
+		final Instance world = getPlayerInstance(player, true);
+		if (world != null)
 		{
-			return;
-		}
-		
-		final FTG1World world = (FTG1World) wrd;
-		for (int i = 0; i < world.spawnedMonsters.length; i++)
-		{
-			if (world.spawnedMonsters[i] != null)
+			final StatsSet params = world.getParameters();
+			for (int i = 0; i < MOB_SPAWNS.length; i++)
 			{
-				world.spawnedMonsters[i].deleteMe();
-				world.spawnedMonsters[i] = null;
+				final Npc mob = params.getObject("Mob" + i, Npc.class);
+				if (mob != null)
+				{
+					mob.deleteMe();
+					params.remove("Mob" + i);
+				}
 			}
 		}
+	}
+	
+	public static void main(String[] args)
+	{
+		new FaeronTrainingGrounds1();
 	}
 }

@@ -28,7 +28,7 @@ import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
-import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -70,9 +70,9 @@ public class ExListPartyMatchingWaitingRoom implements IClientOutgoingPacket
 			packet.writeS(player.getName());
 			packet.writeD(player.getClassId().getId());
 			packet.writeD(player.getLevel());
-			final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-			packet.writeD((world != null) && (world.getTemplateId() >= 0) ? world.getTemplateId() : -1);
-			final Map<Integer, Long> _instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(player.getObjectId());
+			final Instance instance = InstanceManager.getInstance().getPlayerInstance(player, false);
+			packet.writeD((instance != null) && (instance.getTemplateId() >= 0) ? instance.getTemplateId() : -1);
+			final Map<Integer, Long> _instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(player);
 			packet.writeD(_instanceTimes.size());
 			for (Entry<Integer, Long> entry : _instanceTimes.entrySet())
 			{

@@ -22,7 +22,7 @@ import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
@@ -167,9 +167,11 @@ public final class Q10284_AcquisitionOfDivineSword extends Quest
 					st.unset("ex3");
 					st.setCond(3, true);
 					st.setMemoState(2);
-					final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-					world.removeAllowed(player.getObjectId());
-					player.setInstanceId(0);
+					final Instance world = InstanceManager.getInstance().getPlayerInstance(player, true);
+					if (world != null)
+					{
+						world.finishInstance(0);
+					}
 					htmltext = event;
 				}
 				break;

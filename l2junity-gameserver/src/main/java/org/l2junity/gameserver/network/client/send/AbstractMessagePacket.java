@@ -282,8 +282,11 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 	
 	public final T addZoneName(final int x, final int y, final int z)
 	{
-		append(new SMParam(TYPE_ZONE_NAME, new int[] {
-			x, y, z
+		append(new SMParam(TYPE_ZONE_NAME, new int[]
+		{
+			x,
+			y,
+			z
 		}));
 		return (T) this;
 	}
@@ -304,8 +307,10 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 	
 	public final T addSkillName(final int id, final int lvl)
 	{
-		append(new SMParam(TYPE_SKILL_NAME, new int[] {
-			id, lvl
+		append(new SMParam(TYPE_SKILL_NAME, new int[]
+		{
+			id,
+			lvl
 		}));
 		return (T) this;
 	}
@@ -345,8 +350,11 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 	
 	public final T addPopup(int target, int attacker, int damage)
 	{
-		append(new SMParam(TYPE_POPUP_ID, new int[] {
-			target, attacker, damage
+		append(new SMParam(TYPE_POPUP_ID, new int[]
+		{
+			target,
+			attacker,
+			damage
 		}));
 		return (T) this;
 	}
@@ -356,7 +364,7 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 		append(new SMParam(TYPE_BYTE, time));
 		return (T) this;
 	}
-
+	
 	/**
 	 * Instance name from instantzonedata-e.dat
 	 * @param type id of instance

@@ -132,6 +132,7 @@ public abstract class AbstractVariables extends StatsSet implements IRestorable,
 	 * Removes variable
 	 * @param name
 	 */
+	@Override
 	public final void remove(String name)
 	{
 		_hasChanges.compareAndSet(false, true);

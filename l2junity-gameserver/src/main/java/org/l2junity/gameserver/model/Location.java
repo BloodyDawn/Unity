@@ -32,30 +32,30 @@ public class Location implements IPositionable
 	private int _y;
 	private int _z;
 	private int _heading;
-	private int _instanceId;
+	private int _instanceId = 0;
 	
 	public Location(int x, int y, int z)
 	{
-		this(x, y, z, 0, -1);
+		this(x, y, z, 0);
 	}
 	
 	public Location(int x, int y, int z, int heading)
-	{
-		this(x, y, z, heading, -1);
-	}
-	
-	public Location(WorldObject obj)
-	{
-		this(obj.getX(), obj.getY(), obj.getZ(), obj.getHeading(), obj.getInstanceId());
-	}
-	
-	public Location(int x, int y, int z, int heading, int instanceId)
 	{
 		_x = x;
 		_y = y;
 		_z = z;
 		_heading = heading;
+	}
+	
+	public Location(int x, int y, int z, int heading, int instanceId)
+	{
+		this(x, y, z, heading);
 		_instanceId = instanceId;
+	}
+	
+	public Location(WorldObject obj)
+	{
+		this(obj.getX(), obj.getY(), obj.getZ(), obj.getHeading(), obj.getInstanceId());
 	}
 	
 	public Location(StatsSet set)
@@ -64,6 +64,15 @@ public class Location implements IPositionable
 		_y = set.getInt("y");
 		_z = set.getInt("z");
 		_heading = set.getInt("heading", 0);
+	}
+	
+	/**
+	 * Copy constructor
+	 * @param loc
+	 */
+	public Location(Location loc)
+	{
+		setLocation(loc);
 	}
 	
 	/**

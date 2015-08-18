@@ -190,17 +190,6 @@ public final class Broadcast
 		toAllOnlinePlayers(new CreatureSay(0, isCritical ? ChatType.CRITICAL_ANNOUNCE : ChatType.ANNOUNCEMENT, "", text));
 	}
 	
-	public static void toPlayersInInstance(IClientOutgoingPacket packet, int instanceId)
-	{
-		for (PlayerInstance player : World.getInstance().getPlayers())
-		{
-			if (player.isOnline() && (player.getInstanceId() == instanceId))
-			{
-				player.sendPacket(packet);
-			}
-		}
-	}
-	
 	public static void toAllOnlinePlayersOnScreen(String text)
 	{
 		toAllOnlinePlayers(new ExShowScreenMessage(text, 10000));

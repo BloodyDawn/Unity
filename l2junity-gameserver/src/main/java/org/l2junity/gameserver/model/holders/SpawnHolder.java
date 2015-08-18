@@ -26,15 +26,43 @@ import org.l2junity.gameserver.model.Location;
 public final class SpawnHolder extends Location
 {
 	private final int _npcId;
+	private final int _respawnDelay;
 	
 	public SpawnHolder(int npcId, int x, int y, int z, int heading)
 	{
 		super(x, y, z, heading);
 		_npcId = npcId;
+		_respawnDelay = 0;
+	}
+	
+	public SpawnHolder(int npcId, int x, int y, int z, int heading, int respawn)
+	{
+		super(x, y, z, heading);
+		_npcId = npcId;
+		_respawnDelay = respawn;
+	}
+	
+	public SpawnHolder(int npcId, Location loc)
+	{
+		super(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading());
+		_npcId = npcId;
+		_respawnDelay = 0;
+	}
+	
+	public SpawnHolder(int npcId, Location loc, int respawn)
+	{
+		super(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading());
+		_npcId = npcId;
+		_respawnDelay = respawn;
 	}
 	
 	public final int getNpcId()
 	{
 		return _npcId;
+	}
+	
+	public int getRespawnDelay()
+	{
+		return _respawnDelay;
 	}
 }

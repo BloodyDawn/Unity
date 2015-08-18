@@ -27,10 +27,10 @@ import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.appearance.PcAppearance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.eventengine.AbstractEvent;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseEnter;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseMemberList;
@@ -46,10 +46,10 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	private final Set<CeremonyOfChaosMember> _players = ConcurrentHashMap.newKeySet();
 	private final Set<L2MonsterInstance> _monsters = ConcurrentHashMap.newKeySet();
 	
-	public CeremonyOfChaosEvent(int id, String instanceTemplate)
+	public CeremonyOfChaosEvent(int id, int templateId)
 	{
 		_id = id;
-		_instance = InstanceManager.getInstance().getInstance(InstanceManager.getInstance().createDynamicInstance(instanceTemplate));
+		_instance = InstanceManager.getInstance().createInstance(templateId);
 	}
 	
 	public int getId()
@@ -59,7 +59,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	
 	public int getInstanceId()
 	{
-		return _instance.getObjectId();
+		return _instance.getId();
 	}
 	
 	public Instance getInstance()
@@ -199,7 +199,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			}
 			
 			// Teleport player to the arena
-			player.teleToLocation(_instance.getSpawnLoc(), _instance.getId(), 200);
+			player.teleToLocation(_instance.getEnterLocation(), _instance.getId(), 200);
 		}
 	}
 	

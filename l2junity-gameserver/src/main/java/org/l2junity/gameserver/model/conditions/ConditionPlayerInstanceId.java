@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
 
@@ -56,11 +56,11 @@ public class ConditionPlayerInstanceId extends Condition
 			return false; // player not in instance
 		}
 		
-		final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(effector.getActingPlayer());
-		if ((world == null) || (world.getInstanceId() != instanceId))
+		final Instance instance = InstanceManager.getInstance().getPlayerInstance(effector.getActingPlayer(), true);
+		if ((instance == null) || (instance.getId() != instanceId))
 		{
 			return false; // player in the different instance
 		}
-		return _instanceIds.contains(world.getTemplateId());
+		return _instanceIds.contains(instance.getTemplateId());
 	}
 }

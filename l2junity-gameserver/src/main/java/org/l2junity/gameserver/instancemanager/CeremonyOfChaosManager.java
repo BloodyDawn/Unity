@@ -191,7 +191,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		CeremonyOfChaosEvent event = null;
 		final List<PlayerInstance> players = getRegisteredPlayers().stream().sorted(Comparator.comparingInt(PlayerInstance::getLevel)).collect(Collectors.toList());
 		final int maxPlayers = getVariables().getInt(MAX_PLAYERS_KEY, 18);
-		final List<String> templates = getVariables().getList(INSTANCE_TEMPLATES_KEY, String.class);
+		final List<Integer> templates = getVariables().getList(INSTANCE_TEMPLATES_KEY, Integer.class);
 		for (PlayerInstance player : players)
 		{
 			if (player.isOnline() && canRegister(player, true))
@@ -301,7 +301,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		}
 		else if (player.getInstanceId() > 0)
 		{
-			// TODO : check if there is a message for that case
+			sm = SystemMessageId.YOU_MAY_NOT_REGISTER_WHILE_USING_THE_INSTANT_ZONE;
 			canRegister = false;
 		}
 		else if (player.isInSiege())

@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<instance name="SanctumOftheLordsOfDawn" allowRandomWalk="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
-	<activityTime val="60" />
-	<allowSummon val="false" />
-	<emptyDestroyTime val="900" />
-	<spawnPoint spawnX="-12797" spawnY="122675" spawnZ="-3117" />
+<!-- Sanctum of the Lords of Dawn -->
+<instance id="111" maxWorlds="20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+	<time duration="60" empty="10" />
+	<removeBuffs type="ALL" />
+	<locations>
+		<enter type="FIXED">
+			<location x="76161" y="213401" z="-7120" />
+		</enter>
+		<exit type="ORIGIN" />
+	</locations>
 	<doorlist>
-		<door doorId="17240001" />
-		<door doorId="17240002" />
-		<door doorId="17240003" />
-		<door doorId="17240004" />
-		<door doorId="17240005" />
-		<door doorId="17240006" />
+		<door id="17240001" />
+		<door id="17240002" />
+		<door id="17240003" />
+		<door id="17240004" />
+		<door id="17240005" />
+		<door id="17240006" />
 	</doorlist>
 	<spawnlist>
 		<group name="general">
@@ -25,19 +30,19 @@
 			<spawn npcId="32580" x="-81393" y="205565" z="-7960" heading="0" respawn="60" />
 		</group>
 		<group name="high_priest_of_dawn">
-       		<spawn npcId="18828" x="-79229" y="205782" z="-7896" heading="28672" respawn="60" />
-        	<spawn npcId="18828" x="-79362" y="205706" z="-7896" heading="16383" respawn="60" />
-        	<spawn npcId="18828" x="-79495" y="205774" z="-7896" heading="4096" respawn="60" />
-        	<spawn npcId="18828" x="-79493" y="205930" z="-7896" heading="61440" respawn="60" />
-        	<spawn npcId="18828" x="-79362" y="206012" z="-7896" heading="49152" respawn="60" />
-       		<spawn npcId="18828" x="-79230" y="205935" z="-7896" heading="36864" respawn="60" />
-       	</group>
+			<spawn npcId="18828" x="-79229" y="205782" z="-7896" heading="28672" respawn="60" />
+			<spawn npcId="18828" x="-79362" y="205706" z="-7896" heading="16383" respawn="60" />
+			<spawn npcId="18828" x="-79495" y="205774" z="-7896" heading="4096" respawn="60" />
+			<spawn npcId="18828" x="-79493" y="205930" z="-7896" heading="61440" respawn="60" />
+			<spawn npcId="18828" x="-79362" y="206012" z="-7896" heading="49152" respawn="60" />
+			<spawn npcId="18828" x="-79230" y="205935" z="-7896" heading="36864" respawn="60" />
+		</group>
 		<group name="save_point1">
 			<spawn npcId="18834" x="-75190" y="210176" z="-7418" heading="0" respawn="60" />
 			<spawn npcId="18834" x="-74743" y="209820" z="-7418" heading="32768" respawn="60" />
 			<spawn npcId="18835" x="-75650" y="212107" z="-7322" heading="0" respawn="60" />
 			<spawn npcId="18835" x="-74854" y="212107" z="-7322" heading="32768" respawn="60" />
-			<spawn npcId="18835" x="-74534" y="212108" z="-7321" heading="0" respawn="60"  />
+			<spawn npcId="18835" x="-74534" y="212108" z="-7321" heading="0" respawn="60" />
 			<spawn npcId="18835" x="-75200" y="211178" z="-7322" heading="16384" respawn="60" />
 			<spawn npcId="18835" x="-74701" y="211460" z="-7321" heading="49151" respawn="60" />
 			<spawn npcId="18834" x="-74934" y="213446" z="-7232" heading="33334" respawn="60" />

@@ -30,10 +30,10 @@ import org.l2junity.gameserver.model.actor.status.PlayableStatus;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.EtcStatusUpdate;
@@ -176,12 +176,12 @@ public abstract class Playable extends Creature
 			}
 		}
 		// Notify instance
-		if (getInstanceId() > 0)
+		if ((getInstanceId() > 0) && isPlayer())
 		{
 			final Instance instance = InstanceManager.getInstance().getInstance(getInstanceId());
 			if (instance != null)
 			{
-				instance.notifyDeath(killer, this);
+				instance.onDeath(getActingPlayer());
 			}
 		}
 		

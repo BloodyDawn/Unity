@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<instance name="Monastery Of Silence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
-	<activityTime val="30" />
-	<allowSummon val="false" />
-	<emptyDestroyTime val="1" />
-	<spawnPoint spawnX="115983" spawnY="-87351" spawnZ="-3397" />
+<!-- Monastery Of Silence -->
+<instance id="151" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+	<time duration="30" empty="0" />
 	<removeBuffs type="ALL" />
+	<locations>
+		<enter type="FIXED">
+			<location x="120710" y="-86971" z="-3392" />
+		</enter>
+		<exit type="FIXED">
+			<location x="115983" y="-87351" z="-3397" />
+		</exit>
+	</locations>
 	<spawnlist>
 		<group name="general">
 			<!-- Eris's Evil Thoughts -->

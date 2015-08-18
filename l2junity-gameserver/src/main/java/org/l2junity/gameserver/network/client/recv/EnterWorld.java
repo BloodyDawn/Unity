@@ -50,8 +50,10 @@ import org.l2junity.gameserver.model.entity.L2Event;
 import org.l2junity.gameserver.model.entity.Siege;
 import org.l2junity.gameserver.model.entity.clanhall.AuctionableHall;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.variables.PlayerVariables;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.AcquireSkillList;
@@ -153,15 +155,14 @@ public class EnterWorld implements IClientIncomingPacket
 		// Restore to instanced area if enabled
 		if (Config.RESTORE_PLAYER_INSTANCE)
 		{
-			activeChar.setInstanceId(InstanceManager.getInstance().getPlayerInstance(activeChar.getObjectId()));
-		}
-		else
-		{
-			int instanceId = InstanceManager.getInstance().getPlayerInstance(activeChar.getObjectId());
-			if (instanceId > 0)
+			final PlayerVariables vars = activeChar.getVariables();
+			final int instId = vars.getInt("INSTANCE_RESTORE", 0);
+			final Instance instance = InstanceManager.getInstance().getPlayerInstance(activeChar, false);
+			if ((instance != null) && (instId == instance.getId()))
 			{
-				InstanceManager.getInstance().getInstance(instanceId).removePlayer(activeChar.getObjectId());
+				activeChar.setInstanceId(instId);
 			}
+			vars.remove("INSTANCE_RESTORE");
 		}
 		
 		if (World.getInstance().findObject(activeChar.getObjectId()) != null)

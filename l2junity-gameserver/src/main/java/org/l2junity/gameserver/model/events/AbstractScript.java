@@ -61,7 +61,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
-import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.events.annotations.Id;
 import org.l2junity.gameserver.model.events.annotations.Ids;
 import org.l2junity.gameserver.model.events.annotations.NpcLevelRange;
@@ -98,6 +97,11 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSkillL
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSummonSpawn;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSummonTalk;
 import org.l2junity.gameserver.model.events.impl.character.player.OnTrapAction;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceCreate;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceCreated;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceEnter;
+import org.l2junity.gameserver.model.events.impl.instance.OnInstanceLeave;
 import org.l2junity.gameserver.model.events.impl.item.OnItemBypassEvent;
 import org.l2junity.gameserver.model.events.impl.item.OnItemTalk;
 import org.l2junity.gameserver.model.events.impl.olympiad.OnOlympiadMatchResult;
@@ -117,6 +121,8 @@ import org.l2junity.gameserver.model.events.timers.TimerHolder;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.MovieHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.instancezone.Instance;
+import org.l2junity.gameserver.model.instancezone.InstanceTemplate;
 import org.l2junity.gameserver.model.interfaces.IPositionable;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.itemcontainer.PcInventory;
@@ -1168,6 +1174,126 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 		return registerConsumer(callback, EventType.ON_PLAYER_PROFESSION_CHANGE, ListenerRegisterType.GLOBAL);
 	}
 	
+	// ---------------------------------------------------------------------------------------------------------------------------
+	
+	/**
+	 * Provides instant callback operation before instance world is created
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceCreateId(Function<OnInstanceCreate, TerminateReturn> callback, int... templateIds)
+	{
+		return registerFunction(callback, EventType.ON_INSTANCE_CREATE, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	/**
+	 * Provides instant callback operation before instance world is created
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceCreateId(Function<OnInstanceCreate, TerminateReturn> callback, Collection<Integer> templateIds)
+	{
+		return registerFunction(callback, EventType.ON_INSTANCE_CREATE, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	// ---------------------------------------------------------------------------------------------------------------------------
+	
+	/**
+	 * Provides instant callback operation when instance world created
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceCreatedId(Consumer<OnInstanceCreated> callback, int... templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_CREATED, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	/**
+	 * Provides instant callback operation when instance world created
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceCreatedId(Consumer<OnInstanceCreated> callback, Collection<Integer> templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_CREATED, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	// ---------------------------------------------------------------------------------------------------------------------------
+	
+	/**
+	 * Provides instant callback operation when instance world destroyed
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceDestroyId(Consumer<OnInstanceDestroy> callback, int... templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_DESTROY, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	/**
+	 * Provides instant callback operation when instance world destroyed
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceDestroyId(Consumer<OnInstanceDestroy> callback, Collection<Integer> templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_DESTROY, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	// ---------------------------------------------------------------------------------------------------------------------------
+	
+	/**
+	 * Provides instant callback operation when player enters into instance world
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceEnterId(Consumer<OnInstanceEnter> callback, int... templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_ENTER, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	/**
+	 * Provides instant callback operation when player enters into instance world
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceEnterId(Consumer<OnInstanceEnter> callback, Collection<Integer> templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_ENTER, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	// ---------------------------------------------------------------------------------------------------------------------------
+	
+	/**
+	 * Provides instant callback operation when player leave from instance world
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceLeaveId(Consumer<OnInstanceLeave> callback, int... templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_LEAVE, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
+	/**
+	 * Provides instant callback operation when player leave from instance world
+	 * @param callback
+	 * @param templateIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setInstanceLeaveId(Consumer<OnInstanceLeave> callback, Collection<Integer> templateIds)
+	{
+		return registerConsumer(callback, EventType.ON_INSTANCE_LEAVE, ListenerRegisterType.INSTANCE, templateIds);
+	}
+	
 	// --------------------------------------------------------------------------------------------------
 	// --------------------------------Default listener register methods---------------------------------
 	// --------------------------------------------------------------------------------------------------
@@ -1367,6 +1493,15 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 						}
 						break;
 					}
+					case INSTANCE:
+					{
+						final InstanceTemplate template = InstanceManager.getInstance().getInstanceTemplate(id);
+						if (template != null)
+						{
+							listeners.add(template.addListener(action.apply(template)));
+						}
+						break;
+					}
 					default:
 					{
 						_log.warn(getClass().getSimpleName() + ": Unhandled register type: " + registerType);
@@ -1478,6 +1613,15 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 						}
 						break;
 					}
+					case INSTANCE:
+					{
+						final InstanceTemplate template = InstanceManager.getInstance().getInstanceTemplate(id);
+						if (template != null)
+						{
+							listeners.add(template.addListener(action.apply(template)));
+						}
+						break;
+					}
 					default:
 					{
 						_log.warn(getClass().getSimpleName() + ": Unhandled register type: " + registerType);
@@ -1546,7 +1690,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 */
 	public void onSpawnActivate(SpawnTemplate template)
 	{
-		
+	
 	}
 	
 	/**
@@ -1554,7 +1698,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 */
 	public void onSpawnDeactivate(SpawnTemplate template)
 	{
-		
+	
 	}
 	
 	/**
@@ -1564,7 +1708,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 */
 	public void onSpawnNpc(SpawnTemplate template, SpawnGroup group, Npc npc)
 	{
-		
+	
 	}
 	
 	/**
@@ -1574,7 +1718,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 */
 	public void onSpawnDespawnNpc(SpawnTemplate template, SpawnGroup group, Npc npc)
 	{
-		
+	
 	}
 	
 	/**
@@ -1585,7 +1729,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 */
 	public void onSpawnNpcDeath(SpawnTemplate template, SpawnGroup group, Npc npc, Creature killer)
 	{
-		
+	
 	}
 	
 	/**

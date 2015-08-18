@@ -31,12 +31,11 @@ import org.l2junity.gameserver.handler.IActionShiftHandler;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.poly.ObjectPoly;
-import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.events.ListenersContainer;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.IDecayable;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.interfaces.ILocational;
@@ -47,7 +46,6 @@ import org.l2junity.gameserver.model.interfaces.IUniqueId;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.DeleteObject;
-import org.l2junity.gameserver.network.client.send.ExSendUIEvent;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
@@ -182,7 +180,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	@Override
 	public final boolean spawnMe()
 	{
-		assert (getWorldRegion() == null) && (getLocation().getX() != 0) && (getLocation().getY() != 0) && (getLocation().getZ() != 0);
+		assert(getWorldRegion() == null) && (getLocation().getX() != 0) && (getLocation().getY() != 0) && (getLocation().getZ() != 0);
 		
 		synchronized (this)
 		{
@@ -540,7 +538,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	
 	public void removeStatusListener(Creature object)
 	{
-		
+	
 	}
 	
 	protected void badCoords()
@@ -758,32 +756,25 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 			return;
 		}
 		
-		Instance oldI = InstanceManager.getInstance().getInstance(getInstanceId());
-		Instance newI = InstanceManager.getInstance().getInstance(instanceId);
-		if (newI == null)
+		final Instance oldInstance = InstanceManager.getInstance().getInstance(getInstanceId());
+		final Instance newInstance = InstanceManager.getInstance().getInstance(instanceId);
+		
+		// For normal world is instance null so skip this check when new instance id equals zero.
+		if ((newInstance == null) && (instanceId != 0))
 		{
 			return;
 		}
 		
+		// Leave old instance
+		if (oldInstance != null)
+		{
+			oldInstance.onInstanceIdChange(this, false);
+		}
+		
+		// Change instance for servitors too
 		if (isPlayer())
 		{
 			final PlayerInstance player = getActingPlayer();
-			if ((getInstanceId() > 0) && (oldI != null))
-			{
-				oldI.removePlayer(getObjectId());
-				if (oldI.isShowTimer())
-				{
-					sendInstanceUpdate(oldI, true);
-				}
-			}
-			if (instanceId > 0)
-			{
-				newI.addPlayer(getObjectId());
-				if (newI.isShowTimer())
-				{
-					sendInstanceUpdate(newI, false);
-				}
-			}
 			final Summon pet = player.getPet();
 			if (pet != null)
 			{
@@ -791,20 +782,15 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 			}
 			player.getServitors().values().forEach(s -> s.setInstanceId(instanceId));
 		}
-		else if (isNpc())
-		{
-			final Npc npc = (Npc) this;
-			if ((getInstanceId() > 0) && (oldI != null))
-			{
-				oldI.removeNpc(npc);
-			}
-			if (instanceId > 0)
-			{
-				newI.addNpc(npc);
-			}
-		}
 		
 		_instanceId.set(instanceId);
+		
+		// Enter new instance
+		if (newInstance != null)
+		{
+			newInstance.onInstanceIdChange(this, true);
+		}
+		
 		if (_isSpawned)
 		{
 			// We don't want some ugly looking disappear/appear effects, so don't update
@@ -874,25 +860,6 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 			heading = 65535 + heading;
 		}
 		return Util.convertHeadingToDegree(heading);
-	}
-	
-	/**
-	 * Sends an instance update for player.
-	 * @param instance the instance to update
-	 * @param hide if {@code true} hide the player
-	 */
-	private void sendInstanceUpdate(Instance instance, boolean hide)
-	{
-		final int startTime = (int) ((System.currentTimeMillis() - instance.getInstanceStartTime()) / 1000);
-		final int endTime = (int) ((instance.getInstanceEndTime() - instance.getInstanceStartTime()) / 1000);
-		if (instance.isTimerIncrease())
-		{
-			sendPacket(new ExSendUIEvent(getActingPlayer(), hide, true, startTime, endTime, instance.getTimerText()));
-		}
-		else
-		{
-			sendPacket(new ExSendUIEvent(getActingPlayer(), hide, false, endTime - startTime, 0, instance.getTimerText()));
-		}
 	}
 	
 	/**

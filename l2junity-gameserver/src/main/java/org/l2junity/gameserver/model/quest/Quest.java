@@ -61,6 +61,7 @@ import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.listeners.AbstractEventListener;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.holders.NpcLogListHolder;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -156,7 +157,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	protected void onLoad()
 	{
-		
+	
 	}
 	
 	/**
@@ -167,7 +168,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onSave()
 	{
-		
+	
 	}
 	
 	/**
@@ -1362,7 +1363,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onOlympiadMatchFinish(Participant winner, Participant looser, CompetitionType type)
 	{
-		
+	
 	}
 	
 	/**
@@ -1372,7 +1373,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onOlympiadLose(PlayerInstance loser, CompetitionType type)
 	{
-		
+	
 	}
 	
 	/**
@@ -1381,7 +1382,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onMoveFinished(Npc npc)
 	{
-		
+	
 	}
 	
 	/**
@@ -1390,7 +1391,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onNodeArrived(Npc npc)
 	{
-		
+	
 	}
 	
 	/**
@@ -1399,7 +1400,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onRouteFinished(Npc npc)
 	{
-		
+	
 	}
 	
 	/**
@@ -1418,7 +1419,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onSummonSpawn(Summon summon)
 	{
-		
+	
 	}
 	
 	/**
@@ -1426,7 +1427,51 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onSummonTalk(Summon summon)
 	{
-		
+	}
+	
+	/**
+	 * This listener is called before instance world is created. So you can add your own conditions to create instance world.
+	 * @param player player who wants to instance world
+	 * @param npc NPC which create instance for player
+	 * @return {@code true} break instance creation, {@code false} instance can be created
+	 */
+	public boolean onInstanceCreate(PlayerInstance player, Npc npc)
+	{
+		return false;
+	}
+	
+	/**
+	 * This listener is called when instance world is created.
+	 * @param instance created instance world
+	 */
+	public void onInstanceCreated(Instance instance)
+	{
+	}
+	
+	/**
+	 * This listener is called when instance being destroyed.
+	 * @param instance instance world which will be destroyed
+	 */
+	public void onInstanceDestroy(Instance instance)
+	{
+	}
+	
+	/**
+	 * This listener is called when player enter into instance.
+	 * @param player player who enter
+	 * @param instance instance where player enter
+	 */
+	public void onInstanceEnter(PlayerInstance player, Instance instance)
+	{
+	}
+	
+	/**
+	 * This listener is called when player leave instance.
+	 * @param player player who leaved
+	 * @param instance instance which player leaved
+	 */
+	public void onInstanceLeave(PlayerInstance player, Instance instance)
+	{
 	}
 	
 	/**
@@ -2332,6 +2377,96 @@ public class Quest extends AbstractScript implements IIdentifiable
 	}
 	
 	/**
+	 * Register onInstanceCreate trigger before instance is created.
+	 * @param templateIds
+	 */
+	public void addInstanceCreateId(int... templateIds)
+	{
+		setInstanceCreateId(event -> new TerminateReturn(onInstanceCreate(event.getPlayer(), event.getNpc()), false, false), templateIds);
+	}
+	
+	/**
+	 * Register onInstanceCreate trigger before instance is created.
+	 * @param templateIds
+	 */
+	public void addInstanceCreateId(Collection<Integer> templateIds)
+	{
+		setInstanceCreateId(event -> new TerminateReturn(onInstanceCreate(event.getPlayer(), event.getNpc()), false, false), templateIds);
+	}
+	
+	/**
+	 * Register onInstanceCreated trigger when instance is created.
+	 * @param templateIds
+	 */
+	public void addInstanceCreatedId(int... templateIds)
+	{
+		setInstanceCreatedId(event -> onInstanceCreated(event.getInstanceWorld()), templateIds);
+	}
+	
+	/**
+	 * Register onInstanceCreated trigger when instance is created.
+	 * @param templateIds
+	 */
+	public void addInstanceCreatedId(Collection<Integer> templateIds)
+	{
+		setInstanceCreatedId(event -> onInstanceCreated(event.getInstanceWorld()), templateIds);
+	}
+	
+	/**
+	 * Register onInstanceDestroy trigger when instance is destroyed.
+	 * @param templateIds
+	 */
+	public void addInstanceDestroyId(int... templateIds)
+	{
+		setInstanceDestroyId(event -> onInstanceDestroy(event.getInstanceWorld()), templateIds);
+	}
+	
+	/**
+	 * Register onInstanceCreate trigger when instance is destroyed.
+	 * @param templateIds
+	 */
+	public void addInstanceDestroyId(Collection<Integer> templateIds)
+	{
+		setInstanceDestroyId(event -> onInstanceDestroy(event.getInstanceWorld()), templateIds);
+	}
+	
+	/**
+	 * Register onInstanceEnter trigger when player enter into instance.
+	 * @param templateIds
+	 */
+	public void addInstanceEnterId(int... templateIds)
+	{
+		setInstanceEnterId(event -> onInstanceEnter(event.getPlayer(), event.getInstanceWorld()), templateIds);
+	}
+	
+	/**
+	 * Register onInstanceEnter trigger when player enter into instance.
+	 * @param templateIds
+	 */
+	public void addInstanceEnterId(Collection<Integer> templateIds)
+	{
+		setInstanceEnterId(event -> onInstanceEnter(event.getPlayer(), event.getInstanceWorld()), templateIds);
+	}
+	
+	/**
+	 * Register onInstanceEnter trigger when player leave from instance.
+	 * @param templateIds
+	 */
+	public void addInstanceLeaveId(int... templateIds)
+	{
+		setInstanceLeaveId(event -> onInstanceLeave(event.getPlayer(), event.getInstanceWorld()), templateIds);
+	}
+	
+	/**
+	 * Register onInstanceEnter trigger when player leave from instance.
+	 * @param templateIds
+	 */
+	public void addInstanceLeaveId(Collection<Integer> templateIds)
+	{
+		setInstanceLeaveId(event -> onInstanceLeave(event.getPlayer(), event.getInstanceWorld()), templateIds);
+	}
+	
+	/**
 	 * Use this method to get a random party member from a player's party.<br>
 	 * Useful when distributing rewards after killing an NPC.
 	 * @param player this parameter represents the player whom the party will taken.
@@ -3214,6 +3349,6 @@ public class Quest extends AbstractScript implements IIdentifiable
 	
 	public void onQuestAborted(PlayerInstance player)
 	{
-		
+	
 	}
 }

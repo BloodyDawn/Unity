@@ -22,7 +22,7 @@ import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.Instance;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
@@ -58,7 +58,6 @@ public final class Q00129_PailakaDevilsLegacy extends Quest
 	// Misc
 	private static final int MIN_LEVEL = 61;
 	private static final int MAX_LEVEL = 67;
-	private static final int EXIT_TIME = 5;
 	
 	public Q00129_PailakaDevilsLegacy()
 	{
@@ -241,21 +240,17 @@ public final class Q00129_PailakaDevilsLegacy extends Quest
 				}
 				else
 				{
-					final Instance inst = InstanceManager.getInstance().getInstance(npc.getInstanceId());
-					qs.exitQuest(false, true);
-					inst.setDuration(EXIT_TIME * 60000);
-					inst.setEmptyDestroyTime(0);
-					if (inst.containsPlayer(player.getObjectId()))
+					final Instance inst = InstanceManager.getInstance().getPlayerInstance(player, true);
+					if (inst != null)
 					{
+						inst.finishInstance();
 						addExpAndSp(player, 4010000, 962);
 						giveAdena(player, 411500, true);
 						rewardItems(player, BRACELET, 1);
 						rewardItems(player, ESCAPE, 1);
 					}
-					else
-					{
-						htmltext = "32511-01.htm";
-					}
+					qs.exitQuest(false, true);
+					htmltext = "32511-01.htm";
 				}
 				break;
 			}

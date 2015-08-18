@@ -18,28 +18,24 @@
  */
 package instances.DisciplesNecropolisPast;
 
-import instances.AbstractInstance;
-
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.Movie;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
-import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.network.client.send.NpcSay;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 
+import instances.AbstractInstance;
 import quests.Q00196_SevenSignsSealOfTheEmperor.Q00196_SevenSignsSealOfTheEmperor;
 
 /**
@@ -48,26 +44,15 @@ import quests.Q00196_SevenSignsSealOfTheEmperor.Q00196_SevenSignsSealOfTheEmpero
  */
 public final class DisciplesNecropolisPast extends AbstractInstance
 {
-	protected class DNPWorld extends InstanceWorld
-	{
-		protected final Set<Npc> anakimGroup = ConcurrentHashMap.newKeySet();
-		protected final Set<Npc> lilithGroup = ConcurrentHashMap.newKeySet();
-		protected AtomicInteger countKill = new AtomicInteger();
-	}
-	
 	// NPCs
 	private static final int SEAL_DEVICE = 27384;
 	private static final int PROMISE_OF_MAMMON = 32585;
 	private static final int SHUNAIMAN = 32586;
 	private static final int LEON = 32587;
 	private static final int DISCIPLES_GATEKEEPER = 32657;
+	// Monsters
 	private static final int LILITH = 32715;
-	private static final int LILITHS_STEWARD = 32716;
-	private static final int LILITHS_ELITE = 32717;
 	private static final int ANAKIM = 32718;
-	private static final int ANAKIMS_GUARDIAN = 32719;
-	private static final int ANAKIMS_GUARD = 32720;
-	private static final int ANAKIMS_EXECUTOR = 32721;
 	private static final int LILIM_BUTCHER = 27371;
 	private static final int LILIM_MAGUS = 27372;
 	private static final int LILIM_KNIGHT_ERRANT = 27373;
@@ -77,12 +62,26 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	private static final int LILIM_SLAYER = 27377;
 	private static final int LILIM_GREAT_MAGUS = 27378;
 	private static final int LILIM_GUARD_KNIGHT = 27379;
+	private static final int[] ANAKIM_GROUP =
+	{
+		ANAKIM,
+		32719,
+		32720,
+		32721
+	};
+	private static final int[] LILITH_GROUP =
+	{
+		LILITH,
+		32716,
+		32717
+	};
 	// Items
 	private static final int SACRED_SWORD_OF_EINHASAD = 15310;
 	private static final int SEAL_OF_BINDING = 13846;
 	// Skills
 	private static final SkillHolder SEAL_ISOLATION = new SkillHolder(5980, 3);
 	private static final Map<Integer, SkillHolder> SKILLS = new HashMap<>();
+	
 	static
 	{
 		SKILLS.put(32715, new SkillHolder(6187, 1)); // Presentation - Lilith Battle
@@ -93,9 +92,9 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 		SKILLS.put(32720, new SkillHolder(6194, 1)); // Presentation - Anakim's Guard Battle
 		SKILLS.put(32721, new SkillHolder(6195, 1)); // Presentation - Anakim's Executor Battle
 	}
+	
 	// Locations
 	private static final Location ENTER = new Location(-89554, 216078, -7488, 0, 0);
-	private static final Location EXIT = new Location(171895, -17501, -4903, 0, 0);
 	// NpcStringId
 	private static final NpcStringId[] LILITH_SHOUT =
 	{
@@ -111,18 +110,6 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	private static final int DOOR_4 = 17240108;
 	private static final int DOOR_5 = 17240110;
 	private static final int DISCIPLES_NECROPOLIS_DOOR = 17240111;
-	private static final Map<Integer, Location> LILITH_SPAWN = new HashMap<>();
-	private static final Map<Integer, Location> ANAKIM_SPAWN = new HashMap<>();
-	static
-	{
-		LILITH_SPAWN.put(LILITH, new Location(-83175, 217021, -7504, 49151));
-		LILITH_SPAWN.put(LILITHS_STEWARD, new Location(-83327, 216938, -7492, 50768));
-		LILITH_SPAWN.put(LILITHS_ELITE, new Location(-83003, 216909, -7492, 4827));
-		ANAKIM_SPAWN.put(ANAKIM, new Location(-83179, 216479, -7504, 16384));
-		ANAKIM_SPAWN.put(ANAKIMS_GUARDIAN, new Location(-83321, 216507, -7492, 16166));
-		ANAKIM_SPAWN.put(ANAKIMS_GUARD, new Location(-83086, 216519, -7495, 15910));
-		ANAKIM_SPAWN.put(ANAKIMS_EXECUTOR, new Location(-83031, 216604, -7492, 17071));
-	}
 	
 	public DisciplesNecropolisPast()
 	{
@@ -136,56 +123,31 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 		addTalkId(PROMISE_OF_MAMMON, SHUNAIMAN, LEON, DISCIPLES_GATEKEEPER);
 	}
 	
-	protected void spawnNPC(DNPWorld world)
+	private void checkDoors(Npc npc, Instance world, int count)
 	{
-		for (Map.Entry<Integer, Location> entry : LILITH_SPAWN.entrySet())
-		{
-			final Npc npc = addSpawn(entry.getKey(), entry.getValue(), false, 0, false, world.getInstanceId());
-			world.lilithGroup.add(npc);
-		}
-		for (Map.Entry<Integer, Location> entry : ANAKIM_SPAWN.entrySet())
-		{
-			final Npc enpc = addSpawn(entry.getKey(), entry.getValue(), false, 0, false, world.getInstanceId());
-			world.anakimGroup.add(enpc);
-		}
-	}
-	
-	private synchronized void checkDoors(Npc npc, DNPWorld world)
-	{
-		switch (world.countKill.get())
+		switch (count)
 		{
 			case 4:
-				openDoor(DOOR_1, world.getInstanceId());
+				openDoor(DOOR_1, world.getId());
 				break;
 			case 10:
-				openDoor(DOOR_2, world.getInstanceId());
+				openDoor(DOOR_2, world.getId());
 				break;
 			case 18:
-				openDoor(DOOR_3, world.getInstanceId());
+				openDoor(DOOR_3, world.getId());
 				break;
 			case 28:
-				openDoor(DOOR_4, world.getInstanceId());
+				openDoor(DOOR_4, world.getId());
 				break;
 			case 40:
-				openDoor(DOOR_5, world.getInstanceId());
+				openDoor(DOOR_5, world.getId());
 				break;
 		}
 	}
 	
-	@Override
-	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
+	private void makeCast(Npc npc, List<Npc> targets)
 	{
-		if (firstEntrance)
-		{
-			spawnNPC((DNPWorld) world);
-			world.addAllowed(player.getObjectId());
-		}
-		teleportPlayer(player, ENTER, world.getInstanceId());
-	}
-	
-	private void makeCast(Npc npc, Set<Npc> targets)
-	{
-		npc.setTarget(targets.toArray(new Npc[0])[getRandom(targets.size())]);
+		npc.setTarget(targets.get(getRandom(targets.size())));
 		if (SKILLS.containsKey(npc.getId()))
 		{
 			npc.doCast(SKILLS.get(npc.getId()).getSkill());
@@ -195,10 +157,9 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
-		final InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
-		if (tmpworld instanceof DNPWorld)
+		final Instance world = getPlayerInstance(player, true);
+		if (world != null)
 		{
-			final DNPWorld world = (DNPWorld) tmpworld;
 			switch (event)
 			{
 				case "FINISH":
@@ -217,11 +178,14 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 				}
 				case "FIGHT":
 				{
-					for (Npc caster : world.anakimGroup)
+					final List<Npc> anakimGroup = world.getNpcs(ANAKIM_GROUP);
+					final List<Npc> lilithGroup = world.getNpcs(LILITH_GROUP);
+					
+					for (Npc caster : anakimGroup)
 					{
 						if ((caster != null) && !caster.isCastingNow())
 						{
-							makeCast(caster, world.lilithGroup);
+							makeCast(caster, lilithGroup);
 						}
 						if ((caster != null) && (caster.getId() == ANAKIM))
 						{
@@ -236,13 +200,13 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 							}
 						}
 					}
-					for (Npc caster : world.lilithGroup)
+					for (Npc caster : lilithGroup)
 					{
 						if ((caster != null) && !caster.isCastingNow())
 						{
-							makeCast(caster, world.anakimGroup);
+							makeCast(caster, anakimGroup);
 						}
-						if ((caster != null) && (caster.getId() == 32715))
+						if ((caster != null) && (caster.getId() == LILITH))
 						{
 							if (caster.isScriptValue(0))
 							{
@@ -347,8 +311,8 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	@Override
 	public String onAttack(Npc npc, PlayerInstance player, int damage, boolean isSummon)
 	{
-		InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
-		if (tmpworld instanceof DNPWorld)
+		final Instance world = getPlayerInstance(player, true);
+		if (world != null)
 		{
 			if (npc.isScriptValue(0))
 			{
@@ -378,12 +342,15 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	@Override
 	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
-		final InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
-		if (tmpworld instanceof DNPWorld)
+		final Instance world = getPlayerInstance(player, true);
+		if (world != null)
 		{
-			final DNPWorld world = (DNPWorld) tmpworld;
-			world.countKill.incrementAndGet();
-			checkDoors(npc, world);
+			synchronized (world)
+			{
+				final int count = world.getParameters().getInt("countKill", 0) + 1;
+				world.setParameter("countKill", count);
+				checkDoors(npc, world, count);
+			}
 		}
 		
 		switch (npc.getId())
@@ -411,7 +378,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	}
 	
 	@Override
-	public final String onSpawn(Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		npc.setIsMortal(false);
 		return super.onSpawn(npc);
@@ -433,7 +400,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 			{
 				if (qs.isCond(3) || qs.isCond(4))
 				{
-					enterInstance(talker, new DNPWorld(), "DisciplesNecropolisPast.xml", TEMPLATE_ID);
+					enterInstance(talker, npc, TEMPLATE_ID);
 					return "";
 				}
 				break;
@@ -443,9 +410,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 				if (qs.getCond() >= 3)
 				{
 					takeItems(talker, SACRED_SWORD_OF_EINHASAD, -1);
-					InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(talker);
-					world.removeAllowed(talker.getObjectId());
-					talker.teleToLocation(EXIT, 0);
+					finishInstance(talker, 0);
 					htmltext = "32587-01.html";
 				}
 				break;
@@ -454,11 +419,10 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 			{
 				if (qs.getCond() >= 3)
 				{
-					InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-					if (tmpworld instanceof DNPWorld)
+					final Instance world = getInstance(npc);
+					if (world != null)
 					{
-						DNPWorld world = (DNPWorld) tmpworld;
-						openDoor(DISCIPLES_NECROPOLIS_DOOR, world.getInstanceId());
+						openDoor(DISCIPLES_NECROPOLIS_DOOR, world.getId());
 						playMovie(talker, Movie.SSQ_SEALING_EMPEROR_1ST);
 						startQuestTimer("FIGHT", 1000, null, talker);
 					}
@@ -467,5 +431,10 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 			}
 		}
 		return htmltext;
+	}
+	
+	public static void main(String[] args)
+	{
+		new DisciplesNecropolisPast();
 	}
 }

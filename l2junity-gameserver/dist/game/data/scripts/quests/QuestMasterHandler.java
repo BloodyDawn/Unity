@@ -133,7 +133,6 @@ import quests.Q00504_CompetitionForTheBanditStronghold.Q00504_CompetitionForTheB
 import quests.Q00508_AClansReputation.Q00508_AClansReputation;
 import quests.Q00509_AClansFame.Q00509_AClansFame;
 import quests.Q00510_AClansPrestige.Q00510_AClansPrestige;
-import quests.Q00511_AwlUnderFoot.Q00511_AwlUnderFoot;
 import quests.Q00551_OlympiadStarter.Q00551_OlympiadStarter;
 import quests.Q00552_OlympiadVeteran.Q00552_OlympiadVeteran;
 import quests.Q00553_OlympiadUndefeated.Q00553_OlympiadUndefeated;
@@ -420,7 +419,7 @@ public class QuestMasterHandler
 		Q00508_AClansReputation.class,
 		Q00509_AClansFame.class,
 		Q00510_AClansPrestige.class,
-		Q00511_AwlUnderFoot.class,
+		// Q00511_AwlUnderFoot.class,
 		Q00551_OlympiadStarter.class,
 		Q00552_OlympiadVeteran.class,
 		Q00553_OlympiadUndefeated.class,

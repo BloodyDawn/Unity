@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -35,7 +35,7 @@ public class Earthquake implements IClientOutgoingPacket
 	 * @param intensity
 	 * @param duration
 	 */
-	public Earthquake(Location location, int intensity, int duration)
+	public Earthquake(ILocational location, int intensity, int duration)
 	{
 		_x = location.getX();
 		_y = location.getY();

@@ -25,7 +25,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.entity.Instance;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -51,7 +51,7 @@ public final class OpenDoor extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -59,13 +59,13 @@ public final class OpenDoor extends AbstractEffect
 		{
 			return;
 		}
-
+		
 		L2DoorInstance door = (L2DoorInstance) effected;
 		// Check if door in the different instance
 		if (effector.getInstanceId() != door.getInstanceId())
 		{
 			// Search for the instance
-			final Instance inst = InstanceManager.getInstance().getInstance(effector.getInstanceId());
+			final Instance inst = InstanceManager.getInstance().getInstance(effector);
 			if (inst == null)
 			{
 				// Instance not found

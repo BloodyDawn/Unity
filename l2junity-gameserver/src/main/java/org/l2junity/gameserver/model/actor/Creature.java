@@ -93,7 +93,6 @@ import org.l2junity.gameserver.model.actor.transform.Transform;
 import org.l2junity.gameserver.model.actor.transform.TransformTemplate;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.events.Containers;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.EventType;
@@ -114,6 +113,7 @@ import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.holders.InvulSkillHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.holders.SkillUseHolder;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.IDeletable;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.interfaces.ISkillsHolder;
@@ -450,17 +450,17 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	@Override
 	public final boolean isInsideZone(ZoneId zone)
 	{
-		Instance instance = InstanceManager.getInstance().getInstance(getInstanceId());
+		final Instance instance = InstanceManager.getInstance().getInstance(getInstanceId());
 		switch (zone)
 		{
 			case PVP:
-				if ((instance != null) && instance.isPvPInstance())
+				if ((instance != null) && instance.isPvP())
 				{
 					return true;
 				}
 				return (_zones[ZoneId.PVP.ordinal()] > 0) && (_zones[ZoneId.PEACE.ordinal()] == 0);
 			case PEACE:
-				if ((instance != null) && instance.isPvPInstance())
+				if ((instance != null) && instance.isPvP())
 				{
 					return false;
 				}
@@ -5090,15 +5090,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public boolean isInsidePeaceZone(WorldObject attacker, WorldObject target)
 	{
-		if (target == null)
+		if ((target == null) || !(target.isPlayable() && attacker.isPlayable()))
 		{
 			return false;
 		}
-		if (!(target.isPlayable() && attacker.isPlayable()))
-		{
-			return false;
-		}
-		if (InstanceManager.getInstance().getInstance(getInstanceId()).isPvPInstance())
+		
+		final Instance inst = InstanceManager.getInstance().getInstance(getInstanceId());
+		if (inst.isPvP())
 		{
 			return false;
 		}

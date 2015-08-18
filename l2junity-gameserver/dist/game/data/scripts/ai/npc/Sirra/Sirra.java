@@ -21,7 +21,7 @@ package ai.npc.Sirra;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.instancezone.Instance;
 
 import ai.npc.AbstractNpcAI;
 
@@ -46,15 +46,17 @@ public final class Sirra extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
-		final InstanceWorld world = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		
-		if ((world != null) && (world.getTemplateId() == FREYA_INSTID))
+		final Instance world = InstanceManager.getInstance().getInstance(npc);
+		if (world != null)
 		{
-			return (world.isStatus(0)) ? "32762-easy.html" : "32762-easyfight.html";
-		}
-		else if ((world != null) && (world.getTemplateId() == FREYA_HARD_INSTID))
-		{
-			return (world.isStatus(0)) ? "32762-hard.html" : "32762-hardfight.html";
+			if ((world.getTemplateId() == FREYA_INSTID))
+			{
+				return (world.isStatus(0)) ? "32762-easy.html" : "32762-easyfight.html";
+			}
+			else if ((world.getTemplateId() == FREYA_HARD_INSTID))
+			{
+				return (world.isStatus(0)) ? "32762-hard.html" : "32762-hardfight.html";
+			}
 		}
 		return "32762.html";
 	}

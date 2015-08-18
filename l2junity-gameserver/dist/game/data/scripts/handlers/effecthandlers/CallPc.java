@@ -18,15 +18,14 @@
  */
 package handlers.effecthandlers;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.holders.SummonRequestHolder;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.ConfirmDlg;
@@ -154,8 +153,8 @@ public final class CallPc extends AbstractEffect
 		
 		if (activeChar.getInstanceId() > 0)
 		{
-			Instance summonerInstance = InstanceManager.getInstance().getInstance(activeChar.getInstanceId());
-			if (!Config.ALLOW_SUMMON_IN_INSTANCE || !summonerInstance.isSummonAllowed())
+			final Instance instance = InstanceManager.getInstance().getInstance(activeChar);
+			if (!instance.isPlayerSummonAllowed())
 			{
 				activeChar.sendPacket(SystemMessageId.YOU_MAY_NOT_SUMMON_FROM_YOUR_CURRENT_LOCATION);
 				return false;

@@ -33,6 +33,7 @@ import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.templates.L2DoorTemplate;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.pathfinding.AbstractNodeLoc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -197,9 +198,10 @@ public class DoorData implements IGameXmlReader
 	public boolean checkIfDoorsBetween(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean doubleFaceCheck)
 	{
 		Collection<L2DoorInstance> allDoors;
-		if ((instanceId > 0) && (InstanceManager.getInstance().getInstance(instanceId) != null))
+		final Instance instance = InstanceManager.getInstance().getInstance(instanceId);
+		if ((instanceId > 0) && (instance != null))
 		{
-			allDoors = InstanceManager.getInstance().getInstance(instanceId).getDoors();
+			allDoors = instance.getDoors();
 		}
 		else
 		{

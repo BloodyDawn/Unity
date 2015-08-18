@@ -25,7 +25,6 @@ import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.Instance;
 
 /**
  * @author evill33t, GodKratos
@@ -61,7 +60,7 @@ public class AdminInstance implements IAdminCommandHandler
 				try
 				{
 					final int id = Integer.parseInt(parts[1]);
-					if ((id < 300000) && InstanceManager.getInstance().createInstanceFromTemplate(id, parts[2]))
+					if (id < 300000) // && InstanceManager.getInstance().createInstanceFromTemplate(id, parts[2]))
 					{
 						activeChar.sendMessage("Instance created.");
 					}
@@ -80,10 +79,9 @@ public class AdminInstance implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_listinstances"))
 		{
-			for (Instance temp : InstanceManager.getInstance().getInstances().values())
-			{
-				activeChar.sendMessage("Id: " + temp.getObjectId() + " Name: " + temp.getName());
-			}
+			/*
+			 * for (Instance temp : InstanceManager.getInstance().getInstances().values()) { activeChar.sendMessage("Id: " + temp.getId() + " Name: " + temp.getName()); }
+			 */
 		}
 		else if (command.startsWith("admin_setinstance"))
 		{
@@ -121,8 +119,8 @@ public class AdminInstance implements IAdminCommandHandler
 		{
 			try
 			{
-				int val = Integer.parseInt(st.nextToken());
-				InstanceManager.getInstance().destroyInstance(val);
+				// int val = Integer.parseInt(st.nextToken());
+				// InstanceManager.getInstance().destroyInstance(val);
 				activeChar.sendMessage("Instance destroyed");
 			}
 			catch (Exception e)

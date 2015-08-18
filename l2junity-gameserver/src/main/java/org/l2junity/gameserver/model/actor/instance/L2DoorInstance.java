@@ -44,8 +44,8 @@ import org.l2junity.gameserver.model.actor.templates.L2DoorTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.Fort;
-import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -665,13 +665,8 @@ public class L2DoorInstance extends Creature
 			return DoorData.getInstance().getDoor(doorId);
 		}
 		
-		Instance inst = InstanceManager.getInstance().getInstance(getInstanceId());
-		if (inst != null)
-		{
-			return inst.getDoor(doorId);
-		}
-		
-		return null; // 2 late
+		final Instance inst = InstanceManager.getInstance().getInstance(getInstanceId());
+		return (inst != null) ? inst.getDoor(doorId) : null;
 	}
 	
 	private void startAutoCloseTask()

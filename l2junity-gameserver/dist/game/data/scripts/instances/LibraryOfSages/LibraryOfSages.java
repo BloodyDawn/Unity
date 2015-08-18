@@ -18,15 +18,14 @@
  */
 package instances.LibraryOfSages;
 
-import instances.AbstractInstance;
-
 import org.l2junity.gameserver.enums.ChatType;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+
+import instances.AbstractInstance;
 
 /**
  * Library of Sages instance zone.
@@ -34,11 +33,6 @@ import org.l2junity.gameserver.network.client.send.string.NpcStringId;
  */
 public final class LibraryOfSages extends AbstractInstance
 {
-	protected class LoSWorld extends InstanceWorld
-	{
-		protected Npc elcadia = null;
-	}
-	
 	// NPCs
 	private static final int SOPHIA1 = 32596;
 	private static final int PILE_OF_BOOKS1 = 32809;
@@ -49,11 +43,9 @@ public final class LibraryOfSages extends AbstractInstance
 	private static final int SOPHIA2 = 32861;
 	private static final int SOPHIA3 = 32863;
 	private static final int ELCADIA_INSTANCE = 32785;
-	// Locations
-	private static final Location START_LOC = new Location(37063, -49813, -1128);
-	private static final Location EXIT_LOC = new Location(37063, -49813, -1128, 0, 0);
+	// Location
 	private static final Location LIBRARY_LOC = new Location(37355, -50065, -1127);
-	// NpcString
+	// Messages
 	private static final NpcStringId[] ELCADIA_DIALOGS =
 	{
 		NpcStringId.I_MUST_ASK_LIBRARIAN_SOPHIA_ABOUT_THE_BOOK,
@@ -75,23 +67,24 @@ public final class LibraryOfSages extends AbstractInstance
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
-		final InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
-		if (tmpworld instanceof LoSWorld)
+		final Instance world = getPlayerInstance(player, true);
+		if (world != null)
 		{
-			final LoSWorld world = (LoSWorld) tmpworld;
+			final Npc elcadia = world.getParameters().getObject("elcadia", Npc.class);
 			switch (event)
 			{
 				case "TELEPORT2":
 				{
-					teleportPlayer(player, LIBRARY_LOC, world.getInstanceId());
-					world.elcadia.teleToLocation(LIBRARY_LOC.getX(), LIBRARY_LOC.getY(), LIBRARY_LOC.getZ(), 0, world.getInstanceId());
+					teleportPlayer(player, LIBRARY_LOC, world.getId());
+					elcadia.teleToLocation(LIBRARY_LOC.getX(), LIBRARY_LOC.getY(), LIBRARY_LOC.getZ(), 0, world.getId());
 					break;
 				}
 				case "exit":
 				{
 					cancelQuestTimer("FOLLOW", npc, player);
-					player.teleToLocation(EXIT_LOC);
-					world.elcadia.deleteMe();
+					world.setParameter("elcadia", null);
+					elcadia.deleteMe();
+					teleportPlayerOut(player, world);
 					break;
 				}
 				case "FOLLOW":
@@ -104,9 +97,10 @@ public final class LibraryOfSages extends AbstractInstance
 				}
 				case "ENTER":
 				{
+					final Location loc = world.getEnterLocation();
 					cancelQuestTimer("FOLLOW", npc, player);
-					teleportPlayer(player, START_LOC, world.getInstanceId());
-					world.elcadia.teleToLocation(START_LOC.getX(), START_LOC.getY(), START_LOC.getZ(), 0, world.getInstanceId());
+					player.teleToLocation(loc);
+					elcadia.teleToLocation(loc);
 					break;
 				}
 			}
@@ -117,28 +111,22 @@ public final class LibraryOfSages extends AbstractInstance
 	@Override
 	public String onTalk(Npc npc, PlayerInstance talker)
 	{
-		enterInstance(talker, new LoSWorld(), "LibraryOfSages.xml", TEMPLATE_ID);
+		enterInstance(talker, npc, TEMPLATE_ID);
 		return super.onTalk(npc, talker);
 	}
 	
 	@Override
-	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
+	protected void onEnter(PlayerInstance player, Instance instance, boolean firstEnter)
 	{
-		if (firstEntrance)
-		{
-			world.addAllowed(player.getObjectId());
-		}
-		teleportPlayer(player, START_LOC, world.getInstanceId(), false);
-		spawnElcadia(player, (LoSWorld) world);
+		super.onEnter(player, instance, firstEnter);
+		
+		final Npc npc = addSpawn(ELCADIA_INSTANCE, player, false, 0, false, instance.getId());
+		startQuestTimer("FOLLOW", 3000, npc, player);
+		instance.setParameter("elcadia", npc);
 	}
 	
-	private void spawnElcadia(PlayerInstance player, LoSWorld world)
+	public static void main(String[] args)
 	{
-		if (world.elcadia != null)
-		{
-			world.elcadia.deleteMe();
-		}
-		world.elcadia = addSpawn(ELCADIA_INSTANCE, player, false, 0, false, player.getInstanceId());
-		startQuestTimer("FOLLOW", 3000, world.elcadia, player);
+		new LibraryOfSages();
 	}
 }
