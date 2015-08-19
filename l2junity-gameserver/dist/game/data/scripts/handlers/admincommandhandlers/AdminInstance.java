@@ -23,7 +23,6 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.stream.Collectors;
 
-import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -81,7 +80,7 @@ public final class AdminInstance implements IAdminCommandHandler
 		if (InstanceManager.getInstance().getInstanceTemplate(instanceId) != null)
 		{
 			NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
-			html.setHtml(HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/admin/instances_detail.htm"));
+			html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/instances_detail.htm");
 			activeChar.sendPacket(html);
 		}
 		else
