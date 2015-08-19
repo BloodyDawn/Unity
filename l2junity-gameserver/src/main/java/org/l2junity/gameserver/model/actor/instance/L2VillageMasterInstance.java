@@ -36,7 +36,6 @@ import org.l2junity.gameserver.model.L2Clan.SubPledge;
 import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.base.AcquireSkillType;
-import org.l2junity.gameserver.model.base.PlayerClass;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -287,36 +286,6 @@ public class L2VillageMasterInstance extends L2NpcInstance
 		{
 			super.onBypassFeedback(player, command);
 		}
-	}
-	
-	protected boolean checkVillageMasterRace(PlayerClass pclass)
-	{
-		return true;
-	}
-	
-	protected boolean checkVillageMasterTeachType(PlayerClass pclass)
-	{
-		return true;
-	}
-	
-	/**
-	 * Returns true if this classId allowed for master
-	 * @param classId
-	 * @return
-	 */
-	public final boolean checkVillageMaster(int classId)
-	{
-		return checkVillageMaster(PlayerClass.values()[classId]);
-	}
-	
-	/**
-	 * Returns true if this PlayerClass is allowed for master
-	 * @param pclass
-	 * @return
-	 */
-	public final boolean checkVillageMaster(PlayerClass pclass)
-	{
-		return checkVillageMasterRace(pclass) && checkVillageMasterTeachType(pclass);
 	}
 	
 	private static void dissolveClan(PlayerInstance player, int clanId)
