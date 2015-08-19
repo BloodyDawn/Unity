@@ -799,22 +799,22 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public void teleToLocation(int x, int y, int z, int heading, boolean randomOffset)
 	{
-		teleToLocation(x, y, z, heading, -1, (randomOffset) ? Config.MAX_OFFSET_ON_TELEPORT : 0);
+		teleToLocation(x, y, z, heading, 0, (randomOffset) ? Config.MAX_OFFSET_ON_TELEPORT : 0);
 	}
 	
 	public void teleToLocation(int x, int y, int z, int heading)
 	{
-		teleToLocation(x, y, z, heading, -1, 0);
+		teleToLocation(x, y, z, heading, 0, 0);
 	}
 	
 	public void teleToLocation(int x, int y, int z, boolean randomOffset)
 	{
-		teleToLocation(x, y, z, 0, -1, (randomOffset) ? Config.MAX_OFFSET_ON_TELEPORT : 0);
+		teleToLocation(x, y, z, 0, 0, (randomOffset) ? Config.MAX_OFFSET_ON_TELEPORT : 0);
 	}
 	
 	public void teleToLocation(int x, int y, int z)
 	{
-		teleToLocation(x, y, z, 0, -1, 0);
+		teleToLocation(x, y, z, 0, 0, 0);
 	}
 	
 	public void teleToLocation(ILocational loc, int randomOffset)
