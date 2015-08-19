@@ -85,7 +85,7 @@ public class PageBuilder<T>
 	public PageResult build()
 	{
 		Objects.requireNonNull(_bodyHandler, "Body was not set!");
-
+		
 		int pages = _elements.size() / _elementsPerPage;
 		if ((_elementsPerPage * pages) < _elements.size())
 		{
@@ -108,14 +108,14 @@ public class PageBuilder<T>
 		_bodyHandler.create(_elements, pages, start, _elementsPerPage, sb);
 		return new PageResult(pages, pagerTemplate, sb);
 	}
-
+	
 	public static <T> PageBuilder<T> newBuilder(Collection<T> elements, int elementsPerPage, String bypass)
 	{
-		return new PageBuilder<>(elements, elementsPerPage, bypass);
+		return new PageBuilder<>(elements, elementsPerPage, bypass.trim());
 	}
 	
 	public static <T> PageBuilder<T> newBuilder(T[] elements, int elementsPerPage, String bypass)
 	{
-		return new PageBuilder<>(Arrays.asList(elements), elementsPerPage, bypass);
+		return new PageBuilder<>(Arrays.asList(elements), elementsPerPage, bypass.trim());
 	}
 }
