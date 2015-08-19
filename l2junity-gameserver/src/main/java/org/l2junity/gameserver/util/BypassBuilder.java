@@ -63,19 +63,19 @@ public class BypassBuilder
 		final StringBuilder sb = new StringBuilder(_bypass);
 		for (BypassParam param : _params)
 		{
-			sb.append(" ").append(param.getName());
+			sb.append(" ").append(param.getName().trim());
 			if (param.getSeparator().isPresent() && param.getValue().isPresent())
 			{
-				sb.append(param.getSeparator().get());
+				sb.append(param.getSeparator().get().trim());
 				final Object value = param.getValue().get();
 				if (value instanceof String)
 				{
-					sb.append("\"");
+					sb.append('"');
 				}
-				sb.append(param.getValue().get());
+				sb.append(String.valueOf(value).trim());
 				if (value instanceof String)
 				{
-					sb.append("\"");
+					sb.append('"');
 				}
 			}
 		}
