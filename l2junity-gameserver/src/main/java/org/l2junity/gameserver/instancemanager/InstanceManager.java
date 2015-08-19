@@ -26,6 +26,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.DayOfWeek;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -407,6 +408,15 @@ public final class InstanceManager implements IGameXmlReader
 	}
 	
 	/**
+	 * Get all active instances.
+	 * @return Collection of all instances
+	 */
+	public Collection<Instance> getInstances()
+	{
+		return _instanceWorlds.values();
+	}
+	
+	/**
 	 * Get instance world for given creature.<br>
 	 * <i>For player instance use {@link InstanceManager#getPlayerInstance(PlayerInstance, boolean)}.</i>
 	 * @param creature creature inside instance
@@ -653,6 +663,15 @@ public final class InstanceManager implements IGameXmlReader
 	public InstanceTemplate getInstanceTemplate(int id)
 	{
 		return _instanceTemplates.get(id);
+	}
+	
+	/**
+	 * Get all instances template.
+	 * @return Collection of all instance templates
+	 */
+	public Collection<InstanceTemplate> getInstanceTemplates()
+	{
+		return _instanceTemplates.values();
 	}
 	
 	/**

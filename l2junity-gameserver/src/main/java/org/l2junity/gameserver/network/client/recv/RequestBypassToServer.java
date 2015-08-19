@@ -126,7 +126,7 @@ public final class RequestBypassToServer implements IClientIncomingPacket
 		{
 			return;
 		}
-
+		
 		try
 		{
 			if (_command.startsWith("admin_"))

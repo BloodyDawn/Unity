@@ -33,6 +33,7 @@ import org.l2junity.gameserver.enums.GroupType;
 import org.l2junity.gameserver.enums.InstanceReenterType;
 import org.l2junity.gameserver.enums.InstanceRemoveBuffType;
 import org.l2junity.gameserver.enums.InstanceTeleportType;
+import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.AbstractPlayerGroup;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.PcCondOverride;
@@ -719,5 +720,14 @@ public class InstanceTemplate extends ListenersContainer implements IIdentifiabl
 	public void applyConditionEffects(List<PlayerInstance> group)
 	{
 		_conditions.forEach(c -> c.applyEffect(group));
+	}
+	
+	/**
+	 * Get count of created instance worlds.
+	 * @return count of created instances
+	 */
+	public long getWorldCount()
+	{
+		return InstanceManager.getInstance().getWorldCount(getId());
 	}
 }
