@@ -151,7 +151,7 @@ public class AdminScan implements IAdminCommandHandler
 		final int id = parser.getInt("id", 0);
 		final String name = parser.getString("name", null);
 		final int radius = parser.getInt("radius", parser.getInt("range", DEFAULT_RADIUS));
-		final BypassBuilder builder = new BypassBuilder("bypass -h admin_scan");
+		final BypassBuilder builder = new BypassBuilder(bypass);
 		
 		if (id > 0)
 		{
