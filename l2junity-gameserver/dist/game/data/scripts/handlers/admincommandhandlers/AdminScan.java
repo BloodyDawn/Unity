@@ -162,7 +162,7 @@ public class AdminScan implements IAdminCommandHandler
 		}
 		if (radius > DEFAULT_RADIUS)
 		{
-			if ((id < 0) && (name != null))
+			if ((id > 0) || (name != null))
 			{
 				sb.append(" ");
 			}
