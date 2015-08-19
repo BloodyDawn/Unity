@@ -730,4 +730,10 @@ public class InstanceTemplate extends ListenersContainer implements IIdentifiabl
 	{
 		return InstanceManager.getInstance().getWorldCount(getId());
 	}
+	
+	@Override
+	public String toString()
+	{
+		return "ID: " + getId() + " Name: " + getName();
+	}
 }
