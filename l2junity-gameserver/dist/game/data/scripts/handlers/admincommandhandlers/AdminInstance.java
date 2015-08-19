@@ -18,6 +18,7 @@
  */
 package handlers.admincommandhandlers;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.StringTokenizer;
 import java.util.stream.Collectors;
@@ -96,10 +97,10 @@ public final class AdminInstance implements IAdminCommandHandler
 		html.setFile(player.getHtmlPrefix(), "data/html/admin/instances_list.htm");
 		
 		final InstanceManager instManager = InstanceManager.getInstance();
-		final List<InstanceTemplate> templateList = instManager.getInstanceTemplates().stream().sorted((temp1, temp2) -> Long.compare(temp2.getWorldCount(), temp1.getWorldCount())).collect(Collectors.toList());
+		final List<InstanceTemplate> templateList = instManager.getInstanceTemplates().stream().sorted(Comparator.comparingLong(InstanceTemplate::getWorldCount)).collect(Collectors.toList());
 		
 		//@formatter:off
-		final PageResult result = PageBuilder.newBuilder(templateList, 4, "bypass -h admin_instancelist ")
+		final PageResult result = PageBuilder.newBuilder(templateList, 4, "bypass -h admin_instancelist")
 			.currentPage(page)
 			.pageHandler(NextPrevPageHandler.INSTANCE)
 			.formatter(BypassParserFormatter.INSTANCE)
@@ -145,7 +146,6 @@ public final class AdminInstance implements IAdminCommandHandler
 		}
 		else
 		{
-			player.sendMessage("Page je: " + page);
 			sendTemplateList(player, page, parser);
 		}
 	}
