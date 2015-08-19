@@ -71,7 +71,7 @@ public class AdminScan implements IAdminCommandHandler
 					activeChar.sendMessage("Usage: //deletenpcbyobjectid objectId=<object_id>");
 					return false;
 				}
-
+				
 				final BypassParser parser = new BypassParser(command);
 				try
 				{
@@ -80,7 +80,7 @@ public class AdminScan implements IAdminCommandHandler
 					{
 						activeChar.sendMessage("objectId is not set!");
 					}
-
+					
 					final WorldObject target = World.getInstance().findObject(objectId);
 					final Npc npc = target instanceof Npc ? (Npc) target : null;
 					if (npc == null)
@@ -162,17 +162,21 @@ public class AdminScan implements IAdminCommandHandler
 		}
 		if (radius > DEFAULT_RADIUS)
 		{
-			sb.append(" radius=").append(radius);
+			if ((id < 0) && (name != null))
+			{
+				sb.append(" ");
+			}
+			sb.append("radius=").append(radius);
 		}
 		return sb.toString().trim();
 	}
-
+	
 	private void sendNpcList(PlayerInstance activeChar, int radius, int page, Predicate<Npc> condition, BypassParser parser)
 	{
 		final String bypass = generateBypass(parser);
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/scan.htm");
-
+		
 		//@formatter:off
 		final PageResult result = PageBuilder.newBuilder(World.getInstance().getVisibleObjects(activeChar, Npc.class, radius, condition), 15, "bypass -h admin_scan " + bypass)
 			.currentPage(page)
@@ -185,7 +189,12 @@ public class AdminScan implements IAdminCommandHandler
 			sb.append("<td width=\"45\">").append(character.getId()).append("</td>");
 			sb.append("<td><a action=\"bypass -h admin_move_to ").append(character.getX()).append(SPACE).append(character.getY()).append(SPACE).append(character.getZ()).append("\">").append(character.getName()).append("</a></td>");
 			sb.append("<td width=\"60\">").append(Util.formatAdena(Math.round(activeChar.calculateDistance(character, false, false)))).append("</td>");
-			sb.append("<td width=\"54\"><a action=\"bypass -h admin_deleteNpcByObjectId ").append(bypass).append(" page=").append(page).append(" objectId=").append(character.getObjectId()).append("\"><font color=\"LEVEL\">Delete</font></a></td>");
+			sb.append("<td width=\"54\"><a action=\"bypass -h admin_deleteNpcByObjectId");
+			if (!bypass.isEmpty())
+			{
+				sb.append(" ").append(bypass);
+			}
+			sb.append(" page=").append(page).append(" objectId=").append(character.getObjectId()).append("\"><font color=\"LEVEL\">Delete</font></a></td>");
 			sb.append("</tr>");
 		}).build();
 		//@formatter:on
@@ -198,7 +207,7 @@ public class AdminScan implements IAdminCommandHandler
 		{
 			html.replace("%pages%", "");
 		}
-
+		
 		html.replace("%data%", result.getBodyTemplate().toString());
 		activeChar.sendPacket(html);
 	}
