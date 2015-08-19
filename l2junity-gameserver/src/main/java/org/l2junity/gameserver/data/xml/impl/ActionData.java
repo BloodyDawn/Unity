@@ -39,6 +39,7 @@ public class ActionData implements IGameXmlReader
 	private static final Logger LOGGER = LoggerFactory.getLogger(ActionData.class);
 	
 	private final Map<Integer, ActionDataHolder> _actionData = new HashMap<>();
+	private final Map<Integer, Integer> _actionSkillsData = new HashMap<>(); // skillId, actionId
 	
 	protected ActionData()
 	{
@@ -49,7 +50,9 @@ public class ActionData implements IGameXmlReader
 	public void load()
 	{
 		_actionData.clear();
+		_actionSkillsData.clear();
 		parseDatapackFile("data/ActionData.xml");
+		_actionData.values().stream().filter(h -> h.getHandler().equals("PetSkillUse") || h.getHandler().equals("ServitorSkillUse")).forEach(h -> _actionSkillsData.put(h.getOptionId(), h.getId()));
 		LOGGER.info("Loaded {} player actions.", _actionData.size());
 	}
 	
@@ -78,6 +81,15 @@ public class ActionData implements IGameXmlReader
 	public ActionDataHolder getActionData(int id)
 	{
 		return _actionData.get(id);
+	}
+	
+	/**
+	 * @param skillId
+	 * @return the actionId corresponding to the skillId or -1 if no actionId is found for the specified skill.
+	 */
+	public int getSkillActionId(int skillId)
+	{
+		return _actionSkillsData.getOrDefault(skillId, -1);
 	}
 	
 	/**

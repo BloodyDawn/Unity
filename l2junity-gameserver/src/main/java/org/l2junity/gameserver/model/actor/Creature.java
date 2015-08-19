@@ -52,6 +52,7 @@ import org.l2junity.gameserver.ai.AttackableAI;
 import org.l2junity.gameserver.ai.CharacterAI;
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.data.xml.impl.ActionData;
 import org.l2junity.gameserver.data.xml.impl.CategoryData;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.datatables.ItemTable;
@@ -141,7 +142,6 @@ import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.ZoneRegion;
-import org.l2junity.gameserver.network.client.recv.RequestActionUse;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.Attack;
 import org.l2junity.gameserver.network.client.send.ChangeMoveType;
@@ -1944,7 +1944,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 		}
 		
-		final int actionId = isSummon() ? RequestActionUse.getActionId(skill.getId()) : -1;
+		final int actionId = isSummon() ? ActionData.getInstance().getSkillActionId(skill.getId()) : -1;
 		
 		// Send a Server->Client packet MagicSkillUser with target, displayId, level, skillTime, reuseDelay
 		// to the L2Character AND to all L2PcInstance in the _KnownPlayers of the L2Character
