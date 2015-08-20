@@ -249,11 +249,6 @@ public class RequestExEnchantItemAttribute implements IClientIncomingPacket
 				}
 			}
 			player.sendPacket(sm);
-			if (item.isEquipped())
-			{
-				// Recalculate all stats
-				player.getStat().recalculateStats(true);
-			}
 			
 			// send packets
 			iu.addModifiedItem(item);
@@ -278,6 +273,12 @@ public class RequestExEnchantItemAttribute implements IClientIncomingPacket
 		else
 		{
 			iu.addModifiedItem(stone);
+		}
+		
+		if (item.isEquipped())
+		{
+			// Recalculate all stats
+			player.getStat().recalculateStats(true);
 		}
 		
 		player.removeRequest(request.getClass());
