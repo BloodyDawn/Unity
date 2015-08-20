@@ -275,12 +275,6 @@ public class RequestExEnchantItemAttribute implements IClientIncomingPacket
 			iu.addModifiedItem(stone);
 		}
 		
-		if (item.isEquipped())
-		{
-			// Recalculate all stats
-			player.getStat().recalculateStats(true);
-		}
-		
 		player.removeRequest(request.getClass());
 		client.sendPacket(new ExAttributeEnchantResult(result, item.isWeapon(), elementToAdd, elementValue, newValue, successfulAttempts, failedAttempts));
 		client.sendPacket(new UserInfo(player));

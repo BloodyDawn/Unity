@@ -119,12 +119,6 @@ public class RequestExRemoveItemAttribute implements IClientIncomingPacket
 					sm.addAttribute(realElement.getOpposite().getClientId());
 				}
 			}
-			
-			if (targetItem.isEquipped())
-			{
-				// Recalculate all stats
-				activeChar.getStat().recalculateStats(true);
-			}
 			client.sendPacket(sm);
 			client.sendPacket(new ExBaseAttributeCancelResult(targetItem.getObjectId(), _element));
 		}
