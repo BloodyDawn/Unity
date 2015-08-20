@@ -252,7 +252,6 @@
 		<table name="#reuseDelay"> 5400000 5400000 5400000 5400000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 </table>
 		<set name="icon" val="icon.skill1111" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<!-- H5 hitTime -->
 		<table name="#hitTime"> 15000 15000 15000 15000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 </table>
 		<table name="#itemConsumeCount"> 1 1 2 2 7 1 1 4 5 6 11 12 2 3 4 4 9 10 </table>
 		<table name="#itemConsumeCountOT"> 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 </table>
@@ -530,7 +529,7 @@
 		<set name="targetType" val="SERVITOR" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -848,7 +847,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -1051,7 +1050,7 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5" />
-				<mul stat="runSpd" val="0.5" />
+				<mul stat="moveSpeed" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
 			</effect>
 		</for>
@@ -1393,7 +1392,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 		</for>
 	</skill>

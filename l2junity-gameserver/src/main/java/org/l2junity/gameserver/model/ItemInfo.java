@@ -102,7 +102,7 @@ public class ItemInfo
 		// Get the augmentation boni
 		if (item.isAugmented())
 		{
-			_augmentation = item.getAugmentation().getAugmentationId();
+			_augmentation = item.getAugmentation().getId();
 		}
 		else
 		{

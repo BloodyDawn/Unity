@@ -273,7 +273,7 @@ public final class Wastelands extends AbstractNpcAI
 		final Attackable guard = (Attackable) event.getTarget();
 		
 		//@formatter:off
-		final Attackable sakum = (Attackable) World.getInstance().getVisibleObjects(guard, Npc.class, 1000)
+		final Attackable sakum = World.getInstance().getVisibleObjects(guard, Attackable.class, 1000)
 			.stream()
 			.filter(obj -> (obj.getId() == SAKUM))
 			.findFirst()

@@ -109,7 +109,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SilentMove">
-				<mul stat="runSpd" val="0.6" />
+				<mul stat="moveSpeed" val="0.6" />
 			</effect>
 		</for>
 	</skill>
@@ -1370,7 +1370,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="3" />
+				<add stat="moveSpeed" val="3" />
 			</effect>
 		</for>
 	</skill>

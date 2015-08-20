@@ -465,7 +465,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="#runSpd">
+				<add stat="moveSpeed" val="#runSpd">
 					<using kind="LIGHT" />
 				</add>
 				<add stat="accCombat" val="#accCombat">
@@ -547,7 +547,7 @@
 		<!-- TODO : Move to effects after A3 skills rework -->
 		<selfEffects>
 			<effect name="Buff">
-				<add stat="runSpd" val="40" />
+				<add stat="moveSpeed" val="40" />
 			</effect>
 		</selfEffects>
 	</skill>
@@ -643,7 +643,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
-			<player SiegeZone="126" /> <!-- TODO: add new condition and ride_state -->
+			<player SiegeZone="126" /> <!-- TODO: add new condition -->
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
@@ -880,7 +880,7 @@
 				<mul stat="pDef" val="1.25" />
 				<mul stat="mDef" val="1.25" />
 				<mul stat="pAtkSpd" val="0.8" />
-				<mul stat="runSpd" val="0.9" />
+				<mul stat="moveSpeed" val="0.9" />
 				<sub stat="accCombat" val="4" />
 			</effect>
 		</for>
@@ -900,7 +900,7 @@
 				<add stat="reflectSkillPhysic" val="30" />
 				<add stat="reflectSkillMagic" val="30" />
 				<mul stat="pAtkSpd" val="0.8" />
-				<mul stat="runSpd" val="0.9" />
+				<mul stat="moveSpeed" val="0.9" />
 				<sub stat="accCombat" val="4" />
 			</effect>
 		</for>
@@ -1349,7 +1349,7 @@
 				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 		</for>
 	</skill>
@@ -1725,7 +1725,7 @@
 		</cond>
 		<for>
 			<effect name="SilentMove">
-				<mul stat="runSpd" val="0.5" />
+				<mul stat="moveSpeed" val="0.5" />
 			</effect>
 			<effect name="TriggerSkillByMagicType">
 				<param magicTypes="0;1;2;3;4;22" />
@@ -2130,15 +2130,15 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="390" levels="5" name="Clan Luck">
 		<!-- Updated to Ertheia -->
-		<!-- TODO: Still missing info about other penalties than exp. loss -->
-		<table name="#byPvp"> 0.7 0.5 0.4 0.3 0.2 </table>
-		<table name="#byMob"> 0.88 0.8 0.76 0.72 0.68 </table>
+		<!-- Glory Days Confirmed -->
+		<table name="#byPvp"> 0.7 0.5 0.4 0.4 0.4 </table>
+		<table name="#byMob"> 0.88 0.8 0.76 0.76 0.76 </table>
 		<set name="icon" val="icon.skill0390" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
@@ -2208,7 +2208,7 @@
 				<sub stat="cancelVuln" val="80" />
 				<add stat="mDef" val="4050" />
 				<add stat="pDef" val="5400" />
-				<add stat="runSpd" val="5" />
+				<add stat="moveSpeed" val="5" />
 			</effect>
 		</for>
 	</skill>
@@ -2246,7 +2246,7 @@
 				<add stat="pAtkSpd" val="100" />
 				<mul stat="pDef" val="0.75" />
 				<sub stat="rEvas" val="8" />
-				<add stat="runSpd" val="20" />
+				<add stat="moveSpeed" val="20" />
 			</effect>
 		</for>
 	</skill>

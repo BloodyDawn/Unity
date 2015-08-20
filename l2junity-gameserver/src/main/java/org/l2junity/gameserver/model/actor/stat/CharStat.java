@@ -19,19 +19,31 @@
 package org.l2junity.gameserver.model.actor.stat;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.EnumMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.stream.Stream;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.AttributeType;
-import org.l2junity.gameserver.model.PcCondOverride;
+import org.l2junity.gameserver.model.CharEffectList;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
-import org.l2junity.gameserver.model.stats.Calculator;
-import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.TraitType;
+import org.l2junity.gameserver.model.stats.functions.FuncAdd;
+import org.l2junity.gameserver.model.stats.functions.FuncMul;
+import org.l2junity.gameserver.model.stats.functions.FuncSet;
+import org.l2junity.gameserver.model.stats.functions.FuncSub;
 import org.l2junity.gameserver.model.zone.ZoneId;
 
 public class CharStat
@@ -48,6 +60,10 @@ public class CharStat
 	/** Creature's maximum buff count. */
 	private int _maxBuffCount = Config.BUFFS_MAX_AMOUNT;
 	
+	private final Map<Stats, Double> _statsAdd = new EnumMap<>(Stats.class);
+	private final Map<Stats, Double> _statsMul = new EnumMap<>(Stats.class);
+	private final ReentrantReadWriteLock _lock = new ReentrantReadWriteLock();
+	
 	public CharStat(Creature activeChar)
 	{
 		_activeChar = activeChar;
@@ -62,8 +78,7 @@ public class CharStat
 	
 	/**
 	 * Calculate the new value of the state with modifiers that will be applied on the targeted L2Character.<BR>
-	 * <B><U> Concept</U> :</B><BR
-	 * A L2Character owns a table of Calculators called <B>_calculators</B>. Each Calculator (a calculator per state) own a table of Func object. A Func object is a mathematic function that permit to calculate the modifier of a state (ex : REGENERATE_HP_RATE...) : <BR>
+	 * <B><U> Concept</U> :</B><BR A L2Character owns a table of Calculators called <B>_calculators</B>. Each Calculator (a calculator per state) own a table of Func object. A Func object is a mathematic function that permit to calculate the modifier of a state (ex : REGENERATE_HP_RATE...) : <BR>
 	 * FuncAtkAccuracy -> Math.sqrt(_player.getDEX())*6+_player.getLevel()<BR>
 	 * When the calc method of a calculator is launched, each mathematical function is called according to its priority <B>_order</B>.<br>
 	 * Indeed, Func with lowest priority order is executed firsta and Funcs with the same order are executed in unspecified order.<br>
@@ -76,64 +91,7 @@ public class CharStat
 	 */
 	public final double calcStat(Stats stat, double initVal, Creature target, Skill skill)
 	{
-		double value = initVal;
-		if (stat == null)
-		{
-			return value;
-		}
-		
-		final int id = stat.ordinal();
-		final Calculator c = _activeChar.getCalculators()[id];
-		
-		// If no Func object found, no modifier is applied
-		if ((c == null) || (c.size() == 0))
-		{
-			return value;
-		}
-		
-		// Apply transformation stats.
-		if (getActiveChar().isPlayer() && getActiveChar().isTransformed())
-		{
-			double val = getActiveChar().getTransformation().getStat(getActiveChar().getActingPlayer(), stat);
-			if (val > 0)
-			{
-				value = val;
-			}
-		}
-		
-		// Launch the calculation
-		value = c.calc(_activeChar, target, skill, value);
-		
-		// avoid some troubles with negative stats (some stats should never be negative)
-		if (value <= 0)
-		{
-			switch (stat)
-			{
-				case MAX_HP:
-				case MAX_MP:
-				case MAX_CP:
-				case MAGIC_DEFENCE:
-				case POWER_DEFENCE:
-				case POWER_ATTACK:
-				case MAGIC_ATTACK:
-				case POWER_ATTACK_SPEED:
-				case MAGIC_ATTACK_SPEED:
-				case SHIELD_DEFENCE:
-				case STAT_CON:
-				case STAT_DEX:
-				case STAT_INT:
-				case STAT_MEN:
-				case STAT_STR:
-				case STAT_WIT:
-				case STAT_LUC:
-				case STAT_CHA:
-				{
-					value = 1.0;
-					break;
-				}
-			}
-		}
-		return value;
+		return getValue(stat, initVal);
 	}
 	
 	/**
@@ -141,7 +99,7 @@ public class CharStat
 	 */
 	public int getAccuracy()
 	{
-		return (int) Math.round(calcStat(Stats.ACCURACY_COMBAT, 0, null, null));
+		return (int) getValue(Stats.ACCURACY_COMBAT);
 	}
 	
 	/**
@@ -149,7 +107,7 @@ public class CharStat
 	 */
 	public int getMagicAccuracy()
 	{
-		return (int) Math.round(calcStat(Stats.ACCURACY_MAGIC, 0, null, null));
+		return (int) getValue(Stats.ACCURACY_MAGIC);
 	}
 	
 	public Creature getActiveChar()
@@ -170,7 +128,7 @@ public class CharStat
 	 */
 	public final int getCON()
 	{
-		return (int) calcStat(Stats.STAT_CON, _activeChar.getTemplate().getBaseCON());
+		return (int) getValue(Stats.STAT_CON);
 	}
 	
 	/**
@@ -190,14 +148,7 @@ public class CharStat
 	 */
 	public int getCriticalHit(Creature target, Skill skill)
 	{
-		int val = (int) calcStat(Stats.CRITICAL_RATE, _activeChar.getTemplate().getBaseCritRate(), target, skill);
-		
-		if (!_activeChar.canOverrideCond(PcCondOverride.MAX_STATS_VALUE))
-		{
-			val = Math.min(val, Config.MAX_PCRIT_RATE);
-		}
-		
-		return val;
+		return (int) getValue(Stats.CRITICAL_RATE);
 	}
 	
 	public double getSkillCriticalRateBonus()
@@ -218,7 +169,7 @@ public class CharStat
 	 */
 	public final int getDEX()
 	{
-		return (int) calcStat(Stats.STAT_DEX, _activeChar.getTemplate().getBaseDEX());
+		return (int) getValue(Stats.STAT_DEX);
 	}
 	
 	/**
@@ -227,14 +178,7 @@ public class CharStat
 	 */
 	public int getEvasionRate(Creature target)
 	{
-		int val = (int) Math.round(calcStat(Stats.EVASION_RATE, 0, target, null));
-		
-		if (!_activeChar.canOverrideCond(PcCondOverride.MAX_STATS_VALUE))
-		{
-			val = Math.min(val, Config.MAX_EVASION);
-		}
-		
-		return val;
+		return (int) getValue(Stats.EVASION_RATE);
 	}
 	
 	/**
@@ -243,14 +187,7 @@ public class CharStat
 	 */
 	public int getMagicEvasionRate(Creature target)
 	{
-		int val = (int) Math.round(calcStat(Stats.MAGIC_EVASION_RATE, 0, target, null));
-		
-		if (!_activeChar.canOverrideCond(PcCondOverride.MAX_STATS_VALUE))
-		{
-			val = Math.min(val, Config.MAX_EVASION);
-		}
-		
-		return val;
+		return (int) getValue(Stats.MAGIC_EVASION_RATE);
 	}
 	
 	public long getExp()
@@ -268,7 +205,7 @@ public class CharStat
 	 */
 	public int getINT()
 	{
-		return (int) calcStat(Stats.STAT_INT, _activeChar.getTemplate().getBaseINT());
+		return (int) getValue(Stats.STAT_INT);
 	}
 	
 	public byte getLevel()
@@ -289,7 +226,7 @@ public class CharStat
 	{
 		if (skill != null)
 		{
-			return (int) calcStat(Stats.MAGIC_ATTACK_RANGE, skill.getCastRange(), null, skill);
+			return (int) getValue(Stats.MAGIC_ATTACK_RANGE, skill.getCastRange());
 		}
 		
 		return _activeChar.getTemplate().getBaseAttackRange();
@@ -297,7 +234,7 @@ public class CharStat
 	
 	public int getMaxCp()
 	{
-		return (int) calcStat(Stats.MAX_CP, _activeChar.getTemplate().getBaseCpMax());
+		return (int) getValue(Stats.MAX_CP);
 	}
 	
 	public int getMaxRecoverableCp()
@@ -307,7 +244,7 @@ public class CharStat
 	
 	public int getMaxHp()
 	{
-		return (int) calcStat(Stats.MAX_HP, _activeChar.getTemplate().getBaseHpMax());
+		return (int) getValue(Stats.MAX_HP);
 	}
 	
 	public int getMaxRecoverableHp()
@@ -317,7 +254,7 @@ public class CharStat
 	
 	public int getMaxMp()
 	{
-		return (int) calcStat(Stats.MAX_MP, _activeChar.getTemplate().getBaseMpMax());
+		return (int) getValue(Stats.MAX_MP);
 	}
 	
 	public int getMaxRecoverableMp()
@@ -334,18 +271,7 @@ public class CharStat
 	 */
 	public int getMAtk(Creature target, Skill skill)
 	{
-		float bonusAtk = 1;
-		if (Config.L2JMOD_CHAMPION_ENABLE && _activeChar.isChampion())
-		{
-			bonusAtk = Config.L2JMOD_CHAMPION_ATK;
-		}
-		if (_activeChar.isRaid())
-		{
-			bonusAtk *= Config.RAID_MATTACK_MULTIPLIER;
-		}
-		
-		// Calculate modifiers Magic Attack
-		return (int) calcStat(Stats.MAGIC_ATTACK, _activeChar.getTemplate().getBaseMAtk() * bonusAtk, target, skill);
+		return (int) getValue(Stats.MAGIC_ATTACK);
 	}
 	
 	/**
@@ -353,20 +279,7 @@ public class CharStat
 	 */
 	public int getMAtkSpd()
 	{
-		float bonusSpdAtk = 1;
-		if (Config.L2JMOD_CHAMPION_ENABLE && _activeChar.isChampion())
-		{
-			bonusSpdAtk = Config.L2JMOD_CHAMPION_SPD_ATK;
-		}
-		
-		double val = calcStat(Stats.MAGIC_ATTACK_SPEED, _activeChar.getTemplate().getBaseMAtkSpd() * bonusSpdAtk);
-		
-		if (!_activeChar.canOverrideCond(PcCondOverride.MAX_STATS_VALUE))
-		{
-			val = Math.min(val, Config.MAX_MATK_SPEED);
-		}
-		
-		return (int) val;
+		return (int) getValue(Stats.MAGIC_ATTACK_SPEED);
 	}
 	
 	/**
@@ -376,14 +289,7 @@ public class CharStat
 	 */
 	public final int getMCriticalHit(Creature target, Skill skill)
 	{
-		int val = (int) calcStat(Stats.MCRITICAL_RATE, getActiveChar().getTemplate().getBaseMCritRate(), target, skill);
-		
-		if (!_activeChar.canOverrideCond(PcCondOverride.MAX_STATS_VALUE))
-		{
-			val = Math.min(val, Config.MAX_MCRIT_RATE);
-		}
-		
-		return val;
+		return (int) getValue(Stats.MCRITICAL_RATE);
 	}
 	
 	/**
@@ -394,17 +300,7 @@ public class CharStat
 	 */
 	public int getMDef(Creature target, Skill skill)
 	{
-		// Get the base MDef of the L2Character
-		double defence = _activeChar.getTemplate().getBaseMDef();
-		
-		// Calculate modifier for Raid Bosses
-		if (_activeChar.isRaid())
-		{
-			defence *= Config.RAID_MDEFENCE_MULTIPLIER;
-		}
-		
-		// Calculate modifiers Magic Attack
-		return (int) calcStat(Stats.MAGIC_DEFENCE, defence, target, skill);
+		return (int) getValue(Stats.MAGIC_DEFENCE);
 	}
 	
 	/**
@@ -412,17 +308,17 @@ public class CharStat
 	 */
 	public final int getMEN()
 	{
-		return (int) calcStat(Stats.STAT_MEN, _activeChar.getTemplate().getBaseMEN());
+		return (int) getValue(Stats.STAT_MEN);
 	}
 	
 	public final int getLUC()
 	{
-		return (int) calcStat(Stats.STAT_LUC, _activeChar.getTemplate().getBaseLUC());
+		return (int) getValue(Stats.STAT_LUC);
 	}
 	
 	public final int getCHA()
 	{
-		return (int) calcStat(Stats.STAT_CHA, _activeChar.getTemplate().getBaseCHA());
+		return (int) getValue(Stats.STAT_CHA);
 	}
 	
 	public double getMovementSpeedMultiplier()
@@ -430,11 +326,11 @@ public class CharStat
 		double baseSpeed;
 		if (_activeChar.isInsideZone(ZoneId.WATER))
 		{
-			baseSpeed = getBaseMoveSpeed(_activeChar.isRunning() ? MoveType.FAST_SWIM : MoveType.SLOW_SWIM);
+			baseSpeed = _activeChar.getTemplate().getBaseValue(_activeChar.isRunning() ? Stats.SWIM_RUN_SPEED : Stats.SWIM_WALK_SPEED, 0);
 		}
 		else
 		{
-			baseSpeed = getBaseMoveSpeed(_activeChar.isRunning() ? MoveType.RUN : MoveType.WALK);
+			baseSpeed = _activeChar.getTemplate().getBaseValue(_activeChar.isRunning() ? Stats.RUN_SPEED : Stats.WALK_SPEED, 0);
 		}
 		return getMoveSpeed() * (1. / baseSpeed);
 	}
@@ -444,13 +340,7 @@ public class CharStat
 	 */
 	public double getRunSpeed()
 	{
-		final double baseRunSpd = _activeChar.isInsideZone(ZoneId.WATER) ? getSwimRunSpeed() : getBaseMoveSpeed(MoveType.RUN);
-		if (baseRunSpd <= 0)
-		{
-			return 0;
-		}
-		
-		return calcStat(Stats.MOVE_SPEED, baseRunSpd, null, null);
+		return getValue(_activeChar.isInsideZone(ZoneId.WATER) ? Stats.SWIM_RUN_SPEED : Stats.RUN_SPEED);
 	}
 	
 	/**
@@ -458,13 +348,7 @@ public class CharStat
 	 */
 	public double getWalkSpeed()
 	{
-		final double baseWalkSpd = _activeChar.isInsideZone(ZoneId.WATER) ? getSwimWalkSpeed() : getBaseMoveSpeed(MoveType.WALK);
-		if (baseWalkSpd <= 0)
-		{
-			return 0;
-		}
-		
-		return calcStat(Stats.MOVE_SPEED, baseWalkSpd);
+		return getValue(_activeChar.isInsideZone(ZoneId.WATER) ? Stats.SWIM_WALK_SPEED : Stats.WALK_SPEED);
 	}
 	
 	/**
@@ -472,13 +356,7 @@ public class CharStat
 	 */
 	public double getSwimRunSpeed()
 	{
-		final double baseRunSpd = getBaseMoveSpeed(MoveType.FAST_SWIM);
-		if (baseRunSpd <= 0)
-		{
-			return 0;
-		}
-		
-		return calcStat(Stats.MOVE_SPEED, baseRunSpd, null, null);
+		return getValue(Stats.SWIM_RUN_SPEED);
 	}
 	
 	/**
@@ -486,22 +364,7 @@ public class CharStat
 	 */
 	public double getSwimWalkSpeed()
 	{
-		final double baseWalkSpd = getBaseMoveSpeed(MoveType.SLOW_SWIM);
-		if (baseWalkSpd <= 0)
-		{
-			return 0;
-		}
-		
-		return calcStat(Stats.MOVE_SPEED, baseWalkSpd);
-	}
-	
-	/**
-	 * @param type movement type
-	 * @return the base move speed of given movement type.
-	 */
-	public double getBaseMoveSpeed(MoveType type)
-	{
-		return _activeChar.getTemplate().getBaseMoveSpeed(type);
+		return getValue(Stats.SWIM_WALK_SPEED);
 	}
 	
 	/**
@@ -531,16 +394,7 @@ public class CharStat
 	 */
 	public int getPAtk(Creature target)
 	{
-		float bonusAtk = 1;
-		if (Config.L2JMOD_CHAMPION_ENABLE && _activeChar.isChampion())
-		{
-			bonusAtk = Config.L2JMOD_CHAMPION_ATK;
-		}
-		if (_activeChar.isRaid())
-		{
-			bonusAtk *= Config.RAID_PATTACK_MULTIPLIER;
-		}
-		return (int) calcStat(Stats.POWER_ATTACK, _activeChar.getTemplate().getBasePAtk() * bonusAtk, target, null);
+		return (int) getValue(Stats.POWER_ATTACK);
 	}
 	
 	/**
@@ -548,12 +402,7 @@ public class CharStat
 	 */
 	public int getPAtkSpd()
 	{
-		float bonusAtk = 1;
-		if (Config.L2JMOD_CHAMPION_ENABLE && _activeChar.isChampion())
-		{
-			bonusAtk = Config.L2JMOD_CHAMPION_SPD_ATK;
-		}
-		return (int) Math.round(calcStat(Stats.POWER_ATTACK_SPEED, _activeChar.getTemplate().getBasePAtkSpd() * bonusAtk, null, null));
+		return (int) getValue(Stats.POWER_ATTACK_SPEED);
 	}
 	
 	/**
@@ -562,7 +411,7 @@ public class CharStat
 	 */
 	public int getPDef(Creature target)
 	{
-		return (int) calcStat(Stats.POWER_DEFENCE, (_activeChar.isRaid()) ? _activeChar.getTemplate().getBasePDef() * Config.RAID_PDEFENCE_MULTIPLIER : _activeChar.getTemplate().getBasePDef(), target, null);
+		return (int) getValue(Stats.POWER_DEFENCE);
 	}
 	
 	/**
@@ -650,7 +499,7 @@ public class CharStat
 	 */
 	public final int getSTR()
 	{
-		return (int) calcStat(Stats.STAT_STR, _activeChar.getTemplate().getBaseSTR());
+		return (int) getValue(Stats.STAT_STR);
 	}
 	
 	/**
@@ -658,7 +507,7 @@ public class CharStat
 	 */
 	public final int getWIT()
 	{
-		return (int) calcStat(Stats.STAT_WIT, _activeChar.getTemplate().getBaseWIT());
+		return (int) getValue(Stats.STAT_WIT);
 	}
 	
 	/**
@@ -732,12 +581,12 @@ public class CharStat
 		};
 		
 		AttributeType returnVal = AttributeType.NONE;
-		stats[0] = (int) calcStat(Stats.FIRE_POWER, _activeChar.getTemplate().getBaseFire());
-		stats[1] = (int) calcStat(Stats.WATER_POWER, _activeChar.getTemplate().getBaseWater());
-		stats[2] = (int) calcStat(Stats.WIND_POWER, _activeChar.getTemplate().getBaseWind());
-		stats[3] = (int) calcStat(Stats.EARTH_POWER, _activeChar.getTemplate().getBaseEarth());
-		stats[4] = (int) calcStat(Stats.HOLY_POWER, _activeChar.getTemplate().getBaseHoly());
-		stats[5] = (int) calcStat(Stats.DARK_POWER, _activeChar.getTemplate().getBaseDark());
+		stats[0] = getAttackElementValue(AttributeType.FIRE);
+		stats[1] = getAttackElementValue(AttributeType.WATER);
+		stats[2] = getAttackElementValue(AttributeType.WIND);
+		stats[3] = getAttackElementValue(AttributeType.EARTH);
+		stats[4] = getAttackElementValue(AttributeType.HOLY);
+		stats[5] = getAttackElementValue(AttributeType.DARK);
 		
 		for (byte x = 0; x < 6; x++)
 		{
@@ -756,17 +605,17 @@ public class CharStat
 		switch (attackAttribute)
 		{
 			case FIRE:
-				return (int) calcStat(Stats.FIRE_POWER, _activeChar.getTemplate().getBaseFire());
+				return (int) getValue(Stats.FIRE_POWER);
 			case WATER:
-				return (int) calcStat(Stats.WATER_POWER, _activeChar.getTemplate().getBaseWater());
+				return (int) getValue(Stats.WATER_POWER);
 			case WIND:
-				return (int) calcStat(Stats.WIND_POWER, _activeChar.getTemplate().getBaseWind());
+				return (int) getValue(Stats.WIND_POWER);
 			case EARTH:
-				return (int) calcStat(Stats.EARTH_POWER, _activeChar.getTemplate().getBaseEarth());
+				return (int) getValue(Stats.EARTH_POWER);
 			case HOLY:
-				return (int) calcStat(Stats.HOLY_POWER, _activeChar.getTemplate().getBaseHoly());
+				return (int) getValue(Stats.HOLY_POWER);
 			case DARK:
-				return (int) calcStat(Stats.DARK_POWER, _activeChar.getTemplate().getBaseDark());
+				return (int) getValue(Stats.DARK_POWER);
 			default:
 				return 0;
 		}
@@ -777,19 +626,19 @@ public class CharStat
 		switch (defenseAttribute)
 		{
 			case FIRE:
-				return (int) calcStat(Stats.FIRE_RES, _activeChar.getTemplate().getBaseFireRes());
+				return (int) getValue(Stats.FIRE_RES);
 			case WATER:
-				return (int) calcStat(Stats.WATER_RES, _activeChar.getTemplate().getBaseWaterRes());
+				return (int) getValue(Stats.WATER_RES);
 			case WIND:
-				return (int) calcStat(Stats.WIND_RES, _activeChar.getTemplate().getBaseWindRes());
+				return (int) getValue(Stats.WIND_RES);
 			case EARTH:
-				return (int) calcStat(Stats.EARTH_RES, _activeChar.getTemplate().getBaseEarthRes());
+				return (int) getValue(Stats.EARTH_RES);
 			case HOLY:
-				return (int) calcStat(Stats.HOLY_RES, _activeChar.getTemplate().getBaseHolyRes());
+				return (int) getValue(Stats.HOLY_RES);
 			case DARK:
-				return (int) calcStat(Stats.DARK_RES, _activeChar.getTemplate().getBaseDarkRes());
+				return (int) getValue(Stats.DARK_RES);
 			default:
-				return (int) _activeChar.getTemplate().getBaseElementRes();
+				return (int) getValue(Stats.BASE_ATTRIBUTE_RES);
 		}
 	}
 	
@@ -859,5 +708,191 @@ public class CharStat
 	public void setMaxBuffCount(int buffCount)
 	{
 		_maxBuffCount = buffCount;
+	}
+	
+	/**
+	 * Merges the stat's value with the values within the map of adds
+	 * @param stat
+	 * @param val
+	 */
+	public void mergeAdd(Stats stat, double val)
+	{
+		_statsAdd.merge(stat, val, stat::add);
+	}
+	
+	/**
+	 * Merges the stat's value with the values within the map of muls
+	 * @param stat
+	 * @param val
+	 */
+	public void mergeMul(Stats stat, double val)
+	{
+		_statsMul.merge(stat, val, stat::mul);
+	}
+	
+	/**
+	 * @param stat
+	 * @return the add value
+	 */
+	public double getAdd(Stats stat)
+	{
+		return getAdd(stat, 0d);
+	}
+	
+	/**
+	 * @param stat
+	 * @param defaultValue
+	 * @return the add value
+	 */
+	public double getAdd(Stats stat, double defaultValue)
+	{
+		_lock.readLock().lock();
+		try
+		{
+			return _statsAdd.getOrDefault(stat, defaultValue);
+		}
+		finally
+		{
+			_lock.readLock().unlock();
+		}
+	}
+	
+	/**
+	 * @param stat
+	 * @return the mul value
+	 */
+	public double getMul(Stats stat)
+	{
+		return getMul(stat, 1d);
+	}
+	
+	/**
+	 * @param stat
+	 * @param defaultValue
+	 * @return the mul value
+	 */
+	public double getMul(Stats stat, double defaultValue)
+	{
+		_lock.readLock().lock();
+		try
+		{
+			return _statsMul.getOrDefault(stat, defaultValue);
+		}
+		finally
+		{
+			_lock.readLock().unlock();
+		}
+	}
+	
+	/**
+	 * @param stat
+	 * @param baseValue
+	 * @return the final value of the stat
+	 */
+	public double getValue(Stats stat, double baseValue)
+	{
+		return stat.finalize(_activeChar, Optional.of(baseValue));
+	}
+	
+	/**
+	 * @param stat
+	 * @return the final value of the stat
+	 */
+	public double getValue(Stats stat)
+	{
+		return stat.finalize(_activeChar, Optional.empty());
+	}
+	
+	/**
+	 * Locks and resets all stats and recalculates all
+	 * @param broadcast TODO
+	 */
+	public void recalculateStats(boolean broadcast)
+	{
+		_lock.writeLock().lock();
+		try
+		{
+			// Copy old data before wiping it out
+			final Map<Stats, Double> adds = !broadcast ? Collections.emptyMap() : new EnumMap<>(_statsAdd);
+			final Map<Stats, Double> muls = !broadcast ? Collections.emptyMap() : new EnumMap<>(_statsMul);
+			
+			// Wipe all the data
+			_statsAdd.clear();
+			_statsMul.clear();
+			
+			// Collect all necessary effects
+			final CharEffectList effectList = _activeChar.getEffectList();
+			final Stream<BuffInfo> passives = effectList.hasPassives() ? effectList.getPassives().stream() : null;
+			final Stream<BuffInfo> effectsStream = Stream.concat(effectList.getEffects().stream(), passives != null ? passives : Stream.empty());
+			
+			// Call pump to each effect
+			//@formatter:off
+			effectsStream.forEach(info -> info.getEffects().stream()
+				.filter(effect -> effect.canStart(info))
+				.forEach(effect -> effect.pump(info.getEffected(), info.getSkill())));
+			//@formatter:on
+			
+			final Inventory inventory = _activeChar.getInventory();
+			if (inventory != null)
+			{
+				for (ItemInstance item : inventory.getItems(ItemInstance::isEquipped, ItemInstance::isAugmented))
+				{
+					item.getAugmentation().applyStats(_activeChar.getActingPlayer());
+				}
+			}
+			
+			if (broadcast)
+			{
+				// Calculate the difference between old and new stats
+				final Set<Stats> changed = new HashSet<>();
+				for (Stats stat : Stats.values())
+				{
+					if (_statsAdd.getOrDefault(stat, 0d) != adds.getOrDefault(stat, 0d))
+					{
+						changed.add(stat);
+					}
+					else if (_statsMul.getOrDefault(stat, 1d) != muls.getOrDefault(stat, 1d))
+					{
+						changed.add(stat);
+					}
+				}
+				
+				_activeChar.broadcastModifiedStats(changed);
+			}
+		}
+		finally
+		{
+			_lock.writeLock().unlock();
+		}
+	}
+	
+	public void processStats(Creature effected, Class<?> funcClass, Stats stat, double value)
+	{
+		if (funcClass == FuncSet.class)
+		{
+			effected.getStat().mergeAdd(stat, value);
+		}
+		else if (funcClass == FuncAdd.class)
+		{
+			effected.getStat().mergeAdd(stat, value);
+		}
+		else if (funcClass == FuncSub.class)
+		{
+			effected.getStat().mergeAdd(stat, -value);
+		}
+		else if (funcClass == FuncMul.class)
+		{
+			effected.getStat().mergeMul(stat, value);
+		}
+		
+		if (stat == Stats.MOVE_SPEED)
+		{
+			processStats(effected, funcClass, Stats.RUN_SPEED, value);
+			processStats(effected, funcClass, Stats.WALK_SPEED, value);
+			processStats(effected, funcClass, Stats.SWIM_RUN_SPEED, value);
+			processStats(effected, funcClass, Stats.SWIM_WALK_SPEED, value);
+			processStats(effected, funcClass, Stats.FLY_RUN_SPEED, value);
+			processStats(effected, funcClass, Stats.FLY_WALK_SPEED, value);
+		}
 	}
 }

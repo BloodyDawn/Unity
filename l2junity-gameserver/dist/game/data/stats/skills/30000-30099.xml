@@ -54,7 +54,7 @@
 			<effect name="Debuff">
 				<mul stat="stormSignBonus" val="1.10" />
 				<mul stat="mDef" val="0.7" />
-				<sub stat="runSpd" val="70" />
+				<sub stat="moveSpeed" val="70" />
 			</effect>
 		</for>
 	</skill>
@@ -142,7 +142,7 @@
 			<effect name="Debuff">
 				<!-- mul stat="stormSignBonus" val="1.10" / -->
 				<mul stat="mDef" val="0.5" />
-				<sub stat="runSpd" val="100" />
+				<sub stat="moveSpeed" val="100" />
 			</effect>
 		</for>
 	</skill>
@@ -279,7 +279,7 @@
 		<for>
 			<effect name="Blink" />
 			<effect name="Hide">
-				<add stat="runSpd" val="100" />
+				<add stat="moveSpeed" val="100" />
 			</effect>
 		</for>
 	</skill>
@@ -483,7 +483,7 @@
 			<effect name="Buff">
 				<mul stat="defCritDamage" val="0.85" />
 				<mul stat="defMCritDamage" val="0.85" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<param chance="50" /> <!-- Unconfirmed -->
@@ -548,7 +548,7 @@
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.70" />
 				<mul stat="mAtkSpd" val="0.70" />
-				<sub stat="runSpd" val="180" />
+				<sub stat="moveSpeed" val="180" />
 			</effect>
 		</for>
 	</skill>
@@ -574,7 +574,7 @@
 			<effect name="Buff">
 				<mul stat="defCritDamage" val="0.5" />
 				<mul stat="defMCritDamage" val="0.5" />
-				<add stat="runSpd" val="70" />
+				<add stat="moveSpeed" val="70" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<param chance="50" /> <!-- Unconfirmed -->
@@ -602,7 +602,7 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="50" />
+				<add stat="moveSpeed" val="50" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param KNOCKDOWN="30" KNOCKBACK="30" PULL="30" AIRBIND="30" AGGRESSION="30" />
@@ -637,7 +637,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<sub stat="runSpd" val="20" />
+				<sub stat="moveSpeed" val="20" />
 			</effect>
 		</for>
 	</skill>

@@ -79,7 +79,6 @@ import org.l2junity.gameserver.model.items.type.ItemType;
 import org.l2junity.gameserver.model.options.EnchantOptions;
 import org.l2junity.gameserver.model.options.Options;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.variables.ItemVariables;
 import org.l2junity.gameserver.network.client.send.DropItem;
 import org.l2junity.gameserver.network.client.send.GetItem;
@@ -919,7 +918,7 @@ public final class ItemInstance extends WorldObject
 	/**
 	 * Sets a new augmentation
 	 * @param augmentation
-	 * @return return true if sucessfull
+	 * @return return true if successfully
 	 */
 	public boolean setAugmentation(Augmentation augmentation)
 	{
@@ -1016,7 +1015,7 @@ public final class ItemInstance extends WorldObject
 		try (PreparedStatement ps = con.prepareStatement("REPLACE INTO item_attributes VALUES(?,?)"))
 		{
 			ps.setInt(1, getObjectId());
-			ps.setInt(2, _augmentation != null ? _augmentation.getAttributes() : -1);
+			ps.setInt(2, _augmentation != null ? _augmentation.getId() : -1);
 			ps.executeUpdate();
 		}
 		catch (SQLException e)
@@ -1396,16 +1395,6 @@ public final class ItemInstance extends WorldObject
 	public boolean isAutoAttackable(Creature attacker)
 	{
 		return false;
-	}
-	
-	/**
-	 * This function basically returns a set of functions from L2Item/L2Armor/L2Weapon, but may add additional functions, if this particular item instance is enhanced for a particular player.
-	 * @param player the player
-	 * @return the functions list
-	 */
-	public List<AbstractFunction> getStatFuncs(Creature player)
-	{
-		return getItem().getStatFuncs(this, player);
 	}
 	
 	/**
@@ -1825,33 +1814,6 @@ public final class ItemInstance extends WorldObject
 			{
 				_log.error("", e);
 			}
-		}
-	}
-	
-	public void updateElementAttrBonus(PlayerInstance player)
-	{
-		if (_elementals == null)
-		{
-			return;
-		}
-		
-		for (AttributeHolder holder : _elementals.values())
-		{
-			holder.remove(player);
-			holder.apply(player, isArmor());
-		}
-	}
-	
-	public void removeElementAttrBonus(PlayerInstance player)
-	{
-		if (_elementals == null)
-		{
-			return;
-		}
-		
-		for (AttributeHolder attribute : _elementals.values())
-		{
-			attribute.remove(player);
 		}
 	}
 	

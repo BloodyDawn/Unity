@@ -175,7 +175,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
+				<add stat="moveSpeed" val="33" />
 			</effect>
 		</for>
 	</skill>
@@ -253,7 +253,7 @@
 				<mul stat="pDef" val="1.08" />
 				<mul stat="mAtkSpd" val="1.16" />
 				<mul stat="pAtkSpd" val="1.08" />
-				<add stat="runSpd" val="8" />
+				<add stat="moveSpeed" val="8" />
 				<sub stat="rEvas" val="4" />
 			</effect>
 		</for>
@@ -1081,7 +1081,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 		</for>
 	</skill>
@@ -1541,7 +1541,7 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5" />
-				<mul stat="runSpd" val="0.5" />
+				<mul stat="moveSpeed" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
 			</effect>
 		</for>
@@ -1578,7 +1578,7 @@
 		<for>
 			<effect name="DamOverTime" ticks="1">
 				<param power="200" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 			<effect name="BlockActions" />
 		</for>

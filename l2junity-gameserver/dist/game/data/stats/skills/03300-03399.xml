@@ -9,7 +9,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="5" />
+				<add stat="moveSpeed" val="5" />
 			</effect>
 		</for>
 	</skill>
@@ -180,7 +180,7 @@
 			<effect name="Buff">
 				<add stat="pAtkSpd" val="5" />
 				<add stat="mAtkSpd" val="4" />
-				<add stat="runSpd" val="3" />
+				<add stat="moveSpeed" val="3" />
 			</effect>
 		</for>
 	</skill>
@@ -452,9 +452,6 @@
 	</skill>
 	<skill id="3331" levels="1" name="Enslave">
 		<!-- Confirmed CT2.5 -->
-		<!-- <set name="abnormalLvl" val="3" /> -->
-		<!-- <set name="abnormalTime" val="30" /> -->
-		<!-- <set name="abnormalType" val="ATTACK_TIME_UP" /> -->
 		<set name="activateRate" val="60" />
 		<set name="affectLimit" val="10-10" />
 		<set name="basicProperty" val="MAGIC" />
@@ -463,11 +460,9 @@
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill3631" />
 		<set name="rideState" val="NONE" />
-		<!-- <set name="isDebuff" val="true" /> -->
-		<!-- <set name="lvlBonusRate" val="1" /> -->
 		<set name="magicLvl" val="99" />
 		<set name="mpConsume" val="200" />
-		<set name="operateType" val="A1" /> <!-- TODO: Should be A2 -->
+		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
 		<set name="abnormalType" val="ATTACK_TIME_UP" />
 		<set name="magicCriticalRate" val="5" />
@@ -910,7 +905,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="runSpd" val="0.2" />
+				<mul stat="moveSpeed" val="0.2" />
 				<mul stat="pAtkSpd" val="0.2" />
 				<mul stat="pAtk" val="0.2" />
 				<mul stat="mAtkSpd" val="0.2" />

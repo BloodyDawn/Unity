@@ -16,11 +16,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.stats.functions.formulas;
+package org.l2junity.gameserver.model.stats.finalizers;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 import org.l2junity.gameserver.data.xml.impl.ArmorSetsData;
@@ -28,54 +27,44 @@ import org.l2junity.gameserver.model.ArmorSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 
 /**
  * @author UnAfraid
  */
-public class FuncArmorSet extends AbstractFunction
+public class BaseStatsFinalizer implements IStatsFunction
 {
-	private static final Map<Stats, FuncArmorSet> _fh_instance = new HashMap<>();
-	
-	public static AbstractFunction getInstance(Stats st)
-	{
-		if (!_fh_instance.containsKey(st))
-		{
-			_fh_instance.put(st, new FuncArmorSet(st));
-		}
-		return _fh_instance.get(st);
-	}
-	
-	private FuncArmorSet(Stats stat)
-	{
-		super(stat, 1, null, 0, null);
-	}
-	
 	@Override
-	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		double value = initVal;
-		final PlayerInstance player = effector.getActingPlayer();
+		throwIfPresent(base);
+		
+		// Apply template value
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		
+		final PlayerInstance player = creature.getActingPlayer();
 		if (player != null)
 		{
 			final Set<ArmorSet> appliedSets = new HashSet<>(2);
+			
+			// Armor sets calculation
 			for (ItemInstance item : player.getInventory().getItems(ItemInstance::isEquipped))
 			{
 				for (ArmorSet set : ArmorSetsData.getInstance().getSets(item.getId()))
 				{
-					if (set.getPiecesCount(player, ItemInstance::getId) >= set.getMinimumPieces())
+					if ((set.getPiecesCount(player, ItemInstance::getId) >= set.getMinimumPieces()) && appliedSets.add(set))
 					{
-						if (appliedSets.add(set))
-						{
-							value += set.getStatsBonus(BaseStats.valueOf(getStat()));
-						}
+						baseValue += set.getStatsBonus(BaseStats.valueOf(stat));
 					}
 				}
 			}
+			
+			// Henna calculation
+			baseValue += player.getHennaValue(BaseStats.valueOf(stat));
 		}
-		return value;
+		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue), BaseStats.MAX_STAT_VALUE - 1);
 	}
+	
 }

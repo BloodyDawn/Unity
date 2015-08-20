@@ -16,35 +16,34 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.stats.functions.formulas;
+package org.l2junity.gameserver.model.stats.finalizers;
 
+import java.util.Optional;
+
+import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 
 /**
  * @author UnAfraid
  */
-public class FuncMaxMpMul extends AbstractFunction
+public class MAttackSpeedFinalizer implements IStatsFunction
 {
-	private static final FuncMaxMpMul _fmmm_instance = new FuncMaxMpMul();
-	
-	public static AbstractFunction getInstance()
-	{
-		return _fmmm_instance;
-	}
-	
-	private FuncMaxMpMul()
-	{
-		super(Stats.MAX_MP, 1, null, 0, null);
-	}
-	
 	@Override
-	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		final double chaBonus = effector.isPlayer() ? BaseStats.CHA.calcBonus(effector) : 1.;
-		return initVal * BaseStats.MEN.calcBonus(effector) * chaBonus;
+		throwIfPresent(base);
+		
+		double baseValue = calcWeaponBaseValue(creature, stat);
+		if (Config.L2JMOD_CHAMPION_ENABLE && creature.isChampion())
+		{
+			baseValue *= Config.L2JMOD_CHAMPION_SPD_ATK;
+		}
+		
+		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
+		baseValue *= BaseStats.WIT.calcBonus(creature) * chaBonus;
+		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue), Config.MAX_MATK_SPEED);
 	}
 }

@@ -2421,7 +2421,8 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 			item.setAttribute(new AttributeHolder(attributeType, attributeValue));
 			if (item.isEquipped())
 			{
-				item.updateElementAttrBonus(player);
+				// Recalculate all stats
+				player.getStat().recalculateStats(true);
 			}
 			
 			final InventoryUpdate iu = new InventoryUpdate();

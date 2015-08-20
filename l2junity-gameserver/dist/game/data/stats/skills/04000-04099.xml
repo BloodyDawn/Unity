@@ -245,7 +245,7 @@
 				<param power="542" />
 			</effect>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 		</for>
 	</skill>
@@ -274,7 +274,7 @@
 		<for>
 			<effect name="DamOverTime" ticks="3">
 				<param power="30" />
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 		</for>
 	</skill>
@@ -601,7 +601,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 		</for>
 	</skill>
@@ -975,7 +975,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -1604,7 +1604,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -1877,7 +1877,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="runSpd" val="0.85" />
+				<mul stat="moveSpeed" val="0.85" />
 				<mul stat="pAtk" val="1.15" />
 			</effect>
 		</for>
@@ -1900,7 +1900,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="runSpd" val="1.4" />
+				<mul stat="moveSpeed" val="1.4" />
 			</effect>
 		</for>
 	</skill>
@@ -1931,7 +1931,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Grow">
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pDef" val="#pDef" />
 				<sub stat="rEvas" val="#rEvas" />
@@ -2138,7 +2138,7 @@
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="#pAtkSpd" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mDef" val="#mDef" />
 				<sub stat="rEvas" val="#rEvas" />

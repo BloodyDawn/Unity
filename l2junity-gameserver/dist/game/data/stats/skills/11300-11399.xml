@@ -1,34 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="11300" levels="4" name="Yoke Status">
-		<table name="#effectPoint"> -692 0 0 -692 -692 -692 </table>
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Momentarily immobilized midair. -->
+		<table name="#effectPoint"> -692 0 0 -692 -692 -692 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="9" />
+		<set name="abnormalType" val="AIRBIND" />
+		<set name="abnormalVisualEffect" val="AIR_BIND" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="icon" val="icon.skill1042" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="500" />
-		<set name="effectPoint" val="#effectPoint" />
-		<set name="abnormalType" val="AIRBIND" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1000" />
 		<set name="activateRate" val="100" />
 		<set name="magicLvl" val="85" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="9" />
 		<set name="trait" val="AIRBIND" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<target checkCrtEffect="true" />
+		</cond>
+		<for>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="BlockControl" />
+			<effect name="DefenceTrait">
+				<param HOLD="100" SLEEP="100" DERANGEMENT="100" CHANGEBODY="100" SHOCK="100" />
+				<param AIRBIND="100" KNOCKBACK="100" KNOCKDOWN="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11301" levels="8" name="Dimension Storm">
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Attack nearby enemies with 152 Power added to M. Atk. -->
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#power"> 152 154 157 161 165 169 173 177 </table>
 		<set name="icon" val="icon.skill0005" />
-		<set name="affectRange" val="300" /> <!-- Guessed -->
+		<set name="affectRange" val="300" />
+		<set name="affectLimit" val="5-12" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="70" />
@@ -39,7 +54,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="affectLimit" val="5-12" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack">
@@ -49,6 +63,7 @@
 	</skill>
 	<skill id="11302" levels="11" name="Servitor Major Heal">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Heals the servitor with 1637 Power. -->
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<table name="#power"> 1637 1645 1658 1671 1685 1698 1713 1727 1928 1944 1960 </table>
@@ -66,6 +81,9 @@
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="isMagic" val="1" />
+		<cond>
+			<player hasSummon="true" />
+		</cond>
 		<for>
 			<effect name="Heal">
 				<param power="#power" />
@@ -74,6 +92,7 @@
 	</skill>
 	<skill id="11303" levels="1" name="Mass Servitor Magic Barrier">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases all servitors' M. Def. by 30% for 30 minutes. -->
 		<set name="icon" val="icon.skill1139" />
 		<set name="abnormalLvl" val="3" />
@@ -102,6 +121,7 @@
 	</skill>
 	<skill id="11304" levels="1" name="Mass Servitor Haste">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases all servitors' Atk. Spd. by 34% for 30 minutes. -->
 		<set name="icon" val="icon.skill1141" />
 		<set name="abnormalLvl" val="2" />
@@ -130,6 +150,7 @@
 	</skill>
 	<skill id="11305" levels="1" name="Mass Servitor Shield">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases all servitors' P. Def. by 15% for 30 minutes. -->
 		<set name="icon" val="icon.skill1140" />
 		<set name="abnormalLvl" val="3" />
@@ -158,6 +179,7 @@
 	</skill>
 	<skill id="11306" levels="1" name="Mass Servitor Empower">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases all servitors' M. Atk. by 79% for 30 minutes. -->
 		<set name="icon" val="icon.skill1059" />
 		<set name="abnormalLvl" val="3" />
@@ -186,6 +208,7 @@
 	</skill>
 	<skill id="11307" levels="1" name="Mass Servitor Might">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases all servitors' P. Atk. by 17% for 30 minutes. -->
 		<set name="icon" val="icon.skill1146" />
 		<set name="abnormalLvl" val="3" />
@@ -214,6 +237,7 @@
 	</skill>
 	<skill id="11308" levels="1" name="Mass Servitor Wind Walk">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases all servitors' Speed by 34 for 30 minutes. -->
 		<set name="icon" val="icon.skill1144" />
 		<set name="abnormalLvl" val="2" />
@@ -236,12 +260,13 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="34" />
+				<add stat="moveSpeed" val="34" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11309" levels="1" name="Mass Servitor Blessing">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Dispels debuffs on all servitors. -->
 		<set name="icon" val="icon.skill1301" />
 		<set name="operateType" val="A1" />
@@ -260,12 +285,13 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="10" /> <!-- Guessed -->
+				<param slot="debuff" rate="100" max="10" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11310" levels="2" name="Mass Servitor Blessing">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases all servitor's P. Def. by 4680 and M. Def. by 4212 for 60 seconds. -->
 		<table name="#pDef"> 4680 9360 </table>
 		<table name="#mDef"> 4212 8424 </table>
@@ -296,9 +322,10 @@
 		</for>
 	</skill>
 	<skill id="11311" levels="3" name="Naviarope Strike">
-		<table name="#magicLvl"> 95 97 99 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts 20633 damage. -->
+		<table name="#magicLvl"> 95 97 99 </table>
 		<table name="#power"> 20633 21717 22799 </table>
 		<set name="icon" val="icon.skill_transform_etc" />
 		<set name="operateType" val="A1" />
@@ -646,7 +673,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<sub stat="runSpd" val="100" />
+				<sub stat="moveSpeed" val="100" />
 			</effect>
 		</for>
 	</skill>
@@ -870,7 +897,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<sub stat="runSpd" val="100" />
+				<sub stat="moveSpeed" val="100" />
 			</effect>
 		</for>
 	</skill>
@@ -1094,7 +1121,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<sub stat="runSpd" val="100" />
+				<sub stat="moveSpeed" val="100" />
 			</effect>
 		</for>
 	</skill>
@@ -1521,7 +1548,7 @@
 		<set name="reuseDelay" val="4000" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -1557,7 +1584,7 @@
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.70" />
 				<mul stat="mAtkSpd" val="0.70" />
-				<sub stat="runSpd" val="180" />
+				<sub stat="moveSpeed" val="180" />
 			</effect>
 		</for>
 	</skill>
@@ -1834,7 +1861,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<sub stat="runSpd" val="100" />
+				<sub stat="moveSpeed" val="100" />
 			</effect>
 		</for>
 	</skill>
@@ -2044,7 +2071,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<sub stat="runSpd" val="100" />
+				<sub stat="moveSpeed" val="100" />
 			</effect>
 		</for>
 	</skill>

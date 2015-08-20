@@ -156,7 +156,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
+				<add stat="moveSpeed" val="33" />
 				<add stat="rEvas" val="4" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -434,7 +434,7 @@
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
 				<param power="12" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="mAtkSpd" val="0.7" />
 			</effect>
@@ -742,10 +742,10 @@
 		</for>
 	</skill>
 	<skill id="1523" levels="42" name="Divine Punishment">
-		<table name="#attributeType"> NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY </table>
-		<table name="#attributeValue"> 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 </table>
 		<!-- Confirmed CT2.5 -->
 		<!-- Inquisitor Stance Skill -->
+		<table name="#attributeType"> NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY </table>
+		<table name="#attributeValue"> 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 </table>
 		<table name="#effectPoints"> -418 -428 -438 -448 -457 -467 -477 -486 -495 -505 -514 -523 -532 -541 -549 -558 -566 -574 -582 -590 -597 -604 -611 -617 -624 -630 -635 -641 -646 -650 -655 -659 -662 -666 -669 -673 -676 -679 -681 -684 -687 -689 </table>
 		<table name="#magicLvl"> 44 48 52 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </table>
 		<table name="#mpConsume"> 28 29 30 30 31 32 33 33 34 35 36 36 37 38 39 39 40 41 42 42 43 44 44 45 46 46 47 48 48 49 49 50 50 51 51 52 52 53 53 53 54 54 </table>
@@ -891,10 +891,10 @@
 		</for>
 	</skill>
 	<skill id="1528" levels="42" name="Divine Flash">
-		<table name="#attributeType"> NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY </table>
-		<table name="#attributeValue"> 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 </table>
 		<!-- Confirmed CT2.5 -->
 		<!-- Inquisitor Stance Skill -->
+		<table name="#attributeType"> NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY HOLY </table>
+		<table name="#attributeValue"> 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 </table>
 		<table name="#effectPoints"> -408 -418 -428 -438 -448 -457 -467 -477 -486 -495 -505 -514 -523 -532 -541 -549 -558 -566 -574 -582 -590 -597 -604 -611 -617 -624 -630 -635 -641 -646 -650 -655 -659 -662 -666 -669 -673 -676 -679 -681 -684 -687 </table>
 		<table name="#magicLvl"> 44 48 52 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </table>
 		<table name="#mpConsume"> 45 47 48 49 50 52 53 54 55 56 58 59 60 61 63 64 65 66 68 69 70 71 72 74 75 76 77 78 79 80 81 82 83 84 84 85 86 87 87 88 89 89 </table>
@@ -960,7 +960,7 @@
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 		</for>
 	</skill>
@@ -987,8 +987,9 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack">
+			<effect name="MagicalAttackRange">
 				<param power="#power" />
+				<param powerRange="40" />
 			</effect>
 		</for>
 	</skill>
@@ -1127,7 +1128,7 @@
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
+				<add stat="moveSpeed" val="33" />
 				<add stat="rEvas" val="4" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -1295,8 +1296,15 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
+		<set name="staticReuse" val="true" />
 		<for>
-			<effect name="BlockActions" />
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+			<effect name="Invincible" />
+			<effect name="Debuff">
+				<mul stat="regHp" val="0" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1541" levels="1" name="Curse of Desparion">
@@ -1328,7 +1336,7 @@
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.5" />
 				<mul stat="pAtkSpd" val="0.5" />
-				<mul stat="runSpd" val="0.5" />
+				<mul stat="moveSpeed" val="0.5" />
 				<sub stat="accCombat" val="12" />
 			</effect>
 		</for>
@@ -1955,7 +1963,7 @@
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>

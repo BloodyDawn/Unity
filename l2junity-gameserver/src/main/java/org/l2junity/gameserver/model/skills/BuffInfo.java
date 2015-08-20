@@ -296,8 +296,8 @@ public final class BuffInfo
 				addTask(effect, new EffectTaskInfo(effectTask, scheduledFuture));
 			}
 			
-			// Add stats.
-			_effected.addStatFuncs(effect.getStatFuncs(_effector, _effected, _skill));
+			// Recalculate all stats
+			_effected.getStat().recalculateStats(true);
 		}
 	}
 	
@@ -338,8 +338,7 @@ public final class BuffInfo
 				effectTask.getScheduledFuture().cancel(true); // Don't allow to finish current run.
 			}
 		}
-		// Remove stats
-		removeStats();
+		
 		// Notify on exit.
 		for (AbstractEffect effect : _effects)
 		{
@@ -349,8 +348,13 @@ public final class BuffInfo
 				effect.onExit(this);
 			}
 		}
+		
 		// Remove abnormal visual effects.
 		resetAbnormalVisualEffects();
+		
+		// Recalculate all stats
+		_effected.getStat().recalculateStats(true);
+		
 		// Set the proper system message.
 		if (!(_effected.isSummon() && !((Summon) _effected).getOwner().hasSummon()) && !_skill.isAura())
 		{
@@ -392,23 +396,6 @@ public final class BuffInfo
 		{
 			_effected.resetCurrentAbnormalVisualEffects();
 		}
-	}
-	
-	/**
-	 * Adds the buff stats.
-	 */
-	public void addStats()
-	{
-		_effects.forEach(effect -> _effected.addStatFuncs(effect.getStatFuncs(_effector, _effected, _skill)));
-	}
-	
-	/**
-	 * Removes the buff stats.
-	 */
-	public void removeStats()
-	{
-		_effects.forEach(_effected::removeStatsOwner);
-		_effected.removeStatsOwner(_skill);
 	}
 	
 	/**

@@ -172,7 +172,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
+				<add stat="moveSpeed" val="33" />
 			</effect>
 		</for>
 	</skill>
@@ -336,7 +336,7 @@
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtk" val="1.16" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<add stat="runSpd" val="8" />
+				<add stat="moveSpeed" val="8" />
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mDef" val="0.84" />
 				<sub stat="rEvas" val="4" />
@@ -1568,7 +1568,7 @@
 				<mul stat="mAtk" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 		</for>
 	</skill>

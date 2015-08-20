@@ -136,10 +136,8 @@ import org.l2junity.gameserver.model.skills.SkillChannelized;
 import org.l2junity.gameserver.model.skills.SkillChannelizer;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.stats.BaseStats;
-import org.l2junity.gameserver.model.stats.Calculator;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.ZoneRegion;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
@@ -205,7 +203,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	private boolean _isImmobilized = false;
 	private boolean _isOverloaded = false; // the char is carrying too much
 	private boolean _isPendingRevive = false;
-	private boolean _isRunning = false;
+	private boolean _isRunning = isPlayer();
 	protected boolean _showSummonAnimation = false;
 	protected boolean _isTeleporting = false;
 	private boolean _isInvul = false;
@@ -226,8 +224,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	private double _hpUpdateDecCheck = .0;
 	private double _hpUpdateInterval = .0;
 	
-	/** Table of Calculators containing all used calculator */
-	private Calculator[] _calculators;
 	/** Map containing all skills of this character. */
 	private final Map<Integer, Skill> _skills = new ConcurrentSkipListMap<>();
 	/** Map containing the skill reuse time stamps. */
@@ -283,9 +279,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	private int _castInterruptTime;
 	
-	/** Table of calculators containing all standard NPC calculator (ex : ACCURACY_COMBAT, EVASION_RATE) */
-	private static final Calculator[] NPC_STD_CALCULATOR = Formulas.getStdNPCCalculators();
-	
 	private volatile CharacterAI _ai = null;
 	
 	/** Future Skill Cast */
@@ -340,9 +333,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		
 		if (isNpc())
 		{
-			// Copy the Standard Calculators of the L2NPCInstance in _calculators
-			_calculators = NPC_STD_CALCULATOR;
-			
 			// Copy the skills of the L2NPCInstance from its template to the L2Character Instance
 			// The skills list can be affected by spell effects so it's necessary to make a copy
 			// to avoid that a spell affecting a L2NpcInstance, affects others L2NPCInstance of the same type too.
@@ -353,9 +343,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		else
 		{
-			// If L2Character is a L2PcInstance or a L2Summon, create the basic calculator set
-			_calculators = new Calculator[Stats.NUM_STATS];
-			
 			if (isSummon())
 			{
 				// Copy the skills of the L2Summon from its template to the L2Character Instance
@@ -366,8 +353,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					addSkill(skill);
 				}
 			}
-			
-			Formulas.addFuncsToNewCharacter(this);
 		}
 		
 		setIsInvul(true);
@@ -2748,11 +2733,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return isFlying() || hasBlockActions() || isAttackingNow() || isAlikeDead() || isPhysicalAttackMuted() || isCoreAIDisabled();
 	}
 	
-	public final Calculator[] getCalculators()
-	{
-		return _calculators;
-	}
-	
 	public final boolean isConfused()
 	{
 		return isAffected(EffectFlag.CONFUSED);
@@ -3436,232 +3416,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		public int geoPathGty;
 	}
 	
-	/**
-	 * Add a Func to the Calculator set of the L2Character.<br>
-	 * <b><u>Concept</u>:</b> A L2Character owns a table of Calculators called <b>_calculators</b>.<br>
-	 * Each Calculator (a calculator per state) own a table of Func object.<br>
-	 * A Func object is a mathematical function that permit to calculate the modifier of a state (ex : REGENERATE_HP_RATE...).<br>
-	 * To reduce cache memory use, L2NPCInstances who don't have skills share the same Calculator set called <b>NPC_STD_CALCULATOR</b>.<br>
-	 * That's why, if a L2NPCInstance is under a skill/spell effect that modify one of its state, a copy of the NPC_STD_CALCULATOR must be create in its _calculators before adding new Func object.<br>
-	 * <b><u>Actions</u>:</b>
-	 * <ul>
-	 * <li>If _calculators is linked to NPC_STD_CALCULATOR, create a copy of NPC_STD_CALCULATOR in _calculators</li>
-	 * <li>Add the Func object to _calculators</li>
-	 * </ul>
-	 * @param function The Func object to add to the Calculator corresponding to the state affected
-	 */
-	public final void addStatFunc(AbstractFunction function)
+	public void broadcastModifiedStats(Set<Stats> changed)
 	{
-		if (function == null)
-		{
-			return;
-		}
-		
-		synchronized (this)
-		{
-			// Check if Calculator set is linked to the standard Calculator set of NPC
-			if (_calculators == NPC_STD_CALCULATOR)
-			{
-				// Create a copy of the standard NPC Calculator set
-				_calculators = new Calculator[Stats.NUM_STATS];
-				
-				for (int i = 0; i < Stats.NUM_STATS; i++)
-				{
-					if (NPC_STD_CALCULATOR[i] != null)
-					{
-						_calculators[i] = new Calculator(NPC_STD_CALCULATOR[i]);
-					}
-				}
-			}
-			
-			// Select the Calculator of the affected state in the Calculator set
-			int stat = function.getStat().ordinal();
-			
-			if (_calculators[stat] == null)
-			{
-				_calculators[stat] = new Calculator();
-			}
-			
-			// Add the Func to the calculator corresponding to the state
-			_calculators[stat].addFunc(function);
-		}
-	}
-	
-	/**
-	 * Add a list of Funcs to the Calculator set of the L2Character.<br>
-	 * <B><U>Concept</U>:</B><br>
-	 * A L2Character owns a table of Calculators called <B>_calculators</B>.<br>
-	 * Each Calculator (a calculator per state) own a table of Func object.<br>
-	 * A Func object is a mathematic function that permit to calculate the modifier of a state (ex : REGENERATE_HP_RATE...).<br>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method is ONLY for L2PcInstance</B></FONT><br> <B><U>Example of use</U>:</B> <ul> <li>Equip an item from inventory</li> <li>Learn a new passive skill</li> <li>Use an active skill</li> </ul>
-	 * @param functions The list of Func objects to add to the Calculator corresponding to the state affected
-	 */
-	public final void addStatFuncs(List<AbstractFunction> functions)
-	{
-		final List<Stats> modifiedStats = new ArrayList<>();
-		for (AbstractFunction f : functions)
-		{
-			modifiedStats.add(f.getStat());
-			addStatFunc(f);
-		}
-		broadcastModifiedStats(modifiedStats);
-	}
-	
-	/**
-	 * Remove a Func from the Calculator set of the L2Character.<br>
-	 * <B><U>Concept</U>:</B><br>
-	 * A L2Character owns a table of Calculators called <B>_calculators</B>.<br>
-	 * Each Calculator (a calculator per state) own a table of Func object.<br>
-	 * A Func object is a mathematic function that permit to calculate the modifier of a state (ex : REGENERATE_HP_RATE...).<br>
-	 * To reduce cache memory use, L2NPCInstances who don't have skills share the same Calculator set called <B>NPC_STD_CALCULATOR</B>.<br>
-	 * That's why, if a L2NPCInstance is under a skill/spell effect that modify one of its state, a copy of the NPC_STD_CALCULATOR must be create in its _calculators before addind new Func object.<br>
-	 * <B><U>Actions</U>:</B>
-	 * <ul>
-	 * <li>Remove the Func object from _calculators</li>
-	 * <li>If L2Character is a L2NPCInstance and _calculators is equal to NPC_STD_CALCULATOR, free cache memory and just create a link on NPC_STD_CALCULATOR in _calculators</li>
-	 * </ul>
-	 * @param function The Func object to remove from the Calculator corresponding to the state affected
-	 */
-	public final void removeStatFunc(AbstractFunction function)
-	{
-		if (function == null)
-		{
-			return;
-		}
-		
-		// Select the Calculator of the affected state in the Calculator set
-		int stat = function.getStat().ordinal();
-		
-		synchronized (this)
-		{
-			if (_calculators[stat] == null)
-			{
-				return;
-			}
-			
-			// Remove the Func object from the Calculator
-			_calculators[stat].removeFunc(function);
-			
-			if (_calculators[stat].size() == 0)
-			{
-				_calculators[stat] = null;
-			}
-			
-			// If possible, free the memory and just create a link on NPC_STD_CALCULATOR
-			if (isNpc())
-			{
-				int i = 0;
-				for (; i < Stats.NUM_STATS; i++)
-				{
-					if (!Calculator.equalsCals(_calculators[i], NPC_STD_CALCULATOR[i]))
-					{
-						break;
-					}
-				}
-				
-				if (i >= Stats.NUM_STATS)
-				{
-					_calculators = NPC_STD_CALCULATOR;
-				}
-			}
-		}
-	}
-	
-	/**
-	 * Remove a list of Funcs from the Calculator set of the L2PcInstance.<br>
-	 * <B><U>Concept</U>:</B><br>
-	 * A L2Character owns a table of Calculators called <B>_calculators</B>.<br>
-	 * Each Calculator (a calculator per state) own a table of Func object.<br>
-	 * A Func object is a mathematic function that permit to calculate the modifier of a state (ex : REGENERATE_HP_RATE...).<br>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method is ONLY for L2PcInstance</B></FONT><br> <B><U>Example of use</U>:</B> <ul> <li>Unequip an item from inventory</li> <li>Stop an active skill</li> </ul>
-	 * @param functions The list of Func objects to add to the Calculator corresponding to the state affected
-	 */
-	public final void removeStatFuncs(AbstractFunction[] functions)
-	{
-		final List<Stats> modifiedStats = new ArrayList<>();
-		for (AbstractFunction f : functions)
-		{
-			modifiedStats.add(f.getStat());
-			removeStatFunc(f);
-		}
-		
-		broadcastModifiedStats(modifiedStats);
-	}
-	
-	/**
-	 * Remove all Func objects with the selected owner from the Calculator set of the L2Character.<br>
-	 * <B><U>Concept</U>:</B><br>
-	 * A L2Character owns a table of Calculators called <B>_calculators</B>.<br>
-	 * Each Calculator (a calculator per state) own a table of Func object.<br>
-	 * A Func object is a mathematic function that permit to calculate the modifier of a state (ex : REGENERATE_HP_RATE...).<br>
-	 * To reduce cache memory use, L2NPCInstances who don't have skills share the same Calculator set called <B>NPC_STD_CALCULATOR</B>.<br>
-	 * That's why, if a L2NPCInstance is under a skill/spell effect that modify one of its state, a copy of the NPC_STD_CALCULATOR must be create in its _calculators before addind new Func object.<br>
-	 * <B><U>Actions</U>:</B>
-	 * <ul>
-	 * <li>Remove all Func objects of the selected owner from _calculators</li>
-	 * <li>If L2Character is a L2NPCInstance and _calculators is equal to NPC_STD_CALCULATOR, free cache memory and just create a link on NPC_STD_CALCULATOR in _calculators</li>
-	 * </ul>
-	 * <B><U>Example of use</U>:</B>
-	 * <ul>
-	 * <li>Unequip an item from inventory</li>
-	 * <li>Stop an active skill</li>
-	 * </ul>
-	 * @param owner The Object(Skill, Item...) that has created the effect
-	 */
-	public final void removeStatsOwner(Object owner)
-	{
-		List<Stats> modifiedStats = null;
-		int i = 0;
-		// Go through the Calculator set
-		synchronized (this)
-		{
-			for (Calculator calc : _calculators)
-			{
-				if (calc != null)
-				{
-					// Delete all Func objects of the selected owner
-					if (modifiedStats != null)
-					{
-						modifiedStats.addAll(calc.removeOwner(owner));
-					}
-					else
-					{
-						modifiedStats = calc.removeOwner(owner);
-					}
-					
-					if (calc.size() == 0)
-					{
-						_calculators[i] = null;
-					}
-				}
-				i++;
-			}
-			
-			// If possible, free the memory and just create a link on NPC_STD_CALCULATOR
-			if (isNpc())
-			{
-				i = 0;
-				for (; i < Stats.NUM_STATS; i++)
-				{
-					if (!Calculator.equalsCals(_calculators[i], NPC_STD_CALCULATOR[i]))
-					{
-						break;
-					}
-				}
-				
-				if (i >= Stats.NUM_STATS)
-				{
-					_calculators = NPC_STD_CALCULATOR;
-				}
-			}
-			
-			broadcastModifiedStats(modifiedStats);
-		}
-	}
-	
-	protected void broadcastModifiedStats(List<Stats> stats)
-	{
-		if ((stats == null) || stats.isEmpty())
+		if ((changed == null) || changed.isEmpty())
 		{
 			return;
 		}
@@ -3690,13 +3447,19 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				info = new UserInfo(getActingPlayer(), false);
 				info.addComponentType(UserInfoType.SLOTS, UserInfoType.ENCHANTLEVEL);
 			}
-			for (Stats stat : stats)
+			for (Stats stat : changed)
 			{
 				if (info != null)
 				{
 					switch (stat)
 					{
 						case MOVE_SPEED:
+						case RUN_SPEED:
+						case WALK_SPEED:
+						case SWIM_RUN_SPEED:
+						case SWIM_WALK_SPEED:
+						case FLY_RUN_SPEED:
+						case FLY_WALK_SPEED:
 						{
 							info.addComponentType(UserInfoType.MULTIPLIER);
 							break;
@@ -3794,7 +3557,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			if (isPlayer())
 			{
 				final PlayerInstance player = getActingPlayer();
-				player.refreshOverloaded();
+				player.refreshOverloaded(true);
 				player.refreshExpertisePenalty();
 				sendPacket(info);
 				
@@ -5220,7 +4983,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// If an old skill has been replaced, remove all its Func objects
 			if (oldSkill != null)
 			{
-				removeStatsOwner(oldSkill);
+				getStat().recalculateStats(true);
 			}
 			
 			if (newSkill.isPassive())
@@ -5268,8 +5031,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Stop effects.
 			if (cancelEffect || oldSkill.isToggle() || oldSkill.isPassive())
 			{
-				removeStatsOwner(oldSkill);
 				stopSkillEffects(true, oldSkill.getId());
+				getStat().recalculateStats(true);
 			}
 		}
 		
@@ -6056,20 +5819,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public final double getRandomDamageMultiplier()
 	{
-		Weapon activeWeapon = getActiveWeaponItem();
-		int random;
-		
-		if (activeWeapon != null)
-		{
-			random = activeWeapon.getRandomDamage();
-		}
-		else
-		{
-			random = 5 + (int) Math.sqrt(getLevel());
-		}
-		
-		random = (int) calcStat(Stats.RANDOM_DAMAGE, random);
-		
+		final int random = (int) getStat().getValue(Stats.RANDOM_DAMAGE);
 		return (1 + ((double) Rnd.get(-random, random) / 100));
 	}
 	

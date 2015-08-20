@@ -18,9 +18,6 @@
  */
 package org.l2junity.gameserver.network.client;
 
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelHandlerContext;
-
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.sql.Connection;
@@ -67,6 +64,9 @@ import org.l2junity.network.IIncomingPacket;
 import org.l2junity.network.IOutgoingPacket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandlerContext;
 
 /**
  * Represents a client connected on Game Server.
@@ -570,18 +570,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 		}
 		
 		character = PlayerInstance.load(objId);
-		if (character != null)
-		{
-			
-			// preinit some values for each login
-			character.setRunning(); // running is default
-			character.standUp(); // standing is default
-			
-			character.refreshOverloaded();
-			character.refreshExpertisePenalty();
-			character.setOnlineStatus(true, false);
-		}
-		else
+		if (character == null)
 		{
 			_log.error("could not restore in slot: " + charslot);
 		}

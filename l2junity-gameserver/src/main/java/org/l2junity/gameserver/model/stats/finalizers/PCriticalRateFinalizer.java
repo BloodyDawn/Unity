@@ -16,27 +16,27 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.actor.instance;
+package org.l2junity.gameserver.model.stats.finalizers;
 
-import org.l2junity.gameserver.enums.Race;
-import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.model.base.PlayerClass;
+import java.util.Optional;
 
-public final class L2VillageMasterOrcInstance extends L2VillageMasterInstance
+import org.l2junity.Config;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.IStatsFunction;
+import org.l2junity.gameserver.model.stats.Stats;
+
+/**
+ * @author UnAfraid
+ */
+public class PCriticalRateFinalizer implements IStatsFunction
 {
-	public L2VillageMasterOrcInstance(L2NpcTemplate template)
-	{
-		super(template);
-	}
-	
 	@Override
-	protected final boolean checkVillageMasterRace(PlayerClass pclass)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		if (pclass == null)
-		{
-			return false;
-		}
+		throwIfPresent(base);
 		
-		return pclass.isOfRace(Race.ORC);
+		final double baseValue = calcWeaponBaseValue(creature, stat);
+		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue * BaseStats.DEX.calcBonus(creature) * 10), Config.MAX_PCRIT_RATE);
 	}
 }

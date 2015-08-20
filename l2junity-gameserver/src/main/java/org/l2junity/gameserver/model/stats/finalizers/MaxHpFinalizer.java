@@ -16,34 +16,34 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.stats.functions.formulas;
+package org.l2junity.gameserver.model.stats.finalizers;
+
+import java.util.Optional;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 
 /**
  * @author UnAfraid
  */
-public class FuncAtkCritical extends AbstractFunction
+public class MaxHpFinalizer implements IStatsFunction
 {
-	private static final FuncAtkCritical _fac_instance = new FuncAtkCritical();
-	
-	public static AbstractFunction getInstance()
-	{
-		return _fac_instance;
-	}
-	
-	private FuncAtkCritical()
-	{
-		super(Stats.CRITICAL_RATE, 1, null, 0, null);
-	}
-	
 	@Override
-	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		return initVal * BaseStats.DEX.calcBonus(effector) * 10;
+		throwIfPresent(base);
+		
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		final PlayerInstance player = creature.getActingPlayer();
+		if (player != null)
+		{
+			baseValue = player.getTemplate().getBaseHpMax(player.getLevel());
+		}
+		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
+		baseValue *= BaseStats.CON.calcBonus(creature) * chaBonus;
+		return Stats.defaultValue(creature, stat, baseValue);
 	}
 }

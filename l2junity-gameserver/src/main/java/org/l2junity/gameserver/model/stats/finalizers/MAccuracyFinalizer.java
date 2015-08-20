@@ -16,27 +16,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.actor.instance;
+package org.l2junity.gameserver.model.stats.finalizers;
 
-import org.l2junity.gameserver.enums.Race;
-import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.model.base.PlayerClass;
+import java.util.Optional;
 
-public final class L2VillageMasterDwarfInstance extends L2VillageMasterInstance
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.stats.IStatsFunction;
+import org.l2junity.gameserver.model.stats.Stats;
+
+/**
+ * @author UnAfraid
+ */
+public class MAccuracyFinalizer implements IStatsFunction
 {
-	public L2VillageMasterDwarfInstance(L2NpcTemplate template)
-	{
-		super(template);
-	}
-	
 	@Override
-	protected final boolean checkVillageMasterRace(PlayerClass pclass)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		if (pclass == null)
-		{
-			return false;
-		}
+		throwIfPresent(base);
 		
-		return pclass.isOfRace(Race.DWARF);
+		final double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		return Stats.defaultValue(creature, stat, baseValue + (Math.sqrt(creature.getWIT()) * 3) + (creature.getLevel() * 2));
 	}
 }

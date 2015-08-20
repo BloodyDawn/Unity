@@ -493,7 +493,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="#bonus" />
+				<add stat="moveSpeed" val="#bonus" />
 			</effect>
 		</for>
 	</skill>
@@ -562,7 +562,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="#bonus">
+				<add stat="moveSpeed" val="#bonus">
 					<player incombat="false" />
 				</add>
 			</effect>

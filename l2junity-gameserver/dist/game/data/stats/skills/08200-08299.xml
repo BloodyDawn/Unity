@@ -45,7 +45,7 @@
 				<param SHOCK="50" />
 				<sub stat="cancel" val="50" /> <!-- Casting Cancel Probability -50% -->
 				<mul stat="mAtk" val="1.17" /> <!-- M. Atk +17% -->
-				<add stat="runSpd" val="7" /> <!-- Movement Speed +7 -->
+				<add stat="moveSpeed" val="7" /> <!-- Movement Speed +7 -->
 				<add stat="weightPenalty" val="5759" /> <!-- Point at which a weight penalty is applied +5759 -->
 				<mul stat="pvpPhysDef" val="1.05" />
 				<mul stat="pvpMagicalDef" val="1.05" />
@@ -1839,7 +1839,7 @@
 				<mul stat="pDef" val="1.0557" /> <!-- P. Def. +5.57% -->
 				<add stat="maxHp" val="540" /> <!-- Max HP 540 -->
 				<add stat="accCombat" val="4" /> <!-- Increases Accuracy by 4 -->
-				<add stat="runSpd" val="5" /> <!-- Increases Speed by 5 -->
+				<add stat="moveSpeed" val="5" /> <!-- Increases Speed by 5 -->
 				<mul stat="magicSuccRes" val="1.01" /> <!-- Resistance to magic damage by 1% -->
 			</effect>
 			<effect name="EnableCloak" />
@@ -1912,7 +1912,7 @@
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Speed 15% -->
 				<mul stat="regMp" val="1.0557" /> <!-- MP Recovery Rate by 5.57% -->
 				<sub stat="cancel" val="30" /> <!-- decreases the damage to be cancelled by magic by 30 -->
-				<add stat="runSpd" val="7" /> <!-- Increases Speed by 7 -->
+				<add stat="moveSpeed" val="7" /> <!-- Increases Speed by 7 -->
 				<mul stat="MagicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
 			</effect>
 			<effect name="EnableCloak" />

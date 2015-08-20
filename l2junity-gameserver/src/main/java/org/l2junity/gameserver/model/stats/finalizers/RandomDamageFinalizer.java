@@ -16,33 +16,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.stats.functions.formulas;
+package org.l2junity.gameserver.model.stats.finalizers;
+
+import java.util.Optional;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 
 /**
- * @author Sdw
+ * @author UnAfraid
  */
-public class FuncMatkAccuracy extends AbstractFunction
+public class RandomDamageFinalizer implements IStatsFunction
 {
-	private static final FuncMatkAccuracy _faa_instance = new FuncMatkAccuracy();
-	
-	public static AbstractFunction getInstance()
-	{
-		return _faa_instance;
-	}
-	
-	private FuncMatkAccuracy()
-	{
-		super(Stats.ACCURACY_MAGIC, 1, null, 0, null);
-	}
-	
 	@Override
-	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		return initVal + (Math.sqrt(effector.getWIT()) * 3) + (effector.getLevel() * 2);
+		throwIfPresent(base);
+		
+		final double baseValue = calcWeaponBaseValue(creature, stat);
+		return Stats.defaultValue(creature, stat, baseValue);
 	}
 }

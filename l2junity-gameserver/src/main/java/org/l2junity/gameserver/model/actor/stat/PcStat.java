@@ -22,19 +22,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
-import org.l2junity.gameserver.data.xml.impl.PetDataTable;
 import org.l2junity.gameserver.enums.PartySmallWindowUpdateType;
 import org.l2junity.gameserver.enums.UserInfoType;
-import org.l2junity.gameserver.model.PcCondOverride;
-import org.l2junity.gameserver.model.PetLevelData;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.actor.transform.TransformTemplate;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
 import org.l2junity.gameserver.model.stats.Formulas;
-import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.AcquireSkillList;
@@ -294,7 +289,7 @@ public class PcStat extends PlayableStat
 		getActiveChar().sendPacket(su);
 		
 		// Update the overloaded status of the L2PcInstance
-		getActiveChar().refreshOverloaded();
+		getActiveChar().refreshOverloaded(true);
 		// Update the expertise status of the L2PcInstance
 		getActiveChar().refreshExpertisePenalty();
 		// Send a Server->Client packet UserInfo to the L2PcInstance
@@ -464,7 +459,7 @@ public class PcStat extends PlayableStat
 	public final int getMaxCp()
 	{
 		// Get the Max CP (base+modifier) of the L2PcInstance
-		int val = (getActiveChar() == null) ? 1 : (int) calcStat(Stats.MAX_CP, getActiveChar().getTemplate().getBaseCpMax(getActiveChar().getLevel()));
+		int val = (getActiveChar() == null) ? 1 : (int) super.getMaxCp();
 		if (val != _oldMaxCp)
 		{
 			_oldMaxCp = val;
@@ -482,7 +477,7 @@ public class PcStat extends PlayableStat
 	public final int getMaxHp()
 	{
 		// Get the Max HP (base+modifier) of the L2PcInstance
-		int val = (getActiveChar() == null) ? 1 : (int) calcStat(Stats.MAX_HP, getActiveChar().getTemplate().getBaseHpMax(getActiveChar().getLevel()));
+		int val = (getActiveChar() == null) ? 1 : (int) super.getMaxHp();
 		if (val != _oldMaxHp)
 		{
 			_oldMaxHp = val;
@@ -501,7 +496,7 @@ public class PcStat extends PlayableStat
 	public final int getMaxMp()
 	{
 		// Get the Max MP (base+modifier) of the L2PcInstance
-		int val = (getActiveChar() == null) ? 1 : (int) calcStat(Stats.MAX_MP, getActiveChar().getTemplate().getBaseMpMax(getActiveChar().getLevel()));
+		int val = (getActiveChar() == null) ? 1 : (int) super.getMaxMp();
 		
 		if (val != _oldMaxMp)
 		{
@@ -544,107 +539,6 @@ public class PcStat extends PlayableStat
 		{
 			super.setSp(value);
 		}
-	}
-	
-	/**
-	 * @param type movement type
-	 * @return the base move speed of given movement type.
-	 */
-	@Override
-	public double getBaseMoveSpeed(MoveType type)
-	{
-		final PlayerInstance player = getActiveChar();
-		if (player.isTransformed())
-		{
-			final TransformTemplate template = player.getTransformation().getTemplate(player);
-			if (template != null)
-			{
-				final double speed = template.getBaseMoveSpeed(type);
-				if (speed > 0)
-				{
-					return speed;
-				}
-			}
-		}
-		else if (player.isMounted())
-		{
-			final PetLevelData data = PetDataTable.getInstance().getPetLevelData(player.getMountNpcId(), player.getMountLevel());
-			if (data != null)
-			{
-				return data.getSpeedOnRide(type);
-			}
-		}
-		return super.getBaseMoveSpeed(type);
-	}
-	
-	@Override
-	public double getRunSpeed()
-	{
-		double val = super.getRunSpeed() + Config.RUN_SPD_BOOST;
-		
-		// Apply max run speed cap.
-		if ((val > Config.MAX_RUN_SPEED) && !getActiveChar().canOverrideCond(PcCondOverride.MAX_STATS_VALUE))
-		{
-			return Config.MAX_RUN_SPEED;
-		}
-		
-		// Check for mount penalties
-		if (getActiveChar().isMounted())
-		{
-			// if level diff with mount >= 10, it decreases move speed by 50%
-			if ((getActiveChar().getMountLevel() - getActiveChar().getLevel()) >= 10)
-			{
-				val /= 2;
-			}
-			// if mount is hungry, it decreases move speed by 50%
-			if (getActiveChar().isHungry())
-			{
-				val /= 2;
-			}
-		}
-		
-		return val;
-	}
-	
-	@Override
-	public double getWalkSpeed()
-	{
-		double val = super.getWalkSpeed() + Config.RUN_SPD_BOOST;
-		
-		// Apply max run speed cap.
-		if ((val > Config.MAX_RUN_SPEED) && !getActiveChar().canOverrideCond(PcCondOverride.MAX_STATS_VALUE))
-		{
-			return Config.MAX_RUN_SPEED;
-		}
-		
-		if (getActiveChar().isMounted())
-		{
-			// if level diff with mount >= 10, it decreases move speed by 50%
-			if ((getActiveChar().getMountLevel() - getActiveChar().getLevel()) >= 10)
-			{
-				val /= 2;
-			}
-			// if mount is hungry, it decreases move speed by 50%
-			if (getActiveChar().isHungry())
-			{
-				val /= 2;
-			}
-		}
-		
-		return val;
-	}
-	
-	@Override
-	public int getPAtkSpd()
-	{
-		int val = super.getPAtkSpd();
-		
-		if ((val > Config.MAX_PATK_SPEED) && !getActiveChar().canOverrideCond(PcCondOverride.MAX_STATS_VALUE))
-		{
-			return Config.MAX_PATK_SPEED;
-		}
-		
-		return val;
 	}
 	
 	/*

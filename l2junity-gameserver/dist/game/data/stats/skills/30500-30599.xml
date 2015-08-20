@@ -525,7 +525,7 @@
 		</cond>
 		<for>
 			<effect name="Debuff">
-				<add stat="runSpd" val="-100" />
+				<add stat="moveSpeed" val="-100" />
 			</effect>
 			<effect name="BlockEscape" />
 		</for>
@@ -603,7 +603,7 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="cAtk" val="#cAtk" />
 				<mul stat="cAtkSkill" val="#cAtkSkill" />
@@ -670,7 +670,7 @@
 				<param chance="20" />
 				<param skillId="30523" skillLevel="#triggeredLevel" /> <!-- Battle Dash -->
 				<param targetType="SELF" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="pDef" val="#pDefMDef" />
 				<mul stat="mDef" val="#pDefMDef" />
 			</effect>
@@ -743,7 +743,7 @@
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
-				<set order="80" stat="runSpd" val="1" /> <!-- Set speed to 1 :) -->
+				<set order="80" stat="moveSpeed" val="1" /> <!-- Set speed to 1 :) -->
 				<mul stat="pAtkSpd" val="0.70" />
 				<mul stat="mAtkSpd" val="0.70" />
 			</effect>
@@ -881,7 +881,7 @@
 				<add stat="regCp" val="#regHp" />
 				<add stat="regHp" val="#regHp" />
 				<add stat="regMp" val="#regMp" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="MaxHp">
 				<param amount="#maxHp" mode="DIFF" />

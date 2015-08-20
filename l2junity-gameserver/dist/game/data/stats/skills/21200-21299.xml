@@ -523,7 +523,7 @@
 		<for>
 			<effect name="Transformation">
 				<param transformationId="20004" />
-				<mul stat="runSpd" val="1.5" />
+				<mul stat="moveSpeed" val="1.5" />
 			</effect>
 		</for>
 	</skill>
@@ -567,7 +567,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="7" />
+				<add stat="moveSpeed" val="7" />
 			</effect>
 		</for>
 	</skill>

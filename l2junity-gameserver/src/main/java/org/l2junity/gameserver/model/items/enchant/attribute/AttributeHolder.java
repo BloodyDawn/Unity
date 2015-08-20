@@ -18,12 +18,7 @@
  */
 package org.l2junity.gameserver.model.items.enchant.attribute;
 
-import java.util.concurrent.atomic.AtomicBoolean;
-
 import org.l2junity.gameserver.enums.AttributeType;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.FuncAdd;
 
 /**
  * @author UnAfraid
@@ -32,7 +27,6 @@ public class AttributeHolder
 {
 	private final AttributeType _type;
 	private int _value;
-	private final AtomicBoolean _isActive = new AtomicBoolean(false);
 	
 	public AttributeHolder(AttributeType type, int value)
 	{
@@ -58,58 +52,6 @@ public class AttributeHolder
 	public void incValue(int with)
 	{
 		_value += with;
-	}
-	
-	public void apply(PlayerInstance player, boolean isArmor)
-	{
-		if (!_isActive.compareAndSet(false, true))
-		{
-			return;
-		}
-		
-		switch (_type)
-		{
-			case FIRE:
-			{
-				player.addStatFunc(new FuncAdd(isArmor ? Stats.FIRE_RES : Stats.FIRE_POWER, 0x40, this, _value, null));
-				break;
-			}
-			case WATER:
-			{
-				player.addStatFunc(new FuncAdd(isArmor ? Stats.WATER_RES : Stats.WATER_POWER, 0x40, this, _value, null));
-				break;
-			}
-			case WIND:
-			{
-				player.addStatFunc(new FuncAdd(isArmor ? Stats.WIND_RES : Stats.WIND_POWER, 0x40, this, _value, null));
-				break;
-			}
-			case EARTH:
-			{
-				player.addStatFunc(new FuncAdd(isArmor ? Stats.EARTH_RES : Stats.EARTH_POWER, 0x40, this, _value, null));
-				break;
-			}
-			case DARK:
-			{
-				player.addStatFunc(new FuncAdd(isArmor ? Stats.DARK_RES : Stats.DARK_POWER, 0x40, this, _value, null));
-				break;
-			}
-			case HOLY:
-			{
-				player.addStatFunc(new FuncAdd(isArmor ? Stats.HOLY_RES : Stats.HOLY_POWER, 0x40, this, _value, null));
-				break;
-			}
-		}
-	}
-	
-	public void remove(PlayerInstance player)
-	{
-		if (!_isActive.compareAndSet(true, false))
-		{
-			return;
-		}
-		
-		player.removeStatsOwner(this);
 	}
 	
 	@Override

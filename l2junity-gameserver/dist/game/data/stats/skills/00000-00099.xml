@@ -107,7 +107,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="#spd" />
+				<add stat="moveSpeed" val="#spd" />
 			</effect>
 		</for>
 	</skill>
@@ -1416,7 +1416,7 @@
 				<mul stat="cAtk" val="1.2">
 					<using kind="DUALFIST" />
 				</mul>
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 		</for>
 	</skill>
@@ -1580,7 +1580,7 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="runSpd" val="1.2">
+				<mul stat="moveSpeed" val="1.2">
 					<using kind="DUALFIST" />
 				</mul>
 				<add stat="accCombat" val="3">
@@ -1834,7 +1834,7 @@
 		</cond>
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -1873,7 +1873,7 @@
 		<for>
 			<effect name="DamOverTime" ticks="5">
 				<param power="#dot" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 		</for>
 	</skill>
@@ -1910,7 +1910,7 @@
 		</for>
 	</skill>
 	<skill id="98" levels="5" name="Sword Symphony">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- Glory Days Confirmed -->
 		<table name="#effectPoints"> -395 -427 -450 -470 -487 </table>
 		<table name="#magicLvl"> 55 60 64 68 72 </table>
 		<table name="#mpConsume"> 58 64 69 73 77 </table>

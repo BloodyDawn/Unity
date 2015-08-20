@@ -16,35 +16,54 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.stats.functions.formulas;
+package org.l2junity.gameserver.model.stats.finalizers;
+
+import java.util.Optional;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 
 /**
  * @author UnAfraid
  */
-public class FuncPAtkMod extends AbstractFunction
+public class PAccuracyFinalizer implements IStatsFunction
 {
-	private static final FuncPAtkMod _fpa_instance = new FuncPAtkMod();
-	
-	public static AbstractFunction getInstance()
-	{
-		return _fpa_instance;
-	}
-	
-	private FuncPAtkMod()
-	{
-		super(Stats.POWER_ATTACK, 1, null, 0, null);
-	}
-	
 	@Override
-	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		final double chaBonus = effector.isPlayer() ? BaseStats.CHA.calcBonus(effector) : 1.;
-		return initVal * BaseStats.STR.calcBonus(effector) * effector.getLevelMod() * chaBonus;
+		throwIfPresent(base);
+		
+		double baseValue = calcWeaponBaseValue(creature, stat);
+		
+		// [Square(DEX)] * 5 + lvl + weapon hitbonus;
+		final int level = creature.getLevel();
+		baseValue += (Math.sqrt(creature.getDEX()) * 5) + level;
+		if (level > 69)
+		{
+			baseValue += level - 69;
+		}
+		if (level > 77)
+		{
+			baseValue += 1;
+		}
+		if (level > 80)
+		{
+			baseValue += 2;
+		}
+		if (level > 87)
+		{
+			baseValue += 2;
+		}
+		if (level > 92)
+		{
+			baseValue += 1;
+		}
+		if (level > 97)
+		{
+			baseValue += 1;
+		}
+		return Stats.defaultValue(creature, stat, baseValue);
 	}
+	
 }

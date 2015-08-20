@@ -194,7 +194,7 @@ public class AdminAdmin implements IAdminCommandHandler
 			}
 			finally
 			{
-				activeChar.refreshOverloaded();
+				activeChar.refreshOverloaded(true);
 			}
 			AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
 		}

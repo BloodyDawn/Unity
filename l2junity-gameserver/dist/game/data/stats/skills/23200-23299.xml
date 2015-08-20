@@ -1248,7 +1248,7 @@
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
+				<add stat="moveSpeed" val="33" />
 			</effect>
 		</for>
 	</skill>
@@ -1275,7 +1275,7 @@
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
-				<add stat="runSpd" val="8" />
+				<add stat="moveSpeed" val="8" />
 				<sub stat="rEvas" val="4" />
 			</effect>
 		</for>
@@ -1392,7 +1392,7 @@
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
@@ -1428,7 +1428,7 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="accCombat" val="4" />
 				<sub stat="debuffVuln" val="10" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 		</for>
 	</skill>
@@ -1458,7 +1458,7 @@
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 				<add stat="absorbDam" val="5" /> <!-- absorb 5% HP from damage inflicted on enemies -->
 			</effect>
 			<effect name="MaxHp">
@@ -1493,7 +1493,7 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<add stat="accCombat" val="4" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 			<effect name="MaxHp">
 				<param amount="20" mode="PER" heal="true" />
@@ -1683,7 +1683,7 @@
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
+				<add stat="moveSpeed" val="33" />
 				<add stat="rEvas" val="4" />
 			</effect>
 			<effect name="DispelBySlot">
