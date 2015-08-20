@@ -9,7 +9,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="5" />
+				<add stat="moveSpeed" val="5" />
 			</effect>
 		</for>
 	</skill>
@@ -180,7 +180,7 @@
 			<effect name="Buff">
 				<add stat="pAtkSpd" val="5" />
 				<add stat="mAtkSpd" val="4" />
-				<add stat="runSpd" val="3" />
+				<add stat="moveSpeed" val="3" />
 			</effect>
 		</for>
 	</skill>
@@ -905,7 +905,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="runSpd" val="0.2" />
+				<mul stat="moveSpeed" val="0.2" />
 				<mul stat="pAtkSpd" val="0.2" />
 				<mul stat="pAtk" val="0.2" />
 				<mul stat="mAtkSpd" val="0.2" />

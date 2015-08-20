@@ -33,104 +33,86 @@ import org.slf4j.LoggerFactory;
  */
 public final class Augmentation
 {
-	private int _effectsId = 0;
-	private AugmentationStatBoni _boni = null;
+	private static final Logger LOGGER = LoggerFactory.getLogger(Augmentation.class);
+	private final List<Options> _options = new ArrayList<>();
+	private boolean _active;
+	private final int _id;
 	
-	public Augmentation(int effects)
+	public Augmentation(int id)
 	{
-		_effectsId = effects;
-		_boni = new AugmentationStatBoni(_effectsId);
-	}
-	
-	public static class AugmentationStatBoni
-	{
-		private static final Logger _log = LoggerFactory.getLogger(AugmentationStatBoni.class);
-		private final List<Options> _options = new ArrayList<>();
-		private boolean _active;
+		_id = id;
+		_active = false;
+		int[] stats = new int[2];
+		stats[0] = 0x0000FFFF & id;
+		stats[1] = (id >> 16);
 		
-		public AugmentationStatBoni(int augmentationId)
+		for (int stat : stats)
 		{
-			_active = false;
-			int[] stats = new int[2];
-			stats[0] = 0x0000FFFF & augmentationId;
-			stats[1] = (augmentationId >> 16);
-			
-			for (int stat : stats)
+			Options op = OptionData.getInstance().getOptions(stat);
+			if (op != null)
 			{
-				Options op = OptionData.getInstance().getOptions(stat);
-				if (op != null)
-				{
-					_options.add(op);
-				}
-				else
-				{
-					_log.warn(getClass().getSimpleName() + ": Couldn't find option: " + stat);
-				}
+				_options.add(op);
+			}
+			else
+			{
+				LOGGER.warn(getClass().getSimpleName() + ": Couldn't find option: " + stat);
 			}
 		}
-		
-		public void applyBonus(PlayerInstance player)
-		{
-			// make sure the bonuses are not applied twice..
-			if (_active)
-			{
-				return;
-			}
-			
-			for (Options op : _options)
-			{
-				op.apply(player);
-			}
-			
-			_active = true;
-		}
-		
-		public void removeBonus(PlayerInstance player)
-		{
-			// make sure the bonuses are not removed twice
-			if (!_active)
-			{
-				return;
-			}
-			
-			for (Options op : _options)
-			{
-				op.remove(player);
-			}
-			
-			_active = false;
-		}
-	}
-	
-	public int getAttributes()
-	{
-		return _effectsId;
 	}
 	
 	/**
 	 * Get the augmentation "id" used in serverpackets.
 	 * @return augmentationId
 	 */
-	public int getAugmentationId()
+	public int getId()
 	{
-		return _effectsId;
+		return _id;
 	}
 	
-	/**
-	 * Applies the bonuses to the player.
-	 * @param player
-	 */
+	public List<Options> getOptions()
+	{
+		return _options;
+	}
+	
 	public void applyBonus(PlayerInstance player)
 	{
-		_boni.applyBonus(player);
+		// make sure the bonuses are not applied twice..
+		if (_active)
+		{
+			return;
+		}
+		
+		for (Options op : _options)
+		{
+			op.apply(player);
+		}
+		
+		player.getStat().recalculateStats(true);
+		_active = true;
+	}
+	
+	public void removeBonus(PlayerInstance player)
+	{
+		// make sure the bonuses are not removed twice
+		if (!_active)
+		{
+			return;
+		}
+		
+		for (Options op : _options)
+		{
+			op.remove(player);
+		}
+		
+		player.getStat().recalculateStats(true);
+		_active = false;
 	}
 	
 	/**
-	 * Removes the augmentation bonuses from the player.
-	 * @param player
+	 * @param actingPlayer
 	 */
-	public void removeBonus(PlayerInstance player)
+	public void applyStats(PlayerInstance actingPlayer)
 	{
-		_boni.removeBonus(player);
+		_options.stream().flatMap(option -> option.getFunctionTemplates().stream()).forEach(func -> actingPlayer.getStat().processStats(actingPlayer, func.getFunctionClass(), func.getStat(), func.getValue()));
 	}
 }

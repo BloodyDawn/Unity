@@ -66,7 +66,7 @@ public class TradeItem
 		}
 		_enchantOptions = item.getEnchantOptions();
 		_visualId = item.getVisualId();
-		_augmentId = item.isAugmented() ? item.getAugmentation().getAugmentationId() : 0;
+		_augmentId = item.isAugmented() ? item.getAugmentation().getId() : 0;
 	}
 	
 	public TradeItem(L2Item item, long count, long price)

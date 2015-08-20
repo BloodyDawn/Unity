@@ -54,24 +54,6 @@ import org.l2junity.gameserver.model.items.type.ArmorType;
 import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncArmorSet;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncAtkAccuracy;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncAtkCritical;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncAtkEvasion;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncHenna;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncMAtkCritical;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncMAtkMod;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncMAtkSpeed;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncMDefMod;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncMatkAccuracy;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncMatkEvasion;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncMaxCpMul;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncMaxHpMul;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncMaxMpMul;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncMoveSpeed;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncPAtkMod;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncPAtkSpeed;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncPDefMod;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.type.CastleZone;
 import org.l2junity.gameserver.model.zone.type.ClanHallZone;
@@ -104,128 +86,6 @@ public final class Formulas
 	public static int getRegeneratePeriod(Creature cha)
 	{
 		return cha.isDoor() ? HP_REGENERATE_PERIOD * 100 : HP_REGENERATE_PERIOD;
-	}
-	
-	/**
-	 * Return the standard NPC Calculator set containing ACCURACY_COMBAT and EVASION_RATE.<br>
-	 * <B><U>Concept</U>:</B><br>
-	 * A calculator is created to manage and dynamically calculate the effect of a character property (ex : MAX_HP, REGENERATE_HP_RATE...). In fact, each calculator is a table of Func object in which each Func represents a mathematic function : <br>
-	 * FuncAtkAccuracy -> Math.sqrt(_player.getDEX())*6+_player.getLevel()<br>
-	 * To reduce cache memory use, L2NPCInstances who don't have skills share the same Calculator set called <B>NPC_STD_CALCULATOR</B>.<br>
-	 * @return
-	 */
-	public static Calculator[] getStdNPCCalculators()
-	{
-		Calculator[] std = new Calculator[Stats.NUM_STATS];
-		
-		std[Stats.MAX_HP.ordinal()] = new Calculator();
-		std[Stats.MAX_HP.ordinal()].addFunc(FuncMaxHpMul.getInstance());
-		
-		std[Stats.MAX_MP.ordinal()] = new Calculator();
-		std[Stats.MAX_MP.ordinal()].addFunc(FuncMaxMpMul.getInstance());
-		
-		std[Stats.POWER_ATTACK.ordinal()] = new Calculator();
-		std[Stats.POWER_ATTACK.ordinal()].addFunc(FuncPAtkMod.getInstance());
-		
-		std[Stats.MAGIC_ATTACK.ordinal()] = new Calculator();
-		std[Stats.MAGIC_ATTACK.ordinal()].addFunc(FuncMAtkMod.getInstance());
-		
-		std[Stats.POWER_DEFENCE.ordinal()] = new Calculator();
-		std[Stats.POWER_DEFENCE.ordinal()].addFunc(FuncPDefMod.getInstance());
-		
-		std[Stats.MAGIC_DEFENCE.ordinal()] = new Calculator();
-		std[Stats.MAGIC_DEFENCE.ordinal()].addFunc(FuncMDefMod.getInstance());
-		
-		std[Stats.CRITICAL_RATE.ordinal()] = new Calculator();
-		std[Stats.CRITICAL_RATE.ordinal()].addFunc(FuncAtkCritical.getInstance());
-		
-		std[Stats.MCRITICAL_RATE.ordinal()] = new Calculator();
-		std[Stats.MCRITICAL_RATE.ordinal()].addFunc(FuncMAtkCritical.getInstance());
-		
-		std[Stats.ACCURACY_COMBAT.ordinal()] = new Calculator();
-		std[Stats.ACCURACY_COMBAT.ordinal()].addFunc(FuncAtkAccuracy.getInstance());
-		
-		std[Stats.EVASION_RATE.ordinal()] = new Calculator();
-		std[Stats.EVASION_RATE.ordinal()].addFunc(FuncAtkEvasion.getInstance());
-		
-		std[Stats.POWER_ATTACK_SPEED.ordinal()] = new Calculator();
-		std[Stats.POWER_ATTACK_SPEED.ordinal()].addFunc(FuncPAtkSpeed.getInstance());
-		
-		std[Stats.MAGIC_ATTACK_SPEED.ordinal()] = new Calculator();
-		std[Stats.MAGIC_ATTACK_SPEED.ordinal()].addFunc(FuncMAtkSpeed.getInstance());
-		
-		std[Stats.ACCURACY_MAGIC.ordinal()] = new Calculator();
-		std[Stats.ACCURACY_MAGIC.ordinal()].addFunc(FuncMatkAccuracy.getInstance());
-		
-		std[Stats.MAGIC_EVASION_RATE.ordinal()] = new Calculator();
-		std[Stats.MAGIC_EVASION_RATE.ordinal()].addFunc(FuncMatkAccuracy.getInstance());
-		
-		return std;
-	}
-	
-	/**
-	 * Add basics Func objects to L2PcInstance and L2Summon.<br>
-	 * <B><U>Concept</U>:</B><br>
-	 * A calculator is created to manage and dynamically calculate the effect of a character property (ex : MAX_HP, REGENERATE_HP_RATE...). In fact, each calculator is a table of Func object in which each Func represents a mathematic function : <br>
-	 * FuncAtkAccuracy -> Math.sqrt(_player.getDEX())*6+_player.getLevel()<br>
-	 * @param cha L2PcInstance or L2Summon that must obtain basic Func objects
-	 */
-	public static void addFuncsToNewCharacter(Creature cha)
-	{
-		if (cha.isPlayer())
-		{
-			cha.addStatFunc(FuncMaxHpMul.getInstance());
-			cha.addStatFunc(FuncMaxCpMul.getInstance());
-			cha.addStatFunc(FuncMaxMpMul.getInstance());
-			cha.addStatFunc(FuncPAtkMod.getInstance());
-			cha.addStatFunc(FuncMAtkMod.getInstance());
-			cha.addStatFunc(FuncPDefMod.getInstance());
-			cha.addStatFunc(FuncMDefMod.getInstance());
-			cha.addStatFunc(FuncAtkCritical.getInstance());
-			cha.addStatFunc(FuncMAtkCritical.getInstance());
-			cha.addStatFunc(FuncAtkAccuracy.getInstance());
-			cha.addStatFunc(FuncAtkEvasion.getInstance());
-			cha.addStatFunc(FuncPAtkSpeed.getInstance());
-			cha.addStatFunc(FuncMAtkSpeed.getInstance());
-			cha.addStatFunc(FuncMatkAccuracy.getInstance());
-			cha.addStatFunc(FuncMatkEvasion.getInstance());
-			cha.addStatFunc(FuncMoveSpeed.getInstance());
-			
-			cha.addStatFunc(FuncHenna.getInstance(Stats.STAT_STR));
-			cha.addStatFunc(FuncHenna.getInstance(Stats.STAT_DEX));
-			cha.addStatFunc(FuncHenna.getInstance(Stats.STAT_INT));
-			cha.addStatFunc(FuncHenna.getInstance(Stats.STAT_MEN));
-			cha.addStatFunc(FuncHenna.getInstance(Stats.STAT_CON));
-			cha.addStatFunc(FuncHenna.getInstance(Stats.STAT_WIT));
-			cha.addStatFunc(FuncHenna.getInstance(Stats.STAT_CHA));
-			cha.addStatFunc(FuncHenna.getInstance(Stats.STAT_LUC));
-			
-			cha.addStatFunc(FuncArmorSet.getInstance(Stats.STAT_STR));
-			cha.addStatFunc(FuncArmorSet.getInstance(Stats.STAT_DEX));
-			cha.addStatFunc(FuncArmorSet.getInstance(Stats.STAT_INT));
-			cha.addStatFunc(FuncArmorSet.getInstance(Stats.STAT_MEN));
-			cha.addStatFunc(FuncArmorSet.getInstance(Stats.STAT_CON));
-			cha.addStatFunc(FuncArmorSet.getInstance(Stats.STAT_WIT));
-			cha.addStatFunc(FuncArmorSet.getInstance(Stats.STAT_CHA));
-			cha.addStatFunc(FuncArmorSet.getInstance(Stats.STAT_LUC));
-		}
-		else if (cha.isSummon())
-		{
-			cha.addStatFunc(FuncMaxHpMul.getInstance());
-			cha.addStatFunc(FuncMaxMpMul.getInstance());
-			cha.addStatFunc(FuncPAtkMod.getInstance());
-			cha.addStatFunc(FuncMAtkMod.getInstance());
-			cha.addStatFunc(FuncPDefMod.getInstance());
-			cha.addStatFunc(FuncMDefMod.getInstance());
-			cha.addStatFunc(FuncAtkCritical.getInstance());
-			cha.addStatFunc(FuncMAtkCritical.getInstance());
-			cha.addStatFunc(FuncAtkAccuracy.getInstance());
-			cha.addStatFunc(FuncAtkEvasion.getInstance());
-			cha.addStatFunc(FuncPAtkSpeed.getInstance());
-			cha.addStatFunc(FuncMAtkSpeed.getInstance());
-			cha.addStatFunc(FuncMatkAccuracy.getInstance());
-			cha.addStatFunc(FuncMatkEvasion.getInstance());
-		}
 	}
 	
 	/**
@@ -1346,9 +1206,9 @@ public final class Formulas
 				}
 				resisted = true;
 			}
-
+			
 			final Skill targetCastingSkill = target.isCastingNow() ? target.getLastSkillCast() : null;
-			resisted |= targetCastingSkill != null && targetCastingSkill.getAbnormalResists().contains(skill.getAbnormalType());
+			resisted |= (targetCastingSkill != null) && targetCastingSkill.getAbnormalResists().contains(skill.getAbnormalType());
 			
 			if (resisted)
 			{
@@ -2075,7 +1935,8 @@ public final class Formulas
 	}
 	
 	/**
-	 * Calculates karma gain upon playable kill.</br> Updated to High Five on 10.09.2014 by Zealar tested in retail.
+	 * Calculates karma gain upon playable kill.</br>
+	 * Updated to High Five on 10.09.2014 by Zealar tested in retail.
 	 * @param pkCount
 	 * @param isSummon
 	 * @return karma points that will be added to the player.

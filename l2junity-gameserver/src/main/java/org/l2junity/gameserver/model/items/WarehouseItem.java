@@ -79,7 +79,7 @@ public class WarehouseItem
 		if (item.isAugmented())
 		{
 			_isAugmented = true;
-			_augmentationId = item.getAugmentation().getAugmentationId();
+			_augmentationId = item.getAugmentation().getId();
 		}
 		else
 		{

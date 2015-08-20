@@ -583,7 +583,7 @@
 				<mul stat="mAtk" val="1.20" />
 				<mul stat="mDef" val="1.20" />
 				<mul stat="mAtkSpd" val="1.20" />
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 				<mul stat="debuffVuln" val="1.10" />
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
@@ -728,7 +728,7 @@
 				<add stat="accCombat" val="#accCombat" />
 				<add stat="rEvas" val="#rEvas" />
 				<add stat="mEvas" val="#mEvas" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -851,7 +851,7 @@
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtk" val="1.16" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<add stat="runSpd" val="8" />
+				<add stat="moveSpeed" val="8" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
@@ -890,7 +890,7 @@
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtk" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
-				<add stat="runSpd" val="8" />
+				<add stat="moveSpeed" val="8" />
 				<mul stat="mDef" val="1.14" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
@@ -1040,7 +1040,7 @@
 				<mul stat="regHp" val="1.20" />
 				<add stat="accCombat" val="4" />
 				<add stat="rEvas" val="3" />
-				<add stat="runSpd" val="20" />
+				<add stat="moveSpeed" val="20" />
 				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 				<mul stat="MagicalMpConsumeRate" val="0.80" />
 				<mul stat="mReuse" val="0.90" />
@@ -1182,7 +1182,7 @@
 			<effect name="PhysicalAttackMute" />
 			<effect name="Transformation"> <!-- TODO check effects -->
 				<param transformationId="500;501;502;503;504" />
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
@@ -1297,7 +1297,7 @@
 				<param transformationId="500" />
 				<add stat="pDef" val="#def" />
 				<add stat="mDef" val="#def" />
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="CHANGEBODY,9" />
@@ -1328,7 +1328,7 @@
 			<effect name="Untargetable" />
 			<effect name="Transformation"> <!-- TODO check effects -->
 				<param transformationId="505" />
-				<mul stat="runSpd" val="0.5" />
+				<mul stat="moveSpeed" val="0.5" />
 			</effect>
 			<effect name="DeleteHate" />
 			<effect name="DispelBySlot">
@@ -1471,7 +1471,7 @@
 				<mul stat="pDef" val="0.5" />
 				<mul stat="mAtk" val="0.5" />
 				<mul stat="mDef" val="0.5" />
-				<mul stat="runSpd" val="0.5" />
+				<mul stat="moveSpeed" val="0.5" />
 			</effect>
 		</for>
 	</skill>
@@ -2110,7 +2110,7 @@
 			<effect name="PhysicalAttackMute" />
 			<effect name="Transformation">
 				<param transformationId="500;501;502;503;504" />
-				<mul stat="runSpd" val="0.80" />
+				<mul stat="moveSpeed" val="0.80" />
 			</effect>
 		</for>
 	</skill>
@@ -2369,7 +2369,7 @@
 				<mul stat="mAtk" val="1.20" />
 				<mul stat="mDef" val="1.20" />
 				<mul stat="mAtkSpd" val="1.20" />
-				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="moveSpeed" val="#runSpd" />
 				<mul stat="debuffVuln" val="1.10" />
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
@@ -2505,7 +2505,7 @@
 				<add stat="accCombat" val="#accCombat" />
 				<add stat="rEvas" val="#rEvas" />
 				<add stat="mEvas" val="#mEvas" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<mul stat="defCritDamage" val="1.30" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -2617,7 +2617,7 @@
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtk" val="1.16" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<add stat="runSpd" val="8" />
+				<add stat="moveSpeed" val="8" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
@@ -2652,7 +2652,7 @@
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtk" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
-				<add stat="runSpd" val="8" />
+				<add stat="moveSpeed" val="8" />
 				<mul stat="mDef" val="1.14" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />

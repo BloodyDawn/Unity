@@ -34,7 +34,7 @@ public class ItemInfo
 	public ItemInfo(ItemInstance item)
 	{
 		_enchantLevel = item.getEnchantLevel();
-		_augmentId = item.getAugmentation() != null ? item.getAugmentation().getAugmentationId() : 0;
+		_augmentId = item.getAugmentation() != null ? item.getAugmentation().getId() : 0;
 		_elementId = item.getAttackAttributeType().getClientId();
 		_elementPower = item.getAttackAttributePower();
 		_elementals[0] = item.getDefenceAttribute(AttributeType.FIRE);

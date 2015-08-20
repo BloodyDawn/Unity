@@ -261,7 +261,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="66" />
+				<add stat="moveSpeed" val="66" />
 			</effect>
 		</for>
 	</skill>
@@ -315,7 +315,7 @@
 				<sub stat="rEvas" val="#rEvas" />
 				<mul stat="pAtkSpd" val="#amount" />
 				<mul stat="mAtkSpd" val="#amount" />
-				<mul stat="runSpd" val="#amount" />
+				<mul stat="moveSpeed" val="#amount" />
 			</effect>
 		</for>
 	</skill>
@@ -506,7 +506,7 @@
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.2" />
+				<mul stat="moveSpeed" val="0.2" />
 			</effect>
 		</for>
 	</skill>
@@ -533,7 +533,7 @@
 				<param power="18162" />
 			</effect>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.5" />
+				<mul stat="moveSpeed" val="0.5" />
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
 			</effect>

@@ -76,10 +76,6 @@ public class RequestExRemoveItemAttribute implements IClientIncomingPacket
 		
 		if (activeChar.reduceAdena("RemoveElement", getPrice(targetItem), activeChar, true))
 		{
-			if (targetItem.isEquipped())
-			{
-				targetItem.getAttribute(type).remove(activeChar);
-			}
 			targetItem.clearAttribute(type);
 			client.sendPacket(new UserInfo(activeChar));
 			

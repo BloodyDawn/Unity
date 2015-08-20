@@ -16,42 +16,34 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.stats.functions.formulas;
+package org.l2junity.gameserver.model.stats.finalizers;
+
+import java.util.Optional;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 
 /**
- * @author Nik
+ * @author UnAfraid
  */
-public class FuncMoveSpeed extends AbstractFunction
+public class MaxHpFinalizer implements IStatsFunction
 {
-	private static final FuncMoveSpeed _fas_instance = new FuncMoveSpeed();
-	
-	public static AbstractFunction getInstance()
-	{
-		return _fas_instance;
-	}
-	
-	private FuncMoveSpeed()
-	{
-		super(Stats.MOVE_SPEED, 1, null, 0, null);
-	}
-	
 	@Override
-	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		int speedBonus = 0;
-		byte speedStat = (byte) effector.calcStat(Stats.STAT_SPEED, -1);
-		if ((speedStat >= 0) && (speedStat < BaseStats.values().length))
-		{
-			final BaseStats baseStat = BaseStats.values()[speedStat];
-			speedBonus = Math.max(0, baseStat.calcValue(effected) - 55);
-		}
+		throwIfPresent(base);
 		
-		return initVal + speedBonus;
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		final PlayerInstance player = creature.getActingPlayer();
+		if (player != null)
+		{
+			baseValue = player.getTemplate().getBaseHpMax(player.getLevel());
+		}
+		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
+		baseValue *= BaseStats.CON.calcBonus(creature) * chaBonus;
+		return Stats.defaultValue(creature, stat, baseValue);
 	}
 }

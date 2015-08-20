@@ -285,7 +285,7 @@
 				<param overHit="true" />
 			</effect>
 			<effect name="Debuff">
-				<sub stat="runSpd" val="70" />
+				<sub stat="moveSpeed" val="70" />
 			</effect>
 		</for>
 	</skill>
@@ -884,7 +884,7 @@
 				<mul stat="pDef" val="#def">
 					<using kind="SWORD, BLUNT" />
 				</mul>
-				<add stat="runSpd" val="#runSpd">
+				<add stat="moveSpeed" val="#runSpd">
 					<using kind="SWORD, BLUNT" />
 				</add>
 				<add stat="accCombat" val="#accCombat">
@@ -999,7 +999,7 @@
 				<mul stat="pAtkSpd" val="1.15" />
 				<add stat="rCrit" val="50" />
 				<mul stat="cAtk" val="1.15" />
-				<add stat="runSpd" val="10" />
+				<add stat="moveSpeed" val="10" />
 			</effect>
 			<effect name="CallSkillOnActionTime" ticks="15">
 				<param skillId="10029" skillLevel="1" /> <!-- Rage Aura -->
@@ -2639,7 +2639,7 @@
 				<mul stat="pDef" val="#def" />
 				<mul stat="mDef" val="#def" />
 				<mul stat="debuffVuln" val="#debuffVuln" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<add stat="accCombat" val="#accCombat">
 					<using kind="SWORD,BLUNT" />
 				</add>
@@ -2683,7 +2683,7 @@
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pDef" val="#def" />
 				<mul stat="mDef" val="#def" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<add stat="accCombat" val="#accCombat">
 					<using kind="SWORD,BLUNT" />
 				</add>

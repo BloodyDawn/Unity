@@ -21,7 +21,6 @@ package org.l2junity.gameserver.model.effects;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import org.l2junity.Config;
@@ -31,7 +30,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -247,32 +245,6 @@ public abstract class AbstractEffect
 	}
 	
 	/**
-	 * Get this effect's stats functions.
-	 * @param caster the caster
-	 * @param target the target
-	 * @param skill the skill
-	 * @return a list of stat functions.
-	 */
-	public List<AbstractFunction> getStatFuncs(Creature caster, Creature target, Skill skill)
-	{
-		if (getFuncTemplates() == null)
-		{
-			return Collections.emptyList();
-		}
-		
-		final List<AbstractFunction> functions = new ArrayList<>(getFuncTemplates().size());
-		for (FuncTemplate template : getFuncTemplates())
-		{
-			final AbstractFunction function = template.getFunc(caster, target, skill, this);
-			if (function != null)
-			{
-				functions.add(function);
-			}
-		}
-		return functions;
-	}
-	
-	/**
 	 * Get the effect flags.
 	 * @return bit flag for current effect
 	 */
@@ -307,6 +279,9 @@ public abstract class AbstractEffect
 	 */
 	public void pump(Creature effected, Skill skill)
 	{
-	
+		if (_funcTemplates != null)
+		{
+			_funcTemplates.stream().filter(func -> func.meetCondition(effected, skill)).forEach(func -> effected.getStat().processStats(effected, func.getFunctionClass(), func.getStat(), func.getValue()));
+		}
 	}
 }

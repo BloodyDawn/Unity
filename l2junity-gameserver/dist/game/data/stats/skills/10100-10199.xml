@@ -33,7 +33,7 @@
 				<add stat="earthRes" val="#elemRes" />
 				<add stat="holyRes" val="#elemRes" />
 				<add stat="darkRes" val="#elemRes" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<add stat="accCombat" val="#accCombat">
 					<using kind="SWORD,BLUNT" />
 				</add>
@@ -77,7 +77,7 @@
 				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
 				<mul stat="pDef" val="#def" />
 				<mul stat="mDef" val="#def" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<add stat="accCombat" val="#accCombat">
 					<using kind="SWORD,BLUNT" />
 				</add>
@@ -167,7 +167,7 @@
 				<param power="#power" />
 			</effect>
 			<effect name="Debuff">
-				<sub stat="runSpd" val="100" />
+				<sub stat="moveSpeed" val="100" />
 			</effect>
 		</for>
 	</skill>
@@ -211,7 +211,7 @@
 				<mul stat="pAtkSpd" val="1.25" />
 				<add stat="rCrit" val="80" />
 				<mul stat="cAtk" val="1.25" />
-				<add stat="runSpd" val="20" />
+				<add stat="moveSpeed" val="20" />
 			</effect>
 		</for>
 	</skill>
@@ -256,7 +256,7 @@
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.15" />
 				<mul stat="pAtkSpd" val="1.15" />
-				<add stat="runSpd" val="10" />
+				<add stat="moveSpeed" val="10" />
 			</effect>
 		</for>
 	</skill>
@@ -307,7 +307,7 @@
 				<mul stat="mAtk" val="0.7" />
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="mAtkSpd" val="0.7" />
-				<add stat="runSpd" val="0.7" />
+				<add stat="moveSpeed" val="0.7" />
 				<mul stat="defCritRate" val="1.15" />
 			</effect>
 		</for>
@@ -360,7 +360,7 @@
 				<mul stat="mAtk" val="1.1" />
 				<mul stat="pAtkSpd" val="1.1" />
 				<mul stat="mAtkSpd" val="1.1" />
-				<add stat="runSpd" val="10" />
+				<add stat="moveSpeed" val="10" />
 			</effect>
 		</for>
 	</skill>

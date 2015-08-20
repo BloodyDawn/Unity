@@ -517,7 +517,7 @@ public final class PlayerInstance extends Playable
 	private final Map<Integer, PremiumItem> _premiumItems = new ConcurrentSkipListMap<>();
 	
 	/** True if the L2PcInstance is sitting */
-	private boolean _waitTypeSitting;
+	private boolean _waitTypeSitting = false;
 	
 	/** Location before entering Observer Mode */
 	private Location _lastLoc;
@@ -1972,8 +1972,9 @@ public final class PlayerInstance extends Playable
 	
 	/**
 	 * Update the overloaded status of the L2PcInstance.
+	 * @param broadcast TODO
 	 */
-	public void refreshOverloaded()
+	public void refreshOverloaded(boolean broadcast)
 	{
 		int maxLoad = getMaxLoad();
 		if (maxLoad > 0)
@@ -2014,8 +2015,11 @@ public final class PlayerInstance extends Playable
 					removeSkill(getKnownSkill(4270), false, true);
 					setIsOverloaded(false);
 				}
-				sendPacket(new EtcStatusUpdate(this));
-				broadcastUserInfo();
+				if (broadcast)
+				{
+					sendPacket(new EtcStatusUpdate(this));
+					broadcastUserInfo();
+				}
 			}
 		}
 	}
@@ -6341,7 +6345,7 @@ public final class PlayerInstance extends Playable
 	 */
 	public void updateAndBroadcastStatus(int broadcastType)
 	{
-		refreshOverloaded();
+		refreshOverloaded(true);
 		refreshExpertisePenalty();
 		// Send a Server->Client packet UserInfo to this L2PcInstance and CharInfo to all L2PcInstance in its _KnownPlayers (broadcast)
 		if (broadcastType == 1)
@@ -6734,8 +6738,12 @@ public final class PlayerInstance extends Playable
 				}
 			}
 			
+			// Recalculate all stats
+			player.getStat().recalculateStats(false);
+			
 			// Update the overloaded status of the L2PcInstance
-			player.refreshOverloaded();
+			player.refreshOverloaded(false);
+			
 			// Update the expertise status of the L2PcInstance
 			player.refreshExpertisePenalty();
 			
@@ -6754,6 +6762,8 @@ public final class PlayerInstance extends Playable
 			
 			player.loadRecommendations();
 			player.startRecoGiveTask();
+			
+			player.setOnlineStatus(true, false);
 		}
 		catch (Exception e)
 		{
@@ -10099,7 +10109,7 @@ public final class PlayerInstance extends Playable
 				setCurrentCp(getMaxCp());
 			}
 			
-			refreshOverloaded();
+			refreshOverloaded(true);
 			refreshExpertisePenalty();
 			broadcastUserInfo();
 			

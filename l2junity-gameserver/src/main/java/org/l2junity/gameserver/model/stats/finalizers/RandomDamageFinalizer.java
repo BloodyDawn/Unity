@@ -16,35 +16,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.stats.functions.formulas;
+package org.l2junity.gameserver.model.stats.finalizers;
+
+import java.util.Optional;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 
 /**
  * @author UnAfraid
  */
-public class FuncMAtkSpeed extends AbstractFunction
+public class RandomDamageFinalizer implements IStatsFunction
 {
-	private static final FuncMAtkSpeed _fas_instance = new FuncMAtkSpeed();
-	
-	public static AbstractFunction getInstance()
-	{
-		return _fas_instance;
-	}
-	
-	private FuncMAtkSpeed()
-	{
-		super(Stats.MAGIC_ATTACK_SPEED, 1, null, 0, null);
-	}
-	
 	@Override
-	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		final double chaBonus = effector.isPlayer() ? BaseStats.CHA.calcBonus(effector) : 1.;
-		return initVal * BaseStats.WIT.calcBonus(effector) * chaBonus;
+		throwIfPresent(base);
+		
+		final double baseValue = calcWeaponBaseValue(creature, stat);
+		return Stats.defaultValue(creature, stat, baseValue);
 	}
 }

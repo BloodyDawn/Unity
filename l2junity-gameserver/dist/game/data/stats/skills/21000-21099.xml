@@ -92,7 +92,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="20" />
+				<add stat="moveSpeed" val="20" />
 			</effect>
 		</for>
 	</skill>
@@ -990,7 +990,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="20" />
+				<add stat="moveSpeed" val="20" />
 			</effect>
 		</for>
 	</skill>
@@ -1195,7 +1195,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="20" />
+				<add stat="moveSpeed" val="20" />
 			</effect>
 		</for>
 	</skill>
@@ -1355,7 +1355,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="20" />
+				<add stat="moveSpeed" val="20" />
 			</effect>
 		</for>
 	</skill>
@@ -1563,7 +1563,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="20" />
+				<add stat="moveSpeed" val="20" />
 			</effect>
 		</for>
 	</skill>
@@ -1816,7 +1816,7 @@
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtk" val="1.16" />
 				<mul stat="mAtkSpd" val="1.08" />
-				<add stat="runSpd" val="8" />
+				<add stat="moveSpeed" val="8" />
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mDef" val="0.84" />
 				<sub stat="rEvas" val="4" />
@@ -1877,7 +1877,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SilentMove">
-				<mul stat="runSpd" val="0.5" />
+				<mul stat="moveSpeed" val="0.5" />
 			</effect>
 		</for>
 	</skill>
@@ -2048,7 +2048,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.2" />
-				<add stat="runSpd" val="20" />
+				<add stat="moveSpeed" val="20" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MaxHp">

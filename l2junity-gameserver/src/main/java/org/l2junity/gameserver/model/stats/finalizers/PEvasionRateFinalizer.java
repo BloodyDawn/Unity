@@ -16,73 +16,65 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.stats.functions.formulas;
+package org.l2junity.gameserver.model.stats.finalizers;
 
+import java.util.Optional;
+
+import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 
 /**
  * @author UnAfraid
  */
-public class FuncAtkEvasion extends AbstractFunction
+public class PEvasionRateFinalizer implements IStatsFunction
 {
-	private static final FuncAtkEvasion _fae_instance = new FuncAtkEvasion();
-	
-	public static AbstractFunction getInstance()
-	{
-		return _fae_instance;
-	}
-	
-	private FuncAtkEvasion()
-	{
-		super(Stats.EVASION_RATE, 1, null, 0, null);
-	}
-	
 	@Override
-	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		final int level = effector.getLevel();
-		double value = initVal;
-		if (effector.isPlayer())
+		throwIfPresent(base);
+		
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		final int level = creature.getLevel();
+		if (creature.isPlayer())
 		{
 			// [Square(DEX)] * 5 + lvl;
-			value += (Math.sqrt(effector.getDEX()) * 5) + level;
+			baseValue += (Math.sqrt(creature.getDEX()) * 5) + level;
 			if (level > 69)
 			{
-				value += level - 69;
+				baseValue += level - 69;
 			}
 			if (level > 77)
 			{
-				value += 1;
+				baseValue += 1;
 			}
 			if (level > 80)
 			{
-				value += 2;
+				baseValue += 2;
 			}
 			if (level > 87)
 			{
-				value += 2;
+				baseValue += 2;
 			}
 			if (level > 92)
 			{
-				value += 1;
+				baseValue += 1;
 			}
 			if (level > 97)
 			{
-				value += 1;
+				baseValue += 1;
 			}
 		}
 		else
 		{
 			// [Square(DEX)] * 5 + lvl;
-			value += (Math.sqrt(effector.getDEX()) * 5) + level;
+			baseValue += (Math.sqrt(creature.getDEX()) * 5) + level;
 			if (level > 69)
 			{
-				value += (level - 69) + 2;
+				baseValue += (level - 69) + 2;
 			}
 		}
-		return value;
+		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue), Config.MAX_EVASION);
 	}
 }

@@ -194,7 +194,7 @@
 				<mul stat="pDef" val="1.05"> <!-- defense power is increased by 5% -->
 					<using kind="MAGIC" />
 				</mul>
-				<add stat="runSpd" val="10" /> <!-- Speed is increased by 10 -->
+				<add stat="moveSpeed" val="10" /> <!-- Speed is increased by 10 -->
 				<mul stat="mAtk" val="#mAtk" />
 			</effect>
 		</for>
@@ -420,7 +420,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
+				<add stat="moveSpeed" val="33" />
 			</effect>
 		</for>
 	</skill>
@@ -1273,7 +1273,7 @@
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 				<sub stat="rEvas" val="#rEvas" />
 			</effect>
 		</for>
@@ -2053,7 +2053,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 				<mul stat="pAtkSpd" val="0.8" />
 				<mul stat="mAtkSpd" val="0.7" />
 			</effect>
@@ -2119,7 +2119,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 				<mul stat="pAtkSpd" val="0.8" />
 			</effect>
 		</for>

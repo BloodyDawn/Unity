@@ -770,7 +770,7 @@ public class PcInventory extends Inventory
 	public void refreshWeight()
 	{
 		super.refreshWeight();
-		getOwner().refreshOverloaded();
+		getOwner().refreshOverloaded(true);
 	}
 	
 	/**

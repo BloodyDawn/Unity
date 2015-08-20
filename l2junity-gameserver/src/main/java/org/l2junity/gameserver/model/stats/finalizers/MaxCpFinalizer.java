@@ -16,35 +16,34 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.stats.functions.formulas;
+package org.l2junity.gameserver.model.stats.finalizers;
+
+import java.util.Optional;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 
 /**
  * @author UnAfraid
  */
-public class FuncMaxCpMul extends AbstractFunction
+public class MaxCpFinalizer implements IStatsFunction
 {
-	private static final FuncMaxCpMul _fmcm_instance = new FuncMaxCpMul();
-	
-	public static AbstractFunction getInstance()
-	{
-		return _fmcm_instance;
-	}
-	
-	private FuncMaxCpMul()
-	{
-		super(Stats.MAX_CP, 1, null, 0, null);
-	}
-	
 	@Override
-	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		final double chaBonus = effector.isPlayer() ? BaseStats.CHA.calcBonus(effector) : 1.;
-		return initVal * BaseStats.CON.calcBonus(effector) * chaBonus;
+		throwIfPresent(base);
+		
+		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		final PlayerInstance player = creature.getActingPlayer();
+		if (player != null)
+		{
+			baseValue = player.getTemplate().getBaseCpMax(player.getLevel());
+		}
+		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
+		baseValue *= BaseStats.CON.calcBonus(creature) * chaBonus;
+		return Stats.defaultValue(creature, stat, baseValue);
 	}
 }

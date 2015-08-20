@@ -1408,7 +1408,7 @@
 				<mul stat="pDef" val="1.2" />
 				<mul stat="regHp" val="1.2" />
 				<mul stat="regMp" val="1.2" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 		</for>
 	</skill>
@@ -1443,7 +1443,7 @@
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="regMp" val="1.2" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 		</for>
 	</skill>
@@ -1782,7 +1782,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
+				<add stat="moveSpeed" val="33" />
 			</effect>
 		</for>
 	</skill>
@@ -1848,7 +1848,7 @@
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mAtkSpd" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
-				<add stat="runSpd" val="8" />
+				<add stat="moveSpeed" val="8" />
 				<sub stat="rEvas" val="4" />
 			</effect>
 		</for>
@@ -2295,7 +2295,7 @@
 				<mul stat="pDef" val="1.1" />
 				<mul stat="mDef" val="1.1" />
 				<mul stat="pAtkSpd" val="1.15" />
-				<add stat="runSpd" val="10" />
+				<add stat="moveSpeed" val="10" />
 			</effect>
 			<effect name="MaxHp">
 				<param amount="10" mode="PER" />

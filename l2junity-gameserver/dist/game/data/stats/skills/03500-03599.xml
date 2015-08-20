@@ -95,7 +95,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="7" /> <!-- Speed +7 -->
+				<add stat="moveSpeed" val="7" /> <!-- Speed +7 -->
 			</effect>
 		</for>
 	</skill>
@@ -301,7 +301,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="7" /> <!-- Speed +7 -->
+				<add stat="moveSpeed" val="7" /> <!-- Speed +7 -->
 				<mul stat="regHp" val="1.0526" /> <!-- HP Regeneration +5.26% -->
 			</effect>
 		</for>
@@ -370,7 +370,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="7" /> <!-- Speed + 7 -->
+				<add stat="moveSpeed" val="7" /> <!-- Speed + 7 -->
 				<add stat="breath" val="200" /> <!-- Breath Gauge increased +200 -->
 				<mul stat="regMp" val="1.0526" /> <!-- MP Regeneration +5.26% -->
 			</effect>
@@ -468,7 +468,7 @@
 			<effect name="Buff">
 				<mul stat="pDef" val="1.08" /> <!-- P. Def. +8% -->
 				<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
-				<add stat="runSpd" val="7" /> <!-- Speed +7 -->
+				<add stat="moveSpeed" val="7" /> <!-- Speed +7 -->
 				<sub stat="cancel" val="50" /> <!-- Small decrease in chance of spell interruption -->
 			</effect>
 			<effect name="DefenceTrait">
@@ -784,7 +784,7 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.17" /> <!-- M. Atk +17% -->
-				<add stat="runSpd" val="7" /> <!-- Movement Speed +7 -->
+				<add stat="moveSpeed" val="7" /> <!-- Movement Speed +7 -->
 				<sub stat="cancel" val="50" /> <!-- Casting Cancel Probability -50% -->
 				<add stat="weightPenalty" val="5759" /> <!-- Point at which a weight penalty is applied +5759 -->
 			</effect>
@@ -1177,7 +1177,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 		</for>
 	</skill>
@@ -1610,7 +1610,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 			</effect>
 		</for>
 	</skill>

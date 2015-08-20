@@ -558,7 +558,7 @@
 		<for>
 			<effect name="Buff">
 				<add stat="pDef" val="3000" />
-				<mul stat="runSpd" val="1.25" />
+				<mul stat="moveSpeed" val="1.25" />
 				<sub stat="cancelVuln" val="80" />
 				<mul stat="maxCp" val="0.8" />
 				<mul stat="maxRecoverableCp" val="0.6" />
@@ -601,7 +601,7 @@
 		<for>
 			<effect name="Buff">
 				<add stat="mDef" val="4500" />
-				<mul stat="runSpd" val="1.25" />
+				<mul stat="moveSpeed" val="1.25" />
 				<sub stat="cancelVuln" val="80" />
 				<mul stat="maxCp" val="0.8" />
 				<mul stat="maxRecoverableCp" val="0.6" />
@@ -909,7 +909,7 @@
 		<set name="trait" val="DEATH" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.9" />
+				<mul stat="moveSpeed" val="0.9" />
 				<sub stat="rEvas" val="6" />
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mAtk" val="0.7" />
@@ -982,7 +982,7 @@
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
 				<param power="12" />
-				<mul stat="runSpd" val="0.9" />
+				<mul stat="moveSpeed" val="0.9" />
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="mAtkSpd" val="0.9" />
 				<sub stat="fireRes" val="20" />
@@ -1020,7 +1020,7 @@
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
 				<param power="12" />
-				<mul stat="runSpd" val="0.7" />
+				<mul stat="moveSpeed" val="0.7" />
 				<mul stat="pAtkSpd" val="0.9" />
 				<mul stat="mAtkSpd" val="0.9" />
 				<sub stat="waterRes" val="20" />
@@ -1058,7 +1058,7 @@
 			</effect>
 			<effect name="ManaDamOverTime" ticks="5">
 				<param power="12" />
-				<mul stat="runSpd" val="0.9" />
+				<mul stat="moveSpeed" val="0.9" />
 				<mul stat="pAtkSpd" val="0.9" />
 				<mul stat="mAtkSpd" val="0.7" />
 				<sub stat="windRes" val="20" />
@@ -1208,7 +1208,7 @@
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="regHp" val="1.2" />
-				<mul stat="runSpd" val="0.9" />
+				<mul stat="moveSpeed" val="0.9" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 			<effect name="MaxHp">
@@ -1244,7 +1244,7 @@
 				<add stat="mCritRate" val="2" />
 				<mul stat="mAtk" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 				<sub stat="debuffVuln" val="10" />
 			</effect>
 		</for>
@@ -1313,7 +1313,7 @@
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 				<add stat="accCombat" val="4" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="mDef" val="1.2" />
@@ -1483,7 +1483,7 @@
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="DanceMpConsumeRate" val="0.95" />
@@ -1525,7 +1525,7 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="accCombat" val="4" />
 				<sub stat="debuffVuln" val="10" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 		</for>
 	</skill>
@@ -1561,7 +1561,7 @@
 				<mul stat="mDef" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 				<add stat="absorbDam" val="5" /> <!-- absorb 5% HP from damage inflicted on enemies -->
 			</effect>
 			<effect name="MaxHp">
@@ -1629,7 +1629,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.9" />
+				<mul stat="moveSpeed" val="0.9" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
@@ -1699,7 +1699,7 @@
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="runSpd" val="0.9" />
+				<mul stat="moveSpeed" val="0.9" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
@@ -1766,7 +1766,7 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<add stat="accCombat" val="4" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 			</effect>
 			<effect name="MaxHp">
 				<param amount="20" mode="PER" heal="true" />
@@ -1865,7 +1865,7 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="pAtk" val="0.9" />
-				<mul stat="runSpd" val="0.8" />
+				<mul stat="moveSpeed" val="0.8" />
 				<mul stat="mDef" val="0.7" />
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="rCrit" val="0.7" />
@@ -2097,7 +2097,7 @@
 		<for>
 			<effect name="BlockControl" />
 			<effect name="Fear">
-				<add stat="runSpd" val="66" />
+				<add stat="moveSpeed" val="66" />
 			</effect>
 		</for>
 	</skill>

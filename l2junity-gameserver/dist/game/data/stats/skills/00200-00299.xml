@@ -193,7 +193,7 @@
 				<param power="9" />
 			</effect>
 			<effect name="SilentMove">
-				<mul stat="runSpd" val="0.6" />
+				<mul stat="moveSpeed" val="0.6" />
 			</effect>
 		</for>
 	</skill>
@@ -366,7 +366,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="#runSpd" />
+				<add stat="moveSpeed" val="#runSpd" />
 			</effect>
 		</for>
 	</skill>
@@ -1089,7 +1089,7 @@
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="20" />
+				<add stat="moveSpeed" val="20" />
 			</effect>
 		</for>
 	</skill>
@@ -1384,7 +1384,7 @@
 			</effect>
 			<effect name="Debuff">
 				<mul stat="pAtkSpd" val="0.5" />
-				<mul stat="runSpd" val="0.5" />
+				<mul stat="moveSpeed" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
 			</effect>
 		</for>
@@ -1878,7 +1878,7 @@
 				<mul stat="pAtkSpd" val="1.3">
 					<using kind="DUALFIST" />
 				</mul>
-				<mul stat="runSpd" val="1.3" />
+				<mul stat="moveSpeed" val="1.3" />
 				<add stat="rEvas" val="12" />
 			</effect>
 		</for>
