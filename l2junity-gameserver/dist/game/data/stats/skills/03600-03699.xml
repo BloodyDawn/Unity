@@ -756,7 +756,7 @@
 		</for>
 	</skill>
 	<skill id="3634" levels="1" name="Special Ability: Infinity Sword">
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- Glory Days Confirmed -->
 		<set name="icon" val="icon.weapon_infinity_sword_i00" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
@@ -767,11 +767,11 @@
 				<add stat="cAtkAdd" val="504" /> <!-- P.Atk. +504 on a critical hit -->
 				<mul stat="maxHp" val="1.25" /> <!-- HP +25% -->
 				<mul stat="maxCp" val="1.5" /> <!-- CP +50% -->
-				<add stat="rCrit" val="78.7" /> <!-- Critical +78.7 -->
+				<add stat="rCrit" val="7.87" /> <!-- Critical +7.87 -->
 				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<mul stat="pvpPhysDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpMagicalDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpPhysSkillsDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
+				<mul stat="pvpPhysDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
+				<mul stat="pvpMagicalDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
+				<mul stat="pvpPhysSkillsDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
 				<add stat="reflectSkillPhysic" val="10" /> <!-- Reflect Skills 10% of the time -->
 				<add stat="reflectSkillMagic" val="10" /> <!-- Reflect Skills 10% of the time -->
 			</effect>

@@ -643,7 +643,7 @@
 		<set name="specialLevel" val="-1" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
-			<player SiegeZone="126" /> <!-- TODO: add new condition and ride_state -->
+			<player SiegeZone="126" /> <!-- TODO: add new condition -->
 		</cond>
 		<for>
 			<effect name="PhysicalAttack">
@@ -2136,9 +2136,9 @@
 	</skill>
 	<skill id="390" levels="5" name="Clan Luck">
 		<!-- Updated to Ertheia -->
-		<!-- TODO: Still missing info about other penalties than exp. loss -->
-		<table name="#byPvp"> 0.7 0.5 0.4 0.3 0.2 </table>
-		<table name="#byMob"> 0.88 0.8 0.76 0.72 0.68 </table>
+		<!-- Glory Days Confirmed -->
+		<table name="#byPvp"> 0.7 0.5 0.4 0.4 0.4 </table>
+		<table name="#byMob"> 0.88 0.8 0.76 0.76 0.76 </table>
 		<set name="icon" val="icon.skill0390" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
