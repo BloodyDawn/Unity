@@ -109,23 +109,20 @@ public class MaxHp extends AbstractEffect
 	@Override
 	public void pump(Creature effected, Skill skill)
 	{
-		switch (_mode)
+		if ((_armorTypeCondition == null) || _armorTypeCondition.test(effected, effected, skill))
 		{
-			case 0: // DIFF
+			switch (_mode)
 			{
-				if ((_armorTypeCondition == null) || _armorTypeCondition.test(effected, effected, skill))
+				case 0: // DIFF
 				{
 					effected.getStat().mergeAdd(Stats.MAX_HP, _amount);
+					break;
 				}
-				break;
-			}
-			case 1: // PER
-			{
-				if ((_armorTypeCondition == null) || _armorTypeCondition.test(effected, effected, skill))
+				case 1: // PER
 				{
 					effected.getStat().mergeMul(Stats.MAX_HP, (_amount / 100) + 1);
+					break;
 				}
-				break;
 			}
 		}
 	}
