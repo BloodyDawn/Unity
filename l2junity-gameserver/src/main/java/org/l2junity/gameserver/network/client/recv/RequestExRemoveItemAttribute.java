@@ -76,10 +76,6 @@ public class RequestExRemoveItemAttribute implements IClientIncomingPacket
 		
 		if (activeChar.reduceAdena("RemoveElement", getPrice(targetItem), activeChar, true))
 		{
-			if (targetItem.isEquipped())
-			{
-				activeChar.getStat().recalculateStats(true);
-			}
 			targetItem.clearAttribute(type);
 			client.sendPacket(new UserInfo(activeChar));
 			
@@ -125,6 +121,7 @@ public class RequestExRemoveItemAttribute implements IClientIncomingPacket
 			}
 			client.sendPacket(sm);
 			client.sendPacket(new ExBaseAttributeCancelResult(targetItem.getObjectId(), _element));
+			activeChar.getStat().recalculateStats(true);
 		}
 		else
 		{
