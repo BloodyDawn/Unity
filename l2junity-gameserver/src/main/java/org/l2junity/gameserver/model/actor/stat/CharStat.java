@@ -32,7 +32,6 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.CharEffectList;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -807,7 +806,7 @@ public class CharStat
 	 * Locks and resets all stats and recalculates all
 	 * @param broadcast TODO
 	 */
-	public void recalculateStats(boolean broadcast)
+	public final void recalculateStats(boolean broadcast)
 	{
 		_lock.writeLock().lock();
 		try
@@ -832,14 +831,8 @@ public class CharStat
 				.forEach(effect -> effect.pump(info.getEffected(), info.getSkill())));
 			//@formatter:on
 			
-			final Inventory inventory = _activeChar.getInventory();
-			if (inventory != null)
-			{
-				for (ItemInstance item : inventory.getItems(ItemInstance::isEquipped, ItemInstance::isAugmented))
-				{
-					item.getAugmentation().applyStats(_activeChar.getActingPlayer());
-				}
-			}
+			// Notify recalculation to child classes
+			onRecalculateStats(broadcast);
 			
 			if (broadcast)
 			{
@@ -864,6 +857,11 @@ public class CharStat
 		{
 			_lock.writeLock().unlock();
 		}
+	}
+	
+	protected void onRecalculateStats(boolean broadcast)
+	{
+	
 	}
 	
 	public void processStats(Creature effected, Class<?> funcClass, Stats stat, double value)

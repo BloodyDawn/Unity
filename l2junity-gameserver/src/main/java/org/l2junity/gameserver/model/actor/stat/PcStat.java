@@ -29,6 +29,8 @@ import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
+import org.l2junity.gameserver.model.itemcontainer.Inventory;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -743,5 +745,31 @@ public class PcStat extends PlayableStat
 	public int getBroochJewelSlots()
 	{
 		return (int) calcStat(Stats.BROOCH_JEWELS, 0);
+	}
+	
+	@Override
+	protected void onRecalculateStats(boolean broadcast)
+	{
+		final PlayerInstance player = getActiveChar();
+		final Inventory inventory = player.getInventory();
+		if (inventory != null)
+		{
+			for (ItemInstance item : inventory.getItems(ItemInstance::isEquipped, ItemInstance::isAugmented))
+			{
+				item.getAugmentation().applyStats(player);
+			}
+			
+			// TODO: Apply enchanted items stats
+		}
+		
+		// Upon master stats recalculation trigger pet/servitor recalculation too
+		if (player.hasPet())
+		{
+			player.getPet().getStat().recalculateStats(broadcast);
+		}
+		if (player.hasServitors())
+		{
+			player.getServitors().values().forEach(servitor -> servitor.getStat().recalculateStats(broadcast));
+		}
 	}
 }
