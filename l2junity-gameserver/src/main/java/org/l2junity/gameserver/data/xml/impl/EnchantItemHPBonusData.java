@@ -20,19 +20,14 @@ package org.l2junity.gameserver.data.xml.impl;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
-import org.l2junity.gameserver.datatables.ItemTable;
-import org.l2junity.gameserver.enums.StatFunction;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.CrystalType;
-import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -78,37 +73,6 @@ public class EnchantItemHPBonusData implements IGameXmlReader
 							}
 						}
 						_armorHPBonuses.put(parseEnum(d.getAttributes(), CrystalType.class, "grade"), bonuses);
-					}
-				}
-			}
-		}
-		
-		if (!_armorHPBonuses.isEmpty())
-		{
-			final ItemTable it = ItemTable.getInstance();
-			// Armors
-			final Collection<Integer> armorIds = it.getAllArmorsId();
-			for (Integer itemId : armorIds)
-			{
-				L2Item item = it.getTemplate(itemId);
-				if ((item != null) && (item.getCrystalType() != CrystalType.NONE))
-				{
-					switch (item.getBodyPart())
-					{
-						case L2Item.SLOT_CHEST:
-						case L2Item.SLOT_FEET:
-						case L2Item.SLOT_GLOVES:
-						case L2Item.SLOT_HEAD:
-						case L2Item.SLOT_LEGS:
-						case L2Item.SLOT_BACK:
-						case L2Item.SLOT_FULL_ARMOR:
-						case L2Item.SLOT_UNDERWEAR:
-						case L2Item.SLOT_L_HAND:
-						case L2Item.SLOT_BELT:
-							item.addFunctionTemplate(new FuncTemplate(null, null, StatFunction.ENCHANTHP.getName(), -1, Stats.MAX_HP, 0));
-							break;
-						default:
-							break;
 					}
 				}
 			}

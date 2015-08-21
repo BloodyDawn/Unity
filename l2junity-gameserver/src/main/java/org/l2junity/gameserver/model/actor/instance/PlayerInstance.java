@@ -10000,7 +10000,7 @@ public final class PlayerInstance extends Playable
 			// Remove active item skills before saving char to database
 			// because next time when choosing this class, weared items can
 			// be different
-			for (ItemInstance item : getInventory().getItems(ItemInstance::isAugmented))
+			for (ItemInstance item : getInventory().getPaperdollItems(ItemInstance::isAugmented))
 			{
 				if ((item != null) && item.isEquipped())
 				{

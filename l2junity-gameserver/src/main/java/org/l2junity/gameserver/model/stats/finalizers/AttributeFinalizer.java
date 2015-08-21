@@ -65,7 +65,7 @@ public class AttributeFinalizer implements IStatsFunction
 			final Inventory inventory = creature.getInventory();
 			if (inventory != null)
 			{
-				for (ItemInstance item : inventory.getItems(ItemInstance::isArmor, ItemInstance::isEquipped))
+				for (ItemInstance item : inventory.getPaperdollItems(ItemInstance::isArmor))
 				{
 					final AttributeHolder holder = item.getAttribute(_type);
 					if (holder != null)

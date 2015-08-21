@@ -20,8 +20,10 @@ package org.l2junity.gameserver.model.stats.finalizers;
 
 import java.util.Optional;
 
+import org.l2junity.gameserver.data.xml.impl.EnchantItemHPBonusData;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -41,6 +43,12 @@ public class MaxHpFinalizer implements IStatsFunction
 		if (player != null)
 		{
 			baseValue = player.getTemplate().getBaseHpMax(player.getLevel());
+			
+			// Apply enchanted item's bonus HP
+			for (ItemInstance item : player.getInventory().getPaperdollItems(ItemInstance::isEnchanted))
+			{
+				baseValue += EnchantItemHPBonusData.getInstance().getHPBonus(item);
+			}
 		}
 		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
 		baseValue *= BaseStats.CON.calcBonus(creature) * chaBonus;

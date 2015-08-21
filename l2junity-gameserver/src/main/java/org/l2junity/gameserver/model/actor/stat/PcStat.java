@@ -754,7 +754,7 @@ public class PcStat extends PlayableStat
 		final Inventory inventory = player.getInventory();
 		if (inventory != null)
 		{
-			for (ItemInstance item : inventory.getItems(ItemInstance::isEquipped, ItemInstance::isAugmented))
+			for (ItemInstance item : inventory.getPaperdollItems(ItemInstance::isAugmented))
 			{
 				item.getAugmentation().applyStats(player);
 			}

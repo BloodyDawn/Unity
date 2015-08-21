@@ -22,11 +22,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -1779,7 +1785,7 @@ public abstract class Inventory extends ItemContainer
 		
 		final PlayerInstance player = getOwner().getActingPlayer();
 		int maxSetEnchant = 0;
-		for (ItemInstance item : getItems(ItemInstance::isEquipped))
+		for (ItemInstance item : getPaperdollItems())
 		{
 			for (ArmorSet set : ArmorSetsData.getInstance().getSets(item.getId()))
 			{
@@ -1843,5 +1849,21 @@ public abstract class Inventory extends ItemContainer
 	public void reduceArrowCount(EtcItemType type)
 	{
 		// default is to do nothing
+	}
+	
+	/**
+	 * Gets the items in paperdoll slots filtered by filter.
+	 * @param filters multiple filters
+	 * @return the filtered items in inventory
+	 */
+	@SafeVarargs
+	public final Collection<ItemInstance> getPaperdollItems(Predicate<ItemInstance>... filters)
+	{
+		Predicate<ItemInstance> filter = Objects::nonNull;
+		for (Predicate<ItemInstance> additionalFilter : filters)
+		{
+			filter = filter.and(additionalFilter);
+		}
+		return Arrays.stream(_paperdoll).filter(filter).collect(Collectors.toCollection(LinkedList::new));
 	}
 }
