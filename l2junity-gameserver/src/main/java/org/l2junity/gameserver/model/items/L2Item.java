@@ -53,6 +53,8 @@ import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.items.type.ItemType;
 import org.l2junity.gameserver.model.items.type.MaterialType;
 import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.gameserver.model.stats.functions.FuncAdd;
+import org.l2junity.gameserver.model.stats.functions.FuncSet;
 import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -925,7 +927,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 	{
 		if (_funcTemplates != null)
 		{
-			final FuncTemplate template = _funcTemplates.stream().filter(func -> func.getStat() == stat).findFirst().orElse(null);
+			final FuncTemplate template = _funcTemplates.stream().filter(func -> (func.getStat() == stat) && ((func.getFunctionClass() == FuncAdd.class) || (func.getFunctionClass() == FuncSet.class))).findFirst().orElse(null);
 			if (template != null)
 			{
 				return template.getValue();
