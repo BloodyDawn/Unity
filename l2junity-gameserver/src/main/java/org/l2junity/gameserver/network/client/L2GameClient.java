@@ -136,13 +136,13 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 		final InetSocketAddress address = (InetSocketAddress) ctx.channel().remoteAddress();
 		_addr = address.getAddress();
 		_channel = ctx.channel();
-		LOGGER.debug("Client Connected: " + ctx.channel());
+		LOGGER.debug("Client Connected: {}", ctx.channel());
 	}
 	
 	@Override
 	public void channelInactive(ChannelHandlerContext ctx)
 	{
-		LOGGER.debug("Client Disconnected: " + ctx.channel());
+		LOGGER.debug("Client Disconnected: {}", ctx.channel());
 		
 		// no long running tasks here, do it async
 		try
@@ -557,7 +557,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 		if (character != null)
 		{
 			// exploit prevention, should not happens in normal way
-			LOGGER.error("Attempt of double login: " + character.getName() + "(" + objId + ") " + getAccountName());
+			LOGGER.error("Attempt of double login: {}({}) {}", character.getName(), objId, getAccountName());
 			if (character.getClient() != null)
 			{
 				character.getClient().closeNow();
@@ -572,7 +572,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 		character = PlayerInstance.load(objId);
 		if (character == null)
 		{
-			LOGGER.error("could not restore in slot: " + charslot);
+			LOGGER.error("could not restore in slot: {}", charslot);
 		}
 		
 		// setCharacter(character);
@@ -616,7 +616,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 		final CharSelectInfoPackage info = getCharSelection(charslot);
 		if (info == null)
 		{
-			LOGGER.warn(toString() + " tried to delete Character in slot " + charslot + " but no characters exits at that slot.");
+			LOGGER.warn("{} tried to delete Character in slot {} but no characters exits at that slot.", toString(), charslot);
 			return -1;
 		}
 		return info.getObjectId();
@@ -807,7 +807,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 				{
 					if (getActiveChar().isLocked())
 					{
-						LOGGER.warn("Player " + getActiveChar().getName() + " still performing subclass actions during disconnect.");
+						LOGGER.warn("Player {} still performing subclass actions during disconnect.", getActiveChar().getName());
 					}
 					
 					// we store all data from players who are disconnected while in an event in order to restore it in the next login
@@ -882,8 +882,8 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 			return true;
 		}
 		
-		Logger _logAudit = LoggerFactory.getLogger("audit");
-		_logAudit.info("AUDIT: Client " + toString() + " kicked for reason: " + punishment);
+		final Logger logAudit = LoggerFactory.getLogger("audit");
+		logAudit.info("AUDIT: Client {} kicked for reason: {}", toString(), punishment);
 		closeNow();
 		return false;
 	}
