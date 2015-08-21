@@ -74,7 +74,7 @@ import io.netty.channel.ChannelHandlerContext;
  */
 public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 {
-	protected static final Logger _log = LoggerFactory.getLogger(L2GameClient.class);
+	protected static final Logger LOGGER = LoggerFactory.getLogger(L2GameClient.class);
 	protected static final Logger _logAccounting = LoggerFactory.getLogger("accounting");
 	
 	private final int _objectId;
@@ -136,13 +136,13 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 		final InetSocketAddress address = (InetSocketAddress) ctx.channel().remoteAddress();
 		_addr = address.getAddress();
 		_channel = ctx.channel();
-		_log.debug("Client Connected: " + ctx.channel());
+		LOGGER.debug("Client Connected: " + ctx.channel());
 	}
 	
 	@Override
 	public void channelInactive(ChannelHandlerContext ctx)
 	{
-		_log.debug("Client Disconnected: " + ctx.channel());
+		LOGGER.debug("Client Disconnected: " + ctx.channel());
 		
 		// no long running tasks here, do it async
 		try
@@ -164,14 +164,14 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 		}
 		catch (Exception e)
 		{
-			e.printStackTrace();
+			LOGGER.warn("Exception for: {} on packet.run: {}", toString(), packet.getClass().getSimpleName(), e);
 		}
 	}
 	
 	@Override
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
 	{
-		cause.printStackTrace();
+		LOGGER.warn("Network exception caught for: {}", toString(), cause);
 	}
 	
 	public Channel getChannel()
@@ -352,7 +352,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 			}
 			catch (SQLException e)
 			{
-				_log.warn("Failed to update char delete time: ", e);
+				LOGGER.warn("Failed to update char delete time: ", e);
 			}
 		}
 		
@@ -380,7 +380,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 		}
 		catch (Exception e)
 		{
-			_log.error("Error saving character..", e);
+			LOGGER.error("Error saving character..", e);
 		}
 	}
 	
@@ -400,7 +400,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 		}
 		catch (Exception e)
 		{
-			_log.error("Error restoring character.", e);
+			LOGGER.error("Error restoring character.", e);
 		}
 		
 		_logAccounting.info("Restore, {}, {}", objid, this);
@@ -541,7 +541,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 		}
 		catch (Exception e)
 		{
-			_log.error("Error deleting character.", e);
+			LOGGER.error("Error deleting character.", e);
 		}
 	}
 	
@@ -557,7 +557,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 		if (character != null)
 		{
 			// exploit prevention, should not happens in normal way
-			_log.error("Attempt of double login: " + character.getName() + "(" + objId + ") " + getAccountName());
+			LOGGER.error("Attempt of double login: " + character.getName() + "(" + objId + ") " + getAccountName());
 			if (character.getClient() != null)
 			{
 				character.getClient().closeNow();
@@ -572,7 +572,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 		character = PlayerInstance.load(objId);
 		if (character == null)
 		{
-			_log.error("could not restore in slot: " + charslot);
+			LOGGER.error("could not restore in slot: " + charslot);
 		}
 		
 		// setCharacter(character);
@@ -616,7 +616,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 		final CharSelectInfoPackage info = getCharSelection(charslot);
 		if (info == null)
 		{
-			_log.warn(toString() + " tried to delete Character in slot " + charslot + " but no characters exits at that slot.");
+			LOGGER.warn(toString() + " tried to delete Character in slot " + charslot + " but no characters exits at that slot.");
 			return -1;
 		}
 		return info.getObjectId();
@@ -724,7 +724,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 			}
 			catch (Exception e1)
 			{
-				_log.warn("Error while disconnecting client.", e1);
+				LOGGER.warn("Error while disconnecting client.", e1);
 			}
 			
 			IdFactory.getInstance().releaseId(getObjectId());
@@ -785,7 +785,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 		}
 		catch (Exception e1)
 		{
-			_log.warn("Error during cleanup.", e1);
+			LOGGER.warn("Error during cleanup.", e1);
 		}
 	}
 	
@@ -807,7 +807,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 				{
 					if (getActiveChar().isLocked())
 					{
-						_log.warn("Player " + getActiveChar().getName() + " still performing subclass actions during disconnect.");
+						LOGGER.warn("Player " + getActiveChar().getName() + " still performing subclass actions during disconnect.");
 					}
 					
 					// we store all data from players who are disconnected while in an event in order to restore it in the next login
@@ -829,7 +829,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 			}
 			catch (Exception e1)
 			{
-				_log.warn("Error while cleanup client.", e1);
+				LOGGER.warn("Error while cleanup client.", e1);
 			}
 			finally
 			{
@@ -859,7 +859,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 			}
 			catch (Exception e)
 			{
-				_log.error("Error on AutoSaveTask.", e);
+				LOGGER.error("Error on AutoSaveTask.", e);
 			}
 		}
 	}
