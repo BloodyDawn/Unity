@@ -41,7 +41,8 @@ public class PAttackSpeedFinalizer implements IStatsFunction
 			baseValue = Config.L2JMOD_CHAMPION_SPD_ATK;
 		}
 		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
-		baseValue *= BaseStats.DEX.calcBonus(creature) * chaBonus;
+		final double dexBonus = creature.getDEX() > 0 ? BaseStats.DEX.calcBonus(creature) : 1.;
+		baseValue *= dexBonus * chaBonus;
 		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue), Config.MAX_PATK_SPEED);
 	}
 }

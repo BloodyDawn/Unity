@@ -78,7 +78,8 @@ public class MDefenseFinalizer implements IStatsFunction
 			baseValue *= Config.RAID_MDEFENCE_MULTIPLIER;
 		}
 		
-		baseValue *= BaseStats.MEN.calcBonus(creature) * creature.getLevelMod();
+		final double bonus = creature.getMEN() > 0 ? BaseStats.MEN.calcBonus(creature) : 1.;
+		baseValue *= bonus * creature.getLevelMod();
 		return Stats.defaultValue(creature, stat, baseValue);
 	}
 }

@@ -43,7 +43,8 @@ public class MAttackSpeedFinalizer implements IStatsFunction
 		}
 		
 		final double chaBonus = creature.isPlayer() ? BaseStats.CHA.calcBonus(creature) : 1.;
-		baseValue *= BaseStats.WIT.calcBonus(creature) * chaBonus;
+		final double witBonus = creature.getWIT() > 0 ? BaseStats.WIT.calcBonus(creature) : 1.;
+		baseValue *= witBonus * chaBonus;
 		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue), Config.MAX_MATK_SPEED);
 	}
 }
