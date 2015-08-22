@@ -13093,6 +13093,16 @@ public final class PlayerInstance extends Playable
 		return (getInventory().getSize(includeQuestInv) <= (getInventoryLimit() * 0.9));
 	}
 	
+	/**
+	 * Test if player inventory is under 80% capaity
+	 * @param includeQuestInv check also quest inventory
+	 * @return
+	 */
+	public boolean isInventoryUnder80(boolean includeQuestInv)
+	{
+		return (getInventory().getSize(includeQuestInv) <= (getInventoryLimit() * 0.8));
+	}
+	
 	public boolean havePetInvItems()
 	{
 		return _petItems;

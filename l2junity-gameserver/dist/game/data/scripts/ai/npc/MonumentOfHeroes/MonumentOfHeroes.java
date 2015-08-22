@@ -18,9 +18,13 @@
  */
 package ai.npc.MonumentOfHeroes;
 
+import java.util.List;
+
 import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.olympiad.Olympiad;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 import ai.npc.AbstractNpcAI;
 
@@ -40,6 +44,8 @@ public final class MonumentOfHeroes extends AbstractNpcAI
 		31772
 	};
 	// Items
+	private static final int HERO_CLOAK = 30372;
+	private static final int GLORIOUS_CLOAK = 30373;
 	private static final int WINGS_OF_DESTINY_CIRCLET = 6842;
 	private static final int[] WEAPONS =
 	{
@@ -69,15 +75,66 @@ public final class MonumentOfHeroes extends AbstractNpcAI
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
+		String htmltext = null;
+		
 		switch (event)
 		{
+			case "receiveCloak":
+			{
+				final int olympiadRank = getOlympiadRank(player);
+				
+				if (olympiadRank == 1)
+				{
+					if (!hasAtLeastOneQuestItem(player, HERO_CLOAK, GLORIOUS_CLOAK))
+					{
+						if (player.isInventoryUnder80(false))
+						{
+							player.sendPacket(SystemMessageId.UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_AND_SLOT_COUNT_ARE_LESS_THAN_80_PERCENT_OF_CAPACITY);
+						}
+						else
+						{
+							giveItems(player, HERO_CLOAK, 1);
+						}
+					}
+					else
+					{
+						htmltext = "cloak_already_have.html";
+					}
+				}
+				else if ((olympiadRank == 2) || (olympiadRank == 3))
+				{
+					if (!hasAtLeastOneQuestItem(player, HERO_CLOAK, GLORIOUS_CLOAK))
+					{
+						if (player.isInventoryUnder80(false))
+						{
+							player.sendPacket(SystemMessageId.UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_AND_SLOT_COUNT_ARE_LESS_THAN_80_PERCENT_OF_CAPACITY);
+						}
+						else
+						{
+							giveItems(player, GLORIOUS_CLOAK, 1);
+						}
+					}
+					else
+					{
+						htmltext = "cloak_already_have.html";
+					}
+				}
+				else
+				{
+					htmltext = "cloak_no_rank.html";
+				}
+				break;
+			}
 			case "HeroWeapon":
 			{
 				if (player.isHero())
 				{
-					return hasAtLeastOneQuestItem(player, WEAPONS) ? "already_have_weapon.htm" : "weapon_list.htm";
+					htmltext = hasAtLeastOneQuestItem(player, WEAPONS) ? "already_have_weapon.htm" : "weapon_list.htm";
 				}
-				return "no_hero_weapon.htm";
+				else
+				{
+					htmltext = "no_hero_weapon.htm";
+				}
 			}
 			case "HeroCirclet":
 			{
@@ -89,12 +146,12 @@ public final class MonumentOfHeroes extends AbstractNpcAI
 					}
 					else
 					{
-						return "already_have_circlet.htm";
+						htmltext = "already_have_circlet.htm";
 					}
 				}
 				else
 				{
-					return "no_hero_circlet.htm";
+					htmltext = "no_hero_circlet.htm";
 				}
 				break;
 			}
@@ -108,7 +165,20 @@ public final class MonumentOfHeroes extends AbstractNpcAI
 				break;
 			}
 		}
-		return super.onAdvEvent(event, npc, player);
+		return htmltext;
+	}
+	
+	private int getOlympiadRank(PlayerInstance player)
+	{
+		final List<String> names = Olympiad.getInstance().getClassLeaderBoard(player.getClassId().getId());
+		for (int i = 1; i <= 3; i++)
+		{
+			if (names.get(i - 1).equals(player.getName()))
+			{
+				return i;
+			}
+		}
+		return -1;
 	}
 	
 	public static void main(String[] args)
