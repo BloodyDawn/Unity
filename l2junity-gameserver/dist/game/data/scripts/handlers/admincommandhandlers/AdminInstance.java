@@ -18,20 +18,26 @@
  */
 package handlers.admincommandhandlers;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
+import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.html.PageBuilder;
 import org.l2junity.gameserver.model.html.PageResult;
 import org.l2junity.gameserver.model.html.formatters.BypassParserFormatter;
 import org.l2junity.gameserver.model.html.pagehandlers.NextPrevPageHandler;
 import org.l2junity.gameserver.model.html.styles.ButtonsStyle;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.instancezone.InstanceTemplate;
+import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.util.BypassParser;
 
@@ -46,6 +52,9 @@ public final class AdminInstance implements IAdminCommandHandler
 		"admin_instance",
 		"admin_instances",
 		"admin_instancelist",
+		"admin_instancecreate",
+		"admin_instanceteleport",
+		"admin_instancedestroy",
 	};
 	
 	@Override
@@ -71,22 +80,162 @@ public final class AdminInstance implements IAdminCommandHandler
 				processBypass(activeChar, new BypassParser(command));
 				break;
 			}
+			case "admin_instancecreate":
+			{
+				final int templateId = CommonUtil.parseNextInt(st, 0);
+				final InstanceTemplate template = InstanceManager.getInstance().getInstanceTemplate(templateId);
+				
+				if (template != null)
+				{
+					final String enterGroup;
+					
+					if (st.hasMoreTokens())
+					{
+						enterGroup = st.nextToken();
+					}
+					else
+					{
+						activeChar.sendMessage("Wrong parameters! Please try again.");
+						return true;
+					}
+					
+					final List<PlayerInstance> members = new ArrayList<>();
+					
+					switch (enterGroup)
+					{
+						case "Alone":
+						{
+							members.add(activeChar);
+							break;
+						}
+						case "Party":
+						{
+							if (activeChar.isInParty())
+							{
+								members.addAll(activeChar.getParty().getMembers());
+							}
+							else
+							{
+								members.add(activeChar);
+							}
+							break;
+						}
+						case "CommandChannel":
+						{
+							if (activeChar.isInCommandChannel())
+							{
+								members.addAll(activeChar.getParty().getCommandChannel().getMembers());
+							}
+							else if (activeChar.isInParty())
+							{
+								members.addAll(activeChar.getParty().getMembers());
+							}
+							else
+							{
+								members.add(activeChar);
+							}
+							break;
+						}
+						default:
+						{
+							activeChar.sendMessage("Wrong enter group usage! Please use those values: Alone, Party or CommandChannel.");
+							return true;
+						}
+					}
+					
+					final Instance instance = InstanceManager.getInstance().createInstance(template);
+					final Location loc = instance.getEnterLocation();
+					
+					if (loc != null)
+					{
+						for (PlayerInstance players : members)
+						{
+							instance.addAllowed(players);
+							players.teleToLocation(loc, false);
+						}
+					}
+					sendTemplateDetails(activeChar, instance.getTemplateId());
+				}
+				else
+				{
+					activeChar.sendMessage("Wrong parameters! Please try again.");
+					return true;
+				}
+				break;
+			}
+			case "admin_instanceteleport":
+			{
+				final Instance instance = InstanceManager.getInstance().getInstance(CommonUtil.parseNextInt(st, -1));
+				if (instance != null)
+				{
+					final Location loc = instance.getEnterLocation();
+					if (loc != null)
+					{
+						instance.addAllowed(activeChar);
+						activeChar.teleToLocation(loc, false);
+						sendTemplateDetails(activeChar, instance.getTemplateId());
+					}
+				}
+				break;
+			}
+			case "admin_instancedestroy":
+			{
+				final Instance instance = InstanceManager.getInstance().getInstance(CommonUtil.parseNextInt(st, -1));
+				if (instance != null)
+				{
+					instance.getPlayers().forEach(player -> player.sendPacket(new ExShowScreenMessage("Your instance has been destroyed by Game Master!", 10000)));
+					activeChar.sendMessage("You destroyed Instance " + instance.getId() + " with " + instance.getPlayersCount() + " players inside.");
+					instance.destroy();
+					sendTemplateDetails(activeChar, instance.getTemplateId());
+				}
+				break;
+			}
 		}
 		return true;
 	}
 	
-	public void showTemplateDetails(PlayerInstance activeChar, int instanceId) // TODO: public
+	private void sendTemplateDetails(PlayerInstance player, int templateId)
 	{
-		if (InstanceManager.getInstance().getInstanceTemplate(instanceId) != null)
+		if (InstanceManager.getInstance().getInstanceTemplate(templateId) != null)
 		{
-			NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
-			html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/instances_detail.htm");
-			activeChar.sendPacket(html);
+			final InstanceTemplate template = InstanceManager.getInstance().getInstanceTemplate(templateId);
+			final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
+			final StringBuilder sb = new StringBuilder();
+			html.setFile(player.getHtmlPrefix(), "data/html/admin/instances_detail.htm");
+			html.replace("%templateId%", template.getId());
+			html.replace("%templateName%", template.getName());
+			html.replace("%activeWorlds%", template.getWorldCount() + " / " + (template.getMaxWorlds() == -1 ? "Unlimited" : template.getMaxWorlds()));
+			html.replace("%duration%", template.getDuration() + " minutes");
+			html.replace("%emptyDuration%", TimeUnit.MILLISECONDS.toMinutes(template.getEmptyDestroyTime()) + " minutes");
+			html.replace("%ejectDuration%", TimeUnit.MILLISECONDS.toMinutes(template.getEjectTime()) + " minutes");
+			html.replace("%removeBuff%", template.isRemoveBuffEnabled());
+			
+			sb.append("<table border=0 cellpadding=2 cellspacing=0 bgcolor=\"363636\">");
+			sb.append("<tr>");
+			sb.append("<td fixwidth=\"83\"><font color=\"LEVEL\">Instance ID</font></td>");
+			sb.append("<td fixwidth=\"83\"><font color=\"LEVEL\">Teleport</font></td>");
+			sb.append("<td fixwidth=\"83\"><font color=\"LEVEL\">Destroy</font></td>");
+			sb.append("</tr>");
+			sb.append("</table>");
+			
+			InstanceManager.getInstance().getInstances().stream().filter(inst -> (inst.getTemplateId() == templateId)).sorted(Comparator.comparingInt(Instance::getPlayersCount)).forEach(instance ->
+			{
+				sb.append("<table border=0 cellpadding=2 cellspacing=0 bgcolor=\"363636\">");
+				sb.append("<tr>");
+				sb.append("<td fixwidth=\"83\">" + instance.getId() + "</td>");
+				sb.append("<td fixwidth=\"83\"><button value=\"Teleport!\" action=\"bypass -h admin_instanceteleport " + instance.getId() + "\" width=75 height=18 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>");
+				sb.append("<td fixwidth=\"83\"><button value=\"Destroy!\" action=\"bypass -h admin_instancedestroy " + instance.getId() + "\" width=75 height=18 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>");
+				sb.append("</tr>");
+				sb.append("</table>");
+			});
+			
+			html.replace("%instanceList%", sb.toString());
+			player.sendPacket(html);
 		}
 		else
 		{
-			activeChar.sendMessage("Instance template with id " + instanceId + " does not exist!");
-			useAdminCommand("admin_instance", activeChar);
+			player.sendMessage("Instance template with id " + templateId + " does not exist!");
+			useAdminCommand("admin_instance", player);
 		}
 	}
 	
@@ -96,7 +245,7 @@ public final class AdminInstance implements IAdminCommandHandler
 		html.setFile(player.getHtmlPrefix(), "data/html/admin/instances_list.htm");
 		
 		final InstanceManager instManager = InstanceManager.getInstance();
-		final List<InstanceTemplate> templateList = instManager.getInstanceTemplates().stream().sorted(Comparator.comparingLong(InstanceTemplate::getWorldCount)).collect(Collectors.toList());
+		final List<InstanceTemplate> templateList = instManager.getInstanceTemplates().stream().sorted(Comparator.comparingLong(InstanceTemplate::getWorldCount).reversed()).collect(Collectors.toList());
 		
 		//@formatter:off
 		final PageResult result = PageBuilder.newBuilder(templateList, 4, "bypass -h admin_instancelist")
@@ -141,7 +290,8 @@ public final class AdminInstance implements IAdminCommandHandler
 		
 		if (templateId > 0)
 		{
-			player.sendMessage("NOT DONE: detailed info about template ID: " + templateId);
+			sendTemplateDetails(player, templateId);
+			
 		}
 		else
 		{

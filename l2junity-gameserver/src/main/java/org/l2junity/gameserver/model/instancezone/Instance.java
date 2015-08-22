@@ -306,6 +306,15 @@ public final class Instance implements IIdentifiable, INamable
 	}
 	
 	/**
+	 * Get count of players inside instance.
+	 * @return players count inside instance
+	 */
+	public int getPlayersCount()
+	{
+		return _players.size();
+	}
+	
+	/**
 	 * Get first found player from instance world.<br>
 	 * <i>This method is useful for instances with one player inside.</i>
 	 * @return first found player, otherwise {@code null}
