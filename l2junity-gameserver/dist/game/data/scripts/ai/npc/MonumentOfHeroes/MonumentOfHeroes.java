@@ -20,17 +20,21 @@ package ai.npc.MonumentOfHeroes;
 
 import java.util.List;
 
-import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
+import org.l2junity.gameserver.network.client.send.ExHeroList;
+import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
+import org.l2junity.gameserver.network.client.send.PlaySound;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 import ai.npc.AbstractNpcAI;
 
 /**
  * Monument of Heroes AI.
- * @author Adry_85
+ * @author St3eT
  */
 public final class MonumentOfHeroes extends AbstractNpcAI
 {
@@ -41,7 +45,7 @@ public final class MonumentOfHeroes extends AbstractNpcAI
 		31769,
 		31770,
 		31771,
-		31772
+		31772,
 	};
 	// Items
 	private static final int HERO_CLOAK = 30372;
@@ -49,26 +53,27 @@ public final class MonumentOfHeroes extends AbstractNpcAI
 	private static final int WINGS_OF_DESTINY_CIRCLET = 6842;
 	private static final int[] WEAPONS =
 	{
-		6611, // Infinity Blade
-		6612, // Infinity Cleaver
-		6613, // Infinity Axe
-		6614, // Infinity Rod
-		6615, // Infinity Crusher
-		6616, // Infinity Scepter
-		6617, // Infinity Stinger
-		6618, // Infinity Fang
-		6619, // Infinity Bow
-		6620, // Infinity Wing
-		6621, // Infinity Spear
-		9388, // Infinity Rapier
-		9389, // Infinity Sword
-		9390, // Infinity Shooter
+		30392, // Infinity Shaper (dagger)
+		30393, // Infinity Cutter (1-H Sword)
+		30394, // Infinity Slasher (2-H Sword)
+		30395, // Infinity Avenger (1-H Blunt Weapon)
+		30396, // Infinity Fighter (Fist)
+		30397, // Infinity Stormer (Polearm)
+		30398, // Infinity Thrower (bow)
+		30399, // Infinity Shooter (crossbow)
+		30400, // Infinity Buster (magic sword)
+		30401, // Infinity Caster (magic blunt weapon)
+		30402, // Infinity Retributer (two-handed magic blunt weapon)
+		30403, // Infinity Dual Sword (Dual Swords)
+		30404, // Infinity Dual Dagger (Dual Daggers)
+		30405, // Infinity Dual Blunt Weapon (Dual Blunt Weapon)
 	};
 	
 	private MonumentOfHeroes()
 	{
 		super(MonumentOfHeroes.class.getSimpleName(), "ai/npc");
 		addStartNpc(MONUMENTS);
+		addFirstTalkId(MONUMENTS);
 		addTalkId(MONUMENTS);
 	}
 	
@@ -79,26 +84,40 @@ public final class MonumentOfHeroes extends AbstractNpcAI
 		
 		switch (event)
 		{
+			case "MonumentOfHeroes-reward.html":
+			{
+				htmltext = event;
+				break;
+			}
+			case "index":
+			{
+				htmltext = onFirstTalk(npc, player);
+				break;
+			}
+			case "heroList":
+			{
+				player.sendPacket(new ExHeroList());
+				break;
+			}
 			case "receiveCloak":
 			{
 				final int olympiadRank = getOlympiadRank(player);
-				
 				if (olympiadRank == 1)
 				{
 					if (!hasAtLeastOneQuestItem(player, HERO_CLOAK, GLORIOUS_CLOAK))
 					{
 						if (player.isInventoryUnder80(false))
 						{
-							player.sendPacket(SystemMessageId.UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_AND_SLOT_COUNT_ARE_LESS_THAN_80_PERCENT_OF_CAPACITY);
+							giveItems(player, HERO_CLOAK, 1);
 						}
 						else
 						{
-							giveItems(player, HERO_CLOAK, 1);
+							player.sendPacket(SystemMessageId.UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_AND_SLOT_COUNT_ARE_LESS_THAN_80_PERCENT_OF_CAPACITY);
 						}
 					}
 					else
 					{
-						htmltext = "cloak_already_have.html";
+						htmltext = "MonumentOfHeroes-cloakHave.html";
 					}
 				}
 				else if ((olympiadRank == 2) || (olympiadRank == 3))
@@ -107,76 +126,155 @@ public final class MonumentOfHeroes extends AbstractNpcAI
 					{
 						if (player.isInventoryUnder80(false))
 						{
-							player.sendPacket(SystemMessageId.UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_AND_SLOT_COUNT_ARE_LESS_THAN_80_PERCENT_OF_CAPACITY);
+							giveItems(player, GLORIOUS_CLOAK, 1);
 						}
 						else
 						{
-							giveItems(player, GLORIOUS_CLOAK, 1);
+							player.sendPacket(SystemMessageId.UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_AND_SLOT_COUNT_ARE_LESS_THAN_80_PERCENT_OF_CAPACITY);
 						}
 					}
 					else
 					{
-						htmltext = "cloak_already_have.html";
+						htmltext = "MonumentOfHeroes-cloakHave.html";
 					}
 				}
 				else
 				{
-					htmltext = "cloak_no_rank.html";
+					htmltext = "MonumentOfHeroes-cloakNo.html";
 				}
 				break;
 			}
-			case "HeroWeapon":
+			case "heroWeapon":
 			{
-				if (player.isHero())
+				if (Hero.getInstance().isHero(player.getObjectId()))
 				{
-					htmltext = hasAtLeastOneQuestItem(player, WEAPONS) ? "already_have_weapon.htm" : "weapon_list.htm";
-				}
-				else
-				{
-					htmltext = "no_hero_weapon.htm";
-				}
-			}
-			case "HeroCirclet":
-			{
-				if (player.isHero())
-				{
-					if (!hasQuestItems(player, WINGS_OF_DESTINY_CIRCLET))
+					if (player.isInventoryUnder80(false))
 					{
-						giveItems(player, WINGS_OF_DESTINY_CIRCLET, 1);
+						htmltext = hasAtLeastOneQuestItem(player, WEAPONS) ? "MonumentOfHeroes-weaponHave.html" : "MonumentOfHeroes-weaponList.html";
 					}
 					else
 					{
-						htmltext = "already_have_circlet.htm";
+						player.sendPacket(SystemMessageId.UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_AND_SLOT_COUNT_ARE_LESS_THAN_80_PERCENT_OF_CAPACITY);
 					}
 				}
 				else
 				{
-					htmltext = "no_hero_circlet.htm";
+					htmltext = "MonumentOfHeroes-weaponNo.html";
+				}
+			}
+			case "heroCirclet":
+			{
+				if (Hero.getInstance().isHero(player.getObjectId()))
+				{
+					if (hasQuestItems(player, WINGS_OF_DESTINY_CIRCLET))
+					{
+						htmltext = "MonumentOfHeroes-circletHave.html";
+					}
+					else if (!player.isInventoryUnder80(false))
+					{
+						player.sendPacket(SystemMessageId.UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_AND_SLOT_COUNT_ARE_LESS_THAN_80_PERCENT_OF_CAPACITY);
+					}
+					else
+					{
+						giveItems(player, WINGS_OF_DESTINY_CIRCLET, 1);
+					}
+				}
+				else
+				{
+					htmltext = "MonumentOfHeroes-circletNo.html";
 				}
 				break;
 			}
-			default:
+			case "heroCertification":
 			{
-				int weaponId = Integer.parseInt(event);
-				if (CommonUtil.contains(WEAPONS, weaponId))
+				if (Hero.getInstance().isUnclaimedHero(player.getObjectId()))
 				{
-					giveItems(player, weaponId, 1);
+					htmltext = "MonumentOfHeroes-heroCertification.html";
 				}
+				else if (Hero.getInstance().isHero(player.getObjectId()))
+				{
+					htmltext = "MonumentOfHeroes-heroCertificationAlready.html";
+				}
+				else
+				{
+					htmltext = "MonumentOfHeroes-heroCertificationNo.html";
+				}
+				break;
+			}
+			case "heroConfirm":
+			{
+				if (Hero.getInstance().isUnclaimedHero(player.getObjectId()))
+				{
+					if (!player.isSubClassActive())
+					{
+						if (player.getLevel() >= 85)
+						{
+							Hero.getInstance().claimHero(player);
+							showOnScreenMsg(player, (NpcStringId.getNpcStringId(13357 + player.getClassId().getId())), ExShowScreenMessage.TOP_CENTER, 5000);
+							player.broadcastPacket(new PlaySound(1, "ns01_f", 0, 0, 0, 0, 0));
+							htmltext = "MonumentOfHeroes-heroCertificationsDone.html";
+						}
+						else
+						{
+							htmltext = "MonumentOfHeroes-heroCertificationLevel.html";
+						}
+					}
+					else
+					{
+						htmltext = "MonumentOfHeroes-heroCertificationSub.html";
+					}
+				}
+				else
+				{
+					htmltext = "MonumentOfHeroes-heroCertificationNo.html";
+				}
+				break;
+			}
+			case "give_30392": // Infinity Shaper (dagger)
+			case "give_30393": // Infinity Cutter (1-H Sword)
+			case "give_30394": // Infinity Slasher (2-H Sword)
+			case "give_30395": // Infinity Avenger (1-H Blunt Weapon)
+			case "give_30396": // Infinity Fighter (Fist)
+			case "give_30397": // Infinity Stormer (Polearm)
+			case "give_30398": // Infinity Thrower (bow)
+			case "give_30399": // Infinity Shooter (crossbow)
+			case "give_30400": // Infinity Buster (magic sword)
+			case "give_30401": // Infinity Caster (magic blunt weapon)
+			case "give_30402": // Infinity Retributer (two-handed magic blunt weapon)
+			case "give_30403": // Infinity Dual Sword (Dual Swords)
+			case "give_30404": // Infinity Dual Dagger (Dual Daggers)
+			case "give_30405": // Infinity Dual Blunt Weapon (Dual Blunt Weapon)
+			{
+				final int weaponId = Integer.parseInt(event.replace("give_", ""));
+				giveItems(player, weaponId, 1);
 				break;
 			}
 		}
 		return htmltext;
 	}
 	
+	@Override
+	public String onFirstTalk(Npc npc, PlayerInstance player)
+	{
+		return player.isNoble() ? "MonumentOfHeroes-noblesse.html" : "MonumentOfHeroes-noNoblesse.html";
+	}
+	
 	private int getOlympiadRank(PlayerInstance player)
 	{
 		final List<String> names = Olympiad.getInstance().getClassLeaderBoard(player.getClassId().getId());
-		for (int i = 1; i <= 3; i++)
+		try
 		{
-			if (names.get(i - 1).equals(player.getName()))
+			for (int i = 1; i <= 3; i++)
 			{
-				return i;
+				if (names.get(i - 1).equals(player.getName()))
+				{
+					return i;
+				}
 			}
+		}
+		catch (Exception e)
+		{
+			return -1;
 		}
 		return -1;
 	}

@@ -33,19 +33,15 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2OlympiadManagerInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.olympiad.CompetitionType;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.model.olympiad.OlympiadManager;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.client.send.ExHeroList;
-import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 
@@ -341,22 +337,6 @@ public class OlympiadManagerLink implements IBypassHandler
 							reply.replace("%objectId%", String.valueOf(target.getObjectId()));
 							activeChar.sendPacket(reply);
 						}
-						break;
-					case 4: // hero list
-						activeChar.sendPacket(new ExHeroList());
-						break;
-					case 5: // Hero Certification
-						if (Hero.getInstance().isUnclaimedHero(activeChar.getObjectId()))
-						{
-							Hero.getInstance().claimHero(activeChar);
-							reply.setFile(activeChar.getHtmlPrefix(), Olympiad.OLYMPIAD_HTML_PATH + "hero_receive.htm");
-							activeChar.sendPacket(new ExShowScreenMessage(NpcStringId.getNpcStringId(13357 + activeChar.getClassId().getId()), 5000, ExShowScreenMessage.TOP_CENTER, activeChar.getName()));
-						}
-						else
-						{
-							reply.setFile(activeChar.getHtmlPrefix(), Olympiad.OLYMPIAD_HTML_PATH + "hero_notreceive.htm");
-						}
-						activeChar.sendPacket(reply);
 						break;
 					default:
 						_log.warn("Olympiad System: Couldnt send packet for request " + val);
