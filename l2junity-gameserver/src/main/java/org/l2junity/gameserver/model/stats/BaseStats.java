@@ -75,6 +75,10 @@ public enum BaseStats
 	{
 		if (creature != null)
 		{
+			if (creature.getStat().getValue(_stat) < 1)
+			{
+				return 1;
+			}
 			return _bonus[calcValue(creature)];
 		}
 		
