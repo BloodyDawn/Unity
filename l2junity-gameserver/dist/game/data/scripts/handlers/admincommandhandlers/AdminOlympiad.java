@@ -116,7 +116,7 @@ public class AdminOlympiad implements IAdminCommandHandler
 					if (player.isNoble())
 					{
 						final StatsSet statDat = getPlayerSet(player);
-						final int oldpoints = Olympiad.getInstance().getNoblePoints(player.getObjectId());
+						final int oldpoints = Olympiad.getInstance().getNoblePoints(player);
 						final int points = Math.max(oldpoints + val, 0);
 						if (points > 1000)
 						{
@@ -163,7 +163,7 @@ public class AdminOlympiad implements IAdminCommandHandler
 							return false;
 						}
 						
-						final int oldpoints = Olympiad.getInstance().getNoblePoints(player.getObjectId());
+						final int oldpoints = Olympiad.getInstance().getNoblePoints(player);
 						final int points = Math.max(oldpoints - val, 0);
 						playerStat.set(Olympiad.POINTS, points);
 						
@@ -199,7 +199,7 @@ public class AdminOlympiad implements IAdminCommandHandler
 					if (player.isNoble())
 					{
 						final StatsSet statDat = getPlayerSet(player);
-						final int oldpoints = Olympiad.getInstance().getNoblePoints(player.getObjectId());
+						final int oldpoints = Olympiad.getInstance().getNoblePoints(player);
 						final int points = oldpoints - val;
 						if ((points < 1) && (points > 1000))
 						{
@@ -273,7 +273,7 @@ public class AdminOlympiad implements IAdminCommandHandler
 			activeChar.sendMessage("Player " + player + " has not 3rd class.");
 			return false;
 		}
-		else if (Olympiad.getInstance().getNoblePoints(player.getObjectId()) <= 0)
+		else if (Olympiad.getInstance().getNoblePoints(player) <= 0)
 		{
 			activeChar.sendMessage("Player " + player + " has 0 oly points (add them with (//addolypoints).");
 			return false;

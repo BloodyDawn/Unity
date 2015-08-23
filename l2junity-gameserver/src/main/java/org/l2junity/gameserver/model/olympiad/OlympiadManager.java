@@ -27,7 +27,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
-import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -200,8 +199,22 @@ public class OlympiadManager
 		{
 			case CLASSED:
 			{
-				if (!checkNoble(player, player))
+				if (player.isOnEvent())
 				{
+					player.sendMessage("You can't join olympiad while participating on TvT Event.");
+					return false;
+				}
+				
+				if ((Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0) && !AntiFeedManager.getInstance().tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player, Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
+				{
+					final NpcHtmlMessage message = new NpcHtmlMessage(player.getLastHtmlActionOriginId());
+					message.setFile(player.getHtmlPrefix(), "data/html/mods/OlympiadIPRestriction.htm");
+					message.replace("%max%", String.valueOf(AntiFeedManager.getInstance().getLimit(player, Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP)));
+					player.sendPacket(message);
+					if (player.isGM() && player.isDebug())
+					{
+						player.sendMessage("HTML: data/html/mods/OlympiadIPRestriction.htm");
+					}
 					return false;
 				}
 				
@@ -217,8 +230,22 @@ public class OlympiadManager
 			}
 			case NON_CLASSED:
 			{
-				if (!checkNoble(player, player))
+				if (player.isOnEvent())
 				{
+					player.sendMessage("You can't join olympiad while participating on TvT Event.");
+					return false;
+				}
+				
+				if ((Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0) && !AntiFeedManager.getInstance().tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player, Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
+				{
+					final NpcHtmlMessage message = new NpcHtmlMessage(player.getLastHtmlActionOriginId());
+					message.setFile(player.getHtmlPrefix(), "data/html/mods/OlympiadIPRestriction.htm");
+					message.replace("%max%", String.valueOf(AntiFeedManager.getInstance().getLimit(player, Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP)));
+					player.sendPacket(message);
+					if (player.isGM() && player.isDebug())
+					{
+						player.sendMessage("HTML: data/html/mods/OlympiadIPRestriction.htm");
+					}
 					return false;
 				}
 				
@@ -305,114 +332,6 @@ public class OlympiadManager
 		}
 		
 		_classBasedRegisters.getOrDefault(player.getBaseClass(), Collections.emptySet()).remove(objId);
-	}
-	
-	/**
-	 * @param noble - checked noble
-	 * @param player - messages will be sent to this L2PcInstance
-	 * @return true if all requirements are met
-	 */
-	// TODO: move to the bypass handler after reworking points system
-	private boolean checkNoble(PlayerInstance noble, PlayerInstance player)
-	{
-		SystemMessage sm;
-		if (!noble.isNoble())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_DOES_NOT_MEET_THE_PARTICIPATION_REQUIREMENTS_ONLY_NOBLESSE_EXALTED_CHARACTERS_CAN_PARTICIPATE_IN_THE_OLYMPIAD);
-			sm.addPcName(noble);
-			player.sendPacket(sm);
-			return false;
-		}
-		
-		if (noble.isSubClassActive())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_DOES_NOT_MEET_THE_PARTICIPATION_REQUIREMENTS_SUBCLASSES_AND_DUEL_CLASSES_CANNOT_PARTICIPATE_IN_THE_OLYMPIAD);
-			sm.addPcName(noble);
-			player.sendPacket(sm);
-			return false;
-		}
-		
-		if (noble.isCursedWeaponEquipped())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_DOES_NOT_MEET_THE_PARTICIPATION_REQUIREMENTS_THE_OWNER_OF_S2_CANNOT_PARTICIPATE_IN_THE_OLYMPIAD);
-			sm.addPcName(noble);
-			sm.addItemName(noble.getCursedWeaponEquippedId());
-			player.sendPacket(sm);
-			return false;
-		}
-		
-		if (!noble.isInventoryUnder90(true))
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_DOES_NOT_MEET_THE_PARTICIPATION_REQUIREMENTS_AS_THE_INVENTORY_WEIGHT_SLOT_IS_FILLED_BEYOND_80);
-			sm.addPcName(noble);
-			player.sendPacket(sm);
-			return false;
-		}
-		
-		final int charId = noble.getObjectId();
-		if (noble.isOnEvent())
-		{
-			player.sendMessage("You can't join olympiad while participating on TvT Event.");
-			return false;
-		}
-		
-		if (isRegistered(noble, player, true))
-		{
-			return false;
-		}
-		
-		if (isInCompetition(noble, player, true))
-		{
-			return false;
-		}
-		
-		StatsSet statDat = Olympiad.getNobleStats(charId);
-		if (statDat == null)
-		{
-			statDat = new StatsSet();
-			statDat.set(Olympiad.CLASS_ID, noble.getBaseClass());
-			statDat.set(Olympiad.CHAR_NAME, noble.getName());
-			statDat.set(Olympiad.POINTS, Olympiad.DEFAULT_POINTS);
-			statDat.set(Olympiad.COMP_DONE, 0);
-			statDat.set(Olympiad.COMP_WON, 0);
-			statDat.set(Olympiad.COMP_LOST, 0);
-			statDat.set(Olympiad.COMP_DRAWN, 0);
-			statDat.set(Olympiad.COMP_DONE_WEEK, 0);
-			statDat.set(Olympiad.COMP_DONE_WEEK_CLASSED, 0);
-			statDat.set(Olympiad.COMP_DONE_WEEK_NON_CLASSED, 0);
-			statDat.set(Olympiad.COMP_DONE_WEEK_TEAM, 0);
-			statDat.set("to_save", true);
-			Olympiad.addNobleStats(charId, statDat);
-		}
-		
-		final int points = Olympiad.getInstance().getNoblePoints(charId);
-		if (points <= 0)
-		{
-			final NpcHtmlMessage message = new NpcHtmlMessage(player.getLastHtmlActionOriginId());
-			message.setFile(player.getHtmlPrefix(), "data/html/olympiad/noble_nopoints1.htm");
-			message.replace("%objectId%", String.valueOf(noble.getLastHtmlActionOriginId()));
-			player.sendPacket(message);
-			if (player.isGM() && player.isDebug())
-			{
-				player.sendMessage("HTML: data/html/olympiad/noble_nopoints1.htm");
-			}
-			return false;
-		}
-		
-		if ((Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0) && !AntiFeedManager.getInstance().tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, noble, Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
-		{
-			final NpcHtmlMessage message = new NpcHtmlMessage(player.getLastHtmlActionOriginId());
-			message.setFile(player.getHtmlPrefix(), "data/html/mods/OlympiadIPRestriction.htm");
-			message.replace("%max%", String.valueOf(AntiFeedManager.getInstance().getLimit(player, Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP)));
-			player.sendPacket(message);
-			if (player.isGM() && player.isDebug())
-			{
-				player.sendMessage("HTML: data/html/mods/OlympiadIPRestriction.htm");
-			}
-			return false;
-		}
-		
-		return true;
 	}
 	
 	public int getCountOpponents()
