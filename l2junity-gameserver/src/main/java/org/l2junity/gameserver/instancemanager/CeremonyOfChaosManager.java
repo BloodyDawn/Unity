@@ -137,7 +137,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		for (int i = 5; i > 0; i--)
 		{
 			final int timeLeft = i;
-			ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(timeLeft), (55 + 10 + timeLeft) * 1000);
+			ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(timeLeft), (55 + 10 + (5 - timeLeft)) * 1000);
 		}
 	}
 	
@@ -196,7 +196,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		{
 			if (player.isOnline() && canRegister(player, true))
 			{
-				if ((event == null) || (event.getPlayers().size() >= maxPlayers))
+				if ((event == null) || (event.getMembers().size() >= maxPlayers))
 				{
 					
 					event = new CeremonyOfChaosEvent(eventId++, templates.get(Rnd.get(templates.size())));
@@ -204,7 +204,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 					getEvents().add(event);
 				}
 				
-				event.addPlayer(new CeremonyOfChaosMember(player, event, position++));
+				event.addMember(new CeremonyOfChaosMember(player, event, position++));
 			}
 			else
 			{

@@ -45,6 +45,11 @@ public abstract class AbstractEvent<T extends AbstractEventMember<?>> extends Ab
 		return _members.get(objectId);
 	}
 	
+	public final void addMember(T member)
+	{
+		_members.put(member.getObjectId(), member);
+	}
+	
 	public final void broadcastPacket(IClientOutgoingPacket... packets)
 	{
 		_members.values().forEach(member -> member.sendPacket(packets));

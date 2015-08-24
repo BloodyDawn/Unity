@@ -43,7 +43,6 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 {
 	private final int _id;
 	private final Instance _instance;
-	private final Set<CeremonyOfChaosMember> _players = ConcurrentHashMap.newKeySet();
 	private final Set<L2MonsterInstance> _monsters = ConcurrentHashMap.newKeySet();
 	
 	public CeremonyOfChaosEvent(int id, String instanceTemplate)
@@ -65,16 +64,6 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	public Instance getInstance()
 	{
 		return _instance;
-	}
-	
-	public void addPlayer(CeremonyOfChaosMember player)
-	{
-		_players.add(player);
-	}
-	
-	public Set<CeremonyOfChaosMember> getPlayers()
-	{
-		return _players;
 	}
 	
 	public Set<L2MonsterInstance> getMonsters()
