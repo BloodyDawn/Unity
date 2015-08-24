@@ -55,14 +55,7 @@ public final class CallTargetParty extends AbstractEffect
 		Party party = player.getParty();
 		if (party != null)
 		{
-			party.forEachMember(p ->
-			{
-				if ((p != player) && CallPc.checkSummonTargetStatus(p, effector))
-				{
-					p.teleToLocation(player.getLocation(), true);
-				}
-				return true;
-			});
+			party.getMembers().stream().filter(p -> (p != player) && CallPc.checkSummonTargetStatus(p, effector)).forEach(p -> p.teleToLocation(player.getLocation(), true));
 		}
 	}
 }
