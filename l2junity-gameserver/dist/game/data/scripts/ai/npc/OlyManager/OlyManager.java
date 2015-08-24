@@ -18,8 +18,9 @@
  */
 package ai.npc.OlyManager;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.temporal.ChronoField;
+import java.time.temporal.WeekFields;
 import java.util.List;
 
 import org.l2junity.Config;
@@ -85,7 +86,7 @@ public final class OlyManager extends AbstractNpcAI
 				}
 				else
 				{
-					switch (LocalDate.now().get(ChronoField.ALIGNED_WEEK_OF_MONTH))
+					switch (LocalDate.now().get(WeekFields.of(DayOfWeek.MONDAY, 7).weekOfMonth()))
 					{
 						case 1:
 						case 2:
