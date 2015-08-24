@@ -1195,8 +1195,9 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack">
+			<effect name="MagicalAttackRange">
 				<param power="#power" />
+				<param powerRange="40" />
 			</effect>
 		</for>
 	</skill>
