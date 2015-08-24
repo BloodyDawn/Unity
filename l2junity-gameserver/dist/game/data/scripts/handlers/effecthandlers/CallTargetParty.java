@@ -18,6 +18,7 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -51,9 +52,10 @@ public final class CallTargetParty extends AbstractEffect
 			return;
 		}
 		
-		if (player.isInParty())
+		Party party = player.getParty();
+		if (party != null)
 		{
-			player.getParty().forEachMember(p ->
+			party.forEachMember(p ->
 			{
 				if ((p != player) && CallPc.checkSummonTargetStatus(p, effector))
 				{

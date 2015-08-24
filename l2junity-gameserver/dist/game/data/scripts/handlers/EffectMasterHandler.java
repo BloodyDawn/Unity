@@ -208,7 +208,6 @@ public final class EffectMasterHandler
 		TargetMe.class,
 		TargetMeProbability.class,
 		Teleport.class,
-		TeleportPartyToNpc.class,
 		TeleportToNpc.class,
 		TeleportToSummon.class,
 		TeleportToTarget.class,

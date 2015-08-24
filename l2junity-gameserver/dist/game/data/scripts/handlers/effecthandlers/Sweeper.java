@@ -20,6 +20,7 @@ package handlers.effecthandlers;
 
 import java.util.Collection;
 
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -45,7 +46,7 @@ public final class Sweeper extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -71,9 +72,10 @@ public final class Sweeper extends AbstractEffect
 		{
 			for (ItemHolder item : items)
 			{
-				if (player.isInParty())
+				Party party = player.getParty();
+				if (party != null)
 				{
-					player.getParty().distributeItem(player, item, true, monster);
+					party.distributeItem(player, item, true, monster);
 				}
 				else
 				{

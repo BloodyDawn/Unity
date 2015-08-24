@@ -18,6 +18,7 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -45,12 +46,13 @@ public final class CallParty extends AbstractEffect
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (!effector.isInParty())
+		Party party = effector.getParty();
+		if (party == null)
 		{
 			return;
 		}
 		
-		for (PlayerInstance partyMember : effector.getParty().getMembers())
+		for (PlayerInstance partyMember : party.getMembers())
 		{
 			if (CallPc.checkSummonTargetStatus(partyMember, effector.getActingPlayer()))
 			{

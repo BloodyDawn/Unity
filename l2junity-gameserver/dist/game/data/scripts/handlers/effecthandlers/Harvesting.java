@@ -19,6 +19,7 @@
 package handlers.effecthandlers;
 
 import org.l2junity.commons.util.Rnd;
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
@@ -46,7 +47,7 @@ public final class Harvesting extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -87,7 +88,8 @@ public final class Harvesting extends AbstractEffect
 					player.sendPacket(sm);
 					
 					// Send msg to party
-					if (player.isInParty())
+					Party party = player.getParty();
+					if (party != null)
 					{
 						if (item.getCount() == 1)
 						{
@@ -102,7 +104,7 @@ public final class Harvesting extends AbstractEffect
 							sm.addLong(item.getCount());
 							sm.addItemName(item.getId());
 						}
-						player.getParty().broadcastToPartyMembers(player, sm);
+						party.broadcastToPartyMembers(player, sm);
 					}
 				}
 			}

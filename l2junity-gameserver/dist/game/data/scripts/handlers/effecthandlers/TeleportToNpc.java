@@ -19,6 +19,7 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -31,18 +32,20 @@ import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.ValidateLocation;
 
 /**
- * Teleport to summoned npc effect implementation.
+ * Teleport player/party to summoned npc effect implementation.
  * @author Nik
  */
 public final class TeleportToNpc extends AbstractEffect
 {
 	private final int _npcId;
+	private final boolean _party;
 	
 	public TeleportToNpc(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
 		_npcId = params.getInt("npcId", 0);
+		_party = params.getBoolean("party", false);
 	}
 	
 	@Override
@@ -68,19 +71,32 @@ public final class TeleportToNpc extends AbstractEffect
 		ILocational teleLocation = effector.getSummonedNpcs().stream().filter(npc -> npc.getId() == _npcId).findAny().orElse(null);
 		if (teleLocation != null)
 		{
-			if (effected.isInsideRadius(teleLocation, 900, false, false))
+			Party party = effected.getParty();
+			if (_party && (party != null))
 			{
-				effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-				effected.broadcastPacket(new FlyToLocation(effected, teleLocation, FlyType.DUMMY));
-				effected.abortAttack();
-				effected.abortCast();
-				effected.setXYZ(teleLocation);
-				effected.broadcastPacket(new ValidateLocation(effected));
+				party.getMembers().forEach(p -> teleport(p, teleLocation));
 			}
 			else
 			{
-				effected.teleToLocation(teleLocation);
+				teleport(effected, teleLocation);
 			}
+		}
+	}
+	
+	private void teleport(Creature effected, ILocational location)
+	{
+		if (effected.isInsideRadius(location, 900, false, false))
+		{
+			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+			effected.broadcastPacket(new FlyToLocation(effected, location, FlyType.DUMMY));
+			effected.abortAttack();
+			effected.abortCast();
+			effected.setXYZ(location);
+			effected.broadcastPacket(new ValidateLocation(effected));
+		}
+		else
+		{
+			effected.teleToLocation(location);
 		}
 	}
 }
