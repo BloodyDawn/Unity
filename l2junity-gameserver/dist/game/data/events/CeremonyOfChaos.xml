@@ -59,7 +59,7 @@
 			</schedule>
 
 			<!-- Schedule of the event match registration end, usually every 20 min -->
-			<schedule minute="14,29,44,59" hour="18-23" dayOfMonth="*" month="*" dayOfWeek="*" repeat="true">
+			<schedule name="stopFight" minute="14,29,44,59" hour="18-23" dayOfMonth="*" month="*" dayOfWeek="*" repeat="true">
 				<event name="#onEndFight" />
 			</schedule>
 		</scheduler>

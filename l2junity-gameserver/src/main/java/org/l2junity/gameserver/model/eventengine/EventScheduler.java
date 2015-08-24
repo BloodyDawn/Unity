@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model.eventengine;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.StatsSet;
@@ -36,6 +37,7 @@ public class EventScheduler
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(EventScheduler.class);
 	private final AbstractEventManager<?> _manager;
+	private final String _name;
 	private final String _pattern;
 	private final boolean _repeat;
 	private List<EventMethodNotification> _notifications;
@@ -44,8 +46,14 @@ public class EventScheduler
 	public EventScheduler(AbstractEventManager<?> manager, StatsSet set)
 	{
 		_manager = manager;
+		_name = set.getString("name", "");
 		_pattern = set.getString("minute", "*") + " " + set.getString("hour", "*") + " " + set.getString("dayOfMonth", "*") + " " + set.getString("month", "*") + " " + set.getString("dayOfWeek", "*");
 		_repeat = set.getBoolean("repeat", false);
+	}
+	
+	public String getName()
+	{
+		return _name;
 	}
 	
 	public long getNextSchedule()
@@ -116,5 +124,10 @@ public class EventScheduler
 			_task.cancel(false);
 			_task = null;
 		}
+	}
+	
+	public long getRemainingTime(TimeUnit unit)
+	{
+		return (_task != null) && !_task.isDone() ? _task.getDelay(unit) : 0;
 	}
 }

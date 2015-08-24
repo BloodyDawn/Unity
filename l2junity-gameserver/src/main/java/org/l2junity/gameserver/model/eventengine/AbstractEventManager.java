@@ -53,6 +53,11 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 		return _variables;
 	}
 	
+	public EventScheduler getScheduler(String name)
+	{
+		return _schedulers.stream().filter(scheduler -> scheduler.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
+	}
+	
 	public Set<EventScheduler> getSchedulers()
 	{
 		return _schedulers;
@@ -97,7 +102,7 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 	{
 		return _registeredPlayers.contains(player);
 	}
-
+	
 	public boolean canRegister(PlayerInstance player, boolean sendMessage)
 	{
 		return !_registeredPlayers.contains(player);
@@ -107,7 +112,7 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 	{
 		return _registeredPlayers;
 	}
-
+	
 	@RegisterEvent(EventType.ON_PLAYER_LOGOUT)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	private void onPlayerLogout(OnPlayerLogout event)
@@ -125,9 +130,9 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 	 */
 	protected void onUnregisteredPlayer(PlayerInstance player)
 	{
-		
+	
 	}
-
+	
 	@Override
 	public String getScriptName()
 	{

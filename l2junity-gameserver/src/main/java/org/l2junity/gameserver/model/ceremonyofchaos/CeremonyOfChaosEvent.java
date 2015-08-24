@@ -20,9 +20,12 @@ package org.l2junity.gameserver.model.ceremonyofchaos;
 
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.TimeUnit;
 
 import org.l2junity.gameserver.instancemanager.CeremonyOfChaosManager;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.appearance.PcAppearance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
@@ -32,8 +35,10 @@ import org.l2junity.gameserver.model.eventengine.AbstractEvent;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.appearance.ExCuriousHouseMemberUpdate;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseEnter;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseMemberList;
+import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseRemainTime;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
@@ -211,6 +216,8 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				});
 			}
 		}
+		
+		getTimers().addRepeatingTimer("update", 1000, null, null);
 	}
 	
 	public void stopFight()
@@ -231,6 +238,22 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				
 				// Remove player from event
 				player.removeFromEvent(this);
+			}
+		}
+		getTimers().cancelTimer("update", null, null);
+	}
+	
+	@Override
+	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
+	{
+		switch (event)
+		{
+			case "update":
+			{
+				final int time = (int) CeremonyOfChaosManager.getInstance().getScheduler("stopFight").getRemainingTime(TimeUnit.SECONDS);
+				broadcastPacket(new ExCuriousHouseRemainTime(time));
+				getMembers().values().forEach(p -> broadcastPacket(new ExCuriousHouseMemberUpdate(p)));
+				break;
 			}
 		}
 	}
