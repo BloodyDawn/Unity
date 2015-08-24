@@ -19,27 +19,20 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
- * Add Hate effect implementation.
- * @author Adry_85
+ * Unsummon my servitors effect implementation.
+ * @author Nik
  */
-public final class AddHate extends AbstractEffect
+public final class UnsummonServitors extends AbstractEffect
 {
-	private final double _power;
-	private final boolean _affectSummoner;
-	
-	public AddHate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public UnsummonServitors(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-		
-		_power = params.getDouble("power", 0);
-		_affectSummoner = params.getBoolean("affectSummoner", false);
 	}
 	
 	@Override
@@ -51,24 +44,16 @@ public final class AddHate extends AbstractEffect
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (_affectSummoner && (effector.getSummoner() != null))
+		if (effector.hasServitors())
 		{
-			effector = effector.getSummoner();
-		}
-		
-		if (!effected.isAttackable())
-		{
-			return;
-		}
-		
-		final double val = _power;
-		if (val > 0)
-		{
-			((Attackable) effected).addDamageHate(effector, 0, (int) val);
-		}
-		else if (val < 0)
-		{
-			((Attackable) effected).reduceHate(effector, (int) -val);
+			effector.getServitors().values().forEach(servitor ->
+			{
+				servitor.abortAttack();
+				servitor.abortCast();
+				servitor.stopAllEffects();
+				
+				servitor.unSummon(effector.getActingPlayer());
+			});
 		}
 	}
 }

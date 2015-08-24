@@ -18,43 +18,49 @@
  */
 package handlers.effecthandlers;
 
-import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.client.send.SystemMessage;
-import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * Clan Gate effect implementation.
- * @author ZaKaX
+ * GM Effect: Call Target's Party around target effect implementation.
+ * @author Nik
  */
-public final class ClanGate extends AbstractEffect
+public final class CallTargetParty extends AbstractEffect
 {
-	public ClanGate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public CallTargetParty(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 	}
-
+	
 	@Override
 	public boolean isInstant()
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (effected.isPlayer())
+		PlayerInstance player = effected.getActingPlayer();
+		if ((player == null))
 		{
-			final L2Clan clan = effected.getActingPlayer().getClan();
-			if (clan != null)
+			return;
+		}
+		
+		if (player.isInParty())
+		{
+			player.getParty().forEachMember(p ->
 			{
-				SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.COURT_WIZARD_THE_PORTAL_HAS_BEEN_CREATED);
-				clan.broadcastToOtherOnlineMembers(msg, effected.getActingPlayer());
-			}
+				if ((p != player) && CallPc.checkSummonTargetStatus(p, effector))
+				{
+					p.teleToLocation(player.getLocation(), true);
+				}
+				return true;
+			});
 		}
 	}
 }

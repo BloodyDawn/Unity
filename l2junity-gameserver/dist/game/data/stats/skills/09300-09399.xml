@@ -823,6 +823,16 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="reuseDelay" val="1800000" />
+		<for>
+			<effect name="SummonNpc">
+				<param npcId="13354" npcCount="1" despawnDelay="300000" singleInstance="true" />
+			</effect>
+		</for>
+		<selfEffects>
+			<effect name="CallSkill">
+				<param skillId="9372" skillLevel="1" /> <!-- Sayha's Portal -->
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="9372" levels="1" name="Sayha's Portal">
 		<!-- AUTO GENERATED SKILL -->
@@ -852,6 +862,11 @@
 		<set name="reuseDelayGroup" val="9373" />
 		<set name="affectRange" val="1500" />
 		<set name="reuseDelay" val="60000" />
+		<for>
+			<effect name="TeleportToNpc"> <!-- TODO on level 2 teleports party -->
+				<param npcId="13354" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="9375" levels="1" name="Einhasad's Energy">
 		<!-- AUTO GENERATED SKILL -->

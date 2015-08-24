@@ -18,6 +18,27 @@
  */
 package handlers;
 
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import org.l2junity.Config;
+import org.l2junity.gameserver.handler.ActionHandler;
+import org.l2junity.gameserver.handler.ActionShiftHandler;
+import org.l2junity.gameserver.handler.AdminCommandHandler;
+import org.l2junity.gameserver.handler.BypassHandler;
+import org.l2junity.gameserver.handler.ChatHandler;
+import org.l2junity.gameserver.handler.CommunityBoardHandler;
+import org.l2junity.gameserver.handler.IHandler;
+import org.l2junity.gameserver.handler.ItemHandler;
+import org.l2junity.gameserver.handler.PunishmentHandler;
+import org.l2junity.gameserver.handler.TargetHandler;
+import org.l2junity.gameserver.handler.UserCommandHandler;
+import org.l2junity.gameserver.handler.VoicedCommandHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import handlers.actionhandlers.L2ArtefactInstanceAction;
 import handlers.actionhandlers.L2DecoyAction;
 import handlers.actionhandlers.L2DoorInstanceAction;
@@ -182,7 +203,6 @@ import handlers.itemhandlers.SoulShots;
 import handlers.itemhandlers.SpecialXMas;
 import handlers.itemhandlers.SpiritShot;
 import handlers.itemhandlers.SummonItems;
-import handlers.itemhandlers.TeleportBookmark;
 import handlers.punishmenthandlers.BanHandler;
 import handlers.punishmenthandlers.ChatBanHandler;
 import handlers.punishmenthandlers.JailHandler;
@@ -243,27 +263,6 @@ import handlers.voicedcommandhandlers.ChatAdmin;
 import handlers.voicedcommandhandlers.Debug;
 import handlers.voicedcommandhandlers.Lang;
 import handlers.voicedcommandhandlers.StatsVCmd;
-
-import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-
-import org.l2junity.Config;
-import org.l2junity.gameserver.handler.ActionHandler;
-import org.l2junity.gameserver.handler.ActionShiftHandler;
-import org.l2junity.gameserver.handler.AdminCommandHandler;
-import org.l2junity.gameserver.handler.BypassHandler;
-import org.l2junity.gameserver.handler.ChatHandler;
-import org.l2junity.gameserver.handler.CommunityBoardHandler;
-import org.l2junity.gameserver.handler.IHandler;
-import org.l2junity.gameserver.handler.ItemHandler;
-import org.l2junity.gameserver.handler.PunishmentHandler;
-import org.l2junity.gameserver.handler.TargetHandler;
-import org.l2junity.gameserver.handler.UserCommandHandler;
-import org.l2junity.gameserver.handler.VoicedCommandHandler;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Master handler.
@@ -474,7 +473,6 @@ public class MasterHandler
 			SpecialXMas.class,
 			SpiritShot.class,
 			SummonItems.class,
-			TeleportBookmark.class,
 		},
 		{
 			// Punishment Handlers

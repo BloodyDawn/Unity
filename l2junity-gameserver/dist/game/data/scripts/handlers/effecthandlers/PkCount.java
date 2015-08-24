@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2015 L2J Unity
  * 
- * This file is part of L2J DataPack.
+ * This file is part of L2J Unity.
  * 
- * L2J DataPack is free software: you can redistribute it and/or modify
+ * L2J Unity is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * L2J DataPack is distributed in the hope that it will be useful,
+ * L2J Unity is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
@@ -19,27 +19,26 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.client.send.UserInfo;
 
 /**
- * Add Hate effect implementation.
- * @author Adry_85
+ * Item Effect: Increase/decrease PK count permanently.
+ * @author Nik
  */
-public final class AddHate extends AbstractEffect
+public class PkCount extends AbstractEffect
 {
-	private final double _power;
-	private final boolean _affectSummoner;
+	private final int _amount;
 	
-	public AddHate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public PkCount(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
 	{
 		super(attachCond, applyCond, set, params);
 		
-		_power = params.getDouble("power", 0);
-		_affectSummoner = params.getBoolean("affectSummoner", false);
+		_amount = params.getInt("amount", 0);
 	}
 	
 	@Override
@@ -51,24 +50,17 @@ public final class AddHate extends AbstractEffect
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (_affectSummoner && (effector.getSummoner() != null))
-		{
-			effector = effector.getSummoner();
-		}
-		
-		if (!effected.isAttackable())
+		PlayerInstance player = effected.getActingPlayer();
+		if (player == null)
 		{
 			return;
 		}
 		
-		final double val = _power;
-		if (val > 0)
+		if (player.getPkKills() > 0)
 		{
-			((Attackable) effected).addDamageHate(effector, 0, (int) val);
-		}
-		else if (val < 0)
-		{
-			((Attackable) effected).reduceHate(effector, (int) -val);
+			final int newPkCount = Math.max(player.getPkKills() + _amount, 0);
+			player.setPkKills(newPkCount);
+			player.sendPacket(new UserInfo(player));
 		}
 	}
 }

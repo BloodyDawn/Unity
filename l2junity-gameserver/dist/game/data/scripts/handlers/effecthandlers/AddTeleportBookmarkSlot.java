@@ -19,27 +19,26 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * Add Hate effect implementation.
- * @author Adry_85
+ * Item Effect: Gives teleport bookmark slots to the owner.
+ * @author Nik
  */
-public final class AddHate extends AbstractEffect
+public final class AddTeleportBookmarkSlot extends AbstractEffect
 {
-	private final double _power;
-	private final boolean _affectSummoner;
+	private final int _amount;
 	
-	public AddHate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public AddTeleportBookmarkSlot(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
-		_power = params.getDouble("power", 0);
-		_affectSummoner = params.getBoolean("affectSummoner", false);
+		_amount = params.getInt("amount", 0);
 	}
 	
 	@Override
@@ -51,24 +50,13 @@ public final class AddHate extends AbstractEffect
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (_affectSummoner && (effector.getSummoner() != null))
-		{
-			effector = effector.getSummoner();
-		}
-		
-		if (!effected.isAttackable())
+		if (!effected.isPlayer())
 		{
 			return;
 		}
 		
-		final double val = _power;
-		if (val > 0)
-		{
-			((Attackable) effected).addDamageHate(effector, 0, (int) val);
-		}
-		else if (val < 0)
-		{
-			((Attackable) effected).reduceHate(effector, (int) -val);
-		}
+		PlayerInstance player = effected.getActingPlayer();
+		player.setBookMarkSlot(player.getBookMarkSlot() + _amount);
+		player.sendPacket(SystemMessageId.THE_NUMBER_OF_MY_TELEPORTS_SLOTS_HAS_BEEN_INCREASED);
 	}
 }
