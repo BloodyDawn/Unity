@@ -195,6 +195,7 @@ import org.l2junity.gameserver.model.eventengine.AbstractEvent;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerEquipItem;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerFameChanged;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerHennaAdd;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerHennaRemove;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
@@ -7855,7 +7856,7 @@ public final class PlayerInstance extends Playable
 				sendPacket(ui);
 				
 				// Notify to scripts
-				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerHennaRemove(this, henna), this);
+				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerHennaAdd(this, henna), this);
 				return true;
 			}
 		}
