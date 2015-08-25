@@ -18,8 +18,6 @@
  */
 package handlers.telnethandlers.player;
 
-import io.netty.channel.ChannelHandlerContext;
-
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -29,6 +27,8 @@ import org.l2junity.gameserver.network.telnet.ITelnetCommand;
 import org.l2junity.gameserver.network.telnet.TelnetServer;
 import org.l2junity.gameserver.util.GMAudit;
 import org.l2junity.gameserver.util.Util;
+
+import io.netty.channel.ChannelHandlerContext;
 
 /**
  * @author UnAfraid
@@ -63,7 +63,7 @@ public class Enchant implements ITelnetCommand
 		{
 			int itemType = Integer.parseInt(args[1]);
 			int enchant = Integer.parseInt(args[2]);
-			enchant = Math.min(enchant, 65535);
+			enchant = Math.min(enchant, 127);
 			enchant = Math.max(enchant, 0);
 			
 			switch (itemType)
