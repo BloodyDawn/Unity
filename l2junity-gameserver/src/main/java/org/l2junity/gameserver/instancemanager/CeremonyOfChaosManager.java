@@ -269,7 +269,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			sm = SystemMessageId.ONLY_CHARACTERS_WHO_HAVE_COMPLETED_THE_3RD_CLASS_TRANSFER_MAY_PARTICIPATE;
 			canRegister = false;
 		}
-		else if (!player.isInventoryUnder90(false))
+		else if (!player.isInventoryUnder80(false) || (player.getWeightPenalty() != 0))
 		{
 			sm = SystemMessageId.UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_AND_SLOT_COUNT_ARE_LESS_THAN_80_PERCENT_OF_CAPACITY;
 			canRegister = false;
@@ -319,6 +319,8 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			sm = SystemMessageId.YOU_ARE_ON_THE_WAITING_LIST_FOR_THE_CEREMONY_OF_CHAOS;
 			canRegister = false;
 		}
+		
+		// TODO : One player can take part in 16 matches per day.
 		
 		if ((sm != null) && sendMessage)
 		{

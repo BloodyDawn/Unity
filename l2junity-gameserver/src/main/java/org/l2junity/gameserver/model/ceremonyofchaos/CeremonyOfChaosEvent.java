@@ -24,6 +24,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.l2junity.gameserver.instancemanager.CeremonyOfChaosManager;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
+import org.l2junity.gameserver.model.Party;
+import org.l2junity.gameserver.model.Party.MessageType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
@@ -32,9 +34,17 @@ import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.eventengine.AbstractEvent;
+import org.l2junity.gameserver.model.events.EventType;
+import org.l2junity.gameserver.model.events.ListenerRegisterType;
+import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
+import org.l2junity.gameserver.model.events.annotations.RegisterType;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.SkillCoolTime;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.appearance.ExCuriousHouseMemberUpdate;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseEnter;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseMemberList;
@@ -49,6 +59,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	private final int _id;
 	private final Instance _instance;
 	private final Set<L2MonsterInstance> _monsters = ConcurrentHashMap.newKeySet();
+	private long _battleStartTime = 0;
 	
 	public CeremonyOfChaosEvent(int id, String instanceTemplate)
 	{
@@ -111,7 +122,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			msg.setFile(player.getHtmlPrefix(), "data/html/CeremonyOfChaos/started.htm");
 			
 			// Remove buffs
-			player.stopAllEffects();
+			player.stopAllEffectsExceptThoseThatLastThroughDeath();
 			
 			// Player shouldn't be able to move and is hidden
 			player.setIsImmobilized(true);
@@ -120,11 +131,12 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			// Same goes for summon
 			player.getServitors().values().forEach(s ->
 			{
+				s.stopAllEffectsExceptThoseThatLastThroughDeath();
 				s.setInvisible(true);
 				s.setIsImmobilized(true);
 			});
 			
-			if (player.isTransformed())
+			if (player.isFlyingMounted())
 			{
 				player.untransform();
 			}
@@ -142,9 +154,10 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			}
 			
 			// If player in party, leave it
-			if (player.isInParty())
+			final Party party = player.getParty();
+			if (party != null)
 			{
-				player.leaveParty();
+				party.removePartyMember(player, MessageType.EXPELLED);
 			}
 			
 			// Cancel any started action
@@ -166,10 +179,22 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				player.setAgathionId(0);
 			}
 			
-			// Fully regen player
+			// The character’s HP, MP, and CP are fully recovered.
 			player.setCurrentHp(player.getMaxHp());
 			player.setCurrentMp(player.getMaxMp());
 			player.setCurrentCp(player.getMaxCp());
+			
+			// Skill reuse timers for all skills that have less than 15 minutes of cooldown time are reset.
+			for (Skill skill : player.getAllSkills())
+			{
+				if (skill.getReuseDelay() <= 900000)
+				{
+					player.enableSkill(skill);
+				}
+			}
+			
+			player.sendSkillList();
+			player.sendPacket(new SkillCoolTime(player));
 			
 			// Apply the Energy of Chaos skill
 			for (SkillHolder holder : CeremonyOfChaosManager.getInstance().getVariables().getList(CeremonyOfChaosManager.BUFF_KEY, SkillHolder.class))
@@ -195,6 +220,23 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			// Teleport player to the arena
 			player.teleToLocation(_instance.getSpawnLoc(), _instance.getId(), 200);
 		}
+		
+		final SystemMessage countdown = SystemMessage.getSystemMessage(SystemMessageId.THE_MATCH_WILL_START_IN_S1_SECOND_S);
+		countdown.addByte(60);
+		broadcastPacket(countdown);
+		
+		getTimers().addTimer("teleport_message1", 10000, null, null);
+		getTimers().addTimer("teleport_message2", 14000, null, null);
+		getTimers().addTimer("teleport_message3", 18000, null, null);
+		
+		getTimers().addTimer("countdown", StatsSet.valueOf("time", 30), 30000, null, null);
+		getTimers().addTimer("countdown", StatsSet.valueOf("time", 20), 40000, null, null);
+		getTimers().addTimer("countdown", StatsSet.valueOf("time", 10), 50000, null, null);
+		
+		for (int i = 5; i > 0; i--)
+		{
+			getTimers().addTimer("countdown", StatsSet.valueOf("time", i), (55 + (5 - i)) * 1000, null, null);
+		}
 	}
 	
 	public void startFight()
@@ -216,12 +258,14 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				});
 			}
 		}
-		
+		_battleStartTime = System.currentTimeMillis();
 		getTimers().addRepeatingTimer("update", 1000, null, null);
 	}
 	
 	public void stopFight()
 	{
+		getMembers().values().stream().filter(p -> p.getLifeTime() == 0).forEach(p -> p.setLifeTime(System.currentTimeMillis() - _battleStartTime));
+		
 		for (CeremonyOfChaosMember member : getMembers().values())
 		{
 			final PlayerInstance player = member.getPlayer();
@@ -254,6 +298,47 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				broadcastPacket(new ExCuriousHouseRemainTime(time));
 				getMembers().values().forEach(p -> broadcastPacket(new ExCuriousHouseMemberUpdate(p)));
 				break;
+			}
+			case "teleport_message1":
+			{
+				broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.PROVE_YOUR_ABILITIES));
+				break;
+			}
+			case "teleport_message2":
+			{
+				broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.THERE_ARE_NO_ALLIES_HERE_EVERYONE_IS_AN_ENEMY));
+				break;
+			}
+			case "teleport_message3":
+			{
+				broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.IT_WILL_BE_A_LONELY_BATTLE_BUT_I_WISH_YOU_VICTORY));
+				break;
+			}
+			case "countdown":
+			{
+				final SystemMessage countdown = SystemMessage.getSystemMessage(SystemMessageId.THE_MATCH_WILL_START_IN_S1_SECOND_S);
+				countdown.addByte(params.getInt("time", 0));
+				broadcastPacket(countdown);
+				break;
+			}
+		}
+	}
+	
+	@RegisterEvent(EventType.ON_CREATURE_KILL)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	public void onPlayerDeath(OnCreatureKill event)
+	{
+		if (event.getAttacker().isPlayer() && event.getTarget().isPlayer())
+		{
+			final PlayerInstance attacker = event.getAttacker().getActingPlayer();
+			final PlayerInstance target = event.getTarget().getActingPlayer();
+			
+			if (isOnEvent(attacker) && isOnEvent(target))
+			{
+				final CeremonyOfChaosMember attackerMember = getMembers().values().stream().filter(p -> p.getPlayer() == attacker).findFirst().orElse(null);
+				attackerMember.incrementScore();
+				final CeremonyOfChaosMember targetMember = getMembers().values().stream().filter(p -> p.getPlayer() == target).findFirst().orElse(null);
+				targetMember.setLifeTime(System.currentTimeMillis() - _battleStartTime);
 			}
 		}
 	}

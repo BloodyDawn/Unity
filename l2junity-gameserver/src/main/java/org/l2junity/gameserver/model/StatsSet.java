@@ -715,4 +715,11 @@ public class StatsSet implements IParserAdvUtils
 		}
 		_set.put(key, value);
 	}
+	
+	public static StatsSet valueOf(String key, Object value)
+	{
+		final StatsSet set = new StatsSet();
+		set.set(key, value);
+		return set;
+	}
 }

@@ -27,6 +27,7 @@ import org.l2junity.gameserver.model.eventengine.AbstractEventMember;
 public class CeremonyOfChaosMember extends AbstractEventMember<CeremonyOfChaosEvent>
 {
 	private final int _position;
+	private long _lifeTime = 0;
 	
 	public CeremonyOfChaosMember(PlayerInstance player, CeremonyOfChaosEvent event, int position)
 	{
@@ -37,5 +38,15 @@ public class CeremonyOfChaosMember extends AbstractEventMember<CeremonyOfChaosEv
 	public int getPosition()
 	{
 		return _position;
+	}
+	
+	public void setLifeTime(long time)
+	{
+		_lifeTime = time;
+	}
+	
+	public long getLifeTime()
+	{
+		return _lifeTime;
 	}
 }
