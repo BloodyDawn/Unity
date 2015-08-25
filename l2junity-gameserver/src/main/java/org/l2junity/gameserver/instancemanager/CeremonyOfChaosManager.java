@@ -216,6 +216,9 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			}
 		}
 		
+		// Clear previously registrated players
+		getRegisteredPlayers().clear();
+		
 		// Prepare all event's players for start
 		getEvents().forEach(CeremonyOfChaosEvent::preparePlayers);
 	}
@@ -311,11 +314,6 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		else if (player.isInsideZone(ZoneId.SIEGE))
 		{
 			sm = SystemMessageId.YOU_CANNOT_REGISTER_IN_THE_WAITING_LIST_WHILE_BEING_INSIDE_OF_A_BATTLEGROUND_CASTLE_SIEGE_FORTRESS_SIEGE;
-			canRegister = false;
-		}
-		else if (isRegistered(player))
-		{
-			sm = SystemMessageId.YOU_ARE_ON_THE_WAITING_LIST_FOR_THE_CEREMONY_OF_CHAOS;
 			canRegister = false;
 		}
 		
