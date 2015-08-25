@@ -67,7 +67,10 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	@Override
 	public void onInitialized()
 	{
-	
+		if (getState() == null)
+		{
+			setState(CeremonyOfChaosState.SCHEDULED);
+		}
 	}
 	
 	@ScheduleTarget
@@ -250,11 +253,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		
 		SystemMessageId sm = null;
 		
-		if (getState() != CeremonyOfChaosState.REGISTRATION)
-		{
-			canRegister = false;
-		}
-		else if (player.getLevel() < 85)
+		if (player.getLevel() < 85)
 		{
 			sm = SystemMessageId.ONLY_CHARACTERS_LEVEL_85_OR_ABOVE_MAY_PARTICIPATE_IN_THE_TOURNAMENT;
 			canRegister = false;
