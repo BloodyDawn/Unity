@@ -97,7 +97,6 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSkillL
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSummonSpawn;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSummonTalk;
 import org.l2junity.gameserver.model.events.impl.character.player.OnTrapAction;
-import org.l2junity.gameserver.model.events.impl.instance.OnInstanceCreate;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceCreated;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceDestroy;
 import org.l2junity.gameserver.model.events.impl.instance.OnInstanceEnter;
@@ -1173,32 +1172,6 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	{
 		return registerConsumer(callback, EventType.ON_PLAYER_PROFESSION_CHANGE, ListenerRegisterType.GLOBAL);
 	}
-	
-	// ---------------------------------------------------------------------------------------------------------------------------
-	
-	/**
-	 * Provides instant callback operation before instance world is created
-	 * @param callback
-	 * @param templateIds
-	 * @return
-	 */
-	protected final List<AbstractEventListener> setInstanceCreateId(Function<OnInstanceCreate, TerminateReturn> callback, int... templateIds)
-	{
-		return registerFunction(callback, EventType.ON_INSTANCE_CREATE, ListenerRegisterType.INSTANCE, templateIds);
-	}
-	
-	/**
-	 * Provides instant callback operation before instance world is created
-	 * @param callback
-	 * @param templateIds
-	 * @return
-	 */
-	protected final List<AbstractEventListener> setInstanceCreateId(Function<OnInstanceCreate, TerminateReturn> callback, Collection<Integer> templateIds)
-	{
-		return registerFunction(callback, EventType.ON_INSTANCE_CREATE, ListenerRegisterType.INSTANCE, templateIds);
-	}
-	
-	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
 	 * Provides instant callback operation when instance world created

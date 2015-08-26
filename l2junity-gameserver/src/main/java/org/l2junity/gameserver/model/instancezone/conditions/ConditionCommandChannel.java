@@ -33,7 +33,7 @@ public final class ConditionCommandChannel extends Condition
 	
 	public ConditionCommandChannel(InstanceTemplate template, StatsSet parameters, boolean onlyLeader)
 	{
-		super(template, parameters, onlyLeader);
+		super(template, parameters, true);
 		setSystemMessage(SystemMessageId.YOU_CANNOT_ENTER_BECAUSE_YOU_ARE_NOT_ASSOCIATED_WITH_THE_CURRENT_COMMAND_CHANNEL);
 	}
 	

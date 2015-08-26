@@ -113,7 +113,10 @@ public final class Instance implements IIdentifiable, INamable
 		setDuration(_template.getDuration());
 		setStatus(0);
 		spawnDoors();
-		spawnGroup("general");
+		if (isSpawnGroupExist("general"))
+		{
+			spawnGroup("general");
+		}
 		
 		if (!isDynamic())
 		{
@@ -391,6 +394,16 @@ public final class Instance implements IIdentifiable, INamable
 	public L2DoorInstance getDoor(int id)
 	{
 		return _doors.get(id);
+	}
+	
+	/**
+	 * Check if spawn group with name {@code name} exists.
+	 * @param name name of group to be checked
+	 * @return {@code true} if group exist, otherwise {@code false}
+	 */
+	public boolean isSpawnGroupExist(String name)
+	{
+		return _template.getSpawnGroup(name) != null;
 	}
 	
 	/**
@@ -791,7 +804,7 @@ public final class Instance implements IIdentifiable, INamable
 			{
 				ejectPlayer(player.getActingPlayer());
 			}
-		} , TimeUnit.MINUTES.toMillis(_template.getEjectTime())));
+		} , _template.getEjectTime(), TimeUnit.MINUTES));
 	}
 	
 	/**
@@ -988,12 +1001,12 @@ public final class Instance implements IIdentifiable, INamable
 		if (getRemainingTime() <= TimeUnit.MINUTES.toMillis(1))
 		{
 			sendWorldDestroyMessage(1);
-			_cleanUpTask = ThreadPoolManager.getInstance().scheduleGeneral(this::destroy, TimeUnit.MINUTES.toMillis(1));
+			_cleanUpTask = ThreadPoolManager.getInstance().scheduleGeneral(this::destroy, 1, TimeUnit.MINUTES);
 		}
 		else
 		{
 			sendWorldDestroyMessage(5);
-			_cleanUpTask = ThreadPoolManager.getInstance().scheduleGeneral(this::cleanUp, TimeUnit.MINUTES.toMillis(5));
+			_cleanUpTask = ThreadPoolManager.getInstance().scheduleGeneral(this::cleanUp, 5, TimeUnit.MINUTES);
 		}
 	}
 	

@@ -15,13 +15,13 @@
 		<exit type="ORIGIN" />
 	</locations>
 	<conditions>
-		<condition type="Party" onlyLeader="true" />
-		<condition type="CommandChannel" onlyLeader="true" />
-		<condition type="CommandChannelLeader" onlyLeader="true" />
-		<condition type="GroupMin" onlyLeader="true">
+		<condition type="Party" />
+		<condition type="CommandChannel" />
+		<condition type="CommandChannelLeader" />
+		<condition type="GroupMin">
 			<param name="limit" value="10" />
 		</condition>
-		<condition type="GroupMax" onlyLeader="true">
+		<condition type="GroupMax">
 			<param name="limit" value="27" />
 		</condition>
 		<condition type="Level">

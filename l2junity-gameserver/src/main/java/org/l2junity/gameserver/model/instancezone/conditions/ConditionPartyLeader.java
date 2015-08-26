@@ -32,7 +32,7 @@ public final class ConditionPartyLeader extends Condition
 {
 	public ConditionPartyLeader(InstanceTemplate template, StatsSet parameters, boolean onlyLeader)
 	{
-		super(template, parameters, onlyLeader);
+		super(template, parameters, true);
 		setSystemMessage(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_MAKE_THE_REQUEST_TO_ENTER);
 	}
 	

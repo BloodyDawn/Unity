@@ -34,7 +34,7 @@ public final class ConditionGroupMin extends Condition
 {
 	public ConditionGroupMin(InstanceTemplate template, StatsSet parameters, boolean onlyLeader)
 	{
-		super(template, parameters, onlyLeader);
+		super(template, parameters, true);
 		setSystemMessage(SystemMessageId.YOU_MUST_HAVE_A_MINIMUM_OF_S1_PEOPLE_TO_ENTER_THIS_INSTANCED_ZONE, (msg, player) -> msg.addInt(getLimit()));
 	}
 	

@@ -17,8 +17,8 @@
 		<param name="raidGatekeeper" value="32668" />
 	</parameters>
 	<conditions>
-		<condition type="Party" onlyLeader="true" />
-		<condition type="PartyLeader" onlyLeader="true" />
+		<condition type="Party" />
+		<condition type="PartyLeader" />
 		<condition type="GroupMin">
 			<param name="limit" value="2" />
 		</condition>

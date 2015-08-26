@@ -41,11 +41,6 @@ import ai.npc.AbstractNpcAI;
  */
 public abstract class AbstractInstance extends AbstractNpcAI
 {
-	public AbstractInstance(String name, String desc)
-	{
-		super(name, desc);
-	}
-	
 	public AbstractInstance(String name)
 	{
 		super(name, "instances");
@@ -120,7 +115,8 @@ public abstract class AbstractInstance extends AbstractNpcAI
 		else
 		{
 			// Get instance template
-			final InstanceTemplate template = InstanceManager.getInstance().getInstanceTemplate(templateId);
+			final InstanceManager manager = InstanceManager.getInstance();
+			final InstanceTemplate template = manager.getInstanceTemplate(templateId);
 			if (template == null)
 			{
 				_log.warn("Player {} ({}) wants to create instance with unknown template id {}!", player.getName(), player.getObjectId(), templateId);
@@ -137,8 +133,15 @@ public abstract class AbstractInstance extends AbstractNpcAI
 			}
 			
 			// Validate conditions for group
-			if (!player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS) && !template.validateConditions(enterGroup, npc, this::showHtmlFile))
+			if (!player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS) && (!template.validateConditions(enterGroup, npc, this::showHtmlFile) || !validateConditions(enterGroup, npc, template)))
 			{
+				return;
+			}
+			
+			// Check if maximum world count limit is exceeded
+			if (manager.getWorldCount(templateId) >= template.getMaxWorlds())
+			{
+				player.sendPacket(SystemMessageId.THE_NUMBER_OF_INSTANT_ZONES_THAT_CAN_BE_CREATED_HAS_BEEN_EXCEEDED_PLEASE_TRY_AGAIN_LATER);
 				return;
 			}
 			
@@ -152,15 +155,8 @@ public abstract class AbstractInstance extends AbstractNpcAI
 				}
 			}
 			
-			// Check if maximum world count limit is exceeded
-			if (InstanceManager.getInstance().getWorldCount(templateId) >= template.getMaxWorlds())
-			{
-				player.sendPacket(SystemMessageId.THE_NUMBER_OF_INSTANT_ZONES_THAT_CAN_BE_CREATED_HAS_BEEN_EXCEEDED_PLEASE_TRY_AGAIN_LATER);
-				return;
-			}
-			
 			// Create new instance for enter player group
-			instance = InstanceManager.getInstance().createInstance(template);
+			instance = manager.createInstance(template);
 			
 			// Move each player from enter group to instance
 			for (PlayerInstance member : enterGroup)
@@ -220,6 +216,11 @@ public abstract class AbstractInstance extends AbstractNpcAI
 		instance.ejectPlayer(player);
 	}
 	
+	/**
+	 * Sets instance to finish state. <br>
+	 * See {@link Instance#finishInstance()} for more details.
+	 * @param player player used for determine current instance world
+	 */
 	protected void finishInstance(PlayerInstance player)
 	{
 		final Instance inst = getPlayerInstance(player, true);
@@ -229,6 +230,12 @@ public abstract class AbstractInstance extends AbstractNpcAI
 		}
 	}
 	
+	/**
+	 * Sets instance to finish state.<br>
+	 * See {@link Instance#finishInstance(int)} for more details.
+	 * @param player player used for determine current instance world
+	 * @param delay finish delay in minutes
+	 */
 	protected void finishInstance(PlayerInstance player, int delay)
 	{
 		final Instance inst = getPlayerInstance(player, true);
@@ -236,5 +243,18 @@ public abstract class AbstractInstance extends AbstractNpcAI
 		{
 			inst.finishInstance(delay);
 		}
+	}
+	
+	/**
+	 * This method is supposed to be used for validation of additional conditions that are too much specific to instance world (to avoid useless core conditions).<br>
+	 * These conditions are validated after conditions defined in XML template.
+	 * @param group group of players which wants to enter (first player inside list is player who make enter request)
+	 * @param npc NPC used for enter
+	 * @param template template of instance world which should be created
+	 * @return {@code true} when conditions are valid, otherwise {@code false}
+	 */
+	protected boolean validateConditions(List<PlayerInstance> group, Npc npc, InstanceTemplate template)
+	{
+		return true;
 	}
 }

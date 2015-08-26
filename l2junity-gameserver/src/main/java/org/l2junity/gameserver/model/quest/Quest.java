@@ -2377,24 +2377,6 @@ public class Quest extends AbstractScript implements IIdentifiable
 	}
 	
 	/**
-	 * Register onInstanceCreate trigger before instance is created.
-	 * @param templateIds
-	 */
-	public void addInstanceCreateId(int... templateIds)
-	{
-		setInstanceCreateId(event -> new TerminateReturn(onInstanceCreate(event.getPlayer(), event.getNpc()), false, false), templateIds);
-	}
-	
-	/**
-	 * Register onInstanceCreate trigger before instance is created.
-	 * @param templateIds
-	 */
-	public void addInstanceCreateId(Collection<Integer> templateIds)
-	{
-		setInstanceCreateId(event -> new TerminateReturn(onInstanceCreate(event.getPlayer(), event.getNpc()), false, false), templateIds);
-	}
-	
-	/**
 	 * Register onInstanceCreated trigger when instance is created.
 	 * @param templateIds
 	 */

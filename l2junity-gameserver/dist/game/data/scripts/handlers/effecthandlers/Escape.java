@@ -18,7 +18,6 @@
  */
 package handlers.effecthandlers;
 
-import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -61,7 +60,7 @@ public final class Escape extends AbstractEffect
 		// While affected by escape blocking effect you cannot use Blink or Scroll of Escape
 		return super.canStart(info) && !info.getEffected().cannotEscape();
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -70,7 +69,7 @@ public final class Escape extends AbstractEffect
 			return;
 		}
 		
-		 effected.teleToLocation(MapRegionManager.getInstance().getTeleToLocation(effected, _escapeType), true);
-		 effected.setInstanceId(0);
+		effected.teleToLocation(_escapeType);
+		effected.setInstanceId(0);
 	}
 }

@@ -9,12 +9,12 @@
 		<exit type="ORIGIN" />
 	</locations>
 	<conditions>
-		<condition type="Party" onlyLeader="true" />
-		<condition type="PartyLeader" onlyLeader="true" />
-		<condition type="GroupMin" onlyLeader="true">
+		<condition type="Party" />
+		<condition type="PartyLeader" />
+		<condition type="GroupMin">
 			<param name="limit" value="2" />
 		</condition>
-		<condition type="GroupMax" onlyLeader="true">
+		<condition type="GroupMax">
 			<param name="limit" value="2" />
 		</condition>
 		<condition type="Level">

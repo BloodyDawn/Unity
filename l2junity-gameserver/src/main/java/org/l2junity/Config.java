@@ -1709,7 +1709,7 @@ public final class Config
 			ALLOW_WEAR = General.getBoolean("AllowWear", true);
 			WEAR_DELAY = General.getInt("WearDelay", 5);
 			WEAR_PRICE = General.getInt("WearPrice", 10);
-			INSTANCE_FINISH_TIME = 1000 * General.getInt("DefaultFinishTime", 5);
+			INSTANCE_FINISH_TIME = General.getInt("DefaultFinishTime", 5);
 			RESTORE_PLAYER_INSTANCE = General.getBoolean("RestorePlayerInstance", false);
 			EJECT_DEAD_PLAYER_TIME = 1000 * General.getInt("EjectDeadPlayerTime", 1);
 			ALLOW_LOTTERY = General.getBoolean("AllowLottery", true);

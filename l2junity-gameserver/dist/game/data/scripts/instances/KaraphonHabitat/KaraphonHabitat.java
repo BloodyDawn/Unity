@@ -42,7 +42,7 @@ public final class KaraphonHabitat extends AbstractInstance
 	
 	public KaraphonHabitat()
 	{
-		super(KaraphonHabitat.class.getSimpleName(), "instances");
+		super(KaraphonHabitat.class.getSimpleName());
 		addStartNpc(DOLKIN);
 		addFirstTalkId(DOLKIN_INSTANCE);
 		addTalkId(DOLKIN);

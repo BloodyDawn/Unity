@@ -34,7 +34,7 @@ public final class ConditionGroupMax extends Condition
 {
 	public ConditionGroupMax(InstanceTemplate template, StatsSet parameters, boolean onlyLeader)
 	{
-		super(template, parameters, onlyLeader);
+		super(template, parameters, true);
 		setSystemMessage(SystemMessageId.YOU_CANNOT_ENTER_DUE_TO_THE_PARTY_HAVING_EXCEEDED_THE_LIMIT);
 	}
 	

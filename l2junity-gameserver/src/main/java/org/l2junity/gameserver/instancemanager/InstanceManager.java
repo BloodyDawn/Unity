@@ -277,14 +277,14 @@ public final class InstanceManager implements IGameXmlReader
 				}
 				case "reenter":
 				{
-					final InstanceReenterType type = parseEnum(d.getAttributes(), InstanceReenterType.class, "applyOn", InstanceReenterType.NONE);
+					final InstanceReenterType type = parseEnum(d.getAttributes(), InstanceReenterType.class, "apply", InstanceReenterType.NONE);
 					final List<InstanceReenterTimeHolder> data = new ArrayList<>();
 					for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
 					{
 						if (e.getNodeName().equals("reset"))
 						{
 							attrs = e.getAttributes();
-							final long time = parseLong(attrs, "time", -1l);
+							final int time = parseInteger(attrs, "time", -1);
 							if (time > 0)
 							{
 								data.add(new InstanceReenterTimeHolder(time));

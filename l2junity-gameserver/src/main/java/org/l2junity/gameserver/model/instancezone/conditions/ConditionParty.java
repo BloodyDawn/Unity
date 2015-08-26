@@ -32,7 +32,7 @@ public final class ConditionParty extends Condition
 {
 	public ConditionParty(InstanceTemplate template, StatsSet parameters, boolean onlyLeader)
 	{
-		super(template, parameters, onlyLeader);
+		super(template, parameters, true);
 		setSystemMessage(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
 	}
 	
