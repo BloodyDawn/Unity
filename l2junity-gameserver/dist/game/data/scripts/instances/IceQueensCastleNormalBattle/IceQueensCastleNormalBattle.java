@@ -127,7 +127,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 		new Location(116501, -115145, -10960, 32724),
 		new Location(116502, -115473, -10960, 32724),
 	};
-	private static Location[] KNIGHTS_LOC =
+	private static final Location[] KNIGHTS_LOC =
 	{
 		new Location(114502, -115315, -11205, 15451),
 		new Location(114937, -115323, -11205, 18106),
@@ -137,7 +137,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	private static final int TEMPLATE_ID_EASY = 139; // Ice Queen's Castle
 	private static final int TEMPLATE_ID_HARD = 144; // Ice Queen's Castle (Epic)
 	private static final int DOOR_ID = 23140101;
-	private static int[] EMMITERS =
+	private static final int[] EMMITERS =
 	{
 		23140202,
 		23140204,
@@ -456,9 +456,9 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "FINISH_STAGE":
 					{
-						freya.teleToLocation(FREYA_CORPSE);
+						freya.teleToLocation(FREYA_CORPSE, world.getId(), 0);
 						world.getNpc(SUPP_JINIA).deleteMe();
-						world.getNpc(SUPP_KEGOR).teleToLocation(KEGOR_FINISH);
+						world.getNpc(SUPP_KEGOR).teleToLocation(KEGOR_FINISH, world.getId(), 0);
 						break;
 					}
 					case "START_SPAWN":

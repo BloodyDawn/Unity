@@ -125,7 +125,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 						break;
 					}
 				}
-				player.teleToLocation(SAVE_POINT[npc.getScriptValue()]);
+				player.teleToLocation(SAVE_POINT[npc.getScriptValue()], player.getInstanceId(), 0);
 			}
 		}
 		return super.onAdvEvent(event, npc, player);

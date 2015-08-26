@@ -128,7 +128,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 					{
 						((Attackable) npc).clearAggroList();
 						npc.disableCoreAI(false);
-						npc.teleToLocation(LEMATAN_PORT);
+						npc.teleToLocation(LEMATAN_PORT, world.getId(), 0);
 						npc.getVariables().set("ON_SHIP", 1);
 						npc.getSpawn().setLocation(LEMATAN_PORT);
 						world.spawnGroup("followers");
@@ -257,7 +257,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 			final Instance world = getInstance(character);
 			if ((world != null) && (world.getTemplateId() == TEMPLATE_ID))
 			{
-				startQuestTimer("TELEPORT", 1000, world.getNpc(LEMATAN), (PlayerInstance) character);
+				startQuestTimer("TELEPORT", 1000, world.getNpc(LEMATAN), character.getActingPlayer());
 			}
 		}
 		return super.onEnterZone(character, zone);
