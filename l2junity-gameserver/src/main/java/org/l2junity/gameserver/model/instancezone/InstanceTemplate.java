@@ -201,7 +201,7 @@ public class InstanceTemplate extends ListenersContainer implements IIdentifiabl
 	 */
 	public void addSpawnGroup(String name, List<SpawnHolder> spawns)
 	{
-		_spawns.put(name, spawns);
+		_spawns.put(name.toLowerCase(), spawns);
 	}
 	
 	/**

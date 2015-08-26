@@ -132,37 +132,18 @@ public final class DarkCloudMansion extends AbstractInstance
 			switch (event)
 			{
 				case "DELETE_ONE":
-				{
 					npc.deleteMe();
 					break;
-				}
 				case "DELETE":
 				{
-					final List<Npc> npcs = world.getNpcs(BELETH_SAMPLE);
-					for (Npc n : npcs)
-					{
-						if (n != npc)
-						{
-							n.deleteMe();
-						}
-					}
-					
+					world.getNpcs(BELETH_SAMPLE).stream().filter(n -> n != npc).forEach(Npc::deleteMe);
 					world.setParameter("blocked", false);
 					spawnRoomE(world);
 					break;
 				}
 				case "CHAT":
-				{
-					final List<Npc> npcs = world.getNpcs(BELETH_SAMPLE);
-					for (Npc n : npcs)
-					{
-						if (n.isScriptValue(1))
-						{
-							n.broadcastSay(ChatType.NPC_GENERAL, DECAY_CHAT[getRandom(DECAY_CHAT.length)]);
-						}
-					}
+					world.getNpcs(BELETH_SAMPLE).stream().filter(n -> n.isScriptValue(1)).forEach(n -> n.broadcastSay(ChatType.NPC_GENERAL, DECAY_CHAT[getRandom(DECAY_CHAT.length)]));
 					break;
-				}
 			}
 		}
 		return null;
@@ -216,6 +197,7 @@ public final class DarkCloudMansion extends AbstractInstance
 								world.setStatus(5);
 								world.spawnGroup("roomBClear");
 								world.spawnGroup("hall");
+								world.getNpcs(MONOLITH).forEach(Npc::deleteMe);
 							}
 						}
 						else
@@ -236,7 +218,7 @@ public final class DarkCloudMansion extends AbstractInstance
 				{
 					if (world.isStatus(7))
 					{
-						world.spawnGroup("roomC");
+						world.spawnGroup("roomC").forEach(n -> n.setScriptValue(8));
 						world.setStatus(8);
 						openDoor(ROOM_D_DOOR, world.getId());
 					}
@@ -287,41 +269,9 @@ public final class DarkCloudMansion extends AbstractInstance
 				}
 				default:
 				{
-					if (CommonUtil.contains(BELETH_SAMPLE, npc.getId()) && world.isStatus(9))
+					if (world.isStatus(9))
 					{
-						final StatsSet params = world.getParameters();
-						if (params.getBoolean("blocked", false))
-						{
-							if (npc.isScriptValue(1))
-							{
-								final int found = params.getInt("found", 0) + 1;
-								world.setParameter("found", found);
-								
-								npc.setScriptValue(-1);
-								npc.broadcastSay(ChatType.NPC_GENERAL, SUCCESS_CHAT[getRandom(SUCCESS_CHAT.length)]);
-								
-								if (found != 3)
-								{
-									startQuestTimer("DELETE_ONE", 1500, npc, null);
-								}
-								else
-								{
-									world.setStatus(10);
-									world.getNpcs().forEach(Npc::deleteMe);
-									world.spawnGroup("roomEClear");
-								}
-							}
-							else if (!npc.isScriptValue(-1))
-							{
-								world.setParameter("blocked", true);
-								world.setParameter("found", 0);
-								
-								npc.broadcastSay(ChatType.NPC_GENERAL, FAIL_CHAT[getRandom(FAIL_CHAT.length)]);
-								startQuestTimer("CHAT", 4000, npc, null);
-								startQuestTimer("DELETE", 4500, npc, null);
-							}
-							closeDoor(ROOM_E_DOOR, world.getId());
-						}
+						handleRoomE(world, npc);
 					}
 				}
 			}
@@ -339,7 +289,7 @@ public final class DarkCloudMansion extends AbstractInstance
 			{
 				case 0: // Start room
 				{
-					if (world.getNpcs().isEmpty())
+					if (world.getAliveNpcs().isEmpty())
 					{
 						world.setStatus(1);
 						world.spawnGroup("hall");
@@ -349,7 +299,7 @@ public final class DarkCloudMansion extends AbstractInstance
 				}
 				case 1: // Hall
 				{
-					if (world.getNpcs().isEmpty())
+					if (world.getAliveNpcs().isEmpty())
 					{
 						world.setStatus(2);
 						world.spawnGroup("roomA");
@@ -359,7 +309,7 @@ public final class DarkCloudMansion extends AbstractInstance
 				}
 				case 2: // Room A - cleared
 				{
-					if (world.getNpcs().isEmpty())
+					if (world.getAliveNpcs().isEmpty())
 					{
 						world.setStatus(3);
 						world.spawnGroup("roomAClear");
@@ -369,7 +319,7 @@ public final class DarkCloudMansion extends AbstractInstance
 				}
 				case 3: // Hall
 				{
-					if (world.getNpcs(BELETH_SUBORDINATE).isEmpty())
+					if (world.getAliveNpcs(BELETH_SUBORDINATE).isEmpty())
 					{
 						world.setStatus(4);
 						openDoor(ROOM_B_DOOR, world.getId());
@@ -386,7 +336,7 @@ public final class DarkCloudMansion extends AbstractInstance
 				}
 				case 5: // Hall
 				{
-					if (world.getNpcs(BELETH_SUBORDINATE).isEmpty())
+					if (world.getAliveNpcs(BELETH_SUBORDINATE).isEmpty())
 					{
 						world.setStatus(6);
 						world.spawnGroup("roomC");
@@ -396,12 +346,12 @@ public final class DarkCloudMansion extends AbstractInstance
 				}
 				case 6: // Room C
 				{
-					if (world.getNpcs(BELETH_SUBORDINATE).isEmpty())
+					if (world.getAliveNpcs(BELETH_SUBORDINATE).isEmpty())
 					{
 						world.setStatus(7);
 						world.spawnGroup("roomD");
 						openDoor(ROOM_D_DOOR, world.getId());
-						for (int i = 1; i < 7; i++)
+						for (int i = 1; i <= 7; i++)
 						{
 							final List<Npc> row = world.spawnGroup("roomD" + i);
 							for (int x = 0; x < 2; x++)
@@ -415,7 +365,8 @@ public final class DarkCloudMansion extends AbstractInstance
 				}
 				case 8: // Room C
 				{
-					if (world.getNpcs(BELETH_SUBORDINATE).isEmpty())
+					final long roomClear = world.getAliveNpcs(BELETH_SUBORDINATE).stream().filter(n -> n.isScriptValue(8)).count();
+					if (roomClear == 0)
 					{
 						world.setStatus(9);
 						openDoor(ROOM_E_DOOR, world.getId());
@@ -423,6 +374,9 @@ public final class DarkCloudMansion extends AbstractInstance
 					}
 					break;
 				}
+				case 9:
+					handleRoomE(world, npc);
+					break;
 			}
 		}
 		return null;
@@ -439,6 +393,47 @@ public final class DarkCloudMansion extends AbstractInstance
 		{
 			final Npc n = npcs.remove(getRandom(npcs.size()));
 			n.setScriptValue(1);
+		}
+	}
+	
+	private void handleRoomE(Instance world, Npc npc)
+	{
+		if (CommonUtil.contains(BELETH_SAMPLE, npc.getId()))
+		{
+			final StatsSet params = world.getParameters();
+			if (!params.getBoolean("blocked", false))
+			{
+				if (npc.isScriptValue(1))
+				{
+					final int found = params.getInt("found", 0) + 1;
+					world.setParameter("found", found);
+					
+					npc.setScriptValue(-1);
+					npc.broadcastSay(ChatType.NPC_GENERAL, SUCCESS_CHAT[getRandom(SUCCESS_CHAT.length)]);
+					
+					if (found != 3)
+					{
+						startQuestTimer("DELETE_ONE", 1500, npc, null);
+					}
+					else
+					{
+						world.setStatus(10);
+						world.getNpcs().forEach(Npc::deleteMe);
+						world.spawnGroup("roomEClear");
+					}
+				}
+				else if (!npc.isScriptValue(-1))
+				{
+					world.setParameter("blocked", true);
+					world.setParameter("found", 0);
+					
+					npc.broadcastSay(ChatType.NPC_GENERAL, FAIL_CHAT[getRandom(FAIL_CHAT.length)]);
+					npc.setScriptValue(-1);
+					startQuestTimer("CHAT", 4000, npc, null);
+					startQuestTimer("DELETE", 4500, npc, null);
+				}
+				closeDoor(ROOM_E_DOOR, world.getId());
+			}
 		}
 	}
 	

@@ -453,7 +453,7 @@ public final class Instance implements IIdentifiable, INamable
 	
 	/**
 	 * Get spawned NPCs from instance.
-	 * @return set of NPC from instance
+	 * @return set of NPCs from instance
 	 */
 	public Set<Npc> getNpcs()
 	{
@@ -461,13 +461,12 @@ public final class Instance implements IIdentifiable, INamable
 	}
 	
 	/**
-	 * Get spawned NPCs from instance with specific NPC ID.
-	 * @param id ID of NPCs which should be found
-	 * @return list of filtered NPCs from instance
+	 * Get alive NPCs from instance.
+	 * @return set of NPCs from instance
 	 */
-	public List<Npc> getNpcs(int id)
+	public Set<Npc> getAliveNpcs()
 	{
-		return _npcs.stream().filter(n -> n.getId() == id).collect(Collectors.toList());
+		return _npcs.stream().filter(n -> !n.isDead()).collect(Collectors.toSet());
 	}
 	
 	/**
@@ -478,6 +477,16 @@ public final class Instance implements IIdentifiable, INamable
 	public List<Npc> getNpcs(int... id)
 	{
 		return _npcs.stream().filter(n -> CommonUtil.contains(id, n.getId())).collect(Collectors.toList());
+	}
+	
+	/**
+	 * Get alive NPCs from instance with specific IDs.
+	 * @param id IDs of NPCs which should be found
+	 * @return list of filtered NPCs from instance
+	 */
+	public List<Npc> getAliveNpcs(int... id)
+	{
+		return _npcs.stream().filter(n -> !n.isDead() && CommonUtil.contains(id, n.getId())).collect(Collectors.toList());
 	}
 	
 	/**
@@ -1019,12 +1028,11 @@ public final class Instance implements IIdentifiable, INamable
 		// System message
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THIS_INSTANT_ZONE_WILL_BE_TERMINATED_IN_S1_MINUTE_S_YOU_WILL_BE_FORCED_OUT_OF_THE_DUNGEON_WHEN_THE_TIME_EXPIRES);
 		sm.addInt(delay);
+		broadcastPacket(sm);
 		
 		// On screen message
 		final ExShowScreenMessage msg = new ExShowScreenMessage(SystemMessageId.THIS_DUNGEON_WILL_EXPIRE_IN_S1_MINUTE_S_YOU_WILL_BE_FORCED_OUT_OF_THE_DUNGEON_WHEN_THE_TIME_EXPIRES, ExShowScreenMessage.BOTTOM_RIGHT, 8000);
 		msg.addStringParameter(String.valueOf(delay));
-		
-		// Send messages
-		broadcastPacket(sm, msg);
+		broadcastPacket(msg);
 	}
 }
