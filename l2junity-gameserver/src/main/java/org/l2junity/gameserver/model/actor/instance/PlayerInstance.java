@@ -579,7 +579,7 @@ public final class PlayerInstance extends Playable
 	private final Map<BaseStats, Integer> _hennaBaseStats = new ConcurrentHashMap<>();
 	
 	/** The Pet of the L2PcInstance */
-	private Summon _pet = null;
+	private L2PetInstance _pet = null;
 	/** Servitors of the L2PcInstance */
 	private volatile Map<Integer, Summon> _servitors = null;
 	/** The L2Agathion of the L2PcInstance */
@@ -5487,7 +5487,7 @@ public final class PlayerInstance extends Playable
 	}
 	
 	@Override
-	public Summon getPet()
+	public L2PetInstance getPet()
 	{
 		return _pet;
 	}
@@ -5523,10 +5523,10 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * Set the L2Summon of the L2PcInstance.
+	 * Set the summoned Pet of the L2PcInstance.
 	 * @param pet
 	 */
-	public void setPet(Summon pet)
+	public void setPet(L2PetInstance pet)
 	{
 		_pet = pet;
 	}

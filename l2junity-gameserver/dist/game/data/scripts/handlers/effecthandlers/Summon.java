@@ -66,7 +66,7 @@ public final class Summon extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -103,14 +103,8 @@ public final class Summon extends AbstractEffect
 		summon.setHeading(player.getHeading());
 		summon.setSummonPoints(_summonPoints);
 		
-		if (summon.isPet())
-		{
-			player.setPet(summon);
-		}
-		else
-		{
-			player.addServitor(summon);
-		}
+		player.addServitor(summon);
+		
 		summon.setShowSummonAnimation(true);
 		summon.setRunning();
 		summon.spawnMe();
