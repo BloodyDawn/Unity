@@ -97,7 +97,7 @@ public class EventScheduler
 		if (timeSchedule <= (30 * 1000))
 		{
 			LOGGER.warn("Wrong reschedule for {} end up run in {} seconds!", _manager.getClass().getSimpleName(), timeSchedule / 1000);
-			ThreadPoolManager.getInstance().scheduleEvent(this::startScheduler, nextSchedule + 1000);
+			ThreadPoolManager.getInstance().scheduleEvent(this::startScheduler, timeSchedule + 1000);
 			return;
 		}
 		
