@@ -136,7 +136,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			}
 		}
 		
-		ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(120), 55 * 1000);
+		ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(60), 55 * 1000);
 	}
 	
 	private void onAboutToTeleport(int time)
@@ -149,7 +149,6 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			case 4:
 			case 5:
 			case 60:
-			case 120:
 			{
 				final SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.YOU_WILL_BE_MOVED_TO_THE_ARENA_IN_S1_SECOND_S);
 				msg.addByte(time);
@@ -178,11 +177,6 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		// calculate reschedule
 		switch (time)
 		{
-			case 120:
-			{
-				ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(60), 60 * 1000);
-				break;
-			}
 			case 60:
 			{
 				ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(10), 50 * 1000);
