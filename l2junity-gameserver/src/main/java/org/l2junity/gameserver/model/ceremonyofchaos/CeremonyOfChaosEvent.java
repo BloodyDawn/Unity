@@ -330,14 +330,12 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	{
 		if (event.getAttacker().isPlayer() && event.getTarget().isPlayer())
 		{
-			final PlayerInstance attacker = event.getAttacker().getActingPlayer();
-			final PlayerInstance target = event.getTarget().getActingPlayer();
+			final CeremonyOfChaosMember attackerMember = getMembers().get(event.getAttacker().getActingPlayer().getObjectId());
+			final CeremonyOfChaosMember targetMember = getMembers().get(event.getTarget().getActingPlayer().getObjectId());
 			
-			if (isOnEvent(attacker) && isOnEvent(target))
+			if ((attackerMember != null) && (targetMember != null))
 			{
-				final CeremonyOfChaosMember attackerMember = getMembers().values().stream().filter(p -> p.getPlayer() == attacker).findFirst().orElse(null);
 				attackerMember.incrementScore();
-				final CeremonyOfChaosMember targetMember = getMembers().values().stream().filter(p -> p.getPlayer() == target).findFirst().orElse(null);
 				targetMember.setLifeTime(System.currentTimeMillis() - _battleStartTime);
 			}
 		}
