@@ -47,6 +47,7 @@ import org.l2junity.gameserver.network.client.send.SkillCoolTime;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.appearance.ExCuriousHouseMemberUpdate;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseEnter;
+import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseLeave;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseMemberList;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseRemainTime;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -274,6 +275,9 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			final PlayerInstance player = member.getPlayer();
 			if (player != null)
 			{
+				// Remove quit button
+				player.sendPacket(ExCuriousHouseLeave.STATIC_PACKET);
+				
 				// Teleport player back
 				player.teleToLocation(player.getLastLocation(), 0, 0);
 				
