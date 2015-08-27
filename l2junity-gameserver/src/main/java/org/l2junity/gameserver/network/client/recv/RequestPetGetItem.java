@@ -66,7 +66,7 @@ public final class RequestPetGetItem implements IClientIncomingPacket
 			return;
 		}
 		
-		final L2PetInstance pet = (L2PetInstance) client.getActiveChar().getPet();
+		final L2PetInstance pet = client.getActiveChar().getPet();
 		if (pet.isDead() || pet.isControlBlocked())
 		{
 			client.sendPacket(ActionFailed.STATIC_PACKET);

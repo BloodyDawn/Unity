@@ -57,7 +57,7 @@ public final class RequestPetUseItem implements IClientIncomingPacket
 			return;
 		}
 		
-		final L2PetInstance pet = (L2PetInstance) activeChar.getPet();
+		final L2PetInstance pet = activeChar.getPet();
 		final ItemInstance item = pet.getInventory().getItemByObjectId(_objectId);
 		if (item == null)
 		{

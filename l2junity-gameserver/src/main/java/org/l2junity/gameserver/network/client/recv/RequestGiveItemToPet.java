@@ -100,7 +100,7 @@ public final class RequestGiveItemToPet implements IClientIncomingPacket
 			return;
 		}
 		
-		final L2PetInstance pet = (L2PetInstance) player.getPet();
+		final L2PetInstance pet = player.getPet();
 		if (pet.isDead())
 		{
 			player.sendPacket(SystemMessageId.YOUR_PET_IS_DEAD_AND_ANY_ATTEMPT_YOU_MAKE_TO_GIVE_IT_SOMETHING_GOES_UNRECOGNIZED);
