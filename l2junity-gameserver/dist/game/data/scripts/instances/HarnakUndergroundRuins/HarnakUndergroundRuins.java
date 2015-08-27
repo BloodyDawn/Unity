@@ -454,7 +454,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			{
 				case 0:
 				{
-					if (world.getNpcs().isEmpty())
+					if (world.getAliveNpcs().isEmpty())
 					{
 						startQuestTimer("spawn_npc2", 100, npc, killer);
 						world.setStatus(1);
@@ -496,7 +496,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 				{
 					final StatsSet params = world.getParameters();
 					final int waveNpc = params.getInt("waveNpcId");
-					if (world.getNpcs(waveNpc).isEmpty())
+					if (world.getAliveNpcs(waveNpc).isEmpty())
 					{
 						switch (params.getInt("wave"))
 						{
@@ -552,7 +552,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 				if (npc.getId() != currentNpc)
 				{
 					world.setStatus(0);
-					for (Npc n : world.getNpcs())
+					for (Npc n : world.getAliveNpcs())
 					{
 						addAttackPlayerDesire(n, player);
 					}

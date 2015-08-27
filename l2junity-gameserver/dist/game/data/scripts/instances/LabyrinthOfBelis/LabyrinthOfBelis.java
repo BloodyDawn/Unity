@@ -353,7 +353,7 @@ public final class LabyrinthOfBelis extends AbstractInstance
 				{
 					if (world.isStatus(1))
 					{
-						if (world.getNpcs(OPERATIVE).isEmpty())
+						if (world.getAliveNpcs(OPERATIVE).isEmpty())
 						{
 							world.setStatus(2);
 							getTimers().addTimer("ROOM_1_DONE", 500, npc, null);

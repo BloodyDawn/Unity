@@ -240,10 +240,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 		final Instance world = getInstance(npc);
 		if (world != null)
 		{
-			for (Npc follower : world.getNpcs(FOLLOWERS))
-			{
-				follower.deleteMe();
-			}
+			world.getNpcs(FOLLOWERS).forEach(Npc::deleteMe);
 			addSpawn(ADVENTURER2, ADVENTURER_LOC, false, 0, false, npc.getInstanceId());
 		}
 		return super.onKill(npc, player, isSummon);
