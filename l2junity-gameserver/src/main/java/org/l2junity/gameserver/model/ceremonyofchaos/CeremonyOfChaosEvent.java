@@ -218,10 +218,10 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			}
 			
 			// Set player's instance id
-			player.setInstanceId(_instance.getId());
+			player.setInstanceId(_instance.getObjectId());
 			
 			// Teleport player to the arena
-			player.teleToLocation(_instance.getSpawnLoc(), _instance.getId(), 200);
+			player.teleToLocation(_instance.getSpawnLoc(), _instance.getObjectId(), 200);
 		}
 		
 		final SystemMessage countdown = SystemMessage.getSystemMessage(SystemMessageId.THE_MATCH_WILL_START_IN_S1_SECOND_S);
@@ -288,7 +288,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			}
 		}
 		getTimers().cancelTimer("update", null, null);
-		InstanceManager.getInstance().destroyInstance(_instance.getId());
+		InstanceManager.getInstance().destroyInstance(_instance.getObjectId());
 	}
 	
 	@Override
