@@ -292,6 +292,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			}
 		}
 		getTimers().cancelTimer("update", null, null);
+		getMembers().clear();
 		InstanceManager.getInstance().destroyInstance(_instance.getObjectId());
 	}
 	

@@ -264,6 +264,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		
 		setState(CeremonyOfChaosState.SCHEDULED);
 		getEvents().forEach(CeremonyOfChaosEvent::stopFight);
+		getEvents().clear();
 	}
 	
 	@Override
