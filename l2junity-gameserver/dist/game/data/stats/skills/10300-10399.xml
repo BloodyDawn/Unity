@@ -561,10 +561,10 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 	</skill>
-	<skill id="10325" levels="3" name="Dreadful Roar">
+	<skill id="10325" levels="6" name="Dreadful Roar">
 		<!-- Cancels at least one buff of nearby enemies. Consumes 10 Soulstones. -->
-		<table name="#magicLvl"> 97 98 99 </table>
-		<table name="#mpConsumes"> 149 151 154 </table>
+		<table name="#magicLvl"> 97 98 99 101 103 105 </table>
+		<table name="#mpConsumes"> 149 151 154 157 160 163 </table>
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="180" />
 		<set name="magicLvl" val="#magicLvl" />
