@@ -127,6 +127,7 @@ public final class ChamberOfDelusion extends AbstractInstance
 					if ((pl != null) && pl.isOnline() && !pl.isInParty())
 					{
 						instance.finishInstance(0);
+						break;
 					}
 				}
 			}

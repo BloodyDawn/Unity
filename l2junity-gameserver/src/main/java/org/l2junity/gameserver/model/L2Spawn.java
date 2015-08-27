@@ -30,10 +30,12 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
+import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.interfaces.INamable;
@@ -636,6 +638,13 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		
 		// Link the L2NpcInstance to this L2Spawn
 		npc.setSpawn(this);
+		
+		// Register NPC back to instance world
+		if (npc.getInstanceId() > 0)
+		{
+			final Instance instance = InstanceManager.getInstance().getInstance(npc.getInstanceId());
+			instance.addNpc(npc);
+		}
 		
 		// Spawn NPC
 		npc.spawnMe(newlocx, newlocy, newlocz);

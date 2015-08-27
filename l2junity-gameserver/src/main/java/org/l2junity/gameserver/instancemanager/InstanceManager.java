@@ -237,7 +237,7 @@ public final class InstanceManager implements IGameXmlReader
 								{
 									attrs = f.getAttributes();
 									final int npcId = parseInteger(attrs, "npcId");
-									final int respawn = parseInteger(attrs, "respawnDelay", 0);
+									final int respawn = parseInteger(attrs, "respawn", 0);
 									final Location spawnLoc = parseLocation(f);
 									group.add(new SpawnHolder(npcId, spawnLoc, respawn));
 								}

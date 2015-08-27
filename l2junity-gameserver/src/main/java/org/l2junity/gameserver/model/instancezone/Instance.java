@@ -27,6 +27,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
@@ -47,7 +48,6 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.WorldRegion;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
@@ -499,6 +499,16 @@ public final class Instance implements IIdentifiable, INamable
 		return _npcs.stream().filter(n -> n.getId() == id).findFirst().orElse(null);
 	}
 	
+	public void addNpc(Npc npc)
+	{
+		_npcs.add(npc);
+	}
+	
+	public void removeNpc(Npc npc)
+	{
+		_npcs.remove(npc);
+	}
+	
 	/**
 	 * Remove all players from instance world.
 	 */
@@ -513,20 +523,7 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	private void removeDoors()
 	{
-		for (L2DoorInstance door : _doors.values())
-		{
-			if (door != null)
-			{
-				final WorldRegion region = door.getWorldRegion();
-				door.decayMe();
-				
-				if (region != null)
-				{
-					region.removeVisibleObject(door);
-				}
-				World.getInstance().removeObject(door);
-			}
-		}
+		_doors.values().stream().filter(Objects::nonNull).forEach(L2DoorInstance::decayMe);
 		_doors.clear();
 	}
 	
@@ -614,6 +611,9 @@ public final class Instance implements IIdentifiable, INamable
 			_emptyDestroyTask = null;
 		}
 		
+		_ejectDeadTasks.values().forEach(t -> t.cancel(true));
+		_ejectDeadTasks.clear();
+		
 		// Notify DP scripts
 		if (!isDynamic())
 		{
@@ -623,12 +623,6 @@ public final class Instance implements IIdentifiable, INamable
 		removePlayers();
 		removeDoors();
 		removeNpcs();
-		
-		for (ScheduledFuture<?> task : _ejectDeadTasks.values())
-		{
-			task.cancel(true);
-		}
-		_ejectDeadTasks.clear();
 		
 		InstanceManager.getInstance().unregister(getId());
 	}
@@ -876,7 +870,7 @@ public final class Instance implements IIdentifiable, INamable
 			final Npc npc = (Npc) object;
 			if (enter)
 			{
-				_npcs.add(npc);
+				addNpc(npc);
 			}
 			else
 			{
@@ -884,7 +878,7 @@ public final class Instance implements IIdentifiable, INamable
 				{
 					npc.getSpawn().stopRespawn();
 				}
-				_npcs.remove(npc);
+				removeNpc(npc);
 			}
 		}
 	}
