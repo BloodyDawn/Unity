@@ -217,6 +217,9 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				player.addItem("CoC", holder, null, true);
 			}
 			
+			// Set player's instance id
+			player.setInstanceId(_instance.getId());
+			
 			// Teleport player to the arena
 			player.teleToLocation(_instance.getSpawnLoc(), _instance.getId(), 200);
 		}

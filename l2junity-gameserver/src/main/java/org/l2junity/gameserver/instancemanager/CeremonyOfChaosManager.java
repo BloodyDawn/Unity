@@ -39,6 +39,7 @@ import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerBypass;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -136,12 +137,6 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		}
 		
 		ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(60), 55 * 1000);
-		ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(10), (55 + 10) * 1000);
-		for (int i = 5; i > 0; i--)
-		{
-			final int timeLeft = i;
-			ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(timeLeft), (55 + 10 + (5 - timeLeft)) * 1000);
-		}
 	}
 	
 	private void onAboutToTeleport(int time)
@@ -175,6 +170,30 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 						player.sendPacket(ExCuriousHouseState.STARTING_PACKET);
 					}
 				}
+				break;
+			}
+		}
+		
+		// calculate reschedule
+		switch (time)
+		{
+			case 60:
+			{
+				ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(10), 55 * 1000);
+				break;
+			}
+			case 10:
+			{
+				ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(5), 5 * 1000);
+				break;
+			}
+			case 5:
+			case 4:
+			case 3:
+			case 2:
+			case 1:
+			{
+				ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(time - 1), (time - 1) * 1000);
 				break;
 			}
 		}
@@ -360,6 +379,20 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			if (canRegister(player, false))
 			{
 				player.sendPacket(ExCuriousHouseState.REGISTRATION_PACKET);
+			}
+		}
+	}
+	
+	@RegisterEvent(EventType.ON_PLAYER_LOGOUT)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	public void OnPlayerLogout(OnPlayerLogout event)
+	{
+		if (getState() == CeremonyOfChaosState.REGISTRATION)
+		{
+			final PlayerInstance player = event.getActiveChar();
+			if (getRegisteredPlayers().contains(player))
+			{
+				getRegisteredPlayers().remove(player);
 			}
 		}
 	}
