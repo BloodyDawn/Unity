@@ -639,13 +639,6 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		// Link the L2NpcInstance to this L2Spawn
 		npc.setSpawn(this);
 		
-		// Register NPC back to instance world
-		if (npc.getInstanceId() > 0)
-		{
-			final Instance instance = InstanceManager.getInstance().getInstance(npc.getInstanceId());
-			instance.addNpc(npc);
-		}
-		
 		// Spawn NPC
 		npc.spawnMe(newlocx, newlocy, newlocz);
 		
@@ -760,6 +753,13 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		{
 			oldNpc.refreshID();
 			initializeNpcInstance(oldNpc);
+			
+			// Register NPC back to instance world
+			if (oldNpc.getInstanceId() > 0)
+			{
+				final Instance instance = InstanceManager.getInstance().getInstance(oldNpc.getInstanceId());
+				instance.addNpc(oldNpc);
+			}
 		}
 	}
 	
