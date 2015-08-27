@@ -28,12 +28,12 @@
 			</schedule>
 
 			<!-- Schedule of the event start, usually Monday, Tuesday, Wednesday at 18:00 -->
-			<schedule minute="00" hour="18" dayOfMonth="*" month="*" dayOfWeek="1-3">
+			<schedule minute="00" hour="18" dayOfMonth="*" month="*" dayOfWeek="1-4">
 				<event name="#onEventStart" />
 			</schedule>
 
 			<!-- Schedule of the event end, usually Tuesday, Wednesday, Thursday at 00:00 -->
-			<schedule minute="00" hour="00" dayOfMonth="*" month="*" dayOfWeek="2-4"> <!-- Tuesday, Wednesday, Thursday -->
+			<schedule minute="00" hour="00" dayOfMonth="*" month="*" dayOfWeek="2-5"> <!-- Tuesday, Wednesday, Thursday -->
 				<event name="#onEventEnd" />
 			</schedule>
 
