@@ -156,7 +156,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	protected void onLoad()
 	{
-		
+	
 	}
 	
 	/**
@@ -167,7 +167,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onSave()
 	{
-		
+	
 	}
 	
 	/**
@@ -1362,7 +1362,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onOlympiadMatchFinish(Participant winner, Participant looser, CompetitionType type)
 	{
-		
+	
 	}
 	
 	/**
@@ -1372,7 +1372,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onOlympiadLose(PlayerInstance loser, CompetitionType type)
 	{
-		
+	
 	}
 	
 	/**
@@ -1381,7 +1381,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onMoveFinished(Npc npc)
 	{
-		
+	
 	}
 	
 	/**
@@ -1390,7 +1390,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onNodeArrived(Npc npc)
 	{
-		
+	
 	}
 	
 	/**
@@ -1399,7 +1399,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onRouteFinished(Npc npc)
 	{
-		
+	
 	}
 	
 	/**
@@ -1418,7 +1418,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onSummonSpawn(Summon summon)
 	{
-		
+	
 	}
 	
 	/**
@@ -1426,7 +1426,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void onSummonTalk(Summon summon)
 	{
-		
+	
 	}
 	
 	/**
@@ -1499,6 +1499,10 @@ public class Quest extends AbstractScript implements IIdentifiable
 		else if (res.startsWith("<html>"))
 		{
 			final NpcHtmlMessage npcReply = new NpcHtmlMessage(npc != null ? npc.getObjectId() : 0, res);
+			if (npc != null)
+			{
+				npcReply.replace("%objectId%", npc.getObjectId());
+			}
 			npcReply.replace("%playername%", player.getName());
 			player.sendPacket(npcReply);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -3214,6 +3218,6 @@ public class Quest extends AbstractScript implements IIdentifiable
 	
 	public void onQuestAborted(PlayerInstance player)
 	{
-		
+	
 	}
 }
