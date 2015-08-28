@@ -136,7 +136,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			}
 		}
 		
-		ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(60), 55 * 1000);
+		ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(60), 60 * 1000);
 	}
 	
 	private void onAboutToTeleport(int time)
@@ -193,7 +193,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			case 2:
 			case 1:
 			{
-				ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(time - 1), (time - 1) * 1000);
+				ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(time - 1), 1000);
 				break;
 			}
 		}
