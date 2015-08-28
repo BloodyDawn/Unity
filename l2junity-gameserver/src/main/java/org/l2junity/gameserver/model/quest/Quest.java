@@ -1430,17 +1430,6 @@ public class Quest extends AbstractScript implements IIdentifiable
 	}
 	
 	/**
-	 * This listener is called before instance world is created. So you can add your own conditions to create instance world.
-	 * @param player player who wants to instance world
-	 * @param npc NPC which create instance for player
-	 * @return {@code true} break instance creation, {@code false} instance can be created
-	 */
-	public boolean onInstanceCreate(PlayerInstance player, Npc npc)
-	{
-		return false;
-	}
-	
-	/**
 	 * This listener is called when instance world is created.
 	 * @param instance created instance world
 	 */

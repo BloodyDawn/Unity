@@ -1711,7 +1711,7 @@ public final class Config
 			WEAR_PRICE = General.getInt("WearPrice", 10);
 			INSTANCE_FINISH_TIME = General.getInt("DefaultFinishTime", 5);
 			RESTORE_PLAYER_INSTANCE = General.getBoolean("RestorePlayerInstance", false);
-			EJECT_DEAD_PLAYER_TIME = 1000 * General.getInt("EjectDeadPlayerTime", 1);
+			EJECT_DEAD_PLAYER_TIME = General.getInt("EjectDeadPlayerTime", 1);
 			ALLOW_LOTTERY = General.getBoolean("AllowLottery", true);
 			ALLOW_RACE = General.getBoolean("AllowRace", true);
 			ALLOW_WATER = General.getBoolean("AllowWater", true);

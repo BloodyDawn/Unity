@@ -582,7 +582,7 @@ public final class Instance implements IIdentifiable, INamable
 		else
 		{
 			sendWorldDestroyMessage(minutes);
-			if (minutes < 5) // Message 1 minute before destroy
+			if (minutes <= 5) // Message 1 minute before destroy
 			{
 				_cleanUpTask = ThreadPoolManager.getInstance().scheduleGeneral(this::cleanUp, millis - 60000);
 			}
@@ -720,7 +720,7 @@ public final class Instance implements IIdentifiable, INamable
 		}
 		
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement("INSERT INTO character_instance_time (charId,instanceId,time) VALUES (?,?,?)"))
+			PreparedStatement ps = con.prepareStatement("INSERT IGNORE INTO character_instance_time (charId,instanceId,time) VALUES (?,?,?)"))
 		{
 			// Save to database
 			for (Integer objId : _allowed)

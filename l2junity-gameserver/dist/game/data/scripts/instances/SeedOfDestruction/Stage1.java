@@ -1,9 +1,60 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack This file is part of L2J DataPack. L2J DataPack is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any
- * later version. L2J DataPack is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU
- * General Public License along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * Copyright (C) 2004-2015 L2J DataPack
+ * 
+ * This file is part of L2J DataPack.
+ * 
+ * L2J DataPack is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * L2J DataPack is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package instances.SeedOfDestruction;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.l2junity.commons.util.CommonUtil;
+import org.l2junity.gameserver.GeoData;
+import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.data.xml.IGameXmlReader;
+import org.l2junity.gameserver.enums.Movie;
+import org.l2junity.gameserver.enums.TrapAction;
+import org.l2junity.gameserver.instancemanager.GraciaSeedsManager;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.Territory;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.Attackable;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
+import org.l2junity.gameserver.model.actor.instance.L2TrapInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.instancezone.Instance;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.zone.ZoneType;
+import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+import org.l2junity.gameserver.util.Util;
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+
+import instances.AbstractInstance;
 
 /**
  * Seed of Destruction instance zone.<br>
@@ -16,951 +67,647 @@ package instances.SeedOfDestruction;
  * Please maintain consistency between the Seed scripts.
  * @author Gigiikun
  */
-// public final class Stage1 extends AbstractInstance
-// {
-// protected class SOD1World extends InstanceWorld
-// {
-// public Map<Npc, Boolean> npcList = new HashMap<>();
-// public int deviceSpawnedMobCount = 0;
-// public Lock lock = new ReentrantLock();
-// }
-//
-// protected static class SODSpawn
-// {
-// public boolean isZone = false;
-// public boolean isNeededNextFlag = false;
-// public int npcId;
-// public int x = 0;
-// public int y = 0;
-// public int z = 0;
-// public int h = 0;
-// public int zone = 0;
-// public int count = 0;
-// }
-//
-// private static final int INSTANCEID = 110; // this is the client number
-// private static final int MIN_PLAYERS = 36;
-// private static final int MAX_PLAYERS = 45;
-// private static final int MAX_DEVICESPAWNEDMOBCOUNT = 100; // prevent too much mob spawn
-//
-// private final Map<Integer, Territory> _spawnZoneList = new HashMap<>();
-// private final Map<Integer, List<SODSpawn>> _spawnList = new HashMap<>();
-// private final List<Integer> _mustKillMobsId = new ArrayList<>();
-//
-// // teleports
-// private static final Location ENTER_TELEPORT_1 = new Location(-242759, 219981, -9986);
-// private static final Location ENTER_TELEPORT_2 = new Location(-245800, 220488, -12112);
-// private static final Location CENTER_TELEPORT = new Location(-245802, 220528, -12104);
-//
-// // Traps/Skills
-// private static final SkillHolder TRAP_HOLD = new SkillHolder(4186, 9); // 18720-18728
-// private static final SkillHolder TRAP_STUN = new SkillHolder(4072, 10); // 18729-18736
-// private static final SkillHolder TRAP_DAMAGE = new SkillHolder(5340, 4); // 18737-18770
-// private static final SkillHolder TRAP_SPAWN = new SkillHolder(10002, 1); // 18771-18774 : handled in this script
-// private static final int[] TRAP_18771_NPCS =
-// {
-// 22541,
-// 22544,
-// 22541,
-// 22544
-// };
-// private static final int[] TRAP_OTHER_NPCS =
-// {
-// 22546,
-// 22546,
-// 22538,
-// 22537
-// };
-//
-// // NPCs
-// private static final int ALENOS = 32526;
-// private static final int TELEPORT = 32601;
-//
-// // mobs
-// private static final int OBELISK = 18776;
-// private static final int POWERFUL_DEVICE = 18777;
-// private static final int THRONE_POWERFUL_DEVICE = 18778;
-// private static final int SPAWN_DEVICE = 18696;
-// private static final int TIAT = 29163;
-// private static final int TIAT_GUARD = 29162;
-// private static final int TIAT_GUARD_NUMBER = 5;
-// private static final int TIAT_VIDEO_NPC = 29169;
-// private static final Location MOVE_TO_TIAT = new Location(-250403, 207273, -11952, 16384);
-// private static final Location MOVE_TO_DOOR = new Location(-251432, 214905, -12088, 16384);
-//
-// // TODO: handle this better
-// private static final int[] SPAWN_MOB_IDS =
-// {
-// 22536,
-// 22537,
-// 22538,
-// 22539,
-// 22540,
-// 22541,
-// 22542,
-// 22543,
-// 22544,
-// 22547,
-// 22550,
-// 22551,
-// 22552,
-// 22596
-// };
-//
-// // Doors/Walls/Zones
-// private static final int[] ATTACKABLE_DOORS =
-// {
-// 12240005,
-// 12240006,
-// 12240007,
-// 12240008,
-// 12240009,
-// 12240010,
-// 12240013,
-// 12240014,
-// 12240015,
-// 12240016,
-// 12240017,
-// 12240018,
-// 12240021,
-// 12240022,
-// 12240023,
-// 12240024,
-// 12240025,
-// 12240026,
-// 12240028,
-// 12240029,
-// 12240030
-// };
-// private static final int[] ENTRANCE_ROOM_DOORS =
-// {
-// 12240001,
-// 12240002
-// };
-// private static final int[] SQUARE_DOORS =
-// {
-// 12240003,
-// 12240004,
-// 12240011,
-// 12240012,
-// 12240019,
-// 12240020
-// };
-// private static final int SCOUTPASS_DOOR = 12240027;
-// private static final int FORTRESS_DOOR = 12240030;
-// private static final int THRONE_DOOR = 12240031;
-//
-// // Initialization at 6:30 am on Wednesday and Saturday
-// private static final int RESET_HOUR = 6;
-// private static final int RESET_MIN = 30;
-// private static final int RESET_DAY_1 = 4;
-// private static final int RESET_DAY_2 = 7;
-//
-// public Stage1()
-// {
-// super(Stage1.class.getClass().getSimpleName());
-// load();
-// addStartNpc(ALENOS, TELEPORT);
-// addTalkId(ALENOS, TELEPORT);
-// addAttackId(OBELISK, TIAT);
-// addSpawnId(OBELISK, POWERFUL_DEVICE, THRONE_POWERFUL_DEVICE, TIAT_GUARD);
-// addKillId(OBELISK, POWERFUL_DEVICE, THRONE_POWERFUL_DEVICE, TIAT, SPAWN_DEVICE, TIAT_GUARD);
-// addAggroRangeEnterId(TIAT_VIDEO_NPC);
-// // registering spawn traps which handled in this script
-// for (int i = 18771; i <= 18774; i++)
-// {
-// addTrapActionId(i);
-// }
-// addKillId(_mustKillMobsId);
-// }
-//
-// private void load()
-// {
-// int spawnCount = 0;
-// try
-// {
-// DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-// factory.setValidating(false);
-// factory.setIgnoringComments(true);
-//
-// File file = new File(Config.DATAPACK_ROOT + "/data/spawnZones/seed_of_destruction.xml");
-// if (!file.exists())
-// {
-// _log.error("[Seed of Destruction] Missing seed_of_destruction.xml. The quest wont work without it!");
-// return;
-// }
-//
-// Document doc = factory.newDocumentBuilder().parse(file);
-// Node first = doc.getFirstChild();
-// if ((first != null) && "list".equalsIgnoreCase(first.getNodeName()))
-// {
-// for (Node n = first.getFirstChild(); n != null; n = n.getNextSibling())
-// {
-// if ("npc".equalsIgnoreCase(n.getNodeName()))
-// {
-// for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-// {
-// if ("spawn".equalsIgnoreCase(d.getNodeName()))
-// {
-// NamedNodeMap attrs = d.getAttributes();
-// Node att = attrs.getNamedItem("npcId");
-// if (att == null)
-// {
-// _log.error("[Seed of Destruction] Missing npcId in npc List, skipping");
-// continue;
-// }
-// int npcId = Integer.parseInt(attrs.getNamedItem("npcId").getNodeValue());
-//
-// att = attrs.getNamedItem("flag");
-// if (att == null)
-// {
-// _log.error("[Seed of Destruction] Missing flag in npc List npcId: " + npcId + ", skipping");
-// continue;
-// }
-// int flag = Integer.parseInt(attrs.getNamedItem("flag").getNodeValue());
-// if (!_spawnList.containsKey(flag))
-// {
-// _spawnList.put(flag, new ArrayList<SODSpawn>());
-// }
-//
-// for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-// {
-// if ("loc".equalsIgnoreCase(cd.getNodeName()))
-// {
-// attrs = cd.getAttributes();
-// SODSpawn spw = new SODSpawn();
-// spw.npcId = npcId;
-//
-// att = attrs.getNamedItem("x");
-// if (att != null)
-// {
-// spw.x = Integer.parseInt(att.getNodeValue());
-// }
-// else
-// {
-// continue;
-// }
-// att = attrs.getNamedItem("y");
-// if (att != null)
-// {
-// spw.y = Integer.parseInt(att.getNodeValue());
-// }
-// else
-// {
-// continue;
-// }
-// att = attrs.getNamedItem("z");
-// if (att != null)
-// {
-// spw.z = Integer.parseInt(att.getNodeValue());
-// }
-// else
-// {
-// continue;
-// }
-// att = attrs.getNamedItem("heading");
-// if (att != null)
-// {
-// spw.h = Integer.parseInt(att.getNodeValue());
-// }
-// else
-// {
-// continue;
-// }
-// att = attrs.getNamedItem("mustKill");
-// if (att != null)
-// {
-// spw.isNeededNextFlag = Boolean.parseBoolean(att.getNodeValue());
-// }
-// if (spw.isNeededNextFlag)
-// {
-// _mustKillMobsId.add(npcId);
-// }
-// _spawnList.get(flag).add(spw);
-// spawnCount++;
-// }
-// else if ("zone".equalsIgnoreCase(cd.getNodeName()))
-// {
-// attrs = cd.getAttributes();
-// SODSpawn spw = new SODSpawn();
-// spw.npcId = npcId;
-// spw.isZone = true;
-//
-// att = attrs.getNamedItem("id");
-// if (att != null)
-// {
-// spw.zone = Integer.parseInt(att.getNodeValue());
-// }
-// else
-// {
-// continue;
-// }
-// att = attrs.getNamedItem("count");
-// if (att != null)
-// {
-// spw.count = Integer.parseInt(att.getNodeValue());
-// }
-// else
-// {
-// continue;
-// }
-// att = attrs.getNamedItem("mustKill");
-// if (att != null)
-// {
-// spw.isNeededNextFlag = Boolean.parseBoolean(att.getNodeValue());
-// }
-// if (spw.isNeededNextFlag)
-// {
-// _mustKillMobsId.add(npcId);
-// }
-// _spawnList.get(flag).add(spw);
-// spawnCount++;
-// }
-// }
-// }
-// }
-// }
-// else if ("spawnZones".equalsIgnoreCase(n.getNodeName()))
-// {
-// for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-// {
-// if ("zone".equalsIgnoreCase(d.getNodeName()))
-// {
-// NamedNodeMap attrs = d.getAttributes();
-// Node att = attrs.getNamedItem("id");
-// if (att == null)
-// {
-// _log.error("[Seed of Destruction] Missing id in spawnZones List, skipping");
-// continue;
-// }
-// int id = Integer.parseInt(att.getNodeValue());
-// att = attrs.getNamedItem("minZ");
-// if (att == null)
-// {
-// _log.error("[Seed of Destruction] Missing minZ in spawnZones List id: " + id + ", skipping");
-// continue;
-// }
-// int minz = Integer.parseInt(att.getNodeValue());
-// att = attrs.getNamedItem("maxZ");
-// if (att == null)
-// {
-// _log.error("[Seed of Destruction] Missing maxZ in spawnZones List id: " + id + ", skipping");
-// continue;
-// }
-// int maxz = Integer.parseInt(att.getNodeValue());
-// Territory ter = new Territory(id);
-//
-// for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-// {
-// if ("point".equalsIgnoreCase(cd.getNodeName()))
-// {
-// attrs = cd.getAttributes();
-// int x, y;
-// att = attrs.getNamedItem("x");
-// if (att != null)
-// {
-// x = Integer.parseInt(att.getNodeValue());
-// }
-// else
-// {
-// continue;
-// }
-// att = attrs.getNamedItem("y");
-// if (att != null)
-// {
-// y = Integer.parseInt(att.getNodeValue());
-// }
-// else
-// {
-// continue;
-// }
-//
-// ter.add(x, y, minz, maxz, 0);
-// }
-// }
-//
-// _spawnZoneList.put(id, ter);
-// }
-// }
-// }
-// }
-// }
-// }
-// catch (Exception e)
-// {
-// _log.warn("[Seed of Destruction] Could not parse data.xml file: " + e.getMessage(), e);
-// }
-// if (Config.DEBUG)
-// {
-// _log.info("[Seed of Destruction] Loaded " + spawnCount + " spawns data.");
-// _log.info("[Seed of Destruction] Loaded " + _spawnZoneList.size() + " spawn zones data.");
-// }
-// }
-//
-// @Override
-// protected boolean checkConditions(PlayerInstance player, int templateId)
-// {
-// final Party party = player.getParty();
-// if (party == null)
-// {
-// player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
-// return false;
-// }
-// final CommandChannel channel = player.getParty().getCommandChannel();
-// if (channel == null)
-// {
-// player.sendPacket(SystemMessageId.YOU_CANNOT_ENTER_BECAUSE_YOU_ARE_NOT_ASSOCIATED_WITH_THE_CURRENT_COMMAND_CHANNEL);
-// return false;
-// }
-// else if (channel.getLeader() != player)
-// {
-// player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_MAKE_THE_REQUEST_TO_ENTER);
-// return false;
-// }
-// else if ((channel.getMemberCount() < MIN_PLAYERS) || (channel.getMemberCount() > MAX_PLAYERS))
-// {
-// player.sendPacket(SystemMessageId.YOU_CANNOT_ENTER_DUE_TO_THE_PARTY_HAVING_EXCEEDED_THE_LIMIT);
-// return false;
-// }
-// for (PlayerInstance partyMember : channel.getMembers())
-// {
-// if (partyMember.getLevel() < 75)
-// {
-// SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_DOES_NOT_CORRESPOND_TO_THE_REQUIREMENTS_FOR_ENTRY);
-// sm.addPcName(partyMember);
-// party.broadcastPacket(sm);
-// return false;
-// }
-// if (!Util.checkIfInRange(1000, player, partyMember, true))
-// {
-// SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_A_LOCATION_WHICH_CANNOT_BE_ENTERED_THEREFORE_IT_CANNOT_BE_PROCESSED);
-// sm.addPcName(partyMember);
-// party.broadcastPacket(sm);
-// return false;
-// }
-// Long reentertime = InstanceManager.getInstance().getInstanceTime(partyMember.getObjectId(), INSTANCEID);
-// if (System.currentTimeMillis() < reentertime)
-// {
-// SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_MAY_NOT_RE_ENTER_YET);
-// sm.addPcName(partyMember);
-// party.broadcastPacket(sm);
-// return false;
-// }
-// }
-// return true;
-// }
-//
-// @Override
-// public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
-// {
-// if (firstEntrance)
-// {
-// spawnState((SOD1World) world);
-// for (L2DoorInstance door : InstanceManager.getInstance().getInstance(world.getInstanceId()).getDoors())
-// {
-// if (CommonUtil.contains(ATTACKABLE_DOORS, door.getId()))
-// {
-// door.setIsAttackableDoor(true);
-// }
-// }
-//
-// // teleport players
-// if ((player.getParty() == null) || (player.getParty().getCommandChannel() == null))
-// {
-// teleportPlayer(player, ENTER_TELEPORT_1, world.getInstanceId(), false);
-// world.addAllowed(player.getObjectId());
-// }
-// else
-// {
-// for (PlayerInstance channelMember : player.getParty().getCommandChannel().getMembers())
-// {
-// teleportPlayer(channelMember, ENTER_TELEPORT_1, world.getInstanceId(), false);
-// world.addAllowed(channelMember.getObjectId());
-// }
-// }
-// }
-// else
-// {
-// teleportPlayer(player, ENTER_TELEPORT_1, world.getInstanceId(), false);
-// }
-// }
-//
-// protected boolean checkKillProgress(Npc mob, SOD1World world)
-// {
-// if (world.npcList.containsKey(mob))
-// {
-// world.npcList.put(mob, true);
-// }
-// for (boolean isDead : world.npcList.values())
-// {
-// if (!isDead)
-// {
-// return false;
-// }
-// }
-// return true;
-// }
-//
-// private void spawnFlaggedNPCs(SOD1World world, int flag)
-// {
-// if (world.lock.tryLock())
-// {
-// try
-// {
-// for (SODSpawn spw : _spawnList.get(flag))
-// {
-// if (spw.isZone)
-// {
-// for (int i = 0; i < spw.count; i++)
-// {
-// if (_spawnZoneList.containsKey(spw.zone))
-// {
-// final Location location = _spawnZoneList.get(spw.zone).getRandomPoint();
-// if (location != null)
-// {
-// spawn(world, spw.npcId, location.getX(), location.getY(), GeoData.getInstance().getSpawnHeight(location), getRandom(65535), spw.isNeededNextFlag);
-// }
-// }
-// else
-// {
-// _log.info("[Seed of Destruction] Missing zone: " + spw.zone);
-// }
-// }
-// }
-// else
-// {
-// spawn(world, spw.npcId, spw.x, spw.y, spw.z, spw.h, spw.isNeededNextFlag);
-// }
-// }
-// }
-// finally
-// {
-// world.lock.unlock();
-// }
-// }
-// }
-//
-// protected boolean spawnState(SOD1World world)
-// {
-// if (world.lock.tryLock())
-// {
-// try
-// {
-// world.npcList.clear();
-// switch (world.getStatus())
-// {
-// case 0:
-// spawnFlaggedNPCs(world, 0);
-// break;
-// case 1:
-// ExShowScreenMessage message1 = new ExShowScreenMessage(NpcStringId.THE_ENEMIES_HAVE_ATTACKED_EVERYONE_COME_OUT_AND_FIGHT_URGH, 5, 1);
-// sendScreenMessage(world, message1);
-// for (int i : ENTRANCE_ROOM_DOORS)
-// {
-// openDoor(i, world.getInstanceId());
-// }
-// spawnFlaggedNPCs(world, 1);
-// break;
-// case 2:
-// case 3:
-// // handled elsewhere
-// return true;
-// case 4:
-// ExShowScreenMessage message2 = new ExShowScreenMessage(NpcStringId.OBELISK_HAS_COLLAPSED_DON_T_LET_THE_ENEMIES_JUMP_AROUND_WILDLY_ANYMORE, 5, 1);
-// sendScreenMessage(world, message2);
-// for (int i : SQUARE_DOORS)
-// {
-// openDoor(i, world.getInstanceId());
-// }
-// spawnFlaggedNPCs(world, 4);
-// break;
-// case 5:
-// openDoor(SCOUTPASS_DOOR, world.getInstanceId());
-// spawnFlaggedNPCs(world, 3);
-// spawnFlaggedNPCs(world, 5);
-// break;
-// case 6:
-// openDoor(THRONE_DOOR, world.getInstanceId());
-// break;
-// case 7:
-// spawnFlaggedNPCs(world, 7);
-// break;
-// case 8:
-// ExShowScreenMessage message4 = new ExShowScreenMessage(NpcStringId.COME_OUT_WARRIORS_PROTECT_SEED_OF_DESTRUCTION, 5, 1);
-// sendScreenMessage(world, message4);
-// world.deviceSpawnedMobCount = 0;
-// spawnFlaggedNPCs(world, 8);
-// break;
-// case 9:
-// // instance end
-// break;
-// }
-// world.incStatus();
-// return true;
-// }
-// finally
-// {
-// world.lock.unlock();
-// }
-// }
-// return false;
-// }
-//
-// protected void spawn(SOD1World world, int npcId, int x, int y, int z, int h, boolean addToKillTable)
-// {
-// // traps
-// if ((npcId >= 18720) && (npcId <= 18774))
-// {
-// Skill skill = null;
-// if (npcId <= 18728)
-// {
-// skill = TRAP_HOLD.getSkill();
-// }
-// else if (npcId <= 18736)
-// {
-// skill = TRAP_STUN.getSkill();
-// }
-// else if (npcId <= 18770)
-// {
-// skill = TRAP_DAMAGE.getSkill();
-// }
-// else
-// {
-// skill = TRAP_SPAWN.getSkill();
-// }
-// addTrap(npcId, x, y, z, h, skill, world.getInstanceId());
-// return;
-// }
-// Npc npc = addSpawn(npcId, x, y, z, h, false, 0, false, world.getInstanceId());
-// if (addToKillTable)
-// {
-// world.npcList.put(npc, false);
-// }
-// npc.setRandomWalking(true);
-// if (npc.isInstanceTypes(InstanceType.L2Attackable))
-// {
-// ((Attackable) npc).setSeeThroughSilentMove(true);
-// }
-// if (npcId == TIAT_VIDEO_NPC)
-// {
-// startQuestTimer("DoorCheck", 10000, npc, null);
-// }
-// else if (npcId == SPAWN_DEVICE)
-// {
-// npc.disableCoreAI(true);
-// startQuestTimer("Spawn", 10000, npc, null, true);
-// }
-// else if (npcId == TIAT)
-// {
-// for (int i = 0; i < TIAT_GUARD_NUMBER; i++)
-// {
-// addMinion((L2MonsterInstance) npc, TIAT_GUARD);
-// }
-// }
-// }
-//
-// protected void setInstanceTimeRestrictions(SOD1World world)
-// {
-// Calendar reenter = Calendar.getInstance();
-// reenter.set(Calendar.MINUTE, RESET_MIN);
-// reenter.set(Calendar.HOUR_OF_DAY, RESET_HOUR);
-// // if time is >= RESET_HOUR - roll to the next day
-// if (reenter.getTimeInMillis() <= System.currentTimeMillis())
-// {
-// reenter.add(Calendar.DAY_OF_MONTH, 1);
-// }
-// if (reenter.get(Calendar.DAY_OF_WEEK) <= RESET_DAY_1)
-// {
-// while (reenter.get(Calendar.DAY_OF_WEEK) != RESET_DAY_1)
-// {
-// reenter.add(Calendar.DAY_OF_MONTH, 1);
-// }
-// }
-// else
-// {
-// while (reenter.get(Calendar.DAY_OF_WEEK) != RESET_DAY_2)
-// {
-// reenter.add(Calendar.DAY_OF_MONTH, 1);
-// }
-// }
-//
-// SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_S1_S_ENTRY_HAS_BEEN_RESTRICTED_YOU_CAN_CHECK_THE_NEXT_POSSIBLE_ENTRY_TIME_BY_USING_THE_COMMAND_INSTANCEZONE);
-// sm.addInstanceName(INSTANCEID);
-//
-// // set instance reenter time for all allowed players
-// for (int objectId : world.getAllowed())
-// {
-// PlayerInstance player = World.getInstance().getPlayer(objectId);
-// InstanceManager.getInstance().setInstanceTime(objectId, INSTANCEID, reenter.getTimeInMillis());
-// if ((player != null) && player.isOnline())
-// {
-// player.sendPacket(sm);
-// }
-// }
-// }
-//
-// private void sendScreenMessage(SOD1World world, ExShowScreenMessage message)
-// {
-// for (int objId : world.getAllowed())
-// {
-// PlayerInstance player = World.getInstance().getPlayer(objId);
-// if (player != null)
-// {
-// player.sendPacket(message);
-// }
-// }
-// }
-//
-// @Override
-// public String onSpawn(Npc npc)
-// {
-// if (npc.getId() == TIAT_GUARD)
-// {
-// startQuestTimer("GuardThink", 2500 + getRandom(-200, 200), npc, null, true);
-// }
-// else
-// {
-// npc.disableCoreAI(true);
-// }
-// return super.onSpawn(npc);
-// }
-//
-// @Override
-// public String onAggroRangeEnter(Npc npc, PlayerInstance player, boolean isSummon)
-// {
-// if ((isSummon == false) && (player != null))
-// {
-// InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(player.getInstanceId());
-// if (tmpworld instanceof SOD1World)
-// {
-// SOD1World world = (SOD1World) tmpworld;
-// if (world.getStatus() == 7)
-// {
-// if (spawnState(world))
-// {
-// playMovie(World.getInstance().getVisibleObjects(npc, PlayerInstance.class, 8000), Movie.SC_BOSS_TIAT_OPENING);
-// npc.deleteMe();
-// }
-// }
-// }
-// }
-// return null;
-// }
-//
-// @Override
-// public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
-// {
-// InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-// if (tmpworld instanceof SOD1World)
-// {
-// SOD1World world = (SOD1World) tmpworld;
-// if ((world.getStatus() == 2) && (npc.getId() == OBELISK))
-// {
-// world.setStatus(4);
-// spawnFlaggedNPCs(world, 3);
-// }
-// else if ((world.getStatus() == 3) && (npc.getId() == OBELISK))
-// {
-// world.setStatus(4);
-// spawnFlaggedNPCs(world, 2);
-// }
-// else if ((world.getStatus() <= 8) && (npc.getId() == TIAT))
-// {
-// if (npc.getCurrentHp() < (npc.getMaxHp() / 2))
-// {
-// if (spawnState(world))
-// {
-// startQuestTimer("TiatFullHp", 3000, npc, null);
-// setInstanceTimeRestrictions(world);
-// }
-// }
-// }
-// }
-// return null;
-// }
-//
-// @Override
-// public String onAdvEvent(String event, Npc npc, PlayerInstance player)
-// {
-// InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-// if (tmpworld instanceof SOD1World)
-// {
-// SOD1World world = (SOD1World) tmpworld;
-// if (event.equalsIgnoreCase("Spawn"))
-// {
-// PlayerInstance target = World.getInstance().getPlayer(world.getAllowed().toArray(new Integer[0])[getRandom(world.getAllowed().size())]);
-// if ((world.deviceSpawnedMobCount < MAX_DEVICESPAWNEDMOBCOUNT) && (target != null) && (target.getInstanceId() == npc.getInstanceId()) && !target.isDead())
-// {
-// Attackable mob = (Attackable) addSpawn(SPAWN_MOB_IDS[getRandom(SPAWN_MOB_IDS.length)], npc.getSpawn().getLocation(), false, 0, false, world.getInstanceId());
-// world.deviceSpawnedMobCount++;
-// mob.setSeeThroughSilentMove(true);
-// mob.setRunning();
-// if (world.getStatus() >= 7)
-// {
-// mob.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, MOVE_TO_TIAT);
-// }
-// else
-// {
-// mob.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, MOVE_TO_DOOR);
-// }
-// }
-// }
-// else if (event.equalsIgnoreCase("DoorCheck"))
-// {
-// L2DoorInstance tmp = getDoor(FORTRESS_DOOR, npc.getInstanceId());
-// if (tmp.getCurrentHp() < tmp.getMaxHp())
-// {
-// world.deviceSpawnedMobCount = 0;
-// spawnFlaggedNPCs(world, 6);
-// ExShowScreenMessage message3 = new ExShowScreenMessage(NpcStringId.ENEMIES_ARE_TRYING_TO_DESTROY_THE_FORTRESS_EVERYONE_DEFEND_THE_FORTRESS, 5, 1);
-// sendScreenMessage(world, message3);
-// }
-// else
-// {
-// startQuestTimer("DoorCheck", 10000, npc, null);
-// }
-// }
-// else if (event.equalsIgnoreCase("TiatFullHp"))
-// {
-// if (!npc.hasBlockActions() && !npc.isInvul())
-// {
-// npc.setCurrentHp(npc.getMaxHp());
-// }
-// }
-// else if (event.equalsIgnoreCase("BodyGuardThink"))
-// {
-// Creature mostHate = ((Attackable) npc).getMostHated();
-// if (mostHate != null)
-// {
-// double dist = Util.calculateDistance(mostHate.getXdestination(), mostHate.getYdestination(), 0, npc.getSpawn().getX(), npc.getSpawn().getY(), 0, false, false);
-// if (dist > 900)
-// {
-// ((Attackable) npc).reduceHate(mostHate, ((Attackable) npc).getHating(mostHate));
-// }
-// mostHate = ((Attackable) npc).getMostHated();
-// if ((mostHate != null) || (((Attackable) npc).getHating(mostHate) < 5))
-// {
-// ((Attackable) npc).returnHome();
-// }
-// }
-// }
-// }
-// return "";
-// }
-//
-// @Override
-// public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
-// {
-// if (npc.getId() == SPAWN_DEVICE)
-// {
-// cancelQuestTimer("Spawn", npc, null);
-// return "";
-// }
-// InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-// if (tmpworld instanceof SOD1World)
-// {
-// SOD1World world = (SOD1World) tmpworld;
-// if (world.getStatus() == 1)
-// {
-// if (checkKillProgress(npc, world))
-// {
-// spawnState(world);
-// }
-// }
-// else if (world.getStatus() == 2)
-// {
-// if (checkKillProgress(npc, world))
-// {
-// world.incStatus();
-// }
-// }
-// else if ((world.getStatus() == 4) && (npc.getId() == OBELISK))
-// {
-// spawnState(world);
-// }
-// else if ((world.getStatus() == 5) && (npc.getId() == POWERFUL_DEVICE))
-// {
-// if (checkKillProgress(npc, world))
-// {
-// spawnState(world);
-// }
-// }
-// else if ((world.getStatus() == 6) && (npc.getId() == THRONE_POWERFUL_DEVICE))
-// {
-// if (checkKillProgress(npc, world))
-// {
-// spawnState(world);
-// }
-// }
-// else if (world.getStatus() >= 7)
-// {
-// if (npc.getId() == TIAT)
-// {
-// world.incStatus();
-// playMovie(World.getInstance().getVisibleObjects(npc, PlayerInstance.class, 8000), Movie.SC_BOSS_TIAT_ENDING_SUCCES);
-// InstanceManager.getInstance().getInstance(world.getInstanceId()).removeSpawnedNpcs();
-// GraciaSeedsManager.getInstance().increaseSoDTiatKilled();
-// }
-// else if (npc.getId() == TIAT_GUARD)
-// {
-// addMinion(((L2MonsterInstance) npc).getLeader(), TIAT_GUARD);
-// }
-// }
-// }
-// return "";
-// }
-//
-// @Override
-// public String onTalk(Npc npc, PlayerInstance player)
-// {
-// int npcId = npc.getId();
-// getQuestState(player, true);
-// if (npcId == ALENOS)
-// {
-// InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-// if ((GraciaSeedsManager.getInstance().getSoDState() == 1) || ((world != null) && (world instanceof SOD1World)))
-// {
-// enterInstance(player, new SOD1World(), "SeedOfDestructionStage1.xml", INSTANCEID);
-// }
-// else if (GraciaSeedsManager.getInstance().getSoDState() == 2)
-// {
-// teleportPlayer(player, ENTER_TELEPORT_2, 0, false);
-// }
-// }
-// else if (npcId == TELEPORT)
-// {
-// teleportPlayer(player, CENTER_TELEPORT, player.getInstanceId(), false);
-// }
-// return "";
-// }
-//
-// @Override
-// public String onTrapAction(L2TrapInstance trap, Creature trigger, TrapAction action)
-// {
-// InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(trap.getInstanceId());
-// if (tmpworld instanceof SOD1World)
-// {
-// SOD1World world = (SOD1World) tmpworld;
-// switch (action)
-// {
-// case TRAP_TRIGGERED:
-// if (trap.getId() == 18771)
-// {
-// for (int npcId : TRAP_18771_NPCS)
-// {
-// addSpawn(npcId, trap.getX(), trap.getY(), trap.getZ(), trap.getHeading(), true, 0, true, world.getInstanceId());
-// }
-// }
-// else
-// {
-// for (int npcId : TRAP_OTHER_NPCS)
-// {
-// addSpawn(npcId, trap.getX(), trap.getY(), trap.getZ(), trap.getHeading(), true, 0, true, world.getInstanceId());
-// }
-// }
-// break;
-// }
-// }
-// return null;
-// }
-// }
+public final class Stage1 extends AbstractInstance implements IGameXmlReader
+{
+	protected static class SODSpawn
+	{
+		public boolean isZone = false;
+		public boolean isNeededNextFlag = false;
+		public int npcId;
+		public int x = 0;
+		public int y = 0;
+		public int z = 0;
+		public int h = 0;
+		public int zone = 0;
+		public int count = 0;
+	}
+	
+	// Spawn data
+	private final Map<Integer, Territory> _spawnZoneList = new HashMap<>();
+	private final Map<Integer, List<SODSpawn>> _spawnList = new HashMap<>();
+	// Locations
+	private static final Location ENTER_TELEPORT_2 = new Location(-245800, 220488, -12112);
+	private static final Location CENTER_TELEPORT = new Location(-245802, 220528, -12104);
+	// Traps/Skills
+	private static final SkillHolder TRAP_HOLD = new SkillHolder(4186, 9); // 18720-18728
+	private static final SkillHolder TRAP_STUN = new SkillHolder(4072, 10); // 18729-18736
+	private static final SkillHolder TRAP_DAMAGE = new SkillHolder(5340, 4); // 18737-18770
+	private static final SkillHolder TRAP_SPAWN = new SkillHolder(10002, 1); // 18771-18774 : handled in this script
+	private static final int[] TRAP_18771_NPCS =
+	{
+		22541,
+		22544,
+		22541,
+		22544
+	};
+	private static final int[] TRAP_OTHER_NPCS =
+	{
+		22546,
+		22546,
+		22538,
+		22537
+	};
+	// NPCs
+	private static final int ALENOS = 32526;
+	private static final int TELEPORT = 32601;
+	// Monsters
+	private static final int OBELISK = 18776;
+	private static final int POWERFUL_DEVICE = 18777;
+	private static final int THRONE_POWERFUL_DEVICE = 18778;
+	private static final int SPAWN_DEVICE = 18696;
+	private static final int TIAT = 29163;
+	private static final int TIAT_GUARD = 29162;
+	private static final int TIAT_GUARD_NUMBER = 5;
+	private static final int TIAT_VIDEO_NPC = 29169;
+	private static final Location MOVE_TO_TIAT = new Location(-250403, 207273, -11952, 16384);
+	private static final Location MOVE_TO_DOOR = new Location(-251432, 214905, -12088, 16384);
+	// TODO: handle this better
+	private static final int[] SPAWN_MOB_IDS =
+	{
+		22536,
+		22537,
+		22538,
+		22539,
+		22540,
+		22541,
+		22542,
+		22543,
+		22544,
+		22547,
+		22550,
+		22551,
+		22552,
+		22596
+	};
+	// Doors/Walls/Zones
+	private static final int[] ATTACKABLE_DOORS =
+	{
+		12240005,
+		12240006,
+		12240007,
+		12240008,
+		12240009,
+		12240010,
+		12240013,
+		12240014,
+		12240015,
+		12240016,
+		12240017,
+		12240018,
+		12240021,
+		12240022,
+		12240023,
+		12240024,
+		12240025,
+		12240026,
+		12240028,
+		12240029,
+		12240030
+	};
+	private static final int[] ENTRANCE_ROOM_DOORS =
+	{
+		12240001,
+		12240002
+	};
+	private static final int[] SQUARE_DOORS =
+	{
+		12240003,
+		12240004,
+		12240011,
+		12240012,
+		12240019,
+		12240020
+	};
+	private static final int SCOUTPASS_DOOR = 12240027;
+	private static final int FORTRESS_DOOR = 12240030;
+	private static final int THRONE_DOOR = 12240031;
+	// Zone
+	private static final int VIDEO_ZONE = 60010;
+	// Misc
+	private static final int INSTANCEID = 110; // this is the client number
+	private static final int MAX_DEVICESPAWNEDMOBCOUNT = 100; // prevent too much mob spawn
+	
+	public Stage1()
+	{
+		super(Stage1.class.getSimpleName());
+		load();
+		addStartNpc(ALENOS, TELEPORT);
+		addTalkId(ALENOS, TELEPORT);
+		addAttackId(OBELISK, TIAT);
+		addSpawnId(OBELISK, POWERFUL_DEVICE, THRONE_POWERFUL_DEVICE, TIAT_GUARD);
+		addKillId(OBELISK, TIAT, SPAWN_DEVICE, TIAT_GUARD);
+		for (int i = 18771; i <= 18774; i++)
+		{
+			addTrapActionId(i);
+		}
+		addEnterZoneId(VIDEO_ZONE);
+		addInstanceCreatedId(INSTANCEID);
+	}
+	
+	@Override
+	public void load()
+	{
+		parseDatapackFile("data/spawnZones/seed_of_destruction.xml");
+		_log.info("[Seed of Destruction] Loaded " + _spawnZoneList.size() + " spawn zones data.");
+	}
+	
+	@Override
+	public void parseDocument(Document doc, File file)
+	{
+		final Set<Integer> killIds = new HashSet<>();
+		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		{
+			if (n.getNodeName().equals("list"))
+			{
+				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+				{
+					if (d.getNodeName().equals("npc"))
+					{
+						for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
+						{
+							if (e.getNodeName().equals("spawn"))
+							{
+								NamedNodeMap attrs = e.getAttributes();
+								final int npcId = parseInteger(attrs, "npcId");
+								final int flag = parseInteger(attrs, "flag");
+								
+								if (!_spawnList.containsKey(flag))
+								{
+									_spawnList.put(flag, new ArrayList<SODSpawn>());
+								}
+								
+								for (Node f = e.getFirstChild(); f != null; f = f.getNextSibling())
+								{
+									if (f.getNodeName().equals("loc"))
+									{
+										attrs = f.getAttributes();
+										
+										final SODSpawn spw = new SODSpawn();
+										spw.npcId = npcId;
+										spw.x = parseInteger(attrs, "x");
+										spw.y = parseInteger(attrs, "y");
+										spw.z = parseInteger(attrs, "z");
+										spw.h = parseInteger(attrs, "heading");
+										spw.isNeededNextFlag = parseBoolean(attrs, "mustKill", false);
+										
+										if (spw.isNeededNextFlag)
+										{
+											killIds.add(npcId);
+										}
+										_spawnList.get(flag).add(spw);
+									}
+									else if (f.getNodeName().equals("zone"))
+									{
+										attrs = f.getAttributes();
+										
+										final SODSpawn spw = new SODSpawn();
+										spw.npcId = npcId;
+										spw.isZone = true;
+										spw.zone = parseInteger(attrs, "id");
+										spw.count = parseInteger(attrs, "count");
+										spw.isNeededNextFlag = parseBoolean(attrs, "mustKill", false);
+										
+										if (spw.isNeededNextFlag)
+										{
+											killIds.add(npcId);
+										}
+										_spawnList.get(flag).add(spw);
+									}
+								}
+							}
+						}
+					}
+					else if (d.getNodeName().equals("spawnZones"))
+					{
+						for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
+						{
+							if (e.getNodeName().equals("zone"))
+							{
+								NamedNodeMap attrs = e.getAttributes();
+								final int id = parseInteger(attrs, "id");
+								final int minz = parseInteger(attrs, "minZ");
+								final int maxz = parseInteger(attrs, "maxZ");
+								final Territory ter = new Territory(id);
+								for (Node f = e.getFirstChild(); f != null; f = f.getNextSibling())
+								{
+									if (f.getNodeName().equals("point"))
+									{
+										attrs = f.getAttributes();
+										final int x = parseInteger(attrs, "x");
+										final int y = parseInteger(attrs, "y");
+										ter.add(x, y, minz, maxz, 0);
+									}
+								}
+								_spawnZoneList.put(id, ter);
+							}
+						}
+					}
+				}
+			}
+		}
+		addKillId(killIds);
+	}
+	
+	@Override
+	public void onInstanceCreated(Instance instance)
+	{
+		spawnState(instance);
+		for (L2DoorInstance door : instance.getDoors())
+		{
+			if (CommonUtil.contains(ATTACKABLE_DOORS, door.getId()))
+			{
+				door.setIsAttackableDoor(true);
+			}
+		}
+	}
+	
+	protected boolean checkKillProgress(Instance world)
+	{
+		final long count = world.getNpcs().stream().filter(n -> !n.isDead() && n.isScriptValue(1)).count();
+		return count == 0;
+	}
+	
+	private void spawnFlaggedNPCs(Instance world, int flag)
+	{
+		for (SODSpawn spw : _spawnList.get(flag))
+		{
+			if (spw.isZone)
+			{
+				if (_spawnZoneList.containsKey(spw.zone))
+				{
+					final Territory terr = _spawnZoneList.get(spw.zone);
+					for (int i = 0; i < spw.count; i++)
+					{
+						final Location location = terr.getRandomPoint();
+						if (location != null)
+						{
+							spawn(world, spw.npcId, location.getX(), location.getY(), GeoData.getInstance().getSpawnHeight(location), getRandom(65535), spw.isNeededNextFlag);
+						}
+					}
+				}
+				else
+				{
+					_log.info("[Seed of Destruction] Missing zone: " + spw.zone);
+				}
+				
+			}
+			else
+			{
+				spawn(world, spw.npcId, spw.x, spw.y, spw.z, spw.h, spw.isNeededNextFlag);
+			}
+		}
+	}
+	
+	protected void spawnState(Instance world)
+	{
+		world.incStatus();
+		world.getAliveNpcs().forEach(n -> n.setScriptValue(0));
+		switch (world.getStatus() - 1)
+		{
+			case 0:
+				spawnFlaggedNPCs(world, 0);
+				break;
+			case 1:
+				world.broadcastPacket(new ExShowScreenMessage(NpcStringId.THE_ENEMIES_HAVE_ATTACKED_EVERYONE_COME_OUT_AND_FIGHT_URGH, 5, 1000));
+				for (int i : ENTRANCE_ROOM_DOORS)
+				{
+					openDoor(i, world.getId());
+				}
+				spawnFlaggedNPCs(world, 1);
+				break;
+			case 4:
+				world.broadcastPacket(new ExShowScreenMessage(NpcStringId.OBELISK_HAS_COLLAPSED_DON_T_LET_THE_ENEMIES_JUMP_AROUND_WILDLY_ANYMORE, 5, 1000));
+				for (int i : SQUARE_DOORS)
+				{
+					openDoor(i, world.getId());
+				}
+				spawnFlaggedNPCs(world, 4);
+				break;
+			case 5:
+				openDoor(SCOUTPASS_DOOR, world.getId());
+				spawnFlaggedNPCs(world, 3);
+				spawnFlaggedNPCs(world, 5);
+				break;
+			case 6:
+				openDoor(THRONE_DOOR, world.getId());
+				break;
+			case 7:
+				spawnFlaggedNPCs(world, 7);
+				break;
+			case 8:
+				world.broadcastPacket(new ExShowScreenMessage(NpcStringId.COME_OUT_WARRIORS_PROTECT_SEED_OF_DESTRUCTION, 5, 1000));
+				world.setParameter("deviceCount", 0);
+				spawnFlaggedNPCs(world, 8);
+				break;
+		}
+	}
+	
+	protected void spawn(Instance world, int npcId, int x, int y, int z, int h, boolean addToKillTable)
+	{
+		// traps
+		if ((npcId >= 18720) && (npcId <= 18774))
+		{
+			Skill skill = null;
+			if (npcId <= 18728)
+			{
+				skill = TRAP_HOLD.getSkill();
+			}
+			else if (npcId <= 18736)
+			{
+				skill = TRAP_STUN.getSkill();
+			}
+			else if (npcId <= 18770)
+			{
+				skill = TRAP_DAMAGE.getSkill();
+			}
+			else
+			{
+				skill = TRAP_SPAWN.getSkill();
+			}
+			addTrap(npcId, x, y, z, h, skill, world.getId());
+			return;
+		}
+		final Npc npc = addSpawn(npcId, x, y, z, h, false, 0, false, world.getId());
+		if (addToKillTable)
+		{
+			npc.setScriptValue(1);
+		}
+		
+		if (npc.isAttackable())
+		{
+			((Attackable) npc).setSeeThroughSilentMove(true);
+		}
+		
+		if (npcId == TIAT_VIDEO_NPC)
+		{
+			startQuestTimer("DoorCheck", 10000, npc, null);
+		}
+		else if (npcId == SPAWN_DEVICE)
+		{
+			npc.disableCoreAI(true);
+			startQuestTimer("Spawn", 10000, npc, null, true);
+		}
+		else if (npcId == TIAT)
+		{
+			for (int i = 0; i < TIAT_GUARD_NUMBER; i++)
+			{
+				addMinion((L2MonsterInstance) npc, TIAT_GUARD);
+			}
+		}
+	}
+	
+	@Override
+	public String onSpawn(Npc npc)
+	{
+		if (npc.getId() == TIAT_GUARD)
+		{
+			startQuestTimer("GuardThink", 2500 + getRandom(-200, 200), npc, null, true);
+		}
+		else
+		{
+			npc.disableCoreAI(true);
+		}
+		return super.onSpawn(npc);
+	}
+	
+	@Override
+	public String onEnterZone(Creature character, ZoneType zone)
+	{
+		if (character.isPlayer())
+		{
+			final Instance world = getPlayerInstance(character.getActingPlayer(), true);
+			if ((world != null) && world.isStatus(7))
+			{
+				spawnState(world);
+				final Npc videoNpc = world.getNpc(TIAT_VIDEO_NPC);
+				if (videoNpc != null)
+				{
+					playMovie(World.getInstance().getVisibleObjects(videoNpc, PlayerInstance.class, 8000), Movie.SC_BOSS_TIAT_OPENING);
+					videoNpc.deleteMe();
+				}
+			}
+		}
+		return null;
+	}
+	
+	@Override
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
+	{
+		final Instance world = getInstance(npc);
+		if (world != null)
+		{
+			if (npc.getId() == OBELISK)
+			{
+				if (world.isStatus(2))
+				{
+					world.setStatus(4);
+					spawnFlaggedNPCs(world, 3);
+				}
+				else if (world.isStatus(3))
+				{
+					world.setStatus(4);
+					spawnFlaggedNPCs(world, 2);
+				}
+			}
+			else if ((world.getStatus() <= 8) && (npc.getCurrentHp() < (npc.getMaxHp() / 2)))
+			{
+				spawnState(world);
+				startQuestTimer("TiatFullHp", 3000, npc, null);
+				world.setReenterTime();
+			}
+		}
+		return null;
+	}
+	
+	@Override
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
+	{
+		final Instance world = getInstance(npc);
+		if (world != null)
+		{
+			switch (event)
+			{
+				case "Spawn":
+				{
+					final List<PlayerInstance> players = new ArrayList<>(world.getPlayers());
+					final PlayerInstance target = players.get(getRandom(players.size()));
+					final int deviceCount = world.getParameters().getInt("deviceCount", 0);
+					if ((deviceCount < MAX_DEVICESPAWNEDMOBCOUNT) && !target.isDead())
+					{
+						world.setParameter("deviceCount", deviceCount + 1);
+						
+						final Attackable mob = (Attackable) addSpawn(SPAWN_MOB_IDS[getRandom(SPAWN_MOB_IDS.length)], npc.getSpawn().getLocation(), false, 0, false, world.getId());
+						mob.setSeeThroughSilentMove(true);
+						mob.setRunning();
+						mob.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, (world.getStatus() >= 7) ? MOVE_TO_TIAT : MOVE_TO_DOOR);
+					}
+					break;
+				}
+				case "DoorCheck":
+				{
+					final L2DoorInstance tmp = world.getDoor(FORTRESS_DOOR);
+					if (tmp.getCurrentHp() < tmp.getMaxHp())
+					{
+						world.setParameter("deviceCount", 0);
+						spawnFlaggedNPCs(world, 6);
+						world.broadcastPacket(new ExShowScreenMessage(NpcStringId.ENEMIES_ARE_TRYING_TO_DESTROY_THE_FORTRESS_EVERYONE_DEFEND_THE_FORTRESS, ExShowScreenMessage.MIDDLE_CENTER, 1000));
+					}
+					else
+					{
+						startQuestTimer("DoorCheck", 10000, npc, null);
+					}
+					break;
+				}
+				case "TiatFullHp":
+				{
+					if (!npc.hasBlockActions() && !npc.isInvul())
+					{
+						npc.setCurrentHp(npc.getMaxHp());
+					}
+					break;
+				}
+				case "BodyGuardThink":
+				{
+					final Attackable mob = (Attackable) npc;
+					Creature mostHate = mob.getMostHated();
+					if (mostHate != null)
+					{
+						double dist = Util.calculateDistance(mostHate.getXdestination(), mostHate.getYdestination(), 0, npc.getSpawn().getX(), npc.getSpawn().getY(), 0, false, false);
+						if (dist > 900)
+						{
+							mob.reduceHate(mostHate, mob.getHating(mostHate));
+						}
+						mostHate = mob.getMostHated();
+						if ((mostHate != null) || (mob.getHating(mostHate) < 5))
+						{
+							mob.returnHome();
+						}
+					}
+					break;
+				}
+			}
+		}
+		return null;
+	}
+	
+	@Override
+	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
+	{
+		if (npc.getId() == SPAWN_DEVICE)
+		{
+			cancelQuestTimer("Spawn", npc, null);
+		}
+		else
+		{
+			final Instance world = getInstance(npc);
+			if (world != null)
+			{
+				switch (world.getStatus())
+				{
+					case 1:
+					{
+						if (checkKillProgress(world))
+						{
+							spawnState(world);
+						}
+						break;
+					}
+					case 2:
+					{
+						if (checkKillProgress(world))
+						{
+							world.incStatus();
+						}
+						break;
+					}
+					case 4:
+					{
+						if (npc.getId() == OBELISK)
+						{
+							spawnState(world);
+						}
+						break;
+					}
+					case 5:
+					{
+						if ((npc.getId() == POWERFUL_DEVICE) && checkKillProgress(world))
+						{
+							spawnState(world);
+						}
+						break;
+					}
+					case 6:
+					{
+						if ((npc.getId() == THRONE_POWERFUL_DEVICE) && checkKillProgress(world))
+						{
+							spawnState(world);
+						}
+						break;
+					}
+					default:
+					{
+						if (world.getStatus() >= 7)
+						{
+							if (npc.getId() == TIAT)
+							{
+								world.incStatus();
+								playMovie(World.getInstance().getVisibleObjects(npc, PlayerInstance.class, 8000), Movie.SC_BOSS_TIAT_ENDING_SUCCES);
+								world.removeNpcs();
+								world.finishInstance();
+								GraciaSeedsManager.getInstance().increaseSoDTiatKilled();
+							}
+							else if (npc.getId() == TIAT_GUARD)
+							{
+								addMinion(((L2MonsterInstance) npc).getLeader(), TIAT_GUARD);
+							}
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, PlayerInstance player)
+	{
+		final int npcId = npc.getId();
+		if (npcId == ALENOS)
+		{
+			final int state = GraciaSeedsManager.getInstance().getSoDState();
+			if (state == 1)
+			{
+				enterInstance(player, npc, INSTANCEID);
+			}
+			else if (state == 2)
+			{
+				player.teleToLocation(ENTER_TELEPORT_2);
+			}
+		}
+		else
+		{
+			player.teleToLocation(CENTER_TELEPORT, player.getInstanceId(), 0);
+		}
+		return null;
+	}
+	
+	@Override
+	public String onTrapAction(L2TrapInstance trap, Creature trigger, TrapAction action)
+	{
+		final Instance world = getInstance(trap);
+		if ((world != null) && (action == TrapAction.TRAP_TRIGGERED))
+		{
+			final int[] npcs = (trap.getId() == 18771) ? TRAP_18771_NPCS : TRAP_OTHER_NPCS;
+			for (int npcId : npcs)
+			{
+				addSpawn(npcId, trap.getX(), trap.getY(), trap.getZ(), trap.getHeading(), true, 0, true, world.getId());
+			}
+		}
+		return null;
+	}
+	
+	public static void main(String[] args)
+	{
+		new Stage1();
+	}
+}

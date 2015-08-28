@@ -505,35 +505,29 @@ public final class InstanceManager implements IGameXmlReader
 			Statement ps = con.createStatement();
 			ResultSet rs = ps.executeQuery("SELECT * FROM character_instance_time ORDER BY charId"))
 		{
-			// Prepare variables
-			int charId = -1;
-			Map<Integer, Long> playerData = new ConcurrentHashMap<>();
-			// Start reading database
 			while (rs.next())
 			{
-				// If previous charId is different store data for previous player and start reading new one
-				final int currCharId = rs.getInt("charId");
-				if ((charId != currCharId) && (charId != -1))
-				{
-					if (!playerData.isEmpty())
-					{
-						_playerInstanceTimes.put(charId, playerData);
-						playerData = new ConcurrentHashMap<>();
-					}
-					charId = currCharId;
-				}
-				
-				// If time for instance penalty is lower then current time skip it
+				// Check if instance penalty passed
 				final long time = rs.getLong("time");
 				if (time > System.currentTimeMillis())
 				{
-					playerData.put(rs.getInt("instanceId"), time);
+					// Load params
+					final int charId = rs.getInt("charId");
+					final int instanceId = rs.getInt("instanceId");
+					// Get player's penalty list
+					final Map<Integer, Long> playerData;
+					if (!_playerInstanceTimes.containsKey(charId))
+					{
+						playerData = new ConcurrentHashMap<>();
+						_playerInstanceTimes.put(charId, playerData);
+					}
+					else
+					{
+						playerData = _playerInstanceTimes.get(charId);
+					}
+					// Save penalty
+					playerData.put(instanceId, time);
 				}
-			}
-			// Store data for last read player
-			if ((charId != -1) && !playerData.isEmpty())
-			{
-				_playerInstanceTimes.put(charId, playerData);
 			}
 		}
 		catch (Exception e)
