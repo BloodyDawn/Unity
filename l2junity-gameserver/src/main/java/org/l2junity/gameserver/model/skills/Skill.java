@@ -1496,6 +1496,11 @@ public final class Skill implements IIdentifiable
 				caster.setChargedShot(ShotType.SOULSHOTS, false);
 			}
 		}
+		
+		if (isSuicideAttack())
+		{
+			caster.doDie(caster);
+		}
 	}
 	
 	/**
