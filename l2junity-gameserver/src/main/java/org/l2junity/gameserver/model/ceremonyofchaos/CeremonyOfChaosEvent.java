@@ -42,6 +42,7 @@ import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.client.send.ExUserInfoAbnormalVisualEffect;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.SkillCoolTime;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -254,6 +255,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				player.setIsImmobilized(false);
 				player.setInvisible(false);
 				player.broadcastInfo();
+				player.sendPacket(new ExUserInfoAbnormalVisualEffect(player));
 				player.getServitors().values().forEach(s ->
 				{
 					s.setInvisible(false);
