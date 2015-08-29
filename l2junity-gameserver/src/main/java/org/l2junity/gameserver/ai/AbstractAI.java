@@ -474,7 +474,7 @@ public abstract class AbstractAI implements Ctrl
 			}
 			
 			// Send a Server->Client packet MoveToPawn/CharMoveToLocation to the actor and all L2PcInstance in its _knownPlayers
-			if (pawn instanceof Creature)
+			if (pawn.isCreature())
 			{
 				if (_actor.isOnGeodataPath())
 				{
@@ -576,7 +576,7 @@ public abstract class AbstractAI implements Ctrl
 	
 	public void setAutoAttacking(boolean isAutoAttacking)
 	{
-		if (_actor instanceof Summon)
+		if (_actor.isSummon())
 		{
 			Summon summon = (Summon) _actor;
 			if (summon.getOwner() != null)
@@ -594,7 +594,7 @@ public abstract class AbstractAI implements Ctrl
 	 */
 	public void clientStartAutoAttack()
 	{
-		if (_actor instanceof Summon)
+		if (_actor.isSummon())
 		{
 			Summon summon = (Summon) _actor;
 			if (summon.getOwner() != null)
@@ -627,7 +627,7 @@ public abstract class AbstractAI implements Ctrl
 	 */
 	public void clientStopAutoAttack()
 	{
-		if (_actor instanceof Summon)
+		if (_actor.isSummon())
 		{
 			Summon summon = (Summon) _actor;
 			if (summon.getOwner() != null)
@@ -732,7 +732,7 @@ public abstract class AbstractAI implements Ctrl
 				final Creature followTarget = _followTarget; // copy to prevent NPE
 				if (followTarget == null)
 				{
-					if (_actor instanceof Summon)
+					if (_actor.isSummon())
 					{
 						((Summon) _actor).setFollowStatus(false);
 					}
@@ -745,7 +745,7 @@ public abstract class AbstractAI implements Ctrl
 					if (!_actor.isInsideRadius(followTarget, 3000, true, false))
 					{
 						// if the target is too far (maybe also teleported)
-						if (_actor instanceof Summon)
+						if (_actor.isSummon())
 						{
 							((Summon) _actor).setFollowStatus(false);
 						}

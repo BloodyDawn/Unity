@@ -18,8 +18,6 @@
  */
 package handlers.telnethandlers.server;
 
-import io.netty.channel.ChannelHandlerContext;
-
 import java.io.File;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
@@ -45,9 +43,6 @@ import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -57,6 +52,8 @@ import org.l2junity.gameserver.network.telnet.TelnetServer;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import io.netty.channel.ChannelHandlerContext;
 
 /**
  * @author UnAfraid
@@ -251,7 +248,7 @@ public class Debug implements ITelnetCommand
 				
 				final List<Entry<Thread, StackTraceElement[]>> entries = new ArrayList<>(allThread.entrySet());
 				Collections.sort(entries, (e1, e2) -> e1.getKey().getName().compareTo(e2.getKey().getName()));
-
+				
 				for (Entry<Thread, StackTraceElement[]> entry : entries)
 				{
 					StackTraceElement[] stes = entry.getValue();
@@ -372,14 +369,14 @@ public class Debug implements ITelnetCommand
 			{
 				continue;
 			}
-			if (obj instanceof Creature)
+			if (obj.isCreature())
 			{
 				if (((Creature) obj).hasAI())
 				{
 					AICount++;
 				}
 			}
-			if (obj instanceof ItemInstance)
+			if (obj.isItem())
 			{
 				if (((ItemInstance) obj).getItemLocation() == ItemLocation.VOID)
 				{
@@ -390,7 +387,7 @@ public class Debug implements ITelnetCommand
 					itemCount++;
 				}
 			}
-			else if (obj instanceof L2MonsterInstance)
+			else if (obj.isMonster())
 			{
 				monsterCount++;
 				if (((L2MonsterInstance) obj).hasMinions())
@@ -399,11 +396,11 @@ public class Debug implements ITelnetCommand
 					minionsGroupCount += ((L2MonsterInstance) obj).getMinionList().lazyCountSpawnedMinionsGroups();
 				}
 			}
-			else if (obj instanceof Npc)
+			else if (obj.isNpc())
 			{
 				npcCount++;
 			}
-			else if (obj instanceof PlayerInstance)
+			else if (obj.isPlayer())
 			{
 				pcCount++;
 				if ((((PlayerInstance) obj).getClient() != null) && ((PlayerInstance) obj).getClient().isDetached())
@@ -411,15 +408,15 @@ public class Debug implements ITelnetCommand
 					detachedCount++;
 				}
 			}
-			else if (obj instanceof Summon)
+			else if (obj.isSummon())
 			{
 				summonCount++;
 			}
-			else if (obj instanceof L2DoorInstance)
+			else if (obj.isDoor())
 			{
 				doorCount++;
 			}
-			else if (obj instanceof Creature)
+			else if (obj.isCreature())
 			{
 				charCount++;
 			}
@@ -449,7 +446,6 @@ public class Debug implements ITelnetCommand
 		
 		return sb.toString();
 	}
-
 	
 	private static int getOnlineGMS()
 	{

@@ -45,7 +45,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2FriendlyMobInstance;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.L2GuardInstance;
@@ -158,18 +157,18 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if (target.isInvul())
 		{
 			// However EffectInvincible requires to check GMs specially
-			if ((target instanceof PlayerInstance) && target.isGM())
+			if (target.isPlayer() && target.isGM())
 			{
 				return false;
 			}
-			if ((target instanceof Summon) && ((Summon) target).getOwner().isGM())
+			if (target.isSummon() && ((Summon) target).getOwner().isGM())
 			{
 				return false;
 			}
 		}
 		
 		// Check if the target isn't a Folk or a Door
-		if (target instanceof L2DoorInstance)
+		if (target.isDoor())
 		{
 			return false;
 		}
@@ -177,7 +176,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		final Attackable me = getActiveChar();
 		
 		// Check if the target isn't dead, is in the Aggro range and is at the same height
-		if (target.isAlikeDead() || ((target instanceof Playable) && !me.isInsideRadius(target, me.getAggroRange(), true, false)))
+		if (target.isAlikeDead() || (target.isPlayable() && !me.isInsideRadius(target, me.getAggroRange(), true, false)))
 		{
 			return false;
 		}
@@ -505,7 +504,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		{
 			npc.clearAggroList();
 			npc.getAttackByList().clear();
-			if (npc instanceof L2MonsterInstance)
+			if (npc.isMonster())
 			{
 				if (((L2MonsterInstance) npc).hasMinions())
 				{
@@ -698,7 +697,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 								called.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, originalAttackTarget, 1);
 								EventDispatcher.getInstance().notifyEventAsync(new OnAttackableFactionCall(called, getActiveChar(), originalAttackTarget.getActingPlayer(), originalAttackTarget.isSummon()), called);
 							}
-							else if ((called instanceof Attackable) && (getAttackTarget() != null) && (called.getAI()._intention != CtrlIntention.AI_INTENTION_ATTACK))
+							else if (called.isAttackable() && (getAttackTarget() != null) && (called.getAI()._intention != CtrlIntention.AI_INTENTION_ATTACK))
 							{
 								((Attackable) called).addDamageHate(getAttackTarget(), 0, npc.getHating(getAttackTarget()));
 								called.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, getAttackTarget());
@@ -1658,7 +1657,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			{
 				for (Creature obj : World.getInstance().getVisibleObjects(caster, Creature.class, sk.getAffectRange() + caster.getTemplate().getCollisionRadius()))
 				{
-					if (!(obj instanceof Attackable))
+					if (!obj.isAttackable())
 					{
 						continue;
 					}
@@ -2024,7 +2023,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 						continue;
 					}
 					
-					if ((obj instanceof PlayerInstance) || (obj instanceof Summon))
+					if ((obj.isPlayer()) || (obj.isSummon()))
 					{
 						if (dist2 <= range)
 						{
@@ -2106,7 +2105,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					continue;
 				}
 				
-				if ((obj instanceof PlayerInstance) || (obj instanceof Summon))
+				if ((obj.isPlayer()) || (obj.isSummon()))
 				{
 					
 					if (dist2 <= range)
@@ -2174,7 +2173,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					continue;
 				}
 				Creature obj = null;
-				if (target instanceof Creature)
+				if (target.isCreature())
 				{
 					obj = (Creature) target;
 				}
@@ -2182,12 +2181,12 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					continue;
 				}
-				if (obj instanceof PlayerInstance)
+				if (obj.isPlayer())
 				{
 					return obj;
 					
 				}
-				if (obj instanceof Attackable)
+				if (obj.isAttackable())
 				{
 					if (actor.getTemplate().isChaos())
 					{
@@ -2199,7 +2198,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 						return obj;
 					}
 				}
-				if (obj instanceof Summon)
+				if (obj.isSummon())
 				{
 					return obj;
 				}
@@ -2262,7 +2261,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					return;
 				}
-				if (obj instanceof PlayerInstance)
+				if (obj.isPlayer())
 				{
 					if (MostHate != null)
 					{
@@ -2276,7 +2275,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					setAttackTarget(obj);
 					
 				}
-				else if (obj instanceof Attackable)
+				else if (obj.isAttackable())
 				{
 					if (actor.getTemplate().isChaos())
 					{
@@ -2297,7 +2296,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 						setAttackTarget(obj);
 					}
 				}
-				else if (obj instanceof Summon)
+				else if (obj.isSummon())
 				{
 					if (MostHate != null)
 					{
@@ -2366,7 +2365,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					return;
 				}
-				if (obj instanceof PlayerInstance)
+				if (obj.isPlayer())
 				{
 					if ((MostHate != null) && !MostHate.isDead())
 					{
@@ -2379,7 +2378,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					actor.setTarget(obj);
 					setAttackTarget(obj);
 				}
-				else if (obj instanceof Attackable)
+				else if (obj.isAttackable())
 				{
 					if (actor.getTemplate().isChaos())
 					{
@@ -2400,7 +2399,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 						setAttackTarget(obj);
 					}
 				}
-				else if (obj instanceof Summon)
+				else if (obj.isSummon())
 				{
 					if (MostHate != null)
 					{
@@ -2631,7 +2630,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
 		}
 		
-		if (me instanceof L2MonsterInstance)
+		if (me.isMonster())
 		{
 			L2MonsterInstance master = (L2MonsterInstance) me;
 			
@@ -2685,7 +2684,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 			}
 			
-			if (me instanceof L2MonsterInstance)
+			if (me.isMonster())
 			{
 				L2MonsterInstance master = (L2MonsterInstance) me;
 				

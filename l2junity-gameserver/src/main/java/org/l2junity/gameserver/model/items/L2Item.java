@@ -39,8 +39,6 @@ import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.commission.CommissionItemType;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.events.ListenersContainer;
@@ -733,7 +731,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 		}
 		
 		// Don't allow hero equipment and restricted items during Olympiad
-		if ((isOlyRestrictedItem() || isHeroItem()) && ((activeChar instanceof PlayerInstance) && activeChar.getActingPlayer().isInOlympiadMode()))
+		if ((isOlyRestrictedItem() || isHeroItem()) && (activeChar.isPlayer() && activeChar.getActingPlayer().isInOlympiadMode()))
 		{
 			if (isEquipable())
 			{
@@ -761,7 +759,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 			
 			if (!preCondition.test(activeChar, target, null, null))
 			{
-				if (activeChar instanceof Summon)
+				if (activeChar.isSummon())
 				{
 					activeChar.sendPacket(SystemMessageId.THIS_PET_CANNOT_USE_THIS_ITEM);
 					return false;

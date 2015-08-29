@@ -315,7 +315,7 @@ public final class RequestBypassToServer implements IClientIncomingPacket
 		{
 			return;
 		}
-		if (obj instanceof Npc)
+		if (obj.isNpc())
 		{
 			Npc temp = (Npc) obj;
 			temp.setTarget(activeChar);

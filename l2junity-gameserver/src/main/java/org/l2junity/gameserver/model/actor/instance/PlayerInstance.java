@@ -8326,7 +8326,7 @@ public final class PlayerInstance extends Playable
 		if (isInDuel())
 		{
 			// Get L2PcInstance
-			if (target instanceof Playable)
+			if (target.isPlayable())
 			{
 				// Get L2PcInstance
 				PlayerInstance cha = target.getActingPlayer();
@@ -8600,7 +8600,7 @@ public final class PlayerInstance extends Playable
 			return false;
 		}
 		
-		if (!(target instanceof Playable))
+		if (!target.isPlayable())
 		{
 			return true;
 		}

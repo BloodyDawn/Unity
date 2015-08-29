@@ -133,7 +133,7 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 							npcString = NpcStringId.ATTACKING_THE_ENEMY_S_REINFORCEMENTS_IS_NECESSARY_TIME_TO_DIE;
 							break;
 						case 2:
-							if (attacker instanceof Summon)
+							if (attacker.isSummon())
 							{
 								attacker = ((Summon) attacker).getOwner();
 							}

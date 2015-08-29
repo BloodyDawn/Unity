@@ -30,7 +30,6 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Vehicle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -269,7 +268,7 @@ public final class WorldRegion
 		}
 		_visibleObjects.put(object.getObjectId(), object);
 		
-		if (object instanceof Playable)
+		if (object.isPlayable())
 		{
 			// if this is the first player to enter the region, activate self & neighbors
 			if (!isActive() && (!Config.GRIDS_ALWAYS_ON))
@@ -291,14 +290,14 @@ public final class WorldRegion
 			return;
 		}
 		
-		assert (object.getWorldRegion() == this) || (object.getWorldRegion() == null);
+		assert(object.getWorldRegion() == this) || (object.getWorldRegion() == null);
 		if (_visibleObjects == null)
 		{
 			return;
 		}
 		_visibleObjects.remove(object.getObjectId());
 		
-		if (object instanceof Playable)
+		if (object.isPlayable())
 		{
 			if (areNeighborsEmpty() && !Config.GRIDS_ALWAYS_ON)
 			{

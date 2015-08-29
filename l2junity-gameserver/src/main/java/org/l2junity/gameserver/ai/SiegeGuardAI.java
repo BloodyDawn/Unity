@@ -37,8 +37,6 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2DefenderInstance;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -123,7 +121,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 	protected boolean autoAttackCondition(Creature target)
 	{
 		// Check if the target isn't another guard, folk or a door
-		if ((target == null) || (target instanceof L2DefenderInstance) || (target instanceof L2NpcInstance) || (target instanceof L2DoorInstance) || target.isAlikeDead())
+		if ((target == null) || (target instanceof L2DefenderInstance) || target.isNpc() || target.isDoor() || target.isAlikeDead())
 		{
 			return false;
 		}
@@ -132,18 +130,18 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 		if (target.isInvul())
 		{
 			// However EffectInvincible requires to check GMs specially
-			if ((target instanceof PlayerInstance) && target.isGM())
+			if (target.isPlayer() && target.isGM())
 			{
 				return false;
 			}
-			if ((target instanceof Summon) && ((Summon) target).getOwner().isGM())
+			if (target.isSummon() && ((Summon) target).getOwner().isGM())
 			{
 				return false;
 			}
 		}
 		
 		// Get the owner if the target is a summon
-		if (target instanceof Summon)
+		if (target.isSummon())
 		{
 			PlayerInstance owner = ((Summon) target).getOwner();
 			if (_actor.isInsideRadius(owner, 1000, true, false))
@@ -153,7 +151,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 		}
 		
 		// Check if the target is a L2PcInstance
-		if (target instanceof Playable)
+		if (target.isPlayable())
 		{
 			// Check if the target isn't in silent move mode AND too far (>100)
 			if (((Playable) target).isSilentMovingAffected() && !_actor.isInsideRadius(target, 250, false, false))
@@ -391,9 +389,9 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 		// for (L2Character cha : _actor.getKnownList().getKnownCharactersInRadius(((L2NpcInstance) _actor).getFactionRange()+_actor.getTemplate().collisionRadius))
 		for (Creature cha : World.getInstance().getVisibleObjects(_actor, Creature.class, 1000))
 		{
-			if (!(cha instanceof Npc))
+			if (!cha.isNpc())
 			{
-				if (_selfAnalysis.hasHealOrResurrect && (cha instanceof PlayerInstance) && (((Npc) _actor).getCastle().getSiege().checkIsDefender(((PlayerInstance) cha).getClan())))
+				if (_selfAnalysis.hasHealOrResurrect && cha.isPlayer() && (((Npc) _actor).getCastle().getSiege().checkIsDefender(((PlayerInstance) cha).getClan())))
 				{
 					// heal friends
 					if (!_actor.isAttackingDisabled() && (cha.getCurrentHp() < (cha.getMaxHp() * 0.6)) && (_actor.getCurrentHp() > (_actor.getMaxHp() / 2)) && (_actor.getCurrentMp() > (_actor.getMaxMp() / 2)) && cha.isInCombat())
@@ -600,7 +598,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 				
 				// Check if the L2SiegeGuardInstance isn't too far from it's home location
 				if ((((dx * dx) + (dy * dy)) > 10000) && (((homeX * homeX) + (homeY * homeY)) > 3240000) // 1800 * 1800
-					&& (_actor.isInSurroundingRegion(attackTarget)))
+				&& (_actor.isInSurroundingRegion(attackTarget)))
 				{
 					// Cancel the target
 					_actor.setTarget(null);

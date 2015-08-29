@@ -614,7 +614,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 		
 		WorldObject target = player.getTarget();
 		
-		if ((target == null) || !(target instanceof Npc))
+		if ((target == null) || !target.isNpc())
 		{
 			return null;
 		}

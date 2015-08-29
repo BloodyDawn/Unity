@@ -41,8 +41,6 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -73,7 +71,7 @@ import org.slf4j.LoggerFactory;
 public class CharacterAI extends AbstractAI
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(CharacterAI.class);
-
+	
 	public static class IntentionCommand
 	{
 		protected final CtrlIntention _crtlIntention;
@@ -200,7 +198,7 @@ public class CharacterAI extends AbstractAI
 			
 			// Also enable random animations for this L2Character if allowed
 			// This is only for mobs - town npcs are handled in their constructor
-			if (_actor instanceof Attackable)
+			if (_actor.isAttackable())
 			{
 				((Npc) _actor).startRandomAnimationTask();
 			}
@@ -666,13 +664,13 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (getActor() instanceof Attackable)
+		if (getActor().isAttackable())
 		{
 			((Attackable) getActor()).setisReturningToSpawnPoint(false);
 		}
 		clientStoppedMoving();
 		
-		if (_actor instanceof Npc)
+		if (_actor.isNpc())
 		{
 			Npc npc = (Npc) _actor;
 			WalkingManager.getInstance().onArrived(npc); // Walking Manager support
@@ -849,7 +847,7 @@ public class CharacterAI extends AbstractAI
 		// Kill the actor client side by sending Server->Client packet AutoAttackStop, StopMove/StopRotation, Die (broadcast)
 		clientNotifyDead();
 		
-		if (!(_actor instanceof Playable))
+		if (!_actor.isPlayable())
 		{
 			_actor.setWalking();
 		}
@@ -972,7 +970,7 @@ public class CharacterAI extends AbstractAI
 		}
 		
 		offset += _actor.getTemplate().getCollisionRadius();
-		if (target instanceof Creature)
+		if (target.isCreature())
 		{
 			offset += ((Creature) target).getTemplate().getCollisionRadius();
 		}
@@ -1005,7 +1003,7 @@ public class CharacterAI extends AbstractAI
 			}
 			
 			// while flying there is no move to cast
-			if ((_actor.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST) && (_actor instanceof PlayerInstance) && _actor.isTransformed())
+			if ((_actor.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST) && _actor.isPlayer() && _actor.isTransformed())
 			{
 				if (!_actor.getTransformation().isCombat())
 				{
@@ -1022,7 +1020,7 @@ public class CharacterAI extends AbstractAI
 			}
 			
 			stopFollow();
-			if ((target instanceof Creature) && !(target instanceof L2DoorInstance))
+			if (target.isCreature() && !target.isDoor())
 			{
 				if (((Creature) target).isMoving())
 				{
@@ -1412,7 +1410,7 @@ public class CharacterAI extends AbstractAI
 					{
 						continue;
 					}
-					if (target instanceof Attackable)
+					if (target.isAttackable())
 					{
 						Npc actors = ((Npc) _actor);
 						
@@ -1441,7 +1439,7 @@ public class CharacterAI extends AbstractAI
 					{
 						continue;
 					}
-					if (target instanceof Attackable)
+					if (target.isAttackable())
 					{
 						Npc actors = ((Npc) _actor);
 						
@@ -1473,7 +1471,7 @@ public class CharacterAI extends AbstractAI
 					{
 						continue;
 					}
-					if (target instanceof Attackable)
+					if (target.isAttackable())
 					{
 						Npc actors = ((Npc) _actor);
 						
@@ -1503,7 +1501,7 @@ public class CharacterAI extends AbstractAI
 						continue;
 					}
 					
-					if (target instanceof Attackable)
+					if (target.isAttackable())
 					{
 						Npc actors = ((Npc) _actor);
 						if (!actors.getTemplate().isChaos())

@@ -23,7 +23,6 @@ import java.util.StringTokenizer;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Instance;
 
@@ -97,7 +96,7 @@ public class AdminInstance implements IAdminCommandHandler
 				}
 				
 				WorldObject target = activeChar.getTarget();
-				if ((target == null) || (target instanceof Summon)) // Don't separate summons from masters
+				if ((target == null) || (target.isSummon())) // Don't separate summons from masters
 				{
 					activeChar.sendMessage("Incorrect target.");
 					return false;

@@ -5672,7 +5672,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			return false;
 		}
 		
-		if (target instanceof Creature)
+		if (target.isCreature())
 		{
 			Creature target1 = (Creature) target;
 			angleChar = Util.calculateAngleFrom(this, target1);
