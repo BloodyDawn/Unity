@@ -153,8 +153,6 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	@Override
 	public boolean decayMe()
 	{
-		assert getWorldRegion() != null;
-		
 		WorldRegion reg = getWorldRegion();
 		
 		synchronized (this)
@@ -182,8 +180,6 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	@Override
 	public final boolean spawnMe()
 	{
-		assert (getWorldRegion() == null) && (getLocation().getX() != 0) && (getLocation().getY() != 0) && (getLocation().getZ() != 0);
-		
 		synchronized (this)
 		{
 			// Set the x,y,z position of the L2Object spawn and update its _worldregion
@@ -208,13 +204,8 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	
 	public final void spawnMe(int x, int y, int z)
 	{
-		assert getWorldRegion() == null;
-		
 		synchronized (this)
 		{
-			// Set the x,y,z position of the L2Object spawn and update its _worldregion
-			_isSpawned = true;
-			
 			if (x > World.MAP_MAX_X)
 			{
 				x = World.MAP_MAX_X - 5000;
@@ -240,8 +231,11 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 				z = World.MAP_MIN_Z + 1000;
 			}
 			
+			// Set the x,y,z position of the WorldObject. If flagged with _isSpawned, setXYZ will automatically update world region, so avoid that.
 			setXYZ(x, y, z);
 		}
+		
+		// Spawn and update its _worldregion
 		spawnMe();
 	}
 	
@@ -540,7 +534,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	
 	public void removeStatusListener(Creature object)
 	{
-		
+	
 	}
 	
 	protected void badCoords()
@@ -558,7 +552,6 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	
 	public final void setXYZInvisible(int x, int y, int z)
 	{
-		assert getWorldRegion() == null;
 		if (x > World.MAP_MAX_X)
 		{
 			x = World.MAP_MAX_X - 5000;
@@ -694,8 +687,6 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	@Override
 	public void setXYZ(int newX, int newY, int newZ)
 	{
-		assert getWorldRegion() != null;
-		
 		setX(newX);
 		setY(newY);
 		setZ(newZ);
