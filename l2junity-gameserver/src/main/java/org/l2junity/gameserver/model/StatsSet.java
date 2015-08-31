@@ -654,66 +654,76 @@ public class StatsSet implements IParserAdvUtils
 		return (Map<K, V>) obj;
 	}
 	
-	public void set(String name, Object value)
+	public StatsSet set(String name, Object value)
 	{
 		if (value == null)
 		{
-			return;
+			return this;
 		}
 		_set.put(name, value);
+		return this;
 	}
 	
-	public void set(String key, boolean value)
+	public StatsSet set(String key, boolean value)
 	{
 		_set.put(key, value);
+		return this;
 	}
 	
-	public void set(String key, byte value)
+	public StatsSet set(String key, byte value)
 	{
 		_set.put(key, value);
+		return this;
 	}
 	
-	public void set(String key, short value)
+	public StatsSet set(String key, short value)
 	{
 		_set.put(key, value);
+		return this;
 	}
 	
-	public void set(String key, int value)
+	public StatsSet set(String key, int value)
 	{
 		_set.put(key, value);
+		return this;
 	}
 	
-	public void set(String key, long value)
+	public StatsSet set(String key, long value)
 	{
 		_set.put(key, value);
+		return this;
 	}
 	
-	public void set(String key, float value)
+	public StatsSet set(String key, float value)
 	{
 		_set.put(key, value);
+		return this;
 	}
 	
-	public void set(String key, double value)
+	public StatsSet set(String key, double value)
 	{
 		_set.put(key, value);
+		return this;
 	}
 	
-	public void set(String key, String value)
+	public StatsSet set(String key, String value)
 	{
 		if (value == null)
 		{
-			return;
+			return this;
 		}
 		_set.put(key, value);
+		return this;
 	}
 	
-	public void set(String key, Enum<?> value)
+	public StatsSet set(String key, Enum<?> value)
 	{
 		if (value == null)
 		{
-			return;
+			return this;
 		}
 		_set.put(key, value);
+		return this;
 	}
 	
 	public static StatsSet valueOf(String key, Object value)
