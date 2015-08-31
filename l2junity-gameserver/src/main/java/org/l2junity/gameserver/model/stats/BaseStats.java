@@ -20,7 +20,7 @@ package org.l2junity.gameserver.model.stats;
 
 import java.io.File;
 import java.util.NoSuchElementException;
-import java.util.function.Function;
+import java.util.Optional;
 
 import org.l2junity.commons.util.IXmlReader;
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
@@ -31,29 +31,26 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 
 /**
- * @author DS
+ * @author DS, Sdw, UnAfraid
  */
 public enum BaseStats
 {
-	STR(Creature::getSTR, Stats.STAT_STR),
-	INT(Creature::getINT, Stats.STAT_INT),
-	DEX(Creature::getDEX, Stats.STAT_DEX),
-	WIT(Creature::getWIT, Stats.STAT_WIT),
-	CON(Creature::getCON, Stats.STAT_CON),
-	MEN(Creature::getMEN, Stats.STAT_MEN),
-	CHA(Creature::getCHA, Stats.STAT_CHA),
-	LUC(Creature::getLUC, Stats.STAT_LUC),
-	NONE(creature -> 0, null);
+	STR(Stats.STAT_STR),
+	INT(Stats.STAT_INT),
+	DEX(Stats.STAT_DEX),
+	WIT(Stats.STAT_WIT),
+	CON(Stats.STAT_CON),
+	MEN(Stats.STAT_MEN),
+	CHA(Stats.STAT_CHA),
+	LUC(Stats.STAT_LUC);
 	
 	public static final int MAX_STAT_VALUE = 201;
 	
 	private final double[] _bonus = new double[MAX_STAT_VALUE];
-	private final Function<Creature, Integer> _valueCalculator;
 	private final Stats _stat;
 	
-	BaseStats(Function<Creature, Integer> valueCalculator, Stats stat)
+	BaseStats(Stats stat)
 	{
-		_valueCalculator = valueCalculator;
 		_stat = stat;
 	}
 	
@@ -64,9 +61,9 @@ public enum BaseStats
 	
 	public int calcValue(Creature creature)
 	{
-		if (creature != null)
+		if ((creature != null) && (_stat != null))
 		{
-			return Math.min(_valueCalculator.apply(creature), MAX_STAT_VALUE - 1);
+			return (int) Math.min(_stat.finalize(creature, Optional.empty()), MAX_STAT_VALUE - 1);
 		}
 		return 0;
 	}
