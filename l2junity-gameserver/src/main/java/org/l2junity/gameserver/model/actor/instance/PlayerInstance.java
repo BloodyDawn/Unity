@@ -9152,11 +9152,10 @@ public final class PlayerInstance extends Playable
 		setBlockActions(state);
 		setIsInvul(state);
 		setInvisible(state);
-		if (hasAI())
+		if (hasAI() && !state)
 		{
 			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		}
-		broadcastUserInfo();
 	}
 	
 	public void enterObserverMode(Location loc)
