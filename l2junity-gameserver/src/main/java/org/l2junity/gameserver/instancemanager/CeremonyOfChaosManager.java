@@ -57,7 +57,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 {
 	protected static final Logger LOGGER = LoggerFactory.getLogger(CeremonyOfChaosManager.class);
 	
-	public static final String BUFF_KEY = "initial_buff";
+	public static final String INITIAL_BUFF_KEY = "initial_buff";
 	public static final String ITEMS_KEY = "items";
 	public static final String MAX_PLAYERS_KEY = "max_players";
 	public static final String MAX_ARENAS_KEY = "max_arenas";

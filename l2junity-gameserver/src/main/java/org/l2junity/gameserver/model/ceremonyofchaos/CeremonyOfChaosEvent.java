@@ -207,7 +207,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			player.sendPacket(new SkillCoolTime(player));
 			
 			// Apply the Energy of Chaos skill
-			for (SkillHolder holder : CeremonyOfChaosManager.getInstance().getVariables().getList(CeremonyOfChaosManager.BUFF_KEY, SkillHolder.class))
+			for (SkillHolder holder : CeremonyOfChaosManager.getInstance().getVariables().getList(CeremonyOfChaosManager.INITIAL_BUFF_KEY, SkillHolder.class))
 			{
 				holder.getSkill().activateSkill(player, player);
 			}
@@ -310,7 +310,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				player.doRevive();
 				
 				// Remove Energy of Chaos
-				for (SkillHolder holder : CeremonyOfChaosManager.getInstance().getVariables().getList(CeremonyOfChaosManager.BUFF_KEY, SkillHolder.class))
+				for (SkillHolder holder : CeremonyOfChaosManager.getInstance().getVariables().getList(CeremonyOfChaosManager.INITIAL_BUFF_KEY, SkillHolder.class))
 				{
 					player.stopSkillEffects(holder.getSkill());
 				}
