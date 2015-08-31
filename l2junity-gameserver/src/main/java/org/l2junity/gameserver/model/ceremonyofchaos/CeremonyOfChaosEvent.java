@@ -47,6 +47,7 @@ import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.client.send.DeleteObject;
 import org.l2junity.gameserver.network.client.send.ExUserInfoAbnormalVisualEffect;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.SkillCoolTime;
@@ -291,15 +292,6 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				
 				// Send result
 				player.sendPacket(new ExCuriousHouseResult(member.getResultType(), this));
-				
-				// Revive the player
-				player.doRevive();
-				
-				// Apply buffs on players
-				for (SkillHolder holder : CeremonyOfChaosManager.getInstance().getVariables().getList(CeremonyOfChaosManager.END_BUFFS_KEYH, SkillHolder.class))
-				{
-					holder.getSkill().activateSkill(player, player);
-				}
 			}
 		}
 		getTimers().cancelTimer("update", null, null);
@@ -314,6 +306,15 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			final PlayerInstance player = member.getPlayer();
 			if (player != null)
 			{
+				// Revive the player
+				player.doRevive();
+				
+				// Apply buffs on players
+				for (SkillHolder holder : CeremonyOfChaosManager.getInstance().getVariables().getList(CeremonyOfChaosManager.END_BUFFS_KEYH, SkillHolder.class))
+				{
+					holder.getSkill().activateSkill(player, player);
+				}
+				
 				// Remove quit button
 				player.sendPacket(ExCuriousHouseLeave.STATIC_PACKET);
 				
@@ -456,19 +457,24 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	{
 		if (event.getAttacker().isPlayer() && event.getTarget().isPlayer())
 		{
-			final CeremonyOfChaosMember attackerMember = getMembers().get(event.getAttacker().getActingPlayer().getObjectId());
-			final CeremonyOfChaosMember targetMember = getMembers().get(event.getTarget().getActingPlayer().getObjectId());
+			final PlayerInstance attackerPlayer = event.getAttacker().getActingPlayer();
+			final PlayerInstance targetPlayer = event.getTarget().getActingPlayer();
+			final CeremonyOfChaosMember attackerMember = getMembers().get(attackerPlayer.getObjectId());
+			final CeremonyOfChaosMember targetMember = getMembers().get(targetPlayer.getObjectId());
 			
 			if ((attackerMember != null) && (targetMember != null))
 			{
 				attackerMember.incrementScore();
 				updateLifeTime(targetMember);
 				
-				// Make the player observer
-				event.getTarget().getActingPlayer().setObserving(true);
+				// Delete target player
+				getMembers().values().stream().filter(member -> member.getObjectId() != targetPlayer.getObjectId()).forEach(member -> member.sendPacket(new DeleteObject(targetPlayer)));
+				
+				// Make the target observer
+				targetPlayer.getActingPlayer().setObserving(true);
 				
 				// Make the target spectator
-				event.getTarget().sendPacket(ExCuriousHouseObserveMode.STATIC_ENABLED);
+				targetPlayer.sendPacket(ExCuriousHouseObserveMode.STATIC_ENABLED);
 			}
 		}
 	}
