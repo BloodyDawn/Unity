@@ -494,14 +494,13 @@ public final class PlayerInstance extends Playable
 	private Vehicle _vehicle = null;
 	private Location _inVehiclePosition;
 	
-	public ScheduledFuture<?> _taskforfish;
 	private MountType _mountType = MountType.NONE;
 	private int _mountNpcId;
 	private int _mountLevel;
 	/** Store object used to summon the strider you are mounting **/
 	private int _mountObjectID = 0;
 	
-	public AdminTeleportType _teleportType = AdminTeleportType.NORMAL;
+	private AdminTeleportType _teleportType = AdminTeleportType.NORMAL;
 	
 	private boolean _inCrystallize;
 	private boolean _inCraftMode;
@@ -9146,6 +9145,20 @@ public final class PlayerInstance extends Playable
 		sendPacket(SystemMessage.sendString(message));
 	}
 	
+	public void setObserving(boolean state)
+	{
+		_observerMode = state;
+		setTarget(null);
+		setBlockActions(state);
+		setIsInvul(state);
+		setInvisible(state);
+		if (hasAI())
+		{
+			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+		}
+		broadcastUserInfo();
+	}
+	
 	public void enterObserverMode(Location loc)
 	{
 		setLastLocation();
@@ -9153,12 +9166,7 @@ public final class PlayerInstance extends Playable
 		// Remove Hide.
 		getEffectList().stopSkillEffects(true, AbnormalType.HIDE);
 		
-		_observerMode = true;
-		setTarget(null);
-		setBlockActions(true);
-		startParalyze();
-		setIsInvul(true);
-		setInvisible(true);
+		setObserving(true);
 		sendPacket(new ObservationMode(loc));
 		
 		teleToLocation(loc, false);

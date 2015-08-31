@@ -18,44 +18,30 @@
  */
 package org.l2junity.gameserver.network.client.send.ceremonyofchaos;
 
-import org.l2junity.gameserver.enums.CeremonyOfChaosResult;
-import org.l2junity.gameserver.instancemanager.CeremonyOfChaosManager;
-import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosEvent;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.network.PacketWriter;
 
 /**
- * @author Sdw
+ * @author UnAfraid
  */
-public class ExCuriousHouseResult implements IClientOutgoingPacket
+public class ExCuriousHouseObserveMode implements IClientOutgoingPacket
 {
-	private final CeremonyOfChaosResult _result;
-	private final CeremonyOfChaosEvent _event;
+	public static final ExCuriousHouseObserveMode STATIC_ENABLED = new ExCuriousHouseObserveMode(true);
+	public static final ExCuriousHouseObserveMode STATIC_DISABLED = new ExCuriousHouseObserveMode(true);
 	
-	public ExCuriousHouseResult(CeremonyOfChaosResult result, CeremonyOfChaosEvent event)
+	private final int _spectating;
+	
+	private ExCuriousHouseObserveMode(boolean isSpectating)
 	{
-		_result = result;
-		_event = event;
+		_spectating = isSpectating ? 1 : 0;
 	}
 	
 	@Override
 	public boolean write(PacketWriter packet)
 	{
-		OutgoingPackets.EX_CURIOUS_HOUSE_RESULT.writeId(packet);
-		packet.writeD(_event.getId());
-		packet.writeH(_result.ordinal());
-		packet.writeD(CeremonyOfChaosManager.getInstance().getMaxPlayersInArena());
-		packet.writeD(_event.getMembers().size());
-		_event.getMembers().values().forEach(m ->
-		{
-			packet.writeD(m.getObjectId());
-			packet.writeD(m.getPosition());
-			packet.writeD(m.getClassId());
-			packet.writeD(m.getLifeTime());
-			packet.writeD(m.getScore());
-		});
+		OutgoingPackets.EX_CURIOUS_HOUSE_OBSERVE_MODE.writeId(packet);
+		packet.writeC(_spectating);
 		return true;
 	}
-	
 }

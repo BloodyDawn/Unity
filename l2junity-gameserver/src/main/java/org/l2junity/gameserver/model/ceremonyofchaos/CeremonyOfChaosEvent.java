@@ -18,10 +18,15 @@
  */
 package org.l2junity.gameserver.model.ceremonyofchaos;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
+import org.l2junity.gameserver.enums.CeremonyOfChaosResult;
 import org.l2junity.gameserver.instancemanager.CeremonyOfChaosManager;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Party;
@@ -50,7 +55,9 @@ import org.l2junity.gameserver.network.client.send.appearance.ExCuriousHouseMemb
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseEnter;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseLeave;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseMemberList;
+import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseObserveMode;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseRemainTime;
+import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseResult;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
@@ -270,7 +277,8 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 	
 	public void stopFight()
 	{
-		getMembers().values().stream().filter(p -> p.getLifeTime() == 0).forEach(p -> p.setLifeTime(System.currentTimeMillis() - _battleStartTime));
+		getMembers().values().stream().filter(p -> p.getLifeTime() == 0).forEach(this::updateLifeTime);
+		validateWinner();
 		
 		for (CeremonyOfChaosMember member : getMembers().values())
 		{
@@ -279,6 +287,13 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			{
 				// Remove quit button
 				player.sendPacket(ExCuriousHouseLeave.STATIC_PACKET);
+				
+				// Remove spectator mode
+				player.setObserving(false);
+				player.sendPacket(ExCuriousHouseObserveMode.STATIC_DISABLED);
+				
+				// Send result
+				player.sendPacket(new ExCuriousHouseResult(member.getResultType(), this));
 				
 				// Teleport player back
 				player.teleToLocation(player.getLastLocation(), 0, 0);
@@ -296,6 +311,38 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 		getTimers().cancelTimer("update", null, null);
 		getMembers().clear();
 		InstanceManager.getInstance().destroyInstance(_instance.getObjectId());
+	}
+	
+	private void updateLifeTime(CeremonyOfChaosMember member)
+	{
+		member.setLifeTime(((int) (System.currentTimeMillis() - _battleStartTime) / 1000));
+	}
+	
+	public List<CeremonyOfChaosMember> getWinners()
+	{
+		final List<CeremonyOfChaosMember> winners = new ArrayList<>();
+		//@formatter:off
+		final int winnerLifeTime = getMembers().values().stream()
+			.mapToInt(CeremonyOfChaosMember::getLifeTime)
+			.max()
+			.getAsInt();
+		
+		getMembers().values().stream()
+			.sorted(Comparator.comparingLong(CeremonyOfChaosMember::getLifeTime)
+				.reversed()
+				.thenComparingInt(CeremonyOfChaosMember::getScore)
+				.reversed())
+			.filter(member -> member.getLifeTime() == winnerLifeTime)
+			.collect(Collectors.toCollection(() -> winners));
+		
+		//@formatter:on
+		return winners;
+	}
+	
+	private void validateWinner()
+	{
+		final List<CeremonyOfChaosMember> winners = getWinners();
+		winners.forEach(winner -> winner.setResultType(winners.size() > 1 ? CeremonyOfChaosResult.TIE : CeremonyOfChaosResult.WIN));
 	}
 	
 	@Override
@@ -347,7 +394,13 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			if ((attackerMember != null) && (targetMember != null))
 			{
 				attackerMember.incrementScore();
-				targetMember.setLifeTime(System.currentTimeMillis() - _battleStartTime);
+				updateLifeTime(targetMember);
+				
+				// Make the player observer
+				event.getTarget().getActingPlayer().setObserving(true);
+				
+				// Make the target spectator
+				event.getTarget().sendPacket(ExCuriousHouseObserveMode.STATIC_ENABLED);
 			}
 		}
 	}
