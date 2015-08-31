@@ -400,6 +400,11 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 	
 	// player leave clan
 	
+	public int getMaxPlayersInArena()
+	{
+		return getVariables().getInt(MAX_PLAYERS_KEY, 18);
+	}
+	
 	public static CeremonyOfChaosManager getInstance()
 	{
 		return SingletonHolder._instance;

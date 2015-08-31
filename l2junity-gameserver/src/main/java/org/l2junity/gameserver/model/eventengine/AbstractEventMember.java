@@ -62,6 +62,16 @@ public abstract class AbstractEventMember<T extends AbstractEvent<?>>
 		}
 	}
 	
+	public int getClassId()
+	{
+		final PlayerInstance player = getPlayer();
+		if (player != null)
+		{
+			return player.getClassId().getId();
+		}
+		return 0;
+	}
+	
 	public void setScore(int score)
 	{
 		_score.set(score);
