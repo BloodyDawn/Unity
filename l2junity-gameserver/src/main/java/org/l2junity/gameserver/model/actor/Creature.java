@@ -38,6 +38,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -70,6 +71,7 @@ import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.AccessLevel;
 import org.l2junity.gameserver.model.CharEffectList;
+import org.l2junity.gameserver.model.CreatureContainer;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.Party;
@@ -288,6 +290,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	private final AtomicInteger _blockedDebuffTimes = new AtomicInteger();
 	
 	private final Map<Integer, Integer> _knownRelations = new ConcurrentHashMap<>();
+	
+	private volatile CreatureContainer _seenCreatures;
 	
 	/**
 	 * Creates a creature.
@@ -535,6 +539,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		{
 			getSummoner().removeSummonedNpc(getObjectId());
 		}
+		
+		// Stop on creature see task and clear the data
+		if (_seenCreatures != null)
+		{
+			_seenCreatures.stop();
+			_seenCreatures.reset();
+		}
 	}
 	
 	@Override
@@ -542,6 +553,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		super.onSpawn();
 		revalidateZone(true);
+		
+		// restart task
+		if (_seenCreatures != null)
+		{
+			_seenCreatures.start();
+		}
 	}
 	
 	public void onTeleported()
@@ -6828,5 +6845,30 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public boolean isBlockedActionsAllowedSkill(Skill skill)
 	{
 		return (_blockActionsAllowedSkills != null) && _blockActionsAllowedSkills.containsKey(skill.getId());
+	}
+	
+	/**
+	 * Initialize creature container that looks up for creatures around its owner, and notifies with onCreatureSee upon discovery.<br>
+	 * <i>The condition can be null</i>
+	 * @param range
+	 * @param condition
+	 */
+	public void initSeenCreatures(int range, Predicate<Creature> condition)
+	{
+		if (_seenCreatures == null)
+		{
+			synchronized (this)
+			{
+				if (_seenCreatures == null)
+				{
+					_seenCreatures = new CreatureContainer(this, range, condition);
+				}
+			}
+		}
+	}
+	
+	public CreatureContainer getSeenCreatures()
+	{
+		return _seenCreatures;
 	}
 }
