@@ -309,6 +309,12 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				// Revive the player
 				player.doRevive();
 				
+				// Remove Energy of Chaos
+				for (SkillHolder holder : CeremonyOfChaosManager.getInstance().getVariables().getList(CeremonyOfChaosManager.BUFF_KEY, SkillHolder.class))
+				{
+					player.stopSkillEffects(holder.getSkill());
+				}
+				
 				// Apply buffs on players
 				for (SkillHolder holder : CeremonyOfChaosManager.getInstance().getVariables().getList(CeremonyOfChaosManager.END_BUFFS_KEYH, SkillHolder.class))
 				{
