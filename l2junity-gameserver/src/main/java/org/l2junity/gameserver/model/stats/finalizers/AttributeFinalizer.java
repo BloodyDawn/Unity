@@ -48,29 +48,44 @@ public class AttributeFinalizer implements IStatsFunction
 		throwIfPresent(base);
 		
 		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
-		if (_isWeapon)
+		if (creature.isPlayable())
 		{
-			final ItemInstance weapon = creature.getActiveWeaponInstance();
-			if (weapon != null)
+			if (_isWeapon)
 			{
-				final AttributeHolder holder = weapon.getAttribute(_type);
-				if (holder != null)
+				final ItemInstance weapon = creature.getActiveWeaponInstance();
+				if (weapon != null)
 				{
-					baseValue += holder.getValue();
+					final AttributeHolder weaponInstanceHolder = weapon.getAttribute(_type);
+					if (weaponInstanceHolder != null)
+					{
+						baseValue += weaponInstanceHolder.getValue();
+					}
+					
+					final AttributeHolder weaponHolder = weapon.getItem().getAttribute(_type);
+					if (weaponHolder != null)
+					{
+						baseValue += weaponHolder.getValue();
+					}
 				}
 			}
-		}
-		else
-		{
-			final Inventory inventory = creature.getInventory();
-			if (inventory != null)
+			else
 			{
-				for (ItemInstance item : inventory.getPaperdollItems(ItemInstance::isArmor))
+				final Inventory inventory = creature.getInventory();
+				if (inventory != null)
 				{
-					final AttributeHolder holder = item.getAttribute(_type);
-					if (holder != null)
+					for (ItemInstance item : inventory.getPaperdollItems(ItemInstance::isArmor))
 					{
-						baseValue += holder.getValue();
+						final AttributeHolder weaponInstanceHolder = item.getAttribute(_type);
+						if (weaponInstanceHolder != null)
+						{
+							baseValue += weaponInstanceHolder.getValue();
+						}
+						
+						final AttributeHolder weaponHolder = item.getItem().getAttribute(_type);
+						if (weaponHolder != null)
+						{
+							baseValue += weaponHolder.getValue();
+						}
 					}
 				}
 			}
