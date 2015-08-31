@@ -28,8 +28,9 @@ import org.l2junity.gameserver.model.eventengine.AbstractEventMember;
 public class CeremonyOfChaosMember extends AbstractEventMember<CeremonyOfChaosEvent>
 {
 	private final int _position;
-	private CeremonyOfChaosResult _resultType = CeremonyOfChaosResult.LOSE;
 	private int _lifeTime = 0;
+	private CeremonyOfChaosResult _resultType = CeremonyOfChaosResult.LOSE;
+	private boolean _isDefeated = false;
 	
 	public CeremonyOfChaosMember(PlayerInstance player, CeremonyOfChaosEvent event, int position)
 	{
@@ -60,5 +61,15 @@ public class CeremonyOfChaosMember extends AbstractEventMember<CeremonyOfChaosEv
 	public void setResultType(CeremonyOfChaosResult resultType)
 	{
 		_resultType = resultType;
+	}
+	
+	public boolean isDefeated()
+	{
+		return _isDefeated;
+	}
+	
+	public void setDefeated(boolean isDefeated)
+	{
+		_isDefeated = isDefeated;
 	}
 }

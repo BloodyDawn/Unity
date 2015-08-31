@@ -382,6 +382,12 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				final int time = (int) CeremonyOfChaosManager.getInstance().getScheduler("stopFight").getRemainingTime(TimeUnit.SECONDS);
 				broadcastPacket(new ExCuriousHouseRemainTime(time));
 				getMembers().values().forEach(p -> broadcastPacket(new ExCuriousHouseMemberUpdate(p)));
+				
+				// Validate winner
+				if (getMembers().values().stream().filter(member -> !member.isDefeated()).count() <= 1)
+				{
+					stopFight();
+				}
 				break;
 			}
 			case "teleport_message1":
@@ -459,6 +465,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 		{
 			final PlayerInstance attackerPlayer = event.getAttacker().getActingPlayer();
 			final PlayerInstance targetPlayer = event.getTarget().getActingPlayer();
+			
 			final CeremonyOfChaosMember attackerMember = getMembers().get(attackerPlayer.getObjectId());
 			final CeremonyOfChaosMember targetMember = getMembers().get(targetPlayer.getObjectId());
 			
@@ -467,11 +474,14 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				attackerMember.incrementScore();
 				updateLifeTime(targetMember);
 				
+				// Mark player as defeated
+				targetMember.setDefeated(true);
+				
 				// Delete target player
 				getMembers().values().stream().filter(member -> member.getObjectId() != targetPlayer.getObjectId()).forEach(member -> member.sendPacket(new DeleteObject(targetPlayer)));
 				
 				// Make the target observer
-				targetPlayer.getActingPlayer().setObserving(true);
+				targetPlayer.setObserving(true);
 				
 				// Make the target spectator
 				targetPlayer.sendPacket(ExCuriousHouseObserveMode.STATIC_ENABLED);
