@@ -428,7 +428,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				}
 				else if ((time > 1) && (time < 5))
 				{
-					getTimers().addTimer(event, params.set("time", time - 1), (time - 1) * 1000, null, null);
+					getTimers().addTimer(event, params.set("time", time - 1), 1000, null, null);
 				}
 				break;
 			}
@@ -446,7 +446,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				}
 				else if ((time > 0) && (time <= 10))
 				{
-					getTimers().addTimer(event, params.set("time", time - 1), (time - 1) * 1000, null, null);
+					getTimers().addTimer(event, params.set("time", time - 1), 1000, null, null);
 				}
 				else if (time == 0)
 				{
@@ -469,6 +469,8 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			final CeremonyOfChaosMember attackerMember = getMembers().get(attackerPlayer.getObjectId());
 			final CeremonyOfChaosMember targetMember = getMembers().get(targetPlayer.getObjectId());
 			
+			final DeleteObject deleteObject = new DeleteObject(targetPlayer);
+			
 			if ((attackerMember != null) && (targetMember != null))
 			{
 				attackerMember.incrementScore();
@@ -478,7 +480,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				targetMember.setDefeated(true);
 				
 				// Delete target player
-				getMembers().values().stream().filter(member -> member.getObjectId() != targetPlayer.getObjectId()).forEach(member -> member.sendPacket(new DeleteObject(targetPlayer)));
+				getMembers().values().stream().filter(member -> member.getObjectId() != targetPlayer.getObjectId()).map(CeremonyOfChaosMember::getPlayer).forEach(deleteObject::sendTo);
 				
 				// Make the target observer
 				targetPlayer.setObserving(true);
