@@ -31,7 +31,6 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_REST;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
@@ -47,7 +46,6 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcMoveFinished;
 import org.l2junity.gameserver.model.interfaces.ILocational;
-import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
@@ -1302,82 +1300,6 @@ public class CharacterAI extends AbstractAI
 			{
 				isBalanced = true;
 				isMage = false;
-			}
-		}
-	}
-	
-	protected class TargetAnalysis
-	{
-		public Creature character;
-		public boolean isMage;
-		public boolean isBalanced;
-		public boolean isArcher;
-		public boolean isFighter;
-		public boolean isCanceled;
-		public boolean isSlower;
-		public boolean isMagicResistant;
-		
-		public TargetAnalysis()
-		{
-		}
-		
-		public void update(Creature target)
-		{
-			// update status once in 4 seconds
-			if ((target == character) && (Rnd.nextInt(100) > 25))
-			{
-				return;
-			}
-			character = target;
-			if (target == null)
-			{
-				return;
-			}
-			isMage = false;
-			isBalanced = false;
-			isArcher = false;
-			isFighter = false;
-			isCanceled = false;
-			
-			if (target.getMAtk(null, null) > (1.5 * target.getPAtk(null)))
-			{
-				isMage = true;
-			}
-			else if (((target.getPAtk(null) * 0.8) < target.getMAtk(null, null)) || ((target.getMAtk(null, null) * 0.8) > target.getPAtk(null)))
-			{
-				isBalanced = true;
-			}
-			else
-			{
-				Weapon weapon = target.getActiveWeaponItem();
-				if ((weapon != null) && weapon.isBowOrCrossBow())
-				{
-					isArcher = true;
-				}
-				else
-				{
-					isFighter = true;
-				}
-			}
-			if (target.getRunSpeed() < (_actor.getRunSpeed() - 3))
-			{
-				isSlower = true;
-			}
-			else
-			{
-				isSlower = false;
-			}
-			if ((target.getMDef(null, null) * 1.2) > _actor.getMAtk(null, null))
-			{
-				isMagicResistant = true;
-			}
-			else
-			{
-				isMagicResistant = false;
-			}
-			if (target.getBuffCount() < 4)
-			{
-				isCanceled = true;
 			}
 		}
 	}

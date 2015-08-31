@@ -32,7 +32,6 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.CharEffectList;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -418,52 +417,17 @@ public class CharStat
 	 */
 	public final int getPhysicalAttackRange()
 	{
-		final Weapon weapon = _activeChar.getActiveWeaponItem();
-		int baseAttackRange;
-		if (_activeChar.isTransformed() && _activeChar.isPlayer())
-		{
-			baseAttackRange = _activeChar.getTransformation().getBaseAttackRange(_activeChar.getActingPlayer());
-		}
-		else if (weapon != null)
-		{
-			baseAttackRange = weapon.getBaseAttackRange();
-		}
-		else
-		{
-			baseAttackRange = _activeChar.getTemplate().getBaseAttackRange();
-		}
-		
-		return (int) calcStat(Stats.POWER_ATTACK_RANGE, baseAttackRange, null, null);
+		return (int) getValue(Stats.POWER_ATTACK_RANGE);
 	}
 	
 	public int getPhysicalAttackRadius()
 	{
-		final Weapon weapon = _activeChar.getActiveWeaponItem();
-		final int baseAttackRadius;
-		if (weapon != null)
-		{
-			baseAttackRadius = weapon.getBaseAttackRadius();
-		}
-		else
-		{
-			baseAttackRadius = 40;
-		}
-		return baseAttackRadius;
+		return 40;
 	}
 	
 	public int getPhysicalAttackAngle()
 	{
-		final Weapon weapon = _activeChar.getActiveWeaponItem();
-		final int baseAttackAngle;
-		if (weapon != null)
-		{
-			baseAttackAngle = weapon.getBaseAttackAngle();
-		}
-		else
-		{
-			baseAttackAngle = 120;
-		}
-		return baseAttackAngle;
+		return 120;
 	}
 	
 	/**

@@ -41,6 +41,7 @@ import org.l2junity.gameserver.model.stats.finalizers.PAttackSpeedFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.PCriticalRateFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.PDefenseFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.PEvasionRateFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.PRangeFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.RandomDamageFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.SpeedFinalizer;
 
@@ -122,7 +123,7 @@ public enum Stats
 	// ACCURACY & RANGE
 	ACCURACY_COMBAT("accCombat", new PAccuracyFinalizer()),
 	ACCURACY_MAGIC("accMagic", new MAccuracyFinalizer()),
-	POWER_ATTACK_RANGE("pAtkRange"),
+	POWER_ATTACK_RANGE("pAtkRange", new PRangeFinalizer()),
 	MAGIC_ATTACK_RANGE("mAtkRange"),
 	ATTACK_COUNT_MAX("atkCountMax"),
 	// Run speed, walk & escape speed are calculated proportionally, magic speed is a buff

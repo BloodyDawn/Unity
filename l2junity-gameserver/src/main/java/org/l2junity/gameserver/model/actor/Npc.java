@@ -67,7 +67,6 @@ import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcSpawn;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcTeleport;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.holders.ItemHolder;
-import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
@@ -553,23 +552,7 @@ public class Npc extends Creature
 	@Override
 	public Weapon getActiveWeaponItem()
 	{
-		// Get the weapon identifier equipped in the right hand of the L2NpcInstance
-		int weaponId = getTemplate().getRHandId();
-		
-		if (weaponId < 1)
-		{
-			return null;
-		}
-		
-		// Get the weapon item equipped in the right hand of the L2NpcInstance
-		L2Item item = ItemTable.getInstance().getTemplate(getTemplate().getRHandId());
-		
-		if (!(item instanceof Weapon))
-		{
-			return null;
-		}
-		
-		return (Weapon) item;
+		return null;
 	}
 	
 	/**
@@ -587,22 +570,7 @@ public class Npc extends Creature
 	@Override
 	public Weapon getSecondaryWeaponItem()
 	{
-		// Get the weapon identifier equipped in the right hand of the L2NpcInstance
-		int weaponId = getTemplate().getLHandId();
-		if (weaponId < 1)
-		{
-			return null;
-		}
-		
-		// Get the weapon item equipped in the right hand of the L2NpcInstance
-		L2Item item = ItemTable.getInstance().getTemplate(getTemplate().getLHandId());
-		
-		if (!(item instanceof Weapon))
-		{
-			return null;
-		}
-		
-		return (Weapon) item;
+		return null;
 	}
 	
 	/**
@@ -951,8 +919,7 @@ public class Npc extends Creature
 	 * <li>Decrease its spawn counter</li>
 	 * <li>Manage Siege task (killFlag, killCT)</li>
 	 * </ul>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from _allObjects of L2World </B></FONT><BR> <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT>
 	 */
 	@Override
 	public void onDecay()
@@ -984,8 +951,7 @@ public class Npc extends Creature
 	 * <li>Remove all L2Object from _knownObjects and _knownPlayer of the L2NpcInstance then cancel Attack or Cast and notify AI</li>
 	 * <li>Remove L2Object object from _allObjects of L2World</li>
 	 * </ul>
-	 * <FONT COLOR=#FF0000><B><U>Caution</U>: This method DOESN'T SEND Server->Client packets to players</B></FONT><br>
-	 * UnAfraid: TODO: Add Listener here
+	 * <FONT COLOR=#FF0000><B><U>Caution</U>: This method DOESN'T SEND Server->Client packets to players</B></FONT><br> UnAfraid: TODO: Add Listener here
 	 */
 	@Override
 	public boolean deleteMe()
@@ -1126,7 +1092,7 @@ public class Npc extends Creature
 			{
 				deleteMe();
 			}
-		}, delay);
+		} , delay);
 		return this;
 	}
 	

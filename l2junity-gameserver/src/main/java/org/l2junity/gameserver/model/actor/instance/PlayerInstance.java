@@ -4864,8 +4864,7 @@ public final class PlayerInstance extends Playable
 	@Override
 	public Weapon getActiveWeaponItem()
 	{
-		ItemInstance weapon = getActiveWeaponInstance();
-		
+		final ItemInstance weapon = getActiveWeaponInstance();
 		if (weapon == null)
 		{
 			return getFistsWeaponItem();
