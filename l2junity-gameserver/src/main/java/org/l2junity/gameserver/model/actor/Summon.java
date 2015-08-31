@@ -1078,11 +1078,11 @@ public abstract class Summon extends Playable
 	}
 	
 	@Override
-	public void sendPacket(IClientOutgoingPacket mov)
+	public void sendPacket(IClientOutgoingPacket... packets)
 	{
 		if (getOwner() != null)
 		{
-			getOwner().sendPacket(mov);
+			getOwner().sendPacket(packets);
 		}
 	}
 	

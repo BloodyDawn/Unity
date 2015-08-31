@@ -4329,11 +4329,14 @@ public final class PlayerInstance extends Playable
 	 * Send a Server->Client packet StatusUpdate to the L2PcInstance.
 	 */
 	@Override
-	public void sendPacket(IClientOutgoingPacket packet)
+	public void sendPacket(IClientOutgoingPacket... packets)
 	{
 		if (_client != null)
 		{
-			_client.sendPacket(packet);
+			for (IClientOutgoingPacket packet : packets)
+			{
+				_client.sendPacket(packet);
+			}
 		}
 	}
 	
