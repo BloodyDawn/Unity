@@ -23,11 +23,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.l2junity.commons.util.Rnd;
-import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.CeremonyOfChaosState;
 import org.l2junity.gameserver.model.L2Clan;
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosEvent;
 import org.l2junity.gameserver.model.ceremonyofchaos.CeremonyOfChaosMember;
@@ -42,6 +43,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseState;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -55,11 +57,12 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 {
 	protected static final Logger LOGGER = LoggerFactory.getLogger(CeremonyOfChaosManager.class);
 	
-	public static final String BUFF_KEY = "buff";
+	public static final String BUFF_KEY = "initial_buff";
 	public static final String ITEMS_KEY = "items";
 	public static final String MAX_PLAYERS_KEY = "max_players";
 	public static final String MAX_ARENAS_KEY = "max_arenas";
 	public static final String INSTANCE_TEMPLATES_KEY = "instance_templates";
+	public static final String END_BUFFS_KEYH = "end_buffs";
 	
 	protected CeremonyOfChaosManager()
 	{
@@ -136,67 +139,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			}
 		}
 		
-		ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(60), 60 * 1000);
-	}
-	
-	private void onAboutToTeleport(int time)
-	{
-		switch (time)
-		{
-			case 1:
-			case 2:
-			case 3:
-			case 4:
-			case 5:
-			case 60:
-			{
-				final SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.YOU_WILL_BE_MOVED_TO_THE_ARENA_IN_S1_SECOND_S);
-				msg.addByte(time);
-				for (PlayerInstance player : getRegisteredPlayers())
-				{
-					if (player.isOnline())
-					{
-						player.sendPacket(msg);
-					}
-				}
-				break;
-			}
-			case 10:
-			{
-				for (PlayerInstance player : getRegisteredPlayers())
-				{
-					if (player.isOnline())
-					{
-						player.sendPacket(ExCuriousHouseState.STARTING_PACKET);
-					}
-				}
-				break;
-			}
-		}
-		
-		// calculate reschedule
-		switch (time)
-		{
-			case 60:
-			{
-				ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(10), 50 * 1000);
-				break;
-			}
-			case 10:
-			{
-				ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(5), 5 * 1000);
-				break;
-			}
-			case 5:
-			case 4:
-			case 3:
-			case 2:
-			case 1:
-			{
-				ThreadPoolManager.getInstance().scheduleEvent(() -> onAboutToTeleport(time - 1), 1000);
-				break;
-			}
-		}
+		getTimers().addTimer("count_down", StatsSet.valueOf("time", 60), 60 * 1000, null, null);
 	}
 	
 	@ScheduleTarget
@@ -265,6 +208,41 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 		setState(CeremonyOfChaosState.SCHEDULED);
 		getEvents().forEach(CeremonyOfChaosEvent::stopFight);
 		getEvents().clear();
+	}
+	
+	@Override
+	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
+	{
+		switch (event)
+		{
+			case "count_down":
+			{
+				final int time = params.getInt("time", 0);
+				final SystemMessage countdown = SystemMessage.getSystemMessage(SystemMessageId.YOU_WILL_BE_MOVED_TO_THE_ARENA_IN_S1_SECOND_S);
+				countdown.addByte(time);
+				broadcastPacket(countdown);
+				
+				// Reschedule
+				if (time == 60)
+				{
+					getTimers().addTimer(event, params.set("time", 10), 50 * 1000, null, null);
+				}
+				else if (time == 10)
+				{
+					getTimers().addTimer(event, params.set("time", 5), 5 * 1000, null, null);
+				}
+				else if ((time > 1) && (time < 5))
+				{
+					getTimers().addTimer(event, params.set("time", time - 1), (time - 1) * 1000, null, null);
+				}
+				break;
+			}
+		}
+	}
+	
+	public final void broadcastPacket(IClientOutgoingPacket... packets)
+	{
+		getRegisteredPlayers().forEach(member -> member.sendPacket(packets));
 	}
 	
 	@Override

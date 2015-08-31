@@ -4,8 +4,13 @@
 		<variables>
 			<variable name="max_players" value="18" />
 			<variable name="max_arenas" value="5" />
-			<list type="SkillHolder" name="buff">
+			<list type="SkillHolder" name="initial_buff">
 				<skill id="7115" level="1" /> <!-- Energy of Chaos -->
+			</list>
+			<list type="SkillHolder" name="end_buffs">
+				<skill id="9540" level="1" /> <!-- Mysterious Herb of Power -->
+				<skill id="9541" level="1" /> <!-- Mysterious Herb of Magic -->
+				<skill id="19102" level="1" /> <!-- Chaos Sympathy -->
 			</list>
 			<list type="String" name="instance_templates">
 				<value>CeremonyOfChaosArena1.xml</value>

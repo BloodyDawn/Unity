@@ -233,22 +233,11 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			player.teleToLocation(_instance.getSpawnLoc(), _instance.getObjectId(), 200);
 		}
 		
-		final SystemMessage countdown = SystemMessage.getSystemMessage(SystemMessageId.THE_MATCH_WILL_START_IN_S1_SECOND_S);
-		countdown.addByte(60);
-		broadcastPacket(countdown);
+		getTimers().addTimer("match_start_countdown", StatsSet.valueOf("time", 60), 100, null, null);
 		
 		getTimers().addTimer("teleport_message1", 10000, null, null);
 		getTimers().addTimer("teleport_message2", 14000, null, null);
 		getTimers().addTimer("teleport_message3", 18000, null, null);
-		
-		getTimers().addTimer("countdown", StatsSet.valueOf("time", 30), 30000, null, null);
-		getTimers().addTimer("countdown", StatsSet.valueOf("time", 20), 40000, null, null);
-		getTimers().addTimer("countdown", StatsSet.valueOf("time", 10), 50000, null, null);
-		
-		for (int i = 5; i > 0; i--)
-		{
-			getTimers().addTimer("countdown", StatsSet.valueOf("time", i), (55 + (5 - i)) * 1000, null, null);
-		}
 	}
 	
 	public void startFight()
@@ -280,6 +269,46 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 		getMembers().values().stream().filter(p -> p.getLifeTime() == 0).forEach(this::updateLifeTime);
 		validateWinner();
 		
+		final List<CeremonyOfChaosMember> winners = getWinners();
+		final SystemMessage msg;
+		if (winners.isEmpty() || (winners.size() > 1))
+		{
+			msg = SystemMessage.getSystemMessage(SystemMessageId.THERE_IS_NO_VICTOR_THE_MATCH_ENDS_IN_A_TIE);
+		}
+		else
+		{
+			msg = SystemMessage.getSystemMessage(SystemMessageId.CONGRATULATIONS_C1_YOU_WIN_THE_MATCH);
+			msg.addCharName(winners.get(0).getPlayer());
+		}
+		
+		for (CeremonyOfChaosMember member : getMembers().values())
+		{
+			final PlayerInstance player = member.getPlayer();
+			if (player != null)
+			{
+				// Send winner message
+				player.sendPacket(msg);
+				
+				// Send result
+				player.sendPacket(new ExCuriousHouseResult(member.getResultType(), this));
+				
+				// Revive the player
+				player.doRevive();
+				
+				// Apply buffs on players
+				for (SkillHolder holder : CeremonyOfChaosManager.getInstance().getVariables().getList(CeremonyOfChaosManager.END_BUFFS_KEYH, SkillHolder.class))
+				{
+					holder.getSkill().activateSkill(player, player);
+				}
+			}
+		}
+		getTimers().cancelTimer("update", null, null);
+		
+		getTimers().addTimer("match_end_countdown", StatsSet.valueOf("time", 30), 30 * 1000, null, null);
+	}
+	
+	private void teleportPlayersOut()
+	{
 		for (CeremonyOfChaosMember member : getMembers().values())
 		{
 			final PlayerInstance player = member.getPlayer();
@@ -291,9 +320,6 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				// Remove spectator mode
 				player.setObserving(false);
 				player.sendPacket(ExCuriousHouseObserveMode.STATIC_DISABLED);
-				
-				// Send result
-				player.sendPacket(new ExCuriousHouseResult(member.getResultType(), this));
 				
 				// Teleport player back
 				player.teleToLocation(player.getLastLocation(), 0, 0);
@@ -308,7 +334,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				player.removeFromEvent(this);
 			}
 		}
-		getTimers().cancelTimer("update", null, null);
+		
 		getMembers().clear();
 		InstanceManager.getInstance().destroyInstance(_instance.getObjectId());
 	}
@@ -372,11 +398,53 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.IT_WILL_BE_A_LONELY_BATTLE_BUT_I_WISH_YOU_VICTORY));
 				break;
 			}
-			case "countdown":
+			case "match_start_countdown":
 			{
+				final int time = params.getInt("time", 0);
+				
 				final SystemMessage countdown = SystemMessage.getSystemMessage(SystemMessageId.THE_MATCH_WILL_START_IN_S1_SECOND_S);
-				countdown.addByte(params.getInt("time", 0));
+				countdown.addByte(time);
 				broadcastPacket(countdown);
+				
+				// Reschedule
+				if (time == 60)
+				{
+					getTimers().addTimer(event, params.set("time", 30), 30 * 1000, null, null);
+				}
+				else if ((time == 30) || (time == 20))
+				{
+					getTimers().addTimer(event, params.set("time", time - 10), (time - 10) * 1000, null, null);
+				}
+				else if (time == 10)
+				{
+					getTimers().addTimer(event, params.set("time", 5), 5 * 1000, null, null);
+				}
+				else if ((time > 1) && (time < 5))
+				{
+					getTimers().addTimer(event, params.set("time", time - 1), (time - 1) * 1000, null, null);
+				}
+				break;
+			}
+			case "match_end_countdown":
+			{
+				final int time = params.getInt("time", 0);
+				final SystemMessage countdown = SystemMessage.getSystemMessage(SystemMessageId.IN_S1_SECOND_S_YOU_WILL_BE_MOVED_TO_WHERE_YOU_WERE_BEFORE_PARTICIPATING_IN_THE_CEREMONY_OF_CHAOS);
+				countdown.addByte(time);
+				broadcastPacket(countdown);
+				
+				// Reschedule
+				if ((time == 30) || (time == 20))
+				{
+					getTimers().addTimer(event, params.set("time", time - 10), (time - 10) * 1000, null, null);
+				}
+				else if ((time > 0) && (time <= 10))
+				{
+					getTimers().addTimer(event, params.set("time", time - 1), (time - 1) * 1000, null, null);
+				}
+				else if (time == 0)
+				{
+					teleportPlayersOut();
+				}
 				break;
 			}
 		}

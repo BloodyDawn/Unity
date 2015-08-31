@@ -27,14 +27,14 @@ import org.l2junity.network.PacketWriter;
  */
 public class ExCuriousHouseObserveMode implements IClientOutgoingPacket
 {
-	public static final ExCuriousHouseObserveMode STATIC_ENABLED = new ExCuriousHouseObserveMode(true);
-	public static final ExCuriousHouseObserveMode STATIC_DISABLED = new ExCuriousHouseObserveMode(true);
+	public static final ExCuriousHouseObserveMode STATIC_ENABLED = new ExCuriousHouseObserveMode(0);
+	public static final ExCuriousHouseObserveMode STATIC_DISABLED = new ExCuriousHouseObserveMode(1);
 	
 	private final int _spectating;
 	
-	private ExCuriousHouseObserveMode(boolean isSpectating)
+	private ExCuriousHouseObserveMode(int spectating)
 	{
-		_spectating = isSpectating ? 1 : 0;
+		_spectating = spectating;
 	}
 	
 	@Override
