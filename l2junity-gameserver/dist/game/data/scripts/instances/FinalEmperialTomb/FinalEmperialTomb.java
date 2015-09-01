@@ -18,8 +18,6 @@
  */
 package instances.FinalEmperialTomb;
 
-import instances.AbstractInstance;
-
 import java.io.File;
 import java.util.Collections;
 import java.util.HashMap;
@@ -73,6 +71,8 @@ import org.l2junity.gameserver.util.Util;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+
+import instances.AbstractInstance;
 
 /**
  * Final Emperial Tomb instance zone. TODO:<br>
@@ -1097,7 +1097,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 					_world.activeScarlet.doCast(INTRO_SKILL.getSkill());
 					_world.frintezza.enableAllSkills();
 					_world.frintezza.disableCoreAI(true);
-					_world.frintezza.setIsMortal(false);
+					_world.frintezza.setUndying(true);
 					startPc();
 					
 					ThreadPoolManager.getInstance().scheduleGeneral(new DemonSpawnTask(_world), TIME_BETWEEN_DEMON_SPAWNS);

@@ -18,8 +18,6 @@
  */
 package instances.IceQueensCastleNormalBattle;
 
-import instances.AbstractInstance;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -59,6 +57,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
 import org.l2junity.gameserver.util.Util;
 
+import instances.AbstractInstance;
 import quests.Q10286_ReunionWithSirra.Q10286_ReunionWithSirra;
 
 /**
@@ -138,7 +137,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 		new Location(114024, -112278, -11210),
 		new Location(113865, -112435, -11210),
 		new Location(113865, -112276, -11210),
-	
+		
 	};
 	private static final Location[] STATUES_LOC =
 	{
@@ -283,7 +282,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					case "STAGE_1_START":
 					{
 						world.freya = (L2GrandBossInstance) addSpawn(FREYA_THRONE, FREYA_SPAWN, false, 0, true, world.getInstanceId());
-						world.freya.setIsMortal(false);
+						world.freya.setUndying(true);
 						manageScreenMsg(world, NpcStringId.BEGIN_STAGE_1);
 						startQuestTimer("CAST_BLIZZARD", 50000, world.controller, null);
 						startQuestTimer("STAGE_1_SPAWN", 2000, world.freya, null);
@@ -585,7 +584,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					case "SUICIDE":
 					{
 						npc.setState(3);
-						npc.setIsMortal(true);
+						npc.setUndying(false);
 						npc.doDie(null);
 						break;
 					}

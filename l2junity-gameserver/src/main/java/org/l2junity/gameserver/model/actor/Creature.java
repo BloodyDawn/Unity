@@ -209,7 +209,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	protected boolean _showSummonAnimation = false;
 	protected boolean _isTeleporting = false;
 	private boolean _isInvul = false;
-	private boolean _isMortal = true; // Char will die when HP decreased to 0
+	private boolean _isUndying = false;
 	private boolean _isFlying = false;
 	
 	private boolean _blockActions = false;
@@ -2993,14 +2993,14 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return _isInvul || _isTeleporting || isAffected(EffectFlag.INVUL);
 	}
 	
-	public void setIsMortal(boolean b)
+	public void setUndying(boolean undying)
 	{
-		_isMortal = b;
+		_isUndying = undying;
 	}
 	
-	public boolean isMortal()
+	public boolean isUndying()
 	{
-		return _isMortal;
+		return _isUndying;
 	}
 	
 	public boolean isUndead()

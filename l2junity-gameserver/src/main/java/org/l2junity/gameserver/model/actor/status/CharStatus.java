@@ -171,7 +171,7 @@ public class CharStatus
 			setCurrentHp(Math.max(getCurrentHp() - value, hpLockMin));
 		}
 		
-		if ((getActiveChar().getCurrentHp() < 0.5) && getActiveChar().isMortal()) // Die
+		if ((getActiveChar().getCurrentHp() < 0.5) && !getActiveChar().isUndying()) // Die
 		{
 			getActiveChar().abortAttack();
 			getActiveChar().abortCast();

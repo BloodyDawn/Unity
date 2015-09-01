@@ -93,7 +93,7 @@ public final class Ballista extends AbstractNpcAI
 	public String onSpawn(Npc npc)
 	{
 		npc.disableCoreAI(true);
-		npc.setIsMortal(false);
+		npc.setUndying(true);
 		return super.onSpawn(npc);
 	}
 	
