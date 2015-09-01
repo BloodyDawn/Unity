@@ -44,7 +44,6 @@ import org.l2junity.gameserver.model.ExtractableSkill;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2BlockInstance;
 import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
@@ -1191,7 +1190,7 @@ public final class Skill implements IIdentifiable
 		else
 		{
 			// target is mob
-			if ((targetPlayer == null) && (target instanceof Attackable) && (caster instanceof Attackable))
+			if ((targetPlayer == null) && target.isAttackable() && caster.isAttackable())
 			{
 				return false;
 			}
@@ -1495,6 +1494,11 @@ public final class Skill implements IIdentifiable
 			{
 				caster.setChargedShot(ShotType.SOULSHOTS, false);
 			}
+		}
+		
+		if (isSuicideAttack())
+		{
+			caster.doDie(caster);
 		}
 	}
 	

@@ -60,22 +60,18 @@ import org.w3c.dom.Node;
 import ai.npc.AbstractNpcAI;
 
 /**
- * Mentor Guide.
+ * Mentor Guide AI.
  * @author Gnacik, UnAfraid
  */
-public class MentorGuide extends AbstractNpcAI implements IGameXmlReader
+public final class MentorGuide extends AbstractNpcAI implements IGameXmlReader
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(MentorGuide.class);
-	
 	// NPCs
 	private static final int MENTOR_GUIDE = 33587;
-	
 	// Items
 	private static final int MENTEE_CERT = 33800;
 	private static final int MENTEE_MARK = 33804;
 	private static final int MENTEE_HEADPHONE = 34759;
 	private static final int DIPLOMA = 33805;
-	
 	// Skills
 	private final static SkillHolder[] MENTEE_BUFFS =
 	{
@@ -90,18 +86,14 @@ public class MentorGuide extends AbstractNpcAI implements IGameXmlReader
 		new SkillHolder(17084, 1), // Mentor's Refreshing Sonata
 		new SkillHolder(9233, 1), // Mentor's Guidance
 	};
-	
 	protected static final SkillHolder[] MENTOR_BUFFS =
 	{
 		new SkillHolder(9256, 1), // Mentee's Appreciation;
 	};
-	
 	private static final SkillHolder MENTEE_MENTOR_SUMMON = new SkillHolder(9379, 1); // Mentee's Mentor Summon
-	
 	private static final SkillHolder MENTOR_KNIGHTS_HARMONY = new SkillHolder(9376, 1); // Mentor's Knight's Harmony
 	private static final SkillHolder MENTOR_WIZARDS_HARMONY = new SkillHolder(9377, 1); // Mentor's Wizard's Harmony
 	private static final SkillHolder MENTOR_WARRIORS_HARMONY = new SkillHolder(9378, 1); // Mentor's Warrior's Harmony
-	
 	// Misc
 	private static final int MAX_LEVEL = 85;
 	private static final String LEVEL_UP_TITLE = "Mentee coin from Mentee leveling";
@@ -110,7 +102,8 @@ public class MentorGuide extends AbstractNpcAI implements IGameXmlReader
 	private static final String MENTEE_ADDED_BODY = "Greetings. This is the Mentor Guide.\n\nYou will experience a world of unlimited adventures with your mentor, Exciting, isn't it?\n\nWhen you graduate from mentee status (upon awakening at level 85), you will receive a Mentee Certificate. If you bring it to me, I will give you a Diploma that you can exchange for R-grade equipment.";
 	private static final String MENTEE_GRADUATE_TITLE = "Congratulations on your graduation";
 	private static final String MENTEE_GRADUATE_BODY = "Greetings! This is the Mentor Guide.\nCongratulations!  Did you enjoy the time with a mentor? Here is a Mentee Certificate for graduating.\n\nFind me in town, and I'll give you a Diploma if you show me your Mentee Certificatee. You'll also get a small graduation gift!\n\nNow, on to your next Adventure!";
-	static final Map<Integer, Integer> MENTEE_COINS = new HashMap<>();
+	private static final Map<Integer, Integer> MENTEE_COINS = new HashMap<>();
+	private static final Logger LOGGER = LoggerFactory.getLogger(MentorGuide.class);
 	
 	@Override
 	public void load()
@@ -142,11 +135,9 @@ public class MentorGuide extends AbstractNpcAI implements IGameXmlReader
 	private MentorGuide()
 	{
 		super(MentorGuide.class.getSimpleName(), "ai/npc");
-		
 		addFirstTalkId(MENTOR_GUIDE);
 		addStartNpc(MENTOR_GUIDE);
 		addTalkId(MENTOR_GUIDE);
-		
 		load();
 	}
 	

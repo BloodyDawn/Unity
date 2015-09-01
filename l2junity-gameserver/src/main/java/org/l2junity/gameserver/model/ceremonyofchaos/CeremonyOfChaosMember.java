@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model.ceremonyofchaos;
 
+import org.l2junity.gameserver.enums.CeremonyOfChaosResult;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.eventengine.AbstractEventMember;
 
@@ -27,6 +28,9 @@ import org.l2junity.gameserver.model.eventengine.AbstractEventMember;
 public class CeremonyOfChaosMember extends AbstractEventMember<CeremonyOfChaosEvent>
 {
 	private final int _position;
+	private int _lifeTime = 0;
+	private CeremonyOfChaosResult _resultType = CeremonyOfChaosResult.LOSE;
+	private boolean _isDefeated = false;
 	
 	public CeremonyOfChaosMember(PlayerInstance player, CeremonyOfChaosEvent event, int position)
 	{
@@ -37,5 +41,35 @@ public class CeremonyOfChaosMember extends AbstractEventMember<CeremonyOfChaosEv
 	public int getPosition()
 	{
 		return _position;
+	}
+	
+	public void setLifeTime(int time)
+	{
+		_lifeTime = time;
+	}
+	
+	public int getLifeTime()
+	{
+		return _lifeTime;
+	}
+	
+	public CeremonyOfChaosResult getResultType()
+	{
+		return _resultType;
+	}
+	
+	public void setResultType(CeremonyOfChaosResult resultType)
+	{
+		_resultType = resultType;
+	}
+	
+	public boolean isDefeated()
+	{
+		return _isDefeated;
+	}
+	
+	public void setDefeated(boolean isDefeated)
+	{
+		_isDefeated = isDefeated;
 	}
 }

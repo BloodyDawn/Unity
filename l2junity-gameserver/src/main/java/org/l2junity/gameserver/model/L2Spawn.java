@@ -610,7 +610,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 			npc.setHeading(getHeading());
 		}
 		
-		if (npc instanceof Attackable)
+		if (npc.isAttackable())
 		{
 			((Attackable) npc).setChampion(false);
 		}

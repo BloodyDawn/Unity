@@ -50,7 +50,7 @@ public class BaseStatsFinalizer implements IStatsFunction
 			final Set<ArmorSet> appliedSets = new HashSet<>(2);
 			
 			// Armor sets calculation
-			for (ItemInstance item : player.getInventory().getItems(ItemInstance::isEquipped))
+			for (ItemInstance item : player.getInventory().getPaperdollItems())
 			{
 				for (ArmorSet set : ArmorSetsData.getInstance().getSets(item.getId()))
 				{

@@ -19,7 +19,6 @@
 package org.l2junity.gameserver.model.actor.status;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Duel;
@@ -72,7 +71,7 @@ public class SummonStatus extends PlayableStatus
 							membersInRange++;
 						}
 					}
-					if ((attacker instanceof Playable) && (caster.getCurrentCp() > 0))
+					if (attacker.isPlayable() && (caster.getCurrentCp() > 0))
 					{
 						if (caster.getCurrentCp() > transferDmg)
 						{
@@ -100,7 +99,7 @@ public class SummonStatus extends PlayableStatus
 			transferDmg = Math.min((int) caster.getCurrentHp() - 1, transferDmg);
 			if (transferDmg > 0)
 			{
-				if ((attacker instanceof Playable) && (caster.getCurrentCp() > 0))
+				if (attacker.isPlayable() && (caster.getCurrentCp() > 0))
 				{
 					if (caster.getCurrentCp() > transferDmg)
 					{

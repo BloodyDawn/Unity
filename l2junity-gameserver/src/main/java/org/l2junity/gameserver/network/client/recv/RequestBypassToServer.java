@@ -153,6 +153,7 @@ public final class RequestBypassToServer implements IClientIncomingPacket
 				{
 					id = _command.substring(4);
 				}
+				
 				if (Util.isDigit(id))
 				{
 					WorldObject object = World.getInstance().findObject(Integer.parseInt(id));
@@ -161,6 +162,10 @@ public final class RequestBypassToServer implements IClientIncomingPacket
 					{
 						((Npc) object).onBypassFeedback(activeChar, _command.substring(endOfId + 1));
 					}
+				}
+				else
+				{
+					activeChar.sendDebugMessage("ObjectId of npc bypass is not digit: " + id);
 				}
 				
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -310,7 +315,7 @@ public final class RequestBypassToServer implements IClientIncomingPacket
 		{
 			return;
 		}
-		if (obj instanceof Npc)
+		if (obj.isNpc())
 		{
 			Npc temp = (Npc) obj;
 			temp.setTarget(activeChar);

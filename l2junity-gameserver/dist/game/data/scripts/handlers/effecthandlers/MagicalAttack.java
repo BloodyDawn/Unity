@@ -60,7 +60,7 @@ public final class MagicalAttack extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -113,11 +113,6 @@ public final class MagicalAttack extends AbstractEffect
 				effected.notifyDamageReceived(damage, effector, skill, mcrit, false, false);
 				effector.sendDamageMessage(effected, damage, mcrit, false, false);
 			}
-		}
-		
-		if (skill.isSuicideAttack())
-		{
-			effector.doDie(effector);
 		}
 	}
 }

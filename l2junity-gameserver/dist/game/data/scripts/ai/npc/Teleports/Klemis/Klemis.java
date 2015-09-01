@@ -28,14 +28,14 @@ import ai.npc.AbstractNpcAI;
  * Klemis AI.
  * @author St3eT
  */
-public class Klemis extends AbstractNpcAI
+public final class Klemis extends AbstractNpcAI
 {
 	// NPC
 	private static final int KLEMIS = 32734; // Klemis
 	// Location
 	private static final Location LOCATION = new Location(-180218, 185923, -10576);
 	// Misc
-	private static final int MIN_LV = 80;
+	private static final int MIN_LV = 85;
 	
 	private Klemis()
 	{

@@ -41,10 +41,14 @@ public interface IStatsFunction
 	
 	default double calcWeaponBaseValue(Creature creature, Stats stat)
 	{
-		final Weapon weapon = creature.getActiveWeaponItem();
-		final Transform transform = creature.getTransformation();
-		final double baseTemplateBalue = creature.getTemplate().getBaseValue(stat, 0);
-		return (weapon != null ? weapon.getStats(stat, baseTemplateBalue) : transform != null ? transform.getStats(creature.getActingPlayer(), stat, baseTemplateBalue) : baseTemplateBalue);
+		if (creature.isPlayable())
+		{
+			final Weapon weapon = creature.getActiveWeaponItem();
+			final Transform transform = creature.getTransformation();
+			final double baseTemplateBalue = creature.getTemplate().getBaseValue(stat, 0);
+			return (weapon != null ? weapon.getStats(stat, baseTemplateBalue) : transform != null ? transform.getStats(creature.getActingPlayer(), stat, baseTemplateBalue) : baseTemplateBalue);
+		}
+		return creature.getTemplate().getBaseValue(stat, 0);
 	}
 	
 	default double validateValue(Creature creature, double value, double maxValue)

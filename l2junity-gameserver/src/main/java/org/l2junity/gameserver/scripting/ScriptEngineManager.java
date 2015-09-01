@@ -206,7 +206,7 @@ public final class ScriptEngineManager
 	
 	private void processFile(File file, Map<IExecutionContext, List<Path>> files)
 	{
-		if (file.getName().equals(MASTER_HANDLER_FILE.toFile().getName()) || (file.getName().equals(EFFECT_MASTER_HANDLER_FILE.toFile().getName())))
+		if (file.getName().equals("package-info.java") || file.getName().equals(MASTER_HANDLER_FILE.toFile().getName()) || (file.getName().equals(EFFECT_MASTER_HANDLER_FILE.toFile().getName())))
 		{
 			return;
 		}

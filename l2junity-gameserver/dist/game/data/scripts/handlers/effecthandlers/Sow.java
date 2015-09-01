@@ -22,6 +22,7 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.model.L2Seed;
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
@@ -48,7 +49,7 @@ public final class Sow extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -84,9 +85,10 @@ public final class Sow extends AbstractEffect
 			sm = SystemMessage.getSystemMessage(SystemMessageId.THE_SEED_WAS_NOT_SOWN);
 		}
 		
-		if (player.isInParty())
+		Party party = player.getParty();
+		if (party != null)
 		{
-			player.getParty().broadcastPacket(sm);
+			party.broadcastPacket(sm);
 		}
 		else
 		{

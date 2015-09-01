@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.recv.ceremonyofchaos;
 
+import org.l2junity.gameserver.enums.CeremonyOfChaosState;
 import org.l2junity.gameserver.instancemanager.CeremonyOfChaosManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
@@ -44,6 +45,16 @@ public class RequestJoinCuriousHouse implements IClientIncomingPacket
 		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
+			return;
+		}
+		
+		if (CeremonyOfChaosManager.getInstance().getState() != CeremonyOfChaosState.REGISTRATION)
+		{
+			return;
+		}
+		else if (CeremonyOfChaosManager.getInstance().isRegistered(player))
+		{
+			player.sendPacket(SystemMessageId.YOU_ARE_ON_THE_WAITING_LIST_FOR_THE_CEREMONY_OF_CHAOS);
 			return;
 		}
 		

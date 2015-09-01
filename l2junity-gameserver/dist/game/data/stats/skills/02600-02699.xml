@@ -170,7 +170,15 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="hitCancelTime" val="0" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond>
+			<player hasFreeTeleportBookmarkSlots="3" />
+		</cond>
+		<for>
+			<effect name="AddTeleportBookmarkSlot">
+				<param amount="3" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="2611" levels="1" name="Large Firecracker">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->

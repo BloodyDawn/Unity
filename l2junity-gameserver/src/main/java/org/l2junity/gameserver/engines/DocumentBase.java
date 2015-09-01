@@ -74,6 +74,7 @@ import org.l2junity.gameserver.model.conditions.ConditionPlayerHasCastle;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerHasClanHall;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerHasFort;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerHasFreeSummonPoints;
+import org.l2junity.gameserver.model.conditions.ConditionPlayerHasFreeTeleportBookmarkSlots;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerHasPet;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerHasSummon;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerHp;
@@ -881,6 +882,11 @@ public abstract class DocumentBase
 				case "hasfreesummonpoints":
 				{
 					cond = joinAnd(cond, new ConditionPlayerHasFreeSummonPoints(Integer.parseInt(a.getNodeValue())));
+					break;
+				}
+				case "hasfreeteleportbookmarkslots":
+				{
+					cond = joinAnd(cond, new ConditionPlayerHasFreeTeleportBookmarkSlots(Integer.parseInt(a.getNodeValue())));
 					break;
 				}
 				case "cansummonsiegegolem":

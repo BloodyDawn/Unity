@@ -249,7 +249,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					case "STAGE_1_START":
 					{
 						final L2GrandBossInstance frey = (L2GrandBossInstance) addSpawn(FREYA_THRONE, FREYA_SPAWN, false, 0, true, world.getId());
-						frey.setIsMortal(false);
+						frey.setUndying(true);
 						manageScreenMsg(world, NpcStringId.BEGIN_STAGE_1);
 						startQuestTimer("CAST_BLIZZARD", 50000, controller, null);
 						startQuestTimer("STAGE_1_SPAWN", 2000, frey, null);
@@ -549,7 +549,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					case "SUICIDE":
 					{
 						npc.setState(3);
-						npc.setIsMortal(true);
+						npc.setUndying(false);
 						npc.doDie(null);
 						break;
 					}

@@ -92,7 +92,7 @@ public final class CallPc extends AbstractEffect
 		}
 	}
 	
-	public static boolean checkSummonTargetStatus(PlayerInstance target, PlayerInstance activeChar)
+	public static boolean checkSummonTargetStatus(PlayerInstance target, Creature activeChar)
 	{
 		if (target == activeChar)
 		{

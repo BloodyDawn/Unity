@@ -57,7 +57,7 @@ public class PDefenseFinalizer implements IStatsFunction
 		final Inventory inv = creature.getInventory();
 		if (inv != null)
 		{
-			for (ItemInstance item : inv.getItems(ItemInstance::isEquipped))
+			for (ItemInstance item : inv.getPaperdollItems())
 			{
 				baseValue += item.getItem().getStats(stat, 0);
 			}

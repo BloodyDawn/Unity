@@ -179,11 +179,11 @@ public final class Util
 		}
 		
 		int radius = 0;
-		if (obj1 instanceof Creature)
+		if (obj1.isCreature())
 		{
 			radius += ((Creature) obj1).getTemplate().getCollisionRadius();
 		}
-		if (obj2 instanceof Creature)
+		if (obj2.isCreature())
 		{
 			radius += ((Creature) obj2).getTemplate().getCollisionRadius();
 		}

@@ -196,7 +196,7 @@ public class L2DefenderInstance extends Attackable
 		
 		if (!(attacker instanceof L2DefenderInstance))
 		{
-			if ((damage == 0) && (aggro <= 1) && (attacker instanceof Playable))
+			if ((damage == 0) && (aggro <= 1) && (attacker.isPlayable()))
 			{
 				PlayerInstance player = attacker.getActingPlayer();
 				// Check if siege is in progress

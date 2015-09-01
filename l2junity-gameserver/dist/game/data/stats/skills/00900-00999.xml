@@ -881,6 +881,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
+			<effect name="UnsummonServitors" />
 			<effect name="Transformation">
 				<param transformationId="219" />
 				<mul stat="pAtk" val="1.4" />
@@ -917,6 +918,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
+			<effect name="UnsummonServitors" />
 			<effect name="Transformation">
 				<param transformationId="221" />
 				<mul stat="pAtk" val="1.4" />
@@ -953,6 +955,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
+			<effect name="UnsummonServitors" />
 			<effect name="Transformation">
 				<param transformationId="220" />
 				<mul stat="pAtk" val="1.4" />
@@ -1969,8 +1972,9 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttack">
+			<effect name="MagicalAttackRange">
 				<param power="#power" />
+				<param powerRange="40" />
 			</effect>
 		</for>
 	</skill>

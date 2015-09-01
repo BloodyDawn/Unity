@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.model.eventengine;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
@@ -30,6 +32,7 @@ public abstract class AbstractEventMember<T extends AbstractEvent<?>>
 {
 	private final int _objectId;
 	private final T _event;
+	private final AtomicInteger _score = new AtomicInteger();
 	
 	public AbstractEventMember(PlayerInstance player, T event)
 	{
@@ -57,6 +60,41 @@ public abstract class AbstractEventMember<T extends AbstractEvent<?>>
 				player.sendPacket(packet);
 			}
 		}
+	}
+	
+	public int getClassId()
+	{
+		final PlayerInstance player = getPlayer();
+		if (player != null)
+		{
+			return player.getClassId().getId();
+		}
+		return 0;
+	}
+	
+	public void setScore(int score)
+	{
+		_score.set(score);
+	}
+	
+	public int getScore()
+	{
+		return _score.get();
+	}
+	
+	public int incrementScore()
+	{
+		return _score.incrementAndGet();
+	}
+	
+	public int decrementScore()
+	{
+		return _score.decrementAndGet();
+	}
+	
+	public int addScore(int score)
+	{
+		return _score.addAndGet(score);
 	}
 	
 	public final T getEvent()

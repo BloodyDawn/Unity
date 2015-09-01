@@ -34,7 +34,7 @@ import ai.npc.AbstractNpcAI;
  */
 public final class Nemo extends AbstractNpcAI
 {
-	// NPC
+	// NPCs
 	private static final int NEMO = 32735; // Nemo
 	private static final int MAGUEN = 18839; // Wild Maguen
 	// Items
@@ -67,7 +67,7 @@ public final class Nemo extends AbstractNpcAI
 				{
 					htmltext = "32735-03.html";
 				}
-				else if (!player.isInventoryUnder90(false))
+				else if (!player.isInventoryUnder80(false))
 				{
 					htmltext = "32735-04.html";
 				}

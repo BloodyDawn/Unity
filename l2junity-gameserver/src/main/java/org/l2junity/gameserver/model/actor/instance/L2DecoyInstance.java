@@ -268,11 +268,11 @@ public class L2DecoyInstance extends Creature
 	}
 	
 	@Override
-	public void sendPacket(IClientOutgoingPacket mov)
+	public void sendPacket(IClientOutgoingPacket... packets)
 	{
 		if (getOwner() != null)
 		{
-			getOwner().sendPacket(mov);
+			getOwner().sendPacket(packets);
 		}
 	}
 	

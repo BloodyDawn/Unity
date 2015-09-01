@@ -36,7 +36,8 @@ public class MCritRateFinalizer implements IStatsFunction
 		throwIfPresent(base);
 		
 		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
-		baseValue *= BaseStats.WIT.calcBonus(creature) * 10;
+		final double witBonus = creature.getWIT() > 0 ? BaseStats.WIT.calcBonus(creature) : 1.;
+		baseValue *= witBonus * 10;
 		return Stats.defaultValue(creature, stat, baseValue);
 	}
 }

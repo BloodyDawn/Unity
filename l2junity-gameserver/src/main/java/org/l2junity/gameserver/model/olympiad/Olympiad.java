@@ -282,6 +282,11 @@ public class Olympiad extends ListenersContainer
 		
 	}
 	
+	public int getOlympiadRank(PlayerInstance player)
+	{
+		return _noblesRank.getOrDefault(player.getObjectId(), 0);
+	}
+	
 	public void loadNoblesRank()
 	{
 		_noblesRank.clear();
@@ -368,7 +373,6 @@ public class Olympiad extends ListenersContainer
 			sm.addInt(_currentCycle);
 			
 			Broadcast.toAllOnlinePlayers(sm);
-			Broadcast.toAllOnlinePlayers("Olympiad Validation Period has began");
 			
 			if (_scheduledWeeklyTask != null)
 			{
@@ -499,8 +503,8 @@ public class Olympiad extends ListenersContainer
 				saveOlympiadStatus();
 				
 				init();
-			}, getMillisToCompEnd());
-		}, getMillisToCompBegin());
+			} , getMillisToCompEnd());
+		} , getMillisToCompBegin());
 	}
 	
 	private long getMillisToOlympiadEnd()
@@ -615,7 +619,7 @@ public class Olympiad extends ListenersContainer
 			
 			Calendar nextChange = Calendar.getInstance();
 			_nextWeeklyChange = nextChange.getTimeInMillis() + WEEKLY_PERIOD;
-		}, getMillisToWeekChange(), WEEKLY_PERIOD);
+		} , getMillisToWeekChange(), WEEKLY_PERIOD);
 	}
 	
 	protected synchronized void addWeeklyPoints()
@@ -889,7 +893,7 @@ public class Olympiad extends ListenersContainer
 		return names;
 	}
 	
-	public int getNoblessePasses(PlayerInstance player, boolean clear)
+	public int getOlympiadTradePoint(PlayerInstance player, boolean clear)
 	{
 		if ((player == null) || (_period != 1) || _noblesRank.isEmpty())
 		{
@@ -908,9 +912,16 @@ public class Olympiad extends ListenersContainer
 			return 0;
 		}
 		
-		final int rank = _noblesRank.get(objId);
-		int points = (player.isHero() || Hero.getInstance().isUnclaimedHero(player.getObjectId()) ? Config.ALT_OLY_HERO_POINTS : 0);
-		switch (rank)
+		int points = 0;
+		
+		// Hero point bonus
+		if (Hero.getInstance().isHero(player.getObjectId()) || Hero.getInstance().isUnclaimedHero(player.getObjectId()))
+		{
+			points += Config.ALT_OLY_HERO_POINTS;
+		}
+		
+		// Rank point bonus
+		switch (_noblesRank.get(objId))
 		{
 			case 1:
 				points += Config.ALT_OLY_RANK1_POINTS;
@@ -928,21 +939,36 @@ public class Olympiad extends ListenersContainer
 				points += Config.ALT_OLY_RANK5_POINTS;
 		}
 		
+		// Win/no win matches point bonus
+		points += getCompetitionWon(player.getObjectId()) > 0 ? 10 : 5;
+		
 		if (clear)
 		{
 			noble.set(POINTS, 0);
 		}
-		points *= Config.ALT_OLY_GP_PER_POINT;
 		return points;
 	}
 	
-	public int getNoblePoints(int objId)
+	public int getNoblePoints(PlayerInstance player)
 	{
-		if ((_nobles == null) || !_nobles.containsKey(objId))
+		if (!_nobles.containsKey(player.getObjectId()))
 		{
-			return 0;
+			final StatsSet statDat = new StatsSet();
+			statDat.set(Olympiad.CLASS_ID, player.getBaseClass());
+			statDat.set(Olympiad.CHAR_NAME, player.getName());
+			statDat.set(Olympiad.POINTS, Olympiad.DEFAULT_POINTS);
+			statDat.set(Olympiad.COMP_DONE, 0);
+			statDat.set(Olympiad.COMP_WON, 0);
+			statDat.set(Olympiad.COMP_LOST, 0);
+			statDat.set(Olympiad.COMP_DRAWN, 0);
+			statDat.set(Olympiad.COMP_DONE_WEEK, 0);
+			statDat.set(Olympiad.COMP_DONE_WEEK_CLASSED, 0);
+			statDat.set(Olympiad.COMP_DONE_WEEK_NON_CLASSED, 0);
+			statDat.set(Olympiad.COMP_DONE_WEEK_TEAM, 0);
+			statDat.set("to_save", true);
+			addNobleStats(player.getObjectId(), statDat);
 		}
-		return _nobles.get(objId).getInt(POINTS);
+		return _nobles.get(player.getObjectId()).getInt(POINTS);
 	}
 	
 	public int getLastNobleOlympiadPoints(int objId)

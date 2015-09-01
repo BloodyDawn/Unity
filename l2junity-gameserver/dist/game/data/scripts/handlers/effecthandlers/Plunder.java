@@ -21,6 +21,7 @@ package handlers.effecthandlers;
 import java.util.Collection;
 
 import org.l2junity.gameserver.ai.CtrlEvent;
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
@@ -53,7 +54,7 @@ public final class Plunder extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -85,9 +86,10 @@ public final class Plunder extends AbstractEffect
 			{
 				for (ItemHolder item : items)
 				{
-					if (effector.isInParty())
+					Party party = effector.getParty();
+					if (party != null)
 					{
-						effector.getParty().distributeItem(player, item, true, monster);
+						party.distributeItem(player, item, true, monster);
 					}
 					else
 					{

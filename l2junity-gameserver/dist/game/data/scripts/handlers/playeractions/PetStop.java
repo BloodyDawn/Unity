@@ -40,7 +40,7 @@ public final class PetStop implements IPlayerActionHandler
 			return;
 		}
 		
-		final L2PetInstance pet = (L2PetInstance) activeChar.getPet();
+		final L2PetInstance pet = activeChar.getPet();
 		if (pet.isUncontrollable())
 		{
 			activeChar.sendPacket(SystemMessageId.WHEN_YOUR_PET_S_HUNGER_GAUGE_IS_AT_0_YOU_CANNOT_USE_YOUR_PET);

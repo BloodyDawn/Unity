@@ -24,7 +24,6 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.instancemanager.DuelManager;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.PcStat;
@@ -208,7 +207,7 @@ public class PcStatus extends PlayableStatus
 						}
 					}
 					
-					if ((attacker instanceof Playable) && (caster.getCurrentCp() > 0))
+					if (attacker.isPlayable() && (caster.getCurrentCp() > 0))
 					{
 						if (caster.getCurrentCp() > transferDmg)
 						{
@@ -230,7 +229,7 @@ public class PcStatus extends PlayableStatus
 				}
 			}
 			
-			if (!ignoreCP && (attacker instanceof Playable))
+			if (!ignoreCP && attacker.isPlayable())
 			{
 				if (getCurrentCp() >= value)
 				{
@@ -300,7 +299,7 @@ public class PcStatus extends PlayableStatus
 			setCurrentHp(value);
 		}
 		
-		if ((getActiveChar().getCurrentHp() < 0.5) && !isHPConsumption)
+		if ((getActiveChar().getCurrentHp() < 0.5) && !isHPConsumption && !getActiveChar().isUndying())
 		{
 			getActiveChar().abortAttack();
 			getActiveChar().abortCast();

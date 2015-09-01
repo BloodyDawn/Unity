@@ -66,7 +66,7 @@ public final class RequestGetItemFromPet implements IClientIncomingPacket
 			return;
 		}
 		
-		final L2PetInstance pet = (L2PetInstance) player.getPet();
+		final L2PetInstance pet = player.getPet();
 		final ItemInstance item = pet.getInventory().getItemByObjectId(_objectId);
 		if (item == null)
 		{

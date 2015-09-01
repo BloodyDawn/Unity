@@ -233,7 +233,7 @@ public final class QueenAnt extends AbstractNpcAI
 		{
 			case LARVA:
 				mob.setIsImmobilized(true);
-				mob.setIsMortal(false);
+				mob.setUndying(true);
 				mob.setIsRaidMinion(true);
 				break;
 			case NURSE:

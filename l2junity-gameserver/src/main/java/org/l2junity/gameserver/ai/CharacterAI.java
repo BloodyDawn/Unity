@@ -31,7 +31,6 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_REST;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
@@ -41,15 +40,12 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcMoveFinished;
 import org.l2junity.gameserver.model.interfaces.ILocational;
-import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
@@ -73,7 +69,7 @@ import org.slf4j.LoggerFactory;
 public class CharacterAI extends AbstractAI
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(CharacterAI.class);
-
+	
 	public static class IntentionCommand
 	{
 		protected final CtrlIntention _crtlIntention;
@@ -200,7 +196,7 @@ public class CharacterAI extends AbstractAI
 			
 			// Also enable random animations for this L2Character if allowed
 			// This is only for mobs - town npcs are handled in their constructor
-			if (_actor instanceof Attackable)
+			if (_actor.isAttackable())
 			{
 				((Npc) _actor).startRandomAnimationTask();
 			}
@@ -666,13 +662,13 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (getActor() instanceof Attackable)
+		if (getActor().isAttackable())
 		{
 			((Attackable) getActor()).setisReturningToSpawnPoint(false);
 		}
 		clientStoppedMoving();
 		
-		if (_actor instanceof Npc)
+		if (_actor.isNpc())
 		{
 			Npc npc = (Npc) _actor;
 			WalkingManager.getInstance().onArrived(npc); // Walking Manager support
@@ -849,7 +845,7 @@ public class CharacterAI extends AbstractAI
 		// Kill the actor client side by sending Server->Client packet AutoAttackStop, StopMove/StopRotation, Die (broadcast)
 		clientNotifyDead();
 		
-		if (!(_actor instanceof Playable))
+		if (!_actor.isPlayable())
 		{
 			_actor.setWalking();
 		}
@@ -972,7 +968,7 @@ public class CharacterAI extends AbstractAI
 		}
 		
 		offset += _actor.getTemplate().getCollisionRadius();
-		if (target instanceof Creature)
+		if (target.isCreature())
 		{
 			offset += ((Creature) target).getTemplate().getCollisionRadius();
 		}
@@ -1005,7 +1001,7 @@ public class CharacterAI extends AbstractAI
 			}
 			
 			// while flying there is no move to cast
-			if ((_actor.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST) && (_actor instanceof PlayerInstance) && _actor.isTransformed())
+			if ((_actor.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST) && _actor.isPlayer() && _actor.isTransformed())
 			{
 				if (!_actor.getTransformation().isCombat())
 				{
@@ -1022,7 +1018,7 @@ public class CharacterAI extends AbstractAI
 			}
 			
 			stopFollow();
-			if ((target instanceof Creature) && !(target instanceof L2DoorInstance))
+			if (target.isCreature() && !target.isDoor())
 			{
 				if (((Creature) target).isMoving())
 				{
@@ -1308,82 +1304,6 @@ public class CharacterAI extends AbstractAI
 		}
 	}
 	
-	protected class TargetAnalysis
-	{
-		public Creature character;
-		public boolean isMage;
-		public boolean isBalanced;
-		public boolean isArcher;
-		public boolean isFighter;
-		public boolean isCanceled;
-		public boolean isSlower;
-		public boolean isMagicResistant;
-		
-		public TargetAnalysis()
-		{
-		}
-		
-		public void update(Creature target)
-		{
-			// update status once in 4 seconds
-			if ((target == character) && (Rnd.nextInt(100) > 25))
-			{
-				return;
-			}
-			character = target;
-			if (target == null)
-			{
-				return;
-			}
-			isMage = false;
-			isBalanced = false;
-			isArcher = false;
-			isFighter = false;
-			isCanceled = false;
-			
-			if (target.getMAtk(null, null) > (1.5 * target.getPAtk(null)))
-			{
-				isMage = true;
-			}
-			else if (((target.getPAtk(null) * 0.8) < target.getMAtk(null, null)) || ((target.getMAtk(null, null) * 0.8) > target.getPAtk(null)))
-			{
-				isBalanced = true;
-			}
-			else
-			{
-				Weapon weapon = target.getActiveWeaponItem();
-				if ((weapon != null) && weapon.isBowOrCrossBow())
-				{
-					isArcher = true;
-				}
-				else
-				{
-					isFighter = true;
-				}
-			}
-			if (target.getRunSpeed() < (_actor.getRunSpeed() - 3))
-			{
-				isSlower = true;
-			}
-			else
-			{
-				isSlower = false;
-			}
-			if ((target.getMDef(null, null) * 1.2) > _actor.getMAtk(null, null))
-			{
-				isMagicResistant = true;
-			}
-			else
-			{
-				isMagicResistant = false;
-			}
-			if (target.getBuffCount() < 4)
-			{
-				isCanceled = true;
-			}
-		}
-	}
-	
 	public boolean canAura(Skill sk)
 	{
 		if ((sk.getTargetType() == L2TargetType.AURA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA) || (sk.getTargetType() == L2TargetType.AURA_CORPSE_MOB))
@@ -1412,7 +1332,7 @@ public class CharacterAI extends AbstractAI
 					{
 						continue;
 					}
-					if (target instanceof Attackable)
+					if (target.isAttackable())
 					{
 						Npc actors = ((Npc) _actor);
 						
@@ -1441,7 +1361,7 @@ public class CharacterAI extends AbstractAI
 					{
 						continue;
 					}
-					if (target instanceof Attackable)
+					if (target.isAttackable())
 					{
 						Npc actors = ((Npc) _actor);
 						
@@ -1473,7 +1393,7 @@ public class CharacterAI extends AbstractAI
 					{
 						continue;
 					}
-					if (target instanceof Attackable)
+					if (target.isAttackable())
 					{
 						Npc actors = ((Npc) _actor);
 						
@@ -1503,7 +1423,7 @@ public class CharacterAI extends AbstractAI
 						continue;
 					}
 					
-					if (target instanceof Attackable)
+					if (target.isAttackable())
 					{
 						Npc actors = ((Npc) _actor);
 						if (!actors.getTemplate().isChaos())

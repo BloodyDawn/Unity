@@ -20,7 +20,6 @@ package handlers.admincommandhandlers;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
-import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -39,20 +38,20 @@ public class AdminEnchant implements IAdminCommandHandler
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
-		"admin_seteh",// 6
-		"admin_setec",// 10
-		"admin_seteg",// 9
-		"admin_setel",// 11
-		"admin_seteb",// 12
-		"admin_setew",// 7
-		"admin_setes",// 8
-		"admin_setle",// 1
-		"admin_setre",// 2
-		"admin_setlf",// 4
-		"admin_setrf",// 5
-		"admin_seten",// 3
-		"admin_setun",// 0
-		"admin_setba",// 13
+		"admin_seteh", // 6
+		"admin_setec", // 10
+		"admin_seteg", // 9
+		"admin_setel", // 11
+		"admin_seteb", // 12
+		"admin_setew", // 7
+		"admin_setes", // 8
+		"admin_setle", // 1
+		"admin_setre", // 2
+		"admin_setlf", // 4
+		"admin_setrf", // 5
+		"admin_seten", // 3
+		"admin_setun", // 0
+		"admin_setba", // 13
 		"admin_setbe",
 		"admin_enchant"
 	};
@@ -133,12 +132,12 @@ public class AdminEnchant implements IAdminCommandHandler
 			{
 				try
 				{
-					int ench = Integer.parseInt(command.substring(12));
+					final int ench = Integer.parseInt(command.substring(12));
 					
 					// check value
-					if ((ench < 0) || (ench > 65535))
+					if ((ench < 0) || (ench > 127))
 					{
-						activeChar.sendMessage("You must set the enchant level to be between 0-65535.");
+						activeChar.sendMessage("You must set the enchant level to be between 0-127.");
 					}
 					else
 					{
@@ -166,35 +165,26 @@ public class AdminEnchant implements IAdminCommandHandler
 			// show the enchant menu after an action
 			showMainPage(activeChar);
 		}
-		
 		return true;
 	}
 	
 	private void setEnchant(PlayerInstance activeChar, int ench, int armorType)
 	{
 		// get the target
-		WorldObject target = activeChar.getTarget();
-		if (target == null)
-		{
-			target = activeChar;
-		}
-		PlayerInstance player = null;
-		if (target instanceof PlayerInstance)
-		{
-			player = (PlayerInstance) target;
-		}
-		else
+		
+		final PlayerInstance player = activeChar.getTarget() != null ? activeChar.getTarget().getActingPlayer() : activeChar;
+		
+		if (player == null)
 		{
 			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 			return;
 		}
 		
 		// now we need to find the equipped weapon of the targeted character...
-		int curEnchant = 0; // display purposes only
 		ItemInstance itemInstance = null;
 		
 		// only attempt to enchant if there is a weapon equipped
-		ItemInstance parmorInstance = player.getInventory().getPaperdollItem(armorType);
+		final ItemInstance parmorInstance = player.getInventory().getPaperdollItem(armorType);
 		if ((parmorInstance != null) && (parmorInstance.getLocationSlot() == armorType))
 		{
 			itemInstance = parmorInstance;
@@ -202,7 +192,7 @@ public class AdminEnchant implements IAdminCommandHandler
 		
 		if (itemInstance != null)
 		{
-			curEnchant = itemInstance.getEnchantLevel();
+			final int curEnchant = itemInstance.getEnchantLevel();
 			
 			// set enchant value
 			player.getInventory().unEquipItemInSlot(armorType);
@@ -210,7 +200,7 @@ public class AdminEnchant implements IAdminCommandHandler
 			player.getInventory().equipItem(itemInstance);
 			
 			// send packets
-			InventoryUpdate iu = new InventoryUpdate();
+			final InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(itemInstance);
 			player.sendInventoryUpdate(iu);
 			player.broadcastUserInfo();

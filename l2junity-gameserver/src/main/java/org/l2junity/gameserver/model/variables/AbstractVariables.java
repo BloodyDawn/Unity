@@ -43,45 +43,45 @@ public abstract class AbstractVariables extends StatsSet implements IRestorable,
 	 */
 	
 	@Override
-	public final void set(String name, boolean value)
+	public final StatsSet set(String name, boolean value)
 	{
 		_hasChanges.compareAndSet(false, true);
-		super.set(name, value);
+		return super.set(name, value);
 	}
 	
 	@Override
-	public final void set(String name, double value)
+	public final StatsSet set(String name, double value)
 	{
 		_hasChanges.compareAndSet(false, true);
-		super.set(name, value);
+		return super.set(name, value);
 	}
 	
 	@Override
-	public final void set(String name, Enum<?> value)
+	public final StatsSet set(String name, Enum<?> value)
 	{
 		_hasChanges.compareAndSet(false, true);
-		super.set(name, value);
+		return super.set(name, value);
 	}
 	
 	@Override
-	public final void set(String name, int value)
+	public final StatsSet set(String name, int value)
 	{
 		_hasChanges.compareAndSet(false, true);
-		super.set(name, value);
+		return super.set(name, value);
 	}
 	
 	@Override
-	public final void set(String name, long value)
+	public final StatsSet set(String name, long value)
 	{
 		_hasChanges.compareAndSet(false, true);
-		super.set(name, value);
+		return super.set(name, value);
 	}
 	
 	@Override
-	public final void set(String name, String value)
+	public final StatsSet set(String name, String value)
 	{
 		_hasChanges.compareAndSet(false, true);
-		super.set(name, value);
+		return super.set(name, value);
 	}
 	
 	/**
@@ -89,14 +89,15 @@ public abstract class AbstractVariables extends StatsSet implements IRestorable,
 	 * @param name
 	 * @param value
 	 * @param markAsChanged
+	 * @return
 	 */
-	public final void set(String name, String value, boolean markAsChanged)
+	public final StatsSet set(String name, String value, boolean markAsChanged)
 	{
 		if (markAsChanged)
 		{
 			_hasChanges.compareAndSet(false, true);
 		}
-		super.set(name, value);
+		return super.set(name, value);
 	}
 	
 	/**

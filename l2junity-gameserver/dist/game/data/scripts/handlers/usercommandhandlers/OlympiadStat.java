@@ -68,7 +68,7 @@ public class OlympiadStat implements IUserCommandHandler
 		sm.addInt(Olympiad.getInstance().getCompetitionDone(nobleObjId));
 		sm.addInt(Olympiad.getInstance().getCompetitionWon(nobleObjId));
 		sm.addInt(Olympiad.getInstance().getCompetitionLost(nobleObjId));
-		sm.addInt(Olympiad.getInstance().getNoblePoints(nobleObjId));
+		sm.addInt(Olympiad.getInstance().getNoblePoints((PlayerInstance) target));
 		activeChar.sendPacket(sm);
 		
 		final SystemMessage sm2 = SystemMessage.getSystemMessage(SystemMessageId.THE_MATCHES_THIS_WEEK_ARE_ALL_CLASS_BATTLES_THE_NUMBER_OF_MATCHES_THAT_ARE_ALLOWED_TO_PARTICIPATE_IS_S1);

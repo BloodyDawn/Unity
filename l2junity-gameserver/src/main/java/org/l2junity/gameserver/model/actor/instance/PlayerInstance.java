@@ -196,6 +196,7 @@ import org.l2junity.gameserver.model.eventengine.AbstractEvent;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerEquipItem;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerFameChanged;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerHennaAdd;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerHennaRemove;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
@@ -495,14 +496,13 @@ public final class PlayerInstance extends Playable
 	private Vehicle _vehicle = null;
 	private Location _inVehiclePosition;
 	
-	public ScheduledFuture<?> _taskforfish;
 	private MountType _mountType = MountType.NONE;
 	private int _mountNpcId;
 	private int _mountLevel;
 	/** Store object used to summon the strider you are mounting **/
 	private int _mountObjectID = 0;
 	
-	public AdminTeleportType _teleportType = AdminTeleportType.NORMAL;
+	private AdminTeleportType _teleportType = AdminTeleportType.NORMAL;
 	
 	private boolean _inCrystallize;
 	private boolean _inCraftMode;
@@ -580,7 +580,7 @@ public final class PlayerInstance extends Playable
 	private final Map<BaseStats, Integer> _hennaBaseStats = new ConcurrentHashMap<>();
 	
 	/** The Pet of the L2PcInstance */
-	private Summon _pet = null;
+	private L2PetInstance _pet = null;
 	/** Servitors of the L2PcInstance */
 	private volatile Map<Integer, Summon> _servitors = null;
 	/** The L2Agathion of the L2PcInstance */
@@ -4331,11 +4331,14 @@ public final class PlayerInstance extends Playable
 	 * Send a Server->Client packet StatusUpdate to the L2PcInstance.
 	 */
 	@Override
-	public void sendPacket(IClientOutgoingPacket packet)
+	public void sendPacket(IClientOutgoingPacket... packets)
 	{
 		if (_client != null)
 		{
-			_client.sendPacket(packet);
+			for (IClientOutgoingPacket packet : packets)
+			{
+				_client.sendPacket(packet);
+			}
 		}
 	}
 	
@@ -4865,8 +4868,7 @@ public final class PlayerInstance extends Playable
 	@Override
 	public Weapon getActiveWeaponItem()
 	{
-		ItemInstance weapon = getActiveWeaponInstance();
-		
+		final ItemInstance weapon = getActiveWeaponInstance();
 		if (weapon == null)
 		{
 			return getFistsWeaponItem();
@@ -5488,7 +5490,7 @@ public final class PlayerInstance extends Playable
 	}
 	
 	@Override
-	public Summon getPet()
+	public L2PetInstance getPet()
 	{
 		return _pet;
 	}
@@ -5524,10 +5526,10 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * Set the L2Summon of the L2PcInstance.
+	 * Set the summoned Pet of the L2PcInstance.
 	 * @param pet
 	 */
-	public void setPet(Summon pet)
+	public void setPet(L2PetInstance pet)
 	{
 		_pet = pet;
 	}
@@ -7867,7 +7869,7 @@ public final class PlayerInstance extends Playable
 				sendPacket(ui);
 				
 				// Notify to scripts
-				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerHennaRemove(this, henna), this);
+				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerHennaAdd(this, henna), this);
 				return true;
 			}
 		}
@@ -8337,7 +8339,7 @@ public final class PlayerInstance extends Playable
 		if (isInDuel())
 		{
 			// Get L2PcInstance
-			if (target instanceof Playable)
+			if (target.isPlayable())
 			{
 				// Get L2PcInstance
 				PlayerInstance cha = target.getActingPlayer();
@@ -8611,7 +8613,7 @@ public final class PlayerInstance extends Playable
 			return false;
 		}
 		
-		if (!(target instanceof Playable))
+		if (!target.isPlayable())
 		{
 			return true;
 		}
@@ -9158,6 +9160,19 @@ public final class PlayerInstance extends Playable
 		sendPacket(SystemMessage.sendString(message));
 	}
 	
+	public void setObserving(boolean state)
+	{
+		_observerMode = state;
+		setTarget(null);
+		setBlockActions(state);
+		setIsInvul(state);
+		setInvisible(state);
+		if (hasAI() && !state)
+		{
+			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+		}
+	}
+	
 	public void enterObserverMode(Location loc)
 	{
 		setLastLocation();
@@ -9165,12 +9180,7 @@ public final class PlayerInstance extends Playable
 		// Remove Hide.
 		getEffectList().stopSkillEffects(true, AbnormalType.HIDE);
 		
-		_observerMode = true;
-		setTarget(null);
-		setBlockActions(true);
-		startParalyze();
-		setIsInvul(true);
-		setInvisible(true);
+		setObserving(true);
 		sendPacket(new ObservationMode(loc));
 		
 		teleToLocation(loc, false);
@@ -10012,7 +10022,7 @@ public final class PlayerInstance extends Playable
 			// Remove active item skills before saving char to database
 			// because next time when choosing this class, weared items can
 			// be different
-			for (ItemInstance item : getInventory().getItems(ItemInstance::isAugmented))
+			for (ItemInstance item : getInventory().getPaperdollItems(ItemInstance::isAugmented))
 			{
 				if ((item != null) && item.isEquipped())
 				{
@@ -13089,6 +13099,16 @@ public final class PlayerInstance extends Playable
 	public boolean isInventoryUnder90(boolean includeQuestInv)
 	{
 		return (getInventory().getSize(includeQuestInv) <= (getInventoryLimit() * 0.9));
+	}
+	
+	/**
+	 * Test if player inventory is under 80% capaity
+	 * @param includeQuestInv check also quest inventory
+	 * @return
+	 */
+	public boolean isInventoryUnder80(boolean includeQuestInv)
+	{
+		return (getInventory().getSize(includeQuestInv) <= (getInventoryLimit() * 0.8));
 	}
 	
 	public boolean havePetInvItems()

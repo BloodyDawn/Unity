@@ -206,7 +206,7 @@ public final class ArmorSet
 	
 	public boolean hasOptionalEquipped(PlayerInstance player, Function<ItemInstance, Integer> idProvider)
 	{
-		return player.getInventory().getItems(ItemInstance::isEquipped).stream().anyMatch(item -> _optionalItems.contains(idProvider.apply(item)));
+		return player.getInventory().getPaperdollItems().stream().anyMatch(item -> _optionalItems.contains(idProvider.apply(item)));
 	}
 	
 	/**
@@ -216,6 +216,6 @@ public final class ArmorSet
 	 */
 	public long getPiecesCount(PlayerInstance player, Function<ItemInstance, Integer> idProvider)
 	{
-		return player.getInventory().getItems(ItemInstance::isEquipped).stream().filter(item -> _requiredItems.contains(idProvider.apply(item))).count();
+		return player.getInventory().getPaperdollItems(item -> _requiredItems.contains(idProvider.apply(item))).size();
 	}
 }

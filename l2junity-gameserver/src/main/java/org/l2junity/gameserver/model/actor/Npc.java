@@ -69,7 +69,6 @@ import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcTeleport;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.instancezone.Instance;
-import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
@@ -555,23 +554,7 @@ public class Npc extends Creature
 	@Override
 	public Weapon getActiveWeaponItem()
 	{
-		// Get the weapon identifier equipped in the right hand of the L2NpcInstance
-		int weaponId = getTemplate().getRHandId();
-		
-		if (weaponId < 1)
-		{
-			return null;
-		}
-		
-		// Get the weapon item equipped in the right hand of the L2NpcInstance
-		L2Item item = ItemTable.getInstance().getTemplate(getTemplate().getRHandId());
-		
-		if (!(item instanceof Weapon))
-		{
-			return null;
-		}
-		
-		return (Weapon) item;
+		return null;
 	}
 	
 	/**
@@ -589,22 +572,7 @@ public class Npc extends Creature
 	@Override
 	public Weapon getSecondaryWeaponItem()
 	{
-		// Get the weapon identifier equipped in the right hand of the L2NpcInstance
-		int weaponId = getTemplate().getLHandId();
-		if (weaponId < 1)
-		{
-			return null;
-		}
-		
-		// Get the weapon item equipped in the right hand of the L2NpcInstance
-		L2Item item = ItemTable.getInstance().getTemplate(getTemplate().getLHandId());
-		
-		if (!(item instanceof Weapon))
-		{
-			return null;
-		}
-		
-		return (Weapon) item;
+		return null;
 	}
 	
 	/**

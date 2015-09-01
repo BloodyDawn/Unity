@@ -731,8 +731,12 @@
 			</not>
 		</cond>
 		<for>
-			<effect name="ClanGate" />
-			<effect name="ImmobileBuff" />
+			<effect name="SendSystemMessageToClan">
+				<param id="1923" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3633" levels="2" name="Residential Stun Immunity">

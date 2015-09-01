@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayableExpChanged;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
+import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.network.client.send.ExNewSkillToLearnByLevelUp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -63,7 +64,7 @@ public class PlayableStat extends CharStat
 		setExp(getExp() + value);
 		
 		byte minimumLevel = 1;
-		if (getActiveChar() instanceof L2PetInstance)
+		if (getActiveChar().isPet())
 		{
 			// get minimum level from L2NpcTemplate
 			minimumLevel = (byte) PetDataTable.getInstance().getPetMinLevel(((L2PetInstance) getActiveChar()).getTemplate().getId());
@@ -108,7 +109,7 @@ public class PlayableStat extends CharStat
 		setExp(getExp() - value);
 		
 		byte minimumLevel = 1;
-		if (getActiveChar() instanceof L2PetInstance)
+		if (getActiveChar().isPet())
 		{
 			// get minimum level from L2NpcTemplate
 			minimumLevel = (byte) PetDataTable.getInstance().getPetMinLevel(((L2PetInstance) getActiveChar()).getTemplate().getId());
@@ -234,5 +235,19 @@ public class PlayableStat extends CharStat
 	public int getMaxLevel()
 	{
 		return ExperienceData.getInstance().getMaxLevel();
+	}
+	
+	@Override
+	public int getPhysicalAttackRadius()
+	{
+		final Weapon weapon = getActiveChar().getActiveWeaponItem();
+		return weapon != null ? weapon.getBaseAttackRadius() : super.getPhysicalAttackRadius();
+	}
+	
+	@Override
+	public int getPhysicalAttackAngle()
+	{
+		final Weapon weapon = getActiveChar().getActiveWeaponItem();
+		return weapon != null ? weapon.getBaseAttackAngle() : super.getPhysicalAttackAngle();
 	}
 }

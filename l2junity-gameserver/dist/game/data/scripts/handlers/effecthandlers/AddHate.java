@@ -32,12 +32,14 @@ import org.l2junity.gameserver.model.skills.Skill;
 public final class AddHate extends AbstractEffect
 {
 	private final double _power;
+	private final boolean _affectSummoner;
 	
 	public AddHate(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
 		_power = params.getDouble("power", 0);
+		_affectSummoner = params.getBoolean("affectSummoner", false);
 	}
 	
 	@Override
@@ -49,6 +51,11 @@ public final class AddHate extends AbstractEffect
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
+		if (_affectSummoner && (effector.getSummoner() != null))
+		{
+			effector = effector.getSummoner();
+		}
+		
 		if (!effected.isAttackable())
 		{
 			return;

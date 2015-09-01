@@ -38,7 +38,7 @@ public final class SpawnItem implements IClientOutgoingPacket
 		_y = obj.getY();
 		_z = obj.getZ();
 		
-		if (obj instanceof ItemInstance)
+		if (obj.isItem())
 		{
 			ItemInstance item = (ItemInstance) obj;
 			_itemId = item.getDisplayId();

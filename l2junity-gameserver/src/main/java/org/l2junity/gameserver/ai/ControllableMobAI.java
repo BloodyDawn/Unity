@@ -33,8 +33,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2ControllableMobInstance;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.util.Util;
@@ -382,13 +380,13 @@ public final class ControllableMobAI extends AttackableAI
 	
 	private boolean checkAutoAttackCondition(Creature target)
 	{
-		if ((target == null) || !(_actor instanceof Attackable))
+		if ((target == null) || !_actor.isAttackable())
 		{
 			return false;
 		}
 		Attackable me = (Attackable) _actor;
 		
-		if ((target instanceof L2NpcInstance) || (target instanceof L2DoorInstance))
+		if (target.isNpc() || target.isDoor())
 		{
 			return false;
 		}
@@ -405,7 +403,7 @@ public final class ControllableMobAI extends AttackableAI
 		}
 		
 		// Spawn protection (only against mobs)
-		if ((target instanceof PlayerInstance) && ((PlayerInstance) target).isSpawnProtected())
+		if (target.isPlayer() && ((PlayerInstance) target).isSpawnProtected())
 		{
 			return false;
 		}
@@ -420,7 +418,7 @@ public final class ControllableMobAI extends AttackableAI
 			}
 		}
 		
-		if (target instanceof Npc)
+		if (target.isNpc())
 		{
 			return false;
 		}

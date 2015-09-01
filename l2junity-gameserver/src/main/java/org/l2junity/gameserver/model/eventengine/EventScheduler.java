@@ -19,11 +19,14 @@
 package org.l2junity.gameserver.model.eventengine;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,6 +39,7 @@ public class EventScheduler
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(EventScheduler.class);
 	private final AbstractEventManager<?> _manager;
+	private final String _name;
 	private final String _pattern;
 	private final boolean _repeat;
 	private List<EventMethodNotification> _notifications;
@@ -44,8 +48,14 @@ public class EventScheduler
 	public EventScheduler(AbstractEventManager<?> manager, StatsSet set)
 	{
 		_manager = manager;
+		_name = set.getString("name", "");
 		_pattern = set.getString("minute", "*") + " " + set.getString("hour", "*") + " " + set.getString("dayOfMonth", "*") + " " + set.getString("month", "*") + " " + set.getString("dayOfWeek", "*");
 		_repeat = set.getBoolean("repeat", false);
+	}
+	
+	public String getName()
+	{
+		return _name;
 	}
 	
 	public long getNextSchedule()
@@ -83,6 +93,14 @@ public class EventScheduler
 		
 		final Predictor predictor = new Predictor(_pattern);
 		final long nextSchedule = predictor.nextMatchingTime();
+		final long timeSchedule = nextSchedule - System.currentTimeMillis();
+		if (timeSchedule <= (30 * 1000))
+		{
+			LOGGER.warn("Wrong reschedule for {} end up run in {} seconds!", _manager.getClass().getSimpleName(), timeSchedule / 1000);
+			ThreadPoolManager.getInstance().scheduleEvent(this::startScheduler, timeSchedule + 1000);
+			return;
+		}
+		
 		if (_task != null)
 		{
 			_task.cancel(false);
@@ -95,6 +113,7 @@ public class EventScheduler
 				try
 				{
 					notification.execute();
+					LOGGER.info("Executed {}#{}", notification.getManager().getClass().getSimpleName(), notification.getMethod().getName());
 				}
 				catch (Exception e)
 				{
@@ -104,9 +123,14 @@ public class EventScheduler
 			
 			if (isRepeating())
 			{
-				startScheduler();
+				ThreadPoolManager.getInstance().scheduleEvent(this::startScheduler, 1000);
 			}
-		} , nextSchedule - System.currentTimeMillis());
+		} , timeSchedule);
+		
+		for (EventMethodNotification notification : _notifications)
+		{
+			LOGGER.info("Scheduled call to {}#{} on: {}", notification.getManager().getClass().getSimpleName(), notification.getMethod().getName(), Util.formatDate(new Date(nextSchedule), "yyyy-MM-dd HH:mm:ss"));
+		}
 	}
 	
 	public void stopScheduler()
@@ -116,5 +140,10 @@ public class EventScheduler
 			_task.cancel(false);
 			_task = null;
 		}
+	}
+	
+	public long getRemainingTime(TimeUnit unit)
+	{
+		return (_task != null) && !_task.isDone() ? _task.getDelay(unit) : 0;
 	}
 }

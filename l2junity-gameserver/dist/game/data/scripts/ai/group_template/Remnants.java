@@ -53,7 +53,7 @@ public final class Remnants extends AbstractNpcAI
 	@Override
 	public final String onSpawn(Npc npc)
 	{
-		npc.setIsMortal(false);
+		npc.setUndying(true);
 		return super.onSpawn(npc);
 	}
 	

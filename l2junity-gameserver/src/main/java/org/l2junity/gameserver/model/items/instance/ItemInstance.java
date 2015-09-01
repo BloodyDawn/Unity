@@ -883,6 +883,14 @@ public final class ItemInstance extends WorldObject
 	}
 	
 	/**
+	 * @return {@code true} if item is enchanted, {@code false} otherwise
+	 */
+	public boolean isEnchanted()
+	{
+		return _enchantLevel > 0;
+	}
+	
+	/**
 	 * @param enchantLevel the enchant value to set
 	 */
 	public void setEnchantLevel(int enchantLevel)
@@ -1061,6 +1069,11 @@ public final class ItemInstance extends WorldObject
 	public Collection<AttributeHolder> getAttributes()
 	{
 		return _elementals != null ? _elementals.values() : null;
+	}
+	
+	public boolean hasAttributes()
+	{
+		return (_elementals != null) && !_elementals.isEmpty();
 	}
 	
 	public AttributeHolder getAttribute(AttributeType type)

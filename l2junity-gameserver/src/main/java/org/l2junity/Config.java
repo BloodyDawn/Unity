@@ -542,7 +542,7 @@ public final class Config
 	public static List<ItemHolder> ALT_OLY_TEAM_REWARD;
 	public static int ALT_OLY_COMP_RITEM;
 	public static int ALT_OLY_MIN_MATCHES;
-	public static int ALT_OLY_GP_PER_POINT;
+	public static int ALT_OLY_MARK_PER_POINT;
 	public static int ALT_OLY_HERO_POINTS;
 	public static int ALT_OLY_RANK1_POINTS;
 	public static int ALT_OLY_RANK2_POINTS;
@@ -2182,13 +2182,13 @@ public final class Config
 			ALT_OLY_CLASSED_REWARD = parseItemsList(Olympiad.getString("AltOlyClassedReward", "13722,50"));
 			ALT_OLY_NONCLASSED_REWARD = parseItemsList(Olympiad.getString("AltOlyNonClassedReward", "13722,40"));
 			ALT_OLY_TEAM_REWARD = parseItemsList(Olympiad.getString("AltOlyTeamReward", "13722,85"));
-			ALT_OLY_COMP_RITEM = Olympiad.getInt("AltOlyCompRewItem", 13722);
+			ALT_OLY_COMP_RITEM = Olympiad.getInt("AltOlyCompRewItem", 45584);
 			ALT_OLY_MIN_MATCHES = Olympiad.getInt("AltOlyMinMatchesForPoints", 15);
-			ALT_OLY_GP_PER_POINT = Olympiad.getInt("AltOlyGPPerPoint", 1000);
-			ALT_OLY_HERO_POINTS = Olympiad.getInt("AltOlyHeroPoints", 200);
-			ALT_OLY_RANK1_POINTS = Olympiad.getInt("AltOlyRank1Points", 100);
-			ALT_OLY_RANK2_POINTS = Olympiad.getInt("AltOlyRank2Points", 75);
-			ALT_OLY_RANK3_POINTS = Olympiad.getInt("AltOlyRank3Points", 55);
+			ALT_OLY_MARK_PER_POINT = Olympiad.getInt("AltOlyMarkPerPoint", 20);
+			ALT_OLY_HERO_POINTS = Olympiad.getInt("AltOlyHeroPoints", 30);
+			ALT_OLY_RANK1_POINTS = Olympiad.getInt("AltOlyRank1Points", 60);
+			ALT_OLY_RANK2_POINTS = Olympiad.getInt("AltOlyRank2Points", 50);
+			ALT_OLY_RANK3_POINTS = Olympiad.getInt("AltOlyRank3Points", 45);
 			ALT_OLY_RANK4_POINTS = Olympiad.getInt("AltOlyRank4Points", 40);
 			ALT_OLY_RANK5_POINTS = Olympiad.getInt("AltOlyRank5Points", 30);
 			ALT_OLY_MAX_POINTS = Olympiad.getInt("AltOlyMaxPoints", 10);

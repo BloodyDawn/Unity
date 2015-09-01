@@ -689,6 +689,11 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="3000" />
+		<for>
+			<effect name="PkCount">
+				<param amount="-1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="22749" levels="1" name="Scroll: PK (Mid-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -701,6 +706,11 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="3000" />
+		<for>
+			<effect name="PkCount">
+				<param amount="-3" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="22750" levels="1" name="Scroll: PK (High-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -713,6 +723,11 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="3000" />
+		<for>
+			<effect name="PkCount">
+				<param amount="-5" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="22751" levels="1" name="Scroll: PK (Top-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -725,6 +740,11 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="3000" />
+		<for>
+			<effect name="PkCount">
+				<param amount="-10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="22752" levels="1" name="Scroll: Reputation (Low-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -737,6 +757,11 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="3000" />
+		<for>
+			<effect name="KarmaCount">
+				<param amount="1000" mode="DIFF" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="22753" levels="1" name="Scroll: Reputation (Mid-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -749,6 +774,11 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="3000" />
+		<for>
+			<effect name="KarmaCount">
+				<param amount="5000" mode="DIFF" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="22754" levels="1" name="Scroll: Reputation (High-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -761,6 +791,11 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="3000" />
+		<for>
+			<effect name="KarmaCount">
+				<param amount="30000" mode="DIFF" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="22755" levels="1" name="Scroll: Reputation (Top-grade)">
 		<!-- AUTO GENERATED SKILL -->
@@ -773,6 +808,11 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="reuseDelay" val="3000" />
+		<for>
+			<effect name="KarmaCount">
+				<param mode="RESET" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="22756" levels="1" name="Transform: Ninja Outfit">
 		<!-- AUTO GENERATED SKILL -->

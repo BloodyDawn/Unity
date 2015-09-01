@@ -21,6 +21,7 @@ package handlers.admincommandhandlers;
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,7 +36,9 @@ public class AdminInvul implements IAdminCommandHandler
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_invul",
-		"admin_setinvul"
+		"admin_setinvul",
+		"admin_undying",
+		"admin_setundying"
 	};
 	
 	@Override
@@ -47,12 +50,26 @@ public class AdminInvul implements IAdminCommandHandler
 			handleInvul(activeChar);
 			AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
 		}
-		if (command.equals("admin_setinvul"))
+		else if (command.equals("admin_undying"))
 		{
-			WorldObject target = activeChar.getTarget();
+			handleUndying(activeChar);
+			AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
+		}
+		
+		else if (command.equals("admin_setinvul"))
+		{
+			final WorldObject target = activeChar.getTarget();
 			if (target instanceof PlayerInstance)
 			{
 				handleInvul((PlayerInstance) target);
+			}
+		}
+		else if (command.equals("admin_setundying"))
+		{
+			final WorldObject target = activeChar.getTarget();
+			if (target instanceof Creature)
+			{
+				handleUndying((Creature) target);
 			}
 		}
 		return true;
@@ -83,6 +100,30 @@ public class AdminInvul implements IAdminCommandHandler
 			if (Config.DEBUG)
 			{
 				_log.debug("GM: Gm activated invul mode for character " + activeChar.getName() + "(" + activeChar.getObjectId() + ")");
+			}
+		}
+		activeChar.sendMessage(text);
+	}
+	
+	private void handleUndying(Creature activeChar)
+	{
+		String text;
+		if (activeChar.isUndying())
+		{
+			activeChar.setUndying(false);
+			text = activeChar.getName() + " is now mortal";
+			if (Config.DEBUG)
+			{
+				_log.debug("GM: Gm removed undying mode from character " + activeChar.getName() + "(" + activeChar.getObjectId() + ")");
+			}
+		}
+		else
+		{
+			activeChar.setUndying(true);
+			text = activeChar.getName() + " is now undying";
+			if (Config.DEBUG)
+			{
+				_log.debug("GM: Gm activated undying mode for character " + activeChar.getName() + "(" + activeChar.getObjectId() + ")");
 			}
 		}
 		activeChar.sendMessage(text);

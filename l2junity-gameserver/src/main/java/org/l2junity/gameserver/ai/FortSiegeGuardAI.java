@@ -37,9 +37,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2DefenderInstance;
-import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2FortCommanderInstance;
-import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -122,7 +120,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 	private boolean autoAttackCondition(Creature target)
 	{
 		// Check if the target isn't another guard, folk or a door
-		if ((target == null) || (target instanceof L2DefenderInstance) || (target instanceof L2NpcInstance) || (target instanceof L2DoorInstance) || target.isAlikeDead() || (target instanceof L2FortCommanderInstance) || (target instanceof Playable))
+		if ((target == null) || (target instanceof L2DefenderInstance) || target.isNpc() || target.isDoor() || target.isAlikeDead() || (target instanceof L2FortCommanderInstance) || target.isPlayable())
 		{
 			PlayerInstance player = null;
 			if (target instanceof PlayerInstance)
@@ -143,11 +141,11 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 		if ((target != null) && target.isInvul())
 		{
 			// However EffectInvincible requires to check GMs specially
-			if ((target instanceof PlayerInstance) && target.isGM())
+			if (target.isPlayer() && target.isGM())
 			{
 				return false;
 			}
-			if ((target instanceof Summon) && ((Summon) target).getOwner().isGM())
+			if (target.isSummon() && ((Summon) target).getOwner().isGM())
 			{
 				return false;
 			}
@@ -417,9 +415,9 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 				continue;
 			}
 			
-			if (!(cha instanceof Npc))
+			if (!cha.isNpc())
 			{
-				if (_selfAnalysis.hasHealOrResurrect && (cha instanceof PlayerInstance) && ((Npc) _actor).getFort().getSiege().checkIsDefender(((PlayerInstance) cha).getClan()))
+				if (_selfAnalysis.hasHealOrResurrect && cha.isPlayer() && ((Npc) _actor).getFort().getSiege().checkIsDefender(((PlayerInstance) cha).getClan()))
 				{
 					// heal friends
 					if (!_actor.isAttackingDisabled() && (cha.getCurrentHp() < (cha.getMaxHp() * 0.6)) && (_actor.getCurrentHp() > (_actor.getMaxHp() / 2)) && (_actor.getCurrentMp() > (_actor.getMaxMp() / 2)) && cha.isInCombat())
@@ -632,7 +630,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 				
 				// Check if the L2SiegeGuardInstance isn't too far from it's home location
 				if ((((dx * dx) + (dy * dy)) > 10000) && (((homeX * homeX) + (homeY * homeY)) > 3240000) // 1800 * 1800
-					&& (_actor.isInSurroundingRegion(attackTarget)))
+				&& (_actor.isInSurroundingRegion(attackTarget)))
 				{
 					// Cancel the target
 					_actor.setTarget(null);
