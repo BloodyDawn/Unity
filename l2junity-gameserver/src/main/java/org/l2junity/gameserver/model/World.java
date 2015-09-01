@@ -511,7 +511,7 @@ public final class World
 			{
 				for (WorldObject wo : w.getVisibleObjects().values())
 				{
-					if (wo == object)
+					if ((wo == object) || (wo.getInstanceId() != object.getInstanceId()))
 					{
 						continue;
 					}

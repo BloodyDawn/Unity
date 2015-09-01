@@ -82,7 +82,6 @@ public final class Instance implements IIdentifiable, INamable
 	private final InstanceTemplate _template;
 	private final long _startTime;
 	private long _endTime;
-	private boolean _finishState = false;
 	// Advanced instance parameters
 	private final Set<Integer> _allowed = ConcurrentHashMap.newKeySet(); // ObjectId of players which can enter to instance
 	private final Set<PlayerInstance> _players = ConcurrentHashMap.newKeySet(); // Players inside instance
@@ -278,7 +277,7 @@ public final class Instance implements IIdentifiable, INamable
 		if (_players.isEmpty())
 		{
 			final long emptyTime = _template.getEmptyDestroyTime();
-			if (_finishState || (_template.getDuration() == 0) || (emptyTime == 0))
+			if ((_template.getDuration() == 0) || (emptyTime == 0))
 			{
 				destroy();
 			}
@@ -782,7 +781,6 @@ public final class Instance implements IIdentifiable, INamable
 			setReenterTime();
 		}
 		// Change instance duration
-		_finishState = true;
 		setDuration(delay);
 	}
 	

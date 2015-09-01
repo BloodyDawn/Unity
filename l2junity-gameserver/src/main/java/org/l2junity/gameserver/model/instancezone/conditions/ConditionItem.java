@@ -38,7 +38,7 @@ public final class ConditionItem extends Condition
 	{
 		super(template, parameters, onlyLeader);
 		// Load params
-		_itemId = parameters.getInt("itemId");
+		_itemId = parameters.getInt("id");
 		_count = parameters.getLong("count");
 		_take = parameters.getBoolean("take", false);
 		// Set message

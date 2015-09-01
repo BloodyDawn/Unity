@@ -514,19 +514,8 @@ public final class InstanceManager implements IGameXmlReader
 					// Load params
 					final int charId = rs.getInt("charId");
 					final int instanceId = rs.getInt("instanceId");
-					// Get player's penalty list
-					final Map<Integer, Long> playerData;
-					if (!_playerInstanceTimes.containsKey(charId))
-					{
-						playerData = new ConcurrentHashMap<>();
-						_playerInstanceTimes.put(charId, playerData);
-					}
-					else
-					{
-						playerData = _playerInstanceTimes.get(charId);
-					}
-					// Save penalty
-					playerData.put(instanceId, time);
+					// Set penalty
+					setReenterPenalty(charId, instanceId, time);
 				}
 			}
 		}
@@ -593,13 +582,7 @@ public final class InstanceManager implements IGameXmlReader
 	 */
 	public void setReenterPenalty(int objectId, int id, long time)
 	{
-		Map<Integer, Long> playerData = _playerInstanceTimes.get(objectId);
-		if (playerData == null)
-		{
-			playerData = new ConcurrentHashMap<>();
-			_playerInstanceTimes.put(objectId, playerData);
-		}
-		playerData.put(id, time);
+		_playerInstanceTimes.computeIfAbsent(objectId, ConcurrentHashMap::new).put(id, time);
 	}
 	
 	/**
