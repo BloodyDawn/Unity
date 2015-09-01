@@ -12,17 +12,23 @@
 				<skill id="9541" level="1" /> <!-- Mysterious Herb of Magic -->
 				<skill id="19102" level="1" /> <!-- Chaos Sympathy -->
 			</list>
+			<list type="ItemHolder" name="items">
+				<item id="35991" count="1" />
+				<item id="35992" count="1" />
+				<item id="35993" count="1" />
+			</list>
 			<list type="String" name="instance_templates">
 				<value>CeremonyOfChaosArena1.xml</value>
 				<value>CeremonyOfChaosArena2.xml</value>
 				<value>CeremonyOfChaosArena3.xml</value>
 				<value>CeremonyOfChaosArena4.xml</value>
 			</list>
-			<list type="ItemHolder" name="items">
-				<item id="35991" count="1" />
-				<item id="35992" count="1" />
-				<item id="35993" count="1" />
-			</list>
+			<map keyType="String" valueType="Integer" name="instance_zones">
+				<entry key="CeremonyOfChaosArena1.xml" value="200106" />
+				<entry key="CeremonyOfChaosArena2.xml" value="200106" />
+				<entry key="CeremonyOfChaosArena3.xml" value="200106" />
+				<entry key="CeremonyOfChaosArena4.xml" value="200106" />
+			</map>
 		</variables>
 		<scheduler>
 			<!-- Schedule of the event period, usually one month long, executing onPeriodEnd at 00:00 -->

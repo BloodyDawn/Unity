@@ -29,6 +29,7 @@ import java.util.stream.Collectors;
 import org.l2junity.gameserver.enums.CeremonyOfChaosResult;
 import org.l2junity.gameserver.instancemanager.CeremonyOfChaosManager;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.Party.MessageType;
 import org.l2junity.gameserver.model.StatsSet;
@@ -47,6 +48,7 @@ import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.zone.type.RespawnZone;
 import org.l2junity.gameserver.network.client.send.DeleteObject;
 import org.l2junity.gameserver.network.client.send.ExUserInfoAbnormalVisualEffect;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
@@ -60,21 +62,35 @@ import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHous
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseRemainTime;
 import org.l2junity.gameserver.network.client.send.ceremonyofchaos.ExCuriousHouseResult;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
 public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(CeremonyOfChaosEvent.class);
+	
 	private final int _id;
 	private final Instance _instance;
+	private final RespawnZone _zone;
 	private final Set<L2MonsterInstance> _monsters = ConcurrentHashMap.newKeySet();
 	private long _battleStartTime = 0;
 	
-	public CeremonyOfChaosEvent(int id, String instanceTemplate)
+	public CeremonyOfChaosEvent(int id, String instanceTemplate, int zoneId)
 	{
 		_id = id;
 		_instance = InstanceManager.getInstance().getInstance(InstanceManager.getInstance().createDynamicInstance(instanceTemplate));
+		_zone = ZoneManager.getInstance().getZoneById(zoneId, RespawnZone.class);
+		if (_zone == null)
+		{
+			LOGGER.warn("Couldn't find respawn zone with id: {}!", zoneId);
+		}
+		else if (_zone.getSpawns().size() < CeremonyOfChaosManager.getInstance().getVariables().getInt(CeremonyOfChaosManager.MAX_PLAYERS_KEY, 18))
+		{
+			LOGGER.warn("There are more member slots: {} then zone spawn positions: {}!", _zone.getSpawns().size(), CeremonyOfChaosManager.getInstance().getVariables().getInt(CeremonyOfChaosManager.MAX_PLAYERS_KEY, 18));
+		}
 	}
 	
 	public int getId()
@@ -102,6 +118,19 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 		final ExCuriousHouseMemberList membersList = new ExCuriousHouseMemberList(_id, CeremonyOfChaosManager.getInstance().getVariables().getInt(CeremonyOfChaosManager.MAX_PLAYERS_KEY, 18), getMembers().values());
 		final NpcHtmlMessage msg = new NpcHtmlMessage(0);
 		
+		if (_zone == null)
+		{
+			for (CeremonyOfChaosMember member : getMembers().values())
+			{
+				final PlayerInstance player = member.getPlayer();
+				
+				// Remove quit button
+				player.sendPacket(ExCuriousHouseLeave.STATIC_PACKET);
+			}
+			return;
+		}
+		
+		int index = 0;
 		for (CeremonyOfChaosMember member : getMembers().values())
 		{
 			final PlayerInstance player = member.getPlayer();
@@ -231,7 +260,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			player.setInstanceId(_instance.getObjectId());
 			
 			// Teleport player to the arena
-			player.teleToLocation(_instance.getSpawnLoc(), _instance.getObjectId(), 200);
+			player.teleToLocation(_zone.getSpawns().get(index++), _instance.getObjectId(), 200);
 		}
 		
 		getTimers().addTimer("match_start_countdown", StatsSet.valueOf("time", 60), 100, null, null);
