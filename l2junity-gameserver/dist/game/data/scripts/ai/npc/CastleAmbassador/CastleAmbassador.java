@@ -23,7 +23,6 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
-import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 
 import ai.npc.AbstractNpcAI;
 
@@ -62,10 +61,11 @@ public final class CastleAmbassador extends AbstractNpcAI
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
+		String htmltext = null;
+		
 		if (npc != null)
 		{
 			final Fort fortresss = npc.getFort();
-			String htmltext = null;
 			
 			switch (event)
 			{
@@ -111,22 +111,14 @@ public final class CastleAmbassador extends AbstractNpcAI
 					break;
 				}
 			}
-			
-			if (htmltext != null)
-			{
-				final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
-				packet.setHtml(getHtm(player.getHtmlPrefix(), htmltext));
-				packet.replace("%castleName%", String.valueOf(fortresss.getCastleByAmbassador(npc.getId()).getName()));
-				player.sendPacket(packet);
-			}
 		}
-		return super.onAdvEvent(event, npc, player);
+		return htmltext;
 	}
 	
 	@Override
 	public String onEventReceived(String eventName, Npc sender, Npc receiver, WorldObject reference)
 	{
-		if (receiver != null)
+		if ((receiver != null) && eventName.equals("DESPAWN"))
 		{
 			receiver.deleteMe();
 		}
@@ -149,11 +141,9 @@ public final class CastleAmbassador extends AbstractNpcAI
 			htmltext = "ambassador-03.html";
 		}
 		
-		final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
-		packet.setHtml(getHtm(player.getHtmlPrefix(), htmltext));
-		packet.replace("%castleName%", String.valueOf(fortresss.getCastleByAmbassador(npc.getId()).getName()));
-		player.sendPacket(packet);
-		return null;
+		htmltext = getHtm(player.getHtmlPrefix(), htmltext);
+		htmltext = htmltext.replace("%castleName%", String.valueOf(fortresss.getCastleByAmbassador(npc.getId()).getName()));
+		return htmltext;
 	}
 	
 	@Override
