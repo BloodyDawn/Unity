@@ -436,35 +436,38 @@ public class AttackableAI extends CharacterAI implements Runnable
 		// A L2Attackable isn't aggressive during 10s after its spawn because _globalAggro is set to -10
 		if (_globalAggro >= 0)
 		{
-			World.getInstance().forEachVisibleObject(npc, Creature.class, target ->
+			if (npc.isAggressive())
 			{
-				if (target instanceof L2StaticObjectInstance)
+				World.getInstance().forEachVisibleObjectInRange(npc, Creature.class, npc.getAggroRange(), target ->
 				{
-					return;
-				}
-				
-				// For each L2Character check if the target is autoattackable
-				if (autoAttackCondition(target)) // check aggression
-				{
-					if (target.isPlayable())
+					if (target instanceof L2StaticObjectInstance)
 					{
-						final TerminateReturn term = EventDispatcher.getInstance().notifyEvent(new OnAttackableHate(getActiveChar(), target.getActingPlayer(), target.isSummon()), getActiveChar(), TerminateReturn.class);
-						if ((term != null) && term.terminate())
+						return;
+					}
+					
+					// For each L2Character check if the target is autoattackable
+					if (autoAttackCondition(target)) // check aggression
+					{
+						if (target.isPlayable())
 						{
-							return;
+							final TerminateReturn term = EventDispatcher.getInstance().notifyEvent(new OnAttackableHate(getActiveChar(), target.getActingPlayer(), target.isSummon()), getActiveChar(), TerminateReturn.class);
+							if ((term != null) && term.terminate())
+							{
+								return;
+							}
+						}
+						
+						// Get the hate level of the L2Attackable against this L2Character target contained in _aggroList
+						int hating = npc.getHating(target);
+						
+						// Add the attacker to the L2Attackable _aggroList with 0 damage and 1 hate
+						if (hating == 0)
+						{
+							npc.addDamageHate(target, 0, 0);
 						}
 					}
-					
-					// Get the hate level of the L2Attackable against this L2Character target contained in _aggroList
-					int hating = npc.getHating(target);
-					
-					// Add the attacker to the L2Attackable _aggroList with 0 damage and 1 hate
-					if (hating == 0)
-					{
-						npc.addDamageHate(target, 0, 0);
-					}
-				}
-			});
+				});
+			}
 			
 			// Chose a target from its aggroList
 			Creature hated;
