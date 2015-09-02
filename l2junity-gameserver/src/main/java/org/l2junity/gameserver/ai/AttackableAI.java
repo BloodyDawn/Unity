@@ -248,7 +248,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					return false;
 				}
 				
-				if (me.getTemplate().isChaos() && me.isInsideRadius(target, me.getAggroRange(), false, false))
+				if (me.getTemplate().isChaos())
 				{
 					if (((Attackable) target).isInMyClan(me))
 					{
