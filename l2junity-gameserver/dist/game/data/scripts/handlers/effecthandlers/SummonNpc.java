@@ -25,7 +25,6 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.DoppelgangerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2DecoyInstance;
 import org.l2junity.gameserver.model.actor.instance.L2EffectPointInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -71,7 +70,7 @@ public final class SummonNpc extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -79,7 +78,7 @@ public final class SummonNpc extends AbstractEffect
 		{
 			return;
 		}
-
+		
 		if ((_npcId <= 0) || (_npcCount <= 0))
 		{
 			_log.warn(SummonNpc.class.getSimpleName() + ": Invalid NPC ID or count skill ID: " + skill.getId());
@@ -156,16 +155,6 @@ public final class SummonNpc extends AbstractEffect
 				{
 					effectPoint.scheduleDespawn(_despawnDelay);
 				}
-				break;
-			}
-			case "Doppelganger":
-			{
-				final DoppelgangerInstance clone = new DoppelgangerInstance(npcTemplate, player);
-				clone.setCurrentHp(clone.getMaxHp());
-				clone.setCurrentMp(clone.getMaxMp());
-				clone.setSummoner(player);
-				clone.spawnMe(x, y, z);
-				clone.scheduleDespawn(_despawnDelay);
 				break;
 			}
 			default:

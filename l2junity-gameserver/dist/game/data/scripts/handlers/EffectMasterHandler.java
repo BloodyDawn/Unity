@@ -194,6 +194,7 @@ public final class EffectMasterHandler
 		Summon.class,
 		SummonAgathion.class,
 		SummonCubic.class,
+		SummonHallucination.class,
 		SummonNpc.class,
 		SummonPet.class,
 		SummonTrap.class,
