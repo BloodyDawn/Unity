@@ -206,7 +206,7 @@
 												<xs:attribute type="xs:string" name="name" />
 												<xs:attribute name="type">
 													<xs:simpleType>
-														<xs:restriction type="xs:token">
+														<xs:restriction base="xs:token">
 															<xs:enumeration value="GROUPED" />
 															<xs:enumeration value="NORMAL" />
 														</xs:restriction>
