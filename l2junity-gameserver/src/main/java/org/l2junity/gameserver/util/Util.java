@@ -212,15 +212,15 @@ public final class Util
 		
 		return calculateDistance(obj1, obj2, includeZAxis, false) <= range;
 	}
-
+	
 	/**
 	 * Checks if the cube intersects the sphere.
 	 * @param x1 the cube's first point x
 	 * @param y1 the cube's first point y
 	 * @param z1 the cube's first point z
-	 * @param x1 the cube's second point x
-	 * @param y1 the cube's second point y
-	 * @param z1 the cube's second point z
+	 * @param x2 the cube's second point x
+	 * @param y2 the cube's second point y
+	 * @param z2 the cube's second point z
 	 * @param sX the sphere's middle x
 	 * @param sY the sphere's middle y
 	 * @param sZ the sphere's middle z
