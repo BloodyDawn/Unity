@@ -963,18 +963,27 @@
 	</npc>
 	<npc id="13452" level="101" type="L2EffectPoint" name="Solo Dance" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
-		<sex>FEMALE</sex>
+		<parameters>
+			<param name="skill_delay" value="2" />
+			<param name="despawn_time" value="15" />
+			<skill name="union_skill" id="10523" level="7" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="8446" hpRegen="10.5" mp="2355" mpRegen="3.6" />
+			<vitals hp="8446" hpRegen="8.5" mp="2355" mpRegen="3" />
 			<speed>
 				<walk ground="1" />
 				<run ground="20" />
 			</speed>
-			<attack physical="2691.11871678" magical="1331.5869440987" critical="4" attackSpeed="180" range="40" />
-			<defence physical="405.85106382979" magical="297.0297029703" />
+			<attack physical="1949.95411856464" magical="1331.56588332443" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
+			<defence physical="405.66735" magical="296.84976" />
+			<attribute>
+				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="false" />
+		<status attackable="false" targetable="false" showName="false" />
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
@@ -988,18 +997,27 @@
 	</npc>
 	<npc id="13453" level="103" type="L2EffectPoint" name="Solo Dance" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
-		<sex>FEMALE</sex>
+		<parameters>
+			<param name="skill_delay" value="2" />
+			<param name="despawn_time" value="15" />
+			<skill name="union_skill" id="10523" level="8" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="8446" hpRegen="10.5" mp="2355" mpRegen="3.6" />
+			<vitals hp="8446" hpRegen="8.5" mp="2355" mpRegen="3" />
 			<speed>
 				<walk ground="1" />
 				<run ground="20" />
 			</speed>
-			<attack physical="2691.11871678" magical="1331.5869440987" critical="4" attackSpeed="180" range="40" />
-			<defence physical="405.85106382979" magical="297.0297029703" />
+			<attack physical="1949.95411856464" magical="1331.56588332443" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
+			<defence physical="405.66735" magical="296.84976" />
+			<attribute>
+				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="false" />
+		<status attackable="false" targetable="false" showName="false" />
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
@@ -1013,18 +1031,27 @@
 	</npc>
 	<npc id="13454" level="105" type="L2EffectPoint" name="Solo Dance" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
-		<race>HUMAN</race>
-		<sex>FEMALE</sex>
+		<parameters>
+			<param name="skill_delay" value="2" />
+			<param name="despawn_time" value="15" />
+			<skill name="union_skill" id="10523" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
-			<vitals hp="8446" hpRegen="10.5" mp="2355" mpRegen="3.6" />
+			<vitals hp="8446" hpRegen="8.5" mp="2355" mpRegen="3" />
 			<speed>
 				<walk ground="1" />
 				<run ground="20" />
 			</speed>
-			<attack physical="2691.11871678" magical="1331.5869440987" critical="4" attackSpeed="180" range="40" />
-			<defence physical="405.85106382979" magical="297.0297029703" />
+			<attack physical="1949.95411856464" magical="1331.56588332443" critical="4" attackSpeed="253" range="40" type="SWORD" distance="80" width="120" random="10" accuracy="5" />
+			<defence physical="405.66735" magical="296.84976" />
+			<attribute>
+				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+			</attribute>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="false" />
+		<status attackable="false" targetable="false" showName="false" />
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
