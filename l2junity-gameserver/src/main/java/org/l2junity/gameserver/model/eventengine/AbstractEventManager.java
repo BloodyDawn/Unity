@@ -46,11 +46,14 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 	private volatile StatsSet _variables = StatsSet.EMPTY_STATSET;
 	private volatile Set<EventScheduler> _schedulers = Collections.emptySet();
 	private volatile Map<String, IEventDrop> _rewards = Collections.emptyMap();
+	
 	private final Set<T> _events = ConcurrentHashMap.newKeySet();
 	private final Queue<PlayerInstance> _registeredPlayers = new ConcurrentLinkedDeque<>();
 	private final AtomicReference<IEventState> _state = new AtomicReference<>();
 	
 	public abstract void onInitialized();
+	
+	/* ********************** */
 	
 	public StatsSet getVariables()
 	{
@@ -62,6 +65,8 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 		_variables = new StatsSet(Collections.unmodifiableMap(variables.getSet()));
 	}
 	
+	/* ********************** */
+	
 	public EventScheduler getScheduler(String name)
 	{
 		return _schedulers.stream().filter(scheduler -> scheduler.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
@@ -71,6 +76,8 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 	{
 		_schedulers = Collections.unmodifiableSet(schedulers);
 	}
+	
+	/* ********************** */
 	
 	public IEventDrop getRewards(String name)
 	{
@@ -82,10 +89,14 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 		_rewards = Collections.unmodifiableMap(rewards);
 	}
 	
+	/* ********************** */
+	
 	public Set<T> getEvents()
 	{
 		return _events;
 	}
+	
+	/* ********************** */
 	
 	public void startScheduler()
 	{
@@ -96,6 +107,8 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 	{
 		_schedulers.forEach(EventScheduler::stopScheduler);
 	}
+	
+	/* ********************** */
 	
 	public IEventState getState()
 	{
@@ -118,6 +131,8 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 		}
 		return false;
 	}
+	
+	/* ********************** */
 	
 	public final boolean registerPlayer(PlayerInstance player)
 	{
@@ -144,6 +159,8 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 		return _registeredPlayers;
 	}
 	
+	/* ********************** */
+	
 	@RegisterEvent(EventType.ON_PLAYER_LOGOUT)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	private void onPlayerLogout(OnPlayerLogout event)
@@ -154,6 +171,8 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 			onUnregisteredPlayer(player);
 		}
 	}
+	
+	/* ********************** */
 	
 	/**
 	 * Triggered when a player is automatically removed from the event manager because he disconnected
@@ -173,6 +192,8 @@ public abstract class AbstractEventManager<T extends AbstractEvent<?>> extends A
 	{
 	
 	}
+	
+	/* ********************** */
 	
 	@Override
 	public String getScriptName()

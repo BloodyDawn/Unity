@@ -149,7 +149,7 @@ public final class EventEngineData implements IGameXmlReader
 	 */
 	private void parseVariables(AbstractEventManager<?> eventManager, Node innerNode)
 	{
-		final StatsSet variables = new StatsSet();
+		final StatsSet variables = new StatsSet(LinkedHashMap::new);
 		for (Node variableNode = innerNode.getFirstChild(); variableNode != null; variableNode = variableNode.getNextSibling())
 		{
 			if ("variable".equals(variableNode.getNodeName()))
