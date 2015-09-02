@@ -173,6 +173,50 @@
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
+							<xs:element name="rewards" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="reward" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="group" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="item" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:attribute type="xs:int" name="id" />
+																		<xs:attribute type="xs:positiveInteger" name="min" />
+																		<xs:attribute type="xs:positiveInteger" name="max" />
+																		<xs:attribute type="xs:double" name="chance" />
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute type="xs:double" name="chance" />
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="item" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:attribute type="xs:int" name="id" />
+															<xs:attribute type="xs:positiveInteger" name="min" />
+															<xs:attribute type="xs:positiveInteger" name="max" />
+															<xs:attribute type="xs:double" name="chance" />
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute type="xs:string" name="name" />
+												<xs:attribute name="type">
+													<xs:simpleType>
+														<xs:restriction type="xs:token">
+															<xs:enumeration value="GROUPED" />
+															<xs:enumeration value="NORMAL" />
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
 						</xs:sequence>
 						<xs:attribute type="xs:string" name="name" use="required" />
 						<xs:attribute type="xs:string" name="class" use="required" />
