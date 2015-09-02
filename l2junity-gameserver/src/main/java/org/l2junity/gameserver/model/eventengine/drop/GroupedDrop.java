@@ -23,7 +23,6 @@ import java.util.Collection;
 import java.util.List;
 
 import org.l2junity.commons.util.Rnd;
-import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 
 /**
@@ -44,7 +43,7 @@ public class GroupedDrop implements IEventDrop
 	}
 	
 	@Override
-	public Collection<ItemHolder> calculateDrops(Creature rewarded)
+	public Collection<ItemHolder> calculateDrops()
 	{
 		final List<ItemHolder> rewards = new ArrayList<>();
 		for (EventDropGroup group : _groups)

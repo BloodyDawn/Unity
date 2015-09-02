@@ -251,7 +251,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			player.sendPacket(msg);
 			
 			// Send support items to player
-			for (ItemHolder holder : CeremonyOfChaosManager.getInstance().getVariables().getList(CeremonyOfChaosManager.ITEMS_KEY, ItemHolder.class))
+			for (ItemHolder holder : CeremonyOfChaosManager.getInstance().getRewards(CeremonyOfChaosManager.INITIAL_ITEMS_KEY).calculateDrops())
 			{
 				player.addItem("CoC", holder, null, true);
 			}

@@ -20,7 +20,6 @@ package org.l2junity.gameserver.model.eventengine.drop;
 
 import java.util.Collection;
 
-import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 
 /**
@@ -28,5 +27,5 @@ import org.l2junity.gameserver.model.holders.ItemHolder;
  */
 public interface IEventDrop
 {
-	public Collection<ItemHolder> calculateDrops(Creature rewarded);
+	public Collection<ItemHolder> calculateDrops();
 }
