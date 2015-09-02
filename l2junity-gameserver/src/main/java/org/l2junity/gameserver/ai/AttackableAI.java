@@ -176,7 +176,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		final Attackable me = getActiveChar();
 		
 		// Check if the target isn't dead, is in the Aggro range and is at the same height
-		if (target.isAlikeDead() || (target.isPlayable() && !me.isInsideRadius(target, me.getAggroRange(), true, false)))
+		if (target.isAlikeDead())
 		{
 			return false;
 		}
