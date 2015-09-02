@@ -38,6 +38,7 @@ import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcCreatureSee;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.network.client.send.DeleteObject;
+import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -106,7 +107,7 @@ public final class World
 				}
 			}
 		}
-		
+
 		_log.info("(" + REGIONS_X + " by " + REGIONS_Y + " by " + REGIONS_Z + ") World Region Grid set up.");
 	}
 	
@@ -279,8 +280,7 @@ public final class World
 			return;
 		}
 		
-		forEachVisibleObject(object, WorldObject.class, 1, wo ->
-		{
+		forEachVisibleObject(object, WorldObject.class, 1, wo -> {
 			if (object.isPlayer() && wo.isVisibleFor((PlayerInstance) object))
 			{
 				wo.sendInfo((PlayerInstance) object);
@@ -378,8 +378,7 @@ public final class World
 			oldRegion.removeVisibleObject(object);
 			
 			// Go through all surrounding L2WorldRegion L2Characters
-			oldRegion.forEachSurroundingRegion(w ->
-			{
+			oldRegion.forEachSurroundingRegion(w -> {
 				for (WorldObject wo : w.getVisibleObjects().values())
 				{
 					if (wo == object)
@@ -450,8 +449,7 @@ public final class World
 			return;
 		}
 		
-		oldRegion.forEachSurroundingRegion(w ->
-		{
+		oldRegion.forEachSurroundingRegion(w -> {
 			if (!newRegion.isSurroundingRegion(w))
 			{
 				for (WorldObject wo : w.getVisibleObjects().values())
@@ -505,8 +503,7 @@ public final class World
 			return true;
 		});
 		
-		newRegion.forEachSurroundingRegion(w ->
-		{
+		newRegion.forEachSurroundingRegion(w -> {
 			if (!oldRegion.isSurroundingRegion(w))
 			{
 				for (WorldObject wo : w.getVisibleObjects().values())
@@ -616,13 +613,53 @@ public final class World
 	
 	public <T extends WorldObject> void forEachVisibleObjectInRange(ILocational locational, Class<T> clazz, int range, Consumer<T> c)
 	{
-		forEachVisibleObject(locational, clazz, (range / REGION_MIN_DIMENSION) + 1, o ->
+		if (locational == null)
 		{
-			if (o.calculateDistance(locational, true, false) <= range)
+			return;
+		}
+
+		final WorldRegion centerWorldRegion = getRegion(locational);
+		if (centerWorldRegion == null)
+		{
+			return;
+		}
+
+		final int depth = (range / REGION_MIN_DIMENSION) + 1;
+		for (int x = Math.max(centerWorldRegion.getRegionX() - depth, 0); x <= Math.min(centerWorldRegion.getRegionX() + depth, REGIONS_X); x++)
+		{
+			for (int y = Math.max(centerWorldRegion.getRegionY() - depth, 0); y <= Math.min(centerWorldRegion.getRegionY() + depth, REGIONS_Y); y++)
 			{
-				c.accept(o);
+				for (int z = Math.max(centerWorldRegion.getRegionZ() - depth, 0); z <= Math.min(centerWorldRegion.getRegionZ() + depth, REGIONS_Z); z++)
+				{
+					final int x1 = (x - OFFSET_X) << SHIFT_BY;
+					final int y1 = (y - OFFSET_Y) << SHIFT_BY;
+					final int z1 = (z - OFFSET_Z) << SHIFT_BY_Z;
+					final int x2 = (x + 1 - OFFSET_X) << SHIFT_BY;
+					final int y2 = (y + 1 - OFFSET_Y) << SHIFT_BY;
+					final int z2 = (z + 1 - OFFSET_Z) << SHIFT_BY_Z;
+					if (Util.cubeIntersectsSphere(x1, y1, z1, x2, y2, z2, locational.getX(), locational.getY(), locational.getZ(), range))
+					{
+						for (WorldObject visibleObject : _worldRegions[x][y][z].getVisibleObjects().values())
+						{
+							if ((visibleObject == null) || (visibleObject == locational) || !clazz.isInstance(visibleObject))
+							{
+								continue;
+							}
+
+							if (visibleObject.getInstanceId() != locational.getInstanceId())
+							{
+								continue;
+							}
+
+							if (visibleObject.calculateDistance(locational, true, false) <= range)
+							{
+								c.accept(clazz.cast(visibleObject));
+							}
+						}
+					}
+				}
 			}
-		});
+		}
 	}
 	
 	public <T extends WorldObject> List<T> getVisibleObjects(ILocational locational, Class<T> clazz)
@@ -635,8 +672,7 @@ public final class World
 	public <T extends WorldObject> List<T> getVisibleObjects(ILocational locational, Class<T> clazz, Predicate<T> predicate)
 	{
 		final List<T> result = new LinkedList<>();
-		forEachVisibleObject(locational, clazz, o ->
-		{
+		forEachVisibleObject(locational, clazz, o -> {
 			if (predicate.test(o))
 			{
 				result.add(o);
@@ -655,8 +691,7 @@ public final class World
 	public <T extends WorldObject> List<T> getVisibleObjects(ILocational locational, Class<T> clazz, int range, Predicate<T> predicate)
 	{
 		final List<T> result = new LinkedList<>();
-		forEachVisibleObjectInRange(locational, clazz, range, o ->
-		{
+		forEachVisibleObjectInRange(locational, clazz, range, o -> {
 			if (predicate.test(o))
 			{
 				result.add(o);
