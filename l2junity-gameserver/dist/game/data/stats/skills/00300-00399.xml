@@ -247,8 +247,8 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="8" /> <!-- absorb 8% HP from damage inflicted on enemies -->
+			<effect name="VampiricAttack">
+				<param amount="8" chance="30" />
 			</effect>
 		</for>
 	</skill>

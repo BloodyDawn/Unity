@@ -1989,11 +1989,13 @@
 			<effect name="AttackTrait">
 				<param SHOCK="20" />
 				<param DERANGEMENT="20" />
-				<add stat="absorbDam" val="4" /> <!-- Recovers 4% of the damage to the enemy as your HP -->
 			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="20" />
 				<param DERANGEMENT="20" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="4" chance="30" />
 			</effect>
 		</for>
 	</skill>

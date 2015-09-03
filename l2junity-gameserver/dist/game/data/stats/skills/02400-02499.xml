@@ -272,8 +272,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="7" /> <!-- absorb 7% HP from damage inflicted on enemies -->
+			<effect name="VampiricAttack">
+				<param amount="7" chance="80" />
 			</effect>
 		</for>
 	</skill>

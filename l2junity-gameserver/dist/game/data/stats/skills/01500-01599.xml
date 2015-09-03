@@ -258,8 +258,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="80" />
+			<effect name="VampiricAttack">
+				<param amount="80" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -640,7 +640,6 @@
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
-				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
 			<effect name="DispelBySlot">
@@ -648,6 +647,9 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param slot="VAMPIRIC_ATTACK;ATTACK_TIME_DOWN" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="9" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -2669,8 +2671,6 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<!-- TODO: When vampiric effect type are reworked {p_vampiric_attack;8;30} -->
-				<add stat="absorbDam" val="8" />
 				<add stat="reflectDam" val="20" />
 			</effect>
 			<effect name="BlockBuffSlot">
@@ -2678,6 +2678,9 @@
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param slot="SONG_OF_VENGEANCE" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="8" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -2702,7 +2705,6 @@
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
-				<add stat="absorbDam" val="8" />
 				<add stat="reflectDam" val="20" />
 			</effect>
 			<effect name="BlockBuffSlot">
@@ -2710,6 +2712,9 @@
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param slot="SONG_OF_VENGEANCE" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="8" chance="30" />
 			</effect>
 		</for>
 	</skill>

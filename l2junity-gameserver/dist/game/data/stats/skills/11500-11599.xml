@@ -772,13 +772,15 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<add stat="absorbDam" val="9" /> <!-- TODO: 20% chance to trigger Vampiric rage -->
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="9" chance="20" />
 			</effect>
 		</for>
 	</skill>
@@ -1002,7 +1004,6 @@
 				<mul stat="pDef" val="0.97" />
 				<mul stat="mDef" val="0.97" />
 				<sub stat="rEvas" val="4" />
-				<add stat="absorbDam" val="8" /> <!-- TODO : 30% chance to vampiric -->
 				<add stat="reflectDam" val="10" />
 			</effect>
 			<effect name="DispelBySlotProbability">
@@ -1010,6 +1011,9 @@
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param slot="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;BUFF_UNICORN_SERAPHIM;BUFF_QUEEN_OF_CAT;KNIGHT_AURA;DMG_SHIELD" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="9" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -1076,11 +1080,11 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="80" /> <!-- TODO 30% chance to vampiric -->
-			</effect>
 			<effect name="DispelBySlot">
 				<param dispel="BUFF_SPECIAL_MULTI,-1" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="80" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -2545,13 +2549,15 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<add stat="absorbDam" val="9" /> <!-- TODO: 20%? chance to trigger Vampiric rage -->
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="9" chance="20" />
 			</effect>
 		</for>
 	</skill>

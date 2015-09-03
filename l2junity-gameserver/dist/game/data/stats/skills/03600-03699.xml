@@ -98,13 +98,9 @@
 				<mul stat="regCp" val="#regCp" />
 				<sub stat="debuffVuln" val="#debuffVuln" />
 				<add stat="accCombat" val="#accCombat" />
-				<add stat="absorbDam" val="#absorbDam" />
-				<set stat="STR" val="40" />
-				<set stat="DEX" val="30" />
-				<set stat="CON" val="43" />
-				<set stat="INT" val="21" />
-				<set stat="WIT" val="15" />
-				<set stat="MEN" val="21" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="#absorbDam" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -660,13 +656,9 @@
 				<mul stat="regCp" val="#regCp" />
 				<sub stat="debuffVuln" val="#debuffVuln" />
 				<add stat="accCombat" val="#accCombat" />
-				<add stat="absorbDam" val="#absorbDam" />
-				<set stat="STR" val="40" />
-				<set stat="DEX" val="30" />
-				<set stat="CON" val="43" />
-				<set stat="INT" val="21" />
-				<set stat="WIT" val="15" />
-				<set stat="MEN" val="21" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="#absorbDam" chance="30" />
 			</effect>
 		</for>
 	</skill>

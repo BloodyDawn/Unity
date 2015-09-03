@@ -446,8 +446,10 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff">
-				<add stat="absorbDam" val="9" /> <!-- absorb HP from damage inflicted on enemies -->
 				<add stat="reflectDam" val="60" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="9" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -1367,7 +1369,9 @@
 				<param targetType="SELF" />
 				<mul stat="cAtk" val="1.2" />
 				<add stat="windPower" val="#windPower" />
-				<add stat="absorbDam" val="#absorbDam" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="#absorbDam" chance="30" />
 			</effect>
 		</for>
 	</skill>

@@ -207,10 +207,12 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="moveSpeed" val="0.8" />
-				<add stat="absorbDam" val="5" /> <!-- absorb 5% HP from damage inflicted on enemies -->
 			</effect>
 			<effect name="MaxHp">
 				<param amount="20" mode="PER" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="5" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -593,8 +595,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
+			<effect name="VampiricAttack">
+				<param amount="15" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -2531,8 +2533,10 @@
 				<mul stat="cAtk" val="2">
 					<using kind="BLUNT" />
 				</mul>
-				<add stat="absorbDam" val="40" /> <!-- Recovers as HP 40% of general close rate physical damage inflicted on the enemy -->
 				<mul stat="healEffect" val="0.2" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="40" chance="30" />
 			</effect>
 		</for>
 	</skill>

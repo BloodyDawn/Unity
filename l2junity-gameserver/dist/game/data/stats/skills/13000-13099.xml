@@ -550,7 +550,6 @@
 				<add stat="rCrit" val="#rCrit" />
 				<add stat="maxHp" val="550" />
 				<mul stat="magicSuccRes" val="#magicSuccRes" />
-				<add stat="absorbDam" val="#absorbDam" />
 				<add stat="fireRes" val="#resist" />
 				<add stat="waterRes" val="#resist" />
 				<add stat="windRes" val="#resist" />
@@ -562,6 +561,9 @@
 				<param BLEED="#Trait" />
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="VampiricAttack">
+				<param amount="#absorbDam" chance="30" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="13020" levels="4" name="Elegia Leather Armor Set">
@@ -1518,10 +1520,12 @@
 				<add stat="earthRes" val="#elements" />
 				<add stat="cAtkAdd" val="#critDmgAdd" />
 				<mul stat="pDef" val="#pDefMul" />
-				<mul stat="absorbDam" val="#absorbDam" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param HOLD="#holdRes" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="#absorbDam" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -1586,13 +1590,15 @@
 				<add stat="earthRes" val="#elements" />
 				<add stat="cAtkAdd" val="#critDmgAdd" />
 				<mul stat="pDef" val="#pDefMul" />
-				<mul stat="absorbDam" val="#absorbDam" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param HOLD="#holdRes" />
 			</effect>
 			<effect name="AttackTrait">
 				<param SHOCK="#stunKnockProf" KNOCKDOWN="#stunKnockProf" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="#absorbDam" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -1845,7 +1851,6 @@
 				<add stat="STR" val="-1" />
 				<add stat="rEvas" val="#rEvas" />
 				<mul stat="PhysicalMpConsumeRate" val="#MpConsume" />
-				<mul stat="absorbDam" val="#absorbDam" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="healEffect" val="#healEffect" />
@@ -1857,6 +1862,9 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="#SLEEP" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="#absorbDam" chance="30" />
 			</effect>
 		</for>
 	</skill>

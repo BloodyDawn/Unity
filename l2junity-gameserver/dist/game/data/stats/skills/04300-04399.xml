@@ -413,8 +413,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="9" />
+			<effect name="VampiricAttack">
+				<param amount="9" chance="80" />
 			</effect>
 		</for>
 	</skill>
@@ -1064,8 +1064,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="#absorbDam" />
+			<effect name="VampiricAttack">
+				<param amount="#absorbDam" chance="80" />
 			</effect>
 		</for>
 	</skill>
@@ -2065,7 +2065,6 @@
 	</skill>
 	<skill id="4399" levels="4" name="Vampiric Rage">
 		<!-- Freya retail confirmed -->
-		<!-- by DrLecter -->
 		<table name="#abnormalLvl"> 2 3 4 5 </table>
 		<table name="#absorbDam"> 6 7 8 9 </table>
 		<set name="abnormalLvl" val="#abnormalLvl" />
@@ -2083,8 +2082,8 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="#absorbDam" />
+			<effect name="VampiricAttack">
+				<param amount="#absorbDam" chance="80" />
 			</effect>
 		</for>
 	</skill>

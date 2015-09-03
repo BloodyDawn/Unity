@@ -4627,28 +4627,34 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			boolean isBow = ((weapon != null) && weapon.isBowOrCrossBow());
 			int reflectedDamage = 0;
 			
-			if (!isBow && !target.isInvul()) // Do not reflect if weapon is of type bow or target is invunlerable
+			if (!target.isInvul()) // Do not reflect or vampiric if target is invunlerable
 			{
-				// quick fix for no drop from raid if boss attack high-level char with damage reflection
-				if (!target.isRaid() || (getActingPlayer() == null) || (getActingPlayer().getLevel() <= (target.getLevel() + 8)))
+				if (!isBow) // No reflect if weapon is of type bow
 				{
-					// Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
-					double reflectPercent = target.getStat().calcStat(Stats.REFLECT_DAMAGE_PERCENT, 0, null, null);
-					
-					if (reflectPercent > 0)
+					// quick fix for no drop from raid if boss attack high-level char with damage reflection
+					if (!target.isRaid() || (getActingPlayer() == null) || (getActingPlayer().getLevel() <= (target.getLevel() + 8)))
 					{
-						reflectedDamage = (int) ((reflectPercent / 100.) * damage);
+						// Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
+						double reflectPercent = target.getStat().calcStat(Stats.REFLECT_DAMAGE_PERCENT, 0, null, null);
 						
-						if (reflectedDamage > target.getMaxHp())
+						if (reflectPercent > 0)
 						{
-							reflectedDamage = target.getMaxHp();
+							reflectedDamage = (int) ((reflectPercent / 100.) * damage);
+							reflectedDamage = Math.min(reflectedDamage, target.getMaxHp());
+							reflectedDamage = Math.min(reflectedDamage, getStat().getPDef(target));
 						}
-						
-						// Cannot reflect more damage than your own P.Def.
-						if (reflectedDamage > getStat().getPDef(target))
-						{
-							reflectedDamage = getStat().getPDef(target);
-						}
+					}
+				}
+				
+				// Absorb HP from the damage inflicted
+				double absorbPercent = getStat().getValue(Stats.ABSORB_DAMAGE_PERCENT);
+				if ((absorbPercent > 1) && (Rnd.get(100) < getStat().getValue(Stats.ABSORB_DAMAGE_CHANCE)))
+				{
+					int absorbDamage = (int) Math.min(absorbPercent * damage, getMaxRecoverableHp() - getCurrentHp());
+					absorbDamage = Math.min(absorbDamage, (int) target.getCurrentHp());
+					if (absorbDamage > 0)
+					{
+						setCurrentHp(getCurrentHp() + absorbDamage);
 					}
 				}
 			}
@@ -4665,46 +4671,23 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				notifyDamageReceived(reflectedDamage, target, null, crit, false, true);
 			}
 			
-			if (!isBow) // Do not absorb if weapon is of type bow
+			// Absorb MP from the damage inflicted
+			double absorbPercent = getStat().calcStat(Stats.ABSORB_MANA_DAMAGE_PERCENT, 0, null, null);
+			
+			if (absorbPercent > 0)
 			{
-				// Absorb HP from the damage inflicted
-				double absorbPercent = getStat().calcStat(Stats.ABSORB_DAMAGE_PERCENT, 0, null, null);
+				int maxCanAbsorb = (int) (getMaxRecoverableMp() - getCurrentMp());
+				int absorbDamage = (int) ((absorbPercent / 100.) * damage);
 				
-				if (absorbPercent > 0)
+				if (absorbDamage > maxCanAbsorb)
 				{
-					int maxCanAbsorb = (int) (getMaxRecoverableHp() - getCurrentHp());
-					int absorbDamage = (int) ((absorbPercent / 100.) * damage);
-					
-					if (absorbDamage > maxCanAbsorb)
-					{
-						absorbDamage = maxCanAbsorb; // Can't absord more than max hp
-					}
-					
-					if (absorbDamage > 0)
-					{
-						setCurrentHp(getCurrentHp() + absorbDamage);
-					}
+					absorbDamage = maxCanAbsorb; // Can't absord more than max hp
 				}
 				
-				// Absorb MP from the damage inflicted
-				absorbPercent = getStat().calcStat(Stats.ABSORB_MANA_DAMAGE_PERCENT, 0, null, null);
-				
-				if (absorbPercent > 0)
+				if (absorbDamage > 0)
 				{
-					int maxCanAbsorb = (int) (getMaxRecoverableMp() - getCurrentMp());
-					int absorbDamage = (int) ((absorbPercent / 100.) * damage);
-					
-					if (absorbDamage > maxCanAbsorb)
-					{
-						absorbDamage = maxCanAbsorb; // Can't absord more than max hp
-					}
-					
-					if (absorbDamage > 0)
-					{
-						setCurrentMp(getCurrentMp() + absorbDamage);
-					}
+					setCurrentMp(getCurrentMp() + absorbDamage);
 				}
-				
 			}
 			
 			// Notify AI with EVT_ATTACKED

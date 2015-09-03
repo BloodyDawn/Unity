@@ -276,8 +276,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="PARTY" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="#absorbDam" /> <!-- absorb HP from damage inflicted on enemies -->
+			<effect name="VampiricAttack">
+				<param amount="#absorbDam" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -1275,7 +1275,6 @@
 				<add stat="accCombat" val="4" />
 				<add stat="rEvas" val="4" />
 				<mul stat="pAtkSpd" val="1.2" />
-				<add stat="absorbDam" val="5" /> <!-- absorb 5% HP from damage inflicted on enemies -->
 				<mul stat="cAtk" val="1.2">
 					<player behind="true" />
 				</mul>
@@ -1283,6 +1282,9 @@
 					<player behind="true" />
 				</mul>
 				<sub stat="debuffVuln" val="10" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="5" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -1562,10 +1564,12 @@
 				<mul stat="mAtkSpd" val="1.2" />
 				<sub stat="debuffVuln" val="10" />
 				<mul stat="moveSpeed" val="0.8" />
-				<add stat="absorbDam" val="5" /> <!-- absorb 5% HP from damage inflicted on enemies -->
 			</effect>
 			<effect name="MaxHp">
 				<param amount="20" mode="PER" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="5" chance="30" />
 			</effect>
 		</for>
 	</skill>

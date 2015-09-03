@@ -650,14 +650,15 @@
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.34" />
 				<mul stat="mAtkSpd" val="1.31" />
-				<!-- TODO 30% chance when vampiric is reworked -->
-				<add stat="absorbDam" val="9" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="IMPROVE_VAMPIRIC_HASTE,-1;ATTACK_TIME_DOWN,-1;VAMPIRIC_ATTACK,-1;CASTING_TIME_DOWN,-1" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param dispel="IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN;VAMPIRIC_ATTACK;CASTING_TIME_DOWN" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="9" chance="30" />
 			</effect>
 		</for>
 	</skill>

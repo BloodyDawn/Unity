@@ -1302,10 +1302,12 @@
 				<param SLEEP="70" />
 				<param HOLD="70" />
 				<mul stat="mDef" val="1.04" /> <!-- M. Def. +4% -->
-				<add stat="absorbDam" val="3" /> <!-- absorb 3% HP from damage inflicted on enemies -->
 				<mul stat="pvpPhysDef" val="1.05" />
 				<mul stat="pvpMagicalDef" val="1.05" />
 				<mul stat="pvpPhysSkillsDef" val="1.05" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="3" chance="30" />
 			</effect>
 		</for>
 	</skill>

@@ -274,8 +274,8 @@
 			<player flyMounted="false" />
 		</cond>
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
+			<effect name="VampiricAttack">
+				<param amount="9" chance="30" />
 			</effect>
 		</for>
 	</skill>

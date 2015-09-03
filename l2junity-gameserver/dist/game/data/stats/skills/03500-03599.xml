@@ -517,11 +517,13 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mDef" val="1.04" /> <!-- M. Def. +4% -->
-				<add stat="absorbDam" val="3" /> <!-- Restores 3% of melee damage inflicted on the enemy to oneself -->
 			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="70" />
 				<param HOLD="70" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="3" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -834,7 +836,6 @@
 				<mul stat="healEffect" val="1.1" />
 				<mul stat="MagicalMpConsumeRate" val="0.95" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
-				<add stat="absorbDam" val="4" /> <!-- absorb 4% HP from damage inflicted on enemies -->
 			</effect>
 			<effect name="AttackTrait">
 				<param BLEED="40" />
@@ -845,6 +846,9 @@
 				<param BLEED="40" />
 				<param SHOCK="30" />
 				<param DERANGEMENT="30" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="4" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -863,7 +867,6 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="healEffect" val="#healEffect" />
-				<add stat="absorbDam" val="4" />
 				<add stat="darkRes" val="#darkRes" />
 			</effect>
 			<effect name="AttackTrait">
@@ -875,6 +878,9 @@
 				<param BLEED="30" />
 				<param SHOCK="#traits" />
 				<param DERANGEMENT="#traits" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="4" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -1049,10 +1055,12 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="absorbDam" val="#absorbDam" />
 				<mul stat="pvpPhysDmg" val="1.05" />
 				<mul stat="pvpPhysSkillsDmg" val="1.05" />
 				<mul stat="pvpMagicalDmg" val="1.05" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="#absorbDam" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -1500,11 +1508,12 @@
 				<mul stat="rCrit" val="1.22"> <!-- Critical +22% from behind target -->
 					<player behind="true" />
 				</mul>
-				<!-- NOTE: PvP extra damage is increased in H5, values unconfirmed -->
-				<mul stat="pvpPhysDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpMagicalDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<mul stat="pvpPhysSkillsDmg" val="1.1" /> <!-- PVP Damage Bonus +10% -->
-				<add stat="absorbDam" val="2" /> <!-- absorb 2% HP from damage inflicted on enemies -->
+				<mul stat="pvpPhysDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
+				<mul stat="pvpMagicalDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
+				<mul stat="pvpPhysSkillsDmg" val="1.2" /> <!-- PVP Damage Bonus +20% -->
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="2" chance="30" />
 			</effect>
 		</for>
 	</skill>

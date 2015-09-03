@@ -594,8 +594,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="3" />
+			<effect name="VampiricAttack">
+				<param amount="3" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -674,8 +674,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="3" />
+			<effect name="VampiricAttack">
+				<param amount="3" chance="30" />
 			</effect>
 		</for>
 	</skill>

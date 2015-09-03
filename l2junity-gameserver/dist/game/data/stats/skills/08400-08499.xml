@@ -93,9 +93,11 @@
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
-				<add stat="absorbDam" val="3" /> <!-- Steal opponent's HP on attack -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="VampiricAttack">
+				<param amount="3" chance="30" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="8404" levels="1" name="Elegia Leather Armor Set">
@@ -366,12 +368,14 @@
 				<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 				<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 				<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
-				<add stat="absorbDam" val="3" /> <!-- Steal opponent's HP on attack -->
 				<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 				<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			</effect>
 			<effect name="EnableCloak" />
+			<effect name="VampiricAttack">
+				<param amount="3" chance="30" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="8413" levels="1" name="Elegia Leather Armor Set - PvP">

@@ -187,6 +187,7 @@ public enum Stats
 	VENGEANCE_SKILL_MAGIC_DAMAGE("vengeanceMdam"),
 	VENGEANCE_SKILL_PHYSICAL_DAMAGE("vengeancePdam"),
 	ABSORB_DAMAGE_PERCENT("absorbDam"),
+	ABSORB_DAMAGE_CHANCE("absorbDamChance"),
 	TRANSFER_DAMAGE_PERCENT("transDam"),
 	MANA_SHIELD_PERCENT("manaShield"),
 	TRANSFER_DAMAGE_TO_PLAYER("transDamToPlayer"),

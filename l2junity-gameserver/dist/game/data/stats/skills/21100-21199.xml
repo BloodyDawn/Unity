@@ -280,7 +280,9 @@
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
-				<add stat="absorbDam" val="5" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="5" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -363,7 +365,9 @@
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="pAtk" val="1.2" />
 				<mul stat="pDef" val="1.2" />
-				<add stat="absorbDam" val="5" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="5" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -756,11 +760,13 @@
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.4" />
 				<mul stat="moveSpeed" val="1.1" />
-				<add stat="absorbDam" val="5" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
 				<param amount="40" mode="PER" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="5" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -1029,11 +1035,13 @@
 			<effect name="Buff">
 				<mul stat="maxMp" val="1.4" />
 				<mul stat="moveSpeed" val="1.1" />
-				<add stat="absorbDam" val="5" />
 				<add stat="darkRes" val="20" />
 			</effect>
 			<effect name="MaxHp">
 				<param amount="40" mode="PER" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="5" chance="30" />
 			</effect>
 		</for>
 	</skill>

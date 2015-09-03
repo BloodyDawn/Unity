@@ -2053,8 +2053,8 @@
 		<set name="magicCriticalRate" val="-5" />
 		<set name="targetType" val="OWNER_PET" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="#absorbDam" />
+			<effect name="VampiricAttack">
+				<param amount="#absorbDam" chance="30" />
 			</effect>
 		</for>
 	</skill>

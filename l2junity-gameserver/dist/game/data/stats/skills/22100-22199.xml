@@ -563,7 +563,9 @@
 				<mul stat="pDef" val="0.92" />
 				<sub stat="rEvas" val="4" />
 				<add stat="moveSpeed" val="8" />
-				<add stat="absorbDam" val="9" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="9" chance="30" />
 			</effect>
 		</for>
 	</skill>
@@ -1136,8 +1138,8 @@
 		<set name="irreplacableBuff" val="true" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="9" />
+			<effect name="VampiricAttack">
+				<param amount="9" chance="80" />
 			</effect>
 		</for>
 	</skill>
@@ -1448,7 +1450,9 @@
 				<add stat="rCrit" val="15" />
 				<add stat="mCritRate" val="2" />
 				<add stat="moveSpeed" val="10" />
-				<add stat="absorbDam" val="5" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="5" chance="30" />
 			</effect>
 		</for>
 	</skill>

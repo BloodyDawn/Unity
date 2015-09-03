@@ -228,6 +228,7 @@ public final class EffectMasterHandler
 		UnsummonAgathion.class,
 		UnsummonServitors.class,
 		Untargetable.class,
+		VampiricAttack.class,
 		VisualBuff.class,
 		VitalityPointUp.class,
 	};

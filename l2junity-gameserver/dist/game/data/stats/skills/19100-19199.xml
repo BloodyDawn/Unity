@@ -619,8 +619,8 @@
 		<set name="icon" val="icon.skill1268" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
-				<add stat="absorbDam" val="#bonus" />
+			<effect name="VampiricAttack">
+				<param amount="#bonus" chance="80" />
 			</effect>
 		</for>
 	</skill>

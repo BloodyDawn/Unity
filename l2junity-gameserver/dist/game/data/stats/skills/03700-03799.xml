@@ -1122,12 +1122,14 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="absorbDam" val="3" />
 				<mul stat="mDef" val="1.0827" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param SLEEP="29.16" />
 				<param HOLD="29.16" />
+			</effect>
+			<effect name="VampiricAttack">
+				<param amount="3" chance="30" />
 			</effect>
 		</for>
 	</skill>
