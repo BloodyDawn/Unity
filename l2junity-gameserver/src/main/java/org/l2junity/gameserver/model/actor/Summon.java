@@ -130,6 +130,8 @@ public abstract class Summon extends Playable
 		// if someone comes into range now, the animation shouldn't show any more
 		_restoreSummon = false;
 		
+		rechargeShots(true, true, false);
+		
 		// Notify to scripts
 		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSummonSpawn(this), this);
 	}

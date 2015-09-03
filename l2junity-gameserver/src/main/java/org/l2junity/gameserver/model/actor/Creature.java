@@ -1190,28 +1190,22 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			{
 				abortAttack(); // Abort the attack of the L2Character and send Server->Client ActionFailed packet
 			}
-			else
+			else if (player != null)
 			{
-				// If we didn't miss the hit, discharge the shoulshots, if any
-				setChargedShot(ShotType.SOULSHOTS, false);
-				
-				if (player != null)
+				if (player.isCursedWeaponEquipped())
 				{
-					if (player.isCursedWeaponEquipped())
+					// If hit by a cursed weapon, CP is reduced to 0
+					if (!target.isInvul())
 					{
-						// If hit by a cursed weapon, CP is reduced to 0
-						if (!target.isInvul())
-						{
-							target.setCurrentCp(0);
-						}
+						target.setCurrentCp(0);
 					}
-					else if (player.isHero())
+				}
+				else if (player.isHero())
+				{
+					// If a cursed weapon is hit by a Hero, CP is reduced to 0
+					if (target.isPlayer() && target.getActingPlayer().isCursedWeaponEquipped())
 					{
-						// If a cursed weapon is hit by a Hero, CP is reduced to 0
-						if (target.isPlayer() && target.getActingPlayer().isCursedWeaponEquipped())
-						{
-							target.setCurrentCp(0);
-						}
+						target.setCurrentCp(0);
 					}
 				}
 			}
@@ -1226,6 +1220,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Notify AI with EVT_READY_TO_ACT
 			ThreadPoolManager.getInstance().scheduleAi(new NotifyAITask(this, CtrlEvent.EVT_READY_TO_ACT), timeAtk + reuse);
 		}
+		
 	}
 	
 	/**
@@ -4584,6 +4579,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				target.getAI().notifyEvent(CtrlEvent.EVT_EVADED, this);
 			}
 			notifyAttackAvoid(target, false);
+		}
+		else
+		{
+			// If we didn't miss the hit, discharge the shoulshots, if any
+			setChargedShot(ShotType.SOULSHOTS, false);
 		}
 		
 		// Send message about damage/crit or miss
