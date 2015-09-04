@@ -2086,16 +2086,18 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11580" levels="4" name="Mass Transform">
+	<skill id="11580" levels="7" name="Mass Transform">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 sec., mutates enemies to reduce their Speed by 20% and render them unable to attack. Mutated enemies return to normal when inflicted with damage. -->
-		<table name="#mpConsumes"> 126 139 153 166 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 126 139 153 166 179 192 205 </table>
 		<set name="icon" val="icon.skill11580" />
 		<set name="abnormalTime" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="CHANGEBODY" />
 		<set name="affectRange" val="200" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="removedOnDamage" val="true" />
 		<set name="castRange" val="900" />

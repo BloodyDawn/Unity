@@ -38,8 +38,12 @@ public class ConditionTargetCheckCrtEffect extends Condition
 	@Override
 	public boolean testImpl(Creature effector, Creature effected, Skill skill, L2Item item)
 	{
+		System.out.println("cond called");
+		
 		if (effected.isNpc())
 		{
+			System.out.println("is npc");
+			System.out.println(((Npc) effected).getTemplate().canBeCrt());
 			return ((Npc) effected).getTemplate().canBeCrt() == _isCrtEffect;
 		}
 		

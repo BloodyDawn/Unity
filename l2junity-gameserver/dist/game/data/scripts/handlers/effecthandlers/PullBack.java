@@ -42,7 +42,7 @@ public final class PullBack extends AbstractEffect
 	public PullBack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_speed = params.getInt("speed", 0);
 		_delay = params.getInt("delay", _speed);
 		_animationSpeed = params.getInt("animationSpeed", 0);
@@ -54,7 +54,7 @@ public final class PullBack extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
