@@ -61,7 +61,7 @@ public final class HpCpHeal extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -136,25 +136,18 @@ public final class HpCpHeal extends AbstractEffect
 		
 		if (effected.isPlayer())
 		{
-			if (skill.getId() == 4051)
+			if (effector.isPlayer() && (effector != effected))
 			{
-				effected.sendPacket(SystemMessageId.REJUVENATING_HP);
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_HAS_BEEN_RESTORED_BY_C1);
+				sm.addString(effector.getName());
+				sm.addInt((int) healAmount);
+				effected.sendPacket(sm);
 			}
 			else
 			{
-				if (effector.isPlayer() && (effector != effected))
-				{
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_HAS_BEEN_RESTORED_BY_C1);
-					sm.addString(effector.getName());
-					sm.addInt((int) healAmount);
-					effected.sendPacket(sm);
-				}
-				else
-				{
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_HAS_BEEN_RESTORED);
-					sm.addInt((int) healAmount);
-					effected.sendPacket(sm);
-				}
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_HAS_BEEN_RESTORED);
+				sm.addInt((int) healAmount);
+				effected.sendPacket(sm);
 			}
 			
 			amount = Math.max(Math.min(amount - healAmount, effected.getMaxRecoverableCp() - effected.getCurrentCp()), 0);
