@@ -98,7 +98,6 @@ public final class EffectMasterHandler
 		EnergyAttack.class,
 		EnlargeAbnormalSlot.class,
 		Escape.class,
-		EscapeToNpc.class,
 		Faceoff.class,
 		FakeDeath.class,
 		FatalBlow.class,
