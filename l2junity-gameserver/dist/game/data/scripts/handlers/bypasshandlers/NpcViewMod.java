@@ -197,7 +197,7 @@ public class NpcViewMod implements IBypassHandler
 		html.replace("%atkspd%", npc.getPAtkSpd());
 		html.replace("%castspd%", npc.getMAtkSpd());
 		
-		html.replace("%critrate%", npc.getStat().getCriticalHit(activeChar, null));
+		html.replace("%critrate%", npc.getStat().getCriticalHit());
 		html.replace("%evasion%", npc.getEvasionRate(activeChar));
 		
 		html.replace("%accuracy%", npc.getStat().getAccuracy());

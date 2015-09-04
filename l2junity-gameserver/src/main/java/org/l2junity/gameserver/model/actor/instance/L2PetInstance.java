@@ -1222,19 +1222,19 @@ public class L2PetInstance extends Summon
 	@Override
 	public int getCriticalHit(Creature target, Skill skill)
 	{
-		return getStat().getCriticalHit(target, skill);
+		return getStat().getCriticalHit();
 	}
 	
 	@Override
 	public int getMAtk(Creature target, Skill skill)
 	{
-		return getStat().getMAtk(target, skill);
+		return getStat().getMAtk();
 	}
 	
 	@Override
 	public int getMDef(Creature target, Skill skill)
 	{
-		return getStat().getMDef(target, skill);
+		return getStat().getMDef();
 	}
 	
 	@Override

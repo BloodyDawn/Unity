@@ -1269,7 +1269,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			shld1 = Formulas.calcShldUse(this, target);
 			
 			// Calculate if hit is critical
-			crit1 = Formulas.calcCrit(getStat().getCriticalHit(target, null), false, this, target);
+			crit1 = Formulas.calcCrit(getStat().getCriticalHit(), false, this, target);
 			
 			// Calculate physical damages
 			damage1 = (int) Formulas.calcPhysDam(this, target, null, 0, shld1, crit1, attack.hasSoulshot());
@@ -1352,7 +1352,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			shld1 = Formulas.calcShldUse(this, target);
 			
 			// Calculate if hit 1 is critical
-			crit1 = Formulas.calcCrit(getStat().getCriticalHit(target, null), false, this, target);
+			crit1 = Formulas.calcCrit(getStat().getCriticalHit(), false, this, target);
 			
 			// Calculate physical damages of hit 1
 			damage1 = (int) Formulas.calcPhysDam(this, target, null, 0, shld1, crit1, attack.hasSoulshot());
@@ -1370,7 +1370,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			shld2 = Formulas.calcShldUse(this, target);
 			
 			// Calculate if hit 2 is critical
-			crit2 = Formulas.calcCrit(getStat().getCriticalHit(target, null), false, this, target);
+			crit2 = Formulas.calcCrit(getStat().getCriticalHit(), false, this, target);
 			
 			// Calculate physical damages of hit 2
 			damage2 = (int) Formulas.calcPhysDam(this, target, null, 0, shld2, crit2, attack.hasSoulshot());
@@ -1407,7 +1407,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				if (!miss)
 				{
 					shld = Formulas.calcShldUse(this, surroundTarget);
-					crit = Formulas.calcCrit(getStat().getCriticalHit(surroundTarget, null), false, this, surroundTarget);
+					crit = Formulas.calcCrit(getStat().getCriticalHit(), false, this, surroundTarget);
 					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, 0, shld, crit, attack.hasSoulshot());
 					damage = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage);
 					damage /= 2;
@@ -1428,7 +1428,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				if (!miss)
 				{
 					shld = Formulas.calcShldUse(this, surroundTarget);
-					crit = Formulas.calcCrit(getStat().getCriticalHit(surroundTarget, null), false, this, surroundTarget);
+					crit = Formulas.calcCrit(getStat().getCriticalHit(), false, this, surroundTarget);
 					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, 0, shld, crit, attack.hasSoulshot());
 					damage = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage);
 					damage /= 2;
@@ -1477,7 +1477,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			shld1 = Formulas.calcShldUse(this, target);
 			
 			// Calculate if hit is critical
-			crit1 = Formulas.calcCrit(getStat().getCriticalHit(target, null), false, this, target);
+			crit1 = Formulas.calcCrit(getStat().getCriticalHit(), false, this, target);
 			
 			// Calculate physical damages
 			damage1 = (int) Formulas.calcPhysDam(this, target, null, 0, shld1, crit1, attack.hasSoulshot());
@@ -1507,7 +1507,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				if (!miss)
 				{
 					shld = Formulas.calcShldUse(this, surroundTarget);
-					crit = Formulas.calcCrit(getStat().getCriticalHit(surroundTarget, null), false, this, surroundTarget);
+					crit = Formulas.calcCrit(getStat().getCriticalHit(), false, this, surroundTarget);
 					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, 0, shld, crit, attack.hasSoulshot());
 					damage = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage);
 				}
@@ -4641,7 +4641,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 						{
 							reflectedDamage = (int) ((reflectPercent / 100.) * damage);
 							reflectedDamage = Math.min(reflectedDamage, target.getMaxHp());
-							reflectedDamage = Math.min(reflectedDamage, getStat().getPDef(target));
+							reflectedDamage = Math.min(reflectedDamage, getStat().getPDef());
 						}
 					}
 				}
@@ -4944,7 +4944,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			return 0;
 		}
 		
-		reuse *= getStat().getWeaponReuseModifier(target);
+		reuse *= getStat().getWeaponReuseModifier();
 		double atkSpd = getStat().getPAtkSpd();
 		switch (weapon.getItemType())
 		{
@@ -5853,7 +5853,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public int getMagicEvasionRate(Creature target)
 	{
-		return getStat().getMagicEvasionRate(target);
+		return getStat().getMagicEvasionRate();
 	}
 	
 	public final float getAttackSpeedMultiplier()
@@ -5863,17 +5863,17 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public final double getCriticalDmg(Creature target, double init)
 	{
-		return getStat().getCriticalDmg(target, init);
+		return getStat().getCriticalDmg(init);
 	}
 	
 	public int getCriticalHit(Creature target, Skill skill)
 	{
-		return getStat().getCriticalHit(target, skill);
+		return getStat().getCriticalHit();
 	}
 	
 	public int getEvasionRate(Creature target)
 	{
-		return getStat().getEvasionRate(target);
+		return getStat().getEvasionRate();
 	}
 	
 	public final int getMagicalAttackRange(Skill skill)
@@ -5893,7 +5893,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public int getMAtk(Creature target, Skill skill)
 	{
-		return getStat().getMAtk(target, skill);
+		return getStat().getMAtk();
 	}
 	
 	public int getMAtkSpd()
@@ -5923,22 +5923,22 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public final int getMCriticalHit(Creature target, Skill skill)
 	{
-		return getStat().getMCriticalHit(target, skill);
+		return getStat().getMCriticalHit();
 	}
 	
 	public int getMDef(Creature target, Skill skill)
 	{
-		return getStat().getMDef(target, skill);
+		return getStat().getMDef();
 	}
 	
 	public double getMReuseRate(Skill skill)
 	{
-		return getStat().getMReuseRate(skill);
+		return getStat().getMReuseRate();
 	}
 	
 	public int getPAtk(Creature target)
 	{
-		return getStat().getPAtk(target);
+		return getStat().getPAtk();
 	}
 	
 	public int getPAtkSpd()
@@ -5948,7 +5948,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public int getPDef(Creature target)
 	{
-		return getStat().getPDef(target);
+		return getStat().getPDef();
 	}
 	
 	public final int getPhysicalAttackRange()

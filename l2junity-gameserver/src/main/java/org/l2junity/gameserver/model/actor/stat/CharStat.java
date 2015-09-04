@@ -107,21 +107,18 @@ public class CharStat
 	}
 	
 	/**
-	 * @param target
 	 * @param init
 	 * @return the Critical Damage rate (base+modifier) of the L2Character.
 	 */
-	public final double getCriticalDmg(Creature target, double init)
+	public final double getCriticalDmg(double init)
 	{
 		return getValue(Stats.CRITICAL_DAMAGE, init);
 	}
 	
 	/**
-	 * @param target
-	 * @param skill
 	 * @return the Critical Hit rate (base+modifier) of the L2Character.
 	 */
-	public int getCriticalHit(Creature target, Skill skill)
+	public int getCriticalHit()
 	{
 		return (int) getValue(Stats.CRITICAL_RATE);
 	}
@@ -149,19 +146,17 @@ public class CharStat
 	}
 	
 	/**
-	 * @param target
 	 * @return the Attack Evasion rate (base+modifier) of the L2Character.
 	 */
-	public int getEvasionRate(Creature target)
+	public int getEvasionRate()
 	{
 		return (int) getValue(Stats.EVASION_RATE);
 	}
 	
 	/**
-	 * @param target
 	 * @return the Attack Evasion rate (base+modifier) of the L2Character.
 	 */
-	public int getMagicEvasionRate(Creature target)
+	public int getMagicEvasionRate()
 	{
 		return (int) getValue(Stats.MAGIC_EVASION_RATE);
 	}
@@ -241,11 +236,9 @@ public class CharStat
 	/**
 	 * Return the MAtk (base+modifier) of the L2Character.<br>
 	 * <B><U>Example of use</U>: Calculate Magic damage
-	 * @param target The L2Character targeted by the skill
-	 * @param skill The L2Skill used against the target
 	 * @return
 	 */
-	public int getMAtk(Creature target, Skill skill)
+	public int getMAtk()
 	{
 		return (int) getValue(Stats.MAGIC_ATTACK);
 	}
@@ -259,22 +252,18 @@ public class CharStat
 	}
 	
 	/**
-	 * @param target
-	 * @param skill
 	 * @return the Magic Critical Hit rate (base+modifier) of the L2Character.
 	 */
-	public final int getMCriticalHit(Creature target, Skill skill)
+	public final int getMCriticalHit()
 	{
 		return (int) getValue(Stats.MCRITICAL_RATE);
 	}
 	
 	/**
 	 * <B><U>Example of use </U>: Calculate Magic damage.
-	 * @param target The L2Character targeted by the skill
-	 * @param skill The L2Skill used against the target
 	 * @return the MDef (base+modifier) of the L2Character against a skill in function of abnormal effects in progress.
 	 */
-	public int getMDef(Creature target, Skill skill)
+	public int getMDef()
 	{
 		return (int) getValue(Stats.MAGIC_DEFENCE);
 	}
@@ -356,19 +345,17 @@ public class CharStat
 	}
 	
 	/**
-	 * @param skill
 	 * @return the MReuse rate (base+modifier) of the L2Character.
 	 */
-	public final double getMReuseRate(Skill skill)
+	public final double getMReuseRate()
 	{
 		return getValue(Stats.MAGIC_REUSE_RATE, 1);
 	}
 	
 	/**
-	 * @param target
 	 * @return the PAtk (base+modifier) of the L2Character.
 	 */
-	public int getPAtk(Creature target)
+	public int getPAtk()
 	{
 		return (int) getValue(Stats.POWER_ATTACK);
 	}
@@ -382,10 +369,9 @@ public class CharStat
 	}
 	
 	/**
-	 * @param target
 	 * @return the PDef (base+modifier) of the L2Character.
 	 */
-	public int getPDef(Creature target)
+	public int getPDef()
 	{
 		return (int) getValue(Stats.POWER_DEFENCE);
 	}
@@ -409,10 +395,9 @@ public class CharStat
 	}
 	
 	/**
-	 * @param target
 	 * @return the weapon reuse modifier.
 	 */
-	public final double getWeaponReuseModifier(Creature target)
+	public final double getWeaponReuseModifier()
 	{
 		return getValue(Stats.ATK_REUSE, 1);
 	}
