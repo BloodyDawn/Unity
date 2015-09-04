@@ -89,7 +89,7 @@ public final class MagicalAbnormalDispelAttack extends AbstractEffect
 			}
 			
 			// Shield Deflect Magic: Reflect all damage on caster.
-			if (effected.getStat().calcStat(Stats.VENGEANCE_SKILL_MAGIC_DAMAGE, 0, effected, skill) > Rnd.get(100))
+			if (effected.getStat().getValue(Stats.VENGEANCE_SKILL_MAGIC_DAMAGE, 0) > Rnd.get(100))
 			{
 				effector.reduceCurrentHp(damage, effected, skill);
 				effector.notifyDamageReceived(damage, effected, skill, mcrit, false, true);

@@ -69,29 +69,6 @@ public class CharStat
 		Arrays.fill(_defenceTraits, 1.0f);
 	}
 	
-	public final double calcStat(Stats stat, double init)
-	{
-		return calcStat(stat, init, null, null);
-	}
-	
-	/**
-	 * Calculate the new value of the state with modifiers that will be applied on the targeted L2Character.<BR>
-	 * <B><U> Concept</U> :</B><BR A L2Character owns a table of Calculators called <B>_calculators</B>. Each Calculator (a calculator per state) own a table of Func object. A Func object is a mathematic function that permit to calculate the modifier of a state (ex : REGENERATE_HP_RATE...) : <BR>
-	 * FuncAtkAccuracy -> Math.sqrt(_player.getDEX())*6+_player.getLevel()<BR>
-	 * When the calc method of a calculator is launched, each mathematical function is called according to its priority <B>_order</B>.<br>
-	 * Indeed, Func with lowest priority order is executed firsta and Funcs with the same order are executed in unspecified order.<br>
-	 * The result of the calculation is stored in the value property of an Env class instance.<br>
-	 * @param stat The stat to calculate the new value with modifiers
-	 * @param initVal The initial value of the stat before applying modifiers
-	 * @param target The L2Charcater whose properties will be used in the calculation (ex : CON, INT...)
-	 * @param skill The L2Skill whose properties will be used in the calculation (ex : Level...)
-	 * @return
-	 */
-	public final double calcStat(Stats stat, double initVal, Creature target, Skill skill)
-	{
-		return getValue(stat, initVal);
-	}
-	
 	/**
 	 * @return the Accuracy (base+modifier) of the L2Character in function of the Weapon Expertise Penalty.
 	 */
@@ -136,7 +113,7 @@ public class CharStat
 	 */
 	public final double getCriticalDmg(Creature target, double init)
 	{
-		return calcStat(Stats.CRITICAL_DAMAGE, init, target, null);
+		return getValue(Stats.CRITICAL_DAMAGE, init);
 	}
 	
 	/**
@@ -237,7 +214,7 @@ public class CharStat
 	
 	public int getMaxRecoverableCp()
 	{
-		return (int) calcStat(Stats.MAX_RECOVERABLE_CP, getMaxCp());
+		return (int) getValue(Stats.MAX_RECOVERABLE_CP, getMaxCp());
 	}
 	
 	public int getMaxHp()
@@ -247,7 +224,7 @@ public class CharStat
 	
 	public int getMaxRecoverableHp()
 	{
-		return (int) calcStat(Stats.MAX_RECOVERABLE_HP, getMaxHp());
+		return (int) getValue(Stats.MAX_RECOVERABLE_HP, getMaxHp());
 	}
 	
 	public int getMaxMp()
@@ -257,7 +234,7 @@ public class CharStat
 	
 	public int getMaxRecoverableMp()
 	{
-		return (int) calcStat(Stats.MAX_RECOVERABLE_MP, getMaxMp());
+		return (int) getValue(Stats.MAX_RECOVERABLE_MP, getMaxMp());
 	}
 	
 	/**
@@ -383,7 +360,7 @@ public class CharStat
 	 */
 	public final double getMReuseRate(Skill skill)
 	{
-		return calcStat(Stats.MAGIC_REUSE_RATE, 1, null, skill);
+		return getValue(Stats.MAGIC_REUSE_RATE, 1);
 	}
 	
 	/**
@@ -436,7 +413,7 @@ public class CharStat
 	 */
 	public final double getWeaponReuseModifier(Creature target)
 	{
-		return calcStat(Stats.ATK_REUSE, 1, target, null);
+		return getValue(Stats.ATK_REUSE, 1);
 	}
 	
 	/**
@@ -444,7 +421,7 @@ public class CharStat
 	 */
 	public final int getShldDef()
 	{
-		return (int) calcStat(Stats.SHIELD_DEFENCE, 0);
+		return (int) getValue(Stats.SHIELD_DEFENCE, 0);
 	}
 	
 	public long getSp()
@@ -493,19 +470,19 @@ public class CharStat
 			}
 		}
 		
-		mpConsume = calcStat(Stats.MP_CONSUME, mpConsume, null, skill);
+		mpConsume = getValue(Stats.MP_CONSUME, mpConsume);
 		
 		if (skill.isDance())
 		{
-			return (int) calcStat(Stats.DANCE_MP_CONSUME_RATE, mpConsume);
+			return (int) getValue(Stats.DANCE_MP_CONSUME_RATE, mpConsume);
 		}
 		else if (skill.isMagic())
 		{
-			return (int) calcStat(Stats.MAGICAL_MP_CONSUME_RATE, mpConsume);
+			return (int) getValue(Stats.MAGICAL_MP_CONSUME_RATE, mpConsume);
 		}
 		else
 		{
-			return (int) calcStat(Stats.PHYSICAL_MP_CONSUME_RATE, mpConsume);
+			return (int) getValue(Stats.PHYSICAL_MP_CONSUME_RATE, mpConsume);
 		}
 	}
 	
@@ -520,7 +497,7 @@ public class CharStat
 			return 1;
 		}
 		
-		return (int) calcStat(Stats.MP_CONSUME, skill.getMpInitialConsume(), null, skill);
+		return (int) getValue(Stats.MP_CONSUME, skill.getMpInitialConsume());
 	}
 	
 	public AttributeType getAttackElement()

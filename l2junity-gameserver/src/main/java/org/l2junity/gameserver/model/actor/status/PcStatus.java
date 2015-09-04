@@ -155,7 +155,7 @@ public class PcStatus extends PlayableStatus
 			final Summon summon = getActiveChar().getFirstServitor();
 			if ((summon != null) && Util.checkIfInRange(1000, getActiveChar(), summon, true))
 			{
-				tDmg = ((int) value * (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_PERCENT, 0, null, null)) / 100;
+				tDmg = ((int) value * (int) getActiveChar().getStat().getValue(Stats.TRANSFER_DAMAGE_PERCENT, 0)) / 100;
 				
 				// Only transfer dmg up to current HP, it should not be killed
 				tDmg = Math.min((int) summon.getCurrentHp() - 1, tDmg);
@@ -167,7 +167,7 @@ public class PcStatus extends PlayableStatus
 				}
 			}
 			
-			mpDam = ((int) value * (int) getActiveChar().getStat().calcStat(Stats.MANA_SHIELD_PERCENT, 0, null, null)) / 100;
+			mpDam = ((int) value * (int) getActiveChar().getStat().getValue(Stats.MANA_SHIELD_PERCENT, 0)) / 100;
 			
 			if (mpDam > 0)
 			{
@@ -194,7 +194,7 @@ public class PcStatus extends PlayableStatus
 			{
 				int transferDmg = 0;
 				
-				transferDmg = ((int) value * (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_TO_PLAYER, 0, null, null)) / 100;
+				transferDmg = ((int) value * (int) getActiveChar().getStat().getValue(Stats.TRANSFER_DAMAGE_TO_PLAYER, 0)) / 100;
 				transferDmg = Math.min((int) caster.getCurrentHp() - 1, transferDmg);
 				if (transferDmg > 0)
 				{

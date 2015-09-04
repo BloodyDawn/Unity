@@ -11360,7 +11360,7 @@ public final class PlayerInstance extends Playable
 		{
 			ivlim = Config.INVENTORY_MAXIMUM_NO_DWARF;
 		}
-		ivlim += (int) getStat().calcStat(Stats.INV_LIM, 0, null, null);
+		ivlim += (int) getStat().getValue(Stats.INV_LIM, 0);
 		
 		return ivlim;
 	}
@@ -11377,7 +11377,7 @@ public final class PlayerInstance extends Playable
 			whlim = Config.WAREHOUSE_SLOTS_NO_DWARF;
 		}
 		
-		whlim += (int) getStat().calcStat(Stats.WH_LIM, 0, null, null);
+		whlim += (int) getStat().getValue(Stats.WH_LIM, 0);
 		
 		return whlim;
 	}
@@ -11395,7 +11395,7 @@ public final class PlayerInstance extends Playable
 			pslim = Config.MAX_PVTSTORESELL_SLOTS_OTHER;
 		}
 		
-		pslim += (int) getStat().calcStat(Stats.P_SELL_LIM, 0, null, null);
+		pslim += (int) getStat().getValue(Stats.P_SELL_LIM, 0);
 		
 		return pslim;
 	}
@@ -11412,7 +11412,7 @@ public final class PlayerInstance extends Playable
 		{
 			pblim = Config.MAX_PVTSTOREBUY_SLOTS_OTHER;
 		}
-		pblim += (int) getStat().calcStat(Stats.P_BUY_LIM, 0, null, null);
+		pblim += (int) getStat().getValue(Stats.P_BUY_LIM, 0);
 		
 		return pblim;
 	}
@@ -11420,14 +11420,14 @@ public final class PlayerInstance extends Playable
 	public int getDwarfRecipeLimit()
 	{
 		int recdlim = Config.DWARF_RECIPE_LIMIT;
-		recdlim += (int) getStat().calcStat(Stats.REC_D_LIM, 0, null, null);
+		recdlim += (int) getStat().getValue(Stats.REC_D_LIM, 0);
 		return recdlim;
 	}
 	
 	public int getCommonRecipeLimit()
 	{
 		int recclim = Config.COMMON_RECIPE_LIMIT;
-		recclim += (int) getStat().calcStat(Stats.REC_C_LIM, 0, null, null);
+		recclim += (int) getStat().getValue(Stats.REC_C_LIM, 0);
 		return recclim;
 	}
 	
@@ -13710,7 +13710,7 @@ public final class PlayerInstance extends Playable
 	 */
 	public int getMaxSummonPoints()
 	{
-		return (int) getStat().calcStat(Stats.MAX_SUMMON_POINTS, 0, null, null);
+		return (int) getStat().getValue(Stats.MAX_SUMMON_POINTS, 0);
 	}
 	
 	/**

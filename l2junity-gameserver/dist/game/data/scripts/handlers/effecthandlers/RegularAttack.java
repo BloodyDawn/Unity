@@ -87,17 +87,15 @@ public final class RegularAttack extends AbstractEffect
 			boolean isBow = ((weapon != null) && weapon.isBowOrCrossBow());
 			if (!isBow && !effected.isInvul()) // Do not reflect if weapon is of type bow or target is invunlerable
 			{
-				int reflectedDamage = 0;
-				
 				// quick fix for no drop from raid if boss attack high-level char with damage reflection
 				if (!effected.isRaid() || (effector.getActingPlayer() == null) || (effector.getActingPlayer().getLevel() <= (effected.getLevel() + 8)))
 				{
 					// Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
-					double reflectPercent = effected.getStat().calcStat(Stats.REFLECT_DAMAGE_PERCENT, 0, null, null);
+					double reflectPercent = effected.getStat().getValue(Stats.REFLECT_DAMAGE_PERCENT, 0);
 					
 					if (reflectPercent > 0)
 					{
-						reflectedDamage = (int) ((reflectPercent / 100.) * damage);
+						int reflectedDamage = (int) ((reflectPercent / 100.) * damage);
 						
 						if (reflectedDamage > effected.getMaxHp())
 						{

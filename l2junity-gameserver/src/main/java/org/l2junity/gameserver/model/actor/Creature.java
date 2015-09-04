@@ -1392,7 +1392,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		attack.addHit(target, damage2, miss2, crit2, shld2);
 		
 		// Launch multiple attack (if possible)
-		int attackCountMax = (int) getStat().calcStat(Stats.ATTACK_COUNT_MAX, 1, null, null);
+		int attackCountMax = (int) getStat().getValue(Stats.ATTACK_COUNT_MAX, 1);
 		if (attackCountMax > 1)
 		{
 			attackCountMax--; // Main target has already been attacked.
@@ -1493,7 +1493,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		attack.addHit(target, damage1, miss1, crit1, shld1);
 		
 		// H5 Changes: without Polearm Mastery (skill 216) max simultaneous attacks is 3 (1 by default + 2 in skill 3599).
-		int attackCountMax = (int) getStat().calcStat(Stats.ATTACK_COUNT_MAX, 1, null, null);
+		int attackCountMax = (int) getStat().getValue(Stats.ATTACK_COUNT_MAX, 1);
 		if (attackCountMax > 1)
 		{
 			attackCountMax--; // Main target has already been attacked.
@@ -4635,7 +4635,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					if (!target.isRaid() || (getActingPlayer() == null) || (getActingPlayer().getLevel() <= (target.getLevel() + 8)))
 					{
 						// Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
-						double reflectPercent = target.getStat().calcStat(Stats.REFLECT_DAMAGE_PERCENT, 0, null, null);
+						double reflectPercent = target.getStat().getValue(Stats.REFLECT_DAMAGE_PERCENT, 0);
 						
 						if (reflectPercent > 0)
 						{
@@ -4672,7 +4672,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 			
 			// Absorb MP from the damage inflicted
-			double absorbPercent = getStat().calcStat(Stats.ABSORB_MANA_DAMAGE_PERCENT, 0, null, null);
+			double absorbPercent = getStat().getValue(Stats.ABSORB_MANA_DAMAGE_PERCENT, 0);
 			
 			if (absorbPercent > 0)
 			{
@@ -5843,13 +5843,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public final double calcStat(Stats stat, double init)
 	{
-		return getStat().calcStat(stat, init, null, null);
+		return getStat().getValue(stat, init);
 	}
 	
 	// Stat - NEED TO REMOVE ONCE L2CHARSTAT IS COMPLETE
 	public final double calcStat(Stats stat, double init, Creature target, Skill skill)
 	{
-		return getStat().calcStat(stat, init, target, skill);
+		return getStat().getValue(stat, init);
 	}
 	
 	public int getAccuracy()

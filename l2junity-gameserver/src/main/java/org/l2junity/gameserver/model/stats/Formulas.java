@@ -390,7 +390,7 @@ public final class Formulas
 		// Critical
 		final double criticalMod = (attacker.calcStat(Stats.CRITICAL_DAMAGE, 1, target, skill));
 		final double criticalVulnMod = (target.calcStat(Stats.DEFENCE_CRITICAL_DAMAGE, 1, target, skill));
-		final double criticalAddMod = ((attacker.getStat().calcStat(Stats.CRITICAL_DAMAGE_ADD, 0) * 6.1 * 77) / defence);
+		final double criticalAddMod = ((attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0) * 6.1 * 77) / defence);
 		final double criticalAddVuln = target.calcStat(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0, target, skill);
 		// Trait, elements
 		final double weaponTraitMod = calcWeaponTraitBonus(attacker, target);
@@ -927,7 +927,7 @@ public final class Formulas
 			return finalRate > Rnd.get(1000);
 		}
 		
-		double finalRate = target.getStat().calcStat(Stats.DEFENCE_CRITICAL_RATE, rate, null, null) + target.getStat().calcStat(Stats.DEFENCE_CRITICAL_RATE_ADD, 0, null, null);
+		double finalRate = target.getStat().getValue(Stats.DEFENCE_CRITICAL_RATE, rate) + target.getStat().getValue(Stats.DEFENCE_CRITICAL_RATE_ADD, 0);
 		return finalRate > Rnd.get(1000);
 	}
 	
@@ -944,7 +944,7 @@ public final class Formulas
 			return mRate > Rnd.get(1000);
 		}
 		
-		double finalRate = target.getStat().calcStat(Stats.DEFENCE_MAGIC_CRITICAL_RATE, mRate, null, null) + target.getStat().calcStat(Stats.DEFENCE_MAGIC_CRITICAL_RATE_ADD, 0, null, null);
+		double finalRate = target.getStat().getValue(Stats.DEFENCE_MAGIC_CRITICAL_RATE, mRate) + target.getStat().getValue(Stats.DEFENCE_MAGIC_CRITICAL_RATE_ADD, 0);
 		// Juji Producer Update: The devs said that 32% is the maximum critical chance for magic spells and that it is intended for balance reasons. It may change in a future update though.
 		if (finalRate > 320)
 		{
@@ -1482,7 +1482,7 @@ public final class Formulas
 			return false;
 		}
 		
-		final int val = (int) actor.getStat().calcStat(Stats.SKILL_CRITICAL, 0, null, null);
+		final int val = (int) actor.getStat().getValue(Stats.SKILL_CRITICAL, 0);
 		
 		if (val == 0)
 		{
@@ -1505,7 +1505,7 @@ public final class Formulas
 					break;
 				}
 			}
-			initVal *= actor.getStat().calcStat(Stats.SKILL_CRITICAL_PROBABILITY, 1, null, null);
+			initVal *= actor.getStat().getValue(Stats.SKILL_CRITICAL_PROBABILITY, 1);
 			return (Rnd.get(100) < initVal);
 		}
 		

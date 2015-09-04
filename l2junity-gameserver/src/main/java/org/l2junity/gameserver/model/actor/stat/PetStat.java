@@ -157,37 +157,37 @@ public class PetStat extends SummonStat
 	@Override
 	public int getMaxHp()
 	{
-		return (int) calcStat(Stats.MAX_HP, getActiveChar().getPetLevelData().getPetMaxHP(), null, null);
+		return (int) getValue(Stats.MAX_HP, getActiveChar().getPetLevelData().getPetMaxHP());
 	}
 	
 	@Override
 	public int getMaxMp()
 	{
-		return (int) calcStat(Stats.MAX_MP, getActiveChar().getPetLevelData().getPetMaxMP(), null, null);
+		return (int) getValue(Stats.MAX_MP, getActiveChar().getPetLevelData().getPetMaxMP());
 	}
 	
 	@Override
 	public int getMAtk(Creature target, Skill skill)
 	{
-		return (int) calcStat(Stats.MAGIC_ATTACK, getActiveChar().getPetLevelData().getPetMAtk(), target, skill);
+		return (int) getValue(Stats.MAGIC_ATTACK, getActiveChar().getPetLevelData().getPetMAtk());
 	}
 	
 	@Override
 	public int getMDef(Creature target, Skill skill)
 	{
-		return (int) calcStat(Stats.MAGIC_DEFENCE, getActiveChar().getPetLevelData().getPetMDef(), target, skill);
+		return (int) getValue(Stats.MAGIC_DEFENCE, getActiveChar().getPetLevelData().getPetMDef());
 	}
 	
 	@Override
 	public int getPAtk(Creature target)
 	{
-		return (int) calcStat(Stats.POWER_ATTACK, getActiveChar().getPetLevelData().getPetPAtk(), target, null);
+		return (int) getValue(Stats.POWER_ATTACK, getActiveChar().getPetLevelData().getPetPAtk());
 	}
 	
 	@Override
 	public int getPDef(Creature target)
 	{
-		return (int) calcStat(Stats.POWER_DEFENCE, getActiveChar().getPetLevelData().getPetPDef(), target, null);
+		return (int) getValue(Stats.POWER_DEFENCE, getActiveChar().getPetLevelData().getPetPDef());
 	}
 	
 	@Override
