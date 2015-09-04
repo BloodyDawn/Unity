@@ -432,15 +432,15 @@
 		<set name="effectPoint" val="-1371" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="30016" levels="3" name="Eye of the Storm">
-		<!-- Updated to Ertheia -->
+	<skill id="30016" levels="4" name="Eye of the Storm">
+		<!-- Updated to IO -->
 		<!-- For 30 sec., M. Critical Rate + 100%, P./M. Def. + 30%. -->
-		<table name="#mpConsumes"> 18 37 40 </table>
-		<table name="#MagicalMpConsumeRate"> 1 0.5 0.5 </table>
-		<table name="#traitResist"> 0 0 90 </table>
+		<table name="#mpConsumes"> 18 37 40 43 </table>
+		<table name="#MagicalMpConsumeRate"> 1 0.5 0.5 0.5 </table>
+		<table name="#traitResist"> 0 0 90 90 </table>
 		<set name="icon" val="icon.skill30016" />
 		<set name="abnormalTime" val="30" />
-		<set name="effectPoint" val="687" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="687" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -450,7 +450,7 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
-				<mul stat="mCritRate" val="2" />
+				<add stat="mCritRate" val="100" />
 				<mul stat="pDef" val="1.3" />
 				<mul stat="mDef" val="1.3" />
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
@@ -460,7 +460,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="30017" levels="3" name="Squall">
+	<skill id="30017" levels="4" name="Squall">
 		<!-- Updated to IO -->
 		<!-- For 10 min., Received P./M. Critical Damage - 15%, and Has a chance of striking target with lightning. -->
 		<table name="#abnormalLvl"> 1 2 3 4 </table>
