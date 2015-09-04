@@ -5426,15 +5426,15 @@ public final class PlayerInstance extends Playable
 		{
 			if (killer.isRaid())
 			{
-				percentLost *= calcStat(Stats.REDUCE_EXP_LOST_BY_RAID, 1);
+				percentLost *= this.getStat().getValue(Stats.REDUCE_EXP_LOST_BY_RAID, 1);
 			}
 			else if (killer.isMonster())
 			{
-				percentLost *= calcStat(Stats.REDUCE_EXP_LOST_BY_MOB, 1);
+				percentLost *= this.getStat().getValue(Stats.REDUCE_EXP_LOST_BY_MOB, 1);
 			}
 			else if (killer.isPlayable())
 			{
-				percentLost *= calcStat(Stats.REDUCE_EXP_LOST_BY_PVP, 1);
+				percentLost *= this.getStat().getValue(Stats.REDUCE_EXP_LOST_BY_PVP, 1);
 			}
 		}
 		
@@ -10214,7 +10214,7 @@ public final class PlayerInstance extends Playable
 	{
 		if (!isDead() && (_taskWater == null))
 		{
-			int timeinwater = (int) calcStat(Stats.BREATH, 60000, this, null);
+			int timeinwater = (int) this.getStat().getValue(Stats.BREATH, 60000);
 			
 			sendPacket(new SetupGauge(getObjectId(), 2, timeinwater));
 			_taskWater = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new WaterTask(this), timeinwater, 1000);
@@ -11708,15 +11708,15 @@ public final class PlayerInstance extends Playable
 		
 		if (killer.isRaid())
 		{
-			percent *= calcStat(Stats.REDUCE_DEATH_PENALTY_BY_RAID, 1);
+			percent *= this.getStat().getValue(Stats.REDUCE_DEATH_PENALTY_BY_RAID, 1);
 		}
 		else if (killer.isMonster())
 		{
-			percent *= calcStat(Stats.REDUCE_DEATH_PENALTY_BY_MOB, 1);
+			percent *= this.getStat().getValue(Stats.REDUCE_DEATH_PENALTY_BY_MOB, 1);
 		}
 		else if (killer.isPlayable())
 		{
-			percent *= calcStat(Stats.REDUCE_DEATH_PENALTY_BY_PVP, 1);
+			percent *= this.getStat().getValue(Stats.REDUCE_DEATH_PENALTY_BY_PVP, 1);
 		}
 		
 		if (killer.isInCategory(CategoryType.SHILENS_FOLLOWERS) || (Rnd.get(1, 100) <= ((Config.DEATH_PENALTY_CHANCE) * percent)))

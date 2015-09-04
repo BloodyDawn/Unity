@@ -72,7 +72,7 @@ public final class SoulEating extends AbstractEffect
 		if (playable.isPlayer() && (exp >= _expNeeded))
 		{
 			final PlayerInstance player = playable.getActingPlayer();
-			final int maxSouls = (int) player.calcStat(Stats.MAX_SOULS, 0, null, null);
+			final int maxSouls = (int) player.getStat().getValue(Stats.MAX_SOULS, 0);
 			if (player.getChargedSouls() >= maxSouls)
 			{
 				playable.sendPacket(SystemMessageId.SOUL_CANNOT_BE_ABSORBED_ANYMORE);

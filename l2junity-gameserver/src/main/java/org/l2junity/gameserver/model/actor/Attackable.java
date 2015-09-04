@@ -532,8 +532,8 @@ public class Attackable extends Npc
 							// Distribute the Exp and SP between the L2PcInstance and its L2Summon
 							if (!attacker.isDead())
 							{
-								final long addexp = Math.round(attacker.calcStat(Stats.EXPSP_RATE, exp, null, null));
-								final int addsp = (int) attacker.calcStat(Stats.EXPSP_RATE, sp, null, null);
+								final long addexp = Math.round(attacker.getStat().getValue(Stats.EXPSP_RATE, exp));
+								final int addsp = (int) attacker.getStat().getValue(Stats.EXPSP_RATE, sp);
 								
 								attacker.addExpAndSp(addexp, addsp, useVitalityRate());
 								if (addexp > 0)
@@ -695,7 +695,7 @@ public class Attackable extends Npc
 				double hateValue = (damage * 100) / (getLevel() + 7);
 				if (skill == null)
 				{
-					hateValue = attacker.calcStat(Stats.HATE_ATTACK, hateValue, this, skill);
+					hateValue = attacker.getStat().getValue(Stats.HATE_ATTACK, hateValue);
 				}
 				
 				addDamageHate(attacker, damage, (int) hateValue);

@@ -119,7 +119,7 @@ public final class PhysicalSoulAttack extends AbstractEffect
 			// Check if damage should be reflected
 			Formulas.calcDamageReflected(effector, effected, skill, crit);
 			
-			damage = (int) effected.calcStat(Stats.DAMAGE_CAP, damage, null, null);
+			damage = (int) effected.getStat().getValue(Stats.DAMAGE_CAP, damage);
 			effector.sendDamageMessage(effected, damage, false, crit, false);
 			effected.reduceCurrentHp(damage, effector, skill);
 			effected.notifyDamageReceived(damage, effector, skill, crit, false, false);

@@ -169,6 +169,7 @@ public class DamageZone extends ZoneType
 			_castle = zone.getCastle();
 		}
 		
+		@SuppressWarnings("UnnecessaryExplicitNumericCast")
 		@Override
 		public void run()
 		{
@@ -204,7 +205,7 @@ public class DamageZone extends ZoneType
 						}
 					}
 					
-					double multiplier = 1 + (temp.calcStat(Stats.DAMAGE_ZONE_VULN, 0, null, null) / 100);
+					double multiplier = 1 + (temp.getStat().getValue(Stats.DAMAGE_ZONE_VULN, 0) / 100);
 					
 					if (getHPDamagePerSecond() != 0)
 					{

@@ -108,7 +108,7 @@ public final class Heal extends AbstractEffect
 		if (!skill.isStatic())
 		{
 			amount += staticShotBonus + Math.sqrt(mAtkMul * effector.getMAtk(effector, null));
-			amount = effected.calcStat(Stats.HEAL_EFFECT, amount, null, null);
+			amount = effected.getStat().getValue(Stats.HEAL_EFFECT, amount);
 			// Heal critic, since CT2.3 Gracia Final
 			if (skill.isMagic() && Formulas.calcMCrit(effector.getMCriticalHit(effected, skill), skill, effected))
 			{
@@ -123,7 +123,7 @@ public final class Heal extends AbstractEffect
 		}
 		
 		// Adding healer's heal power
-		amount = effector.calcStat(Stats.HEAL_POWER, amount, null, null);
+		amount = effector.getStat().getValue(Stats.HEAL_POWER, amount);
 		
 		// Prevents overheal and negative amount
 		amount = Math.max(Math.min(amount, effected.getMaxRecoverableHp() - effected.getCurrentHp()), 0);

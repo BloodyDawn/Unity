@@ -1011,7 +1011,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							{
 								mpConsume = weaponItem.getReducedMpConsume();
 							}
-							mpConsume = (int) calcStat(Stats.BOW_MP_CONSUME_RATE, mpConsume, null, null);
+							mpConsume = (int) getStat().getValue(Stats.BOW_MP_CONSUME_RATE, mpConsume);
 							
 							if (getCurrentMp() < mpConsume)
 							{
@@ -1073,7 +1073,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							{
 								mpConsume = weaponItem.getReducedMpConsume();
 							}
-							mpConsume = (int) calcStat(Stats.BOW_MP_CONSUME_RATE, mpConsume, null, null);
+							mpConsume = (int) getStat().getValue(Stats.BOW_MP_CONSUME_RATE, mpConsume);
 							
 							if (getCurrentMp() < mpConsume)
 							{
@@ -1275,7 +1275,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			damage1 = (int) Formulas.calcPhysDam(this, target, null, 0, shld1, crit1, attack.hasSoulshot());
 			
 			// Normal attacks have normal damage x 5
-			damage1 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage1);
+			damage1 = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage1);
 			
 			// Bows Ranged Damage Formula (Damage gradually decreases when 60% or lower than full hit range, and increases when 60% or higher).
 			// full hit range is 500 which is the base bow range, and the 60% of this is 800.
@@ -1358,7 +1358,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			damage1 = (int) Formulas.calcPhysDam(this, target, null, 0, shld1, crit1, attack.hasSoulshot());
 			
 			// Normal attacks have normal damage x 5
-			damage1 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage1);
+			damage1 = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage1);
 			
 			damage1 /= 2;
 		}
@@ -1376,7 +1376,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			damage2 = (int) Formulas.calcPhysDam(this, target, null, 0, shld2, crit2, attack.hasSoulshot());
 			
 			// Normal attacks have normal damage x 5
-			damage2 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage2);
+			damage2 = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage2);
 			
 			damage2 /= 2;
 		}
@@ -1409,7 +1409,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					shld = Formulas.calcShldUse(this, surroundTarget);
 					crit = Formulas.calcCrit(getStat().getCriticalHit(surroundTarget, null), false, this, surroundTarget);
 					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, 0, shld, crit, attack.hasSoulshot());
-					damage = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage);
+					damage = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage);
 					damage /= 2;
 				}
 				
@@ -1430,7 +1430,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					shld = Formulas.calcShldUse(this, surroundTarget);
 					crit = Formulas.calcCrit(getStat().getCriticalHit(surroundTarget, null), false, this, surroundTarget);
 					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, 0, shld, crit, attack.hasSoulshot());
-					damage = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage);
+					damage = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage);
 					damage /= 2;
 				}
 				
@@ -1483,7 +1483,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			damage1 = (int) Formulas.calcPhysDam(this, target, null, 0, shld1, crit1, attack.hasSoulshot());
 			
 			// Normal attacks have normal damage x 5
-			damage1 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage1);
+			damage1 = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage1);
 		}
 		
 		// Create a new hit task with Medium priority
@@ -1509,7 +1509,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					shld = Formulas.calcShldUse(this, surroundTarget);
 					crit = Formulas.calcCrit(getStat().getCriticalHit(surroundTarget, null), false, this, surroundTarget);
 					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, 0, shld, crit, attack.hasSoulshot());
-					damage = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage);
+					damage = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage);
 				}
 				
 				ThreadPoolManager.getInstance().scheduleAi(new HitTask(this, surroundTarget, damage, crit, miss, attack.hasSoulshot(), shld), sAtk);
@@ -1863,15 +1863,15 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		else if (skill.isMagic())
 		{
-			reuseDelay = (int) (skill.getReuseDelay() * calcStat(Stats.MAGIC_REUSE_RATE, 1, null, null));
+			reuseDelay = (int) (skill.getReuseDelay() * getStat().getValue(Stats.MAGIC_REUSE_RATE, 1));
 		}
 		else if (skill.isPhysical())
 		{
-			reuseDelay = (int) (skill.getReuseDelay() * calcStat(Stats.P_REUSE, 1, null, null));
+			reuseDelay = (int) (skill.getReuseDelay() * getStat().getValue(Stats.P_REUSE, 1));
 		}
 		else
 		{
-			reuseDelay = (int) (skill.getReuseDelay() * calcStat(Stats.DANCE_REUSE, 1, null, null));
+			reuseDelay = (int) (skill.getReuseDelay() * getStat().getValue(Stats.DANCE_REUSE, 1));
 		}
 		
 		boolean skillMastery = Formulas.calcSkillMastery(this, skill);
@@ -5841,17 +5841,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public abstract int getLevel();
 	
-	public final double calcStat(Stats stat, double init)
-	{
-		return getStat().getValue(stat, init);
-	}
-	
-	// Stat - NEED TO REMOVE ONCE L2CHARSTAT IS COMPLETE
-	public final double calcStat(Stats stat, double init, Creature target, Skill skill)
-	{
-		return getStat().getValue(stat, init);
-	}
-	
 	public int getAccuracy()
 	{
 		return getStat().getAccuracy();
@@ -6151,7 +6140,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Weight Limit = (CON Modifier*69000) * Skills
 			// Source http://l2p.bravehost.com/weightlimit.html (May 2007)
 			double baseLoad = Math.floor(BaseStats.CON.calcBonus(this) * 69000 * Config.ALT_WEIGHT_LIMIT);
-			return (int) calcStat(Stats.WEIGHT_LIMIT, baseLoad, this, null);
+			return (int) getStat().getValue(Stats.WEIGHT_LIMIT, baseLoad);
 		}
 		return 0;
 	}
@@ -6160,7 +6149,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		if (isPlayer() || isPet())
 		{
-			return (int) calcStat(Stats.WEIGHT_PENALTY, 1, this, null);
+			return (int) getStat().getValue(Stats.WEIGHT_PENALTY, 1);
 		}
 		return 0;
 	}

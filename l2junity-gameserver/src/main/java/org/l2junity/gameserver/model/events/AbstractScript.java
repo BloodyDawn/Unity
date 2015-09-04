@@ -2528,7 +2528,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 */
 	public static void addExpAndSp(PlayerInstance player, long exp, int sp)
 	{
-		player.addExpAndSp((long) player.calcStat(Stats.EXPSP_RATE, exp * Config.RATE_QUEST_REWARD_XP, null, null), (int) player.calcStat(Stats.EXPSP_RATE, sp * Config.RATE_QUEST_REWARD_SP, null, null));
+		player.addExpAndSp((long) player.getStat().getValue(Stats.EXPSP_RATE, (exp * Config.RATE_QUEST_REWARD_XP)), (int) player.getStat().getValue(Stats.EXPSP_RATE, (sp * Config.RATE_QUEST_REWARD_SP)));
 	}
 	
 	/**

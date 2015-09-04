@@ -94,7 +94,7 @@ public final class Backstab extends AbstractEffect
 		// Check if damage should be reflected
 		Formulas.calcDamageReflected(effector, effected, skill, true);
 		
-		damage = effected.calcStat(Stats.DAMAGE_CAP, damage, null, null);
+		damage = effected.getStat().getValue(Stats.DAMAGE_CAP, damage);
 		effected.reduceCurrentHp(damage, effector, !skill.isToggle(), false, true, skill);
 		effected.notifyDamageReceived(damage, effector, skill, true, false, false);
 		

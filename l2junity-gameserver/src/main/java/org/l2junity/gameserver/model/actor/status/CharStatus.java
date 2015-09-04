@@ -167,7 +167,7 @@ public class CharStatus
 		
 		if (value > 0)
 		{
-			final double hpLockMin = getActiveChar().calcStat(Stats.HP_LOCK_MIN, 0);
+			final double hpLockMin = getActiveChar().getStat().getValue(Stats.HP_LOCK_MIN, 0);
 			setCurrentHp(Math.max(getCurrentHp() - value, hpLockMin));
 		}
 		
@@ -287,7 +287,7 @@ public class CharStatus
 				return false;
 			}
 			
-			double hpLock = getActiveChar().calcStat(Stats.HP_LOCK, 0);
+			double hpLock = getActiveChar().getStat().getValue(Stats.HP_LOCK, 0);
 			if (hpLock > 0)
 			{
 				if (_currentHp == hpLock)

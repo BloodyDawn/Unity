@@ -67,7 +67,7 @@ public final class ManaHeal extends AbstractEffect
 		
 		if (!skill.isStatic())
 		{
-			amount = effected.calcStat(Stats.MANA_CHARGE, amount, null, null);
+			amount = effected.getStat().getValue(Stats.MANA_CHARGE, amount);
 		}
 		
 		// Prevents overheal and negative amount

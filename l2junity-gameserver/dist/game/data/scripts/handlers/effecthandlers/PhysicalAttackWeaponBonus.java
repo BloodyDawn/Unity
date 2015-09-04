@@ -119,7 +119,7 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 		
 		if (crit)
 		{
-			damage = effector.calcStat(Stats.CRITICAL_DAMAGE_SKILL, damage, effected, skill);
+			damage = effector.getStat().getValue(Stats.CRITICAL_DAMAGE_SKILL, damage);
 			damage *= 2;
 		}
 		
@@ -134,7 +134,7 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 			// Check if damage should be reflected
 			Formulas.calcDamageReflected(effector, effected, skill, crit);
 			
-			damage = effected.calcStat(Stats.DAMAGE_CAP, damage, null, null);
+			damage = effected.getStat().getValue(Stats.DAMAGE_CAP, damage);
 			effector.sendDamageMessage(effected, (int) damage, false, crit, false);
 			effected.reduceCurrentHp(damage, effector, skill);
 			effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
@@ -159,7 +159,7 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 		final byte shld = !_ignoreShieldDefence ? Formulas.calcShldUse(effector, effected, skill) : 0;
 		final double distance = effector.calculateDistance(effected, true, false);
 		
-		if (distance > effected.calcStat(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE, effected, skill))
+		if (distance > effected.getStat().getValue(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE))
 		{
 			return 0;
 		}
@@ -167,7 +167,7 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 		// Defense bonuses in PvP fight
 		if (isPvP)
 		{
-			defence *= effected.calcStat(Stats.PVP_PHYS_SKILL_DEF, 1, null, null);
+			defence *= effected.getStat().getValue(Stats.PVP_PHYS_SKILL_DEF, 1);
 		}
 		
 		switch (shld)
@@ -215,11 +215,11 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 		// Dmg bonuses in PvP fight
 		if (isPvP)
 		{
-			damage *= effector.calcStat(Stats.PVP_PHYS_SKILL_DMG, 1, null, null);
+			damage *= effector.getStat().getValue(Stats.PVP_PHYS_SKILL_DMG, 1);
 		}
 		
 		// Physical skill dmg boost
-		damage = effector.calcStat(Stats.PHYSICAL_SKILL_POWER, damage, null, null);
+		damage = effector.getStat().getValue(Stats.PHYSICAL_SKILL_POWER, damage);
 		
 		damage *= Formulas.calcAttributeBonus(effector, effected, skill);
 		if (effected.isAttackable())
@@ -227,11 +227,11 @@ public final class PhysicalAttackWeaponBonus extends AbstractEffect
 			final Weapon weapon = effector.getActiveWeaponItem();
 			if ((weapon != null) && weapon.isBowOrCrossBow())
 			{
-				damage *= effector.calcStat(Stats.PVE_BOW_SKILL_DMG, 1, null, null);
+				damage *= effector.getStat().getValue(Stats.PVE_BOW_SKILL_DMG, 1);
 			}
 			else
 			{
-				damage *= effector.calcStat(Stats.PVE_PHYSICAL_DMG, 1, null, null);
+				damage *= effector.getStat().getValue(Stats.PVE_PHYSICAL_DMG, 1);
 			}
 			if (!effected.isRaid() && !effected.isRaidMinion() && (effected.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (effector.getActingPlayer() != null) && ((effected.getLevel() - effector.getActingPlayer().getLevel()) >= 2))
 			{
