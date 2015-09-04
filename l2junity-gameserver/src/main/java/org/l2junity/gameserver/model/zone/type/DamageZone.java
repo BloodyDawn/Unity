@@ -169,7 +169,6 @@ public class DamageZone extends ZoneType
 			_castle = zone.getCastle();
 		}
 		
-		@SuppressWarnings("UnnecessaryExplicitNumericCast")
 		@Override
 		public void run()
 		{

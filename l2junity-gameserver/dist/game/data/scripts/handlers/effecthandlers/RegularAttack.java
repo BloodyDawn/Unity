@@ -34,7 +34,6 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  * An effect implementing regular attack (like autoattack with sword)
  * @author Nik
  */
-@SuppressWarnings("UnnecessaryExplicitNumericCast")
 public final class RegularAttack extends AbstractEffect
 {
 	private final double _pAtkMod;
@@ -63,7 +62,7 @@ public final class RegularAttack extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -77,7 +76,7 @@ public final class RegularAttack extends AbstractEffect
 		int damage = (int) Formulas.calcPhysDam(effector, effected, null, 0, shld, crit, effector.isChargedShot(ShotType.SOULSHOTS));
 		damage *= _pAtkMod;
 		damage = (int) effector.getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage); // Normal attacks have normal damage x 5
-
+		
 		if (damage > 0)
 		{
 			effector.sendDamageMessage(effected, damage, false, crit, false);
