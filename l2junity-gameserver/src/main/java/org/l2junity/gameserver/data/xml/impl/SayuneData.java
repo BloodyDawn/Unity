@@ -78,7 +78,7 @@ public class SayuneData implements IGameXmlReader
 		NamedNodeMap attrs;
 		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
 		{
-			if ("selector".equals(d.getNodeName()) || "choise".equals(d.getNodeName()) || "loc".equals(d.getNodeName()))
+			if ("selector".equals(d.getNodeName()) || "choice".equals(d.getNodeName()) || "loc".equals(d.getNodeName()))
 			{
 				attrs = d.getAttributes();
 				final int id = parseInteger(attrs, "id");
