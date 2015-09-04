@@ -39,6 +39,7 @@ public final class TreeOfLife extends AbstractNpcAI
 		14943,
 		15010,
 		15011,
+		15154,
 	};
 	
 	private TreeOfLife()

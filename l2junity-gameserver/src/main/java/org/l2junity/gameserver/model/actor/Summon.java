@@ -1243,4 +1243,10 @@ public abstract class Summon extends Playable
 	{
 		return super.isMovementDisabled() || !getTemplate().canMove();
 	}
+	
+	@Override
+	public boolean isTargetable()
+	{
+		return super.isTargetable() && getTemplate().isTargetable();
+	}
 }

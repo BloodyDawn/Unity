@@ -206,11 +206,12 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="19210" levels="1" name="Summon Tree of Sephiroth">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Summons an Enchanted Tree of Life that cannot be targeted. The summoned tree heals nearby party members for 30 seconds and casts a debuff canceling blessing. Consumes 5 Spirit Ores. -->
 		<set name="icon" val="icon.skill19210" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="101" />
 		<set name="mpConsume" val="243" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="5000" />
@@ -218,6 +219,21 @@
 		<set name="reuseDelay" val="180000" />
 		<set name="effectPoint" val="1733" />
 		<set name="isMagic" val="1" />
+		<set name="effectRange" val="1000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="hitCancelTime" val="3" />
+		<cond>
+			<and>
+				<player canSummonServitor="true" />
+				<player hasFreeSummonPoints="0" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Summon">
+				<param npcId="15154" lifeTime="30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="19211" levels="1" name="Barrer for Test">
 		<!-- AUTO GENERATED SKILL -->
@@ -314,14 +330,26 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="19219" levels="1" name="Blessing of Tree">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Recovers HP and removes bad abnormal statuses. -->
 		<set name="icon" val="icon.skill1258" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="7000" />
 		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="1" />
+		<set name="magicLvl" val="101" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="magicCriticalRate" val="5" />
+		<set name="affectRange" val="200" />
+		<for>
+			<effect name="HpCpHeal">
+				<param power="3338" /> <!-- Custom, value if Tree of Life level 4 -->
+			</effect>
+			<effect name="DispelByCategory">
+				<param slot="debuff" rate="100" max="10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="19220" levels="1" name="Sharing Equipment">
 		<!-- AUTO GENERATED SKILL -->
