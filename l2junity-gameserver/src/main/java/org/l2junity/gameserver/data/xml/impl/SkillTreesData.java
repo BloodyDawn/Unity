@@ -687,7 +687,7 @@ public final class SkillTreesData implements IGameXmlReader
 				continue;
 			}
 			
-			if (isAwaken && !isCurrentClassSkillNoParent(classId, entry.getKey()))
+			if (isAwaken && !isCurrentClassSkillNoParent(classId, entry.getKey()) && !isAwakenSaveSkill(player.getClassId(), skill.getSkillId()))
 			{
 				continue;
 			}
