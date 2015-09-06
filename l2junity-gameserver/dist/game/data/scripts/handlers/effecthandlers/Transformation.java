@@ -63,16 +63,16 @@ public final class Transformation extends AbstractEffect
 	{
 		return info.getEffected().isPlayer();
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
 		if (!_id.isEmpty())
 		{
-			TransformData.getInstance().transformPlayer(_id.get(Rnd.get(_id.size())), effected.getActingPlayer());
+			TransformData.getInstance().transformPlayer(_id.get(Rnd.get(1, _id.size())), effected.getActingPlayer());
 		}
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{
