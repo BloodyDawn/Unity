@@ -334,7 +334,15 @@ public enum Stats
 	 */
 	public Double finalize(Creature creature, Optional<Double> baseValue)
 	{
-		return _valueFinalizer.calc(creature, baseValue, this);
+		try
+		{
+			return _valueFinalizer.calc(creature, baseValue, this);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return 1d;
+		}
 	}
 	
 	public double add(double oldValue, double value)
