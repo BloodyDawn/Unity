@@ -87,7 +87,7 @@ public final class EnergyAttack extends AbstractEffect
 		
 		final PlayerInstance attacker = effector.getActingPlayer();
 		
-		final int charge = Math.max(_chargeConsume, attacker.getCharges());
+		final int charge = Math.min(_chargeConsume, attacker.getCharges());
 		
 		if (!attacker.decreaseCharges(charge))
 		{
