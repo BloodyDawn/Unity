@@ -62,7 +62,6 @@ import org.l2junity.gameserver.network.client.send.ExBasicActionList;
 import org.l2junity.gameserver.network.client.send.ExBeautyItemList;
 import org.l2junity.gameserver.network.client.send.ExCastleState;
 import org.l2junity.gameserver.network.client.send.ExGetBookMarkInfoPacket;
-import org.l2junity.gameserver.network.client.send.ExNewSkillToLearnByLevelUp;
 import org.l2junity.gameserver.network.client.send.ExNoticePostArrived;
 import org.l2junity.gameserver.network.client.send.ExNotifyPremiumItem;
 import org.l2junity.gameserver.network.client.send.ExPledgeCount;
@@ -570,11 +569,6 @@ public class EnterWorld implements IClientIncomingPacket
 		if (BeautyShopData.getInstance().hasBeautyData(activeChar.getRace(), activeChar.getAppearance().getSexType()))
 		{
 			activeChar.sendPacket(new ExBeautyItemList(activeChar));
-		}
-		
-		if (SkillTreesData.getInstance().hasAvailableSkills(activeChar, activeChar.getClassId()))
-		{
-			activeChar.sendPacket(ExNewSkillToLearnByLevelUp.STATIC_PACKET);
 		}
 		
 		activeChar.sendPacket(new ExAcquireAPSkillList(activeChar));
