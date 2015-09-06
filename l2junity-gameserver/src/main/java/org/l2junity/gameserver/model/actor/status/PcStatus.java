@@ -245,29 +245,19 @@ public class PcStatus extends PlayableStatus
 			
 			if ((fullValue > 0) && !isDOT)
 			{
-				SystemMessage smsg;
 				// Send a System Message to the L2PcInstance
-				smsg = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
+				SystemMessage smsg = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
 				smsg.addString(getActiveChar().getName());
 				smsg.addCharName(attacker);
 				smsg.addInt(fullValue);
 				getActiveChar().sendPacket(smsg);
 				
-				if ((tDmg > 0) && (summon != null))
+				if ((tDmg > 0) && (summon != null) && (attackerPlayer != null))
 				{
-					smsg = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
-					smsg.addString(summon.getName());
-					smsg.addCharName(attacker);
+					smsg = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_DEALT_S1_DAMAGE_TO_YOUR_TARGET_AND_S2_DAMAGE_TO_THE_SERVITOR);
+					smsg.addInt(fullValue);
 					smsg.addInt(tDmg);
-					getActiveChar().sendPacket(smsg);
-					
-					if (attackerPlayer != null)
-					{
-						smsg = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_DEALT_S1_DAMAGE_TO_YOUR_TARGET_AND_S2_DAMAGE_TO_THE_SERVITOR);
-						smsg.addInt(fullValue);
-						smsg.addInt(tDmg);
-						attackerPlayer.sendPacket(smsg);
-					}
+					attackerPlayer.sendPacket(smsg);
 				}
 			}
 		}
