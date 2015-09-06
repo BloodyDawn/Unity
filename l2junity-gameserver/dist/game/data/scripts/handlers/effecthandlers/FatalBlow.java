@@ -90,7 +90,7 @@ public final class FatalBlow extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -125,7 +125,11 @@ public final class FatalBlow extends AbstractEffect
 		// Check if damage should be reflected
 		Formulas.calcDamageReflected(effector, effected, skill, true);
 		
-		damage = effected.getStat().getValue(Stats.DAMAGE_CAP, damage);
+		final double damageCap = effected.getStat().getValue(Stats.DAMAGE_CAP);
+		if (damageCap > 0)
+		{
+			damage = Math.min(damage, damageCap);
+		}
 		effected.reduceCurrentHp(damage, effector, skill);
 		effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 		

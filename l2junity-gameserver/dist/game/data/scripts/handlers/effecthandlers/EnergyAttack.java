@@ -76,7 +76,7 @@ public final class EnergyAttack extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -96,7 +96,7 @@ public final class EnergyAttack extends AbstractEffect
 			attacker.sendPacket(sm);
 			return;
 		}
-
+		
 		double attack = attacker.getPAtk(effected);
 		int defence = effected.getPDef(attacker);
 		
@@ -174,7 +174,11 @@ public final class EnergyAttack extends AbstractEffect
 			// Check if damage should be reflected
 			Formulas.calcDamageReflected(attacker, effected, skill, critical);
 			
-			damage = effected.getStat().getValue(Stats.DAMAGE_CAP, damage);
+			final double damageCap = effected.getStat().getValue(Stats.DAMAGE_CAP);
+			if (damageCap > 0)
+			{
+				damage = Math.min(damage, damageCap);
+			}
 			attacker.sendDamageMessage(effected, (int) damage, false, critical, false);
 			effected.reduceCurrentHp(damage, attacker, skill);
 			effected.notifyDamageReceived(damage, attacker, skill, critical, false, false);

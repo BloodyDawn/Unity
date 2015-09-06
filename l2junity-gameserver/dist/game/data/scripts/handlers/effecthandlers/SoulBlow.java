@@ -72,7 +72,7 @@ public final class SoulBlow extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -85,7 +85,7 @@ public final class SoulBlow extends AbstractEffect
 		{
 			((Attackable) effected).overhitEnabled(true);
 		}
-
+		
 		boolean ss = skill.useSoulShot() && effector.isChargedShot(ShotType.SOULSHOTS);
 		byte shld = Formulas.calcShldUse(effector, effected, skill);
 		double damage = Formulas.calcBlowDamage(effector, effected, skill, _power, shld, ss);
@@ -99,7 +99,11 @@ public final class SoulBlow extends AbstractEffect
 		// Check if damage should be reflected
 		Formulas.calcDamageReflected(effector, effected, skill, true);
 		
-		damage = (int) effected.getStat().getValue(Stats.DAMAGE_CAP, damage);
+		final double damageCap = effected.getStat().getValue(Stats.DAMAGE_CAP);
+		if (damageCap > 0)
+		{
+			damage = Math.min(damage, damageCap);
+		}
 		effected.reduceCurrentHp(damage, effector, skill);
 		effected.notifyDamageReceived(damage, effector, skill, false, false, false);
 		

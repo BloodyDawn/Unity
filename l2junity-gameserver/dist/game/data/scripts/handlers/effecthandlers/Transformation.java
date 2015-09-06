@@ -69,7 +69,7 @@ public final class Transformation extends AbstractEffect
 	{
 		if (!_id.isEmpty())
 		{
-			TransformData.getInstance().transformPlayer(_id.get(Rnd.get(1, _id.size())), effected.getActingPlayer());
+			TransformData.getInstance().transformPlayer(_id.get(Rnd.get(_id.size())), effected.getActingPlayer());
 		}
 	}
 	

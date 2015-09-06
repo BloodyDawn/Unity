@@ -67,7 +67,7 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -75,7 +75,7 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 		{
 			return;
 		}
-
+		
 		if (effector.isMovementDisabled())
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
@@ -92,7 +92,7 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 			((Attackable) effected).overhitEnabled(true);
 		}
 		
-		int damage = 0;
+		double damage = 0;
 		boolean ss = skill.isPhysical() && effector.isChargedShot(ShotType.SOULSHOTS);
 		damage = (int) Formulas.calcPhysDam(effector, effected, skill, _power * (-((effected.getCurrentHp() * 2) / effected.getMaxHp()) + 2), shld, false, ss);
 		
@@ -101,8 +101,12 @@ public final class PhysicalAttackHpLink extends AbstractEffect
 			// Check if damage should be reflected.
 			Formulas.calcDamageReflected(effector, effected, skill, crit);
 			
-			damage = (int) effected.getStat().getValue(Stats.DAMAGE_CAP, damage);
-			effector.sendDamageMessage(effected, damage, false, crit, false);
+			final double damageCap = effected.getStat().getValue(Stats.DAMAGE_CAP);
+			if (damageCap > 0)
+			{
+				damage = Math.min(damage, damageCap);
+			}
+			effector.sendDamageMessage(effected, (int) damage, false, crit, false);
 			effected.reduceCurrentHp(damage, effector, skill);
 			effected.notifyDamageReceived(damage, effector, skill, crit, false, false);
 		}
