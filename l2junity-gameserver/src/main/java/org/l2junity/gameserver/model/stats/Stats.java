@@ -44,6 +44,8 @@ import org.l2junity.gameserver.model.stats.finalizers.PEvasionRateFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.PRangeFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.RandomDamageFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.SpeedFinalizer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Enum of basic stats.
@@ -282,6 +284,7 @@ public enum Stats
 	STAT_SKILLCRITICAL("statSkillCritical"),
 	STAT_SPEED("statSpeed");
 	
+	static final Logger LOGGER = LoggerFactory.getLogger(Stats.class);
 	public static final int NUM_STATS = values().length;
 	
 	private final String _value;
@@ -340,8 +343,8 @@ public enum Stats
 		}
 		catch (Exception e)
 		{
-			e.printStackTrace();
-			return 1d;
+			LOGGER.warn("Exception during finalization for : {} stat: {} : ", creature, toString(), e);
+			return defaultValue(creature, baseValue, this);
 		}
 	}
 	
