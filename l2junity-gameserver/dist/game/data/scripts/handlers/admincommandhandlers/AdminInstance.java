@@ -145,13 +145,12 @@ public final class AdminInstance implements IAdminCommandHandler
 					
 					final Instance instance = InstanceManager.getInstance().createInstance(template);
 					final Location loc = instance.getEnterLocation();
-					
 					if (loc != null)
 					{
 						for (PlayerInstance players : members)
 						{
 							instance.addAllowed(players);
-							players.teleToLocation(loc, false);
+							players.teleToLocation(loc, instance);
 						}
 					}
 					sendTemplateDetails(activeChar, instance.getTemplateId());
@@ -207,7 +206,7 @@ public final class AdminInstance implements IAdminCommandHandler
 			html.replace("%activeWorlds%", template.getWorldCount() + " / " + (template.getMaxWorlds() == -1 ? "Unlimited" : template.getMaxWorlds()));
 			html.replace("%duration%", template.getDuration() + " minutes");
 			html.replace("%emptyDuration%", TimeUnit.MILLISECONDS.toMinutes(template.getEmptyDestroyTime()) + " minutes");
-			html.replace("%ejectDuration%", TimeUnit.MILLISECONDS.toMinutes(template.getEjectTime()) + " minutes");
+			html.replace("%ejectDuration%", template.getEjectTime() + " minutes");
 			html.replace("%removeBuff%", template.isRemoveBuffEnabled());
 			
 			sb.append("<table border=0 cellpadding=2 cellspacing=0 bgcolor=\"363636\">");

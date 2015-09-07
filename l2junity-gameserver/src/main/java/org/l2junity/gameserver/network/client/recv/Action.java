@@ -114,8 +114,8 @@ public final class Action implements IClientIncomingPacket
 			return;
 		}
 		
-		// Players can't interact with objects in the other instances, except from multiverse
-		if ((obj.getInstanceId() != activeChar.getInstanceId()) && (activeChar.getInstanceId() != -1))
+		// Players can't interact with objects in the other instances
+		if (obj.getInstanceWorld() != activeChar.getInstanceWorld())
 		{
 			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

@@ -18,7 +18,6 @@
  */
 package ai.npc.Sirra;
 
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.instancezone.Instance;
@@ -46,7 +45,7 @@ public final class Sirra extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
-		final Instance world = InstanceManager.getInstance().getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			if ((world.getTemplateId() == FREYA_INSTID))

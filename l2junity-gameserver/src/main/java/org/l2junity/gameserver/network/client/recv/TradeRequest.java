@@ -81,9 +81,9 @@ public final class TradeRequest implements IClientIncomingPacket
 		
 		final WorldObject target = World.getInstance().findObject(_objectId);
 		// If there is no target, target is far away or
-		// they are in different instances (except multiverse)
+		// they are in different instances
 		// trade request is ignored and there is no system message.
-		if ((target == null) || !player.isInSurroundingRegion(target) || ((target.getInstanceId() != player.getInstanceId()) && (player.getInstanceId() != -1)))
+		if ((target == null) || !player.isInSurroundingRegion(target) || (target.getInstanceWorld() != player.getInstanceWorld()))
 		{
 			return;
 		}

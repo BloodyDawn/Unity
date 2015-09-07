@@ -171,7 +171,7 @@ public abstract class LetterQuest extends Quest
 				{
 					showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_IN_PARTY_STATUS, ExShowScreenMessage.TOP_CENTER, 5000);
 				}
-				else if (player.getInstanceId() > 0)
+				else if (player.isInInstance())
 				{
 					showOnScreenMsg(player, NpcStringId.YOU_MAY_NOT_TELEPORT_WHILE_USING_INSTANCE_ZONE, ExShowScreenMessage.TOP_CENTER, 5000);
 				}

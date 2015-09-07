@@ -62,7 +62,6 @@ import org.l2junity.gameserver.model.holders.SpawnHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.interfaces.INamable;
-import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -355,7 +354,7 @@ public final class Instance implements IIdentifiable, INamable
 			
 			// Create new door instance
 			final L2DoorInstance door = new L2DoorInstance(new L2DoorTemplate(templ));
-			door.setInstanceId(_id);
+			door.setInstance(this);
 			door.setCurrentHp(door.getMaxHp());
 			door.spawnMe(door.getTemplate().getX(), door.getTemplate().getY(), door.getTemplate().getZ());
 			_doors.put(doorId, door);
@@ -393,6 +392,33 @@ public final class Instance implements IIdentifiable, INamable
 	public L2DoorInstance getDoor(int id)
 	{
 		return _doors.get(id);
+	}
+	
+	/**
+	 * Handle open/close status of instance doors.
+	 * @param id ID of doors
+	 * @param open {@code true} means open door, {@code false} means close door
+	 */
+	public void openCloseDoor(int id, boolean open)
+	{
+		final L2DoorInstance door = _doors.get(id);
+		if (door != null)
+		{
+			if (open)
+			{
+				if (!door.getOpen())
+				{
+					door.openMe();
+				}
+			}
+			else
+			{
+				if (door.getOpen())
+				{
+					door.closeMe();
+				}
+			}
+		}
 	}
 	
 	/**
@@ -632,16 +658,16 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	public void ejectPlayer(PlayerInstance player)
 	{
-		if (player.getInstanceId() == getId())
+		if (player.getInstanceWorld().equals(this))
 		{
 			final Location loc = _template.getExitLocation(player);
 			if (loc != null)
 			{
-				player.teleToLocation(loc);
+				player.teleToLocation(loc, null);
 			}
 			else
 			{
-				player.teleToLocation(TeleportWhereType.TOWN);
+				player.teleToLocation(TeleportWhereType.TOWN, null);
 			}
 		}
 	}
@@ -826,7 +852,7 @@ public final class Instance implements IIdentifiable, INamable
 	 * @param object instance of object which enters/leaves instance
 	 * @param enter {@code true} when object enter, {@code false} when object leave
 	 */
-	public void onInstanceIdChange(WorldObject object, boolean enter)
+	public void onInstanceChange(WorldObject object, boolean enter)
 	{
 		if (object.isPlayer())
 		{
@@ -962,14 +988,7 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	public Location getEnterLocation()
 	{
-		final Location enter = _template.getEnterLocation();
-		if (enter != null)
-		{
-			final Location loc = new Location(enter);
-			loc.setInstanceId(getId());
-			return loc;
-		}
-		return null;
+		return _template.getEnterLocation();
 	}
 	
 	/**
@@ -1017,14 +1036,20 @@ public final class Instance implements IIdentifiable, INamable
 	 */
 	private void sendWorldDestroyMessage(int delay)
 	{
-		// System message
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THIS_INSTANT_ZONE_WILL_BE_TERMINATED_IN_S1_MINUTE_S_YOU_WILL_BE_FORCED_OUT_OF_THE_DUNGEON_WHEN_THE_TIME_EXPIRES);
 		sm.addInt(delay);
 		broadcastPacket(sm);
-		
-		// On screen message
-		final ExShowScreenMessage msg = new ExShowScreenMessage(SystemMessageId.THIS_DUNGEON_WILL_EXPIRE_IN_S1_MINUTE_S_YOU_WILL_BE_FORCED_OUT_OF_THE_DUNGEON_WHEN_THE_TIME_EXPIRES, ExShowScreenMessage.BOTTOM_RIGHT, 8000);
-		msg.addStringParameter(String.valueOf(delay));
-		broadcastPacket(msg);
+	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		return (obj != null) && (obj instanceof Instance) && (((Instance) obj).getId() == getId());
+	}
+	
+	@Override
+	public String toString()
+	{
+		return getName() + "(" + getId() + ")";
 	}
 }

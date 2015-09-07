@@ -67,7 +67,7 @@ public final class LibraryOfSages extends AbstractInstance
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
-		final Instance world = getPlayerInstance(player, true);
+		final Instance world = player.getInstanceWorld();
 		if (world != null)
 		{
 			final Npc elcadia = world.getParameters().getObject("elcadia", Npc.class);
@@ -75,8 +75,8 @@ public final class LibraryOfSages extends AbstractInstance
 			{
 				case "TELEPORT2":
 				{
-					teleportPlayer(player, LIBRARY_LOC, world.getId());
-					elcadia.teleToLocation(LIBRARY_LOC.getX(), LIBRARY_LOC.getY(), LIBRARY_LOC.getZ(), 0, world.getId());
+					player.teleToLocation(LIBRARY_LOC);
+					elcadia.teleToLocation(LIBRARY_LOC);
 					break;
 				}
 				case "exit":
@@ -99,8 +99,8 @@ public final class LibraryOfSages extends AbstractInstance
 				{
 					final Location loc = world.getEnterLocation();
 					cancelQuestTimer("FOLLOW", npc, player);
-					player.teleToLocation(loc);
-					elcadia.teleToLocation(loc);
+					player.teleToLocation(loc, world);
+					elcadia.teleToLocation(loc, world);
 					break;
 				}
 			}

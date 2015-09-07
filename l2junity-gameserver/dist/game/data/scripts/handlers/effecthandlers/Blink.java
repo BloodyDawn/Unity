@@ -64,7 +64,7 @@ public final class Blink extends AbstractEffect
 		// While affected by escape blocking effect you cannot use Blink or Scroll of Escape
 		return super.canStart(info) && !info.getEffected().cannotEscape();
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -74,13 +74,13 @@ public final class Blink extends AbstractEffect
 		final double course = Math.toRadians(skill.getFlyCourse());
 		final int x1 = (int) (Math.cos(Math.PI + radian + course) * radius);
 		final int y1 = (int) (Math.sin(Math.PI + radian + course) * radius);
-
+		
 		int x = effected.getX() + x1;
 		int y = effected.getY() + y1;
 		int z = effected.getZ();
-
-		final Location destination = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceId());
-
+		
+		final Location destination = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceWorld());
+		
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		effected.broadcastPacket(new FlyToLocation(effected, destination, FlyType.DUMMY));
 		effected.abortAttack();

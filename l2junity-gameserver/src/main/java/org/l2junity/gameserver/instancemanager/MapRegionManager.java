@@ -408,16 +408,13 @@ public final class MapRegionManager implements IGameXmlReader
 			}
 			
 			// Checking if in an instance
-			if (player.getInstanceId() > 0)
+			final Instance inst = player.getInstanceWorld();
+			if (inst != null)
 			{
-				final Instance inst = InstanceManager.getInstance().getInstance(player.getInstanceId());
-				if (inst != null)
+				final Location loc = inst.getExitLocation(player);
+				if (loc != null)
 				{
-					final Location loc = inst.getExitLocation(player);
-					if (loc != null)
-					{
-						return loc;
-					}
+					return loc;
 				}
 			}
 		}

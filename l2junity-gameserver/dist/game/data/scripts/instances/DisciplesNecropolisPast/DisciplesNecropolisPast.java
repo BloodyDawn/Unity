@@ -94,7 +94,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	}
 	
 	// Locations
-	private static final Location ENTER = new Location(-89554, 216078, -7488, 0, 0);
+	private static final Location ENTER = new Location(-89554, 216078, -7488);
 	// NpcStringId
 	private static final NpcStringId[] LILITH_SHOUT =
 	{
@@ -128,19 +128,19 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 		switch (count)
 		{
 			case 4:
-				openDoor(DOOR_1, world.getId());
+				world.openCloseDoor(DOOR_1, true);
 				break;
 			case 10:
-				openDoor(DOOR_2, world.getId());
+				world.openCloseDoor(DOOR_2, true);
 				break;
 			case 18:
-				openDoor(DOOR_3, world.getId());
+				world.openCloseDoor(DOOR_3, true);
 				break;
 			case 28:
-				openDoor(DOOR_4, world.getId());
+				world.openCloseDoor(DOOR_4, true);
 				break;
 			case 40:
-				openDoor(DOOR_5, world.getId());
+				world.openCloseDoor(DOOR_5, true);
 				break;
 		}
 	}
@@ -157,7 +157,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
-		final Instance world = getPlayerInstance(player, true);
+		final Instance world = player.getInstanceWorld();
 		if (world != null)
 		{
 			switch (event)
@@ -173,7 +173,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 				}
 				case "TELEPORT":
 				{
-					player.teleToLocation(ENTER, 0);
+					player.teleToLocation(ENTER);
 					break;
 				}
 				case "FIGHT":
@@ -311,7 +311,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	@Override
 	public String onAttack(Npc npc, PlayerInstance player, int damage, boolean isSummon)
 	{
-		final Instance world = getPlayerInstance(player, true);
+		final Instance world = player.getInstanceWorld();
 		if (world != null)
 		{
 			if (npc.isScriptValue(0))
@@ -342,7 +342,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	@Override
 	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
-		final Instance world = getPlayerInstance(player, true);
+		final Instance world = player.getInstanceWorld();
 		if (world != null)
 		{
 			synchronized (world)
@@ -419,10 +419,10 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 			{
 				if (qs.getCond() >= 3)
 				{
-					final Instance world = getInstance(npc);
+					final Instance world = npc.getInstanceWorld();
 					if (world != null)
 					{
-						openDoor(DISCIPLES_NECROPOLIS_DOOR, world.getId());
+						world.openCloseDoor(DISCIPLES_NECROPOLIS_DOOR, true);
 						playMovie(talker, Movie.SSQ_SEALING_EMPEROR_1ST);
 						startQuestTimer("FIGHT", 1000, null, talker);
 					}

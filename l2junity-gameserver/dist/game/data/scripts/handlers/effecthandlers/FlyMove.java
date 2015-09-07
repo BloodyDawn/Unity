@@ -62,7 +62,7 @@ public class FlyMove extends AbstractEffect
 		_delay = params.getInt("delay", 0);
 		_animationSpeed = params.getInt("animationSpeed", 0);
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -81,7 +81,7 @@ public class FlyMove extends AbstractEffect
 		final int posX = (int) (target.getX() + (_range * Math.cos(radiansAngle)));
 		final int posY = (int) (target.getY() + (_range * Math.sin(radiansAngle)));
 		final int posZ = target.getZ();
-		final Location destination = GeoData.getInstance().moveCheck(effector.getX(), effector.getY(), effector.getZ(), posX, posY, posZ, effector.getInstanceId());
+		final Location destination = GeoData.getInstance().moveCheck(effector.getX(), effector.getY(), effector.getZ(), posX, posY, posZ, effector.getInstanceWorld());
 		
 		effector.broadcastPacket(new FlyToLocation(effector, destination, _flyType, _speed, _delay, _animationSpeed));
 		effector.setXYZ(destination);

@@ -32,7 +32,6 @@ import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.ClanHallManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
@@ -585,7 +584,7 @@ public class L2DoorInstance extends Creature
 	@Override
 	public void reduceCurrentHp(double damage, Creature attacker, boolean awake, boolean isDOT, Skill skill)
 	{
-		if (isWall() && (getInstanceId() == 0))
+		if (isWall() && !isInInstance())
 		{
 			if (!attacker.isServitor())
 			{
@@ -660,13 +659,8 @@ public class L2DoorInstance extends Creature
 	 */
 	private L2DoorInstance getSiblingDoor(int doorId)
 	{
-		if (getInstanceId() == 0)
-		{
-			return DoorData.getInstance().getDoor(doorId);
-		}
-		
-		final Instance inst = InstanceManager.getInstance().getInstance(getInstanceId());
-		return (inst != null) ? inst.getDoor(doorId) : null;
+		final Instance inst = getInstanceWorld();
+		return (inst != null) ? inst.getDoor(doorId) : DoorData.getInstance().getDoor(doorId);
 	}
 	
 	private void startAutoCloseTask()

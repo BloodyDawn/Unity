@@ -24,7 +24,6 @@ import org.l2junity.gameserver.enums.InstanceReenterType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.PcCondOverride;
-import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.instancezone.Instance;
@@ -47,37 +46,13 @@ public abstract class AbstractInstance extends AbstractNpcAI
 	}
 	
 	/**
-	 * Get instance world by instance ID.<br>
-	 * Equivalent of {@link InstanceManager#getInstance(int)}
-	 * @param instanceId
-	 * @return instance itself if found, otherwise null
-	 */
-	public Instance getInstance(int instanceId)
-	{
-		return InstanceManager.getInstance().getInstance(instanceId);
-	}
-	
-	/**
-	 * Get instance world for {@link Creature}.<br>
-	 * Equivalent of {@link InstanceManager#getInstance(Creature)}
-	 * @param creature creature inside instance
-	 * @return instance world if found, otherwise null
-	 */
-	public Instance getInstance(Creature creature)
-	{
-		return InstanceManager.getInstance().getInstance(creature);
-	}
-	
-	/**
-	 * Get instance world for {@link PlayerInstance}.<br>
-	 * Equivalent of {@link InstanceManager#getPlayerInstance(PlayerInstance, boolean)}
+	 * Get instance world associated with {@code player}.<br>
 	 * @param player player who wants get instance world
-	 * @param isInside when {@code true} find world where player is currently located, otherwise find world where player can enter
 	 * @return instance world if found, otherwise null
 	 */
-	public Instance getPlayerInstance(PlayerInstance player, boolean isInside)
+	public Instance getPlayerInstance(PlayerInstance player)
 	{
-		return InstanceManager.getInstance().getPlayerInstance(player, isInside);
+		return InstanceManager.getInstance().getPlayerInstance(player, false);
 	}
 	
 	/**
@@ -102,7 +77,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 	 */
 	protected final void enterInstance(PlayerInstance player, Npc npc, int templateId)
 	{
-		Instance instance = getPlayerInstance(player, false);
+		Instance instance = getPlayerInstance(player);
 		if (instance != null) // Player has already any instance active
 		{
 			if (instance.getTemplateId() != templateId)
@@ -148,7 +123,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 			// Check if any player from enter group has active instance
 			for (PlayerInstance member : enterGroup)
 			{
-				if (getPlayerInstance(member, false) != null)
+				if (getPlayerInstance(member) != null)
 				{
 					enterGroup.forEach(p -> p.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANT_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON));
 					return;
@@ -198,7 +173,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 		final Location loc = instance.getEnterLocation();
 		if (loc != null)
 		{
-			player.teleToLocation(loc, false);
+			player.teleToLocation(loc, instance);
 		}
 		else
 		{
@@ -223,7 +198,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 	 */
 	protected void finishInstance(PlayerInstance player)
 	{
-		final Instance inst = getPlayerInstance(player, true);
+		final Instance inst = player.getInstanceWorld();
 		if (inst != null)
 		{
 			inst.finishInstance();
@@ -238,7 +213,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 	 */
 	protected void finishInstance(PlayerInstance player, int delay)
 	{
-		final Instance inst = getPlayerInstance(player, true);
+		final Instance inst = player.getInstanceWorld();
 		if (inst != null)
 		{
 			inst.finishInstance(delay);

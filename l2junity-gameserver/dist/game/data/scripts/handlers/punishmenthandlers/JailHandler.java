@@ -157,7 +157,7 @@ public class JailHandler implements IPunishmentHandler
 	 */
 	private static void applyToPlayer(PunishmentTask task, PlayerInstance player)
 	{
-		player.setInstanceId(0);
+		player.setInstance(null);
 		
 		if (OlympiadManager.getInstance().isRegisteredInComp(player))
 		{

@@ -126,7 +126,7 @@ public final class DarkCloudMansion extends AbstractInstance
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			switch (event)
@@ -158,7 +158,7 @@ public final class DarkCloudMansion extends AbstractInstance
 		}
 		else
 		{
-			final Instance world = getInstance(npc);
+			final Instance world = npc.getInstanceWorld();
 			if (world != null)
 			{
 				teleportPlayerOut(player, world);
@@ -170,14 +170,14 @@ public final class DarkCloudMansion extends AbstractInstance
 	@Override
 	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			switch (npc.getId())
 			{
 				case FAITH:
 				{
-					openDoor(ROOM_A_DOOR, world.getId());
+					world.openCloseDoor(ROOM_A_DOOR, true);
 					npc.showChatWindow(player);
 					break;
 				}
@@ -204,13 +204,13 @@ public final class DarkCloudMansion extends AbstractInstance
 						{
 							addSpawn(MONOLITH_PRIVATES[getRandom(MONOLITH_PRIVATES.length)], npc, false, 0, false, world.getId());
 						}
-						closeDoor(ROOM_B_DOOR, world.getId());
+						world.openCloseDoor(ROOM_B_DOOR, false);
 					}
 					break;
 				}
 				case ADVERSITY:
 				{
-					openDoor(ROOM_B_DOOR, world.getId());
+					world.openCloseDoor(ROOM_B_DOOR, true);
 					npc.showChatWindow(player);
 					break;
 				}
@@ -220,7 +220,7 @@ public final class DarkCloudMansion extends AbstractInstance
 					{
 						world.spawnGroup("roomC").forEach(n -> n.setScriptValue(8));
 						world.setStatus(8);
-						openDoor(ROOM_D_DOOR, world.getId());
+						world.openCloseDoor(ROOM_D_DOOR, true);
 					}
 					npc.showChatWindow(player);
 					break;
@@ -242,7 +242,7 @@ public final class DarkCloudMansion extends AbstractInstance
 	@Override
 	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			switch (npc.getId())
@@ -251,7 +251,7 @@ public final class DarkCloudMansion extends AbstractInstance
 				{
 					if (world.isStatus(2) && (attacker.getY() < 179986))
 					{
-						closeDoor(ROOM_A_DOOR, world.getId());
+						world.openCloseDoor(ROOM_A_DOOR, false);
 					}
 					break;
 				}
@@ -259,7 +259,7 @@ public final class DarkCloudMansion extends AbstractInstance
 				{
 					if (world.isStatus(7))
 					{
-						closeDoor(ROOM_D_DOOR, world.getId());
+						world.openCloseDoor(ROOM_D_DOOR, false);
 						if (npc.isInvul() && (getRandom(100) < 12))
 						{
 							addSpawn(BELETH_SUBORDINATE[getRandom(BELETH_SUBORDINATE.length)], npc, false, 0, false, world.getId());
@@ -282,7 +282,7 @@ public final class DarkCloudMansion extends AbstractInstance
 	@Override
 	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			switch (world.getStatus())
@@ -293,7 +293,7 @@ public final class DarkCloudMansion extends AbstractInstance
 					{
 						world.setStatus(1);
 						world.spawnGroup("hall");
-						openDoor(START_DOOR, world.getId());
+						world.openCloseDoor(START_DOOR, true);
 					}
 					break;
 				}
@@ -303,7 +303,7 @@ public final class DarkCloudMansion extends AbstractInstance
 					{
 						world.setStatus(2);
 						world.spawnGroup("roomA");
-						openDoor(ROOM_A_DOOR, world.getId());
+						world.openCloseDoor(ROOM_A_DOOR, true);
 					}
 					break;
 				}
@@ -322,7 +322,7 @@ public final class DarkCloudMansion extends AbstractInstance
 					if (world.getAliveNpcs(BELETH_SUBORDINATE).isEmpty())
 					{
 						world.setStatus(4);
-						openDoor(ROOM_B_DOOR, world.getId());
+						world.openCloseDoor(ROOM_B_DOOR, true);
 						
 						int current = 0;
 						final List<Npc> desks = world.spawnGroup("roomB");
@@ -340,7 +340,7 @@ public final class DarkCloudMansion extends AbstractInstance
 					{
 						world.setStatus(6);
 						world.spawnGroup("roomC");
-						openDoor(ROOM_C_DOOR, world.getId());
+						world.openCloseDoor(ROOM_C_DOOR, true);
 					}
 					break;
 				}
@@ -350,7 +350,7 @@ public final class DarkCloudMansion extends AbstractInstance
 					{
 						world.setStatus(7);
 						world.spawnGroup("roomD");
-						openDoor(ROOM_D_DOOR, world.getId());
+						world.openCloseDoor(ROOM_D_DOOR, true);
 						for (int i = 1; i <= 7; i++)
 						{
 							final List<Npc> row = world.spawnGroup("roomD" + i);
@@ -369,7 +369,7 @@ public final class DarkCloudMansion extends AbstractInstance
 					if (roomClear == 0)
 					{
 						world.setStatus(9);
-						openDoor(ROOM_E_DOOR, world.getId());
+						world.openCloseDoor(ROOM_E_DOOR, true);
 						spawnRoomE(world);
 					}
 					break;
@@ -432,7 +432,7 @@ public final class DarkCloudMansion extends AbstractInstance
 					startQuestTimer("CHAT", 4000, npc, null);
 					startQuestTimer("DELETE", 4500, npc, null);
 				}
-				closeDoor(ROOM_E_DOOR, world.getId());
+				world.openCloseDoor(ROOM_E_DOOR, false);
 			}
 		}
 	}

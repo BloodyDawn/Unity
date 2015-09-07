@@ -41,6 +41,7 @@ import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableHate;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableKill;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcCanBeSeen;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcCreatureSee;
+import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcDespawn;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcEventReceived;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcFirstTalk;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcManorBypass;
@@ -185,6 +186,7 @@ public enum EventType
 	ON_NPC_TELEPORT(OnNpcTeleport.class, void.class),
 	ON_NPC_MANOR_BYPASS(OnNpcManorBypass.class, void.class),
 	ON_NPC_MENU_SELECT(OnNpcMenuSelect.class, void.class),
+	ON_NPC_DESPAWN(OnNpcDespawn.class, void.class),
 	
 	// Olympiad events
 	ON_OLYMPIAD_MATCH_RESULT(OnOlympiadMatchResult.class, void.class),

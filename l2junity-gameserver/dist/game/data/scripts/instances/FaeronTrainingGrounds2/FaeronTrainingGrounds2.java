@@ -183,7 +183,7 @@ public final class FaeronTrainingGrounds2 extends AbstractInstance
 	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		// Check if monster is inside instance
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world == null)
 		{
 			return super.onKill(npc, killer, isSummon);
@@ -264,7 +264,7 @@ public final class FaeronTrainingGrounds2 extends AbstractInstance
 	 */
 	private void spawnMonsters(int npcId, PlayerInstance player)
 	{
-		final Instance world = getPlayerInstance(player, true);
+		final Instance world = player.getInstanceWorld();
 		if (world != null)
 		{
 			final StatsSet params = world.getParameters();
@@ -286,7 +286,7 @@ public final class FaeronTrainingGrounds2 extends AbstractInstance
 	 */
 	private void despawnMonsters(PlayerInstance player)
 	{
-		final Instance world = getPlayerInstance(player, true);
+		final Instance world = player.getInstanceWorld();
 		if (world != null)
 		{
 			final StatsSet params = world.getParameters();

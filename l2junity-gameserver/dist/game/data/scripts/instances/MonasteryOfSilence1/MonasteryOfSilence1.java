@@ -92,7 +92,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
-		final Instance world = getPlayerInstance(player, true);
+		final Instance world = player.getInstanceWorld();
 		if (world != null)
 		{
 			final Npc elcadia = world.getNpc(ELCADIA_INSTANCE);
@@ -100,8 +100,8 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 			{
 				case "TELE2":
 				{
-					teleportPlayer(player, CENTRAL_ROOM_LOC, world.getId());
-					elcadia.teleToLocation(CENTRAL_ROOM_LOC, 0, world.getId());
+					player.teleToLocation(CENTRAL_ROOM_LOC);
+					elcadia.teleToLocation(CENTRAL_ROOM_LOC);
 					startQuestTimer("START_MOVIE", 2000, npc, player);
 					break;
 				}
@@ -118,38 +118,38 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 				}
 				case "BACK":
 				{
-					teleportPlayer(player, BACK_LOC, world.getId());
-					elcadia.teleToLocation(BACK_LOC, 0, world.getId());
+					player.teleToLocation(BACK_LOC);
+					elcadia.teleToLocation(BACK_LOC);
 					break;
 				}
 				case "EAST":
 				{
-					teleportPlayer(player, EAST_WATCHERS_ROOM_LOC, world.getId());
-					elcadia.teleToLocation(EAST_WATCHERS_ROOM_LOC, 0, world.getId());
+					player.teleToLocation(EAST_WATCHERS_ROOM_LOC);
+					elcadia.teleToLocation(EAST_WATCHERS_ROOM_LOC);
 					break;
 				}
 				case "WEST":
 				{
-					teleportPlayer(player, WEST_WATCHERS_ROOM_LOC, world.getId());
-					elcadia.teleToLocation(WEST_WATCHERS_ROOM_LOC, 0, world.getId());
+					player.teleToLocation(WEST_WATCHERS_ROOM_LOC);
+					elcadia.teleToLocation(WEST_WATCHERS_ROOM_LOC);
 					break;
 				}
 				case "NORTH":
 				{
-					teleportPlayer(player, NORTH_WATCHERS_ROOM_LOC, world.getId());
-					elcadia.teleToLocation(NORTH_WATCHERS_ROOM_LOC, 0, world.getId());
+					player.teleToLocation(NORTH_WATCHERS_ROOM_LOC);
+					elcadia.teleToLocation(NORTH_WATCHERS_ROOM_LOC);
 					break;
 				}
 				case "SOUTH":
 				{
-					teleportPlayer(player, SOUTH_WATCHERS_ROOM_LOC, world.getId());
-					elcadia.teleToLocation(SOUTH_WATCHERS_ROOM_LOC, 0, world.getId());
+					player.teleToLocation(SOUTH_WATCHERS_ROOM_LOC);
+					elcadia.teleToLocation(SOUTH_WATCHERS_ROOM_LOC);
 					break;
 				}
 				case "CENTER":
 				{
-					teleportPlayer(player, CENTRAL_ROOM_LOC, world.getId());
-					elcadia.teleToLocation(CENTRAL_ROOM_LOC, 0, world.getId());
+					player.teleToLocation(CENTRAL_ROOM_LOC);
+					elcadia.teleToLocation(CENTRAL_ROOM_LOC);
 					break;
 				}
 				case "FOLLOW":

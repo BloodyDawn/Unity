@@ -81,7 +81,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 			}
 			case "TELEPORT":
 			{
-				teleportPlayer(player, TELEPORT, player.getInstanceId());
+				player.teleToLocation(TELEPORT);
 				break;
 			}
 			case "DELETE":
@@ -161,7 +161,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	{
 		if ((character.isPlayer()) && !character.isDead() && !character.isTeleporting() && ((PlayerInstance) character).isOnline())
 		{
-			final Instance world = getInstance(character);
+			final Instance world = character.getInstanceWorld();
 			if ((world != null) && (world.getTemplateId() == TEMPLATE_ID))
 			{
 				startQuestTimer("TELEPORT", 1000, null, character.getActingPlayer());

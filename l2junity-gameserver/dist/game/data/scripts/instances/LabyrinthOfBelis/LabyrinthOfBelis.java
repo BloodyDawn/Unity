@@ -104,7 +104,7 @@ public final class LabyrinthOfBelis extends AbstractInstance
 		}
 		else
 		{
-			final Instance world = getInstance(npc);
+			final Instance world = npc.getInstanceWorld();
 			if (world != null)
 			{
 				switch (event)
@@ -118,7 +118,7 @@ public final class LabyrinthOfBelis extends AbstractInstance
 							
 							world.setStatus(1);
 							world.spawnGroup("operatives");
-							openDoor(DOOR_ID_ROOM_1_2, world.getId());
+							world.openCloseDoor(DOOR_ID_ROOM_1_2, true);
 						}
 						break;
 					}
@@ -127,11 +127,11 @@ public final class LabyrinthOfBelis extends AbstractInstance
 						if (world.isStatus(3))
 						{
 							world.setStatus(4);
+							world.openCloseDoor(DOOR_ID_ROOM_2_2, true);
 							
 							npc.setScriptValue(1);
 							npc.getAI().startFollow(player);
 							
-							openDoor(DOOR_ID_ROOM_2_2, world.getId());
 							showOnScreenMsg(player, NpcStringId.MARK_OF_BELIS_CAN_BE_ACQUIRED_FROM_ENEMIES_NUSE_THEM_IN_THE_BELIS_VERIFICATION_SYSTEM, ExShowScreenMessage.TOP_CENTER, 4500);
 							getTimers().addRepeatingTimer("MESSAGE", 10000, npc, player);
 						}
@@ -142,8 +142,8 @@ public final class LabyrinthOfBelis extends AbstractInstance
 						if (world.isStatus(5))
 						{
 							world.setStatus(6);
+							world.openCloseDoor(DOOR_ID_ROOM_3_2, true);
 							
-							openDoor(DOOR_ID_ROOM_3_2, world.getId());
 							final Npc generator = addSpawn(ELECTRICITY_GENERATOR, GENERATOR_SPAWN, false, 0, true, world.getId());
 							
 							npc.setScriptValue(1);
@@ -165,8 +165,8 @@ public final class LabyrinthOfBelis extends AbstractInstance
 						if (world.isStatus(7))
 						{
 							world.setStatus(8);
+							world.openCloseDoor(DOOR_ID_ROOM_4_2, true);
 							npc.setScriptValue(1);
-							openDoor(DOOR_ID_ROOM_4_2, world.getId());
 							playMovie(player, Movie.SC_TALKING_ISLAND_BOSS_OPENING);
 							getTimers().addTimer("SPAWN_NEMERTESS", 50000, npc, null);
 						}
@@ -222,7 +222,7 @@ public final class LabyrinthOfBelis extends AbstractInstance
 		if (character.isPlayer())
 		{
 			final PlayerInstance player = character.getActingPlayer();
-			final Instance world = getPlayerInstance(player, true);
+			final Instance world = player.getInstanceWorld();
 			if ((world != null) && world.isStatus(6))
 			{
 				getTimers().addRepeatingTimer("DEBUFF", 1500, world.getNpc(ELECTRICITY_GENERATOR), player);
@@ -238,7 +238,7 @@ public final class LabyrinthOfBelis extends AbstractInstance
 		if (character.isPlayer())
 		{
 			final PlayerInstance player = character.getActingPlayer();
-			final Instance world = getPlayerInstance(player, true);
+			final Instance world = player.getInstanceWorld();
 			if ((world != null) && (world.isStatus(6) || world.isStatus(7)))
 			{
 				getTimers().cancelTimer("DEBUFF", world.getNpc(ELECTRICITY_GENERATOR), player);
@@ -250,7 +250,7 @@ public final class LabyrinthOfBelis extends AbstractInstance
 	@Override
 	public void onMoveFinished(Npc npc)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			switch (world.getStatus())
@@ -292,7 +292,7 @@ public final class LabyrinthOfBelis extends AbstractInstance
 	@Override
 	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world == null)
 		{
 			return null;
@@ -344,7 +344,7 @@ public final class LabyrinthOfBelis extends AbstractInstance
 	@Override
 	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			switch (npc.getId())
@@ -418,7 +418,7 @@ public final class LabyrinthOfBelis extends AbstractInstance
 	public void onCreatureKill(OnCreatureKill event)
 	{
 		final Npc npc = (Npc) event.getTarget();
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			world.setStatus(-1);
@@ -439,7 +439,7 @@ public final class LabyrinthOfBelis extends AbstractInstance
 	@Override
 	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			switch (event)
@@ -494,7 +494,7 @@ public final class LabyrinthOfBelis extends AbstractInstance
 					if (world.isStatus(2))
 					{
 						world.setStatus(3);
-						openDoor(DOOR_ID_ROOM_2_1, world.getId());
+						world.openCloseDoor(DOOR_ID_ROOM_2_1, true);
 						
 						final Npc officer = world.getNpc(INFILTRATION_OFFICER);
 						officer.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, INFILTRATION_OFFICER_ROOM_2);
@@ -504,7 +504,7 @@ public final class LabyrinthOfBelis extends AbstractInstance
 				}
 				case "ROOM_2_DONE":
 				{
-					openDoor(DOOR_ID_ROOM_3_1, world.getId());
+					world.openCloseDoor(DOOR_ID_ROOM_3_1, true);
 					
 					final Npc officer = world.getNpc(INFILTRATION_OFFICER);
 					officer.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, INFILTRATION_OFFICER_ROOM_3);
@@ -516,8 +516,8 @@ public final class LabyrinthOfBelis extends AbstractInstance
 					if (world.isStatus(6))
 					{
 						world.setStatus(7);
+						world.openCloseDoor(DOOR_ID_ROOM_4_1, true);
 						
-						openDoor(DOOR_ID_ROOM_4_1, world.getId());
 						showOnScreenMsg(player, NpcStringId.ELECTRONIC_DEVICE_HAS_BEEN_DESTROYED, ExShowScreenMessage.TOP_CENTER, 4500);
 						
 						final Npc generator = world.getNpc(ELECTRICITY_GENERATOR);

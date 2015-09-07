@@ -19,7 +19,6 @@
 package quests.Q00128_PailakaSongOfIceAndFire;
 
 import org.l2junity.gameserver.enums.QuestSound;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
@@ -168,7 +167,7 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 			case "298": // Orcish Glaive
 			case "71": // Flamberge
 			{
-				final Instance inst = InstanceManager.getInstance().getInstance(npc);
+				final Instance inst = npc.getInstanceWorld();
 				if (inst != null)
 				{
 					inst.finishInstance();

@@ -66,7 +66,6 @@ import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.idfactory.IdFactory;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.AccessLevel;
@@ -439,7 +438,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	@Override
 	public final boolean isInsideZone(ZoneId zone)
 	{
-		final Instance instance = InstanceManager.getInstance().getInstance(getInstanceId());
+		final Instance instance = getInstanceWorld();
 		switch (zone)
 		{
 			case PVP:
@@ -717,12 +716,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param y
 	 * @param z
 	 * @param heading
-	 * @param instanceId
-	 * @param randomOffset
+	 * @param instance
 	 */
-	public void teleToLocation(int x, int y, int z, int heading, int instanceId, int randomOffset)
+	public void teleToLocation(int x, int y, int z, int heading, Instance instance)
 	{
-		final LocationReturn term = EventDispatcher.getInstance().notifyEvent(new OnCreatureTeleport(this, x, y, z, heading, instanceId, randomOffset), this, LocationReturn.class);
+		final LocationReturn term = EventDispatcher.getInstance().notifyEvent(new OnCreatureTeleport(this, x, y, z, heading, instance), this, LocationReturn.class);
 		if (term != null)
 		{
 			if (term.terminate())
@@ -735,113 +733,135 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				y = term.getY();
 				z = term.getZ();
 				heading = term.getHeading();
-				instanceId = term.getInstanceId();
-				randomOffset = term.getRandomOffset();
+				instance = term.getInstance();
 			}
 		}
 		
-		setInstanceId(instanceId);
-		
+		// Prepare creature for teleport
 		if (_isPendingRevive)
 		{
 			doRevive();
 		}
-		
 		stopMove(null);
 		abortAttack();
 		abortCast();
-		
 		setIsTeleporting(true);
 		setTarget(null);
-		
 		getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 		
-		if (Config.OFFSET_ON_TELEPORT_ENABLED && (randomOffset > 0))
-		{
-			x += Rnd.get(-randomOffset, randomOffset);
-			y += Rnd.get(-randomOffset, randomOffset);
-		}
-		
+		// Adjust position a bit
 		z += 5;
 		
-		// Send a Server->Client packet TeleportToLocationt to the L2Character AND to all L2PcInstance in the _KnownPlayers of the L2Character
+		// Send teleport packet to player and visible players
 		broadcastPacket(new TeleportToLocation(this, x, y, z, heading));
-		sendPacket(new ExTeleportToLocationActivate(this));
 		
 		// remove the object from its old location
 		decayMe();
 		
+		// Change instance world
+		if (getInstanceWorld() != instance)
+		{
+			setInstance(instance);
+		}
+		
 		// Set the x,y,z position of the L2Object and if necessary modify its _worldRegion
 		setXYZ(x, y, z);
 		
-		// temporary fix for heading on teleports
+		// temporary fix for heading on teleport
 		if (heading != 0)
 		{
 			setHeading(heading);
 		}
+		
+		// Send teleport finished packet to player
+		sendPacket(new ExTeleportToLocationActivate(this));
 		
 		// allow recall of the detached characters
 		if (!isPlayer() || ((getActingPlayer().getClient() != null) && getActingPlayer().getClient().isDetached()))
 		{
 			onTeleported();
 		}
-		
 		revalidateZone(true);
-	}
-	
-	public void teleToLocation(int x, int y, int z, int heading, int instanceId, boolean randomOffset)
-	{
-		teleToLocation(x, y, z, heading, instanceId, (randomOffset) ? Config.MAX_OFFSET_ON_TELEPORT : 0);
-	}
-	
-	public void teleToLocation(int x, int y, int z, int heading, int instanceId)
-	{
-		teleToLocation(x, y, z, heading, instanceId, 0);
-	}
-	
-	public void teleToLocation(int x, int y, int z, int heading, boolean randomOffset)
-	{
-		teleToLocation(x, y, z, heading, 0, (randomOffset) ? Config.MAX_OFFSET_ON_TELEPORT : 0);
-	}
-	
-	public void teleToLocation(int x, int y, int z, int heading)
-	{
-		teleToLocation(x, y, z, heading, 0, 0);
-	}
-	
-	public void teleToLocation(int x, int y, int z, boolean randomOffset)
-	{
-		teleToLocation(x, y, z, 0, 0, (randomOffset) ? Config.MAX_OFFSET_ON_TELEPORT : 0);
 	}
 	
 	public void teleToLocation(int x, int y, int z)
 	{
-		teleToLocation(x, y, z, 0, 0, 0);
+		teleToLocation(x, y, z, 0, getInstanceWorld());
 	}
 	
-	public void teleToLocation(ILocational loc, int randomOffset)
+	public void teleToLocation(int x, int y, int z, Instance instance)
 	{
-		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), loc.getInstanceId(), randomOffset);
+		teleToLocation(x, y, z, 0, instance);
 	}
 	
-	public void teleToLocation(ILocational loc, int instanceId, int randomOffset)
+	public void teleToLocation(int x, int y, int z, int heading)
 	{
-		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), instanceId, randomOffset);
+		teleToLocation(x, y, z, heading, getInstanceWorld());
 	}
 	
-	public void teleToLocation(ILocational loc, boolean randomOffset)
+	public void teleToLocation(int x, int y, int z, int heading, boolean randomOffset)
 	{
-		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), loc.getInstanceId(), (randomOffset) ? Config.MAX_OFFSET_ON_TELEPORT : 0);
+		teleToLocation(x, y, z, heading, (randomOffset) ? Config.MAX_OFFSET_ON_TELEPORT : 0, getInstanceWorld());
+	}
+	
+	public void teleToLocation(int x, int y, int z, int heading, boolean randomOffset, Instance instance)
+	{
+		teleToLocation(x, y, z, heading, (randomOffset) ? Config.MAX_OFFSET_ON_TELEPORT : 0, instance);
+	}
+	
+	public void teleToLocation(int x, int y, int z, int heading, int randomOffset)
+	{
+		teleToLocation(x, y, z, heading, randomOffset, getInstanceWorld());
+	}
+	
+	public void teleToLocation(int x, int y, int z, int heading, int randomOffset, Instance instance)
+	{
+		if (Config.OFFSET_ON_TELEPORT_ENABLED && (randomOffset > 0))
+		{
+			x += Rnd.get(-randomOffset, randomOffset);
+			y += Rnd.get(-randomOffset, randomOffset);
+		}
+		teleToLocation(x, y, z, heading, instance);
 	}
 	
 	public void teleToLocation(ILocational loc)
 	{
-		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), loc.getInstanceId(), 0);
+		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading());
+	}
+	
+	public void teleToLocation(ILocational loc, Instance instance)
+	{
+		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), instance);
+	}
+	
+	public void teleToLocation(ILocational loc, int randomOffset)
+	{
+		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), randomOffset);
+	}
+	
+	public void teleToLocation(ILocational loc, int randomOffset, Instance instance)
+	{
+		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), randomOffset, instance);
+	}
+	
+	public void teleToLocation(ILocational loc, boolean randomOffset)
+	{
+		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), (randomOffset) ? Config.MAX_OFFSET_ON_TELEPORT : 0);
+	}
+	
+	public void teleToLocation(ILocational loc, boolean randomOffset, Instance instance)
+	{
+		teleToLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), randomOffset, instance);
 	}
 	
 	public void teleToLocation(TeleportWhereType teleportWhere)
 	{
-		teleToLocation(MapRegionManager.getInstance().getTeleToLocation(this, teleportWhere), true);
+		teleToLocation(teleportWhere, getInstanceWorld());
+	}
+	
+	public void teleToLocation(TeleportWhereType teleportWhere, Instance instance)
+	{
+		teleToLocation(MapRegionManager.getInstance().getTeleToLocation(this, teleportWhere), true, instance);
 	}
 	
 	/**
@@ -4227,7 +4247,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					}
 					return;
 				}
-				Location destiny = GeoData.getInstance().moveCheck(curX, curY, curZ, x, y, z, getInstanceId());
+				Location destiny = GeoData.getInstance().moveCheck(curX, curY, curZ, x, y, z, getInstanceWorld());
 				// location different if destination wasn't reached (or just z coord is different)
 				x = destiny.getX();
 				y = destiny.getY();
@@ -4242,7 +4262,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// This way of detecting need for pathfinding could be changed.
 			if ((Config.PATHFINDING > 0) && ((originalDistance - distance) > 30) && !isControlBlocked() && !isInVehicle)
 			{
-				m.geoPath = PathFinding.getInstance().findPath(curX, curY, curZ, originalX, originalY, originalZ, getInstanceId(), isPlayable());
+				m.geoPath = PathFinding.getInstance().findPath(curX, curY, curZ, originalX, originalY, originalZ, getInstanceWorld(), isPlayable());
 				if ((m.geoPath == null) || (m.geoPath.size() < 2)) // No path found
 				{
 					// * Even though there's no path found (remember geonodes aren't perfect),
@@ -4278,7 +4298,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					z = m.geoPath.get(m.onGeodataPathIndex).getZ();
 					
 					// check for doors in the route
-					if (DoorData.getInstance().checkIfDoorsBetween(curX, curY, curZ, x, y, z, getInstanceId()))
+					if (DoorData.getInstance().checkIfDoorsBetween(curX, curY, curZ, x, y, z, getInstanceWorld()))
 					{
 						m.geoPath = null;
 						getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
@@ -4286,7 +4306,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					}
 					for (int i = 0; i < (m.geoPath.size() - 1); i++)
 					{
-						if (DoorData.getInstance().checkIfDoorsBetween(m.geoPath.get(i), m.geoPath.get(i + 1), getInstanceId()))
+						if (DoorData.getInstance().checkIfDoorsBetween(m.geoPath.get(i), m.geoPath.get(i + 1), getInstanceWorld()))
 						{
 							m.geoPath = null;
 							getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
@@ -4870,13 +4890,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public boolean isInsidePeaceZone(WorldObject attacker, WorldObject target)
 	{
-		if ((target == null) || !(target.isPlayable() && attacker.isPlayable()))
-		{
-			return false;
-		}
-		
-		final Instance inst = InstanceManager.getInstance().getInstance(getInstanceId());
-		if (inst.isPvP())
+		if ((target == null) || !(target.isPlayable() && attacker.isPlayable()) || getInstanceWorld().isPvP())
 		{
 			return false;
 		}

@@ -50,7 +50,7 @@ public final class IceQueensCastle extends AbstractInstance
 	private static final int ARCHERY_KNIGHT = 22767;
 	private static final int JINIA = 32781;
 	// Locations
-	private static final Location FREYA_LOC = new Location(114730, -114805, -11200, 50, 0);
+	private static final Location FREYA_LOC = new Location(114730, -114805, -11200, 50);
 	// Skill
 	private static SkillHolder ETHERNAL_BLIZZARD = new SkillHolder(6276, 1);
 	// Misc
@@ -166,7 +166,7 @@ public final class IceQueensCastle extends AbstractInstance
 	@Override
 	public String onSpellFinished(Npc npc, PlayerInstance player, Skill skill)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if ((world != null) && (skill == ETHERNAL_BLIZZARD.getSkill()))
 		{
 			final PlayerInstance playerInside = world.getFirstPlayer();

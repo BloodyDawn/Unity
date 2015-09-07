@@ -62,7 +62,7 @@ public final class ChatTrade implements IChatHandler
 			int region = MapRegionManager.getInstance().getMapRegionLocId(activeChar);
 			for (PlayerInstance player : World.getInstance().getPlayers())
 			{
-				if ((region == MapRegionManager.getInstance().getMapRegionLocId(player)) && !BlockList.isBlocked(player, activeChar) && (player.getInstanceId() == activeChar.getInstanceId()))
+				if ((region == MapRegionManager.getInstance().getMapRegionLocId(player)) && !BlockList.isBlocked(player, activeChar) && (player.getInstanceWorld() == activeChar.getInstanceWorld()))
 				{
 					player.sendPacket(cs);
 				}

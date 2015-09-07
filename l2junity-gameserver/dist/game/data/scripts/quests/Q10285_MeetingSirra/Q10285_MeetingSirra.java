@@ -19,7 +19,6 @@
 package quests.Q10285_MeetingSirra;
 
 import org.l2junity.gameserver.enums.ChatType;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -138,7 +137,7 @@ public final class Q10285_MeetingSirra extends Quest
 					st.unset("ex");
 					st.setMemoState(2);
 					
-					final Instance world = InstanceManager.getInstance().getPlayerInstance(player, true);
+					final Instance world = player.getInstanceWorld();
 					if (world != null)
 					{
 						world.finishInstance(0);

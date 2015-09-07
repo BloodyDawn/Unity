@@ -97,7 +97,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 		{
 			case "spawn":
 			{
-				final Instance world = getPlayerInstance(player, true);
+				final Instance world = player.getInstanceWorld();
 				if (world != null)
 				{
 					world.spawnGroup("high_priest_of_dawn");
@@ -125,7 +125,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 						break;
 					}
 				}
-				player.teleToLocation(SAVE_POINT[npc.getScriptValue()], player.getInstanceId(), 0);
+				player.teleToLocation(SAVE_POINT[npc.getScriptValue()]);
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
@@ -148,23 +148,23 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 			}
 			case IDENTITY_CONFIRM_DEVICE:
 			{
-				final Instance world = getInstance(npc);
+				final Instance world = npc.getInstanceWorld();
 				if (world != null)
 				{
 					if (hasQuestItems(talker, IDENTITY_CARD) && (talker.getTransformationId() == 113))
 					{
 						if (world.isStatus(0))
 						{
-							openDoor(DOOR_ONE, world.getId());
 							talker.sendPacket(SystemMessageId.BY_USING_THE_INVISIBLE_SKILL_SNEAK_INTO_THE_DAWN_S_DOCUMENT_STORAGE);
 							talker.sendPacket(SystemMessageId.MALE_GUARDS_CAN_DETECT_THE_CONCEALMENT_BUT_THE_FEMALE_GUARDS_CANNOT);
 							talker.sendPacket(SystemMessageId.FEMALE_GUARDS_NOTICE_THE_DISGUISES_FROM_FAR_AWAY_BETTER_THAN_THE_MALE_GUARDS_DO_SO_BEWARE);
+							world.openCloseDoor(DOOR_ONE, true);
 							world.setStatus(1);
 							npc.decayMe();
 						}
 						else if (world.isStatus(1))
 						{
-							openDoor(DOOR_TWO, world.getId());
+							world.openCloseDoor(DOOR_TWO, true);
 							world.setStatus(2);
 							npc.decayMe();
 							playMovie(talker, Movie.SSQ_RITUAL_OF_PRIEST);
@@ -177,10 +177,10 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 			}
 			case PASSWORD_ENTRY_DEVICE:
 			{
-				final Instance world = getInstance(npc);
+				final Instance world = npc.getInstanceWorld();
 				if (world != null)
 				{
-					openDoor(DOOR_THREE, world.getId());
+					world.openCloseDoor(DOOR_THREE, true);
 					return "32577-01.html";
 				}
 				break;

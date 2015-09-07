@@ -511,7 +511,7 @@ public final class World
 			{
 				for (WorldObject wo : w.getVisibleObjects().values())
 				{
-					if ((wo == object) || (wo.getInstanceId() != object.getInstanceId()))
+					if ((wo == object) || (wo.getInstanceWorld() != object.getInstanceWorld()))
 					{
 						continue;
 					}
@@ -571,14 +571,14 @@ public final class World
 		});
 	}
 	
-	private <T extends WorldObject> void forEachVisibleObject(ILocational locational, Class<T> clazz, int depth, Consumer<T> c)
+	private <T extends WorldObject> void forEachVisibleObject(WorldObject object, Class<T> clazz, int depth, Consumer<T> c)
 	{
-		if (locational == null)
+		if (object == null)
 		{
 			return;
 		}
 		
-		final WorldRegion centerWorldRegion = getRegion(locational);
+		final WorldRegion centerWorldRegion = getRegion(object);
 		if (centerWorldRegion == null)
 		{
 			return;
@@ -592,12 +592,12 @@ public final class World
 				{
 					for (WorldObject visibleObject : _worldRegions[x][y][z].getVisibleObjects().values())
 					{
-						if ((visibleObject == null) || (visibleObject == locational) || !clazz.isInstance(visibleObject))
+						if ((visibleObject == null) || (visibleObject == object) || !clazz.isInstance(visibleObject))
 						{
 							continue;
 						}
 						
-						if (visibleObject.getInstanceId() != locational.getInstanceId())
+						if (visibleObject.getInstanceWorld() != object.getInstanceWorld())
 						{
 							continue;
 						}
@@ -609,33 +609,33 @@ public final class World
 		}
 	}
 	
-	public <T extends WorldObject> void forEachVisibleObject(ILocational locational, Class<T> clazz, Consumer<T> c)
+	public <T extends WorldObject> void forEachVisibleObject(WorldObject object, Class<T> clazz, Consumer<T> c)
 	{
-		forEachVisibleObject(locational, clazz, 1, c);
+		forEachVisibleObject(object, clazz, 1, c);
 	}
 	
-	public <T extends WorldObject> void forEachVisibleObjectInRange(ILocational locational, Class<T> clazz, int range, Consumer<T> c)
+	public <T extends WorldObject> void forEachVisibleObjectInRange(WorldObject object, Class<T> clazz, int range, Consumer<T> c)
 	{
-		forEachVisibleObject(locational, clazz, (range / REGION_MIN_DIMENSION) + 1, o ->
+		forEachVisibleObject(object, clazz, (range / REGION_MIN_DIMENSION) + 1, o ->
 		{
-			if (o.calculateDistance(locational, true, false) <= range)
+			if (o.calculateDistance(object, true, false) <= range)
 			{
 				c.accept(o);
 			}
 		});
 	}
 	
-	public <T extends WorldObject> List<T> getVisibleObjects(ILocational locational, Class<T> clazz)
+	public <T extends WorldObject> List<T> getVisibleObjects(WorldObject object, Class<T> clazz)
 	{
 		final List<T> result = new LinkedList<>();
-		forEachVisibleObject(locational, clazz, result::add);
+		forEachVisibleObject(object, clazz, result::add);
 		return result;
 	}
 	
-	public <T extends WorldObject> List<T> getVisibleObjects(ILocational locational, Class<T> clazz, Predicate<T> predicate)
+	public <T extends WorldObject> List<T> getVisibleObjects(WorldObject object, Class<T> clazz, Predicate<T> predicate)
 	{
 		final List<T> result = new LinkedList<>();
-		forEachVisibleObject(locational, clazz, o ->
+		forEachVisibleObject(object, clazz, o ->
 		{
 			if (predicate.test(o))
 			{
@@ -645,17 +645,17 @@ public final class World
 		return result;
 	}
 	
-	public <T extends WorldObject> List<T> getVisibleObjects(ILocational locational, Class<T> clazz, int range)
+	public <T extends WorldObject> List<T> getVisibleObjects(WorldObject object, Class<T> clazz, int range)
 	{
 		final List<T> result = new LinkedList<>();
-		forEachVisibleObjectInRange(locational, clazz, range, result::add);
+		forEachVisibleObjectInRange(object, clazz, range, result::add);
 		return result;
 	}
 	
-	public <T extends WorldObject> List<T> getVisibleObjects(ILocational locational, Class<T> clazz, int range, Predicate<T> predicate)
+	public <T extends WorldObject> List<T> getVisibleObjects(WorldObject object, Class<T> clazz, int range, Predicate<T> predicate)
 	{
 		final List<T> result = new LinkedList<>();
-		forEachVisibleObjectInRange(locational, clazz, range, o ->
+		forEachVisibleObjectInRange(object, clazz, range, o ->
 		{
 			if (predicate.test(o))
 			{

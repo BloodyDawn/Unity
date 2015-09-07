@@ -32,6 +32,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ItemHolder;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.ExOlympiadMode;
@@ -161,7 +162,7 @@ public abstract class AbstractOlympiadGame
 		return null;
 	}
 	
-	protected static boolean portPlayerToArena(Participant par, Location loc, int id, int instanceId)
+	protected static boolean portPlayerToArena(Participant par, Location loc, int id, Instance instance)
 	{
 		final PlayerInstance player = par.getPlayer();
 		if ((player == null) || !player.isOnline())
@@ -183,8 +184,7 @@ public abstract class AbstractOlympiadGame
 			player.setIsOlympiadStart(false);
 			player.setOlympiadSide(par.getSide());
 			player.setOlympiadBuffCount(Config.ALT_OLY_MAX_BUFFS);
-			player.setInstanceId(instanceId);
-			player.teleToLocation(loc, false);
+			player.teleToLocation(loc, instance);
 			player.sendPacket(new ExOlympiadMode(2));
 		}
 		catch (Exception e)
@@ -405,15 +405,12 @@ public abstract class AbstractOlympiadGame
 			return;
 		}
 		final Location loc = player.getLastLocation();
-		if (loc == null)
+		if (loc != null)
 		{
-			return;
+			player.setIsPendingRevive(false);
+			player.teleToLocation(loc, null);
+			player.unsetLastLocation();
 		}
-		
-		player.setIsPendingRevive(false);
-		player.setInstanceId(0);
-		player.teleToLocation(loc);
-		player.unsetLastLocation();
 	}
 	
 	public static void rewardParticipant(PlayerInstance player, List<ItemHolder> list)
@@ -466,7 +463,7 @@ public abstract class AbstractOlympiadGame
 	
 	protected abstract void removals();
 	
-	protected abstract boolean portPlayersToArena(List<Location> spawns, int instanceId);
+	protected abstract boolean portPlayersToArena(List<Location> spawns, Instance instance);
 	
 	protected abstract void cleanEffects();
 	

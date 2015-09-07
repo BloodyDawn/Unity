@@ -49,7 +49,8 @@ public final class TeleportToLocation implements IClientOutgoingPacket
 		packet.writeD(_y);
 		packet.writeD(_z);
 		packet.writeD(0x00); // isValidation ??
-		packet.writeD(_heading); // nYaw
+		packet.writeD(_heading);
+		packet.writeD(0x00); // Unknown
 		return true;
 	}
 }

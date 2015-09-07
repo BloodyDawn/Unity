@@ -67,6 +67,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerItemDr
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerItemPickup;
 import org.l2junity.gameserver.model.events.impl.item.OnItemBypassEvent;
 import org.l2junity.gameserver.model.events.impl.item.OnItemTalk;
+import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.Armor;
 import org.l2junity.gameserver.model.items.EtcItem;
@@ -1488,19 +1489,16 @@ public final class ItemInstance extends WorldObject
 			
 			if (_dropper != null)
 			{
-				final Location dropDest = GeoData.getInstance().moveCheck(_dropper.getX(), _dropper.getY(), _dropper.getZ(), _x, _y, _z, _dropper.getInstanceId());
+				final Instance instance = _dropper.getInstanceWorld();
+				final Location dropDest = GeoData.getInstance().moveCheck(_dropper.getX(), _dropper.getY(), _dropper.getZ(), _x, _y, _z, instance);
 				_x = dropDest.getX();
 				_y = dropDest.getY();
 				_z = dropDest.getZ();
-			}
-			
-			if (_dropper != null)
-			{
-				setInstanceId(_dropper.getInstanceId()); // Inherit instancezone when dropped in visible world
+				setInstance(instance); // Inherit instancezone when dropped in visible world
 			}
 			else
 			{
-				setInstanceId(0); // No dropper? Make it a global item...
+				setInstance(null); // No dropper? Make it a global item...
 			}
 			
 			synchronized (_itеm)

@@ -96,7 +96,7 @@ public abstract class Summon extends Playable
 	{
 		super(template);
 		setInstanceType(InstanceType.L2Summon);
-		setInstanceId(owner.getInstanceId()); // set instance to same as owner
+		setInstance(owner.getInstanceWorld()); // set instance to same as owner
 		setShowSummonAnimation(true);
 		_owner = owner;
 		getAI();

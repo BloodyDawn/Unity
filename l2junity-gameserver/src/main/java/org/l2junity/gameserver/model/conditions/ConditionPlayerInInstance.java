@@ -41,8 +41,6 @@ public class ConditionPlayerInInstance extends Condition
 		{
 			return false;
 		}
-		
-		final int instanceId = effector.getInstanceId();
-		return instanceId <= 0 ? false == _inInstance : true == _inInstance;
+		return (effector.getInstanceId() == 0) ? !_inInstance : _inInstance;
 	}
 }

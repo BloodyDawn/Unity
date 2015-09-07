@@ -171,7 +171,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 				break;
 			case "spawn_npc1":
 			{
-				final Instance world = getPlayerInstance(player, true);
+				final Instance world = player.getInstanceWorld();
 				if (world != null)
 				{
 					world.setStatus(1);
@@ -182,17 +182,17 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			}
 			case "spawn_npc2":
 			{
-				final Instance world = getPlayerInstance(player, true);
+				final Instance world = player.getInstanceWorld();
 				if (world != null)
 				{
-					openDoor(DOOR_ONE, world.getId());
+					world.openCloseDoor(DOOR_ONE, true);
 					world.spawnGroup("power_sources");
 				}
 				break;
 			}
 			case "spawn_npc3":
 			{
-				final Instance world = getPlayerInstance(player, true);
+				final Instance world = player.getInstanceWorld();
 				if (world != null)
 				{
 					world.incStatus();
@@ -208,7 +208,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			}
 			case "spawn_wave1":
 			{
-				final Instance world = getPlayerInstance(player, true);
+				final Instance world = player.getInstanceWorld();
 				if (world != null)
 				{
 					for (Entry<CategoryType, Integer> entry : MOB_CATEGORY.entrySet())
@@ -231,7 +231,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			}
 			case "spawn_wave2":
 			{
-				final Instance world = getPlayerInstance(player, true);
+				final Instance world = player.getInstanceWorld();
 				if (world != null)
 				{
 					final int waveNpcId = world.getParameters().getInt("waveNpcId");
@@ -248,7 +248,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			{
 				showOnScreenMsg(player, NpcStringId.I_MUST_GO_HELP_SOME_MORE, ExShowScreenMessage.TOP_CENTER, 5000);
 				
-				final Instance world = getPlayerInstance(player, true);
+				final Instance world = player.getInstanceWorld();
 				if (world != null)
 				{
 					final int waveNpcId = world.getParameters().getInt("waveNpcId");
@@ -270,7 +270,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			}
 			case "cast_defense_maximum":
 			{
-				final Instance world = getPlayerInstance(player, true);
+				final Instance world = player.getInstanceWorld();
 				if (world != null)
 				{
 					if (npc.calculateDistance(player, true, false) < MAXIMUM_DEFENSE.getSkill().getCastRange())
@@ -299,7 +299,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			{
 				if (npc != null)
 				{
-					final Instance world = getPlayerInstance(player, true);
+					final Instance world = player.getInstanceWorld();
 					if ((world != null) && (world.isStatus(3) || world.isStatus(4)))
 					{
 						if (npc.calculateDistance(player, true, false) < LIGHT_HEAL.getSkill().getCastRange())
@@ -313,7 +313,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			}
 			case "fail_instance":
 			{
-				final Instance world = getPlayerInstance(player, true);
+				final Instance world = player.getInstanceWorld();
 				if (world != null)
 				{
 					world.removeNpcs();
@@ -327,7 +327,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 				break;
 			case "spawn_npc4":
 			{
-				final Instance world = getPlayerInstance(player, true);
+				final Instance world = player.getInstanceWorld();
 				if (world != null)
 				{
 					final int waveNpcId = world.getParameters().getInt("waveNpcId");
@@ -348,7 +348,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			}
 			case "activate_seal":
 			{
-				final Instance world = getPlayerInstance(player, true);
+				final Instance world = player.getInstanceWorld();
 				if ((world != null) && npc.isScriptValue(0))
 				{
 					npc.setScriptValue(1);
@@ -367,7 +367,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			}
 			case "seal_say":
 			{
-				final Instance world = getPlayerInstance(player, true);
+				final Instance world = player.getInstanceWorld();
 				if (world != null)
 				{
 					final int timerCount = world.getParameters().getInt("timerCount", 0);
@@ -418,7 +418,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			}
 			case "spawn_hermuncus":
 			{
-				final Instance inst = getPlayerInstance(player, true);
+				final Instance inst = player.getInstanceWorld();
 				if (inst != null)
 				{
 					inst.spawnGroup("hermuncus");
@@ -447,7 +447,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 	@Override
 	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
-		final Instance world = getPlayerInstance(killer, true);
+		final Instance world = killer.getInstanceWorld();
 		if (world != null)
 		{
 			switch (world.getStatus())
@@ -507,7 +507,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 								startQuestTimer("spawn_wave3", 100, npc, killer);
 								break;
 							case 3:
-								openDoor(DOOR_TWO, world.getId());
+								world.openCloseDoor(DOOR_TWO, true);
 								break;
 						}
 					}
@@ -543,7 +543,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 	@Override
 	public String onAttack(Npc npc, PlayerInstance player, int damage, boolean isSummon)
 	{
-		final Instance world = getPlayerInstance(player, true);
+		final Instance world = player.getInstanceWorld();
 		if (world != null)
 		{
 			if (world.isStatus(1))
@@ -620,7 +620,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 		}
 		
 		final PlayerInstance player = character.getActingPlayer();
-		final Instance world = getPlayerInstance(player, true);
+		final Instance world = player.getInstanceWorld();
 		if (world != null)
 		{
 			switch (zone.getId())

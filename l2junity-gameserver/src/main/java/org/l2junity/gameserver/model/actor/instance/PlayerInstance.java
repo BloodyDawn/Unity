@@ -110,7 +110,6 @@ import org.l2junity.gameserver.instancemanager.DuelManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
 import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.ItemsOnGroundManager;
 import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
 import org.l2junity.gameserver.instancemanager.MentorManager;
@@ -9244,7 +9243,7 @@ public final class PlayerInstance extends Playable
 		setTarget(null);
 		setIsInvul(true);
 		setInvisible(true);
-		setInstanceId(OlympiadGameManager.getInstance().getOlympiadTask(id).getStadium().getInstanceId());
+		setInstance(OlympiadGameManager.getInstance().getOlympiadTask(id).getStadium().getInstance());
 		teleToLocation(loc, false);
 		sendPacket(new ExOlympiadMode(3));
 		
@@ -9254,8 +9253,7 @@ public final class PlayerInstance extends Playable
 	public void leaveObserverMode()
 	{
 		setTarget(null);
-		
-		setInstanceId(0);
+		setInstance(null);
 		teleToLocation(_lastLoc, false);
 		unsetLastLocation();
 		sendPacket(new ObservationReturn(getLocation()));
@@ -9287,7 +9285,7 @@ public final class PlayerInstance extends Playable
 		_observerMode = false;
 		setTarget(null);
 		sendPacket(new ExOlympiadMode(0));
-		setInstanceId(0);
+		setInstance(null);
 		teleToLocation(_lastLoc, true);
 		if (!isGM())
 		{
@@ -10355,13 +10353,12 @@ public final class PlayerInstance extends Playable
 		{
 			startFeed(_mountNpcId);
 		}
-		if (getInstanceId() > 0)
+		
+		// Notify instance
+		final Instance instance = getInstanceWorld();
+		if (instance != null)
 		{
-			final Instance instance = InstanceManager.getInstance().getInstance(getInstanceId());
-			if (instance != null)
-			{
-				instance.doRevive(this);
-			}
+			instance.doRevive(this);
 		}
 	}
 	
@@ -10534,9 +10531,8 @@ public final class PlayerInstance extends Playable
 		
 		if (isFlyingMounted() && (loc.getZ() < -1005))
 		{
-			super.teleToLocation(loc.getX(), loc.getY(), -1005, loc.getHeading(), loc.getInstanceId());
+			super.teleToLocation(loc.getX(), loc.getY(), -1005, loc.getHeading());
 		}
-		
 		super.teleToLocation(loc, allowRandomOffset);
 	}
 	
@@ -11230,15 +11226,12 @@ public final class PlayerInstance extends Playable
 		}
 		
 		// remove player from instance
-		if (getInstanceId() != 0)
+		final Instance inst = getInstanceWorld();
+		if (inst != null)
 		{
 			try
 			{
-				final Instance inst = InstanceManager.getInstance().getInstance(getInstanceId());
-				if (inst != null)
-				{
-					inst.onPlayerLogout(this);
-				}
+				inst.onPlayerLogout(this);
 			}
 			catch (Exception e)
 			{

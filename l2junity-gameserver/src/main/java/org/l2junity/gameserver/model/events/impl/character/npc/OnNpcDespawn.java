@@ -16,41 +16,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.interfaces;
+package org.l2junity.gameserver.model.events.impl.character.npc;
+
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.events.EventType;
+import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 
 /**
- * Object world location storage interface.
- * @author xban1x
+ * @author malyelfik
  */
-public interface ILocational
+public final class OnNpcDespawn implements IBaseEvent
 {
-	/**
-	 * Gets the X coordinate of this object.
-	 * @return the X coordinate
-	 */
-	int getX();
+	private final Npc _npc;
 	
-	/**
-	 * Gets the Y coordinate of this object.
-	 * @return the current Y coordinate
-	 */
-	int getY();
+	public OnNpcDespawn(Npc npc)
+	{
+		_npc = npc;
+	}
 	
-	/**
-	 * Gets the Z coordinate of this object.
-	 * @return the current Z coordinate
-	 */
-	int getZ();
+	public Npc getNpc()
+	{
+		return _npc;
+	}
 	
-	/**
-	 * Gets the heading of this object.
-	 * @return the current heading
-	 */
-	int getHeading();
-	
-	/**
-	 * Gets this object's location.
-	 * @return a {@link ILocational} object containing the current position of this object
-	 */
-	ILocational getLocation();
+	@Override
+	public EventType getType()
+	{
+		return EventType.ON_NPC_DESPAWN;
+	}
 }

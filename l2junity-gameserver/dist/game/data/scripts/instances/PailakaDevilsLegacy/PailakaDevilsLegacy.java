@@ -106,14 +106,14 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 		}
 		else
 		{
-			final Instance world = getInstance(npc);
+			final Instance world = npc.getInstanceWorld();
 			if (world != null)
 			{
 				switch (event)
 				{
 					case "FOLLOWER_CAST":
 					{
-						if ((npc != null) && !npc.isDead())
+						if (!npc.isDead())
 						{
 							for (Npc follower : world.getNpcs(FOLLOWERS))
 							{
@@ -128,7 +128,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 					{
 						((Attackable) npc).clearAggroList();
 						npc.disableCoreAI(false);
-						npc.teleToLocation(LEMATAN_PORT, world.getId(), 0);
+						npc.teleToLocation(LEMATAN_PORT);
 						npc.getVariables().set("ON_SHIP", 1);
 						npc.getSpawn().setLocation(LEMATAN_PORT);
 						world.spawnGroup("followers");
@@ -154,7 +154,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	@Override
 	public final String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			switch (npc.getId())
@@ -237,7 +237,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	@Override
 	public final String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			world.getNpcs(FOLLOWERS).forEach(Npc::deleteMe);
@@ -251,7 +251,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	{
 		if ((character.isPlayer()) && !character.isDead() && !character.isTeleporting() && ((PlayerInstance) character).isOnline())
 		{
-			final Instance world = getInstance(character);
+			final Instance world = character.getInstanceWorld();
 			if ((world != null) && (world.getTemplateId() == TEMPLATE_ID))
 			{
 				startQuestTimer("TELEPORT", 1000, world.getNpc(LEMATAN), character.getActingPlayer());

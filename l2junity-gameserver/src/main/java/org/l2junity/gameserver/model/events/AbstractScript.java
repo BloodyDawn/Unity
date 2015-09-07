@@ -81,6 +81,7 @@ import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableHate;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableKill;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcCanBeSeen;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcCreatureSee;
+import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcDespawn;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcEventReceived;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcFirstTalk;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcMoveFinished;
@@ -575,6 +576,30 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	protected final List<AbstractEventListener> setNpcSpawnId(Consumer<OnNpcSpawn> callback, Collection<Integer> npcIds)
 	{
 		return registerConsumer(callback, EventType.ON_NPC_SPAWN, ListenerRegisterType.NPC, npcIds);
+	}
+	
+	// ---------------------------------------------------------------------------------------------------------------------------
+	
+	/**
+	 * Provides instant callback operation when L2Npc is despawned.
+	 * @param callback
+	 * @param npcIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setNpcDespawnId(Consumer<OnNpcDespawn> callback, int... npcIds)
+	{
+		return registerConsumer(callback, EventType.ON_NPC_DESPAWN, ListenerRegisterType.NPC, npcIds);
+	}
+	
+	/**
+	 * Provides instant callback operation when L2Npc is despawned.
+	 * @param callback
+	 * @param npcIds
+	 * @return
+	 */
+	protected final List<AbstractEventListener> setNpcDespawnId(Consumer<OnNpcDespawn> callback, Collection<Integer> npcIds)
+	{
+		return registerConsumer(callback, EventType.ON_NPC_DESPAWN, ListenerRegisterType.NPC, npcIds);
 	}
 	
 	// ---------------------------------------------------------------------------------------------------------------------------
@@ -1921,13 +1946,13 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	 * @param randomOffset if {@code true}, adds +/- 50~100 to X/Y coordinates of the spawn location
 	 * @param despawnDelay time in milliseconds till the NPC is despawned (0 - only despawned on server shutdown)
 	 * @param isSummonSpawn if {@code true}, displays a summon animation on NPC spawn
-	 * @param instanceId the ID of the instance to spawn the NPC in (0 - the open world)
+	 * @param instance instance where NPC should be spawned ({@code null} - normal world)
 	 * @return the {@link Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
 	 * @see #addSpawn(int, IPositionable, boolean, long, boolean, int)
 	 * @see #addSpawn(int, int, int, int, int, boolean, long)
 	 * @see #addSpawn(int, int, int, int, int, boolean, long, boolean)
 	 */
-	public static Npc addSpawn(Npc summoner, int npcId, int x, int y, int z, int heading, boolean randomOffset, long despawnDelay, boolean isSummonSpawn, int instanceId)
+	public static Npc addSpawn(Npc summoner, int npcId, int x, int y, int z, int heading, boolean randomOffset, long despawnDelay, boolean isSummonSpawn, int instance)
 	{
 		try
 		{
@@ -1956,7 +1981,7 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 				y += offset;
 			}
 			
-			spawn.setInstanceId(instanceId);
+			spawn.setInstanceId(instance);
 			spawn.setHeading(heading);
 			spawn.setX(x);
 			spawn.setY(y);
@@ -2805,30 +2830,6 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 			}
 		}
 		return door;
-	}
-	
-	/**
-	 * Teleport a player into/out of an instance.
-	 * @param player the player to teleport
-	 * @param loc the {@link Location} object containing the destination coordinates
-	 * @param instanceId the ID of the instance to teleport the player to (0 to teleport out of an instance)
-	 */
-	public void teleportPlayer(PlayerInstance player, Location loc, int instanceId)
-	{
-		teleportPlayer(player, loc, instanceId, true);
-	}
-	
-	/**
-	 * Teleport a player into/out of an instance.
-	 * @param player the player to teleport
-	 * @param loc the {@link Location} object containing the destination coordinates
-	 * @param instanceId the ID of the instance to teleport the player to (0 to teleport out of an instance)
-	 * @param allowRandomOffset if {@code true}, will randomize the teleport coordinates by +/-Config.MAX_OFFSET_ON_TELEPORT
-	 */
-	public void teleportPlayer(PlayerInstance player, Location loc, int instanceId, boolean allowRandomOffset)
-	{
-		loc.setInstanceId(instanceId);
-		player.teleToLocation(loc, allowRandomOffset);
 	}
 	
 	/**

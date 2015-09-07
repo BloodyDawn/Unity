@@ -82,7 +82,7 @@ public final class Q10338_SeizeYourDestiny extends Quest
 					htmltext = "";
 					break;
 				}
-				teleportPlayer(player, RELIQUARY_OF_THE_GIANT, 0);
+				player.teleToLocation(RELIQUARY_OF_THE_GIANT, null);
 				playMovie(player, Movie.SC_AWAKENING_VIEW);
 				break;
 			}

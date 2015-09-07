@@ -129,8 +129,7 @@ public class Unstuck implements IUserCommandHandler
 			
 			_activeChar.enableAllSkills();
 			_activeChar.setIsCastingNow(false);
-			_activeChar.setInstanceId(0);
-			_activeChar.teleToLocation(TeleportWhereType.TOWN);
+			_activeChar.teleToLocation(TeleportWhereType.TOWN, null);
 		}
 	}
 	

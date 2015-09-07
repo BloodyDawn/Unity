@@ -75,20 +75,22 @@ public final class Toyron extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
-		final Instance world = InstanceManager.getInstance().getInstance(npc);
-		final QuestState qs = player.getQuestState(Q10327_IntruderWhoWantsTheBookOfGiants.class.getSimpleName());
-		
 		String htmltext = "33004.html";
-		if ((qs != null) && (world != null) && (world.getTemplateId() == TEMPLATE_ID))
+		final Instance world = npc.getInstanceWorld();
+		if ((world != null) && (world.getTemplateId() == TEMPLATE_ID))
 		{
-			switch (qs.getCond())
+			final QuestState qs = player.getQuestState(Q10327_IntruderWhoWantsTheBookOfGiants.class.getSimpleName());
+			if (qs != null)
 			{
-				case 1:
-					htmltext = "33004-01.html";
-					break;
-				case 2:
-					htmltext = "33004-02.html";
-					break;
+				switch (qs.getCond())
+				{
+					case 1:
+						htmltext = "33004-01.html";
+						break;
+					case 2:
+						htmltext = "33004-02.html";
+						break;
+				}
 			}
 		}
 		return htmltext;

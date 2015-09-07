@@ -176,7 +176,7 @@ public final class ChamberOfDelusion extends AbstractInstance
 	{
 		final int room = instance.getParameters().getInt("currentRoom");
 		final Location loc = instance.getEnterLocations().get(room);
-		player.teleToLocation(loc, instance.getId(), 0);
+		player.teleToLocation(loc, instance);
 	}
 	
 	@Override
@@ -184,7 +184,7 @@ public final class ChamberOfDelusion extends AbstractInstance
 	{
 		String htmltext = null;
 		
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if ((player != null) && (world != null) && CommonUtil.contains(ROOM_GATEKEEPERS, npc.getId()))
 		{
 			switch (event)
@@ -316,7 +316,7 @@ public final class ChamberOfDelusion extends AbstractInstance
 	@Override
 	public String onKill(Npc npc, PlayerInstance player, boolean isPet)
 	{
-		final Instance world = getPlayerInstance(player, true);
+		final Instance world = player.getInstanceWorld();
 		if (world != null)
 		{
 			if (isBigChamber(world))

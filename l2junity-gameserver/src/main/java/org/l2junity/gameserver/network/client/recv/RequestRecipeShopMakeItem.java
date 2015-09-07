@@ -65,7 +65,7 @@ public final class RequestRecipeShopMakeItem implements IClientIncomingPacket
 			return;
 		}
 		
-		if ((manufacturer.getInstanceId() != activeChar.getInstanceId()) && (activeChar.getInstanceId() != -1))
+		if (manufacturer.getInstanceWorld() != activeChar.getInstanceWorld())
 		{
 			return;
 		}

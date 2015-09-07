@@ -172,7 +172,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 		}
 		else
 		{
-			final Instance world = getInstance(npc);
+			final Instance world = npc.getInstanceWorld();
 			if (world != null)
 			{
 				final StatsSet params = world.getParameters();
@@ -185,7 +185,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						if (npc.isScriptValue(0))
 						{
 							npc.setScriptValue(1);
-							openDoor(DOOR_ID, world.getId());
+							world.openCloseDoor(DOOR_ID, true);
 							final Npc control = addSpawn(INVISIBLE_NPC, CONTROLLER_LOC, false, 0, true, world.getId());
 							for (Location loc : STATUES_LOC)
 							{
@@ -216,7 +216,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "portInside":
 					{
-						teleportPlayer(player, BATTLE_PORT, world.getId());
+						player.teleToLocation(BATTLE_PORT);
 						break;
 					}
 					case "killFreya":
@@ -240,8 +240,8 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "STAGE_1_MOVIE":
 					{
-						closeDoor(DOOR_ID, world.getId());
 						world.setStatus(1);
+						world.openCloseDoor(DOOR_ID, false);
 						manageMovie(world, Movie.SC_BOSS_FREYA_OPENING);
 						startQuestTimer("STAGE_1_START", 53500, controller, null);
 						break;
@@ -263,11 +263,14 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "STAGE_1_FINISH":
 					{
-						freya.deleteMe();
-						world.setParameter("freya", null);
-						manageDespawnMinions(world);
-						manageMovie(world, Movie.SC_BOSS_FREYA_PHASECH_A);
-						startQuestTimer("STAGE_1_PAUSE", 24100 - 1000, controller, null);
+						if (freya != null)
+						{
+							world.setParameter("freya", null);
+							freya.deleteMe();
+							manageDespawnMinions(world);
+							manageMovie(world, Movie.SC_BOSS_FREYA_PHASECH_A);
+							startQuestTimer("STAGE_1_PAUSE", 24100 - 1000, controller, null);
+						}
 						break;
 					}
 					case "STAGE_1_PAUSE":
@@ -456,9 +459,9 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "FINISH_STAGE":
 					{
-						freya.teleToLocation(FREYA_CORPSE, world.getId(), 0);
+						freya.teleToLocation(FREYA_CORPSE);
 						world.getNpc(SUPP_JINIA).deleteMe();
-						world.getNpc(SUPP_KEGOR).teleToLocation(KEGOR_FINISH, world.getId(), 0);
+						world.getNpc(SUPP_KEGOR).teleToLocation(KEGOR_FINISH);
 						break;
 					}
 					case "START_SPAWN":
@@ -713,7 +716,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	@Override
 	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			if (npc.getId() == SUPP_JINIA)
@@ -738,7 +741,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	@Override
 	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			final StatsSet params = world.getParameters();
@@ -1041,7 +1044,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	@Override
 	public String onSpellFinished(Npc npc, PlayerInstance player, Skill skill)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			switch (npc.getId())
@@ -1085,7 +1088,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	@Override
 	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			final StatsSet params = world.getParameters();

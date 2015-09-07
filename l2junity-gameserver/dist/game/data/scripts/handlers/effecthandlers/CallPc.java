@@ -18,7 +18,6 @@
  */
 package handlers.effecthandlers;
 
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -151,14 +150,11 @@ public final class CallPc extends AbstractEffect
 			return false;
 		}
 		
-		if (activeChar.getInstanceId() > 0)
+		final Instance instance = activeChar.getInstanceWorld();
+		if ((instance != null) && !instance.isPlayerSummonAllowed())
 		{
-			final Instance instance = InstanceManager.getInstance().getInstance(activeChar);
-			if (!instance.isPlayerSummonAllowed())
-			{
-				activeChar.sendPacket(SystemMessageId.YOU_MAY_NOT_SUMMON_FROM_YOUR_CURRENT_LOCATION);
-				return false;
-			}
+			activeChar.sendPacket(SystemMessageId.YOU_MAY_NOT_SUMMON_FROM_YOUR_CURRENT_LOCATION);
+			return false;
 		}
 		return true;
 	}

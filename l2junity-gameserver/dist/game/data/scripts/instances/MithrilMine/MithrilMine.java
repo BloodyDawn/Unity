@@ -79,7 +79,7 @@ public final class MithrilMine extends AbstractInstance
 			}
 			case "TIMER":
 			{
-				final Instance world = getInstance(npc);
+				final Instance world = npc.getInstanceWorld();
 				if (world != null)
 				{
 					final List<Npc> npcs = world.spawnGroup("attackers");
@@ -139,7 +139,7 @@ public final class MithrilMine extends AbstractInstance
 	@Override
 	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			if (npc.getId() == KEGOR)

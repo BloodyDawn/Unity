@@ -36,7 +36,6 @@ import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.TownManager;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
@@ -62,6 +61,7 @@ import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcCanBeSeen;
+import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcDespawn;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcEventReceived;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcSkillFinished;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcSpawn;
@@ -457,7 +457,7 @@ public class Npc extends Creature
 		{
 			return false;
 		}
-		else if ((player.getInstanceId() != getInstanceId()) && (player.getInstanceId() != -1))
+		else if (player.getInstanceWorld() != getInstanceWorld())
 		{
 			return false;
 		}
@@ -944,10 +944,13 @@ public class Npc extends Creature
 		// Notify Walking Manager
 		WalkingManager.getInstance().onDeath(this);
 		
+		// Notify DP scripts
+		EventDispatcher.getInstance().notifyEventAsync(new OnNpcDespawn(this), this);
+		
 		// Remove from instance world
-		if (getInstanceId() > 0)
+		final Instance instance = getInstanceWorld();
+		if (instance != null)
 		{
-			final Instance instance = InstanceManager.getInstance().getInstance(getInstanceId());
 			instance.removeNpc(this);
 		}
 	}

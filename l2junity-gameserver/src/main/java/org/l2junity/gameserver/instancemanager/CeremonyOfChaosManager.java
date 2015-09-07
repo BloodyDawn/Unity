@@ -299,7 +299,7 @@ public class CeremonyOfChaosManager extends AbstractEventManager<CeremonyOfChaos
 			sm = SystemMessageId.YOU_CANNOT_REGISTER_IN_THE_WAITING_LIST_WHILE_PARTICIPATING_IN_OLYMPIAD;
 			canRegister = false;
 		}
-		else if (player.getInstanceId() > 0)
+		else if (player.isInInstance())
 		{
 			sm = SystemMessageId.YOU_MAY_NOT_REGISTER_WHILE_USING_THE_INSTANT_ZONE;
 			canRegister = false;

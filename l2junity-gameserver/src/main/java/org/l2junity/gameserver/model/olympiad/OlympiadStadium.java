@@ -74,9 +74,9 @@ public class OlympiadStadium
 		return _task;
 	}
 	
-	public int getInstanceId()
+	public Instance getInstance()
 	{
-		return _instance.getId();
+		return _instance;
 	}
 	
 	public final void openDoors()
@@ -113,10 +113,7 @@ public class OlympiadStadium
 	
 	public final void broadcastPacket(IClientOutgoingPacket packet)
 	{
-		for (PlayerInstance target : _instance.getPlayers())
-		{
-			target.sendPacket(packet);
-		}
+		_instance.broadcastPacket(packet);
 	}
 	
 	public final void broadcastPacketToObservers(IClientOutgoingPacket packet)

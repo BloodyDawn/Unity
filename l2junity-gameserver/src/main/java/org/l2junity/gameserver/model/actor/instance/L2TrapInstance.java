@@ -68,7 +68,7 @@ public final class L2TrapInstance extends Npc
 	{
 		super(template);
 		setInstanceType(InstanceType.L2TrapInstance);
-		setInstanceId(instanceId);
+		setInstanceById(instanceId);
 		setName(template.getName());
 		setIsInvul(false);
 		

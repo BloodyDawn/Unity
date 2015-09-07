@@ -228,7 +228,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 			}
 			
 			// Teleport player to the arena
-			player.teleToLocation(_instance.getEnterLocation(), _instance.getId(), 200);
+			player.teleToLocation(_instance.getEnterLocation(), 200, _instance);
 		}
 		
 		getTimers().addTimer("match_start_countdown", StatsSet.valueOf("time", 60), 100, null, null);
@@ -326,7 +326,7 @@ public class CeremonyOfChaosEvent extends AbstractEvent<CeremonyOfChaosMember>
 				player.sendPacket(ExCuriousHouseObserveMode.STATIC_DISABLED);
 				
 				// Teleport player back
-				player.teleToLocation(player.getLastLocation(), 0, 0);
+				player.teleToLocation(player.getLastLocation(), null);
 				
 				// Restore player information
 				final PcAppearance app = player.getAppearance();

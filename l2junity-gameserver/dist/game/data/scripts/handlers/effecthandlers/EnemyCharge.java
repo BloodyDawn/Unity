@@ -40,7 +40,7 @@ public final class EnemyCharge extends AbstractEffect
 	public EnemyCharge(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_speed = params.getInt("speed", 0);
 		_delay = params.getInt("delay", 0);
 		_animationSpeed = params.getInt("animationSpeed", 0);
@@ -51,7 +51,7 @@ public final class EnemyCharge extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -101,7 +101,7 @@ public final class EnemyCharge extends AbstractEffect
 		int y = curY + (int) ((distance - offset) * sin);
 		int z = effected.getZ();
 		
-		final Location destination = GeoData.getInstance().moveCheck(effector.getX(), effector.getY(), effector.getZ(), x, y, z, effector.getInstanceId());
+		final Location destination = GeoData.getInstance().moveCheck(effector.getX(), effector.getY(), effector.getZ(), x, y, z, effector.getInstanceWorld());
 		
 		effector.broadcastPacket(new FlyToLocation(effector, destination, skill.getFlyType(), _speed, _delay, _animationSpeed));
 		

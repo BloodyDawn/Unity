@@ -28,7 +28,6 @@ import java.util.Map;
 import java.util.Set;
 
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
@@ -173,14 +172,14 @@ public class DoorData implements IGameXmlReader
 		return _doors.values();
 	}
 	
-	public boolean checkIfDoorsBetween(AbstractNodeLoc start, AbstractNodeLoc end, int instanceId)
+	public boolean checkIfDoorsBetween(AbstractNodeLoc start, AbstractNodeLoc end, Instance instance)
 	{
-		return checkIfDoorsBetween(start.getX(), start.getY(), start.getZ(), end.getX(), end.getY(), end.getZ(), instanceId);
+		return checkIfDoorsBetween(start.getX(), start.getY(), start.getZ(), end.getX(), end.getY(), end.getZ(), instance);
 	}
 	
-	public boolean checkIfDoorsBetween(int x, int y, int z, int tx, int ty, int tz, int instanceId)
+	public boolean checkIfDoorsBetween(int x, int y, int z, int tx, int ty, int tz, Instance instance)
 	{
-		return checkIfDoorsBetween(x, y, z, tx, ty, tz, instanceId, false);
+		return checkIfDoorsBetween(x, y, z, tx, ty, tz, instance, false);
 	}
 	
 	/**
@@ -191,23 +190,13 @@ public class DoorData implements IGameXmlReader
 	 * @param tx
 	 * @param ty
 	 * @param tz
-	 * @param instanceId
+	 * @param instance
 	 * @param doubleFaceCheck
 	 * @return {@code boolean}
 	 */
-	public boolean checkIfDoorsBetween(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean doubleFaceCheck)
+	public boolean checkIfDoorsBetween(int x, int y, int z, int tx, int ty, int tz, Instance instance, boolean doubleFaceCheck)
 	{
-		Collection<L2DoorInstance> allDoors;
-		final Instance instance = InstanceManager.getInstance().getInstance(instanceId);
-		if ((instanceId > 0) && (instance != null))
-		{
-			allDoors = instance.getDoors();
-		}
-		else
-		{
-			allDoors = _regions.get(MapRegionManager.getInstance().getMapRegionLocId(x, y));
-		}
-		
+		final Collection<L2DoorInstance> allDoors = (instance != null) ? instance.getDoors() : _regions.get(MapRegionManager.getInstance().getMapRegionLocId(x, y));
 		if (allDoors == null)
 		{
 			return false;

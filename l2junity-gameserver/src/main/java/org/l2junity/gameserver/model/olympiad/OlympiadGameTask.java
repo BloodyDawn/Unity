@@ -182,14 +182,14 @@ public final class OlympiadGameTask implements Runnable
 			int delay = 1; // schedule next call after 1s
 			switch (_state)
 			{
-			// Game created
+				// Game created
 				case BEGIN:
 				{
 					_state = GameState.TELEPORT_TO_ARENA;
 					_countDown = Config.ALT_OLY_WAIT_TIME;
 					break;
 				}
-				// Teleport to arena countdown
+					// Teleport to arena countdown
 				case TELEPORT_TO_ARENA:
 				{
 					if (_countDown > 0)
@@ -211,7 +211,7 @@ public final class OlympiadGameTask implements Runnable
 					}
 					break;
 				}
-				// Game start, port players to arena
+					// Game start, port players to arena
 				case GAME_STARTED:
 				{
 					if (!startGame())
@@ -226,7 +226,7 @@ public final class OlympiadGameTask implements Runnable
 					delay = 5;
 					break;
 				}
-				// Battle start countdown, first part (60-10)
+					// Battle start countdown, first part (60-10)
 				case BATTLE_COUNTDOWN_FIRST:
 				{
 					if (_countDown > 0)
@@ -256,7 +256,7 @@ public final class OlympiadGameTask implements Runnable
 					
 					break;
 				}
-				// Battle start countdown, second part (10-0)
+					// Battle start countdown, second part (10-0)
 				case BATTLE_COUNTDOWN_SECOND:
 				{
 					if (_countDown > 0)
@@ -274,7 +274,7 @@ public final class OlympiadGameTask implements Runnable
 					
 					break;
 				}
-				// Beginning of the battle
+					// Beginning of the battle
 				case BATTLE_STARTED:
 				{
 					_countDown = 0;
@@ -285,7 +285,7 @@ public final class OlympiadGameTask implements Runnable
 					}
 					break;
 				}
-				// Checks during battle
+					// Checks during battle
 				case BATTLE_IN_PROGRESS:
 				{
 					_countDown += 1000;
@@ -307,7 +307,7 @@ public final class OlympiadGameTask implements Runnable
 					}
 					break;
 				}
-				// End of the battle
+					// End of the battle
 				case GAME_STOPPED:
 				{
 					_state = GameState.TELEPORT_TO_TOWN;
@@ -316,7 +316,7 @@ public final class OlympiadGameTask implements Runnable
 					delay = getDelay(TELEPORT_TO_TOWN_TIMES);
 					break;
 				}
-				// Teleport to town countdown
+					// Teleport to town countdown
 				case TELEPORT_TO_TOWN:
 				{
 					if (_countDown > 0)
@@ -333,7 +333,7 @@ public final class OlympiadGameTask implements Runnable
 					}
 					break;
 				}
-				// Removals
+					// Removals
 				case CLEANUP:
 				{
 					cleanupGame();
@@ -406,7 +406,7 @@ public final class OlympiadGameTask implements Runnable
 				_stadium.spawnBuffers();
 			}
 			
-			if (!_game.portPlayersToArena(_stadium.getZone().getSpawns(), _stadium.getInstanceId()))
+			if (!_game.portPlayersToArena(_stadium.getZone().getSpawns(), _stadium.getInstance()))
 			{
 				return false;
 			}

@@ -1464,6 +1464,14 @@ public class Quest extends AbstractScript implements IIdentifiable
 	}
 	
 	/**
+	 * This listener is called when NPC {@code npc} being despawned.
+	 * @param npc NPC which will be despawned
+	 */
+	public void onNpcDespawn(Npc npc)
+	{
+	}
+	
+	/**
 	 * @param npc
 	 * @param player
 	 * @return {@code true} if player can see this npc, {@code false} otherwise.
@@ -2062,6 +2070,24 @@ public class Quest extends AbstractScript implements IIdentifiable
 	public void addSpawnId(Collection<Integer> npcIds)
 	{
 		setNpcSpawnId(event -> notifySpawn(event.getNpc()), npcIds);
+	}
+	
+	/**
+	 * Register onNpcDespawn to NPCs.
+	 * @param npcIds
+	 */
+	public void addDespawnId(int... npcIds)
+	{
+		setNpcDespawnId(event -> onNpcDespawn(event.getNpc()), npcIds);
+	}
+	
+	/**
+	 * Register onNpcDespawn to NPCs.
+	 * @param npcIds
+	 */
+	public void addDespawnId(Collection<Integer> npcIds)
+	{
+		setNpcDespawnId(event -> onNpcDespawn(event.getNpc()), npcIds);
 	}
 	
 	/**

@@ -478,16 +478,11 @@ public final class Valakas extends AbstractNpcAI
 		{
 			if (getRandom(10) == 0)
 			{
-				int x = npc.getX();
-				int y = npc.getY();
-				int z = npc.getZ();
-				
-				int posX = x + getRandom(-1400, 1400);
-				int posY = y + getRandom(-1400, 1400);
-				
-				if (GeoData.getInstance().canMove(x, y, z, posX, posY, z, npc.getInstanceId()))
+				final int posX = npc.getX() + getRandom(-1400, 1400);
+				final int posY = npc.getY() + getRandom(-1400, 1400);
+				if (GeoData.getInstance().canMove(npc, posX, posY, npc.getZ()))
 				{
-					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(posX, posY, z, 0));
+					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(posX, posY, npc.getZ(), 0));
 				}
 			}
 			return;

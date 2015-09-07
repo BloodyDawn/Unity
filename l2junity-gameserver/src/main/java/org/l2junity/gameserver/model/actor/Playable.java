@@ -20,7 +20,6 @@ package org.l2junity.gameserver.model.actor;
 
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.enums.InstanceType;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.WorldObject;
@@ -176,9 +175,9 @@ public abstract class Playable extends Creature
 			}
 		}
 		// Notify instance
-		if ((getInstanceId() > 0) && isPlayer())
+		if (isPlayer())
 		{
-			final Instance instance = InstanceManager.getInstance().getInstance(getInstanceId());
+			final Instance instance = getInstanceWorld();
 			if (instance != null)
 			{
 				instance.onDeath(getActingPlayer());

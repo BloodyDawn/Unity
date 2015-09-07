@@ -71,7 +71,7 @@ public final class SummonNpc extends AbstractEffect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
@@ -79,7 +79,7 @@ public final class SummonNpc extends AbstractEffect
 		{
 			return;
 		}
-
+		
 		if ((_npcId <= 0) || (_npcCount <= 0))
 		{
 			_log.warn(SummonNpc.class.getSimpleName() + ": Invalid NPC ID or count skill ID: " + skill.getId());
@@ -138,7 +138,7 @@ public final class SummonNpc extends AbstractEffect
 				decoy.setCurrentHp(decoy.getMaxHp());
 				decoy.setCurrentMp(decoy.getMaxMp());
 				decoy.setHeading(player.getHeading());
-				decoy.setInstanceId(player.getInstanceId());
+				decoy.setInstance(player.getInstanceWorld());
 				decoy.setSummoner(player);
 				decoy.spawnMe(x, y, z);
 				break;

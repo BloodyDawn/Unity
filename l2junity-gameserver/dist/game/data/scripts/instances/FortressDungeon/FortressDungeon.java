@@ -132,7 +132,7 @@ public final class FortressDungeon extends AbstractInstance
 	@Override
 	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			if (CommonUtil.contains(RAIDS3, npc.getId()))

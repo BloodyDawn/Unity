@@ -79,12 +79,6 @@ public class SayuneEntry implements ILocational
 	}
 	
 	@Override
-	public int getInstanceId()
-	{
-		return 0;
-	}
-	
-	@Override
 	public ILocational getLocation()
 	{
 		return new Location(_x, _y, _z);

@@ -114,7 +114,7 @@ public final class MuseumDungeon extends AbstractInstance
 		}
 		else
 		{
-			final Instance world = getPlayerInstance(player, true);
+			final Instance world = player.getInstanceWorld();
 			if (world != null)
 			{
 				switch (event)
@@ -154,13 +154,13 @@ public final class MuseumDungeon extends AbstractInstance
 	@Override
 	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
-		String htmltext = null;
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world == null)
 		{
-			return htmltext;
+			return null;
 		}
 		
+		String htmltext = null;
 		final QuestState qs = player.getQuestState(Q10327_IntruderWhoWantsTheBookOfGiants.class.getSimpleName());
 		if ((qs == null) || qs.isCond(2))
 		{
@@ -190,20 +190,24 @@ public final class MuseumDungeon extends AbstractInstance
 	@Override
 	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
-		final Npc toyron = getInstance(npc).getNpc(TOYRON);
-		if (skill != null)
+		final Instance instance = npc.getInstanceWorld();
+		if (instance != null)
 		{
-			toyron.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.ENOUGH_OF_THIS_COME_AT_ME);
-			toyron.reduceCurrentHp(1, npc, null); // TODO: Find better way for attack
-			npc.reduceCurrentHp(1, toyron, null);
-			startQuestTimer("KILL_THIEF", 2500, npc, attacker);
-			startQuestTimer("TOYRON_FOLLOW", 3000, toyron, attacker);
-		}
-		else
-		{
-			toyron.broadcastSay(ChatType.NPC_GENERAL, TOYRON_SHOUT[getRandom(2)]);
-			// This message should be delayed from thief spawn
-			// showOnScreenMsg(attacker, NpcStringId.USE_YOUR_SKILL_ATTACKS_AGAINST_THEM, ExShowScreenMessage.TOP_CENTER, 4500);
+			final Npc toyron = instance.getNpc(TOYRON);
+			if (skill != null)
+			{
+				toyron.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.ENOUGH_OF_THIS_COME_AT_ME);
+				toyron.reduceCurrentHp(1, npc, null); // TODO: Find better way for attack
+				npc.reduceCurrentHp(1, toyron, null);
+				startQuestTimer("KILL_THIEF", 2500, npc, attacker);
+				startQuestTimer("TOYRON_FOLLOW", 3000, toyron, attacker);
+			}
+			else
+			{
+				toyron.broadcastSay(ChatType.NPC_GENERAL, TOYRON_SHOUT[getRandom(2)]);
+				// This message should be delayed from thief spawn
+				// showOnScreenMsg(attacker, NpcStringId.USE_YOUR_SKILL_ATTACKS_AGAINST_THEM, ExShowScreenMessage.TOP_CENTER, 4500);
+			}
 		}
 		return super.onAttack(npc, attacker, damage, isSummon, skill);
 	}
@@ -211,19 +215,22 @@ public final class MuseumDungeon extends AbstractInstance
 	@Override
 	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
-		final Instance world = getInstance(npc);
-		final QuestState qs = player.getQuestState(Q10327_IntruderWhoWantsTheBookOfGiants.class.getSimpleName());
-		if ((qs != null) && qs.isCond(2))
+		final Instance world = npc.getInstanceWorld();
+		if (world != null)
 		{
-			final int killedThiefs = world.getParameters().getInt("killed", 0);
-			if (killedThiefs >= 1)
+			final QuestState qs = player.getQuestState(Q10327_IntruderWhoWantsTheBookOfGiants.class.getSimpleName());
+			if ((qs != null) && qs.isCond(2))
 			{
-				qs.setCond(3, true);
-				showOnScreenMsg(player, NpcStringId.TALK_TO_TOYRON_TO_RETURN_TO_THE_MUSEUM_LOBBY, ExShowScreenMessage.TOP_CENTER, 4500);
-			}
-			else
-			{
-				world.setParameter("killed", killedThiefs + 1);
+				final int killedThiefs = world.getParameters().getInt("killed", 0);
+				if (killedThiefs >= 1)
+				{
+					qs.setCond(3, true);
+					showOnScreenMsg(player, NpcStringId.TALK_TO_TOYRON_TO_RETURN_TO_THE_MUSEUM_LOBBY, ExShowScreenMessage.TOP_CENTER, 4500);
+				}
+				else
+				{
+					world.setParameter("killed", killedThiefs + 1);
+				}
 			}
 		}
 		return super.onKill(npc, player, isSummon);

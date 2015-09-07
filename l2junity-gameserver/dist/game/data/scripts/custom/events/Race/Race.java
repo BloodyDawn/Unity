@@ -213,7 +213,7 @@ public final class Race extends Event
 			if ((player != null) && player.isOnline())
 			{
 				player.untransform();
-				player.teleToLocation(_npc.getX(), _npc.getY(), _npc.getZ(), true);
+				player.teleToLocation(_npc, true);
 			}
 		}
 		// Despawn NPCs

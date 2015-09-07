@@ -42,7 +42,6 @@ import org.l2junity.gameserver.enums.InstanceRemoveBuffType;
 import org.l2junity.gameserver.enums.InstanceTeleportType;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.InstanceReenterTimeHolder;
 import org.l2junity.gameserver.model.holders.SpawnHolder;
@@ -417,17 +416,6 @@ public final class InstanceManager implements IGameXmlReader
 	}
 	
 	/**
-	 * Get instance world for given creature.<br>
-	 * <i>For player instance use {@link InstanceManager#getPlayerInstance(PlayerInstance, boolean)}.</i>
-	 * @param creature creature inside instance
-	 * @return instance world if found, otherwise {@code null}
-	 */
-	public Instance getInstance(Creature creature)
-	{
-		return _instanceWorlds.get(creature.getInstanceId());
-	}
-	
-	/**
 	 * Get instance world for player.
 	 * @param player player who wants to get instance world
 	 * @param isInside when {@code true} find world where player is currently located, otherwise find world where player can enter
@@ -582,7 +570,7 @@ public final class InstanceManager implements IGameXmlReader
 	 */
 	public void setReenterPenalty(int objectId, int id, long time)
 	{
-		_playerInstanceTimes.computeIfAbsent(objectId, ConcurrentHashMap::new).put(id, time);
+		_playerInstanceTimes.computeIfAbsent(objectId, k -> new ConcurrentHashMap<>()).put(id, time);
 	}
 	
 	/**

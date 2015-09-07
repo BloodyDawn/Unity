@@ -64,12 +64,9 @@ public final class Escape extends AbstractEffect
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if (_escapeType == null)
+		if (_escapeType != null)
 		{
-			return;
+			effected.teleToLocation(_escapeType, null);
 		}
-		
-		effected.teleToLocation(_escapeType);
-		effected.setInstanceId(0);
 	}
 }

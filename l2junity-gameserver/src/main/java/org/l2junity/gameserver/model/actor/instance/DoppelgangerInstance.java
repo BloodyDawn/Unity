@@ -52,7 +52,7 @@ public class DoppelgangerInstance extends Npc
 		setSummoner(owner);
 		setCloneObjId(owner.getObjectId());
 		setClanId(owner.getClanId());
-		setInstanceId(owner.getInstanceId()); // set instance to same as owner
+		setInstance(owner.getInstanceWorld()); // set instance to same as owner
 		setXYZInvisible(owner.getX() + Rnd.get(-100, 100), owner.getY() + Rnd.get(-100, 100), owner.getZ());
 		((DoppelgangerAI) getAI()).setStartFollowController(true);
 		followSummoner(true);

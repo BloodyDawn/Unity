@@ -156,6 +156,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 		final Npc zaken = spawnNpc(instance.getTemplateParameters().getInt("Zaken"), zakenRoom, null, instance);
 		zaken.setInvisible(true);
 		zaken.setBlockActions(true);
+		instance.setParameter("zakenRoom", zakenRoom);
 		instance.setParameter("zaken", zaken);
 	}
 	
@@ -186,7 +187,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 		}
 		else
 		{
-			final Instance world = getInstance(npc);
+			final Instance world = npc.getInstanceWorld();
 			if (world != null)
 			{
 				final StatsSet templParams = world.getTemplateParameters();
@@ -262,7 +263,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	@Override
 	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			if (npc.getId() == ZAKEN_83)
@@ -291,7 +292,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	@Override
 	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if ((world != null) && npc.isScriptValue(0))
 		{
 			npc.setScriptValue(1);

@@ -50,7 +50,7 @@ public final class KnockBack extends AbstractEffect
 	public KnockBack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-
+		
 		_distance = params.getInt("distance", 50);
 		_speed = params.getInt("speed", 0);
 		_delay = params.getInt("delay", 0);
@@ -70,25 +70,25 @@ public final class KnockBack extends AbstractEffect
 	{
 		return L2EffectType.KNOCK;
 	}
-
+	
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill)
 	{
-		if(!_knockDown)
+		if (!_knockDown)
 		{
 			knockBack(effector, effected);
 		}
 	}
-
+	
 	@Override
 	public void continuousInstant(Creature effector, Creature effected, Skill skill)
 	{
-		if(_knockDown)
+		if (_knockDown)
 		{
 			knockBack(effector, effected);
 		}
 	}
-
+	
 	@Override
 	public void onExit(BuffInfo info)
 	{
@@ -97,15 +97,15 @@ public final class KnockBack extends AbstractEffect
 			info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_THINK);
 		}
 	}
-
+	
 	public void knockBack(Creature effector, Creature effected)
 	{
 		final double radians = Math.toRadians(Util.calculateAngleFrom(effector, effected));
 		final int x = (int) (effected.getX() + (_distance * Math.cos(radians)));
 		final int y = (int) (effected.getY() + (_distance * Math.sin(radians)));
 		final int z = effected.getZ();
-		final Location loc = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceId());
-
+		final Location loc = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceWorld());
+		
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		effected.broadcastPacket(new FlyToLocation(effected, loc, _type, _speed, _delay, _animationSpeed));
 		if (_knockDown)

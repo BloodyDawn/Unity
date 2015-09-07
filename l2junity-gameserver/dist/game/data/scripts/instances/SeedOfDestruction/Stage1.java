@@ -49,7 +49,6 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
-import org.l2junity.gameserver.util.Util;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -194,14 +193,15 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 		addStartNpc(ALENOS, TELEPORT);
 		addTalkId(ALENOS, TELEPORT);
 		addAttackId(OBELISK, TIAT);
-		addSpawnId(OBELISK, POWERFUL_DEVICE, THRONE_POWERFUL_DEVICE, TIAT_GUARD);
-		addKillId(OBELISK, TIAT, SPAWN_DEVICE, TIAT_GUARD);
+		addSpawnId(OBELISK, POWERFUL_DEVICE, THRONE_POWERFUL_DEVICE);
+		addKillId(OBELISK, TIAT, TIAT_GUARD);
 		for (int i = 18771; i <= 18774; i++)
 		{
 			addTrapActionId(i);
 		}
 		addEnterZoneId(VIDEO_ZONE);
 		addInstanceCreatedId(INSTANCEID);
+		addDespawnId(SPAWN_DEVICE);
 	}
 	
 	@Override
@@ -318,13 +318,13 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 			{
 				door.setIsAttackableDoor(true);
 			}
+			door.closeMe();
 		}
 	}
 	
 	protected boolean checkKillProgress(Instance world)
 	{
-		final long count = world.getNpcs().stream().filter(n -> !n.isDead() && n.isScriptValue(1)).count();
-		return count == 0;
+		return world.getNpcs().stream().filter(n -> !n.isDead() && n.isScriptValue(1)).count() == 0;
 	}
 	
 	private void spawnFlaggedNPCs(Instance world, int flag)
@@ -371,7 +371,7 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 				world.broadcastPacket(new ExShowScreenMessage(NpcStringId.THE_ENEMIES_HAVE_ATTACKED_EVERYONE_COME_OUT_AND_FIGHT_URGH, 5, 1000));
 				for (int i : ENTRANCE_ROOM_DOORS)
 				{
-					openDoor(i, world.getId());
+					world.openCloseDoor(i, true);
 				}
 				spawnFlaggedNPCs(world, 1);
 				break;
@@ -379,17 +379,17 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 				world.broadcastPacket(new ExShowScreenMessage(NpcStringId.OBELISK_HAS_COLLAPSED_DON_T_LET_THE_ENEMIES_JUMP_AROUND_WILDLY_ANYMORE, 5, 1000));
 				for (int i : SQUARE_DOORS)
 				{
-					openDoor(i, world.getId());
+					world.openCloseDoor(i, true);
 				}
 				spawnFlaggedNPCs(world, 4);
 				break;
 			case 5:
-				openDoor(SCOUTPASS_DOOR, world.getId());
+				world.openCloseDoor(SCOUTPASS_DOOR, true);
 				spawnFlaggedNPCs(world, 3);
 				spawnFlaggedNPCs(world, 5);
 				break;
 			case 6:
-				openDoor(THRONE_DOOR, world.getId());
+				world.openCloseDoor(THRONE_DOOR, true);
 				break;
 			case 7:
 				spawnFlaggedNPCs(world, 7);
@@ -459,14 +459,7 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 	@Override
 	public String onSpawn(Npc npc)
 	{
-		if (npc.getId() == TIAT_GUARD)
-		{
-			startQuestTimer("GuardThink", 2500 + getRandom(-200, 200), npc, null, true);
-		}
-		else
-		{
-			npc.disableCoreAI(true);
-		}
+		npc.disableCoreAI(true);
 		return super.onSpawn(npc);
 	}
 	
@@ -475,7 +468,7 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 	{
 		if (character.isPlayer())
 		{
-			final Instance world = getPlayerInstance(character.getActingPlayer(), true);
+			final Instance world = character.getInstanceWorld();
 			if ((world != null) && world.isStatus(7))
 			{
 				spawnState(world);
@@ -493,7 +486,7 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 	@Override
 	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			if (npc.getId() == OBELISK)
@@ -522,7 +515,7 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
-		final Instance world = getInstance(npc);
+		final Instance world = npc.getInstanceWorld();
 		if (world != null)
 		{
 			switch (event)
@@ -566,25 +559,6 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 					}
 					break;
 				}
-				case "BodyGuardThink":
-				{
-					final Attackable mob = (Attackable) npc;
-					Creature mostHate = mob.getMostHated();
-					if (mostHate != null)
-					{
-						double dist = Util.calculateDistance(mostHate.getXdestination(), mostHate.getYdestination(), 0, npc.getSpawn().getX(), npc.getSpawn().getY(), 0, false, false);
-						if (dist > 900)
-						{
-							mob.reduceHate(mostHate, mob.getHating(mostHate));
-						}
-						mostHate = mob.getMostHated();
-						if ((mostHate != null) || (mob.getHating(mostHate) < 5))
-						{
-							mob.returnHome();
-						}
-					}
-					break;
-				}
 			}
 		}
 		return null;
@@ -593,79 +567,78 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 	@Override
 	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
-		if (npc.getId() == SPAWN_DEVICE)
+		final Instance world = npc.getInstanceWorld();
+		if (world != null)
 		{
-			cancelQuestTimer("Spawn", npc, null);
-		}
-		else
-		{
-			final Instance world = getInstance(npc);
-			if (world != null)
+			switch (world.getStatus())
 			{
-				switch (world.getStatus())
+				case 1:
 				{
-					case 1:
+					if (checkKillProgress(world))
 					{
-						if (checkKillProgress(world))
-						{
-							spawnState(world);
-						}
-						break;
+						spawnState(world);
 					}
-					case 2:
+					break;
+				}
+				case 2:
+				{
+					if (checkKillProgress(world))
 					{
-						if (checkKillProgress(world))
+						world.incStatus();
+					}
+					break;
+				}
+				case 4:
+				{
+					if (npc.getId() == OBELISK)
+					{
+						spawnState(world);
+					}
+					break;
+				}
+				case 5:
+				{
+					if ((npc.getId() == POWERFUL_DEVICE) && checkKillProgress(world))
+					{
+						spawnState(world);
+					}
+					break;
+				}
+				case 6:
+				{
+					if ((npc.getId() == THRONE_POWERFUL_DEVICE) && checkKillProgress(world))
+					{
+						spawnState(world);
+					}
+					break;
+				}
+				default:
+				{
+					if (world.getStatus() >= 7)
+					{
+						if (npc.getId() == TIAT)
 						{
 							world.incStatus();
+							playMovie(World.getInstance().getVisibleObjects(npc, PlayerInstance.class, 8000), Movie.SC_BOSS_TIAT_ENDING_SUCCES);
+							world.removeNpcs();
+							world.finishInstance();
+							GraciaSeedsManager.getInstance().increaseSoDTiatKilled();
 						}
-						break;
-					}
-					case 4:
-					{
-						if (npc.getId() == OBELISK)
+						else if (npc.getId() == TIAT_GUARD)
 						{
-							spawnState(world);
-						}
-						break;
-					}
-					case 5:
-					{
-						if ((npc.getId() == POWERFUL_DEVICE) && checkKillProgress(world))
-						{
-							spawnState(world);
-						}
-						break;
-					}
-					case 6:
-					{
-						if ((npc.getId() == THRONE_POWERFUL_DEVICE) && checkKillProgress(world))
-						{
-							spawnState(world);
-						}
-						break;
-					}
-					default:
-					{
-						if (world.getStatus() >= 7)
-						{
-							if (npc.getId() == TIAT)
-							{
-								world.incStatus();
-								playMovie(World.getInstance().getVisibleObjects(npc, PlayerInstance.class, 8000), Movie.SC_BOSS_TIAT_ENDING_SUCCES);
-								world.removeNpcs();
-								world.finishInstance();
-								GraciaSeedsManager.getInstance().increaseSoDTiatKilled();
-							}
-							else if (npc.getId() == TIAT_GUARD)
-							{
-								addMinion(((L2MonsterInstance) npc).getLeader(), TIAT_GUARD);
-							}
+							addMinion(((L2MonsterInstance) npc).getLeader(), TIAT_GUARD);
 						}
 					}
 				}
 			}
 		}
 		return null;
+	}
+	
+	@Override
+	public void onNpcDespawn(Npc npc)
+	{
+		cancelQuestTimer("Spawn", npc, null);
 	}
 	
 	@Override
@@ -686,7 +659,7 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 		}
 		else
 		{
-			player.teleToLocation(CENTER_TELEPORT, player.getInstanceId(), 0);
+			player.teleToLocation(CENTER_TELEPORT);
 		}
 		return null;
 	}
@@ -694,7 +667,7 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 	@Override
 	public String onTrapAction(L2TrapInstance trap, Creature trigger, TrapAction action)
 	{
-		final Instance world = getInstance(trap);
+		final Instance world = trap.getInstanceWorld();
 		if ((world != null) && (action == TrapAction.TRAP_TRIGGERED))
 		{
 			final int[] npcs = (trap.getId() == 18771) ? TRAP_18771_NPCS : TRAP_OTHER_NPCS;

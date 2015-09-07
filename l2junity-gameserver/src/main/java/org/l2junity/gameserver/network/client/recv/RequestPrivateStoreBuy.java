@@ -96,12 +96,7 @@ public final class RequestPrivateStoreBuy implements IClientIncomingPacket
 		}
 		
 		WorldObject object = World.getInstance().getPlayer(_storePlayerId);
-		if (object == null)
-		{
-			return;
-		}
-		
-		if (player.isCursedWeaponEquipped())
+		if ((object == null) || player.isCursedWeaponEquipped())
 		{
 			return;
 		}
@@ -112,7 +107,7 @@ public final class RequestPrivateStoreBuy implements IClientIncomingPacket
 			return;
 		}
 		
-		if ((player.getInstanceId() != storePlayer.getInstanceId()) && (player.getInstanceId() != -1))
+		if (player.getInstanceWorld() != storePlayer.getInstanceWorld())
 		{
 			return;
 		}

@@ -50,9 +50,10 @@ public final class Fear extends AbstractEffect
 	@Override
 	public boolean canStart(BuffInfo info)
 	{
-		return info.getEffected().isPlayer() || info.getEffected().isSummon() || (info.getEffected().isAttackable() && //
-		!((info.getEffected() instanceof L2DefenderInstance) || (info.getEffected() instanceof L2FortCommanderInstance) || //
-			(info.getEffected() instanceof L2SiegeFlagInstance) || (info.getEffected().getTemplate().getRace() == Race.SIEGE_WEAPON)));
+		final Creature creature = info.getEffected();
+		return creature.isPlayer() || creature.isSummon() || (creature.isAttackable() && //
+		!((creature instanceof L2DefenderInstance) || (creature instanceof L2FortCommanderInstance) || //
+		(creature instanceof L2SiegeFlagInstance) || (creature.getTemplate().getRace() == Race.SIEGE_WEAPON)));
 	}
 	
 	@Override
@@ -67,7 +68,7 @@ public final class Fear extends AbstractEffect
 		fearAction(null, info.getEffected());
 		return false;
 	}
-
+	
 	@Override
 	public void onStart(Creature effector, Creature effected, Skill skill)
 	{
@@ -86,13 +87,13 @@ public final class Fear extends AbstractEffect
 	
 	private void fearAction(Creature effector, Creature effected)
 	{
-		double radians = Math.toRadians(effector != null ? Util.calculateAngleFrom(effector, effected) : Util.convertHeadingToDegree(effected.getHeading()));
+		double radians = Math.toRadians((effector != null) ? Util.calculateAngleFrom(effector, effected) : Util.convertHeadingToDegree(effected.getHeading()));
 		
 		int posX = (int) (effected.getX() + (FEAR_RANGE * Math.cos(radians)));
 		int posY = (int) (effected.getY() + (FEAR_RANGE * Math.sin(radians)));
 		int posZ = effected.getZ();
 		
-		final Location destination = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), posX, posY, posZ, effected.getInstanceId());
+		final Location destination = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), posX, posY, posZ, effected.getInstanceWorld());
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);
 	}
 }
