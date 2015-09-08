@@ -202,24 +202,13 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		return _location;
 	}
 	
-	public Location getLocation(WorldObject obj)
-	{
-		return _location;
-	}
-	
+	/**
+	 * @return the X position of the spawn point.
+	 */
 	@Override
 	public int getX()
 	{
 		return _location.getX();
-	}
-	
-	/**
-	 * @param obj object to check
-	 * @return the X position of the last spawn point of given NPC.
-	 */
-	public int getX(WorldObject obj)
-	{
-		return getLocation(obj).getX();
 	}
 	
 	/**
@@ -232,19 +221,13 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		_location.setX(x);
 	}
 	
+	/**
+	 * @return the Y position of the spawn point.
+	 */
 	@Override
 	public int getY()
 	{
 		return _location.getY();
-	}
-	
-	/**
-	 * @param obj object to check
-	 * @return the Y position of the last spawn point of given NPC.
-	 */
-	public int getY(WorldObject obj)
-	{
-		return getLocation(obj).getY();
 	}
 	
 	/**
@@ -257,19 +240,13 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		_location.setY(y);
 	}
 	
+	/**
+	 * @return the Z position of the spawn point.
+	 */
 	@Override
 	public int getZ()
 	{
 		return _location.getZ();
-	}
-	
-	/**
-	 * @param obj object to check
-	 * @return the Z position of the last spawn point of given NPC.
-	 */
-	public int getZ(WorldObject obj)
-	{
-		return getLocation(obj).getZ();
 	}
 	
 	/**

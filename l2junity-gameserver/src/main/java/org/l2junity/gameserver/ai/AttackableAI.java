@@ -326,7 +326,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					if (npc.getSpawn() != null)
 					{
-						final Location loc = npc.getSpawn().getLocation(npc);
+						final Location loc = npc.getSpawn().getLocation();
 						final int range = Config.MAX_DRIFT_RANGE;
 						
 						if (!npc.isInsideRadius(loc, range + range, true, false))
@@ -609,9 +609,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 			}
 			
-			x1 = npc.getSpawn().getX(npc);
-			y1 = npc.getSpawn().getY(npc);
-			z1 = npc.getSpawn().getZ(npc);
+			x1 = npc.getSpawn().getX();
+			y1 = npc.getSpawn().getY();
+			z1 = npc.getSpawn().getZ();
 			
 			if (!npc.isInsideRadius(x1, y1, 0, range, false, false))
 			{
