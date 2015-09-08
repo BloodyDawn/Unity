@@ -20,8 +20,8 @@
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="5959" level="1" />
-			<skill id="8260" level="1" />
+			<skill id="5959" level="1" /> <!-- Agathion Cute Trick - Teddy Girl -->
+			<skill id="8260" level="1" /> <!-- Release Agathion's Seal - Teddy Girl -->
 		</skills>
 	</item>
 	<item id="14101" name="Agathion - Angry Devil (Event)" name_additional="7-day" type="Armor">
@@ -44,8 +44,8 @@
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="5956" level="1" />
-			<skill id="8257" level="1" />
+			<skill id="5956" level="1" /> <!-- Agathion Cute Trick - Angry Devil -->
+			<skill id="8257" level="1" /> <!-- Release Agathion's Seal - Angry Devil -->
 		</skills>
 	</item>
 	<item id="14102" name="Agathion - Shiny (Event)" name_additional="7-day" type="Armor">
@@ -68,8 +68,8 @@
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="5955" level="1" />
-			<skill id="8256" level="1" />
+			<skill id="5955" level="1" /> <!-- Agathion Cute Trick - Joy -->
+			<skill id="8256" level="1" /> <!-- Release Agathion's Seal - Joy -->
 		</skills>
 	</item>
 	<item id="14103" name="Agathion - Sobbing (Event)" name_additional="7-day" type="Armor">
@@ -92,8 +92,8 @@
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="5957" level="1" />
-			<skill id="8258" level="1" />
+			<skill id="5957" level="1" /> <!-- Agathion Cute Trick - Sorrow -->
+			<skill id="8258" level="1" /> <!-- Release Agathion's Seal - Sorrow -->
 		</skills>
 	</item>
 	<item id="14104" name="Shadow Item: Agathion - Essence Collector" type="Armor">
@@ -116,8 +116,8 @@
 		<set name="useSkillDisTime" val="1" />
 		<skills>
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="8251" level="1" />
-			<skill id="5780" level="3" />
+			<skill id="8251" level="1" /> <!-- Collection Agathion Release Seal -->
+			<skill id="5780" level="3" /> <!-- Agathion Collection -->
 		</skills>
 	</item>
 	<item id="14105" name="Sealed Vesper Breastplate" type="Armor">
@@ -683,7 +683,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3577" level="2" type="ON_MAGIC_SKILL" type_chance="20" />
+			<skill id="3577" level="2" type="ON_MAGIC_SKILL" type_chance="20" /> <!-- Special Ability: Magic Hold -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="317" />
@@ -878,7 +878,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3070" level="2" type="ON_CRITICAL_SKILL" type_chance="100" />
+			<skill id="3070" level="2" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Special Ability: Critical Stun -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="482" />
@@ -1367,7 +1367,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3577" level="2" type="ON_MAGIC_SKILL" type_chance="20" />
+			<skill id="3577" level="2" type="ON_MAGIC_SKILL" type_chance="20" /> <!-- Special Ability: Magic Hold -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="386" />
@@ -1440,7 +1440,7 @@
 		<set name="commissionItemType" val="BOW" />
 		<skills>
 			<skill id="3567" level="3" /> <!-- Special Ability: Focus -->
-			<skill id="3566" level="4" />
+			<skill id="3566" level="4" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="724" />
@@ -1477,7 +1477,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" type_chance="100" />
+			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Special Ability: Critical Slow -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="724" />
@@ -1586,7 +1586,7 @@
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
 			<skill id="8289" level="1" /> <!-- Special Ability: Focus -->
-			<skill id="3566" level="3" />
+			<skill id="3566" level="3" /> <!-- Special Ability: Focus -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1625,7 +1625,7 @@
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3360" level="1" /> <!-- Special Ability: Cheap Shot -->
-			<skill id="8312" level="1" />
+			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1701,7 +1701,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3574" level="2" type="ON_CRITICAL_SKILL" type_chance="100" />
+			<skill id="3574" level="2" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Special Ability: Critical Slow -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />

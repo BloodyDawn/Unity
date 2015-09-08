@@ -23,7 +23,7 @@
 		<set name="time" val="43200" />
 		<skills>
 			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
-			<skill id="8246" level="1" />
+			<skill id="8246" level="1" /> <!-- Transform Pumpkin Ghost -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
@@ -434,7 +434,7 @@
 		<set name="useSkillDisTime" val="1" />
 		<skills>
 			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
-			<skill id="8244" level="1" />
+			<skill id="8244" level="1" /> <!-- Transform Gatekeeper -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
@@ -567,7 +567,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="LIFE_STONE" />
 		<skills>
-			<skill id="2530" level="1" />
+			<skill id="2530" level="1" /> <!-- Recovery Item (Battleground) -->
 		</skills>
 		<cond msgId="113">
 			<player level="80" />
@@ -582,7 +582,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="2530" level="1" />
+			<skill id="2530" level="1" /> <!-- Recovery Item (Battleground) -->
 		</skills>
 		<cond msgId="113">
 			<player level="82" />
@@ -1286,7 +1286,7 @@
 			<skill id="3902" level="1" /> <!-- Staff of Clarity -->
 			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" />
+			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" /> <!-- Mental Shield -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="245" />
@@ -1449,7 +1449,7 @@
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3360" level="1" /> <!-- Special Ability: Cheap Shot -->
 			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
-			<skill id="8312" level="1" />
+			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1831,7 +1831,7 @@
 			<skill id="3863" level="4" /> <!-- Bow of Guidance -->
 			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="8312" level="1" />
+			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="571" />
@@ -2643,7 +2643,7 @@
 			<skill id="3853" level="2" /> <!-- Sword of Mana Regeneration -->
 			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" />
+			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" /> <!-- Mental Shield -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="202" />
@@ -2684,7 +2684,7 @@
 			<skill id="3853" level="2" /> <!-- Sword of Mana Regeneration -->
 			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="1077" level="3" type="ON_MAGIC_SKILL" type_chance="20" />
+			<skill id="1077" level="3" type="ON_MAGIC_SKILL" type_chance="20" /> <!-- Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="202" />
@@ -2807,7 +2807,7 @@
 			<skill id="3893" level="1" /> <!-- Blunt Weapon of Mana Regeneration -->
 			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3074" level="2" type="ON_MAGIC_SKILL" type_chance="10" />
+			<skill id="3074" level="2" type="ON_MAGIC_SKILL" type_chance="10" /> <!-- Special Ability: Magic Silence -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="202" />

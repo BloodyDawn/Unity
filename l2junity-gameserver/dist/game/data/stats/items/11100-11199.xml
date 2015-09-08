@@ -121,7 +121,7 @@
 		<skills>
 			<skill id="3892" level="1" /> <!-- Blunt Weapon of Clarity -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3074" level="2" type="ON_MAGIC_SKILL" type_chance="10" />
+			<skill id="3074" level="2" type="ON_MAGIC_SKILL" type_chance="10" /> <!-- Special Ability: Magic Silence -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
@@ -221,7 +221,7 @@
 		<skills>
 			<skill id="3901" level="1" /> <!-- Staff of Mana Boost -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3049" level="2" type="ON_MAGIC_SKILL" type_chance="30" />
+			<skill id="3049" level="2" type="ON_MAGIC_SKILL" type_chance="30" /> <!-- Special Ability: Magic Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="226" />
@@ -353,7 +353,7 @@
 		<skills>
 			<skill id="3856" level="1" /> <!-- Sword of Divine Power -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3074" level="2" type="ON_MAGIC_SKILL" type_chance="10" />
+			<skill id="3074" level="2" type="ON_MAGIC_SKILL" type_chance="10" /> <!-- Special Ability: Magic Silence -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
@@ -456,7 +456,7 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3360" level="1" /> <!-- Special Ability: Cheap Shot -->
 			<skill id="3870" level="1" /> <!-- Crossbow of Long Shot -->
-			<skill id="8312" level="1" />
+			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -790,7 +790,7 @@
 		<skills>
 			<skill id="3886" level="1" /> <!-- Blunt Weapon of Haste -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3059" level="2" type="ON_CRITICAL_SKILL" type_chance="35" />
+			<skill id="3059" level="2" type="ON_CRITICAL_SKILL" type_chance="35" /> <!-- Special Ability: Critical Drain -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
@@ -861,7 +861,7 @@
 		<skills>
 			<skill id="3865" level="1" /> <!-- Bow of Long Shot -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="8312" level="1" />
+			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="528" />
@@ -1344,7 +1344,7 @@
 		<skills>
 			<skill id="3902" level="1" /> <!-- Staff of Clarity -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" />
+			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" /> <!-- Mental Shield -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="245" />
@@ -1543,7 +1543,7 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3360" level="1" /> <!-- Special Ability: Cheap Shot -->
 			<skill id="3868" level="4" /> <!-- Crossbow of Guidance -->
-			<skill id="8312" level="1" />
+			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1962,7 +1962,7 @@
 		<skills>
 			<skill id="3863" level="4" /> <!-- Bow of Guidance -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="8312" level="1" />
+			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="570" />
@@ -2288,7 +2288,7 @@
 		<skills>
 			<skill id="3882" level="1" /> <!-- Fist Weapon of Stun -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3039" level="1" type="ON_CRITICAL_SKILL" type_chance="33" />
+			<skill id="3039" level="1" type="ON_CRITICAL_SKILL" type_chance="33" /> <!-- Special Ability: Critical Drain -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="305" />
@@ -2631,7 +2631,7 @@
 		<skills>
 			<skill id="3876" level="1" /> <!-- Polearm of Stun -->
 			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" type_chance="100" />
+			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Special Ability: Critical Stun -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="251" />
@@ -2826,7 +2826,7 @@
 		<skills>
 			<skill id="3853" level="2" /> <!-- Sword of Mana Regeneration -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" />
+			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" /> <!-- Mental Shield -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="202" />
@@ -2860,7 +2860,7 @@
 		<skills>
 			<skill id="3853" level="2" /> <!-- Sword of Mana Regeneration -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="1077" level="3" type="ON_MAGIC_SKILL" type_chance="20" />
+			<skill id="1077" level="3" type="ON_MAGIC_SKILL" type_chance="20" /> <!-- Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="202" />
@@ -2992,7 +2992,7 @@
 		<skills>
 			<skill id="3893" level="1" /> <!-- Blunt Weapon of Mana Regeneration -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3074" level="2" type="ON_MAGIC_SKILL" type_chance="10" />
+			<skill id="3074" level="2" type="ON_MAGIC_SKILL" type_chance="10" /> <!-- Special Ability: Magic Silence -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="202" />
@@ -3272,7 +3272,7 @@
 		<skills>
 			<skill id="3883" level="1" /> <!-- Fist Weapon of Critical Damage -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3070" level="3" type="ON_CRITICAL_SKILL" type_chance="100" />
+			<skill id="3070" level="3" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Special Ability: Critical Stun -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
@@ -3346,7 +3346,7 @@
 		<skills>
 			<skill id="3867" level="1" /> <!-- Bow of Boost HP -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="8312" level="1" />
+			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="581" />

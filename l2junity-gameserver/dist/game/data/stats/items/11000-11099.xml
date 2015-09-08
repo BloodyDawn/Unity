@@ -434,7 +434,7 @@
 		<set name="reduced_mp_consume" val="42,2" />
 		<skills>
 			<skill id="3867" level="1" /> <!-- Bow of Boost HP -->
-			<skill id="8312" level="1" />
+			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="400" />
@@ -578,7 +578,7 @@
 		<skills>
 			<skill id="3872" level="1" /> <!-- Crossbow of Boost HP -->
 			<skill id="3360" level="1" /> <!-- Special Ability: Cheap Shot -->
-			<skill id="8312" level="1" />
+			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1491,7 +1491,7 @@
 		<skills>
 			<skill id="3854" level="1" /> <!-- Sword of Empower -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3075" level="1" type="ON_MAGIC_SKILL" type_chance="5" />
+			<skill id="3075" level="1" type="ON_MAGIC_SKILL" type_chance="5" /> <!-- Special Ability: Magic Paralyze -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
@@ -2210,7 +2210,7 @@
 		<skills>
 			<skill id="3895" level="2" /> <!-- Two-handed Blunt Weapon of Critical Chance -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3059" level="1" type="ON_CRITICAL_SKILL" type_chance="35" />
+			<skill id="3059" level="1" type="ON_CRITICAL_SKILL" type_chance="35" /> <!-- Special Ability: Critical Drain -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
@@ -2386,7 +2386,7 @@
 		<skills>
 			<skill id="3874" level="1" /> <!-- Polearm of Critical Chance -->
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" type_chance="100" />
+			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Special Ability: Critical Stun -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -2452,7 +2452,7 @@
 		<skills>
 			<skill id="3874" level="1" /> <!-- Polearm of Critical Chance -->
 			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" type_chance="100" />
+			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Special Ability: Critical Stun -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -2963,7 +2963,7 @@
 		<skills>
 			<skill id="3848" level="1" /> <!-- Ancient Sword of Vampiric Rage -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3060" level="2" type="ON_CRITICAL_SKILL" type_chance="35" />
+			<skill id="3060" level="2" type="ON_CRITICAL_SKILL" type_chance="35" /> <!-- Special Ability: Critical Drain -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -3351,7 +3351,7 @@
 		<skills>
 			<skill id="3842" level="1" /> <!-- Two-handed Sword of Vampiric Rage -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3060" level="2" type="ON_CRITICAL_SKILL" type_chance="35" />
+			<skill id="3060" level="2" type="ON_CRITICAL_SKILL" type_chance="35" /> <!-- Special Ability: Critical Drain -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="282" />

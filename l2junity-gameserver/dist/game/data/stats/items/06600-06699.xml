@@ -150,7 +150,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
-			<skill id="3070" level="3" type="ON_CRITICAL_SKILL" type_chance="100" />
+			<skill id="3070" level="3" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Special Ability: Critical Stun -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
@@ -503,7 +503,7 @@
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="3597" level="1" /> <!-- Special Ability: Infinity Rod -->
-			<skill id="3598" level="1" type="ON_MAGIC_SKILL" type_chance="3" />
+			<skill id="3598" level="1" type="ON_MAGIC_SKILL" type_chance="3" /> <!-- Full Recovery -->
 		</skills>
 		<cond msgId="1518">
 			<player isHero="true" />
@@ -584,7 +584,7 @@
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="3595" level="1" /> <!-- Special Ability: Infinity Scepter -->
-			<skill id="3596" level="1" type="ON_CRITICAL_SKILL" type_chance="1" />
+			<skill id="3596" level="1" type="ON_CRITICAL_SKILL" type_chance="1" /> <!-- Full Recovery -->
 		</skills>
 		<cond msgId="1518">
 			<player isHero="true" />
@@ -1205,7 +1205,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="2233" level="1" />
+			<skill id="2233" level="1" /> <!-- Amulet: Flames of Valakas -->
 		</skills>
 	</item>
 	<item id="6654" name="Amulet: Flames of Valakas" type="EtcItem">
