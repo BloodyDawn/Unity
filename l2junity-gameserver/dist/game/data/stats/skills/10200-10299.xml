@@ -143,7 +143,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10251" levels="7" name="Superior Weapon Mastery">
+	<skill id="10251" levels="10" name="Superior Weapon Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 30%, additional P. Atk. + 1689, Atk. Spd + 25%, P. Accuracy + 8 when a sword, blunt, or spear is equipped. Increases the number of possible targets during a spear attack. STR + 2. Depending on your STR, the Cooldown resets or the duration increases by 2 times. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
@@ -173,7 +173,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10252" levels="7" name="Superior Dual Weapon Mastery">
+	<skill id="10252" levels="10" name="Superior Dual Weapon Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 30%, additional P. Atk. + 1689, Atk. Spd. + 25%, and P. Accuracy + 8 when using a dualsword, dual blunt, or fist weapon. STR + 2. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
@@ -199,7 +199,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10253" levels="7" name="Superior Heavy Armor Mastery">
+	<skill id="10253" levels="10" name="Superior Heavy Armor Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- Max HP + 5368 and P. Def. + 1731 when equipped with Heavy Armor. STR + 2. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
@@ -221,7 +221,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10254" levels="7" name="Superior Light Armor Mastery">
+	<skill id="10254" levels="10" name="Superior Light Armor Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- STR + 2. Max HP + 5368, P. Def. + 1271, P. Accuracy + 3, P. Evasion + 6, Spd. + 10, and Atk. Spd. + 10% when equipped with Light Armor. Chance of receiving a critical attack - 35%. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
@@ -260,7 +260,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10255" levels="7" name="Superior Momentum Mastery">
+	<skill id="10255" levels="10" name="Superior Momentum Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- Absorbs Momentum by 20% during a normal physical attack and 40% during a critical attack. Can absorb up to 10 Momentum levels. -->
 		<table name="#chance"> 20 22 24 26 30 32 34 </table>
@@ -292,7 +292,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10256" levels="7" name="Superior HP Mastery">
+	<skill id="10256" levels="10" name="Superior HP Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- Max HP + 606, Max CP + 296, HP Recovery Bonus + 12, MP Recovery Bonus + 6. When HP falls below 60%, P. Atk. + 1027. STR + 2. When receiving damage, has a chance of recovering 10% of Max HP. -->
 		<!-- TODO: Find trigger for When receiving damage, has a chance of recovering 10% of Max HP. -->
@@ -367,9 +367,9 @@
 		<set name="basicProperty" val="NONE" />
 		<set name="isDebuff" val="true" />
 		<alterSkill>
-			<skill id="10250" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
-			<skill id="10249" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
-			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
+			<skill id="10250" level="1" chance="100" abnormalType="KNOCKDOWN" levels="1" /> <!-- Heavy Hit -->
+			<skill id="10249" level="1" chance="100" abnormalType="AIRBIND" levels="1" /> <!-- Heavy Hit -->
+			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" levels="1" />
 		</alterSkill>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
@@ -1133,7 +1133,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10286" levels="7" name="Superior Resistance">
+	<skill id="10286" levels="10" name="Superior Resistance">
 		<!-- Glory Days confirmed -->
 		<!-- M. Def. + 776, and Fire/Water/Wind/Earth Resistance + 20. STR + 2. -->
 		<table name="#magicLevel"> 85 90 95 99 100 102 104 </table>

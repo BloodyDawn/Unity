@@ -278,9 +278,9 @@
 		<set name="rideState" val="NONE" />
 		<set name="reuseDelay" val="5000" />
 		<alterSkill>
-			<skill id="10750" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
-			<skill id="10749" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
-			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
+			<skill id="10750" level="1" chance="100" abnormalType="KNOCKDOWN" levels="1" /> <!-- Heavy Hit -->
+			<skill id="10749" level="1" chance="100" abnormalType="AIRBIND" levels="1" /> <!-- Heavy Hit -->
+			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" levels="1" />
 		</alterSkill>
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />

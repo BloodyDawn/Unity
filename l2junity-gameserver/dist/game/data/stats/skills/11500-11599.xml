@@ -26,7 +26,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11501" levels="7" name="Superior Dual Weapon Mastery">
+	<skill id="11501" levels="10" name="Superior Dual Weapon Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 30%, Additional P. Atk. + 1027, Atk. Spd. + 30%, P. Critical Damage + 15% when a dualsword/dualblunt is equipped. Normal hit damage to monsters + 20%. Chance to activate Physical Pose during a normal attack. Depending on your STR can reset cooldown or double skill effect duration. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
@@ -61,7 +61,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11502" levels="7" name="Superior Robe Mastery">
+	<skill id="11502" levels="10" name="Superior Robe Mastery">
 		<!-- Glory Days confirmed -->
 		<!--Max HP + 4636, P. Def. + 969 when equipped with a Robe. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
@@ -83,7 +83,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11503" levels="7" name="Superior Light Armor Mastery">
+	<skill id="11503" levels="10" name="Superior Light Armor Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- Max HP + 4636, P. Def. + 1355 when equipped with Light Armor. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
@@ -105,7 +105,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11504" levels="7" name="Superior Heavy Armor Mastery">
+	<skill id="11504" levels="10" name="Superior Heavy Armor Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- Max HP + 4636, P. Def. + 1558 when equipped with Heavy Armor. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
@@ -127,7 +127,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11505" levels="7" name="Superior Anti Magic">
+	<skill id="11505" levels="10" name="Superior Anti Magic">
 		<!-- Glory Days confirmed -->
 		<!-- M. Def. + 776 and Attack M. Def. Rate + 35%. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
@@ -144,7 +144,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11506" levels="7" name="Superior HP Boost">
+	<skill id="11506" levels="10" name="Superior HP Boost">
 		<!-- Glory Days confirmed -->
 		<!-- STR + 2 and Max HP + 366. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
@@ -161,7 +161,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11507" levels="7" name="Superior MP Boost">
+	<skill id="11507" levels="10" name="Superior MP Boost">
 		<!-- Glory Days confirmed -->
 		<!-- STR + 2 and Max MP + 313. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
@@ -249,9 +249,9 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="isDebuff" val="true" />
 		<alterSkill>
-			<skill id="10750" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
-			<skill id="10749" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
-			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
+			<skill id="10750" level="1" chance="100" abnormalType="KNOCKDOWN" levels="1" /> <!-- Heavy Hit -->
+			<skill id="10749" level="1" chance="100" abnormalType="AIRBIND" levels="1" /> <!-- Heavy Hit -->
+			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" levels="1" />
 		</alterSkill>
 		<cond msgId="113" addName="1">
 			<using kind="SWORD, BLUNT, DUAL, DUALBLUNT" />
@@ -909,7 +909,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11526" levels="7" name="Superior Sword/Blunt Weapon Mastery">
+	<skill id="11526" levels="10" name="Superior Sword/Blunt Weapon Mastery">
 		<!-- Glory Days confirmed -->
 		<!-- P. Atk. + 30%, Additional P. Atk. + 1027, Atk. Spd. + 30%, P. Critical Damage + 15% when a sword or blunt weapon is equipped. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
@@ -1480,7 +1480,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11547" levels="7" name="Superior HP Recovery">
+	<skill id="11547" levels="10" name="Superior HP Recovery">
 		<!-- Glory Days confirmed -->
 		<!-- STR + 2 and HP Recovery Bonus + 2.8. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
