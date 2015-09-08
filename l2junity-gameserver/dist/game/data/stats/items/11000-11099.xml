@@ -434,6 +434,7 @@
 		<set name="reduced_mp_consume" val="42,2" />
 		<skills>
 			<skill id="3867" level="1" /> <!-- Bow of Boost HP -->
+			<skill id="8312" level="1" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="400" />
@@ -577,6 +578,7 @@
 		<skills>
 			<skill id="3872" level="1" /> <!-- Crossbow of Boost HP -->
 			<skill id="3360" level="1" /> <!-- Special Ability: Cheap Shot -->
+			<skill id="8312" level="1" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -818,7 +820,7 @@
 		<set name="oncrit_skill" val="3053-1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3868" level="2" /> <!-- Crossbow of Guidance -->
+			<skill id="3868" level="2" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Crossbow of Guidance -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<cond msgId="1518">
@@ -1103,7 +1105,7 @@
 		<set name="oncrit_skill" val="3052-1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3884" level="2" /> <!-- Blunt Weapon of Boost HP -->
+			<skill id="3884" level="2" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Blunt Weapon of Boost HP -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
@@ -1390,7 +1392,7 @@
 		<set name="oncrit_skill" val="3054-1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3858" level="2" /> <!-- Dagger of Avoid -->
+			<skill id="3858" level="2" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Dagger of Avoid -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
@@ -1489,6 +1491,7 @@
 		<skills>
 			<skill id="3854" level="1" /> <!-- Sword of Empower -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3075" level="1" type="ON_MAGIC_SKILL" type_chance="5" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
@@ -1617,7 +1620,7 @@
 		<set name="onmagic_skill" val="1168-6" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3889" level="2" /> <!-- Blunt Weapon of Empower -->
+			<skill id="3889" level="2" type="ON_MAGIC_SKILL" type_chance="8" /> <!-- Blunt Weapon of Empower -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
@@ -1883,7 +1886,7 @@
 		<set name="oncrit_skill" val="3053-1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3863" level="2" /> <!-- Bow of Guidance -->
+			<skill id="3863" level="2" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Bow of Guidance -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
@@ -2014,7 +2017,7 @@
 		<set name="oncrit_skill" val="3061-1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3825" level="2" /> <!-- Sword of Might -->
+			<skill id="3825" level="2" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Sword of Might -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
@@ -2207,6 +2210,7 @@
 		<skills>
 			<skill id="3895" level="2" /> <!-- Two-handed Blunt Weapon of Critical Chance -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3059" level="1" type="ON_CRITICAL_SKILL" type_chance="35" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
@@ -2382,6 +2386,7 @@
 		<skills>
 			<skill id="3874" level="1" /> <!-- Polearm of Critical Chance -->
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" type_chance="100" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -2447,6 +2452,7 @@
 		<skills>
 			<skill id="3874" level="1" /> <!-- Polearm of Critical Chance -->
 			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" type_chance="100" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -2918,7 +2924,7 @@
 		<set name="oncrit_skill" val="3055-2" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3848" level="1" /> <!-- Ancient Sword of Vampiric Rage -->
+			<skill id="3848" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Ancient Sword of Vampiric Rage -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<cond msgId="1518">
@@ -2957,6 +2963,7 @@
 		<skills>
 			<skill id="3848" level="1" /> <!-- Ancient Sword of Vampiric Rage -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3060" level="2" type="ON_CRITICAL_SKILL" type_chance="35" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -3309,7 +3316,7 @@
 		<set name="oncrit_skill" val="3055-2" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3842" level="1" /> <!-- Two-handed Sword of Vampiric Rage -->
+			<skill id="3842" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Two-handed Sword of Vampiric Rage -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
@@ -3344,6 +3351,7 @@
 		<skills>
 			<skill id="3842" level="1" /> <!-- Two-handed Sword of Vampiric Rage -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3060" level="2" type="ON_CRITICAL_SKILL" type_chance="35" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="282" />

@@ -1760,7 +1760,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
-			<skill id="3022" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
+			<skill id="3022" level="2" type="ON_CRITICAL_SKILL" type_chance="28" /> <!-- Special Ability: Critical Drain -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2073,6 +2073,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3360" level="1" /> <!-- Special Ability: Cheap Shot -->
+			<skill id="8312" level="1" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2752,7 +2753,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
-			<skill id="3022" level="3" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
+			<skill id="3022" level="3" type="ON_CRITICAL_SKILL" type_chance="28" /> <!-- Special Ability: Critical Drain -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2925,7 +2926,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3022" level="3" type="ON_CRITICAL_SKILL" type_chance="35" /> <!-- Special Ability: Critical Drain -->
+			<skill id="3022" level="3" type="ON_CRITICAL_SKILL" type_chance="28" /> <!-- Special Ability: Critical Drain -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />

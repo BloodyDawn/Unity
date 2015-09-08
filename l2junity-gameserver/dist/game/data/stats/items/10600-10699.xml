@@ -569,6 +569,7 @@
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="2510" level="1" /> <!-- Wondrous Cubic -->
+			<skill id="3265" level="1" />
 		</skills>
 	</item>
 	<item id="10633" name="Cube Fragment Armor - D" type="EtcItem">
@@ -1023,6 +1024,7 @@
 			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
+			<skill id="8255" level="1" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="251" />
@@ -1602,7 +1604,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3070" level="3" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
+			<skill id="3070" level="3" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Special Ability: Critical Stun -->
 			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
 			<skill id="3552" level="4" /> <!-- Special Ability: PvP Damage -->
 		</skills>
@@ -1723,6 +1725,7 @@
 		<skills>
 			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
+			<skill id="8312" level="1" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="571" />
@@ -1920,7 +1923,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3039" level="7" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
+			<skill id="3039" level="7" type="ON_CRITICAL_SKILL" type_chance="24" /> <!-- Special Ability: Critical Drain -->
 			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
 			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
@@ -2003,6 +2006,7 @@
 		<skills>
 			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
+			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="201" />
@@ -2042,6 +2046,7 @@
 		<skills>
 			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
+			<skill id="1077" level="3" type="ON_MAGIC_SKILL" type_chance="20" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="201" />
@@ -2161,6 +2166,7 @@
 		<skills>
 			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3074" level="2" type="ON_MAGIC_SKILL" type_chance="10" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="201" />
@@ -2281,6 +2287,7 @@
 		<skills>
 			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
+			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="245" />

@@ -158,6 +158,7 @@
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
 			<skill id="3267" level="1" /> <!-- Seal Agathion -->
 			<skill id="21245" level="1" /> <!-- Release Agathion's Seal - Rudolph -->
+			<skill id="21246" level="1" />
 		</skills>
 	</item>
 	<item id="21710" name="Vitality Replenishing Potion" name_additional="Event" type="EtcItem">
@@ -518,6 +519,9 @@
 		<set name="time" val="4320" />
 		<skills>
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="23305" level="1" />
+			<skill id="21248" level="1" />
+			<skill id="23306" level="1" />
 		</skills>
 	</item>
 	<item id="21728" name="Agathion - Zinyanzi (7-day)" name_additional="7-day" type="Armor">
@@ -540,6 +544,9 @@
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="23305" level="1" />
+			<skill id="21248" level="1" />
+			<skill id="23306" level="1" />
 		</skills>
 	</item>
 	<item id="21729" name="Agathion - Yanzi" name_additional="Permanent" type="Armor">
@@ -1054,6 +1061,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
+		<skills>
+			<skill id="6908" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
@@ -1258,6 +1268,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
+		<skills>
+			<skill id="6908" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>

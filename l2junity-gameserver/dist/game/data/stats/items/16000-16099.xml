@@ -306,6 +306,7 @@
 		<skills>
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
+			<skill id="3577" level="2" type="ON_MAGIC_SKILL" type_chance="20" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="426" />
@@ -426,6 +427,7 @@
 		<skills>
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
+			<skill id="3577" level="2" type="ON_MAGIC_SKILL" type_chance="20" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="350" />
@@ -541,7 +543,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
+			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Special Ability: Critical Slow -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
 		</skills>
@@ -666,6 +668,7 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
 			<skill id="8289" level="3" /> <!-- Special Ability: Focus -->
+			<skill id="3566" level="4" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -918,7 +921,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
+			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Special Ability: Critical Slow -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
 		</skills>
@@ -964,6 +967,7 @@
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
 			<skill id="3360" level="1" /> <!-- Special Ability: Cheap Shot -->
+			<skill id="8312" level="1" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1007,6 +1011,7 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
 			<skill id="8289" level="3" /> <!-- Special Ability: Focus -->
+			<skill id="3567" level="4" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2139,6 +2144,7 @@
 		<skills>
 			<skill id="3853" level="2" /> <!-- Sword of Mana Regeneration -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3577" level="2" type="ON_MAGIC_SKILL" type_chance="20" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="317" />
@@ -2337,6 +2343,7 @@
 		<skills>
 			<skill id="3880" level="2" /> <!-- Fist Weapon of Haste -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3070" level="2" type="ON_CRITICAL_SKILL" type_chance="100" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="482" />
@@ -2839,6 +2846,7 @@
 		<skills>
 			<skill id="3899" level="3" /> <!-- Staff of Empower -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3577" level="2" type="ON_MAGIC_SKILL" type_chance="20" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="386" />
@@ -2949,6 +2957,7 @@
 		<skills>
 			<skill id="3865" level="1" /> <!-- Bow of Long Shot -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" type_chance="100" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="724" />
@@ -3099,6 +3108,7 @@
 			<skill id="3870" level="1" /> <!-- Crossbow of Long Shot -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3360" level="1" /> <!-- Special Ability: Cheap Shot -->
+			<skill id="8312" level="1" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -3176,6 +3186,7 @@
 		<skills>
 			<skill id="3870" level="1" /> <!-- Crossbow of Long Shot -->
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3574" level="2" type="ON_CRITICAL_SKILL" type_chance="100" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />

@@ -409,6 +409,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2869" level="1" /> <!-- Event - Summon Scroll: Milk Cow -->
+			<skill id="2868" level="1" />
 		</skills>
 	</item>
 	<item id="14725" name="Event - Summon Scroll: Milk Cow Captain" type="EtcItem">
@@ -422,6 +423,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2870" level="1" /> <!-- Event - Summon Scroll: Milk Cow Captain -->
+			<skill id="2868" level="1" />
 		</skills>
 	</item>
 	<item id="14726" name="Event - Summon Scroll: Gloomy Milk Cow" type="EtcItem">
@@ -635,6 +637,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2883" level="1" /> <!-- Vitality Recovering Potion -->
+			<skill id="2868" level="1" />
 		</skills>
 	</item>
 	<item id="14743" name="Event - Vitality Replenishing Potion (20-minute)" type="EtcItem">
@@ -651,6 +654,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2884" level="1" /> <!-- Vitality Recovering Potion -->
+			<skill id="2868" level="1" />
 		</skills>
 	</item>
 	<item id="14744" name="Event - Vitality Replenishing Potion (30-minute)" type="EtcItem">
@@ -672,6 +676,7 @@
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="9166" level="1" /> <!-- Vitality Recovering Potion -->
+			<skill id="2868" level="1" />
 		</skills>
 	</item>
 	<item id="14745" name="Event - Vitality Replenishing Potion (60-minute)" type="EtcItem">
@@ -1255,6 +1260,8 @@
 		<set name="time" val="20160" />
 		<skills>
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="5763" level="1" />
+			<skill id="8245" level="1" />
 		</skills>
 	</item>
 	<item id="14776" name="Agathion - Juju (14-day)" name_additional="14-day" type="Armor">
@@ -1275,6 +1282,10 @@
 		<set name="time" val="20160" />
 		<skills>
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="6137" level="1" />
+			<skill id="6138" level="1" />
+			<skill id="6136" level="1" />
+			<skill id="8327" level="1" />
 		</skills>
 	</item>
 	<item id="14777" name="Baguette's Herb" type="EtcItem">
@@ -1592,6 +1603,9 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_depositable" val="false" />
+		<skills>
+			<skill id="3426" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>

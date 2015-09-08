@@ -150,6 +150,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3070" level="3" type="ON_CRITICAL_SKILL" type_chance="100" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
@@ -383,7 +384,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3579" level="1" type="ON_CRITICAL_SKILL" /> <!-- Decrease P. Def. -->
+			<skill id="3579" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Decrease P. Def. -->
 			<skill id="3578" level="1" /> <!-- Special Ability: Infinity Blade -->
 		</skills>
 		<cond msgId="1518">
@@ -460,7 +461,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3581" level="1" type="ON_CRITICAL_SKILL" /> <!-- Discord -->
+			<skill id="3581" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Discord -->
 			<skill id="3580" level="1" /> <!-- Special Ability: Infinity Axe -->
 		</skills>
 		<cond msgId="1518">
@@ -502,6 +503,7 @@
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="3597" level="1" /> <!-- Special Ability: Infinity Rod -->
+			<skill id="3598" level="1" type="ON_MAGIC_SKILL" type_chance="3" />
 		</skills>
 		<cond msgId="1518">
 			<player isHero="true" />
@@ -540,7 +542,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3584" level="1" type="ON_CRITICAL_SKILL" /> <!-- Stun -->
+			<skill id="3584" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Stun -->
 			<skill id="3583" level="1" /> <!-- Special Ability: Infinity Crusher -->
 		</skills>
 		<cond msgId="1518">
@@ -582,6 +584,7 @@
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="3595" level="1" /> <!-- Special Ability: Infinity Scepter -->
+			<skill id="3596" level="1" type="ON_CRITICAL_SKILL" type_chance="1" />
 		</skills>
 		<cond msgId="1518">
 			<player isHero="true" />
@@ -620,7 +623,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3590" level="1" type="ON_CRITICAL_SKILL" /> <!-- Restrain Magic Skills -->
+			<skill id="3590" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Restrain Magic Skills -->
 			<skill id="3589" level="1" /> <!-- Special Ability: Infinity Stinger -->
 		</skills>
 		<cond msgId="1518">
@@ -660,7 +663,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3588" level="1" type="ON_CRITICAL_SKILL" /> <!-- Stun -->
+			<skill id="3588" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Stun -->
 			<skill id="3587" level="1" /> <!-- Special Ability: Infinity Fang -->
 		</skills>
 		<cond msgId="1518">
@@ -702,7 +705,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3594" level="1" type="ON_CRITICAL_SKILL" /> <!-- Decrease Speed -->
+			<skill id="3594" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Decrease Speed -->
 			<skill id="3593" level="1" /> <!-- Special Ability: Infinity Bow -->
 		</skills>
 		<cond msgId="1518">
@@ -742,7 +745,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3586" level="1" type="ON_CRITICAL_SKILL" /> <!-- Restrain Physical Skills -->
+			<skill id="3586" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Restrain Physical Skills -->
 			<skill id="3585" level="1" /> <!-- Special Ability: Infinity Wing -->
 		</skills>
 		<cond msgId="1518">
@@ -781,7 +784,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3592" level="1" type="ON_CRITICAL_SKILL" /> <!-- Dispel -->
+			<skill id="3592" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Dispel -->
 			<skill id="3591" level="1" /> <!-- Special Ability: Infinity Spear -->
 		</skills>
 		<cond msgId="1518">
@@ -1201,6 +1204,9 @@
 		<set name="price" val="5000" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="2233" level="1" />
+		</skills>
 	</item>
 	<item id="6654" name="Amulet: Flames of Valakas" type="EtcItem">
 		<set name="icon" val="icon.etc_aidcharm_cancel_valbreath_i00" />

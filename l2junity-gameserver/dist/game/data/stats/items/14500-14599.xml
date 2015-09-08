@@ -307,6 +307,7 @@
 		<skills>
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
+			<skill id="3577" level="2" type="ON_MAGIC_SKILL" type_chance="20" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="386" />
@@ -389,6 +390,7 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
 			<skill id="3567" level="3" /> <!-- Special Ability: Focus -->
+			<skill id="3566" level="4" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="724" />
@@ -427,7 +429,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
+			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Special Ability: Critical Slow -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
 		</skills>
@@ -599,6 +601,7 @@
 			<skill id="3360" level="1" /> <!-- Special Ability: Cheap Shot -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
+			<skill id="8312" level="1" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -682,7 +685,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3574" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
+			<skill id="3574" level="2" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Special Ability: Critical Slow -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
 		</skills>
@@ -1000,6 +1003,7 @@
 		<set name="commissionItemType" val="DUAL_DAGGER" />
 		<skills>
 			<skill id="8295" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Focus -->
+			<skill id="3859" level="2" />
 		</skills>
 		<cond msgId="1518">
 			<and>
@@ -2466,6 +2470,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="3426" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>

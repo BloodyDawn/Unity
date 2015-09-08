@@ -114,7 +114,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3022" level="3" type="ON_CRITICAL_SKILL" type_chance="35" /> <!-- Special Ability: Critical Drain -->
+			<skill id="3022" level="3" type="ON_CRITICAL_SKILL" type_chance="28" /> <!-- Special Ability: Critical Drain -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="169" />
@@ -767,6 +767,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3039" level="3" type="ON_CRITICAL_SKILL" type_chance="10" /> <!-- Special Ability: Critical Drain -->
+			<skill id="3022" level="4" type="ON_CRITICAL_SKILL" type_chance="28" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="169" />
@@ -861,6 +862,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3059" level="1" type="ON_CRITICAL_SKILL" type_chance="35" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
@@ -1623,6 +1625,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3074" level="2" type="ON_MAGIC_SKILL" type_chance="10" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="186" />

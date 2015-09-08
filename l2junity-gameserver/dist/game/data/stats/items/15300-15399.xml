@@ -178,6 +178,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="3426" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -320,7 +323,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-
 	</item>
 	<item id="15312" name="Dawn's Bracelet" type="Armor">
 		<set name="icon" val="icon.accessory_lbracelet_of_dawn" />
@@ -1098,6 +1100,7 @@
 		<set name="time" val="86400" />
 		<skills>
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
+			<skill id="2994" level="1" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
@@ -1149,6 +1152,7 @@
 		<set name="time" val="86400" />
 		<skills>
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
+			<skill id="2994" level="1" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
@@ -1462,6 +1466,7 @@
 		<set name="time" val="43200" />
 		<skills>
 			<skill id="9027" level="1" /> <!-- Player Commendation Instant Lottery Ticket -->
+			<skill id="8358" level="1" />
 		</skills>
 	</item>
 	<item id="15359" name="Winning Lottery Ticket: 10,000 PC Points" name_additional="30-day" type="EtcItem">
@@ -1478,6 +1483,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
+		<skills>
+			<skill id="8358" level="1" />
+		</skills>
 	</item>
 	<item id="15360" name="Winning Lottery Ticket: 1,000 PC Points" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_exchange_ticket_i00" />
@@ -1493,6 +1501,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
+		<skills>
+			<skill id="8358" level="1" />
+		</skills>
 	</item>
 	<item id="15361" name="Winning Lottery Ticket: 200 PC Points" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_exchange_ticket_i01" />
@@ -1508,6 +1519,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
+		<skills>
+			<skill id="8358" level="1" />
+		</skills>
 	</item>
 	<item id="15362" name="Winning Lottery Ticket: 100 PC Points" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_exchange_ticket_i02" />
@@ -1523,6 +1537,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
+		<skills>
+			<skill id="8358" level="1" />
+		</skills>
 	</item>
 	<item id="15363" name="Winning Lottery Ticket: 10 PC Points" name_additional="30-day" type="EtcItem">
 		<set name="icon" val="icon.etc_exchange_ticket_i03" />
@@ -1538,6 +1555,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
+		<skills>
+			<skill id="8358" level="1" />
+		</skills>
 	</item>
 	<item id="15364" name="Cool Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_int_symbol_i00" />

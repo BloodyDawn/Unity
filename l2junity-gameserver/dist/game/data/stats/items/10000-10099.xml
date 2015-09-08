@@ -14,6 +14,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2337" level="1" /> <!-- Wind Resistance Potion -->
+			<skill id="2338" level="1" />
 		</skills>
 	</item>
 	<item id="10001" name="Dark Potion" type="EtcItem">
@@ -32,6 +33,7 @@
 		<set name="commissionItemType" val="POTION" />
 		<skills>
 			<skill id="2340" level="1" /> <!-- Dark Attack Resistance Potion -->
+			<skill id="2339" level="1" />
 		</skills>
 	</item>
 	<item id="10002" name="Holy Potion" type="EtcItem">
@@ -48,6 +50,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2339" level="1" /> <!-- Holy Attack Resistance Potion -->
+			<skill id="2340" level="1" />
 		</skills>
 	</item>
 	<item id="10003" name="Fleuret" type="Weapon">
@@ -468,6 +471,8 @@
 		<set name="equip_condition" val="{{ec_fortress;1}}" />
 		<skills>
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="5458" level="1" />
+			<skill id="3361" level="1" />
 		</skills>
 		<cond msgId="1518">
 			<player fort="-1" />
@@ -514,6 +519,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="3361" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -538,6 +546,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="3361" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="58" />
 		</for>
@@ -559,6 +570,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="3361" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="pDef" val="36" />
 		</for>
@@ -580,6 +594,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="3361" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -605,6 +622,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="3361" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>

@@ -22,6 +22,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3889" level="1" /> <!-- Blunt Weapon of Empower -->
+			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="140" />
@@ -55,6 +56,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3889" level="1" /> <!-- Blunt Weapon of Empower -->
+			<skill id="1201" level="25" type="ON_MAGIC_SKILL" type_chance="10" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="140" />
@@ -117,7 +119,7 @@
 		<set name="oncrit_skill" val="3040-5" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3879" level="1" /> <!-- Fist Weapon of Might -->
+			<skill id="3879" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Fist Weapon of Might -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -308,7 +310,7 @@
 		<set name="oncrit_skill" val="3021-5" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3895" level="1" /> <!-- Two-handed Blunt Weapon of Critical Chance -->
+			<skill id="3895" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Two-handed Blunt Weapon of Critical Chance -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -583,6 +585,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3899" level="1" /> <!-- Staff of Empower -->
+			<skill id="1044" level="3" type="ON_MAGIC_SKILL" type_chance="30" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
@@ -616,6 +619,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3899" level="1" /> <!-- Staff of Empower -->
+			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
@@ -649,6 +653,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3899" level="1" /> <!-- Staff of Empower -->
+			<skill id="1201" level="25" type="ON_MAGIC_SKILL" type_chance="10" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
@@ -1195,7 +1200,7 @@
 		<set name="oncrit_skill" val="3021-5" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3868" level="1" /> <!-- Crossbow of Guidance -->
+			<skill id="3868" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Crossbow of Guidance -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1428,6 +1433,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3858" level="1" /> <!-- Dagger of Avoid -->
+			<skill id="1044" level="3" type="ON_MAGIC_SKILL" type_chance="30" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
@@ -1461,6 +1467,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3858" level="1" /> <!-- Dagger of Avoid -->
+			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
@@ -1494,6 +1501,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3858" level="1" /> <!-- Dagger of Avoid -->
+			<skill id="1164" level="11" type="ON_MAGIC_SKILL" type_chance="8" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
@@ -1837,6 +1845,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3896" level="1" /> <!-- Two-handed Blunt Weapon of Haste -->
+			<skill id="3022" level="6" type="ON_CRITICAL_SKILL" type_chance="35" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
@@ -1900,7 +1909,7 @@
 		<set name="oncrit_skill" val="3055-1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3896" level="1" /> <!-- Two-handed Blunt Weapon of Haste -->
+			<skill id="3896" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Two-handed Blunt Weapon of Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
@@ -2095,6 +2104,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3846" level="1" /> <!-- Ancient Sword of Haste -->
+			<skill id="3022" level="6" type="ON_CRITICAL_SKILL" type_chance="35" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2166,7 +2176,7 @@
 		<set name="oncrit_skill" val="3055-1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3846" level="1" /> <!-- Ancient Sword of Haste -->
+			<skill id="3846" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Ancient Sword of Haste -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2267,6 +2277,7 @@
 		<skills>
 			<skill id="3877" level="1" /> <!-- Polearm of Boost HP -->
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="3571" level="2" type="ON_CRITICAL_SKILL" type_chance="100" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
@@ -2363,6 +2374,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3880" level="1" /> <!-- Fist Weapon of Haste -->
+			<skill id="3039" level="6" type="ON_CRITICAL_SKILL" type_chance="24" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
@@ -2394,7 +2406,7 @@
 		<set name="oncrit_skill" val="3040-6" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3880" level="1" /> <!-- Fist Weapon of Haste -->
+			<skill id="3880" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Fist Weapon of Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
@@ -2492,6 +2504,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3900" level="1" /> <!-- Staff of Divine Power -->
+			<skill id="1077" level="3" type="ON_MAGIC_SKILL" type_chance="20" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="189" />
@@ -2526,6 +2539,7 @@
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
 		<skills>
 			<skill id="3900" level="1" /> <!-- Staff of Divine Power -->
+			<skill id="1045" level="5" type="ON_MAGIC_SKILL" type_chance="20" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="189" />
@@ -2558,7 +2572,7 @@
 		<set name="onmagic_skill" val="1168-6" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3900" level="1" /> <!-- Staff of Divine Power -->
+			<skill id="3900" level="1" type="ON_MAGIC_SKILL" type_chance="8" /> <!-- Staff of Divine Power -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="189" />
@@ -3034,7 +3048,7 @@
 		<set name="oncrit_skill" val="3020-6" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3859" level="1" /> <!-- Dagger of Haste -->
+			<skill id="3859" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Dagger of Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
@@ -3066,7 +3080,7 @@
 		<set name="oncrit_skill" val="3041-6" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3859" level="1" /> <!-- Dagger of Haste -->
+			<skill id="3859" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Dagger of Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
@@ -3229,6 +3243,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3891" level="1" /> <!-- Blunt Weapon of Boost HP -->
+			<skill id="3078" level="6" type="ON_MAGIC_SKILL" type_chance="10" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="155" />

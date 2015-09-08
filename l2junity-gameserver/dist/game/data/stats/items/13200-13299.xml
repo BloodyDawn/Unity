@@ -385,6 +385,7 @@
 		<set name="useSkillDisTime" val="1" />
 		<skills>
 			<skill id="3360" level="1" /> <!-- Special Ability: Cheap Shot -->
+			<skill id="8312" level="1" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1501,6 +1502,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
+		<skills>
+			<skill id="6097" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
@@ -1528,6 +1532,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
+		<skills>
+			<skill id="6098" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
@@ -1555,6 +1562,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
+		<skills>
+			<skill id="6099" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
@@ -1585,6 +1595,7 @@
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
+			<skill id="8246" level="1" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
@@ -1613,6 +1624,8 @@
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="5763" level="1" />
+			<skill id="8245" level="1" />
 		</skills>
 	</item>
 	<item id="13255" name="Gran Kain's Gift Box - 7 Day" type="EtcItem">

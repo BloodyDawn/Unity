@@ -1902,6 +1902,7 @@
 		<skills>
 			<skill id="3873" level="1" /> <!-- Polearm of Critical Damage -->
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="3571" level="1" type="ON_CRITICAL_SKILL" type_chance="100" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
@@ -2305,7 +2306,7 @@
 		<set name="oncrit_skill" val="3021-5" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3863" level="1" /> <!-- Bow of Guidance -->
+			<skill id="3863" level="1" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Bow of Guidance -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="397" />
@@ -2530,6 +2531,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3852" level="1" /> <!-- Sword of Mana Boost -->
+			<skill id="1164" level="11" type="ON_MAGIC_SKILL" type_chance="8" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="140" />
@@ -2562,6 +2564,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3852" level="1" /> <!-- Sword of Mana Boost -->
+			<skill id="1044" level="3" type="ON_MAGIC_SKILL" type_chance="30" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="140" />

@@ -1421,6 +1421,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3577" level="1" type="ON_MAGIC_SKILL" type_chance="20" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="274" />
@@ -1550,6 +1551,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="820" />
+		<skills>
+			<skill id="8312" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="581" />
 			<set stat="mAtk" val="132" />
@@ -1612,6 +1616,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="820" />
+		<skills>
+			<skill id="3574" level="1" type="ON_CRITICAL_SKILL" type_chance="100" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="581" />
 			<set stat="mAtk" val="132" />

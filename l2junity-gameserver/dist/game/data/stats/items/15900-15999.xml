@@ -57,6 +57,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" type_chance="100" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="794" />
@@ -162,6 +163,7 @@
 		<skills>
 			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
 			<skill id="8289" level="3" /> <!-- Special Ability: Focus -->
+			<skill id="3566" level="4" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -382,6 +384,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3574" level="2" type="ON_CRITICAL_SKILL" type_chance="100" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -420,6 +423,7 @@
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3360" level="1" /> <!-- Special Ability: Cheap Shot -->
+			<skill id="8312" level="1" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -457,6 +461,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="8289" level="3" /> <!-- Special Ability: Focus -->
+			<skill id="3567" level="4" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2224,6 +2229,7 @@
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
 			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
+			<skill id="3070" level="2" type="ON_CRITICAL_SKILL" type_chance="100" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="505" />
@@ -2581,6 +2587,7 @@
 		<skills>
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
+			<skill id="3577" level="2" type="ON_MAGIC_SKILL" type_chance="20" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="404" />
@@ -2700,6 +2707,7 @@
 		<skills>
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3654" level="1" /> <!-- PvP Weapon - Casting -->
+			<skill id="3577" level="2" type="ON_MAGIC_SKILL" type_chance="20" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="332" />
@@ -2817,7 +2825,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
+			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Special Ability: Critical Slow -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
 		</skills>
@@ -2944,6 +2952,7 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
 			<skill id="8289" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3566" level="4" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -3156,6 +3165,7 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
 			<skill id="8289" level="2" /> <!-- Special Ability: Focus -->
+			<skill id="3567" level="4" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -3196,7 +3206,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
+			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" type_chance="100" /> <!-- Special Ability: Critical Slow -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
 		</skills>
@@ -3242,6 +3252,7 @@
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3655" level="1" /> <!-- PvP Weapon - Rapid Fire -->
 			<skill id="3360" level="1" /> <!-- Special Ability: Cheap Shot -->
+			<skill id="8312" level="1" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -3867,6 +3878,7 @@
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
 			<skill id="3652" level="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
+			<skill id="3070" level="2" type="ON_CRITICAL_SKILL" type_chance="100" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="532" />

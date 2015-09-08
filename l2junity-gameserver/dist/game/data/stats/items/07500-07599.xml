@@ -1298,6 +1298,8 @@
 		<set name="reduced_mp_consume" val="26,1" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="8312" level="1" />
+			<skill id="2214" level="10" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="581" />
@@ -1370,6 +1372,7 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3574" level="1" type="ON_CRITICAL_SKILL" type_chance="100" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="581" />
