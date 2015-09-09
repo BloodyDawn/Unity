@@ -4720,7 +4720,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					{
 						if (Rnd.get(100) < holder.getChance())
 						{
-							makeTriggerCast(holder.getSkill(), target);
+							makeTriggerCast(holder.getSkill(), target, false);
 						}
 					}
 				}
@@ -5508,7 +5508,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							{
 								if (Rnd.get(100) < holder.getChance())
 								{
-									makeTriggerCast(holder.getSkill(), target);
+									makeTriggerCast(holder.getSkill(), target, false);
 								}
 							}
 						}
@@ -6330,7 +6330,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				}
 				
 				// @formatter:off
-				final Creature[] targets = !ignoreTargetType ? skill.getTargetList(this, false, target) : new Creature[]{ target };
+				final Creature[] targets = ignoreTargetType ? new Creature[]{ target } : skill.getTargetList(this, false, target);
 				// @formatter:on
 				if (targets.length == 0)
 				{
@@ -6370,7 +6370,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public void makeTriggerCast(Skill skill, Creature target)
 	{
-		makeTriggerCast(skill, target, false);
+		makeTriggerCast(skill, target, true);
 	}
 	
 	/**

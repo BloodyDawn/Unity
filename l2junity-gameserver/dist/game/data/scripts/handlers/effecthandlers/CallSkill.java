@@ -73,7 +73,7 @@ public final class CallSkill extends AbstractEffect
 		
 		if (triggerSkill != null)
 		{
-			effector.makeTriggerCast(triggerSkill, effected, true);
+			effector.makeTriggerCast(triggerSkill, effected);
 		}
 		else
 		{
