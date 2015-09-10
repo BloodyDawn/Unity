@@ -1235,9 +1235,10 @@ public final class Formulas
 		final double baseMod = ((((((magicLevel - target.getLevel()) + 3) * skill.getLvlBonusRate()) + activateRate) + 30.0) - targetBasicProperty);
 		final double elementMod = calcAttributeBonus(attacker, target, skill);
 		final double traitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
+		final double basicPropertyResist = getBasicPropertyResistBonus(skill.getBasicProperty(), target);
 		Stats stat = skill.isDebuff() ? Stats.DEBUFF_VULN : Stats.BUFF_VULN;
 		final double buffDebuffMod = 1 + (target.getStat().getValue(stat, 1) / 100);
-		final double rate = baseMod * elementMod * traitMod * buffDebuffMod;
+		final double rate = baseMod * elementMod * traitMod * buffDebuffMod * basicPropertyResist;
 		final double finalRate = traitMod > 0 ? CommonUtil.constrain(rate, skill.getMinChance(), skill.getMaxChance()) : 0;
 		
 		if (attacker.isDebug())
@@ -1305,6 +1306,9 @@ public final class Formulas
 		// Element Modifier.
 		double elementMod = calcAttributeBonus(attacker.getOwner(), target, skill);
 		rate *= elementMod;
+		
+		final double basicPropertyResist = getBasicPropertyResistBonus(skill.getBasicProperty(), target);
+		rate *= basicPropertyResist;
 		
 		// Add Matk/Mdef Bonus (TODO: Pending)
 		
@@ -2037,5 +2041,26 @@ public final class Formulas
 		}
 		
 		return CommonUtil.constrain((weaponTraitBonus * weaknessBonus), 0.05, 2.0);
+	}
+	
+	public static double getBasicPropertyResistBonus(BasicProperty basicProperty, Creature target)
+	{
+		if ((basicProperty == BasicProperty.NONE) || !target.isPlayer() || !target.getActingPlayer().hasBasicPropertyResist())
+		{
+			return 1.0;
+		}
+		
+		final BasicPropertyResist resist = target.getActingPlayer().getBasicPropertyResist(basicProperty);
+		switch (resist.getResistLevel())
+		{
+			case 0:
+				return 1.0;
+			case 1:
+				return 0.6;
+			case 2:
+				return 0.3;
+			default:
+				return 0;
+		}
 	}
 }

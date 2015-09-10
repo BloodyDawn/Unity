@@ -58,6 +58,7 @@ import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.stats.BasicProperty;
+import org.l2junity.gameserver.model.stats.BasicPropertyResist;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.TraitType;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -1338,6 +1339,14 @@ public final class Skill implements IIdentifiable
 			if (addContinuousEffects)
 			{
 				effected.getEffectList().add(info);
+				
+				// Check for mesmerizing debuffs and increase resist level.
+				if (isDebuff() && (getBasicProperty() != BasicProperty.NONE) && effected.isPlayer() && effected.getActingPlayer().hasBasicPropertyResist())
+				{
+					final BasicPropertyResist resist = effected.getActingPlayer().getBasicPropertyResist(getBasicProperty());
+					resist.increaseResistLevel();
+					effected.sendDebugMessage(toString() + " has increased your " + getBasicProperty() + " debuff resistance to " + resist.getResistLevel() + " level for " + resist.getRemainTime().toMillis() + " milliseconds.");
+				}
 			}
 			
 			// Support for buff sharing feature including healing herbs.

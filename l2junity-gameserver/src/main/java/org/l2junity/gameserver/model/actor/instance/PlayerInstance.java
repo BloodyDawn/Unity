@@ -245,6 +245,8 @@ import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.BasicProperty;
+import org.l2junity.gameserver.model.stats.BasicPropertyResist;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.variables.AccountVariables;
@@ -576,6 +578,9 @@ public final class PlayerInstance extends Playable
 	// hennas
 	private final Henna[] _henna = new Henna[3];
 	private final Map<BaseStats, Integer> _hennaBaseStats = new ConcurrentHashMap<>();
+	
+	// Basic Property
+	private final Map<BasicProperty, BasicPropertyResist> _basicPropertyResists = new ConcurrentHashMap<>();
 	
 	/** The Pet of the L2PcInstance */
 	private L2PetInstance _pet = null;
@@ -7935,6 +7940,25 @@ public final class PlayerInstance extends Playable
 	public Map<BaseStats, Integer> getHennaBaseStats()
 	{
 		return _hennaBaseStats;
+	}
+	
+	/**
+	 * Checks if the player has basic property resist towards mesmerizing debuffs.
+	 * @return {@code true} if the player has resist towards mesmerizing debuffs, {@code false} otherwise
+	 */
+	public boolean hasBasicPropertyResist()
+	{
+		return isInCategory(CategoryType.AWAKEN_GROUP);
+	}
+	
+	/**
+	 * Gets the basic property resist.
+	 * @param basicProperty the basic property
+	 * @return the basic property resist
+	 */
+	public BasicPropertyResist getBasicPropertyResist(BasicProperty basicProperty)
+	{
+		return _basicPropertyResists.computeIfAbsent(basicProperty, k -> new BasicPropertyResist());
 	}
 	
 	/**
