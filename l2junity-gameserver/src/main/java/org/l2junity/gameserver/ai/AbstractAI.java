@@ -421,6 +421,18 @@ public abstract class AbstractAI implements Ctrl
 	 */
 	protected void moveToPawn(WorldObject pawn, int offset)
 	{
+		moveToPawn(pawn, offset, false);
+	}
+	
+	/**
+	 * Move the actor to Pawn server side AND client side by sending Server->Client packet MoveToPawn <I>(broadcast)</I>.<br>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : Low level function, used by AI subclasses</B></FONT>
+	 * @param pawn
+	 * @param offset
+	 * @param forcePacketSend force sending the MoveToPawn packet regardless the need of moving. Force sending is required because makes the blue bubbles red.
+	 */
+	protected void moveToPawn(WorldObject pawn, int offset, boolean forcePacketSend)
+	{
 		// Check if actor can move
 		if (!_actor.isMovementDisabled())
 		{
@@ -440,7 +452,7 @@ public abstract class AbstractAI implements Ctrl
 					{
 						return;
 					}
-					sendPacket = false;
+					sendPacket = forcePacketSend;
 				}
 				else if (_actor.isOnGeodataPath())
 				{

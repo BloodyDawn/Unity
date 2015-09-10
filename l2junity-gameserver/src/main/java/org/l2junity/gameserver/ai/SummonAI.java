@@ -94,7 +94,7 @@ public class SummonAI extends PlayableAI implements Runnable
 			setAttackTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(getAttackTarget(), _actor.getPhysicalAttackRange()))
+		if (maybeMoveToPawn(getAttackTarget(), _actor.getPhysicalAttackRange(), true))
 		{
 			return;
 		}
@@ -111,7 +111,7 @@ public class SummonAI extends PlayableAI implements Runnable
 			return;
 		}
 		boolean val = _startFollow;
-		if (maybeMoveToPawn(getCastTarget(), _actor.getMagicalAttackRange(_skill)))
+		if (maybeMoveToPawn(getCastTarget(), _actor.getMagicalAttackRange(_skill), true))
 		{
 			return;
 		}
@@ -128,7 +128,7 @@ public class SummonAI extends PlayableAI implements Runnable
 		{
 			return;
 		}
-		if (maybeMoveToPawn(getTarget(), 36))
+		if (maybeMoveToPawn(getTarget(), 36, false))
 		{
 			return;
 		}
@@ -142,7 +142,7 @@ public class SummonAI extends PlayableAI implements Runnable
 		{
 			return;
 		}
-		if (maybeMoveToPawn(getTarget(), 36))
+		if (maybeMoveToPawn(getTarget(), 36, false))
 		{
 			return;
 		}
