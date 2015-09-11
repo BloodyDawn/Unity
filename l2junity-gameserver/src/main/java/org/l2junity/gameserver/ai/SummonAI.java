@@ -94,7 +94,7 @@ public class SummonAI extends PlayableAI implements Runnable
 			setAttackTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(getAttackTarget(), _actor.getPhysicalAttackRange(), true))
+		if (maybeMoveToPawn(getAttackTarget(), _actor.getPhysicalAttackRange(), false))
 		{
 			return;
 		}

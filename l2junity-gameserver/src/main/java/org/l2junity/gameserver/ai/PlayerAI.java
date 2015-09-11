@@ -258,7 +258,7 @@ public class PlayerAI extends PlayableAI
 			setAttackTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(target, _actor.getPhysicalAttackRange(), true))
+		if (maybeMoveToPawn(target, _actor.getPhysicalAttackRange(), false))
 		{
 			return;
 		}
