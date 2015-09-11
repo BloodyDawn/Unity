@@ -17,9 +17,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="8387" level="1" /> <!-- Protection Ring - Schuttgart -->
-		</skills>
 		<for>
 			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
@@ -115,9 +112,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
-		<skills>
-			<skill id="8308" level="1" /> <!-- Red Talisman - Territory Guardian -->
-		</skills>
 	</item>
 	<item id="14605" name="Red Talisman - Territory Escort" type="Armor">
 		<set name="icon" val="icon.etc_talisman_i00" />
@@ -137,9 +131,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="6" />
-		<skills>
-			<skill id="8309" level="1" /> <!-- Red Talisman - Territory Escort -->
-		</skills>
 	</item>
 	<item id="14606" name="Gracian Soldier Two-handed Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_mon_gracia_soldier_sword_i00" />
@@ -304,11 +295,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="6097" level="1" /> <!-- Scissors -->
-			<skill id="6098" level="1" /> <!-- Rock -->
-			<skill id="6099" level="1" /> <!-- Paper -->
-		</skills>
 	</item>
 	<item id="14614" name="Santa's Buff Gift Set" type="EtcItem">
 		<set name="icon" val="icon.etc_level_bustup_ticket_i01" />
@@ -324,9 +310,6 @@
 		<set name="for_npc" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
-		<skills>
-			<skill id="2856" level="1" /> <!-- Santa's Buff Gift Set -->
-		</skills>
 	</item>
 	<item id="14615" name="Holiday Scroll (Wizard)" type="EtcItem">
 		<set name="icon" val="icon.etc_level_bustup_ticket_i02" />
@@ -342,9 +325,6 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2857" level="1" /> <!-- Holiday Event - Enchant Scroll (Wizard) -->
-		</skills>
 	</item>
 	<item id="14616" name="Santa's Gift" type="EtcItem">
 		<set name="icon" val="icon.lucky_bag_box_i00" />
@@ -355,9 +335,6 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2858" level="1" /> <!-- Holiday Red Sock -->
-		</skills>
 	</item>
 	<item id="14617" name="Agathion - Rudolph" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -376,11 +353,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="20160" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="5537" level="1" /> <!-- Rudolph Cuteness Trick -->
-			<skill id="3425" level="1" /> <!-- Release Agathion's Seal - Rudolph -->
-		</skills>
 	</item>
 	<item id="14618" name="Agathion - Rudolph" type="EtcItem">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -446,16 +418,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="180" />
-		<skills>
-			<skill id="8315" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8316" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8317" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8318" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8319" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8320" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="51" />
 			<set stat="mAtk" val="38" />
@@ -483,16 +445,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="180" />
-		<skills>
-			<skill id="8315" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8316" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8317" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8318" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8319" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8320" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="62" />
 			<set stat="mAtk" val="38" />
@@ -520,16 +472,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="180" />
-		<skills>
-			<skill id="8315" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8316" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8317" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8318" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8319" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8320" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="51" />
 			<set stat="mAtk" val="38" />
@@ -558,16 +500,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="180" />
-		<skills>
-			<skill id="8315" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8316" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8317" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8318" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8319" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8320" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="62" />
 			<set stat="mAtk" val="38" />
@@ -596,16 +528,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="180" />
-		<skills>
-			<skill id="8315" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8316" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8317" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8318" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8319" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8320" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="45" />
 			<set stat="mAtk" val="38" />
@@ -634,17 +556,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="180" />
-		<skills>
-			<skill id="8315" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8316" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8317" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8318" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8319" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8320" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="51" />
 			<set stat="mAtk" val="38" />
@@ -675,16 +586,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="180" />
-		<skills>
-			<skill id="8315" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8316" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8317" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8318" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8319" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8320" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="116" />
 			<set stat="mAtk" val="42" />
@@ -713,16 +614,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="180" />
-		<skills>
-			<skill id="8315" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8316" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8317" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8318" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8319" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8320" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="41" />
 			<set stat="mAtk" val="38" />
@@ -752,17 +643,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="180" />
-		<skills>
-			<skill id="8315" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8316" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8317" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8318" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8319" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8320" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="3047" level="1" /> <!-- Special Ability: Acumen -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="41" />
 			<set stat="mAtk" val="51" />
@@ -791,17 +671,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="180" />
-		<skills>
-			<skill id="8315" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8316" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8317" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8318" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8319" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8320" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="3047" level="1" /> <!-- Special Ability: Acumen -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="50" />
 			<set stat="mAtk" val="51" />
@@ -831,17 +700,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="180" />
-		<skills>
-			<skill id="8315" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8316" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8317" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8318" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8319" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8320" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="3047" level="1" /> <!-- Special Ability: Acumen -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="62" />
 			<set stat="mAtk" val="56" />
@@ -870,17 +728,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="180" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
-			<skill id="8315" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8316" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8317" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8318" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8319" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8320" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -913,16 +760,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="180" />
-		<skills>
-			<skill id="8315" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8316" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8317" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8318" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8319" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8320" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -954,16 +791,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="180" />
-		<skills>
-			<skill id="8315" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8316" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8317" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8318" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8319" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8320" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -991,9 +818,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2852" level="1" /> <!-- Duel Reward Box -->
-		</skills>
 	</item>
 	<item id="14636" name="Battle Reward Box (Mid-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_box_i06" />
@@ -1011,9 +835,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2853" level="1" /> <!-- Duel Reward Box -->
-		</skills>
 	</item>
 	<item id="14637" name="Battle Reward Box (High-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_box_i01" />
@@ -1031,9 +852,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2854" level="1" /> <!-- Duel Reward Box -->
-		</skills>
 	</item>
 	<item id="14638" name="Battle Reward Box (Top-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_box_i02" />
@@ -1051,9 +869,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2855" level="1" /> <!-- Duel Reward Box -->
-		</skills>
 	</item>
 	<item id="14639" name="Event - Claymore" type="EtcItem">
 		<set name="icon" val="icon.weapon_claymore_i00" />
@@ -1597,9 +1412,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="8348" level="1" /> <!-- Resistance Earring - Gludio -->
-		</skills>
 		<for>
 			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
@@ -1624,9 +1436,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="8349" level="1" /> <!-- Resistance Earring - Dion -->
-		</skills>
 		<for>
 			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
@@ -1651,9 +1460,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="8350" level="1" /> <!-- Resistance Earring - Giran -->
-		</skills>
 		<for>
 			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
@@ -1678,9 +1484,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="8351" level="1" /> <!-- Resistance Earring - Oren -->
-		</skills>
 		<for>
 			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
@@ -1705,9 +1508,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="8352" level="1" /> <!-- Resistance Earring - Aden -->
-		</skills>
 		<for>
 			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
@@ -1732,9 +1532,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="8353" level="1" /> <!-- Resistance Earring - Innadril -->
-		</skills>
 		<for>
 			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
@@ -1759,9 +1556,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="8354" level="1" /> <!-- Resistance Earring - Goddard -->
-		</skills>
 		<for>
 			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
@@ -1786,9 +1580,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="8355" level="1" /> <!-- Resistance Earring - Rune -->
-		</skills>
 		<for>
 			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
@@ -1813,9 +1604,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="8356" level="1" /> <!-- Resistance Earring - Schuttgart -->
-		</skills>
 		<for>
 			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
@@ -1851,17 +1639,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="180" />
-		<skills>
-			<skill id="3045" level="17" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Haste -->
-			<skill id="8315" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8316" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8317" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8318" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8319" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8320" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
-			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="61" />
 			<set stat="mAtk" val="51" />
@@ -1887,11 +1664,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="47520" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="6124" level="1" /> <!-- Agathion Cute Trick - Neolithica -->
-			<skill id="8314" level="1" /> <!-- Release Agathion's Seal - Neolithica -->
-		</skills>
 	</item>
 	<item id="14676" name="Agathion's New Year's Gift" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i03" />
@@ -1902,9 +1674,6 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2865" level="1" /> <!-- Agathion's New Year's Gift 1 -->
-		</skills>
 	</item>
 	<item id="14677" name="Agathion's New Year's Gift" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i03" />
@@ -1915,9 +1684,6 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2866" level="1" /> <!-- Agathion's New Year's Gift 2 -->
-		</skills>
 	</item>
 	<item id="14678" name="Neolithic Crystal (B-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_warding_orb_blue_i00" />
@@ -1966,9 +1732,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2860" level="1" /> <!-- Superior Elixir of Life (No-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -1987,9 +1750,6 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="D" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2860" level="2" /> <!-- Superior Elixir of Life (D-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -2009,9 +1769,6 @@
 		<set name="crystal_type" val="C" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
-		<skills>
-			<skill id="2860" level="3" /> <!-- Superior Elixir of Life (C-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -2030,9 +1787,6 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="B" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2860" level="4" /> <!-- Superior Elixir of Life (B-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -2052,9 +1806,6 @@
 		<set name="crystal_type" val="A" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
-		<skills>
-			<skill id="2860" level="5" /> <!-- Superior Elixir of Life (A-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -2074,9 +1825,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
-		<skills>
-			<skill id="2860" level="6" /> <!-- Superior Elixir of Life (S-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -2094,9 +1842,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2861" level="1" /> <!-- Superior Elixir of Mind (No-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -2115,9 +1860,6 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="D" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2861" level="2" /> <!-- Superior Elixir of Mind (D-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -2136,9 +1878,6 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="C" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2861" level="3" /> <!-- Superior Elixir of Mind (C-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -2157,9 +1896,6 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="B" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2861" level="4" /> <!-- Superior Elixir of Mind (B-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -2179,9 +1915,6 @@
 		<set name="crystal_type" val="A" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
-		<skills>
-			<skill id="2861" level="5" /> <!-- Superior Elixir of Mind (A-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -2200,9 +1933,6 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="S" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2861" level="6" /> <!-- Superior Elixir of Mind (S-grade) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -2220,9 +1950,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="Elixir" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2862" level="1" /> <!-- Superior Elixir of CP (No-grade) -->
-		</skills>
 	</item>
 	<item id="14695" name="Superior Elixir of CP (D-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_cp_potion_i01" />
@@ -2238,9 +1965,6 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="D" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2862" level="2" /> <!-- Superior Elixir of CP (D-grade) -->
-		</skills>
 	</item>
 	<item id="14696" name="Superior Elixir of CP (C-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_cp_potion_i02" />
@@ -2256,9 +1980,6 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="C" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2862" level="3" /> <!-- Superior Elixir of CP (C-grade) -->
-		</skills>
 	</item>
 	<item id="14697" name="Superior Elixir of CP (B-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_cp_potion_i03" />
@@ -2274,9 +1995,6 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="B" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2862" level="4" /> <!-- Superior Elixir of CP (B-grade) -->
-		</skills>
 	</item>
 	<item id="14698" name="Superior Elixir of CP (A-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_cp_potion_i04" />
@@ -2292,9 +2010,6 @@
 		<set name="handler" val="Elixir" />
 		<set name="crystal_type" val="A" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2862" level="5" /> <!-- Superior Elixir of CP (A-grade) -->
-		</skills>
 	</item>
 	<item id="14699" name="Superior Elixir of CP (S-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_super_cp_potion_i05" />
@@ -2311,8 +2026,5 @@
 		<set name="crystal_type" val="S" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
-		<skills>
-			<skill id="2862" level="6" /> <!-- Superior Elixir of CP (S-grade) -->
-		</skills>
 	</item>
 </list>

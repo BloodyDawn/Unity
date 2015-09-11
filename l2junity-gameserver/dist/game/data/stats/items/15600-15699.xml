@@ -1256,9 +1256,6 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
-		</skills>
 		<cond msgId="1518">
 			<player isHero="true" />
 		</cond>
@@ -1403,10 +1400,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="oncrit_skill" val="3579-1" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
-			<skill id="3427" level="1" /> <!-- Special Ability: Infinity Rapier -->
-		</skills>
 		<cond msgId="1518">
 			<and>
 				<player races="KAMAEL" />
@@ -1494,9 +1487,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="9076" level="1" /> <!-- Secret Gate Key -->
-		</skills>
 	</item>
 	<item id="15691" name="Sealed Vesper Sigil Piece" type="EtcItem">
 		<set name="icon" val="icon.etc_sealed_vesper_sigil_piece_I00" />

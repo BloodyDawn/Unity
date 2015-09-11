@@ -12,9 +12,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2338" level="1" /> <!-- Earth Resistance Potion -->
-		</skills>
 	</item>
 	<item id="10001" name="Dark Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_unholy_potion_i00" />
@@ -30,9 +27,6 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
-		<skills>
-			<skill id="2339" level="1" /> <!-- Holy Attack Resistance Potion -->
-		</skills>
 	</item>
 	<item id="10002" name="Holy Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_holy_potion_i00" />
@@ -46,9 +40,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2340" level="1" /> <!-- Dark Attack Resistance Potion -->
-		</skills>
 	</item>
 	<item id="10003" name="Fleuret" type="Weapon">
 		<set name="icon" val="icon.weapon_rapier_i00" />
@@ -69,9 +60,6 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -106,9 +94,6 @@
 		<set name="item_skill" val="3552-1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DUALSWORD" />
-		<skills>
-			<skill id="3411" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Special Ability: Focus -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="405" />
 			<set stat="mAtk" val="151" />
@@ -141,9 +126,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="90" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -253,9 +235,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="120" />
-		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" type_value="4" /> <!-- Maximum Ability -->
-		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -422,9 +401,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="2362" level="1" /> <!-- Prison Gate Key -->
-		</skills>
 	</item>
 	<item id="10016" name="Underground Warehouse Key" type="EtcItem">
 		<set name="icon" val="icon.etc_key_i00" />
@@ -434,9 +410,6 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2363" level="1" /> <!-- Underground Warehouse Key -->
-		</skills>
 	</item>
 	<item id="10017" name="Coral Treasure Chest Key" type="EtcItem">
 		<set name="icon" val="icon.etc_key_i00" />
@@ -445,9 +418,6 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2400" level="1" /> <!-- Coral Treasure Chest Key -->
-		</skills>
 	</item>
 	<item id="10018" name="Agathion - Fortress" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -466,11 +436,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_fortress;1}}" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="5458" level="1" /> <!-- Agathion Cute Trick - Fortress -->
-			<skill id="3361" level="1" /> <!-- Release Agathion's Seal - Fortress -->
-		</skills>
 		<cond msgId="1518">
 			<player fort="-1" />
 		</cond>
@@ -516,9 +481,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<skills>
-			<skill id="3361" level="1" /> <!-- Release Agathion's Seal - Fortress -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -543,9 +505,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<skills>
-			<skill id="3361" level="1" /> <!-- Release Agathion's Seal - Fortress -->
-		</skills>
 		<for>
 			<add order="0" stat="pDef" val="58" />
 		</for>
@@ -567,9 +526,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<skills>
-			<skill id="3361" level="1" /> <!-- Release Agathion's Seal - Fortress -->
-		</skills>
 		<for>
 			<add order="0" stat="pDef" val="36" />
 		</for>
@@ -591,9 +547,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<skills>
-			<skill id="3361" level="1" /> <!-- Release Agathion's Seal - Fortress -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -619,9 +572,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<skills>
-			<skill id="3361" level="1" /> <!-- Release Agathion's Seal - Fortress -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>

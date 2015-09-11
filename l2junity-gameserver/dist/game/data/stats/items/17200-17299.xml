@@ -63,14 +63,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="8515" level="1" /> <!-- Release Agathion's Seal - Ball Trapping Gnosian -->
-			<skill id="23236" level="1" /> <!-- Agathion Cute Trick - Zaken's Spirit Swords -->
-			<skill id="23237" level="1" /> <!-- Swords' Song -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
-			<skill id="6699" level="1" /> <!-- Ball Trapping Gnosian Agathion Cute Trick -->
-		</skills>
 	</item>
 	<item id="17204" name="Agathion - Ball Trapping Orodriel" type="Armor">
 		<!-- Description: Bracelet that summons a ball trapping Orodriel. It wears a red uniform. Cannot be exchanged or dropped. Cannot use a private store. Can be stored in a private warehouse. -->
@@ -87,14 +79,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="8516" level="1" /> <!-- Release Agathion's Seal - Ball Trapping Orodriel -->
-			<skill id="23236" level="1" /> <!-- Agathion Cute Trick - Zaken's Spirit Swords -->
-			<skill id="23237" level="1" /> <!-- Swords' Song -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
-			<skill id="6700" level="1" /> <!-- Ball Trapping Orodriel Agathion Cute Trick -->
-		</skills>
 	</item>
 	<item id="17205" name="Agathion - Penalty Kick" type="Armor">
 		<!-- Description: Bracelet that summons a Gnosian and Orodriel who are practicing penalty kicks. All are wearing red uniforms. Cannot be exchanged or dropped. Cannot use a private store. Can be stored in a private warehouse. -->
@@ -111,14 +95,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="8517" level="1" /> <!-- Release Agathion's Seal - Penalty Kick -->
-			<skill id="23236" level="1" /> <!-- Agathion Cute Trick - Zaken's Spirit Swords -->
-			<skill id="23237" level="1" /> <!-- Swords' Song -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
-			<skill id="6701" level="1" /> <!-- Penalty Kick Agathion Cute Trick -->
-		</skills>
 	</item>
 	<item id="17206" name="XP Buff 50% (1-hour)" type="EtcItem">
 		<!-- Description: Hourglass that increases Nevit's blessing time by 1 hour. Can be used regardless of level. Cannot be exchanged or dropped. -->
@@ -941,9 +917,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="9179" level="1" /> <!-- Antharas' Blood Crystal -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player insideZoneId="70050" />
 		</cond>
@@ -963,11 +936,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
-		<skills>
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
-			<skill id="8521" level="1" /> <!-- Release Agathion's Seal - Antharas -->
-			<skill id="6916" level="1" /> <!-- Antharas' Cute Tricks -->
-		</skills>
 	</item>
 	<item id="17270" name="Agathion - Nevit's Messenger Kanna" type="Armor">
 		<!-- Description: Bracelet that summons a Nevit's messenger Kanna Agathion. Cannot be exchanged or dropped. -->
@@ -984,11 +952,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
-		<skills>
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
-			<skill id="8522" level="1" /> <!-- Release Agathion's Seal - Nevit's Messenger Kanna -->
-			<skill id="6917" level="1" /> <!-- Kanna's Splendor -->
-		</skills>
 	</item>
 	<item id="17271" name="Agathion - Guardian of Dawn Kallesin" type="Armor">
 		<!-- Description: Bracelet that summons a Guardian of the Dawn Kallesin Agathion. Cannot be exchanged or dropped. -->
@@ -1005,11 +968,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
-		<skills>
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
-			<skill id="8523" level="1" /> <!-- Release Agathion's Seal - Guardian of Dawn Kallesin -->
-			<skill id="6918" level="1" /> <!-- Kallesin's Splendor -->
-		</skills>
 	</item>
 	<item id="17272" name="Agathion - Antharas Pack" type="EtcItem">
 		<!-- Description: Special gift that commemorates the conquest of Dragon Valley. When used, you can obtain an Antharas Agathion seal bracelet. -->
@@ -1080,9 +1038,6 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<skills>
-			<skill id="9180" level="1" /> <!-- Scroll: 50,000 SP -->
-		</skills>
 	</item>
 	<item id="17277" name="Scroll: 100,000 SP" type="EtcItem">
 		<set name="icon" val="icon.etc_sp_scroll3_i00" />
@@ -1096,9 +1051,6 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<skills>
-			<skill id="9180" level="2" /> <!-- Scroll: 100,000 SP -->
-		</skills>
 	</item>
 	<item id="17278" name="Strider Pet Exchange Pack" type="EtcItem">
 		<!-- Description: Dimensional item pack. Wrapped pack containing a Strider pet exchange coupon. Cannot be exchanged, dropped, or destroyed. Can be stored in a private warehouse. -->
@@ -1284,9 +1236,6 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DAGGER" />
-		<skills>
-			<skill id="13279" level="3" /> <!-- Dagger Special Ability -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="380.0" />
 			<set stat="mAtk" val="189.0" />
@@ -1308,9 +1257,6 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
-		<skills>
-			<skill id="13252" level="3" /> <!-- One-handed Sword Special Ability -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="435.0" />
 			<set stat="mAtk" val="189.0" />
@@ -1332,9 +1278,6 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
-		<skills>
-			<skill id="13258" level="3" /> <!-- Two-handed Sword Special Ability -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="529.0" />
 			<set stat="mAtk" val="189.0" />
@@ -1356,9 +1299,6 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
-		<skills>
-			<skill id="13253" level="3" /> <!-- One-handed Blunt Special Ability -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="435.0" />
 			<set stat="mAtk" val="189.0" />
@@ -1381,9 +1321,6 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FIST_WEAPON" />
-		<skills>
-			<skill id="13264" level="3" /> <!-- Fist Weapon Special Ability -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="529.0" />
 			<set stat="mAtk" val="189.0" />
@@ -1406,10 +1343,6 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SPEAR" />
-		<skills>
-			<skill id="13115" level="1" /> <!-- Polearm Multi-attack -->
-			<skill id="13263" level="3" /> <!-- Spear Special Ability -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="435.0" />
 			<set stat="mAtk" val="189.0" />
@@ -1431,9 +1364,6 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BOW" />
-		<skills>
-			<skill id="13289" level="3" /> <!-- Bow Special Ability -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="856.0" />
 			<set stat="mAtk" val="189.0" />
@@ -1455,9 +1385,6 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="CROSSBOW" />
-		<skills>
-			<skill id="13294" level="3" /> <!-- Crossbow Special Ability -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="771.0" />
 			<set stat="mAtk" val="189.0" />
@@ -1479,9 +1406,6 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
-		<skills>
-			<skill id="13295" level="3" /> <!-- Magic Sword Special Ability -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="348.0" />
 			<set stat="mAtk" val="252.0" />
@@ -1503,9 +1427,6 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
-		<skills>
-			<skill id="13296" level="3" /> <!-- Magic One-handed Blunt Special Ability -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="348.0" />
 			<set stat="mAtk" val="252.0" />

@@ -220,9 +220,6 @@
 		<set name="price" val="6404000" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="8311" level="1" /> <!-- Dynasty Sigil -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
@@ -452,9 +449,6 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<skills>
-			<skill id="2365" level="1" /> <!-- Scroll of Escape: Fortress -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -470,9 +464,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2364" level="1" /> <!-- Blessed Scroll of Escape: Fortress -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -489,9 +480,6 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<skills>
-			<skill id="2371" level="1" /> <!-- Transformation Scroll: Onyx Beast -->
-		</skills>
 	</item>
 	<item id="10132" name="Transformation Scroll: Doom Wraith" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -505,9 +493,6 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<skills>
-			<skill id="2372" level="1" /> <!-- Transformation Scroll: Doom Wraith -->
-		</skills>
 	</item>
 	<item id="10133" name="Transformation Scroll: Grail Apostle" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -521,9 +506,6 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<skills>
-			<skill id="2373" level="1" /> <!-- Transformation Scroll: Grail Apostle -->
-		</skills>
 	</item>
 	<item id="10134" name="Transformation Scroll: Unicorn" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -537,9 +519,6 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<skills>
-			<skill id="2374" level="1" /> <!-- Transformation Scroll: Unicorn -->
-		</skills>
 	</item>
 	<item id="10135" name="Transformation Scroll: Lilim Knight" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -553,9 +532,6 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<skills>
-			<skill id="2375" level="1" /> <!-- Transformation Scroll: Lilim Knight -->
-		</skills>
 	</item>
 	<item id="10136" name="Transformation Scroll: Golem Guardian" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -569,9 +545,6 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<skills>
-			<skill id="2376" level="1" /> <!-- Transformation Scroll: Golem Guardian -->
-		</skills>
 	</item>
 	<item id="10137" name="Transformation Scroll: Inferno Drake" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -585,9 +558,6 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
-		<skills>
-			<skill id="2377" level="1" /> <!-- Transformation Scroll: Inferno Drake -->
-		</skills>
 	</item>
 	<item id="10138" name="Transformation Scroll: Dragon Bomber" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -599,9 +569,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2378" level="1" /> <!-- Transformation Scroll: Dragon Bomber -->
-		</skills>
 	</item>
 	<item id="10139" name="Agathion Bracelet" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -622,11 +589,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="5414" level="1" /> <!-- Agathion Cute Trick - Rainbow Clan Hall -->
-			<skill id="3269" level="1" /> <!-- Release Agathion's Seal - Rainbow Clan Hall -->
-		</skills>
 	</item>
 	<item id="10140" name="Blessed Ring of Escape" type="Armor">
 		<set name="icon" val="icon.accessary_ring_of_mana_i00" />
@@ -647,9 +609,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="2" />
-		<skills>
-			<skill id="3408" level="1" /> <!-- Blessed Ring of Escape -->
-		</skills>
 		<for>
 			<add order="0" stat="mDef" val="24" />
 			<enchant stat="mDef" val="0" />
@@ -675,10 +634,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="3" />
-		<skills>
-			<skill id="3499" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
-			<skill id="3335" level="1" /> <!-- Transform Yeti -->
-		</skills>
 	</item>
 	<item id="10142" name="Grey Talisman - Buffalo Transform" type="Armor">
 		<set name="icon" val="icon.etc_talisman_i07" />
@@ -700,10 +655,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="3" />
-		<skills>
-			<skill id="3499" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
-			<skill id="3336" level="1" /> <!-- Transform Buffalo -->
-		</skills>
 	</item>
 	<item id="10143" name="Battleground Scroll: Shield Master" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -717,13 +668,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2379" level="1" /> <!-- Wind -->
-			<skill id="2380" level="1" /> <!-- Shield -->
-			<skill id="2381" level="1" /> <!-- Magic Barrier -->
-			<skill id="2382" level="1" /> <!-- Blessed Shield -->
-			<skill id="2383" level="1" /> <!-- Haste -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
@@ -740,13 +684,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2379" level="1" /> <!-- Wind -->
-			<skill id="2380" level="1" /> <!-- Shield -->
-			<skill id="2381" level="1" /> <!-- Magic Barrier -->
-			<skill id="2384" level="1" /> <!-- Acumen -->
-			<skill id="2385" level="1" /> <!-- Empower -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
@@ -763,13 +700,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2379" level="1" /> <!-- Wind -->
-			<skill id="2380" level="1" /> <!-- Shield -->
-			<skill id="2381" level="1" /> <!-- Magic Barrier -->
-			<skill id="2384" level="1" /> <!-- Acumen -->
-			<skill id="2386" level="1" /> <!-- Divine Power -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
@@ -786,13 +716,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2379" level="1" /> <!-- Wind -->
-			<skill id="2387" level="1" /> <!-- Might -->
-			<skill id="2381" level="1" /> <!-- Magic Barrier -->
-			<skill id="2388" level="1" /> <!-- Focus -->
-			<skill id="2383" level="1" /> <!-- Haste -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
@@ -809,13 +732,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2379" level="1" /> <!-- Wind -->
-			<skill id="2387" level="1" /> <!-- Might -->
-			<skill id="2381" level="1" /> <!-- Magic Barrier -->
-			<skill id="2389" level="1" /> <!-- Guidance -->
-			<skill id="2383" level="1" /> <!-- Haste -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
@@ -832,10 +748,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2390" level="1" /> <!-- Berserker Spirit -->
-			<skill id="2391" level="1" /> <!-- Clarity -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
@@ -852,9 +764,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2392" level="1" /> <!-- Blessed Scroll of Escape (Battleground) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
@@ -869,9 +778,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2393" level="1" /> <!-- Blessed Scroll of Resurrection (Battleground) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
@@ -888,9 +794,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2394" level="1" /> <!-- Transformation Scroll (Battleground) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
@@ -910,9 +813,6 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
-		<skills>
-			<skill id="2395" level="1" /> <!-- Healing Potion (Battleground) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
@@ -930,9 +830,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2401" level="1" /> <!-- Mana Recovery Potion (Battleground) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
@@ -952,9 +849,6 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
-		<skills>
-			<skill id="2402" level="1" /> <!-- CP Recovery Potion (Battleground) -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
@@ -970,9 +864,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2396" level="1" /> <!-- Mental Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
@@ -990,9 +881,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2397" level="1" /> <!-- Medusa Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
@@ -1008,9 +896,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2398" level="1" /> <!-- Quick Haste Potion -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
@@ -1033,9 +918,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
-		<skills>
-			<skill id="3315" level="1" /> <!-- Grey Talisman - Mid-grade Fishing -->
-		</skills>
 	</item>
 	<item id="10159" name="Capture Rope" type="EtcItem">
 		<set name="icon" val="icon.etc_braided_hemp_i00" />
@@ -1047,9 +929,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2399" level="1" /> <!-- Capture Rope -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
 		</cond>
@@ -1064,9 +943,6 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
-		<skills>
-			<skill id="2096" level="1" /> <!-- Soul Crystal -->
-		</skills>
 	</item>
 	<item id="10161" name="Cursed Blue Soul Crystal - Stage 14" type="EtcItem">
 		<set name="icon" val="icon.etc_broken_crystal_blue_i00" />
@@ -1078,9 +954,6 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
-		<skills>
-			<skill id="2096" level="1" /> <!-- Soul Crystal -->
-		</skills>
 	</item>
 	<item id="10162" name="Cursed Green Soul Crystal - Stage 14" type="EtcItem">
 		<set name="icon" val="icon.etc_broken_crystal_green_i00" />
@@ -1092,9 +965,6 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<set name="is_questitem" val="true" />
-		<skills>
-			<skill id="2096" level="1" /> <!-- Soul Crystal -->
-		</skills>
 	</item>
 	<item id="10163" name="Wolf Collar" type="EtcItem">
 		<set name="icon" val="icon.etc_prefect_belt_i00" />
@@ -1107,9 +977,6 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
-		<skills>
-			<skill id="2046" level="1" /> <!-- Summon Pet -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -1159,9 +1026,6 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2403" level="1" /> <!-- Hot Springs CP Potion -->
-		</skills>
 	</item>
 	<item id="10167" name="Pig Lollipop" type="Weapon">
 		<set name="icon" val="icon.etc_pig_candy_i00" />
@@ -1181,10 +1045,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
-			<skill id="3418" level="1" /> <!-- Active Skill: Transform Pig -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
@@ -1258,9 +1118,6 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2097" level="1" /> <!-- Sowing -->
-		</skills>
 	</item>
 	<item id="10172" name="Seed: Red Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
@@ -1272,9 +1129,6 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2097" level="1" /> <!-- Sowing -->
-		</skills>
 	</item>
 	<item id="10173" name="Seed: Chilly Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
@@ -1286,9 +1140,6 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2097" level="1" /> <!-- Sowing -->
-		</skills>
 	</item>
 	<item id="10174" name="Seed: Blue Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
@@ -1300,9 +1151,6 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2097" level="1" /> <!-- Sowing -->
-		</skills>
 	</item>
 	<item id="10175" name="Goblin Circlet (Event)" type="Armor">
 		<set name="icon" val="icon.accessory_taiwan_i00" />
@@ -1373,18 +1221,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2404" level="1" /> <!-- Might -->
-			<skill id="2405" level="1" /> <!-- Shield -->
-			<skill id="2406" level="1" /> <!-- Wind Walk -->
-			<skill id="2407" level="1" /> <!-- Focus -->
-			<skill id="2408" level="1" /> <!-- Death Whisper -->
-			<skill id="2409" level="1" /> <!-- Guidance -->
-			<skill id="2410" level="1" /> <!-- Blessed Shield -->
-			<skill id="2411" level="1" /> <!-- Blessed Body -->
-			<skill id="2412" level="1" /> <!-- Haste -->
-			<skill id="2413" level="1" /> <!-- Vampiric Rage -->
-		</skills>
 	</item>
 	<item id="10179" name="Fresh Fruit Cocktail" type="EtcItem">
 		<set name="icon" val="icon.etc_fruit_cocktail_i01" />
@@ -1407,17 +1243,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
-		<skills>
-			<skill id="2414" level="1" /> <!-- Berserker Spirit -->
-			<skill id="2415" level="1" /> <!-- Magic Barrier -->
-			<skill id="2416" level="1" /> <!-- Blessed Soul -->
-			<skill id="2417" level="1" /> <!-- Empower -->
-			<skill id="2418" level="1" /> <!-- Acumen -->
-			<skill id="2419" level="1" /> <!-- Clarity -->
-			<skill id="2406" level="1" /> <!-- Wind Walk -->
-			<skill id="2411" level="1" /> <!-- Blessed Body -->
-			<skill id="2405" level="1" /> <!-- Shield -->
-		</skills>
 	</item>
 	<item id="10180" name="Battle Manual - Penetrating Shot" type="EtcItem">
 		<set name="icon" val="icon.etc_kamael_skill_book_i00" />
@@ -1582,9 +1407,6 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2097" level="1" /> <!-- Sowing -->
-		</skills>
 	</item>
 	<item id="10198" name="Seed: Alternative Red Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
@@ -1596,9 +1418,6 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2097" level="1" /> <!-- Sowing -->
-		</skills>
 	</item>
 	<item id="10199" name="Seed: Alternative Chilly Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />
@@ -1610,8 +1429,5 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="Seed" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="2097" level="1" /> <!-- Sowing -->
-		</skills>
 	</item>
 </list>

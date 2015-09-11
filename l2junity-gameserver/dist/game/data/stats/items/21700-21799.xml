@@ -120,9 +120,6 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="22248" level="1" /> <!-- Blessed Scroll: Enchant Power Shirt -->
-		</skills>
 	</item>
 	<item id="21708" name="Honey Rice Cakes" name_additional="Event" type="EtcItem">
 		<!-- Description: Delicious honey rice cakes. When used, instantly recovers Max MP by 50%. Reuse time is 5 minutes. Cannot be exchanged, dropped, or destroyed. Can be stored in a private warehouse. -->
@@ -154,12 +151,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
-			<skill id="21245" level="1" /> <!-- Release Agathion's Seal - Rudolph -->
-			<skill id="21246" level="1" /> <!-- Rudolph's Vitality -->
-		</skills>
 	</item>
 	<item id="21710" name="Vitality Replenishing Potion" name_additional="Event" type="EtcItem">
 		<!-- Description: When used, replenishes energy to 100%. Reuse time is 60 minutes. Cannot be destroyed. Can be stored in a private warehouse. -->
@@ -195,9 +186,6 @@
 		<set name="price" val="11394000" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="EARRING" />
-		<skills>
-			<skill id="3559" level="2" /> <!-- Blessed Zaken's Earring -->
-		</skills>
 		<for>
 			<add order="0" stat="mDef" val="94" />
 			<add stat="maxMp" val="37" />
@@ -246,9 +234,6 @@
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="CLOAK" />
-		<skills>
-			<skill id="21242" level="1" /> <!-- Zaken's Call -->
-		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
@@ -274,9 +259,6 @@
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="CLOAK" />
-		<skills>
-			<skill id="21243" level="1" /> <!-- Freya's Call -->
-		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
@@ -302,9 +284,6 @@
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="CLOAK" />
-		<skills>
-			<skill id="21244" level="1" /> <!-- Frintezza's Call -->
-		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
@@ -335,9 +314,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
-		<skills>
-			<skill id="21242" level="1" /> <!-- Zaken's Call -->
-		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
@@ -368,9 +344,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
-		<skills>
-			<skill id="21243" level="1" /> <!-- Freya's Call -->
-		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
@@ -401,9 +374,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
-		<skills>
-			<skill id="21244" level="1" /> <!-- Frintezza's Call -->
-		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
@@ -517,12 +487,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="4320" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="23305" level="1" /> <!-- Zinyanzi Agathion - Yunbokhwan -->
-			<skill id="21248" level="1" /> <!-- Release Agathion's Seal - Zinyanzi -->
-			<skill id="23306" level="1" /> <!-- Zinyanzi Agathion Cute Trick -->
-		</skills>
 	</item>
 	<item id="21728" name="Agathion - Zinyanzi (7-day)" name_additional="7-day" type="Armor">
 		<!-- Description: Bracelet skill that let's you summon Zinenze for 3 days. Upon using the skill name, instantly recovers Exp, HP, MP, and CP, and makes you invincible for 5 seconds. (But can only be used when HP is below 31%.). Cool time is 12 hour(s). Can be stored in a private warehouse. But cannot be exchange, dropped, or sold in shops. -->
@@ -542,12 +506,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="23305" level="1" /> <!-- Zinyanzi Agathion - Yunbokhwan -->
-			<skill id="21248" level="1" /> <!-- Release Agathion's Seal - Zinyanzi -->
-			<skill id="23306" level="1" /> <!-- Zinyanzi Agathion Cute Trick -->
-		</skills>
 	</item>
 	<item id="21729" name="Agathion - Yanzi" name_additional="Permanent" type="Armor">
 		<!-- Description: Enze Agathion. Upon skill use, transforms into an Enze fairy. Can stay as an Enze fairy for 10 minutes. Cool time is 5 hours. Can be traded, sold at a private store, and stored in a private warehouse. But cannot be dropped or sold at a shop. -->
@@ -563,12 +521,6 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<skills>
-			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
-			<skill id="21249" level="1" /> <!-- Release Agathion's Seal - Yanzi -->
-			<skill id="23307" level="1" /> <!-- Yanzi Agathion Cute Trick -->
-			<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		</skills>
 	</item>
 	<item id="21730" name="Letter Collector's Gift" name_additional="Event" type="EtcItem">
 		<!-- Description: 7th Anniversary. Letter Collector's Gift. Upon use, for 2 hours, increases Atk. Spd. +15%, Casting Spd. +15%, Speed +20, and changes the appearance of the equipped weapon and armor to look like items from the past. Reuse time is 60 minutes. -->
@@ -962,9 +914,6 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="22271" level="1" /> <!-- Maestro's Key -->
-		</skills>
 		<cond addName="1" msgId="113">
 			<target levelRange="21;85" />
 		</cond>
@@ -978,9 +927,6 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="22272" level="1" /> <!-- Novice Explorer's Treasure Sack -->
-		</skills>
 	</item>
 	<item id="21748" name="Experienced Adventurer's Treasure Sack" type="EtcItem">
 		<!-- High Five Item -->
@@ -991,9 +937,6 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="22273" level="1" /> <!-- Experienced Adventurer's Treasure Sack -->
-		</skills>
 	</item>
 	<item id="21749" name="Great Adventurer's Treasure Sack" type="EtcItem">
 		<!-- High Five Item -->
@@ -1004,9 +947,6 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
-		<skills>
-			<skill id="22274" level="1" /> <!-- Great Adventurer's Treasure Sack -->
-		</skills>
 	</item>
 	<item id="21750" name="Mark of Challenge" type="EtcItem">
 		<!-- Description: Token received by adventurers for their service to the Elmore king. If you bring it to Captain Mathias in Rune, you will receive a reward. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -1061,9 +1001,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
-		<skills>
-			<skill id="6908" level="1" /> <!-- Transform Master -->
-		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />
@@ -1268,9 +1205,6 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
-		<skills>
-			<skill id="6908" level="1" /> <!-- Transform Master -->
-		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
