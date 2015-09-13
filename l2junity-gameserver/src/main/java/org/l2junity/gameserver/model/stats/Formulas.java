@@ -1238,8 +1238,8 @@ public final class Formulas
 		final double basicPropertyResist = getBasicPropertyResistBonus(skill.getBasicProperty(), target);
 		Stats stat = skill.isDebuff() ? Stats.DEBUFF_VULN : Stats.BUFF_VULN;
 		final double buffDebuffMod = 1 + (target.getStat().getValue(stat, 1) / 100);
-		final double rate = baseMod * elementMod * traitMod * buffDebuffMod * basicPropertyResist;
-		final double finalRate = traitMod > 0 ? CommonUtil.constrain(rate, skill.getMinChance(), skill.getMaxChance()) : 0;
+		final double rate = baseMod * elementMod * traitMod * buffDebuffMod;
+		final double finalRate = traitMod > 0 ? CommonUtil.constrain(rate, skill.getMinChance(), skill.getMaxChance()) * basicPropertyResist : 0;
 		
 		if (attacker.isDebug())
 		{
@@ -1308,12 +1308,11 @@ public final class Formulas
 		rate *= elementMod;
 		
 		final double basicPropertyResist = getBasicPropertyResistBonus(skill.getBasicProperty(), target);
-		rate *= basicPropertyResist;
 		
 		// Add Matk/Mdef Bonus (TODO: Pending)
 		
 		// Check the Rate Limits.
-		final double finalRate = CommonUtil.constrain(rate, skill.getMinChance(), skill.getMaxChance());
+		final double finalRate = CommonUtil.constrain(rate, skill.getMinChance(), skill.getMaxChance()) * basicPropertyResist;
 		
 		if (attacker.getOwner().isDebug())
 		{
