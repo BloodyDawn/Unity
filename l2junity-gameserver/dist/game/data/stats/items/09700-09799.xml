@@ -16,6 +16,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="2360" level="1" />
+		</skills>
 	</item>
 	<item id="9701" name="Magic Circle Key" type="EtcItem">
 		<set name="icon" val="icon.etc_old_key_i03" />
@@ -53,6 +56,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="2341" level="1" />
+		</skills>
 	</item>
 	<item id="9703" name="Gate Key: Kamael" type="EtcItem">
 		<set name="icon" val="icon.etc_old_key_i03" />
@@ -189,6 +195,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="2213" level="22" />
+		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -255,6 +264,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3426" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>

@@ -151,6 +151,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="3267" level="1" />
+			<skill id="21245" level="1" />
+			<skill id="21246" level="1" />
+		</skills>
 	</item>
 	<item id="21710" name="Vitality Replenishing Potion" name_additional="Event" type="EtcItem">
 		<!-- Description: When used, replenishes energy to 100%. Reuse time is 60 minutes. Cannot be destroyed. Can be stored in a private warehouse. -->
@@ -186,6 +191,9 @@
 		<set name="price" val="11394000" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="EARRING" />
+		<skills>
+			<skill id="3559" level="2" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="94" />
 			<add stat="maxMp" val="37" />
@@ -234,6 +242,9 @@
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="CLOAK" />
+		<skills>
+			<skill id="21242" level="1" />
+		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
@@ -259,6 +270,9 @@
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="CLOAK" />
+		<skills>
+			<skill id="21243" level="1" />
+		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
@@ -284,6 +298,9 @@
 		<set name="weight" val="220" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="CLOAK" />
+		<skills>
+			<skill id="21244" level="1" />
+		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
@@ -314,6 +331,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
+		<skills>
+			<skill id="21242" level="1" />
+		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
@@ -344,6 +364,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
+		<skills>
+			<skill id="21243" level="1" />
+		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
@@ -374,6 +397,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
+		<skills>
+			<skill id="21244" level="1" />
+		</skills>
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
@@ -487,6 +513,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="4320" />
+		<skills>
+			<skill id="23305" level="1" />
+			<skill id="3267" level="1" />
+			<skill id="21248" level="1" />
+			<skill id="23306" level="1" />
+		</skills>
 	</item>
 	<item id="21728" name="Agathion - Zinyanzi (7-day)" name_additional="7-day" type="Armor">
 		<!-- Description: Bracelet skill that let's you summon Zinenze for 3 days. Upon using the skill name, instantly recovers Exp, HP, MP, and CP, and makes you invincible for 5 seconds. (But can only be used when HP is below 31%.). Cool time is 12 hour(s). Can be stored in a private warehouse. But cannot be exchange, dropped, or sold in shops. -->
@@ -506,6 +538,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
+		<skills>
+			<skill id="23305" level="1" />
+			<skill id="3267" level="1" />
+			<skill id="21248" level="1" />
+			<skill id="23306" level="1" />
+		</skills>
 	</item>
 	<item id="21729" name="Agathion - Yanzi" name_additional="Permanent" type="Armor">
 		<!-- Description: Enze Agathion. Upon skill use, transforms into an Enze fairy. Can stay as an Enze fairy for 10 minutes. Cool time is 5 hours. Can be traded, sold at a private store, and stored in a private warehouse. But cannot be dropped or sold at a shop. -->
@@ -521,6 +559,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<skills>
+			<skill id="3267" level="1" />
+			<skill id="21249" level="1" />
+			<skill id="23307" level="1" />
+		</skills>
 	</item>
 	<item id="21730" name="Letter Collector's Gift" name_additional="Event" type="EtcItem">
 		<!-- Description: 7th Anniversary. Letter Collector's Gift. Upon use, for 2 hours, increases Atk. Spd. +15%, Casting Spd. +15%, Speed +20, and changes the appearance of the equipped weapon and armor to look like items from the past. Reuse time is 60 minutes. -->
@@ -1001,6 +1044,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
+		<skills>
+			<skill id="6908" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
 			<set stat="mAtk" val="1" />

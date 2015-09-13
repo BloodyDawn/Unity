@@ -334,6 +334,9 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="2169" level="1" />
+		</skills>
 	</item>
 	<item id="6036" name="Greater Magic Haste Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_potion_of_acumen3_i00" />
@@ -350,6 +353,9 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
+		<skills>
+			<skill id="2169" level="2" />
+		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
 		</cond>
@@ -365,6 +371,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2170" level="1" />
+		</skills>
 	</item>
 	<item id="6038" name="Greater Mercenary Posting Ticket (Sword/Stationary)" type="EtcItem">
 		<set name="icon" val="icon.mticket_sword_fix_i00" />

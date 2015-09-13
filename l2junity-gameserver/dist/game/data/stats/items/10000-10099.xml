@@ -12,6 +12,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2338" level="1" />
+		</skills>
 	</item>
 	<item id="10001" name="Dark Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_unholy_potion_i00" />
@@ -27,6 +30,9 @@
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
+		<skills>
+			<skill id="2339" level="1" />
+		</skills>
 	</item>
 	<item id="10002" name="Holy Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_holy_potion_i00" />
@@ -40,6 +46,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="2340" level="1" />
+		</skills>
 	</item>
 	<item id="10003" name="Fleuret" type="Weapon">
 		<set name="icon" val="icon.weapon_rapier_i00" />
@@ -60,6 +69,9 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3426" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -94,6 +106,9 @@
 		<set name="item_skill" val="3552-1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DUALSWORD" />
+		<skills>
+			<skill id="3411" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="405" />
 			<set stat="mAtk" val="151" />
@@ -126,6 +141,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="90" />
+		<skills>
+			<skill id="3426" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -235,6 +253,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="120" />
+		<skills>
+			<skill id="3426" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -436,6 +457,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_fortress;1}}" />
+		<skills>
+			<skill id="5458" level="1" />
+			<skill id="3267" level="1" />
+			<skill id="3361" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player fort="-1" />
 		</cond>

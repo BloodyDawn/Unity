@@ -20,6 +20,10 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_skill" val="1035-4" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3889" level="1" />
+			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="140" />
 			<set stat="mAtk" val="122" />
@@ -50,6 +54,10 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_skill" val="1201-25" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3889" level="1" />
+			<skill id="1201" level="25" type="ON_MAGIC_SKILL" type_chance="10" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="140" />
 			<set stat="mAtk" val="122" />
@@ -78,6 +86,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3879" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -107,6 +118,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_skill" val="3040-5" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3879" level="1" />
+			<skill id="3040" level="5" type="ON_CRITICAL_SKILL" type_chance="100" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -135,6 +150,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3879" level="1" />
+			<skill id="3030" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -163,6 +182,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3879" level="1" />
+			<skill id="3034" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -191,6 +214,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3895" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -219,6 +245,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3895" level="1" />
+			<skill id="3010" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -247,6 +277,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3895" level="1" />
+			<skill id="3012" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -276,6 +310,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_skill" val="3021-5" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3895" level="1" />
+			<skill id="3052" level="2" type="ON_CRITICAL_SKILL" type_chance="100" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -304,6 +342,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3044" level="11" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -331,6 +373,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3045" level="11" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -359,6 +405,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3426" level="1" />
+			<skill id="3830" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -391,6 +441,11 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3007" level="5" />
+			<skill id="3426" level="1" />
+			<skill id="3830" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -423,6 +478,11 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3010" level="5" />
+			<skill id="3426" level="1" />
+			<skill id="3830" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -455,6 +515,11 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3018" level="5" />
+			<skill id="3426" level="1" />
+			<skill id="3830" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -487,6 +552,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3899" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="134" />
@@ -517,6 +585,10 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_skill" val="1044-3" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3899" level="1" />
+			<skill id="1044" level="3" type="ON_MAGIC_SKILL" type_chance="30" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="134" />
@@ -547,6 +619,10 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_skill" val="1035-4" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" />
+			<skill id="3899" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="134" />
@@ -577,6 +653,10 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_skill" val="1201-25" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="1201" level="25" type="ON_MAGIC_SKILL" type_chance="10" />
+			<skill id="3899" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="134" />
@@ -605,6 +685,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3044" level="11" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -632,6 +716,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3013" level="1" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -659,6 +747,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3044" level="11" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -686,6 +778,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3045" level="11" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -713,6 +809,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3046" level="11" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -740,6 +840,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3042" level="11" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
 			<set stat="mAtk" val="91" />
@@ -767,6 +871,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3858" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="153" />
 			<set stat="mAtk" val="91" />
@@ -795,6 +902,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3858" level="1" />
+			<skill id="3009" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="153" />
 			<set stat="mAtk" val="91" />
@@ -823,6 +934,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3858" level="1" />
+			<skill id="3011" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="153" />
 			<set stat="mAtk" val="91" />
@@ -851,6 +966,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3858" level="1" />
+			<skill id="3019" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="153" />
 			<set stat="mAtk" val="91" />
@@ -880,6 +999,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3825" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
@@ -908,6 +1030,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3825" level="1" />
+			<skill id="3007" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
@@ -936,6 +1062,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3825" level="1" />
+			<skill id="3010" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
@@ -964,6 +1094,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3825" level="1" />
+			<skill id="3018" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
@@ -993,6 +1127,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3868" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1026,6 +1163,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3868" level="1" />
+			<skill id="3009" level="5" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1060,6 +1201,10 @@
 		<set name="reuse_delay" val="400" />
 		<set name="oncrit_skill" val="3021-5" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3868" level="1" />
+			<skill id="3053" level="1" type="ON_CRITICAL_SKILL" type_chance="100" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1094,6 +1239,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
 		<set name="reduced_soulshot" val="19,1" />
+		<skills>
+			<skill id="3868" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1125,6 +1273,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3891" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
@@ -1153,6 +1304,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3891" level="1" />
+			<skill id="3012" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
@@ -1181,6 +1336,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3891" level="1" />
+			<skill id="3013" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
@@ -1209,6 +1368,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3891" level="1" />
+			<skill id="3027" level="5" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="175" />
 			<set stat="mAtk" val="91" />
@@ -1238,6 +1401,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3858" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="122" />
@@ -1268,6 +1434,10 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_skill" val="1044-3" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3858" level="1" />
+			<skill id="1044" level="3" type="ON_MAGIC_SKILL" type_chance="30" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="122" />
@@ -1298,6 +1468,10 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_skill" val="1035-4" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3858" level="1" />
+			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="122" />
@@ -1328,6 +1502,10 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_skill" val="1164-11" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3858" level="1" />
+			<skill id="1164" level="11" type="ON_MAGIC_SKILL" type_chance="8" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="122" />
 			<set stat="mAtk" val="122" />
@@ -1356,6 +1534,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3044" level="12" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="220" />
 			<set stat="mAtk" val="94" />
@@ -1383,6 +1565,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3046" level="12" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="220" />
 			<set stat="mAtk" val="94" />
@@ -1410,6 +1596,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3013" level="1" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="220" />
 			<set stat="mAtk" val="94" />
@@ -1437,6 +1627,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3042" level="12" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="220" />
 			<set stat="mAtk" val="94" />
@@ -1464,6 +1658,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3046" level="13" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="228" />
 			<set stat="mAtk" val="97" />
@@ -1491,6 +1689,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3042" level="13" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="228" />
 			<set stat="mAtk" val="97" />
@@ -1518,6 +1720,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3013" level="1" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="228" />
 			<set stat="mAtk" val="97" />
@@ -1545,6 +1751,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3044" level="13" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="228" />
 			<set stat="mAtk" val="97" />
@@ -1572,6 +1782,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3045" level="13" />
+			<skill id="3835" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="228" />
 			<set stat="mAtk" val="97" />
@@ -1600,6 +1814,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3896" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
@@ -1629,6 +1846,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_skill" val="3022-6" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3896" level="1" />
+			<skill id="3022" level="6" type="ON_CRITICAL_SKILL" type_chance="35" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
@@ -1657,6 +1878,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3896" level="1" />
+			<skill id="3013" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
@@ -1686,6 +1911,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_skill" val="3055-1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3896" level="1" />
+			<skill id="3055" level="1" type="ON_CRITICAL_SKILL" type_chance="100" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
@@ -1714,6 +1943,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3826" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -1742,6 +1974,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3826" level="1" />
+			<skill id="3010" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -1770,6 +2006,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3826" level="1" />
+			<skill id="3023" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -1798,6 +2038,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3826" level="1" />
+			<skill id="3036" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -1826,6 +2070,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3846" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1859,6 +2106,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_skill" val="3022-6" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3846" level="1" />
+			<skill id="3022" level="6" type="ON_CRITICAL_SKILL" type_chance="35" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1891,6 +2142,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3846" level="1" />
+			<skill id="3013" level="1" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1924,6 +2179,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_skill" val="3055-1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3846" level="1" />
+			<skill id="3055" level="1" type="ON_CRITICAL_SKILL" type_chance="100" />
+		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
@@ -1955,6 +2214,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3599" level="1" />
+			<skill id="3877" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -1983,6 +2246,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3877" level="1" />
+			<skill id="3600" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -2012,6 +2279,11 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_skill" val="3016-6" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3599" level="1" />
+			<skill id="3877" level="1" />
+			<skill id="3571" level="2" type="ON_CRITICAL_SKILL" type_chance="100" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -2040,6 +2312,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3599" level="1" />
+			<skill id="3877" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -2069,6 +2345,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3880" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
@@ -2098,6 +2377,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_skill" val="3039-6" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3880" level="1" />
+			<skill id="3039" level="6" type="ON_CRITICAL_SKILL" type_chance="24" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
@@ -2127,6 +2410,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_skill" val="3040-6" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3880" level="1" />
+			<skill id="3040" level="4" type="ON_CRITICAL_SKILL" type_chance="100" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
@@ -2155,6 +2442,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3880" level="1" />
+			<skill id="3034" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
@@ -2184,6 +2475,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3900" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="189" />
 			<set stat="mAtk" val="145" />
@@ -2214,6 +2508,10 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_skill" val="1077-3" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3900" level="1" />
+			<skill id="1077" level="3" type="ON_MAGIC_SKILL" type_chance="20" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="189" />
 			<set stat="mAtk" val="145" />
@@ -2245,6 +2543,10 @@
 		<set name="onmagic_skill" val="1045-5" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
+		<skills>
+			<skill id="1045" level="5" type="ON_MAGIC_SKILL" type_chance="20" />
+			<skill id="3900" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="189" />
 			<set stat="mAtk" val="145" />
@@ -2275,6 +2577,10 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_skill" val="1168-6" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3900" level="1" />
+			<skill id="1168" level="6" type="ON_MAGIC_SKILL" type_chance="8" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="189" />
 			<set stat="mAtk" val="145" />
@@ -2303,6 +2609,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3885" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -2331,6 +2640,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3885" level="1" />
+			<skill id="3012" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -2359,6 +2672,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3885" level="1" />
+			<skill id="3013" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -2387,6 +2704,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3885" level="1" />
+			<skill id="3036" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -2416,6 +2737,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_BLUNT_WEAPON" />
+		<skills>
+			<skill id="3896" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
@@ -2444,6 +2768,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3896" level="1" />
+			<skill id="3013" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
@@ -2472,6 +2800,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3896" level="1" />
+			<skill id="3036" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
@@ -2500,6 +2832,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3896" level="1" />
+			<skill id="3027" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
@@ -2528,6 +2864,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3045" level="14" />
+			<skill id="3836" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
 			<set stat="mAtk" val="99" />
@@ -2555,6 +2895,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3885" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -2583,6 +2926,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3885" level="1" />
+			<skill id="3013" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -2611,6 +2958,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3885" level="1" />
+			<skill id="3027" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -2639,6 +2990,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3885" level="1" />
+			<skill id="3036" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="194" />
 			<set stat="mAtk" val="99" />
@@ -2667,6 +3022,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3859" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="99" />
@@ -2696,6 +3054,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_skill" val="3020-6" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3859" level="1" />
+			<skill id="3020" level="4" type="ON_CRITICAL_SKILL" type_chance="100" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="99" />
@@ -2725,6 +3087,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_skill" val="3041-6" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3859" level="1" />
+			<skill id="3041" level="4" type="ON_CRITICAL_SKILL" type_chance="100" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="99" />
@@ -2753,6 +3119,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3859" level="1" />
+			<skill id="3035" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="99" />
@@ -2781,6 +3151,10 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3859" level="1" />
+			<skill id="3043" level="6" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
 			<set stat="mAtk" val="99" />
@@ -2810,6 +3184,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3891" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="155" />
 			<set stat="mAtk" val="132" />
@@ -2839,6 +3216,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3891" level="1" />
+			<skill id="3014" level="1" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="155" />
 			<set stat="mAtk" val="132" />
@@ -2869,6 +3250,10 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_skill" val="3078-6" />
 		<set name="is_freightable" val="false" />
+		<skills>
+			<skill id="3891" level="1" />
+			<skill id="3078" level="6" type="ON_MAGIC_SKILL" type_chance="10" />
+		</skills>
 		<for>
 			<set stat="pAtk" val="155" />
 			<set stat="mAtk" val="132" />

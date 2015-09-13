@@ -676,7 +676,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="BONE" />
 		<set name="weight" val="1" />
-		<!-- <set name="enchant_enabled" val="1"  /> NOTE: Retail typo. -->
+		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -696,7 +696,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="FINE_STEEL" />
 		<set name="weight" val="1" />
-		<!-- <set name="enchant_enabled" val="1"  /> NOTE: Retail typo. -->
+		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -716,7 +716,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="SILVER" />
 		<set name="weight" val="1" />
-		<!-- <set name="enchant_enabled" val="1"  /> NOTE: Retail typo. -->
+		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -736,7 +736,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="MITHRIL" />
 		<set name="weight" val="1" />
-		<!-- <set name="enchant_enabled" val="1"  /> NOTE: Retail typo. -->
+		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -756,7 +756,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="1" />
-		<!-- <set name="enchant_enabled" val="1"  /> NOTE: Retail typo. -->
+		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
@@ -882,6 +882,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="120" />
+		<skills>
+			<skill id="3264" level="1" />
+		</skills>
 	</item>
 	<item id="22155" name="Shadow Item: Wolf Hat" name_additional="Blessed Resurrection" type="Armor">
 		<set name="icon" val="icon.accessory_wolf_cap_i00" />
@@ -902,6 +905,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="120" />
+		<skills>
+			<skill id="3263" level="1" />
+		</skills>
 	</item>
 	<item id="22156" name="Daisy Hairpin" type="Armor">
 		<set name="icon" val="icon.accessory_daisy_hairpin_i00" />
@@ -1198,6 +1204,9 @@
 		<!-- Guess -->
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="RING" />
+		<skills>
+			<skill id="3561" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
@@ -1218,6 +1227,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<!-- Guess -->
+		<skills>
+			<skill id="3562" level="1" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
@@ -1237,6 +1249,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<!-- Guess -->
+		<skills>
+			<skill id="3559" level="2" />
+		</skills>
 		<for>
 			<add order="0" stat="mDef" val="94" />
 			<add stat="maxMp" val="37" />
@@ -1292,6 +1307,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22310" level="1" />
+		</skills>
 	</item>
 	<item id="22182" name="Event - Cupid's Major Fatigue Relief Potion" type="EtcItem">
 		<!-- Description: Recovers energy when used on a Bunny. It has a better effect than Cupid's Fatigue Recovery Potion. -->
@@ -1299,6 +1317,9 @@
 		<set name="material" val="LIQUID" />
 		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
+		<skills>
+			<skill id="22311" level="1" />
+		</skills>
 	</item>
 	<item id="22183" name="Graduation Cap" type="Armor">
 		<!-- Description: Graduation Cap. Uses 2 hair accessory slots. Cannot be exchanged, dropped, or sold. -->
@@ -1450,6 +1471,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
+		<skills>
+			<skill id="21258" level="1" />
+		</skills>
 	</item>
 	<item id="22192" name="Mount - Rocking Horse" name_additional="30-day" type="Armor">
 		<!-- Description: Dimensional item. Can ride a Rocking Horse when equipped. Can be used for 30 days. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -1466,6 +1490,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
+		<skills>
+			<skill id="21258" level="1" />
+		</skills>
 	</item>
 	<item id="22193" name="Mount - Rocking Horse" type="Armor">
 		<!-- Description: Dimensional item. Can ride a Rocking Horse when equipped. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -1481,6 +1508,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
+		<skills>
+			<skill id="21258" level="1" />
+		</skills>
 	</item>
 	<item id="22194" name="1st Place Treasure Sack" type="EtcItem">
 		<!-- Description: When double-clicked, a random 1st Place prize is granted. -->
