@@ -54,7 +54,7 @@ public final class Backstab extends AbstractEffect
 	@Override
 	public boolean calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
-		return effector.isBehindTarget() && !Formulas.calcPhysicalSkillEvasion(effector, effected, skill) && Formulas.calcBlowSuccess(effector, effected, skill, _chance);
+		return !effector.isInFrontOf(effected) && !Formulas.calcPhysicalSkillEvasion(effector, effected, skill) && Formulas.calcBlowSuccess(effector, effected, skill, _chance);
 	}
 	
 	@Override

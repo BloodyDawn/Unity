@@ -46,7 +46,7 @@ public interface IStatsFunction
 			final Weapon weapon = creature.getActiveWeaponItem();
 			final Transform transform = creature.getTransformation();
 			final double baseTemplateBalue = creature.getTemplate().getBaseValue(stat, 0);
-			return (weapon != null ? weapon.getStats(stat, baseTemplateBalue) : transform != null ? transform.getStats(creature.getActingPlayer(), stat, baseTemplateBalue) : baseTemplateBalue);
+			return transform != null ? transform.getStats(creature.getActingPlayer(), stat, baseTemplateBalue) : (weapon != null ? weapon.getStats(stat, baseTemplateBalue) : baseTemplateBalue);
 		}
 		return creature.getTemplate().getBaseValue(stat, 0);
 	}

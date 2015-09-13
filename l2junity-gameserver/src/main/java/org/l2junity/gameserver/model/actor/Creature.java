@@ -90,7 +90,6 @@ import org.l2junity.gameserver.model.actor.tasks.character.HitTask;
 import org.l2junity.gameserver.model.actor.tasks.character.MagicUseTask;
 import org.l2junity.gameserver.model.actor.tasks.character.NotifyAITask;
 import org.l2junity.gameserver.model.actor.tasks.character.QueuedMagicUseTask;
-import org.l2junity.gameserver.model.actor.tasks.character.UsePotionTask;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.model.actor.transform.Transform;
 import org.l2junity.gameserver.model.actor.transform.TransformTemplate;
@@ -1831,7 +1830,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		// queue herbs and potions
 		if (isCastingSimultaneouslyNow() && simultaneously)
 		{
-			ThreadPoolManager.getInstance().scheduleAi(new UsePotionTask(this, skill), 100);
+			ThreadPoolManager.getInstance().scheduleAi(() -> doCast(skill), 100);
 			return;
 		}
 		
@@ -1839,20 +1838,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		if (simultaneously)
 		{
 			setIsCastingSimultaneouslyNow(true);
+			setLastSimultaneousSkillCast(skill);
 		}
 		else
 		{
 			setIsCastingNow(true);
-		}
-		
-		if (!simultaneously)
-		{
 			_castInterruptTime = -2 + GameTimeController.getInstance().getGameTicks() + (skillTime / GameTimeController.MILLIS_IN_TICK);
 			setLastSkillCast(skill);
-		}
-		else
-		{
-			setLastSimultaneousSkillCast(skill);
 		}
 		
 		// Calculate the Reuse Time of the Skill
@@ -5374,6 +5366,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		
 		// Stop casting
 		setIsCastingNow(false);
+		setIsCastingSimultaneouslyNow(false);
 		
 		final Skill skill = mut.getSkill();
 		final WorldObject target = mut.getTargets().length > 0 ? mut.getTargets()[0] : null;
