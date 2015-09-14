@@ -13,7 +13,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2338" level="1" />
+			<skill id="2338" level="1" /> <!-- Earth Resistance Potion -->
 		</skills>
 	</item>
 	<item id="10001" name="Dark Potion" type="EtcItem">
@@ -31,7 +31,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
 		<skills>
-			<skill id="2339" level="1" />
+			<skill id="2339" level="1" /> <!-- Holy Attack Resistance Potion -->
 		</skills>
 	</item>
 	<item id="10002" name="Holy Potion" type="EtcItem">
@@ -47,7 +47,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2340" level="1" />
+			<skill id="2340" level="1" /> <!-- Dark Attack Resistance Potion -->
 		</skills>
 	</item>
 	<item id="10003" name="Fleuret" type="Weapon">
@@ -70,7 +70,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" />
+			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -106,7 +106,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DUALSWORD" />
 		<skills>
-			<skill id="3411" level="1" type="ON_ENCHANT" />
+			<skill id="3411" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="405" />
@@ -141,7 +141,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="90" />
 		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" />
+			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -253,7 +253,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="120" />
 		<skills>
-			<skill id="3426" level="1" type="ON_ENCHANT" />
+			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -456,9 +456,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="equip_condition" val="{{ec_fortress;1}}" />
 		<skills>
-			<skill id="5458" level="1" />
-			<skill id="3267" level="1" type="ON_UNEQUIP" />
-			<skill id="3361" level="1" />
+			<skill id="5458" level="1" /> <!-- Agathion Cute Trick - Fortress -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="3361" level="1" /> <!-- Release Agathion's Seal - Fortress -->
 		</skills>
 		<cond msgId="1518">
 			<player fort="-1" />

@@ -221,7 +221,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="8311" level="1" />
+			<skill id="8311" level="1" /> <!-- Dynasty Sigil -->
 		</skills>
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
@@ -453,7 +453,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<skills>
-			<skill id="2365" level="1" />
+			<skill id="2365" level="1" /> <!-- Scroll of Escape: Fortress -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -471,7 +471,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2364" level="1" />
+			<skill id="2364" level="1" /> <!-- Blessed Scroll of Escape: Fortress -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -490,7 +490,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<skills>
-			<skill id="2371" level="1" />
+			<skill id="2371" level="1" /> <!-- Transformation Scroll: Onyx Beast -->
 		</skills>
 	</item>
 	<item id="10132" name="Transformation Scroll: Doom Wraith" type="EtcItem">
@@ -506,7 +506,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<skills>
-			<skill id="2372" level="1" />
+			<skill id="2372" level="1" /> <!-- Transformation Scroll: Doom Wraith -->
 		</skills>
 	</item>
 	<item id="10133" name="Transformation Scroll: Grail Apostle" type="EtcItem">
@@ -522,7 +522,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<skills>
-			<skill id="2373" level="1" />
+			<skill id="2373" level="1" /> <!-- Transformation Scroll: Grail Apostle -->
 		</skills>
 	</item>
 	<item id="10134" name="Transformation Scroll: Unicorn" type="EtcItem">
@@ -538,7 +538,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<skills>
-			<skill id="2374" level="1" />
+			<skill id="2374" level="1" /> <!-- Transformation Scroll: Unicorn -->
 		</skills>
 	</item>
 	<item id="10135" name="Transformation Scroll: Lilim Knight" type="EtcItem">
@@ -554,7 +554,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<skills>
-			<skill id="2375" level="1" />
+			<skill id="2375" level="1" /> <!-- Transformation Scroll: Lilim Knight -->
 		</skills>
 	</item>
 	<item id="10136" name="Transformation Scroll: Golem Guardian" type="EtcItem">
@@ -570,7 +570,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<skills>
-			<skill id="2376" level="1" />
+			<skill id="2376" level="1" /> <!-- Transformation Scroll: Golem Guardian -->
 		</skills>
 	</item>
 	<item id="10137" name="Transformation Scroll: Inferno Drake" type="EtcItem">
@@ -586,7 +586,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 		<skills>
-			<skill id="2377" level="1" />
+			<skill id="2377" level="1" /> <!-- Transformation Scroll: Inferno Drake -->
 		</skills>
 	</item>
 	<item id="10138" name="Transformation Scroll: Dragon Bomber" type="EtcItem">
@@ -600,7 +600,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2378" level="1" />
+			<skill id="2378" level="1" /> <!-- Transformation Scroll: Dragon Bomber -->
 		</skills>
 	</item>
 	<item id="10139" name="Agathion Bracelet" type="Armor">
@@ -622,9 +622,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
 		<skills>
-			<skill id="5414" level="1" />
-			<skill id="3267" level="1" type="ON_UNEQUIP" />
-			<skill id="3269" level="1" />
+			<skill id="5414" level="1" /> <!-- Agathion Cute Trick - Rainbow Clan Hall -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="3269" level="1" /> <!-- Release Agathion's Seal - Rainbow Clan Hall -->
 		</skills>
 	</item>
 	<item id="10140" name="Blessed Ring of Escape" type="Armor">
@@ -647,7 +647,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="2" />
 		<skills>
-			<skill id="3408" level="1" />
+			<skill id="3408" level="1" /> <!-- Blessed Ring of Escape -->
 		</skills>
 		<for>
 			<add order="0" stat="mDef" val="24" />
@@ -674,7 +674,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="3" />
 		<skills>
-			<skill id="3335" level="1" />
+			<skill id="3335" level="1" /> <!-- Transform Yeti -->
 		</skills>
 	</item>
 	<item id="10142" name="Grey Talisman - Buffalo Transform" type="Armor">
@@ -697,7 +697,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="3" />
 		<skills>
-			<skill id="3336" level="1" />
+			<skill id="3336" level="1" /> <!-- Transform Buffalo -->
 		</skills>
 	</item>
 	<item id="10143" name="Battleground Scroll: Shield Master" type="EtcItem">
@@ -809,7 +809,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2392" level="1" />
+			<skill id="2392" level="1" /> <!-- Blessed Scroll of Escape (Battleground) -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
@@ -826,7 +826,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2393" level="1" />
+			<skill id="2393" level="1" /> <!-- Blessed Scroll of Resurrection (Battleground) -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
@@ -864,7 +864,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
 		<skills>
-			<skill id="2395" level="1" />
+			<skill id="2395" level="1" /> <!-- Healing Potion (Battleground) -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
@@ -884,7 +884,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2401" level="1" />
+			<skill id="2401" level="1" /> <!-- Mana Recovery Potion (Battleground) -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
@@ -906,7 +906,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
 		<skills>
-			<skill id="2402" level="1" />
+			<skill id="2402" level="1" /> <!-- CP Recovery Potion (Battleground) -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
@@ -924,7 +924,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2396" level="1" />
+			<skill id="2396" level="1" /> <!-- Mental Potion -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
@@ -944,7 +944,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2397" level="1" />
+			<skill id="2397" level="1" /> <!-- Medusa Potion -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
@@ -962,7 +962,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2398" level="1" />
+			<skill id="2398" level="1" /> <!-- Quick Haste Potion -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player SiegeZone="126" />
@@ -987,7 +987,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
 		<skills>
-			<skill id="3315" level="1" />
+			<skill id="3315" level="1" /> <!-- Grey Talisman - Mid-grade Fishing -->
 		</skills>
 	</item>
 	<item id="10159" name="Capture Rope" type="EtcItem">
@@ -1098,7 +1098,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2403" level="1" />
+			<skill id="2403" level="1" /> <!-- Hot Springs CP Potion -->
 		</skills>
 	</item>
 	<item id="10167" name="Pig Lollipop" type="Weapon">
@@ -1120,7 +1120,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3418" level="1" />
+			<skill id="3418" level="1" /> <!-- Active Skill: Transform Pig -->
 			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
 		<for>
