@@ -498,7 +498,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2649" level="1" />
+			<skill id="2649" level="1" /> <!-- Scroll of Escape: Gludin Village -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -514,7 +514,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2649" level="2" />
+			<skill id="2649" level="2" /> <!-- Scroll of Escape: Town of Dion -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -530,7 +530,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2649" level="3" />
+			<skill id="2649" level="3" /> <!-- Scroll of Escape: Town of Giran -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -546,7 +546,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2649" level="5" />
+			<skill id="2649" level="5" /> <!-- Scroll of Escape: Town of Oren -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -562,7 +562,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2649" level="6" />
+			<skill id="2649" level="6" /> <!-- Scroll of Escape: Town of Aden -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -578,7 +578,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2649" level="4" />
+			<skill id="2649" level="4" /> <!-- Scroll of Escape: Heine -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -594,7 +594,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2649" level="7" />
+			<skill id="2649" level="7" /> <!-- Scroll of Escape: Town of Goddard -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -610,7 +610,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2649" level="8" />
+			<skill id="2649" level="8" /> <!-- Scroll of Escape: Town of Rune -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -626,7 +626,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2649" level="9" />
+			<skill id="2649" level="9" /> <!-- Scroll of Escape: Town of Schuttgart -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -885,7 +885,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="9575" level="1" />
+			<skill id="9575" level="1" /> <!-- Returning Hero's Health Potion -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -909,7 +909,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 		<skills>
-			<skill id="8324" level="1" />
+			<skill id="8324" level="1" type="ON_ENCHANT" /> <!-- Warrior's Shirt -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="28" />
@@ -934,7 +934,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="86400" />
 		<skills>
-			<skill id="8292" level="1" />
+			<skill id="8292" level="1" /> <!-- Olympiad Warrior's Ring -->
 		</skills>
 		<for>
 			<add order="0" stat="mDef" val="42" />
@@ -959,7 +959,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="86400" />
 		<skills>
-			<skill id="8294" level="1" />
+			<skill id="8294" level="1" /> <!-- Olympiad Warrior's Necklace -->
 		</skills>
 		<for>
 			<add order="0" stat="mDef" val="85" />
@@ -984,7 +984,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="86400" />
 		<skills>
-			<skill id="8293" level="1" />
+			<skill id="8293" level="1" /> <!-- Olympiad Warrior's Earring -->
 		</skills>
 		<for>
 			<add order="0" stat="mDef" val="63" />
@@ -1035,8 +1035,8 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="3267" level="1" />
-			<skill id="8275" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="8275" level="1" /> <!-- Release Agathion's Seal - Knight -->
 		</skills>
 	</item>
 	<item id="13757" name="Gludio Territory Badge" type="EtcItem">
@@ -1236,7 +1236,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2622" level="1" />
+			<skill id="2622" level="1" /> <!-- Summon Life-size Decoy -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<and>
@@ -1264,7 +1264,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
 		<skills>
-			<skill id="8276" level="1" />
+			<skill id="8276" level="1" /> <!-- Shield Branding -->
 		</skills>
 		<cond msgId="1518">
 			<and>
@@ -1292,7 +1292,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2623" level="1" />
+			<skill id="2623" level="1" /> <!-- Alkaline Therapy -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="119,120" />
@@ -1312,7 +1312,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2624" level="1" />
+			<skill id="2624" level="1" /> <!-- Life Aid Banding -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="115,116,119,120,121,122" />
@@ -1330,7 +1330,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2625" level="1" />
+			<skill id="2625" level="1" /> <!-- Embalming -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="115,116,119,120,121,122" />
@@ -1348,7 +1348,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2626" level="1" />
+			<skill id="2626" level="1" /> <!-- Lighting Incense -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="115,116,119,120,121,122" />
@@ -1366,7 +1366,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2627" level="1" />
+			<skill id="2627" level="1" /> <!-- Elixir Miracle -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="115,116,119,120,121,122" />
@@ -1390,7 +1390,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2628" level="1" />
+			<skill id="2628" level="1" /> <!-- Structure Scarab -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player instanceId="115,116,119,120,121,122" />
@@ -1577,7 +1577,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2616" level="1" />
+			<skill id="2616" level="1" /> <!-- Bond Sealant -->
 		</skills>
 	</item>
 	<item id="13788" name="Land Mine" type="EtcItem">
@@ -1591,7 +1591,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2617" level="1" />
+			<skill id="2617" level="1" /> <!-- Stun Planter -->
 		</skills>
 	</item>
 	<item id="13789" name="Red Boing Hammer" type="Weapon">
@@ -1612,7 +1612,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="5852" level="1" />
+			<skill id="5852" level="1" /> <!-- Flip Block -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="107" />
@@ -1642,7 +1642,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="5853" level="1" />
+			<skill id="5853" level="1" /> <!-- Flip Block -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="107" />
@@ -1723,7 +1723,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2371" level="1" />
+			<skill id="2371" level="1" /> <!-- Transformation Scroll: Onyx Beast -->
 		</skills>
 	</item>
 	<item id="13794" name="Transformed Object: Handy's Block Checker Transformation Scroll Blue" type="EtcItem">

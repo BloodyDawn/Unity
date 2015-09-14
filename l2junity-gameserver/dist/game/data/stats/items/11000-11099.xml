@@ -20,8 +20,8 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3891" level="1" />
-			<skill id="3048" level="1" />
+			<skill id="3891" level="1" /> <!-- Blunt Weapon of Boost HP -->
+			<skill id="3048" level="1" /> <!-- Special Ability: Conversion -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="155" />
@@ -53,8 +53,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3426" level="1" />
-			<skill id="3831" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
+			<skill id="3831" level="1" /> <!-- Rapier of Boost HP -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -89,9 +89,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3010" level="6" />
-			<skill id="3426" level="1" />
-			<skill id="3831" level="1" />
+			<skill id="3010" level="6" /> <!-- Special Ability: Focus -->
+			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3831" level="1" /> <!-- Rapier of Boost HP -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -126,9 +126,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3023" level="6" />
-			<skill id="3426" level="1" />
-			<skill id="3831" level="1" />
+			<skill id="3023" level="6" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3831" level="1" /> <!-- Rapier of Boost HP -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -163,9 +163,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3036" level="6" />
-			<skill id="3426" level="1" />
-			<skill id="3831" level="1" />
+			<skill id="3036" level="6" /> <!-- Special Ability: Haste -->
+			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3831" level="1" /> <!-- Rapier of Boost HP -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -200,7 +200,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3853" level="1" />
+			<skill id="3853" level="1" /> <!-- Sword of Mana Regeneration -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="155" />
@@ -231,8 +231,8 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3853" level="1" />
-			<skill id="3047" level="1" />
+			<skill id="3853" level="1" /> <!-- Sword of Mana Regeneration -->
+			<skill id="3047" level="1" /> <!-- Special Ability: Acumen -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="155" />
@@ -263,8 +263,8 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3853" level="1" />
-			<skill id="3077" level="6" />
+			<skill id="3853" level="1" /> <!-- Sword of Mana Regeneration -->
+			<skill id="3077" level="6" /> <!-- Special Ability: M. Atk. -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="155" />
@@ -295,8 +295,8 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3853" level="1" />
-			<skill id="3048" level="1" />
+			<skill id="3853" level="1" /> <!-- Sword of Mana Regeneration -->
+			<skill id="3048" level="1" /> <!-- Special Ability: Conversion -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="155" />
@@ -329,7 +329,7 @@
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3867" level="1" />
+			<skill id="3867" level="1" /> <!-- Bow of Boost HP -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="400" />
@@ -363,8 +363,8 @@
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3867" level="1" />
-			<skill id="3008" level="6" />
+			<skill id="3867" level="1" /> <!-- Bow of Boost HP -->
+			<skill id="3008" level="6" /> <!-- Special Ability: Guidance -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="400" />
@@ -398,7 +398,7 @@
 		<set name="reuse_delay" val="1310" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3867" level="1" />
+			<skill id="3867" level="1" /> <!-- Bow of Boost HP -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="400" />
@@ -433,8 +433,8 @@
 		<set name="is_freightable" val="false" />
 		<set name="reduced_mp_consume" val="42,2" />
 		<skills>
-			<skill id="3867" level="1" />
-			<skill id="8312" level="1" />
+			<skill id="3867" level="1" /> <!-- Bow of Boost HP -->
+			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="400" />
@@ -467,7 +467,7 @@
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3872" level="1" />
+			<skill id="3872" level="1" /> <!-- Crossbow of Boost HP -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -503,8 +503,8 @@
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3872" level="1" />
-			<skill id="3008" level="6" />
+			<skill id="3872" level="1" /> <!-- Crossbow of Boost HP -->
+			<skill id="3008" level="6" /> <!-- Special Ability: Guidance -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -540,7 +540,7 @@
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3872" level="1" />
+			<skill id="3872" level="1" /> <!-- Crossbow of Boost HP -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -576,8 +576,8 @@
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3872" level="1" />
-			<skill id="8312" level="1" />
+			<skill id="3872" level="1" /> <!-- Crossbow of Boost HP -->
+			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -612,7 +612,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3899" level="2" />
+			<skill id="3899" level="2" /> <!-- Staff of Empower -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="207" />
@@ -644,8 +644,8 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3014" level="2" />
-			<skill id="3899" level="2" />
+			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
+			<skill id="3899" level="2" /> <!-- Staff of Empower -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="207" />
@@ -677,8 +677,8 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3048" level="2" />
-			<skill id="3899" level="2" />
+			<skill id="3048" level="2" /> <!-- Special Ability: Conversion -->
+			<skill id="3899" level="2" /> <!-- Staff of Empower -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="207" />
@@ -710,8 +710,8 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3047" level="2" />
-			<skill id="3899" level="2" />
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
+			<skill id="3899" level="2" /> <!-- Staff of Empower -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="207" />
@@ -744,7 +744,7 @@
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3868" level="2" />
+			<skill id="3868" level="2" /> <!-- Crossbow of Guidance -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -780,9 +780,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3868" level="2" />
-			<skill id="3552" level="1" />
-			<skill id="3498" level="1" />
+			<skill id="3868" level="2" /> <!-- Crossbow of Guidance -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -818,9 +818,9 @@
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3868" level="2" />
-			<skill id="3552" level="1" />
-			<skill id="3053" level="2" type="ON_CRITICAL_SKILL" />
+			<skill id="3868" level="2" /> <!-- Crossbow of Guidance -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3053" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Bleed -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -856,8 +856,8 @@
 		<set name="reuse_delay" val="400" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3868" level="2" />
-			<skill id="3014" level="2" />
+			<skill id="3868" level="2" /> <!-- Crossbow of Guidance -->
+			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -892,8 +892,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3426" level="1" />
-			<skill id="3830" level="2" />
+			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
+			<skill id="3830" level="2" /> <!-- Rapier of Might -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -929,10 +929,10 @@
 		<set name="oncrit_chance" val="10" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="1" />
-			<skill id="3061" level="1" type="ON_CRITICAL_SKILL" />
-			<skill id="3426" level="1" />
-			<skill id="3830" level="2" />
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3061" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Poison -->
+			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3830" level="2" /> <!-- Rapier of Might -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -967,9 +967,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3068" level="2" />
-			<skill id="3426" level="1" />
-			<skill id="3830" level="2" />
+			<skill id="3068" level="2" /> <!-- Special Ability: Haste -->
+			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3830" level="2" /> <!-- Rapier of Might -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1004,9 +1004,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3057" level="1" />
-			<skill id="3426" level="1" />
-			<skill id="3830" level="2" />
+			<skill id="3057" level="1" /> <!-- Special Ability: Anger -->
+			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3830" level="2" /> <!-- Rapier of Might -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1040,7 +1040,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3884" level="2" />
+			<skill id="3884" level="2" /> <!-- Blunt Weapon of Boost HP -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -1071,8 +1071,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3884" level="2" />
-			<skill id="3050" level="1" />
+			<skill id="3884" level="2" /> <!-- Blunt Weapon of Boost HP -->
+			<skill id="3050" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -1103,9 +1103,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3884" level="2" />
-			<skill id="3552" level="1" />
-			<skill id="3052" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3884" level="2" /> <!-- Blunt Weapon of Boost HP -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3052" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Bleed -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -1136,8 +1136,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3884" level="2" />
-			<skill id="3056" level="2" />
+			<skill id="3884" level="2" /> <!-- Blunt Weapon of Boost HP -->
+			<skill id="3056" level="2" /> <!-- Special Ability: Rsk. Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -1168,7 +1168,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3879" level="2" />
+			<skill id="3879" level="2" /> <!-- Fist Weapon of Might -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
@@ -1199,8 +1199,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3879" level="2" />
-			<skill id="3068" level="2" />
+			<skill id="3879" level="2" /> <!-- Fist Weapon of Might -->
+			<skill id="3068" level="2" /> <!-- Special Ability: Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
@@ -1231,8 +1231,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3879" level="2" />
-			<skill id="3050" level="1" />
+			<skill id="3879" level="2" /> <!-- Fist Weapon of Might -->
+			<skill id="3050" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
@@ -1263,8 +1263,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3879" level="2" />
-			<skill id="3058" level="1" />
+			<skill id="3879" level="2" /> <!-- Fist Weapon of Might -->
+			<skill id="3058" level="1" /> <!-- Special Ability: Anger -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
@@ -1295,7 +1295,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3858" level="2" />
+			<skill id="3858" level="2" /> <!-- Dagger of Avoid -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
@@ -1326,8 +1326,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3858" level="2" />
-			<skill id="3051" level="1" />
+			<skill id="3858" level="2" /> <!-- Dagger of Avoid -->
+			<skill id="3051" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
@@ -1358,8 +1358,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3858" level="2" />
-			<skill id="3063" level="1" />
+			<skill id="3858" level="2" /> <!-- Dagger of Avoid -->
+			<skill id="3063" level="1" /> <!-- Special Ability: Back Blow -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
@@ -1390,9 +1390,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3858" level="2" />
-			<skill id="3552" level="1" />
-			<skill id="3054" level="2" type="ON_CRITICAL_SKILL" />
+			<skill id="3858" level="2" /> <!-- Dagger of Avoid -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3054" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Bleed -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="186" />
@@ -1424,7 +1424,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3854" level="1" />
+			<skill id="3854" level="1" /> <!-- Sword of Empower -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
@@ -1455,8 +1455,8 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3854" level="1" />
-			<skill id="3073" level="1" />
+			<skill id="3854" level="1" /> <!-- Sword of Empower -->
+			<skill id="3073" level="1" /> <!-- Special Ability: M. Atk. -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
@@ -1487,9 +1487,9 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3854" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3075" level="1" type="ON_MAGIC_SKILL" type_chance="5" />
+			<skill id="3854" level="1" /> <!-- Sword of Empower -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3075" level="1" type="ON_MAGIC_SKILL" type_chance="5" /> <!-- Special Ability: Magic Paralyze -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
@@ -1520,8 +1520,8 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3854" level="1" />
-			<skill id="3072" level="1" />
+			<skill id="3854" level="1" /> <!-- Sword of Empower -->
+			<skill id="3072" level="1" /> <!-- Special Ability: Empower -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
@@ -1552,7 +1552,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3889" level="2" />
+			<skill id="3889" level="2" /> <!-- Blunt Weapon of Empower -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
@@ -1584,8 +1584,8 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3889" level="2" />
-			<skill id="3014" level="2" />
+			<skill id="3889" level="2" /> <!-- Blunt Weapon of Empower -->
+			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
@@ -1617,9 +1617,9 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3889" level="2" />
-			<skill id="3552" level="1" />
-			<skill id="1168" level="6" type="ON_MAGIC_SKILL" type_chance="8" />
+			<skill id="3889" level="2" /> <!-- Blunt Weapon of Empower -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="1168" level="6" type="ON_MAGIC_SKILL" type_chance="8" /> <!-- Curse Poison -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
@@ -1651,8 +1651,8 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3889" level="2" />
-			<skill id="3047" level="2" />
+			<skill id="3889" level="2" /> <!-- Blunt Weapon of Empower -->
+			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="170" />
@@ -1684,7 +1684,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3841" level="1" />
+			<skill id="3841" level="1" /> <!-- Two-handed Sword of Guidance -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
@@ -1715,8 +1715,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3841" level="1" />
-			<skill id="3068" level="2" />
+			<skill id="3841" level="1" /> <!-- Two-handed Sword of Guidance -->
+			<skill id="3068" level="2" /> <!-- Special Ability: Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
@@ -1747,8 +1747,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3841" level="1" />
-			<skill id="3067" level="1" />
+			<skill id="3841" level="1" /> <!-- Two-handed Sword of Guidance -->
+			<skill id="3067" level="1" /> <!-- Special Ability: Critical Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
@@ -1779,8 +1779,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3841" level="1" />
-			<skill id="3050" level="1" />
+			<skill id="3841" level="1" /> <!-- Two-handed Sword of Guidance -->
+			<skill id="3050" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
@@ -1813,7 +1813,7 @@
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3863" level="2" />
+			<skill id="3863" level="2" /> <!-- Bow of Guidance -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="440" />
@@ -1847,9 +1847,9 @@
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3863" level="2" />
-			<skill id="3552" level="1" />
-			<skill id="3498" level="1" />
+			<skill id="3863" level="2" /> <!-- Bow of Guidance -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="440" />
@@ -1883,9 +1883,9 @@
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3863" level="2" />
-			<skill id="3552" level="1" />
-			<skill id="3053" level="2" type="ON_CRITICAL_SKILL" />
+			<skill id="3863" level="2" /> <!-- Bow of Guidance -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3053" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Bleed -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="440" />
@@ -1919,8 +1919,8 @@
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3863" level="2" />
-			<skill id="3014" level="2" />
+			<skill id="3863" level="2" /> <!-- Bow of Guidance -->
+			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="440" />
@@ -1951,8 +1951,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3045" level="17" />
-			<skill id="3835" level="2" />
+			<skill id="3045" level="17" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
+			<skill id="3835" level="2" /> <!-- Dual-blade Weapon of Might -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
@@ -1983,7 +1983,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3825" level="2" />
+			<skill id="3825" level="2" /> <!-- Sword of Might -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -2014,9 +2014,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3825" level="2" />
-			<skill id="3552" level="1" />
-			<skill id="3061" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3825" level="2" /> <!-- Sword of Might -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3061" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Poison -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -2047,8 +2047,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3825" level="2" />
-			<skill id="3068" level="2" />
+			<skill id="3825" level="2" /> <!-- Sword of Might -->
+			<skill id="3068" level="2" /> <!-- Special Ability: Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -2079,8 +2079,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3825" level="2" />
-			<skill id="3057" level="1" />
+			<skill id="3825" level="2" /> <!-- Sword of Might -->
+			<skill id="3057" level="1" /> <!-- Special Ability: Anger -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -2110,7 +2110,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3895" level="2" />
+			<skill id="3895" level="2" /> <!-- Two-handed Blunt Weapon of Critical Chance -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
@@ -2141,8 +2141,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3895" level="2" />
-			<skill id="3013" level="3" />
+			<skill id="3895" level="2" /> <!-- Two-handed Blunt Weapon of Critical Chance -->
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
@@ -2173,8 +2173,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3895" level="2" />
-			<skill id="3068" level="2" />
+			<skill id="3895" level="2" /> <!-- Two-handed Blunt Weapon of Critical Chance -->
+			<skill id="3068" level="2" /> <!-- Special Ability: Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
@@ -2205,9 +2205,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3895" level="2" />
-			<skill id="3552" level="1" />
-			<skill id="3059" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3895" level="2" /> <!-- Two-handed Blunt Weapon of Critical Chance -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3059" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="259" />
@@ -2239,7 +2239,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3847" level="1" />
+			<skill id="3847" level="1" /> <!-- Ancient Sword of Guidance -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2274,8 +2274,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3847" level="1" />
-			<skill id="3068" level="2" />
+			<skill id="3847" level="1" /> <!-- Ancient Sword of Guidance -->
+			<skill id="3068" level="2" /> <!-- Special Ability: Haste -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2310,8 +2310,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3847" level="1" />
-			<skill id="3067" level="1" />
+			<skill id="3847" level="1" /> <!-- Ancient Sword of Guidance -->
+			<skill id="3067" level="1" /> <!-- Special Ability: Critical Damage -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2346,8 +2346,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3847" level="1" />
-			<skill id="3050" level="1" />
+			<skill id="3847" level="1" /> <!-- Ancient Sword of Guidance -->
+			<skill id="3050" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2381,9 +2381,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3874" level="1" />
-			<skill id="3599" level="1" />
-			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" />
+			<skill id="3874" level="1" /> <!-- Polearm of Critical Chance -->
+			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
+			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -2414,8 +2414,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3874" level="1" />
-			<skill id="3601" level="7" />
+			<skill id="3874" level="1" /> <!-- Polearm of Critical Chance -->
+			<skill id="3601" level="7" /> <!-- Special Ability: Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -2446,9 +2446,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3874" level="1" />
-			<skill id="3552" level="2" />
-			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" />
+			<skill id="3874" level="1" /> <!-- Polearm of Critical Chance -->
+			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -2479,8 +2479,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3874" level="1" />
-			<skill id="3552" level="2" />
+			<skill id="3874" level="1" /> <!-- Polearm of Critical Chance -->
+			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="213" />
@@ -2511,8 +2511,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="3" />
-			<skill id="3835" level="2" />
+			<skill id="3013" level="3" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
+			<skill id="3835" level="2" /> <!-- Dual-blade Weapon of Might -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="275" />
@@ -2543,8 +2543,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3426" level="1" />
-			<skill id="3832" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" /> <!-- Maximum Ability -->
+			<skill id="3832" level="1" /> <!-- Rapier of Critical Damage -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2579,9 +2579,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3067" level="2" />
-			<skill id="3426" level="1" />
-			<skill id="3832" level="1" />
+			<skill id="3067" level="2" /> <!-- Special Ability: Critical Damage -->
+			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3832" level="1" /> <!-- Rapier of Critical Damage -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2616,9 +2616,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="3" />
-			<skill id="3426" level="1" />
-			<skill id="3832" level="1" />
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
+			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3832" level="1" /> <!-- Rapier of Critical Damage -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2653,9 +2653,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3071" level="2" />
-			<skill id="3426" level="1" />
-			<skill id="3832" level="1" />
+			<skill id="3071" level="2" /> <!-- Special Ability: Rsk. Focus -->
+			<skill id="3426" level="1" /> <!-- Maximum Ability -->
+			<skill id="3832" level="1" /> <!-- Rapier of Critical Damage -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2689,8 +2689,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3046" level="20" />
-			<skill id="3837" level="1" />
+			<skill id="3046" level="20" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
+			<skill id="3837" level="1" /> <!-- Dual-blade Weapon of Critical Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
@@ -2721,7 +2721,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3827" level="1" />
+			<skill id="3827" level="1" /> <!-- Sword of Critical Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
@@ -2752,8 +2752,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3827" level="1" />
-			<skill id="3067" level="2" />
+			<skill id="3827" level="1" /> <!-- Sword of Critical Damage -->
+			<skill id="3067" level="2" /> <!-- Special Ability: Critical Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
@@ -2784,8 +2784,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3827" level="1" />
-			<skill id="3013" level="3" />
+			<skill id="3827" level="1" /> <!-- Sword of Critical Damage -->
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
@@ -2816,8 +2816,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3827" level="1" />
-			<skill id="3071" level="2" />
+			<skill id="3827" level="1" /> <!-- Sword of Critical Damage -->
+			<skill id="3071" level="2" /> <!-- Special Ability: Rsk. Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="232" />
@@ -2848,7 +2848,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3848" level="1" />
+			<skill id="3848" level="1" /> <!-- Ancient Sword of Vampiric Rage -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2883,8 +2883,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3848" level="1" />
-			<skill id="3013" level="3" />
+			<skill id="3848" level="1" /> <!-- Ancient Sword of Vampiric Rage -->
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2919,9 +2919,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3848" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3055" level="2" type="ON_CRITICAL_SKILL" />
+			<skill id="3848" level="1" /> <!-- Ancient Sword of Vampiric Rage -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3055" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Bleed -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2956,9 +2956,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3848" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3060" level="2" type="ON_CRITICAL_SKILL" />
+			<skill id="3848" level="1" /> <!-- Ancient Sword of Vampiric Rage -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3060" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2992,7 +2992,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3894" level="1" />
+			<skill id="3894" level="1" /> <!-- Two-handed Blunt Weapon of Critical Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
@@ -3023,8 +3023,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3894" level="1" />
-			<skill id="3013" level="3" />
+			<skill id="3894" level="1" /> <!-- Two-handed Blunt Weapon of Critical Damage -->
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
@@ -3055,8 +3055,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3894" level="1" />
-			<skill id="3057" level="2" />
+			<skill id="3894" level="1" /> <!-- Two-handed Blunt Weapon of Critical Damage -->
+			<skill id="3057" level="2" /> <!-- Special Ability: Anger -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
@@ -3087,8 +3087,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3894" level="1" />
-			<skill id="3056" level="2" />
+			<skill id="3894" level="1" /> <!-- Two-handed Blunt Weapon of Critical Damage -->
+			<skill id="3056" level="2" /> <!-- Special Ability: Rsk. Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
@@ -3119,7 +3119,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3881" level="1" />
+			<skill id="3881" level="1" /> <!-- Fist Weapon of Boost HP -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
@@ -3150,8 +3150,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3881" level="1" />
-			<skill id="3069" level="1" />
+			<skill id="3881" level="1" /> <!-- Fist Weapon of Boost HP -->
+			<skill id="3069" level="1" /> <!-- Special Ability: Rsk. Evasion -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
@@ -3182,8 +3182,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3881" level="1" />
-			<skill id="3065" level="1" />
+			<skill id="3881" level="1" /> <!-- Fist Weapon of Boost HP -->
+			<skill id="3065" level="1" /> <!-- Special Ability: Guidance -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
@@ -3214,8 +3214,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3881" level="1" />
-			<skill id="3013" level="3" />
+			<skill id="3881" level="1" /> <!-- Fist Weapon of Boost HP -->
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
@@ -3247,7 +3247,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3842" level="1" />
+			<skill id="3842" level="1" /> <!-- Two-handed Sword of Vampiric Rage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
@@ -3278,8 +3278,8 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3842" level="1" />
-			<skill id="3013" level="3" />
+			<skill id="3842" level="1" /> <!-- Two-handed Sword of Vampiric Rage -->
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
@@ -3310,9 +3310,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3842" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3055" level="2" type="ON_CRITICAL_SKILL" />
+			<skill id="3842" level="1" /> <!-- Two-handed Sword of Vampiric Rage -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3055" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Bleed -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="282" />
@@ -3343,9 +3343,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3842" level="1" />
-			<skill id="3552" level="1" />
-			<skill id="3060" level="2" type="ON_CRITICAL_SKILL" />
+			<skill id="3842" level="1" /> <!-- Two-handed Sword of Vampiric Rage -->
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3060" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="282" />

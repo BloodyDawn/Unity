@@ -164,8 +164,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="8247" level="1" />
-			<skill id="8247" level="1" />
+			<skill id="8247" level="1" /> <!-- Ride Darkmane Pacer -->
+			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 		</skills>
 	</item>
 	<item id="13309" name="Agathion - Love (Event)" name_additional="30-day" type="Armor">
@@ -186,12 +186,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="3267" level="1" />
-			<skill id="5763" level="1" />
-			<skill id="8245" level="1" />
-			<skill id="3267" level="1" />
-			<skill id="5763" level="1" />
-			<skill id="8245" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="5763" level="1" /> <!-- Wink -->
+			<skill id="8245" level="1" /> <!-- Release Agathion's Seal - Love -->
 		</skills>
 	</item>
 	<item id="13310" name="Kat the Cat Hat (Event)" name_additional="30-day" type="Armor">
@@ -431,8 +428,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="6097" level="1" />
-			<skill id="6097" level="1" />
+			<skill id="6097" level="1" /> <!-- Scissors -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
@@ -462,8 +458,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="6098" level="1" />
-			<skill id="6098" level="1" />
+			<skill id="6098" level="1" /> <!-- Rock -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
@@ -493,8 +488,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="6099" level="1" />
-			<skill id="6099" level="1" />
+			<skill id="6099" level="1" /> <!-- Paper -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
@@ -524,8 +518,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 		<skills>
-			<skill id="8246" level="1" />
-			<skill id="8246" level="1" />
+			<skill id="8246" level="1" /> <!-- Transform Pumpkin Ghost -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
@@ -771,8 +765,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="6097" level="1" />
-			<skill id="6097" level="1" />
+			<skill id="6097" level="1" /> <!-- Scissors -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
@@ -802,8 +795,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="6098" level="1" />
-			<skill id="6098" level="1" />
+			<skill id="6098" level="1" /> <!-- Rock -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
@@ -833,8 +825,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="6099" level="1" />
-			<skill id="6099" level="1" />
+			<skill id="6099" level="1" /> <!-- Paper -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
@@ -864,8 +855,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="8246" level="1" />
-			<skill id="8246" level="1" />
+			<skill id="8246" level="1" /> <!-- Transform Pumpkin Ghost -->
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
@@ -892,12 +883,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="3267" level="1" />
-			<skill id="5763" level="1" />
-			<skill id="8245" level="1" />
-			<skill id="3267" level="1" />
-			<skill id="5763" level="1" />
-			<skill id="8245" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="5763" level="1" /> <!-- Wink -->
+			<skill id="8245" level="1" /> <!-- Release Agathion's Seal - Love -->
 		</skills>
 	</item>
 	<item id="13341" name="My Teleport Book Pack (Event)" type="EtcItem">
@@ -1863,7 +1851,7 @@
 		<set name="crystal_type" val="S" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2608" level="1" />
+			<skill id="2608" level="1" /> <!-- Blue Crystal of Fantasy -->
 		</skills>
 	</item>
 	<item id="13387" name="Fantasy Green Crystal" type="EtcItem">
@@ -1885,7 +1873,7 @@
 		<set name="crystal_type" val="S" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2608" level="2" />
+			<skill id="2608" level="2" /> <!-- Fantasy Green Crystal -->
 		</skills>
 	</item>
 	<item id="13388" name="Fantasy Red Crystal" type="EtcItem">
@@ -1907,7 +1895,7 @@
 		<set name="crystal_type" val="S" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2608" level="3" />
+			<skill id="2608" level="3" /> <!-- Fantasy Red Crystal -->
 		</skills>
 	</item>
 	<item id="13389" name="Kratei Scale Shirt" name_additional="CP" type="Armor">
@@ -1928,7 +1916,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 		<skills>
-			<skill id="3453" level="1" />
+			<skill id="3453" level="1" type="ON_ENCHANT" /> <!-- Scale Shirt -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="23" />
@@ -1953,7 +1941,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 		<skills>
-			<skill id="3459" level="1" />
+			<skill id="3459" level="1" type="ON_ENCHANT" /> <!-- Mithril Shirt -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="28" />
@@ -1978,7 +1966,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 		<skills>
-			<skill id="3477" level="1" />
+			<skill id="3477" level="1" type="ON_ENCHANT" /> <!-- Striped Scale Shirt -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="26" />
@@ -2003,7 +1991,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 		<skills>
-			<skill id="3483" level="1" />
+			<skill id="3483" level="1" type="ON_ENCHANT" /> <!-- Striped Mithril Shirt -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="30" />
@@ -2060,7 +2048,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2609" level="1" />
+			<skill id="2609" level="1" /> <!-- Scroll of Escape: Talking Island Village -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -2082,7 +2070,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2609" level="2" />
+			<skill id="2609" level="2" /> <!-- Scroll of Escape: Elven Village -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -2104,7 +2092,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2609" level="3" />
+			<skill id="2609" level="3" /> <!-- Scroll of Escape: Dark Elf Village -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -2126,7 +2114,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2609" level="4" />
+			<skill id="2609" level="4" /> <!-- Scroll of Escape: Orc Village -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -2148,7 +2136,7 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<skills>
-			<skill id="2609" level="5" />
+			<skill id="2609" level="5" /> <!-- Scroll of Escape: Dwarven Village -->
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />

@@ -18,7 +18,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="2631" level="1" />
+			<skill id="2631" level="1" /> <!-- Transformation Scroll: Frog -->
 		</skills>
 	</item>
 	<item id="13801" name="Transformation Scroll: Young Child" type="EtcItem">
@@ -39,7 +39,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="2632" level="1" />
+			<skill id="2632" level="1" /> <!-- Transformation Scroll: Young Child -->
 		</skills>
 	</item>
 	<item id="13802" name="Native's Hood" type="Armor">
@@ -62,7 +62,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="8277" level="1" />
+			<skill id="8277" level="1" /> <!-- Transform Native -->
+			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="33" />
@@ -88,7 +89,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="8277" level="1" />
+			<skill id="8277" level="1" /> <!-- Transform Native -->
+			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="53" />
@@ -114,7 +116,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="8277" level="1" />
+			<skill id="8277" level="1" /> <!-- Transform Native -->
+			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="29" />
@@ -140,7 +143,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="8278" level="1" />
+			<skill id="8278" level="1" /> <!-- Transform Guard of Down -->
+			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="33" />
@@ -166,7 +170,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="8278" level="1" />
+			<skill id="8278" level="1" /> <!-- Transform Guard of Down -->
+			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="53" />
@@ -192,7 +197,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="8278" level="1" />
+			<skill id="8278" level="1" /> <!-- Transform Guard of Down -->
+			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 		</skills>
 		<for>
 			<add order="0" stat="pDef" val="29" />
@@ -234,7 +240,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="2634" level="1" />
+			<skill id="2634" level="1" /> <!-- Court Wizard's Blessing -->
 		</skills>
 	</item>
 	<item id="13810" name="High Priest Orven's Letter" type="EtcItem">
@@ -806,7 +812,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
 		<skills>
-			<skill id="2630" level="1" />
+			<skill id="2630" level="1" /> <!-- Presentation - Collect Items -->
 		</skills>
 	</item>
 	<item id="13845" name="Attribute Master Yin's Sword" name_additional="10-minute" type="Weapon">
@@ -1001,7 +1007,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_questitem" val="true" />
 		<skills>
-			<skill id="2839" level="1" />
+			<skill id="2839" level="1" /> <!-- Sacred Light Fragment -->
 		</skills>
 	</item>
 	<item id="13856" name="Rider's Badge" type="EtcItem">
@@ -1463,7 +1469,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="8295" level="1" />
+			<skill id="8295" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
 		<cond msgId="1518">
 			<and>
@@ -1502,7 +1508,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DUAL_DAGGER" />
 		<skills>
-			<skill id="8296" level="1" />
+			<skill id="8296" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
 		<cond msgId="1518">
 			<and>
@@ -1540,7 +1546,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="8298" level="1" />
+			<skill id="8298" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
 		<cond msgId="1518">
 			<and>

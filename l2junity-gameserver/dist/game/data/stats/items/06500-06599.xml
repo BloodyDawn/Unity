@@ -1022,7 +1022,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DUALSWORD" />
 		<skills>
-			<skill id="3570" level="1" />
+			<skill id="3570" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Robust Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
@@ -1054,7 +1054,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3564" level="1" />
+			<skill id="3564" level="1" /> <!-- Special Ability: Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
@@ -1086,7 +1086,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="3" />
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
@@ -1118,7 +1118,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3566" level="1" />
+			<skill id="3566" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
@@ -1149,7 +1149,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3568" level="1" />
+			<skill id="3568" level="1" /> <!-- Special Ability: HP Drain -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
@@ -1182,7 +1182,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
 		<skills>
-			<skill id="3013" level="3" />
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
@@ -1214,7 +1214,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3569" level="1" />
+			<skill id="3569" level="1" /> <!-- Special Ability: HP Regeneration -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="281" />
@@ -1247,7 +1247,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3575" level="1" />
+			<skill id="3575" level="1" /> <!-- Special Ability: Empower -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="274" />
@@ -1280,7 +1280,7 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3576" level="1" />
+			<skill id="3576" level="1" /> <!-- Special Ability: MP Regeneration -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="274" />
@@ -1313,8 +1313,8 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3552" level="1" />
-			<skill id="3577" level="1" type="ON_MAGIC_SKILL" type_chance="20" />
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3577" level="1" type="ON_MAGIC_SKILL" type_chance="20" /> <!-- Special Ability: Magic Hold -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="274" />
@@ -1347,7 +1347,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DAGGER" />
 		<skills>
-			<skill id="3572" level="1" />
+			<skill id="3572" level="1" /> <!-- Special Ability: Critical Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="246" />
@@ -1379,7 +1379,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3568" level="1" />
+			<skill id="3568" level="1" /> <!-- Special Ability: HP Drain -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="246" />
@@ -1411,7 +1411,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3564" level="1" />
+			<skill id="3564" level="1" /> <!-- Special Ability: Haste -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="246" />
@@ -1445,8 +1445,8 @@
 		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="820" />
 		<skills>
-			<skill id="3552" level="1" />
-			<skill id="8312" level="1" />
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="581" />
@@ -1480,7 +1480,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="820" />
 		<skills>
-			<skill id="3552" level="1" />
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="581" />
@@ -1514,8 +1514,8 @@
 		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="820" />
 		<skills>
-			<skill id="3552" level="1" />
-			<skill id="3574" level="1" type="ON_CRITICAL_SKILL" />
+			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
+			<skill id="3574" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="581" />
@@ -1547,7 +1547,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3569" level="1" />
+			<skill id="3569" level="1" /> <!-- Special Ability: HP Regeneration -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
@@ -1579,7 +1579,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="3" />
+			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
@@ -1611,7 +1611,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3568" level="1" />
+			<skill id="3568" level="1" /> <!-- Special Ability: HP Drain -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="342" />
@@ -1643,7 +1643,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3013" level="4" />
+			<skill id="3013" level="4" /> <!-- Special Ability: Health -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="281" />

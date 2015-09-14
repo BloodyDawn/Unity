@@ -194,7 +194,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="default_action" val="EQUIP" />
 		<skills>
-			<skill id="3261" level="1" />
+			<skill id="3261" level="1" /> <!-- Forgiveness -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="1.0" />
@@ -442,7 +442,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="30" />
 		<skills>
-			<skill id="21287" level="1" />
+			<skill id="21287" level="1" /> <!-- Emergency Ballista Repair -->
 		</skills>
 	</item>
 	<item id="22939" name="Castle Siege Equipment Repair Tool - Rune Castle" type="Armor">
@@ -459,7 +459,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="30" />
 		<skills>
-			<skill id="21288" level="1" />
+			<skill id="21288" level="1" /> <!-- Emergency Ballista Repair -->
 		</skills>
 	</item>
 	<item id="22940" name="Corrosive Chemical Container - Aden Castle" type="Armor">
@@ -476,7 +476,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="30" />
 		<skills>
-			<skill id="21289" level="1" />
+			<skill id="21289" level="1" /> <!-- Throw Corrosive Acid -->
 		</skills>
 	</item>
 	<item id="22941" name="Corrosive Chemical Container - Rune Castle" type="Armor">
@@ -493,7 +493,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="30" />
 		<skills>
-			<skill id="21290" level="1" />
+			<skill id="21290" level="1" /> <!-- Throw Corrosive Acid -->
 		</skills>
 	</item>
 	<item id="22942" name="Engraving Activation Stone - Aden Castle" type="Armor">
@@ -510,7 +510,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="30" />
 		<skills>
-			<skill id="21291" level="1" />
+			<skill id="21291" level="1" /> <!-- Relic Engraving Activation -->
 		</skills>
 	</item>
 	<item id="22943" name="Engraving Activation Stone - Rune Castle" type="Armor">
@@ -527,7 +527,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="30" />
 		<skills>
-			<skill id="21292" level="1" />
+			<skill id="21292" level="1" /> <!-- Relic Engraving Activation -->
 		</skills>
 	</item>
 	<item id="22944" name="XP Rune III (Lv. 1-100+) 50%" name_additional="1-hour" type="EtcItem">
@@ -582,9 +582,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="2592000" />
 		<skills>
-			<skill id="3267" level="1" />
-			<skill id="21233" level="1" />
-			<skill id="21234" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="21233" level="1" /> <!-- Release Agathion's Seal - Singer and Dancer -->
+			<skill id="21234" level="1" /> <!-- Release Agathion's Seal - Zaken's Spirit Swords -->
 		</skills>
 	</item>
 	<item id="22948" name="Mount - Black Bear" name_additional="30-day" type="Armor">
@@ -601,7 +601,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="2592000" />
 		<skills>
-			<skill id="21271" level="1" />
+			<skill id="21271" level="1" /> <!-- Ride Black Bear -->
 		</skills>
 	</item>
 	<item id="22949" name="Black Gem Mask" name_additional="30-day" type="Armor">
@@ -670,9 +670,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="2592000" />
 		<skills>
-			<skill id="3267" level="1" />
-			<skill id="21109" level="1" />
-			<skill id="23087" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="21109" level="1" /> <!-- Release Agathion's Seal - Uthanka -->
+			<skill id="23087" level="1" /> <!-- Uthanka Agathion Cute Trick -->
 		</skills>
 	</item>
 	<item id="22954" name="Agathion - Cheerleader Orodriel" name_additional="30-day" type="Armor">
@@ -689,10 +689,10 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="2592000" />
 		<skills>
-			<skill id="3267" level="1" />
-			<skill id="21214" level="1" />
-			<skill id="23220" level="1" />
-			<skill id="23221" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="21214" level="1" /> <!-- Release Agathion's Seal - Cheerleader Orodriel -->
+			<skill id="23220" level="1" /> <!-- Cheerleader Orodriel Agathion Cute Trick -->
+			<skill id="23221" level="1" /> <!-- Cheerleader Orodriel Agathion Special Skill: Joy of Cheering -->
 		</skills>
 	</item>
 	<item id="22955" name="Mount - Tame Princess Ant" name_additional="30-day" type="Armor">
@@ -709,7 +709,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="2592000" />
 		<skills>
-			<skill id="21270" level="1" />
+			<skill id="21270" level="1" /> <!-- Ride Tame Princess Ant -->
 		</skills>
 	</item>
 	<item id="22956" name="Agathion - Dryad" name_additional="30-day" type="Armor">
@@ -726,9 +726,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="2592000" />
 		<skills>
-			<skill id="23054" level="1" />
-			<skill id="3267" level="1" />
-			<skill id="21048" level="1" />
+			<skill id="23054" level="1" /> <!-- Agathion Cute Trick - Dryad -->
+			<skill id="3267" level="1" type="ON_UNEQUIP" /> <!-- Seal Agathion -->
+			<skill id="21048" level="1" /> <!-- Release Agathion's Seal - Dryad -->
 		</skills>
 	</item>
 	<item id="22957" name="Pink Paper Mask Set" name_additional="Blessed Soul (30-day)" type="Armor">
@@ -745,7 +745,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="2592000" />
 		<skills>
-			<skill id="21154" level="1" />
+			<skill id="21154" level="1" /> <!-- Blessed Soul -->
 		</skills>
 	</item>
 	<item id="22958" name="Arrow-pierced Apple" name_additional="30-day" type="Armor">
@@ -773,7 +773,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="3600" />
 		<skills>
-			<skill id="22040" level="2" />
+			<skill id="22040" level="2" /> <!-- SP Rune 50% -->
 		</skills>
 	</item>
 	<item id="22960" name="XP Rune I (Lv. 1-85) 100%" name_additional="1-hour" type="EtcItem">
@@ -789,7 +789,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="3600" />
 		<skills>
-			<skill id="9240" level="1" />
+			<skill id="9240" level="1" /> <!-- XP Rune I (Lv. 1-85) -->
 		</skills>
 	</item>
 	<item id="22961" name="XP Rune I (Lv. 1-85) 200%" name_additional="1-hour" type="EtcItem">
@@ -805,7 +805,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="3600" />
 		<skills>
-			<skill id="9240" level="2" />
+			<skill id="9240" level="2" /> <!-- XP Rune I (Lv. 1-85) -->
 		</skills>
 	</item>
 	<item id="22962" name="Fancy Flower Hat" type="Armor">
@@ -832,7 +832,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="EQUIP" />
 		<skills>
-			<skill id="21232" level="1" />
+			<skill id="21232" level="1" /> <!-- Shiny Platform -->
 		</skills>
 	</item>
 	<item id="22964" name="Pink Paper Mask Set" type="Armor">
@@ -869,7 +869,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
 		<skills>
-			<skill id="22848" level="1" />
+			<skill id="22848" level="1" /> <!-- Vitality Maintaining Potion -->
 		</skills>
 	</item>
 	<item id="22967" name="Agathion - Singer and Dancer Pack (30-day)" type="EtcItem">
