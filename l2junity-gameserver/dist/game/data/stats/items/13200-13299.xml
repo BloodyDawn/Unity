@@ -104,7 +104,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
 		<skills>
-			<skill id="3045" level="14" />
+			<skill id="3045" level="14" type="ON_ENCHANT" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="236" />
@@ -854,7 +854,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
 		<skills>
-			<skill id="3045" level="17" />
+			<skill id="3045" level="17" type="ON_ENCHANT" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="305" />
@@ -1500,7 +1500,6 @@
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="6097" level="1" />
-			<skill id="6097" level="1" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
@@ -1530,7 +1529,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="6098" level="1" />
 			<skill id="6098" level="1" />
 		</skills>
 		<for>
@@ -1562,7 +1560,6 @@
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="6099" level="1" />
-			<skill id="6099" level="1" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
@@ -1593,7 +1590,7 @@
 		<set name="time" val="10080" />
 		<skills>
 			<skill id="8246" level="1" />
-			<skill id="8246" level="1" />
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />
@@ -1620,10 +1617,8 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 		<skills>
-			<skill id="3267" level="1" />
-			<skill id="5763" level="1" />
-			<skill id="8245" level="1" />
-			<skill id="3267" level="1" />
+
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 			<skill id="5763" level="1" />
 			<skill id="8245" level="1" />
 		</skills>

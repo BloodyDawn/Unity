@@ -623,7 +623,7 @@
 		<set name="useSkillDisTime" val="1" />
 		<skills>
 			<skill id="5414" level="1" />
-			<skill id="3267" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 			<skill id="3269" level="1" />
 		</skills>
 	</item>
@@ -1121,6 +1121,7 @@
 		<set name="is_private_storeable" val="false" />
 		<skills>
 			<skill id="3418" level="1" />
+			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
 		<for>
 			<set stat="pAtk" val="1" />

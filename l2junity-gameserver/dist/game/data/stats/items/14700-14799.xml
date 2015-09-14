@@ -346,7 +346,6 @@
 		<set name="is_freightable" val="false" />
 		<skills>
 			<skill id="2867" level="1" />
-			<skill id="2867" level="1" />
 		</skills>
 		<cond addName="1" msgId="113">
 			<player flyMounted="false" />
@@ -363,7 +362,6 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="2868" level="1" />
 			<skill id="2868" level="1" />
 		</skills>
 		<cond addName="1" msgId="113">
@@ -1182,7 +1180,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="20160" />
 		<skills>
-			<skill id="3267" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 			<skill id="5763" level="1" />
 			<skill id="8245" level="1" />
 		</skills>
@@ -1206,7 +1204,7 @@
 			<skill id="6137" level="1" />
 			<skill id="6138" level="1" />
 			<skill id="6136" level="1" />
-			<skill id="3267" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 			<skill id="8327" level="1" />
 		</skills>
 	</item>

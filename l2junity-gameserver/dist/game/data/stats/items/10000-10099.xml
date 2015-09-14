@@ -70,7 +70,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<skills>
-			<skill id="3426" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -106,7 +106,7 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DUALSWORD" />
 		<skills>
-			<skill id="3411" level="1" />
+			<skill id="3411" level="1" type="ON_ENCHANT" />
 		</skills>
 		<for>
 			<set stat="pAtk" val="405" />
@@ -141,7 +141,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="90" />
 		<skills>
-			<skill id="3426" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -253,7 +253,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="120" />
 		<skills>
-			<skill id="3426" level="1" />
+			<skill id="3426" level="1" type="ON_ENCHANT" />
 		</skills>
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -457,7 +457,7 @@
 		<set name="equip_condition" val="{{ec_fortress;1}}" />
 		<skills>
 			<skill id="5458" level="1" />
-			<skill id="3267" level="1" />
+			<skill id="3267" level="1" type="ON_UNEQUIP" />
 			<skill id="3361" level="1" />
 		</skills>
 		<cond msgId="1518">
