@@ -13975,7 +13975,6 @@ public final class PlayerInstance extends Playable
 	 */
 	public void setQuestZoneId(int id)
 	{
-		sendMessage("Id je: " + id);
 		_questZoneId = id;
 	}
 	
