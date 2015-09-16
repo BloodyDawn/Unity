@@ -34,7 +34,7 @@ public class PAccuracyFinalizer implements IStatsFunction
 	{
 		throwIfPresent(base);
 		
-		double baseValue = calcWeaponBaseValue(creature, stat);
+		double baseValue = calcWeaponPlusBaseValue(creature, stat);
 		
 		// [Square(DEX)] * 5 + lvl + weapon hitbonus;
 		final int level = creature.getLevel();
