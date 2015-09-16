@@ -34,7 +34,7 @@ public class MAccuracyFinalizer implements IStatsFunction
 	{
 		throwIfPresent(base);
 		
-		final double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		final double baseValue = calcWeaponPlusBaseValue(creature, stat);
 		return Stats.defaultValue(creature, stat, baseValue + (Math.sqrt(creature.getWIT()) * 3) + (creature.getLevel() * 2));
 	}
 }

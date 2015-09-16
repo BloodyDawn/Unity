@@ -35,7 +35,7 @@ public class PEvasionRateFinalizer implements IStatsFunction
 	{
 		throwIfPresent(base);
 		
-		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		double baseValue = calcWeaponPlusBaseValue(creature, stat);
 		final int level = creature.getLevel();
 		if (creature.isPlayer())
 		{
