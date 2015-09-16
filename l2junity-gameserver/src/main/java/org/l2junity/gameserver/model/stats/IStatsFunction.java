@@ -23,7 +23,7 @@ import java.util.Optional;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.transform.Transform;
-import org.l2junity.gameserver.model.items.Weapon;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author UnAfraid
@@ -44,9 +44,9 @@ public interface IStatsFunction
 		final double baseTemplateBalue = creature.getTemplate().getBaseValue(stat, 0);
 		if (creature.isPlayable())
 		{
-			final Weapon weapon = creature.getActiveWeaponItem();
+			final ItemInstance weapon = creature.getActiveWeaponInstance();
 			final Transform transform = creature.getTransformation();
-			return transform != null ? transform.getStats(creature.getActingPlayer(), stat, baseTemplateBalue) : (weapon != null ? weapon.getStats(stat, baseTemplateBalue) : baseTemplateBalue);
+			return transform != null ? transform.getStats(creature.getActingPlayer(), stat, baseTemplateBalue) : (weapon != null ? weapon.getItem().getStats(stat, baseTemplateBalue) : baseTemplateBalue);
 		}
 		return baseTemplateBalue;
 	}
@@ -56,10 +56,10 @@ public interface IStatsFunction
 		final double baseTemplateBalue = creature.getTemplate().getBaseValue(stat, 0);
 		if (creature.isPlayable())
 		{
-			final Weapon weapon = creature.getActiveWeaponItem();
+			final ItemInstance weapon = creature.getActiveWeaponInstance();
 			final Transform transform = creature.getTransformation();
 			final double baseValue = transform != null ? transform.getStats(creature.getActingPlayer(), stat, baseTemplateBalue) : baseTemplateBalue;
-			return (weapon != null ? weapon.getStats(stat, 0) + baseValue : baseValue);
+			return (weapon != null ? weapon.getItem().getStats(stat, 0) + baseValue : baseValue);
 		}
 		return baseTemplateBalue;
 	}
