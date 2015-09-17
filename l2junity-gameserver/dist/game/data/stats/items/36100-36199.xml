@@ -217,6 +217,7 @@
 	</item>
 	<item id="36118" name="Elegia Sigil - Ceremony of Chaos" type="Armor">
 		<set name="icon" val="icon.weapon_pricklelotus_i01" />
+		<set name="armor_type" val="SIGIL" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
 		<set name="crystal_type" val="S80" />
@@ -670,6 +671,7 @@
 	<item id="36167" name="Nurka's Belt" type="Armor">
 		<!-- Belt that contains the power of Bloody Lord Nurka of the Fortress of Resistance. Increases damage by 5% and decreases received damage by 5%. Increases weight by 12800 and the number of inventory slots by 18. -->
 		<set name="icon" val="icon.event_energy_belt_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="waist" />
 		<set name="crystal_type" val="R" />
@@ -686,6 +688,7 @@
 	<item id="36168" name="Lidia's Belt" type="Armor">
 		<!-- Belt that contains the power of Lidia von Hellmann of the Fortress of the Dead. Increases damage by 5% and decreases received damage by 5%. Increases weight by 12800 and the number of inventory slots by 18. -->
 		<set name="icon" val="icon.event_energy_belt_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="waist" />
 		<set name="crystal_type" val="R" />
@@ -702,6 +705,7 @@
 	<item id="36169" name="Gustav's Belt" type="Armor">
 		<!-- Belt that contains the power of Gustav of the Devastated Castle. Increases damage by 5% and decreases received damage by 5%. Increases weight by 12800 and the number of inventory slots by 18. -->
 		<set name="icon" val="icon.event_energy_belt_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="waist" />
 		<set name="crystal_type" val="R" />
@@ -990,6 +994,7 @@
 	<item id="36189" name="Rising Belt" type="Armor">
 		<!-- Increases weight by 12800 and the number of inventory slots by 12. Can be used if the levels of main and dual classes are 87 or higher. -->
 		<set name="icon" val="icon.dual_belt1" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1009,6 +1014,7 @@
 	<item id="36190" name="Blaze Belt" type="Armor">
 		<!-- Increases weight by 12800 and the number of inventory slots by 18. Can be used if the levels of main and dual classes are 92 or higher. -->
 		<set name="icon" val="icon.dual_belt2" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1056,6 +1062,7 @@
 	<item id="36193" name="Shaper Sealed with Heroes' Power" type="Weapon">
 		<!-- A weapon with the power of heroes sealed inside. You can acquire a weapon imbued with heroes' power if you have a scroll imbued with heroes' power. Can be used at all levels. Must use No-grade Soulshots/Spiritshots/Blessed Spiritshots. Cannot be used in the Olympiad. 1-day. Temporary event item. -->
 		<set name="icon" val="icon.weapon_the_dagger_of_hero_i01" />
+		<set name="weapon_type" val="DAGGER" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1082,6 +1089,7 @@
 	<item id="36194" name="Cutter Sealed with Heroes' Power" type="Weapon">
 		<!-- A weapon with the power of heroes sealed inside. You can acquire a weapon imbued with heroes' power if you have a scroll imbued with heroes' power. Can be used at all levels. Must use No-grade Soulshots/Spiritshots/Blessed Spiritshots. Cannot be used in the Olympiad. 1-day. Temporary event item. -->
 		<set name="icon" val="icon.weapon_the_sword_of_hero_i01" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1108,6 +1116,7 @@
 	<item id="36195" name="Slasher Sealed with Heroes' Power" type="Weapon">
 		<!-- A weapon with the power of heroes sealed inside. You can acquire a weapon imbued with heroes' power if you have a scroll imbued with heroes' power. Can be used at all levels. Must use No-grade Soulshots/Spiritshots/Blessed Spiritshots. Cannot be used in the Olympiad. 1-day. Temporary event item. -->
 		<set name="icon" val="icon.weapon_the_two_handed_sword_of_hero_i01" />
+		<set name="weapon_type" val="SWORD" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1134,6 +1143,7 @@
 	<item id="36196" name="Avenger Sealed with Heroes' Power" type="Weapon">
 		<!-- A weapon with the power of heroes sealed inside. You can acquire a weapon imbued with heroes' power if you have a scroll imbued with heroes' power. Can be used at all levels. Must use No-grade Soulshots/Spiritshots/Blessed Spiritshots. Cannot be used in the Olympiad. 1-day. Temporary event item. -->
 		<set name="icon" val="icon.weapon_the_axe_of_hero_i01" />
+		<set name="weapon_type" val="BLUNT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1161,6 +1171,7 @@
 	<item id="36197" name="Fighter Sealed with Heroes' Power" type="Weapon">
 		<!-- A weapon with the power of heroes sealed inside. You can acquire a weapon imbued with heroes' power if you have a scroll imbued with heroes' power. Can be used at all levels. Must use No-grade Soulshots/Spiritshots/Blessed Spiritshots. Cannot be used in the Olympiad. 1-day. Temporary event item. -->
 		<set name="icon" val="icon.weapon_the_fist_of_hero_i01" />
+		<set name="weapon_type" val="DUALFIST" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1188,6 +1199,7 @@
 	<item id="36198" name="Stormer Sealed with Heroes' Power" type="Weapon">
 		<!-- A weapon with the power of heroes sealed inside. You can acquire a weapon imbued with heroes' power if you have a scroll imbued with heroes' power. Can be used at all levels. Must use No-grade Soulshots/Spiritshots/Blessed Spiritshots. Cannot be used in the Olympiad. 1-day. Temporary event item. -->
 		<set name="icon" val="icon.weapon_the_pole_of_hero_i01" />
+		<set name="weapon_type" val="POLE" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
@@ -1215,6 +1227,7 @@
 	<item id="36199" name="Thrower Sealed with Heroes' Power" type="Weapon">
 		<!-- A weapon with the power of heroes sealed inside. You can acquire a weapon imbued with heroes' power if you have a scroll imbued with heroes' power. Can be used at all levels. Must use No-grade Soulshots/Spiritshots/Blessed Spiritshots. Cannot be used in the Olympiad. 1-day. Temporary event item. -->
 		<set name="icon" val="icon.weapon_the_bow_of_hero_i01" />
+		<set name="weapon_type" val="BOW" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />

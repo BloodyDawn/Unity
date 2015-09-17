@@ -23,6 +23,7 @@
 	<item id="33901" name="Immortal Tunic" name_additional="Robe (Event)" type="Armor">
 		<!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
 		<set name="icon" val="icon.armor_t503_u_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
@@ -48,6 +49,7 @@
 	<item id="33902" name="Immortal Stockings" name_additional="Robe (Event)" type="Armor">
 		<!-- Bestows a magic or recovery type set option. -->
 		<set name="icon" val="icon.armor_t503_l_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
@@ -109,6 +111,7 @@
 	</item>
 	<item id="33905" name="Immortal Sigil" name_additional="Robe (Event)" type="Armor">
 		<set name="icon" val="icon.weapon_karyen_i00" />
+		<set name="armor_type" val="SIGIL" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />
 		<set name="crystal_type" val="R" />
@@ -1450,6 +1453,7 @@
 	<item id="33952" name="Immortal Breastplate" name_additional="Attack Type / Heavy (Event)" type="Armor">
 		<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
 		<set name="icon" val="icon.armor_t501_u_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
@@ -1472,6 +1476,7 @@
 	</item>
 	<item id="33953" name="Immortal Gaiters" name_additional="Attack Type / Heavy (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t501_l_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
@@ -1572,6 +1577,7 @@
 	<item id="33958" name="Immortal Leather Armor" name_additional="Assassin Type / Light (Event)" type="Armor">
 		<!-- When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
 		<set name="icon" val="icon.armor_t502_u_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
@@ -1596,6 +1602,7 @@
 	</item>
 	<item id="33959" name="Immortal Leather Leggings" name_additional="Assassin Type / Light (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t502_l_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
@@ -1675,6 +1682,7 @@
 	<item id="33963" name="Immortal Tunic" name_additional="Magic Type / Robe (Event)" type="Armor">
 		<!-- When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
 		<set name="icon" val="icon.armor_t503_u_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
@@ -1699,6 +1707,7 @@
 	</item>
 	<item id="33964" name="Immortal Stockings" name_additional="Magic Type / Robe (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t503_l_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
@@ -1778,6 +1787,7 @@
 	<item id="33968" name="Immortal Breastplate" name_additional="Defense Type / Heavy (Event)" type="Armor">
 		<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
 		<set name="icon" val="icon.armor_t501_u_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
@@ -1800,6 +1810,7 @@
 	</item>
 	<item id="33969" name="Immortal Gaiters" name_additional="Defense Type / Heavy (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t501_l_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
@@ -1900,6 +1911,7 @@
 	<item id="33974" name="Immortal Leather Armor" name_additional="Enchant Type / Light (Event)" type="Armor">
 		<!-- When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
 		<set name="icon" val="icon.armor_t502_u_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
@@ -1924,6 +1936,7 @@
 	</item>
 	<item id="33975" name="Immortal Leather Leggings" name_additional="Enchant Type / Light (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t502_l_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />
@@ -2003,6 +2016,7 @@
 	<item id="33979" name="Immortal Tunic" name_additional="Recovery Type / Robe (Event)" type="Armor">
 		<!-- When enchanted to + 4, increases M. Evasion and Resistance to Mental Attacks. -->
 		<set name="icon" val="icon.armor_t503_u_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R" />
@@ -2027,6 +2041,7 @@
 	</item>
 	<item id="33980" name="Immortal Stockings" name_additional="Recovery Type / Robe (Event)" type="Armor">
 		<set name="icon" val="icon.armor_t503_l_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="legs" />
 		<set name="crystal_type" val="R" />

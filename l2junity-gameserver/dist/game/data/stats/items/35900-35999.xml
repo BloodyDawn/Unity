@@ -357,7 +357,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<skills>
 			<skill id="9527" level="1" /> <!-- Verdof's Vitality Replenishing Herb -->
 		</skills>
@@ -1030,7 +1030,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
-		<set name="icon" val="icon.NOIMAGE" />
+		<set name="icon" val="" />
 		<skills>
 			<skill id="9543" level="1" /> <!-- HP Recovery Herb -->
 		</skills>
@@ -1240,6 +1240,7 @@
 	<item id="35997" name="Test - M. Accuracy Heavy Armor" type="Armor">
 		<!-- Rough stat data inserted -->
 		<set name="icon" val="icon.armor_t701_u_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R99" />
@@ -1254,6 +1255,7 @@
 	<item id="35998" name="Test - M. Evasion Heavy Armor" type="Armor">
 		<!-- Rough stat data inserted -->
 		<set name="icon" val="icon.armor_t701_u_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="chest" />
 		<set name="crystal_type" val="R99" />

@@ -99,6 +99,7 @@
 	<item id="45606" name="Special Magic Ornament Eternal Belt" name_additional="PVE Attack" type="Armor">
 		<!-- Belt purchased with a Mark of Battle. Weight + 12800, Inventory Slots + 18, PVE Damage + 6%. -->
 		<set name="icon" val="icon.r99_magic_pouch_belt_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="R99" />
 		<set name="is_clan_depositable" val="false" />
@@ -114,6 +115,7 @@
 	<item id="45607" name="Special Magic Ornament Eternal Belt" name_additional="PVE Defense" type="Armor">
 		<!-- Belt purchased with a Mark of Battle. Weight + 12800, Inventory Slots + 18, PVE Damage - 7%. -->
 		<set name="icon" val="icon.r99_magic_pouch_belt_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="R99" />
 		<set name="is_clan_depositable" val="false" />
@@ -129,6 +131,7 @@
 	<item id="45608" name="Special Magic Ornament Eternal Belt" name_additional="PVP Attack" type="Armor">
 		<!-- Belt purchased with a Mark of Battle. Weight + 12800, Inventory Slots + 18, PVP Damage + 6%. -->
 		<set name="icon" val="icon.r99_magic_pouch_belt_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="R99" />
 		<set name="is_clan_depositable" val="false" />
@@ -144,6 +147,7 @@
 	<item id="45609" name="Special Magic Ornament Eternal Belt" name_additional="PVP Defense" type="Armor">
 		<!-- Belt purchased with a Mark of Battle. Weight + 12800, Inventory Slots + 18, PVP Damage - 7%. -->
 		<set name="icon" val="icon.r99_magic_pouch_belt_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="R99" />
 		<set name="is_clan_depositable" val="false" />
@@ -675,6 +679,7 @@
 	<item id="45645" name="Lady's Ornamental Silver Knife" type="Weapon">
 		<!-- An ornamental silver knife received from the Blacksmith of Mammon in order to test your qualifications. Not valuable as a weapon. Enchant this and take it to the Blacksmith of Mammon to be recognized for your qualifications. -->
 		<set name="icon" val="icon.weapon_shining_knife_i00" />
+		<set name="weapon_type" val="DAGGER" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="R" />
 		<set name="is_depositable" val="false" />
@@ -844,6 +849,7 @@
 	</item>
 	<item id="45657" name="Dynasty Breastplate of Fortune" name_additional="30-day" type="Armor">
 		<set name="icon" val="icon.armor_t91_u_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="S" />
 		<set name="weight" val="7570" />
@@ -863,6 +869,7 @@
 	</item>
 	<item id="45658" name="Dynasty Gaiters of Fortune" name_additional="30-day" type="Armor">
 		<set name="icon" val="icon.armor_t91_l_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="S" />
 		<set name="weight" val="3210" />
@@ -958,6 +965,7 @@
 	</item>
 	<item id="45663" name="Dynasty Leather Armor of Fortune" name_additional="30-day" type="Armor">
 		<set name="icon" val="icon.armor_t92_u_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="S" />
 		<set name="weight" val="4180" />
@@ -977,6 +985,7 @@
 	</item>
 	<item id="45664" name="Dynasty Leather Leggings of Fortune" name_additional="30-day" type="Armor">
 		<set name="icon" val="icon.armor_t92_l_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="S" />
 		<set name="weight" val="1370" />
@@ -1053,6 +1062,7 @@
 	</item>
 	<item id="45668" name="Dynasty Tunic of Fortune" name_additional="30-day" type="Armor">
 		<set name="icon" val="icon.armor_t93_u_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="S" />
 		<set name="weight" val="1780" />
@@ -1072,6 +1082,7 @@
 	</item>
 	<item id="45669" name="Dynasty Stockings of Fortune" name_additional="30-day" type="Armor">
 		<set name="icon" val="icon.armor_t93_l_i00" />
+		<set name="armor_type" val="MAGIC" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="S" />
 		<set name="weight" val="860" />
@@ -1148,6 +1159,7 @@
 	</item>
 	<item id="45673" name="Dynasty Sigil of Fortune" name_additional="30-day" type="Armor">
 		<set name="icon" val="icon.dynasty_sigil_i00" />
+		<set name="armor_type" val="SIGIL" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="S" />
 		<set name="weight" val="930" />
@@ -1322,6 +1334,7 @@
 	<item id="45684" name="Twilight Breastplate" name_additional="Attack Type / Heavy (14-day)" type="Armor">
 		<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
 		<set name="icon" val="icon.armor_t601_u_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="R" />
 		<set name="weight" val="7520" />
@@ -1341,6 +1354,7 @@
 	</item>
 	<item id="45685" name="Twilight Gaiters" name_additional="Attack Type / Heavy (14-day)" type="Armor">
 		<set name="icon" val="icon.armor_t601_l_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="R" />
 		<set name="weight" val="3170" />
@@ -1438,6 +1452,7 @@
 	<item id="45690" name="Twilight Breastplate" name_additional="Defense Type / Heavy (14-day)" type="Armor">
 		<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
 		<set name="icon" val="icon.armor_t601_u_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="R" />
 		<set name="weight" val="7520" />
@@ -1457,6 +1472,7 @@
 	</item>
 	<item id="45691" name="Twilight Gaiters" name_additional="Defense Type / Heavy (14-day)" type="Armor">
 		<set name="icon" val="icon.armor_t601_l_i00" />
+		<set name="armor_type" val="HEAVY" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="R" />
 		<set name="weight" val="3170" />
@@ -1554,6 +1570,7 @@
 	<item id="45696" name="Twilight Leather Armor" name_additional="Assassin Type / Light (14-day)" type="Armor">
 		<!-- Increases Evasion, Speed, and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit when enchanted to + 4. -->
 		<set name="icon" val="icon.armor_t602_u_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="R" />
 		<set name="weight" val="4140" />
@@ -1575,6 +1592,7 @@
 	</item>
 	<item id="45697" name="Twilight Leather Leggings" name_additional="Assassin Type / Light (14-day)" type="Armor">
 		<set name="icon" val="icon.armor_t602_l_i00" />
+		<set name="armor_type" val="LIGHT" />
 		<set name="default_action" val="EQUIP" />
 		<set name="crystal_type" val="R" />
 		<set name="weight" val="1320" />
