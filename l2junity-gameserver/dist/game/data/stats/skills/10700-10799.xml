@@ -148,10 +148,10 @@
 		<set name="mpConsume" val="64" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="0.9"> <!-- Decreases frontal critical attack rate by 10% -->
+				<mul stat="rCrit" val="-0.1"> <!-- Decreases frontal critical attack rate by 10% -->
 					<player front="true" />
 				</mul>
-				<mul stat="rCrit" val="1.1"> <!-- Increase side critical attack rate by 10% -->
+				<mul stat="rCrit" val="0.1"> <!-- Increase side critical attack rate by 10% -->
 					<and>
 						<player front="false" />
 						<player behind="false" />
@@ -163,7 +163,7 @@
 						<player behind="false" />
 					</and>
 				</mul>
-				<mul stat="rCrit" val="1.2"> <!-- Increase rear critical attack damage by 20% -->
+				<mul stat="rCrit" val="0.2"> <!-- Increase rear critical attack damage by 20% -->
 					<player behind="true" />
 				</mul>
 				<mul stat="cAtk" val="1.2"> <!-- Increase rear critical attack rate by 20% -->
@@ -427,7 +427,7 @@
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
-				<mul stat="rCrit" val="1.25" />
+				<mul stat="rCrit" val="0.25" />
 				<mul stat="cAtk" val="#cAtk" />
 				<mul stat="skillCriticalProbability" val="11" />
 			</effect>

@@ -22,6 +22,7 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.function.BiFunction;
 
+import org.l2junity.commons.util.MathUtil;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.stats.finalizers.AttributeFinalizer;
@@ -114,7 +115,7 @@ public enum Stats
 	DEFENCE_MAGIC_CRITICAL_DAMAGE("defMCritDamage"),
 	DEFENCE_CRITICAL_DAMAGE_ADD("defCritDamageAdd"), // Resistance to critical damage in value (Example: +100 will be 100 more critical damage, NOT 100% more).
 	SHIELD_RATE("rShld"),
-	CRITICAL_RATE("rCrit", new PCriticalRateFinalizer(), Stats::defaultAdd, Stats::defaultAdd),
+	CRITICAL_RATE("rCrit", new PCriticalRateFinalizer(), MathUtil::add, MathUtil::add, null, 1d),
 	MCRITICAL_RATE("mCritRate", new MCritRateFinalizer()),
 	BLOW_RATE("blowRate"),
 	EXPSP_RATE("rExp"),
@@ -291,6 +292,8 @@ public enum Stats
 	private final IStatsFunction _valueFinalizer;
 	private final BiFunction<Double, Double, Double> _addFunction;
 	private final BiFunction<Double, Double, Double> _mulFunction;
+	private final Double _resetAddValue;
+	private final Double _resetMulValue;
 	
 	public String getValue()
 	{
@@ -299,21 +302,23 @@ public enum Stats
 	
 	Stats(String xmlString)
 	{
-		this(xmlString, Stats::defaultValue, Stats::defaultAdd, Stats::defaultMul);
+		this(xmlString, Stats::defaultValue, MathUtil::add, MathUtil::mul, null, null);
 	}
 	
 	Stats(String xmlString, IStatsFunction valueFinalizer)
 	{
-		this(xmlString, valueFinalizer, Stats::defaultAdd, Stats::defaultMul);
+		this(xmlString, valueFinalizer, MathUtil::add, MathUtil::mul, null, null);
 		
 	}
 	
-	Stats(String xmlString, IStatsFunction valueFinalizer, BiFunction<Double, Double, Double> addFunction, BiFunction<Double, Double, Double> mulFunction)
+	Stats(String xmlString, IStatsFunction valueFinalizer, BiFunction<Double, Double, Double> addFunction, BiFunction<Double, Double, Double> mulFunction, Double resetAddValue, Double resetMulValue)
 	{
 		_value = xmlString;
 		_valueFinalizer = valueFinalizer;
 		_addFunction = addFunction;
 		_mulFunction = mulFunction;
+		_resetAddValue = resetAddValue;
+		_resetMulValue = resetMulValue;
 	}
 	
 	public static Stats valueOfXml(String name)
@@ -348,14 +353,24 @@ public enum Stats
 		}
 	}
 	
-	public double add(double oldValue, double value)
+	public double functionAdd(double oldValue, double value)
 	{
 		return _addFunction.apply(oldValue, value);
 	}
 	
-	public double mul(double oldValue, double value)
+	public double functionMul(double oldValue, double value)
 	{
 		return _mulFunction.apply(oldValue, value);
+	}
+	
+	public Double getResetAddValue()
+	{
+		return _resetAddValue;
+	}
+	
+	public Double getResetMulValue()
+	{
+		return _resetMulValue;
 	}
 	
 	public static double defaultValue(Creature creature, Optional<Double> base, Stats stat)
@@ -370,15 +385,5 @@ public enum Stats
 		final double mul = creature.getStat().getMul(stat);
 		final double add = creature.getStat().getAdd(stat);
 		return (baseValue * mul) + add;
-	}
-	
-	public static double defaultAdd(double oldValue, double value)
-	{
-		return oldValue + value;
-	}
-	
-	public static double defaultMul(double oldValue, double value)
-	{
-		return oldValue * value;
 	}
 }

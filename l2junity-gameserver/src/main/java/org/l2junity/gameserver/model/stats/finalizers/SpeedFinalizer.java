@@ -26,7 +26,6 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.PetLevelData;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.actor.transform.TransformTemplate;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -58,23 +57,11 @@ public class SpeedFinalizer implements IStatsFunction
 	
 	private double getBaseSpeed(Creature creature, Stats stat)
 	{
-		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
+		double baseValue = calcWeaponPlusBaseValue(creature, stat);
 		if (creature.isPlayer())
 		{
 			final PlayerInstance player = creature.getActingPlayer();
-			if (player.isTransformed())
-			{
-				final TransformTemplate template = player.getTransformation().getTemplate(player);
-				if (template != null)
-				{
-					final double speed = template.getStats(stat);
-					if (speed > 0)
-					{
-						baseValue = speed;
-					}
-				}
-			}
-			else if (player.isMounted())
+			if (player.isMounted())
 			{
 				final PetLevelData data = PetDataTable.getInstance().getPetLevelData(player.getMountNpcId(), player.getMountLevel());
 				if (data != null)

@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model.actor.stat;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Optional;
@@ -60,6 +61,7 @@ public class CharStat
 	
 	private final Map<Stats, Double> _statsAdd = new EnumMap<>(Stats.class);
 	private final Map<Stats, Double> _statsMul = new EnumMap<>(Stats.class);
+	
 	private final ReentrantReadWriteLock _lock = new ReentrantReadWriteLock();
 	
 	public CharStat(Creature activeChar)
@@ -643,7 +645,7 @@ public class CharStat
 	 */
 	public void mergeAdd(Stats stat, double val)
 	{
-		_statsAdd.merge(stat, val, stat::add);
+		_statsAdd.merge(stat, val, stat::functionAdd);
 	}
 	
 	/**
@@ -653,7 +655,7 @@ public class CharStat
 	 */
 	public void mergeMul(Stats stat, double val)
 	{
-		_statsMul.merge(stat, val, stat::mul);
+		_statsMul.merge(stat, val, stat::functionMul);
 	}
 	
 	/**
@@ -729,9 +731,28 @@ public class CharStat
 		return stat.finalize(_activeChar, Optional.empty());
 	}
 	
+	protected void resetStats()
+	{
+		_statsAdd.clear();
+		_statsMul.clear();
+		
+		// Initialize default values
+		for (Stats stat : Stats.values())
+		{
+			if (stat.getResetAddValue() != null)
+			{
+				_statsAdd.put(stat, stat.getResetAddValue());
+			}
+			if (stat.getResetMulValue() != null)
+			{
+				_statsMul.put(stat, stat.getResetMulValue());
+			}
+		}
+	}
+	
 	/**
 	 * Locks and resets all stats and recalculates all
-	 * @param broadcast TODO
+	 * @param broadcast
 	 */
 	public final void recalculateStats(boolean broadcast)
 	{
@@ -739,12 +760,11 @@ public class CharStat
 		try
 		{
 			// Copy old data before wiping it out
-			final Map<Stats, Double> adds = !broadcast ? Collections.emptyMap() : new EnumMap<>(_statsAdd);
-			final Map<Stats, Double> muls = !broadcast ? Collections.emptyMap() : new EnumMap<>(_statsMul);
+			final Map<Stats, Double> adds = !broadcast ? Collections.emptyMap() : new HashMap<>(_statsAdd);
+			final Map<Stats, Double> muls = !broadcast ? Collections.emptyMap() : new HashMap<>(_statsMul);
 			
 			// Wipe all the data
-			_statsAdd.clear();
-			_statsMul.clear();
+			resetStats();
 			
 			// Collect all necessary effects
 			final CharEffectList effectList = _activeChar.getEffectList();
@@ -767,11 +787,11 @@ public class CharStat
 				final Set<Stats> changed = new HashSet<>();
 				for (Stats stat : Stats.values())
 				{
-					if (_statsAdd.getOrDefault(stat, 0d) != adds.getOrDefault(stat, 0d))
+					if (_statsAdd.getOrDefault(stat, stat.getResetAddValue()) != adds.getOrDefault(stat, stat.getResetAddValue()))
 					{
 						changed.add(stat);
 					}
-					else if (_statsMul.getOrDefault(stat, 1d) != muls.getOrDefault(stat, 1d))
+					else if (_statsMul.getOrDefault(stat, stat.getResetMulValue()) != muls.getOrDefault(stat, stat.getResetMulValue()))
 					{
 						changed.add(stat);
 					}

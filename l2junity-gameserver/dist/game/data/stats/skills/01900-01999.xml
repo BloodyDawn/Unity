@@ -637,7 +637,7 @@
 		<set name="isMagic" val="3" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.01" />
+				<mul stat="rCrit" val="0.01" />
 			</effect>
 		</for>
 	</skill>
@@ -1102,7 +1102,7 @@
 		<!-- Increases party members' P. Atk. by 1%, M. Atk. by 1%, P. Critical Rate by 1%, Atk. Spd. by 1%, and Casting Spd. by 1%. Decreases physical and magic skill Cooldown by 1%. Always includes Sigel and Aeore Force. When 4 or more forces are applied, the Party Solidarity effect is activated. When the number of forces applied increases, the Party Solidarity effect is raised. -->
 		<table name="#pAtk"> 1.01 1.05 1.13 </table>
 		<table name="#mAtk"> 1.01 1.05 1.16 </table>
-		<table name="#bonus"> 1.01 1.02 1.04 </table>
+		<table name="#bonus"> 0.01 0.02 0.04 </table>
 		<table name="#reuse"> 0.99 0.98 0.95 </table>
 		<set name="abnormallVL" val="1" />
 		<set name="abnormalTime" val="11" />

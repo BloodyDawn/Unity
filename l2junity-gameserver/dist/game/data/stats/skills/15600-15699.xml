@@ -556,7 +556,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="rCrit" val="1.32" />
+				<mul stat="rCrit" val="0.32" />
 				<mul stat="cAtk" val="1.35" />
 				<add stat="mCritRate" val="20" />
 				<mul stat="MagicalMpConsumeRate" val="1.1" />
@@ -650,7 +650,7 @@
 				<mul stat="rShld" val="1.3" />
 				<mul stat="sDef" val="1.5" />
 				<mul stat="cAtk" val="1.35" />
-				<mul stat="rCrit" val="2.0" />
+				<mul stat="rCrit" val="1" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="DANCE_OF_BLADESTORM;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_HUNTER;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BERSERKER;DANCE_OF_CONCENTRATION;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_MYSTIC;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_PURIFICATION;WISPERING_OF_BATTLE;SONG_OF_WINDSTORM;MOTION_OF_DEFENCE;INSTINCT;BERSERKER;PA_PD_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP;SHIELD_PROB_UP;SHIELD_DEFENCE_UP;CANCEL_PROB_DOWN;MA_UP_SPECIAL" rate="100" />
@@ -678,7 +678,7 @@
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.35" />
 				<mul stat="cAtk" val="1.35" />
-				<mul stat="rCrit" val="2.0" />
+				<mul stat="rCrit" val="1" />
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtk" val="1.16" />
 				<mul stat="mAtkSpd" val="1.08" />

@@ -27,14 +27,44 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
+import org.l2junity.gameserver.util.Util;
 
 /**
  * @author UnAfraid
  */
 public class Debug
 {
+	public static void sendStatsDebug(Creature creature, Stats stat, StatsSet set)
+	{
+		if (!creature.isPlayer())
+		{
+			return;
+		}
+		
+		final StringBuilder sb = new StringBuilder();
+		final ItemInstance weapon = creature.getActiveWeaponInstance();
+		for (Entry<String, Object> entry : set.getSet().entrySet())
+		{
+			sb.append("<tr><td>" + entry.getKey() + "</td><td><font color=\"LEVEL\">" + parseValue(entry.getValue()) + "</font></td></tr>");
+		}
+		
+		final NpcHtmlMessage msg = new NpcHtmlMessage();
+		msg.setFile(creature.getActingPlayer().getHtmlPrefix(), "data/html/admin/statsdebug.htm");
+		msg.replace("%stat%", String.valueOf(stat));
+		msg.replace("%mulValue%", Util.formatDouble(creature.getStat().getMul(stat), "#.##"));
+		msg.replace("%addValue%", creature.getStat().getAdd(stat));
+		msg.replace("%templateValue%", Util.formatDouble(creature.getTemplate().getBaseValue(stat, 0), "#.##"));
+		if (weapon != null)
+		{
+			msg.replace("%weaponBaseValue%", Util.formatDouble(weapon.getItem().getStats(stat, 0), "#.##"));
+		}
+		msg.replace("%details%", sb.toString());
+		creature.sendPacket(new TutorialShowHtml(msg.getHtml()));
+	}
+	
 	public static void sendSkillDebug(Creature attacker, Creature target, Skill skill, StatsSet set)
 	{
 		if (!attacker.isPlayer())
@@ -45,7 +75,7 @@ public class Debug
 		final StringBuilder sb = new StringBuilder();
 		for (Entry<String, Object> entry : set.getSet().entrySet())
 		{
-			sb.append("<tr><td>" + entry.getKey() + "</td><td><font color=\"LEVEL\">" + entry.getValue() + "</font></td></tr>");
+			sb.append("<tr><td>" + entry.getKey() + "</td><td><font color=\"LEVEL\">" + parseValue(entry.getValue()) + "</font></td></tr>");
 		}
 		
 		final NpcHtmlMessage msg = new NpcHtmlMessage();
@@ -74,7 +104,7 @@ public class Debug
 		msg.replace("%earthDef%", target.getDefenseElementValue(AttributeType.EARTH));
 		msg.replace("%holyDef%", target.getDefenseElementValue(AttributeType.HOLY));
 		msg.replace("%darkDef%", target.getDefenseElementValue(AttributeType.DARK));
-		msg.replace("%skill%", skill.toString());
+		msg.replace("%skill%", String.valueOf(skill));
 		msg.replace("%details%", sb.toString());
 		attacker.sendPacket(new TutorialShowHtml(msg.getHtml()));
 	}
@@ -84,7 +114,7 @@ public class Debug
 		final StringBuilder sb = new StringBuilder();
 		for (Entry<String, Object> entry : set.getSet().entrySet())
 		{
-			sb.append("<tr><td>" + entry.getKey() + "</td><td><font color=\"LEVEL\">" + entry.getValue() + "</font></td></tr>");
+			sb.append("<tr><td>" + entry.getKey() + "</td><td><font color=\"LEVEL\">" + parseValue(entry.getValue()) + "</font></td></tr>");
 		}
 		
 		final NpcHtmlMessage msg = new NpcHtmlMessage();
@@ -97,6 +127,15 @@ public class Debug
 		msg.replace("%item%", item.toString());
 		msg.replace("%details%", sb.toString());
 		player.sendPacket(new TutorialShowHtml(msg.getHtml()));
+	}
+	
+	private static String parseValue(Object value)
+	{
+		if (value instanceof Double)
+		{
+			return Util.formatDouble((double) value, "#.##");
+		}
+		return String.valueOf(value);
 	}
 	
 	private static String getBodyPart(int bodyPart)
