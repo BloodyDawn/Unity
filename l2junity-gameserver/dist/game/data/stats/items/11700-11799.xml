@@ -17,12 +17,12 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11701" name="Common Item - Arm Breaker" type="Weapon">
 		<set name="icon" val="icon.weapon_hunting_gun_i00" />
@@ -46,13 +46,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="100" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<stats>
+			<stat type="pAtk">100</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+		</stats>
 	</item>
 	<item id="11702" name="Common Item - Épée" type="Weapon">
 		<set name="icon" val="icon.weapon_rapier_i00" />
@@ -78,13 +78,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="72" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">72</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+		</stats>
 	</item>
 	<item id="11703" name="Common Item - Winged Spear" type="Weapon">
 		<set name="icon" val="icon.weapon_winged_spear_i00" />
@@ -106,13 +106,13 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="79" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11704" name="Common Item - Artisan's Sword*Knight's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -131,12 +131,12 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11705" name="Common Item - Artisan's Sword*Artisan's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -155,12 +155,12 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11706" name="Common Item - Cursed Maingauche" type="Weapon">
 		<set name="icon" val="icon.weapon_maingauche_i01" />
@@ -182,13 +182,13 @@
 		<skills>
 			<skill id="3005" level="1" type="ON_CRITICAL_SKILL" /> <!-- Bleed -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="62" />
-			<set stat="mAtk" val="42" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">62</stat>
+			<stat type="mAtk">42</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+		</stats>
 	</item>
 	<item id="11707" name="Common Item - Katzbalger" type="Weapon">
 		<set name="icon" val="icon.weapon_tulwar_i00" />
@@ -211,13 +211,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="86" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-		</for>
+		<stats>
+			<stat type="pAtk">86</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+		</stats>
 	</item>
 	<item id="11708" name="Common Item - Tarbar" type="Weapon">
 		<set name="icon" val="icon.weapon_tarbar_i00" />
@@ -236,13 +236,13 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="79" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11709" name="Common Item - Crucifix of Blood" type="Weapon">
 		<set name="icon" val="icon.weapon_crucifix_of_blood_i00" />
@@ -262,12 +262,12 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="63" />
-			<set stat="mAtk" val="63" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">63</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11710" name="Common Item - Lesser Giant's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_giants_sword_i00" />
@@ -287,12 +287,12 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11711" name="Common Item - Lesser Giant's Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_giants_hammer_i00" />
@@ -311,13 +311,13 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11712" name="Common Item - War Pick" type="Weapon">
 		<set name="icon" val="icon.weapon_hammer_in_flames_i00" />
@@ -339,13 +339,13 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="79" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11713" name="Common Item - Heavy Bone Club" type="Weapon">
 		<set name="icon" val="icon.weapon_heavy_bone_club_i00" />
@@ -364,13 +364,13 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="79" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11714" name="Common Item - Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_revolution_i00" />
@@ -391,12 +391,12 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="79" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11715" name="Common Item - Demon's Fangs" type="Weapon">
 		<set name="icon" val="icon.weapon_demon_fangs_i00" />
@@ -416,12 +416,12 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="67" />
-			<set stat="mAtk" val="66" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">67</stat>
+			<stat type="mAtk">66</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11716" name="Common Item - Knight's Sword*Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -440,12 +440,12 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11717" name="Common Item - Knight's Sword*Crimson Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -464,12 +464,12 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11718" name="Common Item - Bastard Sword*Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -488,12 +488,12 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11719" name="Common Item - Bastard Sword*Crimson Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -512,12 +512,12 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11720" name="Common Item - Spinebone Sword*Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -536,12 +536,12 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11721" name="Common Item - Spinebone Sword*Crimson Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -560,12 +560,12 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11722" name="Common Item - Artisan's Sword*Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -584,12 +584,12 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11723" name="Common Item - Artisan's Sword*Crimson Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -608,12 +608,12 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11724" name="Common Item - Grand Épée" type="Weapon">
 		<set name="icon" val="icon.weapon_rapier_i00" />
@@ -639,13 +639,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="83" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">83</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+		</stats>
 	</item>
 	<item id="11725" name="Common Item - Glaive" type="Weapon">
 		<set name="icon" val="icon.weapon_glaive_i00" />
@@ -667,13 +667,13 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="92" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11726" name="Common Item - Mithril Dagger" type="Weapon">
 		<set name="icon" val="icon.weapon_mithril_dagger_i00" />
@@ -692,13 +692,13 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="80" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">80</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+		</stats>
 	</item>
 	<item id="11727" name="Common Item - Bonebreaker" type="Weapon">
 		<set name="icon" val="icon.weapon_bonebreaker_i00" />
@@ -717,13 +717,13 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="92" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11728" name="Common Item - Light Crossbow" type="Weapon">
 		<set name="icon" val="icon.weapon_cyclone_bow_i00" />
@@ -745,13 +745,13 @@
 		<set name="mp_consume" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="1500" />
-		<for>
-			<set stat="pAtk" val="191" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">191</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+		</stats>
 	</item>
 	<item id="11729" name="Common Item - Staff of Life" type="Weapon">
 		<set name="icon" val="icon.weapon_life_stick_i00" />
@@ -771,13 +771,13 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="74" />
-			<set stat="mAtk" val="72" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">74</stat>
+			<stat type="mAtk">72</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11730" name="Common Item - Scallop Jamadhr" type="Weapon">
 		<set name="icon" val="icon.weapon_scallop_jamadhr_i00" />
@@ -796,13 +796,13 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="112" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">112</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11731" name="Common Item - Atuba Mace" type="Weapon">
 		<set name="icon" val="icon.weapon_atuba_mace_i00" />
@@ -822,13 +822,13 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="90" />
-			<set stat="mAtk" val="79" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11732" name="Common Item - Atuba Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_atuba_hammer_i00" />
@@ -848,13 +848,13 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="90" />
-			<set stat="mAtk" val="79" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11733" name="Common Item - Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_elven_long_sword_i00" />
@@ -874,12 +874,12 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="92" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11734" name="Common Item - General's Katzbalger" type="Weapon">
 		<set name="icon" val="icon.weapon_tulwar_i00" />
@@ -902,13 +902,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="100" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-		</for>
+		<stats>
+			<stat type="pAtk">100</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+		</stats>
 	</item>
 	<item id="11735" name="Common Item - Cranequin" type="Weapon">
 		<set name="icon" val="icon.weapon_hunting_gun_i00" />
@@ -932,13 +932,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="117" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<stats>
+			<stat type="pAtk">117</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+		</stats>
 	</item>
 	<item id="11736" name="Common Item - Claymore" type="Weapon">
 		<set name="icon" val="icon.weapon_claymore_i00" />
@@ -958,12 +958,12 @@
 		<set name="soulshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="112" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">112</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11737" name="Common Item - Ghost Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_ghost_staff_i00" />
@@ -983,13 +983,13 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="90" />
-			<set stat="mAtk" val="79" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11738" name="Common Item - Saber*Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1008,12 +1008,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="118" />
-			<set stat="mAtk" val="56" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">118</stat>
+			<stat type="mAtk">56</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11739" name="Common Item - Elven Sword*Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1032,12 +1032,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="118" />
-			<set stat="mAtk" val="56" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">118</stat>
+			<stat type="mAtk">56</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11740" name="Common Item - Crimson Sword*Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1056,12 +1056,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="118" />
-			<set stat="mAtk" val="56" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">118</stat>
+			<stat type="mAtk">56</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11741" name="Common Item - Crimson Sword*Crimson Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1080,12 +1080,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="118" />
-			<set stat="mAtk" val="56" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">118</stat>
+			<stat type="mAtk">56</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11742" name="Common Item - Knight's Sword*Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1104,12 +1104,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="124" />
-			<set stat="mAtk" val="58" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">124</stat>
+			<stat type="mAtk">58</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11743" name="Common Item - Bastard Sword*Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1128,12 +1128,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="124" />
-			<set stat="mAtk" val="58" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">124</stat>
+			<stat type="mAtk">58</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11744" name="Common Item - Spinebone Sword*Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1152,12 +1152,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="124" />
-			<set stat="mAtk" val="58" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">124</stat>
+			<stat type="mAtk">58</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11745" name="Common Item - Artisan's Sword*Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1176,12 +1176,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="124" />
-			<set stat="mAtk" val="58" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">124</stat>
+			<stat type="mAtk">58</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11746" name="Common Item - Needle Wolverine" type="Weapon">
 		<set name="icon" val="icon.weapon_needle_wolverine_i00" />
@@ -1200,13 +1200,13 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="94" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">94</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+		</stats>
 	</item>
 	<item id="11747" name="Common Item - Dark Elven Dagger" type="Weapon">
 		<set name="icon" val="icon.weapon_darkelven_dagger_i00" />
@@ -1225,13 +1225,13 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="94" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">94</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+		</stats>
 	</item>
 	<item id="11748" name="Common Item - Mysterious Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_mystery_sword_i00" />
@@ -1251,12 +1251,12 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="85" />
-			<set stat="mAtk" val="81" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">85</stat>
+			<stat type="mAtk">81</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11749" name="Common Item - Body Slasher" type="Weapon">
 		<set name="icon" val="icon.weapon_body_slasher_i00" />
@@ -1278,13 +1278,13 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11750" name="Common Item - Battle Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_battle_axe_i00" />
@@ -1303,13 +1303,13 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11751" name="Common Item - Scythe" type="Weapon">
 		<set name="icon" val="icon.weapon_scythe_i00" />
@@ -1331,13 +1331,13 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11752" name="Common Item - Saber*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1356,12 +1356,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="130" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">130</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11753" name="Common Item - Soldat Estoc" type="Weapon">
 		<set name="icon" val="icon.weapon_soldat_estoc_i00" />
@@ -1387,13 +1387,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="97" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">97</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+		</stats>
 	</item>
 	<item id="11754" name="Common Item - Schlager" type="Weapon">
 		<set name="icon" val="icon.weapon_schlaeger_i00" />
@@ -1416,13 +1416,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="116" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-		</for>
+		<stats>
+			<stat type="pAtk">116</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+		</stats>
 	</item>
 	<item id="11755" name="Common Item - Skull Graver" type="Weapon">
 		<set name="icon" val="icon.weapon_skull_graver_i00" />
@@ -1441,13 +1441,13 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11756" name="Common Item - StormBringer" type="Weapon">
 		<set name="icon" val="icon.weapon_stormbringer_i00" />
@@ -1467,12 +1467,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11757" name="Common Item - Stick of Faith" type="Weapon">
 		<set name="icon" val="icon.weapon_stick_of_faith_i00" />
@@ -1492,13 +1492,13 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="85" />
-			<set stat="mAtk" val="81" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">85</stat>
+			<stat type="mAtk">81</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11758" name="Common Item - Arbalest" type="Weapon">
 		<set name="icon" val="icon.weapon_arbalest_i00" />
@@ -1522,13 +1522,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="135" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<stats>
+			<stat type="pAtk">135</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+		</stats>
 	</item>
 	<item id="11759" name="Common Item - Crystallized Ice Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_crystallized_ice_bow_i00" />
@@ -1550,13 +1550,13 @@
 		<set name="mp_consume" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="1500" />
-		<for>
-			<set stat="pAtk" val="220" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">220</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+		</stats>
 	</item>
 	<item id="11760" name="Common Item - Orcish Glaive" type="Weapon">
 		<set name="icon" val="icon.weapon_orcish_glaive_i00" />
@@ -1578,13 +1578,13 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11761" name="Common Item - Silver Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_war_pick_i00" />
@@ -1603,13 +1603,13 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11762" name="Common Item - Cursed Dagger" type="Weapon">
 		<set name="icon" val="icon.weapon_cursed_dagger_i00" />
@@ -1628,13 +1628,13 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="94" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">94</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+		</stats>
 	</item>
 	<item id="11763" name="Common Item - Chakram" type="Weapon">
 		<set name="icon" val="icon.weapon_chakram_i00" />
@@ -1653,13 +1653,13 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="130" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">130</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11764" name="Common Item - Crystal Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_crystal_staff_i00" />
@@ -1679,13 +1679,13 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="103" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">103</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11765" name="Common Item - Big Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_big_hammer_i00" />
@@ -1704,13 +1704,13 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11766" name="Common Item - Flamberge" type="Weapon">
 		<set name="icon" val="icon.weapon_flamberge_i00" />
@@ -1730,12 +1730,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="130" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">130</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11767" name="Common Item - Heavy Doom Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_heavy_doom_axe_i00" />
@@ -1755,13 +1755,13 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="103" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">103</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11768" name="Common Item - Heavy Doom Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_heavy_doom_hammer_i00" />
@@ -1781,13 +1781,13 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="103" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">103</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11769" name="Common Item - Knight's Sword*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1806,12 +1806,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="136" />
-			<set stat="mAtk" val="63" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">136</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11770" name="Common Item - Bastard Sword*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1830,12 +1830,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="136" />
-			<set stat="mAtk" val="63" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">136</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11771" name="Common Item - Spinebone Sword*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1854,12 +1854,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="136" />
-			<set stat="mAtk" val="63" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">136</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11772" name="Common Item - Elven Sword*Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1878,12 +1878,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="136" />
-			<set stat="mAtk" val="63" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">136</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11773" name="Common Item - Artisan's Sword*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1902,12 +1902,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="136" />
-			<set stat="mAtk" val="63" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">136</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11774" name="Common Item - Crimson Sword*Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1926,12 +1926,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="136" />
-			<set stat="mAtk" val="63" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">136</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11775" name="Common Item - Noble Elven Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_noble_elven_bow_i00" />
@@ -1953,13 +1953,13 @@
 		<set name="mp_consume" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="1500" />
-		<for>
-			<set stat="pAtk" val="252" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">252</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+		</stats>
 	</item>
 	<item id="11776" name="Common Item - Knuckle Duster" type="Weapon">
 		<set name="icon" val="icon.weapon_knuckle_dust_i00" />
@@ -1979,13 +1979,13 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DUALSWORD" />
-		<for>
-			<set stat="pAtk" val="148" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">148</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11777" name="Common Item - Dwarven War Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_dwarven_warhammer_i00" />
@@ -2004,13 +2004,13 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11778" name="Common Item - Raid Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_raid_sword_i00" />
@@ -2031,12 +2031,12 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11779" name="Common Item - Soulfire Dirk" type="Weapon">
 		<set name="icon" val="icon.weapon_dagger_of_magicflame_i00" />
@@ -2056,13 +2056,13 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="86" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">86</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+		</stats>
 	</item>
 	<item id="11780" name="Common Item - Ballista" type="Weapon">
 		<set name="icon" val="icon.weapon_arbalest_i00" />
@@ -2086,13 +2086,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="155" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<stats>
+			<stat type="pAtk">155</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+		</stats>
 	</item>
 	<item id="11781" name="Common Item - Ballista" type="Weapon">
 		<set name="icon" val="icon.weapon_arbalest_i00" />
@@ -2116,13 +2116,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="155" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<stats>
+			<stat type="pAtk">155</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+		</stats>
 	</item>
 	<item id="11782" name="Common Item - Bec de Corbin" type="Weapon">
 		<set name="icon" val="icon.weapon_bech_de_corbin_i00" />
@@ -2144,13 +2144,13 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11783" name="Common Item - Shamshir" type="Weapon">
 		<set name="icon" val="icon.weapon_shamshir_i00" />
@@ -2170,12 +2170,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11784" name="Common Item - Chevalier Rapier" type="Weapon">
 		<set name="icon" val="icon.weapon_soldat_estoc_i00" />
@@ -2201,13 +2201,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="111" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+		</stats>
 	</item>
 	<item id="11785" name="Common Item - Chevalier Rapier" type="Weapon">
 		<set name="icon" val="icon.weapon_soldat_estoc_i00" />
@@ -2233,13 +2233,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="111" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+		</stats>
 	</item>
 	<item id="11786" name="Common Item - Chevalier Rapier" type="Weapon">
 		<set name="icon" val="icon.weapon_soldat_estoc_i00" />
@@ -2265,13 +2265,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="111" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+		</stats>
 	</item>
 	<item id="11787" name="Common Item - Chevalier Rapier" type="Weapon">
 		<set name="icon" val="icon.weapon_soldat_estoc_i00" />
@@ -2297,13 +2297,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="111" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+		</stats>
 	</item>
 	<item id="11788" name="Common Item - Stiletto" type="Weapon">
 		<set name="icon" val="icon.weapon_stiletto_i00" />
@@ -2322,13 +2322,13 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+		</stats>
 	</item>
 	<item id="11789" name="Common Item - Spirit Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_spirits_sword_i00" />
@@ -2348,12 +2348,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11790" name="Common Item - Elemental Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_elemental_bow_i00" />
@@ -2375,13 +2375,13 @@
 		<set name="mp_consume" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="820" />
-		<for>
-			<set stat="pAtk" val="277" />
-			<set stat="mAtk" val="75" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
-		</for>
+		<stats>
+			<stat type="pAtk">277</stat>
+			<stat type="mAtk">75</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+		</stats>
 	</item>
 	<item id="11791" name="Common Item - Elven Sword*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2403,12 +2403,12 @@
 		<skills>
 			<skill id="3042" level="2" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="148" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">148</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11792" name="Common Item - Horn of Glory" type="Weapon">
 		<set name="icon" val="icon.weapon_horn_of_glory_i00" />
@@ -2428,12 +2428,12 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="98" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">98</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11793" name="Common Item - Cursed Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_cursed_staff_i00" />
@@ -2453,13 +2453,13 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="119" />
-			<set stat="mAtk" val="100" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">119</stat>
+			<stat type="mAtk">100</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11794" name="Common Item - Katana" type="Weapon">
 		<set name="icon" val="icon.weapon_katana_i00" />
@@ -2479,12 +2479,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="11795" name="Common Item - Crimson Sword*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2506,12 +2506,12 @@
 		<skills>
 			<skill id="3046" level="2" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="148" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">148</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11796" name="Common Item - Sword of Revolution*Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2534,12 +2534,12 @@
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="148" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">148</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11797" name="Common Item - Sword of Revolution*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2561,12 +2561,12 @@
 		<skills>
 			<skill id="3044" level="3" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="155" />
-			<set stat="mAtk" val="70" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">155</stat>
+			<stat type="mAtk">70</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11798" name="Common Item - Elven Long Sword*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2588,12 +2588,12 @@
 		<skills>
 			<skill id="3045" level="4" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="162" />
-			<set stat="mAtk" val="73" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">162</stat>
+			<stat type="mAtk">73</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="11799" name="Common Item - Stick of Eternity" type="Weapon">
 		<set name="icon" val="icon.weapon_stick_of_eternity_i00" />
@@ -2613,12 +2613,12 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="111" />
-			<set stat="mAtk" val="101" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 </list>

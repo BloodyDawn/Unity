@@ -372,12 +372,12 @@
 		<set name="price" val="30000" />
 		<set name="is_freightable" val="false" />
 		<set name="isAttackWeapon" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="6530" name="Corroded Albatross Rod" type="Weapon">
 		<set name="icon" val="icon.weapon_fishing_rod_i01" />
@@ -394,14 +394,14 @@
 		<set name="price" val="100000" />
 		<set name="is_freightable" val="false" />
 		<set name="isAttackWeapon" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6531" name="Corroded Pelican Rod" type="Weapon">
 		<set name="icon" val="icon.weapon_fishing_rod_i02" />
@@ -418,14 +418,14 @@
 		<set name="price" val="400000" />
 		<set name="is_freightable" val="false" />
 		<set name="isAttackWeapon" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6532" name="Corroded KingFisher Rod" type="Weapon">
 		<set name="icon" val="icon.weapon_fishing_rod_i03" />
@@ -442,14 +442,14 @@
 		<set name="price" val="1200000" />
 		<set name="is_freightable" val="false" />
 		<set name="isAttackWeapon" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6533" name="Corroded Cygnus Pole" type="Weapon">
 		<set name="icon" val="icon.weapon_fishing_rod_i04" />
@@ -466,14 +466,14 @@
 		<set name="price" val="4000000" />
 		<set name="is_freightable" val="false" />
 		<set name="isAttackWeapon" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6534" name="Corroded Triton Pole" type="Weapon">
 		<set name="icon" val="icon.weapon_fishing_rod_i05" />
@@ -490,14 +490,14 @@
 		<set name="price" val="10000000" />
 		<set name="is_freightable" val="false" />
 		<set name="isAttackWeapon" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6535" name="Corroded Fishing Shot (No-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_spirit_bullet_fish_i00" />
@@ -991,15 +991,15 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="225" />
-			<set stat="mAtk" val="175" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">225</stat>
+			<stat type="mAtk">175</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6580" name="Tallum Blade*Dark Legion's Edge" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1024,14 +1024,14 @@
 		<skills>
 			<skill id="3570" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Robust Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="342" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">342</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6581" name="Forgotten Blade" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_forgotten_blade_i01" />
@@ -1056,14 +1056,14 @@
 		<skills>
 			<skill id="3564" level="1" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6582" name="Forgotten Blade" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_forgotten_blade_i01" />
@@ -1088,14 +1088,14 @@
 		<skills>
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6583" name="Forgotten Blade" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_forgotten_blade_i01" />
@@ -1120,14 +1120,14 @@
 		<skills>
 			<skill id="3566" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6584" name="Basalt Battlehammer" name_additional="HP Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_basalt_battlehammer_i01" />
@@ -1151,15 +1151,15 @@
 		<skills>
 			<skill id="3568" level="1" /> <!-- Special Ability: HP Drain -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6585" name="Basalt Battlehammer" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_basalt_battlehammer_i01" />
@@ -1184,15 +1184,15 @@
 		<skills>
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6586" name="Basalt Battlehammer" name_additional="HP Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_basalt_battlehammer_i01" />
@@ -1216,15 +1216,15 @@
 		<skills>
 			<skill id="3569" level="1" /> <!-- Special Ability: HP Regeneration -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6587" name="Imperial Staff" name_additional="Empower" type="Weapon">
 		<set name="icon" val="icon.weapon_imperial_staff_i01" />
@@ -1249,15 +1249,15 @@
 		<skills>
 			<skill id="3575" level="1" /> <!-- Special Ability: Empower -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="274" />
-			<set stat="mAtk" val="193" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">274</stat>
+			<stat type="mAtk">193</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6588" name="Imperial Staff" name_additional="MP Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_imperial_staff_i01" />
@@ -1282,15 +1282,15 @@
 		<skills>
 			<skill id="3576" level="1" /> <!-- Special Ability: MP Regeneration -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="274" />
-			<set stat="mAtk" val="193" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">274</stat>
+			<stat type="mAtk">193</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6589" name="Imperial Staff" name_additional="Magic Hold" type="Weapon">
 		<set name="icon" val="icon.weapon_imperial_staff_i01" />
@@ -1316,15 +1316,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3577" level="1" type="ON_MAGIC_SKILL" type_chance="20" /> <!-- Special Ability: Magic Hold -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="274" />
-			<set stat="mAtk" val="193" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">274</stat>
+			<stat type="mAtk">193</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6590" name="Angel Slayer" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_angel_slayer_i01" />
@@ -1349,15 +1349,15 @@
 		<skills>
 			<skill id="3572" level="1" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="246" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">246</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6591" name="Angel Slayer" name_additional="HP Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_angel_slayer_i01" />
@@ -1381,15 +1381,15 @@
 		<skills>
 			<skill id="3568" level="1" /> <!-- Special Ability: HP Drain -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="246" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">246</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6592" name="Angel Slayer" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_angel_slayer_i01" />
@@ -1413,15 +1413,15 @@
 		<skills>
 			<skill id="3564" level="1" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="246" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">246</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6593" name="Bow of Light" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_shining_bow_i01" />
@@ -1448,15 +1448,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="581" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">581</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6594" name="Bow of Light" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_shining_bow_i01" />
@@ -1482,15 +1482,15 @@
 		<skills>
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="581" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">581</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6595" name="Bow of Light" name_additional="Critical Slow" type="Weapon">
 		<set name="icon" val="icon.weapon_shining_bow_i01" />
@@ -1517,15 +1517,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3574" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="581" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">581</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6596" name="Dragon Hunter Axe" name_additional="HP Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_hunter_axe_i01" />
@@ -1549,15 +1549,15 @@
 		<skills>
 			<skill id="3569" level="1" /> <!-- Special Ability: HP Regeneration -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="342" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">342</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6597" name="Dragon Hunter Axe" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_hunter_axe_i01" />
@@ -1581,15 +1581,15 @@
 		<skills>
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="342" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">342</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6598" name="Dragon Hunter Axe" name_additional="HP Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_hunter_axe_i01" />
@@ -1613,15 +1613,15 @@
 		<skills>
 			<skill id="3568" level="1" /> <!-- Special Ability: HP Drain -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="342" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">342</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6599" name="Saint Spear" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_saint_spear_i01" />
@@ -1645,14 +1645,14 @@
 		<skills>
 			<skill id="3013" level="4" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 </list>

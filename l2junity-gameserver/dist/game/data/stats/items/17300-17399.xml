@@ -17,14 +17,14 @@
 		<skills>
 			<skill id="13301" level="3" /> <!-- Magic Two-handed Blunt Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="423.0" />
-			<set stat="mAtk" val="278.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">423</stat>
+			<stat type="mAtk">278</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="17301" name="Requiem Dualsword" type="Weapon">
 		<!-- Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
@@ -42,12 +42,12 @@
 		<skills>
 			<skill id="13274" level="3" /> <!-- Dualsword Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="529.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">529</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17302" name="Requiem Dual Dagger" type="Weapon">
 		<!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
@@ -66,12 +66,12 @@
 		<skills>
 			<skill id="13279" level="3" /> <!-- Dagger Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="435.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">435</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="17303" name="Requiem Dual Blunt Weapon" type="Weapon">
 		<!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
@@ -89,13 +89,13 @@
 		<skills>
 			<skill id="13269" level="3" /> <!-- Dual Blunt Weapon Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="529.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">529</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="17304" name="Immortal Helmet" name_additional="Heavy Armor" type="Armor">
 		<!-- Bestows an attack or defense type set option. -->
@@ -108,10 +108,10 @@
 		<set name="price" val="6878552" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
-		<for>
-			<add order="0" stat="pDef" val="116.0" />
+		<stats>
+			<stat type="pDef">116</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17305" name="Immortal Breastplate" name_additional="Heavy Armor" type="Armor">
 		<!-- Bestows an attack or defense type set option. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
@@ -128,10 +128,10 @@
 		<skills>
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="309.0" />
+		<stats>
+			<stat type="pDef">309</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17306" name="Immortal Gaiters" name_additional="Heavy Armor" type="Armor">
 		<!-- Bestows an attack or defense type set option. -->
@@ -145,10 +145,10 @@
 		<set name="price" val="11464253" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
-		<for>
-			<add order="0" stat="pDef" val="193.0" />
+		<stats>
+			<stat type="pDef">193</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17307" name="Immortal Gauntlets" name_additional="Heavy Armor" type="Armor">
 		<!-- Bestows an attack or defense type set option. -->
@@ -161,10 +161,10 @@
 		<set name="price" val="4585701" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
-		<for>
-			<add order="0" stat="pDef" val="77.0" />
+		<stats>
+			<stat type="pDef">77</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17308" name="Immortal Boots" name_additional="Heavy Armor" type="Armor">
 		<!-- Bestows an attack or defense type set option. -->
@@ -176,10 +176,10 @@
 		<set name="price" val="4585701" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
-		<for>
-			<add order="0" stat="pDef" val="77.0" />
+		<stats>
+			<stat type="pDef">77</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17309" name="Immortal Shield" name_additional="Heavy Armor" type="Weapon">
 		<!-- Bestows an attack or defense type set option. -->
@@ -192,10 +192,10 @@
 		<set name="price" val="4585701" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SHIELD" />
-		<for>
-			<add stat="sDef" val="422.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">422</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 	<item id="17310" name="Immortal Leather Helmet" name_additional="Light Armor" type="Armor">
 		<!-- Bestows an assassin or enchant type set option. -->
@@ -208,10 +208,10 @@
 		<set name="price" val="6878552" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
-		<for>
-			<add order="0" stat="pDef" val="116.0" />
+		<stats>
+			<stat type="pDef">116</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17311" name="Immortal Leather Armor" name_additional="Light Armor" type="Armor">
 		<!-- Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
@@ -228,12 +228,12 @@
 		<skills>
 			<skill id="13311" level="3" /> <!-- Light Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="247.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
+		<stats>
+			<stat type="pDef">247</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17312" name="Immortal Leather Leggings" name_additional="Light Armor" type="Armor">
 		<!-- Bestows an assassin or enchant type set option. -->
@@ -247,12 +247,12 @@
 		<set name="price" val="11464253" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
-		<for>
-			<add order="0" stat="pDef" val="154.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
+		<stats>
+			<stat type="pDef">154</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17313" name="Immortal Leather Gloves" name_additional="Light Armor" type="Armor">
 		<!-- Bestows an assassin or enchant type set option. -->
@@ -265,10 +265,10 @@
 		<set name="price" val="4585701" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
-		<for>
-			<add order="0" stat="pDef" val="77.0" />
+		<stats>
+			<stat type="pDef">77</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17314" name="Immortal Leather Boots" name_additional="Light Armor" type="Armor">
 		<!-- Bestows an assassin or enchant type set option. -->
@@ -281,10 +281,10 @@
 		<set name="price" val="4585701" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
-		<for>
-			<add order="0" stat="pDef" val="77.0" />
+		<stats>
+			<stat type="pDef">77</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17315" name="Immortal Circlet" name_additional="Robe" type="Armor">
 		<!-- Bestows a magic or recovery type set option. -->
@@ -297,10 +297,10 @@
 		<set name="price" val="6878552" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
-		<for>
-			<add order="0" stat="pDef" val="116.0" />
+		<stats>
+			<stat type="pDef">116</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17316" name="Immortal Tunic" name_additional="Robe" type="Armor">
 		<!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
@@ -317,12 +317,12 @@
 		<skills>
 			<skill id="13312" level="3" /> <!-- Robe Upper Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="169.0" />
-			<add stat="mDef" val="36.0" />
+		<stats>
+			<stat type="pDef">169</stat>
+			<stat type="mDef">36</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17317" name="Immortal Stockings" name_additional="Robe" type="Armor">
 		<!-- Bestows a magic or recovery type set option. -->
@@ -336,12 +336,12 @@
 		<set name="price" val="11464253" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
-		<for>
-			<add order="0" stat="pDef" val="106.0" />
-			<add stat="mDef" val="24.0" />
+		<stats>
+			<stat type="pDef">106</stat>
+			<stat type="mDef">24</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17318" name="Immortal Gloves" name_additional="Robe" type="Armor">
 		<!-- Bestows a magic or recovery type set option. -->
@@ -354,10 +354,10 @@
 		<set name="price" val="4585701" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
-		<for>
-			<add order="0" stat="pDef" val="77.0" />
+		<stats>
+			<stat type="pDef">77</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17319" name="Immortal Shoes" name_additional="Robe" type="Armor">
 		<!-- Bestows a magic or recovery type set option. -->
@@ -370,10 +370,10 @@
 		<set name="price" val="4585701" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
-		<for>
-			<add order="0" stat="pDef" val="77.0" />
+		<stats>
+			<stat type="pDef">77</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17320" name="Immortal Sigil" name_additional="Robe" type="Armor">
 		<!-- Bestows a magic or recovery type set option. -->
@@ -387,10 +387,10 @@
 		<set name="price" val="4585701" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SIGIL" />
-		<for>
-			<add order="0" stat="pDef" val="38.0" />
+		<stats>
+			<stat type="pDef">38</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17321" name="Immortal Necklace" type="Armor">
 		<!-- Immortal Necklace. MP + 53 effect. -->
@@ -403,10 +403,10 @@
 		<set name="price" val="5971169" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="NECKLACE" />
-		<for>
-			<add stat="mDef" val="126.0" />
+		<stats>
+			<stat type="mDef">126</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17322" name="Immortal Earring" type="Armor">
 		<!-- Immortal Earring. MP + 40 effect. -->
@@ -419,10 +419,10 @@
 		<set name="price" val="4478376" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="EARRING" />
-		<for>
-			<add stat="mDef" val="94.0" />
+		<stats>
+			<stat type="mDef">94</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17323" name="Immortal Ring" type="Armor">
 		<!-- Immortal Ring. MP + 26 effect. -->
@@ -435,10 +435,10 @@
 		<set name="price" val="2985584" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="RING" />
-		<for>
-			<add stat="mDef" val="63.0" />
+		<stats>
+			<stat type="mDef">63</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17324" name="Apocalypse Shaper" type="Weapon">
 		<!-- Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
@@ -457,12 +457,12 @@
 		<skills>
 			<skill id="13280" level="3" /> <!-- Dagger Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="441.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">441</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="17325" name="Apocalypse Cutter" type="Weapon">
 		<!-- Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
@@ -481,12 +481,12 @@
 		<skills>
 			<skill id="13252" level="3" /> <!-- One-handed Sword Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="504.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">504</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17326" name="Apocalypse Slasher" type="Weapon">
 		<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases P. Atk. when enchanted to + 4. -->
@@ -505,12 +505,12 @@
 		<skills>
 			<skill id="13259" level="3" /> <!-- Two-handed Sword Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="613.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">613</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17327" name="Apocalypse Avenger" type="Weapon">
 		<!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
@@ -529,13 +529,13 @@
 		<skills>
 			<skill id="13254" level="3" /> <!-- One-handed Blunt Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="504.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">504</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="17328" name="Apocalypse Fighter" type="Weapon">
 		<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
@@ -554,13 +554,13 @@
 		<skills>
 			<skill id="13265" level="3" /> <!-- Fist Weapon Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="613.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">613</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="17329" name="Apocalypse Stormer" type="Weapon">
 		<!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases Multi Attack when enchanted to + 4. -->
@@ -580,12 +580,12 @@
 			<skill id="13115" level="1" /> <!-- Polearm Multi-attack -->
 			<skill id="13263" level="3" /> <!-- Spear Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="504.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">504</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17330" name="Apocalypse Thrower" type="Weapon">
 		<!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power when enchanted to + 4. -->
@@ -604,12 +604,12 @@
 		<skills>
 			<skill id="13290" level="3" /> <!-- Bow Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="992.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">992</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="17331" name="Apocalypse Shooter" type="Weapon">
 		<!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. when enchanted to + 4. -->
@@ -628,12 +628,12 @@
 		<skills>
 			<skill id="13294" level="3" /> <!-- Crossbow Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="894.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">894</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="17332" name="Apocalypse Buster" type="Weapon">
 		<!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
@@ -652,12 +652,12 @@
 		<skills>
 			<skill id="13295" level="3" /> <!-- Magic Sword Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="403.0" />
-			<set stat="mAtk" val="293.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">403</stat>
+			<stat type="mAtk">293</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17333" name="Apocalypse Caster" type="Weapon">
 		<!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
@@ -676,13 +676,13 @@
 		<skills>
 			<skill id="13297" level="3" /> <!-- Magic One-handed Blunt Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="403.0" />
-			<set stat="mAtk" val="293.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">403</stat>
+			<stat type="mAtk">293</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="17334" name="Apocalypse Retributer" type="Weapon">
 		<!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
@@ -701,14 +701,14 @@
 		<skills>
 			<skill id="13302" level="3" /> <!-- Magic Two-handed Blunt Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="491.0" />
-			<set stat="mAtk" val="322.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">491</stat>
+			<stat type="mAtk">322</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="17335" name="Apocalypse Dualsword" type="Weapon">
 		<!-- Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
@@ -727,12 +727,12 @@
 		<skills>
 			<skill id="13275" level="3" /> <!-- Dualsword Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="613.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">613</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17336" name="Apocalypse Dual Dagger" type="Weapon">
 		<!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
@@ -751,12 +751,12 @@
 		<skills>
 			<skill id="13280" level="3" /> <!-- Dagger Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="504.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">504</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="17337" name="Apocalypse Dual Blunt Weapon" type="Weapon">
 		<!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
@@ -775,13 +775,13 @@
 		<skills>
 			<skill id="13270" level="3" /> <!-- Dual Blunt Weapon Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="613.0" />
-			<set stat="mAtk" val="219.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">613</stat>
+			<stat type="mAtk">219</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="17338" name="Twilight Helmet" name_additional="Heavy Armor" type="Armor">
 		<!-- Bestows an attack or defense type set option. -->
@@ -794,10 +794,10 @@
 		<set name="price" val="18736280" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
-		<for>
-			<add order="0" stat="pDef" val="128.0" />
+		<stats>
+			<stat type="pDef">128</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17339" name="Twilight Breastplate" name_additional="Heavy Armor" type="Armor">
 		<!-- Bestows an attack or defense type set option. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
@@ -814,10 +814,10 @@
 		<skills>
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="341.0" />
+		<stats>
+			<stat type="pDef">341</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17340" name="Twilight Gaiters" name_additional="Heavy Armor" type="Armor">
 		<!-- Bestows an attack or defense type set option. -->
@@ -831,10 +831,10 @@
 		<set name="price" val="31227133" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
-		<for>
-			<add order="0" stat="pDef" val="213.0" />
+		<stats>
+			<stat type="pDef">213</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17341" name="Twilight Gauntlets" name_additional="Heavy Armor" type="Armor">
 		<!-- Bestows an attack or defense type set option. -->
@@ -847,10 +847,10 @@
 		<set name="price" val="12490853" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
-		<for>
-			<add order="0" stat="pDef" val="85.0" />
+		<stats>
+			<stat type="pDef">85</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17342" name="Twilight Boots" name_additional="Heavy Armor" type="Armor">
 		<!-- Bestows an attack or defense type set option. -->
@@ -862,10 +862,10 @@
 		<set name="price" val="12490853" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
-		<for>
-			<add order="0" stat="pDef" val="85.0" />
+		<stats>
+			<stat type="pDef">85</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17343" name="Twilight Shield" name_additional="Heavy Armor" type="Weapon">
 		<!-- Bestows an attack or defense type set option. -->
@@ -878,10 +878,10 @@
 		<set name="price" val="12490853" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SHIELD" />
-		<for>
-			<add stat="sDef" val="466.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">466</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 	<item id="17344" name="Twilight Leather Helmet" name_additional="Light Armor" type="Armor">
 		<!-- Bestows an assassin or enchant type set option. -->
@@ -894,10 +894,10 @@
 		<set name="price" val="18736280" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
-		<for>
-			<add order="0" stat="pDef" val="128.0" />
+		<stats>
+			<stat type="pDef">128</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17345" name="Twilight Leather Armor" name_additional="Light Armor" type="Armor">
 		<!-- Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
@@ -914,12 +914,12 @@
 		<skills>
 			<skill id="13311" level="3" /> <!-- Light Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="272.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
+		<stats>
+			<stat type="pDef">272</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17346" name="Twilight Leather Leggings" name_additional="Light Armor" type="Armor">
 		<!-- Bestows an assassin or enchant type set option. -->
@@ -933,12 +933,12 @@
 		<set name="price" val="31227133" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
-		<for>
-			<add order="0" stat="pDef" val="170.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
+		<stats>
+			<stat type="pDef">170</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17347" name="Twilight Leather Gloves" name_additional="Light Armor" type="Armor">
 		<!-- Bestows an assassin or enchant type set option. -->
@@ -951,10 +951,10 @@
 		<set name="price" val="12490853" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
-		<for>
-			<add order="0" stat="pDef" val="85.0" />
+		<stats>
+			<stat type="pDef">85</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17348" name="Twilight Leather Boots" name_additional="Light Armor" type="Armor">
 		<!-- Bestows an assassin or enchant type set option. -->
@@ -967,10 +967,10 @@
 		<set name="price" val="12490853" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
-		<for>
-			<add order="0" stat="pDef" val="85.0" />
+		<stats>
+			<stat type="pDef">85</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17349" name="Twilight Circlet" name_additional="Robe" type="Armor">
 		<!-- Bestows a magic or recovery type set option. -->
@@ -983,10 +983,10 @@
 		<set name="price" val="18736280" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
-		<for>
-			<add order="0" stat="pDef" val="128.0" />
+		<stats>
+			<stat type="pDef">128</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17350" name="Twilight Tunic" name_additional="Robe" type="Armor">
 		<!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
@@ -1003,12 +1003,12 @@
 		<skills>
 			<skill id="13312" level="3" /> <!-- Robe Upper Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="187.0" />
-			<add stat="mDef" val="41.0" />
+		<stats>
+			<stat type="pDef">187</stat>
+			<stat type="mDef">41</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17351" name="Twilight Stockings" name_additional="Robe" type="Armor">
 		<!-- Bestows a magic or recovery type set option. -->
@@ -1022,12 +1022,12 @@
 		<set name="price" val="31227133" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
-		<for>
-			<add order="0" stat="pDef" val="117.0" />
-			<add stat="mDef" val="27.0" />
+		<stats>
+			<stat type="pDef">117</stat>
+			<stat type="mDef">27</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17352" name="Twilight Gloves" name_additional="Robe" type="Armor">
 		<!-- Bestows a magic or recovery type set option. -->
@@ -1040,10 +1040,10 @@
 		<set name="price" val="12490853" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
-		<for>
-			<add order="0" stat="pDef" val="85.0" />
+		<stats>
+			<stat type="pDef">85</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17353" name="Twilight Shoes" name_additional="Robe" type="Armor">
 		<!-- Bestows a magic or recovery type set option. -->
@@ -1056,10 +1056,10 @@
 		<set name="price" val="12490853" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
-		<for>
-			<add order="0" stat="pDef" val="85.0" />
+		<stats>
+			<stat type="pDef">85</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17354" name="Twilight Sigil" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.weapon_dynaksus_i00" />
@@ -1072,10 +1072,10 @@
 		<set name="price" val="12490853" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SIGIL" />
-		<for>
-			<add order="0" stat="pDef" val="42.0" />
+		<stats>
+			<stat type="pDef">42</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17355" name="Twilight Necklace" type="Armor">
 		<!-- Twilight Necklace. MP + 58 effect. -->
@@ -1088,10 +1088,10 @@
 		<set name="price" val="16264686" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="NECKLACE" />
-		<for>
-			<add stat="mDef" val="142.0" />
+		<stats>
+			<stat type="mDef">142</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17356" name="Twilight Earring" type="Armor">
 		<!-- Twilight Earring. MP + 43 effect. -->
@@ -1104,10 +1104,10 @@
 		<set name="price" val="12198514" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="EARRING" />
-		<for>
-			<add stat="mDef" val="107.0" />
+		<stats>
+			<stat type="mDef">107</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17357" name="Twilight Ring" type="Armor">
 		<!-- Twilight Ring. MP + 29 effect. -->
@@ -1120,10 +1120,10 @@
 		<set name="price" val="8132343" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="RING" />
-		<for>
-			<add stat="mDef" val="71.0" />
+		<stats>
+			<stat type="mDef">71</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17358" name="Belt of Insolence" type="Armor">
 		<set name="icon" val="icon.belt_of_oman" />
@@ -1141,10 +1141,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="440" />
-		<for>
-			<add order="0" stat="pDef" val="14.0" />
+		<stats>
+			<stat type="pDef">14</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17359" name="T-shirt of Insolence" type="Armor">
 		<!-- Increases Max HP by 246 when enchanted to + 4 or higher. -->
@@ -1164,10 +1164,10 @@
 		<skills>
 			<skill id="8537" level="1" /> <!-- T-shirt of Insolence -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="30.0" />
+		<stats>
+			<stat type="pDef">30</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17360" name="Bracelet of Insolence" type="Armor">
 		<!-- Activates 4 talisman slots when equipped. Max MP + 60. -->
@@ -1204,10 +1204,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="95.0" />
+		<stats>
+			<stat type="mDef">95</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17362" name="Ring of Insolence I" type="Armor">
 		<!-- Has the effect of MP + 15. Only one effect is applied when two of the same ring are equipped. -->
@@ -1225,10 +1225,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="48.0" />
+		<stats>
+			<stat type="mDef">48</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17363" name="Ring of Insolence II" type="Armor">
 		<!-- Has the effect of MP + 15 and resistance to Poison increased by 10%. Only one effect is applied when two of the same ring are equipped. -->
@@ -1249,10 +1249,10 @@
 		<skills>
 			<skill id="8529" level="1" /> <!-- Ring of Insolence -->
 		</skills>
-		<for>
-			<add stat="mDef" val="48.0" />
+		<stats>
+			<stat type="mDef">48</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17364" name="Ring of Insolence III" type="Armor">
 		<!-- Has the effect of MP + 15, and increased Poison Resistance by 10% and Poison Atk. Rate by 10%. Only one effect is applied when two of the same ring are equipped. -->
@@ -1273,10 +1273,10 @@
 		<skills>
 			<skill id="8530" level="1" /> <!-- Ring of Insolence -->
 		</skills>
-		<for>
-			<add stat="mDef" val="48.0" />
+		<stats>
+			<stat type="mDef">48</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17365" name="Ring of Insolence IV" type="Armor">
 		<!-- Has the effect of MP + 15, increased Poison Resistance by 10%, Poison Atk. Rate by 10%, and Hold Resistance by 10%. Only one effect is applied when two of the same ring are equipped. -->
@@ -1297,10 +1297,10 @@
 		<skills>
 			<skill id="8531" level="1" /> <!-- Ring of Insolence -->
 		</skills>
-		<for>
-			<add stat="mDef" val="48.0" />
+		<stats>
+			<stat type="mDef">48</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17366" name="Ring of Insolence V" type="Armor">
 		<!-- Has the effect of MP + 15, increased Poison Resistance by 10%, Poison Atk. Rate by 10%, Hold Resistance by 10%, and hold Atk. Rate by 10%. Only one effect is applied when two of the same ring are equipped. -->
@@ -1321,10 +1321,10 @@
 		<skills>
 			<skill id="8532" level="1" /> <!-- Ring of Insolence -->
 		</skills>
-		<for>
-			<add stat="mDef" val="48.0" />
+		<stats>
+			<stat type="mDef">48</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17367" name="Ring of Insolence VI" type="Armor">
 		<!-- Has the effect of MP + 15, increased Poison Resistance by 10%, Poison Atk. Rate by 10%, Hold Resistance by 10%, hold Atk. Rate by 10%, and increased Accuracy. Only one effect is applied when two of the same ring are equipped. -->
@@ -1345,10 +1345,10 @@
 		<skills>
 			<skill id="8533" level="1" /> <!-- Ring of Insolence -->
 		</skills>
-		<for>
-			<add stat="mDef" val="48.0" />
+		<stats>
+			<stat type="mDef">48</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17368" name="Ring of Insolence VII" type="Armor">
 		<!-- Has the effect of MP + 15, increased Poison Resistance by 10%, Poison Atk. Rate by 10%, Hold Resistance by 10%, hold Atk. Rate by 10%, increased Accuracy, and increased Atk. Spd. Only one effect is applied when two of the same ring are equipped. -->
@@ -1369,10 +1369,10 @@
 		<skills>
 			<skill id="8534" level="1" /> <!-- Ring of Insolence -->
 		</skills>
-		<for>
-			<add stat="mDef" val="48.0" />
+		<stats>
+			<stat type="mDef">48</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17369" name="Ring of Insolence VIII" type="Armor">
 		<!-- Has the effect of MP + 15, increased Poison Resistance by 10%, Poison Atk. Rate by 10%, Hold Resistance by 10%, hold Atk. Rate by 10%, increased Accuracy, increased Atk. Spd, and increased Casting Spd. Only one effect is applied when two of the same ring are equipped. -->
@@ -1393,10 +1393,10 @@
 		<skills>
 			<skill id="8535" level="1" /> <!-- Ring of Insolence -->
 		</skills>
-		<for>
-			<add stat="mDef" val="48.0" />
+		<stats>
+			<stat type="mDef">48</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17370" name="Ring of Insolence IX" type="Armor">
 		<!-- Has the effect of MP + 15, increased Poison Resistance by 10%, Poison Atk. Rate by 10%, Hold Resistance by 10%, hold Atk. Rate by 10%, increased Accuracy, Atk. Spd, Casting Spd., and P. Critical Damage. Only one effect is applied when two of the same ring are equipped. -->
@@ -1417,10 +1417,10 @@
 		<skills>
 			<skill id="8536" level="1" /> <!-- Ring of Insolence -->
 		</skills>
-		<for>
-			<add stat="mDef" val="48.0" />
+		<stats>
+			<stat type="mDef">48</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17371" name="Crystal (R-grade)" type="EtcItem">
 		<!-- R-grade Crystal -->
@@ -1450,12 +1450,12 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="weight" val="60" />
-		<for>
-			<set stat="pAtk" val="5.0" />
-			<set stat="mAtk" val="5.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">5</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="17373" name="Apherus Door Key" type="EtcItem">
 		<!-- Receives a chance to open the Apherus Garden Gate inside the Garden of Genesis. -->
@@ -1583,12 +1583,12 @@
 		<skills>
 			<skill id="13281" level="3" /> <!-- Dagger Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="511.0" />
-			<set stat="mAtk" val="254.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">511</stat>
+			<stat type="mAtk">254</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="17383" name="Specter Cutter" type="Weapon">
 		<!-- Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
@@ -1607,12 +1607,12 @@
 		<skills>
 			<skill id="13252" level="3" /> <!-- One-handed Sword Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="584.0" />
-			<set stat="mAtk" val="254.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">584</stat>
+			<stat type="mAtk">254</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17384" name="Specter Slasher" type="Weapon">
 		<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases P. Atk. when enchanted to + 4. -->
@@ -1631,12 +1631,12 @@
 		<skills>
 			<skill id="13260" level="3" /> <!-- Two-handed Sword Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="711.0" />
-			<set stat="mAtk" val="254.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">711</stat>
+			<stat type="mAtk">254</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17385" name="Specter Avenger" type="Weapon">
 		<!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
@@ -1655,13 +1655,13 @@
 		<skills>
 			<skill id="13255" level="3" /> <!-- One-handed Blunt Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="584.0" />
-			<set stat="mAtk" val="254.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">584</stat>
+			<stat type="mAtk">254</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="17386" name="Specter Fighter" type="Weapon">
 		<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
@@ -1680,13 +1680,13 @@
 		<skills>
 			<skill id="13266" level="3" /> <!-- Fist Weapon Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="711.0" />
-			<set stat="mAtk" val="254.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">711</stat>
+			<stat type="mAtk">254</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="17387" name="Specter Stormer" type="Weapon">
 		<!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases Multi Attack when enchanted to + 4. -->
@@ -1706,12 +1706,12 @@
 			<skill id="13115" level="1" /> <!-- Polearm Multi-attack -->
 			<skill id="13263" level="3" /> <!-- Spear Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="584.0" />
-			<set stat="mAtk" val="254.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">584</stat>
+			<stat type="mAtk">254</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17388" name="Specter Thrower" type="Weapon">
 		<!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power when enchanted to + 4. -->
@@ -1730,12 +1730,12 @@
 		<skills>
 			<skill id="13291" level="3" /> <!-- Bow Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1151.0" />
-			<set stat="mAtk" val="254.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1151</stat>
+			<stat type="mAtk">254</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="17389" name="Specter Shooter" type="Weapon">
 		<!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. when enchanted to + 4. -->
@@ -1754,12 +1754,12 @@
 		<skills>
 			<skill id="13294" level="3" /> <!-- Crossbow Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1036.0" />
-			<set stat="mAtk" val="254.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1036</stat>
+			<stat type="mAtk">254</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="17390" name="Specter Buster" type="Weapon">
 		<!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
@@ -1778,12 +1778,12 @@
 		<skills>
 			<skill id="13295" level="3" /> <!-- Magic Sword Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="467.0" />
-			<set stat="mAtk" val="339.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">467</stat>
+			<stat type="mAtk">339</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17391" name="Specter Caster" type="Weapon">
 		<!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
@@ -1802,13 +1802,13 @@
 		<skills>
 			<skill id="13298" level="3" /> <!-- Magic One-handed Blunt Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="467.0" />
-			<set stat="mAtk" val="339.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">467</stat>
+			<stat type="mAtk">339</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="17392" name="Specter Retributer" type="Weapon">
 		<!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
@@ -1827,14 +1827,14 @@
 		<skills>
 			<skill id="13303" level="3" /> <!-- Magic Two-handed Blunt Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="569.0" />
-			<set stat="mAtk" val="373.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">569</stat>
+			<stat type="mAtk">373</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="17393" name="Specter Dualsword" type="Weapon">
 		<!-- Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
@@ -1853,12 +1853,12 @@
 		<skills>
 			<skill id="13276" level="3" /> <!-- Dualsword Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="711.0" />
-			<set stat="mAtk" val="254.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">711</stat>
+			<stat type="mAtk">254</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17394" name="Specter Dual Dagger" type="Weapon">
 		<!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
@@ -1876,12 +1876,12 @@
 		<skills>
 			<skill id="13281" level="3" /> <!-- Dagger Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="584.0" />
-			<set stat="mAtk" val="254.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">584</stat>
+			<stat type="mAtk">254</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="17395" name="Specter Dual Blunt Weapon" type="Weapon">
 		<!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
@@ -1899,13 +1899,13 @@
 		<skills>
 			<skill id="13271" level="3" /> <!-- Dual Blunt Weapon Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="711.0" />
-			<set stat="mAtk" val="254.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">711</stat>
+			<stat type="mAtk">254</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="17396" name="Seraph Helmet" name_additional="Heavy Armor" type="Armor">
 		<!-- Bestows an attack or defense type set option. -->
@@ -1918,10 +1918,10 @@
 		<set name="price" val="57490000" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
-		<for>
-			<add order="0" stat="pDef" val="141.0" />
+		<stats>
+			<stat type="pDef">141</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17397" name="Seraph Breastplate" name_additional="Heavy Armor" type="Armor">
 		<!-- Bestows an attack or defense type set option. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
@@ -1938,10 +1938,10 @@
 		<skills>
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="377.0" />
+		<stats>
+			<stat type="pDef">377</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17398" name="Seraph Gaiters" name_additional="Heavy Armor" type="Armor">
 		<!-- Bestows an attack or defense type set option. -->
@@ -1955,10 +1955,10 @@
 		<set name="price" val="95818000" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
-		<for>
-			<add order="0" stat="pDef" val="235.0" />
+		<stats>
+			<stat type="pDef">235</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17399" name="Seraph Gauntlets" name_additional="Heavy Armor" type="Armor">
 		<!-- Bestows an attack or defense type set option. -->
@@ -1971,9 +1971,9 @@
 		<set name="price" val="38327000" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
-		<for>
-			<add order="0" stat="pDef" val="94.0" />
+		<stats>
+			<stat type="pDef">94</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 </list>

@@ -41,12 +41,12 @@
 				<player clanHall="-1" />
 			</and>
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="90" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">90</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6903" name="Music Box M" type="EtcItem">
 		<set name="icon" val="icon.etc_m_i00" />
@@ -194,10 +194,10 @@
 		<set name="price" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<for>
+		<stats>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6918" name="Monster Only (Shield of Silenos)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -209,12 +209,12 @@
 		<set name="price" val="2580" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="90" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">90</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6919" name="Monster Only (Shield of Ketra Orc)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -226,12 +226,12 @@
 		<set name="price" val="15680" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="142" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">142</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6920" name="Recipe: Corroded Greater Fish Oil" type="EtcItem">
 		<set name="icon" val="icon.etc_recipe_green_i00" />

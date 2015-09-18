@@ -253,10 +253,10 @@
 		<skills>
 			<skill id="13404" level="1" /> <!-- Clan Cloak (Clan Hall - Contestable) -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="36121" name="Rabbit Ears: STR (3-day)" name_additional="Campaign" type="Armor">
 		<!-- STR + 1 effect. Can use a private warehouse. Limited-time Item (3-day). -->
@@ -680,10 +680,10 @@
 		<skills>
 			<skill id="13406" level="1" /> <!-- Nurka's Belt -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="25.0" />
+		<stats>
+			<stat type="pDef">25</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="36168" name="Lidia's Belt" type="Armor">
 		<!-- Belt that contains the power of Lidia von Hellmann of the Fortress of the Dead. Increases damage by 5% and decreases received damage by 5%. Increases weight by 12800 and the number of inventory slots by 18. -->
@@ -697,10 +697,10 @@
 		<skills>
 			<skill id="13407" level="1" /> <!-- Lidia's Belt -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="25.0" />
+		<stats>
+			<stat type="pDef">25</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="36169" name="Gustav's Belt" type="Armor">
 		<!-- Belt that contains the power of Gustav of the Devastated Castle. Increases damage by 5% and decreases received damage by 5%. Increases weight by 12800 and the number of inventory slots by 18. -->
@@ -714,10 +714,10 @@
 		<skills>
 			<skill id="13408" level="1" /> <!-- Gustav's Belt -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="25.0" />
+		<stats>
+			<stat type="pDef">25</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="36170" name="Scroll of Escape: Fog of Blood Region" type="EtcItem">
 		<!-- Teleports you to the Fog of Blood Region. -->
@@ -968,9 +968,9 @@
 		<skills>
 			<skill id="13409" level="1" /> <!-- Rising Shirt -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="38.0" />
-		</for>
+		<stats>
+			<stat type="pDef">38</stat>
+		</stats>
 	</item>
 	<item id="36188" name="Blaze Shirt" type="Armor">
 		<!-- Increases Speed by 7, STR by 1, INT by 1, CON by 1, and MEN by 1. Can be used if the levels of main and dual classes are 92 or higher. -->
@@ -987,9 +987,9 @@
 		<skills>
 			<skill id="13410" level="1" /> <!-- Blaze Shirt -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="38.0" />
-		</for>
+		<stats>
+			<stat type="pDef">38</stat>
+		</stats>
 	</item>
 	<item id="36189" name="Rising Belt" type="Armor">
 		<!-- Increases weight by 12800 and the number of inventory slots by 12. Can be used if the levels of main and dual classes are 87 or higher. -->
@@ -1007,9 +1007,9 @@
 		<skills>
 			<skill id="13411" level="1" /> <!-- Rising Belt -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="25.0" />
-		</for>
+		<stats>
+			<stat type="pDef">25</stat>
+		</stats>
 	</item>
 	<item id="36190" name="Blaze Belt" type="Armor">
 		<!-- Increases weight by 12800 and the number of inventory slots by 18. Can be used if the levels of main and dual classes are 92 or higher. -->
@@ -1027,9 +1027,9 @@
 		<skills>
 			<skill id="13412" level="1" /> <!-- Blaze Belt -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="25.0" />
-		</for>
+		<stats>
+			<stat type="pDef">25</stat>
+		</stats>
 	</item>
 	<item id="36191" name="Kaliel's Wish" type="EtcItem">
 		<!-- Makes you eligible to receive a Kaliel's Blessing event reward token and 1st-place winner item for 1 hour. Can be used only by characters of Lv. 40 or higher who have done the 2nd class transfer. Buff gets deleted upon Subclass/Dual Class change. Temporary event item. -->
@@ -1079,12 +1079,12 @@
 			<skill id="13413" level="1" /> <!-- Shaper Sealed with Heroes' Power -->
 			<skill id="9707" level="1" /> <!-- Heroes' Power -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="685.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">685</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="36194" name="Cutter Sealed with Heroes' Power" type="Weapon">
 		<!-- A weapon with the power of heroes sealed inside. You can acquire a weapon imbued with heroes' power if you have a scroll imbued with heroes' power. Can be used at all levels. Must use No-grade Soulshots/Spiritshots/Blessed Spiritshots. Cannot be used in the Olympiad. 1-day. Temporary event item. -->
@@ -1106,12 +1106,12 @@
 			<skill id="13414" level="1" /> <!-- Cutter Sealed with Heroes' Power -->
 			<skill id="9708" level="1" /> <!-- Heroes' Power -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="752.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">752</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="36195" name="Slasher Sealed with Heroes' Power" type="Weapon">
 		<!-- A weapon with the power of heroes sealed inside. You can acquire a weapon imbued with heroes' power if you have a scroll imbued with heroes' power. Can be used at all levels. Must use No-grade Soulshots/Spiritshots/Blessed Spiritshots. Cannot be used in the Olympiad. 1-day. Temporary event item. -->
@@ -1133,12 +1133,12 @@
 			<skill id="9709" level="1" /> <!-- Heroes' Power -->
 			<skill id="13415" level="1" /> <!-- Slasher Sealed with Heroes' Power -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="916.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">916</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="36196" name="Avenger Sealed with Heroes' Power" type="Weapon">
 		<!-- A weapon with the power of heroes sealed inside. You can acquire a weapon imbued with heroes' power if you have a scroll imbued with heroes' power. Can be used at all levels. Must use No-grade Soulshots/Spiritshots/Blessed Spiritshots. Cannot be used in the Olympiad. 1-day. Temporary event item. -->
@@ -1160,13 +1160,13 @@
 			<skill id="13416" level="1" /> <!-- Avenger Sealed with Heroes' Power -->
 			<skill id="9710" level="1" /> <!-- Heroes' Power -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="752.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">752</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="36197" name="Fighter Sealed with Heroes' Power" type="Weapon">
 		<!-- A weapon with the power of heroes sealed inside. You can acquire a weapon imbued with heroes' power if you have a scroll imbued with heroes' power. Can be used at all levels. Must use No-grade Soulshots/Spiritshots/Blessed Spiritshots. Cannot be used in the Olympiad. 1-day. Temporary event item. -->
@@ -1188,13 +1188,13 @@
 			<skill id="13417" level="1" /> <!-- Fighter Sealed with Heroes' Power -->
 			<skill id="9711" level="1" /> <!-- Heroes' Power -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="916.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">916</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="36198" name="Stormer Sealed with Heroes' Power" type="Weapon">
 		<!-- A weapon with the power of heroes sealed inside. You can acquire a weapon imbued with heroes' power if you have a scroll imbued with heroes' power. Can be used at all levels. Must use No-grade Soulshots/Spiritshots/Blessed Spiritshots. Cannot be used in the Olympiad. 1-day. Temporary event item. -->
@@ -1217,12 +1217,12 @@
 			<skill id="13418" level="1" /> <!-- Stormer Sealed with Heroes' Power -->
 			<skill id="9712" level="1" /> <!-- Heroes' Power -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="752.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">752</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="36199" name="Thrower Sealed with Heroes' Power" type="Weapon">
 		<!-- A weapon with the power of heroes sealed inside. You can acquire a weapon imbued with heroes' power if you have a scroll imbued with heroes' power. Can be used at all levels. Must use No-grade Soulshots/Spiritshots/Blessed Spiritshots. Cannot be used in the Olympiad. 1-day. Temporary event item. -->
@@ -1244,11 +1244,11 @@
 			<skill id="13419" level="1" /> <!-- Thrower Sealed with Heroes' Power -->
 			<skill id="9713" level="1" /> <!-- Heroes' Power -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1481.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1481</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 </list>

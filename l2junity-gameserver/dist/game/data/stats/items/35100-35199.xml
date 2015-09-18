@@ -18,12 +18,12 @@
 			<skill id="13263" level="3" /> <!-- Spear Special Ability -->
 			<skill id="8825" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35101" name="Dark Amaranthine Thrower" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠDamage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Skill Power increases. -->
@@ -42,12 +42,12 @@
 			<skill id="13292" level="3" /> <!-- Bow Special Ability -->
 			<skill id="8826" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1415.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1415</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35102" name="Dark Amaranthine Shooter" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠFocus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. Increases. -->
@@ -66,12 +66,12 @@
 			<skill id="13294" level="3" /> <!-- Crossbow Special Ability -->
 			<skill id="8827" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1274.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1274</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35103" name="Dark Amaranthine Buster" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠAcumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
@@ -90,12 +90,12 @@
 			<skill id="13295" level="3" /> <!-- Magic Sword Special Ability -->
 			<skill id="8828" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="575.0" />
-			<set stat="mAtk" val="417.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">575</stat>
+			<stat type="mAtk">417</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35104" name="Dark Amaranthine Caster" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠEmpower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
@@ -114,13 +114,13 @@
 			<skill id="13299" level="3" /> <!-- Magic One-handed Blunt Special Ability -->
 			<skill id="8829" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="575.0" />
-			<set stat="mAtk" val="417.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">575</stat>
+			<stat type="mAtk">417</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35105" name="Dark Amaranthine Retributer" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠMP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
@@ -139,14 +139,14 @@
 			<skill id="13304" level="3" /> <!-- Magic Two-handed Blunt Special Ability -->
 			<skill id="8830" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="700.0" />
-			<set stat="mAtk" val="459.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">700</stat>
+			<stat type="mAtk">459</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35106" name="Dark Amaranthine Dualsword" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠHaste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
@@ -165,12 +165,12 @@
 			<skill id="13277" level="3" /> <!-- Dualsword Special Ability -->
 			<skill id="8831" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35107" name="Dark Amaranthine Dual Dagger" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠDamage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
@@ -189,12 +189,12 @@
 			<skill id="13282" level="3" /> <!-- Dagger Special Ability -->
 			<skill id="8832" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35108" name="Dark Amaranthine Dual Blunt Weapon" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠFocus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
@@ -213,13 +213,13 @@
 			<skill id="13272" level="3" /> <!-- Dual Blunt Weapon Special Ability -->
 			<skill id="8833" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35109" name="Dark Amaranthine Shaper" name_additional="Guidance" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAccuracy increases by 7.9. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases. -->
@@ -239,12 +239,12 @@
 			<skill id="3573" level="7" /> <!-- Special Ability: Guidance -->
 			<skill id="8820" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="629.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">629</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35110" name="Dark Amaranthine Shaper" name_additional="Haste" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAtk. Spd. Increases by about 15%. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases. -->
@@ -264,12 +264,12 @@
 			<skill id="3564" level="7" /> <!-- Special Ability: Haste -->
 			<skill id="8820" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="629.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">629</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35111" name="Dark Amaranthine Shaper" name_additional="Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 81.9. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases. -->
@@ -289,12 +289,12 @@
 			<skill id="3567" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8820" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="629.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">629</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35112" name="Dark Amaranthine Cutter" name_additional="Haste" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAtk. Spd. Increases by about 15%. Increases damage inflicted during PvP. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
@@ -314,12 +314,12 @@
 			<skill id="3564" level="7" /> <!-- Special Ability: Haste -->
 			<skill id="8821" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35113" name="Dark Amaranthine Cutter" name_additional="Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 78.7. Increases damage inflicted during PvP. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
@@ -339,12 +339,12 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8821" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35114" name="Dark Amaranthine Cutter" name_additional="Health" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nMax HP increases by 25%. Increases damage inflicted during PvP. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
@@ -364,12 +364,12 @@
 			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
 			<skill id="8821" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35115" name="Dark Amaranthine Slasher" name_additional="Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 78.7. Increases damage inflicted during PvP. When enchanted to + 4, P. Atk. additionally increases. -->
@@ -389,12 +389,12 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8822" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35116" name="Dark Amaranthine Slasher" name_additional="Damage Up" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nP. Atk. Increases by 415. Increases damage inflicted during PvP. When enchanted to + 4, P. Atk. additionally increases. -->
@@ -414,12 +414,12 @@
 			<skill id="13062" level="4" /> <!-- Special Ability: Damage Up -->
 			<skill id="8822" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35117" name="Dark Amaranthine Slasher" name_additional="Haste" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAtk. Spd. Increases by about 15%. Increases damage inflicted during PvP. When enchanted to + 4, P. Atk. additionally increases. -->
@@ -439,12 +439,12 @@
 			<skill id="3564" level="7" /> <!-- Special Ability: Haste -->
 			<skill id="8822" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35118" name="Dark Amaranthine Avenger" name_additional="Haste" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAtk. Spd. Increases by about 15%. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases. -->
@@ -464,13 +464,13 @@
 			<skill id="3564" level="7" /> <!-- Special Ability: Haste -->
 			<skill id="8823" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35119" name="Dark Amaranthine Avenger" name_additional="Critical Damage" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nP. Atk. Increases by 1232 during a critical attack. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases. -->
@@ -490,13 +490,13 @@
 			<skill id="3572" level="8" /> <!-- Special Ability: Critical Damage -->
 			<skill id="8823" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35120" name="Dark Amaranthine Avenger" name_additional="Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 78.7. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases. -->
@@ -516,13 +516,13 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8823" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35121" name="Dark Amaranthine Fighter" name_additional="Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 75.5. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
@@ -542,13 +542,13 @@
 			<skill id="3565" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8824" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35122" name="Dark Amaranthine Fighter" name_additional="Damage Up" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nP. Atk. Increases by 415. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
@@ -568,13 +568,13 @@
 			<skill id="13062" level="4" /> <!-- Special Ability: Damage Up -->
 			<skill id="8824" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35123" name="Dark Amaranthine Fighter" name_additional="Haste" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAtk. Spd. Increases by about 15%. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
@@ -594,13 +594,13 @@
 			<skill id="3564" level="7" /> <!-- Special Ability: Haste -->
 			<skill id="8824" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35124" name="Dark Amaranthine Stormer" name_additional="HP Drain" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nRecovers 4% of standard physical damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. When enchanted to + 4, Multi-attack additionally increases. -->
@@ -621,12 +621,12 @@
 			<skill id="13111" level="1" /> <!-- Special Ability: HP Drain -->
 			<skill id="8825" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35125" name="Dark Amaranthine Stormer" name_additional="Guidance" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAccuracy increases by 7.9. Increases damage inflicted during PvP. When enchanted to + 4, Multi-attack additionally increases. -->
@@ -647,12 +647,12 @@
 			<skill id="13110" level="4" /> <!-- Special Ability: Guidance -->
 			<skill id="8825" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35126" name="Dark Amaranthine Stormer" name_additional="Damage Up" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nP. Atk. Increases by 415. Increases damage inflicted during PvP. When enchanted to + 4, Multi-attack additionally increases. -->
@@ -673,12 +673,12 @@
 			<skill id="13109" level="4" /> <!-- Special Ability: Damage Up -->
 			<skill id="8825" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35127" name="Dark Amaranthine Thrower" name_additional="Damage Up" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nP. Atk. Increases by 415. Increases damage inflicted during PvP. When enchanted to + 4, P. Skill Power increases. -->
@@ -698,12 +698,12 @@
 			<skill id="13062" level="4" /> <!-- Special Ability: Damage Up -->
 			<skill id="8826" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1415.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1415</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35128" name="Dark Amaranthine Thrower" name_additional="Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 78.7. Increases damage inflicted during PvP. When enchanted to + 4, P. Skill Power increases. -->
@@ -723,12 +723,12 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8826" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1415.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1415</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35129" name="Dark Amaranthine Thrower" name_additional="Long Blow" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAttack range increases. Increases damage inflicted during PvP. When enchanted to + 4, P. Skill Power increases. -->
@@ -748,12 +748,12 @@
 			<skill id="13061" level="1" /> <!-- Special Ability: Long Blow -->
 			<skill id="8826" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1415.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1415</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35130" name="Dark Amaranthine Shooter" name_additional="Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 78.7. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. Increases. -->
@@ -773,12 +773,12 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8827" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1274.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1274</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35131" name="Dark Amaranthine Shooter" name_additional="Critical Slow" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nChance of casting Slow during a Critical Attack. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. Increases. -->
@@ -799,12 +799,12 @@
 			<skill id="13113" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
 			<skill id="8827" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1274.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1274</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35132" name="Dark Amaranthine Shooter" name_additional="Haste" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAtk. Spd. Increases by about 15%. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. Increases. -->
@@ -824,12 +824,12 @@
 			<skill id="3564" level="7" /> <!-- Special Ability: Haste -->
 			<skill id="8827" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1274.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1274</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35133" name="Dark Amaranthine Buster" name_additional="Acumen" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCasting Spd. Increases by 15%. Increases damage inflicted during PvP. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
@@ -849,12 +849,12 @@
 			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
 			<skill id="8828" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="575.0" />
-			<set stat="mAtk" val="417.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">575</stat>
+			<stat type="mAtk">417</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35134" name="Dark Amaranthine Buster" name_additional="Magic Hold" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\n 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
@@ -875,12 +875,12 @@
 			<skill id="13114" level="1" type="ON_MAGIC_SKILL" type_chance="20" /> <!-- Special Ability: Magic Hold -->
 			<skill id="8828" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="575.0" />
-			<set stat="mAtk" val="417.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">575</stat>
+			<stat type="mAtk">417</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35135" name="Dark Amaranthine Buster" name_additional="Mana Up" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nMax MP increases by 30%. Increases damage inflicted during PvP. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
@@ -900,12 +900,12 @@
 			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
 			<skill id="8828" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="575.0" />
-			<set stat="mAtk" val="417.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">575</stat>
+			<stat type="mAtk">417</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35136" name="Dark Amaranthine Caster" name_additional="Empower" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nM. Atk. Increases by 460. Increases damage inflicted during PvP. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
@@ -925,13 +925,13 @@
 			<skill id="3575" level="8" /> <!-- Special Ability: Empower -->
 			<skill id="8829" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="575.0" />
-			<set stat="mAtk" val="417.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">575</stat>
+			<stat type="mAtk">417</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35137" name="Dark Amaranthine Caster" name_additional="Acumen" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCasting Spd. Increases by 15%. Increases damage inflicted during PvP. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
@@ -951,13 +951,13 @@
 			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
 			<skill id="8829" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="575.0" />
-			<set stat="mAtk" val="417.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">575</stat>
+			<stat type="mAtk">417</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35138" name="Dark Amaranthine Caster" name_additional="Magic Hold" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\n 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
@@ -978,13 +978,13 @@
 			<skill id="13114" level="1" type="ON_MAGIC_SKILL" type_chance="20" /> <!-- Special Ability: Magic Hold -->
 			<skill id="8829" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="575.0" />
-			<set stat="mAtk" val="417.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">575</stat>
+			<stat type="mAtk">417</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35139" name="Dark Amaranthine Retributer" name_additional="MP Regeneration" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nMP Recovery Rate increases. Increases damage inflicted during PvP. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
@@ -1004,14 +1004,14 @@
 			<skill id="3576" level="8" /> <!-- Special Ability: MP Regeneration -->
 			<skill id="8830" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="700.0" />
-			<set stat="mAtk" val="459.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">700</stat>
+			<stat type="mAtk">459</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35140" name="Dark Amaranthine Retributer" name_additional="Acumen" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCasting Spd. Increases by 15%. Increases damage inflicted during PvP. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
@@ -1031,14 +1031,14 @@
 			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
 			<skill id="8830" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="700.0" />
-			<set stat="mAtk" val="459.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">700</stat>
+			<stat type="mAtk">459</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35141" name="Dark Amaranthine Retributer" name_additional="Empower" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nM. Atk. Increases by 460. Increases damage inflicted during PvP. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
@@ -1058,14 +1058,14 @@
 			<skill id="3575" level="8" /> <!-- Special Ability: Empower -->
 			<skill id="8830" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="700.0" />
-			<set stat="mAtk" val="459.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">700</stat>
+			<stat type="mAtk">459</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35142" name="Dark Amaranthine Dualsword" name_additional="Haste" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAtk. Spd. Increases by about 15%. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
@@ -1085,12 +1085,12 @@
 			<skill id="3564" level="7" /> <!-- Special Ability: Haste -->
 			<skill id="8831" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35143" name="Dark Amaranthine Dualsword" name_additional="Damage Up" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nP. Atk. Increases by 415. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
@@ -1110,12 +1110,12 @@
 			<skill id="13062" level="4" /> <!-- Special Ability: Damage Up -->
 			<skill id="8831" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35144" name="Dark Amaranthine Dualsword" name_additional="Health" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nMax HP increases by 25%. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
@@ -1135,12 +1135,12 @@
 			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
 			<skill id="8831" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35145" name="Dark Amaranthine Dual Dagger" name_additional="Damage Up" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nP. Atk. Increases by 415. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
@@ -1160,12 +1160,12 @@
 			<skill id="13062" level="4" /> <!-- Special Ability: Damage Up -->
 			<skill id="8832" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35146" name="Dark Amaranthine Dual Dagger" name_additional="Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 78.7. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
@@ -1185,12 +1185,12 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8832" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35147" name="Dark Amaranthine Dual Dagger" name_additional="Guidance" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAccuracy increases by 7.9. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
@@ -1210,12 +1210,12 @@
 			<skill id="3573" level="7" /> <!-- Special Ability: Guidance -->
 			<skill id="8832" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35148" name="Dark Amaranthine Dual Blunt Weapon" name_additional="Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 78.7. Increases damage inflicted during PvP. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
@@ -1235,13 +1235,13 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8833" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35149" name="Dark Amaranthine Dual Blunt Weapon" name_additional="Guidance" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAccuracy increases by 7.9. Increases damage inflicted during PvP. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
@@ -1261,13 +1261,13 @@
 			<skill id="3573" level="7" /> <!-- Special Ability: Guidance -->
 			<skill id="8833" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35150" name="Dark Amaranthine Dual Blunt Weapon" name_additional="Damage Up" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nP. Atk. Increases by 415. Increases damage inflicted during PvP. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
@@ -1287,13 +1287,13 @@
 			<skill id="13062" level="4" /> <!-- Special Ability: Damage Up -->
 			<skill id="8833" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35151" name="Dark Amaranthine Shaper" name_additional="Guidance + Haste" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAccuracy increases by 8. Atk. Spd. Increases by about 15%. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases. -->
@@ -1314,12 +1314,12 @@
 			<skill id="3564" level="7" /> <!-- Special Ability: Haste -->
 			<skill id="8820" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="629.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">629</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35152" name="Dark Amaranthine Shaper" name_additional="Haste + Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAtk. Spd. Increases by about 15%. Critical increases by 81.9. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases. -->
@@ -1340,12 +1340,12 @@
 			<skill id="3567" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8820" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="629.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">629</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35153" name="Dark Amaranthine Shaper" name_additional="Focus + Guidance" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 79.2. Accuracy increases by 7.9. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases. -->
@@ -1366,12 +1366,12 @@
 			<skill id="3567" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8820" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="629.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">629</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35154" name="Dark Amaranthine Cutter" name_additional="Haste + Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAtk. Spd. Increases by about 15%. Critical increases by 78.7. Increases damage inflicted during PvP. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
@@ -1392,12 +1392,12 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8821" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35155" name="Dark Amaranthine Cutter" name_additional="Focus + Health" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 75.4. Max HP increases by 25%. Increases damage inflicted during PvP. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
@@ -1418,12 +1418,12 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8821" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35156" name="Dark Amaranthine Cutter" name_additional="Health + Haste" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nMax HP increases by 25%. Atk. Spd. Increases by about 15%. Increases damage inflicted during PvP. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
@@ -1444,12 +1444,12 @@
 			<skill id="3564" level="7" /> <!-- Special Ability: Haste -->
 			<skill id="8821" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35157" name="Dark Amaranthine Slasher" name_additional="Focus + Damage" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 78.7. P. Atk. Increases by 415. Increases damage inflicted during PvP. When enchanted to + 4, P. Atk. additionally increases. -->
@@ -1470,12 +1470,12 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8822" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35158" name="Dark Amaranthine Slasher" name_additional="Damage Up + Haste" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nP. Atk. Increases by 415. Atk. Spd. Increases by about 15%. Increases damage inflicted during PvP. When enchanted to + 4, P. Atk. additionally increases. -->
@@ -1496,12 +1496,12 @@
 			<skill id="3564" level="7" /> <!-- Special Ability: Haste -->
 			<skill id="8822" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35159" name="Dark Amaranthine Slasher" name_additional="Haste + Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAtk. Spd. Increases by about 15%. Critical increases by 78.7. Increases damage inflicted during PvP. When enchanted to + 4, P. Atk. additionally increases. -->
@@ -1522,12 +1522,12 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8822" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35160" name="Dark Amaranthine Avenger" name_additional="Haste + Critical Damage" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAtk. Spd. Increases by about 15%. P. Atk. Increases by 1232 during a critical attack. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases. -->
@@ -1548,13 +1548,13 @@
 			<skill id="3564" level="7" /> <!-- Special Ability: Haste -->
 			<skill id="8823" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35161" name="Dark Amaranthine Avenger" name_additional="Critical Damage + Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nP. Atk. Increases by 1232 during a critical attack. Critical increases by 78.7. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases. -->
@@ -1575,13 +1575,13 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8823" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35162" name="Dark Amaranthine Avenger" name_additional="Focus + Haste" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 78.7. Atk. Spd. Increases by about 15%. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases. -->
@@ -1602,13 +1602,13 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8823" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35163" name="Dark Amaranthine Fighter" name_additional="Focus + Damage" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 81.9. P. Atk. Increases by 415. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
@@ -1629,13 +1629,13 @@
 			<skill id="3565" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8824" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35164" name="Dark Amaranthine Fighter" name_additional="Damage Up + Haste" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nP. Atk. Increases by 415. Atk. Spd. Increases by about 15%. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
@@ -1656,13 +1656,13 @@
 			<skill id="3564" level="7" /> <!-- Special Ability: Haste -->
 			<skill id="8824" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35165" name="Dark Amaranthine Fighter" name_additional="Haste + Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAtk. Spd. Increases by about 15%. Critical increases by 75.5. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
@@ -1683,13 +1683,13 @@
 			<skill id="3565" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8824" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35166" name="Dark Amaranthine Stormer" name_additional="HP Drain + Guidance" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nRecovers 4% of standard melee physical damage inflicted upon the enemy as HP. Accuracy increases by 7.9. Increases damage inflicted during PvP. When enchanted to + 4, Multi-attack additionally increases. -->
@@ -1711,12 +1711,12 @@
 			<skill id="13111" level="1" /> <!-- Special Ability: HP Drain -->
 			<skill id="8825" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35167" name="Dark Amaranthine Stormer" name_additional="Guidance + Damage Up" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAccuracy increases by 7.8. P. Atk. Increases by 415. Increases damage inflicted during PvP. When enchanted to + 4, Multi-attack additionally increases. -->
@@ -1738,12 +1738,12 @@
 			<skill id="13109" level="4" /> <!-- Special Ability: Damage Up -->
 			<skill id="8825" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35168" name="Dark Amaranthine Stormer" name_additional="Damage Up + HP Drain" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nP. Atk. Increases by 415. Recovers 4% of standard melee physical damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. When enchanted to + 4, Multi-attack additionally increases. -->
@@ -1765,12 +1765,12 @@
 			<skill id="13109" level="4" /> <!-- Special Ability: Damage Up -->
 			<skill id="8825" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35169" name="Dark Amaranthine Thrower" name_additional="Damage Up + Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nP. Atk. Increases by 415. Critical increases by 78.7. Increases damage inflicted during PvP. When enchanted to + 4, P. Skill Power increases. -->
@@ -1792,12 +1792,12 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8826" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1415.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1415</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35170" name="Dark Amaranthine Thrower" name_additional="Focus + Long Blow" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 78.7. Attack range increases. Increases damage inflicted during PvP. When enchanted to + 4, P. Skill Power increases. -->
@@ -1818,12 +1818,12 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8826" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1415.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1415</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35171" name="Dark Amaranthine Thrower" name_additional="Long Blow + Damage Up" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAttack range increases. P. Atk. Increases by 415. Increases damage inflicted during PvP. When enchanted to + 4, P. Skill Power increases. -->
@@ -1844,12 +1844,12 @@
 			<skill id="13062" level="4" /> <!-- Special Ability: Damage Up -->
 			<skill id="8826" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1415.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1415</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35172" name="Dark Amaranthine Shooter" name_additional="Focus + Critical Slow" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 78.7. Chance of casting Slow during a Critical Attack. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. Increases. -->
@@ -1871,12 +1871,12 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8827" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1274.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1274</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35173" name="Dark Amaranthine Shooter" name_additional="Critical Slow + Haste" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nChance of casting Slow during a Critical Attack. Atk. Spd. Increases by about 15%. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. Increases. -->
@@ -1898,12 +1898,12 @@
 			<skill id="3564" level="7" /> <!-- Special Ability: Haste -->
 			<skill id="8827" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1274.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1274</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35174" name="Dark Amaranthine Shooter" name_additional="Haste + Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAtk. Spd. Increases by about 15%. Critical increases by 78.7. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. Increases. -->
@@ -1924,12 +1924,12 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8827" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1274.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1274</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35175" name="Dark Amaranthine Buster" name_additional="Acumen + Magic Hold" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCasting Spd. Increases by 15%. 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
@@ -1951,12 +1951,12 @@
 			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
 			<skill id="8828" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="575.0" />
-			<set stat="mAtk" val="417.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">575</stat>
+			<stat type="mAtk">417</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35176" name="Dark Amaranthine Buster" name_additional="Magic Hold + Mana Up" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\n20% chance of casting Dryad Root on the target during magic use. Max MP increases by 30%. Increases damage inflicted during PvP. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
@@ -1978,12 +1978,12 @@
 			<skill id="13114" level="1" type="ON_MAGIC_SKILL" type_chance="20" /> <!-- Special Ability: Magic Hold -->
 			<skill id="8828" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="575.0" />
-			<set stat="mAtk" val="417.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">575</stat>
+			<stat type="mAtk">417</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35177" name="Dark Amaranthine Buster" name_additional="Mana Up + Acumen" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nMax MP increases by 30%. Magic Casting Spd. Increases by 15%. Increases damage inflicted during PvP. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
@@ -2004,12 +2004,12 @@
 			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
 			<skill id="8828" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="575.0" />
-			<set stat="mAtk" val="417.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">575</stat>
+			<stat type="mAtk">417</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35178" name="Dark Amaranthine Caster" name_additional="Empower + Acumen" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nM. Atk. Increases by 460. Magic Casting Spd. Increases by 15%. Increases damage inflicted during PvP. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
@@ -2030,13 +2030,13 @@
 			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
 			<skill id="8829" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="575.0" />
-			<set stat="mAtk" val="417.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">575</stat>
+			<stat type="mAtk">417</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35179" name="Dark Amaranthine Caster" name_additional="Acumen + Magic Hold" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCasting Spd. Increases by 15%. 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
@@ -2058,13 +2058,13 @@
 			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
 			<skill id="8829" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="575.0" />
-			<set stat="mAtk" val="417.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">575</stat>
+			<stat type="mAtk">417</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35180" name="Dark Amaranthine Caster" name_additional="Magic Hold + Empower" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\n20% chance of casting Dryad Root on the target during magic use. M. Atk. Increases by 460. Increases damage inflicted during PvP. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
@@ -2086,13 +2086,13 @@
 			<skill id="13114" level="1" type="ON_MAGIC_SKILL" type_chance="20" /> <!-- Special Ability: Magic Hold -->
 			<skill id="8829" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="575.0" />
-			<set stat="mAtk" val="417.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">575</stat>
+			<stat type="mAtk">417</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35181" name="Dark Amaranthine Retributer" name_additional="MP Regeneration + Acumen" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nMP Recovery Rate increases. Magic Casting Spd. Increases by 15%. Increases damage inflicted during PvP. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
@@ -2113,14 +2113,14 @@
 			<skill id="3576" level="8" /> <!-- Special Ability: MP Regeneration -->
 			<skill id="8830" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="700.0" />
-			<set stat="mAtk" val="459.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">700</stat>
+			<stat type="mAtk">459</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35182" name="Dark Amaranthine Retributer" name_additional="Acumen + Empower" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCasting Spd. Increases by 15%. M. Atk. Increases by 460. Increases damage inflicted during PvP. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
@@ -2141,14 +2141,14 @@
 			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
 			<skill id="8830" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="700.0" />
-			<set stat="mAtk" val="459.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">700</stat>
+			<stat type="mAtk">459</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35183" name="Dark Amaranthine Retributer" name_additional="Empower + MP Regeneration" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nM. Atk. Increases by 322. MP Recovery rate increases. Increases damage inflicted during PvP. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
@@ -2169,14 +2169,14 @@
 			<skill id="3576" level="8" /> <!-- Special Ability: MP Regeneration -->
 			<skill id="8830" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="700.0" />
-			<set stat="mAtk" val="459.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">700</stat>
+			<stat type="mAtk">459</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35184" name="Dark Amaranthine Dualsword" name_additional="Haste + Damage Up" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAtk. Spd. Increases by about 15%. P. Atk. Increases by 415. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
@@ -2197,12 +2197,12 @@
 			<skill id="3564" level="7" /> <!-- Special Ability: Haste -->
 			<skill id="8831" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35185" name="Dark Amaranthine Dualsword" name_additional="Damage Up + Health" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nP. Atk. Increases by 457. Max HP increases by 25%. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
@@ -2223,12 +2223,12 @@
 			<skill id="13062" level="4" /> <!-- Special Ability: Damage Up -->
 			<skill id="8831" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35186" name="Dark Amaranthine Dualsword" name_additional="Health + Haste" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nMax HP increases by 25%. Atk. Spd. Increases by about 15%. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
@@ -2250,12 +2250,12 @@
 			<skill id="3564" level="7" /> <!-- Special Ability: Haste -->
 			<skill id="8831" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35187" name="Dark Amaranthine Dual Dagger" name_additional="Damage Up + Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nP. Atk. Increases by 377. Critical increases by 78.7. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
@@ -2276,12 +2276,12 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8832" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35188" name="Dark Amaranthine Dual Dagger" name_additional="Focus + Guidance" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 79.2. Accuracy increases by 7.9. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
@@ -2302,12 +2302,12 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8832" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35189" name="Dark Amaranthine Dual Dagger" name_additional="Guidance + Damage Up" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAccuracy increases by 7.9. P. Atk. Increases by 415. Increases damage inflicted during PvP. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
@@ -2328,12 +2328,12 @@
 			<skill id="13062" level="4" /> <!-- Special Ability: Damage Up -->
 			<skill id="8832" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35190" name="Dark Amaranthine Dual Blunt Weapon" name_additional="Focus + Guidance" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nCritical increases by 79.2. Accuracy increases by 7.9. Increases damage inflicted during PvP. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
@@ -2354,13 +2354,13 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8833" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35191" name="Dark Amaranthine Dual Blunt Weapon" name_additional="Guidance + Damage Up" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nAccuracy increases by 7.8. P. Atk. Increases by 415. Increases damage inflicted during PvP. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
@@ -2381,13 +2381,13 @@
 			<skill id="13062" level="4" /> <!-- Special Ability: Damage Up -->
 			<skill id="8833" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35192" name="Dark Amaranthine Dual Blunt Weapon" name_additional="Damage Up + Focus" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. (Soul Crystal Enhancement)\nP. Atk. Increases by 377. Critical increases by 78.7. Increases damage inflicted during PvP. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
@@ -2408,13 +2408,13 @@
 			<skill id="3566" level="9" /> <!-- Special Ability: Focus -->
 			<skill id="8833" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35193" name="Bloody Amaranthine Shaper" type="Weapon">
 		<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠGuidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
@@ -2433,12 +2433,12 @@
 			<skill id="8849" level="1" /> <!-- PvE Damage Increase -->
 			<skill id="13282" level="3" /> <!-- Dagger Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="629.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">629</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35194" name="Bloody Amaranthine Cutter" type="Weapon">
 		<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠHaste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
@@ -2457,12 +2457,12 @@
 			<skill id="8850" level="1" /> <!-- PvE Damage Increase -->
 			<skill id="13252" level="3" /> <!-- One-handed Sword Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35195" name="Bloody Amaranthine Slasher" type="Weapon">
 		<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠFocus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Atk. additionally increases. -->
@@ -2481,12 +2481,12 @@
 			<skill id="8851" level="1" /> <!-- PvE Damage Increase -->
 			<skill id="13261" level="3" /> <!-- Two-handed Sword Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35196" name="Bloody Amaranthine Avenger" type="Weapon">
 		<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠHaste, Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
@@ -2505,13 +2505,13 @@
 			<skill id="8852" level="1" /> <!-- PvE Damage Increase -->
 			<skill id="13256" level="3" /> <!-- One-handed Blunt Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35197" name="Bloody Amaranthine Fighter" type="Weapon">
 		<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠFocus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
@@ -2530,13 +2530,13 @@
 			<skill id="8853" level="1" /> <!-- PvE Damage Increase -->
 			<skill id="13267" level="3" /> <!-- Fist Weapon Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35198" name="Bloody Amaranthine Stormer" type="Weapon">
 		<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠHP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Multi-attack additionally increases. -->
@@ -2556,12 +2556,12 @@
 			<skill id="8854" level="1" /> <!-- PvE Damage Increase -->
 			<skill id="13263" level="3" /> <!-- Spear Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35199" name="Bloody Amaranthine Thrower" type="Weapon">
 		<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠDamage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Skill Power increases. -->
@@ -2580,11 +2580,11 @@
 			<skill id="8855" level="1" /> <!-- PvE Damage Increase -->
 			<skill id="13292" level="3" /> <!-- Bow Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1415.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1415</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 </list>

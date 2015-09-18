@@ -16,10 +16,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="458000" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
+		<stats>
+			<stat type="pDef">76</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19601" name="Bound Immortal Shoes" name_additional="Magic Type / Robe" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -37,10 +37,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="458000" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
+		<stats>
+			<stat type="pDef">76</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19602" name="Bound Twilight Helmet" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -58,10 +58,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="1665000" />
-		<for>
-			<add order="0" stat="pDef" val="126.0" />
+		<stats>
+			<stat type="pDef">126</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19603" name="Bound Twilight Breastplate" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
@@ -83,10 +83,10 @@
 		<skills>
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="335.0" />
+		<stats>
+			<stat type="pDef">335</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19604" name="Bound Twilight Gaiters" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -105,10 +105,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="2776000" />
-		<for>
-			<add order="0" stat="pDef" val="209.0" />
+		<stats>
+			<stat type="pDef">209</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19605" name="Bound Twilight Gauntlets" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -126,10 +126,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="1110000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
+		<stats>
+			<stat type="pDef">84</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19606" name="Bound Twilight Boots" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -147,10 +147,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="1110000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
+		<stats>
+			<stat type="pDef">84</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19607" name="Bound Twilight Shield" name_additional="Attack Type / Heavy" type="Weapon">
 		<!-- Additionally increases Shield Defense. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -171,10 +171,10 @@
 		<skills>
 			<skill id="8782" level="1" /> <!-- Equip Shield -->
 		</skills>
-		<for>
-			<add stat="sDef" val="458.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">458</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 	<item id="19608" name="Bound Twilight Leather Helmet" name_additional="Assassin Type / Light" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -192,10 +192,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="1665000" />
-		<for>
-			<add order="0" stat="pDef" val="126.0" />
+		<stats>
+			<stat type="pDef">126</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19609" name="Bound Twilight Leather Armor" name_additional="Assassin Type / Light" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
@@ -217,12 +217,12 @@
 		<skills>
 			<skill id="13311" level="3" /> <!-- Light Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="268.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
+		<stats>
+			<stat type="pDef">268</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19610" name="Bound Twilight Leather Leggings" name_additional="Assassin Type / Light" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -241,12 +241,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="2776000" />
-		<for>
-			<add order="0" stat="pDef" val="168.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
+		<stats>
+			<stat type="pDef">168</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19611" name="Bound Twilight Leather Gloves" name_additional="Assassin Type / Light" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -264,10 +264,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="1110000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
+		<stats>
+			<stat type="pDef">84</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19612" name="Bound Twilight Leather Boots" name_additional="Assassin Type / Light" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -285,10 +285,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="1110000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
+		<stats>
+			<stat type="pDef">84</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19613" name="Bound Twilight Circlet" name_additional="Magic Type / Robe" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -306,10 +306,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="1665000" />
-		<for>
-			<add order="0" stat="pDef" val="126.0" />
+		<stats>
+			<stat type="pDef">126</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19614" name="Bound Twilight Tunic" name_additional="Magic Type / Robe" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
@@ -331,12 +331,12 @@
 		<skills>
 			<skill id="13312" level="3" /> <!-- Robe Upper Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="184.0" />
-			<add stat="mDef" val="41.0" />
+		<stats>
+			<stat type="pDef">184</stat>
+			<stat type="mDef">41</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19615" name="Bound Twilight Stockings" name_additional="Magic Type / Robe" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -355,12 +355,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="2776000" />
-		<for>
-			<add order="0" stat="pDef" val="115.0" />
-			<add stat="mDef" val="27.0" />
+		<stats>
+			<stat type="pDef">115</stat>
+			<stat type="mDef">27</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19616" name="Bound Twilight Gloves" name_additional="Magic Type / Robe" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -378,10 +378,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="1110000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
+		<stats>
+			<stat type="pDef">84</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19617" name="Bound Twilight Shoes" name_additional="Magic Type / Robe" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -399,10 +399,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="1110000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
+		<stats>
+			<stat type="pDef">84</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19618" name="Bound Seraph Helmet" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -420,10 +420,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="3593000" />
-		<for>
-			<add order="0" stat="pDef" val="139.0" />
+		<stats>
+			<stat type="pDef">139</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19619" name="Bound Seraph Breastplate" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
@@ -445,10 +445,10 @@
 		<skills>
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="370.0" />
+		<stats>
+			<stat type="pDef">370</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19620" name="Bound Seraph Gaiters" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -467,10 +467,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="5988000" />
-		<for>
-			<add order="0" stat="pDef" val="231.0" />
+		<stats>
+			<stat type="pDef">231</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19621" name="Bound Seraph Gauntlets" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -488,10 +488,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="2395000" />
-		<for>
-			<add order="0" stat="pDef" val="93.0" />
+		<stats>
+			<stat type="pDef">93</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19622" name="Bound Seraph Boots" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -509,10 +509,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="2395000" />
-		<for>
-			<add order="0" stat="pDef" val="93.0" />
+		<stats>
+			<stat type="pDef">93</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19623" name="Bound Seraph Shield" name_additional="Attack Type / Heavy" type="Weapon">
 		<!-- Additionally increases Shield Defense. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -533,10 +533,10 @@
 		<skills>
 			<skill id="8783" level="1" /> <!-- Equip Shield -->
 		</skills>
-		<for>
-			<add stat="sDef" val="505.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">505</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 	<item id="19624" name="Bound Seraph Leather Helmet" name_additional="Assassin Type / Light" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -554,10 +554,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="3593000" />
-		<for>
-			<add order="0" stat="pDef" val="139.0" />
+		<stats>
+			<stat type="pDef">139</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19625" name="Bound Seraph Leather Armor" name_additional="Assassin Type / Light" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
@@ -579,12 +579,12 @@
 		<skills>
 			<skill id="13311" level="3" /> <!-- Light Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="296.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
+		<stats>
+			<stat type="pDef">296</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19626" name="Bound Seraph Leather Leggings" name_additional="Assassin Type / Light" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -603,12 +603,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="5988000" />
-		<for>
-			<add order="0" stat="pDef" val="185.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
+		<stats>
+			<stat type="pDef">185</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19627" name="Bound Seraph Leather Gloves" name_additional="Assassin Type / Light" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -626,10 +626,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="2395000" />
-		<for>
-			<add order="0" stat="pDef" val="93.0" />
+		<stats>
+			<stat type="pDef">93</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19628" name="Bound Seraph Leather Boots" name_additional="Assassin Type / Light" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -647,10 +647,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="2395000" />
-		<for>
-			<add order="0" stat="pDef" val="93.0" />
+		<stats>
+			<stat type="pDef">93</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19629" name="Bound Seraph Circlet" name_additional="Magic Type / Robe" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -668,10 +668,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="3593000" />
-		<for>
-			<add order="0" stat="pDef" val="139.0" />
+		<stats>
+			<stat type="pDef">139</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19630" name="Bound Seraph Tunic" name_additional="Magic Type / Robe" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
@@ -693,12 +693,12 @@
 		<skills>
 			<skill id="13312" level="3" /> <!-- Robe Upper Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="204.0" />
-			<add stat="mDef" val="47.0" />
+		<stats>
+			<stat type="pDef">204</stat>
+			<stat type="mDef">47</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19631" name="Bound Seraph Stockings" name_additional="Magic Type / Robe" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -717,12 +717,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="5988000" />
-		<for>
-			<add order="0" stat="pDef" val="127.0" />
-			<add stat="mDef" val="31.0" />
+		<stats>
+			<stat type="pDef">127</stat>
+			<stat type="mDef">31</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19632" name="Bound Seraph Gloves" name_additional="Magic Type / Robe" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -740,10 +740,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="2395000" />
-		<for>
-			<add order="0" stat="pDef" val="93.0" />
+		<stats>
+			<stat type="pDef">93</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19633" name="Bound Seraph Shoes" name_additional="Magic Type / Robe" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -761,10 +761,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="2395000" />
-		<for>
-			<add order="0" stat="pDef" val="93.0" />
+		<stats>
+			<stat type="pDef">93</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19634" name="Bound Eternal Helmet" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -782,10 +782,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="7917000" />
-		<for>
-			<add order="0" stat="pDef" val="147.0" />
+		<stats>
+			<stat type="pDef">147</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19635" name="Bound Eternal Breastplate" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
@@ -807,10 +807,10 @@
 		<skills>
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="392.0" />
+		<stats>
+			<stat type="pDef">392</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19636" name="Bound Eternal Gaiters" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -829,10 +829,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="13196000" />
-		<for>
-			<add order="0" stat="pDef" val="245.0" />
+		<stats>
+			<stat type="pDef">245</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19637" name="Bound Eternal Gauntlets" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -850,10 +850,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="5278000" />
-		<for>
-			<add order="0" stat="pDef" val="98.0" />
+		<stats>
+			<stat type="pDef">98</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19638" name="Bound Eternal Boots" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -871,10 +871,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="5278000" />
-		<for>
-			<add order="0" stat="pDef" val="98.0" />
+		<stats>
+			<stat type="pDef">98</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19639" name="Bound Eternal Shield" name_additional="Attack Type / Heavy" type="Weapon">
 		<!-- Additionally increases Shield Defense. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -895,10 +895,10 @@
 		<skills>
 			<skill id="8784" level="1" /> <!-- Equip Shield -->
 		</skills>
-		<for>
-			<add stat="sDef" val="536.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">536</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 	<item id="19640" name="Bound Eternal Leather Helmet" name_additional="Assassin Type / Light" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -916,10 +916,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="7917000" />
-		<for>
-			<add order="0" stat="pDef" val="147.0" />
+		<stats>
+			<stat type="pDef">147</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19641" name="Bound Eternal Leather Armor" name_additional="Assassin Type / Light" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
@@ -941,12 +941,12 @@
 		<skills>
 			<skill id="13311" level="3" /> <!-- Light Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="313.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
+		<stats>
+			<stat type="pDef">313</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19642" name="Bound Eternal Leather Leggings" name_additional="Assassin Type / Light" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -965,12 +965,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="13196000" />
-		<for>
-			<add order="0" stat="pDef" val="196.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
+		<stats>
+			<stat type="pDef">196</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19643" name="Bound Eternal Leather Gloves" name_additional="Assassin Type / Light" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -988,10 +988,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="5278000" />
-		<for>
-			<add order="0" stat="pDef" val="98.0" />
+		<stats>
+			<stat type="pDef">98</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19644" name="Bound Eternal Leather Boots" name_additional="Assassin Type / Light" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1009,10 +1009,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="5278000" />
-		<for>
-			<add order="0" stat="pDef" val="98.0" />
+		<stats>
+			<stat type="pDef">98</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19645" name="Bound Eternal Circlet" name_additional="Magic Type / Robe" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1030,10 +1030,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="7917000" />
-		<for>
-			<add order="0" stat="pDef" val="147.0" />
+		<stats>
+			<stat type="pDef">147</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19646" name="Bound Eternal Tunic" name_additional="Magic Type / Robe" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
@@ -1055,12 +1055,12 @@
 		<skills>
 			<skill id="13312" level="3" /> <!-- Robe Upper Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="215.0" />
-			<add stat="mDef" val="49.0" />
+		<stats>
+			<stat type="pDef">215</stat>
+			<stat type="mDef">49</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19647" name="Bound Eternal Stockings" name_additional="Magic Type / Robe" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1079,12 +1079,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="13196000" />
-		<for>
-			<add order="0" stat="pDef" val="134.0" />
-			<add stat="mDef" val="33.0" />
+		<stats>
+			<stat type="pDef">134</stat>
+			<stat type="mDef">33</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19648" name="Bound Eternal Gloves" name_additional="Magic Type / Robe" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1102,10 +1102,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="5278000" />
-		<for>
-			<add order="0" stat="pDef" val="98.0" />
+		<stats>
+			<stat type="pDef">98</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19649" name="Bound Eternal Shoes" name_additional="Magic Type / Robe" type="Armor">
 		<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1123,10 +1123,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="5278000" />
-		<for>
-			<add order="0" stat="pDef" val="98.0" />
+		<stats>
+			<stat type="pDef">98</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19650" name="Blessed Immortal Helmet" name_additional="Attack Type / Heavy" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -1138,10 +1138,10 @@
 		<set name="price" val="8180016" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
-		<for>
-			<add order="0" stat="pDef" val="118.0" />
+		<stats>
+			<stat type="pDef">118</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19651" name="Blessed Immortal Breastplate" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
@@ -1157,10 +1157,10 @@
 		<skills>
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="315.0" />
+		<stats>
+			<stat type="pDef">315</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19652" name="Blessed Immortal Gaiters" name_additional="Attack Type / Heavy" type="Armor">
 		<set name="icon" val="icon.armor_t501_l_i00" />
@@ -1173,10 +1173,10 @@
 		<set name="price" val="13633360" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
-		<for>
-			<add order="0" stat="pDef" val="197.0" />
+		<stats>
+			<stat type="pDef">197</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19653" name="Blessed Immortal Gauntlets" name_additional="Attack Type / Heavy" type="Armor">
 		<set name="icon" val="icon.armor_t501_g_i00" />
@@ -1188,10 +1188,10 @@
 		<set name="price" val="5453344" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
-		<for>
-			<add order="0" stat="pDef" val="78.0" />
+		<stats>
+			<stat type="pDef">78</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19654" name="Blessed Immortal Boots" name_additional="Attack Type / Heavy" type="Armor">
 		<set name="icon" val="icon.armor_t501_b_i00" />
@@ -1203,10 +1203,10 @@
 		<set name="price" val="5453344" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
-		<for>
-			<add order="0" stat="pDef" val="78.0" />
+		<stats>
+			<stat type="pDef">78</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19655" name="Blessed Immortal Shield" name_additional="Attack Type / Heavy" type="Weapon">
 		<!-- Additionally increases Shield Defense. -->
@@ -1221,10 +1221,10 @@
 		<skills>
 			<skill id="8781" level="1" /> <!-- Equip Shield -->
 		</skills>
-		<for>
-			<add stat="sDef" val="431.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">431</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 	<item id="19656" name="Blessed Immortal Leather Helmet" name_additional="Assassin Type / Light" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -1235,10 +1235,10 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="8180016" />
-		<for>
-			<add order="0" stat="pDef" val="118.0" />
+		<stats>
+			<stat type="pDef">118</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19657" name="Blessed Immortal Leather Armor" name_additional="Assassin Type / Light" type="Armor">
 		<!-- When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
@@ -1254,12 +1254,12 @@
 		<skills>
 			<skill id="13311" level="3" /> <!-- Light Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="252.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
+		<stats>
+			<stat type="pDef">252</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19658" name="Blessed Immortal Leather Leggings" name_additional="Assassin Type / Light" type="Armor">
 		<set name="icon" val="icon.armor_t502_l_i00" />
@@ -1271,12 +1271,12 @@
 		<set name="weight" val="1320" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="13633360" />
-		<for>
-			<add order="0" stat="pDef" val="157.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
+		<stats>
+			<stat type="pDef">157</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19659" name="Blessed Immortal Leather Gloves" name_additional="Assassin Type / Light" type="Armor">
 		<set name="icon" val="icon.armor_t502_g_i00" />
@@ -1287,10 +1287,10 @@
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="5453344" />
-		<for>
-			<add order="0" stat="pDef" val="78.0" />
+		<stats>
+			<stat type="pDef">78</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19660" name="Blessed Immortal Leather Boots" name_additional="Assassin Type / Light" type="Armor">
 		<set name="icon" val="icon.armor_t502_b_i00" />
@@ -1301,10 +1301,10 @@
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="5453344" />
-		<for>
-			<add order="0" stat="pDef" val="78.0" />
+		<stats>
+			<stat type="pDef">78</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19661" name="Blessed Immortal Circlet" name_additional="Magic Type / Robe" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
@@ -1315,10 +1315,10 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="8180016" />
-		<for>
-			<add order="0" stat="pDef" val="118.0" />
+		<stats>
+			<stat type="pDef">118</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19662" name="Blessed Immortal Tunic" name_additional="Magic Type / Robe" type="Armor">
 		<!-- When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
@@ -1334,12 +1334,12 @@
 		<skills>
 			<skill id="13312" level="3" /> <!-- Robe Upper Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="173.0" />
-			<add stat="mDef" val="36.0" />
+		<stats>
+			<stat type="pDef">173</stat>
+			<stat type="mDef">36</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19663" name="Blessed Immortal Stockings" name_additional="Magic Type / Robe" type="Armor">
 		<set name="icon" val="icon.armor_t503_l_i00" />
@@ -1351,12 +1351,12 @@
 		<set name="weight" val="850" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="13633360" />
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
-			<add stat="mDef" val="24.0" />
+		<stats>
+			<stat type="pDef">108</stat>
+			<stat type="mDef">24</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19664" name="Blessed Immortal Gloves" name_additional="Magic Type / Robe" type="Armor">
 		<set name="icon" val="icon.armor_t503_g_i00" />
@@ -1367,10 +1367,10 @@
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="5453344" />
-		<for>
-			<add order="0" stat="pDef" val="78.0" />
+		<stats>
+			<stat type="pDef">78</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19665" name="Blessed Immortal Shoes" name_additional="Magic Type / Robe" type="Armor">
 		<set name="icon" val="icon.armor_t503_b_i00" />
@@ -1381,10 +1381,10 @@
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="5453344" />
-		<for>
-			<add order="0" stat="pDef" val="78.0" />
+		<stats>
+			<stat type="pDef">78</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19666" name="Blessed Twilight Helmet" name_additional="Attack Type / Heavy" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -1395,10 +1395,10 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="21308498" />
-		<for>
-			<add order="0" stat="pDef" val="130.0" />
+		<stats>
+			<stat type="pDef">130</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19667" name="Blessed Twilight Breastplate" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
@@ -1415,10 +1415,10 @@
 		<skills>
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="348.0" />
+		<stats>
+			<stat type="pDef">348</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19668" name="Blessed Twilight Gaiters" name_additional="Attack Type / Heavy" type="Armor">
 		<set name="icon" val="icon.armor_t601_l_i00" />
@@ -1430,10 +1430,10 @@
 		<set name="weight" val="3170" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="35514164" />
-		<for>
-			<add order="0" stat="pDef" val="217.0" />
+		<stats>
+			<stat type="pDef">217</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19669" name="Blessed Twilight Gauntlets" name_additional="Attack Type / Heavy" type="Armor">
 		<set name="icon" val="icon.armor_t601_g_i00" />
@@ -1444,10 +1444,10 @@
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="14205666" />
-		<for>
-			<add order="0" stat="pDef" val="87.0" />
+		<stats>
+			<stat type="pDef">87</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19670" name="Blessed Twilight Boots" name_additional="Attack Type / Heavy" type="Armor">
 		<set name="icon" val="icon.armor_t601_b_i00" />
@@ -1458,10 +1458,10 @@
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="14205666" />
-		<for>
-			<add order="0" stat="pDef" val="87.0" />
+		<stats>
+			<stat type="pDef">87</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19671" name="Blessed Twilight Shield" name_additional="Attack Type / Heavy" type="Weapon">
 		<!-- Additionally increases Shield Defense. -->
@@ -1476,10 +1476,10 @@
 		<skills>
 			<skill id="8782" level="1" /> <!-- Equip Shield -->
 		</skills>
-		<for>
-			<add stat="sDef" val="476.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">476</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 	<item id="19672" name="Blessed Twilight Leather Helmet" name_additional="Assassin Type / Light" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -1490,10 +1490,10 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="21308498" />
-		<for>
-			<add order="0" stat="pDef" val="130.0" />
+		<stats>
+			<stat type="pDef">130</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19673" name="Blessed Twilight Leather Armor" name_additional="Assassin Type / Light" type="Armor">
 		<!-- When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
@@ -1509,12 +1509,12 @@
 		<skills>
 			<skill id="13311" level="3" /> <!-- Light Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="278.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
+		<stats>
+			<stat type="pDef">278</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19674" name="Blessed Twilight Leather Leggings" name_additional="Assassin Type / Light" type="Armor">
 		<set name="icon" val="icon.armor_t602_l_i00" />
@@ -1526,12 +1526,12 @@
 		<set name="weight" val="1320" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="35514164" />
-		<for>
-			<add order="0" stat="pDef" val="173.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
+		<stats>
+			<stat type="pDef">173</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19675" name="Blessed Twilight Leather Gloves" name_additional="Assassin Type / Light" type="Armor">
 		<set name="icon" val="icon.armor_t602_g_i00" />
@@ -1542,10 +1542,10 @@
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="14205666" />
-		<for>
-			<add order="0" stat="pDef" val="87.0" />
+		<stats>
+			<stat type="pDef">87</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19676" name="Blessed Twilight Leather Boots" name_additional="Assassin Type / Light" type="Armor">
 		<set name="icon" val="icon.armor_t602_b_i00" />
@@ -1556,10 +1556,10 @@
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="14205666" />
-		<for>
-			<add order="0" stat="pDef" val="87.0" />
+		<stats>
+			<stat type="pDef">87</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19677" name="Blessed Twilight Circlet" name_additional="Magic Type / Robe" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
@@ -1570,10 +1570,10 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="21308498" />
-		<for>
-			<add order="0" stat="pDef" val="130.0" />
+		<stats>
+			<stat type="pDef">130</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19678" name="Blessed Twilight Tunic" name_additional="Magic Type / Robe" type="Armor">
 		<!-- When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
@@ -1589,12 +1589,12 @@
 		<skills>
 			<skill id="13312" level="3" /> <!-- Robe Upper Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="191.0" />
-			<add stat="mDef" val="41.0" />
+		<stats>
+			<stat type="pDef">191</stat>
+			<stat type="mDef">41</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19679" name="Blessed Twilight Stockings" name_additional="Magic Type / Robe" type="Armor">
 		<set name="icon" val="icon.armor_t603_l_i00" />
@@ -1606,12 +1606,12 @@
 		<set name="weight" val="850" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="35514164" />
-		<for>
-			<add order="0" stat="pDef" val="119.0" />
-			<add stat="mDef" val="27.0" />
+		<stats>
+			<stat type="pDef">119</stat>
+			<stat type="mDef">27</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19680" name="Blessed Twilight Gloves" name_additional="Magic Type / Robe" type="Armor">
 		<set name="icon" val="icon.armor_t603_g_i00" />
@@ -1623,10 +1623,10 @@
 		<set name="price" val="14205666" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
-		<for>
-			<add order="0" stat="pDef" val="87.0" />
+		<stats>
+			<stat type="pDef">87</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19681" name="Blessed Twilight Shoes" name_additional="Magic Type / Robe" type="Armor">
 		<set name="icon" val="icon.armor_t603_b_i00" />
@@ -1637,10 +1637,10 @@
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="14205666" />
-		<for>
-			<add order="0" stat="pDef" val="87.0" />
+		<stats>
+			<stat type="pDef">87</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19682" name="Blessed Seraph Helmet" name_additional="Attack Type / Heavy" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -1651,10 +1651,10 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="71863000" />
-		<for>
-			<add order="0" stat="pDef" val="144.0" />
+		<stats>
+			<stat type="pDef">144</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19683" name="Blessed Seraph Breastplate" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
@@ -1670,10 +1670,10 @@
 		<skills>
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="384.0" />
+		<stats>
+			<stat type="pDef">384</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19684" name="Blessed Seraph Gaiters" name_additional="Attack Type / Heavy" type="Armor">
 		<set name="icon" val="icon.armor_t401_l_i00" />
@@ -1685,10 +1685,10 @@
 		<set name="weight" val="3170" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="119772000" />
-		<for>
-			<add order="0" stat="pDef" val="240.0" />
+		<stats>
+			<stat type="pDef">240</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19685" name="Blessed Seraph Gauntlets" name_additional="Attack Type / Heavy" type="Armor">
 		<set name="icon" val="icon.armor_t401_g_i00" />
@@ -1699,10 +1699,10 @@
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="47909000" />
-		<for>
-			<add order="0" stat="pDef" val="96.0" />
+		<stats>
+			<stat type="pDef">96</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19686" name="Blessed Seraph Boots" name_additional="Attack Type / Heavy" type="Armor">
 		<set name="icon" val="icon.armor_t401_b_i00" />
@@ -1713,10 +1713,10 @@
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="47909000" />
-		<for>
-			<add order="0" stat="pDef" val="96.0" />
+		<stats>
+			<stat type="pDef">96</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19687" name="Blessed Seraph Shield" name_additional="Attack Type / Heavy" type="Weapon">
 		<!-- Additionally increases Shield Defense. -->
@@ -1731,10 +1731,10 @@
 		<skills>
 			<skill id="8783" level="1" /> <!-- Equip Shield -->
 		</skills>
-		<for>
-			<add stat="sDef" val="525.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">525</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 	<item id="19688" name="Blessed Seraph Leather Helmet" name_additional="Assassin Type / Light" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -1746,10 +1746,10 @@
 		<set name="price" val="71863000" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
-		<for>
-			<add order="0" stat="pDef" val="144.0" />
+		<stats>
+			<stat type="pDef">144</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19689" name="Blessed Seraph Leather Armor" name_additional="Assassin Type / Light" type="Armor">
 		<!-- When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
@@ -1765,12 +1765,12 @@
 		<skills>
 			<skill id="13311" level="3" /> <!-- Light Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="307.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
+		<stats>
+			<stat type="pDef">307</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19690" name="Blessed Seraph Leather Leggings" name_additional="Assassin Type / Light" type="Armor">
 		<set name="icon" val="icon.armor_t402_l_i00" />
@@ -1783,12 +1783,12 @@
 		<set name="price" val="119772000" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
-		<for>
-			<add order="0" stat="pDef" val="192.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
+		<stats>
+			<stat type="pDef">192</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19691" name="Blessed Seraph Leather Gloves" name_additional="Assassin Type / Light" type="Armor">
 		<set name="icon" val="icon.armor_t402_g_i00" />
@@ -1800,10 +1800,10 @@
 		<set name="price" val="47909000" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
-		<for>
-			<add order="0" stat="pDef" val="96.0" />
+		<stats>
+			<stat type="pDef">96</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19692" name="Blessed Seraph Leather Boots" name_additional="Assassin Type / Light" type="Armor">
 		<set name="icon" val="icon.armor_t402_b_i00" />
@@ -1815,10 +1815,10 @@
 		<set name="price" val="47909000" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
-		<for>
-			<add order="0" stat="pDef" val="96.0" />
+		<stats>
+			<stat type="pDef">96</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19693" name="Blessed Seraph Circlet" name_additional="Magic Type / Robe" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
@@ -1829,10 +1829,10 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="71863000" />
-		<for>
-			<add order="0" stat="pDef" val="144.0" />
+		<stats>
+			<stat type="pDef">144</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19694" name="Blessed Seraph Tunic" name_additional="Magic Type / Robe" type="Armor">
 		<!-- When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
@@ -1848,12 +1848,12 @@
 		<skills>
 			<skill id="13312" level="3" /> <!-- Robe Upper Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="211.0" />
-			<add stat="mDef" val="47.0" />
+		<stats>
+			<stat type="pDef">211</stat>
+			<stat type="mDef">47</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19695" name="Blessed Seraph Stockings" name_additional="Magic Type / Robe" type="Armor">
 		<set name="icon" val="icon.armor_t403_l_i00" />
@@ -1865,12 +1865,12 @@
 		<set name="weight" val="850" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="119772000" />
-		<for>
-			<add order="0" stat="pDef" val="132.0" />
-			<add stat="mDef" val="31.0" />
+		<stats>
+			<stat type="pDef">132</stat>
+			<stat type="mDef">31</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19696" name="Blessed Seraph Gloves" name_additional="Magic Type / Robe" type="Armor">
 		<set name="icon" val="icon.armor_t403_g_i00" />
@@ -1881,10 +1881,10 @@
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="47909000" />
-		<for>
-			<add order="0" stat="pDef" val="96.0" />
+		<stats>
+			<stat type="pDef">96</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19697" name="Blessed Seraph Shoes" name_additional="Magic Type / Robe" type="Armor">
 		<set name="icon" val="icon.armor_t403_b_i00" />
@@ -1895,10 +1895,10 @@
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="47909000" />
-		<for>
-			<add order="0" stat="pDef" val="96.0" />
+		<stats>
+			<stat type="pDef">96</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19698" name="Blessed Eternal Helmet" name_additional="Attack Type / Heavy" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -1909,10 +1909,10 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="158359000" />
-		<for>
-			<add order="0" stat="pDef" val="153.0" />
+		<stats>
+			<stat type="pDef">153</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="19699" name="Blessed Eternal Breastplate" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
@@ -1928,9 +1928,9 @@
 		<skills>
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="408.0" />
+		<stats>
+			<stat type="pDef">408</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 </list>

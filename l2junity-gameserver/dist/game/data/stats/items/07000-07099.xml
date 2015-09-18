@@ -191,12 +191,12 @@
 		<set name="weight" val="4800" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="169000" />
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="230" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">230</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="7015" name="Shield of Castle Pledge" type="Armor">
 		<set name="icon" val="icon.shield_pledge_shield_i00" />
@@ -213,12 +213,12 @@
 				<player castle="-1" />
 			</and>
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="90" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">90</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="7016" name="Seed: Blue Cobol" type="EtcItem">
 		<set name="icon" val="icon.etc_cobol_seed_i00" />
@@ -694,13 +694,13 @@
 		<set name="material" val="STEEL" />
 		<set name="is_freightable" val="false" />
 		<set name="is_dropable" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="7059" name="Golden Festival Mask" type="Armor">
 		<set name="icon" val="icon.accessory_taiwan_i00" />

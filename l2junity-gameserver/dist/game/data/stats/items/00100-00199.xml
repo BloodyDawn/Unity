@@ -16,12 +16,12 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="25" />
-			<set stat="mAtk" val="28" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">25</stat>
+			<stat type="mAtk">28</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="101" name="Scroll of Wisdom" type="Weapon">
 		<set name="icon" val="icon.weapon_scroll_of_wisdom_i00" />
@@ -42,14 +42,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="32" />
-			<set stat="mAtk" val="35" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">32</stat>
+			<stat type="mAtk">35</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="102" name="Round Shield" type="Armor">
 		<set name="icon" val="icon.shield_round_shield_i00" />
@@ -63,12 +63,12 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="79" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">79</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="103" name="Tower Shield" type="Armor">
 		<set name="icon" val="icon.shield_tower_shield_i00" />
@@ -85,12 +85,12 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="190" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">190</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="104" name="Shield of Victory" type="Armor">
 		<set name="icon" val="icon.shield_small_shield_i00" />
@@ -107,12 +107,12 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="216" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">216</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="105" name="Implosion Shield" type="Armor">
 		<set name="icon" val="icon.shield_doom_shield_i00" />
@@ -129,12 +129,12 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="216" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">216</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="106" name="Dark Dragon Shield" type="Armor">
 		<set name="icon" val="icon.shield_dark_dragon_shield_i00" />
@@ -151,12 +151,12 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="230" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">230</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="107" name="Compound Shield" type="Armor">
 		<set name="icon" val="icon.shield_composite_shield_i00" />
@@ -173,12 +173,12 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="190" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">190</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="108" name="Masterpiece Shield" type="Armor">
 		<set name="icon" val="icon.shield_masterpiece_shield_i00" />
@@ -195,12 +195,12 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="230" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">230</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="109" name="Shield of Solar Eclipse" type="Armor">
 		<set name="icon" val="icon.shield_shield_of_sola_eclipse_i00" />
@@ -217,12 +217,12 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="216" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">216</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="110" name="Doom Shield" type="Armor">
 		<set name="icon" val="icon.shield_doom_shield_i00" />
@@ -239,12 +239,12 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="230" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">230</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="111" name="Shield of Pledge" type="Armor">
 		<set name="icon" val="icon.shield_shield_of_pledge_i00" />
@@ -261,12 +261,12 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="216" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">216</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="112" name="Apprentice's Earring" type="Armor">
 		<set name="icon" val="icon.accessary_apprentices_earing_i00" />
@@ -277,9 +277,9 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="8" />
-		<for>
-			<add order="0" stat="mDef" val="11" />
-		</for>
+		<stats>
+			<stat type="mDef">11</stat>
+		</stats>
 	</item>
 	<item id="113" name="Mage Earring" type="Armor">
 		<set name="icon" val="icon.accessary_mage_earing_i00" />
@@ -290,9 +290,9 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="124" />
-		<for>
-			<add order="0" stat="mDef" val="13" />
-		</for>
+		<stats>
+			<stat type="mDef">13</stat>
+		</stats>
 	</item>
 	<item id="114" name="Earring of Strength" type="Armor">
 		<set name="icon" val="icon.accessary_earing_of_strength_i00" />
@@ -303,9 +303,9 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="540" />
-		<for>
-			<add order="0" stat="mDef" val="16" />
-		</for>
+		<stats>
+			<stat type="mDef">16</stat>
+		</stats>
 	</item>
 	<item id="115" name="Earring of Wisdom" type="Armor">
 		<set name="icon" val="icon.accessary_earing_of_wisdom_i00" />
@@ -316,9 +316,9 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="540" />
-		<for>
-			<add order="0" stat="mDef" val="16" />
-		</for>
+		<stats>
+			<stat type="mDef">16</stat>
+		</stats>
 	</item>
 	<item id="116" name="Magic Ring" type="Armor">
 		<set name="icon" val="icon.accessary_magic_ring_i00" />
@@ -329,9 +329,9 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="5" />
-		<for>
-			<add order="0" stat="mDef" val="7" />
-		</for>
+		<stats>
+			<stat type="mDef">7</stat>
+		</stats>
 	</item>
 	<item id="117" name="Corroded Ring of Mana" type="Armor">
 		<set name="icon" val="icon.accessary_ring_of_mana_i00" />
@@ -345,10 +345,10 @@
 		<set name="price" val="62120" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="mDef" val="34" />
+		<stats>
+			<stat type="mDef">34</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="118" name="Magic Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_necklace_of_magic_i00" />
@@ -359,9 +359,9 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="11" />
-		<for>
-			<add order="0" stat="mDef" val="15" />
-		</for>
+		<stats>
+			<stat type="mDef">15</stat>
+		</stats>
 	</item>
 	<item id="119" name="Necklace of Seal" type="Armor">
 		<set name="icon" val="icon.accessary_necklace_of_binding_i00" />
@@ -375,10 +375,10 @@
 		<set name="price" val="86880" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="mDef" val="64" />
+		<stats>
+			<stat type="mDef">64</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="120" name="Sword of Reflection" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_watershadow_i00" />
@@ -395,12 +395,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="24" />
-			<set stat="mAtk" val="17" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">24</stat>
+			<stat type="mAtk">17</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="121" name="Sword of Watershadow" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_watershadow_i00" />
@@ -417,12 +417,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="24" />
-			<set stat="mAtk" val="17" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">24</stat>
+			<stat type="mAtk">17</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="122" name="Handmade Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_handmade_sword_i00" />
@@ -439,12 +439,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="17" />
-			<set stat="mAtk" val="12" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">17</stat>
+			<stat type="mAtk">12</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="123" name="Saber" type="Weapon">
 		<set name="icon" val="icon.weapon_saber_i00" />
@@ -465,14 +465,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="40" />
-			<set stat="mAtk" val="26" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">40</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="124" name="Two-handed Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_two_handed_sword_i00" />
@@ -493,14 +493,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="78" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">78</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="125" name="Spinebone Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_spinebone_sword_i00" />
@@ -521,14 +521,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="51" />
-			<set stat="mAtk" val="32" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">51</stat>
+			<stat type="mAtk">32</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="126" name="Artisan's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_artisans_sword_i00" />
@@ -549,14 +549,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="51" />
-			<set stat="mAtk" val="32" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">51</stat>
+			<stat type="mAtk">32</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="127" name="Crimson Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_crimson_sword_i00" />
@@ -577,14 +577,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="64" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">64</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="128" name="Knight's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_knights_sword_i00" />
@@ -605,14 +605,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="51" />
-			<set stat="mAtk" val="32" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">51</stat>
+			<stat type="mAtk">32</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="129" name="Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_revolution_i00" />
@@ -633,14 +633,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="79" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="130" name="Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_elven_sword_i00" />
@@ -661,14 +661,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="64" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">64</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="131" name="Spirit Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_spirits_sword_i00" />
@@ -689,14 +689,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="132" name="Ultimate Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_limit_i00" />
@@ -717,14 +717,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="133" name="Raid Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_raid_sword_i00" />
@@ -745,14 +745,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="134" name="Sword of Nightmare" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_nightmare_i00" />
@@ -773,14 +773,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="135" name="Samurai Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_samurai_longsword_i00" />
@@ -802,14 +802,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="156" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">156</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="136" name="(Not in Use)" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
@@ -959,14 +959,14 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="175" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="143" name="Sword of Mystic" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_mystic_i00" />
@@ -987,14 +987,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="43" />
-			<set stat="mAtk" val="45" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">43</stat>
+			<stat type="mAtk">45</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="144" name="Sword of Occult" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_occult_i00" />
@@ -1015,14 +1015,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="43" />
-			<set stat="mAtk" val="45" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">43</stat>
+			<stat type="mAtk">45</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="145" name="Sword of Whispering Death" type="Weapon">
 		<set name="icon" val="icon.weapon_deathbreath_sword_i00" />
@@ -1043,14 +1043,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="111" />
-			<set stat="mAtk" val="101" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="146" name="Ghoulbane" type="Weapon">
 		<set name="icon" val="icon.weapon_falchion_i00" />
@@ -1071,14 +1071,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="140" />
-			<set stat="mAtk" val="122" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">140</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="147" name="Tear of Darkness" type="Weapon">
 		<set name="icon" val="icon.weapon_shamshir_i00" />
@@ -1099,14 +1099,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="143" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="148" name="Sword of Valhalla" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_valhalla_i00" />
@@ -1128,14 +1128,14 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
-		<for>
-			<set stat="pAtk" val="140" />
-			<set stat="mAtk" val="122" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">140</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="149" name="Corroded Sword of Life" type="Weapon">
 		<set name="icon" val="icon.weapon_needle_wolverine_i00" />
@@ -1156,14 +1156,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="143" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="150" name="Elemental Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_elemental_sword_i00" />
@@ -1184,14 +1184,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="143" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="151" name="Sword of Miracles" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_miracle_i00" />
@@ -1213,14 +1213,14 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
-		<for>
-			<set stat="pAtk" val="186" />
-			<set stat="mAtk" val="152" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">186</stat>
+			<stat type="mAtk">152</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="152" name="Heavy Chisel" type="Weapon">
 		<set name="icon" val="icon.weapon_heavy_chisel_i00" />
@@ -1237,13 +1237,13 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="10" />
-			<set stat="mAtk" val="8" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">10</stat>
+			<stat type="mAtk">8</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="153" name="Sickle" type="Weapon">
 		<set name="icon" val="icon.weapon_sickle_i00" />
@@ -1260,13 +1260,13 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="12" />
-			<set stat="mAtk" val="9" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">12</stat>
+			<stat type="mAtk">9</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="154" name="Dwarven Mace" type="Weapon">
 		<set name="icon" val="icon.weapon_dwarven_mace_i00" />
@@ -1283,13 +1283,13 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="17" />
-			<set stat="mAtk" val="12" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">17</stat>
+			<stat type="mAtk">12</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="155" name="Flanged Mace" type="Weapon">
 		<set name="icon" val="icon.weapon_buzdygan_i00" />
@@ -1306,13 +1306,13 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="156" name="Hand Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_hand_axe_i00" />
@@ -1332,15 +1332,15 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="40" />
-			<set stat="mAtk" val="26" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">40</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="157" name="Spiked Club" type="Weapon">
 		<set name="icon" val="icon.weapon_spike_club_i00" />
@@ -1360,15 +1360,15 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="64" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">64</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="158" name="Tarbar" type="Weapon">
 		<set name="icon" val="icon.weapon_tarbar_i00" />
@@ -1388,15 +1388,15 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="79" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="159" name="Bonebreaker" type="Weapon">
 		<set name="icon" val="icon.weapon_bonebreaker_i00" />
@@ -1416,15 +1416,15 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="92" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="160" name="Battle Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_battle_axe_i00" />
@@ -1445,15 +1445,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="161" name="Silver Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_war_pick_i00" />
@@ -1473,15 +1473,15 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="162" name="War Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_war_axe_i00" />
@@ -1501,15 +1501,15 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="163" name="(Not in Use)" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
@@ -1552,15 +1552,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="232" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">232</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="165" name="Corroded Hermuncus' Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_basalt_battlehammer_i00" />
@@ -1580,15 +1580,15 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="166" name="Heavy Mace" type="Weapon">
 		<set name="icon" val="icon.weapon_heavy_mace_i00" />
@@ -1608,15 +1608,15 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="40" />
-			<set stat="mAtk" val="26" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">40</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="167" name="Scalpel" type="Weapon">
 		<set name="icon" val="icon.weapon_scalpel_i00" />
@@ -1636,15 +1636,15 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="40" />
-			<set stat="mAtk" val="26" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">40</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="168" name="Work Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_work_hammer_i00" />
@@ -1664,15 +1664,15 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="40" />
-			<set stat="mAtk" val="26" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">40</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="169" name="Skull Breaker" type="Weapon">
 		<set name="icon" val="icon.weapon_skull_breaker_i00" />
@@ -1692,15 +1692,15 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="79" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="170" name="Agathion - Angry Devil Pack (7-day) (Event)" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i02" />
@@ -1742,15 +1742,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="194" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">194</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="172" name="Heavy Bone Club" type="Weapon">
 		<set name="icon" val="icon.weapon_heavy_bone_club_i00" />
@@ -1770,15 +1770,15 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="79" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="173" name="Skull Graver" type="Weapon">
 		<set name="icon" val="icon.weapon_skull_graver_i00" />
@@ -1799,15 +1799,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="174" name="Nirvana Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_nirvana_axe_i00" />
@@ -1828,15 +1828,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="111" />
-			<set stat="mAtk" val="101" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="175" name="Art of Battle Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_art_of_battle_axe_i00" />
@@ -1857,15 +1857,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="194" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">194</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="176" name="Apprentice's Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_staff_i00" />
@@ -1883,13 +1883,13 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="23" />
-			<set stat="mAtk" val="24" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">23</stat>
+			<stat type="mAtk">24</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="177" name="Mage Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_staff_i00" />
@@ -1907,13 +1907,13 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="31" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">30</stat>
+			<stat type="mAtk">31</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="178" name="Bone Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_staff_i00" />
@@ -1934,15 +1934,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="39" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">39</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="179" name="Mace of Prayer" type="Weapon">
 		<set name="icon" val="icon.weapon_mace_of_prayer_i00" />
@@ -1963,15 +1963,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="41" />
-			<set stat="mAtk" val="43" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">41</stat>
+			<stat type="mAtk">43</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="180" name="Mace of Judgment" type="Weapon">
 		<set name="icon" val="icon.weapon_mace_of_judgment_i00" />
@@ -1992,15 +1992,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="41" />
-			<set stat="mAtk" val="43" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">41</stat>
+			<stat type="mAtk">43</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="181" name="Mace of Miracle" type="Weapon">
 		<set name="icon" val="icon.weapon_mace_of_miracle_i00" />
@@ -2021,15 +2021,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="41" />
-			<set stat="mAtk" val="43" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">41</stat>
+			<stat type="mAtk">43</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="182" name="Doom Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_hammer_i00" />
@@ -2050,15 +2050,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="41" />
-			<set stat="mAtk" val="43" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">41</stat>
+			<stat type="mAtk">43</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="183" name="Mystic Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_mystic_staff_i00" />
@@ -2079,15 +2079,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="50" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">50</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="184" name="Conjuror's Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_conjure_staff_i00" />
@@ -2109,15 +2109,15 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="50" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">50</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="185" name="Staff of Mana" type="Weapon">
 		<set name="icon" val="icon.weapon_staff_of_mana_i00" />
@@ -2139,15 +2139,15 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="50" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">50</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="186" name="Staff of Magic" type="Weapon">
 		<set name="icon" val="icon.weapon_staff_of_magicpower_i00" />
@@ -2168,15 +2168,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="62" />
-			<set stat="mAtk" val="57" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">62</stat>
+			<stat type="mAtk">57</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="187" name="Atuba Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_atuba_hammer_i00" />
@@ -2197,15 +2197,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="90" />
-			<set stat="mAtk" val="79" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="188" name="Ghost Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_ghost_staff_i00" />
@@ -2226,15 +2226,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="90" />
-			<set stat="mAtk" val="79" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="189" name="Staff of Life" type="Weapon">
 		<set name="icon" val="icon.weapon_life_stick_i00" />
@@ -2256,15 +2256,15 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="74" />
-			<set stat="mAtk" val="72" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">74</stat>
+			<stat type="mAtk">72</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="190" name="Atuba Mace" type="Weapon">
 		<set name="icon" val="icon.weapon_atuba_mace_i00" />
@@ -2286,15 +2286,15 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="90" />
-			<set stat="mAtk" val="79" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="191" name="Heavy Doom Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_heavy_doom_hammer_i00" />
@@ -2315,15 +2315,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="103" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">103</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="192" name="Crystal Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_crystal_staff_i00" />
@@ -2345,15 +2345,15 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="103" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">103</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="193" name="Stick of Faith" type="Weapon">
 		<set name="icon" val="icon.weapon_stick_of_faith_i00" />
@@ -2374,15 +2374,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="85" />
-			<set stat="mAtk" val="81" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">85</stat>
+			<stat type="mAtk">81</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="194" name="Heavy Doom Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_heavy_doom_axe_i00" />
@@ -2403,15 +2403,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="103" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">103</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="195" name="Cursed Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_cursed_staff_i00" />
@@ -2432,15 +2432,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="119" />
-			<set stat="mAtk" val="100" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">119</stat>
+			<stat type="mAtk">100</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="196" name="Stick of Eternity" type="Weapon">
 		<set name="icon" val="icon.weapon_stick_of_eternity_i00" />
@@ -2461,15 +2461,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="111" />
-			<set stat="mAtk" val="101" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="197" name="Paradia Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_paradia_staff_i00" />
@@ -2490,15 +2490,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="135" />
-			<set stat="mAtk" val="111" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">135</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="198" name="Inferno Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_inferno_staff_i00" />
@@ -2519,15 +2519,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="135" />
-			<set stat="mAtk" val="111" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">135</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="199" name="Pa'agrio Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_paagrio_hammer_i00" />
@@ -2548,14 +2548,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="135" />
-			<set stat="mAtk" val="111" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">135</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 </list>

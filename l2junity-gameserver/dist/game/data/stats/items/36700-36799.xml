@@ -263,12 +263,12 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="weight" val="1420" />
-		<for>
-			<set stat="pAtk" val="107.0" />
-			<set stat="mAtk" val="68.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="36718" name="Augmentation Practice Spirit Stone (46)" type="EtcItem">
 		<!-- Temporary Life Stone for learning about augmentation. -->
@@ -321,12 +321,12 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="weight" val="1420" />
-		<for>
-			<set stat="pAtk" val="107.0" />
-			<set stat="mAtk" val="68.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="36721" name="Practice Green Soul Crystal - Stage 5" type="EtcItem">
 		<!-- Green crystal for practice containing the light of absorbed souls. Stage 5. Once saturated, it bestows special abilities on a weapon. -->
@@ -377,12 +377,12 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="weight" val="1430" />
-		<for>
-			<set stat="pAtk" val="107.0" />
-			<set stat="mAtk" val="68.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="36724" name="Practice Leather Belt" type="Armor">
 		<!-- One can attach a function using Practice Magic Pin (C-grade). -->
@@ -401,10 +401,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="500" />
-		<for>
-			<add order="0" stat="pDef" val="10.0" />
+		<stats>
+			<stat type="pDef">10</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="36725" name="Practice Magic Pin (C-grade)" type="EtcItem">
 		<!-- Magic Pin from Weaver Wolf Kanolre. You can have it attached to a belt through Weaver Wolf Kanolre. -->
@@ -437,10 +437,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="500" />
-		<for>
-			<add order="0" stat="pDef" val="10.0" />
+		<stats>
+			<stat type="pDef">10</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="36727" name="Theor's Orders" type="EtcItem">
 		<!-- Additional quest item (to be changed according to settings) -->

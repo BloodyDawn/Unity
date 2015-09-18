@@ -69,9 +69,9 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="11" />
-		<for>
-			<add order="0" stat="mDef" val="15" />
-		</for>
+		<stats>
+			<stat type="mDef">15</stat>
+		</stats>
 	</item>
 	<item id="1507" name="Necklace of Valor" type="Armor">
 		<set name="icon" val="icon.accessary_necklace_of_valor_i00" />
@@ -82,9 +82,9 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="720" />
-		<for>
-			<add order="0" stat="mDef" val="21" />
-		</for>
+		<stats>
+			<stat type="mDef">21</stat>
+		</stats>
 	</item>
 	<item id="1508" name="Ring of Raccoon" type="Armor">
 		<set name="icon" val="icon.accessary_ring_of_raccoon_i00" />
@@ -95,9 +95,9 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="360" />
-		<for>
-			<add order="0" stat="mDef" val="11" />
-		</for>
+		<stats>
+			<stat type="mDef">11</stat>
+		</stats>
 	</item>
 	<item id="1509" name="Ring of Firefly" type="Armor">
 		<set name="icon" val="icon.accessary_ring_of_firefly_i00" />
@@ -108,9 +108,9 @@
 		<set name="weight" val="150" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="360" />
-		<for>
-			<add order="0" stat="mDef" val="11" />
-		</for>
+		<stats>
+			<stat type="mDef">11</stat>
+		</stats>
 	</item>
 	<item id="1510" name="Butcher's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_orcish_sword_i00" />
@@ -127,12 +127,12 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="13" />
-			<set stat="mAtk" val="10" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">13</stat>
+			<stat type="mAtk">10</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="1511" name="Silversmith Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_iron_hammer_i00" />
@@ -149,13 +149,13 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="13" />
-			<set stat="mAtk" val="10" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">13</stat>
+			<stat type="mAtk">10</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="1512" name="Spellbook: Confusion" type="EtcItem">
 		<set name="icon" val="icon.etc_spell_books_defighter_i00" />

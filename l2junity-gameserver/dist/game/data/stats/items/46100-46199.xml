@@ -234,12 +234,12 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="weight" val="300" />
-		<for>
-			<set stat="pAtk" val="5.0" />
-			<set stat="mAtk" val="5.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">5</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="46132" name="Blackbird Seal" type="EtcItem">
 		<!-- Seal that proves that one is a member of the Blackbird Clan. The seal proves that one is a member of the clan or is someone trusted by the clan. -->
@@ -982,9 +982,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="130" />
-		<for>
-			<add order="0" stat="pDef" val="28.0" />
-		</for>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
 	</item>
 	<item id="46194" name="Reflect Magic T-shirt" type="Armor">
 		<!-- Magic shirt for M. Def. Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +4 or more, passive and stats are increased. When enchanted to +5 or more, a M. Def. effect is given. -->
@@ -999,9 +999,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="130" />
-		<for>
-			<add order="0" stat="pDef" val="28.0" />
-		</for>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
 	</item>
 	<item id="46195" name="Shiny Elemental T-shirt Pack" type="EtcItem">
 		<!-- Double-click to get 1 Shiny Elemental Shirt and 10 Elemental Shirt Enchant Scrolls. -->

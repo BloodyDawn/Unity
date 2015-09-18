@@ -147,9 +147,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="25.0" />
-		</for>
+		<stats>
+			<stat type="pDef">25</stat>
+		</stats>
 	</item>
 	<item id="22612" name="XP Rune III (Lv. 1-100+) 30% Pack (3-hour)" type="EtcItem">
 		<!-- Pack containing XP Rune III (Lv. 1-99) 30% (3-hour). Cannot be exchanged once open. -->
@@ -637,12 +637,12 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="144" />
-		<for>
-			<set stat="pAtk" val="92.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="22651" name="Emerald Weapon: Dagger" type="Weapon">
 		<!-- Emerald Weapon. Dagger form. Basic Emerald Weapon Appearance Stone. -->
@@ -660,12 +660,12 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="106" />
-		<for>
-			<set stat="pAtk" val="80.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">80</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="22652" name="Emerald Weapon: Two-handed Sword" type="Weapon">
 		<!-- Emerald Weapon. Two-handed sword form. Basic Emerald Weapon Appearance Stone. -->
@@ -683,12 +683,12 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="209" />
-		<for>
-			<set stat="pAtk" val="112.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">112</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="22653" name="Emerald Weapon: Fist Weapon" type="Weapon">
 		<!-- Emerald Weapon. Fist weapon form. Basic Emerald Weapon Appearance Stone. -->
@@ -706,13 +706,13 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="152" />
-		<for>
-			<set stat="pAtk" val="112.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="4.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">112</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">4</stat>
+		</stats>
 	</item>
 	<item id="22654" name="Emerald Weapon: Spear" type="Weapon">
 		<!-- Emerald Weapon. Spear form. Basic Emerald Weapon Appearance Stone. -->
@@ -733,12 +733,12 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="92.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="22655" name="Emerald Weapon: Bow" type="Weapon">
 		<!-- Emerald Weapon. Bow form. Basic Emerald Weapon Appearance Stone. -->
@@ -756,12 +756,12 @@
 		<set name="soulshots" val="6" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="181" />
-		<for>
-			<set stat="pAtk" val="191.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">191</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="22656" name="Emerald Weapon: Crossbow" type="Weapon">
 		<!-- Emerald Weapon. Crossbow form. Basic Emerald Weapon Appearance Stone. -->
@@ -779,12 +779,12 @@
 		<set name="soulshots" val="6" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="181" />
-		<for>
-			<set stat="pAtk" val="117.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="303.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">117</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
 	</item>
 	<item id="22657" name="Emerald Weapon: One-handed Blunt Weapon" type="Weapon">
 		<!-- Emerald Weapon. One-handed blunt form. Basic Emerald Weapon Appearance Stone. -->
@@ -802,13 +802,13 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="172" />
-		<for>
-			<set stat="pAtk" val="92.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="4.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">4</stat>
+		</stats>
 	</item>
 	<item id="22658" name="Emerald Weapon: Two-handed Blunt Weapon" type="Weapon">
 		<!-- Emerald Weapon. Two-handed blunt form. Basic Emerald Weapon Appearance Stone. -->
@@ -826,13 +826,13 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="101" />
-		<for>
-			<set stat="pAtk" val="90.0" />
-			<set stat="mAtk" val="79.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="4.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">4</stat>
+		</stats>
 	</item>
 	<item id="22659" name="Emerald Weapon: One-handed Magic Blunt Weapon" type="Weapon">
 		<!-- Emerald Weapon. One-handed magic blunt form. Basic Emerald Weapon Appearance Stone. -->
@@ -850,13 +850,13 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="172" />
-		<for>
-			<set stat="pAtk" val="92.0" />
-			<set stat="mAtk" val="54.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="4.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">4</stat>
+		</stats>
 	</item>
 	<item id="22660" name="Emerald Weapon: Two-handed Magic Blunt Weapon" type="Weapon">
 		<!-- Emerald Weapon. Two-handed magic blunt form. Basic Emerald Weapon Appearance Stone. -->
@@ -874,13 +874,13 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="101" />
-		<for>
-			<set stat="pAtk" val="152.0" />
-			<set stat="mAtk" val="122.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="4.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">152</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">4</stat>
+		</stats>
 	</item>
 	<item id="22661" name="Emerald Weapon: Dualsword" type="Weapon">
 		<!-- Emerald Weapon. Dualsword form. Basic Emerald Weapon Appearance Stone. -->
@@ -898,12 +898,12 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="247" />
-		<for>
-			<set stat="pAtk" val="107.0" />
-			<set stat="mAtk" val="51.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="22662" name="Emerald Weapon: Dual Dagger" type="Weapon">
 		<!-- Emerald Weapon. Dual dagger form. Basic Emerald Weapon Appearance Stone. -->
@@ -921,12 +921,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="205" />
-		<for>
-			<set stat="pAtk" val="107.0" />
-			<set stat="mAtk" val="51.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="22663" name="Emerald Weapon: Dual Blunt Weapon" type="Weapon">
 		<!-- Emerald Weapon. Dual blunt form. Basic Emerald Weapon Appearance Stone. -->
@@ -944,13 +944,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="250" />
-		<for>
-			<set stat="pAtk" val="125.0" />
-			<set stat="mAtk" val="186.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="4.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">125</stat>
+			<stat type="mAtk">186</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">4</stat>
+		</stats>
 	</item>
 	<item id="22664" name="Emerald Weapon: Shield" type="Weapon">
 		<!-- Emerald Weapon. Shield form. Basic Emerald Weapon Appearance Stone. -->
@@ -965,12 +965,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="200" />
-		<for>
-			<add order="0" stat="pDef" val="25.0" />
-			<add stat="sDef" val="216.0" />
-			<add stat="rShld" val="20.0" />
+		<stats>
+			<stat type="pDef">25</stat>
+			<stat type="sDef">216</stat>
+			<stat type="rShld">20</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="22665" name="Emerald Weapon: Sigil" type="Armor">
 		<!-- Emerald Weapon. Sigil form. Basic Emerald Weapon Appearance Stone. -->
@@ -986,10 +986,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="100" />
-		<for>
-			<add stat="sDef" val="47.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">47</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 	<item id="22666" name="Emerald Weapon Appearance Stone: Sword" type="EtcItem">
 		<!-- Changes the appearance of a one-handed sword to that of an Emerald weapon. -->

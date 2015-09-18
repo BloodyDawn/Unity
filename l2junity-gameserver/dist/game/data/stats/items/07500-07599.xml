@@ -1017,12 +1017,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="7561" name="Fishing Manual" type="EtcItem">
 		<set name="icon" val="icon.etc_spellbook_blue_i00" />
@@ -1263,15 +1263,15 @@
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BOW" />
-		<for>
-			<set stat="pAtk" val="581" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">581</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="7576" name="Draconic Bow" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_draconic_bow_i01" />
@@ -1300,15 +1300,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="581" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">581</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="7577" name="Draconic Bow" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_draconic_bow_i01" />
@@ -1336,15 +1336,15 @@
 		<skills>
 			<skill id="3567" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="581" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">581</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="7578" name="Draconic Bow" name_additional="Critical Slow" type="Weapon">
 		<set name="icon" val="icon.weapon_draconic_bow_i01" />
@@ -1372,15 +1372,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3574" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="581" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">581</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="7579" name="Draconic Bow Shaft" type="EtcItem">
 		<set name="icon" val="icon.etc_branch_gold_i00" />

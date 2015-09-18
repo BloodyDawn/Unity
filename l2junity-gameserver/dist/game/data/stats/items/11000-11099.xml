@@ -23,15 +23,15 @@
 			<skill id="3891" level="1" /> <!-- Blunt Weapon of Boost HP -->
 			<skill id="3048" level="1" /> <!-- Special Ability: Conversion -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="155" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">155</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11001" name="Colichemarde - Earth" type="Weapon">
 		<set name="icon" val="icon.weapon_colichemarde_i00" />
@@ -59,15 +59,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="176" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">176</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11002" name="Colichemarde - Earth" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_colichemarde_i01" />
@@ -96,15 +96,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="176" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">176</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11003" name="Colichemarde - Earth" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_colichemarde_i01" />
@@ -133,15 +133,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="176" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">176</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11004" name="Colichemarde - Earth" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_colichemarde_i01" />
@@ -170,15 +170,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="176" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">176</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11005" name="Wizard's Tear - Cleverness" type="Weapon">
 		<set name="icon" val="icon.weapon_tears_of_wizard_i00" />
@@ -202,14 +202,14 @@
 		<skills>
 			<skill id="3853" level="1" /> <!-- Sword of Mana Regeneration -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="155" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">155</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11006" name="Wizard's Tear - Cleverness" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_tears_of_wizard_i01" />
@@ -234,14 +234,14 @@
 			<skill id="3853" level="1" /> <!-- Sword of Mana Regeneration -->
 			<skill id="3047" level="1" /> <!-- Special Ability: Acumen -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="155" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">155</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11007" name="Wizard's Tear - Cleverness" name_additional="M. Atk." type="Weapon">
 		<set name="icon" val="icon.weapon_tears_of_wizard_i01" />
@@ -266,14 +266,14 @@
 			<skill id="3853" level="1" /> <!-- Sword of Mana Regeneration -->
 			<skill id="3077" level="6" /> <!-- Special Ability: M. Atk. -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="155" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">155</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11008" name="Wizard's Tear - Cleverness" name_additional="Conversion" type="Weapon">
 		<set name="icon" val="icon.weapon_tears_of_wizard_i01" />
@@ -298,14 +298,14 @@
 			<skill id="3853" level="1" /> <!-- Sword of Mana Regeneration -->
 			<skill id="3048" level="1" /> <!-- Special Ability: Conversion -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="155" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">155</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11009" name="Bow of Peril - Earth" type="Weapon">
 		<set name="icon" val="icon.weapon_hazard_bow_i00" />
@@ -331,15 +331,15 @@
 		<skills>
 			<skill id="3867" level="1" /> <!-- Bow of Boost HP -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="400" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">400</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11010" name="Bow of Peril - Earth" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_hazard_bow_i01" />
@@ -366,15 +366,15 @@
 			<skill id="3867" level="1" /> <!-- Bow of Boost HP -->
 			<skill id="3008" level="6" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="400" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">400</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11011" name="Bow of Peril - Earth" name_additional="Quick Recovery" type="Weapon">
 		<set name="icon" val="icon.weapon_hazard_bow_i01" />
@@ -400,15 +400,15 @@
 		<skills>
 			<skill id="3867" level="1" /> <!-- Bow of Boost HP -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="400" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">400</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11012" name="Bow of Peril - Earth" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_hazard_bow_i01" />
@@ -436,15 +436,15 @@
 			<skill id="3867" level="1" /> <!-- Bow of Boost HP -->
 			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="400" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">400</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11013" name="Hell Hound - Earth" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_hound_i00" />
@@ -472,15 +472,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="245" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">245</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11014" name="Hell Hound - Earth" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_hound_i01" />
@@ -509,15 +509,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="245" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">245</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11015" name="Hell Hound - Earth" name_additional="Quick Recovery" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_hound_i01" />
@@ -545,15 +545,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="245" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">245</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11016" name="Hell Hound - Earth" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_hell_hound_i01" />
@@ -582,15 +582,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="245" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">245</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11017" name="Dasparion's Staff - Hail" type="Weapon">
 		<set name="icon" val="icon.weapon_dasparions_staff_i00" />
@@ -614,15 +614,15 @@
 		<skills>
 			<skill id="3899" level="2" /> <!-- Staff of Empower -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="207" />
-			<set stat="mAtk" val="157" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">207</stat>
+			<stat type="mAtk">157</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11018" name="Dasparion's Staff - Hail" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_dasparions_staff_i01" />
@@ -647,15 +647,15 @@
 			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
 			<skill id="3899" level="2" /> <!-- Staff of Empower -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="207" />
-			<set stat="mAtk" val="157" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">207</stat>
+			<stat type="mAtk">157</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11019" name="Dasparion's Staff - Hail" name_additional="Conversion" type="Weapon">
 		<set name="icon" val="icon.weapon_dasparions_staff_i01" />
@@ -680,15 +680,15 @@
 			<skill id="3048" level="2" /> <!-- Special Ability: Conversion -->
 			<skill id="3899" level="2" /> <!-- Staff of Empower -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="207" />
-			<set stat="mAtk" val="157" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">207</stat>
+			<stat type="mAtk">157</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11020" name="Dasparion's Staff - Hail" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_dasparions_staff_i01" />
@@ -713,15 +713,15 @@
 			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
 			<skill id="3899" level="2" /> <!-- Staff of Empower -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="207" />
-			<set stat="mAtk" val="157" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">207</stat>
+			<stat type="mAtk">157</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11021" name="Doomchanter - Concentration" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_singer_i00" />
@@ -749,15 +749,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="270" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">270</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11022" name="Doomchanter - Concentration" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_singer_i01" />
@@ -787,15 +787,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="270" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">270</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11023" name="Doomchanter - Concentration" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_singer_i01" />
@@ -825,15 +825,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="270" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">270</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11024" name="Doomchanter - Concentration" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_singer_i01" />
@@ -862,15 +862,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="270" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">270</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11025" name="White Lightning - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_lightning_blaze_i00" />
@@ -898,15 +898,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="193" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">193</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11026" name="White Lightning - Destruction" name_additional="Critical Poison" type="Weapon">
 		<set name="icon" val="icon.weapon_lightning_blaze_i01" />
@@ -937,15 +937,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="193" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">193</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11027" name="White Lightning - Destruction" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_lightning_blaze_i01" />
@@ -974,15 +974,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="193" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">193</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11028" name="White Lightning - Destruction" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_lightning_blaze_i01" />
@@ -1011,15 +1011,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="193" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">193</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11029" name="Meteor Shower - Earth" type="Weapon">
 		<set name="icon" val="icon.weapon_meteor_shower_i00" />
@@ -1042,15 +1042,15 @@
 		<skills>
 			<skill id="3884" level="2" /> <!-- Blunt Weapon of Boost HP -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11030" name="Meteor Shower - Earth" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_meteor_shower_i01" />
@@ -1074,15 +1074,15 @@
 			<skill id="3884" level="2" /> <!-- Blunt Weapon of Boost HP -->
 			<skill id="3050" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11031" name="Meteor Shower - Earth" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_meteor_shower_i01" />
@@ -1107,15 +1107,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3052" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Bleed -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11032" name="Meteor Shower - Earth" name_additional="Rsk. Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_meteor_shower_i01" />
@@ -1139,15 +1139,15 @@
 			<skill id="3884" level="2" /> <!-- Blunt Weapon of Boost HP -->
 			<skill id="3056" level="2" /> <!-- Special Ability: Rsk. Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11033" name="Blood Tornado - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_blood_tornado_i00" />
@@ -1170,15 +1170,15 @@
 		<skills>
 			<skill id="3879" level="2" /> <!-- Fist Weapon of Might -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11034" name="Blood Tornado - Destruction" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_blood_tornado_i01" />
@@ -1202,15 +1202,15 @@
 			<skill id="3879" level="2" /> <!-- Fist Weapon of Might -->
 			<skill id="3068" level="2" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11035" name="Blood Tornado - Destruction" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_blood_tornado_i01" />
@@ -1234,15 +1234,15 @@
 			<skill id="3879" level="2" /> <!-- Fist Weapon of Might -->
 			<skill id="3050" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11036" name="Blood Tornado - Destruction" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_blood_tornado_i01" />
@@ -1266,15 +1266,15 @@
 			<skill id="3879" level="2" /> <!-- Fist Weapon of Might -->
 			<skill id="3058" level="1" /> <!-- Special Ability: Anger -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11037" name="Bloody Orchid - Confusion" type="Weapon">
 		<set name="icon" val="icon.weapon_bloody_orchid_i00" />
@@ -1297,15 +1297,15 @@
 		<skills>
 			<skill id="3858" level="2" /> <!-- Dagger of Avoid -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="186" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">186</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11038" name="Bloody Orchid - Confusion" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_bloody_orchid_i01" />
@@ -1329,15 +1329,15 @@
 			<skill id="3858" level="2" /> <!-- Dagger of Avoid -->
 			<skill id="3051" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="186" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">186</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11039" name="Bloody Orchid - Confusion" name_additional="Back Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_bloody_orchid_i01" />
@@ -1361,15 +1361,15 @@
 			<skill id="3858" level="2" /> <!-- Dagger of Avoid -->
 			<skill id="3063" level="1" /> <!-- Special Ability: Back Blow -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="186" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">186</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11040" name="Bloody Orchid - Confusion" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_bloody_orchid_i01" />
@@ -1394,15 +1394,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3054" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Bleed -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="186" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">186</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11041" name="Elemental Sword - Hail" type="Weapon">
 		<set name="icon" val="icon.weapon_elemental_sword_i00" />
@@ -1426,14 +1426,14 @@
 		<skills>
 			<skill id="3854" level="1" /> <!-- Sword of Empower -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="143" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11042" name="Elemental Sword - Hail" name_additional="M. Atk." type="Weapon">
 		<set name="icon" val="icon.weapon_elemental_sword_i01" />
@@ -1458,14 +1458,14 @@
 			<skill id="3854" level="1" /> <!-- Sword of Empower -->
 			<skill id="3073" level="1" /> <!-- Special Ability: M. Atk. -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="143" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11043" name="Elemental Sword - Hail" name_additional="Magic Paralyze" type="Weapon">
 		<set name="icon" val="icon.weapon_elemental_sword_i01" />
@@ -1491,14 +1491,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3075" level="1" type="ON_MAGIC_SKILL" type_chance="5" /> <!-- Special Ability: Magic Paralyze -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="143" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11044" name="Elemental Sword - Hail" name_additional="Empower" type="Weapon">
 		<set name="icon" val="icon.weapon_elemental_sword_i01" />
@@ -1523,14 +1523,14 @@
 			<skill id="3854" level="1" /> <!-- Sword of Empower -->
 			<skill id="3072" level="1" /> <!-- Special Ability: Empower -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="143" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11045" name="Spiritual Eye - Hail" type="Weapon">
 		<set name="icon" val="icon.weapon_eye_of_soul_i00" />
@@ -1554,15 +1554,15 @@
 		<skills>
 			<skill id="3889" level="2" /> <!-- Blunt Weapon of Empower -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="143" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11046" name="Spiritual Eye - Hail" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_eye_of_soul_i01" />
@@ -1587,15 +1587,15 @@
 			<skill id="3889" level="2" /> <!-- Blunt Weapon of Empower -->
 			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="143" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11047" name="Spiritual Eye - Hail" name_additional="Magic Poison" type="Weapon">
 		<set name="icon" val="icon.weapon_eye_of_soul_i01" />
@@ -1621,15 +1621,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="1168" level="6" type="ON_MAGIC_SKILL" type_chance="8" /> <!-- Curse Poison -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="143" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11048" name="Spiritual Eye - Hail" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_eye_of_soul_i01" />
@@ -1654,15 +1654,15 @@
 			<skill id="3889" level="2" /> <!-- Blunt Weapon of Empower -->
 			<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="143" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11049" name="Infernal Master - Concentration" type="Weapon">
 		<set name="icon" val="icon.weapon_inferno_master_i00" />
@@ -1686,14 +1686,14 @@
 		<skills>
 			<skill id="3841" level="1" /> <!-- Two-handed Sword of Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11050" name="Infernal Master - Concentration" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_inferno_master_i01" />
@@ -1718,14 +1718,14 @@
 			<skill id="3841" level="1" /> <!-- Two-handed Sword of Guidance -->
 			<skill id="3068" level="2" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11051" name="Infernal Master - Concentration" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_inferno_master_i01" />
@@ -1750,14 +1750,14 @@
 			<skill id="3841" level="1" /> <!-- Two-handed Sword of Guidance -->
 			<skill id="3067" level="1" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11052" name="Infernal Master - Concentration" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_inferno_master_i01" />
@@ -1782,14 +1782,14 @@
 			<skill id="3841" level="1" /> <!-- Two-handed Sword of Guidance -->
 			<skill id="3050" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11053" name="Carnage Bow - Concentration" type="Weapon">
 		<set name="icon" val="icon.weapon_carnium_bow_i00" />
@@ -1815,15 +1815,15 @@
 		<skills>
 			<skill id="3863" level="2" /> <!-- Bow of Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="440" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">440</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11054" name="Carnage Bow - Concentration" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_carnium_bow_i01" />
@@ -1851,15 +1851,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="440" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">440</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11055" name="Carnage Bow - Concentration" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_carnium_bow_i01" />
@@ -1887,15 +1887,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3053" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Bleed -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="440" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">440</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11056" name="Carnage Bow - Concentration" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_carnium_bow_i01" />
@@ -1922,15 +1922,15 @@
 			<skill id="3863" level="2" /> <!-- Bow of Guidance -->
 			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="440" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">440</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11057" name="Keshanberk*Keshanberk - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1954,14 +1954,14 @@
 			<skill id="3045" level="17" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
 			<skill id="3835" level="2" /> <!-- Dual-blade Weapon of Might -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11058" name="Tallum Blade - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_blade_i00" />
@@ -1985,14 +1985,14 @@
 		<skills>
 			<skill id="3825" level="2" /> <!-- Sword of Might -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11059" name="Tallum Blade - Destruction" name_additional="Critical Poison" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_blade_i01" />
@@ -2018,14 +2018,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3061" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Poison -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11060" name="Tallum Blade - Destruction" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_blade_i01" />
@@ -2050,14 +2050,14 @@
 			<skill id="3825" level="2" /> <!-- Sword of Might -->
 			<skill id="3068" level="2" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11061" name="Tallum Blade - Destruction" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_tallum_blade_i01" />
@@ -2082,14 +2082,14 @@
 			<skill id="3825" level="2" /> <!-- Sword of Might -->
 			<skill id="3057" level="1" /> <!-- Special Ability: Anger -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11062" name="Destroyer Hammer - Lightning" type="Weapon">
 		<set name="icon" val="icon.weapon_hammer_of_destroyer_i00" />
@@ -2112,15 +2112,15 @@
 		<skills>
 			<skill id="3895" level="2" /> <!-- Two-handed Blunt Weapon of Critical Chance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11063" name="Destroyer Hammer - Lightning" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_hammer_of_destroyer_i01" />
@@ -2144,15 +2144,15 @@
 			<skill id="3895" level="2" /> <!-- Two-handed Blunt Weapon of Critical Chance -->
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11064" name="Destroyer Hammer - Lightning" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_hammer_of_destroyer_i01" />
@@ -2176,15 +2176,15 @@
 			<skill id="3895" level="2" /> <!-- Two-handed Blunt Weapon of Critical Chance -->
 			<skill id="3068" level="2" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11065" name="Destroyer Hammer - Lightning" name_additional="Critical Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_hammer_of_destroyer_i01" />
@@ -2209,15 +2209,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3059" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11066" name="Divine Pain - Concentration" type="Weapon">
 		<set name="icon" val="icon.weapon_pain_of_godness_i00" />
@@ -2244,15 +2244,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="231" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">231</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11067" name="Divine Pain - Concentration" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_pain_of_godness_i01" />
@@ -2280,15 +2280,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="231" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">231</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11068" name="Divine Pain - Concentration" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_pain_of_godness_i01" />
@@ -2316,15 +2316,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="231" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">231</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11069" name="Divine Pain - Concentration" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_pain_of_godness_i01" />
@@ -2352,15 +2352,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="231" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">231</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11070" name="Halberd - Lightning" type="Weapon">
 		<set name="icon" val="icon.weapon_halbard_i00" />
@@ -2385,15 +2385,15 @@
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11071" name="Halberd - Lightning" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_halbard_i01" />
@@ -2417,15 +2417,15 @@
 			<skill id="3874" level="1" /> <!-- Polearm of Critical Chance -->
 			<skill id="3601" level="7" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11072" name="Halberd - Lightning" name_additional="Critical Stun" type="Weapon">
 		<set name="icon" val="icon.weapon_halbard_i01" />
@@ -2450,15 +2450,15 @@
 			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11073" name="Halberd - Lightning" name_additional="Wide Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_halbard_i01" />
@@ -2482,15 +2482,15 @@
 			<skill id="3874" level="1" /> <!-- Polearm of Critical Chance -->
 			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11074" name="Keshanberk*Damascus - Destruction" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2514,14 +2514,14 @@
 			<skill id="3013" level="3" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
 			<skill id="3835" level="2" /> <!-- Dual-blade Weapon of Might -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="275" />
-			<set stat="mAtk" val="112" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">275</stat>
+			<stat type="mAtk">112</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11075" name="Lacerator - Thunder" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i00" />
@@ -2549,15 +2549,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="210" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">210</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11076" name="Lacerator - Thunder" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i01" />
@@ -2586,15 +2586,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="210" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">210</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11077" name="Lacerator - Thunder" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i01" />
@@ -2623,15 +2623,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="210" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">210</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11078" name="Lacerator - Thunder" name_additional="Rsk. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i01" />
@@ -2660,15 +2660,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="210" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">210</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11079" name="Damascus*Damascus - Thunder" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2692,14 +2692,14 @@
 			<skill id="3046" level="20" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
 			<skill id="3837" level="1" /> <!-- Dual-blade Weapon of Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="282" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">282</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11080" name="Dark Legion's Edge - Thunder" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_legions_edge_i00" />
@@ -2723,14 +2723,14 @@
 		<skills>
 			<skill id="3827" level="1" /> <!-- Sword of Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="232" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">232</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11081" name="Dark Legion's Edge - Thunder" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_legions_edge_i01" />
@@ -2755,14 +2755,14 @@
 			<skill id="3827" level="1" /> <!-- Sword of Critical Damage -->
 			<skill id="3067" level="2" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="232" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">232</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11082" name="Dark Legion's Edge - Thunder" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_legions_edge_i01" />
@@ -2787,14 +2787,14 @@
 			<skill id="3827" level="1" /> <!-- Sword of Critical Damage -->
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="232" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">232</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11083" name="Dark Legion's Edge - Thunder" name_additional="Rsk. Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_dark_legions_edge_i01" />
@@ -2819,14 +2819,14 @@
 			<skill id="3827" level="1" /> <!-- Sword of Critical Damage -->
 			<skill id="3071" level="2" /> <!-- Special Ability: Rsk. Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="232" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">232</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11084" name="Undertaker - Evil Spirit" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i00" />
@@ -2853,15 +2853,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11085" name="Undertaker - Evil Spirit" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i01" />
@@ -2889,15 +2889,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11086" name="Undertaker - Evil Spirit" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i01" />
@@ -2926,15 +2926,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11087" name="Undertaker - Evil Spirit" name_additional="Critical Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i01" />
@@ -2963,15 +2963,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11088" name="Doom Crusher - Thunder" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_crusher_i00" />
@@ -2994,15 +2994,15 @@
 		<skills>
 			<skill id="3894" level="1" /> <!-- Two-handed Blunt Weapon of Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="282" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">282</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11089" name="Doom Crusher - Thunder" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_crusher_i01" />
@@ -3026,15 +3026,15 @@
 			<skill id="3894" level="1" /> <!-- Two-handed Blunt Weapon of Critical Damage -->
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="282" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">282</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11090" name="Doom Crusher - Thunder" name_additional="Anger" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_crusher_i01" />
@@ -3058,15 +3058,15 @@
 			<skill id="3894" level="1" /> <!-- Two-handed Blunt Weapon of Critical Damage -->
 			<skill id="3057" level="2" /> <!-- Special Ability: Anger -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="282" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">282</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11091" name="Doom Crusher - Thunder" name_additional="Rsk. Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_crusher_i01" />
@@ -3090,15 +3090,15 @@
 			<skill id="3894" level="1" /> <!-- Two-handed Blunt Weapon of Critical Damage -->
 			<skill id="3056" level="2" /> <!-- Special Ability: Rsk. Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="282" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">282</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11092" name="Dragon Grinder - Earth" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_grinder_i00" />
@@ -3121,15 +3121,15 @@
 		<skills>
 			<skill id="3881" level="1" /> <!-- Fist Weapon of Boost HP -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="282" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">282</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11093" name="Dragon Grinder - Earth" name_additional="Rsk. Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_grinder_i01" />
@@ -3153,15 +3153,15 @@
 			<skill id="3881" level="1" /> <!-- Fist Weapon of Boost HP -->
 			<skill id="3069" level="1" /> <!-- Special Ability: Rsk. Evasion -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="282" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">282</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11094" name="Dragon Grinder - Earth" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_grinder_i01" />
@@ -3185,15 +3185,15 @@
 			<skill id="3881" level="1" /> <!-- Fist Weapon of Boost HP -->
 			<skill id="3065" level="1" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="282" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">282</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11095" name="Dragon Grinder - Earth" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_grinder_i01" />
@@ -3217,15 +3217,15 @@
 			<skill id="3881" level="1" /> <!-- Fist Weapon of Boost HP -->
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="282" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">282</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11096" name="Dragon Slayer - Evil Spirit" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_slayer_i00" />
@@ -3249,14 +3249,14 @@
 		<skills>
 			<skill id="3842" level="1" /> <!-- Two-handed Sword of Vampiric Rage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="282" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">282</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11097" name="Dragon Slayer - Evil Spirit" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_slayer_i01" />
@@ -3281,14 +3281,14 @@
 			<skill id="3842" level="1" /> <!-- Two-handed Sword of Vampiric Rage -->
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="282" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">282</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11098" name="Dragon Slayer - Evil Spirit" name_additional="Critical Bleed" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_slayer_i01" />
@@ -3314,14 +3314,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3055" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Bleed -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="282" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">282</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="11099" name="Dragon Slayer - Evil Spirit" name_additional="Critical Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_dragon_slayer_i01" />
@@ -3347,13 +3347,13 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3060" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="282" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">282</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 </list>

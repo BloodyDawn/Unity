@@ -132,9 +132,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="130" />
-		<for>
-			<add order="0" stat="pDef" val="3.0" />
-		</for>
+		<stats>
+			<stat type="pDef">3</stat>
+		</stats>
 	</item>
 	<item id="33510" name="Returning Hero's Belt" type="Armor">
 		<!-- Belt for a returning hero. When equipped, Weight Gauge + 5000. -->
@@ -661,12 +661,12 @@
 		<skills>
 			<skill id="3045" level="14" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="236.0" />
-			<set stat="mAtk" val="99.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">236</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33544" name="Unidentified Samurai Long Sword*Samurai Long Sword" type="EtcItem">
 		<!-- Samurai Long Sword*Samurai Long Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
@@ -695,12 +695,12 @@
 		<skills>
 			<skill id="3045" level="17" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="305.0" />
-			<set stat="mAtk" val="121.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">305</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33546" name="Unidentified Tallum Blade*Damascus" type="EtcItem">
 		<!-- Tallum blade*Damascus in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
@@ -726,12 +726,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="333.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33548" name="Bound Dynasty Sword" name_additional="Health (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max HP by 25%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -751,12 +751,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="333.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33549" name="Bound Dynasty Sword" name_additional="Light Armor (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Weight Gauge by 20%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -776,12 +776,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="333.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33550" name="Bound Dynasty Blade" name_additional="Focus (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 111. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -801,12 +801,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="405.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">405</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33551" name="Bound Dynasty Blade" name_additional="Health (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max HP by 25%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -826,12 +826,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="405.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">405</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33552" name="Bound Dynasty Blade" name_additional="Light Armor (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Weight Gauge by 20%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -851,12 +851,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="405.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">405</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33553" name="Bound Dynasty Phantom" name_additional="Acumen (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -876,12 +876,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="267.0" />
-			<set stat="mAtk" val="202.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">267</stat>
+			<stat type="mAtk">202</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33554" name="Bound Dynasty Phantom" name_additional="Mana Up (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max MP by 30%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -901,12 +901,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="267.0" />
-			<set stat="mAtk" val="202.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">267</stat>
+			<stat type="mAtk">202</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33555" name="Bound Dynasty Phantom" name_additional="Conversion (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max MP by 60% and decreases Max HP by 40%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -926,12 +926,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="267.0" />
-			<set stat="mAtk" val="202.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">267</stat>
+			<stat type="mAtk">202</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33556" name="Bound Dynasty Bow" name_additional="Cheap Shot (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nDecreases MP consumption by 4% during a skill attack. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -954,12 +954,12 @@
 		<skills>
 			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="654.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">654</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="33557" name="Bound Dynasty Bow" name_additional="Guidance (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Accuracy by 5.32. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -979,12 +979,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="654.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">654</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="33558" name="Bound Dynasty Bow" name_additional="Focus (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 116. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1004,12 +1004,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="654.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">654</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="33559" name="Bound Dynasty Knife" name_additional="Focus (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 116. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1029,12 +1029,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="291.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">291</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="33560" name="Bound Dynasty Knife" name_additional="Evasion (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Evasion by 5. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1054,12 +1054,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="291.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">291</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="33561" name="Bound Dynasty Knife" name_additional="Critical Damage (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 559 during a Critical Attack. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1079,12 +1079,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="291.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">291</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="33562" name="Bound Dynasty Halberd" name_additional="Anger (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 78 and decreases HP by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1107,12 +1107,12 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="333.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33563" name="Bound Dynasty Halberd" name_additional="Critical Stun (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 48% chance of casting Stun on the target during a Critical Attack. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1135,12 +1135,12 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="333.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33564" name="Bound Dynasty Halberd" name_additional="Light Armor (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Weight Gauge by 20%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1163,12 +1163,12 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="333.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33565" name="Bound Dynasty Cudgel" name_additional="Anger (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 78 and decreases HP by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1188,13 +1188,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="333.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="33566" name="Bound Dynasty Cudgel" name_additional="Health (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max HP by 25%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1214,13 +1214,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="333.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="33567" name="Bound Dynasty Cudgel" name_additional="Rsk. Focus (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 164 when HP drops to 60% or below. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1240,13 +1240,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="333.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">333</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="33568" name="Bound Dynasty Mace" name_additional="Mana Up (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max MP by 30%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1266,13 +1266,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="267.0" />
-			<set stat="mAtk" val="202.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">267</stat>
+			<stat type="mAtk">202</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="33569" name="Bound Dynasty Mace" name_additional="Conversion (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max MP by 60% and decreases Max HP by 40%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1292,13 +1292,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="267.0" />
-			<set stat="mAtk" val="202.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">267</stat>
+			<stat type="mAtk">202</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="33570" name="Bound Dynasty Mace" name_additional="Acumen (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1318,13 +1318,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="267.0" />
-			<set stat="mAtk" val="202.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">267</stat>
+			<stat type="mAtk">202</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="33571" name="Bound Dynasty Bagh-Nakh" name_additional="Rsk. Evasion (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Evasion by 6.8 when HP drops to 60% or below. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1344,13 +1344,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="405.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">405</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="33572" name="Bound Dynasty Bagh-Nakh" name_additional="Focus (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 106. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1370,13 +1370,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="405.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">405</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="33573" name="Bound Dynasty Bagh-Nakh" name_additional="Haste (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Atk. Spd. by 10%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1396,13 +1396,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="405.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">405</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="33574" name="Bound Dynasty Staff" name_additional="Mana Up (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max MP by 30%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1422,13 +1422,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="325.0" />
-			<set stat="mAtk" val="222.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">325</stat>
+			<stat type="mAtk">222</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="33575" name="Bound Dynasty Staff" name_additional="Conversion (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max MP by 60% and decreases Max HP by 40%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1448,13 +1448,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="325.0" />
-			<set stat="mAtk" val="222.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">325</stat>
+			<stat type="mAtk">222</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="33576" name="Bound Dynasty Staff" name_additional="Acumen (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1474,13 +1474,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="325.0" />
-			<set stat="mAtk" val="222.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">325</stat>
+			<stat type="mAtk">222</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="33577" name="Bound Dynasty Crusher" name_additional="Anger (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nP. Atk. + 78 and decreases HP by 15%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1500,13 +1500,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="405.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">405</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="33578" name="Bound Dynasty Crusher" name_additional="Health (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max HP by 25%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1526,13 +1526,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="405.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">405</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="33579" name="Bound Dynasty Crusher" name_additional="Rsk. Focus (Event)" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Critical by 164 when HP drops to 60% or below. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1552,13 +1552,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="405.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">405</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="33580" name="Bound Dynasty Dual Dagger" name_additional="Event" type="Weapon">
 		<!-- When enchanted, P. Atk. of a Dual Dagger increases more significantly than that of a one-handed or fist weapon. When enchanted to 4 or more, Critical increases by 109 and Atk. Spd. Increases by 8%. Inflicts additional damage to target during PvP. Can be equipped by Dagger Masters above level 81. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1578,12 +1578,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="4395050" />
-		<for>
-			<set stat="pAtk" val="304.0" />
-			<set stat="mAtk" val="157.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">304</stat>
+			<stat type="mAtk">157</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="33581" name="Bound Dynasty Dualsword" name_additional="Event" type="Weapon">
 		<!-- When enchanted with a two-handed sword, a two-handed blunt weapon or a fist weapon, its P. Atk. Increases more than that of a regular one-handed sword. When enchanted to 4 or more, increases Critical Attack by 109 and Max HP by 10%. Increases the damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1606,12 +1606,12 @@
 		<skills>
 			<skill id="3411" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="405.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">405</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33582" name="Bound Dynasty Rapier" name_additional="Focus (Event)" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Dynasty Sword Conversion\n(Soul Crystal Enhancement)\nIncreases Critical by 111. Increases damage inflicted during PvP.\nWhen enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1634,12 +1634,12 @@
 		<skills>
 			<skill id="3426" level="1" /> <!-- Maximum Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="302.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="406.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">302</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
 	</item>
 	<item id="33583" name="Bound Dynasty Rapier" name_additional="Health (Event)" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Dynasty Sword Conversion\n(Soul Crystal Enhancement)\nIncreases Max HP by 25%. Increases damage inflicted during PvP.\nWhen enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1662,12 +1662,12 @@
 		<skills>
 			<skill id="3426" level="1" /> <!-- Maximum Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="302.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="406.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">302</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
 	</item>
 	<item id="33584" name="Bound Dynasty Rapier" name_additional="Light Armor (Event)" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Dynasty Sword Conversion\n(Soul Crystal Enhancement)\nIncreases Weight Gauge by 20%. Increases damage inflicted during PvP.\nWhen enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1690,12 +1690,12 @@
 		<skills>
 			<skill id="3426" level="1" /> <!-- Maximum Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="302.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="406.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">302</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">406</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
 	</item>
 	<item id="33585" name="Bound Dynasty Ancient Sword" name_additional="Focus (Event)" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Dynasty Blade Conversion\n(Soul Crystal Enhancement)\nIncreases Critical by 111. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1715,13 +1715,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="361.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="350.0" />
-			<add stat="accCombat" val="2.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">361</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33586" name="Bound Dynasty Ancient Sword" name_additional="Health (Event)" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Dynasty Blade Conversion\n(Soul Crystal Enhancement)\nIncreases Max HP by 25%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1741,13 +1741,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="361.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="350.0" />
-			<add stat="accCombat" val="2.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">361</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33587" name="Bound Dynasty Ancient Sword" name_additional="Light Armor (Event)" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Dynasty Blade Conversion\n(Soul Crystal Enhancement)\nIncreases Weight Gauge by 20%. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1767,13 +1767,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="361.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="350.0" />
-			<add stat="accCombat" val="2.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">361</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="33588" name="Bound Dynasty Crossbow" name_additional="Cheap Shot (Event)" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Dynasty Bow Conversion\n(Soul Crystal Enhancement)\nDecreases MP consumption by 12% when using skills. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1796,12 +1796,12 @@
 		<skills>
 			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="401.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="303.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">401</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
 	</item>
 	<item id="33589" name="Bound Dynasty Crossbow" name_additional="Guidance (Event)" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Dynasty Bow Conversion\n(Soul Crystal Enhancement)\nIncreases Accuracy by 5.32. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1821,12 +1821,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="401.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="303.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">401</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
 	</item>
 	<item id="33590" name="Bound Dynasty Crossbow" name_additional="Focus (Event)" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Dynasty Bow Conversion\n(Soul Crystal Enhancement)\nIncreases Critical by 116. Increases damage inflicted during PvP. Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1846,12 +1846,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="3747300" />
-		<for>
-			<set stat="pAtk" val="401.0" />
-			<set stat="mAtk" val="151.0" />
-			<set stat="pAtkSpd" val="303.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">401</stat>
+			<stat type="mAtk">151</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
 	</item>
 	<item id="33591" name="Bound Dynasty Breastplate" name_additional="Event" type="Armor">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1869,10 +1869,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="1219900" />
-		<for>
-			<add order="0" stat="pDef" val="226.0" />
+		<stats>
+			<stat type="pDef">226</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="33592" name="Bound Dynasty Gaiters" name_additional="Event" type="Armor">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1890,10 +1890,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="762400" />
-		<for>
-			<add order="0" stat="pDef" val="141.0" />
+		<stats>
+			<stat type="pDef">141</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="33593" name="Bound Dynasty Helmet" name_additional="Event" type="Armor">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1910,10 +1910,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="457450" />
-		<for>
-			<add order="0" stat="pDef" val="92.0" />
+		<stats>
+			<stat type="pDef">92</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="33594" name="Bound Dynasty Gauntlets" name_additional="Event" type="Armor">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1930,10 +1930,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="304950" />
-		<for>
-			<add order="0" stat="pDef" val="61.0" />
+		<stats>
+			<stat type="pDef">61</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="33595" name="Bound Dynasty Boots" name_additional="Event" type="Armor">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1950,10 +1950,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="304950" />
-		<for>
-			<add order="0" stat="pDef" val="61.0" />
+		<stats>
+			<stat type="pDef">61</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="33596" name="Bound Dynasty Shield" name_additional="Event" type="Weapon">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1970,10 +1970,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="320200" />
-		<for>
-			<add stat="sDef" val="321.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">321</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 	<item id="33597" name="Bound Dynasty Leather Armor" name_additional="Event" type="Armor">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -1991,10 +1991,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="914900" />
-		<for>
-			<add order="0" stat="pDef" val="170.0" />
+		<stats>
+			<stat type="pDef">170</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="33598" name="Bound Dynasty Leather Leggings" name_additional="Event" type="Armor">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -2012,10 +2012,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="571800" />
-		<for>
-			<add order="0" stat="pDef" val="106.0" />
+		<stats>
+			<stat type="pDef">106</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="33599" name="Bound Dynasty Leather Helmet" name_additional="Event" type="Armor">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -2032,9 +2032,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="457450" />
-		<for>
-			<add order="0" stat="pDef" val="92.0" />
+		<stats>
+			<stat type="pDef">92</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 </list>

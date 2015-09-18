@@ -298,12 +298,12 @@
 			<skill id="19029" level="1" /> <!-- Revolution Self CP Recovery -->
 			<skill id="19021" level="1" /> <!-- Revolution Strike -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1.0" />
-			<set stat="mAtk" val="1.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="34922" name="Revolutionary's Bow" type="Weapon">
 		<!-- Item used by the revolutionaries during an attack on the transportation unit . It can use powerful skills. Can only be used on the siege battlefield. Can only be used by characters who are above level 40. -->
@@ -330,12 +330,12 @@
 			<skill id="19023" level="1" /> <!-- Revolution Multi-Shot -->
 			<skill id="19029" level="1" /> <!-- Revolution Self CP Recovery -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1.0" />
-			<set stat="mAtk" val="1.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="34923" name="Revolutionary's Staff" type="Weapon">
 		<!-- Item used by the revolutionaries during an attack on the transportation unit . It can use powerful skills. Can only be used on the siege battlefield. Can only be used by characters who are above level 40. -->
@@ -362,13 +362,13 @@
 			<skill id="19029" level="1" /> <!-- Revolution Self CP Recovery -->
 			<skill id="19025" level="1" /> <!-- Revolution Spike -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1.0" />
-			<set stat="mAtk" val="1.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="34924" name="Revolutionary's Wand" type="Weapon">
 		<!-- Item used by the revolutionaries during an attack on the transportation unit . It can use powerful skills. Can only be used on the siege battlefield. Can only be used by characters who are above level 40. -->
@@ -395,13 +395,13 @@
 			<skill id="19029" level="1" /> <!-- Revolution Self CP Recovery -->
 			<skill id="19025" level="1" /> <!-- Revolution Spike -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1.0" />
-			<set stat="mAtk" val="1.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="34925" name="Cloak of Light" type="Armor">
 		<!-- TODO: Confirm me -->
@@ -432,16 +432,16 @@
 				<player cloakStatus="true" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<add stat="fireRes" val="10" />
-			<add stat="waterRes" val="10" />
-			<add stat="windRes" val="10" />
-			<add stat="earthRes" val="10" />
-			<add stat="holyRes" val="10" />
-			<add stat="darkRes" val="10" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+			<stat type="fireRes">10</stat>
+			<stat type="waterRes">10</stat>
+			<stat type="windRes">10</stat>
+			<stat type="earthRes">10</stat>
+			<stat type="holyRes">10</stat>
+			<stat type="darkRes">10</stat>
+		</stats>
 	</item>
 	<item id="34926" name="Cloak of Darkness" type="Armor">
 		<!-- Cloak that symbolizes avarice and darkness. Can only be equipped by marquis or higher. P. Def. 50, M. Def. 40, STR/MEN/DEX/WIT/INT/CON + 2. Damage received during PvP decreases by 5%. Can use Escape:ﾠCastle skill. Cannot be transferred between servers. -->
@@ -471,16 +471,16 @@
 				<player cloakStatus="true" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-			<add stat="fireRes" val="10" />
-			<add stat="waterRes" val="10" />
-			<add stat="windRes" val="10" />
-			<add stat="earthRes" val="10" />
-			<add stat="holyRes" val="10" />
-			<add stat="darkRes" val="10" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+			<stat type="fireRes">10</stat>
+			<stat type="waterRes">10</stat>
+			<stat type="windRes">10</stat>
+			<stat type="earthRes">10</stat>
+			<stat type="holyRes">10</stat>
+			<stat type="darkRes">10</stat>
+		</stats>
 	</item>
 	<item id="34927" name="Dimension Keeper's Blue Box" type="EtcItem">
 		<!-- Blue-colored box bestowed by the kingdom of Aden as a reward for defeating the dimension demons in Kartia's Labyrinth. Double-click on it to see its contents. -->
@@ -1361,16 +1361,16 @@
 				<player cloakStatus="true" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="100.0" />
-			<add stat="mDef" val="80.0" />
-			<add stat="fireRes" val="15" />
-			<add stat="waterRes" val="15" />
-			<add stat="windRes" val="15" />
-			<add stat="earthRes" val="15" />
-			<add stat="holyRes" val="15" />
-			<add stat="darkRes" val="15" />
-		</for>
+		<stats>
+			<stat type="pDef">100</stat>
+			<stat type="mDef">80</stat>
+			<stat type="fireRes">15</stat>
+			<stat type="waterRes">15</stat>
+			<stat type="windRes">15</stat>
+			<stat type="earthRes">15</stat>
+			<stat type="holyRes">15</stat>
+			<stat type="darkRes">15</stat>
+		</stats>
 	</item>
 	<item id="34997" name="Cloak of Cold Darkness" type="Armor">
 		<!-- TODO: Confirm me -->
@@ -1400,16 +1400,16 @@
 				<player cloakStatus="true" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="100.0" />
-			<add stat="mDef" val="80.0" />
-			<add stat="fireRes" val="15" />
-			<add stat="waterRes" val="15" />
-			<add stat="windRes" val="15" />
-			<add stat="earthRes" val="15" />
-			<add stat="holyRes" val="15" />
-			<add stat="darkRes" val="15" />
-		</for>
+		<stats>
+			<stat type="pDef">100</stat>
+			<stat type="mDef">80</stat>
+			<stat type="fireRes">15</stat>
+			<stat type="waterRes">15</stat>
+			<stat type="windRes">15</stat>
+			<stat type="earthRes">15</stat>
+			<stat type="holyRes">15</stat>
+			<stat type="darkRes">15</stat>
+		</stats>
 	</item>
 	<item id="34998" name="Tauti's One-handed Axe" type="Weapon">
 		<!-- Weapon augmented from Tauti's Fragment. When equipped, can use Tauti's Rage skill. When equipped, increases Atk. Spd. by about 15%, critical by 150, Max HP by 25%, and P. Atk. by 415. Increases damage inflicted during PvP. Enchantment, attribute, crystallization, augmentation or modification is impossible. -->
@@ -1427,13 +1427,13 @@
 			<skill id="9459" level="1" /> <!-- Tauti's Wrath -->
 			<skill id="8878" level="1" /> <!-- Tauti's Special Ability: One-handed Axe -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="629.0" />
-			<set stat="mAtk" val="322.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">638</stat>
+			<stat type="mAtk">278</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="34999" name="Tauti's Axe" type="Weapon">
 		<!-- Weapon augmented from Tauti's Fragment. When equipped, can use Tauti's Rage skill. When equipped, increases Atk. Spd. by about 15%, critical by 150, Max HP by 25%, and P. Atk. by 415. Increases damage inflicted during PvP. Enchantment, attribute, crystallization, augmentation or modification is impossible. -->
@@ -1451,12 +1451,12 @@
 			<skill id="9459" level="1" /> <!-- Tauti's Wrath -->
 			<skill id="8879" level="1" /> <!-- Tauti's Special Ability: Axe -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="766.0" />
-			<set stat="mAtk" val="322.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">776</stat>
+			<stat type="mAtk">278</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 </list>

@@ -113,11 +113,11 @@
 		<skills>
 			<skill id="3562" level="1" /> <!-- Queen Ant's Ring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="48" />
-			<add stat="maxMp" val="21" />
+		<stats>
+			<stat type="mDef">48</stat>
+			<stat type="maxMp">21</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="20205" name="Queen Ant's Ring (Event)" name_additional="7-day" type="Armor">
 		<set name="icon" val="icon.accessory_ring_of_queen_ant_i00" />
@@ -140,11 +140,11 @@
 		<skills>
 			<skill id="3562" level="1" /> <!-- Queen Ant's Ring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="48" />
-			<add stat="maxMp" val="21" />
+		<stats>
+			<stat type="mDef">48</stat>
+			<stat type="maxMp">21</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="20206" name="Queen Ant's Ring (Event)" name_additional="15-day" type="Armor">
 		<set name="icon" val="icon.accessory_ring_of_queen_ant_i00" />
@@ -167,11 +167,11 @@
 		<skills>
 			<skill id="3562" level="1" /> <!-- Queen Ant's Ring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="48" />
-			<add stat="maxMp" val="21" />
+		<stats>
+			<stat type="mDef">48</stat>
+			<stat type="maxMp">21</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="20207" name="Zaken's Earring (Event)" name_additional="3-day" type="Armor">
 		<set name="icon" val="icon.accessory_earring_of_zaken_i00" />
@@ -194,11 +194,11 @@
 		<skills>
 			<skill id="3559" level="1" /> <!-- Zaken's Earring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="71" />
-			<add stat="maxMp" val="31" />
+		<stats>
+			<stat type="mDef">71</stat>
+			<stat type="maxMp">31</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="20208" name="Zaken's Earring (Event)" name_additional="7-day" type="Armor">
 		<set name="icon" val="icon.accessory_earring_of_zaken_i00" />
@@ -221,11 +221,11 @@
 		<skills>
 			<skill id="3559" level="1" /> <!-- Zaken's Earring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="71" />
-			<add stat="maxMp" val="31" />
+		<stats>
+			<stat type="mDef">71</stat>
+			<stat type="maxMp">31</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="20209" name="Zaken's Earring (Event)" name_additional="15-day" type="Armor">
 		<set name="icon" val="icon.accessory_earring_of_zaken_i00" />
@@ -248,11 +248,11 @@
 		<skills>
 			<skill id="3559" level="1" /> <!-- Zaken's Earring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="71" />
-			<add stat="maxMp" val="31" />
+		<stats>
+			<stat type="mDef">71</stat>
+			<stat type="maxMp">31</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="20210" name="Charming Valentine Gift Set" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_valentine_agathion_pack_i00" />
@@ -1219,12 +1219,12 @@
 		<skills>
 			<skill id="21042" level="1" /> <!-- Blessing of Baguette -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="2" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">2</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="20256" name="Baguette Dagger" name_additional="7-day" type="Weapon">
 		<set name="icon" val="BranchSys.icon.br_dagger_bread_i00" />
@@ -1253,13 +1253,13 @@
 		<skills>
 			<skill id="21042" level="1" /> <!-- Blessing of Baguette -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="2" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">2</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+		</stats>
 	</item>
 	<item id="20257" name="Baguette Dualsword" name_additional="7-day" type="Weapon">
 		<set name="icon" val="BranchSys.icon.br_2h_sword_bread_i00" />
@@ -1288,12 +1288,12 @@
 		<skills>
 			<skill id="21042" level="1" /> <!-- Blessing of Baguette -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="2" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">2</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="20258" name="Baguette Mace" name_additional="7-day" type="Weapon">
 		<set name="icon" val="BranchSys.icon.br_blunt_bread_i00" />
@@ -1322,13 +1322,13 @@
 		<skills>
 			<skill id="21042" level="1" /> <!-- Blessing of Baguette -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="2" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">2</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="20259" name="Baguette Heavy Hammer" name_additional="7-day" type="Weapon">
 		<set name="icon" val="BranchSys.icon.br_2h_blunt_bread_i00" />
@@ -1357,13 +1357,13 @@
 		<skills>
 			<skill id="21042" level="1" /> <!-- Blessing of Baguette -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="2" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">2</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="20260" name="Baguette Spear" name_additional="7-day" type="Weapon">
 		<set name="icon" val="BranchSys.icon.br_pole_bread_i00" />
@@ -1393,13 +1393,13 @@
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 			<skill id="21042" level="1" /> <!-- Blessing of Baguette -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="2" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">2</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="20261" name="Baguette Bow" name_additional="7-day" type="Weapon">
 		<set name="icon" val="BranchSys.icon.br_bow_bread_i00" />
@@ -1430,13 +1430,13 @@
 		<skills>
 			<skill id="21042" level="1" /> <!-- Blessing of Baguette -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="3" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">3</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+		</stats>
 	</item>
 	<item id="20262" name="Baguette Fist" name_additional="7-day" type="Weapon">
 		<set name="icon" val="BranchSys.icon.br_dualfist_bread_i00" />
@@ -1465,13 +1465,13 @@
 		<skills>
 			<skill id="21042" level="1" /> <!-- Blessing of Baguette -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="2" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">2</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="20263" name="Baguette Magic Sword" name_additional="7-day" type="Weapon">
 		<set name="icon" val="BranchSys.icon.br_mage_sword_bread_i00" />
@@ -1500,12 +1500,12 @@
 		<skills>
 			<skill id="21042" level="1" /> <!-- Blessing of Baguette -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="2" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">2</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="20264" name="Baguette Staff" name_additional="7-day" type="Weapon">
 		<set name="icon" val="BranchSys.icon.br_1h_mage_bread_i00" />
@@ -1534,13 +1534,13 @@
 		<skills>
 			<skill id="21042" level="1" /> <!-- Blessing of Baguette -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="2" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">2</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="20265" name="Baguette Great Staff" name_additional="7-day" type="Weapon">
 		<set name="icon" val="BranchSys.icon.br_2h_mage_bread_i00" />
@@ -1569,13 +1569,13 @@
 		<skills>
 			<skill id="21042" level="1" /> <!-- Blessing of Baguette -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="2" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">2</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="20266" name="Baguette Shield" name_additional="7-day" type="Armor">
 		<set name="icon" val="BranchSys.icon.br_shield_bread_i00" />
@@ -1601,11 +1601,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="5" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">5</stat>
+		</stats>
 	</item>
 	<item id="20267" name="Baguette Rapier" name_additional="7-day" type="Weapon">
 		<set name="icon" val="BranchSys.icon.br_rapier_bread_i00" />
@@ -1638,13 +1638,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="3" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">3</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+		</stats>
 	</item>
 	<item id="20268" name="Baguette Ancient Sword" name_additional="7-day" type="Weapon">
 		<set name="icon" val="BranchSys.icon.br_ancientsword_bread_i00" />
@@ -1676,13 +1676,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="3" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">3</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+		</stats>
 	</item>
 	<item id="20269" name="Baguette Crossbow" name_additional="7-day" type="Weapon">
 		<set name="icon" val="BranchSys.icon.br_crossbow_bread_i00" />
@@ -1715,13 +1715,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="3" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">3</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+		</stats>
 	</item>
 	<item id="20270" name="Baguette's Dualsword" name_additional="7-day" type="Weapon">
 		<set name="icon" val="BranchSys.icon.br_dual_bread_i00" />
@@ -1750,12 +1750,12 @@
 		<skills>
 			<skill id="21042" level="1" /> <!-- Blessing of Baguette -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="2" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">2</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="20271" name="Baguette Legacy" type="EtcItem">
 		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />

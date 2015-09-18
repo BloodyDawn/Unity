@@ -508,9 +508,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="130" />
-		<for>
-			<add order="0" stat="pDef" val="28.0" />
-		</for>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
 	</item>
 	<item id="23241" name="Blessed Scroll: Enchant Elemental Shirt" type="EtcItem">
 		<!-- Enchant Scroll exclusive to Pa'agrio, Sayha, Maphr and Eva Shirts. When enchanted, increases P. Def. and M. Def. by 1. From +3, Elemental defense increases by 3, and from +4, P. Def. Increases by 3. Can be safely enchanted up to +3 and can be enchanted up to a max of +10. Basic stats (CON, MEN, STR, INT, DEX, WIT) are gradually increased with each enchant level starting from +4. At +5, +6, +7, +8, +9, and +10, additional bonuses are also applied. If enchanting fails, the enchant value will be reset to 0. -->

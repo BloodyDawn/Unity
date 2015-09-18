@@ -19,15 +19,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="7901" name="Star Buster" type="Weapon">
 		<set name="icon" val="icon.weapon_star_buster_i00" />
@@ -48,15 +48,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="236" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">236</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="7902" name="Doom Crusher" type="Weapon">
 		<set name="icon" val="icon.weapon_doom_crusher_i00" />
@@ -76,15 +76,15 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="282" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">282</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="7903" name="Frintezza's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -102,12 +102,12 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="78" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">78</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="7904" name="Boat Ticket: Rune to Gludin" type="EtcItem">
 		<set name="icon" val="icon.etc_ticket_red_i00" />

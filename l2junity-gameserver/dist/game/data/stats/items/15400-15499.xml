@@ -87,12 +87,12 @@
 		<skills>
 			<skill id="3010" level="4" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="15404" name="6th Anniversary Party Gift Box (2003)" name_additional="Event" type="EtcItem">
 		<set name="icon" val="icon.event_six_party_box_i00" />
@@ -612,10 +612,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
-		<for>
-			<add order="0" stat="mDef" val="63" />
-			<add stat="maxMp" val="31" />
-		</for>
+		<stats>
+			<stat type="mDef">63</stat>
+			<stat type="maxMp">31</stat>
+		</stats>
 	</item>
 	<item id="15429" name="6th Anniversary Party Belt (Event)" name_additional="7-day" type="Armor">
 		<set name="icon" val="icon.event_energy_belt_i00" />
@@ -756,11 +756,12 @@
 			<skill id="8246" level="1" /> <!-- Transform Pumpkin Ghost -->
 			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="15437" name="Transformation Scroll Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />

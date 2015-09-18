@@ -12,10 +12,10 @@
 		<set name="price" val="2032000" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="73" />
+		<stats>
+			<stat type="pDef">73</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13001" name="Sealed Helm of Nightmare" name_additional="Robe" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i02" />
@@ -32,10 +32,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="73" />
+		<stats>
+			<stat type="pDef">73</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13002" name="Essence of Kamaloka" type="EtcItem">
 		<set name="icon" val="icon.etc_crystal_blue_i00" />
@@ -631,12 +631,12 @@
 		<cond msgId="1518">
 			<player instanceId="43" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="72" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">148</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13035" name="Reinforced Spirit's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -667,12 +667,12 @@
 		<cond msgId="1518">
 			<player instanceId="43" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="127" />
-			<set stat="mAtk" val="82" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13036" name="Sword of Ice and Fire" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -704,12 +704,12 @@
 		<cond msgId="1518">
 			<player instanceId="43" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="147" />
-			<set stat="mAtk" val="92" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">236</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13037" name="Pailaka Soulshot (D-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_spirit_bullet_blue_i00" />
@@ -848,12 +848,12 @@
 		<cond msgId="1518">
 			<player instanceId="44" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="143" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13043" name="Reinforced Ancient Legacy Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_tulwar_i00" />
@@ -885,12 +885,12 @@
 		<cond msgId="1518">
 			<player instanceId="44" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="279" />
-			<set stat="mAtk" val="153" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">279</stat>
+			<stat type="mAtk">153</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13044" name="Complete Ancient Legacy Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_tulwar_i00" />
@@ -923,12 +923,12 @@
 		<cond msgId="1518">
 			<player instanceId="44" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="299" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">299</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13045" name="Pailaka Soulshot (C-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_spirit_bullet_blue_i00" />
@@ -1068,10 +1068,10 @@
 		<cond msgId="1518">
 			<player instanceId="43,44,45" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="49" />
-			<add order="0" stat="pDef" val="49" />
-		</for>
+		<stats>
+			<stat type="mDef">49</stat>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="13051" name="Hair Accessory" type="EtcItem">
 		<set name="icon" val="icon.accessory_bear_cap_i00" />
@@ -1113,13 +1113,13 @@
 		<cond msgId="1518">
 			<player instanceId="45" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="161" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">161</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13053" name="Reinforced Spear of Silenos" type="Weapon">
 		<set name="icon" val="icon.weapon_long_spear_i00" />
@@ -1152,13 +1152,13 @@
 		<cond msgId="1518">
 			<player instanceId="45" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="271" />
-			<set stat="mAtk" val="171" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">271</stat>
+			<stat type="mAtk">171</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13054" name="Complete Spear of Silenos" type="Weapon">
 		<set name="icon" val="icon.weapon_long_spear_i00" />
@@ -1191,13 +1191,13 @@
 		<cond msgId="1518">
 			<player instanceId="45" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="291" />
-			<set stat="mAtk" val="181" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">291</stat>
+			<stat type="mAtk">181</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13055" name="Pailaka Soulshot (A-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_spirit_bullet_blue_i00" />
@@ -1345,13 +1345,13 @@
 		<skills>
 			<skill id="3014" level="2" /> <!-- Special Ability: Mana Up -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="267" />
-			<set stat="mAtk" val="202" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">267</stat>
+			<stat type="mAtk">202</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="13062" name="Monster Only (Employee's Friend)" type="Weapon">
 		<set name="icon" val="icon.weapon_mon_friend_employee_i00" />
@@ -1379,12 +1379,12 @@
 		<skills>
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="442" />
-			<set stat="mAtk" val="163" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">442</stat>
+			<stat type="mAtk">163</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13063" name="Unfair Joystick" type="EtcItem">
 		<set name="icon" val="icon.etc_gateleeper_stick_i00" />
@@ -1568,10 +1568,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 	<item id="13078" name="Arcana Sigil" type="Armor">
 		<set name="icon" val="icon.arcana_sigil_i00" />
@@ -1593,11 +1593,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<add order="0" stat="pDef" val="13" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="pDef">13</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13079" name="My Teleport Book Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i01" />

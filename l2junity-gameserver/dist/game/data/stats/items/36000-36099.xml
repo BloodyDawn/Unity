@@ -383,12 +383,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="10.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">10</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="36032" name="Multi Hammer" type="Weapon">
 		<!-- Item used in clan requests. -->
@@ -402,12 +402,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="10.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">10</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="36033" name="Multi Hammer - 3" type="Weapon">
 		<!-- Clan Production Request A - When equipped, it provides you with a skill to repair or destroy a certain robot. -->
@@ -421,12 +421,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="10.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">10</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="36034" name="Multi Hammer - 4" type="Weapon">
 		<!-- Clan Production Request B - When equipped, it provides you with a skill to repair or destroy a certain robot. -->
@@ -440,12 +440,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="10.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">10</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="36035" name="Multi Hammer - 5" type="Weapon">
 		<!-- Alternative Clan Request A - When equipped, it provides you with a skill to repair or destroy a certain robot. -->
@@ -459,12 +459,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="10.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">10</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="36036" name="Multi Hammer - 6" type="Weapon">
 		<!-- Alternative Clan Request B - When equipped, it provides you with a skill to repair or destroy a certain robot. -->
@@ -478,12 +478,12 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="10.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">10</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="36037" name="Mysterious Incantation" type="EtcItem">
 		<!-- Item that can be used only in the Ceremony of Chaos Arena. Drags the selected target to your location. -->
@@ -526,10 +526,10 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="36040" name="Lava Saw - Ceremony of Chaos" type="Weapon">
 		<set name="icon" val="icon.weapon_lavamond_saw_i00" />
@@ -542,10 +542,10 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="36041" name="Eversor Mace - Ceremony of Chaos" type="Weapon">
 		<set name="icon" val="icon.weapon_expowder_mace_i00" />
@@ -558,11 +558,11 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="36042" name="Sacredium - Ceremony of Chaos" type="Weapon">
 		<set name="icon" val="icon.weapon_sacredumors_i00" />
@@ -575,11 +575,11 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="36043" name="Contristo Hammer - Ceremony of Chaos" type="Weapon">
 		<set name="icon" val="icon.weapon_pereztear_hammer_i00" />
@@ -592,11 +592,11 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="36044" name="Cyclic Cane - Ceremony of Chaos" type="Weapon">
 		<set name="icon" val="icon.weapon_psyskilt_cane_i00" />
@@ -609,11 +609,11 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="36045" name="Mamba Edge - Ceremony of Chaos" type="Weapon">
 		<set name="icon" val="icon.weapon_mambaedge_i00" />
@@ -626,10 +626,10 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="36046" name="Jade Claw - Ceremony of Chaos" type="Weapon">
 		<set name="icon" val="icon.weapon_jademice_claw_i00" />
@@ -642,11 +642,11 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="36047" name="Demitelum - Ceremony of Chaos" type="Weapon">
 		<set name="icon" val="icon.weapon_ghostcleaner_i00" />
@@ -662,10 +662,10 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="36048" name="Eternal Core Dualsword - Ceremony of Chaos" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -681,10 +681,10 @@
 		<skills>
 			<skill id="3411" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="36049" name="Mamba Edge Dual Dagger - Ceremony of Chaos" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
@@ -697,10 +697,10 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="36050" name="Recurve Thorne Bow - Ceremony of Chaos" type="Weapon">
 		<set name="icon" val="icon.weapon_recurvethorne_bow_i00" />
@@ -713,10 +713,10 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="36051" name="Clan Cloak - Standard" type="Armor">
 		<!-- Alliance made with blood! Cloak that is specifically designed for clans and symbolizes the honor of clans. Can be acquired through a clan request. Can be used only on clan members. -->
@@ -731,10 +731,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="36052" name="Clan Cloak - Clan Hall (Auction)" type="Armor">
 		<!-- Alliance made with blood! Cloak that is specifically designed for clans and symbolizes the honor of clans. Can be used only on members of clans that own auction-type Clan Halls. When S or S80-grade armor set is all equipped, or upper armor above R-grade is equipped, the sealed cloak slot opens. -->
@@ -750,10 +750,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="5000000" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="36053" name="Clan Cloak - Castle" type="Armor">
 		<!-- Alliance made with blood! Cloak that is specifically designed for clans and symbolizes the honor of clans. Can be used only on members of clans that own a castle. STR + 2 / INT + 2 effect. When S or S80-grade armor set is all equipped, or upper armor above R-grade is equipped, the sealed cloak slot opens. -->
@@ -772,10 +772,10 @@
 		<skills>
 			<skill id="13405" level="1" /> <!-- Clan Cloak - Castle -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="36054" name="Red Gate Key" type="EtcItem">
 		<!-- Key that the Spiculas in Nornil's Cave have. Its use is not known. -->

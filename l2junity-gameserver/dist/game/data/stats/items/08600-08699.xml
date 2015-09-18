@@ -1205,14 +1205,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="8679" name="Sword of Ipos" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_ipos_i00" />
@@ -1234,14 +1234,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="305" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">305</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="8680" name="Barakiel's Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_barakiel_axe_i00" />
@@ -1262,15 +1262,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="8681" name="Behemoth' Tuning Fork" type="Weapon">
 		<set name="icon" val="icon.weapon_tuning_fork_of_behemoth_i00" />
@@ -1291,15 +1291,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="305" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">305</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="8682" name="Naga Storm" type="Weapon">
 		<set name="icon" val="icon.weapon_naga_storm_i00" />
@@ -1320,15 +1320,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DAGGER" />
-		<for>
-			<set stat="pAtk" val="220" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">220</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="8683" name="Tiphon's Spear" type="Weapon">
 		<set name="icon" val="icon.weapon_tiphon_spear_i00" />
@@ -1352,15 +1352,15 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="251" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">251</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="8684" name="Shyeed's Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_shyid_bow_i00" />
@@ -1384,15 +1384,15 @@
 		<set name="reuse_delay" val="820" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BOW" />
-		<for>
-			<set stat="pAtk" val="570" />
-			<set stat="mAtk" val="133" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
+		<stats>
+			<stat type="pAtk">570</stat>
+			<stat type="mAtk">133</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="8685" name="Sobekk's Hurricane" type="Weapon">
 		<set name="icon" val="icon.weapon_sobekk_hurricane_i00" />
@@ -1413,15 +1413,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FIST_WEAPON" />
-		<for>
-			<set stat="pAtk" val="305" />
-			<set stat="mAtk" val="121" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">305</stat>
+			<stat type="mAtk">121</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="8686" name="Themis' Tongue" type="Weapon">
 		<set name="icon" val="icon.weapon_tongue_of_themis_i00" />
@@ -1443,14 +1443,14 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
-		<for>
-			<set stat="pAtk" val="202" />
-			<set stat="mAtk" val="161" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">202</stat>
+			<stat type="mAtk">161</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="8687" name="Cabrio's Hand" type="Weapon">
 		<set name="icon" val="icon.weapon_hand_of_cabrio_i00" />
@@ -1472,15 +1472,15 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="202" />
-			<set stat="mAtk" val="161" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">202</stat>
+			<stat type="mAtk">161</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="8688" name="Daimon Crystal" type="Weapon">
 		<set name="icon" val="icon.weapon_crystal_of_deamon_i00" />
@@ -1502,15 +1502,15 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="245" />
-			<set stat="mAtk" val="177" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">245</stat>
+			<stat type="mAtk">177</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="8689" name="Blood Sword Akamanah" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1537,14 +1537,14 @@
 		<skills>
 			<skill id="3629" level="1" /> <!-- Blood Sword Akamanah -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="361" />
-			<set stat="mAtk" val="137" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">1548</stat>
+			<stat type="mAtk">255</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="8690" name="Recipe: Sirra's Blade (60%)" type="EtcItem">
 		<set name="icon" val="icon.etc_recipe_violet_i00" />

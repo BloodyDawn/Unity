@@ -45,12 +45,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="100" />
-		<for>
-			<set stat="pAtk" val="1.0" />
-			<set stat="mAtk" val="1.0" />
-			<set stat="pAtkSpd" val="303.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
 	</item>
 	<item id="45375" name="Alien Nano Supplement" name_additional="Event" type="EtcItem">
 		<!-- Random basic stat + 6 for 30 min. Cannot be stacked with Fish Stew or other Alien Nano Supplements. -->
@@ -109,12 +109,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="3600" />
-		<for>
-			<set stat="pAtk" val="1.0" />
-			<set stat="mAtk" val="1.0" />
-			<set stat="pAtkSpd" val="303.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
 	</item>
 	<item id="45381" name="Charged Plasma Gun" name_additional="1-hour" type="Weapon">
 		<!-- Be careful, this one is set to the highest power! Use this and you can also use the Spirit Hit skill. 1-hour. -->
@@ -131,12 +131,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="3600" />
-		<for>
-			<set stat="pAtk" val="1.0" />
-			<set stat="mAtk" val="1.0" />
-			<set stat="pAtkSpd" val="303.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
 	</item>
 	<item id="45382" name="Top Hat" name_additional="15-day" type="Armor">
 		<!-- Magical-looking hat. Uses 2 hair accessory slots. -->

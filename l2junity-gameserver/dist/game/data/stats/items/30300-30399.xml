@@ -98,10 +98,10 @@
 		<set name="weight" val="440" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="35565000" />
-		<for>
-			<add order="0" stat="pDef" val="25.0" />
+		<stats>
+			<stat type="pDef">25</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30308" name="R99 (Rare) Bracelet" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_s_i03" />
@@ -120,10 +120,10 @@
 		<set name="weight" val="130" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="71131000" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
+		<stats>
+			<stat type="pDef">50</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30310" name="Abelius Cloak" name_additional="Sigel Knight" type="Armor">
 		<!-- Cloak that can only be worn by someone who has received the strength of the ancient giant Abelius. M. Def. + 40. -->
@@ -144,12 +144,12 @@
 		<cond msgId="1518">
 			<player class_id_restriction="148, 149, 150, 151" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30311" name="Sapyros Cloak" name_additional="Tyrr Warrior" type="Armor">
 		<!-- Cloak that can only be worn by someone who has received the strength of the ancient giant Sapyros. M. Def. + 40. -->
@@ -170,12 +170,12 @@
 		<cond msgId="1518">
 			<player class_id_restriction="152, 153, 154, 155, 156, 157" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30312" name="Ashagen Cloak" name_additional="Othell Rogue" type="Armor">
 		<!-- Cloak that can only be worn by someone who has received the strength of the ancient giant Ashagen. M. Def. + 40. -->
@@ -196,12 +196,12 @@
 		<cond msgId="1518">
 			<player class_id_restriction="158, 159, 160, 161" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30313" name="Cranigg Cloak" name_additional="Yul Archer" type="Armor">
 		<!-- Cloak that can only be worn by someone who has received the strength of the ancient giant Cranigg. M. Def. + 40. -->
@@ -222,12 +222,12 @@
 		<cond msgId="1518">
 			<player class_id_restriction="162, 163, 164, 165" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30314" name="Soltkreig Cloak" name_additional="Feoh Wizard" type="Armor">
 		<!-- Cloak that can only be worn by someone who has received the strength of the ancient giant Soltkreig. M. Def. + 40. -->
@@ -248,12 +248,12 @@
 		<cond msgId="1518">
 			<player class_id_restriction="166, 167, 168, 169, 170" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30315" name="Naviarope Cloak" name_additional="Wynn Summoner" type="Armor">
 		<!-- Cloak that can only be worn by someone who has received the strength of the ancient giant Naviarope. M. Def. + 40. -->
@@ -274,12 +274,12 @@
 		<cond msgId="1518">
 			<player class_id_restriction="176, 177, 178" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30316" name="Leister Cloak" name_additional="Iss Enchanter" type="Armor">
 		<!-- Cloak that can only be worn by someone who has received the strength of the ancient giant Leister. M. Def. + 40. -->
@@ -300,12 +300,12 @@
 		<cond msgId="1518">
 			<player class_id_restriction="171, 172, 173, 174, 175" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30317" name="Lakcis Cloak" name_additional="Aeore Healer" type="Armor">
 		<!-- Cloak that can only be worn by someone who has received the strength of the ancient giant Lakcis. M. Def. + 40. -->
@@ -326,12 +326,12 @@
 		<cond msgId="1518">
 			<player class_id_restriction="179, 180, 181" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30318" name="Dusk Report" type="EtcItem">
 		<!-- Report regarding the findings of the expedition team of the Dusk that was found in the Catacomb and the Necropolis. Click to check its content. -->
@@ -475,12 +475,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="5.0" />
-			<set stat="mAtk" val="5.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">5</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="30330" name="Top-grade Gludio Water Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Gludio. Water Resistance + 30. -->
@@ -500,10 +500,10 @@
 		<skills>
 			<skill id="8388" level="2" /> <!-- Royal Guard Necklace - Gludio -->
 		</skills>
-		<for>
-			<add stat="mDef" val="158.0" />
+		<stats>
+			<stat type="mDef">158</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30331" name="Top-grade Dion Holy Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Dion. Holy Resistance + 30. -->
@@ -523,10 +523,10 @@
 		<skills>
 			<skill id="8389" level="2" /> <!-- Royal Guard Necklace - Dion -->
 		</skills>
-		<for>
-			<add stat="mDef" val="158.0" />
+		<stats>
+			<stat type="mDef">158</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30332" name="Top-grade Giran Wind Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Giran. Wind Resistance + 30. -->
@@ -546,10 +546,10 @@
 		<skills>
 			<skill id="8390" level="2" /> <!-- Royal Guard Necklace - Giran -->
 		</skills>
-		<for>
-			<add stat="mDef" val="158.0" />
+		<stats>
+			<stat type="mDef">158</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30333" name="Top-grade Oren Dark Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Oren. Dark Resistance + 30. -->
@@ -569,10 +569,10 @@
 		<skills>
 			<skill id="8391" level="2" /> <!-- Royal Guard Necklace - Oren -->
 		</skills>
-		<for>
-			<add stat="mDef" val="158.0" />
+		<stats>
+			<stat type="mDef">158</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30334" name="Top-grade Aden Earth Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Aden. Earth Resistance + 30. -->
@@ -592,10 +592,10 @@
 		<skills>
 			<skill id="8392" level="2" /> <!-- Royal Guard Necklace - Aden -->
 		</skills>
-		<for>
-			<add stat="mDef" val="158.0" />
+		<stats>
+			<stat type="mDef">158</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30335" name="Top-grade Innadril Water Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Innadril. Water Resistance + 30. -->
@@ -615,10 +615,10 @@
 		<skills>
 			<skill id="8393" level="2" /> <!-- Royal Guard Necklace - Innadril -->
 		</skills>
-		<for>
-			<add stat="mDef" val="158.0" />
+		<stats>
+			<stat type="mDef">158</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30336" name="Top-grade Goddard Fire Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Goddard. Fire Resistance + 30. -->
@@ -638,10 +638,10 @@
 		<skills>
 			<skill id="8394" level="2" /> <!-- Royal Guard Necklace - Goddard -->
 		</skills>
-		<for>
-			<add stat="mDef" val="158.0" />
+		<stats>
+			<stat type="mDef">158</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30337" name="Top-grade Rune Fire Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Rune. Fire Resistance + 30. -->
@@ -661,10 +661,10 @@
 		<skills>
 			<skill id="8395" level="2" /> <!-- Royal Guard Necklace - Rune -->
 		</skills>
-		<for>
-			<add stat="mDef" val="158.0" />
+		<stats>
+			<stat type="mDef">158</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30338" name="Top-grade Schuttgart Wind Resistance Necklace" type="Armor">
 		<!-- Necklace given to the guardian of Schuttgart. Wind Resistance + 30. -->
@@ -684,10 +684,10 @@
 		<skills>
 			<skill id="8396" level="2" /> <!-- Royal Guard Necklace - Schuttgart -->
 		</skills>
-		<for>
-			<add stat="mDef" val="158.0" />
+		<stats>
+			<stat type="mDef">158</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30339" name="Top-grade Gludio Water Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Gludio. Stun attack + 15%, Bleed Resistance + 15%, Water Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
@@ -707,10 +707,10 @@
 		<skills>
 			<skill id="8786" level="1" /> <!-- Top-grade Royal Guard Earring - Gludio -->
 		</skills>
-		<for>
-			<add stat="mDef" val="118.0" />
+		<stats>
+			<stat type="mDef">118</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30340" name="Top-grade Dion Holy Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Dion. Hold attack + 15%, Poison Resistance + 15%, Holy Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
@@ -730,10 +730,10 @@
 		<skills>
 			<skill id="8787" level="1" /> <!-- Top-grade Royal Guard Earring - Dion -->
 		</skills>
-		<for>
-			<add stat="mDef" val="118.0" />
+		<stats>
+			<stat type="mDef">118</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30341" name="Top-grade Giran Wind Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Giran. Bleed attack + 15%, Paralysis Resistance + 15%, Wind Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
@@ -753,10 +753,10 @@
 		<skills>
 			<skill id="8788" level="1" /> <!-- Top-grade Royal Guard Earring - Giran -->
 		</skills>
-		<for>
-			<add stat="mDef" val="118.0" />
+		<stats>
+			<stat type="mDef">118</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30342" name="Top-grade Oren Dark Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Oren. Paralysis attack + 15%, Hold Resistance + 15%, Dark Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
@@ -776,10 +776,10 @@
 		<skills>
 			<skill id="8789" level="1" /> <!-- Top-grade Royal Guard Earring - Oren -->
 		</skills>
-		<for>
-			<add stat="mDef" val="118.0" />
+		<stats>
+			<stat type="mDef">118</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30343" name="Top-grade Aden Earth Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Aden. Mental attack + 15%, Stun Resistance + 15%, Earth Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
@@ -799,10 +799,10 @@
 		<skills>
 			<skill id="8790" level="1" /> <!-- Top-grade Royal Guard Earring - Aden -->
 		</skills>
-		<for>
-			<add stat="mDef" val="118.0" />
+		<stats>
+			<stat type="mDef">118</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30344" name="Top-grade Innadril Water Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Innadril. Sleep attack + 15%, Stun Resistance + 15%, Water Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
@@ -822,10 +822,10 @@
 		<skills>
 			<skill id="8791" level="1" /> <!-- Top-grade Royal Guard Earring - Innadril -->
 		</skills>
-		<for>
-			<add stat="mDef" val="118.0" />
+		<stats>
+			<stat type="mDef">118</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30345" name="Top-grade Goddard Fire Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Goddard. Stun attack + 15%, Sleep Resistance + 15%, Fire Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
@@ -845,10 +845,10 @@
 		<skills>
 			<skill id="8792" level="1" /> <!-- Top-grade Royal Guard Earring - Goddard -->
 		</skills>
-		<for>
-			<add stat="mDef" val="118.0" />
+		<stats>
+			<stat type="mDef">118</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30346" name="Top-grade Rune Fire Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Rune. Poison attack + 15%, Hold Resistance + 15%, Fire Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
@@ -868,10 +868,10 @@
 		<skills>
 			<skill id="8793" level="1" /> <!-- Top-grade Royal Guard Earring - Rune -->
 		</skills>
-		<for>
-			<add stat="mDef" val="118.0" />
+		<stats>
+			<stat type="mDef">118</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30347" name="Top-grade Schuttgart Wind Resistance Earring" type="Armor">
 		<!-- Earring given to the guardian of Schuttgart. Hold attack + 15%, Mental Resistance + 15%, Wind Resistance + 10. CP + 5%. Only one effect is applied when two earrings with the same effect are equipped. -->
@@ -891,10 +891,10 @@
 		<skills>
 			<skill id="8794" level="1" /> <!-- Top-grade Royal Guard Earring - Schuttgart -->
 		</skills>
-		<for>
-			<add stat="mDef" val="118.0" />
+		<stats>
+			<stat type="mDef">118</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30348" name="Top-grade Gludio Earth Resistance Earring" type="Armor">
 		<!-- Ring given to the guardian of Gludio. Earth Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
@@ -914,10 +914,10 @@
 		<skills>
 			<skill id="8795" level="1" /> <!-- Top-grade Royal Guard Ring - Gludio -->
 		</skills>
-		<for>
-			<add stat="mDef" val="79.0" />
+		<stats>
+			<stat type="mDef">79</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30349" name="Top-grade Dion Water Resistance Ring" type="Armor">
 		<!-- Ring given to the guardian of Dion. Water Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
@@ -937,10 +937,10 @@
 		<skills>
 			<skill id="8796" level="1" /> <!-- Top-grade Royal Guard Ring - Dion -->
 		</skills>
-		<for>
-			<add stat="mDef" val="79.0" />
+		<stats>
+			<stat type="mDef">79</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30350" name="Top-grade Giran Fire Resistance Ring" type="Armor">
 		<!-- Ring given to the guardian of Giran. Fire Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
@@ -960,10 +960,10 @@
 		<skills>
 			<skill id="8797" level="1" /> <!-- Top-grade Royal Guard Ring - Giran -->
 		</skills>
-		<for>
-			<add stat="mDef" val="79.0" />
+		<stats>
+			<stat type="mDef">79</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30351" name="Top-grade Oren Earth Resistance Ring" type="Armor">
 		<!-- Ring given to the guardian of Oren. Earth Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
@@ -983,10 +983,10 @@
 		<skills>
 			<skill id="8798" level="1" /> <!-- Top-grade Royal Guard Ring - Oren -->
 		</skills>
-		<for>
-			<add stat="mDef" val="79.0" />
+		<stats>
+			<stat type="mDef">79</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30352" name="Top-grade Aden Holy Resistance Ring" type="Armor">
 		<!-- Ring given to the guardian of Aden. Holy Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
@@ -1006,10 +1006,10 @@
 		<skills>
 			<skill id="8799" level="1" /> <!-- Top-grade Royal Guard Ring - Aden -->
 		</skills>
-		<for>
-			<add stat="mDef" val="79.0" />
+		<stats>
+			<stat type="mDef">79</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30353" name="Top-grade Innadril Holy Resistance Ring" type="Armor">
 		<!-- Ring given to the guardian of Innadril. Holy Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
@@ -1029,10 +1029,10 @@
 		<skills>
 			<skill id="8800" level="1" /> <!-- Top-grade Royal Guard Ring - Innadril -->
 		</skills>
-		<for>
-			<add stat="mDef" val="79.0" />
+		<stats>
+			<stat type="mDef">79</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30354" name="Top-grade Goddard Dark Resistance Ring" type="Armor">
 		<!-- Ring given to the guardian of Goddard. Dark Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
@@ -1052,10 +1052,10 @@
 		<skills>
 			<skill id="8801" level="1" /> <!-- Top-grade Royal Guard Ring - Goddard -->
 		</skills>
-		<for>
-			<add stat="mDef" val="79.0" />
+		<stats>
+			<stat type="mDef">79</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30355" name="Top-grade Rune Wind Resistance Ring" type="Armor">
 		<!-- Ring given to the guardian of Rune. Wind Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
@@ -1075,10 +1075,10 @@
 		<skills>
 			<skill id="8802" level="1" /> <!-- Top-grade Royal Guard Ring - Rune -->
 		</skills>
-		<for>
-			<add stat="mDef" val="79.0" />
+		<stats>
+			<stat type="mDef">79</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30356" name="Top-grade Schuttgart Dark Resistance Ring" type="Armor">
 		<!-- Ring given to the guardian of Schuttgart. Dark Resistance + 15. Only one effect is applied when two rings with the same effect are equipped. -->
@@ -1098,10 +1098,10 @@
 		<skills>
 			<skill id="8803" level="1" /> <!-- Top-grade Royal Guard Ring - Schuttgart -->
 		</skills>
-		<for>
-			<add stat="mDef" val="79.0" />
+		<stats>
+			<stat type="mDef">79</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30357" name="Elixir of Life (R-grade)" type="EtcItem">
 		<!-- Recovers HP. Only characters level 85 or above can use on themselves. Cooldown is 2 min. -->
@@ -1269,10 +1269,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="530" />
-		<for>
-			<add order="0" stat="pDef" val="114.0" />
+		<stats>
+			<stat type="pDef">114</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30366" name="Boots" type="Armor">
 		<!-- Boots crafting ingredient -->
@@ -1290,10 +1290,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="1070" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
+		<stats>
+			<stat type="pDef">76</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30367" name="Gloves" type="Armor">
 		<!-- Gloves crafting ingredient -->
@@ -1311,10 +1311,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="510" />
-		<for>
-			<add order="0" stat="pDef" val="76.0" />
+		<stats>
+			<stat type="pDef">76</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30368" name="T-shirt" type="Armor">
 		<!-- T-shirt -->
@@ -1325,10 +1325,10 @@
 		<set name="weight" val="130" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="3997000" />
-		<for>
-			<add order="0" stat="pDef" val="38.0" />
+		<stats>
+			<stat type="pDef">38</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30369" name="Belt" type="Armor">
 		<!-- Belt -->
@@ -1341,10 +1341,10 @@
 		<set name="weight" val="440" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="1998000" />
-		<for>
-			<add order="0" stat="pDef" val="19.0" />
+		<stats>
+			<stat type="pDef">19</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30370" name="Bracelet" type="Armor">
 		<!-- Bracelet -->
@@ -1389,12 +1389,12 @@
 		<skills>
 			<skill id="13136" level="1" /> <!-- Hero's Cloak -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="100.0" />
-			<add stat="mDef" val="80.0" />
+		<stats>
+			<stat type="pDef">100</stat>
+			<stat type="mDef">80</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30373" name="Glorious Cloak" type="Armor">
 		<!-- Glorious Cloak. Increases Max HP and CP. M. Def. + 50,. DEX/MEN/STR/CON/WIT/INT + 1, and Attribute Resistance + 5.\n\nNote: Item disappears when you change classes. -->
@@ -1415,12 +1415,12 @@
 		<skills>
 			<skill id="13137" level="1" /> <!-- Glorious Cloak -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="60.0" />
-			<add stat="mDef" val="50.0" />
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30374" name="Magic Filled Box" type="EtcItem">
 		<!-- Box filled with M. Atk. It contains a useful item. -->
@@ -1557,10 +1557,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="55.0" />
+		<stats>
+			<stat type="mDef">55</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30384" name="Certificate of Promise" type="EtcItem">
 		<!-- Proof given to those who successfully complete a mission. Can be exchanged for equipment. -->
@@ -1693,12 +1693,12 @@
 		<skills>
 			<skill id="13146" level="1" /> <!-- Special Ability: Infinity Shaper -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="881.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">845</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="30393" name="Infinity Cutter" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -1723,12 +1723,12 @@
 		<skills>
 			<skill id="13147" level="1" /> <!-- Special Ability: Infinity Cutter -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1007.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">966</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30394" name="Infinity Slasher" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -1753,12 +1753,12 @@
 		<skills>
 			<skill id="13148" level="1" /> <!-- Special Ability: Infinity Slasher -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1225.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1175</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30395" name="Infinity Avenger" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -1783,13 +1783,13 @@
 		<skills>
 			<skill id="13149" level="1" /> <!-- Special Ability: Infinity Avenger -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1007.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">966</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30396" name="Infinity Fighter" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -1814,13 +1814,13 @@
 		<skills>
 			<skill id="13150" level="1" /> <!-- Special Ability: Infinity Fighter -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1225.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1175</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30397" name="Infinity Stormer" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -1846,12 +1846,12 @@
 			<skill id="13115" level="1" /> <!-- Polearm Multi-attack -->
 			<skill id="13151" level="1" /> <!-- Special Ability: Infinity Stormer -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1007.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">966</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30398" name="Infinity Thrower" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -1876,12 +1876,12 @@
 		<skills>
 			<skill id="13152" level="1" /> <!-- Special Ability: Infinity Thrower -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1983.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1902</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="30399" name="Infinity Shooter" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -1906,11 +1906,11 @@
 		<skills>
 			<skill id="13153" level="1" /> <!-- Special Ability: Infinity Shooter -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1786.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1712</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 </list>

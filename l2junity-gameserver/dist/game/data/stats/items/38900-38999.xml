@@ -202,13 +202,13 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="EVENT" />
-		<for>
-			<set stat="pAtk" val="11.0" />
-			<set stat="mAtk" val="12.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">11</stat>
+			<stat type="mAtk">12</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="38926" name="Master Yogi's Scroll: Enchant Weapon" type="EtcItem">
 		<!-- Scroll: Enchant Weapon that can only be used on Master Yogi's staff. Find the Goddess of Destruction event NPC in the village. Cannot use enchant rate increasing items. -->
@@ -492,10 +492,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="38952" name="Festival's Cloack - Pearl White" type="Armor">
 		<!-- Lineage II 10th Anniversary item. -->
@@ -510,10 +510,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="38953" name="Festival's Cloack - Blood Red" type="Armor">
 		<!-- Lineage II 10th Anniversary item. -->
@@ -528,10 +528,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-			<add stat="mDef" val="40.0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="38954" name="10th Anniversary Cake" type="EtcItem">
 		<!-- Lineage II 10th Anniversary item. When used, recovers 5000 HP and the remaining power is recovered as CP. No duration. -->

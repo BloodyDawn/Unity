@@ -407,10 +407,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="2592000" />
-		<for>
-			<add stat="mDef" val="48.0" />
+		<stats>
+			<stat type="mDef">48</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="45438" name="Baium's Ring Pack (30-day)" type="EtcItem">
 		<!-- Wrapped Pack containing a Baium's Ring (30-day). -->
@@ -987,11 +987,11 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="1000" />
 		<set name="time" val="2592000" />
-		<for>
-			<set stat="pAtk" val="1.0" />
-			<set stat="mAtk" val="1.0" />
-			<set stat="pAtkSpd" val="325.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="45493" name="Fishing Rod Pack (30-day)" type="EtcItem">
 		<!-- Open to get a 30-day fishing rod. -->
@@ -1012,11 +1012,11 @@
 		<set name="is_freightable" val="false" />
 		<set name="weight" val="1000" />
 		<set name="commissionItemType" val="OTHER_WEAPON" />
-		<for>
-			<set stat="pAtk" val="1.0" />
-			<set stat="mAtk" val="1.0" />
-			<set stat="pAtkSpd" val="325.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="45495" name="Normal Bait" type="EtcItem">
 		<!-- Bait for fishing. Use to catch fresh fish. -->

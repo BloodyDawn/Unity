@@ -1230,12 +1230,12 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="1067.0" />
-			<set stat="mAtk" val="298.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1067</stat>
+			<stat type="mAtk">298</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35997" name="Test - M. Accuracy Heavy Armor" type="Armor">
 		<!-- Rough stat data inserted -->
@@ -1246,11 +1246,11 @@
 		<set name="crystal_type" val="R99" />
 		<set name="is_freightable" val="false" />
 		<set name="weight" val="100" />
-		<for>
-			<add order="0" stat="pDef" val="385.0" />
-			<add stat="accMagic" val="10.0" />
+		<stats>
+			<stat type="pDef">385</stat>
+			<stat type="accMagic">10</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35998" name="Test - M. Evasion Heavy Armor" type="Armor">
 		<!-- Rough stat data inserted -->
@@ -1261,11 +1261,11 @@
 		<set name="crystal_type" val="R99" />
 		<set name="is_freightable" val="false" />
 		<set name="weight" val="100" />
-		<for>
-			<add order="0" stat="pDef" val="385.0" />
-			<add stat="mEvas" val="11.0" />
+		<stats>
+			<stat type="pDef">385</stat>
+			<stat type="mEvas">11</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35999" name="Heavenly P. Atk. Cookie" type="EtcItem">
 		<!-- For 1 hour, increases Atk. by 35%, P. Critical Damage by 35%, P. Critical Rate by 100%, Atk. Spd. by 8%, M. Atk. by 16%, Casting Spd. by 8%, and Speed by 8. Cooldown 60 min. Buff does not get deleted even after death. Cannot use Olympiad. -->

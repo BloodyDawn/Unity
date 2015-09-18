@@ -23,12 +23,12 @@
 		<skills>
 			<skill id="13154" level="1" /> <!-- Special Ability: Infinity Buster -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="805.0" />
-			<set stat="mAtk" val="696.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">772</stat>
+			<stat type="mAtk">561</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30401" name="Infinity Caster" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Casting Spd. and M. Atk. Cannot be transferred between servers. -->
@@ -53,13 +53,13 @@
 		<skills>
 			<skill id="13155" level="1" /> <!-- Special Ability: Infinity Caster -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="805.0" />
-			<set stat="mAtk" val="696.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">772</stat>
+			<stat type="mAtk">561</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30402" name="Infinity Retributer" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Casting Spd. and M. Atk. Cannot be transferred between servers. -->
@@ -84,14 +84,14 @@
 		<skills>
 			<skill id="13156" level="1" /> <!-- Special Ability: Infinity Retributer -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="981.0" />
-			<set stat="mAtk" val="765.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<add stat="accMagic" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">940</stat>
+			<stat type="mAtk">617</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="accMagic">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30403" name="Infinity Dualsword" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -116,12 +116,12 @@
 		<skills>
 			<skill id="13157" level="1" /> <!-- Special Ability: Infinity Dualsword -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1225.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1175</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30404" name="Infinity Dual Dagger" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -146,12 +146,12 @@
 		<skills>
 			<skill id="13158" level="1" /> <!-- Special Ability: Infinity Dual Dagger -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1007.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">966</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="30405" name="Infinity Dual Blunt Weapon" type="Weapon">
 		<!-- Holy hero's weapon. Increases Max HP, Max MP, Max CP, damage inflicted during PvP, Atk. Cannot be transferred between servers. Spd. and P. Atk. Cannot be transferred between servers. -->
@@ -176,13 +176,13 @@
 		<skills>
 			<skill id="13159" level="1" /> <!-- Special Ability: Infinity Dual Blunt Weapon -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1225.0" />
-			<set stat="mAtk" val="521.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1175</stat>
+			<stat type="mAtk">420</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30406" name="Internal test type stone Pack" type="EtcItem">
 		<set name="icon" val="icon.event_hero_treasure_box_i00" />
@@ -535,10 +535,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="2870" />
-		<for>
-			<add order="0" stat="pDef" val="27.0" />
+		<stats>
+			<stat type="pDef">27</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30435" name="Bound Black Pearl Ring" type="Armor">
 		<!-- Bound black pearl Ring. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -556,10 +556,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="1650" />
-		<for>
-			<add stat="mDef" val="20.0" />
+		<stats>
+			<stat type="mDef">20</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30436" name="Bound Black Pearl Ring" type="Armor">
 		<set name="icon" val="icon.accessary_black_pearl_ring_i00" />
@@ -576,10 +576,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="1650" />
-		<for>
-			<add stat="mDef" val="20.0" />
+		<stats>
+			<stat type="mDef">20</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30437" name="Bound Black Ore Ring" type="Armor">
 		<set name="icon" val="icon.accessary_ring_of_black_ore_i00" />
@@ -596,10 +596,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="23700" />
-		<for>
-			<add stat="mDef" val="36.0" />
+		<stats>
+			<stat type="mDef">36</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30438" name="Bound Black Ore Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_necklace_of_black_ore_i00" />
@@ -616,10 +616,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="47400" />
-		<for>
-			<add stat="mDef" val="72.0" />
+		<stats>
+			<stat type="mDef">72</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30439" name="Bound Black Ore Earring" type="Armor">
 		<set name="icon" val="icon.accessary_earing_of_black_ore_i00" />
@@ -636,10 +636,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="35550" />
-		<for>
-			<add stat="mDef" val="54.0" />
+		<stats>
+			<stat type="mDef">54</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30440" name="Bound Ghost Staff" type="Weapon">
 		<!-- Bound Ghost Staff. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -660,13 +660,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="90.0" />
-			<set stat="mAtk" val="79.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30441" name="Bound Ghost Staff" type="Weapon">
 		<!-- Bound Ghost Staff. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -685,13 +685,13 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="price" val="69350" />
-		<for>
-			<set stat="pAtk" val="90.0" />
-			<set stat="mAtk" val="79.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30442" name="Bound Hoplon" type="Weapon">
 		<!-- Bound Hoplon. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -709,10 +709,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="2050" />
-		<for>
-			<add stat="sDef" val="128.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">128</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 	<item id="30443" name="Bound Stockings of Zubei" type="Armor">
 		<set name="icon" val="icon.armor_t56_l_i00" />
@@ -730,10 +730,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="37415" />
-		<for>
-			<add order="0" stat="pDef" val="49.0" />
+		<stats>
+			<stat type="pDef">49</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30444" name="Bound Stockings of Doom" type="Armor">
 		<set name="icon" val="icon.armor_t73_l_i00" />
@@ -751,10 +751,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="58015" />
-		<for>
-			<add order="0" stat="pDef" val="52.0" />
+		<stats>
+			<stat type="pDef">52</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30445" name="Bound Homunkulus' Sword" type="Weapon">
 		<!-- Bound Homunkulus' Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -775,12 +775,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="111.0" />
-			<set stat="mAtk" val="101.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30446" name="Bound Homunkulus' Sword" name_additional="Acumen" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Casting Spd. by 15%. -->
@@ -804,12 +804,12 @@
 		<skills>
 			<skill id="3047" level="1" /> <!-- Special Ability: Acumen -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="111.0" />
-			<set stat="mAtk" val="101.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30447" name="Bound Homunkulus' Sword" name_additional="Conversion" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nIncreases Max MP by 60% and decreases Max HP by 40%. -->
@@ -833,12 +833,12 @@
 		<skills>
 			<skill id="3048" level="1" /> <!-- Special Ability: Conversion -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="111.0" />
-			<set stat="mAtk" val="101.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30448" name="Bound Homunkulus' Sword" name_additional="Magic Paralyze" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 5% chance of casting Paralysis on the target during magic use. -->
@@ -862,12 +862,12 @@
 		<skills>
 			<skill id="3079" level="3" type="ON_MAGIC_SKILL" type_chance="5" /> <!-- Special Ability: Magic Paralyze -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="111.0" />
-			<set stat="mAtk" val="101.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">111</stat>
+			<stat type="mAtk">101</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30449" name="Bound Sage's Blood" type="Weapon">
 		<!-- Bound Sage's Blood. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -887,12 +887,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="51.0" />
-			<set stat="mAtk" val="52.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">51</stat>
+			<stat type="mAtk">52</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30450" name="Bound Sage's Staff" type="Weapon">
 		<!-- Bound Sage's Staff. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -913,13 +913,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="135.0" />
-			<set stat="mAtk" val="111.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">135</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30451" name="Bound Sage's Staff" name_additional="Magic Hold" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 6% chance of casting Dryad Root on the target during magic use. -->
@@ -943,13 +943,13 @@
 		<skills>
 			<skill id="1201" level="21" type="ON_MAGIC_SKILL" type_chance="10" /> <!-- Dryad Root -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="135.0" />
-			<set stat="mAtk" val="111.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">135</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30452" name="Bound Sage's Staff" name_additional="Magic Poison" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 7% chance of casting Curse Poison on the target during magic use. -->
@@ -973,13 +973,13 @@
 		<skills>
 			<skill id="1168" level="6" type="ON_MAGIC_SKILL" type_chance="8" /> <!-- Curse Poison -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="135.0" />
-			<set stat="mAtk" val="111.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">135</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30453" name="Bound Sage's Staff" name_additional="Magic Weakness" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 7% chance of casting Curse Weakness on the target during magic use. -->
@@ -1003,13 +1003,13 @@
 		<skills>
 			<skill id="1164" level="9" /> <!-- Curse Weakness -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="135.0" />
-			<set stat="mAtk" val="111.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">135</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30454" name="Bound Sage's Ring" type="Armor">
 		<set name="icon" val="icon.accessary_sages_ring_i00" />
@@ -1026,10 +1026,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="23700" />
-		<for>
-			<add stat="mDef" val="36.0" />
+		<stats>
+			<stat type="mDef">36</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30455" name="Bound Sage's Necklace" type="Armor">
 		<set name="icon" val="icon.accessary_sages_necklace_i00" />
@@ -1046,10 +1046,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="47400" />
-		<for>
-			<add stat="mDef" val="72.0" />
+		<stats>
+			<stat type="mDef">72</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30456" name="Bound Sage's Rags" type="Armor">
 		<!-- Rags of the Bound sage. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1068,10 +1068,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="18330" />
-		<for>
-			<add order="0" stat="pDef" val="90.0" />
+		<stats>
+			<stat type="pDef">90</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30457" name="Bound Sage's Worn Gloves" type="Armor">
 		<!-- Bound Sage's worn Gloves Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1089,10 +1089,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="3760" />
-		<for>
-			<add order="0" stat="pDef" val="29.0" />
+		<stats>
+			<stat type="pDef">29</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30458" name="Bound Sage's Earring" type="Armor">
 		<set name="icon" val="icon.accessary_sages_earing_i00" />
@@ -1109,10 +1109,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="35550" />
-		<for>
-			<add stat="mDef" val="54.0" />
+		<stats>
+			<stat type="mDef">54</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30459" name="Bound Sword of Revolution*Sword of Revolution" type="Weapon">
 		<!-- Bound Sword of Revolution*Sword of Revolution. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1136,12 +1136,12 @@
 		<skills>
 			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="148.0" />
-			<set stat="mAtk" val="68.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">148</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30460" name="Bound Sword of Revolution*Elven Long Sword" type="Weapon">
 		<!-- Bound Sword of Revolution*Elven Long Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1165,12 +1165,12 @@
 		<skills>
 			<skill id="3044" level="3" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="155.0" />
-			<set stat="mAtk" val="70.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">155</stat>
+			<stat type="mAtk">70</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30461" name="Bound Sword of Revolution" type="Weapon">
 		<!-- Bound Sword of Revolution. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1191,12 +1191,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="79.0" />
-			<set stat="mAtk" val="47.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30462" name="Bound Helmet" type="Armor">
 		<!-- Bound Helmet. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1214,10 +1214,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="2930" />
-		<for>
-			<add order="0" stat="pDef" val="37.0" />
+		<stats>
+			<stat type="pDef">37</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30463" name="Bound Twilight Knife" type="Weapon">
 		<!-- Bound Item.\nBestows one of the following functions: Magic Mental Shield, Magic Weakness or Magic Regeneration. -->
@@ -1238,12 +1238,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="122.0" />
-			<set stat="mAtk" val="122.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="30464" name="Bound Twilight Knife" name_additional="Magic Regeneration" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nHas a 30% chance of casting Regeneration on the target during magic use. -->
@@ -1267,12 +1267,12 @@
 		<skills>
 			<skill id="1044" level="3" type="ON_MAGIC_SKILL" type_chance="30" /> <!-- Regeneration -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="122.0" />
-			<set stat="mAtk" val="122.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="30465" name="Bound Twilight Knife" name_additional="Magic Mental Shield" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nHas a 50% chance of casting Mental Shield on the target during magic use. -->
@@ -1296,12 +1296,12 @@
 		<skills>
 			<skill id="1035" level="4" type="ON_MAGIC_SKILL" type_chance="50" /> <!-- Mental Shield -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="122.0" />
-			<set stat="mAtk" val="122.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="30466" name="Bound Twilight Knife" name_additional="Magic Weakness" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nHas a 7% chance of casting Curse Weakness on the target during magic use. -->
@@ -1325,12 +1325,12 @@
 		<skills>
 			<skill id="1164" level="11" type="ON_MAGIC_SKILL" type_chance="7" /> <!-- Curse Weakness -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="122.0" />
-			<set stat="mAtk" val="122.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="30467" name="Bound Hell Hound" type="Weapon">
 		<!-- Bound Item.\nKamael-exclusive Weapon: Bow of Peril Conversion\nBestows one of the following functions: Guidance, Quick Recovery or Cheap Shot. -->
@@ -1351,12 +1351,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="245.0" />
-			<set stat="mAtk" val="99.0" />
-			<set stat="pAtkSpd" val="303.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">245</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
 	</item>
 	<item id="30468" name="Bound Hell Hound" name_additional="Guidance" type="Weapon">
 		<!-- Bound Item.\nKamael-exclusive Weapon: Bow of Peril Conversion\n(Soul Crystal Enhancement)\nIncreases Accuracy by 3. -->
@@ -1380,12 +1380,12 @@
 		<skills>
 			<skill id="3008" level="6" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="245.0" />
-			<set stat="mAtk" val="99.0" />
-			<set stat="pAtkSpd" val="303.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">245</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
 	</item>
 	<item id="30469" name="Bound Hell Hound" name_additional="Quick Recovery" type="Weapon">
 		<!-- Bound Item.\nKamael-exclusive Weapon: Bow of Peril Conversion\n(Soul Crystal Enhancement)\nIncreases cooldown by about 13%. -->
@@ -1406,12 +1406,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="245.0" />
-			<set stat="mAtk" val="99.0" />
-			<set stat="pAtkSpd" val="303.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">245</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
 	</item>
 	<item id="30470" name="Bound Hell Hound" name_additional="Cheap Shot" type="Weapon">
 		<!-- Bound Item.\nKamael-exclusive Weapon: Bow of Peril Conversion\n(Soul Crystal Enhancement)\nDecreases MP consumption by 12% when using skills. -->
@@ -1435,12 +1435,12 @@
 		<skills>
 			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="245.0" />
-			<set stat="mAtk" val="99.0" />
-			<set stat="pAtkSpd" val="303.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">245</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
 	</item>
 	<item id="30471" name="Bound Heavy Mace" type="Weapon">
 		<!-- Bound Heavy Mace. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1461,13 +1461,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="40.0" />
-			<set stat="mAtk" val="26.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">40</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30472" name="Bound Heavy War Axe" type="Weapon">
 		<!-- Bound Item.\nBestows one of the following functions: Anger, Health or Rsk. Focus. -->
@@ -1488,13 +1488,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="175.0" />
-			<set stat="mAtk" val="91.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30473" name="Bound Heavy War Axe" name_additional="Anger" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nDecreases Max HP by 15%. P. Atk. + 28. -->
@@ -1518,13 +1518,13 @@
 		<skills>
 			<skill id="3012" level="5" /> <!-- Special Ability: Anger -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="175.0" />
-			<set stat="mAtk" val="91.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30474" name="Bound Heavy War Axe" name_additional="Health" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Max HP by 25%. -->
@@ -1548,13 +1548,13 @@
 		<skills>
 			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="175.0" />
-			<set stat="mAtk" val="91.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30475" name="Bound Heavy War Axe" name_additional="Rsk. Focus" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Critical by 107 when HP drops to 60% or below. -->
@@ -1578,13 +1578,13 @@
 		<skills>
 			<skill id="3027" level="5" /> <!-- Special Ability: Rsk. Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="175.0" />
-			<set stat="mAtk" val="91.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30476" name="Bound Heavy Sword" type="Weapon">
 		<!-- Bound Heavy Sword. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1605,12 +1605,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="49.0" />
-			<set stat="mAtk" val="26.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">49</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30477" name="Bound Heavy Bone Club" type="Weapon">
 		<!-- Bound Heavy Bone Club. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1631,13 +1631,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="3" />
-		<for>
-			<set stat="pAtk" val="79.0" />
-			<set stat="mAtk" val="47.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30478" name="Bound Heavy Doom Hammer" type="Weapon">
 		<!-- Bound Heavy Doom Hammer. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1658,13 +1658,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="103.0" />
-			<set stat="mAtk" val="89.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">103</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30479" name="Bound Heavy Doom Hammer" name_additional="Magic Regeneration" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 30% chance of casting Regeneration on the target during magic use. -->
@@ -1688,13 +1688,13 @@
 		<skills>
 			<skill id="1044" level="1" type="ON_MAGIC_SKILL" type_chance="30" /> <!-- Regeneration -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="103.0" />
-			<set stat="mAtk" val="89.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">103</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30480" name="Bound Heavy Doom Hammer" name_additional="Magic Mental Shield" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 50% chance of casting Mental Shield on the target during magic use. -->
@@ -1718,13 +1718,13 @@
 		<skills>
 			<skill id="1035" level="2" type="ON_MAGIC_SKILL" type_chance="50" /> <!-- Mental Shield -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="103.0" />
-			<set stat="mAtk" val="89.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">103</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30481" name="Bound Heavy Doom Hammer" name_additional="Magic Hold" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas a 6% chance of casting Dryad Root on the target during magic use. -->
@@ -1748,13 +1748,13 @@
 		<skills>
 			<skill id="1201" level="16" type="ON_MAGIC_SKILL" type_chance="6" /> <!-- Dryad Root -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="103.0" />
-			<set stat="mAtk" val="89.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">103</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30482" name="Bound Heavy Doom Axe" type="Weapon">
 		<!-- Bound Heavy Doom Axe. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -1775,13 +1775,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="103.0" />
-			<set stat="mAtk" val="89.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">103</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30483" name="Bound Heavy Doom Axe" name_additional="Magic Poison" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas an 8% chance of casting Curse Poison on the target during magic use. -->
@@ -1805,13 +1805,13 @@
 		<skills>
 			<skill id="1168" level="6" type="ON_MAGIC_SKILL" type_chance="8" /> <!-- Curse Poison -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="103.0" />
-			<set stat="mAtk" val="89.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">103</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30484" name="Bound Heavy Doom Axe" name_additional="Magic Weakness" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas an 8% chance of casting Curse Weakness on the target during magic use. -->
@@ -1835,13 +1835,13 @@
 		<skills>
 			<skill id="1064" level="7" type="ON_MAGIC_SKILL" type_chance="8" /> <!-- Silence -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="103.0" />
-			<set stat="mAtk" val="89.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">103</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30485" name="Bound Heavy Doom Axe" name_additional="Magic Chaos" type="Weapon">
 		<!-- (Soul Crystal Enhancement)\nHas an 8% chance of casting Curse Chaos on the target during magic use. -->
@@ -1865,13 +1865,13 @@
 		<skills>
 			<skill id="1222" level="4" type="ON_MAGIC_SKILL" type_chance="8" /> <!-- Curse Chaos -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="103.0" />
-			<set stat="mAtk" val="89.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">103</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30486" name="Bound Heaven's Divider" type="Weapon">
 		<!-- Bound Item.\nBestows one of the following functions: Haste, Health or Focus. -->
@@ -1892,12 +1892,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="342.0" />
-			<set stat="mAtk" val="132.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">342</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30487" name="Bound Heaven's Divider" name_additional="Haste" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Atk. Spd. by about + 7%. Increases damage inflicted during PvP. -->
@@ -1921,12 +1921,12 @@
 		<skills>
 			<skill id="3564" level="1" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="342.0" />
-			<set stat="mAtk" val="132.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">342</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30488" name="Bound Heaven's Divider" name_additional="Health" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Max HP by 25%. Increases damage inflicted during PvP. -->
@@ -1950,12 +1950,12 @@
 		<skills>
 			<skill id="3013" level="5" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="342.0" />
-			<set stat="mAtk" val="132.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">342</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30489" name="Bound Heaven's Divider" name_additional="Focus" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Critical by 84. Increases damage inflicted during PvP. -->
@@ -1979,12 +1979,12 @@
 		<skills>
 			<skill id="3566" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="342.0" />
-			<set stat="mAtk" val="132.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">342</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30490" name="Bound Field Gun" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Reinforced bow conversion, Bound field gun. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -2005,12 +2005,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="51.0" />
-			<set stat="mAtk" val="26.0" />
-			<set stat="pAtkSpd" val="303.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">51</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
 	</item>
 	<item id="30491" name="Bound Field Sword" type="Weapon">
 		<!-- Kamael-exclusive Weapon: Two-handed sword conversion, Bound field sword. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -2031,13 +2031,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="69.0" />
-			<set stat="mAtk" val="39.0" />
-			<set stat="pAtkSpd" val="350.0" />
-			<add stat="accCombat" val="2.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">69</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="pAtkSpd">350</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30492" name="Bound Ring of Devotion" type="Armor">
 		<!-- Bound Ring of devotion. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -2055,10 +2055,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="690" />
-		<for>
-			<add stat="mDef" val="16.0" />
+		<stats>
+			<stat type="mDef">16</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30493" name="Bound Necklace of Devotion" type="Armor">
 		<!-- Bound Necklace of devotion. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -2076,10 +2076,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="1380" />
-		<for>
-			<add stat="mDef" val="32.0" />
+		<stats>
+			<stat type="mDef">32</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="30494" name="Bound Halberd" type="Weapon">
 		<!-- Bound Item.\nBestows one of the following functions: Haste, Critical Stun, or Wide Blow. -->
@@ -2103,12 +2103,12 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213.0" />
-			<set stat="mAtk" val="107.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30495" name="Bound Halberd" name_additional="Haste" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Atk. Spd. by about 6%. Increases damage inflicted during PvP. -->
@@ -2133,12 +2133,12 @@
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 			<skill id="3601" level="7" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213.0" />
-			<set stat="mAtk" val="107.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30496" name="Bound Halberd" name_additional="Critical Stun" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nIncreases Critical by about 25% and Stun effect. Increases damage inflicted during PvP. -->
@@ -2164,12 +2164,12 @@
 			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3070" level="4" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213.0" />
-			<set stat="mAtk" val="107.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30497" name="Bound Halberd" name_additional="Wide Blow" type="Weapon">
 		<!-- Bound Item.\n(Soul Crystal Enhancement)\nWidened angle of attack. Increases damage inflicted during PvP. -->
@@ -2194,12 +2194,12 @@
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 			<skill id="3552" level="2" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213.0" />
-			<set stat="mAtk" val="107.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="30498" name="Bound Hand Axe" type="Weapon">
 		<!-- Bound Hand Axe. Can use an Unbind Scroll to change this item into a Standard item. -->
@@ -2220,13 +2220,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="40.0" />
-			<set stat="mAtk" val="26.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">40</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="30499" name="Bound Hand Crossbow" type="Weapon">
 		<!-- Kamael-exclusive weapon: Longbow Conversion, Bound Hand Crossbow. Use an Unbind Scroll to change to a Standard item. -->
@@ -2247,11 +2247,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="64.0" />
-			<set stat="mAtk" val="32.0" />
-			<set stat="pAtkSpd" val="303.0" />
-			<set stat="rCrit" val="10.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">64</stat>
+			<stat type="mAtk">32</stat>
+			<stat type="pAtkSpd">303</stat>
+			<stat type="rCrit">10</stat>
+		</stats>
 	</item>
 </list>

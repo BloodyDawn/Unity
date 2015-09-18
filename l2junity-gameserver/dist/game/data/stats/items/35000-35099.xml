@@ -17,13 +17,13 @@
 			<skill id="9459" level="1" /> <!-- Tauti's Wrath -->
 			<skill id="8880" level="1" /> <!-- Tauti's Special Ability: Two-handed Axe -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="629.0" />
-			<set stat="mAtk" val="322.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">629</stat>
+			<stat type="mAtk">322</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35001" name="Tauti's Dual Axe" type="Weapon">
 		<!-- Weapon augmented from Tauti's Fragment. When equipped, can use Tauti's Rage skill. When equipped, increases Atk. Spd. by about 15%, critical by 150, Max HP by 25%, and P. Atk. by 415. Increases damage inflicted during PvP. Enchantment, attribute, crystallization, augmentation or modification is impossible. -->
@@ -41,13 +41,13 @@
 			<skill id="9459" level="1" /> <!-- Tauti's Wrath -->
 			<skill id="8880" level="1" /> <!-- Tauti's Special Ability: Two-handed Axe -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="766.0" />
-			<set stat="mAtk" val="322.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">776</stat>
+			<stat type="mAtk">278</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35002" name="Dark Eternal Helmet" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 3%. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -62,10 +62,10 @@
 		<skills>
 			<skill id="8805" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35003" name="Dark Eternal Breastplate" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -82,10 +82,10 @@
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 			<skill id="8806" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="433.0" />
+		<stats>
+			<stat type="pDef">433</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35004" name="Dark Eternal Gaiters" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 5%. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -101,10 +101,10 @@
 		<skills>
 			<skill id="8807" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="270.0" />
+		<stats>
+			<stat type="pDef">270</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35005" name="Dark Eternal Gauntlets" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -119,10 +119,10 @@
 		<skills>
 			<skill id="8808" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35006" name="Dark Eternal Boots" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -137,10 +137,10 @@
 		<skills>
 			<skill id="8809" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35008" name="Dark Eternal Leather Helmet" name_additional="Assassin Type / Light" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 3%. Othell Rogues and Yul Archers only. -->
@@ -155,10 +155,10 @@
 		<skills>
 			<skill id="8810" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35009" name="Dark Eternal Leather Armor" name_additional="Assassin Type / Light" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues and Yul Archers only. -->
@@ -175,12 +175,12 @@
 			<skill id="13311" level="3" /> <!-- Light Armor Top Special Ability -->
 			<skill id="8811" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="346.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
+		<stats>
+			<stat type="pDef">346</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35010" name="Dark Eternal Leather Leggings" name_additional="Assassin Type / Light" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 5%. Othell Rogues and Yul Archers only. -->
@@ -196,12 +196,12 @@
 		<skills>
 			<skill id="8812" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="216.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
+		<stats>
+			<stat type="pDef">216</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35011" name="Dark Eternal Leather Gloves" name_additional="Assassin Type / Light" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Othell Rogues and Yul Archers only. -->
@@ -216,10 +216,10 @@
 		<skills>
 			<skill id="8813" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35012" name="Dark Eternal Leather Boots" name_additional="Assassin Type / Light" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Othell Rogues and Yul Archers only. -->
@@ -234,10 +234,10 @@
 		<skills>
 			<skill id="8814" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35013" name="Dark Eternal Circlet" name_additional="Magic Type / Robe" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 3%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -252,10 +252,10 @@
 		<skills>
 			<skill id="8815" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35014" name="Dark Eternal Tunic" name_additional="Magic Type / Robe" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 8%. When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -272,12 +272,12 @@
 			<skill id="13312" level="3" /> <!-- Robe Upper Special Ability -->
 			<skill id="8816" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="238.0" />
-			<add stat="mDef" val="56.0" />
+		<stats>
+			<stat type="pDef">238</stat>
+			<stat type="mDef">56</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35015" name="Dark Eternal Stockings" name_additional="Magic Type / Robe" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 5%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -293,12 +293,12 @@
 		<skills>
 			<skill id="8817" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="148.0" />
-			<add stat="mDef" val="37.0" />
+		<stats>
+			<stat type="pDef">148</stat>
+			<stat type="mDef">37</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35016" name="Dark Eternal Gloves" name_additional="Magic Type / Robe" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -313,10 +313,10 @@
 		<skills>
 			<skill id="8818" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35017" name="Dark Eternal Shoes" name_additional="Magic Type / Robe" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -331,10 +331,10 @@
 		<skills>
 			<skill id="8819" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35018" name="Dark Eternal Helmet" name_additional="Defense Type / Heavy" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 3%. Sigel Knights only. -->
@@ -349,10 +349,10 @@
 		<skills>
 			<skill id="8805" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35019" name="Dark Eternal Breastplate" name_additional="Defense Type / Heavy" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Sigel Knights only. -->
@@ -369,10 +369,10 @@
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 			<skill id="8806" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="433.0" />
+		<stats>
+			<stat type="pDef">433</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35020" name="Dark Eternal Gaiters" name_additional="Defense Type / Heavy" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 5%. Sigel Knights only. -->
@@ -388,10 +388,10 @@
 		<skills>
 			<skill id="8807" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="270.0" />
+		<stats>
+			<stat type="pDef">270</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35021" name="Dark Eternal Gauntlets" name_additional="Defense Type / Heavy" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Sigel Knights only. -->
@@ -406,10 +406,10 @@
 		<skills>
 			<skill id="8808" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35022" name="Dark Eternal Boots" name_additional="Defense Type / Heavy" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Sigel Knights only. -->
@@ -424,10 +424,10 @@
 		<skills>
 			<skill id="8809" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35023" name="Dark Eternal Leather Helmet" name_additional="Enchant Type / Light" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 3%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -442,10 +442,10 @@
 		<skills>
 			<skill id="8810" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35024" name="Dark Eternal Leather Armor" name_additional="Enchant Type / Light" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -462,12 +462,12 @@
 			<skill id="13311" level="3" /> <!-- Light Armor Top Special Ability -->
 			<skill id="8811" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="346.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
+		<stats>
+			<stat type="pDef">346</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35025" name="Dark Eternal Leather Leggings" name_additional="Enchant Type / Light" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 5%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -483,12 +483,12 @@
 		<skills>
 			<skill id="8812" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="216.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
+		<stats>
+			<stat type="pDef">216</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35026" name="Dark Eternal Leather Gloves" name_additional="Enchant Type / Light" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -503,10 +503,10 @@
 		<skills>
 			<skill id="8813" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35027" name="Dark Eternal Leather Boots" name_additional="Enchant Type / Light" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -521,10 +521,10 @@
 		<skills>
 			<skill id="8814" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35028" name="Dark Eternal Circlet" name_additional="Recovery Type / Robe" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 3%. Aeore Healers only. -->
@@ -539,10 +539,10 @@
 		<skills>
 			<skill id="8815" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35029" name="Dark Eternal Tunic" name_additional="Recovery Type / Robe" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 8%. When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers only. -->
@@ -559,12 +559,12 @@
 			<skill id="13312" level="3" /> <!-- Robe Upper Special Ability -->
 			<skill id="8816" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="238.0" />
-			<add stat="mDef" val="56.0" />
+		<stats>
+			<stat type="pDef">238</stat>
+			<stat type="mDef">56</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35030" name="Dark Eternal Stockings" name_additional="Recovery Type / Robe" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 5%. Aeore Healers only. -->
@@ -580,12 +580,12 @@
 		<skills>
 			<skill id="8817" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="148.0" />
-			<add stat="mDef" val="37.0" />
+		<stats>
+			<stat type="pDef">148</stat>
+			<stat type="mDef">37</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35031" name="Dark Eternal Gloves" name_additional="Recovery Type / Robe" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Aeore Healers only. -->
@@ -600,10 +600,10 @@
 		<skills>
 			<skill id="8818" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35032" name="Dark Eternal Shoes" name_additional="Recovery Type / Robe" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Aeore Healers only. -->
@@ -618,10 +618,10 @@
 		<skills>
 			<skill id="8819" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35033" name="Bloody Eternal Helmet" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 3%. P. Atk. + 1% and M. Atk. by 2%. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -636,10 +636,10 @@
 		<skills>
 			<skill id="8834" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35034" name="Bloody Eternal Breastplate" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 8%. P. Atk. + 1% and M. Atk. by 2%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -656,10 +656,10 @@
 			<skill id="8835" level="1" /> <!-- PvE Defense -->
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="433.0" />
+		<stats>
+			<stat type="pDef">433</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35035" name="Bloody Eternal Gaiters" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 5%. P. Atk. + 1% and M. Atk. by 2%. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -675,10 +675,10 @@
 		<skills>
 			<skill id="8836" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="270.0" />
+		<stats>
+			<stat type="pDef">270</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35036" name="Bloody Eternal Gauntlets" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -693,10 +693,10 @@
 		<skills>
 			<skill id="8837" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35037" name="Bloody Eternal Boots" name_additional="Attack Type / Heavy" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -711,10 +711,10 @@
 		<skills>
 			<skill id="8838" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35038" name="Bloody Eternal Leather Helmet" name_additional="Assassin Type / Light" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 3%. P. Atk. + 1% and M. Atk. by 2%. Othell Rogues and Yul Archers only. -->
@@ -729,10 +729,10 @@
 		<skills>
 			<skill id="8839" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35039" name="Bloody Eternal Leather Armor" name_additional="Assassin Type / Light" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 8%. P. Atk. + 1% and M. Atk. by 2%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues and Yul Archers only. -->
@@ -749,12 +749,12 @@
 			<skill id="8840" level="1" /> <!-- PvE Defense -->
 			<skill id="13311" level="3" /> <!-- Light Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="346.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
+		<stats>
+			<stat type="pDef">346</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35040" name="Bloody Eternal Leather Leggings" name_additional="Assassin Type / Light" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 5%. P. Atk. + 1% and M. Atk. by 2%. Othell Rogues and Yul Archers only. -->
@@ -770,12 +770,12 @@
 		<skills>
 			<skill id="8841" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="216.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
+		<stats>
+			<stat type="pDef">216</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35041" name="Bloody Eternal Leather Gloves" name_additional="Assassin Type / Light" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Othell Rogues and Yul Archers only. -->
@@ -790,10 +790,10 @@
 		<skills>
 			<skill id="8842" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35042" name="Bloody Eternal Leather Boots" name_additional="Assassin Type / Light" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Othell Rogues and Yul Archers only. -->
@@ -808,10 +808,10 @@
 		<skills>
 			<skill id="8843" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35043" name="Bloody Eternal Circlet" name_additional="Magic Type / Robe" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 3%. P. Atk. + 1% and M. Atk. by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -826,10 +826,10 @@
 		<skills>
 			<skill id="8844" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35044" name="Bloody Eternal Tunic" name_additional="Magic Type / Robe" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 8%. P. Atk. + 1% and M. Atk. by 2%. When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -846,12 +846,12 @@
 			<skill id="8845" level="1" /> <!-- PvE Defense -->
 			<skill id="13312" level="3" /> <!-- Robe Upper Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="238.0" />
-			<add stat="mDef" val="56.0" />
+		<stats>
+			<stat type="pDef">238</stat>
+			<stat type="mDef">56</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35045" name="Bloody Eternal Stockings" name_additional="Magic Type / Robe" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 5%. P. Atk. + 1% and M. Atk. by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -867,12 +867,12 @@
 		<skills>
 			<skill id="8846" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="148.0" />
-			<add stat="mDef" val="37.0" />
+		<stats>
+			<stat type="pDef">148</stat>
+			<stat type="mDef">37</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35046" name="Bloody Eternal Gloves" name_additional="Magic Type / Robe" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -887,10 +887,10 @@
 		<skills>
 			<skill id="8847" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35047" name="Bloody Eternal Shoes" name_additional="Magic Type / Robe" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -905,10 +905,10 @@
 		<skills>
 			<skill id="8848" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35048" name="Bloody Eternal Helmet" name_additional="Defense Type / Heavy" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 3%. P. Atk. + 1% and M. Atk. by 2%. Sigel Knights only. -->
@@ -923,10 +923,10 @@
 		<skills>
 			<skill id="8834" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35049" name="Bloody Eternal Breastplate" name_additional="Defense Type / Heavy" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 8%. P. Atk. + 1% and M. Atk. by 2%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Sigel Knights only. -->
@@ -943,10 +943,10 @@
 			<skill id="8835" level="1" /> <!-- PvE Defense -->
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="433.0" />
+		<stats>
+			<stat type="pDef">433</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35050" name="Bloody Eternal Gaiters" name_additional="Defense Type / Heavy" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 5%. P. Atk. + 1% and M. Atk. by 2%. Sigel Knights only. -->
@@ -962,10 +962,10 @@
 		<skills>
 			<skill id="8836" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="270.0" />
+		<stats>
+			<stat type="pDef">270</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35051" name="Bloody Eternal Gauntlets" name_additional="Defense Type / Heavy" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Sigel Knights only. -->
@@ -980,10 +980,10 @@
 		<skills>
 			<skill id="8837" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35052" name="Bloody Eternal Boots" name_additional="Defense Type / Heavy" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Sigel Knights only. -->
@@ -998,10 +998,10 @@
 		<skills>
 			<skill id="8838" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35053" name="Bloody Eternal Leather Helmet" name_additional="Enchant Type / Light" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 3%. P. Atk. + 1% and M. Atk. by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -1016,10 +1016,10 @@
 		<skills>
 			<skill id="8839" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35054" name="Bloody Eternal Leather Armor" name_additional="Enchant Type / Light" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 8%. P. Atk. + 1% and M. Atk. by 2%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -1036,12 +1036,12 @@
 			<skill id="8840" level="1" /> <!-- PvE Defense -->
 			<skill id="13311" level="3" /> <!-- Light Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="346.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
+		<stats>
+			<stat type="pDef">346</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35055" name="Bloody Eternal Leather Leggings" name_additional="Enchant Type / Light" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 5%. P. Atk. + 1% and M. Atk. by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -1057,12 +1057,12 @@
 		<skills>
 			<skill id="8841" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="216.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
+		<stats>
+			<stat type="pDef">216</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35056" name="Bloody Eternal Leather Gloves" name_additional="Enchant Type / Light" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -1077,10 +1077,10 @@
 		<skills>
 			<skill id="8842" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35057" name="Bloody Eternal Leather Boots" name_additional="Enchant Type / Light" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -1095,10 +1095,10 @@
 		<skills>
 			<skill id="8843" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35058" name="Bloody Eternal Circlet" name_additional="Recovery Type / Robe" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 3%. P. Atk. + 1% and M. Atk. by 2%. Aeore Healers only. -->
@@ -1113,10 +1113,10 @@
 		<skills>
 			<skill id="8844" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35059" name="Bloody Eternal Tunic" name_additional="Recovery Type / Robe" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 8%. P. Atk. + 1% and M. Atk. by 2%. When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers only. -->
@@ -1133,12 +1133,12 @@
 			<skill id="8845" level="1" /> <!-- PvE Defense -->
 			<skill id="13312" level="3" /> <!-- Robe Upper Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="238.0" />
-			<add stat="mDef" val="56.0" />
+		<stats>
+			<stat type="pDef">238</stat>
+			<stat type="mDef">56</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35060" name="Bloody Eternal Stockings" name_additional="Recovery Type / Robe" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 5%. P. Atk. + 1% and M. Atk. by 2%. Aeore Healers only. -->
@@ -1154,12 +1154,12 @@
 		<skills>
 			<skill id="8846" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="148.0" />
-			<add stat="mDef" val="37.0" />
+		<stats>
+			<stat type="pDef">148</stat>
+			<stat type="mDef">37</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35061" name="Bloody Eternal Gloves" name_additional="Recovery Type / Robe" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Aeore Healers only. -->
@@ -1174,10 +1174,10 @@
 		<skills>
 			<skill id="8847" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35062" name="Bloody Eternal Shoes" name_additional="Recovery Type / Robe" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Aeore Healers only. -->
@@ -1192,10 +1192,10 @@
 		<skills>
 			<skill id="8848" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35063" name="Dark Eternal Helmet" name_additional="Heavy Armor" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 3%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -1210,10 +1210,10 @@
 		<skills>
 			<skill id="8805" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35064" name="Dark Eternal Breastplate" name_additional="Heavy Armor" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 8%. Bestows an attack or defense type set option. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -1230,10 +1230,10 @@
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 			<skill id="8806" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="433.0" />
+		<stats>
+			<stat type="pDef">433</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35065" name="Dark Eternal Gaiters" name_additional="Heavy Armor" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 5%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -1249,10 +1249,10 @@
 		<skills>
 			<skill id="8807" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="270.0" />
+		<stats>
+			<stat type="pDef">270</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35066" name="Dark Eternal Gauntlets" name_additional="Heavy Armor" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -1267,10 +1267,10 @@
 		<skills>
 			<skill id="8808" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35067" name="Dark Eternal Boots" name_additional="Heavy Armor" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -1284,10 +1284,10 @@
 		<skills>
 			<skill id="8809" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35069" name="Dark Eternal Leather Helmet" name_additional="Light Armor" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 3%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -1302,10 +1302,10 @@
 		<skills>
 			<skill id="8810" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35070" name="Dark Eternal Leather Armor" name_additional="Light Armor" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 8%. Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -1322,12 +1322,12 @@
 			<skill id="13311" level="3" /> <!-- Light Armor Top Special Ability -->
 			<skill id="8811" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="346.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
+		<stats>
+			<stat type="pDef">346</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35071" name="Dark Eternal Leather Leggings" name_additional="Light Armor" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 5%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -1343,12 +1343,12 @@
 		<skills>
 			<skill id="8812" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="216.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
+		<stats>
+			<stat type="pDef">216</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35072" name="Dark Eternal Leather Gloves" name_additional="Light Armor" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -1363,10 +1363,10 @@
 		<skills>
 			<skill id="8813" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35073" name="Dark Eternal Leather Boots" name_additional="Light Armor" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -1381,10 +1381,10 @@
 		<skills>
 			<skill id="8814" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35074" name="Dark Eternal Circlet" name_additional="Robe" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 3%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -1399,10 +1399,10 @@
 		<skills>
 			<skill id="8815" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35075" name="Dark Eternal Tunic" name_additional="Robe" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 8%. Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -1419,12 +1419,12 @@
 			<skill id="13312" level="3" /> <!-- Robe Upper Special Ability -->
 			<skill id="8816" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="238.0" />
-			<add stat="mDef" val="56.0" />
+		<stats>
+			<stat type="pDef">238</stat>
+			<stat type="mDef">56</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35076" name="Dark Eternal Stockings" name_additional="Robe" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 5%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -1440,12 +1440,12 @@
 		<skills>
 			<skill id="8817" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="148.0" />
-			<add stat="mDef" val="37.0" />
+		<stats>
+			<stat type="pDef">148</stat>
+			<stat type="mDef">37</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35077" name="Dark Eternal Gloves" name_additional="Robe" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -1460,10 +1460,10 @@
 		<skills>
 			<skill id="8818" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35078" name="Dark Eternal Shoes" name_additional="Robe" type="Armor">
 		<!-- PvP enchant type item. Decreases damage from a PC by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -1478,10 +1478,10 @@
 		<skills>
 			<skill id="8819" level="1" /> <!-- PvP Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35079" name="Bloody Eternal Helmet" name_additional="Heavy Armor" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 3%. P. Atk. + 1% and M. Atk. by 2%. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -1496,10 +1496,10 @@
 		<skills>
 			<skill id="8834" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35080" name="Bloody Eternal Breastplate" name_additional="Heavy Armor" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 8%. P. Atk. + 1% and M. Atk. by 2%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -1516,10 +1516,10 @@
 			<skill id="8835" level="1" /> <!-- PvE Defense -->
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="433.0" />
+		<stats>
+			<stat type="pDef">433</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35081" name="Bloody Eternal Gaiters" name_additional="Heavy Armor" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 5%. P. Atk. + 1% and M. Atk. by 2%. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -1535,10 +1535,10 @@
 		<skills>
 			<skill id="8836" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="270.0" />
+		<stats>
+			<stat type="pDef">270</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35082" name="Bloody Eternal Gauntlets" name_additional="Heavy Armor" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -1553,10 +1553,10 @@
 		<skills>
 			<skill id="8837" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35083" name="Bloody Eternal Boots" name_additional="Heavy Armor" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
@@ -1570,10 +1570,10 @@
 		<skills>
 			<skill id="8838" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35085" name="Bloody Eternal Leather Helmet" name_additional="Light Armor" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 3%. P. Atk. + 1% and M. Atk. by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -1588,10 +1588,10 @@
 		<skills>
 			<skill id="8839" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35086" name="Bloody Eternal Leather Armor" name_additional="Light Armor" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 8%. P. Atk. + 1% and M. Atk. by 2%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -1608,12 +1608,12 @@
 			<skill id="8840" level="1" /> <!-- PvE Defense -->
 			<skill id="13311" level="3" /> <!-- Light Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="346.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
+		<stats>
+			<stat type="pDef">346</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35087" name="Bloody Eternal Leather Leggings" name_additional="Light Armor" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 5%. P. Atk. + 1% and M. Atk. by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -1629,12 +1629,12 @@
 		<skills>
 			<skill id="8841" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="216.0" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
+		<stats>
+			<stat type="pDef">216</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35088" name="Bloody Eternal Leather Gloves" name_additional="Light Armor" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -1649,10 +1649,10 @@
 		<skills>
 			<skill id="8842" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35089" name="Bloody Eternal Leather Boots" name_additional="Light Armor" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
@@ -1667,10 +1667,10 @@
 		<skills>
 			<skill id="8843" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35090" name="Bloody Eternal Circlet" name_additional="Robe" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 3%. P. Atk. + 1% and M. Atk. by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -1685,10 +1685,10 @@
 		<skills>
 			<skill id="8844" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="162.0" />
+		<stats>
+			<stat type="pDef">162</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35091" name="Bloody Eternal Tunic" name_additional="Robe" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 8%. P. Atk. + 1% and M. Atk. by 2%. When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -1705,12 +1705,12 @@
 			<skill id="8845" level="1" /> <!-- PvE Defense -->
 			<skill id="13312" level="3" /> <!-- Robe Upper Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="238.0" />
-			<add stat="mDef" val="56.0" />
+		<stats>
+			<stat type="pDef">238</stat>
+			<stat type="mDef">56</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35092" name="Bloody Eternal Stockings" name_additional="Robe" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 5%. P. Atk. + 1% and M. Atk. by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -1726,12 +1726,12 @@
 		<skills>
 			<skill id="8846" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="148.0" />
-			<add stat="mDef" val="37.0" />
+		<stats>
+			<stat type="pDef">148</stat>
+			<stat type="mDef">37</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35093" name="Bloody Eternal Gloves" name_additional="Robe" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -1746,10 +1746,10 @@
 		<skills>
 			<skill id="8847" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35094" name="Bloody Eternal Shoes" name_additional="Robe" type="Armor">
 		<!-- PvE enchant type item. Decreases damage from an NPC by 2%. P. Atk. + 1% and M. Atk. by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
@@ -1764,10 +1764,10 @@
 		<skills>
 			<skill id="8848" level="1" /> <!-- PvE Defense -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="108.0" />
+		<stats>
+			<stat type="pDef">108</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="35095" name="Dark Amaranthine Shaper" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠGuidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
@@ -1786,12 +1786,12 @@
 			<skill id="13282" level="3" /> <!-- Dagger Special Ability -->
 			<skill id="8820" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="629.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">629</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="35096" name="Dark Amaranthine Cutter" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠHaste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
@@ -1810,12 +1810,12 @@
 			<skill id="13252" level="3" /> <!-- One-handed Sword Special Ability -->
 			<skill id="8821" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35097" name="Dark Amaranthine Slasher" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠFocus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Atk. additionally increases. -->
@@ -1834,12 +1834,12 @@
 			<skill id="13261" level="3" /> <!-- Two-handed Sword Special Ability -->
 			<skill id="8822" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="35098" name="Dark Amaranthine Avenger" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠHaste, Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
@@ -1858,13 +1858,13 @@
 			<skill id="13256" level="3" /> <!-- One-handed Blunt Special Ability -->
 			<skill id="8823" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="719.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">719</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="35099" name="Dark Amaranthine Fighter" type="Weapon">
 		<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:ﾠFocus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
@@ -1883,12 +1883,12 @@
 			<skill id="13267" level="3" /> <!-- Fist Weapon Special Ability -->
 			<skill id="8824" level="1" /> <!-- PvP Damage Increase -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="875.0" />
-			<set stat="mAtk" val="313.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">875</stat>
+			<stat type="mAtk">313</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 </list>

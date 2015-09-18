@@ -65,9 +65,9 @@
 			<skill id="8277" level="1" /> <!-- Transform Native -->
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="33" />
-		</for>
+		<stats>
+			<stat type="pDef">33</stat>
+		</stats>
 	</item>
 	<item id="13803" name="Native's Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t34_u_i00" />
@@ -92,9 +92,9 @@
 			<skill id="8277" level="1" /> <!-- Transform Native -->
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="53" />
-		</for>
+		<stats>
+			<stat type="pDef">53</stat>
+		</stats>
 	</item>
 	<item id="13804" name="Native's Pants" type="Armor">
 		<set name="icon" val="icon.armor_t34_l_i00" />
@@ -119,9 +119,9 @@
 			<skill id="8277" level="1" /> <!-- Transform Native -->
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="29" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="13805" name="Guards of the Dawn Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i02" />
@@ -146,9 +146,9 @@
 			<skill id="8278" level="1" /> <!-- Transform Guard of Down -->
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="33" />
-		</for>
+		<stats>
+			<stat type="pDef">33</stat>
+		</stats>
 	</item>
 	<item id="13806" name="Guards of the Dawn Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t08_u_i00" />
@@ -173,9 +173,9 @@
 			<skill id="8278" level="1" /> <!-- Transform Guard of Down -->
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="53" />
-		</for>
+		<stats>
+			<stat type="pDef">53</stat>
+		</stats>
 	</item>
 	<item id="13807" name="Guards of the Dawn Pants" type="Armor">
 		<set name="icon" val="icon.armor_t08_l_i00" />
@@ -200,9 +200,9 @@
 			<skill id="8278" level="1" /> <!-- Transform Guard of Down -->
 			<skill id="619" level="1" type="ON_UNEQUIP" /> <!-- Dispel Transform -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="29" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="13808" name="Elmoreden's Holy Water" type="EtcItem">
 		<set name="icon" val="icon.etc_holy_water_i00" />
@@ -749,14 +749,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="78" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">78</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13843" name="Draconic Peltast Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_doomed_dagger_i00" />
@@ -783,15 +783,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="5" />
-			<set stat="mAtk" val="5" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">5</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13844" name="Scroll: Extract Star Stone" type="EtcItem">
 		<set name="icon" val="icon.scroll_of_verification_i06" />
@@ -840,14 +840,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="10" />
-		<for>
-			<set stat="pAtk" val="140" />
-			<set stat="mAtk" val="120" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">140</stat>
+			<stat type="mAtk">120</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13846" name="Seal of Binding" type="EtcItem">
 		<set name="icon" val="icon.etc_royal_seal_of_lord_i04" />
@@ -1440,14 +1440,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="10" />
-		<for>
-			<set stat="pAtk" val="140" />
-			<set stat="mAtk" val="120" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">140</stat>
+			<stat type="mAtk">120</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13882" name="Dynasty Dual Dagger" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
@@ -1477,15 +1477,15 @@
 				<player categoryType="DAGGER_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<set stat="pAtk" val="304" />
-			<set stat="mAtk" val="157" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">304</stat>
+			<stat type="mAtk">157</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13883" name="Icarus Dual Daggers" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
@@ -1516,15 +1516,15 @@
 				<player categoryType="DAGGER_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<set stat="pAtk" val="332" />
-			<set stat="mAtk" val="169" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">332</stat>
+			<stat type="mAtk">169</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13884" name="Vesper Dual Daggers" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
@@ -1554,15 +1554,15 @@
 				<player categoryType="DAGGER_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<set stat="pAtk" val="360" />
-			<set stat="mAtk" val="181" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">360</stat>
+			<stat type="mAtk">181</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13885" name="Sealed Arcana Sigil" type="Armor">
 		<set name="icon" val="icon.arcana_sigil_i01" />
@@ -1581,11 +1581,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<add order="0" stat="pDef" val="13" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="pDef">13</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13886" name="Sealed Dynasty Sigil" type="Armor">
 		<set name="icon" val="icon.armor_dynasty_sigil_i01" />
@@ -1603,11 +1603,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<add order="0" stat="pDef" val="15" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="pDef">15</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13887" name="Sealed Vesper Sigil" type="Armor">
 		<set name="icon" val="icon.armor_verper_sigil_i01" />
@@ -1626,11 +1626,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<add order="0" stat="pDef" val="17" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="pDef">17</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13888" name="Sealed Lord's Cloak" type="Armor">
 		<set name="icon" val="icon.feud_load_cloak_i01" />
@@ -1645,10 +1645,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="2" />
+		<stats>
+			<stat type="pDef">2</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13889" name="Holy Spirit's Cloak (Kamael)" type="Armor">
 		<set name="icon" val="icon.vesper_cloack_i00" />
@@ -1666,10 +1666,10 @@
 				<player cloakStatus="true" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="20" />
-			<add stat="darkRes" val="30" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+			<stat type="darkRes">30</stat>
+		</stats>
 	</item>
 	<item id="13890" name="Holy Spirit's Cloak" type="Armor">
 		<set name="icon" val="icon.vesper_cloack_i00" />
@@ -1685,10 +1685,10 @@
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="20" />
-			<add stat="darkRes" val="30" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+			<stat type="darkRes">30</stat>
+		</stats>
 	</item>
 	<item id="13891" name="Holy Spirit's Cloak (Light Armor)" type="Armor">
 		<set name="icon" val="icon.vesper_cloack_i00" />
@@ -1707,10 +1707,10 @@
 				<player cloakStatus="true" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="20" />
-			<add stat="darkRes" val="30" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+			<stat type="darkRes">30</stat>
+		</stats>
 	</item>
 	<item id="13892" name="Holy Spirit's Cloak (Robe)" type="Armor">
 		<set name="icon" val="icon.vesper_cloack_i00" />
@@ -1729,10 +1729,10 @@
 				<player cloakStatus="true" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="20" />
-			<add stat="darkRes" val="30" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+			<stat type="darkRes">30</stat>
+		</stats>
 	</item>
 	<item id="13893" name="Sealed Holy Spirit's Cloak" type="EtcItem">
 		<set name="icon" val="icon.sealed_vesper_cloack_i01" />
@@ -1742,9 +1742,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S80" />
 		<set name="price" val="28671000" />
-		<for>
-			<add order="0" stat="pDef" val="20" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+		</stats>
 	</item>
 	<item id="13894" name="Cloth Belt" type="Armor">
 		<set name="icon" val="icon.armor_belt_i00" />
@@ -1760,10 +1760,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BELT" />
-		<for>
-			<add order="0" stat="pDef" val="10" />
+		<stats>
+			<stat type="pDef">10</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13895" name="Leather Belt" type="Armor">
 		<set name="icon" val="icon.armor_belt_i01" />
@@ -1778,10 +1778,10 @@
 		<set name="price" val="165000" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="11" />
+		<stats>
+			<stat type="pDef">11</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13896" name="Iron Belt" type="Armor">
 		<set name="icon" val="icon.armor_belt_i02" />
@@ -1796,10 +1796,10 @@
 		<set name="price" val="371300" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="12" />
+		<stats>
+			<stat type="pDef">12</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13897" name="Mithril Belt" type="Armor">
 		<set name="icon" val="icon.armor_belt_i03" />
@@ -1814,10 +1814,10 @@
 		<set name="price" val="1917000" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="14" />
+		<stats>
+			<stat type="pDef">14</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13898" name="Sealed Magic Pin (C-grade)" type="EtcItem">
 		<set name="icon" val="icon.pin_i00" />

@@ -9,12 +9,12 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="55796000" />
-		<for>
-			<add order="0" stat="pDef" val="126.0" />
-			<add stat="rEvas" val="1.05" />
-			<add stat="mEvas" val="1.05" />
+		<stats>
+			<stat type="pDef">126</stat>
+			<stat type="rEvas">1.05</stat>
+			<stat type="mEvas">1.05</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32201" name="Blessed Twilight Leather Armor" name_additional="Assassin Type" type="Armor">
 		<set name="icon" val="icon.armor_t602_u_i00" />
@@ -29,13 +29,13 @@
 		<skills>
 			<skill id="13311" level="3" /> <!-- Light Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="268.0" />
-			<set stat="pAtk" val="26.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
+		<stats>
+			<stat type="pDef">268</stat>
+			<stat type="pAtk">26</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32202" name="Blessed Twilight Leather Leggings" name_additional="Assassin Type" type="Armor">
 		<set name="icon" val="icon.armor_t602_l_i00" />
@@ -47,14 +47,14 @@
 		<set name="weight" val="1320" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="92993000" />
-		<for>
-			<add order="0" stat="pDef" val="168.0" />
-			<set stat="rCrit" val="2.6" />
-			<add stat="mCritRate" val="2.6" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
+		<stats>
+			<stat type="pDef">168</stat>
+			<stat type="rCrit">2.6</stat>
+			<stat type="mCritRate">2.6</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32203" name="Blessed Twilight Leather Gloves" name_additional="Assassin Type" type="Armor">
 		<set name="icon" val="icon.armor_t602_g_i00" />
@@ -65,12 +65,12 @@
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="37197000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="accCombat" val="1.0" />
-			<add stat="accMagic" val="1.0" />
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="accCombat">1</stat>
+			<stat type="accMagic">1</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32204" name="Blessed Twilight Leather Boots" name_additional="Assassin Type" type="Armor">
 		<set name="icon" val="icon.armor_t602_b_i00" />
@@ -81,11 +81,11 @@
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="37197000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="moveSpeed" val="15.0" />
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="moveSpeed">15</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32205" name="Blessed Twilight Circlet" name_additional="Magic Type" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
@@ -96,12 +96,12 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="55796000" />
-		<for>
-			<add order="0" stat="pDef" val="126.0" />
-			<add stat="rEvas" val="1.05" />
-			<add stat="mEvas" val="1.05" />
+		<stats>
+			<stat type="pDef">126</stat>
+			<stat type="rEvas">1.05</stat>
+			<stat type="mEvas">1.05</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32206" name="Blessed Twilight Tunic" name_additional="Magic Type" type="Armor">
 		<set name="icon" val="icon.armor_t603_u_i00" />
@@ -116,13 +116,13 @@
 		<skills>
 			<skill id="13312" level="3" /> <!-- Robe Upper Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="184.0" />
-			<add stat="mDef" val="41.0" />
-			<set stat="pAtk" val="26.0" />
+		<stats>
+			<stat type="pDef">184</stat>
+			<stat type="mDef">41</stat>
+			<stat type="pAtk">26</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32207" name="Blessed Twilight Stockings" name_additional="Magic Type" type="Armor">
 		<set name="icon" val="icon.armor_t603_l_i00" />
@@ -134,14 +134,14 @@
 		<set name="weight" val="850" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="92993000" />
-		<for>
-			<add order="0" stat="pDef" val="115.0" />
-			<add stat="mDef" val="27.0" />
-			<set stat="rCrit" val="2.6" />
-			<add stat="mCritRate" val="2.6" />
+		<stats>
+			<stat type="pDef">115</stat>
+			<stat type="mDef">27</stat>
+			<stat type="rCrit">2.6</stat>
+			<stat type="mCritRate">2.6</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32208" name="Blessed Twilight Gloves" name_additional="Magic Type" type="Armor">
 		<set name="icon" val="icon.armor_t603_g_i00" />
@@ -152,12 +152,12 @@
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="37197000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="accCombat" val="1.0" />
-			<add stat="accMagic" val="1.0" />
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="accCombat">1</stat>
+			<stat type="accMagic">1</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32209" name="Blessed Twilight Shoes" name_additional="Magic Type" type="Armor">
 		<set name="icon" val="icon.armor_t603_b_i00" />
@@ -168,11 +168,11 @@
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="37197000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="moveSpeed" val="15.0" />
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="moveSpeed">15</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32210" name="Blessed Twilight Helmet" name_additional="Defense Type" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -183,12 +183,12 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="27898000" />
-		<for>
-			<add order="0" stat="pDef" val="126.0" />
-			<add stat="rEvas" val="1.05" />
-			<add stat="mEvas" val="1.05" />
+		<stats>
+			<stat type="pDef">126</stat>
+			<stat type="rEvas">1.05</stat>
+			<stat type="mEvas">1.05</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32211" name="Blessed Twilight Breastplate" name_additional="Defense Type" type="Armor">
 		<set name="icon" val="icon.armor_t401_u_i00" />
@@ -203,11 +203,11 @@
 		<skills>
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="335.0" />
-			<set stat="pAtk" val="26.0" />
+		<stats>
+			<stat type="pDef">335</stat>
+			<stat type="pAtk">26</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32212" name="Blessed Twilight Gaiters" name_additional="Defense Type" type="Armor">
 		<set name="icon" val="icon.armor_t401_l_i00" />
@@ -219,12 +219,12 @@
 		<set name="weight" val="3170" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="46496000" />
-		<for>
-			<add order="0" stat="pDef" val="209.0" />
-			<set stat="rCrit" val="2.6" />
-			<add stat="mCritRate" val="2.6" />
+		<stats>
+			<stat type="pDef">209</stat>
+			<stat type="rCrit">2.6</stat>
+			<stat type="mCritRate">2.6</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32213" name="Blessed Twilight Gauntlets" name_additional="Defense Type" type="Armor">
 		<set name="icon" val="icon.armor_t401_g_i00" />
@@ -235,12 +235,12 @@
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="18598000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="accCombat" val="1.0" />
-			<add stat="accMagic" val="1.0" />
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="accCombat">1</stat>
+			<stat type="accMagic">1</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32214" name="Blessed Twilight Boots" name_additional="Defense Type" type="Armor">
 		<set name="icon" val="icon.armor_t401_b_i00" />
@@ -251,11 +251,11 @@
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="18598000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="moveSpeed" val="15.0" />
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="moveSpeed">15</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32215" name="Blessed Twilight Shield" name_additional="Defense Type" type="Weapon">
 		<!-- Additionally increases Shield Defense. -->
@@ -270,10 +270,10 @@
 		<skills>
 			<skill id="8782" level="1" /> <!-- Equip Shield -->
 		</skills>
-		<for>
-			<add stat="sDef" val="458.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">458</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 	<item id="32216" name="Blessed Twilight Leather Helmet" name_additional="Enchant Type" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -284,12 +284,12 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="27898000" />
-		<for>
-			<add order="0" stat="pDef" val="126.0" />
-			<add stat="rEvas" val="1.05" />
-			<add stat="mEvas" val="1.05" />
+		<stats>
+			<stat type="pDef">126</stat>
+			<stat type="rEvas">1.05</stat>
+			<stat type="mEvas">1.05</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32217" name="Blessed Twilight Leather Armor" name_additional="Enchant Type" type="Armor">
 		<set name="icon" val="icon.armor_t602_u_i00" />
@@ -304,13 +304,13 @@
 		<skills>
 			<skill id="13311" level="3" /> <!-- Light Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="268.0" />
-			<set stat="pAtk" val="26.0" />
-			<add stat="rEvas" val="5.0" />
-			<add stat="mEvas" val="5.0" />
+		<stats>
+			<stat type="pDef">268</stat>
+			<stat type="pAtk">26</stat>
+			<stat type="rEvas">5</stat>
+			<stat type="mEvas">5</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32218" name="Blessed Twilight Leather Leggings" name_additional="Enchant Type" type="Armor">
 		<set name="icon" val="icon.armor_t602_l_i00" />
@@ -322,14 +322,14 @@
 		<set name="weight" val="1320" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="46496000" />
-		<for>
-			<add order="0" stat="pDef" val="168.0" />
-			<set stat="rCrit" val="2.6" />
-			<add stat="mCritRate" val="2.6" />
-			<add stat="rEvas" val="3.0" />
-			<add stat="mEvas" val="3.0" />
+		<stats>
+			<stat type="pDef">168</stat>
+			<stat type="rCrit">2.6</stat>
+			<stat type="mCritRate">2.6</stat>
+			<stat type="rEvas">3</stat>
+			<stat type="mEvas">3</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32219" name="Blessed Twilight Leather Gloves" name_additional="Enchant Type" type="Armor">
 		<set name="icon" val="icon.armor_t602_g_i00" />
@@ -340,12 +340,12 @@
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="18598000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="accCombat" val="1.0" />
-			<add stat="accMagic" val="1.0" />
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="accCombat">1</stat>
+			<stat type="accMagic">1</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32220" name="Blessed Twilight Leather Boots" name_additional="Enchant Type" type="Armor">
 		<set name="icon" val="icon.armor_t602_b_i00" />
@@ -356,11 +356,11 @@
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="18598000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="moveSpeed" val="15.0" />
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="moveSpeed">15</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32221" name="Blessed Twilight Circlet" name_additional="Recovery Type" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
@@ -371,12 +371,12 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="27898000" />
-		<for>
-			<add order="0" stat="pDef" val="126.0" />
-			<add stat="rEvas" val="1.05" />
-			<add stat="mEvas" val="1.05" />
+		<stats>
+			<stat type="pDef">126</stat>
+			<stat type="rEvas">1.05</stat>
+			<stat type="mEvas">1.05</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32222" name="Blessed Twilight Tunic" name_additional="Recovery Type" type="Armor">
 		<set name="icon" val="icon.armor_t603_u_i00" />
@@ -391,13 +391,13 @@
 		<skills>
 			<skill id="13312" level="3" /> <!-- Robe Upper Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="184.0" />
-			<add stat="mDef" val="41.0" />
-			<set stat="pAtk" val="26.0" />
+		<stats>
+			<stat type="pDef">184</stat>
+			<stat type="mDef">41</stat>
+			<stat type="pAtk">26</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32223" name="Blessed Twilight Stockings" name_additional="Recovery Type" type="Armor">
 		<set name="icon" val="icon.armor_t603_l_i00" />
@@ -409,14 +409,14 @@
 		<set name="weight" val="850" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="46496000" />
-		<for>
-			<add order="0" stat="pDef" val="115.0" />
-			<add stat="mDef" val="27.0" />
-			<set stat="rCrit" val="2.6" />
-			<add stat="mCritRate" val="2.6" />
+		<stats>
+			<stat type="pDef">115</stat>
+			<stat type="mDef">27</stat>
+			<stat type="rCrit">2.6</stat>
+			<stat type="mCritRate">2.6</stat>
 			<enchant stat="pDef" val="0" />
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32224" name="Blessed Twilight Gloves" name_additional="Recovery Type" type="Armor">
 		<set name="icon" val="icon.armor_t603_g_i00" />
@@ -427,12 +427,12 @@
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="18598000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="accCombat" val="1.0" />
-			<add stat="accMagic" val="1.0" />
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="accCombat">1</stat>
+			<stat type="accMagic">1</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32225" name="Blessed Twilight Shoes" name_additional="Recovery Type" type="Armor">
 		<set name="icon" val="icon.armor_t603_b_i00" />
@@ -443,11 +443,11 @@
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="18598000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="moveSpeed" val="15.0" />
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="moveSpeed">15</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32226" name="Scroll of Escape: Talking Island Village" type="EtcItem">
 		<!-- Magical scroll that relocates you to Talking Island. -->
@@ -1192,10 +1192,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="87.0" />
+		<stats>
+			<stat type="mDef">87</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32290" name="Olympiad Guardian Warrior's Necklace" type="Armor">
 		<!-- Olympiad Guardian Warrior's Necklace. 30-day. MP + 57. -->
@@ -1212,10 +1212,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="174.0" />
+		<stats>
+			<stat type="mDef">174</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32291" name="Olympiad Guardian Warrior's Earring" type="Armor">
 		<!-- Olympiad Guardian Warrior's Earring. 30-day. MP + 42. -->
@@ -1232,10 +1232,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="150" />
-		<for>
-			<add stat="mDef" val="131.0" />
+		<stats>
+			<stat type="mDef">131</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32292" name="Recipe: Immortal Belt (60%)" type="EtcItem">
 		<!-- Used by all classes after completion of the fourth class transfer. Recipe for Immortal Belt. Requires Create Common Item Lv. 10. Success rate is 60%. -->

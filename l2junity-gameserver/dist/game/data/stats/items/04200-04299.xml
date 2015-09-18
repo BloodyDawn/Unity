@@ -30,12 +30,12 @@
 		<set name="material" val="STEEL" />
 		<set name="is_freightable" val="false" />
 		<set name="is_dropable" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="4203" name="Spellbook: Life Leech" type="EtcItem">
 		<set name="icon" val="icon.etc_spell_books_defighter_i00" />
@@ -193,12 +193,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_depositable" val="false" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="4220" name="Dream Knife" type="Weapon">
 		<set name="icon" val="icon.weapon_assassin_knife_i00" />
@@ -223,13 +223,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_depositable" val="false" />
-		<for>
-			<set stat="pAtk" val="27" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">27</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+		</stats>
 	</item>
 	<item id="4221" name="Ubiquitous Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_tomahawk_i00" />
@@ -254,13 +254,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_depositable" val="false" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="4222" name="Dream Shield" type="Armor">
 		<set name="icon" val="icon.shield_hoplon_i00" />
@@ -279,12 +279,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_depositable" val="false" />
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="90" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">90</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4223" name="Ubiquitous Shield" type="Armor">
 		<set name="icon" val="icon.shield_dwarven_chain_shield_i00" />
@@ -303,12 +303,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_depositable" val="false" />
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="90" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">90</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4224" name="Dream Armor" type="Armor">
 		<set name="icon" val="icon.armor_blast_plate_i00" />
@@ -331,9 +331,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="68" />
-		</for>
+		<stats>
+			<stat type="pDef">68</stat>
+		</stats>
 	</item>
 	<item id="4225" name="Dream Stockings" type="Armor">
 		<set name="icon" val="icon.armor_mithril_gaiters_i00" />
@@ -356,9 +356,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="43" />
-		</for>
+		<stats>
+			<stat type="pDef">43</stat>
+		</stats>
 	</item>
 	<item id="4226" name="Dream Gloves" type="Armor">
 		<set name="icon" val="icon.armor_gauntlet_i00" />
@@ -377,9 +377,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="17" />
-		</for>
+		<stats>
+			<stat type="pDef">17</stat>
+		</stats>
 	</item>
 	<item id="4227" name="Dream Boots" type="Armor">
 		<set name="icon" val="icon.armor_chain_boots_i00" />
@@ -398,9 +398,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="17" />
-		</for>
+		<stats>
+			<stat type="pDef">17</stat>
+		</stats>
 	</item>
 	<item id="4228" name="Ubiquitous Armor" type="Armor">
 		<set name="icon" val="icon.armor_compound_scale_mail_i00" />
@@ -423,9 +423,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="68" />
-		</for>
+		<stats>
+			<stat type="pDef">68</stat>
+		</stats>
 	</item>
 	<item id="4229" name="Ubiquitous Stockings" type="Armor">
 		<set name="icon" val="icon.armor_compound_scale_gaiters_i00" />
@@ -448,9 +448,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="43" />
-		</for>
+		<stats>
+			<stat type="pDef">43</stat>
+		</stats>
 	</item>
 	<item id="4230" name="Ubiquitous Gloves" type="Armor">
 		<set name="icon" val="icon.armor_manticor_skin_gloves_i00" />
@@ -469,9 +469,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="17" />
-		</for>
+		<stats>
+			<stat type="pDef">17</stat>
+		</stats>
 	</item>
 	<item id="4231" name="Ubiquitous Boots" type="Armor">
 		<set name="icon" val="icon.armor_iron_boots_i00" />
@@ -490,9 +490,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="17" />
-		</for>
+		<stats>
+			<stat type="pDef">17</stat>
+		</stats>
 	</item>
 	<item id="4232" name="Dice" type="EtcItem">
 		<set name="icon" val="icon.etc_dice_a_i00" />
@@ -520,15 +520,15 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="148" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">148</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4234" name="Hatchling's Lv. 65 Armor" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i06" />
@@ -545,10 +545,10 @@
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="50" />
-			<add order="0" stat="pDef" val="50" />
-		</for>
+		<stats>
+			<stat type="mDef">50</stat>
+			<stat type="pDef">50</stat>
+		</stats>
 	</item>
 	<item id="4235" name="Hatchling's Lv. 75 Armor" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i07" />
@@ -565,10 +565,10 @@
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="58" />
-			<add order="0" stat="pDef" val="58" />
-		</for>
+		<stats>
+			<stat type="mDef">58</stat>
+			<stat type="pDef">58</stat>
+		</stats>
 	</item>
 	<item id="4236" name="Gara Item" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i07" />
@@ -585,10 +585,10 @@
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="58" />
-			<add order="0" stat="pDef" val="58" />
-		</for>
+		<stats>
+			<stat type="mDef">58</stat>
+			<stat type="pDef">58</stat>
+		</stats>
 	</item>
 	<item id="4237" name="Hatchling's Lv. 65 Weapon" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i04" />
@@ -608,12 +608,12 @@
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="24" />
-			<add stat="mAtk" val="32" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">24</stat>
+			<stat type="mAtk">32</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+		</stats>
 	</item>
 	<item id="4238" name="Hatchling's Lv. 75 Weapon" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i04" />
@@ -633,12 +633,12 @@
 		<cond msgId="1518">
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="31" />
-			<add stat="mAtk" val="43" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">43</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+		</stats>
 	</item>
 	<item id="4239" name="Blade Mold" type="EtcItem">
 		<set name="icon" val="icon.etc_artisans_frame_i00" />

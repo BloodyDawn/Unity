@@ -900,9 +900,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="130" />
-		<for>
-			<add order="0" stat="pDef" val="28.0" />
-		</for>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
 	</item>
 	<item id="23086" name="Easter Egg" name_additional="Event" type="EtcItem">
 		<!-- Easter Egg celebrating Easter Day. Double-click to receive one out of many event items. -->
@@ -1013,12 +1013,12 @@
 		<skills>
 			<skill id="3566" level="3" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="396.0" />
-			<set stat="mAtk" val="176.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">396</stat>
+			<stat type="mAtk">176</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="23094" name="Vesper Slasher of Fortune" name_additional="90-day" type="Weapon">
 		<!-- Critical + 131. Increases damage inflicted during PvP. Can be assigned an attribute. -->
@@ -1042,12 +1042,12 @@
 		<skills>
 			<skill id="3566" level="3" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="482.0" />
-			<set stat="mAtk" val="176.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">482</stat>
+			<stat type="mAtk">176</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="23095" name="Vesper Buster of Fortune" name_additional="90-day" type="Weapon">
 		<!-- Casting Spd. + 15%. Increases damage inflicted during PvP. Can be assigned an attribute. -->
@@ -1071,12 +1071,12 @@
 		<skills>
 			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="317.0" />
-			<set stat="mAtk" val="234.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">317</stat>
+			<stat type="mAtk">234</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="23096" name="Vesper Shaper of Fortune" name_additional="90-day" type="Weapon">
 		<!-- P. Atk. + 906 during a Critical Attack. Increases damage inflicted during PvP. Can be assigned an attribute. -->
@@ -1100,12 +1100,12 @@
 		<skills>
 			<skill id="3572" level="2" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="346.0" />
-			<set stat="mAtk" val="176.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">346</stat>
+			<stat type="mAtk">176</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="23097" name="Vesper Fighter of Fortune" name_additional="90-day" type="Weapon">
 		<!-- Has a 43% chance of casting Stun on the target during a Critical Attack. Increases damage inflicted during PvP. Can be assigned an attribute. -->
@@ -1129,13 +1129,13 @@
 		<skills>
 			<skill id="3070" level="2" /> <!-- Special Ability: Critical Stun -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="482.0" />
-			<set stat="mAtk" val="176.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="4.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">482</stat>
+			<stat type="mAtk">176</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">4</stat>
+		</stats>
 	</item>
 	<item id="23098" name="Vesper Stormer of Fortune" name_additional="90-day" type="Weapon">
 		<!-- Max HP + 25%. Increases damage inflicted during PvP. Can be assigned an attribute. -->
@@ -1160,12 +1160,12 @@
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 			<skill id="3013" level="4" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="396.0" />
-			<set stat="mAtk" val="176.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">396</stat>
+			<stat type="mAtk">176</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="23099" name="Vesper Avenger of Fortune" name_additional="90-day" type="Weapon">
 		<!-- Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Can be assigned an attribute. -->
@@ -1189,12 +1189,12 @@
 		<skills>
 			<skill id="3568" level="2" /> <!-- Special Ability: HP Drain -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="396.0" />
-			<set stat="mAtk" val="176.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="4.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">396</stat>
+			<stat type="mAtk">176</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">4</stat>
+		</stats>
 	</item>
 </list>

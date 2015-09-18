@@ -543,9 +543,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<add order="0" stat="pDef" val="400.0" />
-		</for>
+		<stats>
+			<stat type="pDef">400</stat>
+		</stats>
 	</item>
 	<item id="24134" name="Appearance Stone: Dark Assassin Suit" type="EtcItem">
 		<!-- Changes the appearance of your appearance into that of a Dark Assassin Suit. Can use Dark Assassin's Move after appearance modification. Tops and one-pieces only. Modified armor can be restored to their original appearance with a Restoration Stone. -->

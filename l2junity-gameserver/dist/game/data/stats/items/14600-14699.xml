@@ -20,12 +20,12 @@
 		<skills>
 			<skill id="8387" level="1" /> <!-- Protection Ring - Schuttgart -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="42" />
-			<add stat="maxMp" val="17" />
-			<add stat="darkRes" val="12" />
+		<stats>
+			<stat type="mDef">42</stat>
+			<stat type="maxMp">17</stat>
+			<stat type="darkRes">12</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="14601" name="Ancient Cloak" name_additional="Kamaels Only" type="Armor">
 		<set name="icon" val="icon.vesper_cloack_i00" />
@@ -49,9 +49,9 @@
 				<player cloakStatus="true" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="20" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+		</stats>
 	</item>
 	<item id="14602" name="Ancient Cloak" type="Armor">
 		<set name="icon" val="icon.vesper_cloack_i00" />
@@ -75,9 +75,9 @@
 				<player cloakStatus="true" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="20" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+		</stats>
 	</item>
 	<item id="14603" name="Sealed Ancient Cloak" type="EtcItem">
 		<set name="icon" val="icon.sealed_vesper_cloack_i01" />
@@ -93,9 +93,9 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="crystal_type" val="S80" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="20" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+		</stats>
 	</item>
 	<item id="14604" name="Red Talisman - Territory Guardian" type="Armor">
 		<set name="icon" val="icon.etc_talisman_i00" />
@@ -157,14 +157,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="78" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">78</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="14607" name="Mark of Gracia" type="EtcItem">
 		<set name="icon" val="icon.etc_coins_silver_i00" />
@@ -203,9 +203,9 @@
 				<player cloakStatus="true" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="20" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+		</stats>
 	</item>
 	<item id="14609" name="Ancient Cloak" type="Armor">
 		<set name="icon" val="icon.vesper_cloack_i00" />
@@ -226,9 +226,9 @@
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="20" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+		</stats>
 	</item>
 	<item id="14610" name="Ancient Cloak (Robe)" type="Armor">
 		<set name="icon" val="icon.vesper_cloack_i00" />
@@ -253,9 +253,9 @@
 				<player cloakStatus="true" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="20" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+		</stats>
 	</item>
 	<item id="14611" name="Rudolph's Nose" type="Armor">
 		<set name="icon" val="icon.Accessory_nose_of_rudolph_mask_i00" />
@@ -452,12 +452,12 @@
 			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
 			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="51" />
-			<set stat="mAtk" val="38" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">51</stat>
+			<stat type="mAtk">38</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="14622" name="Santa's Sword of Ipos" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_ipos_i00" />
@@ -489,12 +489,12 @@
 			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
 			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="62" />
-			<set stat="mAtk" val="38" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">62</stat>
+			<stat type="mAtk">38</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="14623" name="Santa's Barakiel Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_barakiel_axe_i00" />
@@ -526,13 +526,13 @@
 			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
 			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="51" />
-			<set stat="mAtk" val="38" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">51</stat>
+			<stat type="mAtk">38</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="14624" name="Santa's Behemoth' Tuning Fork" type="Weapon">
 		<set name="icon" val="icon.weapon_tuning_fork_of_behemoth_i00" />
@@ -564,13 +564,13 @@
 			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
 			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="62" />
-			<set stat="mAtk" val="38" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">62</stat>
+			<stat type="mAtk">38</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="14625" name="Santa's Naga Storm" type="Weapon">
 		<set name="icon" val="icon.weapon_naga_storm_i00" />
@@ -602,13 +602,13 @@
 			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
 			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="45" />
-			<set stat="mAtk" val="38" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">45</stat>
+			<stat type="mAtk">38</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+		</stats>
 	</item>
 	<item id="14626" name="Santa's Tiphon Spear" type="Weapon">
 		<set name="icon" val="icon.weapon_tiphon_spear_i00" />
@@ -640,13 +640,13 @@
 			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
 			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="51" />
-			<set stat="mAtk" val="38" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">51</stat>
+			<stat type="mAtk">38</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="14627" name="Santa's Shyeed Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_shyid_bow_i00" />
@@ -680,13 +680,13 @@
 			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
 			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="116" />
-			<set stat="mAtk" val="42" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="227" />
-		</for>
+		<stats>
+			<stat type="pAtk">116</stat>
+			<stat type="mAtk">42</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">227</stat>
+		</stats>
 	</item>
 	<item id="14628" name="Santa's Sobekk Hurricane" type="Weapon">
 		<set name="icon" val="icon.weapon_sobekk_hurricane_i00" />
@@ -718,13 +718,13 @@
 			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
 			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="41" />
-			<set stat="mAtk" val="38" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">41</stat>
+			<stat type="mAtk">38</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="14629" name="Santa's Themis Tongue" type="Weapon">
 		<set name="icon" val="icon.weapon_tongue_of_themis_i00" />
@@ -757,12 +757,12 @@
 			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
 			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="41" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">41</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="14630" name="Santa's Cabrio's Hand" type="Weapon">
 		<set name="icon" val="icon.weapon_hand_of_cabrio_i00" />
@@ -795,13 +795,13 @@
 			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
 			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="50" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">50</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="14631" name="Santa's Daimon Crystal" type="Weapon">
 		<set name="icon" val="icon.weapon_crystal_of_deamon_i00" />
@@ -834,13 +834,13 @@
 			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
 			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="62" />
-			<set stat="mAtk" val="56" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">62</stat>
+			<stat type="mAtk">56</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="14632" name="Santa's Éclair Bijou" type="Weapon">
 		<set name="icon" val="icon.weapon_greed_stinger_i00" />
@@ -876,13 +876,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="46" />
-			<set stat="mAtk" val="38" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
-		</for>
+		<stats>
+			<stat type="pAtk">46</stat>
+			<stat type="mAtk">38</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
+		</stats>
 	</item>
 	<item id="14633" name="Santa's Screaming Vengeance" type="Weapon">
 		<set name="icon" val="icon.weapon_soul_shooter_i00" />
@@ -918,13 +918,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="56" />
-			<set stat="mAtk" val="38" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
-		</for>
+		<stats>
+			<stat type="pAtk">56</stat>
+			<stat type="mAtk">38</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
+		</stats>
 	</item>
 	<item id="14634" name="Santa's Durendal" type="Weapon">
 		<set name="icon" val="icon.weapon_death_bringer_i00" />
@@ -959,13 +959,13 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="65" />
-			<set stat="mAtk" val="38" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
-		</for>
+		<stats>
+			<stat type="pAtk">65</stat>
+			<stat type="mAtk">38</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
+		</stats>
 	</item>
 	<item id="14635" name="Battle Reward Box (Low-grade)" type="EtcItem">
 		<set name="icon" val="icon.etc_treasure_box_i07" />
@@ -1580,12 +1580,12 @@
 		<skills>
 			<skill id="8348" level="1" /> <!-- Resistance Earring - Gludio -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="63" />
-			<add stat="maxMp" val="25" />
-			<add stat="waterRes" val="8" />
+		<stats>
+			<stat type="mDef">63</stat>
+			<stat type="maxMp">25</stat>
+			<stat type="waterRes">8</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="14665" name="Dion Resistance Earring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
@@ -1607,12 +1607,12 @@
 		<skills>
 			<skill id="8349" level="1" /> <!-- Resistance Earring - Dion -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="63" />
-			<add stat="maxMp" val="25" />
-			<add stat="holyRes" val="8" />
+		<stats>
+			<stat type="mDef">63</stat>
+			<stat type="maxMp">25</stat>
+			<stat type="holyRes">8</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="14666" name="Giran Resistance Earring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
@@ -1634,12 +1634,12 @@
 		<skills>
 			<skill id="8350" level="1" /> <!-- Resistance Earring - Giran -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="63" />
-			<add stat="maxMp" val="25" />
-			<add stat="windRes" val="8" />
+		<stats>
+			<stat type="mDef">63</stat>
+			<stat type="maxMp">25</stat>
+			<stat type="windRes">8</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="14667" name="Oren Resistance Earring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
@@ -1661,12 +1661,12 @@
 		<skills>
 			<skill id="8351" level="1" /> <!-- Resistance Earring - Oren -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="63" />
-			<add stat="maxMp" val="25" />
-			<add stat="darkRes" val="8" />
+		<stats>
+			<stat type="mDef">63</stat>
+			<stat type="maxMp">25</stat>
+			<stat type="darkRes">8</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="14668" name="Aden Resistance Earring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
@@ -1688,12 +1688,12 @@
 		<skills>
 			<skill id="8352" level="1" /> <!-- Resistance Earring - Aden -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="63" />
-			<add stat="maxMp" val="25" />
-			<add stat="earthRes" val="8" />
+		<stats>
+			<stat type="mDef">63</stat>
+			<stat type="maxMp">25</stat>
+			<stat type="earthRes">8</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="14669" name="Innadril Resistance Earring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
@@ -1715,12 +1715,12 @@
 		<skills>
 			<skill id="8353" level="1" /> <!-- Resistance Earring - Innadril -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="63" />
-			<add stat="maxMp" val="25" />
-			<add stat="waterRes" val="8" />
+		<stats>
+			<stat type="mDef">63</stat>
+			<stat type="maxMp">25</stat>
+			<stat type="waterRes">8</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="14670" name="Goddard Resistance Earring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
@@ -1742,12 +1742,12 @@
 		<skills>
 			<skill id="8354" level="1" /> <!-- Resistance Earring - Goddard -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="63" />
-			<add stat="maxMp" val="25" />
-			<add stat="fireRes" val="8" />
+		<stats>
+			<stat type="mDef">63</stat>
+			<stat type="maxMp">25</stat>
+			<stat type="fireRes">8</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="14671" name="Rune Resistance Earring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
@@ -1769,12 +1769,12 @@
 		<skills>
 			<skill id="8355" level="1" /> <!-- Resistance Earring - Rune -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="63" />
-			<add stat="maxMp" val="25" />
-			<add stat="fireRes" val="8" />
+		<stats>
+			<stat type="mDef">63</stat>
+			<stat type="maxMp">25</stat>
+			<stat type="fireRes">8</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="14672" name="Schuttgart Resistance Earring" type="Armor">
 		<set name="icon" val="icon.accessary_inferno_earing_i00" />
@@ -1796,12 +1796,12 @@
 		<skills>
 			<skill id="8356" level="1" /> <!-- Resistance Earring - Schuttgart -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="63" />
-			<add stat="maxMp" val="25" />
-			<add stat="windRes" val="8" />
+		<stats>
+			<stat type="mDef">63</stat>
+			<stat type="maxMp">25</stat>
+			<stat type="windRes">8</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="14673" name="Rudolph's Nose" type="EtcItem">
 		<set name="icon" val="icon.Accessory_nose_of_rudolph_mask_i00" />
@@ -1842,12 +1842,12 @@
 			<skill id="8321" level="1" /> <!-- Santa's Blessed Weapon -->
 			<skill id="8322" level="1" /> <!-- Santa's Blessed Weapon -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="61" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">61</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="14675" name="Agathion - Neolithica" type="Armor">
 		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />

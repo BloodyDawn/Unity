@@ -594,12 +594,12 @@
 		<cond msgId="1518">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="7" />
-			<add stat="mAtk" val="8" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">7</stat>
+			<stat type="mAtk">8</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+		</stats>
 	</item>
 	<item id="3440" name="Cargo Box" type="EtcItem">
 		<set name="icon" val="icon.etc_jewel_box_i00" />
@@ -928,13 +928,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_depositable" val="false" />
-		<for>
-			<set stat="pAtk" val="10" />
-			<set stat="mAtk" val="9" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">10</stat>
+			<stat type="mAtk">9</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+		</stats>
 	</item>
 	<item id="3472" name="Blood Medusa" type="EtcItem">
 		<set name="icon" val="icon.etc_magic_coin_blood_i00" />

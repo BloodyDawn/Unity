@@ -48,10 +48,10 @@
 		<skills>
 			<skill id="3558" level="1" /> <!-- Antharas' Earring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="94" />
-			<add stat="maxMp" val="37" />
-		</for>
+		<stats>
+			<stat type="mDef">94</stat>
+			<stat type="maxMp">37</stat>
+		</stats>
 	</item>
 	<item id="22303" name="Antharas' Earring" name_additional="7-day (Event)" type="Armor">
 		<!-- Description: MP +37, resistance to Bleed +40%, Bleed attack rate +40%, increases heal amount, vampiric rage effect, resistance to Stun/Mental attacks +30%, Stun/Mental attack rate +30%, decreases MP consumption, and increases heal amount and resistance to Earth. Only one effect is applied when two of the same earrings are equipped. Cannot be exchanged or dropped. Can be destroyed. Can be stored in a private warehouse. -->
@@ -73,10 +73,10 @@
 		<skills>
 			<skill id="3558" level="1" /> <!-- Antharas' Earring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="94" />
-			<add stat="maxMp" val="37" />
-		</for>
+		<stats>
+			<stat type="mDef">94</stat>
+			<stat type="maxMp">37</stat>
+		</stats>
 	</item>
 	<item id="22304" name="Baium's Ring" name_additional="3-day (Event)" type="Armor">
 		<!-- Description: MP +21, resistance to Poison +40%, Poison attack rate +40%, resistance to Hold +30%, Hold attack rate +30%, and increases Accuracy, Critical Damage, P. Atk., and Casting Spd. Only one effect is applied when two of the same ring are equipped. Cannot be exchanged or dropped. Can be destroyed. Can be stored in a private warehouse. -->
@@ -98,10 +98,10 @@
 		<skills>
 			<skill id="3561" level="1" /> <!-- Baium's Ring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="48" />
-			<add stat="maxMp" val="21" />
-		</for>
+		<stats>
+			<stat type="mDef">48</stat>
+			<stat type="maxMp">21</stat>
+		</stats>
 	</item>
 	<item id="22305" name="Baium's Ring" name_additional="7-day (Event)" type="Armor">
 		<!-- Description: MP +21, resistance to Poison +40%, Poison attack rate +40%, resistance to Hold +30%, Hold attack rate +30%, and increases Accuracy, Critical Damage, P. Atk., and Casting Spd. Only one effect is applied when two of the same ring are equipped. -->
@@ -123,10 +123,10 @@
 		<skills>
 			<skill id="3561" level="1" /> <!-- Baium's Ring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="48" />
-			<add stat="maxMp" val="21" />
-		</for>
+		<stats>
+			<stat type="mDef">48</stat>
+			<stat type="maxMp">21</stat>
+		</stats>
 	</item>
 	<item id="22306" name="Scroll: Enchant Weapon (S-grade)" name_additional="Event" type="EtcItem">
 		<!-- Description: Increases P. Atk. by 5 for S-grade one-handed sword, one-handed blunt, dagger, spear, and other weapons when enchanted. Increases P. Atk. by 6 for two-handed sword, two-handed blunt, dualsword, and two-handed combat weapon. Increases P. Atk. by 10 for bow weapons. Increases M. Atk. by 4 for all weapons. P. Atk./M. Atk. increase by double starting at +4. -->
@@ -192,9 +192,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="10" />
-		</for>
+		<stats>
+			<stat type="pDef">10</stat>
+		</stats>
 	</item>
 	<item id="22313" name="Top-grade Magic Pouch Cloth Belt" type="Armor">
 		<!-- Description: Inventory Slot +18. Cannot be exchanged or dropped. Can be destroyed. Can be stored in a private warehouse. -->
@@ -212,9 +212,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="10" />
-		</for>
+		<stats>
+			<stat type="pDef">10</stat>
+		</stats>
 	</item>
 	<item id="22314" name="Blessed Scroll: Enchant Weapon (S-Grade)" type="EtcItem">
 		<!-- Description: Increases P. Atk. by 5 for S-grade one-handed sword, one-handed blunt, dagger, spear, and other weapons when enchanted. Increases P. Atk. by 6 for two-handed sword, two-handed blunt, dualsword, and two-handed combat weapon. Increases P. Atk. by 10 for bow weapons. Increases M. Atk. by 4 for all weapons. Starting at +4, P. Atk./M. Atk. increases by double. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. Cannot be exchanged or dropped. Can be destroyed. Can be stored in a private warehouse. -->
@@ -864,10 +864,10 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="price" val="590" />
-		<for>
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="22362" name="Emerald Dualsword" type="Weapon">
 		<!-- Emerald Dualsword. -->
@@ -880,10 +880,10 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="price" val="1180" />
-		<for>
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="22363" name="Mount - Black Bear" name_additional="7-day" type="Armor">
 		<!-- Can ride a Black Bear when equipped. 7-day. -->
@@ -936,11 +936,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="time" val="604800" />
-		<for>
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="22366" name="Black Bear Claw" type="Weapon">
 		<!-- Powerful-looking fist weapon in the shape of Black Bear claws. Very low P. Atk. -->
@@ -957,11 +957,11 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="450" />
-		<for>
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">4.75</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="22367" name="Black Bear Hat" name_additional="7-day" type="Armor">
 		<!-- Powerful-looking Black Bear Hat. 7-day. Uses 2 hair accessory slots. -->
@@ -1262,10 +1262,10 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="22388" name="Halloween Scythe" name_additional="Event" type="Weapon">
 		<!-- Scythe that gives off the shadow of death. It is a Halloween event reward item. -->
@@ -1284,10 +1284,10 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="22389" name="Halloween Cloak" name_additional="7-day (Event)" type="Armor">
 		<!-- Cloak that gives off charisma. It is a Halloween event reward item that 7-day. -->
@@ -1302,9 +1302,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="604800" />
-		<for>
-			<add order="0" stat="pDef" val="20.0" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+		</stats>
 	</item>
 	<item id="22390" name="Halloween Cloak" name_additional="Event" type="Armor">
 		<!-- Cloak that gives off charisma. It is a Halloween event reward item. -->
@@ -1317,9 +1317,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="20.0" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+		</stats>
 	</item>
 	<item id="22391" name="Halloween Pumpkin Hat" name_additional="7-day (Event)" type="Armor">
 		<!-- Scary pumpkin hat. It is a Halloween event reward item. 7-day. Uses 2 hair accessory slots. -->

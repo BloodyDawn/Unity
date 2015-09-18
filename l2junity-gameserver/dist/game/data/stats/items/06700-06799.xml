@@ -168,13 +168,13 @@
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="16" />
-			<set stat="mAtk" val="6" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">16</stat>
+			<stat type="mAtk">6</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+		</stats>
 	</item>
 	<item id="6716" name="Monster Only (Silenos Shaman)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -193,13 +193,13 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="11" />
-			<set stat="mAtk" val="12" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">11</stat>
+			<stat type="mAtk">12</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="6717" name="Monster Only (Einhasad Warrior)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -217,12 +217,12 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="24" />
-			<set stat="mAtk" val="17" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">24</stat>
+			<stat type="mAtk">17</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="6718" name="Monster Only (Einhasad Shaman)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -240,13 +240,13 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="24" />
-			<set stat="mAtk" val="17" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">24</stat>
+			<stat type="mAtk">17</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="6719" name="Monster Only (Ketra Orc Chieftain)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -266,15 +266,15 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="141" />
-			<set stat="mAtk" val="104" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">141</stat>
+			<stat type="mAtk">104</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6720" name="Monster Only (Halisha's Shadow)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -294,13 +294,13 @@
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="16" />
-			<set stat="mAtk" val="6" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">16</stat>
+			<stat type="mAtk">6</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+		</stats>
 	</item>
 	<item id="6721" name="Monster Only (Shield of Imperial Warlord Zombie)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -312,12 +312,12 @@
 		<set name="price" val="8" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="47" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">47</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6722" name="Monster Only (Ahrimanes)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -339,14 +339,14 @@
 		<skills>
 			<skill id="3045" level="14" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="236" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">236</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6723" name="Monster Only (Vampire Warrior)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -365,14 +365,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="112" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">112</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6724" name="Sealed Tateossian Earring" type="Armor">
 		<set name="icon" val="icon.accessory_tateossian_earring_i02" />
@@ -387,10 +387,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="EARRING" />
-		<for>
-			<add order="0" stat="mDef" val="68" />
+		<stats>
+			<stat type="mDef">68</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6725" name="Sealed Tateossian Ring" type="Armor">
 		<set name="icon" val="icon.accessory_tateossian_ring_i02" />
@@ -404,10 +404,10 @@
 		<set name="price" val="2180000" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="mDef" val="46" />
+		<stats>
+			<stat type="mDef">46</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6726" name="Sealed Tateossian Necklace" type="Armor">
 		<set name="icon" val="icon.accessory_tateossian_necklace_i02" />
@@ -421,10 +421,10 @@
 		<set name="price" val="4361000" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="mDef" val="91" />
+		<stats>
+			<stat type="mDef">91</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="6727" name="Seed: Alternative Great Coba" type="EtcItem">
 		<set name="icon" val="icon.etc_great_coba_seed_i00" />

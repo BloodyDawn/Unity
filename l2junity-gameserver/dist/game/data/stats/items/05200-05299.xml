@@ -180,10 +180,10 @@
 		<cond msgId="1518">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="58" />
-			<add order="0" stat="pDef" val="71" />
-		</for>
+		<stats>
+			<stat type="mDef">58</stat>
+			<stat type="pDef">71</stat>
+		</stats>
 	</item>
 	<item id="5217" name="Wolf's Lv. 75 Weapon" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i02" />
@@ -203,12 +203,12 @@
 		<cond msgId="1518">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="194" />
-			<add stat="mAtk" val="136" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">194</stat>
+			<stat type="mAtk">136</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+		</stats>
 	</item>
 	<item id="5218" name="Mercenary Posting Ticket (Teleporter2)" type="EtcItem">
 		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
@@ -398,14 +398,14 @@
 		<skills>
 			<skill id="3045" level="17" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="259" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">259</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="5234" name="Mysterious Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_lesser_potion_clear_i00" />
@@ -1116,12 +1116,12 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="38" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">38</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="5285" name="Heavy Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_heavy_sword_i00" />
@@ -1142,14 +1142,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="49" />
-			<set stat="mAtk" val="26" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">49</stat>
+			<stat type="mAtk">26</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="5286" name="Berserker Blade" type="Weapon">
 		<set name="icon" val="icon.weapon_berserker_blade_i00" />
@@ -1171,14 +1171,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="5287" name="Sealed Dark Crystal breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t74_u_i02" />
@@ -1196,10 +1196,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="171" />
+		<stats>
+			<stat type="pDef">171</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="5288" name="Sealed Dark Crystal Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t74_l_i02" />
@@ -1218,10 +1218,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="107" />
+		<stats>
+			<stat type="pDef">107</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="5289" name="Sealed Dark Crystal Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i02" />
@@ -1236,10 +1236,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
-		<for>
-			<add order="0" stat="pDef" val="69" />
+		<stats>
+			<stat type="pDef">69</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="5290" name="Sealed Dark Crystal Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t74_g_i02" />
@@ -1254,10 +1254,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
-		<for>
-			<add order="0" stat="pDef" val="46" />
+		<stats>
+			<stat type="pDef">46</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="5291" name="Sealed Dark Crystal Boots" type="Armor">
 		<set name="icon" val="icon.armor_t74_b_i02" />
@@ -1272,10 +1272,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
-		<for>
-			<add order="0" stat="pDef" val="46" />
+		<stats>
+			<stat type="pDef">46</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="5292" name="Sealed Dark Crystal Shield" type="Armor">
 		<set name="icon" val="icon.shield_dark_crystal_shield_i02" />
@@ -1292,12 +1292,12 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="243" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">243</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="5293" name="Sealed Tallum Plate Armor" type="Armor">
 		<set name="icon" val="icon.armor_t77_ul_i02" />
@@ -1315,10 +1315,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="278" />
+		<stats>
+			<stat type="pDef">278</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="5294" name="Sealed Tallum Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i02" />
@@ -1332,10 +1332,10 @@
 		<set name="price" val="1336000" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="69" />
+		<stats>
+			<stat type="pDef">69</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="5295" name="Sealed Tallum Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t77_g_i02" />
@@ -1350,10 +1350,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
-		<for>
-			<add order="0" stat="pDef" val="46" />
+		<stats>
+			<stat type="pDef">46</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="5296" name="Sealed Tallum Boots" type="Armor">
 		<set name="icon" val="icon.armor_t77_b_i02" />
@@ -1368,10 +1368,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
-		<for>
-			<add order="0" stat="pDef" val="46" />
+		<stats>
+			<stat type="pDef">46</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="5297" name="Sealed Dark Crystal Leather Armor" type="Armor">
 		<set name="icon" val="icon.armor_t75_u_i02" />
@@ -1386,10 +1386,10 @@
 		<set name="price" val="2671000" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="128" />
+		<stats>
+			<stat type="pDef">128</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="5298" name="Sealed Dark Crystal Leggings" type="Armor">
 		<set name="icon" val="icon.armor_t75_l_i02" />
@@ -1405,10 +1405,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
-		<for>
-			<add order="0" stat="pDef" val="80" />
+		<stats>
+			<stat type="pDef">80</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="5299" name="Sealed Gloves of Underworld" type="Armor">
 		<set name="icon" val="icon.armor_t40_g_i00" />
@@ -1422,9 +1422,9 @@
 		<set name="price" val="890000" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="45" />
+		<stats>
+			<stat type="pDef">45</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 </list>

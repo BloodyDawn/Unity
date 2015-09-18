@@ -152,9 +152,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<add stat="mDef" val="1.0" />
-		</for>
+		<stats>
+			<stat type="mDef">1</stat>
+		</stats>
 	</item>
 	<item id="22914" name="Wedding Ring - Female" type="Armor">
 		<!-- Wedding ring for bride. -->
@@ -166,9 +166,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<add stat="mDef" val="1.0" />
-		</for>
+		<stats>
+			<stat type="mDef">1</stat>
+		</stats>
 	</item>
 	<item id="22915" name="Flower Shower" type="EtcItem">
 		<!-- Flower pedals showered upon the bride and the groom. -->
@@ -197,12 +197,12 @@
 		<skills>
 			<skill id="3261" level="1" /> <!-- Forgiveness -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1.0" />
-			<set stat="mAtk" val="1.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="22917" name="Refined Jester Hat" type="Armor">
 		<!-- Refined Jester Hat. Uses 2 hair accessory slots. -->

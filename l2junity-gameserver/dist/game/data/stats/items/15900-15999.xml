@@ -23,14 +23,14 @@
 		<skills>
 			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="350" />
-			<set stat="mAtk" val="256" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">350</stat>
+			<stat type="mAtk">256</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15901" name="Recurve Thorne Bow" name_additional="Critical Slow" type="Weapon">
 		<set name="icon" val="icon.weapon_recurvethorne_bow_i01" />
@@ -58,15 +58,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="794" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">794</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15902" name="Recurve Thorne Bow" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_recurvethorne_bow_i01" />
@@ -94,15 +94,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="794" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">794</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15903" name="Recurve Thorne Bow" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_recurvethorne_bow_i01" />
@@ -129,15 +129,15 @@
 		<skills>
 			<skill id="3567" level="5" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="794" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">794</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15904" name="Heavenstare Rapier" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_heavenstair_rapier_i01" />
@@ -166,15 +166,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="396" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">396</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15905" name="Heavenstare Rapier" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_heavenstair_rapier_i01" />
@@ -203,15 +203,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="396" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">396</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15906" name="Heavenstare Rapier" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_heavenstair_rapier_i01" />
@@ -240,15 +240,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="396" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">396</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15907" name="Pyseal Blade" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_pyseal_blade_i01" />
@@ -276,15 +276,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="473" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">473</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15908" name="Pyseal Blade" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_pyseal_blade_i01" />
@@ -312,15 +312,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="473" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">473</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15909" name="Pyseal Blade" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_pyseal_blade_i01" />
@@ -348,15 +348,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="473" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">473</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15910" name="Thorne Crossbow" name_additional="Critical Slow" type="Weapon">
 		<set name="icon" val="icon.weapon_thorne_crossbow_i01" />
@@ -386,15 +386,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="487" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">487</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15911" name="Thorne Crossbow" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_thorne_crossbow_i01" />
@@ -424,15 +424,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="487" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">487</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15912" name="Thorne Crossbow" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_thorne_crossbow_i01" />
@@ -461,15 +461,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="487" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">487</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15913" name="Eternal Core Sword {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_incessantcore_sword_i00" />
@@ -500,14 +500,14 @@
 			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="437" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">437</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15914" name="Mamba Edge {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_mambaedge_i00" />
@@ -538,15 +538,15 @@
 			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="382" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">382</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15915" name="Eversor Mace {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_expowder_mace_i00" />
@@ -576,15 +576,15 @@
 			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="437" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">437</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15916" name="Contristo Hammer {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_retributer_i00" />
@@ -615,15 +615,15 @@
 			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">532</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15917" name="Lava Saw {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_lavamond_saw_i00" />
@@ -654,14 +654,14 @@
 			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">532</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15918" name="Jade Claw {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_jademice_claw_i00" />
@@ -693,15 +693,15 @@
 			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
 			<skill id="3552" level="4" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">532</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15919" name="Demitelum {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_ghostcleaner_i00" />
@@ -733,15 +733,15 @@
 			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="437" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">437</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15920" name="Sacredium {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_vesper_caster_i00" />
@@ -773,15 +773,15 @@
 			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="350" />
-			<set stat="mAtk" val="256" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">350</stat>
+			<stat type="mAtk">256</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15921" name="Cyclic Cane {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_psyskilt_cane_i00" />
@@ -813,15 +813,15 @@
 			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="426" />
-			<set stat="mAtk" val="281" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">426</stat>
+			<stat type="mAtk">281</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15922" name="Archangel Sword {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_archangel_sword_i00" />
@@ -854,14 +854,14 @@
 			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="350" />
-			<set stat="mAtk" val="256" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">350</stat>
+			<stat type="mAtk">256</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15923" name="Recurve Thorne Bow {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_recurvethorne_bow_i00" />
@@ -895,15 +895,15 @@
 			<skill id="3657" level="1" /> <!-- PvP Weapon - Decrease Resist -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="794" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">794</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15924" name="Heavenstare Rapier {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_heavenstair_rapier_i00" />
@@ -938,15 +938,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="396" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">396</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15925" name="Pyseal Blade {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_pyseal_blade_i00" />
@@ -981,15 +981,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="473" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">473</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15926" name="Thorne Crossbow {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_thorne_crossbow_i00" />
@@ -1024,15 +1024,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="487" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">487</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15927" name="Periel Sword {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_periwing_sword_i00" />
@@ -1063,14 +1063,14 @@
 			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15928" name="Skull Edge {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_skulledge_i00" />
@@ -1101,15 +1101,15 @@
 			<skill id="3651" level="1" /> <!-- PvP Weapon - Cancel -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="363" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">363</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15929" name="Vigwik Axe {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_vigwik_axe_i00" />
@@ -1139,15 +1139,15 @@
 			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15930" name="Devilish Maul {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_evildeity_maul_i00" />
@@ -1178,15 +1178,15 @@
 			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="505" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15931" name="Feather Eye Blade {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_feathereye_blade_i00" />
@@ -1217,14 +1217,14 @@
 			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="505" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15932" name="Octo Claw {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_octoclaw_i00" />
@@ -1256,15 +1256,15 @@
 			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
 			<skill id="3552" level="4" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="505" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15933" name="Doubletop Spear {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_doubletopa_spear_i00" />
@@ -1296,15 +1296,15 @@
 			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15934" name="Rising Star {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_cuticle_i00" />
@@ -1336,15 +1336,15 @@
 			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="332" />
-			<set stat="mAtk" val="244" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">332</stat>
+			<stat type="mAtk">244</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15935" name="Black Visage {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_blackvisage_i00" />
@@ -1376,15 +1376,15 @@
 			<skill id="3653" level="1" /> <!-- PvP Weapon - Attack Rate -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="404" />
-			<set stat="mAtk" val="268" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">404</stat>
+			<stat type="mAtk">268</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15936" name="Veniplant Sword {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_veniplant_sword_i00" />
@@ -1417,14 +1417,14 @@
 			<skill id="3650" level="1" /> <!-- PvP Weapon - CP Drain -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="332" />
-			<set stat="mAtk" val="244" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">332</stat>
+			<stat type="mAtk">244</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15937" name="Skull Carnium Bow {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_skullgrove_bow_i00" />
@@ -1458,15 +1458,15 @@
 			<skill id="3657" level="1" /> <!-- PvP Weapon - Decrease Resist -->
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="768" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">768</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15938" name="Gemtail Rapier {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_gemtail_rapier_i00" />
@@ -1501,15 +1501,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="376" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">376</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15939" name="Finale Blade {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_findragon blade_i00" />
@@ -1544,15 +1544,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="449" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">449</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15940" name="Dominion Crossbow {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_rudecutter_crossbow_i00" />
@@ -1587,15 +1587,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="471" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">471</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15941" name="Periel Sword {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_periwing_sword_i01" />
@@ -1626,14 +1626,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15942" name="Periel Sword {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_periwing_sword_i01" />
@@ -1664,14 +1664,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3566" level="4" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15943" name="Periel Sword {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_periwing_sword_i01" />
@@ -1702,14 +1702,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3564" level="3" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15944" name="Skull Edge {PvP}" name_additional="HP Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_skulledge_i01" />
@@ -1741,15 +1741,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3568" level="2" /> <!-- Special Ability: HP Drain -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="363" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">363</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15945" name="Skull Edge {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_skulledge_i01" />
@@ -1781,15 +1781,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3564" level="3" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="363" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">363</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15946" name="Skull Edge {PvP}" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_skulledge_i01" />
@@ -1821,15 +1821,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3572" level="3" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="363" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">363</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15947" name="Vigwik Axe {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_vigwik_axe_i01" />
@@ -1860,15 +1860,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15948" name="Vigwik Axe {PvP}" name_additional="HP Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_vigwik_axe_i01" />
@@ -1899,15 +1899,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3569" level="3" /> <!-- Special Ability: HP Regeneration -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15949" name="Vigwik Axe {PvP}" name_additional="HP Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_vigwik_axe_i01" />
@@ -1938,15 +1938,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3568" level="2" /> <!-- Special Ability: HP Drain -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15950" name="Devilish Maul {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_evildeity_maul_i01" />
@@ -1977,15 +1977,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="505" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15951" name="Devilish Maul {PvP}" name_additional="HP Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_evildeity_maul_i01" />
@@ -2016,15 +2016,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3568" level="2" /> <!-- Special Ability: HP Drain -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="505" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15952" name="Devilish Maul {PvP}" name_additional="HP Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_evildeity_maul_i01" />
@@ -2055,15 +2055,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3569" level="3" /> <!-- Special Ability: HP Regeneration -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="505" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15953" name="Feather Eye Blade {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_feathereye_blade_i01" />
@@ -2094,14 +2094,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="505" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15954" name="Feather Eye Blade {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_feathereye_blade_i01" />
@@ -2132,14 +2132,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3566" level="4" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="505" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15955" name="Feather Eye Blade {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_feathereye_blade_i01" />
@@ -2170,14 +2170,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3564" level="3" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="505" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15956" name="Octo Claw {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_octoclaw_i01" />
@@ -2209,15 +2209,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="505" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15957" name="Octo Claw {PvP}" name_additional="Critical Stun" type="Weapon">
 		<set name="icon" val="icon.weapon_octoclaw_i01" />
@@ -2249,15 +2249,15 @@
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3070" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="505" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15958" name="Octo Claw {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_octoclaw_i01" />
@@ -2289,15 +2289,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3565" level="4" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="505" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15959" name="Doubletop Spear {PvP}" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_doubletopa_spear_i01" />
@@ -2328,15 +2328,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3602" level="10" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15960" name="Doubletop Spear {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_doubletopa_spear_i01" />
@@ -2367,15 +2367,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3601" level="10" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15961" name="Doubletop Spear {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_doubletopa_spear_i01" />
@@ -2406,15 +2406,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3013" level="4" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15962" name="Rising Star {PvP}" name_additional="MP Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_cuticle_i01" />
@@ -2446,15 +2446,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3576" level="3" /> <!-- Special Ability: MP Regeneration -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="332" />
-			<set stat="mAtk" val="244" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">332</stat>
+			<stat type="mAtk">244</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15963" name="Rising Star {PvP}" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_cuticle_i01" />
@@ -2486,15 +2486,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="332" />
-			<set stat="mAtk" val="244" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">332</stat>
+			<stat type="mAtk">244</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15964" name="Rising Star {PvP}" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_cuticle_i01" />
@@ -2526,15 +2526,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="332" />
-			<set stat="mAtk" val="244" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">332</stat>
+			<stat type="mAtk">244</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15965" name="Black Visage {PvP}" name_additional="MP Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_blackvisage_i01" />
@@ -2566,15 +2566,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3576" level="3" /> <!-- Special Ability: MP Regeneration -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="404" />
-			<set stat="mAtk" val="268" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">404</stat>
+			<stat type="mAtk">268</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15966" name="Black Visage {PvP}" name_additional="Magic Hold" type="Weapon">
 		<set name="icon" val="icon.weapon_blackvisage_i01" />
@@ -2606,15 +2606,15 @@
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3577" level="2" type="ON_MAGIC_SKILL" type_chance="20" /> <!-- Special Ability: Magic Hold -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="404" />
-			<set stat="mAtk" val="268" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">404</stat>
+			<stat type="mAtk">268</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15967" name="Black Visage {PvP}" name_additional="Empower" type="Weapon">
 		<set name="icon" val="icon.weapon_blackvisage_i01" />
@@ -2646,15 +2646,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3575" level="3" /> <!-- Special Ability: Empower -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="404" />
-			<set stat="mAtk" val="268" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">404</stat>
+			<stat type="mAtk">268</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15968" name="Veniplant Sword {PvP}" name_additional="Acumen" type="Weapon">
 		<set name="icon" val="icon.weapon_veniplant_sword_i01" />
@@ -2686,14 +2686,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3047" level="3" /> <!-- Special Ability: Acumen -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="332" />
-			<set stat="mAtk" val="244" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">332</stat>
+			<stat type="mAtk">244</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15969" name="Veniplant Sword {PvP}" name_additional="Magic Hold" type="Weapon">
 		<set name="icon" val="icon.weapon_veniplant_sword_i01" />
@@ -2725,14 +2725,14 @@
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3577" level="2" type="ON_MAGIC_SKILL" type_chance="20" /> <!-- Special Ability: Magic Hold -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="332" />
-			<set stat="mAtk" val="244" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">332</stat>
+			<stat type="mAtk">244</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15970" name="Veniplant Sword {PvP}" name_additional="Mana Up" type="Weapon">
 		<set name="icon" val="icon.weapon_veniplant_sword_i01" />
@@ -2764,14 +2764,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="332" />
-			<set stat="mAtk" val="244" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">332</stat>
+			<stat type="mAtk">244</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15971" name="Skull Carnium Bow {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_skullgrove_bow_i01" />
@@ -2804,15 +2804,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3567" level="4" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="768" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">768</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15972" name="Skull Carnium Bow {PvP}" name_additional="Critical Slow" type="Weapon">
 		<set name="icon" val="icon.weapon_skullgrove_bow_i01" />
@@ -2845,15 +2845,15 @@
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3574" level="3" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Slow -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="768" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">768</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15973" name="Skull Carnium Bow {PvP}" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_skullgrove_bow_i01" />
@@ -2886,15 +2886,15 @@
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="8312" level="1" /> <!-- Special Ability: Cheap Shot -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="768" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">768</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15974" name="Gemtail Rapier {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_gemtail_rapier_i01" />
@@ -2929,15 +2929,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="376" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">376</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15975" name="Gemtail Rapier {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_gemtail_rapier_i01" />
@@ -2972,15 +2972,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="376" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">376</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15976" name="Gemtail Rapier {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_gemtail_rapier_i01" />
@@ -3015,15 +3015,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="376" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">376</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15977" name="Finale Blade {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_findragon blade_i01" />
@@ -3057,15 +3057,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="449" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">449</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15978" name="Finale Blade {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_findragon blade_i01" />
@@ -3099,15 +3099,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="449" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">449</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15979" name="Finale Blade {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_findragon blade_i01" />
@@ -3141,15 +3141,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="449" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">449</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15980" name="Dominion Crossbow {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_rudecutter_crossbow_i01" />
@@ -3184,15 +3184,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="471" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">471</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15981" name="Dominion Crossbow {PvP}" name_additional="Critical Slow" type="Weapon">
 		<set name="icon" val="icon.weapon_rudecutter_crossbow_i01" />
@@ -3227,15 +3227,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="471" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">471</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15982" name="Dominion Crossbow {PvP}" name_additional="Cheap Shot" type="Weapon">
 		<set name="icon" val="icon.weapon_rudecutter_crossbow_i01" />
@@ -3270,15 +3270,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="471" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">471</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15983" name="Eternal Core Sword {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_incessantcore_sword_i01" />
@@ -3309,14 +3309,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3566" level="5" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="437" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">437</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15984" name="Eternal Core Sword {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_incessantcore_sword_i01" />
@@ -3347,14 +3347,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3564" level="3" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="437" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">437</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15985" name="Eternal Core Sword {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_incessantcore_sword_i01" />
@@ -3385,14 +3385,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="437" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">437</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15986" name="Mamba Edge {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_mambaedge_i01" />
@@ -3424,15 +3424,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3564" level="3" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="382" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">382</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15987" name="Mamba Edge {PvP}" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_mambaedge_i01" />
@@ -3464,15 +3464,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3572" level="3" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="382" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">382</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15988" name="Mamba Edge {PvP}" name_additional="HP Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_mambaedge_i01" />
@@ -3504,15 +3504,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3568" level="2" /> <!-- Special Ability: HP Drain -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="382" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">382</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15989" name="Eversor Mace {PvP}" name_additional="HP Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_expowder_mace_i01" />
@@ -3543,15 +3543,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3569" level="4" /> <!-- Special Ability: HP Regeneration -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="437" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">437</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15990" name="Eversor Mace {PvP}" name_additional="HP Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_expowder_mace_i01" />
@@ -3582,15 +3582,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3568" level="2" /> <!-- Special Ability: HP Drain -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="437" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">437</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15991" name="Eversor Mace {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_expowder_mace_i01" />
@@ -3621,15 +3621,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="437" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">437</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15992" name="Contristo Hammer {PvP}" name_additional="HP Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_pereztear_hammer_i01" />
@@ -3660,15 +3660,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3568" level="2" /> <!-- Special Ability: HP Drain -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">532</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15993" name="Contristo Hammer {PvP}" name_additional="HP Regeneration" type="Weapon">
 		<set name="icon" val="icon.weapon_pereztear_hammer_i01" />
@@ -3699,15 +3699,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3569" level="4" /> <!-- Special Ability: HP Regeneration -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">532</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15994" name="Contristo Hammer {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_pereztear_hammer_i01" />
@@ -3738,15 +3738,15 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">532</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15995" name="Lava Saw {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_lavamond_saw_i01" />
@@ -3777,14 +3777,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3566" level="5" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">532</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15996" name="Lava Saw {PvP}" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_lavamond_saw_i01" />
@@ -3815,14 +3815,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3564" level="3" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">532</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15997" name="Lava Saw {PvP}" name_additional="Health" type="Weapon">
 		<set name="icon" val="icon.weapon_lavamond_saw_i01" />
@@ -3853,14 +3853,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">532</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15998" name="Jade Claw {PvP}" name_additional="Critical Stun" type="Weapon">
 		<set name="icon" val="icon.weapon_jademice_claw_i01" />
@@ -3892,15 +3892,15 @@
 			<skill id="3552" level="3" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3070" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Stun -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">532</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15999" name="Jade Claw {PvP}" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_jademice_claw_i01" />
@@ -3932,14 +3932,14 @@
 			<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 			<skill id="3565" level="5" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">532</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 </list>

@@ -37,10 +37,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 	<item id="13103" name="My Teleport Book Pack" type="EtcItem">
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
@@ -752,10 +752,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="101" />
+		<stats>
+			<stat type="pDef">101</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13138" name="Vesper Leather Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -770,10 +770,10 @@
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="101" />
+		<stats>
+			<stat type="pDef">101</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13139" name="Vesper Circlet" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
@@ -791,10 +791,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="101" />
+		<stats>
+			<stat type="pDef">101</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13140" name="Vesper Noble Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -813,10 +813,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="101" />
+		<stats>
+			<stat type="pDef">101</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13141" name="Vesper Noble Leather Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -832,10 +832,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
-		<for>
-			<add order="0" stat="pDef" val="101" />
+		<stats>
+			<stat type="pDef">101</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13142" name="Vesper Noble Circlet" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
@@ -854,10 +854,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="101" />
+		<stats>
+			<stat type="pDef">101</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13143" name="Sealed Vesper Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i02" />
@@ -876,10 +876,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="101" />
+		<stats>
+			<stat type="pDef">101</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13144" name="Sealed Vesper Leather Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i02" />
@@ -895,10 +895,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
-		<for>
-			<add order="0" stat="pDef" val="101" />
+		<stats>
+			<stat type="pDef">101</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13145" name="Sealed Vesper Circlet" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i02" />
@@ -917,10 +917,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="101" />
+		<stats>
+			<stat type="pDef">101</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13146" name="Sealed Vesper Noble Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i02" />
@@ -938,10 +938,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="101" />
+		<stats>
+			<stat type="pDef">101</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13147" name="Sealed Vesper Noble Leather Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i02" />
@@ -959,10 +959,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="101" />
+		<stats>
+			<stat type="pDef">101</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13148" name="Sealed Vesper Noble Circlet" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i02" />
@@ -980,10 +980,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="101" />
+		<stats>
+			<stat type="pDef">101</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13149" name="Pailaka Final Key" type="EtcItem">
 		<set name="icon" val="icon.etc_key_i00" />
@@ -1107,13 +1107,13 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13154" name="Player Commendation - Falchion" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_falchion_i00" />
@@ -1138,12 +1138,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="13155" name="Player Commendation - Iron Hammer" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_iron_hammer_i00" />
@@ -1168,13 +1168,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="13156" name="Player Commendation - Voodoo Doll" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_voodoo_doll_i00" />
@@ -1200,12 +1200,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="25" />
-			<set stat="mAtk" val="28" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">25</stat>
+			<stat type="mAtk">28</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="13157" name="Player Commendation - Flanged Mace" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_buzdygan_i00" />
@@ -1230,13 +1230,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="13158" name="Player Commendation - Mage Staff" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_staff_i00" />
@@ -1262,13 +1262,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="31" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">30</stat>
+			<stat type="mAtk">31</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13159" name="Player Commendation - Sword Breaker" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_breaker_i00" />
@@ -1293,13 +1293,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="27" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">27</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+		</stats>
 	</item>
 	<item id="13160" name="Player Commendation - Viper Fang" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_vipers_canine_i00" />
@@ -1324,13 +1324,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="38" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">38</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13161" name="Player Commendation - Compound Bow" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_composition_bow_i00" />
@@ -1357,13 +1357,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="64" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">64</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+		</stats>
 	</item>
 	<item id="13162" name="Player Commendation - Crucifix of Blessing" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_crucifix_of_blessing_i00" />
@@ -1389,12 +1389,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="25" />
-			<set stat="mAtk" val="28" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">25</stat>
+			<stat type="mAtk">28</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="13163" name="Player Commendation - Bastard Sword*Crimson Sword" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1421,14 +1421,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13164" name="Player Commendation - Claymore" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_claymore_i00" />
@@ -1455,14 +1455,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="112" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">112</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13165" name="Player Commendation - Bonebreaker" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_bonebreaker_i00" />
@@ -1489,15 +1489,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="92" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13166" name="Player Commendation - Atuba Hammer" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_atuba_hammer_i00" />
@@ -1525,15 +1525,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="90" />
-			<set stat="mAtk" val="79" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13167" name="Player Commendation - Ghost Staff" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_ghost_staff_i00" />
@@ -1561,15 +1561,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="90" />
-			<set stat="mAtk" val="79" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13168" name="Player Commendation - Staff of Life" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_life_stick_i00" />
@@ -1597,15 +1597,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="74" />
-			<set stat="mAtk" val="79" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">74</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13169" name="Player Commendation - Atuba Mace" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_atuba_mace_i00" />
@@ -1633,15 +1633,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="90" />
-			<set stat="mAtk" val="79" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13170" name="Player Commendation - Mithril Dagger" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_mithril_dagger_i00" />
@@ -1668,15 +1668,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="80" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">80</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13171" name="Player Commendation - Scallop Jamadhr" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_scallop_jamadhr_i00" />
@@ -1703,15 +1703,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="112" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">112</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13172" name="Player Commendation - Light Crossbow" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_cyclone_bow_i00" />
@@ -1740,15 +1740,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="191" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">191</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13173" name="Player Commendation - Glaive" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_glaive_i00" />
@@ -1779,15 +1779,15 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="92" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13174" name="Player Commendation - Elven Long Sword" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_elven_long_sword_i00" />
@@ -1814,14 +1814,14 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="21600" />
-		<for>
-			<set stat="pAtk" val="92" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13175" name="Player Commendation - Grand Épée" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_rapier_i00" />
@@ -1854,15 +1854,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="83" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">83</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13176" name="Player Commendation - General's Katzbalger" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_tulwar_i00" />
@@ -1892,15 +1892,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="100" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">100</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13177" name="Player Commendation - Cranequin" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_hunting_gun_i00" />
@@ -1931,15 +1931,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="117" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">117</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13178" name="Player Commendation - Samurai Long Sword" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_samurai_longsword_i00" />
@@ -1970,14 +1970,14 @@
 		<skills>
 			<skill id="3010" level="4" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="156" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">156</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13179" name="Player Commendation - Deadman's Staff" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_deadmans_staff_i00" />
@@ -2009,15 +2009,15 @@
 		<skills>
 			<skill id="1044" level="2" /> <!-- Regeneration -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="152" />
-			<set stat="mAtk" val="122" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">152</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13180" name="Player Commendation - Ghoul's Staff" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_ghouls_staff_i00" />
@@ -2049,15 +2049,15 @@
 		<skills>
 			<skill id="3014" level="1" /> <!-- Special Ability: Mana Up -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="152" />
-			<set stat="mAtk" val="122" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">152</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13181" name="Player Commendation - Demon's Staff" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_demons_staff_i00" />
@@ -2089,15 +2089,15 @@
 		<skills>
 			<skill id="1164" level="10" /> <!-- Curse Weakness -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="152" />
-			<set stat="mAtk" val="122" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">152</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13182" name="Player Commendation - Crystal Dagger" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_crystal_dagger_i00" />
@@ -2128,15 +2128,15 @@
 		<skills>
 			<skill id="3043" level="4" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="136" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">136</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13183" name="Player Commendation - Great Pata" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_great_pata_i00" />
@@ -2167,15 +2167,15 @@
 		<skills>
 			<skill id="3034" level="4" /> <!-- Special Ability: Rsk. Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13184" name="Player Commendation - Eminence Bow" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_eminence_bow_i00" />
@@ -2206,15 +2206,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
-		<for>
-			<set stat="pAtk" val="323" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">323</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13185" name="Player Commendation - Orcish Poleaxe" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_orcish_poleaxe_i00" />
@@ -2245,15 +2245,15 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="156" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">156</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13186" name="Player Commendation - Yaksa Mace" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_yaksa_mace_i00" />
@@ -2284,15 +2284,15 @@
 		<skills>
 			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="156" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">156</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13187" name="Player Commendation - Shamshir*Shamshir" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2323,14 +2323,14 @@
 		<skills>
 			<skill id="3046" level="8" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13188" name="Player Commendation - Admiral's Estoc" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_blink_slasher_i00" />
@@ -2365,15 +2365,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="141" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">141</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13189" name="Player Commendation - Saber Tooth" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_invincible_blade_i00" />
@@ -2407,15 +2407,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="169" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">169</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13190" name="Player Commendation - Sharpshooter" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_taslam_i00" />
@@ -2450,15 +2450,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="198" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">198</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13191" name="Player Commendation - Ecliptic Sword" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_eclipse_i00" />
@@ -2490,14 +2490,14 @@
 		<skills>
 			<skill id="3076" level="4" /> <!-- Special Ability: Empower -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="125" />
-			<set stat="mAtk" val="111" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">125</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13192" name="Player Commendation - Ecliptic Axe" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_eclipse_axe_i00" />
@@ -2529,15 +2529,15 @@
 		<skills>
 			<skill id="1201" level="23" /> <!-- Dryad Root -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="125" />
-			<set stat="mAtk" val="111" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">125</stat>
+			<stat type="mAtk">111</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13193" name="Player Commendation - Dwarven Hammer" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_dwarven_hammer_i00" />
@@ -2565,15 +2565,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="1" />
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13194" name="Player Commendation - Damascus Sword" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_damascus_i00" />
@@ -2604,14 +2604,14 @@
 		<skills>
 			<skill id="3010" level="6" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="194" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">194</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13195" name="Player Commendation - Lance" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_lancia_i00" />
@@ -2642,15 +2642,15 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="194" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">194</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13196" name="Player Commendation - Deadman's Glory" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_deadmans_glory_i00" />
@@ -2681,15 +2681,15 @@
 		<skills>
 			<skill id="3036" level="6" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="194" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">194</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13197" name="Player Commendation - Art of Battle Axe" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_art_of_battle_axe_i00" />
@@ -2720,15 +2720,15 @@
 		<skills>
 			<skill id="3013" level="1" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="194" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">194</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13198" name="Player Commendation - Staff of Evil Spirits" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_staff_of_evil_sprit_i00" />
@@ -2760,15 +2760,15 @@
 		<skills>
 			<skill id="1045" level="5" /> <!-- Blessed Body -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="189" />
-			<set stat="mAtk" val="145" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">189</stat>
+			<stat type="mAtk">145</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13199" name="Player Commendation - Demon's Dagger" name_additional="PC-exclusive Weapon" type="Weapon">
 		<set name="icon" val="icon.weapon_demons_sword_i00" />
@@ -2799,14 +2799,14 @@
 		<skills>
 			<skill id="3043" level="6" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="170" />
-			<set stat="mAtk" val="99" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">170</stat>
+			<stat type="mAtk">99</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 </list>

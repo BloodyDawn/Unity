@@ -19,14 +19,14 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="232" />
-			<set stat="mAtk" val="114" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">232</stat>
+			<stat type="mAtk">114</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2501" name="Bone Club" type="Weapon">
 		<set name="icon" val="icon.weapon_club_i00" />
@@ -43,13 +43,13 @@
 		<set name="soulshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
-		<for>
-			<set stat="pAtk" val="24" />
-			<set stat="mAtk" val="17" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">24</stat>
+			<stat type="mAtk">17</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="2502" name="Dwarven War Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_dwarven_warhammer_i00" />
@@ -69,15 +69,15 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2503" name="Yaksa Mace" type="Weapon">
 		<set name="icon" val="icon.weapon_yaksa_mace_i00" />
@@ -98,15 +98,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="156" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">156</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2504" name="Meteor Shower" type="Weapon">
 		<set name="icon" val="icon.weapon_meteor_shower_i00" />
@@ -127,15 +127,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="107" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">107</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2505" name="Iron Canine" type="Weapon">
 		<set name="icon" val="icon.etc_pet_arms_i00" />
@@ -155,12 +155,12 @@
 		<cond addName="1" msgId="113">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add stat="pAtk" val="4" />
-			<add stat="mAtk" val="5" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="277" />
-		</for>
+		<stats>
+			<stat type="pAtk">4</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">277</stat>
+		</stats>
 	</item>
 	<item id="2506" name="Wolf's Leather Armor" type="Armor">
 		<set name="icon" val="icon.etc_pet_armor_i00" />
@@ -177,10 +177,10 @@
 		<cond addName="1" msgId="113">
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
-		<for>
-			<add order="0" stat="mDef" val="14" />
-			<add order="0" stat="pDef" val="9" />
-		</for>
+		<stats>
+			<stat type="mDef">14</stat>
+			<stat type="pDef">9</stat>
+		</stats>
 	</item>
 	<item id="2507" name="Lizardspear" type="Weapon">
 		<set name="icon" val="icon.weapon_doomed_dagger_i00" />
@@ -199,15 +199,15 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="5" />
-			<set stat="mAtk" val="5" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">5</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2508" name="Cursed Bone" type="EtcItem">
 		<set name="icon" val="icon.etc_piece_bone_red_i00" />
@@ -331,14 +331,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="73" />
-			<set stat="mAtk" val="37" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">73</stat>
+			<stat type="mAtk">37</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2517" name="Saber*Bastard Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -358,14 +358,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="83" />
-			<set stat="mAtk" val="41" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">83</stat>
+			<stat type="mAtk">41</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2518" name="Saber*Spinebone Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -385,14 +385,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="83" />
-			<set stat="mAtk" val="41" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">83</stat>
+			<stat type="mAtk">41</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2519" name="Saber*Artisan's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -412,14 +412,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="83" />
-			<set stat="mAtk" val="41" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">83</stat>
+			<stat type="mAtk">41</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2520" name="Saber*Knight's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -439,14 +439,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="83" />
-			<set stat="mAtk" val="41" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">83</stat>
+			<stat type="mAtk">41</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2521" name="Saber*Crimson Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -466,14 +466,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2522" name="Saber*Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -493,14 +493,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2523" name="Saber*Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -520,14 +520,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="118" />
-			<set stat="mAtk" val="56" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">118</stat>
+			<stat type="mAtk">56</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2524" name="Saber*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -547,14 +547,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="130" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">130</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2525" name="Bastard Sword*Bastard Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -574,14 +574,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2526" name="Bastard Sword*Spinebone Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -601,14 +601,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2527" name="Bastard Sword*Artisan's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -628,14 +628,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2528" name="Bastard Sword*Knight's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -655,14 +655,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2529" name="Bastard Sword*Crimson Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -682,14 +682,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2530" name="Bastard Sword*Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -710,14 +710,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DUALSWORD" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2531" name="Bastard Sword*Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -737,14 +737,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="124" />
-			<set stat="mAtk" val="58" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">124</stat>
+			<stat type="mAtk">58</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2532" name="Bastard Sword*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -764,14 +764,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="136" />
-			<set stat="mAtk" val="63" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">136</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2533" name="Spinebone Sword*Spinebone Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -791,14 +791,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2534" name="Spinebone Sword*Artisan's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -818,14 +818,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2535" name="Spinebone Sword*Knight's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -845,14 +845,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2536" name="Spinebone Sword*Crimson Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -872,14 +872,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2537" name="Spinebone Sword*Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -899,14 +899,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2538" name="Spinebone Sword*Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -926,14 +926,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="124" />
-			<set stat="mAtk" val="58" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">124</stat>
+			<stat type="mAtk">58</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2539" name="Spinebone Sword*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -953,14 +953,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="136" />
-			<set stat="mAtk" val="63" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">136</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2540" name="Artisan's Sword*Artisan's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -980,14 +980,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2541" name="Artisan's Sword*Knight's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1007,14 +1007,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2542" name="Artisan's Sword*Crimson Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1034,14 +1034,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2543" name="Artisan's Sword*Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1061,14 +1061,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2544" name="Artisan's Sword*Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1088,14 +1088,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="124" />
-			<set stat="mAtk" val="58" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">124</stat>
+			<stat type="mAtk">58</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2545" name="Artisan's Sword*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1115,14 +1115,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="136" />
-			<set stat="mAtk" val="63" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">136</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2546" name="Knight's Sword*Knight's Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1142,14 +1142,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2547" name="Knight's Sword*Crimson Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1169,14 +1169,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2548" name="Knight's Sword*Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1196,14 +1196,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2549" name="Knight's Sword*Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1223,14 +1223,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="124" />
-			<set stat="mAtk" val="58" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">124</stat>
+			<stat type="mAtk">58</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2550" name="Knight's Sword*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1250,14 +1250,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="136" />
-			<set stat="mAtk" val="63" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">136</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2551" name="Crimson Sword*Crimson Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1278,14 +1278,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DUALSWORD" />
-		<for>
-			<set stat="pAtk" val="118" />
-			<set stat="mAtk" val="56" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">118</stat>
+			<stat type="mAtk">56</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2552" name="Crimson Sword*Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1305,14 +1305,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="118" />
-			<set stat="mAtk" val="56" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">118</stat>
+			<stat type="mAtk">56</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2553" name="Crimson Sword*Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1332,14 +1332,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="136" />
-			<set stat="mAtk" val="63" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">136</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2554" name="Crimson Sword*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1362,14 +1362,14 @@
 		<skills>
 			<skill id="3046" level="2" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="148" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">148</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2555" name="Elven Sword*Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1389,14 +1389,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="118" />
-			<set stat="mAtk" val="56" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">118</stat>
+			<stat type="mAtk">56</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2556" name="Elven Sword*Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1416,14 +1416,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="136" />
-			<set stat="mAtk" val="63" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">136</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2557" name="Elven Sword*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1446,14 +1446,14 @@
 		<skills>
 			<skill id="3042" level="2" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="148" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">148</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2558" name="Sword of Revolution*Sword of Revolution" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1476,14 +1476,14 @@
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="148" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">148</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2559" name="Sword of Revolution*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1506,14 +1506,14 @@
 		<skills>
 			<skill id="3044" level="3" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="155" />
-			<set stat="mAtk" val="70" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">155</stat>
+			<stat type="mAtk">70</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2560" name="Elven Long Sword*Elven Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1536,14 +1536,14 @@
 		<skills>
 			<skill id="3045" level="4" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="162" />
-			<set stat="mAtk" val="73" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">162</stat>
+			<stat type="mAtk">73</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2561" name="Stormbringer*Stormbringer" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1566,14 +1566,14 @@
 		<skills>
 			<skill id="3046" level="6" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="175" />
-			<set stat="mAtk" val="78" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">175</stat>
+			<stat type="mAtk">78</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2562" name="Stormbringer*Shamshir" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1596,14 +1596,14 @@
 		<skills>
 			<skill id="3042" level="7" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="183" />
-			<set stat="mAtk" val="81" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">183</stat>
+			<stat type="mAtk">81</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2563" name="Stormbringer*Katana" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1626,14 +1626,14 @@
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="183" />
-			<set stat="mAtk" val="81" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">183</stat>
+			<stat type="mAtk">81</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2564" name="Stormbringer*Spirit Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1656,14 +1656,14 @@
 		<skills>
 			<skill id="3044" level="7" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="183" />
-			<set stat="mAtk" val="81" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">183</stat>
+			<stat type="mAtk">81</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2565" name="Stormbringer*Raid Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1686,14 +1686,14 @@
 		<skills>
 			<skill id="3045" level="7" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="183" />
-			<set stat="mAtk" val="81" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">183</stat>
+			<stat type="mAtk">81</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2566" name="Stormbringer*Caliburs" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1716,14 +1716,14 @@
 		<skills>
 			<skill id="3046" level="9" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="197" />
-			<set stat="mAtk" val="86" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">197</stat>
+			<stat type="mAtk">86</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2567" name="StormBringer*Ultimate Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1746,14 +1746,14 @@
 		<skills>
 			<skill id="3042" level="9" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="197" />
-			<set stat="mAtk" val="86" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">197</stat>
+			<stat type="mAtk">86</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2568" name="Stormbringer*Sword of Delusion" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1776,14 +1776,14 @@
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="197" />
-			<set stat="mAtk" val="86" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">197</stat>
+			<stat type="mAtk">86</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2569" name="Stormbringer*Sword of Nightmare" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1806,14 +1806,14 @@
 		<skills>
 			<skill id="3044" level="9" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="197" />
-			<set stat="mAtk" val="86" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">197</stat>
+			<stat type="mAtk">86</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2570" name="Stormbringer*Tsurugi" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1836,14 +1836,14 @@
 		<skills>
 			<skill id="3045" level="9" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="197" />
-			<set stat="mAtk" val="86" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">197</stat>
+			<stat type="mAtk">86</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2571" name="Stormbringer*Samurai Long sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1866,14 +1866,14 @@
 		<skills>
 			<skill id="3046" level="11" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="213" />
-			<set stat="mAtk" val="91" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">213</stat>
+			<stat type="mAtk">91</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2572" name="Shamshir*Shamshir" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1896,14 +1896,14 @@
 		<skills>
 			<skill id="3046" level="8" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2573" name="Shamshir*Katana" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1926,14 +1926,14 @@
 		<skills>
 			<skill id="3042" level="8" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2574" name="Shamshir*Spirit Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1956,14 +1956,14 @@
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2575" name="Shamshir*Raid Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -1986,14 +1986,14 @@
 		<skills>
 			<skill id="3044" level="8" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2576" name="Shamshir*Caliburs" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2016,14 +2016,14 @@
 		<skills>
 			<skill id="3046" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="204" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">204</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2577" name="Shamshir*Ultimate Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2046,14 +2046,14 @@
 		<skills>
 			<skill id="3042" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="204" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">204</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2578" name="Shamshir*Sword of Delusion" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2076,14 +2076,14 @@
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="204" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">204</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2579" name="Shamshir*Sword of Nightmare" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2106,14 +2106,14 @@
 		<skills>
 			<skill id="3044" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="204" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">204</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2580" name="Shamshir*Tsurugi" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2136,14 +2136,14 @@
 		<skills>
 			<skill id="3045" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="204" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">204</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2581" name="Shamshir*Samurai Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2166,14 +2166,14 @@
 		<skills>
 			<skill id="3046" level="12" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="220" />
-			<set stat="mAtk" val="94" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">220</stat>
+			<stat type="mAtk">94</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2582" name="Katana*Katana" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2196,14 +2196,14 @@
 		<skills>
 			<skill id="3045" level="8" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2583" name="Katana*Spirit Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2226,14 +2226,14 @@
 		<skills>
 			<skill id="3046" level="8" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2584" name="Katana*Raid Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2256,14 +2256,14 @@
 		<skills>
 			<skill id="3042" level="8" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2585" name="Katana*Caliburs" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2286,14 +2286,14 @@
 		<skills>
 			<skill id="3046" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="204" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">204</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2586" name="Katana*Ultimate Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2316,14 +2316,14 @@
 		<skills>
 			<skill id="3042" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="204" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">204</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2587" name="Katana*Sword of Delusion" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2346,14 +2346,14 @@
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="204" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">204</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2588" name="Katana*Sword of Nightmare" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2376,14 +2376,14 @@
 		<skills>
 			<skill id="3044" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="204" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">204</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2589" name="Katana*Tsurugi" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2406,14 +2406,14 @@
 		<skills>
 			<skill id="3045" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="204" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">204</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2590" name="Katana*Samurai Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2436,14 +2436,14 @@
 		<skills>
 			<skill id="3042" level="12" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="220" />
-			<set stat="mAtk" val="94" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">220</stat>
+			<stat type="mAtk">94</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2591" name="Spirit Sword*Spirit Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2466,14 +2466,14 @@
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2592" name="Spirit Sword*Raid Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2496,14 +2496,14 @@
 		<skills>
 			<skill id="3044" level="8" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2593" name="Spirit Sword*Caliburs" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2526,14 +2526,14 @@
 		<skills>
 			<skill id="3046" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="204" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">204</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2594" name="Spirit Sword*Ultimate Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2556,14 +2556,14 @@
 		<skills>
 			<skill id="3042" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="204" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">204</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2595" name="Spirit Sword*Sword of Delusion" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2586,14 +2586,14 @@
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="204" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">204</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2596" name="Spirit Sword*Sword of Nightmare" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2616,14 +2616,14 @@
 		<skills>
 			<skill id="3044" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="204" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">204</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2597" name="Spirit Sword*Tsurugi" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2646,14 +2646,14 @@
 		<skills>
 			<skill id="3045" level="10" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="204" />
-			<set stat="mAtk" val="89" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">204</stat>
+			<stat type="mAtk">89</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2598" name="Spirit Sword*Samurai Long Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2676,14 +2676,14 @@
 		<skills>
 			<skill id="3013" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="220" />
-			<set stat="mAtk" val="94" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">220</stat>
+			<stat type="mAtk">94</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="2599" name="Raid Sword*Raid Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -2707,13 +2707,13 @@
 		<skills>
 			<skill id="3045" level="8" type="ON_ENCHANT" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="190" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">190</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 </list>

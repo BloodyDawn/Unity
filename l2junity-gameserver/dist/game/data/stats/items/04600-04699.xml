@@ -709,13 +709,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_depositable" val="false" />
-		<for>
-			<set stat="pAtk" val="10" />
-			<set stat="mAtk" val="9" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">10</stat>
+			<stat type="mAtk">9</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+		</stats>
 	</item>
 	<item id="4666" name="Reiria's Soul Orb" type="EtcItem">
 		<set name="icon" val="icon.etc_bead_white_i00" />
@@ -1004,14 +1004,14 @@
 			<skill id="3025" level="1" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Anger -->
 			<skill id="3026" level="1" /> <!-- Special Ability: Critical Anger -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4682" name="StormBringer" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_stormbringer_i01" />
@@ -1035,14 +1035,14 @@
 		<skills>
 			<skill id="3010" level="1" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4683" name="StormBringer" name_additional="Light Armor" type="Weapon">
 		<set name="icon" val="icon.weapon_stormbringer_i01" />
@@ -1066,14 +1066,14 @@
 		<skills>
 			<skill id="3498" level="1" /> <!-- Special Ability: Light -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="61" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">61</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4684" name="Shamshir" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_shamshir_i01" />
@@ -1097,14 +1097,14 @@
 		<skills>
 			<skill id="3007" level="2" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4685" name="Shamshir" name_additional="Back Blow" type="Weapon">
 		<set name="icon" val="icon.weapon_shamshir_i01" />
@@ -1128,14 +1128,14 @@
 		<skills>
 			<skill id="3018" level="2" /> <!-- Special Ability: Back Blow -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4686" name="Shamshir" name_additional="Rsk. Evasion" type="Weapon">
 		<set name="icon" val="icon.weapon_shamshir_i01" />
@@ -1159,14 +1159,14 @@
 		<skills>
 			<skill id="3028" level="2" /> <!-- Special Ability: Rsk. Evasion -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4687" name="Katana" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_katana_i01" />
@@ -1190,14 +1190,14 @@
 		<skills>
 			<skill id="3010" level="2" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4688" name="Katana" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_katana_i01" />
@@ -1221,14 +1221,14 @@
 		<skills>
 			<skill id="3023" level="2" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4689" name="Katana" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_katana_i01" />
@@ -1252,14 +1252,14 @@
 		<skills>
 			<skill id="3036" level="2" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4690" name="Spirit Sword" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_spirits_sword_i01" />
@@ -1283,14 +1283,14 @@
 		<skills>
 			<skill id="3023" level="2" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4691" name="Spirit Sword" name_additional="Critical Poison" type="Weapon">
 		<set name="icon" val="icon.weapon_spirits_sword_i01" />
@@ -1314,14 +1314,14 @@
 		<skills>
 			<skill id="3024" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Poison -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4692" name="Spirit Sword" name_additional="Haste" type="Weapon">
 		<set name="icon" val="icon.weapon_spirits_sword_i01" />
@@ -1345,14 +1345,14 @@
 		<skills>
 			<skill id="3036" level="2" /> <!-- Special Ability: Haste -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4693" name="Raid Sword" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_raid_sword_i01" />
@@ -1376,14 +1376,14 @@
 		<skills>
 			<skill id="3010" level="2" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4694" name="Raid Sword" name_additional="Critical Drain" type="Weapon">
 		<set name="icon" val="icon.weapon_raid_sword_i01" />
@@ -1407,14 +1407,14 @@
 		<skills>
 			<skill id="3022" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Drain -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4695" name="Raid Sword" name_additional="Critical Poison" type="Weapon">
 		<set name="icon" val="icon.weapon_raid_sword_i01" />
@@ -1438,14 +1438,14 @@
 		<skills>
 			<skill id="3024" level="2" type="ON_CRITICAL_SKILL" /> <!-- Special Ability: Critical Poison -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="122" />
-			<set stat="mAtk" val="68" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">122</stat>
+			<stat type="mAtk">68</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4696" name="Caliburs" name_additional="Guidance" type="Weapon">
 		<set name="icon" val="icon.weapon_caliburs_i01" />
@@ -1469,14 +1469,14 @@
 		<skills>
 			<skill id="3007" level="3" /> <!-- Special Ability: Guidance -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4697" name="Caliburs" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_caliburs_i01" />
@@ -1500,14 +1500,14 @@
 		<skills>
 			<skill id="3010" level="3" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4698" name="Caliburs" name_additional="Critical Damage" type="Weapon">
 		<set name="icon" val="icon.weapon_caliburs_i01" />
@@ -1531,14 +1531,14 @@
 		<skills>
 			<skill id="3023" level="3" /> <!-- Special Ability: Critical Damage -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4699" name="Sword of Delusion" name_additional="Focus" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_of_delusion_i01" />
@@ -1562,13 +1562,13 @@
 		<skills>
 			<skill id="3010" level="3" /> <!-- Special Ability: Focus -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 </list>

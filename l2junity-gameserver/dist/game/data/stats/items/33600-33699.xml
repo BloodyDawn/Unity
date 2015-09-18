@@ -15,10 +15,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="304950" />
-		<for>
-			<add order="0" stat="pDef" val="61.0" />
+		<stats>
+			<stat type="pDef">61</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="33601" name="Bound Dynasty Leather Boots" name_additional="Event" type="Armor">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -35,10 +35,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="304950" />
-		<for>
-			<add order="0" stat="pDef" val="61.0" />
+		<stats>
+			<stat type="pDef">61</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="33602" name="Bound Dynasty Tunic" name_additional="Event" type="Armor">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -56,10 +56,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="914900" />
-		<for>
-			<add order="0" stat="pDef" val="113.0" />
+		<stats>
+			<stat type="pDef">113</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="33603" name="Bound Dynasty Stockings" name_additional="Event" type="Armor">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -77,10 +77,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="571800" />
-		<for>
-			<add order="0" stat="pDef" val="71.0" />
+		<stats>
+			<stat type="pDef">71</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="33604" name="Bound Dynasty Circlet" name_additional="Event" type="Armor">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -97,10 +97,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="457450" />
-		<for>
-			<add order="0" stat="pDef" val="92.0" />
+		<stats>
+			<stat type="pDef">92</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="33605" name="Bound Dynasty Gloves" name_additional="Event" type="Armor">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -117,10 +117,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="304950" />
-		<for>
-			<add order="0" stat="pDef" val="61.0" />
+		<stats>
+			<stat type="pDef">61</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="33606" name="Bound Dynasty Shoes" name_additional="Event" type="Armor">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -137,10 +137,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="304950" />
-		<for>
-			<add order="0" stat="pDef" val="61.0" />
+		<stats>
+			<stat type="pDef">61</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="33607" name="Bound Dynasty Sigil" name_additional="Event" type="Armor">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
@@ -158,10 +158,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="320200" />
-		<for>
-			<add order="0" stat="pDef" val="15.0" />
+		<stats>
+			<stat type="pDef">15</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="33608" name="Unidentified Dynasty Knife" name_additional="Event" type="EtcItem">
 		<!-- Dynasty knife in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / dagger) -->
@@ -410,9 +410,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="weight" val="10" />
-		<for>
-			<add order="0" stat="pDef" val="37.0" />
-		</for>
+		<stats>
+			<stat type="pDef">37</stat>
+		</stats>
 	</item>
 	<item id="33642" name="Kukurin Bracelet" type="Armor">
 		<!-- When equipped, you can mount a Kukurin. -->
@@ -541,13 +541,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="1080" />
-		<for>
-			<set stat="pAtk" val="10.0" />
-			<set stat="mAtk" val="10.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">10</stat>
+			<stat type="mAtk">10</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="33651" name="Unidentified Crystal Dagger" name_additional="Event" type="EtcItem">
 		<!-- Crystal Dagger in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon / dagger) -->

@@ -143,10 +143,10 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="price" val="28671000" />
-		<for>
-			<add order="0" stat="pDef" val="20.0" />
+		<stats>
+			<stat type="pDef">20</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="17716" name="Agninoa Dualsword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -160,12 +160,12 @@
 		<set name="soulshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="532.0" />
-			<set stat="mAtk" val="192.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">532</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17717" name="Agninoa Dualsword {PvP}" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -185,12 +185,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="spiritshots" val="1" />
-		<for>
-			<set stat="pAtk" val="532.0" />
-			<set stat="mAtk" val="192.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">532</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17718" name="Petrified Giant's Hand" type="EtcItem">
 		<!-- Restored petrified hand of Hermuncus. Bring it to Giant's Minion Hadel in Ye Sagira. -->

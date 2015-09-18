@@ -184,11 +184,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="305" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">305</stat>
+		</stats>
 	</item>
 	<item id="10118" name="Foundation Dynasty Sigil" type="EtcItem">
 		<set name="icon" val="icon.dynasty_sigil_i00" />
@@ -201,11 +201,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="321" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">321</stat>
+		</stats>
 	</item>
 	<item id="10119" name="Dynasty Sigil" type="Armor">
 		<set name="icon" val="icon.dynasty_sigil_i00" />
@@ -226,11 +226,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<add order="0" stat="pDef" val="15" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="pDef">15</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="10120" name="Sealed Dynasty Sigil" type="Armor">
 		<set name="icon" val="icon.armor_dynasty_sigil_i01" />
@@ -248,11 +248,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<add order="0" stat="pDef" val="15" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="pDef">15</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="10121" name="Sealed Arcana Sigil" type="Armor">
 		<set name="icon" val="icon.arcana_sigil_i01" />
@@ -271,11 +271,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<add order="0" stat="pDef" val="13" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="pDef">13</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="10122" name="Red Crescent" type="Armor">
 		<set name="icon" val="icon.accessary_red_cresent_earing_i00" />
@@ -293,9 +293,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="mDef" val="24" />
-		</for>
+		<stats>
+			<stat type="mDef">24</stat>
+		</stats>
 	</item>
 	<item id="10123" name="Necklace of Devotion" type="Armor">
 		<set name="icon" val="icon.accessary_necklace_of_devotion_i00" />
@@ -313,9 +313,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="mDef" val="32" />
-		</for>
+		<stats>
+			<stat type="mDef">32</stat>
+		</stats>
 	</item>
 	<item id="10124" name="Ring of Devotion" type="Armor">
 		<set name="icon" val="icon.accessary_ring_of_devotion_i00" />
@@ -333,9 +333,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="mDef" val="16" />
-		</for>
+		<stats>
+			<stat type="mDef">16</stat>
+		</stats>
 	</item>
 	<item id="10125" name="Shadow Item: War Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_war_axe_i00" />
@@ -360,15 +360,15 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="300" />
-		<for>
-			<set stat="pAtk" val="139" />
-			<set stat="mAtk" val="76" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">139</stat>
+			<stat type="mAtk">76</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="10126" name="Dynasty Leather Armor" name_additional="Force Master" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
@@ -390,10 +390,10 @@
 				<player categoryType="FORCE_MASTER" />
 			</and>
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
+		<stats>
+			<stat type="pDef">170</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="10127" name="Dynasty Leather Armor" name_additional="Weapon Master" type="Armor">
 		<set name="icon" val="icon.armor_t92_ub_i00" />
@@ -412,10 +412,10 @@
 		<cond msgId="1518">
 			<player categoryType="WEAPON_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
+		<stats>
+			<stat type="pDef">170</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="10128" name="For Monster only (Crossbow)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -432,12 +432,12 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="10129" name="Scroll of Escape: Fortress" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_of_return_castle_i00" />
@@ -649,10 +649,10 @@
 		<skills>
 			<skill id="3408" level="1" /> <!-- Blessed Ring of Escape -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="24" />
+		<stats>
+			<stat type="mDef">24</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="10141" name="Grey Talisman - Yeti Transform" type="Armor">
 		<set name="icon" val="icon.etc_talisman_i07" />
@@ -1123,12 +1123,12 @@
 			<skill id="3418" level="1" /> <!-- Active Skill: Transform Pig -->
 			<skill id="839" level="1" type="ON_UNEQUIP" /> <!-- Dismount -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="10168" name="Dynasty Leather Armor" name_additional="Enchanter" type="Armor">
 		<set name="icon" val="icon.armor_t92_ud_i00" />
@@ -1147,10 +1147,10 @@
 		<cond msgId="1518">
 			<player categoryType="BUFF_MASTER" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
+		<stats>
+			<stat type="pDef">170</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="10169" name="Enchanter Circlet (Kamael only)" type="Armor">
 		<set name="icon" val="icon.accessary_weapon_master_circlet_i00" />
@@ -1179,12 +1179,12 @@
 		<set name="price" val="12185000" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="mDef" val="71" />
-			<add stat="maxMp" val="31" />
-			<add stat="darkRes" val="30" />
+		<stats>
+			<stat type="mDef">71</stat>
+			<stat type="maxMp">31</stat>
+			<stat type="darkRes">30</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="10171" name="Seed: Dark Coda" type="EtcItem">
 		<set name="icon" val="icon.etc_coda_seed_i00" />

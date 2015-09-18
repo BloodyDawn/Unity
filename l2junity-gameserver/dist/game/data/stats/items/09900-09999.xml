@@ -21,6 +21,9 @@
 		<skills>
 			<skill id="3407" level="1" /> <!-- Stealth Ring -->
 		</skills>
+		<stats>
+			<stat type="mDef">7</stat>
+		</stats>
 	</item>
 	<item id="9901" name="Enhanced Falchion" type="Weapon">
 		<set name="icon" val="icon.weapon_falchion_i00" />
@@ -37,14 +40,14 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchanted" val="15" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="9902" name="Enhanced Great Spear" type="Weapon">
 		<set name="icon" val="icon.weapon_long_spear_i00" />
@@ -64,15 +67,15 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="9903" name="Enhanced Iron Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_iron_hammer_i00" />
@@ -89,15 +92,15 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchanted" val="15" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="9904" name="Enhanced Sword Breaker" type="Weapon">
 		<set name="icon" val="icon.weapon_sword_breaker_i00" />
@@ -114,15 +117,15 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchanted" val="15" />
-		<for>
-			<set stat="pAtk" val="27" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">27</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="9905" name="Enhanced Viper Fang" type="Weapon">
 		<set name="icon" val="icon.weapon_vipers_canine_i00" />
@@ -139,15 +142,15 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchanted" val="15" />
-		<for>
-			<set stat="pAtk" val="38" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">38</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="9906" name="Enhanced Compound Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_composition_bow_i00" />
@@ -166,15 +169,15 @@
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
 		<set name="enchanted" val="15" />
-		<for>
-			<set stat="pAtk" val="64" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">64</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="9907" name="Enhanced Flanged Mace" type="Weapon">
 		<set name="icon" val="icon.weapon_buzdygan_i00" />
@@ -191,15 +194,15 @@
 		<set name="spiritshots" val="2" />
 		<set name="is_freightable" val="false" />
 		<set name="enchanted" val="15" />
-		<for>
-			<set stat="pAtk" val="31" />
-			<set stat="mAtk" val="21" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="9908" name="Enhanced Mage Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_apprentices_staff_i00" />
@@ -217,15 +220,15 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="enchanted" val="15" />
-		<for>
-			<set stat="pAtk" val="30" />
-			<set stat="mAtk" val="31" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">30</stat>
+			<stat type="mAtk">31</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="9909" name="Agathion Bracelet" type="Armor">
 		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
@@ -1817,15 +1820,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="64" />
-			<set stat="mAtk" val="32" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">64</stat>
+			<stat type="mAtk">32</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="9996" name="Hand Crossbow" type="Weapon">
 		<set name="icon" val="icon.weapon_hunting_gun_i00" />
@@ -1850,15 +1853,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="64" />
-			<set stat="mAtk" val="32" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">64</stat>
+			<stat type="mAtk">32</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="9997" name="Fire Potion" type="EtcItem">
 		<set name="icon" val="icon.etc_fire_potion_i00" />

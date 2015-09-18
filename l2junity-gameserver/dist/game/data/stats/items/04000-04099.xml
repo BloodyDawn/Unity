@@ -281,12 +281,12 @@
 		<set name="immediate_effect" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="material" val="PAPER" />
-		<for>
-			<set stat="pAtk" val="8" />
-			<set stat="mAtk" val="6" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">8</stat>
+			<stat type="mAtk">6</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="4028" name="Giant Cannon" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -307,15 +307,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="5" />
-			<set stat="mAtk" val="5" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">5</stat>
+			<stat type="mAtk">5</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="4029" name="Red Paper" type="EtcItem">
 		<set name="icon" val="icon.etc_paper_red_i00" />

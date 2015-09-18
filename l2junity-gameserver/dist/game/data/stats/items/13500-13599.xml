@@ -312,12 +312,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="24" />
-			<set stat="mAtk" val="17" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">24</stat>
+			<stat type="mAtk">17</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="13525" name="Gracian Soldier Shield" type="Armor">
 		<set name="icon" val="icon.shield_mon_gracia_soldier_shield_i00" />
@@ -335,11 +335,11 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="101" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">101</stat>
+		</stats>
 	</item>
 	<item id="13526" name="Test Belt" type="Armor">
 		<set name="icon" val="icon.etc_shirts_a_i04" />
@@ -351,9 +351,9 @@
 		<set name="weight" val="4830" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="113" />
-		<for>
-			<add order="0" stat="pDef" val="36" />
-		</for>
+		<stats>
+			<stat type="pDef">36</stat>
+		</stats>
 	</item>
 	<item id="13527" name="Test Cloak" type="Armor">
 		<set name="icon" val="icon.armor_back01" />
@@ -364,9 +364,9 @@
 		<set name="weight" val="260" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="37" />
-		<for>
-			<add order="0" stat="pDef" val="2" />
-		</for>
+		<stats>
+			<stat type="pDef">2</stat>
+		</stats>
 	</item>
 	<item id="13528" name="Test Dual Daggers" type="Weapon">
 		<set name="icon" val="icon.dual_dagger_i00" />
@@ -389,12 +389,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="200" />
-			<set stat="mAtk" val="6" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">200</stat>
+			<stat type="mAtk">6</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13529" name="Test Sigil" type="Armor">
 		<set name="icon" val="icon.shield_arcana_sigil_i00" />
@@ -408,12 +408,12 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="47" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">47</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13530" name="Flag of Gludio" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -438,9 +438,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13531" name="Flag of Dion" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -465,9 +465,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13532" name="Flag of Giran" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -492,9 +492,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13533" name="Flag of Oren" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -519,9 +519,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13534" name="Flag of Aden" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -546,9 +546,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13535" name="Flag of Innadril" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -573,9 +573,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13536" name="Goddard Flag" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -600,9 +600,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13537" name="Flag of Rune" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -627,9 +627,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13538" name="Flag of Schuttgart" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -654,9 +654,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="useWeaponSkillsOnly" val="true" />
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13539" name="Master Yogi's Staff" type="Weapon">
 		<set name="icon" val="icon.yogi_stick_i00" />
@@ -673,15 +673,15 @@
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
-		<for>
-			<set stat="pAtk" val="11" />
-			<set stat="mAtk" val="12" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">11</stat>
+			<stat type="mAtk">12</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="13540" name="Master Yogi's Scroll: Enchant Weapon" type="EtcItem">
 		<set name="icon" val="icon.yogi_scroll_of_enchant_weapon_grade_i00" />
@@ -967,12 +967,12 @@
 		<set name="material" val="STEEL" />
 		<set name="is_freightable" val="false" />
 		<set name="is_dropable" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="13557" name="Airship Cannon" type="Weapon">
 		<set name="icon" val="icon.etc_gateleeper_stick_i00" />
@@ -986,12 +986,12 @@
 		<set name="material" val="STEEL" />
 		<set name="is_freightable" val="false" />
 		<set name="is_dropable" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="13558" name="Airship Cannon Briquet" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -1005,12 +1005,12 @@
 		<set name="material" val="STEEL" />
 		<set name="is_freightable" val="false" />
 		<set name="is_dropable" val="false" />
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="13559" name="Airship Summon License" type="EtcItem">
 		<set name="icon" val="icon.etc_scroll_white_i00" />
@@ -1056,9 +1056,9 @@
 			<skill id="846" level="1" /> <!-- Possess Ward -->
 			<skill id="847" level="1" /> <!-- Ward Transport -->
 		</skills>
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13561" name="Dion Ward" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -1087,9 +1087,9 @@
 			<skill id="846" level="1" /> <!-- Possess Ward -->
 			<skill id="847" level="1" /> <!-- Ward Transport -->
 		</skills>
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13562" name="Giran Ward" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -1118,9 +1118,9 @@
 			<skill id="846" level="1" /> <!-- Possess Ward -->
 			<skill id="847" level="1" /> <!-- Ward Transport -->
 		</skills>
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13563" name="Oren Ward" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -1149,9 +1149,9 @@
 			<skill id="846" level="1" /> <!-- Possess Ward -->
 			<skill id="847" level="1" /> <!-- Ward Transport -->
 		</skills>
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13564" name="Aden Ward" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -1180,9 +1180,9 @@
 			<skill id="846" level="1" /> <!-- Possess Ward -->
 			<skill id="847" level="1" /> <!-- Ward Transport -->
 		</skills>
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13565" name="Innadril Ward" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -1211,9 +1211,9 @@
 			<skill id="846" level="1" /> <!-- Possess Ward -->
 			<skill id="847" level="1" /> <!-- Ward Transport -->
 		</skills>
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13566" name="Goddard Ward" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -1242,9 +1242,9 @@
 			<skill id="846" level="1" /> <!-- Possess Ward -->
 			<skill id="847" level="1" /> <!-- Ward Transport -->
 		</skills>
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13567" name="Rune Ward" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -1273,9 +1273,9 @@
 			<skill id="846" level="1" /> <!-- Possess Ward -->
 			<skill id="847" level="1" /> <!-- Ward Transport -->
 		</skills>
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13568" name="Schuttgart Ward" type="Weapon">
 		<set name="icon" val="icon.weapon_fort_flag_i00" />
@@ -1304,9 +1304,9 @@
 			<skill id="846" level="1" /> <!-- Possess Ward -->
 			<skill id="847" level="1" /> <!-- Ward Transport -->
 		</skills>
-		<for>
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="13569" name="Transformation Scroll: Gludio Human Mercenary" type="EtcItem">
 		<set name="icon" val="icon.scroll_of_verification_i00" />

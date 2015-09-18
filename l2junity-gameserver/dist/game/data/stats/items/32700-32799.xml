@@ -552,13 +552,13 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="price" val="37600" />
-		<for>
-			<set stat="pAtk" val="31.0" />
-			<set stat="mAtk" val="21.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="32771" name="Flask" type="Weapon">
 		<!-- For NPC. -->
@@ -569,13 +569,13 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="price" val="37600" />
-		<for>
-			<set stat="pAtk" val="31.0" />
-			<set stat="mAtk" val="21.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="32772" name="Firecracker" type="Weapon">
 		<!-- For NPC. -->
@@ -587,13 +587,13 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="price" val="37600" />
-		<for>
-			<set stat="pAtk" val="31.0" />
-			<set stat="mAtk" val="21.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="32773" name="Blacksmith' Hammer" type="Weapon">
 		<!-- For NPC. -->
@@ -605,13 +605,13 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="price" val="37600" />
-		<for>
-			<set stat="pAtk" val="31.0" />
-			<set stat="mAtk" val="21.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="32774" name="Scroll" type="Weapon">
 		<!-- For NPC. -->
@@ -623,13 +623,13 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="price" val="37600" />
-		<for>
-			<set stat="pAtk" val="31.0" />
-			<set stat="mAtk" val="21.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">31</stat>
+			<stat type="mAtk">21</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="32775" name="Mark of Crisis - Cruma Tower" type="EtcItem">
 		<!-- Proof of undertaking a mission from Cruma Tower with the code name Crisis. Collect them and bring them to Ridenbag at the entrance of Cruma Tower to exchange for a reward. -->
@@ -833,10 +833,10 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="19955" />
-		<for>
-			<add order="0" stat="pDef" val="41.0" />
+		<stats>
+			<stat type="pDef">41</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32799" name="Sealed Bound Avadon Gloves" type="Armor">
 		<!-- The set effect will appear only after the seal is broken. -->
@@ -853,9 +853,9 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="price" val="19955" />
-		<for>
-			<add order="0" stat="pDef" val="41.0" />
+		<stats>
+			<stat type="pDef">41</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 </list>

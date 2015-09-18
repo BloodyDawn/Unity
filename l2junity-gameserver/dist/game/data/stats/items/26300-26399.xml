@@ -139,12 +139,12 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="price" val="1000" />
-		<for>
-			<set stat="pAtk" val="78.0" />
-			<set stat="mAtk" val="39.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">78</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="26313" name="Offering Test Ingredient  3" type="EtcItem">
 		<!-- Stackable item worth 1000 Adena. Timed item. -->
@@ -249,9 +249,9 @@
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="20.0" />
-		</for>
+		<stats>
+			<stat type="pDef">20</stat>
+		</stats>
 	</item>
 	<item id="26326" name="Lineage II Baseball Uniform" type="Armor">
 		<!-- Lineage II baseball uniform. When equipped, armor is removed and cannot be used. Hair accessories, weapons, and magic armor are not removed. -->

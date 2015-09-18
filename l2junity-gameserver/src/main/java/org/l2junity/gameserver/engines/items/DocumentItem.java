@@ -32,6 +32,8 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.holders.ItemSkillHolder;
 import org.l2junity.gameserver.model.items.L2Item;
+import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
@@ -130,10 +132,18 @@ public final class DocumentItem extends DocumentBase implements IGameXmlReader
 				}
 				parseBeanSet(n, _currentItem.set, 1);
 			}
-			else if ("for".equalsIgnoreCase(n.getNodeName()))
+			else if ("stats".equalsIgnoreCase(n.getNodeName()))
 			{
 				makeItem();
-				parseTemplate(n, _currentItem.item);
+				for (Node b = n.getFirstChild(); b != null; b = b.getNextSibling())
+				{
+					if ("stat".equalsIgnoreCase(b.getNodeName()))
+					{
+						final Stats type = Stats.valueOfXml(b.getAttributes().getNamedItem("type").getNodeValue());
+						final double value = Double.valueOf(b.getTextContent());
+						_currentItem.item.addFunctionTemplate(new FuncTemplate(null, null, "add", 0x00, type, value));
+					}
+				}
 			}
 			else if ("skills".equalsIgnoreCase(n.getNodeName()))
 			{

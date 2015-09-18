@@ -712,14 +712,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="437" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">437</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15545" name="Mamba Edge" type="Weapon">
 		<set name="icon" val="icon.weapon_mambaedge_i00" />
@@ -741,15 +741,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DAGGER" />
-		<for>
-			<set stat="pAtk" val="382" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">382</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15546" name="Eversor Mace" type="Weapon">
 		<set name="icon" val="icon.weapon_expowder_mace_i00" />
@@ -771,15 +771,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="437" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">437</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15547" name="Contristo Hammer" type="Weapon">
 		<set name="icon" val="icon.weapon_pereztear_hammer_i00" />
@@ -801,15 +801,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">532</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15548" name="Lava Saw" type="Weapon">
 		<set name="icon" val="icon.weapon_lavamond_saw_i00" />
@@ -832,14 +832,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">532</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15549" name="Jade Claw" type="Weapon">
 		<set name="icon" val="icon.weapon_jademice_claw_i00" />
@@ -860,15 +860,15 @@
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="532" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">532</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15550" name="Demitelum" type="Weapon">
 		<set name="icon" val="icon.weapon_ghostcleaner_i00" />
@@ -892,15 +892,15 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="437" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">437</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15551" name="Sacredium" type="Weapon">
 		<set name="icon" val="icon.weapon_sacredumors_i00" />
@@ -923,15 +923,15 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="350" />
-			<set stat="mAtk" val="256" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">350</stat>
+			<stat type="mAtk">256</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15552" name="Cyclic Cane" type="Weapon">
 		<set name="icon" val="icon.weapon_psyskilt_cane_i00" />
@@ -954,15 +954,15 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="426" />
-			<set stat="mAtk" val="281" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">426</stat>
+			<stat type="mAtk">281</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15553" name="Archangel Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_archangel_sword_i00" />
@@ -984,14 +984,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="350" />
-			<set stat="mAtk" val="256" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">350</stat>
+			<stat type="mAtk">256</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15554" name="Recurve Thorne Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_recurvethorne_bow_i00" />
@@ -1016,15 +1016,15 @@
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BOW" />
-		<for>
-			<set stat="pAtk" val="794" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">794</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15555" name="Heavenstare Rapier" type="Weapon">
 		<set name="icon" val="icon.weapon_heavenstair_rapier_i00" />
@@ -1053,15 +1053,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="396" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">396</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15556" name="Pyseal Blade" type="Weapon">
 		<set name="icon" val="icon.weapon_pyseal_blade_i00" />
@@ -1086,15 +1086,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="473" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">473</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15557" name="Thorne Crossbow" type="Weapon">
 		<set name="icon" val="icon.weapon_thorne_crossbow_i00" />
@@ -1120,15 +1120,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="487" />
-			<set stat="mAtk" val="192" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">487</stat>
+			<stat type="mAtk">192</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15558" name="Periel Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_periwing_sword_i00" />
@@ -1151,14 +1151,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15559" name="Skull Edge" type="Weapon">
 		<set name="icon" val="icon.weapon_skulledge_i00" />
@@ -1180,15 +1180,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DAGGER" />
-		<for>
-			<set stat="pAtk" val="363" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
+		<stats>
+			<stat type="pAtk">363</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15560" name="Vigwik Axe" type="Weapon">
 		<set name="icon" val="icon.weapon_vigwik_axe_i00" />
@@ -1209,15 +1209,15 @@
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15561" name="Devilish Maul" type="Weapon">
 		<set name="icon" val="icon.weapon_evildeity_maul_i00" />
@@ -1239,15 +1239,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="505" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15562" name="Feather Eye Blade" type="Weapon">
 		<set name="icon" val="icon.weapon_feathereye_blade_i00" />
@@ -1270,14 +1270,14 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_SWORD" />
-		<for>
-			<set stat="pAtk" val="505" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15563" name="Octo Claw" type="Weapon">
 		<set name="icon" val="icon.weapon_octoclaw_i00" />
@@ -1299,15 +1299,15 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FIST_WEAPON" />
-		<for>
-			<set stat="pAtk" val="505" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">505</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15564" name="Doubletop Spear" type="Weapon">
 		<set name="icon" val="icon.weapon_doubletopa_spear_i00" />
@@ -1332,15 +1332,15 @@
 		<skills>
 			<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="415" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">415</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15565" name="Rising Star" type="Weapon">
 		<set name="icon" val="icon.weapon_cuticle_i00" />
@@ -1363,15 +1363,15 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="332" />
-			<set stat="mAtk" val="244" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">332</stat>
+			<stat type="mAtk">244</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15566" name="Black Visage" type="Weapon">
 		<set name="icon" val="icon.weapon_blackvisage_i00" />
@@ -1394,15 +1394,15 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
-		<for>
-			<set stat="pAtk" val="404" />
-			<set stat="mAtk" val="268" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">404</stat>
+			<stat type="mAtk">268</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15567" name="Veniplant Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_veniplant_sword_i00" />
@@ -1425,14 +1425,14 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ONE_HAND_MAGIC_SWORD" />
-		<for>
-			<set stat="pAtk" val="332" />
-			<set stat="mAtk" val="244" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">332</stat>
+			<stat type="mAtk">244</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15568" name="Skull Carnium Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_skullgrove_bow_i00" />
@@ -1457,15 +1457,15 @@
 		<set name="reuse_delay" val="1500" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BOW" />
-		<for>
-			<set stat="pAtk" val="768" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
+		<stats>
+			<stat type="pAtk">768</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15569" name="Gemtail Rapier" type="Weapon">
 		<set name="icon" val="icon.weapon_gemtail_rapier_i00" />
@@ -1493,15 +1493,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="376" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="406" />
+		<stats>
+			<stat type="pAtk">376</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15570" name="Finale Blade" type="Weapon">
 		<set name="icon" val="icon.weapon_findragon blade_i00" />
@@ -1526,15 +1526,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="449" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
-			<set stat="pAtkSpd" val="350" />
+		<stats>
+			<stat type="pAtk">449</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15571" name="Dominion Crossbow" type="Weapon">
 		<set name="icon" val="icon.weapon_rudecutter_crossbow_i00" />
@@ -1560,15 +1560,15 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="471" />
-			<set stat="mAtk" val="183" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1.5" />
-			<set stat="pAtkSpd" val="303" />
+		<stats>
+			<stat type="pAtk">471</stat>
+			<stat type="mAtk">183</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1.5</stat>
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15572" name="Elegia Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -1587,10 +1587,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="110" />
+		<stats>
+			<stat type="pDef">110</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15573" name="Elegia Leather Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -1606,10 +1606,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
-		<for>
-			<add order="0" stat="pDef" val="110" />
+		<stats>
+			<stat type="pDef">110</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15574" name="Elegia Circlet" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
@@ -1628,10 +1628,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="110" />
+		<stats>
+			<stat type="pDef">110</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15575" name="Elegia Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t97_u_i00" />
@@ -1651,10 +1651,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="272" />
+		<stats>
+			<stat type="pDef">272</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15576" name="Elegia Leather Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t98_u_i00" />
@@ -1670,10 +1670,10 @@
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<add order="0" stat="pDef" val="204" />
+		<stats>
+			<stat type="pDef">204</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15577" name="Elegia Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t99_u_i00" />
@@ -1693,11 +1693,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="136" />
-			<add stat="maxMp" val="661" />
+		<stats>
+			<stat type="pDef">136</stat>
+			<stat type="maxMp">661</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15578" name="Elegia Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t97_l_i00" />
@@ -1717,10 +1717,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="170" />
+		<stats>
+			<stat type="pDef">170</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15579" name="Elegia Leather Leggings" type="Armor">
 		<set name="icon" val="icon.armor_t98_l_i00" />
@@ -1737,10 +1737,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
-		<for>
-			<add order="0" stat="pDef" val="128" />
+		<stats>
+			<stat type="pDef">128</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15580" name="Elegia Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t99_l_i00" />
@@ -1760,11 +1760,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="85" />
-			<add stat="maxMp" val="439" />
+		<stats>
+			<stat type="pDef">85</stat>
+			<stat type="maxMp">439</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15581" name="Elegia Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t97_g_i00" />
@@ -1783,10 +1783,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="74" />
+		<stats>
+			<stat type="pDef">74</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15582" name="Elegia Leather Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t98_g_i00" />
@@ -1802,10 +1802,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
-		<for>
-			<add order="0" stat="pDef" val="74" />
+		<stats>
+			<stat type="pDef">74</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15583" name="Elegia Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t99_g_i00" />
@@ -1823,10 +1823,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="74" />
+		<stats>
+			<stat type="pDef">74</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15584" name="Elegia Boots" type="Armor">
 		<set name="icon" val="icon.armor_t97_b_i00" />
@@ -1845,10 +1845,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="74" />
+		<stats>
+			<stat type="pDef">74</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15585" name="Elegia Leather Boots" type="Armor">
 		<set name="icon" val="icon.armor_t98_b_i00" />
@@ -1864,10 +1864,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
-		<for>
-			<add order="0" stat="pDef" val="74" />
+		<stats>
+			<stat type="pDef">74</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15586" name="Elegia Shoes" type="Armor">
 		<set name="icon" val="icon.armor_t99_b_i00" />
@@ -1886,10 +1886,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="74" />
+		<stats>
+			<stat type="pDef">74</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15587" name="Elegia Shield" type="Armor">
 		<set name="icon" val="icon.heavengate_shield_i01" />
@@ -1907,12 +1907,12 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="413" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">413</stat>
 			<enchant stat="sDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15588" name="Elegia Sigil" type="Armor">
 		<set name="icon" val="icon.weapon_pricklelotus_i01" />
@@ -1931,11 +1931,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<add order="0" stat="pDef" val="21" />
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="pDef">21</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15589" name="Vorpal Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -1954,10 +1954,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="107" />
+		<stats>
+			<stat type="pDef">107</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15590" name="Vorpal Leather Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -1973,10 +1973,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
-		<for>
-			<add order="0" stat="pDef" val="107" />
+		<stats>
+			<stat type="pDef">107</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15591" name="Vorpal Circlet" type="Armor">
 		<set name="icon" val="icon.armor_circlet_i00" />
@@ -1995,10 +1995,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="107" />
+		<stats>
+			<stat type="pDef">107</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15592" name="Vorpal Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t94_u_i03" />
@@ -2018,10 +2018,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="263" />
+		<stats>
+			<stat type="pDef">263</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15593" name="Vorpal Leather Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t95_u_i03" />
@@ -2038,10 +2038,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
-		<for>
-			<add order="0" stat="pDef" val="197" />
+		<stats>
+			<stat type="pDef">197</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15594" name="Vorpal Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t96_u_i03" />
@@ -2060,11 +2060,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="132" />
-			<add stat="maxMp" val="649" />
+		<stats>
+			<stat type="pDef">132</stat>
+			<stat type="maxMp">649</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15595" name="Vorpal Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t94_l_i03" />
@@ -2084,10 +2084,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="164" />
+		<stats>
+			<stat type="pDef">164</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15596" name="Vorpal Leather Leggings" type="Armor">
 		<set name="icon" val="icon.armor_t95_l_i03" />
@@ -2104,10 +2104,10 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
-		<for>
-			<add order="0" stat="pDef" val="123" />
+		<stats>
+			<stat type="pDef">123</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15597" name="Vorpal Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t96_l_i03" />
@@ -2127,11 +2127,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="82" />
-			<add stat="maxMp" val="427" />
+		<stats>
+			<stat type="pDef">82</stat>
+			<stat type="maxMp">427</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15598" name="Vorpal Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t94_g_i03" />
@@ -2149,10 +2149,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="71" />
+		<stats>
+			<stat type="pDef">71</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="15599" name="Vorpal Leather Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t95_g_i03" />
@@ -2168,9 +2168,9 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
-		<for>
-			<add order="0" stat="pDef" val="71" />
+		<stats>
+			<stat type="pDef">71</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 </list>

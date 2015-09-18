@@ -17,9 +17,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="600" />
-		<for>
-			<add order="0" stat="pDef" val="49" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="9101" name="Shadow Item: Majestic Robe" type="Armor">
 		<set name="icon" val="icon.armor_t85_ul_i00" />
@@ -42,10 +42,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="147" />
-			<add stat="maxMp" val="718" />
-		</for>
+		<stats>
+			<stat type="pDef">147</stat>
+			<stat type="maxMp">718</stat>
+		</stats>
 	</item>
 	<item id="9102" name="Shadow Item: Majestic Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t85_g_i00" />
@@ -67,9 +67,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="49" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="9103" name="Shadow Item: Majestic Boots" type="Armor">
 		<set name="icon" val="icon.armor_t85_b_i00" />
@@ -91,9 +91,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="49" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+		</stats>
 	</item>
 	<item id="9104" name="Compound Bow and Wooden Arrow" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
@@ -520,9 +520,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="600" />
-		<for>
-			<add order="0" stat="pDef" val="36" />
-		</for>
+		<stats>
+			<stat type="pDef">36</stat>
+		</stats>
 	</item>
 	<item id="9129" name="Shadow Item: Shield of Nightmare" type="Armor">
 		<set name="icon" val="icon.shield_shield_of_nightmare_i00" />
@@ -544,11 +544,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="256" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">256</stat>
+		</stats>
 	</item>
 	<item id="9130" name="Item Set Pack (No-grade) (Wizard)" type="EtcItem">
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
@@ -669,12 +669,12 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="156" />
-			<set stat="mAtk" val="83" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">156</stat>
+			<stat type="mAtk">83</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="9137" name="Sword of Valakas (2-handed)" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
@@ -693,12 +693,12 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
-		<for>
-			<set stat="pAtk" val="78" />
-			<set stat="mAtk" val="39" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">78</stat>
+			<stat type="mAtk">39</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="9138" name="Santa Hat" type="Armor">
 		<set name="icon" val="icon.accessory_santas_cap_i00" />
@@ -738,13 +738,13 @@
 		<skills>
 			<skill id="3261" level="1" /> <!-- Forgiveness -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+		</stats>
 	</item>
 	<item id="9141" name="Redemption Bow" type="Weapon">
 		<set name="icon" val="icon.weapon_krono_bow_i00" />
@@ -776,13 +776,13 @@
 			<skill id="3260" level="1" /> <!-- Forgiveness -->
 			<skill id="3262" level="1" /> <!-- Pardon -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+		</stats>
 	</item>
 	<item id="9142" name="Apiga" type="EtcItem">
 		<set name="icon" val="icon.etc_pig_adena_i01" />

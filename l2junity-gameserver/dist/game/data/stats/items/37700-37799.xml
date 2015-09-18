@@ -16,12 +16,12 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
-		<for>
-			<set stat="pAtk" val="752.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">752</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="37701" name="Valentine Dual Blunt Weapon" type="Weapon">
 		<!-- Modifies the appearance of a weapon. -->
@@ -39,13 +39,13 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="weight" val="500" />
-		<for>
-			<set stat="pAtk" val="916.0" />
-			<set stat="mAtk" val="414.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">916</stat>
+			<stat type="mAtk">414</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="37702" name="Valentine Shield" type="Weapon">
 		<!-- Modifies the appearance of a shield. -->
@@ -57,10 +57,10 @@
 		<set name="weight" val="1130" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="88681000" />
-		<for>
-			<add stat="sDef" val="546.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">546</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 	<item id="37703" name="Valentine Sigil" type="Armor">
 		<!-- Modifies the appearance of a sigil. -->
@@ -73,10 +73,10 @@
 		<set name="weight" val="920" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="88681000" />
-		<for>
-			<add order="0" stat="pDef" val="150.0" />
+		<stats>
+			<stat type="pDef">150</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="37704" name="Love Potion" type="EtcItem">
 		<!-- Herb that modifies the appearance of weapons for Valentine's Day. -->
@@ -244,9 +244,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="130" />
-		<for>
-			<add order="0" stat="pDef" val="28.0" />
-		</for>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
 	</item>
 	<item id="37719" name="Pa'agrio's Special Pack" type="EtcItem">
 		<!-- Wrapped Pack containing Pa'agrio's Shirt. There is also a low chance or acquiring a Shiny Elemental Shirt. \n\nWarning: The shirt acquired after opening the box is restored to the character and cannot be moved. -->
@@ -390,9 +390,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="604800" />
-		<for>
-			<add stat="mDef" val="170.0" />
-		</for>
+		<stats>
+			<stat type="mDef">170</stat>
+		</stats>
 	</item>
 	<item id="37733" name="Blessed Valakas' Necklace" name_additional="7-day" type="Armor">
 		<!-- HP +625, MP +79, Sleep Resistance 50% increase, Sleep Attack Rate 50% increase, physical/magic skill cooldown decrease, Wild Magic Effect, damage shield effect, fire resistance 30 increase, Dark Resistance 20 increase, STR +3, INT +3. P. Skill Atk. 5% increase, P. Atk. 10% increase, M. Atk. 20% increase, hold resistance skill use. Hold resistance 100% increase momentarily. Cannot be used in the Olympiad. -->
@@ -408,9 +408,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="604800" />
-		<for>
-			<add stat="mDef" val="226.0" />
-		</for>
+		<stats>
+			<stat type="mDef">226</stat>
+		</stats>
 	</item>
 	<item id="37734" name="Tauti's Ring" name_additional="7-day" type="Armor">
 		<!-- Tauti's Ring. Fire/Dark Resistance 25 increase, MP 38 increase, Critical Damage 15% increase, skill attack 5% increase, damage inflicted during PvP 5% increase, paralysis/yoke/exile resistance 10 increase, damage reflect resistance 5 increase, HP drain resistance 5 increase, damage received during PvP 5% decrease. Critical 54 increase when equipped with a blunt. Only one effect is applied even when the same two rings are worn (excluding attributes/M. Def.) Cannot be used in the Olympiad. -->
@@ -426,9 +426,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="604800" />
-		<for>
-			<add stat="mDef" val="108.0" />
-		</for>
+		<stats>
+			<stat type="mDef">108</stat>
+		</stats>
 	</item>
 	<item id="37735" name="Earth Wyrm Heart Ring" name_additional="7-day" type="Armor">
 		<!-- MP +38, increases physical attack resistance, Mental Attack Resistance, MP Regeneration, P. Critical Damage, and Accuracy. Poison Resistance 50% increase, Poison Attack Rate 50% increase, Knock Back, Knock Down, pulling resistance 20 increase, Atk. Spd. Increase, Casting Spd. Increase, and Wind/Water Resistance increase. Can use skills that affect party members' Atk. Spd., Casting Spd., and Vampiric Rage. Can use Poison removal. Only one effect is applied even when the same two rings are worn. Cannot be used in the Olympiad. -->
@@ -444,9 +444,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="604800" />
-		<for>
-			<add stat="mDef" val="108.0" />
-		</for>
+		<stats>
+			<stat type="mDef">108</stat>
+		</stats>
 	</item>
 	<item id="37736" name="Blessed Zaken's Earring" name_additional="7-day" type="Armor">
 		<!-- MP +37, Bleed Resistance 30% increase, Bleed Attack Rate 30% increase, Heal Amount 15% increase, Vampiric Rage Effect, Stun/Mental resistance 30% increase, Stun/Mental attack rate 30% increase, Dark Resistance 15 increase. Only one effect is applied even when the same two earrings are worn. When equipped with a normal Zaken's Earring, only the effects of the Blessed Zaken's Earring are applied. Cannot be used in the Olympiad. -->
@@ -462,9 +462,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="604800" />
-		<for>
-			<add stat="mDef" val="94.0" />
-		</for>
+		<stats>
+			<stat type="mDef">94</stat>
+		</stats>
 	</item>
 	<item id="37737" name="Ruler's Authority" name_additional="7-day" type="Armor">
 		<!-- Item is given to the winner of the Ceremony of Chaos that takes place in the Mysterious Mansion. When equipped, increases Max HP, MP, and CP by 1000, weight by 25600, and damage by 8%. Decreases received damage by 9% and Damage Reflect Resistance by 5%. Increases the number of inventory slots by 36 and all Attribute Resistance by 15. Cannot be used in the Olympiad. -->
@@ -480,9 +480,9 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="604800" />
-		<for>
-			<add order="0" stat="pDef" val="50.0" />
-		</for>
+		<stats>
+			<stat type="pDef">50</stat>
+		</stats>
 	</item>
 	<item id="37738" name="Test Soulshot (D-grade)" name_additional="Not in Use" type="EtcItem">
 		<!-- Soulshot for test use. To be included in the D-grade or C-grade load effect. -->
@@ -740,10 +740,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="220" />
-		<for>
-			<add order="0" stat="pDef" val="20.0" />
+		<stats>
+			<stat type="pDef">50</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+			<stat type="mDef">40</stat>
+		</stats>
 	</item>
 	<item id="37764" name="Superior CP Potion" type="EtcItem">
 		<!-- Restores 2000 CP. -->

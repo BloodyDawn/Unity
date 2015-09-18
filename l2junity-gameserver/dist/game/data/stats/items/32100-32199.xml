@@ -711,12 +711,12 @@
 		<set name="weight" val="530" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="55796000" />
-		<for>
-			<add order="0" stat="pDef" val="126.0" />
-			<add stat="rEvas" val="1.05" />
-			<add stat="mEvas" val="1.05" />
+		<stats>
+			<stat type="pDef">126</stat>
+			<stat type="rEvas">1.05</stat>
+			<stat type="mEvas">1.05</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32195" name="Blessed Twilight Breastplate" name_additional="Attack Type" type="Armor">
 		<set name="icon" val="icon.armor_t401_u_i00" />
@@ -731,11 +731,11 @@
 		<skills>
 			<skill id="13310" level="3" /> <!-- Heavy Armor Top Special Ability -->
 		</skills>
-		<for>
-			<add order="0" stat="pDef" val="335.0" />
-			<set stat="pAtk" val="26.0" />
+		<stats>
+			<stat type="pDef">335</stat>
+			<stat type="pAtk">26</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32196" name="Blessed Twilight Gaiters" name_additional="Attack Type" type="Armor">
 		<set name="icon" val="icon.armor_t401_l_i00" />
@@ -747,12 +747,12 @@
 		<set name="weight" val="3170" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="92993000" />
-		<for>
-			<add order="0" stat="pDef" val="209.0" />
-			<set stat="rCrit" val="2.6" />
-			<add stat="mCritRate" val="2.6" />
+		<stats>
+			<stat type="pDef">209</stat>
+			<stat type="rCrit">2.6</stat>
+			<stat type="mCritRate">2.6</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32197" name="Blessed Twilight Gauntlets" name_additional="Attack Type" type="Armor">
 		<set name="icon" val="icon.armor_t401_g_i00" />
@@ -763,12 +763,12 @@
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="37197000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="accCombat" val="1.0" />
-			<add stat="accMagic" val="1.0" />
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="accCombat">1</stat>
+			<stat type="accMagic">1</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32198" name="Blessed Twilight Boots" name_additional="Attack Type" type="Armor">
 		<set name="icon" val="icon.armor_t401_b_i00" />
@@ -779,11 +779,11 @@
 		<set name="weight" val="1070" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="37197000" />
-		<for>
-			<add order="0" stat="pDef" val="84.0" />
-			<add stat="moveSpeed" val="15.0" />
+		<stats>
+			<stat type="pDef">84</stat>
+			<stat type="moveSpeed">15</stat>
 			<enchant stat="pDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="32199" name="Blessed Twilight Shield" name_additional="Attack Type" type="Weapon">
 		<!-- Additionally increases Shield Defense. -->
@@ -798,9 +798,9 @@
 		<skills>
 			<skill id="8782" level="1" /> <!-- Equip Shield -->
 		</skills>
-		<for>
-			<add stat="sDef" val="458.0" />
-			<add stat="rShld" val="20.0" />
-		</for>
+		<stats>
+			<stat type="sDef">458</stat>
+			<stat type="rShld">20</stat>
+		</stats>
 	</item>
 </list>

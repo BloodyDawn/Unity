@@ -102,9 +102,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_freightable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="28" />
-		</for>
+		<stats>
+			<stat type="pDef">28</stat>
+		</stats>
 	</item>
 	<item id="21707" name="Blessed Scroll: Enchant Power Shirt" name_additional="Event" type="EtcItem">
 		<!-- Description: Dimensional item. Enchant scroll exclusive to Olf's T-shirt. Increases the T-shirt's P. Def. and M. Def. by 1. Starting from +4, increases P. Def. by 3. Can safely enchant to +3 and up to a max +10. From +4, "basic abilities (CON, MEN, STR, INT, DEX, WIT)" are raised in stages. Special skills are added at +5, +7, +8 and +9. If the enchant fails, the existing enchant value becomes 0. Cannot be dropped. Can be stored in a private warehouse. -->
@@ -194,11 +194,11 @@
 		<skills>
 			<skill id="3559" level="2" /> <!-- Blessed Zaken's Earring -->
 		</skills>
-		<for>
-			<add order="0" stat="mDef" val="94" />
-			<add stat="maxMp" val="37" />
+		<stats>
+			<stat type="mDef">94</stat>
+			<stat type="maxMp">37</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="21713" name="Zaken's Sealed Cloak" type="EtcItem">
 		<!-- Description: When the seal is released, P. Def. and attribute resistance increase, and special skills can be used. It can be equipped only after releasing the seal through the weavers Olf Kanore in Aden or Olf Adams in Rune. Enchantment, attribute, and refining are impossible. Can be exchanged or dropped. -->
@@ -248,15 +248,15 @@
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
-		<for>
-			<add stat="darkRes" val="15" />
-			<add stat="earthRes" val="5" />
-			<add stat="fireRes" val="5" />
-			<add stat="holyRes" val="5" />
-			<add stat="waterRes" val="15" />
-			<add stat="windRes" val="15" />
-			<add order="0" stat="pDef" val="20" />
-		</for>
+		<stats>
+			<stat type="darkRes">15</stat>
+			<stat type="earthRes">5</stat>
+			<stat type="fireRes">5</stat>
+			<stat type="holyRes">5</stat>
+			<stat type="waterRes">15</stat>
+			<stat type="windRes">15</stat>
+			<stat type="pDef">20</stat>
+		</stats>
 	</item>
 	<item id="21717" name="Cloak of Freya" type="Armor">
 		<!-- Description: Cloak that makes you feel Freya's chill. Increases P. Def. and attribute resistance. Unlocks a skill to move to the boss area. Can only be equipped when the cloak slot is open. Enchantment, attribute, and refining are impossible. Can be exchanged or dropped. -->
@@ -276,15 +276,15 @@
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
-		<for>
-			<add stat="darkRes" val="10" />
-			<add stat="earthRes" val="10" />
-			<add stat="fireRes" val="10" />
-			<add stat="holyRes" val="20" />
-			<add stat="waterRes" val="20" />
-			<add stat="windRes" val="20" />
-			<add order="0" stat="pDef" val="30" />
-		</for>
+		<stats>
+			<stat type="darkRes">10</stat>
+			<stat type="earthRes">10</stat>
+			<stat type="fireRes">10</stat>
+			<stat type="holyRes">20</stat>
+			<stat type="waterRes">20</stat>
+			<stat type="windRes">20</stat>
+			<stat type="pDef">30</stat>
+		</stats>
 	</item>
 	<item id="21718" name="Frintezza's Cloak" type="Armor">
 		<!-- Description: Cloak that plays Frintezza's melody over and over in your head. Increases P. Def. and attribute resistance. Unlocks a skill to move to the boss area. Can only be equipped when the cloak slot is open. Enchantment, attribute, and refining are impossible. Can be exchanged or dropped. -->
@@ -304,15 +304,15 @@
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
-		<for>
-			<add stat="darkRes" val="15" />
-			<add stat="earthRes" val="15" />
-			<add stat="fireRes" val="15" />
-			<add stat="holyRes" val="5" />
-			<add stat="waterRes" val="5" />
-			<add stat="windRes" val="5" />
-			<add order="0" stat="pDef" val="20" />
-		</for>
+		<stats>
+			<stat type="darkRes">15</stat>
+			<stat type="earthRes">15</stat>
+			<stat type="fireRes">15</stat>
+			<stat type="holyRes">5</stat>
+			<stat type="waterRes">5</stat>
+			<stat type="windRes">5</stat>
+			<stat type="pDef">20</stat>
+		</stats>
 	</item>
 	<item id="21719" name="Zaken's Soul Cloak" type="Armor">
 		<!-- Description: Cloak embroidered with Zaken's soul. Increases P. Def. and attribute resistance. Unlocks a skill to move to the boss area. Can only be equipped when the cloak slot is open. Enchantment, attribute, refining, exchange, and drop are impossible. -->
@@ -337,15 +337,15 @@
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
-		<for>
-			<add stat="darkRes" val="10" />
-			<add stat="earthRes" val="5" />
-			<add stat="fireRes" val="5" />
-			<add stat="holyRes" val="5" />
-			<add stat="waterRes" val="10" />
-			<add stat="windRes" val="10" />
-			<add order="0" stat="pDef" val="40" />
-		</for>
+		<stats>
+			<stat type="darkRes">10</stat>
+			<stat type="earthRes">5</stat>
+			<stat type="fireRes">5</stat>
+			<stat type="holyRes">5</stat>
+			<stat type="waterRes">10</stat>
+			<stat type="windRes">10</stat>
+			<stat type="pDef">40</stat>
+		</stats>
 	</item>
 	<item id="21720" name="Freya's Soul Cloak" type="Armor">
 		<!-- Description: Cloak embroidered with Freya's soul. Increases P. Def. and attribute resistance. Unlocks a skill to move to the boss area. Can only be equipped when the cloak slot is open. Enchantment, attribute, refining, exchange, and drop are impossible. -->
@@ -370,15 +370,15 @@
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
-		<for>
-			<add stat="darkRes" val="5" />
-			<add stat="earthRes" val="5" />
-			<add stat="fireRes" val="5" />
-			<add stat="holyRes" val="15" />
-			<add stat="waterRes" val="15" />
-			<add stat="windRes" val="15" />
-			<add order="0" stat="pDef" val="60" />
-		</for>
+		<stats>
+			<stat type="darkRes">5</stat>
+			<stat type="earthRes">5</stat>
+			<stat type="fireRes">5</stat>
+			<stat type="holyRes">15</stat>
+			<stat type="waterRes">15</stat>
+			<stat type="windRes">15</stat>
+			<stat type="pDef">60</stat>
+		</stats>
 	</item>
 	<item id="21721" name="Frintezza's Soul Cloak" type="Armor">
 		<!-- Description: Cloak embroidered with Frintezza's soul. Increases P. Def. and attribute resistance. Unlocks a skill to move to the boss area. Can only be equipped when the cloak slot is open. Enchantment, attribute, refining, exchange, and drop are impossible. -->
@@ -403,15 +403,15 @@
 		<cond msgId="2453">
 			<player cloakStatus="true" />
 		</cond>
-		<for>
-			<add stat="darkRes" val="10" />
-			<add stat="earthRes" val="10" />
-			<add stat="fireRes" val="10" />
-			<add stat="holyRes" val="5" />
-			<add stat="waterRes" val="5" />
-			<add stat="windRes" val="5" />
-			<add order="0" stat="pDef" val="40" />
-		</for>
+		<stats>
+			<stat type="darkRes">10</stat>
+			<stat type="earthRes">10</stat>
+			<stat type="fireRes">10</stat>
+			<stat type="holyRes">5</stat>
+			<stat type="waterRes">5</stat>
+			<stat type="windRes">5</stat>
+			<stat type="pDef">40</stat>
+		</stats>
 	</item>
 	<item id="21722" name="Zaken's Soul Fragment" type="EtcItem">
 		<!-- Description: Small fragment that contains a part of Zaken's soul. See weaver Olf Adams to find out what use it has. -->
@@ -588,16 +588,16 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="69" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3" />
+		<stats>
+			<stat type="pAtk">69</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3</stat>
 			<!-- Truncated value. -->
-			<set stat="pAtkSpd" val="433" />
+			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="21732" name="Sword of Revolution" name_additional="Event" type="Weapon">
 		<!-- Description: Letter Collector's Sword of Revolution of Memory -->
@@ -613,14 +613,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="79" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="21733" name="Lesser Giant's Sword" name_additional="Event" type="Weapon">
 		<!-- Description: Letter Collector's Titan Sword of Memory -->
@@ -636,14 +636,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="21734" name="Priest Mace" name_additional="Event" type="Weapon">
 		<!-- Description: Letter Collector's Priest Mace of Memory -->
@@ -659,16 +659,16 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="63" />
-			<set stat="mAtk" val="63" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4" />
+		<stats>
+			<stat type="pAtk">63</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
 			<!-- Truncated value. -->
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="21735" name="Tarbar" name_additional="Event" type="Weapon">
 		<!-- Description: Letter Collector's Tarbar of Memory -->
@@ -684,16 +684,16 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="79" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4" />
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
 			<!-- Truncated value. -->
-			<set stat="pAtkSpd" val="379" />
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="21736" name="Goat Head Staff" name_additional="Event" type="Weapon">
 		<!-- Description: Letter Collector's Goat Head Staff of Memory -->
@@ -709,16 +709,16 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="77" />
-			<set stat="mAtk" val="69" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4" />
+		<stats>
+			<stat type="pAtk">77</stat>
+			<stat type="mAtk">69</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
 			<!-- Truncated value. -->
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="21737" name="Lesser Giant's Hammer" name_additional="Event" type="Weapon">
 		<!-- Description: Letter Collector's Titan Hammer of Memory -->
@@ -734,16 +734,16 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
 			<!-- Truncated value. -->
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="21738" name="Winged Spear" name_additional="Event" type="Weapon">
 		<!-- Description: Letter Collector's Winged Spear of Memory -->
@@ -759,16 +759,16 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="79" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3" />
+		<stats>
+			<stat type="pAtk">79</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3</stat>
 			<!-- Truncated value. -->
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="21739" name="Reinforced Longbow" name_additional="Event" type="Weapon">
 		<!-- Description: Letter Collector's Strengthened Low Bow of Memory -->
@@ -784,16 +784,16 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="179" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3" />
+		<stats>
+			<stat type="pAtk">179</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3</stat>
 			<!-- Truncated value. -->
-			<set stat="pAtkSpd" val="227" />
+			<stat type="pAtkSpd">227</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="21740" name="Épée" name_additional="Event" type="Weapon">
 		<!-- Description: Letter Collector's Epee of Memory -->
@@ -809,16 +809,16 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="72" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1" />
+		<stats>
+			<stat type="pAtk">72</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1</stat>
 			<!-- Truncated value. -->
-			<set stat="pAtkSpd" val="406" />
+			<stat type="pAtkSpd">406</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="21741" name="Sword of Magic Fog" name_additional="Event" type="Weapon">
 		<!-- Description: Letter Collector's Sword of Magic Fog of Memory -->
@@ -834,14 +834,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="63" />
-			<set stat="mAtk" val="63" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
+		<stats>
+			<stat type="pAtk">63</stat>
+			<stat type="mAtk">63</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="21742" name="Bastard Sword*Bastard Sword" name_additional="Event" type="Weapon">
 		<!-- Description: Letter Collector's Bastars*Bastard of Memory -->
@@ -857,14 +857,14 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="21743" name="Bich'Hwa" name_additional="Event" type="Weapon">
 		<!-- Description: Letter Collector's Bich'Hwa of Memory -->
@@ -880,16 +880,16 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="96" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4" />
+		<stats>
+			<stat type="pAtk">96</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
 			<!-- Truncated value. -->
-			<set stat="pAtkSpd" val="325" />
+			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="21744" name="Katzbalger" name_additional="Event" type="Weapon">
 		<!-- Description: Letter Collector's Katzbalger of Memory -->
@@ -908,16 +908,16 @@
 		<cond msgId="1518">
 			<player races="KAMAEL" />
 		</cond>
-		<for>
-			<set stat="pAtk" val="86" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="2" />
+		<stats>
+			<stat type="pAtk">86</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">2</stat>
 			<!-- Truncated value. -->
-			<set stat="pAtkSpd" val="350" />
+			<stat type="pAtkSpd">350</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="21745" name="Arm Breaker" name_additional="Event" type="Weapon">
 		<!-- Description: Letter Collector's Arm Breaker of Memory -->
@@ -933,16 +933,16 @@
 		<set name="spiritshots" val="3" />
 		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
-		<for>
-			<set stat="pAtk" val="100" />
-			<set stat="mAtk" val="47" />
-			<set stat="rCrit" val="10" />
-			<add stat="accCombat" val="-1" />
+		<stats>
+			<stat type="pAtk">100</stat>
+			<stat type="mAtk">47</stat>
+			<stat type="rCrit">10</stat>
+			<stat type="accCombat">-1</stat>
 			<!-- Truncated value. -->
-			<set stat="pAtkSpd" val="303" />
+			<stat type="pAtkSpd">303</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="21746" name="Maestro's Key" type="EtcItem">
 		<!-- High Five Item -->
@@ -1045,14 +1045,14 @@
 		<skills>
 			<skill id="6908" level="1" /> <!-- Transform Master -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<add stat="accCombat" val="-3" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="accCombat">-3</stat>
 			<!-- Truncated value. -->
-			<set stat="pAtkSpd" val="325" />
-		</for>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="21755" name="Manor Scholar's Hat" type="Armor">
 		<!-- Description: Scholar's hat showing knowledge. A gold tassle is attached. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -1252,9 +1252,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="205" />
-		</for>
+		<stats>
+			<stat type="pDef">205</stat>
+		</stats>
 	</item>
 	<item id="21776" name="Imperial Crusader Gaiters of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. Can be assigned an attribute. -->
@@ -1278,9 +1278,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="128" />
-		</for>
+		<stats>
+			<stat type="pDef">128</stat>
+		</stats>
 	</item>
 	<item id="21777" name="Imperial Crusader Gauntlets of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. Can be assigned an attribute. -->
@@ -1300,9 +1300,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
-		<for>
-			<add order="0" stat="pDef" val="55" />
-		</for>
+		<stats>
+			<stat type="pDef">55</stat>
+		</stats>
 	</item>
 	<item id="21778" name="Imperial Crusader Boots of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. Can be assigned an attribute. -->
@@ -1322,9 +1322,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
-		<for>
-			<add order="0" stat="pDef" val="55" />
-		</for>
+		<stats>
+			<stat type="pDef">55</stat>
+		</stats>
 	</item>
 	<item id="21779" name="Imperial Crusader Helmet of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. Can be assigned an attribute. -->
@@ -1344,9 +1344,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
-		<for>
-			<add order="0" stat="pDef" val="83" />
-		</for>
+		<stats>
+			<stat type="pDef">83</stat>
+		</stats>
 	</item>
 	<item id="21780" name="Imperial Crusader Shield of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -1369,11 +1369,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="290" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">290</stat>
+		</stats>
 	</item>
 	<item id="21781" name="Imperial Crusader of Fortune Set Pack (S-grade)" name_additional="90-day" type="EtcItem">
 		<!-- Description: When used, you acquire an Imperial Crusader of Fortune armor set. Expires after 90 days if not used. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -1408,9 +1408,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
-		<for>
-			<add order="0" stat="pDef" val="249" />
-		</for>
+		<stats>
+			<stat type="pDef">249</stat>
+		</stats>
 	</item>
 	<item id="21783" name="Draconic Leather Gloves of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. Can be assigned an attribute. -->
@@ -1430,9 +1430,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
-		<for>
-			<add order="0" stat="pDef" val="55" />
-		</for>
+		<stats>
+			<stat type="pDef">55</stat>
+		</stats>
 	</item>
 	<item id="21784" name="Draconic Leather Boots of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. Can be assigned an attribute. -->
@@ -1452,9 +1452,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
-		<for>
-			<add order="0" stat="pDef" val="55" />
-		</for>
+		<stats>
+			<stat type="pDef">55</stat>
+		</stats>
 	</item>
 	<item id="21785" name="Draconic Leather Helmet of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. Can be assigned an attribute. -->
@@ -1474,9 +1474,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
-		<for>
-			<add order="0" stat="pDef" val="83" />
-		</for>
+		<stats>
+			<stat type="pDef">83</stat>
+		</stats>
 	</item>
 	<item id="21786" name="Draconic Leather of Fortune Set Pack (S-grade)" name_additional="90-day" type="EtcItem">
 		<!-- Description: When used, you acquire a Draconic Leather of Fortune Armor Set. Expires after 90 days if not used. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -1514,10 +1514,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="166" />
-			<add stat="maxMp" val="866" />
-		</for>
+		<stats>
+			<stat type="pDef">166</stat>
+			<stat type="maxMp">866</stat>
+		</stats>
 	</item>
 	<item id="21788" name="Major Arcana Gloves of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. Can be assigned an attribute. -->
@@ -1537,9 +1537,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
-		<for>
-			<add order="0" stat="pDef" val="55" />
-		</for>
+		<stats>
+			<stat type="pDef">55</stat>
+		</stats>
 	</item>
 	<item id="21789" name="Major Arcana Boots of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. Can be assigned an attribute. -->
@@ -1559,9 +1559,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
-		<for>
-			<add order="0" stat="pDef" val="55" />
-		</for>
+		<stats>
+			<stat type="pDef">55</stat>
+		</stats>
 	</item>
 	<item id="21790" name="Major Arcana Circlet of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. Can be assigned an attribute. -->
@@ -1581,9 +1581,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
-		<for>
-			<add order="0" stat="pDef" val="83" />
-		</for>
+		<stats>
+			<stat type="pDef">83</stat>
+		</stats>
 	</item>
 	<item id="21791" name="Arcana Sigil of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -1603,9 +1603,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
-		<for>
-			<add order="0" stat="pDef" val="13" />
-		</for>
+		<stats>
+			<stat type="pDef">13</stat>
+		</stats>
 	</item>
 	<item id="21792" name="Major Arcana Robe of Fortune Set Pack (S-grade)" name_additional="90-day" type="EtcItem">
 		<!-- Description: When used, you acquire an Arcana Robe of Fortune Set. Expires after 90 days if not used. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -1643,9 +1643,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="226" />
-		</for>
+		<stats>
+			<stat type="pDef">226</stat>
+		</stats>
 	</item>
 	<item id="21794" name="Dynasty Gaiters of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. Can be assigned an attribute. -->
@@ -1669,9 +1669,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="141" />
-		</for>
+		<stats>
+			<stat type="pDef">141</stat>
+		</stats>
 	</item>
 	<item id="21795" name="Dynasty Gauntlets of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. Can be assigned an attribute. -->
@@ -1691,9 +1691,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
-		<for>
-			<add order="0" stat="pDef" val="61" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="21796" name="Dynasty Boots of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. Can be assigned an attribute. -->
@@ -1713,9 +1713,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
-		<for>
-			<add order="0" stat="pDef" val="61" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="21797" name="Dynasty Helmet of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. Can be assigned an attribute. -->
@@ -1735,9 +1735,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="time" val="129600" />
-		<for>
-			<add order="0" stat="pDef" val="92" />
-		</for>
+		<stats>
+			<stat type="pDef">92</stat>
+		</stats>
 	</item>
 	<item id="21798" name="Dynasty Shield of Fortune" name_additional="90-day" type="Armor">
 		<!-- Description: Cannot be exchanged or dropped. Can be stored in a private warehouse. -->
@@ -1760,11 +1760,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="321" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">321</stat>
+		</stats>
 	</item>
 	<item id="21799" name="Dynasty Breastplate of Fortune Set Pack (S-grade)" name_additional="90-day" type="EtcItem">
 		<!-- Description: When used, you acquire a Dynasty Breastplate Armor of Fortune Set. Expires after 90 days if not used. Cannot be exchanged or dropped. Can be stored in a private warehouse. -->

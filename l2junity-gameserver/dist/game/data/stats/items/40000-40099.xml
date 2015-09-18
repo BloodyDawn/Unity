@@ -818,12 +818,12 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="101" />
-		<for>
-			<set stat="pAtk" val="152.0" />
-			<set stat="mAtk" val="122.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">152</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="40058" name="Cat Staff" type="Weapon">
 		<!-- A basic for appearance modification. -->
@@ -841,12 +841,12 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="weight" val="101" />
-		<for>
-			<set stat="pAtk" val="152.0" />
-			<set stat="mAtk" val="122.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">152</stat>
+			<stat type="mAtk">122</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="40059" name="Counterfeit Atelia" type="EtcItem">
 		<!-- A fake gem being sold in the Material Realm as a gem of the the Wind Spirit Realm. -->
@@ -903,13 +903,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="6.0" />
-			<set stat="mAtk" val="8.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">6</stat>
+			<stat type="mAtk">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="40062" name="Recipe: Pendant (100%)" type="EtcItem">
 		<!-- Recipe for crafting a pendant. Requires Create Item Lv. 14. 100% success rate. Can obtain a pendant with stats if successful. Tyrr Maestros only. -->

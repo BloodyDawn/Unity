@@ -24,12 +24,12 @@
 		<skills>
 			<skill id="21089" level="1" /> <!-- Dance of Shadows -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="1" />
-			<set stat="mAtk" val="1" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="20601" name="Anniversary Hat" name_additional="Soul of Phoenix (7-day)" type="Armor">
 		<set name="icon" val="BranchSys.icon.br_comfortspirit_hat_a_i00" />
@@ -819,12 +819,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="92" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">92</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="20640" name="Common Item - Light Crossbow" type="Weapon">
 		<set name="icon" val="icon.weapon_cyclone_bow_i00" />
@@ -850,13 +850,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="191" />
-			<set stat="mAtk" val="54" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="293" />
-		</for>
+		<stats>
+			<stat type="pAtk">191</stat>
+			<stat type="mAtk">54</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">293</stat>
+		</stats>
 	</item>
 	<item id="20641" name="Common Item - Knight's Sword*Elven Sword" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -880,12 +880,12 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<set stat="pAtk" val="107" />
-			<set stat="mAtk" val="51" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">107</stat>
+			<stat type="mAtk">51</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="20642" name="Common Item - Mithril Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t46_g_i00" />
@@ -903,9 +903,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="29" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="20643" name="Common Item - Plate Boots" type="Armor">
 		<set name="icon" val="icon.armor_t46_b_i00" />
@@ -923,9 +923,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="29" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="20644" name="Common Item - Plate Shield" type="Armor">
 		<set name="icon" val="icon.shield_plate_shield_i00" />
@@ -946,11 +946,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="154" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">154</stat>
+		</stats>
 	</item>
 	<item id="20645" name="Common Item - Plate Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -968,9 +968,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="20646" name="Common Item - Plate Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t46_l_i00" />
@@ -992,9 +992,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="70" />
-		</for>
+		<stats>
+			<stat type="pDef">70</stat>
+		</stats>
 	</item>
 	<item id="20647" name="Common Item - Half Plate Armor" type="Armor">
 		<set name="icon" val="icon.armor_t46_u_i00" />
@@ -1016,9 +1016,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="111" />
-		</for>
+		<stats>
+			<stat type="pDef">111</stat>
+		</stats>
 	</item>
 	<item id="20648" name="Common Item - Salamander Skin Mail" type="Armor">
 		<set name="icon" val="icon.armor_t45_ul_i00" />
@@ -1037,9 +1037,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="136" />
-		</for>
+		<stats>
+			<stat type="pDef">136</stat>
+		</stats>
 	</item>
 	<item id="20649" name="Common Item - Ghost Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_ghost_staff_i00" />
@@ -1064,13 +1064,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="90" />
-			<set stat="mAtk" val="79" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">90</stat>
+			<stat type="mAtk">79</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="20650" name="Common Item - Mithril Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t51_u_i00" />
@@ -1092,10 +1092,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="52" />
-			<add stat="maxMp" val="169" />
-		</for>
+		<stats>
+			<stat type="pDef">52</stat>
+			<stat type="maxMp">169</stat>
+		</stats>
 	</item>
 	<item id="20651" name="Common Item - Mithril Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t51_l_i00" />
@@ -1117,10 +1117,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="32" />
-			<add stat="maxMp" val="105" />
-		</for>
+		<stats>
+			<stat type="pDef">32</stat>
+			<stat type="maxMp">105</stat>
+		</stats>
 	</item>
 	<item id="20652" name="Common Item - Salamander Skin Boots" type="Armor">
 		<set name="icon" val="icon.armor_t45_b_i00" />
@@ -1138,9 +1138,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="29" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="20653" name="Common Item - Ogre Power Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t45_g_i00" />
@@ -1158,9 +1158,9 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<for>
-			<add order="0" stat="pDef" val="29" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="20654" name="Agathion - Lucky Girl" type="Armor">
 		<set name="icon" val="BranchSys.icon.br_aga_luckygirl_i00" />

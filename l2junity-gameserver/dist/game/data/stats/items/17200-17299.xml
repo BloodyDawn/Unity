@@ -15,10 +15,10 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="is_dropable" val="false" />
-		<for>
-			<add order="0" stat="mDef" val="71" />
-			<add stat="maxMp" val="31" />
-		</for>
+		<stats>
+			<stat type="mDef">71</stat>
+			<stat type="maxMp">31</stat>
+		</stats>
 	</item>
 	<item id="17201" name="Mark of Cheers" type="EtcItem">
 		<!-- Description: National Representative Warrior's tenacity. Mark needed to use the Spell of Blessing and Energy of Victory skill. Cannot be exchanged or dropped. -->
@@ -1275,12 +1275,12 @@
 		<skills>
 			<skill id="13279" level="3" /> <!-- Dagger Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="380.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="433.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">380</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="17291" name="Requiem Cutter" type="Weapon">
 		<!-- Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
@@ -1299,12 +1299,12 @@
 		<skills>
 			<skill id="13252" level="3" /> <!-- One-handed Sword Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="435.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">435</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17292" name="Requiem Slasher" type="Weapon">
 		<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases P. Atk. when enchanted to + 4. -->
@@ -1323,12 +1323,12 @@
 		<skills>
 			<skill id="13258" level="3" /> <!-- Two-handed Sword Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="529.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">529</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17293" name="Requiem Avenger" type="Weapon">
 		<!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
@@ -1347,13 +1347,13 @@
 		<skills>
 			<skill id="13253" level="3" /> <!-- One-handed Blunt Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="435.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">435</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="17294" name="Requiem Fighter" type="Weapon">
 		<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
@@ -1372,13 +1372,13 @@
 		<skills>
 			<skill id="13264" level="3" /> <!-- Fist Weapon Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="529.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">529</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="17295" name="Requiem Stormer" type="Weapon">
 		<!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases Multi Attack when enchanted to + 4. -->
@@ -1398,12 +1398,12 @@
 			<skill id="13115" level="1" /> <!-- Polearm Multi-attack -->
 			<skill id="13263" level="3" /> <!-- Spear Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="435.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">435</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17296" name="Requiem Thrower" type="Weapon">
 		<!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power when enchanted to + 4. -->
@@ -1422,12 +1422,12 @@
 		<skills>
 			<skill id="13289" level="3" /> <!-- Bow Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="856.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="293.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">856</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="17297" name="Requiem Shooter" type="Weapon">
 		<!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. when enchanted to + 4. -->
@@ -1446,12 +1446,12 @@
 		<skills>
 			<skill id="13294" level="3" /> <!-- Crossbow Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="771.0" />
-			<set stat="mAtk" val="189.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<set stat="rCrit" val="12.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">771</stat>
+			<stat type="mAtk">189</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="rCrit">12</stat>
+		</stats>
 	</item>
 	<item id="17298" name="Requiem Buster" type="Weapon">
 		<!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
@@ -1470,12 +1470,12 @@
 		<skills>
 			<skill id="13295" level="3" /> <!-- Magic Sword Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="348.0" />
-			<set stat="mAtk" val="252.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<set stat="rCrit" val="8.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">348</stat>
+			<stat type="mAtk">252</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="rCrit">8</stat>
+		</stats>
 	</item>
 	<item id="17299" name="Requiem Caster" type="Weapon">
 		<!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
@@ -1494,12 +1494,12 @@
 		<skills>
 			<skill id="13296" level="3" /> <!-- Magic One-handed Blunt Special Ability -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="348.0" />
-			<set stat="mAtk" val="252.0" />
-			<set stat="pAtkSpd" val="379.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">348</stat>
+			<stat type="mAtk">252</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 </list>

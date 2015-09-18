@@ -19,13 +19,13 @@
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="225" />
-			<set stat="mAtk" val="175" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">225</stat>
+			<stat type="mAtk">175</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="12001" name="Common Item - Angel Slayer" type="Weapon">
 		<set name="icon" val="icon.weapon_angel_slayer_i00" />
@@ -45,13 +45,13 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="element_enabled" val="true" />
-		<for>
-			<set stat="pAtk" val="246" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="12" />
-			<add stat="accCombat" val="-3.75" />
-			<set stat="pAtkSpd" val="433" />
-		</for>
+		<stats>
+			<stat type="pAtk">246</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">12</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">433</stat>
+		</stats>
 	</item>
 	<item id="12002" name="Common Item - Imperial Staff" type="Weapon">
 		<set name="icon" val="icon.weapon_imperial_staff_i00" />
@@ -72,13 +72,13 @@
 		<set name="element_enabled" val="true" />
 		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
-		<for>
-			<set stat="pAtk" val="274" />
-			<set stat="mAtk" val="193" />
-			<set stat="rCrit" val="4" />
-			<add stat="accCombat" val="4.75" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">274</stat>
+			<stat type="mAtk">193</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="12003" name="Common Item - Tallum Blade*Dark Legion's Edge" type="Weapon">
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
@@ -101,12 +101,12 @@
 		<skills>
 			<skill id="3570" level="1" type="ON_ENCHANT" /> <!-- Special Ability: Robust Health -->
 		</skills>
-		<for>
-			<set stat="pAtk" val="342" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">342</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="12004" name="Common Item - Forgotten Blade" type="Weapon">
 		<set name="icon" val="icon.weapon_forgotten_blade_i00" />
@@ -127,12 +127,12 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="element_enabled" val="true" />
-		<for>
-			<set stat="pAtk" val="281" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="379" />
-		</for>
+		<stats>
+			<stat type="pAtk">281</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">379</stat>
+		</stats>
 	</item>
 	<item id="12005" name="Common Item - Heaven's Divider" type="Weapon">
 		<set name="icon" val="icon.weapon_heavens_divider_i00" />
@@ -153,12 +153,12 @@
 		<set name="spiritshots" val="1" />
 		<set name="is_freightable" val="false" />
 		<set name="element_enabled" val="true" />
-		<for>
-			<set stat="pAtk" val="342" />
-			<set stat="mAtk" val="132" />
-			<set stat="rCrit" val="8" />
-			<set stat="pAtkSpd" val="325" />
-		</for>
+		<stats>
+			<stat type="pAtk">342</stat>
+			<stat type="mAtk">132</stat>
+			<stat type="rCrit">8</stat>
+			<stat type="pAtkSpd">325</stat>
+		</stats>
 	</item>
 	<item id="12006" name="Common Item - Leather Boots" type="Armor">
 		<set name="icon" val="icon.armor_t09_b_i00" />
@@ -171,9 +171,9 @@
 		<set name="weight" val="433" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="178" />
-		<for>
-			<add order="0" stat="pDef" val="19" />
-		</for>
+		<stats>
+			<stat type="pDef">19</stat>
+		</stats>
 	</item>
 	<item id="12007" name="Common Item - Quality Leather Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t09_g_i00" />
@@ -186,9 +186,9 @@
 		<set name="weight" val="217" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="178" />
-		<for>
-			<add order="0" stat="pDef" val="19" />
-		</for>
+		<stats>
+			<stat type="pDef">19</stat>
+		</stats>
 	</item>
 	<item id="12008" name="Common Item - Ring Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t12_u_i00" />
@@ -205,9 +205,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="77" />
-		</for>
+		<stats>
+			<stat type="pDef">77</stat>
+		</stats>
 	</item>
 	<item id="12009" name="Common Item - Bone Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -220,9 +220,9 @@
 		<set name="weight" val="213" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="268" />
-		<for>
-			<add order="0" stat="pDef" val="29" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="12010" name="Common Item - Cursed Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t14_u_i00" />
@@ -239,10 +239,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="39" />
-			<add stat="maxMp" val="106" />
-		</for>
+		<stats>
+			<stat type="pDef">39</stat>
+			<stat type="maxMp">106</stat>
+		</stats>
 	</item>
 	<item id="12011" name="Common Item - Cursed Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t14_l_i00" />
@@ -259,10 +259,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="24" />
-			<add stat="maxMp" val="66" />
-		</for>
+		<stats>
+			<stat type="pDef">24</stat>
+			<stat type="maxMp">66</stat>
+		</stats>
 	</item>
 	<item id="12012" name="Common Item - Iron Plate Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t12_l_i00" />
@@ -279,9 +279,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="48" />
-		</for>
+		<stats>
+			<stat type="pDef">48</stat>
+		</stats>
 	</item>
 	<item id="12013" name="Common Item - Bronze Shield" type="Armor">
 		<set name="icon" val="icon.shield_bronze_shield_i00" />
@@ -297,11 +297,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="101" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">101</stat>
+		</stats>
 	</item>
 	<item id="12014" name="Common Item - Puma Skin Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t09_l_i00" />
@@ -315,9 +315,9 @@
 		<set name="weight" val="533" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="334" />
-		<for>
-			<add order="0" stat="pDef" val="36" />
-		</for>
+		<stats>
+			<stat type="pDef">36</stat>
+		</stats>
 	</item>
 	<item id="12015" name="Common Item - Puma Skin Shirt" type="Armor">
 		<set name="icon" val="icon.armor_t09_u_i00" />
@@ -331,9 +331,9 @@
 		<set name="weight" val="1567" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="534" />
-		<for>
-			<add order="0" stat="pDef" val="58" />
-		</for>
+		<stats>
+			<stat type="pDef">58</stat>
+		</stats>
 	</item>
 	<item id="12016" name="Common Item - Leather Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t18_g_i00" />
@@ -346,9 +346,9 @@
 		<set name="weight" val="213" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="270" />
-		<for>
-			<add order="0" stat="pDef" val="22" />
-		</for>
+		<stats>
+			<stat type="pDef">22</stat>
+		</stats>
 	</item>
 	<item id="12017" name="Common Item - Dark Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t16_l_i00" />
@@ -365,10 +365,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="27" />
-			<add stat="maxMp" val="79" />
-		</for>
+		<stats>
+			<stat type="pDef">27</stat>
+			<stat type="maxMp">79</stat>
+		</stats>
 	</item>
 	<item id="12018" name="Common Item - Wizard Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t17_u_i00" />
@@ -385,10 +385,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="43" />
-			<add stat="maxMp" val="126" />
-		</for>
+		<stats>
+			<stat type="pDef">43</stat>
+			<stat type="maxMp">126</stat>
+		</stats>
 	</item>
 	<item id="12019" name="Common Item - Wizard Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t17_l_i00" />
@@ -405,10 +405,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="27" />
-			<add stat="maxMp" val="79" />
-		</for>
+		<stats>
+			<stat type="pDef">27</stat>
+			<stat type="maxMp">79</stat>
+		</stats>
 	</item>
 	<item id="12020" name="Common Item - Lion Skin Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t18_l_i00" />
@@ -422,9 +422,9 @@
 		<set name="weight" val="523" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="504" />
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12021" name="Common Item - Lion Skin Shirt" type="Armor">
 		<set name="icon" val="icon.armor_t18_u_i00" />
@@ -438,9 +438,9 @@
 		<set name="weight" val="1527" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="808" />
-		<for>
-			<add order="0" stat="pDef" val="65" />
-		</for>
+		<stats>
+			<stat type="pDef">65</stat>
+		</stats>
 	</item>
 	<item id="12022" name="Common Item - White Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t16_u_i00" />
@@ -457,10 +457,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="43" />
-			<add stat="maxMp" val="126" />
-		</for>
+		<stats>
+			<stat type="pDef">43</stat>
+			<stat type="maxMp">126</stat>
+		</stats>
 	</item>
 	<item id="12023" name="Common Item - Scale Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t08_l_i00" />
@@ -477,9 +477,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="54" />
-		</for>
+		<stats>
+			<stat type="pDef">54</stat>
+		</stats>
 	</item>
 	<item id="12024" name="Common Item - Scale Mail" type="Armor">
 		<set name="icon" val="icon.armor_t08_u_i00" />
@@ -496,9 +496,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="87" />
-		</for>
+		<stats>
+			<stat type="pDef">87</stat>
+		</stats>
 	</item>
 	<item id="12025" name="Common Item - Aspis" type="Armor">
 		<set name="icon" val="icon.shield_aspis_i00" />
@@ -514,11 +514,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="114" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">114</stat>
+		</stats>
 	</item>
 	<item id="12026" name="Common Item - Elven Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t11_u_i00" />
@@ -535,10 +535,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="43" />
-			<add stat="maxMp" val="126" />
-		</for>
+		<stats>
+			<stat type="pDef">43</stat>
+			<stat type="maxMp">126</stat>
+		</stats>
 	</item>
 	<item id="12027" name="Common Item - Elven Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t11_l_i00" />
@@ -555,10 +555,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="27" />
-			<add stat="maxMp" val="79" />
-		</for>
+		<stats>
+			<stat type="pDef">27</stat>
+			<stat type="maxMp">79</stat>
+		</stats>
 	</item>
 	<item id="12028" name="Common Item - Bronze Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -571,9 +571,9 @@
 		<set name="weight" val="210" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="404" />
-		<for>
-			<add order="0" stat="pDef" val="33" />
-		</for>
+		<stats>
+			<stat type="pDef">33</stat>
+		</stats>
 	</item>
 	<item id="12029" name="Common Item - Blue Buckskin Boots" type="Armor">
 		<set name="icon" val="icon.armor_t18_b_i00" />
@@ -586,9 +586,9 @@
 		<set name="weight" val="433" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="270" />
-		<for>
-			<add order="0" stat="pDef" val="22" />
-		</for>
+		<stats>
+			<stat type="pDef">22</stat>
+		</stats>
 	</item>
 	<item id="12030" name="Common Item - Dwarven Scale Mail" type="Armor">
 		<set name="icon" val="icon.armor_t15_u_i00" />
@@ -605,9 +605,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="95" />
-		</for>
+		<stats>
+			<stat type="pDef">95</stat>
+		</stats>
 	</item>
 	<item id="12031" name="Common Item - Mithril Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t19_u_i00" />
@@ -624,9 +624,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="95" />
-		</for>
+		<stats>
+			<stat type="pDef">95</stat>
+		</stats>
 	</item>
 	<item id="12032" name="Common Item - Compound Scale Mail" type="Armor">
 		<set name="icon" val="icon.armor_t20_u_i00" />
@@ -643,9 +643,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="95" />
-		</for>
+		<stats>
+			<stat type="pDef">95</stat>
+		</stats>
 	</item>
 	<item id="12033" name="Common Item - Iron Boots" type="Armor">
 		<set name="icon" val="icon.armor_t10_b_i00" />
@@ -658,9 +658,9 @@
 		<set name="weight" val="427" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="392" />
-		<for>
-			<add order="0" stat="pDef" val="24" />
-		</for>
+		<stats>
+			<stat type="pDef">24</stat>
+		</stats>
 	</item>
 	<item id="12034" name="Common Item - Reinforced Leather Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t13_l_i00" />
@@ -674,9 +674,9 @@
 		<set name="weight" val="523" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="736" />
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12035" name="Common Item - Reinforced Leather Boots" type="Armor">
 		<set name="icon" val="icon.armor_t13_b_i00" />
@@ -689,9 +689,9 @@
 		<set name="weight" val="427" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="392" />
-		<for>
-			<add order="0" stat="pDef" val="24" />
-		</for>
+		<stats>
+			<stat type="pDef">24</stat>
+		</stats>
 	</item>
 	<item id="12036" name="Common Item - Reinforced Leather Shirt" type="Armor">
 		<set name="icon" val="icon.armor_t13_u_i00" />
@@ -705,9 +705,9 @@
 		<set name="weight" val="1523" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="1178" />
-		<for>
-			<add order="0" stat="pDef" val="73" />
-		</for>
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
 	</item>
 	<item id="12037" name="Common Item - Reinforced Leather Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t13_g_i00" />
@@ -720,9 +720,9 @@
 		<set name="weight" val="213" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="392" />
-		<for>
-			<add order="0" stat="pDef" val="24" />
-		</for>
+		<stats>
+			<stat type="pDef">24</stat>
+		</stats>
 	</item>
 	<item id="12038" name="Common Item - Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t10_g_i00" />
@@ -735,9 +735,9 @@
 		<set name="weight" val="213" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="392" />
-		<for>
-			<add order="0" stat="pDef" val="24" />
-		</for>
+		<stats>
+			<stat type="pDef">24</stat>
+		</stats>
 	</item>
 	<item id="12039" name="Common Item - Dwarven Scale Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t15_l_i00" />
@@ -754,9 +754,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="12040" name="Common Item - Linen Shirt" type="Armor">
 		<set name="icon" val="icon.etc_shirts_d_i01" />
@@ -769,9 +769,9 @@
 		<set name="weight" val="43" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="982" />
-		<for>
-			<add order="0" stat="pDef" val="12" />
-		</for>
+		<stats>
+			<stat type="pDef">12</stat>
+		</stats>
 	</item>
 	<item id="12041" name="Common Item - Mithril Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t19_l_i00" />
@@ -788,9 +788,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="12042" name="Common Item - Mithril Banded Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t10_l_i00" />
@@ -804,9 +804,9 @@
 		<set name="weight" val="527" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="736" />
-		<for>
-			<add order="0" stat="pDef" val="46" />
-		</for>
+		<stats>
+			<stat type="pDef">46</stat>
+		</stats>
 	</item>
 	<item id="12043" name="Common Item - Mithril Banded Mail" type="Armor">
 		<set name="icon" val="icon.armor_t10_u_i00" />
@@ -820,9 +820,9 @@
 		<set name="weight" val="1523" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="1178" />
-		<for>
-			<add order="0" stat="pDef" val="73" />
-		</for>
+		<stats>
+			<stat type="pDef">73</stat>
+		</stats>
 	</item>
 	<item id="12044" name="Common Item - Breastplate" type="Armor">
 		<set name="icon" val="icon.armor_t40_u_i00" />
@@ -839,9 +839,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="97" />
-		</for>
+		<stats>
+			<stat type="pDef">97</stat>
+		</stats>
 	</item>
 	<item id="12045" name="Common Item - Boots of Knowledge" type="Armor">
 		<set name="icon" val="icon.armor_t41_b_i00" />
@@ -854,9 +854,9 @@
 		<set name="weight" val="423" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="392" />
-		<for>
-			<add order="0" stat="pDef" val="24" />
-		</for>
+		<stats>
+			<stat type="pDef">24</stat>
+		</stats>
 	</item>
 	<item id="12046" name="Common Item - Gloves of Knowledge" type="Armor">
 		<set name="icon" val="icon.armor_t41_g_i00" />
@@ -869,9 +869,9 @@
 		<set name="weight" val="213" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="392" />
-		<for>
-			<add order="0" stat="pDef" val="24" />
-		</for>
+		<stats>
+			<stat type="pDef">24</stat>
+		</stats>
 	</item>
 	<item id="12047" name="Common Item - Tunic of Knowledge" type="Armor">
 		<set name="icon" val="icon.armor_t41_u_i00" />
@@ -888,10 +888,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="49" />
-			<add stat="maxMp" val="147" />
-		</for>
+		<stats>
+			<stat type="pDef">49</stat>
+			<stat type="maxMp">147</stat>
+		</stats>
 	</item>
 	<item id="12048" name="Common Item - Stockings of Knowledge" type="Armor">
 		<set name="icon" val="icon.armor_t41_l_i00" />
@@ -908,10 +908,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="30" />
-			<add stat="maxMp" val="92" />
-		</for>
+		<stats>
+			<stat type="pDef">30</stat>
+			<stat type="maxMp">92</stat>
+		</stats>
 	</item>
 	<item id="12049" name="Common Item - Compound Scale Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t20_l_i00" />
@@ -928,9 +928,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="61" />
-		</for>
+		<stats>
+			<stat type="pDef">61</stat>
+		</stats>
 	</item>
 	<item id="12050" name="Common Item - Helmet" type="Armor">
 		<set name="icon" val="icon.armor_helmet_i00" />
@@ -943,9 +943,9 @@
 		<set name="weight" val="213" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="590" />
-		<for>
-			<add order="0" stat="pDef" val="37" />
-		</for>
+		<stats>
+			<stat type="pDef">37</stat>
+		</stats>
 	</item>
 	<item id="12051" name="Common Item - Hoplon" type="Armor">
 		<set name="icon" val="icon.shield_hoplon_i00" />
@@ -961,11 +961,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="128" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">128</stat>
+		</stats>
 	</item>
 	<item id="12052" name="Common Item - Manticore Skin Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t42_l_i00" />
@@ -979,9 +979,9 @@
 		<set name="weight" val="517" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="1044" />
-		<for>
-			<add order="0" stat="pDef" val="48" />
-		</for>
+		<stats>
+			<stat type="pDef">48</stat>
+		</stats>
 	</item>
 	<item id="12053" name="Common Item - Manticore Skin Boots" type="Armor">
 		<set name="icon" val="icon.armor_t42_b_i00" />
@@ -994,9 +994,9 @@
 		<set name="weight" val="420" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="556" />
-		<for>
-			<add order="0" stat="pDef" val="27" />
-		</for>
+		<stats>
+			<stat type="pDef">27</stat>
+		</stats>
 	</item>
 	<item id="12054" name="Common Item - Manticore Skin Shirt" type="Armor">
 		<set name="icon" val="icon.armor_t42_u_i00" />
@@ -1010,9 +1010,9 @@
 		<set name="weight" val="1507" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="1670" />
-		<for>
-			<add order="0" stat="pDef" val="77" />
-		</for>
+		<stats>
+			<stat type="pDef">77</stat>
+		</stats>
 	</item>
 	<item id="12055" name="Common Item - Manticore Skin Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t42_g_i00" />
@@ -1025,9 +1025,9 @@
 		<set name="weight" val="210" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="556" />
-		<for>
-			<add order="0" stat="pDef" val="27" />
-		</for>
+		<stats>
+			<stat type="pDef">27</stat>
+		</stats>
 	</item>
 	<item id="12056" name="Common Item - Mithril Scale Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t40_l_i00" />
@@ -1044,9 +1044,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="64" />
-		</for>
+		<stats>
+			<stat type="pDef">64</stat>
+		</stats>
 	</item>
 	<item id="12057" name="Common Item - Mithril Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t51_u_i00" />
@@ -1063,10 +1063,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="52" />
-			<add stat="maxMp" val="169" />
-		</for>
+		<stats>
+			<stat type="pDef">52</stat>
+			<stat type="maxMp">169</stat>
+		</stats>
 	</item>
 	<item id="12058" name="Common Item - Mithril Stockings" type="Armor">
 		<set name="icon" val="icon.armor_t51_l_i00" />
@@ -1083,10 +1083,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="32" />
-			<add stat="maxMp" val="105" />
-		</for>
+		<stats>
+			<stat type="pDef">32</stat>
+			<stat type="maxMp">105</stat>
+		</stats>
 	</item>
 	<item id="12059" name="Common Item - Brigandine" type="Armor">
 		<set name="icon" val="icon.armor_t43_u_i00" />
@@ -1103,9 +1103,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="103" />
-		</for>
+		<stats>
+			<stat type="pDef">103</stat>
+		</stats>
 	</item>
 	<item id="12060" name="Common Item - Brigandine Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t43_l_i00" />
@@ -1122,9 +1122,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="64" />
-		</for>
+		<stats>
+			<stat type="pDef">64</stat>
+		</stats>
 	</item>
 	<item id="12061" name="Common Item - Brigandine Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t43_g_i00" />
@@ -1137,9 +1137,9 @@
 		<set name="weight" val="210" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="556" />
-		<for>
-			<add order="0" stat="pDef" val="27" />
-		</for>
+		<stats>
+			<stat type="pDef">27</stat>
+		</stats>
 	</item>
 	<item id="12062" name="Common Item - Brigandine Boots" type="Armor">
 		<set name="icon" val="icon.armor_t43_b_i00" />
@@ -1152,9 +1152,9 @@
 		<set name="weight" val="417" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="556" />
-		<for>
-			<add order="0" stat="pDef" val="27" />
-		</for>
+		<stats>
+			<stat type="pDef">27</stat>
+		</stats>
 	</item>
 	<item id="12063" name="Common Item - Brigandine Shield" type="Armor">
 		<set name="icon" val="icon.shield_brigandine_shield_i00" />
@@ -1170,11 +1170,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="142" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">142</stat>
+		</stats>
 	</item>
 	<item id="12064" name="Common Item - Brigandine Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -1187,9 +1187,9 @@
 		<set name="weight" val="210" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="834" />
-		<for>
-			<add order="0" stat="pDef" val="41" />
-		</for>
+		<stats>
+			<stat type="pDef">41</stat>
+		</stats>
 	</item>
 	<item id="12065" name="Common Item - Elven Mithril Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t51_g_i00" />
@@ -1202,9 +1202,9 @@
 		<set name="weight" val="213" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="556" />
-		<for>
-			<add order="0" stat="pDef" val="27" />
-		</for>
+		<stats>
+			<stat type="pDef">27</stat>
+		</stats>
 	</item>
 	<item id="12066" name="Common Item - Elven Mithril Boots" type="Armor">
 		<set name="icon" val="icon.armor_t51_b_i00" />
@@ -1217,9 +1217,9 @@
 		<set name="weight" val="417" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="556" />
-		<for>
-			<add order="0" stat="pDef" val="27" />
-		</for>
+		<stats>
+			<stat type="pDef">27</stat>
+		</stats>
 	</item>
 	<item id="12067" name="Common Item - Striped Linen Shirt" type="Armor">
 		<set name="icon" val="icon.etc_stripe_shirts_d_i01" />
@@ -1232,9 +1232,9 @@
 		<set name="weight" val="43" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="1392" />
-		<for>
-			<add order="0" stat="pDef" val="14" />
-		</for>
+		<stats>
+			<stat type="pDef">14</stat>
+		</stats>
 	</item>
 	<item id="12068" name="Common Item - Rip Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t40_g_i00" />
@@ -1247,9 +1247,9 @@
 		<set name="weight" val="210" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="556" />
-		<for>
-			<add order="0" stat="pDef" val="27" />
-		</for>
+		<stats>
+			<stat type="pDef">27</stat>
+		</stats>
 	</item>
 	<item id="12069" name="Common Item - Kite Shield" type="Armor">
 		<set name="icon" val="icon.shield_kite_shield_i00" />
@@ -1265,11 +1265,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="142" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">142</stat>
+		</stats>
 	</item>
 	<item id="12070" name="Common Item - Boots of Strength" type="Armor">
 		<set name="icon" val="icon.armor_t40_b_i00" />
@@ -1282,9 +1282,9 @@
 		<set name="weight" val="417" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="556" />
-		<for>
-			<add order="0" stat="pDef" val="27" />
-		</for>
+		<stats>
+			<stat type="pDef">27</stat>
+		</stats>
 	</item>
 	<item id="12071" name="Common Item - Assault Boots" type="Armor">
 		<set name="icon" val="icon.armor_t44_b_i00" />
@@ -1297,9 +1297,9 @@
 		<set name="weight" val="413" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="712" />
-		<for>
-			<add order="0" stat="pDef" val="29" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="12072" name="Common Item - Mithril Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t46_g_i00" />
@@ -1312,9 +1312,9 @@
 		<set name="weight" val="210" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="712" />
-		<for>
-			<add order="0" stat="pDef" val="29" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="12073" name="Common Item - Square Shield" type="Armor">
 		<set name="icon" val="icon.shield_square_shield_i00" />
@@ -1330,11 +1330,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="154" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">154</stat>
+		</stats>
 	</item>
 	<item id="12074" name="Common Item - Salamander Skin Mail" type="Armor">
 		<set name="icon" val="icon.armor_t45_ul_i00" />
@@ -1348,9 +1348,9 @@
 		<set name="weight" val="2033" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="3460" />
-		<for>
-			<add order="0" stat="pDef" val="136" />
-		</for>
+		<stats>
+			<stat type="pDef">136</stat>
+		</stats>
 	</item>
 	<item id="12075" name="Common Item - Salamander Skin Boots" type="Armor">
 		<set name="icon" val="icon.armor_t45_b_i00" />
@@ -1363,9 +1363,9 @@
 		<set name="weight" val="410" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="712" />
-		<for>
-			<add order="0" stat="pDef" val="29" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="12076" name="Common Item - Ogre Power Gauntlets" type="Armor">
 		<set name="icon" val="icon.armor_t45_g_i00" />
@@ -1378,9 +1378,9 @@
 		<set name="weight" val="207" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="712" />
-		<for>
-			<add order="0" stat="pDef" val="29" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="12077" name="Common Item - Plate Boots" type="Armor">
 		<set name="icon" val="icon.armor_t46_b_i00" />
@@ -1393,9 +1393,9 @@
 		<set name="weight" val="413" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="712" />
-		<for>
-			<add order="0" stat="pDef" val="29" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="12078" name="Common Item - Plate Shield" type="Armor">
 		<set name="icon" val="icon.shield_plate_shield_i00" />
@@ -1411,11 +1411,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="154" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">154</stat>
+		</stats>
 	</item>
 	<item id="12079" name="Common Item - Plate Helmet" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -1428,9 +1428,9 @@
 		<set name="weight" val="210" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="1068" />
-		<for>
-			<add order="0" stat="pDef" val="44" />
-		</for>
+		<stats>
+			<stat type="pDef">44</stat>
+		</stats>
 	</item>
 	<item id="12080" name="Common Item - Plate Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t46_l_i00" />
@@ -1447,9 +1447,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="70" />
-		</for>
+		<stats>
+			<stat type="pDef">70</stat>
+		</stats>
 	</item>
 	<item id="12081" name="Common Item - Half Plate Armor" type="Armor">
 		<set name="icon" val="icon.armor_t46_u_i00" />
@@ -1466,9 +1466,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="111" />
-		</for>
+		<stats>
+			<stat type="pDef">111</stat>
+		</stats>
 	</item>
 	<item id="12082" name="Common Item - Sage's Worn Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t44_g_i00" />
@@ -1481,9 +1481,9 @@
 		<set name="weight" val="210" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="712" />
-		<for>
-			<add order="0" stat="pDef" val="29" />
-		</for>
+		<stats>
+			<stat type="pDef">29</stat>
+		</stats>
 	</item>
 	<item id="12083" name="Common Item - Sage's Rags" type="Armor">
 		<set name="icon" val="icon.armor_t44_ul_i00" />
@@ -1500,10 +1500,10 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="90" />
-			<add stat="maxMp" val="320" />
-		</for>
+		<stats>
+			<stat type="pDef">90</stat>
+			<stat type="maxMp">320</stat>
+		</stats>
 	</item>
 	<item id="12084" name="Common Item - Reinforced Mithril Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t47_l_i00" />
@@ -1517,9 +1517,9 @@
 		<set name="weight" val="510" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="1686" />
-		<for>
-			<add order="0" stat="pDef" val="56" />
-		</for>
+		<stats>
+			<stat type="pDef">56</stat>
+		</stats>
 	</item>
 	<item id="12085" name="Common Item - Reinforced Mithril Boots" type="Armor">
 		<set name="icon" val="icon.armor_t47_b_i00" />
@@ -1532,9 +1532,9 @@
 		<set name="weight" val="410" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="900" />
-		<for>
-			<add order="0" stat="pDef" val="32" />
-		</for>
+		<stats>
+			<stat type="pDef">32</stat>
+		</stats>
 	</item>
 	<item id="12086" name="Common Item - Reinforced Mithril Shirt" type="Armor">
 		<set name="icon" val="icon.armor_t47_u_i00" />
@@ -1548,9 +1548,9 @@
 		<set name="weight" val="1490" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="2700" />
-		<for>
-			<add order="0" stat="pDef" val="90" />
-		</for>
+		<stats>
+			<stat type="pDef">90</stat>
+		</stats>
 	</item>
 	<item id="12087" name="Common Item - Reinforced Mithril Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t47_g_i00" />
@@ -1563,9 +1563,9 @@
 		<set name="weight" val="207" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="900" />
-		<for>
-			<add order="0" stat="pDef" val="32" />
-		</for>
+		<stats>
+			<stat type="pDef">32</stat>
+		</stats>
 	</item>
 	<item id="12088" name="Common Item - Dwarven Chain Boots" type="Armor">
 		<set name="icon" val="icon.armor_t60_b_i00" />
@@ -1578,9 +1578,9 @@
 		<set name="weight" val="403" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="900" />
-		<for>
-			<add order="0" stat="pDef" val="32" />
-		</for>
+		<stats>
+			<stat type="pDef">32</stat>
+		</stats>
 	</item>
 	<item id="12089" name="Common Item - Boots of Seal" type="Armor">
 		<set name="icon" val="icon.armor_t44_b_i00" />
@@ -1593,9 +1593,9 @@
 		<set name="weight" val="407" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="900" />
-		<for>
-			<add order="0" stat="pDef" val="32" />
-		</for>
+		<stats>
+			<stat type="pDef">32</stat>
+		</stats>
 	</item>
 	<item id="12090" name="Common Item - Chain Hood" type="Armor">
 		<set name="icon" val="icon.armor_leather_helmet_i00" />
@@ -1608,9 +1608,9 @@
 		<set name="weight" val="207" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="1348" />
-		<for>
-			<add order="0" stat="pDef" val="47" />
-		</for>
+		<stats>
+			<stat type="pDef">47</stat>
+		</stats>
 	</item>
 	<item id="12091" name="Common Item - Eldarake" type="Armor">
 		<set name="icon" val="icon.shield_eldarake_i00" />
@@ -1626,11 +1626,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="166" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">166</stat>
+		</stats>
 	</item>
 	<item id="12092" name="Common Item - Chain Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t48_g_i00" />
@@ -1643,9 +1643,9 @@
 		<set name="weight" val="207" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="900" />
-		<for>
-			<add order="0" stat="pDef" val="32" />
-		</for>
+		<stats>
+			<stat type="pDef">32</stat>
+		</stats>
 	</item>
 	<item id="12093" name="Common Item - Chain Boots" type="Armor">
 		<set name="icon" val="icon.armor_t48_b_i00" />
@@ -1658,9 +1658,9 @@
 		<set name="weight" val="407" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="900" />
-		<for>
-			<add order="0" stat="pDef" val="32" />
-		</for>
+		<stats>
+			<stat type="pDef">32</stat>
+		</stats>
 	</item>
 	<item id="12094" name="Common Item - Chain Gaiters" type="Armor">
 		<set name="icon" val="icon.armor_t48_l_i00" />
@@ -1677,9 +1677,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="75" />
-		</for>
+		<stats>
+			<stat type="pDef">75</stat>
+		</stats>
 	</item>
 	<item id="12095" name="Common Item - Chain Mail Shirt" type="Armor">
 		<set name="icon" val="icon.armor_t48_u_i00" />
@@ -1696,9 +1696,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="120" />
-		</for>
+		<stats>
+			<stat type="pDef">120</stat>
+		</stats>
 	</item>
 	<item id="12096" name="Common Item - Chain Shield" type="Armor">
 		<set name="icon" val="icon.shield_chain_shield_i00" />
@@ -1714,11 +1714,11 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<sub stat="rEvas" val="8" />
-			<set stat="rShld" val="20" />
-			<set stat="sDef" val="166" />
-		</for>
+		<stats>
+			<stat type="rEvas">-8</stat>
+			<stat type="rShld">20</stat>
+			<stat type="sDef">166</stat>
+		</stats>
 	</item>
 	<item id="12097" name="Common Item - Karmian Gloves" type="Armor">
 		<set name="icon" val="icon.armor_t53_g_i00" />
@@ -1731,9 +1731,9 @@
 		<set name="weight" val="207" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="900" />
-		<for>
-			<add order="0" stat="pDef" val="32" />
-		</for>
+		<stats>
+			<stat type="pDef">32</stat>
+		</stats>
 	</item>
 	<item id="12098" name="Common Item - Karmian Boots" type="Armor">
 		<set name="icon" val="icon.armor_t53_b_i00" />
@@ -1746,9 +1746,9 @@
 		<set name="weight" val="410" />
 		<set name="is_freightable" val="false" />
 		<set name="price" val="900" />
-		<for>
-			<add order="0" stat="pDef" val="32" />
-		</for>
+		<stats>
+			<stat type="pDef">32</stat>
+		</stats>
 	</item>
 	<item id="12099" name="Common Item - Karmian Tunic" type="Armor">
 		<set name="icon" val="icon.armor_t53_u_i00" />
@@ -1765,9 +1765,9 @@
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
-		<for>
-			<add order="0" stat="pDef" val="60" />
-			<add stat="maxMp" val="225" />
-		</for>
+		<stats>
+			<stat type="pDef">60</stat>
+			<stat type="maxMp">225</stat>
+		</stats>
 	</item>
 </list>

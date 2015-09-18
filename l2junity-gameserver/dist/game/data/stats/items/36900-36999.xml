@@ -341,10 +341,10 @@
 			<skill id="13524" level="1" /> <!-- Lindvior's Earring -->
 			<skill id="13542" level="1" /> <!-- Lindvior's Earring -->
 		</skills>
-		<for>
-			<add stat="mDef" val="170.0" />
+		<stats>
+			<stat type="mDef">170</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="36947" name="Bottle of Lindvior's Soul" type="EtcItem">
 		<!-- No longer provided -->
@@ -365,10 +365,10 @@
 			<skill id="13525" level="1" /> <!-- Blessed Lindvior's Earring -->
 			<skill id="13526" level="1" /> <!-- Blessed Lindvior's Earring -->
 		</skills>
-		<for>
-			<add stat="mDef" val="170.0" />
+		<stats>
+			<stat type="mDef">170</stat>
 			<enchant stat="mDef" val="0" />
-		</for>
+		</stats>
 	</item>
 	<item id="36949" name="Chaos Essence" type="EtcItem">
 		<!-- Mysterious essence with the power of chaos. Take it to Hardin at the Reliquary of the Giants to change your specialized awakened class. Cannot be used by Ertheia. Can be used only by the main class. 30-day. -->
@@ -410,13 +410,13 @@
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
 		<set name="default_action" val="EQUIP" />
-		<for>
-			<set stat="pAtk" val="1.0" />
-			<set stat="mAtk" val="1.0" />
-			<set stat="pAtkSpd" val="325.0" />
-			<add stat="accCombat" val="8.0" />
-			<set stat="rCrit" val="6.0" />
-		</for>
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="rCrit">6</stat>
+		</stats>
 	</item>
 	<item id="36952" name="Air Bike" type="EtcItem">
 		<!-- Masterpiece perfected by a Dwarven Artisan after long hours of work. Double-click the Spellbook to learn the skill of getting on the Air Bike. Can be used only by characters who belong to a clan of level 5 or higher. Can be obtained in the main class status. -->
