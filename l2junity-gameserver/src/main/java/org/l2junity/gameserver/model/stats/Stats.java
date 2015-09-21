@@ -64,8 +64,10 @@ public enum Stats
 	MAX_RECOVERABLE_MP("maxRecoverableMp"),
 	MAX_RECOVERABLE_CP("maxRecoverableCp"),
 	REGENERATE_HP_RATE("regHp"),
+	REGENERATE_HP_MOVE_RATE("regHpMove"),
 	REGENERATE_CP_RATE("regCp"),
 	REGENERATE_MP_RATE("regMp"),
+	REGENERATE_MP_MOVE_RATE("regMpMove"),
 	MANA_CHARGE("manaCharge"),
 	HEAL_EFFECT("healEffect"),
 	HEAL_POWER("healPower"),
@@ -105,6 +107,7 @@ public enum Stats
 	
 	// ATTACK & DEFENCE RATES
 	EVASION_RATE("rEvas", new PEvasionRateFinalizer()),
+	EVASION_RATE_MOVE("rEvasMove"),
 	MAGIC_EVASION_RATE("mEvas", new MEvasionRateFinalizer()),
 	P_SKILL_EVASION("pSkillEvas"),
 	DEFENCE_CRITICAL_RATE("defCritRate"),

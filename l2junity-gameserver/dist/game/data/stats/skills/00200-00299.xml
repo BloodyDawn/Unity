@@ -268,8 +268,11 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="rEvas" val="#evas">
-					<player running="true" />
+				<add stat="rEvasMove" val="#evas">
+					<and>
+						<player moving="true" />
+						<player running="true" />
+					</and>
 				</add>
 			</effect>
 			<effect name="DefenceTrait">

@@ -903,10 +903,10 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="regHp" val="#hp">
+				<add stat="regHpMove" val="#hp">
 					<player resting="true" />
 				</add>
-				<add stat="regMp" val="#mp">
+				<add stat="regMpMove" val="#mp">
 					<player resting="true" />
 				</add>
 			</effect>
@@ -1027,11 +1027,17 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="regHp" val="#hp">
-					<player running="true" />
+				<add stat="regHpMove" val="#hp">
+					<and>
+						<player running="true" />
+						<player moving="true" />
+					</and>
 				</add>
-				<add stat="regMp" val="#mp">
-					<player running="true" />
+				<add stat="regMpMove" val="#mp">
+					<and>
+						<player running="true" />
+						<player moving="true" />
+					</and>
 				</add>
 			</effect>
 			<effect name="DefenceTrait">

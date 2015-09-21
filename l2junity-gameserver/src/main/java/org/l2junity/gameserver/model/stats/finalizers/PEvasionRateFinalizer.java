@@ -75,6 +75,7 @@ public class PEvasionRateFinalizer implements IStatsFunction
 				baseValue += (level - 69) + 2;
 			}
 		}
-		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue), Config.MAX_EVASION);
+		
+		return validateValue(creature, Stats.defaultValue(creature, stat, baseValue) + creature.getStat().getValue(Stats.EVASION_RATE_MOVE, 0), Config.MAX_EVASION);
 	}
 }
