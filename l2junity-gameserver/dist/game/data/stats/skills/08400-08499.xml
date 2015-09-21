@@ -1158,18 +1158,14 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
+			<effect name="StatByMoveType">
+				<param stat="REGENERATE_MP_RATE" type="STANDING" value="#regMp" />
 				<add stat="pDef" val="#pDef">
 					<using kind="HEAVY" />
 				</add>
-				<add stat="regMpMove" val="#regMp">
-					<and>
-						<player resting="true" />
-						<or>
-							<player standing="true" />
-						</or>
-					</and>
-				</add>
+			</effect>
+			<effect name="StatByMoveType">
+				<param stat="REGENERATE_MP_RATE" type="SITTING" value="#regMp" />
 			</effect>
 		</for>
 	</skill>
