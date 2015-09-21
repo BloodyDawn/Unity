@@ -26,10 +26,12 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Stream;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.MathUtil;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.CharEffectList;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -37,6 +39,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.TraitType;
 import org.l2junity.gameserver.model.stats.functions.FuncAdd;
@@ -61,6 +64,7 @@ public class CharStat
 	
 	private final Map<Stats, Double> _statsAdd = new EnumMap<>(Stats.class);
 	private final Map<Stats, Double> _statsMul = new EnumMap<>(Stats.class);
+	private final Map<Stats, Map<MoveType, Double>> _moveTypeStats = new ConcurrentHashMap<>();
 	
 	private final ReentrantReadWriteLock _lock = new ReentrantReadWriteLock();
 	
@@ -839,5 +843,15 @@ public class CharStat
 			processStats(effected, funcClass, Stats.FLY_RUN_SPEED, value);
 			processStats(effected, funcClass, Stats.FLY_WALK_SPEED, value);
 		}
+	}
+	
+	public double getMoveTypeValue(Stats stat, MoveType type)
+	{
+		return _moveTypeStats.getOrDefault(stat, Collections.emptyMap()).getOrDefault(type, 0d);
+	}
+	
+	public void mergeMoveTypeValue(Stats stat, MoveType type, double value)
+	{
+		_moveTypeStats.computeIfAbsent(stat, key -> new ConcurrentHashMap<>()).merge(type, value, MathUtil::add);
 	}
 }

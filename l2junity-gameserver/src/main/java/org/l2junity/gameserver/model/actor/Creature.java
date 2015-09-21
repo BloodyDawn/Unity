@@ -138,6 +138,7 @@ import org.l2junity.gameserver.model.skills.SkillChannelizer;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.Formulas;
+import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.ZoneRegion;
@@ -6835,5 +6836,18 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public CreatureContainer getSeenCreatures()
 	{
 		return _seenCreatures;
+	}
+	
+	public MoveType getMoveType()
+	{
+		if (isMoving() && isRunning())
+		{
+			return MoveType.RUNNING;
+		}
+		else if (isMoving() && !isRunning())
+		{
+			return MoveType.WALKING;
+		}
+		return MoveType.STANDING;
 	}
 }

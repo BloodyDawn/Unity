@@ -187,6 +187,7 @@ public final class EffectMasterHandler
 		SoulEating.class,
 		Sow.class,
 		Spoil.class,
+		StatByMoveType.class,
 		EffectFlag.class,
 		StaticDamage.class,
 		StealAbnormal.class,

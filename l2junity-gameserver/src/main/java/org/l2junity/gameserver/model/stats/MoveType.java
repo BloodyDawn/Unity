@@ -19,15 +19,12 @@
 package org.l2junity.gameserver.model.stats;
 
 /**
- * Enum of move types.
- * @author GKR
+ * @author UnAfraid
  */
 public enum MoveType
 {
-	WALK,
-	RUN,
-	FAST_SWIM,
-	SLOW_SWIM,
-	FAST_FLY,
-	SLOW_FLY
+	WALKING,
+	RUNNING,
+	SITTING,
+	STANDING,
 }

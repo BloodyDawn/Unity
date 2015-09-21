@@ -248,6 +248,7 @@ import org.l2junity.gameserver.model.stats.BaseStats;
 import org.l2junity.gameserver.model.stats.BasicProperty;
 import org.l2junity.gameserver.model.stats.BasicPropertyResist;
 import org.l2junity.gameserver.model.stats.Formulas;
+import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.variables.AccountVariables;
 import org.l2junity.gameserver.model.variables.PlayerVariables;
@@ -14100,5 +14101,15 @@ public final class PlayerInstance extends Playable
 	public boolean isFishing()
 	{
 		return _fishing.isFishing();
+	}
+	
+	@Override
+	public MoveType getMoveType()
+	{
+		if (isSitting())
+		{
+			return MoveType.SITTING;
+		}
+		return super.getMoveType();
 	}
 }

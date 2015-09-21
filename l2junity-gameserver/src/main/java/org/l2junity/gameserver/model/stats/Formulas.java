@@ -197,8 +197,6 @@ public final class Formulas
 			init = ((L2PetInstance) cha).getPetLevelData().getPetRegenHP() * Config.PET_HP_REGEN_MULTIPLIER;
 		}
 		
-		hpRegenBonus += cha.getStat().getValue(Stats.REGENERATE_HP_MOVE_RATE, 0);
-		
 		return (cha.getStat().getValue(Stats.REGENERATE_HP_RATE, Math.max(1, init)) * hpRegenMultiplier) + hpRegenBonus;
 	}
 	
@@ -300,8 +298,6 @@ public final class Formulas
 		{
 			init = ((L2PetInstance) cha).getPetLevelData().getPetRegenMP() * Config.PET_MP_REGEN_MULTIPLIER;
 		}
-		
-		mpRegenBonus += cha.getStat().getValue(Stats.REGENERATE_MP_MOVE_RATE, 0);
 		
 		return (cha.getStat().getValue(Stats.REGENERATE_MP_RATE, Math.max(1, init)) * mpRegenMultiplier) + mpRegenBonus;
 	}

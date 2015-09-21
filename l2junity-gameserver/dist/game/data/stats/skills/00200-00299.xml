@@ -267,13 +267,8 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff">
-				<add stat="rEvasMove" val="#evas">
-					<and>
-						<player moving="true" />
-						<player running="true" />
-					</and>
-				</add>
+			<effect name="StatByMoveType">
+				<param stat="EVASION_RATE" type="RUNNING" value="#evas" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param SHOCK="-11" />

@@ -64,10 +64,8 @@ public enum Stats
 	MAX_RECOVERABLE_MP("maxRecoverableMp"),
 	MAX_RECOVERABLE_CP("maxRecoverableCp"),
 	REGENERATE_HP_RATE("regHp"),
-	REGENERATE_HP_MOVE_RATE("regHpMove"),
 	REGENERATE_CP_RATE("regCp"),
 	REGENERATE_MP_RATE("regMp"),
-	REGENERATE_MP_MOVE_RATE("regMpMove"),
 	MANA_CHARGE("manaCharge"),
 	HEAL_EFFECT("healEffect"),
 	HEAL_POWER("healPower"),
@@ -107,7 +105,6 @@ public enum Stats
 	
 	// ATTACK & DEFENCE RATES
 	EVASION_RATE("rEvas", new PEvasionRateFinalizer()),
-	EVASION_RATE_MOVE("rEvasMove"),
 	MAGIC_EVASION_RATE("mEvas", new MEvasionRateFinalizer()),
 	P_SKILL_EVASION("pSkillEvas"),
 	DEFENCE_CRITICAL_RATE("defCritRate"),
@@ -380,13 +377,13 @@ public enum Stats
 	{
 		final double mul = creature.getStat().getMul(stat);
 		final double add = creature.getStat().getAdd(stat);
-		return base.isPresent() ? defaultValue(creature, stat, base.get()) : mul * add;
+		return base.isPresent() ? defaultValue(creature, stat, base.get()) : mul * (add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType()));
 	}
 	
 	public static double defaultValue(Creature creature, Stats stat, double baseValue)
 	{
 		final double mul = creature.getStat().getMul(stat);
 		final double add = creature.getStat().getAdd(stat);
-		return (baseValue * mul) + add;
+		return (baseValue * mul) + add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType());
 	}
 }
