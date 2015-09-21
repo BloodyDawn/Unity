@@ -1771,11 +1771,15 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="regMp" val="#regMpStand">
+				<add stat="regMpMove" val="#regMpStand">
 					<player standing="true" />
 				</add>
-				<add stat="regMp" val="#regMpWalk">
-					<player moving="true" />
+				<add stat="regMpMove" val="#regMpWalk">
+					<and>
+						<player moving="true" />
+						<player running="false" />
+					</and>
+
 				</add>
 				<add stat="INT" val="2" />
 			</effect>
