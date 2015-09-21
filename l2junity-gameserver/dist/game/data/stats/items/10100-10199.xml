@@ -342,7 +342,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -368,6 +367,7 @@
 			<stat type="pAtkSpd">379</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
+			<stat type="randomDamage">20</stat>
 		</stats>
 	</item>
 	<item id="10126" name="Dynasty Leather Armor" name_additional="Force Master" type="Armor">
@@ -422,7 +422,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -437,6 +436,7 @@
 			<stat type="mAtk">21</stat>
 			<stat type="rCrit">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="10129" name="Scroll of Escape: Fortress" type="EtcItem">
@@ -1106,7 +1106,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -1128,6 +1127,7 @@
 			<stat type="mAtk">1</stat>
 			<stat type="rCrit">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="10168" name="Dynasty Leather Armor" name_additional="Enchanter" type="Armor">

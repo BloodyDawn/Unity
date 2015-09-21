@@ -340,7 +340,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
 		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
@@ -361,6 +360,7 @@
 			<stat type="rCrit">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
 		</stats>
 	</item>
 	<item id="8528" name="Monster Only (Doom Hammer)" type="Weapon">
@@ -368,7 +368,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -388,6 +387,7 @@
 			<stat type="rCrit">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
 		</stats>
 	</item>
 	<item id="8529" name="Monster Only (Knife)" type="Weapon">
@@ -395,7 +395,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -411,6 +410,7 @@
 			<stat type="rCrit">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
 		</stats>
 	</item>
 	<item id="8530" name="Monster Only (Squire's Sword)" type="Weapon">
@@ -418,7 +418,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -440,6 +439,7 @@
 			<stat type="mAtk">5</stat>
 			<stat type="rCrit">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="8531" name="Monster Only (Bone Staff)" type="Weapon">
@@ -447,7 +447,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
@@ -467,6 +466,7 @@
 			<stat type="rCrit">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
 		</stats>
 	</item>
 	<item id="8532" name="Monster Only (Spinebone Sword)" type="Weapon">
@@ -474,7 +474,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -492,6 +491,7 @@
 			<stat type="mAtk">32</stat>
 			<stat type="rCrit">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="8533" name="Monster Only (Crimson Sword)" type="Weapon">
@@ -499,7 +499,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -517,6 +516,7 @@
 			<stat type="mAtk">39</stat>
 			<stat type="rCrit">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="8534" name="Adventurer's Box: C-grade Accessory (Low-grade)" type="EtcItem">
@@ -1062,7 +1062,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
@@ -1085,6 +1084,7 @@
 			<stat type="rCrit">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
 		</stats>
 	</item>
 	<item id="8577" name="Bone Club (Event)" type="Weapon">
@@ -1092,7 +1092,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -1114,6 +1113,7 @@
 			<stat type="rCrit">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
 		</stats>
 	</item>
 	<item id="8578" name="Shining Knife (Event)" type="Weapon">
@@ -1121,7 +1121,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -1143,6 +1142,7 @@
 			<stat type="rCrit">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
 		</stats>
 	</item>
 	<item id="8579" name="Cestus (Event)" type="Weapon">
@@ -1150,7 +1150,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;32;120" />
 		<set name="immediate_effect" val="true" />
@@ -1172,6 +1171,7 @@
 			<stat type="rCrit">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
 		</stats>
 	</item>
 	<item id="8580" name="Forest Bow (Event)" type="Weapon">
@@ -1179,7 +1179,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
 		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
@@ -1203,6 +1202,7 @@
 			<stat type="rCrit">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
 		</stats>
 	</item>
 	<item id="8581" name="Long Sword (Event)" type="Weapon">
@@ -1210,7 +1210,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -1231,6 +1230,7 @@
 			<stat type="mAtk">17</stat>
 			<stat type="rCrit">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="8582" name="Mace of Prayer (Event)" type="Weapon">
@@ -1238,7 +1238,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -1262,6 +1261,7 @@
 			<stat type="rCrit">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
 		</stats>
 	</item>
 	<item id="8583" name="Dark Elven Bow (Event)" type="Weapon">
@@ -1269,7 +1269,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
 		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
@@ -1294,6 +1293,7 @@
 			<stat type="rCrit">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">293</stat>
+			<stat type="randomDamage">5</stat>
 		</stats>
 	</item>
 	<item id="8584" name="Longbow (Event)" type="Weapon">
@@ -1301,7 +1301,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
 		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
@@ -1326,6 +1325,7 @@
 			<stat type="rCrit">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">227</stat>
+			<stat type="randomDamage">5</stat>
 		</stats>
 	</item>
 	<item id="8585" name="Staff of Mana (Event)" type="Weapon">
@@ -1333,7 +1333,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
@@ -1357,6 +1356,7 @@
 			<stat type="rCrit">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
 		</stats>
 	</item>
 	<item id="8586" name="Bastard Sword (Event)" type="Weapon">
@@ -1364,7 +1364,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;42;120" />
 		<set name="immediate_effect" val="true" />
@@ -1386,6 +1385,7 @@
 			<stat type="mAtk">32</stat>
 			<stat type="rCrit">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="8587" name="Divine Tome (Event)" type="Weapon">
@@ -1393,7 +1393,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ETC" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -1416,6 +1415,7 @@
 			<stat type="mAtk">43</stat>
 			<stat type="rCrit">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="8588" name="Single-Edged Jamadhr (Event)" type="Weapon">
@@ -1423,7 +1423,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;32;120" />
 		<set name="immediate_effect" val="true" />
@@ -1446,6 +1445,7 @@
 			<stat type="rCrit">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
 		</stats>
 	</item>
 	<item id="8589" name="Tomahawk (Event)" type="Weapon">
@@ -1453,7 +1453,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -1476,6 +1475,7 @@
 			<stat type="rCrit">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
 		</stats>
 	</item>
 	<item id="8590" name="Poniard Dagger (Event)" type="Weapon">
@@ -1483,7 +1483,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -1506,6 +1505,7 @@
 			<stat type="rCrit">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
 		</stats>
 	</item>
 	<item id="8591" name="Pike (Event)" type="Weapon">
@@ -1513,7 +1513,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
@@ -1539,6 +1538,7 @@
 			<stat type="rCrit">8</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="8592" name="Weapon Coupon (No-grade)" type="EtcItem">

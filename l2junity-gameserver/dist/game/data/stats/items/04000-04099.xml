@@ -275,7 +275,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -286,6 +285,7 @@
 			<stat type="mAtk">6</stat>
 			<stat type="rCrit">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="4028" name="Giant Cannon" type="Weapon">
@@ -293,7 +293,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -315,6 +314,7 @@
 			<stat type="pAtkSpd">433</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
+			<stat type="randomDamage">5</stat>
 		</stats>
 	</item>
 	<item id="4029" name="Red Paper" type="EtcItem">

@@ -146,7 +146,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
@@ -164,6 +163,7 @@
 			<stat type="pAtkSpd">325</stat>
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="14607" name="Mark of Gracia" type="EtcItem">
@@ -427,7 +427,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -457,6 +456,7 @@
 			<stat type="mAtk">38</stat>
 			<stat type="rCrit">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="14622" name="Santa's Sword of Ipos" type="Weapon">
@@ -464,7 +464,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
@@ -494,6 +493,7 @@
 			<stat type="mAtk">38</stat>
 			<stat type="rCrit">8</stat>
 			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="14623" name="Santa's Barakiel Axe" type="Weapon">
@@ -501,7 +501,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -532,6 +531,7 @@
 			<stat type="rCrit">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
 		</stats>
 	</item>
 	<item id="14624" name="Santa's Behemoth' Tuning Fork" type="Weapon">
@@ -539,7 +539,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
@@ -570,6 +569,7 @@
 			<stat type="rCrit">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
 		</stats>
 	</item>
 	<item id="14625" name="Santa's Naga Storm" type="Weapon">
@@ -577,7 +577,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="5" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -608,6 +607,7 @@
 			<stat type="rCrit">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">433</stat>
+			<stat type="randomDamage">5</stat>
 		</stats>
 	</item>
 	<item id="14626" name="Santa's Tiphon Spear" type="Weapon">
@@ -615,7 +615,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
@@ -646,6 +645,7 @@
 			<stat type="rCrit">8</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="14627" name="Santa's Shyeed Bow" type="Weapon">
@@ -653,7 +653,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
 		<set name="attack_range" val="500" />
 		<set name="damage_range" val="0;0;10;0" />
 		<set name="immediate_effect" val="true" />
@@ -686,6 +685,7 @@
 			<stat type="rCrit">12</stat>
 			<stat type="accCombat">-3.75</stat>
 			<stat type="pAtkSpd">227</stat>
+			<stat type="randomDamage">5</stat>
 		</stats>
 	</item>
 	<item id="14628" name="Santa's Sobekk Hurricane" type="Weapon">
@@ -693,7 +693,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUALFIST" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="5" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;32;120" />
 		<set name="immediate_effect" val="true" />
@@ -724,6 +723,7 @@
 			<stat type="rCrit">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">5</stat>
 		</stats>
 	</item>
 	<item id="14629" name="Santa's Themis Tongue" type="Weapon">
@@ -731,7 +731,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -762,6 +761,7 @@
 			<stat type="mAtk">51</stat>
 			<stat type="rCrit">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="14630" name="Santa's Cabrio's Hand" type="Weapon">
@@ -769,7 +769,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="20" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -801,6 +800,7 @@
 			<stat type="rCrit">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">20</stat>
 		</stats>
 	</item>
 	<item id="14631" name="Santa's Daimon Crystal" type="Weapon">
@@ -808,7 +808,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="20" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -840,6 +839,7 @@
 			<stat type="rCrit">6</stat>
 			<stat type="accCombat">8</stat>
 			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
 		</stats>
 	</item>
 	<item id="14632" name="Santa's Éclair Bijou" type="Weapon">
@@ -847,7 +847,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
 		<set name="bodypart" val="rhand" />
-		<set name="random_damage" val="40" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -882,6 +881,7 @@
 			<stat type="rCrit">10</stat>
 			<stat type="accCombat">-1.5</stat>
 			<stat type="pAtkSpd">406</stat>
+			<stat type="randomDamage">40</stat>
 		</stats>
 	</item>
 	<item id="14633" name="Santa's Screaming Vengeance" type="Weapon">
@@ -889,7 +889,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="400" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -924,6 +923,7 @@
 			<stat type="rCrit">10</stat>
 			<stat type="accCombat">-1.5</stat>
 			<stat type="pAtkSpd">303</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="14634" name="Santa's Durendal" type="Weapon">
@@ -931,7 +931,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="15" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
@@ -965,6 +964,7 @@
 			<stat type="rCrit">8</stat>
 			<stat type="accCombat">2</stat>
 			<stat type="pAtkSpd">350</stat>
+			<stat type="randomDamage">15</stat>
 		</stats>
 	</item>
 	<item id="14635" name="Battle Reward Box (Low-grade)" type="EtcItem">
@@ -1816,7 +1816,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="random_damage" val="10" />
 		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;44;120" />
 		<set name="immediate_effect" val="true" />
@@ -1847,6 +1846,7 @@
 			<stat type="mAtk">51</stat>
 			<stat type="rCrit">8</stat>
 			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">10</stat>
 		</stats>
 	</item>
 	<item id="14675" name="Agathion - Neolithica" type="Armor">
