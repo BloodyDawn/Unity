@@ -42,7 +42,7 @@ public class MaxHp extends AbstractEffect
 		super(attachCond, applyCond, set, params);
 		
 		_amount = params.getDouble("amount", 0);
-		switch (params.getString("mode", "diff"))
+		switch (params.getString("mode", "DIFF"))
 		{
 			case "DIFF":
 			{
