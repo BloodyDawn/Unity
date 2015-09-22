@@ -47,9 +47,9 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2BlockInstance;
-import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.cubic.CubicInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -1408,7 +1408,7 @@ public final class Skill implements IIdentifiable
 	 * @param cubic the cubic
 	 * @param targets the targets
 	 */
-	public void activateSkill(L2CubicInstance cubic, Creature... targets)
+	public void activateSkill(CubicInstance cubic, Creature... targets)
 	{
 		activateSkill(cubic.getOwner(), cubic, targets);
 	}
@@ -1419,7 +1419,7 @@ public final class Skill implements IIdentifiable
 	 * @param cubic the cubic that cast the skill, can be {@code null}
 	 * @param targets the targets
 	 */
-	public final void activateSkill(Creature caster, L2CubicInstance cubic, Creature... targets)
+	public final void activateSkill(Creature caster, CubicInstance cubic, Creature... targets)
 	{
 		// TODO: replace with AI
 		switch (getId())

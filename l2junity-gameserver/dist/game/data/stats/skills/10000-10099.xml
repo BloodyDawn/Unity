@@ -1336,8 +1336,8 @@
 		</endEffects>
 	</skill>
 	<skill id="10041" levels="4" name="Summon Cubic of Despair">
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 89 92 94 96 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0010" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -1349,10 +1349,15 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="30000" />
+		<for>
+			<effect name="SummonCubic">
+				<param cubicId="16" cubicLvl="1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10042" levels="3" name="Summon Cubic of Life">
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 91 94 96 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0010" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -1364,11 +1369,17 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="30000" />
+		<for>
+			<effect name="SummonCubic">
+				<param cubicId="16" cubicLvl="1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10043" levels="8" name="Summon Knight Cubic">
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confimed -->
 		<!-- Summons a Knight Cubic. The summoned cubic removes debuffs from you. -->
+		<table name="#cubicLvl"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 96 98 101 105 108 111 115 118 </table>
 		<set name="icon" val="icon.skill0010" />
 		<set name="operateType" val="A1" />
@@ -1381,6 +1392,11 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="30000" />
+		<for>
+			<effect name="SummonCubic">
+				<param cubicId="16" cubicLvl="#cubicLvl" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10044" levels="10" name="Superior Elemental Mastery">
 		<!-- Glory Days confirmed -->
@@ -1503,7 +1519,7 @@
 		</for>
 	</skill>
 	<skill id="10047" levels="3" name="Shield Charge IV">
-	<!-- Strikes with the shield. Attacks target with 16359 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
+		<!-- Strikes with the shield. Attacks target with 16359 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
 		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#effectPoint"> -700 -2 -2 </table>
 		<table name="#mpConsumes"> 58 0 0 </table>

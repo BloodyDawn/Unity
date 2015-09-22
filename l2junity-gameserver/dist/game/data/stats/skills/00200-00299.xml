@@ -1323,7 +1323,7 @@
 	</skill>
 	<skill id="278" levels="6" name="Summon Viper Cubic">
 		<!-- Confirmed CT2.5 -->
-		<table name="#cubicPower"> 531 773 1026 1264 1530 1822 </table>
+		<table name="#cubicLvl"> 1 2 3 4 5 6 </table>
 		<table name="#itemConsumeCount"> 2 3 4 5 5 5 </table>
 		<table name="#magicLvl"> 49 55 60 64 68 72 </table>
 		<table name="#mpConsume"> 35 40 44 48 51 53 </table>
@@ -1343,7 +1343,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic">
-				<param cubicId="4" cubicDelay="20" cubicDuration="900" cubicMaxCount="15" cubicSkillChance="20" cubicPower="#cubicPower" />
+				<param cubicId="4" cubicLvl="#cubicLvl" />
 			</effect>
 		</for>
 	</skill>

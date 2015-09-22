@@ -183,6 +183,7 @@ import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.base.ClassLevel;
 import org.l2junity.gameserver.model.base.PlayerClass;
 import org.l2junity.gameserver.model.base.SubClass;
+import org.l2junity.gameserver.model.cubic.CubicInstance;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.entity.Castle;
@@ -695,7 +696,7 @@ public final class PlayerInstance extends Playable
 	
 	protected boolean _inventoryDisable = false;
 	/** Player's cubics. */
-	private final Map<Integer, L2CubicInstance> _cubics = new ConcurrentSkipListMap<>();
+	private final Map<Integer, CubicInstance> _cubics = new ConcurrentSkipListMap<>();
 	/** Active shots. */
 	protected Set<Integer> _activeSoulShots = ConcurrentHashMap.newKeySet();
 	
@@ -5140,11 +5141,7 @@ public final class PlayerInstance extends Playable
 		// Unsummon Cubics
 		if (!_cubics.isEmpty())
 		{
-			for (L2CubicInstance cubic : _cubics.values())
-			{
-				cubic.stopAction();
-				cubic.cancelDisappear();
-			}
+			_cubics.values().forEach(CubicInstance::deactivate);
 			_cubics.clear();
 		}
 		
@@ -8863,11 +8860,7 @@ public final class PlayerInstance extends Playable
 	{
 		if (!_cubics.isEmpty())
 		{
-			for (L2CubicInstance cubic : _cubics.values())
-			{
-				cubic.stopAction();
-				cubic.cancelDisappear();
-			}
+			_cubics.values().forEach(CubicInstance::deactivate);
 			_cubics.clear();
 			sendPacket(new ExUserInfoCubic(this));
 			broadcastCharInfo();
@@ -8879,13 +8872,12 @@ public final class PlayerInstance extends Playable
 		if (!_cubics.isEmpty())
 		{
 			boolean broadcast = false;
-			for (L2CubicInstance cubic : _cubics.values())
+			for (CubicInstance cubic : _cubics.values())
 			{
-				if (cubic.givenByOther())
+				if (cubic.isGivenByOther())
 				{
-					cubic.stopAction();
-					cubic.cancelDisappear();
-					_cubics.remove(cubic.getId());
+					cubic.deactivate();
+					_cubics.remove(cubic.getTemplate().getId());
 					broadcast = true;
 				}
 			}
@@ -8939,26 +8931,19 @@ public final class PlayerInstance extends Playable
 	
 	/**
 	 * Add a cubic to this player.
-	 * @param cubicId the cubic ID
-	 * @param level
-	 * @param cubicPower
-	 * @param cubicDelay
-	 * @param cubicSkillChance
-	 * @param cubicMaxCount
-	 * @param cubicDuration
-	 * @param givenByOther
+	 * @param cubic
 	 * @return the old cubic for this cubic ID if any, otherwise {@code null}
 	 */
-	public L2CubicInstance addCubic(int cubicId, int level, double cubicPower, int cubicDelay, int cubicSkillChance, int cubicMaxCount, int cubicDuration, boolean givenByOther)
+	public CubicInstance addCubic(CubicInstance cubic)
 	{
-		return _cubics.put(cubicId, new L2CubicInstance(this, cubicId, level, (int) cubicPower, cubicDelay, cubicSkillChance, cubicMaxCount, cubicDuration, givenByOther));
+		return _cubics.put(cubic.getTemplate().getId(), cubic);
 	}
 	
 	/**
 	 * Get the player's cubics.
 	 * @return the cubics
 	 */
-	public Map<Integer, L2CubicInstance> getCubics()
+	public Map<Integer, CubicInstance> getCubics()
 	{
 		return _cubics;
 	}
@@ -8968,7 +8953,7 @@ public final class PlayerInstance extends Playable
 	 * @param cubicId the cubic ID
 	 * @return the cubic with the given cubic ID, {@code null} otherwise
 	 */
-	public L2CubicInstance getCubicById(int cubicId)
+	public CubicInstance getCubicById(int cubicId)
 	{
 		return _cubics.get(cubicId);
 	}
@@ -9229,11 +9214,7 @@ public final class PlayerInstance extends Playable
 		
 		if (!_cubics.isEmpty())
 		{
-			for (L2CubicInstance cubic : _cubics.values())
-			{
-				cubic.stopAction();
-				cubic.cancelDisappear();
-			}
+			_cubics.values().forEach(CubicInstance::deactivate);
 			_cubics.clear();
 			sendPacket(new ExUserInfoCubic(this));
 		}

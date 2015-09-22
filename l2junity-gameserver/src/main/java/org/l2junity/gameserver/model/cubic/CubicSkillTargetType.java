@@ -16,31 +16,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.actor.tasks.cubics;
-
-import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
+package org.l2junity.gameserver.model.cubic;
 
 /**
- * Cubic disappear task.
- * @author Zoey76
+ * @author UnAfraid
  */
-public final class CubicDisappear implements Runnable
+public enum CubicSkillTargetType
 {
-	private final L2CubicInstance _cubic;
-	
-	public CubicDisappear(L2CubicInstance cubic)
-	{
-		_cubic = cubic;
-	}
-	
-	@Override
-	public void run()
-	{
-		if (_cubic != null)
-		{
-			_cubic.stopAction();
-			_cubic.getOwner().getCubics().remove(_cubic.getId());
-			_cubic.getOwner().broadcastUserInfo();
-		}
-	}
+	HEAL,
+	MASTER,
+	TARGET
 }

@@ -36,11 +36,11 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.SiegeClan;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.cubic.CubicInstance;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.entity.Castle;
@@ -826,7 +826,7 @@ public final class Formulas
 		return damage;
 	}
 	
-	public static double calcMagicDam(L2CubicInstance attacker, Creature target, Skill skill, double power, boolean mcrit, byte shld)
+	public static double calcMagicDam(CubicInstance attacker, Creature target, Skill skill, double power, boolean mcrit, byte shld)
 	{
 		int mDef = target.getMDef(attacker.getOwner(), skill);
 		switch (shld)
@@ -838,13 +838,13 @@ public final class Formulas
 				return 1;
 		}
 		
-		int mAtk = attacker.getCubicPower();
+		double mAtk = attacker.getTemplate().getPower();
 		
 		// Cubics MDAM Formula (similar to PDAM formula, but using 91 instead of 70, also resisted by mDef).
 		double damage = 91 * ((91 * Math.sqrt(mAtk)) / mDef) * power;
 		
 		// Failure calculation
-		PlayerInstance owner = attacker.getOwner();
+		PlayerInstance owner = attacker.getOwner().getActingPlayer();
 		if (Config.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(owner, target, skill))
 		{
 			if (calcMagicSuccess(owner, target, skill) && ((target.getLevel() - skill.getMagicLevel()) <= 9))
@@ -1273,7 +1273,7 @@ public final class Formulas
 		return true;
 	}
 	
-	public static boolean calcCubicSkillSuccess(L2CubicInstance attacker, Creature target, Skill skill, byte shld)
+	public static boolean calcCubicSkillSuccess(CubicInstance attacker, Creature target, Skill skill, byte shld)
 	{
 		if (skill.isDebuff())
 		{

@@ -6079,6 +6079,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return getStatus().getCurrentCp();
 	}
 	
+	public final int getCurrentCpPercent()
+	{
+		return (int) ((getCurrentCp() * 100) / getMaxCp());
+	}
+	
 	public final void setCurrentCp(double newCp)
 	{
 		getStatus().setCurrentCp(newCp);
@@ -6092,6 +6097,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public final double getCurrentHp()
 	{
 		return getStatus().getCurrentHp();
+	}
+	
+	public final int getCurrentHpPercent()
+	{
+		return (int) ((getCurrentHp() * 100) / getMaxHp());
 	}
 	
 	public final void setCurrentHp(double newHp)
@@ -6112,6 +6122,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public final double getCurrentMp()
 	{
 		return getStatus().getCurrentMp();
+	}
+	
+	public final int getCurrentMpPercent()
+	{
+		return (int) ((getCurrentMp() * 100) / getMaxMp());
 	}
 	
 	public final void setCurrentMp(double newMp)

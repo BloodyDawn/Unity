@@ -20,6 +20,8 @@ package org.l2junity.commons.util;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
@@ -584,6 +586,22 @@ public interface IXmlReader
 	default <T extends Enum<T>> T parseEnum(NamedNodeMap attrs, Class<T> clazz, String name, T defaultValue)
 	{
 		return parseEnum(attrs.getNamedItem(name), clazz, defaultValue);
+	}
+	
+	/**
+	 * @param node
+	 * @return parses all attributes to a Map
+	 */
+	default Map<String, Object> parseAttributes(Node node)
+	{
+		final NamedNodeMap attrs = node.getAttributes();
+		final Map<String, Object> map = new LinkedHashMap<>();
+		for (int i = 0; i < attrs.getLength(); i++)
+		{
+			final Node att = attrs.item(i);
+			map.put(att.getNodeName(), att.getNodeValue());
+		}
+		return map;
 	}
 	
 	/**
