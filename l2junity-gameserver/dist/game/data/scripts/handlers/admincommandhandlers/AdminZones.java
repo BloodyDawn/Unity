@@ -600,8 +600,8 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 		
 		public ZoneNodeHolder(PlayerInstance player)
 		{
-			_minZ = player.getZ() + 100;
-			_maxZ = player.getZ() - 100;
+			_minZ = player.getZ() - 200;
+			_maxZ = player.getZ() + 200;
 		}
 		
 		public void setName(String name)
