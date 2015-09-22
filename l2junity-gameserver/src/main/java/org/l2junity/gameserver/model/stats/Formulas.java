@@ -928,6 +928,14 @@ public final class Formulas
 			return finalRate > Rnd.get(1000);
 		}
 		
+		// In retail, it appears that when you are higher level attacking lower level mobs, your critical rate is much higher.
+		// Level 91 attacking level 1 appear that nearly all hits are critical. Unconfirmed for skills and pvp.
+		if (activeChar.isNpc() || target.isNpc())
+		{
+			final double levelMod = 1 + (activeChar.getLevelMod() - target.getLevelMod());
+			rate *= levelMod;
+		}
+		
 		double finalRate = target.getStat().getValue(Stats.DEFENCE_CRITICAL_RATE, rate) + target.getStat().getValue(Stats.DEFENCE_CRITICAL_RATE_ADD, 0);
 		return finalRate > Rnd.get(1000);
 	}
@@ -2064,6 +2072,131 @@ public final class Formulas
 			default:
 				return 0;
 		}
+	}
+	
+	/**
+	 * Calculated damage caused by ATTACK of attacker on target.
+	 * @param attacker player or NPC that makes ATTACK
+	 * @param target player or NPC, target of ATTACK
+	 * @param power
+	 * @param shld
+	 * @param crit if the ATTACK have critical success
+	 * @param ss if weapon item was charged by soulshot
+	 * @return
+	 */
+	public static double calcAutoAttackDamage(Creature attacker, Creature target, double power, byte shld, boolean crit, boolean ss)
+	{
+		final double distance = attacker.calculateDistance(target, true, false);
+		
+		if (distance > target.getStat().getValue(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE))
+		{
+			return 0;
+		}
+		
+		// DEFENCE CALCULATION (pDef + sDef)
+		double defence = target.getPDef(attacker);
+		
+		switch (shld)
+		{
+			case SHIELD_DEFENSE_SUCCEED:
+			{
+				if (!Config.ALT_GAME_SHIELD_BLOCKS)
+				{
+					defence += target.getShldDef();
+				}
+				break;
+			}
+			case SHIELD_DEFENSE_PERFECT_BLOCK:
+			{
+				return 1.;
+			}
+		}
+		
+		final Weapon weapon = attacker.getActiveWeaponItem();
+		final boolean isBow = (weapon != null) && weapon.isBowOrCrossBow();
+		
+		double cAtk = 1;
+		double cAtkAdd = 0;
+		double critMod = 0;
+		double ssBonus = ss ? 2 : 1; // TODO: There are items that increase ss damage, including enchant.
+		double attack = attacker.getPAtk(target);
+		double random_damage = attacker.getRandomDamageMultiplier();
+		attack *= random_damage;
+		
+		if (crit)
+		{
+			critMod = isBow ? 0.5 : 1;
+			cAtk = 2 * attacker.getStat().getValue(Stats.CRITICAL_DAMAGE, 1) * target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE, 1);
+			cAtkAdd += attacker.getStat().getValue(Stats.CRITICAL_DAMAGE_ADD, 0);
+			cAtkAdd += target.getStat().getValue(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0);
+		}
+		
+		double proxBonus = (attacker.isInFrontOf(target) ? 0 : (attacker.isBehind(target) ? 0.2 : 0.05)) * attacker.getPAtk(target);
+		attack += proxBonus;
+		
+		// ....................______________Critical Section___________________...._______Non-Critical Section______
+		// ATTACK CALCULATION (((pAtk * cAtk * ss + cAtkAdd) * crit) * weaponMod) + (pAtk (1 - crit) * ss * weaponMod)
+		// ````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+		attack = ((((attack * cAtk * ssBonus) + cAtkAdd) * critMod) * (isBow ? 154 : 77)) + (attack * (1 - critMod) * ssBonus * (isBow ? 154 : 77));
+		
+		// DAMAGE CALCULATION (ATTACK / DEFENCE) * trait bonus * attr bonus * pvp bonus * pve bonus
+		double damage = attack / defence;
+		damage *= calcAttackTraitBonus(attacker, target);
+		damage *= calcAttributeBonus(attacker, target, null);
+		
+		// PvP bonus
+		if (attacker.isPlayable() && target.isPlayable())
+		{
+			damage *= attacker.getStat().getValue(Stats.PVP_PHYSICAL_DMG, 1) * target.getStat().getValue(Stats.PVP_PHYSICAL_DEF, 1);
+		}
+		
+		// PvE Bonus
+		if (target.isAttackable())
+		{
+			if (isBow)
+			{
+				damage *= attacker.getStat().getValue(Stats.PVE_BOW_DMG, 1);
+			}
+			else
+			{
+				damage *= attacker.getStat().getValue(Stats.PVE_PHYSICAL_DMG, 1);
+			}
+			if (!target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (attacker.getActingPlayer() != null) && ((target.getLevel() - attacker.getActingPlayer().getLevel()) >= 2))
+			{
+				int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 1;
+				if (crit)
+				{
+					if (lvlDiff >= Config.NPC_CRIT_DMG_PENALTY.size())
+					{
+						damage *= Config.NPC_CRIT_DMG_PENALTY.get(Config.NPC_CRIT_DMG_PENALTY.size() - 1);
+					}
+					else
+					{
+						damage *= Config.NPC_CRIT_DMG_PENALTY.get(lvlDiff);
+					}
+				}
+				else
+				{
+					if (lvlDiff >= Config.NPC_DMG_PENALTY.size())
+					{
+						damage *= Config.NPC_DMG_PENALTY.get(Config.NPC_DMG_PENALTY.size() - 1);
+					}
+					else
+					{
+						damage *= Config.NPC_DMG_PENALTY.get(lvlDiff);
+					}
+				}
+			}
+		}
+		
+		if ((shld > 0) && Config.ALT_GAME_SHIELD_BLOCKS)
+		{
+			damage -= target.getShldDef();
+		}
+		
+		damage = Math.max(0, damage);
+		
+		return damage;
 	}
 	
 	public static double getAbnormalResist(BasicProperty basicProperty, Creature target)

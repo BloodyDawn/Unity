@@ -1272,7 +1272,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			crit1 = Formulas.calcCrit(getStat().getCriticalHit(), false, this, target);
 			
 			// Calculate physical damages
-			damage1 = (int) Formulas.calcPhysDam(this, target, null, 0, shld1, crit1, attack.hasSoulshot());
+			damage1 = (int) Formulas.calcAutoAttackDamage(this, target, 0, shld1, crit1, attack.hasSoulshot());
 			
 			// Normal attacks have normal damage x 5
 			damage1 = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage1);
@@ -1355,7 +1355,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			crit1 = Formulas.calcCrit(getStat().getCriticalHit(), false, this, target);
 			
 			// Calculate physical damages of hit 1
-			damage1 = (int) Formulas.calcPhysDam(this, target, null, 0, shld1, crit1, attack.hasSoulshot());
+			damage1 = (int) Formulas.calcAutoAttackDamage(this, target, 0, shld1, crit1, attack.hasSoulshot());
 			
 			// Normal attacks have normal damage x 5
 			damage1 = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage1);
@@ -1373,7 +1373,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			crit2 = Formulas.calcCrit(getStat().getCriticalHit(), false, this, target);
 			
 			// Calculate physical damages of hit 2
-			damage2 = (int) Formulas.calcPhysDam(this, target, null, 0, shld2, crit2, attack.hasSoulshot());
+			damage2 = (int) Formulas.calcAutoAttackDamage(this, target, 0, shld2, crit2, attack.hasSoulshot());
 			
 			// Normal attacks have normal damage x 5
 			damage2 = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage2);
@@ -1408,7 +1408,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				{
 					shld = Formulas.calcShldUse(this, surroundTarget);
 					crit = Formulas.calcCrit(getStat().getCriticalHit(), false, this, surroundTarget);
-					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, 0, shld, crit, attack.hasSoulshot());
+					damage = (int) Formulas.calcAutoAttackDamage(this, surroundTarget, 0, shld, crit, attack.hasSoulshot());
 					damage = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage);
 					damage /= 2;
 				}
@@ -1429,7 +1429,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				{
 					shld = Formulas.calcShldUse(this, surroundTarget);
 					crit = Formulas.calcCrit(getStat().getCriticalHit(), false, this, surroundTarget);
-					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, 0, shld, crit, attack.hasSoulshot());
+					damage = (int) Formulas.calcAutoAttackDamage(this, surroundTarget, 0, shld, crit, attack.hasSoulshot());
 					damage = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage);
 					damage /= 2;
 				}
@@ -1480,7 +1480,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			crit1 = Formulas.calcCrit(getStat().getCriticalHit(), false, this, target);
 			
 			// Calculate physical damages
-			damage1 = (int) Formulas.calcPhysDam(this, target, null, 0, shld1, crit1, attack.hasSoulshot());
+			damage1 = (int) Formulas.calcAutoAttackDamage(this, target, 0, shld1, crit1, attack.hasSoulshot());
 			
 			// Normal attacks have normal damage x 5
 			damage1 = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage1);
@@ -1508,7 +1508,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				{
 					shld = Formulas.calcShldUse(this, surroundTarget);
 					crit = Formulas.calcCrit(getStat().getCriticalHit(), false, this, surroundTarget);
-					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, 0, shld, crit, attack.hasSoulshot());
+					damage = (int) Formulas.calcAutoAttackDamage(this, surroundTarget, 0, shld, crit, attack.hasSoulshot());
 					damage = (int) getStat().getValue(Stats.REGULAR_ATTACKS_DMG, damage);
 				}
 				
