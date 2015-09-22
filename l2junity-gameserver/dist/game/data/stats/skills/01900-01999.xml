@@ -1765,7 +1765,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="MaxHp">
-				<param amount="#maxHp" />
+				<param amount="#maxHp" mode="DIFF" />
 			</effect>
 		</for>
 	</skill>
