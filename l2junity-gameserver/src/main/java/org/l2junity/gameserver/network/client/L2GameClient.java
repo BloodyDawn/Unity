@@ -603,7 +603,10 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 	
 	public void close(IOutgoingPacket packet)
 	{
-		_channel.writeAndFlush(packet);
+		if (packet != null)
+		{
+			_channel.writeAndFlush(packet);
+		}
 		_channel.close();
 	}
 	
