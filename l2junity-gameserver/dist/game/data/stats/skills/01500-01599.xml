@@ -2304,27 +2304,37 @@
 		<for>
 			<effect name="Buff">
 				<add stat="cAtkAdd" val="#cAtkAdd" />
-				<!-- add stat="mCAtkAdd" val="#mCAtkAdd" / -->
+				<!-- TODO : add stat="mCAtkAdd" val="#mCAtkAdd" / -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="1578" levels="3" name="Sub - Physical Attribute Resistance Increase">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases resistance to physical attributes by 1. -->
+		<table name="#abnormalResPhysical"> 1 2 3 </table>
 		<set name="icon" val="icon.skill4084" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="abnormalResPhysical" val="#abnormalResPhysical" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1579" levels="3" name="Sub - Mental Attribute Resistance Increase">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases Mental Attack Resistance by 1. -->
+		<table name="#abnormalResMagical"> 1 2 3 </table>
 		<set name="icon" val="icon.skill4116" />
 		<set name="operateType" val="P" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="1" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="abnormalResMagical" val="#abnormalResMagical" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1580" levels="3" name="Sub - Physical Ability Increase">
 		<!-- Max CP + 41, Max HP + 51, and Max MP + 36. -->

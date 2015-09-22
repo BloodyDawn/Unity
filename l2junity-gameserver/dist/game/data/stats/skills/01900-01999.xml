@@ -1354,7 +1354,6 @@
 		</for>
 	</skill>
 	<skill id="1969" levels="1" name="Dual - MP Drain">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Has a chance of recovering your own MP when attacking or using a skill. -->
 		<set name="icon" val="icon.dual_mpsteal" />
 		<set name="operateType" val="P" />
@@ -1362,6 +1361,28 @@
 		<set name="magicCriticalRate" val="5" />
 		<set name="targetType" val="SELF" />
 		<set name="excludedFromCheck" val="true" />
+		<for>
+			<effect name="TriggerSkillByMagicType">
+				<param magicTypes="0;1;2;3;4;22" />
+				<param chance="10" />
+				<param skillId="1995" skillLevel="1" /> <!-- Dual - MP Drain -->
+				<param targetType="SELF" />
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="10" />
+				<param skillId="1995" skillLevel="1" /> <!-- Dual - MP Drain -->
+				<param targetType="SELF" />
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param isCritical="false" />
+				<param minDamage="1" chance="10" />
+				<param skillId="1995" skillLevel="1" /> <!-- Dual - MP Drain -->
+				<param targetType="SELF" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1970" levels="1" name="Dual - Specialized for P. Atk.">
 		<!-- Glory Days confirmed -->
@@ -1622,33 +1643,42 @@
 		</for>
 	</skill>
 	<skill id="1982" levels="1" name="Dual - Shackles of the Giants">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Blocks target's Physical Skills for 5 sec. Can only use on PCs. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="SILENCE_PHYSICAL" />
+		<set name="abnormalVisualEffect" val="SILENCE" />
+		<set name="magicCriticalRate" val="5" />
 		<set name="icon" val="icon.dual_a_pblock" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="600000" />
 		<set name="effectPoint" val="-1" />
-		<set name="abnormalType" val="SILENCE_PHYSICAL" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE" />
-		<set name="magicCriticalRate" val="5" />
 		<set name="effectRange" val="1100" />
 		<set name="magicLvl" val="99" />
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="5" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="isDebuff" val="true" />
+		<set name="staticReuse" val="true" />
+		<cond addName="1" msgId="113">
+			<target player="true" />
+		</cond>
+		<for>
+			<effect name="PhysicalMute" />
+		</for>
 	</skill>
 	<skill id="1983" levels="1" name="Dual - Silence of the Giants">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Blocks target's Magical Skills for 5 sec. Can only use on PCs. -->
+		<set name="abnormalVisualEffect" val="SILENCE" />
 		<set name="icon" val="icon.dual_a_mblock" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -1664,13 +1694,20 @@
 		<set name="abnormalTime" val="5" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="isDebuff" val="true" />
+		<set name="staticReuse" val="true" />
+		<cond addName="1" msgId="113">
+			<target player="true" />
+		</cond>
+		<for>
+			<effect name="Mute" />
+		</for>
 	</skill>
 	<skill id="1984" levels="1" name="Dual - Yoke of the Giants">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Decreases target and nearby enemies' Spd. by 90% for 5 sec. Can only use on PCs. -->
 		<set name="icon" val="icon.dual_a_spdown" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -1688,6 +1725,15 @@
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="9-10" />
 		<set name="isDebuff" val="true" />
+		<set name="staticReuse" val="true" />
+		<cond addName="1" msgId="113">
+			<target player="true" />
+		</cond>
+		<for>
+			<effect name="Debuff">
+				<mul stat="moveSpeed" val="0.1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1985" levels="1" name="Dual - Shield of the Giants">
 		<!-- AUTO GENERATED SKILL -->
@@ -1708,15 +1754,20 @@
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<skill id="1986" levels="4" name="Dual Maximum HP">
-		<table name="#magicLvl"> 85 90 95 99 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Max HP + 463. Can be used when the main/ dual class is Level 85 or above. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#maxHp"> 463 972 1458 1926 </table>
 		<set name="icon" val="icon.skill0917" />
 		<set name="operateType" val="T" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="MaxHp">
+				<param amount="#maxHp" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1987" levels="1" name="Sigel Armor Limit">
 		<!-- AUTO GENERATED SKILL -->
@@ -1791,7 +1842,6 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1995" levels="1" name="Dual - MP Drain">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Restores MP. -->
 		<set name="icon" val="icon.dual_mpsteal" />
 		<set name="operateType" val="A1" />
@@ -1801,6 +1851,11 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="magicLvl" val="99" />
 		<set name="reuseDelay" val="6000" />
+		<for>
+			<effect name="ManaHeal">
+				<param power="68" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1996" levels="2" name="Hurricane Shackle">
 		<!-- AUTO GENERATED SKILL -->

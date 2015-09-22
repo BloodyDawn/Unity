@@ -16,9 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.gameserver.model.stats;
-
-import org.l2junity.gameserver.model.actor.Creature;
+package org.l2junity.gameserver.enums;
 
 /**
  * Basic property type of skills. <BR>
@@ -39,9 +37,4 @@ public enum BasicProperty
 	NONE,
 	PHYSICAL,
 	MAGIC;
-	
-	public int calcBonus(Creature creature)
-	{
-		return creature.getTemplate().getBasicPropertyValue(this);
-	}
 }

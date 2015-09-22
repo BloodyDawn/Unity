@@ -172,6 +172,8 @@ public enum Stats
 	MAGIC_SUCCESS_RES("magicSuccRes"),
 	// BUFF_IMMUNITY("buffImmunity"), //TODO: Implement me
 	DEBUFF_IMMUNITY("debuffImmunity"),
+	ABNORMAL_RESIST_PHYSICAL("abnormalResPhysical"),
+	ABNORMAL_RESIST_MAGICAL("abnormalResMagical"),
 	
 	// ELEMENT POWER
 	FIRE_POWER("firePower", new AttributeFinalizer(AttributeType.FIRE, true)),

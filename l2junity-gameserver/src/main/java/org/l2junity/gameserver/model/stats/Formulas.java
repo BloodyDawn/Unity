@@ -27,6 +27,7 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.HitConditionBonusData;
 import org.l2junity.gameserver.data.xml.impl.KarmaData;
 import org.l2junity.gameserver.enums.AttributeType;
+import org.l2junity.gameserver.enums.BasicProperty;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.ClanHallManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
@@ -1231,7 +1232,7 @@ public final class Formulas
 			magicLevel = target.getLevel() + 3;
 		}
 		
-		final int targetBasicProperty = skill.getBasicProperty().calcBonus(target);
+		double targetBasicProperty = getAbnormalResist(skill.getBasicProperty(), target);
 		final double baseMod = ((((((magicLevel - target.getLevel()) + 3) * skill.getLvlBonusRate()) + activateRate) + 30.0) - targetBasicProperty);
 		final double elementMod = calcAttributeBonus(attacker, target, skill);
 		final double traitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
@@ -1290,9 +1291,11 @@ public final class Formulas
 			return false;
 		}
 		
+		double targetBasicProperty = getAbnormalResist(skill.getBasicProperty(), target);
+		
 		// Calculate BaseRate.
 		double baseRate = skill.getActivateRate();
-		double statMod = 1 + (skill.getBasicProperty().calcBonus(target) / 100);
+		double statMod = 1 + (targetBasicProperty / 100);
 		double rate = (baseRate / statMod);
 		
 		// Resist Modifier.
@@ -2060,6 +2063,25 @@ public final class Formulas
 				return 0.3;
 			default:
 				return 0;
+		}
+	}
+	
+	public static double getAbnormalResist(BasicProperty basicProperty, Creature target)
+	{
+		switch (basicProperty)
+		{
+			case PHYSICAL:
+			{
+				return target.getStat().getValue(Stats.ABNORMAL_RESIST_PHYSICAL);
+			}
+			case MAGIC:
+			{
+				return target.getStat().getValue(Stats.ABNORMAL_RESIST_MAGICAL);
+			}
+			default:
+			{
+				return 0;
+			}
 		}
 	}
 }
