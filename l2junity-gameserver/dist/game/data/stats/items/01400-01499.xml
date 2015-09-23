@@ -959,7 +959,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DAGGER" />
 		<set name="bodypart" val="rhand" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;300;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="101" />
@@ -980,6 +979,7 @@
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
 			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="1472" name="Dreadbane" type="Weapon">
@@ -987,7 +987,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="POLE" />
 		<set name="bodypart" val="lrhand" />
-		<set name="attack_range" val="80" />
 		<set name="damage_range" val="0;0;66;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="101" />
@@ -1011,6 +1010,7 @@
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
 			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">80</stat>
 		</stats>
 	</item>
 	<item id="1473" name="Kasha Wolf Fang" type="EtcItem">

@@ -55,7 +55,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
 		<set name="bodypart" val="rhand" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="122" />
@@ -83,6 +82,7 @@
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
 			<stat type="randomDamage">40</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="10004" name="Dynasty Dualsword" type="Weapon">
@@ -90,7 +90,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="DUAL" />
 		<set name="bodypart" val="lrhand" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_count" val="2398" />
@@ -115,6 +114,7 @@
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
 			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="10005" name="Shadow Item: Fleuret" type="Weapon">
@@ -122,7 +122,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
 		<set name="bodypart" val="rhand" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -154,6 +153,7 @@
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
 			<stat type="randomDamage">40</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="10006" name="Shadow Item: Military Talwar" type="Weapon">
@@ -161,7 +161,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -190,6 +189,7 @@
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
 			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="10007" name="Shadow Item: Hand Crossbow" type="Weapon">
@@ -197,7 +197,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="attack_range" val="400" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="D" />
@@ -227,6 +226,7 @@
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
 			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">400</stat>
 		</stats>
 	</item>
 	<item id="10008" name="Shadow Item: Blinzlasher" type="Weapon">
@@ -234,7 +234,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="RAPIER" />
 		<set name="bodypart" val="rhand" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -266,6 +265,7 @@
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
 			<stat type="randomDamage">40</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="10009" name="Shadow Item: Immortal Edge" type="Weapon">
@@ -273,7 +273,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="ANCIENTSWORD" />
 		<set name="bodypart" val="lrhand" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -302,6 +301,7 @@
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
 			<stat type="randomDamage">15</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="10010" name="Shadow Item: Tathlum" type="Weapon">
@@ -309,7 +309,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="CROSSBOW" />
 		<set name="bodypart" val="lrhand" />
-		<set name="attack_range" val="400" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -339,6 +338,7 @@
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
 			<stat type="randomDamage">10</stat>
+			<stat type="pAtkRange">400</stat>
 		</stats>
 	</item>
 	<item id="10011" name="Shadow Item: War Axe" type="Weapon">
@@ -346,7 +346,6 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
-		<set name="attack_range" val="40" />
 		<set name="damage_range" val="0;0;40;120" />
 		<set name="immediate_effect" val="true" />
 		<set name="crystal_type" val="C" />
@@ -372,6 +371,7 @@
 			<enchant stat="pAtk" val="0" />
 			<enchant stat="mAtk" val="0" />
 			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
 	<item id="10012" name="Scorpion Poison Stinger" type="EtcItem">
