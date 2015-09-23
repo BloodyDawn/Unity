@@ -274,12 +274,14 @@
 		<for>
 			<effect name="StatByMoveType">
 				<param stat="REGENERATE_MP_RATE" type="STANDING" value="1.518" />
-				<add stat="pDef" val="25">
-					<using kind="HEAVY" />
-				</add>
 			</effect>
 			<effect name="StatByMoveType">
 				<param stat="REGENERATE_MP_RATE" type="SITTING" value="1.518" />
+			</effect>
+			<effect name="Buff">
+				<add stat="pDef" val="25">
+					<using kind="HEAVY" />
+				</add>
 			</effect>
 		</for>
 	</skill>
