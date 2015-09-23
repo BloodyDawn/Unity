@@ -71,7 +71,6 @@ public final class L2TrapInstance extends Npc
 		setInstanceId(instanceId);
 		setName(template.getName());
 		setIsInvul(false);
-		
 		_owner = null;
 		_isTriggered = false;
 		_skill = getParameters().getObject("trap_skill", SkillHolder.class);
@@ -164,12 +163,12 @@ public final class L2TrapInstance extends Npc
 	
 	public boolean checkTarget(Creature target)
 	{
-		if (!Skill.checkForAreaOffensiveSkills(this, target, _skill.getSkill(), _isInArena))
+		if (!target.isInsideRadius(this, 300, false, false))
 		{
 			return false;
 		}
 		
-		if (!target.isInsideRadius(this, _skill.getSkill().getAffectRange(), false, false))
+		if (!Skill.checkForAreaOffensiveSkills(this, target, _skill.getSkill(), _isInArena))
 		{
 			return false;
 		}
@@ -209,6 +208,7 @@ public final class L2TrapInstance extends Npc
 				return false;
 			}
 		}
+		
 		return true;
 	}
 	
@@ -384,7 +384,7 @@ public final class L2TrapInstance extends Npc
 		
 		EventDispatcher.getInstance().notifyEventAsync(new OnTrapAction(this, target, TrapAction.TRAP_TRIGGERED), this);
 		
-		ThreadPoolManager.getInstance().scheduleGeneral(new TrapTriggerTask(this), 300);
+		ThreadPoolManager.getInstance().scheduleGeneral(new TrapTriggerTask(this), 500);
 	}
 	
 	public void unSummon()

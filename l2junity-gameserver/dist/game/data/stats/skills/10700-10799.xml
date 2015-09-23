@@ -1020,7 +1020,6 @@
 		<!-- Summons a decoy that receives attacks for you. -->
 		<table name="#magicLvl"> 87 93 99 101 103 105 </table>
 		<table name="#mpConsumes"> 60 66 72 78 84 90 </table>
-		<table name="#npcIds"> 13437 13438 13439 13467 13468 13469 </table>
 		<set name="icon" val="icon.skill10775" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -1033,7 +1032,7 @@
 		<set name="reuseDelay" val="600000" />
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="#npcIds" npcCount="1" />
+				<param npcId="13328" npcCount="1" />
 			</effect>
 		</for>
 	</skill>
