@@ -25,7 +25,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * Parcel Delivery (13)<br>
+ * Parcel Delivery (13)
  * @author nonom
  */
 public class Q00013_ParcelDelivery extends Quest
@@ -35,6 +35,8 @@ public class Q00013_ParcelDelivery extends Quest
 	private static final int VULCAN = 31539;
 	// Item
 	private static final int PACKAGE = 7263;
+	//Misc
+	private static final int MIN_LEVEL = 74;
 	
 	public Q00013_ParcelDelivery()
 	{
@@ -42,6 +44,7 @@ public class Q00013_ParcelDelivery extends Quest
 		addStartNpc(FUNDIN);
 		addTalkId(FUNDIN, VULCAN);
 		registerQuestItems(PACKAGE);
+		addCondMinLevel(MIN_LEVEL, "31274-01.html");
 	}
 	
 	@Override
@@ -63,8 +66,8 @@ public class Q00013_ParcelDelivery extends Quest
 			case "31539-01.html":
 				if (st.isCond(1) && hasQuestItems(player, PACKAGE))
 				{
-					giveAdena(player, 157834, true);
-					addExpAndSp(player, 589092, 58794);
+					giveAdena(player, 271980, true);
+					addExpAndSp(player, 1_279_632, 307);
 					st.exitQuest(false, true);
 				}
 				else
@@ -89,13 +92,10 @@ public class Q00013_ParcelDelivery extends Quest
 		final int npcId = npc.getId();
 		switch (st.getState())
 		{
-			case State.COMPLETED:
-				htmltext = getAlreadyCompletedMsg(player);
-				break;
 			case State.CREATED:
 				if (npcId == FUNDIN)
 				{
-					htmltext = (player.getLevel() >= 74) ? "31274-00.htm" : "31274-01.html";
+					htmltext = "31274-00.htm";
 				}
 				break;
 			case State.STARTED:
@@ -111,6 +111,9 @@ public class Q00013_ParcelDelivery extends Quest
 							break;
 					}
 				}
+				break;
+			case State.COMPLETED:
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 		}
 		return htmltext;
