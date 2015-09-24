@@ -40,6 +40,8 @@ public class Q00017_LightAndDarkness extends Quest
 	private static final int SAINT_ALTAR_4 = 31511;
 	// Item
 	private static final int BLOOD_OF_SAINT = 7168;
+	// Misc
+	private static final int MIN_LEVEL = 61;
 	
 	public Q00017_LightAndDarkness()
 	{
@@ -47,6 +49,8 @@ public class Q00017_LightAndDarkness extends Quest
 		addStartNpc(HIERARCH);
 		addTalkId(HIERARCH, SAINT_ALTAR_1, SAINT_ALTAR_2, SAINT_ALTAR_3, SAINT_ALTAR_4);
 		registerQuestItems(BLOOD_OF_SAINT);
+		addCondMaxLevel(MIN_LEVEL, "31517-02a.html");
+		addCondCompletedQuest(Q00015_SweetWhispers.class.getSimpleName(), "");
 	}
 	
 	@Override
@@ -62,14 +66,9 @@ public class Q00017_LightAndDarkness extends Quest
 		switch (event)
 		{
 			case "31517-02.html":
-				if (player.getLevel() >= 61)
 				{
 					st.startQuest();
 					giveItems(player, BLOOD_OF_SAINT, 4);
-				}
-				else
-				{
-					htmltext = "31517-02a.html";
 				}
 				break;
 			case "31508-02.html":
@@ -101,12 +100,8 @@ public class Q00017_LightAndDarkness extends Quest
 		
 		switch (st.getState())
 		{
-			case State.COMPLETED:
-				htmltext = getAlreadyCompletedMsg(player);
-				break;
 			case State.CREATED:
-				final QuestState st2 = player.getQuestState(Q00015_SweetWhispers.class.getSimpleName());
-				htmltext = ((st2 != null) && (st2.isCompleted())) ? "31517-00.htm" : "31517-06.html";
+				htmltext = "31517-00.htm";
 				break;
 			case State.STARTED:
 				final long blood = getQuestItemsCount(player, BLOOD_OF_SAINT);
@@ -120,7 +115,7 @@ public class Q00017_LightAndDarkness extends Quest
 						}
 						else
 						{
-							addExpAndSp(player, 697040, 54887);
+							addExpAndSp(player, 1_469_840,352);
 							st.exitQuest(false, true);
 							htmltext = "31517-03.html";
 						}
@@ -139,6 +134,8 @@ public class Q00017_LightAndDarkness extends Quest
 						}
 						break;
 				}
+			case State.COMPLETED:
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 		}
 		return htmltext;
