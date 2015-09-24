@@ -115,7 +115,7 @@ public class Q00017_LightAndDarkness extends Quest
 						}
 						else
 						{
-							addExpAndSp(player, 1_469_840,352);
+							addExpAndSp(player, 1_469_840, 352);
 							st.exitQuest(false, true);
 							htmltext = "31517-03.html";
 						}
