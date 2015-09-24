@@ -157,6 +157,7 @@ public final class EffectMasterHandler
 		PhysicalAttack.class,
 		PhysicalAttackHpLink.class,
 		PhysicalAttackMute.class,
+		PhysicalAttackSaveHp.class,
 		PhysicalMute.class,
 		PhysicalSoulAttack.class,
 		PkCount.class,
