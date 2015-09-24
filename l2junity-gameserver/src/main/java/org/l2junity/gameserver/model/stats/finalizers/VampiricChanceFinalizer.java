@@ -16,34 +16,27 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package handlers.effecthandlers;
+package org.l2junity.gameserver.model.stats.finalizers;
 
-import org.l2junity.gameserver.model.StatsSet;
+import java.util.Optional;
+
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.conditions.Condition;
-import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.stats.IStatsFunction;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
  * @author Sdw
  */
-public class VampiricAttack extends AbstractEffect
+public class VampiricChanceFinalizer implements IStatsFunction
 {
-	private final int _amount;
-	private final int _sum;
-	
-	public VampiricAttack(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params) throws IllegalArgumentException
-	{
-		super(attachCond, applyCond, set, params);
-		_amount = params.getInt("amount", 0);
-		_sum = _amount * params.getInt("chance", 0);
-	}
-	
 	@Override
-	public void pump(Creature effected, Skill skill)
+	public double calc(Creature creature, Optional<Double> base, Stats stat)
 	{
-		effected.getStat().mergeAdd(Stats.ABSORB_DAMAGE_PERCENT, _amount / 100);
-		effected.getStat().addToVampiricSum(_sum);
+		throwIfPresent(base);
+		
+		final double amount = creature.getStat().getValue(Stats.ABSORB_DAMAGE_PERCENT, 0) * 100;
+		final double vampiricSum = creature.getStat().getVampiricSum();
+		
+		return amount > 0 ? Stats.defaultValue(creature, stat, Math.min(1.0, vampiricSum / amount / 100)) : 0;
 	}
 }

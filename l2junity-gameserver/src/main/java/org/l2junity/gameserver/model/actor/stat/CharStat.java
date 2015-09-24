@@ -61,6 +61,7 @@ public class CharStat
 	private final int[] _traitsInvul = new int[TraitType.values().length];
 	/** Creature's maximum buff count. */
 	private int _maxBuffCount = Config.BUFFS_MAX_AMOUNT;
+	private int _vampiricSum = 0;
 	
 	private final Map<Stats, Double> _statsAdd = new EnumMap<>(Stats.class);
 	private final Map<Stats, Double> _statsMul = new EnumMap<>(Stats.class);
@@ -739,6 +740,7 @@ public class CharStat
 	{
 		_statsAdd.clear();
 		_statsMul.clear();
+		_vampiricSum = 0;
 		
 		// Initialize default values
 		for (Stats stat : Stats.values())
@@ -853,5 +855,23 @@ public class CharStat
 	public void mergeMoveTypeValue(Stats stat, MoveType type, double value)
 	{
 		_moveTypeStats.computeIfAbsent(stat, key -> new ConcurrentHashMap<>()).merge(type, value, MathUtil::add);
+	}
+	
+	public void addToVampiricSum(int sum)
+	{
+		_vampiricSum += sum;
+	}
+	
+	public int getVampiricSum()
+	{
+		_lock.readLock().lock();
+		try
+		{
+			return _vampiricSum;
+		}
+		finally
+		{
+			_lock.readLock().unlock();
+		}
 	}
 }

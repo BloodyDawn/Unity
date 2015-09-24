@@ -4640,8 +4640,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				}
 				
 				// Absorb HP from the damage inflicted
-				double absorbPercent = getStat().getValue(Stats.ABSORB_DAMAGE_PERCENT);
-				if ((absorbPercent > 1) && (Rnd.get(100) < getStat().getValue(Stats.ABSORB_DAMAGE_CHANCE)))
+				double absorbPercent = getStat().getValue(Stats.ABSORB_DAMAGE_PERCENT, 0);
+				if ((absorbPercent > 0) && (Rnd.nextDouble() < getStat().getValue(Stats.ABSORB_DAMAGE_CHANCE)))
 				{
 					int absorbDamage = (int) Math.min(absorbPercent * damage, getMaxRecoverableHp() - getCurrentHp());
 					absorbDamage = Math.min(absorbDamage, (int) target.getCurrentHp());
