@@ -31,7 +31,9 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_REST;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.GeoData;
+import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.model.Location;
@@ -316,7 +318,14 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		changeIntentionToCast(skill, target);
+		if (_actor.getAttackEndTime() > GameTimeController.getInstance().getGameTicks())
+		{
+			ThreadPoolManager.getInstance().scheduleGeneral(new CastTask(_actor, skill, target), _actor.getAttackEndTime() - System.currentTimeMillis());
+		}
+		else
+		{
+			changeIntentionToCast(skill, target);
+		}
 	}
 	
 	protected void changeIntentionToCast(Skill skill, WorldObject target)
