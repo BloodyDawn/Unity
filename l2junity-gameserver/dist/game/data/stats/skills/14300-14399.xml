@@ -971,16 +971,17 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14352" levels="1" name="Sakum's Weapon">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confimed -->
 		<!-- Creates a unique opportunity by tricking the enemies. Reveals the enemy's back and inflicts Stun for 3 seconds. Provokes its attacking desire toward itself. Can be used while dagger equipment is equipped. Target cancel. -->
 		<set name="icon" val="icon.skill0358" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="1000" />
 		<set name="effectPoint" val="-1" />
 		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -993,6 +994,20 @@
 		<set name="abnormalTime" val="3" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Bluff">
+				<param chance="80" />
+			</effect>
+			<effect name="TargetCancel">
+				<param chance="80" />
+			</effect>
+			<effect name="DeleteHateOfMe">
+				<param chance="80" />
+			</effect>
+			<effect name="BlockActions">
+				<param allowedSkills="10279;10517;10025;10776;11770;1904;11264;11093;13314;1912" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14353" levels="1" name="Lazaros' Poison">
 		<!-- AUTO GENERATED SKILL -->

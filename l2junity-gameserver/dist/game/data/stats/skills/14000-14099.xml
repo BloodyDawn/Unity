@@ -1982,10 +1982,10 @@
 		</for>
 	</skill>
 	<skill id="14095" levels="1" name="Sakum Chaos">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days Confimed -->
 		<set name="icon" val="icon.skill0003" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="38" />
 		<set name="castRange" val="80" />
 		<set name="hitTime" val="1500" />
@@ -1996,6 +1996,11 @@
 		<set name="effectRange" val="200" />
 		<set name="magicLvl" val="40" />
 		<set name="reuseDelay" val="2000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="1295" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14096" levels="1" name="Sakum Feeler Blow">
 		<!-- AUTO GENERATED SKILL -->
