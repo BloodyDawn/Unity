@@ -316,15 +316,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		// Cannot cast while attacking. For bows, cannot cast while pulling the arrow, but can cast after the hit is done and red line still under reuse.
-		if (_actor.isAttackingNow())
-		{
-			_actor.setIsCastingNow(false);
-		}
-		else
-		{
-			changeIntentionToCast(skill, target);
-		}
+		changeIntentionToCast(skill, target);
 	}
 	
 	protected void changeIntentionToCast(Skill skill, WorldObject target)
