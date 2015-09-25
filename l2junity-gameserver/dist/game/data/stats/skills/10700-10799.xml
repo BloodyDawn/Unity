@@ -1012,7 +1012,9 @@
 		<set name="hitCancelTime" val="0" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Blink" />
+			<effect name="Blink">
+				<param flyType="WARP_BACK" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10775" levels="6" name="Confusion Decoy">

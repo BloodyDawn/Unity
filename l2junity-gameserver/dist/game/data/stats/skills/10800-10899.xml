@@ -167,7 +167,9 @@
 		<set name="effectRange" val="#effectRange" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Blink" />
+			<effect name="Blink">
+				<param flyType="WARP_FORWARD" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="10806" levels="4" name="Frost Trap">
