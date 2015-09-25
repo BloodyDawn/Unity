@@ -4620,7 +4620,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			boolean isBow = ((weapon != null) && weapon.isBowOrCrossBow());
 			int reflectedDamage = 0;
 			
-			if (!target.isInvul()) // Do not reflect or vampiric if target is invunlerable
+			if (!target.isInvul()) // Do not reflect or vampiric if target is invulnerable
 			{
 				if (!isBow) // No reflect if weapon is of type bow
 				{
