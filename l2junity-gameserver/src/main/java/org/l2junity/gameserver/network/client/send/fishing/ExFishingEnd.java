@@ -33,23 +33,30 @@ public class ExFishingEnd implements IClientOutgoingPacket
 		LOSE(0),
 		WIN(1),
 		STOP(2);
-
+		
 		private final int _reason;
-
+		
 		FishingEndReason(int reason)
 		{
 			_reason = reason;
 		}
-
+		
 		public int getReason()
 		{
 			return _reason;
 		}
 	}
-
+	
+	public enum FishingEndType
+	{
+		PLAYER_STOP,
+		PLAYER_CANCEL,
+		ERROR;
+	}
+	
 	private final PlayerInstance _player;
 	private final FishingEndReason _reason;
-
+	
 	public ExFishingEnd(PlayerInstance player, FishingEndReason reason)
 	{
 		_player = player;

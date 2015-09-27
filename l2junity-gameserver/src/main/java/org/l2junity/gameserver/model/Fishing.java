@@ -41,6 +41,7 @@ import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.fishing.ExFishingEnd;
 import org.l2junity.gameserver.network.client.send.fishing.ExFishingEnd.FishingEndReason;
+import org.l2junity.gameserver.network.client.send.fishing.ExFishingEnd.FishingEndType;
 import org.l2junity.gameserver.network.client.send.fishing.ExFishingStart;
 import org.l2junity.gameserver.network.client.send.fishing.ExUserInfoFishing;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -119,6 +120,7 @@ public class Fishing
 		{
 			_player.sendMessage("Fishing is disabled.");
 			_player.sendPacket(ActionFailed.STATIC_PACKET);
+			stopFishing(FishingEndType.ERROR);
 			return;
 		}
 		
@@ -130,6 +132,7 @@ public class Fishing
 			{
 				_player.sendPacket(SystemMessageId.YOUR_ATTEMPT_AT_FISHING_HAS_BEEN_CANCELLED);
 			}
+			stopFishing(FishingEndType.ERROR);
 			return;
 		}
 		
@@ -140,27 +143,31 @@ public class Fishing
 			{
 				_player.sendPacket(SystemMessageId.FISHING_IS_AVAILABLE_TO_CHARACTERS_LV_85_OR_ABOVE);
 			}
-			else // In case of custom fishing level requirement set in config.
+			else
+			// In case of custom fishing level requirement set in config.
 			{
 				_player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_FISHING_LEVEL_REQUIREMENTS);
 			}
 			_player.sendPacket(ActionFailed.STATIC_PACKET);
+			stopFishing(FishingEndType.ERROR);
 			return;
 		}
 		
-		ItemInstance rod = _player.getActiveWeaponInstance();
+		final ItemInstance rod = _player.getActiveWeaponInstance();
 		if ((rod == null) || (rod.getItemType() != WeaponType.FISHINGROD))
 		{
 			_player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_A_FISHING_POLE_EQUIPPED);
 			_player.sendPacket(ActionFailed.STATIC_PACKET);
+			stopFishing(FishingEndType.ERROR);
 			return;
 		}
 		
-		FishingBaitData baitData = getCurrentBaitData();
+		final FishingBaitData baitData = getCurrentBaitData();
 		if (baitData == null)
 		{
 			_player.sendPacket(SystemMessageId.YOU_MUST_PUT_BAIT_ON_YOUR_HOOK_BEFORE_YOU_CAN_FISH);
 			_player.sendPacket(ActionFailed.STATIC_PACKET);
+			stopFishing(FishingEndType.ERROR);
 			return;
 		}
 		
@@ -168,6 +175,7 @@ public class Fishing
 		{
 			_player.sendPacket(SystemMessageId.YOU_CANNOT_FISH_WHEN_TRANSFORMED_OR_WHILE_RIDING_AS_A_PASSENGER_OF_A_BOAT_IT_S_AGAINST_THE_RULES);
 			_player.sendPacket(ActionFailed.STATIC_PACKET);
+			stopFishing(FishingEndType.ERROR);
 			return;
 		}
 		
@@ -175,6 +183,7 @@ public class Fishing
 		{
 			_player.sendPacket(SystemMessageId.YOU_CANNOT_FISH_WHILE_USING_A_RECIPE_BOOK_PRIVATE_WORKSHOP_OR_PRIVATE_STORE);
 			_player.sendPacket(ActionFailed.STATIC_PACKET);
+			stopFishing(FishingEndType.ERROR);
 			return;
 		}
 		
@@ -182,6 +191,7 @@ public class Fishing
 		{
 			_player.sendPacket(SystemMessageId.YOU_CANNOT_FISH_WHILE_UNDER_WATER);
 			_player.sendPacket(ActionFailed.STATIC_PACKET);
+			stopFishing(FishingEndType.ERROR);
 			return;
 		}
 		
@@ -198,6 +208,7 @@ public class Fishing
 				_player.sendPacket(SystemMessageId.YOU_CAN_T_FISH_HERE);
 				_player.sendPacket(ActionFailed.STATIC_PACKET);
 			}
+			stopFishing(FishingEndType.ERROR);
 			return;
 		}
 		
@@ -210,7 +221,7 @@ public class Fishing
 		{
 			_player.getFishing().reelInWithReward();
 			_startFishingTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> _player.getFishing().castLine(), 8000);
-		} , Rnd.get(FishingData.getInstance().getFishingTimeMin(), FishingData.getInstance().getFishingTimeMax()));
+		}, Rnd.get(FishingData.getInstance().getFishingTimeMin(), FishingData.getInstance().getFishingTimeMax()));
 		_player.stopMove(null);
 		_player.broadcastPacket(new ExFishingStart(_player, -1, baitData.getLevel(), _baitLocation));
 		_player.sendPacket(new ExUserInfoFishing(_player, true, _baitLocation));
@@ -300,22 +311,27 @@ public class Fishing
 	
 	public void stopFishing()
 	{
-		stopFishing(false);
+		stopFishing(FishingEndType.PLAYER_STOP);
 	}
 	
-	public synchronized void stopFishing(boolean error)
+	public synchronized void stopFishing(FishingEndType endType)
 	{
 		if (isFishing())
 		{
 			reelIn(FishingEndReason.STOP, false);
 			_isFishing = false;
-			if (error)
+			switch (endType)
 			{
-				_player.sendPacket(SystemMessageId.YOUR_ATTEMPT_AT_FISHING_HAS_BEEN_CANCELLED);
-			}
-			else
-			{
-				_player.sendPacket(SystemMessageId.YOU_REEL_YOUR_LINE_IN_AND_STOP_FISHING);
+				case PLAYER_STOP:
+				{
+					_player.sendPacket(SystemMessageId.YOU_REEL_YOUR_LINE_IN_AND_STOP_FISHING);
+					break;
+				}
+				case PLAYER_CANCEL:
+				{
+					_player.sendPacket(SystemMessageId.YOUR_ATTEMPT_AT_FISHING_HAS_BEEN_CANCELLED);
+					break;
+				}
 			}
 		}
 	}
