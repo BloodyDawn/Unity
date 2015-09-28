@@ -533,6 +533,11 @@
 		<set name="effectRange" val="1100" />
 		<set name="lvlBonusRate" val="20" />
 		<set name="isDebuff" val="true" />
+		<alterSkill>
+			<skill id="11500" level="1" chance="100" abnormalType="KNOCKDOWN" /> <!-- Heavy Hit -->
+			<skill id="11499" level="1" chance="100" abnormalType="AIRBIND" /> <!-- Heavy Hit -->
+			<skill id="14579" level="1" chance="100" abnormalType="EARTHWORM_DEBUFF" />
+		</alterSkill>
 		<for>
 			<effect name="MagicalDamOverTime" ticks="1">
 				<param power="#power" />
