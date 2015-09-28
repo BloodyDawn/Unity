@@ -21,21 +21,16 @@ package org.l2junity.gameserver.network.client.recv;
 import java.util.Arrays;
 
 import org.l2junity.gameserver.data.xml.impl.ActionData;
-import org.l2junity.gameserver.enums.MountType;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.handler.IPlayerActionHandler;
 import org.l2junity.gameserver.handler.PlayerActionHandler;
 import org.l2junity.gameserver.model.ActionDataHolder;
-import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
-import org.l2junity.gameserver.network.client.send.ChairSit;
 import org.l2junity.gameserver.network.client.send.ExBasicActionList;
 import org.l2junity.gameserver.network.client.send.RecipeShopManageList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -144,42 +139,5 @@ public final class RequestActionUse implements IClientIncomingPacket
 				_log.warn(activeChar.getName() + ": unhandled action type " + _actionId);
 				break;
 		}
-	}
-	
-	/**
-	 * Use the sit action.
-	 * @param activeChar the player trying to sit
-	 * @param target the target to sit, throne, bench or chair
-	 * @return {@code true} if the player can sit, {@code false} otherwise
-	 */
-	protected boolean useSit(PlayerInstance activeChar, WorldObject target)
-	{
-		if (activeChar.getMountType() != MountType.NONE)
-		{
-			return false;
-		}
-		
-		if (!activeChar.isSitting() && (target instanceof L2StaticObjectInstance) && (((L2StaticObjectInstance) target).getType() == 1) && activeChar.isInsideRadius(target, L2StaticObjectInstance.INTERACTION_DISTANCE, false, false))
-		{
-			final ChairSit cs = new ChairSit(activeChar, target.getId());
-			activeChar.sendPacket(cs);
-			activeChar.sitDown();
-			activeChar.broadcastPacket(cs);
-			return true;
-		}
-		
-		if (activeChar.isFakeDeath())
-		{
-			activeChar.stopEffects(L2EffectType.FAKE_DEATH);
-		}
-		else if (activeChar.isSitting())
-		{
-			activeChar.standUp();
-		}
-		else
-		{
-			activeChar.sitDown();
-		}
-		return true;
 	}
 }
