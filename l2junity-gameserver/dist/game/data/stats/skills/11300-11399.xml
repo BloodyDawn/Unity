@@ -348,9 +348,10 @@
 		</for>
 	</skill>
 	<skill id="11312" levels="3" name="Naviarope Flame">
-		<table name="#magicLvl"> 95 97 99 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts 18758 ranged damage. -->
+		<table name="#magicLvl"> 95 97 99 </table>
 		<table name="#power"> 18758 19743 20727 </table>
 		<set name="icon" val="icon.skill_transform_etc" />
 		<set name="operateType" val="A1" />
@@ -373,9 +374,10 @@
 		</for>
 	</skill>
 	<skill id="11313" levels="3" name="Naviarope Explosion">
-		<table name="#magicLvl"> 95 97 99 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Inflicts 18758 damage to nearby enemies. -->
+		<table name="#magicLvl"> 95 97 99 </table>
 		<table name="#power"> 18758 19743 20727 </table>
 		<set name="icon" val="icon.skill_transform_etc" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
@@ -397,12 +399,13 @@
 		</for>
 	</skill>
 	<skill id="11314" levels="3" name="Corpse Blast">
-		<table name="#magicLvl"> 95 97 99 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Detonates a corpse to inflict damage on nearby enemies. -->
-		<table name="#power"> 1 1 1 </table> <!-- TODO -->
+		<table name="#magicLvl"> 95 97 99 </table>
+		<table name="#power"> 370 372 374 </table>
 		<set name="icon" val="icon.skill_transform_debuff" />
-		<set name="affectRange" val="150" /> <!-- Guessed -->
+		<set name="affectRange" val="150" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA_CORPSE_MOB" />
 		<set name="mpConsume" val="70" />
@@ -418,6 +421,7 @@
 		<set name="affectLimit" val="6-12" />
 		<set name="isDebuff" val="true" />
 		<for>
+			<effect name="ConsumeBody" />
 			<effect name="MagicalAttack">
 				<param power="#power" />
 			</effect>
@@ -425,6 +429,7 @@
 	</skill>
 	<skill id="11315" levels="1" name="Summon Defense">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Increases Bow/Crossbow Resistance + 50 and M. Def. + 50%. -->
 		<set name="icon" val="icon.skill11253" />
 		<set name="operateType" val="P" />
@@ -433,29 +438,32 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="mDef" val="1.50" />
+				<mul stat="mDef" val="1.5" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param BOW="50" />
 				<param CROSSBOW="50" />
+				<param TWOHANDCROSSBOW="50" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11316" levels="1" name="Summon Soulshots">
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Summons 1900 Beast Soulshots. Consumes 1 Crystal (R-grade). -->
 		<set name="icon" val="icon.skill11316" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="17371" /> <!-- Crystal (R-Grade) -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="398" />
+		<set name="mpInitialConsume" val="398" />
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
 		<set name="magicLvl" val="85" />
 		<set name="isMagic" val="1" />
+		<set name="staticReuse" val="true" />
 		<cond msgId="129">
 			<and>
 				<player invSize="10" />
@@ -469,9 +477,11 @@
 		</for>
 	</skill>
 	<skill id="11317" levels="8" name="Servitor Group Heal">
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<!-- Updated to IO -->
+		<!-- Glory Days confirmed -->
 		<!-- Restores all servitors' HP by 1191. Not in Use. -->
+		<table name="#heal"> 1191 1196 1206 1216 1226 1236 1246 1256 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 278 280 284 289 293 298 303 308 </table>
 		<set name="icon" val="icon.skill1027" />
 		<set name="operateType" val="A1" />
@@ -490,7 +500,7 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Heal">
-				<param power="1191" />
+				<param power="#heal" />
 			</effect>
 		</for>
 	</skill>
