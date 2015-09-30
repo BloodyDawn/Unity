@@ -653,10 +653,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 						}
 						world.songEffectTask = null;
 						world.activeScarlet.setIsInvul(true);
-						if (world.activeScarlet.isCastingNow())
-						{
-							world.activeScarlet.abortCast();
-						}
+						world.activeScarlet.abortCast();
 						handleReenterTime(world);
 						world.activeScarlet.doCast(FIRST_MORPH_SKILL.getSkill());
 						ThreadPoolManager.getInstance().scheduleGeneral(new SongTask(world, 2), 1500);
@@ -881,7 +878,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 						}
 						if (targetList.size() > 0)
 						{
-							_world.frintezza.doCast(skill, targetList.get(0), targetList.toArray(new Creature[targetList.size()]));
+							_world.frintezza.doCast(skill);
 						}
 					}
 					break;

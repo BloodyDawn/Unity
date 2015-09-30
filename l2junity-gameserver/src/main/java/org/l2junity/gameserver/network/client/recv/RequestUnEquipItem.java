@@ -65,7 +65,7 @@ public class RequestUnEquipItem implements IClientIncomingPacket
 		}
 		
 		// The English system message say weapon, but it's applied to any equipped item.
-		if (activeChar.isAttackingNow() || activeChar.isCastingNow() || activeChar.isCastingSimultaneouslyNow())
+		if (activeChar.isAttackingNow() || activeChar.isCastingNow(t -> true))
 		{
 			client.sendPacket(SystemMessageId.YOU_CANNOT_CHANGE_WEAPONS_DURING_AN_ATTACK);
 			return;

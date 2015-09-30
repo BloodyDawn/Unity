@@ -345,7 +345,7 @@ public final class UseItem implements IClientIncomingPacket
 				}
 			}
 			
-			if (activeChar.isCastingNow() || activeChar.isCastingSimultaneouslyNow())
+			if (activeChar.isCastingNow(t -> true))
 			{
 				// Create and Bind the next action to the AI
 				activeChar.getAI().setNextAction(new NextAction(CtrlEvent.EVT_FINISH_CASTING, CtrlIntention.AI_INTENTION_CAST, () -> activeChar.useEquippableItem(item, true)));
@@ -365,7 +365,7 @@ public final class UseItem implements IClientIncomingPacket
 			final IItemHandler handler = ItemHandler.getInstance().getHandler(etcItem);
 			if (handler == null)
 			{
-				if (etcItem != null && etcItem.getHandlerName() != null)
+				if ((etcItem != null) && (etcItem.getHandlerName() != null))
 				{
 					_log.warn("Unmanaged Item handler: " + etcItem.getHandlerName() + " for Item Id: " + _itemId + "!");
 				}

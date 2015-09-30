@@ -56,7 +56,7 @@ public final class RequestTargetCanceld implements IClientIncomingPacket
 		
 		if (_unselect == 0)
 		{
-			if (activeChar.isCastingNow() && activeChar.canAbortCast())
+			if (activeChar.canAbortCast())
 			{
 				activeChar.abortCast();
 			}

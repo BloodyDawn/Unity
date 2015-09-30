@@ -44,7 +44,7 @@ public final class RequestRecipeBookOpen implements IClientIncomingPacket
 			return;
 		}
 		
-		if (activeChar.isCastingNow() || activeChar.isCastingSimultaneouslyNow())
+		if (activeChar.isCastingNow(t -> true))
 		{
 			client.sendPacket(SystemMessageId.YOUR_RECIPE_BOOK_MAY_NOT_BE_ACCESSED_WHILE_USING_A_SKILL);
 			return;

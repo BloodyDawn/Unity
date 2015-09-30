@@ -19,12 +19,9 @@
 package handlers.usercommandhandlers;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.GameTimeController;
-import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.handler.IUserCommandHandler;
-import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
@@ -64,7 +61,7 @@ public class Unstuck implements IUserCommandHandler
 			return false;
 		}
 		
-		activeChar.forceIsCasting(GameTimeController.getInstance().getGameTicks() + (unstuckTimer / GameTimeController.MILLIS_IN_TICK));
+		// activeChar.forceIsCasting(GameTimeController.getInstance().getGameTicks() + (unstuckTimer / GameTimeController.MILLIS_IN_TICK));
 		
 		Skill escape = SkillData.getInstance().getSkill(2099, 1); // 5 minutes escape
 		Skill GM_escape = SkillData.getInstance().getSkill(2100, 1); // 1 second escape
@@ -105,34 +102,15 @@ public class Unstuck implements IUserCommandHandler
 		// End SoE Animation section
 		
 		// continue execution later
-		activeChar.setSkillCast(ThreadPoolManager.getInstance().scheduleGeneral(new EscapeFinalizer(activeChar), unstuckTimer));
+		// activeChar.setSkillCast(ThreadPoolManager.getInstance().scheduleGeneral(new EscapeFinalizer(activeChar), unstuckTimer));
 		
 		return true;
 	}
 	
-	private static class EscapeFinalizer implements Runnable
-	{
-		private final PlayerInstance _activeChar;
-		
-		protected EscapeFinalizer(PlayerInstance activeChar)
-		{
-			_activeChar = activeChar;
-		}
-		
-		@Override
-		public void run()
-		{
-			if (_activeChar.isDead())
-			{
-				return;
-			}
-			
-			_activeChar.enableAllSkills();
-			_activeChar.setIsCastingNow(false);
-			_activeChar.setInstanceId(0);
-			_activeChar.teleToLocation(TeleportWhereType.TOWN);
-		}
-	}
+	/*
+	 * private static class EscapeFinalizer implements Runnable { private final PlayerInstance _activeChar; protected EscapeFinalizer(PlayerInstance activeChar) { _activeChar = activeChar; }
+	 * @Override public void run() { if (_activeChar.isDead()) { return; } _activeChar.enableAllSkills(); _activeChar.abortCast(); _activeChar.setInstanceId(0); _activeChar.teleToLocation(TeleportWhereType.TOWN); } }
+	 */
 	
 	@Override
 	public int[] getUserCommandList()

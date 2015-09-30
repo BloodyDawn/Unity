@@ -164,7 +164,6 @@ public final class ImprovedBabyPets extends AbstractNpcAI
 				
 				if ((targetType >= 0) && (targetType <= 2))
 				{
-					owner.setCurrentPetSkill(skill.getSkill(), false, false);
 					summon.getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill.getSkill(), (targetType == 1) ? summon : owner);
 					summon.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_PET_USES_S1).addSkillName(skill.getSkill()));
 					
@@ -200,7 +199,6 @@ public final class ImprovedBabyPets extends AbstractNpcAI
 			{
 				if ((targetType >= 0) && (targetType <= 2))
 				{
-					owner.setCurrentPetSkill(skill.getSkill(), false, false);
 					summon.getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill.getSkill(), (targetType == 1) ? summon : owner);
 					summon.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_PET_USES_S1).addSkillName(skill.getSkill()));
 					

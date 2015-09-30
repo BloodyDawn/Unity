@@ -27,7 +27,9 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * This class manages AI of L2Playable.<br>
- * L2PlayableAI : <li>L2SummonAI</li> <li>L2PlayerAI</li>
+ * L2PlayableAI :
+ * <li>L2SummonAI</li>
+ * <li>L2PlayerAI</li>
  * @author JIV
  */
 public abstract class PlayableAI extends CharacterAI
@@ -88,7 +90,7 @@ public abstract class PlayableAI extends CharacterAI
 				// Newbie Protection Buff,
 				_actor.getActingPlayer().sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 				clientActionFailed();
-				_actor.setIsCastingNow(false);
+				_actor.abortCast();
 				return;
 			}
 			
@@ -98,7 +100,7 @@ public abstract class PlayableAI extends CharacterAI
 				// Newbie Protection Buff,
 				_actor.getActingPlayer().sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 				clientActionFailed();
-				_actor.setIsCastingNow(false);
+				_actor.abortCast();
 				return;
 			}
 			
@@ -106,7 +108,7 @@ public abstract class PlayableAI extends CharacterAI
 			{
 				_actor.getActingPlayer().sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 				clientActionFailed();
-				_actor.setIsCastingNow(false);
+				_actor.abortCast();
 				return;
 			}
 		}

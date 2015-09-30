@@ -609,9 +609,6 @@ public abstract class Summon extends Playable
 			return false;
 		}
 		
-		// Set current pet skill
-		getOwner().setCurrentPetSkill(skill, forceUse, dontMove);
-		
 		// Get the target for the skill
 		WorldObject target = null;
 		switch (skill.getTargetType())
