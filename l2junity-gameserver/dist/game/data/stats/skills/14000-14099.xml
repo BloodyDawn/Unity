@@ -830,10 +830,10 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14042" levels="6" name="Disarm">
+		<!-- Glory Days confirmed -->
+		<!-- Disarms equipment. -->
 		<table name="#magicLvl"> 90 91 92 93 94 95 </table>
 		<table name="#effectPoint"> -347 -348 -349 -350 -350 -351 </table>
-		<!-- AUTO GENERATED SKILL -->
-		<!-- Disarms equipment. -->
 		<table name="#mpConsumes"> 83 83 84 84 84 84 </table>
 		<set name="icon" val="icon.skill0485" />
 		<set name="operateType" val="A2" />
@@ -845,6 +845,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="abnormalType" val="DISARM" />
+		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
 		<set name="basicProperty" val="PHYSICAL" />
 		<set name="rideState" val="NONE" />
 		<set name="magicCriticalRate" val="-5" />
@@ -856,6 +857,11 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Disarm">
+				<mul stat="pAtk" val="0.6" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14043" levels="6" name="Double Blow">
 		<table name="#magicLvl"> 90 91 92 93 94 95 </table>
@@ -1232,15 +1238,17 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14061" levels="2" name="Frontal Brandish">
+		<!-- Glory Days confirmed -->
 		<table name="#magicLvl"> 92 95 </table>
 		<table name="#effectPoint"> -349 -352 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<table name="#mpConsumes"> 84 85 </table>
+		<table name="#power"> 12411 14186 </table>
 		<set name="icon" val="icon.skill0320" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
+		<set name="fanRange" val="0;0;90;150" />
 		<set name="hitTime" val="3000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
@@ -1249,6 +1257,11 @@
 		<set name="effectRange" val="400" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="8000" />
+		<for>
+			<effect name="PhysicalAttack">
+				<param power="12411" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14062" levels="2" name="Sleep">
 		<table name="#magicLvl"> 92 95 </table>
