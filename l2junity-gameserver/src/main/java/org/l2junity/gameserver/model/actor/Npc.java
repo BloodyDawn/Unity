@@ -18,12 +18,15 @@
  */
 package org.l2junity.gameserver.model.actor;
 
+import java.util.List;
+
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ItemsAutoDestroy;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.datatables.ItemTable;
+import org.l2junity.gameserver.enums.AISkillScope;
 import org.l2junity.gameserver.enums.AIType;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.InstanceType;
@@ -1539,5 +1542,24 @@ public class Npc extends Creature
 			}
 		}
 		return getTemplate().getParameters();
+	}
+	
+	public List<Skill> getLongRangeSkills()
+	{
+		return getTemplate().getAISkills(AISkillScope.LONG_RANGE);
+	}
+	
+	public List<Skill> getShortRangeSkills()
+	{
+		return getTemplate().getAISkills(AISkillScope.SHORT_RANGE);
+	}
+	
+	/**
+	 * Verifies if the NPC can cast a skill given the minimum and maximum skill chances.
+	 * @return {@code true} if the NPC has chances of casting a skill
+	 */
+	public boolean hasSkillChance()
+	{
+		return Rnd.get(100) < Rnd.get(getTemplate().getMinSkillChance(), getTemplate().getMaxSkillChance());
 	}
 }

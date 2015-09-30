@@ -5041,7 +5041,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public final Collection<Skill> getAllSkills()
 	{
-		return new ArrayList<>(_skills.values());
+		return _skills.values();
 	}
 	
 	/**
