@@ -28,7 +28,7 @@ import org.l2junity.gameserver.model.quest.State;
  * Go to the Pastureland (19)
  * @author malyelfik
  */
-public class Q00019_GoToThePastureland extends Quest
+public final class Q00019_GoToThePastureland extends Quest
 {
 	// NPCs
 	private static final int VLADIMIR = 31302;
@@ -36,6 +36,8 @@ public class Q00019_GoToThePastureland extends Quest
 	// Items
 	private static final int VEAL = 15532;
 	private static final int YOUNG_WILD_BEAST_MEAT = 7547;
+	// Misc
+	private static final int MIN_LEVEL = 82;
 	
 	public Q00019_GoToThePastureland()
 	{
@@ -43,6 +45,7 @@ public class Q00019_GoToThePastureland extends Quest
 		addStartNpc(VLADIMIR);
 		addTalkId(VLADIMIR, TUNATUN);
 		registerQuestItems(VEAL, YOUNG_WILD_BEAST_MEAT);
+		addCondMinLevel(MIN_LEVEL, "31302-03.html");
 	}
 	
 	@Override
@@ -61,21 +64,21 @@ public class Q00019_GoToThePastureland extends Quest
 			st.startQuest();
 			giveItems(player, VEAL, 1);
 		}
-		else if (event.equalsIgnoreCase("31537-02.html"))
+		else if (event.equalsIgnoreCase("31537-02.htm"))
 		{
 			if (hasQuestItems(player, YOUNG_WILD_BEAST_MEAT))
 			{
 				giveAdena(player, 50000, true);
-				addExpAndSp(player, 136766, 12688);
+				addExpAndSp(player, 136766, 59); // TODO: Retail like SP value
 				st.exitQuest(false, true);
-				htmltext = "31537-02.html";
+				htmltext = event;
 			}
 			else if (hasQuestItems(player, VEAL))
 			{
-				giveAdena(player, 147200, true);
-				addExpAndSp(player, 385040, 75250);
+				giveAdena(player, 299928, true);
+				addExpAndSp(player, 1_456_218, 349);
 				st.exitQuest(false, true);
-				htmltext = "31537-02.html";
+				htmltext = event;
 			}
 			else
 			{
@@ -100,21 +103,20 @@ public class Q00019_GoToThePastureland extends Quest
 			switch (st.getState())
 			{
 				case State.CREATED:
-					if (player.getLevel() >= 82)
-					{
-						htmltext = "31302-01.htm";
-					}
-					else
-					{
-						htmltext = "31302-03.html";
-					}
+				{
+					htmltext = "31302-01.html";
+				}
 					break;
 				case State.STARTED:
+				{
 					htmltext = "31302-04.html";
 					break;
+				}
 				case State.COMPLETED:
+				{
 					htmltext = getAlreadyCompletedMsg(player);
 					break;
+				}
 			}
 		}
 		else if ((npc.getId() == TUNATUN) && (st.isCond(1)))
