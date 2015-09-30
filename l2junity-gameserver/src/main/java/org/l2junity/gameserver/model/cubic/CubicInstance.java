@@ -75,11 +75,19 @@ public class CubicInstance
 		final Creature target = findTarget();
 		if (target != null)
 		{
-			final CubicSkill cubicSkill = _template.getSkills().stream().filter(sk -> sk.validateConditions(this, _owner, target)).findFirst().orElse(null);
-			final Skill skill = cubicSkill.getSkill();
-			if ((skill != null) && (Rnd.get(100) < cubicSkill.getSuccessRate()))
+			final double random = Rnd.nextDouble() * 100;
+			double commulativeChance = 0;
+			for (CubicSkill cubicSkill : _template.getSkills())
 			{
-				skill.activateSkill(_owner, target);
+				if ((commulativeChance += cubicSkill.getTriggerRate()) > random)
+				{
+					final Skill skill = cubicSkill.getSkill();
+					if ((skill != null) && (Rnd.get(100) < cubicSkill.getSuccessRate()))
+					{
+						skill.activateSkill(_owner, target);
+					}
+					break;
+				}
 			}
 		}
 	}
@@ -90,18 +98,42 @@ public class CubicInstance
 		{
 			case BY_SKILL:
 			{
-				final CubicSkill cubicSkill = _template.getSkills().stream().filter(sk -> sk.validateConditions(this, _owner, _owner)).findFirst().orElse(null);
-				if (cubicSkill != null)
+				if (!_template.validateConditions(this, _owner, _owner))
+				{
+					return null;
+				}
+				
+				for (CubicSkill cubicSkill : _template.getSkills())
 				{
 					final Skill skill = cubicSkill.getSkill();
 					if (skill != null)
 					{
-						final Creature[] targetList = skill.getTargetList(_caster);
-						for (Creature possibleTarget : targetList)
+						switch (cubicSkill.getTargetType())
 						{
-							if (cubicSkill.validateConditions(this, _owner, possibleTarget))
+							case HEAL:
 							{
-								return possibleTarget;
+								final Party party = _owner.getParty();
+								if (party != null)
+								{
+									return party.getMembers().stream().filter(member -> cubicSkill.validateConditions(this, _owner, member) && member.isInsideRadius(_owner, Config.ALT_PARTY_RANGE, true, true)).sorted(Comparator.comparingInt(Creature::getCurrentHpPercent).reversed()).findFirst().orElse(null);
+								}
+								return _owner;
+							}
+							case MASTER:
+							{
+								return _owner;
+							}
+							case TARGET:
+							{
+								final Creature[] targetList = skill.getTargetList(_caster);
+								for (Creature possibleTarget : targetList)
+								{
+									if (cubicSkill.validateConditions(this, _owner, possibleTarget))
+									{
+										return possibleTarget;
+									}
+								}
+								break;
 							}
 						}
 					}
@@ -125,11 +157,7 @@ public class CubicInstance
 						}
 						case MASTER:
 						{
-							if (skill.validateConditions(this, _owner, _owner))
-							{
-								return _owner;
-							}
-							break;
+							return _owner;
 						}
 						case TARGET:
 						{

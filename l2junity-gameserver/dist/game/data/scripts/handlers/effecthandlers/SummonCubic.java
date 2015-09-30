@@ -81,6 +81,12 @@ public final class SummonCubic extends AbstractEffect
 		final CubicInstance cubic = player.getCubicById(_cubicId);
 		if (cubic != null)
 		{
+			if (cubic.getTemplate().getLevel() > _cubicLvl)
+			{
+				// What do we do in such case?
+				return;
+			}
+			
 			cubic.deactivate();
 			player.getCubics().remove(_cubicId);
 		}
