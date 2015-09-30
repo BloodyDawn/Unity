@@ -123,6 +123,7 @@ public class Q00015_SweetWhispers extends Quest
 						}
 						break;
 				}
+				break;
 			case State.COMPLETED:
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
