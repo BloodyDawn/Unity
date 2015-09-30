@@ -844,7 +844,7 @@ public final class Formulas
 		double damage = 91 * ((91 * Math.sqrt(mAtk)) / mDef) * power;
 		
 		// Failure calculation
-		PlayerInstance owner = attacker.getOwner().getActingPlayer();
+		Creature owner = attacker.getOwner();
 		if (Config.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(owner, target, skill))
 		{
 			if (calcMagicSuccess(owner, target, skill) && ((target.getLevel() - skill.getMagicLevel()) <= 9))
