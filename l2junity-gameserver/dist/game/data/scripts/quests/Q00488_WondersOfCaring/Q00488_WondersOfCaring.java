@@ -59,6 +59,7 @@ public final class Q00488_WondersOfCaring extends Quest
 		addTalkId(ADVENTURER, DOLPHREN);
 		addKillId(MONSTERS);
 		addCondLevel(MIN_LEVEL, MAX_LEVEL, "");
+		registerQuestItems(BOX);
 	}
 	
 	@Override
