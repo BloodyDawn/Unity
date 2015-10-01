@@ -93,10 +93,6 @@ public final class Q00019_GoToThePastureland extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		if (st == null)
-		{
-			return htmltext;
-		}
 		
 		if (npc.getId() == VLADIMIR)
 		{
@@ -105,8 +101,8 @@ public final class Q00019_GoToThePastureland extends Quest
 				case State.CREATED:
 				{
 					htmltext = "31302-01.html";
-				}
 					break;
+				}
 				case State.STARTED:
 				{
 					htmltext = "31302-04.html";
