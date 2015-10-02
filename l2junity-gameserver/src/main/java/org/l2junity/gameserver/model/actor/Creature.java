@@ -1617,7 +1617,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				// Send a Server->Client packet ActionFailed to the L2PcInstance
 				if (isPlayer())
 				{
-					sendPacket(ActionFailed.STATIC_PACKET);
+					sendPacket(ActionFailed.get(skillCaster.getCastingType()));
 					getAI().setIntention(AI_INTENTION_ACTIVE);
 				}
 			}
@@ -5543,7 +5543,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				}
 				
 				broadcastPacket(new MagicSkillUse(this, target, skill.getDisplayId(), skill.getLevel(), 0, 0));
-				broadcastPacket(new MagicSkillLaunched(this, skill.getDisplayId(), skill.getLevel(), targets));
+				broadcastPacket(new MagicSkillLaunched(this, skill.getDisplayId(), skill.getLevel(), SkillCastingType.NORMAL, targets));
 				
 				// Launch the magic skill and calculate its effects
 				skill.activateSkill(this, targets);

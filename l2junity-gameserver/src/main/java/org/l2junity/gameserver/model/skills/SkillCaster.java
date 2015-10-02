@@ -377,7 +377,7 @@ public class SkillCaster implements Runnable
 			
 			if (!skill.isToggle())
 			{
-				_caster.broadcastPacket(new MagicSkillLaunched(_caster, skill.getDisplayId(), skill.getDisplayLevel(), targets));
+				_caster.broadcastPacket(new MagicSkillLaunched(_caster, skill.getDisplayId(), skill.getDisplayLevel(), _castingType, targets));
 			}
 			
 			// Go through targets table
@@ -533,7 +533,7 @@ public class SkillCaster implements Runnable
 			if (aborted)
 			{
 				_caster.broadcastPacket(new MagicSkillCanceld(_caster.getObjectId())); // broadcast packet to stop animations client-side
-				_caster.sendPacket(ActionFailed.STATIC_PACKET); // send an "action failed" packet to the caster
+				_caster.sendPacket(ActionFailed.get(_castingType)); // send an "action failed" packet to the caster
 			}
 		}
 		
