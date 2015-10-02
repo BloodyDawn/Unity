@@ -96,7 +96,7 @@ public class NpcViewMod implements IBypassHandler
 					return false;
 				}
 				
-				NpcViewMod.sendNpcView(activeChar, npc);
+				sendNpcView(activeChar, npc);
 				break;
 			}
 			case "droplist":
@@ -129,6 +129,34 @@ public class NpcViewMod implements IBypassHandler
 					_log.warn("Bypass[NpcViewMod] unknown drop list scope: " + dropListScopeString);
 					return false;
 				}
+				break;
+			}
+			case "skills":
+			{
+				final WorldObject target;
+				if (st.hasMoreElements())
+				{
+					try
+					{
+						target = World.getInstance().findObject(Integer.parseInt(st.nextToken()));
+					}
+					catch (NumberFormatException e)
+					{
+						return false;
+					}
+				}
+				else
+				{
+					target = activeChar.getTarget();
+				}
+				
+				final Npc npc = target instanceof Npc ? (Npc) target : null;
+				if (npc == null)
+				{
+					return false;
+				}
+				
+				sendNpcSkillView(activeChar, npc);
 				break;
 			}
 		}
@@ -217,6 +245,38 @@ public class NpcViewMod implements IBypassHandler
 		activeChar.sendPacket(html);
 	}
 	
+	public static void sendNpcSkillView(PlayerInstance activeChar, Npc npc)
+	{
+		final NpcHtmlMessage html = new NpcHtmlMessage();
+		html.setFile(activeChar.getHtmlPrefix(), "data/html/mods/NpcView/Skills.htm");
+		
+		final StringBuilder sb = new StringBuilder();
+		
+		npc.getSkills().values().forEach(s ->
+		{
+			sb.append("<table width=277 height=32 cellspacing=0 background=\"L2UI_CT1.Windows.Windows_DF_TooltipBG\">");
+			sb.append("<tr><td width=32>");
+			sb.append("<img src=\"");
+			sb.append(s.getIcon());
+			sb.append("\" width=32 height=32>");
+			sb.append("</td><td width=110>");
+			sb.append(s.getName());
+			sb.append("</td>");
+			sb.append("<td width=45 align=center>");
+			sb.append(s.getId());
+			sb.append("</td>");
+			sb.append("<td width=35 align=center>");
+			sb.append(s.getLevel());
+			sb.append("</td></tr></table>");
+		});
+		
+		html.replace("%skills%", sb.toString());
+		html.replace("%npc_name%", npc.getName());
+		html.replace("%npcId%", npc.getId());
+		
+		activeChar.sendPacket(html);
+	}
+	
 	public static String getDropListButtons(Npc npc)
 	{
 		final StringBuilder sb = new StringBuilder();
@@ -233,6 +293,7 @@ public class NpcViewMod implements IBypassHandler
 			{
 				sb.append("<td align=center><button value=\"Show Spoil\" width=100 height=25 action=\"bypass NpcViewMod dropList CORPSE " + npc.getObjectId() + "\" back=\"L2UI_CT1.Button_DF_Calculator_Down\" fore=\"L2UI_CT1.Button_DF_Calculator\"></td>");
 			}
+			
 			sb.append("</tr></table>");
 		}
 		return sb.toString();

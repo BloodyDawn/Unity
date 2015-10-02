@@ -24,7 +24,6 @@ import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.tasks.npc.trap.TrapTask;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,7 +32,7 @@ import org.slf4j.LoggerFactory;
  */
 public class RandomAnimationTask implements Runnable
 {
-	private static final Logger _log = LoggerFactory.getLogger(TrapTask.class);
+	private static final Logger _log = LoggerFactory.getLogger(RandomAnimationTask.class);
 	private final Npc _npc;
 	private boolean _stopTask;
 	

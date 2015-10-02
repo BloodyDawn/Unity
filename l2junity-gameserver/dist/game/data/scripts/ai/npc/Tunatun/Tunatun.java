@@ -20,9 +20,7 @@ package ai.npc.Tunatun;
 
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.quest.QuestState;
 
-import quests.Q00020_BringUpWithLove.Q00020_BringUpWithLove;
 import ai.npc.AbstractNpcAI;
 
 /**
@@ -49,25 +47,41 @@ public final class Tunatun extends AbstractNpcAI
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
-		if ("Whip".equals(event))
+		String htmltext = getNoQuestMsg(player);
+		
+		switch (event)
 		{
-			if (hasQuestItems(player, BEAST_HANDLERS_WHIP))
+			case "31537-04.html":
+			case "31537-05.html":
+			case "31537-06.html":
 			{
-				return "31537-01.html";
+				htmltext = event;
+				break;
 			}
-			
-			QuestState st = player.getQuestState(Q00020_BringUpWithLove.class.getSimpleName());
-			if ((st == null) && (player.getLevel() < MIN_LEVEL))
+			case "whip":
 			{
-				return "31537-02.html";
-			}
-			else if ((st != null) || (player.getLevel() >= MIN_LEVEL))
-			{
-				giveItems(player, BEAST_HANDLERS_WHIP, 1);
-				return "31537-03.html";
+				{
+					if (!hasQuestItems(player, BEAST_HANDLERS_WHIP))
+					{
+						if (player.getLevel() >= MIN_LEVEL)
+						{
+							giveItems(player, BEAST_HANDLERS_WHIP, 1);
+							htmltext = "31537-03.html";
+						}
+						else
+						{
+							htmltext = "31537-02.html";
+						}
+					}
+					else
+					{
+						htmltext = "31537-01.html";
+					}
+				}
+				break;
 			}
 		}
-		return event;
+		return htmltext;
 	}
 	
 	public static void main(String[] args)

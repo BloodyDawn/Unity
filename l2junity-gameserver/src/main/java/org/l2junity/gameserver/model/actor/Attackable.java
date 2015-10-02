@@ -111,6 +111,7 @@ public class Attackable extends Npc
 	private final Map<Integer, AbsorberInfo> _absorbersList = new ConcurrentHashMap<>();
 	// Misc
 	private boolean _mustGiveExpSp;
+	private long _lastAttack;
 	
 	/**
 	 * Constructor of L2Attackable (use L2Character and L2NpcInstance constructor).<br>
@@ -1581,6 +1582,16 @@ public class Attackable extends Npc
 	public final boolean isSeeded()
 	{
 		return _seeded;
+	}
+	
+	public long getLastAttack()
+	{
+		return _lastAttack;
+	}
+	
+	public void setLastAttack(long lastAttack)
+	{
+		_lastAttack = lastAttack;
 	}
 	
 	/**

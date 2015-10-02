@@ -40,7 +40,7 @@ public final class ArenaManager extends AbstractNpcAI
 		31226, // Arena Director (MDT)
 		31225, // Arena Manager (Coliseum)
 	};
-	// Skill
+	// Skills
 	private static final SkillHolder[] BUFFS =
 	{
 		new SkillHolder(6805, 1), // Arena Empower

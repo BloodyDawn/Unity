@@ -1293,11 +1293,11 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14266" levels="1" name="Yoke">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Hold status. -->
 		<set name="icon" val="icon.skill1201" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="2" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1500" />
@@ -1305,6 +1305,7 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-1" />
 		<set name="abnormalType" val="ROOT_MAGICALLY" />
+		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="basicProperty" val="MAGIC" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="-5" />
@@ -1316,6 +1317,12 @@
 		<set name="abnormalTime" val="8" />
 		<set name="trait" val="HOLD" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Root" />
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14267" levels="2" name="Hole Punch">
 		<table name="#magicLvl"> 96 97 </table>
