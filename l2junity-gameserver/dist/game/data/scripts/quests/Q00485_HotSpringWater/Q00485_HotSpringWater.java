@@ -60,6 +60,7 @@ public final class Q00485_HotSpringWater extends Quest
 		addTalkId(ADVENTURER, WALDERAL);
 		addKillId(MONSTERS);
 		addCondLevel(MIN_LEVEL, MAX_LEVEL, "");
+		registerQuestItems(WATER);
 	}
 	
 	@Override
