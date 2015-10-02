@@ -61,6 +61,7 @@ import org.l2junity.gameserver.network.client.send.ExRotation;
 import org.l2junity.gameserver.network.client.send.MagicSkillCanceld;
 import org.l2junity.gameserver.network.client.send.MagicSkillLaunched;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
+import org.l2junity.gameserver.network.client.send.SetupGauge;
 import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -264,6 +265,7 @@ public class SkillCaster implements Runnable
 		// launch the magic in skillTime milliseconds
 		if (_castTime > 0)
 		{
+			_caster.sendPacket(new SetupGauge(_caster.getObjectId(), SetupGauge.BLUE, _castTime));
 			if (_skill.isChanneling() && (_skill.getChannelingSkillId() > 0))
 			{
 				_caster.getSkillChannelizer().startChanneling(_skill);
@@ -569,6 +571,11 @@ public class SkillCaster implements Runnable
 	public boolean isCasting()
 	{
 		return _isCasting.get();
+	}
+	
+	public boolean isNotCasting()
+	{
+		return !_isCasting.get();
 	}
 	
 	public boolean canAbortCast()

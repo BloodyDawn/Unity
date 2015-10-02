@@ -1594,15 +1594,16 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		
 		if (skill.isSimultaneousCast())
 		{
-			skillCaster = getSkillCaster(s -> !s.isCasting() && (s.getCastingType() == SkillCastingType.SIMULTANEOUS));
+			skillCaster = getSkillCaster(SkillCaster::isNotCasting, SkillCaster::isSimultaneousType);
 		}
 		else if (isAffected(EffectFlag.DOUBLE_CAST) && skill.canDoubleCast())
 		{
-			skillCaster = getSkillCaster(s -> !s.isCasting(), s -> (s.getCastingType() == SkillCastingType.NORMAL) || (s.getCastingType() == SkillCastingType.NORMAL_SECOND));
+			// In retail it should try using NORMAL_SECOND first, then NORMAL...
+			skillCaster = getSkillCaster(SkillCaster::isNotCasting, s -> (s.getCastingType() == SkillCastingType.NORMAL_SECOND) || (s.getCastingType() == SkillCastingType.NORMAL));
 		}
 		else
 		{
-			skillCaster = getSkillCaster(s -> !s.isCasting() && (s.getCastingType() == SkillCastingType.NORMAL));
+			skillCaster = getSkillCaster(SkillCaster::isNotCasting, s -> s.getCastingType() == SkillCastingType.NORMAL);
 		}
 		
 		if (skillCaster != null)
@@ -1625,7 +1626,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public void doSimultaneousCast(Skill skill)
 	{
-		SkillCaster skillCaster = getSkillCaster(s -> !s.isCasting() && (s.getCastingType() == SkillCastingType.SIMULTANEOUS));
+		SkillCaster skillCaster = getSkillCaster(SkillCaster::isNotCasting, SkillCaster::isSimultaneousType);
 		if (skillCaster != null)
 		{
 			if (skillCaster.prepareCasting(getTarget(), skill, false, false))
