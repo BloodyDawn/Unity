@@ -1598,7 +1598,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		else if (isAffected(EffectFlag.DOUBLE_CAST) && skill.canDoubleCast())
 		{
-			// In retail it should try using NORMAL_SECOND first, then NORMAL...
 			skillCaster = getSkillCaster(SkillCaster::isNotCasting, s -> (s.getCastingType() == SkillCastingType.NORMAL_SECOND) || (s.getCastingType() == SkillCastingType.NORMAL));
 		}
 		else
@@ -3305,20 +3304,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * @return True if the cast of the L2Character can be aborted.
-	 */
-	public final boolean canAbortCast()
-	{
-		// While double casting, cast cannot be aborted.
-		if (isAffected(EffectFlag.DOUBLE_CAST))
-		{
-			return false;
-		}
-		
-		return getSkillCaster(SkillCaster::isCasting, s -> s.canAbortCast() && s.getSkill().isMagic(), SkillCaster::isNormalType) != null;
-	}
-	
-	/**
 	 * @return True if the L2Character is attacking.
 	 */
 	public final boolean isAttackingNow()
@@ -3339,19 +3324,28 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	/**
 	 * Abort the cast of normal non-simultaneous skills.
+	 * @return {@code true} if a skill casting has been aborted, {@code false} otherwise.
 	 */
-	public final void abortCast()
+	public final boolean abortCast()
 	{
-		abortCast(SkillCaster::isNormalType);
+		return abortCast(SkillCaster::isNormalType);
 	}
 	
-	public final void abortCast(Predicate<SkillCaster> filter)
+	/**
+	 * Try to break this character's casting using the given filters.
+	 * @param filter
+	 * @return {@code true} if a skill casting has been aborted, {@code false} otherwise.
+	 */
+	public final boolean abortCast(Predicate<SkillCaster> filter)
 	{
-		SkillCaster skillCaster = getSkillCaster(s -> s.isCasting(), filter);
+		SkillCaster skillCaster = getSkillCaster(SkillCaster::isCasting, filter);
 		if (skillCaster != null)
 		{
 			skillCaster.stopCasting(true);
+			return true;
 		}
+		
+		return false;
 	}
 	
 	/**
@@ -4311,10 +4305,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public void breakCast()
 	{
-		if (canAbortCast())
+		// Break only one skill at a time while casting.
+		SkillCaster skillCaster = getSkillCaster(SkillCaster::isCasting, SkillCaster::canAbortCast, SkillCaster::isNormalType);
+		if ((skillCaster != null) && skillCaster.getSkill().isMagic())
 		{
 			// Abort the cast of the L2Character and send Server->Client MagicSkillCanceld/ActionFailed packet.
-			abortCast();
+			skillCaster.stopCasting(true);
 			
 			if (isPlayer())
 			{

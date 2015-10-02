@@ -30,11 +30,24 @@ public final class ActionFailed implements IClientOutgoingPacket
 	public static final ActionFailed STATIC_PACKET = new ActionFailed();
 	private static final Map<SkillCastingType, ActionFailed> STATIC_PACKET_BY_CASTING_TYPE = new EnumMap<>(SkillCastingType.class);
 	
+	static
+	{
+		for (SkillCastingType castingType : SkillCastingType.values())
+		{
+			STATIC_PACKET_BY_CASTING_TYPE.put(castingType, new ActionFailed(castingType.getClientBarId()));
+		}
+	}
+	
 	private final int _castingType;
 	
 	private ActionFailed()
 	{
 		_castingType = 0;
+	}
+	
+	private ActionFailed(int castingType)
+	{
+		_castingType = castingType;
 	}
 	
 	public static ActionFailed get(SkillCastingType castingType)
