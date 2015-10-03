@@ -35,9 +35,7 @@ import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.tasks.character.FlyToLocationTask;
 import org.l2junity.gameserver.model.actor.tasks.character.QueuedMagicUseTask;
@@ -135,8 +133,7 @@ public class SkillCaster implements Runnable
 			return false;
 		}
 		
-		// TODO: OnCreatureSkillUse should not have targets list... that one is for OnCreatureSkillFinishCast
-		final TerminateReturn term = EventDispatcher.getInstance().notifyEvent(new OnCreatureSkillUse(_caster, skill, skill.isSimultaneousCast(), (Creature) target, new WorldObject[0]), _caster, TerminateReturn.class);
+		final TerminateReturn term = EventDispatcher.getInstance().notifyEvent(new OnCreatureSkillUse(_caster, skill, skill.isSimultaneousCast(), (Creature) target), _caster, TerminateReturn.class);
 		if ((term != null) && term.terminate())
 		{
 			_isCasting.set(false);
@@ -217,12 +214,6 @@ public class SkillCaster implements Runnable
 			}
 		}
 		
-		// Send MoveToPawn packet to trigger Blue Bubbles on target become Red, but don't do it on second casting, because that will screw up animation... some fucked up stuff, right?
-		if (_castingType == SkillCastingType.NORMAL)
-		{
-			_caster.sendPacket(new MoveToPawn(_caster, _target, (int) _caster.calculateDistance(_target, false, false)));
-		}
-		
 		// Consume skill initial MP needed for cast.
 		int initmpcons = _caster.getStat().getMpInitialConsume(_skill);
 		if (initmpcons > 0)
@@ -233,11 +224,18 @@ public class SkillCaster implements Runnable
 			_caster.sendPacket(su);
 		}
 		
-		// Face the target
 		if (_target != _caster)
 		{
+			// Face the target
 			_caster.setHeading(Util.calculateHeadingFrom(_caster, _target));
 			_caster.broadcastPacket(new ExRotation(_caster.getObjectId(), _caster.getHeading()));
+			
+			// Send MoveToPawn packet to trigger Blue Bubbles on target become Red, but don't do it on second casting, because that will screw up animation... some fucked up stuff, right?
+			if (_caster.isPlayer() && (_castingType == SkillCastingType.NORMAL))
+			{
+				_caster.sendPacket(new MoveToPawn(_caster, _target, (int) _caster.calculateDistance(_target, false, false)));
+				_caster.sendPacket(ActionFailed.STATIC_PACKET);
+			}
 		}
 		
 		// Send a Server->Client packet MagicSkillUser with target, displayId, level, skillTime, reuseDelay
@@ -272,7 +270,11 @@ public class SkillCaster implements Runnable
 		// launch the magic in skillTime milliseconds
 		if (_castTime > 0)
 		{
-			_caster.sendPacket(new SetupGauge(_caster.getObjectId(), SetupGauge.BLUE, _castTime));
+			if (_caster.isPlayer())
+			{
+				_caster.sendPacket(new SetupGauge(_caster.getObjectId(), SetupGauge.BLUE, _castTime));
+			}
+			
 			if (_skill.isChanneling() && (_skill.getChannelingSkillId() > 0))
 			{
 				_caster.getSkillChannelizer().startChanneling(_skill);
@@ -382,42 +384,19 @@ public class SkillCaster implements Runnable
 				}
 			}
 			
+			// Broadcast MagicSkillLaunched packet.
 			if (!skill.isToggle())
 			{
 				_caster.broadcastPacket(new MagicSkillLaunched(_caster, skill.getDisplayId(), skill.getDisplayLevel(), _castingType, targets));
 			}
 			
-			// Go through targets table
-			for (WorldObject tgt : targets)
-			{
-				if (tgt.isPlayable())
-				{
-					if (_caster.isPlayer() && tgt.isSummon())
-					{
-						((Summon) tgt).updateAndBroadcastStatus(1);
-					}
-				}
-				else if (_caster.isPlayable() && tgt.isAttackable())
-				{
-					Creature tgtCreature = (Creature) tgt;
-					if (skill.getEffectPoint() > 0)
-					{
-						((Attackable) tgtCreature).reduceHate(_caster, skill.getEffectPoint());
-					}
-					else if (skill.getEffectPoint() < 0)
-					{
-						((Attackable) tgtCreature).addDamageHate(_caster, 0, -skill.getEffectPoint());
-					}
-				}
-			}
-			
+			// Recharge shots
 			_caster.rechargeShots(skill.useSoulShot(), skill.useSpiritShot(), false);
 			
 			final StatusUpdate su = new StatusUpdate(_caster);
 			
-			// Consume MP of the L2Character and Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
-			double mpConsume = _caster.getStat().getMpConsume(skill);
-			
+			// Consume the required MP or stop casting if not enough.
+			double mpConsume = skill.getMpConsume() > 0 ? _caster.getStat().getMpConsume(skill) : 0;
 			if (mpConsume > 0)
 			{
 				if (mpConsume > _caster.getCurrentMp())
@@ -429,14 +408,12 @@ public class SkillCaster implements Runnable
 				
 				_caster.getStatus().reduceMp(mpConsume);
 				su.addAttribute(StatusUpdate.CUR_MP, (int) _caster.getCurrentMp());
-				_caster.sendPacket(su);
 			}
 			
-			// Consume HP if necessary and Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
-			if (skill.getHpConsume() > 0)
+			// Consume the required HP or stop casting if not enough.
+			double consumeHp = skill.getHpConsume();
+			if (consumeHp > 0)
 			{
-				double consumeHp = skill.getHpConsume();
-				
 				if (consumeHp >= _caster.getCurrentHp())
 				{
 					_caster.sendPacket(SystemMessageId.NOT_ENOUGH_HP);
@@ -445,21 +422,22 @@ public class SkillCaster implements Runnable
 				}
 				
 				_caster.getStatus().reduceHp(consumeHp, _caster, true);
-				
 				su.addAttribute(StatusUpdate.CUR_HP, (int) _caster.getCurrentHp());
+			}
+			
+			// Send HP/MP consumption packet if any attribute is set.
+			if (su.hasAttributes())
+			{
 				_caster.sendPacket(su);
 			}
 			
-			if (_caster.isPlayer())
+			// Consume Souls if necessary
+			if (_caster.isPlayer() && (skill.getMaxSoulConsumeCount() > 0))
 			{
-				// Consume Souls if necessary
-				if (skill.getMaxSoulConsumeCount() > 0)
+				if (!_caster.getActingPlayer().decreaseSouls(skill.getMaxSoulConsumeCount(), skill))
 				{
-					if (!_caster.getActingPlayer().decreaseSouls(skill.getMaxSoulConsumeCount(), skill))
-					{
-						stopCasting(true);
-						return;
-					}
+					stopCasting(true);
+					return;
 				}
 			}
 			

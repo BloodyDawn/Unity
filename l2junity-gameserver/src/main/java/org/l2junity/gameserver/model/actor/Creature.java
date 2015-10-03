@@ -4755,18 +4755,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 									}
 								}
 							}
-							else if (target.isAttackable())
+							else if (target.isAttackable() && (skill.getEffectPoint() < 0))
 							{
-								switch (skill.getId())
-								{
-									case 51: // Lure
-									case 511: // Temptation
-										break;
-									default:
-										// add attacker into list
-										((Creature) target).addAttackerToAttackByList(this);
-								}
+								// Add hate to the attackable, and put it in the attack list.
+								((Attackable) target).addDamageHate(this, 0, -skill.getEffectPoint());
+								((Creature) target).addAttackerToAttackByList(this);
 							}
+							
 							// notify target AI about the attack
 							if (((Creature) target).hasAI() && !skill.hasEffectType(L2EffectType.HATE))
 							{
@@ -4785,8 +4780,14 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							}
 							else if (target.isAttackable())
 							{
+								((Attackable) target).reduceHate(this, skill.getEffectPoint());
 								player.updatePvPStatus();
 							}
+						}
+						
+						if (target.isSummon())
+						{
+							((Summon) target).updateAndBroadcastStatus(1);
 						}
 					}
 				}

@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
-import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillUse;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillFinishCast;
 import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
@@ -158,7 +158,7 @@ public final class Minigame extends AbstractNpcAI
 					room.getManager().broadcastSay(ChatType.NPC_GENERAL, NpcStringId.NOW_LIGHT_THE_FURNACES_IN_THE_CORRECT_ORDER);
 					room.burnThemAll();
 					startQuestTimer("off", 2000, npc, null);
-					final ConsumerEventListener listener = new ConsumerEventListener(room.getParticipant(), EventType.ON_CREATURE_SKILL_USE, (OnCreatureSkillUse listenerEvent) -> onSkillUse(listenerEvent), room);
+					final ConsumerEventListener listener = new ConsumerEventListener(room.getParticipant(), EventType.ON_CREATURE_SKILL_FINISH_CAST, (OnCreatureSkillFinishCast listenerEvent) -> onSkillUse(listenerEvent), room);
 					room.getParticipant().addListener(listener);
 					room.setCurrentPot(0);
 				}
@@ -260,7 +260,7 @@ public final class Minigame extends AbstractNpcAI
 		return super.onSpawn(npc);
 	}
 	
-	public void onSkillUse(OnCreatureSkillUse event)
+	public void onSkillUse(OnCreatureSkillFinishCast event)
 	{
 		final MinigameRoom room = getRoomByParticipant((PlayerInstance) event.getCaster());
 		final boolean miniGameStarted = room.getStarted();
