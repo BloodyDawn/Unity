@@ -393,7 +393,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			setCastTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(getCastTarget(), _actor.getMagicalAttackRange(_skill), false))
+		if (maybeMoveToPawn(getCastTarget(), _actor.getMagicalAttackRange(_skill)))
 		{
 			return;
 		}

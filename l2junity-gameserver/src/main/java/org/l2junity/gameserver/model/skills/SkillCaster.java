@@ -61,6 +61,7 @@ import org.l2junity.gameserver.network.client.send.ExRotation;
 import org.l2junity.gameserver.network.client.send.MagicSkillCanceld;
 import org.l2junity.gameserver.network.client.send.MagicSkillLaunched;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
+import org.l2junity.gameserver.network.client.send.MoveToPawn;
 import org.l2junity.gameserver.network.client.send.SetupGauge;
 import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -214,6 +215,12 @@ public class SkillCaster implements Runnable
 			{
 				talisman.decreaseMana(false, talisman.useSkillDisTime());
 			}
+		}
+		
+		// Send MoveToPawn packet to trigger Blue Bubbles on target become Red, but don't do it on second casting, because that will screw up animation... some fucked up stuff, right?
+		if (_castingType == SkillCastingType.NORMAL)
+		{
+			_caster.sendPacket(new MoveToPawn(_caster, _target, (int) _caster.calculateDistance(_target, false, false)));
 		}
 		
 		// Consume skill initial MP needed for cast.

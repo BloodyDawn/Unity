@@ -70,7 +70,7 @@ public class DoppelgangerAI extends CharacterAI
 			setAttackTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(getAttackTarget(), _actor.getPhysicalAttackRange(), false))
+		if (maybeMoveToPawn(getAttackTarget(), _actor.getPhysicalAttackRange()))
 		{
 			return;
 		}
@@ -86,7 +86,7 @@ public class DoppelgangerAI extends CharacterAI
 			return;
 		}
 		boolean val = _startFollow;
-		if (maybeMoveToPawn(getCastTarget(), _actor.getMagicalAttackRange(_skill), false))
+		if (maybeMoveToPawn(getCastTarget(), _actor.getMagicalAttackRange(_skill)))
 		{
 			return;
 		}
@@ -103,7 +103,7 @@ public class DoppelgangerAI extends CharacterAI
 		{
 			return;
 		}
-		if (maybeMoveToPawn(getTarget(), 36, false))
+		if (maybeMoveToPawn(getTarget(), 36))
 		{
 			return;
 		}

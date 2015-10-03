@@ -1598,7 +1598,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		else if (isAffected(EffectFlag.DOUBLE_CAST) && skill.canDoubleCast())
 		{
-			skillCaster = getSkillCaster(SkillCaster::isNotCasting, s -> (s.getCastingType() == SkillCastingType.NORMAL_SECOND) || (s.getCastingType() == SkillCastingType.NORMAL));
+			skillCaster = getSkillCaster(SkillCaster::isNotCasting, SkillCaster::isNormalType);
 		}
 		else
 		{

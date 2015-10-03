@@ -258,7 +258,7 @@ public class PlayerAI extends PlayableAI
 			setAttackTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(target, _actor.getPhysicalAttackRange(), false))
+		if (maybeMoveToPawn(target, _actor.getPhysicalAttackRange()))
 		{
 			return;
 		}
@@ -269,7 +269,7 @@ public class PlayerAI extends PlayableAI
 	private void thinkCast()
 	{
 		Creature target = getCastTarget();
-		if ((_skill.getTargetType() == L2TargetType.GROUND) && (_actor.isPlayer()))
+		if ((_skill.getTargetType() == L2TargetType.GROUND) && (_actor instanceof PlayerInstance))
 		{
 			if (maybeMoveToPosition(((PlayerInstance) _actor).getCurrentSkillWorldPosition(), _actor.getMagicalAttackRange(_skill)))
 			{
@@ -289,7 +289,7 @@ public class PlayerAI extends PlayableAI
 				_actor.abortCast();
 				return;
 			}
-			if ((target != null) && maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill), true))
+			if ((target != null) && maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
 			{
 				_actor.abortCast();
 				return;
@@ -315,7 +315,7 @@ public class PlayerAI extends PlayableAI
 		{
 			return;
 		}
-		if (maybeMoveToPawn(target, 36, false))
+		if (maybeMoveToPawn(target, 36))
 		{
 			return;
 		}
@@ -334,7 +334,7 @@ public class PlayerAI extends PlayableAI
 		{
 			return;
 		}
-		if (maybeMoveToPawn(target, 36, false))
+		if (maybeMoveToPawn(target, 36))
 		{
 			return;
 		}
