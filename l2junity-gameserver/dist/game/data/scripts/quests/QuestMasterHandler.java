@@ -127,6 +127,7 @@ import quests.Q00476_PlainMission.Q00476_PlainMission;
 import quests.Q00481_ShadowHelper.Q00481_ShadowHelper;
 import quests.Q00485_HotSpringWater.Q00485_HotSpringWater;
 import quests.Q00488_WondersOfCaring.Q00488_WondersOfCaring;
+import quests.Q00489_InThisQuietPlace.Q00489_InThisQuietPlace;
 import quests.Q00490_DutyOfTheSurvivor.Q00490_DutyOfTheSurvivor;
 import quests.Q00501_ProofOfClanAlliance.Q00501_ProofOfClanAlliance;
 import quests.Q00504_CompetitionForTheBanditStronghold.Q00504_CompetitionForTheBanditStronghold;
@@ -415,6 +416,7 @@ public class QuestMasterHandler
 		Q00481_ShadowHelper.class,
 		Q00485_HotSpringWater.class,
 		Q00488_WondersOfCaring.class,
+		Q00489_InThisQuietPlace.class,
 		Q00490_DutyOfTheSurvivor.class,
 		Q00501_ProofOfClanAlliance.class,
 		Q00504_CompetitionForTheBanditStronghold.class,

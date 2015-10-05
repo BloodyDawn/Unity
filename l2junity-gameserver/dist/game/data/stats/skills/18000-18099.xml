@@ -185,12 +185,33 @@
 		<set name="reuseDelay" val="-1000" />
 	</skill>
 	<skill id="18024" levels="24" name="Venir's Talisman">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Infinity Odyssey -->
 		<!-- MEN + 1. -->
 		<table name="#icons"> icon.etc_all_stat_talisman_i00 icon.etc_all_stat_talisman_i00 icon.etc_all_stat_talisman_i00 icon.etc_all_stat_talisman_i00 icon.etc_all_stat_talisman_i00 icon.etc_all_stat_talisman_i00 icon.etc_all_stat_talisman_i00 icon.etc_all_stat_talisman_i00 icon.etc_all_stat_talisman_i01 icon.etc_all_stat_talisman_i01 icon.etc_all_stat_talisman_i01 icon.etc_all_stat_talisman_i01 icon.etc_all_stat_talisman_i01 icon.etc_all_stat_talisman_i01 icon.etc_all_stat_talisman_i01 icon.etc_all_stat_talisman_i01 icon.etc_all_stat_talisman_i02 icon.etc_all_stat_talisman_i02 icon.etc_all_stat_talisman_i02 icon.etc_all_stat_talisman_i02 icon.etc_all_stat_talisman_i02 icon.etc_all_stat_talisman_i02 icon.etc_all_stat_talisman_i02 icon.etc_all_stat_talisman_i02 </table>
+		<table name="#MEN"> 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 </table>
+		<table name="#WIT"> 0 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 </table>
+		<table name="#CON"> 0 0 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 3 3 3 </table>
+		<table name="#INT"> 0 0 0 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 3 3 </table>
+		<table name="#DEX"> 0 0 0 0 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 3 </table>
+		<table name="#STR"> 0 0 0 0 0 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 </table>
+		<table name="#LUC"> 0 0 0 0 0 0 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 </table>
+		<table name="#CHA"> 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 </table>
+		
 		<set name="icon" val="#icons" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="CON" val="#CON" />
+				<add stat="MEN" val="#MEN" />
+				<add stat="WIT" val="#WIT" />
+				<add stat="INT" val="#INT" />
+				<add stat="DEX" val="#DEX" />
+				<add stat="STR" val="#STR" />
+				<add stat="LUC" val="#LUC" />
+				<add stat="CHA" val="#CHA" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="18048" levels="1" name="Hair Accessory (LUC)">
 		<!-- AUTO GENERATED SKILL -->
