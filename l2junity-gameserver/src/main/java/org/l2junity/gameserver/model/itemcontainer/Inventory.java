@@ -564,7 +564,7 @@ public abstract class Inventory extends ItemContainer
 				// Remove all skills that doesn't matches the conditions
 				for (ArmorsetSkillHolder holder : armorSet.getSkills())
 				{
-					if (holder.validateConditions(player, armorSet, idProvider))
+					if (!holder.validateConditions(player, armorSet, idProvider))
 					{
 						final Skill itemSkill = holder.getSkill();
 						if (itemSkill == null)
