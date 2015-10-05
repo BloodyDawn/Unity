@@ -2774,9 +2774,9 @@
 		<set name="magicLvl" val="87" />
 		<set name="isMagic" val="1" />
 		<for>
-			<!-- effect name="ResetDebuff" -->
-			<!-- param slot="CHANGEBODY;DISARM;PARALYZE;ROOT_MAGICALLY;SILENCE;SLEEP;STUN;TURN_FLEE;TURN_STONE" / -->
-			<!-- /effect -->
+			<effect name="AbnormalTimeChange">
+				<param slot="CHANGEBODY;DISARM;PARALYZE;ROOT_MAGICALLY;SILENCE;SLEEP;STUN;TURN_FLEE;TURN_STONE" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11096" levels="1" name="Elemental Destruction: Fire">

@@ -60,7 +60,7 @@ public final class BuffInfo
 	/** Abnormal time. */
 	private int _abnormalTime;
 	/** The game ticks at the start of this effect. */
-	private final int _periodStartTicks;
+	private int _periodStartTicks;
 	// Misc
 	/** If {@code true} then this effect has been cancelled. */
 	private boolean _isRemoved = false;
@@ -420,6 +420,7 @@ public final class BuffInfo
 	{
 		if (_abnormalTime > 0)
 		{
+			_periodStartTicks = GameTimeController.getInstance().getGameTicks();
 			_abnormalTime = abnormalTime;
 			if ((_scheduledFutureTimeTask != null) && !_scheduledFutureTimeTask.isCancelled())
 			{
