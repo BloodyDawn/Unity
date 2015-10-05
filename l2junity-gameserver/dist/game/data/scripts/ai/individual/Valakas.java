@@ -499,14 +499,12 @@ public final class Valakas extends AbstractNpcAI
 		if (Util.checkIfInRange((skill.getCastRange() < 600) ? 600 : skill.getCastRange(), npc, _actualVictim, true))
 		{
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			// npc.setIsCastingNow(true);
 			npc.setTarget(_actualVictim);
 			npc.doCast(skill);
 		}
 		else
 		{
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _actualVictim, null);
-			// npc.setIsCastingNow(false);
 		}
 	}
 	

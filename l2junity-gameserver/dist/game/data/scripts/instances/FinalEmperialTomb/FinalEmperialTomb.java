@@ -46,13 +46,10 @@ import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.Territory;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Attackable;
-import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -845,41 +842,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 					
 					if ((_world.frintezza != null) && !_world.frintezza.isDead() && (_world.activeScarlet != null) && !_world.activeScarlet.isDead())
 					{
-						List<Creature> targetList = new LinkedList<>();
-						if (skill.hasEffectType(L2EffectType.BLOCK_ACTIONS) || skill.isDebuff())
-						{
-							for (int objId : _world.getAllowed())
-							{
-								PlayerInstance player = World.getInstance().getPlayer(objId);
-								if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId()))
-								{
-									if (!player.isDead())
-									{
-										targetList.add(player);
-									}
-									final Summon pet = player.getPet();
-									if ((pet != null) && !pet.isDead())
-									{
-										targetList.add(pet);
-									}
-									player.getServitors().values().forEach(s ->
-									{
-										if (!s.isDead())
-										{
-											targetList.add(s);
-										}
-									});
-								}
-							}
-						}
-						else
-						{
-							targetList.add(_world.activeScarlet);
-						}
-						if (targetList.size() > 0)
-						{
-							_world.frintezza.doCast(skill);
-						}
+						_world.frintezza.doCast(skill);
 					}
 					break;
 				case 2: // finish morph

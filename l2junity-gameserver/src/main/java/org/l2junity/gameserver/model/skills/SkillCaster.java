@@ -102,6 +102,15 @@ public class SkillCaster implements Runnable
 		_isCasting = new AtomicBoolean();
 	}
 	
+	/**
+	 * Checks if casting can be prepared for this skill caster and sets the data required for starting the cast.<br>
+	 * The casting data can be altered before {@code startCasting()} has been called, for sutuations where you want a customized casting.
+	 * @param target the main target
+	 * @param skill the skill that its going to be casted towards the target
+	 * @param ctrlPressed force use the skill
+	 * @param shiftPressed don't move while using the skill
+	 * @return {@code true} if skill caster is ready to start casting, {@code false} if conditions are not met to start this casting.
+	 */
 	public boolean prepareCasting(WorldObject target, Skill skill, boolean ctrlPressed, boolean shiftPressed)
 	{
 		Objects.requireNonNull(skill);
@@ -166,6 +175,9 @@ public class SkillCaster implements Runnable
 		return true;
 	}
 	
+	/**
+	 * Start the casting of the prepared casting info. <br>
+	 */
 	public void startCasting()
 	{
 		if (!isCasting())
@@ -293,7 +305,7 @@ public class SkillCaster implements Runnable
 	{
 		if (!isCasting())
 		{
-			_log.warn("Character: {} is casting, but casting is false", _caster);
+			_log.warn("Character: {} is casting, but casting is false. Skill: {}, Target: {}", _caster, _skill, _target);
 			return;
 		}
 		
@@ -460,6 +472,10 @@ public class SkillCaster implements Runnable
 		}
 	}
 	
+	/**
+	 * Stops this casting and cleans all cast parameters.<br>
+	 * @param aborted if {@code true}, server will send packets to the player, notifying him that the skill has been aborted.
+	 */
 	public void stopCasting(boolean aborted)
 	{
 		// Verify for same status.
@@ -538,36 +554,57 @@ public class SkillCaster implements Runnable
 		}
 	}
 	
+	/**
+	 * @return the skill that has been prepared for casting.
+	 */
 	public Skill getSkill()
 	{
 		return _skill;
 	}
 	
+	/**
+	 * @return {@code true} if this casting is forced attack.
+	 */
 	public boolean isCtrlPressed()
 	{
 		return _ctrlPressed;
 	}
 	
+	/**
+	 * @return {@code true} if this casting is attack without moving.
+	 */
 	public boolean isShiftPressed()
 	{
 		return _shiftPressed;
 	}
 	
+	/**
+	 * @return if this caster has been prepared, currently is casting and hasn't finished while casting process.
+	 */
 	public boolean isCasting()
 	{
 		return _isCasting.get();
 	}
 	
+	/**
+	 * @return {@code !isCasting()} which is useful for lambda expressions such as {@code SkillCaster::isNotCasting}
+	 */
 	public boolean isNotCasting()
 	{
 		return !_isCasting.get();
 	}
 	
+	/**
+	 * @return {@code true} if casting can be aborted through regular means such as cast break while being attacked or while cancelling target, {@code false} otherwise.
+	 */
 	public boolean canAbortCast()
 	{
 		return _castInterruptTime > GameTimeController.getInstance().getGameTicks();
 	}
 	
+	/**
+	 * @return the type of this caster, which also defines the casting display bar on the player.
+	 */
 	public SkillCastingType getCastingType()
 	{
 		return _castingType;
@@ -581,6 +618,36 @@ public class SkillCaster implements Runnable
 	public boolean isSimultaneousType()
 	{
 		return _castingType == SkillCastingType.SIMULTANEOUS;
+	}
+	
+	public void setCtrlPressed(boolean ctrlPressed)
+	{
+		_ctrlPressed = ctrlPressed;
+	}
+	
+	public void setShiftPressed(boolean shiftPressed)
+	{
+		_shiftPressed = shiftPressed;
+	}
+	
+	public void setCastTime(int castTime)
+	{
+		_castTime = castTime;
+	}
+	
+	public void setReuseDelay(int reuseDelay)
+	{
+		_reuseDelay = reuseDelay;
+	}
+	
+	public void setCastInterruptTime(int castInterruptTime)
+	{
+		_castInterruptTime = castInterruptTime;
+	}
+	
+	public void setSkillMastery(boolean skillMastery)
+	{
+		_skillMastery = skillMastery;
 	}
 	
 	/**
@@ -810,6 +877,12 @@ public class SkillCaster implements Runnable
 		return true;
 	}
 	
+	/**
+	 * Calculates the time required for this skill to be cast.
+	 * @param caster the creature that is requesting the calculation.
+	 * @param skill the skill from which casting time will be calculated.
+	 * @return the time in milliseconds required for this skill to be casted.
+	 */
 	public static int getCastTime(Creature caster, Skill skill)
 	{
 		// Get the Base Casting Time of the Skills.
@@ -844,6 +917,12 @@ public class SkillCaster implements Runnable
 		return skillTime;
 	}
 	
+	/**
+	 * Calculates the time required for this skill to be used again.
+	 * @param caster the creature that is requesting the calculation.
+	 * @param skill the skill from which reuse time will be calculated.
+	 * @return the time in milliseconds this skill is being under reuse.
+	 */
 	public static int getReuseTime(Creature caster, Skill skill)
 	{
 		// Calculate the Reuse Time of the Skill
