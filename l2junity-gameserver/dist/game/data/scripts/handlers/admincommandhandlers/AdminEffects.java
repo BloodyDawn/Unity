@@ -40,6 +40,7 @@ import org.l2junity.gameserver.network.client.send.ExUserInfoAbnormalVisualEffec
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.OnEventTrigger;
 import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.network.client.send.SunRise;
@@ -106,7 +107,8 @@ public class AdminEffects implements IAdminCommandHandler
 		"admin_atmosphere",
 		"admin_atmosphere_menu",
 		"admin_set_displayeffect",
-		"admin_set_displayeffect_menu"
+		"admin_set_displayeffect_menu",
+		"admin_event_trigger"
 	};
 	
 	@Override
@@ -648,6 +650,20 @@ public class AdminEffects implements IAdminCommandHandler
 			catch (Exception e)
 			{
 				activeChar.sendMessage("Usage: //set_displayeffect <id>");
+			}
+		}
+		else if (command.startsWith("admin_event_trigger"))
+		{
+			try
+			{
+				int triggerId = Integer.parseInt(st.nextToken());
+				boolean enable = Boolean.parseBoolean(st.nextToken());
+				World.getInstance().forEachVisibleObject(activeChar, PlayerInstance.class, player -> player.sendPacket(new OnEventTrigger(triggerId, enable)));
+				activeChar.sendPacket(new OnEventTrigger(triggerId, enable));
+			}
+			catch (Exception e)
+			{
+				activeChar.sendMessage("Usage: //event_trigger id [true | false]");
 			}
 		}
 		
