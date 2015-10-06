@@ -640,7 +640,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 	 * </ul>
 	 * TODO: Manage casting rules to healer mobs (like Ant Nurses)
 	 */
-	protected synchronized void thinkAttack()
+	protected void thinkAttack()
 	{
 		final Attackable npc = getActiveChar();
 		if (npc.isCastingNow())
@@ -653,10 +653,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if ((originalAttackTarget == null) || originalAttackTarget.isAlikeDead() || ((_attackTimeout < GameTimeController.getInstance().getGameTicks()) && npc.canStopAttackByTime()))
 		{
 			// Stop hating this target after the attack timeout or if target is dead
-			if (originalAttackTarget != null)
-			{
-				npc.stopHating(originalAttackTarget);
-			}
+			npc.stopHating(originalAttackTarget);
 			
 			// Set the AI Intention to AI_INTENTION_ACTIVE
 			setIntention(AI_INTENTION_ACTIVE);

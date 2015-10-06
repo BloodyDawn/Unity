@@ -982,7 +982,7 @@ public final class Skill implements IIdentifiable
 	
 	public boolean isBad()
 	{
-		return _effectPoint < 0;
+		return (_effectPoint < 0) && (_targetType != L2TargetType.SELF);
 	}
 	
 	public boolean checkCondition(Creature activeChar, WorldObject object)

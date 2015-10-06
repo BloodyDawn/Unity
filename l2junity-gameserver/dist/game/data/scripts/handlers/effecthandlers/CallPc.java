@@ -27,6 +27,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.holders.SummonRequestHolder;
+import org.l2junity.gameserver.model.olympiad.OlympiadManager;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.ConfirmDlg;
@@ -136,7 +137,7 @@ public final class CallPc extends AbstractEffect
 			return false;
 		}
 		
-		if (target.inObserverMode())
+		if (target.inObserverMode() || OlympiadManager.getInstance().isRegisteredInComp(target))
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_AN_AREA_WHICH_BLOCKS_SUMMONING_OR_TELEPORTING2);
 			sm.addCharName(target);
