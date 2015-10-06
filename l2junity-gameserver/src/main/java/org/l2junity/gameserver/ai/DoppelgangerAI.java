@@ -81,6 +81,11 @@ public class DoppelgangerAI extends CharacterAI
 	
 	private void thinkCast()
 	{
+		if (_actor.isCastingNow(SkillCaster::isNormalType))
+		{
+			return;
+		}
+		
 		if (checkTargetLost(getCastTarget()))
 		{
 			setCastTarget(null);
@@ -114,7 +119,7 @@ public class DoppelgangerAI extends CharacterAI
 	@Override
 	protected void onEvtThink()
 	{
-		if (_thinking || _actor.isCastingNow(SkillCaster::isNormalType) || _actor.isAllSkillsDisabled())
+		if (_thinking || _actor.isCastingNow(SkillCaster::isBlockingAction) || _actor.isAllSkillsDisabled())
 		{
 			return;
 		}

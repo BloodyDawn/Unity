@@ -612,7 +612,7 @@ public class SkillCaster implements Runnable
 	
 	public boolean isBlockingAction()
 	{
-		return true;
+		return isNormalType(); // TODO: Find out which skills don't block actions such as transformation Fast Run...
 	}
 	
 	public boolean isNormalType()

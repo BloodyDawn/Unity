@@ -106,6 +106,11 @@ public class SummonAI extends PlayableAI implements Runnable
 	private void thinkCast()
 	{
 		Summon summon = (Summon) _actor;
+		if (summon.isCastingNow(SkillCaster::isNormalType))
+		{
+			return;
+		}
+		
 		if (checkTargetLost(getCastTarget()))
 		{
 			setCastTarget(null);
@@ -153,7 +158,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	@Override
 	protected void onEvtThink()
 	{
-		if (_thinking || _actor.isCastingNow(SkillCaster::isNormalType) || _actor.isAllSkillsDisabled())
+		if (_thinking || _actor.isCastingNow(SkillCaster::isBlockingAction) || _actor.isAllSkillsDisabled())
 		{
 			return;
 		}
