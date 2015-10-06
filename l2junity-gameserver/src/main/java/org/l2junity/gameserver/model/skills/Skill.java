@@ -203,6 +203,7 @@ public final class Skill implements IIdentifiable
 	private final boolean _isNecessaryToggle;
 	private final boolean _deleteAbnormalOnLeave;
 	private final boolean _irreplacableBuff; // Stays after death, on subclass change, cant be canceled.
+	private final boolean _withoutAction; // Skill doesnt stop movement, attack and whatever else that is action.
 	
 	private final int _toggleGroupId;
 	private final int _attachToggleGroupId;
@@ -400,6 +401,7 @@ public final class Skill implements IIdentifiable
 		_isNecessaryToggle = set.getBoolean("isNecessaryToggle", false);
 		_deleteAbnormalOnLeave = set.getBoolean("deleteAbnormalOnLeave", false);
 		_irreplacableBuff = set.getBoolean("irreplacableBuff", false);
+		_withoutAction = set.getBoolean("withoutAction", false);
 		
 		_toggleGroupId = set.getInt("toggleGroupId", -1);
 		_attachToggleGroupId = set.getInt("attachToggleGroupId", -1);
@@ -1854,6 +1856,11 @@ public final class Skill implements IIdentifiable
 	public boolean isIrreplacableBuff()
 	{
 		return _irreplacableBuff;
+	}
+	
+	public boolean isWithoutAction()
+	{
+		return _withoutAction;
 	}
 	
 	public int getToggleGroupId()

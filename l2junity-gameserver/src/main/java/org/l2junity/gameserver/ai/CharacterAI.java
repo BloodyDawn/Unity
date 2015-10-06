@@ -50,7 +50,6 @@ import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcMoveFinished
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.AutoAttackStop;
@@ -254,7 +253,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(SkillCaster::isBlockingAction) || _actor.isControlBlocked())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()) || _actor.isControlBlocked())
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -360,7 +359,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(SkillCaster::isBlockingAction))
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -399,7 +398,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(SkillCaster::isBlockingAction))
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -456,7 +455,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(SkillCaster::isBlockingAction))
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();
@@ -506,7 +505,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(SkillCaster::isBlockingAction))
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(s -> !s.isWithoutAction()))
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			clientActionFailed();

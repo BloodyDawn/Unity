@@ -40,7 +40,6 @@ import org.l2junity.gameserver.network.client.send.Die;
 import org.l2junity.gameserver.network.client.send.MoveToLocation;
 import org.l2junity.gameserver.network.client.send.MoveToPawn;
 import org.l2junity.gameserver.network.client.send.StopMove;
-import org.l2junity.gameserver.network.client.send.StopRotation;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -531,7 +530,7 @@ public abstract class AbstractAI implements Ctrl
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : Low level function, used by AI subclasses</B></FONT>
 	 * @param loc
 	 */
-	protected void clientStopMoving(Location loc)
+	public void clientStopMoving(Location loc)
 	{
 		// Stop movement of the L2Character
 		if (_actor.isMoving())
@@ -540,20 +539,7 @@ public abstract class AbstractAI implements Ctrl
 		}
 		
 		_clientMovingToPawnOffset = 0;
-		
-		if (_clientMoving || (loc != null))
-		{
-			_clientMoving = false;
-			
-			// Send a Server->Client packet StopMove to the actor and all L2PcInstance in its _knownPlayers
-			_actor.broadcastPacket(new StopMove(_actor));
-			
-			if (loc != null)
-			{
-				// Send a Server->Client packet StopRotation to the actor and all L2PcInstance in its _knownPlayers
-				_actor.broadcastPacket(new StopRotation(_actor.getObjectId(), loc.getHeading(), 0));
-			}
-		}
+		_clientMoving = false;
 	}
 	
 	/**

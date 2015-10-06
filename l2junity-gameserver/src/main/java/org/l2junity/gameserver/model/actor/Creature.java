@@ -150,6 +150,7 @@ import org.l2junity.gameserver.network.client.send.SetupGauge;
 import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.network.client.send.StatusUpdate;
 import org.l2junity.gameserver.network.client.send.StopMove;
+import org.l2junity.gameserver.network.client.send.StopRotation;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.TeleportToLocation;
 import org.l2junity.gameserver.network.client.send.UserInfo;
@@ -3531,6 +3532,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			setXYZ(loc.getX(), loc.getY(), loc.getZ());
 			setHeading(loc.getHeading());
 			revalidateZone(true);
+			broadcastPacket(new StopRotation(getObjectId(), loc.getHeading(), 0));
 		}
 		broadcastPacket(new StopMove(this));
 	}

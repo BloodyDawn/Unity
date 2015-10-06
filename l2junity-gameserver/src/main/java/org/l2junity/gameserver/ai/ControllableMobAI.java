@@ -130,7 +130,6 @@ public final class ControllableMobAI extends AttackableAI
 		if ((getAttackTarget() == null) || getAttackTarget().isAlikeDead())
 		{
 			setAttackTarget(findNextRndTarget());
-			clientStopMoving(null);
 		}
 		
 		if (getAttackTarget() == null)

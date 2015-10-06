@@ -96,7 +96,6 @@ public class DoppelgangerAI extends CharacterAI
 		{
 			return;
 		}
-		clientStopMoving(null);
 		getActor().followSummoner(false);
 		setIntention(AI_INTENTION_IDLE);
 		_startFollow = val;
@@ -119,7 +118,7 @@ public class DoppelgangerAI extends CharacterAI
 	@Override
 	protected void onEvtThink()
 	{
-		if (_thinking || _actor.isCastingNow(SkillCaster::isBlockingAction) || _actor.isAllSkillsDisabled())
+		if (_thinking || _actor.isCastingNow(s -> !s.isWithoutAction()) || _actor.isAllSkillsDisabled())
 		{
 			return;
 		}
