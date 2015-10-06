@@ -610,6 +610,11 @@ public class SkillCaster implements Runnable
 		return _castingType;
 	}
 	
+	public boolean isBlockingAction()
+	{
+		return true;
+	}
+	
 	public boolean isNormalType()
 	{
 		return (_castingType == SkillCastingType.NORMAL) || (_castingType == SkillCastingType.NORMAL_SECOND);

@@ -29,6 +29,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.DoppelgangerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.network.client.send.MoveToLocation;
 
 public class DoppelgangerAI extends CharacterAI
@@ -113,7 +114,7 @@ public class DoppelgangerAI extends CharacterAI
 	@Override
 	protected void onEvtThink()
 	{
-		if (_thinking || _actor.isCastingNow() || _actor.isAllSkillsDisabled())
+		if (_thinking || _actor.isCastingNow(SkillCaster::isNormalType) || _actor.isAllSkillsDisabled())
 		{
 			return;
 		}

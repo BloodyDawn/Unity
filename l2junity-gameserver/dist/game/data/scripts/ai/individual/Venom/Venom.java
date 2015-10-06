@@ -34,6 +34,7 @@ import org.l2junity.gameserver.model.events.impl.sieges.OnCastleSiegeFinish;
 import org.l2junity.gameserver.model.events.impl.sieges.OnCastleSiegeStart;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
@@ -305,17 +306,17 @@ public final class Venom extends AbstractNpcAI
 			npc.setTarget(attacker);
 			npc.doCast(VENOM_TELEPORT.getSkill());
 		}
-		else if (_aggroMode && (npc.getCurrentHp() < (npc.getMaxHp() / 3)) && (getRandom(100) < 25) && !npc.isCastingNow())
+		else if (_aggroMode && (npc.getCurrentHp() < (npc.getMaxHp() / 3)) && (getRandom(100) < 25) && !npc.isCastingNow(SkillCaster::isNormalType))
 		{
 			npc.setTarget(attacker);
 			npc.doCast(RANGE_TELEPORT.getSkill());
 		}
-		else if ((distance > 300) && (getRandom(100) < 10) && !npc.isCastingNow())
+		else if ((distance > 300) && (getRandom(100) < 10) && !npc.isCastingNow(SkillCaster::isNormalType))
 		{
 			npc.setTarget(attacker);
 			npc.doCast(VENOM_STRIKE.getSkill());
 		}
-		else if ((getRandom(100) < 10) && !npc.isCastingNow())
+		else if ((getRandom(100) < 10) && !npc.isCastingNow(SkillCaster::isNormalType))
 		{
 			npc.setTarget(attacker);
 			npc.doCast(SONIC_STORM.getSkill());

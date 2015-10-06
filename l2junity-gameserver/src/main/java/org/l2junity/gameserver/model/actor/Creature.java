@@ -3291,11 +3291,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * @return True if the L2Character is casting normal non-simultaneous skill.
+	 * @return True if the Creature is casting any kind of skill, including simultaneous skills like potions.
 	 */
 	public final boolean isCastingNow()
 	{
-		return isCastingNow(SkillCaster::isNormalType);
+		return _skillCasters.stream().anyMatch(SkillCaster::isCasting);
 	}
 	
 	public final boolean isCastingNow(Predicate<SkillCaster> filter)

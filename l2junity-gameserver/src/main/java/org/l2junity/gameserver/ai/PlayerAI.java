@@ -32,6 +32,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 
 public class PlayerAI extends PlayableAI
@@ -216,7 +217,7 @@ public class PlayerAI extends PlayableAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isAttackingNow())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(SkillCaster::isBlockingAction) || _actor.isAttackingNow())
 		{
 			clientActionFailed();
 			saveNextIntention(AI_INTENTION_MOVE_TO, loc, null);
@@ -306,7 +307,7 @@ public class PlayerAI extends PlayableAI
 	
 	private void thinkPickUp()
 	{
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(SkillCaster::isBlockingAction))
 		{
 			return;
 		}
@@ -325,7 +326,7 @@ public class PlayerAI extends PlayableAI
 	
 	private void thinkInteract()
 	{
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow(SkillCaster::isBlockingAction))
 		{
 			return;
 		}

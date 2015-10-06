@@ -438,7 +438,7 @@ public class Npc extends Creature
 	
 	public boolean canInteract(PlayerInstance player)
 	{
-		if (player.isCastingNow(s -> true))
+		if (player.isCastingNow())
 		{
 			return false;
 		}

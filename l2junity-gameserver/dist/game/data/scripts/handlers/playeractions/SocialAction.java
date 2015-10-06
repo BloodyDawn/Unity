@@ -309,7 +309,7 @@ public final class SocialAction implements IPlayerActionHandler
 			return;
 		}
 		
-		if (player.isCastingNow(t -> true))
+		if (player.isCastingNow())
 		{
 			final NextAction nextAction = new NextAction(CtrlEvent.EVT_FINISH_CASTING, CtrlIntention.AI_INTENTION_CAST, () -> partner.sendPacket(new ExAskCoupleAction(player.getObjectId(), id)));
 			player.getAI().setNextAction(nextAction);

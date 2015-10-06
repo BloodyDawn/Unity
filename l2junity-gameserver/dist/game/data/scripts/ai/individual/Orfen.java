@@ -37,6 +37,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
@@ -255,7 +256,7 @@ public final class Orfen extends AbstractNpcAI
 	@Override
 	public String onFactionCall(Npc npc, Npc caller, PlayerInstance attacker, boolean isSummon)
 	{
-		if ((caller == null) || (npc == null) || npc.isCastingNow())
+		if ((caller == null) || (npc == null) || npc.isCastingNow(SkillCaster::isNormalType))
 		{
 			return super.onFactionCall(npc, caller, attacker, isSummon);
 		}
@@ -304,7 +305,7 @@ public final class Orfen extends AbstractNpcAI
 		}
 		else if (npcId == RIBA_IREN)
 		{
-			if (!npc.isCastingNow() && ((npc.getCurrentHp() - damage) < (npc.getMaxHp() / 2.0)))
+			if (!npc.isCastingNow(SkillCaster::isNormalType) && ((npc.getCurrentHp() - damage) < (npc.getMaxHp() / 2.0)))
 			{
 				npc.setTarget(attacker);
 				npc.doCast(SkillData.getInstance().getSkill(4516, 1));

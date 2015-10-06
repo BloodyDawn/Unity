@@ -40,6 +40,7 @@ import org.l2junity.gameserver.model.actor.instance.L2DefenderInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.util.Util;
 
 /**
@@ -738,7 +739,7 @@ public class SiegeGuardAI extends CharacterAI implements Runnable
 		// setIntention(AI_INTENTION_IDLE);
 		
 		// Check if the thinking action is already in progress
-		if (_thinking || _actor.isCastingNow() || _actor.isAllSkillsDisabled())
+		if (_thinking || _actor.isCastingNow(SkillCaster::isNormalType) || _actor.isAllSkillsDisabled())
 		{
 			return;
 		}

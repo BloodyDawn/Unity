@@ -33,6 +33,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.network.client.send.NpcSay;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -221,7 +222,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 				{
 					for (Npc caster : world.anakimGroup)
 					{
-						if ((caster != null) && !caster.isCastingNow())
+						if ((caster != null) && !caster.isCastingNow(SkillCaster::isNormalType))
 						{
 							makeCast(caster, world.lilithGroup);
 						}
@@ -240,7 +241,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 					}
 					for (Npc caster : world.lilithGroup)
 					{
-						if ((caster != null) && !caster.isCastingNow())
+						if ((caster != null) && !caster.isCastingNow(SkillCaster::isNormalType))
 						{
 							makeCast(caster, world.anakimGroup);
 						}

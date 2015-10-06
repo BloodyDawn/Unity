@@ -55,6 +55,7 @@ import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableFacti
 import org.l2junity.gameserver.model.events.impl.character.npc.OnAttackableHate;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.util.Util;
@@ -643,7 +644,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 	protected synchronized void thinkAttack()
 	{
 		final Attackable npc = getActiveChar();
-		if (npc.isCastingNow())
+		if (npc.isCastingNow(SkillCaster::isBlockingAction))
 		{
 			return;
 		}
@@ -1858,7 +1859,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 	 */
 	private boolean checkSkillCastConditions(Attackable caster, Skill skill)
 	{
-		if (caster.isCastingNow() && !skill.isSimultaneousCast())
+		if (caster.isCastingNow(SkillCaster::isNormalType))
 		{
 			return false;
 		}

@@ -31,6 +31,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.SkillCaster;
 
 public class SummonAI extends PlayableAI implements Runnable
 {
@@ -152,7 +153,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	@Override
 	protected void onEvtThink()
 	{
-		if (_thinking || _actor.isCastingNow() || _actor.isAllSkillsDisabled())
+		if (_thinking || _actor.isCastingNow(SkillCaster::isNormalType) || _actor.isAllSkillsDisabled())
 		{
 			return;
 		}
@@ -228,7 +229,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	private void avoidAttack(Creature attacker)
 	{
 		// Don't move while casting. It breaks casting animation, but still casts the skill... looks so bugged.
-		if (_actor.isCastingNow())
+		if (_actor.isCastingNow(SkillCaster::isBlockingAction))
 		{
 			return;
 		}
@@ -244,7 +245,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	public void defendAttack(Creature attacker)
 	{
 		// Cannot defend while attacking or casting.
-		if (_actor.isAttackingNow() || _actor.isCastingNow())
+		if (_actor.isAttackingNow() || _actor.isCastingNow(SkillCaster::isBlockingAction))
 		{
 			return;
 		}

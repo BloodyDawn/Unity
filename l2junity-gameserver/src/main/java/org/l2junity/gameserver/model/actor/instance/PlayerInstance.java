@@ -3852,7 +3852,7 @@ public final class PlayerInstance extends Playable
 		}
 		
 		// We cannot put a Weapon with Augmention in WH while casting (Possible Exploit)
-		if (item.isAugmented() && isCastingNow(t -> true))
+		if (item.isAugmented() && isCastingNow())
 		{
 			return null;
 		}
@@ -8155,7 +8155,7 @@ public final class PlayerInstance extends Playable
 		
 		// If a skill is currently being used, queue this one if this is not the same
 		// In case of double casting, check if both slots are occupied, then queue skill.
-		if ((!doubleCast && isCastingNow()) || (isCastingNow(s -> s.getCastingType() == SkillCastingType.NORMAL) && isCastingNow(s -> s.getCastingType() == SkillCastingType.NORMAL_SECOND)))
+		if ((!doubleCast && isCastingNow(SkillCaster::isNormalType)) || (isCastingNow(s -> s.getCastingType() == SkillCastingType.NORMAL) && isCastingNow(s -> s.getCastingType() == SkillCastingType.NORMAL_SECOND)))
 		{
 			// Check if new skill different from current skill in progress
 			if (isSkillDisabled(skill))
@@ -12498,7 +12498,7 @@ public final class PlayerInstance extends Playable
 		{
 			return false;
 		}
-		if (isCastingNow(s -> true))
+		if (isCastingNow())
 		{
 			return false;
 		}
@@ -12996,7 +12996,7 @@ public final class PlayerInstance extends Playable
 	
 	public boolean canMakeSocialAction()
 	{
-		return ((getPrivateStoreType() == PrivateStoreType.NONE) && (getActiveRequester() == null) && !isAlikeDead() && !isAllSkillsDisabled() && !isCastingNow(s -> true) && (getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE));
+		return ((getPrivateStoreType() == PrivateStoreType.NONE) && (getActiveRequester() == null) && !isAlikeDead() && !isAllSkillsDisabled() && !isCastingNow() && (getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE));
 	}
 	
 	public void setMultiSocialAction(int id, int targetId)
