@@ -538,7 +538,7 @@ public class Attackable extends Npc
 								attacker.addExpAndSp(addexp, addsp, useVitalityRate());
 								if (addexp > 0)
 								{
-									attacker.updateVitalityPoints(getVitalityPoints(damage), true, false);
+									attacker.updateVitalityPoints(getVitalityPoints(attacker.getLevel(), addexp), true, false);
 								}
 							}
 						}
@@ -1642,22 +1642,25 @@ public class Attackable extends Npc
 	/*
 	 * Return vitality points decrease (if positive) or increase (if negative) based on damage. Maximum for damage = maxHp.
 	 */
-	public int getVitalityPoints(int damage)
+	public int getVitalityPoints(int level, long exp)
 	{
-		// sanity check
-		if (damage <= 0)
+		if ((getLevel() <= 0) || (getExpReward() <= 0))
 		{
 			return 0;
 		}
 		
-		final float divider = (getLevel() > 0) && (getExpReward() > 0) ? (getTemplate().getBaseHpMax() * 9 * getLevel() * getLevel()) / (100 * getExpReward()) : 0;
-		if (divider == 0)
+		int points;
+		if (level < 85)
 		{
-			return 0;
+			points = (int) ((exp / 1000) * Math.max(level - getLevel(), 1));
+		}
+		else
+		{
+			// TODO Fix this formula
+			points = (int) (((9 * getLevel() * getLevel()) / exp) * 10000);
 		}
 		
-		// negative value - vitality will be consumed
-		return (int) (-Math.min(damage, getMaxHp()) / divider);
+		return -points;
 	}
 	
 	/*
@@ -1665,12 +1668,7 @@ public class Attackable extends Npc
 	 */
 	public boolean useVitalityRate()
 	{
-		if (isChampion() && !Config.L2JMOD_CHAMPION_ENABLE_VITALITY)
-		{
-			return false;
-		}
-		
-		return true;
+		return !isChampion() || Config.L2JMOD_CHAMPION_ENABLE_VITALITY;
 	}
 	
 	/** Return True if the L2Character is RaidBoss or his minion. */

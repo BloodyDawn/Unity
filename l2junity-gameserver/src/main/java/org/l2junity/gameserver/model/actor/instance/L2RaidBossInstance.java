@@ -129,9 +129,9 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	}
 	
 	@Override
-	public int getVitalityPoints(int damage)
+	public int getVitalityPoints(int level, long exp)
 	{
-		return -super.getVitalityPoints(damage) / 100;
+		return -super.getVitalityPoints(level, exp);
 	}
 	
 	@Override

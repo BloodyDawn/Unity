@@ -834,9 +834,6 @@ public class Party extends AbstractPlayerGroup
 			sqLevelSum += (member.getLevel() * member.getLevel());
 		}
 		
-		final int vitalityPoints = (int) ((target.getVitalityPoints(partyDmg) * Config.RATE_PARTY_XP) / validMembers.size());
-		final boolean useVitalityRate = target.useVitalityRate();
-		
 		for (PlayerInstance member : rewardedMembers)
 		{
 			if (member.isDead())
@@ -863,10 +860,10 @@ public class Party extends AbstractPlayerGroup
 				long addexp = Math.round(member.getStat().getValue(Stats.EXPSP_RATE, xpReward * preCalculation));
 				int addsp = (int) member.getStat().getValue(Stats.EXPSP_RATE, spReward * preCalculation);
 				
-				addexp = calculateExpSpPartyCutoff(member.getActingPlayer(), topLvl, addexp, addsp, useVitalityRate);
+				addexp = calculateExpSpPartyCutoff(member.getActingPlayer(), topLvl, addexp, addsp, target.useVitalityRate());
 				if (addexp > 0)
 				{
-					member.updateVitalityPoints(vitalityPoints, true, false);
+					member.updateVitalityPoints(target.getVitalityPoints(member.getLevel(), addexp), true, false);
 				}
 			}
 			else

@@ -959,12 +959,13 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="13384" levels="1" name="Equip Talisman - Infinity">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Talisman - Infinity burns with power. -->
 		<set name="icon" val="icon.accessory_immortal_talisman_i01" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="abnormalType" val="SEED_TALISMAN1" />
+		<set name="abnormalVisualEffect" val="TALISMAN_DECO_DARK_PURPLE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -977,12 +978,13 @@
 		<set name="isMagic" val="3" />
 	</skill>
 	<skill id="13385" levels="1" name="Equip Talisman - Destruction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Talisman - Destruction burns with power. -->
 		<set name="icon" val="icon.accessory_destruction_talisman_i01" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="abnormalType" val="SEED_TALISMAN1" />
+		<set name="abnormalVisualEffect" val="TALISMAN_DECO_DARK_PURPLE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -995,12 +997,13 @@
 		<set name="isMagic" val="3" />
 	</skill>
 	<skill id="13386" levels="1" name="Equip Talisman - Annihilation">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Talisman - Annihilation burns with power. -->
 		<set name="icon" val="icon.accessory_extermination_talisman_i01" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="abnormalType" val="SEED_TALISMAN1" />
+		<set name="abnormalVisualEffect" val="TALISMAN_DECO_GOLD" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -1013,12 +1016,13 @@
 		<set name="isMagic" val="3" />
 	</skill>
 	<skill id="13387" levels="1" name="Equip Talisman - Hellfire">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Talisman - Hellfire burns with power. -->
 		<set name="icon" val="icon.accessory_hellfire_talisman_i01" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="abnormalType" val="SEED_TALISMAN1" />
+		<set name="abnormalVisualEffect" val="TALISMAN_DECO_ORANGE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -1031,12 +1035,13 @@
 		<set name="isMagic" val="3" />
 	</skill>
 	<skill id="13388" levels="1" name="Equip Talisman - Desire">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Talisman - Desire burns with power. -->
 		<set name="icon" val="icon.accessory_ocean_talisman_i01" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="abnormalType" val="SEED_TALISMAN1" />
+		<set name="abnormalVisualEffect" val="TALISMAN_DECO_BLUE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -1049,12 +1054,13 @@
 		<set name="isMagic" val="3" />
 	</skill>
 	<skill id="13389" levels="1" name="Equip Talisman - Longing">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Talisman - Longing burns with power. -->
 		<set name="icon" val="icon.accessory_longing_talisman_i01" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="abnormalType" val="SEED_TALISMAN1" />
+		<set name="abnormalVisualEffect" val="TALISMAN_DECO_LIGHT_PURPLE" />
 		<set name="basicProperty" val="NONE" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="magicCriticalRate" val="5" />
@@ -1067,7 +1073,7 @@
 		<set name="isMagic" val="3" />
 	</skill>
 	<skill id="13390" levels="1" name="Unequip Talisman - Infinity">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Talisman - Infinity fades in power. -->
 		<set name="icon" val="icon.accessory_immortal_talisman_i01" />
 		<set name="operateType" val="A1" />
@@ -1078,9 +1084,14 @@
 		<set name="magicLvl" val="99" />
 		<set name="trait" val="HOLD" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="DispelBySlot">
+				<param dispel="SEED_TALISMAN1,-1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13391" levels="1" name="Unequip Talisman - Destruction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Talisman - Destruction fades in power. -->
 		<set name="icon" val="icon.accessory_destruction_talisman_i01" />
 		<set name="operateType" val="A1" />
@@ -1091,9 +1102,14 @@
 		<set name="magicLvl" val="99" />
 		<set name="trait" val="HOLD" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="DispelBySlot">
+				<param dispel="SEED_TALISMAN1,-1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13392" levels="1" name="Unequip Talisman - Annihilation">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Talisman - Annihilation fades in power. -->
 		<set name="icon" val="icon.accessory_extermination_talisman_i01" />
 		<set name="operateType" val="A1" />
@@ -1104,9 +1120,14 @@
 		<set name="magicLvl" val="99" />
 		<set name="trait" val="HOLD" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="DispelBySlot">
+				<param dispel="SEED_TALISMAN1,-1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13393" levels="1" name="Unequip Talisman - Hellfire">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Talisman - Hellfire fades in power. -->
 		<set name="icon" val="icon.accessory_hellfire_talisman_i01" />
 		<set name="operateType" val="A1" />
@@ -1117,9 +1138,14 @@
 		<set name="magicLvl" val="99" />
 		<set name="trait" val="HOLD" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="DispelBySlot">
+				<param dispel="SEED_TALISMAN1,-1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13394" levels="1" name="Unequip Talisman - Desire">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Talisman - Desire fades in power. -->
 		<set name="icon" val="icon.accessory_ocean_talisman_i01" />
 		<set name="operateType" val="A1" />
@@ -1130,9 +1156,14 @@
 		<set name="magicLvl" val="99" />
 		<set name="trait" val="HOLD" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="DispelBySlot">
+				<param dispel="SEED_TALISMAN1,-1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13395" levels="1" name="Unequip Talisman - Longing">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Glory Days confirmed -->
 		<!-- Talisman - Longing fades in power. -->
 		<set name="icon" val="icon.accessory_longing_talisman_i01" />
 		<set name="operateType" val="A1" />
@@ -1143,6 +1174,11 @@
 		<set name="magicLvl" val="99" />
 		<set name="trait" val="HOLD" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="DispelBySlot">
+				<param dispel="SEED_TALISMAN1,-1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="13396" levels="1" name="Rabbit Ears: STR">
 		<!-- AUTO GENERATED SKILL -->

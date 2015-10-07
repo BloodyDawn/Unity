@@ -1186,6 +1186,8 @@
 		<!-- Increases Max HP/MP/CP by 100, P. Accuracy and M. Accuracy by 1, P. Evasion and M. Evasion by 1 Vampiric Rage Effect by 2%, and Atk. Spd. and Casting Spd. by 10. -->
 		<set name="icon" val="icon.accessory_immortal_talisman_i01" />
 		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="talisman" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1199,13 +1201,15 @@
 		<skills>
 			<skill id="8864" level="1" /> <!-- Talisman - Infinity -->
 			<skill id="13384" level="1" /> <!-- Equip Talisman - Infinity -->
-			<skill id="13390" level="1" /> <!-- Unequip Talisman - Infinity -->
+			<skill id="13390" level="1" type="ON_UNEQUIP" /> <!-- Unequip Talisman - Infinity -->
 		</skills>
 	</item>
 	<item id="34985" name="Talisman - Destruction" type="Armor">
 		<!-- Increases Max HP/MP/CP by 100, P. Accuracy and M. Accuracy by 2, P. Evasion and M. Evasion by 2, Vampiric Rage Effect by 2%, Atk. Spd. and Casting Spd. by 10, P. Critical Rate by 30, and M. Critical Rate by 10. -->
 		<set name="icon" val="icon.accessory_destruction_talisman_i01" />
 		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="talisman" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1219,13 +1223,15 @@
 		<skills>
 			<skill id="8864" level="2" /> <!-- Talisman - Destruction -->
 			<skill id="13385" level="1" /> <!-- Equip Talisman - Destruction -->
-			<skill id="13391" level="1" /> <!-- Unequip Talisman - Destruction -->
+			<skill id="13391" level="1" type="ON_UNEQUIP" /> <!-- Unequip Talisman - Destruction -->
 		</skills>
 	</item>
 	<item id="34986" name="Talisman - Annihilation" type="Armor">
 		<!-- Increases Max HP/MP/CP by 300, P. Accuracy and M. Accuracy by 2, P. Evasion and M. Evasion by 2, Vampiric Rage Effect by 3%, Atk. Spd. and Casting Spd. by 20, P. Critical Rate by 30, M. Critical Rate by 10, P. Atk. by 103, and M. Atk. by 156. -->
 		<set name="icon" val="icon.accessory_extermination_talisman_i01" />
 		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="talisman" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1239,13 +1245,15 @@
 		<skills>
 			<skill id="8864" level="3" /> <!-- Talisman - Annihilation -->
 			<skill id="13386" level="1" /> <!-- Equip Talisman - Annihilation -->
-			<skill id="13392" level="1" /> <!-- Unequip Talisman - Annihilation -->
+			<skill id="13392" level="1" type="ON_UNEQUIP" /> <!-- Unequip Talisman - Annihilation -->
 		</skills>
 	</item>
 	<item id="34987" name="Talisman - Hellfire" type="Armor">
 		<!-- When equipped, increases Max HP, MP, and CP by 400, P. and M. Accuracy by 2, P. and M. Evasion by 2, Vampiric Rage 3% effect, Atk. Spd. and Casting Spd. by 30, Critical Rate by 30, M. Critical Rate by 10, P. Atk. by 103, M. Atk. by 156, Skill Power by 1%, Damage Reflect Resistance by 10, and P. and M. Def. by 20. -->
 		<set name="icon" val="icon.accessory_hellfire_talisman_i01" />
 		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="talisman" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1259,13 +1267,15 @@
 		<skills>
 			<skill id="8864" level="4" /> <!-- Talisman - Hellfire -->
 			<skill id="13387" level="1" /> <!-- Equip Talisman - Hellfire -->
-			<skill id="13393" level="1" /> <!-- Unequip Talisman - Hellfire -->
+			<skill id="13393" level="1" type="ON_UNEQUIP" /> <!-- Unequip Talisman - Hellfire -->
 		</skills>
 	</item>
 	<item id="34988" name="Talisman - Desire" type="Armor">
 		<!-- When equipped, increases Max HP, MP, and CP by 500, P. and M. Accuracy by 2, P. and M. Evasion by 2, Vampiric Rage 3% effect, Atk. Spd. and Casting Spd. by 40, Critical Rate by 30, M. Critical Rate by 10, P. Atk. by 203, M. Atk. by 256, Skill Power by 2%, Damage Reflect Resistance by 20, and P. and M. Def. by 40. MP consumption decreases by 1%. -->
 		<set name="icon" val="icon.accessory_ocean_talisman_i01" />
 		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="talisman" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1279,13 +1289,15 @@
 		<skills>
 			<skill id="8864" level="5" /> <!-- Talisman - Desire -->
 			<skill id="13388" level="1" /> <!-- Equip Talisman - Desire -->
-			<skill id="13394" level="1" /> <!-- Unequip Talisman - Desire -->
+			<skill id="13394" level="1" type="ON_UNEQUIP" /> <!-- Unequip Talisman - Desire -->
 		</skills>
 	</item>
 	<item id="34989" name="Talisman - Longing" type="Armor">
 		<!-- When equipped, increases Max HP, MP, and CP by 600, P. and M. Accuracy by 2, P. and M. Evasion by 2, Vampiric Rage 3% effect, Atk. Spd. and Casting Spd. by 50, Critical Rate by 30, M. Critical Rate by 10, P. Atk. by 303, M. Atk. by 356, Skill Power by 4%, Damage Reflect Resistance by 30, and P. M. Def. by 60, and STR/INT/CON/MEN/DEX/WIT by 2. MP consumption decreases by 3%. -->
 		<set name="icon" val="icon.accessory_longing_talisman_i01" />
 		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="talisman" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -1299,7 +1311,7 @@
 		<skills>
 			<skill id="8864" level="6" /> <!-- Talisman - Longing -->
 			<skill id="13389" level="1" /> <!-- Equip Talisman - Longing -->
-			<skill id="13395" level="1" /> <!-- Unequip Talisman - Longing -->
+			<skill id="13395" level="1" type="ON_UNEQUIP" /> <!-- Unequip Talisman - Longing -->
 		</skills>
 	</item>
 	<item id="34990" name="Corroded Weapon Fragment" type="EtcItem">
