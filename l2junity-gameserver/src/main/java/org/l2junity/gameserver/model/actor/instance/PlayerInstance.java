@@ -9724,6 +9724,12 @@ public final class PlayerInstance extends Playable
 				continue;
 			}
 			
+			// Skills that are blocked from player use are not shown in skill list.
+			if (s.isBlockActionUseSkill())
+			{
+				continue;
+			}
+			
 			if (SkillTreesData.getInstance().getAlchemySkill(s.getId(), s.getLevel()) != null)
 			{
 				continue;

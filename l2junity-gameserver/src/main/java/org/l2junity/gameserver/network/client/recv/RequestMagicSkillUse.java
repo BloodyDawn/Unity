@@ -78,6 +78,13 @@ public final class RequestMagicSkillUse implements IClientIncomingPacket
 			}
 		}
 		
+		// Skill is blocked from player use.
+		if (skill.isBlockActionUseSkill())
+		{
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		
 		// Avoid Use of Skills in AirShip.
 		if (activeChar.isPlayable() && activeChar.isInAirShip())
 		{
