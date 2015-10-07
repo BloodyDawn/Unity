@@ -24,11 +24,12 @@
 		<xs:attribute name="type">
 			<xs:simpleType>
 				<xs:restriction base="xs:token">
-					<xs:enumeration value="NORMAL"></xs:enumeration>
-					<xs:enumeration value="ON_ENCHANT"></xs:enumeration>
-					<xs:enumeration value="ON_UNEQUIP"></xs:enumeration>
-					<xs:enumeration value="ON_CRITICAL_SKILL"></xs:enumeration>
-					<xs:enumeration value="ON_MAGIC_SKILL"></xs:enumeration>
+					<xs:enumeration value="NORMAL" />
+					<xs:enumeration value="ON_ENCHANT" />
+					<xs:enumeration value="ON_EQUIP" />
+					<xs:enumeration value="ON_UNEQUIP" />
+					<xs:enumeration value="ON_CRITICAL_SKILL" />
+					<xs:enumeration value="ON_MAGIC_SKILL" />
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>

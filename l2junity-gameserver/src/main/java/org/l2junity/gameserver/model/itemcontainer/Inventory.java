@@ -447,6 +447,9 @@ public abstract class Inventory extends ItemContainer
 				}
 			});
 			
+			// Apply skill, if weapon have "skills on equip"
+			item.getItem().forEachSkill(ItemSkillType.ON_EQUIP, holder -> holder.getSkill().activateSkill(player, player));
+			
 			if (update.get())
 			{
 				player.sendSkillList();
