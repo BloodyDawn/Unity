@@ -4628,7 +4628,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					if (!target.isRaid() || (getActingPlayer() == null) || (getActingPlayer().getLevel() <= (target.getLevel() + 8)))
 					{
 						// Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
-						double reflectPercent = target.getStat().getValue(Stats.REFLECT_DAMAGE_PERCENT, 0);
+						double reflectPercent = target.getStat().getValue(Stats.REFLECT_DAMAGE_PERCENT, 0) - getStat().getValue(Stats.REFLECT_DAMAGE_PERCENT_DEFENSE, 0);
 						
 						if (reflectPercent > 0)
 						{

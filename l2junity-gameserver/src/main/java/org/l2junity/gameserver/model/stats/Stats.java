@@ -175,6 +175,7 @@ public enum Stats
 	DEBUFF_IMMUNITY("debuffImmunity"),
 	ABNORMAL_RESIST_PHYSICAL("abnormalResPhysical"),
 	ABNORMAL_RESIST_MAGICAL("abnormalResMagical"),
+	FIXED_DAMAGE_RES("fixedDamageRes"), // Resistance agains fixed damage.
 	
 	// ELEMENT POWER
 	FIRE_POWER("firePower", new AttributeFinalizer(AttributeType.FIRE, true)),
@@ -188,6 +189,7 @@ public enum Stats
 	CANCEL_PROF("cancelProf"),
 	
 	REFLECT_DAMAGE_PERCENT("reflectDam"),
+	REFLECT_DAMAGE_PERCENT_DEFENSE("reflectDamDef"),
 	REFLECT_SKILL_MAGIC("reflectSkillMagic"),
 	REFLECT_SKILL_PHYSIC("reflectSkillPhysic"),
 	VENGEANCE_SKILL_MAGIC_DAMAGE("vengeanceMdam"),

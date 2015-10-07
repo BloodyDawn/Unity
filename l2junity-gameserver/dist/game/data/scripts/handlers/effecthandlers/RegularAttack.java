@@ -91,7 +91,7 @@ public final class RegularAttack extends AbstractEffect
 				if (!effected.isRaid() || (effector.getActingPlayer() == null) || (effector.getActingPlayer().getLevel() <= (effected.getLevel() + 8)))
 				{
 					// Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
-					double reflectPercent = effected.getStat().getValue(Stats.REFLECT_DAMAGE_PERCENT, 0);
+					double reflectPercent = effected.getStat().getValue(Stats.REFLECT_DAMAGE_PERCENT, 0) - effector.getStat().getValue(Stats.REFLECT_DAMAGE_PERCENT_DEFENSE, 0);
 					
 					if (reflectPercent > 0)
 					{
