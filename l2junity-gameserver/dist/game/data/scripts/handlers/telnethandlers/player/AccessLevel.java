@@ -18,13 +18,13 @@
  */
 package handlers.telnethandlers.player;
 
-import io.netty.channel.ChannelHandlerContext;
-
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.telnet.ITelnetCommand;
 import org.l2junity.gameserver.network.telnet.TelnetServer;
 import org.l2junity.gameserver.util.Util;
+
+import io.netty.channel.ChannelHandlerContext;
 
 /**
  * @author UnAfraid
@@ -58,7 +58,7 @@ public class AccessLevel implements ITelnetCommand
 		if (player != null)
 		{
 			final int level = Integer.parseInt(args[1]);
-			player.setAccessLevel(level, true);
+			player.setAccessLevel(level, true, true);
 			return "Player " + player.getName() + "'s access level has been changed to: " + level;
 		}
 		return "Couldn't find player with such name.";

@@ -127,10 +127,6 @@ public final class AdminData implements IGameXmlReader
 		{
 			return _accessLevels.get(-1);
 		}
-		else if (!_accessLevels.containsKey(accessLevelNum))
-		{
-			_accessLevels.put(accessLevelNum, new AccessLevel());
-		}
 		return _accessLevels.get(accessLevelNum);
 	}
 	

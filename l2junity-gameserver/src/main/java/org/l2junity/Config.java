@@ -409,7 +409,7 @@ public final class Config
 	// --------------------------------------------------
 	// General Settings
 	// --------------------------------------------------
-	public static boolean EVERYBODY_HAS_ADMIN_RIGHTS;
+	public static int DEFAULT_ACCESS_LEVEL;
 	public static boolean SERVER_LIST_BRACKET;
 	public static int SERVER_LIST_TYPE;
 	public static int SERVER_LIST_AGE;
@@ -1613,7 +1613,7 @@ public final class Config
 			
 			// Load General L2Properties file (if exists)
 			final PropertiesParser General = new PropertiesParser(GENERAL_CONFIG_FILE);
-			EVERYBODY_HAS_ADMIN_RIGHTS = General.getBoolean("EverybodyHasAdminRights", false);
+			DEFAULT_ACCESS_LEVEL = General.getInt("DefaultAccessLevel", 0);
 			SERVER_LIST_BRACKET = General.getBoolean("ServerListBrackets", false);
 			SERVER_LIST_TYPE = getServerTypeId(General.getString("ServerListType", "Normal").split(","));
 			SERVER_LIST_AGE = General.getInt("ServerListAge", 0);

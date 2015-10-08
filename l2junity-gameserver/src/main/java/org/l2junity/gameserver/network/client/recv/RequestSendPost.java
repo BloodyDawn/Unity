@@ -213,7 +213,7 @@ public final class RequestSendPost implements IClientIncomingPacket
 		final int level = CharNameTable.getInstance().getAccessLevelById(receiverId);
 		final AccessLevel accessLevel = AdminData.getInstance().getAccessLevel(level);
 		
-		if (accessLevel.isGm() && !activeChar.getAccessLevel().isGm())
+		if ((accessLevel != null) && accessLevel.isGm() && !activeChar.getAccessLevel().isGm())
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOUR_MESSAGE_TO_C1_DID_NOT_REACH_ITS_RECIPIENT_YOU_CANNOT_SEND_MAIL_TO_THE_GM_STAFF);
 			sm.addString(_receiver);
@@ -307,7 +307,7 @@ public final class RequestSendPost implements IClientIncomingPacket
 		{
 			return false;
 		}
-
+		
 		// Proceed to the transfer
 		InventoryUpdate playerIU = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
 		for (AttachmentItem i : _items)

@@ -361,7 +361,8 @@ public final class PlayerInstance extends Playable
 	
 	// Character Character SQL String Definitions:
 	private static final String INSERT_CHARACTER = "INSERT INTO characters (account_name,charId,char_name,level,maxHp,curHp,maxCp,curCp,maxMp,curMp,face,hairStyle,hairColor,sex,exp,sp,reputation,fame,raidbossPoints,pvpkills,pkkills,clanid,race,classid,deletetime,cancraft,title,title_color,accesslevel,online,isin7sdungeon,clan_privs,wantspeace,base_class,newbie,nobless,power_grade,vitality_points,createDate) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	private static final String UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,reputation=?,fame=?,raidbossPoints=?,pvpkills=?,pkkills=?,clanid=?,race=?,classid=?,deletetime=?,title=?,title_color=?,accesslevel=?,online=?,isin7sdungeon=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,newbie=?,nobless=?,power_grade=?,subpledge=?,lvl_joined_academy=?,apprentice=?,sponsor=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,death_penalty_level=?,bookmarkslot=?,vitality_points=?,language=? WHERE charId=?";
+	private static final String UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,reputation=?,fame=?,raidbossPoints=?,pvpkills=?,pkkills=?,clanid=?,race=?,classid=?,deletetime=?,title=?,title_color=?,online=?,isin7sdungeon=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,newbie=?,nobless=?,power_grade=?,subpledge=?,lvl_joined_academy=?,apprentice=?,sponsor=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,death_penalty_level=?,bookmarkslot=?,vitality_points=?,language=? WHERE charId=?";
+	private static final String UPDATE_CHARACTER_ACCESS = "UPDATE characters SET accesslevel = ? WHERE charId = ?";
 	private static final String RESTORE_CHARACTER = "SELECT * FROM characters WHERE charId=?";
 	
 	// Character Teleport Bookmark:
@@ -6300,10 +6301,29 @@ public final class PlayerInstance extends Playable
 	 * Set the _accessLevel of the L2PcInstance.
 	 * @param level
 	 * @param broadcast
+	 * @param updateInDb
 	 */
-	public void setAccessLevel(int level, boolean broadcast)
+	public void setAccessLevel(int level, boolean broadcast, boolean updateInDb)
 	{
-		_accessLevel = AdminData.getInstance().getAccessLevel(level);
+		AccessLevel accessLevel = AdminData.getInstance().getAccessLevel(level);
+		if (accessLevel == null)
+		{
+			_log.warn("Can't find access level {} for character {}", level, toString());
+			accessLevel = AdminData.getInstance().getAccessLevel(0);
+		}
+		
+		if ((accessLevel.getLevel() == 0) && (Config.DEFAULT_ACCESS_LEVEL > 0))
+		{
+			accessLevel = AdminData.getInstance().getAccessLevel(Config.DEFAULT_ACCESS_LEVEL);
+			if (accessLevel == null)
+			{
+				_log.warn("Config's default access level ({}) is not defined, defaulting to 0!", Config.DEFAULT_ACCESS_LEVEL);
+				accessLevel = AdminData.getInstance().getAccessLevel(0);
+				Config.DEFAULT_ACCESS_LEVEL = 0;
+			}
+		}
+		
+		_accessLevel = accessLevel;
 		
 		getAppearance().setNameColor(_accessLevel.getNameColor());
 		getAppearance().setTitleColor(_accessLevel.getTitleColor());
@@ -6312,9 +6332,24 @@ public final class PlayerInstance extends Playable
 			broadcastUserInfo();
 		}
 		
+		if (updateInDb)
+		{
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
+				PreparedStatement ps = con.prepareStatement(UPDATE_CHARACTER_ACCESS))
+			{
+				ps.setInt(1, accessLevel.getLevel());
+				ps.setInt(2, getObjectId());
+				ps.executeUpdate();
+			}
+			catch (SQLException e)
+			{
+				_log.warn("Failed to update character's accesslevel in db: {}", toString(), e);
+			}
+		}
+		
 		CharNameTable.getInstance().addName(this);
 		
-		if (!AdminData.getInstance().hasAccessLevel(level))
+		if (accessLevel == null)
 		{
 			_log.warn("Tryed to set unregistered access level " + level + " for " + toString() + ". Setting access level without privileges!");
 		}
@@ -6335,15 +6370,6 @@ public final class PlayerInstance extends Playable
 	@Override
 	public AccessLevel getAccessLevel()
 	{
-		if (Config.EVERYBODY_HAS_ADMIN_RIGHTS)
-		{
-			return AdminData.getInstance().getMasterAccessLevel();
-		}
-		else if (_accessLevel == null)
-		{
-			setAccessLevel(0, false);
-		}
-		
 		return _accessLevel;
 	}
 	
@@ -6609,7 +6635,7 @@ public final class PlayerInstance extends Playable
 					
 					player.setDeleteTimer(rset.getLong("deletetime"));
 					player.setTitle(rset.getString("title"));
-					player.setAccessLevel(rset.getInt("accesslevel"), false);
+					player.setAccessLevel(rset.getInt("accesslevel"), false, false);
 					int titleColor = rset.getInt("title_color");
 					if (titleColor != PcAppearance.DEFAULT_TITLE_COLOR)
 					{
@@ -7106,12 +7132,11 @@ public final class PlayerInstance extends Playable
 			statement.setLong(27, getDeleteTimer());
 			statement.setString(28, getTitle());
 			statement.setInt(29, getAppearance().getTitleColor());
-			statement.setInt(30, getAccessLevel().getLevel());
-			statement.setInt(31, isOnlineInt());
-			statement.setInt(32, 0); // Unused
-			statement.setInt(33, getClanPrivileges().getBitmask());
-			statement.setInt(34, getWantsPeace());
-			statement.setInt(35, getBaseClass());
+			statement.setInt(30, isOnlineInt());
+			statement.setInt(31, 0); // Unused
+			statement.setInt(32, getClanPrivileges().getBitmask());
+			statement.setInt(33, getWantsPeace());
+			statement.setInt(34, getBaseClass());
 			
 			long totalOnlineTime = _onlineTime;
 			if (_onlineBeginTime > 0)
@@ -7119,22 +7144,22 @@ public final class PlayerInstance extends Playable
 				totalOnlineTime += (System.currentTimeMillis() - _onlineBeginTime) / 1000;
 			}
 			
-			statement.setLong(36, totalOnlineTime);
-			statement.setInt(37, 0); // Unused
-			statement.setInt(38, isNoble() ? 1 : 0);
-			statement.setInt(39, getPowerGrade());
-			statement.setInt(40, getPledgeType());
-			statement.setInt(41, getLvlJoinedAcademy());
-			statement.setLong(42, getApprentice());
-			statement.setLong(43, getSponsor());
-			statement.setLong(44, getClanJoinExpiryTime());
-			statement.setLong(45, getClanCreateExpiryTime());
-			statement.setString(46, getName());
-			statement.setLong(47, 0); // unset
-			statement.setInt(48, getBookMarkSlot());
-			statement.setInt(49, getStat().getBaseVitalityPoints());
-			statement.setString(50, getLang());
-			statement.setInt(51, getObjectId());
+			statement.setLong(35, totalOnlineTime);
+			statement.setInt(36, 0); // Unused
+			statement.setInt(37, isNoble() ? 1 : 0);
+			statement.setInt(38, getPowerGrade());
+			statement.setInt(39, getPledgeType());
+			statement.setInt(40, getLvlJoinedAcademy());
+			statement.setLong(41, getApprentice());
+			statement.setLong(42, getSponsor());
+			statement.setLong(43, getClanJoinExpiryTime());
+			statement.setLong(44, getClanCreateExpiryTime());
+			statement.setString(45, getName());
+			statement.setLong(46, 0); // unset
+			statement.setInt(47, getBookMarkSlot());
+			statement.setInt(48, getStat().getBaseVitalityPoints());
+			statement.setString(49, getLang());
+			statement.setInt(50, getObjectId());
 			
 			statement.execute();
 		}
